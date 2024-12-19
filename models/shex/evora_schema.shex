@@ -1,0 +1,919 @@
+# metamodel_version: 1.7.0
+BASE <https://evora-project.eu/>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX linkml: <https://w3id.org/linkml/>
+
+
+linkml:String xsd:string
+
+linkml:Integer xsd:integer
+
+linkml:Boolean xsd:boolean
+
+linkml:Float xsd:float
+
+linkml:Double xsd:double
+
+linkml:Decimal xsd:decimal
+
+linkml:Time xsd:time
+
+linkml:Date xsd:date
+
+linkml:Datetime xsd:dateTime
+
+linkml:DateOrDatetime linkml:DateOrDatetime
+
+linkml:Uriorcurie IRI
+
+linkml:Curie xsd:string
+
+linkml:Uri IRI
+
+linkml:Ncname xsd:string
+
+linkml:Objectidentifier IRI
+
+linkml:Nodeidentifier NONLITERAL
+
+linkml:Jsonpointer xsd:string
+
+linkml:Jsonpath xsd:string
+
+linkml:Sparqlpath xsd:string
+
+<AlternateName> CLOSED {
+    (  $<AlternateName_tes> (  &<Term_tes> ;
+          rdf:type [ <Term> ] ? ;
+          <alternateName> @<AlternateName> * ;
+          <sourceOfInformation> @linkml:String *
+       ) ;
+       rdf:type [ <AlternateName> ] ?
+    )
+}
+
+<Antibody>  (
+    CLOSED {
+       (  $<Antibody_tes> (  &<Product_tes> ;
+             rdf:type [ <Product> ] ? ;
+             <productionSystem> @linkml:String ? ;
+             <antibodyPurifiedByAffinity> @linkml:Boolean ;
+             <specificityDocumented> @linkml:Boolean ;
+             <targetedAntigen> @linkml:String ;
+             <sequenceReference> @<SequenceReference> *
+          ) ;
+          rdf:type [ <Antibody> ] ?
+       )
+    } OR @<Hybridoma>
+)
+
+<Audio> CLOSED {
+    (  $<Audio_tes> (  &<File_tes> ;
+          rdf:type [ <File> ] ?
+       ) ;
+       rdf:type [ <Audio> ] ?
+    )
+}
+
+<Bacterium> CLOSED {
+    (  $<Bacterium_tes> (  &<Pathogen_tes> ;
+          rdf:type [ <Pathogen> ] ?
+       ) ;
+       rdf:type [ <Bacterium> ] ?
+    )
+}
+
+<BiologicalMaterialOrigin> CLOSED {
+    (  $<BiologicalMaterialOrigin_tes> (  &<Dataset_tes> ;
+          rdf:type [ <Dataset> ] ? ;
+          <recombinantMaterial> @linkml:Boolean ;
+          <biologicalSourceType> @linkml:Boolean ;
+          <biologicalPartOrigin> @<BiologicalPartOrigin> + ;
+          <thirdPartyDistributionConsent> @linkml:Boolean ? ;
+          <usageRestrictions> @linkml:String ?
+       ) ;
+       rdf:type [ <BiologicalMaterialOrigin> ] ?
+    )
+}
+
+<BiologicalPartOrigin>  (
+    @<NaturalPartOrigin> OR @<SyntheticPartOrigin>
+)
+
+<BiologicalPartOrigin_struct> {
+    (  $<BiologicalPartOrigin_tes> (  &<Dataset_tes> ;
+          rdf:type [ <Dataset> ] ? ;
+          <recombinantPartIdentification> @<RecombinantPartIdentification> ?
+       ) ;
+       rdf:type [ <BiologicalPartOrigin> ] ?
+    )
+}
+
+<Bundle> CLOSED {
+    (  $<Bundle_tes> (  &<Product_tes> ;
+          rdf:type [ <Product> ] ? ;
+          <productsOfTheBundle> @<Product> + ;
+          <complementaryDocument> @linkml:String ?
+       ) ;
+       rdf:type [ <Bundle> ] ?
+    )
+}
+
+<Catalogue>  (
+    @<Collection> OR @<Taxonomy> OR @<Vocabulary>
+)
+
+<Catalogue_struct> {
+    (  $<Catalogue_tes> (  &<Nameable_tes> ;
+          rdf:type [ <Nameable> ] ?
+       ) ;
+       rdf:type [ <Catalogue> ] ?
+    )
+}
+
+<Certification> CLOSED {
+    (  $<Certification_tes> (  &<Nameable_tes> ;
+          rdf:type [ <Nameable> ] ? ;
+          <logo> @<Image> ? ;
+          <certificationDocument> @<Document> * ;
+          <resourceURL> @linkml:Uri ?
+       ) ;
+       rdf:type [ <Certification> ] ?
+    )
+}
+
+<Collection> CLOSED {
+    (  $<Collection_tes> (  &<Catalogue_tes> ;
+          rdf:type [ <Catalogue> ] ? ;
+          <collectionItem> @<ProductOrService> * ;
+          <collectionDataProvider> @<DataProvider> ?
+       ) ;
+       rdf:type [ <Collection> ] ?
+    )
+}
+
+<CommonName>  (
+    CLOSED {
+       (  $<CommonName_tes> (  &<Term_tes> ;
+             rdf:type [ <Term> ] ? ;
+             <alternateName> @<AlternateName> * ;
+             <sourceOfInformation> @linkml:String *
+          ) ;
+          rdf:type [ <CommonName> ] ?
+       )
+    } OR @<Variant> OR @<VirusName>
+)
+
+<ContactPoint> CLOSED {
+    (  $<ContactPoint_tes> (  &<Nameable_tes> ;
+          rdf:type [ <Nameable> ] ? ;
+          <email> @linkml:String ? ;
+          <telephone> @linkml:String ? ;
+          <streetAddress> @linkml:String ? ;
+          <addressLocality> @linkml:String ? ;
+          <addressRegion> @linkml:String ? ;
+          <postalCode> @linkml:String ? ;
+          <addressCountry> @<Country> ? ;
+          <oRCIDiD> @linkml:String ?
+       ) ;
+       rdf:type [ <ContactPoint> ] ?
+    )
+}
+
+<Country> CLOSED {
+    (  $<Country_tes> (  &<Term_tes> ;
+          rdf:type [ <Term> ] ? ;
+          <alpha2Code> @linkml:String
+       ) ;
+       rdf:type [ <Country> ] ?
+    )
+}
+
+<Data> CLOSED {
+    (  $<Data_tes> (  &<File_tes> ;
+          rdf:type [ <File> ] ?
+       ) ;
+       rdf:type [ <Data> ] ?
+    )
+}
+
+<DataProvider> CLOSED {
+    (  $<DataProvider_tes> (  &<DataService_tes> ;
+          rdf:type [ <DataService> ] ? ;
+          <license> @<License> ? ;
+          <loginRequestMethod> @linkml:String ? ;
+          <loginURL> @linkml:Uri ? ;
+          <loginTokenName> @linkml:String ? ;
+          <queryURL> @linkml:Uri ;
+          <queryMethod> @linkml:String ;
+          <contentType> @linkml:String ;
+          <providedEntityType> @linkml:String ;
+          <weight> @linkml:Integer
+       ) ;
+       rdf:type [ <DataProvider> ] ?
+    )
+}
+
+<DataService>  (
+    {
+       (  $<DataService_tes> (  &<Nameable_tes> ;
+             rdf:type [ <Nameable> ] ?
+          ) ;
+          rdf:type [ <DataService> ] ?
+       )
+    } OR @<DataProvider>
+)
+
+<Dataset>  (
+    @<BiologicalMaterialOrigin> OR @<BiologicalPartOrigin> OR @<ExternalRelatedReference> OR @<MSDS> OR @<PathogenIdentification>
+    OR @<Publication> OR @<Sequence> OR @<SequenceReference> OR @<Version>
+)
+
+<Dataset_struct> {
+    (  $<Dataset_tes> rdf:type . * ;
+       rdf:type [ <Dataset> ] ?
+    )
+}
+
+<DetectionKit> CLOSED {
+    (  $<DetectionKit_tes> (  &<Product_tes> ;
+          rdf:type [ <Product> ] ? ;
+          <hasSOPFile> @<File> * ;
+          <specificityDocumented> @linkml:Boolean ;
+          <specificity> @linkml:String ? ;
+          <targetedRegion> @linkml:String ?
+       ) ;
+       rdf:type [ <DetectionKit> ] ?
+    )
+}
+
+<Document> CLOSED {
+    (  $<Document_tes> (  &<File_tes> ;
+          rdf:type [ <File> ] ?
+       ) ;
+       rdf:type [ <Document> ] ?
+    )
+}
+
+<DOI> CLOSED {
+    (  $<DOI_tes> (  &<Term_tes> ;
+          rdf:type [ <Term> ] ?
+       ) ;
+       rdf:type [ <DOI> ] ?
+    )
+}
+
+<ExpressionVector> CLOSED {
+    (  $<ExpressionVector_tes> (  &<Term_tes> ;
+          rdf:type [ <Term> ] ?
+       ) ;
+       rdf:type [ <ExpressionVector> ] ?
+    )
+}
+
+<ExternalRelatedReference> CLOSED {
+    (  $<ExternalRelatedReference_tes> (  &<Dataset_tes> ;
+          rdf:type [ <Dataset> ] ? ;
+          <reference> @linkml:String ;
+          <referenceLabel> @linkml:String ;
+          <referenceProviderPrefix> @linkml:String ;
+          <referenceProviderName> @linkml:String
+       ) ;
+       rdf:type [ <ExternalRelatedReference> ] ?
+    )
+}
+
+<File>  (
+    @<Audio> OR @<Data> OR @<Document> OR @<Image> OR @<Video>
+)
+
+<File_struct> {
+    (  $<File_tes> (  &<Nameable_tes> ;
+          rdf:type [ <Nameable> ] ? ;
+          <contentURL> @linkml:Uri ;
+          <format> @linkml:String ;
+          <license> @<License> ?
+       ) ;
+       rdf:type [ <File> ] ?
+    )
+}
+
+<Fungus> CLOSED {
+    (  $<Fungus_tes> (  &<Pathogen_tes> ;
+          rdf:type [ <Pathogen> ] ?
+       ) ;
+       rdf:type [ <Fungus> ] ?
+    )
+}
+
+<GeographicalOrigin>  (
+    CLOSED {
+       (  $<GeographicalOrigin_tes> (  &<Term_tes> ;
+             rdf:type [ <Term> ] ?
+          ) ;
+          rdf:type [ <GeographicalOrigin> ] ?
+       )
+    } OR @<IPLCOrigin>
+)
+
+<Hybridoma> CLOSED {
+    (  $<Hybridoma_tes> (  &<Antibody_tes> ;
+          rdf:type [ <Antibody> ] ? ;
+          <hybridomaDescription> @linkml:String
+       ) ;
+       rdf:type [ <Hybridoma> ] ?
+    )
+}
+
+<IATAClassification> CLOSED {
+    (  $<IATAClassification_tes> (  &<Term_tes> ;
+          rdf:type [ <Term> ] ?
+       ) ;
+       rdf:type [ <IATAClassification> ] ?
+    )
+}
+
+<Image> CLOSED {
+    (  $<Image_tes> (  &<File_tes> ;
+          rdf:type [ <File> ] ? ;
+          <altText> @linkml:String ?
+       ) ;
+       rdf:type [ <Image> ] ?
+    )
+}
+
+<IPLCOrigin> CLOSED {
+    (  $<IPLCOrigin_tes> (  &<GeographicalOrigin_tes> ;
+          rdf:type [ <GeographicalOrigin> ] ?
+       ) ;
+       rdf:type [ <IPLCOrigin> ] ?
+    )
+}
+
+<IsolationHost> CLOSED {
+    (  $<IsolationHost_tes> (  &<Term_tes> ;
+          rdf:type [ <Term> ] ?
+       ) ;
+       rdf:type [ <IsolationHost> ] ?
+    )
+}
+
+<Journal> CLOSED {
+    (  $<Journal_tes> (  &<Term_tes> ;
+          rdf:type [ <Term> ] ?
+       ) ;
+       rdf:type [ <Journal> ] ?
+    )
+}
+
+<Keyword> CLOSED {
+    (  $<Keyword_tes> (  &<Term_tes> ;
+          rdf:type [ <Term> ] ?
+       ) ;
+       rdf:type [ <Keyword> ] ?
+    )
+}
+
+<License> CLOSED {
+    (  $<License_tes> (  &<Nameable_tes> ;
+          rdf:type [ <Nameable> ] ? ;
+          <resourceURL> @linkml:Uri ? ;
+          <licensingOrAttribution> @linkml:String ? ;
+          <logo> @<Image> ?
+       ) ;
+       rdf:type [ <License> ] ?
+    )
+}
+
+<MSDS> CLOSED {
+    (  $<MSDS_tes> (  &<Dataset_tes> ;
+          rdf:type [ <Dataset> ] ? ;
+          <msdsContact> @<ContactPoint> ;
+          <physicalChemicalProperties> @linkml:String ? ;
+          <hazardsIdentification> @linkml:String ? ;
+          <firstAidMeasures> @linkml:String ? ;
+          <fireFightingMeasures> @linkml:String ? ;
+          <accidentalReleaseMeasures> @linkml:String ? ;
+          <handlingAndStorage> @linkml:String ? ;
+          <exposureControlsPersonalProtection> @linkml:String ? ;
+          <stabilityAndReactivity> @linkml:String ? ;
+          <toxicologicalInformation> @linkml:String ? ;
+          <ecologicalInformation> @linkml:String ? ;
+          <disposalConsiderations> @linkml:String ? ;
+          <transportInformation> @linkml:String ? ;
+          <regulatoryInformation> @linkml:String ? ;
+          <furtherInformation> @linkml:String ?
+       ) ;
+       rdf:type [ <MSDS> ] ?
+    )
+}
+
+<Nameable>  (
+    @<Catalogue> OR @<Certification> OR @<ContactPoint> OR @<DataService> OR @<File> OR @<License> OR @<NamedDataset> OR
+    @<PersonOrOrganization>
+)
+
+<Nameable_struct> {
+    (  $<Nameable_tes> (  <name> @linkml:String ;
+          <description> @linkml:String ?
+       ) ;
+       rdf:type [ <Nameable> ] ?
+    )
+}
+
+<NamedDataset>  (
+    @<ProductOrService> OR @<Term>
+)
+
+<NamedDataset_struct> {
+    (  $<NamedDataset_tes> (  &<Nameable_tes> ;
+          rdf:type [ <Nameable> ] ?
+       ) ;
+       rdf:type [ <NamedDataset> ] ?
+    )
+}
+
+<NaturalPartOrigin> CLOSED {
+    (  $<NaturalPartOrigin_tes> (  &<BiologicalPartOrigin_tes> ;
+          rdf:type [ <BiologicalPartOrigin> ] ? ;
+          <countryOfCollection> @<Country> ;
+          <indigenousPoepleAndLocalCommunityOrigin> @<IPLCOrigin> ? ;
+          <collectionDate> @linkml:Datetime ;
+          <beforeDate> @linkml:Boolean ;
+          <reportingToAuthorities> @linkml:String ?
+       ) ;
+       rdf:type [ <NaturalPartOrigin> ] ?
+    )
+}
+
+<NucleicAcid> CLOSED {
+    (  $<NucleicAcid_tes> (  &<Product_tes> ;
+          rdf:type [ <Product> ] ? ;
+          <biologicalMaterialOrigin> @<BiologicalMaterialOrigin> ;
+          <hasGbFileOfTheConstruct> @<Data> * ;
+          <sequence> @<Sequence> + ;
+          <isItAClonedNucleicAcid> @linkml:Boolean ;
+          <clonedIntoPlasmid> @<ExpressionVector> ? ;
+          <pasmidSelection> @<PlasmidSelection> * ;
+          <hasTAG> @<ProteinTag> ;
+          <regionEncompassedInThisProduct> @linkml:String ;
+          <mutationObserved> @linkml:Boolean ;
+          <observedMutations> @linkml:String ? ;
+          <identificationTechnique> @linkml:String ? ;
+          <sequencing> @linkml:String ;
+          <titer> @linkml:String ? ;
+          <sequenceChecked> @linkml:Boolean
+       ) ;
+       rdf:type [ <NucleicAcid> ] ?
+    )
+}
+
+<Organization>  (
+    CLOSED {
+       (  $<Organization_tes> (  &<PersonOrOrganization_tes> ;
+             rdf:type [ <PersonOrOrganization> ] ? ;
+             <alternateName> @<AlternateName> ? ;
+             <country> @<Country> ?
+          ) ;
+          rdf:type [ <Organization> ] ?
+       )
+    } OR @<Provider> OR @<RI>
+)
+
+<Originator> CLOSED {
+    (  $<Originator_tes> (  &<PersonOrOrganization_tes> ;
+          rdf:type [ <PersonOrOrganization> ] ?
+       ) ;
+       rdf:type [ <Originator> ] ?
+    )
+}
+
+<Pathogen>  (
+    @<Bacterium> OR @<Fungus> OR @<Prion> OR @<Protozoan> OR @<Viroid> OR @<Virus>
+)
+
+<Pathogen_struct> {
+    (  $<Pathogen_tes> (  &<Product_tes> ;
+          rdf:type [ <Product> ] ? ;
+          <biologicalMaterialOrigin> @<BiologicalMaterialOrigin> ;
+          <suspectedEpidemiologicalOrigin> @<GeographicalOrigin> * ;
+          <isolationHost> @<IsolationHost> * ;
+          <productionCellLine> @<ProductionCellLine> * ;
+          <propagationHost> @<PropagationHost> * ;
+          <transmissionMethod> @<TransmissionMethod> * ;
+          <sequence> @<Sequence> + ;
+          <cultivability> @linkml:String ;
+          <clinicalInformation> @linkml:String ? ;
+          <identificationTechnique> @linkml:String ? ;
+          <infectivity> @linkml:String ;
+          <infectivityTest> @linkml:String ? ;
+          <isolationTechnique> @linkml:String ? ;
+          <isolationConditions> @linkml:String ? ;
+          <letterOfAuthority> @linkml:String ;
+          <passage> @linkml:String ? ;
+          <sequencing> @linkml:String ;
+          <titer> @linkml:String
+       ) ;
+       rdf:type [ <Pathogen> ] ?
+    )
+}
+
+<PathogenIdentification> CLOSED {
+    (  $<PathogenIdentification_tes> (  &<Dataset_tes> ;
+          rdf:type [ <Dataset> ] ? ;
+          <taxon> @<Taxon> ;
+          <pathogenName> @<CommonName> ;
+          <pathogenType> @linkml:String ;
+          <hostType> @linkml:String * ;
+          <subspecies> @linkml:String ? ;
+          <strain> @linkml:String ? ;
+          <isolate> @linkml:String ? ;
+          <genotype> @linkml:String ? ;
+          <serotype> @linkml:String ? ;
+          <variant> @<Variant> ?
+       ) ;
+       rdf:type [ <PathogenIdentification> ] ?
+    )
+}
+
+<PDBReference> CLOSED {
+    (  $<PDBReference_tes> (  &<Term_tes> ;
+          rdf:type [ <Term> ] ?
+       ) ;
+       rdf:type [ <PDBReference> ] ?
+    )
+}
+
+<Person> CLOSED {
+    (  $<Person_tes> (  &<PersonOrOrganization_tes> ;
+          rdf:type [ <PersonOrOrganization> ] ? ;
+          <oRCIDiD> @linkml:String ?
+       ) ;
+       rdf:type [ <Person> ] ?
+    )
+}
+
+<PersonOrOrganization>  (
+    CLOSED {
+       (  $<PersonOrOrganization_tes> (  &<Nameable_tes> ;
+             rdf:type [ <Nameable> ] ? ;
+             <homePage> @linkml:String ? ;
+             <contactPoint> @<ContactPoint> ? ;
+             <logo> @<Image> ?
+          ) ;
+          rdf:type [ <PersonOrOrganization> ] ?
+       )
+    } OR @<Organization> OR @<Originator> OR @<Person>
+)
+
+<PlasmidSelection> CLOSED {
+    (  $<PlasmidSelection_tes> (  &<Term_tes> ;
+          rdf:type [ <Term> ] ?
+       ) ;
+       rdf:type [ <PlasmidSelection> ] ?
+    )
+}
+
+<Prion> CLOSED {
+    (  $<Prion_tes> (  &<Pathogen_tes> ;
+          rdf:type [ <Pathogen> ] ?
+       ) ;
+       rdf:type [ <Prion> ] ?
+    )
+}
+
+<Product>  (
+    CLOSED {
+       (  $<Product_tes> (  &<ProductOrService_tes> ;
+             rdf:type [ <ProductOrService> ] ? ;
+             <hasIATAClassification> @<IATAClassification> ;
+             <shippingConditions> @linkml:String ;
+             <materialSafetyDataSheet> @<MSDS> ? ;
+             <originator> @<Originator> ? ;
+             <storageConditions> @linkml:String
+          ) ;
+          rdf:type [ <Product> ] ?
+       )
+    } OR @<Antibody> OR @<Bundle> OR @<DetectionKit> OR @<NucleicAcid> OR @<Pathogen> OR @<Protein>
+)
+
+<ProductCategory> CLOSED {
+    (  $<ProductCategory_tes> (  &<Term_tes> ;
+          rdf:type [ <Term> ] ? ;
+          <parentCategory> @<ProductCategory> ?
+       ) ;
+       rdf:type [ <ProductCategory> ] ?
+    )
+}
+
+<ProductionCellLine> CLOSED {
+    (  $<ProductionCellLine_tes> (  &<Term_tes> ;
+          rdf:type [ <Term> ] ?
+       ) ;
+       rdf:type [ <ProductionCellLine> ] ?
+    )
+}
+
+<ProductOrService>  (
+    @<Product> OR @<Service>
+)
+
+<ProductOrService_struct> {
+    (  $<ProductOrService_tes> (  &<NamedDataset_tes> ;
+          rdf:type [ <NamedDataset> ] ? ;
+          <accessPointURL> @linkml:Uri ;
+          <refSKU> @linkml:String ;
+          <unitDefinition> @linkml:String ? ;
+          <category> @<ProductCategory> ;
+          <additionalCategory> @<ProductCategory> * ;
+          <unitCost> @linkml:String ;
+          <qualityGrading> @linkml:String ? ;
+          <pathogenIdentification> @<PathogenIdentification> + ;
+          <relatedDOI> @<DOI> * ;
+          <riskGroup> @<RiskGroup> ? ;
+          <biosafetyRestrictions> @linkml:String ? ;
+          <canItBeUsedToProduceGMO> @linkml:Boolean ? ;
+          <provider> @<Provider> ;
+          <collection> @<Collection> + ;
+          <keywords> @<Keyword> + ;
+          <availability> @linkml:String ;
+          <complementaryDocument> @<Document> * ;
+          <technicalRecommendation> @linkml:String ? ;
+          <productPicture> @<Image> * ;
+          <externalRelatedReference> @<ExternalRelatedReference> * ;
+          <certification> @<Certification> * ;
+          <internalReference> @linkml:String ? ;
+          <note> @linkml:String ? ;
+          <contactPoint> @<ContactPoint> ?
+       ) ;
+       rdf:type [ <ProductOrService> ] ?
+    )
+}
+
+<PropagationHost> CLOSED {
+    (  $<PropagationHost_tes> (  &<Term_tes> ;
+          rdf:type [ <Term> ] ?
+       ) ;
+       rdf:type [ <PropagationHost> ] ?
+    )
+}
+
+<Protein> CLOSED {
+    (  $<Protein_tes> (  &<Product_tes> ;
+          rdf:type [ <Product> ] ? ;
+          <biologicalMaterialOrigin> @<BiologicalMaterialOrigin> ;
+          <sequence> @<Sequence> + ;
+          <relatedPDB> @<PDBReference> * ;
+          <specialFeature> @<SpecialFeature> * ;
+          <proteinTAG> @<ProteinTag> * ;
+          <domain> @linkml:String * ;
+          <expressedAs> @linkml:String * ;
+          <inclusionBodiesType> @linkml:String * ;
+          <expressionSystem> @linkml:String * ;
+          <functionalCharacterization> @linkml:String * ;
+          <functionalTechnicalDescription> @linkml:String * ;
+          <proteinPurification> @linkml:String * ;
+          <theTAGStatusOfTheSolubilizedProtein> @linkml:String * ;
+          <typeOfFunctionalCharacterization> @linkml:String *
+       ) ;
+       rdf:type [ <Protein> ] ?
+    )
+}
+
+<ProteinTag> CLOSED {
+    (  $<ProteinTag_tes> (  &<Term_tes> ;
+          rdf:type [ <Term> ] ?
+       ) ;
+       rdf:type [ <ProteinTag> ] ?
+    )
+}
+
+<Protozoan> CLOSED {
+    (  $<Protozoan_tes> (  &<Pathogen_tes> ;
+          rdf:type [ <Pathogen> ] ?
+       ) ;
+       rdf:type [ <Protozoan> ] ?
+    )
+}
+
+<Provider> CLOSED {
+    (  $<Provider_tes> (  &<Organization_tes> ;
+          rdf:type [ <Organization> ] ? ;
+          <memberOfRI> @<RI> *
+       ) ;
+       rdf:type [ <Provider> ] ?
+    )
+}
+
+<Publication> CLOSED {
+    (  $<Publication_tes> (  &<Dataset_tes> ;
+          rdf:type [ <Dataset> ] ? ;
+          <title> @linkml:String ;
+          <authors> @linkml:String ;
+          <abstract> @linkml:String ;
+          <relatedDOI> @<DOI> ;
+          <journal> @<Journal> ?
+       ) ;
+       rdf:type [ <Publication> ] ?
+    )
+}
+
+<RecombinantPartIdentification> CLOSED {
+    (  $<RecombinantPartIdentification_tes> (  <partIdentification> @linkml:String ;
+          <sequence> @<Sequence> +
+       ) ;
+       rdf:type [ <RecombinantPartIdentification> ] ?
+    )
+}
+
+<RI> CLOSED {
+    (  $<RI_tes> (  &<Organization_tes> ;
+          rdf:type [ <Organization> ] ?
+       ) ;
+       rdf:type [ <RI> ] ?
+    )
+}
+
+<RiskGroup> CLOSED {
+    (  $<RiskGroup_tes> (  &<Term_tes> ;
+          rdf:type [ <Term> ] ?
+       ) ;
+       rdf:type [ <RiskGroup> ] ?
+    )
+}
+
+<Sequence> CLOSED {
+    (  $<Sequence_tes> (  &<Dataset_tes> ;
+          rdf:type [ <Dataset> ] ? ;
+          <sequenceReference> @<SequenceReference> * ;
+          <sequenceFASTA> @linkml:String ?
+       ) ;
+       rdf:type [ <Sequence> ] ?
+    )
+}
+
+<SequenceReference> CLOSED {
+    (  $<SequenceReference_tes> (  &<Dataset_tes> ;
+          rdf:type [ <Dataset> ] ? ;
+          <accessionNumber> @linkml:String ;
+          <sequenceProvider> @linkml:String
+       ) ;
+       rdf:type [ <SequenceReference> ] ?
+    )
+}
+
+<Service> CLOSED {
+    (  $<Service_tes> (  &<ProductOrService_tes> ;
+          rdf:type [ <ProductOrService> ] ? ;
+          <modelSpecies> @linkml:String ? ;
+          <modelType> @linkml:String ?
+       ) ;
+       rdf:type [ <Service> ] ?
+    )
+}
+
+<SpecialFeature> CLOSED {
+    (  $<SpecialFeature_tes> (  &<Term_tes> ;
+          rdf:type [ <Term> ] ?
+       ) ;
+       rdf:type [ <SpecialFeature> ] ?
+    )
+}
+
+<SyntheticPartOrigin> CLOSED {
+    (  $<SyntheticPartOrigin_tes> (  &<BiologicalPartOrigin_tes> ;
+          rdf:type [ <BiologicalPartOrigin> ] ? ;
+          <modificationsFromTheReferenceSequences> @linkml:Boolean ;
+          <descriptionOfModificationsMadeFromTheReferenceSequences> @linkml:String ?
+       ) ;
+       rdf:type [ <SyntheticPartOrigin> ] ?
+    )
+}
+
+<Taxon> CLOSED {
+    (  $<Taxon_tes> (  &<Term_tes> ;
+          rdf:type [ <Term> ] ? ;
+          <taxonomy> @<Taxonomy> * ;
+          <parentTaxon> @<Taxon> ;
+          <rank> @<TaxonomicRank> ;
+          <previouslyKnownAs> @<Taxon> * ;
+          <externalEquivalentTaxon> @<Taxon> * ;
+          <taxonomicID> @linkml:String ;
+          <taxonomicNodeID> @linkml:String ?
+       ) ;
+       rdf:type [ <Taxon> ] ?
+    )
+}
+
+<TaxonomicRank> CLOSED {
+    (  $<TaxonomicRank_tes> (  &<Term_tes> ;
+          rdf:type [ <Term> ] ? ;
+          <taxonomy> @<Taxonomy> *
+       ) ;
+       rdf:type [ <TaxonomicRank> ] ?
+    )
+}
+
+<Taxonomy> CLOSED {
+    (  $<Taxonomy_tes> (  &<Catalogue_tes> ;
+          rdf:type [ <Catalogue> ] ? ;
+          <taxon> @<Taxon> * ;
+          <taxonDataProvider> @<DataProvider> ? ;
+          <version> @<Version> ;
+          <versionDataProvider> @<DataProvider> ;
+          <rank> @<TaxonomicRank> * ;
+          <rankDataProvider> @<DataProvider> ?
+       ) ;
+       rdf:type [ <Taxonomy> ] ?
+    )
+}
+
+<Term>  (
+    @<AlternateName> OR @<CommonName> OR @<Country> OR @<DOI> OR @<ExpressionVector> OR @<GeographicalOrigin> OR
+    @<IATAClassification> OR @<IsolationHost> OR @<Journal> OR @<Keyword> OR @<PDBReference> OR @<PlasmidSelection> OR
+    @<ProductCategory> OR @<ProductionCellLine> OR @<PropagationHost> OR @<ProteinTag> OR @<RiskGroup> OR @<SpecialFeature> OR
+    @<Taxon> OR @<TaxonomicRank> OR @<TransmissionMethod>
+)
+
+<Term_struct> {
+    (  $<Term_tes> (  &<NamedDataset_tes> ;
+          rdf:type [ <NamedDataset> ] ? ;
+          <weight> @linkml:Integer ;
+          <inVocabulary> @<Vocabulary>
+       ) ;
+       rdf:type [ <Term> ] ?
+    )
+}
+
+<TransmissionMethod> CLOSED {
+    (  $<TransmissionMethod_tes> (  &<Term_tes> ;
+          rdf:type [ <Term> ] ?
+       ) ;
+       rdf:type [ <TransmissionMethod> ] ?
+    )
+}
+
+<Variant> CLOSED {
+    (  $<Variant_tes> (  &<CommonName_tes> ;
+          rdf:type [ <CommonName> ] ?
+       ) ;
+       rdf:type [ <Variant> ] ?
+    )
+}
+
+<Version> CLOSED {
+    (  $<Version_tes> (  &<Dataset_tes> ;
+          rdf:type [ <Dataset> ] ? ;
+          <ID> @linkml:String ;
+          <versionOf> @linkml:Uri
+       ) ;
+       rdf:type [ <Version> ] ?
+    )
+}
+
+<Video> CLOSED {
+    (  $<Video_tes> (  &<File_tes> ;
+          rdf:type [ <File> ] ?
+       ) ;
+       rdf:type [ <Video> ] ?
+    )
+}
+
+<Viroid> CLOSED {
+    (  $<Viroid_tes> (  &<Pathogen_tes> ;
+          rdf:type [ <Pathogen> ] ?
+       ) ;
+       rdf:type [ <Viroid> ] ?
+    )
+}
+
+<Virus> CLOSED {
+    (  $<Virus_tes> (  &<Pathogen_tes> ;
+          rdf:type [ <Pathogen> ] ? ;
+          <coInfectingViruses> @<VirusName> * ;
+          <contaminationWithCoInfectingViruses> @linkml:Boolean ;
+          <mycoplasmicContent> @linkml:Boolean
+       ) ;
+       rdf:type [ <Virus> ] ?
+    )
+}
+
+<VirusName> CLOSED {
+    (  $<VirusName_tes> (  &<CommonName_tes> ;
+          rdf:type [ <CommonName> ] ?
+       ) ;
+       rdf:type [ <VirusName> ] ?
+    )
+}
+
+<Vocabulary> CLOSED {
+    (  $<Vocabulary_tes> (  &<Catalogue_tes> ;
+          rdf:type [ <Catalogue> ] ? ;
+          <termDataProvider> @<DataProvider> ? ;
+          <term> @<Term> *
+       ) ;
+       rdf:type [ <Vocabulary> ] ?
+    )
+}
+
