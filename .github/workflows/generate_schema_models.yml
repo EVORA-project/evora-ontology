@@ -1,0 +1,74 @@
+name: CI - Build schema models from last metadata file version
+
+on:
+  repository_dispatch:
+  workflow_dispatch:
+      inputs:
+          version:
+              description: 'Google Sheet metadata file version asking for Sync'
+              required: false
+              type: string
+          commitMessage:
+              description: 'User commit message explaining latest modifications to the metadata'
+              required: false
+              type: string
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.WORKFLOW_GIT_ACCESS_TOKEN }}
+          
+      - name: Create required paths if not exist
+        run: mkdir -p models models/owl
+
+      - name: update metadata version
+        if: ${{ inputs.version != ''}}
+        run: echo ${{ inputs.version }} > metadata_version
+        
+      - name: Create LinkML schema from the project s googlesheet of metadata
+        run: |
+          docker run --rm -v $(pwd):/workdir -u $(id -u):$(id -g) evoratools/schemasheets:0.3.1 \
+          sheets2linkml --gsheet-id 1zcyNKuhkpH-0FqEGSt6UwHAiSYzsUUSkHYcDOYz67zI \
+          --name EVORA CompleteList Prefixes \
+          -o models/evora_schema.yaml
+          
+      - uses: actions/upload-artifact@v4
+        with:
+          name: evora-schema.yaml
+          path: models/evora_schema.yaml
+          compression-level: 9 # maximum compression
+          
+      # Generate owl ahead of project generation to avoid inclusion of linkml datatypes in owl
+      - name: Generate project owl ttl file with LinkML
+        run: |
+          docker run --rm -v $(pwd):/workdir -u $(id -u):$(id -g) evoratools/schemasheets:0.3.1 \
+          linkml generate owl models/evora_schema.yaml > models/owl/evora_ontology.owl.ttl
+          
+      - uses: actions/upload-artifact@v4
+        with:
+          name: evora-ontology.owl.ttl
+          path: models/owl/evora_ontology.owl.ttl
+          compression-level: 9 # maximum compression
+
+      - name: Generate project all models file with LinkML except owl 
+        run: |
+          docker run --rm -v $(pwd):/workdir -u $(id -u):$(id -g) evoratools/schemasheets:0.3.1 \
+          linkml generate project --exclude owl -d models models/evora_schema.yaml 
+
+
+      - name: GIT commit and push all changed files
+        env: 
+          CI_COMMIT_MESSAGE: "CI Build: Synchronisation of the project's models with the google sheet metadata version  ${{ inputs.version}}"
+          USER_COMMIT_MESSAGE: ${{inputs.commitMessage}}
+          CI_COMMIT_AUTHOR: GithubAction CI
+        run: |
+          git config --global user.name "${{ env.CI_COMMIT_AUTHOR }}"
+          git config --global user.email "username@users.noreply.github.com"
+          git add -A
+          git commit -m "${{ env.CI_COMMIT_MESSAGE }}" -m "${{ env.USER_COMMIT_MESSAGE }}"
+          git push
+        
