@@ -1,0 +1,1269 @@
+# metamodel_version: 1.7.0
+type AlternateName
+  {
+    name: String!
+    description: String
+    weight: Integer!
+    inVocabulary: Vocabulary!
+    alternateName: [AlternateName]
+    sourceOfInformation: [String]
+  }
+
+type Antibody
+  {
+    name: String!
+    description: String
+    accessPointURL: Uri!
+    refSKU: String!
+    unitDefinition: String
+    category: ProductCategory!
+    additionalCategory: [ProductCategory]
+    unitCost: String!
+    qualityGrading: String
+    pathogenIdentification: [PathogenIdentification]!
+    relatedDOI: [DOI]
+    riskGroup: RiskGroup
+    biosafetyRestrictions: String
+    canItBeUsedToProduceGMO: Boolean
+    provider: Provider!
+    collection: [Collection]!
+    keywords: [Keyword]!
+    availability: String!
+    complementaryDocument: [Document]
+    technicalRecommendation: String
+    productPicture: [Image]
+    externalRelatedReference: [ExternalRelatedReference]
+    certification: [Certification]
+    internalReference: String
+    note: String
+    contactPoint: ContactPoint
+    hasIATAClassification: IATAClassification!
+    shippingConditions: String!
+    materialSafetyDataSheet: MSDS
+    originator: Originator
+    storageConditions: String!
+    productionSystem: String
+    antibodyPurifiedByAffinity: Boolean!
+    specificityDocumented: Boolean!
+    targetedAntigen: String!
+    sequenceReference: [SequenceReference]
+  }
+
+type Audio
+  {
+    name: String!
+    description: String
+    contentURL: Uri!
+    format: String!
+    license: License
+  }
+
+type Bacterium
+  {
+    name: String!
+    description: String
+    accessPointURL: Uri!
+    refSKU: String!
+    unitDefinition: String
+    category: ProductCategory!
+    additionalCategory: [ProductCategory]
+    unitCost: String!
+    qualityGrading: String
+    pathogenIdentification: [PathogenIdentification]!
+    relatedDOI: [DOI]
+    riskGroup: RiskGroup
+    biosafetyRestrictions: String
+    canItBeUsedToProduceGMO: Boolean
+    provider: Provider!
+    collection: [Collection]!
+    keywords: [Keyword]!
+    availability: String!
+    complementaryDocument: [Document]
+    technicalRecommendation: String
+    productPicture: [Image]
+    externalRelatedReference: [ExternalRelatedReference]
+    certification: [Certification]
+    internalReference: String
+    note: String
+    contactPoint: ContactPoint
+    hasIATAClassification: IATAClassification!
+    shippingConditions: String!
+    materialSafetyDataSheet: MSDS
+    originator: Originator
+    storageConditions: String!
+    biologicalMaterialOrigin: BiologicalMaterialOrigin!
+    suspectedEpidemiologicalOrigin: [GeographicalOrigin]
+    isolationHost: [IsolationHost]
+    productionCellLine: [ProductionCellLine]
+    propagationHost: [PropagationHost]
+    transmissionMethod: [TransmissionMethod]
+    sequence: [Sequence]!
+    cultivability: String!
+    clinicalInformation: String
+    identificationTechnique: String
+    infectivity: String!
+    infectivityTest: String
+    isolationTechnique: String
+    isolationConditions: String
+    letterOfAuthority: String!
+    passage: String
+    sequencing: String!
+    titer: String!
+  }
+
+type BiologicalMaterialOrigin
+  {
+    recombinantMaterial: Boolean!
+    biologicalSourceType: Boolean!
+    biologicalPartOrigin: [BiologicalPartOrigin]!
+    thirdPartyDistributionConsent: Boolean
+    usageRestrictions: String
+  }
+
+interface BiologicalPartOrigin
+  {
+    recombinantPartIdentification: RecombinantPartIdentification
+  }
+
+type Bundle
+  {
+    name: String!
+    description: String
+    accessPointURL: Uri!
+    refSKU: String!
+    unitDefinition: String
+    category: ProductCategory!
+    additionalCategory: [ProductCategory]
+    unitCost: String!
+    qualityGrading: String
+    pathogenIdentification: [PathogenIdentification]!
+    relatedDOI: [DOI]
+    riskGroup: RiskGroup
+    biosafetyRestrictions: String
+    canItBeUsedToProduceGMO: Boolean
+    provider: Provider!
+    collection: [Collection]!
+    keywords: [Keyword]!
+    availability: String!
+    technicalRecommendation: String
+    productPicture: [Image]
+    externalRelatedReference: [ExternalRelatedReference]
+    certification: [Certification]
+    internalReference: String
+    note: String
+    contactPoint: ContactPoint
+    hasIATAClassification: IATAClassification!
+    shippingConditions: String!
+    materialSafetyDataSheet: MSDS
+    originator: Originator
+    storageConditions: String!
+    productsOfTheBundle: [Product]!
+    complementaryDocument: String
+  }
+
+interface Catalogue
+  {
+    name: String!
+    description: String
+  }
+
+type Certification
+  {
+    name: String!
+    description: String
+    logo: Image
+    certificationDocument: [Document]
+    resourceURL: Uri
+  }
+
+type Collection
+  {
+    name: String!
+    description: String
+    collectionItem: [ProductOrService]
+    collectionDataProvider: DataProvider
+  }
+
+type CommonName
+  {
+    name: String!
+    description: String
+    weight: Integer!
+    inVocabulary: Vocabulary!
+    alternateName: [AlternateName]
+    sourceOfInformation: [String]
+  }
+
+type ContactPoint
+  {
+    name: String!
+    description: String
+    email: String
+    telephone: String
+    streetAddress: String
+    addressLocality: String
+    addressRegion: String
+    postalCode: String
+    addressCountry: Country
+    oRCIDiD: String
+  }
+
+type Country
+  {
+    name: String!
+    description: String
+    weight: Integer!
+    inVocabulary: Vocabulary!
+    alpha2Code: String!
+  }
+
+type Data
+  {
+    name: String!
+    description: String
+    contentURL: Uri!
+    format: String!
+    license: License
+  }
+
+type DataProvider
+  {
+    name: String!
+    description: String
+    license: License
+    loginRequestMethod: String
+    loginURL: Uri
+    loginTokenName: String
+    queryURL: Uri!
+    queryMethod: String!
+    contentType: String!
+    providedEntityType: String!
+    weight: Integer!
+  }
+
+interface DataService
+  {
+    name: String!
+    description: String
+  }
+
+interface Dataset
+  {
+  }
+
+type DetectionKit
+  {
+    name: String!
+    description: String
+    accessPointURL: Uri!
+    refSKU: String!
+    unitDefinition: String
+    category: ProductCategory!
+    additionalCategory: [ProductCategory]
+    unitCost: String!
+    qualityGrading: String
+    pathogenIdentification: [PathogenIdentification]!
+    relatedDOI: [DOI]
+    riskGroup: RiskGroup
+    biosafetyRestrictions: String
+    canItBeUsedToProduceGMO: Boolean
+    provider: Provider!
+    collection: [Collection]!
+    keywords: [Keyword]!
+    availability: String!
+    complementaryDocument: [Document]
+    technicalRecommendation: String
+    productPicture: [Image]
+    externalRelatedReference: [ExternalRelatedReference]
+    certification: [Certification]
+    internalReference: String
+    note: String
+    contactPoint: ContactPoint
+    hasIATAClassification: IATAClassification!
+    shippingConditions: String!
+    materialSafetyDataSheet: MSDS
+    originator: Originator
+    storageConditions: String!
+    hasSOPFile: [File]
+    specificityDocumented: Boolean!
+    specificity: String
+    targetedRegion: String
+  }
+
+type Document
+  {
+    name: String!
+    description: String
+    contentURL: Uri!
+    format: String!
+    license: License
+  }
+
+type DOI
+  {
+    name: String!
+    description: String
+    weight: Integer!
+    inVocabulary: Vocabulary!
+  }
+
+type ExpressionVector
+  {
+    name: String!
+    description: String
+    weight: Integer!
+    inVocabulary: Vocabulary!
+  }
+
+type ExternalRelatedReference
+  {
+    reference: String!
+    referenceLabel: String!
+    referenceProviderPrefix: String!
+    referenceProviderName: String!
+  }
+
+interface File
+  {
+    name: String!
+    description: String
+    contentURL: Uri!
+    format: String!
+    license: License
+  }
+
+type Fungus
+  {
+    name: String!
+    description: String
+    accessPointURL: Uri!
+    refSKU: String!
+    unitDefinition: String
+    category: ProductCategory!
+    additionalCategory: [ProductCategory]
+    unitCost: String!
+    qualityGrading: String
+    pathogenIdentification: [PathogenIdentification]!
+    relatedDOI: [DOI]
+    riskGroup: RiskGroup
+    biosafetyRestrictions: String
+    canItBeUsedToProduceGMO: Boolean
+    provider: Provider!
+    collection: [Collection]!
+    keywords: [Keyword]!
+    availability: String!
+    complementaryDocument: [Document]
+    technicalRecommendation: String
+    productPicture: [Image]
+    externalRelatedReference: [ExternalRelatedReference]
+    certification: [Certification]
+    internalReference: String
+    note: String
+    contactPoint: ContactPoint
+    hasIATAClassification: IATAClassification!
+    shippingConditions: String!
+    materialSafetyDataSheet: MSDS
+    originator: Originator
+    storageConditions: String!
+    biologicalMaterialOrigin: BiologicalMaterialOrigin!
+    suspectedEpidemiologicalOrigin: [GeographicalOrigin]
+    isolationHost: [IsolationHost]
+    productionCellLine: [ProductionCellLine]
+    propagationHost: [PropagationHost]
+    transmissionMethod: [TransmissionMethod]
+    sequence: [Sequence]!
+    cultivability: String!
+    clinicalInformation: String
+    identificationTechnique: String
+    infectivity: String!
+    infectivityTest: String
+    isolationTechnique: String
+    isolationConditions: String
+    letterOfAuthority: String!
+    passage: String
+    sequencing: String!
+    titer: String!
+  }
+
+type GeographicalOrigin
+  {
+    name: String!
+    description: String
+    weight: Integer!
+    inVocabulary: Vocabulary!
+  }
+
+type Hybridoma
+  {
+    name: String!
+    description: String
+    accessPointURL: Uri!
+    refSKU: String!
+    unitDefinition: String
+    category: ProductCategory!
+    additionalCategory: [ProductCategory]
+    unitCost: String!
+    qualityGrading: String
+    pathogenIdentification: [PathogenIdentification]!
+    relatedDOI: [DOI]
+    riskGroup: RiskGroup
+    biosafetyRestrictions: String
+    canItBeUsedToProduceGMO: Boolean
+    provider: Provider!
+    collection: [Collection]!
+    keywords: [Keyword]!
+    availability: String!
+    complementaryDocument: [Document]
+    technicalRecommendation: String
+    productPicture: [Image]
+    externalRelatedReference: [ExternalRelatedReference]
+    certification: [Certification]
+    internalReference: String
+    note: String
+    contactPoint: ContactPoint
+    hasIATAClassification: IATAClassification!
+    shippingConditions: String!
+    materialSafetyDataSheet: MSDS
+    originator: Originator
+    storageConditions: String!
+    productionSystem: String
+    antibodyPurifiedByAffinity: Boolean!
+    specificityDocumented: Boolean!
+    targetedAntigen: String!
+    sequenceReference: [SequenceReference]
+    hybridomaDescription: String!
+  }
+
+type IATAClassification
+  {
+    name: String!
+    description: String
+    weight: Integer!
+    inVocabulary: Vocabulary!
+  }
+
+type Image
+  {
+    name: String!
+    description: String
+    contentURL: Uri!
+    format: String!
+    license: License
+    altText: String
+  }
+
+type IPLCOrigin
+  {
+    name: String!
+    description: String
+    weight: Integer!
+    inVocabulary: Vocabulary!
+  }
+
+type IsolationHost
+  {
+    name: String!
+    description: String
+    weight: Integer!
+    inVocabulary: Vocabulary!
+  }
+
+type Journal
+  {
+    name: String!
+    description: String
+    weight: Integer!
+    inVocabulary: Vocabulary!
+  }
+
+type Keyword
+  {
+    name: String!
+    description: String
+    weight: Integer!
+    inVocabulary: Vocabulary!
+  }
+
+type License
+  {
+    name: String!
+    description: String
+    resourceURL: Uri
+    licensingOrAttribution: String
+    logo: Image
+  }
+
+type MSDS
+  {
+    msdsContact: ContactPoint!
+    physicalChemicalProperties: String
+    hazardsIdentification: String
+    firstAidMeasures: String
+    fireFightingMeasures: String
+    accidentalReleaseMeasures: String
+    handlingAndStorage: String
+    exposureControlsPersonalProtection: String
+    stabilityAndReactivity: String
+    toxicologicalInformation: String
+    ecologicalInformation: String
+    disposalConsiderations: String
+    transportInformation: String
+    regulatoryInformation: String
+    furtherInformation: String
+  }
+
+interface Nameable
+  {
+    name: String!
+    description: String
+  }
+
+interface NamedDataset
+  {
+    name: String!
+    description: String
+  }
+
+type NaturalPartOrigin
+  {
+    recombinantPartIdentification: RecombinantPartIdentification
+    countryOfCollection: Country!
+    indigenousPoepleAndLocalCommunityOrigin: IPLCOrigin
+    collectionDate: Datetime!
+    beforeDate: Boolean!
+    reportingToAuthorities: String
+  }
+
+type NucleicAcid
+  {
+    name: String!
+    description: String
+    accessPointURL: Uri!
+    refSKU: String!
+    unitDefinition: String
+    category: ProductCategory!
+    additionalCategory: [ProductCategory]
+    unitCost: String!
+    qualityGrading: String
+    pathogenIdentification: [PathogenIdentification]!
+    relatedDOI: [DOI]
+    riskGroup: RiskGroup
+    biosafetyRestrictions: String
+    canItBeUsedToProduceGMO: Boolean
+    provider: Provider!
+    collection: [Collection]!
+    keywords: [Keyword]!
+    availability: String!
+    complementaryDocument: [Document]
+    technicalRecommendation: String
+    productPicture: [Image]
+    externalRelatedReference: [ExternalRelatedReference]
+    certification: [Certification]
+    internalReference: String
+    note: String
+    contactPoint: ContactPoint
+    hasIATAClassification: IATAClassification!
+    shippingConditions: String!
+    materialSafetyDataSheet: MSDS
+    originator: Originator
+    storageConditions: String!
+    biologicalMaterialOrigin: BiologicalMaterialOrigin!
+    hasGbFileOfTheConstruct: [Data]
+    sequence: [Sequence]!
+    isItAClonedNucleicAcid: Boolean!
+    clonedIntoPlasmid: ExpressionVector
+    pasmidSelection: [PlasmidSelection]
+    hasTAG: ProteinTag!
+    regionEncompassedInThisProduct: String!
+    mutationObserved: Boolean!
+    observedMutations: String
+    identificationTechnique: String
+    sequencing: String!
+    titer: String
+    sequenceChecked: Boolean!
+  }
+
+type Organization
+  {
+    name: String!
+    description: String
+    homePage: String
+    contactPoint: ContactPoint
+    logo: Image
+    alternateName: AlternateName
+    country: Country
+  }
+
+type Originator
+  {
+    name: String!
+    description: String
+    homePage: String
+    contactPoint: ContactPoint
+    logo: Image
+  }
+
+interface Pathogen
+  {
+    name: String!
+    description: String
+    accessPointURL: Uri!
+    refSKU: String!
+    unitDefinition: String
+    category: ProductCategory!
+    additionalCategory: [ProductCategory]
+    unitCost: String!
+    qualityGrading: String
+    pathogenIdentification: [PathogenIdentification]!
+    relatedDOI: [DOI]
+    riskGroup: RiskGroup
+    biosafetyRestrictions: String
+    canItBeUsedToProduceGMO: Boolean
+    provider: Provider!
+    collection: [Collection]!
+    keywords: [Keyword]!
+    availability: String!
+    complementaryDocument: [Document]
+    technicalRecommendation: String
+    productPicture: [Image]
+    externalRelatedReference: [ExternalRelatedReference]
+    certification: [Certification]
+    internalReference: String
+    note: String
+    contactPoint: ContactPoint
+    hasIATAClassification: IATAClassification!
+    shippingConditions: String!
+    materialSafetyDataSheet: MSDS
+    originator: Originator
+    storageConditions: String!
+    biologicalMaterialOrigin: BiologicalMaterialOrigin!
+    suspectedEpidemiologicalOrigin: [GeographicalOrigin]
+    isolationHost: [IsolationHost]
+    productionCellLine: [ProductionCellLine]
+    propagationHost: [PropagationHost]
+    transmissionMethod: [TransmissionMethod]
+    sequence: [Sequence]!
+    cultivability: String!
+    clinicalInformation: String
+    identificationTechnique: String
+    infectivity: String!
+    infectivityTest: String
+    isolationTechnique: String
+    isolationConditions: String
+    letterOfAuthority: String!
+    passage: String
+    sequencing: String!
+    titer: String!
+  }
+
+type PathogenIdentification
+  {
+    taxon: Taxon!
+    pathogenName: CommonName!
+    pathogenType: String!
+    hostType: [String]
+    subspecies: String
+    strain: String
+    isolate: String
+    genotype: String
+    serotype: String
+    variant: Variant
+  }
+
+type PDBReference
+  {
+    name: String!
+    description: String
+    weight: Integer!
+    inVocabulary: Vocabulary!
+  }
+
+type Person
+  {
+    name: String!
+    description: String
+    homePage: String
+    contactPoint: ContactPoint
+    logo: Image
+    oRCIDiD: String
+  }
+
+type PersonOrOrganization
+  {
+    name: String!
+    description: String
+    homePage: String
+    contactPoint: ContactPoint
+    logo: Image
+  }
+
+type PlasmidSelection
+  {
+    name: String!
+    description: String
+    weight: Integer!
+    inVocabulary: Vocabulary!
+  }
+
+type Prion
+  {
+    name: String!
+    description: String
+    accessPointURL: Uri!
+    refSKU: String!
+    unitDefinition: String
+    category: ProductCategory!
+    additionalCategory: [ProductCategory]
+    unitCost: String!
+    qualityGrading: String
+    pathogenIdentification: [PathogenIdentification]!
+    relatedDOI: [DOI]
+    riskGroup: RiskGroup
+    biosafetyRestrictions: String
+    canItBeUsedToProduceGMO: Boolean
+    provider: Provider!
+    collection: [Collection]!
+    keywords: [Keyword]!
+    availability: String!
+    complementaryDocument: [Document]
+    technicalRecommendation: String
+    productPicture: [Image]
+    externalRelatedReference: [ExternalRelatedReference]
+    certification: [Certification]
+    internalReference: String
+    note: String
+    contactPoint: ContactPoint
+    hasIATAClassification: IATAClassification!
+    shippingConditions: String!
+    materialSafetyDataSheet: MSDS
+    originator: Originator
+    storageConditions: String!
+    biologicalMaterialOrigin: BiologicalMaterialOrigin!
+    suspectedEpidemiologicalOrigin: [GeographicalOrigin]
+    isolationHost: [IsolationHost]
+    productionCellLine: [ProductionCellLine]
+    propagationHost: [PropagationHost]
+    transmissionMethod: [TransmissionMethod]
+    sequence: [Sequence]!
+    cultivability: String!
+    clinicalInformation: String
+    identificationTechnique: String
+    infectivity: String!
+    infectivityTest: String
+    isolationTechnique: String
+    isolationConditions: String
+    letterOfAuthority: String!
+    passage: String
+    sequencing: String!
+    titer: String!
+  }
+
+type Product
+  {
+    name: String!
+    description: String
+    accessPointURL: Uri!
+    refSKU: String!
+    unitDefinition: String
+    category: ProductCategory!
+    additionalCategory: [ProductCategory]
+    unitCost: String!
+    qualityGrading: String
+    pathogenIdentification: [PathogenIdentification]!
+    relatedDOI: [DOI]
+    riskGroup: RiskGroup
+    biosafetyRestrictions: String
+    canItBeUsedToProduceGMO: Boolean
+    provider: Provider!
+    collection: [Collection]!
+    keywords: [Keyword]!
+    availability: String!
+    complementaryDocument: [Document]
+    technicalRecommendation: String
+    productPicture: [Image]
+    externalRelatedReference: [ExternalRelatedReference]
+    certification: [Certification]
+    internalReference: String
+    note: String
+    contactPoint: ContactPoint
+    hasIATAClassification: IATAClassification!
+    shippingConditions: String!
+    materialSafetyDataSheet: MSDS
+    originator: Originator
+    storageConditions: String!
+  }
+
+type ProductCategory
+  {
+    name: String!
+    description: String
+    weight: Integer!
+    inVocabulary: Vocabulary!
+    parentCategory: ProductCategory
+  }
+
+type ProductionCellLine
+  {
+    name: String!
+    description: String
+    weight: Integer!
+    inVocabulary: Vocabulary!
+  }
+
+interface ProductOrService
+  {
+    name: String!
+    description: String
+    accessPointURL: Uri!
+    refSKU: String!
+    unitDefinition: String
+    category: ProductCategory!
+    additionalCategory: [ProductCategory]
+    unitCost: String!
+    qualityGrading: String
+    pathogenIdentification: [PathogenIdentification]!
+    relatedDOI: [DOI]
+    riskGroup: RiskGroup
+    biosafetyRestrictions: String
+    canItBeUsedToProduceGMO: Boolean
+    provider: Provider!
+    collection: [Collection]!
+    keywords: [Keyword]!
+    availability: String!
+    complementaryDocument: [Document]
+    technicalRecommendation: String
+    productPicture: [Image]
+    externalRelatedReference: [ExternalRelatedReference]
+    certification: [Certification]
+    internalReference: String
+    note: String
+    contactPoint: ContactPoint
+  }
+
+type PropagationHost
+  {
+    name: String!
+    description: String
+    weight: Integer!
+    inVocabulary: Vocabulary!
+  }
+
+type Protein
+  {
+    name: String!
+    description: String
+    accessPointURL: Uri!
+    refSKU: String!
+    unitDefinition: String
+    category: ProductCategory!
+    additionalCategory: [ProductCategory]
+    unitCost: String!
+    qualityGrading: String
+    pathogenIdentification: [PathogenIdentification]!
+    relatedDOI: [DOI]
+    riskGroup: RiskGroup
+    biosafetyRestrictions: String
+    canItBeUsedToProduceGMO: Boolean
+    provider: Provider!
+    collection: [Collection]!
+    keywords: [Keyword]!
+    availability: String!
+    complementaryDocument: [Document]
+    technicalRecommendation: String
+    productPicture: [Image]
+    externalRelatedReference: [ExternalRelatedReference]
+    certification: [Certification]
+    internalReference: String
+    note: String
+    contactPoint: ContactPoint
+    hasIATAClassification: IATAClassification!
+    shippingConditions: String!
+    materialSafetyDataSheet: MSDS
+    originator: Originator
+    storageConditions: String!
+    biologicalMaterialOrigin: BiologicalMaterialOrigin!
+    sequence: [Sequence]!
+    relatedPDB: [PDBReference]
+    specialFeature: [SpecialFeature]
+    proteinTAG: [ProteinTag]
+    domain: [String]
+    expressedAs: [String]
+    inclusionBodiesType: [String]
+    expressionSystem: [String]
+    functionalCharacterization: [String]
+    functionalTechnicalDescription: [String]
+    proteinPurification: [String]
+    theTAGStatusOfTheSolubilizedProtein: [String]
+    typeOfFunctionalCharacterization: [String]
+  }
+
+type ProteinTag
+  {
+    name: String!
+    description: String
+    weight: Integer!
+    inVocabulary: Vocabulary!
+  }
+
+type Protozoan
+  {
+    name: String!
+    description: String
+    accessPointURL: Uri!
+    refSKU: String!
+    unitDefinition: String
+    category: ProductCategory!
+    additionalCategory: [ProductCategory]
+    unitCost: String!
+    qualityGrading: String
+    pathogenIdentification: [PathogenIdentification]!
+    relatedDOI: [DOI]
+    riskGroup: RiskGroup
+    biosafetyRestrictions: String
+    canItBeUsedToProduceGMO: Boolean
+    provider: Provider!
+    collection: [Collection]!
+    keywords: [Keyword]!
+    availability: String!
+    complementaryDocument: [Document]
+    technicalRecommendation: String
+    productPicture: [Image]
+    externalRelatedReference: [ExternalRelatedReference]
+    certification: [Certification]
+    internalReference: String
+    note: String
+    contactPoint: ContactPoint
+    hasIATAClassification: IATAClassification!
+    shippingConditions: String!
+    materialSafetyDataSheet: MSDS
+    originator: Originator
+    storageConditions: String!
+    biologicalMaterialOrigin: BiologicalMaterialOrigin!
+    suspectedEpidemiologicalOrigin: [GeographicalOrigin]
+    isolationHost: [IsolationHost]
+    productionCellLine: [ProductionCellLine]
+    propagationHost: [PropagationHost]
+    transmissionMethod: [TransmissionMethod]
+    sequence: [Sequence]!
+    cultivability: String!
+    clinicalInformation: String
+    identificationTechnique: String
+    infectivity: String!
+    infectivityTest: String
+    isolationTechnique: String
+    isolationConditions: String
+    letterOfAuthority: String!
+    passage: String
+    sequencing: String!
+    titer: String!
+  }
+
+type Provider
+  {
+    name: String!
+    description: String
+    homePage: String
+    contactPoint: ContactPoint
+    logo: Image
+    alternateName: AlternateName
+    country: Country
+    memberOfRI: [RI]
+  }
+
+type Publication
+  {
+    title: String!
+    authors: String!
+    abstract: String!
+    relatedDOI: DOI!
+    journal: Journal
+  }
+
+type RecombinantPartIdentification
+  {
+    partIdentification: String!
+    sequence: [Sequence]!
+  }
+
+type RI
+  {
+    name: String!
+    description: String
+    homePage: String
+    contactPoint: ContactPoint
+    logo: Image
+    alternateName: AlternateName
+    country: Country
+  }
+
+type RiskGroup
+  {
+    name: String!
+    description: String
+    weight: Integer!
+    inVocabulary: Vocabulary!
+  }
+
+type Sequence
+  {
+    sequenceReference: [SequenceReference]
+    sequenceFASTA: String
+  }
+
+type SequenceReference
+  {
+    accessionNumber: String!
+    sequenceProvider: String!
+  }
+
+type Service
+  {
+    name: String!
+    description: String
+    accessPointURL: Uri!
+    refSKU: String!
+    unitDefinition: String
+    category: ProductCategory!
+    additionalCategory: [ProductCategory]
+    unitCost: String!
+    qualityGrading: String
+    pathogenIdentification: [PathogenIdentification]!
+    relatedDOI: [DOI]
+    riskGroup: RiskGroup
+    biosafetyRestrictions: String
+    canItBeUsedToProduceGMO: Boolean
+    provider: Provider!
+    collection: [Collection]!
+    keywords: [Keyword]!
+    availability: String!
+    complementaryDocument: [Document]
+    technicalRecommendation: String
+    productPicture: [Image]
+    externalRelatedReference: [ExternalRelatedReference]
+    certification: [Certification]
+    internalReference: String
+    note: String
+    contactPoint: ContactPoint
+    modelSpecies: String
+    modelType: String
+  }
+
+type SpecialFeature
+  {
+    name: String!
+    description: String
+    weight: Integer!
+    inVocabulary: Vocabulary!
+  }
+
+type SyntheticPartOrigin
+  {
+    recombinantPartIdentification: RecombinantPartIdentification
+    modificationsFromTheReferenceSequences: Boolean!
+    descriptionOfModificationsMadeFromTheReferenceSequences: String
+  }
+
+type Taxon
+  {
+    name: String!
+    description: String
+    weight: Integer!
+    inVocabulary: Vocabulary!
+    taxonomy: [Taxonomy]
+    parentTaxon: Taxon!
+    rank: TaxonomicRank!
+    previouslyKnownAs: [Taxon]
+    externalEquivalentTaxon: [Taxon]
+    taxonomicID: String!
+    taxonomicNodeID: String
+  }
+
+type TaxonomicRank
+  {
+    name: String!
+    description: String
+    weight: Integer!
+    inVocabulary: Vocabulary!
+    taxonomy: [Taxonomy]
+  }
+
+type Taxonomy
+  {
+    name: String!
+    description: String
+    taxon: [Taxon]
+    taxonDataProvider: DataProvider
+    version: Version!
+    versionDataProvider: DataProvider!
+    rank: [TaxonomicRank]
+    rankDataProvider: DataProvider
+  }
+
+interface Term
+  {
+    name: String!
+    description: String
+    weight: Integer!
+    inVocabulary: Vocabulary!
+  }
+
+type TransmissionMethod
+  {
+    name: String!
+    description: String
+    weight: Integer!
+    inVocabulary: Vocabulary!
+  }
+
+type Variant
+  {
+    name: String!
+    description: String
+    weight: Integer!
+    inVocabulary: Vocabulary!
+    alternateName: [AlternateName]
+    sourceOfInformation: [String]
+  }
+
+type Version
+  {
+    iD: String!
+    versionOf: Uri!
+  }
+
+type Video
+  {
+    name: String!
+    description: String
+    contentURL: Uri!
+    format: String!
+    license: License
+  }
+
+type Viroid
+  {
+    name: String!
+    description: String
+    accessPointURL: Uri!
+    refSKU: String!
+    unitDefinition: String
+    category: ProductCategory!
+    additionalCategory: [ProductCategory]
+    unitCost: String!
+    qualityGrading: String
+    pathogenIdentification: [PathogenIdentification]!
+    relatedDOI: [DOI]
+    riskGroup: RiskGroup
+    biosafetyRestrictions: String
+    canItBeUsedToProduceGMO: Boolean
+    provider: Provider!
+    collection: [Collection]!
+    keywords: [Keyword]!
+    availability: String!
+    complementaryDocument: [Document]
+    technicalRecommendation: String
+    productPicture: [Image]
+    externalRelatedReference: [ExternalRelatedReference]
+    certification: [Certification]
+    internalReference: String
+    note: String
+    contactPoint: ContactPoint
+    hasIATAClassification: IATAClassification!
+    shippingConditions: String!
+    materialSafetyDataSheet: MSDS
+    originator: Originator
+    storageConditions: String!
+    biologicalMaterialOrigin: BiologicalMaterialOrigin!
+    suspectedEpidemiologicalOrigin: [GeographicalOrigin]
+    isolationHost: [IsolationHost]
+    productionCellLine: [ProductionCellLine]
+    propagationHost: [PropagationHost]
+    transmissionMethod: [TransmissionMethod]
+    sequence: [Sequence]!
+    cultivability: String!
+    clinicalInformation: String
+    identificationTechnique: String
+    infectivity: String!
+    infectivityTest: String
+    isolationTechnique: String
+    isolationConditions: String
+    letterOfAuthority: String!
+    passage: String
+    sequencing: String!
+    titer: String!
+  }
+
+type Virus
+  {
+    name: String!
+    description: String
+    accessPointURL: Uri!
+    refSKU: String!
+    unitDefinition: String
+    category: ProductCategory!
+    additionalCategory: [ProductCategory]
+    unitCost: String!
+    qualityGrading: String
+    pathogenIdentification: [PathogenIdentification]!
+    relatedDOI: [DOI]
+    riskGroup: RiskGroup
+    biosafetyRestrictions: String
+    canItBeUsedToProduceGMO: Boolean
+    provider: Provider!
+    collection: [Collection]!
+    keywords: [Keyword]!
+    availability: String!
+    complementaryDocument: [Document]
+    technicalRecommendation: String
+    productPicture: [Image]
+    externalRelatedReference: [ExternalRelatedReference]
+    certification: [Certification]
+    internalReference: String
+    note: String
+    contactPoint: ContactPoint
+    hasIATAClassification: IATAClassification!
+    shippingConditions: String!
+    materialSafetyDataSheet: MSDS
+    originator: Originator
+    storageConditions: String!
+    biologicalMaterialOrigin: BiologicalMaterialOrigin!
+    suspectedEpidemiologicalOrigin: [GeographicalOrigin]
+    isolationHost: [IsolationHost]
+    productionCellLine: [ProductionCellLine]
+    propagationHost: [PropagationHost]
+    transmissionMethod: [TransmissionMethod]
+    sequence: [Sequence]!
+    cultivability: String!
+    clinicalInformation: String
+    identificationTechnique: String
+    infectivity: String!
+    infectivityTest: String
+    isolationTechnique: String
+    isolationConditions: String
+    letterOfAuthority: String!
+    passage: String
+    sequencing: String!
+    titer: String!
+    coInfectingViruses: [VirusName]
+    contaminationWithCoInfectingViruses: Boolean!
+    mycoplasmicContent: Boolean!
+  }
+
+type VirusName
+  {
+    name: String!
+    description: String
+    weight: Integer!
+    inVocabulary: Vocabulary!
+    alternateName: [AlternateName]
+    sourceOfInformation: [String]
+  }
+
+type Vocabulary
+  {
+    name: String!
+    description: String
+    termDataProvider: DataProvider
+    term: [Term]
+  }
+

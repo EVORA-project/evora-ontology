@@ -1,0 +1,1138 @@
+ syntax="proto3";
+ package
+// metamodel_version: 1.7.0
+// List of alternate names for things
+message AlternateName
+ {
+  string name = 0
+  string description = 0
+  integer weight = 0
+  vocabulary inVocabulary = 0
+ repeated  alternateName alternateName = 0
+ repeated  string sourceOfInformation = 0
+ }
+// Protein that can bind to certain types of foreign bodies, such as pathogens
+message Antibody
+ {
+  string name = 0
+  string description = 0
+  uri accessPointURL = 0
+  string refSKU = 0
+  string unitDefinition = 0
+  productCategory category = 0
+ repeated  productCategory additionalCategory = 0
+  string unitCost = 0
+  string qualityGrading = 0
+ repeated  pathogenIdentification pathogenIdentification = 0
+ repeated  dOI relatedDOI = 0
+  riskGroup riskGroup = 0
+  string biosafetyRestrictions = 0
+  boolean canItBeUsedToProduceGMO = 0
+  provider provider = 0
+ repeated  collection collection = 0
+ repeated  keyword keywords = 0
+  string availability = 0
+ repeated  document complementaryDocument = 0
+  string technicalRecommendation = 0
+ repeated  image productPicture = 0
+ repeated  externalRelatedReference externalRelatedReference = 0
+ repeated  certification certification = 0
+  string internalReference = 0
+  string note = 0
+  contactPoint contactPoint = 0
+  iATAClassification hasIATAClassification = 0
+  string shippingConditions = 0
+  mSDS materialSafetyDataSheet = 0
+  originator originator = 0
+  string storageConditions = 0
+  string productionSystem = 0
+  boolean antibodyPurifiedByAffinity = 0
+  boolean specificityDocumented = 0
+  string targetedAntigen = 0
+ repeated  sequenceReference sequenceReference = 0
+ }
+// Subclass of File representing sound recordings or audio tracks
+message Audio
+ {
+  string name = 0
+  string description = 0
+  uri contentURL = 0
+  string format = 0
+  license license = 0
+ }
+// The bacterium as a biological material
+message Bacterium
+ {
+  string name = 0
+  string description = 0
+  uri accessPointURL = 0
+  string refSKU = 0
+  string unitDefinition = 0
+  productCategory category = 0
+ repeated  productCategory additionalCategory = 0
+  string unitCost = 0
+  string qualityGrading = 0
+ repeated  pathogenIdentification pathogenIdentification = 0
+ repeated  dOI relatedDOI = 0
+  riskGroup riskGroup = 0
+  string biosafetyRestrictions = 0
+  boolean canItBeUsedToProduceGMO = 0
+  provider provider = 0
+ repeated  collection collection = 0
+ repeated  keyword keywords = 0
+  string availability = 0
+ repeated  document complementaryDocument = 0
+  string technicalRecommendation = 0
+ repeated  image productPicture = 0
+ repeated  externalRelatedReference externalRelatedReference = 0
+ repeated  certification certification = 0
+  string internalReference = 0
+  string note = 0
+  contactPoint contactPoint = 0
+  iATAClassification hasIATAClassification = 0
+  string shippingConditions = 0
+  mSDS materialSafetyDataSheet = 0
+  originator originator = 0
+  string storageConditions = 0
+  biologicalMaterialOrigin biologicalMaterialOrigin = 0
+ repeated  geographicalOrigin suspectedEpidemiologicalOrigin = 0
+ repeated  isolationHost isolationHost = 0
+ repeated  productionCellLine productionCellLine = 0
+ repeated  propagationHost propagationHost = 0
+ repeated  transmissionMethod transmissionMethod = 0
+ repeated  sequence sequence = 0
+  string cultivability = 0
+  string clinicalInformation = 0
+  string identificationTechnique = 0
+  string infectivity = 0
+  string infectivityTest = 0
+  string isolationTechnique = 0
+  string isolationConditions = 0
+  string letterOfAuthority = 0
+  string passage = 0
+  string sequencing = 0
+  string titer = 0
+ }
+// Information about the origin of the biological material, compulsory for access, utilization, and benefit-sharing of genetic resources in compliance with the Nagoya Protocol
+message BiologicalMaterialOrigin
+ {
+  boolean recombinantMaterial = 0
+  boolean biologicalSourceType = 0
+ repeated  biologicalPartOrigin biologicalPartOrigin = 0
+  boolean thirdPartyDistributionConsent = 0
+  string usageRestrictions = 0
+ }
+// A group of products
+message Bundle
+ {
+  string name = 0
+  string description = 0
+  uri accessPointURL = 0
+  string refSKU = 0
+  string unitDefinition = 0
+  productCategory category = 0
+ repeated  productCategory additionalCategory = 0
+  string unitCost = 0
+  string qualityGrading = 0
+ repeated  pathogenIdentification pathogenIdentification = 0
+ repeated  dOI relatedDOI = 0
+  riskGroup riskGroup = 0
+  string biosafetyRestrictions = 0
+  boolean canItBeUsedToProduceGMO = 0
+  provider provider = 0
+ repeated  collection collection = 0
+ repeated  keyword keywords = 0
+  string availability = 0
+  string technicalRecommendation = 0
+ repeated  image productPicture = 0
+ repeated  externalRelatedReference externalRelatedReference = 0
+ repeated  certification certification = 0
+  string internalReference = 0
+  string note = 0
+  contactPoint contactPoint = 0
+  iATAClassification hasIATAClassification = 0
+  string shippingConditions = 0
+  mSDS materialSafetyDataSheet = 0
+  originator originator = 0
+  string storageConditions = 0
+ repeated  product productsOfTheBundle = 0
+  string complementaryDocument = 0
+ }
+// Assurance given by an independent certification body that a product, service or system meets the requirements of a standard
+message Certification
+ {
+  string name = 0
+  string description = 0
+  image logo = 0
+ repeated  document certificationDocument = 0
+  uri resourceURL = 0
+ }
+// Set of products and services with some common characteristics
+message Collection
+ {
+  string name = 0
+  string description = 0
+ repeated  productOrService collectionItem = 0
+  dataProvider collectionDataProvider = 0
+ }
+// Vernacular name that is the name used in everyday language to refer to an organism or group of organisms. This name is typically easier to remember and pronounce compared to the scientific name
+message CommonName
+ {
+  string name = 0
+  string description = 0
+  integer weight = 0
+  vocabulary inVocabulary = 0
+ repeated  alternateName alternateName = 0
+ repeated  string sourceOfInformation = 0
+ }
+// Entity serving as focal point of information
+message ContactPoint
+ {
+  string name = 0
+  string description = 0
+  string email = 0
+  string telephone = 0
+  string streetAddress = 0
+  string addressLocality = 0
+  string addressRegion = 0
+  string postalCode = 0
+  country addressCountry = 0
+  string oRCIDiD = 0
+ }
+// The country as of ISO3166
+message Country
+ {
+  string name = 0
+  string description = 0
+  integer weight = 0
+  vocabulary inVocabulary = 0
+  string alpha2Code = 0
+ }
+// Subclass of File representing structured or unstructured datasets, often used for analysis, storage, or transfer of information
+message Data
+ {
+  string name = 0
+  string description = 0
+  uri contentURL = 0
+  string format = 0
+  license license = 0
+ }
+// An external API (Application Programming Interface) or Endpoint that permits to retrieve data from other sources
+message DataProvider
+ {
+  string name = 0
+  string description = 0
+  license license = 0
+  string loginRequestMethod = 0
+  uri loginURL = 0
+  string loginTokenName = 0
+  uri queryURL = 0
+  string queryMethod = 0
+  string contentType = 0
+  string providedEntityType = 0
+  integer weight = 0
+ }
+// A detection kit for specific pathogens
+message DetectionKit
+ {
+  string name = 0
+  string description = 0
+  uri accessPointURL = 0
+  string refSKU = 0
+  string unitDefinition = 0
+  productCategory category = 0
+ repeated  productCategory additionalCategory = 0
+  string unitCost = 0
+  string qualityGrading = 0
+ repeated  pathogenIdentification pathogenIdentification = 0
+ repeated  dOI relatedDOI = 0
+  riskGroup riskGroup = 0
+  string biosafetyRestrictions = 0
+  boolean canItBeUsedToProduceGMO = 0
+  provider provider = 0
+ repeated  collection collection = 0
+ repeated  keyword keywords = 0
+  string availability = 0
+ repeated  document complementaryDocument = 0
+  string technicalRecommendation = 0
+ repeated  image productPicture = 0
+ repeated  externalRelatedReference externalRelatedReference = 0
+ repeated  certification certification = 0
+  string internalReference = 0
+  string note = 0
+  contactPoint contactPoint = 0
+  iATAClassification hasIATAClassification = 0
+  string shippingConditions = 0
+  mSDS materialSafetyDataSheet = 0
+  originator originator = 0
+  string storageConditions = 0
+ repeated  file hasSOPFile = 0
+  boolean specificityDocumented = 0
+  string specificity = 0
+  string targetedRegion = 0
+ }
+// Subclass of File representing textual or written files such as reports, manuals, or forms
+message Document
+ {
+  string name = 0
+  string description = 0
+  uri contentURL = 0
+  string format = 0
+  license license = 0
+ }
+// A unique string identifier assigned to a digital object, providing a permanent link for reliable citation and access.  The Digital Object Identifier (DOI) is a persistent identifier that is an ISO standard
+message DOI
+ {
+  string name = 0
+  string description = 0
+  integer weight = 0
+  vocabulary inVocabulary = 0
+ }
+// A reference to an expression vector plasmid, typically embedding a resistance marker for inducible protein expression
+message ExpressionVector
+ {
+  string name = 0
+  string description = 0
+  integer weight = 0
+  vocabulary inVocabulary = 0
+ }
+// A reference that permits to retrieve an item from an external provider
+message ExternalRelatedReference
+ {
+  string reference = 0
+  string referenceLabel = 0
+  string referenceProviderPrefix = 0
+  string referenceProviderName = 0
+ }
+// The fungus as a biological material
+message Fungus
+ {
+  string name = 0
+  string description = 0
+  uri accessPointURL = 0
+  string refSKU = 0
+  string unitDefinition = 0
+  productCategory category = 0
+ repeated  productCategory additionalCategory = 0
+  string unitCost = 0
+  string qualityGrading = 0
+ repeated  pathogenIdentification pathogenIdentification = 0
+ repeated  dOI relatedDOI = 0
+  riskGroup riskGroup = 0
+  string biosafetyRestrictions = 0
+  boolean canItBeUsedToProduceGMO = 0
+  provider provider = 0
+ repeated  collection collection = 0
+ repeated  keyword keywords = 0
+  string availability = 0
+ repeated  document complementaryDocument = 0
+  string technicalRecommendation = 0
+ repeated  image productPicture = 0
+ repeated  externalRelatedReference externalRelatedReference = 0
+ repeated  certification certification = 0
+  string internalReference = 0
+  string note = 0
+  contactPoint contactPoint = 0
+  iATAClassification hasIATAClassification = 0
+  string shippingConditions = 0
+  mSDS materialSafetyDataSheet = 0
+  originator originator = 0
+  string storageConditions = 0
+  biologicalMaterialOrigin biologicalMaterialOrigin = 0
+ repeated  geographicalOrigin suspectedEpidemiologicalOrigin = 0
+ repeated  isolationHost isolationHost = 0
+ repeated  productionCellLine productionCellLine = 0
+ repeated  propagationHost propagationHost = 0
+ repeated  transmissionMethod transmissionMethod = 0
+ repeated  sequence sequence = 0
+  string cultivability = 0
+  string clinicalInformation = 0
+  string identificationTechnique = 0
+  string infectivity = 0
+  string infectivityTest = 0
+  string isolationTechnique = 0
+  string isolationConditions = 0
+  string letterOfAuthority = 0
+  string passage = 0
+  string sequencing = 0
+  string titer = 0
+ }
+// The specific location or region where a physical item, originates or is naturally found
+message GeographicalOrigin
+ {
+  string name = 0
+  string description = 0
+  integer weight = 0
+  vocabulary inVocabulary = 0
+ }
+// An hybridoma that provides antibodies that can be related to a pathogen
+message Hybridoma
+ {
+  string name = 0
+  string description = 0
+  uri accessPointURL = 0
+  string refSKU = 0
+  string unitDefinition = 0
+  productCategory category = 0
+ repeated  productCategory additionalCategory = 0
+  string unitCost = 0
+  string qualityGrading = 0
+ repeated  pathogenIdentification pathogenIdentification = 0
+ repeated  dOI relatedDOI = 0
+  riskGroup riskGroup = 0
+  string biosafetyRestrictions = 0
+  boolean canItBeUsedToProduceGMO = 0
+  provider provider = 0
+ repeated  collection collection = 0
+ repeated  keyword keywords = 0
+  string availability = 0
+ repeated  document complementaryDocument = 0
+  string technicalRecommendation = 0
+ repeated  image productPicture = 0
+ repeated  externalRelatedReference externalRelatedReference = 0
+ repeated  certification certification = 0
+  string internalReference = 0
+  string note = 0
+  contactPoint contactPoint = 0
+  iATAClassification hasIATAClassification = 0
+  string shippingConditions = 0
+  mSDS materialSafetyDataSheet = 0
+  originator originator = 0
+  string storageConditions = 0
+  string productionSystem = 0
+  boolean antibodyPurifiedByAffinity = 0
+  boolean specificityDocumented = 0
+  string targetedAntigen = 0
+ repeated  sequenceReference sequenceReference = 0
+  string hybridomaDescription = 0
+ }
+// The corresponding International Air Transport Association (IATA)'s category for dangerous goods that are transported by air
+message IATAClassification
+ {
+  string name = 0
+  string description = 0
+  integer weight = 0
+  vocabulary inVocabulary = 0
+ }
+// Subclass of File representing visual content such as pictures, diagrams, or illustrations
+message Image
+ {
+  string name = 0
+  string description = 0
+  uri contentURL = 0
+  string format = 0
+  license license = 0
+  string altText = 0
+ }
+// The IPLC area (Indigenous People and Local Communities) from which a physical item, originates or is naturally found
+message IPLCOrigin
+ {
+  string name = 0
+  string description = 0
+  integer weight = 0
+  vocabulary inVocabulary = 0
+ }
+// Host organism from which the pathogen was isolated
+message IsolationHost
+ {
+  string name = 0
+  string description = 0
+  integer weight = 0
+  vocabulary inVocabulary = 0
+ }
+// Periodical journal publishing scientific research
+message Journal
+ {
+  string name = 0
+  string description = 0
+  integer weight = 0
+  vocabulary inVocabulary = 0
+ }
+// A term or phrase used to tag and categorize content
+message Keyword
+ {
+  string name = 0
+  string description = 0
+  integer weight = 0
+  vocabulary inVocabulary = 0
+ }
+// The legal terms and conditions under which the subject can be used, shared, or distributed, indicating any restrictions or permissions
+message License
+ {
+  string name = 0
+  string description = 0
+  uri resourceURL = 0
+  string licensingOrAttribution = 0
+  image logo = 0
+ }
+// A Material Safety Data Sheet (MSDS) or Safety Data Sheet (SDS) is a standardized document that contains crucial occupational safety and health information related to the product
+message MSDS
+ {
+  contactPoint msdsContact = 0
+  string physicalChemicalProperties = 0
+  string hazardsIdentification = 0
+  string firstAidMeasures = 0
+  string fireFightingMeasures = 0
+  string accidentalReleaseMeasures = 0
+  string handlingAndStorage = 0
+  string exposureControlsPersonalProtection = 0
+  string stabilityAndReactivity = 0
+  string toxicologicalInformation = 0
+  string ecologicalInformation = 0
+  string disposalConsiderations = 0
+  string transportInformation = 0
+  string regulatoryInformation = 0
+  string furtherInformation = 0
+ }
+// Information on the origin of a natural part that composes the biological material
+message NaturalPartOrigin
+ {
+  recombinantPartIdentification recombinantPartIdentification = 0
+  country countryOfCollection = 0
+  iPLCOrigin indigenousPoepleAndLocalCommunityOrigin = 0
+  datetime collectionDate = 0
+  boolean beforeDate = 0
+  string reportingToAuthorities = 0
+ }
+// Nucleic acid related to a pathogen. It can be extracted or synthetic
+message NucleicAcid
+ {
+  string name = 0
+  string description = 0
+  uri accessPointURL = 0
+  string refSKU = 0
+  string unitDefinition = 0
+  productCategory category = 0
+ repeated  productCategory additionalCategory = 0
+  string unitCost = 0
+  string qualityGrading = 0
+ repeated  pathogenIdentification pathogenIdentification = 0
+ repeated  dOI relatedDOI = 0
+  riskGroup riskGroup = 0
+  string biosafetyRestrictions = 0
+  boolean canItBeUsedToProduceGMO = 0
+  provider provider = 0
+ repeated  collection collection = 0
+ repeated  keyword keywords = 0
+  string availability = 0
+ repeated  document complementaryDocument = 0
+  string technicalRecommendation = 0
+ repeated  image productPicture = 0
+ repeated  externalRelatedReference externalRelatedReference = 0
+ repeated  certification certification = 0
+  string internalReference = 0
+  string note = 0
+  contactPoint contactPoint = 0
+  iATAClassification hasIATAClassification = 0
+  string shippingConditions = 0
+  mSDS materialSafetyDataSheet = 0
+  originator originator = 0
+  string storageConditions = 0
+  biologicalMaterialOrigin biologicalMaterialOrigin = 0
+ repeated  data hasGbFileOfTheConstruct = 0
+ repeated  sequence sequence = 0
+  boolean isItAClonedNucleicAcid = 0
+  expressionVector clonedIntoPlasmid = 0
+ repeated  plasmidSelection pasmidSelection = 0
+  proteinTag hasTAG = 0
+  string regionEncompassedInThisProduct = 0
+  boolean mutationObserved = 0
+  string observedMutations = 0
+  string identificationTechnique = 0
+  string sequencing = 0
+  string titer = 0
+  boolean sequenceChecked = 0
+ }
+// A social entity established to meet needs or pursue specific goals
+message Organization
+ {
+  string name = 0
+  string description = 0
+  string homePage = 0
+  contactPoint contactPoint = 0
+  image logo = 0
+  alternateName alternateName = 0
+  country country = 0
+ }
+// The individual or organization responsible for the original discovery, isolation, or creation of an item, providing information about the source or origin of the sample
+message Originator
+ {
+  string name = 0
+  string description = 0
+  string homePage = 0
+  contactPoint contactPoint = 0
+  image logo = 0
+ }
+// A collection of distinguishing information that enables the differentiation of a pathogen from another
+message PathogenIdentification
+ {
+  taxon taxon = 0
+  commonName pathogenName = 0
+  string pathogenType = 0
+ repeated  string hostType = 0
+  string subspecies = 0
+  string strain = 0
+  string isolate = 0
+  string genotype = 0
+  string serotype = 0
+  variant variant = 0
+ }
+// Identifier for 3D structural data as per the PDB (Protein Data Bank) database
+message PDBReference
+ {
+  string name = 0
+  string description = 0
+  integer weight = 0
+  vocabulary inVocabulary = 0
+ }
+// An individual
+message Person
+ {
+  string name = 0
+  string description = 0
+  string homePage = 0
+  contactPoint contactPoint = 0
+  image logo = 0
+  string oRCIDiD = 0
+ }
+// A person or an organization
+message PersonOrOrganization
+ {
+  string name = 0
+  string description = 0
+  string homePage = 0
+  contactPoint contactPoint = 0
+  image logo = 0
+ }
+// The process of identifying cells that have successfully incorporated a plasmid, typically using antibiotic resistance markers
+message PlasmidSelection
+ {
+  string name = 0
+  string description = 0
+  integer weight = 0
+  vocabulary inVocabulary = 0
+ }
+// The prion as a biological material
+message Prion
+ {
+  string name = 0
+  string description = 0
+  uri accessPointURL = 0
+  string refSKU = 0
+  string unitDefinition = 0
+  productCategory category = 0
+ repeated  productCategory additionalCategory = 0
+  string unitCost = 0
+  string qualityGrading = 0
+ repeated  pathogenIdentification pathogenIdentification = 0
+ repeated  dOI relatedDOI = 0
+  riskGroup riskGroup = 0
+  string biosafetyRestrictions = 0
+  boolean canItBeUsedToProduceGMO = 0
+  provider provider = 0
+ repeated  collection collection = 0
+ repeated  keyword keywords = 0
+  string availability = 0
+ repeated  document complementaryDocument = 0
+  string technicalRecommendation = 0
+ repeated  image productPicture = 0
+ repeated  externalRelatedReference externalRelatedReference = 0
+ repeated  certification certification = 0
+  string internalReference = 0
+  string note = 0
+  contactPoint contactPoint = 0
+  iATAClassification hasIATAClassification = 0
+  string shippingConditions = 0
+  mSDS materialSafetyDataSheet = 0
+  originator originator = 0
+  string storageConditions = 0
+  biologicalMaterialOrigin biologicalMaterialOrigin = 0
+ repeated  geographicalOrigin suspectedEpidemiologicalOrigin = 0
+ repeated  isolationHost isolationHost = 0
+ repeated  productionCellLine productionCellLine = 0
+ repeated  propagationHost propagationHost = 0
+ repeated  transmissionMethod transmissionMethod = 0
+ repeated  sequence sequence = 0
+  string cultivability = 0
+  string clinicalInformation = 0
+  string identificationTechnique = 0
+  string infectivity = 0
+  string infectivityTest = 0
+  string isolationTechnique = 0
+  string isolationConditions = 0
+  string letterOfAuthority = 0
+  string passage = 0
+  string sequencing = 0
+  string titer = 0
+ }
+// A product
+message Product
+ {
+  string name = 0
+  string description = 0
+  uri accessPointURL = 0
+  string refSKU = 0
+  string unitDefinition = 0
+  productCategory category = 0
+ repeated  productCategory additionalCategory = 0
+  string unitCost = 0
+  string qualityGrading = 0
+ repeated  pathogenIdentification pathogenIdentification = 0
+ repeated  dOI relatedDOI = 0
+  riskGroup riskGroup = 0
+  string biosafetyRestrictions = 0
+  boolean canItBeUsedToProduceGMO = 0
+  provider provider = 0
+ repeated  collection collection = 0
+ repeated  keyword keywords = 0
+  string availability = 0
+ repeated  document complementaryDocument = 0
+  string technicalRecommendation = 0
+ repeated  image productPicture = 0
+ repeated  externalRelatedReference externalRelatedReference = 0
+ repeated  certification certification = 0
+  string internalReference = 0
+  string note = 0
+  contactPoint contactPoint = 0
+  iATAClassification hasIATAClassification = 0
+  string shippingConditions = 0
+  mSDS materialSafetyDataSheet = 0
+  originator originator = 0
+  string storageConditions = 0
+ }
+// A term used to classify a group of products that share common characteristics or functions, which helps in their organization
+message ProductCategory
+ {
+  string name = 0
+  string description = 0
+  integer weight = 0
+  vocabulary inVocabulary = 0
+  productCategory parentCategory = 0
+ }
+// A population of cells that originates from a primary culture, adapted to grow and divide under laboratory conditions. Used in biotechnology to consistently produce biological substances
+message ProductionCellLine
+ {
+  string name = 0
+  string description = 0
+  integer weight = 0
+  vocabulary inVocabulary = 0
+ }
+// The organism used to grow and multiply the pathogen under controlled conditions
+message PropagationHost
+ {
+  string name = 0
+  string description = 0
+  integer weight = 0
+  vocabulary inVocabulary = 0
+ }
+// A protein as a derived product from a pathogen
+message Protein
+ {
+  string name = 0
+  string description = 0
+  uri accessPointURL = 0
+  string refSKU = 0
+  string unitDefinition = 0
+  productCategory category = 0
+ repeated  productCategory additionalCategory = 0
+  string unitCost = 0
+  string qualityGrading = 0
+ repeated  pathogenIdentification pathogenIdentification = 0
+ repeated  dOI relatedDOI = 0
+  riskGroup riskGroup = 0
+  string biosafetyRestrictions = 0
+  boolean canItBeUsedToProduceGMO = 0
+  provider provider = 0
+ repeated  collection collection = 0
+ repeated  keyword keywords = 0
+  string availability = 0
+ repeated  document complementaryDocument = 0
+  string technicalRecommendation = 0
+ repeated  image productPicture = 0
+ repeated  externalRelatedReference externalRelatedReference = 0
+ repeated  certification certification = 0
+  string internalReference = 0
+  string note = 0
+  contactPoint contactPoint = 0
+  iATAClassification hasIATAClassification = 0
+  string shippingConditions = 0
+  mSDS materialSafetyDataSheet = 0
+  originator originator = 0
+  string storageConditions = 0
+  biologicalMaterialOrigin biologicalMaterialOrigin = 0
+ repeated  sequence sequence = 0
+ repeated  pDBReference relatedPDB = 0
+ repeated  specialFeature specialFeature = 0
+ repeated  proteinTag proteinTAG = 0
+ repeated  string domain = 0
+ repeated  string expressedAs = 0
+ repeated  string inclusionBodiesType = 0
+ repeated  string expressionSystem = 0
+ repeated  string functionalCharacterization = 0
+ repeated  string functionalTechnicalDescription = 0
+ repeated  string proteinPurification = 0
+ repeated  string theTAGStatusOfTheSolubilizedProtein = 0
+ repeated  string typeOfFunctionalCharacterization = 0
+ }
+// Peptide sequence genetically grafted onto a recombinant protein
+message ProteinTag
+ {
+  string name = 0
+  string description = 0
+  integer weight = 0
+  vocabulary inVocabulary = 0
+ }
+// The protozoan as a biological material
+message Protozoan
+ {
+  string name = 0
+  string description = 0
+  uri accessPointURL = 0
+  string refSKU = 0
+  string unitDefinition = 0
+  productCategory category = 0
+ repeated  productCategory additionalCategory = 0
+  string unitCost = 0
+  string qualityGrading = 0
+ repeated  pathogenIdentification pathogenIdentification = 0
+ repeated  dOI relatedDOI = 0
+  riskGroup riskGroup = 0
+  string biosafetyRestrictions = 0
+  boolean canItBeUsedToProduceGMO = 0
+  provider provider = 0
+ repeated  collection collection = 0
+ repeated  keyword keywords = 0
+  string availability = 0
+ repeated  document complementaryDocument = 0
+  string technicalRecommendation = 0
+ repeated  image productPicture = 0
+ repeated  externalRelatedReference externalRelatedReference = 0
+ repeated  certification certification = 0
+  string internalReference = 0
+  string note = 0
+  contactPoint contactPoint = 0
+  iATAClassification hasIATAClassification = 0
+  string shippingConditions = 0
+  mSDS materialSafetyDataSheet = 0
+  originator originator = 0
+  string storageConditions = 0
+  biologicalMaterialOrigin biologicalMaterialOrigin = 0
+ repeated  geographicalOrigin suspectedEpidemiologicalOrigin = 0
+ repeated  isolationHost isolationHost = 0
+ repeated  productionCellLine productionCellLine = 0
+ repeated  propagationHost propagationHost = 0
+ repeated  transmissionMethod transmissionMethod = 0
+ repeated  sequence sequence = 0
+  string cultivability = 0
+  string clinicalInformation = 0
+  string identificationTechnique = 0
+  string infectivity = 0
+  string infectivityTest = 0
+  string isolationTechnique = 0
+  string isolationConditions = 0
+  string letterOfAuthority = 0
+  string passage = 0
+  string sequencing = 0
+  string titer = 0
+ }
+// A provider of products or services, as a specific organization
+message Provider
+ {
+  string name = 0
+  string description = 0
+  string homePage = 0
+  contactPoint contactPoint = 0
+  image logo = 0
+  alternateName alternateName = 0
+  country country = 0
+ repeated  rI memberOfRI = 0
+ }
+// A scientific publication
+message Publication
+ {
+  string title = 0
+  string authors = 0
+  string abstract = 0
+  dOI relatedDOI = 0
+  journal journal = 0
+ }
+// Identification of a recombinant part
+message RecombinantPartIdentification
+ {
+  string partIdentification = 0
+ repeated  sequence sequence = 0
+ }
+// A research infrastructure
+message RI
+ {
+  string name = 0
+  string description = 0
+  string homePage = 0
+  contactPoint contactPoint = 0
+  image logo = 0
+  alternateName alternateName = 0
+  country country = 0
+ }
+// Risk group classification guides initial handling of biological agents in labs but doesn't systematically equate to biosafety levels. Actual risk varies with the agent, procedures, and personnel competence
+message RiskGroup
+ {
+  string name = 0
+  string description = 0
+  integer weight = 0
+  vocabulary inVocabulary = 0
+ }
+// A nucleic acid or protein sequence information
+message Sequence
+ {
+ repeated  sequenceReference sequenceReference = 0
+  string sequenceFASTA = 0
+ }
+// A reference that permits to retrieve the sequence information from a sequence provider
+message SequenceReference
+ {
+  string accessionNumber = 0
+  string sequenceProvider = 0
+ }
+// A service
+message Service
+ {
+  string name = 0
+  string description = 0
+  uri accessPointURL = 0
+  string refSKU = 0
+  string unitDefinition = 0
+  productCategory category = 0
+ repeated  productCategory additionalCategory = 0
+  string unitCost = 0
+  string qualityGrading = 0
+ repeated  pathogenIdentification pathogenIdentification = 0
+ repeated  dOI relatedDOI = 0
+  riskGroup riskGroup = 0
+  string biosafetyRestrictions = 0
+  boolean canItBeUsedToProduceGMO = 0
+  provider provider = 0
+ repeated  collection collection = 0
+ repeated  keyword keywords = 0
+  string availability = 0
+ repeated  document complementaryDocument = 0
+  string technicalRecommendation = 0
+ repeated  image productPicture = 0
+ repeated  externalRelatedReference externalRelatedReference = 0
+ repeated  certification certification = 0
+  string internalReference = 0
+  string note = 0
+  contactPoint contactPoint = 0
+  string modelSpecies = 0
+  string modelType = 0
+ }
+// Distinctive attributes of a product that set it apart from other similar items e.g., Reference strain, Vaccinal strain, Antiviral resistant strain ...
+message SpecialFeature
+ {
+  string name = 0
+  string description = 0
+  integer weight = 0
+  vocabulary inVocabulary = 0
+ }
+// Information on the origin of a synthetic part that composes the biological material
+message SyntheticPartOrigin
+ {
+  recombinantPartIdentification recombinantPartIdentification = 0
+  boolean modificationsFromTheReferenceSequences = 0
+  string descriptionOfModificationsMadeFromTheReferenceSequences = 0
+ }
+// Conceptual entity that groups one or more populations of an organism or organisms, as seen by taxonomists, to form a unit
+message Taxon
+ {
+  string name = 0
+  string description = 0
+  integer weight = 0
+  vocabulary inVocabulary = 0
+ repeated  taxonomy taxonomy = 0
+  taxon parentTaxon = 0
+  taxonomicRank rank = 0
+ repeated  taxon previouslyKnownAs = 0
+ repeated  taxon externalEquivalentTaxon = 0
+  string taxonomicID = 0
+  string taxonomicNodeID = 0
+ }
+// The possible taxonomic ranks and their description
+message TaxonomicRank
+ {
+  string name = 0
+  string description = 0
+  integer weight = 0
+  vocabulary inVocabulary = 0
+ repeated  taxonomy taxonomy = 0
+ }
+// Science of naming, defining and classifying organisms
+message Taxonomy
+ {
+  string name = 0
+  string description = 0
+ repeated  taxon taxon = 0
+  dataProvider taxonDataProvider = 0
+  version version = 0
+  dataProvider versionDataProvider = 0
+ repeated  taxonomicRank rank = 0
+  dataProvider rankDataProvider = 0
+ }
+// The process by which the pathogen spreads between hosts
+message TransmissionMethod
+ {
+  string name = 0
+  string description = 0
+  integer weight = 0
+  vocabulary inVocabulary = 0
+ }
+// An organism with one or more new mutations is referred to as a “variant” of the original organism if not sufficiently different to be termed a distinct strain
+message Variant
+ {
+  string name = 0
+  string description = 0
+  integer weight = 0
+  vocabulary inVocabulary = 0
+ repeated  alternateName alternateName = 0
+ repeated  string sourceOfInformation = 0
+ }
+// Numeric code assigned to identify a particular historical version of a work (e.g. software or technical standards)
+message Version
+ {
+  string iD = 0
+  uri versionOf = 0
+ }
+// Subclass of File representing moving visual media, such as recordings, presentations, or movies
+message Video
+ {
+  string name = 0
+  string description = 0
+  uri contentURL = 0
+  string format = 0
+  license license = 0
+ }
+// The viroid as a biological material
+message Viroid
+ {
+  string name = 0
+  string description = 0
+  uri accessPointURL = 0
+  string refSKU = 0
+  string unitDefinition = 0
+  productCategory category = 0
+ repeated  productCategory additionalCategory = 0
+  string unitCost = 0
+  string qualityGrading = 0
+ repeated  pathogenIdentification pathogenIdentification = 0
+ repeated  dOI relatedDOI = 0
+  riskGroup riskGroup = 0
+  string biosafetyRestrictions = 0
+  boolean canItBeUsedToProduceGMO = 0
+  provider provider = 0
+ repeated  collection collection = 0
+ repeated  keyword keywords = 0
+  string availability = 0
+ repeated  document complementaryDocument = 0
+  string technicalRecommendation = 0
+ repeated  image productPicture = 0
+ repeated  externalRelatedReference externalRelatedReference = 0
+ repeated  certification certification = 0
+  string internalReference = 0
+  string note = 0
+  contactPoint contactPoint = 0
+  iATAClassification hasIATAClassification = 0
+  string shippingConditions = 0
+  mSDS materialSafetyDataSheet = 0
+  originator originator = 0
+  string storageConditions = 0
+  biologicalMaterialOrigin biologicalMaterialOrigin = 0
+ repeated  geographicalOrigin suspectedEpidemiologicalOrigin = 0
+ repeated  isolationHost isolationHost = 0
+ repeated  productionCellLine productionCellLine = 0
+ repeated  propagationHost propagationHost = 0
+ repeated  transmissionMethod transmissionMethod = 0
+ repeated  sequence sequence = 0
+  string cultivability = 0
+  string clinicalInformation = 0
+  string identificationTechnique = 0
+  string infectivity = 0
+  string infectivityTest = 0
+  string isolationTechnique = 0
+  string isolationConditions = 0
+  string letterOfAuthority = 0
+  string passage = 0
+  string sequencing = 0
+  string titer = 0
+ }
+// The virus as a biological material
+message Virus
+ {
+  string name = 0
+  string description = 0
+  uri accessPointURL = 0
+  string refSKU = 0
+  string unitDefinition = 0
+  productCategory category = 0
+ repeated  productCategory additionalCategory = 0
+  string unitCost = 0
+  string qualityGrading = 0
+ repeated  pathogenIdentification pathogenIdentification = 0
+ repeated  dOI relatedDOI = 0
+  riskGroup riskGroup = 0
+  string biosafetyRestrictions = 0
+  boolean canItBeUsedToProduceGMO = 0
+  provider provider = 0
+ repeated  collection collection = 0
+ repeated  keyword keywords = 0
+  string availability = 0
+ repeated  document complementaryDocument = 0
+  string technicalRecommendation = 0
+ repeated  image productPicture = 0
+ repeated  externalRelatedReference externalRelatedReference = 0
+ repeated  certification certification = 0
+  string internalReference = 0
+  string note = 0
+  contactPoint contactPoint = 0
+  iATAClassification hasIATAClassification = 0
+  string shippingConditions = 0
+  mSDS materialSafetyDataSheet = 0
+  originator originator = 0
+  string storageConditions = 0
+  biologicalMaterialOrigin biologicalMaterialOrigin = 0
+ repeated  geographicalOrigin suspectedEpidemiologicalOrigin = 0
+ repeated  isolationHost isolationHost = 0
+ repeated  productionCellLine productionCellLine = 0
+ repeated  propagationHost propagationHost = 0
+ repeated  transmissionMethod transmissionMethod = 0
+ repeated  sequence sequence = 0
+  string cultivability = 0
+  string clinicalInformation = 0
+  string identificationTechnique = 0
+  string infectivity = 0
+  string infectivityTest = 0
+  string isolationTechnique = 0
+  string isolationConditions = 0
+  string letterOfAuthority = 0
+  string passage = 0
+  string sequencing = 0
+  string titer = 0
+ repeated  virusName coInfectingViruses = 0
+  boolean contaminationWithCoInfectingViruses = 0
+  boolean mycoplasmicContent = 0
+ }
+// A virus vernacular name or a name that describes a group of viruses
+message VirusName
+ {
+  string name = 0
+  string description = 0
+  integer weight = 0
+  vocabulary inVocabulary = 0
+ repeated  alternateName alternateName = 0
+ repeated  string sourceOfInformation = 0
+ }
+// A subset of words or phrases specific to a particular subject or field
+message Vocabulary
+ {
+  string name = 0
+  string description = 0
+  dataProvider termDataProvider = 0
+ repeated  term term = 0
+ }

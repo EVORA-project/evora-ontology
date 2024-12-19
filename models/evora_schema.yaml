@@ -1,0 +1,3317 @@
+name: EVORA
+id: EVORA
+imports:
+- linkml:types
+prefixes:
+  dct: http://purl.org/dc/terms/
+  dcat: http://www.w3.org/ns/dcat#
+  foaf: http://xmlns.com/foaf/0.1/
+  xsd: http://www.w3.org/2001/XMLSchema#
+  prov: http://www.w3.org/ns/prov#
+  owl: http://www.w3.org/2002/07/owl#
+  skos: http://www.w3.org/2004/02/skos/core#
+  vcard: http://www.w3.org/2006/vcard/ns#
+  rov: http://www.w3.org/ns/regorg#
+  dcmi: http://purl.org/dc/dcmitype/
+  schema: http://schema.org/
+  wd: http://www.wikidata.org/entity/
+  wdp: http://www.wikidata.org/prop/
+  rdf: http://www.w3.org/1999/02/22-rdf-syntax-ns#
+  rdfs: http://www.w3.org/2000/01/rdf-schema#
+  adms: http://www.w3.org/ns/adms#
+  pav: http://purl.org/pav/
+  dwc: http://rs.tdwg.org/dwc/terms/
+  IAO: http://purl.obolibrary.org/obo/IAO_
+  EVORA: https://evora-project.eu/
+  linkml: https://w3id.org/linkml/
+default_prefix: EVORA
+default_range: string
+slots:
+  ID:
+    from_schema: EVORA
+  versionOf:
+    from_schema: EVORA
+  name:
+    from_schema: EVORA
+  description:
+    from_schema: EVORA
+  taxon:
+    from_schema: EVORA
+  taxonDataProvider:
+    from_schema: EVORA
+  version:
+    from_schema: EVORA
+  versionDataProvider:
+    from_schema: EVORA
+  rank:
+    from_schema: EVORA
+  rankDataProvider:
+    from_schema: EVORA
+  license:
+    from_schema: EVORA
+  loginRequestMethod:
+    from_schema: EVORA
+  loginURL:
+    from_schema: EVORA
+  loginTokenName:
+    from_schema: EVORA
+  queryURL:
+    from_schema: EVORA
+  queryMethod:
+    from_schema: EVORA
+  contentType:
+    from_schema: EVORA
+  providedEntityType:
+    from_schema: EVORA
+  weight:
+    from_schema: EVORA
+  pathogenName:
+    from_schema: EVORA
+  pathogenType:
+    from_schema: EVORA
+  hostType:
+    from_schema: EVORA
+  subspecies:
+    from_schema: EVORA
+  strain:
+    from_schema: EVORA
+  isolate:
+    from_schema: EVORA
+  genotype:
+    from_schema: EVORA
+  serotype:
+    from_schema: EVORA
+  variant:
+    from_schema: EVORA
+  title:
+    from_schema: EVORA
+  authors:
+    from_schema: EVORA
+  abstract:
+    from_schema: EVORA
+  relatedDOI:
+    from_schema: EVORA
+  journal:
+    from_schema: EVORA
+  termDataProvider:
+    from_schema: EVORA
+  term:
+    from_schema: EVORA
+  inVocabulary:
+    from_schema: EVORA
+  alternateName:
+    from_schema: EVORA
+  sourceOfInformation:
+    from_schema: EVORA
+  parentCategory:
+    from_schema: EVORA
+  alpha2Code:
+    from_schema: EVORA
+  taxonomy:
+    from_schema: EVORA
+  parentTaxon:
+    from_schema: EVORA
+  previouslyKnownAs:
+    from_schema: EVORA
+  externalEquivalentTaxon:
+    from_schema: EVORA
+  taxonomicID:
+    from_schema: EVORA
+  taxonomicNodeID:
+    from_schema: EVORA
+  reference:
+    from_schema: EVORA
+  referenceLabel:
+    from_schema: EVORA
+  referenceProviderPrefix:
+    from_schema: EVORA
+  referenceProviderName:
+    from_schema: EVORA
+  sequenceReference:
+    from_schema: EVORA
+  sequenceFASTA:
+    from_schema: EVORA
+  accessionNumber:
+    from_schema: EVORA
+  sequenceProvider:
+    from_schema: EVORA
+  homePage:
+    from_schema: EVORA
+  contactPoint:
+    from_schema: EVORA
+  logo:
+    from_schema: EVORA
+  oRCIDiD:
+    from_schema: EVORA
+  country:
+    from_schema: EVORA
+  memberOfRI:
+    from_schema: EVORA
+  recombinantMaterial:
+    from_schema: EVORA
+  biologicalSourceType:
+    from_schema: EVORA
+  biologicalPartOrigin:
+    from_schema: EVORA
+  recombinantPartIdentification:
+    from_schema: EVORA
+  countryOfCollection:
+    from_schema: EVORA
+  indigenousPoepleAndLocalCommunityOrigin:
+    from_schema: EVORA
+  collectionDate:
+    from_schema: EVORA
+  beforeDate:
+    from_schema: EVORA
+  reportingToAuthorities:
+    from_schema: EVORA
+  modificationsFromTheReferenceSequences:
+    from_schema: EVORA
+  descriptionOfModificationsMadeFromTheReferenceSequences:
+    from_schema: EVORA
+  partIdentification:
+    from_schema: EVORA
+  sequence:
+    from_schema: EVORA
+  collectionItem:
+    from_schema: EVORA
+  collectionDataProvider:
+    from_schema: EVORA
+  accessPointURL:
+    from_schema: EVORA
+  refSKU:
+    from_schema: EVORA
+  unitDefinition:
+    from_schema: EVORA
+  category:
+    from_schema: EVORA
+  additionalCategory:
+    from_schema: EVORA
+  unitCost:
+    from_schema: EVORA
+  qualityGrading:
+    from_schema: EVORA
+  pathogenIdentification:
+    from_schema: EVORA
+  riskGroup:
+    from_schema: EVORA
+  biosafetyRestrictions:
+    from_schema: EVORA
+  canItBeUsedToProduceGMO:
+    from_schema: EVORA
+  provider:
+    from_schema: EVORA
+  collection:
+    from_schema: EVORA
+  keywords:
+    from_schema: EVORA
+  availability:
+    from_schema: EVORA
+  complementaryDocument:
+    from_schema: EVORA
+  technicalRecommendation:
+    from_schema: EVORA
+  productPicture:
+    from_schema: EVORA
+  externalRelatedReference:
+    from_schema: EVORA
+  certification:
+    from_schema: EVORA
+  internalReference:
+    from_schema: EVORA
+  note:
+    from_schema: EVORA
+  modelSpecies:
+    from_schema: EVORA
+  modelType:
+    from_schema: EVORA
+  hasIATAClassification:
+    from_schema: EVORA
+  shippingConditions:
+    from_schema: EVORA
+  materialSafetyDataSheet:
+    from_schema: EVORA
+  originator:
+    from_schema: EVORA
+  storageConditions:
+    from_schema: EVORA
+  thirdPartyDistributionConsent:
+    from_schema: EVORA
+  usageRestrictions:
+    from_schema: EVORA
+  productionSystem:
+    from_schema: EVORA
+  antibodyPurifiedByAffinity:
+    from_schema: EVORA
+  specificityDocumented:
+    from_schema: EVORA
+  targetedAntigen:
+    from_schema: EVORA
+  hybridomaDescription:
+    from_schema: EVORA
+  biologicalMaterialOrigin:
+    from_schema: EVORA
+  relatedPDB:
+    from_schema: EVORA
+  specialFeature:
+    from_schema: EVORA
+  proteinTAG:
+    from_schema: EVORA
+  domain:
+    from_schema: EVORA
+  expressedAs:
+    from_schema: EVORA
+  inclusionBodiesType:
+    from_schema: EVORA
+  expressionSystem:
+    from_schema: EVORA
+  functionalCharacterization:
+    from_schema: EVORA
+  functionalTechnicalDescription:
+    from_schema: EVORA
+  proteinPurification:
+    from_schema: EVORA
+  theTAGStatusOfTheSolubilizedProtein:
+    from_schema: EVORA
+  typeOfFunctionalCharacterization:
+    from_schema: EVORA
+  hasGbFileOfTheConstruct:
+    from_schema: EVORA
+  isItAClonedNucleicAcid:
+    from_schema: EVORA
+  clonedIntoPlasmid:
+    from_schema: EVORA
+  pasmidSelection:
+    from_schema: EVORA
+  hasTAG:
+    from_schema: EVORA
+  regionEncompassedInThisProduct:
+    from_schema: EVORA
+  mutationObserved:
+    from_schema: EVORA
+  observedMutations:
+    from_schema: EVORA
+  identificationTechnique:
+    from_schema: EVORA
+  sequencing:
+    from_schema: EVORA
+  titer:
+    from_schema: EVORA
+  sequenceChecked:
+    from_schema: EVORA
+  hasSOPFile:
+    from_schema: EVORA
+  specificity:
+    from_schema: EVORA
+  targetedRegion:
+    from_schema: EVORA
+  productsOfTheBundle:
+    from_schema: EVORA
+  suspectedEpidemiologicalOrigin:
+    from_schema: EVORA
+  isolationHost:
+    from_schema: EVORA
+  productionCellLine:
+    from_schema: EVORA
+  propagationHost:
+    from_schema: EVORA
+  transmissionMethod:
+    from_schema: EVORA
+  cultivability:
+    from_schema: EVORA
+  clinicalInformation:
+    from_schema: EVORA
+  infectivity:
+    from_schema: EVORA
+  infectivityTest:
+    from_schema: EVORA
+  isolationTechnique:
+    from_schema: EVORA
+  isolationConditions:
+    from_schema: EVORA
+  letterOfAuthority:
+    from_schema: EVORA
+  passage:
+    from_schema: EVORA
+  coInfectingViruses:
+    from_schema: EVORA
+  contaminationWithCoInfectingViruses:
+    from_schema: EVORA
+  mycoplasmicContent:
+    from_schema: EVORA
+  msdsContact:
+    from_schema: EVORA
+  physicalChemicalProperties:
+    from_schema: EVORA
+  hazardsIdentification:
+    from_schema: EVORA
+  firstAidMeasures:
+    from_schema: EVORA
+  fireFightingMeasures:
+    from_schema: EVORA
+  accidentalReleaseMeasures:
+    from_schema: EVORA
+  handlingAndStorage:
+    from_schema: EVORA
+  exposureControlsPersonalProtection:
+    from_schema: EVORA
+  stabilityAndReactivity:
+    from_schema: EVORA
+  toxicologicalInformation:
+    from_schema: EVORA
+  ecologicalInformation:
+    from_schema: EVORA
+  disposalConsiderations:
+    from_schema: EVORA
+  transportInformation:
+    from_schema: EVORA
+  regulatoryInformation:
+    from_schema: EVORA
+  furtherInformation:
+    from_schema: EVORA
+  contentURL:
+    from_schema: EVORA
+  format:
+    from_schema: EVORA
+  altText:
+    from_schema: EVORA
+  email:
+    from_schema: EVORA
+  telephone:
+    from_schema: EVORA
+  streetAddress:
+    from_schema: EVORA
+  addressLocality:
+    from_schema: EVORA
+  addressRegion:
+    from_schema: EVORA
+  postalCode:
+    from_schema: EVORA
+  addressCountry:
+    from_schema: EVORA
+  resourceURL:
+    from_schema: EVORA
+  licensingOrAttribution:
+    from_schema: EVORA
+  certificationDocument:
+    from_schema: EVORA
+classes:
+  Version:
+    description: Numeric code assigned to identify a particular historical version
+      of a work (e.g. software or technical standards)
+    from_schema: EVORA
+    aliases:
+    - Version
+    close_mappings:
+    - wd:Q114469879
+    is_a: Dataset
+    slots:
+    - ID
+    - versionOf
+    slot_usage:
+      ID:
+        description: The version identifier
+        aliases:
+        - ID
+        close_mappings:
+        - wdp:P393
+        - schema:version
+        range: string
+        required: true
+        multivalued: false
+      versionOf:
+        description: Identifier of what the version qualifies
+        aliases:
+        - version Of
+        range: uri
+        required: true
+        multivalued: false
+  Nameable:
+    description: Any entity that has a name and can have a textual description
+    from_schema: EVORA
+    aliases:
+    - Nameable
+    abstract: true
+    slots:
+    - name
+    - description
+    slot_usage:
+      name:
+        description: The label that allows humans to identify the current item
+        comments:
+        - 'The title of the item should be as short and descriptive as possible. E.g.
+          for virus products it should basically be based on the following Pattern:
+
+          "Virus name", "virus host type", "collection year", "country of collection"
+          ex "suspected epidemiological origin", "genotype", "strain", "variant name
+          or specific feature"'
+        aliases:
+        - name
+        exact_mappings:
+        - dct:title
+        close_mappings:
+        - rdfs:label
+        range: string
+        required: true
+        multivalued: false
+      description:
+        description: A short explanation of the characteristics, features, or nature
+          of the current item
+        comments:
+        - 'Describe this item in few lines. This description will serve as a summary
+          to present the item.
+
+          '
+        aliases:
+        - description
+        exact_mappings:
+        - dct:description
+        range: string
+        required: false
+        multivalued: false
+  Catalogue:
+    description: A curated collection of metadata about resources
+    from_schema: EVORA
+    aliases:
+    - Catalogue
+    exact_mappings:
+    - dcat:Catalog
+    close_mappings:
+    - wd:Q2352616
+    - schema:Dataset
+    is_a: Nameable
+    abstract: true
+  Dataset:
+    description: A collection of data, published or curated by a single agent, and
+      available for access
+    from_schema: EVORA
+    aliases:
+    - Dataset
+    exact_mappings:
+    - dcat:Dataset
+    close_mappings:
+    - wd:Q1172284
+    - schema:DataCatalog
+    abstract: true
+  NamedDataset:
+    description: A collection of data, that has a name and can have a description,
+      published or curated by a single agent, and available for access
+    from_schema: EVORA
+    aliases:
+    - Named Dataset
+    exact_mappings:
+    - dcat:Dataset
+    close_mappings:
+    - wd:Q1172284
+    - schema:DataCatalog
+    is_a: Nameable
+    abstract: true
+  DataService:
+    description: A collection of operations that provides access to one or more datasets
+      or data processing functions
+    from_schema: EVORA
+    aliases:
+    - Data Service
+    exact_mappings:
+    - dcat:DataService
+    close_mappings:
+    - wd:Q193424
+    - schema:WebAPI
+    is_a: Nameable
+    abstract: true
+  Taxonomy:
+    description: Science of naming, defining and classifying organisms
+    from_schema: EVORA
+    aliases:
+    - Taxonomy
+    close_mappings:
+    - wd:Q8269924
+    - skos:Collection
+    is_a: Catalogue
+    slots:
+    - taxon
+    - taxonDataProvider
+    - version
+    - versionDataProvider
+    - rank
+    - rankDataProvider
+    slot_usage:
+      taxon:
+        description: Scientifically classified group or entity within the reference
+          taxonomy
+        aliases:
+        - taxon
+        close_mappings:
+        - dwc:Taxon
+        range: Taxon
+        required: false
+        multivalued: true
+      taxonDataProvider:
+        description: The data provider for the taxons of the taxonomy
+        aliases:
+        - taxon data provider
+        range: DataProvider
+        required: false
+        multivalued: false
+      version:
+        description: The version of this instance of entity
+        aliases:
+        - version
+        range: Version
+        required: true
+        multivalued: false
+      versionDataProvider:
+        description: The data provider for the Version ID of this taxonomy
+        aliases:
+        - version data provider
+        range: DataProvider
+        required: true
+        multivalued: false
+      rank:
+        description: Relative level or position of the identified taxon in the taxonomy
+        aliases:
+        - rank
+        range: TaxonomicRank
+        required: false
+        multivalued: true
+      rankDataProvider:
+        description: The data provider for the description of the taxonomic ranks
+          used in this taxonomy
+        aliases:
+        - rank data provider
+        range: DataProvider
+        required: false
+        multivalued: false
+  DataProvider:
+    description: An external API (Application Programming Interface) or Endpoint that
+      permits to retrieve data from other sources
+    from_schema: EVORA
+    aliases:
+    - Data provider
+    close_mappings:
+    - wd:Q122625839
+    is_a: DataService
+    slots:
+    - license
+    - loginRequestMethod
+    - loginURL
+    - loginTokenName
+    - queryURL
+    - queryMethod
+    - contentType
+    - providedEntityType
+    - weight
+    slot_usage:
+      license:
+        description: Information about terms and conditions under which the subject
+          can be used, shared, or distributed, indicating any restrictions or permissions
+        aliases:
+        - license
+        exact_mappings:
+        - dct:license
+        range: License
+        required: false
+        multivalued: false
+      loginRequestMethod:
+        description: The http request method used to acces the login request url
+        aliases:
+        - login request method
+        close_mappings:
+        - dcat:endpointDescription
+        ifabsent: string(GET)
+        range: string
+        required: false
+        multivalued: false
+      loginURL:
+        description: The URL template that allows to log in if required
+        aliases:
+        - login URL
+        close_mappings:
+        - wdp:P1630
+        - dcat:endpointDescription
+        range: uri
+        required: false
+        multivalued: false
+      loginTokenName:
+        description: The name of the token, unique identifier of an interaction session,
+          that will have to be reused as credential in the query
+        aliases:
+        - login token name
+        close_mappings:
+        - dcat:endpointDescription
+        range: string
+        required: false
+        multivalued: false
+      queryURL:
+        description: The URL template that allows to get the content
+        aliases:
+        - query URL
+        exact_mappings:
+        - dcat:endpointURL
+        close_mappings:
+        - wdp:P1630
+        range: uri
+        required: true
+        multivalued: false
+      queryMethod:
+        description: The http request method used to access the requested query url
+        aliases:
+        - query method
+        close_mappings:
+        - dcat:endpointDescription
+        range: string
+        required: true
+        multivalued: false
+      contentType:
+        description: The content type of the response to the queries
+        aliases:
+        - content type
+        close_mappings:
+        - dct:format
+        ifabsent: string(JSON)
+        range: string
+        required: true
+        multivalued: false
+      providedEntityType:
+        description: The identification of the entity type (Class) described by the
+          response to the query
+        aliases:
+        - provided entity type
+        exact_mappings:
+        - dcat:servesDataset
+        required: true
+        multivalued: false
+      weight:
+        description: A numerical value indicating relative importance or priority,
+          generally processed in ascending order. This weight helps prioritize content
+          when organizing or processing data. Its value can be negative, with a default
+          set to 0
+        comments:
+        - The lowest weighted Data providers are triggered first, this may be usefull
+          to populate at first entities that are referenced by others (e.g. Version
+          ahead of Rank ahead of Taxon)
+        aliases:
+        - weight
+        close_mappings:
+        - adms:status
+        range: integer
+        required: true
+        multivalued: false
+  PathogenIdentification:
+    description: A collection of distinguishing information that enables the differentiation
+      of a pathogen from another
+    from_schema: EVORA
+    aliases:
+    - Pathogen identification
+    is_a: Dataset
+    slots:
+    - taxon
+    - pathogenName
+    - pathogenType
+    - hostType
+    - subspecies
+    - strain
+    - isolate
+    - genotype
+    - serotype
+    - variant
+    slot_usage:
+      taxon:
+        description: Scientifically classified group or entity within the reference
+          taxonomy
+        comments:
+        - The taxon of the highest rank known that can be used to classify a pathogen
+          or group of pathogens (e.g viruses) in the reference taxonomy
+        aliases:
+        - taxon
+        range: Taxon
+        required: true
+        multivalued: false
+      pathogenName:
+        description: A pathogen common name or a name that describes a group of pathogens
+        aliases:
+        - pathogen name
+        range: CommonName
+        required: true
+        multivalued: false
+      pathogenType:
+        description: Identification of the specific type of pathogen among the listed
+          categories e.g. "Virus","Viroid","Bacterium"...
+        aliases:
+        - pathogen type
+        range: string
+        required: true
+        multivalued: false
+      hostType:
+        description: Indication of the possible host(s) for the identified pathogens
+          among the listed main categories
+        aliases:
+        - host type
+        range: string
+        required: false
+        multivalued: true
+      subspecies:
+        description: The subspecies information differentiates closely related pathogens
+          within a single species
+        aliases:
+        - subspecies
+        range: string
+        required: false
+        multivalued: false
+      strain:
+        description: Identifier given to a genetic variant within a single species
+        aliases:
+        - strain
+        range: string
+        required: false
+        multivalued: false
+      isolate:
+        description: Identifier given to a pathogen that has been isolated from an
+          infected host and propagated in a laboratory culture. The isolate information
+          may include an internal reference code from the laboratory that took the
+          sample or performed the isolation, as well as details about the specific
+          conditions of isolation, such as the name of the town, hospital, and type
+          of host
+        aliases:
+        - isolate
+        range: string
+        required: false
+        multivalued: false
+      genotype:
+        description: Genotype information that identifies organisms that cluster in
+          phylogenetic trees, thus different clusters are distinct genotypes
+        aliases:
+        - genotype
+        range: string
+        required: false
+        multivalued: false
+      serotype:
+        description: Genetically related pathogens that group together based on serological
+          relationships
+        aliases:
+        - serotype
+        range: string
+        required: false
+        multivalued: false
+      variant:
+        description: "An organism with one or more new mutations is referred to as\
+          \ a \u201Cvariant\u201D of the original organism if not sufficiently different\
+          \ to be termed a distinct strain"
+        aliases:
+        - variant
+        range: Variant
+        required: false
+        multivalued: false
+  Publication:
+    description: A scientific publication
+    from_schema: EVORA
+    aliases:
+    - Publication
+    close_mappings:
+    - wd:Q591041
+    is_a: Dataset
+    slots:
+    - title
+    - authors
+    - abstract
+    - relatedDOI
+    - journal
+    slot_usage:
+      title:
+        description: The descriptive word or phrase that identifies the current piece
+          of work
+        comments:
+        - 'The title of the item should be as short and descriptive as possible. E.g.
+          for virus products it should basically be based on the following Pattern:
+
+          "Virus name", "virus host type", "collection year", "country of collection"
+          ex "suspected epidemiological origin", "genotype", "strain", "variant name
+          or specific feature"'
+        aliases:
+        - title
+        exact_mappings:
+        - dct:title
+        range: string
+        required: true
+        multivalued: false
+      authors:
+        description: The list of authors
+        aliases:
+        - authors
+        range: string
+        required: true
+        multivalued: false
+      abstract:
+        description: Concise summary of the publication
+        aliases:
+        - abstract
+        range: string
+        required: true
+        multivalued: false
+      relatedDOI:
+        description: Any Digital Object Identifier that can be related
+        aliases:
+        - DOI
+        range: DOI
+        required: true
+        multivalued: false
+      journal:
+        description: The scientific journal in which the publication was published
+        aliases:
+        - journal
+        range: Journal
+        required: false
+        multivalued: false
+  Vocabulary:
+    description: A subset of words or phrases specific to a particular subject or
+      field
+    from_schema: EVORA
+    aliases:
+    - Vocabulary
+    close_mappings:
+    - wd:Q6499736
+    - skos:Collection
+    is_a: Catalogue
+    slots:
+    - termDataProvider
+    - term
+    slot_usage:
+      termDataProvider:
+        description: An external API or Endpoint that permits to retrieve the terms
+          of this vocabulary
+        aliases:
+        - term data provider
+        range: DataProvider
+        required: false
+        multivalued: false
+      term:
+        description: The terms related to this vocabulary
+        aliases:
+        - term
+        range: Term
+        required: false
+        multivalued: true
+  Term:
+    description: Word or phrase from a specialized area of knowledge
+    from_schema: EVORA
+    aliases:
+    - Term
+    close_mappings:
+    - wd:Q1969448
+    is_a: NamedDataset
+    abstract: true
+    slots:
+    - weight
+    - inVocabulary
+    slot_usage:
+      weight:
+        description: A numerical value indicating relative importance or priority,
+          generally processed in ascending order. This weight helps prioritize content
+          when organizing or processing data. Its value can be negative, with a default
+          set to 0
+        aliases:
+        - weight
+        close_mappings:
+        - adms:status
+        ifabsent: int(0)
+        range: integer
+        required: true
+        multivalued: false
+      inVocabulary:
+        description: Terms belong to a specific vocabulary
+        aliases:
+        - in Vocabulary
+        close_mappings:
+        - wdp:P972
+        range: Vocabulary
+        required: true
+        multivalued: false
+  CommonName:
+    description: Vernacular name that is the name used in everyday language to refer
+      to an organism or group of organisms. This name is typically easier to remember
+      and pronounce compared to the scientific name
+    from_schema: EVORA
+    aliases:
+    - Common Name
+    exact_mappings:
+    - dwc:vernacularName
+    close_mappings:
+    - wd:Q502895
+    is_a: Term
+    slots:
+    - alternateName
+    - sourceOfInformation
+    slot_usage:
+      alternateName:
+        description: Any known alternate name related to this name
+        comments:
+        - including previous names and former taxonomic terms, this information can
+          also serve as keywords arround the pathogen name for search and as a bridge
+          with other projects that are still using other naming systems or taxonomies
+          e.g. the NCBI taxonomy
+        aliases:
+        - alternate name
+        close_mappings:
+        - wdp:P4970
+        range: AlternateName
+        required: false
+        multivalued: true
+      sourceOfInformation:
+        description: The name of the origin from which knowledge is obtained. This
+          can include any entity that provides information
+        aliases:
+        - source of information
+        close_mappings:
+        - wdp:P248
+        range: string
+        required: false
+        multivalued: true
+  VirusName:
+    description: A virus vernacular name or a name that describes a group of viruses
+    from_schema: EVORA
+    aliases:
+    - Virus Name
+    close_mappings:
+    - wd:Q125481078
+    is_a: CommonName
+  AlternateName:
+    description: List of alternate names for things
+    from_schema: EVORA
+    aliases:
+    - Alternate Name
+    close_mappings:
+    - wd:Q7662595
+    is_a: Term
+    slots:
+    - alternateName
+    - sourceOfInformation
+    slot_usage:
+      alternateName:
+        description: Any known alternate name related to this name
+        aliases:
+        - alternate name
+        close_mappings:
+        - wdp:P4970
+        range: AlternateName
+        required: false
+        multivalued: true
+      sourceOfInformation:
+        description: The name of the origin from which knowledge is obtained. This
+          can include any entity that provides information
+        aliases:
+        - source of information
+        close_mappings:
+        - wdp:P248
+        range: string
+        required: false
+        multivalued: true
+  RiskGroup:
+    description: Risk group classification guides initial handling of biological agents
+      in labs but doesn't systematically equate to biosafety levels. Actual risk varies
+      with the agent, procedures, and personnel competence
+    comments:
+    - Use of Data provider if any or manual import of information from wd:Q125449389,
+      wd:Q125449412, wd:Q125449429, wd:Q125449439
+    from_schema: EVORA
+    aliases:
+    - Risk group
+    close_mappings:
+    - wd:Q125449255
+    is_a: Term
+  DOI:
+    description: A unique string identifier assigned to a digital object, providing
+      a permanent link for reliable citation and access.  The Digital Object Identifier
+      (DOI) is a persistent identifier that is an ISO standard
+    from_schema: EVORA
+    aliases:
+    - DOI
+    close_mappings:
+    - wd:Q25670
+    is_a: Term
+  Journal:
+    description: Periodical journal publishing scientific research
+    from_schema: EVORA
+    aliases:
+    - Journal
+    close_mappings:
+    - wd:Q5633421
+    is_a: Term
+  PDBReference:
+    description: Identifier for 3D structural data as per the PDB (Protein Data Bank)
+      database
+    from_schema: EVORA
+    aliases:
+    - PDB reference
+    close_mappings:
+    - wdp:Q42415644
+    is_a: Term
+  Keyword:
+    description: A term or phrase used to tag and categorize content
+    from_schema: EVORA
+    aliases:
+    - Keyword
+    close_mappings:
+    - wd:Q1128340
+    is_a: Term
+  ProteinTag:
+    description: Peptide sequence genetically grafted onto a recombinant protein
+    from_schema: EVORA
+    aliases:
+    - Protein tag
+    close_mappings:
+    - wd:Q645590
+    is_a: Term
+  SpecialFeature:
+    description: Distinctive attributes of a product that set it apart from other
+      similar items e.g., Reference strain, Vaccinal strain, Antiviral resistant strain
+      ...
+    comments:
+    - These special features help researchers and professionals in the field to select
+      appropriate virus strains for their specific research needs and applications.
+    from_schema: EVORA
+    aliases:
+    - Special feature
+    is_a: Term
+  ExpressionVector:
+    description: A reference to an expression vector plasmid, typically embedding
+      a resistance marker for inducible protein expression
+    from_schema: EVORA
+    aliases:
+    - Expression vector
+    close_mappings:
+    - wd:Q5421712
+    is_a: Term
+  PlasmidSelection:
+    description: The process of identifying cells that have successfully incorporated
+      a plasmid, typically using antibiotic resistance markers
+    from_schema: EVORA
+    aliases:
+    - Plasmid selection
+    is_a: Term
+  PropagationHost:
+    description: The organism used to grow and multiply the pathogen under controlled
+      conditions
+    from_schema: EVORA
+    aliases:
+    - Propagation host
+    is_a: Term
+  TransmissionMethod:
+    description: The process by which the pathogen spreads between hosts
+    from_schema: EVORA
+    aliases:
+    - Transmission method
+    is_a: Term
+  ProductionCellLine:
+    description: A population of cells that originates from a primary culture, adapted
+      to grow and divide under laboratory conditions. Used in biotechnology to consistently
+      produce biological substances
+    from_schema: EVORA
+    aliases:
+    - Production cell line
+    close_mappings:
+    - wd:Q21014462
+    is_a: Term
+  ProductCategory:
+    description: A term used to classify a group of products that share common characteristics
+      or functions, which helps in their organization
+    from_schema: EVORA
+    aliases:
+    - Product category
+    close_mappings:
+    - wd:Q63981612
+    is_a: Term
+    slots:
+    - parentCategory
+    slot_usage:
+      parentCategory:
+        description: An overarching category that encompasses the current category
+          within a hierarchical classification system. It serves as the top-level
+          classification, organizing related subcategories under its umbrella to create
+          a structured and logical order.
+        aliases:
+        - parent category
+        range: ProductCategory
+        required: false
+        multivalued: false
+  IsolationHost:
+    description: Host organism from which the pathogen was isolated
+    from_schema: EVORA
+    aliases:
+    - Isolation host
+    is_a: Term
+  GeographicalOrigin:
+    description: The specific location or region where a physical item, originates
+      or is naturally found
+    comments:
+    - geonames.org API could be a good service data provider as suggested by DCAT-AP
+    from_schema: EVORA
+    aliases:
+    - Geographical origin
+    exact_mappings:
+    - dct:Location
+    close_mappings:
+    - wd:Q3885844
+    is_a: Term
+  IPLCOrigin:
+    description: The IPLC area (Indigenous People and Local Communities) from which
+      a physical item, originates or is naturally found
+    from_schema: EVORA
+    aliases:
+    - IPLC origin
+    is_a: GeographicalOrigin
+  Country:
+    description: The country as of ISO3166
+    comments:
+    - Use of Data provider recommended... serve as a local cache for ISO3166
+    from_schema: EVORA
+    aliases:
+    - Country
+    close_mappings:
+    - wd:Q6256
+    is_a: Term
+    slots:
+    - alpha2Code
+    slot_usage:
+      alpha2Code:
+        description: Two-letter country codes from ISO 3166-1 alpha-2
+        aliases:
+        - alpha-2 code
+        range: string
+        required: true
+        multivalued: false
+  IATAClassification:
+    description: The corresponding International Air Transport Association (IATA)'s
+      category for dangerous goods that are transported by air
+    from_schema: EVORA
+    aliases:
+    - IATA classification
+    is_a: Term
+  Variant:
+    description: "An organism with one or more new mutations is referred to as a \u201C\
+      variant\u201D of the original organism if not sufficiently different to be termed\
+      \ a distinct strain"
+    from_schema: EVORA
+    aliases:
+    - Variant
+    close_mappings:
+    - wd:Q104795308
+    is_a: CommonName
+  TaxonomicRank:
+    description: The possible taxonomic ranks and their description
+    comments:
+    - Use of Data provider recommended
+    from_schema: EVORA
+    aliases:
+    - Taxonomic rank
+    close_mappings:
+    - wd:Q427626
+    is_a: Term
+    slots:
+    - taxonomy
+    slot_usage:
+      taxonomy:
+        description: The taxonomy release(s) in which this entity exists
+        aliases:
+        - taxonomy
+        range: Taxonomy
+        required: false
+        multivalued: true
+  Taxon:
+    description: Conceptual entity that groups one or more populations of an organism
+      or organisms, as seen by taxonomists, to form a unit
+    comments:
+    - The taxonomic taxons connected to their parent so that a full lienage can be
+      rebuild. Use of Data provider recommended
+    from_schema: EVORA
+    aliases:
+    - Taxon
+    exact_mappings:
+    - dwc:Taxon
+    close_mappings:
+    - wd:Q16521
+    is_a: Term
+    slots:
+    - taxonomy
+    - parentTaxon
+    - rank
+    - previouslyKnownAs
+    - externalEquivalentTaxon
+    - taxonomicID
+    - taxonomicNodeID
+    slot_usage:
+      taxonomy:
+        description: The taxonomy release(s) in which this entity exists
+        aliases:
+        - taxonomy
+        range: Taxonomy
+        required: false
+        multivalued: true
+      parentTaxon:
+        description: The parent taxon of the current taxon
+        aliases:
+        - parent taxon
+        close_mappings:
+        - dwc:Taxon
+        range: Taxon
+        required: true
+        multivalued: false
+      rank:
+        description: Relative level or position of the identified taxon in the taxonomy
+        aliases:
+        - rank
+        exact_mappings:
+        - dwc:taxonRank
+        range: TaxonomicRank
+        required: true
+        multivalued: false
+      previouslyKnownAs:
+        description: Any historic version of this taxon having a different name
+        aliases:
+        - previously known as
+        close_mappings:
+        - dwc:Taxon
+        range: Taxon
+        required: false
+        multivalued: true
+      externalEquivalentTaxon:
+        description: Any equivalent taxon in a different taxonomy if exists/known
+          to serve as a bridge (e.g, ICTV towards NCBI)
+        comments:
+        - Could serve as a bridge between ICTV and NCBI as several providers currently
+          uses NCBI Taxonomy
+        aliases:
+        - external equivalent taxon
+        close_mappings:
+        - dwc:taxonID
+        range: Taxon
+        required: false
+        multivalued: true
+      taxonomicID:
+        description: The taxonomic identifier as a persistent identifier accross releases
+        aliases:
+        - taxonomic ID
+        close_mappings:
+        - dwc:taxonID
+        range: string
+        required: true
+        multivalued: false
+      taxonomicNodeID:
+        description: The taxonomic_Node Identifier as an identifier specific the current
+          taxon in the corresponding release/version of the taxonomy
+        comments:
+        - NCBI does not have a taxon_node id, only a taxonomicID. Taxon_node id is
+          Unique  in NCBI= Key of the taxon node !! Could be replaced by a composite
+          key made of "taxonomic ID" + "has version" But can be referenced as it seems
+          the "taxonomic node_ID" will be generated and provided by the ICTV
+        aliases:
+        - taxonomic node ID
+        close_mappings:
+        - dwc:taxonID
+        range: string
+        required: false
+        multivalued: false
+  ExternalRelatedReference:
+    description: A reference that permits to retrieve an item from an external provider
+    from_schema: EVORA
+    aliases:
+    - External related reference
+    is_a: Dataset
+    slots:
+    - reference
+    - referenceLabel
+    - referenceProviderPrefix
+    - referenceProviderName
+    slot_usage:
+      reference:
+        description: The identifier reference of the connected external item
+        aliases:
+        - reference
+        close_mappings:
+        - dct:identifier
+        range: string
+        required: true
+        multivalued: false
+      referenceLabel:
+        description: The label informing what this reference is about
+        comments:
+        - e.g., 'Infravec2 related product'
+        aliases:
+        - reference label
+        close_mappings:
+        - dct:title
+        range: string
+        required: true
+        multivalued: false
+      referenceProviderPrefix:
+        description: The url prefix that once completed with the reference will lead
+          to the linked external resource
+        aliases:
+        - reference provider prefix
+        close_mappings:
+        - dcat:landingPage
+        range: string
+        required: true
+        multivalued: false
+      referenceProviderName:
+        description: The name for the reference provider
+        aliases:
+        - reference provider name
+        close_mappings:
+        - dct:publisher
+        range: string
+        required: true
+        multivalued: false
+  Sequence:
+    description: A nucleic acid or protein sequence information
+    from_schema: EVORA
+    aliases:
+    - Sequence
+    close_mappings:
+    - wd:Q3511065
+    is_a: Dataset
+    slots:
+    - sequenceReference
+    - sequenceFASTA
+    slot_usage:
+      sequenceReference:
+        description: A reference that permits to retrieve the sequence information
+          from a sequence provider
+        aliases:
+        - sequence reference
+        range: SequenceReference
+        required: false
+        multivalued: true
+      sequenceFASTA:
+        description: In case no sequence reference exists in public repositories,
+          the corresponding FASTA sequence is required
+        comments:
+        - In FASTA format the line before the nucleotide sequence, called the FASTA
+          definition line, must begin with a carat (">"), followed by a unique SeqID
+          (sequence identifier). In case the sequence is made of multiple parts several
+          fasta sequences can be provided
+        aliases:
+        - sequence FASTA
+        range: string
+        required: false
+        multivalued: false
+  SequenceReference:
+    description: A reference that permits to retrieve the sequence information from
+      a sequence provider
+    comments:
+    - A work on making it a subclass of External related reference might be consistent
+      and beneficial for data structuration but special attention will have to be
+      take to ensure it remains consistent with the actual the use cases for users
+    from_schema: EVORA
+    aliases:
+    - Sequence reference
+    is_a: Dataset
+    slots:
+    - accessionNumber
+    - sequenceProvider
+    slot_usage:
+      accessionNumber:
+        description: The sequence ID that permits to retrieve the sequence information
+          from the sequence provider
+        aliases:
+        - accession number
+        close_mappings:
+        - dct:identifier
+        range: string
+        required: true
+        multivalued: false
+      sequenceProvider:
+        description: The name of the sequence provider within the list of accepted
+          sequence providers
+        aliases:
+        - sequence provider
+        close_mappings:
+        - dct:publisher
+        range: string
+        required: true
+        multivalued: false
+  PersonOrOrganization:
+    description: A person or an organization
+    from_schema: EVORA
+    aliases:
+    - Person Or Organization
+    exact_mappings:
+    - dct:Agent
+    close_mappings:
+    - foaf:Agent
+    is_a: Nameable
+    slots:
+    - homePage
+    - contactPoint
+    - logo
+    slot_usage:
+      homePage:
+        description: Refers to the degree of purity achieved for a protein sample.
+          Possible values include ">95%" (the protein is highly purified, with more
+          than 95% purity) and "Unpurified expression host lysate or partly purified
+          protein" (the protein is either unpurified and present in the host cell
+          lysate or only partially purified).
+        aliases:
+        - home page
+        range: string
+        required: false
+        multivalued: false
+      contactPoint:
+        description: An information that allows someone to establish communication
+        aliases:
+        - contact point
+        exact_mappings:
+        - dcat:contactPoint
+        range: ContactPoint
+        required: false
+        multivalued: false
+      logo:
+        description: A path or URL to the related logo
+        aliases:
+        - logo
+        range: Image
+        required: false
+        multivalued: false
+  Person:
+    description: An individual
+    from_schema: EVORA
+    aliases:
+    - Person
+    close_mappings:
+    - wd:Q215627
+    - vcard:Individual
+    is_a: PersonOrOrganization
+    slots:
+    - oRCIDiD
+    slot_usage:
+      oRCIDiD:
+        description: Unique persistent identifier for a person, provided by the Open
+          Researcher and Contributor ID (ORCID) organisation
+        aliases:
+        - ORCID iD
+        range: string
+        required: false
+        multivalued: false
+  Organization:
+    description: A social entity established to meet needs or pursue specific goals
+    from_schema: EVORA
+    aliases:
+    - Organization
+    close_mappings:
+    - wd:Q43229
+    - vcard:Organization
+    is_a: PersonOrOrganization
+    slots:
+    - alternateName
+    - country
+    slot_usage:
+      alternateName:
+        description: An alternate name or acronym
+        aliases:
+        - alternate name
+        close_mappings:
+        - dwc:institutionCode
+        range: AlternateName
+        required: false
+        multivalued: false
+      country:
+        description: The country of the organization
+        aliases:
+        - country
+        range: Country
+        required: false
+        multivalued: false
+  RI:
+    description: A research infrastructure
+    from_schema: EVORA
+    aliases:
+    - RI
+    close_mappings:
+    - wd:Q1438053
+    is_a: Organization
+  Provider:
+    description: A provider of products or services, as a specific organization
+    from_schema: EVORA
+    aliases:
+    - Provider
+    close_mappings:
+    - dct:ProvenanceStatement
+    is_a: Organization
+    slots:
+    - memberOfRI
+    slot_usage:
+      memberOfRI:
+        description: The research infrastructure of which this organization is a member
+        aliases:
+        - member of RI
+        range: RI
+        required: false
+        multivalued: true
+  Originator:
+    description: The individual or organization responsible for the original discovery,
+      isolation, or creation of an item, providing information about the source or
+      origin of the sample
+    from_schema: EVORA
+    aliases:
+    - Originator
+    close_mappings:
+    - dct:ProvenanceStatement
+    is_a: PersonOrOrganization
+  BiologicalMaterialOrigin:
+    description: Information about the origin of the biological material, compulsory
+      for access, utilization, and benefit-sharing of genetic resources in compliance
+      with the Nagoya Protocol
+    from_schema: EVORA
+    aliases:
+    - Biological material origin
+    is_a: Dataset
+    slots:
+    - recombinantMaterial
+    - biologicalSourceType
+    - biologicalPartOrigin
+    - thirdPartyDistributionConsent
+    - usageRestrictions
+    slot_usage:
+      recombinantMaterial:
+        description: Indicates if this biological material is a recombinant biological
+          material.
+        aliases:
+        - recombinant material
+        ifabsent: 'false'
+        range: boolean
+        required: true
+        multivalued: false
+      biologicalSourceType:
+        description: Defines if the current biological material is natural and was
+          collected or if it is a synthetic biological material. It makes sense that
+          only recombinant biological materials can have a mixed material origin!
+        comments:
+        - It makes sense that only recombinant biological materials can have a mixed
+          material origin!
+        aliases:
+        - biological source type
+        range: boolean
+        required: true
+        multivalued: false
+      biologicalPartOrigin:
+        description: Details the origin of one or more unitary parts that make up
+          the biological material. In the case of recombinant biological material,
+          multiple parts may be involved.
+        comments:
+        - It can be multiple parts in case of a recombinant biological material.
+        aliases:
+        - biological part origin
+        range: BiologicalPartOrigin
+        required: true
+        multivalued: true
+      thirdPartyDistributionConsent:
+        description: Indicates whether the biological material can be distributed
+          to third parties, considering any potential concerns about to the related
+          genetic material as indicated by the ABS permit, if one exists
+        aliases:
+        - third party distribution consent
+        range: boolean
+        required: false
+        multivalued: false
+      usageRestrictions:
+        description: Specifies any limitations or conditions on the use of the biological
+          material, including restrictions on research, commercial use, or distribution,
+          considering any potential concerns about the related genetic material
+        aliases:
+        - usage restrictions
+        range: string
+        required: false
+        multivalued: false
+  BiologicalPartOrigin:
+    description: Information on the origin of a unitary, cohesive part that is part
+      of, or constitutes the biological material. It can be multiple parts in case
+      of a recombinant biological material
+    from_schema: EVORA
+    aliases:
+    - Biological part origin
+    is_a: Dataset
+    abstract: true
+    slots:
+    - recombinantPartIdentification
+    slot_usage:
+      recombinantPartIdentification:
+        description: Identification of a recombinant part
+        comments:
+        - Information not required if the current biological part constitutes the
+          complete biological material
+        aliases:
+        - Recombinant part identification
+        range: RecombinantPartIdentification
+        required: false
+        multivalued: false
+  NaturalPartOrigin:
+    description: Information on the origin of a natural part that composes the biological
+      material
+    from_schema: EVORA
+    aliases:
+    - Natural part origin
+    is_a: BiologicalPartOrigin
+    slots:
+    - countryOfCollection
+    - indigenousPoepleAndLocalCommunityOrigin
+    - collectionDate
+    - beforeDate
+    - reportingToAuthorities
+    slot_usage:
+      countryOfCollection:
+        description: The geographical location where the sample was collected in situ.
+          Used for Nagoya/CBD; equivalent to "country of origin".
+        aliases:
+        - country of collection
+        close_mappings:
+        - dct:spatial
+        - dwc:country
+        range: Country
+        required: true
+        multivalued: false
+      indigenousPoepleAndLocalCommunityOrigin:
+        description: The specific IPLC area (Indigenous People and Local Communities)
+          from which this sample/element was sampled, if relevant
+        aliases:
+        - indigenous people and local community origin
+        range: IPLCOrigin
+        required: false
+        multivalued: false
+      collectionDate:
+        description: The date when the sample was collected in situ. If unknown/private,
+          use a proxy date such as "date received" and indicate this by setting to
+          true the before date property
+        aliases:
+        - collection date
+        range: datetime
+        required: true
+        multivalued: false
+      beforeDate:
+        description: Set to TRUE if a proxy date for the collection date is used
+        aliases:
+        - before date
+        ifabsent: 'false'
+        range: boolean
+        required: true
+        multivalued: false
+      reportingToAuthorities:
+        description: Information about permit identifiers for access to the genetic
+          resource, applicable if the genetic resource falls under Access and Benefit-Sharing
+          (ABS) regulations
+        aliases:
+        - reporting to authorities
+        required: false
+        multivalued: false
+  SyntheticPartOrigin:
+    description: Information on the origin of a synthetic part that composes the biological
+      material
+    from_schema: EVORA
+    aliases:
+    - Synthetic part origin
+    is_a: BiologicalPartOrigin
+    slots:
+    - modificationsFromTheReferenceSequences
+    - descriptionOfModificationsMadeFromTheReferenceSequences
+    slot_usage:
+      modificationsFromTheReferenceSequences:
+        description: Set to TRUE if there was is any modification made from the reference
+          sequence
+        aliases:
+        - modifications from the reference sequence(s)
+        range: boolean
+        required: true
+        multivalued: false
+      descriptionOfModificationsMadeFromTheReferenceSequences:
+        description: List the modifications mades from the reference sequence if any
+        aliases:
+        - description of modification(s) made from the reference sequence(s)
+        range: string
+        required: false
+        multivalued: false
+  RecombinantPartIdentification:
+    description: Identification of a recombinant part
+    from_schema: EVORA
+    aliases:
+    - Recombinant part identification
+    slots:
+    - partIdentification
+    - sequence
+    slot_usage:
+      partIdentification:
+        description: A short designation of this recombinant part of the related biological
+          material
+        aliases:
+        - Part identification
+        range: string
+        required: true
+        multivalued: false
+      sequence:
+        description: The related sequence information from a sequence provider or
+          in fasta format
+        aliases:
+        - sequence
+        range: Sequence
+        required: true
+        multivalued: true
+  Collection:
+    description: Set of products and services with some common characteristics
+    from_schema: EVORA
+    aliases:
+    - Collection
+    close_mappings:
+    - wd:Q2668072
+    is_a: Catalogue
+    slots:
+    - collectionItem
+    - collectionDataProvider
+    slot_usage:
+      collectionItem:
+        description: An item of the collection
+        aliases:
+        - collection item
+        close_mappings:
+        - dcat:resource
+        range: ProductOrService
+        required: false
+        multivalued: true
+      collectionDataProvider:
+        description: The provider of the data of the collection
+        aliases:
+        - collection data provider
+        close_mappings:
+        - dct:isReferencedBy
+        range: DataProvider
+        required: false
+        multivalued: false
+  ProductOrService:
+    description: A product or a service
+    comments:
+    - part of  wd:Q2897903 (goods and services )
+    from_schema: EVORA
+    aliases:
+    - Product or service
+    is_a: NamedDataset
+    abstract: true
+    slots:
+    - accessPointURL
+    - refSKU
+    - unitDefinition
+    - category
+    - additionalCategory
+    - unitCost
+    - qualityGrading
+    - pathogenIdentification
+    - relatedDOI
+    - riskGroup
+    - biosafetyRestrictions
+    - canItBeUsedToProduceGMO
+    - provider
+    - collection
+    - keywords
+    - availability
+    - complementaryDocument
+    - technicalRecommendation
+    - productPicture
+    - externalRelatedReference
+    - certification
+    - internalReference
+    - note
+    - contactPoint
+    slot_usage:
+      accessPointURL:
+        description: The URL that permits to access to the product/service detailed
+          description page on the provider's website and/or allows to place an order
+          about it or at least describe the process to place an order/enquiry
+        aliases:
+        - access point URL
+        exact_mappings:
+        - dcat:landingPage
+        range: uri
+        required: true
+        multivalued: false
+      refSKU:
+        description: The reference or the stock keeping unit of the service or item
+          provided in the provider's catalogue
+        aliases:
+        - ref-SKU
+        exact_mappings:
+        - dct:identifier
+        range: string
+        required: true
+        multivalued: false
+      unitDefinition:
+        description: A short description of what will be delivered by ordering one
+          unit of this item
+        comments:
+        - 'The description of what will be delivered to the end-user (e.g.: packaging,
+          quantity...)'
+        aliases:
+        - unit definition
+        range: string
+        required: false
+        multivalued: false
+      category:
+        description: The main category of the service or product
+        aliases:
+        - category
+        exact_mappings:
+        - dcat:theme
+        range: ProductCategory
+        required: true
+        multivalued: false
+      additionalCategory:
+        description: Any category apart from its main category in which this product
+          or service can fit
+        aliases:
+        - additional category
+        exact_mappings:
+        - dcat:theme
+        range: ProductCategory
+        required: false
+        multivalued: true
+      unitCost:
+        description: The cost per access for one unit as defined by the unit definition
+        comments:
+        - The cost per access may not be defined or be specific to a request, so it
+          has to be a xsd:string instead of an xsd:float as initialy suggested to
+          permit description of cost as conditional to what is requested
+        aliases:
+        - unit cost
+        ifabsent: string(on request)
+        range: string
+        required: true
+        multivalued: false
+      qualityGrading:
+        description: Information that permits to assess the quality level of what
+          will be provided
+        aliases:
+        - quality grading
+        range: string
+        required: false
+        multivalued: false
+      pathogenIdentification:
+        description: The identification of the pathogen or group of pathogens (e.g;
+          name, taxon identification, etc.) related to the current item.
+        comments:
+        - 'The pathogen identification contains information about name and taxon but
+          in some cases(e.g: FAIRSHARING) there may have no direct pathogen related
+          but simply a taxonomic information .... the default value should be the
+          root of virology: Viruses'
+        aliases:
+        - pathogen identification
+        range: PathogenIdentification
+        required: true
+        multivalued: true
+      relatedDOI:
+        description: Any DOI that can be related
+        aliases:
+        - DOI
+        close_mappings:
+        - wdp:P356
+        range: DOI
+        required: false
+        multivalued: true
+      riskGroup:
+        description: The highest risk group related to this resource. The risk group
+          of a biological agent guiding its initial handling in labs according to
+          the risk group classification defined by the WHO laboratory biosafety manual
+        aliases:
+        - risk group
+        close_mappings:
+        - wdp:P12663
+        range: RiskGroup
+        required: false
+        multivalued: false
+      biosafetyRestrictions:
+        description: Information about guidelines and regulations designed to prevent
+          the exposure to or release of potentially harmful biological agents. It
+          thereby contributes to protecting people and the environment from biohazards
+          while accessing this product or service
+        aliases:
+        - biosafety restrictions
+        range: string
+        required: false
+        multivalued: false
+      canItBeUsedToProduceGMO:
+        description: Indicates if the current service or product can be used to produce
+          GMO
+        comments:
+        - Set to TRUE if it can produce GMO
+        aliases:
+        - can it be used to produce GMO
+        range: boolean
+        required: false
+        multivalued: false
+      provider:
+        description: A provider of this product or service, as a specific organization
+        aliases:
+        - provider
+        range: Provider
+        required: true
+        multivalued: false
+      collection:
+        description: The collection(s) to which belongs this item
+        aliases:
+        - collection
+        range: Collection
+        required: true
+        multivalued: true
+      keywords:
+        description: List of terms used to tag and categorize this Item
+        aliases:
+        - keywords
+        exact_mappings:
+        - dcat:keyword
+        range: Keyword
+        required: true
+        multivalued: true
+      availability:
+        description: The state or condition in which this item is accessible and ready
+          for use or can be obtained
+        comments:
+        - Possible availabilities may differ from a project to another
+        aliases:
+        - availability
+        ifabsent: string(on request)
+        range: string
+        required: true
+        multivalued: false
+      complementaryDocument:
+        description: Any complementary document that can be related to this Item
+        aliases:
+        - complementary document
+        range: Document
+        required: false
+        multivalued: true
+      technicalRecommendation:
+        description: Expert advice or guidelines provided to ensure the optimal use,
+          performance, and maintenance of what is provided, including best practices,
+          troubleshooting tips, and procedural instructions
+        aliases:
+        - technical recommendation
+        range: string
+        required: false
+        multivalued: false
+      productPicture:
+        description: A picture that can represent the item
+        aliases:
+        - product picture
+        range: Image
+        required: false
+        multivalued: true
+      externalRelatedReference:
+        description: A reference that permits to retrieve another related item from
+          an external provider
+        aliases:
+        - external related reference
+        range: ExternalRelatedReference
+        required: false
+        multivalued: true
+      certification:
+        description: Any certification related to the current product or service;
+          e.g., ISO certification
+        aliases:
+        - certification
+        close_mappings:
+        - dct:conformsTo
+        range: Certification
+        required: false
+        multivalued: true
+      internalReference:
+        description: Any reference or indication to be used for local retrieval purpose
+        aliases:
+        - internal reference
+        range: string
+        required: false
+        multivalued: false
+      note:
+        description: An aditional information as a textual comment
+        aliases:
+        - note
+        range: string
+        required: false
+        multivalued: false
+      contactPoint:
+        description: An information that allows someone to establish communication
+        aliases:
+        - contact point
+        exact_mappings:
+        - dcat:contactPoint
+        range: ContactPoint
+        required: false
+        multivalued: false
+  Service:
+    description: A service
+    from_schema: EVORA
+    aliases:
+    - Service
+    close_mappings:
+    - wd:Q7406919
+    is_a: ProductOrService
+    slots:
+    - modelSpecies
+    - modelType
+    slot_usage:
+      modelSpecies:
+        description: The species of the infected organism in the experiment
+        aliases:
+        - model species
+        range: string
+        required: false
+        multivalued: false
+      modelType:
+        description: The specific name of the infected organism, including its modification
+          if necessary
+        aliases:
+        - model type
+        range: string
+        required: false
+        multivalued: false
+  Product:
+    description: A product
+    from_schema: EVORA
+    aliases:
+    - Product
+    close_mappings:
+    - wd:Q2424752
+    is_a: ProductOrService
+    slots:
+    - hasIATAClassification
+    - shippingConditions
+    - materialSafetyDataSheet
+    - originator
+    - storageConditions
+    slot_usage:
+      hasIATAClassification:
+        description: The corresponding International Air Transport Association (IATA)'s
+          category for this Product
+        aliases:
+        - IATA classification
+        range: IATAClassification
+        required: true
+        multivalued: false
+      shippingConditions:
+        description: 'Specification of the terms and parameters for transporting
+
+          '
+        aliases:
+        - shipping conditions
+        range: string
+        required: true
+        multivalued: false
+      materialSafetyDataSheet:
+        description: A Material Safety Data Sheet (MSDS) or Safety Data Sheet (SDS)
+          is a standardized document that contains crucial occupational safety and
+          health information related to the product
+        comments:
+        - The MSD  is a document that provides detailed information about the properties,
+          hazards, handling, storage, and emergency procedures related to the use
+          of a chemical or substance
+        aliases:
+        - material safety data sheet
+        range: MSDS
+        required: false
+        multivalued: false
+      originator:
+        description: The individual or organization responsible for the original discovery,
+          isolation, or creation of an item, providing information about the source
+          or origin of the sample
+        aliases:
+        - originator
+        range: Originator
+        required: false
+        multivalued: false
+      storageConditions:
+        description: Specifies the conditions under which the product has to be stored
+          to maintain stability and integrity, such as temperature, buffer, and other
+          environmental factors.
+        comments:
+        - "e.g, could be a xsd:string in enumeration (\"Freeze Dried\", \"Liquid Nitrogen\"\
+          , \"Viral Storage Medium -20C\", \"Viral Storage Medium -80C\", \"Living\
+          \ plant material (>= +4\xB0C)\", \"Gas Phase\", \"Ethanol -20C\", \"Ethanol\
+          \ -80C\", \"Dried\")"
+        aliases:
+        - storage conditions
+        range: string
+        required: true
+        multivalued: false
+  Antibody:
+    description: Protein that can bind to certain types of foreign bodies, such as
+      pathogens
+    from_schema: EVORA
+    aliases:
+    - Antibody
+    close_mappings:
+    - wd:Q79460
+    is_a: Product
+    slots:
+    - productionSystem
+    - antibodyPurifiedByAffinity
+    - specificityDocumented
+    - targetedAntigen
+    - sequenceReference
+    slot_usage:
+      productionSystem:
+        description: The biological and technological methods and processes used to
+          produce the antibody
+        aliases:
+        - production system
+        range: string
+        required: false
+        multivalued: false
+      antibodyPurifiedByAffinity:
+        description: Indicates whether or not if the antibody was purified by affinity
+        aliases:
+        - antibody purified by affinity
+        range: boolean
+        required: true
+        multivalued: false
+      specificityDocumented:
+        description: Tell if the antibody specificity was documented
+        aliases:
+        - specificity documented
+        range: boolean
+        required: true
+        multivalued: false
+      targetedAntigen:
+        description: Specific molecular structure or epitope recognized and bound
+          by an antibody
+        aliases:
+        - targeted antigen
+        range: string
+        required: true
+        multivalued: false
+      sequenceReference:
+        description: A reference that permits to retreive the sequence information
+          from a sequence provider
+        aliases:
+        - sequence reference
+        range: SequenceReference
+        required: false
+        multivalued: true
+  Hybridoma:
+    description: An hybridoma that provides antibodies that can be related to a pathogen
+    from_schema: EVORA
+    aliases:
+    - Hybridoma
+    close_mappings:
+    - wd:Q27554370
+    is_a: Antibody
+    slots:
+    - hybridomaDescription
+    slot_usage:
+      hybridomaDescription:
+        description: The description of the hybridoma
+        aliases:
+        - hybridoma description
+        range: string
+        required: true
+        multivalued: false
+  Protein:
+    description: A protein as a derived product from a pathogen
+    from_schema: EVORA
+    aliases:
+    - Protein
+    close_mappings:
+    - wd:Q8054
+    is_a: Product
+    slots:
+    - biologicalMaterialOrigin
+    - sequence
+    - relatedPDB
+    - specialFeature
+    - proteinTAG
+    - domain
+    - expressedAs
+    - inclusionBodiesType
+    - expressionSystem
+    - functionalCharacterization
+    - functionalTechnicalDescription
+    - proteinPurification
+    - theTAGStatusOfTheSolubilizedProtein
+    - typeOfFunctionalCharacterization
+    slot_usage:
+      biologicalMaterialOrigin:
+        description: Information about the origin of the biological material, essential
+          for access, utilization, and benefit-sharing of genetic resources in compliance
+          with the Nagoya Protocol.
+        aliases:
+        - Biological Material origin
+        range: BiologicalMaterialOrigin
+        required: true
+        multivalued: false
+      sequence:
+        description: The related sequence information from a sequence provider or
+          in fasta format
+        aliases:
+        - sequence
+        range: Sequence
+        required: true
+        multivalued: true
+      relatedPDB:
+        description: Identifier for 3D structural data as per the PDB (Protein Data
+          Bank) database
+        aliases:
+        - related PDB
+        close_mappings:
+        - wdp:P638
+        range: PDBReference
+        required: false
+        multivalued: true
+      specialFeature:
+        description: Distinctive attributes of a product that set it apart from other
+          similar items e.g., Reference strain, Vaccinal strain, Antiviral resistant
+          strain ...
+        aliases:
+        - special feature
+        range: SpecialFeature
+        required: false
+        multivalued: true
+      proteinTAG:
+        description: Peptide sequences genetically grafted onto a recombinant protein
+        aliases:
+        - protein TAG
+        range: ProteinTag
+        required: false
+        multivalued: true
+      domain:
+        description: A distinct structural and functional unit within the protein,
+          often capable of independent folding and stability, which contributes to
+          the protein's overall function
+        aliases:
+        - domain
+        range: string
+        required: false
+        multivalued: true
+      expressedAs:
+        description: Refers to the form in which the protein is produced and manifested
+          in a biological system. Possible values include "Soluble" (proteins that
+          are dissolved in the cellular or extracellular fluid) and "Inclusion bodies"
+          (aggregated proteins that are insoluble and form within the cell)
+        aliases:
+        - expressed as
+        range: string
+        required: false
+        multivalued: true
+      inclusionBodiesType:
+        description: Refers to the state of aggregated proteins within a cell. Possible
+          values include "Denatured" (proteins are in an unfolded, inactive state)
+          and "Refolded" (proteins have been processed to regain their functional,
+          active conformation).
+        aliases:
+        - inclusion bodies type
+        range: string
+        required: false
+        multivalued: true
+      expressionSystem:
+        description: The host organism or cellular environment used to produce a protein
+          from a specific gene. Possible values include "E. coli" (bacterial system),
+          "Insect cells" (using baculovirus vectors), and "Mammalian cells" (mammalian
+          cell lines).
+        aliases:
+        - expression system
+        range: string
+        required: false
+        multivalued: true
+      functionalCharacterization:
+        description: The process of determining and describing the specific biological
+          activities and roles of a protein. Possible values include "Functionally
+          characterized" (the protein's functions have been identified and described)
+          and "No functional characterization" (the protein's functions have not been
+          identified or described).
+        aliases:
+        - functional characterization
+        range: string
+        required: false
+        multivalued: true
+      functionalTechnicalDescription:
+        description: Detailed information about the specific biological functions,
+          mechanisms of action, and technical attributes of a protein. This includes
+          how the protein interacts within biological systems, its role in cellular
+          processes, and any relevant technical details such as structure, activity,
+          and interactions with other molecules.
+        aliases:
+        - functional/Technical description
+        range: string
+        required: false
+        multivalued: true
+      proteinPurification:
+        description: Refers to the degree of purity achieved for a protein sample.
+          Possible values include ">95%" (the protein is highly purified, with more
+          than 95% purity) and "Unpurified expression host lysate or partly purified
+          protein" (the protein is either unpurified and present in the host cell
+          lysate or only partially purified).
+        aliases:
+        - protein purification
+        range: string
+        required: false
+        multivalued: true
+      theTAGStatusOfTheSolubilizedProtein:
+        description: Indicates the presence and condition of a tag on the protein
+          after solubilization. Possible values include "Uncleaved Tag" (the tag is
+          still attached to the protein), "Cleaved Tag" (the tag has been removed
+          from the protein), and "No Tag" (the protein does not have a tag)
+        aliases:
+        - TAG status of the solubilized protein
+        range: string
+        required: false
+        multivalued: true
+      typeOfFunctionalCharacterization:
+        description: Refers to the classification of a protein based on the specific
+          type of functional analysis performed to determine its biological activities
+          and roles. Possible values include "Enzymatic" (the protein has been characterized
+          for its enzyme activity) and "Antigenic" (the protein has been characterized
+          for its ability to elicit an immune response).
+        aliases:
+        - type of functional Characterization
+        range: string
+        required: false
+        multivalued: true
+  Nucleic Acid:
+    description: Nucleic acid related to a pathogen. It can be extracted or synthetic
+    from_schema: EVORA
+    aliases:
+    - Nucleic Acid
+    close_mappings:
+    - wd:Q123619
+    is_a: Product
+    slots:
+    - biologicalMaterialOrigin
+    - hasGbFileOfTheConstruct
+    - sequence
+    - isItAClonedNucleicAcid
+    - clonedIntoPlasmid
+    - pasmidSelection
+    - hasTAG
+    - regionEncompassedInThisProduct
+    - mutationObserved
+    - observedMutations
+    - identificationTechnique
+    - sequencing
+    - titer
+    - sequenceChecked
+    slot_usage:
+      biologicalMaterialOrigin:
+        description: Information about the origin of the biological material, essential
+          for access, utilization, and benefit-sharing of genetic resources in compliance
+          with the Nagoya Protocol
+        aliases:
+        - Biological Material origin
+        range: BiologicalMaterialOrigin
+        required: true
+        multivalued: false
+      hasGbFileOfTheConstruct:
+        description: A GenBank formatted file that contains detailed sequence and
+          annotation information of a nucleic acid construct
+        aliases:
+        - has .gb file of the construct
+        range: Data
+        required: false
+        multivalued: true
+      sequence:
+        description: The related sequence information from a sequence provider or
+          in fasta format
+        aliases:
+        - sequence
+        range: Sequence
+        required: true
+        multivalued: true
+      isItAClonedNucleicAcid:
+        description: Indicates that the nucleic acid sequence has been inserted into
+          a plasmid vector for propagation or expression in a host organism
+        aliases:
+        - is it a Cloned Nucleic Acid?
+        range: boolean
+        required: true
+        multivalued: false
+      clonedIntoPlasmid:
+        description: The plasmid into which the nucleic acid has been cloned
+        aliases:
+        - cloned into plasmid
+        range: ExpressionVector
+        required: false
+        multivalued: false
+      pasmidSelection:
+        description: Specific selectable markers in the plasmid, such as antibiotic
+          resistance genes, used to identify and maintain cells that contain the plasmid
+        aliases:
+        - plasmid selection
+        range: PlasmidSelection
+        required: false
+        multivalued: true
+      hasTAG:
+        description: TAG sequence used for purposes such as purification, detection,
+          or localization
+        aliases:
+        - TAG
+        range: ProteinTag
+        required: true
+        multivalued: false
+      regionEncompassedInThisProduct:
+        description: The specific region encompassed in the product
+        aliases:
+        - region encompassed in this Product
+        range: string
+        required: true
+        multivalued: false
+      mutationObserved:
+        description: "Indicates if the current nucleic acid has No mutation compared\
+          \ to the reference sequence if the value is set to false or if it\n contains\
+          \ mutations (no frameshift, no unexpected STOP codon) if set to true"
+        aliases:
+        - mutation observed
+        range: boolean
+        required: true
+        multivalued: false
+      observedMutations:
+        description: The specific mutations that have been identified and documented
+          in the nucleic acid sequence
+        aliases:
+        - observed mutations
+        range: string
+        required: false
+        multivalued: false
+      identificationTechnique:
+        description: The method used to identify the nucleic acid sequence or its
+          associated constructs, such as PCR, sequencing, or hybridization
+        aliases:
+        - identification technique
+        range: string
+        required: false
+        multivalued: false
+      sequencing:
+        description: Refers to the level of sequencing performed on the nucleic acid.
+          Possible values include "Not sequenced" (no sequencing has been performed),
+          "Partly sequenced" (only a portion of the nucleic acid sequence has been
+          determined), and "Fully sequenced" (the entire nucleic acid sequence has
+          been determined).
+        comments:
+        - Cloned products have to be sequenced
+        aliases:
+        - sequencing
+        range: string
+        required: true
+        multivalued: false
+      titer:
+        description: The titer value, its corresponding unit, and the method of quantification
+          (e.g., RT-qPCR, TCID50), representing the concentration or amount of unit
+          present in the sample. The titer corresponds to the highest dilution factor
+          that still yields a positive reading
+        aliases:
+        - titer
+        range: string
+        required: false
+        multivalued: false
+      sequenceChecked:
+        description: Tell whether or not the sequence of the product was controlled
+          (compulsory for cloned products)
+        comments:
+        - Sequence check is mandatory for cloned products
+        aliases:
+        - sequence checked
+        range: boolean
+        required: true
+        multivalued: false
+  Detection Kit:
+    description: A detection kit for specific pathogens
+    from_schema: EVORA
+    aliases:
+    - Detection Kit
+    is_a: Product
+    slots:
+    - hasSOPFile
+    - specificityDocumented
+    - specificity
+    - targetedRegion
+    slot_usage:
+      hasSOPFile:
+        description: The related standard operating procedure file
+        aliases:
+        - has SOP File
+        range: File
+        required: false
+        multivalued: true
+      specificityDocumented:
+        description: Boolean value indicating whether the specificity of the detection
+          kit has been formally documented.
+        aliases:
+        - specificity documented
+        range: boolean
+        required: true
+        multivalued: false
+      specificity:
+        description: Details on the ability of a detection kit to correctly identify
+          negative results, distinguishing between the target analyte and other substances
+          without cross-reacting
+        aliases:
+        - specificity
+        range: string
+        required: false
+        multivalued: false
+      targetedRegion:
+        description: The specific area or sequence within the target analyte that
+          the detection kit is designed to identify and interact with, ensuring accurate
+          detection and analysis.
+        aliases:
+        - targeted region
+        range: string
+        required: false
+        multivalued: false
+  Bundle:
+    description: A group of products
+    from_schema: EVORA
+    aliases:
+    - Bundle
+    close_mappings:
+    - wd:Q1020767
+    is_a: Product
+    slots:
+    - productsOfTheBundle
+    - complementaryDocument
+    slot_usage:
+      productsOfTheBundle:
+        description: Associates the bundle with the individual products it contains,
+          specifying the components included within the bundle.
+        aliases:
+        - products of the bundle
+        range: Product
+        required: true
+        multivalued: true
+      complementaryDocument:
+        description: 'Links the bundle to any additional documents that provide supplementary
+          information, instructions, or guidelines relevant to the use and assembly
+          of the bundle''s products.
+
+          '
+        aliases:
+        - complementary document
+        range: File
+        required: false
+        multivalued: true
+  Pathogen:
+    description: Biological entity that causes disease in its host, which is typically
+      an infectious microorganism or agent, such as a virus, bacterium, protozoan,
+      prion, viroid, or fungus
+    from_schema: EVORA
+    aliases:
+    - Pathogen
+    close_mappings:
+    - wd:Q170065
+    is_a: Product
+    abstract: true
+    slots:
+    - biologicalMaterialOrigin
+    - suspectedEpidemiologicalOrigin
+    - isolationHost
+    - productionCellLine
+    - propagationHost
+    - transmissionMethod
+    - sequence
+    - cultivability
+    - clinicalInformation
+    - identificationTechnique
+    - infectivity
+    - infectivityTest
+    - isolationTechnique
+    - isolationConditions
+    - letterOfAuthority
+    - passage
+    - sequencing
+    - titer
+    slot_usage:
+      biologicalMaterialOrigin:
+        description: Information about the origin of the biological material, essential
+          for access, utilization, and benefit-sharing of genetic resources in compliance
+          with the Nagoya Protocol.
+        aliases:
+        - Biological Material origin
+        range: BiologicalMaterialOrigin
+        required: true
+        multivalued: false
+      suspectedEpidemiologicalOrigin:
+        description: The potential geographical or environmental source from which
+          the pathogen is believed to have originated or been transmitted
+        aliases:
+        - suspected epidemiological origin
+        close_mappings:
+        - dct:spatial
+        range: GeographicalOrigin
+        required: false
+        multivalued: true
+      isolationHost:
+        description: The host organism from which the pathogen was originally isolated
+        aliases:
+        - isolation host
+        range: IsolationHost
+        required: false
+        multivalued: true
+      productionCellLine:
+        description: The cell line used for the production or propagation of the pathogen,
+          detailing the cellular environment employed in its cultivation and study
+        aliases:
+        - production cell line
+        range: ProductionCellLine
+        required: false
+        multivalued: true
+      propagationHost:
+        description: The host organism that propagates the pathogen
+        aliases:
+        - propagation host
+        range: PropagationHost
+        required: false
+        multivalued: true
+      transmissionMethod:
+        description: The method or route through which the pathogen is transmitted
+          from one host to another, detailing the mechanisms of infection spread.
+        aliases:
+        - transmission method
+        range: TransmissionMethod
+        required: false
+        multivalued: true
+      sequence:
+        description: The related sequence information from a sequence provider or
+          in fasta format
+        aliases:
+        - sequence
+        range: Sequence
+        required: true
+        multivalued: true
+      cultivability:
+        description: The ability of the pathogen to be cultivated or grown in laboratory
+          conditions. Possible values are " Cultivable pathogen", "Uncultivable pathogen"
+          or "Inactivated pathogen"
+        comments:
+        - Might also be related to a product sub-category that helps filtering
+        aliases:
+        - cultivability
+        ifabsent: string(Cultivable pathogen)
+        range: string
+        required: true
+        multivalued: false
+      clinicalInformation:
+        description: Details about the clinical aspects of the pathogen, including
+          symptoms, severity, treatment protocols, and patient outcomes
+        aliases:
+        - clinical information
+        range: string
+        required: false
+        multivalued: false
+      identificationTechnique:
+        description: The method or technique used to identify and confirm the presence
+          of the pathogen, detailing the specific procedures and tools employed in
+          the detection process
+        aliases:
+        - identification technique
+        range: string
+        required: false
+        multivalued: false
+      infectivity:
+        description: Indicates the ability of the pathogen to establish an infection
+          in a host organism, with possible values detailing whether infectivity has
+          been tested, quantified, or cannot be tested due to non-cultivable nature.
+        aliases:
+        - infectivity
+        range: string
+        required: true
+        multivalued: false
+      infectivityTest:
+        description: The description of the completed infectivity test, providing
+          details on the methods, conditions, and results of the test used to assess
+          the pathogen's ability to infect a host organism
+        aliases:
+        - infectivity Test
+        range: string
+        required: false
+        multivalued: false
+      isolationTechnique:
+        description: The specific method or procedure used to isolate the pathogen
+          from a host organism or sample, detailing the techniques and tools employed
+          in the isolation process
+        aliases:
+        - isolation technique
+        range: string
+        required: false
+        multivalued: false
+      isolationConditions:
+        description: The environmental and procedural conditions under which the pathogen
+          was isolated
+        aliases:
+        - isolation conditions
+        range: string
+        required: false
+        multivalued: false
+      letterOfAuthority:
+        description: Indicate whether a Letter of Authority is required, confirming
+          the necessity of formal authorization. The possible values are "N/A", "NOT
+          Required", "Required for customers in the EU" or "Required"
+        aliases:
+        - letter of authority
+        ifabsent: string(N/A)
+        range: string
+        required: true
+        multivalued: false
+      passage:
+        description: The number of times the pathogen was cultured through serial
+          passage, a process used to increase the stock but which can also lead to
+          the evolution of the original pathogen.
+        aliases:
+        - passage
+        range: string
+        required: false
+        multivalued: false
+      sequencing:
+        description: The extent of the pathogen's genetic material that has been sequenced,
+          with possible values including "Complete genome" for the entire genome,
+          "Complete coding sequence" for all coding regions, and "Partial sequence"
+          for only a portion of the genetic material
+        aliases:
+        - sequencing
+        range: string
+        required: true
+        multivalued: false
+      titer:
+        description: The titer value, its corresponding unit, and the method of quantification
+          (e.g., RT-qPCR, TCID50), representing the concentration or amount of unit
+          present in the sample. The titer corresponds to the highest dilution factor
+          that still yields a positive reading
+        aliases:
+        - titer
+        close_mappings:
+        - wd:Q2166189
+        range: string
+        required: true
+        multivalued: false
+  Virus:
+    description: The virus as a biological material
+    from_schema: EVORA
+    aliases:
+    - Virus
+    close_mappings:
+    - wd:Q808
+    is_a: Pathogen
+    slots:
+    - coInfectingViruses
+    - contaminationWithCoInfectingViruses
+    - mycoplasmicContent
+    slot_usage:
+      coInfectingViruses:
+        description: Identifies other viruses that may co-infect the host organism
+          along with the primary virus, indicating the presence of multiple viral
+          infections within the same host.
+        aliases:
+        - co-infecting viruses
+        range: VirusName
+        required: false
+        multivalued: true
+      contaminationWithCoInfectingViruses:
+        description: A boolean value indicating whether there is contamination with
+          co-infecting viruses
+        aliases:
+        - contamination with co-infecting viruses
+        ifabsent: 'false'
+        range: boolean
+        required: true
+        multivalued: false
+      mycoplasmicContent:
+        description: Indicates the presence of mycoplasma contamination within the
+          sample
+        aliases:
+        - mycoplasmic content
+        range: boolean
+        required: true
+        multivalued: false
+  Bacterium:
+    description: The bacterium as a biological material
+    from_schema: EVORA
+    aliases:
+    - Bacterium
+    close_mappings:
+    - wd:Q10876
+    is_a: Pathogen
+  Fungus:
+    description: The fungus as a biological material
+    from_schema: EVORA
+    aliases:
+    - Fungus
+    close_mappings:
+    - wd:Q764
+    is_a: Pathogen
+  Protozoan:
+    description: The protozoan as a biological material
+    from_schema: EVORA
+    aliases:
+    - Protozoan
+    close_mappings:
+    - wd:Q101274
+    is_a: Pathogen
+  Viroid:
+    description: The viroid as a biological material
+    from_schema: EVORA
+    aliases:
+    - Viroid
+    close_mappings:
+    - wd:Q209917
+    is_a: Pathogen
+  Prion:
+    description: The prion as a biological material
+    from_schema: EVORA
+    aliases:
+    - Prion
+    close_mappings:
+    - wd:Q47051
+    is_a: Pathogen
+  MSDS:
+    description: A Material Safety Data Sheet (MSDS) or Safety Data Sheet (SDS) is
+      a standardized document that contains crucial occupational safety and health
+      information related to the product
+    from_schema: EVORA
+    aliases:
+    - MSDS
+    close_mappings:
+    - wd:Q222067
+    is_a: Dataset
+    slots:
+    - msdsContact
+    - physicalChemicalProperties
+    - hazardsIdentification
+    - firstAidMeasures
+    - fireFightingMeasures
+    - accidentalReleaseMeasures
+    - handlingAndStorage
+    - exposureControlsPersonalProtection
+    - stabilityAndReactivity
+    - toxicologicalInformation
+    - ecologicalInformation
+    - disposalConsiderations
+    - transportInformation
+    - regulatoryInformation
+    - furtherInformation
+    slot_usage:
+      msdsContact:
+        description: The designated contact point responsible for providing information
+          related to the safety, handling, and regulatory compliance of the biological
+          product.
+        aliases:
+        - MSDS contact
+        exact_mappings:
+        - dcat:contactPoint
+        range: ContactPoint
+        required: true
+        multivalued: false
+      physicalChemicalProperties:
+        description: Key characteristics of the product, such as physical state, appearance,
+          solubility, pH, chemical composition, and molecular weight, essential for
+          safe handling and storage
+        aliases:
+        - physical and chemical properties and information on ingredients
+        range: string
+        required: false
+        multivalued: false
+      hazardsIdentification:
+        description: Outlines the potential risks and dangers associated with handling
+          the product, including its physical, chemical, and health hazards. This
+          section provides information on toxicity, flammability, reactivity, and
+          other relevant risks for safe use.
+        aliases:
+        - hazards identification
+        range: string
+        required: false
+        multivalued: false
+      firstAidMeasures:
+        description: Instructions on immediate actions to take in case of exposure
+          to the product, including inhalation, ingestion, skin, or eye contact. This
+          section outlines steps to minimize harm before medical help is available.
+        aliases:
+        - first aid measures
+        range: string
+        required: false
+        multivalued: false
+      fireFightingMeasures:
+        description: Guidance on how to safely extinguish a fire involving the product,
+          including suitable extinguishing agents, special protective equipment for
+          firefighters, and any specific hazards from combustion.
+        aliases:
+        - fire fighting measures
+        range: string
+        required: false
+        multivalued: false
+      accidentalReleaseMeasures:
+        description: Guidelines for safely managing spills or leaks of the product,
+          including containment, cleanup procedures, and precautions to prevent harm
+          to people, property, and the environment.
+        aliases:
+        - accidental release measures
+        range: string
+        required: false
+        multivalued: false
+      handlingAndStorage:
+        description: Instructions on the safe handling practices and storage conditions
+          for the product, including precautions to prevent accidents, degradation,
+          or contamination, as well as recommended temperature, humidity, and container
+          requirements.
+        aliases:
+        - handling and storage
+        range: string
+        required: false
+        multivalued: false
+      exposureControlsPersonalProtection:
+        description: Specifies measures to limit exposure to the product, including
+          recommended engineering controls (e.g., ventilation) and personal protective
+          equipment (PPE) such as gloves, masks, goggles, and clothing to ensure safe
+          handling.
+        aliases:
+        - exposure controls/personal protection
+        range: string
+        required: false
+        multivalued: false
+      stabilityAndReactivity:
+        description: "Describes the product\u2019s stability under normal conditions\
+          \ and its potential to react with other substances. This section includes\
+          \ information on hazardous reactions, conditions to avoid, and incompatible\
+          \ materials that could cause degradation or dangerous reactions."
+        aliases:
+        - stability and reactivity
+        range: string
+        required: false
+        multivalued: false
+      toxicologicalInformation:
+        description: Details on the potential health effects of the product, including
+          routes of exposure (inhalation, ingestion, skin, eye contact), acute and
+          chronic toxicity and symptoms of exposure
+        aliases:
+        - toxicological information
+        range: string
+        required: false
+        multivalued: false
+      ecologicalInformation:
+        description: Details the potential environmental impact of the product, including
+          its effects on ecosystems, persistence, degradability, bioaccumulation potential,
+          and toxicity to aquatic and terrestrial organisms.
+        aliases:
+        - ecological information
+        range: string
+        required: false
+        multivalued: false
+      disposalConsiderations:
+        description: Guidance on the safe and environmentally responsible disposal
+          of the product, including recommended disposal methods, regulatory requirements,
+          and precautions to avoid harm to people and the environment during disposal.
+        aliases:
+        - disposal considerations
+        range: string
+        required: false
+        multivalued: false
+      transportInformation:
+        description: Details the regulations and guidelines for safely transporting
+          the product, including classifications for road, air, sea, or rail transport,
+          UN numbers, packaging requirements, and any special precautions to ensure
+          safe transit.
+        aliases:
+        - transport information
+        range: string
+        required: false
+        multivalued: false
+      regulatoryInformation:
+        description: Lists applicable laws, regulations, and standards governing the
+          product, including local, national, or international requirements for its
+          handling, use, transportation, and disposal, ensuring compliance with legal
+          obligations.
+        aliases:
+        - regulatory information
+        range: string
+        required: false
+        multivalued: false
+      furtherInformation:
+        description: Provides any additional details or clarifications not covered
+          in other sections of the MSDS, such as references, supporting documents,
+          or specific instructions for safe handling and use of the product.
+        aliases:
+        - further information
+        range: string
+        required: false
+        multivalued: false
+  File:
+    description: Digital document or record stored in a specific format that contains
+      data or information
+    from_schema: EVORA
+    aliases:
+    - File
+    exact_mappings:
+    - dcat:mediaType
+    close_mappings:
+    - wd:Q82753
+    is_a: Nameable
+    abstract: true
+    slots:
+    - contentURL
+    - format
+    - license
+    slot_usage:
+      contentURL:
+        description: The web address or location where the file content is stored
+          and can be accessed or downloaded.
+        aliases:
+        - content URL
+        range: uri
+        required: true
+        multivalued: false
+      format:
+        description: The file type or format that indicates how the data within the
+          file is structured
+        aliases:
+        - format
+        range: string
+        required: true
+        multivalued: false
+      license:
+        description: The legal terms and conditions under which the file can be used,
+          shared, or distributed, indicating any restrictions or permissions.
+        aliases:
+        - license
+        range: License
+        required: false
+        multivalued: false
+  Data:
+    description: Subclass of File representing structured or unstructured datasets,
+      often used for analysis, storage, or transfer of information
+    from_schema: EVORA
+    aliases:
+    - Data
+    close_mappings:
+    - wd:Q42848
+    is_a: File
+  Document:
+    description: Subclass of File representing textual or written files such as reports,
+      manuals, or forms
+    from_schema: EVORA
+    aliases:
+    - Document
+    close_mappings:
+    - wd:Q49848
+    is_a: File
+  Audio:
+    description: Subclass of File representing sound recordings or audio tracks
+    from_schema: EVORA
+    aliases:
+    - Audio
+    close_mappings:
+    - wd:Q26987229
+    is_a: File
+  Video:
+    description: Subclass of File representing moving visual media, such as recordings,
+      presentations, or movies
+    from_schema: EVORA
+    aliases:
+    - Video
+    close_mappings:
+    - wd:Q98405806
+    is_a: File
+  Image:
+    description: Subclass of File representing visual content such as pictures, diagrams,
+      or illustrations
+    from_schema: EVORA
+    aliases:
+    - Image
+    close_mappings:
+    - wd:Q860625
+    is_a: File
+    slots:
+    - altText
+    slot_usage:
+      altText:
+        description: An alternate text for the image, if the image cannot be displayed
+        aliases:
+        - alt text
+        range: string
+        required: false
+        multivalued: false
+  ContactPoint:
+    description: Entity serving as focal point of information
+    from_schema: EVORA
+    aliases:
+    - Contact Point
+    close_mappings:
+    - wd:Q30322502
+    - vcard:Contact
+    is_a: Nameable
+    slots:
+    - email
+    - telephone
+    - streetAddress
+    - addressLocality
+    - addressRegion
+    - postalCode
+    - addressCountry
+    - oRCIDiD
+    slot_usage:
+      email:
+        description: Email address
+        aliases:
+        - email
+        close_mappings:
+        - schema:email
+        - vcard:email
+        range: string
+        required: false
+        multivalued: false
+      telephone:
+        description: The telephone number
+        aliases:
+        - telephone
+        close_mappings:
+        - schema:telephone
+        - vcard:telephone
+        range: string
+        required: false
+        multivalued: false
+      streetAddress:
+        description: The building/apartment number and the street name
+        aliases:
+        - street address
+        close_mappings:
+        - schema:streetAddress
+        - vcard:hasStreetAddress
+        range: string
+        required: false
+        multivalued: false
+      addressLocality:
+        description: The locality in which the street address is, and which is in
+          the region. e.g, the city
+        aliases:
+        - locality/city
+        close_mappings:
+        - schema:addressLocality
+        - vcard:hasLocality
+        range: string
+        required: false
+        multivalued: false
+      addressRegion:
+        description: The region in which the locality is, and which is in the country.
+          For example, California or another appropriate first-level Administrative
+          division
+        aliases:
+        - region
+        close_mappings:
+        - schema:addressRegion
+        - vcard:hasRegion
+        range: string
+        required: false
+        multivalued: false
+      postalCode:
+        description: The postal code
+        aliases:
+        - postal code
+        close_mappings:
+        - schema:postalCode
+        - vcard:hasPostalCode
+        range: string
+        required: false
+        multivalued: false
+      addressCountry:
+        description: The country as of  ISO 3166
+        aliases:
+        - address Country
+        close_mappings:
+        - schema:addressCountry
+        - vcard:hasCountryName
+        range: Country
+        required: false
+        multivalued: false
+      oRCIDiD:
+        description: Unique persistent identifier for a person, provided by the Open
+          Researcher and Contributor ID (ORCID) organisation
+        aliases:
+        - ORCID iD
+        exact_mappings:
+        - IAO:0000708
+        range: string
+        required: false
+        multivalued: false
+  License:
+    description: The legal terms and conditions under which the subject can be used,
+      shared, or distributed, indicating any restrictions or permissions
+    from_schema: EVORA
+    aliases:
+    - License
+    exact_mappings:
+    - dct:RightsStatement
+    close_mappings:
+    - wd:Q79719
+    - dct:LicenseDocument
+    is_a: Nameable
+    slots:
+    - resourceURL
+    - licensingOrAttribution
+    - logo
+    slot_usage:
+      resourceURL:
+        description: The web address or location where the details or content is stored
+          and can be accessed or downloaded.
+        aliases:
+        - resource URL
+        exact_mappings:
+        - dct:license
+        close_mappings:
+        - schema:url
+        range: uri
+        required: false
+        multivalued: false
+      licensingOrAttribution:
+        description: A text or html code that provides any related data sharing licence
+          and/or attribution
+        aliases:
+        - licensing or attribution
+        exact_mappings:
+        - dct:rights
+        close_mappings:
+        - schema:license
+        range: string
+        required: false
+        multivalued: false
+      logo:
+        description: A path or URL to the related logo
+        aliases:
+        - logo
+        range: Image
+        required: false
+        multivalued: false
+  Certification:
+    description: Assurance given by an independent certification body that a product,
+      service or system meets the requirements of a standard
+    from_schema: EVORA
+    aliases:
+    - Certification
+    close_mappings:
+    - wd:Q374814
+    - schema:Certification
+    is_a: Nameable
+    slots:
+    - logo
+    - certificationDocument
+    - resourceURL
+    slot_usage:
+      logo:
+        description: A path or URL to the related logo
+        aliases:
+        - logo
+        range: Image
+        required: false
+        multivalued: false
+      certificationDocument:
+        description: The document(s) issued by an authority certifying the conformity
+          of the subject to the applicable scheme, including, as the case may be,
+          the documents attesting the equivalence to another certification scheme.
+        aliases:
+        - certification document
+        range: Document
+        required: false
+        multivalued: true
+      resourceURL:
+        description: The web address or location where the details or content is stored
+          and can be accessed or downloaded.
+        aliases:
+        - resource URL
+        close_mappings:
+        - schema:url
+        range: uri
+        required: false
+        multivalued: false
