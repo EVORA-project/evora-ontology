@@ -1,7 +1,7 @@
 
 # Class: IPLCOrigin
 
-The IPLC area (Indigenous People and Local Communities) from which a physical item, originates or is naturally found
+The IPLC area (Indigenous People and Local Communities) from which a physical item originates
 
 URI: [EVORA:IPLCOrigin](https://evora-project.eu/IPLCOrigin)
 

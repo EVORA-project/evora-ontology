@@ -1,5 +1,5 @@
 # Auto generated from evora_schema.yaml by pythongen.py version: 0.0.1
-# Generation date: 2024-12-19T15:34:33
+# Generation date: 2024-12-20T16:19:56
 # Schema: EVORA
 #
 # id: EVORA
@@ -811,8 +811,7 @@ class GeographicalOrigin(Term):
 @dataclass(repr=False)
 class IPLCOrigin(GeographicalOrigin):
     """
-    The IPLC area (Indigenous People and Local Communities) from which a physical item, originates or is naturally
-    found
+    The IPLC area (Indigenous People and Local Communities) from which a physical item originates
     """
     _inherited_slots: ClassVar[List[str]] = []
 
@@ -1198,8 +1197,6 @@ class BiologicalMaterialOrigin(Dataset):
     biologicalSourceType: Union[bool, Bool] = None
     biologicalPartOrigin: Union[Union[dict, "BiologicalPartOrigin"], List[Union[dict, "BiologicalPartOrigin"]]] = None
     recombinantMaterial: Union[bool, Bool] = False
-    thirdPartyDistributionConsent: Optional[Union[bool, Bool]] = None
-    usageRestrictions: Optional[str] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
         if self._is_empty(self.recombinantMaterial):
@@ -1214,15 +1211,7 @@ class BiologicalMaterialOrigin(Dataset):
 
         if self._is_empty(self.biologicalPartOrigin):
             self.MissingRequiredField("biologicalPartOrigin")
-        if not isinstance(self.biologicalPartOrigin, list):
-            self.biologicalPartOrigin = [self.biologicalPartOrigin] if self.biologicalPartOrigin is not None else []
-        self.biologicalPartOrigin = [v if isinstance(v, BiologicalPartOrigin) else BiologicalPartOrigin(**as_dict(v)) for v in self.biologicalPartOrigin]
-
-        if self.thirdPartyDistributionConsent is not None and not isinstance(self.thirdPartyDistributionConsent, Bool):
-            self.thirdPartyDistributionConsent = Bool(self.thirdPartyDistributionConsent)
-
-        if self.usageRestrictions is not None and not isinstance(self.usageRestrictions, str):
-            self.usageRestrictions = str(self.usageRestrictions)
+        self._normalize_inlined_as_dict(slot_name="biologicalPartOrigin", slot_type=BiologicalPartOrigin, key_name="accessToPhysicalGeneticResource", keyed=False)
 
         super().__post_init__(**kwargs)
 
@@ -1240,9 +1229,15 @@ class BiologicalPartOrigin(Dataset):
     class_name: ClassVar[str] = "BiologicalPartOrigin"
     class_model_uri: ClassVar[URIRef] = EVORA.BiologicalPartOrigin
 
+    accessToPhysicalGeneticResource: Union[bool, Bool] = None
     recombinantPartIdentification: Optional[Union[dict, "RecombinantPartIdentification"]] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+        if self._is_empty(self.accessToPhysicalGeneticResource):
+            self.MissingRequiredField("accessToPhysicalGeneticResource")
+        if not isinstance(self.accessToPhysicalGeneticResource, Bool):
+            self.accessToPhysicalGeneticResource = Bool(self.accessToPhysicalGeneticResource)
+
         if self.recombinantPartIdentification is not None and not isinstance(self.recombinantPartIdentification, RecombinantPartIdentification):
             self.recombinantPartIdentification = RecombinantPartIdentification(**as_dict(self.recombinantPartIdentification))
 
@@ -1261,11 +1256,12 @@ class NaturalPartOrigin(BiologicalPartOrigin):
     class_name: ClassVar[str] = "NaturalPartOrigin"
     class_model_uri: ClassVar[URIRef] = EVORA.NaturalPartOrigin
 
+    accessToPhysicalGeneticResource: Union[bool, Bool] = None
     countryOfCollection: Union[dict, Country] = None
     collectionDate: Union[str, XSDDateTime] = None
     beforeDate: Union[bool, Bool] = False
     indigenousPoepleAndLocalCommunityOrigin: Optional[Union[dict, IPLCOrigin]] = None
-    reportingToAuthorities: Optional[str] = None
+    permitIdentifierForABS: Optional[str] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
         if self._is_empty(self.countryOfCollection):
@@ -1286,8 +1282,8 @@ class NaturalPartOrigin(BiologicalPartOrigin):
         if self.indigenousPoepleAndLocalCommunityOrigin is not None and not isinstance(self.indigenousPoepleAndLocalCommunityOrigin, IPLCOrigin):
             self.indigenousPoepleAndLocalCommunityOrigin = IPLCOrigin(**as_dict(self.indigenousPoepleAndLocalCommunityOrigin))
 
-        if self.reportingToAuthorities is not None and not isinstance(self.reportingToAuthorities, str):
-            self.reportingToAuthorities = str(self.reportingToAuthorities)
+        if self.permitIdentifierForABS is not None and not isinstance(self.permitIdentifierForABS, str):
+            self.permitIdentifierForABS = str(self.permitIdentifierForABS)
 
         super().__post_init__(**kwargs)
 
@@ -1304,6 +1300,7 @@ class SyntheticPartOrigin(BiologicalPartOrigin):
     class_name: ClassVar[str] = "SyntheticPartOrigin"
     class_model_uri: ClassVar[URIRef] = EVORA.SyntheticPartOrigin
 
+    accessToPhysicalGeneticResource: Union[bool, Bool] = None
     modificationsFromTheReferenceSequences: Union[bool, Bool] = None
     descriptionOfModificationsMadeFromTheReferenceSequences: Optional[str] = None
 
@@ -1559,6 +1556,8 @@ class Product(ProductOrService):
     availability: str = "on request"
     materialSafetyDataSheet: Optional[Union[dict, "MSDS"]] = None
     originator: Optional[Union[dict, Originator]] = None
+    thirdPartyDistributionConsent: Optional[Union[bool, Bool]] = None
+    usageRestrictions: Optional[str] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
         if self._is_empty(self.hasIATAClassification):
@@ -1581,6 +1580,12 @@ class Product(ProductOrService):
 
         if self.originator is not None and not isinstance(self.originator, Originator):
             self.originator = Originator(**as_dict(self.originator))
+
+        if self.thirdPartyDistributionConsent is not None and not isinstance(self.thirdPartyDistributionConsent, Bool):
+            self.thirdPartyDistributionConsent = Bool(self.thirdPartyDistributionConsent)
+
+        if self.usageRestrictions is not None and not isinstance(self.usageRestrictions, str):
+            self.usageRestrictions = str(self.usageRestrictions)
 
         super().__post_init__(**kwargs)
 
@@ -2808,6 +2813,9 @@ slots.biologicalPartOrigin = Slot(uri=EVORA.biologicalPartOrigin, name="biologic
 slots.recombinantPartIdentification = Slot(uri=EVORA.recombinantPartIdentification, name="recombinantPartIdentification", curie=EVORA.curie('recombinantPartIdentification'),
                    model_uri=EVORA.recombinantPartIdentification, domain=None, range=Optional[str])
 
+slots.accessToPhysicalGeneticResource = Slot(uri=EVORA.accessToPhysicalGeneticResource, name="accessToPhysicalGeneticResource", curie=EVORA.curie('accessToPhysicalGeneticResource'),
+                   model_uri=EVORA.accessToPhysicalGeneticResource, domain=None, range=Optional[str])
+
 slots.countryOfCollection = Slot(uri=EVORA.countryOfCollection, name="countryOfCollection", curie=EVORA.curie('countryOfCollection'),
                    model_uri=EVORA.countryOfCollection, domain=None, range=Optional[str])
 
@@ -2820,8 +2828,8 @@ slots.collectionDate = Slot(uri=EVORA.collectionDate, name="collectionDate", cur
 slots.beforeDate = Slot(uri=EVORA.beforeDate, name="beforeDate", curie=EVORA.curie('beforeDate'),
                    model_uri=EVORA.beforeDate, domain=None, range=Optional[str])
 
-slots.reportingToAuthorities = Slot(uri=EVORA.reportingToAuthorities, name="reportingToAuthorities", curie=EVORA.curie('reportingToAuthorities'),
-                   model_uri=EVORA.reportingToAuthorities, domain=None, range=Optional[str])
+slots.permitIdentifierForABS = Slot(uri=EVORA.permitIdentifierForABS, name="permitIdentifierForABS", curie=EVORA.curie('permitIdentifierForABS'),
+                   model_uri=EVORA.permitIdentifierForABS, domain=None, range=Optional[str])
 
 slots.modificationsFromTheReferenceSequences = Slot(uri=EVORA.modificationsFromTheReferenceSequences, name="modificationsFromTheReferenceSequences", curie=EVORA.curie('modificationsFromTheReferenceSequences'),
                    model_uri=EVORA.modificationsFromTheReferenceSequences, domain=None, range=Optional[str])
@@ -3378,14 +3386,11 @@ slots.BiologicalMaterialOrigin_biologicalSourceType = Slot(uri=EVORA.biologicalS
 slots.BiologicalMaterialOrigin_biologicalPartOrigin = Slot(uri=EVORA.biologicalPartOrigin, name="BiologicalMaterialOrigin_biologicalPartOrigin", curie=EVORA.curie('biologicalPartOrigin'),
                    model_uri=EVORA.BiologicalMaterialOrigin_biologicalPartOrigin, domain=BiologicalMaterialOrigin, range=Union[Union[dict, "BiologicalPartOrigin"], List[Union[dict, "BiologicalPartOrigin"]]])
 
-slots.BiologicalMaterialOrigin_thirdPartyDistributionConsent = Slot(uri=EVORA.thirdPartyDistributionConsent, name="BiologicalMaterialOrigin_thirdPartyDistributionConsent", curie=EVORA.curie('thirdPartyDistributionConsent'),
-                   model_uri=EVORA.BiologicalMaterialOrigin_thirdPartyDistributionConsent, domain=BiologicalMaterialOrigin, range=Optional[Union[bool, Bool]])
-
-slots.BiologicalMaterialOrigin_usageRestrictions = Slot(uri=EVORA.usageRestrictions, name="BiologicalMaterialOrigin_usageRestrictions", curie=EVORA.curie('usageRestrictions'),
-                   model_uri=EVORA.BiologicalMaterialOrigin_usageRestrictions, domain=BiologicalMaterialOrigin, range=Optional[str])
-
 slots.BiologicalPartOrigin_recombinantPartIdentification = Slot(uri=EVORA.recombinantPartIdentification, name="BiologicalPartOrigin_recombinantPartIdentification", curie=EVORA.curie('recombinantPartIdentification'),
                    model_uri=EVORA.BiologicalPartOrigin_recombinantPartIdentification, domain=BiologicalPartOrigin, range=Optional[Union[dict, "RecombinantPartIdentification"]])
+
+slots.BiologicalPartOrigin_accessToPhysicalGeneticResource = Slot(uri=EVORA.accessToPhysicalGeneticResource, name="BiologicalPartOrigin_accessToPhysicalGeneticResource", curie=EVORA.curie('accessToPhysicalGeneticResource'),
+                   model_uri=EVORA.BiologicalPartOrigin_accessToPhysicalGeneticResource, domain=BiologicalPartOrigin, range=Union[bool, Bool])
 
 slots.NaturalPartOrigin_countryOfCollection = Slot(uri=EVORA.countryOfCollection, name="NaturalPartOrigin_countryOfCollection", curie=EVORA.curie('countryOfCollection'),
                    model_uri=EVORA.NaturalPartOrigin_countryOfCollection, domain=NaturalPartOrigin, range=Union[dict, Country])
@@ -3399,8 +3404,8 @@ slots.NaturalPartOrigin_collectionDate = Slot(uri=EVORA.collectionDate, name="Na
 slots.NaturalPartOrigin_beforeDate = Slot(uri=EVORA.beforeDate, name="NaturalPartOrigin_beforeDate", curie=EVORA.curie('beforeDate'),
                    model_uri=EVORA.NaturalPartOrigin_beforeDate, domain=NaturalPartOrigin, range=Union[bool, Bool])
 
-slots.NaturalPartOrigin_reportingToAuthorities = Slot(uri=EVORA.reportingToAuthorities, name="NaturalPartOrigin_reportingToAuthorities", curie=EVORA.curie('reportingToAuthorities'),
-                   model_uri=EVORA.NaturalPartOrigin_reportingToAuthorities, domain=NaturalPartOrigin, range=Optional[str])
+slots.NaturalPartOrigin_permitIdentifierForABS = Slot(uri=EVORA.permitIdentifierForABS, name="NaturalPartOrigin_permitIdentifierForABS", curie=EVORA.curie('permitIdentifierForABS'),
+                   model_uri=EVORA.NaturalPartOrigin_permitIdentifierForABS, domain=NaturalPartOrigin, range=Optional[str])
 
 slots.SyntheticPartOrigin_modificationsFromTheReferenceSequences = Slot(uri=EVORA.modificationsFromTheReferenceSequences, name="SyntheticPartOrigin_modificationsFromTheReferenceSequences", curie=EVORA.curie('modificationsFromTheReferenceSequences'),
                    model_uri=EVORA.SyntheticPartOrigin_modificationsFromTheReferenceSequences, domain=SyntheticPartOrigin, range=Union[bool, Bool])
@@ -3512,6 +3517,12 @@ slots.Product_originator = Slot(uri=EVORA.originator, name="Product_originator",
 
 slots.Product_storageConditions = Slot(uri=EVORA.storageConditions, name="Product_storageConditions", curie=EVORA.curie('storageConditions'),
                    model_uri=EVORA.Product_storageConditions, domain=Product, range=str)
+
+slots.Product_thirdPartyDistributionConsent = Slot(uri=EVORA.thirdPartyDistributionConsent, name="Product_thirdPartyDistributionConsent", curie=EVORA.curie('thirdPartyDistributionConsent'),
+                   model_uri=EVORA.Product_thirdPartyDistributionConsent, domain=Product, range=Optional[Union[bool, Bool]])
+
+slots.Product_usageRestrictions = Slot(uri=EVORA.usageRestrictions, name="Product_usageRestrictions", curie=EVORA.curie('usageRestrictions'),
+                   model_uri=EVORA.Product_usageRestrictions, domain=Product, range=Optional[str])
 
 slots.Antibody_productionSystem = Slot(uri=EVORA.productionSystem, name="Antibody_productionSystem", curie=EVORA.curie('productionSystem'),
                    model_uri=EVORA.Antibody_productionSystem, domain=Antibody, range=Optional[str])

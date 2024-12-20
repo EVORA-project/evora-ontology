@@ -179,7 +179,7 @@
 --     * Slot: name Description: The label that allows humans to identify the current item
 --     * Slot: description Description: A short explanation of the characteristics, features, or nature of the current item
 --     * Slot: inVocabulary_id Description: Terms belong to a specific vocabulary
--- # Class: "IPLCOrigin" Description: "The IPLC area (Indigenous People and Local Communities) from which a physical item, originates or is naturally found"
+-- # Class: "IPLCOrigin" Description: "The IPLC area (Indigenous People and Local Communities) from which a physical item originates"
 --     * Slot: id Description: 
 --     * Slot: weight Description: A numerical value indicating relative importance or priority, generally processed in ascending order. This weight helps prioritize content when organizing or processing data. Its value can be negative, with a default set to 0
 --     * Slot: name Description: The label that allows humans to identify the current item
@@ -286,16 +286,16 @@
 --     * Slot: id Description: 
 --     * Slot: recombinantMaterial Description: Indicates if this biological material is a recombinant biological material.
 --     * Slot: biologicalSourceType Description: Defines if the current biological material is natural and was collected or if it is a synthetic biological material. It makes sense that only recombinant biological materials can have a mixed material origin!
---     * Slot: thirdPartyDistributionConsent Description: Indicates whether the biological material can be distributed to third parties, considering any potential concerns about to the related genetic material as indicated by the ABS permit, if one exists
---     * Slot: usageRestrictions Description: Specifies any limitations or conditions on the use of the biological material, including restrictions on research, commercial use, or distribution, considering any potential concerns about the related genetic material
 -- # Class: "BiologicalPartOrigin" Description: "Information on the origin of a unitary, cohesive part that is part of, or constitutes the biological material. It can be multiple parts in case of a recombinant biological material"
 --     * Slot: id Description: 
+--     * Slot: accessToPhysicalGeneticResource Description: Reference of the permit identifiers for access to the genetic resource, applicable if the genetic resource falls under Access and Benefit-Sharing (ABS) regulations
 --     * Slot: recombinantPartIdentification_id Description: Identification of a recombinant part
 -- # Class: "NaturalPartOrigin" Description: "Information on the origin of a natural part that composes the biological material"
 --     * Slot: id Description: 
 --     * Slot: collectionDate Description: The date when the sample was collected in situ. If unknown/private, use a proxy date such as "date received" and indicate this by setting to true the before date property
 --     * Slot: beforeDate Description: Set to TRUE if a proxy date for the collection date is used
---     * Slot: reportingToAuthorities Description: Information about permit identifiers for access to the genetic resource, applicable if the genetic resource falls under Access and Benefit-Sharing (ABS) regulations
+--     * Slot: permitIdentifierForABS Description: Reference of the permit identifiers for access to the genetic resource, applicable if the genetic resource falls under Access and Benefit-Sharing (ABS) regulations
+--     * Slot: accessToPhysicalGeneticResource Description: Reference of the permit identifiers for access to the genetic resource, applicable if the genetic resource falls under Access and Benefit-Sharing (ABS) regulations
 --     * Slot: countryOfCollection_id Description: The geographical location where the sample was collected in situ. Used for Nagoya/CBD; equivalent to "country of origin".
 --     * Slot: indigenousPoepleAndLocalCommunityOrigin_id Description: The specific IPLC area (Indigenous People and Local Communities) from which this sample/element was sampled, if relevant
 --     * Slot: recombinantPartIdentification_id Description: Identification of a recombinant part
@@ -303,6 +303,7 @@
 --     * Slot: id Description: 
 --     * Slot: modificationsFromTheReferenceSequences Description: Set to TRUE if there was is any modification made from the reference sequence
 --     * Slot: descriptionOfModificationsMadeFromTheReferenceSequences Description: List the modifications mades from the reference sequence if any
+--     * Slot: accessToPhysicalGeneticResource Description: Reference of the permit identifiers for access to the genetic resource, applicable if the genetic resource falls under Access and Benefit-Sharing (ABS) regulations
 --     * Slot: recombinantPartIdentification_id Description: Identification of a recombinant part
 -- # Class: "RecombinantPartIdentification" Description: "Identification of a recombinant part"
 --     * Slot: id Description: 
@@ -356,6 +357,8 @@
 --     * Slot: id Description: 
 --     * Slot: shippingConditions Description: Specification of the terms and parameters for transporting
 --     * Slot: storageConditions Description: Specifies the conditions under which the product has to be stored to maintain stability and integrity, such as temperature, buffer, and other environmental factors.
+--     * Slot: thirdPartyDistributionConsent Description: Indicates whether the biological material can be distributed without restriction to third parties, as indicated by the ABS permit, in case an ABS permit is required
+--     * Slot: usageRestrictions Description: Specifies any limitations or conditions on the use of the biological material, including restrictions on research, commercial use, or distribution, considering any potential concerns about the related genetic material
 --     * Slot: accessPointURL Description: The URL that permits to access to the product/service detailed description page on the provider's website and/or allows to place an order about it or at least describe the process to place an order/enquiry
 --     * Slot: refSKU Description: The reference or the stock keeping unit of the service or item provided in the provider's catalogue
 --     * Slot: unitDefinition Description: A short description of what will be delivered by ordering one unit of this item
@@ -384,6 +387,8 @@
 --     * Slot: targetedAntigen Description: Specific molecular structure or epitope recognized and bound by an antibody
 --     * Slot: shippingConditions Description: Specification of the terms and parameters for transporting
 --     * Slot: storageConditions Description: Specifies the conditions under which the product has to be stored to maintain stability and integrity, such as temperature, buffer, and other environmental factors.
+--     * Slot: thirdPartyDistributionConsent Description: Indicates whether the biological material can be distributed without restriction to third parties, as indicated by the ABS permit, in case an ABS permit is required
+--     * Slot: usageRestrictions Description: Specifies any limitations or conditions on the use of the biological material, including restrictions on research, commercial use, or distribution, considering any potential concerns about the related genetic material
 --     * Slot: accessPointURL Description: The URL that permits to access to the product/service detailed description page on the provider's website and/or allows to place an order about it or at least describe the process to place an order/enquiry
 --     * Slot: refSKU Description: The reference or the stock keeping unit of the service or item provided in the provider's catalogue
 --     * Slot: unitDefinition Description: A short description of what will be delivered by ordering one unit of this item
@@ -413,6 +418,8 @@
 --     * Slot: targetedAntigen Description: Specific molecular structure or epitope recognized and bound by an antibody
 --     * Slot: shippingConditions Description: Specification of the terms and parameters for transporting
 --     * Slot: storageConditions Description: Specifies the conditions under which the product has to be stored to maintain stability and integrity, such as temperature, buffer, and other environmental factors.
+--     * Slot: thirdPartyDistributionConsent Description: Indicates whether the biological material can be distributed without restriction to third parties, as indicated by the ABS permit, in case an ABS permit is required
+--     * Slot: usageRestrictions Description: Specifies any limitations or conditions on the use of the biological material, including restrictions on research, commercial use, or distribution, considering any potential concerns about the related genetic material
 --     * Slot: accessPointURL Description: The URL that permits to access to the product/service detailed description page on the provider's website and/or allows to place an order about it or at least describe the process to place an order/enquiry
 --     * Slot: refSKU Description: The reference or the stock keeping unit of the service or item provided in the provider's catalogue
 --     * Slot: unitDefinition Description: A short description of what will be delivered by ordering one unit of this item
@@ -437,6 +444,8 @@
 --     * Slot: id Description: 
 --     * Slot: shippingConditions Description: Specification of the terms and parameters for transporting
 --     * Slot: storageConditions Description: Specifies the conditions under which the product has to be stored to maintain stability and integrity, such as temperature, buffer, and other environmental factors.
+--     * Slot: thirdPartyDistributionConsent Description: Indicates whether the biological material can be distributed without restriction to third parties, as indicated by the ABS permit, in case an ABS permit is required
+--     * Slot: usageRestrictions Description: Specifies any limitations or conditions on the use of the biological material, including restrictions on research, commercial use, or distribution, considering any potential concerns about the related genetic material
 --     * Slot: accessPointURL Description: The URL that permits to access to the product/service detailed description page on the provider's website and/or allows to place an order about it or at least describe the process to place an order/enquiry
 --     * Slot: refSKU Description: The reference or the stock keeping unit of the service or item provided in the provider's catalogue
 --     * Slot: unitDefinition Description: A short description of what will be delivered by ordering one unit of this item
@@ -470,6 +479,8 @@
 --     * Slot: sequenceChecked Description: Tell whether or not the sequence of the product was controlled (compulsory for cloned products)
 --     * Slot: shippingConditions Description: Specification of the terms and parameters for transporting
 --     * Slot: storageConditions Description: Specifies the conditions under which the product has to be stored to maintain stability and integrity, such as temperature, buffer, and other environmental factors.
+--     * Slot: thirdPartyDistributionConsent Description: Indicates whether the biological material can be distributed without restriction to third parties, as indicated by the ABS permit, in case an ABS permit is required
+--     * Slot: usageRestrictions Description: Specifies any limitations or conditions on the use of the biological material, including restrictions on research, commercial use, or distribution, considering any potential concerns about the related genetic material
 --     * Slot: accessPointURL Description: The URL that permits to access to the product/service detailed description page on the provider's website and/or allows to place an order about it or at least describe the process to place an order/enquiry
 --     * Slot: refSKU Description: The reference or the stock keeping unit of the service or item provided in the provider's catalogue
 --     * Slot: unitDefinition Description: A short description of what will be delivered by ordering one unit of this item
@@ -500,6 +511,8 @@
 --     * Slot: targetedRegion Description: The specific area or sequence within the target analyte that the detection kit is designed to identify and interact with, ensuring accurate detection and analysis.
 --     * Slot: shippingConditions Description: Specification of the terms and parameters for transporting
 --     * Slot: storageConditions Description: Specifies the conditions under which the product has to be stored to maintain stability and integrity, such as temperature, buffer, and other environmental factors.
+--     * Slot: thirdPartyDistributionConsent Description: Indicates whether the biological material can be distributed without restriction to third parties, as indicated by the ABS permit, in case an ABS permit is required
+--     * Slot: usageRestrictions Description: Specifies any limitations or conditions on the use of the biological material, including restrictions on research, commercial use, or distribution, considering any potential concerns about the related genetic material
 --     * Slot: accessPointURL Description: The URL that permits to access to the product/service detailed description page on the provider's website and/or allows to place an order about it or at least describe the process to place an order/enquiry
 --     * Slot: refSKU Description: The reference or the stock keeping unit of the service or item provided in the provider's catalogue
 --     * Slot: unitDefinition Description: A short description of what will be delivered by ordering one unit of this item
@@ -524,6 +537,8 @@
 --     * Slot: id Description: 
 --     * Slot: shippingConditions Description: Specification of the terms and parameters for transporting
 --     * Slot: storageConditions Description: Specifies the conditions under which the product has to be stored to maintain stability and integrity, such as temperature, buffer, and other environmental factors.
+--     * Slot: thirdPartyDistributionConsent Description: Indicates whether the biological material can be distributed without restriction to third parties, as indicated by the ABS permit, in case an ABS permit is required
+--     * Slot: usageRestrictions Description: Specifies any limitations or conditions on the use of the biological material, including restrictions on research, commercial use, or distribution, considering any potential concerns about the related genetic material
 --     * Slot: accessPointURL Description: The URL that permits to access to the product/service detailed description page on the provider's website and/or allows to place an order about it or at least describe the process to place an order/enquiry
 --     * Slot: refSKU Description: The reference or the stock keeping unit of the service or item provided in the provider's catalogue
 --     * Slot: unitDefinition Description: A short description of what will be delivered by ordering one unit of this item
@@ -559,6 +574,8 @@
 --     * Slot: titer Description: The titer value, its corresponding unit, and the method of quantification (e.g., RT-qPCR, TCID50), representing the concentration or amount of unit present in the sample. The titer corresponds to the highest dilution factor that still yields a positive reading
 --     * Slot: shippingConditions Description: Specification of the terms and parameters for transporting
 --     * Slot: storageConditions Description: Specifies the conditions under which the product has to be stored to maintain stability and integrity, such as temperature, buffer, and other environmental factors.
+--     * Slot: thirdPartyDistributionConsent Description: Indicates whether the biological material can be distributed without restriction to third parties, as indicated by the ABS permit, in case an ABS permit is required
+--     * Slot: usageRestrictions Description: Specifies any limitations or conditions on the use of the biological material, including restrictions on research, commercial use, or distribution, considering any potential concerns about the related genetic material
 --     * Slot: accessPointURL Description: The URL that permits to access to the product/service detailed description page on the provider's website and/or allows to place an order about it or at least describe the process to place an order/enquiry
 --     * Slot: refSKU Description: The reference or the stock keeping unit of the service or item provided in the provider's catalogue
 --     * Slot: unitDefinition Description: A short description of what will be delivered by ordering one unit of this item
@@ -597,6 +614,8 @@
 --     * Slot: titer Description: The titer value, its corresponding unit, and the method of quantification (e.g., RT-qPCR, TCID50), representing the concentration or amount of unit present in the sample. The titer corresponds to the highest dilution factor that still yields a positive reading
 --     * Slot: shippingConditions Description: Specification of the terms and parameters for transporting
 --     * Slot: storageConditions Description: Specifies the conditions under which the product has to be stored to maintain stability and integrity, such as temperature, buffer, and other environmental factors.
+--     * Slot: thirdPartyDistributionConsent Description: Indicates whether the biological material can be distributed without restriction to third parties, as indicated by the ABS permit, in case an ABS permit is required
+--     * Slot: usageRestrictions Description: Specifies any limitations or conditions on the use of the biological material, including restrictions on research, commercial use, or distribution, considering any potential concerns about the related genetic material
 --     * Slot: accessPointURL Description: The URL that permits to access to the product/service detailed description page on the provider's website and/or allows to place an order about it or at least describe the process to place an order/enquiry
 --     * Slot: refSKU Description: The reference or the stock keeping unit of the service or item provided in the provider's catalogue
 --     * Slot: unitDefinition Description: A short description of what will be delivered by ordering one unit of this item
@@ -633,6 +652,8 @@
 --     * Slot: titer Description: The titer value, its corresponding unit, and the method of quantification (e.g., RT-qPCR, TCID50), representing the concentration or amount of unit present in the sample. The titer corresponds to the highest dilution factor that still yields a positive reading
 --     * Slot: shippingConditions Description: Specification of the terms and parameters for transporting
 --     * Slot: storageConditions Description: Specifies the conditions under which the product has to be stored to maintain stability and integrity, such as temperature, buffer, and other environmental factors.
+--     * Slot: thirdPartyDistributionConsent Description: Indicates whether the biological material can be distributed without restriction to third parties, as indicated by the ABS permit, in case an ABS permit is required
+--     * Slot: usageRestrictions Description: Specifies any limitations or conditions on the use of the biological material, including restrictions on research, commercial use, or distribution, considering any potential concerns about the related genetic material
 --     * Slot: accessPointURL Description: The URL that permits to access to the product/service detailed description page on the provider's website and/or allows to place an order about it or at least describe the process to place an order/enquiry
 --     * Slot: refSKU Description: The reference or the stock keeping unit of the service or item provided in the provider's catalogue
 --     * Slot: unitDefinition Description: A short description of what will be delivered by ordering one unit of this item
@@ -669,6 +690,8 @@
 --     * Slot: titer Description: The titer value, its corresponding unit, and the method of quantification (e.g., RT-qPCR, TCID50), representing the concentration or amount of unit present in the sample. The titer corresponds to the highest dilution factor that still yields a positive reading
 --     * Slot: shippingConditions Description: Specification of the terms and parameters for transporting
 --     * Slot: storageConditions Description: Specifies the conditions under which the product has to be stored to maintain stability and integrity, such as temperature, buffer, and other environmental factors.
+--     * Slot: thirdPartyDistributionConsent Description: Indicates whether the biological material can be distributed without restriction to third parties, as indicated by the ABS permit, in case an ABS permit is required
+--     * Slot: usageRestrictions Description: Specifies any limitations or conditions on the use of the biological material, including restrictions on research, commercial use, or distribution, considering any potential concerns about the related genetic material
 --     * Slot: accessPointURL Description: The URL that permits to access to the product/service detailed description page on the provider's website and/or allows to place an order about it or at least describe the process to place an order/enquiry
 --     * Slot: refSKU Description: The reference or the stock keeping unit of the service or item provided in the provider's catalogue
 --     * Slot: unitDefinition Description: A short description of what will be delivered by ordering one unit of this item
@@ -705,6 +728,8 @@
 --     * Slot: titer Description: The titer value, its corresponding unit, and the method of quantification (e.g., RT-qPCR, TCID50), representing the concentration or amount of unit present in the sample. The titer corresponds to the highest dilution factor that still yields a positive reading
 --     * Slot: shippingConditions Description: Specification of the terms and parameters for transporting
 --     * Slot: storageConditions Description: Specifies the conditions under which the product has to be stored to maintain stability and integrity, such as temperature, buffer, and other environmental factors.
+--     * Slot: thirdPartyDistributionConsent Description: Indicates whether the biological material can be distributed without restriction to third parties, as indicated by the ABS permit, in case an ABS permit is required
+--     * Slot: usageRestrictions Description: Specifies any limitations or conditions on the use of the biological material, including restrictions on research, commercial use, or distribution, considering any potential concerns about the related genetic material
 --     * Slot: accessPointURL Description: The URL that permits to access to the product/service detailed description page on the provider's website and/or allows to place an order about it or at least describe the process to place an order/enquiry
 --     * Slot: refSKU Description: The reference or the stock keeping unit of the service or item provided in the provider's catalogue
 --     * Slot: unitDefinition Description: A short description of what will be delivered by ordering one unit of this item
@@ -741,6 +766,8 @@
 --     * Slot: titer Description: The titer value, its corresponding unit, and the method of quantification (e.g., RT-qPCR, TCID50), representing the concentration or amount of unit present in the sample. The titer corresponds to the highest dilution factor that still yields a positive reading
 --     * Slot: shippingConditions Description: Specification of the terms and parameters for transporting
 --     * Slot: storageConditions Description: Specifies the conditions under which the product has to be stored to maintain stability and integrity, such as temperature, buffer, and other environmental factors.
+--     * Slot: thirdPartyDistributionConsent Description: Indicates whether the biological material can be distributed without restriction to third parties, as indicated by the ABS permit, in case an ABS permit is required
+--     * Slot: usageRestrictions Description: Specifies any limitations or conditions on the use of the biological material, including restrictions on research, commercial use, or distribution, considering any potential concerns about the related genetic material
 --     * Slot: accessPointURL Description: The URL that permits to access to the product/service detailed description page on the provider's website and/or allows to place an order about it or at least describe the process to place an order/enquiry
 --     * Slot: refSKU Description: The reference or the stock keeping unit of the service or item provided in the provider's catalogue
 --     * Slot: unitDefinition Description: A short description of what will be delivered by ordering one unit of this item
@@ -777,6 +804,8 @@
 --     * Slot: titer Description: The titer value, its corresponding unit, and the method of quantification (e.g., RT-qPCR, TCID50), representing the concentration or amount of unit present in the sample. The titer corresponds to the highest dilution factor that still yields a positive reading
 --     * Slot: shippingConditions Description: Specification of the terms and parameters for transporting
 --     * Slot: storageConditions Description: Specifies the conditions under which the product has to be stored to maintain stability and integrity, such as temperature, buffer, and other environmental factors.
+--     * Slot: thirdPartyDistributionConsent Description: Indicates whether the biological material can be distributed without restriction to third parties, as indicated by the ABS permit, in case an ABS permit is required
+--     * Slot: usageRestrictions Description: Specifies any limitations or conditions on the use of the biological material, including restrictions on research, commercial use, or distribution, considering any potential concerns about the related genetic material
 --     * Slot: accessPointURL Description: The URL that permits to access to the product/service detailed description page on the provider's website and/or allows to place an order about it or at least describe the process to place an order/enquiry
 --     * Slot: refSKU Description: The reference or the stock keeping unit of the service or item provided in the provider's catalogue
 --     * Slot: unitDefinition Description: A short description of what will be delivered by ordering one unit of this item
@@ -1628,8 +1657,6 @@ CREATE TABLE "BiologicalMaterialOrigin" (
 	id INTEGER NOT NULL, 
 	"recombinantMaterial" BOOLEAN NOT NULL, 
 	"biologicalSourceType" BOOLEAN NOT NULL, 
-	"thirdPartyDistributionConsent" BOOLEAN, 
-	"usageRestrictions" TEXT, 
 	PRIMARY KEY (id)
 );
 CREATE TABLE "RecombinantPartIdentification" (
@@ -1676,6 +1703,7 @@ CREATE TABLE "DataProvider" (
 );
 CREATE TABLE "BiologicalPartOrigin" (
 	id INTEGER NOT NULL, 
+	"accessToPhysicalGeneticResource" BOOLEAN NOT NULL, 
 	"recombinantPartIdentification_id" INTEGER, 
 	PRIMARY KEY (id), 
 	FOREIGN KEY("recombinantPartIdentification_id") REFERENCES "RecombinantPartIdentification" (id)
@@ -1684,6 +1712,7 @@ CREATE TABLE "SyntheticPartOrigin" (
 	id INTEGER NOT NULL, 
 	"modificationsFromTheReferenceSequences" BOOLEAN NOT NULL, 
 	"descriptionOfModificationsMadeFromTheReferenceSequences" TEXT, 
+	"accessToPhysicalGeneticResource" BOOLEAN NOT NULL, 
 	"recombinantPartIdentification_id" INTEGER, 
 	PRIMARY KEY (id), 
 	FOREIGN KEY("recombinantPartIdentification_id") REFERENCES "RecombinantPartIdentification" (id)
@@ -2054,7 +2083,8 @@ CREATE TABLE "NaturalPartOrigin" (
 	id INTEGER NOT NULL, 
 	"collectionDate" DATETIME NOT NULL, 
 	"beforeDate" BOOLEAN NOT NULL, 
-	"reportingToAuthorities" TEXT, 
+	"permitIdentifierForABS" TEXT, 
+	"accessToPhysicalGeneticResource" BOOLEAN NOT NULL, 
 	"countryOfCollection_id" INTEGER NOT NULL, 
 	"indigenousPoepleAndLocalCommunityOrigin_id" INTEGER, 
 	"recombinantPartIdentification_id" INTEGER, 
@@ -2350,6 +2380,8 @@ CREATE TABLE "Product" (
 	id INTEGER NOT NULL, 
 	"shippingConditions" TEXT NOT NULL, 
 	"storageConditions" TEXT NOT NULL, 
+	"thirdPartyDistributionConsent" BOOLEAN, 
+	"usageRestrictions" TEXT, 
 	"accessPointURL" TEXT NOT NULL, 
 	"refSKU" TEXT NOT NULL, 
 	"unitDefinition" TEXT, 
@@ -2387,6 +2419,8 @@ CREATE TABLE "Antibody" (
 	"targetedAntigen" TEXT NOT NULL, 
 	"shippingConditions" TEXT NOT NULL, 
 	"storageConditions" TEXT NOT NULL, 
+	"thirdPartyDistributionConsent" BOOLEAN, 
+	"usageRestrictions" TEXT, 
 	"accessPointURL" TEXT NOT NULL, 
 	"refSKU" TEXT NOT NULL, 
 	"unitDefinition" TEXT, 
@@ -2425,6 +2459,8 @@ CREATE TABLE "Hybridoma" (
 	"targetedAntigen" TEXT NOT NULL, 
 	"shippingConditions" TEXT NOT NULL, 
 	"storageConditions" TEXT NOT NULL, 
+	"thirdPartyDistributionConsent" BOOLEAN, 
+	"usageRestrictions" TEXT, 
 	"accessPointURL" TEXT NOT NULL, 
 	"refSKU" TEXT NOT NULL, 
 	"unitDefinition" TEXT, 
@@ -2458,6 +2494,8 @@ CREATE TABLE "Protein" (
 	id INTEGER NOT NULL, 
 	"shippingConditions" TEXT NOT NULL, 
 	"storageConditions" TEXT NOT NULL, 
+	"thirdPartyDistributionConsent" BOOLEAN, 
+	"usageRestrictions" TEXT, 
 	"accessPointURL" TEXT NOT NULL, 
 	"refSKU" TEXT NOT NULL, 
 	"unitDefinition" TEXT, 
@@ -2501,6 +2539,8 @@ CREATE TABLE "Nucleic Acid" (
 	"sequenceChecked" BOOLEAN NOT NULL, 
 	"shippingConditions" TEXT NOT NULL, 
 	"storageConditions" TEXT NOT NULL, 
+	"thirdPartyDistributionConsent" BOOLEAN, 
+	"usageRestrictions" TEXT, 
 	"accessPointURL" TEXT NOT NULL, 
 	"refSKU" TEXT NOT NULL, 
 	"unitDefinition" TEXT, 
@@ -2543,6 +2583,8 @@ CREATE TABLE "Detection Kit" (
 	"targetedRegion" TEXT, 
 	"shippingConditions" TEXT NOT NULL, 
 	"storageConditions" TEXT NOT NULL, 
+	"thirdPartyDistributionConsent" BOOLEAN, 
+	"usageRestrictions" TEXT, 
 	"accessPointURL" TEXT NOT NULL, 
 	"refSKU" TEXT NOT NULL, 
 	"unitDefinition" TEXT, 
@@ -2576,6 +2618,8 @@ CREATE TABLE "Bundle" (
 	id INTEGER NOT NULL, 
 	"shippingConditions" TEXT NOT NULL, 
 	"storageConditions" TEXT NOT NULL, 
+	"thirdPartyDistributionConsent" BOOLEAN, 
+	"usageRestrictions" TEXT, 
 	"accessPointURL" TEXT NOT NULL, 
 	"refSKU" TEXT NOT NULL, 
 	"unitDefinition" TEXT, 
@@ -2620,6 +2664,8 @@ CREATE TABLE "Pathogen" (
 	titer TEXT NOT NULL, 
 	"shippingConditions" TEXT NOT NULL, 
 	"storageConditions" TEXT NOT NULL, 
+	"thirdPartyDistributionConsent" BOOLEAN, 
+	"usageRestrictions" TEXT, 
 	"accessPointURL" TEXT NOT NULL, 
 	"refSKU" TEXT NOT NULL, 
 	"unitDefinition" TEXT, 
@@ -2668,6 +2714,8 @@ CREATE TABLE "Virus" (
 	titer TEXT NOT NULL, 
 	"shippingConditions" TEXT NOT NULL, 
 	"storageConditions" TEXT NOT NULL, 
+	"thirdPartyDistributionConsent" BOOLEAN, 
+	"usageRestrictions" TEXT, 
 	"accessPointURL" TEXT NOT NULL, 
 	"refSKU" TEXT NOT NULL, 
 	"unitDefinition" TEXT, 
@@ -2714,6 +2762,8 @@ CREATE TABLE "Bacterium" (
 	titer TEXT NOT NULL, 
 	"shippingConditions" TEXT NOT NULL, 
 	"storageConditions" TEXT NOT NULL, 
+	"thirdPartyDistributionConsent" BOOLEAN, 
+	"usageRestrictions" TEXT, 
 	"accessPointURL" TEXT NOT NULL, 
 	"refSKU" TEXT NOT NULL, 
 	"unitDefinition" TEXT, 
@@ -2760,6 +2810,8 @@ CREATE TABLE "Fungus" (
 	titer TEXT NOT NULL, 
 	"shippingConditions" TEXT NOT NULL, 
 	"storageConditions" TEXT NOT NULL, 
+	"thirdPartyDistributionConsent" BOOLEAN, 
+	"usageRestrictions" TEXT, 
 	"accessPointURL" TEXT NOT NULL, 
 	"refSKU" TEXT NOT NULL, 
 	"unitDefinition" TEXT, 
@@ -2806,6 +2858,8 @@ CREATE TABLE "Protozoan" (
 	titer TEXT NOT NULL, 
 	"shippingConditions" TEXT NOT NULL, 
 	"storageConditions" TEXT NOT NULL, 
+	"thirdPartyDistributionConsent" BOOLEAN, 
+	"usageRestrictions" TEXT, 
 	"accessPointURL" TEXT NOT NULL, 
 	"refSKU" TEXT NOT NULL, 
 	"unitDefinition" TEXT, 
@@ -2852,6 +2906,8 @@ CREATE TABLE "Viroid" (
 	titer TEXT NOT NULL, 
 	"shippingConditions" TEXT NOT NULL, 
 	"storageConditions" TEXT NOT NULL, 
+	"thirdPartyDistributionConsent" BOOLEAN, 
+	"usageRestrictions" TEXT, 
 	"accessPointURL" TEXT NOT NULL, 
 	"refSKU" TEXT NOT NULL, 
 	"unitDefinition" TEXT, 
@@ -2898,6 +2954,8 @@ CREATE TABLE "Prion" (
 	titer TEXT NOT NULL, 
 	"shippingConditions" TEXT NOT NULL, 
 	"storageConditions" TEXT NOT NULL, 
+	"thirdPartyDistributionConsent" BOOLEAN, 
+	"usageRestrictions" TEXT, 
 	"accessPointURL" TEXT NOT NULL, 
 	"refSKU" TEXT NOT NULL, 
 	"unitDefinition" TEXT, 

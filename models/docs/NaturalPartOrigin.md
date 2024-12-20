@@ -6,7 +6,7 @@ Information on the origin of a natural part that composes the biological materia
 URI: [EVORA:NaturalPartOrigin](https://evora-project.eu/NaturalPartOrigin)
 
 
-[![img](https://yuml.me/diagram/nofunky;dir:TB/class/[RecombinantPartIdentification],[IPLCOrigin]<indigenousPoepleAndLocalCommunityOrigin%200..1-++[NaturalPartOrigin&#124;collectionDate:datetime;beforeDate:boolean;reportingToAuthorities:string%20%3F],[Country]<countryOfCollection%201..1-++[NaturalPartOrigin],[BiologicalPartOrigin]^-[NaturalPartOrigin],[IPLCOrigin],[Country],[BiologicalPartOrigin])](https://yuml.me/diagram/nofunky;dir:TB/class/[RecombinantPartIdentification],[IPLCOrigin]<indigenousPoepleAndLocalCommunityOrigin%200..1-++[NaturalPartOrigin&#124;collectionDate:datetime;beforeDate:boolean;reportingToAuthorities:string%20%3F],[Country]<countryOfCollection%201..1-++[NaturalPartOrigin],[BiologicalPartOrigin]^-[NaturalPartOrigin],[IPLCOrigin],[Country],[BiologicalPartOrigin])
+[![img](https://yuml.me/diagram/nofunky;dir:TB/class/[RecombinantPartIdentification],[IPLCOrigin]<indigenousPoepleAndLocalCommunityOrigin%200..1-++[NaturalPartOrigin&#124;collectionDate:datetime;beforeDate:boolean;permitIdentifierForABS:string%20%3F;accessToPhysicalGeneticResource(i):boolean],[Country]<countryOfCollection%201..1-++[NaturalPartOrigin],[BiologicalPartOrigin]^-[NaturalPartOrigin],[IPLCOrigin],[Country],[BiologicalPartOrigin])](https://yuml.me/diagram/nofunky;dir:TB/class/[RecombinantPartIdentification],[IPLCOrigin]<indigenousPoepleAndLocalCommunityOrigin%200..1-++[NaturalPartOrigin&#124;collectionDate:datetime;beforeDate:boolean;permitIdentifierForABS:string%20%3F;accessToPhysicalGeneticResource(i):boolean],[Country]<countryOfCollection%201..1-++[NaturalPartOrigin],[BiologicalPartOrigin]^-[NaturalPartOrigin],[IPLCOrigin],[Country],[BiologicalPartOrigin])
 
 ## Parents
 
@@ -32,8 +32,8 @@ URI: [EVORA:NaturalPartOrigin](https://evora-project.eu/NaturalPartOrigin)
  * [NaturalPartOrigin➞beforeDate](NaturalPartOrigin_beforeDate.md)  <sub>1..1</sub>
      * Description: Set to TRUE if a proxy date for the collection date is used
      * Range: [Boolean](types/Boolean.md)
- * [NaturalPartOrigin➞reportingToAuthorities](NaturalPartOrigin_reportingToAuthorities.md)  <sub>0..1</sub>
-     * Description: Information about permit identifiers for access to the genetic resource, applicable if the genetic resource falls under Access and Benefit-Sharing (ABS) regulations
+ * [NaturalPartOrigin➞permitIdentifierForABS](NaturalPartOrigin_permitIdentifierForABS.md)  <sub>0..1</sub>
+     * Description: Reference of the permit identifiers for access to the genetic resource, applicable if the genetic resource falls under Access and Benefit-Sharing (ABS) regulations
      * Range: [String](types/String.md)
 
 ### Inherited from BiologicalPartOrigin:
@@ -41,6 +41,9 @@ URI: [EVORA:NaturalPartOrigin](https://evora-project.eu/NaturalPartOrigin)
  * [BiologicalPartOrigin➞recombinantPartIdentification](BiologicalPartOrigin_recombinantPartIdentification.md)  <sub>0..1</sub>
      * Description: Identification of a recombinant part
      * Range: [RecombinantPartIdentification](RecombinantPartIdentification.md)
+ * [BiologicalPartOrigin➞accessToPhysicalGeneticResource](BiologicalPartOrigin_accessToPhysicalGeneticResource.md)  <sub>1..1</sub>
+     * Description: Reference of the permit identifiers for access to the genetic resource, applicable if the genetic resource falls under Access and Benefit-Sharing (ABS) regulations
+     * Range: [Boolean](types/Boolean.md)
 
 ## Other properties
 

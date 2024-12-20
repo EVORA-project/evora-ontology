@@ -295,12 +295,26 @@
                         "null"
                     ]
                 },
+                "thirdPartyDistributionConsent": {
+                    "description": "Indicates whether the biological material can be distributed without restriction to third parties, as indicated by the ABS permit, in case an ABS permit is required",
+                    "type": [
+                        "boolean",
+                        "null"
+                    ]
+                },
                 "unitCost": {
                     "description": "The cost per access for one unit as defined by the unit definition",
                     "type": "string"
                 },
                 "unitDefinition": {
                     "description": "A short description of what will be delivered by ordering one unit of this item",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "usageRestrictions": {
+                    "description": "Specifies any limitations or conditions on the use of the biological material, including restrictions on research, commercial use, or distribution, considering any potential concerns about the related genetic material",
                     "type": [
                         "string",
                         "null"
@@ -694,6 +708,13 @@
                         "null"
                     ]
                 },
+                "thirdPartyDistributionConsent": {
+                    "description": "Indicates whether the biological material can be distributed without restriction to third parties, as indicated by the ABS permit, in case an ABS permit is required",
+                    "type": [
+                        "boolean",
+                        "null"
+                    ]
+                },
                 "titer": {
                     "description": "The titer value, its corresponding unit, and the method of quantification (e.g., RT-qPCR, TCID50), representing the concentration or amount of unit present in the sample. The titer corresponds to the highest dilution factor that still yields a positive reading",
                     "type": "string"
@@ -714,6 +735,13 @@
                 },
                 "unitDefinition": {
                     "description": "A short description of what will be delivered by ordering one unit of this item",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "usageRestrictions": {
+                    "description": "Specifies any limitations or conditions on the use of the biological material, including restrictions on research, commercial use, or distribution, considering any potential concerns about the related genetic material",
                     "type": [
                         "string",
                         "null"
@@ -763,20 +791,6 @@
                 "recombinantMaterial": {
                     "description": "Indicates if this biological material is a recombinant biological material.",
                     "type": "boolean"
-                },
-                "thirdPartyDistributionConsent": {
-                    "description": "Indicates whether the biological material can be distributed to third parties, considering any potential concerns about to the related genetic material as indicated by the ABS permit, if one exists",
-                    "type": [
-                        "boolean",
-                        "null"
-                    ]
-                },
-                "usageRestrictions": {
-                    "description": "Specifies any limitations or conditions on the use of the biological material, including restrictions on research, commercial use, or distribution, considering any potential concerns about the related genetic material",
-                    "type": [
-                        "string",
-                        "null"
-                    ]
                 }
             },
             "required": [
@@ -1008,12 +1022,26 @@
                         "null"
                     ]
                 },
+                "thirdPartyDistributionConsent": {
+                    "description": "Indicates whether the biological material can be distributed without restriction to third parties, as indicated by the ABS permit, in case an ABS permit is required",
+                    "type": [
+                        "boolean",
+                        "null"
+                    ]
+                },
                 "unitCost": {
                     "description": "The cost per access for one unit as defined by the unit definition",
                     "type": "string"
                 },
                 "unitDefinition": {
                     "description": "A short description of what will be delivered by ordering one unit of this item",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "usageRestrictions": {
+                    "description": "Specifies any limitations or conditions on the use of the biological material, including restrictions on research, commercial use, or distribution, considering any potential concerns about the related genetic material",
                     "type": [
                         "string",
                         "null"
@@ -1699,12 +1727,26 @@
                         "null"
                     ]
                 },
+                "thirdPartyDistributionConsent": {
+                    "description": "Indicates whether the biological material can be distributed without restriction to third parties, as indicated by the ABS permit, in case an ABS permit is required",
+                    "type": [
+                        "boolean",
+                        "null"
+                    ]
+                },
                 "unitCost": {
                     "description": "The cost per access for one unit as defined by the unit definition",
                     "type": "string"
                 },
                 "unitDefinition": {
                     "description": "A short description of what will be delivered by ordering one unit of this item",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "usageRestrictions": {
+                    "description": "Specifies any limitations or conditions on the use of the biological material, including restrictions on research, commercial use, or distribution, considering any potential concerns about the related genetic material",
                     "type": [
                         "string",
                         "null"
@@ -2158,6 +2200,13 @@
                         "null"
                     ]
                 },
+                "thirdPartyDistributionConsent": {
+                    "description": "Indicates whether the biological material can be distributed without restriction to third parties, as indicated by the ABS permit, in case an ABS permit is required",
+                    "type": [
+                        "boolean",
+                        "null"
+                    ]
+                },
                 "titer": {
                     "description": "The titer value, its corresponding unit, and the method of quantification (e.g., RT-qPCR, TCID50), representing the concentration or amount of unit present in the sample. The titer corresponds to the highest dilution factor that still yields a positive reading",
                     "type": "string"
@@ -2178,6 +2227,13 @@
                 },
                 "unitDefinition": {
                     "description": "A short description of what will be delivered by ordering one unit of this item",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "usageRestrictions": {
+                    "description": "Specifies any limitations or conditions on the use of the biological material, including restrictions on research, commercial use, or distribution, considering any potential concerns about the related genetic material",
                     "type": [
                         "string",
                         "null"
@@ -2488,12 +2544,26 @@
                         "null"
                     ]
                 },
+                "thirdPartyDistributionConsent": {
+                    "description": "Indicates whether the biological material can be distributed without restriction to third parties, as indicated by the ABS permit, in case an ABS permit is required",
+                    "type": [
+                        "boolean",
+                        "null"
+                    ]
+                },
                 "unitCost": {
                     "description": "The cost per access for one unit as defined by the unit definition",
                     "type": "string"
                 },
                 "unitDefinition": {
                     "description": "A short description of what will be delivered by ordering one unit of this item",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "usageRestrictions": {
+                    "description": "Specifies any limitations or conditions on the use of the biological material, including restrictions on research, commercial use, or distribution, considering any potential concerns about the related genetic material",
                     "type": [
                         "string",
                         "null"
@@ -2556,7 +2626,7 @@
         },
         "IPLCOrigin": {
             "additionalProperties": false,
-            "description": "The IPLC area (Indigenous People and Local Communities) from which a physical item, originates or is naturally found",
+            "description": "The IPLC area (Indigenous People and Local Communities) from which a physical item originates",
             "properties": {
                 "description": {
                     "description": "A short explanation of the characteristics, features, or nature of the current item",
@@ -2896,6 +2966,10 @@
             "additionalProperties": false,
             "description": "Information on the origin of a natural part that composes the biological material",
             "properties": {
+                "accessToPhysicalGeneticResource": {
+                    "description": "Reference of the permit identifiers for access to the genetic resource, applicable if the genetic resource falls under Access and Benefit-Sharing (ABS) regulations",
+                    "type": "boolean"
+                },
                 "beforeDate": {
                     "description": "Set to TRUE if a proxy date for the collection date is used",
                     "type": "boolean"
@@ -2920,6 +2994,13 @@
                     ],
                     "description": "The specific IPLC area (Indigenous People and Local Communities) from which this sample/element was sampled, if relevant"
                 },
+                "permitIdentifierForABS": {
+                    "description": "Reference of the permit identifiers for access to the genetic resource, applicable if the genetic resource falls under Access and Benefit-Sharing (ABS) regulations",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
                 "recombinantPartIdentification": {
                     "anyOf": [
                         {
@@ -2930,19 +3011,13 @@
                         }
                     ],
                     "description": "Identification of a recombinant part"
-                },
-                "reportingToAuthorities": {
-                    "description": "Information about permit identifiers for access to the genetic resource, applicable if the genetic resource falls under Access and Benefit-Sharing (ABS) regulations",
-                    "type": [
-                        "string",
-                        "null"
-                    ]
                 }
             },
             "required": [
                 "countryOfCollection",
                 "collectionDate",
-                "beforeDate"
+                "beforeDate",
+                "accessToPhysicalGeneticResource"
             ],
             "title": "NaturalPartOrigin",
             "type": "object"
@@ -3241,6 +3316,13 @@
                         "null"
                     ]
                 },
+                "thirdPartyDistributionConsent": {
+                    "description": "Indicates whether the biological material can be distributed without restriction to third parties, as indicated by the ABS permit, in case an ABS permit is required",
+                    "type": [
+                        "boolean",
+                        "null"
+                    ]
+                },
                 "titer": {
                     "description": "The titer value, its corresponding unit, and the method of quantification (e.g., RT-qPCR, TCID50), representing the concentration or amount of unit present in the sample. The titer corresponds to the highest dilution factor that still yields a positive reading",
                     "type": [
@@ -3254,6 +3336,13 @@
                 },
                 "unitDefinition": {
                     "description": "A short description of what will be delivered by ordering one unit of this item",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "usageRestrictions": {
+                    "description": "Specifies any limitations or conditions on the use of the biological material, including restrictions on research, commercial use, or distribution, considering any potential concerns about the related genetic material",
                     "type": [
                         "string",
                         "null"
@@ -3987,6 +4076,13 @@
                         "null"
                     ]
                 },
+                "thirdPartyDistributionConsent": {
+                    "description": "Indicates whether the biological material can be distributed without restriction to third parties, as indicated by the ABS permit, in case an ABS permit is required",
+                    "type": [
+                        "boolean",
+                        "null"
+                    ]
+                },
                 "titer": {
                     "description": "The titer value, its corresponding unit, and the method of quantification (e.g., RT-qPCR, TCID50), representing the concentration or amount of unit present in the sample. The titer corresponds to the highest dilution factor that still yields a positive reading",
                     "type": "string"
@@ -4007,6 +4103,13 @@
                 },
                 "unitDefinition": {
                     "description": "A short description of what will be delivered by ordering one unit of this item",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "usageRestrictions": {
+                    "description": "Specifies any limitations or conditions on the use of the biological material, including restrictions on research, commercial use, or distribution, considering any potential concerns about the related genetic material",
                     "type": [
                         "string",
                         "null"
@@ -4252,12 +4355,26 @@
                         "null"
                     ]
                 },
+                "thirdPartyDistributionConsent": {
+                    "description": "Indicates whether the biological material can be distributed without restriction to third parties, as indicated by the ABS permit, in case an ABS permit is required",
+                    "type": [
+                        "boolean",
+                        "null"
+                    ]
+                },
                 "unitCost": {
                     "description": "The cost per access for one unit as defined by the unit definition",
                     "type": "string"
                 },
                 "unitDefinition": {
                     "description": "A short description of what will be delivered by ordering one unit of this item",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "usageRestrictions": {
+                    "description": "Specifies any limitations or conditions on the use of the biological material, including restrictions on research, commercial use, or distribution, considering any potential concerns about the related genetic material",
                     "type": [
                         "string",
                         "null"
@@ -4724,6 +4841,13 @@
                         "null"
                     ]
                 },
+                "thirdPartyDistributionConsent": {
+                    "description": "Indicates whether the biological material can be distributed without restriction to third parties, as indicated by the ABS permit, in case an ABS permit is required",
+                    "type": [
+                        "boolean",
+                        "null"
+                    ]
+                },
                 "typeOfFunctionalCharacterization": {
                     "description": "Refers to the classification of a protein based on the specific type of functional analysis performed to determine its biological activities and roles. Possible values include \"Enzymatic\" (the protein has been characterized for its enzyme activity) and \"Antigenic\" (the protein has been characterized for its ability to elicit an immune response).",
                     "items": {
@@ -4740,6 +4864,13 @@
                 },
                 "unitDefinition": {
                     "description": "A short description of what will be delivered by ordering one unit of this item",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "usageRestrictions": {
+                    "description": "Specifies any limitations or conditions on the use of the biological material, including restrictions on research, commercial use, or distribution, considering any potential concerns about the related genetic material",
                     "type": [
                         "string",
                         "null"
@@ -5121,6 +5252,13 @@
                         "null"
                     ]
                 },
+                "thirdPartyDistributionConsent": {
+                    "description": "Indicates whether the biological material can be distributed without restriction to third parties, as indicated by the ABS permit, in case an ABS permit is required",
+                    "type": [
+                        "boolean",
+                        "null"
+                    ]
+                },
                 "titer": {
                     "description": "The titer value, its corresponding unit, and the method of quantification (e.g., RT-qPCR, TCID50), representing the concentration or amount of unit present in the sample. The titer corresponds to the highest dilution factor that still yields a positive reading",
                     "type": "string"
@@ -5141,6 +5279,13 @@
                 },
                 "unitDefinition": {
                     "description": "A short description of what will be delivered by ordering one unit of this item",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "usageRestrictions": {
+                    "description": "Specifies any limitations or conditions on the use of the biological material, including restrictions on research, commercial use, or distribution, considering any potential concerns about the related genetic material",
                     "type": [
                         "string",
                         "null"
@@ -5726,6 +5871,10 @@
             "additionalProperties": false,
             "description": "Information on the origin of a synthetic part that composes the biological material",
             "properties": {
+                "accessToPhysicalGeneticResource": {
+                    "description": "Reference of the permit identifiers for access to the genetic resource, applicable if the genetic resource falls under Access and Benefit-Sharing (ABS) regulations",
+                    "type": "boolean"
+                },
                 "descriptionOfModificationsMadeFromTheReferenceSequences": {
                     "description": "List the modifications mades from the reference sequence if any",
                     "type": [
@@ -5750,7 +5899,8 @@
                 }
             },
             "required": [
-                "modificationsFromTheReferenceSequences"
+                "modificationsFromTheReferenceSequences",
+                "accessToPhysicalGeneticResource"
             ],
             "title": "SyntheticPartOrigin",
             "type": "object"
@@ -6425,6 +6575,13 @@
                         "null"
                     ]
                 },
+                "thirdPartyDistributionConsent": {
+                    "description": "Indicates whether the biological material can be distributed without restriction to third parties, as indicated by the ABS permit, in case an ABS permit is required",
+                    "type": [
+                        "boolean",
+                        "null"
+                    ]
+                },
                 "titer": {
                     "description": "The titer value, its corresponding unit, and the method of quantification (e.g., RT-qPCR, TCID50), representing the concentration or amount of unit present in the sample. The titer corresponds to the highest dilution factor that still yields a positive reading",
                     "type": "string"
@@ -6445,6 +6602,13 @@
                 },
                 "unitDefinition": {
                     "description": "A short description of what will be delivered by ordering one unit of this item",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "usageRestrictions": {
+                    "description": "Specifies any limitations or conditions on the use of the biological material, including restrictions on research, commercial use, or distribution, considering any potential concerns about the related genetic material",
                     "type": [
                         "string",
                         "null"
@@ -6817,6 +6981,13 @@
                         "null"
                     ]
                 },
+                "thirdPartyDistributionConsent": {
+                    "description": "Indicates whether the biological material can be distributed without restriction to third parties, as indicated by the ABS permit, in case an ABS permit is required",
+                    "type": [
+                        "boolean",
+                        "null"
+                    ]
+                },
                 "titer": {
                     "description": "The titer value, its corresponding unit, and the method of quantification (e.g., RT-qPCR, TCID50), representing the concentration or amount of unit present in the sample. The titer corresponds to the highest dilution factor that still yields a positive reading",
                     "type": "string"
@@ -6837,6 +7008,13 @@
                 },
                 "unitDefinition": {
                     "description": "A short description of what will be delivered by ordering one unit of this item",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "usageRestrictions": {
+                    "description": "Specifies any limitations or conditions on the use of the biological material, including restrictions on research, commercial use, or distribution, considering any potential concerns about the related genetic material",
                     "type": [
                         "string",
                         "null"

@@ -45,6 +45,8 @@ message Antibody
   mSDS materialSafetyDataSheet = 0
   originator originator = 0
   string storageConditions = 0
+  boolean thirdPartyDistributionConsent = 0
+  string usageRestrictions = 0
   string productionSystem = 0
   boolean antibodyPurifiedByAffinity = 0
   boolean specificityDocumented = 0
@@ -94,6 +96,8 @@ message Bacterium
   mSDS materialSafetyDataSheet = 0
   originator originator = 0
   string storageConditions = 0
+  boolean thirdPartyDistributionConsent = 0
+  string usageRestrictions = 0
   biologicalMaterialOrigin biologicalMaterialOrigin = 0
  repeated  geographicalOrigin suspectedEpidemiologicalOrigin = 0
  repeated  isolationHost isolationHost = 0
@@ -119,8 +123,6 @@ message BiologicalMaterialOrigin
   boolean recombinantMaterial = 0
   boolean biologicalSourceType = 0
  repeated  biologicalPartOrigin biologicalPartOrigin = 0
-  boolean thirdPartyDistributionConsent = 0
-  string usageRestrictions = 0
  }
 // A group of products
 message Bundle
@@ -155,6 +157,8 @@ message Bundle
   mSDS materialSafetyDataSheet = 0
   originator originator = 0
   string storageConditions = 0
+  boolean thirdPartyDistributionConsent = 0
+  string usageRestrictions = 0
  repeated  product productsOfTheBundle = 0
   string complementaryDocument = 0
  }
@@ -266,6 +270,8 @@ message DetectionKit
   mSDS materialSafetyDataSheet = 0
   originator originator = 0
   string storageConditions = 0
+  boolean thirdPartyDistributionConsent = 0
+  string usageRestrictions = 0
  repeated  file hasSOPFile = 0
   boolean specificityDocumented = 0
   string specificity = 0
@@ -338,6 +344,8 @@ message Fungus
   mSDS materialSafetyDataSheet = 0
   originator originator = 0
   string storageConditions = 0
+  boolean thirdPartyDistributionConsent = 0
+  string usageRestrictions = 0
   biologicalMaterialOrigin biologicalMaterialOrigin = 0
  repeated  geographicalOrigin suspectedEpidemiologicalOrigin = 0
  repeated  isolationHost isolationHost = 0
@@ -399,6 +407,8 @@ message Hybridoma
   mSDS materialSafetyDataSheet = 0
   originator originator = 0
   string storageConditions = 0
+  boolean thirdPartyDistributionConsent = 0
+  string usageRestrictions = 0
   string productionSystem = 0
   boolean antibodyPurifiedByAffinity = 0
   boolean specificityDocumented = 0
@@ -424,7 +434,7 @@ message Image
   license license = 0
   string altText = 0
  }
-// The IPLC area (Indigenous People and Local Communities) from which a physical item, originates or is naturally found
+// The IPLC area (Indigenous People and Local Communities) from which a physical item originates
 message IPLCOrigin
  {
   string name = 0
@@ -488,11 +498,12 @@ message MSDS
 message NaturalPartOrigin
  {
   recombinantPartIdentification recombinantPartIdentification = 0
+  boolean accessToPhysicalGeneticResource = 0
   country countryOfCollection = 0
   iPLCOrigin indigenousPoepleAndLocalCommunityOrigin = 0
   datetime collectionDate = 0
   boolean beforeDate = 0
-  string reportingToAuthorities = 0
+  string permitIdentifierForABS = 0
  }
 // Nucleic acid related to a pathogen. It can be extracted or synthetic
 message NucleicAcid
@@ -528,6 +539,8 @@ message NucleicAcid
   mSDS materialSafetyDataSheet = 0
   originator originator = 0
   string storageConditions = 0
+  boolean thirdPartyDistributionConsent = 0
+  string usageRestrictions = 0
   biologicalMaterialOrigin biologicalMaterialOrigin = 0
  repeated  data hasGbFileOfTheConstruct = 0
  repeated  sequence sequence = 0
@@ -646,6 +659,8 @@ message Prion
   mSDS materialSafetyDataSheet = 0
   originator originator = 0
   string storageConditions = 0
+  boolean thirdPartyDistributionConsent = 0
+  string usageRestrictions = 0
   biologicalMaterialOrigin biologicalMaterialOrigin = 0
  repeated  geographicalOrigin suspectedEpidemiologicalOrigin = 0
  repeated  isolationHost isolationHost = 0
@@ -699,6 +714,8 @@ message Product
   mSDS materialSafetyDataSheet = 0
   originator originator = 0
   string storageConditions = 0
+  boolean thirdPartyDistributionConsent = 0
+  string usageRestrictions = 0
  }
 // A term used to classify a group of products that share common characteristics or functions, which helps in their organization
 message ProductCategory
@@ -759,6 +776,8 @@ message Protein
   mSDS materialSafetyDataSheet = 0
   originator originator = 0
   string storageConditions = 0
+  boolean thirdPartyDistributionConsent = 0
+  string usageRestrictions = 0
   biologicalMaterialOrigin biologicalMaterialOrigin = 0
  repeated  sequence sequence = 0
  repeated  pDBReference relatedPDB = 0
@@ -816,6 +835,8 @@ message Protozoan
   mSDS materialSafetyDataSheet = 0
   originator originator = 0
   string storageConditions = 0
+  boolean thirdPartyDistributionConsent = 0
+  string usageRestrictions = 0
   biologicalMaterialOrigin biologicalMaterialOrigin = 0
  repeated  geographicalOrigin suspectedEpidemiologicalOrigin = 0
  repeated  isolationHost isolationHost = 0
@@ -937,6 +958,7 @@ message SpecialFeature
 message SyntheticPartOrigin
  {
   recombinantPartIdentification recombinantPartIdentification = 0
+  boolean accessToPhysicalGeneticResource = 0
   boolean modificationsFromTheReferenceSequences = 0
   string descriptionOfModificationsMadeFromTheReferenceSequences = 0
  }
@@ -1043,6 +1065,8 @@ message Viroid
   mSDS materialSafetyDataSheet = 0
   originator originator = 0
   string storageConditions = 0
+  boolean thirdPartyDistributionConsent = 0
+  string usageRestrictions = 0
   biologicalMaterialOrigin biologicalMaterialOrigin = 0
  repeated  geographicalOrigin suspectedEpidemiologicalOrigin = 0
  repeated  isolationHost isolationHost = 0
@@ -1096,6 +1120,8 @@ message Virus
   mSDS materialSafetyDataSheet = 0
   originator originator = 0
   string storageConditions = 0
+  boolean thirdPartyDistributionConsent = 0
+  string usageRestrictions = 0
   biologicalMaterialOrigin biologicalMaterialOrigin = 0
  repeated  geographicalOrigin suspectedEpidemiologicalOrigin = 0
  repeated  isolationHost isolationHost = 0

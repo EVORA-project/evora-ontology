@@ -1187,6 +1187,18 @@
       "@type": "SlotDefinition"
     },
     {
+      "name": "accessToPhysicalGeneticResource",
+      "definition_uri": "https://evora-project.eu/accessToPhysicalGeneticResource",
+      "from_schema": "EVORA",
+      "slot_uri": "https://evora-project.eu/accessToPhysicalGeneticResource",
+      "owner": "BiologicalPartOrigin",
+      "domain_of": [
+        "BiologicalPartOrigin"
+      ],
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
       "name": "countryOfCollection",
       "definition_uri": "https://evora-project.eu/countryOfCollection",
       "from_schema": "EVORA",
@@ -1235,10 +1247,10 @@
       "@type": "SlotDefinition"
     },
     {
-      "name": "reportingToAuthorities",
-      "definition_uri": "https://evora-project.eu/reportingToAuthorities",
+      "name": "permitIdentifierForABS",
+      "definition_uri": "https://evora-project.eu/permitIdentifierForABS",
       "from_schema": "EVORA",
-      "slot_uri": "https://evora-project.eu/reportingToAuthorities",
+      "slot_uri": "https://evora-project.eu/permitIdentifierForABS",
       "owner": "NaturalPartOrigin",
       "domain_of": [
         "NaturalPartOrigin"
@@ -1675,9 +1687,9 @@
       "definition_uri": "https://evora-project.eu/thirdPartyDistributionConsent",
       "from_schema": "EVORA",
       "slot_uri": "https://evora-project.eu/thirdPartyDistributionConsent",
-      "owner": "BiologicalMaterialOrigin",
+      "owner": "Product",
       "domain_of": [
-        "BiologicalMaterialOrigin"
+        "Product"
       ],
       "range": "string",
       "@type": "SlotDefinition"
@@ -1687,9 +1699,9 @@
       "definition_uri": "https://evora-project.eu/usageRestrictions",
       "from_schema": "EVORA",
       "slot_uri": "https://evora-project.eu/usageRestrictions",
-      "owner": "BiologicalMaterialOrigin",
+      "owner": "Product",
       "domain_of": [
-        "BiologicalMaterialOrigin"
+        "Product"
       ],
       "range": "string",
       "@type": "SlotDefinition"
@@ -4336,48 +4348,6 @@
       "@type": "SlotDefinition"
     },
     {
-      "name": "BiologicalMaterialOrigin_thirdPartyDistributionConsent",
-      "definition_uri": "https://evora-project.eu/thirdPartyDistributionConsent",
-      "description": "Indicates whether the biological material can be distributed to third parties, considering any potential concerns about to the related genetic material as indicated by the ABS permit, if one exists",
-      "from_schema": "EVORA",
-      "aliases": [
-        "third party distribution consent"
-      ],
-      "is_a": "thirdPartyDistributionConsent",
-      "domain": "BiologicalMaterialOrigin",
-      "slot_uri": "https://evora-project.eu/thirdPartyDistributionConsent",
-      "alias": "thirdPartyDistributionConsent",
-      "owner": "BiologicalMaterialOrigin",
-      "domain_of": [
-        "BiologicalMaterialOrigin"
-      ],
-      "is_usage_slot": true,
-      "usage_slot_name": "thirdPartyDistributionConsent",
-      "range": "boolean",
-      "@type": "SlotDefinition"
-    },
-    {
-      "name": "BiologicalMaterialOrigin_usageRestrictions",
-      "definition_uri": "https://evora-project.eu/usageRestrictions",
-      "description": "Specifies any limitations or conditions on the use of the biological material, including restrictions on research, commercial use, or distribution, considering any potential concerns about the related genetic material",
-      "from_schema": "EVORA",
-      "aliases": [
-        "usage restrictions"
-      ],
-      "is_a": "usageRestrictions",
-      "domain": "BiologicalMaterialOrigin",
-      "slot_uri": "https://evora-project.eu/usageRestrictions",
-      "alias": "usageRestrictions",
-      "owner": "BiologicalMaterialOrigin",
-      "domain_of": [
-        "BiologicalMaterialOrigin"
-      ],
-      "is_usage_slot": true,
-      "usage_slot_name": "usageRestrictions",
-      "range": "string",
-      "@type": "SlotDefinition"
-    },
-    {
       "name": "BiologicalPartOrigin_recombinantPartIdentification",
       "definition_uri": "https://evora-project.eu/recombinantPartIdentification",
       "description": "Identification of a recombinant part",
@@ -4386,7 +4356,7 @@
       ],
       "from_schema": "EVORA",
       "aliases": [
-        "Recombinant part identification"
+        "recombinant part identification"
       ],
       "is_a": "recombinantPartIdentification",
       "domain": "BiologicalPartOrigin",
@@ -4400,6 +4370,28 @@
       "usage_slot_name": "recombinantPartIdentification",
       "range": "RecombinantPartIdentification",
       "inlined": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "BiologicalPartOrigin_accessToPhysicalGeneticResource",
+      "definition_uri": "https://evora-project.eu/accessToPhysicalGeneticResource",
+      "description": "Reference of the permit identifiers for access to the genetic resource, applicable if the genetic resource falls under Access and Benefit-Sharing (ABS) regulations",
+      "from_schema": "EVORA",
+      "aliases": [
+        "access to physical genetic resource"
+      ],
+      "is_a": "accessToPhysicalGeneticResource",
+      "domain": "BiologicalPartOrigin",
+      "slot_uri": "https://evora-project.eu/accessToPhysicalGeneticResource",
+      "alias": "accessToPhysicalGeneticResource",
+      "owner": "BiologicalPartOrigin",
+      "domain_of": [
+        "BiologicalPartOrigin"
+      ],
+      "is_usage_slot": true,
+      "usage_slot_name": "accessToPhysicalGeneticResource",
+      "range": "boolean",
+      "required": true,
       "@type": "SlotDefinition"
     },
     {
@@ -4497,23 +4489,23 @@
       "@type": "SlotDefinition"
     },
     {
-      "name": "NaturalPartOrigin_reportingToAuthorities",
-      "definition_uri": "https://evora-project.eu/reportingToAuthorities",
-      "description": "Information about permit identifiers for access to the genetic resource, applicable if the genetic resource falls under Access and Benefit-Sharing (ABS) regulations",
+      "name": "NaturalPartOrigin_permitIdentifierForABS",
+      "definition_uri": "https://evora-project.eu/permitIdentifierForABS",
+      "description": "Reference of the permit identifiers for access to the genetic resource, applicable if the genetic resource falls under Access and Benefit-Sharing (ABS) regulations",
       "from_schema": "EVORA",
       "aliases": [
-        "reporting to authorities"
+        "permit identifier for ABS"
       ],
-      "is_a": "reportingToAuthorities",
+      "is_a": "permitIdentifierForABS",
       "domain": "NaturalPartOrigin",
-      "slot_uri": "https://evora-project.eu/reportingToAuthorities",
-      "alias": "reportingToAuthorities",
+      "slot_uri": "https://evora-project.eu/permitIdentifierForABS",
+      "alias": "permitIdentifierForABS",
       "owner": "NaturalPartOrigin",
       "domain_of": [
         "NaturalPartOrigin"
       ],
       "is_usage_slot": true,
-      "usage_slot_name": "reportingToAuthorities",
+      "usage_slot_name": "permitIdentifierForABS",
       "range": "string",
       "@type": "SlotDefinition"
     },
@@ -5393,6 +5385,48 @@
       "usage_slot_name": "storageConditions",
       "range": "string",
       "required": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "Product_thirdPartyDistributionConsent",
+      "definition_uri": "https://evora-project.eu/thirdPartyDistributionConsent",
+      "description": "Indicates whether the biological material can be distributed without restriction to third parties, as indicated by the ABS permit, in case an ABS permit is required",
+      "from_schema": "EVORA",
+      "aliases": [
+        "third party distribution consent"
+      ],
+      "is_a": "thirdPartyDistributionConsent",
+      "domain": "Product",
+      "slot_uri": "https://evora-project.eu/thirdPartyDistributionConsent",
+      "alias": "thirdPartyDistributionConsent",
+      "owner": "Product",
+      "domain_of": [
+        "Product"
+      ],
+      "is_usage_slot": true,
+      "usage_slot_name": "thirdPartyDistributionConsent",
+      "range": "boolean",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "Product_usageRestrictions",
+      "definition_uri": "https://evora-project.eu/usageRestrictions",
+      "description": "Specifies any limitations or conditions on the use of the biological material, including restrictions on research, commercial use, or distribution, considering any potential concerns about the related genetic material",
+      "from_schema": "EVORA",
+      "aliases": [
+        "usage restrictions"
+      ],
+      "is_a": "usageRestrictions",
+      "domain": "Product",
+      "slot_uri": "https://evora-project.eu/usageRestrictions",
+      "alias": "usageRestrictions",
+      "owner": "Product",
+      "domain_of": [
+        "Product"
+      ],
+      "is_usage_slot": true,
+      "usage_slot_name": "usageRestrictions",
+      "range": "string",
       "@type": "SlotDefinition"
     },
     {
@@ -8214,7 +8248,7 @@
     {
       "name": "IPLCOrigin",
       "definition_uri": "https://evora-project.eu/IPLCOrigin",
-      "description": "The IPLC area (Indigenous People and Local Communities) from which a physical item, originates or is naturally found",
+      "description": "The IPLC area (Indigenous People and Local Communities) from which a physical item originates",
       "from_schema": "EVORA",
       "aliases": [
         "IPLC origin"
@@ -8582,9 +8616,7 @@
       "slots": [
         "BiologicalMaterialOrigin_recombinantMaterial",
         "BiologicalMaterialOrigin_biologicalSourceType",
-        "BiologicalMaterialOrigin_biologicalPartOrigin",
-        "BiologicalMaterialOrigin_thirdPartyDistributionConsent",
-        "BiologicalMaterialOrigin_usageRestrictions"
+        "BiologicalMaterialOrigin_biologicalPartOrigin"
       ],
       "slot_usage": {},
       "class_uri": "https://evora-project.eu/BiologicalMaterialOrigin",
@@ -8601,7 +8633,8 @@
       "is_a": "Dataset",
       "abstract": true,
       "slots": [
-        "BiologicalPartOrigin_recombinantPartIdentification"
+        "BiologicalPartOrigin_recombinantPartIdentification",
+        "BiologicalPartOrigin_accessToPhysicalGeneticResource"
       ],
       "slot_usage": {},
       "class_uri": "https://evora-project.eu/BiologicalPartOrigin",
@@ -8618,11 +8651,12 @@
       "is_a": "BiologicalPartOrigin",
       "slots": [
         "BiologicalPartOrigin_recombinantPartIdentification",
+        "BiologicalPartOrigin_accessToPhysicalGeneticResource",
         "NaturalPartOrigin_countryOfCollection",
         "NaturalPartOrigin_indigenousPoepleAndLocalCommunityOrigin",
         "NaturalPartOrigin_collectionDate",
         "NaturalPartOrigin_beforeDate",
-        "NaturalPartOrigin_reportingToAuthorities"
+        "NaturalPartOrigin_permitIdentifierForABS"
       ],
       "slot_usage": {},
       "class_uri": "https://evora-project.eu/NaturalPartOrigin",
@@ -8639,6 +8673,7 @@
       "is_a": "BiologicalPartOrigin",
       "slots": [
         "BiologicalPartOrigin_recombinantPartIdentification",
+        "BiologicalPartOrigin_accessToPhysicalGeneticResource",
         "SyntheticPartOrigin_modificationsFromTheReferenceSequences",
         "SyntheticPartOrigin_descriptionOfModificationsMadeFromTheReferenceSequences"
       ],
@@ -8818,7 +8853,9 @@
         "Product_shippingConditions",
         "Product_materialSafetyDataSheet",
         "Product_originator",
-        "Product_storageConditions"
+        "Product_storageConditions",
+        "Product_thirdPartyDistributionConsent",
+        "Product_usageRestrictions"
       ],
       "slot_usage": {},
       "class_uri": "https://evora-project.eu/Product",
@@ -8868,6 +8905,8 @@
         "Product_materialSafetyDataSheet",
         "Product_originator",
         "Product_storageConditions",
+        "Product_thirdPartyDistributionConsent",
+        "Product_usageRestrictions",
         "Antibody_productionSystem",
         "Antibody_antibodyPurifiedByAffinity",
         "Antibody_specificityDocumented",
@@ -8922,6 +8961,8 @@
         "Product_materialSafetyDataSheet",
         "Product_originator",
         "Product_storageConditions",
+        "Product_thirdPartyDistributionConsent",
+        "Product_usageRestrictions",
         "Antibody_productionSystem",
         "Antibody_antibodyPurifiedByAffinity",
         "Antibody_specificityDocumented",
@@ -8977,6 +9018,8 @@
         "Product_materialSafetyDataSheet",
         "Product_originator",
         "Product_storageConditions",
+        "Product_thirdPartyDistributionConsent",
+        "Product_usageRestrictions",
         "Protein_biologicalMaterialOrigin",
         "Protein_sequence",
         "Protein_relatedPDB",
@@ -9040,6 +9083,8 @@
         "Product_materialSafetyDataSheet",
         "Product_originator",
         "Product_storageConditions",
+        "Product_thirdPartyDistributionConsent",
+        "Product_usageRestrictions",
         "Nucleic_Acid_biologicalMaterialOrigin",
         "Nucleic_Acid_hasGbFileOfTheConstruct",
         "Nucleic_Acid_sequence",
@@ -9100,6 +9145,8 @@
         "Product_materialSafetyDataSheet",
         "Product_originator",
         "Product_storageConditions",
+        "Product_thirdPartyDistributionConsent",
+        "Product_usageRestrictions",
         "Detection_Kit_hasSOPFile",
         "Detection_Kit_specificityDocumented",
         "Detection_Kit_specificity",
@@ -9152,6 +9199,8 @@
         "Product_materialSafetyDataSheet",
         "Product_originator",
         "Product_storageConditions",
+        "Product_thirdPartyDistributionConsent",
+        "Product_usageRestrictions",
         "Bundle_productsOfTheBundle",
         "complementaryDocument",
         "Bundle_complementaryDocument"
@@ -9205,6 +9254,8 @@
         "Product_materialSafetyDataSheet",
         "Product_originator",
         "Product_storageConditions",
+        "Product_thirdPartyDistributionConsent",
+        "Product_usageRestrictions",
         "Pathogen_biologicalMaterialOrigin",
         "Pathogen_suspectedEpidemiologicalOrigin",
         "Pathogen_isolationHost",
@@ -9272,6 +9323,8 @@
         "Product_materialSafetyDataSheet",
         "Product_originator",
         "Product_storageConditions",
+        "Product_thirdPartyDistributionConsent",
+        "Product_usageRestrictions",
         "Pathogen_biologicalMaterialOrigin",
         "Pathogen_suspectedEpidemiologicalOrigin",
         "Pathogen_isolationHost",
@@ -9342,6 +9395,8 @@
         "Product_materialSafetyDataSheet",
         "Product_originator",
         "Product_storageConditions",
+        "Product_thirdPartyDistributionConsent",
+        "Product_usageRestrictions",
         "Pathogen_biologicalMaterialOrigin",
         "Pathogen_suspectedEpidemiologicalOrigin",
         "Pathogen_isolationHost",
@@ -9409,6 +9464,8 @@
         "Product_materialSafetyDataSheet",
         "Product_originator",
         "Product_storageConditions",
+        "Product_thirdPartyDistributionConsent",
+        "Product_usageRestrictions",
         "Pathogen_biologicalMaterialOrigin",
         "Pathogen_suspectedEpidemiologicalOrigin",
         "Pathogen_isolationHost",
@@ -9476,6 +9533,8 @@
         "Product_materialSafetyDataSheet",
         "Product_originator",
         "Product_storageConditions",
+        "Product_thirdPartyDistributionConsent",
+        "Product_usageRestrictions",
         "Pathogen_biologicalMaterialOrigin",
         "Pathogen_suspectedEpidemiologicalOrigin",
         "Pathogen_isolationHost",
@@ -9543,6 +9602,8 @@
         "Product_materialSafetyDataSheet",
         "Product_originator",
         "Product_storageConditions",
+        "Product_thirdPartyDistributionConsent",
+        "Product_usageRestrictions",
         "Pathogen_biologicalMaterialOrigin",
         "Pathogen_suspectedEpidemiologicalOrigin",
         "Pathogen_isolationHost",
@@ -9610,6 +9671,8 @@
         "Product_materialSafetyDataSheet",
         "Product_originator",
         "Product_storageConditions",
+        "Product_thirdPartyDistributionConsent",
+        "Product_usageRestrictions",
         "Pathogen_biologicalMaterialOrigin",
         "Pathogen_suspectedEpidemiologicalOrigin",
         "Pathogen_isolationHost",
@@ -9892,9 +9955,9 @@
   ],
   "metamodel_version": "1.7.0",
   "source_file": "evora_schema.yaml",
-  "source_file_date": "2024-12-19T15:34:22",
-  "source_file_size": 102404,
-  "generation_date": "2024-12-19T15:34:30",
+  "source_file_date": "2024-12-20T16:19:45",
+  "source_file_size": 102824,
+  "generation_date": "2024-12-20T16:19:53",
   "@type": "SchemaDefinition",
   "@context": [
     "models/jsonld/evora_schema.context.jsonld",

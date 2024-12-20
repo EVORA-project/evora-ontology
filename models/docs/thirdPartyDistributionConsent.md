@@ -15,7 +15,7 @@ None &#8594;  <sub>0..1</sub> [String](types/String.md)
 
 ## Children
 
- *  [BiologicalMaterialOrigin➞thirdPartyDistributionConsent](BiologicalMaterialOrigin_thirdPartyDistributionConsent.md)
+ *  [Product➞thirdPartyDistributionConsent](Product_thirdPartyDistributionConsent.md)
 
 ## Used by
 

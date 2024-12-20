@@ -15,7 +15,7 @@ None &#8594;  <sub>0..1</sub> [String](types/String.md)
 
 ## Children
 
- *  [BiologicalMaterialOrigin➞usageRestrictions](BiologicalMaterialOrigin_usageRestrictions.md)
+ *  [Product➞usageRestrictions](Product_usageRestrictions.md)
 
 ## Used by
 
