@@ -33,7 +33,7 @@ jobs:
         run: |
           docker run --rm -v $(pwd):/workdir -u $(id -u):$(id -g) evoratools/schemasheets:0.3.1 \
           sheets2linkml --gsheet-id 1zcyNKuhkpH-0FqEGSt6UwHAiSYzsUUSkHYcDOYz67zI \
-          --name EVORA CompleteList Prefixes \
+          --name EVORA CompleteList Prefixes Schema \
           -o models/evora_schema.yaml
           
       - uses: actions/upload-artifact@v4
