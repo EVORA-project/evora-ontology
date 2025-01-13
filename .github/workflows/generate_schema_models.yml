@@ -71,7 +71,7 @@ jobs:
       - name: Generate project all models file with LinkML except owl and docs
         run: |
           docker run --rm -v $(pwd):/workdir -u $(id -u):$(id -g) evoratools/schemasheets:0.3.1 \
-          linkml generate project --exclude owl doc -d models models/evora_schema.yaml 
+          linkml generate project --exclude owl,doc -d models models/evora_schema.yaml 
 
 
       - name: GIT commit and push all changed files
