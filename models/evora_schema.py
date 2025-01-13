@@ -1,9 +1,9 @@
 # Auto generated from evora_schema.yaml by pythongen.py version: 0.0.1
-# Generation date: 2024-12-20T16:43:07
+# Generation date: 2025-01-13T16:15:44
 # Schema: EVORA
 #
-# id: EVORA
-# description:
+# id: https://evora-project.eu/
+# description: The EVORA Ontology harmonizes metadata in virology to describe viral resources, their derived products, and services. It aligns with FAIR principles to ensure interoperability, accessibility, and reusability across various projects. The EVORA Ontology aims to support preparedness and response to pandemics.
 # license: https://creativecommons.org/publicdomain/zero/1.0/
 
 import dataclasses
@@ -61,7 +61,7 @@ from linkml_runtime.linkml_model.types import Boolean, Datetime, Integer, String
 from linkml_runtime.utils.metamodelcore import Bool, URI, XSDDateTime
 
 metamodel_version = "1.7.0"
-version = None
+version = "1.0.7341"
 
 # Overwrite dataclasses _init_fn to add **kwargs in __init__
 dataclasses._init_fn = dataclasses_init_fn_with_kwargs

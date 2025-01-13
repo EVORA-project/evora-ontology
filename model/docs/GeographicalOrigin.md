@@ -1,0 +1,260 @@
+
+
+# Class: GeographicalOrigin
+
+
+_The specific location or region where a physical item, originates or is naturally found_
+
+
+
+
+
+URI: [EVORA:GeographicalOrigin](https://evora-project.eu/GeographicalOrigin)
+
+
+
+
+
+
+```mermaid
+ classDiagram
+    class GeographicalOrigin
+    click GeographicalOrigin href "../GeographicalOrigin"
+      Term <|-- GeographicalOrigin
+        click Term href "../Term"
+      
+
+      GeographicalOrigin <|-- IPLCOrigin
+        click IPLCOrigin href "../IPLCOrigin"
+      
+      
+      GeographicalOrigin : description
+        
+      GeographicalOrigin : inVocabulary
+        
+          
+    
+    
+    GeographicalOrigin --> "1" Vocabulary : inVocabulary
+    click Vocabulary href "../Vocabulary"
+
+        
+      GeographicalOrigin : name
+        
+      GeographicalOrigin : weight
+        
+      
+```
+
+
+
+
+
+## Inheritance
+* [Nameable](Nameable.md)
+    * [NamedDataset](NamedDataset.md)
+        * [Term](Term.md)
+            * **GeographicalOrigin**
+                * [IPLCOrigin](IPLCOrigin.md)
+
+
+
+## Slots
+
+| Name | Cardinality and Range | Description | Inheritance |
+| ---  | --- | --- | --- |
+| [weight](weight.md) | 1 <br/> [Integer](Integer.md) | A numerical value indicating relative importance or priority, generally proce... | [Term](Term.md) |
+| [inVocabulary](inVocabulary.md) | 1 <br/> [Vocabulary](Vocabulary.md) | Terms belong to a specific vocabulary | [Term](Term.md) |
+| [name](name.md) | 1 <br/> [String](String.md) | The label that allows humans to identify the current item | [Nameable](Nameable.md) |
+| [description](description.md) | 0..1 <br/> [String](String.md) | A short explanation of the characteristics, features, or nature of the curren... | [Nameable](Nameable.md) |
+
+
+
+
+
+## Usages
+
+| used by | used in | type | used |
+| ---  | --- | --- | --- |
+| [Pathogen](Pathogen.md) | [suspectedEpidemiologicalOrigin](suspectedEpidemiologicalOrigin.md) | range | [GeographicalOrigin](GeographicalOrigin.md) |
+| [Virus](Virus.md) | [suspectedEpidemiologicalOrigin](suspectedEpidemiologicalOrigin.md) | range | [GeographicalOrigin](GeographicalOrigin.md) |
+| [Bacterium](Bacterium.md) | [suspectedEpidemiologicalOrigin](suspectedEpidemiologicalOrigin.md) | range | [GeographicalOrigin](GeographicalOrigin.md) |
+| [Fungus](Fungus.md) | [suspectedEpidemiologicalOrigin](suspectedEpidemiologicalOrigin.md) | range | [GeographicalOrigin](GeographicalOrigin.md) |
+| [Protozoan](Protozoan.md) | [suspectedEpidemiologicalOrigin](suspectedEpidemiologicalOrigin.md) | range | [GeographicalOrigin](GeographicalOrigin.md) |
+| [Viroid](Viroid.md) | [suspectedEpidemiologicalOrigin](suspectedEpidemiologicalOrigin.md) | range | [GeographicalOrigin](GeographicalOrigin.md) |
+| [Prion](Prion.md) | [suspectedEpidemiologicalOrigin](suspectedEpidemiologicalOrigin.md) | range | [GeographicalOrigin](GeographicalOrigin.md) |
+
+
+
+
+## Aliases
+
+
+* Geographical origin
+
+
+
+## Comments
+
+* geonames.org API could be a good service data provider as suggested by DCAT-AP
+
+## Identifier and Mapping Information
+
+
+
+
+
+
+
+### Schema Source
+
+
+* from schema: https://evora-project.eu/
+
+
+
+
+## Mappings
+
+| Mapping Type | Mapped Value |
+| ---  | ---  |
+| self | EVORA:GeographicalOrigin |
+| native | EVORA:GeographicalOrigin |
+| exact | dct:Location |
+| close | wd:Q3885844 |
+
+
+
+
+
+
+
+## LinkML Source
+
+<!-- TODO: investigate https://stackoverflow.com/questions/37606292/how-to-create-tabbed-code-blocks-in-mkdocs-or-sphinx -->
+
+### Direct
+
+<details>
+```yaml
+name: GeographicalOrigin
+description: The specific location or region where a physical item, originates or
+  is naturally found
+comments:
+- geonames.org API could be a good service data provider as suggested by DCAT-AP
+from_schema: https://evora-project.eu/
+aliases:
+- Geographical origin
+exact_mappings:
+- dct:Location
+close_mappings:
+- wd:Q3885844
+is_a: Term
+
+```
+</details>
+
+### Induced
+
+<details>
+```yaml
+name: GeographicalOrigin
+description: The specific location or region where a physical item, originates or
+  is naturally found
+comments:
+- geonames.org API could be a good service data provider as suggested by DCAT-AP
+from_schema: https://evora-project.eu/
+aliases:
+- Geographical origin
+exact_mappings:
+- dct:Location
+close_mappings:
+- wd:Q3885844
+is_a: Term
+attributes:
+  weight:
+    name: weight
+    description: A numerical value indicating relative importance or priority, generally
+      processed in ascending order. This weight helps prioritize content when organizing
+      or processing data. Its value can be negative, with a default set to 0
+    from_schema: https://evora-project.eu/
+    aliases:
+    - weight
+    close_mappings:
+    - adms:status
+    rank: 1000
+    ifabsent: int(0)
+    alias: weight
+    owner: GeographicalOrigin
+    domain_of:
+    - DataProvider
+    - Term
+    range: integer
+    required: true
+    multivalued: false
+  inVocabulary:
+    name: inVocabulary
+    description: Terms belong to a specific vocabulary
+    from_schema: https://evora-project.eu/
+    aliases:
+    - in Vocabulary
+    close_mappings:
+    - wdp:P972
+    rank: 1000
+    alias: inVocabulary
+    owner: GeographicalOrigin
+    domain_of:
+    - Term
+    range: Vocabulary
+    required: true
+    multivalued: false
+  name:
+    name: name
+    description: The label that allows humans to identify the current item
+    comments:
+    - 'The title of the item should be as short and descriptive as possible. E.g.
+      for virus products it should basically be based on the following Pattern:
+
+      "Virus name", "virus host type", "collection year", "country of collection"
+      ex "suspected epidemiological origin", "genotype", "strain", "variant name or
+      specific feature"'
+    from_schema: https://evora-project.eu/
+    aliases:
+    - name
+    exact_mappings:
+    - dct:title
+    close_mappings:
+    - rdfs:label
+    rank: 1000
+    alias: name
+    owner: GeographicalOrigin
+    domain_of:
+    - Nameable
+    range: string
+    required: true
+    multivalued: false
+  description:
+    name: description
+    description: A short explanation of the characteristics, features, or nature of
+      the current item
+    comments:
+    - 'Describe this item in few lines. This description will serve as a summary to
+      present the item.
+
+      '
+    from_schema: https://evora-project.eu/
+    aliases:
+    - description
+    exact_mappings:
+    - dct:description
+    rank: 1000
+    alias: description
+    owner: GeographicalOrigin
+    domain_of:
+    - Nameable
+    range: string
+    required: false
+    multivalued: false
+
+```
+</details>

@@ -1,0 +1,598 @@
+
+
+# Class: Taxon
+
+
+_Conceptual entity that groups one or more populations of an organism or organisms, as seen by taxonomists, to form a unit_
+
+
+
+
+
+URI: [EVORA:Taxon](https://evora-project.eu/Taxon)
+
+
+
+
+
+
+```mermaid
+ classDiagram
+    class Taxon
+    click Taxon href "../Taxon"
+      Term <|-- Taxon
+        click Term href "../Term"
+      
+      Taxon : description
+        
+      Taxon : externalEquivalentTaxon
+        
+          
+    
+    
+    Taxon --> "*" Taxon : externalEquivalentTaxon
+    click Taxon href "../Taxon"
+
+        
+      Taxon : inVocabulary
+        
+          
+    
+    
+    Taxon --> "1" Vocabulary : inVocabulary
+    click Vocabulary href "../Vocabulary"
+
+        
+      Taxon : name
+        
+      Taxon : parentTaxon
+        
+          
+    
+    
+    Taxon --> "1" Taxon : parentTaxon
+    click Taxon href "../Taxon"
+
+        
+      Taxon : previouslyKnownAs
+        
+          
+    
+    
+    Taxon --> "*" Taxon : previouslyKnownAs
+    click Taxon href "../Taxon"
+
+        
+      Taxon : rank
+        
+          
+    
+    
+    Taxon --> "1" TaxonomicRank : rank
+    click TaxonomicRank href "../TaxonomicRank"
+
+        
+      Taxon : taxonomicID
+        
+      Taxon : taxonomicNodeID
+        
+      Taxon : taxonomy
+        
+          
+    
+    
+    Taxon --> "*" Taxonomy : taxonomy
+    click Taxonomy href "../Taxonomy"
+
+        
+      Taxon : weight
+        
+      
+```
+
+
+
+
+
+## Inheritance
+* [Nameable](Nameable.md)
+    * [NamedDataset](NamedDataset.md)
+        * [Term](Term.md)
+            * **Taxon**
+
+
+
+## Slots
+
+| Name | Cardinality and Range | Description | Inheritance |
+| ---  | --- | --- | --- |
+| [taxonomy](taxonomy.md) | * <br/> [Taxonomy](Taxonomy.md) | The taxonomy release(s) in which this entity exists | direct |
+| [parentTaxon](parentTaxon.md) | 1 <br/> [Taxon](Taxon.md) | The parent taxon of the current taxon | direct |
+| [rank](rank.md) | 1 <br/> [TaxonomicRank](TaxonomicRank.md) | Relative level or position of the identified taxon in the taxonomy | direct |
+| [previouslyKnownAs](previouslyKnownAs.md) | * <br/> [Taxon](Taxon.md) | Any historic version of this taxon having a different name | direct |
+| [externalEquivalentTaxon](externalEquivalentTaxon.md) | * <br/> [Taxon](Taxon.md) | Any equivalent taxon in a different taxonomy if exists/known to serve as a br... | direct |
+| [taxonomicID](taxonomicID.md) | 1 <br/> [String](String.md) | The taxonomic identifier as a persistent identifier accross releases | direct |
+| [taxonomicNodeID](taxonomicNodeID.md) | 0..1 <br/> [String](String.md) | The taxonomic_Node Identifier as an identifier specific the current taxon in ... | direct |
+| [weight](weight.md) | 1 <br/> [Integer](Integer.md) | A numerical value indicating relative importance or priority, generally proce... | [Term](Term.md) |
+| [inVocabulary](inVocabulary.md) | 1 <br/> [Vocabulary](Vocabulary.md) | Terms belong to a specific vocabulary | [Term](Term.md) |
+| [name](name.md) | 1 <br/> [String](String.md) | The label that allows humans to identify the current item | [Nameable](Nameable.md) |
+| [description](description.md) | 0..1 <br/> [String](String.md) | A short explanation of the characteristics, features, or nature of the curren... | [Nameable](Nameable.md) |
+
+
+
+
+
+## Usages
+
+| used by | used in | type | used |
+| ---  | --- | --- | --- |
+| [Taxonomy](Taxonomy.md) | [taxon](taxon.md) | range | [Taxon](Taxon.md) |
+| [PathogenIdentification](PathogenIdentification.md) | [taxon](taxon.md) | range | [Taxon](Taxon.md) |
+| [Taxon](Taxon.md) | [parentTaxon](parentTaxon.md) | range | [Taxon](Taxon.md) |
+| [Taxon](Taxon.md) | [previouslyKnownAs](previouslyKnownAs.md) | range | [Taxon](Taxon.md) |
+| [Taxon](Taxon.md) | [externalEquivalentTaxon](externalEquivalentTaxon.md) | range | [Taxon](Taxon.md) |
+
+
+
+
+## Aliases
+
+
+* Taxon
+
+
+
+## Comments
+
+* The taxonomic taxons connected to their parent so that a full lienage can be rebuild. Use of Data provider recommended
+
+## Identifier and Mapping Information
+
+
+
+
+
+
+
+### Schema Source
+
+
+* from schema: https://evora-project.eu/
+
+
+
+
+## Mappings
+
+| Mapping Type | Mapped Value |
+| ---  | ---  |
+| self | EVORA:Taxon |
+| native | EVORA:Taxon |
+| exact | dwc:Taxon |
+| close | wd:Q16521 |
+
+
+
+
+
+
+
+## LinkML Source
+
+<!-- TODO: investigate https://stackoverflow.com/questions/37606292/how-to-create-tabbed-code-blocks-in-mkdocs-or-sphinx -->
+
+### Direct
+
+<details>
+```yaml
+name: Taxon
+description: Conceptual entity that groups one or more populations of an organism
+  or organisms, as seen by taxonomists, to form a unit
+comments:
+- The taxonomic taxons connected to their parent so that a full lienage can be rebuild.
+  Use of Data provider recommended
+from_schema: https://evora-project.eu/
+aliases:
+- Taxon
+exact_mappings:
+- dwc:Taxon
+close_mappings:
+- wd:Q16521
+is_a: Term
+slots:
+- taxonomy
+- parentTaxon
+- rank
+- previouslyKnownAs
+- externalEquivalentTaxon
+- taxonomicID
+- taxonomicNodeID
+slot_usage:
+  taxonomy:
+    name: taxonomy
+    description: The taxonomy release(s) in which this entity exists
+    aliases:
+    - taxonomy
+    range: Taxonomy
+    required: false
+    multivalued: true
+  parentTaxon:
+    name: parentTaxon
+    description: The parent taxon of the current taxon
+    aliases:
+    - parent taxon
+    close_mappings:
+    - dwc:Taxon
+    range: Taxon
+    required: true
+    multivalued: false
+  rank:
+    name: rank
+    description: Relative level or position of the identified taxon in the taxonomy
+    aliases:
+    - rank
+    exact_mappings:
+    - dwc:taxonRank
+    range: TaxonomicRank
+    required: true
+    multivalued: false
+  previouslyKnownAs:
+    name: previouslyKnownAs
+    description: Any historic version of this taxon having a different name
+    aliases:
+    - previously known as
+    close_mappings:
+    - dwc:Taxon
+    range: Taxon
+    required: false
+    multivalued: true
+  externalEquivalentTaxon:
+    name: externalEquivalentTaxon
+    description: Any equivalent taxon in a different taxonomy if exists/known to serve
+      as a bridge (e.g, ICTV towards NCBI)
+    comments:
+    - Could serve as a bridge between ICTV and NCBI as several providers currently
+      uses NCBI Taxonomy
+    aliases:
+    - external equivalent taxon
+    close_mappings:
+    - dwc:taxonID
+    range: Taxon
+    required: false
+    multivalued: true
+  taxonomicID:
+    name: taxonomicID
+    description: The taxonomic identifier as a persistent identifier accross releases
+    aliases:
+    - taxonomic ID
+    close_mappings:
+    - dwc:taxonID
+    range: string
+    required: true
+    multivalued: false
+  taxonomicNodeID:
+    name: taxonomicNodeID
+    description: The taxonomic_Node Identifier as an identifier specific the current
+      taxon in the corresponding release/version of the taxonomy
+    comments:
+    - NCBI does not have a taxon_node id, only a taxonomicID. Taxon_node id is Unique  in
+      NCBI= Key of the taxon node !! Could be replaced by a composite key made of
+      "taxonomic ID" + "has version" But can be referenced as it seems the "taxonomic
+      node_ID" will be generated and provided by the ICTV
+    aliases:
+    - taxonomic node ID
+    close_mappings:
+    - dwc:taxonID
+    range: string
+    required: false
+    multivalued: false
+
+```
+</details>
+
+### Induced
+
+<details>
+```yaml
+name: Taxon
+description: Conceptual entity that groups one or more populations of an organism
+  or organisms, as seen by taxonomists, to form a unit
+comments:
+- The taxonomic taxons connected to their parent so that a full lienage can be rebuild.
+  Use of Data provider recommended
+from_schema: https://evora-project.eu/
+aliases:
+- Taxon
+exact_mappings:
+- dwc:Taxon
+close_mappings:
+- wd:Q16521
+is_a: Term
+slot_usage:
+  taxonomy:
+    name: taxonomy
+    description: The taxonomy release(s) in which this entity exists
+    aliases:
+    - taxonomy
+    range: Taxonomy
+    required: false
+    multivalued: true
+  parentTaxon:
+    name: parentTaxon
+    description: The parent taxon of the current taxon
+    aliases:
+    - parent taxon
+    close_mappings:
+    - dwc:Taxon
+    range: Taxon
+    required: true
+    multivalued: false
+  rank:
+    name: rank
+    description: Relative level or position of the identified taxon in the taxonomy
+    aliases:
+    - rank
+    exact_mappings:
+    - dwc:taxonRank
+    range: TaxonomicRank
+    required: true
+    multivalued: false
+  previouslyKnownAs:
+    name: previouslyKnownAs
+    description: Any historic version of this taxon having a different name
+    aliases:
+    - previously known as
+    close_mappings:
+    - dwc:Taxon
+    range: Taxon
+    required: false
+    multivalued: true
+  externalEquivalentTaxon:
+    name: externalEquivalentTaxon
+    description: Any equivalent taxon in a different taxonomy if exists/known to serve
+      as a bridge (e.g, ICTV towards NCBI)
+    comments:
+    - Could serve as a bridge between ICTV and NCBI as several providers currently
+      uses NCBI Taxonomy
+    aliases:
+    - external equivalent taxon
+    close_mappings:
+    - dwc:taxonID
+    range: Taxon
+    required: false
+    multivalued: true
+  taxonomicID:
+    name: taxonomicID
+    description: The taxonomic identifier as a persistent identifier accross releases
+    aliases:
+    - taxonomic ID
+    close_mappings:
+    - dwc:taxonID
+    range: string
+    required: true
+    multivalued: false
+  taxonomicNodeID:
+    name: taxonomicNodeID
+    description: The taxonomic_Node Identifier as an identifier specific the current
+      taxon in the corresponding release/version of the taxonomy
+    comments:
+    - NCBI does not have a taxon_node id, only a taxonomicID. Taxon_node id is Unique  in
+      NCBI= Key of the taxon node !! Could be replaced by a composite key made of
+      "taxonomic ID" + "has version" But can be referenced as it seems the "taxonomic
+      node_ID" will be generated and provided by the ICTV
+    aliases:
+    - taxonomic node ID
+    close_mappings:
+    - dwc:taxonID
+    range: string
+    required: false
+    multivalued: false
+attributes:
+  taxonomy:
+    name: taxonomy
+    description: The taxonomy release(s) in which this entity exists
+    from_schema: https://evora-project.eu/
+    aliases:
+    - taxonomy
+    rank: 1000
+    alias: taxonomy
+    owner: Taxon
+    domain_of:
+    - TaxonomicRank
+    - Taxon
+    range: Taxonomy
+    required: false
+    multivalued: true
+  parentTaxon:
+    name: parentTaxon
+    description: The parent taxon of the current taxon
+    from_schema: https://evora-project.eu/
+    aliases:
+    - parent taxon
+    close_mappings:
+    - dwc:Taxon
+    rank: 1000
+    alias: parentTaxon
+    owner: Taxon
+    domain_of:
+    - Taxon
+    range: Taxon
+    required: true
+    multivalued: false
+  rank:
+    name: rank
+    description: Relative level or position of the identified taxon in the taxonomy
+    from_schema: https://evora-project.eu/
+    aliases:
+    - rank
+    exact_mappings:
+    - dwc:taxonRank
+    rank: 1000
+    alias: rank
+    owner: Taxon
+    domain_of:
+    - Taxonomy
+    - Taxon
+    range: TaxonomicRank
+    required: true
+    multivalued: false
+  previouslyKnownAs:
+    name: previouslyKnownAs
+    description: Any historic version of this taxon having a different name
+    from_schema: https://evora-project.eu/
+    aliases:
+    - previously known as
+    close_mappings:
+    - dwc:Taxon
+    rank: 1000
+    alias: previouslyKnownAs
+    owner: Taxon
+    domain_of:
+    - Taxon
+    range: Taxon
+    required: false
+    multivalued: true
+  externalEquivalentTaxon:
+    name: externalEquivalentTaxon
+    description: Any equivalent taxon in a different taxonomy if exists/known to serve
+      as a bridge (e.g, ICTV towards NCBI)
+    comments:
+    - Could serve as a bridge between ICTV and NCBI as several providers currently
+      uses NCBI Taxonomy
+    from_schema: https://evora-project.eu/
+    aliases:
+    - external equivalent taxon
+    close_mappings:
+    - dwc:taxonID
+    rank: 1000
+    alias: externalEquivalentTaxon
+    owner: Taxon
+    domain_of:
+    - Taxon
+    range: Taxon
+    required: false
+    multivalued: true
+  taxonomicID:
+    name: taxonomicID
+    description: The taxonomic identifier as a persistent identifier accross releases
+    from_schema: https://evora-project.eu/
+    aliases:
+    - taxonomic ID
+    close_mappings:
+    - dwc:taxonID
+    rank: 1000
+    alias: taxonomicID
+    owner: Taxon
+    domain_of:
+    - Taxon
+    range: string
+    required: true
+    multivalued: false
+  taxonomicNodeID:
+    name: taxonomicNodeID
+    description: The taxonomic_Node Identifier as an identifier specific the current
+      taxon in the corresponding release/version of the taxonomy
+    comments:
+    - NCBI does not have a taxon_node id, only a taxonomicID. Taxon_node id is Unique  in
+      NCBI= Key of the taxon node !! Could be replaced by a composite key made of
+      "taxonomic ID" + "has version" But can be referenced as it seems the "taxonomic
+      node_ID" will be generated and provided by the ICTV
+    from_schema: https://evora-project.eu/
+    aliases:
+    - taxonomic node ID
+    close_mappings:
+    - dwc:taxonID
+    rank: 1000
+    alias: taxonomicNodeID
+    owner: Taxon
+    domain_of:
+    - Taxon
+    range: string
+    required: false
+    multivalued: false
+  weight:
+    name: weight
+    description: A numerical value indicating relative importance or priority, generally
+      processed in ascending order. This weight helps prioritize content when organizing
+      or processing data. Its value can be negative, with a default set to 0
+    from_schema: https://evora-project.eu/
+    aliases:
+    - weight
+    close_mappings:
+    - adms:status
+    rank: 1000
+    ifabsent: int(0)
+    alias: weight
+    owner: Taxon
+    domain_of:
+    - DataProvider
+    - Term
+    range: integer
+    required: true
+    multivalued: false
+  inVocabulary:
+    name: inVocabulary
+    description: Terms belong to a specific vocabulary
+    from_schema: https://evora-project.eu/
+    aliases:
+    - in Vocabulary
+    close_mappings:
+    - wdp:P972
+    rank: 1000
+    alias: inVocabulary
+    owner: Taxon
+    domain_of:
+    - Term
+    range: Vocabulary
+    required: true
+    multivalued: false
+  name:
+    name: name
+    description: The label that allows humans to identify the current item
+    comments:
+    - 'The title of the item should be as short and descriptive as possible. E.g.
+      for virus products it should basically be based on the following Pattern:
+
+      "Virus name", "virus host type", "collection year", "country of collection"
+      ex "suspected epidemiological origin", "genotype", "strain", "variant name or
+      specific feature"'
+    from_schema: https://evora-project.eu/
+    aliases:
+    - name
+    exact_mappings:
+    - dct:title
+    close_mappings:
+    - rdfs:label
+    rank: 1000
+    alias: name
+    owner: Taxon
+    domain_of:
+    - Nameable
+    range: string
+    required: true
+    multivalued: false
+  description:
+    name: description
+    description: A short explanation of the characteristics, features, or nature of
+      the current item
+    comments:
+    - 'Describe this item in few lines. This description will serve as a summary to
+      present the item.
+
+      '
+    from_schema: https://evora-project.eu/
+    aliases:
+    - description
+    exact_mappings:
+    - dct:description
+    rank: 1000
+    alias: description
+    owner: Taxon
+    domain_of:
+    - Nameable
+    range: string
+    required: false
+    multivalued: false
+
+```
+</details>

@@ -1,7 +1,18 @@
 name: EVORA
-id: EVORA
+description: The EVORA Ontology harmonizes metadata in virology to describe viral
+  resources, their derived products, and services. It aligns with FAIR principles
+  to ensure interoperability, accessibility, and reusability across various projects.
+  The EVORA Ontology aims to support preparedness and response to pandemics.
+title: European Viral Outbreak Research Alliance Ontology
+in_language: en
+created_by: https://github.com/Angatar
+contributors:
+- https://orcid.org/0000-0002-2042-2839
+id: https://evora-project.eu/
+version: 1.0.7341
 imports:
 - linkml:types
+license: https://creativecommons.org/publicdomain/zero/1.0/
 prefixes:
   dct: http://purl.org/dc/terms/
   dcat: http://www.w3.org/ns/dcat#
@@ -28,380 +39,380 @@ default_prefix: EVORA
 default_range: string
 slots:
   ID:
-    from_schema: EVORA
+    from_schema: https://evora-project.eu/
   versionOf:
-    from_schema: EVORA
+    from_schema: https://evora-project.eu/
   name:
-    from_schema: EVORA
+    from_schema: https://evora-project.eu/
   description:
-    from_schema: EVORA
+    from_schema: https://evora-project.eu/
   taxon:
-    from_schema: EVORA
+    from_schema: https://evora-project.eu/
   taxonDataProvider:
-    from_schema: EVORA
+    from_schema: https://evora-project.eu/
   version:
-    from_schema: EVORA
+    from_schema: https://evora-project.eu/
   versionDataProvider:
-    from_schema: EVORA
+    from_schema: https://evora-project.eu/
   rank:
-    from_schema: EVORA
+    from_schema: https://evora-project.eu/
   rankDataProvider:
-    from_schema: EVORA
+    from_schema: https://evora-project.eu/
   license:
-    from_schema: EVORA
+    from_schema: https://evora-project.eu/
   loginRequestMethod:
-    from_schema: EVORA
+    from_schema: https://evora-project.eu/
   loginURL:
-    from_schema: EVORA
+    from_schema: https://evora-project.eu/
   loginTokenName:
-    from_schema: EVORA
+    from_schema: https://evora-project.eu/
   queryURL:
-    from_schema: EVORA
+    from_schema: https://evora-project.eu/
   queryMethod:
-    from_schema: EVORA
+    from_schema: https://evora-project.eu/
   contentType:
-    from_schema: EVORA
+    from_schema: https://evora-project.eu/
   providedEntityType:
-    from_schema: EVORA
+    from_schema: https://evora-project.eu/
   weight:
-    from_schema: EVORA
+    from_schema: https://evora-project.eu/
   pathogenName:
-    from_schema: EVORA
+    from_schema: https://evora-project.eu/
   pathogenType:
-    from_schema: EVORA
+    from_schema: https://evora-project.eu/
   hostType:
-    from_schema: EVORA
+    from_schema: https://evora-project.eu/
   subspecies:
-    from_schema: EVORA
+    from_schema: https://evora-project.eu/
   strain:
-    from_schema: EVORA
+    from_schema: https://evora-project.eu/
   isolate:
-    from_schema: EVORA
+    from_schema: https://evora-project.eu/
   genotype:
-    from_schema: EVORA
+    from_schema: https://evora-project.eu/
   serotype:
-    from_schema: EVORA
+    from_schema: https://evora-project.eu/
   variant:
-    from_schema: EVORA
+    from_schema: https://evora-project.eu/
   title:
-    from_schema: EVORA
+    from_schema: https://evora-project.eu/
   authors:
-    from_schema: EVORA
+    from_schema: https://evora-project.eu/
   abstract:
-    from_schema: EVORA
+    from_schema: https://evora-project.eu/
   relatedDOI:
-    from_schema: EVORA
+    from_schema: https://evora-project.eu/
   journal:
-    from_schema: EVORA
+    from_schema: https://evora-project.eu/
   termDataProvider:
-    from_schema: EVORA
+    from_schema: https://evora-project.eu/
   term:
-    from_schema: EVORA
+    from_schema: https://evora-project.eu/
   inVocabulary:
-    from_schema: EVORA
+    from_schema: https://evora-project.eu/
   alternateName:
-    from_schema: EVORA
+    from_schema: https://evora-project.eu/
   sourceOfInformation:
-    from_schema: EVORA
+    from_schema: https://evora-project.eu/
   parentCategory:
-    from_schema: EVORA
+    from_schema: https://evora-project.eu/
   alpha2Code:
-    from_schema: EVORA
+    from_schema: https://evora-project.eu/
   taxonomy:
-    from_schema: EVORA
+    from_schema: https://evora-project.eu/
   parentTaxon:
-    from_schema: EVORA
+    from_schema: https://evora-project.eu/
   previouslyKnownAs:
-    from_schema: EVORA
+    from_schema: https://evora-project.eu/
   externalEquivalentTaxon:
-    from_schema: EVORA
+    from_schema: https://evora-project.eu/
   taxonomicID:
-    from_schema: EVORA
+    from_schema: https://evora-project.eu/
   taxonomicNodeID:
-    from_schema: EVORA
+    from_schema: https://evora-project.eu/
   reference:
-    from_schema: EVORA
+    from_schema: https://evora-project.eu/
   referenceLabel:
-    from_schema: EVORA
+    from_schema: https://evora-project.eu/
   referenceProviderPrefix:
-    from_schema: EVORA
+    from_schema: https://evora-project.eu/
   referenceProviderName:
-    from_schema: EVORA
+    from_schema: https://evora-project.eu/
   sequenceReference:
-    from_schema: EVORA
+    from_schema: https://evora-project.eu/
   sequenceFASTA:
-    from_schema: EVORA
+    from_schema: https://evora-project.eu/
   accessionNumber:
-    from_schema: EVORA
+    from_schema: https://evora-project.eu/
   sequenceProvider:
-    from_schema: EVORA
+    from_schema: https://evora-project.eu/
   homePage:
-    from_schema: EVORA
+    from_schema: https://evora-project.eu/
   contactPoint:
-    from_schema: EVORA
+    from_schema: https://evora-project.eu/
   logo:
-    from_schema: EVORA
+    from_schema: https://evora-project.eu/
   oRCIDiD:
-    from_schema: EVORA
+    from_schema: https://evora-project.eu/
   country:
-    from_schema: EVORA
+    from_schema: https://evora-project.eu/
   memberOfRI:
-    from_schema: EVORA
+    from_schema: https://evora-project.eu/
   recombinantMaterial:
-    from_schema: EVORA
+    from_schema: https://evora-project.eu/
   biologicalSourceType:
-    from_schema: EVORA
+    from_schema: https://evora-project.eu/
   biologicalPartOrigin:
-    from_schema: EVORA
+    from_schema: https://evora-project.eu/
   recombinantPartIdentification:
-    from_schema: EVORA
+    from_schema: https://evora-project.eu/
   accessToPhysicalGeneticResource:
-    from_schema: EVORA
+    from_schema: https://evora-project.eu/
   countryOfCollection:
-    from_schema: EVORA
+    from_schema: https://evora-project.eu/
   indigenousPoepleAndLocalCommunityOrigin:
-    from_schema: EVORA
+    from_schema: https://evora-project.eu/
   collectionDate:
-    from_schema: EVORA
+    from_schema: https://evora-project.eu/
   beforeDate:
-    from_schema: EVORA
+    from_schema: https://evora-project.eu/
   permitIdentifierForABS:
-    from_schema: EVORA
+    from_schema: https://evora-project.eu/
   modificationsFromTheReferenceSequences:
-    from_schema: EVORA
+    from_schema: https://evora-project.eu/
   descriptionOfModificationsMadeFromTheReferenceSequences:
-    from_schema: EVORA
+    from_schema: https://evora-project.eu/
   partIdentification:
-    from_schema: EVORA
+    from_schema: https://evora-project.eu/
   sequence:
-    from_schema: EVORA
+    from_schema: https://evora-project.eu/
   collectionItem:
-    from_schema: EVORA
+    from_schema: https://evora-project.eu/
   collectionDataProvider:
-    from_schema: EVORA
+    from_schema: https://evora-project.eu/
   accessPointURL:
-    from_schema: EVORA
+    from_schema: https://evora-project.eu/
   refSKU:
-    from_schema: EVORA
+    from_schema: https://evora-project.eu/
   unitDefinition:
-    from_schema: EVORA
+    from_schema: https://evora-project.eu/
   category:
-    from_schema: EVORA
+    from_schema: https://evora-project.eu/
   additionalCategory:
-    from_schema: EVORA
+    from_schema: https://evora-project.eu/
   unitCost:
-    from_schema: EVORA
+    from_schema: https://evora-project.eu/
   qualityGrading:
-    from_schema: EVORA
+    from_schema: https://evora-project.eu/
   pathogenIdentification:
-    from_schema: EVORA
+    from_schema: https://evora-project.eu/
   riskGroup:
-    from_schema: EVORA
+    from_schema: https://evora-project.eu/
   biosafetyRestrictions:
-    from_schema: EVORA
+    from_schema: https://evora-project.eu/
   canItBeUsedToProduceGMO:
-    from_schema: EVORA
+    from_schema: https://evora-project.eu/
   provider:
-    from_schema: EVORA
+    from_schema: https://evora-project.eu/
   collection:
-    from_schema: EVORA
+    from_schema: https://evora-project.eu/
   keywords:
-    from_schema: EVORA
+    from_schema: https://evora-project.eu/
   availability:
-    from_schema: EVORA
+    from_schema: https://evora-project.eu/
   complementaryDocument:
-    from_schema: EVORA
+    from_schema: https://evora-project.eu/
   technicalRecommendation:
-    from_schema: EVORA
+    from_schema: https://evora-project.eu/
   productPicture:
-    from_schema: EVORA
+    from_schema: https://evora-project.eu/
   externalRelatedReference:
-    from_schema: EVORA
+    from_schema: https://evora-project.eu/
   certification:
-    from_schema: EVORA
+    from_schema: https://evora-project.eu/
   internalReference:
-    from_schema: EVORA
+    from_schema: https://evora-project.eu/
   note:
-    from_schema: EVORA
+    from_schema: https://evora-project.eu/
   modelSpecies:
-    from_schema: EVORA
+    from_schema: https://evora-project.eu/
   modelType:
-    from_schema: EVORA
+    from_schema: https://evora-project.eu/
   hasIATAClassification:
-    from_schema: EVORA
+    from_schema: https://evora-project.eu/
   shippingConditions:
-    from_schema: EVORA
+    from_schema: https://evora-project.eu/
   materialSafetyDataSheet:
-    from_schema: EVORA
+    from_schema: https://evora-project.eu/
   originator:
-    from_schema: EVORA
+    from_schema: https://evora-project.eu/
   storageConditions:
-    from_schema: EVORA
+    from_schema: https://evora-project.eu/
   thirdPartyDistributionConsent:
-    from_schema: EVORA
+    from_schema: https://evora-project.eu/
   usageRestrictions:
-    from_schema: EVORA
+    from_schema: https://evora-project.eu/
   productionSystem:
-    from_schema: EVORA
+    from_schema: https://evora-project.eu/
   antibodyPurifiedByAffinity:
-    from_schema: EVORA
+    from_schema: https://evora-project.eu/
   specificityDocumented:
-    from_schema: EVORA
+    from_schema: https://evora-project.eu/
   targetedAntigen:
-    from_schema: EVORA
+    from_schema: https://evora-project.eu/
   hybridomaDescription:
-    from_schema: EVORA
+    from_schema: https://evora-project.eu/
   biologicalMaterialOrigin:
-    from_schema: EVORA
+    from_schema: https://evora-project.eu/
   relatedPDB:
-    from_schema: EVORA
+    from_schema: https://evora-project.eu/
   specialFeature:
-    from_schema: EVORA
+    from_schema: https://evora-project.eu/
   proteinTAG:
-    from_schema: EVORA
+    from_schema: https://evora-project.eu/
   domain:
-    from_schema: EVORA
+    from_schema: https://evora-project.eu/
   expressedAs:
-    from_schema: EVORA
+    from_schema: https://evora-project.eu/
   inclusionBodiesType:
-    from_schema: EVORA
+    from_schema: https://evora-project.eu/
   expressionSystem:
-    from_schema: EVORA
+    from_schema: https://evora-project.eu/
   functionalCharacterization:
-    from_schema: EVORA
+    from_schema: https://evora-project.eu/
   functionalTechnicalDescription:
-    from_schema: EVORA
+    from_schema: https://evora-project.eu/
   proteinPurification:
-    from_schema: EVORA
+    from_schema: https://evora-project.eu/
   theTAGStatusOfTheSolubilizedProtein:
-    from_schema: EVORA
+    from_schema: https://evora-project.eu/
   typeOfFunctionalCharacterization:
-    from_schema: EVORA
+    from_schema: https://evora-project.eu/
   hasGbFileOfTheConstruct:
-    from_schema: EVORA
+    from_schema: https://evora-project.eu/
   isItAClonedNucleicAcid:
-    from_schema: EVORA
+    from_schema: https://evora-project.eu/
   clonedIntoPlasmid:
-    from_schema: EVORA
+    from_schema: https://evora-project.eu/
   pasmidSelection:
-    from_schema: EVORA
+    from_schema: https://evora-project.eu/
   hasTAG:
-    from_schema: EVORA
+    from_schema: https://evora-project.eu/
   regionEncompassedInThisProduct:
-    from_schema: EVORA
+    from_schema: https://evora-project.eu/
   mutationObserved:
-    from_schema: EVORA
+    from_schema: https://evora-project.eu/
   observedMutations:
-    from_schema: EVORA
+    from_schema: https://evora-project.eu/
   identificationTechnique:
-    from_schema: EVORA
+    from_schema: https://evora-project.eu/
   sequencing:
-    from_schema: EVORA
+    from_schema: https://evora-project.eu/
   titer:
-    from_schema: EVORA
+    from_schema: https://evora-project.eu/
   sequenceChecked:
-    from_schema: EVORA
+    from_schema: https://evora-project.eu/
   hasSOPFile:
-    from_schema: EVORA
+    from_schema: https://evora-project.eu/
   specificity:
-    from_schema: EVORA
+    from_schema: https://evora-project.eu/
   targetedRegion:
-    from_schema: EVORA
+    from_schema: https://evora-project.eu/
   productsOfTheBundle:
-    from_schema: EVORA
+    from_schema: https://evora-project.eu/
   suspectedEpidemiologicalOrigin:
-    from_schema: EVORA
+    from_schema: https://evora-project.eu/
   isolationHost:
-    from_schema: EVORA
+    from_schema: https://evora-project.eu/
   productionCellLine:
-    from_schema: EVORA
+    from_schema: https://evora-project.eu/
   propagationHost:
-    from_schema: EVORA
+    from_schema: https://evora-project.eu/
   transmissionMethod:
-    from_schema: EVORA
+    from_schema: https://evora-project.eu/
   cultivability:
-    from_schema: EVORA
+    from_schema: https://evora-project.eu/
   clinicalInformation:
-    from_schema: EVORA
+    from_schema: https://evora-project.eu/
   infectivity:
-    from_schema: EVORA
+    from_schema: https://evora-project.eu/
   infectivityTest:
-    from_schema: EVORA
+    from_schema: https://evora-project.eu/
   isolationTechnique:
-    from_schema: EVORA
+    from_schema: https://evora-project.eu/
   isolationConditions:
-    from_schema: EVORA
+    from_schema: https://evora-project.eu/
   letterOfAuthority:
-    from_schema: EVORA
+    from_schema: https://evora-project.eu/
   passage:
-    from_schema: EVORA
+    from_schema: https://evora-project.eu/
   coInfectingViruses:
-    from_schema: EVORA
+    from_schema: https://evora-project.eu/
   contaminationWithCoInfectingViruses:
-    from_schema: EVORA
+    from_schema: https://evora-project.eu/
   mycoplasmicContent:
-    from_schema: EVORA
+    from_schema: https://evora-project.eu/
   msdsContact:
-    from_schema: EVORA
+    from_schema: https://evora-project.eu/
   physicalChemicalProperties:
-    from_schema: EVORA
+    from_schema: https://evora-project.eu/
   hazardsIdentification:
-    from_schema: EVORA
+    from_schema: https://evora-project.eu/
   firstAidMeasures:
-    from_schema: EVORA
+    from_schema: https://evora-project.eu/
   fireFightingMeasures:
-    from_schema: EVORA
+    from_schema: https://evora-project.eu/
   accidentalReleaseMeasures:
-    from_schema: EVORA
+    from_schema: https://evora-project.eu/
   handlingAndStorage:
-    from_schema: EVORA
+    from_schema: https://evora-project.eu/
   exposureControlsPersonalProtection:
-    from_schema: EVORA
+    from_schema: https://evora-project.eu/
   stabilityAndReactivity:
-    from_schema: EVORA
+    from_schema: https://evora-project.eu/
   toxicologicalInformation:
-    from_schema: EVORA
+    from_schema: https://evora-project.eu/
   ecologicalInformation:
-    from_schema: EVORA
+    from_schema: https://evora-project.eu/
   disposalConsiderations:
-    from_schema: EVORA
+    from_schema: https://evora-project.eu/
   transportInformation:
-    from_schema: EVORA
+    from_schema: https://evora-project.eu/
   regulatoryInformation:
-    from_schema: EVORA
+    from_schema: https://evora-project.eu/
   furtherInformation:
-    from_schema: EVORA
+    from_schema: https://evora-project.eu/
   contentURL:
-    from_schema: EVORA
+    from_schema: https://evora-project.eu/
   format:
-    from_schema: EVORA
+    from_schema: https://evora-project.eu/
   altText:
-    from_schema: EVORA
+    from_schema: https://evora-project.eu/
   email:
-    from_schema: EVORA
+    from_schema: https://evora-project.eu/
   telephone:
-    from_schema: EVORA
+    from_schema: https://evora-project.eu/
   streetAddress:
-    from_schema: EVORA
+    from_schema: https://evora-project.eu/
   addressLocality:
-    from_schema: EVORA
+    from_schema: https://evora-project.eu/
   addressRegion:
-    from_schema: EVORA
+    from_schema: https://evora-project.eu/
   postalCode:
-    from_schema: EVORA
+    from_schema: https://evora-project.eu/
   addressCountry:
-    from_schema: EVORA
+    from_schema: https://evora-project.eu/
   resourceURL:
-    from_schema: EVORA
+    from_schema: https://evora-project.eu/
   licensingOrAttribution:
-    from_schema: EVORA
+    from_schema: https://evora-project.eu/
   certificationDocument:
-    from_schema: EVORA
+    from_schema: https://evora-project.eu/
 classes:
   Version:
     description: Numeric code assigned to identify a particular historical version
       of a work (e.g. software or technical standards)
-    from_schema: EVORA
+    from_schema: https://evora-project.eu/
     aliases:
     - Version
     close_mappings:
@@ -430,7 +441,7 @@ classes:
         multivalued: false
   Nameable:
     description: Any entity that has a name and can have a textual description
-    from_schema: EVORA
+    from_schema: https://evora-project.eu/
     aliases:
     - Nameable
     abstract: true
@@ -473,7 +484,7 @@ classes:
         multivalued: false
   Catalogue:
     description: A curated collection of metadata about resources
-    from_schema: EVORA
+    from_schema: https://evora-project.eu/
     aliases:
     - Catalogue
     exact_mappings:
@@ -486,7 +497,7 @@ classes:
   Dataset:
     description: A collection of data, published or curated by a single agent, and
       available for access
-    from_schema: EVORA
+    from_schema: https://evora-project.eu/
     aliases:
     - Dataset
     exact_mappings:
@@ -498,7 +509,7 @@ classes:
   NamedDataset:
     description: A collection of data, that has a name and can have a description,
       published or curated by a single agent, and available for access
-    from_schema: EVORA
+    from_schema: https://evora-project.eu/
     aliases:
     - Named Dataset
     exact_mappings:
@@ -511,7 +522,7 @@ classes:
   DataService:
     description: A collection of operations that provides access to one or more datasets
       or data processing functions
-    from_schema: EVORA
+    from_schema: https://evora-project.eu/
     aliases:
     - Data Service
     exact_mappings:
@@ -523,7 +534,7 @@ classes:
     abstract: true
   Taxonomy:
     description: Science of naming, defining and classifying organisms
-    from_schema: EVORA
+    from_schema: https://evora-project.eu/
     aliases:
     - Taxonomy
     close_mappings:
@@ -587,7 +598,7 @@ classes:
   DataProvider:
     description: An external API (Application Programming Interface) or Endpoint that
       permits to retrieve data from other sources
-    from_schema: EVORA
+    from_schema: https://evora-project.eu/
     aliases:
     - Data provider
     close_mappings:
@@ -702,7 +713,7 @@ classes:
   PathogenIdentification:
     description: A collection of distinguishing information that enables the differentiation
       of a pathogen from another
-    from_schema: EVORA
+    from_schema: https://evora-project.eu/
     aliases:
     - Pathogen identification
     is_a: Dataset
@@ -806,7 +817,7 @@ classes:
         multivalued: false
   Publication:
     description: A scientific publication
-    from_schema: EVORA
+    from_schema: https://evora-project.eu/
     aliases:
     - Publication
     close_mappings:
@@ -867,7 +878,7 @@ classes:
   Vocabulary:
     description: A subset of words or phrases specific to a particular subject or
       field
-    from_schema: EVORA
+    from_schema: https://evora-project.eu/
     aliases:
     - Vocabulary
     close_mappings:
@@ -895,7 +906,7 @@ classes:
         multivalued: true
   Term:
     description: Word or phrase from a specialized area of knowledge
-    from_schema: EVORA
+    from_schema: https://evora-project.eu/
     aliases:
     - Term
     close_mappings:
@@ -932,7 +943,7 @@ classes:
     description: Vernacular name that is the name used in everyday language to refer
       to an organism or group of organisms. This name is typically easier to remember
       and pronounce compared to the scientific name
-    from_schema: EVORA
+    from_schema: https://evora-project.eu/
     aliases:
     - Common Name
     exact_mappings:
@@ -970,7 +981,7 @@ classes:
         multivalued: true
   VirusName:
     description: A virus vernacular name or a name that describes a group of viruses
-    from_schema: EVORA
+    from_schema: https://evora-project.eu/
     aliases:
     - Virus Name
     close_mappings:
@@ -978,7 +989,7 @@ classes:
     is_a: CommonName
   AlternateName:
     description: List of alternate names for things
-    from_schema: EVORA
+    from_schema: https://evora-project.eu/
     aliases:
     - Alternate Name
     close_mappings:
@@ -1014,7 +1025,7 @@ classes:
     comments:
     - Use of Data provider if any or manual import of information from wd:Q125449389,
       wd:Q125449412, wd:Q125449429, wd:Q125449439
-    from_schema: EVORA
+    from_schema: https://evora-project.eu/
     aliases:
     - Risk group
     close_mappings:
@@ -1024,7 +1035,7 @@ classes:
     description: A unique string identifier assigned to a digital object, providing
       a permanent link for reliable citation and access.  The Digital Object Identifier
       (DOI) is a persistent identifier that is an ISO standard
-    from_schema: EVORA
+    from_schema: https://evora-project.eu/
     aliases:
     - DOI
     close_mappings:
@@ -1032,7 +1043,7 @@ classes:
     is_a: Term
   Journal:
     description: Periodical journal publishing scientific research
-    from_schema: EVORA
+    from_schema: https://evora-project.eu/
     aliases:
     - Journal
     close_mappings:
@@ -1041,7 +1052,7 @@ classes:
   PDBReference:
     description: Identifier for 3D structural data as per the PDB (Protein Data Bank)
       database
-    from_schema: EVORA
+    from_schema: https://evora-project.eu/
     aliases:
     - PDB reference
     close_mappings:
@@ -1049,7 +1060,7 @@ classes:
     is_a: Term
   Keyword:
     description: A term or phrase used to tag and categorize content
-    from_schema: EVORA
+    from_schema: https://evora-project.eu/
     aliases:
     - Keyword
     close_mappings:
@@ -1057,7 +1068,7 @@ classes:
     is_a: Term
   ProteinTag:
     description: Peptide sequence genetically grafted onto a recombinant protein
-    from_schema: EVORA
+    from_schema: https://evora-project.eu/
     aliases:
     - Protein tag
     close_mappings:
@@ -1070,14 +1081,14 @@ classes:
     comments:
     - These special features help researchers and professionals in the field to select
       appropriate virus strains for their specific research needs and applications.
-    from_schema: EVORA
+    from_schema: https://evora-project.eu/
     aliases:
     - Special feature
     is_a: Term
   ExpressionVector:
     description: A reference to an expression vector plasmid, typically embedding
       a resistance marker for inducible protein expression
-    from_schema: EVORA
+    from_schema: https://evora-project.eu/
     aliases:
     - Expression vector
     close_mappings:
@@ -1086,20 +1097,20 @@ classes:
   PlasmidSelection:
     description: The process of identifying cells that have successfully incorporated
       a plasmid, typically using antibiotic resistance markers
-    from_schema: EVORA
+    from_schema: https://evora-project.eu/
     aliases:
     - Plasmid selection
     is_a: Term
   PropagationHost:
     description: The organism used to grow and multiply the pathogen under controlled
       conditions
-    from_schema: EVORA
+    from_schema: https://evora-project.eu/
     aliases:
     - Propagation host
     is_a: Term
   TransmissionMethod:
     description: The process by which the pathogen spreads between hosts
-    from_schema: EVORA
+    from_schema: https://evora-project.eu/
     aliases:
     - Transmission method
     is_a: Term
@@ -1107,7 +1118,7 @@ classes:
     description: A population of cells that originates from a primary culture, adapted
       to grow and divide under laboratory conditions. Used in biotechnology to consistently
       produce biological substances
-    from_schema: EVORA
+    from_schema: https://evora-project.eu/
     aliases:
     - Production cell line
     close_mappings:
@@ -1116,7 +1127,7 @@ classes:
   ProductCategory:
     description: A term used to classify a group of products that share common characteristics
       or functions, which helps in their organization
-    from_schema: EVORA
+    from_schema: https://evora-project.eu/
     aliases:
     - Product category
     close_mappings:
@@ -1137,7 +1148,7 @@ classes:
         multivalued: false
   IsolationHost:
     description: Host organism from which the pathogen was isolated
-    from_schema: EVORA
+    from_schema: https://evora-project.eu/
     aliases:
     - Isolation host
     is_a: Term
@@ -1146,7 +1157,7 @@ classes:
       or is naturally found
     comments:
     - geonames.org API could be a good service data provider as suggested by DCAT-AP
-    from_schema: EVORA
+    from_schema: https://evora-project.eu/
     aliases:
     - Geographical origin
     exact_mappings:
@@ -1157,7 +1168,7 @@ classes:
   IPLCOrigin:
     description: The IPLC area (Indigenous People and Local Communities) from which
       a physical item originates
-    from_schema: EVORA
+    from_schema: https://evora-project.eu/
     aliases:
     - IPLC origin
     is_a: GeographicalOrigin
@@ -1165,7 +1176,7 @@ classes:
     description: The country as of ISO3166
     comments:
     - Use of Data provider recommended... serve as a local cache for ISO3166
-    from_schema: EVORA
+    from_schema: https://evora-project.eu/
     aliases:
     - Country
     close_mappings:
@@ -1184,7 +1195,7 @@ classes:
   IATAClassification:
     description: The corresponding International Air Transport Association (IATA)'s
       category for dangerous goods that are transported by air
-    from_schema: EVORA
+    from_schema: https://evora-project.eu/
     aliases:
     - IATA classification
     is_a: Term
@@ -1192,7 +1203,7 @@ classes:
     description: "An organism with one or more new mutations is referred to as a \u201C\
       variant\u201D of the original organism if not sufficiently different to be termed\
       \ a distinct strain"
-    from_schema: EVORA
+    from_schema: https://evora-project.eu/
     aliases:
     - Variant
     close_mappings:
@@ -1202,7 +1213,7 @@ classes:
     description: The possible taxonomic ranks and their description
     comments:
     - Use of Data provider recommended
-    from_schema: EVORA
+    from_schema: https://evora-project.eu/
     aliases:
     - Taxonomic rank
     close_mappings:
@@ -1224,7 +1235,7 @@ classes:
     comments:
     - The taxonomic taxons connected to their parent so that a full lienage can be
       rebuild. Use of Data provider recommended
-    from_schema: EVORA
+    from_schema: https://evora-project.eu/
     aliases:
     - Taxon
     exact_mappings:
@@ -1314,7 +1325,7 @@ classes:
         multivalued: false
   ExternalRelatedReference:
     description: A reference that permits to retrieve an item from an external provider
-    from_schema: EVORA
+    from_schema: https://evora-project.eu/
     aliases:
     - External related reference
     is_a: Dataset
@@ -1365,7 +1376,7 @@ classes:
         multivalued: false
   Sequence:
     description: A nucleic acid or protein sequence information
-    from_schema: EVORA
+    from_schema: https://evora-project.eu/
     aliases:
     - Sequence
     close_mappings:
@@ -1403,7 +1414,7 @@ classes:
     - A work on making it a subclass of External related reference might be consistent
       and beneficial for data structuration but special attention will have to be
       take to ensure it remains consistent with the actual the use cases for users
-    from_schema: EVORA
+    from_schema: https://evora-project.eu/
     aliases:
     - Sequence reference
     is_a: Dataset
@@ -1433,7 +1444,7 @@ classes:
         multivalued: false
   PersonOrOrganization:
     description: A person or an organization
-    from_schema: EVORA
+    from_schema: https://evora-project.eu/
     aliases:
     - Person Or Organization
     exact_mappings:
@@ -1475,7 +1486,7 @@ classes:
         multivalued: false
   Person:
     description: An individual
-    from_schema: EVORA
+    from_schema: https://evora-project.eu/
     aliases:
     - Person
     close_mappings:
@@ -1495,7 +1506,7 @@ classes:
         multivalued: false
   Organization:
     description: A social entity established to meet needs or pursue specific goals
-    from_schema: EVORA
+    from_schema: https://evora-project.eu/
     aliases:
     - Organization
     close_mappings:
@@ -1524,7 +1535,7 @@ classes:
         multivalued: false
   RI:
     description: A research infrastructure
-    from_schema: EVORA
+    from_schema: https://evora-project.eu/
     aliases:
     - RI
     close_mappings:
@@ -1532,7 +1543,7 @@ classes:
     is_a: Organization
   Provider:
     description: A provider of products or services, as a specific organization
-    from_schema: EVORA
+    from_schema: https://evora-project.eu/
     aliases:
     - Provider
     close_mappings:
@@ -1552,7 +1563,7 @@ classes:
     description: The individual or organization responsible for the original discovery,
       isolation, or creation of an item, providing information about the source or
       origin of the sample
-    from_schema: EVORA
+    from_schema: https://evora-project.eu/
     aliases:
     - Originator
     close_mappings:
@@ -1562,7 +1573,7 @@ classes:
     description: Information about the origin of the biological material, compulsory
       for access, utilization, and benefit-sharing of genetic resources in compliance
       with the Nagoya Protocol
-    from_schema: EVORA
+    from_schema: https://evora-project.eu/
     aliases:
     - Biological material origin
     is_a: Dataset
@@ -1607,7 +1618,7 @@ classes:
     description: Information on the origin of a unitary, cohesive part that is part
       of, or constitutes the biological material. It can be multiple parts in case
       of a recombinant biological material
-    from_schema: EVORA
+    from_schema: https://evora-project.eu/
     aliases:
     - Biological part origin
     is_a: Dataset
@@ -1638,7 +1649,7 @@ classes:
   NaturalPartOrigin:
     description: Information on the origin of a natural part that composes the biological
       material
-    from_schema: EVORA
+    from_schema: https://evora-project.eu/
     aliases:
     - Natural part origin
     is_a: BiologicalPartOrigin
@@ -1696,7 +1707,7 @@ classes:
   SyntheticPartOrigin:
     description: Information on the origin of a synthetic part that composes the biological
       material
-    from_schema: EVORA
+    from_schema: https://evora-project.eu/
     aliases:
     - Synthetic part origin
     is_a: BiologicalPartOrigin
@@ -1721,7 +1732,7 @@ classes:
         multivalued: false
   RecombinantPartIdentification:
     description: Identification of a recombinant part
-    from_schema: EVORA
+    from_schema: https://evora-project.eu/
     aliases:
     - Recombinant part identification
     slots:
@@ -1746,7 +1757,7 @@ classes:
         multivalued: true
   Collection:
     description: Set of products and services with some common characteristics
-    from_schema: EVORA
+    from_schema: https://evora-project.eu/
     aliases:
     - Collection
     close_mappings:
@@ -1778,7 +1789,7 @@ classes:
     description: A product or a service
     comments:
     - part of  wd:Q2897903 (goods and services )
-    from_schema: EVORA
+    from_schema: https://evora-project.eu/
     aliases:
     - Product or service
     is_a: NamedDataset
@@ -2033,7 +2044,7 @@ classes:
         multivalued: false
   Service:
     description: A service
-    from_schema: EVORA
+    from_schema: https://evora-project.eu/
     aliases:
     - Service
     close_mappings:
@@ -2060,7 +2071,7 @@ classes:
         multivalued: false
   Product:
     description: A product
-    from_schema: EVORA
+    from_schema: https://evora-project.eu/
     aliases:
     - Product
     close_mappings:
@@ -2149,7 +2160,7 @@ classes:
   Antibody:
     description: Protein that can bind to certain types of foreign bodies, such as
       pathogens
-    from_schema: EVORA
+    from_schema: https://evora-project.eu/
     aliases:
     - Antibody
     close_mappings:
@@ -2202,7 +2213,7 @@ classes:
         multivalued: true
   Hybridoma:
     description: An hybridoma that provides antibodies that can be related to a pathogen
-    from_schema: EVORA
+    from_schema: https://evora-project.eu/
     aliases:
     - Hybridoma
     close_mappings:
@@ -2220,7 +2231,7 @@ classes:
         multivalued: false
   Protein:
     description: A protein as a derived product from a pathogen
-    from_schema: EVORA
+    from_schema: https://evora-project.eu/
     aliases:
     - Protein
     close_mappings:
@@ -2380,7 +2391,7 @@ classes:
         multivalued: true
   Nucleic Acid:
     description: Nucleic acid related to a pathogen. It can be extracted or synthetic
-    from_schema: EVORA
+    from_schema: https://evora-project.eu/
     aliases:
     - Nucleic Acid
     close_mappings:
@@ -2525,7 +2536,7 @@ classes:
         multivalued: false
   Detection Kit:
     description: A detection kit for specific pathogens
-    from_schema: EVORA
+    from_schema: https://evora-project.eu/
     aliases:
     - Detection Kit
     is_a: Product
@@ -2570,7 +2581,7 @@ classes:
         multivalued: false
   Bundle:
     description: A group of products
-    from_schema: EVORA
+    from_schema: https://evora-project.eu/
     aliases:
     - Bundle
     close_mappings:
@@ -2603,7 +2614,7 @@ classes:
     description: Biological entity that causes disease in its host, which is typically
       an infectious microorganism or agent, such as a virus, bacterium, protozoan,
       prion, viroid, or fungus
-    from_schema: EVORA
+    from_schema: https://evora-project.eu/
     aliases:
     - Pathogen
     close_mappings:
@@ -2794,7 +2805,7 @@ classes:
         multivalued: false
   Virus:
     description: The virus as a biological material
-    from_schema: EVORA
+    from_schema: https://evora-project.eu/
     aliases:
     - Virus
     close_mappings:
@@ -2833,7 +2844,7 @@ classes:
         multivalued: false
   Bacterium:
     description: The bacterium as a biological material
-    from_schema: EVORA
+    from_schema: https://evora-project.eu/
     aliases:
     - Bacterium
     close_mappings:
@@ -2841,7 +2852,7 @@ classes:
     is_a: Pathogen
   Fungus:
     description: The fungus as a biological material
-    from_schema: EVORA
+    from_schema: https://evora-project.eu/
     aliases:
     - Fungus
     close_mappings:
@@ -2849,7 +2860,7 @@ classes:
     is_a: Pathogen
   Protozoan:
     description: The protozoan as a biological material
-    from_schema: EVORA
+    from_schema: https://evora-project.eu/
     aliases:
     - Protozoan
     close_mappings:
@@ -2857,7 +2868,7 @@ classes:
     is_a: Pathogen
   Viroid:
     description: The viroid as a biological material
-    from_schema: EVORA
+    from_schema: https://evora-project.eu/
     aliases:
     - Viroid
     close_mappings:
@@ -2865,7 +2876,7 @@ classes:
     is_a: Pathogen
   Prion:
     description: The prion as a biological material
-    from_schema: EVORA
+    from_schema: https://evora-project.eu/
     aliases:
     - Prion
     close_mappings:
@@ -2875,7 +2886,7 @@ classes:
     description: A Material Safety Data Sheet (MSDS) or Safety Data Sheet (SDS) is
       a standardized document that contains crucial occupational safety and health
       information related to the product
-    from_schema: EVORA
+    from_schema: https://evora-project.eu/
     aliases:
     - MSDS
     close_mappings:
@@ -3044,7 +3055,7 @@ classes:
   File:
     description: Digital document or record stored in a specific format that contains
       data or information
-    from_schema: EVORA
+    from_schema: https://evora-project.eu/
     aliases:
     - File
     exact_mappings:
@@ -3085,7 +3096,7 @@ classes:
   Data:
     description: Subclass of File representing structured or unstructured datasets,
       often used for analysis, storage, or transfer of information
-    from_schema: EVORA
+    from_schema: https://evora-project.eu/
     aliases:
     - Data
     close_mappings:
@@ -3094,7 +3105,7 @@ classes:
   Document:
     description: Subclass of File representing textual or written files such as reports,
       manuals, or forms
-    from_schema: EVORA
+    from_schema: https://evora-project.eu/
     aliases:
     - Document
     close_mappings:
@@ -3102,7 +3113,7 @@ classes:
     is_a: File
   Audio:
     description: Subclass of File representing sound recordings or audio tracks
-    from_schema: EVORA
+    from_schema: https://evora-project.eu/
     aliases:
     - Audio
     close_mappings:
@@ -3111,7 +3122,7 @@ classes:
   Video:
     description: Subclass of File representing moving visual media, such as recordings,
       presentations, or movies
-    from_schema: EVORA
+    from_schema: https://evora-project.eu/
     aliases:
     - Video
     close_mappings:
@@ -3120,7 +3131,7 @@ classes:
   Image:
     description: Subclass of File representing visual content such as pictures, diagrams,
       or illustrations
-    from_schema: EVORA
+    from_schema: https://evora-project.eu/
     aliases:
     - Image
     close_mappings:
@@ -3138,7 +3149,7 @@ classes:
         multivalued: false
   ContactPoint:
     description: Entity serving as focal point of information
-    from_schema: EVORA
+    from_schema: https://evora-project.eu/
     aliases:
     - Contact Point
     close_mappings:
@@ -3241,7 +3252,7 @@ classes:
   License:
     description: The legal terms and conditions under which the subject can be used,
       shared, or distributed, indicating any restrictions or permissions
-    from_schema: EVORA
+    from_schema: https://evora-project.eu/
     aliases:
     - License
     exact_mappings:
@@ -3289,7 +3300,7 @@ classes:
   Certification:
     description: Assurance given by an independent certification body that a product,
       service or system meets the requirements of a standard
-    from_schema: EVORA
+    from_schema: https://evora-project.eu/
     aliases:
     - Certification
     close_mappings:
@@ -3327,3 +3338,5 @@ classes:
         range: uri
         required: false
         multivalued: false
+source_file: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl
+generation_date: '2025-01-13T17:15:05'

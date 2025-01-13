@@ -7144,11 +7144,11 @@
             "type": "object"
         }
     },
-    "$id": "EVORA",
+    "$id": "https://evora-project.eu/",
     "$schema": "https://json-schema.org/draft/2019-09/schema",
     "additionalProperties": true,
     "metamodel_version": "1.7.0",
     "title": "EVORA",
     "type": "object",
-    "version": null
+    "version": "1.0.7341"
 }
