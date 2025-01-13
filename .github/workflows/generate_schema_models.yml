@@ -54,10 +54,24 @@ jobs:
           path: models/owl/evora_ontology.owl.ttl
           compression-level: 9 # maximum compression
 
-      - name: Generate project all models file with LinkML except owl 
+        # Generate docs ahead of project generation to avoid inclusion of linkml datatypes and benefit from default generator configuration
+      - name: Generate project doc files with LinkML
+        run: |
+          rm -rf model/docs/*
+          docker run --rm -v $(pwd):/workdir -u $(id -u):$(id -g) evoratools/schemasheets:0.3.1 \
+          linkml generate doc -d model/docs models/evora_schema.yaml > models/owl/evora_ontology.owl.ttl
+          tar -czvf docs.tgz model/docs
+          
+      - uses: actions/upload-artifact@v4
+        with:
+          name: evora-docs.tgz
+          path: docs.tgz
+          compression-level: 9 # maximum compression
+
+      - name: Generate project all models file with LinkML except owl and docs
         run: |
           docker run --rm -v $(pwd):/workdir -u $(id -u):$(id -g) evoratools/schemasheets:0.3.1 \
-          linkml generate project --exclude owl -d models models/evora_schema.yaml 
+          linkml generate project --exclude owl doc -d models models/evora_schema.yaml 
 
 
       - name: GIT commit and push all changed files
