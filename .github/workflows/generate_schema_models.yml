@@ -41,8 +41,10 @@ jobs:
           name: evora-schema.yaml
           path: models/evora_schema.yaml
           compression-level: 9 # maximum compression
-          
-      # Generate owl ahead of project generation to avoid inclusion of linkml datatypes in owl
+      
+      # Using independant generators of interest to benefit from initial configuration compared to project generator         
+      
+      # Generate owl ahead of project generation to avoid inclusion of linkml datatypes in owl and keep artifact
       - name: Generate project owl ttl file with LinkML
         run: |
           docker run --rm -v $(pwd):/workdir -u $(id -u):$(id -g) evoratools/schemasheets:0.3.1 \
@@ -54,7 +56,7 @@ jobs:
           path: models/owl/evora_ontology.owl.ttl
           compression-level: 9 # maximum compression
 
-      # Generate docs ahead of project generation to avoid inclusion of linkml datatypes and benefit from default generator configuration
+      # Generate docs ahead of project generation to benefit from initial generator configuration, avoid linkml datatypes inclusion and keep artifacts
       - name: Generate project doc files with LinkML
         run: |
           rm -rf model/docs/*
@@ -68,10 +70,46 @@ jobs:
           path: models/docs/
           compression-level: 9 # maximum compression
 
-      - name: Generate project all models file with LinkML except owl and docs
+      # Generate the other project subsidiary models using independant generators without keeping artifacts
+      - name: Generate subsidiary project models with LinkML independant generators
         run: |
           docker run --rm -v $(pwd):/workdir -u $(id -u):$(id -g) evoratools/schemasheets:0.3.1 \
-          linkml generate project --exclude owl,doc -d models models/evora_schema.yaml 
+          linkml generate jsonld-context models/evora_schema.yaml > models/subsidiary_models/jsonld/evora_schema.context.jsonld 
+          docker run --rm -v $(pwd):/workdir -u $(id -u):$(id -g) evoratools/schemasheets:0.3.1 \
+          linkml generate jsonld models/evora_schema.yaml > models/subsidiary_models/jsonld/evora_schema.jsonld
+          docker run --rm -v $(pwd):/workdir -u $(id -u):$(id -g) evoratools/schemasheets:0.3.1 \
+          linkml generate jsonld-context models/evora_schema.yaml > models/subsidiary_models/jsonschema/evora_schema.schema.json
+          docker run --rm -v $(pwd):/workdir -u $(id -u):$(id -g) evoratools/schemasheets:0.3.1 \
+          linkml generate python models/evora_schema.yaml > models/subsidiary_models/python/evora_schema.py     
+          docker run --rm -v $(pwd):/workdir -u $(id -u):$(id -g) evoratools/schemasheets:0.3.1 \
+          linkml generate excel -o models/subsidiary_models/excel/evora_schema.xlsx models/evora_schema.yaml
+          docker run --rm -v $(pwd):/workdir -u $(id -u):$(id -g) evoratools/schemasheets:0.3.1 \
+          linkml generate graphql models/evora_schema.yaml > models/subsidiary_models/graphql/evora_schema.graphql
+          docker run --rm -v $(pwd):/workdir -u $(id -u):$(id -g) evoratools/schemasheets:0.3.1 \
+          linkml generate prefix-map -o models/subsidiary_models/prefixmap/evora_schema_prefixes.yaml models/evora_schema.yaml
+          docker run --rm -v $(pwd):/workdir -u $(id -u):$(id -g) evoratools/schemasheets:0.3.1 \
+          linkml generate proto models/evora_schema.yaml > models/subsidiary_models/protobuf/evora_schema.proto
+          docker run --rm -v $(pwd):/workdir -u $(id -u):$(id -g) evoratools/schemasheets:0.3.1 \
+          linkml generate shacl models/evora_schema.yaml > models/subsidiary_models/shacl/evora_schema.shacl.ttl
+          docker run --rm -v $(pwd):/workdir -u $(id -u):$(id -g) evoratools/schemasheets:0.3.1 \
+          linkml generate shex models/evora_schema.yaml > models/subsidiary_models/shex/evora_schema.shex
+          docker run --rm -v $(pwd):/workdir -u $(id -u):$(id -g) evoratools/schemasheets:0.3.1 \
+          linkml generate sqltables models/evora_schema.yaml > models/subsidiary_models/sqlschema/evora_schema.sql
+          docker run --rm -v $(pwd):/workdir -u $(id -u):$(id -g) evoratools/schemasheets:0.3.1 \
+          linkml generate golang --log_level ERROR models/evora_schema.yaml > models/subsidiary_models/go/evora_schema.go
+          rm -f models/subsidiary_models/java/*
+          docker run --rm -v $(pwd):/workdir -u $(id -u):$(id -g) evoratools/schemasheets:0.3.1 \
+          linkml generate java --output-directory models/subsidiary_models/java/  models/evora_schema.yaml
+          docker run --rm -v $(pwd):/workdir -u $(id -u):$(id -g) evoratools/schemasheets:0.3.1 \
+          linkml generate rdf models/evora_schema.yaml > models/subsidiary_models/rdf/evora_schema.rdf
+          rm -f models/subsidiary_models/sparql/*
+          docker run --rm -v $(pwd):/workdir -u $(id -u):$(id -g) evoratools/schemasheets:0.3.1 \
+          linkml generate sparql -d models/subsidiary_models/sparql/ models/evora_schema.yaml
+          docker run --rm -v $(pwd):/workdir -u $(id -u):$(id -g) evoratools/schemasheets:0.3.1 \
+          linkml generate sqla models/evora_schema.yaml > models/subsidiary_models/sqlalchemy/evora_schema.sqla
+          docker run --rm -v $(pwd):/workdir -u $(id -u):$(id -g) evoratools/schemasheets:0.3.1 \
+          linkml generate pydantic models/evora_schema.yaml > models/subsidiary_models/pydantic/evora_schema.py
+
 
 
       - name: GIT commit and push all changed files
