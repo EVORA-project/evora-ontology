@@ -9,7 +9,7 @@ created_by: https://github.com/Angatar
 contributors:
 - https://orcid.org/0000-0002-2042-2839
 id: https://evora-project.eu/
-version: 1.0.7341
+version: 1.0.7356
 imports:
 - linkml:types
 license: https://creativecommons.org/publicdomain/zero/1.0/
@@ -412,9 +412,10 @@ classes:
   Version:
     description: Numeric code assigned to identify a particular historical version
       of a work (e.g. software or technical standards)
+    title: Version
     from_schema: https://evora-project.eu/
     aliases:
-    - Version
+    - version number
     close_mappings:
     - wd:Q114469879
     is_a: Dataset
@@ -424,8 +425,9 @@ classes:
     slot_usage:
       ID:
         description: The version identifier
+        title: ID
         aliases:
-        - ID
+        - edition number
         close_mappings:
         - wdp:P393
         - schema:version
@@ -434,16 +436,14 @@ classes:
         multivalued: false
       versionOf:
         description: Identifier of what the version qualifies
-        aliases:
-        - version Of
+        title: version Of
         range: uri
         required: true
         multivalued: false
   Nameable:
     description: Any entity that has a name and can have a textual description
+    title: Nameable
     from_schema: https://evora-project.eu/
-    aliases:
-    - Nameable
     abstract: true
     slots:
     - name
@@ -451,6 +451,7 @@ classes:
     slot_usage:
       name:
         description: The label that allows humans to identify the current item
+        title: name
         comments:
         - 'The title of the item should be as short and descriptive as possible. E.g.
           for virus products it should basically be based on the following Pattern:
@@ -458,8 +459,6 @@ classes:
           "Virus name", "virus host type", "collection year", "country of collection"
           ex "suspected epidemiological origin", "genotype", "strain", "variant name
           or specific feature"'
-        aliases:
-        - name
         exact_mappings:
         - dct:title
         close_mappings:
@@ -470,13 +469,12 @@ classes:
       description:
         description: A short explanation of the characteristics, features, or nature
           of the current item
+        title: description
         comments:
         - 'Describe this item in few lines. This description will serve as a summary
           to present the item.
 
           '
-        aliases:
-        - description
         exact_mappings:
         - dct:description
         range: string
@@ -484,9 +482,10 @@ classes:
         multivalued: false
   Catalogue:
     description: A curated collection of metadata about resources
+    title: Catalogue
     from_schema: https://evora-project.eu/
     aliases:
-    - Catalogue
+    - catalogue
     exact_mappings:
     - dcat:Catalog
     close_mappings:
@@ -497,9 +496,10 @@ classes:
   Dataset:
     description: A collection of data, published or curated by a single agent, and
       available for access
+    title: Dataset
     from_schema: https://evora-project.eu/
     aliases:
-    - Dataset
+    - data set
     exact_mappings:
     - dcat:Dataset
     close_mappings:
@@ -509,9 +509,10 @@ classes:
   NamedDataset:
     description: A collection of data, that has a name and can have a description,
       published or curated by a single agent, and available for access
+    title: Named Dataset
     from_schema: https://evora-project.eu/
     aliases:
-    - Named Dataset
+    - data set
     exact_mappings:
     - dcat:Dataset
     close_mappings:
@@ -522,9 +523,10 @@ classes:
   DataService:
     description: A collection of operations that provides access to one or more datasets
       or data processing functions
+    title: Data Service
     from_schema: https://evora-project.eu/
     aliases:
-    - Data Service
+    - web service
     exact_mappings:
     - dcat:DataService
     close_mappings:
@@ -534,9 +536,10 @@ classes:
     abstract: true
   Taxonomy:
     description: Science of naming, defining and classifying organisms
+    title: Taxonomy
     from_schema: https://evora-project.eu/
     aliases:
-    - Taxonomy
+    - taxonomy
     close_mappings:
     - wd:Q8269924
     - skos:Collection
@@ -552,8 +555,7 @@ classes:
       taxon:
         description: Scientifically classified group or entity within the reference
           taxonomy
-        aliases:
-        - taxon
+        title: taxon
         close_mappings:
         - dwc:Taxon
         range: Taxon
@@ -561,46 +563,42 @@ classes:
         multivalued: true
       taxonDataProvider:
         description: The data provider for the taxons of the taxonomy
-        aliases:
-        - taxon data provider
+        title: taxon data provider
         range: DataProvider
         required: false
         multivalued: false
       version:
         description: The version of this instance of entity
-        aliases:
-        - version
+        title: version
         range: Version
         required: true
         multivalued: false
       versionDataProvider:
         description: The data provider for the Version ID of this taxonomy
-        aliases:
-        - version data provider
+        title: version data provider
         range: DataProvider
         required: true
         multivalued: false
       rank:
         description: Relative level or position of the identified taxon in the taxonomy
-        aliases:
-        - rank
+        title: rank
         range: TaxonomicRank
         required: false
         multivalued: true
       rankDataProvider:
         description: The data provider for the description of the taxonomic ranks
           used in this taxonomy
-        aliases:
-        - rank data provider
+        title: rank data provider
         range: DataProvider
         required: false
         multivalued: false
   DataProvider:
     description: An external API (Application Programming Interface) or Endpoint that
       permits to retrieve data from other sources
+    title: Data provider
     from_schema: https://evora-project.eu/
     aliases:
-    - Data provider
+    - data provider
     close_mappings:
     - wd:Q122625839
     is_a: DataService
@@ -618,8 +616,7 @@ classes:
       license:
         description: Information about terms and conditions under which the subject
           can be used, shared, or distributed, indicating any restrictions or permissions
-        aliases:
-        - license
+        title: license
         exact_mappings:
         - dct:license
         range: License
@@ -627,8 +624,7 @@ classes:
         multivalued: false
       loginRequestMethod:
         description: The http request method used to acces the login request url
-        aliases:
-        - login request method
+        title: login request method
         close_mappings:
         - dcat:endpointDescription
         ifabsent: string(GET)
@@ -637,8 +633,9 @@ classes:
         multivalued: false
       loginURL:
         description: The URL template that allows to log in if required
+        title: login URL
         aliases:
-        - login URL
+        - formatter URL
         close_mappings:
         - wdp:P1630
         - dcat:endpointDescription
@@ -648,8 +645,7 @@ classes:
       loginTokenName:
         description: The name of the token, unique identifier of an interaction session,
           that will have to be reused as credential in the query
-        aliases:
-        - login token name
+        title: login token name
         close_mappings:
         - dcat:endpointDescription
         range: string
@@ -657,8 +653,9 @@ classes:
         multivalued: false
       queryURL:
         description: The URL template that allows to get the content
+        title: query URL
         aliases:
-        - query URL
+        - formatter URL
         exact_mappings:
         - dcat:endpointURL
         close_mappings:
@@ -668,8 +665,7 @@ classes:
         multivalued: false
       queryMethod:
         description: The http request method used to access the requested query url
-        aliases:
-        - query method
+        title: query method
         close_mappings:
         - dcat:endpointDescription
         range: string
@@ -677,8 +673,7 @@ classes:
         multivalued: false
       contentType:
         description: The content type of the response to the queries
-        aliases:
-        - content type
+        title: content type
         close_mappings:
         - dct:format
         ifabsent: string(JSON)
@@ -688,8 +683,7 @@ classes:
       providedEntityType:
         description: The identification of the entity type (Class) described by the
           response to the query
-        aliases:
-        - provided entity type
+        title: provided entity type
         exact_mappings:
         - dcat:servesDataset
         required: true
@@ -699,12 +693,11 @@ classes:
           generally processed in ascending order. This weight helps prioritize content
           when organizing or processing data. Its value can be negative, with a default
           set to 0
+        title: weight
         comments:
         - The lowest weighted Data providers are triggered first, this may be usefull
           to populate at first entities that are referenced by others (e.g. Version
           ahead of Rank ahead of Taxon)
-        aliases:
-        - weight
         close_mappings:
         - adms:status
         range: integer
@@ -713,9 +706,8 @@ classes:
   PathogenIdentification:
     description: A collection of distinguishing information that enables the differentiation
       of a pathogen from another
+    title: Pathogen identification
     from_schema: https://evora-project.eu/
-    aliases:
-    - Pathogen identification
     is_a: Dataset
     slots:
     - taxon
@@ -732,49 +724,43 @@ classes:
       taxon:
         description: Scientifically classified group or entity within the reference
           taxonomy
+        title: taxon
         comments:
         - The taxon of the highest rank known that can be used to classify a pathogen
           or group of pathogens (e.g viruses) in the reference taxonomy
-        aliases:
-        - taxon
         range: Taxon
         required: true
         multivalued: false
       pathogenName:
         description: A pathogen common name or a name that describes a group of pathogens
-        aliases:
-        - pathogen name
+        title: pathogen name
         range: CommonName
         required: true
         multivalued: false
       pathogenType:
         description: Identification of the specific type of pathogen among the listed
           categories e.g. "Virus","Viroid","Bacterium"...
-        aliases:
-        - pathogen type
+        title: pathogen type
         range: string
         required: true
         multivalued: false
       hostType:
         description: Indication of the possible host(s) for the identified pathogens
           among the listed main categories
-        aliases:
-        - host type
+        title: host type
         range: string
         required: false
         multivalued: true
       subspecies:
         description: The subspecies information differentiates closely related pathogens
           within a single species
-        aliases:
-        - subspecies
+        title: subspecies
         range: string
         required: false
         multivalued: false
       strain:
         description: Identifier given to a genetic variant within a single species
-        aliases:
-        - strain
+        title: strain
         range: string
         required: false
         multivalued: false
@@ -785,24 +771,21 @@ classes:
           sample or performed the isolation, as well as details about the specific
           conditions of isolation, such as the name of the town, hospital, and type
           of host
-        aliases:
-        - isolate
+        title: isolate
         range: string
         required: false
         multivalued: false
       genotype:
         description: Genotype information that identifies organisms that cluster in
           phylogenetic trees, thus different clusters are distinct genotypes
-        aliases:
-        - genotype
+        title: genotype
         range: string
         required: false
         multivalued: false
       serotype:
         description: Genetically related pathogens that group together based on serological
           relationships
-        aliases:
-        - serotype
+        title: serotype
         range: string
         required: false
         multivalued: false
@@ -810,16 +793,16 @@ classes:
         description: "An organism with one or more new mutations is referred to as\
           \ a \u201Cvariant\u201D of the original organism if not sufficiently different\
           \ to be termed a distinct strain"
-        aliases:
-        - variant
+        title: variant
         range: Variant
         required: false
         multivalued: false
   Publication:
     description: A scientific publication
+    title: Publication
     from_schema: https://evora-project.eu/
     aliases:
-    - Publication
+    - scientific publication
     close_mappings:
     - wd:Q591041
     is_a: Dataset
@@ -833,6 +816,7 @@ classes:
       title:
         description: The descriptive word or phrase that identifies the current piece
           of work
+        title: title
         comments:
         - 'The title of the item should be as short and descriptive as possible. E.g.
           for virus products it should basically be based on the following Pattern:
@@ -840,8 +824,6 @@ classes:
           "Virus name", "virus host type", "collection year", "country of collection"
           ex "suspected epidemiological origin", "genotype", "strain", "variant name
           or specific feature"'
-        aliases:
-        - title
         exact_mappings:
         - dct:title
         range: string
@@ -849,38 +831,35 @@ classes:
         multivalued: false
       authors:
         description: The list of authors
-        aliases:
-        - authors
+        title: authors
         range: string
         required: true
         multivalued: false
       abstract:
         description: Concise summary of the publication
-        aliases:
-        - abstract
+        title: abstract
         range: string
         required: true
         multivalued: false
       relatedDOI:
         description: Any Digital Object Identifier that can be related
-        aliases:
-        - DOI
+        title: DOI
         range: DOI
         required: true
         multivalued: false
       journal:
         description: The scientific journal in which the publication was published
-        aliases:
-        - journal
+        title: journal
         range: Journal
         required: false
         multivalued: false
   Vocabulary:
     description: A subset of words or phrases specific to a particular subject or
       field
+    title: Vocabulary
     from_schema: https://evora-project.eu/
     aliases:
-    - Vocabulary
+    - vocabulary
     close_mappings:
     - wd:Q6499736
     - skos:Collection
@@ -892,23 +871,22 @@ classes:
       termDataProvider:
         description: An external API or Endpoint that permits to retrieve the terms
           of this vocabulary
-        aliases:
-        - term data provider
+        title: term data provider
         range: DataProvider
         required: false
         multivalued: false
       term:
         description: The terms related to this vocabulary
-        aliases:
-        - term
+        title: term
         range: Term
         required: false
         multivalued: true
   Term:
     description: Word or phrase from a specialized area of knowledge
+    title: Term
     from_schema: https://evora-project.eu/
     aliases:
-    - Term
+    - term
     close_mappings:
     - wd:Q1969448
     is_a: NamedDataset
@@ -922,8 +900,7 @@ classes:
           generally processed in ascending order. This weight helps prioritize content
           when organizing or processing data. Its value can be negative, with a default
           set to 0
-        aliases:
-        - weight
+        title: weight
         close_mappings:
         - adms:status
         ifabsent: int(0)
@@ -932,8 +909,9 @@ classes:
         multivalued: false
       inVocabulary:
         description: Terms belong to a specific vocabulary
+        title: in Vocabulary
         aliases:
-        - in Vocabulary
+        - catalog
         close_mappings:
         - wdp:P972
         range: Vocabulary
@@ -943,9 +921,10 @@ classes:
     description: Vernacular name that is the name used in everyday language to refer
       to an organism or group of organisms. This name is typically easier to remember
       and pronounce compared to the scientific name
+    title: Common Name
     from_schema: https://evora-project.eu/
     aliases:
-    - Common Name
+    - common name
     exact_mappings:
     - dwc:vernacularName
     close_mappings:
@@ -957,13 +936,14 @@ classes:
     slot_usage:
       alternateName:
         description: Any known alternate name related to this name
+        title: alternate name
         comments:
         - including previous names and former taxonomic terms, this information can
           also serve as keywords arround the pathogen name for search and as a bridge
           with other projects that are still using other naming systems or taxonomies
           e.g. the NCBI taxonomy
         aliases:
-        - alternate name
+        - alternative name
         close_mappings:
         - wdp:P4970
         range: AlternateName
@@ -972,8 +952,9 @@ classes:
       sourceOfInformation:
         description: The name of the origin from which knowledge is obtained. This
           can include any entity that provides information
+        title: source of information
         aliases:
-        - source of information
+        - stated in
         close_mappings:
         - wdp:P248
         range: string
@@ -981,17 +962,19 @@ classes:
         multivalued: true
   VirusName:
     description: A virus vernacular name or a name that describes a group of viruses
+    title: Virus Name
     from_schema: https://evora-project.eu/
     aliases:
-    - Virus Name
+    - virus name
     close_mappings:
     - wd:Q125481078
     is_a: CommonName
   AlternateName:
     description: List of alternate names for things
+    title: Alternate Name
     from_schema: https://evora-project.eu/
     aliases:
-    - Alternate Name
+    - synonym
     close_mappings:
     - wd:Q7662595
     is_a: Term
@@ -1001,8 +984,9 @@ classes:
     slot_usage:
       alternateName:
         description: Any known alternate name related to this name
+        title: alternate name
         aliases:
-        - alternate name
+        - alternative name
         close_mappings:
         - wdp:P4970
         range: AlternateName
@@ -1011,8 +995,9 @@ classes:
       sourceOfInformation:
         description: The name of the origin from which knowledge is obtained. This
           can include any entity that provides information
+        title: source of information
         aliases:
-        - source of information
+        - stated in
         close_mappings:
         - wdp:P248
         range: string
@@ -1022,12 +1007,13 @@ classes:
     description: Risk group classification guides initial handling of biological agents
       in labs but doesn't systematically equate to biosafety levels. Actual risk varies
       with the agent, procedures, and personnel competence
+    title: Risk group
     comments:
     - Use of Data provider if any or manual import of information from wd:Q125449389,
       wd:Q125449412, wd:Q125449429, wd:Q125449439
     from_schema: https://evora-project.eu/
     aliases:
-    - Risk group
+    - risk group
     close_mappings:
     - wd:Q125449255
     is_a: Term
@@ -1035,6 +1021,7 @@ classes:
     description: A unique string identifier assigned to a digital object, providing
       a permanent link for reliable citation and access.  The Digital Object Identifier
       (DOI) is a persistent identifier that is an ISO standard
+    title: DOI
     from_schema: https://evora-project.eu/
     aliases:
     - DOI
@@ -1043,34 +1030,38 @@ classes:
     is_a: Term
   Journal:
     description: Periodical journal publishing scientific research
+    title: Journal
     from_schema: https://evora-project.eu/
     aliases:
-    - Journal
+    - scientific journal
     close_mappings:
     - wd:Q5633421
     is_a: Term
   PDBReference:
     description: Identifier for 3D structural data as per the PDB (Protein Data Bank)
       database
+    title: PDB reference
     from_schema: https://evora-project.eu/
     aliases:
-    - PDB reference
+    - Wikidata property to identify proteins
     close_mappings:
     - wdp:Q42415644
     is_a: Term
   Keyword:
     description: A term or phrase used to tag and categorize content
+    title: Keyword
     from_schema: https://evora-project.eu/
     aliases:
-    - Keyword
+    - subject heading
     close_mappings:
     - wd:Q1128340
     is_a: Term
   ProteinTag:
     description: Peptide sequence genetically grafted onto a recombinant protein
+    title: Protein tag
     from_schema: https://evora-project.eu/
     aliases:
-    - Protein tag
+    - protein tag
     close_mappings:
     - wd:Q645590
     is_a: Term
@@ -1078,58 +1069,57 @@ classes:
     description: Distinctive attributes of a product that set it apart from other
       similar items e.g., Reference strain, Vaccinal strain, Antiviral resistant strain
       ...
+    title: Special feature
     comments:
     - These special features help researchers and professionals in the field to select
       appropriate virus strains for their specific research needs and applications.
     from_schema: https://evora-project.eu/
-    aliases:
-    - Special feature
     is_a: Term
   ExpressionVector:
     description: A reference to an expression vector plasmid, typically embedding
       a resistance marker for inducible protein expression
+    title: Expression vector
     from_schema: https://evora-project.eu/
     aliases:
-    - Expression vector
+    - expression vector
     close_mappings:
     - wd:Q5421712
     is_a: Term
   PlasmidSelection:
     description: The process of identifying cells that have successfully incorporated
       a plasmid, typically using antibiotic resistance markers
+    title: Plasmid selection
     from_schema: https://evora-project.eu/
-    aliases:
-    - Plasmid selection
     is_a: Term
   PropagationHost:
     description: The organism used to grow and multiply the pathogen under controlled
       conditions
+    title: Propagation host
     from_schema: https://evora-project.eu/
-    aliases:
-    - Propagation host
     is_a: Term
   TransmissionMethod:
     description: The process by which the pathogen spreads between hosts
+    title: Transmission method
     from_schema: https://evora-project.eu/
-    aliases:
-    - Transmission method
     is_a: Term
   ProductionCellLine:
     description: A population of cells that originates from a primary culture, adapted
       to grow and divide under laboratory conditions. Used in biotechnology to consistently
       produce biological substances
+    title: Production cell line
     from_schema: https://evora-project.eu/
     aliases:
-    - Production cell line
+    - cell line
     close_mappings:
     - wd:Q21014462
     is_a: Term
   ProductCategory:
     description: A term used to classify a group of products that share common characteristics
       or functions, which helps in their organization
+    title: Product category
     from_schema: https://evora-project.eu/
     aliases:
-    - Product category
+    - product category
     close_mappings:
     - wd:Q63981612
     is_a: Term
@@ -1141,25 +1131,24 @@ classes:
           within a hierarchical classification system. It serves as the top-level
           classification, organizing related subcategories under its umbrella to create
           a structured and logical order.
-        aliases:
-        - parent category
+        title: parent category
         range: ProductCategory
         required: false
         multivalued: false
   IsolationHost:
     description: Host organism from which the pathogen was isolated
+    title: Isolation host
     from_schema: https://evora-project.eu/
-    aliases:
-    - Isolation host
     is_a: Term
   GeographicalOrigin:
     description: The specific location or region where a physical item, originates
       or is naturally found
+    title: Geographical origin
     comments:
     - geonames.org API could be a good service data provider as suggested by DCAT-AP
     from_schema: https://evora-project.eu/
     aliases:
-    - Geographical origin
+    - origin
     exact_mappings:
     - dct:Location
     close_mappings:
@@ -1168,17 +1157,17 @@ classes:
   IPLCOrigin:
     description: The IPLC area (Indigenous People and Local Communities) from which
       a physical item originates
+    title: IPLC origin
     from_schema: https://evora-project.eu/
-    aliases:
-    - IPLC origin
     is_a: GeographicalOrigin
   Country:
     description: The country as of ISO3166
+    title: Country
     comments:
     - Use of Data provider recommended... serve as a local cache for ISO3166
     from_schema: https://evora-project.eu/
     aliases:
-    - Country
+    - country
     close_mappings:
     - wd:Q6256
     is_a: Term
@@ -1187,35 +1176,35 @@ classes:
     slot_usage:
       alpha2Code:
         description: Two-letter country codes from ISO 3166-1 alpha-2
-        aliases:
-        - alpha-2 code
+        title: alpha-2 code
         range: string
         required: true
         multivalued: false
   IATAClassification:
     description: The corresponding International Air Transport Association (IATA)'s
       category for dangerous goods that are transported by air
+    title: IATA classification
     from_schema: https://evora-project.eu/
-    aliases:
-    - IATA classification
     is_a: Term
   Variant:
     description: "An organism with one or more new mutations is referred to as a \u201C\
       variant\u201D of the original organism if not sufficiently different to be termed\
       \ a distinct strain"
+    title: Variant
     from_schema: https://evora-project.eu/
     aliases:
-    - Variant
+    - genetic variant
     close_mappings:
     - wd:Q104795308
     is_a: CommonName
   TaxonomicRank:
     description: The possible taxonomic ranks and their description
+    title: Taxonomic rank
     comments:
     - Use of Data provider recommended
     from_schema: https://evora-project.eu/
     aliases:
-    - Taxonomic rank
+    - taxonomic rank
     close_mappings:
     - wd:Q427626
     is_a: Term
@@ -1224,20 +1213,20 @@ classes:
     slot_usage:
       taxonomy:
         description: The taxonomy release(s) in which this entity exists
-        aliases:
-        - taxonomy
+        title: taxonomy
         range: Taxonomy
         required: false
         multivalued: true
   Taxon:
     description: Conceptual entity that groups one or more populations of an organism
       or organisms, as seen by taxonomists, to form a unit
+    title: Taxon
     comments:
     - The taxonomic taxons connected to their parent so that a full lienage can be
       rebuild. Use of Data provider recommended
     from_schema: https://evora-project.eu/
     aliases:
-    - Taxon
+    - taxon
     exact_mappings:
     - dwc:Taxon
     close_mappings:
@@ -1254,15 +1243,13 @@ classes:
     slot_usage:
       taxonomy:
         description: The taxonomy release(s) in which this entity exists
-        aliases:
-        - taxonomy
+        title: taxonomy
         range: Taxonomy
         required: false
         multivalued: true
       parentTaxon:
         description: The parent taxon of the current taxon
-        aliases:
-        - parent taxon
+        title: parent taxon
         close_mappings:
         - dwc:Taxon
         range: Taxon
@@ -1270,8 +1257,7 @@ classes:
         multivalued: false
       rank:
         description: Relative level or position of the identified taxon in the taxonomy
-        aliases:
-        - rank
+        title: rank
         exact_mappings:
         - dwc:taxonRank
         range: TaxonomicRank
@@ -1279,8 +1265,7 @@ classes:
         multivalued: false
       previouslyKnownAs:
         description: Any historic version of this taxon having a different name
-        aliases:
-        - previously known as
+        title: previously known as
         close_mappings:
         - dwc:Taxon
         range: Taxon
@@ -1289,11 +1274,10 @@ classes:
       externalEquivalentTaxon:
         description: Any equivalent taxon in a different taxonomy if exists/known
           to serve as a bridge (e.g, ICTV towards NCBI)
+        title: external equivalent taxon
         comments:
         - Could serve as a bridge between ICTV and NCBI as several providers currently
           uses NCBI Taxonomy
-        aliases:
-        - external equivalent taxon
         close_mappings:
         - dwc:taxonID
         range: Taxon
@@ -1301,8 +1285,7 @@ classes:
         multivalued: true
       taxonomicID:
         description: The taxonomic identifier as a persistent identifier accross releases
-        aliases:
-        - taxonomic ID
+        title: taxonomic ID
         close_mappings:
         - dwc:taxonID
         range: string
@@ -1311,13 +1294,12 @@ classes:
       taxonomicNodeID:
         description: The taxonomic_Node Identifier as an identifier specific the current
           taxon in the corresponding release/version of the taxonomy
+        title: taxonomic node ID
         comments:
         - NCBI does not have a taxon_node id, only a taxonomicID. Taxon_node id is
           Unique  in NCBI= Key of the taxon node !! Could be replaced by a composite
           key made of "taxonomic ID" + "has version" But can be referenced as it seems
           the "taxonomic node_ID" will be generated and provided by the ICTV
-        aliases:
-        - taxonomic node ID
         close_mappings:
         - dwc:taxonID
         range: string
@@ -1325,9 +1307,8 @@ classes:
         multivalued: false
   ExternalRelatedReference:
     description: A reference that permits to retrieve an item from an external provider
+    title: External related reference
     from_schema: https://evora-project.eu/
-    aliases:
-    - External related reference
     is_a: Dataset
     slots:
     - reference
@@ -1337,8 +1318,7 @@ classes:
     slot_usage:
       reference:
         description: The identifier reference of the connected external item
-        aliases:
-        - reference
+        title: reference
         close_mappings:
         - dct:identifier
         range: string
@@ -1346,10 +1326,9 @@ classes:
         multivalued: false
       referenceLabel:
         description: The label informing what this reference is about
+        title: reference label
         comments:
         - e.g., 'Infravec2 related product'
-        aliases:
-        - reference label
         close_mappings:
         - dct:title
         range: string
@@ -1358,8 +1337,7 @@ classes:
       referenceProviderPrefix:
         description: The url prefix that once completed with the reference will lead
           to the linked external resource
-        aliases:
-        - reference provider prefix
+        title: reference provider prefix
         close_mappings:
         - dcat:landingPage
         range: string
@@ -1367,8 +1345,7 @@ classes:
         multivalued: false
       referenceProviderName:
         description: The name for the reference provider
-        aliases:
-        - reference provider name
+        title: reference provider name
         close_mappings:
         - dct:publisher
         range: string
@@ -1376,9 +1353,10 @@ classes:
         multivalued: false
   Sequence:
     description: A nucleic acid or protein sequence information
+    title: Sequence
     from_schema: https://evora-project.eu/
     aliases:
-    - Sequence
+    - biological sequence
     close_mappings:
     - wd:Q3511065
     is_a: Dataset
@@ -1389,34 +1367,31 @@ classes:
       sequenceReference:
         description: A reference that permits to retrieve the sequence information
           from a sequence provider
-        aliases:
-        - sequence reference
+        title: sequence reference
         range: SequenceReference
         required: false
         multivalued: true
       sequenceFASTA:
         description: In case no sequence reference exists in public repositories,
           the corresponding FASTA sequence is required
+        title: sequence FASTA
         comments:
         - In FASTA format the line before the nucleotide sequence, called the FASTA
           definition line, must begin with a carat (">"), followed by a unique SeqID
           (sequence identifier). In case the sequence is made of multiple parts several
           fasta sequences can be provided
-        aliases:
-        - sequence FASTA
         range: string
         required: false
         multivalued: false
   SequenceReference:
     description: A reference that permits to retrieve the sequence information from
       a sequence provider
+    title: Sequence reference
     comments:
     - A work on making it a subclass of External related reference might be consistent
       and beneficial for data structuration but special attention will have to be
       take to ensure it remains consistent with the actual the use cases for users
     from_schema: https://evora-project.eu/
-    aliases:
-    - Sequence reference
     is_a: Dataset
     slots:
     - accessionNumber
@@ -1425,8 +1400,7 @@ classes:
       accessionNumber:
         description: The sequence ID that permits to retrieve the sequence information
           from the sequence provider
-        aliases:
-        - accession number
+        title: accession number
         close_mappings:
         - dct:identifier
         range: string
@@ -1435,8 +1409,7 @@ classes:
       sequenceProvider:
         description: The name of the sequence provider within the list of accepted
           sequence providers
-        aliases:
-        - sequence provider
+        title: sequence provider
         close_mappings:
         - dct:publisher
         range: string
@@ -1444,9 +1417,8 @@ classes:
         multivalued: false
   PersonOrOrganization:
     description: A person or an organization
+    title: Person Or Organization
     from_schema: https://evora-project.eu/
-    aliases:
-    - Person Or Organization
     exact_mappings:
     - dct:Agent
     close_mappings:
@@ -1463,15 +1435,13 @@ classes:
           than 95% purity) and "Unpurified expression host lysate or partly purified
           protein" (the protein is either unpurified and present in the host cell
           lysate or only partially purified).
-        aliases:
-        - home page
+        title: home page
         range: string
         required: false
         multivalued: false
       contactPoint:
         description: An information that allows someone to establish communication
-        aliases:
-        - contact point
+        title: contact point
         exact_mappings:
         - dcat:contactPoint
         range: ContactPoint
@@ -1479,16 +1449,16 @@ classes:
         multivalued: false
       logo:
         description: A path or URL to the related logo
-        aliases:
-        - logo
+        title: logo
         range: Image
         required: false
         multivalued: false
   Person:
     description: An individual
+    title: Person
     from_schema: https://evora-project.eu/
     aliases:
-    - Person
+    - person
     close_mappings:
     - wd:Q215627
     - vcard:Individual
@@ -1499,16 +1469,16 @@ classes:
       oRCIDiD:
         description: Unique persistent identifier for a person, provided by the Open
           Researcher and Contributor ID (ORCID) organisation
-        aliases:
-        - ORCID iD
+        title: ORCID iD
         range: string
         required: false
         multivalued: false
   Organization:
     description: A social entity established to meet needs or pursue specific goals
+    title: Organization
     from_schema: https://evora-project.eu/
     aliases:
-    - Organization
+    - organization
     close_mappings:
     - wd:Q43229
     - vcard:Organization
@@ -1519,8 +1489,7 @@ classes:
     slot_usage:
       alternateName:
         description: An alternate name or acronym
-        aliases:
-        - alternate name
+        title: alternate name
         close_mappings:
         - dwc:institutionCode
         range: AlternateName
@@ -1528,24 +1497,23 @@ classes:
         multivalued: false
       country:
         description: The country of the organization
-        aliases:
-        - country
+        title: country
         range: Country
         required: false
         multivalued: false
   RI:
     description: A research infrastructure
+    title: RI
     from_schema: https://evora-project.eu/
     aliases:
-    - RI
+    - research infrastructure
     close_mappings:
     - wd:Q1438053
     is_a: Organization
   Provider:
     description: A provider of products or services, as a specific organization
+    title: Provider
     from_schema: https://evora-project.eu/
-    aliases:
-    - Provider
     close_mappings:
     - dct:ProvenanceStatement
     is_a: Organization
@@ -1554,8 +1522,7 @@ classes:
     slot_usage:
       memberOfRI:
         description: The research infrastructure of which this organization is a member
-        aliases:
-        - member of RI
+        title: member of RI
         range: RI
         required: false
         multivalued: true
@@ -1563,9 +1530,8 @@ classes:
     description: The individual or organization responsible for the original discovery,
       isolation, or creation of an item, providing information about the source or
       origin of the sample
+    title: Originator
     from_schema: https://evora-project.eu/
-    aliases:
-    - Originator
     close_mappings:
     - dct:ProvenanceStatement
     is_a: PersonOrOrganization
@@ -1573,9 +1539,8 @@ classes:
     description: Information about the origin of the biological material, compulsory
       for access, utilization, and benefit-sharing of genetic resources in compliance
       with the Nagoya Protocol
+    title: Biological material origin
     from_schema: https://evora-project.eu/
-    aliases:
-    - Biological material origin
     is_a: Dataset
     slots:
     - recombinantMaterial
@@ -1585,8 +1550,7 @@ classes:
       recombinantMaterial:
         description: Indicates if this biological material is a recombinant biological
           material.
-        aliases:
-        - recombinant material
+        title: recombinant material
         ifabsent: 'false'
         range: boolean
         required: true
@@ -1595,11 +1559,10 @@ classes:
         description: Defines if the current biological material is natural and was
           collected or if it is a synthetic biological material. It makes sense that
           only recombinant biological materials can have a mixed material origin!
+        title: biological source type
         comments:
         - It makes sense that only recombinant biological materials can have a mixed
           material origin!
-        aliases:
-        - biological source type
         range: boolean
         required: true
         multivalued: false
@@ -1607,10 +1570,9 @@ classes:
         description: Details the origin of one or more unitary parts that make up
           the biological material. In the case of recombinant biological material,
           multiple parts may be involved.
+        title: biological part origin
         comments:
         - It can be multiple parts in case of a recombinant biological material.
-        aliases:
-        - biological part origin
         range: BiologicalPartOrigin
         required: true
         multivalued: true
@@ -1618,9 +1580,8 @@ classes:
     description: Information on the origin of a unitary, cohesive part that is part
       of, or constitutes the biological material. It can be multiple parts in case
       of a recombinant biological material
+    title: Biological part origin
     from_schema: https://evora-project.eu/
-    aliases:
-    - Biological part origin
     is_a: Dataset
     abstract: true
     slots:
@@ -1629,11 +1590,10 @@ classes:
     slot_usage:
       recombinantPartIdentification:
         description: Identification of a recombinant part
+        title: recombinant part identification
         comments:
         - Information not required if the current biological part constitutes the
           complete biological material
-        aliases:
-        - recombinant part identification
         range: RecombinantPartIdentification
         required: false
         multivalued: false
@@ -1641,17 +1601,15 @@ classes:
         description: Reference of the permit identifiers for access to the genetic
           resource, applicable if the genetic resource falls under Access and Benefit-Sharing
           (ABS) regulations
-        aliases:
-        - access to physical genetic resource
+        title: access to physical genetic resource
         range: boolean
         required: true
         multivalued: false
   NaturalPartOrigin:
     description: Information on the origin of a natural part that composes the biological
       material
+    title: Natural part origin
     from_schema: https://evora-project.eu/
-    aliases:
-    - Natural part origin
     is_a: BiologicalPartOrigin
     slots:
     - countryOfCollection
@@ -1663,8 +1621,9 @@ classes:
       countryOfCollection:
         description: The geographical location where the sample was collected in situ.
           Used for Nagoya/CBD; equivalent to "country of origin".
+        title: country of collection
         aliases:
-        - country of collection
+        - country of origin
         close_mappings:
         - dct:spatial
         - dwc:country
@@ -1674,8 +1633,7 @@ classes:
       indigenousPoepleAndLocalCommunityOrigin:
         description: The specific IPLC area (Indigenous People and Local Communities)
           from which this sample/element was sampled, if relevant
-        aliases:
-        - indigenous people and local community origin
+        title: indigenous people and local community origin
         range: IPLCOrigin
         required: false
         multivalued: false
@@ -1683,15 +1641,13 @@ classes:
         description: The date when the sample was collected in situ. If unknown/private,
           use a proxy date such as "date received" and indicate this by setting to
           true the before date property
-        aliases:
-        - collection date
+        title: collection date
         range: datetime
         required: true
         multivalued: false
       beforeDate:
         description: Set to TRUE if a proxy date for the collection date is used
-        aliases:
-        - before date
+        title: before date
         ifabsent: 'false'
         range: boolean
         required: true
@@ -1700,16 +1656,14 @@ classes:
         description: Reference of the permit identifiers for access to the genetic
           resource, applicable if the genetic resource falls under Access and Benefit-Sharing
           (ABS) regulations
-        aliases:
-        - permit identifier for ABS
+        title: permit identifier for ABS
         required: false
         multivalued: false
   SyntheticPartOrigin:
     description: Information on the origin of a synthetic part that composes the biological
       material
+    title: Synthetic part origin
     from_schema: https://evora-project.eu/
-    aliases:
-    - Synthetic part origin
     is_a: BiologicalPartOrigin
     slots:
     - modificationsFromTheReferenceSequences
@@ -1718,23 +1672,20 @@ classes:
       modificationsFromTheReferenceSequences:
         description: Set to TRUE if there was is any modification made from the reference
           sequence
-        aliases:
-        - modifications from the reference sequence(s)
+        title: modifications from the reference sequence(s)
         range: boolean
         required: true
         multivalued: false
       descriptionOfModificationsMadeFromTheReferenceSequences:
         description: List the modifications mades from the reference sequence if any
-        aliases:
-        - description of modification(s) made from the reference sequence(s)
+        title: description of modification(s) made from the reference sequence(s)
         range: string
         required: false
         multivalued: false
   RecombinantPartIdentification:
     description: Identification of a recombinant part
+    title: Recombinant part identification
     from_schema: https://evora-project.eu/
-    aliases:
-    - Recombinant part identification
     slots:
     - partIdentification
     - sequence
@@ -1742,24 +1693,23 @@ classes:
       partIdentification:
         description: A short designation of this recombinant part of the related biological
           material
-        aliases:
-        - Part identification
+        title: Part identification
         range: string
         required: true
         multivalued: false
       sequence:
         description: The related sequence information from a sequence provider or
           in fasta format
-        aliases:
-        - sequence
+        title: sequence
         range: Sequence
         required: true
         multivalued: true
   Collection:
     description: Set of products and services with some common characteristics
+    title: Collection
     from_schema: https://evora-project.eu/
     aliases:
-    - Collection
+    - collection
     close_mappings:
     - wd:Q2668072
     is_a: Catalogue
@@ -1769,8 +1719,7 @@ classes:
     slot_usage:
       collectionItem:
         description: An item of the collection
-        aliases:
-        - collection item
+        title: collection item
         close_mappings:
         - dcat:resource
         range: ProductOrService
@@ -1778,8 +1727,7 @@ classes:
         multivalued: true
       collectionDataProvider:
         description: The provider of the data of the collection
-        aliases:
-        - collection data provider
+        title: collection data provider
         close_mappings:
         - dct:isReferencedBy
         range: DataProvider
@@ -1787,11 +1735,10 @@ classes:
         multivalued: false
   ProductOrService:
     description: A product or a service
+    title: Product or service
     comments:
     - part of  wd:Q2897903 (goods and services )
     from_schema: https://evora-project.eu/
-    aliases:
-    - Product or service
     is_a: NamedDataset
     abstract: true
     slots:
@@ -1824,8 +1771,7 @@ classes:
         description: The URL that permits to access to the product/service detailed
           description page on the provider's website and/or allows to place an order
           about it or at least describe the process to place an order/enquiry
-        aliases:
-        - access point URL
+        title: access point URL
         exact_mappings:
         - dcat:landingPage
         range: uri
@@ -1834,8 +1780,7 @@ classes:
       refSKU:
         description: The reference or the stock keeping unit of the service or item
           provided in the provider's catalogue
-        aliases:
-        - ref-SKU
+        title: ref-SKU
         exact_mappings:
         - dct:identifier
         range: string
@@ -1844,18 +1789,16 @@ classes:
       unitDefinition:
         description: A short description of what will be delivered by ordering one
           unit of this item
+        title: unit definition
         comments:
         - 'The description of what will be delivered to the end-user (e.g.: packaging,
           quantity...)'
-        aliases:
-        - unit definition
         range: string
         required: false
         multivalued: false
       category:
         description: The main category of the service or product
-        aliases:
-        - category
+        title: category
         exact_mappings:
         - dcat:theme
         range: ProductCategory
@@ -1864,8 +1807,7 @@ classes:
       additionalCategory:
         description: Any category apart from its main category in which this product
           or service can fit
-        aliases:
-        - additional category
+        title: additional category
         exact_mappings:
         - dcat:theme
         range: ProductCategory
@@ -1873,12 +1815,11 @@ classes:
         multivalued: true
       unitCost:
         description: The cost per access for one unit as defined by the unit definition
+        title: unit cost
         comments:
         - The cost per access may not be defined or be specific to a request, so it
           has to be a xsd:string instead of an xsd:float as initialy suggested to
           permit description of cost as conditional to what is requested
-        aliases:
-        - unit cost
         ifabsent: string(on request)
         range: string
         required: true
@@ -1886,26 +1827,25 @@ classes:
       qualityGrading:
         description: Information that permits to assess the quality level of what
           will be provided
-        aliases:
-        - quality grading
+        title: quality grading
         range: string
         required: false
         multivalued: false
       pathogenIdentification:
         description: The identification of the pathogen or group of pathogens (e.g;
           name, taxon identification, etc.) related to the current item.
+        title: pathogen identification
         comments:
         - 'The pathogen identification contains information about name and taxon but
           in some cases(e.g: FAIRSHARING) there may have no direct pathogen related
           but simply a taxonomic information .... the default value should be the
           root of virology: Viruses'
-        aliases:
-        - pathogen identification
         range: PathogenIdentification
         required: true
         multivalued: true
       relatedDOI:
         description: Any DOI that can be related
+        title: DOI
         aliases:
         - DOI
         close_mappings:
@@ -1917,6 +1857,7 @@ classes:
         description: The highest risk group related to this resource. The risk group
           of a biological agent guiding its initial handling in labs according to
           the risk group classification defined by the WHO laboratory biosafety manual
+        title: risk group
         aliases:
         - risk group
         close_mappings:
@@ -1929,39 +1870,36 @@ classes:
           the exposure to or release of potentially harmful biological agents. It
           thereby contributes to protecting people and the environment from biohazards
           while accessing this product or service
-        aliases:
-        - biosafety restrictions
+        title: biosafety restrictions
         range: string
         required: false
         multivalued: false
       canItBeUsedToProduceGMO:
         description: Indicates if the current service or product can be used to produce
           GMO
+        title: can it be used to produce GMO
         comments:
         - Set to TRUE if it can produce GMO
-        aliases:
-        - can it be used to produce GMO
         range: boolean
         required: false
         multivalued: false
       provider:
         description: A provider of this product or service, as a specific organization
-        aliases:
-        - provider
+        title: provider
         range: Provider
         required: true
         multivalued: false
       collection:
         description: The collection(s) to which belongs this item
+        title: collection
         aliases:
-        - collection
+        - catalog
         range: Collection
         required: true
         multivalued: true
       keywords:
         description: List of terms used to tag and categorize this Item
-        aliases:
-        - keywords
+        title: keywords
         exact_mappings:
         - dcat:keyword
         range: Keyword
@@ -1970,18 +1908,16 @@ classes:
       availability:
         description: The state or condition in which this item is accessible and ready
           for use or can be obtained
+        title: availability
         comments:
         - Possible availabilities may differ from a project to another
-        aliases:
-        - availability
         ifabsent: string(on request)
         range: string
         required: true
         multivalued: false
       complementaryDocument:
         description: Any complementary document that can be related to this Item
-        aliases:
-        - complementary document
+        title: complementary document
         range: Document
         required: false
         multivalued: true
@@ -1989,31 +1925,27 @@ classes:
         description: Expert advice or guidelines provided to ensure the optimal use,
           performance, and maintenance of what is provided, including best practices,
           troubleshooting tips, and procedural instructions
-        aliases:
-        - technical recommendation
+        title: technical recommendation
         range: string
         required: false
         multivalued: false
       productPicture:
         description: A picture that can represent the item
-        aliases:
-        - product picture
+        title: product picture
         range: Image
         required: false
         multivalued: true
       externalRelatedReference:
         description: A reference that permits to retrieve another related item from
           an external provider
-        aliases:
-        - external related reference
+        title: external related reference
         range: ExternalRelatedReference
         required: false
         multivalued: true
       certification:
         description: Any certification related to the current product or service;
           e.g., ISO certification
-        aliases:
-        - certification
+        title: certification
         close_mappings:
         - dct:conformsTo
         range: Certification
@@ -2021,22 +1953,19 @@ classes:
         multivalued: true
       internalReference:
         description: Any reference or indication to be used for local retrieval purpose
-        aliases:
-        - internal reference
+        title: internal reference
         range: string
         required: false
         multivalued: false
       note:
         description: An aditional information as a textual comment
-        aliases:
-        - note
+        title: note
         range: string
         required: false
         multivalued: false
       contactPoint:
         description: An information that allows someone to establish communication
-        aliases:
-        - contact point
+        title: contact point
         exact_mappings:
         - dcat:contactPoint
         range: ContactPoint
@@ -2044,9 +1973,10 @@ classes:
         multivalued: false
   Service:
     description: A service
+    title: Service
     from_schema: https://evora-project.eu/
     aliases:
-    - Service
+    - service
     close_mappings:
     - wd:Q7406919
     is_a: ProductOrService
@@ -2056,24 +1986,23 @@ classes:
     slot_usage:
       modelSpecies:
         description: The species of the infected organism in the experiment
-        aliases:
-        - model species
+        title: model species
         range: string
         required: false
         multivalued: false
       modelType:
         description: The specific name of the infected organism, including its modification
           if necessary
-        aliases:
-        - model type
+        title: model type
         range: string
         required: false
         multivalued: false
   Product:
     description: A product
+    title: Product
     from_schema: https://evora-project.eu/
     aliases:
-    - Product
+    - product
     close_mappings:
     - wd:Q2424752
     is_a: ProductOrService
@@ -2089,8 +2018,7 @@ classes:
       hasIATAClassification:
         description: The corresponding International Air Transport Association (IATA)'s
           category for this Product
-        aliases:
-        - IATA classification
+        title: IATA classification
         range: IATAClassification
         required: true
         multivalued: false
@@ -2098,8 +2026,7 @@ classes:
         description: 'Specification of the terms and parameters for transporting
 
           '
-        aliases:
-        - shipping conditions
+        title: shipping conditions
         range: string
         required: true
         multivalued: false
@@ -2107,12 +2034,11 @@ classes:
         description: A Material Safety Data Sheet (MSDS) or Safety Data Sheet (SDS)
           is a standardized document that contains crucial occupational safety and
           health information related to the product
+        title: material safety data sheet
         comments:
         - The MSD  is a document that provides detailed information about the properties,
           hazards, handling, storage, and emergency procedures related to the use
           of a chemical or substance
-        aliases:
-        - material safety data sheet
         range: MSDS
         required: false
         multivalued: false
@@ -2120,8 +2046,7 @@ classes:
         description: The individual or organization responsible for the original discovery,
           isolation, or creation of an item, providing information about the source
           or origin of the sample
-        aliases:
-        - originator
+        title: originator
         range: Originator
         required: false
         multivalued: false
@@ -2129,13 +2054,12 @@ classes:
         description: Specifies the conditions under which the product has to be stored
           to maintain stability and integrity, such as temperature, buffer, and other
           environmental factors.
+        title: storage conditions
         comments:
         - "e.g, could be a xsd:string in enumeration (\"Freeze Dried\", \"Liquid Nitrogen\"\
           , \"Viral Storage Medium -20C\", \"Viral Storage Medium -80C\", \"Living\
           \ plant material (>= +4\xB0C)\", \"Gas Phase\", \"Ethanol -20C\", \"Ethanol\
           \ -80C\", \"Dried\")"
-        aliases:
-        - storage conditions
         range: string
         required: true
         multivalued: false
@@ -2143,8 +2067,7 @@ classes:
         description: Indicates whether the biological material can be distributed
           without restriction to third parties, as indicated by the ABS permit, in
           case an ABS permit is required
-        aliases:
-        - third party distribution consent
+        title: third party distribution consent
         range: boolean
         required: false
         multivalued: false
@@ -2152,17 +2075,17 @@ classes:
         description: Specifies any limitations or conditions on the use of the biological
           material, including restrictions on research, commercial use, or distribution,
           considering any potential concerns about the related genetic material
-        aliases:
-        - usage restrictions
+        title: usage restrictions
         range: string
         required: false
         multivalued: false
   Antibody:
     description: Protein that can bind to certain types of foreign bodies, such as
       pathogens
+    title: Antibody
     from_schema: https://evora-project.eu/
     aliases:
-    - Antibody
+    - antibody
     close_mappings:
     - wd:Q79460
     is_a: Product
@@ -2176,46 +2099,42 @@ classes:
       productionSystem:
         description: The biological and technological methods and processes used to
           produce the antibody
-        aliases:
-        - production system
+        title: production system
         range: string
         required: false
         multivalued: false
       antibodyPurifiedByAffinity:
         description: Indicates whether or not if the antibody was purified by affinity
-        aliases:
-        - antibody purified by affinity
+        title: antibody purified by affinity
         range: boolean
         required: true
         multivalued: false
       specificityDocumented:
         description: Tell if the antibody specificity was documented
-        aliases:
-        - specificity documented
+        title: specificity documented
         range: boolean
         required: true
         multivalued: false
       targetedAntigen:
         description: Specific molecular structure or epitope recognized and bound
           by an antibody
-        aliases:
-        - targeted antigen
+        title: targeted antigen
         range: string
         required: true
         multivalued: false
       sequenceReference:
         description: A reference that permits to retreive the sequence information
           from a sequence provider
-        aliases:
-        - sequence reference
+        title: sequence reference
         range: SequenceReference
         required: false
         multivalued: true
   Hybridoma:
     description: An hybridoma that provides antibodies that can be related to a pathogen
+    title: Hybridoma
     from_schema: https://evora-project.eu/
     aliases:
-    - Hybridoma
+    - hybridoma
     close_mappings:
     - wd:Q27554370
     is_a: Antibody
@@ -2224,16 +2143,16 @@ classes:
     slot_usage:
       hybridomaDescription:
         description: The description of the hybridoma
-        aliases:
-        - hybridoma description
+        title: hybridoma description
         range: string
         required: true
         multivalued: false
   Protein:
     description: A protein as a derived product from a pathogen
+    title: Protein
     from_schema: https://evora-project.eu/
     aliases:
-    - Protein
+    - protein
     close_mappings:
     - wd:Q8054
     is_a: Product
@@ -2257,24 +2176,23 @@ classes:
         description: Information about the origin of the biological material, essential
           for access, utilization, and benefit-sharing of genetic resources in compliance
           with the Nagoya Protocol.
-        aliases:
-        - Biological Material origin
+        title: Biological Material origin
         range: BiologicalMaterialOrigin
         required: true
         multivalued: false
       sequence:
         description: The related sequence information from a sequence provider or
           in fasta format
-        aliases:
-        - sequence
+        title: sequence
         range: Sequence
         required: true
         multivalued: true
       relatedPDB:
         description: Identifier for 3D structural data as per the PDB (Protein Data
           Bank) database
+        title: related PDB
         aliases:
-        - related PDB
+        - PDB structure ID
         close_mappings:
         - wdp:P638
         range: PDBReference
@@ -2284,15 +2202,13 @@ classes:
         description: Distinctive attributes of a product that set it apart from other
           similar items e.g., Reference strain, Vaccinal strain, Antiviral resistant
           strain ...
-        aliases:
-        - special feature
+        title: special feature
         range: SpecialFeature
         required: false
         multivalued: true
       proteinTAG:
         description: Peptide sequences genetically grafted onto a recombinant protein
-        aliases:
-        - protein TAG
+        title: protein TAG
         range: ProteinTag
         required: false
         multivalued: true
@@ -2300,8 +2216,7 @@ classes:
         description: A distinct structural and functional unit within the protein,
           often capable of independent folding and stability, which contributes to
           the protein's overall function
-        aliases:
-        - domain
+        title: domain
         range: string
         required: false
         multivalued: true
@@ -2310,8 +2225,7 @@ classes:
           in a biological system. Possible values include "Soluble" (proteins that
           are dissolved in the cellular or extracellular fluid) and "Inclusion bodies"
           (aggregated proteins that are insoluble and form within the cell)
-        aliases:
-        - expressed as
+        title: expressed as
         range: string
         required: false
         multivalued: true
@@ -2320,8 +2234,7 @@ classes:
           values include "Denatured" (proteins are in an unfolded, inactive state)
           and "Refolded" (proteins have been processed to regain their functional,
           active conformation).
-        aliases:
-        - inclusion bodies type
+        title: inclusion bodies type
         range: string
         required: false
         multivalued: true
@@ -2330,8 +2243,7 @@ classes:
           from a specific gene. Possible values include "E. coli" (bacterial system),
           "Insect cells" (using baculovirus vectors), and "Mammalian cells" (mammalian
           cell lines).
-        aliases:
-        - expression system
+        title: expression system
         range: string
         required: false
         multivalued: true
@@ -2341,8 +2253,7 @@ classes:
           characterized" (the protein's functions have been identified and described)
           and "No functional characterization" (the protein's functions have not been
           identified or described).
-        aliases:
-        - functional characterization
+        title: functional characterization
         range: string
         required: false
         multivalued: true
@@ -2352,8 +2263,7 @@ classes:
           how the protein interacts within biological systems, its role in cellular
           processes, and any relevant technical details such as structure, activity,
           and interactions with other molecules.
-        aliases:
-        - functional/Technical description
+        title: functional/Technical description
         range: string
         required: false
         multivalued: true
@@ -2363,8 +2273,7 @@ classes:
           than 95% purity) and "Unpurified expression host lysate or partly purified
           protein" (the protein is either unpurified and present in the host cell
           lysate or only partially purified).
-        aliases:
-        - protein purification
+        title: protein purification
         range: string
         required: false
         multivalued: true
@@ -2373,8 +2282,7 @@ classes:
           after solubilization. Possible values include "Uncleaved Tag" (the tag is
           still attached to the protein), "Cleaved Tag" (the tag has been removed
           from the protein), and "No Tag" (the protein does not have a tag)
-        aliases:
-        - TAG status of the solubilized protein
+        title: TAG status of the solubilized protein
         range: string
         required: false
         multivalued: true
@@ -2384,16 +2292,16 @@ classes:
           and roles. Possible values include "Enzymatic" (the protein has been characterized
           for its enzyme activity) and "Antigenic" (the protein has been characterized
           for its ability to elicit an immune response).
-        aliases:
-        - type of functional Characterization
+        title: type of functional Characterization
         range: string
         required: false
         multivalued: true
   Nucleic Acid:
     description: Nucleic acid related to a pathogen. It can be extracted or synthetic
+    title: Nucleic Acid
     from_schema: https://evora-project.eu/
     aliases:
-    - Nucleic Acid
+    - nucleic acids
     close_mappings:
     - wd:Q123619
     is_a: Product
@@ -2417,62 +2325,54 @@ classes:
         description: Information about the origin of the biological material, essential
           for access, utilization, and benefit-sharing of genetic resources in compliance
           with the Nagoya Protocol
-        aliases:
-        - Biological Material origin
+        title: Biological Material origin
         range: BiologicalMaterialOrigin
         required: true
         multivalued: false
       hasGbFileOfTheConstruct:
         description: A GenBank formatted file that contains detailed sequence and
           annotation information of a nucleic acid construct
-        aliases:
-        - has .gb file of the construct
+        title: has .gb file of the construct
         range: Data
         required: false
         multivalued: true
       sequence:
         description: The related sequence information from a sequence provider or
           in fasta format
-        aliases:
-        - sequence
+        title: sequence
         range: Sequence
         required: true
         multivalued: true
       isItAClonedNucleicAcid:
         description: Indicates that the nucleic acid sequence has been inserted into
           a plasmid vector for propagation or expression in a host organism
-        aliases:
-        - is it a Cloned Nucleic Acid?
+        title: is it a Cloned Nucleic Acid?
         range: boolean
         required: true
         multivalued: false
       clonedIntoPlasmid:
         description: The plasmid into which the nucleic acid has been cloned
-        aliases:
-        - cloned into plasmid
+        title: cloned into plasmid
         range: ExpressionVector
         required: false
         multivalued: false
       pasmidSelection:
         description: Specific selectable markers in the plasmid, such as antibiotic
           resistance genes, used to identify and maintain cells that contain the plasmid
-        aliases:
-        - plasmid selection
+        title: plasmid selection
         range: PlasmidSelection
         required: false
         multivalued: true
       hasTAG:
         description: TAG sequence used for purposes such as purification, detection,
           or localization
-        aliases:
-        - TAG
+        title: TAG
         range: ProteinTag
         required: true
         multivalued: false
       regionEncompassedInThisProduct:
         description: The specific region encompassed in the product
-        aliases:
-        - region encompassed in this Product
+        title: region encompassed in this Product
         range: string
         required: true
         multivalued: false
@@ -2480,24 +2380,21 @@ classes:
         description: "Indicates if the current nucleic acid has No mutation compared\
           \ to the reference sequence if the value is set to false or if it\n contains\
           \ mutations (no frameshift, no unexpected STOP codon) if set to true"
-        aliases:
-        - mutation observed
+        title: mutation observed
         range: boolean
         required: true
         multivalued: false
       observedMutations:
         description: The specific mutations that have been identified and documented
           in the nucleic acid sequence
-        aliases:
-        - observed mutations
+        title: observed mutations
         range: string
         required: false
         multivalued: false
       identificationTechnique:
         description: The method used to identify the nucleic acid sequence or its
           associated constructs, such as PCR, sequencing, or hybridization
-        aliases:
-        - identification technique
+        title: identification technique
         range: string
         required: false
         multivalued: false
@@ -2507,10 +2404,9 @@ classes:
           "Partly sequenced" (only a portion of the nucleic acid sequence has been
           determined), and "Fully sequenced" (the entire nucleic acid sequence has
           been determined).
+        title: sequencing
         comments:
         - Cloned products have to be sequenced
-        aliases:
-        - sequencing
         range: string
         required: true
         multivalued: false
@@ -2519,26 +2415,23 @@ classes:
           (e.g., RT-qPCR, TCID50), representing the concentration or amount of unit
           present in the sample. The titer corresponds to the highest dilution factor
           that still yields a positive reading
-        aliases:
-        - titer
+        title: titer
         range: string
         required: false
         multivalued: false
       sequenceChecked:
         description: Tell whether or not the sequence of the product was controlled
           (compulsory for cloned products)
+        title: sequence checked
         comments:
         - Sequence check is mandatory for cloned products
-        aliases:
-        - sequence checked
         range: boolean
         required: true
         multivalued: false
   Detection Kit:
     description: A detection kit for specific pathogens
+    title: Detection Kit
     from_schema: https://evora-project.eu/
-    aliases:
-    - Detection Kit
     is_a: Product
     slots:
     - hasSOPFile
@@ -2548,16 +2441,14 @@ classes:
     slot_usage:
       hasSOPFile:
         description: The related standard operating procedure file
-        aliases:
-        - has SOP File
+        title: has SOP File
         range: File
         required: false
         multivalued: true
       specificityDocumented:
         description: Boolean value indicating whether the specificity of the detection
           kit has been formally documented.
-        aliases:
-        - specificity documented
+        title: specificity documented
         range: boolean
         required: true
         multivalued: false
@@ -2565,8 +2456,7 @@ classes:
         description: Details on the ability of a detection kit to correctly identify
           negative results, distinguishing between the target analyte and other substances
           without cross-reacting
-        aliases:
-        - specificity
+        title: specificity
         range: string
         required: false
         multivalued: false
@@ -2574,16 +2464,16 @@ classes:
         description: The specific area or sequence within the target analyte that
           the detection kit is designed to identify and interact with, ensuring accurate
           detection and analysis.
-        aliases:
-        - targeted region
+        title: targeted region
         range: string
         required: false
         multivalued: false
   Bundle:
     description: A group of products
+    title: Bundle
     from_schema: https://evora-project.eu/
     aliases:
-    - Bundle
+    - product bundle
     close_mappings:
     - wd:Q1020767
     is_a: Product
@@ -2594,8 +2484,7 @@ classes:
       productsOfTheBundle:
         description: Associates the bundle with the individual products it contains,
           specifying the components included within the bundle.
-        aliases:
-        - products of the bundle
+        title: products of the bundle
         range: Product
         required: true
         multivalued: true
@@ -2605,8 +2494,7 @@ classes:
           of the bundle''s products.
 
           '
-        aliases:
-        - complementary document
+        title: complementary document
         range: File
         required: false
         multivalued: true
@@ -2614,9 +2502,10 @@ classes:
     description: Biological entity that causes disease in its host, which is typically
       an infectious microorganism or agent, such as a virus, bacterium, protozoan,
       prion, viroid, or fungus
+    title: Pathogen
     from_schema: https://evora-project.eu/
     aliases:
-    - Pathogen
+    - pathogen
     close_mappings:
     - wd:Q170065
     is_a: Product
@@ -2645,16 +2534,14 @@ classes:
         description: Information about the origin of the biological material, essential
           for access, utilization, and benefit-sharing of genetic resources in compliance
           with the Nagoya Protocol.
-        aliases:
-        - Biological Material origin
+        title: Biological Material origin
         range: BiologicalMaterialOrigin
         required: true
         multivalued: false
       suspectedEpidemiologicalOrigin:
         description: The potential geographical or environmental source from which
           the pathogen is believed to have originated or been transmitted
-        aliases:
-        - suspected epidemiological origin
+        title: suspected epidemiological origin
         close_mappings:
         - dct:spatial
         range: GeographicalOrigin
@@ -2662,39 +2549,34 @@ classes:
         multivalued: true
       isolationHost:
         description: The host organism from which the pathogen was originally isolated
-        aliases:
-        - isolation host
+        title: isolation host
         range: IsolationHost
         required: false
         multivalued: true
       productionCellLine:
         description: The cell line used for the production or propagation of the pathogen,
           detailing the cellular environment employed in its cultivation and study
-        aliases:
-        - production cell line
+        title: production cell line
         range: ProductionCellLine
         required: false
         multivalued: true
       propagationHost:
         description: The host organism that propagates the pathogen
-        aliases:
-        - propagation host
+        title: propagation host
         range: PropagationHost
         required: false
         multivalued: true
       transmissionMethod:
         description: The method or route through which the pathogen is transmitted
           from one host to another, detailing the mechanisms of infection spread.
-        aliases:
-        - transmission method
+        title: transmission method
         range: TransmissionMethod
         required: false
         multivalued: true
       sequence:
         description: The related sequence information from a sequence provider or
           in fasta format
-        aliases:
-        - sequence
+        title: sequence
         range: Sequence
         required: true
         multivalued: true
@@ -2702,10 +2584,9 @@ classes:
         description: The ability of the pathogen to be cultivated or grown in laboratory
           conditions. Possible values are " Cultivable pathogen", "Uncultivable pathogen"
           or "Inactivated pathogen"
+        title: cultivability
         comments:
         - Might also be related to a product sub-category that helps filtering
-        aliases:
-        - cultivability
         ifabsent: string(Cultivable pathogen)
         range: string
         required: true
@@ -2713,8 +2594,7 @@ classes:
       clinicalInformation:
         description: Details about the clinical aspects of the pathogen, including
           symptoms, severity, treatment protocols, and patient outcomes
-        aliases:
-        - clinical information
+        title: clinical information
         range: string
         required: false
         multivalued: false
@@ -2722,8 +2602,7 @@ classes:
         description: The method or technique used to identify and confirm the presence
           of the pathogen, detailing the specific procedures and tools employed in
           the detection process
-        aliases:
-        - identification technique
+        title: identification technique
         range: string
         required: false
         multivalued: false
@@ -2731,8 +2610,7 @@ classes:
         description: Indicates the ability of the pathogen to establish an infection
           in a host organism, with possible values detailing whether infectivity has
           been tested, quantified, or cannot be tested due to non-cultivable nature.
-        aliases:
-        - infectivity
+        title: infectivity
         range: string
         required: true
         multivalued: false
@@ -2740,8 +2618,7 @@ classes:
         description: The description of the completed infectivity test, providing
           details on the methods, conditions, and results of the test used to assess
           the pathogen's ability to infect a host organism
-        aliases:
-        - infectivity Test
+        title: infectivity Test
         range: string
         required: false
         multivalued: false
@@ -2749,16 +2626,14 @@ classes:
         description: The specific method or procedure used to isolate the pathogen
           from a host organism or sample, detailing the techniques and tools employed
           in the isolation process
-        aliases:
-        - isolation technique
+        title: isolation technique
         range: string
         required: false
         multivalued: false
       isolationConditions:
         description: The environmental and procedural conditions under which the pathogen
           was isolated
-        aliases:
-        - isolation conditions
+        title: isolation conditions
         range: string
         required: false
         multivalued: false
@@ -2766,8 +2641,7 @@ classes:
         description: Indicate whether a Letter of Authority is required, confirming
           the necessity of formal authorization. The possible values are "N/A", "NOT
           Required", "Required for customers in the EU" or "Required"
-        aliases:
-        - letter of authority
+        title: letter of authority
         ifabsent: string(N/A)
         range: string
         required: true
@@ -2776,8 +2650,7 @@ classes:
         description: The number of times the pathogen was cultured through serial
           passage, a process used to increase the stock but which can also lead to
           the evolution of the original pathogen.
-        aliases:
-        - passage
+        title: passage
         range: string
         required: false
         multivalued: false
@@ -2786,8 +2659,7 @@ classes:
           with possible values including "Complete genome" for the entire genome,
           "Complete coding sequence" for all coding regions, and "Partial sequence"
           for only a portion of the genetic material
-        aliases:
-        - sequencing
+        title: sequencing
         range: string
         required: true
         multivalued: false
@@ -2796,8 +2668,7 @@ classes:
           (e.g., RT-qPCR, TCID50), representing the concentration or amount of unit
           present in the sample. The titer corresponds to the highest dilution factor
           that still yields a positive reading
-        aliases:
-        - titer
+        title: titer
         close_mappings:
         - wd:Q2166189
         range: string
@@ -2805,9 +2676,10 @@ classes:
         multivalued: false
   Virus:
     description: The virus as a biological material
+    title: Virus
     from_schema: https://evora-project.eu/
     aliases:
-    - Virus
+    - virus
     close_mappings:
     - wd:Q808
     is_a: Pathogen
@@ -2820,16 +2692,14 @@ classes:
         description: Identifies other viruses that may co-infect the host organism
           along with the primary virus, indicating the presence of multiple viral
           infections within the same host.
-        aliases:
-        - co-infecting viruses
+        title: co-infecting viruses
         range: VirusName
         required: false
         multivalued: true
       contaminationWithCoInfectingViruses:
         description: A boolean value indicating whether there is contamination with
           co-infecting viruses
-        aliases:
-        - contamination with co-infecting viruses
+        title: contamination with co-infecting viruses
         ifabsent: 'false'
         range: boolean
         required: true
@@ -2837,48 +2707,52 @@ classes:
       mycoplasmicContent:
         description: Indicates the presence of mycoplasma contamination within the
           sample
-        aliases:
-        - mycoplasmic content
+        title: mycoplasmic content
         range: boolean
         required: true
         multivalued: false
   Bacterium:
     description: The bacterium as a biological material
+    title: Bacterium
     from_schema: https://evora-project.eu/
     aliases:
-    - Bacterium
+    - bacteria
     close_mappings:
     - wd:Q10876
     is_a: Pathogen
   Fungus:
     description: The fungus as a biological material
+    title: Fungus
     from_schema: https://evora-project.eu/
     aliases:
-    - Fungus
+    - fungus
     close_mappings:
     - wd:Q764
     is_a: Pathogen
   Protozoan:
     description: The protozoan as a biological material
+    title: Protozoan
     from_schema: https://evora-project.eu/
     aliases:
-    - Protozoan
+    - protozoa
     close_mappings:
     - wd:Q101274
     is_a: Pathogen
   Viroid:
     description: The viroid as a biological material
+    title: Viroid
     from_schema: https://evora-project.eu/
     aliases:
-    - Viroid
+    - viroid
     close_mappings:
     - wd:Q209917
     is_a: Pathogen
   Prion:
     description: The prion as a biological material
+    title: Prion
     from_schema: https://evora-project.eu/
     aliases:
-    - Prion
+    - prion
     close_mappings:
     - wd:Q47051
     is_a: Pathogen
@@ -2886,9 +2760,10 @@ classes:
     description: A Material Safety Data Sheet (MSDS) or Safety Data Sheet (SDS) is
       a standardized document that contains crucial occupational safety and health
       information related to the product
+    title: MSDS
     from_schema: https://evora-project.eu/
     aliases:
-    - MSDS
+    - safety data sheet
     close_mappings:
     - wd:Q222067
     is_a: Dataset
@@ -2913,8 +2788,7 @@ classes:
         description: The designated contact point responsible for providing information
           related to the safety, handling, and regulatory compliance of the biological
           product.
-        aliases:
-        - MSDS contact
+        title: MSDS contact
         exact_mappings:
         - dcat:contactPoint
         range: ContactPoint
@@ -2924,8 +2798,7 @@ classes:
         description: Key characteristics of the product, such as physical state, appearance,
           solubility, pH, chemical composition, and molecular weight, essential for
           safe handling and storage
-        aliases:
-        - physical and chemical properties and information on ingredients
+        title: physical and chemical properties and information on ingredients
         range: string
         required: false
         multivalued: false
@@ -2934,8 +2807,7 @@ classes:
           the product, including its physical, chemical, and health hazards. This
           section provides information on toxicity, flammability, reactivity, and
           other relevant risks for safe use.
-        aliases:
-        - hazards identification
+        title: hazards identification
         range: string
         required: false
         multivalued: false
@@ -2943,8 +2815,7 @@ classes:
         description: Instructions on immediate actions to take in case of exposure
           to the product, including inhalation, ingestion, skin, or eye contact. This
           section outlines steps to minimize harm before medical help is available.
-        aliases:
-        - first aid measures
+        title: first aid measures
         range: string
         required: false
         multivalued: false
@@ -2952,8 +2823,7 @@ classes:
         description: Guidance on how to safely extinguish a fire involving the product,
           including suitable extinguishing agents, special protective equipment for
           firefighters, and any specific hazards from combustion.
-        aliases:
-        - fire fighting measures
+        title: fire fighting measures
         range: string
         required: false
         multivalued: false
@@ -2961,8 +2831,7 @@ classes:
         description: Guidelines for safely managing spills or leaks of the product,
           including containment, cleanup procedures, and precautions to prevent harm
           to people, property, and the environment.
-        aliases:
-        - accidental release measures
+        title: accidental release measures
         range: string
         required: false
         multivalued: false
@@ -2971,8 +2840,7 @@ classes:
           for the product, including precautions to prevent accidents, degradation,
           or contamination, as well as recommended temperature, humidity, and container
           requirements.
-        aliases:
-        - handling and storage
+        title: handling and storage
         range: string
         required: false
         multivalued: false
@@ -2981,8 +2849,7 @@ classes:
           recommended engineering controls (e.g., ventilation) and personal protective
           equipment (PPE) such as gloves, masks, goggles, and clothing to ensure safe
           handling.
-        aliases:
-        - exposure controls/personal protection
+        title: exposure controls/personal protection
         range: string
         required: false
         multivalued: false
@@ -2991,8 +2858,7 @@ classes:
           \ and its potential to react with other substances. This section includes\
           \ information on hazardous reactions, conditions to avoid, and incompatible\
           \ materials that could cause degradation or dangerous reactions."
-        aliases:
-        - stability and reactivity
+        title: stability and reactivity
         range: string
         required: false
         multivalued: false
@@ -3000,8 +2866,7 @@ classes:
         description: Details on the potential health effects of the product, including
           routes of exposure (inhalation, ingestion, skin, eye contact), acute and
           chronic toxicity and symptoms of exposure
-        aliases:
-        - toxicological information
+        title: toxicological information
         range: string
         required: false
         multivalued: false
@@ -3009,8 +2874,7 @@ classes:
         description: Details the potential environmental impact of the product, including
           its effects on ecosystems, persistence, degradability, bioaccumulation potential,
           and toxicity to aquatic and terrestrial organisms.
-        aliases:
-        - ecological information
+        title: ecological information
         range: string
         required: false
         multivalued: false
@@ -3018,8 +2882,7 @@ classes:
         description: Guidance on the safe and environmentally responsible disposal
           of the product, including recommended disposal methods, regulatory requirements,
           and precautions to avoid harm to people and the environment during disposal.
-        aliases:
-        - disposal considerations
+        title: disposal considerations
         range: string
         required: false
         multivalued: false
@@ -3028,8 +2891,7 @@ classes:
           the product, including classifications for road, air, sea, or rail transport,
           UN numbers, packaging requirements, and any special precautions to ensure
           safe transit.
-        aliases:
-        - transport information
+        title: transport information
         range: string
         required: false
         multivalued: false
@@ -3038,8 +2900,7 @@ classes:
           product, including local, national, or international requirements for its
           handling, use, transportation, and disposal, ensuring compliance with legal
           obligations.
-        aliases:
-        - regulatory information
+        title: regulatory information
         range: string
         required: false
         multivalued: false
@@ -3047,17 +2908,17 @@ classes:
         description: Provides any additional details or clarifications not covered
           in other sections of the MSDS, such as references, supporting documents,
           or specific instructions for safe handling and use of the product.
-        aliases:
-        - further information
+        title: further information
         range: string
         required: false
         multivalued: false
   File:
     description: Digital document or record stored in a specific format that contains
       data or information
+    title: File
     from_schema: https://evora-project.eu/
     aliases:
-    - File
+    - computer file
     exact_mappings:
     - dcat:mediaType
     close_mappings:
@@ -3072,68 +2933,70 @@ classes:
       contentURL:
         description: The web address or location where the file content is stored
           and can be accessed or downloaded.
-        aliases:
-        - content URL
+        title: content URL
         range: uri
         required: true
         multivalued: false
       format:
         description: The file type or format that indicates how the data within the
           file is structured
-        aliases:
-        - format
+        title: format
         range: string
         required: true
         multivalued: false
       license:
         description: The legal terms and conditions under which the file can be used,
           shared, or distributed, indicating any restrictions or permissions.
-        aliases:
-        - license
+        title: license
         range: License
         required: false
         multivalued: false
   Data:
     description: Subclass of File representing structured or unstructured datasets,
       often used for analysis, storage, or transfer of information
+    title: Data
     from_schema: https://evora-project.eu/
     aliases:
-    - Data
+    - data
     close_mappings:
     - wd:Q42848
     is_a: File
   Document:
     description: Subclass of File representing textual or written files such as reports,
       manuals, or forms
+    title: Document
     from_schema: https://evora-project.eu/
     aliases:
-    - Document
+    - document
     close_mappings:
     - wd:Q49848
     is_a: File
   Audio:
     description: Subclass of File representing sound recordings or audio tracks
+    title: Audio
     from_schema: https://evora-project.eu/
     aliases:
-    - Audio
+    - audio file
     close_mappings:
     - wd:Q26987229
     is_a: File
   Video:
     description: Subclass of File representing moving visual media, such as recordings,
       presentations, or movies
+    title: Video
     from_schema: https://evora-project.eu/
     aliases:
-    - Video
+    - video file
     close_mappings:
     - wd:Q98405806
     is_a: File
   Image:
     description: Subclass of File representing visual content such as pictures, diagrams,
       or illustrations
+    title: Image
     from_schema: https://evora-project.eu/
     aliases:
-    - Image
+    - image file
     close_mappings:
     - wd:Q860625
     is_a: File
@@ -3142,16 +3005,16 @@ classes:
     slot_usage:
       altText:
         description: An alternate text for the image, if the image cannot be displayed
-        aliases:
-        - alt text
+        title: alt text
         range: string
         required: false
         multivalued: false
   ContactPoint:
     description: Entity serving as focal point of information
+    title: Contact Point
     from_schema: https://evora-project.eu/
     aliases:
-    - Contact Point
+    - contact point
     close_mappings:
     - wd:Q30322502
     - vcard:Contact
@@ -3168,8 +3031,7 @@ classes:
     slot_usage:
       email:
         description: Email address
-        aliases:
-        - email
+        title: email
         close_mappings:
         - schema:email
         - vcard:email
@@ -3178,8 +3040,7 @@ classes:
         multivalued: false
       telephone:
         description: The telephone number
-        aliases:
-        - telephone
+        title: telephone
         close_mappings:
         - schema:telephone
         - vcard:telephone
@@ -3188,8 +3049,7 @@ classes:
         multivalued: false
       streetAddress:
         description: The building/apartment number and the street name
-        aliases:
-        - street address
+        title: street address
         close_mappings:
         - schema:streetAddress
         - vcard:hasStreetAddress
@@ -3199,8 +3059,7 @@ classes:
       addressLocality:
         description: The locality in which the street address is, and which is in
           the region. e.g, the city
-        aliases:
-        - locality/city
+        title: locality/city
         close_mappings:
         - schema:addressLocality
         - vcard:hasLocality
@@ -3211,8 +3070,7 @@ classes:
         description: The region in which the locality is, and which is in the country.
           For example, California or another appropriate first-level Administrative
           division
-        aliases:
-        - region
+        title: region
         close_mappings:
         - schema:addressRegion
         - vcard:hasRegion
@@ -3221,8 +3079,7 @@ classes:
         multivalued: false
       postalCode:
         description: The postal code
-        aliases:
-        - postal code
+        title: postal code
         close_mappings:
         - schema:postalCode
         - vcard:hasPostalCode
@@ -3231,8 +3088,7 @@ classes:
         multivalued: false
       addressCountry:
         description: The country as of  ISO 3166
-        aliases:
-        - address Country
+        title: address Country
         close_mappings:
         - schema:addressCountry
         - vcard:hasCountryName
@@ -3242,8 +3098,7 @@ classes:
       oRCIDiD:
         description: Unique persistent identifier for a person, provided by the Open
           Researcher and Contributor ID (ORCID) organisation
-        aliases:
-        - ORCID iD
+        title: ORCID iD
         exact_mappings:
         - IAO:0000708
         range: string
@@ -3252,9 +3107,10 @@ classes:
   License:
     description: The legal terms and conditions under which the subject can be used,
       shared, or distributed, indicating any restrictions or permissions
+    title: License
     from_schema: https://evora-project.eu/
     aliases:
-    - License
+    - license
     exact_mappings:
     - dct:RightsStatement
     close_mappings:
@@ -3269,8 +3125,7 @@ classes:
       resourceURL:
         description: The web address or location where the details or content is stored
           and can be accessed or downloaded.
-        aliases:
-        - resource URL
+        title: resource URL
         exact_mappings:
         - dct:license
         close_mappings:
@@ -3281,8 +3136,7 @@ classes:
       licensingOrAttribution:
         description: A text or html code that provides any related data sharing licence
           and/or attribution
-        aliases:
-        - licensing or attribution
+        title: licensing or attribution
         exact_mappings:
         - dct:rights
         close_mappings:
@@ -3292,17 +3146,17 @@ classes:
         multivalued: false
       logo:
         description: A path or URL to the related logo
-        aliases:
-        - logo
+        title: logo
         range: Image
         required: false
         multivalued: false
   Certification:
     description: Assurance given by an independent certification body that a product,
       service or system meets the requirements of a standard
+    title: Certification
     from_schema: https://evora-project.eu/
     aliases:
-    - Certification
+    - certification
     close_mappings:
     - wd:Q374814
     - schema:Certification
@@ -3314,8 +3168,7 @@ classes:
     slot_usage:
       logo:
         description: A path or URL to the related logo
-        aliases:
-        - logo
+        title: logo
         range: Image
         required: false
         multivalued: false
@@ -3323,20 +3176,18 @@ classes:
         description: The document(s) issued by an authority certifying the conformity
           of the subject to the applicable scheme, including, as the case may be,
           the documents attesting the equivalence to another certification scheme.
-        aliases:
-        - certification document
+        title: certification document
         range: Document
         required: false
         multivalued: true
       resourceURL:
         description: The web address or location where the details or content is stored
           and can be accessed or downloaded.
-        aliases:
-        - resource URL
+        title: resource URL
         close_mappings:
         - schema:url
         range: uri
         required: false
         multivalued: false
 source_file: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl
-generation_date: '2025-01-13T17:15:05'
+generation_date: '2025-01-15T11:13:22'

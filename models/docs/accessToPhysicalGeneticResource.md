@@ -1,4 +1,5 @@
 
+
 # Slot: accessToPhysicalGeneticResource
 
 
@@ -6,16 +7,72 @@
 URI: [EVORA:accessToPhysicalGeneticResource](https://evora-project.eu/accessToPhysicalGeneticResource)
 
 
-## Domain and Range
 
-None &#8594;  <sub>0..1</sub> [String](types/String.md)
-
-## Parents
+<!-- no inheritance hierarchy -->
 
 
-## Children
 
- *  [BiologicalPartOrigin➞accessToPhysicalGeneticResource](BiologicalPartOrigin_accessToPhysicalGeneticResource.md)
 
-## Used by
 
+## Applicable Classes
+
+| Name | Description | Modifies Slot |
+| --- | --- | --- |
+| [NaturalPartOrigin](NaturalPartOrigin.md) | Information on the origin of a natural part that composes the biological mate... |  no  |
+| [BiologicalPartOrigin](BiologicalPartOrigin.md) | Information on the origin of a unitary, cohesive part that is part of, or con... |  yes  |
+| [SyntheticPartOrigin](SyntheticPartOrigin.md) | Information on the origin of a synthetic part that composes the biological ma... |  no  |
+
+
+
+
+
+
+
+## Properties
+
+* Range: [String](String.md)
+
+
+
+
+
+## Identifier and Mapping Information
+
+
+
+
+
+
+
+### Schema Source
+
+
+* from schema: https://evora-project.eu/
+
+
+
+
+## Mappings
+
+| Mapping Type | Mapped Value |
+| ---  | ---  |
+| self | EVORA:accessToPhysicalGeneticResource |
+| native | EVORA:accessToPhysicalGeneticResource |
+
+
+
+
+## LinkML Source
+
+<details>
+```yaml
+name: accessToPhysicalGeneticResource
+from_schema: https://evora-project.eu/
+rank: 1000
+alias: accessToPhysicalGeneticResource
+domain_of:
+- BiologicalPartOrigin
+range: string
+
+```
+</details>

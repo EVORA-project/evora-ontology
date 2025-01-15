@@ -1,4 +1,5 @@
 
+
 # Slot: title
 
 
@@ -6,16 +7,70 @@
 URI: [EVORA:title](https://evora-project.eu/title)
 
 
-## Domain and Range
 
-None &#8594;  <sub>0..1</sub> [String](types/String.md)
-
-## Parents
+<!-- no inheritance hierarchy -->
 
 
-## Children
 
- *  [Publication➞title](Publication_title.md)
 
-## Used by
 
+## Applicable Classes
+
+| Name | Description | Modifies Slot |
+| --- | --- | --- |
+| [Publication](Publication.md) | A scientific publication |  yes  |
+
+
+
+
+
+
+
+## Properties
+
+* Range: [String](String.md)
+
+
+
+
+
+## Identifier and Mapping Information
+
+
+
+
+
+
+
+### Schema Source
+
+
+* from schema: https://evora-project.eu/
+
+
+
+
+## Mappings
+
+| Mapping Type | Mapped Value |
+| ---  | ---  |
+| self | EVORA:title |
+| native | EVORA:title |
+
+
+
+
+## LinkML Source
+
+<details>
+```yaml
+name: title
+from_schema: https://evora-project.eu/
+rank: 1000
+alias: title
+domain_of:
+- Publication
+range: string
+
+```
+</details>

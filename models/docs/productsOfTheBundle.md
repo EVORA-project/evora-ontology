@@ -1,4 +1,5 @@
 
+
 # Slot: productsOfTheBundle
 
 
@@ -6,16 +7,70 @@
 URI: [EVORA:productsOfTheBundle](https://evora-project.eu/productsOfTheBundle)
 
 
-## Domain and Range
 
-None &#8594;  <sub>0..1</sub> [String](types/String.md)
-
-## Parents
+<!-- no inheritance hierarchy -->
 
 
-## Children
 
- *  [Bundle➞productsOfTheBundle](Bundle_productsOfTheBundle.md)
 
-## Used by
 
+## Applicable Classes
+
+| Name | Description | Modifies Slot |
+| --- | --- | --- |
+| [Bundle](Bundle.md) | A group of products |  yes  |
+
+
+
+
+
+
+
+## Properties
+
+* Range: [String](String.md)
+
+
+
+
+
+## Identifier and Mapping Information
+
+
+
+
+
+
+
+### Schema Source
+
+
+* from schema: https://evora-project.eu/
+
+
+
+
+## Mappings
+
+| Mapping Type | Mapped Value |
+| ---  | ---  |
+| self | EVORA:productsOfTheBundle |
+| native | EVORA:productsOfTheBundle |
+
+
+
+
+## LinkML Source
+
+<details>
+```yaml
+name: productsOfTheBundle
+from_schema: https://evora-project.eu/
+rank: 1000
+alias: productsOfTheBundle
+domain_of:
+- Bundle
+range: string
+
+```
+</details>

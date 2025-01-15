@@ -1,69 +1,353 @@
 
-# Class: Term
 
-Word or phrase from a specialized area of knowledge
+# Class: Term (Term)
+
+
+_Word or phrase from a specialized area of knowledge_
+
+
+
+
+* __NOTE__: this is an abstract class and should not be instantiated directly
+
 
 URI: [EVORA:Term](https://evora-project.eu/Term)
 
 
-[![img](https://yuml.me/diagram/nofunky;dir:TB/class/[Vocabulary],[TransmissionMethod],[Vocabulary]<inVocabulary%201..1-++[Term&#124;weight:integer;name(i):string;description(i):string%20%3F],[Vocabulary]++-%20term%200..*>[Term],[Term]^-[TransmissionMethod],[Term]^-[TaxonomicRank],[Term]^-[Taxon],[Term]^-[SpecialFeature],[Term]^-[RiskGroup],[Term]^-[ProteinTag],[Term]^-[PropagationHost],[Term]^-[ProductionCellLine],[Term]^-[ProductCategory],[Term]^-[PlasmidSelection],[Term]^-[PDBReference],[Term]^-[Keyword],[Term]^-[Journal],[Term]^-[IsolationHost],[Term]^-[IATAClassification],[Term]^-[GeographicalOrigin],[Term]^-[ExpressionVector],[Term]^-[DOI],[Term]^-[Country],[Term]^-[CommonName],[Term]^-[AlternateName],[NamedDataset]^-[Term],[TaxonomicRank],[Taxon],[SpecialFeature],[RiskGroup],[ProteinTag],[PropagationHost],[ProductionCellLine],[ProductCategory],[PlasmidSelection],[PDBReference],[NamedDataset],[Keyword],[Journal],[IsolationHost],[IATAClassification],[GeographicalOrigin],[ExpressionVector],[DOI],[Country],[CommonName],[AlternateName])](https://yuml.me/diagram/nofunky;dir:TB/class/[Vocabulary],[TransmissionMethod],[Vocabulary]<inVocabulary%201..1-++[Term&#124;weight:integer;name(i):string;description(i):string%20%3F],[Vocabulary]++-%20term%200..*>[Term],[Term]^-[TransmissionMethod],[Term]^-[TaxonomicRank],[Term]^-[Taxon],[Term]^-[SpecialFeature],[Term]^-[RiskGroup],[Term]^-[ProteinTag],[Term]^-[PropagationHost],[Term]^-[ProductionCellLine],[Term]^-[ProductCategory],[Term]^-[PlasmidSelection],[Term]^-[PDBReference],[Term]^-[Keyword],[Term]^-[Journal],[Term]^-[IsolationHost],[Term]^-[IATAClassification],[Term]^-[GeographicalOrigin],[Term]^-[ExpressionVector],[Term]^-[DOI],[Term]^-[Country],[Term]^-[CommonName],[Term]^-[AlternateName],[NamedDataset]^-[Term],[TaxonomicRank],[Taxon],[SpecialFeature],[RiskGroup],[ProteinTag],[PropagationHost],[ProductionCellLine],[ProductCategory],[PlasmidSelection],[PDBReference],[NamedDataset],[Keyword],[Journal],[IsolationHost],[IATAClassification],[GeographicalOrigin],[ExpressionVector],[DOI],[Country],[CommonName],[AlternateName])
-
-## Parents
-
- *  is_a: [NamedDataset](NamedDataset.md) - A collection of data, that has a name and can have a description, published or curated by a single agent, and available for access
-
-## Children
-
- * [AlternateName](AlternateName.md) - List of alternate names for things
- * [CommonName](CommonName.md) - Vernacular name that is the name used in everyday language to refer to an organism or group of organisms. This name is typically easier to remember and pronounce compared to the scientific name
- * [Country](Country.md) - The country as of ISO3166
- * [DOI](DOI.md) - A unique string identifier assigned to a digital object, providing a permanent link for reliable citation and access.  The Digital Object Identifier (DOI) is a persistent identifier that is an ISO standard
- * [ExpressionVector](ExpressionVector.md) - A reference to an expression vector plasmid, typically embedding a resistance marker for inducible protein expression
- * [GeographicalOrigin](GeographicalOrigin.md) - The specific location or region where a physical item, originates or is naturally found
- * [IATAClassification](IATAClassification.md) - The corresponding International Air Transport Association (IATA)'s category for dangerous goods that are transported by air
- * [IsolationHost](IsolationHost.md) - Host organism from which the pathogen was isolated
- * [Journal](Journal.md) - Periodical journal publishing scientific research
- * [Keyword](Keyword.md) - A term or phrase used to tag and categorize content
- * [PDBReference](PDBReference.md) - Identifier for 3D structural data as per the PDB (Protein Data Bank) database
- * [PlasmidSelection](PlasmidSelection.md) - The process of identifying cells that have successfully incorporated a plasmid, typically using antibiotic resistance markers
- * [ProductCategory](ProductCategory.md) - A term used to classify a group of products that share common characteristics or functions, which helps in their organization
- * [ProductionCellLine](ProductionCellLine.md) - A population of cells that originates from a primary culture, adapted to grow and divide under laboratory conditions. Used in biotechnology to consistently produce biological substances
- * [PropagationHost](PropagationHost.md) - The organism used to grow and multiply the pathogen under controlled conditions
- * [ProteinTag](ProteinTag.md) - Peptide sequence genetically grafted onto a recombinant protein
- * [RiskGroup](RiskGroup.md) - Risk group classification guides initial handling of biological agents in labs but doesn't systematically equate to biosafety levels. Actual risk varies with the agent, procedures, and personnel competence
- * [SpecialFeature](SpecialFeature.md) - Distinctive attributes of a product that set it apart from other similar items e.g., Reference strain, Vaccinal strain, Antiviral resistant strain ...
- * [Taxon](Taxon.md) - Conceptual entity that groups one or more populations of an organism or organisms, as seen by taxonomists, to form a unit
- * [TaxonomicRank](TaxonomicRank.md) - The possible taxonomic ranks and their description
- * [TransmissionMethod](TransmissionMethod.md) - The process by which the pathogen spreads between hosts
-
-## Referenced by Class
-
- *  **[Vocabulary](Vocabulary.md)** *[Vocabulary➞term](Vocabulary_term.md)*  <sub>0..\*</sub>  **[Term](Term.md)**
-
-## Attributes
 
 
-### Own
 
- * [Term➞weight](Term_weight.md)  <sub>1..1</sub>
-     * Description: A numerical value indicating relative importance or priority, generally processed in ascending order. This weight helps prioritize content when organizing or processing data. Its value can be negative, with a default set to 0
-     * Range: [Integer](types/Integer.md)
- * [Term➞inVocabulary](Term_inVocabulary.md)  <sub>1..1</sub>
-     * Description: Terms belong to a specific vocabulary
-     * Range: [Vocabulary](Vocabulary.md)
 
-### Inherited from NamedDataset:
+```mermaid
+ classDiagram
+    class Term
+    click Term href "../Term"
+      NamedDataset <|-- Term
+        click NamedDataset href "../NamedDataset"
+      
 
- * [Nameable➞name](Nameable_name.md)  <sub>1..1</sub>
-     * Description: The label that allows humans to identify the current item
-     * Range: [String](types/String.md)
- * [Nameable➞description](Nameable_description.md)  <sub>0..1</sub>
-     * Description: A short explanation of the characteristics, features, or nature of the current item
-     * Range: [String](types/String.md)
+      Term <|-- CommonName
+        click CommonName href "../CommonName"
+      Term <|-- AlternateName
+        click AlternateName href "../AlternateName"
+      Term <|-- RiskGroup
+        click RiskGroup href "../RiskGroup"
+      Term <|-- DOI
+        click DOI href "../DOI"
+      Term <|-- Journal
+        click Journal href "../Journal"
+      Term <|-- PDBReference
+        click PDBReference href "../PDBReference"
+      Term <|-- Keyword
+        click Keyword href "../Keyword"
+      Term <|-- ProteinTag
+        click ProteinTag href "../ProteinTag"
+      Term <|-- SpecialFeature
+        click SpecialFeature href "../SpecialFeature"
+      Term <|-- ExpressionVector
+        click ExpressionVector href "../ExpressionVector"
+      Term <|-- PlasmidSelection
+        click PlasmidSelection href "../PlasmidSelection"
+      Term <|-- PropagationHost
+        click PropagationHost href "../PropagationHost"
+      Term <|-- TransmissionMethod
+        click TransmissionMethod href "../TransmissionMethod"
+      Term <|-- ProductionCellLine
+        click ProductionCellLine href "../ProductionCellLine"
+      Term <|-- ProductCategory
+        click ProductCategory href "../ProductCategory"
+      Term <|-- IsolationHost
+        click IsolationHost href "../IsolationHost"
+      Term <|-- GeographicalOrigin
+        click GeographicalOrigin href "../GeographicalOrigin"
+      Term <|-- Country
+        click Country href "../Country"
+      Term <|-- IATAClassification
+        click IATAClassification href "../IATAClassification"
+      Term <|-- TaxonomicRank
+        click TaxonomicRank href "../TaxonomicRank"
+      Term <|-- Taxon
+        click Taxon href "../Taxon"
+      
+      
+      Term : description
+        
+      Term : inVocabulary
+        
+          
+    
+    
+    Term --> "1" Vocabulary : inVocabulary
+    click Vocabulary href "../Vocabulary"
 
-## Other properties
+        
+      Term : name
+        
+      Term : weight
+        
+      
+```
 
-|  |  |  |
-| --- | --- | --- |
-| **Aliases:** | | Term |
-| **Close Mappings:** | | wd:Q1969448 |
+
+
+
+
+## Inheritance
+* [Nameable](Nameable.md)
+    * [NamedDataset](NamedDataset.md)
+        * **Term**
+            * [CommonName](CommonName.md)
+            * [AlternateName](AlternateName.md)
+            * [RiskGroup](RiskGroup.md)
+            * [DOI](DOI.md)
+            * [Journal](Journal.md)
+            * [PDBReference](PDBReference.md)
+            * [Keyword](Keyword.md)
+            * [ProteinTag](ProteinTag.md)
+            * [SpecialFeature](SpecialFeature.md)
+            * [ExpressionVector](ExpressionVector.md)
+            * [PlasmidSelection](PlasmidSelection.md)
+            * [PropagationHost](PropagationHost.md)
+            * [TransmissionMethod](TransmissionMethod.md)
+            * [ProductionCellLine](ProductionCellLine.md)
+            * [ProductCategory](ProductCategory.md)
+            * [IsolationHost](IsolationHost.md)
+            * [GeographicalOrigin](GeographicalOrigin.md)
+            * [Country](Country.md)
+            * [IATAClassification](IATAClassification.md)
+            * [TaxonomicRank](TaxonomicRank.md)
+            * [Taxon](Taxon.md)
+
+
+
+## Slots
+
+| Name | Cardinality and Range | Description | Inheritance |
+| ---  | --- | --- | --- |
+| [weight](weight.md) | 1 <br/> [Integer](Integer.md) | A numerical value indicating relative importance or priority, generally proce... | direct |
+| [inVocabulary](inVocabulary.md) | 1 <br/> [Vocabulary](Vocabulary.md) | Terms belong to a specific vocabulary | direct |
+| [name](name.md) | 1 <br/> [String](String.md) | The label that allows humans to identify the current item | [Nameable](Nameable.md) |
+| [description](description.md) | 0..1 <br/> [String](String.md) | A short explanation of the characteristics, features, or nature of the curren... | [Nameable](Nameable.md) |
+
+
+
+
+
+## Usages
+
+| used by | used in | type | used |
+| ---  | --- | --- | --- |
+| [Vocabulary](Vocabulary.md) | [term](term.md) | range | [Term](Term.md) |
+
+
+
+
+## Aliases
+
+
+* term
+
+
+
+## Identifier and Mapping Information
+
+
+
+
+
+
+
+### Schema Source
+
+
+* from schema: https://evora-project.eu/
+
+
+
+
+## Mappings
+
+| Mapping Type | Mapped Value |
+| ---  | ---  |
+| self | EVORA:Term |
+| native | EVORA:Term |
+| close | wd:Q1969448 |
+
+
+
+
+
+
+
+## LinkML Source
+
+<!-- TODO: investigate https://stackoverflow.com/questions/37606292/how-to-create-tabbed-code-blocks-in-mkdocs-or-sphinx -->
+
+### Direct
+
+<details>
+```yaml
+name: Term
+description: Word or phrase from a specialized area of knowledge
+title: Term
+from_schema: https://evora-project.eu/
+aliases:
+- term
+close_mappings:
+- wd:Q1969448
+is_a: NamedDataset
+abstract: true
+slots:
+- weight
+- inVocabulary
+slot_usage:
+  weight:
+    name: weight
+    description: A numerical value indicating relative importance or priority, generally
+      processed in ascending order. This weight helps prioritize content when organizing
+      or processing data. Its value can be negative, with a default set to 0
+    title: weight
+    close_mappings:
+    - adms:status
+    ifabsent: int(0)
+    range: integer
+    required: true
+    multivalued: false
+  inVocabulary:
+    name: inVocabulary
+    description: Terms belong to a specific vocabulary
+    title: in Vocabulary
+    aliases:
+    - catalog
+    close_mappings:
+    - wdp:P972
+    range: Vocabulary
+    required: true
+    multivalued: false
+
+```
+</details>
+
+### Induced
+
+<details>
+```yaml
+name: Term
+description: Word or phrase from a specialized area of knowledge
+title: Term
+from_schema: https://evora-project.eu/
+aliases:
+- term
+close_mappings:
+- wd:Q1969448
+is_a: NamedDataset
+abstract: true
+slot_usage:
+  weight:
+    name: weight
+    description: A numerical value indicating relative importance or priority, generally
+      processed in ascending order. This weight helps prioritize content when organizing
+      or processing data. Its value can be negative, with a default set to 0
+    title: weight
+    close_mappings:
+    - adms:status
+    ifabsent: int(0)
+    range: integer
+    required: true
+    multivalued: false
+  inVocabulary:
+    name: inVocabulary
+    description: Terms belong to a specific vocabulary
+    title: in Vocabulary
+    aliases:
+    - catalog
+    close_mappings:
+    - wdp:P972
+    range: Vocabulary
+    required: true
+    multivalued: false
+attributes:
+  weight:
+    name: weight
+    description: A numerical value indicating relative importance or priority, generally
+      processed in ascending order. This weight helps prioritize content when organizing
+      or processing data. Its value can be negative, with a default set to 0
+    title: weight
+    from_schema: https://evora-project.eu/
+    close_mappings:
+    - adms:status
+    rank: 1000
+    ifabsent: int(0)
+    alias: weight
+    owner: Term
+    domain_of:
+    - DataProvider
+    - Term
+    range: integer
+    required: true
+    multivalued: false
+  inVocabulary:
+    name: inVocabulary
+    description: Terms belong to a specific vocabulary
+    title: in Vocabulary
+    from_schema: https://evora-project.eu/
+    aliases:
+    - catalog
+    close_mappings:
+    - wdp:P972
+    rank: 1000
+    alias: inVocabulary
+    owner: Term
+    domain_of:
+    - Term
+    range: Vocabulary
+    required: true
+    multivalued: false
+  name:
+    name: name
+    description: The label that allows humans to identify the current item
+    title: name
+    comments:
+    - 'The title of the item should be as short and descriptive as possible. E.g.
+      for virus products it should basically be based on the following Pattern:
+
+      "Virus name", "virus host type", "collection year", "country of collection"
+      ex "suspected epidemiological origin", "genotype", "strain", "variant name or
+      specific feature"'
+    from_schema: https://evora-project.eu/
+    exact_mappings:
+    - dct:title
+    close_mappings:
+    - rdfs:label
+    rank: 1000
+    alias: name
+    owner: Term
+    domain_of:
+    - Nameable
+    range: string
+    required: true
+    multivalued: false
+  description:
+    name: description
+    description: A short explanation of the characteristics, features, or nature of
+      the current item
+    title: description
+    comments:
+    - 'Describe this item in few lines. This description will serve as a summary to
+      present the item.
+
+      '
+    from_schema: https://evora-project.eu/
+    exact_mappings:
+    - dct:description
+    rank: 1000
+    alias: description
+    owner: Term
+    domain_of:
+    - Nameable
+    range: string
+    required: false
+    multivalued: false
+
+```
+</details>

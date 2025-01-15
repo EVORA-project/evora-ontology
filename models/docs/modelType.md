@@ -1,4 +1,5 @@
 
+
 # Slot: modelType
 
 
@@ -6,16 +7,70 @@
 URI: [EVORA:modelType](https://evora-project.eu/modelType)
 
 
-## Domain and Range
 
-None &#8594;  <sub>0..1</sub> [String](types/String.md)
-
-## Parents
+<!-- no inheritance hierarchy -->
 
 
-## Children
 
- *  [Service➞modelType](Service_modelType.md)
 
-## Used by
 
+## Applicable Classes
+
+| Name | Description | Modifies Slot |
+| --- | --- | --- |
+| [Service](Service.md) | A service |  yes  |
+
+
+
+
+
+
+
+## Properties
+
+* Range: [String](String.md)
+
+
+
+
+
+## Identifier and Mapping Information
+
+
+
+
+
+
+
+### Schema Source
+
+
+* from schema: https://evora-project.eu/
+
+
+
+
+## Mappings
+
+| Mapping Type | Mapped Value |
+| ---  | ---  |
+| self | EVORA:modelType |
+| native | EVORA:modelType |
+
+
+
+
+## LinkML Source
+
+<details>
+```yaml
+name: modelType
+from_schema: https://evora-project.eu/
+rank: 1000
+alias: modelType
+domain_of:
+- Service
+range: string
+
+```
+</details>

@@ -1,36 +1,158 @@
 
-# Class: Dataset
 
-A collection of data, published or curated by a single agent, and available for access
+# Class: Dataset (Dataset)
+
+
+_A collection of data, published or curated by a single agent, and available for access_
+
+
+
+
+* __NOTE__: this is an abstract class and should not be instantiated directly
+
 
 URI: [EVORA:Dataset](https://evora-project.eu/Dataset)
 
 
-[![img](https://yuml.me/diagram/nofunky;dir:TB/class/[Version],[SequenceReference],[Sequence],[Publication],[PathogenIdentification],[MSDS],[ExternalRelatedReference],[Dataset]^-[Version],[Dataset]^-[SequenceReference],[Dataset]^-[Sequence],[Dataset]^-[Publication],[Dataset]^-[PathogenIdentification],[Dataset]^-[MSDS],[Dataset]^-[ExternalRelatedReference],[Dataset]^-[BiologicalPartOrigin],[Dataset]^-[BiologicalMaterialOrigin],[BiologicalPartOrigin],[BiologicalMaterialOrigin])](https://yuml.me/diagram/nofunky;dir:TB/class/[Version],[SequenceReference],[Sequence],[Publication],[PathogenIdentification],[MSDS],[ExternalRelatedReference],[Dataset]^-[Version],[Dataset]^-[SequenceReference],[Dataset]^-[Sequence],[Dataset]^-[Publication],[Dataset]^-[PathogenIdentification],[Dataset]^-[MSDS],[Dataset]^-[ExternalRelatedReference],[Dataset]^-[BiologicalPartOrigin],[Dataset]^-[BiologicalMaterialOrigin],[BiologicalPartOrigin],[BiologicalMaterialOrigin])
-
-## Children
-
- * [BiologicalMaterialOrigin](BiologicalMaterialOrigin.md) - Information about the origin of the biological material, compulsory for access, utilization, and benefit-sharing of genetic resources in compliance with the Nagoya Protocol
- * [BiologicalPartOrigin](BiologicalPartOrigin.md) - Information on the origin of a unitary, cohesive part that is part of, or constitutes the biological material. It can be multiple parts in case of a recombinant biological material
- * [ExternalRelatedReference](ExternalRelatedReference.md) - A reference that permits to retrieve an item from an external provider
- * [MSDS](MSDS.md) - A Material Safety Data Sheet (MSDS) or Safety Data Sheet (SDS) is a standardized document that contains crucial occupational safety and health information related to the product
- * [PathogenIdentification](PathogenIdentification.md) - A collection of distinguishing information that enables the differentiation of a pathogen from another
- * [Publication](Publication.md) - A scientific publication
- * [Sequence](Sequence.md) - A nucleic acid or protein sequence information
- * [SequenceReference](SequenceReference.md) - A reference that permits to retrieve the sequence information from a sequence provider
- * [Version](Version.md) - Numeric code assigned to identify a particular historical version of a work (e.g. software or technical standards)
-
-## Referenced by Class
 
 
-## Attributes
 
 
-## Other properties
+```mermaid
+ classDiagram
+    class Dataset
+    click Dataset href "../Dataset"
+      Dataset <|-- Version
+        click Version href "../Version"
+      Dataset <|-- PathogenIdentification
+        click PathogenIdentification href "../PathogenIdentification"
+      Dataset <|-- Publication
+        click Publication href "../Publication"
+      Dataset <|-- ExternalRelatedReference
+        click ExternalRelatedReference href "../ExternalRelatedReference"
+      Dataset <|-- Sequence
+        click Sequence href "../Sequence"
+      Dataset <|-- SequenceReference
+        click SequenceReference href "../SequenceReference"
+      Dataset <|-- BiologicalMaterialOrigin
+        click BiologicalMaterialOrigin href "../BiologicalMaterialOrigin"
+      Dataset <|-- BiologicalPartOrigin
+        click BiologicalPartOrigin href "../BiologicalPartOrigin"
+      Dataset <|-- MSDS
+        click MSDS href "../MSDS"
+      
+      
+```
 
-|  |  |  |
-| --- | --- | --- |
-| **Aliases:** | | Dataset |
-| **Exact Mappings:** | | dcat:Dataset |
-| **Close Mappings:** | | wd:Q1172284 |
-|  | | schema:DataCatalog |
+
+
+
+
+## Inheritance
+* **Dataset**
+    * [Version](Version.md)
+    * [PathogenIdentification](PathogenIdentification.md)
+    * [Publication](Publication.md)
+    * [ExternalRelatedReference](ExternalRelatedReference.md)
+    * [Sequence](Sequence.md)
+    * [SequenceReference](SequenceReference.md)
+    * [BiologicalMaterialOrigin](BiologicalMaterialOrigin.md)
+    * [BiologicalPartOrigin](BiologicalPartOrigin.md)
+    * [MSDS](MSDS.md)
+
+
+
+## Slots
+
+| Name | Cardinality and Range | Description | Inheritance |
+| ---  | --- | --- | --- |
+
+
+
+
+
+
+
+## Aliases
+
+
+* data set
+
+
+
+## Identifier and Mapping Information
+
+
+
+
+
+
+
+### Schema Source
+
+
+* from schema: https://evora-project.eu/
+
+
+
+
+## Mappings
+
+| Mapping Type | Mapped Value |
+| ---  | ---  |
+| self | EVORA:Dataset |
+| native | EVORA:Dataset |
+| exact | dcat:Dataset |
+| close | wd:Q1172284, schema:DataCatalog |
+
+
+
+
+
+
+
+## LinkML Source
+
+<!-- TODO: investigate https://stackoverflow.com/questions/37606292/how-to-create-tabbed-code-blocks-in-mkdocs-or-sphinx -->
+
+### Direct
+
+<details>
+```yaml
+name: Dataset
+description: A collection of data, published or curated by a single agent, and available
+  for access
+title: Dataset
+from_schema: https://evora-project.eu/
+aliases:
+- data set
+exact_mappings:
+- dcat:Dataset
+close_mappings:
+- wd:Q1172284
+- schema:DataCatalog
+abstract: true
+
+```
+</details>
+
+### Induced
+
+<details>
+```yaml
+name: Dataset
+description: A collection of data, published or curated by a single agent, and available
+  for access
+title: Dataset
+from_schema: https://evora-project.eu/
+aliases:
+- data set
+exact_mappings:
+- dcat:Dataset
+close_mappings:
+- wd:Q1172284
+- schema:DataCatalog
+abstract: true
+
+```
+</details>

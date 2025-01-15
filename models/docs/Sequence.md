@@ -1,39 +1,234 @@
 
-# Class: Sequence
 
-A nucleic acid or protein sequence information
+# Class: Sequence (Sequence)
+
+
+_A nucleic acid or protein sequence information_
+
+
+
+
 
 URI: [EVORA:Sequence](https://evora-project.eu/Sequence)
 
 
-[![img](https://yuml.me/diagram/nofunky;dir:TB/class/[SequenceReference],[SequenceReference]<sequenceReference%200..*-++[Sequence&#124;sequenceFASTA:string%20%3F],[NucleicAcid]++-%20sequence%201..*>[Sequence],[Pathogen]++-%20sequence%201..*>[Sequence],[Protein]++-%20sequence%201..*>[Sequence],[RecombinantPartIdentification]++-%20sequence%201..*>[Sequence],[Dataset]^-[Sequence],[RecombinantPartIdentification],[Protein],[Pathogen],[NucleicAcid],[Dataset])](https://yuml.me/diagram/nofunky;dir:TB/class/[SequenceReference],[SequenceReference]<sequenceReference%200..*-++[Sequence&#124;sequenceFASTA:string%20%3F],[NucleicAcid]++-%20sequence%201..*>[Sequence],[Pathogen]++-%20sequence%201..*>[Sequence],[Protein]++-%20sequence%201..*>[Sequence],[RecombinantPartIdentification]++-%20sequence%201..*>[Sequence],[Dataset]^-[Sequence],[RecombinantPartIdentification],[Protein],[Pathogen],[NucleicAcid],[Dataset])
-
-## Parents
-
- *  is_a: [Dataset](Dataset.md) - A collection of data, published or curated by a single agent, and available for access
-
-## Referenced by Class
-
- *  **[NucleicAcid](NucleicAcid.md)** *[Nucleic Acid➞sequence](Nucleic_Acid_sequence.md)*  <sub>1..\*</sub>  **[Sequence](Sequence.md)**
- *  **[Pathogen](Pathogen.md)** *[Pathogen➞sequence](Pathogen_sequence.md)*  <sub>1..\*</sub>  **[Sequence](Sequence.md)**
- *  **[Protein](Protein.md)** *[Protein➞sequence](Protein_sequence.md)*  <sub>1..\*</sub>  **[Sequence](Sequence.md)**
- *  **[RecombinantPartIdentification](RecombinantPartIdentification.md)** *[RecombinantPartIdentification➞sequence](RecombinantPartIdentification_sequence.md)*  <sub>1..\*</sub>  **[Sequence](Sequence.md)**
-
-## Attributes
 
 
-### Own
 
- * [Sequence➞sequenceReference](Sequence_sequenceReference.md)  <sub>0..\*</sub>
-     * Description: A reference that permits to retrieve the sequence information from a sequence provider
-     * Range: [SequenceReference](SequenceReference.md)
- * [Sequence➞sequenceFASTA](Sequence_sequenceFASTA.md)  <sub>0..1</sub>
-     * Description: In case no sequence reference exists in public repositories, the corresponding FASTA sequence is required
-     * Range: [String](types/String.md)
 
-## Other properties
+```mermaid
+ classDiagram
+    class Sequence
+    click Sequence href "../Sequence"
+      Dataset <|-- Sequence
+        click Dataset href "../Dataset"
+      
+      Sequence : sequenceFASTA
+        
+      Sequence : sequenceReference
+        
+          
+    
+    
+    Sequence --> "*" SequenceReference : sequenceReference
+    click SequenceReference href "../SequenceReference"
 
-|  |  |  |
-| --- | --- | --- |
-| **Aliases:** | | Sequence |
-| **Close Mappings:** | | wd:Q3511065 |
+        
+      
+```
+
+
+
+
+
+## Inheritance
+* [Dataset](Dataset.md)
+    * **Sequence**
+
+
+
+## Slots
+
+| Name | Cardinality and Range | Description | Inheritance |
+| ---  | --- | --- | --- |
+| [sequenceReference](sequenceReference.md) | * <br/> [SequenceReference](SequenceReference.md) | A reference that permits to retrieve the sequence information from a sequence... | direct |
+| [sequenceFASTA](sequenceFASTA.md) | 0..1 <br/> [String](String.md) | In case no sequence reference exists in public repositories, the correspondin... | direct |
+
+
+
+
+
+## Usages
+
+| used by | used in | type | used |
+| ---  | --- | --- | --- |
+| [RecombinantPartIdentification](RecombinantPartIdentification.md) | [sequence](sequence.md) | range | [Sequence](Sequence.md) |
+| [Protein](Protein.md) | [sequence](sequence.md) | range | [Sequence](Sequence.md) |
+| [NucleicAcid](NucleicAcid.md) | [sequence](sequence.md) | range | [Sequence](Sequence.md) |
+| [Pathogen](Pathogen.md) | [sequence](sequence.md) | range | [Sequence](Sequence.md) |
+| [Virus](Virus.md) | [sequence](sequence.md) | range | [Sequence](Sequence.md) |
+| [Bacterium](Bacterium.md) | [sequence](sequence.md) | range | [Sequence](Sequence.md) |
+| [Fungus](Fungus.md) | [sequence](sequence.md) | range | [Sequence](Sequence.md) |
+| [Protozoan](Protozoan.md) | [sequence](sequence.md) | range | [Sequence](Sequence.md) |
+| [Viroid](Viroid.md) | [sequence](sequence.md) | range | [Sequence](Sequence.md) |
+| [Prion](Prion.md) | [sequence](sequence.md) | range | [Sequence](Sequence.md) |
+
+
+
+
+## Aliases
+
+
+* biological sequence
+
+
+
+## Identifier and Mapping Information
+
+
+
+
+
+
+
+### Schema Source
+
+
+* from schema: https://evora-project.eu/
+
+
+
+
+## Mappings
+
+| Mapping Type | Mapped Value |
+| ---  | ---  |
+| self | EVORA:Sequence |
+| native | EVORA:Sequence |
+| close | wd:Q3511065 |
+
+
+
+
+
+
+
+## LinkML Source
+
+<!-- TODO: investigate https://stackoverflow.com/questions/37606292/how-to-create-tabbed-code-blocks-in-mkdocs-or-sphinx -->
+
+### Direct
+
+<details>
+```yaml
+name: Sequence
+description: A nucleic acid or protein sequence information
+title: Sequence
+from_schema: https://evora-project.eu/
+aliases:
+- biological sequence
+close_mappings:
+- wd:Q3511065
+is_a: Dataset
+slots:
+- sequenceReference
+- sequenceFASTA
+slot_usage:
+  sequenceReference:
+    name: sequenceReference
+    description: A reference that permits to retrieve the sequence information from
+      a sequence provider
+    title: sequence reference
+    range: SequenceReference
+    required: false
+    multivalued: true
+  sequenceFASTA:
+    name: sequenceFASTA
+    description: In case no sequence reference exists in public repositories, the
+      corresponding FASTA sequence is required
+    title: sequence FASTA
+    comments:
+    - In FASTA format the line before the nucleotide sequence, called the FASTA definition
+      line, must begin with a carat (">"), followed by a unique SeqID (sequence identifier).
+      In case the sequence is made of multiple parts several fasta sequences can be
+      provided
+    range: string
+    required: false
+    multivalued: false
+
+```
+</details>
+
+### Induced
+
+<details>
+```yaml
+name: Sequence
+description: A nucleic acid or protein sequence information
+title: Sequence
+from_schema: https://evora-project.eu/
+aliases:
+- biological sequence
+close_mappings:
+- wd:Q3511065
+is_a: Dataset
+slot_usage:
+  sequenceReference:
+    name: sequenceReference
+    description: A reference that permits to retrieve the sequence information from
+      a sequence provider
+    title: sequence reference
+    range: SequenceReference
+    required: false
+    multivalued: true
+  sequenceFASTA:
+    name: sequenceFASTA
+    description: In case no sequence reference exists in public repositories, the
+      corresponding FASTA sequence is required
+    title: sequence FASTA
+    comments:
+    - In FASTA format the line before the nucleotide sequence, called the FASTA definition
+      line, must begin with a carat (">"), followed by a unique SeqID (sequence identifier).
+      In case the sequence is made of multiple parts several fasta sequences can be
+      provided
+    range: string
+    required: false
+    multivalued: false
+attributes:
+  sequenceReference:
+    name: sequenceReference
+    description: A reference that permits to retrieve the sequence information from
+      a sequence provider
+    title: sequence reference
+    from_schema: https://evora-project.eu/
+    rank: 1000
+    alias: sequenceReference
+    owner: Sequence
+    domain_of:
+    - Sequence
+    - Antibody
+    range: SequenceReference
+    required: false
+    multivalued: true
+  sequenceFASTA:
+    name: sequenceFASTA
+    description: In case no sequence reference exists in public repositories, the
+      corresponding FASTA sequence is required
+    title: sequence FASTA
+    comments:
+    - In FASTA format the line before the nucleotide sequence, called the FASTA definition
+      line, must begin with a carat (">"), followed by a unique SeqID (sequence identifier).
+      In case the sequence is made of multiple parts several fasta sequences can be
+      provided
+    from_schema: https://evora-project.eu/
+    rank: 1000
+    alias: sequenceFASTA
+    owner: Sequence
+    domain_of:
+    - Sequence
+    range: string
+    required: false
+    multivalued: false
+
+```
+</details>

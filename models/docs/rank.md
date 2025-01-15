@@ -1,4 +1,5 @@
 
+
 # Slot: rank
 
 
@@ -6,17 +7,72 @@
 URI: [EVORA:rank](https://evora-project.eu/rank)
 
 
-## Domain and Range
 
-None &#8594;  <sub>0..1</sub> [String](types/String.md)
-
-## Parents
+<!-- no inheritance hierarchy -->
 
 
-## Children
 
- *  [Taxon➞rank](Taxon_rank.md)
- *  [Taxonomy➞rank](Taxonomy_rank.md)
 
-## Used by
 
+## Applicable Classes
+
+| Name | Description | Modifies Slot |
+| --- | --- | --- |
+| [Taxon](Taxon.md) | Conceptual entity that groups one or more populations of an organism or organ... |  yes  |
+| [Taxonomy](Taxonomy.md) | Science of naming, defining and classifying organisms |  yes  |
+
+
+
+
+
+
+
+## Properties
+
+* Range: [String](String.md)
+
+
+
+
+
+## Identifier and Mapping Information
+
+
+
+
+
+
+
+### Schema Source
+
+
+* from schema: https://evora-project.eu/
+
+
+
+
+## Mappings
+
+| Mapping Type | Mapped Value |
+| ---  | ---  |
+| self | EVORA:rank |
+| native | EVORA:rank |
+
+
+
+
+## LinkML Source
+
+<details>
+```yaml
+name: rank
+from_schema: https://evora-project.eu/
+rank: 1000
+alias: rank
+domain_of:
+- Taxonomy
+- Taxon
+range: string
+
+```
+</details>

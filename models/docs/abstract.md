@@ -1,4 +1,5 @@
 
+
 # Slot: abstract
 
 
@@ -6,16 +7,70 @@
 URI: [EVORA:abstract](https://evora-project.eu/abstract)
 
 
-## Domain and Range
 
-None &#8594;  <sub>0..1</sub> [String](types/String.md)
-
-## Parents
+<!-- no inheritance hierarchy -->
 
 
-## Children
 
- *  [Publication➞abstract](Publication_abstract.md)
 
-## Used by
 
+## Applicable Classes
+
+| Name | Description | Modifies Slot |
+| --- | --- | --- |
+| [Publication](Publication.md) | A scientific publication |  yes  |
+
+
+
+
+
+
+
+## Properties
+
+* Range: [String](String.md)
+
+
+
+
+
+## Identifier and Mapping Information
+
+
+
+
+
+
+
+### Schema Source
+
+
+* from schema: https://evora-project.eu/
+
+
+
+
+## Mappings
+
+| Mapping Type | Mapped Value |
+| ---  | ---  |
+| self | EVORA:abstract |
+| native | EVORA:abstract |
+
+
+
+
+## LinkML Source
+
+<details>
+```yaml
+name: abstract
+from_schema: https://evora-project.eu/
+rank: 1000
+alias: abstract
+domain_of:
+- Publication
+range: string
+
+```
+</details>

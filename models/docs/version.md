@@ -1,4 +1,5 @@
 
+
 # Slot: version
 
 
@@ -6,16 +7,70 @@
 URI: [EVORA:version](https://evora-project.eu/version)
 
 
-## Domain and Range
 
-None &#8594;  <sub>0..1</sub> [String](types/String.md)
-
-## Parents
+<!-- no inheritance hierarchy -->
 
 
-## Children
 
- *  [Taxonomy➞version](Taxonomy_version.md)
 
-## Used by
 
+## Applicable Classes
+
+| Name | Description | Modifies Slot |
+| --- | --- | --- |
+| [Taxonomy](Taxonomy.md) | Science of naming, defining and classifying organisms |  yes  |
+
+
+
+
+
+
+
+## Properties
+
+* Range: [String](String.md)
+
+
+
+
+
+## Identifier and Mapping Information
+
+
+
+
+
+
+
+### Schema Source
+
+
+* from schema: https://evora-project.eu/
+
+
+
+
+## Mappings
+
+| Mapping Type | Mapped Value |
+| ---  | ---  |
+| self | EVORA:version |
+| native | EVORA:version |
+
+
+
+
+## LinkML Source
+
+<details>
+```yaml
+name: version
+from_schema: https://evora-project.eu/
+rank: 1000
+alias: version
+domain_of:
+- Taxonomy
+range: string
+
+```
+</details>

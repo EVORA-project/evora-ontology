@@ -1,4 +1,5 @@
 
+
 # Slot: modelSpecies
 
 
@@ -6,16 +7,70 @@
 URI: [EVORA:modelSpecies](https://evora-project.eu/modelSpecies)
 
 
-## Domain and Range
 
-None &#8594;  <sub>0..1</sub> [String](types/String.md)
-
-## Parents
+<!-- no inheritance hierarchy -->
 
 
-## Children
 
- *  [Service➞modelSpecies](Service_modelSpecies.md)
 
-## Used by
 
+## Applicable Classes
+
+| Name | Description | Modifies Slot |
+| --- | --- | --- |
+| [Service](Service.md) | A service |  yes  |
+
+
+
+
+
+
+
+## Properties
+
+* Range: [String](String.md)
+
+
+
+
+
+## Identifier and Mapping Information
+
+
+
+
+
+
+
+### Schema Source
+
+
+* from schema: https://evora-project.eu/
+
+
+
+
+## Mappings
+
+| Mapping Type | Mapped Value |
+| ---  | ---  |
+| self | EVORA:modelSpecies |
+| native | EVORA:modelSpecies |
+
+
+
+
+## LinkML Source
+
+<details>
+```yaml
+name: modelSpecies
+from_schema: https://evora-project.eu/
+rank: 1000
+alias: modelSpecies
+domain_of:
+- Service
+range: string
+
+```
+</details>

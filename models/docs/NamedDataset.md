@@ -1,42 +1,197 @@
 
-# Class: NamedDataset
 
-A collection of data, that has a name and can have a description, published or curated by a single agent, and available for access
+# Class: Named Dataset (NamedDataset)
+
+
+_A collection of data, that has a name and can have a description, published or curated by a single agent, and available for access_
+
+
+
+
+* __NOTE__: this is an abstract class and should not be instantiated directly
+
 
 URI: [EVORA:NamedDataset](https://evora-project.eu/NamedDataset)
 
 
-[![img](https://yuml.me/diagram/nofunky;dir:TB/class/[Term],[ProductOrService],[NamedDataset&#124;name(i):string;description(i):string%20%3F]^-[Term],[NamedDataset]^-[ProductOrService],[Nameable]^-[NamedDataset],[Nameable])](https://yuml.me/diagram/nofunky;dir:TB/class/[Term],[ProductOrService],[NamedDataset&#124;name(i):string;description(i):string%20%3F]^-[Term],[NamedDataset]^-[ProductOrService],[Nameable]^-[NamedDataset],[Nameable])
-
-## Parents
-
- *  is_a: [Nameable](Nameable.md) - Any entity that has a name and can have a textual description
-
-## Children
-
- * [ProductOrService](ProductOrService.md) - A product or a service
- * [Term](Term.md) - Word or phrase from a specialized area of knowledge
-
-## Referenced by Class
 
 
-## Attributes
 
 
-### Inherited from Nameable:
+```mermaid
+ classDiagram
+    class NamedDataset
+    click NamedDataset href "../NamedDataset"
+      Nameable <|-- NamedDataset
+        click Nameable href "../Nameable"
+      
 
- * [Nameable➞name](Nameable_name.md)  <sub>1..1</sub>
-     * Description: The label that allows humans to identify the current item
-     * Range: [String](types/String.md)
- * [Nameable➞description](Nameable_description.md)  <sub>0..1</sub>
-     * Description: A short explanation of the characteristics, features, or nature of the current item
-     * Range: [String](types/String.md)
+      NamedDataset <|-- Term
+        click Term href "../Term"
+      NamedDataset <|-- ProductOrService
+        click ProductOrService href "../ProductOrService"
+      
+      
+      NamedDataset : description
+        
+      NamedDataset : name
+        
+      
+```
 
-## Other properties
 
-|  |  |  |
-| --- | --- | --- |
-| **Aliases:** | | Named Dataset |
-| **Exact Mappings:** | | dcat:Dataset |
-| **Close Mappings:** | | wd:Q1172284 |
-|  | | schema:DataCatalog |
+
+
+
+## Inheritance
+* [Nameable](Nameable.md)
+    * **NamedDataset**
+        * [Term](Term.md)
+        * [ProductOrService](ProductOrService.md)
+
+
+
+## Slots
+
+| Name | Cardinality and Range | Description | Inheritance |
+| ---  | --- | --- | --- |
+| [name](name.md) | 1 <br/> [String](String.md) | The label that allows humans to identify the current item | [Nameable](Nameable.md) |
+| [description](description.md) | 0..1 <br/> [String](String.md) | A short explanation of the characteristics, features, or nature of the curren... | [Nameable](Nameable.md) |
+
+
+
+
+
+
+
+## Aliases
+
+
+* data set
+
+
+
+## Identifier and Mapping Information
+
+
+
+
+
+
+
+### Schema Source
+
+
+* from schema: https://evora-project.eu/
+
+
+
+
+## Mappings
+
+| Mapping Type | Mapped Value |
+| ---  | ---  |
+| self | EVORA:NamedDataset |
+| native | EVORA:NamedDataset |
+| exact | dcat:Dataset |
+| close | wd:Q1172284, schema:DataCatalog |
+
+
+
+
+
+
+
+## LinkML Source
+
+<!-- TODO: investigate https://stackoverflow.com/questions/37606292/how-to-create-tabbed-code-blocks-in-mkdocs-or-sphinx -->
+
+### Direct
+
+<details>
+```yaml
+name: NamedDataset
+description: A collection of data, that has a name and can have a description, published
+  or curated by a single agent, and available for access
+title: Named Dataset
+from_schema: https://evora-project.eu/
+aliases:
+- data set
+exact_mappings:
+- dcat:Dataset
+close_mappings:
+- wd:Q1172284
+- schema:DataCatalog
+is_a: Nameable
+abstract: true
+
+```
+</details>
+
+### Induced
+
+<details>
+```yaml
+name: NamedDataset
+description: A collection of data, that has a name and can have a description, published
+  or curated by a single agent, and available for access
+title: Named Dataset
+from_schema: https://evora-project.eu/
+aliases:
+- data set
+exact_mappings:
+- dcat:Dataset
+close_mappings:
+- wd:Q1172284
+- schema:DataCatalog
+is_a: Nameable
+abstract: true
+attributes:
+  name:
+    name: name
+    description: The label that allows humans to identify the current item
+    title: name
+    comments:
+    - 'The title of the item should be as short and descriptive as possible. E.g.
+      for virus products it should basically be based on the following Pattern:
+
+      "Virus name", "virus host type", "collection year", "country of collection"
+      ex "suspected epidemiological origin", "genotype", "strain", "variant name or
+      specific feature"'
+    from_schema: https://evora-project.eu/
+    exact_mappings:
+    - dct:title
+    close_mappings:
+    - rdfs:label
+    rank: 1000
+    alias: name
+    owner: NamedDataset
+    domain_of:
+    - Nameable
+    range: string
+    required: true
+    multivalued: false
+  description:
+    name: description
+    description: A short explanation of the characteristics, features, or nature of
+      the current item
+    title: description
+    comments:
+    - 'Describe this item in few lines. This description will serve as a summary to
+      present the item.
+
+      '
+    from_schema: https://evora-project.eu/
+    exact_mappings:
+    - dct:description
+    rank: 1000
+    alias: description
+    owner: NamedDataset
+    domain_of:
+    - Nameable
+    range: string
+    required: false
+    multivalued: false
+
+```
+</details>

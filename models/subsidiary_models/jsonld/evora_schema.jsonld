@@ -8,7 +8,7 @@
     "https://orcid.org/0000-0002-2042-2839"
   ],
   "id": "https://evora-project.eu/",
-  "version": "1.0.7341",
+  "version": "1.0.7356",
   "imports": [
     "linkml:types"
   ],
@@ -2661,9 +2661,10 @@
       "name": "Version_ID",
       "definition_uri": "https://evora-project.eu/ID",
       "description": "The version identifier",
+      "title": "ID",
       "from_schema": "https://evora-project.eu/",
       "aliases": [
-        "ID"
+        "edition number"
       ],
       "close_mappings": [
         "http://www.wikidata.org/prop/P393",
@@ -2687,10 +2688,8 @@
       "name": "Version_versionOf",
       "definition_uri": "https://evora-project.eu/versionOf",
       "description": "Identifier of what the version qualifies",
+      "title": "version Of",
       "from_schema": "https://evora-project.eu/",
-      "aliases": [
-        "version Of"
-      ],
       "is_a": "versionOf",
       "domain": "Version",
       "slot_uri": "https://evora-project.eu/versionOf",
@@ -2709,13 +2708,11 @@
       "name": "Nameable_name",
       "definition_uri": "https://evora-project.eu/name",
       "description": "The label that allows humans to identify the current item",
+      "title": "name",
       "comments": [
         "The title of the item should be as short and descriptive as possible. E.g. for virus products it should basically be based on the following Pattern:\n\"Virus name\", \"virus host type\", \"collection year\", \"country of collection\" ex \"suspected epidemiological origin\", \"genotype\", \"strain\", \"variant name or specific feature\""
       ],
       "from_schema": "https://evora-project.eu/",
-      "aliases": [
-        "name"
-      ],
       "exact_mappings": [
         "http://purl.org/dc/terms/title"
       ],
@@ -2740,13 +2737,11 @@
       "name": "Nameable_description",
       "definition_uri": "https://evora-project.eu/description",
       "description": "A short explanation of the characteristics, features, or nature of the current item",
+      "title": "description",
       "comments": [
         "Describe this item in few lines. This description will serve as a summary to present the item.\n"
       ],
       "from_schema": "https://evora-project.eu/",
-      "aliases": [
-        "description"
-      ],
       "exact_mappings": [
         "http://purl.org/dc/terms/description"
       ],
@@ -2767,10 +2762,8 @@
       "name": "Taxonomy_taxon",
       "definition_uri": "https://evora-project.eu/taxon",
       "description": "Scientifically classified group or entity within the reference taxonomy",
+      "title": "taxon",
       "from_schema": "https://evora-project.eu/",
-      "aliases": [
-        "taxon"
-      ],
       "close_mappings": [
         "http://rs.tdwg.org/dwc/terms/Taxon"
       ],
@@ -2793,10 +2786,8 @@
       "name": "Taxonomy_taxonDataProvider",
       "definition_uri": "https://evora-project.eu/taxonDataProvider",
       "description": "The data provider for the taxons of the taxonomy",
+      "title": "taxon data provider",
       "from_schema": "https://evora-project.eu/",
-      "aliases": [
-        "taxon data provider"
-      ],
       "is_a": "taxonDataProvider",
       "domain": "Taxonomy",
       "slot_uri": "https://evora-project.eu/taxonDataProvider",
@@ -2815,10 +2806,8 @@
       "name": "Taxonomy_version",
       "definition_uri": "https://evora-project.eu/version",
       "description": "The version of this instance of entity",
+      "title": "version",
       "from_schema": "https://evora-project.eu/",
-      "aliases": [
-        "version"
-      ],
       "is_a": "version",
       "domain": "Taxonomy",
       "slot_uri": "https://evora-project.eu/version",
@@ -2838,10 +2827,8 @@
       "name": "Taxonomy_versionDataProvider",
       "definition_uri": "https://evora-project.eu/versionDataProvider",
       "description": "The data provider for the Version ID of this taxonomy",
+      "title": "version data provider",
       "from_schema": "https://evora-project.eu/",
-      "aliases": [
-        "version data provider"
-      ],
       "is_a": "versionDataProvider",
       "domain": "Taxonomy",
       "slot_uri": "https://evora-project.eu/versionDataProvider",
@@ -2861,10 +2848,8 @@
       "name": "Taxonomy_rank",
       "definition_uri": "https://evora-project.eu/rank",
       "description": "Relative level or position of the identified taxon in the taxonomy",
+      "title": "rank",
       "from_schema": "https://evora-project.eu/",
-      "aliases": [
-        "rank"
-      ],
       "is_a": "rank",
       "domain": "Taxonomy",
       "slot_uri": "https://evora-project.eu/rank",
@@ -2884,10 +2869,8 @@
       "name": "Taxonomy_rankDataProvider",
       "definition_uri": "https://evora-project.eu/rankDataProvider",
       "description": "The data provider for the description of the taxonomic ranks used in this taxonomy",
+      "title": "rank data provider",
       "from_schema": "https://evora-project.eu/",
-      "aliases": [
-        "rank data provider"
-      ],
       "is_a": "rankDataProvider",
       "domain": "Taxonomy",
       "slot_uri": "https://evora-project.eu/rankDataProvider",
@@ -2906,10 +2889,8 @@
       "name": "DataProvider_license",
       "definition_uri": "https://evora-project.eu/license",
       "description": "Information about terms and conditions under which the subject can be used, shared, or distributed, indicating any restrictions or permissions",
+      "title": "license",
       "from_schema": "https://evora-project.eu/",
-      "aliases": [
-        "license"
-      ],
       "exact_mappings": [
         "http://purl.org/dc/terms/license"
       ],
@@ -2931,10 +2912,8 @@
       "name": "DataProvider_loginRequestMethod",
       "definition_uri": "https://evora-project.eu/loginRequestMethod",
       "description": "The http request method used to acces the login request url",
+      "title": "login request method",
       "from_schema": "https://evora-project.eu/",
-      "aliases": [
-        "login request method"
-      ],
       "close_mappings": [
         "http://www.w3.org/ns/dcat#endpointDescription"
       ],
@@ -2956,9 +2935,10 @@
       "name": "DataProvider_loginURL",
       "definition_uri": "https://evora-project.eu/loginURL",
       "description": "The URL template that allows to log in if required",
+      "title": "login URL",
       "from_schema": "https://evora-project.eu/",
       "aliases": [
-        "login URL"
+        "formatter URL"
       ],
       "close_mappings": [
         "http://www.wikidata.org/prop/P1630",
@@ -2981,10 +2961,8 @@
       "name": "DataProvider_loginTokenName",
       "definition_uri": "https://evora-project.eu/loginTokenName",
       "description": "The name of the token, unique identifier of an interaction session, that will have to be reused as credential in the query",
+      "title": "login token name",
       "from_schema": "https://evora-project.eu/",
-      "aliases": [
-        "login token name"
-      ],
       "close_mappings": [
         "http://www.w3.org/ns/dcat#endpointDescription"
       ],
@@ -3005,9 +2983,10 @@
       "name": "DataProvider_queryURL",
       "definition_uri": "https://evora-project.eu/queryURL",
       "description": "The URL template that allows to get the content",
+      "title": "query URL",
       "from_schema": "https://evora-project.eu/",
       "aliases": [
-        "query URL"
+        "formatter URL"
       ],
       "exact_mappings": [
         "http://www.w3.org/ns/dcat#endpointURL"
@@ -3033,10 +3012,8 @@
       "name": "DataProvider_queryMethod",
       "definition_uri": "https://evora-project.eu/queryMethod",
       "description": "The http request method used to access the requested query url",
+      "title": "query method",
       "from_schema": "https://evora-project.eu/",
-      "aliases": [
-        "query method"
-      ],
       "close_mappings": [
         "http://www.w3.org/ns/dcat#endpointDescription"
       ],
@@ -3058,10 +3035,8 @@
       "name": "DataProvider_contentType",
       "definition_uri": "https://evora-project.eu/contentType",
       "description": "The content type of the response to the queries",
+      "title": "content type",
       "from_schema": "https://evora-project.eu/",
-      "aliases": [
-        "content type"
-      ],
       "close_mappings": [
         "http://purl.org/dc/terms/format"
       ],
@@ -3084,10 +3059,8 @@
       "name": "DataProvider_providedEntityType",
       "definition_uri": "https://evora-project.eu/providedEntityType",
       "description": "The identification of the entity type (Class) described by the response to the query",
+      "title": "provided entity type",
       "from_schema": "https://evora-project.eu/",
-      "aliases": [
-        "provided entity type"
-      ],
       "exact_mappings": [
         "http://www.w3.org/ns/dcat#servesDataset"
       ],
@@ -3109,13 +3082,11 @@
       "name": "DataProvider_weight",
       "definition_uri": "https://evora-project.eu/weight",
       "description": "A numerical value indicating relative importance or priority, generally processed in ascending order. This weight helps prioritize content when organizing or processing data. Its value can be negative, with a default set to 0",
+      "title": "weight",
       "comments": [
         "The lowest weighted Data providers are triggered first, this may be usefull to populate at first entities that are referenced by others (e.g. Version ahead of Rank ahead of Taxon)"
       ],
       "from_schema": "https://evora-project.eu/",
-      "aliases": [
-        "weight"
-      ],
       "close_mappings": [
         "http://www.w3.org/ns/adms#status"
       ],
@@ -3137,13 +3108,11 @@
       "name": "PathogenIdentification_taxon",
       "definition_uri": "https://evora-project.eu/taxon",
       "description": "Scientifically classified group or entity within the reference taxonomy",
+      "title": "taxon",
       "comments": [
         "The taxon of the highest rank known that can be used to classify a pathogen or group of pathogens (e.g viruses) in the reference taxonomy"
       ],
       "from_schema": "https://evora-project.eu/",
-      "aliases": [
-        "taxon"
-      ],
       "is_a": "taxon",
       "domain": "PathogenIdentification",
       "slot_uri": "https://evora-project.eu/taxon",
@@ -3163,10 +3132,8 @@
       "name": "PathogenIdentification_pathogenName",
       "definition_uri": "https://evora-project.eu/pathogenName",
       "description": "A pathogen common name or a name that describes a group of pathogens",
+      "title": "pathogen name",
       "from_schema": "https://evora-project.eu/",
-      "aliases": [
-        "pathogen name"
-      ],
       "is_a": "pathogenName",
       "domain": "PathogenIdentification",
       "slot_uri": "https://evora-project.eu/pathogenName",
@@ -3186,10 +3153,8 @@
       "name": "PathogenIdentification_pathogenType",
       "definition_uri": "https://evora-project.eu/pathogenType",
       "description": "Identification of the specific type of pathogen among the listed categories e.g. \"Virus\",\"Viroid\",\"Bacterium\"...",
+      "title": "pathogen type",
       "from_schema": "https://evora-project.eu/",
-      "aliases": [
-        "pathogen type"
-      ],
       "is_a": "pathogenType",
       "domain": "PathogenIdentification",
       "slot_uri": "https://evora-project.eu/pathogenType",
@@ -3208,10 +3173,8 @@
       "name": "PathogenIdentification_hostType",
       "definition_uri": "https://evora-project.eu/hostType",
       "description": "Indication of the possible host(s) for the identified pathogens among the listed main categories",
+      "title": "host type",
       "from_schema": "https://evora-project.eu/",
-      "aliases": [
-        "host type"
-      ],
       "is_a": "hostType",
       "domain": "PathogenIdentification",
       "slot_uri": "https://evora-project.eu/hostType",
@@ -3230,10 +3193,8 @@
       "name": "PathogenIdentification_subspecies",
       "definition_uri": "https://evora-project.eu/subspecies",
       "description": "The subspecies information differentiates closely related pathogens within a single species",
+      "title": "subspecies",
       "from_schema": "https://evora-project.eu/",
-      "aliases": [
-        "subspecies"
-      ],
       "is_a": "subspecies",
       "domain": "PathogenIdentification",
       "slot_uri": "https://evora-project.eu/subspecies",
@@ -3251,10 +3212,8 @@
       "name": "PathogenIdentification_strain",
       "definition_uri": "https://evora-project.eu/strain",
       "description": "Identifier given to a genetic variant within a single species",
+      "title": "strain",
       "from_schema": "https://evora-project.eu/",
-      "aliases": [
-        "strain"
-      ],
       "is_a": "strain",
       "domain": "PathogenIdentification",
       "slot_uri": "https://evora-project.eu/strain",
@@ -3272,10 +3231,8 @@
       "name": "PathogenIdentification_isolate",
       "definition_uri": "https://evora-project.eu/isolate",
       "description": "Identifier given to a pathogen that has been isolated from an infected host and propagated in a laboratory culture. The isolate information may include an internal reference code from the laboratory that took the sample or performed the isolation, as well as details about the specific conditions of isolation, such as the name of the town, hospital, and type of host",
+      "title": "isolate",
       "from_schema": "https://evora-project.eu/",
-      "aliases": [
-        "isolate"
-      ],
       "is_a": "isolate",
       "domain": "PathogenIdentification",
       "slot_uri": "https://evora-project.eu/isolate",
@@ -3293,10 +3250,8 @@
       "name": "PathogenIdentification_genotype",
       "definition_uri": "https://evora-project.eu/genotype",
       "description": "Genotype information that identifies organisms that cluster in phylogenetic trees, thus different clusters are distinct genotypes",
+      "title": "genotype",
       "from_schema": "https://evora-project.eu/",
-      "aliases": [
-        "genotype"
-      ],
       "is_a": "genotype",
       "domain": "PathogenIdentification",
       "slot_uri": "https://evora-project.eu/genotype",
@@ -3314,10 +3269,8 @@
       "name": "PathogenIdentification_serotype",
       "definition_uri": "https://evora-project.eu/serotype",
       "description": "Genetically related pathogens that group together based on serological relationships",
+      "title": "serotype",
       "from_schema": "https://evora-project.eu/",
-      "aliases": [
-        "serotype"
-      ],
       "is_a": "serotype",
       "domain": "PathogenIdentification",
       "slot_uri": "https://evora-project.eu/serotype",
@@ -3335,10 +3288,8 @@
       "name": "PathogenIdentification_variant",
       "definition_uri": "https://evora-project.eu/variant",
       "description": "An organism with one or more new mutations is referred to as a \u201cvariant\u201d of the original organism if not sufficiently different to be termed a distinct strain",
+      "title": "variant",
       "from_schema": "https://evora-project.eu/",
-      "aliases": [
-        "variant"
-      ],
       "is_a": "variant",
       "domain": "PathogenIdentification",
       "slot_uri": "https://evora-project.eu/variant",
@@ -3357,13 +3308,11 @@
       "name": "Publication_title",
       "definition_uri": "https://evora-project.eu/title",
       "description": "The descriptive word or phrase that identifies the current piece of work",
+      "title": "title",
       "comments": [
         "The title of the item should be as short and descriptive as possible. E.g. for virus products it should basically be based on the following Pattern:\n\"Virus name\", \"virus host type\", \"collection year\", \"country of collection\" ex \"suspected epidemiological origin\", \"genotype\", \"strain\", \"variant name or specific feature\""
       ],
       "from_schema": "https://evora-project.eu/",
-      "aliases": [
-        "title"
-      ],
       "exact_mappings": [
         "http://purl.org/dc/terms/title"
       ],
@@ -3385,10 +3334,8 @@
       "name": "Publication_authors",
       "definition_uri": "https://evora-project.eu/authors",
       "description": "The list of authors",
+      "title": "authors",
       "from_schema": "https://evora-project.eu/",
-      "aliases": [
-        "authors"
-      ],
       "is_a": "authors",
       "domain": "Publication",
       "slot_uri": "https://evora-project.eu/authors",
@@ -3407,10 +3354,8 @@
       "name": "Publication_abstract",
       "definition_uri": "https://evora-project.eu/abstract",
       "description": "Concise summary of the publication",
+      "title": "abstract",
       "from_schema": "https://evora-project.eu/",
-      "aliases": [
-        "abstract"
-      ],
       "is_a": "abstract",
       "domain": "Publication",
       "slot_uri": "https://evora-project.eu/abstract",
@@ -3429,10 +3374,8 @@
       "name": "Publication_relatedDOI",
       "definition_uri": "https://evora-project.eu/relatedDOI",
       "description": "Any Digital Object Identifier that can be related",
+      "title": "DOI",
       "from_schema": "https://evora-project.eu/",
-      "aliases": [
-        "DOI"
-      ],
       "is_a": "relatedDOI",
       "domain": "Publication",
       "slot_uri": "https://evora-project.eu/relatedDOI",
@@ -3452,10 +3395,8 @@
       "name": "Publication_journal",
       "definition_uri": "https://evora-project.eu/journal",
       "description": "The scientific journal in which the publication was published",
+      "title": "journal",
       "from_schema": "https://evora-project.eu/",
-      "aliases": [
-        "journal"
-      ],
       "is_a": "journal",
       "domain": "Publication",
       "slot_uri": "https://evora-project.eu/journal",
@@ -3474,10 +3415,8 @@
       "name": "Vocabulary_termDataProvider",
       "definition_uri": "https://evora-project.eu/termDataProvider",
       "description": "An external API or Endpoint that permits to retrieve the terms of this vocabulary",
+      "title": "term data provider",
       "from_schema": "https://evora-project.eu/",
-      "aliases": [
-        "term data provider"
-      ],
       "is_a": "termDataProvider",
       "domain": "Vocabulary",
       "slot_uri": "https://evora-project.eu/termDataProvider",
@@ -3496,10 +3435,8 @@
       "name": "Vocabulary_term",
       "definition_uri": "https://evora-project.eu/term",
       "description": "The terms related to this vocabulary",
+      "title": "term",
       "from_schema": "https://evora-project.eu/",
-      "aliases": [
-        "term"
-      ],
       "is_a": "term",
       "domain": "Vocabulary",
       "slot_uri": "https://evora-project.eu/term",
@@ -3519,10 +3456,8 @@
       "name": "Term_weight",
       "definition_uri": "https://evora-project.eu/weight",
       "description": "A numerical value indicating relative importance or priority, generally processed in ascending order. This weight helps prioritize content when organizing or processing data. Its value can be negative, with a default set to 0",
+      "title": "weight",
       "from_schema": "https://evora-project.eu/",
-      "aliases": [
-        "weight"
-      ],
       "close_mappings": [
         "http://www.w3.org/ns/adms#status"
       ],
@@ -3545,9 +3480,10 @@
       "name": "Term_inVocabulary",
       "definition_uri": "https://evora-project.eu/inVocabulary",
       "description": "Terms belong to a specific vocabulary",
+      "title": "in Vocabulary",
       "from_schema": "https://evora-project.eu/",
       "aliases": [
-        "in Vocabulary"
+        "catalog"
       ],
       "close_mappings": [
         "http://www.wikidata.org/prop/P972"
@@ -3571,12 +3507,13 @@
       "name": "CommonName_alternateName",
       "definition_uri": "https://evora-project.eu/alternateName",
       "description": "Any known alternate name related to this name",
+      "title": "alternate name",
       "comments": [
         "including previous names and former taxonomic terms, this information can also serve as keywords arround the pathogen name for search and as a bridge with other projects that are still using other naming systems or taxonomies e.g. the NCBI taxonomy"
       ],
       "from_schema": "https://evora-project.eu/",
       "aliases": [
-        "alternate name"
+        "alternative name"
       ],
       "close_mappings": [
         "http://www.wikidata.org/prop/P4970"
@@ -3600,9 +3537,10 @@
       "name": "CommonName_sourceOfInformation",
       "definition_uri": "https://evora-project.eu/sourceOfInformation",
       "description": "The name of the origin from which knowledge is obtained. This can include any entity that provides information",
+      "title": "source of information",
       "from_schema": "https://evora-project.eu/",
       "aliases": [
-        "source of information"
+        "stated in"
       ],
       "close_mappings": [
         "http://www.wikidata.org/prop/P248"
@@ -3625,9 +3563,10 @@
       "name": "AlternateName_alternateName",
       "definition_uri": "https://evora-project.eu/alternateName",
       "description": "Any known alternate name related to this name",
+      "title": "alternate name",
       "from_schema": "https://evora-project.eu/",
       "aliases": [
-        "alternate name"
+        "alternative name"
       ],
       "close_mappings": [
         "http://www.wikidata.org/prop/P4970"
@@ -3651,9 +3590,10 @@
       "name": "AlternateName_sourceOfInformation",
       "definition_uri": "https://evora-project.eu/sourceOfInformation",
       "description": "The name of the origin from which knowledge is obtained. This can include any entity that provides information",
+      "title": "source of information",
       "from_schema": "https://evora-project.eu/",
       "aliases": [
-        "source of information"
+        "stated in"
       ],
       "close_mappings": [
         "http://www.wikidata.org/prop/P248"
@@ -3676,10 +3616,8 @@
       "name": "ProductCategory_parentCategory",
       "definition_uri": "https://evora-project.eu/parentCategory",
       "description": "An overarching category that encompasses the current category within a hierarchical classification system. It serves as the top-level classification, organizing related subcategories under its umbrella to create a structured and logical order.",
+      "title": "parent category",
       "from_schema": "https://evora-project.eu/",
-      "aliases": [
-        "parent category"
-      ],
       "is_a": "parentCategory",
       "domain": "ProductCategory",
       "slot_uri": "https://evora-project.eu/parentCategory",
@@ -3698,10 +3636,8 @@
       "name": "Country_alpha2Code",
       "definition_uri": "https://evora-project.eu/alpha2Code",
       "description": "Two-letter country codes from ISO 3166-1 alpha-2",
+      "title": "alpha-2 code",
       "from_schema": "https://evora-project.eu/",
-      "aliases": [
-        "alpha-2 code"
-      ],
       "is_a": "alpha2Code",
       "domain": "Country",
       "slot_uri": "https://evora-project.eu/alpha2Code",
@@ -3720,10 +3656,8 @@
       "name": "TaxonomicRank_taxonomy",
       "definition_uri": "https://evora-project.eu/taxonomy",
       "description": "The taxonomy release(s) in which this entity exists",
+      "title": "taxonomy",
       "from_schema": "https://evora-project.eu/",
-      "aliases": [
-        "taxonomy"
-      ],
       "is_a": "taxonomy",
       "domain": "TaxonomicRank",
       "slot_uri": "https://evora-project.eu/taxonomy",
@@ -3743,10 +3677,8 @@
       "name": "Taxon_taxonomy",
       "definition_uri": "https://evora-project.eu/taxonomy",
       "description": "The taxonomy release(s) in which this entity exists",
+      "title": "taxonomy",
       "from_schema": "https://evora-project.eu/",
-      "aliases": [
-        "taxonomy"
-      ],
       "is_a": "taxonomy",
       "domain": "Taxon",
       "slot_uri": "https://evora-project.eu/taxonomy",
@@ -3766,10 +3698,8 @@
       "name": "Taxon_parentTaxon",
       "definition_uri": "https://evora-project.eu/parentTaxon",
       "description": "The parent taxon of the current taxon",
+      "title": "parent taxon",
       "from_schema": "https://evora-project.eu/",
-      "aliases": [
-        "parent taxon"
-      ],
       "close_mappings": [
         "http://rs.tdwg.org/dwc/terms/Taxon"
       ],
@@ -3792,10 +3722,8 @@
       "name": "Taxon_rank",
       "definition_uri": "https://evora-project.eu/rank",
       "description": "Relative level or position of the identified taxon in the taxonomy",
+      "title": "rank",
       "from_schema": "https://evora-project.eu/",
-      "aliases": [
-        "rank"
-      ],
       "exact_mappings": [
         "http://rs.tdwg.org/dwc/terms/taxonRank"
       ],
@@ -3818,10 +3746,8 @@
       "name": "Taxon_previouslyKnownAs",
       "definition_uri": "https://evora-project.eu/previouslyKnownAs",
       "description": "Any historic version of this taxon having a different name",
+      "title": "previously known as",
       "from_schema": "https://evora-project.eu/",
-      "aliases": [
-        "previously known as"
-      ],
       "close_mappings": [
         "http://rs.tdwg.org/dwc/terms/Taxon"
       ],
@@ -3844,13 +3770,11 @@
       "name": "Taxon_externalEquivalentTaxon",
       "definition_uri": "https://evora-project.eu/externalEquivalentTaxon",
       "description": "Any equivalent taxon in a different taxonomy if exists/known to serve as a bridge (e.g, ICTV towards NCBI)",
+      "title": "external equivalent taxon",
       "comments": [
         "Could serve as a bridge between ICTV and NCBI as several providers currently uses NCBI Taxonomy"
       ],
       "from_schema": "https://evora-project.eu/",
-      "aliases": [
-        "external equivalent taxon"
-      ],
       "close_mappings": [
         "http://rs.tdwg.org/dwc/terms/taxonID"
       ],
@@ -3873,10 +3797,8 @@
       "name": "Taxon_taxonomicID",
       "definition_uri": "https://evora-project.eu/taxonomicID",
       "description": "The taxonomic identifier as a persistent identifier accross releases",
+      "title": "taxonomic ID",
       "from_schema": "https://evora-project.eu/",
-      "aliases": [
-        "taxonomic ID"
-      ],
       "close_mappings": [
         "http://rs.tdwg.org/dwc/terms/taxonID"
       ],
@@ -3898,13 +3820,11 @@
       "name": "Taxon_taxonomicNodeID",
       "definition_uri": "https://evora-project.eu/taxonomicNodeID",
       "description": "The taxonomic_Node Identifier as an identifier specific the current taxon in the corresponding release/version of the taxonomy",
+      "title": "taxonomic node ID",
       "comments": [
         "NCBI does not have a taxon_node id, only a taxonomicID. Taxon_node id is Unique  in NCBI= Key of the taxon node !! Could be replaced by a composite key made of \"taxonomic ID\" + \"has version\" But can be referenced as it seems the \"taxonomic node_ID\" will be generated and provided by the ICTV"
       ],
       "from_schema": "https://evora-project.eu/",
-      "aliases": [
-        "taxonomic node ID"
-      ],
       "close_mappings": [
         "http://rs.tdwg.org/dwc/terms/taxonID"
       ],
@@ -3925,10 +3845,8 @@
       "name": "ExternalRelatedReference_reference",
       "definition_uri": "https://evora-project.eu/reference",
       "description": "The identifier reference of the connected external item",
+      "title": "reference",
       "from_schema": "https://evora-project.eu/",
-      "aliases": [
-        "reference"
-      ],
       "close_mappings": [
         "http://purl.org/dc/terms/identifier"
       ],
@@ -3950,13 +3868,11 @@
       "name": "ExternalRelatedReference_referenceLabel",
       "definition_uri": "https://evora-project.eu/referenceLabel",
       "description": "The label informing what this reference is about",
+      "title": "reference label",
       "comments": [
         "e.g., 'Infravec2 related product'"
       ],
       "from_schema": "https://evora-project.eu/",
-      "aliases": [
-        "reference label"
-      ],
       "close_mappings": [
         "http://purl.org/dc/terms/title"
       ],
@@ -3978,10 +3894,8 @@
       "name": "ExternalRelatedReference_referenceProviderPrefix",
       "definition_uri": "https://evora-project.eu/referenceProviderPrefix",
       "description": "The url prefix that once completed with the reference will lead to the linked external resource",
+      "title": "reference provider prefix",
       "from_schema": "https://evora-project.eu/",
-      "aliases": [
-        "reference provider prefix"
-      ],
       "close_mappings": [
         "http://www.w3.org/ns/dcat#landingPage"
       ],
@@ -4003,10 +3917,8 @@
       "name": "ExternalRelatedReference_referenceProviderName",
       "definition_uri": "https://evora-project.eu/referenceProviderName",
       "description": "The name for the reference provider",
+      "title": "reference provider name",
       "from_schema": "https://evora-project.eu/",
-      "aliases": [
-        "reference provider name"
-      ],
       "close_mappings": [
         "http://purl.org/dc/terms/publisher"
       ],
@@ -4028,10 +3940,8 @@
       "name": "Sequence_sequenceReference",
       "definition_uri": "https://evora-project.eu/sequenceReference",
       "description": "A reference that permits to retrieve the sequence information from a sequence provider",
+      "title": "sequence reference",
       "from_schema": "https://evora-project.eu/",
-      "aliases": [
-        "sequence reference"
-      ],
       "is_a": "sequenceReference",
       "domain": "Sequence",
       "slot_uri": "https://evora-project.eu/sequenceReference",
@@ -4051,13 +3961,11 @@
       "name": "Sequence_sequenceFASTA",
       "definition_uri": "https://evora-project.eu/sequenceFASTA",
       "description": "In case no sequence reference exists in public repositories, the corresponding FASTA sequence is required",
+      "title": "sequence FASTA",
       "comments": [
         "In FASTA format the line before the nucleotide sequence, called the FASTA definition line, must begin with a carat (\">\"), followed by a unique SeqID (sequence identifier). In case the sequence is made of multiple parts several fasta sequences can be provided"
       ],
       "from_schema": "https://evora-project.eu/",
-      "aliases": [
-        "sequence FASTA"
-      ],
       "is_a": "sequenceFASTA",
       "domain": "Sequence",
       "slot_uri": "https://evora-project.eu/sequenceFASTA",
@@ -4075,10 +3983,8 @@
       "name": "SequenceReference_accessionNumber",
       "definition_uri": "https://evora-project.eu/accessionNumber",
       "description": "The sequence ID that permits to retrieve the sequence information from the sequence provider",
+      "title": "accession number",
       "from_schema": "https://evora-project.eu/",
-      "aliases": [
-        "accession number"
-      ],
       "close_mappings": [
         "http://purl.org/dc/terms/identifier"
       ],
@@ -4100,10 +4006,8 @@
       "name": "SequenceReference_sequenceProvider",
       "definition_uri": "https://evora-project.eu/sequenceProvider",
       "description": "The name of the sequence provider within the list of accepted sequence providers",
+      "title": "sequence provider",
       "from_schema": "https://evora-project.eu/",
-      "aliases": [
-        "sequence provider"
-      ],
       "close_mappings": [
         "http://purl.org/dc/terms/publisher"
       ],
@@ -4125,10 +4029,8 @@
       "name": "PersonOrOrganization_homePage",
       "definition_uri": "https://evora-project.eu/homePage",
       "description": "Refers to the degree of purity achieved for a protein sample. Possible values include \">95%\" (the protein is highly purified, with more than 95% purity) and \"Unpurified expression host lysate or partly purified protein\" (the protein is either unpurified and present in the host cell lysate or only partially purified).",
+      "title": "home page",
       "from_schema": "https://evora-project.eu/",
-      "aliases": [
-        "home page"
-      ],
       "is_a": "homePage",
       "domain": "PersonOrOrganization",
       "slot_uri": "https://evora-project.eu/homePage",
@@ -4146,10 +4048,8 @@
       "name": "PersonOrOrganization_contactPoint",
       "definition_uri": "https://evora-project.eu/contactPoint",
       "description": "An information that allows someone to establish communication",
+      "title": "contact point",
       "from_schema": "https://evora-project.eu/",
-      "aliases": [
-        "contact point"
-      ],
       "exact_mappings": [
         "http://www.w3.org/ns/dcat#contactPoint"
       ],
@@ -4171,10 +4071,8 @@
       "name": "PersonOrOrganization_logo",
       "definition_uri": "https://evora-project.eu/logo",
       "description": "A path or URL to the related logo",
+      "title": "logo",
       "from_schema": "https://evora-project.eu/",
-      "aliases": [
-        "logo"
-      ],
       "is_a": "logo",
       "domain": "PersonOrOrganization",
       "slot_uri": "https://evora-project.eu/logo",
@@ -4193,10 +4091,8 @@
       "name": "Person_oRCIDiD",
       "definition_uri": "https://evora-project.eu/oRCIDiD",
       "description": "Unique persistent identifier for a person, provided by the Open Researcher and Contributor ID (ORCID) organisation",
+      "title": "ORCID iD",
       "from_schema": "https://evora-project.eu/",
-      "aliases": [
-        "ORCID iD"
-      ],
       "is_a": "oRCIDiD",
       "domain": "Person",
       "slot_uri": "https://evora-project.eu/oRCIDiD",
@@ -4214,10 +4110,8 @@
       "name": "Organization_alternateName",
       "definition_uri": "https://evora-project.eu/alternateName",
       "description": "An alternate name or acronym",
+      "title": "alternate name",
       "from_schema": "https://evora-project.eu/",
-      "aliases": [
-        "alternate name"
-      ],
       "close_mappings": [
         "http://rs.tdwg.org/dwc/terms/institutionCode"
       ],
@@ -4239,10 +4133,8 @@
       "name": "Organization_country",
       "definition_uri": "https://evora-project.eu/country",
       "description": "The country of the organization",
+      "title": "country",
       "from_schema": "https://evora-project.eu/",
-      "aliases": [
-        "country"
-      ],
       "is_a": "country",
       "domain": "Organization",
       "slot_uri": "https://evora-project.eu/country",
@@ -4261,10 +4153,8 @@
       "name": "Provider_memberOfRI",
       "definition_uri": "https://evora-project.eu/memberOfRI",
       "description": "The research infrastructure of which this organization is a member",
+      "title": "member of RI",
       "from_schema": "https://evora-project.eu/",
-      "aliases": [
-        "member of RI"
-      ],
       "is_a": "memberOfRI",
       "domain": "Provider",
       "slot_uri": "https://evora-project.eu/memberOfRI",
@@ -4284,10 +4174,8 @@
       "name": "BiologicalMaterialOrigin_recombinantMaterial",
       "definition_uri": "https://evora-project.eu/recombinantMaterial",
       "description": "Indicates if this biological material is a recombinant biological material.",
+      "title": "recombinant material",
       "from_schema": "https://evora-project.eu/",
-      "aliases": [
-        "recombinant material"
-      ],
       "is_a": "recombinantMaterial",
       "domain": "BiologicalMaterialOrigin",
       "slot_uri": "https://evora-project.eu/recombinantMaterial",
@@ -4307,13 +4195,11 @@
       "name": "BiologicalMaterialOrigin_biologicalSourceType",
       "definition_uri": "https://evora-project.eu/biologicalSourceType",
       "description": "Defines if the current biological material is natural and was collected or if it is a synthetic biological material. It makes sense that only recombinant biological materials can have a mixed material origin!",
+      "title": "biological source type",
       "comments": [
         "It makes sense that only recombinant biological materials can have a mixed material origin!"
       ],
       "from_schema": "https://evora-project.eu/",
-      "aliases": [
-        "biological source type"
-      ],
       "is_a": "biologicalSourceType",
       "domain": "BiologicalMaterialOrigin",
       "slot_uri": "https://evora-project.eu/biologicalSourceType",
@@ -4332,13 +4218,11 @@
       "name": "BiologicalMaterialOrigin_biologicalPartOrigin",
       "definition_uri": "https://evora-project.eu/biologicalPartOrigin",
       "description": "Details the origin of one or more unitary parts that make up the biological material. In the case of recombinant biological material, multiple parts may be involved.",
+      "title": "biological part origin",
       "comments": [
         "It can be multiple parts in case of a recombinant biological material."
       ],
       "from_schema": "https://evora-project.eu/",
-      "aliases": [
-        "biological part origin"
-      ],
       "is_a": "biologicalPartOrigin",
       "domain": "BiologicalMaterialOrigin",
       "slot_uri": "https://evora-project.eu/biologicalPartOrigin",
@@ -4359,13 +4243,11 @@
       "name": "BiologicalPartOrigin_recombinantPartIdentification",
       "definition_uri": "https://evora-project.eu/recombinantPartIdentification",
       "description": "Identification of a recombinant part",
+      "title": "recombinant part identification",
       "comments": [
         "Information not required if the current biological part constitutes the complete biological material"
       ],
       "from_schema": "https://evora-project.eu/",
-      "aliases": [
-        "recombinant part identification"
-      ],
       "is_a": "recombinantPartIdentification",
       "domain": "BiologicalPartOrigin",
       "slot_uri": "https://evora-project.eu/recombinantPartIdentification",
@@ -4384,10 +4266,8 @@
       "name": "BiologicalPartOrigin_accessToPhysicalGeneticResource",
       "definition_uri": "https://evora-project.eu/accessToPhysicalGeneticResource",
       "description": "Reference of the permit identifiers for access to the genetic resource, applicable if the genetic resource falls under Access and Benefit-Sharing (ABS) regulations",
+      "title": "access to physical genetic resource",
       "from_schema": "https://evora-project.eu/",
-      "aliases": [
-        "access to physical genetic resource"
-      ],
       "is_a": "accessToPhysicalGeneticResource",
       "domain": "BiologicalPartOrigin",
       "slot_uri": "https://evora-project.eu/accessToPhysicalGeneticResource",
@@ -4406,9 +4286,10 @@
       "name": "NaturalPartOrigin_countryOfCollection",
       "definition_uri": "https://evora-project.eu/countryOfCollection",
       "description": "The geographical location where the sample was collected in situ. Used for Nagoya/CBD; equivalent to \"country of origin\".",
+      "title": "country of collection",
       "from_schema": "https://evora-project.eu/",
       "aliases": [
-        "country of collection"
+        "country of origin"
       ],
       "close_mappings": [
         "http://purl.org/dc/terms/spatial",
@@ -4433,10 +4314,8 @@
       "name": "NaturalPartOrigin_indigenousPoepleAndLocalCommunityOrigin",
       "definition_uri": "https://evora-project.eu/indigenousPoepleAndLocalCommunityOrigin",
       "description": "The specific IPLC area (Indigenous People and Local Communities) from which this sample/element was sampled, if relevant",
+      "title": "indigenous people and local community origin",
       "from_schema": "https://evora-project.eu/",
-      "aliases": [
-        "indigenous people and local community origin"
-      ],
       "is_a": "indigenousPoepleAndLocalCommunityOrigin",
       "domain": "NaturalPartOrigin",
       "slot_uri": "https://evora-project.eu/indigenousPoepleAndLocalCommunityOrigin",
@@ -4455,10 +4334,8 @@
       "name": "NaturalPartOrigin_collectionDate",
       "definition_uri": "https://evora-project.eu/collectionDate",
       "description": "The date when the sample was collected in situ. If unknown/private, use a proxy date such as \"date received\" and indicate this by setting to true the before date property",
+      "title": "collection date",
       "from_schema": "https://evora-project.eu/",
-      "aliases": [
-        "collection date"
-      ],
       "is_a": "collectionDate",
       "domain": "NaturalPartOrigin",
       "slot_uri": "https://evora-project.eu/collectionDate",
@@ -4477,10 +4354,8 @@
       "name": "NaturalPartOrigin_beforeDate",
       "definition_uri": "https://evora-project.eu/beforeDate",
       "description": "Set to TRUE if a proxy date for the collection date is used",
+      "title": "before date",
       "from_schema": "https://evora-project.eu/",
-      "aliases": [
-        "before date"
-      ],
       "is_a": "beforeDate",
       "domain": "NaturalPartOrigin",
       "slot_uri": "https://evora-project.eu/beforeDate",
@@ -4500,10 +4375,8 @@
       "name": "NaturalPartOrigin_permitIdentifierForABS",
       "definition_uri": "https://evora-project.eu/permitIdentifierForABS",
       "description": "Reference of the permit identifiers for access to the genetic resource, applicable if the genetic resource falls under Access and Benefit-Sharing (ABS) regulations",
+      "title": "permit identifier for ABS",
       "from_schema": "https://evora-project.eu/",
-      "aliases": [
-        "permit identifier for ABS"
-      ],
       "is_a": "permitIdentifierForABS",
       "domain": "NaturalPartOrigin",
       "slot_uri": "https://evora-project.eu/permitIdentifierForABS",
@@ -4521,10 +4394,8 @@
       "name": "SyntheticPartOrigin_modificationsFromTheReferenceSequences",
       "definition_uri": "https://evora-project.eu/modificationsFromTheReferenceSequences",
       "description": "Set to TRUE if there was is any modification made from the reference sequence",
+      "title": "modifications from the reference sequence(s)",
       "from_schema": "https://evora-project.eu/",
-      "aliases": [
-        "modifications from the reference sequence(s)"
-      ],
       "is_a": "modificationsFromTheReferenceSequences",
       "domain": "SyntheticPartOrigin",
       "slot_uri": "https://evora-project.eu/modificationsFromTheReferenceSequences",
@@ -4543,10 +4414,8 @@
       "name": "SyntheticPartOrigin_descriptionOfModificationsMadeFromTheReferenceSequences",
       "definition_uri": "https://evora-project.eu/descriptionOfModificationsMadeFromTheReferenceSequences",
       "description": "List the modifications mades from the reference sequence if any",
+      "title": "description of modification(s) made from the reference sequence(s)",
       "from_schema": "https://evora-project.eu/",
-      "aliases": [
-        "description of modification(s) made from the reference sequence(s)"
-      ],
       "is_a": "descriptionOfModificationsMadeFromTheReferenceSequences",
       "domain": "SyntheticPartOrigin",
       "slot_uri": "https://evora-project.eu/descriptionOfModificationsMadeFromTheReferenceSequences",
@@ -4564,10 +4433,8 @@
       "name": "RecombinantPartIdentification_partIdentification",
       "definition_uri": "https://evora-project.eu/partIdentification",
       "description": "A short designation of this recombinant part of the related biological material",
+      "title": "Part identification",
       "from_schema": "https://evora-project.eu/",
-      "aliases": [
-        "Part identification"
-      ],
       "is_a": "partIdentification",
       "domain": "RecombinantPartIdentification",
       "slot_uri": "https://evora-project.eu/partIdentification",
@@ -4586,10 +4453,8 @@
       "name": "RecombinantPartIdentification_sequence",
       "definition_uri": "https://evora-project.eu/sequence",
       "description": "The related sequence information from a sequence provider or in fasta format",
+      "title": "sequence",
       "from_schema": "https://evora-project.eu/",
-      "aliases": [
-        "sequence"
-      ],
       "is_a": "sequence",
       "domain": "RecombinantPartIdentification",
       "slot_uri": "https://evora-project.eu/sequence",
@@ -4610,10 +4475,8 @@
       "name": "Collection_collectionItem",
       "definition_uri": "https://evora-project.eu/collectionItem",
       "description": "An item of the collection",
+      "title": "collection item",
       "from_schema": "https://evora-project.eu/",
-      "aliases": [
-        "collection item"
-      ],
       "close_mappings": [
         "http://www.w3.org/ns/dcat#resource"
       ],
@@ -4636,10 +4499,8 @@
       "name": "Collection_collectionDataProvider",
       "definition_uri": "https://evora-project.eu/collectionDataProvider",
       "description": "The provider of the data of the collection",
+      "title": "collection data provider",
       "from_schema": "https://evora-project.eu/",
-      "aliases": [
-        "collection data provider"
-      ],
       "close_mappings": [
         "http://purl.org/dc/terms/isReferencedBy"
       ],
@@ -4661,10 +4522,8 @@
       "name": "ProductOrService_accessPointURL",
       "definition_uri": "https://evora-project.eu/accessPointURL",
       "description": "The URL that permits to access to the product/service detailed description page on the provider's website and/or allows to place an order about it or at least describe the process to place an order/enquiry",
+      "title": "access point URL",
       "from_schema": "https://evora-project.eu/",
-      "aliases": [
-        "access point URL"
-      ],
       "exact_mappings": [
         "http://www.w3.org/ns/dcat#landingPage"
       ],
@@ -4686,10 +4545,8 @@
       "name": "ProductOrService_refSKU",
       "definition_uri": "https://evora-project.eu/refSKU",
       "description": "The reference or the stock keeping unit of the service or item provided in the provider's catalogue",
+      "title": "ref-SKU",
       "from_schema": "https://evora-project.eu/",
-      "aliases": [
-        "ref-SKU"
-      ],
       "exact_mappings": [
         "http://purl.org/dc/terms/identifier"
       ],
@@ -4711,13 +4568,11 @@
       "name": "ProductOrService_unitDefinition",
       "definition_uri": "https://evora-project.eu/unitDefinition",
       "description": "A short description of what will be delivered by ordering one unit of this item",
+      "title": "unit definition",
       "comments": [
         "The description of what will be delivered to the end-user (e.g.: packaging, quantity...)"
       ],
       "from_schema": "https://evora-project.eu/",
-      "aliases": [
-        "unit definition"
-      ],
       "is_a": "unitDefinition",
       "domain": "ProductOrService",
       "slot_uri": "https://evora-project.eu/unitDefinition",
@@ -4735,10 +4590,8 @@
       "name": "ProductOrService_category",
       "definition_uri": "https://evora-project.eu/category",
       "description": "The main category of the service or product",
+      "title": "category",
       "from_schema": "https://evora-project.eu/",
-      "aliases": [
-        "category"
-      ],
       "exact_mappings": [
         "http://www.w3.org/ns/dcat#theme"
       ],
@@ -4761,10 +4614,8 @@
       "name": "ProductOrService_additionalCategory",
       "definition_uri": "https://evora-project.eu/additionalCategory",
       "description": "Any category apart from its main category in which this product or service can fit",
+      "title": "additional category",
       "from_schema": "https://evora-project.eu/",
-      "aliases": [
-        "additional category"
-      ],
       "exact_mappings": [
         "http://www.w3.org/ns/dcat#theme"
       ],
@@ -4787,13 +4638,11 @@
       "name": "ProductOrService_unitCost",
       "definition_uri": "https://evora-project.eu/unitCost",
       "description": "The cost per access for one unit as defined by the unit definition",
+      "title": "unit cost",
       "comments": [
         "The cost per access may not be defined or be specific to a request, so it has to be a xsd:string instead of an xsd:float as initialy suggested to permit description of cost as conditional to what is requested"
       ],
       "from_schema": "https://evora-project.eu/",
-      "aliases": [
-        "unit cost"
-      ],
       "is_a": "unitCost",
       "domain": "ProductOrService",
       "slot_uri": "https://evora-project.eu/unitCost",
@@ -4813,10 +4662,8 @@
       "name": "ProductOrService_qualityGrading",
       "definition_uri": "https://evora-project.eu/qualityGrading",
       "description": "Information that permits to assess the quality level of what will be provided",
+      "title": "quality grading",
       "from_schema": "https://evora-project.eu/",
-      "aliases": [
-        "quality grading"
-      ],
       "is_a": "qualityGrading",
       "domain": "ProductOrService",
       "slot_uri": "https://evora-project.eu/qualityGrading",
@@ -4834,13 +4681,11 @@
       "name": "ProductOrService_pathogenIdentification",
       "definition_uri": "https://evora-project.eu/pathogenIdentification",
       "description": "The identification of the pathogen or group of pathogens (e.g; name, taxon identification, etc.) related to the current item.",
+      "title": "pathogen identification",
       "comments": [
         "The pathogen identification contains information about name and taxon but in some cases(e.g: FAIRSHARING) there may have no direct pathogen related but simply a taxonomic information .... the default value should be the root of virology: Viruses"
       ],
       "from_schema": "https://evora-project.eu/",
-      "aliases": [
-        "pathogen identification"
-      ],
       "is_a": "pathogenIdentification",
       "domain": "ProductOrService",
       "slot_uri": "https://evora-project.eu/pathogenIdentification",
@@ -4861,6 +4706,7 @@
       "name": "ProductOrService_relatedDOI",
       "definition_uri": "https://evora-project.eu/relatedDOI",
       "description": "Any DOI that can be related",
+      "title": "DOI",
       "from_schema": "https://evora-project.eu/",
       "aliases": [
         "DOI"
@@ -4887,6 +4733,7 @@
       "name": "ProductOrService_riskGroup",
       "definition_uri": "https://evora-project.eu/riskGroup",
       "description": "The highest risk group related to this resource. The risk group of a biological agent guiding its initial handling in labs according to the risk group classification defined by the WHO laboratory biosafety manual",
+      "title": "risk group",
       "from_schema": "https://evora-project.eu/",
       "aliases": [
         "risk group"
@@ -4912,10 +4759,8 @@
       "name": "ProductOrService_biosafetyRestrictions",
       "definition_uri": "https://evora-project.eu/biosafetyRestrictions",
       "description": "Information about guidelines and regulations designed to prevent the exposure to or release of potentially harmful biological agents. It thereby contributes to protecting people and the environment from biohazards while accessing this product or service",
+      "title": "biosafety restrictions",
       "from_schema": "https://evora-project.eu/",
-      "aliases": [
-        "biosafety restrictions"
-      ],
       "is_a": "biosafetyRestrictions",
       "domain": "ProductOrService",
       "slot_uri": "https://evora-project.eu/biosafetyRestrictions",
@@ -4933,13 +4778,11 @@
       "name": "ProductOrService_canItBeUsedToProduceGMO",
       "definition_uri": "https://evora-project.eu/canItBeUsedToProduceGMO",
       "description": "Indicates if the current service or product can be used to produce GMO",
+      "title": "can it be used to produce GMO",
       "comments": [
         "Set to TRUE if it can produce GMO"
       ],
       "from_schema": "https://evora-project.eu/",
-      "aliases": [
-        "can it be used to produce GMO"
-      ],
       "is_a": "canItBeUsedToProduceGMO",
       "domain": "ProductOrService",
       "slot_uri": "https://evora-project.eu/canItBeUsedToProduceGMO",
@@ -4957,10 +4800,8 @@
       "name": "ProductOrService_provider",
       "definition_uri": "https://evora-project.eu/provider",
       "description": "A provider of this product or service, as a specific organization",
+      "title": "provider",
       "from_schema": "https://evora-project.eu/",
-      "aliases": [
-        "provider"
-      ],
       "is_a": "provider",
       "domain": "ProductOrService",
       "slot_uri": "https://evora-project.eu/provider",
@@ -4980,9 +4821,10 @@
       "name": "ProductOrService_collection",
       "definition_uri": "https://evora-project.eu/collection",
       "description": "The collection(s) to which belongs this item",
+      "title": "collection",
       "from_schema": "https://evora-project.eu/",
       "aliases": [
-        "collection"
+        "catalog"
       ],
       "is_a": "collection",
       "domain": "ProductOrService",
@@ -5004,10 +4846,8 @@
       "name": "ProductOrService_keywords",
       "definition_uri": "https://evora-project.eu/keywords",
       "description": "List of terms used to tag and categorize this Item",
+      "title": "keywords",
       "from_schema": "https://evora-project.eu/",
-      "aliases": [
-        "keywords"
-      ],
       "exact_mappings": [
         "http://www.w3.org/ns/dcat#keyword"
       ],
@@ -5031,13 +4871,11 @@
       "name": "ProductOrService_availability",
       "definition_uri": "https://evora-project.eu/availability",
       "description": "The state or condition in which this item is accessible and ready for use or can be obtained",
+      "title": "availability",
       "comments": [
         "Possible availabilities may differ from a project to another"
       ],
       "from_schema": "https://evora-project.eu/",
-      "aliases": [
-        "availability"
-      ],
       "is_a": "availability",
       "domain": "ProductOrService",
       "slot_uri": "https://evora-project.eu/availability",
@@ -5057,10 +4895,8 @@
       "name": "ProductOrService_complementaryDocument",
       "definition_uri": "https://evora-project.eu/complementaryDocument",
       "description": "Any complementary document that can be related to this Item",
+      "title": "complementary document",
       "from_schema": "https://evora-project.eu/",
-      "aliases": [
-        "complementary document"
-      ],
       "is_a": "complementaryDocument",
       "domain": "ProductOrService",
       "slot_uri": "https://evora-project.eu/complementaryDocument",
@@ -5080,10 +4916,8 @@
       "name": "ProductOrService_technicalRecommendation",
       "definition_uri": "https://evora-project.eu/technicalRecommendation",
       "description": "Expert advice or guidelines provided to ensure the optimal use, performance, and maintenance of what is provided, including best practices, troubleshooting tips, and procedural instructions",
+      "title": "technical recommendation",
       "from_schema": "https://evora-project.eu/",
-      "aliases": [
-        "technical recommendation"
-      ],
       "is_a": "technicalRecommendation",
       "domain": "ProductOrService",
       "slot_uri": "https://evora-project.eu/technicalRecommendation",
@@ -5101,10 +4935,8 @@
       "name": "ProductOrService_productPicture",
       "definition_uri": "https://evora-project.eu/productPicture",
       "description": "A picture that can represent the item",
+      "title": "product picture",
       "from_schema": "https://evora-project.eu/",
-      "aliases": [
-        "product picture"
-      ],
       "is_a": "productPicture",
       "domain": "ProductOrService",
       "slot_uri": "https://evora-project.eu/productPicture",
@@ -5124,10 +4956,8 @@
       "name": "ProductOrService_externalRelatedReference",
       "definition_uri": "https://evora-project.eu/externalRelatedReference",
       "description": "A reference that permits to retrieve another related item from an external provider",
+      "title": "external related reference",
       "from_schema": "https://evora-project.eu/",
-      "aliases": [
-        "external related reference"
-      ],
       "is_a": "externalRelatedReference",
       "domain": "ProductOrService",
       "slot_uri": "https://evora-project.eu/externalRelatedReference",
@@ -5147,10 +4977,8 @@
       "name": "ProductOrService_certification",
       "definition_uri": "https://evora-project.eu/certification",
       "description": "Any certification related to the current product or service; e.g., ISO certification",
+      "title": "certification",
       "from_schema": "https://evora-project.eu/",
-      "aliases": [
-        "certification"
-      ],
       "close_mappings": [
         "http://purl.org/dc/terms/conformsTo"
       ],
@@ -5173,10 +5001,8 @@
       "name": "ProductOrService_internalReference",
       "definition_uri": "https://evora-project.eu/internalReference",
       "description": "Any reference or indication to be used for local retrieval purpose",
+      "title": "internal reference",
       "from_schema": "https://evora-project.eu/",
-      "aliases": [
-        "internal reference"
-      ],
       "is_a": "internalReference",
       "domain": "ProductOrService",
       "slot_uri": "https://evora-project.eu/internalReference",
@@ -5194,10 +5020,8 @@
       "name": "ProductOrService_note",
       "definition_uri": "https://evora-project.eu/note",
       "description": "An aditional information as a textual comment",
+      "title": "note",
       "from_schema": "https://evora-project.eu/",
-      "aliases": [
-        "note"
-      ],
       "is_a": "note",
       "domain": "ProductOrService",
       "slot_uri": "https://evora-project.eu/note",
@@ -5215,10 +5039,8 @@
       "name": "ProductOrService_contactPoint",
       "definition_uri": "https://evora-project.eu/contactPoint",
       "description": "An information that allows someone to establish communication",
+      "title": "contact point",
       "from_schema": "https://evora-project.eu/",
-      "aliases": [
-        "contact point"
-      ],
       "exact_mappings": [
         "http://www.w3.org/ns/dcat#contactPoint"
       ],
@@ -5240,10 +5062,8 @@
       "name": "Service_modelSpecies",
       "definition_uri": "https://evora-project.eu/modelSpecies",
       "description": "The species of the infected organism in the experiment",
+      "title": "model species",
       "from_schema": "https://evora-project.eu/",
-      "aliases": [
-        "model species"
-      ],
       "is_a": "modelSpecies",
       "domain": "Service",
       "slot_uri": "https://evora-project.eu/modelSpecies",
@@ -5261,10 +5081,8 @@
       "name": "Service_modelType",
       "definition_uri": "https://evora-project.eu/modelType",
       "description": "The specific name of the infected organism, including its modification if necessary",
+      "title": "model type",
       "from_schema": "https://evora-project.eu/",
-      "aliases": [
-        "model type"
-      ],
       "is_a": "modelType",
       "domain": "Service",
       "slot_uri": "https://evora-project.eu/modelType",
@@ -5282,10 +5100,8 @@
       "name": "Product_hasIATAClassification",
       "definition_uri": "https://evora-project.eu/hasIATAClassification",
       "description": "The corresponding International Air Transport Association (IATA)'s category for this Product",
+      "title": "IATA classification",
       "from_schema": "https://evora-project.eu/",
-      "aliases": [
-        "IATA classification"
-      ],
       "is_a": "hasIATAClassification",
       "domain": "Product",
       "slot_uri": "https://evora-project.eu/hasIATAClassification",
@@ -5305,10 +5121,8 @@
       "name": "Product_shippingConditions",
       "definition_uri": "https://evora-project.eu/shippingConditions",
       "description": "Specification of the terms and parameters for transporting\n",
+      "title": "shipping conditions",
       "from_schema": "https://evora-project.eu/",
-      "aliases": [
-        "shipping conditions"
-      ],
       "is_a": "shippingConditions",
       "domain": "Product",
       "slot_uri": "https://evora-project.eu/shippingConditions",
@@ -5327,13 +5141,11 @@
       "name": "Product_materialSafetyDataSheet",
       "definition_uri": "https://evora-project.eu/materialSafetyDataSheet",
       "description": "A Material Safety Data Sheet (MSDS) or Safety Data Sheet (SDS) is a standardized document that contains crucial occupational safety and health information related to the product",
+      "title": "material safety data sheet",
       "comments": [
         "The MSD  is a document that provides detailed information about the properties, hazards, handling, storage, and emergency procedures related to the use of a chemical or substance"
       ],
       "from_schema": "https://evora-project.eu/",
-      "aliases": [
-        "material safety data sheet"
-      ],
       "is_a": "materialSafetyDataSheet",
       "domain": "Product",
       "slot_uri": "https://evora-project.eu/materialSafetyDataSheet",
@@ -5352,10 +5164,8 @@
       "name": "Product_originator",
       "definition_uri": "https://evora-project.eu/originator",
       "description": "The individual or organization responsible for the original discovery, isolation, or creation of an item, providing information about the source or origin of the sample",
+      "title": "originator",
       "from_schema": "https://evora-project.eu/",
-      "aliases": [
-        "originator"
-      ],
       "is_a": "originator",
       "domain": "Product",
       "slot_uri": "https://evora-project.eu/originator",
@@ -5374,13 +5184,11 @@
       "name": "Product_storageConditions",
       "definition_uri": "https://evora-project.eu/storageConditions",
       "description": "Specifies the conditions under which the product has to be stored to maintain stability and integrity, such as temperature, buffer, and other environmental factors.",
+      "title": "storage conditions",
       "comments": [
         "e.g, could be a xsd:string in enumeration (\"Freeze Dried\", \"Liquid Nitrogen\", \"Viral Storage Medium -20C\", \"Viral Storage Medium -80C\", \"Living plant material (>= +4\u00b0C)\", \"Gas Phase\", \"Ethanol -20C\", \"Ethanol -80C\", \"Dried\")"
       ],
       "from_schema": "https://evora-project.eu/",
-      "aliases": [
-        "storage conditions"
-      ],
       "is_a": "storageConditions",
       "domain": "Product",
       "slot_uri": "https://evora-project.eu/storageConditions",
@@ -5399,10 +5207,8 @@
       "name": "Product_thirdPartyDistributionConsent",
       "definition_uri": "https://evora-project.eu/thirdPartyDistributionConsent",
       "description": "Indicates whether the biological material can be distributed without restriction to third parties, as indicated by the ABS permit, in case an ABS permit is required",
+      "title": "third party distribution consent",
       "from_schema": "https://evora-project.eu/",
-      "aliases": [
-        "third party distribution consent"
-      ],
       "is_a": "thirdPartyDistributionConsent",
       "domain": "Product",
       "slot_uri": "https://evora-project.eu/thirdPartyDistributionConsent",
@@ -5420,10 +5226,8 @@
       "name": "Product_usageRestrictions",
       "definition_uri": "https://evora-project.eu/usageRestrictions",
       "description": "Specifies any limitations or conditions on the use of the biological material, including restrictions on research, commercial use, or distribution, considering any potential concerns about the related genetic material",
+      "title": "usage restrictions",
       "from_schema": "https://evora-project.eu/",
-      "aliases": [
-        "usage restrictions"
-      ],
       "is_a": "usageRestrictions",
       "domain": "Product",
       "slot_uri": "https://evora-project.eu/usageRestrictions",
@@ -5441,10 +5245,8 @@
       "name": "Antibody_productionSystem",
       "definition_uri": "https://evora-project.eu/productionSystem",
       "description": "The biological and technological methods and processes used to produce the antibody",
+      "title": "production system",
       "from_schema": "https://evora-project.eu/",
-      "aliases": [
-        "production system"
-      ],
       "is_a": "productionSystem",
       "domain": "Antibody",
       "slot_uri": "https://evora-project.eu/productionSystem",
@@ -5462,10 +5264,8 @@
       "name": "Antibody_antibodyPurifiedByAffinity",
       "definition_uri": "https://evora-project.eu/antibodyPurifiedByAffinity",
       "description": "Indicates whether or not if the antibody was purified by affinity",
+      "title": "antibody purified by affinity",
       "from_schema": "https://evora-project.eu/",
-      "aliases": [
-        "antibody purified by affinity"
-      ],
       "is_a": "antibodyPurifiedByAffinity",
       "domain": "Antibody",
       "slot_uri": "https://evora-project.eu/antibodyPurifiedByAffinity",
@@ -5484,10 +5284,8 @@
       "name": "Antibody_specificityDocumented",
       "definition_uri": "https://evora-project.eu/specificityDocumented",
       "description": "Tell if the antibody specificity was documented",
+      "title": "specificity documented",
       "from_schema": "https://evora-project.eu/",
-      "aliases": [
-        "specificity documented"
-      ],
       "is_a": "specificityDocumented",
       "domain": "Antibody",
       "slot_uri": "https://evora-project.eu/specificityDocumented",
@@ -5506,10 +5304,8 @@
       "name": "Antibody_targetedAntigen",
       "definition_uri": "https://evora-project.eu/targetedAntigen",
       "description": "Specific molecular structure or epitope recognized and bound by an antibody",
+      "title": "targeted antigen",
       "from_schema": "https://evora-project.eu/",
-      "aliases": [
-        "targeted antigen"
-      ],
       "is_a": "targetedAntigen",
       "domain": "Antibody",
       "slot_uri": "https://evora-project.eu/targetedAntigen",
@@ -5528,10 +5324,8 @@
       "name": "Antibody_sequenceReference",
       "definition_uri": "https://evora-project.eu/sequenceReference",
       "description": "A reference that permits to retreive the sequence information from a sequence provider",
+      "title": "sequence reference",
       "from_schema": "https://evora-project.eu/",
-      "aliases": [
-        "sequence reference"
-      ],
       "is_a": "sequenceReference",
       "domain": "Antibody",
       "slot_uri": "https://evora-project.eu/sequenceReference",
@@ -5551,10 +5345,8 @@
       "name": "Hybridoma_hybridomaDescription",
       "definition_uri": "https://evora-project.eu/hybridomaDescription",
       "description": "The description of the hybridoma",
+      "title": "hybridoma description",
       "from_schema": "https://evora-project.eu/",
-      "aliases": [
-        "hybridoma description"
-      ],
       "is_a": "hybridomaDescription",
       "domain": "Hybridoma",
       "slot_uri": "https://evora-project.eu/hybridomaDescription",
@@ -5573,10 +5365,8 @@
       "name": "Protein_biologicalMaterialOrigin",
       "definition_uri": "https://evora-project.eu/biologicalMaterialOrigin",
       "description": "Information about the origin of the biological material, essential for access, utilization, and benefit-sharing of genetic resources in compliance with the Nagoya Protocol.",
+      "title": "Biological Material origin",
       "from_schema": "https://evora-project.eu/",
-      "aliases": [
-        "Biological Material origin"
-      ],
       "is_a": "biologicalMaterialOrigin",
       "domain": "Protein",
       "slot_uri": "https://evora-project.eu/biologicalMaterialOrigin",
@@ -5596,10 +5386,8 @@
       "name": "Protein_sequence",
       "definition_uri": "https://evora-project.eu/sequence",
       "description": "The related sequence information from a sequence provider or in fasta format",
+      "title": "sequence",
       "from_schema": "https://evora-project.eu/",
-      "aliases": [
-        "sequence"
-      ],
       "is_a": "sequence",
       "domain": "Protein",
       "slot_uri": "https://evora-project.eu/sequence",
@@ -5620,9 +5408,10 @@
       "name": "Protein_relatedPDB",
       "definition_uri": "https://evora-project.eu/relatedPDB",
       "description": "Identifier for 3D structural data as per the PDB (Protein Data Bank) database",
+      "title": "related PDB",
       "from_schema": "https://evora-project.eu/",
       "aliases": [
-        "related PDB"
+        "PDB structure ID"
       ],
       "close_mappings": [
         "http://www.wikidata.org/prop/P638"
@@ -5646,10 +5435,8 @@
       "name": "Protein_specialFeature",
       "definition_uri": "https://evora-project.eu/specialFeature",
       "description": "Distinctive attributes of a product that set it apart from other similar items e.g., Reference strain, Vaccinal strain, Antiviral resistant strain ...",
+      "title": "special feature",
       "from_schema": "https://evora-project.eu/",
-      "aliases": [
-        "special feature"
-      ],
       "is_a": "specialFeature",
       "domain": "Protein",
       "slot_uri": "https://evora-project.eu/specialFeature",
@@ -5669,10 +5456,8 @@
       "name": "Protein_proteinTAG",
       "definition_uri": "https://evora-project.eu/proteinTAG",
       "description": "Peptide sequences genetically grafted onto a recombinant protein",
+      "title": "protein TAG",
       "from_schema": "https://evora-project.eu/",
-      "aliases": [
-        "protein TAG"
-      ],
       "is_a": "proteinTAG",
       "domain": "Protein",
       "slot_uri": "https://evora-project.eu/proteinTAG",
@@ -5692,10 +5477,8 @@
       "name": "Protein_domain",
       "definition_uri": "https://evora-project.eu/domain",
       "description": "A distinct structural and functional unit within the protein, often capable of independent folding and stability, which contributes to the protein's overall function",
+      "title": "domain",
       "from_schema": "https://evora-project.eu/",
-      "aliases": [
-        "domain"
-      ],
       "is_a": "domain",
       "domain": "Protein",
       "slot_uri": "https://evora-project.eu/domain",
@@ -5714,10 +5497,8 @@
       "name": "Protein_expressedAs",
       "definition_uri": "https://evora-project.eu/expressedAs",
       "description": "Refers to the form in which the protein is produced and manifested in a biological system. Possible values include \"Soluble\" (proteins that are dissolved in the cellular or extracellular fluid) and \"Inclusion bodies\" (aggregated proteins that are insoluble and form within the cell)",
+      "title": "expressed as",
       "from_schema": "https://evora-project.eu/",
-      "aliases": [
-        "expressed as"
-      ],
       "is_a": "expressedAs",
       "domain": "Protein",
       "slot_uri": "https://evora-project.eu/expressedAs",
@@ -5736,10 +5517,8 @@
       "name": "Protein_inclusionBodiesType",
       "definition_uri": "https://evora-project.eu/inclusionBodiesType",
       "description": "Refers to the state of aggregated proteins within a cell. Possible values include \"Denatured\" (proteins are in an unfolded, inactive state) and \"Refolded\" (proteins have been processed to regain their functional, active conformation).",
+      "title": "inclusion bodies type",
       "from_schema": "https://evora-project.eu/",
-      "aliases": [
-        "inclusion bodies type"
-      ],
       "is_a": "inclusionBodiesType",
       "domain": "Protein",
       "slot_uri": "https://evora-project.eu/inclusionBodiesType",
@@ -5758,10 +5537,8 @@
       "name": "Protein_expressionSystem",
       "definition_uri": "https://evora-project.eu/expressionSystem",
       "description": "The host organism or cellular environment used to produce a protein from a specific gene. Possible values include \"E. coli\" (bacterial system), \"Insect cells\" (using baculovirus vectors), and \"Mammalian cells\" (mammalian cell lines).",
+      "title": "expression system",
       "from_schema": "https://evora-project.eu/",
-      "aliases": [
-        "expression system"
-      ],
       "is_a": "expressionSystem",
       "domain": "Protein",
       "slot_uri": "https://evora-project.eu/expressionSystem",
@@ -5780,10 +5557,8 @@
       "name": "Protein_functionalCharacterization",
       "definition_uri": "https://evora-project.eu/functionalCharacterization",
       "description": "The process of determining and describing the specific biological activities and roles of a protein. Possible values include \"Functionally characterized\" (the protein's functions have been identified and described) and \"No functional characterization\" (the protein's functions have not been identified or described).",
+      "title": "functional characterization",
       "from_schema": "https://evora-project.eu/",
-      "aliases": [
-        "functional characterization"
-      ],
       "is_a": "functionalCharacterization",
       "domain": "Protein",
       "slot_uri": "https://evora-project.eu/functionalCharacterization",
@@ -5802,10 +5577,8 @@
       "name": "Protein_functionalTechnicalDescription",
       "definition_uri": "https://evora-project.eu/functionalTechnicalDescription",
       "description": "Detailed information about the specific biological functions, mechanisms of action, and technical attributes of a protein. This includes how the protein interacts within biological systems, its role in cellular processes, and any relevant technical details such as structure, activity, and interactions with other molecules.",
+      "title": "functional/Technical description",
       "from_schema": "https://evora-project.eu/",
-      "aliases": [
-        "functional/Technical description"
-      ],
       "is_a": "functionalTechnicalDescription",
       "domain": "Protein",
       "slot_uri": "https://evora-project.eu/functionalTechnicalDescription",
@@ -5824,10 +5597,8 @@
       "name": "Protein_proteinPurification",
       "definition_uri": "https://evora-project.eu/proteinPurification",
       "description": "Refers to the degree of purity achieved for a protein sample. Possible values include \">95%\" (the protein is highly purified, with more than 95% purity) and \"Unpurified expression host lysate or partly purified protein\" (the protein is either unpurified and present in the host cell lysate or only partially purified).",
+      "title": "protein purification",
       "from_schema": "https://evora-project.eu/",
-      "aliases": [
-        "protein purification"
-      ],
       "is_a": "proteinPurification",
       "domain": "Protein",
       "slot_uri": "https://evora-project.eu/proteinPurification",
@@ -5846,10 +5617,8 @@
       "name": "Protein_theTAGStatusOfTheSolubilizedProtein",
       "definition_uri": "https://evora-project.eu/theTAGStatusOfTheSolubilizedProtein",
       "description": "Indicates the presence and condition of a tag on the protein after solubilization. Possible values include \"Uncleaved Tag\" (the tag is still attached to the protein), \"Cleaved Tag\" (the tag has been removed from the protein), and \"No Tag\" (the protein does not have a tag)",
+      "title": "TAG status of the solubilized protein",
       "from_schema": "https://evora-project.eu/",
-      "aliases": [
-        "TAG status of the solubilized protein"
-      ],
       "is_a": "theTAGStatusOfTheSolubilizedProtein",
       "domain": "Protein",
       "slot_uri": "https://evora-project.eu/theTAGStatusOfTheSolubilizedProtein",
@@ -5868,10 +5637,8 @@
       "name": "Protein_typeOfFunctionalCharacterization",
       "definition_uri": "https://evora-project.eu/typeOfFunctionalCharacterization",
       "description": "Refers to the classification of a protein based on the specific type of functional analysis performed to determine its biological activities and roles. Possible values include \"Enzymatic\" (the protein has been characterized for its enzyme activity) and \"Antigenic\" (the protein has been characterized for its ability to elicit an immune response).",
+      "title": "type of functional Characterization",
       "from_schema": "https://evora-project.eu/",
-      "aliases": [
-        "type of functional Characterization"
-      ],
       "is_a": "typeOfFunctionalCharacterization",
       "domain": "Protein",
       "slot_uri": "https://evora-project.eu/typeOfFunctionalCharacterization",
@@ -5890,10 +5657,8 @@
       "name": "Nucleic_Acid_biologicalMaterialOrigin",
       "definition_uri": "https://evora-project.eu/biologicalMaterialOrigin",
       "description": "Information about the origin of the biological material, essential for access, utilization, and benefit-sharing of genetic resources in compliance with the Nagoya Protocol",
+      "title": "Biological Material origin",
       "from_schema": "https://evora-project.eu/",
-      "aliases": [
-        "Biological Material origin"
-      ],
       "is_a": "biologicalMaterialOrigin",
       "domain": "NucleicAcid",
       "slot_uri": "https://evora-project.eu/biologicalMaterialOrigin",
@@ -5913,10 +5678,8 @@
       "name": "Nucleic_Acid_hasGbFileOfTheConstruct",
       "definition_uri": "https://evora-project.eu/hasGbFileOfTheConstruct",
       "description": "A GenBank formatted file that contains detailed sequence and annotation information of a nucleic acid construct",
+      "title": "has .gb file of the construct",
       "from_schema": "https://evora-project.eu/",
-      "aliases": [
-        "has .gb file of the construct"
-      ],
       "is_a": "hasGbFileOfTheConstruct",
       "domain": "NucleicAcid",
       "slot_uri": "https://evora-project.eu/hasGbFileOfTheConstruct",
@@ -5936,10 +5699,8 @@
       "name": "Nucleic_Acid_sequence",
       "definition_uri": "https://evora-project.eu/sequence",
       "description": "The related sequence information from a sequence provider or in fasta format",
+      "title": "sequence",
       "from_schema": "https://evora-project.eu/",
-      "aliases": [
-        "sequence"
-      ],
       "is_a": "sequence",
       "domain": "NucleicAcid",
       "slot_uri": "https://evora-project.eu/sequence",
@@ -5960,10 +5721,8 @@
       "name": "Nucleic_Acid_isItAClonedNucleicAcid",
       "definition_uri": "https://evora-project.eu/isItAClonedNucleicAcid",
       "description": "Indicates that the nucleic acid sequence has been inserted into a plasmid vector for propagation or expression in a host organism",
+      "title": "is it a Cloned Nucleic Acid?",
       "from_schema": "https://evora-project.eu/",
-      "aliases": [
-        "is it a Cloned Nucleic Acid?"
-      ],
       "is_a": "isItAClonedNucleicAcid",
       "domain": "NucleicAcid",
       "slot_uri": "https://evora-project.eu/isItAClonedNucleicAcid",
@@ -5982,10 +5741,8 @@
       "name": "Nucleic_Acid_clonedIntoPlasmid",
       "definition_uri": "https://evora-project.eu/clonedIntoPlasmid",
       "description": "The plasmid into which the nucleic acid has been cloned",
+      "title": "cloned into plasmid",
       "from_schema": "https://evora-project.eu/",
-      "aliases": [
-        "cloned into plasmid"
-      ],
       "is_a": "clonedIntoPlasmid",
       "domain": "NucleicAcid",
       "slot_uri": "https://evora-project.eu/clonedIntoPlasmid",
@@ -6004,10 +5761,8 @@
       "name": "Nucleic_Acid_pasmidSelection",
       "definition_uri": "https://evora-project.eu/pasmidSelection",
       "description": "Specific selectable markers in the plasmid, such as antibiotic resistance genes, used to identify and maintain cells that contain the plasmid",
+      "title": "plasmid selection",
       "from_schema": "https://evora-project.eu/",
-      "aliases": [
-        "plasmid selection"
-      ],
       "is_a": "pasmidSelection",
       "domain": "NucleicAcid",
       "slot_uri": "https://evora-project.eu/pasmidSelection",
@@ -6027,10 +5782,8 @@
       "name": "Nucleic_Acid_hasTAG",
       "definition_uri": "https://evora-project.eu/hasTAG",
       "description": "TAG sequence used for purposes such as purification, detection, or localization",
+      "title": "TAG",
       "from_schema": "https://evora-project.eu/",
-      "aliases": [
-        "TAG"
-      ],
       "is_a": "hasTAG",
       "domain": "NucleicAcid",
       "slot_uri": "https://evora-project.eu/hasTAG",
@@ -6050,10 +5803,8 @@
       "name": "Nucleic_Acid_regionEncompassedInThisProduct",
       "definition_uri": "https://evora-project.eu/regionEncompassedInThisProduct",
       "description": "The specific region encompassed in the product",
+      "title": "region encompassed in this Product",
       "from_schema": "https://evora-project.eu/",
-      "aliases": [
-        "region encompassed in this Product"
-      ],
       "is_a": "regionEncompassedInThisProduct",
       "domain": "NucleicAcid",
       "slot_uri": "https://evora-project.eu/regionEncompassedInThisProduct",
@@ -6072,10 +5823,8 @@
       "name": "Nucleic_Acid_mutationObserved",
       "definition_uri": "https://evora-project.eu/mutationObserved",
       "description": "Indicates if the current nucleic acid has No mutation compared to the reference sequence if the value is set to false or if it\n contains mutations (no frameshift, no unexpected STOP codon) if set to true",
+      "title": "mutation observed",
       "from_schema": "https://evora-project.eu/",
-      "aliases": [
-        "mutation observed"
-      ],
       "is_a": "mutationObserved",
       "domain": "NucleicAcid",
       "slot_uri": "https://evora-project.eu/mutationObserved",
@@ -6094,10 +5843,8 @@
       "name": "Nucleic_Acid_observedMutations",
       "definition_uri": "https://evora-project.eu/observedMutations",
       "description": "The specific mutations that have been identified and documented in the nucleic acid sequence",
+      "title": "observed mutations",
       "from_schema": "https://evora-project.eu/",
-      "aliases": [
-        "observed mutations"
-      ],
       "is_a": "observedMutations",
       "domain": "NucleicAcid",
       "slot_uri": "https://evora-project.eu/observedMutations",
@@ -6115,10 +5862,8 @@
       "name": "Nucleic_Acid_identificationTechnique",
       "definition_uri": "https://evora-project.eu/identificationTechnique",
       "description": "The method used to identify the nucleic acid sequence or its associated constructs, such as PCR, sequencing, or hybridization",
+      "title": "identification technique",
       "from_schema": "https://evora-project.eu/",
-      "aliases": [
-        "identification technique"
-      ],
       "is_a": "identificationTechnique",
       "domain": "NucleicAcid",
       "slot_uri": "https://evora-project.eu/identificationTechnique",
@@ -6136,13 +5881,11 @@
       "name": "Nucleic_Acid_sequencing",
       "definition_uri": "https://evora-project.eu/sequencing",
       "description": "Refers to the level of sequencing performed on the nucleic acid. Possible values include \"Not sequenced\" (no sequencing has been performed), \"Partly sequenced\" (only a portion of the nucleic acid sequence has been determined), and \"Fully sequenced\" (the entire nucleic acid sequence has been determined).",
+      "title": "sequencing",
       "comments": [
         "Cloned products have to be sequenced"
       ],
       "from_schema": "https://evora-project.eu/",
-      "aliases": [
-        "sequencing"
-      ],
       "is_a": "sequencing",
       "domain": "NucleicAcid",
       "slot_uri": "https://evora-project.eu/sequencing",
@@ -6161,10 +5904,8 @@
       "name": "Nucleic_Acid_titer",
       "definition_uri": "https://evora-project.eu/titer",
       "description": "The titer value, its corresponding unit, and the method of quantification (e.g., RT-qPCR, TCID50), representing the concentration or amount of unit present in the sample. The titer corresponds to the highest dilution factor that still yields a positive reading",
+      "title": "titer",
       "from_schema": "https://evora-project.eu/",
-      "aliases": [
-        "titer"
-      ],
       "is_a": "titer",
       "domain": "NucleicAcid",
       "slot_uri": "https://evora-project.eu/titer",
@@ -6182,13 +5923,11 @@
       "name": "Nucleic_Acid_sequenceChecked",
       "definition_uri": "https://evora-project.eu/sequenceChecked",
       "description": "Tell whether or not the sequence of the product was controlled (compulsory for cloned products)",
+      "title": "sequence checked",
       "comments": [
         "Sequence check is mandatory for cloned products"
       ],
       "from_schema": "https://evora-project.eu/",
-      "aliases": [
-        "sequence checked"
-      ],
       "is_a": "sequenceChecked",
       "domain": "NucleicAcid",
       "slot_uri": "https://evora-project.eu/sequenceChecked",
@@ -6207,10 +5946,8 @@
       "name": "Detection_Kit_hasSOPFile",
       "definition_uri": "https://evora-project.eu/hasSOPFile",
       "description": "The related standard operating procedure file",
+      "title": "has SOP File",
       "from_schema": "https://evora-project.eu/",
-      "aliases": [
-        "has SOP File"
-      ],
       "is_a": "hasSOPFile",
       "domain": "DetectionKit",
       "slot_uri": "https://evora-project.eu/hasSOPFile",
@@ -6230,10 +5967,8 @@
       "name": "Detection_Kit_specificityDocumented",
       "definition_uri": "https://evora-project.eu/specificityDocumented",
       "description": "Boolean value indicating whether the specificity of the detection kit has been formally documented.",
+      "title": "specificity documented",
       "from_schema": "https://evora-project.eu/",
-      "aliases": [
-        "specificity documented"
-      ],
       "is_a": "specificityDocumented",
       "domain": "DetectionKit",
       "slot_uri": "https://evora-project.eu/specificityDocumented",
@@ -6252,10 +5987,8 @@
       "name": "Detection_Kit_specificity",
       "definition_uri": "https://evora-project.eu/specificity",
       "description": "Details on the ability of a detection kit to correctly identify negative results, distinguishing between the target analyte and other substances without cross-reacting",
+      "title": "specificity",
       "from_schema": "https://evora-project.eu/",
-      "aliases": [
-        "specificity"
-      ],
       "is_a": "specificity",
       "domain": "DetectionKit",
       "slot_uri": "https://evora-project.eu/specificity",
@@ -6273,10 +6006,8 @@
       "name": "Detection_Kit_targetedRegion",
       "definition_uri": "https://evora-project.eu/targetedRegion",
       "description": "The specific area or sequence within the target analyte that the detection kit is designed to identify and interact with, ensuring accurate detection and analysis.",
+      "title": "targeted region",
       "from_schema": "https://evora-project.eu/",
-      "aliases": [
-        "targeted region"
-      ],
       "is_a": "targetedRegion",
       "domain": "DetectionKit",
       "slot_uri": "https://evora-project.eu/targetedRegion",
@@ -6294,10 +6025,8 @@
       "name": "Bundle_productsOfTheBundle",
       "definition_uri": "https://evora-project.eu/productsOfTheBundle",
       "description": "Associates the bundle with the individual products it contains, specifying the components included within the bundle.",
+      "title": "products of the bundle",
       "from_schema": "https://evora-project.eu/",
-      "aliases": [
-        "products of the bundle"
-      ],
       "is_a": "productsOfTheBundle",
       "domain": "Bundle",
       "slot_uri": "https://evora-project.eu/productsOfTheBundle",
@@ -6318,10 +6047,8 @@
       "name": "Bundle_complementaryDocument",
       "definition_uri": "https://evora-project.eu/complementaryDocument",
       "description": "Links the bundle to any additional documents that provide supplementary information, instructions, or guidelines relevant to the use and assembly of the bundle's products.\n",
+      "title": "complementary document",
       "from_schema": "https://evora-project.eu/",
-      "aliases": [
-        "complementary document"
-      ],
       "is_a": "ProductOrService_complementaryDocument",
       "domain": "Bundle",
       "slot_uri": "https://evora-project.eu/complementaryDocument",
@@ -6341,10 +6068,8 @@
       "name": "Pathogen_biologicalMaterialOrigin",
       "definition_uri": "https://evora-project.eu/biologicalMaterialOrigin",
       "description": "Information about the origin of the biological material, essential for access, utilization, and benefit-sharing of genetic resources in compliance with the Nagoya Protocol.",
+      "title": "Biological Material origin",
       "from_schema": "https://evora-project.eu/",
-      "aliases": [
-        "Biological Material origin"
-      ],
       "is_a": "biologicalMaterialOrigin",
       "domain": "Pathogen",
       "slot_uri": "https://evora-project.eu/biologicalMaterialOrigin",
@@ -6364,10 +6089,8 @@
       "name": "Pathogen_suspectedEpidemiologicalOrigin",
       "definition_uri": "https://evora-project.eu/suspectedEpidemiologicalOrigin",
       "description": "The potential geographical or environmental source from which the pathogen is believed to have originated or been transmitted",
+      "title": "suspected epidemiological origin",
       "from_schema": "https://evora-project.eu/",
-      "aliases": [
-        "suspected epidemiological origin"
-      ],
       "close_mappings": [
         "http://purl.org/dc/terms/spatial"
       ],
@@ -6390,10 +6113,8 @@
       "name": "Pathogen_isolationHost",
       "definition_uri": "https://evora-project.eu/isolationHost",
       "description": "The host organism from which the pathogen was originally isolated",
+      "title": "isolation host",
       "from_schema": "https://evora-project.eu/",
-      "aliases": [
-        "isolation host"
-      ],
       "is_a": "isolationHost",
       "domain": "Pathogen",
       "slot_uri": "https://evora-project.eu/isolationHost",
@@ -6413,10 +6134,8 @@
       "name": "Pathogen_productionCellLine",
       "definition_uri": "https://evora-project.eu/productionCellLine",
       "description": "The cell line used for the production or propagation of the pathogen, detailing the cellular environment employed in its cultivation and study",
+      "title": "production cell line",
       "from_schema": "https://evora-project.eu/",
-      "aliases": [
-        "production cell line"
-      ],
       "is_a": "productionCellLine",
       "domain": "Pathogen",
       "slot_uri": "https://evora-project.eu/productionCellLine",
@@ -6436,10 +6155,8 @@
       "name": "Pathogen_propagationHost",
       "definition_uri": "https://evora-project.eu/propagationHost",
       "description": "The host organism that propagates the pathogen",
+      "title": "propagation host",
       "from_schema": "https://evora-project.eu/",
-      "aliases": [
-        "propagation host"
-      ],
       "is_a": "propagationHost",
       "domain": "Pathogen",
       "slot_uri": "https://evora-project.eu/propagationHost",
@@ -6459,10 +6176,8 @@
       "name": "Pathogen_transmissionMethod",
       "definition_uri": "https://evora-project.eu/transmissionMethod",
       "description": "The method or route through which the pathogen is transmitted from one host to another, detailing the mechanisms of infection spread.",
+      "title": "transmission method",
       "from_schema": "https://evora-project.eu/",
-      "aliases": [
-        "transmission method"
-      ],
       "is_a": "transmissionMethod",
       "domain": "Pathogen",
       "slot_uri": "https://evora-project.eu/transmissionMethod",
@@ -6482,10 +6197,8 @@
       "name": "Pathogen_sequence",
       "definition_uri": "https://evora-project.eu/sequence",
       "description": "The related sequence information from a sequence provider or in fasta format",
+      "title": "sequence",
       "from_schema": "https://evora-project.eu/",
-      "aliases": [
-        "sequence"
-      ],
       "is_a": "sequence",
       "domain": "Pathogen",
       "slot_uri": "https://evora-project.eu/sequence",
@@ -6506,13 +6219,11 @@
       "name": "Pathogen_cultivability",
       "definition_uri": "https://evora-project.eu/cultivability",
       "description": "The ability of the pathogen to be cultivated or grown in laboratory conditions. Possible values are \" Cultivable pathogen\", \"Uncultivable pathogen\" or \"Inactivated pathogen\"",
+      "title": "cultivability",
       "comments": [
         "Might also be related to a product sub-category that helps filtering"
       ],
       "from_schema": "https://evora-project.eu/",
-      "aliases": [
-        "cultivability"
-      ],
       "is_a": "cultivability",
       "domain": "Pathogen",
       "slot_uri": "https://evora-project.eu/cultivability",
@@ -6532,10 +6243,8 @@
       "name": "Pathogen_clinicalInformation",
       "definition_uri": "https://evora-project.eu/clinicalInformation",
       "description": "Details about the clinical aspects of the pathogen, including symptoms, severity, treatment protocols, and patient outcomes",
+      "title": "clinical information",
       "from_schema": "https://evora-project.eu/",
-      "aliases": [
-        "clinical information"
-      ],
       "is_a": "clinicalInformation",
       "domain": "Pathogen",
       "slot_uri": "https://evora-project.eu/clinicalInformation",
@@ -6553,10 +6262,8 @@
       "name": "Pathogen_identificationTechnique",
       "definition_uri": "https://evora-project.eu/identificationTechnique",
       "description": "The method or technique used to identify and confirm the presence of the pathogen, detailing the specific procedures and tools employed in the detection process",
+      "title": "identification technique",
       "from_schema": "https://evora-project.eu/",
-      "aliases": [
-        "identification technique"
-      ],
       "is_a": "identificationTechnique",
       "domain": "Pathogen",
       "slot_uri": "https://evora-project.eu/identificationTechnique",
@@ -6574,10 +6281,8 @@
       "name": "Pathogen_infectivity",
       "definition_uri": "https://evora-project.eu/infectivity",
       "description": "Indicates the ability of the pathogen to establish an infection in a host organism, with possible values detailing whether infectivity has been tested, quantified, or cannot be tested due to non-cultivable nature.",
+      "title": "infectivity",
       "from_schema": "https://evora-project.eu/",
-      "aliases": [
-        "infectivity"
-      ],
       "is_a": "infectivity",
       "domain": "Pathogen",
       "slot_uri": "https://evora-project.eu/infectivity",
@@ -6596,10 +6301,8 @@
       "name": "Pathogen_infectivityTest",
       "definition_uri": "https://evora-project.eu/infectivityTest",
       "description": "The description of the completed infectivity test, providing details on the methods, conditions, and results of the test used to assess the pathogen's ability to infect a host organism",
+      "title": "infectivity Test",
       "from_schema": "https://evora-project.eu/",
-      "aliases": [
-        "infectivity Test"
-      ],
       "is_a": "infectivityTest",
       "domain": "Pathogen",
       "slot_uri": "https://evora-project.eu/infectivityTest",
@@ -6617,10 +6320,8 @@
       "name": "Pathogen_isolationTechnique",
       "definition_uri": "https://evora-project.eu/isolationTechnique",
       "description": "The specific method or procedure used to isolate the pathogen from a host organism or sample, detailing the techniques and tools employed in the isolation process",
+      "title": "isolation technique",
       "from_schema": "https://evora-project.eu/",
-      "aliases": [
-        "isolation technique"
-      ],
       "is_a": "isolationTechnique",
       "domain": "Pathogen",
       "slot_uri": "https://evora-project.eu/isolationTechnique",
@@ -6638,10 +6339,8 @@
       "name": "Pathogen_isolationConditions",
       "definition_uri": "https://evora-project.eu/isolationConditions",
       "description": "The environmental and procedural conditions under which the pathogen was isolated",
+      "title": "isolation conditions",
       "from_schema": "https://evora-project.eu/",
-      "aliases": [
-        "isolation conditions"
-      ],
       "is_a": "isolationConditions",
       "domain": "Pathogen",
       "slot_uri": "https://evora-project.eu/isolationConditions",
@@ -6659,10 +6358,8 @@
       "name": "Pathogen_letterOfAuthority",
       "definition_uri": "https://evora-project.eu/letterOfAuthority",
       "description": "Indicate whether a Letter of Authority is required, confirming the necessity of formal authorization. The possible values are \"N/A\", \"NOT Required\", \"Required for customers in the EU\" or \"Required\"",
+      "title": "letter of authority",
       "from_schema": "https://evora-project.eu/",
-      "aliases": [
-        "letter of authority"
-      ],
       "is_a": "letterOfAuthority",
       "domain": "Pathogen",
       "slot_uri": "https://evora-project.eu/letterOfAuthority",
@@ -6682,10 +6379,8 @@
       "name": "Pathogen_passage",
       "definition_uri": "https://evora-project.eu/passage",
       "description": "The number of times the pathogen was cultured through serial passage, a process used to increase the stock but which can also lead to the evolution of the original pathogen.",
+      "title": "passage",
       "from_schema": "https://evora-project.eu/",
-      "aliases": [
-        "passage"
-      ],
       "is_a": "passage",
       "domain": "Pathogen",
       "slot_uri": "https://evora-project.eu/passage",
@@ -6703,10 +6398,8 @@
       "name": "Pathogen_sequencing",
       "definition_uri": "https://evora-project.eu/sequencing",
       "description": "The extent of the pathogen's genetic material that has been sequenced, with possible values including \"Complete genome\" for the entire genome, \"Complete coding sequence\" for all coding regions, and \"Partial sequence\" for only a portion of the genetic material",
+      "title": "sequencing",
       "from_schema": "https://evora-project.eu/",
-      "aliases": [
-        "sequencing"
-      ],
       "is_a": "sequencing",
       "domain": "Pathogen",
       "slot_uri": "https://evora-project.eu/sequencing",
@@ -6725,10 +6418,8 @@
       "name": "Pathogen_titer",
       "definition_uri": "https://evora-project.eu/titer",
       "description": "The titer value, its corresponding unit, and the method of quantification (e.g., RT-qPCR, TCID50), representing the concentration or amount of unit present in the sample. The titer corresponds to the highest dilution factor that still yields a positive reading",
+      "title": "titer",
       "from_schema": "https://evora-project.eu/",
-      "aliases": [
-        "titer"
-      ],
       "close_mappings": [
         "http://www.wikidata.org/entity/Q2166189"
       ],
@@ -6750,10 +6441,8 @@
       "name": "Virus_coInfectingViruses",
       "definition_uri": "https://evora-project.eu/coInfectingViruses",
       "description": "Identifies other viruses that may co-infect the host organism along with the primary virus, indicating the presence of multiple viral infections within the same host.",
+      "title": "co-infecting viruses",
       "from_schema": "https://evora-project.eu/",
-      "aliases": [
-        "co-infecting viruses"
-      ],
       "is_a": "coInfectingViruses",
       "domain": "Virus",
       "slot_uri": "https://evora-project.eu/coInfectingViruses",
@@ -6773,10 +6462,8 @@
       "name": "Virus_contaminationWithCoInfectingViruses",
       "definition_uri": "https://evora-project.eu/contaminationWithCoInfectingViruses",
       "description": "A boolean value indicating whether there is contamination with co-infecting viruses",
+      "title": "contamination with co-infecting viruses",
       "from_schema": "https://evora-project.eu/",
-      "aliases": [
-        "contamination with co-infecting viruses"
-      ],
       "is_a": "contaminationWithCoInfectingViruses",
       "domain": "Virus",
       "slot_uri": "https://evora-project.eu/contaminationWithCoInfectingViruses",
@@ -6796,10 +6483,8 @@
       "name": "Virus_mycoplasmicContent",
       "definition_uri": "https://evora-project.eu/mycoplasmicContent",
       "description": "Indicates the presence of mycoplasma contamination within the sample",
+      "title": "mycoplasmic content",
       "from_schema": "https://evora-project.eu/",
-      "aliases": [
-        "mycoplasmic content"
-      ],
       "is_a": "mycoplasmicContent",
       "domain": "Virus",
       "slot_uri": "https://evora-project.eu/mycoplasmicContent",
@@ -6818,10 +6503,8 @@
       "name": "MSDS_msdsContact",
       "definition_uri": "https://evora-project.eu/msdsContact",
       "description": "The designated contact point responsible for providing information related to the safety, handling, and regulatory compliance of the biological product.",
+      "title": "MSDS contact",
       "from_schema": "https://evora-project.eu/",
-      "aliases": [
-        "MSDS contact"
-      ],
       "exact_mappings": [
         "http://www.w3.org/ns/dcat#contactPoint"
       ],
@@ -6844,10 +6527,8 @@
       "name": "MSDS_physicalChemicalProperties",
       "definition_uri": "https://evora-project.eu/physicalChemicalProperties",
       "description": "Key characteristics of the product, such as physical state, appearance, solubility, pH, chemical composition, and molecular weight, essential for safe handling and storage",
+      "title": "physical and chemical properties and information on ingredients",
       "from_schema": "https://evora-project.eu/",
-      "aliases": [
-        "physical and chemical properties and information on ingredients"
-      ],
       "is_a": "physicalChemicalProperties",
       "domain": "MSDS",
       "slot_uri": "https://evora-project.eu/physicalChemicalProperties",
@@ -6865,10 +6546,8 @@
       "name": "MSDS_hazardsIdentification",
       "definition_uri": "https://evora-project.eu/hazardsIdentification",
       "description": "Outlines the potential risks and dangers associated with handling the product, including its physical, chemical, and health hazards. This section provides information on toxicity, flammability, reactivity, and other relevant risks for safe use.",
+      "title": "hazards identification",
       "from_schema": "https://evora-project.eu/",
-      "aliases": [
-        "hazards identification"
-      ],
       "is_a": "hazardsIdentification",
       "domain": "MSDS",
       "slot_uri": "https://evora-project.eu/hazardsIdentification",
@@ -6886,10 +6565,8 @@
       "name": "MSDS_firstAidMeasures",
       "definition_uri": "https://evora-project.eu/firstAidMeasures",
       "description": "Instructions on immediate actions to take in case of exposure to the product, including inhalation, ingestion, skin, or eye contact. This section outlines steps to minimize harm before medical help is available.",
+      "title": "first aid measures",
       "from_schema": "https://evora-project.eu/",
-      "aliases": [
-        "first aid measures"
-      ],
       "is_a": "firstAidMeasures",
       "domain": "MSDS",
       "slot_uri": "https://evora-project.eu/firstAidMeasures",
@@ -6907,10 +6584,8 @@
       "name": "MSDS_fireFightingMeasures",
       "definition_uri": "https://evora-project.eu/fireFightingMeasures",
       "description": "Guidance on how to safely extinguish a fire involving the product, including suitable extinguishing agents, special protective equipment for firefighters, and any specific hazards from combustion.",
+      "title": "fire fighting measures",
       "from_schema": "https://evora-project.eu/",
-      "aliases": [
-        "fire fighting measures"
-      ],
       "is_a": "fireFightingMeasures",
       "domain": "MSDS",
       "slot_uri": "https://evora-project.eu/fireFightingMeasures",
@@ -6928,10 +6603,8 @@
       "name": "MSDS_accidentalReleaseMeasures",
       "definition_uri": "https://evora-project.eu/accidentalReleaseMeasures",
       "description": "Guidelines for safely managing spills or leaks of the product, including containment, cleanup procedures, and precautions to prevent harm to people, property, and the environment.",
+      "title": "accidental release measures",
       "from_schema": "https://evora-project.eu/",
-      "aliases": [
-        "accidental release measures"
-      ],
       "is_a": "accidentalReleaseMeasures",
       "domain": "MSDS",
       "slot_uri": "https://evora-project.eu/accidentalReleaseMeasures",
@@ -6949,10 +6622,8 @@
       "name": "MSDS_handlingAndStorage",
       "definition_uri": "https://evora-project.eu/handlingAndStorage",
       "description": "Instructions on the safe handling practices and storage conditions for the product, including precautions to prevent accidents, degradation, or contamination, as well as recommended temperature, humidity, and container requirements.",
+      "title": "handling and storage",
       "from_schema": "https://evora-project.eu/",
-      "aliases": [
-        "handling and storage"
-      ],
       "is_a": "handlingAndStorage",
       "domain": "MSDS",
       "slot_uri": "https://evora-project.eu/handlingAndStorage",
@@ -6970,10 +6641,8 @@
       "name": "MSDS_exposureControlsPersonalProtection",
       "definition_uri": "https://evora-project.eu/exposureControlsPersonalProtection",
       "description": "Specifies measures to limit exposure to the product, including recommended engineering controls (e.g., ventilation) and personal protective equipment (PPE) such as gloves, masks, goggles, and clothing to ensure safe handling.",
+      "title": "exposure controls/personal protection",
       "from_schema": "https://evora-project.eu/",
-      "aliases": [
-        "exposure controls/personal protection"
-      ],
       "is_a": "exposureControlsPersonalProtection",
       "domain": "MSDS",
       "slot_uri": "https://evora-project.eu/exposureControlsPersonalProtection",
@@ -6991,10 +6660,8 @@
       "name": "MSDS_stabilityAndReactivity",
       "definition_uri": "https://evora-project.eu/stabilityAndReactivity",
       "description": "Describes the product\u2019s stability under normal conditions and its potential to react with other substances. This section includes information on hazardous reactions, conditions to avoid, and incompatible materials that could cause degradation or dangerous reactions.",
+      "title": "stability and reactivity",
       "from_schema": "https://evora-project.eu/",
-      "aliases": [
-        "stability and reactivity"
-      ],
       "is_a": "stabilityAndReactivity",
       "domain": "MSDS",
       "slot_uri": "https://evora-project.eu/stabilityAndReactivity",
@@ -7012,10 +6679,8 @@
       "name": "MSDS_toxicologicalInformation",
       "definition_uri": "https://evora-project.eu/toxicologicalInformation",
       "description": "Details on the potential health effects of the product, including routes of exposure (inhalation, ingestion, skin, eye contact), acute and chronic toxicity and symptoms of exposure",
+      "title": "toxicological information",
       "from_schema": "https://evora-project.eu/",
-      "aliases": [
-        "toxicological information"
-      ],
       "is_a": "toxicologicalInformation",
       "domain": "MSDS",
       "slot_uri": "https://evora-project.eu/toxicologicalInformation",
@@ -7033,10 +6698,8 @@
       "name": "MSDS_ecologicalInformation",
       "definition_uri": "https://evora-project.eu/ecologicalInformation",
       "description": "Details the potential environmental impact of the product, including its effects on ecosystems, persistence, degradability, bioaccumulation potential, and toxicity to aquatic and terrestrial organisms.",
+      "title": "ecological information",
       "from_schema": "https://evora-project.eu/",
-      "aliases": [
-        "ecological information"
-      ],
       "is_a": "ecologicalInformation",
       "domain": "MSDS",
       "slot_uri": "https://evora-project.eu/ecologicalInformation",
@@ -7054,10 +6717,8 @@
       "name": "MSDS_disposalConsiderations",
       "definition_uri": "https://evora-project.eu/disposalConsiderations",
       "description": "Guidance on the safe and environmentally responsible disposal of the product, including recommended disposal methods, regulatory requirements, and precautions to avoid harm to people and the environment during disposal.",
+      "title": "disposal considerations",
       "from_schema": "https://evora-project.eu/",
-      "aliases": [
-        "disposal considerations"
-      ],
       "is_a": "disposalConsiderations",
       "domain": "MSDS",
       "slot_uri": "https://evora-project.eu/disposalConsiderations",
@@ -7075,10 +6736,8 @@
       "name": "MSDS_transportInformation",
       "definition_uri": "https://evora-project.eu/transportInformation",
       "description": "Details the regulations and guidelines for safely transporting the product, including classifications for road, air, sea, or rail transport, UN numbers, packaging requirements, and any special precautions to ensure safe transit.",
+      "title": "transport information",
       "from_schema": "https://evora-project.eu/",
-      "aliases": [
-        "transport information"
-      ],
       "is_a": "transportInformation",
       "domain": "MSDS",
       "slot_uri": "https://evora-project.eu/transportInformation",
@@ -7096,10 +6755,8 @@
       "name": "MSDS_regulatoryInformation",
       "definition_uri": "https://evora-project.eu/regulatoryInformation",
       "description": "Lists applicable laws, regulations, and standards governing the product, including local, national, or international requirements for its handling, use, transportation, and disposal, ensuring compliance with legal obligations.",
+      "title": "regulatory information",
       "from_schema": "https://evora-project.eu/",
-      "aliases": [
-        "regulatory information"
-      ],
       "is_a": "regulatoryInformation",
       "domain": "MSDS",
       "slot_uri": "https://evora-project.eu/regulatoryInformation",
@@ -7117,10 +6774,8 @@
       "name": "MSDS_furtherInformation",
       "definition_uri": "https://evora-project.eu/furtherInformation",
       "description": "Provides any additional details or clarifications not covered in other sections of the MSDS, such as references, supporting documents, or specific instructions for safe handling and use of the product.",
+      "title": "further information",
       "from_schema": "https://evora-project.eu/",
-      "aliases": [
-        "further information"
-      ],
       "is_a": "furtherInformation",
       "domain": "MSDS",
       "slot_uri": "https://evora-project.eu/furtherInformation",
@@ -7138,10 +6793,8 @@
       "name": "File_contentURL",
       "definition_uri": "https://evora-project.eu/contentURL",
       "description": "The web address or location where the file content is stored and can be accessed or downloaded.",
+      "title": "content URL",
       "from_schema": "https://evora-project.eu/",
-      "aliases": [
-        "content URL"
-      ],
       "is_a": "contentURL",
       "domain": "File",
       "slot_uri": "https://evora-project.eu/contentURL",
@@ -7160,10 +6813,8 @@
       "name": "File_format",
       "definition_uri": "https://evora-project.eu/format",
       "description": "The file type or format that indicates how the data within the file is structured",
+      "title": "format",
       "from_schema": "https://evora-project.eu/",
-      "aliases": [
-        "format"
-      ],
       "is_a": "format",
       "domain": "File",
       "slot_uri": "https://evora-project.eu/format",
@@ -7182,10 +6833,8 @@
       "name": "File_license",
       "definition_uri": "https://evora-project.eu/license",
       "description": "The legal terms and conditions under which the file can be used, shared, or distributed, indicating any restrictions or permissions.",
+      "title": "license",
       "from_schema": "https://evora-project.eu/",
-      "aliases": [
-        "license"
-      ],
       "is_a": "license",
       "domain": "File",
       "slot_uri": "https://evora-project.eu/license",
@@ -7204,10 +6853,8 @@
       "name": "Image_altText",
       "definition_uri": "https://evora-project.eu/altText",
       "description": "An alternate text for the image, if the image cannot be displayed",
+      "title": "alt text",
       "from_schema": "https://evora-project.eu/",
-      "aliases": [
-        "alt text"
-      ],
       "is_a": "altText",
       "domain": "Image",
       "slot_uri": "https://evora-project.eu/altText",
@@ -7225,10 +6872,8 @@
       "name": "ContactPoint_email",
       "definition_uri": "https://evora-project.eu/email",
       "description": "Email address",
+      "title": "email",
       "from_schema": "https://evora-project.eu/",
-      "aliases": [
-        "email"
-      ],
       "close_mappings": [
         "http://schema.org/email",
         "http://www.w3.org/2006/vcard/ns#email"
@@ -7250,10 +6895,8 @@
       "name": "ContactPoint_telephone",
       "definition_uri": "https://evora-project.eu/telephone",
       "description": "The telephone number",
+      "title": "telephone",
       "from_schema": "https://evora-project.eu/",
-      "aliases": [
-        "telephone"
-      ],
       "close_mappings": [
         "http://schema.org/telephone",
         "http://www.w3.org/2006/vcard/ns#telephone"
@@ -7275,10 +6918,8 @@
       "name": "ContactPoint_streetAddress",
       "definition_uri": "https://evora-project.eu/streetAddress",
       "description": "The building/apartment number and the street name",
+      "title": "street address",
       "from_schema": "https://evora-project.eu/",
-      "aliases": [
-        "street address"
-      ],
       "close_mappings": [
         "http://schema.org/streetAddress",
         "http://www.w3.org/2006/vcard/ns#hasStreetAddress"
@@ -7300,10 +6941,8 @@
       "name": "ContactPoint_addressLocality",
       "definition_uri": "https://evora-project.eu/addressLocality",
       "description": "The locality in which the street address is, and which is in the region. e.g, the city",
+      "title": "locality/city",
       "from_schema": "https://evora-project.eu/",
-      "aliases": [
-        "locality/city"
-      ],
       "close_mappings": [
         "http://schema.org/addressLocality",
         "http://www.w3.org/2006/vcard/ns#hasLocality"
@@ -7325,10 +6964,8 @@
       "name": "ContactPoint_addressRegion",
       "definition_uri": "https://evora-project.eu/addressRegion",
       "description": "The region in which the locality is, and which is in the country. For example, California or another appropriate first-level Administrative division",
+      "title": "region",
       "from_schema": "https://evora-project.eu/",
-      "aliases": [
-        "region"
-      ],
       "close_mappings": [
         "http://schema.org/addressRegion",
         "http://www.w3.org/2006/vcard/ns#hasRegion"
@@ -7350,10 +6987,8 @@
       "name": "ContactPoint_postalCode",
       "definition_uri": "https://evora-project.eu/postalCode",
       "description": "The postal code",
+      "title": "postal code",
       "from_schema": "https://evora-project.eu/",
-      "aliases": [
-        "postal code"
-      ],
       "close_mappings": [
         "http://schema.org/postalCode",
         "http://www.w3.org/2006/vcard/ns#hasPostalCode"
@@ -7375,10 +7010,8 @@
       "name": "ContactPoint_addressCountry",
       "definition_uri": "https://evora-project.eu/addressCountry",
       "description": "The country as of  ISO 3166",
+      "title": "address Country",
       "from_schema": "https://evora-project.eu/",
-      "aliases": [
-        "address Country"
-      ],
       "close_mappings": [
         "http://schema.org/addressCountry",
         "http://www.w3.org/2006/vcard/ns#hasCountryName"
@@ -7401,10 +7034,8 @@
       "name": "ContactPoint_oRCIDiD",
       "definition_uri": "https://evora-project.eu/oRCIDiD",
       "description": "Unique persistent identifier for a person, provided by the Open Researcher and Contributor ID (ORCID) organisation",
+      "title": "ORCID iD",
       "from_schema": "https://evora-project.eu/",
-      "aliases": [
-        "ORCID iD"
-      ],
       "exact_mappings": [
         "http://purl.obolibrary.org/obo/IAO_0000708"
       ],
@@ -7425,10 +7056,8 @@
       "name": "License_resourceURL",
       "definition_uri": "https://evora-project.eu/resourceURL",
       "description": "The web address or location where the details or content is stored and can be accessed or downloaded.",
+      "title": "resource URL",
       "from_schema": "https://evora-project.eu/",
-      "aliases": [
-        "resource URL"
-      ],
       "exact_mappings": [
         "http://purl.org/dc/terms/license"
       ],
@@ -7452,10 +7081,8 @@
       "name": "License_licensingOrAttribution",
       "definition_uri": "https://evora-project.eu/licensingOrAttribution",
       "description": "A text or html code that provides any related data sharing licence and/or attribution",
+      "title": "licensing or attribution",
       "from_schema": "https://evora-project.eu/",
-      "aliases": [
-        "licensing or attribution"
-      ],
       "exact_mappings": [
         "http://purl.org/dc/terms/rights"
       ],
@@ -7479,10 +7106,8 @@
       "name": "License_logo",
       "definition_uri": "https://evora-project.eu/logo",
       "description": "A path or URL to the related logo",
+      "title": "logo",
       "from_schema": "https://evora-project.eu/",
-      "aliases": [
-        "logo"
-      ],
       "is_a": "logo",
       "domain": "License",
       "slot_uri": "https://evora-project.eu/logo",
@@ -7501,10 +7126,8 @@
       "name": "Certification_logo",
       "definition_uri": "https://evora-project.eu/logo",
       "description": "A path or URL to the related logo",
+      "title": "logo",
       "from_schema": "https://evora-project.eu/",
-      "aliases": [
-        "logo"
-      ],
       "is_a": "logo",
       "domain": "Certification",
       "slot_uri": "https://evora-project.eu/logo",
@@ -7523,10 +7146,8 @@
       "name": "Certification_certificationDocument",
       "definition_uri": "https://evora-project.eu/certificationDocument",
       "description": "The document(s) issued by an authority certifying the conformity of the subject to the applicable scheme, including, as the case may be, the documents attesting the equivalence to another certification scheme.",
+      "title": "certification document",
       "from_schema": "https://evora-project.eu/",
-      "aliases": [
-        "certification document"
-      ],
       "is_a": "certificationDocument",
       "domain": "Certification",
       "slot_uri": "https://evora-project.eu/certificationDocument",
@@ -7546,10 +7167,8 @@
       "name": "Certification_resourceURL",
       "definition_uri": "https://evora-project.eu/resourceURL",
       "description": "The web address or location where the details or content is stored and can be accessed or downloaded.",
+      "title": "resource URL",
       "from_schema": "https://evora-project.eu/",
-      "aliases": [
-        "resource URL"
-      ],
       "close_mappings": [
         "http://schema.org/url"
       ],
@@ -7572,9 +7191,10 @@
       "name": "Version",
       "definition_uri": "https://evora-project.eu/Version",
       "description": "Numeric code assigned to identify a particular historical version of a work (e.g. software or technical standards)",
+      "title": "Version",
       "from_schema": "https://evora-project.eu/",
       "aliases": [
-        "Version"
+        "version number"
       ],
       "close_mappings": [
         "wd:Q114469879"
@@ -7592,10 +7212,8 @@
       "name": "Nameable",
       "definition_uri": "https://evora-project.eu/Nameable",
       "description": "Any entity that has a name and can have a textual description",
+      "title": "Nameable",
       "from_schema": "https://evora-project.eu/",
-      "aliases": [
-        "Nameable"
-      ],
       "abstract": true,
       "slots": [
         "Nameable_name",
@@ -7609,9 +7227,10 @@
       "name": "Catalogue",
       "definition_uri": "https://evora-project.eu/Catalogue",
       "description": "A curated collection of metadata about resources",
+      "title": "Catalogue",
       "from_schema": "https://evora-project.eu/",
       "aliases": [
-        "Catalogue"
+        "catalogue"
       ],
       "exact_mappings": [
         "dcat:Catalog"
@@ -7634,9 +7253,10 @@
       "name": "Dataset",
       "definition_uri": "https://evora-project.eu/Dataset",
       "description": "A collection of data, published or curated by a single agent, and available for access",
+      "title": "Dataset",
       "from_schema": "https://evora-project.eu/",
       "aliases": [
-        "Dataset"
+        "data set"
       ],
       "exact_mappings": [
         "dcat:Dataset"
@@ -7654,9 +7274,10 @@
       "name": "NamedDataset",
       "definition_uri": "https://evora-project.eu/NamedDataset",
       "description": "A collection of data, that has a name and can have a description, published or curated by a single agent, and available for access",
+      "title": "Named Dataset",
       "from_schema": "https://evora-project.eu/",
       "aliases": [
-        "Named Dataset"
+        "data set"
       ],
       "exact_mappings": [
         "dcat:Dataset"
@@ -7679,9 +7300,10 @@
       "name": "DataService",
       "definition_uri": "https://evora-project.eu/DataService",
       "description": "A collection of operations that provides access to one or more datasets or data processing functions",
+      "title": "Data Service",
       "from_schema": "https://evora-project.eu/",
       "aliases": [
-        "Data Service"
+        "web service"
       ],
       "exact_mappings": [
         "dcat:DataService"
@@ -7704,9 +7326,10 @@
       "name": "Taxonomy",
       "definition_uri": "https://evora-project.eu/Taxonomy",
       "description": "Science of naming, defining and classifying organisms",
+      "title": "Taxonomy",
       "from_schema": "https://evora-project.eu/",
       "aliases": [
-        "Taxonomy"
+        "taxonomy"
       ],
       "close_mappings": [
         "wd:Q8269924",
@@ -7731,9 +7354,10 @@
       "name": "DataProvider",
       "definition_uri": "https://evora-project.eu/DataProvider",
       "description": "An external API (Application Programming Interface) or Endpoint that permits to retrieve data from other sources",
+      "title": "Data provider",
       "from_schema": "https://evora-project.eu/",
       "aliases": [
-        "Data provider"
+        "data provider"
       ],
       "close_mappings": [
         "wd:Q122625839"
@@ -7760,10 +7384,8 @@
       "name": "PathogenIdentification",
       "definition_uri": "https://evora-project.eu/PathogenIdentification",
       "description": "A collection of distinguishing information that enables the differentiation of a pathogen from another",
+      "title": "Pathogen identification",
       "from_schema": "https://evora-project.eu/",
-      "aliases": [
-        "Pathogen identification"
-      ],
       "is_a": "Dataset",
       "slots": [
         "PathogenIdentification_taxon",
@@ -7785,9 +7407,10 @@
       "name": "Publication",
       "definition_uri": "https://evora-project.eu/Publication",
       "description": "A scientific publication",
+      "title": "Publication",
       "from_schema": "https://evora-project.eu/",
       "aliases": [
-        "Publication"
+        "scientific publication"
       ],
       "close_mappings": [
         "wd:Q591041"
@@ -7808,9 +7431,10 @@
       "name": "Vocabulary",
       "definition_uri": "https://evora-project.eu/Vocabulary",
       "description": "A subset of words or phrases specific to a particular subject or field",
+      "title": "Vocabulary",
       "from_schema": "https://evora-project.eu/",
       "aliases": [
-        "Vocabulary"
+        "vocabulary"
       ],
       "close_mappings": [
         "wd:Q6499736",
@@ -7831,9 +7455,10 @@
       "name": "Term",
       "definition_uri": "https://evora-project.eu/Term",
       "description": "Word or phrase from a specialized area of knowledge",
+      "title": "Term",
       "from_schema": "https://evora-project.eu/",
       "aliases": [
-        "Term"
+        "term"
       ],
       "close_mappings": [
         "wd:Q1969448"
@@ -7854,9 +7479,10 @@
       "name": "CommonName",
       "definition_uri": "https://evora-project.eu/CommonName",
       "description": "Vernacular name that is the name used in everyday language to refer to an organism or group of organisms. This name is typically easier to remember and pronounce compared to the scientific name",
+      "title": "Common Name",
       "from_schema": "https://evora-project.eu/",
       "aliases": [
-        "Common Name"
+        "common name"
       ],
       "exact_mappings": [
         "dwc:vernacularName"
@@ -7881,9 +7507,10 @@
       "name": "VirusName",
       "definition_uri": "https://evora-project.eu/VirusName",
       "description": "A virus vernacular name or a name that describes a group of viruses",
+      "title": "Virus Name",
       "from_schema": "https://evora-project.eu/",
       "aliases": [
-        "Virus Name"
+        "virus name"
       ],
       "close_mappings": [
         "wd:Q125481078"
@@ -7905,9 +7532,10 @@
       "name": "AlternateName",
       "definition_uri": "https://evora-project.eu/AlternateName",
       "description": "List of alternate names for things",
+      "title": "Alternate Name",
       "from_schema": "https://evora-project.eu/",
       "aliases": [
-        "Alternate Name"
+        "synonym"
       ],
       "close_mappings": [
         "wd:Q7662595"
@@ -7929,12 +7557,13 @@
       "name": "RiskGroup",
       "definition_uri": "https://evora-project.eu/RiskGroup",
       "description": "Risk group classification guides initial handling of biological agents in labs but doesn't systematically equate to biosafety levels. Actual risk varies with the agent, procedures, and personnel competence",
+      "title": "Risk group",
       "comments": [
         "Use of Data provider if any or manual import of information from wd:Q125449389, wd:Q125449412, wd:Q125449429, wd:Q125449439"
       ],
       "from_schema": "https://evora-project.eu/",
       "aliases": [
-        "Risk group"
+        "risk group"
       ],
       "close_mappings": [
         "wd:Q125449255"
@@ -7954,6 +7583,7 @@
       "name": "DOI",
       "definition_uri": "https://evora-project.eu/DOI",
       "description": "A unique string identifier assigned to a digital object, providing a permanent link for reliable citation and access.  The Digital Object Identifier (DOI) is a persistent identifier that is an ISO standard",
+      "title": "DOI",
       "from_schema": "https://evora-project.eu/",
       "aliases": [
         "DOI"
@@ -7976,9 +7606,10 @@
       "name": "Journal",
       "definition_uri": "https://evora-project.eu/Journal",
       "description": "Periodical journal publishing scientific research",
+      "title": "Journal",
       "from_schema": "https://evora-project.eu/",
       "aliases": [
-        "Journal"
+        "scientific journal"
       ],
       "close_mappings": [
         "wd:Q5633421"
@@ -7998,9 +7629,10 @@
       "name": "PDBReference",
       "definition_uri": "https://evora-project.eu/PDBReference",
       "description": "Identifier for 3D structural data as per the PDB (Protein Data Bank) database",
+      "title": "PDB reference",
       "from_schema": "https://evora-project.eu/",
       "aliases": [
-        "PDB reference"
+        "Wikidata property to identify proteins"
       ],
       "close_mappings": [
         "wdp:Q42415644"
@@ -8020,9 +7652,10 @@
       "name": "Keyword",
       "definition_uri": "https://evora-project.eu/Keyword",
       "description": "A term or phrase used to tag and categorize content",
+      "title": "Keyword",
       "from_schema": "https://evora-project.eu/",
       "aliases": [
-        "Keyword"
+        "subject heading"
       ],
       "close_mappings": [
         "wd:Q1128340"
@@ -8042,9 +7675,10 @@
       "name": "ProteinTag",
       "definition_uri": "https://evora-project.eu/ProteinTag",
       "description": "Peptide sequence genetically grafted onto a recombinant protein",
+      "title": "Protein tag",
       "from_schema": "https://evora-project.eu/",
       "aliases": [
-        "Protein tag"
+        "protein tag"
       ],
       "close_mappings": [
         "wd:Q645590"
@@ -8064,13 +7698,11 @@
       "name": "SpecialFeature",
       "definition_uri": "https://evora-project.eu/SpecialFeature",
       "description": "Distinctive attributes of a product that set it apart from other similar items e.g., Reference strain, Vaccinal strain, Antiviral resistant strain ...",
+      "title": "Special feature",
       "comments": [
         "These special features help researchers and professionals in the field to select appropriate virus strains for their specific research needs and applications."
       ],
       "from_schema": "https://evora-project.eu/",
-      "aliases": [
-        "Special feature"
-      ],
       "is_a": "Term",
       "slots": [
         "Nameable_name",
@@ -8086,9 +7718,10 @@
       "name": "ExpressionVector",
       "definition_uri": "https://evora-project.eu/ExpressionVector",
       "description": "A reference to an expression vector plasmid, typically embedding a resistance marker for inducible protein expression",
+      "title": "Expression vector",
       "from_schema": "https://evora-project.eu/",
       "aliases": [
-        "Expression vector"
+        "expression vector"
       ],
       "close_mappings": [
         "wd:Q5421712"
@@ -8108,10 +7741,8 @@
       "name": "PlasmidSelection",
       "definition_uri": "https://evora-project.eu/PlasmidSelection",
       "description": "The process of identifying cells that have successfully incorporated a plasmid, typically using antibiotic resistance markers",
+      "title": "Plasmid selection",
       "from_schema": "https://evora-project.eu/",
-      "aliases": [
-        "Plasmid selection"
-      ],
       "is_a": "Term",
       "slots": [
         "Nameable_name",
@@ -8127,10 +7758,8 @@
       "name": "PropagationHost",
       "definition_uri": "https://evora-project.eu/PropagationHost",
       "description": "The organism used to grow and multiply the pathogen under controlled conditions",
+      "title": "Propagation host",
       "from_schema": "https://evora-project.eu/",
-      "aliases": [
-        "Propagation host"
-      ],
       "is_a": "Term",
       "slots": [
         "Nameable_name",
@@ -8146,10 +7775,8 @@
       "name": "TransmissionMethod",
       "definition_uri": "https://evora-project.eu/TransmissionMethod",
       "description": "The process by which the pathogen spreads between hosts",
+      "title": "Transmission method",
       "from_schema": "https://evora-project.eu/",
-      "aliases": [
-        "Transmission method"
-      ],
       "is_a": "Term",
       "slots": [
         "Nameable_name",
@@ -8165,9 +7792,10 @@
       "name": "ProductionCellLine",
       "definition_uri": "https://evora-project.eu/ProductionCellLine",
       "description": "A population of cells that originates from a primary culture, adapted to grow and divide under laboratory conditions. Used in biotechnology to consistently produce biological substances",
+      "title": "Production cell line",
       "from_schema": "https://evora-project.eu/",
       "aliases": [
-        "Production cell line"
+        "cell line"
       ],
       "close_mappings": [
         "wd:Q21014462"
@@ -8187,9 +7815,10 @@
       "name": "ProductCategory",
       "definition_uri": "https://evora-project.eu/ProductCategory",
       "description": "A term used to classify a group of products that share common characteristics or functions, which helps in their organization",
+      "title": "Product category",
       "from_schema": "https://evora-project.eu/",
       "aliases": [
-        "Product category"
+        "product category"
       ],
       "close_mappings": [
         "wd:Q63981612"
@@ -8210,10 +7839,8 @@
       "name": "IsolationHost",
       "definition_uri": "https://evora-project.eu/IsolationHost",
       "description": "Host organism from which the pathogen was isolated",
+      "title": "Isolation host",
       "from_schema": "https://evora-project.eu/",
-      "aliases": [
-        "Isolation host"
-      ],
       "is_a": "Term",
       "slots": [
         "Nameable_name",
@@ -8229,12 +7856,13 @@
       "name": "GeographicalOrigin",
       "definition_uri": "https://evora-project.eu/GeographicalOrigin",
       "description": "The specific location or region where a physical item, originates or is naturally found",
+      "title": "Geographical origin",
       "comments": [
         "geonames.org API could be a good service data provider as suggested by DCAT-AP"
       ],
       "from_schema": "https://evora-project.eu/",
       "aliases": [
-        "Geographical origin"
+        "origin"
       ],
       "exact_mappings": [
         "dct:Location"
@@ -8257,10 +7885,8 @@
       "name": "IPLCOrigin",
       "definition_uri": "https://evora-project.eu/IPLCOrigin",
       "description": "The IPLC area (Indigenous People and Local Communities) from which a physical item originates",
+      "title": "IPLC origin",
       "from_schema": "https://evora-project.eu/",
-      "aliases": [
-        "IPLC origin"
-      ],
       "is_a": "GeographicalOrigin",
       "slots": [
         "Nameable_name",
@@ -8276,12 +7902,13 @@
       "name": "Country",
       "definition_uri": "https://evora-project.eu/Country",
       "description": "The country as of ISO3166",
+      "title": "Country",
       "comments": [
         "Use of Data provider recommended... serve as a local cache for ISO3166"
       ],
       "from_schema": "https://evora-project.eu/",
       "aliases": [
-        "Country"
+        "country"
       ],
       "close_mappings": [
         "wd:Q6256"
@@ -8302,10 +7929,8 @@
       "name": "IATAClassification",
       "definition_uri": "https://evora-project.eu/IATAClassification",
       "description": "The corresponding International Air Transport Association (IATA)'s category for dangerous goods that are transported by air",
+      "title": "IATA classification",
       "from_schema": "https://evora-project.eu/",
-      "aliases": [
-        "IATA classification"
-      ],
       "is_a": "Term",
       "slots": [
         "Nameable_name",
@@ -8321,9 +7946,10 @@
       "name": "Variant",
       "definition_uri": "https://evora-project.eu/Variant",
       "description": "An organism with one or more new mutations is referred to as a \u201cvariant\u201d of the original organism if not sufficiently different to be termed a distinct strain",
+      "title": "Variant",
       "from_schema": "https://evora-project.eu/",
       "aliases": [
-        "Variant"
+        "genetic variant"
       ],
       "close_mappings": [
         "wd:Q104795308"
@@ -8345,12 +7971,13 @@
       "name": "TaxonomicRank",
       "definition_uri": "https://evora-project.eu/TaxonomicRank",
       "description": "The possible taxonomic ranks and their description",
+      "title": "Taxonomic rank",
       "comments": [
         "Use of Data provider recommended"
       ],
       "from_schema": "https://evora-project.eu/",
       "aliases": [
-        "Taxonomic rank"
+        "taxonomic rank"
       ],
       "close_mappings": [
         "wd:Q427626"
@@ -8371,12 +7998,13 @@
       "name": "Taxon",
       "definition_uri": "https://evora-project.eu/Taxon",
       "description": "Conceptual entity that groups one or more populations of an organism or organisms, as seen by taxonomists, to form a unit",
+      "title": "Taxon",
       "comments": [
         "The taxonomic taxons connected to their parent so that a full lienage can be rebuild. Use of Data provider recommended"
       ],
       "from_schema": "https://evora-project.eu/",
       "aliases": [
-        "Taxon"
+        "taxon"
       ],
       "exact_mappings": [
         "dwc:Taxon"
@@ -8406,10 +8034,8 @@
       "name": "ExternalRelatedReference",
       "definition_uri": "https://evora-project.eu/ExternalRelatedReference",
       "description": "A reference that permits to retrieve an item from an external provider",
+      "title": "External related reference",
       "from_schema": "https://evora-project.eu/",
-      "aliases": [
-        "External related reference"
-      ],
       "is_a": "Dataset",
       "slots": [
         "ExternalRelatedReference_reference",
@@ -8425,9 +8051,10 @@
       "name": "Sequence",
       "definition_uri": "https://evora-project.eu/Sequence",
       "description": "A nucleic acid or protein sequence information",
+      "title": "Sequence",
       "from_schema": "https://evora-project.eu/",
       "aliases": [
-        "Sequence"
+        "biological sequence"
       ],
       "close_mappings": [
         "wd:Q3511065"
@@ -8445,13 +8072,11 @@
       "name": "SequenceReference",
       "definition_uri": "https://evora-project.eu/SequenceReference",
       "description": "A reference that permits to retrieve the sequence information from a sequence provider",
+      "title": "Sequence reference",
       "comments": [
         "A work on making it a subclass of External related reference might be consistent and beneficial for data structuration but special attention will have to be take to ensure it remains consistent with the actual the use cases for users"
       ],
       "from_schema": "https://evora-project.eu/",
-      "aliases": [
-        "Sequence reference"
-      ],
       "is_a": "Dataset",
       "slots": [
         "SequenceReference_accessionNumber",
@@ -8465,10 +8090,8 @@
       "name": "PersonOrOrganization",
       "definition_uri": "https://evora-project.eu/PersonOrOrganization",
       "description": "A person or an organization",
+      "title": "Person Or Organization",
       "from_schema": "https://evora-project.eu/",
-      "aliases": [
-        "Person Or Organization"
-      ],
       "exact_mappings": [
         "dct:Agent"
       ],
@@ -8491,9 +8114,10 @@
       "name": "Person",
       "definition_uri": "https://evora-project.eu/Person",
       "description": "An individual",
+      "title": "Person",
       "from_schema": "https://evora-project.eu/",
       "aliases": [
-        "Person"
+        "person"
       ],
       "close_mappings": [
         "wd:Q215627",
@@ -8516,9 +8140,10 @@
       "name": "Organization",
       "definition_uri": "https://evora-project.eu/Organization",
       "description": "A social entity established to meet needs or pursue specific goals",
+      "title": "Organization",
       "from_schema": "https://evora-project.eu/",
       "aliases": [
-        "Organization"
+        "organization"
       ],
       "close_mappings": [
         "wd:Q43229",
@@ -8542,9 +8167,10 @@
       "name": "RI",
       "definition_uri": "https://evora-project.eu/RI",
       "description": "A research infrastructure",
+      "title": "RI",
       "from_schema": "https://evora-project.eu/",
       "aliases": [
-        "RI"
+        "research infrastructure"
       ],
       "close_mappings": [
         "wd:Q1438053"
@@ -8567,10 +8193,8 @@
       "name": "Provider",
       "definition_uri": "https://evora-project.eu/Provider",
       "description": "A provider of products or services, as a specific organization",
+      "title": "Provider",
       "from_schema": "https://evora-project.eu/",
-      "aliases": [
-        "Provider"
-      ],
       "close_mappings": [
         "dct:ProvenanceStatement"
       ],
@@ -8593,10 +8217,8 @@
       "name": "Originator",
       "definition_uri": "https://evora-project.eu/Originator",
       "description": "The individual or organization responsible for the original discovery, isolation, or creation of an item, providing information about the source or origin of the sample",
+      "title": "Originator",
       "from_schema": "https://evora-project.eu/",
-      "aliases": [
-        "Originator"
-      ],
       "close_mappings": [
         "dct:ProvenanceStatement"
       ],
@@ -8616,10 +8238,8 @@
       "name": "BiologicalMaterialOrigin",
       "definition_uri": "https://evora-project.eu/BiologicalMaterialOrigin",
       "description": "Information about the origin of the biological material, compulsory for access, utilization, and benefit-sharing of genetic resources in compliance with the Nagoya Protocol",
+      "title": "Biological material origin",
       "from_schema": "https://evora-project.eu/",
-      "aliases": [
-        "Biological material origin"
-      ],
       "is_a": "Dataset",
       "slots": [
         "BiologicalMaterialOrigin_recombinantMaterial",
@@ -8634,10 +8254,8 @@
       "name": "BiologicalPartOrigin",
       "definition_uri": "https://evora-project.eu/BiologicalPartOrigin",
       "description": "Information on the origin of a unitary, cohesive part that is part of, or constitutes the biological material. It can be multiple parts in case of a recombinant biological material",
+      "title": "Biological part origin",
       "from_schema": "https://evora-project.eu/",
-      "aliases": [
-        "Biological part origin"
-      ],
       "is_a": "Dataset",
       "abstract": true,
       "slots": [
@@ -8652,10 +8270,8 @@
       "name": "NaturalPartOrigin",
       "definition_uri": "https://evora-project.eu/NaturalPartOrigin",
       "description": "Information on the origin of a natural part that composes the biological material",
+      "title": "Natural part origin",
       "from_schema": "https://evora-project.eu/",
-      "aliases": [
-        "Natural part origin"
-      ],
       "is_a": "BiologicalPartOrigin",
       "slots": [
         "BiologicalPartOrigin_recombinantPartIdentification",
@@ -8674,10 +8290,8 @@
       "name": "SyntheticPartOrigin",
       "definition_uri": "https://evora-project.eu/SyntheticPartOrigin",
       "description": "Information on the origin of a synthetic part that composes the biological material",
+      "title": "Synthetic part origin",
       "from_schema": "https://evora-project.eu/",
-      "aliases": [
-        "Synthetic part origin"
-      ],
       "is_a": "BiologicalPartOrigin",
       "slots": [
         "BiologicalPartOrigin_recombinantPartIdentification",
@@ -8693,10 +8307,8 @@
       "name": "RecombinantPartIdentification",
       "definition_uri": "https://evora-project.eu/RecombinantPartIdentification",
       "description": "Identification of a recombinant part",
+      "title": "Recombinant part identification",
       "from_schema": "https://evora-project.eu/",
-      "aliases": [
-        "Recombinant part identification"
-      ],
       "slots": [
         "RecombinantPartIdentification_partIdentification",
         "RecombinantPartIdentification_sequence"
@@ -8709,9 +8321,10 @@
       "name": "Collection",
       "definition_uri": "https://evora-project.eu/Collection",
       "description": "Set of products and services with some common characteristics",
+      "title": "Collection",
       "from_schema": "https://evora-project.eu/",
       "aliases": [
-        "Collection"
+        "collection"
       ],
       "close_mappings": [
         "wd:Q2668072"
@@ -8731,13 +8344,11 @@
       "name": "ProductOrService",
       "definition_uri": "https://evora-project.eu/ProductOrService",
       "description": "A product or a service",
+      "title": "Product or service",
       "comments": [
         "part of  wd:Q2897903 (goods and services )"
       ],
       "from_schema": "https://evora-project.eu/",
-      "aliases": [
-        "Product or service"
-      ],
       "is_a": "NamedDataset",
       "abstract": true,
       "slots": [
@@ -8776,9 +8387,10 @@
       "name": "Service",
       "definition_uri": "https://evora-project.eu/Service",
       "description": "A service",
+      "title": "Service",
       "from_schema": "https://evora-project.eu/",
       "aliases": [
-        "Service"
+        "service"
       ],
       "close_mappings": [
         "wd:Q7406919"
@@ -8822,9 +8434,10 @@
       "name": "Product",
       "definition_uri": "https://evora-project.eu/Product",
       "description": "A product",
+      "title": "Product",
       "from_schema": "https://evora-project.eu/",
       "aliases": [
-        "Product"
+        "product"
       ],
       "close_mappings": [
         "wd:Q2424752"
@@ -8873,9 +8486,10 @@
       "name": "Antibody",
       "definition_uri": "https://evora-project.eu/Antibody",
       "description": "Protein that can bind to certain types of foreign bodies, such as pathogens",
+      "title": "Antibody",
       "from_schema": "https://evora-project.eu/",
       "aliases": [
-        "Antibody"
+        "antibody"
       ],
       "close_mappings": [
         "wd:Q79460"
@@ -8929,9 +8543,10 @@
       "name": "Hybridoma",
       "definition_uri": "https://evora-project.eu/Hybridoma",
       "description": "An hybridoma that provides antibodies that can be related to a pathogen",
+      "title": "Hybridoma",
       "from_schema": "https://evora-project.eu/",
       "aliases": [
-        "Hybridoma"
+        "hybridoma"
       ],
       "close_mappings": [
         "wd:Q27554370"
@@ -8986,9 +8601,10 @@
       "name": "Protein",
       "definition_uri": "https://evora-project.eu/Protein",
       "description": "A protein as a derived product from a pathogen",
+      "title": "Protein",
       "from_schema": "https://evora-project.eu/",
       "aliases": [
-        "Protein"
+        "protein"
       ],
       "close_mappings": [
         "wd:Q8054"
@@ -9051,9 +8667,10 @@
       "name": "NucleicAcid",
       "definition_uri": "https://evora-project.eu/NucleicAcid",
       "description": "Nucleic acid related to a pathogen. It can be extracted or synthetic",
+      "title": "Nucleic Acid",
       "from_schema": "https://evora-project.eu/",
       "aliases": [
-        "Nucleic Acid"
+        "nucleic acids"
       ],
       "close_mappings": [
         "wd:Q123619"
@@ -9116,10 +8733,8 @@
       "name": "DetectionKit",
       "definition_uri": "https://evora-project.eu/DetectionKit",
       "description": "A detection kit for specific pathogens",
+      "title": "Detection Kit",
       "from_schema": "https://evora-project.eu/",
-      "aliases": [
-        "Detection Kit"
-      ],
       "is_a": "Product",
       "slots": [
         "Nameable_name",
@@ -9168,9 +8783,10 @@
       "name": "Bundle",
       "definition_uri": "https://evora-project.eu/Bundle",
       "description": "A group of products",
+      "title": "Bundle",
       "from_schema": "https://evora-project.eu/",
       "aliases": [
-        "Bundle"
+        "product bundle"
       ],
       "close_mappings": [
         "wd:Q1020767"
@@ -9221,9 +8837,10 @@
       "name": "Pathogen",
       "definition_uri": "https://evora-project.eu/Pathogen",
       "description": "Biological entity that causes disease in its host, which is typically an infectious microorganism or agent, such as a virus, bacterium, protozoan, prion, viroid, or fungus",
+      "title": "Pathogen",
       "from_schema": "https://evora-project.eu/",
       "aliases": [
-        "Pathogen"
+        "pathogen"
       ],
       "close_mappings": [
         "wd:Q170065"
@@ -9291,9 +8908,10 @@
       "name": "Virus",
       "definition_uri": "https://evora-project.eu/Virus",
       "description": "The virus as a biological material",
+      "title": "Virus",
       "from_schema": "https://evora-project.eu/",
       "aliases": [
-        "Virus"
+        "virus"
       ],
       "close_mappings": [
         "wd:Q808"
@@ -9363,9 +8981,10 @@
       "name": "Bacterium",
       "definition_uri": "https://evora-project.eu/Bacterium",
       "description": "The bacterium as a biological material",
+      "title": "Bacterium",
       "from_schema": "https://evora-project.eu/",
       "aliases": [
-        "Bacterium"
+        "bacteria"
       ],
       "close_mappings": [
         "wd:Q10876"
@@ -9432,9 +9051,10 @@
       "name": "Fungus",
       "definition_uri": "https://evora-project.eu/Fungus",
       "description": "The fungus as a biological material",
+      "title": "Fungus",
       "from_schema": "https://evora-project.eu/",
       "aliases": [
-        "Fungus"
+        "fungus"
       ],
       "close_mappings": [
         "wd:Q764"
@@ -9501,9 +9121,10 @@
       "name": "Protozoan",
       "definition_uri": "https://evora-project.eu/Protozoan",
       "description": "The protozoan as a biological material",
+      "title": "Protozoan",
       "from_schema": "https://evora-project.eu/",
       "aliases": [
-        "Protozoan"
+        "protozoa"
       ],
       "close_mappings": [
         "wd:Q101274"
@@ -9570,9 +9191,10 @@
       "name": "Viroid",
       "definition_uri": "https://evora-project.eu/Viroid",
       "description": "The viroid as a biological material",
+      "title": "Viroid",
       "from_schema": "https://evora-project.eu/",
       "aliases": [
-        "Viroid"
+        "viroid"
       ],
       "close_mappings": [
         "wd:Q209917"
@@ -9639,9 +9261,10 @@
       "name": "Prion",
       "definition_uri": "https://evora-project.eu/Prion",
       "description": "The prion as a biological material",
+      "title": "Prion",
       "from_schema": "https://evora-project.eu/",
       "aliases": [
-        "Prion"
+        "prion"
       ],
       "close_mappings": [
         "wd:Q47051"
@@ -9708,9 +9331,10 @@
       "name": "MSDS",
       "definition_uri": "https://evora-project.eu/MSDS",
       "description": "A Material Safety Data Sheet (MSDS) or Safety Data Sheet (SDS) is a standardized document that contains crucial occupational safety and health information related to the product",
+      "title": "MSDS",
       "from_schema": "https://evora-project.eu/",
       "aliases": [
-        "MSDS"
+        "safety data sheet"
       ],
       "close_mappings": [
         "wd:Q222067"
@@ -9741,9 +9365,10 @@
       "name": "File",
       "definition_uri": "https://evora-project.eu/File",
       "description": "Digital document or record stored in a specific format that contains data or information",
+      "title": "File",
       "from_schema": "https://evora-project.eu/",
       "aliases": [
-        "File"
+        "computer file"
       ],
       "exact_mappings": [
         "dcat:mediaType"
@@ -9768,9 +9393,10 @@
       "name": "Data",
       "definition_uri": "https://evora-project.eu/Data",
       "description": "Subclass of File representing structured or unstructured datasets, often used for analysis, storage, or transfer of information",
+      "title": "Data",
       "from_schema": "https://evora-project.eu/",
       "aliases": [
-        "Data"
+        "data"
       ],
       "close_mappings": [
         "wd:Q42848"
@@ -9791,9 +9417,10 @@
       "name": "Document",
       "definition_uri": "https://evora-project.eu/Document",
       "description": "Subclass of File representing textual or written files such as reports, manuals, or forms",
+      "title": "Document",
       "from_schema": "https://evora-project.eu/",
       "aliases": [
-        "Document"
+        "document"
       ],
       "close_mappings": [
         "wd:Q49848"
@@ -9814,9 +9441,10 @@
       "name": "Audio",
       "definition_uri": "https://evora-project.eu/Audio",
       "description": "Subclass of File representing sound recordings or audio tracks",
+      "title": "Audio",
       "from_schema": "https://evora-project.eu/",
       "aliases": [
-        "Audio"
+        "audio file"
       ],
       "close_mappings": [
         "wd:Q26987229"
@@ -9837,9 +9465,10 @@
       "name": "Video",
       "definition_uri": "https://evora-project.eu/Video",
       "description": "Subclass of File representing moving visual media, such as recordings, presentations, or movies",
+      "title": "Video",
       "from_schema": "https://evora-project.eu/",
       "aliases": [
-        "Video"
+        "video file"
       ],
       "close_mappings": [
         "wd:Q98405806"
@@ -9860,9 +9489,10 @@
       "name": "Image",
       "definition_uri": "https://evora-project.eu/Image",
       "description": "Subclass of File representing visual content such as pictures, diagrams, or illustrations",
+      "title": "Image",
       "from_schema": "https://evora-project.eu/",
       "aliases": [
-        "Image"
+        "image file"
       ],
       "close_mappings": [
         "wd:Q860625"
@@ -9884,9 +9514,10 @@
       "name": "ContactPoint",
       "definition_uri": "https://evora-project.eu/ContactPoint",
       "description": "Entity serving as focal point of information",
+      "title": "Contact Point",
       "from_schema": "https://evora-project.eu/",
       "aliases": [
-        "Contact Point"
+        "contact point"
       ],
       "close_mappings": [
         "wd:Q30322502",
@@ -9913,9 +9544,10 @@
       "name": "License",
       "definition_uri": "https://evora-project.eu/License",
       "description": "The legal terms and conditions under which the subject can be used, shared, or distributed, indicating any restrictions or permissions",
+      "title": "License",
       "from_schema": "https://evora-project.eu/",
       "aliases": [
-        "License"
+        "license"
       ],
       "exact_mappings": [
         "dct:RightsStatement"
@@ -9940,9 +9572,10 @@
       "name": "Certification",
       "definition_uri": "https://evora-project.eu/Certification",
       "description": "Assurance given by an independent certification body that a product, service or system meets the requirements of a standard",
+      "title": "Certification",
       "from_schema": "https://evora-project.eu/",
       "aliases": [
-        "Certification"
+        "certification"
       ],
       "close_mappings": [
         "wd:Q374814",
@@ -9963,15 +9596,15 @@
   ],
   "metamodel_version": "1.7.0",
   "source_file": "evora_schema.yaml",
-  "source_file_date": "2025-01-13T16:15:28",
-  "source_file_size": 108821,
-  "generation_date": "2025-01-13T16:15:40",
+  "source_file_date": "2025-01-15T10:13:45",
+  "source_file_size": 107924,
+  "generation_date": "2025-01-15T10:13:59",
   "@type": "SchemaDefinition",
   "@context": [
-    "models/jsonld/evora_schema.context.jsonld",
     "https://w3id.org/linkml/types.context.jsonld",
     {
       "@base": "https://evora-project.eu/"
     }
   ]
 }
+

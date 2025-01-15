@@ -1,36 +1,213 @@
 
-# Class: Version
 
-Numeric code assigned to identify a particular historical version of a work (e.g. software or technical standards)
+# Class: Version (Version)
+
+
+_Numeric code assigned to identify a particular historical version of a work (e.g. software or technical standards)_
+
+
+
+
 
 URI: [EVORA:Version](https://evora-project.eu/Version)
 
 
-[![img](https://yuml.me/diagram/nofunky;dir:TB/class/[Taxonomy]++-%20version%201..1>[Version&#124;ID:string;versionOf:uri],[Dataset]^-[Version],[Taxonomy],[Dataset])](https://yuml.me/diagram/nofunky;dir:TB/class/[Taxonomy]++-%20version%201..1>[Version&#124;ID:string;versionOf:uri],[Dataset]^-[Version],[Taxonomy],[Dataset])
-
-## Parents
-
- *  is_a: [Dataset](Dataset.md) - A collection of data, published or curated by a single agent, and available for access
-
-## Referenced by Class
-
- *  **[Taxonomy](Taxonomy.md)** *[Taxonomy➞version](Taxonomy_version.md)*  <sub>1..1</sub>  **[Version](Version.md)**
-
-## Attributes
 
 
-### Own
 
- * [Version➞ID](Version_ID.md)  <sub>1..1</sub>
-     * Description: The version identifier
-     * Range: [String](types/String.md)
- * [Version➞versionOf](Version_versionOf.md)  <sub>1..1</sub>
-     * Description: Identifier of what the version qualifies
-     * Range: [Uri](types/Uri.md)
 
-## Other properties
+```mermaid
+ classDiagram
+    class Version
+    click Version href "../Version"
+      Dataset <|-- Version
+        click Dataset href "../Dataset"
+      
+      Version : ID
+        
+      Version : versionOf
+        
+      
+```
 
-|  |  |  |
-| --- | --- | --- |
-| **Aliases:** | | Version |
-| **Close Mappings:** | | wd:Q114469879 |
+
+
+
+
+## Inheritance
+* [Dataset](Dataset.md)
+    * **Version**
+
+
+
+## Slots
+
+| Name | Cardinality and Range | Description | Inheritance |
+| ---  | --- | --- | --- |
+| [ID](ID.md) | 1 <br/> [String](String.md) | The version identifier | direct |
+| [versionOf](versionOf.md) | 1 <br/> [Uri](Uri.md) | Identifier of what the version qualifies | direct |
+
+
+
+
+
+## Usages
+
+| used by | used in | type | used |
+| ---  | --- | --- | --- |
+| [Taxonomy](Taxonomy.md) | [version](version.md) | range | [Version](Version.md) |
+
+
+
+
+## Aliases
+
+
+* version number
+
+
+
+## Identifier and Mapping Information
+
+
+
+
+
+
+
+### Schema Source
+
+
+* from schema: https://evora-project.eu/
+
+
+
+
+## Mappings
+
+| Mapping Type | Mapped Value |
+| ---  | ---  |
+| self | EVORA:Version |
+| native | EVORA:Version |
+| close | wd:Q114469879 |
+
+
+
+
+
+
+
+## LinkML Source
+
+<!-- TODO: investigate https://stackoverflow.com/questions/37606292/how-to-create-tabbed-code-blocks-in-mkdocs-or-sphinx -->
+
+### Direct
+
+<details>
+```yaml
+name: Version
+description: Numeric code assigned to identify a particular historical version of
+  a work (e.g. software or technical standards)
+title: Version
+from_schema: https://evora-project.eu/
+aliases:
+- version number
+close_mappings:
+- wd:Q114469879
+is_a: Dataset
+slots:
+- ID
+- versionOf
+slot_usage:
+  ID:
+    name: ID
+    description: The version identifier
+    title: ID
+    aliases:
+    - edition number
+    close_mappings:
+    - wdp:P393
+    - schema:version
+    range: string
+    required: true
+    multivalued: false
+  versionOf:
+    name: versionOf
+    description: Identifier of what the version qualifies
+    title: version Of
+    range: uri
+    required: true
+    multivalued: false
+
+```
+</details>
+
+### Induced
+
+<details>
+```yaml
+name: Version
+description: Numeric code assigned to identify a particular historical version of
+  a work (e.g. software or technical standards)
+title: Version
+from_schema: https://evora-project.eu/
+aliases:
+- version number
+close_mappings:
+- wd:Q114469879
+is_a: Dataset
+slot_usage:
+  ID:
+    name: ID
+    description: The version identifier
+    title: ID
+    aliases:
+    - edition number
+    close_mappings:
+    - wdp:P393
+    - schema:version
+    range: string
+    required: true
+    multivalued: false
+  versionOf:
+    name: versionOf
+    description: Identifier of what the version qualifies
+    title: version Of
+    range: uri
+    required: true
+    multivalued: false
+attributes:
+  ID:
+    name: ID
+    description: The version identifier
+    title: ID
+    from_schema: https://evora-project.eu/
+    aliases:
+    - edition number
+    close_mappings:
+    - wdp:P393
+    - schema:version
+    rank: 1000
+    alias: ID
+    owner: Version
+    domain_of:
+    - Version
+    range: string
+    required: true
+    multivalued: false
+  versionOf:
+    name: versionOf
+    description: Identifier of what the version qualifies
+    title: version Of
+    from_schema: https://evora-project.eu/
+    rank: 1000
+    alias: versionOf
+    owner: Version
+    domain_of:
+    - Version
+    range: uri
+    required: true
+    multivalued: false
+
+```
+</details>

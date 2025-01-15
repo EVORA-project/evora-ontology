@@ -1,4 +1,5 @@
 
+
 # Slot: collectionDataProvider
 
 
@@ -6,16 +7,70 @@
 URI: [EVORA:collectionDataProvider](https://evora-project.eu/collectionDataProvider)
 
 
-## Domain and Range
 
-None &#8594;  <sub>0..1</sub> [String](types/String.md)
-
-## Parents
+<!-- no inheritance hierarchy -->
 
 
-## Children
 
- *  [Collection➞collectionDataProvider](Collection_collectionDataProvider.md)
 
-## Used by
 
+## Applicable Classes
+
+| Name | Description | Modifies Slot |
+| --- | --- | --- |
+| [Collection](Collection.md) | Set of products and services with some common characteristics |  yes  |
+
+
+
+
+
+
+
+## Properties
+
+* Range: [String](String.md)
+
+
+
+
+
+## Identifier and Mapping Information
+
+
+
+
+
+
+
+### Schema Source
+
+
+* from schema: https://evora-project.eu/
+
+
+
+
+## Mappings
+
+| Mapping Type | Mapped Value |
+| ---  | ---  |
+| self | EVORA:collectionDataProvider |
+| native | EVORA:collectionDataProvider |
+
+
+
+
+## LinkML Source
+
+<details>
+```yaml
+name: collectionDataProvider
+from_schema: https://evora-project.eu/
+rank: 1000
+alias: collectionDataProvider
+domain_of:
+- Collection
+range: string
+
+```
+</details>

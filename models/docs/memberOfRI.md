@@ -1,4 +1,5 @@
 
+
 # Slot: memberOfRI
 
 
@@ -6,16 +7,70 @@
 URI: [EVORA:memberOfRI](https://evora-project.eu/memberOfRI)
 
 
-## Domain and Range
 
-None &#8594;  <sub>0..1</sub> [String](types/String.md)
-
-## Parents
+<!-- no inheritance hierarchy -->
 
 
-## Children
 
- *  [Provider➞memberOfRI](Provider_memberOfRI.md)
 
-## Used by
 
+## Applicable Classes
+
+| Name | Description | Modifies Slot |
+| --- | --- | --- |
+| [Provider](Provider.md) | A provider of products or services, as a specific organization |  yes  |
+
+
+
+
+
+
+
+## Properties
+
+* Range: [String](String.md)
+
+
+
+
+
+## Identifier and Mapping Information
+
+
+
+
+
+
+
+### Schema Source
+
+
+* from schema: https://evora-project.eu/
+
+
+
+
+## Mappings
+
+| Mapping Type | Mapped Value |
+| ---  | ---  |
+| self | EVORA:memberOfRI |
+| native | EVORA:memberOfRI |
+
+
+
+
+## LinkML Source
+
+<details>
+```yaml
+name: memberOfRI
+from_schema: https://evora-project.eu/
+rank: 1000
+alias: memberOfRI
+domain_of:
+- Provider
+range: string
+
+```
+</details>

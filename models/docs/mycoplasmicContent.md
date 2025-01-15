@@ -1,4 +1,5 @@
 
+
 # Slot: mycoplasmicContent
 
 
@@ -6,16 +7,70 @@
 URI: [EVORA:mycoplasmicContent](https://evora-project.eu/mycoplasmicContent)
 
 
-## Domain and Range
 
-None &#8594;  <sub>0..1</sub> [String](types/String.md)
-
-## Parents
+<!-- no inheritance hierarchy -->
 
 
-## Children
 
- *  [Virus➞mycoplasmicContent](Virus_mycoplasmicContent.md)
 
-## Used by
 
+## Applicable Classes
+
+| Name | Description | Modifies Slot |
+| --- | --- | --- |
+| [Virus](Virus.md) | The virus as a biological material |  yes  |
+
+
+
+
+
+
+
+## Properties
+
+* Range: [String](String.md)
+
+
+
+
+
+## Identifier and Mapping Information
+
+
+
+
+
+
+
+### Schema Source
+
+
+* from schema: https://evora-project.eu/
+
+
+
+
+## Mappings
+
+| Mapping Type | Mapped Value |
+| ---  | ---  |
+| self | EVORA:mycoplasmicContent |
+| native | EVORA:mycoplasmicContent |
+
+
+
+
+## LinkML Source
+
+<details>
+```yaml
+name: mycoplasmicContent
+from_schema: https://evora-project.eu/
+rank: 1000
+alias: mycoplasmicContent
+domain_of:
+- Virus
+range: string
+
+```
+</details>

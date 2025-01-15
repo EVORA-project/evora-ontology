@@ -1,41 +1,255 @@
 
-# Class: Nameable
 
-Any entity that has a name and can have a textual description
+# Class: Nameable (Nameable)
+
+
+_Any entity that has a name and can have a textual description_
+
+
+
+
+* __NOTE__: this is an abstract class and should not be instantiated directly
+
 
 URI: [EVORA:Nameable](https://evora-project.eu/Nameable)
 
 
-[![img](https://yuml.me/diagram/nofunky;dir:TB/class/[PersonOrOrganization],[NamedDataset],[Nameable&#124;name:string;description:string%20%3F]^-[PersonOrOrganization],[Nameable]^-[NamedDataset],[Nameable]^-[License],[Nameable]^-[File],[Nameable]^-[DataService],[Nameable]^-[ContactPoint],[Nameable]^-[Certification],[Nameable]^-[Catalogue],[License],[File],[DataService],[ContactPoint],[Certification],[Catalogue])](https://yuml.me/diagram/nofunky;dir:TB/class/[PersonOrOrganization],[NamedDataset],[Nameable&#124;name:string;description:string%20%3F]^-[PersonOrOrganization],[Nameable]^-[NamedDataset],[Nameable]^-[License],[Nameable]^-[File],[Nameable]^-[DataService],[Nameable]^-[ContactPoint],[Nameable]^-[Certification],[Nameable]^-[Catalogue],[License],[File],[DataService],[ContactPoint],[Certification],[Catalogue])
-
-## Children
-
- * [Catalogue](Catalogue.md) - A curated collection of metadata about resources
- * [Certification](Certification.md) - Assurance given by an independent certification body that a product, service or system meets the requirements of a standard
- * [ContactPoint](ContactPoint.md) - Entity serving as focal point of information
- * [DataService](DataService.md) - A collection of operations that provides access to one or more datasets or data processing functions
- * [File](File.md) - Digital document or record stored in a specific format that contains data or information
- * [License](License.md) - The legal terms and conditions under which the subject can be used, shared, or distributed, indicating any restrictions or permissions
- * [NamedDataset](NamedDataset.md) - A collection of data, that has a name and can have a description, published or curated by a single agent, and available for access
- * [PersonOrOrganization](PersonOrOrganization.md) - A person or an organization
-
-## Referenced by Class
 
 
-## Attributes
 
 
-### Own
+```mermaid
+ classDiagram
+    class Nameable
+    click Nameable href "../Nameable"
+      Nameable <|-- Catalogue
+        click Catalogue href "../Catalogue"
+      Nameable <|-- NamedDataset
+        click NamedDataset href "../NamedDataset"
+      Nameable <|-- DataService
+        click DataService href "../DataService"
+      Nameable <|-- PersonOrOrganization
+        click PersonOrOrganization href "../PersonOrOrganization"
+      Nameable <|-- File
+        click File href "../File"
+      Nameable <|-- ContactPoint
+        click ContactPoint href "../ContactPoint"
+      Nameable <|-- License
+        click License href "../License"
+      Nameable <|-- Certification
+        click Certification href "../Certification"
+      
+      Nameable : description
+        
+      Nameable : name
+        
+      
+```
 
- * [Nameable➞name](Nameable_name.md)  <sub>1..1</sub>
-     * Description: The label that allows humans to identify the current item
-     * Range: [String](types/String.md)
- * [Nameable➞description](Nameable_description.md)  <sub>0..1</sub>
-     * Description: A short explanation of the characteristics, features, or nature of the current item
-     * Range: [String](types/String.md)
 
-## Other properties
 
-|  |  |  |
-| --- | --- | --- |
-| **Aliases:** | | Nameable |
+
+
+## Inheritance
+* **Nameable**
+    * [Catalogue](Catalogue.md)
+    * [NamedDataset](NamedDataset.md)
+    * [DataService](DataService.md)
+    * [PersonOrOrganization](PersonOrOrganization.md)
+    * [File](File.md)
+    * [ContactPoint](ContactPoint.md)
+    * [License](License.md)
+    * [Certification](Certification.md)
+
+
+
+## Slots
+
+| Name | Cardinality and Range | Description | Inheritance |
+| ---  | --- | --- | --- |
+| [name](name.md) | 1 <br/> [String](String.md) | The label that allows humans to identify the current item | direct |
+| [description](description.md) | 0..1 <br/> [String](String.md) | A short explanation of the characteristics, features, or nature of the curren... | direct |
+
+
+
+
+
+
+
+
+
+## Identifier and Mapping Information
+
+
+
+
+
+
+
+### Schema Source
+
+
+* from schema: https://evora-project.eu/
+
+
+
+
+## Mappings
+
+| Mapping Type | Mapped Value |
+| ---  | ---  |
+| self | EVORA:Nameable |
+| native | EVORA:Nameable |
+
+
+
+
+
+
+
+## LinkML Source
+
+<!-- TODO: investigate https://stackoverflow.com/questions/37606292/how-to-create-tabbed-code-blocks-in-mkdocs-or-sphinx -->
+
+### Direct
+
+<details>
+```yaml
+name: Nameable
+description: Any entity that has a name and can have a textual description
+title: Nameable
+from_schema: https://evora-project.eu/
+abstract: true
+slots:
+- name
+- description
+slot_usage:
+  name:
+    name: name
+    description: The label that allows humans to identify the current item
+    title: name
+    comments:
+    - 'The title of the item should be as short and descriptive as possible. E.g.
+      for virus products it should basically be based on the following Pattern:
+
+      "Virus name", "virus host type", "collection year", "country of collection"
+      ex "suspected epidemiological origin", "genotype", "strain", "variant name or
+      specific feature"'
+    exact_mappings:
+    - dct:title
+    close_mappings:
+    - rdfs:label
+    range: string
+    required: true
+    multivalued: false
+  description:
+    name: description
+    description: A short explanation of the characteristics, features, or nature of
+      the current item
+    title: description
+    comments:
+    - 'Describe this item in few lines. This description will serve as a summary to
+      present the item.
+
+      '
+    exact_mappings:
+    - dct:description
+    range: string
+    required: false
+    multivalued: false
+
+```
+</details>
+
+### Induced
+
+<details>
+```yaml
+name: Nameable
+description: Any entity that has a name and can have a textual description
+title: Nameable
+from_schema: https://evora-project.eu/
+abstract: true
+slot_usage:
+  name:
+    name: name
+    description: The label that allows humans to identify the current item
+    title: name
+    comments:
+    - 'The title of the item should be as short and descriptive as possible. E.g.
+      for virus products it should basically be based on the following Pattern:
+
+      "Virus name", "virus host type", "collection year", "country of collection"
+      ex "suspected epidemiological origin", "genotype", "strain", "variant name or
+      specific feature"'
+    exact_mappings:
+    - dct:title
+    close_mappings:
+    - rdfs:label
+    range: string
+    required: true
+    multivalued: false
+  description:
+    name: description
+    description: A short explanation of the characteristics, features, or nature of
+      the current item
+    title: description
+    comments:
+    - 'Describe this item in few lines. This description will serve as a summary to
+      present the item.
+
+      '
+    exact_mappings:
+    - dct:description
+    range: string
+    required: false
+    multivalued: false
+attributes:
+  name:
+    name: name
+    description: The label that allows humans to identify the current item
+    title: name
+    comments:
+    - 'The title of the item should be as short and descriptive as possible. E.g.
+      for virus products it should basically be based on the following Pattern:
+
+      "Virus name", "virus host type", "collection year", "country of collection"
+      ex "suspected epidemiological origin", "genotype", "strain", "variant name or
+      specific feature"'
+    from_schema: https://evora-project.eu/
+    exact_mappings:
+    - dct:title
+    close_mappings:
+    - rdfs:label
+    rank: 1000
+    alias: name
+    owner: Nameable
+    domain_of:
+    - Nameable
+    range: string
+    required: true
+    multivalued: false
+  description:
+    name: description
+    description: A short explanation of the characteristics, features, or nature of
+      the current item
+    title: description
+    comments:
+    - 'Describe this item in few lines. This description will serve as a summary to
+      present the item.
+
+      '
+    from_schema: https://evora-project.eu/
+    exact_mappings:
+    - dct:description
+    rank: 1000
+    alias: description
+    owner: Nameable
+    domain_of:
+    - Nameable
+    range: string
+    required: false
+    multivalued: false
+
+```
+</details>

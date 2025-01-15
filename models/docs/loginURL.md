@@ -1,4 +1,5 @@
 
+
 # Slot: loginURL
 
 
@@ -6,16 +7,70 @@
 URI: [EVORA:loginURL](https://evora-project.eu/loginURL)
 
 
-## Domain and Range
 
-None &#8594;  <sub>0..1</sub> [String](types/String.md)
-
-## Parents
+<!-- no inheritance hierarchy -->
 
 
-## Children
 
- *  [DataProvider➞loginURL](DataProvider_loginURL.md)
 
-## Used by
 
+## Applicable Classes
+
+| Name | Description | Modifies Slot |
+| --- | --- | --- |
+| [DataProvider](DataProvider.md) | An external API (Application Programming Interface) or Endpoint that permits ... |  yes  |
+
+
+
+
+
+
+
+## Properties
+
+* Range: [String](String.md)
+
+
+
+
+
+## Identifier and Mapping Information
+
+
+
+
+
+
+
+### Schema Source
+
+
+* from schema: https://evora-project.eu/
+
+
+
+
+## Mappings
+
+| Mapping Type | Mapped Value |
+| ---  | ---  |
+| self | EVORA:loginURL |
+| native | EVORA:loginURL |
+
+
+
+
+## LinkML Source
+
+<details>
+```yaml
+name: loginURL
+from_schema: https://evora-project.eu/
+rank: 1000
+alias: loginURL
+domain_of:
+- DataProvider
+range: string
+
+```
+</details>

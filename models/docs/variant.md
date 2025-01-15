@@ -1,4 +1,5 @@
 
+
 # Slot: variant
 
 
@@ -6,16 +7,70 @@
 URI: [EVORA:variant](https://evora-project.eu/variant)
 
 
-## Domain and Range
 
-None &#8594;  <sub>0..1</sub> [String](types/String.md)
-
-## Parents
+<!-- no inheritance hierarchy -->
 
 
-## Children
 
- *  [PathogenIdentification➞variant](PathogenIdentification_variant.md)
 
-## Used by
 
+## Applicable Classes
+
+| Name | Description | Modifies Slot |
+| --- | --- | --- |
+| [PathogenIdentification](PathogenIdentification.md) | A collection of distinguishing information that enables the differentiation o... |  yes  |
+
+
+
+
+
+
+
+## Properties
+
+* Range: [String](String.md)
+
+
+
+
+
+## Identifier and Mapping Information
+
+
+
+
+
+
+
+### Schema Source
+
+
+* from schema: https://evora-project.eu/
+
+
+
+
+## Mappings
+
+| Mapping Type | Mapped Value |
+| ---  | ---  |
+| self | EVORA:variant |
+| native | EVORA:variant |
+
+
+
+
+## LinkML Source
+
+<details>
+```yaml
+name: variant
+from_schema: https://evora-project.eu/
+rank: 1000
+alias: variant
+domain_of:
+- PathogenIdentification
+range: string
+
+```
+</details>

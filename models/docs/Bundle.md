@@ -1,138 +1,941 @@
 
-# Class: Bundle
 
-A group of products
+# Class: Bundle (Bundle)
+
+
+_A group of products_
+
+
+
+
 
 URI: [EVORA:Bundle](https://evora-project.eu/Bundle)
 
 
-[![img](https://yuml.me/diagram/nofunky;dir:TB/class/[RiskGroup],[Provider],[ProductCategory],[Product],[PathogenIdentification],[Originator],[MSDS],[Keyword],[Image],[IATAClassification],[File],[ExternalRelatedReference],[DOI],[ContactPoint],[Collection],[Certification],[Product]<productsOfTheBundle%201..*-++[Bundle&#124;complementaryDocument:string%20%3F;shippingConditions(i):string;storageConditions(i):string;thirdPartyDistributionConsent(i):boolean%20%3F;usageRestrictions(i):string%20%3F;accessPointURL(i):uri;refSKU(i):string;unitDefinition(i):string%20%3F;unitCost(i):string;qualityGrading(i):string%20%3F;biosafetyRestrictions(i):string%20%3F;canItBeUsedToProduceGMO(i):boolean%20%3F;availability(i):string;technicalRecommendation(i):string%20%3F;internalReference(i):string%20%3F;note(i):string%20%3F;name(i):string;description(i):string%20%3F],[Product]^-[Bundle])](https://yuml.me/diagram/nofunky;dir:TB/class/[RiskGroup],[Provider],[ProductCategory],[Product],[PathogenIdentification],[Originator],[MSDS],[Keyword],[Image],[IATAClassification],[File],[ExternalRelatedReference],[DOI],[ContactPoint],[Collection],[Certification],[Product]<productsOfTheBundle%201..*-++[Bundle&#124;complementaryDocument:string%20%3F;shippingConditions(i):string;storageConditions(i):string;thirdPartyDistributionConsent(i):boolean%20%3F;usageRestrictions(i):string%20%3F;accessPointURL(i):uri;refSKU(i):string;unitDefinition(i):string%20%3F;unitCost(i):string;qualityGrading(i):string%20%3F;biosafetyRestrictions(i):string%20%3F;canItBeUsedToProduceGMO(i):boolean%20%3F;availability(i):string;technicalRecommendation(i):string%20%3F;internalReference(i):string%20%3F;note(i):string%20%3F;name(i):string;description(i):string%20%3F],[Product]^-[Bundle])
-
-## Parents
-
- *  is_a: [Product](Product.md) - A product
-
-## Referenced by Class
 
 
-## Attributes
 
 
-### Own
+```mermaid
+ classDiagram
+    class Bundle
+    click Bundle href "../Bundle"
+      Product <|-- Bundle
+        click Product href "../Product"
+      
+      Bundle : accessPointURL
+        
+      Bundle : additionalCategory
+        
+          
+    
+    
+    Bundle --> "*" ProductCategory : additionalCategory
+    click ProductCategory href "../ProductCategory"
 
- * [Bundle➞productsOfTheBundle](Bundle_productsOfTheBundle.md)  <sub>1..\*</sub>
-     * Description: Associates the bundle with the individual products it contains, specifying the components included within the bundle.
-     * Range: [Product](Product.md)
- * [complementaryDocument](complementaryDocument.md)  <sub>0..1</sub>
-     * Range: [String](types/String.md)
- * [Bundle➞complementaryDocument](Bundle_complementaryDocument.md)  <sub>0..\*</sub>
-     * Description: Links the bundle to any additional documents that provide supplementary information, instructions, or guidelines relevant to the use and assembly of the bundle's products.
+        
+      Bundle : availability
+        
+      Bundle : biosafetyRestrictions
+        
+      Bundle : canItBeUsedToProduceGMO
+        
+      Bundle : category
+        
+          
+    
+    
+    Bundle --> "1" ProductCategory : category
+    click ProductCategory href "../ProductCategory"
 
-     * Range: [File](File.md)
+        
+      Bundle : certification
+        
+          
+    
+    
+    Bundle --> "*" Certification : certification
+    click Certification href "../Certification"
 
-### Inherited from Product:
+        
+      Bundle : collection
+        
+          
+    
+    
+    Bundle --> "1..*" Collection : collection
+    click Collection href "../Collection"
 
- * [Nameable➞name](Nameable_name.md)  <sub>1..1</sub>
-     * Description: The label that allows humans to identify the current item
-     * Range: [String](types/String.md)
- * [Nameable➞description](Nameable_description.md)  <sub>0..1</sub>
-     * Description: A short explanation of the characteristics, features, or nature of the current item
-     * Range: [String](types/String.md)
- * [ProductOrService➞accessPointURL](ProductOrService_accessPointURL.md)  <sub>1..1</sub>
-     * Description: The URL that permits to access to the product/service detailed description page on the provider's website and/or allows to place an order about it or at least describe the process to place an order/enquiry
-     * Range: [Uri](types/Uri.md)
- * [ProductOrService➞refSKU](ProductOrService_refSKU.md)  <sub>1..1</sub>
-     * Description: The reference or the stock keeping unit of the service or item provided in the provider's catalogue
-     * Range: [String](types/String.md)
- * [ProductOrService➞unitDefinition](ProductOrService_unitDefinition.md)  <sub>0..1</sub>
-     * Description: A short description of what will be delivered by ordering one unit of this item
-     * Range: [String](types/String.md)
- * [ProductOrService➞category](ProductOrService_category.md)  <sub>1..1</sub>
-     * Description: The main category of the service or product
-     * Range: [ProductCategory](ProductCategory.md)
- * [ProductOrService➞additionalCategory](ProductOrService_additionalCategory.md)  <sub>0..\*</sub>
-     * Description: Any category apart from its main category in which this product or service can fit
-     * Range: [ProductCategory](ProductCategory.md)
- * [ProductOrService➞unitCost](ProductOrService_unitCost.md)  <sub>1..1</sub>
-     * Description: The cost per access for one unit as defined by the unit definition
-     * Range: [String](types/String.md)
- * [ProductOrService➞qualityGrading](ProductOrService_qualityGrading.md)  <sub>0..1</sub>
-     * Description: Information that permits to assess the quality level of what will be provided
-     * Range: [String](types/String.md)
- * [ProductOrService➞pathogenIdentification](ProductOrService_pathogenIdentification.md)  <sub>1..\*</sub>
-     * Description: The identification of the pathogen or group of pathogens (e.g; name, taxon identification, etc.) related to the current item.
-     * Range: [PathogenIdentification](PathogenIdentification.md)
- * [ProductOrService➞relatedDOI](ProductOrService_relatedDOI.md)  <sub>0..\*</sub>
-     * Description: Any DOI that can be related
-     * Range: [DOI](DOI.md)
- * [ProductOrService➞riskGroup](ProductOrService_riskGroup.md)  <sub>0..1</sub>
-     * Description: The highest risk group related to this resource. The risk group of a biological agent guiding its initial handling in labs according to the risk group classification defined by the WHO laboratory biosafety manual
-     * Range: [RiskGroup](RiskGroup.md)
- * [ProductOrService➞biosafetyRestrictions](ProductOrService_biosafetyRestrictions.md)  <sub>0..1</sub>
-     * Description: Information about guidelines and regulations designed to prevent the exposure to or release of potentially harmful biological agents. It thereby contributes to protecting people and the environment from biohazards while accessing this product or service
-     * Range: [String](types/String.md)
- * [ProductOrService➞canItBeUsedToProduceGMO](ProductOrService_canItBeUsedToProduceGMO.md)  <sub>0..1</sub>
-     * Description: Indicates if the current service or product can be used to produce GMO
-     * Range: [Boolean](types/Boolean.md)
- * [ProductOrService➞provider](ProductOrService_provider.md)  <sub>1..1</sub>
-     * Description: A provider of this product or service, as a specific organization
-     * Range: [Provider](Provider.md)
- * [ProductOrService➞collection](ProductOrService_collection.md)  <sub>1..\*</sub>
-     * Description: The collection(s) to which belongs this item
-     * Range: [Collection](Collection.md)
- * [ProductOrService➞keywords](ProductOrService_keywords.md)  <sub>1..\*</sub>
-     * Description: List of terms used to tag and categorize this Item
-     * Range: [Keyword](Keyword.md)
- * [ProductOrService➞availability](ProductOrService_availability.md)  <sub>1..1</sub>
-     * Description: The state or condition in which this item is accessible and ready for use or can be obtained
-     * Range: [String](types/String.md)
- * [ProductOrService➞technicalRecommendation](ProductOrService_technicalRecommendation.md)  <sub>0..1</sub>
-     * Description: Expert advice or guidelines provided to ensure the optimal use, performance, and maintenance of what is provided, including best practices, troubleshooting tips, and procedural instructions
-     * Range: [String](types/String.md)
- * [ProductOrService➞productPicture](ProductOrService_productPicture.md)  <sub>0..\*</sub>
-     * Description: A picture that can represent the item
-     * Range: [Image](Image.md)
- * [ProductOrService➞externalRelatedReference](ProductOrService_externalRelatedReference.md)  <sub>0..\*</sub>
-     * Description: A reference that permits to retrieve another related item from an external provider
-     * Range: [ExternalRelatedReference](ExternalRelatedReference.md)
- * [ProductOrService➞certification](ProductOrService_certification.md)  <sub>0..\*</sub>
-     * Description: Any certification related to the current product or service; e.g., ISO certification
-     * Range: [Certification](Certification.md)
- * [ProductOrService➞internalReference](ProductOrService_internalReference.md)  <sub>0..1</sub>
-     * Description: Any reference or indication to be used for local retrieval purpose
-     * Range: [String](types/String.md)
- * [ProductOrService➞note](ProductOrService_note.md)  <sub>0..1</sub>
-     * Description: An aditional information as a textual comment
-     * Range: [String](types/String.md)
- * [ProductOrService➞contactPoint](ProductOrService_contactPoint.md)  <sub>0..1</sub>
-     * Description: An information that allows someone to establish communication
-     * Range: [ContactPoint](ContactPoint.md)
- * [Product➞hasIATAClassification](Product_hasIATAClassification.md)  <sub>1..1</sub>
-     * Description: The corresponding International Air Transport Association (IATA)'s category for this Product
-     * Range: [IATAClassification](IATAClassification.md)
- * [Product➞shippingConditions](Product_shippingConditions.md)  <sub>1..1</sub>
-     * Description: Specification of the terms and parameters for transporting
+        
+      Bundle : complementaryDocument
+        
+          
+    
+    
+    Bundle --> "*" File : complementaryDocument
+    click File href "../File"
 
-     * Range: [String](types/String.md)
- * [Product➞materialSafetyDataSheet](Product_materialSafetyDataSheet.md)  <sub>0..1</sub>
-     * Description: A Material Safety Data Sheet (MSDS) or Safety Data Sheet (SDS) is a standardized document that contains crucial occupational safety and health information related to the product
-     * Range: [MSDS](MSDS.md)
- * [Product➞originator](Product_originator.md)  <sub>0..1</sub>
-     * Description: The individual or organization responsible for the original discovery, isolation, or creation of an item, providing information about the source or origin of the sample
-     * Range: [Originator](Originator.md)
- * [Product➞storageConditions](Product_storageConditions.md)  <sub>1..1</sub>
-     * Description: Specifies the conditions under which the product has to be stored to maintain stability and integrity, such as temperature, buffer, and other environmental factors.
-     * Range: [String](types/String.md)
- * [Product➞thirdPartyDistributionConsent](Product_thirdPartyDistributionConsent.md)  <sub>0..1</sub>
-     * Description: Indicates whether the biological material can be distributed without restriction to third parties, as indicated by the ABS permit, in case an ABS permit is required
-     * Range: [Boolean](types/Boolean.md)
- * [Product➞usageRestrictions](Product_usageRestrictions.md)  <sub>0..1</sub>
-     * Description: Specifies any limitations or conditions on the use of the biological material, including restrictions on research, commercial use, or distribution, considering any potential concerns about the related genetic material
-     * Range: [String](types/String.md)
+        
+      Bundle : contactPoint
+        
+          
+    
+    
+    Bundle --> "0..1" ContactPoint : contactPoint
+    click ContactPoint href "../ContactPoint"
 
-## Other properties
+        
+      Bundle : description
+        
+      Bundle : externalRelatedReference
+        
+          
+    
+    
+    Bundle --> "*" ExternalRelatedReference : externalRelatedReference
+    click ExternalRelatedReference href "../ExternalRelatedReference"
 
-|  |  |  |
-| --- | --- | --- |
-| **Aliases:** | | Bundle |
-| **Close Mappings:** | | wd:Q1020767 |
+        
+      Bundle : hasIATAClassification
+        
+          
+    
+    
+    Bundle --> "1" IATAClassification : hasIATAClassification
+    click IATAClassification href "../IATAClassification"
+
+        
+      Bundle : internalReference
+        
+      Bundle : keywords
+        
+          
+    
+    
+    Bundle --> "1..*" Keyword : keywords
+    click Keyword href "../Keyword"
+
+        
+      Bundle : materialSafetyDataSheet
+        
+          
+    
+    
+    Bundle --> "0..1" MSDS : materialSafetyDataSheet
+    click MSDS href "../MSDS"
+
+        
+      Bundle : name
+        
+      Bundle : note
+        
+      Bundle : originator
+        
+          
+    
+    
+    Bundle --> "0..1" Originator : originator
+    click Originator href "../Originator"
+
+        
+      Bundle : pathogenIdentification
+        
+          
+    
+    
+    Bundle --> "1..*" PathogenIdentification : pathogenIdentification
+    click PathogenIdentification href "../PathogenIdentification"
+
+        
+      Bundle : productPicture
+        
+          
+    
+    
+    Bundle --> "*" Image : productPicture
+    click Image href "../Image"
+
+        
+      Bundle : productsOfTheBundle
+        
+          
+    
+    
+    Bundle --> "1..*" Product : productsOfTheBundle
+    click Product href "../Product"
+
+        
+      Bundle : provider
+        
+          
+    
+    
+    Bundle --> "1" Provider : provider
+    click Provider href "../Provider"
+
+        
+      Bundle : qualityGrading
+        
+      Bundle : refSKU
+        
+      Bundle : relatedDOI
+        
+          
+    
+    
+    Bundle --> "*" DOI : relatedDOI
+    click DOI href "../DOI"
+
+        
+      Bundle : riskGroup
+        
+          
+    
+    
+    Bundle --> "0..1" RiskGroup : riskGroup
+    click RiskGroup href "../RiskGroup"
+
+        
+      Bundle : shippingConditions
+        
+      Bundle : storageConditions
+        
+      Bundle : technicalRecommendation
+        
+      Bundle : thirdPartyDistributionConsent
+        
+      Bundle : unitCost
+        
+      Bundle : unitDefinition
+        
+      Bundle : usageRestrictions
+        
+      
+```
+
+
+
+
+
+## Inheritance
+* [Nameable](Nameable.md)
+    * [NamedDataset](NamedDataset.md)
+        * [ProductOrService](ProductOrService.md)
+            * [Product](Product.md)
+                * **Bundle**
+
+
+
+## Slots
+
+| Name | Cardinality and Range | Description | Inheritance |
+| ---  | --- | --- | --- |
+| [productsOfTheBundle](productsOfTheBundle.md) | 1..* <br/> [Product](Product.md) | Associates the bundle with the individual products it contains, specifying th... | direct |
+| [complementaryDocument](complementaryDocument.md) | * <br/> [File](File.md) | Links the bundle to any additional documents that provide supplementary infor... | direct |
+| [hasIATAClassification](hasIATAClassification.md) | 1 <br/> [IATAClassification](IATAClassification.md) | The corresponding International Air Transport Association (IATA)'s category f... | [Product](Product.md) |
+| [shippingConditions](shippingConditions.md) | 1 <br/> [String](String.md) | Specification of the terms and parameters for transporting | [Product](Product.md) |
+| [materialSafetyDataSheet](materialSafetyDataSheet.md) | 0..1 <br/> [MSDS](MSDS.md) | A Material Safety Data Sheet (MSDS) or Safety Data Sheet (SDS) is a standardi... | [Product](Product.md) |
+| [originator](originator.md) | 0..1 <br/> [Originator](Originator.md) | The individual or organization responsible for the original discovery, isolat... | [Product](Product.md) |
+| [storageConditions](storageConditions.md) | 1 <br/> [String](String.md) | Specifies the conditions under which the product has to be stored to maintain... | [Product](Product.md) |
+| [thirdPartyDistributionConsent](thirdPartyDistributionConsent.md) | 0..1 <br/> [Boolean](Boolean.md) | Indicates whether the biological material can be distributed without restrict... | [Product](Product.md) |
+| [usageRestrictions](usageRestrictions.md) | 0..1 <br/> [String](String.md) | Specifies any limitations or conditions on the use of the biological material... | [Product](Product.md) |
+| [accessPointURL](accessPointURL.md) | 1 <br/> [Uri](Uri.md) | The URL that permits to access to the product/service detailed description pa... | [ProductOrService](ProductOrService.md) |
+| [refSKU](refSKU.md) | 1 <br/> [String](String.md) | The reference or the stock keeping unit of the service or item provided in th... | [ProductOrService](ProductOrService.md) |
+| [unitDefinition](unitDefinition.md) | 0..1 <br/> [String](String.md) | A short description of what will be delivered by ordering one unit of this it... | [ProductOrService](ProductOrService.md) |
+| [category](category.md) | 1 <br/> [ProductCategory](ProductCategory.md) | The main category of the service or product | [ProductOrService](ProductOrService.md) |
+| [additionalCategory](additionalCategory.md) | * <br/> [ProductCategory](ProductCategory.md) | Any category apart from its main category in which this product or service ca... | [ProductOrService](ProductOrService.md) |
+| [unitCost](unitCost.md) | 1 <br/> [String](String.md) | The cost per access for one unit as defined by the unit definition | [ProductOrService](ProductOrService.md) |
+| [qualityGrading](qualityGrading.md) | 0..1 <br/> [String](String.md) | Information that permits to assess the quality level of what will be provided | [ProductOrService](ProductOrService.md) |
+| [pathogenIdentification](pathogenIdentification.md) | 1..* <br/> [PathogenIdentification](PathogenIdentification.md) | The identification of the pathogen or group of pathogens (e | [ProductOrService](ProductOrService.md) |
+| [relatedDOI](relatedDOI.md) | * <br/> [DOI](DOI.md) | Any DOI that can be related | [ProductOrService](ProductOrService.md) |
+| [riskGroup](riskGroup.md) | 0..1 <br/> [RiskGroup](RiskGroup.md) | The highest risk group related to this resource | [ProductOrService](ProductOrService.md) |
+| [biosafetyRestrictions](biosafetyRestrictions.md) | 0..1 <br/> [String](String.md) | Information about guidelines and regulations designed to prevent the exposure... | [ProductOrService](ProductOrService.md) |
+| [canItBeUsedToProduceGMO](canItBeUsedToProduceGMO.md) | 0..1 <br/> [Boolean](Boolean.md) | Indicates if the current service or product can be used to produce GMO | [ProductOrService](ProductOrService.md) |
+| [provider](provider.md) | 1 <br/> [Provider](Provider.md) | A provider of this product or service, as a specific organization | [ProductOrService](ProductOrService.md) |
+| [collection](collection.md) | 1..* <br/> [Collection](Collection.md) | The collection(s) to which belongs this item | [ProductOrService](ProductOrService.md) |
+| [keywords](keywords.md) | 1..* <br/> [Keyword](Keyword.md) | List of terms used to tag and categorize this Item | [ProductOrService](ProductOrService.md) |
+| [availability](availability.md) | 1 <br/> [String](String.md) | The state or condition in which this item is accessible and ready for use or ... | [ProductOrService](ProductOrService.md) |
+| [technicalRecommendation](technicalRecommendation.md) | 0..1 <br/> [String](String.md) | Expert advice or guidelines provided to ensure the optimal use, performance, ... | [ProductOrService](ProductOrService.md) |
+| [productPicture](productPicture.md) | * <br/> [Image](Image.md) | A picture that can represent the item | [ProductOrService](ProductOrService.md) |
+| [externalRelatedReference](externalRelatedReference.md) | * <br/> [ExternalRelatedReference](ExternalRelatedReference.md) | A reference that permits to retrieve another related item from an external pr... | [ProductOrService](ProductOrService.md) |
+| [certification](certification.md) | * <br/> [Certification](Certification.md) | Any certification related to the current product or service; e | [ProductOrService](ProductOrService.md) |
+| [internalReference](internalReference.md) | 0..1 <br/> [String](String.md) | Any reference or indication to be used for local retrieval purpose | [ProductOrService](ProductOrService.md) |
+| [note](note.md) | 0..1 <br/> [String](String.md) | An aditional information as a textual comment | [ProductOrService](ProductOrService.md) |
+| [contactPoint](contactPoint.md) | 0..1 <br/> [ContactPoint](ContactPoint.md) | An information that allows someone to establish communication | [ProductOrService](ProductOrService.md) |
+| [name](name.md) | 1 <br/> [String](String.md) | The label that allows humans to identify the current item | [Nameable](Nameable.md) |
+| [description](description.md) | 0..1 <br/> [String](String.md) | A short explanation of the characteristics, features, or nature of the curren... | [Nameable](Nameable.md) |
+
+
+
+
+
+
+
+## Aliases
+
+
+* product bundle
+
+
+
+## Identifier and Mapping Information
+
+
+
+
+
+
+
+### Schema Source
+
+
+* from schema: https://evora-project.eu/
+
+
+
+
+## Mappings
+
+| Mapping Type | Mapped Value |
+| ---  | ---  |
+| self | EVORA:Bundle |
+| native | EVORA:Bundle |
+| close | wd:Q1020767 |
+
+
+
+
+
+
+
+## LinkML Source
+
+<!-- TODO: investigate https://stackoverflow.com/questions/37606292/how-to-create-tabbed-code-blocks-in-mkdocs-or-sphinx -->
+
+### Direct
+
+<details>
+```yaml
+name: Bundle
+description: A group of products
+title: Bundle
+from_schema: https://evora-project.eu/
+aliases:
+- product bundle
+close_mappings:
+- wd:Q1020767
+is_a: Product
+slots:
+- productsOfTheBundle
+- complementaryDocument
+slot_usage:
+  productsOfTheBundle:
+    name: productsOfTheBundle
+    description: Associates the bundle with the individual products it contains, specifying
+      the components included within the bundle.
+    title: products of the bundle
+    range: Product
+    required: true
+    multivalued: true
+  complementaryDocument:
+    name: complementaryDocument
+    description: 'Links the bundle to any additional documents that provide supplementary
+      information, instructions, or guidelines relevant to the use and assembly of
+      the bundle''s products.
+
+      '
+    title: complementary document
+    range: File
+    required: false
+    multivalued: true
+
+```
+</details>
+
+### Induced
+
+<details>
+```yaml
+name: Bundle
+description: A group of products
+title: Bundle
+from_schema: https://evora-project.eu/
+aliases:
+- product bundle
+close_mappings:
+- wd:Q1020767
+is_a: Product
+slot_usage:
+  productsOfTheBundle:
+    name: productsOfTheBundle
+    description: Associates the bundle with the individual products it contains, specifying
+      the components included within the bundle.
+    title: products of the bundle
+    range: Product
+    required: true
+    multivalued: true
+  complementaryDocument:
+    name: complementaryDocument
+    description: 'Links the bundle to any additional documents that provide supplementary
+      information, instructions, or guidelines relevant to the use and assembly of
+      the bundle''s products.
+
+      '
+    title: complementary document
+    range: File
+    required: false
+    multivalued: true
+attributes:
+  productsOfTheBundle:
+    name: productsOfTheBundle
+    description: Associates the bundle with the individual products it contains, specifying
+      the components included within the bundle.
+    title: products of the bundle
+    from_schema: https://evora-project.eu/
+    rank: 1000
+    alias: productsOfTheBundle
+    owner: Bundle
+    domain_of:
+    - Bundle
+    range: Product
+    required: true
+    multivalued: true
+  complementaryDocument:
+    name: complementaryDocument
+    description: 'Links the bundle to any additional documents that provide supplementary
+      information, instructions, or guidelines relevant to the use and assembly of
+      the bundle''s products.
+
+      '
+    title: complementary document
+    from_schema: https://evora-project.eu/
+    rank: 1000
+    alias: complementaryDocument
+    owner: Bundle
+    domain_of:
+    - ProductOrService
+    - Bundle
+    range: File
+    required: false
+    multivalued: true
+  hasIATAClassification:
+    name: hasIATAClassification
+    description: The corresponding International Air Transport Association (IATA)'s
+      category for this Product
+    title: IATA classification
+    from_schema: https://evora-project.eu/
+    rank: 1000
+    alias: hasIATAClassification
+    owner: Bundle
+    domain_of:
+    - Product
+    range: IATAClassification
+    required: true
+    multivalued: false
+  shippingConditions:
+    name: shippingConditions
+    description: 'Specification of the terms and parameters for transporting
+
+      '
+    title: shipping conditions
+    from_schema: https://evora-project.eu/
+    rank: 1000
+    alias: shippingConditions
+    owner: Bundle
+    domain_of:
+    - Product
+    range: string
+    required: true
+    multivalued: false
+  materialSafetyDataSheet:
+    name: materialSafetyDataSheet
+    description: A Material Safety Data Sheet (MSDS) or Safety Data Sheet (SDS) is
+      a standardized document that contains crucial occupational safety and health
+      information related to the product
+    title: material safety data sheet
+    comments:
+    - The MSD  is a document that provides detailed information about the properties,
+      hazards, handling, storage, and emergency procedures related to the use of a
+      chemical or substance
+    from_schema: https://evora-project.eu/
+    rank: 1000
+    alias: materialSafetyDataSheet
+    owner: Bundle
+    domain_of:
+    - Product
+    range: MSDS
+    required: false
+    multivalued: false
+  originator:
+    name: originator
+    description: The individual or organization responsible for the original discovery,
+      isolation, or creation of an item, providing information about the source or
+      origin of the sample
+    title: originator
+    from_schema: https://evora-project.eu/
+    rank: 1000
+    alias: originator
+    owner: Bundle
+    domain_of:
+    - Product
+    range: Originator
+    required: false
+    multivalued: false
+  storageConditions:
+    name: storageConditions
+    description: Specifies the conditions under which the product has to be stored
+      to maintain stability and integrity, such as temperature, buffer, and other
+      environmental factors.
+    title: storage conditions
+    comments:
+    - e.g, could be a xsd:string in enumeration ("Freeze Dried", "Liquid Nitrogen",
+      "Viral Storage Medium -20C", "Viral Storage Medium -80C", "Living plant material
+      (>= +4°C)", "Gas Phase", "Ethanol -20C", "Ethanol -80C", "Dried")
+    from_schema: https://evora-project.eu/
+    rank: 1000
+    alias: storageConditions
+    owner: Bundle
+    domain_of:
+    - Product
+    range: string
+    required: true
+    multivalued: false
+  thirdPartyDistributionConsent:
+    name: thirdPartyDistributionConsent
+    description: Indicates whether the biological material can be distributed without
+      restriction to third parties, as indicated by the ABS permit, in case an ABS
+      permit is required
+    title: third party distribution consent
+    from_schema: https://evora-project.eu/
+    rank: 1000
+    alias: thirdPartyDistributionConsent
+    owner: Bundle
+    domain_of:
+    - Product
+    range: boolean
+    required: false
+    multivalued: false
+  usageRestrictions:
+    name: usageRestrictions
+    description: Specifies any limitations or conditions on the use of the biological
+      material, including restrictions on research, commercial use, or distribution,
+      considering any potential concerns about the related genetic material
+    title: usage restrictions
+    from_schema: https://evora-project.eu/
+    rank: 1000
+    alias: usageRestrictions
+    owner: Bundle
+    domain_of:
+    - Product
+    range: string
+    required: false
+    multivalued: false
+  accessPointURL:
+    name: accessPointURL
+    description: The URL that permits to access to the product/service detailed description
+      page on the provider's website and/or allows to place an order about it or at
+      least describe the process to place an order/enquiry
+    title: access point URL
+    from_schema: https://evora-project.eu/
+    exact_mappings:
+    - dcat:landingPage
+    rank: 1000
+    alias: accessPointURL
+    owner: Bundle
+    domain_of:
+    - ProductOrService
+    range: uri
+    required: true
+    multivalued: false
+  refSKU:
+    name: refSKU
+    description: The reference or the stock keeping unit of the service or item provided
+      in the provider's catalogue
+    title: ref-SKU
+    from_schema: https://evora-project.eu/
+    exact_mappings:
+    - dct:identifier
+    rank: 1000
+    alias: refSKU
+    owner: Bundle
+    domain_of:
+    - ProductOrService
+    range: string
+    required: true
+    multivalued: false
+  unitDefinition:
+    name: unitDefinition
+    description: A short description of what will be delivered by ordering one unit
+      of this item
+    title: unit definition
+    comments:
+    - 'The description of what will be delivered to the end-user (e.g.: packaging,
+      quantity...)'
+    from_schema: https://evora-project.eu/
+    rank: 1000
+    alias: unitDefinition
+    owner: Bundle
+    domain_of:
+    - ProductOrService
+    range: string
+    required: false
+    multivalued: false
+  category:
+    name: category
+    description: The main category of the service or product
+    title: category
+    from_schema: https://evora-project.eu/
+    exact_mappings:
+    - dcat:theme
+    rank: 1000
+    alias: category
+    owner: Bundle
+    domain_of:
+    - ProductOrService
+    range: ProductCategory
+    required: true
+    multivalued: false
+  additionalCategory:
+    name: additionalCategory
+    description: Any category apart from its main category in which this product or
+      service can fit
+    title: additional category
+    from_schema: https://evora-project.eu/
+    exact_mappings:
+    - dcat:theme
+    rank: 1000
+    alias: additionalCategory
+    owner: Bundle
+    domain_of:
+    - ProductOrService
+    range: ProductCategory
+    required: false
+    multivalued: true
+  unitCost:
+    name: unitCost
+    description: The cost per access for one unit as defined by the unit definition
+    title: unit cost
+    comments:
+    - The cost per access may not be defined or be specific to a request, so it has
+      to be a xsd:string instead of an xsd:float as initialy suggested to permit description
+      of cost as conditional to what is requested
+    from_schema: https://evora-project.eu/
+    rank: 1000
+    ifabsent: string(on request)
+    alias: unitCost
+    owner: Bundle
+    domain_of:
+    - ProductOrService
+    range: string
+    required: true
+    multivalued: false
+  qualityGrading:
+    name: qualityGrading
+    description: Information that permits to assess the quality level of what will
+      be provided
+    title: quality grading
+    from_schema: https://evora-project.eu/
+    rank: 1000
+    alias: qualityGrading
+    owner: Bundle
+    domain_of:
+    - ProductOrService
+    range: string
+    required: false
+    multivalued: false
+  pathogenIdentification:
+    name: pathogenIdentification
+    description: The identification of the pathogen or group of pathogens (e.g; name,
+      taxon identification, etc.) related to the current item.
+    title: pathogen identification
+    comments:
+    - 'The pathogen identification contains information about name and taxon but in
+      some cases(e.g: FAIRSHARING) there may have no direct pathogen related but simply
+      a taxonomic information .... the default value should be the root of virology:
+      Viruses'
+    from_schema: https://evora-project.eu/
+    rank: 1000
+    alias: pathogenIdentification
+    owner: Bundle
+    domain_of:
+    - ProductOrService
+    range: PathogenIdentification
+    required: true
+    multivalued: true
+  relatedDOI:
+    name: relatedDOI
+    description: Any DOI that can be related
+    title: DOI
+    from_schema: https://evora-project.eu/
+    aliases:
+    - DOI
+    close_mappings:
+    - wdp:P356
+    rank: 1000
+    alias: relatedDOI
+    owner: Bundle
+    domain_of:
+    - Publication
+    - ProductOrService
+    range: DOI
+    required: false
+    multivalued: true
+  riskGroup:
+    name: riskGroup
+    description: The highest risk group related to this resource. The risk group of
+      a biological agent guiding its initial handling in labs according to the risk
+      group classification defined by the WHO laboratory biosafety manual
+    title: risk group
+    from_schema: https://evora-project.eu/
+    aliases:
+    - risk group
+    close_mappings:
+    - wdp:P12663
+    rank: 1000
+    alias: riskGroup
+    owner: Bundle
+    domain_of:
+    - ProductOrService
+    range: RiskGroup
+    required: false
+    multivalued: false
+  biosafetyRestrictions:
+    name: biosafetyRestrictions
+    description: Information about guidelines and regulations designed to prevent
+      the exposure to or release of potentially harmful biological agents. It thereby
+      contributes to protecting people and the environment from biohazards while accessing
+      this product or service
+    title: biosafety restrictions
+    from_schema: https://evora-project.eu/
+    rank: 1000
+    alias: biosafetyRestrictions
+    owner: Bundle
+    domain_of:
+    - ProductOrService
+    range: string
+    required: false
+    multivalued: false
+  canItBeUsedToProduceGMO:
+    name: canItBeUsedToProduceGMO
+    description: Indicates if the current service or product can be used to produce
+      GMO
+    title: can it be used to produce GMO
+    comments:
+    - Set to TRUE if it can produce GMO
+    from_schema: https://evora-project.eu/
+    rank: 1000
+    alias: canItBeUsedToProduceGMO
+    owner: Bundle
+    domain_of:
+    - ProductOrService
+    range: boolean
+    required: false
+    multivalued: false
+  provider:
+    name: provider
+    description: A provider of this product or service, as a specific organization
+    title: provider
+    from_schema: https://evora-project.eu/
+    rank: 1000
+    alias: provider
+    owner: Bundle
+    domain_of:
+    - ProductOrService
+    range: Provider
+    required: true
+    multivalued: false
+  collection:
+    name: collection
+    description: The collection(s) to which belongs this item
+    title: collection
+    from_schema: https://evora-project.eu/
+    aliases:
+    - catalog
+    rank: 1000
+    alias: collection
+    owner: Bundle
+    domain_of:
+    - ProductOrService
+    range: Collection
+    required: true
+    multivalued: true
+  keywords:
+    name: keywords
+    description: List of terms used to tag and categorize this Item
+    title: keywords
+    from_schema: https://evora-project.eu/
+    exact_mappings:
+    - dcat:keyword
+    rank: 1000
+    alias: keywords
+    owner: Bundle
+    domain_of:
+    - ProductOrService
+    range: Keyword
+    required: true
+    multivalued: true
+  availability:
+    name: availability
+    description: The state or condition in which this item is accessible and ready
+      for use or can be obtained
+    title: availability
+    comments:
+    - Possible availabilities may differ from a project to another
+    from_schema: https://evora-project.eu/
+    rank: 1000
+    ifabsent: string(on request)
+    alias: availability
+    owner: Bundle
+    domain_of:
+    - ProductOrService
+    range: string
+    required: true
+    multivalued: false
+  technicalRecommendation:
+    name: technicalRecommendation
+    description: Expert advice or guidelines provided to ensure the optimal use, performance,
+      and maintenance of what is provided, including best practices, troubleshooting
+      tips, and procedural instructions
+    title: technical recommendation
+    from_schema: https://evora-project.eu/
+    rank: 1000
+    alias: technicalRecommendation
+    owner: Bundle
+    domain_of:
+    - ProductOrService
+    range: string
+    required: false
+    multivalued: false
+  productPicture:
+    name: productPicture
+    description: A picture that can represent the item
+    title: product picture
+    from_schema: https://evora-project.eu/
+    rank: 1000
+    alias: productPicture
+    owner: Bundle
+    domain_of:
+    - ProductOrService
+    range: Image
+    required: false
+    multivalued: true
+  externalRelatedReference:
+    name: externalRelatedReference
+    description: A reference that permits to retrieve another related item from an
+      external provider
+    title: external related reference
+    from_schema: https://evora-project.eu/
+    rank: 1000
+    alias: externalRelatedReference
+    owner: Bundle
+    domain_of:
+    - ProductOrService
+    range: ExternalRelatedReference
+    required: false
+    multivalued: true
+  certification:
+    name: certification
+    description: Any certification related to the current product or service; e.g.,
+      ISO certification
+    title: certification
+    from_schema: https://evora-project.eu/
+    close_mappings:
+    - dct:conformsTo
+    rank: 1000
+    alias: certification
+    owner: Bundle
+    domain_of:
+    - ProductOrService
+    range: Certification
+    required: false
+    multivalued: true
+  internalReference:
+    name: internalReference
+    description: Any reference or indication to be used for local retrieval purpose
+    title: internal reference
+    from_schema: https://evora-project.eu/
+    rank: 1000
+    alias: internalReference
+    owner: Bundle
+    domain_of:
+    - ProductOrService
+    range: string
+    required: false
+    multivalued: false
+  note:
+    name: note
+    description: An aditional information as a textual comment
+    title: note
+    from_schema: https://evora-project.eu/
+    rank: 1000
+    alias: note
+    owner: Bundle
+    domain_of:
+    - ProductOrService
+    range: string
+    required: false
+    multivalued: false
+  contactPoint:
+    name: contactPoint
+    description: An information that allows someone to establish communication
+    title: contact point
+    from_schema: https://evora-project.eu/
+    exact_mappings:
+    - dcat:contactPoint
+    rank: 1000
+    alias: contactPoint
+    owner: Bundle
+    domain_of:
+    - PersonOrOrganization
+    - ProductOrService
+    range: ContactPoint
+    required: false
+    multivalued: false
+  name:
+    name: name
+    description: The label that allows humans to identify the current item
+    title: name
+    comments:
+    - 'The title of the item should be as short and descriptive as possible. E.g.
+      for virus products it should basically be based on the following Pattern:
+
+      "Virus name", "virus host type", "collection year", "country of collection"
+      ex "suspected epidemiological origin", "genotype", "strain", "variant name or
+      specific feature"'
+    from_schema: https://evora-project.eu/
+    exact_mappings:
+    - dct:title
+    close_mappings:
+    - rdfs:label
+    rank: 1000
+    alias: name
+    owner: Bundle
+    domain_of:
+    - Nameable
+    range: string
+    required: true
+    multivalued: false
+  description:
+    name: description
+    description: A short explanation of the characteristics, features, or nature of
+      the current item
+    title: description
+    comments:
+    - 'Describe this item in few lines. This description will serve as a summary to
+      present the item.
+
+      '
+    from_schema: https://evora-project.eu/
+    exact_mappings:
+    - dct:description
+    rank: 1000
+    alias: description
+    owner: Bundle
+    domain_of:
+    - Nameable
+    range: string
+    required: false
+    multivalued: false
+
+```
+</details>

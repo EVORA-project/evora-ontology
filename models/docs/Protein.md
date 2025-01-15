@@ -1,174 +1,1461 @@
 
-# Class: Protein
 
-A protein as a derived product from a pathogen
+# Class: Protein (Protein)
+
+
+_A protein as a derived product from a pathogen_
+
+
+
+
 
 URI: [EVORA:Protein](https://evora-project.eu/Protein)
 
 
-[![img](https://yuml.me/diagram/nofunky;dir:TB/class/[SpecialFeature],[Sequence],[RiskGroup],[Provider],[ProteinTag],[ProteinTag]<proteinTAG%200..*-++[Protein&#124;domain:string%20*;expressedAs:string%20*;inclusionBodiesType:string%20*;expressionSystem:string%20*;functionalCharacterization:string%20*;functionalTechnicalDescription:string%20*;proteinPurification:string%20*;theTAGStatusOfTheSolubilizedProtein:string%20*;typeOfFunctionalCharacterization:string%20*;shippingConditions(i):string;storageConditions(i):string;thirdPartyDistributionConsent(i):boolean%20%3F;usageRestrictions(i):string%20%3F;accessPointURL(i):uri;refSKU(i):string;unitDefinition(i):string%20%3F;unitCost(i):string;qualityGrading(i):string%20%3F;biosafetyRestrictions(i):string%20%3F;canItBeUsedToProduceGMO(i):boolean%20%3F;availability(i):string;technicalRecommendation(i):string%20%3F;internalReference(i):string%20%3F;note(i):string%20%3F;name(i):string;description(i):string%20%3F],[SpecialFeature]<specialFeature%200..*-++[Protein],[PDBReference]<relatedPDB%200..*-++[Protein],[Sequence]<sequence%201..*-++[Protein],[BiologicalMaterialOrigin]<biologicalMaterialOrigin%201..1-++[Protein],[Product]^-[Protein],[ProductCategory],[Product],[PathogenIdentification],[PDBReference],[Originator],[MSDS],[Keyword],[Image],[IATAClassification],[ExternalRelatedReference],[Document],[DOI],[ContactPoint],[Collection],[Certification],[BiologicalMaterialOrigin])](https://yuml.me/diagram/nofunky;dir:TB/class/[SpecialFeature],[Sequence],[RiskGroup],[Provider],[ProteinTag],[ProteinTag]<proteinTAG%200..*-++[Protein&#124;domain:string%20*;expressedAs:string%20*;inclusionBodiesType:string%20*;expressionSystem:string%20*;functionalCharacterization:string%20*;functionalTechnicalDescription:string%20*;proteinPurification:string%20*;theTAGStatusOfTheSolubilizedProtein:string%20*;typeOfFunctionalCharacterization:string%20*;shippingConditions(i):string;storageConditions(i):string;thirdPartyDistributionConsent(i):boolean%20%3F;usageRestrictions(i):string%20%3F;accessPointURL(i):uri;refSKU(i):string;unitDefinition(i):string%20%3F;unitCost(i):string;qualityGrading(i):string%20%3F;biosafetyRestrictions(i):string%20%3F;canItBeUsedToProduceGMO(i):boolean%20%3F;availability(i):string;technicalRecommendation(i):string%20%3F;internalReference(i):string%20%3F;note(i):string%20%3F;name(i):string;description(i):string%20%3F],[SpecialFeature]<specialFeature%200..*-++[Protein],[PDBReference]<relatedPDB%200..*-++[Protein],[Sequence]<sequence%201..*-++[Protein],[BiologicalMaterialOrigin]<biologicalMaterialOrigin%201..1-++[Protein],[Product]^-[Protein],[ProductCategory],[Product],[PathogenIdentification],[PDBReference],[Originator],[MSDS],[Keyword],[Image],[IATAClassification],[ExternalRelatedReference],[Document],[DOI],[ContactPoint],[Collection],[Certification],[BiologicalMaterialOrigin])
-
-## Parents
-
- *  is_a: [Product](Product.md) - A product
-
-## Referenced by Class
 
 
-## Attributes
 
 
-### Own
+```mermaid
+ classDiagram
+    class Protein
+    click Protein href "../Protein"
+      Product <|-- Protein
+        click Product href "../Product"
+      
+      Protein : accessPointURL
+        
+      Protein : additionalCategory
+        
+          
+    
+    
+    Protein --> "*" ProductCategory : additionalCategory
+    click ProductCategory href "../ProductCategory"
 
- * [Protein➞biologicalMaterialOrigin](Protein_biologicalMaterialOrigin.md)  <sub>1..1</sub>
-     * Description: Information about the origin of the biological material, essential for access, utilization, and benefit-sharing of genetic resources in compliance with the Nagoya Protocol.
-     * Range: [BiologicalMaterialOrigin](BiologicalMaterialOrigin.md)
- * [Protein➞sequence](Protein_sequence.md)  <sub>1..\*</sub>
-     * Description: The related sequence information from a sequence provider or in fasta format
-     * Range: [Sequence](Sequence.md)
- * [Protein➞relatedPDB](Protein_relatedPDB.md)  <sub>0..\*</sub>
-     * Description: Identifier for 3D structural data as per the PDB (Protein Data Bank) database
-     * Range: [PDBReference](PDBReference.md)
- * [Protein➞specialFeature](Protein_specialFeature.md)  <sub>0..\*</sub>
-     * Description: Distinctive attributes of a product that set it apart from other similar items e.g., Reference strain, Vaccinal strain, Antiviral resistant strain ...
-     * Range: [SpecialFeature](SpecialFeature.md)
- * [Protein➞proteinTAG](Protein_proteinTAG.md)  <sub>0..\*</sub>
-     * Description: Peptide sequences genetically grafted onto a recombinant protein
-     * Range: [ProteinTag](ProteinTag.md)
- * [Protein➞domain](Protein_domain.md)  <sub>0..\*</sub>
-     * Description: A distinct structural and functional unit within the protein, often capable of independent folding and stability, which contributes to the protein's overall function
-     * Range: [String](types/String.md)
- * [Protein➞expressedAs](Protein_expressedAs.md)  <sub>0..\*</sub>
-     * Description: Refers to the form in which the protein is produced and manifested in a biological system. Possible values include "Soluble" (proteins that are dissolved in the cellular or extracellular fluid) and "Inclusion bodies" (aggregated proteins that are insoluble and form within the cell)
-     * Range: [String](types/String.md)
- * [Protein➞inclusionBodiesType](Protein_inclusionBodiesType.md)  <sub>0..\*</sub>
-     * Description: Refers to the state of aggregated proteins within a cell. Possible values include "Denatured" (proteins are in an unfolded, inactive state) and "Refolded" (proteins have been processed to regain their functional, active conformation).
-     * Range: [String](types/String.md)
- * [Protein➞expressionSystem](Protein_expressionSystem.md)  <sub>0..\*</sub>
-     * Description: The host organism or cellular environment used to produce a protein from a specific gene. Possible values include "E. coli" (bacterial system), "Insect cells" (using baculovirus vectors), and "Mammalian cells" (mammalian cell lines).
-     * Range: [String](types/String.md)
- * [Protein➞functionalCharacterization](Protein_functionalCharacterization.md)  <sub>0..\*</sub>
-     * Description: The process of determining and describing the specific biological activities and roles of a protein. Possible values include "Functionally characterized" (the protein's functions have been identified and described) and "No functional characterization" (the protein's functions have not been identified or described).
-     * Range: [String](types/String.md)
- * [Protein➞functionalTechnicalDescription](Protein_functionalTechnicalDescription.md)  <sub>0..\*</sub>
-     * Description: Detailed information about the specific biological functions, mechanisms of action, and technical attributes of a protein. This includes how the protein interacts within biological systems, its role in cellular processes, and any relevant technical details such as structure, activity, and interactions with other molecules.
-     * Range: [String](types/String.md)
- * [Protein➞proteinPurification](Protein_proteinPurification.md)  <sub>0..\*</sub>
-     * Description: Refers to the degree of purity achieved for a protein sample. Possible values include ">95%" (the protein is highly purified, with more than 95% purity) and "Unpurified expression host lysate or partly purified protein" (the protein is either unpurified and present in the host cell lysate or only partially purified).
-     * Range: [String](types/String.md)
- * [Protein➞theTAGStatusOfTheSolubilizedProtein](Protein_theTAGStatusOfTheSolubilizedProtein.md)  <sub>0..\*</sub>
-     * Description: Indicates the presence and condition of a tag on the protein after solubilization. Possible values include "Uncleaved Tag" (the tag is still attached to the protein), "Cleaved Tag" (the tag has been removed from the protein), and "No Tag" (the protein does not have a tag)
-     * Range: [String](types/String.md)
- * [Protein➞typeOfFunctionalCharacterization](Protein_typeOfFunctionalCharacterization.md)  <sub>0..\*</sub>
-     * Description: Refers to the classification of a protein based on the specific type of functional analysis performed to determine its biological activities and roles. Possible values include "Enzymatic" (the protein has been characterized for its enzyme activity) and "Antigenic" (the protein has been characterized for its ability to elicit an immune response).
-     * Range: [String](types/String.md)
+        
+      Protein : availability
+        
+      Protein : biologicalMaterialOrigin
+        
+          
+    
+    
+    Protein --> "1" BiologicalMaterialOrigin : biologicalMaterialOrigin
+    click BiologicalMaterialOrigin href "../BiologicalMaterialOrigin"
 
-### Inherited from Product:
+        
+      Protein : biosafetyRestrictions
+        
+      Protein : canItBeUsedToProduceGMO
+        
+      Protein : category
+        
+          
+    
+    
+    Protein --> "1" ProductCategory : category
+    click ProductCategory href "../ProductCategory"
 
- * [Nameable➞name](Nameable_name.md)  <sub>1..1</sub>
-     * Description: The label that allows humans to identify the current item
-     * Range: [String](types/String.md)
- * [Nameable➞description](Nameable_description.md)  <sub>0..1</sub>
-     * Description: A short explanation of the characteristics, features, or nature of the current item
-     * Range: [String](types/String.md)
- * [ProductOrService➞accessPointURL](ProductOrService_accessPointURL.md)  <sub>1..1</sub>
-     * Description: The URL that permits to access to the product/service detailed description page on the provider's website and/or allows to place an order about it or at least describe the process to place an order/enquiry
-     * Range: [Uri](types/Uri.md)
- * [ProductOrService➞refSKU](ProductOrService_refSKU.md)  <sub>1..1</sub>
-     * Description: The reference or the stock keeping unit of the service or item provided in the provider's catalogue
-     * Range: [String](types/String.md)
- * [ProductOrService➞unitDefinition](ProductOrService_unitDefinition.md)  <sub>0..1</sub>
-     * Description: A short description of what will be delivered by ordering one unit of this item
-     * Range: [String](types/String.md)
- * [ProductOrService➞category](ProductOrService_category.md)  <sub>1..1</sub>
-     * Description: The main category of the service or product
-     * Range: [ProductCategory](ProductCategory.md)
- * [ProductOrService➞additionalCategory](ProductOrService_additionalCategory.md)  <sub>0..\*</sub>
-     * Description: Any category apart from its main category in which this product or service can fit
-     * Range: [ProductCategory](ProductCategory.md)
- * [ProductOrService➞unitCost](ProductOrService_unitCost.md)  <sub>1..1</sub>
-     * Description: The cost per access for one unit as defined by the unit definition
-     * Range: [String](types/String.md)
- * [ProductOrService➞qualityGrading](ProductOrService_qualityGrading.md)  <sub>0..1</sub>
-     * Description: Information that permits to assess the quality level of what will be provided
-     * Range: [String](types/String.md)
- * [ProductOrService➞pathogenIdentification](ProductOrService_pathogenIdentification.md)  <sub>1..\*</sub>
-     * Description: The identification of the pathogen or group of pathogens (e.g; name, taxon identification, etc.) related to the current item.
-     * Range: [PathogenIdentification](PathogenIdentification.md)
- * [ProductOrService➞relatedDOI](ProductOrService_relatedDOI.md)  <sub>0..\*</sub>
-     * Description: Any DOI that can be related
-     * Range: [DOI](DOI.md)
- * [ProductOrService➞riskGroup](ProductOrService_riskGroup.md)  <sub>0..1</sub>
-     * Description: The highest risk group related to this resource. The risk group of a biological agent guiding its initial handling in labs according to the risk group classification defined by the WHO laboratory biosafety manual
-     * Range: [RiskGroup](RiskGroup.md)
- * [ProductOrService➞biosafetyRestrictions](ProductOrService_biosafetyRestrictions.md)  <sub>0..1</sub>
-     * Description: Information about guidelines and regulations designed to prevent the exposure to or release of potentially harmful biological agents. It thereby contributes to protecting people and the environment from biohazards while accessing this product or service
-     * Range: [String](types/String.md)
- * [ProductOrService➞canItBeUsedToProduceGMO](ProductOrService_canItBeUsedToProduceGMO.md)  <sub>0..1</sub>
-     * Description: Indicates if the current service or product can be used to produce GMO
-     * Range: [Boolean](types/Boolean.md)
- * [ProductOrService➞provider](ProductOrService_provider.md)  <sub>1..1</sub>
-     * Description: A provider of this product or service, as a specific organization
-     * Range: [Provider](Provider.md)
- * [ProductOrService➞collection](ProductOrService_collection.md)  <sub>1..\*</sub>
-     * Description: The collection(s) to which belongs this item
-     * Range: [Collection](Collection.md)
- * [ProductOrService➞keywords](ProductOrService_keywords.md)  <sub>1..\*</sub>
-     * Description: List of terms used to tag and categorize this Item
-     * Range: [Keyword](Keyword.md)
- * [ProductOrService➞availability](ProductOrService_availability.md)  <sub>1..1</sub>
-     * Description: The state or condition in which this item is accessible and ready for use or can be obtained
-     * Range: [String](types/String.md)
- * [ProductOrService➞complementaryDocument](ProductOrService_complementaryDocument.md)  <sub>0..\*</sub>
-     * Description: Any complementary document that can be related to this Item
-     * Range: [Document](Document.md)
- * [ProductOrService➞technicalRecommendation](ProductOrService_technicalRecommendation.md)  <sub>0..1</sub>
-     * Description: Expert advice or guidelines provided to ensure the optimal use, performance, and maintenance of what is provided, including best practices, troubleshooting tips, and procedural instructions
-     * Range: [String](types/String.md)
- * [ProductOrService➞productPicture](ProductOrService_productPicture.md)  <sub>0..\*</sub>
-     * Description: A picture that can represent the item
-     * Range: [Image](Image.md)
- * [ProductOrService➞externalRelatedReference](ProductOrService_externalRelatedReference.md)  <sub>0..\*</sub>
-     * Description: A reference that permits to retrieve another related item from an external provider
-     * Range: [ExternalRelatedReference](ExternalRelatedReference.md)
- * [ProductOrService➞certification](ProductOrService_certification.md)  <sub>0..\*</sub>
-     * Description: Any certification related to the current product or service; e.g., ISO certification
-     * Range: [Certification](Certification.md)
- * [ProductOrService➞internalReference](ProductOrService_internalReference.md)  <sub>0..1</sub>
-     * Description: Any reference or indication to be used for local retrieval purpose
-     * Range: [String](types/String.md)
- * [ProductOrService➞note](ProductOrService_note.md)  <sub>0..1</sub>
-     * Description: An aditional information as a textual comment
-     * Range: [String](types/String.md)
- * [ProductOrService➞contactPoint](ProductOrService_contactPoint.md)  <sub>0..1</sub>
-     * Description: An information that allows someone to establish communication
-     * Range: [ContactPoint](ContactPoint.md)
- * [Product➞hasIATAClassification](Product_hasIATAClassification.md)  <sub>1..1</sub>
-     * Description: The corresponding International Air Transport Association (IATA)'s category for this Product
-     * Range: [IATAClassification](IATAClassification.md)
- * [Product➞shippingConditions](Product_shippingConditions.md)  <sub>1..1</sub>
-     * Description: Specification of the terms and parameters for transporting
+        
+      Protein : certification
+        
+          
+    
+    
+    Protein --> "*" Certification : certification
+    click Certification href "../Certification"
 
-     * Range: [String](types/String.md)
- * [Product➞materialSafetyDataSheet](Product_materialSafetyDataSheet.md)  <sub>0..1</sub>
-     * Description: A Material Safety Data Sheet (MSDS) or Safety Data Sheet (SDS) is a standardized document that contains crucial occupational safety and health information related to the product
-     * Range: [MSDS](MSDS.md)
- * [Product➞originator](Product_originator.md)  <sub>0..1</sub>
-     * Description: The individual or organization responsible for the original discovery, isolation, or creation of an item, providing information about the source or origin of the sample
-     * Range: [Originator](Originator.md)
- * [Product➞storageConditions](Product_storageConditions.md)  <sub>1..1</sub>
-     * Description: Specifies the conditions under which the product has to be stored to maintain stability and integrity, such as temperature, buffer, and other environmental factors.
-     * Range: [String](types/String.md)
- * [Product➞thirdPartyDistributionConsent](Product_thirdPartyDistributionConsent.md)  <sub>0..1</sub>
-     * Description: Indicates whether the biological material can be distributed without restriction to third parties, as indicated by the ABS permit, in case an ABS permit is required
-     * Range: [Boolean](types/Boolean.md)
- * [Product➞usageRestrictions](Product_usageRestrictions.md)  <sub>0..1</sub>
-     * Description: Specifies any limitations or conditions on the use of the biological material, including restrictions on research, commercial use, or distribution, considering any potential concerns about the related genetic material
-     * Range: [String](types/String.md)
+        
+      Protein : collection
+        
+          
+    
+    
+    Protein --> "1..*" Collection : collection
+    click Collection href "../Collection"
 
-## Other properties
+        
+      Protein : complementaryDocument
+        
+          
+    
+    
+    Protein --> "*" Document : complementaryDocument
+    click Document href "../Document"
 
-|  |  |  |
-| --- | --- | --- |
-| **Aliases:** | | Protein |
-| **Close Mappings:** | | wd:Q8054 |
+        
+      Protein : contactPoint
+        
+          
+    
+    
+    Protein --> "0..1" ContactPoint : contactPoint
+    click ContactPoint href "../ContactPoint"
+
+        
+      Protein : description
+        
+      Protein : domain
+        
+      Protein : expressedAs
+        
+      Protein : expressionSystem
+        
+      Protein : externalRelatedReference
+        
+          
+    
+    
+    Protein --> "*" ExternalRelatedReference : externalRelatedReference
+    click ExternalRelatedReference href "../ExternalRelatedReference"
+
+        
+      Protein : functionalCharacterization
+        
+      Protein : functionalTechnicalDescription
+        
+      Protein : hasIATAClassification
+        
+          
+    
+    
+    Protein --> "1" IATAClassification : hasIATAClassification
+    click IATAClassification href "../IATAClassification"
+
+        
+      Protein : inclusionBodiesType
+        
+      Protein : internalReference
+        
+      Protein : keywords
+        
+          
+    
+    
+    Protein --> "1..*" Keyword : keywords
+    click Keyword href "../Keyword"
+
+        
+      Protein : materialSafetyDataSheet
+        
+          
+    
+    
+    Protein --> "0..1" MSDS : materialSafetyDataSheet
+    click MSDS href "../MSDS"
+
+        
+      Protein : name
+        
+      Protein : note
+        
+      Protein : originator
+        
+          
+    
+    
+    Protein --> "0..1" Originator : originator
+    click Originator href "../Originator"
+
+        
+      Protein : pathogenIdentification
+        
+          
+    
+    
+    Protein --> "1..*" PathogenIdentification : pathogenIdentification
+    click PathogenIdentification href "../PathogenIdentification"
+
+        
+      Protein : productPicture
+        
+          
+    
+    
+    Protein --> "*" Image : productPicture
+    click Image href "../Image"
+
+        
+      Protein : proteinPurification
+        
+      Protein : proteinTAG
+        
+          
+    
+    
+    Protein --> "*" ProteinTag : proteinTAG
+    click ProteinTag href "../ProteinTag"
+
+        
+      Protein : provider
+        
+          
+    
+    
+    Protein --> "1" Provider : provider
+    click Provider href "../Provider"
+
+        
+      Protein : qualityGrading
+        
+      Protein : refSKU
+        
+      Protein : relatedDOI
+        
+          
+    
+    
+    Protein --> "*" DOI : relatedDOI
+    click DOI href "../DOI"
+
+        
+      Protein : relatedPDB
+        
+          
+    
+    
+    Protein --> "*" PDBReference : relatedPDB
+    click PDBReference href "../PDBReference"
+
+        
+      Protein : riskGroup
+        
+          
+    
+    
+    Protein --> "0..1" RiskGroup : riskGroup
+    click RiskGroup href "../RiskGroup"
+
+        
+      Protein : sequence
+        
+          
+    
+    
+    Protein --> "1..*" Sequence : sequence
+    click Sequence href "../Sequence"
+
+        
+      Protein : shippingConditions
+        
+      Protein : specialFeature
+        
+          
+    
+    
+    Protein --> "*" SpecialFeature : specialFeature
+    click SpecialFeature href "../SpecialFeature"
+
+        
+      Protein : storageConditions
+        
+      Protein : technicalRecommendation
+        
+      Protein : theTAGStatusOfTheSolubilizedProtein
+        
+      Protein : thirdPartyDistributionConsent
+        
+      Protein : typeOfFunctionalCharacterization
+        
+      Protein : unitCost
+        
+      Protein : unitDefinition
+        
+      Protein : usageRestrictions
+        
+      
+```
+
+
+
+
+
+## Inheritance
+* [Nameable](Nameable.md)
+    * [NamedDataset](NamedDataset.md)
+        * [ProductOrService](ProductOrService.md)
+            * [Product](Product.md)
+                * **Protein**
+
+
+
+## Slots
+
+| Name | Cardinality and Range | Description | Inheritance |
+| ---  | --- | --- | --- |
+| [biologicalMaterialOrigin](biologicalMaterialOrigin.md) | 1 <br/> [BiologicalMaterialOrigin](BiologicalMaterialOrigin.md) | Information about the origin of the biological material, essential for access... | direct |
+| [sequence](sequence.md) | 1..* <br/> [Sequence](Sequence.md) | The related sequence information from a sequence provider or in fasta format | direct |
+| [relatedPDB](relatedPDB.md) | * <br/> [PDBReference](PDBReference.md) | Identifier for 3D structural data as per the PDB (Protein Data Bank) database | direct |
+| [specialFeature](specialFeature.md) | * <br/> [SpecialFeature](SpecialFeature.md) | Distinctive attributes of a product that set it apart from other similar item... | direct |
+| [proteinTAG](proteinTAG.md) | * <br/> [ProteinTag](ProteinTag.md) | Peptide sequences genetically grafted onto a recombinant protein | direct |
+| [domain](domain.md) | * <br/> [String](String.md) | A distinct structural and functional unit within the protein, often capable o... | direct |
+| [expressedAs](expressedAs.md) | * <br/> [String](String.md) | Refers to the form in which the protein is produced and manifested in a biolo... | direct |
+| [inclusionBodiesType](inclusionBodiesType.md) | * <br/> [String](String.md) | Refers to the state of aggregated proteins within a cell | direct |
+| [expressionSystem](expressionSystem.md) | * <br/> [String](String.md) | The host organism or cellular environment used to produce a protein from a sp... | direct |
+| [functionalCharacterization](functionalCharacterization.md) | * <br/> [String](String.md) | The process of determining and describing the specific biological activities ... | direct |
+| [functionalTechnicalDescription](functionalTechnicalDescription.md) | * <br/> [String](String.md) | Detailed information about the specific biological functions, mechanisms of a... | direct |
+| [proteinPurification](proteinPurification.md) | * <br/> [String](String.md) | Refers to the degree of purity achieved for a protein sample | direct |
+| [theTAGStatusOfTheSolubilizedProtein](theTAGStatusOfTheSolubilizedProtein.md) | * <br/> [String](String.md) | Indicates the presence and condition of a tag on the protein after solubiliza... | direct |
+| [typeOfFunctionalCharacterization](typeOfFunctionalCharacterization.md) | * <br/> [String](String.md) | Refers to the classification of a protein based on the specific type of funct... | direct |
+| [hasIATAClassification](hasIATAClassification.md) | 1 <br/> [IATAClassification](IATAClassification.md) | The corresponding International Air Transport Association (IATA)'s category f... | [Product](Product.md) |
+| [shippingConditions](shippingConditions.md) | 1 <br/> [String](String.md) | Specification of the terms and parameters for transporting | [Product](Product.md) |
+| [materialSafetyDataSheet](materialSafetyDataSheet.md) | 0..1 <br/> [MSDS](MSDS.md) | A Material Safety Data Sheet (MSDS) or Safety Data Sheet (SDS) is a standardi... | [Product](Product.md) |
+| [originator](originator.md) | 0..1 <br/> [Originator](Originator.md) | The individual or organization responsible for the original discovery, isolat... | [Product](Product.md) |
+| [storageConditions](storageConditions.md) | 1 <br/> [String](String.md) | Specifies the conditions under which the product has to be stored to maintain... | [Product](Product.md) |
+| [thirdPartyDistributionConsent](thirdPartyDistributionConsent.md) | 0..1 <br/> [Boolean](Boolean.md) | Indicates whether the biological material can be distributed without restrict... | [Product](Product.md) |
+| [usageRestrictions](usageRestrictions.md) | 0..1 <br/> [String](String.md) | Specifies any limitations or conditions on the use of the biological material... | [Product](Product.md) |
+| [accessPointURL](accessPointURL.md) | 1 <br/> [Uri](Uri.md) | The URL that permits to access to the product/service detailed description pa... | [ProductOrService](ProductOrService.md) |
+| [refSKU](refSKU.md) | 1 <br/> [String](String.md) | The reference or the stock keeping unit of the service or item provided in th... | [ProductOrService](ProductOrService.md) |
+| [unitDefinition](unitDefinition.md) | 0..1 <br/> [String](String.md) | A short description of what will be delivered by ordering one unit of this it... | [ProductOrService](ProductOrService.md) |
+| [category](category.md) | 1 <br/> [ProductCategory](ProductCategory.md) | The main category of the service or product | [ProductOrService](ProductOrService.md) |
+| [additionalCategory](additionalCategory.md) | * <br/> [ProductCategory](ProductCategory.md) | Any category apart from its main category in which this product or service ca... | [ProductOrService](ProductOrService.md) |
+| [unitCost](unitCost.md) | 1 <br/> [String](String.md) | The cost per access for one unit as defined by the unit definition | [ProductOrService](ProductOrService.md) |
+| [qualityGrading](qualityGrading.md) | 0..1 <br/> [String](String.md) | Information that permits to assess the quality level of what will be provided | [ProductOrService](ProductOrService.md) |
+| [pathogenIdentification](pathogenIdentification.md) | 1..* <br/> [PathogenIdentification](PathogenIdentification.md) | The identification of the pathogen or group of pathogens (e | [ProductOrService](ProductOrService.md) |
+| [relatedDOI](relatedDOI.md) | * <br/> [DOI](DOI.md) | Any DOI that can be related | [ProductOrService](ProductOrService.md) |
+| [riskGroup](riskGroup.md) | 0..1 <br/> [RiskGroup](RiskGroup.md) | The highest risk group related to this resource | [ProductOrService](ProductOrService.md) |
+| [biosafetyRestrictions](biosafetyRestrictions.md) | 0..1 <br/> [String](String.md) | Information about guidelines and regulations designed to prevent the exposure... | [ProductOrService](ProductOrService.md) |
+| [canItBeUsedToProduceGMO](canItBeUsedToProduceGMO.md) | 0..1 <br/> [Boolean](Boolean.md) | Indicates if the current service or product can be used to produce GMO | [ProductOrService](ProductOrService.md) |
+| [provider](provider.md) | 1 <br/> [Provider](Provider.md) | A provider of this product or service, as a specific organization | [ProductOrService](ProductOrService.md) |
+| [collection](collection.md) | 1..* <br/> [Collection](Collection.md) | The collection(s) to which belongs this item | [ProductOrService](ProductOrService.md) |
+| [keywords](keywords.md) | 1..* <br/> [Keyword](Keyword.md) | List of terms used to tag and categorize this Item | [ProductOrService](ProductOrService.md) |
+| [availability](availability.md) | 1 <br/> [String](String.md) | The state or condition in which this item is accessible and ready for use or ... | [ProductOrService](ProductOrService.md) |
+| [complementaryDocument](complementaryDocument.md) | * <br/> [Document](Document.md) | Any complementary document that can be related to this Item | [ProductOrService](ProductOrService.md) |
+| [technicalRecommendation](technicalRecommendation.md) | 0..1 <br/> [String](String.md) | Expert advice or guidelines provided to ensure the optimal use, performance, ... | [ProductOrService](ProductOrService.md) |
+| [productPicture](productPicture.md) | * <br/> [Image](Image.md) | A picture that can represent the item | [ProductOrService](ProductOrService.md) |
+| [externalRelatedReference](externalRelatedReference.md) | * <br/> [ExternalRelatedReference](ExternalRelatedReference.md) | A reference that permits to retrieve another related item from an external pr... | [ProductOrService](ProductOrService.md) |
+| [certification](certification.md) | * <br/> [Certification](Certification.md) | Any certification related to the current product or service; e | [ProductOrService](ProductOrService.md) |
+| [internalReference](internalReference.md) | 0..1 <br/> [String](String.md) | Any reference or indication to be used for local retrieval purpose | [ProductOrService](ProductOrService.md) |
+| [note](note.md) | 0..1 <br/> [String](String.md) | An aditional information as a textual comment | [ProductOrService](ProductOrService.md) |
+| [contactPoint](contactPoint.md) | 0..1 <br/> [ContactPoint](ContactPoint.md) | An information that allows someone to establish communication | [ProductOrService](ProductOrService.md) |
+| [name](name.md) | 1 <br/> [String](String.md) | The label that allows humans to identify the current item | [Nameable](Nameable.md) |
+| [description](description.md) | 0..1 <br/> [String](String.md) | A short explanation of the characteristics, features, or nature of the curren... | [Nameable](Nameable.md) |
+
+
+
+
+
+
+
+## Aliases
+
+
+* protein
+
+
+
+## Identifier and Mapping Information
+
+
+
+
+
+
+
+### Schema Source
+
+
+* from schema: https://evora-project.eu/
+
+
+
+
+## Mappings
+
+| Mapping Type | Mapped Value |
+| ---  | ---  |
+| self | EVORA:Protein |
+| native | EVORA:Protein |
+| close | wd:Q8054 |
+
+
+
+
+
+
+
+## LinkML Source
+
+<!-- TODO: investigate https://stackoverflow.com/questions/37606292/how-to-create-tabbed-code-blocks-in-mkdocs-or-sphinx -->
+
+### Direct
+
+<details>
+```yaml
+name: Protein
+description: A protein as a derived product from a pathogen
+title: Protein
+from_schema: https://evora-project.eu/
+aliases:
+- protein
+close_mappings:
+- wd:Q8054
+is_a: Product
+slots:
+- biologicalMaterialOrigin
+- sequence
+- relatedPDB
+- specialFeature
+- proteinTAG
+- domain
+- expressedAs
+- inclusionBodiesType
+- expressionSystem
+- functionalCharacterization
+- functionalTechnicalDescription
+- proteinPurification
+- theTAGStatusOfTheSolubilizedProtein
+- typeOfFunctionalCharacterization
+slot_usage:
+  biologicalMaterialOrigin:
+    name: biologicalMaterialOrigin
+    description: Information about the origin of the biological material, essential
+      for access, utilization, and benefit-sharing of genetic resources in compliance
+      with the Nagoya Protocol.
+    title: Biological Material origin
+    range: BiologicalMaterialOrigin
+    required: true
+    multivalued: false
+  sequence:
+    name: sequence
+    description: The related sequence information from a sequence provider or in fasta
+      format
+    title: sequence
+    range: Sequence
+    required: true
+    multivalued: true
+  relatedPDB:
+    name: relatedPDB
+    description: Identifier for 3D structural data as per the PDB (Protein Data Bank)
+      database
+    title: related PDB
+    aliases:
+    - PDB structure ID
+    close_mappings:
+    - wdp:P638
+    range: PDBReference
+    required: false
+    multivalued: true
+  specialFeature:
+    name: specialFeature
+    description: Distinctive attributes of a product that set it apart from other
+      similar items e.g., Reference strain, Vaccinal strain, Antiviral resistant strain
+      ...
+    title: special feature
+    range: SpecialFeature
+    required: false
+    multivalued: true
+  proteinTAG:
+    name: proteinTAG
+    description: Peptide sequences genetically grafted onto a recombinant protein
+    title: protein TAG
+    range: ProteinTag
+    required: false
+    multivalued: true
+  domain:
+    name: domain
+    description: A distinct structural and functional unit within the protein, often
+      capable of independent folding and stability, which contributes to the protein's
+      overall function
+    title: domain
+    range: string
+    required: false
+    multivalued: true
+  expressedAs:
+    name: expressedAs
+    description: Refers to the form in which the protein is produced and manifested
+      in a biological system. Possible values include "Soluble" (proteins that are
+      dissolved in the cellular or extracellular fluid) and "Inclusion bodies" (aggregated
+      proteins that are insoluble and form within the cell)
+    title: expressed as
+    range: string
+    required: false
+    multivalued: true
+  inclusionBodiesType:
+    name: inclusionBodiesType
+    description: Refers to the state of aggregated proteins within a cell. Possible
+      values include "Denatured" (proteins are in an unfolded, inactive state) and
+      "Refolded" (proteins have been processed to regain their functional, active
+      conformation).
+    title: inclusion bodies type
+    range: string
+    required: false
+    multivalued: true
+  expressionSystem:
+    name: expressionSystem
+    description: The host organism or cellular environment used to produce a protein
+      from a specific gene. Possible values include "E. coli" (bacterial system),
+      "Insect cells" (using baculovirus vectors), and "Mammalian cells" (mammalian
+      cell lines).
+    title: expression system
+    range: string
+    required: false
+    multivalued: true
+  functionalCharacterization:
+    name: functionalCharacterization
+    description: The process of determining and describing the specific biological
+      activities and roles of a protein. Possible values include "Functionally characterized"
+      (the protein's functions have been identified and described) and "No functional
+      characterization" (the protein's functions have not been identified or described).
+    title: functional characterization
+    range: string
+    required: false
+    multivalued: true
+  functionalTechnicalDescription:
+    name: functionalTechnicalDescription
+    description: Detailed information about the specific biological functions, mechanisms
+      of action, and technical attributes of a protein. This includes how the protein
+      interacts within biological systems, its role in cellular processes, and any
+      relevant technical details such as structure, activity, and interactions with
+      other molecules.
+    title: functional/Technical description
+    range: string
+    required: false
+    multivalued: true
+  proteinPurification:
+    name: proteinPurification
+    description: Refers to the degree of purity achieved for a protein sample. Possible
+      values include ">95%" (the protein is highly purified, with more than 95% purity)
+      and "Unpurified expression host lysate or partly purified protein" (the protein
+      is either unpurified and present in the host cell lysate or only partially purified).
+    title: protein purification
+    range: string
+    required: false
+    multivalued: true
+  theTAGStatusOfTheSolubilizedProtein:
+    name: theTAGStatusOfTheSolubilizedProtein
+    description: Indicates the presence and condition of a tag on the protein after
+      solubilization. Possible values include "Uncleaved Tag" (the tag is still attached
+      to the protein), "Cleaved Tag" (the tag has been removed from the protein),
+      and "No Tag" (the protein does not have a tag)
+    title: TAG status of the solubilized protein
+    range: string
+    required: false
+    multivalued: true
+  typeOfFunctionalCharacterization:
+    name: typeOfFunctionalCharacterization
+    description: Refers to the classification of a protein based on the specific type
+      of functional analysis performed to determine its biological activities and
+      roles. Possible values include "Enzymatic" (the protein has been characterized
+      for its enzyme activity) and "Antigenic" (the protein has been characterized
+      for its ability to elicit an immune response).
+    title: type of functional Characterization
+    range: string
+    required: false
+    multivalued: true
+
+```
+</details>
+
+### Induced
+
+<details>
+```yaml
+name: Protein
+description: A protein as a derived product from a pathogen
+title: Protein
+from_schema: https://evora-project.eu/
+aliases:
+- protein
+close_mappings:
+- wd:Q8054
+is_a: Product
+slot_usage:
+  biologicalMaterialOrigin:
+    name: biologicalMaterialOrigin
+    description: Information about the origin of the biological material, essential
+      for access, utilization, and benefit-sharing of genetic resources in compliance
+      with the Nagoya Protocol.
+    title: Biological Material origin
+    range: BiologicalMaterialOrigin
+    required: true
+    multivalued: false
+  sequence:
+    name: sequence
+    description: The related sequence information from a sequence provider or in fasta
+      format
+    title: sequence
+    range: Sequence
+    required: true
+    multivalued: true
+  relatedPDB:
+    name: relatedPDB
+    description: Identifier for 3D structural data as per the PDB (Protein Data Bank)
+      database
+    title: related PDB
+    aliases:
+    - PDB structure ID
+    close_mappings:
+    - wdp:P638
+    range: PDBReference
+    required: false
+    multivalued: true
+  specialFeature:
+    name: specialFeature
+    description: Distinctive attributes of a product that set it apart from other
+      similar items e.g., Reference strain, Vaccinal strain, Antiviral resistant strain
+      ...
+    title: special feature
+    range: SpecialFeature
+    required: false
+    multivalued: true
+  proteinTAG:
+    name: proteinTAG
+    description: Peptide sequences genetically grafted onto a recombinant protein
+    title: protein TAG
+    range: ProteinTag
+    required: false
+    multivalued: true
+  domain:
+    name: domain
+    description: A distinct structural and functional unit within the protein, often
+      capable of independent folding and stability, which contributes to the protein's
+      overall function
+    title: domain
+    range: string
+    required: false
+    multivalued: true
+  expressedAs:
+    name: expressedAs
+    description: Refers to the form in which the protein is produced and manifested
+      in a biological system. Possible values include "Soluble" (proteins that are
+      dissolved in the cellular or extracellular fluid) and "Inclusion bodies" (aggregated
+      proteins that are insoluble and form within the cell)
+    title: expressed as
+    range: string
+    required: false
+    multivalued: true
+  inclusionBodiesType:
+    name: inclusionBodiesType
+    description: Refers to the state of aggregated proteins within a cell. Possible
+      values include "Denatured" (proteins are in an unfolded, inactive state) and
+      "Refolded" (proteins have been processed to regain their functional, active
+      conformation).
+    title: inclusion bodies type
+    range: string
+    required: false
+    multivalued: true
+  expressionSystem:
+    name: expressionSystem
+    description: The host organism or cellular environment used to produce a protein
+      from a specific gene. Possible values include "E. coli" (bacterial system),
+      "Insect cells" (using baculovirus vectors), and "Mammalian cells" (mammalian
+      cell lines).
+    title: expression system
+    range: string
+    required: false
+    multivalued: true
+  functionalCharacterization:
+    name: functionalCharacterization
+    description: The process of determining and describing the specific biological
+      activities and roles of a protein. Possible values include "Functionally characterized"
+      (the protein's functions have been identified and described) and "No functional
+      characterization" (the protein's functions have not been identified or described).
+    title: functional characterization
+    range: string
+    required: false
+    multivalued: true
+  functionalTechnicalDescription:
+    name: functionalTechnicalDescription
+    description: Detailed information about the specific biological functions, mechanisms
+      of action, and technical attributes of a protein. This includes how the protein
+      interacts within biological systems, its role in cellular processes, and any
+      relevant technical details such as structure, activity, and interactions with
+      other molecules.
+    title: functional/Technical description
+    range: string
+    required: false
+    multivalued: true
+  proteinPurification:
+    name: proteinPurification
+    description: Refers to the degree of purity achieved for a protein sample. Possible
+      values include ">95%" (the protein is highly purified, with more than 95% purity)
+      and "Unpurified expression host lysate or partly purified protein" (the protein
+      is either unpurified and present in the host cell lysate or only partially purified).
+    title: protein purification
+    range: string
+    required: false
+    multivalued: true
+  theTAGStatusOfTheSolubilizedProtein:
+    name: theTAGStatusOfTheSolubilizedProtein
+    description: Indicates the presence and condition of a tag on the protein after
+      solubilization. Possible values include "Uncleaved Tag" (the tag is still attached
+      to the protein), "Cleaved Tag" (the tag has been removed from the protein),
+      and "No Tag" (the protein does not have a tag)
+    title: TAG status of the solubilized protein
+    range: string
+    required: false
+    multivalued: true
+  typeOfFunctionalCharacterization:
+    name: typeOfFunctionalCharacterization
+    description: Refers to the classification of a protein based on the specific type
+      of functional analysis performed to determine its biological activities and
+      roles. Possible values include "Enzymatic" (the protein has been characterized
+      for its enzyme activity) and "Antigenic" (the protein has been characterized
+      for its ability to elicit an immune response).
+    title: type of functional Characterization
+    range: string
+    required: false
+    multivalued: true
+attributes:
+  biologicalMaterialOrigin:
+    name: biologicalMaterialOrigin
+    description: Information about the origin of the biological material, essential
+      for access, utilization, and benefit-sharing of genetic resources in compliance
+      with the Nagoya Protocol.
+    title: Biological Material origin
+    from_schema: https://evora-project.eu/
+    rank: 1000
+    alias: biologicalMaterialOrigin
+    owner: Protein
+    domain_of:
+    - Protein
+    - Nucleic Acid
+    - Pathogen
+    range: BiologicalMaterialOrigin
+    required: true
+    multivalued: false
+  sequence:
+    name: sequence
+    description: The related sequence information from a sequence provider or in fasta
+      format
+    title: sequence
+    from_schema: https://evora-project.eu/
+    rank: 1000
+    alias: sequence
+    owner: Protein
+    domain_of:
+    - RecombinantPartIdentification
+    - Protein
+    - Nucleic Acid
+    - Pathogen
+    range: Sequence
+    required: true
+    multivalued: true
+  relatedPDB:
+    name: relatedPDB
+    description: Identifier for 3D structural data as per the PDB (Protein Data Bank)
+      database
+    title: related PDB
+    from_schema: https://evora-project.eu/
+    aliases:
+    - PDB structure ID
+    close_mappings:
+    - wdp:P638
+    rank: 1000
+    alias: relatedPDB
+    owner: Protein
+    domain_of:
+    - Protein
+    range: PDBReference
+    required: false
+    multivalued: true
+  specialFeature:
+    name: specialFeature
+    description: Distinctive attributes of a product that set it apart from other
+      similar items e.g., Reference strain, Vaccinal strain, Antiviral resistant strain
+      ...
+    title: special feature
+    from_schema: https://evora-project.eu/
+    rank: 1000
+    alias: specialFeature
+    owner: Protein
+    domain_of:
+    - Protein
+    range: SpecialFeature
+    required: false
+    multivalued: true
+  proteinTAG:
+    name: proteinTAG
+    description: Peptide sequences genetically grafted onto a recombinant protein
+    title: protein TAG
+    from_schema: https://evora-project.eu/
+    rank: 1000
+    alias: proteinTAG
+    owner: Protein
+    domain_of:
+    - Protein
+    range: ProteinTag
+    required: false
+    multivalued: true
+  domain:
+    name: domain
+    description: A distinct structural and functional unit within the protein, often
+      capable of independent folding and stability, which contributes to the protein's
+      overall function
+    title: domain
+    from_schema: https://evora-project.eu/
+    rank: 1000
+    alias: domain
+    owner: Protein
+    domain_of:
+    - Protein
+    range: string
+    required: false
+    multivalued: true
+  expressedAs:
+    name: expressedAs
+    description: Refers to the form in which the protein is produced and manifested
+      in a biological system. Possible values include "Soluble" (proteins that are
+      dissolved in the cellular or extracellular fluid) and "Inclusion bodies" (aggregated
+      proteins that are insoluble and form within the cell)
+    title: expressed as
+    from_schema: https://evora-project.eu/
+    rank: 1000
+    alias: expressedAs
+    owner: Protein
+    domain_of:
+    - Protein
+    range: string
+    required: false
+    multivalued: true
+  inclusionBodiesType:
+    name: inclusionBodiesType
+    description: Refers to the state of aggregated proteins within a cell. Possible
+      values include "Denatured" (proteins are in an unfolded, inactive state) and
+      "Refolded" (proteins have been processed to regain their functional, active
+      conformation).
+    title: inclusion bodies type
+    from_schema: https://evora-project.eu/
+    rank: 1000
+    alias: inclusionBodiesType
+    owner: Protein
+    domain_of:
+    - Protein
+    range: string
+    required: false
+    multivalued: true
+  expressionSystem:
+    name: expressionSystem
+    description: The host organism or cellular environment used to produce a protein
+      from a specific gene. Possible values include "E. coli" (bacterial system),
+      "Insect cells" (using baculovirus vectors), and "Mammalian cells" (mammalian
+      cell lines).
+    title: expression system
+    from_schema: https://evora-project.eu/
+    rank: 1000
+    alias: expressionSystem
+    owner: Protein
+    domain_of:
+    - Protein
+    range: string
+    required: false
+    multivalued: true
+  functionalCharacterization:
+    name: functionalCharacterization
+    description: The process of determining and describing the specific biological
+      activities and roles of a protein. Possible values include "Functionally characterized"
+      (the protein's functions have been identified and described) and "No functional
+      characterization" (the protein's functions have not been identified or described).
+    title: functional characterization
+    from_schema: https://evora-project.eu/
+    rank: 1000
+    alias: functionalCharacterization
+    owner: Protein
+    domain_of:
+    - Protein
+    range: string
+    required: false
+    multivalued: true
+  functionalTechnicalDescription:
+    name: functionalTechnicalDescription
+    description: Detailed information about the specific biological functions, mechanisms
+      of action, and technical attributes of a protein. This includes how the protein
+      interacts within biological systems, its role in cellular processes, and any
+      relevant technical details such as structure, activity, and interactions with
+      other molecules.
+    title: functional/Technical description
+    from_schema: https://evora-project.eu/
+    rank: 1000
+    alias: functionalTechnicalDescription
+    owner: Protein
+    domain_of:
+    - Protein
+    range: string
+    required: false
+    multivalued: true
+  proteinPurification:
+    name: proteinPurification
+    description: Refers to the degree of purity achieved for a protein sample. Possible
+      values include ">95%" (the protein is highly purified, with more than 95% purity)
+      and "Unpurified expression host lysate or partly purified protein" (the protein
+      is either unpurified and present in the host cell lysate or only partially purified).
+    title: protein purification
+    from_schema: https://evora-project.eu/
+    rank: 1000
+    alias: proteinPurification
+    owner: Protein
+    domain_of:
+    - Protein
+    range: string
+    required: false
+    multivalued: true
+  theTAGStatusOfTheSolubilizedProtein:
+    name: theTAGStatusOfTheSolubilizedProtein
+    description: Indicates the presence and condition of a tag on the protein after
+      solubilization. Possible values include "Uncleaved Tag" (the tag is still attached
+      to the protein), "Cleaved Tag" (the tag has been removed from the protein),
+      and "No Tag" (the protein does not have a tag)
+    title: TAG status of the solubilized protein
+    from_schema: https://evora-project.eu/
+    rank: 1000
+    alias: theTAGStatusOfTheSolubilizedProtein
+    owner: Protein
+    domain_of:
+    - Protein
+    range: string
+    required: false
+    multivalued: true
+  typeOfFunctionalCharacterization:
+    name: typeOfFunctionalCharacterization
+    description: Refers to the classification of a protein based on the specific type
+      of functional analysis performed to determine its biological activities and
+      roles. Possible values include "Enzymatic" (the protein has been characterized
+      for its enzyme activity) and "Antigenic" (the protein has been characterized
+      for its ability to elicit an immune response).
+    title: type of functional Characterization
+    from_schema: https://evora-project.eu/
+    rank: 1000
+    alias: typeOfFunctionalCharacterization
+    owner: Protein
+    domain_of:
+    - Protein
+    range: string
+    required: false
+    multivalued: true
+  hasIATAClassification:
+    name: hasIATAClassification
+    description: The corresponding International Air Transport Association (IATA)'s
+      category for this Product
+    title: IATA classification
+    from_schema: https://evora-project.eu/
+    rank: 1000
+    alias: hasIATAClassification
+    owner: Protein
+    domain_of:
+    - Product
+    range: IATAClassification
+    required: true
+    multivalued: false
+  shippingConditions:
+    name: shippingConditions
+    description: 'Specification of the terms and parameters for transporting
+
+      '
+    title: shipping conditions
+    from_schema: https://evora-project.eu/
+    rank: 1000
+    alias: shippingConditions
+    owner: Protein
+    domain_of:
+    - Product
+    range: string
+    required: true
+    multivalued: false
+  materialSafetyDataSheet:
+    name: materialSafetyDataSheet
+    description: A Material Safety Data Sheet (MSDS) or Safety Data Sheet (SDS) is
+      a standardized document that contains crucial occupational safety and health
+      information related to the product
+    title: material safety data sheet
+    comments:
+    - The MSD  is a document that provides detailed information about the properties,
+      hazards, handling, storage, and emergency procedures related to the use of a
+      chemical or substance
+    from_schema: https://evora-project.eu/
+    rank: 1000
+    alias: materialSafetyDataSheet
+    owner: Protein
+    domain_of:
+    - Product
+    range: MSDS
+    required: false
+    multivalued: false
+  originator:
+    name: originator
+    description: The individual or organization responsible for the original discovery,
+      isolation, or creation of an item, providing information about the source or
+      origin of the sample
+    title: originator
+    from_schema: https://evora-project.eu/
+    rank: 1000
+    alias: originator
+    owner: Protein
+    domain_of:
+    - Product
+    range: Originator
+    required: false
+    multivalued: false
+  storageConditions:
+    name: storageConditions
+    description: Specifies the conditions under which the product has to be stored
+      to maintain stability and integrity, such as temperature, buffer, and other
+      environmental factors.
+    title: storage conditions
+    comments:
+    - e.g, could be a xsd:string in enumeration ("Freeze Dried", "Liquid Nitrogen",
+      "Viral Storage Medium -20C", "Viral Storage Medium -80C", "Living plant material
+      (>= +4°C)", "Gas Phase", "Ethanol -20C", "Ethanol -80C", "Dried")
+    from_schema: https://evora-project.eu/
+    rank: 1000
+    alias: storageConditions
+    owner: Protein
+    domain_of:
+    - Product
+    range: string
+    required: true
+    multivalued: false
+  thirdPartyDistributionConsent:
+    name: thirdPartyDistributionConsent
+    description: Indicates whether the biological material can be distributed without
+      restriction to third parties, as indicated by the ABS permit, in case an ABS
+      permit is required
+    title: third party distribution consent
+    from_schema: https://evora-project.eu/
+    rank: 1000
+    alias: thirdPartyDistributionConsent
+    owner: Protein
+    domain_of:
+    - Product
+    range: boolean
+    required: false
+    multivalued: false
+  usageRestrictions:
+    name: usageRestrictions
+    description: Specifies any limitations or conditions on the use of the biological
+      material, including restrictions on research, commercial use, or distribution,
+      considering any potential concerns about the related genetic material
+    title: usage restrictions
+    from_schema: https://evora-project.eu/
+    rank: 1000
+    alias: usageRestrictions
+    owner: Protein
+    domain_of:
+    - Product
+    range: string
+    required: false
+    multivalued: false
+  accessPointURL:
+    name: accessPointURL
+    description: The URL that permits to access to the product/service detailed description
+      page on the provider's website and/or allows to place an order about it or at
+      least describe the process to place an order/enquiry
+    title: access point URL
+    from_schema: https://evora-project.eu/
+    exact_mappings:
+    - dcat:landingPage
+    rank: 1000
+    alias: accessPointURL
+    owner: Protein
+    domain_of:
+    - ProductOrService
+    range: uri
+    required: true
+    multivalued: false
+  refSKU:
+    name: refSKU
+    description: The reference or the stock keeping unit of the service or item provided
+      in the provider's catalogue
+    title: ref-SKU
+    from_schema: https://evora-project.eu/
+    exact_mappings:
+    - dct:identifier
+    rank: 1000
+    alias: refSKU
+    owner: Protein
+    domain_of:
+    - ProductOrService
+    range: string
+    required: true
+    multivalued: false
+  unitDefinition:
+    name: unitDefinition
+    description: A short description of what will be delivered by ordering one unit
+      of this item
+    title: unit definition
+    comments:
+    - 'The description of what will be delivered to the end-user (e.g.: packaging,
+      quantity...)'
+    from_schema: https://evora-project.eu/
+    rank: 1000
+    alias: unitDefinition
+    owner: Protein
+    domain_of:
+    - ProductOrService
+    range: string
+    required: false
+    multivalued: false
+  category:
+    name: category
+    description: The main category of the service or product
+    title: category
+    from_schema: https://evora-project.eu/
+    exact_mappings:
+    - dcat:theme
+    rank: 1000
+    alias: category
+    owner: Protein
+    domain_of:
+    - ProductOrService
+    range: ProductCategory
+    required: true
+    multivalued: false
+  additionalCategory:
+    name: additionalCategory
+    description: Any category apart from its main category in which this product or
+      service can fit
+    title: additional category
+    from_schema: https://evora-project.eu/
+    exact_mappings:
+    - dcat:theme
+    rank: 1000
+    alias: additionalCategory
+    owner: Protein
+    domain_of:
+    - ProductOrService
+    range: ProductCategory
+    required: false
+    multivalued: true
+  unitCost:
+    name: unitCost
+    description: The cost per access for one unit as defined by the unit definition
+    title: unit cost
+    comments:
+    - The cost per access may not be defined or be specific to a request, so it has
+      to be a xsd:string instead of an xsd:float as initialy suggested to permit description
+      of cost as conditional to what is requested
+    from_schema: https://evora-project.eu/
+    rank: 1000
+    ifabsent: string(on request)
+    alias: unitCost
+    owner: Protein
+    domain_of:
+    - ProductOrService
+    range: string
+    required: true
+    multivalued: false
+  qualityGrading:
+    name: qualityGrading
+    description: Information that permits to assess the quality level of what will
+      be provided
+    title: quality grading
+    from_schema: https://evora-project.eu/
+    rank: 1000
+    alias: qualityGrading
+    owner: Protein
+    domain_of:
+    - ProductOrService
+    range: string
+    required: false
+    multivalued: false
+  pathogenIdentification:
+    name: pathogenIdentification
+    description: The identification of the pathogen or group of pathogens (e.g; name,
+      taxon identification, etc.) related to the current item.
+    title: pathogen identification
+    comments:
+    - 'The pathogen identification contains information about name and taxon but in
+      some cases(e.g: FAIRSHARING) there may have no direct pathogen related but simply
+      a taxonomic information .... the default value should be the root of virology:
+      Viruses'
+    from_schema: https://evora-project.eu/
+    rank: 1000
+    alias: pathogenIdentification
+    owner: Protein
+    domain_of:
+    - ProductOrService
+    range: PathogenIdentification
+    required: true
+    multivalued: true
+  relatedDOI:
+    name: relatedDOI
+    description: Any DOI that can be related
+    title: DOI
+    from_schema: https://evora-project.eu/
+    aliases:
+    - DOI
+    close_mappings:
+    - wdp:P356
+    rank: 1000
+    alias: relatedDOI
+    owner: Protein
+    domain_of:
+    - Publication
+    - ProductOrService
+    range: DOI
+    required: false
+    multivalued: true
+  riskGroup:
+    name: riskGroup
+    description: The highest risk group related to this resource. The risk group of
+      a biological agent guiding its initial handling in labs according to the risk
+      group classification defined by the WHO laboratory biosafety manual
+    title: risk group
+    from_schema: https://evora-project.eu/
+    aliases:
+    - risk group
+    close_mappings:
+    - wdp:P12663
+    rank: 1000
+    alias: riskGroup
+    owner: Protein
+    domain_of:
+    - ProductOrService
+    range: RiskGroup
+    required: false
+    multivalued: false
+  biosafetyRestrictions:
+    name: biosafetyRestrictions
+    description: Information about guidelines and regulations designed to prevent
+      the exposure to or release of potentially harmful biological agents. It thereby
+      contributes to protecting people and the environment from biohazards while accessing
+      this product or service
+    title: biosafety restrictions
+    from_schema: https://evora-project.eu/
+    rank: 1000
+    alias: biosafetyRestrictions
+    owner: Protein
+    domain_of:
+    - ProductOrService
+    range: string
+    required: false
+    multivalued: false
+  canItBeUsedToProduceGMO:
+    name: canItBeUsedToProduceGMO
+    description: Indicates if the current service or product can be used to produce
+      GMO
+    title: can it be used to produce GMO
+    comments:
+    - Set to TRUE if it can produce GMO
+    from_schema: https://evora-project.eu/
+    rank: 1000
+    alias: canItBeUsedToProduceGMO
+    owner: Protein
+    domain_of:
+    - ProductOrService
+    range: boolean
+    required: false
+    multivalued: false
+  provider:
+    name: provider
+    description: A provider of this product or service, as a specific organization
+    title: provider
+    from_schema: https://evora-project.eu/
+    rank: 1000
+    alias: provider
+    owner: Protein
+    domain_of:
+    - ProductOrService
+    range: Provider
+    required: true
+    multivalued: false
+  collection:
+    name: collection
+    description: The collection(s) to which belongs this item
+    title: collection
+    from_schema: https://evora-project.eu/
+    aliases:
+    - catalog
+    rank: 1000
+    alias: collection
+    owner: Protein
+    domain_of:
+    - ProductOrService
+    range: Collection
+    required: true
+    multivalued: true
+  keywords:
+    name: keywords
+    description: List of terms used to tag and categorize this Item
+    title: keywords
+    from_schema: https://evora-project.eu/
+    exact_mappings:
+    - dcat:keyword
+    rank: 1000
+    alias: keywords
+    owner: Protein
+    domain_of:
+    - ProductOrService
+    range: Keyword
+    required: true
+    multivalued: true
+  availability:
+    name: availability
+    description: The state or condition in which this item is accessible and ready
+      for use or can be obtained
+    title: availability
+    comments:
+    - Possible availabilities may differ from a project to another
+    from_schema: https://evora-project.eu/
+    rank: 1000
+    ifabsent: string(on request)
+    alias: availability
+    owner: Protein
+    domain_of:
+    - ProductOrService
+    range: string
+    required: true
+    multivalued: false
+  complementaryDocument:
+    name: complementaryDocument
+    description: Any complementary document that can be related to this Item
+    title: complementary document
+    from_schema: https://evora-project.eu/
+    rank: 1000
+    alias: complementaryDocument
+    owner: Protein
+    domain_of:
+    - ProductOrService
+    - Bundle
+    range: Document
+    required: false
+    multivalued: true
+  technicalRecommendation:
+    name: technicalRecommendation
+    description: Expert advice or guidelines provided to ensure the optimal use, performance,
+      and maintenance of what is provided, including best practices, troubleshooting
+      tips, and procedural instructions
+    title: technical recommendation
+    from_schema: https://evora-project.eu/
+    rank: 1000
+    alias: technicalRecommendation
+    owner: Protein
+    domain_of:
+    - ProductOrService
+    range: string
+    required: false
+    multivalued: false
+  productPicture:
+    name: productPicture
+    description: A picture that can represent the item
+    title: product picture
+    from_schema: https://evora-project.eu/
+    rank: 1000
+    alias: productPicture
+    owner: Protein
+    domain_of:
+    - ProductOrService
+    range: Image
+    required: false
+    multivalued: true
+  externalRelatedReference:
+    name: externalRelatedReference
+    description: A reference that permits to retrieve another related item from an
+      external provider
+    title: external related reference
+    from_schema: https://evora-project.eu/
+    rank: 1000
+    alias: externalRelatedReference
+    owner: Protein
+    domain_of:
+    - ProductOrService
+    range: ExternalRelatedReference
+    required: false
+    multivalued: true
+  certification:
+    name: certification
+    description: Any certification related to the current product or service; e.g.,
+      ISO certification
+    title: certification
+    from_schema: https://evora-project.eu/
+    close_mappings:
+    - dct:conformsTo
+    rank: 1000
+    alias: certification
+    owner: Protein
+    domain_of:
+    - ProductOrService
+    range: Certification
+    required: false
+    multivalued: true
+  internalReference:
+    name: internalReference
+    description: Any reference or indication to be used for local retrieval purpose
+    title: internal reference
+    from_schema: https://evora-project.eu/
+    rank: 1000
+    alias: internalReference
+    owner: Protein
+    domain_of:
+    - ProductOrService
+    range: string
+    required: false
+    multivalued: false
+  note:
+    name: note
+    description: An aditional information as a textual comment
+    title: note
+    from_schema: https://evora-project.eu/
+    rank: 1000
+    alias: note
+    owner: Protein
+    domain_of:
+    - ProductOrService
+    range: string
+    required: false
+    multivalued: false
+  contactPoint:
+    name: contactPoint
+    description: An information that allows someone to establish communication
+    title: contact point
+    from_schema: https://evora-project.eu/
+    exact_mappings:
+    - dcat:contactPoint
+    rank: 1000
+    alias: contactPoint
+    owner: Protein
+    domain_of:
+    - PersonOrOrganization
+    - ProductOrService
+    range: ContactPoint
+    required: false
+    multivalued: false
+  name:
+    name: name
+    description: The label that allows humans to identify the current item
+    title: name
+    comments:
+    - 'The title of the item should be as short and descriptive as possible. E.g.
+      for virus products it should basically be based on the following Pattern:
+
+      "Virus name", "virus host type", "collection year", "country of collection"
+      ex "suspected epidemiological origin", "genotype", "strain", "variant name or
+      specific feature"'
+    from_schema: https://evora-project.eu/
+    exact_mappings:
+    - dct:title
+    close_mappings:
+    - rdfs:label
+    rank: 1000
+    alias: name
+    owner: Protein
+    domain_of:
+    - Nameable
+    range: string
+    required: true
+    multivalued: false
+  description:
+    name: description
+    description: A short explanation of the characteristics, features, or nature of
+      the current item
+    title: description
+    comments:
+    - 'Describe this item in few lines. This description will serve as a summary to
+      present the item.
+
+      '
+    from_schema: https://evora-project.eu/
+    exact_mappings:
+    - dct:description
+    rank: 1000
+    alias: description
+    owner: Protein
+    domain_of:
+    - Nameable
+    range: string
+    required: false
+    multivalued: false
+
+```
+</details>

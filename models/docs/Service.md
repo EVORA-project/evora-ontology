@@ -1,116 +1,783 @@
 
-# Class: Service
 
-A service
+# Class: Service (Service)
+
+
+_A service_
+
+
+
+
 
 URI: [EVORA:Service](https://evora-project.eu/Service)
 
 
-[![img](https://yuml.me/diagram/nofunky;dir:TB/class/[ProductOrService]^-[Service&#124;modelSpecies:string%20%3F;modelType:string%20%3F;accessPointURL(i):uri;refSKU(i):string;unitDefinition(i):string%20%3F;unitCost(i):string;qualityGrading(i):string%20%3F;biosafetyRestrictions(i):string%20%3F;canItBeUsedToProduceGMO(i):boolean%20%3F;availability(i):string;technicalRecommendation(i):string%20%3F;internalReference(i):string%20%3F;note(i):string%20%3F;name(i):string;description(i):string%20%3F],[RiskGroup],[Provider],[ProductOrService],[ProductCategory],[PathogenIdentification],[Keyword],[Image],[ExternalRelatedReference],[Document],[DOI],[ContactPoint],[Collection],[Certification])](https://yuml.me/diagram/nofunky;dir:TB/class/[ProductOrService]^-[Service&#124;modelSpecies:string%20%3F;modelType:string%20%3F;accessPointURL(i):uri;refSKU(i):string;unitDefinition(i):string%20%3F;unitCost(i):string;qualityGrading(i):string%20%3F;biosafetyRestrictions(i):string%20%3F;canItBeUsedToProduceGMO(i):boolean%20%3F;availability(i):string;technicalRecommendation(i):string%20%3F;internalReference(i):string%20%3F;note(i):string%20%3F;name(i):string;description(i):string%20%3F],[RiskGroup],[Provider],[ProductOrService],[ProductCategory],[PathogenIdentification],[Keyword],[Image],[ExternalRelatedReference],[Document],[DOI],[ContactPoint],[Collection],[Certification])
-
-## Parents
-
- *  is_a: [ProductOrService](ProductOrService.md) - A product or a service
-
-## Referenced by Class
 
 
-## Attributes
 
 
-### Own
+```mermaid
+ classDiagram
+    class Service
+    click Service href "../Service"
+      ProductOrService <|-- Service
+        click ProductOrService href "../ProductOrService"
+      
+      Service : accessPointURL
+        
+      Service : additionalCategory
+        
+          
+    
+    
+    Service --> "*" ProductCategory : additionalCategory
+    click ProductCategory href "../ProductCategory"
 
- * [Service➞modelSpecies](Service_modelSpecies.md)  <sub>0..1</sub>
-     * Description: The species of the infected organism in the experiment
-     * Range: [String](types/String.md)
- * [Service➞modelType](Service_modelType.md)  <sub>0..1</sub>
-     * Description: The specific name of the infected organism, including its modification if necessary
-     * Range: [String](types/String.md)
+        
+      Service : availability
+        
+      Service : biosafetyRestrictions
+        
+      Service : canItBeUsedToProduceGMO
+        
+      Service : category
+        
+          
+    
+    
+    Service --> "1" ProductCategory : category
+    click ProductCategory href "../ProductCategory"
 
-### Inherited from ProductOrService:
+        
+      Service : certification
+        
+          
+    
+    
+    Service --> "*" Certification : certification
+    click Certification href "../Certification"
 
- * [Nameable➞name](Nameable_name.md)  <sub>1..1</sub>
-     * Description: The label that allows humans to identify the current item
-     * Range: [String](types/String.md)
- * [Nameable➞description](Nameable_description.md)  <sub>0..1</sub>
-     * Description: A short explanation of the characteristics, features, or nature of the current item
-     * Range: [String](types/String.md)
- * [ProductOrService➞accessPointURL](ProductOrService_accessPointURL.md)  <sub>1..1</sub>
-     * Description: The URL that permits to access to the product/service detailed description page on the provider's website and/or allows to place an order about it or at least describe the process to place an order/enquiry
-     * Range: [Uri](types/Uri.md)
- * [ProductOrService➞refSKU](ProductOrService_refSKU.md)  <sub>1..1</sub>
-     * Description: The reference or the stock keeping unit of the service or item provided in the provider's catalogue
-     * Range: [String](types/String.md)
- * [ProductOrService➞unitDefinition](ProductOrService_unitDefinition.md)  <sub>0..1</sub>
-     * Description: A short description of what will be delivered by ordering one unit of this item
-     * Range: [String](types/String.md)
- * [ProductOrService➞category](ProductOrService_category.md)  <sub>1..1</sub>
-     * Description: The main category of the service or product
-     * Range: [ProductCategory](ProductCategory.md)
- * [ProductOrService➞additionalCategory](ProductOrService_additionalCategory.md)  <sub>0..\*</sub>
-     * Description: Any category apart from its main category in which this product or service can fit
-     * Range: [ProductCategory](ProductCategory.md)
- * [ProductOrService➞unitCost](ProductOrService_unitCost.md)  <sub>1..1</sub>
-     * Description: The cost per access for one unit as defined by the unit definition
-     * Range: [String](types/String.md)
- * [ProductOrService➞qualityGrading](ProductOrService_qualityGrading.md)  <sub>0..1</sub>
-     * Description: Information that permits to assess the quality level of what will be provided
-     * Range: [String](types/String.md)
- * [ProductOrService➞pathogenIdentification](ProductOrService_pathogenIdentification.md)  <sub>1..\*</sub>
-     * Description: The identification of the pathogen or group of pathogens (e.g; name, taxon identification, etc.) related to the current item.
-     * Range: [PathogenIdentification](PathogenIdentification.md)
- * [ProductOrService➞relatedDOI](ProductOrService_relatedDOI.md)  <sub>0..\*</sub>
-     * Description: Any DOI that can be related
-     * Range: [DOI](DOI.md)
- * [ProductOrService➞riskGroup](ProductOrService_riskGroup.md)  <sub>0..1</sub>
-     * Description: The highest risk group related to this resource. The risk group of a biological agent guiding its initial handling in labs according to the risk group classification defined by the WHO laboratory biosafety manual
-     * Range: [RiskGroup](RiskGroup.md)
- * [ProductOrService➞biosafetyRestrictions](ProductOrService_biosafetyRestrictions.md)  <sub>0..1</sub>
-     * Description: Information about guidelines and regulations designed to prevent the exposure to or release of potentially harmful biological agents. It thereby contributes to protecting people and the environment from biohazards while accessing this product or service
-     * Range: [String](types/String.md)
- * [ProductOrService➞canItBeUsedToProduceGMO](ProductOrService_canItBeUsedToProduceGMO.md)  <sub>0..1</sub>
-     * Description: Indicates if the current service or product can be used to produce GMO
-     * Range: [Boolean](types/Boolean.md)
- * [ProductOrService➞provider](ProductOrService_provider.md)  <sub>1..1</sub>
-     * Description: A provider of this product or service, as a specific organization
-     * Range: [Provider](Provider.md)
- * [ProductOrService➞collection](ProductOrService_collection.md)  <sub>1..\*</sub>
-     * Description: The collection(s) to which belongs this item
-     * Range: [Collection](Collection.md)
- * [ProductOrService➞keywords](ProductOrService_keywords.md)  <sub>1..\*</sub>
-     * Description: List of terms used to tag and categorize this Item
-     * Range: [Keyword](Keyword.md)
- * [ProductOrService➞availability](ProductOrService_availability.md)  <sub>1..1</sub>
-     * Description: The state or condition in which this item is accessible and ready for use or can be obtained
-     * Range: [String](types/String.md)
- * [ProductOrService➞complementaryDocument](ProductOrService_complementaryDocument.md)  <sub>0..\*</sub>
-     * Description: Any complementary document that can be related to this Item
-     * Range: [Document](Document.md)
- * [ProductOrService➞technicalRecommendation](ProductOrService_technicalRecommendation.md)  <sub>0..1</sub>
-     * Description: Expert advice or guidelines provided to ensure the optimal use, performance, and maintenance of what is provided, including best practices, troubleshooting tips, and procedural instructions
-     * Range: [String](types/String.md)
- * [ProductOrService➞productPicture](ProductOrService_productPicture.md)  <sub>0..\*</sub>
-     * Description: A picture that can represent the item
-     * Range: [Image](Image.md)
- * [ProductOrService➞externalRelatedReference](ProductOrService_externalRelatedReference.md)  <sub>0..\*</sub>
-     * Description: A reference that permits to retrieve another related item from an external provider
-     * Range: [ExternalRelatedReference](ExternalRelatedReference.md)
- * [ProductOrService➞certification](ProductOrService_certification.md)  <sub>0..\*</sub>
-     * Description: Any certification related to the current product or service; e.g., ISO certification
-     * Range: [Certification](Certification.md)
- * [ProductOrService➞internalReference](ProductOrService_internalReference.md)  <sub>0..1</sub>
-     * Description: Any reference or indication to be used for local retrieval purpose
-     * Range: [String](types/String.md)
- * [ProductOrService➞note](ProductOrService_note.md)  <sub>0..1</sub>
-     * Description: An aditional information as a textual comment
-     * Range: [String](types/String.md)
- * [ProductOrService➞contactPoint](ProductOrService_contactPoint.md)  <sub>0..1</sub>
-     * Description: An information that allows someone to establish communication
-     * Range: [ContactPoint](ContactPoint.md)
+        
+      Service : collection
+        
+          
+    
+    
+    Service --> "1..*" Collection : collection
+    click Collection href "../Collection"
 
-## Other properties
+        
+      Service : complementaryDocument
+        
+          
+    
+    
+    Service --> "*" Document : complementaryDocument
+    click Document href "../Document"
 
-|  |  |  |
-| --- | --- | --- |
-| **Aliases:** | | Service |
-| **Close Mappings:** | | wd:Q7406919 |
+        
+      Service : contactPoint
+        
+          
+    
+    
+    Service --> "0..1" ContactPoint : contactPoint
+    click ContactPoint href "../ContactPoint"
+
+        
+      Service : description
+        
+      Service : externalRelatedReference
+        
+          
+    
+    
+    Service --> "*" ExternalRelatedReference : externalRelatedReference
+    click ExternalRelatedReference href "../ExternalRelatedReference"
+
+        
+      Service : internalReference
+        
+      Service : keywords
+        
+          
+    
+    
+    Service --> "1..*" Keyword : keywords
+    click Keyword href "../Keyword"
+
+        
+      Service : modelSpecies
+        
+      Service : modelType
+        
+      Service : name
+        
+      Service : note
+        
+      Service : pathogenIdentification
+        
+          
+    
+    
+    Service --> "1..*" PathogenIdentification : pathogenIdentification
+    click PathogenIdentification href "../PathogenIdentification"
+
+        
+      Service : productPicture
+        
+          
+    
+    
+    Service --> "*" Image : productPicture
+    click Image href "../Image"
+
+        
+      Service : provider
+        
+          
+    
+    
+    Service --> "1" Provider : provider
+    click Provider href "../Provider"
+
+        
+      Service : qualityGrading
+        
+      Service : refSKU
+        
+      Service : relatedDOI
+        
+          
+    
+    
+    Service --> "*" DOI : relatedDOI
+    click DOI href "../DOI"
+
+        
+      Service : riskGroup
+        
+          
+    
+    
+    Service --> "0..1" RiskGroup : riskGroup
+    click RiskGroup href "../RiskGroup"
+
+        
+      Service : technicalRecommendation
+        
+      Service : unitCost
+        
+      Service : unitDefinition
+        
+      
+```
+
+
+
+
+
+## Inheritance
+* [Nameable](Nameable.md)
+    * [NamedDataset](NamedDataset.md)
+        * [ProductOrService](ProductOrService.md)
+            * **Service**
+
+
+
+## Slots
+
+| Name | Cardinality and Range | Description | Inheritance |
+| ---  | --- | --- | --- |
+| [modelSpecies](modelSpecies.md) | 0..1 <br/> [String](String.md) | The species of the infected organism in the experiment | direct |
+| [modelType](modelType.md) | 0..1 <br/> [String](String.md) | The specific name of the infected organism, including its modification if nec... | direct |
+| [accessPointURL](accessPointURL.md) | 1 <br/> [Uri](Uri.md) | The URL that permits to access to the product/service detailed description pa... | [ProductOrService](ProductOrService.md) |
+| [refSKU](refSKU.md) | 1 <br/> [String](String.md) | The reference or the stock keeping unit of the service or item provided in th... | [ProductOrService](ProductOrService.md) |
+| [unitDefinition](unitDefinition.md) | 0..1 <br/> [String](String.md) | A short description of what will be delivered by ordering one unit of this it... | [ProductOrService](ProductOrService.md) |
+| [category](category.md) | 1 <br/> [ProductCategory](ProductCategory.md) | The main category of the service or product | [ProductOrService](ProductOrService.md) |
+| [additionalCategory](additionalCategory.md) | * <br/> [ProductCategory](ProductCategory.md) | Any category apart from its main category in which this product or service ca... | [ProductOrService](ProductOrService.md) |
+| [unitCost](unitCost.md) | 1 <br/> [String](String.md) | The cost per access for one unit as defined by the unit definition | [ProductOrService](ProductOrService.md) |
+| [qualityGrading](qualityGrading.md) | 0..1 <br/> [String](String.md) | Information that permits to assess the quality level of what will be provided | [ProductOrService](ProductOrService.md) |
+| [pathogenIdentification](pathogenIdentification.md) | 1..* <br/> [PathogenIdentification](PathogenIdentification.md) | The identification of the pathogen or group of pathogens (e | [ProductOrService](ProductOrService.md) |
+| [relatedDOI](relatedDOI.md) | * <br/> [DOI](DOI.md) | Any DOI that can be related | [ProductOrService](ProductOrService.md) |
+| [riskGroup](riskGroup.md) | 0..1 <br/> [RiskGroup](RiskGroup.md) | The highest risk group related to this resource | [ProductOrService](ProductOrService.md) |
+| [biosafetyRestrictions](biosafetyRestrictions.md) | 0..1 <br/> [String](String.md) | Information about guidelines and regulations designed to prevent the exposure... | [ProductOrService](ProductOrService.md) |
+| [canItBeUsedToProduceGMO](canItBeUsedToProduceGMO.md) | 0..1 <br/> [Boolean](Boolean.md) | Indicates if the current service or product can be used to produce GMO | [ProductOrService](ProductOrService.md) |
+| [provider](provider.md) | 1 <br/> [Provider](Provider.md) | A provider of this product or service, as a specific organization | [ProductOrService](ProductOrService.md) |
+| [collection](collection.md) | 1..* <br/> [Collection](Collection.md) | The collection(s) to which belongs this item | [ProductOrService](ProductOrService.md) |
+| [keywords](keywords.md) | 1..* <br/> [Keyword](Keyword.md) | List of terms used to tag and categorize this Item | [ProductOrService](ProductOrService.md) |
+| [availability](availability.md) | 1 <br/> [String](String.md) | The state or condition in which this item is accessible and ready for use or ... | [ProductOrService](ProductOrService.md) |
+| [complementaryDocument](complementaryDocument.md) | * <br/> [Document](Document.md) | Any complementary document that can be related to this Item | [ProductOrService](ProductOrService.md) |
+| [technicalRecommendation](technicalRecommendation.md) | 0..1 <br/> [String](String.md) | Expert advice or guidelines provided to ensure the optimal use, performance, ... | [ProductOrService](ProductOrService.md) |
+| [productPicture](productPicture.md) | * <br/> [Image](Image.md) | A picture that can represent the item | [ProductOrService](ProductOrService.md) |
+| [externalRelatedReference](externalRelatedReference.md) | * <br/> [ExternalRelatedReference](ExternalRelatedReference.md) | A reference that permits to retrieve another related item from an external pr... | [ProductOrService](ProductOrService.md) |
+| [certification](certification.md) | * <br/> [Certification](Certification.md) | Any certification related to the current product or service; e | [ProductOrService](ProductOrService.md) |
+| [internalReference](internalReference.md) | 0..1 <br/> [String](String.md) | Any reference or indication to be used for local retrieval purpose | [ProductOrService](ProductOrService.md) |
+| [note](note.md) | 0..1 <br/> [String](String.md) | An aditional information as a textual comment | [ProductOrService](ProductOrService.md) |
+| [contactPoint](contactPoint.md) | 0..1 <br/> [ContactPoint](ContactPoint.md) | An information that allows someone to establish communication | [ProductOrService](ProductOrService.md) |
+| [name](name.md) | 1 <br/> [String](String.md) | The label that allows humans to identify the current item | [Nameable](Nameable.md) |
+| [description](description.md) | 0..1 <br/> [String](String.md) | A short explanation of the characteristics, features, or nature of the curren... | [Nameable](Nameable.md) |
+
+
+
+
+
+
+
+## Aliases
+
+
+* service
+
+
+
+## Identifier and Mapping Information
+
+
+
+
+
+
+
+### Schema Source
+
+
+* from schema: https://evora-project.eu/
+
+
+
+
+## Mappings
+
+| Mapping Type | Mapped Value |
+| ---  | ---  |
+| self | EVORA:Service |
+| native | EVORA:Service |
+| close | wd:Q7406919 |
+
+
+
+
+
+
+
+## LinkML Source
+
+<!-- TODO: investigate https://stackoverflow.com/questions/37606292/how-to-create-tabbed-code-blocks-in-mkdocs-or-sphinx -->
+
+### Direct
+
+<details>
+```yaml
+name: Service
+description: A service
+title: Service
+from_schema: https://evora-project.eu/
+aliases:
+- service
+close_mappings:
+- wd:Q7406919
+is_a: ProductOrService
+slots:
+- modelSpecies
+- modelType
+slot_usage:
+  modelSpecies:
+    name: modelSpecies
+    description: The species of the infected organism in the experiment
+    title: model species
+    range: string
+    required: false
+    multivalued: false
+  modelType:
+    name: modelType
+    description: The specific name of the infected organism, including its modification
+      if necessary
+    title: model type
+    range: string
+    required: false
+    multivalued: false
+
+```
+</details>
+
+### Induced
+
+<details>
+```yaml
+name: Service
+description: A service
+title: Service
+from_schema: https://evora-project.eu/
+aliases:
+- service
+close_mappings:
+- wd:Q7406919
+is_a: ProductOrService
+slot_usage:
+  modelSpecies:
+    name: modelSpecies
+    description: The species of the infected organism in the experiment
+    title: model species
+    range: string
+    required: false
+    multivalued: false
+  modelType:
+    name: modelType
+    description: The specific name of the infected organism, including its modification
+      if necessary
+    title: model type
+    range: string
+    required: false
+    multivalued: false
+attributes:
+  modelSpecies:
+    name: modelSpecies
+    description: The species of the infected organism in the experiment
+    title: model species
+    from_schema: https://evora-project.eu/
+    rank: 1000
+    alias: modelSpecies
+    owner: Service
+    domain_of:
+    - Service
+    range: string
+    required: false
+    multivalued: false
+  modelType:
+    name: modelType
+    description: The specific name of the infected organism, including its modification
+      if necessary
+    title: model type
+    from_schema: https://evora-project.eu/
+    rank: 1000
+    alias: modelType
+    owner: Service
+    domain_of:
+    - Service
+    range: string
+    required: false
+    multivalued: false
+  accessPointURL:
+    name: accessPointURL
+    description: The URL that permits to access to the product/service detailed description
+      page on the provider's website and/or allows to place an order about it or at
+      least describe the process to place an order/enquiry
+    title: access point URL
+    from_schema: https://evora-project.eu/
+    exact_mappings:
+    - dcat:landingPage
+    rank: 1000
+    alias: accessPointURL
+    owner: Service
+    domain_of:
+    - ProductOrService
+    range: uri
+    required: true
+    multivalued: false
+  refSKU:
+    name: refSKU
+    description: The reference or the stock keeping unit of the service or item provided
+      in the provider's catalogue
+    title: ref-SKU
+    from_schema: https://evora-project.eu/
+    exact_mappings:
+    - dct:identifier
+    rank: 1000
+    alias: refSKU
+    owner: Service
+    domain_of:
+    - ProductOrService
+    range: string
+    required: true
+    multivalued: false
+  unitDefinition:
+    name: unitDefinition
+    description: A short description of what will be delivered by ordering one unit
+      of this item
+    title: unit definition
+    comments:
+    - 'The description of what will be delivered to the end-user (e.g.: packaging,
+      quantity...)'
+    from_schema: https://evora-project.eu/
+    rank: 1000
+    alias: unitDefinition
+    owner: Service
+    domain_of:
+    - ProductOrService
+    range: string
+    required: false
+    multivalued: false
+  category:
+    name: category
+    description: The main category of the service or product
+    title: category
+    from_schema: https://evora-project.eu/
+    exact_mappings:
+    - dcat:theme
+    rank: 1000
+    alias: category
+    owner: Service
+    domain_of:
+    - ProductOrService
+    range: ProductCategory
+    required: true
+    multivalued: false
+  additionalCategory:
+    name: additionalCategory
+    description: Any category apart from its main category in which this product or
+      service can fit
+    title: additional category
+    from_schema: https://evora-project.eu/
+    exact_mappings:
+    - dcat:theme
+    rank: 1000
+    alias: additionalCategory
+    owner: Service
+    domain_of:
+    - ProductOrService
+    range: ProductCategory
+    required: false
+    multivalued: true
+  unitCost:
+    name: unitCost
+    description: The cost per access for one unit as defined by the unit definition
+    title: unit cost
+    comments:
+    - The cost per access may not be defined or be specific to a request, so it has
+      to be a xsd:string instead of an xsd:float as initialy suggested to permit description
+      of cost as conditional to what is requested
+    from_schema: https://evora-project.eu/
+    rank: 1000
+    ifabsent: string(on request)
+    alias: unitCost
+    owner: Service
+    domain_of:
+    - ProductOrService
+    range: string
+    required: true
+    multivalued: false
+  qualityGrading:
+    name: qualityGrading
+    description: Information that permits to assess the quality level of what will
+      be provided
+    title: quality grading
+    from_schema: https://evora-project.eu/
+    rank: 1000
+    alias: qualityGrading
+    owner: Service
+    domain_of:
+    - ProductOrService
+    range: string
+    required: false
+    multivalued: false
+  pathogenIdentification:
+    name: pathogenIdentification
+    description: The identification of the pathogen or group of pathogens (e.g; name,
+      taxon identification, etc.) related to the current item.
+    title: pathogen identification
+    comments:
+    - 'The pathogen identification contains information about name and taxon but in
+      some cases(e.g: FAIRSHARING) there may have no direct pathogen related but simply
+      a taxonomic information .... the default value should be the root of virology:
+      Viruses'
+    from_schema: https://evora-project.eu/
+    rank: 1000
+    alias: pathogenIdentification
+    owner: Service
+    domain_of:
+    - ProductOrService
+    range: PathogenIdentification
+    required: true
+    multivalued: true
+  relatedDOI:
+    name: relatedDOI
+    description: Any DOI that can be related
+    title: DOI
+    from_schema: https://evora-project.eu/
+    aliases:
+    - DOI
+    close_mappings:
+    - wdp:P356
+    rank: 1000
+    alias: relatedDOI
+    owner: Service
+    domain_of:
+    - Publication
+    - ProductOrService
+    range: DOI
+    required: false
+    multivalued: true
+  riskGroup:
+    name: riskGroup
+    description: The highest risk group related to this resource. The risk group of
+      a biological agent guiding its initial handling in labs according to the risk
+      group classification defined by the WHO laboratory biosafety manual
+    title: risk group
+    from_schema: https://evora-project.eu/
+    aliases:
+    - risk group
+    close_mappings:
+    - wdp:P12663
+    rank: 1000
+    alias: riskGroup
+    owner: Service
+    domain_of:
+    - ProductOrService
+    range: RiskGroup
+    required: false
+    multivalued: false
+  biosafetyRestrictions:
+    name: biosafetyRestrictions
+    description: Information about guidelines and regulations designed to prevent
+      the exposure to or release of potentially harmful biological agents. It thereby
+      contributes to protecting people and the environment from biohazards while accessing
+      this product or service
+    title: biosafety restrictions
+    from_schema: https://evora-project.eu/
+    rank: 1000
+    alias: biosafetyRestrictions
+    owner: Service
+    domain_of:
+    - ProductOrService
+    range: string
+    required: false
+    multivalued: false
+  canItBeUsedToProduceGMO:
+    name: canItBeUsedToProduceGMO
+    description: Indicates if the current service or product can be used to produce
+      GMO
+    title: can it be used to produce GMO
+    comments:
+    - Set to TRUE if it can produce GMO
+    from_schema: https://evora-project.eu/
+    rank: 1000
+    alias: canItBeUsedToProduceGMO
+    owner: Service
+    domain_of:
+    - ProductOrService
+    range: boolean
+    required: false
+    multivalued: false
+  provider:
+    name: provider
+    description: A provider of this product or service, as a specific organization
+    title: provider
+    from_schema: https://evora-project.eu/
+    rank: 1000
+    alias: provider
+    owner: Service
+    domain_of:
+    - ProductOrService
+    range: Provider
+    required: true
+    multivalued: false
+  collection:
+    name: collection
+    description: The collection(s) to which belongs this item
+    title: collection
+    from_schema: https://evora-project.eu/
+    aliases:
+    - catalog
+    rank: 1000
+    alias: collection
+    owner: Service
+    domain_of:
+    - ProductOrService
+    range: Collection
+    required: true
+    multivalued: true
+  keywords:
+    name: keywords
+    description: List of terms used to tag and categorize this Item
+    title: keywords
+    from_schema: https://evora-project.eu/
+    exact_mappings:
+    - dcat:keyword
+    rank: 1000
+    alias: keywords
+    owner: Service
+    domain_of:
+    - ProductOrService
+    range: Keyword
+    required: true
+    multivalued: true
+  availability:
+    name: availability
+    description: The state or condition in which this item is accessible and ready
+      for use or can be obtained
+    title: availability
+    comments:
+    - Possible availabilities may differ from a project to another
+    from_schema: https://evora-project.eu/
+    rank: 1000
+    ifabsent: string(on request)
+    alias: availability
+    owner: Service
+    domain_of:
+    - ProductOrService
+    range: string
+    required: true
+    multivalued: false
+  complementaryDocument:
+    name: complementaryDocument
+    description: Any complementary document that can be related to this Item
+    title: complementary document
+    from_schema: https://evora-project.eu/
+    rank: 1000
+    alias: complementaryDocument
+    owner: Service
+    domain_of:
+    - ProductOrService
+    - Bundle
+    range: Document
+    required: false
+    multivalued: true
+  technicalRecommendation:
+    name: technicalRecommendation
+    description: Expert advice or guidelines provided to ensure the optimal use, performance,
+      and maintenance of what is provided, including best practices, troubleshooting
+      tips, and procedural instructions
+    title: technical recommendation
+    from_schema: https://evora-project.eu/
+    rank: 1000
+    alias: technicalRecommendation
+    owner: Service
+    domain_of:
+    - ProductOrService
+    range: string
+    required: false
+    multivalued: false
+  productPicture:
+    name: productPicture
+    description: A picture that can represent the item
+    title: product picture
+    from_schema: https://evora-project.eu/
+    rank: 1000
+    alias: productPicture
+    owner: Service
+    domain_of:
+    - ProductOrService
+    range: Image
+    required: false
+    multivalued: true
+  externalRelatedReference:
+    name: externalRelatedReference
+    description: A reference that permits to retrieve another related item from an
+      external provider
+    title: external related reference
+    from_schema: https://evora-project.eu/
+    rank: 1000
+    alias: externalRelatedReference
+    owner: Service
+    domain_of:
+    - ProductOrService
+    range: ExternalRelatedReference
+    required: false
+    multivalued: true
+  certification:
+    name: certification
+    description: Any certification related to the current product or service; e.g.,
+      ISO certification
+    title: certification
+    from_schema: https://evora-project.eu/
+    close_mappings:
+    - dct:conformsTo
+    rank: 1000
+    alias: certification
+    owner: Service
+    domain_of:
+    - ProductOrService
+    range: Certification
+    required: false
+    multivalued: true
+  internalReference:
+    name: internalReference
+    description: Any reference or indication to be used for local retrieval purpose
+    title: internal reference
+    from_schema: https://evora-project.eu/
+    rank: 1000
+    alias: internalReference
+    owner: Service
+    domain_of:
+    - ProductOrService
+    range: string
+    required: false
+    multivalued: false
+  note:
+    name: note
+    description: An aditional information as a textual comment
+    title: note
+    from_schema: https://evora-project.eu/
+    rank: 1000
+    alias: note
+    owner: Service
+    domain_of:
+    - ProductOrService
+    range: string
+    required: false
+    multivalued: false
+  contactPoint:
+    name: contactPoint
+    description: An information that allows someone to establish communication
+    title: contact point
+    from_schema: https://evora-project.eu/
+    exact_mappings:
+    - dcat:contactPoint
+    rank: 1000
+    alias: contactPoint
+    owner: Service
+    domain_of:
+    - PersonOrOrganization
+    - ProductOrService
+    range: ContactPoint
+    required: false
+    multivalued: false
+  name:
+    name: name
+    description: The label that allows humans to identify the current item
+    title: name
+    comments:
+    - 'The title of the item should be as short and descriptive as possible. E.g.
+      for virus products it should basically be based on the following Pattern:
+
+      "Virus name", "virus host type", "collection year", "country of collection"
+      ex "suspected epidemiological origin", "genotype", "strain", "variant name or
+      specific feature"'
+    from_schema: https://evora-project.eu/
+    exact_mappings:
+    - dct:title
+    close_mappings:
+    - rdfs:label
+    rank: 1000
+    alias: name
+    owner: Service
+    domain_of:
+    - Nameable
+    range: string
+    required: true
+    multivalued: false
+  description:
+    name: description
+    description: A short explanation of the characteristics, features, or nature of
+      the current item
+    title: description
+    comments:
+    - 'Describe this item in few lines. This description will serve as a summary to
+      present the item.
+
+      '
+    from_schema: https://evora-project.eu/
+    exact_mappings:
+    - dct:description
+    rank: 1000
+    alias: description
+    owner: Service
+    domain_of:
+    - Nameable
+    range: string
+    required: false
+    multivalued: false
+
+```
+</details>

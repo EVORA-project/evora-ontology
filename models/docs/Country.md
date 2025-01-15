@@ -1,51 +1,279 @@
 
-# Class: Country
 
-The country as of ISO3166
+# Class: Country (Country)
+
+
+_The country as of ISO3166_
+
+
+
+
 
 URI: [EVORA:Country](https://evora-project.eu/Country)
 
 
-[![img](https://yuml.me/diagram/nofunky;dir:TB/class/[Vocabulary],[Term],[Organization],[NaturalPartOrigin],[ContactPoint]++-%20addressCountry%200..1>[Country&#124;alpha2Code:string;weight(i):integer;name(i):string;description(i):string%20%3F],[NaturalPartOrigin]++-%20countryOfCollection%201..1>[Country],[Organization]++-%20country%200..1>[Country],[Term]^-[Country],[ContactPoint])](https://yuml.me/diagram/nofunky;dir:TB/class/[Vocabulary],[Term],[Organization],[NaturalPartOrigin],[ContactPoint]++-%20addressCountry%200..1>[Country&#124;alpha2Code:string;weight(i):integer;name(i):string;description(i):string%20%3F],[NaturalPartOrigin]++-%20countryOfCollection%201..1>[Country],[Organization]++-%20country%200..1>[Country],[Term]^-[Country],[ContactPoint])
-
-## Parents
-
- *  is_a: [Term](Term.md) - Word or phrase from a specialized area of knowledge
-
-## Referenced by Class
-
- *  **[ContactPoint](ContactPoint.md)** *[ContactPoint➞addressCountry](ContactPoint_addressCountry.md)*  <sub>0..1</sub>  **[Country](Country.md)**
- *  **[NaturalPartOrigin](NaturalPartOrigin.md)** *[NaturalPartOrigin➞countryOfCollection](NaturalPartOrigin_countryOfCollection.md)*  <sub>1..1</sub>  **[Country](Country.md)**
- *  **[Organization](Organization.md)** *[Organization➞country](Organization_country.md)*  <sub>0..1</sub>  **[Country](Country.md)**
-
-## Attributes
 
 
-### Own
 
- * [Country➞alpha2Code](Country_alpha2Code.md)  <sub>1..1</sub>
-     * Description: Two-letter country codes from ISO 3166-1 alpha-2
-     * Range: [String](types/String.md)
 
-### Inherited from Term:
+```mermaid
+ classDiagram
+    class Country
+    click Country href "../Country"
+      Term <|-- Country
+        click Term href "../Term"
+      
+      Country : alpha2Code
+        
+      Country : description
+        
+      Country : inVocabulary
+        
+          
+    
+    
+    Country --> "1" Vocabulary : inVocabulary
+    click Vocabulary href "../Vocabulary"
 
- * [Nameable➞name](Nameable_name.md)  <sub>1..1</sub>
-     * Description: The label that allows humans to identify the current item
-     * Range: [String](types/String.md)
- * [Nameable➞description](Nameable_description.md)  <sub>0..1</sub>
-     * Description: A short explanation of the characteristics, features, or nature of the current item
-     * Range: [String](types/String.md)
- * [Term➞weight](Term_weight.md)  <sub>1..1</sub>
-     * Description: A numerical value indicating relative importance or priority, generally processed in ascending order. This weight helps prioritize content when organizing or processing data. Its value can be negative, with a default set to 0
-     * Range: [Integer](types/Integer.md)
- * [Term➞inVocabulary](Term_inVocabulary.md)  <sub>1..1</sub>
-     * Description: Terms belong to a specific vocabulary
-     * Range: [Vocabulary](Vocabulary.md)
+        
+      Country : name
+        
+      Country : weight
+        
+      
+```
 
-## Other properties
 
-|  |  |  |
-| --- | --- | --- |
-| **Aliases:** | | Country |
-| **Comments:** | | Use of Data provider recommended... serve as a local cache for ISO3166 |
-| **Close Mappings:** | | wd:Q6256 |
+
+
+
+## Inheritance
+* [Nameable](Nameable.md)
+    * [NamedDataset](NamedDataset.md)
+        * [Term](Term.md)
+            * **Country**
+
+
+
+## Slots
+
+| Name | Cardinality and Range | Description | Inheritance |
+| ---  | --- | --- | --- |
+| [alpha2Code](alpha2Code.md) | 1 <br/> [String](String.md) | Two-letter country codes from ISO 3166-1 alpha-2 | direct |
+| [weight](weight.md) | 1 <br/> [Integer](Integer.md) | A numerical value indicating relative importance or priority, generally proce... | [Term](Term.md) |
+| [inVocabulary](inVocabulary.md) | 1 <br/> [Vocabulary](Vocabulary.md) | Terms belong to a specific vocabulary | [Term](Term.md) |
+| [name](name.md) | 1 <br/> [String](String.md) | The label that allows humans to identify the current item | [Nameable](Nameable.md) |
+| [description](description.md) | 0..1 <br/> [String](String.md) | A short explanation of the characteristics, features, or nature of the curren... | [Nameable](Nameable.md) |
+
+
+
+
+
+## Usages
+
+| used by | used in | type | used |
+| ---  | --- | --- | --- |
+| [Organization](Organization.md) | [country](country.md) | range | [Country](Country.md) |
+| [RI](RI.md) | [country](country.md) | range | [Country](Country.md) |
+| [Provider](Provider.md) | [country](country.md) | range | [Country](Country.md) |
+| [NaturalPartOrigin](NaturalPartOrigin.md) | [countryOfCollection](countryOfCollection.md) | range | [Country](Country.md) |
+| [ContactPoint](ContactPoint.md) | [addressCountry](addressCountry.md) | range | [Country](Country.md) |
+
+
+
+
+## Aliases
+
+
+* country
+
+
+
+## Comments
+
+* Use of Data provider recommended... serve as a local cache for ISO3166
+
+## Identifier and Mapping Information
+
+
+
+
+
+
+
+### Schema Source
+
+
+* from schema: https://evora-project.eu/
+
+
+
+
+## Mappings
+
+| Mapping Type | Mapped Value |
+| ---  | ---  |
+| self | EVORA:Country |
+| native | EVORA:Country |
+| close | wd:Q6256 |
+
+
+
+
+
+
+
+## LinkML Source
+
+<!-- TODO: investigate https://stackoverflow.com/questions/37606292/how-to-create-tabbed-code-blocks-in-mkdocs-or-sphinx -->
+
+### Direct
+
+<details>
+```yaml
+name: Country
+description: The country as of ISO3166
+title: Country
+comments:
+- Use of Data provider recommended... serve as a local cache for ISO3166
+from_schema: https://evora-project.eu/
+aliases:
+- country
+close_mappings:
+- wd:Q6256
+is_a: Term
+slots:
+- alpha2Code
+slot_usage:
+  alpha2Code:
+    name: alpha2Code
+    description: Two-letter country codes from ISO 3166-1 alpha-2
+    title: alpha-2 code
+    range: string
+    required: true
+    multivalued: false
+
+```
+</details>
+
+### Induced
+
+<details>
+```yaml
+name: Country
+description: The country as of ISO3166
+title: Country
+comments:
+- Use of Data provider recommended... serve as a local cache for ISO3166
+from_schema: https://evora-project.eu/
+aliases:
+- country
+close_mappings:
+- wd:Q6256
+is_a: Term
+slot_usage:
+  alpha2Code:
+    name: alpha2Code
+    description: Two-letter country codes from ISO 3166-1 alpha-2
+    title: alpha-2 code
+    range: string
+    required: true
+    multivalued: false
+attributes:
+  alpha2Code:
+    name: alpha2Code
+    description: Two-letter country codes from ISO 3166-1 alpha-2
+    title: alpha-2 code
+    from_schema: https://evora-project.eu/
+    rank: 1000
+    alias: alpha2Code
+    owner: Country
+    domain_of:
+    - Country
+    range: string
+    required: true
+    multivalued: false
+  weight:
+    name: weight
+    description: A numerical value indicating relative importance or priority, generally
+      processed in ascending order. This weight helps prioritize content when organizing
+      or processing data. Its value can be negative, with a default set to 0
+    title: weight
+    from_schema: https://evora-project.eu/
+    close_mappings:
+    - adms:status
+    rank: 1000
+    ifabsent: int(0)
+    alias: weight
+    owner: Country
+    domain_of:
+    - DataProvider
+    - Term
+    range: integer
+    required: true
+    multivalued: false
+  inVocabulary:
+    name: inVocabulary
+    description: Terms belong to a specific vocabulary
+    title: in Vocabulary
+    from_schema: https://evora-project.eu/
+    aliases:
+    - catalog
+    close_mappings:
+    - wdp:P972
+    rank: 1000
+    alias: inVocabulary
+    owner: Country
+    domain_of:
+    - Term
+    range: Vocabulary
+    required: true
+    multivalued: false
+  name:
+    name: name
+    description: The label that allows humans to identify the current item
+    title: name
+    comments:
+    - 'The title of the item should be as short and descriptive as possible. E.g.
+      for virus products it should basically be based on the following Pattern:
+
+      "Virus name", "virus host type", "collection year", "country of collection"
+      ex "suspected epidemiological origin", "genotype", "strain", "variant name or
+      specific feature"'
+    from_schema: https://evora-project.eu/
+    exact_mappings:
+    - dct:title
+    close_mappings:
+    - rdfs:label
+    rank: 1000
+    alias: name
+    owner: Country
+    domain_of:
+    - Nameable
+    range: string
+    required: true
+    multivalued: false
+  description:
+    name: description
+    description: A short explanation of the characteristics, features, or nature of
+      the current item
+    title: description
+    comments:
+    - 'Describe this item in few lines. This description will serve as a summary to
+      present the item.
+
+      '
+    from_schema: https://evora-project.eu/
+    exact_mappings:
+    - dct:description
+    rank: 1000
+    alias: description
+    owner: Country
+    domain_of:
+    - Nameable
+    range: string
+    required: false
+    multivalued: false
+
+```
+</details>

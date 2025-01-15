@@ -1,44 +1,327 @@
 
-# Class: Publication
 
-A scientific publication
+# Class: Publication (Publication)
+
+
+_A scientific publication_
+
+
+
+
 
 URI: [EVORA:Publication](https://evora-project.eu/Publication)
 
 
-[![img](https://yuml.me/diagram/nofunky;dir:TB/class/[Journal]<journal%200..1-++[Publication&#124;title:string;authors:string;abstract:string],[DOI]<relatedDOI%201..1-++[Publication],[Dataset]^-[Publication],[Journal],[Dataset],[DOI])](https://yuml.me/diagram/nofunky;dir:TB/class/[Journal]<journal%200..1-++[Publication&#124;title:string;authors:string;abstract:string],[DOI]<relatedDOI%201..1-++[Publication],[Dataset]^-[Publication],[Journal],[Dataset],[DOI])
-
-## Parents
-
- *  is_a: [Dataset](Dataset.md) - A collection of data, published or curated by a single agent, and available for access
-
-## Referenced by Class
 
 
-## Attributes
 
 
-### Own
+```mermaid
+ classDiagram
+    class Publication
+    click Publication href "../Publication"
+      Dataset <|-- Publication
+        click Dataset href "../Dataset"
+      
+      Publication : abstract
+        
+      Publication : authors
+        
+      Publication : journal
+        
+          
+    
+    
+    Publication --> "0..1" Journal : journal
+    click Journal href "../Journal"
 
- * [Publication➞title](Publication_title.md)  <sub>1..1</sub>
-     * Description: The descriptive word or phrase that identifies the current piece of work
-     * Range: [String](types/String.md)
- * [Publication➞authors](Publication_authors.md)  <sub>1..1</sub>
-     * Description: The list of authors
-     * Range: [String](types/String.md)
- * [Publication➞abstract](Publication_abstract.md)  <sub>1..1</sub>
-     * Description: Concise summary of the publication
-     * Range: [String](types/String.md)
- * [Publication➞relatedDOI](Publication_relatedDOI.md)  <sub>1..1</sub>
-     * Description: Any Digital Object Identifier that can be related
-     * Range: [DOI](DOI.md)
- * [Publication➞journal](Publication_journal.md)  <sub>0..1</sub>
-     * Description: The scientific journal in which the publication was published
-     * Range: [Journal](Journal.md)
+        
+      Publication : relatedDOI
+        
+          
+    
+    
+    Publication --> "1" DOI : relatedDOI
+    click DOI href "../DOI"
 
-## Other properties
+        
+      Publication : title
+        
+      
+```
 
-|  |  |  |
-| --- | --- | --- |
-| **Aliases:** | | Publication |
-| **Close Mappings:** | | wd:Q591041 |
+
+
+
+
+## Inheritance
+* [Dataset](Dataset.md)
+    * **Publication**
+
+
+
+## Slots
+
+| Name | Cardinality and Range | Description | Inheritance |
+| ---  | --- | --- | --- |
+| [title](title.md) | 1 <br/> [String](String.md) | The descriptive word or phrase that identifies the current piece of work | direct |
+| [authors](authors.md) | 1 <br/> [String](String.md) | The list of authors | direct |
+| [abstract](abstract.md) | 1 <br/> [String](String.md) | Concise summary of the publication | direct |
+| [relatedDOI](relatedDOI.md) | 1 <br/> [DOI](DOI.md) | Any Digital Object Identifier that can be related | direct |
+| [journal](journal.md) | 0..1 <br/> [Journal](Journal.md) | The scientific journal in which the publication was published | direct |
+
+
+
+
+
+
+
+## Aliases
+
+
+* scientific publication
+
+
+
+## Identifier and Mapping Information
+
+
+
+
+
+
+
+### Schema Source
+
+
+* from schema: https://evora-project.eu/
+
+
+
+
+## Mappings
+
+| Mapping Type | Mapped Value |
+| ---  | ---  |
+| self | EVORA:Publication |
+| native | EVORA:Publication |
+| close | wd:Q591041 |
+
+
+
+
+
+
+
+## LinkML Source
+
+<!-- TODO: investigate https://stackoverflow.com/questions/37606292/how-to-create-tabbed-code-blocks-in-mkdocs-or-sphinx -->
+
+### Direct
+
+<details>
+```yaml
+name: Publication
+description: A scientific publication
+title: Publication
+from_schema: https://evora-project.eu/
+aliases:
+- scientific publication
+close_mappings:
+- wd:Q591041
+is_a: Dataset
+slots:
+- title
+- authors
+- abstract
+- relatedDOI
+- journal
+slot_usage:
+  title:
+    name: title
+    description: The descriptive word or phrase that identifies the current piece
+      of work
+    title: title
+    comments:
+    - 'The title of the item should be as short and descriptive as possible. E.g.
+      for virus products it should basically be based on the following Pattern:
+
+      "Virus name", "virus host type", "collection year", "country of collection"
+      ex "suspected epidemiological origin", "genotype", "strain", "variant name or
+      specific feature"'
+    exact_mappings:
+    - dct:title
+    range: string
+    required: true
+    multivalued: false
+  authors:
+    name: authors
+    description: The list of authors
+    title: authors
+    range: string
+    required: true
+    multivalued: false
+  abstract:
+    name: abstract
+    description: Concise summary of the publication
+    title: abstract
+    range: string
+    required: true
+    multivalued: false
+  relatedDOI:
+    name: relatedDOI
+    description: Any Digital Object Identifier that can be related
+    title: DOI
+    range: DOI
+    required: true
+    multivalued: false
+  journal:
+    name: journal
+    description: The scientific journal in which the publication was published
+    title: journal
+    range: Journal
+    required: false
+    multivalued: false
+
+```
+</details>
+
+### Induced
+
+<details>
+```yaml
+name: Publication
+description: A scientific publication
+title: Publication
+from_schema: https://evora-project.eu/
+aliases:
+- scientific publication
+close_mappings:
+- wd:Q591041
+is_a: Dataset
+slot_usage:
+  title:
+    name: title
+    description: The descriptive word or phrase that identifies the current piece
+      of work
+    title: title
+    comments:
+    - 'The title of the item should be as short and descriptive as possible. E.g.
+      for virus products it should basically be based on the following Pattern:
+
+      "Virus name", "virus host type", "collection year", "country of collection"
+      ex "suspected epidemiological origin", "genotype", "strain", "variant name or
+      specific feature"'
+    exact_mappings:
+    - dct:title
+    range: string
+    required: true
+    multivalued: false
+  authors:
+    name: authors
+    description: The list of authors
+    title: authors
+    range: string
+    required: true
+    multivalued: false
+  abstract:
+    name: abstract
+    description: Concise summary of the publication
+    title: abstract
+    range: string
+    required: true
+    multivalued: false
+  relatedDOI:
+    name: relatedDOI
+    description: Any Digital Object Identifier that can be related
+    title: DOI
+    range: DOI
+    required: true
+    multivalued: false
+  journal:
+    name: journal
+    description: The scientific journal in which the publication was published
+    title: journal
+    range: Journal
+    required: false
+    multivalued: false
+attributes:
+  title:
+    name: title
+    description: The descriptive word or phrase that identifies the current piece
+      of work
+    title: title
+    comments:
+    - 'The title of the item should be as short and descriptive as possible. E.g.
+      for virus products it should basically be based on the following Pattern:
+
+      "Virus name", "virus host type", "collection year", "country of collection"
+      ex "suspected epidemiological origin", "genotype", "strain", "variant name or
+      specific feature"'
+    from_schema: https://evora-project.eu/
+    exact_mappings:
+    - dct:title
+    rank: 1000
+    alias: title
+    owner: Publication
+    domain_of:
+    - Publication
+    range: string
+    required: true
+    multivalued: false
+  authors:
+    name: authors
+    description: The list of authors
+    title: authors
+    from_schema: https://evora-project.eu/
+    rank: 1000
+    alias: authors
+    owner: Publication
+    domain_of:
+    - Publication
+    range: string
+    required: true
+    multivalued: false
+  abstract:
+    name: abstract
+    description: Concise summary of the publication
+    title: abstract
+    from_schema: https://evora-project.eu/
+    rank: 1000
+    alias: abstract
+    owner: Publication
+    domain_of:
+    - Publication
+    range: string
+    required: true
+    multivalued: false
+  relatedDOI:
+    name: relatedDOI
+    description: Any Digital Object Identifier that can be related
+    title: DOI
+    from_schema: https://evora-project.eu/
+    rank: 1000
+    alias: relatedDOI
+    owner: Publication
+    domain_of:
+    - Publication
+    - ProductOrService
+    range: DOI
+    required: true
+    multivalued: false
+  journal:
+    name: journal
+    description: The scientific journal in which the publication was published
+    title: journal
+    from_schema: https://evora-project.eu/
+    rank: 1000
+    alias: journal
+    owner: Publication
+    domain_of:
+    - Publication
+    range: Journal
+    required: false
+    multivalued: false
+
+```
+</details>

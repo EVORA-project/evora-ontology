@@ -1,4 +1,5 @@
 
+
 # Slot: expressedAs
 
 
@@ -6,16 +7,70 @@
 URI: [EVORA:expressedAs](https://evora-project.eu/expressedAs)
 
 
-## Domain and Range
 
-None &#8594;  <sub>0..1</sub> [String](types/String.md)
-
-## Parents
+<!-- no inheritance hierarchy -->
 
 
-## Children
 
- *  [Protein➞expressedAs](Protein_expressedAs.md)
 
-## Used by
 
+## Applicable Classes
+
+| Name | Description | Modifies Slot |
+| --- | --- | --- |
+| [Protein](Protein.md) | A protein as a derived product from a pathogen |  yes  |
+
+
+
+
+
+
+
+## Properties
+
+* Range: [String](String.md)
+
+
+
+
+
+## Identifier and Mapping Information
+
+
+
+
+
+
+
+### Schema Source
+
+
+* from schema: https://evora-project.eu/
+
+
+
+
+## Mappings
+
+| Mapping Type | Mapped Value |
+| ---  | ---  |
+| self | EVORA:expressedAs |
+| native | EVORA:expressedAs |
+
+
+
+
+## LinkML Source
+
+<details>
+```yaml
+name: expressedAs
+from_schema: https://evora-project.eu/
+rank: 1000
+alias: expressedAs
+domain_of:
+- Protein
+range: string
+
+```
+</details>

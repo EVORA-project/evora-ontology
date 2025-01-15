@@ -1,0 +1,49 @@
+PREFIX dct: <http://purl.org/dc/terms/>
+PREFIX dcat: <http://www.w3.org/ns/dcat#>
+PREFIX foaf: <http://xmlns.com/foaf/0.1/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX vcard: <http://www.w3.org/2006/vcard/ns#>
+PREFIX rov: <http://www.w3.org/ns/regorg#>
+PREFIX dcmi: <http://purl.org/dc/dcmitype/>
+PREFIX schema: <http://schema.org/>
+PREFIX wd: <http://www.wikidata.org/entity/>
+PREFIX wdp: <http://www.wikidata.org/prop/>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX adms: <http://www.w3.org/ns/adms#>
+PREFIX pav: <http://purl.org/pav/>
+PREFIX dwc: <http://rs.tdwg.org/dwc/terms/>
+PREFIX IAO: <http://purl.obolibrary.org/obo/IAO_>
+PREFIX EVORA: <https://evora-project.eu/>
+PREFIX linkml: <https://w3id.org/linkml/>
+
+SELECT
+  ?check
+  ?graph
+  ?subject
+  ?predicate WHERE {
+ GRAPH ?graph {
+  ?subject rdf:type EVORA:CommonName .
+  FILTER NOT EXISTS { ?subject  EVORA:name ?o  }
+ }
+ VALUES ?check { linkml:required }
+ VALUES ?predicate { EVORA:name }
+ 
+}  
+
+
+
+
+
+
+
+## -- End of checks for CommonName
+
+
+## --
+## Checks for VirusName
+## --
+

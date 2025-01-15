@@ -1,4 +1,5 @@
 
+
 # Slot: journal
 
 
@@ -6,16 +7,70 @@
 URI: [EVORA:journal](https://evora-project.eu/journal)
 
 
-## Domain and Range
 
-None &#8594;  <sub>0..1</sub> [String](types/String.md)
-
-## Parents
+<!-- no inheritance hierarchy -->
 
 
-## Children
 
- *  [Publication➞journal](Publication_journal.md)
 
-## Used by
 
+## Applicable Classes
+
+| Name | Description | Modifies Slot |
+| --- | --- | --- |
+| [Publication](Publication.md) | A scientific publication |  yes  |
+
+
+
+
+
+
+
+## Properties
+
+* Range: [String](String.md)
+
+
+
+
+
+## Identifier and Mapping Information
+
+
+
+
+
+
+
+### Schema Source
+
+
+* from schema: https://evora-project.eu/
+
+
+
+
+## Mappings
+
+| Mapping Type | Mapped Value |
+| ---  | ---  |
+| self | EVORA:journal |
+| native | EVORA:journal |
+
+
+
+
+## LinkML Source
+
+<details>
+```yaml
+name: journal
+from_schema: https://evora-project.eu/
+rank: 1000
+alias: journal
+domain_of:
+- Publication
+range: string
+
+```
+</details>

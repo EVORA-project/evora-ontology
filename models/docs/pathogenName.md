@@ -1,4 +1,5 @@
 
+
 # Slot: pathogenName
 
 
@@ -6,16 +7,70 @@
 URI: [EVORA:pathogenName](https://evora-project.eu/pathogenName)
 
 
-## Domain and Range
 
-None &#8594;  <sub>0..1</sub> [String](types/String.md)
-
-## Parents
+<!-- no inheritance hierarchy -->
 
 
-## Children
 
- *  [PathogenIdentification➞pathogenName](PathogenIdentification_pathogenName.md)
 
-## Used by
 
+## Applicable Classes
+
+| Name | Description | Modifies Slot |
+| --- | --- | --- |
+| [PathogenIdentification](PathogenIdentification.md) | A collection of distinguishing information that enables the differentiation o... |  yes  |
+
+
+
+
+
+
+
+## Properties
+
+* Range: [String](String.md)
+
+
+
+
+
+## Identifier and Mapping Information
+
+
+
+
+
+
+
+### Schema Source
+
+
+* from schema: https://evora-project.eu/
+
+
+
+
+## Mappings
+
+| Mapping Type | Mapped Value |
+| ---  | ---  |
+| self | EVORA:pathogenName |
+| native | EVORA:pathogenName |
+
+
+
+
+## LinkML Source
+
+<details>
+```yaml
+name: pathogenName
+from_schema: https://evora-project.eu/
+rank: 1000
+alias: pathogenName
+domain_of:
+- PathogenIdentification
+range: string
+
+```
+</details>

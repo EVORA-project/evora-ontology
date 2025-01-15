@@ -1,0 +1,23 @@
+{
+   "EVORA": "https://evora-project.eu/",
+   "IAO": "http://purl.obolibrary.org/obo/IAO_",
+   "adms": "http://www.w3.org/ns/adms#",
+   "dcat": "http://www.w3.org/ns/dcat#",
+   "dcmi": "http://purl.org/dc/dcmitype/",
+   "dct": "http://purl.org/dc/terms/",
+   "dwc": "http://rs.tdwg.org/dwc/terms/",
+   "foaf": "http://xmlns.com/foaf/0.1/",
+   "linkml": "https://w3id.org/linkml/",
+   "owl": "http://www.w3.org/2002/07/owl#",
+   "pav": "http://purl.org/pav/",
+   "prov": "http://www.w3.org/ns/prov#",
+   "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+   "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+   "rov": "http://www.w3.org/ns/regorg#",
+   "schema": "http://schema.org/",
+   "skos": "http://www.w3.org/2004/02/skos/core#",
+   "vcard": "http://www.w3.org/2006/vcard/ns#",
+   "wd": "http://www.wikidata.org/entity/",
+   "wdp": "http://www.wikidata.org/prop/",
+   "xsd": "http://www.w3.org/2001/XMLSchema#"
+}

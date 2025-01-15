@@ -1,4 +1,5 @@
 
+
 # Slot: hybridomaDescription
 
 
@@ -6,16 +7,70 @@
 URI: [EVORA:hybridomaDescription](https://evora-project.eu/hybridomaDescription)
 
 
-## Domain and Range
 
-None &#8594;  <sub>0..1</sub> [String](types/String.md)
-
-## Parents
+<!-- no inheritance hierarchy -->
 
 
-## Children
 
- *  [Hybridoma➞hybridomaDescription](Hybridoma_hybridomaDescription.md)
 
-## Used by
 
+## Applicable Classes
+
+| Name | Description | Modifies Slot |
+| --- | --- | --- |
+| [Hybridoma](Hybridoma.md) | An hybridoma that provides antibodies that can be related to a pathogen |  yes  |
+
+
+
+
+
+
+
+## Properties
+
+* Range: [String](String.md)
+
+
+
+
+
+## Identifier and Mapping Information
+
+
+
+
+
+
+
+### Schema Source
+
+
+* from schema: https://evora-project.eu/
+
+
+
+
+## Mappings
+
+| Mapping Type | Mapped Value |
+| ---  | ---  |
+| self | EVORA:hybridomaDescription |
+| native | EVORA:hybridomaDescription |
+
+
+
+
+## LinkML Source
+
+<details>
+```yaml
+name: hybridomaDescription
+from_schema: https://evora-project.eu/
+rank: 1000
+alias: hybridomaDescription
+domain_of:
+- Hybridoma
+range: string
+
+```
+</details>
