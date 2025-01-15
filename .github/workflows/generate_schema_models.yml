@@ -59,7 +59,7 @@ jobs:
       # Generate docs ahead of project generation to benefit from initial generator configuration, avoid linkml datatypes inclusion and keep artifacts
       - name: Generate project doc files with LinkML
         run: |
-          rm -rf model/docs/*
+          rm -rf models/docs/*
           docker run --rm -v $(pwd):/workdir -u $(id -u):$(id -g) evoratools/schemasheets:0.3.1 \
           linkml generate doc -d models/docs models/evora_schema.yaml > models/owl/evora_ontology.owl.ttl
           
