@@ -18,28 +18,28 @@ URI: [EVORAO:contactPoint](https://raw.githubusercontent.com/EVORA-project/evora
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [Viroid](Viroid.md) | The viroid as a biological material |  no  |
-| [DetectionKit](DetectionKit.md) | A detection kit for specific pathogens |  no  |
-| [RI](RI.md) | A research infrastructure |  no  |
-| [Bundle](Bundle.md) | A group of products |  no  |
-| [Service](Service.md) | A service |  no  |
-| [Originator](Originator.md) | The individual or organization responsible for the original discovery, isolat... |  no  |
-| [ProductOrService](ProductOrService.md) | A product or a service |  yes  |
-| [Person](Person.md) | An individual |  no  |
-| [Product](Product.md) | A product |  no  |
-| [Antibody](Antibody.md) | Protein that can bind to certain types of foreign bodies, such as pathogens |  no  |
-| [Protein](Protein.md) | A protein as a derived product from a pathogen |  no  |
-| [Fungus](Fungus.md) | The fungus as a biological material |  no  |
-| [Protozoan](Protozoan.md) | The protozoan as a biological material |  no  |
-| [Organization](Organization.md) | A social entity established to meet needs or pursue specific goals |  no  |
-| [Prion](Prion.md) | The prion as a biological material |  no  |
-| [PersonOrOrganization](PersonOrOrganization.md) | A person or an organization |  yes  |
-| [NucleicAcid](NucleicAcid.md) | Nucleic acid related to a pathogen |  no  |
-| [Bacterium](Bacterium.md) | The bacterium as a biological material |  no  |
-| [Virus](Virus.md) | The virus as a biological material |  no  |
-| [Hybridoma](Hybridoma.md) | An hybridoma that provides antibodies that can be related to a pathogen |  no  |
 | [Pathogen](Pathogen.md) | Biological entity that causes disease in its host, which is typically an infe... |  no  |
+| [Bundle](Bundle.md) | A group of products |  no  |
+| [Prion](Prion.md) | The prion as a biological material |  no  |
+| [Hybridoma](Hybridoma.md) | An hybridoma that provides antibodies that can be related to a pathogen |  no  |
+| [RI](RI.md) | A research infrastructure |  no  |
+| [Organization](Organization.md) | A social entity established to meet needs or pursue specific goals |  no  |
+| [Viroid](Viroid.md) | The viroid as a biological material |  no  |
+| [Protein](Protein.md) | A protein as a derived product from a pathogen |  no  |
+| [Protozoan](Protozoan.md) | The protozoan as a biological material |  no  |
+| [PersonOrOrganization](PersonOrOrganization.md) | A person or an organization |  yes  |
+| [Product](Product.md) | A product |  no  |
+| [ProductOrService](ProductOrService.md) | A product or a service |  yes  |
 | [Provider](Provider.md) | A provider of products or services, as a specific organization |  no  |
+| [Person](Person.md) | An individual |  no  |
+| [Service](Service.md) | A service |  no  |
+| [Fungus](Fungus.md) | The fungus as a biological material |  no  |
+| [Bacterium](Bacterium.md) | The bacterium as a biological material |  no  |
+| [Antibody](Antibody.md) | Protein that can bind to certain types of foreign bodies, such as pathogens |  no  |
+| [Virus](Virus.md) | The virus as a biological material |  no  |
+| [NucleicAcid](NucleicAcid.md) | Nucleic acid related to a pathogen |  no  |
+| [Originator](Originator.md) | The individual or organization responsible for the original discovery, isolat... |  no  |
+| [DetectionKit](DetectionKit.md) | A detection kit for specific pathogens |  no  |
 
 
 

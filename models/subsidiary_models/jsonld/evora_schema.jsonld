@@ -17,7 +17,7 @@
     "https://orcid.org/0000-0002-2042-2839"
   ],
   "id": "https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#",
-  "version": "1.0.7500",
+  "version": "1.0.7504",
   "imports": [
     "linkml:types"
   ],
@@ -9441,9 +9441,9 @@
   ],
   "metamodel_version": "1.7.0",
   "source_file": "evora_schema.yaml",
-  "source_file_date": "2025-01-15T15:48:13",
+  "source_file_date": "2025-01-15T15:56:27",
   "source_file_size": 130378,
-  "generation_date": "2025-01-15T15:48:30",
+  "generation_date": "2025-01-15T15:56:42",
   "@type": "SchemaDefinition",
   "@context": [
     "https://w3id.org/linkml/types.context.jsonld",
