@@ -73,6 +73,11 @@ jobs:
       # Generate the other project subsidiary models using independant generators without keeping artifacts
       - name: Generate subsidiary project models with LinkML independant generators
         run: |
+          SUBPATH='models/subsidiary_models'
+          mkdir -p $SUBPATH $SUBPATH/excel $SUBPATH/graphql $SUBPATH/jsonld $SUBPATH/sqlschema \
+                   $SUBPATH/prefixmap $SUBPATH/pydantic $SUBPATH/rdf $SUBPATH/shex \
+                   $SUBPATH/sqlalchemy $SUBPATH/go $SUBPATH/java $SUBPATH/jsonschema \
+                   $SUBPATH/protobuf $SUBPATH/python $SUBPATH/shacl $SUBPATH/sparql 
           docker run --rm -v $(pwd):/workdir -u $(id -u):$(id -g) evoratools/schemasheets:0.3.1 \
           linkml generate jsonld-context models/evora_schema.yaml > models/subsidiary_models/jsonld/evora_schema.context.jsonld 
           docker run --rm -v $(pwd):/workdir -u $(id -u):$(id -g) evoratools/schemasheets:0.3.1 \
