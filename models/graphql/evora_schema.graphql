@@ -42,6 +42,8 @@ type Antibody
     materialSafetyDataSheet: MSDS
     originator: Originator
     storageConditions: String!
+    thirdPartyDistributionConsent: Boolean
+    usageRestrictions: String
     productionSystem: String
     antibodyPurifiedByAffinity: Boolean!
     specificityDocumented: Boolean!
@@ -91,6 +93,8 @@ type Bacterium
     materialSafetyDataSheet: MSDS
     originator: Originator
     storageConditions: String!
+    thirdPartyDistributionConsent: Boolean
+    usageRestrictions: String
     biologicalMaterialOrigin: BiologicalMaterialOrigin!
     suspectedEpidemiologicalOrigin: [GeographicalOrigin]
     isolationHost: [IsolationHost]
@@ -116,13 +120,12 @@ type BiologicalMaterialOrigin
     recombinantMaterial: Boolean!
     biologicalSourceType: Boolean!
     biologicalPartOrigin: [BiologicalPartOrigin]!
-    thirdPartyDistributionConsent: Boolean
-    usageRestrictions: String
   }
 
 interface BiologicalPartOrigin
   {
     recombinantPartIdentification: RecombinantPartIdentification
+    accessToPhysicalGeneticResource: Boolean!
   }
 
 type Bundle
@@ -157,6 +160,8 @@ type Bundle
     materialSafetyDataSheet: MSDS
     originator: Originator
     storageConditions: String!
+    thirdPartyDistributionConsent: Boolean
+    usageRestrictions: String
     productsOfTheBundle: [Product]!
     complementaryDocument: String
   }
@@ -284,6 +289,8 @@ type DetectionKit
     materialSafetyDataSheet: MSDS
     originator: Originator
     storageConditions: String!
+    thirdPartyDistributionConsent: Boolean
+    usageRestrictions: String
     hasSOPFile: [File]
     specificityDocumented: Boolean!
     specificity: String
@@ -365,6 +372,8 @@ type Fungus
     materialSafetyDataSheet: MSDS
     originator: Originator
     storageConditions: String!
+    thirdPartyDistributionConsent: Boolean
+    usageRestrictions: String
     biologicalMaterialOrigin: BiologicalMaterialOrigin!
     suspectedEpidemiologicalOrigin: [GeographicalOrigin]
     isolationHost: [IsolationHost]
@@ -426,6 +435,8 @@ type Hybridoma
     materialSafetyDataSheet: MSDS
     originator: Originator
     storageConditions: String!
+    thirdPartyDistributionConsent: Boolean
+    usageRestrictions: String
     productionSystem: String
     antibodyPurifiedByAffinity: Boolean!
     specificityDocumented: Boolean!
@@ -527,11 +538,12 @@ interface NamedDataset
 type NaturalPartOrigin
   {
     recombinantPartIdentification: RecombinantPartIdentification
+    accessToPhysicalGeneticResource: Boolean!
     countryOfCollection: Country!
     indigenousPoepleAndLocalCommunityOrigin: IPLCOrigin
     collectionDate: Datetime!
     beforeDate: Boolean!
-    reportingToAuthorities: String
+    permitIdentifierForABS: String
   }
 
 type NucleicAcid
@@ -567,6 +579,8 @@ type NucleicAcid
     materialSafetyDataSheet: MSDS
     originator: Originator
     storageConditions: String!
+    thirdPartyDistributionConsent: Boolean
+    usageRestrictions: String
     biologicalMaterialOrigin: BiologicalMaterialOrigin!
     hasGbFileOfTheConstruct: [Data]
     sequence: [Sequence]!
@@ -636,6 +650,8 @@ interface Pathogen
     materialSafetyDataSheet: MSDS
     originator: Originator
     storageConditions: String!
+    thirdPartyDistributionConsent: Boolean
+    usageRestrictions: String
     biologicalMaterialOrigin: BiologicalMaterialOrigin!
     suspectedEpidemiologicalOrigin: [GeographicalOrigin]
     isolationHost: [IsolationHost]
@@ -738,6 +754,8 @@ type Prion
     materialSafetyDataSheet: MSDS
     originator: Originator
     storageConditions: String!
+    thirdPartyDistributionConsent: Boolean
+    usageRestrictions: String
     biologicalMaterialOrigin: BiologicalMaterialOrigin!
     suspectedEpidemiologicalOrigin: [GeographicalOrigin]
     isolationHost: [IsolationHost]
@@ -791,6 +809,8 @@ type Product
     materialSafetyDataSheet: MSDS
     originator: Originator
     storageConditions: String!
+    thirdPartyDistributionConsent: Boolean
+    usageRestrictions: String
   }
 
 type ProductCategory
@@ -881,6 +901,8 @@ type Protein
     materialSafetyDataSheet: MSDS
     originator: Originator
     storageConditions: String!
+    thirdPartyDistributionConsent: Boolean
+    usageRestrictions: String
     biologicalMaterialOrigin: BiologicalMaterialOrigin!
     sequence: [Sequence]!
     relatedPDB: [PDBReference]
@@ -938,6 +960,8 @@ type Protozoan
     materialSafetyDataSheet: MSDS
     originator: Originator
     storageConditions: String!
+    thirdPartyDistributionConsent: Boolean
+    usageRestrictions: String
     biologicalMaterialOrigin: BiologicalMaterialOrigin!
     suspectedEpidemiologicalOrigin: [GeographicalOrigin]
     isolationHost: [IsolationHost]
@@ -1059,6 +1083,7 @@ type SpecialFeature
 type SyntheticPartOrigin
   {
     recombinantPartIdentification: RecombinantPartIdentification
+    accessToPhysicalGeneticResource: Boolean!
     modificationsFromTheReferenceSequences: Boolean!
     descriptionOfModificationsMadeFromTheReferenceSequences: String
   }
@@ -1173,6 +1198,8 @@ type Viroid
     materialSafetyDataSheet: MSDS
     originator: Originator
     storageConditions: String!
+    thirdPartyDistributionConsent: Boolean
+    usageRestrictions: String
     biologicalMaterialOrigin: BiologicalMaterialOrigin!
     suspectedEpidemiologicalOrigin: [GeographicalOrigin]
     isolationHost: [IsolationHost]
@@ -1226,6 +1253,8 @@ type Virus
     materialSafetyDataSheet: MSDS
     originator: Originator
     storageConditions: String!
+    thirdPartyDistributionConsent: Boolean
+    usageRestrictions: String
     biologicalMaterialOrigin: BiologicalMaterialOrigin!
     suspectedEpidemiologicalOrigin: [GeographicalOrigin]
     isolationHost: [IsolationHost]

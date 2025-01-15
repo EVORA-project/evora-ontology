@@ -66,7 +66,7 @@
              * [DOI](DOI.md) - A unique string identifier assigned to a digital object, providing a permanent link for reliable citation and access.  The Digital Object Identifier (DOI) is a persistent identifier that is an ISO standard
              * [ExpressionVector](ExpressionVector.md) - A reference to an expression vector plasmid, typically embedding a resistance marker for inducible protein expression
              * [GeographicalOrigin](GeographicalOrigin.md) - The specific location or region where a physical item, originates or is naturally found
-                 * [IPLCOrigin](IPLCOrigin.md) - The IPLC area (Indigenous People and Local Communities) from which a physical item, originates or is naturally found
+                 * [IPLCOrigin](IPLCOrigin.md) - The IPLC area (Indigenous People and Local Communities) from which a physical item originates
              * [IATAClassification](IATAClassification.md) - The corresponding International Air Transport Association (IATA)'s category for dangerous goods that are transported by air
              * [IsolationHost](IsolationHost.md) - Host organism from which the pathogen was isolated
              * [Journal](Journal.md) - Periodical journal publishing scientific research
@@ -101,6 +101,8 @@
      * [Publication➞abstract](Publication_abstract.md) - Concise summary of the publication
  * [accessPointURL](accessPointURL.md)
      * [ProductOrService➞accessPointURL](ProductOrService_accessPointURL.md) - The URL that permits to access to the product/service detailed description page on the provider's website and/or allows to place an order about it or at least describe the process to place an order/enquiry
+ * [accessToPhysicalGeneticResource](accessToPhysicalGeneticResource.md)
+     * [BiologicalPartOrigin➞accessToPhysicalGeneticResource](BiologicalPartOrigin_accessToPhysicalGeneticResource.md) - Reference of the permit identifiers for access to the genetic resource, applicable if the genetic resource falls under Access and Benefit-Sharing (ABS) regulations
  * [accessionNumber](accessionNumber.md)
      * [SequenceReference➞accessionNumber](SequenceReference_accessionNumber.md) - The sequence ID that permits to retrieve the sequence information from the sequence provider
  * [accidentalReleaseMeasures](accidentalReleaseMeasures.md)
@@ -322,6 +324,8 @@
      * [PathogenIdentification➞pathogenName](PathogenIdentification_pathogenName.md) - A pathogen common name or a name that describes a group of pathogens
  * [pathogenType](pathogenType.md)
      * [PathogenIdentification➞pathogenType](PathogenIdentification_pathogenType.md) - Identification of the specific type of pathogen among the listed categories e.g. "Virus","Viroid","Bacterium"...
+ * [permitIdentifierForABS](permitIdentifierForABS.md)
+     * [NaturalPartOrigin➞permitIdentifierForABS](NaturalPartOrigin_permitIdentifierForABS.md) - Reference of the permit identifiers for access to the genetic resource, applicable if the genetic resource falls under Access and Benefit-Sharing (ABS) regulations
  * [physicalChemicalProperties](physicalChemicalProperties.md)
      * [MSDS➞physicalChemicalProperties](MSDS_physicalChemicalProperties.md) - Key characteristics of the product, such as physical state, appearance, solubility, pH, chemical composition, and molecular weight, essential for safe handling and storage
  * [postalCode](postalCode.md)
@@ -380,8 +384,6 @@
      * [Publication➞relatedDOI](Publication_relatedDOI.md) - Any Digital Object Identifier that can be related
  * [relatedPDB](relatedPDB.md)
      * [Protein➞relatedPDB](Protein_relatedPDB.md) - Identifier for 3D structural data as per the PDB (Protein Data Bank) database
- * [reportingToAuthorities](reportingToAuthorities.md)
-     * [NaturalPartOrigin➞reportingToAuthorities](NaturalPartOrigin_reportingToAuthorities.md) - Information about permit identifiers for access to the genetic resource, applicable if the genetic resource falls under Access and Benefit-Sharing (ABS) regulations
  * [resourceURL](resourceURL.md)
      * [Certification➞resourceURL](Certification_resourceURL.md) - The web address or location where the details or content is stored and can be accessed or downloaded.
      * [License➞resourceURL](License_resourceURL.md) - The web address or location where the details or content is stored and can be accessed or downloaded.
@@ -457,7 +459,7 @@
  * [theTAGStatusOfTheSolubilizedProtein](theTAGStatusOfTheSolubilizedProtein.md)
      * [Protein➞theTAGStatusOfTheSolubilizedProtein](Protein_theTAGStatusOfTheSolubilizedProtein.md) - Indicates the presence and condition of a tag on the protein after solubilization. Possible values include "Uncleaved Tag" (the tag is still attached to the protein), "Cleaved Tag" (the tag has been removed from the protein), and "No Tag" (the protein does not have a tag)
  * [thirdPartyDistributionConsent](thirdPartyDistributionConsent.md)
-     * [BiologicalMaterialOrigin➞thirdPartyDistributionConsent](BiologicalMaterialOrigin_thirdPartyDistributionConsent.md) - Indicates whether the biological material can be distributed to third parties, considering any potential concerns about to the related genetic material as indicated by the ABS permit, if one exists
+     * [Product➞thirdPartyDistributionConsent](Product_thirdPartyDistributionConsent.md) - Indicates whether the biological material can be distributed without restriction to third parties, as indicated by the ABS permit, in case an ABS permit is required
  * [titer](titer.md)
      * [Nucleic Acid➞titer](Nucleic_Acid_titer.md) - The titer value, its corresponding unit, and the method of quantification (e.g., RT-qPCR, TCID50), representing the concentration or amount of unit present in the sample. The titer corresponds to the highest dilution factor that still yields a positive reading
      * [Pathogen➞titer](Pathogen_titer.md) - The titer value, its corresponding unit, and the method of quantification (e.g., RT-qPCR, TCID50), representing the concentration or amount of unit present in the sample. The titer corresponds to the highest dilution factor that still yields a positive reading
@@ -476,7 +478,7 @@
  * [unitDefinition](unitDefinition.md)
      * [ProductOrService➞unitDefinition](ProductOrService_unitDefinition.md) - A short description of what will be delivered by ordering one unit of this item
  * [usageRestrictions](usageRestrictions.md)
-     * [BiologicalMaterialOrigin➞usageRestrictions](BiologicalMaterialOrigin_usageRestrictions.md) - Specifies any limitations or conditions on the use of the biological material, including restrictions on research, commercial use, or distribution, considering any potential concerns about the related genetic material
+     * [Product➞usageRestrictions](Product_usageRestrictions.md) - Specifies any limitations or conditions on the use of the biological material, including restrictions on research, commercial use, or distribution, considering any potential concerns about the related genetic material
  * [variant](variant.md)
      * [PathogenIdentification➞variant](PathogenIdentification_variant.md) - An organism with one or more new mutations is referred to as a “variant” of the original organism if not sufficiently different to be termed a distinct strain
  * [version](version.md)

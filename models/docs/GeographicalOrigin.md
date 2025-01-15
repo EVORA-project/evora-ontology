@@ -14,7 +14,7 @@ URI: [EVORA:GeographicalOrigin](https://evora-project.eu/GeographicalOrigin)
 
 ## Children
 
- * [IPLCOrigin](IPLCOrigin.md) - The IPLC area (Indigenous People and Local Communities) from which a physical item, originates or is naturally found
+ * [IPLCOrigin](IPLCOrigin.md) - The IPLC area (Indigenous People and Local Communities) from which a physical item originates
 
 ## Referenced by Class
 

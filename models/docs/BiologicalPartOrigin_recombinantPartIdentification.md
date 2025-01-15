@@ -27,5 +27,5 @@ URI: [EVORA:BiologicalPartOrigin_recombinantPartIdentification](https://evora-pr
 
 |  |  |  |
 | --- | --- | --- |
-| **Aliases:** | | Recombinant part identification |
+| **Aliases:** | | recombinant part identification |
 | **Comments:** | | Information not required if the current biological part constitutes the complete biological material |

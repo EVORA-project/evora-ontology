@@ -6,7 +6,7 @@ Information on the origin of a synthetic part that composes the biological mater
 URI: [EVORA:SyntheticPartOrigin](https://evora-project.eu/SyntheticPartOrigin)
 
 
-[![img](https://yuml.me/diagram/nofunky;dir:TB/class/[BiologicalPartOrigin]^-[SyntheticPartOrigin&#124;modificationsFromTheReferenceSequences:boolean;descriptionOfModificationsMadeFromTheReferenceSequences:string%20%3F],[RecombinantPartIdentification],[BiologicalPartOrigin])](https://yuml.me/diagram/nofunky;dir:TB/class/[BiologicalPartOrigin]^-[SyntheticPartOrigin&#124;modificationsFromTheReferenceSequences:boolean;descriptionOfModificationsMadeFromTheReferenceSequences:string%20%3F],[RecombinantPartIdentification],[BiologicalPartOrigin])
+[![img](https://yuml.me/diagram/nofunky;dir:TB/class/[BiologicalPartOrigin]^-[SyntheticPartOrigin&#124;modificationsFromTheReferenceSequences:boolean;descriptionOfModificationsMadeFromTheReferenceSequences:string%20%3F;accessToPhysicalGeneticResource(i):boolean],[RecombinantPartIdentification],[BiologicalPartOrigin])](https://yuml.me/diagram/nofunky;dir:TB/class/[BiologicalPartOrigin]^-[SyntheticPartOrigin&#124;modificationsFromTheReferenceSequences:boolean;descriptionOfModificationsMadeFromTheReferenceSequences:string%20%3F;accessToPhysicalGeneticResource(i):boolean],[RecombinantPartIdentification],[BiologicalPartOrigin])
 
 ## Parents
 
@@ -32,6 +32,9 @@ URI: [EVORA:SyntheticPartOrigin](https://evora-project.eu/SyntheticPartOrigin)
  * [BiologicalPartOrigin➞recombinantPartIdentification](BiologicalPartOrigin_recombinantPartIdentification.md)  <sub>0..1</sub>
      * Description: Identification of a recombinant part
      * Range: [RecombinantPartIdentification](RecombinantPartIdentification.md)
+ * [BiologicalPartOrigin➞accessToPhysicalGeneticResource](BiologicalPartOrigin_accessToPhysicalGeneticResource.md)  <sub>1..1</sub>
+     * Description: Reference of the permit identifiers for access to the genetic resource, applicable if the genetic resource falls under Access and Benefit-Sharing (ABS) regulations
+     * Range: [Boolean](types/Boolean.md)
 
 ## Other properties
 

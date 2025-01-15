@@ -89,9 +89,7 @@ linkml:Sparqlpath xsd:string
           rdf:type [ <Dataset> ] ? ;
           <recombinantMaterial> @linkml:Boolean ;
           <biologicalSourceType> @linkml:Boolean ;
-          <biologicalPartOrigin> @<BiologicalPartOrigin> + ;
-          <thirdPartyDistributionConsent> @linkml:Boolean ? ;
-          <usageRestrictions> @linkml:String ?
+          <biologicalPartOrigin> @<BiologicalPartOrigin> +
        ) ;
        rdf:type [ <BiologicalMaterialOrigin> ] ?
     )
@@ -104,7 +102,8 @@ linkml:Sparqlpath xsd:string
 <BiologicalPartOrigin_struct> {
     (  $<BiologicalPartOrigin_tes> (  &<Dataset_tes> ;
           rdf:type [ <Dataset> ] ? ;
-          <recombinantPartIdentification> @<RecombinantPartIdentification> ?
+          <recombinantPartIdentification> @<RecombinantPartIdentification> ? ;
+          <accessToPhysicalGeneticResource> @linkml:Boolean
        ) ;
        rdf:type [ <BiologicalPartOrigin> ] ?
     )
@@ -441,7 +440,7 @@ linkml:Sparqlpath xsd:string
           <indigenousPoepleAndLocalCommunityOrigin> @<IPLCOrigin> ? ;
           <collectionDate> @linkml:Datetime ;
           <beforeDate> @linkml:Boolean ;
-          <reportingToAuthorities> @linkml:String ?
+          <permitIdentifierForABS> @linkml:String ?
        ) ;
        rdf:type [ <NaturalPartOrigin> ] ?
     )
@@ -591,7 +590,9 @@ linkml:Sparqlpath xsd:string
              <shippingConditions> @linkml:String ;
              <materialSafetyDataSheet> @<MSDS> ? ;
              <originator> @<Originator> ? ;
-             <storageConditions> @linkml:String
+             <storageConditions> @linkml:String ;
+             <thirdPartyDistributionConsent> @linkml:Boolean ? ;
+             <usageRestrictions> @linkml:String ?
           ) ;
           rdf:type [ <Product> ] ?
        )

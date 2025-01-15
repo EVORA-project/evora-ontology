@@ -155,6 +155,8 @@ slots:
     from_schema: EVORA
   recombinantPartIdentification:
     from_schema: EVORA
+  accessToPhysicalGeneticResource:
+    from_schema: EVORA
   countryOfCollection:
     from_schema: EVORA
   indigenousPoepleAndLocalCommunityOrigin:
@@ -163,7 +165,7 @@ slots:
     from_schema: EVORA
   beforeDate:
     from_schema: EVORA
-  reportingToAuthorities:
+  permitIdentifierForABS:
     from_schema: EVORA
   modificationsFromTheReferenceSequences:
     from_schema: EVORA
@@ -1154,7 +1156,7 @@ classes:
     is_a: Term
   IPLCOrigin:
     description: The IPLC area (Indigenous People and Local Communities) from which
-      a physical item, originates or is naturally found
+      a physical item originates
     from_schema: EVORA
     aliases:
     - IPLC origin
@@ -1568,8 +1570,6 @@ classes:
     - recombinantMaterial
     - biologicalSourceType
     - biologicalPartOrigin
-    - thirdPartyDistributionConsent
-    - usageRestrictions
     slot_usage:
       recombinantMaterial:
         description: Indicates if this biological material is a recombinant biological
@@ -1603,24 +1603,6 @@ classes:
         range: BiologicalPartOrigin
         required: true
         multivalued: true
-      thirdPartyDistributionConsent:
-        description: Indicates whether the biological material can be distributed
-          to third parties, considering any potential concerns about to the related
-          genetic material as indicated by the ABS permit, if one exists
-        aliases:
-        - third party distribution consent
-        range: boolean
-        required: false
-        multivalued: false
-      usageRestrictions:
-        description: Specifies any limitations or conditions on the use of the biological
-          material, including restrictions on research, commercial use, or distribution,
-          considering any potential concerns about the related genetic material
-        aliases:
-        - usage restrictions
-        range: string
-        required: false
-        multivalued: false
   BiologicalPartOrigin:
     description: Information on the origin of a unitary, cohesive part that is part
       of, or constitutes the biological material. It can be multiple parts in case
@@ -1632,6 +1614,7 @@ classes:
     abstract: true
     slots:
     - recombinantPartIdentification
+    - accessToPhysicalGeneticResource
     slot_usage:
       recombinantPartIdentification:
         description: Identification of a recombinant part
@@ -1639,9 +1622,18 @@ classes:
         - Information not required if the current biological part constitutes the
           complete biological material
         aliases:
-        - Recombinant part identification
+        - recombinant part identification
         range: RecombinantPartIdentification
         required: false
+        multivalued: false
+      accessToPhysicalGeneticResource:
+        description: Reference of the permit identifiers for access to the genetic
+          resource, applicable if the genetic resource falls under Access and Benefit-Sharing
+          (ABS) regulations
+        aliases:
+        - access to physical genetic resource
+        range: boolean
+        required: true
         multivalued: false
   NaturalPartOrigin:
     description: Information on the origin of a natural part that composes the biological
@@ -1655,7 +1647,7 @@ classes:
     - indigenousPoepleAndLocalCommunityOrigin
     - collectionDate
     - beforeDate
-    - reportingToAuthorities
+    - permitIdentifierForABS
     slot_usage:
       countryOfCollection:
         description: The geographical location where the sample was collected in situ.
@@ -1693,12 +1685,12 @@ classes:
         range: boolean
         required: true
         multivalued: false
-      reportingToAuthorities:
-        description: Information about permit identifiers for access to the genetic
+      permitIdentifierForABS:
+        description: Reference of the permit identifiers for access to the genetic
           resource, applicable if the genetic resource falls under Access and Benefit-Sharing
           (ABS) regulations
         aliases:
-        - reporting to authorities
+        - permit identifier for ABS
         required: false
         multivalued: false
   SyntheticPartOrigin:
@@ -2080,6 +2072,8 @@ classes:
     - materialSafetyDataSheet
     - originator
     - storageConditions
+    - thirdPartyDistributionConsent
+    - usageRestrictions
     slot_usage:
       hasIATAClassification:
         description: The corresponding International Air Transport Association (IATA)'s
@@ -2133,6 +2127,24 @@ classes:
         - storage conditions
         range: string
         required: true
+        multivalued: false
+      thirdPartyDistributionConsent:
+        description: Indicates whether the biological material can be distributed
+          without restriction to third parties, as indicated by the ABS permit, in
+          case an ABS permit is required
+        aliases:
+        - third party distribution consent
+        range: boolean
+        required: false
+        multivalued: false
+      usageRestrictions:
+        description: Specifies any limitations or conditions on the use of the biological
+          material, including restrictions on research, commercial use, or distribution,
+          considering any potential concerns about the related genetic material
+        aliases:
+        - usage restrictions
+        range: string
+        required: false
         multivalued: false
   Antibody:
     description: Protein that can bind to certain types of foreign bodies, such as
