@@ -17,7 +17,7 @@ PREFIX adms: <http://www.w3.org/ns/adms#>
 PREFIX pav: <http://purl.org/pav/>
 PREFIX dwc: <http://rs.tdwg.org/dwc/terms/>
 PREFIX IAO: <http://purl.obolibrary.org/obo/IAO_>
-PREFIX EVORA: <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#>
+PREFIX EVORAO: <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#>
 PREFIX linkml: <https://w3id.org/linkml/>
 
 SELECT
@@ -28,18 +28,18 @@ SELECT
   ?object
 WHERE {
  GRAPH ?graph {
-  ?subject rdf:type EVORA:DetectionKit ;
+  ?subject rdf:type EVORAO:DetectionKit ;
      ?predicate ?object .
   FILTER NOT EXISTS {
     ?object rdf:type ?otype .
     FILTER ( ?otype IN (
-      EVORA:ExternalRelatedReference
+      EVORAO:ExternalRelatedReference
       
       ))
   }
  }
  VALUES ?check { linkml:range }
- VALUES ?predicate { EVORA:externalRelatedReference  }
+ VALUES ?predicate { EVORAO:externalRelatedReference  }
  
 }  
 

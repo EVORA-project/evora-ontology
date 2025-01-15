@@ -9,7 +9,7 @@ _The organism used to grow and multiply the pathogen under controlled conditions
 
 
 
-URI: [EVORA:PropagationHost](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#PropagationHost)
+URI: [EVORAO:PropagationHost](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#PropagationHost)
 
 
 
@@ -60,7 +60,7 @@ URI: [EVORA:PropagationHost](https://raw.githubusercontent.com/EVORA-project/evo
 | [weight](weight.md) | 1 <br/> [Integer](Integer.md) | A numerical value indicating relative importance or priority, generally proce... | [Term](Term.md) |
 | [inVocabulary](inVocabulary.md) | 1 <br/> [Vocabulary](Vocabulary.md) | Terms belong to a specific vocabulary | [Term](Term.md) |
 | [name](name.md) | 1 <br/> [String](String.md) | The label that allows humans to identify the current item | [Nameable](Nameable.md) |
-| [description](description.md) | 0..1 <br/> [String](String.md) | A short explanation of the characteristics, features, or nature of the curren... | [Nameable](Nameable.md) |
+| [description](description.md) | 0..1 _recommended_ <br/> [String](String.md) | A short explanation of the characteristics, features, or nature of the curren... | [Nameable](Nameable.md) |
 
 
 
@@ -103,8 +103,8 @@ URI: [EVORA:PropagationHost](https://raw.githubusercontent.com/EVORA-project/evo
 
 | Mapping Type | Mapped Value |
 | ---  | ---  |
-| self | EVORA:PropagationHost |
-| native | EVORA:PropagationHost |
+| self | EVORAO:PropagationHost |
+| native | EVORAO:PropagationHost |
 
 
 
@@ -165,8 +165,6 @@ attributes:
     description: Terms belong to a specific vocabulary
     title: in Vocabulary
     from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
-    aliases:
-    - catalog
     close_mappings:
     - wdp:P972
     rank: 1000
@@ -221,6 +219,7 @@ attributes:
     - Nameable
     range: string
     required: false
+    recommended: true
     multivalued: false
 
 ```

@@ -11,7 +11,7 @@ _Word or phrase from a specialized area of knowledge_
 * __NOTE__: this is an abstract class and should not be instantiated directly
 
 
-URI: [EVORA:Term](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#Term)
+URI: [EVORAO:Term](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#Term)
 
 
 
@@ -127,7 +127,7 @@ URI: [EVORA:Term](https://raw.githubusercontent.com/EVORA-project/evora-ontology
 | [weight](weight.md) | 1 <br/> [Integer](Integer.md) | A numerical value indicating relative importance or priority, generally proce... | direct |
 | [inVocabulary](inVocabulary.md) | 1 <br/> [Vocabulary](Vocabulary.md) | Terms belong to a specific vocabulary | direct |
 | [name](name.md) | 1 <br/> [String](String.md) | The label that allows humans to identify the current item | [Nameable](Nameable.md) |
-| [description](description.md) | 0..1 <br/> [String](String.md) | A short explanation of the characteristics, features, or nature of the curren... | [Nameable](Nameable.md) |
+| [description](description.md) | 0..1 _recommended_ <br/> [String](String.md) | A short explanation of the characteristics, features, or nature of the curren... | [Nameable](Nameable.md) |
 
 
 
@@ -141,11 +141,6 @@ URI: [EVORA:Term](https://raw.githubusercontent.com/EVORA-project/evora-ontology
 
 
 
-
-## Aliases
-
-
-* term
 
 
 
@@ -169,8 +164,8 @@ URI: [EVORA:Term](https://raw.githubusercontent.com/EVORA-project/evora-ontology
 
 | Mapping Type | Mapped Value |
 | ---  | ---  |
-| self | EVORA:Term |
-| native | EVORA:Term |
+| self | EVORAO:Term |
+| native | EVORAO:Term |
 | close | wd:Q1969448 |
 
 
@@ -191,8 +186,6 @@ name: Term
 description: Word or phrase from a specialized area of knowledge
 title: Term
 from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
-aliases:
-- term
 close_mappings:
 - wd:Q1969448
 is_a: NamedDataset
@@ -217,8 +210,6 @@ slot_usage:
     name: inVocabulary
     description: Terms belong to a specific vocabulary
     title: in Vocabulary
-    aliases:
-    - catalog
     close_mappings:
     - wdp:P972
     range: Vocabulary
@@ -236,8 +227,6 @@ name: Term
 description: Word or phrase from a specialized area of knowledge
 title: Term
 from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
-aliases:
-- term
 close_mappings:
 - wd:Q1969448
 is_a: NamedDataset
@@ -259,8 +248,6 @@ slot_usage:
     name: inVocabulary
     description: Terms belong to a specific vocabulary
     title: in Vocabulary
-    aliases:
-    - catalog
     close_mappings:
     - wdp:P972
     range: Vocabulary
@@ -291,8 +278,6 @@ attributes:
     description: Terms belong to a specific vocabulary
     title: in Vocabulary
     from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
-    aliases:
-    - catalog
     close_mappings:
     - wdp:P972
     rank: 1000
@@ -347,6 +332,7 @@ attributes:
     - Nameable
     range: string
     required: false
+    recommended: true
     multivalued: false
 
 ```

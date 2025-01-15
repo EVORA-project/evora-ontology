@@ -4,7 +4,7 @@
 
 
 
-URI: [EVORA:sequenceReference](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#sequenceReference)
+URI: [EVORAO:sequenceReference](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#sequenceReference)
 
 
 
@@ -18,8 +18,8 @@ URI: [EVORA:sequenceReference](https://raw.githubusercontent.com/EVORA-project/e
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [Sequence](Sequence.md) | A nucleic acid or protein sequence information |  yes  |
 | [Hybridoma](Hybridoma.md) | An hybridoma that provides antibodies that can be related to a pathogen |  no  |
+| [Sequence](Sequence.md) | A nucleic acid or protein sequence information |  yes  |
 | [Antibody](Antibody.md) | Protein that can bind to certain types of foreign bodies, such as pathogens |  yes  |
 
 
@@ -56,8 +56,8 @@ URI: [EVORA:sequenceReference](https://raw.githubusercontent.com/EVORA-project/e
 
 | Mapping Type | Mapped Value |
 | ---  | ---  |
-| self | EVORA:sequenceReference |
-| native | EVORA:sequenceReference |
+| self | EVORAO:sequenceReference |
+| native | EVORAO:sequenceReference |
 
 
 

@@ -4,7 +4,7 @@
 
 
 
-URI: [EVORA:parentCategory](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#parentCategory)
+URI: [EVORAO:parentCategory](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#parentCategory)
 
 
 
@@ -54,8 +54,8 @@ URI: [EVORA:parentCategory](https://raw.githubusercontent.com/EVORA-project/evor
 
 | Mapping Type | Mapped Value |
 | ---  | ---  |
-| self | EVORA:parentCategory |
-| native | EVORA:parentCategory |
+| self | EVORAO:parentCategory |
+| native | EVORAO:parentCategory |
 
 
 

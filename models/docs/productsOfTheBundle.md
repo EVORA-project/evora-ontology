@@ -4,7 +4,7 @@
 
 
 
-URI: [EVORA:productsOfTheBundle](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#productsOfTheBundle)
+URI: [EVORAO:productsOfTheBundle](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#productsOfTheBundle)
 
 
 
@@ -54,8 +54,8 @@ URI: [EVORA:productsOfTheBundle](https://raw.githubusercontent.com/EVORA-project
 
 | Mapping Type | Mapped Value |
 | ---  | ---  |
-| self | EVORA:productsOfTheBundle |
-| native | EVORA:productsOfTheBundle |
+| self | EVORAO:productsOfTheBundle |
+| native | EVORAO:productsOfTheBundle |
 
 
 

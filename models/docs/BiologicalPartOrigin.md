@@ -11,7 +11,7 @@ _Information on the origin of a unitary, cohesive part that is part of, or const
 * __NOTE__: this is an abstract class and should not be instantiated directly
 
 
-URI: [EVORA:BiologicalPartOrigin](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#BiologicalPartOrigin)
+URI: [EVORAO:BiologicalPartOrigin](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#BiologicalPartOrigin)
 
 
 
@@ -100,8 +100,8 @@ URI: [EVORA:BiologicalPartOrigin](https://raw.githubusercontent.com/EVORA-projec
 
 | Mapping Type | Mapped Value |
 | ---  | ---  |
-| self | EVORA:BiologicalPartOrigin |
-| native | EVORA:BiologicalPartOrigin |
+| self | EVORAO:BiologicalPartOrigin |
+| native | EVORAO:BiologicalPartOrigin |
 
 
 

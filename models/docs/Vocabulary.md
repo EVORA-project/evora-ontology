@@ -9,7 +9,7 @@ _A subset of words or phrases specific to a particular subject or field_
 
 
 
-URI: [EVORA:Vocabulary](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#Vocabulary)
+URI: [EVORAO:Vocabulary](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#Vocabulary)
 
 
 
@@ -32,7 +32,7 @@ URI: [EVORA:Vocabulary](https://raw.githubusercontent.com/EVORA-project/evora-on
           
     
     
-    Vocabulary --> "*" Term : term
+    Vocabulary --> "* _recommended_" Term : term
     click Term href "../Term"
 
         
@@ -64,9 +64,9 @@ URI: [EVORA:Vocabulary](https://raw.githubusercontent.com/EVORA-project/evora-on
 | Name | Cardinality and Range | Description | Inheritance |
 | ---  | --- | --- | --- |
 | [termDataProvider](termDataProvider.md) | 0..1 <br/> [DataProvider](DataProvider.md) | An external API or Endpoint that permits to retrieve the terms of this vocabu... | direct |
-| [term](term.md) | * <br/> [Term](Term.md) | The terms related to this vocabulary | direct |
+| [term](term.md) | * _recommended_ <br/> [Term](Term.md) | The terms related to this vocabulary | direct |
 | [name](name.md) | 1 <br/> [String](String.md) | The label that allows humans to identify the current item | [Nameable](Nameable.md) |
-| [description](description.md) | 0..1 <br/> [String](String.md) | A short explanation of the characteristics, features, or nature of the curren... | [Nameable](Nameable.md) |
+| [description](description.md) | 0..1 _recommended_ <br/> [String](String.md) | A short explanation of the characteristics, features, or nature of the curren... | [Nameable](Nameable.md) |
 
 
 
@@ -105,11 +105,6 @@ URI: [EVORA:Vocabulary](https://raw.githubusercontent.com/EVORA-project/evora-on
 
 
 
-## Aliases
-
-
-* vocabulary
-
 
 
 ## Identifier and Mapping Information
@@ -132,8 +127,8 @@ URI: [EVORA:Vocabulary](https://raw.githubusercontent.com/EVORA-project/evora-on
 
 | Mapping Type | Mapped Value |
 | ---  | ---  |
-| self | EVORA:Vocabulary |
-| native | EVORA:Vocabulary |
+| self | EVORAO:Vocabulary |
+| native | EVORAO:Vocabulary |
 | close | wd:Q6499736, skos:Collection |
 
 
@@ -154,8 +149,6 @@ name: Vocabulary
 description: A subset of words or phrases specific to a particular subject or field
 title: Vocabulary
 from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
-aliases:
-- vocabulary
 close_mappings:
 - wd:Q6499736
 - skos:Collection
@@ -178,6 +171,7 @@ slot_usage:
     title: term
     range: Term
     required: false
+    recommended: true
     multivalued: true
 
 ```
@@ -191,8 +185,6 @@ name: Vocabulary
 description: A subset of words or phrases specific to a particular subject or field
 title: Vocabulary
 from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
-aliases:
-- vocabulary
 close_mappings:
 - wd:Q6499736
 - skos:Collection
@@ -212,6 +204,7 @@ slot_usage:
     title: term
     range: Term
     required: false
+    recommended: true
     multivalued: true
 attributes:
   termDataProvider:
@@ -240,6 +233,7 @@ attributes:
     - Vocabulary
     range: Term
     required: false
+    recommended: true
     multivalued: true
   name:
     name: name
@@ -285,6 +279,7 @@ attributes:
     - Nameable
     range: string
     required: false
+    recommended: true
     multivalued: false
 
 ```

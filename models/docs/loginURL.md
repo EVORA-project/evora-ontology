@@ -4,7 +4,7 @@
 
 
 
-URI: [EVORA:loginURL](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#loginURL)
+URI: [EVORAO:loginURL](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#loginURL)
 
 
 
@@ -54,8 +54,8 @@ URI: [EVORA:loginURL](https://raw.githubusercontent.com/EVORA-project/evora-onto
 
 | Mapping Type | Mapped Value |
 | ---  | ---  |
-| self | EVORA:loginURL |
-| native | EVORA:loginURL |
+| self | EVORAO:loginURL |
+| native | EVORAO:loginURL |
 
 
 

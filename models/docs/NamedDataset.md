@@ -11,7 +11,7 @@ _A collection of data, that has a name and can have a description, published or 
 * __NOTE__: this is an abstract class and should not be instantiated directly
 
 
-URI: [EVORA:NamedDataset](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#NamedDataset)
+URI: [EVORAO:NamedDataset](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#NamedDataset)
 
 
 
@@ -56,18 +56,13 @@ URI: [EVORA:NamedDataset](https://raw.githubusercontent.com/EVORA-project/evora-
 | Name | Cardinality and Range | Description | Inheritance |
 | ---  | --- | --- | --- |
 | [name](name.md) | 1 <br/> [String](String.md) | The label that allows humans to identify the current item | [Nameable](Nameable.md) |
-| [description](description.md) | 0..1 <br/> [String](String.md) | A short explanation of the characteristics, features, or nature of the curren... | [Nameable](Nameable.md) |
+| [description](description.md) | 0..1 _recommended_ <br/> [String](String.md) | A short explanation of the characteristics, features, or nature of the curren... | [Nameable](Nameable.md) |
 
 
 
 
 
 
-
-## Aliases
-
-
-* data set
 
 
 
@@ -91,8 +86,8 @@ URI: [EVORA:NamedDataset](https://raw.githubusercontent.com/EVORA-project/evora-
 
 | Mapping Type | Mapped Value |
 | ---  | ---  |
-| self | EVORA:NamedDataset |
-| native | EVORA:NamedDataset |
+| self | EVORAO:NamedDataset |
+| native | EVORAO:NamedDataset |
 | exact | dcat:Dataset |
 | close | wd:Q1172284, schema:DataCatalog |
 
@@ -115,8 +110,6 @@ description: A collection of data, that has a name and can have a description, p
   or curated by a single agent, and available for access
 title: Named Dataset
 from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
-aliases:
-- data set
 exact_mappings:
 - dcat:Dataset
 close_mappings:
@@ -137,8 +130,6 @@ description: A collection of data, that has a name and can have a description, p
   or curated by a single agent, and available for access
 title: Named Dataset
 from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
-aliases:
-- data set
 exact_mappings:
 - dcat:Dataset
 close_mappings:
@@ -191,6 +182,7 @@ attributes:
     - Nameable
     range: string
     required: false
+    recommended: true
     multivalued: false
 
 ```

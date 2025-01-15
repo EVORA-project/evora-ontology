@@ -4,7 +4,7 @@
 
 
 
-URI: [EVORA:loginTokenName](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#loginTokenName)
+URI: [EVORAO:loginTokenName](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#loginTokenName)
 
 
 
@@ -54,8 +54,8 @@ URI: [EVORA:loginTokenName](https://raw.githubusercontent.com/EVORA-project/evor
 
 | Mapping Type | Mapped Value |
 | ---  | ---  |
-| self | EVORA:loginTokenName |
-| native | EVORA:loginTokenName |
+| self | EVORAO:loginTokenName |
+| native | EVORAO:loginTokenName |
 
 
 

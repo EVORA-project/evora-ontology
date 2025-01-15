@@ -9,7 +9,7 @@ _Subclass of File representing textual or written files such as reports, manuals
 
 
 
-URI: [EVORA:Document](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#Document)
+URI: [EVORAO:Document](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#Document)
 
 
 
@@ -62,7 +62,7 @@ URI: [EVORA:Document](https://raw.githubusercontent.com/EVORA-project/evora-onto
 | [format](format.md) | 1 <br/> [String](String.md) | The file type or format that indicates how the data within the file is struct... | [File](File.md) |
 | [license](license.md) | 0..1 <br/> [License](License.md) | The legal terms and conditions under which the file can be used, shared, or d... | [File](File.md) |
 | [name](name.md) | 1 <br/> [String](String.md) | The label that allows humans to identify the current item | [Nameable](Nameable.md) |
-| [description](description.md) | 0..1 <br/> [String](String.md) | A short explanation of the characteristics, features, or nature of the curren... | [Nameable](Nameable.md) |
+| [description](description.md) | 0..1 _recommended_ <br/> [String](String.md) | A short explanation of the characteristics, features, or nature of the curren... | [Nameable](Nameable.md) |
 
 
 
@@ -92,11 +92,6 @@ URI: [EVORA:Document](https://raw.githubusercontent.com/EVORA-project/evora-onto
 
 
 
-## Aliases
-
-
-* document
-
 
 
 ## Identifier and Mapping Information
@@ -119,8 +114,8 @@ URI: [EVORA:Document](https://raw.githubusercontent.com/EVORA-project/evora-onto
 
 | Mapping Type | Mapped Value |
 | ---  | ---  |
-| self | EVORA:Document |
-| native | EVORA:Document |
+| self | EVORAO:Document |
+| native | EVORAO:Document |
 | close | wd:Q49848 |
 
 
@@ -142,8 +137,6 @@ description: Subclass of File representing textual or written files such as repo
   manuals, or forms
 title: Document
 from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
-aliases:
-- document
 close_mappings:
 - wd:Q49848
 is_a: File
@@ -160,8 +153,6 @@ description: Subclass of File representing textual or written files such as repo
   manuals, or forms
 title: Document
 from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
-aliases:
-- document
 close_mappings:
 - wd:Q49848
 is_a: File
@@ -253,6 +244,7 @@ attributes:
     - Nameable
     range: string
     required: false
+    recommended: true
     multivalued: false
 
 ```

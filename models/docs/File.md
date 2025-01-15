@@ -11,7 +11,7 @@ _Digital document or record stored in a specific format that contains data or in
 * __NOTE__: this is an abstract class and should not be instantiated directly
 
 
-URI: [EVORA:File](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#File)
+URI: [EVORAO:File](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#File)
 
 
 
@@ -81,7 +81,7 @@ URI: [EVORA:File](https://raw.githubusercontent.com/EVORA-project/evora-ontology
 | [format](format.md) | 1 <br/> [String](String.md) | The file type or format that indicates how the data within the file is struct... | direct |
 | [license](license.md) | 0..1 <br/> [License](License.md) | The legal terms and conditions under which the file can be used, shared, or d... | direct |
 | [name](name.md) | 1 <br/> [String](String.md) | The label that allows humans to identify the current item | [Nameable](Nameable.md) |
-| [description](description.md) | 0..1 <br/> [String](String.md) | A short explanation of the characteristics, features, or nature of the curren... | [Nameable](Nameable.md) |
+| [description](description.md) | 0..1 _recommended_ <br/> [String](String.md) | A short explanation of the characteristics, features, or nature of the curren... | [Nameable](Nameable.md) |
 
 
 
@@ -96,11 +96,6 @@ URI: [EVORA:File](https://raw.githubusercontent.com/EVORA-project/evora-ontology
 
 
 
-
-## Aliases
-
-
-* computer file
 
 
 
@@ -124,8 +119,8 @@ URI: [EVORA:File](https://raw.githubusercontent.com/EVORA-project/evora-ontology
 
 | Mapping Type | Mapped Value |
 | ---  | ---  |
-| self | EVORA:File |
-| native | EVORA:File |
+| self | EVORAO:File |
+| native | EVORAO:File |
 | exact | dcat:mediaType |
 | close | wd:Q82753 |
 
@@ -148,8 +143,6 @@ description: Digital document or record stored in a specific format that contain
   data or information
 title: File
 from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
-aliases:
-- computer file
 exact_mappings:
 - dcat:mediaType
 close_mappings:
@@ -198,8 +191,6 @@ description: Digital document or record stored in a specific format that contain
   data or information
 title: File
 from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
-aliases:
-- computer file
 exact_mappings:
 - dcat:mediaType
 close_mappings:
@@ -319,6 +310,7 @@ attributes:
     - Nameable
     range: string
     required: false
+    recommended: true
     multivalued: false
 
 ```

@@ -4,7 +4,7 @@
 
 
 
-URI: [EVORA:ecologicalInformation](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#ecologicalInformation)
+URI: [EVORAO:ecologicalInformation](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#ecologicalInformation)
 
 
 
@@ -54,8 +54,8 @@ URI: [EVORA:ecologicalInformation](https://raw.githubusercontent.com/EVORA-proje
 
 | Mapping Type | Mapped Value |
 | ---  | ---  |
-| self | EVORA:ecologicalInformation |
-| native | EVORA:ecologicalInformation |
+| self | EVORAO:ecologicalInformation |
+| native | EVORAO:ecologicalInformation |
 
 
 

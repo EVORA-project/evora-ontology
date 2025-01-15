@@ -9,7 +9,7 @@ _The fungus as a biological material_
 
 
 
-URI: [EVORA:Fungus](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#Fungus)
+URI: [EVORAO:Fungus](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#Fungus)
 
 
 
@@ -30,7 +30,7 @@ URI: [EVORA:Fungus](https://raw.githubusercontent.com/EVORA-project/evora-ontolo
           
     
     
-    Fungus --> "*" ProductCategory : additionalCategory
+    Fungus --> "* _recommended_" ProductCategory : additionalCategory
     click ProductCategory href "../ProductCategory"
 
         
@@ -92,7 +92,7 @@ URI: [EVORA:Fungus](https://raw.githubusercontent.com/EVORA-project/evora-ontolo
           
     
     
-    Fungus --> "0..1" ContactPoint : contactPoint
+    Fungus --> "0..1 _recommended_" ContactPoint : contactPoint
     click ContactPoint href "../ContactPoint"
 
         
@@ -144,7 +144,7 @@ URI: [EVORA:Fungus](https://raw.githubusercontent.com/EVORA-project/evora-ontolo
           
     
     
-    Fungus --> "1..*" Keyword : keywords
+    Fungus --> "1..* _recommended_" Keyword : keywords
     click Keyword href "../Keyword"
 
         
@@ -237,7 +237,7 @@ URI: [EVORA:Fungus](https://raw.githubusercontent.com/EVORA-project/evora-ontolo
           
     
     
-    Fungus --> "0..1" RiskGroup : riskGroup
+    Fungus --> "0..1 _recommended_" RiskGroup : riskGroup
     click RiskGroup href "../RiskGroup"
 
         
@@ -334,19 +334,19 @@ URI: [EVORA:Fungus](https://raw.githubusercontent.com/EVORA-project/evora-ontolo
 | [usageRestrictions](usageRestrictions.md) | 0..1 <br/> [String](String.md) | Specifies any limitations or conditions on the use of the biological material... | [Product](Product.md) |
 | [accessPointURL](accessPointURL.md) | 1 <br/> [Uri](Uri.md) | The URL that permits to access to the product/service detailed description pa... | [ProductOrService](ProductOrService.md) |
 | [refSKU](refSKU.md) | 1 <br/> [String](String.md) | The reference or the stock keeping unit of the service or item provided in th... | [ProductOrService](ProductOrService.md) |
-| [unitDefinition](unitDefinition.md) | 0..1 <br/> [String](String.md) | A short description of what will be delivered by ordering one unit of this it... | [ProductOrService](ProductOrService.md) |
+| [unitDefinition](unitDefinition.md) | 0..1 _recommended_ <br/> [String](String.md) | A short description of what will be delivered by ordering one unit of this it... | [ProductOrService](ProductOrService.md) |
 | [category](category.md) | 1 <br/> [ProductCategory](ProductCategory.md) | The main category of the service or product | [ProductOrService](ProductOrService.md) |
-| [additionalCategory](additionalCategory.md) | * <br/> [ProductCategory](ProductCategory.md) | Any category apart from its main category in which this product or service ca... | [ProductOrService](ProductOrService.md) |
-| [unitCost](unitCost.md) | 1 <br/> [String](String.md) | The cost per access for one unit as defined by the unit definition | [ProductOrService](ProductOrService.md) |
+| [additionalCategory](additionalCategory.md) | * _recommended_ <br/> [ProductCategory](ProductCategory.md) | Any category apart from its main category in which this product or service ca... | [ProductOrService](ProductOrService.md) |
+| [unitCost](unitCost.md) | 1 _recommended_ <br/> [String](String.md) | The cost per access for one unit as defined by the unit definition | [ProductOrService](ProductOrService.md) |
 | [qualityGrading](qualityGrading.md) | 0..1 <br/> [String](String.md) | Information that permits to assess the quality level of what will be provided | [ProductOrService](ProductOrService.md) |
 | [pathogenIdentification](pathogenIdentification.md) | 1..* <br/> [PathogenIdentification](PathogenIdentification.md) | The identification of the pathogen or group of pathogens (e | [ProductOrService](ProductOrService.md) |
 | [relatedDOI](relatedDOI.md) | * <br/> [DOI](DOI.md) | Any DOI that can be related | [ProductOrService](ProductOrService.md) |
-| [riskGroup](riskGroup.md) | 0..1 <br/> [RiskGroup](RiskGroup.md) | The highest risk group related to this resource | [ProductOrService](ProductOrService.md) |
+| [riskGroup](riskGroup.md) | 0..1 _recommended_ <br/> [RiskGroup](RiskGroup.md) | The highest risk group related to this resource | [ProductOrService](ProductOrService.md) |
 | [biosafetyRestrictions](biosafetyRestrictions.md) | 0..1 <br/> [String](String.md) | Information about guidelines and regulations designed to prevent the exposure... | [ProductOrService](ProductOrService.md) |
-| [canItBeUsedToProduceGMO](canItBeUsedToProduceGMO.md) | 0..1 <br/> [Boolean](Boolean.md) | Indicates if the current service or product can be used to produce GMO | [ProductOrService](ProductOrService.md) |
+| [canItBeUsedToProduceGMO](canItBeUsedToProduceGMO.md) | 0..1 _recommended_ <br/> [Boolean](Boolean.md) | Indicates if the current service or product can be used to produce GMO | [ProductOrService](ProductOrService.md) |
 | [provider](provider.md) | 1 <br/> [Provider](Provider.md) | A provider of this product or service, as a specific organization | [ProductOrService](ProductOrService.md) |
 | [collection](collection.md) | 1..* <br/> [Collection](Collection.md) | The collection(s) to which belongs this item | [ProductOrService](ProductOrService.md) |
-| [keywords](keywords.md) | 1..* <br/> [Keyword](Keyword.md) | List of terms used to tag and categorize this Item | [ProductOrService](ProductOrService.md) |
+| [keywords](keywords.md) | 1..* _recommended_ <br/> [Keyword](Keyword.md) | List of terms used to tag and categorize this Item | [ProductOrService](ProductOrService.md) |
 | [availability](availability.md) | 1 <br/> [String](String.md) | The state or condition in which this item is accessible and ready for use or ... | [ProductOrService](ProductOrService.md) |
 | [complementaryDocument](complementaryDocument.md) | * <br/> [Document](Document.md) | Any complementary document that can be related to this Item | [ProductOrService](ProductOrService.md) |
 | [technicalRecommendation](technicalRecommendation.md) | 0..1 <br/> [String](String.md) | Expert advice or guidelines provided to ensure the optimal use, performance, ... | [ProductOrService](ProductOrService.md) |
@@ -355,20 +355,15 @@ URI: [EVORA:Fungus](https://raw.githubusercontent.com/EVORA-project/evora-ontolo
 | [certification](certification.md) | * <br/> [Certification](Certification.md) | Any certification related to the current product or service; e | [ProductOrService](ProductOrService.md) |
 | [internalReference](internalReference.md) | 0..1 <br/> [String](String.md) | Any reference or indication to be used for local retrieval purpose | [ProductOrService](ProductOrService.md) |
 | [note](note.md) | 0..1 <br/> [String](String.md) | An aditional information as a textual comment | [ProductOrService](ProductOrService.md) |
-| [contactPoint](contactPoint.md) | 0..1 <br/> [ContactPoint](ContactPoint.md) | An information that allows someone to establish communication | [ProductOrService](ProductOrService.md) |
+| [contactPoint](contactPoint.md) | 0..1 _recommended_ <br/> [ContactPoint](ContactPoint.md) | An information that allows someone to establish communication | [ProductOrService](ProductOrService.md) |
 | [name](name.md) | 1 <br/> [String](String.md) | The label that allows humans to identify the current item | [Nameable](Nameable.md) |
-| [description](description.md) | 0..1 <br/> [String](String.md) | A short explanation of the characteristics, features, or nature of the curren... | [Nameable](Nameable.md) |
+| [description](description.md) | 0..1 _recommended_ <br/> [String](String.md) | A short explanation of the characteristics, features, or nature of the curren... | [Nameable](Nameable.md) |
 
 
 
 
 
 
-
-## Aliases
-
-
-* fungus
 
 
 
@@ -392,8 +387,8 @@ URI: [EVORA:Fungus](https://raw.githubusercontent.com/EVORA-project/evora-ontolo
 
 | Mapping Type | Mapped Value |
 | ---  | ---  |
-| self | EVORA:Fungus |
-| native | EVORA:Fungus |
+| self | EVORAO:Fungus |
+| native | EVORAO:Fungus |
 | close | wd:Q764 |
 
 
@@ -414,8 +409,6 @@ name: Fungus
 description: The fungus as a biological material
 title: Fungus
 from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
-aliases:
-- fungus
 close_mappings:
 - wd:Q764
 is_a: Pathogen
@@ -431,8 +424,6 @@ name: Fungus
 description: The fungus as a biological material
 title: Fungus
 from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
-aliases:
-- fungus
 close_mappings:
 - wd:Q764
 is_a: Pathogen
@@ -876,6 +867,7 @@ attributes:
     - ProductOrService
     range: string
     required: false
+    recommended: true
     multivalued: false
   category:
     name: category
@@ -907,6 +899,7 @@ attributes:
     - ProductOrService
     range: ProductCategory
     required: false
+    recommended: true
     multivalued: true
   unitCost:
     name: unitCost
@@ -925,6 +918,7 @@ attributes:
     - ProductOrService
     range: string
     required: true
+    recommended: true
     multivalued: false
   qualityGrading:
     name: qualityGrading
@@ -964,8 +958,6 @@ attributes:
     description: Any DOI that can be related
     title: DOI
     from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
-    aliases:
-    - DOI
     close_mappings:
     - wdp:P356
     rank: 1000
@@ -984,8 +976,6 @@ attributes:
       group classification defined by the WHO laboratory biosafety manual
     title: risk group
     from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
-    aliases:
-    - risk group
     close_mappings:
     - wdp:P12663
     rank: 1000
@@ -995,6 +985,7 @@ attributes:
     - ProductOrService
     range: RiskGroup
     required: false
+    recommended: true
     multivalued: false
   biosafetyRestrictions:
     name: biosafetyRestrictions
@@ -1027,6 +1018,7 @@ attributes:
     - ProductOrService
     range: boolean
     required: false
+    recommended: true
     multivalued: false
   provider:
     name: provider
@@ -1046,8 +1038,6 @@ attributes:
     description: The collection(s) to which belongs this item
     title: collection
     from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
-    aliases:
-    - catalog
     rank: 1000
     alias: collection
     owner: Fungus
@@ -1070,6 +1060,7 @@ attributes:
     - ProductOrService
     range: Keyword
     required: true
+    recommended: true
     multivalued: true
   availability:
     name: availability
@@ -1201,6 +1192,7 @@ attributes:
     - ProductOrService
     range: ContactPoint
     required: false
+    recommended: true
     multivalued: false
   name:
     name: name
@@ -1246,6 +1238,7 @@ attributes:
     - Nameable
     range: string
     required: false
+    recommended: true
     multivalued: false
 
 ```

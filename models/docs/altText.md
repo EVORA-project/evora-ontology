@@ -4,7 +4,7 @@
 
 
 
-URI: [EVORA:altText](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#altText)
+URI: [EVORAO:altText](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#altText)
 
 
 
@@ -54,8 +54,8 @@ URI: [EVORA:altText](https://raw.githubusercontent.com/EVORA-project/evora-ontol
 
 | Mapping Type | Mapped Value |
 | ---  | ---  |
-| self | EVORA:altText |
-| native | EVORA:altText |
+| self | EVORAO:altText |
+| native | EVORAO:altText |
 
 
 

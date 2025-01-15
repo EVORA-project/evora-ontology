@@ -4,7 +4,7 @@
 
 
 
-URI: [EVORA:version](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#version)
+URI: [EVORAO:version](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#version)
 
 
 
@@ -54,8 +54,8 @@ URI: [EVORA:version](https://raw.githubusercontent.com/EVORA-project/evora-ontol
 
 | Mapping Type | Mapped Value |
 | ---  | ---  |
-| self | EVORA:version |
-| native | EVORA:version |
+| self | EVORAO:version |
+| native | EVORAO:version |
 
 
 

@@ -4,7 +4,7 @@
 
 
 
-URI: [EVORA:telephone](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#telephone)
+URI: [EVORAO:telephone](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#telephone)
 
 
 
@@ -54,8 +54,8 @@ URI: [EVORA:telephone](https://raw.githubusercontent.com/EVORA-project/evora-ont
 
 | Mapping Type | Mapped Value |
 | ---  | ---  |
-| self | EVORA:telephone |
-| native | EVORA:telephone |
+| self | EVORAO:telephone |
+| native | EVORAO:telephone |
 
 
 

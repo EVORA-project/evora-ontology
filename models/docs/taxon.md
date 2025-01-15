@@ -4,7 +4,7 @@
 
 
 
-URI: [EVORA:taxon](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#taxon)
+URI: [EVORAO:taxon](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#taxon)
 
 
 
@@ -18,8 +18,8 @@ URI: [EVORA:taxon](https://raw.githubusercontent.com/EVORA-project/evora-ontolog
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [PathogenIdentification](PathogenIdentification.md) | A collection of distinguishing information that enables the differentiation o... |  yes  |
 | [Taxonomy](Taxonomy.md) | Science of naming, defining and classifying organisms |  yes  |
+| [PathogenIdentification](PathogenIdentification.md) | A collection of distinguishing information that enables the differentiation o... |  yes  |
 
 
 
@@ -55,8 +55,8 @@ URI: [EVORA:taxon](https://raw.githubusercontent.com/EVORA-project/evora-ontolog
 
 | Mapping Type | Mapped Value |
 | ---  | ---  |
-| self | EVORA:taxon |
-| native | EVORA:taxon |
+| self | EVORAO:taxon |
+| native | EVORAO:taxon |
 
 
 

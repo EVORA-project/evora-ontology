@@ -4,7 +4,7 @@
 
 
 
-URI: [EVORA:biologicalPartOrigin](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#biologicalPartOrigin)
+URI: [EVORAO:biologicalPartOrigin](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#biologicalPartOrigin)
 
 
 
@@ -54,8 +54,8 @@ URI: [EVORA:biologicalPartOrigin](https://raw.githubusercontent.com/EVORA-projec
 
 | Mapping Type | Mapped Value |
 | ---  | ---  |
-| self | EVORA:biologicalPartOrigin |
-| native | EVORA:biologicalPartOrigin |
+| self | EVORAO:biologicalPartOrigin |
+| native | EVORAO:biologicalPartOrigin |
 
 
 

@@ -43,7 +43,7 @@ URI: [linkml:DateOrDatetime](https://w3id.org/linkml/DateOrDatetime)
 | Mapping Type | Mapped Value |
 | ---  | ---  |
 | self | linkml:DateOrDatetime |
-| native | EVORA:date_or_datetime |
+| native | EVORAO:date_or_datetime |
 
 
 

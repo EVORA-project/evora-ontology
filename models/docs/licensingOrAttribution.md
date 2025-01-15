@@ -4,7 +4,7 @@
 
 
 
-URI: [EVORA:licensingOrAttribution](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#licensingOrAttribution)
+URI: [EVORAO:licensingOrAttribution](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#licensingOrAttribution)
 
 
 
@@ -54,8 +54,8 @@ URI: [EVORA:licensingOrAttribution](https://raw.githubusercontent.com/EVORA-proj
 
 | Mapping Type | Mapped Value |
 | ---  | ---  |
-| self | EVORA:licensingOrAttribution |
-| native | EVORA:licensingOrAttribution |
+| self | EVORAO:licensingOrAttribution |
+| native | EVORAO:licensingOrAttribution |
 
 
 

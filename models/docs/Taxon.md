@@ -9,7 +9,7 @@ _Conceptual entity that groups one or more populations of an organism or organis
 
 
 
-URI: [EVORA:Taxon](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#Taxon)
+URI: [EVORAO:Taxon](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#Taxon)
 
 
 
@@ -81,7 +81,7 @@ URI: [EVORA:Taxon](https://raw.githubusercontent.com/EVORA-project/evora-ontolog
           
     
     
-    Taxon --> "*" Taxonomy : taxonomy
+    Taxon --> "* _recommended_" Taxonomy : taxonomy
     click Taxonomy href "../Taxonomy"
 
         
@@ -106,17 +106,17 @@ URI: [EVORA:Taxon](https://raw.githubusercontent.com/EVORA-project/evora-ontolog
 
 | Name | Cardinality and Range | Description | Inheritance |
 | ---  | --- | --- | --- |
-| [taxonomy](taxonomy.md) | * <br/> [Taxonomy](Taxonomy.md) | The taxonomy release(s) in which this entity exists | direct |
+| [taxonomy](taxonomy.md) | * _recommended_ <br/> [Taxonomy](Taxonomy.md) | The taxonomy release(s) in which this entity exists | direct |
 | [parentTaxon](parentTaxon.md) | 1 <br/> [Taxon](Taxon.md) | The parent taxon of the current taxon | direct |
 | [rank](rank.md) | 1 <br/> [TaxonomicRank](TaxonomicRank.md) | Relative level or position of the identified taxon in the taxonomy | direct |
 | [previouslyKnownAs](previouslyKnownAs.md) | * <br/> [Taxon](Taxon.md) | Any historic version of this taxon having a different name | direct |
 | [externalEquivalentTaxon](externalEquivalentTaxon.md) | * <br/> [Taxon](Taxon.md) | Any equivalent taxon in a different taxonomy if exists/known to serve as a br... | direct |
 | [taxonomicID](taxonomicID.md) | 1 <br/> [String](String.md) | The taxonomic identifier as a persistent identifier accross releases | direct |
-| [taxonomicNodeID](taxonomicNodeID.md) | 0..1 <br/> [String](String.md) | The taxonomic_Node Identifier as an identifier specific the current taxon in ... | direct |
+| [taxonomicNodeID](taxonomicNodeID.md) | 0..1 _recommended_ <br/> [String](String.md) | The taxonomic_Node Identifier as an identifier specific the current taxon in ... | direct |
 | [weight](weight.md) | 1 <br/> [Integer](Integer.md) | A numerical value indicating relative importance or priority, generally proce... | [Term](Term.md) |
 | [inVocabulary](inVocabulary.md) | 1 <br/> [Vocabulary](Vocabulary.md) | Terms belong to a specific vocabulary | [Term](Term.md) |
 | [name](name.md) | 1 <br/> [String](String.md) | The label that allows humans to identify the current item | [Nameable](Nameable.md) |
-| [description](description.md) | 0..1 <br/> [String](String.md) | A short explanation of the characteristics, features, or nature of the curren... | [Nameable](Nameable.md) |
+| [description](description.md) | 0..1 _recommended_ <br/> [String](String.md) | A short explanation of the characteristics, features, or nature of the curren... | [Nameable](Nameable.md) |
 
 
 
@@ -134,11 +134,6 @@ URI: [EVORA:Taxon](https://raw.githubusercontent.com/EVORA-project/evora-ontolog
 
 
 
-
-## Aliases
-
-
-* taxon
 
 
 
@@ -166,8 +161,8 @@ URI: [EVORA:Taxon](https://raw.githubusercontent.com/EVORA-project/evora-ontolog
 
 | Mapping Type | Mapped Value |
 | ---  | ---  |
-| self | EVORA:Taxon |
-| native | EVORA:Taxon |
+| self | EVORAO:Taxon |
+| native | EVORAO:Taxon |
 | exact | dwc:Taxon |
 | close | wd:Q16521 |
 
@@ -193,8 +188,6 @@ comments:
 - The taxonomic taxons connected to their parent so that a full lienage can be rebuild.
   Use of Data provider recommended
 from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
-aliases:
-- taxon
 exact_mappings:
 - dwc:Taxon
 close_mappings:
@@ -215,6 +208,7 @@ slot_usage:
     title: taxonomy
     range: Taxonomy
     required: false
+    recommended: true
     multivalued: true
   parentTaxon:
     name: parentTaxon
@@ -279,6 +273,7 @@ slot_usage:
     - dwc:taxonID
     range: string
     required: false
+    recommended: true
     multivalued: false
 
 ```
@@ -296,8 +291,6 @@ comments:
 - The taxonomic taxons connected to their parent so that a full lienage can be rebuild.
   Use of Data provider recommended
 from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
-aliases:
-- taxon
 exact_mappings:
 - dwc:Taxon
 close_mappings:
@@ -310,6 +303,7 @@ slot_usage:
     title: taxonomy
     range: Taxonomy
     required: false
+    recommended: true
     multivalued: true
   parentTaxon:
     name: parentTaxon
@@ -374,6 +368,7 @@ slot_usage:
     - dwc:taxonID
     range: string
     required: false
+    recommended: true
     multivalued: false
 attributes:
   taxonomy:
@@ -389,6 +384,7 @@ attributes:
     - Taxon
     range: Taxonomy
     required: false
+    recommended: true
     multivalued: true
   parentTaxon:
     name: parentTaxon
@@ -490,6 +486,7 @@ attributes:
     - Taxon
     range: string
     required: false
+    recommended: true
     multivalued: false
   weight:
     name: weight
@@ -515,8 +512,6 @@ attributes:
     description: Terms belong to a specific vocabulary
     title: in Vocabulary
     from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
-    aliases:
-    - catalog
     close_mappings:
     - wdp:P972
     rank: 1000
@@ -571,6 +566,7 @@ attributes:
     - Nameable
     range: string
     required: false
+    recommended: true
     multivalued: false
 
 ```

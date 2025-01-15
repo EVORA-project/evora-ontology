@@ -11,7 +11,7 @@ _A curated collection of metadata about resources_
 * __NOTE__: this is an abstract class and should not be instantiated directly
 
 
-URI: [EVORA:Catalogue](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#Catalogue)
+URI: [EVORAO:Catalogue](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#Catalogue)
 
 
 
@@ -59,18 +59,13 @@ URI: [EVORA:Catalogue](https://raw.githubusercontent.com/EVORA-project/evora-ont
 | Name | Cardinality and Range | Description | Inheritance |
 | ---  | --- | --- | --- |
 | [name](name.md) | 1 <br/> [String](String.md) | The label that allows humans to identify the current item | [Nameable](Nameable.md) |
-| [description](description.md) | 0..1 <br/> [String](String.md) | A short explanation of the characteristics, features, or nature of the curren... | [Nameable](Nameable.md) |
+| [description](description.md) | 0..1 _recommended_ <br/> [String](String.md) | A short explanation of the characteristics, features, or nature of the curren... | [Nameable](Nameable.md) |
 
 
 
 
 
 
-
-## Aliases
-
-
-* catalogue
 
 
 
@@ -94,8 +89,8 @@ URI: [EVORA:Catalogue](https://raw.githubusercontent.com/EVORA-project/evora-ont
 
 | Mapping Type | Mapped Value |
 | ---  | ---  |
-| self | EVORA:Catalogue |
-| native | EVORA:Catalogue |
+| self | EVORAO:Catalogue |
+| native | EVORAO:Catalogue |
 | exact | dcat:Catalog |
 | close | wd:Q2352616, schema:Dataset |
 
@@ -117,8 +112,6 @@ name: Catalogue
 description: A curated collection of metadata about resources
 title: Catalogue
 from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
-aliases:
-- catalogue
 exact_mappings:
 - dcat:Catalog
 close_mappings:
@@ -138,8 +131,6 @@ name: Catalogue
 description: A curated collection of metadata about resources
 title: Catalogue
 from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
-aliases:
-- catalogue
 exact_mappings:
 - dcat:Catalog
 close_mappings:
@@ -192,6 +183,7 @@ attributes:
     - Nameable
     range: string
     required: false
+    recommended: true
     multivalued: false
 
 ```

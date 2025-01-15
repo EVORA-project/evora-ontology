@@ -14,56 +14,65 @@
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-<https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/EVORA_Ontology> a linkml:SchemaDefinition ;
-    dcterms:contributor <https://orcid.org/0000-0002-2042-2839> ;
+<https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/EVORAO> a linkml:SchemaDefinition ;
+    dcterms:contributor <https://github.com/Angatar>,
+        <https://github.com/jamesamcl>,
+        <https://orcid.org/0000-0002-1257-6862>,
+        <https://orcid.org/0000-0002-2004-4073>,
+        <https://orcid.org/0000-0002-2042-2839>,
+        <https://orcid.org/0000-0002-5080-3456>,
+        <https://orcid.org/0000-0002-6963-8673>,
+        <https://orcid.org/0000-0003-3035-4195>,
+        <https://orcid.org/0000-0003-3067-827X>,
+        <https://orcid.org/0000-0003-4073-7456> ;
     dcterms:license "https://creativecommons.org/publicdomain/zero/1.0/" ;
-    dcterms:title "European Viral Outbreak Research Alliance Ontology" ;
+    dcterms:title "European Viral Outbreak Response Alliance Ontology" ;
     pav:createdBy <https://github.com/Angatar> ;
-    pav:version "1.0.7370" ;
+    pav:version "1.0.7498" ;
     schema1:inLanguage "en" ;
     skos:definition "The EVORA Ontology harmonizes metadata in virology to describe viral resources, their derived products, and services. It aligns with FAIR principles to ensure interoperability, accessibility, and reusability across various projects. The EVORA Ontology aims to support preparedness and response to pandemics." ;
-    sh:declare [ sh:namespace <http://www.w3.org/2006/vcard/ns#> ;
-            sh:prefix "vcard" ],
-        [ sh:namespace <http://www.w3.org/ns/adms#> ;
-            sh:prefix "adms" ],
-        [ sh:namespace <http://purl.obolibrary.org/obo/IAO_> ;
-            sh:prefix "IAO" ],
-        [ sh:namespace rdf: ;
-            sh:prefix "rdf" ],
-        [ sh:namespace <http://www.wikidata.org/prop/> ;
-            sh:prefix "wdp" ],
-        [ sh:namespace dcat: ;
-            sh:prefix "dcat" ],
-        [ sh:namespace pav: ;
-            sh:prefix "pav" ],
-        [ sh:namespace foaf: ;
-            sh:prefix "foaf" ],
-        [ sh:namespace <http://www.w3.org/ns/regorg#> ;
+    sh:declare [ sh:namespace <http://www.w3.org/ns/regorg#> ;
             sh:prefix "rov" ],
-        [ sh:namespace rdfs: ;
-            sh:prefix "rdfs" ],
-        [ sh:namespace linkml: ;
-            sh:prefix "linkml" ],
-        [ sh:namespace owl: ;
-            sh:prefix "owl" ],
+        [ sh:namespace <http://www.w3.org/2006/vcard/ns#> ;
+            sh:prefix "vcard" ],
         [ sh:namespace dcmitype: ;
             sh:prefix "dcmi" ],
+        [ sh:namespace linkml: ;
+            sh:prefix "linkml" ],
+        [ sh:namespace <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#> ;
+            sh:prefix "EVORAO" ],
         [ sh:namespace dcterms: ;
             sh:prefix "dct" ],
-        [ sh:namespace <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#> ;
-            sh:prefix "EVORA" ],
-        [ sh:namespace <http://www.wikidata.org/entity/> ;
-            sh:prefix "wd" ],
         [ sh:namespace <http://rs.tdwg.org/dwc/terms/> ;
             sh:prefix "dwc" ],
-        [ sh:namespace prov: ;
-            sh:prefix "prov" ],
+        [ sh:namespace xsd: ;
+            sh:prefix "xsd" ],
+        [ sh:namespace owl: ;
+            sh:prefix "owl" ],
+        [ sh:namespace <http://www.w3.org/ns/adms#> ;
+            sh:prefix "adms" ],
+        [ sh:namespace pav: ;
+            sh:prefix "pav" ],
+        [ sh:namespace rdfs: ;
+            sh:prefix "rdfs" ],
         [ sh:namespace schema1: ;
             sh:prefix "schema" ],
+        [ sh:namespace dcat: ;
+            sh:prefix "dcat" ],
         [ sh:namespace skos: ;
             sh:prefix "skos" ],
-        [ sh:namespace xsd: ;
-            sh:prefix "xsd" ] ;
+        [ sh:namespace <http://www.wikidata.org/entity/> ;
+            sh:prefix "wd" ],
+        [ sh:namespace rdf: ;
+            sh:prefix "rdf" ],
+        [ sh:namespace <http://purl.obolibrary.org/obo/IAO_> ;
+            sh:prefix "IAO" ],
+        [ sh:namespace prov: ;
+            sh:prefix "prov" ],
+        [ sh:namespace foaf: ;
+            sh:prefix "foaf" ],
+        [ sh:namespace <http://www.wikidata.org/prop/> ;
+            sh:prefix "wdp" ] ;
     linkml:classes <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/AlternateName>,
         <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Antibody>,
         <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Audio>,
@@ -141,9 +150,9 @@
         <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Virus>,
         <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/VirusName>,
         <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Vocabulary> ;
-    linkml:default_prefix "EVORA" ;
+    linkml:default_prefix "EVORAO" ;
     linkml:default_range <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/string> ;
-    linkml:generation_date "2025-01-15T11:06:33"^^xsd:dateTime ;
+    linkml:generation_date "2025-01-15T14:54:08"^^xsd:dateTime ;
     linkml:id <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#> ;
     linkml:imports linkml:types ;
     linkml:metamodel_version "1.7.0" ;
@@ -543,8 +552,8 @@
         <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/versionOf>,
         <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/weight> ;
     linkml:source_file "evora_schema.yaml" ;
-    linkml:source_file_date "2025-01-15T11:05:00"^^xsd:dateTime ;
-    linkml:source_file_size 131165 ;
+    linkml:source_file_date "2025-01-15T14:52:32"^^xsd:dateTime ;
+    linkml:source_file_size 130378 ;
     linkml:types <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/boolean>,
         <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/curie>,
         <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/date>,
@@ -567,7 +576,6 @@
 
 <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Audio> a linkml:ClassDefinition ;
     dcterms:title "Audio" ;
-    skos:altLabel "audio file" ;
     skos:closeMatch <wd:Q26987229> ;
     skos:definition "Subclass of File representing sound recordings or audio tracks" ;
     skos:inScheme <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#> ;
@@ -583,7 +591,6 @@
 
 <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Bacterium> a linkml:ClassDefinition ;
     dcterms:title "Bacterium" ;
-    skos:altLabel "bacteria" ;
     skos:closeMatch <wd:Q10876> ;
     skos:definition "The bacterium as a biological material" ;
     skos:inScheme <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#> ;
@@ -645,7 +652,6 @@
 
 <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Fungus> a linkml:ClassDefinition ;
     dcterms:title "Fungus" ;
-    skos:altLabel "fungus" ;
     skos:closeMatch <wd:Q764> ;
     skos:definition "The fungus as a biological material" ;
     skos:inScheme <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#> ;
@@ -707,7 +713,6 @@
 
 <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Prion> a linkml:ClassDefinition ;
     dcterms:title "Prion" ;
-    skos:altLabel "prion" ;
     skos:closeMatch <wd:Q47051> ;
     skos:definition "The prion as a biological material" ;
     skos:inScheme <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#> ;
@@ -769,7 +774,6 @@
 
 <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Protozoan> a linkml:ClassDefinition ;
     dcterms:title "Protozoan" ;
-    skos:altLabel "protozoa" ;
     skos:closeMatch <wd:Q101274> ;
     skos:definition "The protozoan as a biological material" ;
     skos:inScheme <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#> ;
@@ -831,7 +835,6 @@
 
 <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Video> a linkml:ClassDefinition ;
     dcterms:title "Video" ;
-    skos:altLabel "video file" ;
     skos:closeMatch <wd:Q98405806> ;
     skos:definition "Subclass of File representing moving visual media, such as recordings, presentations, or movies" ;
     skos:inScheme <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#> ;
@@ -847,7 +850,6 @@
 
 <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Viroid> a linkml:ClassDefinition ;
     dcterms:title "Viroid" ;
-    skos:altLabel "viroid" ;
     skos:closeMatch <wd:Q209917> ;
     skos:definition "The viroid as a biological material" ;
     skos:inScheme <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#> ;
@@ -1060,7 +1062,6 @@
 
 <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/AlternateName_alternateName> a linkml:SlotDefinition ;
     dcterms:title "alternate name" ;
-    skos:altLabel "alternative name" ;
     skos:closeMatch <http://www.wikidata.org/prop/P4970> ;
     skos:definition "Any known alternate name related to this name" ;
     skos:inScheme <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#> ;
@@ -1079,7 +1080,6 @@
 
 <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/AlternateName_sourceOfInformation> a linkml:SlotDefinition ;
     dcterms:title "source of information" ;
-    skos:altLabel "stated in" ;
     skos:closeMatch <http://www.wikidata.org/prop/P248> ;
     skos:definition "The name of the origin from which knowledge is obtained. This can include any entity that provides information" ;
     skos:inScheme <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#> ;
@@ -1265,6 +1265,7 @@
     linkml:multivalued true ;
     linkml:owner <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Collection> ;
     linkml:range <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/ProductOrService> ;
+    linkml:recommended true ;
     linkml:slot_uri <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#collectionItem> ;
     linkml:usage_slot_name "collectionItem" .
 
@@ -1334,6 +1335,7 @@
     linkml:is_usage_slot true ;
     linkml:owner <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/ContactPoint> ;
     linkml:range <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/string> ;
+    linkml:recommended true ;
     linkml:slot_uri <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#email> ;
     linkml:usage_slot_name "email" .
 
@@ -1350,6 +1352,7 @@
     linkml:is_usage_slot true ;
     linkml:owner <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/ContactPoint> ;
     linkml:range <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/string> ;
+    linkml:recommended true ;
     linkml:slot_uri <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#oRCIDiD> ;
     linkml:usage_slot_name "oRCIDiD" .
 
@@ -1401,6 +1404,7 @@
     linkml:is_usage_slot true ;
     linkml:owner <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/ContactPoint> ;
     linkml:range <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/string> ;
+    linkml:recommended true ;
     linkml:slot_uri <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#telephone> ;
     linkml:usage_slot_name "telephone" .
 
@@ -1422,7 +1426,6 @@
 
 <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Data> a linkml:ClassDefinition ;
     dcterms:title "Data" ;
-    skos:altLabel "data" ;
     skos:closeMatch <wd:Q42848> ;
     skos:definition "Subclass of File representing structured or unstructured datasets, often used for analysis, storage, or transfer of information" ;
     skos:inScheme <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#> ;
@@ -1506,7 +1509,6 @@
 
 <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/DataProvider_loginURL> a linkml:SlotDefinition ;
     dcterms:title "login URL" ;
-    skos:altLabel "formatter URL" ;
     skos:closeMatch dcat:endpointDescription,
         <http://www.wikidata.org/prop/P1630> ;
     skos:definition "The URL template that allows to log in if required" ;
@@ -1558,7 +1560,6 @@
 
 <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/DataProvider_queryURL> a linkml:SlotDefinition ;
     dcterms:title "query URL" ;
-    skos:altLabel "formatter URL" ;
     skos:closeMatch <http://www.wikidata.org/prop/P1630> ;
     skos:definition "The URL template that allows to get the content" ;
     skos:exactMatch dcat:endpointURL ;
@@ -1595,7 +1596,6 @@
 
 <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/DataService> a linkml:ClassDefinition ;
     dcterms:title "Data Service" ;
-    skos:altLabel "web service" ;
     skos:closeMatch schema1:WebAPI,
         <wd:Q193424> ;
     skos:definition "A collection of operations that provides access to one or more datasets or data processing functions" ;
@@ -1674,7 +1674,6 @@
 
 <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/ExpressionVector> a linkml:ClassDefinition ;
     dcterms:title "Expression vector" ;
-    skos:altLabel "expression vector" ;
     skos:closeMatch <wd:Q5421712> ;
     skos:definition "A reference to an expression vector plasmid, typically embedding a resistance marker for inducible protein expression" ;
     skos:inScheme <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#> ;
@@ -1818,6 +1817,7 @@
     linkml:is_usage_slot true ;
     linkml:owner <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Image> ;
     linkml:range <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/string> ;
+    linkml:recommended true ;
     linkml:slot_uri <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#altText> ;
     linkml:usage_slot_name "altText" .
 
@@ -1836,7 +1836,6 @@
 
 <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Journal> a linkml:ClassDefinition ;
     dcterms:title "Journal" ;
-    skos:altLabel "scientific journal" ;
     skos:closeMatch <wd:Q5633421> ;
     skos:definition "Periodical journal publishing scientific research" ;
     skos:inScheme <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#> ;
@@ -1851,7 +1850,6 @@
 
 <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Keyword> a linkml:ClassDefinition ;
     dcterms:title "Keyword" ;
-    skos:altLabel "subject heading" ;
     skos:closeMatch <wd:Q1128340> ;
     skos:definition "A term or phrase used to tag and categorize content" ;
     skos:inScheme <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#> ;
@@ -1926,6 +1924,7 @@
     linkml:is_usage_slot true ;
     linkml:owner <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/MSDS> ;
     linkml:range <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/string> ;
+    linkml:recommended true ;
     linkml:slot_uri <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#accidentalReleaseMeasures> ;
     linkml:usage_slot_name "accidentalReleaseMeasures" .
 
@@ -1941,6 +1940,7 @@
     linkml:is_usage_slot true ;
     linkml:owner <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/MSDS> ;
     linkml:range <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/string> ;
+    linkml:recommended true ;
     linkml:slot_uri <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#disposalConsiderations> ;
     linkml:usage_slot_name "disposalConsiderations" .
 
@@ -1956,6 +1956,7 @@
     linkml:is_usage_slot true ;
     linkml:owner <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/MSDS> ;
     linkml:range <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/string> ;
+    linkml:recommended true ;
     linkml:slot_uri <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#ecologicalInformation> ;
     linkml:usage_slot_name "ecologicalInformation" .
 
@@ -1971,6 +1972,7 @@
     linkml:is_usage_slot true ;
     linkml:owner <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/MSDS> ;
     linkml:range <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/string> ;
+    linkml:recommended true ;
     linkml:slot_uri <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#exposureControlsPersonalProtection> ;
     linkml:usage_slot_name "exposureControlsPersonalProtection" .
 
@@ -1986,6 +1988,7 @@
     linkml:is_usage_slot true ;
     linkml:owner <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/MSDS> ;
     linkml:range <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/string> ;
+    linkml:recommended true ;
     linkml:slot_uri <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#fireFightingMeasures> ;
     linkml:usage_slot_name "fireFightingMeasures" .
 
@@ -2001,6 +2004,7 @@
     linkml:is_usage_slot true ;
     linkml:owner <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/MSDS> ;
     linkml:range <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/string> ;
+    linkml:recommended true ;
     linkml:slot_uri <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#firstAidMeasures> ;
     linkml:usage_slot_name "firstAidMeasures" .
 
@@ -2016,6 +2020,7 @@
     linkml:is_usage_slot true ;
     linkml:owner <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/MSDS> ;
     linkml:range <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/string> ;
+    linkml:recommended true ;
     linkml:slot_uri <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#furtherInformation> ;
     linkml:usage_slot_name "furtherInformation" .
 
@@ -2031,6 +2036,7 @@
     linkml:is_usage_slot true ;
     linkml:owner <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/MSDS> ;
     linkml:range <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/string> ;
+    linkml:recommended true ;
     linkml:slot_uri <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#handlingAndStorage> ;
     linkml:usage_slot_name "handlingAndStorage" .
 
@@ -2046,6 +2052,7 @@
     linkml:is_usage_slot true ;
     linkml:owner <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/MSDS> ;
     linkml:range <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/string> ;
+    linkml:recommended true ;
     linkml:slot_uri <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#hazardsIdentification> ;
     linkml:usage_slot_name "hazardsIdentification" .
 
@@ -2079,6 +2086,7 @@
     linkml:is_usage_slot true ;
     linkml:owner <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/MSDS> ;
     linkml:range <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/string> ;
+    linkml:recommended true ;
     linkml:slot_uri <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#physicalChemicalProperties> ;
     linkml:usage_slot_name "physicalChemicalProperties" .
 
@@ -2094,6 +2102,7 @@
     linkml:is_usage_slot true ;
     linkml:owner <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/MSDS> ;
     linkml:range <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/string> ;
+    linkml:recommended true ;
     linkml:slot_uri <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#regulatoryInformation> ;
     linkml:usage_slot_name "regulatoryInformation" .
 
@@ -2109,6 +2118,7 @@
     linkml:is_usage_slot true ;
     linkml:owner <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/MSDS> ;
     linkml:range <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/string> ;
+    linkml:recommended true ;
     linkml:slot_uri <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#stabilityAndReactivity> ;
     linkml:usage_slot_name "stabilityAndReactivity" .
 
@@ -2124,6 +2134,7 @@
     linkml:is_usage_slot true ;
     linkml:owner <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/MSDS> ;
     linkml:range <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/string> ;
+    linkml:recommended true ;
     linkml:slot_uri <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#toxicologicalInformation> ;
     linkml:usage_slot_name "toxicologicalInformation" .
 
@@ -2139,6 +2150,7 @@
     linkml:is_usage_slot true ;
     linkml:owner <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/MSDS> ;
     linkml:range <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/string> ;
+    linkml:recommended true ;
     linkml:slot_uri <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#transportInformation> ;
     linkml:usage_slot_name "transportInformation" .
 
@@ -2177,7 +2189,6 @@
 
 <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/NaturalPartOrigin_countryOfCollection> a linkml:SlotDefinition ;
     dcterms:title "country of collection" ;
-    skos:altLabel "country of origin" ;
     skos:closeMatch dcterms:spatial,
         <http://rs.tdwg.org/dwc/terms/country> ;
     skos:definition "The geographical location where the sample was collected in situ. Used for Nagoya/CBD; equivalent to \"country of origin\"." ;
@@ -2256,6 +2267,7 @@
     linkml:is_usage_slot true ;
     linkml:owner <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/NucleicAcid> ;
     linkml:range <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/ExpressionVector> ;
+    linkml:recommended true ;
     linkml:slot_uri <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#clonedIntoPlasmid> ;
     linkml:usage_slot_name "clonedIntoPlasmid" .
 
@@ -2370,6 +2382,7 @@
     linkml:multivalued true ;
     linkml:owner <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/NucleicAcid> ;
     linkml:range <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/PlasmidSelection> ;
+    linkml:recommended true ;
     linkml:slot_uri <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#pasmidSelection> ;
     linkml:usage_slot_name "pasmidSelection" .
 
@@ -2473,7 +2486,6 @@
 
 <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/PDBReference> a linkml:ClassDefinition ;
     dcterms:title "PDB reference" ;
-    skos:altLabel "Wikidata property to identify proteins" ;
     skos:closeMatch <wdp:Q42415644> ;
     skos:definition "Identifier for 3D structural data as per the PDB (Protein Data Bank) database" ;
     skos:inScheme <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#> ;
@@ -2514,6 +2526,7 @@
     linkml:multivalued true ;
     linkml:owner <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/PathogenIdentification> ;
     linkml:range <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/string> ;
+    linkml:recommended true ;
     linkml:slot_uri <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#hostType> ;
     linkml:usage_slot_name "hostType" .
 
@@ -2592,6 +2605,7 @@
     linkml:is_usage_slot true ;
     linkml:owner <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/PathogenIdentification> ;
     linkml:range <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/string> ;
+    linkml:recommended true ;
     linkml:slot_uri <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#strain> ;
     linkml:usage_slot_name "strain" .
 
@@ -2656,6 +2670,7 @@
     linkml:is_usage_slot true ;
     linkml:owner <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Person> ;
     linkml:range <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/string> ;
+    linkml:recommended true ;
     linkml:slot_uri <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#oRCIDiD> ;
     linkml:usage_slot_name "oRCIDiD" .
 
@@ -2690,7 +2705,6 @@
 
 <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/ProductionCellLine> a linkml:ClassDefinition ;
     dcterms:title "Production cell line" ;
-    skos:altLabel "cell line" ;
     skos:closeMatch <wd:Q21014462> ;
     skos:definition "A population of cells that originates from a primary culture, adapted to grow and divide under laboratory conditions. Used in biotechnology to consistently produce biological substances" ;
     skos:inScheme <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#> ;
@@ -2864,7 +2878,6 @@
 
 <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Protein_relatedPDB> a linkml:SlotDefinition ;
     dcterms:title "related PDB" ;
-    skos:altLabel "PDB structure ID" ;
     skos:closeMatch <http://www.wikidata.org/prop/P638> ;
     skos:definition "Identifier for 3D structural data as per the PDB (Protein Data Bank) database" ;
     skos:inScheme <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#> ;
@@ -3051,7 +3064,6 @@
 
 <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/RI> a linkml:ClassDefinition ;
     dcterms:title "RI" ;
-    skos:altLabel "research infrastructure" ;
     skos:closeMatch <wd:Q1438053> ;
     skos:definition "A research infrastructure" ;
     skos:inScheme <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#> ;
@@ -3097,13 +3109,13 @@
     linkml:multivalued true ;
     linkml:owner <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/RecombinantPartIdentification> ;
     linkml:range <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Sequence> ;
+    linkml:recommended true ;
     linkml:required true ;
     linkml:slot_uri <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#sequence> ;
     linkml:usage_slot_name "sequence" .
 
 <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/RiskGroup> a linkml:ClassDefinition ;
     dcterms:title "Risk group" ;
-    skos:altLabel "risk group" ;
     skos:closeMatch <wd:Q125449255> ;
     skos:definition "Risk group classification guides initial handling of biological agents in labs but doesn't systematically equate to biosafety levels. Actual risk varies with the agent, procedures, and personnel competence" ;
     skos:inScheme <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#> ;
@@ -3181,6 +3193,7 @@
     linkml:multivalued true ;
     linkml:owner <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Sequence> ;
     linkml:range <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/SequenceReference> ;
+    linkml:recommended true ;
     linkml:slot_uri <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#sequenceReference> ;
     linkml:usage_slot_name "sequenceReference" .
 
@@ -3240,6 +3253,7 @@
     linkml:is_usage_slot true ;
     linkml:owner <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/SyntheticPartOrigin> ;
     linkml:range <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/string> ;
+    linkml:recommended true ;
     linkml:slot_uri <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#descriptionOfModificationsMadeFromTheReferenceSequences> ;
     linkml:usage_slot_name "descriptionOfModificationsMadeFromTheReferenceSequences" .
 
@@ -3363,6 +3377,7 @@
     linkml:is_usage_slot true ;
     linkml:owner <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Taxon> ;
     linkml:range <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/string> ;
+    linkml:recommended true ;
     linkml:slot_uri <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#taxonomicNodeID> ;
     linkml:usage_slot_name "taxonomicNodeID" .
 
@@ -3380,6 +3395,7 @@
     linkml:multivalued true ;
     linkml:owner <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Taxon> ;
     linkml:range <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Taxonomy> ;
+    linkml:recommended true ;
     linkml:slot_uri <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#taxonomy> ;
     linkml:usage_slot_name "taxonomy" .
 
@@ -3516,7 +3532,6 @@
 
 <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Variant> a linkml:ClassDefinition ;
     dcterms:title "Variant" ;
-    skos:altLabel "genetic variant" ;
     skos:closeMatch <wd:Q104795308> ;
     skos:definition "An organism with one or more new mutations is referred to as a “variant” of the original organism if not sufficiently different to be termed a distinct strain" ;
     skos:inScheme <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#> ;
@@ -3533,7 +3548,6 @@
 
 <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Version_ID> a linkml:SlotDefinition ;
     dcterms:title "ID" ;
-    skos:altLabel "edition number" ;
     skos:closeMatch schema1:version,
         <http://www.wikidata.org/prop/P393> ;
     skos:definition "The version identifier" ;
@@ -3568,7 +3582,6 @@
 
 <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/VirusName> a linkml:ClassDefinition ;
     dcterms:title "Virus Name" ;
-    skos:altLabel "virus name" ;
     skos:closeMatch <wd:Q125481078> ;
     skos:definition "A virus vernacular name or a name that describes a group of viruses" ;
     skos:inScheme <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#> ;
@@ -3647,6 +3660,7 @@
     linkml:multivalued true ;
     linkml:owner <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Vocabulary> ;
     linkml:range <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Term> ;
+    linkml:recommended true ;
     linkml:slot_uri <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#term> ;
     linkml:usage_slot_name "term" .
 
@@ -5017,6 +5031,7 @@
     linkml:is_usage_slot true ;
     linkml:owner <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Antibody> ;
     linkml:range <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/string> ;
+    linkml:recommended true ;
     linkml:slot_uri <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#productionSystem> ;
     linkml:usage_slot_name "productionSystem" .
 
@@ -5034,6 +5049,7 @@
     linkml:multivalued true ;
     linkml:owner <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Antibody> ;
     linkml:range <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/SequenceReference> ;
+    linkml:recommended true ;
     linkml:slot_uri <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#sequenceReference> ;
     linkml:usage_slot_name "sequenceReference" .
 
@@ -5071,7 +5087,6 @@
 
 <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/DOI> a linkml:ClassDefinition ;
     dcterms:title "DOI" ;
-    skos:altLabel "DOI" ;
     skos:closeMatch <wd:Q25670> ;
     skos:definition "A unique string identifier assigned to a digital object, providing a permanent link for reliable citation and access.  The Digital Object Identifier (DOI) is a persistent identifier that is an ISO standard" ;
     skos:inScheme <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#> ;
@@ -5086,7 +5101,6 @@
 
 <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Document> a linkml:ClassDefinition ;
     dcterms:title "Document" ;
-    skos:altLabel "document" ;
     skos:closeMatch <wd:Q49848> ;
     skos:definition "Subclass of File representing textual or written files such as reports, manuals, or forms" ;
     skos:inScheme <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#> ;
@@ -5102,7 +5116,6 @@
 
 <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/GeographicalOrigin> a linkml:ClassDefinition ;
     dcterms:title "Geographical origin" ;
-    skos:altLabel "origin" ;
     skos:closeMatch <wd:Q3885844> ;
     skos:definition "The specific location or region where a physical item, originates or is naturally found" ;
     skos:exactMatch <dct:Location> ;
@@ -5119,7 +5132,6 @@
 
 <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/NamedDataset> a linkml:ClassDefinition ;
     dcterms:title "Named Dataset" ;
-    skos:altLabel "data set" ;
     skos:closeMatch schema1:DataCatalog,
         <wd:Q1172284> ;
     skos:definition "A collection of data, that has a name and can have a description, published or curated by a single agent, and available for access" ;
@@ -5135,7 +5147,6 @@
 
 <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/ProteinTag> a linkml:ClassDefinition ;
     dcterms:title "Protein tag" ;
-    skos:altLabel "protein tag" ;
     skos:closeMatch <wd:Q645590> ;
     skos:definition "Peptide sequence genetically grafted onto a recombinant protein" ;
     skos:inScheme <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#> ;
@@ -5337,7 +5348,6 @@
 
 <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Catalogue> a linkml:ClassDefinition ;
     dcterms:title "Catalogue" ;
-    skos:altLabel "catalogue" ;
     skos:closeMatch schema1:Dataset,
         <wd:Q2352616> ;
     skos:definition "A curated collection of metadata about resources" ;
@@ -5353,7 +5363,6 @@
 
 <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/CommonName_alternateName> a linkml:SlotDefinition ;
     dcterms:title "alternate name" ;
-    skos:altLabel "alternative name" ;
     skos:closeMatch <http://www.wikidata.org/prop/P4970> ;
     skos:definition "Any known alternate name related to this name" ;
     skos:inScheme <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#> ;
@@ -5373,7 +5382,6 @@
 
 <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/CommonName_sourceOfInformation> a linkml:SlotDefinition ;
     dcterms:title "source of information" ;
-    skos:altLabel "stated in" ;
     skos:closeMatch <http://www.wikidata.org/prop/P248> ;
     skos:definition "The name of the origin from which knowledge is obtained. This can include any entity that provides information" ;
     skos:inScheme <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#> ;
@@ -5403,6 +5411,7 @@
     linkml:is_usage_slot true ;
     linkml:owner <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Organization> ;
     linkml:range <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/AlternateName> ;
+    linkml:recommended true ;
     linkml:slot_uri <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#alternateName> ;
     linkml:usage_slot_name "alternateName" .
 
@@ -5419,6 +5428,7 @@
     linkml:is_usage_slot true ;
     linkml:owner <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Organization> ;
     linkml:range <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Country> ;
+    linkml:recommended true ;
     linkml:slot_uri <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#country> ;
     linkml:usage_slot_name "country" .
 
@@ -5454,7 +5464,6 @@
 
 <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Person> a linkml:ClassDefinition ;
     dcterms:title "Person" ;
-    skos:altLabel "person" ;
     skos:closeMatch <vcard:Individual>,
         <wd:Q215627> ;
     skos:definition "An individual" ;
@@ -5483,7 +5492,6 @@
 
 <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Hybridoma> a linkml:ClassDefinition ;
     dcterms:title "Hybridoma" ;
-    skos:altLabel "hybridoma" ;
     skos:closeMatch <wd:Q27554370> ;
     skos:definition "An hybridoma that provides antibodies that can be related to a pathogen" ;
     skos:inScheme <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#> ;
@@ -5593,6 +5601,7 @@
     linkml:is_usage_slot true ;
     linkml:owner <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/PersonOrOrganization> ;
     linkml:range <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/ContactPoint> ;
+    linkml:recommended true ;
     linkml:slot_uri <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#contactPoint> ;
     linkml:usage_slot_name "contactPoint" .
 
@@ -5647,7 +5656,6 @@
 
 <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/TaxonomicRank> a linkml:ClassDefinition ;
     dcterms:title "Taxonomic rank" ;
-    skos:altLabel "taxonomic rank" ;
     skos:closeMatch <wd:Q427626> ;
     skos:definition "The possible taxonomic ranks and their description" ;
     skos:inScheme <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#> ;
@@ -5972,7 +5980,6 @@
 
 <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Country> a linkml:ClassDefinition ;
     dcterms:title "Country" ;
-    skos:altLabel "country" ;
     skos:closeMatch <wd:Q6256> ;
     skos:definition "The country as of ISO3166" ;
     skos:inScheme <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#> ;
@@ -5989,7 +5996,6 @@
 
 <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/ProductCategory> a linkml:ClassDefinition ;
     dcterms:title "Product category" ;
-    skos:altLabel "product category" ;
     skos:closeMatch <wd:Q63981612> ;
     skos:definition "A term used to classify a group of products that share common characteristics or functions, which helps in their organization" ;
     skos:inScheme <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#> ;
@@ -6005,7 +6011,6 @@
 
 <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Dataset> a linkml:ClassDefinition ;
     dcterms:title "Dataset" ;
-    skos:altLabel "data set" ;
     skos:closeMatch schema1:DataCatalog,
         <wd:Q1172284> ;
     skos:definition "A collection of data, published or curated by a single agent, and available for access" ;
@@ -6018,7 +6023,6 @@
 
 <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Image> a linkml:ClassDefinition ;
     dcterms:title "Image" ;
-    skos:altLabel "image file" ;
     skos:closeMatch <wd:Q860625> ;
     skos:definition "Subclass of File representing visual content such as pictures, diagrams, or illustrations" ;
     skos:inScheme <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#> ;
@@ -6035,7 +6039,6 @@
 
 <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Bundle> a linkml:ClassDefinition ;
     dcterms:title "Bundle" ;
-    skos:altLabel "product bundle" ;
     skos:closeMatch <wd:Q1020767> ;
     skos:definition "A group of products" ;
     skos:inScheme <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#> ;
@@ -6091,7 +6094,6 @@
 
 <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Service> a linkml:ClassDefinition ;
     dcterms:title "Service" ;
-    skos:altLabel "service" ;
     skos:closeMatch <wd:Q7406919> ;
     skos:definition "A service" ;
     skos:inScheme <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#> ;
@@ -6143,7 +6145,6 @@
 
 <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Collection> a linkml:ClassDefinition ;
     dcterms:title "Collection" ;
-    skos:altLabel "collection" ;
     skos:closeMatch <wd:Q2668072> ;
     skos:definition "Set of products and services with some common characteristics" ;
     skos:inScheme <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#> ;
@@ -6158,7 +6159,6 @@
 
 <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/CommonName> a linkml:ClassDefinition ;
     dcterms:title "Common Name" ;
-    skos:altLabel "common name" ;
     skos:closeMatch <wd:Q502895> ;
     skos:definition "Vernacular name that is the name used in everyday language to refer to an organism or group of organisms. This name is typically easier to remember and pronounce compared to the scientific name" ;
     skos:exactMatch <dwc:vernacularName> ;
@@ -6176,7 +6176,6 @@
 
 <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Version> a linkml:ClassDefinition ;
     dcterms:title "Version" ;
-    skos:altLabel "version number" ;
     skos:closeMatch <wd:Q114469879> ;
     skos:definition "Numeric code assigned to identify a particular historical version of a work (e.g. software or technical standards)" ;
     skos:inScheme <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#> ;
@@ -6189,7 +6188,6 @@
 
 <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Vocabulary> a linkml:ClassDefinition ;
     dcterms:title "Vocabulary" ;
-    skos:altLabel "vocabulary" ;
     skos:closeMatch skos:Collection,
         <wd:Q6499736> ;
     skos:definition "A subset of words or phrases specific to a particular subject or field" ;
@@ -6205,7 +6203,6 @@
 
 <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/AlternateName> a linkml:ClassDefinition ;
     dcterms:title "Alternate Name" ;
-    skos:altLabel "synonym" ;
     skos:closeMatch <wd:Q7662595> ;
     skos:definition "List of alternate names for things" ;
     skos:inScheme <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#> ;
@@ -6222,7 +6219,6 @@
 
 <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Organization> a linkml:ClassDefinition ;
     dcterms:title "Organization" ;
-    skos:altLabel "organization" ;
     skos:closeMatch <vcard:Organization>,
         <wd:Q43229> ;
     skos:definition "A social entity established to meet needs or pursue specific goals" ;
@@ -6265,7 +6261,6 @@
 
 <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Sequence> a linkml:ClassDefinition ;
     dcterms:title "Sequence" ;
-    skos:altLabel "biological sequence" ;
     skos:closeMatch <wd:Q3511065> ;
     skos:definition "A nucleic acid or protein sequence information" ;
     skos:inScheme <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#> ;
@@ -6392,7 +6387,6 @@
 
 <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/License> a linkml:ClassDefinition ;
     dcterms:title "License" ;
-    skos:altLabel "license" ;
     skos:closeMatch <dct:LicenseDocument>,
         <wd:Q79719> ;
     skos:definition "The legal terms and conditions under which the subject can be used, shared, or distributed, indicating any restrictions or permissions" ;
@@ -6410,7 +6404,6 @@
 
 <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Virus> a linkml:ClassDefinition ;
     dcterms:title "Virus" ;
-    skos:altLabel "virus" ;
     skos:closeMatch <wd:Q808> ;
     skos:definition "The virus as a biological material" ;
     skos:inScheme <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#> ;
@@ -6486,7 +6479,6 @@
 
 <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Certification> a linkml:ClassDefinition ;
     dcterms:title "Certification" ;
-    skos:altLabel "certification" ;
     skos:closeMatch schema1:Certification,
         <wd:Q374814> ;
     skos:definition "Assurance given by an independent certification body that a product, service or system meets the requirements of a standard" ;
@@ -6549,6 +6541,7 @@
     linkml:multivalued true ;
     linkml:owner <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/ProductOrService> ;
     linkml:range <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/ProductCategory> ;
+    linkml:recommended true ;
     linkml:slot_uri <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#additionalCategory> ;
     linkml:usage_slot_name "additionalCategory" .
 
@@ -6598,6 +6591,7 @@
     linkml:is_usage_slot true ;
     linkml:owner <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/ProductOrService> ;
     linkml:range <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/boolean> ;
+    linkml:recommended true ;
     linkml:slot_uri <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#canItBeUsedToProduceGMO> ;
     linkml:usage_slot_name "canItBeUsedToProduceGMO" .
 
@@ -6639,7 +6633,6 @@
 
 <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/ProductOrService_collection> a linkml:SlotDefinition ;
     dcterms:title "collection" ;
-    skos:altLabel "catalog" ;
     skos:definition "The collection(s) to which belongs this item" ;
     skos:inScheme <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#> ;
     skos:prefLabel "collection" ;
@@ -6687,6 +6680,7 @@
     linkml:is_usage_slot true ;
     linkml:owner <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/ProductOrService> ;
     linkml:range <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/ContactPoint> ;
+    linkml:recommended true ;
     linkml:slot_uri <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#contactPoint> ;
     linkml:usage_slot_name "contactPoint" .
 
@@ -6737,6 +6731,7 @@
     linkml:multivalued true ;
     linkml:owner <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/ProductOrService> ;
     linkml:range <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Keyword> ;
+    linkml:recommended true ;
     linkml:required true ;
     linkml:slot_uri <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#keywords> ;
     linkml:usage_slot_name "keywords" .
@@ -6843,7 +6838,6 @@
 
 <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/ProductOrService_relatedDOI> a linkml:SlotDefinition ;
     dcterms:title "DOI" ;
-    skos:altLabel "DOI" ;
     skos:closeMatch <http://www.wikidata.org/prop/P356> ;
     skos:definition "Any DOI that can be related" ;
     skos:inScheme <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#> ;
@@ -6862,7 +6856,6 @@
 
 <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/ProductOrService_riskGroup> a linkml:SlotDefinition ;
     dcterms:title "risk group" ;
-    skos:altLabel "risk group" ;
     skos:closeMatch <http://www.wikidata.org/prop/P12663> ;
     skos:definition "The highest risk group related to this resource. The risk group of a biological agent guiding its initial handling in labs according to the risk group classification defined by the WHO laboratory biosafety manual" ;
     skos:inScheme <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#> ;
@@ -6875,6 +6868,7 @@
     linkml:is_usage_slot true ;
     linkml:owner <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/ProductOrService> ;
     linkml:range <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/RiskGroup> ;
+    linkml:recommended true ;
     linkml:slot_uri <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#riskGroup> ;
     linkml:usage_slot_name "riskGroup" .
 
@@ -6907,6 +6901,7 @@
     linkml:is_usage_slot true ;
     linkml:owner <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/ProductOrService> ;
     linkml:range <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/string> ;
+    linkml:recommended true ;
     linkml:required true ;
     linkml:slot_uri <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#unitCost> ;
     linkml:usage_slot_name "unitCost" .
@@ -6924,6 +6919,7 @@
     linkml:is_usage_slot true ;
     linkml:owner <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/ProductOrService> ;
     linkml:range <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/string> ;
+    linkml:recommended true ;
     linkml:slot_uri <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#unitDefinition> ;
     linkml:usage_slot_name "unitDefinition" .
 
@@ -7011,7 +7007,6 @@
 
 <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/File> a linkml:ClassDefinition ;
     dcterms:title "File" ;
-    skos:altLabel "computer file" ;
     skos:closeMatch <wd:Q82753> ;
     skos:definition "Digital document or record stored in a specific format that contains data or information" ;
     skos:exactMatch <dcat:mediaType> ;
@@ -7029,7 +7024,6 @@
 
 <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Publication> a linkml:ClassDefinition ;
     dcterms:title "Publication" ;
-    skos:altLabel "scientific publication" ;
     skos:closeMatch <wd:Q591041> ;
     skos:definition "A scientific publication" ;
     skos:inScheme <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#> ;
@@ -7045,7 +7039,6 @@
 
 <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Antibody> a linkml:ClassDefinition ;
     dcterms:title "Antibody" ;
-    skos:altLabel "antibody" ;
     skos:closeMatch <wd:Q79460> ;
     skos:definition "Protein that can bind to certain types of foreign bodies, such as pathogens" ;
     skos:inScheme <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#> ;
@@ -7110,7 +7103,6 @@
 
 <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Term_inVocabulary> a linkml:SlotDefinition ;
     dcterms:title "in Vocabulary" ;
-    skos:altLabel "catalog" ;
     skos:closeMatch <http://www.wikidata.org/prop/P972> ;
     skos:definition "Terms belong to a specific vocabulary" ;
     skos:inScheme <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#> ;
@@ -7147,7 +7139,6 @@
 
 <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Taxonomy> a linkml:ClassDefinition ;
     dcterms:title "Taxonomy" ;
-    skos:altLabel "taxonomy" ;
     skos:closeMatch skos:Collection,
         <wd:Q8269924> ;
     skos:definition "Science of naming, defining and classifying organisms" ;
@@ -7167,7 +7158,6 @@
 
 <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Term> a linkml:ClassDefinition ;
     dcterms:title "Term" ;
-    skos:altLabel "term" ;
     skos:closeMatch <wd:Q1969448> ;
     skos:definition "Word or phrase from a specialized area of knowledge" ;
     skos:inScheme <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#> ;
@@ -7183,7 +7173,6 @@
 
 <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Taxon> a linkml:ClassDefinition ;
     dcterms:title "Taxon" ;
-    skos:altLabel "taxon" ;
     skos:closeMatch <wd:Q16521> ;
     skos:definition "Conceptual entity that groups one or more populations of an organism or organisms, as seen by taxonomists, to form a unit" ;
     skos:exactMatch <dwc:Taxon> ;
@@ -7207,7 +7196,6 @@
 
 <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Product> a linkml:ClassDefinition ;
     dcterms:title "Product" ;
-    skos:altLabel "product" ;
     skos:closeMatch <wd:Q2424752> ;
     skos:definition "A product" ;
     skos:inScheme <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#> ;
@@ -7251,7 +7239,6 @@
 
 <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/ContactPoint> a linkml:ClassDefinition ;
     dcterms:title "Contact Point" ;
-    skos:altLabel "contact point" ;
     skos:closeMatch <vcard:Contact>,
         <wd:Q30322502> ;
     skos:definition "Entity serving as focal point of information" ;
@@ -7273,7 +7260,6 @@
 
 <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/DataProvider> a linkml:ClassDefinition ;
     dcterms:title "Data provider" ;
-    skos:altLabel "data provider" ;
     skos:closeMatch <wd:Q122625839> ;
     skos:definition "An external API (Application Programming Interface) or Endpoint that permits to retrieve data from other sources" ;
     skos:inScheme <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#> ;
@@ -7327,6 +7313,7 @@
     linkml:is_usage_slot true ;
     linkml:owner <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Nameable> ;
     linkml:range <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/string> ;
+    linkml:recommended true ;
     linkml:slot_uri <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#description> ;
     linkml:usage_slot_name "description" .
 
@@ -7352,7 +7339,6 @@
 
 <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/NucleicAcid> a linkml:ClassDefinition ;
     dcterms:title "Nucleic Acid" ;
-    skos:altLabel "nucleic acids" ;
     skos:closeMatch <wd:Q123619> ;
     skos:definition "Nucleic acid related to a pathogen. It can be extracted or synthetic" ;
     skos:inScheme <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#> ;
@@ -7410,7 +7396,6 @@
 
 <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Protein> a linkml:ClassDefinition ;
     dcterms:title "Protein" ;
-    skos:altLabel "protein" ;
     skos:closeMatch <wd:Q8054> ;
     skos:definition "A protein as a derived product from a pathogen" ;
     skos:inScheme <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#> ;
@@ -7468,7 +7453,6 @@
 
 <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/MSDS> a linkml:ClassDefinition ;
     dcterms:title "MSDS" ;
-    skos:altLabel "safety data sheet" ;
     skos:closeMatch <wd:Q222067> ;
     skos:definition "A Material Safety Data Sheet (MSDS) or Safety Data Sheet (SDS) is a standardized document that contains crucial occupational safety and health information related to the product" ;
     skos:inScheme <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#> ;
@@ -7494,7 +7478,6 @@
 
 <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Pathogen> a linkml:ClassDefinition ;
     dcterms:title "Pathogen" ;
-    skos:altLabel "pathogen" ;
     skos:closeMatch <wd:Q170065> ;
     skos:definition "Biological entity that causes disease in its host, which is typically an infectious microorganism or agent, such as a virus, bacterium, protozoan, prion, viroid, or fungus" ;
     skos:inScheme <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#> ;

@@ -4,7 +4,7 @@
 
 
 
-URI: [EVORA:streetAddress](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#streetAddress)
+URI: [EVORAO:streetAddress](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#streetAddress)
 
 
 
@@ -54,8 +54,8 @@ URI: [EVORA:streetAddress](https://raw.githubusercontent.com/EVORA-project/evora
 
 | Mapping Type | Mapped Value |
 | ---  | ---  |
-| self | EVORA:streetAddress |
-| native | EVORA:streetAddress |
+| self | EVORAO:streetAddress |
+| native | EVORAO:streetAddress |
 
 
 

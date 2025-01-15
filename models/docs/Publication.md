@@ -9,7 +9,7 @@ _A scientific publication_
 
 
 
-URI: [EVORA:Publication](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#Publication)
+URI: [EVORAO:Publication](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#Publication)
 
 
 
@@ -76,11 +76,6 @@ URI: [EVORA:Publication](https://raw.githubusercontent.com/EVORA-project/evora-o
 
 
 
-## Aliases
-
-
-* scientific publication
-
 
 
 ## Identifier and Mapping Information
@@ -103,8 +98,8 @@ URI: [EVORA:Publication](https://raw.githubusercontent.com/EVORA-project/evora-o
 
 | Mapping Type | Mapped Value |
 | ---  | ---  |
-| self | EVORA:Publication |
-| native | EVORA:Publication |
+| self | EVORAO:Publication |
+| native | EVORAO:Publication |
 | close | wd:Q591041 |
 
 
@@ -125,8 +120,6 @@ name: Publication
 description: A scientific publication
 title: Publication
 from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
-aliases:
-- scientific publication
 close_mappings:
 - wd:Q591041
 is_a: Dataset
@@ -194,8 +187,6 @@ name: Publication
 description: A scientific publication
 title: Publication
 from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
-aliases:
-- scientific publication
 close_mappings:
 - wd:Q591041
 is_a: Dataset

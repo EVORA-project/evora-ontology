@@ -1,15 +1,24 @@
-name: EVORA_Ontology
+name: EVORAO
 description: The EVORA Ontology harmonizes metadata in virology to describe viral
   resources, their derived products, and services. It aligns with FAIR principles
   to ensure interoperability, accessibility, and reusability across various projects.
   The EVORA Ontology aims to support preparedness and response to pandemics.
-title: European Viral Outbreak Research Alliance Ontology
+title: European Viral Outbreak Response Alliance Ontology
 in_language: en
 created_by: https://github.com/Angatar
 contributors:
+- https://github.com/Angatar
+- https://orcid.org/0000-0002-5080-3456
+- https://github.com/jamesamcl
+- https://orcid.org/0000-0003-3035-4195
+- https://orcid.org/0000-0003-4073-7456
+- https://orcid.org/0000-0002-2004-4073
+- https://orcid.org/0000-0002-6963-8673
+- https://orcid.org/0000-0003-3067-827X
+- https://orcid.org/0000-0002-1257-6862
 - https://orcid.org/0000-0002-2042-2839
 id: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
-version: 1.0.7370
+version: 1.0.7498
 imports:
 - linkml:types
 license: https://creativecommons.org/publicdomain/zero/1.0/
@@ -33,9 +42,9 @@ prefixes:
   pav: http://purl.org/pav/
   dwc: http://rs.tdwg.org/dwc/terms/
   IAO: http://purl.obolibrary.org/obo/IAO_
-  EVORA: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+  EVORAO: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
   linkml: https://w3id.org/linkml/
-default_prefix: EVORA
+default_prefix: EVORAO
 default_range: string
 slots:
   ID:
@@ -414,8 +423,6 @@ classes:
       of a work (e.g. software or technical standards)
     title: Version
     from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
-    aliases:
-    - version number
     close_mappings:
     - wd:Q114469879
     is_a: Dataset
@@ -426,8 +433,6 @@ classes:
       ID:
         description: The version identifier
         title: ID
-        aliases:
-        - edition number
         close_mappings:
         - wdp:P393
         - schema:version
@@ -479,13 +484,12 @@ classes:
         - dct:description
         range: string
         required: false
+        recommended: true
         multivalued: false
   Catalogue:
     description: A curated collection of metadata about resources
     title: Catalogue
     from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
-    aliases:
-    - catalogue
     exact_mappings:
     - dcat:Catalog
     close_mappings:
@@ -498,8 +502,6 @@ classes:
       available for access
     title: Dataset
     from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
-    aliases:
-    - data set
     exact_mappings:
     - dcat:Dataset
     close_mappings:
@@ -511,8 +513,6 @@ classes:
       published or curated by a single agent, and available for access
     title: Named Dataset
     from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
-    aliases:
-    - data set
     exact_mappings:
     - dcat:Dataset
     close_mappings:
@@ -525,8 +525,6 @@ classes:
       or data processing functions
     title: Data Service
     from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
-    aliases:
-    - web service
     exact_mappings:
     - dcat:DataService
     close_mappings:
@@ -538,8 +536,6 @@ classes:
     description: Science of naming, defining and classifying organisms
     title: Taxonomy
     from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
-    aliases:
-    - taxonomy
     close_mappings:
     - wd:Q8269924
     - skos:Collection
@@ -597,8 +593,6 @@ classes:
       permits to retrieve data from other sources
     title: Data provider
     from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
-    aliases:
-    - data provider
     close_mappings:
     - wd:Q122625839
     is_a: DataService
@@ -634,8 +628,6 @@ classes:
       loginURL:
         description: The URL template that allows to log in if required
         title: login URL
-        aliases:
-        - formatter URL
         close_mappings:
         - wdp:P1630
         - dcat:endpointDescription
@@ -654,8 +646,6 @@ classes:
       queryURL:
         description: The URL template that allows to get the content
         title: query URL
-        aliases:
-        - formatter URL
         exact_mappings:
         - dcat:endpointURL
         close_mappings:
@@ -750,6 +740,7 @@ classes:
         title: host type
         range: string
         required: false
+        recommended: true
         multivalued: true
       subspecies:
         description: The subspecies information differentiates closely related pathogens
@@ -763,6 +754,7 @@ classes:
         title: strain
         range: string
         required: false
+        recommended: true
         multivalued: false
       isolate:
         description: Identifier given to a pathogen that has been isolated from an
@@ -801,8 +793,6 @@ classes:
     description: A scientific publication
     title: Publication
     from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
-    aliases:
-    - scientific publication
     close_mappings:
     - wd:Q591041
     is_a: Dataset
@@ -858,8 +848,6 @@ classes:
       field
     title: Vocabulary
     from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
-    aliases:
-    - vocabulary
     close_mappings:
     - wd:Q6499736
     - skos:Collection
@@ -880,13 +868,12 @@ classes:
         title: term
         range: Term
         required: false
+        recommended: true
         multivalued: true
   Term:
     description: Word or phrase from a specialized area of knowledge
     title: Term
     from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
-    aliases:
-    - term
     close_mappings:
     - wd:Q1969448
     is_a: NamedDataset
@@ -910,8 +897,6 @@ classes:
       inVocabulary:
         description: Terms belong to a specific vocabulary
         title: in Vocabulary
-        aliases:
-        - catalog
         close_mappings:
         - wdp:P972
         range: Vocabulary
@@ -923,8 +908,6 @@ classes:
       and pronounce compared to the scientific name
     title: Common Name
     from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
-    aliases:
-    - common name
     exact_mappings:
     - dwc:vernacularName
     close_mappings:
@@ -942,8 +925,6 @@ classes:
           also serve as keywords arround the pathogen name for search and as a bridge
           with other projects that are still using other naming systems or taxonomies
           e.g. the NCBI taxonomy
-        aliases:
-        - alternative name
         close_mappings:
         - wdp:P4970
         range: AlternateName
@@ -953,8 +934,6 @@ classes:
         description: The name of the origin from which knowledge is obtained. This
           can include any entity that provides information
         title: source of information
-        aliases:
-        - stated in
         close_mappings:
         - wdp:P248
         range: string
@@ -964,8 +943,6 @@ classes:
     description: A virus vernacular name or a name that describes a group of viruses
     title: Virus Name
     from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
-    aliases:
-    - virus name
     close_mappings:
     - wd:Q125481078
     is_a: CommonName
@@ -973,8 +950,6 @@ classes:
     description: List of alternate names for things
     title: Alternate Name
     from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
-    aliases:
-    - synonym
     close_mappings:
     - wd:Q7662595
     is_a: Term
@@ -985,8 +960,6 @@ classes:
       alternateName:
         description: Any known alternate name related to this name
         title: alternate name
-        aliases:
-        - alternative name
         close_mappings:
         - wdp:P4970
         range: AlternateName
@@ -996,8 +969,6 @@ classes:
         description: The name of the origin from which knowledge is obtained. This
           can include any entity that provides information
         title: source of information
-        aliases:
-        - stated in
         close_mappings:
         - wdp:P248
         range: string
@@ -1012,8 +983,6 @@ classes:
     - Use of Data provider if any or manual import of information from wd:Q125449389,
       wd:Q125449412, wd:Q125449429, wd:Q125449439
     from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
-    aliases:
-    - risk group
     close_mappings:
     - wd:Q125449255
     is_a: Term
@@ -1023,8 +992,6 @@ classes:
       (DOI) is a persistent identifier that is an ISO standard
     title: DOI
     from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
-    aliases:
-    - DOI
     close_mappings:
     - wd:Q25670
     is_a: Term
@@ -1032,8 +999,6 @@ classes:
     description: Periodical journal publishing scientific research
     title: Journal
     from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
-    aliases:
-    - scientific journal
     close_mappings:
     - wd:Q5633421
     is_a: Term
@@ -1042,8 +1007,6 @@ classes:
       database
     title: PDB reference
     from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
-    aliases:
-    - Wikidata property to identify proteins
     close_mappings:
     - wdp:Q42415644
     is_a: Term
@@ -1051,8 +1014,6 @@ classes:
     description: A term or phrase used to tag and categorize content
     title: Keyword
     from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
-    aliases:
-    - subject heading
     close_mappings:
     - wd:Q1128340
     is_a: Term
@@ -1060,8 +1021,6 @@ classes:
     description: Peptide sequence genetically grafted onto a recombinant protein
     title: Protein tag
     from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
-    aliases:
-    - protein tag
     close_mappings:
     - wd:Q645590
     is_a: Term
@@ -1080,8 +1039,6 @@ classes:
       a resistance marker for inducible protein expression
     title: Expression vector
     from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
-    aliases:
-    - expression vector
     close_mappings:
     - wd:Q5421712
     is_a: Term
@@ -1108,8 +1065,6 @@ classes:
       produce biological substances
     title: Production cell line
     from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
-    aliases:
-    - cell line
     close_mappings:
     - wd:Q21014462
     is_a: Term
@@ -1118,8 +1073,6 @@ classes:
       or functions, which helps in their organization
     title: Product category
     from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
-    aliases:
-    - product category
     close_mappings:
     - wd:Q63981612
     is_a: Term
@@ -1147,8 +1100,6 @@ classes:
     comments:
     - geonames.org API could be a good service data provider as suggested by DCAT-AP
     from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
-    aliases:
-    - origin
     exact_mappings:
     - dct:Location
     close_mappings:
@@ -1166,8 +1117,6 @@ classes:
     comments:
     - Use of Data provider recommended... serve as a local cache for ISO3166
     from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
-    aliases:
-    - country
     close_mappings:
     - wd:Q6256
     is_a: Term
@@ -1192,8 +1141,6 @@ classes:
       \ a distinct strain"
     title: Variant
     from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
-    aliases:
-    - genetic variant
     close_mappings:
     - wd:Q104795308
     is_a: CommonName
@@ -1203,8 +1150,6 @@ classes:
     comments:
     - Use of Data provider recommended
     from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
-    aliases:
-    - taxonomic rank
     close_mappings:
     - wd:Q427626
     is_a: Term
@@ -1225,8 +1170,6 @@ classes:
     - The taxonomic taxons connected to their parent so that a full lienage can be
       rebuild. Use of Data provider recommended
     from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
-    aliases:
-    - taxon
     exact_mappings:
     - dwc:Taxon
     close_mappings:
@@ -1246,6 +1189,7 @@ classes:
         title: taxonomy
         range: Taxonomy
         required: false
+        recommended: true
         multivalued: true
       parentTaxon:
         description: The parent taxon of the current taxon
@@ -1304,6 +1248,7 @@ classes:
         - dwc:taxonID
         range: string
         required: false
+        recommended: true
         multivalued: false
   ExternalRelatedReference:
     description: A reference that permits to retrieve an item from an external provider
@@ -1355,8 +1300,6 @@ classes:
     description: A nucleic acid or protein sequence information
     title: Sequence
     from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
-    aliases:
-    - biological sequence
     close_mappings:
     - wd:Q3511065
     is_a: Dataset
@@ -1370,6 +1313,7 @@ classes:
         title: sequence reference
         range: SequenceReference
         required: false
+        recommended: true
         multivalued: true
       sequenceFASTA:
         description: In case no sequence reference exists in public repositories,
@@ -1446,6 +1390,7 @@ classes:
         - dcat:contactPoint
         range: ContactPoint
         required: false
+        recommended: true
         multivalued: false
       logo:
         description: A path or URL to the related logo
@@ -1457,8 +1402,6 @@ classes:
     description: An individual
     title: Person
     from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
-    aliases:
-    - person
     close_mappings:
     - wd:Q215627
     - vcard:Individual
@@ -1472,13 +1415,12 @@ classes:
         title: ORCID iD
         range: string
         required: false
+        recommended: true
         multivalued: false
   Organization:
     description: A social entity established to meet needs or pursue specific goals
     title: Organization
     from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
-    aliases:
-    - organization
     close_mappings:
     - wd:Q43229
     - vcard:Organization
@@ -1494,19 +1436,19 @@ classes:
         - dwc:institutionCode
         range: AlternateName
         required: false
+        recommended: true
         multivalued: false
       country:
         description: The country of the organization
         title: country
         range: Country
         required: false
+        recommended: true
         multivalued: false
   RI:
     description: A research infrastructure
     title: RI
     from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
-    aliases:
-    - research infrastructure
     close_mappings:
     - wd:Q1438053
     is_a: Organization
@@ -1622,8 +1564,6 @@ classes:
         description: The geographical location where the sample was collected in situ.
           Used for Nagoya/CBD; equivalent to "country of origin".
         title: country of collection
-        aliases:
-        - country of origin
         close_mappings:
         - dct:spatial
         - dwc:country
@@ -1681,6 +1621,7 @@ classes:
         title: description of modification(s) made from the reference sequence(s)
         range: string
         required: false
+        recommended: true
         multivalued: false
   RecombinantPartIdentification:
     description: Identification of a recombinant part
@@ -1703,13 +1644,12 @@ classes:
         title: sequence
         range: Sequence
         required: true
+        recommended: true
         multivalued: true
   Collection:
     description: Set of products and services with some common characteristics
     title: Collection
     from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
-    aliases:
-    - collection
     close_mappings:
     - wd:Q2668072
     is_a: Catalogue
@@ -1724,6 +1664,7 @@ classes:
         - dcat:resource
         range: ProductOrService
         required: false
+        recommended: true
         multivalued: true
       collectionDataProvider:
         description: The provider of the data of the collection
@@ -1795,6 +1736,7 @@ classes:
           quantity...)'
         range: string
         required: false
+        recommended: true
         multivalued: false
       category:
         description: The main category of the service or product
@@ -1812,6 +1754,7 @@ classes:
         - dcat:theme
         range: ProductCategory
         required: false
+        recommended: true
         multivalued: true
       unitCost:
         description: The cost per access for one unit as defined by the unit definition
@@ -1823,6 +1766,7 @@ classes:
         ifabsent: string(on request)
         range: string
         required: true
+        recommended: true
         multivalued: false
       qualityGrading:
         description: Information that permits to assess the quality level of what
@@ -1846,8 +1790,6 @@ classes:
       relatedDOI:
         description: Any DOI that can be related
         title: DOI
-        aliases:
-        - DOI
         close_mappings:
         - wdp:P356
         range: DOI
@@ -1858,12 +1800,11 @@ classes:
           of a biological agent guiding its initial handling in labs according to
           the risk group classification defined by the WHO laboratory biosafety manual
         title: risk group
-        aliases:
-        - risk group
         close_mappings:
         - wdp:P12663
         range: RiskGroup
         required: false
+        recommended: true
         multivalued: false
       biosafetyRestrictions:
         description: Information about guidelines and regulations designed to prevent
@@ -1882,6 +1823,7 @@ classes:
         - Set to TRUE if it can produce GMO
         range: boolean
         required: false
+        recommended: true
         multivalued: false
       provider:
         description: A provider of this product or service, as a specific organization
@@ -1892,8 +1834,6 @@ classes:
       collection:
         description: The collection(s) to which belongs this item
         title: collection
-        aliases:
-        - catalog
         range: Collection
         required: true
         multivalued: true
@@ -1904,6 +1844,7 @@ classes:
         - dcat:keyword
         range: Keyword
         required: true
+        recommended: true
         multivalued: true
       availability:
         description: The state or condition in which this item is accessible and ready
@@ -1970,13 +1911,12 @@ classes:
         - dcat:contactPoint
         range: ContactPoint
         required: false
+        recommended: true
         multivalued: false
   Service:
     description: A service
     title: Service
     from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
-    aliases:
-    - service
     close_mappings:
     - wd:Q7406919
     is_a: ProductOrService
@@ -2001,8 +1941,6 @@ classes:
     description: A product
     title: Product
     from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
-    aliases:
-    - product
     close_mappings:
     - wd:Q2424752
     is_a: ProductOrService
@@ -2084,8 +2022,6 @@ classes:
       pathogens
     title: Antibody
     from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
-    aliases:
-    - antibody
     close_mappings:
     - wd:Q79460
     is_a: Product
@@ -2102,6 +2038,7 @@ classes:
         title: production system
         range: string
         required: false
+        recommended: true
         multivalued: false
       antibodyPurifiedByAffinity:
         description: Indicates whether or not if the antibody was purified by affinity
@@ -2128,13 +2065,12 @@ classes:
         title: sequence reference
         range: SequenceReference
         required: false
+        recommended: true
         multivalued: true
   Hybridoma:
     description: An hybridoma that provides antibodies that can be related to a pathogen
     title: Hybridoma
     from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
-    aliases:
-    - hybridoma
     close_mappings:
     - wd:Q27554370
     is_a: Antibody
@@ -2151,8 +2087,6 @@ classes:
     description: A protein as a derived product from a pathogen
     title: Protein
     from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
-    aliases:
-    - protein
     close_mappings:
     - wd:Q8054
     is_a: Product
@@ -2191,8 +2125,6 @@ classes:
         description: Identifier for 3D structural data as per the PDB (Protein Data
           Bank) database
         title: related PDB
-        aliases:
-        - PDB structure ID
         close_mappings:
         - wdp:P638
         range: PDBReference
@@ -2300,8 +2232,6 @@ classes:
     description: Nucleic acid related to a pathogen. It can be extracted or synthetic
     title: Nucleic Acid
     from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
-    aliases:
-    - nucleic acids
     close_mappings:
     - wd:Q123619
     is_a: Product
@@ -2355,6 +2285,7 @@ classes:
         title: cloned into plasmid
         range: ExpressionVector
         required: false
+        recommended: true
         multivalued: false
       pasmidSelection:
         description: Specific selectable markers in the plasmid, such as antibiotic
@@ -2362,6 +2293,7 @@ classes:
         title: plasmid selection
         range: PlasmidSelection
         required: false
+        recommended: true
         multivalued: true
       hasTAG:
         description: TAG sequence used for purposes such as purification, detection,
@@ -2472,8 +2404,6 @@ classes:
     description: A group of products
     title: Bundle
     from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
-    aliases:
-    - product bundle
     close_mappings:
     - wd:Q1020767
     is_a: Product
@@ -2504,8 +2434,6 @@ classes:
       prion, viroid, or fungus
     title: Pathogen
     from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
-    aliases:
-    - pathogen
     close_mappings:
     - wd:Q170065
     is_a: Product
@@ -2678,8 +2606,6 @@ classes:
     description: The virus as a biological material
     title: Virus
     from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
-    aliases:
-    - virus
     close_mappings:
     - wd:Q808
     is_a: Pathogen
@@ -2715,8 +2641,6 @@ classes:
     description: The bacterium as a biological material
     title: Bacterium
     from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
-    aliases:
-    - bacteria
     close_mappings:
     - wd:Q10876
     is_a: Pathogen
@@ -2724,8 +2648,6 @@ classes:
     description: The fungus as a biological material
     title: Fungus
     from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
-    aliases:
-    - fungus
     close_mappings:
     - wd:Q764
     is_a: Pathogen
@@ -2733,8 +2655,6 @@ classes:
     description: The protozoan as a biological material
     title: Protozoan
     from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
-    aliases:
-    - protozoa
     close_mappings:
     - wd:Q101274
     is_a: Pathogen
@@ -2742,8 +2662,6 @@ classes:
     description: The viroid as a biological material
     title: Viroid
     from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
-    aliases:
-    - viroid
     close_mappings:
     - wd:Q209917
     is_a: Pathogen
@@ -2751,8 +2669,6 @@ classes:
     description: The prion as a biological material
     title: Prion
     from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
-    aliases:
-    - prion
     close_mappings:
     - wd:Q47051
     is_a: Pathogen
@@ -2762,8 +2678,6 @@ classes:
       information related to the product
     title: MSDS
     from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
-    aliases:
-    - safety data sheet
     close_mappings:
     - wd:Q222067
     is_a: Dataset
@@ -2801,6 +2715,7 @@ classes:
         title: physical and chemical properties and information on ingredients
         range: string
         required: false
+        recommended: true
         multivalued: false
       hazardsIdentification:
         description: Outlines the potential risks and dangers associated with handling
@@ -2810,6 +2725,7 @@ classes:
         title: hazards identification
         range: string
         required: false
+        recommended: true
         multivalued: false
       firstAidMeasures:
         description: Instructions on immediate actions to take in case of exposure
@@ -2818,6 +2734,7 @@ classes:
         title: first aid measures
         range: string
         required: false
+        recommended: true
         multivalued: false
       fireFightingMeasures:
         description: Guidance on how to safely extinguish a fire involving the product,
@@ -2826,6 +2743,7 @@ classes:
         title: fire fighting measures
         range: string
         required: false
+        recommended: true
         multivalued: false
       accidentalReleaseMeasures:
         description: Guidelines for safely managing spills or leaks of the product,
@@ -2834,6 +2752,7 @@ classes:
         title: accidental release measures
         range: string
         required: false
+        recommended: true
         multivalued: false
       handlingAndStorage:
         description: Instructions on the safe handling practices and storage conditions
@@ -2843,6 +2762,7 @@ classes:
         title: handling and storage
         range: string
         required: false
+        recommended: true
         multivalued: false
       exposureControlsPersonalProtection:
         description: Specifies measures to limit exposure to the product, including
@@ -2852,6 +2772,7 @@ classes:
         title: exposure controls/personal protection
         range: string
         required: false
+        recommended: true
         multivalued: false
       stabilityAndReactivity:
         description: "Describes the product\u2019s stability under normal conditions\
@@ -2861,6 +2782,7 @@ classes:
         title: stability and reactivity
         range: string
         required: false
+        recommended: true
         multivalued: false
       toxicologicalInformation:
         description: Details on the potential health effects of the product, including
@@ -2869,6 +2791,7 @@ classes:
         title: toxicological information
         range: string
         required: false
+        recommended: true
         multivalued: false
       ecologicalInformation:
         description: Details the potential environmental impact of the product, including
@@ -2877,6 +2800,7 @@ classes:
         title: ecological information
         range: string
         required: false
+        recommended: true
         multivalued: false
       disposalConsiderations:
         description: Guidance on the safe and environmentally responsible disposal
@@ -2885,6 +2809,7 @@ classes:
         title: disposal considerations
         range: string
         required: false
+        recommended: true
         multivalued: false
       transportInformation:
         description: Details the regulations and guidelines for safely transporting
@@ -2894,6 +2819,7 @@ classes:
         title: transport information
         range: string
         required: false
+        recommended: true
         multivalued: false
       regulatoryInformation:
         description: Lists applicable laws, regulations, and standards governing the
@@ -2903,6 +2829,7 @@ classes:
         title: regulatory information
         range: string
         required: false
+        recommended: true
         multivalued: false
       furtherInformation:
         description: Provides any additional details or clarifications not covered
@@ -2911,14 +2838,13 @@ classes:
         title: further information
         range: string
         required: false
+        recommended: true
         multivalued: false
   File:
     description: Digital document or record stored in a specific format that contains
       data or information
     title: File
     from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
-    aliases:
-    - computer file
     exact_mappings:
     - dcat:mediaType
     close_mappings:
@@ -2956,8 +2882,6 @@ classes:
       often used for analysis, storage, or transfer of information
     title: Data
     from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
-    aliases:
-    - data
     close_mappings:
     - wd:Q42848
     is_a: File
@@ -2966,8 +2890,6 @@ classes:
       manuals, or forms
     title: Document
     from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
-    aliases:
-    - document
     close_mappings:
     - wd:Q49848
     is_a: File
@@ -2975,8 +2897,6 @@ classes:
     description: Subclass of File representing sound recordings or audio tracks
     title: Audio
     from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
-    aliases:
-    - audio file
     close_mappings:
     - wd:Q26987229
     is_a: File
@@ -2985,8 +2905,6 @@ classes:
       presentations, or movies
     title: Video
     from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
-    aliases:
-    - video file
     close_mappings:
     - wd:Q98405806
     is_a: File
@@ -2995,8 +2913,6 @@ classes:
       or illustrations
     title: Image
     from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
-    aliases:
-    - image file
     close_mappings:
     - wd:Q860625
     is_a: File
@@ -3008,13 +2924,12 @@ classes:
         title: alt text
         range: string
         required: false
+        recommended: true
         multivalued: false
   ContactPoint:
     description: Entity serving as focal point of information
     title: Contact Point
     from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
-    aliases:
-    - contact point
     close_mappings:
     - wd:Q30322502
     - vcard:Contact
@@ -3037,6 +2952,7 @@ classes:
         - vcard:email
         range: string
         required: false
+        recommended: true
         multivalued: false
       telephone:
         description: The telephone number
@@ -3046,6 +2962,7 @@ classes:
         - vcard:telephone
         range: string
         required: false
+        recommended: true
         multivalued: false
       streetAddress:
         description: The building/apartment number and the street name
@@ -3103,14 +3020,13 @@ classes:
         - IAO:0000708
         range: string
         required: false
+        recommended: true
         multivalued: false
   License:
     description: The legal terms and conditions under which the subject can be used,
       shared, or distributed, indicating any restrictions or permissions
     title: License
     from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
-    aliases:
-    - license
     exact_mappings:
     - dct:RightsStatement
     close_mappings:
@@ -3155,8 +3071,6 @@ classes:
       service or system meets the requirements of a standard
     title: Certification
     from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
-    aliases:
-    - certification
     close_mappings:
     - wd:Q374814
     - schema:Certification
@@ -3190,4 +3104,4 @@ classes:
         required: false
         multivalued: false
 source_file: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl
-generation_date: '2025-01-15T12:04:34'
+generation_date: '2025-01-15T15:52:06'

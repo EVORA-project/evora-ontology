@@ -9,7 +9,7 @@ _A collection of distinguishing information that enables the differentiation of 
 
 
 
-URI: [EVORA:PathogenIdentification](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#PathogenIdentification)
+URI: [EVORAO:PathogenIdentification](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#PathogenIdentification)
 
 
 
@@ -84,9 +84,9 @@ URI: [EVORA:PathogenIdentification](https://raw.githubusercontent.com/EVORA-proj
 | [taxon](taxon.md) | 1 <br/> [Taxon](Taxon.md) | Scientifically classified group or entity within the reference taxonomy | direct |
 | [pathogenName](pathogenName.md) | 1 <br/> [CommonName](CommonName.md) | A pathogen common name or a name that describes a group of pathogens | direct |
 | [pathogenType](pathogenType.md) | 1 <br/> [String](String.md) | Identification of the specific type of pathogen among the listed categories e | direct |
-| [hostType](hostType.md) | * <br/> [String](String.md) | Indication of the possible host(s) for the identified pathogens among the lis... | direct |
+| [hostType](hostType.md) | * _recommended_ <br/> [String](String.md) | Indication of the possible host(s) for the identified pathogens among the lis... | direct |
 | [subspecies](subspecies.md) | 0..1 <br/> [String](String.md) | The subspecies information differentiates closely related pathogens within a ... | direct |
-| [strain](strain.md) | 0..1 <br/> [String](String.md) | Identifier given to a genetic variant within a single species | direct |
+| [strain](strain.md) | 0..1 _recommended_ <br/> [String](String.md) | Identifier given to a genetic variant within a single species | direct |
 | [isolate](isolate.md) | 0..1 <br/> [String](String.md) | Identifier given to a pathogen that has been isolated from an infected host a... | direct |
 | [genotype](genotype.md) | 0..1 <br/> [String](String.md) | Genotype information that identifies organisms that cluster in phylogenetic t... | direct |
 | [serotype](serotype.md) | 0..1 <br/> [String](String.md) | Genetically related pathogens that group together based on serological relati... | direct |
@@ -142,8 +142,8 @@ URI: [EVORA:PathogenIdentification](https://raw.githubusercontent.com/EVORA-proj
 
 | Mapping Type | Mapped Value |
 | ---  | ---  |
-| self | EVORA:PathogenIdentification |
-| native | EVORA:PathogenIdentification |
+| self | EVORAO:PathogenIdentification |
+| native | EVORAO:PathogenIdentification |
 
 
 
@@ -209,6 +209,7 @@ slot_usage:
     title: host type
     range: string
     required: false
+    recommended: true
     multivalued: true
   subspecies:
     name: subspecies
@@ -224,6 +225,7 @@ slot_usage:
     title: strain
     range: string
     required: false
+    recommended: true
     multivalued: false
   isolate:
     name: isolate
@@ -308,6 +310,7 @@ slot_usage:
     title: host type
     range: string
     required: false
+    recommended: true
     multivalued: true
   subspecies:
     name: subspecies
@@ -323,6 +326,7 @@ slot_usage:
     title: strain
     range: string
     required: false
+    recommended: true
     multivalued: false
   isolate:
     name: isolate
@@ -418,6 +422,7 @@ attributes:
     - PathogenIdentification
     range: string
     required: false
+    recommended: true
     multivalued: true
   subspecies:
     name: subspecies
@@ -445,6 +450,7 @@ attributes:
     - PathogenIdentification
     range: string
     required: false
+    recommended: true
     multivalued: false
   isolate:
     name: isolate

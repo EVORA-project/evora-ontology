@@ -4,7 +4,7 @@
 
 
 
-URI: [EVORA:addressLocality](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#addressLocality)
+URI: [EVORAO:addressLocality](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#addressLocality)
 
 
 
@@ -54,8 +54,8 @@ URI: [EVORA:addressLocality](https://raw.githubusercontent.com/EVORA-project/evo
 
 | Mapping Type | Mapped Value |
 | ---  | ---  |
-| self | EVORA:addressLocality |
-| native | EVORA:addressLocality |
+| self | EVORAO:addressLocality |
+| native | EVORAO:addressLocality |
 
 
 

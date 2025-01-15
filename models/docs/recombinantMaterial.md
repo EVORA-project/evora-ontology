@@ -4,7 +4,7 @@
 
 
 
-URI: [EVORA:recombinantMaterial](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#recombinantMaterial)
+URI: [EVORAO:recombinantMaterial](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#recombinantMaterial)
 
 
 
@@ -54,8 +54,8 @@ URI: [EVORA:recombinantMaterial](https://raw.githubusercontent.com/EVORA-project
 
 | Mapping Type | Mapped Value |
 | ---  | ---  |
-| self | EVORA:recombinantMaterial |
-| native | EVORA:recombinantMaterial |
+| self | EVORAO:recombinantMaterial |
+| native | EVORAO:recombinantMaterial |
 
 
 

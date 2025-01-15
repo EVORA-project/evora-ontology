@@ -4,7 +4,7 @@
 
 
 
-URI: [EVORA:providedEntityType](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#providedEntityType)
+URI: [EVORAO:providedEntityType](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#providedEntityType)
 
 
 
@@ -54,8 +54,8 @@ URI: [EVORA:providedEntityType](https://raw.githubusercontent.com/EVORA-project/
 
 | Mapping Type | Mapped Value |
 | ---  | ---  |
-| self | EVORA:providedEntityType |
-| native | EVORA:providedEntityType |
+| self | EVORAO:providedEntityType |
+| native | EVORAO:providedEntityType |
 
 
 

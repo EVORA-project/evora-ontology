@@ -4,7 +4,7 @@
 
 
 
-URI: [EVORA:theTAGStatusOfTheSolubilizedProtein](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#theTAGStatusOfTheSolubilizedProtein)
+URI: [EVORAO:theTAGStatusOfTheSolubilizedProtein](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#theTAGStatusOfTheSolubilizedProtein)
 
 
 
@@ -54,8 +54,8 @@ URI: [EVORA:theTAGStatusOfTheSolubilizedProtein](https://raw.githubusercontent.c
 
 | Mapping Type | Mapped Value |
 | ---  | ---  |
-| self | EVORA:theTAGStatusOfTheSolubilizedProtein |
-| native | EVORA:theTAGStatusOfTheSolubilizedProtein |
+| self | EVORAO:theTAGStatusOfTheSolubilizedProtein |
+| native | EVORAO:theTAGStatusOfTheSolubilizedProtein |
 
 
 

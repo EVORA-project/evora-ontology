@@ -4,7 +4,7 @@
 
 
 
-URI: [EVORA:observedMutations](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#observedMutations)
+URI: [EVORAO:observedMutations](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#observedMutations)
 
 
 
@@ -54,8 +54,8 @@ URI: [EVORA:observedMutations](https://raw.githubusercontent.com/EVORA-project/e
 
 | Mapping Type | Mapped Value |
 | ---  | ---  |
-| self | EVORA:observedMutations |
-| native | EVORA:observedMutations |
+| self | EVORAO:observedMutations |
+| native | EVORAO:observedMutations |
 
 
 

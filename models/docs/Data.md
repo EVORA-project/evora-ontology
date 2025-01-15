@@ -9,7 +9,7 @@ _Subclass of File representing structured or unstructured datasets, often used f
 
 
 
-URI: [EVORA:Data](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#Data)
+URI: [EVORAO:Data](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#Data)
 
 
 
@@ -62,7 +62,7 @@ URI: [EVORA:Data](https://raw.githubusercontent.com/EVORA-project/evora-ontology
 | [format](format.md) | 1 <br/> [String](String.md) | The file type or format that indicates how the data within the file is struct... | [File](File.md) |
 | [license](license.md) | 0..1 <br/> [License](License.md) | The legal terms and conditions under which the file can be used, shared, or d... | [File](File.md) |
 | [name](name.md) | 1 <br/> [String](String.md) | The label that allows humans to identify the current item | [Nameable](Nameable.md) |
-| [description](description.md) | 0..1 <br/> [String](String.md) | A short explanation of the characteristics, features, or nature of the curren... | [Nameable](Nameable.md) |
+| [description](description.md) | 0..1 _recommended_ <br/> [String](String.md) | A short explanation of the characteristics, features, or nature of the curren... | [Nameable](Nameable.md) |
 
 
 
@@ -76,11 +76,6 @@ URI: [EVORA:Data](https://raw.githubusercontent.com/EVORA-project/evora-ontology
 
 
 
-
-## Aliases
-
-
-* data
 
 
 
@@ -104,8 +99,8 @@ URI: [EVORA:Data](https://raw.githubusercontent.com/EVORA-project/evora-ontology
 
 | Mapping Type | Mapped Value |
 | ---  | ---  |
-| self | EVORA:Data |
-| native | EVORA:Data |
+| self | EVORAO:Data |
+| native | EVORAO:Data |
 | close | wd:Q42848 |
 
 
@@ -127,8 +122,6 @@ description: Subclass of File representing structured or unstructured datasets, 
   used for analysis, storage, or transfer of information
 title: Data
 from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
-aliases:
-- data
 close_mappings:
 - wd:Q42848
 is_a: File
@@ -145,8 +138,6 @@ description: Subclass of File representing structured or unstructured datasets, 
   used for analysis, storage, or transfer of information
 title: Data
 from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
-aliases:
-- data
 close_mappings:
 - wd:Q42848
 is_a: File
@@ -238,6 +229,7 @@ attributes:
     - Nameable
     range: string
     required: false
+    recommended: true
     multivalued: false
 
 ```

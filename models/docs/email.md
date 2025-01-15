@@ -4,7 +4,7 @@
 
 
 
-URI: [EVORA:email](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#email)
+URI: [EVORAO:email](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#email)
 
 
 
@@ -54,8 +54,8 @@ URI: [EVORA:email](https://raw.githubusercontent.com/EVORA-project/evora-ontolog
 
 | Mapping Type | Mapped Value |
 | ---  | ---  |
-| self | EVORA:email |
-| native | EVORA:email |
+| self | EVORAO:email |
+| native | EVORAO:email |
 
 
 

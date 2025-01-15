@@ -4,7 +4,7 @@
 
 
 
-URI: [EVORA:biologicalSourceType](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#biologicalSourceType)
+URI: [EVORAO:biologicalSourceType](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#biologicalSourceType)
 
 
 
@@ -54,8 +54,8 @@ URI: [EVORA:biologicalSourceType](https://raw.githubusercontent.com/EVORA-projec
 
 | Mapping Type | Mapped Value |
 | ---  | ---  |
-| self | EVORA:biologicalSourceType |
-| native | EVORA:biologicalSourceType |
+| self | EVORAO:biologicalSourceType |
+| native | EVORAO:biologicalSourceType |
 
 
 

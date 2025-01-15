@@ -47,7 +47,7 @@ URI: [xsd:anyURI](http://www.w3.org/2001/XMLSchema#anyURI)
 | Mapping Type | Mapped Value |
 | ---  | ---  |
 | self | xsd:anyURI |
-| native | EVORA:uri |
+| native | EVORAO:uri |
 | close | schema:URL |
 
 

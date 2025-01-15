@@ -4,7 +4,7 @@
 
 
 
-URI: [EVORA:isItAClonedNucleicAcid](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#isItAClonedNucleicAcid)
+URI: [EVORAO:isItAClonedNucleicAcid](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#isItAClonedNucleicAcid)
 
 
 
@@ -54,8 +54,8 @@ URI: [EVORA:isItAClonedNucleicAcid](https://raw.githubusercontent.com/EVORA-proj
 
 | Mapping Type | Mapped Value |
 | ---  | ---  |
-| self | EVORA:isItAClonedNucleicAcid |
-| native | EVORA:isItAClonedNucleicAcid |
+| self | EVORAO:isItAClonedNucleicAcid |
+| native | EVORAO:isItAClonedNucleicAcid |
 
 
 

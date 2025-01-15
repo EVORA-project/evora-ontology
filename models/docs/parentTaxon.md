@@ -4,7 +4,7 @@
 
 
 
-URI: [EVORA:parentTaxon](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#parentTaxon)
+URI: [EVORAO:parentTaxon](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#parentTaxon)
 
 
 
@@ -54,8 +54,8 @@ URI: [EVORA:parentTaxon](https://raw.githubusercontent.com/EVORA-project/evora-o
 
 | Mapping Type | Mapped Value |
 | ---  | ---  |
-| self | EVORA:parentTaxon |
-| native | EVORA:parentTaxon |
+| self | EVORAO:parentTaxon |
+| native | EVORAO:parentTaxon |
 
 
 

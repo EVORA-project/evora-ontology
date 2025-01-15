@@ -4,7 +4,7 @@
 
 
 
-URI: [EVORA:beforeDate](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#beforeDate)
+URI: [EVORAO:beforeDate](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#beforeDate)
 
 
 
@@ -54,8 +54,8 @@ URI: [EVORA:beforeDate](https://raw.githubusercontent.com/EVORA-project/evora-on
 
 | Mapping Type | Mapped Value |
 | ---  | ---  |
-| self | EVORA:beforeDate |
-| native | EVORA:beforeDate |
+| self | EVORAO:beforeDate |
+| native | EVORAO:beforeDate |
 
 
 

@@ -4,7 +4,7 @@
 
 
 
-URI: [EVORA:modelSpecies](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#modelSpecies)
+URI: [EVORAO:modelSpecies](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#modelSpecies)
 
 
 
@@ -54,8 +54,8 @@ URI: [EVORA:modelSpecies](https://raw.githubusercontent.com/EVORA-project/evora-
 
 | Mapping Type | Mapped Value |
 | ---  | ---  |
-| self | EVORA:modelSpecies |
-| native | EVORA:modelSpecies |
+| self | EVORAO:modelSpecies |
+| native | EVORAO:modelSpecies |
 
 
 

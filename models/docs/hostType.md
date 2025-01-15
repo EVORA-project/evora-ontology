@@ -4,7 +4,7 @@
 
 
 
-URI: [EVORA:hostType](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#hostType)
+URI: [EVORAO:hostType](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#hostType)
 
 
 
@@ -54,8 +54,8 @@ URI: [EVORA:hostType](https://raw.githubusercontent.com/EVORA-project/evora-onto
 
 | Mapping Type | Mapped Value |
 | ---  | ---  |
-| self | EVORA:hostType |
-| native | EVORA:hostType |
+| self | EVORAO:hostType |
+| native | EVORAO:hostType |
 
 
 

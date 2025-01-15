@@ -9,7 +9,7 @@ _A population of cells that originates from a primary culture, adapted to grow a
 
 
 
-URI: [EVORA:ProductionCellLine](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#ProductionCellLine)
+URI: [EVORAO:ProductionCellLine](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#ProductionCellLine)
 
 
 
@@ -60,7 +60,7 @@ URI: [EVORA:ProductionCellLine](https://raw.githubusercontent.com/EVORA-project/
 | [weight](weight.md) | 1 <br/> [Integer](Integer.md) | A numerical value indicating relative importance or priority, generally proce... | [Term](Term.md) |
 | [inVocabulary](inVocabulary.md) | 1 <br/> [Vocabulary](Vocabulary.md) | Terms belong to a specific vocabulary | [Term](Term.md) |
 | [name](name.md) | 1 <br/> [String](String.md) | The label that allows humans to identify the current item | [Nameable](Nameable.md) |
-| [description](description.md) | 0..1 <br/> [String](String.md) | A short explanation of the characteristics, features, or nature of the curren... | [Nameable](Nameable.md) |
+| [description](description.md) | 0..1 _recommended_ <br/> [String](String.md) | A short explanation of the characteristics, features, or nature of the curren... | [Nameable](Nameable.md) |
 
 
 
@@ -80,11 +80,6 @@ URI: [EVORA:ProductionCellLine](https://raw.githubusercontent.com/EVORA-project/
 
 
 
-
-## Aliases
-
-
-* cell line
 
 
 
@@ -108,8 +103,8 @@ URI: [EVORA:ProductionCellLine](https://raw.githubusercontent.com/EVORA-project/
 
 | Mapping Type | Mapped Value |
 | ---  | ---  |
-| self | EVORA:ProductionCellLine |
-| native | EVORA:ProductionCellLine |
+| self | EVORAO:ProductionCellLine |
+| native | EVORAO:ProductionCellLine |
 | close | wd:Q21014462 |
 
 
@@ -132,8 +127,6 @@ description: A population of cells that originates from a primary culture, adapt
   produce biological substances
 title: Production cell line
 from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
-aliases:
-- cell line
 close_mappings:
 - wd:Q21014462
 is_a: Term
@@ -151,8 +144,6 @@ description: A population of cells that originates from a primary culture, adapt
   produce biological substances
 title: Production cell line
 from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
-aliases:
-- cell line
 close_mappings:
 - wd:Q21014462
 is_a: Term
@@ -181,8 +172,6 @@ attributes:
     description: Terms belong to a specific vocabulary
     title: in Vocabulary
     from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
-    aliases:
-    - catalog
     close_mappings:
     - wdp:P972
     rank: 1000
@@ -237,6 +226,7 @@ attributes:
     - Nameable
     range: string
     required: false
+    recommended: true
     multivalued: false
 
 ```

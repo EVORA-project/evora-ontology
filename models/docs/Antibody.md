@@ -9,7 +9,7 @@ _Protein that can bind to certain types of foreign bodies, such as pathogens_
 
 
 
-URI: [EVORA:Antibody](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#Antibody)
+URI: [EVORAO:Antibody](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#Antibody)
 
 
 
@@ -35,7 +35,7 @@ URI: [EVORA:Antibody](https://raw.githubusercontent.com/EVORA-project/evora-onto
           
     
     
-    Antibody --> "*" ProductCategory : additionalCategory
+    Antibody --> "* _recommended_" ProductCategory : additionalCategory
     click ProductCategory href "../ProductCategory"
 
         
@@ -88,7 +88,7 @@ URI: [EVORA:Antibody](https://raw.githubusercontent.com/EVORA-project/evora-onto
           
     
     
-    Antibody --> "0..1" ContactPoint : contactPoint
+    Antibody --> "0..1 _recommended_" ContactPoint : contactPoint
     click ContactPoint href "../ContactPoint"
 
         
@@ -119,7 +119,7 @@ URI: [EVORA:Antibody](https://raw.githubusercontent.com/EVORA-project/evora-onto
           
     
     
-    Antibody --> "1..*" Keyword : keywords
+    Antibody --> "1..* _recommended_" Keyword : keywords
     click Keyword href "../Keyword"
 
         
@@ -192,7 +192,7 @@ URI: [EVORA:Antibody](https://raw.githubusercontent.com/EVORA-project/evora-onto
           
     
     
-    Antibody --> "0..1" RiskGroup : riskGroup
+    Antibody --> "0..1 _recommended_" RiskGroup : riskGroup
     click RiskGroup href "../RiskGroup"
 
         
@@ -201,7 +201,7 @@ URI: [EVORA:Antibody](https://raw.githubusercontent.com/EVORA-project/evora-onto
           
     
     
-    Antibody --> "*" SequenceReference : sequenceReference
+    Antibody --> "* _recommended_" SequenceReference : sequenceReference
     click SequenceReference href "../SequenceReference"
 
         
@@ -244,11 +244,11 @@ URI: [EVORA:Antibody](https://raw.githubusercontent.com/EVORA-project/evora-onto
 
 | Name | Cardinality and Range | Description | Inheritance |
 | ---  | --- | --- | --- |
-| [productionSystem](productionSystem.md) | 0..1 <br/> [String](String.md) | The biological and technological methods and processes used to produce the an... | direct |
+| [productionSystem](productionSystem.md) | 0..1 _recommended_ <br/> [String](String.md) | The biological and technological methods and processes used to produce the an... | direct |
 | [antibodyPurifiedByAffinity](antibodyPurifiedByAffinity.md) | 1 <br/> [Boolean](Boolean.md) | Indicates whether or not if the antibody was purified by affinity | direct |
 | [specificityDocumented](specificityDocumented.md) | 1 <br/> [Boolean](Boolean.md) | Tell if the antibody specificity was documented | direct |
 | [targetedAntigen](targetedAntigen.md) | 1 <br/> [String](String.md) | Specific molecular structure or epitope recognized and bound by an antibody | direct |
-| [sequenceReference](sequenceReference.md) | * <br/> [SequenceReference](SequenceReference.md) | A reference that permits to retreive the sequence information from a sequence... | direct |
+| [sequenceReference](sequenceReference.md) | * _recommended_ <br/> [SequenceReference](SequenceReference.md) | A reference that permits to retreive the sequence information from a sequence... | direct |
 | [hasIATAClassification](hasIATAClassification.md) | 1 <br/> [IATAClassification](IATAClassification.md) | The corresponding International Air Transport Association (IATA)'s category f... | [Product](Product.md) |
 | [shippingConditions](shippingConditions.md) | 1 <br/> [String](String.md) | Specification of the terms and parameters for transporting | [Product](Product.md) |
 | [materialSafetyDataSheet](materialSafetyDataSheet.md) | 0..1 <br/> [MSDS](MSDS.md) | A Material Safety Data Sheet (MSDS) or Safety Data Sheet (SDS) is a standardi... | [Product](Product.md) |
@@ -258,19 +258,19 @@ URI: [EVORA:Antibody](https://raw.githubusercontent.com/EVORA-project/evora-onto
 | [usageRestrictions](usageRestrictions.md) | 0..1 <br/> [String](String.md) | Specifies any limitations or conditions on the use of the biological material... | [Product](Product.md) |
 | [accessPointURL](accessPointURL.md) | 1 <br/> [Uri](Uri.md) | The URL that permits to access to the product/service detailed description pa... | [ProductOrService](ProductOrService.md) |
 | [refSKU](refSKU.md) | 1 <br/> [String](String.md) | The reference or the stock keeping unit of the service or item provided in th... | [ProductOrService](ProductOrService.md) |
-| [unitDefinition](unitDefinition.md) | 0..1 <br/> [String](String.md) | A short description of what will be delivered by ordering one unit of this it... | [ProductOrService](ProductOrService.md) |
+| [unitDefinition](unitDefinition.md) | 0..1 _recommended_ <br/> [String](String.md) | A short description of what will be delivered by ordering one unit of this it... | [ProductOrService](ProductOrService.md) |
 | [category](category.md) | 1 <br/> [ProductCategory](ProductCategory.md) | The main category of the service or product | [ProductOrService](ProductOrService.md) |
-| [additionalCategory](additionalCategory.md) | * <br/> [ProductCategory](ProductCategory.md) | Any category apart from its main category in which this product or service ca... | [ProductOrService](ProductOrService.md) |
-| [unitCost](unitCost.md) | 1 <br/> [String](String.md) | The cost per access for one unit as defined by the unit definition | [ProductOrService](ProductOrService.md) |
+| [additionalCategory](additionalCategory.md) | * _recommended_ <br/> [ProductCategory](ProductCategory.md) | Any category apart from its main category in which this product or service ca... | [ProductOrService](ProductOrService.md) |
+| [unitCost](unitCost.md) | 1 _recommended_ <br/> [String](String.md) | The cost per access for one unit as defined by the unit definition | [ProductOrService](ProductOrService.md) |
 | [qualityGrading](qualityGrading.md) | 0..1 <br/> [String](String.md) | Information that permits to assess the quality level of what will be provided | [ProductOrService](ProductOrService.md) |
 | [pathogenIdentification](pathogenIdentification.md) | 1..* <br/> [PathogenIdentification](PathogenIdentification.md) | The identification of the pathogen or group of pathogens (e | [ProductOrService](ProductOrService.md) |
 | [relatedDOI](relatedDOI.md) | * <br/> [DOI](DOI.md) | Any DOI that can be related | [ProductOrService](ProductOrService.md) |
-| [riskGroup](riskGroup.md) | 0..1 <br/> [RiskGroup](RiskGroup.md) | The highest risk group related to this resource | [ProductOrService](ProductOrService.md) |
+| [riskGroup](riskGroup.md) | 0..1 _recommended_ <br/> [RiskGroup](RiskGroup.md) | The highest risk group related to this resource | [ProductOrService](ProductOrService.md) |
 | [biosafetyRestrictions](biosafetyRestrictions.md) | 0..1 <br/> [String](String.md) | Information about guidelines and regulations designed to prevent the exposure... | [ProductOrService](ProductOrService.md) |
-| [canItBeUsedToProduceGMO](canItBeUsedToProduceGMO.md) | 0..1 <br/> [Boolean](Boolean.md) | Indicates if the current service or product can be used to produce GMO | [ProductOrService](ProductOrService.md) |
+| [canItBeUsedToProduceGMO](canItBeUsedToProduceGMO.md) | 0..1 _recommended_ <br/> [Boolean](Boolean.md) | Indicates if the current service or product can be used to produce GMO | [ProductOrService](ProductOrService.md) |
 | [provider](provider.md) | 1 <br/> [Provider](Provider.md) | A provider of this product or service, as a specific organization | [ProductOrService](ProductOrService.md) |
 | [collection](collection.md) | 1..* <br/> [Collection](Collection.md) | The collection(s) to which belongs this item | [ProductOrService](ProductOrService.md) |
-| [keywords](keywords.md) | 1..* <br/> [Keyword](Keyword.md) | List of terms used to tag and categorize this Item | [ProductOrService](ProductOrService.md) |
+| [keywords](keywords.md) | 1..* _recommended_ <br/> [Keyword](Keyword.md) | List of terms used to tag and categorize this Item | [ProductOrService](ProductOrService.md) |
 | [availability](availability.md) | 1 <br/> [String](String.md) | The state or condition in which this item is accessible and ready for use or ... | [ProductOrService](ProductOrService.md) |
 | [complementaryDocument](complementaryDocument.md) | * <br/> [Document](Document.md) | Any complementary document that can be related to this Item | [ProductOrService](ProductOrService.md) |
 | [technicalRecommendation](technicalRecommendation.md) | 0..1 <br/> [String](String.md) | Expert advice or guidelines provided to ensure the optimal use, performance, ... | [ProductOrService](ProductOrService.md) |
@@ -279,20 +279,15 @@ URI: [EVORA:Antibody](https://raw.githubusercontent.com/EVORA-project/evora-onto
 | [certification](certification.md) | * <br/> [Certification](Certification.md) | Any certification related to the current product or service; e | [ProductOrService](ProductOrService.md) |
 | [internalReference](internalReference.md) | 0..1 <br/> [String](String.md) | Any reference or indication to be used for local retrieval purpose | [ProductOrService](ProductOrService.md) |
 | [note](note.md) | 0..1 <br/> [String](String.md) | An aditional information as a textual comment | [ProductOrService](ProductOrService.md) |
-| [contactPoint](contactPoint.md) | 0..1 <br/> [ContactPoint](ContactPoint.md) | An information that allows someone to establish communication | [ProductOrService](ProductOrService.md) |
+| [contactPoint](contactPoint.md) | 0..1 _recommended_ <br/> [ContactPoint](ContactPoint.md) | An information that allows someone to establish communication | [ProductOrService](ProductOrService.md) |
 | [name](name.md) | 1 <br/> [String](String.md) | The label that allows humans to identify the current item | [Nameable](Nameable.md) |
-| [description](description.md) | 0..1 <br/> [String](String.md) | A short explanation of the characteristics, features, or nature of the curren... | [Nameable](Nameable.md) |
+| [description](description.md) | 0..1 _recommended_ <br/> [String](String.md) | A short explanation of the characteristics, features, or nature of the curren... | [Nameable](Nameable.md) |
 
 
 
 
 
 
-
-## Aliases
-
-
-* antibody
 
 
 
@@ -316,8 +311,8 @@ URI: [EVORA:Antibody](https://raw.githubusercontent.com/EVORA-project/evora-onto
 
 | Mapping Type | Mapped Value |
 | ---  | ---  |
-| self | EVORA:Antibody |
-| native | EVORA:Antibody |
+| self | EVORAO:Antibody |
+| native | EVORAO:Antibody |
 | close | wd:Q79460 |
 
 
@@ -338,8 +333,6 @@ name: Antibody
 description: Protein that can bind to certain types of foreign bodies, such as pathogens
 title: Antibody
 from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
-aliases:
-- antibody
 close_mappings:
 - wd:Q79460
 is_a: Product
@@ -357,6 +350,7 @@ slot_usage:
     title: production system
     range: string
     required: false
+    recommended: true
     multivalued: false
   antibodyPurifiedByAffinity:
     name: antibodyPurifiedByAffinity
@@ -387,6 +381,7 @@ slot_usage:
     title: sequence reference
     range: SequenceReference
     required: false
+    recommended: true
     multivalued: true
 
 ```
@@ -400,8 +395,6 @@ name: Antibody
 description: Protein that can bind to certain types of foreign bodies, such as pathogens
 title: Antibody
 from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
-aliases:
-- antibody
 close_mappings:
 - wd:Q79460
 is_a: Product
@@ -413,6 +406,7 @@ slot_usage:
     title: production system
     range: string
     required: false
+    recommended: true
     multivalued: false
   antibodyPurifiedByAffinity:
     name: antibodyPurifiedByAffinity
@@ -443,6 +437,7 @@ slot_usage:
     title: sequence reference
     range: SequenceReference
     required: false
+    recommended: true
     multivalued: true
 attributes:
   productionSystem:
@@ -458,6 +453,7 @@ attributes:
     - Antibody
     range: string
     required: false
+    recommended: true
     multivalued: false
   antibodyPurifiedByAffinity:
     name: antibodyPurifiedByAffinity
@@ -514,6 +510,7 @@ attributes:
     - Antibody
     range: SequenceReference
     required: false
+    recommended: true
     multivalued: true
   hasIATAClassification:
     name: hasIATAClassification
@@ -676,6 +673,7 @@ attributes:
     - ProductOrService
     range: string
     required: false
+    recommended: true
     multivalued: false
   category:
     name: category
@@ -707,6 +705,7 @@ attributes:
     - ProductOrService
     range: ProductCategory
     required: false
+    recommended: true
     multivalued: true
   unitCost:
     name: unitCost
@@ -725,6 +724,7 @@ attributes:
     - ProductOrService
     range: string
     required: true
+    recommended: true
     multivalued: false
   qualityGrading:
     name: qualityGrading
@@ -764,8 +764,6 @@ attributes:
     description: Any DOI that can be related
     title: DOI
     from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
-    aliases:
-    - DOI
     close_mappings:
     - wdp:P356
     rank: 1000
@@ -784,8 +782,6 @@ attributes:
       group classification defined by the WHO laboratory biosafety manual
     title: risk group
     from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
-    aliases:
-    - risk group
     close_mappings:
     - wdp:P12663
     rank: 1000
@@ -795,6 +791,7 @@ attributes:
     - ProductOrService
     range: RiskGroup
     required: false
+    recommended: true
     multivalued: false
   biosafetyRestrictions:
     name: biosafetyRestrictions
@@ -827,6 +824,7 @@ attributes:
     - ProductOrService
     range: boolean
     required: false
+    recommended: true
     multivalued: false
   provider:
     name: provider
@@ -846,8 +844,6 @@ attributes:
     description: The collection(s) to which belongs this item
     title: collection
     from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
-    aliases:
-    - catalog
     rank: 1000
     alias: collection
     owner: Antibody
@@ -870,6 +866,7 @@ attributes:
     - ProductOrService
     range: Keyword
     required: true
+    recommended: true
     multivalued: true
   availability:
     name: availability
@@ -1001,6 +998,7 @@ attributes:
     - ProductOrService
     range: ContactPoint
     required: false
+    recommended: true
     multivalued: false
   name:
     name: name
@@ -1046,6 +1044,7 @@ attributes:
     - Nameable
     range: string
     required: false
+    recommended: true
     multivalued: false
 
 ```

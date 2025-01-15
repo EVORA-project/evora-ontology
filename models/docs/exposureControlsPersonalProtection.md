@@ -4,7 +4,7 @@
 
 
 
-URI: [EVORA:exposureControlsPersonalProtection](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#exposureControlsPersonalProtection)
+URI: [EVORAO:exposureControlsPersonalProtection](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#exposureControlsPersonalProtection)
 
 
 
@@ -54,8 +54,8 @@ URI: [EVORA:exposureControlsPersonalProtection](https://raw.githubusercontent.co
 
 | Mapping Type | Mapped Value |
 | ---  | ---  |
-| self | EVORA:exposureControlsPersonalProtection |
-| native | EVORA:exposureControlsPersonalProtection |
+| self | EVORAO:exposureControlsPersonalProtection |
+| native | EVORAO:exposureControlsPersonalProtection |
 
 
 

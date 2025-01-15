@@ -4,7 +4,7 @@
 
 
 
-URI: [EVORA:partIdentification](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#partIdentification)
+URI: [EVORAO:partIdentification](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#partIdentification)
 
 
 
@@ -54,8 +54,8 @@ URI: [EVORA:partIdentification](https://raw.githubusercontent.com/EVORA-project/
 
 | Mapping Type | Mapped Value |
 | ---  | ---  |
-| self | EVORA:partIdentification |
-| native | EVORA:partIdentification |
+| self | EVORAO:partIdentification |
+| native | EVORAO:partIdentification |
 
 
 

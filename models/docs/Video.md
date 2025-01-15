@@ -9,7 +9,7 @@ _Subclass of File representing moving visual media, such as recordings, presenta
 
 
 
-URI: [EVORA:Video](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#Video)
+URI: [EVORAO:Video](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#Video)
 
 
 
@@ -62,18 +62,13 @@ URI: [EVORA:Video](https://raw.githubusercontent.com/EVORA-project/evora-ontolog
 | [format](format.md) | 1 <br/> [String](String.md) | The file type or format that indicates how the data within the file is struct... | [File](File.md) |
 | [license](license.md) | 0..1 <br/> [License](License.md) | The legal terms and conditions under which the file can be used, shared, or d... | [File](File.md) |
 | [name](name.md) | 1 <br/> [String](String.md) | The label that allows humans to identify the current item | [Nameable](Nameable.md) |
-| [description](description.md) | 0..1 <br/> [String](String.md) | A short explanation of the characteristics, features, or nature of the curren... | [Nameable](Nameable.md) |
+| [description](description.md) | 0..1 _recommended_ <br/> [String](String.md) | A short explanation of the characteristics, features, or nature of the curren... | [Nameable](Nameable.md) |
 
 
 
 
 
 
-
-## Aliases
-
-
-* video file
 
 
 
@@ -97,8 +92,8 @@ URI: [EVORA:Video](https://raw.githubusercontent.com/EVORA-project/evora-ontolog
 
 | Mapping Type | Mapped Value |
 | ---  | ---  |
-| self | EVORA:Video |
-| native | EVORA:Video |
+| self | EVORAO:Video |
+| native | EVORAO:Video |
 | close | wd:Q98405806 |
 
 
@@ -120,8 +115,6 @@ description: Subclass of File representing moving visual media, such as recordin
   presentations, or movies
 title: Video
 from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
-aliases:
-- video file
 close_mappings:
 - wd:Q98405806
 is_a: File
@@ -138,8 +131,6 @@ description: Subclass of File representing moving visual media, such as recordin
   presentations, or movies
 title: Video
 from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
-aliases:
-- video file
 close_mappings:
 - wd:Q98405806
 is_a: File
@@ -231,6 +222,7 @@ attributes:
     - Nameable
     range: string
     required: false
+    recommended: true
     multivalued: false
 
 ```

@@ -4,7 +4,7 @@
 
 
 
-URI: [EVORA:taxonDataProvider](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#taxonDataProvider)
+URI: [EVORAO:taxonDataProvider](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#taxonDataProvider)
 
 
 
@@ -54,8 +54,8 @@ URI: [EVORA:taxonDataProvider](https://raw.githubusercontent.com/EVORA-project/e
 
 | Mapping Type | Mapped Value |
 | ---  | ---  |
-| self | EVORA:taxonDataProvider |
-| native | EVORA:taxonDataProvider |
+| self | EVORAO:taxonDataProvider |
+| native | EVORAO:taxonDataProvider |
 
 
 

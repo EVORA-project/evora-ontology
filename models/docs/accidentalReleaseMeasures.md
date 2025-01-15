@@ -4,7 +4,7 @@
 
 
 
-URI: [EVORA:accidentalReleaseMeasures](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#accidentalReleaseMeasures)
+URI: [EVORAO:accidentalReleaseMeasures](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#accidentalReleaseMeasures)
 
 
 
@@ -54,8 +54,8 @@ URI: [EVORA:accidentalReleaseMeasures](https://raw.githubusercontent.com/EVORA-p
 
 | Mapping Type | Mapped Value |
 | ---  | ---  |
-| self | EVORA:accidentalReleaseMeasures |
-| native | EVORA:accidentalReleaseMeasures |
+| self | EVORAO:accidentalReleaseMeasures |
+| native | EVORAO:accidentalReleaseMeasures |
 
 
 

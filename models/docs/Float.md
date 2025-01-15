@@ -42,7 +42,7 @@ URI: [xsd:float](http://www.w3.org/2001/XMLSchema#float)
 | Mapping Type | Mapped Value |
 | ---  | ---  |
 | self | xsd:float |
-| native | EVORA:float |
+| native | EVORAO:float |
 | exact | schema:Float |
 
 

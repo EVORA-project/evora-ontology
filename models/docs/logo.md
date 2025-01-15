@@ -4,7 +4,7 @@
 
 
 
-URI: [EVORA:logo](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#logo)
+URI: [EVORAO:logo](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#logo)
 
 
 
@@ -19,13 +19,13 @@ URI: [EVORA:logo](https://raw.githubusercontent.com/EVORA-project/evora-ontology
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
 | [PersonOrOrganization](PersonOrOrganization.md) | A person or an organization |  yes  |
-| [Certification](Certification.md) | Assurance given by an independent certification body that a product, service ... |  yes  |
-| [Person](Person.md) | An individual |  no  |
-| [RI](RI.md) | A research infrastructure |  no  |
 | [Organization](Organization.md) | A social entity established to meet needs or pursue specific goals |  no  |
-| [License](License.md) | The legal terms and conditions under which the subject can be used, shared, o... |  yes  |
+| [Certification](Certification.md) | Assurance given by an independent certification body that a product, service ... |  yes  |
+| [RI](RI.md) | A research infrastructure |  no  |
+| [Person](Person.md) | An individual |  no  |
 | [Provider](Provider.md) | A provider of products or services, as a specific organization |  no  |
 | [Originator](Originator.md) | The individual or organization responsible for the original discovery, isolat... |  no  |
+| [License](License.md) | The legal terms and conditions under which the subject can be used, shared, o... |  yes  |
 
 
 
@@ -61,8 +61,8 @@ URI: [EVORA:logo](https://raw.githubusercontent.com/EVORA-project/evora-ontology
 
 | Mapping Type | Mapped Value |
 | ---  | ---  |
-| self | EVORA:logo |
-| native | EVORA:logo |
+| self | EVORAO:logo |
+| native | EVORAO:logo |
 
 
 

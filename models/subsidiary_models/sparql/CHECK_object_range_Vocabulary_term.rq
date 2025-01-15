@@ -17,7 +17,7 @@ PREFIX adms: <http://www.w3.org/ns/adms#>
 PREFIX pav: <http://purl.org/pav/>
 PREFIX dwc: <http://rs.tdwg.org/dwc/terms/>
 PREFIX IAO: <http://purl.obolibrary.org/obo/IAO_>
-PREFIX EVORA: <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#>
+PREFIX EVORAO: <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#>
 PREFIX linkml: <https://w3id.org/linkml/>
 
 SELECT
@@ -28,66 +28,66 @@ SELECT
   ?object
 WHERE {
  GRAPH ?graph {
-  ?subject rdf:type EVORA:Vocabulary ;
+  ?subject rdf:type EVORAO:Vocabulary ;
      ?predicate ?object .
   FILTER NOT EXISTS {
     ?object rdf:type ?otype .
     FILTER ( ?otype IN (
-      EVORA:Term
+      EVORAO:Term
       , 
-      EVORA:CommonName
+      EVORAO:CommonName
       , 
-      EVORA:AlternateName
+      EVORAO:AlternateName
       , 
-      EVORA:RiskGroup
+      EVORAO:RiskGroup
       , 
-      EVORA:DOI
+      EVORAO:DOI
       , 
-      EVORA:Journal
+      EVORAO:Journal
       , 
-      EVORA:PDBReference
+      EVORAO:PDBReference
       , 
-      EVORA:Keyword
+      EVORAO:Keyword
       , 
-      EVORA:ProteinTag
+      EVORAO:ProteinTag
       , 
-      EVORA:SpecialFeature
+      EVORAO:SpecialFeature
       , 
-      EVORA:ExpressionVector
+      EVORAO:ExpressionVector
       , 
-      EVORA:PlasmidSelection
+      EVORAO:PlasmidSelection
       , 
-      EVORA:PropagationHost
+      EVORAO:PropagationHost
       , 
-      EVORA:TransmissionMethod
+      EVORAO:TransmissionMethod
       , 
-      EVORA:ProductionCellLine
+      EVORAO:ProductionCellLine
       , 
-      EVORA:ProductCategory
+      EVORAO:ProductCategory
       , 
-      EVORA:IsolationHost
+      EVORAO:IsolationHost
       , 
-      EVORA:GeographicalOrigin
+      EVORAO:GeographicalOrigin
       , 
-      EVORA:Country
+      EVORAO:Country
       , 
-      EVORA:IATAClassification
+      EVORAO:IATAClassification
       , 
-      EVORA:TaxonomicRank
+      EVORAO:TaxonomicRank
       , 
-      EVORA:Taxon
+      EVORAO:Taxon
       , 
-      EVORA:IPLCOrigin
+      EVORAO:IPLCOrigin
       , 
-      EVORA:VirusName
+      EVORAO:VirusName
       , 
-      EVORA:Variant
+      EVORAO:Variant
       
       ))
   }
  }
  VALUES ?check { linkml:range }
- VALUES ?predicate { EVORA:term  }
+ VALUES ?predicate { EVORAO:term  }
  
 }  
 

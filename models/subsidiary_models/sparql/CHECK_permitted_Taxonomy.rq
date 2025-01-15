@@ -17,22 +17,22 @@ PREFIX adms: <http://www.w3.org/ns/adms#>
 PREFIX pav: <http://purl.org/pav/>
 PREFIX dwc: <http://rs.tdwg.org/dwc/terms/>
 PREFIX IAO: <http://purl.obolibrary.org/obo/IAO_>
-PREFIX EVORA: <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#>
+PREFIX EVORAO: <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#>
 PREFIX linkml: <https://w3id.org/linkml/>
 
 SELECT ?g ?s ?p WHERE {
  GRAPH ?g {
-  ?s rdf:type EVORA:Taxonomy ;
+  ?s rdf:type EVORAO:Taxonomy ;
      ?p ?o .
   FILTER ( ?p NOT IN (
-   EVORA:taxon,
-   EVORA:taxonDataProvider,
-   EVORA:version,
-   EVORA:versionDataProvider,
-   EVORA:rank,
-   EVORA:rankDataProvider,
-   EVORA:name,
-   EVORA:description,
+   EVORAO:taxon,
+   EVORAO:taxonDataProvider,
+   EVORAO:version,
+   EVORAO:versionDataProvider,
+   EVORAO:rank,
+   EVORAO:rankDataProvider,
+   EVORAO:name,
+   EVORAO:description,
    rdf:type ))
  }
  

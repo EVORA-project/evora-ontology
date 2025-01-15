@@ -9,7 +9,7 @@ _Vernacular name that is the name used in everyday language to refer to an organ
 
 
 
-URI: [EVORA:CommonName](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#CommonName)
+URI: [EVORAO:CommonName](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#CommonName)
 
 
 
@@ -82,7 +82,7 @@ URI: [EVORA:CommonName](https://raw.githubusercontent.com/EVORA-project/evora-on
 | [weight](weight.md) | 1 <br/> [Integer](Integer.md) | A numerical value indicating relative importance or priority, generally proce... | [Term](Term.md) |
 | [inVocabulary](inVocabulary.md) | 1 <br/> [Vocabulary](Vocabulary.md) | Terms belong to a specific vocabulary | [Term](Term.md) |
 | [name](name.md) | 1 <br/> [String](String.md) | The label that allows humans to identify the current item | [Nameable](Nameable.md) |
-| [description](description.md) | 0..1 <br/> [String](String.md) | A short explanation of the characteristics, features, or nature of the curren... | [Nameable](Nameable.md) |
+| [description](description.md) | 0..1 _recommended_ <br/> [String](String.md) | A short explanation of the characteristics, features, or nature of the curren... | [Nameable](Nameable.md) |
 
 
 
@@ -96,11 +96,6 @@ URI: [EVORA:CommonName](https://raw.githubusercontent.com/EVORA-project/evora-on
 
 
 
-
-## Aliases
-
-
-* common name
 
 
 
@@ -124,8 +119,8 @@ URI: [EVORA:CommonName](https://raw.githubusercontent.com/EVORA-project/evora-on
 
 | Mapping Type | Mapped Value |
 | ---  | ---  |
-| self | EVORA:CommonName |
-| native | EVORA:CommonName |
+| self | EVORAO:CommonName |
+| native | EVORAO:CommonName |
 | exact | dwc:vernacularName |
 | close | wd:Q502895 |
 
@@ -149,8 +144,6 @@ description: Vernacular name that is the name used in everyday language to refer
   pronounce compared to the scientific name
 title: Common Name
 from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
-aliases:
-- common name
 exact_mappings:
 - dwc:vernacularName
 close_mappings:
@@ -169,8 +162,6 @@ slot_usage:
       serve as keywords arround the pathogen name for search and as a bridge with
       other projects that are still using other naming systems or taxonomies e.g.
       the NCBI taxonomy
-    aliases:
-    - alternative name
     close_mappings:
     - wdp:P4970
     range: AlternateName
@@ -181,8 +172,6 @@ slot_usage:
     description: The name of the origin from which knowledge is obtained. This can
       include any entity that provides information
     title: source of information
-    aliases:
-    - stated in
     close_mappings:
     - wdp:P248
     range: string
@@ -202,8 +191,6 @@ description: Vernacular name that is the name used in everyday language to refer
   pronounce compared to the scientific name
 title: Common Name
 from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
-aliases:
-- common name
 exact_mappings:
 - dwc:vernacularName
 close_mappings:
@@ -219,8 +206,6 @@ slot_usage:
       serve as keywords arround the pathogen name for search and as a bridge with
       other projects that are still using other naming systems or taxonomies e.g.
       the NCBI taxonomy
-    aliases:
-    - alternative name
     close_mappings:
     - wdp:P4970
     range: AlternateName
@@ -231,8 +216,6 @@ slot_usage:
     description: The name of the origin from which knowledge is obtained. This can
       include any entity that provides information
     title: source of information
-    aliases:
-    - stated in
     close_mappings:
     - wdp:P248
     range: string
@@ -249,8 +232,6 @@ attributes:
       other projects that are still using other naming systems or taxonomies e.g.
       the NCBI taxonomy
     from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
-    aliases:
-    - alternative name
     close_mappings:
     - wdp:P4970
     rank: 1000
@@ -269,8 +250,6 @@ attributes:
       include any entity that provides information
     title: source of information
     from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
-    aliases:
-    - stated in
     close_mappings:
     - wdp:P248
     rank: 1000
@@ -306,8 +285,6 @@ attributes:
     description: Terms belong to a specific vocabulary
     title: in Vocabulary
     from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
-    aliases:
-    - catalog
     close_mappings:
     - wdp:P972
     rank: 1000
@@ -362,6 +339,7 @@ attributes:
     - Nameable
     range: string
     required: false
+    recommended: true
     multivalued: false
 
 ```

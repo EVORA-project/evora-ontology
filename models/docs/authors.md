@@ -4,7 +4,7 @@
 
 
 
-URI: [EVORA:authors](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#authors)
+URI: [EVORAO:authors](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#authors)
 
 
 
@@ -54,8 +54,8 @@ URI: [EVORA:authors](https://raw.githubusercontent.com/EVORA-project/evora-ontol
 
 | Mapping Type | Mapped Value |
 | ---  | ---  |
-| self | EVORA:authors |
-| native | EVORA:authors |
+| self | EVORAO:authors |
+| native | EVORAO:authors |
 
 
 

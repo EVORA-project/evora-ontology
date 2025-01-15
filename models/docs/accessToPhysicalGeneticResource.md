@@ -4,7 +4,7 @@
 
 
 
-URI: [EVORA:accessToPhysicalGeneticResource](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#accessToPhysicalGeneticResource)
+URI: [EVORAO:accessToPhysicalGeneticResource](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#accessToPhysicalGeneticResource)
 
 
 
@@ -18,9 +18,9 @@ URI: [EVORA:accessToPhysicalGeneticResource](https://raw.githubusercontent.com/E
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [NaturalPartOrigin](NaturalPartOrigin.md) | Information on the origin of a natural part that composes the biological mate... |  no  |
 | [BiologicalPartOrigin](BiologicalPartOrigin.md) | Information on the origin of a unitary, cohesive part that is part of, or con... |  yes  |
 | [SyntheticPartOrigin](SyntheticPartOrigin.md) | Information on the origin of a synthetic part that composes the biological ma... |  no  |
+| [NaturalPartOrigin](NaturalPartOrigin.md) | Information on the origin of a natural part that composes the biological mate... |  no  |
 
 
 
@@ -56,8 +56,8 @@ URI: [EVORA:accessToPhysicalGeneticResource](https://raw.githubusercontent.com/E
 
 | Mapping Type | Mapped Value |
 | ---  | ---  |
-| self | EVORA:accessToPhysicalGeneticResource |
-| native | EVORA:accessToPhysicalGeneticResource |
+| self | EVORAO:accessToPhysicalGeneticResource |
+| native | EVORAO:accessToPhysicalGeneticResource |
 
 
 

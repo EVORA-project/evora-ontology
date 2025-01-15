@@ -9,7 +9,7 @@ _A virus vernacular name or a name that describes a group of viruses_
 
 
 
-URI: [EVORA:VirusName](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#VirusName)
+URI: [EVORAO:VirusName](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#VirusName)
 
 
 
@@ -74,7 +74,7 @@ URI: [EVORA:VirusName](https://raw.githubusercontent.com/EVORA-project/evora-ont
 | [weight](weight.md) | 1 <br/> [Integer](Integer.md) | A numerical value indicating relative importance or priority, generally proce... | [Term](Term.md) |
 | [inVocabulary](inVocabulary.md) | 1 <br/> [Vocabulary](Vocabulary.md) | Terms belong to a specific vocabulary | [Term](Term.md) |
 | [name](name.md) | 1 <br/> [String](String.md) | The label that allows humans to identify the current item | [Nameable](Nameable.md) |
-| [description](description.md) | 0..1 <br/> [String](String.md) | A short explanation of the characteristics, features, or nature of the curren... | [Nameable](Nameable.md) |
+| [description](description.md) | 0..1 _recommended_ <br/> [String](String.md) | A short explanation of the characteristics, features, or nature of the curren... | [Nameable](Nameable.md) |
 
 
 
@@ -88,11 +88,6 @@ URI: [EVORA:VirusName](https://raw.githubusercontent.com/EVORA-project/evora-ont
 
 
 
-
-## Aliases
-
-
-* virus name
 
 
 
@@ -116,8 +111,8 @@ URI: [EVORA:VirusName](https://raw.githubusercontent.com/EVORA-project/evora-ont
 
 | Mapping Type | Mapped Value |
 | ---  | ---  |
-| self | EVORA:VirusName |
-| native | EVORA:VirusName |
+| self | EVORAO:VirusName |
+| native | EVORAO:VirusName |
 | close | wd:Q125481078 |
 
 
@@ -138,8 +133,6 @@ name: VirusName
 description: A virus vernacular name or a name that describes a group of viruses
 title: Virus Name
 from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
-aliases:
-- virus name
 close_mappings:
 - wd:Q125481078
 is_a: CommonName
@@ -155,8 +148,6 @@ name: VirusName
 description: A virus vernacular name or a name that describes a group of viruses
 title: Virus Name
 from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
-aliases:
-- virus name
 close_mappings:
 - wd:Q125481078
 is_a: CommonName
@@ -171,8 +162,6 @@ attributes:
       other projects that are still using other naming systems or taxonomies e.g.
       the NCBI taxonomy
     from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
-    aliases:
-    - alternative name
     close_mappings:
     - wdp:P4970
     rank: 1000
@@ -191,8 +180,6 @@ attributes:
       include any entity that provides information
     title: source of information
     from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
-    aliases:
-    - stated in
     close_mappings:
     - wdp:P248
     rank: 1000
@@ -228,8 +215,6 @@ attributes:
     description: Terms belong to a specific vocabulary
     title: in Vocabulary
     from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
-    aliases:
-    - catalog
     close_mappings:
     - wdp:P972
     rank: 1000
@@ -284,6 +269,7 @@ attributes:
     - Nameable
     range: string
     required: false
+    recommended: true
     multivalued: false
 
 ```

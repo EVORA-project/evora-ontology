@@ -4,7 +4,7 @@
 
 
 
-URI: [EVORA:collectionDataProvider](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#collectionDataProvider)
+URI: [EVORAO:collectionDataProvider](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#collectionDataProvider)
 
 
 
@@ -54,8 +54,8 @@ URI: [EVORA:collectionDataProvider](https://raw.githubusercontent.com/EVORA-proj
 
 | Mapping Type | Mapped Value |
 | ---  | ---  |
-| self | EVORA:collectionDataProvider |
-| native | EVORA:collectionDataProvider |
+| self | EVORAO:collectionDataProvider |
+| native | EVORAO:collectionDataProvider |
 
 
 

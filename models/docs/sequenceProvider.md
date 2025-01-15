@@ -4,7 +4,7 @@
 
 
 
-URI: [EVORA:sequenceProvider](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#sequenceProvider)
+URI: [EVORAO:sequenceProvider](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#sequenceProvider)
 
 
 
@@ -54,8 +54,8 @@ URI: [EVORA:sequenceProvider](https://raw.githubusercontent.com/EVORA-project/ev
 
 | Mapping Type | Mapped Value |
 | ---  | ---  |
-| self | EVORA:sequenceProvider |
-| native | EVORA:sequenceProvider |
+| self | EVORAO:sequenceProvider |
+| native | EVORAO:sequenceProvider |
 
 
 

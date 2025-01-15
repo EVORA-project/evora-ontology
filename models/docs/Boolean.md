@@ -43,7 +43,7 @@ URI: [xsd:boolean](http://www.w3.org/2001/XMLSchema#boolean)
 | Mapping Type | Mapped Value |
 | ---  | ---  |
 | self | xsd:boolean |
-| native | EVORA:boolean |
+| native | EVORAO:boolean |
 | exact | schema:Boolean |
 
 

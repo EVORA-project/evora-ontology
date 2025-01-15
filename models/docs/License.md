@@ -9,7 +9,7 @@ _The legal terms and conditions under which the subject can be used, shared, or 
 
 
 
-URI: [EVORA:License](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#License)
+URI: [EVORAO:License](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#License)
 
 
 
@@ -61,7 +61,7 @@ URI: [EVORA:License](https://raw.githubusercontent.com/EVORA-project/evora-ontol
 | [licensingOrAttribution](licensingOrAttribution.md) | 0..1 <br/> [String](String.md) | A text or html code that provides any related data sharing licence and/or att... | direct |
 | [logo](logo.md) | 0..1 <br/> [Image](Image.md) | A path or URL to the related logo | direct |
 | [name](name.md) | 1 <br/> [String](String.md) | The label that allows humans to identify the current item | [Nameable](Nameable.md) |
-| [description](description.md) | 0..1 <br/> [String](String.md) | A short explanation of the characteristics, features, or nature of the curren... | [Nameable](Nameable.md) |
+| [description](description.md) | 0..1 _recommended_ <br/> [String](String.md) | A short explanation of the characteristics, features, or nature of the curren... | [Nameable](Nameable.md) |
 
 
 
@@ -81,11 +81,6 @@ URI: [EVORA:License](https://raw.githubusercontent.com/EVORA-project/evora-ontol
 
 
 
-
-## Aliases
-
-
-* license
 
 
 
@@ -109,8 +104,8 @@ URI: [EVORA:License](https://raw.githubusercontent.com/EVORA-project/evora-ontol
 
 | Mapping Type | Mapped Value |
 | ---  | ---  |
-| self | EVORA:License |
-| native | EVORA:License |
+| self | EVORAO:License |
+| native | EVORAO:License |
 | exact | dct:RightsStatement |
 | close | wd:Q79719, dct:LicenseDocument |
 
@@ -133,8 +128,6 @@ description: The legal terms and conditions under which the subject can be used,
   or distributed, indicating any restrictions or permissions
 title: License
 from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
-aliases:
-- license
 exact_mappings:
 - dct:RightsStatement
 close_mappings:
@@ -190,8 +183,6 @@ description: The legal terms and conditions under which the subject can be used,
   or distributed, indicating any restrictions or permissions
 title: License
 from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
-aliases:
-- license
 exact_mappings:
 - dct:RightsStatement
 close_mappings:
@@ -327,6 +318,7 @@ attributes:
     - Nameable
     range: string
     required: false
+    recommended: true
     multivalued: false
 
 ```

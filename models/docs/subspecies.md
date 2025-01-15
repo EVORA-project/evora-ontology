@@ -4,7 +4,7 @@
 
 
 
-URI: [EVORA:subspecies](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#subspecies)
+URI: [EVORAO:subspecies](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#subspecies)
 
 
 
@@ -54,8 +54,8 @@ URI: [EVORA:subspecies](https://raw.githubusercontent.com/EVORA-project/evora-on
 
 | Mapping Type | Mapped Value |
 | ---  | ---  |
-| self | EVORA:subspecies |
-| native | EVORA:subspecies |
+| self | EVORAO:subspecies |
+| native | EVORAO:subspecies |
 
 
 

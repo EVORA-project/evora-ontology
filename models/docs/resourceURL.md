@@ -4,7 +4,7 @@
 
 
 
-URI: [EVORA:resourceURL](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#resourceURL)
+URI: [EVORAO:resourceURL](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#resourceURL)
 
 
 
@@ -18,8 +18,8 @@ URI: [EVORA:resourceURL](https://raw.githubusercontent.com/EVORA-project/evora-o
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [Certification](Certification.md) | Assurance given by an independent certification body that a product, service ... |  yes  |
 | [License](License.md) | The legal terms and conditions under which the subject can be used, shared, o... |  yes  |
+| [Certification](Certification.md) | Assurance given by an independent certification body that a product, service ... |  yes  |
 
 
 
@@ -55,8 +55,8 @@ URI: [EVORA:resourceURL](https://raw.githubusercontent.com/EVORA-project/evora-o
 
 | Mapping Type | Mapped Value |
 | ---  | ---  |
-| self | EVORA:resourceURL |
-| native | EVORA:resourceURL |
+| self | EVORAO:resourceURL |
+| native | EVORAO:resourceURL |
 
 
 

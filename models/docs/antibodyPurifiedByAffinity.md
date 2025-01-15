@@ -4,7 +4,7 @@
 
 
 
-URI: [EVORA:antibodyPurifiedByAffinity](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#antibodyPurifiedByAffinity)
+URI: [EVORAO:antibodyPurifiedByAffinity](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#antibodyPurifiedByAffinity)
 
 
 
@@ -55,8 +55,8 @@ URI: [EVORA:antibodyPurifiedByAffinity](https://raw.githubusercontent.com/EVORA-
 
 | Mapping Type | Mapped Value |
 | ---  | ---  |
-| self | EVORA:antibodyPurifiedByAffinity |
-| native | EVORA:antibodyPurifiedByAffinity |
+| self | EVORAO:antibodyPurifiedByAffinity |
+| native | EVORAO:antibodyPurifiedByAffinity |
 
 
 

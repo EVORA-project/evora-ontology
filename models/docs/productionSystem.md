@@ -4,7 +4,7 @@
 
 
 
-URI: [EVORA:productionSystem](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#productionSystem)
+URI: [EVORAO:productionSystem](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#productionSystem)
 
 
 
@@ -55,8 +55,8 @@ URI: [EVORA:productionSystem](https://raw.githubusercontent.com/EVORA-project/ev
 
 | Mapping Type | Mapped Value |
 | ---  | ---  |
-| self | EVORA:productionSystem |
-| native | EVORA:productionSystem |
+| self | EVORAO:productionSystem |
+| native | EVORAO:productionSystem |
 
 
 

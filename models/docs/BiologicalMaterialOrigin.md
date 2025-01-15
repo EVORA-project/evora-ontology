@@ -9,7 +9,7 @@ _Information about the origin of the biological material, compulsory for access,
 
 
 
-URI: [EVORA:BiologicalMaterialOrigin](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#BiologicalMaterialOrigin)
+URI: [EVORAO:BiologicalMaterialOrigin](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#BiologicalMaterialOrigin)
 
 
 
@@ -100,8 +100,8 @@ URI: [EVORA:BiologicalMaterialOrigin](https://raw.githubusercontent.com/EVORA-pr
 
 | Mapping Type | Mapped Value |
 | ---  | ---  |
-| self | EVORA:BiologicalMaterialOrigin |
-| native | EVORA:BiologicalMaterialOrigin |
+| self | EVORAO:BiologicalMaterialOrigin |
+| native | EVORAO:BiologicalMaterialOrigin |
 
 
 

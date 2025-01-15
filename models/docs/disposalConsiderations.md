@@ -4,7 +4,7 @@
 
 
 
-URI: [EVORA:disposalConsiderations](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#disposalConsiderations)
+URI: [EVORAO:disposalConsiderations](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#disposalConsiderations)
 
 
 
@@ -54,8 +54,8 @@ URI: [EVORA:disposalConsiderations](https://raw.githubusercontent.com/EVORA-proj
 
 | Mapping Type | Mapped Value |
 | ---  | ---  |
-| self | EVORA:disposalConsiderations |
-| native | EVORA:disposalConsiderations |
+| self | EVORAO:disposalConsiderations |
+| native | EVORAO:disposalConsiderations |
 
 
 

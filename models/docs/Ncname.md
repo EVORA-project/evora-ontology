@@ -43,7 +43,7 @@ URI: [xsd:string](http://www.w3.org/2001/XMLSchema#string)
 | Mapping Type | Mapped Value |
 | ---  | ---  |
 | self | xsd:string |
-| native | EVORA:ncname |
+| native | EVORAO:ncname |
 
 
 

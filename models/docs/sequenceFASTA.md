@@ -4,7 +4,7 @@
 
 
 
-URI: [EVORA:sequenceFASTA](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#sequenceFASTA)
+URI: [EVORAO:sequenceFASTA](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#sequenceFASTA)
 
 
 
@@ -54,8 +54,8 @@ URI: [EVORA:sequenceFASTA](https://raw.githubusercontent.com/EVORA-project/evora
 
 | Mapping Type | Mapped Value |
 | ---  | ---  |
-| self | EVORA:sequenceFASTA |
-| native | EVORA:sequenceFASTA |
+| self | EVORAO:sequenceFASTA |
+| native | EVORAO:sequenceFASTA |
 
 
 

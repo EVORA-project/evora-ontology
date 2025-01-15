@@ -9,7 +9,7 @@ _An external API (Application Programming Interface) or Endpoint that permits to
 
 
 
-URI: [EVORA:DataProvider](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#DataProvider)
+URI: [EVORAO:DataProvider](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#DataProvider)
 
 
 
@@ -80,7 +80,7 @@ URI: [EVORA:DataProvider](https://raw.githubusercontent.com/EVORA-project/evora-
 | [providedEntityType](providedEntityType.md) | 1 <br/> [String](String.md) | The identification of the entity type (Class) described by the response to th... | direct |
 | [weight](weight.md) | 1 <br/> [Integer](Integer.md) | A numerical value indicating relative importance or priority, generally proce... | direct |
 | [name](name.md) | 1 <br/> [String](String.md) | The label that allows humans to identify the current item | [Nameable](Nameable.md) |
-| [description](description.md) | 0..1 <br/> [String](String.md) | A short explanation of the characteristics, features, or nature of the curren... | [Nameable](Nameable.md) |
+| [description](description.md) | 0..1 _recommended_ <br/> [String](String.md) | A short explanation of the characteristics, features, or nature of the curren... | [Nameable](Nameable.md) |
 
 
 
@@ -98,11 +98,6 @@ URI: [EVORA:DataProvider](https://raw.githubusercontent.com/EVORA-project/evora-
 
 
 
-
-## Aliases
-
-
-* data provider
 
 
 
@@ -126,8 +121,8 @@ URI: [EVORA:DataProvider](https://raw.githubusercontent.com/EVORA-project/evora-
 
 | Mapping Type | Mapped Value |
 | ---  | ---  |
-| self | EVORA:DataProvider |
-| native | EVORA:DataProvider |
+| self | EVORAO:DataProvider |
+| native | EVORAO:DataProvider |
 | close | wd:Q122625839 |
 
 
@@ -149,8 +144,6 @@ description: An external API (Application Programming Interface) or Endpoint tha
   permits to retrieve data from other sources
 title: Data provider
 from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
-aliases:
-- data provider
 close_mappings:
 - wd:Q122625839
 is_a: DataService
@@ -189,8 +182,6 @@ slot_usage:
     name: loginURL
     description: The URL template that allows to log in if required
     title: login URL
-    aliases:
-    - formatter URL
     close_mappings:
     - wdp:P1630
     - dcat:endpointDescription
@@ -211,8 +202,6 @@ slot_usage:
     name: queryURL
     description: The URL template that allows to get the content
     title: query URL
-    aliases:
-    - formatter URL
     exact_mappings:
     - dcat:endpointURL
     close_mappings:
@@ -276,8 +265,6 @@ description: An external API (Application Programming Interface) or Endpoint tha
   permits to retrieve data from other sources
 title: Data provider
 from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
-aliases:
-- data provider
 close_mappings:
 - wd:Q122625839
 is_a: DataService
@@ -306,8 +293,6 @@ slot_usage:
     name: loginURL
     description: The URL template that allows to log in if required
     title: login URL
-    aliases:
-    - formatter URL
     close_mappings:
     - wdp:P1630
     - dcat:endpointDescription
@@ -328,8 +313,6 @@ slot_usage:
     name: queryURL
     description: The URL template that allows to get the content
     title: query URL
-    aliases:
-    - formatter URL
     exact_mappings:
     - dcat:endpointURL
     close_mappings:
@@ -419,8 +402,6 @@ attributes:
     description: The URL template that allows to log in if required
     title: login URL
     from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
-    aliases:
-    - formatter URL
     close_mappings:
     - wdp:P1630
     - dcat:endpointDescription
@@ -453,8 +434,6 @@ attributes:
     description: The URL template that allows to get the content
     title: query URL
     from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
-    aliases:
-    - formatter URL
     exact_mappings:
     - dcat:endpointURL
     close_mappings:
@@ -580,6 +559,7 @@ attributes:
     - Nameable
     range: string
     required: false
+    recommended: true
     multivalued: false
 
 ```

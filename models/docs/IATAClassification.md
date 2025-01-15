@@ -9,7 +9,7 @@ _The corresponding International Air Transport Association (IATA)'s category for
 
 
 
-URI: [EVORA:IATAClassification](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#IATAClassification)
+URI: [EVORAO:IATAClassification](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#IATAClassification)
 
 
 
@@ -60,7 +60,7 @@ URI: [EVORA:IATAClassification](https://raw.githubusercontent.com/EVORA-project/
 | [weight](weight.md) | 1 <br/> [Integer](Integer.md) | A numerical value indicating relative importance or priority, generally proce... | [Term](Term.md) |
 | [inVocabulary](inVocabulary.md) | 1 <br/> [Vocabulary](Vocabulary.md) | Terms belong to a specific vocabulary | [Term](Term.md) |
 | [name](name.md) | 1 <br/> [String](String.md) | The label that allows humans to identify the current item | [Nameable](Nameable.md) |
-| [description](description.md) | 0..1 <br/> [String](String.md) | A short explanation of the characteristics, features, or nature of the curren... | [Nameable](Nameable.md) |
+| [description](description.md) | 0..1 _recommended_ <br/> [String](String.md) | A short explanation of the characteristics, features, or nature of the curren... | [Nameable](Nameable.md) |
 
 
 
@@ -110,8 +110,8 @@ URI: [EVORA:IATAClassification](https://raw.githubusercontent.com/EVORA-project/
 
 | Mapping Type | Mapped Value |
 | ---  | ---  |
-| self | EVORA:IATAClassification |
-| native | EVORA:IATAClassification |
+| self | EVORAO:IATAClassification |
+| native | EVORAO:IATAClassification |
 
 
 
@@ -172,8 +172,6 @@ attributes:
     description: Terms belong to a specific vocabulary
     title: in Vocabulary
     from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
-    aliases:
-    - catalog
     close_mappings:
     - wdp:P972
     rank: 1000
@@ -228,6 +226,7 @@ attributes:
     - Nameable
     range: string
     required: false
+    recommended: true
     multivalued: false
 
 ```

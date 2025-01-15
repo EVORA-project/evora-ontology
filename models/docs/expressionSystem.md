@@ -4,7 +4,7 @@
 
 
 
-URI: [EVORA:expressionSystem](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#expressionSystem)
+URI: [EVORAO:expressionSystem](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#expressionSystem)
 
 
 
@@ -54,8 +54,8 @@ URI: [EVORA:expressionSystem](https://raw.githubusercontent.com/EVORA-project/ev
 
 | Mapping Type | Mapped Value |
 | ---  | ---  |
-| self | EVORA:expressionSystem |
-| native | EVORA:expressionSystem |
+| self | EVORAO:expressionSystem |
+| native | EVORAO:expressionSystem |
 
 
 

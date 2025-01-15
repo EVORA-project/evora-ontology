@@ -4,7 +4,7 @@
 
 
 
-URI: [EVORA:memberOfRI](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#memberOfRI)
+URI: [EVORAO:memberOfRI](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#memberOfRI)
 
 
 
@@ -54,8 +54,8 @@ URI: [EVORA:memberOfRI](https://raw.githubusercontent.com/EVORA-project/evora-on
 
 | Mapping Type | Mapped Value |
 | ---  | ---  |
-| self | EVORA:memberOfRI |
-| native | EVORA:memberOfRI |
+| self | EVORAO:memberOfRI |
+| native | EVORAO:memberOfRI |
 
 
 

@@ -9,7 +9,7 @@ _Subclass of File representing sound recordings or audio tracks_
 
 
 
-URI: [EVORA:Audio](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#Audio)
+URI: [EVORAO:Audio](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#Audio)
 
 
 
@@ -62,18 +62,13 @@ URI: [EVORA:Audio](https://raw.githubusercontent.com/EVORA-project/evora-ontolog
 | [format](format.md) | 1 <br/> [String](String.md) | The file type or format that indicates how the data within the file is struct... | [File](File.md) |
 | [license](license.md) | 0..1 <br/> [License](License.md) | The legal terms and conditions under which the file can be used, shared, or d... | [File](File.md) |
 | [name](name.md) | 1 <br/> [String](String.md) | The label that allows humans to identify the current item | [Nameable](Nameable.md) |
-| [description](description.md) | 0..1 <br/> [String](String.md) | A short explanation of the characteristics, features, or nature of the curren... | [Nameable](Nameable.md) |
+| [description](description.md) | 0..1 _recommended_ <br/> [String](String.md) | A short explanation of the characteristics, features, or nature of the curren... | [Nameable](Nameable.md) |
 
 
 
 
 
 
-
-## Aliases
-
-
-* audio file
 
 
 
@@ -97,8 +92,8 @@ URI: [EVORA:Audio](https://raw.githubusercontent.com/EVORA-project/evora-ontolog
 
 | Mapping Type | Mapped Value |
 | ---  | ---  |
-| self | EVORA:Audio |
-| native | EVORA:Audio |
+| self | EVORAO:Audio |
+| native | EVORAO:Audio |
 | close | wd:Q26987229 |
 
 
@@ -119,8 +114,6 @@ name: Audio
 description: Subclass of File representing sound recordings or audio tracks
 title: Audio
 from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
-aliases:
-- audio file
 close_mappings:
 - wd:Q26987229
 is_a: File
@@ -136,8 +129,6 @@ name: Audio
 description: Subclass of File representing sound recordings or audio tracks
 title: Audio
 from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
-aliases:
-- audio file
 close_mappings:
 - wd:Q26987229
 is_a: File
@@ -229,6 +220,7 @@ attributes:
     - Nameable
     range: string
     required: false
+    recommended: true
     multivalued: false
 
 ```

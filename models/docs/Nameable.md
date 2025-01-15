@@ -11,7 +11,7 @@ _Any entity that has a name and can have a textual description_
 * __NOTE__: this is an abstract class and should not be instantiated directly
 
 
-URI: [EVORA:Nameable](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#Nameable)
+URI: [EVORAO:Nameable](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#Nameable)
 
 
 
@@ -68,7 +68,7 @@ URI: [EVORA:Nameable](https://raw.githubusercontent.com/EVORA-project/evora-onto
 | Name | Cardinality and Range | Description | Inheritance |
 | ---  | --- | --- | --- |
 | [name](name.md) | 1 <br/> [String](String.md) | The label that allows humans to identify the current item | direct |
-| [description](description.md) | 0..1 <br/> [String](String.md) | A short explanation of the characteristics, features, or nature of the curren... | direct |
+| [description](description.md) | 0..1 _recommended_ <br/> [String](String.md) | A short explanation of the characteristics, features, or nature of the curren... | direct |
 
 
 
@@ -98,8 +98,8 @@ URI: [EVORA:Nameable](https://raw.githubusercontent.com/EVORA-project/evora-onto
 
 | Mapping Type | Mapped Value |
 | ---  | ---  |
-| self | EVORA:Nameable |
-| native | EVORA:Nameable |
+| self | EVORAO:Nameable |
+| native | EVORAO:Nameable |
 
 
 
@@ -156,6 +156,7 @@ slot_usage:
     - dct:description
     range: string
     required: false
+    recommended: true
     multivalued: false
 
 ```
@@ -203,6 +204,7 @@ slot_usage:
     - dct:description
     range: string
     required: false
+    recommended: true
     multivalued: false
 attributes:
   name:
@@ -249,6 +251,7 @@ attributes:
     - Nameable
     range: string
     required: false
+    recommended: true
     multivalued: false
 
 ```

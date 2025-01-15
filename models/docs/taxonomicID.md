@@ -4,7 +4,7 @@
 
 
 
-URI: [EVORA:taxonomicID](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#taxonomicID)
+URI: [EVORAO:taxonomicID](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#taxonomicID)
 
 
 
@@ -54,8 +54,8 @@ URI: [EVORA:taxonomicID](https://raw.githubusercontent.com/EVORA-project/evora-o
 
 | Mapping Type | Mapped Value |
 | ---  | ---  |
-| self | EVORA:taxonomicID |
-| native | EVORA:taxonomicID |
+| self | EVORAO:taxonomicID |
+| native | EVORAO:taxonomicID |
 
 
 

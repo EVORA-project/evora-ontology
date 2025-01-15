@@ -4,7 +4,7 @@
 
 
 
-URI: [EVORA:stabilityAndReactivity](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#stabilityAndReactivity)
+URI: [EVORAO:stabilityAndReactivity](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#stabilityAndReactivity)
 
 
 
@@ -54,8 +54,8 @@ URI: [EVORA:stabilityAndReactivity](https://raw.githubusercontent.com/EVORA-proj
 
 | Mapping Type | Mapped Value |
 | ---  | ---  |
-| self | EVORA:stabilityAndReactivity |
-| native | EVORA:stabilityAndReactivity |
+| self | EVORAO:stabilityAndReactivity |
+| native | EVORAO:stabilityAndReactivity |
 
 
 

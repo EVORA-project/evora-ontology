@@ -4,7 +4,7 @@
 
 
 
-URI: [EVORA:coInfectingViruses](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#coInfectingViruses)
+URI: [EVORAO:coInfectingViruses](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#coInfectingViruses)
 
 
 
@@ -54,8 +54,8 @@ URI: [EVORA:coInfectingViruses](https://raw.githubusercontent.com/EVORA-project/
 
 | Mapping Type | Mapped Value |
 | ---  | ---  |
-| self | EVORA:coInfectingViruses |
-| native | EVORA:coInfectingViruses |
+| self | EVORAO:coInfectingViruses |
+| native | EVORAO:coInfectingViruses |
 
 
 

@@ -17,19 +17,19 @@ PREFIX adms: <http://www.w3.org/ns/adms#>
 PREFIX pav: <http://purl.org/pav/>
 PREFIX dwc: <http://rs.tdwg.org/dwc/terms/>
 PREFIX IAO: <http://purl.obolibrary.org/obo/IAO_>
-PREFIX EVORA: <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#>
+PREFIX EVORAO: <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#>
 PREFIX linkml: <https://w3id.org/linkml/>
 
 SELECT ?g ?s ?p WHERE {
  GRAPH ?g {
-  ?s rdf:type EVORA:Video ;
+  ?s rdf:type EVORAO:Video ;
      ?p ?o .
   FILTER ( ?p NOT IN (
-   EVORA:contentURL,
-   EVORA:format,
-   EVORA:license,
-   EVORA:name,
-   EVORA:description,
+   EVORAO:contentURL,
+   EVORAO:format,
+   EVORAO:license,
+   EVORAO:name,
+   EVORAO:description,
    rdf:type ))
  }
  

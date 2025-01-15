@@ -4,7 +4,7 @@
 
 
 
-URI: [EVORA:hybridomaDescription](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#hybridomaDescription)
+URI: [EVORAO:hybridomaDescription](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#hybridomaDescription)
 
 
 
@@ -54,8 +54,8 @@ URI: [EVORA:hybridomaDescription](https://raw.githubusercontent.com/EVORA-projec
 
 | Mapping Type | Mapped Value |
 | ---  | ---  |
-| self | EVORA:hybridomaDescription |
-| native | EVORA:hybridomaDescription |
+| self | EVORAO:hybridomaDescription |
+| native | EVORAO:hybridomaDescription |
 
 
 

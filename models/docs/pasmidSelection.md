@@ -4,7 +4,7 @@
 
 
 
-URI: [EVORA:pasmidSelection](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#pasmidSelection)
+URI: [EVORAO:pasmidSelection](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#pasmidSelection)
 
 
 
@@ -54,8 +54,8 @@ URI: [EVORA:pasmidSelection](https://raw.githubusercontent.com/EVORA-project/evo
 
 | Mapping Type | Mapped Value |
 | ---  | ---  |
-| self | EVORA:pasmidSelection |
-| native | EVORA:pasmidSelection |
+| self | EVORAO:pasmidSelection |
+| native | EVORAO:pasmidSelection |
 
 
 

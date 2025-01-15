@@ -4,7 +4,7 @@
 
 
 
-URI: [EVORA:rankDataProvider](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#rankDataProvider)
+URI: [EVORAO:rankDataProvider](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#rankDataProvider)
 
 
 
@@ -54,8 +54,8 @@ URI: [EVORA:rankDataProvider](https://raw.githubusercontent.com/EVORA-project/ev
 
 | Mapping Type | Mapped Value |
 | ---  | ---  |
-| self | EVORA:rankDataProvider |
-| native | EVORA:rankDataProvider |
+| self | EVORAO:rankDataProvider |
+| native | EVORAO:rankDataProvider |
 
 
 

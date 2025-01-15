@@ -9,7 +9,7 @@ _Information on the origin of a synthetic part that composes the biological mate
 
 
 
-URI: [EVORA:SyntheticPartOrigin](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#SyntheticPartOrigin)
+URI: [EVORAO:SyntheticPartOrigin](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#SyntheticPartOrigin)
 
 
 
@@ -57,7 +57,7 @@ URI: [EVORA:SyntheticPartOrigin](https://raw.githubusercontent.com/EVORA-project
 | Name | Cardinality and Range | Description | Inheritance |
 | ---  | --- | --- | --- |
 | [modificationsFromTheReferenceSequences](modificationsFromTheReferenceSequences.md) | 1 <br/> [Boolean](Boolean.md) | Set to TRUE if there was is any modification made from the reference sequence | direct |
-| [descriptionOfModificationsMadeFromTheReferenceSequences](descriptionOfModificationsMadeFromTheReferenceSequences.md) | 0..1 <br/> [String](String.md) | List the modifications mades from the reference sequence if any | direct |
+| [descriptionOfModificationsMadeFromTheReferenceSequences](descriptionOfModificationsMadeFromTheReferenceSequences.md) | 0..1 _recommended_ <br/> [String](String.md) | List the modifications mades from the reference sequence if any | direct |
 | [recombinantPartIdentification](recombinantPartIdentification.md) | 0..1 <br/> [RecombinantPartIdentification](RecombinantPartIdentification.md) | Identification of a recombinant part | [BiologicalPartOrigin](BiologicalPartOrigin.md) |
 | [accessToPhysicalGeneticResource](accessToPhysicalGeneticResource.md) | 1 <br/> [Boolean](Boolean.md) | Reference of the permit identifiers for access to the genetic resource, appli... | [BiologicalPartOrigin](BiologicalPartOrigin.md) |
 
@@ -89,8 +89,8 @@ URI: [EVORA:SyntheticPartOrigin](https://raw.githubusercontent.com/EVORA-project
 
 | Mapping Type | Mapped Value |
 | ---  | ---  |
-| self | EVORA:SyntheticPartOrigin |
-| native | EVORA:SyntheticPartOrigin |
+| self | EVORAO:SyntheticPartOrigin |
+| native | EVORAO:SyntheticPartOrigin |
 
 
 
@@ -130,6 +130,7 @@ slot_usage:
     title: description of modification(s) made from the reference sequence(s)
     range: string
     required: false
+    recommended: true
     multivalued: false
 
 ```
@@ -160,6 +161,7 @@ slot_usage:
     title: description of modification(s) made from the reference sequence(s)
     range: string
     required: false
+    recommended: true
     multivalued: false
 attributes:
   modificationsFromTheReferenceSequences:
@@ -188,6 +190,7 @@ attributes:
     - SyntheticPartOrigin
     range: string
     required: false
+    recommended: true
     multivalued: false
   recombinantPartIdentification:
     name: recombinantPartIdentification

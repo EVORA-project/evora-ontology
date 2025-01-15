@@ -4,7 +4,7 @@
 
 
 
-URI: [EVORA:journal](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#journal)
+URI: [EVORAO:journal](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#journal)
 
 
 
@@ -54,8 +54,8 @@ URI: [EVORA:journal](https://raw.githubusercontent.com/EVORA-project/evora-ontol
 
 | Mapping Type | Mapped Value |
 | ---  | ---  |
-| self | EVORA:journal |
-| native | EVORA:journal |
+| self | EVORAO:journal |
+| native | EVORAO:journal |
 
 
 

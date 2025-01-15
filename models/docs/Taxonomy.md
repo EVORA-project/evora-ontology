@@ -9,7 +9,7 @@ _Science of naming, defining and classifying organisms_
 
 
 
-URI: [EVORA:Taxonomy](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#Taxonomy)
+URI: [EVORAO:Taxonomy](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#Taxonomy)
 
 
 
@@ -106,7 +106,7 @@ URI: [EVORA:Taxonomy](https://raw.githubusercontent.com/EVORA-project/evora-onto
 | [rank](rank.md) | * <br/> [TaxonomicRank](TaxonomicRank.md) | Relative level or position of the identified taxon in the taxonomy | direct |
 | [rankDataProvider](rankDataProvider.md) | 0..1 <br/> [DataProvider](DataProvider.md) | The data provider for the description of the taxonomic ranks used in this tax... | direct |
 | [name](name.md) | 1 <br/> [String](String.md) | The label that allows humans to identify the current item | [Nameable](Nameable.md) |
-| [description](description.md) | 0..1 <br/> [String](String.md) | A short explanation of the characteristics, features, or nature of the curren... | [Nameable](Nameable.md) |
+| [description](description.md) | 0..1 _recommended_ <br/> [String](String.md) | A short explanation of the characteristics, features, or nature of the curren... | [Nameable](Nameable.md) |
 
 
 
@@ -121,11 +121,6 @@ URI: [EVORA:Taxonomy](https://raw.githubusercontent.com/EVORA-project/evora-onto
 
 
 
-
-## Aliases
-
-
-* taxonomy
 
 
 
@@ -149,8 +144,8 @@ URI: [EVORA:Taxonomy](https://raw.githubusercontent.com/EVORA-project/evora-onto
 
 | Mapping Type | Mapped Value |
 | ---  | ---  |
-| self | EVORA:Taxonomy |
-| native | EVORA:Taxonomy |
+| self | EVORAO:Taxonomy |
+| native | EVORAO:Taxonomy |
 | close | wd:Q8269924, skos:Collection |
 
 
@@ -171,8 +166,6 @@ name: Taxonomy
 description: Science of naming, defining and classifying organisms
 title: Taxonomy
 from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
-aliases:
-- taxonomy
 close_mappings:
 - wd:Q8269924
 - skos:Collection
@@ -242,8 +235,6 @@ name: Taxonomy
 description: Science of naming, defining and classifying organisms
 title: Taxonomy
 from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
-aliases:
-- taxonomy
 close_mappings:
 - wd:Q8269924
 - skos:Collection
@@ -422,6 +413,7 @@ attributes:
     - Nameable
     range: string
     required: false
+    recommended: true
     multivalued: false
 
 ```

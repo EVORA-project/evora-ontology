@@ -9,7 +9,7 @@ _The country as of ISO3166_
 
 
 
-URI: [EVORA:Country](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#Country)
+URI: [EVORAO:Country](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#Country)
 
 
 
@@ -63,7 +63,7 @@ URI: [EVORA:Country](https://raw.githubusercontent.com/EVORA-project/evora-ontol
 | [weight](weight.md) | 1 <br/> [Integer](Integer.md) | A numerical value indicating relative importance or priority, generally proce... | [Term](Term.md) |
 | [inVocabulary](inVocabulary.md) | 1 <br/> [Vocabulary](Vocabulary.md) | Terms belong to a specific vocabulary | [Term](Term.md) |
 | [name](name.md) | 1 <br/> [String](String.md) | The label that allows humans to identify the current item | [Nameable](Nameable.md) |
-| [description](description.md) | 0..1 <br/> [String](String.md) | A short explanation of the characteristics, features, or nature of the curren... | [Nameable](Nameable.md) |
+| [description](description.md) | 0..1 _recommended_ <br/> [String](String.md) | A short explanation of the characteristics, features, or nature of the curren... | [Nameable](Nameable.md) |
 
 
 
@@ -81,11 +81,6 @@ URI: [EVORA:Country](https://raw.githubusercontent.com/EVORA-project/evora-ontol
 
 
 
-
-## Aliases
-
-
-* country
 
 
 
@@ -113,8 +108,8 @@ URI: [EVORA:Country](https://raw.githubusercontent.com/EVORA-project/evora-ontol
 
 | Mapping Type | Mapped Value |
 | ---  | ---  |
-| self | EVORA:Country |
-| native | EVORA:Country |
+| self | EVORAO:Country |
+| native | EVORAO:Country |
 | close | wd:Q6256 |
 
 
@@ -137,8 +132,6 @@ title: Country
 comments:
 - Use of Data provider recommended... serve as a local cache for ISO3166
 from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
-aliases:
-- country
 close_mappings:
 - wd:Q6256
 is_a: Term
@@ -166,8 +159,6 @@ title: Country
 comments:
 - Use of Data provider recommended... serve as a local cache for ISO3166
 from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
-aliases:
-- country
 close_mappings:
 - wd:Q6256
 is_a: Term
@@ -217,8 +208,6 @@ attributes:
     description: Terms belong to a specific vocabulary
     title: in Vocabulary
     from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
-    aliases:
-    - catalog
     close_mappings:
     - wdp:P972
     rank: 1000
@@ -273,6 +262,7 @@ attributes:
     - Nameable
     range: string
     required: false
+    recommended: true
     multivalued: false
 
 ```

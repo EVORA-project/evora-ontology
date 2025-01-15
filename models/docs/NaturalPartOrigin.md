@@ -9,7 +9,7 @@ _Information on the origin of a natural part that composes the biological materi
 
 
 
-URI: [EVORA:NaturalPartOrigin](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#NaturalPartOrigin)
+URI: [EVORAO:NaturalPartOrigin](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#NaturalPartOrigin)
 
 
 
@@ -112,8 +112,8 @@ URI: [EVORA:NaturalPartOrigin](https://raw.githubusercontent.com/EVORA-project/e
 
 | Mapping Type | Mapped Value |
 | ---  | ---  |
-| self | EVORA:NaturalPartOrigin |
-| native | EVORA:NaturalPartOrigin |
+| self | EVORAO:NaturalPartOrigin |
+| native | EVORAO:NaturalPartOrigin |
 
 
 
@@ -147,8 +147,6 @@ slot_usage:
     description: The geographical location where the sample was collected in situ.
       Used for Nagoya/CBD; equivalent to "country of origin".
     title: country of collection
-    aliases:
-    - country of origin
     close_mappings:
     - dct:spatial
     - dwc:country
@@ -208,8 +206,6 @@ slot_usage:
     description: The geographical location where the sample was collected in situ.
       Used for Nagoya/CBD; equivalent to "country of origin".
     title: country of collection
-    aliases:
-    - country of origin
     close_mappings:
     - dct:spatial
     - dwc:country
@@ -256,8 +252,6 @@ attributes:
       Used for Nagoya/CBD; equivalent to "country of origin".
     title: country of collection
     from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
-    aliases:
-    - country of origin
     close_mappings:
     - dct:spatial
     - dwc:country

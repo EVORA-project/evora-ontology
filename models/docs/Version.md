@@ -9,7 +9,7 @@ _Numeric code assigned to identify a particular historical version of a work (e.
 
 
 
-URI: [EVORA:Version](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#Version)
+URI: [EVORAO:Version](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#Version)
 
 
 
@@ -60,11 +60,6 @@ URI: [EVORA:Version](https://raw.githubusercontent.com/EVORA-project/evora-ontol
 
 
 
-## Aliases
-
-
-* version number
-
 
 
 ## Identifier and Mapping Information
@@ -87,8 +82,8 @@ URI: [EVORA:Version](https://raw.githubusercontent.com/EVORA-project/evora-ontol
 
 | Mapping Type | Mapped Value |
 | ---  | ---  |
-| self | EVORA:Version |
-| native | EVORA:Version |
+| self | EVORAO:Version |
+| native | EVORAO:Version |
 | close | wd:Q114469879 |
 
 
@@ -110,8 +105,6 @@ description: Numeric code assigned to identify a particular historical version o
   a work (e.g. software or technical standards)
 title: Version
 from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
-aliases:
-- version number
 close_mappings:
 - wd:Q114469879
 is_a: Dataset
@@ -123,8 +116,6 @@ slot_usage:
     name: ID
     description: The version identifier
     title: ID
-    aliases:
-    - edition number
     close_mappings:
     - wdp:P393
     - schema:version
@@ -151,8 +142,6 @@ description: Numeric code assigned to identify a particular historical version o
   a work (e.g. software or technical standards)
 title: Version
 from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
-aliases:
-- version number
 close_mappings:
 - wd:Q114469879
 is_a: Dataset
@@ -161,8 +150,6 @@ slot_usage:
     name: ID
     description: The version identifier
     title: ID
-    aliases:
-    - edition number
     close_mappings:
     - wdp:P393
     - schema:version
@@ -182,8 +169,6 @@ attributes:
     description: The version identifier
     title: ID
     from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
-    aliases:
-    - edition number
     close_mappings:
     - wdp:P393
     - schema:version

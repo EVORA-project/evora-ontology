@@ -4,7 +4,7 @@
 
 
 
-URI: [EVORA:queryMethod](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#queryMethod)
+URI: [EVORAO:queryMethod](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#queryMethod)
 
 
 
@@ -54,8 +54,8 @@ URI: [EVORA:queryMethod](https://raw.githubusercontent.com/EVORA-project/evora-o
 
 | Mapping Type | Mapped Value |
 | ---  | ---  |
-| self | EVORA:queryMethod |
-| native | EVORA:queryMethod |
+| self | EVORAO:queryMethod |
+| native | EVORAO:queryMethod |
 
 
 

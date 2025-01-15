@@ -4,7 +4,7 @@
 
 
 
-URI: [EVORA:postalCode](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#postalCode)
+URI: [EVORAO:postalCode](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#postalCode)
 
 
 
@@ -54,8 +54,8 @@ URI: [EVORA:postalCode](https://raw.githubusercontent.com/EVORA-project/evora-on
 
 | Mapping Type | Mapped Value |
 | ---  | ---  |
-| self | EVORA:postalCode |
-| native | EVORA:postalCode |
+| self | EVORAO:postalCode |
+| native | EVORAO:postalCode |
 
 
 

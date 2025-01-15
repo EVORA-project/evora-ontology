@@ -4,7 +4,7 @@
 
 
 
-URI: [EVORA:loginRequestMethod](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#loginRequestMethod)
+URI: [EVORAO:loginRequestMethod](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#loginRequestMethod)
 
 
 
@@ -54,8 +54,8 @@ URI: [EVORA:loginRequestMethod](https://raw.githubusercontent.com/EVORA-project/
 
 | Mapping Type | Mapped Value |
 | ---  | ---  |
-| self | EVORA:loginRequestMethod |
-| native | EVORA:loginRequestMethod |
+| self | EVORAO:loginRequestMethod |
+| native | EVORAO:loginRequestMethod |
 
 
 

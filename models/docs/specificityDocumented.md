@@ -4,7 +4,7 @@
 
 
 
-URI: [EVORA:specificityDocumented](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#specificityDocumented)
+URI: [EVORAO:specificityDocumented](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#specificityDocumented)
 
 
 
@@ -18,8 +18,8 @@ URI: [EVORA:specificityDocumented](https://raw.githubusercontent.com/EVORA-proje
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [DetectionKit](DetectionKit.md) | A detection kit for specific pathogens |  yes  |
 | [Hybridoma](Hybridoma.md) | An hybridoma that provides antibodies that can be related to a pathogen |  no  |
+| [DetectionKit](DetectionKit.md) | A detection kit for specific pathogens |  yes  |
 | [Antibody](Antibody.md) | Protein that can bind to certain types of foreign bodies, such as pathogens |  yes  |
 
 
@@ -56,8 +56,8 @@ URI: [EVORA:specificityDocumented](https://raw.githubusercontent.com/EVORA-proje
 
 | Mapping Type | Mapped Value |
 | ---  | ---  |
-| self | EVORA:specificityDocumented |
-| native | EVORA:specificityDocumented |
+| self | EVORAO:specificityDocumented |
+| native | EVORAO:specificityDocumented |
 
 
 

@@ -4,7 +4,7 @@
 
 
 
-URI: [EVORA:physicalChemicalProperties](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#physicalChemicalProperties)
+URI: [EVORAO:physicalChemicalProperties](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#physicalChemicalProperties)
 
 
 
@@ -54,8 +54,8 @@ URI: [EVORA:physicalChemicalProperties](https://raw.githubusercontent.com/EVORA-
 
 | Mapping Type | Mapped Value |
 | ---  | ---  |
-| self | EVORA:physicalChemicalProperties |
-| native | EVORA:physicalChemicalProperties |
+| self | EVORAO:physicalChemicalProperties |
+| native | EVORAO:physicalChemicalProperties |
 
 
 

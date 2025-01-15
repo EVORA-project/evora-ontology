@@ -4,7 +4,7 @@
 
 
 
-URI: [EVORA:clonedIntoPlasmid](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#clonedIntoPlasmid)
+URI: [EVORAO:clonedIntoPlasmid](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#clonedIntoPlasmid)
 
 
 
@@ -54,8 +54,8 @@ URI: [EVORA:clonedIntoPlasmid](https://raw.githubusercontent.com/EVORA-project/e
 
 | Mapping Type | Mapped Value |
 | ---  | ---  |
-| self | EVORA:clonedIntoPlasmid |
-| native | EVORA:clonedIntoPlasmid |
+| self | EVORAO:clonedIntoPlasmid |
+| native | EVORAO:clonedIntoPlasmid |
 
 
 

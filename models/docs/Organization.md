@@ -9,7 +9,7 @@ _A social entity established to meet needs or pursue specific goals_
 
 
 
-URI: [EVORA:Organization](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#Organization)
+URI: [EVORAO:Organization](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#Organization)
 
 
 
@@ -35,7 +35,7 @@ URI: [EVORA:Organization](https://raw.githubusercontent.com/EVORA-project/evora-
           
     
     
-    Organization --> "0..1" AlternateName : alternateName
+    Organization --> "0..1 _recommended_" AlternateName : alternateName
     click AlternateName href "../AlternateName"
 
         
@@ -44,7 +44,7 @@ URI: [EVORA:Organization](https://raw.githubusercontent.com/EVORA-project/evora-
           
     
     
-    Organization --> "0..1" ContactPoint : contactPoint
+    Organization --> "0..1 _recommended_" ContactPoint : contactPoint
     click ContactPoint href "../ContactPoint"
 
         
@@ -53,7 +53,7 @@ URI: [EVORA:Organization](https://raw.githubusercontent.com/EVORA-project/evora-
           
     
     
-    Organization --> "0..1" Country : country
+    Organization --> "0..1 _recommended_" Country : country
     click Country href "../Country"
 
         
@@ -92,24 +92,19 @@ URI: [EVORA:Organization](https://raw.githubusercontent.com/EVORA-project/evora-
 
 | Name | Cardinality and Range | Description | Inheritance |
 | ---  | --- | --- | --- |
-| [alternateName](alternateName.md) | 0..1 <br/> [AlternateName](AlternateName.md) | An alternate name or acronym | direct |
-| [country](country.md) | 0..1 <br/> [Country](Country.md) | The country of the organization | direct |
+| [alternateName](alternateName.md) | 0..1 _recommended_ <br/> [AlternateName](AlternateName.md) | An alternate name or acronym | direct |
+| [country](country.md) | 0..1 _recommended_ <br/> [Country](Country.md) | The country of the organization | direct |
 | [homePage](homePage.md) | 0..1 <br/> [String](String.md) | Refers to the degree of purity achieved for a protein sample | [PersonOrOrganization](PersonOrOrganization.md) |
-| [contactPoint](contactPoint.md) | 0..1 <br/> [ContactPoint](ContactPoint.md) | An information that allows someone to establish communication | [PersonOrOrganization](PersonOrOrganization.md) |
+| [contactPoint](contactPoint.md) | 0..1 _recommended_ <br/> [ContactPoint](ContactPoint.md) | An information that allows someone to establish communication | [PersonOrOrganization](PersonOrOrganization.md) |
 | [logo](logo.md) | 0..1 <br/> [Image](Image.md) | A path or URL to the related logo | [PersonOrOrganization](PersonOrOrganization.md) |
 | [name](name.md) | 1 <br/> [String](String.md) | The label that allows humans to identify the current item | [Nameable](Nameable.md) |
-| [description](description.md) | 0..1 <br/> [String](String.md) | A short explanation of the characteristics, features, or nature of the curren... | [Nameable](Nameable.md) |
+| [description](description.md) | 0..1 _recommended_ <br/> [String](String.md) | A short explanation of the characteristics, features, or nature of the curren... | [Nameable](Nameable.md) |
 
 
 
 
 
 
-
-## Aliases
-
-
-* organization
 
 
 
@@ -133,8 +128,8 @@ URI: [EVORA:Organization](https://raw.githubusercontent.com/EVORA-project/evora-
 
 | Mapping Type | Mapped Value |
 | ---  | ---  |
-| self | EVORA:Organization |
-| native | EVORA:Organization |
+| self | EVORAO:Organization |
+| native | EVORAO:Organization |
 | close | wd:Q43229, vcard:Organization |
 
 
@@ -155,8 +150,6 @@ name: Organization
 description: A social entity established to meet needs or pursue specific goals
 title: Organization
 from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
-aliases:
-- organization
 close_mappings:
 - wd:Q43229
 - vcard:Organization
@@ -173,6 +166,7 @@ slot_usage:
     - dwc:institutionCode
     range: AlternateName
     required: false
+    recommended: true
     multivalued: false
   country:
     name: country
@@ -180,6 +174,7 @@ slot_usage:
     title: country
     range: Country
     required: false
+    recommended: true
     multivalued: false
 
 ```
@@ -193,8 +188,6 @@ name: Organization
 description: A social entity established to meet needs or pursue specific goals
 title: Organization
 from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
-aliases:
-- organization
 close_mappings:
 - wd:Q43229
 - vcard:Organization
@@ -208,6 +201,7 @@ slot_usage:
     - dwc:institutionCode
     range: AlternateName
     required: false
+    recommended: true
     multivalued: false
   country:
     name: country
@@ -215,6 +209,7 @@ slot_usage:
     title: country
     range: Country
     required: false
+    recommended: true
     multivalued: false
 attributes:
   alternateName:
@@ -233,6 +228,7 @@ attributes:
     - Organization
     range: AlternateName
     required: false
+    recommended: true
     multivalued: false
   country:
     name: country
@@ -246,6 +242,7 @@ attributes:
     - Organization
     range: Country
     required: false
+    recommended: true
     multivalued: false
   homePage:
     name: homePage
@@ -278,6 +275,7 @@ attributes:
     - ProductOrService
     range: ContactPoint
     required: false
+    recommended: true
     multivalued: false
   logo:
     name: logo
@@ -338,6 +336,7 @@ attributes:
     - Nameable
     range: string
     required: false
+    recommended: true
     multivalued: false
 
 ```

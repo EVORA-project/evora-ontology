@@ -4,7 +4,7 @@
 
 
 
-URI: [EVORA:previouslyKnownAs](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#previouslyKnownAs)
+URI: [EVORAO:previouslyKnownAs](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#previouslyKnownAs)
 
 
 
@@ -54,8 +54,8 @@ URI: [EVORA:previouslyKnownAs](https://raw.githubusercontent.com/EVORA-project/e
 
 | Mapping Type | Mapped Value |
 | ---  | ---  |
-| self | EVORA:previouslyKnownAs |
-| native | EVORA:previouslyKnownAs |
+| self | EVORAO:previouslyKnownAs |
+| native | EVORAO:previouslyKnownAs |
 
 
 

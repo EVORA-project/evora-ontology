@@ -4,7 +4,7 @@
 
 
 
-URI: [EVORA:oRCIDiD](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#oRCIDiD)
+URI: [EVORAO:oRCIDiD](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#oRCIDiD)
 
 
 
@@ -55,8 +55,8 @@ URI: [EVORA:oRCIDiD](https://raw.githubusercontent.com/EVORA-project/evora-ontol
 
 | Mapping Type | Mapped Value |
 | ---  | ---  |
-| self | EVORA:oRCIDiD |
-| native | EVORA:oRCIDiD |
+| self | EVORAO:oRCIDiD |
+| native | EVORAO:oRCIDiD |
 
 
 

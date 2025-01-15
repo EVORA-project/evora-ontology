@@ -4,7 +4,7 @@
 
 
 
-URI: [EVORA:hasSOPFile](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#hasSOPFile)
+URI: [EVORAO:hasSOPFile](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#hasSOPFile)
 
 
 
@@ -54,8 +54,8 @@ URI: [EVORA:hasSOPFile](https://raw.githubusercontent.com/EVORA-project/evora-on
 
 | Mapping Type | Mapped Value |
 | ---  | ---  |
-| self | EVORA:hasSOPFile |
-| native | EVORA:hasSOPFile |
+| self | EVORAO:hasSOPFile |
+| native | EVORAO:hasSOPFile |
 
 
 

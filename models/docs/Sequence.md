@@ -9,7 +9,7 @@ _A nucleic acid or protein sequence information_
 
 
 
-URI: [EVORA:Sequence](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#Sequence)
+URI: [EVORAO:Sequence](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#Sequence)
 
 
 
@@ -30,7 +30,7 @@ URI: [EVORA:Sequence](https://raw.githubusercontent.com/EVORA-project/evora-onto
           
     
     
-    Sequence --> "*" SequenceReference : sequenceReference
+    Sequence --> "* _recommended_" SequenceReference : sequenceReference
     click SequenceReference href "../SequenceReference"
 
         
@@ -51,7 +51,7 @@ URI: [EVORA:Sequence](https://raw.githubusercontent.com/EVORA-project/evora-onto
 
 | Name | Cardinality and Range | Description | Inheritance |
 | ---  | --- | --- | --- |
-| [sequenceReference](sequenceReference.md) | * <br/> [SequenceReference](SequenceReference.md) | A reference that permits to retrieve the sequence information from a sequence... | direct |
+| [sequenceReference](sequenceReference.md) | * _recommended_ <br/> [SequenceReference](SequenceReference.md) | A reference that permits to retrieve the sequence information from a sequence... | direct |
 | [sequenceFASTA](sequenceFASTA.md) | 0..1 <br/> [String](String.md) | In case no sequence reference exists in public repositories, the correspondin... | direct |
 
 
@@ -76,11 +76,6 @@ URI: [EVORA:Sequence](https://raw.githubusercontent.com/EVORA-project/evora-onto
 
 
 
-## Aliases
-
-
-* biological sequence
-
 
 
 ## Identifier and Mapping Information
@@ -103,8 +98,8 @@ URI: [EVORA:Sequence](https://raw.githubusercontent.com/EVORA-project/evora-onto
 
 | Mapping Type | Mapped Value |
 | ---  | ---  |
-| self | EVORA:Sequence |
-| native | EVORA:Sequence |
+| self | EVORAO:Sequence |
+| native | EVORAO:Sequence |
 | close | wd:Q3511065 |
 
 
@@ -125,8 +120,6 @@ name: Sequence
 description: A nucleic acid or protein sequence information
 title: Sequence
 from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
-aliases:
-- biological sequence
 close_mappings:
 - wd:Q3511065
 is_a: Dataset
@@ -141,6 +134,7 @@ slot_usage:
     title: sequence reference
     range: SequenceReference
     required: false
+    recommended: true
     multivalued: true
   sequenceFASTA:
     name: sequenceFASTA
@@ -167,8 +161,6 @@ name: Sequence
 description: A nucleic acid or protein sequence information
 title: Sequence
 from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
-aliases:
-- biological sequence
 close_mappings:
 - wd:Q3511065
 is_a: Dataset
@@ -180,6 +172,7 @@ slot_usage:
     title: sequence reference
     range: SequenceReference
     required: false
+    recommended: true
     multivalued: true
   sequenceFASTA:
     name: sequenceFASTA
@@ -209,6 +202,7 @@ attributes:
     - Antibody
     range: SequenceReference
     required: false
+    recommended: true
     multivalued: true
   sequenceFASTA:
     name: sequenceFASTA

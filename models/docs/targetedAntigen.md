@@ -4,7 +4,7 @@
 
 
 
-URI: [EVORA:targetedAntigen](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#targetedAntigen)
+URI: [EVORAO:targetedAntigen](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#targetedAntigen)
 
 
 
@@ -55,8 +55,8 @@ URI: [EVORA:targetedAntigen](https://raw.githubusercontent.com/EVORA-project/evo
 
 | Mapping Type | Mapped Value |
 | ---  | ---  |
-| self | EVORA:targetedAntigen |
-| native | EVORA:targetedAntigen |
+| self | EVORAO:targetedAntigen |
+| native | EVORAO:targetedAntigen |
 
 
 

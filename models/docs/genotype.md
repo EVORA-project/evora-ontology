@@ -4,7 +4,7 @@
 
 
 
-URI: [EVORA:genotype](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#genotype)
+URI: [EVORAO:genotype](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#genotype)
 
 
 
@@ -54,8 +54,8 @@ URI: [EVORA:genotype](https://raw.githubusercontent.com/EVORA-project/evora-onto
 
 | Mapping Type | Mapped Value |
 | ---  | ---  |
-| self | EVORA:genotype |
-| native | EVORA:genotype |
+| self | EVORAO:genotype |
+| native | EVORAO:genotype |
 
 
 

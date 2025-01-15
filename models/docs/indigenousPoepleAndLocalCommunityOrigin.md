@@ -4,7 +4,7 @@
 
 
 
-URI: [EVORA:indigenousPoepleAndLocalCommunityOrigin](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#indigenousPoepleAndLocalCommunityOrigin)
+URI: [EVORAO:indigenousPoepleAndLocalCommunityOrigin](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#indigenousPoepleAndLocalCommunityOrigin)
 
 
 
@@ -54,8 +54,8 @@ URI: [EVORA:indigenousPoepleAndLocalCommunityOrigin](https://raw.githubuserconte
 
 | Mapping Type | Mapped Value |
 | ---  | ---  |
-| self | EVORA:indigenousPoepleAndLocalCommunityOrigin |
-| native | EVORA:indigenousPoepleAndLocalCommunityOrigin |
+| self | EVORAO:indigenousPoepleAndLocalCommunityOrigin |
+| native | EVORAO:indigenousPoepleAndLocalCommunityOrigin |
 
 
 

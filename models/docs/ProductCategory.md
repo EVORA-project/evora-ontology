@@ -9,7 +9,7 @@ _A term used to classify a group of products that share common characteristics o
 
 
 
-URI: [EVORA:ProductCategory](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#ProductCategory)
+URI: [EVORAO:ProductCategory](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#ProductCategory)
 
 
 
@@ -70,7 +70,7 @@ URI: [EVORA:ProductCategory](https://raw.githubusercontent.com/EVORA-project/evo
 | [weight](weight.md) | 1 <br/> [Integer](Integer.md) | A numerical value indicating relative importance or priority, generally proce... | [Term](Term.md) |
 | [inVocabulary](inVocabulary.md) | 1 <br/> [Vocabulary](Vocabulary.md) | Terms belong to a specific vocabulary | [Term](Term.md) |
 | [name](name.md) | 1 <br/> [String](String.md) | The label that allows humans to identify the current item | [Nameable](Nameable.md) |
-| [description](description.md) | 0..1 <br/> [String](String.md) | A short explanation of the characteristics, features, or nature of the curren... | [Nameable](Nameable.md) |
+| [description](description.md) | 0..1 _recommended_ <br/> [String](String.md) | A short explanation of the characteristics, features, or nature of the curren... | [Nameable](Nameable.md) |
 
 
 
@@ -117,11 +117,6 @@ URI: [EVORA:ProductCategory](https://raw.githubusercontent.com/EVORA-project/evo
 
 
 
-## Aliases
-
-
-* product category
-
 
 
 ## Identifier and Mapping Information
@@ -144,8 +139,8 @@ URI: [EVORA:ProductCategory](https://raw.githubusercontent.com/EVORA-project/evo
 
 | Mapping Type | Mapped Value |
 | ---  | ---  |
-| self | EVORA:ProductCategory |
-| native | EVORA:ProductCategory |
+| self | EVORAO:ProductCategory |
+| native | EVORAO:ProductCategory |
 | close | wd:Q63981612 |
 
 
@@ -167,8 +162,6 @@ description: A term used to classify a group of products that share common chara
   or functions, which helps in their organization
 title: Product category
 from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
-aliases:
-- product category
 close_mappings:
 - wd:Q63981612
 is_a: Term
@@ -198,8 +191,6 @@ description: A term used to classify a group of products that share common chara
   or functions, which helps in their organization
 title: Product category
 from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
-aliases:
-- product category
 close_mappings:
 - wd:Q63981612
 is_a: Term
@@ -255,8 +246,6 @@ attributes:
     description: Terms belong to a specific vocabulary
     title: in Vocabulary
     from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
-    aliases:
-    - catalog
     close_mappings:
     - wdp:P972
     rank: 1000
@@ -311,6 +300,7 @@ attributes:
     - Nameable
     range: string
     required: false
+    recommended: true
     multivalued: false
 
 ```

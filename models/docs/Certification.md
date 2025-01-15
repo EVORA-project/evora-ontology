@@ -9,7 +9,7 @@ _Assurance given by an independent certification body that a product, service or
 
 
 
-URI: [EVORA:Certification](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#Certification)
+URI: [EVORAO:Certification](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#Certification)
 
 
 
@@ -68,7 +68,7 @@ URI: [EVORA:Certification](https://raw.githubusercontent.com/EVORA-project/evora
 | [certificationDocument](certificationDocument.md) | * <br/> [Document](Document.md) | The document(s) issued by an authority certifying the conformity of the subje... | direct |
 | [resourceURL](resourceURL.md) | 0..1 <br/> [Uri](Uri.md) | The web address or location where the details or content is stored and can be... | direct |
 | [name](name.md) | 1 <br/> [String](String.md) | The label that allows humans to identify the current item | [Nameable](Nameable.md) |
-| [description](description.md) | 0..1 <br/> [String](String.md) | A short explanation of the characteristics, features, or nature of the curren... | [Nameable](Nameable.md) |
+| [description](description.md) | 0..1 _recommended_ <br/> [String](String.md) | A short explanation of the characteristics, features, or nature of the curren... | [Nameable](Nameable.md) |
 
 
 
@@ -98,11 +98,6 @@ URI: [EVORA:Certification](https://raw.githubusercontent.com/EVORA-project/evora
 
 
 
-## Aliases
-
-
-* certification
-
 
 
 ## Identifier and Mapping Information
@@ -125,8 +120,8 @@ URI: [EVORA:Certification](https://raw.githubusercontent.com/EVORA-project/evora
 
 | Mapping Type | Mapped Value |
 | ---  | ---  |
-| self | EVORA:Certification |
-| native | EVORA:Certification |
+| self | EVORAO:Certification |
+| native | EVORAO:Certification |
 | close | wd:Q374814, schema:Certification |
 
 
@@ -148,8 +143,6 @@ description: Assurance given by an independent certification body that a product
   service or system meets the requirements of a standard
 title: Certification
 from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
-aliases:
-- certification
 close_mappings:
 - wd:Q374814
 - schema:Certification
@@ -198,8 +191,6 @@ description: Assurance given by an independent certification body that a product
   service or system meets the requirements of a standard
 title: Certification
 from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
-aliases:
-- certification
 close_mappings:
 - wd:Q374814
 - schema:Certification
@@ -323,6 +314,7 @@ attributes:
     - Nameable
     range: string
     required: false
+    recommended: true
     multivalued: false
 
 ```

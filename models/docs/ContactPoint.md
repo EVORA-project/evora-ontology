@@ -9,7 +9,7 @@ _Entity serving as focal point of information_
 
 
 
-URI: [EVORA:ContactPoint](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#ContactPoint)
+URI: [EVORAO:ContactPoint](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#ContactPoint)
 
 
 
@@ -67,16 +67,16 @@ URI: [EVORA:ContactPoint](https://raw.githubusercontent.com/EVORA-project/evora-
 
 | Name | Cardinality and Range | Description | Inheritance |
 | ---  | --- | --- | --- |
-| [email](email.md) | 0..1 <br/> [String](String.md) | Email address | direct |
-| [telephone](telephone.md) | 0..1 <br/> [String](String.md) | The telephone number | direct |
+| [email](email.md) | 0..1 _recommended_ <br/> [String](String.md) | Email address | direct |
+| [telephone](telephone.md) | 0..1 _recommended_ <br/> [String](String.md) | The telephone number | direct |
 | [streetAddress](streetAddress.md) | 0..1 <br/> [String](String.md) | The building/apartment number and the street name | direct |
 | [addressLocality](addressLocality.md) | 0..1 <br/> [String](String.md) | The locality in which the street address is, and which is in the region | direct |
 | [addressRegion](addressRegion.md) | 0..1 <br/> [String](String.md) | The region in which the locality is, and which is in the country | direct |
 | [postalCode](postalCode.md) | 0..1 <br/> [String](String.md) | The postal code | direct |
 | [addressCountry](addressCountry.md) | 0..1 <br/> [Country](Country.md) | The country as of  ISO 3166 | direct |
-| [oRCIDiD](oRCIDiD.md) | 0..1 <br/> [String](String.md) | Unique persistent identifier for a person, provided by the Open Researcher an... | direct |
+| [oRCIDiD](oRCIDiD.md) | 0..1 _recommended_ <br/> [String](String.md) | Unique persistent identifier for a person, provided by the Open Researcher an... | direct |
 | [name](name.md) | 1 <br/> [String](String.md) | The label that allows humans to identify the current item | [Nameable](Nameable.md) |
-| [description](description.md) | 0..1 <br/> [String](String.md) | A short explanation of the characteristics, features, or nature of the curren... | [Nameable](Nameable.md) |
+| [description](description.md) | 0..1 _recommended_ <br/> [String](String.md) | A short explanation of the characteristics, features, or nature of the curren... | [Nameable](Nameable.md) |
 
 
 
@@ -113,11 +113,6 @@ URI: [EVORA:ContactPoint](https://raw.githubusercontent.com/EVORA-project/evora-
 
 
 
-## Aliases
-
-
-* contact point
-
 
 
 ## Identifier and Mapping Information
@@ -140,8 +135,8 @@ URI: [EVORA:ContactPoint](https://raw.githubusercontent.com/EVORA-project/evora-
 
 | Mapping Type | Mapped Value |
 | ---  | ---  |
-| self | EVORA:ContactPoint |
-| native | EVORA:ContactPoint |
+| self | EVORAO:ContactPoint |
+| native | EVORAO:ContactPoint |
 | close | wd:Q30322502, vcard:Contact |
 
 
@@ -162,8 +157,6 @@ name: ContactPoint
 description: Entity serving as focal point of information
 title: Contact Point
 from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
-aliases:
-- contact point
 close_mappings:
 - wd:Q30322502
 - vcard:Contact
@@ -187,6 +180,7 @@ slot_usage:
     - vcard:email
     range: string
     required: false
+    recommended: true
     multivalued: false
   telephone:
     name: telephone
@@ -197,6 +191,7 @@ slot_usage:
     - vcard:telephone
     range: string
     required: false
+    recommended: true
     multivalued: false
   streetAddress:
     name: streetAddress
@@ -259,6 +254,7 @@ slot_usage:
     - IAO:0000708
     range: string
     required: false
+    recommended: true
     multivalued: false
 
 ```
@@ -272,8 +268,6 @@ name: ContactPoint
 description: Entity serving as focal point of information
 title: Contact Point
 from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
-aliases:
-- contact point
 close_mappings:
 - wd:Q30322502
 - vcard:Contact
@@ -288,6 +282,7 @@ slot_usage:
     - vcard:email
     range: string
     required: false
+    recommended: true
     multivalued: false
   telephone:
     name: telephone
@@ -298,6 +293,7 @@ slot_usage:
     - vcard:telephone
     range: string
     required: false
+    recommended: true
     multivalued: false
   streetAddress:
     name: streetAddress
@@ -360,6 +356,7 @@ slot_usage:
     - IAO:0000708
     range: string
     required: false
+    recommended: true
     multivalued: false
 attributes:
   email:
@@ -377,6 +374,7 @@ attributes:
     - ContactPoint
     range: string
     required: false
+    recommended: true
     multivalued: false
   telephone:
     name: telephone
@@ -393,6 +391,7 @@ attributes:
     - ContactPoint
     range: string
     required: false
+    recommended: true
     multivalued: false
   streetAddress:
     name: streetAddress
@@ -492,6 +491,7 @@ attributes:
     - ContactPoint
     range: string
     required: false
+    recommended: true
     multivalued: false
   name:
     name: name
@@ -537,6 +537,7 @@ attributes:
     - Nameable
     range: string
     required: false
+    recommended: true
     multivalued: false
 
 ```

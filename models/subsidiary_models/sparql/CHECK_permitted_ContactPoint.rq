@@ -17,24 +17,24 @@ PREFIX adms: <http://www.w3.org/ns/adms#>
 PREFIX pav: <http://purl.org/pav/>
 PREFIX dwc: <http://rs.tdwg.org/dwc/terms/>
 PREFIX IAO: <http://purl.obolibrary.org/obo/IAO_>
-PREFIX EVORA: <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#>
+PREFIX EVORAO: <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#>
 PREFIX linkml: <https://w3id.org/linkml/>
 
 SELECT ?g ?s ?p WHERE {
  GRAPH ?g {
-  ?s rdf:type EVORA:ContactPoint ;
+  ?s rdf:type EVORAO:ContactPoint ;
      ?p ?o .
   FILTER ( ?p NOT IN (
-   EVORA:email,
-   EVORA:telephone,
-   EVORA:streetAddress,
-   EVORA:addressLocality,
-   EVORA:addressRegion,
-   EVORA:postalCode,
-   EVORA:addressCountry,
-   EVORA:oRCIDiD,
-   EVORA:name,
-   EVORA:description,
+   EVORAO:email,
+   EVORAO:telephone,
+   EVORAO:streetAddress,
+   EVORAO:addressLocality,
+   EVORAO:addressRegion,
+   EVORAO:postalCode,
+   EVORAO:addressCountry,
+   EVORAO:oRCIDiD,
+   EVORAO:name,
+   EVORAO:description,
    rdf:type ))
  }
  

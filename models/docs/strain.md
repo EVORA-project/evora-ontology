@@ -4,7 +4,7 @@
 
 
 
-URI: [EVORA:strain](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#strain)
+URI: [EVORAO:strain](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#strain)
 
 
 
@@ -54,8 +54,8 @@ URI: [EVORA:strain](https://raw.githubusercontent.com/EVORA-project/evora-ontolo
 
 | Mapping Type | Mapped Value |
 | ---  | ---  |
-| self | EVORA:strain |
-| native | EVORA:strain |
+| self | EVORAO:strain |
+| native | EVORAO:strain |
 
 
 

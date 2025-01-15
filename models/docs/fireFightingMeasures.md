@@ -4,7 +4,7 @@
 
 
 
-URI: [EVORA:fireFightingMeasures](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#fireFightingMeasures)
+URI: [EVORAO:fireFightingMeasures](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#fireFightingMeasures)
 
 
 
@@ -54,8 +54,8 @@ URI: [EVORA:fireFightingMeasures](https://raw.githubusercontent.com/EVORA-projec
 
 | Mapping Type | Mapped Value |
 | ---  | ---  |
-| self | EVORA:fireFightingMeasures |
-| native | EVORA:fireFightingMeasures |
+| self | EVORAO:fireFightingMeasures |
+| native | EVORAO:fireFightingMeasures |
 
 
 

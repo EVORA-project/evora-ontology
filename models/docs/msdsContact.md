@@ -4,7 +4,7 @@
 
 
 
-URI: [EVORA:msdsContact](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#msdsContact)
+URI: [EVORAO:msdsContact](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#msdsContact)
 
 
 
@@ -54,8 +54,8 @@ URI: [EVORA:msdsContact](https://raw.githubusercontent.com/EVORA-project/evora-o
 
 | Mapping Type | Mapped Value |
 | ---  | ---  |
-| self | EVORA:msdsContact |
-| native | EVORA:msdsContact |
+| self | EVORAO:msdsContact |
+| native | EVORAO:msdsContact |
 
 
 

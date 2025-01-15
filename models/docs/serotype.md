@@ -4,7 +4,7 @@
 
 
 
-URI: [EVORA:serotype](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#serotype)
+URI: [EVORAO:serotype](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#serotype)
 
 
 
@@ -54,8 +54,8 @@ URI: [EVORA:serotype](https://raw.githubusercontent.com/EVORA-project/evora-onto
 
 | Mapping Type | Mapped Value |
 | ---  | ---  |
-| self | EVORA:serotype |
-| native | EVORA:serotype |
+| self | EVORAO:serotype |
+| native | EVORAO:serotype |
 
 
 

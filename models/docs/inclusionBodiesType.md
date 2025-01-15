@@ -4,7 +4,7 @@
 
 
 
-URI: [EVORA:inclusionBodiesType](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#inclusionBodiesType)
+URI: [EVORAO:inclusionBodiesType](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#inclusionBodiesType)
 
 
 
@@ -54,8 +54,8 @@ URI: [EVORA:inclusionBodiesType](https://raw.githubusercontent.com/EVORA-project
 
 | Mapping Type | Mapped Value |
 | ---  | ---  |
-| self | EVORA:inclusionBodiesType |
-| native | EVORA:inclusionBodiesType |
+| self | EVORAO:inclusionBodiesType |
+| native | EVORAO:inclusionBodiesType |
 
 
 

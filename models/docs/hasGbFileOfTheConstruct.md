@@ -4,7 +4,7 @@
 
 
 
-URI: [EVORA:hasGbFileOfTheConstruct](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#hasGbFileOfTheConstruct)
+URI: [EVORAO:hasGbFileOfTheConstruct](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#hasGbFileOfTheConstruct)
 
 
 
@@ -54,8 +54,8 @@ URI: [EVORA:hasGbFileOfTheConstruct](https://raw.githubusercontent.com/EVORA-pro
 
 | Mapping Type | Mapped Value |
 | ---  | ---  |
-| self | EVORA:hasGbFileOfTheConstruct |
-| native | EVORA:hasGbFileOfTheConstruct |
+| self | EVORAO:hasGbFileOfTheConstruct |
+| native | EVORAO:hasGbFileOfTheConstruct |
 
 
 

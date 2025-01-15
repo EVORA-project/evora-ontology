@@ -4,7 +4,7 @@
 
 
 
-URI: [EVORA:regionEncompassedInThisProduct](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#regionEncompassedInThisProduct)
+URI: [EVORAO:regionEncompassedInThisProduct](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#regionEncompassedInThisProduct)
 
 
 
@@ -54,8 +54,8 @@ URI: [EVORA:regionEncompassedInThisProduct](https://raw.githubusercontent.com/EV
 
 | Mapping Type | Mapped Value |
 | ---  | ---  |
-| self | EVORA:regionEncompassedInThisProduct |
-| native | EVORA:regionEncompassedInThisProduct |
+| self | EVORAO:regionEncompassedInThisProduct |
+| native | EVORAO:regionEncompassedInThisProduct |
 
 
 

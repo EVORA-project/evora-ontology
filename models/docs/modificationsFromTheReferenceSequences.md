@@ -4,7 +4,7 @@
 
 
 
-URI: [EVORA:modificationsFromTheReferenceSequences](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#modificationsFromTheReferenceSequences)
+URI: [EVORAO:modificationsFromTheReferenceSequences](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#modificationsFromTheReferenceSequences)
 
 
 
@@ -54,8 +54,8 @@ URI: [EVORA:modificationsFromTheReferenceSequences](https://raw.githubuserconten
 
 | Mapping Type | Mapped Value |
 | ---  | ---  |
-| self | EVORA:modificationsFromTheReferenceSequences |
-| native | EVORA:modificationsFromTheReferenceSequences |
+| self | EVORAO:modificationsFromTheReferenceSequences |
+| native | EVORAO:modificationsFromTheReferenceSequences |
 
 
 

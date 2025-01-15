@@ -9,7 +9,7 @@ _Subclass of File representing visual content such as pictures, diagrams, or ill
 
 
 
-URI: [EVORA:Image](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#Image)
+URI: [EVORAO:Image](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#Image)
 
 
 
@@ -60,12 +60,12 @@ URI: [EVORA:Image](https://raw.githubusercontent.com/EVORA-project/evora-ontolog
 
 | Name | Cardinality and Range | Description | Inheritance |
 | ---  | --- | --- | --- |
-| [altText](altText.md) | 0..1 <br/> [String](String.md) | An alternate text for the image, if the image cannot be displayed | direct |
+| [altText](altText.md) | 0..1 _recommended_ <br/> [String](String.md) | An alternate text for the image, if the image cannot be displayed | direct |
 | [contentURL](contentURL.md) | 1 <br/> [Uri](Uri.md) | The web address or location where the file content is stored and can be acces... | [File](File.md) |
 | [format](format.md) | 1 <br/> [String](String.md) | The file type or format that indicates how the data within the file is struct... | [File](File.md) |
 | [license](license.md) | 0..1 <br/> [License](License.md) | The legal terms and conditions under which the file can be used, shared, or d... | [File](File.md) |
 | [name](name.md) | 1 <br/> [String](String.md) | The label that allows humans to identify the current item | [Nameable](Nameable.md) |
-| [description](description.md) | 0..1 <br/> [String](String.md) | A short explanation of the characteristics, features, or nature of the curren... | [Nameable](Nameable.md) |
+| [description](description.md) | 0..1 _recommended_ <br/> [String](String.md) | A short explanation of the characteristics, features, or nature of the curren... | [Nameable](Nameable.md) |
 
 
 
@@ -103,11 +103,6 @@ URI: [EVORA:Image](https://raw.githubusercontent.com/EVORA-project/evora-ontolog
 
 
 
-## Aliases
-
-
-* image file
-
 
 
 ## Identifier and Mapping Information
@@ -130,8 +125,8 @@ URI: [EVORA:Image](https://raw.githubusercontent.com/EVORA-project/evora-ontolog
 
 | Mapping Type | Mapped Value |
 | ---  | ---  |
-| self | EVORA:Image |
-| native | EVORA:Image |
+| self | EVORAO:Image |
+| native | EVORAO:Image |
 | close | wd:Q860625 |
 
 
@@ -153,8 +148,6 @@ description: Subclass of File representing visual content such as pictures, diag
   or illustrations
 title: Image
 from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
-aliases:
-- image file
 close_mappings:
 - wd:Q860625
 is_a: File
@@ -167,6 +160,7 @@ slot_usage:
     title: alt text
     range: string
     required: false
+    recommended: true
     multivalued: false
 
 ```
@@ -181,8 +175,6 @@ description: Subclass of File representing visual content such as pictures, diag
   or illustrations
 title: Image
 from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
-aliases:
-- image file
 close_mappings:
 - wd:Q860625
 is_a: File
@@ -193,6 +185,7 @@ slot_usage:
     title: alt text
     range: string
     required: false
+    recommended: true
     multivalued: false
 attributes:
   altText:
@@ -207,6 +200,7 @@ attributes:
     - Image
     range: string
     required: false
+    recommended: true
     multivalued: false
   contentURL:
     name: contentURL
@@ -295,6 +289,7 @@ attributes:
     - Nameable
     range: string
     required: false
+    recommended: true
     multivalued: false
 
 ```

@@ -11,7 +11,7 @@ _A collection of operations that provides access to one or more datasets or data
 * __NOTE__: this is an abstract class and should not be instantiated directly
 
 
-URI: [EVORA:DataService](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#DataService)
+URI: [EVORAO:DataService](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#DataService)
 
 
 
@@ -53,18 +53,13 @@ URI: [EVORA:DataService](https://raw.githubusercontent.com/EVORA-project/evora-o
 | Name | Cardinality and Range | Description | Inheritance |
 | ---  | --- | --- | --- |
 | [name](name.md) | 1 <br/> [String](String.md) | The label that allows humans to identify the current item | [Nameable](Nameable.md) |
-| [description](description.md) | 0..1 <br/> [String](String.md) | A short explanation of the characteristics, features, or nature of the curren... | [Nameable](Nameable.md) |
+| [description](description.md) | 0..1 _recommended_ <br/> [String](String.md) | A short explanation of the characteristics, features, or nature of the curren... | [Nameable](Nameable.md) |
 
 
 
 
 
 
-
-## Aliases
-
-
-* web service
 
 
 
@@ -88,8 +83,8 @@ URI: [EVORA:DataService](https://raw.githubusercontent.com/EVORA-project/evora-o
 
 | Mapping Type | Mapped Value |
 | ---  | ---  |
-| self | EVORA:DataService |
-| native | EVORA:DataService |
+| self | EVORAO:DataService |
+| native | EVORAO:DataService |
 | exact | dcat:DataService |
 | close | wd:Q193424, schema:WebAPI |
 
@@ -112,8 +107,6 @@ description: A collection of operations that provides access to one or more data
   or data processing functions
 title: Data Service
 from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
-aliases:
-- web service
 exact_mappings:
 - dcat:DataService
 close_mappings:
@@ -134,8 +127,6 @@ description: A collection of operations that provides access to one or more data
   or data processing functions
 title: Data Service
 from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
-aliases:
-- web service
 exact_mappings:
 - dcat:DataService
 close_mappings:
@@ -188,6 +179,7 @@ attributes:
     - Nameable
     range: string
     required: false
+    recommended: true
     multivalued: false
 
 ```

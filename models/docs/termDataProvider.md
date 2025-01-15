@@ -4,7 +4,7 @@
 
 
 
-URI: [EVORA:termDataProvider](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#termDataProvider)
+URI: [EVORAO:termDataProvider](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#termDataProvider)
 
 
 
@@ -54,8 +54,8 @@ URI: [EVORA:termDataProvider](https://raw.githubusercontent.com/EVORA-project/ev
 
 | Mapping Type | Mapped Value |
 | ---  | ---  |
-| self | EVORA:termDataProvider |
-| native | EVORA:termDataProvider |
+| self | EVORAO:termDataProvider |
+| native | EVORAO:termDataProvider |
 
 
 

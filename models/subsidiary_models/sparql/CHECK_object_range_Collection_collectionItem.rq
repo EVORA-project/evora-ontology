@@ -17,7 +17,7 @@ PREFIX adms: <http://www.w3.org/ns/adms#>
 PREFIX pav: <http://purl.org/pav/>
 PREFIX dwc: <http://rs.tdwg.org/dwc/terms/>
 PREFIX IAO: <http://purl.obolibrary.org/obo/IAO_>
-PREFIX EVORA: <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#>
+PREFIX EVORAO: <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#>
 PREFIX linkml: <https://w3id.org/linkml/>
 
 SELECT
@@ -28,48 +28,48 @@ SELECT
   ?object
 WHERE {
  GRAPH ?graph {
-  ?subject rdf:type EVORA:Collection ;
+  ?subject rdf:type EVORAO:Collection ;
      ?predicate ?object .
   FILTER NOT EXISTS {
     ?object rdf:type ?otype .
     FILTER ( ?otype IN (
-      EVORA:ProductOrService
+      EVORAO:ProductOrService
       , 
-      EVORA:Service
+      EVORAO:Service
       , 
-      EVORA:Product
+      EVORAO:Product
       , 
-      EVORA:Antibody
+      EVORAO:Antibody
       , 
-      EVORA:Protein
+      EVORAO:Protein
       , 
-      EVORA:NucleicAcid
+      EVORAO:NucleicAcid
       , 
-      EVORA:DetectionKit
+      EVORAO:DetectionKit
       , 
-      EVORA:Bundle
+      EVORAO:Bundle
       , 
-      EVORA:Pathogen
+      EVORAO:Pathogen
       , 
-      EVORA:Virus
+      EVORAO:Virus
       , 
-      EVORA:Bacterium
+      EVORAO:Bacterium
       , 
-      EVORA:Fungus
+      EVORAO:Fungus
       , 
-      EVORA:Protozoan
+      EVORAO:Protozoan
       , 
-      EVORA:Viroid
+      EVORAO:Viroid
       , 
-      EVORA:Prion
+      EVORAO:Prion
       , 
-      EVORA:Hybridoma
+      EVORAO:Hybridoma
       
       ))
   }
  }
  VALUES ?check { linkml:range }
- VALUES ?predicate { EVORA:collectionItem  }
+ VALUES ?predicate { EVORAO:collectionItem  }
  
 }  
 

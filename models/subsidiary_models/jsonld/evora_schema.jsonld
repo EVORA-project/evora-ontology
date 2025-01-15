@@ -1,14 +1,23 @@
 {
-  "name": "EVORA_Ontology",
+  "name": "EVORAO",
   "description": "The EVORA Ontology harmonizes metadata in virology to describe viral resources, their derived products, and services. It aligns with FAIR principles to ensure interoperability, accessibility, and reusability across various projects. The EVORA Ontology aims to support preparedness and response to pandemics.",
-  "title": "European Viral Outbreak Research Alliance Ontology",
+  "title": "European Viral Outbreak Response Alliance Ontology",
   "in_language": "en",
   "created_by": "https://github.com/Angatar",
   "contributors": [
+    "https://github.com/Angatar",
+    "https://orcid.org/0000-0002-5080-3456",
+    "https://github.com/jamesamcl",
+    "https://orcid.org/0000-0003-3035-4195",
+    "https://orcid.org/0000-0003-4073-7456",
+    "https://orcid.org/0000-0002-2004-4073",
+    "https://orcid.org/0000-0002-6963-8673",
+    "https://orcid.org/0000-0003-3067-827X",
+    "https://orcid.org/0000-0002-1257-6862",
     "https://orcid.org/0000-0002-2042-2839"
   ],
   "id": "https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#",
-  "version": "1.0.7370",
+  "version": "1.0.7498",
   "imports": [
     "linkml:types"
   ],
@@ -91,7 +100,7 @@
       "prefix_reference": "http://purl.obolibrary.org/obo/IAO_"
     },
     {
-      "prefix_prefix": "EVORA",
+      "prefix_prefix": "EVORAO",
       "prefix_reference": "https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#"
     },
     {
@@ -99,7 +108,7 @@
       "prefix_reference": "https://w3id.org/linkml/"
     }
   ],
-  "default_prefix": "EVORA",
+  "default_prefix": "EVORAO",
   "default_range": "string",
   "types": [
     {
@@ -2663,9 +2672,6 @@
       "description": "The version identifier",
       "title": "ID",
       "from_schema": "https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#",
-      "aliases": [
-        "edition number"
-      ],
       "close_mappings": [
         "http://www.wikidata.org/prop/P393",
         "http://schema.org/version"
@@ -2756,6 +2762,7 @@
       "is_usage_slot": true,
       "usage_slot_name": "description",
       "range": "string",
+      "recommended": true,
       "@type": "SlotDefinition"
     },
     {
@@ -2937,9 +2944,6 @@
       "description": "The URL template that allows to log in if required",
       "title": "login URL",
       "from_schema": "https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#",
-      "aliases": [
-        "formatter URL"
-      ],
       "close_mappings": [
         "http://www.wikidata.org/prop/P1630",
         "http://www.w3.org/ns/dcat#endpointDescription"
@@ -2985,9 +2989,6 @@
       "description": "The URL template that allows to get the content",
       "title": "query URL",
       "from_schema": "https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#",
-      "aliases": [
-        "formatter URL"
-      ],
       "exact_mappings": [
         "http://www.w3.org/ns/dcat#endpointURL"
       ],
@@ -3186,6 +3187,7 @@
       "is_usage_slot": true,
       "usage_slot_name": "hostType",
       "range": "string",
+      "recommended": true,
       "multivalued": true,
       "@type": "SlotDefinition"
     },
@@ -3225,6 +3227,7 @@
       "is_usage_slot": true,
       "usage_slot_name": "strain",
       "range": "string",
+      "recommended": true,
       "@type": "SlotDefinition"
     },
     {
@@ -3448,6 +3451,7 @@
       "is_usage_slot": true,
       "usage_slot_name": "term",
       "range": "Term",
+      "recommended": true,
       "multivalued": true,
       "inlined": true,
       "@type": "SlotDefinition"
@@ -3482,9 +3486,6 @@
       "description": "Terms belong to a specific vocabulary",
       "title": "in Vocabulary",
       "from_schema": "https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#",
-      "aliases": [
-        "catalog"
-      ],
       "close_mappings": [
         "http://www.wikidata.org/prop/P972"
       ],
@@ -3512,9 +3513,6 @@
         "including previous names and former taxonomic terms, this information can also serve as keywords arround the pathogen name for search and as a bridge with other projects that are still using other naming systems or taxonomies e.g. the NCBI taxonomy"
       ],
       "from_schema": "https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#",
-      "aliases": [
-        "alternative name"
-      ],
       "close_mappings": [
         "http://www.wikidata.org/prop/P4970"
       ],
@@ -3539,9 +3537,6 @@
       "description": "The name of the origin from which knowledge is obtained. This can include any entity that provides information",
       "title": "source of information",
       "from_schema": "https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#",
-      "aliases": [
-        "stated in"
-      ],
       "close_mappings": [
         "http://www.wikidata.org/prop/P248"
       ],
@@ -3565,9 +3560,6 @@
       "description": "Any known alternate name related to this name",
       "title": "alternate name",
       "from_schema": "https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#",
-      "aliases": [
-        "alternative name"
-      ],
       "close_mappings": [
         "http://www.wikidata.org/prop/P4970"
       ],
@@ -3592,9 +3584,6 @@
       "description": "The name of the origin from which knowledge is obtained. This can include any entity that provides information",
       "title": "source of information",
       "from_schema": "https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#",
-      "aliases": [
-        "stated in"
-      ],
       "close_mappings": [
         "http://www.wikidata.org/prop/P248"
       ],
@@ -3690,6 +3679,7 @@
       "is_usage_slot": true,
       "usage_slot_name": "taxonomy",
       "range": "Taxonomy",
+      "recommended": true,
       "multivalued": true,
       "inlined": true,
       "@type": "SlotDefinition"
@@ -3839,6 +3829,7 @@
       "is_usage_slot": true,
       "usage_slot_name": "taxonomicNodeID",
       "range": "string",
+      "recommended": true,
       "@type": "SlotDefinition"
     },
     {
@@ -3953,6 +3944,7 @@
       "is_usage_slot": true,
       "usage_slot_name": "sequenceReference",
       "range": "SequenceReference",
+      "recommended": true,
       "multivalued": true,
       "inlined": true,
       "@type": "SlotDefinition"
@@ -4064,6 +4056,7 @@
       "is_usage_slot": true,
       "usage_slot_name": "contactPoint",
       "range": "ContactPoint",
+      "recommended": true,
       "inlined": true,
       "@type": "SlotDefinition"
     },
@@ -4104,6 +4097,7 @@
       "is_usage_slot": true,
       "usage_slot_name": "oRCIDiD",
       "range": "string",
+      "recommended": true,
       "@type": "SlotDefinition"
     },
     {
@@ -4126,6 +4120,7 @@
       "is_usage_slot": true,
       "usage_slot_name": "alternateName",
       "range": "AlternateName",
+      "recommended": true,
       "inlined": true,
       "@type": "SlotDefinition"
     },
@@ -4146,6 +4141,7 @@
       "is_usage_slot": true,
       "usage_slot_name": "country",
       "range": "Country",
+      "recommended": true,
       "inlined": true,
       "@type": "SlotDefinition"
     },
@@ -4288,9 +4284,6 @@
       "description": "The geographical location where the sample was collected in situ. Used for Nagoya/CBD; equivalent to \"country of origin\".",
       "title": "country of collection",
       "from_schema": "https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#",
-      "aliases": [
-        "country of origin"
-      ],
       "close_mappings": [
         "http://purl.org/dc/terms/spatial",
         "http://rs.tdwg.org/dwc/terms/country"
@@ -4427,6 +4420,7 @@
       "is_usage_slot": true,
       "usage_slot_name": "descriptionOfModificationsMadeFromTheReferenceSequences",
       "range": "string",
+      "recommended": true,
       "@type": "SlotDefinition"
     },
     {
@@ -4467,6 +4461,7 @@
       "usage_slot_name": "sequence",
       "range": "Sequence",
       "required": true,
+      "recommended": true,
       "multivalued": true,
       "inlined": true,
       "@type": "SlotDefinition"
@@ -4491,6 +4486,7 @@
       "is_usage_slot": true,
       "usage_slot_name": "collectionItem",
       "range": "ProductOrService",
+      "recommended": true,
       "multivalued": true,
       "inlined": true,
       "@type": "SlotDefinition"
@@ -4584,6 +4580,7 @@
       "is_usage_slot": true,
       "usage_slot_name": "unitDefinition",
       "range": "string",
+      "recommended": true,
       "@type": "SlotDefinition"
     },
     {
@@ -4630,6 +4627,7 @@
       "is_usage_slot": true,
       "usage_slot_name": "additionalCategory",
       "range": "ProductCategory",
+      "recommended": true,
       "multivalued": true,
       "inlined": true,
       "@type": "SlotDefinition"
@@ -4656,6 +4654,7 @@
       "usage_slot_name": "unitCost",
       "range": "string",
       "required": true,
+      "recommended": true,
       "@type": "SlotDefinition"
     },
     {
@@ -4708,9 +4707,6 @@
       "description": "Any DOI that can be related",
       "title": "DOI",
       "from_schema": "https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#",
-      "aliases": [
-        "DOI"
-      ],
       "close_mappings": [
         "http://www.wikidata.org/prop/P356"
       ],
@@ -4735,9 +4731,6 @@
       "description": "The highest risk group related to this resource. The risk group of a biological agent guiding its initial handling in labs according to the risk group classification defined by the WHO laboratory biosafety manual",
       "title": "risk group",
       "from_schema": "https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#",
-      "aliases": [
-        "risk group"
-      ],
       "close_mappings": [
         "http://www.wikidata.org/prop/P12663"
       ],
@@ -4752,6 +4745,7 @@
       "is_usage_slot": true,
       "usage_slot_name": "riskGroup",
       "range": "RiskGroup",
+      "recommended": true,
       "inlined": true,
       "@type": "SlotDefinition"
     },
@@ -4794,6 +4788,7 @@
       "is_usage_slot": true,
       "usage_slot_name": "canItBeUsedToProduceGMO",
       "range": "boolean",
+      "recommended": true,
       "@type": "SlotDefinition"
     },
     {
@@ -4823,9 +4818,6 @@
       "description": "The collection(s) to which belongs this item",
       "title": "collection",
       "from_schema": "https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#",
-      "aliases": [
-        "catalog"
-      ],
       "is_a": "collection",
       "domain": "ProductOrService",
       "slot_uri": "https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#collection",
@@ -4863,6 +4855,7 @@
       "usage_slot_name": "keywords",
       "range": "Keyword",
       "required": true,
+      "recommended": true,
       "multivalued": true,
       "inlined": true,
       "@type": "SlotDefinition"
@@ -5055,6 +5048,7 @@
       "is_usage_slot": true,
       "usage_slot_name": "contactPoint",
       "range": "ContactPoint",
+      "recommended": true,
       "inlined": true,
       "@type": "SlotDefinition"
     },
@@ -5258,6 +5252,7 @@
       "is_usage_slot": true,
       "usage_slot_name": "productionSystem",
       "range": "string",
+      "recommended": true,
       "@type": "SlotDefinition"
     },
     {
@@ -5337,6 +5332,7 @@
       "is_usage_slot": true,
       "usage_slot_name": "sequenceReference",
       "range": "SequenceReference",
+      "recommended": true,
       "multivalued": true,
       "inlined": true,
       "@type": "SlotDefinition"
@@ -5410,9 +5406,6 @@
       "description": "Identifier for 3D structural data as per the PDB (Protein Data Bank) database",
       "title": "related PDB",
       "from_schema": "https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#",
-      "aliases": [
-        "PDB structure ID"
-      ],
       "close_mappings": [
         "http://www.wikidata.org/prop/P638"
       ],
@@ -5754,6 +5747,7 @@
       "is_usage_slot": true,
       "usage_slot_name": "clonedIntoPlasmid",
       "range": "ExpressionVector",
+      "recommended": true,
       "inlined": true,
       "@type": "SlotDefinition"
     },
@@ -5774,6 +5768,7 @@
       "is_usage_slot": true,
       "usage_slot_name": "pasmidSelection",
       "range": "PlasmidSelection",
+      "recommended": true,
       "multivalued": true,
       "inlined": true,
       "@type": "SlotDefinition"
@@ -6540,6 +6535,7 @@
       "is_usage_slot": true,
       "usage_slot_name": "physicalChemicalProperties",
       "range": "string",
+      "recommended": true,
       "@type": "SlotDefinition"
     },
     {
@@ -6559,6 +6555,7 @@
       "is_usage_slot": true,
       "usage_slot_name": "hazardsIdentification",
       "range": "string",
+      "recommended": true,
       "@type": "SlotDefinition"
     },
     {
@@ -6578,6 +6575,7 @@
       "is_usage_slot": true,
       "usage_slot_name": "firstAidMeasures",
       "range": "string",
+      "recommended": true,
       "@type": "SlotDefinition"
     },
     {
@@ -6597,6 +6595,7 @@
       "is_usage_slot": true,
       "usage_slot_name": "fireFightingMeasures",
       "range": "string",
+      "recommended": true,
       "@type": "SlotDefinition"
     },
     {
@@ -6616,6 +6615,7 @@
       "is_usage_slot": true,
       "usage_slot_name": "accidentalReleaseMeasures",
       "range": "string",
+      "recommended": true,
       "@type": "SlotDefinition"
     },
     {
@@ -6635,6 +6635,7 @@
       "is_usage_slot": true,
       "usage_slot_name": "handlingAndStorage",
       "range": "string",
+      "recommended": true,
       "@type": "SlotDefinition"
     },
     {
@@ -6654,6 +6655,7 @@
       "is_usage_slot": true,
       "usage_slot_name": "exposureControlsPersonalProtection",
       "range": "string",
+      "recommended": true,
       "@type": "SlotDefinition"
     },
     {
@@ -6673,6 +6675,7 @@
       "is_usage_slot": true,
       "usage_slot_name": "stabilityAndReactivity",
       "range": "string",
+      "recommended": true,
       "@type": "SlotDefinition"
     },
     {
@@ -6692,6 +6695,7 @@
       "is_usage_slot": true,
       "usage_slot_name": "toxicologicalInformation",
       "range": "string",
+      "recommended": true,
       "@type": "SlotDefinition"
     },
     {
@@ -6711,6 +6715,7 @@
       "is_usage_slot": true,
       "usage_slot_name": "ecologicalInformation",
       "range": "string",
+      "recommended": true,
       "@type": "SlotDefinition"
     },
     {
@@ -6730,6 +6735,7 @@
       "is_usage_slot": true,
       "usage_slot_name": "disposalConsiderations",
       "range": "string",
+      "recommended": true,
       "@type": "SlotDefinition"
     },
     {
@@ -6749,6 +6755,7 @@
       "is_usage_slot": true,
       "usage_slot_name": "transportInformation",
       "range": "string",
+      "recommended": true,
       "@type": "SlotDefinition"
     },
     {
@@ -6768,6 +6775,7 @@
       "is_usage_slot": true,
       "usage_slot_name": "regulatoryInformation",
       "range": "string",
+      "recommended": true,
       "@type": "SlotDefinition"
     },
     {
@@ -6787,6 +6795,7 @@
       "is_usage_slot": true,
       "usage_slot_name": "furtherInformation",
       "range": "string",
+      "recommended": true,
       "@type": "SlotDefinition"
     },
     {
@@ -6866,6 +6875,7 @@
       "is_usage_slot": true,
       "usage_slot_name": "altText",
       "range": "string",
+      "recommended": true,
       "@type": "SlotDefinition"
     },
     {
@@ -6889,6 +6899,7 @@
       "is_usage_slot": true,
       "usage_slot_name": "email",
       "range": "string",
+      "recommended": true,
       "@type": "SlotDefinition"
     },
     {
@@ -6912,6 +6923,7 @@
       "is_usage_slot": true,
       "usage_slot_name": "telephone",
       "range": "string",
+      "recommended": true,
       "@type": "SlotDefinition"
     },
     {
@@ -7050,6 +7062,7 @@
       "is_usage_slot": true,
       "usage_slot_name": "oRCIDiD",
       "range": "string",
+      "recommended": true,
       "@type": "SlotDefinition"
     },
     {
@@ -7193,9 +7206,6 @@
       "description": "Numeric code assigned to identify a particular historical version of a work (e.g. software or technical standards)",
       "title": "Version",
       "from_schema": "https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#",
-      "aliases": [
-        "version number"
-      ],
       "close_mappings": [
         "wd:Q114469879"
       ],
@@ -7229,9 +7239,6 @@
       "description": "A curated collection of metadata about resources",
       "title": "Catalogue",
       "from_schema": "https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#",
-      "aliases": [
-        "catalogue"
-      ],
       "exact_mappings": [
         "dcat:Catalog"
       ],
@@ -7255,9 +7262,6 @@
       "description": "A collection of data, published or curated by a single agent, and available for access",
       "title": "Dataset",
       "from_schema": "https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#",
-      "aliases": [
-        "data set"
-      ],
       "exact_mappings": [
         "dcat:Dataset"
       ],
@@ -7276,9 +7280,6 @@
       "description": "A collection of data, that has a name and can have a description, published or curated by a single agent, and available for access",
       "title": "Named Dataset",
       "from_schema": "https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#",
-      "aliases": [
-        "data set"
-      ],
       "exact_mappings": [
         "dcat:Dataset"
       ],
@@ -7302,9 +7303,6 @@
       "description": "A collection of operations that provides access to one or more datasets or data processing functions",
       "title": "Data Service",
       "from_schema": "https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#",
-      "aliases": [
-        "web service"
-      ],
       "exact_mappings": [
         "dcat:DataService"
       ],
@@ -7328,9 +7326,6 @@
       "description": "Science of naming, defining and classifying organisms",
       "title": "Taxonomy",
       "from_schema": "https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#",
-      "aliases": [
-        "taxonomy"
-      ],
       "close_mappings": [
         "wd:Q8269924",
         "skos:Collection"
@@ -7356,9 +7351,6 @@
       "description": "An external API (Application Programming Interface) or Endpoint that permits to retrieve data from other sources",
       "title": "Data provider",
       "from_schema": "https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#",
-      "aliases": [
-        "data provider"
-      ],
       "close_mappings": [
         "wd:Q122625839"
       ],
@@ -7409,9 +7401,6 @@
       "description": "A scientific publication",
       "title": "Publication",
       "from_schema": "https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#",
-      "aliases": [
-        "scientific publication"
-      ],
       "close_mappings": [
         "wd:Q591041"
       ],
@@ -7433,9 +7422,6 @@
       "description": "A subset of words or phrases specific to a particular subject or field",
       "title": "Vocabulary",
       "from_schema": "https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#",
-      "aliases": [
-        "vocabulary"
-      ],
       "close_mappings": [
         "wd:Q6499736",
         "skos:Collection"
@@ -7457,9 +7443,6 @@
       "description": "Word or phrase from a specialized area of knowledge",
       "title": "Term",
       "from_schema": "https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#",
-      "aliases": [
-        "term"
-      ],
       "close_mappings": [
         "wd:Q1969448"
       ],
@@ -7481,9 +7464,6 @@
       "description": "Vernacular name that is the name used in everyday language to refer to an organism or group of organisms. This name is typically easier to remember and pronounce compared to the scientific name",
       "title": "Common Name",
       "from_schema": "https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#",
-      "aliases": [
-        "common name"
-      ],
       "exact_mappings": [
         "dwc:vernacularName"
       ],
@@ -7509,9 +7489,6 @@
       "description": "A virus vernacular name or a name that describes a group of viruses",
       "title": "Virus Name",
       "from_schema": "https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#",
-      "aliases": [
-        "virus name"
-      ],
       "close_mappings": [
         "wd:Q125481078"
       ],
@@ -7534,9 +7511,6 @@
       "description": "List of alternate names for things",
       "title": "Alternate Name",
       "from_schema": "https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#",
-      "aliases": [
-        "synonym"
-      ],
       "close_mappings": [
         "wd:Q7662595"
       ],
@@ -7562,9 +7536,6 @@
         "Use of Data provider if any or manual import of information from wd:Q125449389, wd:Q125449412, wd:Q125449429, wd:Q125449439"
       ],
       "from_schema": "https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#",
-      "aliases": [
-        "risk group"
-      ],
       "close_mappings": [
         "wd:Q125449255"
       ],
@@ -7585,9 +7556,6 @@
       "description": "A unique string identifier assigned to a digital object, providing a permanent link for reliable citation and access.  The Digital Object Identifier (DOI) is a persistent identifier that is an ISO standard",
       "title": "DOI",
       "from_schema": "https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#",
-      "aliases": [
-        "DOI"
-      ],
       "close_mappings": [
         "wd:Q25670"
       ],
@@ -7608,9 +7576,6 @@
       "description": "Periodical journal publishing scientific research",
       "title": "Journal",
       "from_schema": "https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#",
-      "aliases": [
-        "scientific journal"
-      ],
       "close_mappings": [
         "wd:Q5633421"
       ],
@@ -7631,9 +7596,6 @@
       "description": "Identifier for 3D structural data as per the PDB (Protein Data Bank) database",
       "title": "PDB reference",
       "from_schema": "https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#",
-      "aliases": [
-        "Wikidata property to identify proteins"
-      ],
       "close_mappings": [
         "wdp:Q42415644"
       ],
@@ -7654,9 +7616,6 @@
       "description": "A term or phrase used to tag and categorize content",
       "title": "Keyword",
       "from_schema": "https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#",
-      "aliases": [
-        "subject heading"
-      ],
       "close_mappings": [
         "wd:Q1128340"
       ],
@@ -7677,9 +7636,6 @@
       "description": "Peptide sequence genetically grafted onto a recombinant protein",
       "title": "Protein tag",
       "from_schema": "https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#",
-      "aliases": [
-        "protein tag"
-      ],
       "close_mappings": [
         "wd:Q645590"
       ],
@@ -7720,9 +7676,6 @@
       "description": "A reference to an expression vector plasmid, typically embedding a resistance marker for inducible protein expression",
       "title": "Expression vector",
       "from_schema": "https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#",
-      "aliases": [
-        "expression vector"
-      ],
       "close_mappings": [
         "wd:Q5421712"
       ],
@@ -7794,9 +7747,6 @@
       "description": "A population of cells that originates from a primary culture, adapted to grow and divide under laboratory conditions. Used in biotechnology to consistently produce biological substances",
       "title": "Production cell line",
       "from_schema": "https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#",
-      "aliases": [
-        "cell line"
-      ],
       "close_mappings": [
         "wd:Q21014462"
       ],
@@ -7817,9 +7767,6 @@
       "description": "A term used to classify a group of products that share common characteristics or functions, which helps in their organization",
       "title": "Product category",
       "from_schema": "https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#",
-      "aliases": [
-        "product category"
-      ],
       "close_mappings": [
         "wd:Q63981612"
       ],
@@ -7861,9 +7808,6 @@
         "geonames.org API could be a good service data provider as suggested by DCAT-AP"
       ],
       "from_schema": "https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#",
-      "aliases": [
-        "origin"
-      ],
       "exact_mappings": [
         "dct:Location"
       ],
@@ -7907,9 +7851,6 @@
         "Use of Data provider recommended... serve as a local cache for ISO3166"
       ],
       "from_schema": "https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#",
-      "aliases": [
-        "country"
-      ],
       "close_mappings": [
         "wd:Q6256"
       ],
@@ -7948,9 +7889,6 @@
       "description": "An organism with one or more new mutations is referred to as a \u201cvariant\u201d of the original organism if not sufficiently different to be termed a distinct strain",
       "title": "Variant",
       "from_schema": "https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#",
-      "aliases": [
-        "genetic variant"
-      ],
       "close_mappings": [
         "wd:Q104795308"
       ],
@@ -7976,9 +7914,6 @@
         "Use of Data provider recommended"
       ],
       "from_schema": "https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#",
-      "aliases": [
-        "taxonomic rank"
-      ],
       "close_mappings": [
         "wd:Q427626"
       ],
@@ -8003,9 +7938,6 @@
         "The taxonomic taxons connected to their parent so that a full lienage can be rebuild. Use of Data provider recommended"
       ],
       "from_schema": "https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#",
-      "aliases": [
-        "taxon"
-      ],
       "exact_mappings": [
         "dwc:Taxon"
       ],
@@ -8053,9 +7985,6 @@
       "description": "A nucleic acid or protein sequence information",
       "title": "Sequence",
       "from_schema": "https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#",
-      "aliases": [
-        "biological sequence"
-      ],
       "close_mappings": [
         "wd:Q3511065"
       ],
@@ -8116,9 +8045,6 @@
       "description": "An individual",
       "title": "Person",
       "from_schema": "https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#",
-      "aliases": [
-        "person"
-      ],
       "close_mappings": [
         "wd:Q215627",
         "vcard:Individual"
@@ -8142,9 +8068,6 @@
       "description": "A social entity established to meet needs or pursue specific goals",
       "title": "Organization",
       "from_schema": "https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#",
-      "aliases": [
-        "organization"
-      ],
       "close_mappings": [
         "wd:Q43229",
         "vcard:Organization"
@@ -8169,9 +8092,6 @@
       "description": "A research infrastructure",
       "title": "RI",
       "from_schema": "https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#",
-      "aliases": [
-        "research infrastructure"
-      ],
       "close_mappings": [
         "wd:Q1438053"
       ],
@@ -8323,9 +8243,6 @@
       "description": "Set of products and services with some common characteristics",
       "title": "Collection",
       "from_schema": "https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#",
-      "aliases": [
-        "collection"
-      ],
       "close_mappings": [
         "wd:Q2668072"
       ],
@@ -8389,9 +8306,6 @@
       "description": "A service",
       "title": "Service",
       "from_schema": "https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#",
-      "aliases": [
-        "service"
-      ],
       "close_mappings": [
         "wd:Q7406919"
       ],
@@ -8436,9 +8350,6 @@
       "description": "A product",
       "title": "Product",
       "from_schema": "https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#",
-      "aliases": [
-        "product"
-      ],
       "close_mappings": [
         "wd:Q2424752"
       ],
@@ -8488,9 +8399,6 @@
       "description": "Protein that can bind to certain types of foreign bodies, such as pathogens",
       "title": "Antibody",
       "from_schema": "https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#",
-      "aliases": [
-        "antibody"
-      ],
       "close_mappings": [
         "wd:Q79460"
       ],
@@ -8545,9 +8453,6 @@
       "description": "An hybridoma that provides antibodies that can be related to a pathogen",
       "title": "Hybridoma",
       "from_schema": "https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#",
-      "aliases": [
-        "hybridoma"
-      ],
       "close_mappings": [
         "wd:Q27554370"
       ],
@@ -8603,9 +8508,6 @@
       "description": "A protein as a derived product from a pathogen",
       "title": "Protein",
       "from_schema": "https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#",
-      "aliases": [
-        "protein"
-      ],
       "close_mappings": [
         "wd:Q8054"
       ],
@@ -8669,9 +8571,6 @@
       "description": "Nucleic acid related to a pathogen. It can be extracted or synthetic",
       "title": "Nucleic Acid",
       "from_schema": "https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#",
-      "aliases": [
-        "nucleic acids"
-      ],
       "close_mappings": [
         "wd:Q123619"
       ],
@@ -8785,9 +8684,6 @@
       "description": "A group of products",
       "title": "Bundle",
       "from_schema": "https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#",
-      "aliases": [
-        "product bundle"
-      ],
       "close_mappings": [
         "wd:Q1020767"
       ],
@@ -8839,9 +8735,6 @@
       "description": "Biological entity that causes disease in its host, which is typically an infectious microorganism or agent, such as a virus, bacterium, protozoan, prion, viroid, or fungus",
       "title": "Pathogen",
       "from_schema": "https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#",
-      "aliases": [
-        "pathogen"
-      ],
       "close_mappings": [
         "wd:Q170065"
       ],
@@ -8910,9 +8803,6 @@
       "description": "The virus as a biological material",
       "title": "Virus",
       "from_schema": "https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#",
-      "aliases": [
-        "virus"
-      ],
       "close_mappings": [
         "wd:Q808"
       ],
@@ -8983,9 +8873,6 @@
       "description": "The bacterium as a biological material",
       "title": "Bacterium",
       "from_schema": "https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#",
-      "aliases": [
-        "bacteria"
-      ],
       "close_mappings": [
         "wd:Q10876"
       ],
@@ -9053,9 +8940,6 @@
       "description": "The fungus as a biological material",
       "title": "Fungus",
       "from_schema": "https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#",
-      "aliases": [
-        "fungus"
-      ],
       "close_mappings": [
         "wd:Q764"
       ],
@@ -9123,9 +9007,6 @@
       "description": "The protozoan as a biological material",
       "title": "Protozoan",
       "from_schema": "https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#",
-      "aliases": [
-        "protozoa"
-      ],
       "close_mappings": [
         "wd:Q101274"
       ],
@@ -9193,9 +9074,6 @@
       "description": "The viroid as a biological material",
       "title": "Viroid",
       "from_schema": "https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#",
-      "aliases": [
-        "viroid"
-      ],
       "close_mappings": [
         "wd:Q209917"
       ],
@@ -9263,9 +9141,6 @@
       "description": "The prion as a biological material",
       "title": "Prion",
       "from_schema": "https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#",
-      "aliases": [
-        "prion"
-      ],
       "close_mappings": [
         "wd:Q47051"
       ],
@@ -9333,9 +9208,6 @@
       "description": "A Material Safety Data Sheet (MSDS) or Safety Data Sheet (SDS) is a standardized document that contains crucial occupational safety and health information related to the product",
       "title": "MSDS",
       "from_schema": "https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#",
-      "aliases": [
-        "safety data sheet"
-      ],
       "close_mappings": [
         "wd:Q222067"
       ],
@@ -9367,9 +9239,6 @@
       "description": "Digital document or record stored in a specific format that contains data or information",
       "title": "File",
       "from_schema": "https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#",
-      "aliases": [
-        "computer file"
-      ],
       "exact_mappings": [
         "dcat:mediaType"
       ],
@@ -9395,9 +9264,6 @@
       "description": "Subclass of File representing structured or unstructured datasets, often used for analysis, storage, or transfer of information",
       "title": "Data",
       "from_schema": "https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#",
-      "aliases": [
-        "data"
-      ],
       "close_mappings": [
         "wd:Q42848"
       ],
@@ -9419,9 +9285,6 @@
       "description": "Subclass of File representing textual or written files such as reports, manuals, or forms",
       "title": "Document",
       "from_schema": "https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#",
-      "aliases": [
-        "document"
-      ],
       "close_mappings": [
         "wd:Q49848"
       ],
@@ -9443,9 +9306,6 @@
       "description": "Subclass of File representing sound recordings or audio tracks",
       "title": "Audio",
       "from_schema": "https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#",
-      "aliases": [
-        "audio file"
-      ],
       "close_mappings": [
         "wd:Q26987229"
       ],
@@ -9467,9 +9327,6 @@
       "description": "Subclass of File representing moving visual media, such as recordings, presentations, or movies",
       "title": "Video",
       "from_schema": "https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#",
-      "aliases": [
-        "video file"
-      ],
       "close_mappings": [
         "wd:Q98405806"
       ],
@@ -9491,9 +9348,6 @@
       "description": "Subclass of File representing visual content such as pictures, diagrams, or illustrations",
       "title": "Image",
       "from_schema": "https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#",
-      "aliases": [
-        "image file"
-      ],
       "close_mappings": [
         "wd:Q860625"
       ],
@@ -9516,9 +9370,6 @@
       "description": "Entity serving as focal point of information",
       "title": "Contact Point",
       "from_schema": "https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#",
-      "aliases": [
-        "contact point"
-      ],
       "close_mappings": [
         "wd:Q30322502",
         "vcard:Contact"
@@ -9546,9 +9397,6 @@
       "description": "The legal terms and conditions under which the subject can be used, shared, or distributed, indicating any restrictions or permissions",
       "title": "License",
       "from_schema": "https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#",
-      "aliases": [
-        "license"
-      ],
       "exact_mappings": [
         "dct:RightsStatement"
       ],
@@ -9574,9 +9422,6 @@
       "description": "Assurance given by an independent certification body that a product, service or system meets the requirements of a standard",
       "title": "Certification",
       "from_schema": "https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#",
-      "aliases": [
-        "certification"
-      ],
       "close_mappings": [
         "wd:Q374814",
         "schema:Certification"
@@ -9596,9 +9441,9 @@
   ],
   "metamodel_version": "1.7.0",
   "source_file": "evora_schema.yaml",
-  "source_file_date": "2025-01-15T11:05:00",
-  "source_file_size": 131165,
-  "generation_date": "2025-01-15T11:05:16",
+  "source_file_date": "2025-01-15T14:52:32",
+  "source_file_size": 130378,
+  "generation_date": "2025-01-15T14:52:48",
   "@type": "SchemaDefinition",
   "@context": [
     "https://w3id.org/linkml/types.context.jsonld",

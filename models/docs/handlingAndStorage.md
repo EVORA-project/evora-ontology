@@ -4,7 +4,7 @@
 
 
 
-URI: [EVORA:handlingAndStorage](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#handlingAndStorage)
+URI: [EVORAO:handlingAndStorage](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#handlingAndStorage)
 
 
 
@@ -54,8 +54,8 @@ URI: [EVORA:handlingAndStorage](https://raw.githubusercontent.com/EVORA-project/
 
 | Mapping Type | Mapped Value |
 | ---  | ---  |
-| self | EVORA:handlingAndStorage |
-| native | EVORA:handlingAndStorage |
+| self | EVORAO:handlingAndStorage |
+| native | EVORAO:handlingAndStorage |
 
 
 

@@ -4,7 +4,7 @@
 
 
 
-URI: [EVORA:domain](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#domain)
+URI: [EVORAO:domain](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#domain)
 
 
 
@@ -54,8 +54,8 @@ URI: [EVORA:domain](https://raw.githubusercontent.com/EVORA-project/evora-ontolo
 
 | Mapping Type | Mapped Value |
 | ---  | ---  |
-| self | EVORA:domain |
-| native | EVORA:domain |
+| self | EVORAO:domain |
+| native | EVORAO:domain |
 
 
 

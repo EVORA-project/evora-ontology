@@ -9,7 +9,7 @@ _Identification of a recombinant part_
 
 
 
-URI: [EVORA:RecombinantPartIdentification](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#RecombinantPartIdentification)
+URI: [EVORAO:RecombinantPartIdentification](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#RecombinantPartIdentification)
 
 
 
@@ -27,7 +27,7 @@ URI: [EVORA:RecombinantPartIdentification](https://raw.githubusercontent.com/EVO
           
     
     
-    RecombinantPartIdentification --> "1..*" Sequence : sequence
+    RecombinantPartIdentification --> "1..* _recommended_" Sequence : sequence
     click Sequence href "../Sequence"
 
         
@@ -45,7 +45,7 @@ URI: [EVORA:RecombinantPartIdentification](https://raw.githubusercontent.com/EVO
 | Name | Cardinality and Range | Description | Inheritance |
 | ---  | --- | --- | --- |
 | [partIdentification](partIdentification.md) | 1 <br/> [String](String.md) | A short designation of this recombinant part of the related biological materi... | direct |
-| [sequence](sequence.md) | 1..* <br/> [Sequence](Sequence.md) | The related sequence information from a sequence provider or in fasta format | direct |
+| [sequence](sequence.md) | 1..* _recommended_ <br/> [Sequence](Sequence.md) | The related sequence information from a sequence provider or in fasta format | direct |
 
 
 
@@ -84,8 +84,8 @@ URI: [EVORA:RecombinantPartIdentification](https://raw.githubusercontent.com/EVO
 
 | Mapping Type | Mapped Value |
 | ---  | ---  |
-| self | EVORA:RecombinantPartIdentification |
-| native | EVORA:RecombinantPartIdentification |
+| self | EVORAO:RecombinantPartIdentification |
+| native | EVORAO:RecombinantPartIdentification |
 
 
 
@@ -124,6 +124,7 @@ slot_usage:
     title: sequence
     range: Sequence
     required: true
+    recommended: true
     multivalued: true
 
 ```
@@ -153,6 +154,7 @@ slot_usage:
     title: sequence
     range: Sequence
     required: true
+    recommended: true
     multivalued: true
 attributes:
   partIdentification:
@@ -185,6 +187,7 @@ attributes:
     - Pathogen
     range: Sequence
     required: true
+    recommended: true
     multivalued: true
 
 ```

@@ -9,7 +9,7 @@ _The possible taxonomic ranks and their description_
 
 
 
-URI: [EVORA:TaxonomicRank](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#TaxonomicRank)
+URI: [EVORAO:TaxonomicRank](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#TaxonomicRank)
 
 
 
@@ -70,7 +70,7 @@ URI: [EVORA:TaxonomicRank](https://raw.githubusercontent.com/EVORA-project/evora
 | [weight](weight.md) | 1 <br/> [Integer](Integer.md) | A numerical value indicating relative importance or priority, generally proce... | [Term](Term.md) |
 | [inVocabulary](inVocabulary.md) | 1 <br/> [Vocabulary](Vocabulary.md) | Terms belong to a specific vocabulary | [Term](Term.md) |
 | [name](name.md) | 1 <br/> [String](String.md) | The label that allows humans to identify the current item | [Nameable](Nameable.md) |
-| [description](description.md) | 0..1 <br/> [String](String.md) | A short explanation of the characteristics, features, or nature of the curren... | [Nameable](Nameable.md) |
+| [description](description.md) | 0..1 _recommended_ <br/> [String](String.md) | A short explanation of the characteristics, features, or nature of the curren... | [Nameable](Nameable.md) |
 
 
 
@@ -85,11 +85,6 @@ URI: [EVORA:TaxonomicRank](https://raw.githubusercontent.com/EVORA-project/evora
 
 
 
-
-## Aliases
-
-
-* taxonomic rank
 
 
 
@@ -117,8 +112,8 @@ URI: [EVORA:TaxonomicRank](https://raw.githubusercontent.com/EVORA-project/evora
 
 | Mapping Type | Mapped Value |
 | ---  | ---  |
-| self | EVORA:TaxonomicRank |
-| native | EVORA:TaxonomicRank |
+| self | EVORAO:TaxonomicRank |
+| native | EVORAO:TaxonomicRank |
 | close | wd:Q427626 |
 
 
@@ -141,8 +136,6 @@ title: Taxonomic rank
 comments:
 - Use of Data provider recommended
 from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
-aliases:
-- taxonomic rank
 close_mappings:
 - wd:Q427626
 is_a: Term
@@ -170,8 +163,6 @@ title: Taxonomic rank
 comments:
 - Use of Data provider recommended
 from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
-aliases:
-- taxonomic rank
 close_mappings:
 - wd:Q427626
 is_a: Term
@@ -222,8 +213,6 @@ attributes:
     description: Terms belong to a specific vocabulary
     title: in Vocabulary
     from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
-    aliases:
-    - catalog
     close_mappings:
     - wdp:P972
     rank: 1000
@@ -278,6 +267,7 @@ attributes:
     - Nameable
     range: string
     required: false
+    recommended: true
     multivalued: false
 
 ```

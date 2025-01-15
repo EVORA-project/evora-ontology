@@ -4,7 +4,7 @@
 
 
 
-URI: [EVORA:rank](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#rank)
+URI: [EVORAO:rank](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#rank)
 
 
 
@@ -18,8 +18,8 @@ URI: [EVORA:rank](https://raw.githubusercontent.com/EVORA-project/evora-ontology
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [Taxon](Taxon.md) | Conceptual entity that groups one or more populations of an organism or organ... |  yes  |
 | [Taxonomy](Taxonomy.md) | Science of naming, defining and classifying organisms |  yes  |
+| [Taxon](Taxon.md) | Conceptual entity that groups one or more populations of an organism or organ... |  yes  |
 
 
 
@@ -55,8 +55,8 @@ URI: [EVORA:rank](https://raw.githubusercontent.com/EVORA-project/evora-ontology
 
 | Mapping Type | Mapped Value |
 | ---  | ---  |
-| self | EVORA:rank |
-| native | EVORA:rank |
+| self | EVORAO:rank |
+| native | EVORAO:rank |
 
 
 

@@ -9,7 +9,7 @@ _A reference that permits to retrieve the sequence information from a sequence p
 
 
 
-URI: [EVORA:SequenceReference](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#SequenceReference)
+URI: [EVORAO:SequenceReference](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#SequenceReference)
 
 
 
@@ -88,8 +88,8 @@ URI: [EVORA:SequenceReference](https://raw.githubusercontent.com/EVORA-project/e
 
 | Mapping Type | Mapped Value |
 | ---  | ---  |
-| self | EVORA:SequenceReference |
-| native | EVORA:SequenceReference |
+| self | EVORAO:SequenceReference |
+| native | EVORAO:SequenceReference |
 
 
 

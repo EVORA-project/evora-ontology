@@ -9,7 +9,7 @@ _A Material Safety Data Sheet (MSDS) or Safety Data Sheet (SDS) is a standardize
 
 
 
-URI: [EVORA:MSDS](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#MSDS)
+URI: [EVORAO:MSDS](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#MSDS)
 
 
 
@@ -78,20 +78,20 @@ URI: [EVORA:MSDS](https://raw.githubusercontent.com/EVORA-project/evora-ontology
 | Name | Cardinality and Range | Description | Inheritance |
 | ---  | --- | --- | --- |
 | [msdsContact](msdsContact.md) | 1 <br/> [ContactPoint](ContactPoint.md) | The designated contact point responsible for providing information related to... | direct |
-| [physicalChemicalProperties](physicalChemicalProperties.md) | 0..1 <br/> [String](String.md) | Key characteristics of the product, such as physical state, appearance, solub... | direct |
-| [hazardsIdentification](hazardsIdentification.md) | 0..1 <br/> [String](String.md) | Outlines the potential risks and dangers associated with handling the product... | direct |
-| [firstAidMeasures](firstAidMeasures.md) | 0..1 <br/> [String](String.md) | Instructions on immediate actions to take in case of exposure to the product,... | direct |
-| [fireFightingMeasures](fireFightingMeasures.md) | 0..1 <br/> [String](String.md) | Guidance on how to safely extinguish a fire involving the product, including ... | direct |
-| [accidentalReleaseMeasures](accidentalReleaseMeasures.md) | 0..1 <br/> [String](String.md) | Guidelines for safely managing spills or leaks of the product, including cont... | direct |
-| [handlingAndStorage](handlingAndStorage.md) | 0..1 <br/> [String](String.md) | Instructions on the safe handling practices and storage conditions for the pr... | direct |
-| [exposureControlsPersonalProtection](exposureControlsPersonalProtection.md) | 0..1 <br/> [String](String.md) | Specifies measures to limit exposure to the product, including recommended en... | direct |
-| [stabilityAndReactivity](stabilityAndReactivity.md) | 0..1 <br/> [String](String.md) | Describes the product’s stability under normal conditions and its potential t... | direct |
-| [toxicologicalInformation](toxicologicalInformation.md) | 0..1 <br/> [String](String.md) | Details on the potential health effects of the product, including routes of e... | direct |
-| [ecologicalInformation](ecologicalInformation.md) | 0..1 <br/> [String](String.md) | Details the potential environmental impact of the product, including its effe... | direct |
-| [disposalConsiderations](disposalConsiderations.md) | 0..1 <br/> [String](String.md) | Guidance on the safe and environmentally responsible disposal of the product,... | direct |
-| [transportInformation](transportInformation.md) | 0..1 <br/> [String](String.md) | Details the regulations and guidelines for safely transporting the product, i... | direct |
-| [regulatoryInformation](regulatoryInformation.md) | 0..1 <br/> [String](String.md) | Lists applicable laws, regulations, and standards governing the product, incl... | direct |
-| [furtherInformation](furtherInformation.md) | 0..1 <br/> [String](String.md) | Provides any additional details or clarifications not covered in other sectio... | direct |
+| [physicalChemicalProperties](physicalChemicalProperties.md) | 0..1 _recommended_ <br/> [String](String.md) | Key characteristics of the product, such as physical state, appearance, solub... | direct |
+| [hazardsIdentification](hazardsIdentification.md) | 0..1 _recommended_ <br/> [String](String.md) | Outlines the potential risks and dangers associated with handling the product... | direct |
+| [firstAidMeasures](firstAidMeasures.md) | 0..1 _recommended_ <br/> [String](String.md) | Instructions on immediate actions to take in case of exposure to the product,... | direct |
+| [fireFightingMeasures](fireFightingMeasures.md) | 0..1 _recommended_ <br/> [String](String.md) | Guidance on how to safely extinguish a fire involving the product, including ... | direct |
+| [accidentalReleaseMeasures](accidentalReleaseMeasures.md) | 0..1 _recommended_ <br/> [String](String.md) | Guidelines for safely managing spills or leaks of the product, including cont... | direct |
+| [handlingAndStorage](handlingAndStorage.md) | 0..1 _recommended_ <br/> [String](String.md) | Instructions on the safe handling practices and storage conditions for the pr... | direct |
+| [exposureControlsPersonalProtection](exposureControlsPersonalProtection.md) | 0..1 _recommended_ <br/> [String](String.md) | Specifies measures to limit exposure to the product, including recommended en... | direct |
+| [stabilityAndReactivity](stabilityAndReactivity.md) | 0..1 _recommended_ <br/> [String](String.md) | Describes the product’s stability under normal conditions and its potential t... | direct |
+| [toxicologicalInformation](toxicologicalInformation.md) | 0..1 _recommended_ <br/> [String](String.md) | Details on the potential health effects of the product, including routes of e... | direct |
+| [ecologicalInformation](ecologicalInformation.md) | 0..1 _recommended_ <br/> [String](String.md) | Details the potential environmental impact of the product, including its effe... | direct |
+| [disposalConsiderations](disposalConsiderations.md) | 0..1 _recommended_ <br/> [String](String.md) | Guidance on the safe and environmentally responsible disposal of the product,... | direct |
+| [transportInformation](transportInformation.md) | 0..1 _recommended_ <br/> [String](String.md) | Details the regulations and guidelines for safely transporting the product, i... | direct |
+| [regulatoryInformation](regulatoryInformation.md) | 0..1 _recommended_ <br/> [String](String.md) | Lists applicable laws, regulations, and standards governing the product, incl... | direct |
+| [furtherInformation](furtherInformation.md) | 0..1 _recommended_ <br/> [String](String.md) | Provides any additional details or clarifications not covered in other sectio... | direct |
 
 
 
@@ -119,11 +119,6 @@ URI: [EVORA:MSDS](https://raw.githubusercontent.com/EVORA-project/evora-ontology
 
 
 
-## Aliases
-
-
-* safety data sheet
-
 
 
 ## Identifier and Mapping Information
@@ -146,8 +141,8 @@ URI: [EVORA:MSDS](https://raw.githubusercontent.com/EVORA-project/evora-ontology
 
 | Mapping Type | Mapped Value |
 | ---  | ---  |
-| self | EVORA:MSDS |
-| native | EVORA:MSDS |
+| self | EVORAO:MSDS |
+| native | EVORAO:MSDS |
 | close | wd:Q222067 |
 
 
@@ -170,8 +165,6 @@ description: A Material Safety Data Sheet (MSDS) or Safety Data Sheet (SDS) is a
   to the product
 title: MSDS
 from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
-aliases:
-- safety data sheet
 close_mappings:
 - wd:Q222067
 is_a: Dataset
@@ -211,6 +204,7 @@ slot_usage:
     title: physical and chemical properties and information on ingredients
     range: string
     required: false
+    recommended: true
     multivalued: false
   hazardsIdentification:
     name: hazardsIdentification
@@ -221,6 +215,7 @@ slot_usage:
     title: hazards identification
     range: string
     required: false
+    recommended: true
     multivalued: false
   firstAidMeasures:
     name: firstAidMeasures
@@ -230,6 +225,7 @@ slot_usage:
     title: first aid measures
     range: string
     required: false
+    recommended: true
     multivalued: false
   fireFightingMeasures:
     name: fireFightingMeasures
@@ -239,6 +235,7 @@ slot_usage:
     title: fire fighting measures
     range: string
     required: false
+    recommended: true
     multivalued: false
   accidentalReleaseMeasures:
     name: accidentalReleaseMeasures
@@ -248,6 +245,7 @@ slot_usage:
     title: accidental release measures
     range: string
     required: false
+    recommended: true
     multivalued: false
   handlingAndStorage:
     name: handlingAndStorage
@@ -257,6 +255,7 @@ slot_usage:
     title: handling and storage
     range: string
     required: false
+    recommended: true
     multivalued: false
   exposureControlsPersonalProtection:
     name: exposureControlsPersonalProtection
@@ -266,6 +265,7 @@ slot_usage:
     title: exposure controls/personal protection
     range: string
     required: false
+    recommended: true
     multivalued: false
   stabilityAndReactivity:
     name: stabilityAndReactivity
@@ -276,6 +276,7 @@ slot_usage:
     title: stability and reactivity
     range: string
     required: false
+    recommended: true
     multivalued: false
   toxicologicalInformation:
     name: toxicologicalInformation
@@ -285,6 +286,7 @@ slot_usage:
     title: toxicological information
     range: string
     required: false
+    recommended: true
     multivalued: false
   ecologicalInformation:
     name: ecologicalInformation
@@ -294,6 +296,7 @@ slot_usage:
     title: ecological information
     range: string
     required: false
+    recommended: true
     multivalued: false
   disposalConsiderations:
     name: disposalConsiderations
@@ -303,6 +306,7 @@ slot_usage:
     title: disposal considerations
     range: string
     required: false
+    recommended: true
     multivalued: false
   transportInformation:
     name: transportInformation
@@ -313,6 +317,7 @@ slot_usage:
     title: transport information
     range: string
     required: false
+    recommended: true
     multivalued: false
   regulatoryInformation:
     name: regulatoryInformation
@@ -322,6 +327,7 @@ slot_usage:
     title: regulatory information
     range: string
     required: false
+    recommended: true
     multivalued: false
   furtherInformation:
     name: furtherInformation
@@ -331,6 +337,7 @@ slot_usage:
     title: further information
     range: string
     required: false
+    recommended: true
     multivalued: false
 
 ```
@@ -346,8 +353,6 @@ description: A Material Safety Data Sheet (MSDS) or Safety Data Sheet (SDS) is a
   to the product
 title: MSDS
 from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
-aliases:
-- safety data sheet
 close_mappings:
 - wd:Q222067
 is_a: Dataset
@@ -371,6 +376,7 @@ slot_usage:
     title: physical and chemical properties and information on ingredients
     range: string
     required: false
+    recommended: true
     multivalued: false
   hazardsIdentification:
     name: hazardsIdentification
@@ -381,6 +387,7 @@ slot_usage:
     title: hazards identification
     range: string
     required: false
+    recommended: true
     multivalued: false
   firstAidMeasures:
     name: firstAidMeasures
@@ -390,6 +397,7 @@ slot_usage:
     title: first aid measures
     range: string
     required: false
+    recommended: true
     multivalued: false
   fireFightingMeasures:
     name: fireFightingMeasures
@@ -399,6 +407,7 @@ slot_usage:
     title: fire fighting measures
     range: string
     required: false
+    recommended: true
     multivalued: false
   accidentalReleaseMeasures:
     name: accidentalReleaseMeasures
@@ -408,6 +417,7 @@ slot_usage:
     title: accidental release measures
     range: string
     required: false
+    recommended: true
     multivalued: false
   handlingAndStorage:
     name: handlingAndStorage
@@ -417,6 +427,7 @@ slot_usage:
     title: handling and storage
     range: string
     required: false
+    recommended: true
     multivalued: false
   exposureControlsPersonalProtection:
     name: exposureControlsPersonalProtection
@@ -426,6 +437,7 @@ slot_usage:
     title: exposure controls/personal protection
     range: string
     required: false
+    recommended: true
     multivalued: false
   stabilityAndReactivity:
     name: stabilityAndReactivity
@@ -436,6 +448,7 @@ slot_usage:
     title: stability and reactivity
     range: string
     required: false
+    recommended: true
     multivalued: false
   toxicologicalInformation:
     name: toxicologicalInformation
@@ -445,6 +458,7 @@ slot_usage:
     title: toxicological information
     range: string
     required: false
+    recommended: true
     multivalued: false
   ecologicalInformation:
     name: ecologicalInformation
@@ -454,6 +468,7 @@ slot_usage:
     title: ecological information
     range: string
     required: false
+    recommended: true
     multivalued: false
   disposalConsiderations:
     name: disposalConsiderations
@@ -463,6 +478,7 @@ slot_usage:
     title: disposal considerations
     range: string
     required: false
+    recommended: true
     multivalued: false
   transportInformation:
     name: transportInformation
@@ -473,6 +489,7 @@ slot_usage:
     title: transport information
     range: string
     required: false
+    recommended: true
     multivalued: false
   regulatoryInformation:
     name: regulatoryInformation
@@ -482,6 +499,7 @@ slot_usage:
     title: regulatory information
     range: string
     required: false
+    recommended: true
     multivalued: false
   furtherInformation:
     name: furtherInformation
@@ -491,6 +509,7 @@ slot_usage:
     title: further information
     range: string
     required: false
+    recommended: true
     multivalued: false
 attributes:
   msdsContact:
@@ -524,6 +543,7 @@ attributes:
     - MSDS
     range: string
     required: false
+    recommended: true
     multivalued: false
   hazardsIdentification:
     name: hazardsIdentification
@@ -540,6 +560,7 @@ attributes:
     - MSDS
     range: string
     required: false
+    recommended: true
     multivalued: false
   firstAidMeasures:
     name: firstAidMeasures
@@ -555,6 +576,7 @@ attributes:
     - MSDS
     range: string
     required: false
+    recommended: true
     multivalued: false
   fireFightingMeasures:
     name: fireFightingMeasures
@@ -570,6 +592,7 @@ attributes:
     - MSDS
     range: string
     required: false
+    recommended: true
     multivalued: false
   accidentalReleaseMeasures:
     name: accidentalReleaseMeasures
@@ -585,6 +608,7 @@ attributes:
     - MSDS
     range: string
     required: false
+    recommended: true
     multivalued: false
   handlingAndStorage:
     name: handlingAndStorage
@@ -600,6 +624,7 @@ attributes:
     - MSDS
     range: string
     required: false
+    recommended: true
     multivalued: false
   exposureControlsPersonalProtection:
     name: exposureControlsPersonalProtection
@@ -615,6 +640,7 @@ attributes:
     - MSDS
     range: string
     required: false
+    recommended: true
     multivalued: false
   stabilityAndReactivity:
     name: stabilityAndReactivity
@@ -631,6 +657,7 @@ attributes:
     - MSDS
     range: string
     required: false
+    recommended: true
     multivalued: false
   toxicologicalInformation:
     name: toxicologicalInformation
@@ -646,6 +673,7 @@ attributes:
     - MSDS
     range: string
     required: false
+    recommended: true
     multivalued: false
   ecologicalInformation:
     name: ecologicalInformation
@@ -661,6 +689,7 @@ attributes:
     - MSDS
     range: string
     required: false
+    recommended: true
     multivalued: false
   disposalConsiderations:
     name: disposalConsiderations
@@ -676,6 +705,7 @@ attributes:
     - MSDS
     range: string
     required: false
+    recommended: true
     multivalued: false
   transportInformation:
     name: transportInformation
@@ -692,6 +722,7 @@ attributes:
     - MSDS
     range: string
     required: false
+    recommended: true
     multivalued: false
   regulatoryInformation:
     name: regulatoryInformation
@@ -707,6 +738,7 @@ attributes:
     - MSDS
     range: string
     required: false
+    recommended: true
     multivalued: false
   furtherInformation:
     name: furtherInformation
@@ -722,6 +754,7 @@ attributes:
     - MSDS
     range: string
     required: false
+    recommended: true
     multivalued: false
 
 ```

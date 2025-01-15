@@ -4,7 +4,7 @@
 
 
 
-URI: [EVORA:specialFeature](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#specialFeature)
+URI: [EVORAO:specialFeature](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#specialFeature)
 
 
 
@@ -54,8 +54,8 @@ URI: [EVORA:specialFeature](https://raw.githubusercontent.com/EVORA-project/evor
 
 | Mapping Type | Mapped Value |
 | ---  | ---  |
-| self | EVORA:specialFeature |
-| native | EVORA:specialFeature |
+| self | EVORAO:specialFeature |
+| native | EVORAO:specialFeature |
 
 
 

@@ -4,7 +4,7 @@
 
 
 
-URI: [EVORA:hasTAG](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#hasTAG)
+URI: [EVORAO:hasTAG](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#hasTAG)
 
 
 
@@ -54,8 +54,8 @@ URI: [EVORA:hasTAG](https://raw.githubusercontent.com/EVORA-project/evora-ontolo
 
 | Mapping Type | Mapped Value |
 | ---  | ---  |
-| self | EVORA:hasTAG |
-| native | EVORA:hasTAG |
+| self | EVORAO:hasTAG |
+| native | EVORAO:hasTAG |
 
 
 

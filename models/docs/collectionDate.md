@@ -4,7 +4,7 @@
 
 
 
-URI: [EVORA:collectionDate](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#collectionDate)
+URI: [EVORAO:collectionDate](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#collectionDate)
 
 
 
@@ -54,8 +54,8 @@ URI: [EVORA:collectionDate](https://raw.githubusercontent.com/EVORA-project/evor
 
 | Mapping Type | Mapped Value |
 | ---  | ---  |
-| self | EVORA:collectionDate |
-| native | EVORA:collectionDate |
+| self | EVORAO:collectionDate |
+| native | EVORAO:collectionDate |
 
 
 

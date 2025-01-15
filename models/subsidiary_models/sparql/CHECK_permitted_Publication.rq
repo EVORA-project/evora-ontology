@@ -17,19 +17,19 @@ PREFIX adms: <http://www.w3.org/ns/adms#>
 PREFIX pav: <http://purl.org/pav/>
 PREFIX dwc: <http://rs.tdwg.org/dwc/terms/>
 PREFIX IAO: <http://purl.obolibrary.org/obo/IAO_>
-PREFIX EVORA: <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#>
+PREFIX EVORAO: <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#>
 PREFIX linkml: <https://w3id.org/linkml/>
 
 SELECT ?g ?s ?p WHERE {
  GRAPH ?g {
-  ?s rdf:type EVORA:Publication ;
+  ?s rdf:type EVORAO:Publication ;
      ?p ?o .
   FILTER ( ?p NOT IN (
-   EVORA:title,
-   EVORA:authors,
-   EVORA:abstract,
-   EVORA:relatedDOI,
-   EVORA:journal,
+   EVORAO:title,
+   EVORAO:authors,
+   EVORAO:abstract,
+   EVORAO:relatedDOI,
+   EVORAO:journal,
    rdf:type ))
  }
  

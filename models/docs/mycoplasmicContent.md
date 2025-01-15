@@ -4,7 +4,7 @@
 
 
 
-URI: [EVORA:mycoplasmicContent](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#mycoplasmicContent)
+URI: [EVORAO:mycoplasmicContent](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#mycoplasmicContent)
 
 
 
@@ -54,8 +54,8 @@ URI: [EVORA:mycoplasmicContent](https://raw.githubusercontent.com/EVORA-project/
 
 | Mapping Type | Mapped Value |
 | ---  | ---  |
-| self | EVORA:mycoplasmicContent |
-| native | EVORA:mycoplasmicContent |
+| self | EVORAO:mycoplasmicContent |
+| native | EVORAO:mycoplasmicContent |
 
 
 

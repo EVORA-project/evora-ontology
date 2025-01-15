@@ -4,7 +4,7 @@
 
 
 
-URI: [EVORA:proteinTAG](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#proteinTAG)
+URI: [EVORAO:proteinTAG](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#proteinTAG)
 
 
 
@@ -54,8 +54,8 @@ URI: [EVORA:proteinTAG](https://raw.githubusercontent.com/EVORA-project/evora-on
 
 | Mapping Type | Mapped Value |
 | ---  | ---  |
-| self | EVORA:proteinTAG |
-| native | EVORA:proteinTAG |
+| self | EVORAO:proteinTAG |
+| native | EVORAO:proteinTAG |
 
 
 

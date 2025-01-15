@@ -4,7 +4,7 @@
 
 
 
-URI: [EVORA:addressCountry](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#addressCountry)
+URI: [EVORAO:addressCountry](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#addressCountry)
 
 
 
@@ -54,8 +54,8 @@ URI: [EVORA:addressCountry](https://raw.githubusercontent.com/EVORA-project/evor
 
 | Mapping Type | Mapped Value |
 | ---  | ---  |
-| self | EVORA:addressCountry |
-| native | EVORA:addressCountry |
+| self | EVORAO:addressCountry |
+| native | EVORAO:addressCountry |
 
 
 

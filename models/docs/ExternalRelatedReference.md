@@ -9,7 +9,7 @@ _A reference that permits to retrieve an item from an external provider_
 
 
 
-URI: [EVORA:ExternalRelatedReference](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#ExternalRelatedReference)
+URI: [EVORAO:ExternalRelatedReference](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#ExternalRelatedReference)
 
 
 
@@ -103,8 +103,8 @@ URI: [EVORA:ExternalRelatedReference](https://raw.githubusercontent.com/EVORA-pr
 
 | Mapping Type | Mapped Value |
 | ---  | ---  |
-| self | EVORA:ExternalRelatedReference |
-| native | EVORA:ExternalRelatedReference |
+| self | EVORAO:ExternalRelatedReference |
+| native | EVORAO:ExternalRelatedReference |
 
 
 

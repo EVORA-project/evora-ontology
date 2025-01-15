@@ -9,7 +9,7 @@ _Set of products and services with some common characteristics_
 
 
 
-URI: [EVORA:Collection](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#Collection)
+URI: [EVORAO:Collection](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#Collection)
 
 
 
@@ -37,7 +37,7 @@ URI: [EVORA:Collection](https://raw.githubusercontent.com/EVORA-project/evora-on
           
     
     
-    Collection --> "*" ProductOrService : collectionItem
+    Collection --> "* _recommended_" ProductOrService : collectionItem
     click ProductOrService href "../ProductOrService"
 
         
@@ -63,10 +63,10 @@ URI: [EVORA:Collection](https://raw.githubusercontent.com/EVORA-project/evora-on
 
 | Name | Cardinality and Range | Description | Inheritance |
 | ---  | --- | --- | --- |
-| [collectionItem](collectionItem.md) | * <br/> [ProductOrService](ProductOrService.md) | An item of the collection | direct |
+| [collectionItem](collectionItem.md) | * _recommended_ <br/> [ProductOrService](ProductOrService.md) | An item of the collection | direct |
 | [collectionDataProvider](collectionDataProvider.md) | 0..1 <br/> [DataProvider](DataProvider.md) | The provider of the data of the collection | direct |
 | [name](name.md) | 1 <br/> [String](String.md) | The label that allows humans to identify the current item | [Nameable](Nameable.md) |
-| [description](description.md) | 0..1 <br/> [String](String.md) | A short explanation of the characteristics, features, or nature of the curren... | [Nameable](Nameable.md) |
+| [description](description.md) | 0..1 _recommended_ <br/> [String](String.md) | A short explanation of the characteristics, features, or nature of the curren... | [Nameable](Nameable.md) |
 
 
 
@@ -96,11 +96,6 @@ URI: [EVORA:Collection](https://raw.githubusercontent.com/EVORA-project/evora-on
 
 
 
-## Aliases
-
-
-* collection
-
 
 
 ## Identifier and Mapping Information
@@ -123,8 +118,8 @@ URI: [EVORA:Collection](https://raw.githubusercontent.com/EVORA-project/evora-on
 
 | Mapping Type | Mapped Value |
 | ---  | ---  |
-| self | EVORA:Collection |
-| native | EVORA:Collection |
+| self | EVORAO:Collection |
+| native | EVORAO:Collection |
 | close | wd:Q2668072 |
 
 
@@ -145,8 +140,6 @@ name: Collection
 description: Set of products and services with some common characteristics
 title: Collection
 from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
-aliases:
-- collection
 close_mappings:
 - wd:Q2668072
 is_a: Catalogue
@@ -162,6 +155,7 @@ slot_usage:
     - dcat:resource
     range: ProductOrService
     required: false
+    recommended: true
     multivalued: true
   collectionDataProvider:
     name: collectionDataProvider
@@ -184,8 +178,6 @@ name: Collection
 description: Set of products and services with some common characteristics
 title: Collection
 from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
-aliases:
-- collection
 close_mappings:
 - wd:Q2668072
 is_a: Catalogue
@@ -198,6 +190,7 @@ slot_usage:
     - dcat:resource
     range: ProductOrService
     required: false
+    recommended: true
     multivalued: true
   collectionDataProvider:
     name: collectionDataProvider
@@ -223,6 +216,7 @@ attributes:
     - Collection
     range: ProductOrService
     required: false
+    recommended: true
     multivalued: true
   collectionDataProvider:
     name: collectionDataProvider
@@ -283,6 +277,7 @@ attributes:
     - Nameable
     range: string
     required: false
+    recommended: true
     multivalued: false
 
 ```

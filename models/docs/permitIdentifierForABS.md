@@ -4,7 +4,7 @@
 
 
 
-URI: [EVORA:permitIdentifierForABS](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#permitIdentifierForABS)
+URI: [EVORAO:permitIdentifierForABS](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#permitIdentifierForABS)
 
 
 
@@ -54,8 +54,8 @@ URI: [EVORA:permitIdentifierForABS](https://raw.githubusercontent.com/EVORA-proj
 
 | Mapping Type | Mapped Value |
 | ---  | ---  |
-| self | EVORA:permitIdentifierForABS |
-| native | EVORA:permitIdentifierForABS |
+| self | EVORAO:permitIdentifierForABS |
+| native | EVORAO:permitIdentifierForABS |
 
 
 

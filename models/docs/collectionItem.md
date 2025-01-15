@@ -4,7 +4,7 @@
 
 
 
-URI: [EVORA:collectionItem](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#collectionItem)
+URI: [EVORAO:collectionItem](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#collectionItem)
 
 
 
@@ -54,8 +54,8 @@ URI: [EVORA:collectionItem](https://raw.githubusercontent.com/EVORA-project/evor
 
 | Mapping Type | Mapped Value |
 | ---  | ---  |
-| self | EVORA:collectionItem |
-| native | EVORA:collectionItem |
+| self | EVORAO:collectionItem |
+| native | EVORAO:collectionItem |
 
 
 

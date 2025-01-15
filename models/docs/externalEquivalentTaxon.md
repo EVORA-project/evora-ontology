@@ -4,7 +4,7 @@
 
 
 
-URI: [EVORA:externalEquivalentTaxon](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#externalEquivalentTaxon)
+URI: [EVORAO:externalEquivalentTaxon](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#externalEquivalentTaxon)
 
 
 
@@ -54,8 +54,8 @@ URI: [EVORA:externalEquivalentTaxon](https://raw.githubusercontent.com/EVORA-pro
 
 | Mapping Type | Mapped Value |
 | ---  | ---  |
-| self | EVORA:externalEquivalentTaxon |
-| native | EVORA:externalEquivalentTaxon |
+| self | EVORAO:externalEquivalentTaxon |
+| native | EVORAO:externalEquivalentTaxon |
 
 
 

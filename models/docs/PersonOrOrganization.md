@@ -9,7 +9,7 @@ _A person or an organization_
 
 
 
-URI: [EVORA:PersonOrOrganization](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#PersonOrOrganization)
+URI: [EVORAO:PersonOrOrganization](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#PersonOrOrganization)
 
 
 
@@ -37,7 +37,7 @@ URI: [EVORA:PersonOrOrganization](https://raw.githubusercontent.com/EVORA-projec
           
     
     
-    PersonOrOrganization --> "0..1" ContactPoint : contactPoint
+    PersonOrOrganization --> "0..1 _recommended_" ContactPoint : contactPoint
     click ContactPoint href "../ContactPoint"
 
         
@@ -77,10 +77,10 @@ URI: [EVORA:PersonOrOrganization](https://raw.githubusercontent.com/EVORA-projec
 | Name | Cardinality and Range | Description | Inheritance |
 | ---  | --- | --- | --- |
 | [homePage](homePage.md) | 0..1 <br/> [String](String.md) | Refers to the degree of purity achieved for a protein sample | direct |
-| [contactPoint](contactPoint.md) | 0..1 <br/> [ContactPoint](ContactPoint.md) | An information that allows someone to establish communication | direct |
+| [contactPoint](contactPoint.md) | 0..1 _recommended_ <br/> [ContactPoint](ContactPoint.md) | An information that allows someone to establish communication | direct |
 | [logo](logo.md) | 0..1 <br/> [Image](Image.md) | A path or URL to the related logo | direct |
 | [name](name.md) | 1 <br/> [String](String.md) | The label that allows humans to identify the current item | [Nameable](Nameable.md) |
-| [description](description.md) | 0..1 <br/> [String](String.md) | A short explanation of the characteristics, features, or nature of the curren... | [Nameable](Nameable.md) |
+| [description](description.md) | 0..1 _recommended_ <br/> [String](String.md) | A short explanation of the characteristics, features, or nature of the curren... | [Nameable](Nameable.md) |
 
 
 
@@ -110,8 +110,8 @@ URI: [EVORA:PersonOrOrganization](https://raw.githubusercontent.com/EVORA-projec
 
 | Mapping Type | Mapped Value |
 | ---  | ---  |
-| self | EVORA:PersonOrOrganization |
-| native | EVORA:PersonOrOrganization |
+| self | EVORAO:PersonOrOrganization |
+| native | EVORAO:PersonOrOrganization |
 | exact | dct:Agent |
 | close | foaf:Agent |
 
@@ -161,6 +161,7 @@ slot_usage:
     - dcat:contactPoint
     range: ContactPoint
     required: false
+    recommended: true
     multivalued: false
   logo:
     name: logo
@@ -205,6 +206,7 @@ slot_usage:
     - dcat:contactPoint
     range: ContactPoint
     required: false
+    recommended: true
     multivalued: false
   logo:
     name: logo
@@ -245,6 +247,7 @@ attributes:
     - ProductOrService
     range: ContactPoint
     required: false
+    recommended: true
     multivalued: false
   logo:
     name: logo
@@ -305,6 +308,7 @@ attributes:
     - Nameable
     range: string
     required: false
+    recommended: true
     multivalued: false
 
 ```

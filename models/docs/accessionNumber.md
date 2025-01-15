@@ -4,7 +4,7 @@
 
 
 
-URI: [EVORA:accessionNumber](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#accessionNumber)
+URI: [EVORAO:accessionNumber](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#accessionNumber)
 
 
 
@@ -54,8 +54,8 @@ URI: [EVORA:accessionNumber](https://raw.githubusercontent.com/EVORA-project/evo
 
 | Mapping Type | Mapped Value |
 | ---  | ---  |
-| self | EVORA:accessionNumber |
-| native | EVORA:accessionNumber |
+| self | EVORAO:accessionNumber |
+| native | EVORAO:accessionNumber |
 
 
 

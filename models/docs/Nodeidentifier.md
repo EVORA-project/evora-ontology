@@ -43,7 +43,7 @@ URI: [shex:nonLiteral](http://www.w3.org/ns/shex#nonLiteral)
 | Mapping Type | Mapped Value |
 | ---  | ---  |
 | self | shex:nonLiteral |
-| native | EVORA:nodeidentifier |
+| native | EVORAO:nodeidentifier |
 
 
 

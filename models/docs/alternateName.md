@@ -4,7 +4,7 @@
 
 
 
-URI: [EVORA:alternateName](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#alternateName)
+URI: [EVORAO:alternateName](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#alternateName)
 
 
 
@@ -18,12 +18,12 @@ URI: [EVORA:alternateName](https://raw.githubusercontent.com/EVORA-project/evora
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [VirusName](VirusName.md) | A virus vernacular name or a name that describes a group of viruses |  no  |
-| [AlternateName](AlternateName.md) | List of alternate names for things |  yes  |
 | [Variant](Variant.md) | An organism with one or more new mutations is referred to as a “variant” of t... |  no  |
-| [RI](RI.md) | A research infrastructure |  no  |
+| [AlternateName](AlternateName.md) | List of alternate names for things |  yes  |
 | [Organization](Organization.md) | A social entity established to meet needs or pursue specific goals |  yes  |
+| [RI](RI.md) | A research infrastructure |  no  |
 | [Provider](Provider.md) | A provider of products or services, as a specific organization |  no  |
+| [VirusName](VirusName.md) | A virus vernacular name or a name that describes a group of viruses |  no  |
 | [CommonName](CommonName.md) | Vernacular name that is the name used in everyday language to refer to an org... |  yes  |
 
 
@@ -60,8 +60,8 @@ URI: [EVORA:alternateName](https://raw.githubusercontent.com/EVORA-project/evora
 
 | Mapping Type | Mapped Value |
 | ---  | ---  |
-| self | EVORA:alternateName |
-| native | EVORA:alternateName |
+| self | EVORAO:alternateName |
+| native | EVORAO:alternateName |
 
 
 

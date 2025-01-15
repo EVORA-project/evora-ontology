@@ -4,7 +4,7 @@
 
 
 
-URI: [EVORA:alpha2Code](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#alpha2Code)
+URI: [EVORAO:alpha2Code](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#alpha2Code)
 
 
 
@@ -54,8 +54,8 @@ URI: [EVORA:alpha2Code](https://raw.githubusercontent.com/EVORA-project/evora-on
 
 | Mapping Type | Mapped Value |
 | ---  | ---  |
-| self | EVORA:alpha2Code |
-| native | EVORA:alpha2Code |
+| self | EVORAO:alpha2Code |
+| native | EVORAO:alpha2Code |
 
 
 

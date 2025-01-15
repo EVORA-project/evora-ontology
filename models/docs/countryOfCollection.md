@@ -4,7 +4,7 @@
 
 
 
-URI: [EVORA:countryOfCollection](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#countryOfCollection)
+URI: [EVORAO:countryOfCollection](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#countryOfCollection)
 
 
 
@@ -54,8 +54,8 @@ URI: [EVORA:countryOfCollection](https://raw.githubusercontent.com/EVORA-project
 
 | Mapping Type | Mapped Value |
 | ---  | ---  |
-| self | EVORA:countryOfCollection |
-| native | EVORA:countryOfCollection |
+| self | EVORAO:countryOfCollection |
+| native | EVORAO:countryOfCollection |
 
 
 

@@ -4,7 +4,7 @@
 
 
 
-URI: [EVORA:contentType](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#contentType)
+URI: [EVORAO:contentType](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#contentType)
 
 
 
@@ -54,8 +54,8 @@ URI: [EVORA:contentType](https://raw.githubusercontent.com/EVORA-project/evora-o
 
 | Mapping Type | Mapped Value |
 | ---  | ---  |
-| self | EVORA:contentType |
-| native | EVORA:contentType |
+| self | EVORAO:contentType |
+| native | EVORAO:contentType |
 
 
 

@@ -17,21 +17,21 @@ PREFIX adms: <http://www.w3.org/ns/adms#>
 PREFIX pav: <http://purl.org/pav/>
 PREFIX dwc: <http://rs.tdwg.org/dwc/terms/>
 PREFIX IAO: <http://purl.obolibrary.org/obo/IAO_>
-PREFIX EVORA: <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#>
+PREFIX EVORAO: <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#>
 PREFIX linkml: <https://w3id.org/linkml/>
 
 SELECT ?g ?s ?p WHERE {
  GRAPH ?g {
-  ?s rdf:type EVORA:NaturalPartOrigin ;
+  ?s rdf:type EVORAO:NaturalPartOrigin ;
      ?p ?o .
   FILTER ( ?p NOT IN (
-   EVORA:countryOfCollection,
-   EVORA:indigenousPoepleAndLocalCommunityOrigin,
-   EVORA:collectionDate,
-   EVORA:beforeDate,
-   EVORA:permitIdentifierForABS,
-   EVORA:recombinantPartIdentification,
-   EVORA:accessToPhysicalGeneticResource,
+   EVORAO:countryOfCollection,
+   EVORAO:indigenousPoepleAndLocalCommunityOrigin,
+   EVORAO:collectionDate,
+   EVORAO:beforeDate,
+   EVORAO:permitIdentifierForABS,
+   EVORAO:recombinantPartIdentification,
+   EVORAO:accessToPhysicalGeneticResource,
    rdf:type ))
  }
  

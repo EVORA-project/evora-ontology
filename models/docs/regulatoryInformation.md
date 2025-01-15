@@ -4,7 +4,7 @@
 
 
 
-URI: [EVORA:regulatoryInformation](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#regulatoryInformation)
+URI: [EVORAO:regulatoryInformation](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#regulatoryInformation)
 
 
 
@@ -54,8 +54,8 @@ URI: [EVORA:regulatoryInformation](https://raw.githubusercontent.com/EVORA-proje
 
 | Mapping Type | Mapped Value |
 | ---  | ---  |
-| self | EVORA:regulatoryInformation |
-| native | EVORA:regulatoryInformation |
+| self | EVORAO:regulatoryInformation |
+| native | EVORAO:regulatoryInformation |
 
 
 

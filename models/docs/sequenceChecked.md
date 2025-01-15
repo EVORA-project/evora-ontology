@@ -4,7 +4,7 @@
 
 
 
-URI: [EVORA:sequenceChecked](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#sequenceChecked)
+URI: [EVORAO:sequenceChecked](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#sequenceChecked)
 
 
 
@@ -54,8 +54,8 @@ URI: [EVORA:sequenceChecked](https://raw.githubusercontent.com/EVORA-project/evo
 
 | Mapping Type | Mapped Value |
 | ---  | ---  |
-| self | EVORA:sequenceChecked |
-| native | EVORA:sequenceChecked |
+| self | EVORAO:sequenceChecked |
+| native | EVORAO:sequenceChecked |
 
 
 

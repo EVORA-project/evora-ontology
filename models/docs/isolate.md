@@ -4,7 +4,7 @@
 
 
 
-URI: [EVORA:isolate](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#isolate)
+URI: [EVORAO:isolate](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#isolate)
 
 
 
@@ -54,8 +54,8 @@ URI: [EVORA:isolate](https://raw.githubusercontent.com/EVORA-project/evora-ontol
 
 | Mapping Type | Mapped Value |
 | ---  | ---  |
-| self | EVORA:isolate |
-| native | EVORA:isolate |
+| self | EVORAO:isolate |
+| native | EVORAO:isolate |
 
 
 

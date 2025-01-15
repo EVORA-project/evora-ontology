@@ -4,7 +4,7 @@
 
 
 
-URI: [EVORA:variant](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#variant)
+URI: [EVORAO:variant](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#variant)
 
 
 
@@ -54,8 +54,8 @@ URI: [EVORA:variant](https://raw.githubusercontent.com/EVORA-project/evora-ontol
 
 | Mapping Type | Mapped Value |
 | ---  | ---  |
-| self | EVORA:variant |
-| native | EVORA:variant |
+| self | EVORAO:variant |
+| native | EVORAO:variant |
 
 
 

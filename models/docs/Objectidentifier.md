@@ -47,7 +47,7 @@ URI: [shex:iri](http://www.w3.org/ns/shex#iri)
 | Mapping Type | Mapped Value |
 | ---  | ---  |
 | self | shex:iri |
-| native | EVORA:objectidentifier |
+| native | EVORAO:objectidentifier |
 
 
 

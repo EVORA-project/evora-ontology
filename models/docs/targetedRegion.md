@@ -4,7 +4,7 @@
 
 
 
-URI: [EVORA:targetedRegion](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#targetedRegion)
+URI: [EVORAO:targetedRegion](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#targetedRegion)
 
 
 
@@ -54,8 +54,8 @@ URI: [EVORA:targetedRegion](https://raw.githubusercontent.com/EVORA-project/evor
 
 | Mapping Type | Mapped Value |
 | ---  | ---  |
-| self | EVORA:targetedRegion |
-| native | EVORA:targetedRegion |
+| self | EVORAO:targetedRegion |
+| native | EVORAO:targetedRegion |
 
 
 

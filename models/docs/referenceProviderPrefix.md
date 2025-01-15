@@ -4,7 +4,7 @@
 
 
 
-URI: [EVORA:referenceProviderPrefix](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#referenceProviderPrefix)
+URI: [EVORAO:referenceProviderPrefix](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#referenceProviderPrefix)
 
 
 
@@ -54,8 +54,8 @@ URI: [EVORA:referenceProviderPrefix](https://raw.githubusercontent.com/EVORA-pro
 
 | Mapping Type | Mapped Value |
 | ---  | ---  |
-| self | EVORA:referenceProviderPrefix |
-| native | EVORA:referenceProviderPrefix |
+| self | EVORAO:referenceProviderPrefix |
+| native | EVORAO:referenceProviderPrefix |
 
 
 

@@ -4,7 +4,7 @@
 
 
 
-URI: [EVORA:transportInformation](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#transportInformation)
+URI: [EVORAO:transportInformation](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#transportInformation)
 
 
 
@@ -54,8 +54,8 @@ URI: [EVORA:transportInformation](https://raw.githubusercontent.com/EVORA-projec
 
 | Mapping Type | Mapped Value |
 | ---  | ---  |
-| self | EVORA:transportInformation |
-| native | EVORA:transportInformation |
+| self | EVORAO:transportInformation |
+| native | EVORAO:transportInformation |
 
 
 

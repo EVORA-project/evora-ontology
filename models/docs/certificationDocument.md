@@ -4,7 +4,7 @@
 
 
 
-URI: [EVORA:certificationDocument](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#certificationDocument)
+URI: [EVORAO:certificationDocument](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#certificationDocument)
 
 
 
@@ -54,8 +54,8 @@ URI: [EVORA:certificationDocument](https://raw.githubusercontent.com/EVORA-proje
 
 | Mapping Type | Mapped Value |
 | ---  | ---  |
-| self | EVORA:certificationDocument |
-| native | EVORA:certificationDocument |
+| self | EVORAO:certificationDocument |
+| native | EVORAO:certificationDocument |
 
 
 

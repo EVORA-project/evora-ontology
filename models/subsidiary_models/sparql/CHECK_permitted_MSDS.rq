@@ -17,29 +17,29 @@ PREFIX adms: <http://www.w3.org/ns/adms#>
 PREFIX pav: <http://purl.org/pav/>
 PREFIX dwc: <http://rs.tdwg.org/dwc/terms/>
 PREFIX IAO: <http://purl.obolibrary.org/obo/IAO_>
-PREFIX EVORA: <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#>
+PREFIX EVORAO: <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#>
 PREFIX linkml: <https://w3id.org/linkml/>
 
 SELECT ?g ?s ?p WHERE {
  GRAPH ?g {
-  ?s rdf:type EVORA:MSDS ;
+  ?s rdf:type EVORAO:MSDS ;
      ?p ?o .
   FILTER ( ?p NOT IN (
-   EVORA:msdsContact,
-   EVORA:physicalChemicalProperties,
-   EVORA:hazardsIdentification,
-   EVORA:firstAidMeasures,
-   EVORA:fireFightingMeasures,
-   EVORA:accidentalReleaseMeasures,
-   EVORA:handlingAndStorage,
-   EVORA:exposureControlsPersonalProtection,
-   EVORA:stabilityAndReactivity,
-   EVORA:toxicologicalInformation,
-   EVORA:ecologicalInformation,
-   EVORA:disposalConsiderations,
-   EVORA:transportInformation,
-   EVORA:regulatoryInformation,
-   EVORA:furtherInformation,
+   EVORAO:msdsContact,
+   EVORAO:physicalChemicalProperties,
+   EVORAO:hazardsIdentification,
+   EVORAO:firstAidMeasures,
+   EVORAO:fireFightingMeasures,
+   EVORAO:accidentalReleaseMeasures,
+   EVORAO:handlingAndStorage,
+   EVORAO:exposureControlsPersonalProtection,
+   EVORAO:stabilityAndReactivity,
+   EVORAO:toxicologicalInformation,
+   EVORAO:ecologicalInformation,
+   EVORAO:disposalConsiderations,
+   EVORAO:transportInformation,
+   EVORAO:regulatoryInformation,
+   EVORAO:furtherInformation,
    rdf:type ))
  }
  

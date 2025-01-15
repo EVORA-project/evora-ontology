@@ -4,7 +4,7 @@
 
 
 
-URI: [EVORA:firstAidMeasures](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#firstAidMeasures)
+URI: [EVORAO:firstAidMeasures](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#firstAidMeasures)
 
 
 
@@ -54,8 +54,8 @@ URI: [EVORA:firstAidMeasures](https://raw.githubusercontent.com/EVORA-project/ev
 
 | Mapping Type | Mapped Value |
 | ---  | ---  |
-| self | EVORA:firstAidMeasures |
-| native | EVORA:firstAidMeasures |
+| self | EVORAO:firstAidMeasures |
+| native | EVORAO:firstAidMeasures |
 
 
 

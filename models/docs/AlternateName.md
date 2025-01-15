@@ -9,7 +9,7 @@ _List of alternate names for things_
 
 
 
-URI: [EVORA:AlternateName](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#AlternateName)
+URI: [EVORAO:AlternateName](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#AlternateName)
 
 
 
@@ -73,7 +73,7 @@ URI: [EVORA:AlternateName](https://raw.githubusercontent.com/EVORA-project/evora
 | [weight](weight.md) | 1 <br/> [Integer](Integer.md) | A numerical value indicating relative importance or priority, generally proce... | [Term](Term.md) |
 | [inVocabulary](inVocabulary.md) | 1 <br/> [Vocabulary](Vocabulary.md) | Terms belong to a specific vocabulary | [Term](Term.md) |
 | [name](name.md) | 1 <br/> [String](String.md) | The label that allows humans to identify the current item | [Nameable](Nameable.md) |
-| [description](description.md) | 0..1 <br/> [String](String.md) | A short explanation of the characteristics, features, or nature of the curren... | [Nameable](Nameable.md) |
+| [description](description.md) | 0..1 _recommended_ <br/> [String](String.md) | A short explanation of the characteristics, features, or nature of the curren... | [Nameable](Nameable.md) |
 
 
 
@@ -93,11 +93,6 @@ URI: [EVORA:AlternateName](https://raw.githubusercontent.com/EVORA-project/evora
 
 
 
-
-## Aliases
-
-
-* synonym
 
 
 
@@ -121,8 +116,8 @@ URI: [EVORA:AlternateName](https://raw.githubusercontent.com/EVORA-project/evora
 
 | Mapping Type | Mapped Value |
 | ---  | ---  |
-| self | EVORA:AlternateName |
-| native | EVORA:AlternateName |
+| self | EVORAO:AlternateName |
+| native | EVORAO:AlternateName |
 | close | wd:Q7662595 |
 
 
@@ -143,8 +138,6 @@ name: AlternateName
 description: List of alternate names for things
 title: Alternate Name
 from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
-aliases:
-- synonym
 close_mappings:
 - wd:Q7662595
 is_a: Term
@@ -156,8 +149,6 @@ slot_usage:
     name: alternateName
     description: Any known alternate name related to this name
     title: alternate name
-    aliases:
-    - alternative name
     close_mappings:
     - wdp:P4970
     range: AlternateName
@@ -168,8 +159,6 @@ slot_usage:
     description: The name of the origin from which knowledge is obtained. This can
       include any entity that provides information
     title: source of information
-    aliases:
-    - stated in
     close_mappings:
     - wdp:P248
     range: string
@@ -187,8 +176,6 @@ name: AlternateName
 description: List of alternate names for things
 title: Alternate Name
 from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
-aliases:
-- synonym
 close_mappings:
 - wd:Q7662595
 is_a: Term
@@ -197,8 +184,6 @@ slot_usage:
     name: alternateName
     description: Any known alternate name related to this name
     title: alternate name
-    aliases:
-    - alternative name
     close_mappings:
     - wdp:P4970
     range: AlternateName
@@ -209,8 +194,6 @@ slot_usage:
     description: The name of the origin from which knowledge is obtained. This can
       include any entity that provides information
     title: source of information
-    aliases:
-    - stated in
     close_mappings:
     - wdp:P248
     range: string
@@ -222,8 +205,6 @@ attributes:
     description: Any known alternate name related to this name
     title: alternate name
     from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
-    aliases:
-    - alternative name
     close_mappings:
     - wdp:P4970
     rank: 1000
@@ -242,8 +223,6 @@ attributes:
       include any entity that provides information
     title: source of information
     from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
-    aliases:
-    - stated in
     close_mappings:
     - wdp:P248
     rank: 1000
@@ -279,8 +258,6 @@ attributes:
     description: Terms belong to a specific vocabulary
     title: in Vocabulary
     from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
-    aliases:
-    - catalog
     close_mappings:
     - wdp:P972
     rank: 1000
@@ -335,6 +312,7 @@ attributes:
     - Nameable
     range: string
     required: false
+    recommended: true
     multivalued: false
 
 ```

@@ -9,7 +9,7 @@ _The individual or organization responsible for the original discovery, isolatio
 
 
 
-URI: [EVORA:Originator](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#Originator)
+URI: [EVORAO:Originator](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#Originator)
 
 
 
@@ -28,7 +28,7 @@ URI: [EVORA:Originator](https://raw.githubusercontent.com/EVORA-project/evora-on
           
     
     
-    Originator --> "0..1" ContactPoint : contactPoint
+    Originator --> "0..1 _recommended_" ContactPoint : contactPoint
     click ContactPoint href "../ContactPoint"
 
         
@@ -66,10 +66,10 @@ URI: [EVORA:Originator](https://raw.githubusercontent.com/EVORA-project/evora-on
 | Name | Cardinality and Range | Description | Inheritance |
 | ---  | --- | --- | --- |
 | [homePage](homePage.md) | 0..1 <br/> [String](String.md) | Refers to the degree of purity achieved for a protein sample | [PersonOrOrganization](PersonOrOrganization.md) |
-| [contactPoint](contactPoint.md) | 0..1 <br/> [ContactPoint](ContactPoint.md) | An information that allows someone to establish communication | [PersonOrOrganization](PersonOrOrganization.md) |
+| [contactPoint](contactPoint.md) | 0..1 _recommended_ <br/> [ContactPoint](ContactPoint.md) | An information that allows someone to establish communication | [PersonOrOrganization](PersonOrOrganization.md) |
 | [logo](logo.md) | 0..1 <br/> [Image](Image.md) | A path or URL to the related logo | [PersonOrOrganization](PersonOrOrganization.md) |
 | [name](name.md) | 1 <br/> [String](String.md) | The label that allows humans to identify the current item | [Nameable](Nameable.md) |
-| [description](description.md) | 0..1 <br/> [String](String.md) | A short explanation of the characteristics, features, or nature of the curren... | [Nameable](Nameable.md) |
+| [description](description.md) | 0..1 _recommended_ <br/> [String](String.md) | A short explanation of the characteristics, features, or nature of the curren... | [Nameable](Nameable.md) |
 
 
 
@@ -119,8 +119,8 @@ URI: [EVORA:Originator](https://raw.githubusercontent.com/EVORA-project/evora-on
 
 | Mapping Type | Mapped Value |
 | ---  | ---  |
-| self | EVORA:Originator |
-| native | EVORA:Originator |
+| self | EVORAO:Originator |
+| native | EVORAO:Originator |
 | close | dct:ProvenanceStatement |
 
 
@@ -195,6 +195,7 @@ attributes:
     - ProductOrService
     range: ContactPoint
     required: false
+    recommended: true
     multivalued: false
   logo:
     name: logo
@@ -255,6 +256,7 @@ attributes:
     - Nameable
     range: string
     required: false
+    recommended: true
     multivalued: false
 
 ```

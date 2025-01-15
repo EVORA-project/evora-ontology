@@ -4,7 +4,7 @@
 
 
 
-URI: [EVORA:hazardsIdentification](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#hazardsIdentification)
+URI: [EVORAO:hazardsIdentification](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#hazardsIdentification)
 
 
 
@@ -54,8 +54,8 @@ URI: [EVORA:hazardsIdentification](https://raw.githubusercontent.com/EVORA-proje
 
 | Mapping Type | Mapped Value |
 | ---  | ---  |
-| self | EVORA:hazardsIdentification |
-| native | EVORA:hazardsIdentification |
+| self | EVORAO:hazardsIdentification |
+| native | EVORAO:hazardsIdentification |
 
 
 

@@ -4,7 +4,7 @@
 
 
 
-URI: [EVORA:sequence](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#sequence)
+URI: [EVORAO:sequence](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#sequence)
 
 
 
@@ -18,16 +18,16 @@ URI: [EVORA:sequence](https://raw.githubusercontent.com/EVORA-project/evora-onto
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [Prion](Prion.md) | The prion as a biological material |  no  |
-| [Virus](Virus.md) | The virus as a biological material |  no  |
-| [Bacterium](Bacterium.md) | The bacterium as a biological material |  no  |
 | [NucleicAcid](NucleicAcid.md) | Nucleic acid related to a pathogen |  yes  |
-| [RecombinantPartIdentification](RecombinantPartIdentification.md) | Identification of a recombinant part |  yes  |
 | [Pathogen](Pathogen.md) | Biological entity that causes disease in its host, which is typically an infe... |  yes  |
-| [Protozoan](Protozoan.md) | The protozoan as a biological material |  no  |
 | [Viroid](Viroid.md) | The viroid as a biological material |  no  |
 | [Fungus](Fungus.md) | The fungus as a biological material |  no  |
+| [Virus](Virus.md) | The virus as a biological material |  no  |
+| [Prion](Prion.md) | The prion as a biological material |  no  |
+| [RecombinantPartIdentification](RecombinantPartIdentification.md) | Identification of a recombinant part |  yes  |
+| [Bacterium](Bacterium.md) | The bacterium as a biological material |  no  |
 | [Protein](Protein.md) | A protein as a derived product from a pathogen |  yes  |
+| [Protozoan](Protozoan.md) | The protozoan as a biological material |  no  |
 
 
 
@@ -63,8 +63,8 @@ URI: [EVORA:sequence](https://raw.githubusercontent.com/EVORA-project/evora-onto
 
 | Mapping Type | Mapped Value |
 | ---  | ---  |
-| self | EVORA:sequence |
-| native | EVORA:sequence |
+| self | EVORAO:sequence |
+| native | EVORAO:sequence |
 
 
 

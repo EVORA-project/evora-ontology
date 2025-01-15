@@ -9,7 +9,7 @@ _An individual_
 
 
 
-URI: [EVORA:Person](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#Person)
+URI: [EVORAO:Person](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#Person)
 
 
 
@@ -28,7 +28,7 @@ URI: [EVORA:Person](https://raw.githubusercontent.com/EVORA-project/evora-ontolo
           
     
     
-    Person --> "0..1" ContactPoint : contactPoint
+    Person --> "0..1 _recommended_" ContactPoint : contactPoint
     click ContactPoint href "../ContactPoint"
 
         
@@ -67,23 +67,18 @@ URI: [EVORA:Person](https://raw.githubusercontent.com/EVORA-project/evora-ontolo
 
 | Name | Cardinality and Range | Description | Inheritance |
 | ---  | --- | --- | --- |
-| [oRCIDiD](oRCIDiD.md) | 0..1 <br/> [String](String.md) | Unique persistent identifier for a person, provided by the Open Researcher an... | direct |
+| [oRCIDiD](oRCIDiD.md) | 0..1 _recommended_ <br/> [String](String.md) | Unique persistent identifier for a person, provided by the Open Researcher an... | direct |
 | [homePage](homePage.md) | 0..1 <br/> [String](String.md) | Refers to the degree of purity achieved for a protein sample | [PersonOrOrganization](PersonOrOrganization.md) |
-| [contactPoint](contactPoint.md) | 0..1 <br/> [ContactPoint](ContactPoint.md) | An information that allows someone to establish communication | [PersonOrOrganization](PersonOrOrganization.md) |
+| [contactPoint](contactPoint.md) | 0..1 _recommended_ <br/> [ContactPoint](ContactPoint.md) | An information that allows someone to establish communication | [PersonOrOrganization](PersonOrOrganization.md) |
 | [logo](logo.md) | 0..1 <br/> [Image](Image.md) | A path or URL to the related logo | [PersonOrOrganization](PersonOrOrganization.md) |
 | [name](name.md) | 1 <br/> [String](String.md) | The label that allows humans to identify the current item | [Nameable](Nameable.md) |
-| [description](description.md) | 0..1 <br/> [String](String.md) | A short explanation of the characteristics, features, or nature of the curren... | [Nameable](Nameable.md) |
+| [description](description.md) | 0..1 _recommended_ <br/> [String](String.md) | A short explanation of the characteristics, features, or nature of the curren... | [Nameable](Nameable.md) |
 
 
 
 
 
 
-
-## Aliases
-
-
-* person
 
 
 
@@ -107,8 +102,8 @@ URI: [EVORA:Person](https://raw.githubusercontent.com/EVORA-project/evora-ontolo
 
 | Mapping Type | Mapped Value |
 | ---  | ---  |
-| self | EVORA:Person |
-| native | EVORA:Person |
+| self | EVORAO:Person |
+| native | EVORAO:Person |
 | close | wd:Q215627, vcard:Individual |
 
 
@@ -129,8 +124,6 @@ name: Person
 description: An individual
 title: Person
 from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
-aliases:
-- person
 close_mappings:
 - wd:Q215627
 - vcard:Individual
@@ -145,6 +138,7 @@ slot_usage:
     title: ORCID iD
     range: string
     required: false
+    recommended: true
     multivalued: false
 
 ```
@@ -158,8 +152,6 @@ name: Person
 description: An individual
 title: Person
 from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
-aliases:
-- person
 close_mappings:
 - wd:Q215627
 - vcard:Individual
@@ -172,6 +164,7 @@ slot_usage:
     title: ORCID iD
     range: string
     required: false
+    recommended: true
     multivalued: false
 attributes:
   oRCIDiD:
@@ -188,6 +181,7 @@ attributes:
     - ContactPoint
     range: string
     required: false
+    recommended: true
     multivalued: false
   homePage:
     name: homePage
@@ -220,6 +214,7 @@ attributes:
     - ProductOrService
     range: ContactPoint
     required: false
+    recommended: true
     multivalued: false
   logo:
     name: logo
@@ -280,6 +275,7 @@ attributes:
     - Nameable
     range: string
     required: false
+    recommended: true
     multivalued: false
 
 ```

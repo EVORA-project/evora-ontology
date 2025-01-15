@@ -4,7 +4,7 @@
 
 
 
-URI: [EVORA:toxicologicalInformation](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#toxicologicalInformation)
+URI: [EVORAO:toxicologicalInformation](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#toxicologicalInformation)
 
 
 
@@ -54,8 +54,8 @@ URI: [EVORA:toxicologicalInformation](https://raw.githubusercontent.com/EVORA-pr
 
 | Mapping Type | Mapped Value |
 | ---  | ---  |
-| self | EVORA:toxicologicalInformation |
-| native | EVORA:toxicologicalInformation |
+| self | EVORAO:toxicologicalInformation |
+| native | EVORAO:toxicologicalInformation |
 
 
 

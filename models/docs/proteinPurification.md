@@ -4,7 +4,7 @@
 
 
 
-URI: [EVORA:proteinPurification](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#proteinPurification)
+URI: [EVORAO:proteinPurification](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#proteinPurification)
 
 
 
@@ -54,8 +54,8 @@ URI: [EVORA:proteinPurification](https://raw.githubusercontent.com/EVORA-project
 
 | Mapping Type | Mapped Value |
 | ---  | ---  |
-| self | EVORA:proteinPurification |
-| native | EVORA:proteinPurification |
+| self | EVORAO:proteinPurification |
+| native | EVORAO:proteinPurification |
 
 
 

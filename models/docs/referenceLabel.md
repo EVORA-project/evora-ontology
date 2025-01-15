@@ -4,7 +4,7 @@
 
 
 
-URI: [EVORA:referenceLabel](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#referenceLabel)
+URI: [EVORAO:referenceLabel](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#referenceLabel)
 
 
 
@@ -54,8 +54,8 @@ URI: [EVORA:referenceLabel](https://raw.githubusercontent.com/EVORA-project/evor
 
 | Mapping Type | Mapped Value |
 | ---  | ---  |
-| self | EVORA:referenceLabel |
-| native | EVORA:referenceLabel |
+| self | EVORAO:referenceLabel |
+| native | EVORAO:referenceLabel |
 
 
 
