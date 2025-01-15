@@ -11,7 +11,7 @@ _A collection of data, that has a name and can have a description, published or 
 * __NOTE__: this is an abstract class and should not be instantiated directly
 
 
-URI: [EVORA:NamedDataset](https://evora-project.eu/NamedDataset)
+URI: [EVORA:NamedDataset](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#NamedDataset)
 
 
 
@@ -82,7 +82,7 @@ URI: [EVORA:NamedDataset](https://evora-project.eu/NamedDataset)
 ### Schema Source
 
 
-* from schema: https://evora-project.eu/
+* from schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
 
 
 
@@ -114,7 +114,7 @@ name: NamedDataset
 description: A collection of data, that has a name and can have a description, published
   or curated by a single agent, and available for access
 title: Named Dataset
-from_schema: https://evora-project.eu/
+from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
 aliases:
 - data set
 exact_mappings:
@@ -136,7 +136,7 @@ name: NamedDataset
 description: A collection of data, that has a name and can have a description, published
   or curated by a single agent, and available for access
 title: Named Dataset
-from_schema: https://evora-project.eu/
+from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
 aliases:
 - data set
 exact_mappings:
@@ -158,7 +158,7 @@ attributes:
       "Virus name", "virus host type", "collection year", "country of collection"
       ex "suspected epidemiological origin", "genotype", "strain", "variant name or
       specific feature"'
-    from_schema: https://evora-project.eu/
+    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
     exact_mappings:
     - dct:title
     close_mappings:
@@ -181,7 +181,7 @@ attributes:
       present the item.
 
       '
-    from_schema: https://evora-project.eu/
+    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
     exact_mappings:
     - dct:description
     rank: 1000

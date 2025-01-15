@@ -9,7 +9,7 @@ _The individual or organization responsible for the original discovery, isolatio
 
 
 
-URI: [EVORA:Originator](https://evora-project.eu/Originator)
+URI: [EVORA:Originator](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#Originator)
 
 
 
@@ -110,7 +110,7 @@ URI: [EVORA:Originator](https://evora-project.eu/Originator)
 ### Schema Source
 
 
-* from schema: https://evora-project.eu/
+* from schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
 
 
 
@@ -142,7 +142,7 @@ description: The individual or organization responsible for the original discove
   isolation, or creation of an item, providing information about the source or origin
   of the sample
 title: Originator
-from_schema: https://evora-project.eu/
+from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
 close_mappings:
 - dct:ProvenanceStatement
 is_a: PersonOrOrganization
@@ -159,7 +159,7 @@ description: The individual or organization responsible for the original discove
   isolation, or creation of an item, providing information about the source or origin
   of the sample
 title: Originator
-from_schema: https://evora-project.eu/
+from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
 close_mappings:
 - dct:ProvenanceStatement
 is_a: PersonOrOrganization
@@ -171,7 +171,7 @@ attributes:
       and "Unpurified expression host lysate or partly purified protein" (the protein
       is either unpurified and present in the host cell lysate or only partially purified).
     title: home page
-    from_schema: https://evora-project.eu/
+    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
     rank: 1000
     alias: homePage
     owner: Originator
@@ -184,7 +184,7 @@ attributes:
     name: contactPoint
     description: An information that allows someone to establish communication
     title: contact point
-    from_schema: https://evora-project.eu/
+    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
     exact_mappings:
     - dcat:contactPoint
     rank: 1000
@@ -200,7 +200,7 @@ attributes:
     name: logo
     description: A path or URL to the related logo
     title: logo
-    from_schema: https://evora-project.eu/
+    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
     rank: 1000
     alias: logo
     owner: Originator
@@ -222,7 +222,7 @@ attributes:
       "Virus name", "virus host type", "collection year", "country of collection"
       ex "suspected epidemiological origin", "genotype", "strain", "variant name or
       specific feature"'
-    from_schema: https://evora-project.eu/
+    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
     exact_mappings:
     - dct:title
     close_mappings:
@@ -245,7 +245,7 @@ attributes:
       present the item.
 
       '
-    from_schema: https://evora-project.eu/
+    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
     exact_mappings:
     - dct:description
     rank: 1000

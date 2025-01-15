@@ -4,7 +4,7 @@
 
 
 
-URI: [EVORA:recombinantMaterial](https://evora-project.eu/recombinantMaterial)
+URI: [EVORA:recombinantMaterial](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#recombinantMaterial)
 
 
 
@@ -45,7 +45,7 @@ URI: [EVORA:recombinantMaterial](https://evora-project.eu/recombinantMaterial)
 ### Schema Source
 
 
-* from schema: https://evora-project.eu/
+* from schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
 
 
 
@@ -65,7 +65,7 @@ URI: [EVORA:recombinantMaterial](https://evora-project.eu/recombinantMaterial)
 <details>
 ```yaml
 name: recombinantMaterial
-from_schema: https://evora-project.eu/
+from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
 rank: 1000
 alias: recombinantMaterial
 domain_of:

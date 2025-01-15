@@ -4,7 +4,7 @@
 
 
 
-URI: [EVORA:biologicalMaterialOrigin](https://evora-project.eu/biologicalMaterialOrigin)
+URI: [EVORA:biologicalMaterialOrigin](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#biologicalMaterialOrigin)
 
 
 
@@ -18,15 +18,15 @@ URI: [EVORA:biologicalMaterialOrigin](https://evora-project.eu/biologicalMateria
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [Protein](Protein.md) | A protein as a derived product from a pathogen |  yes  |
-| [Fungus](Fungus.md) | The fungus as a biological material |  no  |
-| [NucleicAcid](NucleicAcid.md) | Nucleic acid related to a pathogen |  yes  |
-| [Virus](Virus.md) | The virus as a biological material |  no  |
-| [Pathogen](Pathogen.md) | Biological entity that causes disease in its host, which is typically an infe... |  yes  |
-| [Protozoan](Protozoan.md) | The protozoan as a biological material |  no  |
-| [Viroid](Viroid.md) | The viroid as a biological material |  no  |
-| [Bacterium](Bacterium.md) | The bacterium as a biological material |  no  |
 | [Prion](Prion.md) | The prion as a biological material |  no  |
+| [Virus](Virus.md) | The virus as a biological material |  no  |
+| [Bacterium](Bacterium.md) | The bacterium as a biological material |  no  |
+| [NucleicAcid](NucleicAcid.md) | Nucleic acid related to a pathogen |  yes  |
+| [Pathogen](Pathogen.md) | Biological entity that causes disease in its host, which is typically an infe... |  yes  |
+| [Viroid](Viroid.md) | The viroid as a biological material |  no  |
+| [Protozoan](Protozoan.md) | The protozoan as a biological material |  no  |
+| [Fungus](Fungus.md) | The fungus as a biological material |  no  |
+| [Protein](Protein.md) | A protein as a derived product from a pathogen |  yes  |
 
 
 
@@ -53,7 +53,7 @@ URI: [EVORA:biologicalMaterialOrigin](https://evora-project.eu/biologicalMateria
 ### Schema Source
 
 
-* from schema: https://evora-project.eu/
+* from schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
 
 
 
@@ -73,7 +73,7 @@ URI: [EVORA:biologicalMaterialOrigin](https://evora-project.eu/biologicalMateria
 <details>
 ```yaml
 name: biologicalMaterialOrigin
-from_schema: https://evora-project.eu/
+from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
 rank: 1000
 alias: biologicalMaterialOrigin
 domain_of:

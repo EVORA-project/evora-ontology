@@ -4,7 +4,7 @@
 
 
 
-URI: [EVORA:accessionNumber](https://evora-project.eu/accessionNumber)
+URI: [EVORA:accessionNumber](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#accessionNumber)
 
 
 
@@ -45,7 +45,7 @@ URI: [EVORA:accessionNumber](https://evora-project.eu/accessionNumber)
 ### Schema Source
 
 
-* from schema: https://evora-project.eu/
+* from schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
 
 
 
@@ -65,7 +65,7 @@ URI: [EVORA:accessionNumber](https://evora-project.eu/accessionNumber)
 <details>
 ```yaml
 name: accessionNumber
-from_schema: https://evora-project.eu/
+from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
 rank: 1000
 alias: accessionNumber
 domain_of:

@@ -9,7 +9,7 @@ _Subclass of File representing moving visual media, such as recordings, presenta
 
 
 
-URI: [EVORA:Video](https://evora-project.eu/Video)
+URI: [EVORA:Video](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#Video)
 
 
 
@@ -88,7 +88,7 @@ URI: [EVORA:Video](https://evora-project.eu/Video)
 ### Schema Source
 
 
-* from schema: https://evora-project.eu/
+* from schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
 
 
 
@@ -119,7 +119,7 @@ name: Video
 description: Subclass of File representing moving visual media, such as recordings,
   presentations, or movies
 title: Video
-from_schema: https://evora-project.eu/
+from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
 aliases:
 - video file
 close_mappings:
@@ -137,7 +137,7 @@ name: Video
 description: Subclass of File representing moving visual media, such as recordings,
   presentations, or movies
 title: Video
-from_schema: https://evora-project.eu/
+from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
 aliases:
 - video file
 close_mappings:
@@ -149,7 +149,7 @@ attributes:
     description: The web address or location where the file content is stored and
       can be accessed or downloaded.
     title: content URL
-    from_schema: https://evora-project.eu/
+    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
     rank: 1000
     alias: contentURL
     owner: Video
@@ -163,7 +163,7 @@ attributes:
     description: The file type or format that indicates how the data within the file
       is structured
     title: format
-    from_schema: https://evora-project.eu/
+    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
     rank: 1000
     alias: format
     owner: Video
@@ -177,7 +177,7 @@ attributes:
     description: The legal terms and conditions under which the file can be used,
       shared, or distributed, indicating any restrictions or permissions.
     title: license
-    from_schema: https://evora-project.eu/
+    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
     rank: 1000
     alias: license
     owner: Video
@@ -198,7 +198,7 @@ attributes:
       "Virus name", "virus host type", "collection year", "country of collection"
       ex "suspected epidemiological origin", "genotype", "strain", "variant name or
       specific feature"'
-    from_schema: https://evora-project.eu/
+    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
     exact_mappings:
     - dct:title
     close_mappings:
@@ -221,7 +221,7 @@ attributes:
       present the item.
 
       '
-    from_schema: https://evora-project.eu/
+    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
     exact_mappings:
     - dct:description
     rank: 1000

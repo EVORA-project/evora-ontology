@@ -9,7 +9,7 @@ _Subclass of File representing structured or unstructured datasets, often used f
 
 
 
-URI: [EVORA:Data](https://evora-project.eu/Data)
+URI: [EVORA:Data](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#Data)
 
 
 
@@ -95,7 +95,7 @@ URI: [EVORA:Data](https://evora-project.eu/Data)
 ### Schema Source
 
 
-* from schema: https://evora-project.eu/
+* from schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
 
 
 
@@ -126,7 +126,7 @@ name: Data
 description: Subclass of File representing structured or unstructured datasets, often
   used for analysis, storage, or transfer of information
 title: Data
-from_schema: https://evora-project.eu/
+from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
 aliases:
 - data
 close_mappings:
@@ -144,7 +144,7 @@ name: Data
 description: Subclass of File representing structured or unstructured datasets, often
   used for analysis, storage, or transfer of information
 title: Data
-from_schema: https://evora-project.eu/
+from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
 aliases:
 - data
 close_mappings:
@@ -156,7 +156,7 @@ attributes:
     description: The web address or location where the file content is stored and
       can be accessed or downloaded.
     title: content URL
-    from_schema: https://evora-project.eu/
+    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
     rank: 1000
     alias: contentURL
     owner: Data
@@ -170,7 +170,7 @@ attributes:
     description: The file type or format that indicates how the data within the file
       is structured
     title: format
-    from_schema: https://evora-project.eu/
+    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
     rank: 1000
     alias: format
     owner: Data
@@ -184,7 +184,7 @@ attributes:
     description: The legal terms and conditions under which the file can be used,
       shared, or distributed, indicating any restrictions or permissions.
     title: license
-    from_schema: https://evora-project.eu/
+    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
     rank: 1000
     alias: license
     owner: Data
@@ -205,7 +205,7 @@ attributes:
       "Virus name", "virus host type", "collection year", "country of collection"
       ex "suspected epidemiological origin", "genotype", "strain", "variant name or
       specific feature"'
-    from_schema: https://evora-project.eu/
+    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
     exact_mappings:
     - dct:title
     close_mappings:
@@ -228,7 +228,7 @@ attributes:
       present the item.
 
       '
-    from_schema: https://evora-project.eu/
+    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
     exact_mappings:
     - dct:description
     rank: 1000

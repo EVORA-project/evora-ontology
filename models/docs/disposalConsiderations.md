@@ -4,7 +4,7 @@
 
 
 
-URI: [EVORA:disposalConsiderations](https://evora-project.eu/disposalConsiderations)
+URI: [EVORA:disposalConsiderations](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#disposalConsiderations)
 
 
 
@@ -45,7 +45,7 @@ URI: [EVORA:disposalConsiderations](https://evora-project.eu/disposalConsiderati
 ### Schema Source
 
 
-* from schema: https://evora-project.eu/
+* from schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
 
 
 
@@ -65,7 +65,7 @@ URI: [EVORA:disposalConsiderations](https://evora-project.eu/disposalConsiderati
 <details>
 ```yaml
 name: disposalConsiderations
-from_schema: https://evora-project.eu/
+from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
 rank: 1000
 alias: disposalConsiderations
 domain_of:

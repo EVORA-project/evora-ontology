@@ -4,7 +4,7 @@
 
 
 
-URI: [EVORA:licensingOrAttribution](https://evora-project.eu/licensingOrAttribution)
+URI: [EVORA:licensingOrAttribution](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#licensingOrAttribution)
 
 
 
@@ -45,7 +45,7 @@ URI: [EVORA:licensingOrAttribution](https://evora-project.eu/licensingOrAttribut
 ### Schema Source
 
 
-* from schema: https://evora-project.eu/
+* from schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
 
 
 
@@ -65,7 +65,7 @@ URI: [EVORA:licensingOrAttribution](https://evora-project.eu/licensingOrAttribut
 <details>
 ```yaml
 name: licensingOrAttribution
-from_schema: https://evora-project.eu/
+from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
 rank: 1000
 alias: licensingOrAttribution
 domain_of:

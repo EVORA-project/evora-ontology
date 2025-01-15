@@ -4,7 +4,7 @@
 
 
 
-URI: [EVORA:addressCountry](https://evora-project.eu/addressCountry)
+URI: [EVORA:addressCountry](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#addressCountry)
 
 
 
@@ -45,7 +45,7 @@ URI: [EVORA:addressCountry](https://evora-project.eu/addressCountry)
 ### Schema Source
 
 
-* from schema: https://evora-project.eu/
+* from schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
 
 
 
@@ -65,7 +65,7 @@ URI: [EVORA:addressCountry](https://evora-project.eu/addressCountry)
 <details>
 ```yaml
 name: addressCountry
-from_schema: https://evora-project.eu/
+from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
 rank: 1000
 alias: addressCountry
 domain_of:

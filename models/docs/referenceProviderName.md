@@ -4,7 +4,7 @@
 
 
 
-URI: [EVORA:referenceProviderName](https://evora-project.eu/referenceProviderName)
+URI: [EVORA:referenceProviderName](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#referenceProviderName)
 
 
 
@@ -45,7 +45,7 @@ URI: [EVORA:referenceProviderName](https://evora-project.eu/referenceProviderNam
 ### Schema Source
 
 
-* from schema: https://evora-project.eu/
+* from schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
 
 
 
@@ -65,7 +65,7 @@ URI: [EVORA:referenceProviderName](https://evora-project.eu/referenceProviderNam
 <details>
 ```yaml
 name: referenceProviderName
-from_schema: https://evora-project.eu/
+from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
 rank: 1000
 alias: referenceProviderName
 domain_of:

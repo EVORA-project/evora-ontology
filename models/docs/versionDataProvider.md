@@ -4,7 +4,7 @@
 
 
 
-URI: [EVORA:versionDataProvider](https://evora-project.eu/versionDataProvider)
+URI: [EVORA:versionDataProvider](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#versionDataProvider)
 
 
 
@@ -45,7 +45,7 @@ URI: [EVORA:versionDataProvider](https://evora-project.eu/versionDataProvider)
 ### Schema Source
 
 
-* from schema: https://evora-project.eu/
+* from schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
 
 
 
@@ -65,7 +65,7 @@ URI: [EVORA:versionDataProvider](https://evora-project.eu/versionDataProvider)
 <details>
 ```yaml
 name: versionDataProvider
-from_schema: https://evora-project.eu/
+from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
 rank: 1000
 alias: versionDataProvider
 domain_of:

@@ -4,7 +4,7 @@
 
 
 
-URI: [EVORA:hazardsIdentification](https://evora-project.eu/hazardsIdentification)
+URI: [EVORA:hazardsIdentification](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#hazardsIdentification)
 
 
 
@@ -45,7 +45,7 @@ URI: [EVORA:hazardsIdentification](https://evora-project.eu/hazardsIdentificatio
 ### Schema Source
 
 
-* from schema: https://evora-project.eu/
+* from schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
 
 
 
@@ -65,7 +65,7 @@ URI: [EVORA:hazardsIdentification](https://evora-project.eu/hazardsIdentificatio
 <details>
 ```yaml
 name: hazardsIdentification
-from_schema: https://evora-project.eu/
+from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
 rank: 1000
 alias: hazardsIdentification
 domain_of:

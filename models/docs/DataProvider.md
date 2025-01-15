@@ -9,7 +9,7 @@ _An external API (Application Programming Interface) or Endpoint that permits to
 
 
 
-URI: [EVORA:DataProvider](https://evora-project.eu/DataProvider)
+URI: [EVORA:DataProvider](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#DataProvider)
 
 
 
@@ -117,7 +117,7 @@ URI: [EVORA:DataProvider](https://evora-project.eu/DataProvider)
 ### Schema Source
 
 
-* from schema: https://evora-project.eu/
+* from schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
 
 
 
@@ -148,7 +148,7 @@ name: DataProvider
 description: An external API (Application Programming Interface) or Endpoint that
   permits to retrieve data from other sources
 title: Data provider
-from_schema: https://evora-project.eu/
+from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
 aliases:
 - data provider
 close_mappings:
@@ -275,7 +275,7 @@ name: DataProvider
 description: An external API (Application Programming Interface) or Endpoint that
   permits to retrieve data from other sources
 title: Data provider
-from_schema: https://evora-project.eu/
+from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
 aliases:
 - data provider
 close_mappings:
@@ -386,7 +386,7 @@ attributes:
     description: Information about terms and conditions under which the subject can
       be used, shared, or distributed, indicating any restrictions or permissions
     title: license
-    from_schema: https://evora-project.eu/
+    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
     exact_mappings:
     - dct:license
     rank: 1000
@@ -402,7 +402,7 @@ attributes:
     name: loginRequestMethod
     description: The http request method used to acces the login request url
     title: login request method
-    from_schema: https://evora-project.eu/
+    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
     close_mappings:
     - dcat:endpointDescription
     rank: 1000
@@ -418,7 +418,7 @@ attributes:
     name: loginURL
     description: The URL template that allows to log in if required
     title: login URL
-    from_schema: https://evora-project.eu/
+    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
     aliases:
     - formatter URL
     close_mappings:
@@ -437,7 +437,7 @@ attributes:
     description: The name of the token, unique identifier of an interaction session,
       that will have to be reused as credential in the query
     title: login token name
-    from_schema: https://evora-project.eu/
+    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
     close_mappings:
     - dcat:endpointDescription
     rank: 1000
@@ -452,7 +452,7 @@ attributes:
     name: queryURL
     description: The URL template that allows to get the content
     title: query URL
-    from_schema: https://evora-project.eu/
+    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
     aliases:
     - formatter URL
     exact_mappings:
@@ -471,7 +471,7 @@ attributes:
     name: queryMethod
     description: The http request method used to access the requested query url
     title: query method
-    from_schema: https://evora-project.eu/
+    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
     close_mappings:
     - dcat:endpointDescription
     rank: 1000
@@ -486,7 +486,7 @@ attributes:
     name: contentType
     description: The content type of the response to the queries
     title: content type
-    from_schema: https://evora-project.eu/
+    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
     close_mappings:
     - dct:format
     rank: 1000
@@ -503,7 +503,7 @@ attributes:
     description: The identification of the entity type (Class) described by the response
       to the query
     title: provided entity type
-    from_schema: https://evora-project.eu/
+    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
     exact_mappings:
     - dcat:servesDataset
     rank: 1000
@@ -524,7 +524,7 @@ attributes:
     - The lowest weighted Data providers are triggered first, this may be usefull
       to populate at first entities that are referenced by others (e.g. Version ahead
       of Rank ahead of Taxon)
-    from_schema: https://evora-project.eu/
+    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
     close_mappings:
     - adms:status
     rank: 1000
@@ -547,7 +547,7 @@ attributes:
       "Virus name", "virus host type", "collection year", "country of collection"
       ex "suspected epidemiological origin", "genotype", "strain", "variant name or
       specific feature"'
-    from_schema: https://evora-project.eu/
+    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
     exact_mappings:
     - dct:title
     close_mappings:
@@ -570,7 +570,7 @@ attributes:
       present the item.
 
       '
-    from_schema: https://evora-project.eu/
+    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
     exact_mappings:
     - dct:description
     rank: 1000

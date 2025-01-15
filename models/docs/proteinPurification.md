@@ -4,7 +4,7 @@
 
 
 
-URI: [EVORA:proteinPurification](https://evora-project.eu/proteinPurification)
+URI: [EVORA:proteinPurification](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#proteinPurification)
 
 
 
@@ -45,7 +45,7 @@ URI: [EVORA:proteinPurification](https://evora-project.eu/proteinPurification)
 ### Schema Source
 
 
-* from schema: https://evora-project.eu/
+* from schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
 
 
 
@@ -65,7 +65,7 @@ URI: [EVORA:proteinPurification](https://evora-project.eu/proteinPurification)
 <details>
 ```yaml
 name: proteinPurification
-from_schema: https://evora-project.eu/
+from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
 rank: 1000
 alias: proteinPurification
 domain_of:

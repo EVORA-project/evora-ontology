@@ -4,7 +4,7 @@
 
 
 
-URI: [EVORA:productionSystem](https://evora-project.eu/productionSystem)
+URI: [EVORA:productionSystem](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#productionSystem)
 
 
 
@@ -18,8 +18,8 @@ URI: [EVORA:productionSystem](https://evora-project.eu/productionSystem)
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [Antibody](Antibody.md) | Protein that can bind to certain types of foreign bodies, such as pathogens |  yes  |
 | [Hybridoma](Hybridoma.md) | An hybridoma that provides antibodies that can be related to a pathogen |  no  |
+| [Antibody](Antibody.md) | Protein that can bind to certain types of foreign bodies, such as pathogens |  yes  |
 
 
 
@@ -46,7 +46,7 @@ URI: [EVORA:productionSystem](https://evora-project.eu/productionSystem)
 ### Schema Source
 
 
-* from schema: https://evora-project.eu/
+* from schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
 
 
 
@@ -66,7 +66,7 @@ URI: [EVORA:productionSystem](https://evora-project.eu/productionSystem)
 <details>
 ```yaml
 name: productionSystem
-from_schema: https://evora-project.eu/
+from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
 rank: 1000
 alias: productionSystem
 domain_of:

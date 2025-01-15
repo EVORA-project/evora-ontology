@@ -4,7 +4,7 @@
 
 
 
-URI: [EVORA:collectionDate](https://evora-project.eu/collectionDate)
+URI: [EVORA:collectionDate](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#collectionDate)
 
 
 
@@ -45,7 +45,7 @@ URI: [EVORA:collectionDate](https://evora-project.eu/collectionDate)
 ### Schema Source
 
 
-* from schema: https://evora-project.eu/
+* from schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
 
 
 
@@ -65,7 +65,7 @@ URI: [EVORA:collectionDate](https://evora-project.eu/collectionDate)
 <details>
 ```yaml
 name: collectionDate
-from_schema: https://evora-project.eu/
+from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
 rank: 1000
 alias: collectionDate
 domain_of:

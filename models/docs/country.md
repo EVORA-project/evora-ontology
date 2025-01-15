@@ -4,7 +4,7 @@
 
 
 
-URI: [EVORA:country](https://evora-project.eu/country)
+URI: [EVORA:country](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#country)
 
 
 
@@ -18,9 +18,9 @@ URI: [EVORA:country](https://evora-project.eu/country)
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
+| [RI](RI.md) | A research infrastructure |  no  |
 | [Organization](Organization.md) | A social entity established to meet needs or pursue specific goals |  yes  |
 | [Provider](Provider.md) | A provider of products or services, as a specific organization |  no  |
-| [RI](RI.md) | A research infrastructure |  no  |
 
 
 
@@ -47,7 +47,7 @@ URI: [EVORA:country](https://evora-project.eu/country)
 ### Schema Source
 
 
-* from schema: https://evora-project.eu/
+* from schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
 
 
 
@@ -67,7 +67,7 @@ URI: [EVORA:country](https://evora-project.eu/country)
 <details>
 ```yaml
 name: country
-from_schema: https://evora-project.eu/
+from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
 rank: 1000
 alias: country
 domain_of:

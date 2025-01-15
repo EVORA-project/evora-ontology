@@ -4,7 +4,7 @@
 
 
 
-URI: [EVORA:furtherInformation](https://evora-project.eu/furtherInformation)
+URI: [EVORA:furtherInformation](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#furtherInformation)
 
 
 
@@ -45,7 +45,7 @@ URI: [EVORA:furtherInformation](https://evora-project.eu/furtherInformation)
 ### Schema Source
 
 
-* from schema: https://evora-project.eu/
+* from schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
 
 
 
@@ -65,7 +65,7 @@ URI: [EVORA:furtherInformation](https://evora-project.eu/furtherInformation)
 <details>
 ```yaml
 name: furtherInformation
-from_schema: https://evora-project.eu/
+from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
 rank: 1000
 alias: furtherInformation
 domain_of:

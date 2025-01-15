@@ -4,7 +4,7 @@
 
 
 
-URI: [EVORA:isItAClonedNucleicAcid](https://evora-project.eu/isItAClonedNucleicAcid)
+URI: [EVORA:isItAClonedNucleicAcid](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#isItAClonedNucleicAcid)
 
 
 
@@ -45,7 +45,7 @@ URI: [EVORA:isItAClonedNucleicAcid](https://evora-project.eu/isItAClonedNucleicA
 ### Schema Source
 
 
-* from schema: https://evora-project.eu/
+* from schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
 
 
 
@@ -65,7 +65,7 @@ URI: [EVORA:isItAClonedNucleicAcid](https://evora-project.eu/isItAClonedNucleicA
 <details>
 ```yaml
 name: isItAClonedNucleicAcid
-from_schema: https://evora-project.eu/
+from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
 rank: 1000
 alias: isItAClonedNucleicAcid
 domain_of:

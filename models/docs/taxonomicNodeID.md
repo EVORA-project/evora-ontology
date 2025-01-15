@@ -4,7 +4,7 @@
 
 
 
-URI: [EVORA:taxonomicNodeID](https://evora-project.eu/taxonomicNodeID)
+URI: [EVORA:taxonomicNodeID](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#taxonomicNodeID)
 
 
 
@@ -45,7 +45,7 @@ URI: [EVORA:taxonomicNodeID](https://evora-project.eu/taxonomicNodeID)
 ### Schema Source
 
 
-* from schema: https://evora-project.eu/
+* from schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
 
 
 
@@ -65,7 +65,7 @@ URI: [EVORA:taxonomicNodeID](https://evora-project.eu/taxonomicNodeID)
 <details>
 ```yaml
 name: taxonomicNodeID
-from_schema: https://evora-project.eu/
+from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
 rank: 1000
 alias: taxonomicNodeID
 domain_of:

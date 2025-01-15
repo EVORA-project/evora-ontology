@@ -4,7 +4,7 @@
 
 
 
-URI: [EVORA:taxon](https://evora-project.eu/taxon)
+URI: [EVORA:taxon](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#taxon)
 
 
 
@@ -46,7 +46,7 @@ URI: [EVORA:taxon](https://evora-project.eu/taxon)
 ### Schema Source
 
 
-* from schema: https://evora-project.eu/
+* from schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
 
 
 
@@ -66,7 +66,7 @@ URI: [EVORA:taxon](https://evora-project.eu/taxon)
 <details>
 ```yaml
 name: taxon
-from_schema: https://evora-project.eu/
+from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
 rank: 1000
 alias: taxon
 domain_of:

@@ -4,7 +4,7 @@
 
 
 
-URI: [EVORA:descriptionOfModificationsMadeFromTheReferenceSequences](https://evora-project.eu/descriptionOfModificationsMadeFromTheReferenceSequences)
+URI: [EVORA:descriptionOfModificationsMadeFromTheReferenceSequences](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#descriptionOfModificationsMadeFromTheReferenceSequences)
 
 
 
@@ -45,7 +45,7 @@ URI: [EVORA:descriptionOfModificationsMadeFromTheReferenceSequences](https://evo
 ### Schema Source
 
 
-* from schema: https://evora-project.eu/
+* from schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
 
 
 
@@ -65,7 +65,7 @@ URI: [EVORA:descriptionOfModificationsMadeFromTheReferenceSequences](https://evo
 <details>
 ```yaml
 name: descriptionOfModificationsMadeFromTheReferenceSequences
-from_schema: https://evora-project.eu/
+from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
 rank: 1000
 alias: descriptionOfModificationsMadeFromTheReferenceSequences
 domain_of:

@@ -11,7 +11,7 @@ _Any entity that has a name and can have a textual description_
 * __NOTE__: this is an abstract class and should not be instantiated directly
 
 
-URI: [EVORA:Nameable](https://evora-project.eu/Nameable)
+URI: [EVORA:Nameable](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#Nameable)
 
 
 
@@ -89,7 +89,7 @@ URI: [EVORA:Nameable](https://evora-project.eu/Nameable)
 ### Schema Source
 
 
-* from schema: https://evora-project.eu/
+* from schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
 
 
 
@@ -118,7 +118,7 @@ URI: [EVORA:Nameable](https://evora-project.eu/Nameable)
 name: Nameable
 description: Any entity that has a name and can have a textual description
 title: Nameable
-from_schema: https://evora-project.eu/
+from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
 abstract: true
 slots:
 - name
@@ -168,7 +168,7 @@ slot_usage:
 name: Nameable
 description: Any entity that has a name and can have a textual description
 title: Nameable
-from_schema: https://evora-project.eu/
+from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
 abstract: true
 slot_usage:
   name:
@@ -216,7 +216,7 @@ attributes:
       "Virus name", "virus host type", "collection year", "country of collection"
       ex "suspected epidemiological origin", "genotype", "strain", "variant name or
       specific feature"'
-    from_schema: https://evora-project.eu/
+    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
     exact_mappings:
     - dct:title
     close_mappings:
@@ -239,7 +239,7 @@ attributes:
       present the item.
 
       '
-    from_schema: https://evora-project.eu/
+    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
     exact_mappings:
     - dct:description
     rank: 1000

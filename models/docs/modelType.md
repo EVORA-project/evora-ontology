@@ -4,7 +4,7 @@
 
 
 
-URI: [EVORA:modelType](https://evora-project.eu/modelType)
+URI: [EVORA:modelType](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#modelType)
 
 
 
@@ -45,7 +45,7 @@ URI: [EVORA:modelType](https://evora-project.eu/modelType)
 ### Schema Source
 
 
-* from schema: https://evora-project.eu/
+* from schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
 
 
 
@@ -65,7 +65,7 @@ URI: [EVORA:modelType](https://evora-project.eu/modelType)
 <details>
 ```yaml
 name: modelType
-from_schema: https://evora-project.eu/
+from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
 rank: 1000
 alias: modelType
 domain_of:

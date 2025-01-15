@@ -4,7 +4,7 @@
 
 
 
-URI: [EVORA:serotype](https://evora-project.eu/serotype)
+URI: [EVORA:serotype](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#serotype)
 
 
 
@@ -45,7 +45,7 @@ URI: [EVORA:serotype](https://evora-project.eu/serotype)
 ### Schema Source
 
 
-* from schema: https://evora-project.eu/
+* from schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
 
 
 
@@ -65,7 +65,7 @@ URI: [EVORA:serotype](https://evora-project.eu/serotype)
 <details>
 ```yaml
 name: serotype
-from_schema: https://evora-project.eu/
+from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
 rank: 1000
 alias: serotype
 domain_of:

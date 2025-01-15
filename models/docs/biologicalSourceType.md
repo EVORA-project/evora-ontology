@@ -4,7 +4,7 @@
 
 
 
-URI: [EVORA:biologicalSourceType](https://evora-project.eu/biologicalSourceType)
+URI: [EVORA:biologicalSourceType](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#biologicalSourceType)
 
 
 
@@ -45,7 +45,7 @@ URI: [EVORA:biologicalSourceType](https://evora-project.eu/biologicalSourceType)
 ### Schema Source
 
 
-* from schema: https://evora-project.eu/
+* from schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
 
 
 
@@ -65,7 +65,7 @@ URI: [EVORA:biologicalSourceType](https://evora-project.eu/biologicalSourceType)
 <details>
 ```yaml
 name: biologicalSourceType
-from_schema: https://evora-project.eu/
+from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
 rank: 1000
 alias: biologicalSourceType
 domain_of:

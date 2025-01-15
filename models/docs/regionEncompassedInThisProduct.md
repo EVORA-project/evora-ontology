@@ -4,7 +4,7 @@
 
 
 
-URI: [EVORA:regionEncompassedInThisProduct](https://evora-project.eu/regionEncompassedInThisProduct)
+URI: [EVORA:regionEncompassedInThisProduct](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#regionEncompassedInThisProduct)
 
 
 
@@ -45,7 +45,7 @@ URI: [EVORA:regionEncompassedInThisProduct](https://evora-project.eu/regionEncom
 ### Schema Source
 
 
-* from schema: https://evora-project.eu/
+* from schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
 
 
 
@@ -65,7 +65,7 @@ URI: [EVORA:regionEncompassedInThisProduct](https://evora-project.eu/regionEncom
 <details>
 ```yaml
 name: regionEncompassedInThisProduct
-from_schema: https://evora-project.eu/
+from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
 rank: 1000
 alias: regionEncompassedInThisProduct
 domain_of:

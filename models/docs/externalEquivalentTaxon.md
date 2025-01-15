@@ -4,7 +4,7 @@
 
 
 
-URI: [EVORA:externalEquivalentTaxon](https://evora-project.eu/externalEquivalentTaxon)
+URI: [EVORA:externalEquivalentTaxon](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#externalEquivalentTaxon)
 
 
 
@@ -45,7 +45,7 @@ URI: [EVORA:externalEquivalentTaxon](https://evora-project.eu/externalEquivalent
 ### Schema Source
 
 
-* from schema: https://evora-project.eu/
+* from schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
 
 
 
@@ -65,7 +65,7 @@ URI: [EVORA:externalEquivalentTaxon](https://evora-project.eu/externalEquivalent
 <details>
 ```yaml
 name: externalEquivalentTaxon
-from_schema: https://evora-project.eu/
+from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
 rank: 1000
 alias: externalEquivalentTaxon
 domain_of:

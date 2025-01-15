@@ -4,7 +4,7 @@
 
 
 
-URI: [EVORA:accessToPhysicalGeneticResource](https://evora-project.eu/accessToPhysicalGeneticResource)
+URI: [EVORA:accessToPhysicalGeneticResource](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#accessToPhysicalGeneticResource)
 
 
 
@@ -47,7 +47,7 @@ URI: [EVORA:accessToPhysicalGeneticResource](https://evora-project.eu/accessToPh
 ### Schema Source
 
 
-* from schema: https://evora-project.eu/
+* from schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
 
 
 
@@ -67,7 +67,7 @@ URI: [EVORA:accessToPhysicalGeneticResource](https://evora-project.eu/accessToPh
 <details>
 ```yaml
 name: accessToPhysicalGeneticResource
-from_schema: https://evora-project.eu/
+from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
 rank: 1000
 alias: accessToPhysicalGeneticResource
 domain_of:

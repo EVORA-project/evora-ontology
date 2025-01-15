@@ -4,7 +4,7 @@
 
 
 
-URI: [EVORA:isolate](https://evora-project.eu/isolate)
+URI: [EVORA:isolate](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#isolate)
 
 
 
@@ -45,7 +45,7 @@ URI: [EVORA:isolate](https://evora-project.eu/isolate)
 ### Schema Source
 
 
-* from schema: https://evora-project.eu/
+* from schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
 
 
 
@@ -65,7 +65,7 @@ URI: [EVORA:isolate](https://evora-project.eu/isolate)
 <details>
 ```yaml
 name: isolate
-from_schema: https://evora-project.eu/
+from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
 rank: 1000
 alias: isolate
 domain_of:

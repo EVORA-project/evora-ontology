@@ -4,7 +4,7 @@
 
 
 
-URI: [EVORA:addressLocality](https://evora-project.eu/addressLocality)
+URI: [EVORA:addressLocality](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#addressLocality)
 
 
 
@@ -45,7 +45,7 @@ URI: [EVORA:addressLocality](https://evora-project.eu/addressLocality)
 ### Schema Source
 
 
-* from schema: https://evora-project.eu/
+* from schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
 
 
 
@@ -65,7 +65,7 @@ URI: [EVORA:addressLocality](https://evora-project.eu/addressLocality)
 <details>
 ```yaml
 name: addressLocality
-from_schema: https://evora-project.eu/
+from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
 rank: 1000
 alias: addressLocality
 domain_of:

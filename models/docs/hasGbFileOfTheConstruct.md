@@ -4,7 +4,7 @@
 
 
 
-URI: [EVORA:hasGbFileOfTheConstruct](https://evora-project.eu/hasGbFileOfTheConstruct)
+URI: [EVORA:hasGbFileOfTheConstruct](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#hasGbFileOfTheConstruct)
 
 
 
@@ -45,7 +45,7 @@ URI: [EVORA:hasGbFileOfTheConstruct](https://evora-project.eu/hasGbFileOfTheCons
 ### Schema Source
 
 
-* from schema: https://evora-project.eu/
+* from schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
 
 
 
@@ -65,7 +65,7 @@ URI: [EVORA:hasGbFileOfTheConstruct](https://evora-project.eu/hasGbFileOfTheCons
 <details>
 ```yaml
 name: hasGbFileOfTheConstruct
-from_schema: https://evora-project.eu/
+from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
 rank: 1000
 alias: hasGbFileOfTheConstruct
 domain_of:

@@ -4,7 +4,7 @@
 
 
 
-URI: [EVORA:toxicologicalInformation](https://evora-project.eu/toxicologicalInformation)
+URI: [EVORA:toxicologicalInformation](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#toxicologicalInformation)
 
 
 
@@ -45,7 +45,7 @@ URI: [EVORA:toxicologicalInformation](https://evora-project.eu/toxicologicalInfo
 ### Schema Source
 
 
-* from schema: https://evora-project.eu/
+* from schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
 
 
 
@@ -65,7 +65,7 @@ URI: [EVORA:toxicologicalInformation](https://evora-project.eu/toxicologicalInfo
 <details>
 ```yaml
 name: toxicologicalInformation
-from_schema: https://evora-project.eu/
+from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
 rank: 1000
 alias: toxicologicalInformation
 domain_of:

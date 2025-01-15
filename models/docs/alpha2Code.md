@@ -4,7 +4,7 @@
 
 
 
-URI: [EVORA:alpha2Code](https://evora-project.eu/alpha2Code)
+URI: [EVORA:alpha2Code](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#alpha2Code)
 
 
 
@@ -45,7 +45,7 @@ URI: [EVORA:alpha2Code](https://evora-project.eu/alpha2Code)
 ### Schema Source
 
 
-* from schema: https://evora-project.eu/
+* from schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
 
 
 
@@ -65,7 +65,7 @@ URI: [EVORA:alpha2Code](https://evora-project.eu/alpha2Code)
 <details>
 ```yaml
 name: alpha2Code
-from_schema: https://evora-project.eu/
+from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
 rank: 1000
 alias: alpha2Code
 domain_of:

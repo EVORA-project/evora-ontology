@@ -4,7 +4,7 @@
 
 
 
-URI: [EVORA:collectionDataProvider](https://evora-project.eu/collectionDataProvider)
+URI: [EVORA:collectionDataProvider](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#collectionDataProvider)
 
 
 
@@ -45,7 +45,7 @@ URI: [EVORA:collectionDataProvider](https://evora-project.eu/collectionDataProvi
 ### Schema Source
 
 
-* from schema: https://evora-project.eu/
+* from schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
 
 
 
@@ -65,7 +65,7 @@ URI: [EVORA:collectionDataProvider](https://evora-project.eu/collectionDataProvi
 <details>
 ```yaml
 name: collectionDataProvider
-from_schema: https://evora-project.eu/
+from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
 rank: 1000
 alias: collectionDataProvider
 domain_of:

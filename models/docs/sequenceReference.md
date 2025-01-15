@@ -4,7 +4,7 @@
 
 
 
-URI: [EVORA:sequenceReference](https://evora-project.eu/sequenceReference)
+URI: [EVORA:sequenceReference](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#sequenceReference)
 
 
 
@@ -19,8 +19,8 @@ URI: [EVORA:sequenceReference](https://evora-project.eu/sequenceReference)
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
 | [Sequence](Sequence.md) | A nucleic acid or protein sequence information |  yes  |
-| [Antibody](Antibody.md) | Protein that can bind to certain types of foreign bodies, such as pathogens |  yes  |
 | [Hybridoma](Hybridoma.md) | An hybridoma that provides antibodies that can be related to a pathogen |  no  |
+| [Antibody](Antibody.md) | Protein that can bind to certain types of foreign bodies, such as pathogens |  yes  |
 
 
 
@@ -47,7 +47,7 @@ URI: [EVORA:sequenceReference](https://evora-project.eu/sequenceReference)
 ### Schema Source
 
 
-* from schema: https://evora-project.eu/
+* from schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
 
 
 
@@ -67,7 +67,7 @@ URI: [EVORA:sequenceReference](https://evora-project.eu/sequenceReference)
 <details>
 ```yaml
 name: sequenceReference
-from_schema: https://evora-project.eu/
+from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
 rank: 1000
 alias: sequenceReference
 domain_of:

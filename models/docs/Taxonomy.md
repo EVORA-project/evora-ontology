@@ -9,7 +9,7 @@ _Science of naming, defining and classifying organisms_
 
 
 
-URI: [EVORA:Taxonomy](https://evora-project.eu/Taxonomy)
+URI: [EVORA:Taxonomy](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#Taxonomy)
 
 
 
@@ -140,7 +140,7 @@ URI: [EVORA:Taxonomy](https://evora-project.eu/Taxonomy)
 ### Schema Source
 
 
-* from schema: https://evora-project.eu/
+* from schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
 
 
 
@@ -170,7 +170,7 @@ URI: [EVORA:Taxonomy](https://evora-project.eu/Taxonomy)
 name: Taxonomy
 description: Science of naming, defining and classifying organisms
 title: Taxonomy
-from_schema: https://evora-project.eu/
+from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
 aliases:
 - taxonomy
 close_mappings:
@@ -241,7 +241,7 @@ slot_usage:
 name: Taxonomy
 description: Science of naming, defining and classifying organisms
 title: Taxonomy
-from_schema: https://evora-project.eu/
+from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
 aliases:
 - taxonomy
 close_mappings:
@@ -299,7 +299,7 @@ attributes:
     name: taxon
     description: Scientifically classified group or entity within the reference taxonomy
     title: taxon
-    from_schema: https://evora-project.eu/
+    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
     close_mappings:
     - dwc:Taxon
     rank: 1000
@@ -315,7 +315,7 @@ attributes:
     name: taxonDataProvider
     description: The data provider for the taxons of the taxonomy
     title: taxon data provider
-    from_schema: https://evora-project.eu/
+    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
     rank: 1000
     alias: taxonDataProvider
     owner: Taxonomy
@@ -328,7 +328,7 @@ attributes:
     name: version
     description: The version of this instance of entity
     title: version
-    from_schema: https://evora-project.eu/
+    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
     rank: 1000
     alias: version
     owner: Taxonomy
@@ -341,7 +341,7 @@ attributes:
     name: versionDataProvider
     description: The data provider for the Version ID of this taxonomy
     title: version data provider
-    from_schema: https://evora-project.eu/
+    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
     rank: 1000
     alias: versionDataProvider
     owner: Taxonomy
@@ -354,7 +354,7 @@ attributes:
     name: rank
     description: Relative level or position of the identified taxon in the taxonomy
     title: rank
-    from_schema: https://evora-project.eu/
+    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
     rank: 1000
     alias: rank
     owner: Taxonomy
@@ -369,7 +369,7 @@ attributes:
     description: The data provider for the description of the taxonomic ranks used
       in this taxonomy
     title: rank data provider
-    from_schema: https://evora-project.eu/
+    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
     rank: 1000
     alias: rankDataProvider
     owner: Taxonomy
@@ -389,7 +389,7 @@ attributes:
       "Virus name", "virus host type", "collection year", "country of collection"
       ex "suspected epidemiological origin", "genotype", "strain", "variant name or
       specific feature"'
-    from_schema: https://evora-project.eu/
+    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
     exact_mappings:
     - dct:title
     close_mappings:
@@ -412,7 +412,7 @@ attributes:
       present the item.
 
       '
-    from_schema: https://evora-project.eu/
+    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
     exact_mappings:
     - dct:description
     rank: 1000

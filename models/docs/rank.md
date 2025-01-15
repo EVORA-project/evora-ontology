@@ -4,7 +4,7 @@
 
 
 
-URI: [EVORA:rank](https://evora-project.eu/rank)
+URI: [EVORA:rank](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#rank)
 
 
 
@@ -46,7 +46,7 @@ URI: [EVORA:rank](https://evora-project.eu/rank)
 ### Schema Source
 
 
-* from schema: https://evora-project.eu/
+* from schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
 
 
 
@@ -66,7 +66,7 @@ URI: [EVORA:rank](https://evora-project.eu/rank)
 <details>
 ```yaml
 name: rank
-from_schema: https://evora-project.eu/
+from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
 rank: 1000
 alias: rank
 domain_of:

@@ -4,7 +4,7 @@
 
 
 
-URI: [EVORA:rankDataProvider](https://evora-project.eu/rankDataProvider)
+URI: [EVORA:rankDataProvider](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#rankDataProvider)
 
 
 
@@ -45,7 +45,7 @@ URI: [EVORA:rankDataProvider](https://evora-project.eu/rankDataProvider)
 ### Schema Source
 
 
-* from schema: https://evora-project.eu/
+* from schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
 
 
 
@@ -65,7 +65,7 @@ URI: [EVORA:rankDataProvider](https://evora-project.eu/rankDataProvider)
 <details>
 ```yaml
 name: rankDataProvider
-from_schema: https://evora-project.eu/
+from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
 rank: 1000
 alias: rankDataProvider
 domain_of:

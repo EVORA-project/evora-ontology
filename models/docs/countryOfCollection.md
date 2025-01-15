@@ -4,7 +4,7 @@
 
 
 
-URI: [EVORA:countryOfCollection](https://evora-project.eu/countryOfCollection)
+URI: [EVORA:countryOfCollection](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#countryOfCollection)
 
 
 
@@ -45,7 +45,7 @@ URI: [EVORA:countryOfCollection](https://evora-project.eu/countryOfCollection)
 ### Schema Source
 
 
-* from schema: https://evora-project.eu/
+* from schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
 
 
 
@@ -65,7 +65,7 @@ URI: [EVORA:countryOfCollection](https://evora-project.eu/countryOfCollection)
 <details>
 ```yaml
 name: countryOfCollection
-from_schema: https://evora-project.eu/
+from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
 rank: 1000
 alias: countryOfCollection
 domain_of:

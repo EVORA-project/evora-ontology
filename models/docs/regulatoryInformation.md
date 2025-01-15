@@ -4,7 +4,7 @@
 
 
 
-URI: [EVORA:regulatoryInformation](https://evora-project.eu/regulatoryInformation)
+URI: [EVORA:regulatoryInformation](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#regulatoryInformation)
 
 
 
@@ -45,7 +45,7 @@ URI: [EVORA:regulatoryInformation](https://evora-project.eu/regulatoryInformatio
 ### Schema Source
 
 
-* from schema: https://evora-project.eu/
+* from schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
 
 
 
@@ -65,7 +65,7 @@ URI: [EVORA:regulatoryInformation](https://evora-project.eu/regulatoryInformatio
 <details>
 ```yaml
 name: regulatoryInformation
-from_schema: https://evora-project.eu/
+from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
 rank: 1000
 alias: regulatoryInformation
 domain_of:

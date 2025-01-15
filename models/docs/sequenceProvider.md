@@ -4,7 +4,7 @@
 
 
 
-URI: [EVORA:sequenceProvider](https://evora-project.eu/sequenceProvider)
+URI: [EVORA:sequenceProvider](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#sequenceProvider)
 
 
 
@@ -45,7 +45,7 @@ URI: [EVORA:sequenceProvider](https://evora-project.eu/sequenceProvider)
 ### Schema Source
 
 
-* from schema: https://evora-project.eu/
+* from schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
 
 
 
@@ -65,7 +65,7 @@ URI: [EVORA:sequenceProvider](https://evora-project.eu/sequenceProvider)
 <details>
 ```yaml
 name: sequenceProvider
-from_schema: https://evora-project.eu/
+from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
 rank: 1000
 alias: sequenceProvider
 domain_of:

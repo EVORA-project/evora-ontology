@@ -4,7 +4,7 @@
 
 
 
-URI: [EVORA:loginURL](https://evora-project.eu/loginURL)
+URI: [EVORA:loginURL](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#loginURL)
 
 
 
@@ -45,7 +45,7 @@ URI: [EVORA:loginURL](https://evora-project.eu/loginURL)
 ### Schema Source
 
 
-* from schema: https://evora-project.eu/
+* from schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
 
 
 
@@ -65,7 +65,7 @@ URI: [EVORA:loginURL](https://evora-project.eu/loginURL)
 <details>
 ```yaml
 name: loginURL
-from_schema: https://evora-project.eu/
+from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
 rank: 1000
 alias: loginURL
 domain_of:

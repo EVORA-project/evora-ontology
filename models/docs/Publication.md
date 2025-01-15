@@ -9,7 +9,7 @@ _A scientific publication_
 
 
 
-URI: [EVORA:Publication](https://evora-project.eu/Publication)
+URI: [EVORA:Publication](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#Publication)
 
 
 
@@ -94,7 +94,7 @@ URI: [EVORA:Publication](https://evora-project.eu/Publication)
 ### Schema Source
 
 
-* from schema: https://evora-project.eu/
+* from schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
 
 
 
@@ -124,7 +124,7 @@ URI: [EVORA:Publication](https://evora-project.eu/Publication)
 name: Publication
 description: A scientific publication
 title: Publication
-from_schema: https://evora-project.eu/
+from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
 aliases:
 - scientific publication
 close_mappings:
@@ -193,7 +193,7 @@ slot_usage:
 name: Publication
 description: A scientific publication
 title: Publication
-from_schema: https://evora-project.eu/
+from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
 aliases:
 - scientific publication
 close_mappings:
@@ -258,7 +258,7 @@ attributes:
       "Virus name", "virus host type", "collection year", "country of collection"
       ex "suspected epidemiological origin", "genotype", "strain", "variant name or
       specific feature"'
-    from_schema: https://evora-project.eu/
+    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
     exact_mappings:
     - dct:title
     rank: 1000
@@ -273,7 +273,7 @@ attributes:
     name: authors
     description: The list of authors
     title: authors
-    from_schema: https://evora-project.eu/
+    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
     rank: 1000
     alias: authors
     owner: Publication
@@ -286,7 +286,7 @@ attributes:
     name: abstract
     description: Concise summary of the publication
     title: abstract
-    from_schema: https://evora-project.eu/
+    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
     rank: 1000
     alias: abstract
     owner: Publication
@@ -299,7 +299,7 @@ attributes:
     name: relatedDOI
     description: Any Digital Object Identifier that can be related
     title: DOI
-    from_schema: https://evora-project.eu/
+    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
     rank: 1000
     alias: relatedDOI
     owner: Publication
@@ -313,7 +313,7 @@ attributes:
     name: journal
     description: The scientific journal in which the publication was published
     title: journal
-    from_schema: https://evora-project.eu/
+    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
     rank: 1000
     alias: journal
     owner: Publication

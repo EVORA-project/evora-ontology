@@ -4,7 +4,7 @@
 
 
 
-URI: [EVORA:referenceLabel](https://evora-project.eu/referenceLabel)
+URI: [EVORA:referenceLabel](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#referenceLabel)
 
 
 
@@ -45,7 +45,7 @@ URI: [EVORA:referenceLabel](https://evora-project.eu/referenceLabel)
 ### Schema Source
 
 
-* from schema: https://evora-project.eu/
+* from schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
 
 
 
@@ -65,7 +65,7 @@ URI: [EVORA:referenceLabel](https://evora-project.eu/referenceLabel)
 <details>
 ```yaml
 name: referenceLabel
-from_schema: https://evora-project.eu/
+from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
 rank: 1000
 alias: referenceLabel
 domain_of:

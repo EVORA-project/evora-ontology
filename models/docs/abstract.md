@@ -4,7 +4,7 @@
 
 
 
-URI: [EVORA:abstract](https://evora-project.eu/abstract)
+URI: [EVORA:abstract](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#abstract)
 
 
 
@@ -45,7 +45,7 @@ URI: [EVORA:abstract](https://evora-project.eu/abstract)
 ### Schema Source
 
 
-* from schema: https://evora-project.eu/
+* from schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
 
 
 
@@ -65,7 +65,7 @@ URI: [EVORA:abstract](https://evora-project.eu/abstract)
 <details>
 ```yaml
 name: abstract
-from_schema: https://evora-project.eu/
+from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
 rank: 1000
 alias: abstract
 domain_of:

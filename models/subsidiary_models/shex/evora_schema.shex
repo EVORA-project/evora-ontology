@@ -1,6 +1,6 @@
 # metamodel_version: 1.7.0
-# version: 1.0.7356
-BASE <https://evora-project.eu/>
+# version: 1.0.7370
+BASE <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#>
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 PREFIX linkml: <https://w3id.org/linkml/>

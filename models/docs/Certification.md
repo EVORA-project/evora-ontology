@@ -9,7 +9,7 @@ _Assurance given by an independent certification body that a product, service or
 
 
 
-URI: [EVORA:Certification](https://evora-project.eu/Certification)
+URI: [EVORA:Certification](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#Certification)
 
 
 
@@ -116,7 +116,7 @@ URI: [EVORA:Certification](https://evora-project.eu/Certification)
 ### Schema Source
 
 
-* from schema: https://evora-project.eu/
+* from schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
 
 
 
@@ -147,7 +147,7 @@ name: Certification
 description: Assurance given by an independent certification body that a product,
   service or system meets the requirements of a standard
 title: Certification
-from_schema: https://evora-project.eu/
+from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
 aliases:
 - certification
 close_mappings:
@@ -197,7 +197,7 @@ name: Certification
 description: Assurance given by an independent certification body that a product,
   service or system meets the requirements of a standard
 title: Certification
-from_schema: https://evora-project.eu/
+from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
 aliases:
 - certification
 close_mappings:
@@ -236,7 +236,7 @@ attributes:
     name: logo
     description: A path or URL to the related logo
     title: logo
-    from_schema: https://evora-project.eu/
+    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
     rank: 1000
     alias: logo
     owner: Certification
@@ -253,7 +253,7 @@ attributes:
       of the subject to the applicable scheme, including, as the case may be, the
       documents attesting the equivalence to another certification scheme.
     title: certification document
-    from_schema: https://evora-project.eu/
+    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
     rank: 1000
     alias: certificationDocument
     owner: Certification
@@ -267,7 +267,7 @@ attributes:
     description: The web address or location where the details or content is stored
       and can be accessed or downloaded.
     title: resource URL
-    from_schema: https://evora-project.eu/
+    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
     close_mappings:
     - schema:url
     rank: 1000
@@ -290,7 +290,7 @@ attributes:
       "Virus name", "virus host type", "collection year", "country of collection"
       ex "suspected epidemiological origin", "genotype", "strain", "variant name or
       specific feature"'
-    from_schema: https://evora-project.eu/
+    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
     exact_mappings:
     - dct:title
     close_mappings:
@@ -313,7 +313,7 @@ attributes:
       present the item.
 
       '
-    from_schema: https://evora-project.eu/
+    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
     exact_mappings:
     - dct:description
     rank: 1000

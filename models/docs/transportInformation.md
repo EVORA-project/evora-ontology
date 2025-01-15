@@ -4,7 +4,7 @@
 
 
 
-URI: [EVORA:transportInformation](https://evora-project.eu/transportInformation)
+URI: [EVORA:transportInformation](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#transportInformation)
 
 
 
@@ -45,7 +45,7 @@ URI: [EVORA:transportInformation](https://evora-project.eu/transportInformation)
 ### Schema Source
 
 
-* from schema: https://evora-project.eu/
+* from schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
 
 
 
@@ -65,7 +65,7 @@ URI: [EVORA:transportInformation](https://evora-project.eu/transportInformation)
 <details>
 ```yaml
 name: transportInformation
-from_schema: https://evora-project.eu/
+from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
 rank: 1000
 alias: transportInformation
 domain_of:

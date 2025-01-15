@@ -4,7 +4,7 @@
 
 
 
-URI: [EVORA:queryMethod](https://evora-project.eu/queryMethod)
+URI: [EVORA:queryMethod](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#queryMethod)
 
 
 
@@ -45,7 +45,7 @@ URI: [EVORA:queryMethod](https://evora-project.eu/queryMethod)
 ### Schema Source
 
 
-* from schema: https://evora-project.eu/
+* from schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
 
 
 
@@ -65,7 +65,7 @@ URI: [EVORA:queryMethod](https://evora-project.eu/queryMethod)
 <details>
 ```yaml
 name: queryMethod
-from_schema: https://evora-project.eu/
+from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
 rank: 1000
 alias: queryMethod
 domain_of:

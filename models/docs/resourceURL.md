@@ -4,7 +4,7 @@
 
 
 
-URI: [EVORA:resourceURL](https://evora-project.eu/resourceURL)
+URI: [EVORA:resourceURL](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#resourceURL)
 
 
 
@@ -18,8 +18,8 @@ URI: [EVORA:resourceURL](https://evora-project.eu/resourceURL)
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [License](License.md) | The legal terms and conditions under which the subject can be used, shared, o... |  yes  |
 | [Certification](Certification.md) | Assurance given by an independent certification body that a product, service ... |  yes  |
+| [License](License.md) | The legal terms and conditions under which the subject can be used, shared, o... |  yes  |
 
 
 
@@ -46,7 +46,7 @@ URI: [EVORA:resourceURL](https://evora-project.eu/resourceURL)
 ### Schema Source
 
 
-* from schema: https://evora-project.eu/
+* from schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
 
 
 
@@ -66,7 +66,7 @@ URI: [EVORA:resourceURL](https://evora-project.eu/resourceURL)
 <details>
 ```yaml
 name: resourceURL
-from_schema: https://evora-project.eu/
+from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
 rank: 1000
 alias: resourceURL
 domain_of:

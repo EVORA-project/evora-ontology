@@ -4,7 +4,7 @@
 
 
 
-URI: [EVORA:functionalCharacterization](https://evora-project.eu/functionalCharacterization)
+URI: [EVORA:functionalCharacterization](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#functionalCharacterization)
 
 
 
@@ -45,7 +45,7 @@ URI: [EVORA:functionalCharacterization](https://evora-project.eu/functionalChara
 ### Schema Source
 
 
-* from schema: https://evora-project.eu/
+* from schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
 
 
 
@@ -65,7 +65,7 @@ URI: [EVORA:functionalCharacterization](https://evora-project.eu/functionalChara
 <details>
 ```yaml
 name: functionalCharacterization
-from_schema: https://evora-project.eu/
+from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
 rank: 1000
 alias: functionalCharacterization
 domain_of:

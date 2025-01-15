@@ -4,7 +4,7 @@
 
 
 
-URI: [EVORA:genotype](https://evora-project.eu/genotype)
+URI: [EVORA:genotype](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#genotype)
 
 
 
@@ -45,7 +45,7 @@ URI: [EVORA:genotype](https://evora-project.eu/genotype)
 ### Schema Source
 
 
-* from schema: https://evora-project.eu/
+* from schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
 
 
 
@@ -65,7 +65,7 @@ URI: [EVORA:genotype](https://evora-project.eu/genotype)
 <details>
 ```yaml
 name: genotype
-from_schema: https://evora-project.eu/
+from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
 rank: 1000
 alias: genotype
 domain_of:

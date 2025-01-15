@@ -4,7 +4,7 @@
 
 
 
-URI: [EVORA:specificity](https://evora-project.eu/specificity)
+URI: [EVORA:specificity](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#specificity)
 
 
 
@@ -45,7 +45,7 @@ URI: [EVORA:specificity](https://evora-project.eu/specificity)
 ### Schema Source
 
 
-* from schema: https://evora-project.eu/
+* from schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
 
 
 
@@ -65,7 +65,7 @@ URI: [EVORA:specificity](https://evora-project.eu/specificity)
 <details>
 ```yaml
 name: specificity
-from_schema: https://evora-project.eu/
+from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
 rank: 1000
 alias: specificity
 domain_of:

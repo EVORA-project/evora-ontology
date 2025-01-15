@@ -9,7 +9,7 @@ _A collection of distinguishing information that enables the differentiation of 
 
 
 
-URI: [EVORA:PathogenIdentification](https://evora-project.eu/PathogenIdentification)
+URI: [EVORA:PathogenIdentification](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#PathogenIdentification)
 
 
 
@@ -133,7 +133,7 @@ URI: [EVORA:PathogenIdentification](https://evora-project.eu/PathogenIdentificat
 ### Schema Source
 
 
-* from schema: https://evora-project.eu/
+* from schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
 
 
 
@@ -163,7 +163,7 @@ name: PathogenIdentification
 description: A collection of distinguishing information that enables the differentiation
   of a pathogen from another
 title: Pathogen identification
-from_schema: https://evora-project.eu/
+from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
 is_a: Dataset
 slots:
 - taxon
@@ -273,7 +273,7 @@ name: PathogenIdentification
 description: A collection of distinguishing information that enables the differentiation
   of a pathogen from another
 title: Pathogen identification
-from_schema: https://evora-project.eu/
+from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
 is_a: Dataset
 slot_usage:
   taxon:
@@ -368,7 +368,7 @@ attributes:
     comments:
     - The taxon of the highest rank known that can be used to classify a pathogen
       or group of pathogens (e.g viruses) in the reference taxonomy
-    from_schema: https://evora-project.eu/
+    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
     rank: 1000
     alias: taxon
     owner: PathogenIdentification
@@ -382,7 +382,7 @@ attributes:
     name: pathogenName
     description: A pathogen common name or a name that describes a group of pathogens
     title: pathogen name
-    from_schema: https://evora-project.eu/
+    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
     rank: 1000
     alias: pathogenName
     owner: PathogenIdentification
@@ -396,7 +396,7 @@ attributes:
     description: Identification of the specific type of pathogen among the listed
       categories e.g. "Virus","Viroid","Bacterium"...
     title: pathogen type
-    from_schema: https://evora-project.eu/
+    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
     rank: 1000
     alias: pathogenType
     owner: PathogenIdentification
@@ -410,7 +410,7 @@ attributes:
     description: Indication of the possible host(s) for the identified pathogens among
       the listed main categories
     title: host type
-    from_schema: https://evora-project.eu/
+    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
     rank: 1000
     alias: hostType
     owner: PathogenIdentification
@@ -424,7 +424,7 @@ attributes:
     description: The subspecies information differentiates closely related pathogens
       within a single species
     title: subspecies
-    from_schema: https://evora-project.eu/
+    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
     rank: 1000
     alias: subspecies
     owner: PathogenIdentification
@@ -437,7 +437,7 @@ attributes:
     name: strain
     description: Identifier given to a genetic variant within a single species
     title: strain
-    from_schema: https://evora-project.eu/
+    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
     rank: 1000
     alias: strain
     owner: PathogenIdentification
@@ -454,7 +454,7 @@ attributes:
       the isolation, as well as details about the specific conditions of isolation,
       such as the name of the town, hospital, and type of host
     title: isolate
-    from_schema: https://evora-project.eu/
+    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
     rank: 1000
     alias: isolate
     owner: PathogenIdentification
@@ -468,7 +468,7 @@ attributes:
     description: Genotype information that identifies organisms that cluster in phylogenetic
       trees, thus different clusters are distinct genotypes
     title: genotype
-    from_schema: https://evora-project.eu/
+    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
     rank: 1000
     alias: genotype
     owner: PathogenIdentification
@@ -482,7 +482,7 @@ attributes:
     description: Genetically related pathogens that group together based on serological
       relationships
     title: serotype
-    from_schema: https://evora-project.eu/
+    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
     rank: 1000
     alias: serotype
     owner: PathogenIdentification
@@ -497,7 +497,7 @@ attributes:
       of the original organism if not sufficiently different to be termed a distinct
       strain
     title: variant
-    from_schema: https://evora-project.eu/
+    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
     rank: 1000
     alias: variant
     owner: PathogenIdentification

@@ -4,7 +4,7 @@
 
 
 
-URI: [EVORA:hasSOPFile](https://evora-project.eu/hasSOPFile)
+URI: [EVORA:hasSOPFile](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#hasSOPFile)
 
 
 
@@ -45,7 +45,7 @@ URI: [EVORA:hasSOPFile](https://evora-project.eu/hasSOPFile)
 ### Schema Source
 
 
-* from schema: https://evora-project.eu/
+* from schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
 
 
 
@@ -65,7 +65,7 @@ URI: [EVORA:hasSOPFile](https://evora-project.eu/hasSOPFile)
 <details>
 ```yaml
 name: hasSOPFile
-from_schema: https://evora-project.eu/
+from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
 rank: 1000
 alias: hasSOPFile
 domain_of:

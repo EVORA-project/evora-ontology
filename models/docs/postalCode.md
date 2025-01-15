@@ -4,7 +4,7 @@
 
 
 
-URI: [EVORA:postalCode](https://evora-project.eu/postalCode)
+URI: [EVORA:postalCode](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#postalCode)
 
 
 
@@ -45,7 +45,7 @@ URI: [EVORA:postalCode](https://evora-project.eu/postalCode)
 ### Schema Source
 
 
-* from schema: https://evora-project.eu/
+* from schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
 
 
 
@@ -65,7 +65,7 @@ URI: [EVORA:postalCode](https://evora-project.eu/postalCode)
 <details>
 ```yaml
 name: postalCode
-from_schema: https://evora-project.eu/
+from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
 rank: 1000
 alias: postalCode
 domain_of:

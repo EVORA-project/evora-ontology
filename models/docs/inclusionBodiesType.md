@@ -4,7 +4,7 @@
 
 
 
-URI: [EVORA:inclusionBodiesType](https://evora-project.eu/inclusionBodiesType)
+URI: [EVORA:inclusionBodiesType](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#inclusionBodiesType)
 
 
 
@@ -45,7 +45,7 @@ URI: [EVORA:inclusionBodiesType](https://evora-project.eu/inclusionBodiesType)
 ### Schema Source
 
 
-* from schema: https://evora-project.eu/
+* from schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
 
 
 
@@ -65,7 +65,7 @@ URI: [EVORA:inclusionBodiesType](https://evora-project.eu/inclusionBodiesType)
 <details>
 ```yaml
 name: inclusionBodiesType
-from_schema: https://evora-project.eu/
+from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
 rank: 1000
 alias: inclusionBodiesType
 domain_of:

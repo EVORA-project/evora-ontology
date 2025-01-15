@@ -9,7 +9,7 @@ _The virus as a biological material_
 
 
 
-URI: [EVORA:Virus](https://evora-project.eu/Virus)
+URI: [EVORA:Virus](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#Virus)
 
 
 
@@ -399,7 +399,7 @@ URI: [EVORA:Virus](https://evora-project.eu/Virus)
 ### Schema Source
 
 
-* from schema: https://evora-project.eu/
+* from schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
 
 
 
@@ -429,7 +429,7 @@ URI: [EVORA:Virus](https://evora-project.eu/Virus)
 name: Virus
 description: The virus as a biological material
 title: Virus
-from_schema: https://evora-project.eu/
+from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
 aliases:
 - virus
 close_mappings:
@@ -476,7 +476,7 @@ slot_usage:
 name: Virus
 description: The virus as a biological material
 title: Virus
-from_schema: https://evora-project.eu/
+from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
 aliases:
 - virus
 close_mappings:
@@ -515,7 +515,7 @@ attributes:
       with the primary virus, indicating the presence of multiple viral infections
       within the same host.
     title: co-infecting viruses
-    from_schema: https://evora-project.eu/
+    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
     rank: 1000
     alias: coInfectingViruses
     owner: Virus
@@ -529,7 +529,7 @@ attributes:
     description: A boolean value indicating whether there is contamination with co-infecting
       viruses
     title: contamination with co-infecting viruses
-    from_schema: https://evora-project.eu/
+    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
     rank: 1000
     ifabsent: 'false'
     alias: contaminationWithCoInfectingViruses
@@ -543,7 +543,7 @@ attributes:
     name: mycoplasmicContent
     description: Indicates the presence of mycoplasma contamination within the sample
     title: mycoplasmic content
-    from_schema: https://evora-project.eu/
+    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
     rank: 1000
     alias: mycoplasmicContent
     owner: Virus
@@ -558,7 +558,7 @@ attributes:
       for access, utilization, and benefit-sharing of genetic resources in compliance
       with the Nagoya Protocol.
     title: Biological Material origin
-    from_schema: https://evora-project.eu/
+    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
     rank: 1000
     alias: biologicalMaterialOrigin
     owner: Virus
@@ -574,7 +574,7 @@ attributes:
     description: The potential geographical or environmental source from which the
       pathogen is believed to have originated or been transmitted
     title: suspected epidemiological origin
-    from_schema: https://evora-project.eu/
+    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
     close_mappings:
     - dct:spatial
     rank: 1000
@@ -589,7 +589,7 @@ attributes:
     name: isolationHost
     description: The host organism from which the pathogen was originally isolated
     title: isolation host
-    from_schema: https://evora-project.eu/
+    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
     rank: 1000
     alias: isolationHost
     owner: Virus
@@ -603,7 +603,7 @@ attributes:
     description: The cell line used for the production or propagation of the pathogen,
       detailing the cellular environment employed in its cultivation and study
     title: production cell line
-    from_schema: https://evora-project.eu/
+    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
     rank: 1000
     alias: productionCellLine
     owner: Virus
@@ -616,7 +616,7 @@ attributes:
     name: propagationHost
     description: The host organism that propagates the pathogen
     title: propagation host
-    from_schema: https://evora-project.eu/
+    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
     rank: 1000
     alias: propagationHost
     owner: Virus
@@ -630,7 +630,7 @@ attributes:
     description: The method or route through which the pathogen is transmitted from
       one host to another, detailing the mechanisms of infection spread.
     title: transmission method
-    from_schema: https://evora-project.eu/
+    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
     rank: 1000
     alias: transmissionMethod
     owner: Virus
@@ -644,7 +644,7 @@ attributes:
     description: The related sequence information from a sequence provider or in fasta
       format
     title: sequence
-    from_schema: https://evora-project.eu/
+    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
     rank: 1000
     alias: sequence
     owner: Virus
@@ -664,7 +664,7 @@ attributes:
     title: cultivability
     comments:
     - Might also be related to a product sub-category that helps filtering
-    from_schema: https://evora-project.eu/
+    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
     rank: 1000
     ifabsent: string(Cultivable pathogen)
     alias: cultivability
@@ -679,7 +679,7 @@ attributes:
     description: Details about the clinical aspects of the pathogen, including symptoms,
       severity, treatment protocols, and patient outcomes
     title: clinical information
-    from_schema: https://evora-project.eu/
+    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
     rank: 1000
     alias: clinicalInformation
     owner: Virus
@@ -694,7 +694,7 @@ attributes:
       of the pathogen, detailing the specific procedures and tools employed in the
       detection process
     title: identification technique
-    from_schema: https://evora-project.eu/
+    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
     rank: 1000
     alias: identificationTechnique
     owner: Virus
@@ -710,7 +710,7 @@ attributes:
       a host organism, with possible values detailing whether infectivity has been
       tested, quantified, or cannot be tested due to non-cultivable nature.
     title: infectivity
-    from_schema: https://evora-project.eu/
+    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
     rank: 1000
     alias: infectivity
     owner: Virus
@@ -725,7 +725,7 @@ attributes:
       on the methods, conditions, and results of the test used to assess the pathogen's
       ability to infect a host organism
     title: infectivity Test
-    from_schema: https://evora-project.eu/
+    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
     rank: 1000
     alias: infectivityTest
     owner: Virus
@@ -740,7 +740,7 @@ attributes:
       a host organism or sample, detailing the techniques and tools employed in the
       isolation process
     title: isolation technique
-    from_schema: https://evora-project.eu/
+    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
     rank: 1000
     alias: isolationTechnique
     owner: Virus
@@ -754,7 +754,7 @@ attributes:
     description: The environmental and procedural conditions under which the pathogen
       was isolated
     title: isolation conditions
-    from_schema: https://evora-project.eu/
+    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
     rank: 1000
     alias: isolationConditions
     owner: Virus
@@ -769,7 +769,7 @@ attributes:
       necessity of formal authorization. The possible values are "N/A", "NOT Required",
       "Required for customers in the EU" or "Required"
     title: letter of authority
-    from_schema: https://evora-project.eu/
+    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
     rank: 1000
     ifabsent: string(N/A)
     alias: letterOfAuthority
@@ -785,7 +785,7 @@ attributes:
       a process used to increase the stock but which can also lead to the evolution
       of the original pathogen.
     title: passage
-    from_schema: https://evora-project.eu/
+    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
     rank: 1000
     alias: passage
     owner: Virus
@@ -801,7 +801,7 @@ attributes:
       coding sequence" for all coding regions, and "Partial sequence" for only a portion
       of the genetic material
     title: sequencing
-    from_schema: https://evora-project.eu/
+    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
     rank: 1000
     alias: sequencing
     owner: Virus
@@ -818,7 +818,7 @@ attributes:
       in the sample. The titer corresponds to the highest dilution factor that still
       yields a positive reading
     title: titer
-    from_schema: https://evora-project.eu/
+    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
     close_mappings:
     - wd:Q2166189
     rank: 1000
@@ -835,7 +835,7 @@ attributes:
     description: The corresponding International Air Transport Association (IATA)'s
       category for this Product
     title: IATA classification
-    from_schema: https://evora-project.eu/
+    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
     rank: 1000
     alias: hasIATAClassification
     owner: Virus
@@ -850,7 +850,7 @@ attributes:
 
       '
     title: shipping conditions
-    from_schema: https://evora-project.eu/
+    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
     rank: 1000
     alias: shippingConditions
     owner: Virus
@@ -869,7 +869,7 @@ attributes:
     - The MSD  is a document that provides detailed information about the properties,
       hazards, handling, storage, and emergency procedures related to the use of a
       chemical or substance
-    from_schema: https://evora-project.eu/
+    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
     rank: 1000
     alias: materialSafetyDataSheet
     owner: Virus
@@ -884,7 +884,7 @@ attributes:
       isolation, or creation of an item, providing information about the source or
       origin of the sample
     title: originator
-    from_schema: https://evora-project.eu/
+    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
     rank: 1000
     alias: originator
     owner: Virus
@@ -903,7 +903,7 @@ attributes:
     - e.g, could be a xsd:string in enumeration ("Freeze Dried", "Liquid Nitrogen",
       "Viral Storage Medium -20C", "Viral Storage Medium -80C", "Living plant material
       (>= +4°C)", "Gas Phase", "Ethanol -20C", "Ethanol -80C", "Dried")
-    from_schema: https://evora-project.eu/
+    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
     rank: 1000
     alias: storageConditions
     owner: Virus
@@ -918,7 +918,7 @@ attributes:
       restriction to third parties, as indicated by the ABS permit, in case an ABS
       permit is required
     title: third party distribution consent
-    from_schema: https://evora-project.eu/
+    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
     rank: 1000
     alias: thirdPartyDistributionConsent
     owner: Virus
@@ -933,7 +933,7 @@ attributes:
       material, including restrictions on research, commercial use, or distribution,
       considering any potential concerns about the related genetic material
     title: usage restrictions
-    from_schema: https://evora-project.eu/
+    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
     rank: 1000
     alias: usageRestrictions
     owner: Virus
@@ -948,7 +948,7 @@ attributes:
       page on the provider's website and/or allows to place an order about it or at
       least describe the process to place an order/enquiry
     title: access point URL
-    from_schema: https://evora-project.eu/
+    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
     exact_mappings:
     - dcat:landingPage
     rank: 1000
@@ -964,7 +964,7 @@ attributes:
     description: The reference or the stock keeping unit of the service or item provided
       in the provider's catalogue
     title: ref-SKU
-    from_schema: https://evora-project.eu/
+    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
     exact_mappings:
     - dct:identifier
     rank: 1000
@@ -983,7 +983,7 @@ attributes:
     comments:
     - 'The description of what will be delivered to the end-user (e.g.: packaging,
       quantity...)'
-    from_schema: https://evora-project.eu/
+    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
     rank: 1000
     alias: unitDefinition
     owner: Virus
@@ -996,7 +996,7 @@ attributes:
     name: category
     description: The main category of the service or product
     title: category
-    from_schema: https://evora-project.eu/
+    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
     exact_mappings:
     - dcat:theme
     rank: 1000
@@ -1012,7 +1012,7 @@ attributes:
     description: Any category apart from its main category in which this product or
       service can fit
     title: additional category
-    from_schema: https://evora-project.eu/
+    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
     exact_mappings:
     - dcat:theme
     rank: 1000
@@ -1031,7 +1031,7 @@ attributes:
     - The cost per access may not be defined or be specific to a request, so it has
       to be a xsd:string instead of an xsd:float as initialy suggested to permit description
       of cost as conditional to what is requested
-    from_schema: https://evora-project.eu/
+    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
     rank: 1000
     ifabsent: string(on request)
     alias: unitCost
@@ -1046,7 +1046,7 @@ attributes:
     description: Information that permits to assess the quality level of what will
       be provided
     title: quality grading
-    from_schema: https://evora-project.eu/
+    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
     rank: 1000
     alias: qualityGrading
     owner: Virus
@@ -1065,7 +1065,7 @@ attributes:
       some cases(e.g: FAIRSHARING) there may have no direct pathogen related but simply
       a taxonomic information .... the default value should be the root of virology:
       Viruses'
-    from_schema: https://evora-project.eu/
+    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
     rank: 1000
     alias: pathogenIdentification
     owner: Virus
@@ -1078,7 +1078,7 @@ attributes:
     name: relatedDOI
     description: Any DOI that can be related
     title: DOI
-    from_schema: https://evora-project.eu/
+    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
     aliases:
     - DOI
     close_mappings:
@@ -1098,7 +1098,7 @@ attributes:
       a biological agent guiding its initial handling in labs according to the risk
       group classification defined by the WHO laboratory biosafety manual
     title: risk group
-    from_schema: https://evora-project.eu/
+    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
     aliases:
     - risk group
     close_mappings:
@@ -1118,7 +1118,7 @@ attributes:
       contributes to protecting people and the environment from biohazards while accessing
       this product or service
     title: biosafety restrictions
-    from_schema: https://evora-project.eu/
+    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
     rank: 1000
     alias: biosafetyRestrictions
     owner: Virus
@@ -1134,7 +1134,7 @@ attributes:
     title: can it be used to produce GMO
     comments:
     - Set to TRUE if it can produce GMO
-    from_schema: https://evora-project.eu/
+    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
     rank: 1000
     alias: canItBeUsedToProduceGMO
     owner: Virus
@@ -1147,7 +1147,7 @@ attributes:
     name: provider
     description: A provider of this product or service, as a specific organization
     title: provider
-    from_schema: https://evora-project.eu/
+    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
     rank: 1000
     alias: provider
     owner: Virus
@@ -1160,7 +1160,7 @@ attributes:
     name: collection
     description: The collection(s) to which belongs this item
     title: collection
-    from_schema: https://evora-project.eu/
+    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
     aliases:
     - catalog
     rank: 1000
@@ -1175,7 +1175,7 @@ attributes:
     name: keywords
     description: List of terms used to tag and categorize this Item
     title: keywords
-    from_schema: https://evora-project.eu/
+    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
     exact_mappings:
     - dcat:keyword
     rank: 1000
@@ -1193,7 +1193,7 @@ attributes:
     title: availability
     comments:
     - Possible availabilities may differ from a project to another
-    from_schema: https://evora-project.eu/
+    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
     rank: 1000
     ifabsent: string(on request)
     alias: availability
@@ -1207,7 +1207,7 @@ attributes:
     name: complementaryDocument
     description: Any complementary document that can be related to this Item
     title: complementary document
-    from_schema: https://evora-project.eu/
+    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
     rank: 1000
     alias: complementaryDocument
     owner: Virus
@@ -1223,7 +1223,7 @@ attributes:
       and maintenance of what is provided, including best practices, troubleshooting
       tips, and procedural instructions
     title: technical recommendation
-    from_schema: https://evora-project.eu/
+    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
     rank: 1000
     alias: technicalRecommendation
     owner: Virus
@@ -1236,7 +1236,7 @@ attributes:
     name: productPicture
     description: A picture that can represent the item
     title: product picture
-    from_schema: https://evora-project.eu/
+    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
     rank: 1000
     alias: productPicture
     owner: Virus
@@ -1250,7 +1250,7 @@ attributes:
     description: A reference that permits to retrieve another related item from an
       external provider
     title: external related reference
-    from_schema: https://evora-project.eu/
+    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
     rank: 1000
     alias: externalRelatedReference
     owner: Virus
@@ -1264,7 +1264,7 @@ attributes:
     description: Any certification related to the current product or service; e.g.,
       ISO certification
     title: certification
-    from_schema: https://evora-project.eu/
+    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
     close_mappings:
     - dct:conformsTo
     rank: 1000
@@ -1279,7 +1279,7 @@ attributes:
     name: internalReference
     description: Any reference or indication to be used for local retrieval purpose
     title: internal reference
-    from_schema: https://evora-project.eu/
+    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
     rank: 1000
     alias: internalReference
     owner: Virus
@@ -1292,7 +1292,7 @@ attributes:
     name: note
     description: An aditional information as a textual comment
     title: note
-    from_schema: https://evora-project.eu/
+    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
     rank: 1000
     alias: note
     owner: Virus
@@ -1305,7 +1305,7 @@ attributes:
     name: contactPoint
     description: An information that allows someone to establish communication
     title: contact point
-    from_schema: https://evora-project.eu/
+    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
     exact_mappings:
     - dcat:contactPoint
     rank: 1000
@@ -1328,7 +1328,7 @@ attributes:
       "Virus name", "virus host type", "collection year", "country of collection"
       ex "suspected epidemiological origin", "genotype", "strain", "variant name or
       specific feature"'
-    from_schema: https://evora-project.eu/
+    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
     exact_mappings:
     - dct:title
     close_mappings:
@@ -1351,7 +1351,7 @@ attributes:
       present the item.
 
       '
-    from_schema: https://evora-project.eu/
+    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
     exact_mappings:
     - dct:description
     rank: 1000

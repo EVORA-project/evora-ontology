@@ -4,7 +4,7 @@
 
 
 
-URI: [EVORA:streetAddress](https://evora-project.eu/streetAddress)
+URI: [EVORA:streetAddress](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#streetAddress)
 
 
 
@@ -45,7 +45,7 @@ URI: [EVORA:streetAddress](https://evora-project.eu/streetAddress)
 ### Schema Source
 
 
-* from schema: https://evora-project.eu/
+* from schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
 
 
 
@@ -65,7 +65,7 @@ URI: [EVORA:streetAddress](https://evora-project.eu/streetAddress)
 <details>
 ```yaml
 name: streetAddress
-from_schema: https://evora-project.eu/
+from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
 rank: 1000
 alias: streetAddress
 domain_of:

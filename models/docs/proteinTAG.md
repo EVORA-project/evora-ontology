@@ -4,7 +4,7 @@
 
 
 
-URI: [EVORA:proteinTAG](https://evora-project.eu/proteinTAG)
+URI: [EVORA:proteinTAG](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#proteinTAG)
 
 
 
@@ -45,7 +45,7 @@ URI: [EVORA:proteinTAG](https://evora-project.eu/proteinTAG)
 ### Schema Source
 
 
-* from schema: https://evora-project.eu/
+* from schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
 
 
 
@@ -65,7 +65,7 @@ URI: [EVORA:proteinTAG](https://evora-project.eu/proteinTAG)
 <details>
 ```yaml
 name: proteinTAG
-from_schema: https://evora-project.eu/
+from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
 rank: 1000
 alias: proteinTAG
 domain_of:

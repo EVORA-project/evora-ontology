@@ -4,7 +4,7 @@
 
 
 
-URI: [EVORA:sourceOfInformation](https://evora-project.eu/sourceOfInformation)
+URI: [EVORA:sourceOfInformation](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#sourceOfInformation)
 
 
 
@@ -18,10 +18,10 @@ URI: [EVORA:sourceOfInformation](https://evora-project.eu/sourceOfInformation)
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [Variant](Variant.md) | An organism with one or more new mutations is referred to as a “variant” of t... |  no  |
-| [AlternateName](AlternateName.md) | List of alternate names for things |  yes  |
 | [VirusName](VirusName.md) | A virus vernacular name or a name that describes a group of viruses |  no  |
+| [AlternateName](AlternateName.md) | List of alternate names for things |  yes  |
 | [CommonName](CommonName.md) | Vernacular name that is the name used in everyday language to refer to an org... |  yes  |
+| [Variant](Variant.md) | An organism with one or more new mutations is referred to as a “variant” of t... |  no  |
 
 
 
@@ -48,7 +48,7 @@ URI: [EVORA:sourceOfInformation](https://evora-project.eu/sourceOfInformation)
 ### Schema Source
 
 
-* from schema: https://evora-project.eu/
+* from schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
 
 
 
@@ -68,7 +68,7 @@ URI: [EVORA:sourceOfInformation](https://evora-project.eu/sourceOfInformation)
 <details>
 ```yaml
 name: sourceOfInformation
-from_schema: https://evora-project.eu/
+from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
 rank: 1000
 alias: sourceOfInformation
 domain_of:

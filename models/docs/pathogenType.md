@@ -4,7 +4,7 @@
 
 
 
-URI: [EVORA:pathogenType](https://evora-project.eu/pathogenType)
+URI: [EVORA:pathogenType](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#pathogenType)
 
 
 
@@ -45,7 +45,7 @@ URI: [EVORA:pathogenType](https://evora-project.eu/pathogenType)
 ### Schema Source
 
 
-* from schema: https://evora-project.eu/
+* from schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
 
 
 
@@ -65,7 +65,7 @@ URI: [EVORA:pathogenType](https://evora-project.eu/pathogenType)
 <details>
 ```yaml
 name: pathogenType
-from_schema: https://evora-project.eu/
+from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
 rank: 1000
 alias: pathogenType
 domain_of:

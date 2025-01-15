@@ -4,7 +4,7 @@
 
 
 
-URI: [EVORA:contentType](https://evora-project.eu/contentType)
+URI: [EVORA:contentType](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#contentType)
 
 
 
@@ -45,7 +45,7 @@ URI: [EVORA:contentType](https://evora-project.eu/contentType)
 ### Schema Source
 
 
-* from schema: https://evora-project.eu/
+* from schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
 
 
 
@@ -65,7 +65,7 @@ URI: [EVORA:contentType](https://evora-project.eu/contentType)
 <details>
 ```yaml
 name: contentType
-from_schema: https://evora-project.eu/
+from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
 rank: 1000
 alias: contentType
 domain_of:

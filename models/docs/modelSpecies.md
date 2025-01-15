@@ -4,7 +4,7 @@
 
 
 
-URI: [EVORA:modelSpecies](https://evora-project.eu/modelSpecies)
+URI: [EVORA:modelSpecies](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#modelSpecies)
 
 
 
@@ -45,7 +45,7 @@ URI: [EVORA:modelSpecies](https://evora-project.eu/modelSpecies)
 ### Schema Source
 
 
-* from schema: https://evora-project.eu/
+* from schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
 
 
 
@@ -65,7 +65,7 @@ URI: [EVORA:modelSpecies](https://evora-project.eu/modelSpecies)
 <details>
 ```yaml
 name: modelSpecies
-from_schema: https://evora-project.eu/
+from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
 rank: 1000
 alias: modelSpecies
 domain_of:

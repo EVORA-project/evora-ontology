@@ -9,7 +9,7 @@ _A reference that permits to retrieve an item from an external provider_
 
 
 
-URI: [EVORA:ExternalRelatedReference](https://evora-project.eu/ExternalRelatedReference)
+URI: [EVORA:ExternalRelatedReference](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#ExternalRelatedReference)
 
 
 
@@ -94,7 +94,7 @@ URI: [EVORA:ExternalRelatedReference](https://evora-project.eu/ExternalRelatedRe
 ### Schema Source
 
 
-* from schema: https://evora-project.eu/
+* from schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
 
 
 
@@ -123,7 +123,7 @@ URI: [EVORA:ExternalRelatedReference](https://evora-project.eu/ExternalRelatedRe
 name: ExternalRelatedReference
 description: A reference that permits to retrieve an item from an external provider
 title: External related reference
-from_schema: https://evora-project.eu/
+from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
 is_a: Dataset
 slots:
 - reference
@@ -181,7 +181,7 @@ slot_usage:
 name: ExternalRelatedReference
 description: A reference that permits to retrieve an item from an external provider
 title: External related reference
-from_schema: https://evora-project.eu/
+from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
 is_a: Dataset
 slot_usage:
   reference:
@@ -228,7 +228,7 @@ attributes:
     name: reference
     description: The identifier reference of the connected external item
     title: reference
-    from_schema: https://evora-project.eu/
+    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
     close_mappings:
     - dct:identifier
     rank: 1000
@@ -245,7 +245,7 @@ attributes:
     title: reference label
     comments:
     - e.g., 'Infravec2 related product'
-    from_schema: https://evora-project.eu/
+    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
     close_mappings:
     - dct:title
     rank: 1000
@@ -261,7 +261,7 @@ attributes:
     description: The url prefix that once completed with the reference will lead to
       the linked external resource
     title: reference provider prefix
-    from_schema: https://evora-project.eu/
+    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
     close_mappings:
     - dcat:landingPage
     rank: 1000
@@ -276,7 +276,7 @@ attributes:
     name: referenceProviderName
     description: The name for the reference provider
     title: reference provider name
-    from_schema: https://evora-project.eu/
+    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
     close_mappings:
     - dct:publisher
     rank: 1000

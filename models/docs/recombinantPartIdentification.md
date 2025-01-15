@@ -4,7 +4,7 @@
 
 
 
-URI: [EVORA:recombinantPartIdentification](https://evora-project.eu/recombinantPartIdentification)
+URI: [EVORA:recombinantPartIdentification](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#recombinantPartIdentification)
 
 
 
@@ -47,7 +47,7 @@ URI: [EVORA:recombinantPartIdentification](https://evora-project.eu/recombinantP
 ### Schema Source
 
 
-* from schema: https://evora-project.eu/
+* from schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
 
 
 
@@ -67,7 +67,7 @@ URI: [EVORA:recombinantPartIdentification](https://evora-project.eu/recombinantP
 <details>
 ```yaml
 name: recombinantPartIdentification
-from_schema: https://evora-project.eu/
+from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
 rank: 1000
 alias: recombinantPartIdentification
 domain_of:

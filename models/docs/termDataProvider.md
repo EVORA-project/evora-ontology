@@ -4,7 +4,7 @@
 
 
 
-URI: [EVORA:termDataProvider](https://evora-project.eu/termDataProvider)
+URI: [EVORA:termDataProvider](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#termDataProvider)
 
 
 
@@ -45,7 +45,7 @@ URI: [EVORA:termDataProvider](https://evora-project.eu/termDataProvider)
 ### Schema Source
 
 
-* from schema: https://evora-project.eu/
+* from schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
 
 
 
@@ -65,7 +65,7 @@ URI: [EVORA:termDataProvider](https://evora-project.eu/termDataProvider)
 <details>
 ```yaml
 name: termDataProvider
-from_schema: https://evora-project.eu/
+from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
 rank: 1000
 alias: termDataProvider
 domain_of:

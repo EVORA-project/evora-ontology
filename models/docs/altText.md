@@ -4,7 +4,7 @@
 
 
 
-URI: [EVORA:altText](https://evora-project.eu/altText)
+URI: [EVORA:altText](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#altText)
 
 
 
@@ -45,7 +45,7 @@ URI: [EVORA:altText](https://evora-project.eu/altText)
 ### Schema Source
 
 
-* from schema: https://evora-project.eu/
+* from schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
 
 
 
@@ -65,7 +65,7 @@ URI: [EVORA:altText](https://evora-project.eu/altText)
 <details>
 ```yaml
 name: altText
-from_schema: https://evora-project.eu/
+from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
 rank: 1000
 alias: altText
 domain_of:

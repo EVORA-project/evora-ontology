@@ -4,7 +4,7 @@
 
 
 
-URI: [EVORA:mycoplasmicContent](https://evora-project.eu/mycoplasmicContent)
+URI: [EVORA:mycoplasmicContent](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#mycoplasmicContent)
 
 
 
@@ -45,7 +45,7 @@ URI: [EVORA:mycoplasmicContent](https://evora-project.eu/mycoplasmicContent)
 ### Schema Source
 
 
-* from schema: https://evora-project.eu/
+* from schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
 
 
 
@@ -65,7 +65,7 @@ URI: [EVORA:mycoplasmicContent](https://evora-project.eu/mycoplasmicContent)
 <details>
 ```yaml
 name: mycoplasmicContent
-from_schema: https://evora-project.eu/
+from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
 rank: 1000
 alias: mycoplasmicContent
 domain_of:

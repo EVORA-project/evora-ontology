@@ -4,7 +4,7 @@
 
 
 
-URI: [EVORA:hybridomaDescription](https://evora-project.eu/hybridomaDescription)
+URI: [EVORA:hybridomaDescription](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#hybridomaDescription)
 
 
 
@@ -45,7 +45,7 @@ URI: [EVORA:hybridomaDescription](https://evora-project.eu/hybridomaDescription)
 ### Schema Source
 
 
-* from schema: https://evora-project.eu/
+* from schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
 
 
 
@@ -65,7 +65,7 @@ URI: [EVORA:hybridomaDescription](https://evora-project.eu/hybridomaDescription)
 <details>
 ```yaml
 name: hybridomaDescription
-from_schema: https://evora-project.eu/
+from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
 rank: 1000
 alias: hybridomaDescription
 domain_of:

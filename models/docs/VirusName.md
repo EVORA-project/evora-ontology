@@ -9,7 +9,7 @@ _A virus vernacular name or a name that describes a group of viruses_
 
 
 
-URI: [EVORA:VirusName](https://evora-project.eu/VirusName)
+URI: [EVORA:VirusName](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#VirusName)
 
 
 
@@ -107,7 +107,7 @@ URI: [EVORA:VirusName](https://evora-project.eu/VirusName)
 ### Schema Source
 
 
-* from schema: https://evora-project.eu/
+* from schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
 
 
 
@@ -137,7 +137,7 @@ URI: [EVORA:VirusName](https://evora-project.eu/VirusName)
 name: VirusName
 description: A virus vernacular name or a name that describes a group of viruses
 title: Virus Name
-from_schema: https://evora-project.eu/
+from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
 aliases:
 - virus name
 close_mappings:
@@ -154,7 +154,7 @@ is_a: CommonName
 name: VirusName
 description: A virus vernacular name or a name that describes a group of viruses
 title: Virus Name
-from_schema: https://evora-project.eu/
+from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
 aliases:
 - virus name
 close_mappings:
@@ -170,7 +170,7 @@ attributes:
       serve as keywords arround the pathogen name for search and as a bridge with
       other projects that are still using other naming systems or taxonomies e.g.
       the NCBI taxonomy
-    from_schema: https://evora-project.eu/
+    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
     aliases:
     - alternative name
     close_mappings:
@@ -190,7 +190,7 @@ attributes:
     description: The name of the origin from which knowledge is obtained. This can
       include any entity that provides information
     title: source of information
-    from_schema: https://evora-project.eu/
+    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
     aliases:
     - stated in
     close_mappings:
@@ -210,7 +210,7 @@ attributes:
       processed in ascending order. This weight helps prioritize content when organizing
       or processing data. Its value can be negative, with a default set to 0
     title: weight
-    from_schema: https://evora-project.eu/
+    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
     close_mappings:
     - adms:status
     rank: 1000
@@ -227,7 +227,7 @@ attributes:
     name: inVocabulary
     description: Terms belong to a specific vocabulary
     title: in Vocabulary
-    from_schema: https://evora-project.eu/
+    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
     aliases:
     - catalog
     close_mappings:
@@ -251,7 +251,7 @@ attributes:
       "Virus name", "virus host type", "collection year", "country of collection"
       ex "suspected epidemiological origin", "genotype", "strain", "variant name or
       specific feature"'
-    from_schema: https://evora-project.eu/
+    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
     exact_mappings:
     - dct:title
     close_mappings:
@@ -274,7 +274,7 @@ attributes:
       present the item.
 
       '
-    from_schema: https://evora-project.eu/
+    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
     exact_mappings:
     - dct:description
     rank: 1000

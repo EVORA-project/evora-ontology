@@ -4,7 +4,7 @@
 
 
 
-URI: [EVORA:pasmidSelection](https://evora-project.eu/pasmidSelection)
+URI: [EVORA:pasmidSelection](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#pasmidSelection)
 
 
 
@@ -45,7 +45,7 @@ URI: [EVORA:pasmidSelection](https://evora-project.eu/pasmidSelection)
 ### Schema Source
 
 
-* from schema: https://evora-project.eu/
+* from schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
 
 
 
@@ -65,7 +65,7 @@ URI: [EVORA:pasmidSelection](https://evora-project.eu/pasmidSelection)
 <details>
 ```yaml
 name: pasmidSelection
-from_schema: https://evora-project.eu/
+from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
 rank: 1000
 alias: pasmidSelection
 domain_of:

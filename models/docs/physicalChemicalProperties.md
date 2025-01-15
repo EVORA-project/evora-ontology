@@ -4,7 +4,7 @@
 
 
 
-URI: [EVORA:physicalChemicalProperties](https://evora-project.eu/physicalChemicalProperties)
+URI: [EVORA:physicalChemicalProperties](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#physicalChemicalProperties)
 
 
 
@@ -45,7 +45,7 @@ URI: [EVORA:physicalChemicalProperties](https://evora-project.eu/physicalChemica
 ### Schema Source
 
 
-* from schema: https://evora-project.eu/
+* from schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
 
 
 
@@ -65,7 +65,7 @@ URI: [EVORA:physicalChemicalProperties](https://evora-project.eu/physicalChemica
 <details>
 ```yaml
 name: physicalChemicalProperties
-from_schema: https://evora-project.eu/
+from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
 rank: 1000
 alias: physicalChemicalProperties
 domain_of:

@@ -11,7 +11,7 @@ _Information on the origin of a unitary, cohesive part that is part of, or const
 * __NOTE__: this is an abstract class and should not be instantiated directly
 
 
-URI: [EVORA:BiologicalPartOrigin](https://evora-project.eu/BiologicalPartOrigin)
+URI: [EVORA:BiologicalPartOrigin](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#BiologicalPartOrigin)
 
 
 
@@ -91,7 +91,7 @@ URI: [EVORA:BiologicalPartOrigin](https://evora-project.eu/BiologicalPartOrigin)
 ### Schema Source
 
 
-* from schema: https://evora-project.eu/
+* from schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
 
 
 
@@ -122,7 +122,7 @@ description: Information on the origin of a unitary, cohesive part that is part 
   or constitutes the biological material. It can be multiple parts in case of a recombinant
   biological material
 title: Biological part origin
-from_schema: https://evora-project.eu/
+from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
 is_a: Dataset
 abstract: true
 slots:
@@ -161,7 +161,7 @@ description: Information on the origin of a unitary, cohesive part that is part 
   or constitutes the biological material. It can be multiple parts in case of a recombinant
   biological material
 title: Biological part origin
-from_schema: https://evora-project.eu/
+from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
 is_a: Dataset
 abstract: true
 slot_usage:
@@ -192,7 +192,7 @@ attributes:
     comments:
     - Information not required if the current biological part constitutes the complete
       biological material
-    from_schema: https://evora-project.eu/
+    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
     rank: 1000
     alias: recombinantPartIdentification
     owner: BiologicalPartOrigin
@@ -207,7 +207,7 @@ attributes:
       applicable if the genetic resource falls under Access and Benefit-Sharing (ABS)
       regulations
     title: access to physical genetic resource
-    from_schema: https://evora-project.eu/
+    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
     rank: 1000
     alias: accessToPhysicalGeneticResource
     owner: BiologicalPartOrigin

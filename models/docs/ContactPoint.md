@@ -9,7 +9,7 @@ _Entity serving as focal point of information_
 
 
 
-URI: [EVORA:ContactPoint](https://evora-project.eu/ContactPoint)
+URI: [EVORA:ContactPoint](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#ContactPoint)
 
 
 
@@ -131,7 +131,7 @@ URI: [EVORA:ContactPoint](https://evora-project.eu/ContactPoint)
 ### Schema Source
 
 
-* from schema: https://evora-project.eu/
+* from schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
 
 
 
@@ -161,7 +161,7 @@ URI: [EVORA:ContactPoint](https://evora-project.eu/ContactPoint)
 name: ContactPoint
 description: Entity serving as focal point of information
 title: Contact Point
-from_schema: https://evora-project.eu/
+from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
 aliases:
 - contact point
 close_mappings:
@@ -271,7 +271,7 @@ slot_usage:
 name: ContactPoint
 description: Entity serving as focal point of information
 title: Contact Point
-from_schema: https://evora-project.eu/
+from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
 aliases:
 - contact point
 close_mappings:
@@ -366,7 +366,7 @@ attributes:
     name: email
     description: Email address
     title: email
-    from_schema: https://evora-project.eu/
+    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
     close_mappings:
     - schema:email
     - vcard:email
@@ -382,7 +382,7 @@ attributes:
     name: telephone
     description: The telephone number
     title: telephone
-    from_schema: https://evora-project.eu/
+    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
     close_mappings:
     - schema:telephone
     - vcard:telephone
@@ -398,7 +398,7 @@ attributes:
     name: streetAddress
     description: The building/apartment number and the street name
     title: street address
-    from_schema: https://evora-project.eu/
+    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
     close_mappings:
     - schema:streetAddress
     - vcard:hasStreetAddress
@@ -415,7 +415,7 @@ attributes:
     description: The locality in which the street address is, and which is in the
       region. e.g, the city
     title: locality/city
-    from_schema: https://evora-project.eu/
+    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
     close_mappings:
     - schema:addressLocality
     - vcard:hasLocality
@@ -432,7 +432,7 @@ attributes:
     description: The region in which the locality is, and which is in the country.
       For example, California or another appropriate first-level Administrative division
     title: region
-    from_schema: https://evora-project.eu/
+    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
     close_mappings:
     - schema:addressRegion
     - vcard:hasRegion
@@ -448,7 +448,7 @@ attributes:
     name: postalCode
     description: The postal code
     title: postal code
-    from_schema: https://evora-project.eu/
+    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
     close_mappings:
     - schema:postalCode
     - vcard:hasPostalCode
@@ -464,7 +464,7 @@ attributes:
     name: addressCountry
     description: The country as of  ISO 3166
     title: address Country
-    from_schema: https://evora-project.eu/
+    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
     close_mappings:
     - schema:addressCountry
     - vcard:hasCountryName
@@ -481,7 +481,7 @@ attributes:
     description: Unique persistent identifier for a person, provided by the Open Researcher
       and Contributor ID (ORCID) organisation
     title: ORCID iD
-    from_schema: https://evora-project.eu/
+    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
     exact_mappings:
     - IAO:0000708
     rank: 1000
@@ -504,7 +504,7 @@ attributes:
       "Virus name", "virus host type", "collection year", "country of collection"
       ex "suspected epidemiological origin", "genotype", "strain", "variant name or
       specific feature"'
-    from_schema: https://evora-project.eu/
+    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
     exact_mappings:
     - dct:title
     close_mappings:
@@ -527,7 +527,7 @@ attributes:
       present the item.
 
       '
-    from_schema: https://evora-project.eu/
+    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
     exact_mappings:
     - dct:description
     rank: 1000

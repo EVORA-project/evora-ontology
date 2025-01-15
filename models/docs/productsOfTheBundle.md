@@ -4,7 +4,7 @@
 
 
 
-URI: [EVORA:productsOfTheBundle](https://evora-project.eu/productsOfTheBundle)
+URI: [EVORA:productsOfTheBundle](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#productsOfTheBundle)
 
 
 
@@ -45,7 +45,7 @@ URI: [EVORA:productsOfTheBundle](https://evora-project.eu/productsOfTheBundle)
 ### Schema Source
 
 
-* from schema: https://evora-project.eu/
+* from schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
 
 
 
@@ -65,7 +65,7 @@ URI: [EVORA:productsOfTheBundle](https://evora-project.eu/productsOfTheBundle)
 <details>
 ```yaml
 name: productsOfTheBundle
-from_schema: https://evora-project.eu/
+from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
 rank: 1000
 alias: productsOfTheBundle
 domain_of:

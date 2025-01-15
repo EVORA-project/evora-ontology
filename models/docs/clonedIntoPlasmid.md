@@ -4,7 +4,7 @@
 
 
 
-URI: [EVORA:clonedIntoPlasmid](https://evora-project.eu/clonedIntoPlasmid)
+URI: [EVORA:clonedIntoPlasmid](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#clonedIntoPlasmid)
 
 
 
@@ -45,7 +45,7 @@ URI: [EVORA:clonedIntoPlasmid](https://evora-project.eu/clonedIntoPlasmid)
 ### Schema Source
 
 
-* from schema: https://evora-project.eu/
+* from schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
 
 
 
@@ -65,7 +65,7 @@ URI: [EVORA:clonedIntoPlasmid](https://evora-project.eu/clonedIntoPlasmid)
 <details>
 ```yaml
 name: clonedIntoPlasmid
-from_schema: https://evora-project.eu/
+from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
 rank: 1000
 alias: clonedIntoPlasmid
 domain_of:

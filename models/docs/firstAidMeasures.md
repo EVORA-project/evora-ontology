@@ -4,7 +4,7 @@
 
 
 
-URI: [EVORA:firstAidMeasures](https://evora-project.eu/firstAidMeasures)
+URI: [EVORA:firstAidMeasures](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#firstAidMeasures)
 
 
 
@@ -45,7 +45,7 @@ URI: [EVORA:firstAidMeasures](https://evora-project.eu/firstAidMeasures)
 ### Schema Source
 
 
-* from schema: https://evora-project.eu/
+* from schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
 
 
 
@@ -65,7 +65,7 @@ URI: [EVORA:firstAidMeasures](https://evora-project.eu/firstAidMeasures)
 <details>
 ```yaml
 name: firstAidMeasures
-from_schema: https://evora-project.eu/
+from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
 rank: 1000
 alias: firstAidMeasures
 domain_of:

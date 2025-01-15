@@ -4,7 +4,7 @@
 
 
 
-URI: [EVORA:sequenceFASTA](https://evora-project.eu/sequenceFASTA)
+URI: [EVORA:sequenceFASTA](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#sequenceFASTA)
 
 
 
@@ -45,7 +45,7 @@ URI: [EVORA:sequenceFASTA](https://evora-project.eu/sequenceFASTA)
 ### Schema Source
 
 
-* from schema: https://evora-project.eu/
+* from schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
 
 
 
@@ -65,7 +65,7 @@ URI: [EVORA:sequenceFASTA](https://evora-project.eu/sequenceFASTA)
 <details>
 ```yaml
 name: sequenceFASTA
-from_schema: https://evora-project.eu/
+from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
 rank: 1000
 alias: sequenceFASTA
 domain_of:

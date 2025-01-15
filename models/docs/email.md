@@ -4,7 +4,7 @@
 
 
 
-URI: [EVORA:email](https://evora-project.eu/email)
+URI: [EVORA:email](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#email)
 
 
 
@@ -45,7 +45,7 @@ URI: [EVORA:email](https://evora-project.eu/email)
 ### Schema Source
 
 
-* from schema: https://evora-project.eu/
+* from schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
 
 
 
@@ -65,7 +65,7 @@ URI: [EVORA:email](https://evora-project.eu/email)
 <details>
 ```yaml
 name: email
-from_schema: https://evora-project.eu/
+from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
 rank: 1000
 alias: email
 domain_of:

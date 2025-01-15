@@ -9,7 +9,7 @@ _Subclass of File representing sound recordings or audio tracks_
 
 
 
-URI: [EVORA:Audio](https://evora-project.eu/Audio)
+URI: [EVORA:Audio](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#Audio)
 
 
 
@@ -88,7 +88,7 @@ URI: [EVORA:Audio](https://evora-project.eu/Audio)
 ### Schema Source
 
 
-* from schema: https://evora-project.eu/
+* from schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
 
 
 
@@ -118,7 +118,7 @@ URI: [EVORA:Audio](https://evora-project.eu/Audio)
 name: Audio
 description: Subclass of File representing sound recordings or audio tracks
 title: Audio
-from_schema: https://evora-project.eu/
+from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
 aliases:
 - audio file
 close_mappings:
@@ -135,7 +135,7 @@ is_a: File
 name: Audio
 description: Subclass of File representing sound recordings or audio tracks
 title: Audio
-from_schema: https://evora-project.eu/
+from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
 aliases:
 - audio file
 close_mappings:
@@ -147,7 +147,7 @@ attributes:
     description: The web address or location where the file content is stored and
       can be accessed or downloaded.
     title: content URL
-    from_schema: https://evora-project.eu/
+    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
     rank: 1000
     alias: contentURL
     owner: Audio
@@ -161,7 +161,7 @@ attributes:
     description: The file type or format that indicates how the data within the file
       is structured
     title: format
-    from_schema: https://evora-project.eu/
+    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
     rank: 1000
     alias: format
     owner: Audio
@@ -175,7 +175,7 @@ attributes:
     description: The legal terms and conditions under which the file can be used,
       shared, or distributed, indicating any restrictions or permissions.
     title: license
-    from_schema: https://evora-project.eu/
+    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
     rank: 1000
     alias: license
     owner: Audio
@@ -196,7 +196,7 @@ attributes:
       "Virus name", "virus host type", "collection year", "country of collection"
       ex "suspected epidemiological origin", "genotype", "strain", "variant name or
       specific feature"'
-    from_schema: https://evora-project.eu/
+    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
     exact_mappings:
     - dct:title
     close_mappings:
@@ -219,7 +219,7 @@ attributes:
       present the item.
 
       '
-    from_schema: https://evora-project.eu/
+    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
     exact_mappings:
     - dct:description
     rank: 1000

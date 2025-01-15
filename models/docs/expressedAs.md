@@ -4,7 +4,7 @@
 
 
 
-URI: [EVORA:expressedAs](https://evora-project.eu/expressedAs)
+URI: [EVORA:expressedAs](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#expressedAs)
 
 
 
@@ -45,7 +45,7 @@ URI: [EVORA:expressedAs](https://evora-project.eu/expressedAs)
 ### Schema Source
 
 
-* from schema: https://evora-project.eu/
+* from schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
 
 
 
@@ -65,7 +65,7 @@ URI: [EVORA:expressedAs](https://evora-project.eu/expressedAs)
 <details>
 ```yaml
 name: expressedAs
-from_schema: https://evora-project.eu/
+from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
 rank: 1000
 alias: expressedAs
 domain_of:

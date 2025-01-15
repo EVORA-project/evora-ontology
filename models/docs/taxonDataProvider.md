@@ -4,7 +4,7 @@
 
 
 
-URI: [EVORA:taxonDataProvider](https://evora-project.eu/taxonDataProvider)
+URI: [EVORA:taxonDataProvider](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#taxonDataProvider)
 
 
 
@@ -45,7 +45,7 @@ URI: [EVORA:taxonDataProvider](https://evora-project.eu/taxonDataProvider)
 ### Schema Source
 
 
-* from schema: https://evora-project.eu/
+* from schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
 
 
 
@@ -65,7 +65,7 @@ URI: [EVORA:taxonDataProvider](https://evora-project.eu/taxonDataProvider)
 <details>
 ```yaml
 name: taxonDataProvider
-from_schema: https://evora-project.eu/
+from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
 rank: 1000
 alias: taxonDataProvider
 domain_of:

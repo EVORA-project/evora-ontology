@@ -4,7 +4,7 @@
 
 
 
-URI: [EVORA:unitDefinition](https://evora-project.eu/unitDefinition)
+URI: [EVORA:unitDefinition](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#unitDefinition)
 
 
 
@@ -18,22 +18,22 @@ URI: [EVORA:unitDefinition](https://evora-project.eu/unitDefinition)
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [Protein](Protein.md) | A protein as a derived product from a pathogen |  no  |
-| [Fungus](Fungus.md) | The fungus as a biological material |  no  |
-| [DetectionKit](DetectionKit.md) | A detection kit for specific pathogens |  no  |
-| [NucleicAcid](NucleicAcid.md) | Nucleic acid related to a pathogen |  no  |
-| [Product](Product.md) | A product |  no  |
-| [Virus](Virus.md) | The virus as a biological material |  no  |
-| [ProductOrService](ProductOrService.md) | A product or a service |  yes  |
-| [Antibody](Antibody.md) | Protein that can bind to certain types of foreign bodies, such as pathogens |  no  |
-| [Service](Service.md) | A service |  no  |
-| [Bundle](Bundle.md) | A group of products |  no  |
-| [Pathogen](Pathogen.md) | Biological entity that causes disease in its host, which is typically an infe... |  no  |
-| [Hybridoma](Hybridoma.md) | An hybridoma that provides antibodies that can be related to a pathogen |  no  |
-| [Protozoan](Protozoan.md) | The protozoan as a biological material |  no  |
-| [Viroid](Viroid.md) | The viroid as a biological material |  no  |
-| [Bacterium](Bacterium.md) | The bacterium as a biological material |  no  |
 | [Prion](Prion.md) | The prion as a biological material |  no  |
+| [ProductOrService](ProductOrService.md) | A product or a service |  yes  |
+| [Virus](Virus.md) | The virus as a biological material |  no  |
+| [DetectionKit](DetectionKit.md) | A detection kit for specific pathogens |  no  |
+| [Protein](Protein.md) | A protein as a derived product from a pathogen |  no  |
+| [Bacterium](Bacterium.md) | The bacterium as a biological material |  no  |
+| [Service](Service.md) | A service |  no  |
+| [NucleicAcid](NucleicAcid.md) | Nucleic acid related to a pathogen |  no  |
+| [Bundle](Bundle.md) | A group of products |  no  |
+| [Product](Product.md) | A product |  no  |
+| [Pathogen](Pathogen.md) | Biological entity that causes disease in its host, which is typically an infe... |  no  |
+| [Antibody](Antibody.md) | Protein that can bind to certain types of foreign bodies, such as pathogens |  no  |
+| [Protozoan](Protozoan.md) | The protozoan as a biological material |  no  |
+| [Fungus](Fungus.md) | The fungus as a biological material |  no  |
+| [Hybridoma](Hybridoma.md) | An hybridoma that provides antibodies that can be related to a pathogen |  no  |
+| [Viroid](Viroid.md) | The viroid as a biological material |  no  |
 
 
 
@@ -60,7 +60,7 @@ URI: [EVORA:unitDefinition](https://evora-project.eu/unitDefinition)
 ### Schema Source
 
 
-* from schema: https://evora-project.eu/
+* from schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
 
 
 
@@ -80,7 +80,7 @@ URI: [EVORA:unitDefinition](https://evora-project.eu/unitDefinition)
 <details>
 ```yaml
 name: unitDefinition
-from_schema: https://evora-project.eu/
+from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
 rank: 1000
 alias: unitDefinition
 domain_of:

@@ -4,7 +4,7 @@
 
 
 
-URI: [EVORA:collectionItem](https://evora-project.eu/collectionItem)
+URI: [EVORA:collectionItem](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#collectionItem)
 
 
 
@@ -45,7 +45,7 @@ URI: [EVORA:collectionItem](https://evora-project.eu/collectionItem)
 ### Schema Source
 
 
-* from schema: https://evora-project.eu/
+* from schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
 
 
 
@@ -65,7 +65,7 @@ URI: [EVORA:collectionItem](https://evora-project.eu/collectionItem)
 <details>
 ```yaml
 name: collectionItem
-from_schema: https://evora-project.eu/
+from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
 rank: 1000
 alias: collectionItem
 domain_of:

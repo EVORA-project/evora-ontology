@@ -4,7 +4,7 @@
 
 
 
-URI: [EVORA:contentURL](https://evora-project.eu/contentURL)
+URI: [EVORA:contentURL](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#contentURL)
 
 
 
@@ -19,10 +19,10 @@ URI: [EVORA:contentURL](https://evora-project.eu/contentURL)
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
 | [Data](Data.md) | Subclass of File representing structured or unstructured datasets, often used... |  no  |
-| [Image](Image.md) | Subclass of File representing visual content such as pictures, diagrams, or i... |  no  |
 | [Audio](Audio.md) | Subclass of File representing sound recordings or audio tracks |  no  |
-| [Document](Document.md) | Subclass of File representing textual or written files such as reports, manua... |  no  |
 | [Video](Video.md) | Subclass of File representing moving visual media, such as recordings, presen... |  no  |
+| [Document](Document.md) | Subclass of File representing textual or written files such as reports, manua... |  no  |
+| [Image](Image.md) | Subclass of File representing visual content such as pictures, diagrams, or i... |  no  |
 | [File](File.md) | Digital document or record stored in a specific format that contains data or ... |  yes  |
 
 
@@ -50,7 +50,7 @@ URI: [EVORA:contentURL](https://evora-project.eu/contentURL)
 ### Schema Source
 
 
-* from schema: https://evora-project.eu/
+* from schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
 
 
 
@@ -70,7 +70,7 @@ URI: [EVORA:contentURL](https://evora-project.eu/contentURL)
 <details>
 ```yaml
 name: contentURL
-from_schema: https://evora-project.eu/
+from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
 rank: 1000
 alias: contentURL
 domain_of:

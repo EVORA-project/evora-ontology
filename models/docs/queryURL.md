@@ -4,7 +4,7 @@
 
 
 
-URI: [EVORA:queryURL](https://evora-project.eu/queryURL)
+URI: [EVORA:queryURL](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#queryURL)
 
 
 
@@ -45,7 +45,7 @@ URI: [EVORA:queryURL](https://evora-project.eu/queryURL)
 ### Schema Source
 
 
-* from schema: https://evora-project.eu/
+* from schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
 
 
 
@@ -65,7 +65,7 @@ URI: [EVORA:queryURL](https://evora-project.eu/queryURL)
 <details>
 ```yaml
 name: queryURL
-from_schema: https://evora-project.eu/
+from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
 rank: 1000
 alias: queryURL
 domain_of:

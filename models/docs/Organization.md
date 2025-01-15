@@ -9,7 +9,7 @@ _A social entity established to meet needs or pursue specific goals_
 
 
 
-URI: [EVORA:Organization](https://evora-project.eu/Organization)
+URI: [EVORA:Organization](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#Organization)
 
 
 
@@ -124,7 +124,7 @@ URI: [EVORA:Organization](https://evora-project.eu/Organization)
 ### Schema Source
 
 
-* from schema: https://evora-project.eu/
+* from schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
 
 
 
@@ -154,7 +154,7 @@ URI: [EVORA:Organization](https://evora-project.eu/Organization)
 name: Organization
 description: A social entity established to meet needs or pursue specific goals
 title: Organization
-from_schema: https://evora-project.eu/
+from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
 aliases:
 - organization
 close_mappings:
@@ -192,7 +192,7 @@ slot_usage:
 name: Organization
 description: A social entity established to meet needs or pursue specific goals
 title: Organization
-from_schema: https://evora-project.eu/
+from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
 aliases:
 - organization
 close_mappings:
@@ -221,7 +221,7 @@ attributes:
     name: alternateName
     description: An alternate name or acronym
     title: alternate name
-    from_schema: https://evora-project.eu/
+    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
     close_mappings:
     - dwc:institutionCode
     rank: 1000
@@ -238,7 +238,7 @@ attributes:
     name: country
     description: The country of the organization
     title: country
-    from_schema: https://evora-project.eu/
+    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
     rank: 1000
     alias: country
     owner: Organization
@@ -254,7 +254,7 @@ attributes:
       and "Unpurified expression host lysate or partly purified protein" (the protein
       is either unpurified and present in the host cell lysate or only partially purified).
     title: home page
-    from_schema: https://evora-project.eu/
+    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
     rank: 1000
     alias: homePage
     owner: Organization
@@ -267,7 +267,7 @@ attributes:
     name: contactPoint
     description: An information that allows someone to establish communication
     title: contact point
-    from_schema: https://evora-project.eu/
+    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
     exact_mappings:
     - dcat:contactPoint
     rank: 1000
@@ -283,7 +283,7 @@ attributes:
     name: logo
     description: A path or URL to the related logo
     title: logo
-    from_schema: https://evora-project.eu/
+    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
     rank: 1000
     alias: logo
     owner: Organization
@@ -305,7 +305,7 @@ attributes:
       "Virus name", "virus host type", "collection year", "country of collection"
       ex "suspected epidemiological origin", "genotype", "strain", "variant name or
       specific feature"'
-    from_schema: https://evora-project.eu/
+    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
     exact_mappings:
     - dct:title
     close_mappings:
@@ -328,7 +328,7 @@ attributes:
       present the item.
 
       '
-    from_schema: https://evora-project.eu/
+    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
     exact_mappings:
     - dct:description
     rank: 1000

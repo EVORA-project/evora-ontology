@@ -4,7 +4,7 @@
 
 
 
-URI: [EVORA:journal](https://evora-project.eu/journal)
+URI: [EVORA:journal](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#journal)
 
 
 
@@ -45,7 +45,7 @@ URI: [EVORA:journal](https://evora-project.eu/journal)
 ### Schema Source
 
 
-* from schema: https://evora-project.eu/
+* from schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
 
 
 
@@ -65,7 +65,7 @@ URI: [EVORA:journal](https://evora-project.eu/journal)
 <details>
 ```yaml
 name: journal
-from_schema: https://evora-project.eu/
+from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
 rank: 1000
 alias: journal
 domain_of:

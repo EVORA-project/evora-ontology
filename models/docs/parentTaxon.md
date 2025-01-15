@@ -4,7 +4,7 @@
 
 
 
-URI: [EVORA:parentTaxon](https://evora-project.eu/parentTaxon)
+URI: [EVORA:parentTaxon](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#parentTaxon)
 
 
 
@@ -45,7 +45,7 @@ URI: [EVORA:parentTaxon](https://evora-project.eu/parentTaxon)
 ### Schema Source
 
 
-* from schema: https://evora-project.eu/
+* from schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
 
 
 
@@ -65,7 +65,7 @@ URI: [EVORA:parentTaxon](https://evora-project.eu/parentTaxon)
 <details>
 ```yaml
 name: parentTaxon
-from_schema: https://evora-project.eu/
+from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
 rank: 1000
 alias: parentTaxon
 domain_of:

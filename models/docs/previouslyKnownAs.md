@@ -4,7 +4,7 @@
 
 
 
-URI: [EVORA:previouslyKnownAs](https://evora-project.eu/previouslyKnownAs)
+URI: [EVORA:previouslyKnownAs](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#previouslyKnownAs)
 
 
 
@@ -45,7 +45,7 @@ URI: [EVORA:previouslyKnownAs](https://evora-project.eu/previouslyKnownAs)
 ### Schema Source
 
 
-* from schema: https://evora-project.eu/
+* from schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
 
 
 
@@ -65,7 +65,7 @@ URI: [EVORA:previouslyKnownAs](https://evora-project.eu/previouslyKnownAs)
 <details>
 ```yaml
 name: previouslyKnownAs
-from_schema: https://evora-project.eu/
+from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
 rank: 1000
 alias: previouslyKnownAs
 domain_of:

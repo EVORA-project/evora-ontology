@@ -4,7 +4,7 @@
 
 
 
-URI: [EVORA:typeOfFunctionalCharacterization](https://evora-project.eu/typeOfFunctionalCharacterization)
+URI: [EVORA:typeOfFunctionalCharacterization](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#typeOfFunctionalCharacterization)
 
 
 
@@ -45,7 +45,7 @@ URI: [EVORA:typeOfFunctionalCharacterization](https://evora-project.eu/typeOfFun
 ### Schema Source
 
 
-* from schema: https://evora-project.eu/
+* from schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
 
 
 
@@ -65,7 +65,7 @@ URI: [EVORA:typeOfFunctionalCharacterization](https://evora-project.eu/typeOfFun
 <details>
 ```yaml
 name: typeOfFunctionalCharacterization
-from_schema: https://evora-project.eu/
+from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
 rank: 1000
 alias: typeOfFunctionalCharacterization
 domain_of:

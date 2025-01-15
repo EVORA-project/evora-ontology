@@ -11,7 +11,7 @@ _A collection of operations that provides access to one or more datasets or data
 * __NOTE__: this is an abstract class and should not be instantiated directly
 
 
-URI: [EVORA:DataService](https://evora-project.eu/DataService)
+URI: [EVORA:DataService](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#DataService)
 
 
 
@@ -79,7 +79,7 @@ URI: [EVORA:DataService](https://evora-project.eu/DataService)
 ### Schema Source
 
 
-* from schema: https://evora-project.eu/
+* from schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
 
 
 
@@ -111,7 +111,7 @@ name: DataService
 description: A collection of operations that provides access to one or more datasets
   or data processing functions
 title: Data Service
-from_schema: https://evora-project.eu/
+from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
 aliases:
 - web service
 exact_mappings:
@@ -133,7 +133,7 @@ name: DataService
 description: A collection of operations that provides access to one or more datasets
   or data processing functions
 title: Data Service
-from_schema: https://evora-project.eu/
+from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
 aliases:
 - web service
 exact_mappings:
@@ -155,7 +155,7 @@ attributes:
       "Virus name", "virus host type", "collection year", "country of collection"
       ex "suspected epidemiological origin", "genotype", "strain", "variant name or
       specific feature"'
-    from_schema: https://evora-project.eu/
+    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
     exact_mappings:
     - dct:title
     close_mappings:
@@ -178,7 +178,7 @@ attributes:
       present the item.
 
       '
-    from_schema: https://evora-project.eu/
+    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
     exact_mappings:
     - dct:description
     rank: 1000

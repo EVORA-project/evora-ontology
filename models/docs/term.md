@@ -4,7 +4,7 @@
 
 
 
-URI: [EVORA:term](https://evora-project.eu/term)
+URI: [EVORA:term](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#term)
 
 
 
@@ -45,7 +45,7 @@ URI: [EVORA:term](https://evora-project.eu/term)
 ### Schema Source
 
 
-* from schema: https://evora-project.eu/
+* from schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
 
 
 
@@ -65,7 +65,7 @@ URI: [EVORA:term](https://evora-project.eu/term)
 <details>
 ```yaml
 name: term
-from_schema: https://evora-project.eu/
+from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
 rank: 1000
 alias: term
 domain_of:

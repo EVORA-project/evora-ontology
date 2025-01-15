@@ -9,7 +9,7 @@ _A nucleic acid or protein sequence information_
 
 
 
-URI: [EVORA:Sequence](https://evora-project.eu/Sequence)
+URI: [EVORA:Sequence](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#Sequence)
 
 
 
@@ -94,7 +94,7 @@ URI: [EVORA:Sequence](https://evora-project.eu/Sequence)
 ### Schema Source
 
 
-* from schema: https://evora-project.eu/
+* from schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
 
 
 
@@ -124,7 +124,7 @@ URI: [EVORA:Sequence](https://evora-project.eu/Sequence)
 name: Sequence
 description: A nucleic acid or protein sequence information
 title: Sequence
-from_schema: https://evora-project.eu/
+from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
 aliases:
 - biological sequence
 close_mappings:
@@ -166,7 +166,7 @@ slot_usage:
 name: Sequence
 description: A nucleic acid or protein sequence information
 title: Sequence
-from_schema: https://evora-project.eu/
+from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
 aliases:
 - biological sequence
 close_mappings:
@@ -200,7 +200,7 @@ attributes:
     description: A reference that permits to retrieve the sequence information from
       a sequence provider
     title: sequence reference
-    from_schema: https://evora-project.eu/
+    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
     rank: 1000
     alias: sequenceReference
     owner: Sequence
@@ -220,7 +220,7 @@ attributes:
       line, must begin with a carat (">"), followed by a unique SeqID (sequence identifier).
       In case the sequence is made of multiple parts several fasta sequences can be
       provided
-    from_schema: https://evora-project.eu/
+    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
     rank: 1000
     alias: sequenceFASTA
     owner: Sequence

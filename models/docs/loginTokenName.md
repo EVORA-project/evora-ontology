@@ -4,7 +4,7 @@
 
 
 
-URI: [EVORA:loginTokenName](https://evora-project.eu/loginTokenName)
+URI: [EVORA:loginTokenName](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#loginTokenName)
 
 
 
@@ -45,7 +45,7 @@ URI: [EVORA:loginTokenName](https://evora-project.eu/loginTokenName)
 ### Schema Source
 
 
-* from schema: https://evora-project.eu/
+* from schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
 
 
 
@@ -65,7 +65,7 @@ URI: [EVORA:loginTokenName](https://evora-project.eu/loginTokenName)
 <details>
 ```yaml
 name: loginTokenName
-from_schema: https://evora-project.eu/
+from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
 rank: 1000
 alias: loginTokenName
 domain_of:

@@ -4,7 +4,7 @@
 
 
 
-URI: [EVORA:certificationDocument](https://evora-project.eu/certificationDocument)
+URI: [EVORA:certificationDocument](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#certificationDocument)
 
 
 
@@ -45,7 +45,7 @@ URI: [EVORA:certificationDocument](https://evora-project.eu/certificationDocumen
 ### Schema Source
 
 
-* from schema: https://evora-project.eu/
+* from schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
 
 
 
@@ -65,7 +65,7 @@ URI: [EVORA:certificationDocument](https://evora-project.eu/certificationDocumen
 <details>
 ```yaml
 name: certificationDocument
-from_schema: https://evora-project.eu/
+from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
 rank: 1000
 alias: certificationDocument
 domain_of:

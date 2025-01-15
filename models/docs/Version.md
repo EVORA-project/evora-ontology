@@ -9,7 +9,7 @@ _Numeric code assigned to identify a particular historical version of a work (e.
 
 
 
-URI: [EVORA:Version](https://evora-project.eu/Version)
+URI: [EVORA:Version](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#Version)
 
 
 
@@ -78,7 +78,7 @@ URI: [EVORA:Version](https://evora-project.eu/Version)
 ### Schema Source
 
 
-* from schema: https://evora-project.eu/
+* from schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
 
 
 
@@ -109,7 +109,7 @@ name: Version
 description: Numeric code assigned to identify a particular historical version of
   a work (e.g. software or technical standards)
 title: Version
-from_schema: https://evora-project.eu/
+from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
 aliases:
 - version number
 close_mappings:
@@ -150,7 +150,7 @@ name: Version
 description: Numeric code assigned to identify a particular historical version of
   a work (e.g. software or technical standards)
 title: Version
-from_schema: https://evora-project.eu/
+from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
 aliases:
 - version number
 close_mappings:
@@ -181,7 +181,7 @@ attributes:
     name: ID
     description: The version identifier
     title: ID
-    from_schema: https://evora-project.eu/
+    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
     aliases:
     - edition number
     close_mappings:
@@ -199,7 +199,7 @@ attributes:
     name: versionOf
     description: Identifier of what the version qualifies
     title: version Of
-    from_schema: https://evora-project.eu/
+    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
     rank: 1000
     alias: versionOf
     owner: Version

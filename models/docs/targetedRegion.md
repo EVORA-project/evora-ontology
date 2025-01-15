@@ -4,7 +4,7 @@
 
 
 
-URI: [EVORA:targetedRegion](https://evora-project.eu/targetedRegion)
+URI: [EVORA:targetedRegion](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#targetedRegion)
 
 
 
@@ -45,7 +45,7 @@ URI: [EVORA:targetedRegion](https://evora-project.eu/targetedRegion)
 ### Schema Source
 
 
-* from schema: https://evora-project.eu/
+* from schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
 
 
 
@@ -65,7 +65,7 @@ URI: [EVORA:targetedRegion](https://evora-project.eu/targetedRegion)
 <details>
 ```yaml
 name: targetedRegion
-from_schema: https://evora-project.eu/
+from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
 rank: 1000
 alias: targetedRegion
 domain_of:

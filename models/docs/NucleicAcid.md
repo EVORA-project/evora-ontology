@@ -9,7 +9,7 @@ _Nucleic acid related to a pathogen. It can be extracted or synthetic_
 
 
 
-URI: [EVORA:NucleicAcid](https://evora-project.eu/NucleicAcid)
+URI: [EVORA:NucleicAcid](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#NucleicAcid)
 
 
 
@@ -363,7 +363,7 @@ URI: [EVORA:NucleicAcid](https://evora-project.eu/NucleicAcid)
 ### Schema Source
 
 
-* from schema: https://evora-project.eu/
+* from schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
 
 
 
@@ -393,7 +393,7 @@ URI: [EVORA:NucleicAcid](https://evora-project.eu/NucleicAcid)
 name: Nucleic Acid
 description: Nucleic acid related to a pathogen. It can be extracted or synthetic
 title: Nucleic Acid
-from_schema: https://evora-project.eu/
+from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
 aliases:
 - nucleic acids
 close_mappings:
@@ -546,7 +546,7 @@ slot_usage:
 name: Nucleic Acid
 description: Nucleic acid related to a pathogen. It can be extracted or synthetic
 title: Nucleic Acid
-from_schema: https://evora-project.eu/
+from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
 aliases:
 - nucleic acids
 close_mappings:
@@ -680,7 +680,7 @@ attributes:
       for access, utilization, and benefit-sharing of genetic resources in compliance
       with the Nagoya Protocol
     title: Biological Material origin
-    from_schema: https://evora-project.eu/
+    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
     rank: 1000
     alias: biologicalMaterialOrigin
     owner: Nucleic Acid
@@ -696,7 +696,7 @@ attributes:
     description: A GenBank formatted file that contains detailed sequence and annotation
       information of a nucleic acid construct
     title: has .gb file of the construct
-    from_schema: https://evora-project.eu/
+    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
     rank: 1000
     alias: hasGbFileOfTheConstruct
     owner: Nucleic Acid
@@ -710,7 +710,7 @@ attributes:
     description: The related sequence information from a sequence provider or in fasta
       format
     title: sequence
-    from_schema: https://evora-project.eu/
+    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
     rank: 1000
     alias: sequence
     owner: Nucleic Acid
@@ -727,7 +727,7 @@ attributes:
     description: Indicates that the nucleic acid sequence has been inserted into a
       plasmid vector for propagation or expression in a host organism
     title: is it a Cloned Nucleic Acid?
-    from_schema: https://evora-project.eu/
+    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
     rank: 1000
     alias: isItAClonedNucleicAcid
     owner: Nucleic Acid
@@ -740,7 +740,7 @@ attributes:
     name: clonedIntoPlasmid
     description: The plasmid into which the nucleic acid has been cloned
     title: cloned into plasmid
-    from_schema: https://evora-project.eu/
+    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
     rank: 1000
     alias: clonedIntoPlasmid
     owner: Nucleic Acid
@@ -754,7 +754,7 @@ attributes:
     description: Specific selectable markers in the plasmid, such as antibiotic resistance
       genes, used to identify and maintain cells that contain the plasmid
     title: plasmid selection
-    from_schema: https://evora-project.eu/
+    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
     rank: 1000
     alias: pasmidSelection
     owner: Nucleic Acid
@@ -768,7 +768,7 @@ attributes:
     description: TAG sequence used for purposes such as purification, detection, or
       localization
     title: TAG
-    from_schema: https://evora-project.eu/
+    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
     rank: 1000
     alias: hasTAG
     owner: Nucleic Acid
@@ -781,7 +781,7 @@ attributes:
     name: regionEncompassedInThisProduct
     description: The specific region encompassed in the product
     title: region encompassed in this Product
-    from_schema: https://evora-project.eu/
+    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
     rank: 1000
     alias: regionEncompassedInThisProduct
     owner: Nucleic Acid
@@ -796,7 +796,7 @@ attributes:
       \ the reference sequence if the value is set to false or if it\n contains mutations\
       \ (no frameshift, no unexpected STOP codon) if set to true"
     title: mutation observed
-    from_schema: https://evora-project.eu/
+    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
     rank: 1000
     alias: mutationObserved
     owner: Nucleic Acid
@@ -810,7 +810,7 @@ attributes:
     description: The specific mutations that have been identified and documented in
       the nucleic acid sequence
     title: observed mutations
-    from_schema: https://evora-project.eu/
+    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
     rank: 1000
     alias: observedMutations
     owner: Nucleic Acid
@@ -824,7 +824,7 @@ attributes:
     description: The method used to identify the nucleic acid sequence or its associated
       constructs, such as PCR, sequencing, or hybridization
     title: identification technique
-    from_schema: https://evora-project.eu/
+    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
     rank: 1000
     alias: identificationTechnique
     owner: Nucleic Acid
@@ -843,7 +843,7 @@ attributes:
     title: sequencing
     comments:
     - Cloned products have to be sequenced
-    from_schema: https://evora-project.eu/
+    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
     rank: 1000
     alias: sequencing
     owner: Nucleic Acid
@@ -860,7 +860,7 @@ attributes:
       in the sample. The titer corresponds to the highest dilution factor that still
       yields a positive reading
     title: titer
-    from_schema: https://evora-project.eu/
+    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
     rank: 1000
     alias: titer
     owner: Nucleic Acid
@@ -877,7 +877,7 @@ attributes:
     title: sequence checked
     comments:
     - Sequence check is mandatory for cloned products
-    from_schema: https://evora-project.eu/
+    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
     rank: 1000
     alias: sequenceChecked
     owner: Nucleic Acid
@@ -891,7 +891,7 @@ attributes:
     description: The corresponding International Air Transport Association (IATA)'s
       category for this Product
     title: IATA classification
-    from_schema: https://evora-project.eu/
+    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
     rank: 1000
     alias: hasIATAClassification
     owner: Nucleic Acid
@@ -906,7 +906,7 @@ attributes:
 
       '
     title: shipping conditions
-    from_schema: https://evora-project.eu/
+    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
     rank: 1000
     alias: shippingConditions
     owner: Nucleic Acid
@@ -925,7 +925,7 @@ attributes:
     - The MSD  is a document that provides detailed information about the properties,
       hazards, handling, storage, and emergency procedures related to the use of a
       chemical or substance
-    from_schema: https://evora-project.eu/
+    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
     rank: 1000
     alias: materialSafetyDataSheet
     owner: Nucleic Acid
@@ -940,7 +940,7 @@ attributes:
       isolation, or creation of an item, providing information about the source or
       origin of the sample
     title: originator
-    from_schema: https://evora-project.eu/
+    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
     rank: 1000
     alias: originator
     owner: Nucleic Acid
@@ -959,7 +959,7 @@ attributes:
     - e.g, could be a xsd:string in enumeration ("Freeze Dried", "Liquid Nitrogen",
       "Viral Storage Medium -20C", "Viral Storage Medium -80C", "Living plant material
       (>= +4°C)", "Gas Phase", "Ethanol -20C", "Ethanol -80C", "Dried")
-    from_schema: https://evora-project.eu/
+    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
     rank: 1000
     alias: storageConditions
     owner: Nucleic Acid
@@ -974,7 +974,7 @@ attributes:
       restriction to third parties, as indicated by the ABS permit, in case an ABS
       permit is required
     title: third party distribution consent
-    from_schema: https://evora-project.eu/
+    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
     rank: 1000
     alias: thirdPartyDistributionConsent
     owner: Nucleic Acid
@@ -989,7 +989,7 @@ attributes:
       material, including restrictions on research, commercial use, or distribution,
       considering any potential concerns about the related genetic material
     title: usage restrictions
-    from_schema: https://evora-project.eu/
+    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
     rank: 1000
     alias: usageRestrictions
     owner: Nucleic Acid
@@ -1004,7 +1004,7 @@ attributes:
       page on the provider's website and/or allows to place an order about it or at
       least describe the process to place an order/enquiry
     title: access point URL
-    from_schema: https://evora-project.eu/
+    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
     exact_mappings:
     - dcat:landingPage
     rank: 1000
@@ -1020,7 +1020,7 @@ attributes:
     description: The reference or the stock keeping unit of the service or item provided
       in the provider's catalogue
     title: ref-SKU
-    from_schema: https://evora-project.eu/
+    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
     exact_mappings:
     - dct:identifier
     rank: 1000
@@ -1039,7 +1039,7 @@ attributes:
     comments:
     - 'The description of what will be delivered to the end-user (e.g.: packaging,
       quantity...)'
-    from_schema: https://evora-project.eu/
+    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
     rank: 1000
     alias: unitDefinition
     owner: Nucleic Acid
@@ -1052,7 +1052,7 @@ attributes:
     name: category
     description: The main category of the service or product
     title: category
-    from_schema: https://evora-project.eu/
+    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
     exact_mappings:
     - dcat:theme
     rank: 1000
@@ -1068,7 +1068,7 @@ attributes:
     description: Any category apart from its main category in which this product or
       service can fit
     title: additional category
-    from_schema: https://evora-project.eu/
+    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
     exact_mappings:
     - dcat:theme
     rank: 1000
@@ -1087,7 +1087,7 @@ attributes:
     - The cost per access may not be defined or be specific to a request, so it has
       to be a xsd:string instead of an xsd:float as initialy suggested to permit description
       of cost as conditional to what is requested
-    from_schema: https://evora-project.eu/
+    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
     rank: 1000
     ifabsent: string(on request)
     alias: unitCost
@@ -1102,7 +1102,7 @@ attributes:
     description: Information that permits to assess the quality level of what will
       be provided
     title: quality grading
-    from_schema: https://evora-project.eu/
+    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
     rank: 1000
     alias: qualityGrading
     owner: Nucleic Acid
@@ -1121,7 +1121,7 @@ attributes:
       some cases(e.g: FAIRSHARING) there may have no direct pathogen related but simply
       a taxonomic information .... the default value should be the root of virology:
       Viruses'
-    from_schema: https://evora-project.eu/
+    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
     rank: 1000
     alias: pathogenIdentification
     owner: Nucleic Acid
@@ -1134,7 +1134,7 @@ attributes:
     name: relatedDOI
     description: Any DOI that can be related
     title: DOI
-    from_schema: https://evora-project.eu/
+    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
     aliases:
     - DOI
     close_mappings:
@@ -1154,7 +1154,7 @@ attributes:
       a biological agent guiding its initial handling in labs according to the risk
       group classification defined by the WHO laboratory biosafety manual
     title: risk group
-    from_schema: https://evora-project.eu/
+    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
     aliases:
     - risk group
     close_mappings:
@@ -1174,7 +1174,7 @@ attributes:
       contributes to protecting people and the environment from biohazards while accessing
       this product or service
     title: biosafety restrictions
-    from_schema: https://evora-project.eu/
+    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
     rank: 1000
     alias: biosafetyRestrictions
     owner: Nucleic Acid
@@ -1190,7 +1190,7 @@ attributes:
     title: can it be used to produce GMO
     comments:
     - Set to TRUE if it can produce GMO
-    from_schema: https://evora-project.eu/
+    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
     rank: 1000
     alias: canItBeUsedToProduceGMO
     owner: Nucleic Acid
@@ -1203,7 +1203,7 @@ attributes:
     name: provider
     description: A provider of this product or service, as a specific organization
     title: provider
-    from_schema: https://evora-project.eu/
+    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
     rank: 1000
     alias: provider
     owner: Nucleic Acid
@@ -1216,7 +1216,7 @@ attributes:
     name: collection
     description: The collection(s) to which belongs this item
     title: collection
-    from_schema: https://evora-project.eu/
+    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
     aliases:
     - catalog
     rank: 1000
@@ -1231,7 +1231,7 @@ attributes:
     name: keywords
     description: List of terms used to tag and categorize this Item
     title: keywords
-    from_schema: https://evora-project.eu/
+    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
     exact_mappings:
     - dcat:keyword
     rank: 1000
@@ -1249,7 +1249,7 @@ attributes:
     title: availability
     comments:
     - Possible availabilities may differ from a project to another
-    from_schema: https://evora-project.eu/
+    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
     rank: 1000
     ifabsent: string(on request)
     alias: availability
@@ -1263,7 +1263,7 @@ attributes:
     name: complementaryDocument
     description: Any complementary document that can be related to this Item
     title: complementary document
-    from_schema: https://evora-project.eu/
+    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
     rank: 1000
     alias: complementaryDocument
     owner: Nucleic Acid
@@ -1279,7 +1279,7 @@ attributes:
       and maintenance of what is provided, including best practices, troubleshooting
       tips, and procedural instructions
     title: technical recommendation
-    from_schema: https://evora-project.eu/
+    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
     rank: 1000
     alias: technicalRecommendation
     owner: Nucleic Acid
@@ -1292,7 +1292,7 @@ attributes:
     name: productPicture
     description: A picture that can represent the item
     title: product picture
-    from_schema: https://evora-project.eu/
+    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
     rank: 1000
     alias: productPicture
     owner: Nucleic Acid
@@ -1306,7 +1306,7 @@ attributes:
     description: A reference that permits to retrieve another related item from an
       external provider
     title: external related reference
-    from_schema: https://evora-project.eu/
+    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
     rank: 1000
     alias: externalRelatedReference
     owner: Nucleic Acid
@@ -1320,7 +1320,7 @@ attributes:
     description: Any certification related to the current product or service; e.g.,
       ISO certification
     title: certification
-    from_schema: https://evora-project.eu/
+    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
     close_mappings:
     - dct:conformsTo
     rank: 1000
@@ -1335,7 +1335,7 @@ attributes:
     name: internalReference
     description: Any reference or indication to be used for local retrieval purpose
     title: internal reference
-    from_schema: https://evora-project.eu/
+    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
     rank: 1000
     alias: internalReference
     owner: Nucleic Acid
@@ -1348,7 +1348,7 @@ attributes:
     name: note
     description: An aditional information as a textual comment
     title: note
-    from_schema: https://evora-project.eu/
+    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
     rank: 1000
     alias: note
     owner: Nucleic Acid
@@ -1361,7 +1361,7 @@ attributes:
     name: contactPoint
     description: An information that allows someone to establish communication
     title: contact point
-    from_schema: https://evora-project.eu/
+    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
     exact_mappings:
     - dcat:contactPoint
     rank: 1000
@@ -1384,7 +1384,7 @@ attributes:
       "Virus name", "virus host type", "collection year", "country of collection"
       ex "suspected epidemiological origin", "genotype", "strain", "variant name or
       specific feature"'
-    from_schema: https://evora-project.eu/
+    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
     exact_mappings:
     - dct:title
     close_mappings:
@@ -1407,7 +1407,7 @@ attributes:
       present the item.
 
       '
-    from_schema: https://evora-project.eu/
+    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
     exact_mappings:
     - dct:description
     rank: 1000

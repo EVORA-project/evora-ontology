@@ -9,7 +9,7 @@ _Information on the origin of a synthetic part that composes the biological mate
 
 
 
-URI: [EVORA:SyntheticPartOrigin](https://evora-project.eu/SyntheticPartOrigin)
+URI: [EVORA:SyntheticPartOrigin](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#SyntheticPartOrigin)
 
 
 
@@ -80,7 +80,7 @@ URI: [EVORA:SyntheticPartOrigin](https://evora-project.eu/SyntheticPartOrigin)
 ### Schema Source
 
 
-* from schema: https://evora-project.eu/
+* from schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
 
 
 
@@ -110,7 +110,7 @@ name: SyntheticPartOrigin
 description: Information on the origin of a synthetic part that composes the biological
   material
 title: Synthetic part origin
-from_schema: https://evora-project.eu/
+from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
 is_a: BiologicalPartOrigin
 slots:
 - modificationsFromTheReferenceSequences
@@ -143,7 +143,7 @@ name: SyntheticPartOrigin
 description: Information on the origin of a synthetic part that composes the biological
   material
 title: Synthetic part origin
-from_schema: https://evora-project.eu/
+from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
 is_a: BiologicalPartOrigin
 slot_usage:
   modificationsFromTheReferenceSequences:
@@ -167,7 +167,7 @@ attributes:
     description: Set to TRUE if there was is any modification made from the reference
       sequence
     title: modifications from the reference sequence(s)
-    from_schema: https://evora-project.eu/
+    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
     rank: 1000
     alias: modificationsFromTheReferenceSequences
     owner: SyntheticPartOrigin
@@ -180,7 +180,7 @@ attributes:
     name: descriptionOfModificationsMadeFromTheReferenceSequences
     description: List the modifications mades from the reference sequence if any
     title: description of modification(s) made from the reference sequence(s)
-    from_schema: https://evora-project.eu/
+    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
     rank: 1000
     alias: descriptionOfModificationsMadeFromTheReferenceSequences
     owner: SyntheticPartOrigin
@@ -196,7 +196,7 @@ attributes:
     comments:
     - Information not required if the current biological part constitutes the complete
       biological material
-    from_schema: https://evora-project.eu/
+    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
     rank: 1000
     alias: recombinantPartIdentification
     owner: SyntheticPartOrigin
@@ -211,7 +211,7 @@ attributes:
       applicable if the genetic resource falls under Access and Benefit-Sharing (ABS)
       regulations
     title: access to physical genetic resource
-    from_schema: https://evora-project.eu/
+    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
     rank: 1000
     alias: accessToPhysicalGeneticResource
     owner: SyntheticPartOrigin

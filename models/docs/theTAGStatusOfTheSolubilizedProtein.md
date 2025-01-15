@@ -4,7 +4,7 @@
 
 
 
-URI: [EVORA:theTAGStatusOfTheSolubilizedProtein](https://evora-project.eu/theTAGStatusOfTheSolubilizedProtein)
+URI: [EVORA:theTAGStatusOfTheSolubilizedProtein](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#theTAGStatusOfTheSolubilizedProtein)
 
 
 
@@ -45,7 +45,7 @@ URI: [EVORA:theTAGStatusOfTheSolubilizedProtein](https://evora-project.eu/theTAG
 ### Schema Source
 
 
-* from schema: https://evora-project.eu/
+* from schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
 
 
 
@@ -65,7 +65,7 @@ URI: [EVORA:theTAGStatusOfTheSolubilizedProtein](https://evora-project.eu/theTAG
 <details>
 ```yaml
 name: theTAGStatusOfTheSolubilizedProtein
-from_schema: https://evora-project.eu/
+from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
 rank: 1000
 alias: theTAGStatusOfTheSolubilizedProtein
 domain_of:

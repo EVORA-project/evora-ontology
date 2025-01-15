@@ -29,7 +29,7 @@ from pydantic import (
 
 
 metamodel_version = "None"
-version = "1.0.7356"
+version = "1.0.7370"
 
 
 class ConfiguredBaseModel(BaseModel):
@@ -73,14 +73,14 @@ linkml_meta = LinkMLMeta({'contributors': ['https://orcid.org/0000-0002-2042-283
                     'interoperability, accessibility, and reusability across '
                     'various projects. The EVORA Ontology aims to support '
                     'preparedness and response to pandemics.',
-     'generation_date': '2025-01-15T11:13:22',
-     'id': 'https://evora-project.eu/',
+     'generation_date': '2025-01-15T12:04:34',
+     'id': 'https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#',
      'imports': ['linkml:types'],
      'in_language': 'en',
      'license': 'https://creativecommons.org/publicdomain/zero/1.0/',
-     'name': 'EVORA',
+     'name': 'EVORA_Ontology',
      'prefixes': {'EVORA': {'prefix_prefix': 'EVORA',
-                            'prefix_reference': 'https://evora-project.eu/'},
+                            'prefix_reference': 'https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#'},
                   'IAO': {'prefix_prefix': 'IAO',
                           'prefix_reference': 'http://purl.obolibrary.org/obo/IAO_'},
                   'adms': {'prefix_prefix': 'adms',
@@ -130,7 +130,7 @@ class Nameable(ConfiguredBaseModel):
     Any entity that has a name and can have a textual description
     """
     linkml_meta: ClassVar[LinkMLMeta] = LinkMLMeta({'abstract': True,
-         'from_schema': 'https://evora-project.eu/',
+         'from_schema': 'https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#',
          'slot_usage': {'description': {'comments': ['Describe this item in few lines. '
                                                      'This description will serve as a '
                                                      'summary to present the item.\n'],
@@ -189,7 +189,7 @@ class Catalogue(Nameable):
          'aliases': ['catalogue'],
          'close_mappings': ['wd:Q2352616', 'schema:Dataset'],
          'exact_mappings': ['dcat:Catalog'],
-         'from_schema': 'https://evora-project.eu/',
+         'from_schema': 'https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#',
          'title': 'Catalogue'})
 
     name: str = Field(..., title="name", description="""The label that allows humans to identify the current item""", json_schema_extra = { "linkml_meta": {'alias': 'name',
@@ -217,7 +217,7 @@ class Dataset(ConfiguredBaseModel):
          'aliases': ['data set'],
          'close_mappings': ['wd:Q1172284', 'schema:DataCatalog'],
          'exact_mappings': ['dcat:Dataset'],
-         'from_schema': 'https://evora-project.eu/',
+         'from_schema': 'https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#',
          'title': 'Dataset'})
 
     pass
@@ -229,7 +229,7 @@ class Version(Dataset):
     """
     linkml_meta: ClassVar[LinkMLMeta] = LinkMLMeta({'aliases': ['version number'],
          'close_mappings': ['wd:Q114469879'],
-         'from_schema': 'https://evora-project.eu/',
+         'from_schema': 'https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#',
          'slot_usage': {'ID': {'aliases': ['edition number'],
                                'close_mappings': ['wdp:P393', 'schema:version'],
                                'description': 'The version identifier',
@@ -262,7 +262,7 @@ class NamedDataset(Nameable):
          'aliases': ['data set'],
          'close_mappings': ['wd:Q1172284', 'schema:DataCatalog'],
          'exact_mappings': ['dcat:Dataset'],
-         'from_schema': 'https://evora-project.eu/',
+         'from_schema': 'https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#',
          'title': 'Named Dataset'})
 
     name: str = Field(..., title="name", description="""The label that allows humans to identify the current item""", json_schema_extra = { "linkml_meta": {'alias': 'name',
@@ -290,7 +290,7 @@ class DataService(Nameable):
          'aliases': ['web service'],
          'close_mappings': ['wd:Q193424', 'schema:WebAPI'],
          'exact_mappings': ['dcat:DataService'],
-         'from_schema': 'https://evora-project.eu/',
+         'from_schema': 'https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#',
          'title': 'Data Service'})
 
     name: str = Field(..., title="name", description="""The label that allows humans to identify the current item""", json_schema_extra = { "linkml_meta": {'alias': 'name',
@@ -316,7 +316,7 @@ class Taxonomy(Catalogue):
     """
     linkml_meta: ClassVar[LinkMLMeta] = LinkMLMeta({'aliases': ['taxonomy'],
          'close_mappings': ['wd:Q8269924', 'skos:Collection'],
-         'from_schema': 'https://evora-project.eu/',
+         'from_schema': 'https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#',
          'slot_usage': {'rank': {'description': 'Relative level or position of the '
                                                 'identified taxon in the taxonomy',
                                  'multivalued': True,
@@ -397,7 +397,7 @@ class DataProvider(DataService):
     """
     linkml_meta: ClassVar[LinkMLMeta] = LinkMLMeta({'aliases': ['data provider'],
          'close_mappings': ['wd:Q122625839'],
-         'from_schema': 'https://evora-project.eu/',
+         'from_schema': 'https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#',
          'slot_usage': {'contentType': {'close_mappings': ['dct:format'],
                                         'description': 'The content type of the '
                                                        'response to the queries',
@@ -555,7 +555,7 @@ class PathogenIdentification(Dataset):
     """
     A collection of distinguishing information that enables the differentiation of a pathogen from another
     """
-    linkml_meta: ClassVar[LinkMLMeta] = LinkMLMeta({'from_schema': 'https://evora-project.eu/',
+    linkml_meta: ClassVar[LinkMLMeta] = LinkMLMeta({'from_schema': 'https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#',
          'slot_usage': {'genotype': {'description': 'Genotype information that '
                                                     'identifies organisms that cluster '
                                                     'in phylogenetic trees, thus '
@@ -679,7 +679,7 @@ class Publication(Dataset):
     """
     linkml_meta: ClassVar[LinkMLMeta] = LinkMLMeta({'aliases': ['scientific publication'],
          'close_mappings': ['wd:Q591041'],
-         'from_schema': 'https://evora-project.eu/',
+         'from_schema': 'https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#',
          'slot_usage': {'abstract': {'description': 'Concise summary of the '
                                                     'publication',
                                      'multivalued': False,
@@ -749,7 +749,7 @@ class Vocabulary(Catalogue):
     """
     linkml_meta: ClassVar[LinkMLMeta] = LinkMLMeta({'aliases': ['vocabulary'],
          'close_mappings': ['wd:Q6499736', 'skos:Collection'],
-         'from_schema': 'https://evora-project.eu/',
+         'from_schema': 'https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#',
          'slot_usage': {'term': {'description': 'The terms related to this vocabulary',
                                  'multivalued': True,
                                  'name': 'term',
@@ -793,7 +793,7 @@ class Term(NamedDataset):
     linkml_meta: ClassVar[LinkMLMeta] = LinkMLMeta({'abstract': True,
          'aliases': ['term'],
          'close_mappings': ['wd:Q1969448'],
-         'from_schema': 'https://evora-project.eu/',
+         'from_schema': 'https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#',
          'slot_usage': {'inVocabulary': {'aliases': ['catalog'],
                                          'close_mappings': ['wdp:P972'],
                                          'description': 'Terms belong to a specific '
@@ -851,7 +851,7 @@ class CommonName(Term):
     linkml_meta: ClassVar[LinkMLMeta] = LinkMLMeta({'aliases': ['common name'],
          'close_mappings': ['wd:Q502895'],
          'exact_mappings': ['dwc:vernacularName'],
-         'from_schema': 'https://evora-project.eu/',
+         'from_schema': 'https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#',
          'slot_usage': {'alternateName': {'aliases': ['alternative name'],
                                           'close_mappings': ['wdp:P4970'],
                                           'comments': ['including previous names and '
@@ -929,7 +929,7 @@ class VirusName(CommonName):
     """
     linkml_meta: ClassVar[LinkMLMeta] = LinkMLMeta({'aliases': ['virus name'],
          'close_mappings': ['wd:Q125481078'],
-         'from_schema': 'https://evora-project.eu/',
+         'from_schema': 'https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#',
          'title': 'Virus Name'})
 
     alternateName: Optional[List[AlternateName]] = Field(None, title="alternate name", description="""Any known alternate name related to this name""", json_schema_extra = { "linkml_meta": {'alias': 'alternateName',
@@ -976,7 +976,7 @@ class AlternateName(Term):
     """
     linkml_meta: ClassVar[LinkMLMeta] = LinkMLMeta({'aliases': ['synonym'],
          'close_mappings': ['wd:Q7662595'],
-         'from_schema': 'https://evora-project.eu/',
+         'from_schema': 'https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#',
          'slot_usage': {'alternateName': {'aliases': ['alternative name'],
                                           'close_mappings': ['wdp:P4970'],
                                           'description': 'Any known alternate name '
@@ -1043,7 +1043,7 @@ class RiskGroup(Term):
          'comments': ['Use of Data provider if any or manual import of information '
                       'from wd:Q125449389, wd:Q125449412, wd:Q125449429, '
                       'wd:Q125449439'],
-         'from_schema': 'https://evora-project.eu/',
+         'from_schema': 'https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#',
          'title': 'Risk group'})
 
     weight: int = Field(0, title="weight", description="""A numerical value indicating relative importance or priority, generally processed in ascending order. This weight helps prioritize content when organizing or processing data. Its value can be negative, with a default set to 0""", json_schema_extra = { "linkml_meta": {'alias': 'weight',
@@ -1077,7 +1077,7 @@ class DOI(Term):
     """
     linkml_meta: ClassVar[LinkMLMeta] = LinkMLMeta({'aliases': ['DOI'],
          'close_mappings': ['wd:Q25670'],
-         'from_schema': 'https://evora-project.eu/',
+         'from_schema': 'https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#',
          'title': 'DOI'})
 
     weight: int = Field(0, title="weight", description="""A numerical value indicating relative importance or priority, generally processed in ascending order. This weight helps prioritize content when organizing or processing data. Its value can be negative, with a default set to 0""", json_schema_extra = { "linkml_meta": {'alias': 'weight',
@@ -1111,7 +1111,7 @@ class Journal(Term):
     """
     linkml_meta: ClassVar[LinkMLMeta] = LinkMLMeta({'aliases': ['scientific journal'],
          'close_mappings': ['wd:Q5633421'],
-         'from_schema': 'https://evora-project.eu/',
+         'from_schema': 'https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#',
          'title': 'Journal'})
 
     weight: int = Field(0, title="weight", description="""A numerical value indicating relative importance or priority, generally processed in ascending order. This weight helps prioritize content when organizing or processing data. Its value can be negative, with a default set to 0""", json_schema_extra = { "linkml_meta": {'alias': 'weight',
@@ -1145,7 +1145,7 @@ class PDBReference(Term):
     """
     linkml_meta: ClassVar[LinkMLMeta] = LinkMLMeta({'aliases': ['Wikidata property to identify proteins'],
          'close_mappings': ['wdp:Q42415644'],
-         'from_schema': 'https://evora-project.eu/',
+         'from_schema': 'https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#',
          'title': 'PDB reference'})
 
     weight: int = Field(0, title="weight", description="""A numerical value indicating relative importance or priority, generally processed in ascending order. This weight helps prioritize content when organizing or processing data. Its value can be negative, with a default set to 0""", json_schema_extra = { "linkml_meta": {'alias': 'weight',
@@ -1179,7 +1179,7 @@ class Keyword(Term):
     """
     linkml_meta: ClassVar[LinkMLMeta] = LinkMLMeta({'aliases': ['subject heading'],
          'close_mappings': ['wd:Q1128340'],
-         'from_schema': 'https://evora-project.eu/',
+         'from_schema': 'https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#',
          'title': 'Keyword'})
 
     weight: int = Field(0, title="weight", description="""A numerical value indicating relative importance or priority, generally processed in ascending order. This weight helps prioritize content when organizing or processing data. Its value can be negative, with a default set to 0""", json_schema_extra = { "linkml_meta": {'alias': 'weight',
@@ -1213,7 +1213,7 @@ class ProteinTag(Term):
     """
     linkml_meta: ClassVar[LinkMLMeta] = LinkMLMeta({'aliases': ['protein tag'],
          'close_mappings': ['wd:Q645590'],
-         'from_schema': 'https://evora-project.eu/',
+         'from_schema': 'https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#',
          'title': 'Protein tag'})
 
     weight: int = Field(0, title="weight", description="""A numerical value indicating relative importance or priority, generally processed in ascending order. This weight helps prioritize content when organizing or processing data. Its value can be negative, with a default set to 0""", json_schema_extra = { "linkml_meta": {'alias': 'weight',
@@ -1248,7 +1248,7 @@ class SpecialFeature(Term):
     linkml_meta: ClassVar[LinkMLMeta] = LinkMLMeta({'comments': ['These special features help researchers and professionals in '
                       'the field to select appropriate virus strains for their '
                       'specific research needs and applications.'],
-         'from_schema': 'https://evora-project.eu/',
+         'from_schema': 'https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#',
          'title': 'Special feature'})
 
     weight: int = Field(0, title="weight", description="""A numerical value indicating relative importance or priority, generally processed in ascending order. This weight helps prioritize content when organizing or processing data. Its value can be negative, with a default set to 0""", json_schema_extra = { "linkml_meta": {'alias': 'weight',
@@ -1282,7 +1282,7 @@ class ExpressionVector(Term):
     """
     linkml_meta: ClassVar[LinkMLMeta] = LinkMLMeta({'aliases': ['expression vector'],
          'close_mappings': ['wd:Q5421712'],
-         'from_schema': 'https://evora-project.eu/',
+         'from_schema': 'https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#',
          'title': 'Expression vector'})
 
     weight: int = Field(0, title="weight", description="""A numerical value indicating relative importance or priority, generally processed in ascending order. This weight helps prioritize content when organizing or processing data. Its value can be negative, with a default set to 0""", json_schema_extra = { "linkml_meta": {'alias': 'weight',
@@ -1314,7 +1314,8 @@ class PlasmidSelection(Term):
     """
     The process of identifying cells that have successfully incorporated a plasmid, typically using antibiotic resistance markers
     """
-    linkml_meta: ClassVar[LinkMLMeta] = LinkMLMeta({'from_schema': 'https://evora-project.eu/', 'title': 'Plasmid selection'})
+    linkml_meta: ClassVar[LinkMLMeta] = LinkMLMeta({'from_schema': 'https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#',
+         'title': 'Plasmid selection'})
 
     weight: int = Field(0, title="weight", description="""A numerical value indicating relative importance or priority, generally processed in ascending order. This weight helps prioritize content when organizing or processing data. Its value can be negative, with a default set to 0""", json_schema_extra = { "linkml_meta": {'alias': 'weight',
          'close_mappings': ['adms:status'],
@@ -1345,7 +1346,8 @@ class PropagationHost(Term):
     """
     The organism used to grow and multiply the pathogen under controlled conditions
     """
-    linkml_meta: ClassVar[LinkMLMeta] = LinkMLMeta({'from_schema': 'https://evora-project.eu/', 'title': 'Propagation host'})
+    linkml_meta: ClassVar[LinkMLMeta] = LinkMLMeta({'from_schema': 'https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#',
+         'title': 'Propagation host'})
 
     weight: int = Field(0, title="weight", description="""A numerical value indicating relative importance or priority, generally processed in ascending order. This weight helps prioritize content when organizing or processing data. Its value can be negative, with a default set to 0""", json_schema_extra = { "linkml_meta": {'alias': 'weight',
          'close_mappings': ['adms:status'],
@@ -1376,7 +1378,8 @@ class TransmissionMethod(Term):
     """
     The process by which the pathogen spreads between hosts
     """
-    linkml_meta: ClassVar[LinkMLMeta] = LinkMLMeta({'from_schema': 'https://evora-project.eu/', 'title': 'Transmission method'})
+    linkml_meta: ClassVar[LinkMLMeta] = LinkMLMeta({'from_schema': 'https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#',
+         'title': 'Transmission method'})
 
     weight: int = Field(0, title="weight", description="""A numerical value indicating relative importance or priority, generally processed in ascending order. This weight helps prioritize content when organizing or processing data. Its value can be negative, with a default set to 0""", json_schema_extra = { "linkml_meta": {'alias': 'weight',
          'close_mappings': ['adms:status'],
@@ -1409,7 +1412,7 @@ class ProductionCellLine(Term):
     """
     linkml_meta: ClassVar[LinkMLMeta] = LinkMLMeta({'aliases': ['cell line'],
          'close_mappings': ['wd:Q21014462'],
-         'from_schema': 'https://evora-project.eu/',
+         'from_schema': 'https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#',
          'title': 'Production cell line'})
 
     weight: int = Field(0, title="weight", description="""A numerical value indicating relative importance or priority, generally processed in ascending order. This weight helps prioritize content when organizing or processing data. Its value can be negative, with a default set to 0""", json_schema_extra = { "linkml_meta": {'alias': 'weight',
@@ -1443,7 +1446,7 @@ class ProductCategory(Term):
     """
     linkml_meta: ClassVar[LinkMLMeta] = LinkMLMeta({'aliases': ['product category'],
          'close_mappings': ['wd:Q63981612'],
-         'from_schema': 'https://evora-project.eu/',
+         'from_schema': 'https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#',
          'slot_usage': {'parentCategory': {'description': 'An overarching category '
                                                           'that encompasses the '
                                                           'current category within a '
@@ -1492,7 +1495,8 @@ class IsolationHost(Term):
     """
     Host organism from which the pathogen was isolated
     """
-    linkml_meta: ClassVar[LinkMLMeta] = LinkMLMeta({'from_schema': 'https://evora-project.eu/', 'title': 'Isolation host'})
+    linkml_meta: ClassVar[LinkMLMeta] = LinkMLMeta({'from_schema': 'https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#',
+         'title': 'Isolation host'})
 
     weight: int = Field(0, title="weight", description="""A numerical value indicating relative importance or priority, generally processed in ascending order. This weight helps prioritize content when organizing or processing data. Its value can be negative, with a default set to 0""", json_schema_extra = { "linkml_meta": {'alias': 'weight',
          'close_mappings': ['adms:status'],
@@ -1528,7 +1532,7 @@ class GeographicalOrigin(Term):
          'comments': ['geonames.org API could be a good service data provider as '
                       'suggested by DCAT-AP'],
          'exact_mappings': ['dct:Location'],
-         'from_schema': 'https://evora-project.eu/',
+         'from_schema': 'https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#',
          'title': 'Geographical origin'})
 
     weight: int = Field(0, title="weight", description="""A numerical value indicating relative importance or priority, generally processed in ascending order. This weight helps prioritize content when organizing or processing data. Its value can be negative, with a default set to 0""", json_schema_extra = { "linkml_meta": {'alias': 'weight',
@@ -1560,7 +1564,8 @@ class IPLCOrigin(GeographicalOrigin):
     """
     The IPLC area (Indigenous People and Local Communities) from which a physical item originates
     """
-    linkml_meta: ClassVar[LinkMLMeta] = LinkMLMeta({'from_schema': 'https://evora-project.eu/', 'title': 'IPLC origin'})
+    linkml_meta: ClassVar[LinkMLMeta] = LinkMLMeta({'from_schema': 'https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#',
+         'title': 'IPLC origin'})
 
     weight: int = Field(0, title="weight", description="""A numerical value indicating relative importance or priority, generally processed in ascending order. This weight helps prioritize content when organizing or processing data. Its value can be negative, with a default set to 0""", json_schema_extra = { "linkml_meta": {'alias': 'weight',
          'close_mappings': ['adms:status'],
@@ -1595,7 +1600,7 @@ class Country(Term):
          'close_mappings': ['wd:Q6256'],
          'comments': ['Use of Data provider recommended... serve as a local cache for '
                       'ISO3166'],
-         'from_schema': 'https://evora-project.eu/',
+         'from_schema': 'https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#',
          'slot_usage': {'alpha2Code': {'description': 'Two-letter country codes from '
                                                       'ISO 3166-1 alpha-2',
                                        'multivalued': False,
@@ -1635,7 +1640,8 @@ class IATAClassification(Term):
     """
     The corresponding International Air Transport Association (IATA)'s category for dangerous goods that are transported by air
     """
-    linkml_meta: ClassVar[LinkMLMeta] = LinkMLMeta({'from_schema': 'https://evora-project.eu/', 'title': 'IATA classification'})
+    linkml_meta: ClassVar[LinkMLMeta] = LinkMLMeta({'from_schema': 'https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#',
+         'title': 'IATA classification'})
 
     weight: int = Field(0, title="weight", description="""A numerical value indicating relative importance or priority, generally processed in ascending order. This weight helps prioritize content when organizing or processing data. Its value can be negative, with a default set to 0""", json_schema_extra = { "linkml_meta": {'alias': 'weight',
          'close_mappings': ['adms:status'],
@@ -1668,7 +1674,7 @@ class Variant(CommonName):
     """
     linkml_meta: ClassVar[LinkMLMeta] = LinkMLMeta({'aliases': ['genetic variant'],
          'close_mappings': ['wd:Q104795308'],
-         'from_schema': 'https://evora-project.eu/',
+         'from_schema': 'https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#',
          'title': 'Variant'})
 
     alternateName: Optional[List[AlternateName]] = Field(None, title="alternate name", description="""Any known alternate name related to this name""", json_schema_extra = { "linkml_meta": {'alias': 'alternateName',
@@ -1716,7 +1722,7 @@ class TaxonomicRank(Term):
     linkml_meta: ClassVar[LinkMLMeta] = LinkMLMeta({'aliases': ['taxonomic rank'],
          'close_mappings': ['wd:Q427626'],
          'comments': ['Use of Data provider recommended'],
-         'from_schema': 'https://evora-project.eu/',
+         'from_schema': 'https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#',
          'slot_usage': {'taxonomy': {'description': 'The taxonomy release(s) in which '
                                                     'this entity exists',
                                      'multivalued': True,
@@ -1761,7 +1767,7 @@ class Taxon(Term):
          'comments': ['The taxonomic taxons connected to their parent so that a full '
                       'lienage can be rebuild. Use of Data provider recommended'],
          'exact_mappings': ['dwc:Taxon'],
-         'from_schema': 'https://evora-project.eu/',
+         'from_schema': 'https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#',
          'slot_usage': {'externalEquivalentTaxon': {'close_mappings': ['dwc:taxonID'],
                                                     'comments': ['Could serve as a '
                                                                  'bridge between ICTV '
@@ -1904,7 +1910,7 @@ class ExternalRelatedReference(Dataset):
     """
     A reference that permits to retrieve an item from an external provider
     """
-    linkml_meta: ClassVar[LinkMLMeta] = LinkMLMeta({'from_schema': 'https://evora-project.eu/',
+    linkml_meta: ClassVar[LinkMLMeta] = LinkMLMeta({'from_schema': 'https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#',
          'slot_usage': {'reference': {'close_mappings': ['dct:identifier'],
                                       'description': 'The identifier reference of the '
                                                      'connected external item',
@@ -1967,7 +1973,7 @@ class Sequence(Dataset):
     """
     linkml_meta: ClassVar[LinkMLMeta] = LinkMLMeta({'aliases': ['biological sequence'],
          'close_mappings': ['wd:Q3511065'],
-         'from_schema': 'https://evora-project.eu/',
+         'from_schema': 'https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#',
          'slot_usage': {'sequenceFASTA': {'comments': ['In FASTA format the line '
                                                        'before the nucleotide '
                                                        'sequence, called the FASTA '
@@ -2017,7 +2023,7 @@ class SequenceReference(Dataset):
                       'might be consistent and beneficial for data structuration but '
                       'special attention will have to be take to ensure it remains '
                       'consistent with the actual the use cases for users'],
-         'from_schema': 'https://evora-project.eu/',
+         'from_schema': 'https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#',
          'slot_usage': {'accessionNumber': {'close_mappings': ['dct:identifier'],
                                             'description': 'The sequence ID that '
                                                            'permits to retrieve the '
@@ -2054,7 +2060,7 @@ class PersonOrOrganization(Nameable):
     """
     linkml_meta: ClassVar[LinkMLMeta] = LinkMLMeta({'close_mappings': ['foaf:Agent'],
          'exact_mappings': ['dct:Agent'],
-         'from_schema': 'https://evora-project.eu/',
+         'from_schema': 'https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#',
          'slot_usage': {'contactPoint': {'description': 'An information that allows '
                                                         'someone to establish '
                                                         'communication',
@@ -2117,7 +2123,7 @@ class Person(PersonOrOrganization):
     """
     linkml_meta: ClassVar[LinkMLMeta] = LinkMLMeta({'aliases': ['person'],
          'close_mappings': ['wd:Q215627', 'vcard:Individual'],
-         'from_schema': 'https://evora-project.eu/',
+         'from_schema': 'https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#',
          'slot_usage': {'oRCIDiD': {'description': 'Unique persistent identifier for a '
                                                    'person, provided by the Open '
                                                    'Researcher and Contributor ID '
@@ -2159,7 +2165,7 @@ class Organization(PersonOrOrganization):
     """
     linkml_meta: ClassVar[LinkMLMeta] = LinkMLMeta({'aliases': ['organization'],
          'close_mappings': ['wd:Q43229', 'vcard:Organization'],
-         'from_schema': 'https://evora-project.eu/',
+         'from_schema': 'https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#',
          'slot_usage': {'alternateName': {'close_mappings': ['dwc:institutionCode'],
                                           'description': 'An alternate name or acronym',
                                           'multivalued': False,
@@ -2208,7 +2214,7 @@ class RI(Organization):
     """
     linkml_meta: ClassVar[LinkMLMeta] = LinkMLMeta({'aliases': ['research infrastructure'],
          'close_mappings': ['wd:Q1438053'],
-         'from_schema': 'https://evora-project.eu/',
+         'from_schema': 'https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#',
          'title': 'RI'})
 
     alternateName: Optional[AlternateName] = Field(None, title="alternate name", description="""An alternate name or acronym""", json_schema_extra = { "linkml_meta": {'alias': 'alternateName',
@@ -2243,7 +2249,7 @@ class Provider(Organization):
     A provider of products or services, as a specific organization
     """
     linkml_meta: ClassVar[LinkMLMeta] = LinkMLMeta({'close_mappings': ['dct:ProvenanceStatement'],
-         'from_schema': 'https://evora-project.eu/',
+         'from_schema': 'https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#',
          'slot_usage': {'memberOfRI': {'description': 'The research infrastructure of '
                                                       'which this organization is a '
                                                       'member',
@@ -2287,7 +2293,7 @@ class Originator(PersonOrOrganization):
     The individual or organization responsible for the original discovery, isolation, or creation of an item, providing information about the source or origin of the sample
     """
     linkml_meta: ClassVar[LinkMLMeta] = LinkMLMeta({'close_mappings': ['dct:ProvenanceStatement'],
-         'from_schema': 'https://evora-project.eu/',
+         'from_schema': 'https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#',
          'title': 'Originator'})
 
     homePage: Optional[str] = Field(None, title="home page", description="""Refers to the degree of purity achieved for a protein sample. Possible values include \">95%\" (the protein is highly purified, with more than 95% purity) and \"Unpurified expression host lysate or partly purified protein\" (the protein is either unpurified and present in the host cell lysate or only partially purified).""", json_schema_extra = { "linkml_meta": {'alias': 'homePage', 'domain_of': ['PersonOrOrganization']} })
@@ -2317,7 +2323,7 @@ class BiologicalMaterialOrigin(Dataset):
     """
     Information about the origin of the biological material, compulsory for access, utilization, and benefit-sharing of genetic resources in compliance with the Nagoya Protocol
     """
-    linkml_meta: ClassVar[LinkMLMeta] = LinkMLMeta({'from_schema': 'https://evora-project.eu/',
+    linkml_meta: ClassVar[LinkMLMeta] = LinkMLMeta({'from_schema': 'https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#',
          'slot_usage': {'biologicalPartOrigin': {'comments': ['It can be multiple '
                                                               'parts in case of a '
                                                               'recombinant biological '
@@ -2387,7 +2393,7 @@ class BiologicalPartOrigin(Dataset):
     Information on the origin of a unitary, cohesive part that is part of, or constitutes the biological material. It can be multiple parts in case of a recombinant biological material
     """
     linkml_meta: ClassVar[LinkMLMeta] = LinkMLMeta({'abstract': True,
-         'from_schema': 'https://evora-project.eu/',
+         'from_schema': 'https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#',
          'slot_usage': {'accessToPhysicalGeneticResource': {'description': 'Reference '
                                                                            'of the '
                                                                            'permit '
@@ -2446,7 +2452,7 @@ class NaturalPartOrigin(BiologicalPartOrigin):
     """
     Information on the origin of a natural part that composes the biological material
     """
-    linkml_meta: ClassVar[LinkMLMeta] = LinkMLMeta({'from_schema': 'https://evora-project.eu/',
+    linkml_meta: ClassVar[LinkMLMeta] = LinkMLMeta({'from_schema': 'https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#',
          'slot_usage': {'beforeDate': {'description': 'Set to TRUE if a proxy date for '
                                                       'the collection date is used',
                                        'ifabsent': 'false',
@@ -2546,7 +2552,7 @@ class SyntheticPartOrigin(BiologicalPartOrigin):
     """
     Information on the origin of a synthetic part that composes the biological material
     """
-    linkml_meta: ClassVar[LinkMLMeta] = LinkMLMeta({'from_schema': 'https://evora-project.eu/',
+    linkml_meta: ClassVar[LinkMLMeta] = LinkMLMeta({'from_schema': 'https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#',
          'slot_usage': {'descriptionOfModificationsMadeFromTheReferenceSequences': {'description': 'List '
                                                                                                    'the '
                                                                                                    'modifications '
@@ -2609,7 +2615,7 @@ class RecombinantPartIdentification(ConfiguredBaseModel):
     """
     Identification of a recombinant part
     """
-    linkml_meta: ClassVar[LinkMLMeta] = LinkMLMeta({'from_schema': 'https://evora-project.eu/',
+    linkml_meta: ClassVar[LinkMLMeta] = LinkMLMeta({'from_schema': 'https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#',
          'slot_usage': {'partIdentification': {'description': 'A short designation of '
                                                               'this recombinant part '
                                                               'of the related '
@@ -2643,7 +2649,7 @@ class Collection(Catalogue):
     """
     linkml_meta: ClassVar[LinkMLMeta] = LinkMLMeta({'aliases': ['collection'],
          'close_mappings': ['wd:Q2668072'],
-         'from_schema': 'https://evora-project.eu/',
+         'from_schema': 'https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#',
          'slot_usage': {'collectionDataProvider': {'close_mappings': ['dct:isReferencedBy'],
                                                    'description': 'The provider of the '
                                                                   'data of the '
@@ -2691,7 +2697,7 @@ class ProductOrService(NamedDataset):
     """
     linkml_meta: ClassVar[LinkMLMeta] = LinkMLMeta({'abstract': True,
          'comments': ['part of  wd:Q2897903 (goods and services )'],
-         'from_schema': 'https://evora-project.eu/',
+         'from_schema': 'https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#',
          'slot_usage': {'accessPointURL': {'description': 'The URL that permits to '
                                                           'access to the '
                                                           'product/service detailed '
@@ -3060,7 +3066,7 @@ class Service(ProductOrService):
     """
     linkml_meta: ClassVar[LinkMLMeta] = LinkMLMeta({'aliases': ['service'],
          'close_mappings': ['wd:Q7406919'],
-         'from_schema': 'https://evora-project.eu/',
+         'from_schema': 'https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#',
          'slot_usage': {'modelSpecies': {'description': 'The species of the infected '
                                                         'organism in the experiment',
                                          'multivalued': False,
@@ -3168,7 +3174,7 @@ class Product(ProductOrService):
     """
     linkml_meta: ClassVar[LinkMLMeta] = LinkMLMeta({'aliases': ['product'],
          'close_mappings': ['wd:Q2424752'],
-         'from_schema': 'https://evora-project.eu/',
+         'from_schema': 'https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#',
          'slot_usage': {'hasIATAClassification': {'description': 'The corresponding '
                                                                  'International Air '
                                                                  'Transport '
@@ -3397,7 +3403,7 @@ class Antibody(Product):
     """
     linkml_meta: ClassVar[LinkMLMeta] = LinkMLMeta({'aliases': ['antibody'],
          'close_mappings': ['wd:Q79460'],
-         'from_schema': 'https://evora-project.eu/',
+         'from_schema': 'https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#',
          'slot_usage': {'antibodyPurifiedByAffinity': {'description': 'Indicates '
                                                                       'whether or not '
                                                                       'if the antibody '
@@ -3556,7 +3562,7 @@ class Hybridoma(Antibody):
     """
     linkml_meta: ClassVar[LinkMLMeta] = LinkMLMeta({'aliases': ['hybridoma'],
          'close_mappings': ['wd:Q27554370'],
-         'from_schema': 'https://evora-project.eu/',
+         'from_schema': 'https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#',
          'slot_usage': {'hybridomaDescription': {'description': 'The description of '
                                                                 'the hybridoma',
                                                  'multivalued': False,
@@ -3677,7 +3683,7 @@ class Protein(Product):
     """
     linkml_meta: ClassVar[LinkMLMeta] = LinkMLMeta({'aliases': ['protein'],
          'close_mappings': ['wd:Q8054'],
-         'from_schema': 'https://evora-project.eu/',
+         'from_schema': 'https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#',
          'slot_usage': {'biologicalMaterialOrigin': {'description': 'Information about '
                                                                     'the origin of the '
                                                                     'biological '
@@ -4111,7 +4117,7 @@ class NucleicAcid(Product):
     """
     linkml_meta: ClassVar[LinkMLMeta] = LinkMLMeta({'aliases': ['nucleic acids'],
          'close_mappings': ['wd:Q123619'],
-         'from_schema': 'https://evora-project.eu/',
+         'from_schema': 'https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#',
          'slot_usage': {'biologicalMaterialOrigin': {'description': 'Information about '
                                                                     'the origin of the '
                                                                     'biological '
@@ -4420,7 +4426,7 @@ class DetectionKit(Product):
     """
     A detection kit for specific pathogens
     """
-    linkml_meta: ClassVar[LinkMLMeta] = LinkMLMeta({'from_schema': 'https://evora-project.eu/',
+    linkml_meta: ClassVar[LinkMLMeta] = LinkMLMeta({'from_schema': 'https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#',
          'slot_usage': {'hasSOPFile': {'description': 'The related standard operating '
                                                       'procedure file',
                                        'multivalued': True,
@@ -4574,7 +4580,7 @@ class Bundle(Product):
     """
     linkml_meta: ClassVar[LinkMLMeta] = LinkMLMeta({'aliases': ['product bundle'],
          'close_mappings': ['wd:Q1020767'],
-         'from_schema': 'https://evora-project.eu/',
+         'from_schema': 'https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#',
          'slot_usage': {'complementaryDocument': {'description': 'Links the bundle to '
                                                                  'any additional '
                                                                  'documents that '
@@ -4712,7 +4718,7 @@ class Pathogen(Product):
     linkml_meta: ClassVar[LinkMLMeta] = LinkMLMeta({'abstract': True,
          'aliases': ['pathogen'],
          'close_mappings': ['wd:Q170065'],
-         'from_schema': 'https://evora-project.eu/',
+         'from_schema': 'https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#',
          'slot_usage': {'biologicalMaterialOrigin': {'description': 'Information about '
                                                                     'the origin of the '
                                                                     'biological '
@@ -5089,7 +5095,7 @@ class Virus(Pathogen):
     """
     linkml_meta: ClassVar[LinkMLMeta] = LinkMLMeta({'aliases': ['virus'],
          'close_mappings': ['wd:Q808'],
-         'from_schema': 'https://evora-project.eu/',
+         'from_schema': 'https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#',
          'slot_usage': {'coInfectingViruses': {'description': 'Identifies other '
                                                               'viruses that may '
                                                               'co-infect the host '
@@ -5278,7 +5284,7 @@ class Bacterium(Pathogen):
     """
     linkml_meta: ClassVar[LinkMLMeta] = LinkMLMeta({'aliases': ['bacteria'],
          'close_mappings': ['wd:Q10876'],
-         'from_schema': 'https://evora-project.eu/',
+         'from_schema': 'https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#',
          'title': 'Bacterium'})
 
     biologicalMaterialOrigin: BiologicalMaterialOrigin = Field(..., title="Biological Material origin", description="""Information about the origin of the biological material, essential for access, utilization, and benefit-sharing of genetic resources in compliance with the Nagoya Protocol.""", json_schema_extra = { "linkml_meta": {'alias': 'biologicalMaterialOrigin',
@@ -5419,7 +5425,7 @@ class Fungus(Pathogen):
     """
     linkml_meta: ClassVar[LinkMLMeta] = LinkMLMeta({'aliases': ['fungus'],
          'close_mappings': ['wd:Q764'],
-         'from_schema': 'https://evora-project.eu/',
+         'from_schema': 'https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#',
          'title': 'Fungus'})
 
     biologicalMaterialOrigin: BiologicalMaterialOrigin = Field(..., title="Biological Material origin", description="""Information about the origin of the biological material, essential for access, utilization, and benefit-sharing of genetic resources in compliance with the Nagoya Protocol.""", json_schema_extra = { "linkml_meta": {'alias': 'biologicalMaterialOrigin',
@@ -5560,7 +5566,7 @@ class Protozoan(Pathogen):
     """
     linkml_meta: ClassVar[LinkMLMeta] = LinkMLMeta({'aliases': ['protozoa'],
          'close_mappings': ['wd:Q101274'],
-         'from_schema': 'https://evora-project.eu/',
+         'from_schema': 'https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#',
          'title': 'Protozoan'})
 
     biologicalMaterialOrigin: BiologicalMaterialOrigin = Field(..., title="Biological Material origin", description="""Information about the origin of the biological material, essential for access, utilization, and benefit-sharing of genetic resources in compliance with the Nagoya Protocol.""", json_schema_extra = { "linkml_meta": {'alias': 'biologicalMaterialOrigin',
@@ -5701,7 +5707,7 @@ class Viroid(Pathogen):
     """
     linkml_meta: ClassVar[LinkMLMeta] = LinkMLMeta({'aliases': ['viroid'],
          'close_mappings': ['wd:Q209917'],
-         'from_schema': 'https://evora-project.eu/',
+         'from_schema': 'https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#',
          'title': 'Viroid'})
 
     biologicalMaterialOrigin: BiologicalMaterialOrigin = Field(..., title="Biological Material origin", description="""Information about the origin of the biological material, essential for access, utilization, and benefit-sharing of genetic resources in compliance with the Nagoya Protocol.""", json_schema_extra = { "linkml_meta": {'alias': 'biologicalMaterialOrigin',
@@ -5842,7 +5848,7 @@ class Prion(Pathogen):
     """
     linkml_meta: ClassVar[LinkMLMeta] = LinkMLMeta({'aliases': ['prion'],
          'close_mappings': ['wd:Q47051'],
-         'from_schema': 'https://evora-project.eu/',
+         'from_schema': 'https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#',
          'title': 'Prion'})
 
     biologicalMaterialOrigin: BiologicalMaterialOrigin = Field(..., title="Biological Material origin", description="""Information about the origin of the biological material, essential for access, utilization, and benefit-sharing of genetic resources in compliance with the Nagoya Protocol.""", json_schema_extra = { "linkml_meta": {'alias': 'biologicalMaterialOrigin',
@@ -5983,7 +5989,7 @@ class MSDS(Dataset):
     """
     linkml_meta: ClassVar[LinkMLMeta] = LinkMLMeta({'aliases': ['safety data sheet'],
          'close_mappings': ['wd:Q222067'],
-         'from_schema': 'https://evora-project.eu/',
+         'from_schema': 'https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#',
          'slot_usage': {'accidentalReleaseMeasures': {'description': 'Guidelines for '
                                                                      'safely managing '
                                                                      'spills or leaks '
@@ -6303,7 +6309,7 @@ class File(Nameable):
          'aliases': ['computer file'],
          'close_mappings': ['wd:Q82753'],
          'exact_mappings': ['dcat:mediaType'],
-         'from_schema': 'https://evora-project.eu/',
+         'from_schema': 'https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#',
          'slot_usage': {'contentURL': {'description': 'The web address or location '
                                                       'where the file content is '
                                                       'stored and can be accessed or '
@@ -6358,7 +6364,7 @@ class Data(File):
     """
     linkml_meta: ClassVar[LinkMLMeta] = LinkMLMeta({'aliases': ['data'],
          'close_mappings': ['wd:Q42848'],
-         'from_schema': 'https://evora-project.eu/',
+         'from_schema': 'https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#',
          'title': 'Data'})
 
     contentURL: str = Field(..., title="content URL", description="""The web address or location where the file content is stored and can be accessed or downloaded.""", json_schema_extra = { "linkml_meta": {'alias': 'contentURL', 'domain_of': ['File']} })
@@ -6387,7 +6393,7 @@ class Document(File):
     """
     linkml_meta: ClassVar[LinkMLMeta] = LinkMLMeta({'aliases': ['document'],
          'close_mappings': ['wd:Q49848'],
-         'from_schema': 'https://evora-project.eu/',
+         'from_schema': 'https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#',
          'title': 'Document'})
 
     contentURL: str = Field(..., title="content URL", description="""The web address or location where the file content is stored and can be accessed or downloaded.""", json_schema_extra = { "linkml_meta": {'alias': 'contentURL', 'domain_of': ['File']} })
@@ -6416,7 +6422,7 @@ class Audio(File):
     """
     linkml_meta: ClassVar[LinkMLMeta] = LinkMLMeta({'aliases': ['audio file'],
          'close_mappings': ['wd:Q26987229'],
-         'from_schema': 'https://evora-project.eu/',
+         'from_schema': 'https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#',
          'title': 'Audio'})
 
     contentURL: str = Field(..., title="content URL", description="""The web address or location where the file content is stored and can be accessed or downloaded.""", json_schema_extra = { "linkml_meta": {'alias': 'contentURL', 'domain_of': ['File']} })
@@ -6445,7 +6451,7 @@ class Video(File):
     """
     linkml_meta: ClassVar[LinkMLMeta] = LinkMLMeta({'aliases': ['video file'],
          'close_mappings': ['wd:Q98405806'],
-         'from_schema': 'https://evora-project.eu/',
+         'from_schema': 'https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#',
          'title': 'Video'})
 
     contentURL: str = Field(..., title="content URL", description="""The web address or location where the file content is stored and can be accessed or downloaded.""", json_schema_extra = { "linkml_meta": {'alias': 'contentURL', 'domain_of': ['File']} })
@@ -6474,7 +6480,7 @@ class Image(File):
     """
     linkml_meta: ClassVar[LinkMLMeta] = LinkMLMeta({'aliases': ['image file'],
          'close_mappings': ['wd:Q860625'],
-         'from_schema': 'https://evora-project.eu/',
+         'from_schema': 'https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#',
          'slot_usage': {'altText': {'description': 'An alternate text for the image, '
                                                    'if the image cannot be displayed',
                                     'multivalued': False,
@@ -6511,7 +6517,7 @@ class ContactPoint(Nameable):
     """
     linkml_meta: ClassVar[LinkMLMeta] = LinkMLMeta({'aliases': ['contact point'],
          'close_mappings': ['wd:Q30322502', 'vcard:Contact'],
-         'from_schema': 'https://evora-project.eu/',
+         'from_schema': 'https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#',
          'slot_usage': {'addressCountry': {'close_mappings': ['schema:addressCountry',
                                                               'vcard:hasCountryName'],
                                            'description': 'The country as of  ISO 3166',
@@ -6636,7 +6642,7 @@ class License(Nameable):
     linkml_meta: ClassVar[LinkMLMeta] = LinkMLMeta({'aliases': ['license'],
          'close_mappings': ['wd:Q79719', 'dct:LicenseDocument'],
          'exact_mappings': ['dct:RightsStatement'],
-         'from_schema': 'https://evora-project.eu/',
+         'from_schema': 'https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#',
          'slot_usage': {'licensingOrAttribution': {'close_mappings': ['schema:license'],
                                                    'description': 'A text or html code '
                                                                   'that provides any '
@@ -6701,7 +6707,7 @@ class Certification(Nameable):
     """
     linkml_meta: ClassVar[LinkMLMeta] = LinkMLMeta({'aliases': ['certification'],
          'close_mappings': ['wd:Q374814', 'schema:Certification'],
-         'from_schema': 'https://evora-project.eu/',
+         'from_schema': 'https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#',
          'slot_usage': {'certificationDocument': {'description': 'The document(s) '
                                                                  'issued by an '
                                                                  'authority certifying '

@@ -4,7 +4,7 @@
 
 
 
-URI: [EVORA:ecologicalInformation](https://evora-project.eu/ecologicalInformation)
+URI: [EVORA:ecologicalInformation](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#ecologicalInformation)
 
 
 
@@ -45,7 +45,7 @@ URI: [EVORA:ecologicalInformation](https://evora-project.eu/ecologicalInformatio
 ### Schema Source
 
 
-* from schema: https://evora-project.eu/
+* from schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
 
 
 
@@ -65,7 +65,7 @@ URI: [EVORA:ecologicalInformation](https://evora-project.eu/ecologicalInformatio
 <details>
 ```yaml
 name: ecologicalInformation
-from_schema: https://evora-project.eu/
+from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
 rank: 1000
 alias: ecologicalInformation
 domain_of:

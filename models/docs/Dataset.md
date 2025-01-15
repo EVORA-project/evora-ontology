@@ -11,7 +11,7 @@ _A collection of data, published or curated by a single agent, and available for
 * __NOTE__: this is an abstract class and should not be instantiated directly
 
 
-URI: [EVORA:Dataset](https://evora-project.eu/Dataset)
+URI: [EVORA:Dataset](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#Dataset)
 
 
 
@@ -91,7 +91,7 @@ URI: [EVORA:Dataset](https://evora-project.eu/Dataset)
 ### Schema Source
 
 
-* from schema: https://evora-project.eu/
+* from schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
 
 
 
@@ -123,7 +123,7 @@ name: Dataset
 description: A collection of data, published or curated by a single agent, and available
   for access
 title: Dataset
-from_schema: https://evora-project.eu/
+from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
 aliases:
 - data set
 exact_mappings:
@@ -144,7 +144,7 @@ name: Dataset
 description: A collection of data, published or curated by a single agent, and available
   for access
 title: Dataset
-from_schema: https://evora-project.eu/
+from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
 aliases:
 - data set
 exact_mappings:

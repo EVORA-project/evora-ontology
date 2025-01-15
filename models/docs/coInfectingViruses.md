@@ -4,7 +4,7 @@
 
 
 
-URI: [EVORA:coInfectingViruses](https://evora-project.eu/coInfectingViruses)
+URI: [EVORA:coInfectingViruses](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#coInfectingViruses)
 
 
 
@@ -45,7 +45,7 @@ URI: [EVORA:coInfectingViruses](https://evora-project.eu/coInfectingViruses)
 ### Schema Source
 
 
-* from schema: https://evora-project.eu/
+* from schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
 
 
 
@@ -65,7 +65,7 @@ URI: [EVORA:coInfectingViruses](https://evora-project.eu/coInfectingViruses)
 <details>
 ```yaml
 name: coInfectingViruses
-from_schema: https://evora-project.eu/
+from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
 rank: 1000
 alias: coInfectingViruses
 domain_of:

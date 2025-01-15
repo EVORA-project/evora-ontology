@@ -4,7 +4,7 @@
 
 
 
-URI: [EVORA:loginRequestMethod](https://evora-project.eu/loginRequestMethod)
+URI: [EVORA:loginRequestMethod](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#loginRequestMethod)
 
 
 
@@ -45,7 +45,7 @@ URI: [EVORA:loginRequestMethod](https://evora-project.eu/loginRequestMethod)
 ### Schema Source
 
 
-* from schema: https://evora-project.eu/
+* from schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
 
 
 
@@ -65,7 +65,7 @@ URI: [EVORA:loginRequestMethod](https://evora-project.eu/loginRequestMethod)
 <details>
 ```yaml
 name: loginRequestMethod
-from_schema: https://evora-project.eu/
+from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
 rank: 1000
 alias: loginRequestMethod
 domain_of:

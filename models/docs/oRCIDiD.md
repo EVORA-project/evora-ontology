@@ -4,7 +4,7 @@
 
 
 
-URI: [EVORA:oRCIDiD](https://evora-project.eu/oRCIDiD)
+URI: [EVORA:oRCIDiD](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#oRCIDiD)
 
 
 
@@ -18,8 +18,8 @@ URI: [EVORA:oRCIDiD](https://evora-project.eu/oRCIDiD)
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [Person](Person.md) | An individual |  yes  |
 | [ContactPoint](ContactPoint.md) | Entity serving as focal point of information |  yes  |
+| [Person](Person.md) | An individual |  yes  |
 
 
 
@@ -46,7 +46,7 @@ URI: [EVORA:oRCIDiD](https://evora-project.eu/oRCIDiD)
 ### Schema Source
 
 
-* from schema: https://evora-project.eu/
+* from schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
 
 
 
@@ -66,7 +66,7 @@ URI: [EVORA:oRCIDiD](https://evora-project.eu/oRCIDiD)
 <details>
 ```yaml
 name: oRCIDiD
-from_schema: https://evora-project.eu/
+from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
 rank: 1000
 alias: oRCIDiD
 domain_of:

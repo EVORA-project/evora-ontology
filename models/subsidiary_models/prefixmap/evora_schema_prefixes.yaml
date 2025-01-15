@@ -1,5 +1,5 @@
 {
-   "EVORA": "https://evora-project.eu/",
+   "EVORA": "https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#",
    "IAO": "http://purl.obolibrary.org/obo/IAO_",
    "adms": "http://www.w3.org/ns/adms#",
    "dcat": "http://www.w3.org/ns/dcat#",

@@ -4,7 +4,7 @@
 
 
 
-URI: [EVORA:relatedPDB](https://evora-project.eu/relatedPDB)
+URI: [EVORA:relatedPDB](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#relatedPDB)
 
 
 
@@ -45,7 +45,7 @@ URI: [EVORA:relatedPDB](https://evora-project.eu/relatedPDB)
 ### Schema Source
 
 
-* from schema: https://evora-project.eu/
+* from schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
 
 
 
@@ -65,7 +65,7 @@ URI: [EVORA:relatedPDB](https://evora-project.eu/relatedPDB)
 <details>
 ```yaml
 name: relatedPDB
-from_schema: https://evora-project.eu/
+from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
 rank: 1000
 alias: relatedPDB
 domain_of:

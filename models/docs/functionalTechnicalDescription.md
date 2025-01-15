@@ -4,7 +4,7 @@
 
 
 
-URI: [EVORA:functionalTechnicalDescription](https://evora-project.eu/functionalTechnicalDescription)
+URI: [EVORA:functionalTechnicalDescription](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#functionalTechnicalDescription)
 
 
 
@@ -45,7 +45,7 @@ URI: [EVORA:functionalTechnicalDescription](https://evora-project.eu/functionalT
 ### Schema Source
 
 
-* from schema: https://evora-project.eu/
+* from schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
 
 
 
@@ -65,7 +65,7 @@ URI: [EVORA:functionalTechnicalDescription](https://evora-project.eu/functionalT
 <details>
 ```yaml
 name: functionalTechnicalDescription
-from_schema: https://evora-project.eu/
+from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
 rank: 1000
 alias: functionalTechnicalDescription
 domain_of:

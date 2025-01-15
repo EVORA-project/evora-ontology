@@ -4,7 +4,7 @@
 
 
 
-URI: [EVORA:indigenousPoepleAndLocalCommunityOrigin](https://evora-project.eu/indigenousPoepleAndLocalCommunityOrigin)
+URI: [EVORA:indigenousPoepleAndLocalCommunityOrigin](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#indigenousPoepleAndLocalCommunityOrigin)
 
 
 
@@ -45,7 +45,7 @@ URI: [EVORA:indigenousPoepleAndLocalCommunityOrigin](https://evora-project.eu/in
 ### Schema Source
 
 
-* from schema: https://evora-project.eu/
+* from schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
 
 
 
@@ -65,7 +65,7 @@ URI: [EVORA:indigenousPoepleAndLocalCommunityOrigin](https://evora-project.eu/in
 <details>
 ```yaml
 name: indigenousPoepleAndLocalCommunityOrigin
-from_schema: https://evora-project.eu/
+from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
 rank: 1000
 alias: indigenousPoepleAndLocalCommunityOrigin
 domain_of:

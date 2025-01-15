@@ -9,7 +9,7 @@ _A protein as a derived product from a pathogen_
 
 
 
-URI: [EVORA:Protein](https://evora-project.eu/Protein)
+URI: [EVORA:Protein](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#Protein)
 
 
 
@@ -356,7 +356,7 @@ URI: [EVORA:Protein](https://evora-project.eu/Protein)
 ### Schema Source
 
 
-* from schema: https://evora-project.eu/
+* from schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
 
 
 
@@ -386,7 +386,7 @@ URI: [EVORA:Protein](https://evora-project.eu/Protein)
 name: Protein
 description: A protein as a derived product from a pathogen
 title: Protein
-from_schema: https://evora-project.eu/
+from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
 aliases:
 - protein
 close_mappings:
@@ -555,7 +555,7 @@ slot_usage:
 name: Protein
 description: A protein as a derived product from a pathogen
 title: Protein
-from_schema: https://evora-project.eu/
+from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
 aliases:
 - protein
 close_mappings:
@@ -705,7 +705,7 @@ attributes:
       for access, utilization, and benefit-sharing of genetic resources in compliance
       with the Nagoya Protocol.
     title: Biological Material origin
-    from_schema: https://evora-project.eu/
+    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
     rank: 1000
     alias: biologicalMaterialOrigin
     owner: Protein
@@ -721,7 +721,7 @@ attributes:
     description: The related sequence information from a sequence provider or in fasta
       format
     title: sequence
-    from_schema: https://evora-project.eu/
+    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
     rank: 1000
     alias: sequence
     owner: Protein
@@ -738,7 +738,7 @@ attributes:
     description: Identifier for 3D structural data as per the PDB (Protein Data Bank)
       database
     title: related PDB
-    from_schema: https://evora-project.eu/
+    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
     aliases:
     - PDB structure ID
     close_mappings:
@@ -757,7 +757,7 @@ attributes:
       similar items e.g., Reference strain, Vaccinal strain, Antiviral resistant strain
       ...
     title: special feature
-    from_schema: https://evora-project.eu/
+    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
     rank: 1000
     alias: specialFeature
     owner: Protein
@@ -770,7 +770,7 @@ attributes:
     name: proteinTAG
     description: Peptide sequences genetically grafted onto a recombinant protein
     title: protein TAG
-    from_schema: https://evora-project.eu/
+    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
     rank: 1000
     alias: proteinTAG
     owner: Protein
@@ -785,7 +785,7 @@ attributes:
       capable of independent folding and stability, which contributes to the protein's
       overall function
     title: domain
-    from_schema: https://evora-project.eu/
+    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
     rank: 1000
     alias: domain
     owner: Protein
@@ -801,7 +801,7 @@ attributes:
       dissolved in the cellular or extracellular fluid) and "Inclusion bodies" (aggregated
       proteins that are insoluble and form within the cell)
     title: expressed as
-    from_schema: https://evora-project.eu/
+    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
     rank: 1000
     alias: expressedAs
     owner: Protein
@@ -817,7 +817,7 @@ attributes:
       "Refolded" (proteins have been processed to regain their functional, active
       conformation).
     title: inclusion bodies type
-    from_schema: https://evora-project.eu/
+    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
     rank: 1000
     alias: inclusionBodiesType
     owner: Protein
@@ -833,7 +833,7 @@ attributes:
       "Insect cells" (using baculovirus vectors), and "Mammalian cells" (mammalian
       cell lines).
     title: expression system
-    from_schema: https://evora-project.eu/
+    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
     rank: 1000
     alias: expressionSystem
     owner: Protein
@@ -849,7 +849,7 @@ attributes:
       (the protein's functions have been identified and described) and "No functional
       characterization" (the protein's functions have not been identified or described).
     title: functional characterization
-    from_schema: https://evora-project.eu/
+    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
     rank: 1000
     alias: functionalCharacterization
     owner: Protein
@@ -866,7 +866,7 @@ attributes:
       relevant technical details such as structure, activity, and interactions with
       other molecules.
     title: functional/Technical description
-    from_schema: https://evora-project.eu/
+    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
     rank: 1000
     alias: functionalTechnicalDescription
     owner: Protein
@@ -882,7 +882,7 @@ attributes:
       and "Unpurified expression host lysate or partly purified protein" (the protein
       is either unpurified and present in the host cell lysate or only partially purified).
     title: protein purification
-    from_schema: https://evora-project.eu/
+    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
     rank: 1000
     alias: proteinPurification
     owner: Protein
@@ -898,7 +898,7 @@ attributes:
       to the protein), "Cleaved Tag" (the tag has been removed from the protein),
       and "No Tag" (the protein does not have a tag)
     title: TAG status of the solubilized protein
-    from_schema: https://evora-project.eu/
+    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
     rank: 1000
     alias: theTAGStatusOfTheSolubilizedProtein
     owner: Protein
@@ -915,7 +915,7 @@ attributes:
       for its enzyme activity) and "Antigenic" (the protein has been characterized
       for its ability to elicit an immune response).
     title: type of functional Characterization
-    from_schema: https://evora-project.eu/
+    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
     rank: 1000
     alias: typeOfFunctionalCharacterization
     owner: Protein
@@ -929,7 +929,7 @@ attributes:
     description: The corresponding International Air Transport Association (IATA)'s
       category for this Product
     title: IATA classification
-    from_schema: https://evora-project.eu/
+    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
     rank: 1000
     alias: hasIATAClassification
     owner: Protein
@@ -944,7 +944,7 @@ attributes:
 
       '
     title: shipping conditions
-    from_schema: https://evora-project.eu/
+    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
     rank: 1000
     alias: shippingConditions
     owner: Protein
@@ -963,7 +963,7 @@ attributes:
     - The MSD  is a document that provides detailed information about the properties,
       hazards, handling, storage, and emergency procedures related to the use of a
       chemical or substance
-    from_schema: https://evora-project.eu/
+    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
     rank: 1000
     alias: materialSafetyDataSheet
     owner: Protein
@@ -978,7 +978,7 @@ attributes:
       isolation, or creation of an item, providing information about the source or
       origin of the sample
     title: originator
-    from_schema: https://evora-project.eu/
+    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
     rank: 1000
     alias: originator
     owner: Protein
@@ -997,7 +997,7 @@ attributes:
     - e.g, could be a xsd:string in enumeration ("Freeze Dried", "Liquid Nitrogen",
       "Viral Storage Medium -20C", "Viral Storage Medium -80C", "Living plant material
       (>= +4°C)", "Gas Phase", "Ethanol -20C", "Ethanol -80C", "Dried")
-    from_schema: https://evora-project.eu/
+    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
     rank: 1000
     alias: storageConditions
     owner: Protein
@@ -1012,7 +1012,7 @@ attributes:
       restriction to third parties, as indicated by the ABS permit, in case an ABS
       permit is required
     title: third party distribution consent
-    from_schema: https://evora-project.eu/
+    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
     rank: 1000
     alias: thirdPartyDistributionConsent
     owner: Protein
@@ -1027,7 +1027,7 @@ attributes:
       material, including restrictions on research, commercial use, or distribution,
       considering any potential concerns about the related genetic material
     title: usage restrictions
-    from_schema: https://evora-project.eu/
+    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
     rank: 1000
     alias: usageRestrictions
     owner: Protein
@@ -1042,7 +1042,7 @@ attributes:
       page on the provider's website and/or allows to place an order about it or at
       least describe the process to place an order/enquiry
     title: access point URL
-    from_schema: https://evora-project.eu/
+    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
     exact_mappings:
     - dcat:landingPage
     rank: 1000
@@ -1058,7 +1058,7 @@ attributes:
     description: The reference or the stock keeping unit of the service or item provided
       in the provider's catalogue
     title: ref-SKU
-    from_schema: https://evora-project.eu/
+    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
     exact_mappings:
     - dct:identifier
     rank: 1000
@@ -1077,7 +1077,7 @@ attributes:
     comments:
     - 'The description of what will be delivered to the end-user (e.g.: packaging,
       quantity...)'
-    from_schema: https://evora-project.eu/
+    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
     rank: 1000
     alias: unitDefinition
     owner: Protein
@@ -1090,7 +1090,7 @@ attributes:
     name: category
     description: The main category of the service or product
     title: category
-    from_schema: https://evora-project.eu/
+    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
     exact_mappings:
     - dcat:theme
     rank: 1000
@@ -1106,7 +1106,7 @@ attributes:
     description: Any category apart from its main category in which this product or
       service can fit
     title: additional category
-    from_schema: https://evora-project.eu/
+    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
     exact_mappings:
     - dcat:theme
     rank: 1000
@@ -1125,7 +1125,7 @@ attributes:
     - The cost per access may not be defined or be specific to a request, so it has
       to be a xsd:string instead of an xsd:float as initialy suggested to permit description
       of cost as conditional to what is requested
-    from_schema: https://evora-project.eu/
+    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
     rank: 1000
     ifabsent: string(on request)
     alias: unitCost
@@ -1140,7 +1140,7 @@ attributes:
     description: Information that permits to assess the quality level of what will
       be provided
     title: quality grading
-    from_schema: https://evora-project.eu/
+    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
     rank: 1000
     alias: qualityGrading
     owner: Protein
@@ -1159,7 +1159,7 @@ attributes:
       some cases(e.g: FAIRSHARING) there may have no direct pathogen related but simply
       a taxonomic information .... the default value should be the root of virology:
       Viruses'
-    from_schema: https://evora-project.eu/
+    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
     rank: 1000
     alias: pathogenIdentification
     owner: Protein
@@ -1172,7 +1172,7 @@ attributes:
     name: relatedDOI
     description: Any DOI that can be related
     title: DOI
-    from_schema: https://evora-project.eu/
+    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
     aliases:
     - DOI
     close_mappings:
@@ -1192,7 +1192,7 @@ attributes:
       a biological agent guiding its initial handling in labs according to the risk
       group classification defined by the WHO laboratory biosafety manual
     title: risk group
-    from_schema: https://evora-project.eu/
+    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
     aliases:
     - risk group
     close_mappings:
@@ -1212,7 +1212,7 @@ attributes:
       contributes to protecting people and the environment from biohazards while accessing
       this product or service
     title: biosafety restrictions
-    from_schema: https://evora-project.eu/
+    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
     rank: 1000
     alias: biosafetyRestrictions
     owner: Protein
@@ -1228,7 +1228,7 @@ attributes:
     title: can it be used to produce GMO
     comments:
     - Set to TRUE if it can produce GMO
-    from_schema: https://evora-project.eu/
+    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
     rank: 1000
     alias: canItBeUsedToProduceGMO
     owner: Protein
@@ -1241,7 +1241,7 @@ attributes:
     name: provider
     description: A provider of this product or service, as a specific organization
     title: provider
-    from_schema: https://evora-project.eu/
+    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
     rank: 1000
     alias: provider
     owner: Protein
@@ -1254,7 +1254,7 @@ attributes:
     name: collection
     description: The collection(s) to which belongs this item
     title: collection
-    from_schema: https://evora-project.eu/
+    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
     aliases:
     - catalog
     rank: 1000
@@ -1269,7 +1269,7 @@ attributes:
     name: keywords
     description: List of terms used to tag and categorize this Item
     title: keywords
-    from_schema: https://evora-project.eu/
+    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
     exact_mappings:
     - dcat:keyword
     rank: 1000
@@ -1287,7 +1287,7 @@ attributes:
     title: availability
     comments:
     - Possible availabilities may differ from a project to another
-    from_schema: https://evora-project.eu/
+    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
     rank: 1000
     ifabsent: string(on request)
     alias: availability
@@ -1301,7 +1301,7 @@ attributes:
     name: complementaryDocument
     description: Any complementary document that can be related to this Item
     title: complementary document
-    from_schema: https://evora-project.eu/
+    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
     rank: 1000
     alias: complementaryDocument
     owner: Protein
@@ -1317,7 +1317,7 @@ attributes:
       and maintenance of what is provided, including best practices, troubleshooting
       tips, and procedural instructions
     title: technical recommendation
-    from_schema: https://evora-project.eu/
+    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
     rank: 1000
     alias: technicalRecommendation
     owner: Protein
@@ -1330,7 +1330,7 @@ attributes:
     name: productPicture
     description: A picture that can represent the item
     title: product picture
-    from_schema: https://evora-project.eu/
+    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
     rank: 1000
     alias: productPicture
     owner: Protein
@@ -1344,7 +1344,7 @@ attributes:
     description: A reference that permits to retrieve another related item from an
       external provider
     title: external related reference
-    from_schema: https://evora-project.eu/
+    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
     rank: 1000
     alias: externalRelatedReference
     owner: Protein
@@ -1358,7 +1358,7 @@ attributes:
     description: Any certification related to the current product or service; e.g.,
       ISO certification
     title: certification
-    from_schema: https://evora-project.eu/
+    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
     close_mappings:
     - dct:conformsTo
     rank: 1000
@@ -1373,7 +1373,7 @@ attributes:
     name: internalReference
     description: Any reference or indication to be used for local retrieval purpose
     title: internal reference
-    from_schema: https://evora-project.eu/
+    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
     rank: 1000
     alias: internalReference
     owner: Protein
@@ -1386,7 +1386,7 @@ attributes:
     name: note
     description: An aditional information as a textual comment
     title: note
-    from_schema: https://evora-project.eu/
+    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
     rank: 1000
     alias: note
     owner: Protein
@@ -1399,7 +1399,7 @@ attributes:
     name: contactPoint
     description: An information that allows someone to establish communication
     title: contact point
-    from_schema: https://evora-project.eu/
+    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
     exact_mappings:
     - dcat:contactPoint
     rank: 1000
@@ -1422,7 +1422,7 @@ attributes:
       "Virus name", "virus host type", "collection year", "country of collection"
       ex "suspected epidemiological origin", "genotype", "strain", "variant name or
       specific feature"'
-    from_schema: https://evora-project.eu/
+    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
     exact_mappings:
     - dct:title
     close_mappings:
@@ -1445,7 +1445,7 @@ attributes:
       present the item.
 
       '
-    from_schema: https://evora-project.eu/
+    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
     exact_mappings:
     - dct:description
     rank: 1000

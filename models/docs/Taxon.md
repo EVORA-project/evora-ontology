@@ -9,7 +9,7 @@ _Conceptual entity that groups one or more populations of an organism or organis
 
 
 
-URI: [EVORA:Taxon](https://evora-project.eu/Taxon)
+URI: [EVORA:Taxon](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#Taxon)
 
 
 
@@ -157,7 +157,7 @@ URI: [EVORA:Taxon](https://evora-project.eu/Taxon)
 ### Schema Source
 
 
-* from schema: https://evora-project.eu/
+* from schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
 
 
 
@@ -192,7 +192,7 @@ title: Taxon
 comments:
 - The taxonomic taxons connected to their parent so that a full lienage can be rebuild.
   Use of Data provider recommended
-from_schema: https://evora-project.eu/
+from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
 aliases:
 - taxon
 exact_mappings:
@@ -295,7 +295,7 @@ title: Taxon
 comments:
 - The taxonomic taxons connected to their parent so that a full lienage can be rebuild.
   Use of Data provider recommended
-from_schema: https://evora-project.eu/
+from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
 aliases:
 - taxon
 exact_mappings:
@@ -380,7 +380,7 @@ attributes:
     name: taxonomy
     description: The taxonomy release(s) in which this entity exists
     title: taxonomy
-    from_schema: https://evora-project.eu/
+    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
     rank: 1000
     alias: taxonomy
     owner: Taxon
@@ -394,7 +394,7 @@ attributes:
     name: parentTaxon
     description: The parent taxon of the current taxon
     title: parent taxon
-    from_schema: https://evora-project.eu/
+    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
     close_mappings:
     - dwc:Taxon
     rank: 1000
@@ -409,7 +409,7 @@ attributes:
     name: rank
     description: Relative level or position of the identified taxon in the taxonomy
     title: rank
-    from_schema: https://evora-project.eu/
+    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
     exact_mappings:
     - dwc:taxonRank
     rank: 1000
@@ -425,7 +425,7 @@ attributes:
     name: previouslyKnownAs
     description: Any historic version of this taxon having a different name
     title: previously known as
-    from_schema: https://evora-project.eu/
+    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
     close_mappings:
     - dwc:Taxon
     rank: 1000
@@ -444,7 +444,7 @@ attributes:
     comments:
     - Could serve as a bridge between ICTV and NCBI as several providers currently
       uses NCBI Taxonomy
-    from_schema: https://evora-project.eu/
+    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
     close_mappings:
     - dwc:taxonID
     rank: 1000
@@ -459,7 +459,7 @@ attributes:
     name: taxonomicID
     description: The taxonomic identifier as a persistent identifier accross releases
     title: taxonomic ID
-    from_schema: https://evora-project.eu/
+    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
     close_mappings:
     - dwc:taxonID
     rank: 1000
@@ -480,7 +480,7 @@ attributes:
       NCBI= Key of the taxon node !! Could be replaced by a composite key made of
       "taxonomic ID" + "has version" But can be referenced as it seems the "taxonomic
       node_ID" will be generated and provided by the ICTV
-    from_schema: https://evora-project.eu/
+    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
     close_mappings:
     - dwc:taxonID
     rank: 1000
@@ -497,7 +497,7 @@ attributes:
       processed in ascending order. This weight helps prioritize content when organizing
       or processing data. Its value can be negative, with a default set to 0
     title: weight
-    from_schema: https://evora-project.eu/
+    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
     close_mappings:
     - adms:status
     rank: 1000
@@ -514,7 +514,7 @@ attributes:
     name: inVocabulary
     description: Terms belong to a specific vocabulary
     title: in Vocabulary
-    from_schema: https://evora-project.eu/
+    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
     aliases:
     - catalog
     close_mappings:
@@ -538,7 +538,7 @@ attributes:
       "Virus name", "virus host type", "collection year", "country of collection"
       ex "suspected epidemiological origin", "genotype", "strain", "variant name or
       specific feature"'
-    from_schema: https://evora-project.eu/
+    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
     exact_mappings:
     - dct:title
     close_mappings:
@@ -561,7 +561,7 @@ attributes:
       present the item.
 
       '
-    from_schema: https://evora-project.eu/
+    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
     exact_mappings:
     - dct:description
     rank: 1000

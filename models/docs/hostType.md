@@ -4,7 +4,7 @@
 
 
 
-URI: [EVORA:hostType](https://evora-project.eu/hostType)
+URI: [EVORA:hostType](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#hostType)
 
 
 
@@ -45,7 +45,7 @@ URI: [EVORA:hostType](https://evora-project.eu/hostType)
 ### Schema Source
 
 
-* from schema: https://evora-project.eu/
+* from schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
 
 
 
@@ -65,7 +65,7 @@ URI: [EVORA:hostType](https://evora-project.eu/hostType)
 <details>
 ```yaml
 name: hostType
-from_schema: https://evora-project.eu/
+from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
 rank: 1000
 alias: hostType
 domain_of:

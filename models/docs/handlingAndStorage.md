@@ -4,7 +4,7 @@
 
 
 
-URI: [EVORA:handlingAndStorage](https://evora-project.eu/handlingAndStorage)
+URI: [EVORA:handlingAndStorage](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#handlingAndStorage)
 
 
 
@@ -45,7 +45,7 @@ URI: [EVORA:handlingAndStorage](https://evora-project.eu/handlingAndStorage)
 ### Schema Source
 
 
-* from schema: https://evora-project.eu/
+* from schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
 
 
 
@@ -65,7 +65,7 @@ URI: [EVORA:handlingAndStorage](https://evora-project.eu/handlingAndStorage)
 <details>
 ```yaml
 name: handlingAndStorage
-from_schema: https://evora-project.eu/
+from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
 rank: 1000
 alias: handlingAndStorage
 domain_of:

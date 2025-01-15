@@ -4,7 +4,7 @@
 
 
 
-URI: [EVORA:permitIdentifierForABS](https://evora-project.eu/permitIdentifierForABS)
+URI: [EVORA:permitIdentifierForABS](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#permitIdentifierForABS)
 
 
 
@@ -45,7 +45,7 @@ URI: [EVORA:permitIdentifierForABS](https://evora-project.eu/permitIdentifierFor
 ### Schema Source
 
 
-* from schema: https://evora-project.eu/
+* from schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
 
 
 
@@ -65,7 +65,7 @@ URI: [EVORA:permitIdentifierForABS](https://evora-project.eu/permitIdentifierFor
 <details>
 ```yaml
 name: permitIdentifierForABS
-from_schema: https://evora-project.eu/
+from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
 rank: 1000
 alias: permitIdentifierForABS
 domain_of:

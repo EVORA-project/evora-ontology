@@ -9,7 +9,7 @@ _Vernacular name that is the name used in everyday language to refer to an organ
 
 
 
-URI: [EVORA:CommonName](https://evora-project.eu/CommonName)
+URI: [EVORA:CommonName](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#CommonName)
 
 
 
@@ -115,7 +115,7 @@ URI: [EVORA:CommonName](https://evora-project.eu/CommonName)
 ### Schema Source
 
 
-* from schema: https://evora-project.eu/
+* from schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
 
 
 
@@ -148,7 +148,7 @@ description: Vernacular name that is the name used in everyday language to refer
   an organism or group of organisms. This name is typically easier to remember and
   pronounce compared to the scientific name
 title: Common Name
-from_schema: https://evora-project.eu/
+from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
 aliases:
 - common name
 exact_mappings:
@@ -201,7 +201,7 @@ description: Vernacular name that is the name used in everyday language to refer
   an organism or group of organisms. This name is typically easier to remember and
   pronounce compared to the scientific name
 title: Common Name
-from_schema: https://evora-project.eu/
+from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
 aliases:
 - common name
 exact_mappings:
@@ -248,7 +248,7 @@ attributes:
       serve as keywords arround the pathogen name for search and as a bridge with
       other projects that are still using other naming systems or taxonomies e.g.
       the NCBI taxonomy
-    from_schema: https://evora-project.eu/
+    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
     aliases:
     - alternative name
     close_mappings:
@@ -268,7 +268,7 @@ attributes:
     description: The name of the origin from which knowledge is obtained. This can
       include any entity that provides information
     title: source of information
-    from_schema: https://evora-project.eu/
+    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
     aliases:
     - stated in
     close_mappings:
@@ -288,7 +288,7 @@ attributes:
       processed in ascending order. This weight helps prioritize content when organizing
       or processing data. Its value can be negative, with a default set to 0
     title: weight
-    from_schema: https://evora-project.eu/
+    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
     close_mappings:
     - adms:status
     rank: 1000
@@ -305,7 +305,7 @@ attributes:
     name: inVocabulary
     description: Terms belong to a specific vocabulary
     title: in Vocabulary
-    from_schema: https://evora-project.eu/
+    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
     aliases:
     - catalog
     close_mappings:
@@ -329,7 +329,7 @@ attributes:
       "Virus name", "virus host type", "collection year", "country of collection"
       ex "suspected epidemiological origin", "genotype", "strain", "variant name or
       specific feature"'
-    from_schema: https://evora-project.eu/
+    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
     exact_mappings:
     - dct:title
     close_mappings:
@@ -352,7 +352,7 @@ attributes:
       present the item.
 
       '
-    from_schema: https://evora-project.eu/
+    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
     exact_mappings:
     - dct:description
     rank: 1000

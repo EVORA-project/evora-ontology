@@ -4,7 +4,7 @@
 
 
 
-URI: [EVORA:providedEntityType](https://evora-project.eu/providedEntityType)
+URI: [EVORA:providedEntityType](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#providedEntityType)
 
 
 
@@ -45,7 +45,7 @@ URI: [EVORA:providedEntityType](https://evora-project.eu/providedEntityType)
 ### Schema Source
 
 
-* from schema: https://evora-project.eu/
+* from schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
 
 
 
@@ -65,7 +65,7 @@ URI: [EVORA:providedEntityType](https://evora-project.eu/providedEntityType)
 <details>
 ```yaml
 name: providedEntityType
-from_schema: https://evora-project.eu/
+from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
 rank: 1000
 alias: providedEntityType
 domain_of:
