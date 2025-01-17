@@ -1,8 +1,8 @@
-# Enum: FunctionalCharacterization
+# Enum: FunctionalCharacterizationEnumeration
 
 
 
-URI: [FunctionalCharacterization](FunctionalCharacterization.md)
+URI: [FunctionalCharacterizationEnumeration](FunctionalCharacterizationEnumeration.md)
 
 ## Permissible Values
 
@@ -13,6 +13,12 @@ URI: [FunctionalCharacterization](FunctionalCharacterization.md)
 
 
 
+
+## Slots
+
+| Name | Description |
+| ---  | --- |
+| [functionalCharacterization](functionalCharacterization.md) | The process of determining and describing the specific biological activities ... |
 
 
 
@@ -27,13 +33,12 @@ URI: [FunctionalCharacterization](FunctionalCharacterization.md)
 
 
 
+### Schema Source
 
-## Mappings
 
-| Mapping Type | Mapped Value |
-| ---  | ---  |
-| self | EVORAO:functionalCharacterization |
-| native | EVORAO:functionalCharacterization |
+* from schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+
+
 
 
 
@@ -42,7 +47,8 @@ URI: [FunctionalCharacterization](FunctionalCharacterization.md)
 
 <details>
 ```yaml
-name: functionalCharacterization
+name: functionalCharacterizationEnumeration
+from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
 rank: 1000
 permissible_values:
   Functionally characterized:

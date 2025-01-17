@@ -1,8 +1,8 @@
-# Enum: PathogenType
+# Enum: PathogenTypeEnumeration
 
 
 
-URI: [PathogenType](PathogenType.md)
+URI: [PathogenTypeEnumeration](PathogenTypeEnumeration.md)
 
 ## Permissible Values
 
@@ -18,6 +18,12 @@ URI: [PathogenType](PathogenType.md)
 
 
 
+## Slots
+
+| Name | Description |
+| ---  | --- |
+| [pathogenType](pathogenType.md) | Identification of the specific type of pathogen among the listed categories e |
+
 
 
 
@@ -31,13 +37,12 @@ URI: [PathogenType](PathogenType.md)
 
 
 
+### Schema Source
 
-## Mappings
 
-| Mapping Type | Mapped Value |
-| ---  | ---  |
-| self | EVORAO:pathogenType |
-| native | EVORAO:pathogenType |
+* from schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+
+
 
 
 
@@ -46,7 +51,8 @@ URI: [PathogenType](PathogenType.md)
 
 <details>
 ```yaml
-name: pathogenType
+name: pathogenTypeEnumeration
+from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
 rank: 1000
 permissible_values:
   Virus:

@@ -110,7 +110,7 @@ class PathogenIdentificationHostType(Base):
     __tablename__ = 'PathogenIdentification_hostType'
 
     PathogenIdentification_id = Column(Integer(), ForeignKey('PathogenIdentification.id'), primary_key=True)
-    hostType = Column(Text(), primary_key=True)
+    hostType = Column(Enum('Animal', 'Human', 'Plant', name='hostTypeEnumeration'), primary_key=True)
     
 
     def __repr__(self):
@@ -1388,7 +1388,7 @@ class ProteinExpressedAs(Base):
     __tablename__ = 'Protein_expressedAs'
 
     Protein_id = Column(Integer(), ForeignKey('Protein.id'), primary_key=True)
-    expressedAs = Column(Text(), primary_key=True)
+    expressedAs = Column(Enum('Soluble', 'Inclusion bodies', name='expressedAsEnumeration'), primary_key=True)
     
 
     def __repr__(self):
@@ -1406,7 +1406,7 @@ class ProteinInclusionBodiesType(Base):
     __tablename__ = 'Protein_inclusionBodiesType'
 
     Protein_id = Column(Integer(), ForeignKey('Protein.id'), primary_key=True)
-    inclusionBodiesType = Column(Text(), primary_key=True)
+    inclusionBodiesType = Column(Enum('Denatured', 'Refolded', name='inclusionBodiesTypeEnumeration'), primary_key=True)
     
 
     def __repr__(self):
@@ -1424,7 +1424,7 @@ class ProteinExpressionSystem(Base):
     __tablename__ = 'Protein_expressionSystem'
 
     Protein_id = Column(Integer(), ForeignKey('Protein.id'), primary_key=True)
-    expressionSystem = Column(Text(), primary_key=True)
+    expressionSystem = Column(Enum('E. coli', 'Insect cells', 'Mammalian cells', name='expressionSystemEnumeration'), primary_key=True)
     
 
     def __repr__(self):
@@ -1442,7 +1442,7 @@ class ProteinFunctionalCharacterization(Base):
     __tablename__ = 'Protein_functionalCharacterization'
 
     Protein_id = Column(Integer(), ForeignKey('Protein.id'), primary_key=True)
-    functionalCharacterization = Column(Text(), primary_key=True)
+    functionalCharacterization = Column(Enum('Functionally characterized', 'No functional characterization', name='functionalCharacterizationEnumeration'), primary_key=True)
     
 
     def __repr__(self):
@@ -1478,7 +1478,7 @@ class ProteinProteinPurification(Base):
     __tablename__ = 'Protein_proteinPurification'
 
     Protein_id = Column(Integer(), ForeignKey('Protein.id'), primary_key=True)
-    proteinPurification = Column(Text(), primary_key=True)
+    proteinPurification = Column(Enum('Greater than 95 percent', 'Unpurified expression host lysate or partly purified protein', name='proteinPurificationEnumeration'), primary_key=True)
     
 
     def __repr__(self):
@@ -1514,7 +1514,7 @@ class ProteinTypeOfFunctionalCharacterization(Base):
     __tablename__ = 'Protein_typeOfFunctionalCharacterization'
 
     Protein_id = Column(Integer(), ForeignKey('Protein.id'), primary_key=True)
-    typeOfFunctionalCharacterization = Column(Text(), primary_key=True)
+    typeOfFunctionalCharacterization = Column(Enum('Enzymatic', 'Antigenic', name='typeOfFunctionalCharacterizationEnumeration'), primary_key=True)
     
 
     def __repr__(self):
@@ -4292,7 +4292,7 @@ class PathogenIdentification(Dataset):
     __tablename__ = 'PathogenIdentification'
 
     id = Column(Integer(), primary_key=True, autoincrement=True , nullable=False )
-    pathogenType = Column(Text(), nullable=False )
+    pathogenType = Column(Enum('Virus', 'Bacterium', 'Fungus', 'Protozoan', 'Viroid', 'Prion', name='pathogenTypeEnumeration'), nullable=False )
     subspecies = Column(Text())
     strain = Column(Text())
     isolate = Column(Text())
@@ -4414,7 +4414,7 @@ class SequenceReference(Dataset):
 
     id = Column(Integer(), primary_key=True, autoincrement=True , nullable=False )
     accessionNumber = Column(Text(), nullable=False )
-    sequenceProvider = Column(Text(), nullable=False )
+    sequenceProvider = Column(Enum('ENA', 'GenBank', name='sequenceProviderEnumeration'), nullable=False )
     
 
     def __repr__(self):
@@ -4717,11 +4717,11 @@ class DataProvider(DataService):
     __tablename__ = 'DataProvider'
 
     id = Column(Integer(), primary_key=True, autoincrement=True , nullable=False )
-    loginRequestMethod = Column(Text())
+    loginRequestMethod = Column(Enum('GET', 'POST', name='queryMethodEnumeration'))
     loginURL = Column(Text())
     loginTokenName = Column(Text())
     queryURL = Column(Text(), nullable=False )
-    queryMethod = Column(Text(), nullable=False )
+    queryMethod = Column(Enum('GET', 'POST', name='queryMethodEnumeration'), nullable=False )
     contentType = Column(Text(), nullable=False )
     providedEntityType = Column(Text(), nullable=False )
     weight = Column(Integer(), nullable=False )
@@ -6412,7 +6412,7 @@ class NucleicAcid(Product):
     mutationObserved = Column(Boolean(), nullable=False )
     observedMutations = Column(Text())
     identificationTechnique = Column(Text())
-    sequencing = Column(Text(), nullable=False )
+    sequencing = Column(Enum('Not sequenced', 'Partly sequenced', 'Fully sequenced', name='sequencingEnumeration'), nullable=False )
     titer = Column(Text())
     sequenceChecked = Column(Boolean(), nullable=False )
     shippingConditions = Column(Text(), nullable=False )
@@ -6711,16 +6711,16 @@ class Pathogen(Product):
     __tablename__ = 'Pathogen'
 
     id = Column(Integer(), primary_key=True, autoincrement=True , nullable=False )
-    cultivability = Column(Text(), nullable=False )
+    cultivability = Column(Enum('Cultivable', 'Uncultivable', 'Inactivated', name='cultivabilityEnumeration'), nullable=False )
     clinicalInformation = Column(Text())
     identificationTechnique = Column(Text())
-    infectivity = Column(Text(), nullable=False )
+    infectivity = Column(Enum('Infectivity tested', 'Infectivity tested and quantified', 'Non cultivable sample, infectivity cannot be tested', name='infectivityEnumeration'), nullable=False )
     infectivityTest = Column(Text())
     isolationTechnique = Column(Text())
     isolationConditions = Column(Text())
-    letterOfAuthority = Column(Text(), nullable=False )
+    letterOfAuthority = Column(Enum('Not applicable', 'Not required', 'Required for customers in the EU', 'Required', name='letterOfAuthorityEnumeration'), nullable=False )
     passage = Column(Text())
-    genomeSequencing = Column(Text(), nullable=False )
+    genomeSequencing = Column(Enum('Complete genome', 'Complete coding sequence', 'Partial sequence', name='genomeSequencingEnumeration'), nullable=False )
     titer = Column(Text(), nullable=False )
     shippingConditions = Column(Text(), nullable=False )
     storageConditions = Column(Text(), nullable=False )
@@ -6937,16 +6937,16 @@ class Virus(Pathogen):
     id = Column(Integer(), primary_key=True, autoincrement=True , nullable=False )
     contaminationWithCoInfectingViruses = Column(Boolean(), nullable=False )
     mycoplasmicContent = Column(Boolean(), nullable=False )
-    cultivability = Column(Text(), nullable=False )
+    cultivability = Column(Enum('Cultivable', 'Uncultivable', 'Inactivated', name='cultivabilityEnumeration'), nullable=False )
     clinicalInformation = Column(Text())
     identificationTechnique = Column(Text())
-    infectivity = Column(Text(), nullable=False )
+    infectivity = Column(Enum('Infectivity tested', 'Infectivity tested and quantified', 'Non cultivable sample, infectivity cannot be tested', name='infectivityEnumeration'), nullable=False )
     infectivityTest = Column(Text())
     isolationTechnique = Column(Text())
     isolationConditions = Column(Text())
-    letterOfAuthority = Column(Text(), nullable=False )
+    letterOfAuthority = Column(Enum('Not applicable', 'Not required', 'Required for customers in the EU', 'Required', name='letterOfAuthorityEnumeration'), nullable=False )
     passage = Column(Text())
-    genomeSequencing = Column(Text(), nullable=False )
+    genomeSequencing = Column(Enum('Complete genome', 'Complete coding sequence', 'Partial sequence', name='genomeSequencingEnumeration'), nullable=False )
     titer = Column(Text(), nullable=False )
     shippingConditions = Column(Text(), nullable=False )
     storageConditions = Column(Text(), nullable=False )
@@ -7067,16 +7067,16 @@ class Bacterium(Pathogen):
     __tablename__ = 'Bacterium'
 
     id = Column(Integer(), primary_key=True, autoincrement=True , nullable=False )
-    cultivability = Column(Text(), nullable=False )
+    cultivability = Column(Enum('Cultivable', 'Uncultivable', 'Inactivated', name='cultivabilityEnumeration'), nullable=False )
     clinicalInformation = Column(Text())
     identificationTechnique = Column(Text())
-    infectivity = Column(Text(), nullable=False )
+    infectivity = Column(Enum('Infectivity tested', 'Infectivity tested and quantified', 'Non cultivable sample, infectivity cannot be tested', name='infectivityEnumeration'), nullable=False )
     infectivityTest = Column(Text())
     isolationTechnique = Column(Text())
     isolationConditions = Column(Text())
-    letterOfAuthority = Column(Text(), nullable=False )
+    letterOfAuthority = Column(Enum('Not applicable', 'Not required', 'Required for customers in the EU', 'Required', name='letterOfAuthorityEnumeration'), nullable=False )
     passage = Column(Text())
-    genomeSequencing = Column(Text(), nullable=False )
+    genomeSequencing = Column(Enum('Complete genome', 'Complete coding sequence', 'Partial sequence', name='genomeSequencingEnumeration'), nullable=False )
     titer = Column(Text(), nullable=False )
     shippingConditions = Column(Text(), nullable=False )
     storageConditions = Column(Text(), nullable=False )
@@ -7193,16 +7193,16 @@ class Fungus(Pathogen):
     __tablename__ = 'Fungus'
 
     id = Column(Integer(), primary_key=True, autoincrement=True , nullable=False )
-    cultivability = Column(Text(), nullable=False )
+    cultivability = Column(Enum('Cultivable', 'Uncultivable', 'Inactivated', name='cultivabilityEnumeration'), nullable=False )
     clinicalInformation = Column(Text())
     identificationTechnique = Column(Text())
-    infectivity = Column(Text(), nullable=False )
+    infectivity = Column(Enum('Infectivity tested', 'Infectivity tested and quantified', 'Non cultivable sample, infectivity cannot be tested', name='infectivityEnumeration'), nullable=False )
     infectivityTest = Column(Text())
     isolationTechnique = Column(Text())
     isolationConditions = Column(Text())
-    letterOfAuthority = Column(Text(), nullable=False )
+    letterOfAuthority = Column(Enum('Not applicable', 'Not required', 'Required for customers in the EU', 'Required', name='letterOfAuthorityEnumeration'), nullable=False )
     passage = Column(Text())
-    genomeSequencing = Column(Text(), nullable=False )
+    genomeSequencing = Column(Enum('Complete genome', 'Complete coding sequence', 'Partial sequence', name='genomeSequencingEnumeration'), nullable=False )
     titer = Column(Text(), nullable=False )
     shippingConditions = Column(Text(), nullable=False )
     storageConditions = Column(Text(), nullable=False )
@@ -7319,16 +7319,16 @@ class Protozoan(Pathogen):
     __tablename__ = 'Protozoan'
 
     id = Column(Integer(), primary_key=True, autoincrement=True , nullable=False )
-    cultivability = Column(Text(), nullable=False )
+    cultivability = Column(Enum('Cultivable', 'Uncultivable', 'Inactivated', name='cultivabilityEnumeration'), nullable=False )
     clinicalInformation = Column(Text())
     identificationTechnique = Column(Text())
-    infectivity = Column(Text(), nullable=False )
+    infectivity = Column(Enum('Infectivity tested', 'Infectivity tested and quantified', 'Non cultivable sample, infectivity cannot be tested', name='infectivityEnumeration'), nullable=False )
     infectivityTest = Column(Text())
     isolationTechnique = Column(Text())
     isolationConditions = Column(Text())
-    letterOfAuthority = Column(Text(), nullable=False )
+    letterOfAuthority = Column(Enum('Not applicable', 'Not required', 'Required for customers in the EU', 'Required', name='letterOfAuthorityEnumeration'), nullable=False )
     passage = Column(Text())
-    genomeSequencing = Column(Text(), nullable=False )
+    genomeSequencing = Column(Enum('Complete genome', 'Complete coding sequence', 'Partial sequence', name='genomeSequencingEnumeration'), nullable=False )
     titer = Column(Text(), nullable=False )
     shippingConditions = Column(Text(), nullable=False )
     storageConditions = Column(Text(), nullable=False )
@@ -7445,16 +7445,16 @@ class Viroid(Pathogen):
     __tablename__ = 'Viroid'
 
     id = Column(Integer(), primary_key=True, autoincrement=True , nullable=False )
-    cultivability = Column(Text(), nullable=False )
+    cultivability = Column(Enum('Cultivable', 'Uncultivable', 'Inactivated', name='cultivabilityEnumeration'), nullable=False )
     clinicalInformation = Column(Text())
     identificationTechnique = Column(Text())
-    infectivity = Column(Text(), nullable=False )
+    infectivity = Column(Enum('Infectivity tested', 'Infectivity tested and quantified', 'Non cultivable sample, infectivity cannot be tested', name='infectivityEnumeration'), nullable=False )
     infectivityTest = Column(Text())
     isolationTechnique = Column(Text())
     isolationConditions = Column(Text())
-    letterOfAuthority = Column(Text(), nullable=False )
+    letterOfAuthority = Column(Enum('Not applicable', 'Not required', 'Required for customers in the EU', 'Required', name='letterOfAuthorityEnumeration'), nullable=False )
     passage = Column(Text())
-    genomeSequencing = Column(Text(), nullable=False )
+    genomeSequencing = Column(Enum('Complete genome', 'Complete coding sequence', 'Partial sequence', name='genomeSequencingEnumeration'), nullable=False )
     titer = Column(Text(), nullable=False )
     shippingConditions = Column(Text(), nullable=False )
     storageConditions = Column(Text(), nullable=False )
@@ -7571,16 +7571,16 @@ class Prion(Pathogen):
     __tablename__ = 'Prion'
 
     id = Column(Integer(), primary_key=True, autoincrement=True , nullable=False )
-    cultivability = Column(Text(), nullable=False )
+    cultivability = Column(Enum('Cultivable', 'Uncultivable', 'Inactivated', name='cultivabilityEnumeration'), nullable=False )
     clinicalInformation = Column(Text())
     identificationTechnique = Column(Text())
-    infectivity = Column(Text(), nullable=False )
+    infectivity = Column(Enum('Infectivity tested', 'Infectivity tested and quantified', 'Non cultivable sample, infectivity cannot be tested', name='infectivityEnumeration'), nullable=False )
     infectivityTest = Column(Text())
     isolationTechnique = Column(Text())
     isolationConditions = Column(Text())
-    letterOfAuthority = Column(Text(), nullable=False )
+    letterOfAuthority = Column(Enum('Not applicable', 'Not required', 'Required for customers in the EU', 'Required', name='letterOfAuthorityEnumeration'), nullable=False )
     passage = Column(Text())
-    genomeSequencing = Column(Text(), nullable=False )
+    genomeSequencing = Column(Enum('Complete genome', 'Complete coding sequence', 'Partial sequence', name='genomeSequencingEnumeration'), nullable=False )
     titer = Column(Text(), nullable=False )
     shippingConditions = Column(Text(), nullable=False )
     storageConditions = Column(Text(), nullable=False )

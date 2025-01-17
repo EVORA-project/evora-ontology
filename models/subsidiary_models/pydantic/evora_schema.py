@@ -29,7 +29,7 @@ from pydantic import (
 
 
 metamodel_version = "None"
-version = "1.0.7785"
+version = "1.0.7894"
 
 
 class ConfiguredBaseModel(BaseModel):
@@ -82,7 +82,7 @@ linkml_meta = LinkMLMeta({'contributors': ['https://github.com/Angatar',
                     'interoperability, accessibility, and reusability across '
                     'various projects. The EVORA Ontology aims to support '
                     'preparedness and response to pandemics.',
-     'generation_date': '2025-01-17T16:27:56',
+     'generation_date': '2025-01-17T17:09:43',
      'id': 'https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#',
      'imports': ['linkml:types'],
      'in_language': 'en',
@@ -133,21 +133,14 @@ linkml_meta = LinkMLMeta({'contributors': ['https://github.com/Angatar',
      'source_file': 'models/evora_schema.yaml',
      'title': 'European Viral Outbreak Response Alliance Ontology'} )
 
-class LoginRequestMethod(str, Enum):
+class QueryMethodEnumeration(str, Enum):
     # GET http method, used to send information, such as a query string, directly in the URL
     GET = "GET"
     # POST http method, used to send information to a server by storing it in the request body of the http request
     POST = "POST"
 
 
-class QueryMethod(str, Enum):
-    # GET http method, used to send information, such as a query string, directly in the URL
-    GET = "GET"
-    # POST http method, used to send information to a server by storing it in the request body of the http request
-    POST = "POST"
-
-
-class PathogenType(str, Enum):
+class PathogenTypeEnumeration(str, Enum):
     # The virus as a biological material
     Virus = "Virus"
     # The bacterium as a biological material
@@ -162,7 +155,7 @@ class PathogenType(str, Enum):
     Prion = "Prion"
 
 
-class HostType(str, Enum):
+class HostTypeEnumeration(str, Enum):
     # Kingdom of multicellular eukaryotic organisms
     Animal = "Animal"
     # Any member of Homo sapiens, unique extant species of the genus Homo
@@ -171,28 +164,28 @@ class HostType(str, Enum):
     Plant = "Plant"
 
 
-class SequenceProvider(str, Enum):
+class SequenceProviderEnumeration(str, Enum):
     # The European Nucleotide Archive
     ENA = "ENA"
     # The NIH genetic sequence database, an annotated collection of all publicly available DNA sequences
     GenBank = "GenBank"
 
 
-class ExpressedAs(str, Enum):
+class ExpressedAsEnumeration(str, Enum):
     # Expressed as soluble protein
     Soluble = "Soluble"
     # Expressed as aggregated molecules
     Inclusion_bodies = "Inclusion bodies"
 
 
-class InclusionBodiesType(str, Enum):
+class InclusionBodiesTypeEnumeration(str, Enum):
     # Having losed their folded structure present in their native state
     Denatured = "Denatured"
     # Having regained a folded structure
     Refolded = "Refolded"
 
 
-class ExpressionSystem(str, Enum):
+class ExpressionSystemEnumeration(str, Enum):
     # Expressed in E. Coli bacteria
     EFULL_STOP_coli = "E. coli"
     # Expressed in insect cells
@@ -201,28 +194,28 @@ class ExpressionSystem(str, Enum):
     Mammalian_cells = "Mammalian cells"
 
 
-class FunctionalCharacterization(str, Enum):
+class FunctionalCharacterizationEnumeration(str, Enum):
     # The related protein has been functionally characterized
     Functionally_characterized = "Functionally characterized"
     # The related protein has curently no functional characterization
     No_functional_characterization = "No functional characterization"
 
 
-class ProteinPurification(str, Enum):
-    # The protein is purified over 95%
-    Superior_to_95_percents = "Superior to 95 percents"
+class ProteinPurificationEnumeration(str, Enum):
+    # The protein is purified to a level exceeding 95%
+    Greater_than_95_percent = "Greater than 95 percent"
     # The protein is provided as unpurified expression host lysate or partly purified protein
     Unpurified_expression_host_lysate_or_partly_purified_protein = "Unpurified expression host lysate or partly purified protein"
 
 
-class TypeOfFunctionalCharacterization(str, Enum):
+class TypeOfFunctionalCharacterizationEnumeration(str, Enum):
     # Enzymatic functional characterization involves studying the specific activities and roles of enzymes in biochemical processes
     Enzymatic = "Enzymatic"
     # Antigenic functional characterization involves studying the properties and behaviors of antigens
     Antigenic = "Antigenic"
 
 
-class Sequencing(str, Enum):
+class SequencingEnumeration(str, Enum):
     # The biological material has not been sequenced
     Not_sequenced = "Not sequenced"
     # The biological material has been partly sequenced
@@ -231,7 +224,7 @@ class Sequencing(str, Enum):
     Fully_sequenced = "Fully sequenced"
 
 
-class Cultivability(str, Enum):
+class CultivabilityEnumeration(str, Enum):
     # The pathogen can be grown using standard culture techniques
     Cultivable = "Cultivable"
     # The pathogen cannot be grown in a laboratory using standard culture techniques and often requires special methods for study
@@ -240,7 +233,7 @@ class Cultivability(str, Enum):
     Inactivated = "Inactivated"
 
 
-class Infectivity(str, Enum):
+class InfectivityEnumeration(str, Enum):
     # The infectivity of the pathogen has been tested
     Infectivity_tested = "Infectivity tested"
     # The infectivity of the pathogen has been tested and quantified
@@ -249,7 +242,7 @@ class Infectivity(str, Enum):
     Non_cultivable_sample_infectivity_cannot_be_tested = "Non cultivable sample, infectivity cannot be tested"
 
 
-class LetterOfAuthority(str, Enum):
+class LetterOfAuthorityEnumeration(str, Enum):
     # The letter of authority is not applicable for this biological material
     Not_applicable = "Not applicable"
     # The letter of authority is not required for this biological material
@@ -260,7 +253,7 @@ class LetterOfAuthority(str, Enum):
     Required = "Required"
 
 
-class GenomeSequencing(str, Enum):
+class GenomeSequencingEnumeration(str, Enum):
     # The complete genome has been sequenced
     Complete_genome = "Complete genome"
     # Only the complete conding sequence has been sequenced
@@ -567,7 +560,7 @@ class DataProvider(DataService):
                                                'ifabsent': 'string(GET)',
                                                'multivalued': False,
                                                'name': 'loginRequestMethod',
-                                               'range': 'string',
+                                               'range': 'queryMethodEnumeration',
                                                'required': False,
                                                'title': 'login request method'},
                         'loginTokenName': {'close_mappings': ['dcat:endpointDescription'],
@@ -606,7 +599,7 @@ class DataProvider(DataService):
                                                        'url',
                                         'multivalued': False,
                                         'name': 'queryMethod',
-                                        'range': 'string',
+                                        'range': 'queryMethodEnumeration',
                                         'required': True,
                                         'title': 'query method'},
                         'queryURL': {'close_mappings': ['wdp:P1630'],
@@ -642,7 +635,7 @@ class DataProvider(DataService):
     license: Optional[License] = Field(None, title="license", description="""Information about terms and conditions under which the subject can be used, shared, or distributed, indicating any restrictions or permissions""", json_schema_extra = { "linkml_meta": {'alias': 'license',
          'domain_of': ['DataProvider', 'File'],
          'exact_mappings': ['dct:license']} })
-    loginRequestMethod: Optional[str] = Field("GET", title="login request method", description="""The http request method used to acces the login request url""", json_schema_extra = { "linkml_meta": {'alias': 'loginRequestMethod',
+    loginRequestMethod: Optional[QueryMethodEnumeration] = Field('GET', title="login request method", description="""The http request method used to acces the login request url""", json_schema_extra = { "linkml_meta": {'alias': 'loginRequestMethod',
          'close_mappings': ['dcat:endpointDescription'],
          'domain_of': ['DataProvider'],
          'ifabsent': 'string(GET)'} })
@@ -656,7 +649,7 @@ class DataProvider(DataService):
          'close_mappings': ['wdp:P1630'],
          'domain_of': ['DataProvider'],
          'exact_mappings': ['dcat:endpointURL']} })
-    queryMethod: str = Field(..., title="query method", description="""The http request method used to access the requested query url""", json_schema_extra = { "linkml_meta": {'alias': 'queryMethod',
+    queryMethod: QueryMethodEnumeration = Field(..., title="query method", description="""The http request method used to access the requested query url""", json_schema_extra = { "linkml_meta": {'alias': 'queryMethod',
          'close_mappings': ['dcat:endpointDescription'],
          'domain_of': ['DataProvider']} })
     contentType: str = Field("JSON", title="content type", description="""The content type of the response to the queries""", json_schema_extra = { "linkml_meta": {'alias': 'contentType',
@@ -712,7 +705,7 @@ class PathogenIdentification(Dataset):
                                                     'categories',
                                      'multivalued': True,
                                      'name': 'hostType',
-                                     'range': 'string',
+                                     'range': 'hostTypeEnumeration',
                                      'recommended': True,
                                      'required': False,
                                      'title': 'host type'},
@@ -748,7 +741,7 @@ class PathogenIdentification(Dataset):
                                                         '"Virus","Viroid","Bacterium"...',
                                          'multivalued': False,
                                          'name': 'pathogenType',
-                                         'range': 'string',
+                                         'range': 'pathogenTypeEnumeration',
                                          'required': True,
                                          'title': 'pathogen type'},
                         'serotype': {'description': 'Genetically related pathogens '
@@ -805,8 +798,8 @@ class PathogenIdentification(Dataset):
                       'reference taxonomy'],
          'domain_of': ['Taxonomy', 'PathogenIdentification']} })
     pathogenName: CommonName = Field(..., title="pathogen name", description="""A pathogen common name or a name that describes a group of pathogens""", json_schema_extra = { "linkml_meta": {'alias': 'pathogenName', 'domain_of': ['PathogenIdentification']} })
-    pathogenType: str = Field(..., title="pathogen type", description="""Identification of the specific type of pathogen among the listed categories e.g. \"Virus\",\"Viroid\",\"Bacterium\"...""", json_schema_extra = { "linkml_meta": {'alias': 'pathogenType', 'domain_of': ['PathogenIdentification']} })
-    hostType: Optional[List[str]] = Field(None, title="host type", description="""Indication of the possible host(s) for the identified pathogens among the listed main categories""", json_schema_extra = { "linkml_meta": {'alias': 'hostType',
+    pathogenType: PathogenTypeEnumeration = Field(..., title="pathogen type", description="""Identification of the specific type of pathogen among the listed categories e.g. \"Virus\",\"Viroid\",\"Bacterium\"...""", json_schema_extra = { "linkml_meta": {'alias': 'pathogenType', 'domain_of': ['PathogenIdentification']} })
+    hostType: Optional[List[HostTypeEnumeration]] = Field(None, title="host type", description="""Indication of the possible host(s) for the identified pathogens among the listed main categories""", json_schema_extra = { "linkml_meta": {'alias': 'hostType',
          'domain_of': ['PathogenIdentification'],
          'recommended': True} })
     subspecies: Optional[str] = Field(None, title="subspecies", description="""The subspecies information differentiates closely related pathogens within a single species""", json_schema_extra = { "linkml_meta": {'alias': 'subspecies', 'domain_of': ['PathogenIdentification']} })
@@ -2113,7 +2106,7 @@ class SequenceReference(Dataset):
                                                             'providers',
                                              'multivalued': False,
                                              'name': 'sequenceProvider',
-                                             'range': 'string',
+                                             'range': 'sequenceProviderEnumeration',
                                              'required': True,
                                              'title': 'sequence provider'}},
          'title': 'Sequence reference'})
@@ -2121,7 +2114,7 @@ class SequenceReference(Dataset):
     accessionNumber: str = Field(..., title="accession number", description="""The sequence ID that permits to retrieve the sequence information from the sequence provider""", json_schema_extra = { "linkml_meta": {'alias': 'accessionNumber',
          'close_mappings': ['dct:identifier'],
          'domain_of': ['SequenceReference']} })
-    sequenceProvider: str = Field(..., title="sequence provider", description="""The name of the sequence provider within the list of accepted sequence providers""", json_schema_extra = { "linkml_meta": {'alias': 'sequenceProvider',
+    sequenceProvider: SequenceProviderEnumeration = Field(..., title="sequence provider", description="""The name of the sequence provider within the list of accepted sequence providers""", json_schema_extra = { "linkml_meta": {'alias': 'sequenceProvider',
          'close_mappings': ['dct:publisher'],
          'domain_of': ['SequenceReference']} })
 
@@ -3856,7 +3849,7 @@ class Protein(Product):
                                                        'cell)',
                                         'multivalued': True,
                                         'name': 'expressedAs',
-                                        'range': 'string',
+                                        'range': 'expressedAsEnumeration',
                                         'required': False,
                                         'title': 'expressed as'},
                         'expressionSystem': {'description': 'The host organism or '
@@ -3871,7 +3864,7 @@ class Protein(Product):
                                                             '(mammalian cell lines).',
                                              'multivalued': True,
                                              'name': 'expressionSystem',
-                                             'range': 'string',
+                                             'range': 'expressionSystemEnumeration',
                                              'required': False,
                                              'title': 'expression system'},
                         'functionalCharacterization': {'description': 'The process of '
@@ -3900,7 +3893,7 @@ class Protein(Product):
                                                                       'described).',
                                                        'multivalued': True,
                                                        'name': 'functionalCharacterization',
-                                                       'range': 'string',
+                                                       'range': 'functionalCharacterizationEnumeration',
                                                        'required': False,
                                                        'title': 'functional '
                                                                 'characterization'},
@@ -3959,7 +3952,7 @@ class Protein(Product):
                                                                'active conformation).',
                                                 'multivalued': True,
                                                 'name': 'inclusionBodiesType',
-                                                'range': 'string',
+                                                'range': 'inclusionBodiesTypeEnumeration',
                                                 'required': False,
                                                 'title': 'inclusion bodies type'},
                         'proteinPurification': {'description': 'Refers to the degree '
@@ -3980,7 +3973,7 @@ class Protein(Product):
                                                                'partially purified).',
                                                 'multivalued': True,
                                                 'name': 'proteinPurification',
-                                                'range': 'string',
+                                                'range': 'proteinPurificationEnumeration',
                                                 'required': False,
                                                 'title': 'protein purification'},
                         'proteinTAG': {'description': 'Peptide sequences genetically '
@@ -4111,7 +4104,7 @@ class Protein(Product):
                                                                             'response).',
                                                              'multivalued': True,
                                                              'name': 'typeOfFunctionalCharacterization',
-                                                             'range': 'string',
+                                                             'range': 'typeOfFunctionalCharacterizationEnumeration',
                                                              'required': False,
                                                              'title': 'type of '
                                                                       'functional '
@@ -4131,14 +4124,14 @@ class Protein(Product):
     specialFeature: Optional[List[SpecialFeature]] = Field(None, title="special feature", description="""Distinctive attributes of a product that set it apart from other similar items e.g., Reference strain, Vaccinal strain, Antiviral resistant strain ...""", json_schema_extra = { "linkml_meta": {'alias': 'specialFeature', 'domain_of': ['Protein']} })
     proteinTAG: Optional[List[ProteinTag]] = Field(None, title="protein TAG", description="""Peptide sequences genetically grafted onto a recombinant protein""", json_schema_extra = { "linkml_meta": {'alias': 'proteinTAG', 'domain_of': ['Protein']} })
     domain: Optional[List[str]] = Field(None, title="domain", description="""A distinct structural and functional unit within the protein, often capable of independent folding and stability, which contributes to the protein's overall function""", json_schema_extra = { "linkml_meta": {'alias': 'domain', 'domain_of': ['Protein']} })
-    expressedAs: Optional[List[str]] = Field(None, title="expressed as", description="""Refers to the form in which the protein is produced and manifested in a biological system. Possible values include \"Soluble\" (proteins that are dissolved in the cellular or extracellular fluid) and \"Inclusion bodies\" (aggregated proteins that are insoluble and form within the cell)""", json_schema_extra = { "linkml_meta": {'alias': 'expressedAs', 'domain_of': ['Protein']} })
-    inclusionBodiesType: Optional[List[str]] = Field(None, title="inclusion bodies type", description="""Refers to the state of aggregated proteins within a cell. Possible values include \"Denatured\" (proteins are in an unfolded, inactive state) and \"Refolded\" (proteins have been processed to regain their functional, active conformation).""", json_schema_extra = { "linkml_meta": {'alias': 'inclusionBodiesType', 'domain_of': ['Protein']} })
-    expressionSystem: Optional[List[str]] = Field(None, title="expression system", description="""The host organism or cellular environment used to produce a protein from a specific gene. Possible values include \"E. coli\" (bacterial system), \"Insect cells\" (using baculovirus vectors), and \"Mammalian cells\" (mammalian cell lines).""", json_schema_extra = { "linkml_meta": {'alias': 'expressionSystem', 'domain_of': ['Protein']} })
-    functionalCharacterization: Optional[List[str]] = Field(None, title="functional characterization", description="""The process of determining and describing the specific biological activities and roles of a protein. Possible values include \"Functionally characterized\" (the protein's functions have been identified and described) and \"No functional characterization\" (the protein's functions have not been identified or described).""", json_schema_extra = { "linkml_meta": {'alias': 'functionalCharacterization', 'domain_of': ['Protein']} })
+    expressedAs: Optional[List[ExpressedAsEnumeration]] = Field(None, title="expressed as", description="""Refers to the form in which the protein is produced and manifested in a biological system. Possible values include \"Soluble\" (proteins that are dissolved in the cellular or extracellular fluid) and \"Inclusion bodies\" (aggregated proteins that are insoluble and form within the cell)""", json_schema_extra = { "linkml_meta": {'alias': 'expressedAs', 'domain_of': ['Protein']} })
+    inclusionBodiesType: Optional[List[InclusionBodiesTypeEnumeration]] = Field(None, title="inclusion bodies type", description="""Refers to the state of aggregated proteins within a cell. Possible values include \"Denatured\" (proteins are in an unfolded, inactive state) and \"Refolded\" (proteins have been processed to regain their functional, active conformation).""", json_schema_extra = { "linkml_meta": {'alias': 'inclusionBodiesType', 'domain_of': ['Protein']} })
+    expressionSystem: Optional[List[ExpressionSystemEnumeration]] = Field(None, title="expression system", description="""The host organism or cellular environment used to produce a protein from a specific gene. Possible values include \"E. coli\" (bacterial system), \"Insect cells\" (using baculovirus vectors), and \"Mammalian cells\" (mammalian cell lines).""", json_schema_extra = { "linkml_meta": {'alias': 'expressionSystem', 'domain_of': ['Protein']} })
+    functionalCharacterization: Optional[List[FunctionalCharacterizationEnumeration]] = Field(None, title="functional characterization", description="""The process of determining and describing the specific biological activities and roles of a protein. Possible values include \"Functionally characterized\" (the protein's functions have been identified and described) and \"No functional characterization\" (the protein's functions have not been identified or described).""", json_schema_extra = { "linkml_meta": {'alias': 'functionalCharacterization', 'domain_of': ['Protein']} })
     functionalTechnicalDescription: Optional[List[str]] = Field(None, title="functional/Technical description", description="""Detailed information about the specific biological functions, mechanisms of action, and technical attributes of a protein. This includes how the protein interacts within biological systems, its role in cellular processes, and any relevant technical details such as structure, activity, and interactions with other molecules.""", json_schema_extra = { "linkml_meta": {'alias': 'functionalTechnicalDescription', 'domain_of': ['Protein']} })
-    proteinPurification: Optional[List[str]] = Field(None, title="protein purification", description="""Refers to the degree of purity achieved for a protein sample. Possible values include \">95%\" (the protein is highly purified, with more than 95% purity) and \"Unpurified expression host lysate or partly purified protein\" (the protein is either unpurified and present in the host cell lysate or only partially purified).""", json_schema_extra = { "linkml_meta": {'alias': 'proteinPurification', 'domain_of': ['Protein']} })
+    proteinPurification: Optional[List[ProteinPurificationEnumeration]] = Field(None, title="protein purification", description="""Refers to the degree of purity achieved for a protein sample. Possible values include \">95%\" (the protein is highly purified, with more than 95% purity) and \"Unpurified expression host lysate or partly purified protein\" (the protein is either unpurified and present in the host cell lysate or only partially purified).""", json_schema_extra = { "linkml_meta": {'alias': 'proteinPurification', 'domain_of': ['Protein']} })
     theTAGStatusOfTheSolubilizedProtein: Optional[List[str]] = Field(None, title="TAG status of the solubilized protein", description="""Indicates the presence and condition of a tag on the protein after solubilization. Possible values include \"Uncleaved Tag\" (the tag is still attached to the protein), \"Cleaved Tag\" (the tag has been removed from the protein), and \"No Tag\" (the protein does not have a tag)""", json_schema_extra = { "linkml_meta": {'alias': 'theTAGStatusOfTheSolubilizedProtein', 'domain_of': ['Protein']} })
-    typeOfFunctionalCharacterization: Optional[List[str]] = Field(None, title="type of functional Characterization", description="""Refers to the classification of a protein based on the specific type of functional analysis performed to determine its biological activities and roles. Possible values include \"Enzymatic\" (the protein has been characterized for its enzyme activity) and \"Antigenic\" (the protein has been characterized for its ability to elicit an immune response).""", json_schema_extra = { "linkml_meta": {'alias': 'typeOfFunctionalCharacterization', 'domain_of': ['Protein']} })
+    typeOfFunctionalCharacterization: Optional[List[TypeOfFunctionalCharacterizationEnumeration]] = Field(None, title="type of functional Characterization", description="""Refers to the classification of a protein based on the specific type of functional analysis performed to determine its biological activities and roles. Possible values include \"Enzymatic\" (the protein has been characterized for its enzyme activity) and \"Antigenic\" (the protein has been characterized for its ability to elicit an immune response).""", json_schema_extra = { "linkml_meta": {'alias': 'typeOfFunctionalCharacterization', 'domain_of': ['Protein']} })
     hasIATAClassification: IATAClassification = Field(..., title="IATA classification", description="""The corresponding International Air Transport Association (IATA)'s category for this Product""", json_schema_extra = { "linkml_meta": {'alias': 'hasIATAClassification', 'domain_of': ['Product']} })
     shippingConditions: str = Field(..., title="shipping conditions", description="""Specification of the terms and parameters for transporting
 """, json_schema_extra = { "linkml_meta": {'alias': 'shippingConditions', 'domain_of': ['Product']} })
@@ -4413,7 +4406,7 @@ class NucleicAcid(Product):
                                                       'has been determined).',
                                        'multivalued': False,
                                        'name': 'sequencing',
-                                       'range': 'string',
+                                       'range': 'sequencingEnumeration',
                                        'required': True,
                                        'title': 'sequencing'},
                         'titer': {'description': 'The titer value, its corresponding '
@@ -4451,7 +4444,7 @@ class NucleicAcid(Product):
  contains mutations (no frameshift, no unexpected STOP codon) if set to true""", json_schema_extra = { "linkml_meta": {'alias': 'mutationObserved', 'domain_of': ['Nucleic Acid']} })
     observedMutations: Optional[str] = Field(None, title="observed mutations", description="""The specific mutations that have been identified and documented in the nucleic acid sequence""", json_schema_extra = { "linkml_meta": {'alias': 'observedMutations', 'domain_of': ['Nucleic Acid']} })
     identificationTechnique: Optional[str] = Field(None, title="identification technique", description="""The method used to identify the nucleic acid sequence or its associated constructs, such as PCR, sequencing, or hybridization""", json_schema_extra = { "linkml_meta": {'alias': 'identificationTechnique', 'domain_of': ['Nucleic Acid', 'Pathogen']} })
-    sequencing: str = Field(..., title="sequencing", description="""Refers to the level of sequencing performed on the nucleic acid. Possible values include \"Not sequenced\" (no sequencing has been performed), \"Partly sequenced\" (only a portion of the nucleic acid sequence has been determined), and \"Fully sequenced\" (the entire nucleic acid sequence has been determined).""", json_schema_extra = { "linkml_meta": {'alias': 'sequencing',
+    sequencing: SequencingEnumeration = Field(..., title="sequencing", description="""Refers to the level of sequencing performed on the nucleic acid. Possible values include \"Not sequenced\" (no sequencing has been performed), \"Partly sequenced\" (only a portion of the nucleic acid sequence has been determined), and \"Fully sequenced\" (the entire nucleic acid sequence has been determined).""", json_schema_extra = { "linkml_meta": {'alias': 'sequencing',
          'comments': ['Cloned products have to be sequenced'],
          'domain_of': ['Nucleic Acid']} })
     titer: Optional[str] = Field(None, title="titer", description="""The titer value, its corresponding unit, and the method of quantification (e.g., RT-qPCR, TCID50), representing the concentration or amount of unit present in the sample. The titer corresponds to the highest dilution factor that still yields a positive reading""", json_schema_extra = { "linkml_meta": {'alias': 'titer', 'domain_of': ['Nucleic Acid', 'Pathogen']} })
@@ -4908,10 +4901,10 @@ class Pathogen(Product):
                                                          'Cultivable pathogen", '
                                                          '"Uncultivable pathogen" or '
                                                          '"Inactivated pathogen"',
-                                          'ifabsent': 'string(Cultivable pathogen)',
+                                          'ifabsent': 'string(Cultivable)',
                                           'multivalued': False,
                                           'name': 'cultivability',
-                                          'range': 'string',
+                                          'range': 'cultivabilityEnumeration',
                                           'required': True,
                                           'title': 'cultivability'},
                         'genomeSequencing': {'description': 'The extent of the '
@@ -4928,7 +4921,7 @@ class Pathogen(Product):
                                                             'genetic material',
                                              'multivalued': False,
                                              'name': 'genomeSequencing',
-                                             'range': 'string',
+                                             'range': 'genomeSequencingEnumeration',
                                              'required': True,
                                              'title': 'genome sequencing'},
                         'identificationTechnique': {'description': 'The method or '
@@ -4959,7 +4952,7 @@ class Pathogen(Product):
                                                        'non-cultivable nature.',
                                         'multivalued': False,
                                         'name': 'infectivity',
-                                        'range': 'string',
+                                        'range': 'infectivityEnumeration',
                                         'required': True,
                                         'title': 'infectivity'},
                         'infectivityTest': {'description': 'The description of the '
@@ -5017,7 +5010,7 @@ class Pathogen(Product):
                                               'ifabsent': 'string(Not applicable)',
                                               'multivalued': False,
                                               'name': 'letterOfAuthority',
-                                              'range': 'string',
+                                              'range': 'letterOfAuthorityEnumeration',
                                               'required': True,
                                               'title': 'letter of authority'},
                         'passage': {'description': 'The number of times the pathogen '
@@ -5122,22 +5115,22 @@ class Pathogen(Product):
                        'Protein',
                        'Nucleic Acid',
                        'Pathogen']} })
-    cultivability: str = Field("Cultivable pathogen", title="cultivability", description="""The ability of the pathogen to be cultivated or grown in laboratory conditions. Possible values are \" Cultivable pathogen\", \"Uncultivable pathogen\" or \"Inactivated pathogen\"""", json_schema_extra = { "linkml_meta": {'alias': 'cultivability',
+    cultivability: CultivabilityEnumeration = Field('Cultivable', title="cultivability", description="""The ability of the pathogen to be cultivated or grown in laboratory conditions. Possible values are \" Cultivable pathogen\", \"Uncultivable pathogen\" or \"Inactivated pathogen\"""", json_schema_extra = { "linkml_meta": {'alias': 'cultivability',
          'comments': ['Might also be related to a product sub-category that helps '
                       'filtering'],
          'domain_of': ['Pathogen'],
-         'ifabsent': 'string(Cultivable pathogen)'} })
+         'ifabsent': 'string(Cultivable)'} })
     clinicalInformation: Optional[str] = Field(None, title="clinical information", description="""Details about the clinical aspects of the pathogen, including symptoms, severity, treatment protocols, and patient outcomes""", json_schema_extra = { "linkml_meta": {'alias': 'clinicalInformation', 'domain_of': ['Pathogen']} })
     identificationTechnique: Optional[str] = Field(None, title="identification technique", description="""The method or technique used to identify and confirm the presence of the pathogen, detailing the specific procedures and tools employed in the detection process""", json_schema_extra = { "linkml_meta": {'alias': 'identificationTechnique', 'domain_of': ['Nucleic Acid', 'Pathogen']} })
-    infectivity: str = Field(..., title="infectivity", description="""Indicates the ability of the pathogen to establish an infection in a host organism, with possible values detailing whether infectivity has been tested, quantified, or cannot be tested due to non-cultivable nature.""", json_schema_extra = { "linkml_meta": {'alias': 'infectivity', 'domain_of': ['Pathogen']} })
+    infectivity: InfectivityEnumeration = Field(..., title="infectivity", description="""Indicates the ability of the pathogen to establish an infection in a host organism, with possible values detailing whether infectivity has been tested, quantified, or cannot be tested due to non-cultivable nature.""", json_schema_extra = { "linkml_meta": {'alias': 'infectivity', 'domain_of': ['Pathogen']} })
     infectivityTest: Optional[str] = Field(None, title="infectivity Test", description="""The description of the completed infectivity test, providing details on the methods, conditions, and results of the test used to assess the pathogen's ability to infect a host organism""", json_schema_extra = { "linkml_meta": {'alias': 'infectivityTest', 'domain_of': ['Pathogen']} })
     isolationTechnique: Optional[str] = Field(None, title="isolation technique", description="""The specific method or procedure used to isolate the pathogen from a host organism or sample, detailing the techniques and tools employed in the isolation process""", json_schema_extra = { "linkml_meta": {'alias': 'isolationTechnique', 'domain_of': ['Pathogen']} })
     isolationConditions: Optional[str] = Field(None, title="isolation conditions", description="""The environmental and procedural conditions under which the pathogen was isolated""", json_schema_extra = { "linkml_meta": {'alias': 'isolationConditions', 'domain_of': ['Pathogen']} })
-    letterOfAuthority: str = Field("Not applicable", title="letter of authority", description="""Indicate whether a Letter of Authority is required, confirming the necessity of formal authorization. The possible values are \"N/A\", \"NOT Required\", \"Required for customers in the EU\" or \"Required\"""", json_schema_extra = { "linkml_meta": {'alias': 'letterOfAuthority',
+    letterOfAuthority: LetterOfAuthorityEnumeration = Field('Not applicable', title="letter of authority", description="""Indicate whether a Letter of Authority is required, confirming the necessity of formal authorization. The possible values are \"N/A\", \"NOT Required\", \"Required for customers in the EU\" or \"Required\"""", json_schema_extra = { "linkml_meta": {'alias': 'letterOfAuthority',
          'domain_of': ['Pathogen'],
          'ifabsent': 'string(Not applicable)'} })
     passage: Optional[str] = Field(None, title="passage", description="""The number of times the pathogen was cultured through serial passage, a process used to increase the stock but which can also lead to the evolution of the original pathogen.""", json_schema_extra = { "linkml_meta": {'alias': 'passage', 'domain_of': ['Pathogen']} })
-    genomeSequencing: str = Field(..., title="genome sequencing", description="""The extent of the pathogen's genetic material that has been sequenced, with possible values including \"Complete genome\" for the entire genome, \"Complete coding sequence\" for all coding regions, and \"Partial sequence\" for only a portion of the genetic material""", json_schema_extra = { "linkml_meta": {'alias': 'genomeSequencing', 'domain_of': ['Pathogen']} })
+    genomeSequencing: GenomeSequencingEnumeration = Field(..., title="genome sequencing", description="""The extent of the pathogen's genetic material that has been sequenced, with possible values including \"Complete genome\" for the entire genome, \"Complete coding sequence\" for all coding regions, and \"Partial sequence\" for only a portion of the genetic material""", json_schema_extra = { "linkml_meta": {'alias': 'genomeSequencing', 'domain_of': ['Pathogen']} })
     titer: str = Field(..., title="titer", description="""The titer value, its corresponding unit, and the method of quantification (e.g., RT-qPCR, TCID50), representing the concentration or amount of unit present in the sample. The titer corresponds to the highest dilution factor that still yields a positive reading""", json_schema_extra = { "linkml_meta": {'alias': 'titer',
          'close_mappings': ['wd:Q2166189'],
          'domain_of': ['Nucleic Acid', 'Pathogen']} })
@@ -5315,22 +5308,22 @@ class Virus(Pathogen):
                        'Protein',
                        'Nucleic Acid',
                        'Pathogen']} })
-    cultivability: str = Field("Cultivable pathogen", title="cultivability", description="""The ability of the pathogen to be cultivated or grown in laboratory conditions. Possible values are \" Cultivable pathogen\", \"Uncultivable pathogen\" or \"Inactivated pathogen\"""", json_schema_extra = { "linkml_meta": {'alias': 'cultivability',
+    cultivability: CultivabilityEnumeration = Field('Cultivable', title="cultivability", description="""The ability of the pathogen to be cultivated or grown in laboratory conditions. Possible values are \" Cultivable pathogen\", \"Uncultivable pathogen\" or \"Inactivated pathogen\"""", json_schema_extra = { "linkml_meta": {'alias': 'cultivability',
          'comments': ['Might also be related to a product sub-category that helps '
                       'filtering'],
          'domain_of': ['Pathogen'],
-         'ifabsent': 'string(Cultivable pathogen)'} })
+         'ifabsent': 'string(Cultivable)'} })
     clinicalInformation: Optional[str] = Field(None, title="clinical information", description="""Details about the clinical aspects of the pathogen, including symptoms, severity, treatment protocols, and patient outcomes""", json_schema_extra = { "linkml_meta": {'alias': 'clinicalInformation', 'domain_of': ['Pathogen']} })
     identificationTechnique: Optional[str] = Field(None, title="identification technique", description="""The method or technique used to identify and confirm the presence of the pathogen, detailing the specific procedures and tools employed in the detection process""", json_schema_extra = { "linkml_meta": {'alias': 'identificationTechnique', 'domain_of': ['Nucleic Acid', 'Pathogen']} })
-    infectivity: str = Field(..., title="infectivity", description="""Indicates the ability of the pathogen to establish an infection in a host organism, with possible values detailing whether infectivity has been tested, quantified, or cannot be tested due to non-cultivable nature.""", json_schema_extra = { "linkml_meta": {'alias': 'infectivity', 'domain_of': ['Pathogen']} })
+    infectivity: InfectivityEnumeration = Field(..., title="infectivity", description="""Indicates the ability of the pathogen to establish an infection in a host organism, with possible values detailing whether infectivity has been tested, quantified, or cannot be tested due to non-cultivable nature.""", json_schema_extra = { "linkml_meta": {'alias': 'infectivity', 'domain_of': ['Pathogen']} })
     infectivityTest: Optional[str] = Field(None, title="infectivity Test", description="""The description of the completed infectivity test, providing details on the methods, conditions, and results of the test used to assess the pathogen's ability to infect a host organism""", json_schema_extra = { "linkml_meta": {'alias': 'infectivityTest', 'domain_of': ['Pathogen']} })
     isolationTechnique: Optional[str] = Field(None, title="isolation technique", description="""The specific method or procedure used to isolate the pathogen from a host organism or sample, detailing the techniques and tools employed in the isolation process""", json_schema_extra = { "linkml_meta": {'alias': 'isolationTechnique', 'domain_of': ['Pathogen']} })
     isolationConditions: Optional[str] = Field(None, title="isolation conditions", description="""The environmental and procedural conditions under which the pathogen was isolated""", json_schema_extra = { "linkml_meta": {'alias': 'isolationConditions', 'domain_of': ['Pathogen']} })
-    letterOfAuthority: str = Field("Not applicable", title="letter of authority", description="""Indicate whether a Letter of Authority is required, confirming the necessity of formal authorization. The possible values are \"N/A\", \"NOT Required\", \"Required for customers in the EU\" or \"Required\"""", json_schema_extra = { "linkml_meta": {'alias': 'letterOfAuthority',
+    letterOfAuthority: LetterOfAuthorityEnumeration = Field('Not applicable', title="letter of authority", description="""Indicate whether a Letter of Authority is required, confirming the necessity of formal authorization. The possible values are \"N/A\", \"NOT Required\", \"Required for customers in the EU\" or \"Required\"""", json_schema_extra = { "linkml_meta": {'alias': 'letterOfAuthority',
          'domain_of': ['Pathogen'],
          'ifabsent': 'string(Not applicable)'} })
     passage: Optional[str] = Field(None, title="passage", description="""The number of times the pathogen was cultured through serial passage, a process used to increase the stock but which can also lead to the evolution of the original pathogen.""", json_schema_extra = { "linkml_meta": {'alias': 'passage', 'domain_of': ['Pathogen']} })
-    genomeSequencing: str = Field(..., title="genome sequencing", description="""The extent of the pathogen's genetic material that has been sequenced, with possible values including \"Complete genome\" for the entire genome, \"Complete coding sequence\" for all coding regions, and \"Partial sequence\" for only a portion of the genetic material""", json_schema_extra = { "linkml_meta": {'alias': 'genomeSequencing', 'domain_of': ['Pathogen']} })
+    genomeSequencing: GenomeSequencingEnumeration = Field(..., title="genome sequencing", description="""The extent of the pathogen's genetic material that has been sequenced, with possible values including \"Complete genome\" for the entire genome, \"Complete coding sequence\" for all coding regions, and \"Partial sequence\" for only a portion of the genetic material""", json_schema_extra = { "linkml_meta": {'alias': 'genomeSequencing', 'domain_of': ['Pathogen']} })
     titer: str = Field(..., title="titer", description="""The titer value, its corresponding unit, and the method of quantification (e.g., RT-qPCR, TCID50), representing the concentration or amount of unit present in the sample. The titer corresponds to the highest dilution factor that still yields a positive reading""", json_schema_extra = { "linkml_meta": {'alias': 'titer',
          'close_mappings': ['wd:Q2166189'],
          'domain_of': ['Nucleic Acid', 'Pathogen']} })
@@ -5460,22 +5453,22 @@ class Bacterium(Pathogen):
                        'Protein',
                        'Nucleic Acid',
                        'Pathogen']} })
-    cultivability: str = Field("Cultivable pathogen", title="cultivability", description="""The ability of the pathogen to be cultivated or grown in laboratory conditions. Possible values are \" Cultivable pathogen\", \"Uncultivable pathogen\" or \"Inactivated pathogen\"""", json_schema_extra = { "linkml_meta": {'alias': 'cultivability',
+    cultivability: CultivabilityEnumeration = Field('Cultivable', title="cultivability", description="""The ability of the pathogen to be cultivated or grown in laboratory conditions. Possible values are \" Cultivable pathogen\", \"Uncultivable pathogen\" or \"Inactivated pathogen\"""", json_schema_extra = { "linkml_meta": {'alias': 'cultivability',
          'comments': ['Might also be related to a product sub-category that helps '
                       'filtering'],
          'domain_of': ['Pathogen'],
-         'ifabsent': 'string(Cultivable pathogen)'} })
+         'ifabsent': 'string(Cultivable)'} })
     clinicalInformation: Optional[str] = Field(None, title="clinical information", description="""Details about the clinical aspects of the pathogen, including symptoms, severity, treatment protocols, and patient outcomes""", json_schema_extra = { "linkml_meta": {'alias': 'clinicalInformation', 'domain_of': ['Pathogen']} })
     identificationTechnique: Optional[str] = Field(None, title="identification technique", description="""The method or technique used to identify and confirm the presence of the pathogen, detailing the specific procedures and tools employed in the detection process""", json_schema_extra = { "linkml_meta": {'alias': 'identificationTechnique', 'domain_of': ['Nucleic Acid', 'Pathogen']} })
-    infectivity: str = Field(..., title="infectivity", description="""Indicates the ability of the pathogen to establish an infection in a host organism, with possible values detailing whether infectivity has been tested, quantified, or cannot be tested due to non-cultivable nature.""", json_schema_extra = { "linkml_meta": {'alias': 'infectivity', 'domain_of': ['Pathogen']} })
+    infectivity: InfectivityEnumeration = Field(..., title="infectivity", description="""Indicates the ability of the pathogen to establish an infection in a host organism, with possible values detailing whether infectivity has been tested, quantified, or cannot be tested due to non-cultivable nature.""", json_schema_extra = { "linkml_meta": {'alias': 'infectivity', 'domain_of': ['Pathogen']} })
     infectivityTest: Optional[str] = Field(None, title="infectivity Test", description="""The description of the completed infectivity test, providing details on the methods, conditions, and results of the test used to assess the pathogen's ability to infect a host organism""", json_schema_extra = { "linkml_meta": {'alias': 'infectivityTest', 'domain_of': ['Pathogen']} })
     isolationTechnique: Optional[str] = Field(None, title="isolation technique", description="""The specific method or procedure used to isolate the pathogen from a host organism or sample, detailing the techniques and tools employed in the isolation process""", json_schema_extra = { "linkml_meta": {'alias': 'isolationTechnique', 'domain_of': ['Pathogen']} })
     isolationConditions: Optional[str] = Field(None, title="isolation conditions", description="""The environmental and procedural conditions under which the pathogen was isolated""", json_schema_extra = { "linkml_meta": {'alias': 'isolationConditions', 'domain_of': ['Pathogen']} })
-    letterOfAuthority: str = Field("Not applicable", title="letter of authority", description="""Indicate whether a Letter of Authority is required, confirming the necessity of formal authorization. The possible values are \"N/A\", \"NOT Required\", \"Required for customers in the EU\" or \"Required\"""", json_schema_extra = { "linkml_meta": {'alias': 'letterOfAuthority',
+    letterOfAuthority: LetterOfAuthorityEnumeration = Field('Not applicable', title="letter of authority", description="""Indicate whether a Letter of Authority is required, confirming the necessity of formal authorization. The possible values are \"N/A\", \"NOT Required\", \"Required for customers in the EU\" or \"Required\"""", json_schema_extra = { "linkml_meta": {'alias': 'letterOfAuthority',
          'domain_of': ['Pathogen'],
          'ifabsent': 'string(Not applicable)'} })
     passage: Optional[str] = Field(None, title="passage", description="""The number of times the pathogen was cultured through serial passage, a process used to increase the stock but which can also lead to the evolution of the original pathogen.""", json_schema_extra = { "linkml_meta": {'alias': 'passage', 'domain_of': ['Pathogen']} })
-    genomeSequencing: str = Field(..., title="genome sequencing", description="""The extent of the pathogen's genetic material that has been sequenced, with possible values including \"Complete genome\" for the entire genome, \"Complete coding sequence\" for all coding regions, and \"Partial sequence\" for only a portion of the genetic material""", json_schema_extra = { "linkml_meta": {'alias': 'genomeSequencing', 'domain_of': ['Pathogen']} })
+    genomeSequencing: GenomeSequencingEnumeration = Field(..., title="genome sequencing", description="""The extent of the pathogen's genetic material that has been sequenced, with possible values including \"Complete genome\" for the entire genome, \"Complete coding sequence\" for all coding regions, and \"Partial sequence\" for only a portion of the genetic material""", json_schema_extra = { "linkml_meta": {'alias': 'genomeSequencing', 'domain_of': ['Pathogen']} })
     titer: str = Field(..., title="titer", description="""The titer value, its corresponding unit, and the method of quantification (e.g., RT-qPCR, TCID50), representing the concentration or amount of unit present in the sample. The titer corresponds to the highest dilution factor that still yields a positive reading""", json_schema_extra = { "linkml_meta": {'alias': 'titer',
          'close_mappings': ['wd:Q2166189'],
          'domain_of': ['Nucleic Acid', 'Pathogen']} })
@@ -5605,22 +5598,22 @@ class Fungus(Pathogen):
                        'Protein',
                        'Nucleic Acid',
                        'Pathogen']} })
-    cultivability: str = Field("Cultivable pathogen", title="cultivability", description="""The ability of the pathogen to be cultivated or grown in laboratory conditions. Possible values are \" Cultivable pathogen\", \"Uncultivable pathogen\" or \"Inactivated pathogen\"""", json_schema_extra = { "linkml_meta": {'alias': 'cultivability',
+    cultivability: CultivabilityEnumeration = Field('Cultivable', title="cultivability", description="""The ability of the pathogen to be cultivated or grown in laboratory conditions. Possible values are \" Cultivable pathogen\", \"Uncultivable pathogen\" or \"Inactivated pathogen\"""", json_schema_extra = { "linkml_meta": {'alias': 'cultivability',
          'comments': ['Might also be related to a product sub-category that helps '
                       'filtering'],
          'domain_of': ['Pathogen'],
-         'ifabsent': 'string(Cultivable pathogen)'} })
+         'ifabsent': 'string(Cultivable)'} })
     clinicalInformation: Optional[str] = Field(None, title="clinical information", description="""Details about the clinical aspects of the pathogen, including symptoms, severity, treatment protocols, and patient outcomes""", json_schema_extra = { "linkml_meta": {'alias': 'clinicalInformation', 'domain_of': ['Pathogen']} })
     identificationTechnique: Optional[str] = Field(None, title="identification technique", description="""The method or technique used to identify and confirm the presence of the pathogen, detailing the specific procedures and tools employed in the detection process""", json_schema_extra = { "linkml_meta": {'alias': 'identificationTechnique', 'domain_of': ['Nucleic Acid', 'Pathogen']} })
-    infectivity: str = Field(..., title="infectivity", description="""Indicates the ability of the pathogen to establish an infection in a host organism, with possible values detailing whether infectivity has been tested, quantified, or cannot be tested due to non-cultivable nature.""", json_schema_extra = { "linkml_meta": {'alias': 'infectivity', 'domain_of': ['Pathogen']} })
+    infectivity: InfectivityEnumeration = Field(..., title="infectivity", description="""Indicates the ability of the pathogen to establish an infection in a host organism, with possible values detailing whether infectivity has been tested, quantified, or cannot be tested due to non-cultivable nature.""", json_schema_extra = { "linkml_meta": {'alias': 'infectivity', 'domain_of': ['Pathogen']} })
     infectivityTest: Optional[str] = Field(None, title="infectivity Test", description="""The description of the completed infectivity test, providing details on the methods, conditions, and results of the test used to assess the pathogen's ability to infect a host organism""", json_schema_extra = { "linkml_meta": {'alias': 'infectivityTest', 'domain_of': ['Pathogen']} })
     isolationTechnique: Optional[str] = Field(None, title="isolation technique", description="""The specific method or procedure used to isolate the pathogen from a host organism or sample, detailing the techniques and tools employed in the isolation process""", json_schema_extra = { "linkml_meta": {'alias': 'isolationTechnique', 'domain_of': ['Pathogen']} })
     isolationConditions: Optional[str] = Field(None, title="isolation conditions", description="""The environmental and procedural conditions under which the pathogen was isolated""", json_schema_extra = { "linkml_meta": {'alias': 'isolationConditions', 'domain_of': ['Pathogen']} })
-    letterOfAuthority: str = Field("Not applicable", title="letter of authority", description="""Indicate whether a Letter of Authority is required, confirming the necessity of formal authorization. The possible values are \"N/A\", \"NOT Required\", \"Required for customers in the EU\" or \"Required\"""", json_schema_extra = { "linkml_meta": {'alias': 'letterOfAuthority',
+    letterOfAuthority: LetterOfAuthorityEnumeration = Field('Not applicable', title="letter of authority", description="""Indicate whether a Letter of Authority is required, confirming the necessity of formal authorization. The possible values are \"N/A\", \"NOT Required\", \"Required for customers in the EU\" or \"Required\"""", json_schema_extra = { "linkml_meta": {'alias': 'letterOfAuthority',
          'domain_of': ['Pathogen'],
          'ifabsent': 'string(Not applicable)'} })
     passage: Optional[str] = Field(None, title="passage", description="""The number of times the pathogen was cultured through serial passage, a process used to increase the stock but which can also lead to the evolution of the original pathogen.""", json_schema_extra = { "linkml_meta": {'alias': 'passage', 'domain_of': ['Pathogen']} })
-    genomeSequencing: str = Field(..., title="genome sequencing", description="""The extent of the pathogen's genetic material that has been sequenced, with possible values including \"Complete genome\" for the entire genome, \"Complete coding sequence\" for all coding regions, and \"Partial sequence\" for only a portion of the genetic material""", json_schema_extra = { "linkml_meta": {'alias': 'genomeSequencing', 'domain_of': ['Pathogen']} })
+    genomeSequencing: GenomeSequencingEnumeration = Field(..., title="genome sequencing", description="""The extent of the pathogen's genetic material that has been sequenced, with possible values including \"Complete genome\" for the entire genome, \"Complete coding sequence\" for all coding regions, and \"Partial sequence\" for only a portion of the genetic material""", json_schema_extra = { "linkml_meta": {'alias': 'genomeSequencing', 'domain_of': ['Pathogen']} })
     titer: str = Field(..., title="titer", description="""The titer value, its corresponding unit, and the method of quantification (e.g., RT-qPCR, TCID50), representing the concentration or amount of unit present in the sample. The titer corresponds to the highest dilution factor that still yields a positive reading""", json_schema_extra = { "linkml_meta": {'alias': 'titer',
          'close_mappings': ['wd:Q2166189'],
          'domain_of': ['Nucleic Acid', 'Pathogen']} })
@@ -5750,22 +5743,22 @@ class Protozoan(Pathogen):
                        'Protein',
                        'Nucleic Acid',
                        'Pathogen']} })
-    cultivability: str = Field("Cultivable pathogen", title="cultivability", description="""The ability of the pathogen to be cultivated or grown in laboratory conditions. Possible values are \" Cultivable pathogen\", \"Uncultivable pathogen\" or \"Inactivated pathogen\"""", json_schema_extra = { "linkml_meta": {'alias': 'cultivability',
+    cultivability: CultivabilityEnumeration = Field('Cultivable', title="cultivability", description="""The ability of the pathogen to be cultivated or grown in laboratory conditions. Possible values are \" Cultivable pathogen\", \"Uncultivable pathogen\" or \"Inactivated pathogen\"""", json_schema_extra = { "linkml_meta": {'alias': 'cultivability',
          'comments': ['Might also be related to a product sub-category that helps '
                       'filtering'],
          'domain_of': ['Pathogen'],
-         'ifabsent': 'string(Cultivable pathogen)'} })
+         'ifabsent': 'string(Cultivable)'} })
     clinicalInformation: Optional[str] = Field(None, title="clinical information", description="""Details about the clinical aspects of the pathogen, including symptoms, severity, treatment protocols, and patient outcomes""", json_schema_extra = { "linkml_meta": {'alias': 'clinicalInformation', 'domain_of': ['Pathogen']} })
     identificationTechnique: Optional[str] = Field(None, title="identification technique", description="""The method or technique used to identify and confirm the presence of the pathogen, detailing the specific procedures and tools employed in the detection process""", json_schema_extra = { "linkml_meta": {'alias': 'identificationTechnique', 'domain_of': ['Nucleic Acid', 'Pathogen']} })
-    infectivity: str = Field(..., title="infectivity", description="""Indicates the ability of the pathogen to establish an infection in a host organism, with possible values detailing whether infectivity has been tested, quantified, or cannot be tested due to non-cultivable nature.""", json_schema_extra = { "linkml_meta": {'alias': 'infectivity', 'domain_of': ['Pathogen']} })
+    infectivity: InfectivityEnumeration = Field(..., title="infectivity", description="""Indicates the ability of the pathogen to establish an infection in a host organism, with possible values detailing whether infectivity has been tested, quantified, or cannot be tested due to non-cultivable nature.""", json_schema_extra = { "linkml_meta": {'alias': 'infectivity', 'domain_of': ['Pathogen']} })
     infectivityTest: Optional[str] = Field(None, title="infectivity Test", description="""The description of the completed infectivity test, providing details on the methods, conditions, and results of the test used to assess the pathogen's ability to infect a host organism""", json_schema_extra = { "linkml_meta": {'alias': 'infectivityTest', 'domain_of': ['Pathogen']} })
     isolationTechnique: Optional[str] = Field(None, title="isolation technique", description="""The specific method or procedure used to isolate the pathogen from a host organism or sample, detailing the techniques and tools employed in the isolation process""", json_schema_extra = { "linkml_meta": {'alias': 'isolationTechnique', 'domain_of': ['Pathogen']} })
     isolationConditions: Optional[str] = Field(None, title="isolation conditions", description="""The environmental and procedural conditions under which the pathogen was isolated""", json_schema_extra = { "linkml_meta": {'alias': 'isolationConditions', 'domain_of': ['Pathogen']} })
-    letterOfAuthority: str = Field("Not applicable", title="letter of authority", description="""Indicate whether a Letter of Authority is required, confirming the necessity of formal authorization. The possible values are \"N/A\", \"NOT Required\", \"Required for customers in the EU\" or \"Required\"""", json_schema_extra = { "linkml_meta": {'alias': 'letterOfAuthority',
+    letterOfAuthority: LetterOfAuthorityEnumeration = Field('Not applicable', title="letter of authority", description="""Indicate whether a Letter of Authority is required, confirming the necessity of formal authorization. The possible values are \"N/A\", \"NOT Required\", \"Required for customers in the EU\" or \"Required\"""", json_schema_extra = { "linkml_meta": {'alias': 'letterOfAuthority',
          'domain_of': ['Pathogen'],
          'ifabsent': 'string(Not applicable)'} })
     passage: Optional[str] = Field(None, title="passage", description="""The number of times the pathogen was cultured through serial passage, a process used to increase the stock but which can also lead to the evolution of the original pathogen.""", json_schema_extra = { "linkml_meta": {'alias': 'passage', 'domain_of': ['Pathogen']} })
-    genomeSequencing: str = Field(..., title="genome sequencing", description="""The extent of the pathogen's genetic material that has been sequenced, with possible values including \"Complete genome\" for the entire genome, \"Complete coding sequence\" for all coding regions, and \"Partial sequence\" for only a portion of the genetic material""", json_schema_extra = { "linkml_meta": {'alias': 'genomeSequencing', 'domain_of': ['Pathogen']} })
+    genomeSequencing: GenomeSequencingEnumeration = Field(..., title="genome sequencing", description="""The extent of the pathogen's genetic material that has been sequenced, with possible values including \"Complete genome\" for the entire genome, \"Complete coding sequence\" for all coding regions, and \"Partial sequence\" for only a portion of the genetic material""", json_schema_extra = { "linkml_meta": {'alias': 'genomeSequencing', 'domain_of': ['Pathogen']} })
     titer: str = Field(..., title="titer", description="""The titer value, its corresponding unit, and the method of quantification (e.g., RT-qPCR, TCID50), representing the concentration or amount of unit present in the sample. The titer corresponds to the highest dilution factor that still yields a positive reading""", json_schema_extra = { "linkml_meta": {'alias': 'titer',
          'close_mappings': ['wd:Q2166189'],
          'domain_of': ['Nucleic Acid', 'Pathogen']} })
@@ -5895,22 +5888,22 @@ class Viroid(Pathogen):
                        'Protein',
                        'Nucleic Acid',
                        'Pathogen']} })
-    cultivability: str = Field("Cultivable pathogen", title="cultivability", description="""The ability of the pathogen to be cultivated or grown in laboratory conditions. Possible values are \" Cultivable pathogen\", \"Uncultivable pathogen\" or \"Inactivated pathogen\"""", json_schema_extra = { "linkml_meta": {'alias': 'cultivability',
+    cultivability: CultivabilityEnumeration = Field('Cultivable', title="cultivability", description="""The ability of the pathogen to be cultivated or grown in laboratory conditions. Possible values are \" Cultivable pathogen\", \"Uncultivable pathogen\" or \"Inactivated pathogen\"""", json_schema_extra = { "linkml_meta": {'alias': 'cultivability',
          'comments': ['Might also be related to a product sub-category that helps '
                       'filtering'],
          'domain_of': ['Pathogen'],
-         'ifabsent': 'string(Cultivable pathogen)'} })
+         'ifabsent': 'string(Cultivable)'} })
     clinicalInformation: Optional[str] = Field(None, title="clinical information", description="""Details about the clinical aspects of the pathogen, including symptoms, severity, treatment protocols, and patient outcomes""", json_schema_extra = { "linkml_meta": {'alias': 'clinicalInformation', 'domain_of': ['Pathogen']} })
     identificationTechnique: Optional[str] = Field(None, title="identification technique", description="""The method or technique used to identify and confirm the presence of the pathogen, detailing the specific procedures and tools employed in the detection process""", json_schema_extra = { "linkml_meta": {'alias': 'identificationTechnique', 'domain_of': ['Nucleic Acid', 'Pathogen']} })
-    infectivity: str = Field(..., title="infectivity", description="""Indicates the ability of the pathogen to establish an infection in a host organism, with possible values detailing whether infectivity has been tested, quantified, or cannot be tested due to non-cultivable nature.""", json_schema_extra = { "linkml_meta": {'alias': 'infectivity', 'domain_of': ['Pathogen']} })
+    infectivity: InfectivityEnumeration = Field(..., title="infectivity", description="""Indicates the ability of the pathogen to establish an infection in a host organism, with possible values detailing whether infectivity has been tested, quantified, or cannot be tested due to non-cultivable nature.""", json_schema_extra = { "linkml_meta": {'alias': 'infectivity', 'domain_of': ['Pathogen']} })
     infectivityTest: Optional[str] = Field(None, title="infectivity Test", description="""The description of the completed infectivity test, providing details on the methods, conditions, and results of the test used to assess the pathogen's ability to infect a host organism""", json_schema_extra = { "linkml_meta": {'alias': 'infectivityTest', 'domain_of': ['Pathogen']} })
     isolationTechnique: Optional[str] = Field(None, title="isolation technique", description="""The specific method or procedure used to isolate the pathogen from a host organism or sample, detailing the techniques and tools employed in the isolation process""", json_schema_extra = { "linkml_meta": {'alias': 'isolationTechnique', 'domain_of': ['Pathogen']} })
     isolationConditions: Optional[str] = Field(None, title="isolation conditions", description="""The environmental and procedural conditions under which the pathogen was isolated""", json_schema_extra = { "linkml_meta": {'alias': 'isolationConditions', 'domain_of': ['Pathogen']} })
-    letterOfAuthority: str = Field("Not applicable", title="letter of authority", description="""Indicate whether a Letter of Authority is required, confirming the necessity of formal authorization. The possible values are \"N/A\", \"NOT Required\", \"Required for customers in the EU\" or \"Required\"""", json_schema_extra = { "linkml_meta": {'alias': 'letterOfAuthority',
+    letterOfAuthority: LetterOfAuthorityEnumeration = Field('Not applicable', title="letter of authority", description="""Indicate whether a Letter of Authority is required, confirming the necessity of formal authorization. The possible values are \"N/A\", \"NOT Required\", \"Required for customers in the EU\" or \"Required\"""", json_schema_extra = { "linkml_meta": {'alias': 'letterOfAuthority',
          'domain_of': ['Pathogen'],
          'ifabsent': 'string(Not applicable)'} })
     passage: Optional[str] = Field(None, title="passage", description="""The number of times the pathogen was cultured through serial passage, a process used to increase the stock but which can also lead to the evolution of the original pathogen.""", json_schema_extra = { "linkml_meta": {'alias': 'passage', 'domain_of': ['Pathogen']} })
-    genomeSequencing: str = Field(..., title="genome sequencing", description="""The extent of the pathogen's genetic material that has been sequenced, with possible values including \"Complete genome\" for the entire genome, \"Complete coding sequence\" for all coding regions, and \"Partial sequence\" for only a portion of the genetic material""", json_schema_extra = { "linkml_meta": {'alias': 'genomeSequencing', 'domain_of': ['Pathogen']} })
+    genomeSequencing: GenomeSequencingEnumeration = Field(..., title="genome sequencing", description="""The extent of the pathogen's genetic material that has been sequenced, with possible values including \"Complete genome\" for the entire genome, \"Complete coding sequence\" for all coding regions, and \"Partial sequence\" for only a portion of the genetic material""", json_schema_extra = { "linkml_meta": {'alias': 'genomeSequencing', 'domain_of': ['Pathogen']} })
     titer: str = Field(..., title="titer", description="""The titer value, its corresponding unit, and the method of quantification (e.g., RT-qPCR, TCID50), representing the concentration or amount of unit present in the sample. The titer corresponds to the highest dilution factor that still yields a positive reading""", json_schema_extra = { "linkml_meta": {'alias': 'titer',
          'close_mappings': ['wd:Q2166189'],
          'domain_of': ['Nucleic Acid', 'Pathogen']} })
@@ -6040,22 +6033,22 @@ class Prion(Pathogen):
                        'Protein',
                        'Nucleic Acid',
                        'Pathogen']} })
-    cultivability: str = Field("Cultivable pathogen", title="cultivability", description="""The ability of the pathogen to be cultivated or grown in laboratory conditions. Possible values are \" Cultivable pathogen\", \"Uncultivable pathogen\" or \"Inactivated pathogen\"""", json_schema_extra = { "linkml_meta": {'alias': 'cultivability',
+    cultivability: CultivabilityEnumeration = Field('Cultivable', title="cultivability", description="""The ability of the pathogen to be cultivated or grown in laboratory conditions. Possible values are \" Cultivable pathogen\", \"Uncultivable pathogen\" or \"Inactivated pathogen\"""", json_schema_extra = { "linkml_meta": {'alias': 'cultivability',
          'comments': ['Might also be related to a product sub-category that helps '
                       'filtering'],
          'domain_of': ['Pathogen'],
-         'ifabsent': 'string(Cultivable pathogen)'} })
+         'ifabsent': 'string(Cultivable)'} })
     clinicalInformation: Optional[str] = Field(None, title="clinical information", description="""Details about the clinical aspects of the pathogen, including symptoms, severity, treatment protocols, and patient outcomes""", json_schema_extra = { "linkml_meta": {'alias': 'clinicalInformation', 'domain_of': ['Pathogen']} })
     identificationTechnique: Optional[str] = Field(None, title="identification technique", description="""The method or technique used to identify and confirm the presence of the pathogen, detailing the specific procedures and tools employed in the detection process""", json_schema_extra = { "linkml_meta": {'alias': 'identificationTechnique', 'domain_of': ['Nucleic Acid', 'Pathogen']} })
-    infectivity: str = Field(..., title="infectivity", description="""Indicates the ability of the pathogen to establish an infection in a host organism, with possible values detailing whether infectivity has been tested, quantified, or cannot be tested due to non-cultivable nature.""", json_schema_extra = { "linkml_meta": {'alias': 'infectivity', 'domain_of': ['Pathogen']} })
+    infectivity: InfectivityEnumeration = Field(..., title="infectivity", description="""Indicates the ability of the pathogen to establish an infection in a host organism, with possible values detailing whether infectivity has been tested, quantified, or cannot be tested due to non-cultivable nature.""", json_schema_extra = { "linkml_meta": {'alias': 'infectivity', 'domain_of': ['Pathogen']} })
     infectivityTest: Optional[str] = Field(None, title="infectivity Test", description="""The description of the completed infectivity test, providing details on the methods, conditions, and results of the test used to assess the pathogen's ability to infect a host organism""", json_schema_extra = { "linkml_meta": {'alias': 'infectivityTest', 'domain_of': ['Pathogen']} })
     isolationTechnique: Optional[str] = Field(None, title="isolation technique", description="""The specific method or procedure used to isolate the pathogen from a host organism or sample, detailing the techniques and tools employed in the isolation process""", json_schema_extra = { "linkml_meta": {'alias': 'isolationTechnique', 'domain_of': ['Pathogen']} })
     isolationConditions: Optional[str] = Field(None, title="isolation conditions", description="""The environmental and procedural conditions under which the pathogen was isolated""", json_schema_extra = { "linkml_meta": {'alias': 'isolationConditions', 'domain_of': ['Pathogen']} })
-    letterOfAuthority: str = Field("Not applicable", title="letter of authority", description="""Indicate whether a Letter of Authority is required, confirming the necessity of formal authorization. The possible values are \"N/A\", \"NOT Required\", \"Required for customers in the EU\" or \"Required\"""", json_schema_extra = { "linkml_meta": {'alias': 'letterOfAuthority',
+    letterOfAuthority: LetterOfAuthorityEnumeration = Field('Not applicable', title="letter of authority", description="""Indicate whether a Letter of Authority is required, confirming the necessity of formal authorization. The possible values are \"N/A\", \"NOT Required\", \"Required for customers in the EU\" or \"Required\"""", json_schema_extra = { "linkml_meta": {'alias': 'letterOfAuthority',
          'domain_of': ['Pathogen'],
          'ifabsent': 'string(Not applicable)'} })
     passage: Optional[str] = Field(None, title="passage", description="""The number of times the pathogen was cultured through serial passage, a process used to increase the stock but which can also lead to the evolution of the original pathogen.""", json_schema_extra = { "linkml_meta": {'alias': 'passage', 'domain_of': ['Pathogen']} })
-    genomeSequencing: str = Field(..., title="genome sequencing", description="""The extent of the pathogen's genetic material that has been sequenced, with possible values including \"Complete genome\" for the entire genome, \"Complete coding sequence\" for all coding regions, and \"Partial sequence\" for only a portion of the genetic material""", json_schema_extra = { "linkml_meta": {'alias': 'genomeSequencing', 'domain_of': ['Pathogen']} })
+    genomeSequencing: GenomeSequencingEnumeration = Field(..., title="genome sequencing", description="""The extent of the pathogen's genetic material that has been sequenced, with possible values including \"Complete genome\" for the entire genome, \"Complete coding sequence\" for all coding regions, and \"Partial sequence\" for only a portion of the genetic material""", json_schema_extra = { "linkml_meta": {'alias': 'genomeSequencing', 'domain_of': ['Pathogen']} })
     titer: str = Field(..., title="titer", description="""The titer value, its corresponding unit, and the method of quantification (e.g., RT-qPCR, TCID50), representing the concentration or amount of unit present in the sample. The titer corresponds to the highest dilution factor that still yields a positive reading""", json_schema_extra = { "linkml_meta": {'alias': 'titer',
          'close_mappings': ['wd:Q2166189'],
          'domain_of': ['Nucleic Acid', 'Pathogen']} })

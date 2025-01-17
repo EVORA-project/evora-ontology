@@ -1,7 +1,7 @@
  syntax="proto3";
  package
 // metamodel_version: 1.7.0
-// version: 1.0.7785
+// version: 1.0.7894
 // List of alternate names for things
 message AlternateName
  {
@@ -106,16 +106,16 @@ message Bacterium
  repeated  propagationHost propagationHost = 0
  repeated  transmissionMethod transmissionMethod = 0
  repeated  sequence sequence = 0
-  string cultivability = 0
+  cultivabilityEnumeration cultivability = 0
   string clinicalInformation = 0
   string identificationTechnique = 0
-  string infectivity = 0
+  infectivityEnumeration infectivity = 0
   string infectivityTest = 0
   string isolationTechnique = 0
   string isolationConditions = 0
-  string letterOfAuthority = 0
+  letterOfAuthorityEnumeration letterOfAuthority = 0
   string passage = 0
-  string genomeSequencing = 0
+  genomeSequencingEnumeration genomeSequencing = 0
   string titer = 0
  }
 // Information about the origin of the biological material, compulsory for access, utilization, and benefit-sharing of genetic resources in compliance with the Nagoya Protocol
@@ -228,11 +228,11 @@ message DataProvider
   string name = 0
   string description = 0
   license license = 0
-  string loginRequestMethod = 0
+  queryMethodEnumeration loginRequestMethod = 0
   uri loginURL = 0
   string loginTokenName = 0
   uri queryURL = 0
-  string queryMethod = 0
+  queryMethodEnumeration queryMethod = 0
   string contentType = 0
   uri providedEntityType = 0
   integer weight = 0
@@ -354,16 +354,16 @@ message Fungus
  repeated  propagationHost propagationHost = 0
  repeated  transmissionMethod transmissionMethod = 0
  repeated  sequence sequence = 0
-  string cultivability = 0
+  cultivabilityEnumeration cultivability = 0
   string clinicalInformation = 0
   string identificationTechnique = 0
-  string infectivity = 0
+  infectivityEnumeration infectivity = 0
   string infectivityTest = 0
   string isolationTechnique = 0
   string isolationConditions = 0
-  string letterOfAuthority = 0
+  letterOfAuthorityEnumeration letterOfAuthority = 0
   string passage = 0
-  string genomeSequencing = 0
+  genomeSequencingEnumeration genomeSequencing = 0
   string titer = 0
  }
 // The specific location or region where a physical item, originates or is naturally found
@@ -553,7 +553,7 @@ message NucleicAcid
   boolean mutationObserved = 0
   string observedMutations = 0
   string identificationTechnique = 0
-  string sequencing = 0
+  sequencingEnumeration sequencing = 0
   string titer = 0
   boolean sequenceChecked = 0
  }
@@ -582,8 +582,8 @@ message PathogenIdentification
  {
   taxon taxon = 0
   commonName pathogenName = 0
-  string pathogenType = 0
- repeated  string hostType = 0
+  pathogenTypeEnumeration pathogenType = 0
+ repeated  hostTypeEnumeration hostType = 0
   string subspecies = 0
   string strain = 0
   string isolate = 0
@@ -669,16 +669,16 @@ message Prion
  repeated  propagationHost propagationHost = 0
  repeated  transmissionMethod transmissionMethod = 0
  repeated  sequence sequence = 0
-  string cultivability = 0
+  cultivabilityEnumeration cultivability = 0
   string clinicalInformation = 0
   string identificationTechnique = 0
-  string infectivity = 0
+  infectivityEnumeration infectivity = 0
   string infectivityTest = 0
   string isolationTechnique = 0
   string isolationConditions = 0
-  string letterOfAuthority = 0
+  letterOfAuthorityEnumeration letterOfAuthority = 0
   string passage = 0
-  string genomeSequencing = 0
+  genomeSequencingEnumeration genomeSequencing = 0
   string titer = 0
  }
 // A product
@@ -785,14 +785,14 @@ message Protein
  repeated  specialFeature specialFeature = 0
  repeated  proteinTag proteinTAG = 0
  repeated  string domain = 0
- repeated  string expressedAs = 0
- repeated  string inclusionBodiesType = 0
- repeated  string expressionSystem = 0
- repeated  string functionalCharacterization = 0
+ repeated  expressedAsEnumeration expressedAs = 0
+ repeated  inclusionBodiesTypeEnumeration inclusionBodiesType = 0
+ repeated  expressionSystemEnumeration expressionSystem = 0
+ repeated  functionalCharacterizationEnumeration functionalCharacterization = 0
  repeated  string functionalTechnicalDescription = 0
- repeated  string proteinPurification = 0
+ repeated  proteinPurificationEnumeration proteinPurification = 0
  repeated  string theTAGStatusOfTheSolubilizedProtein = 0
- repeated  string typeOfFunctionalCharacterization = 0
+ repeated  typeOfFunctionalCharacterizationEnumeration typeOfFunctionalCharacterization = 0
  }
 // Peptide sequence genetically grafted onto a recombinant protein
 message ProteinTag
@@ -845,16 +845,16 @@ message Protozoan
  repeated  propagationHost propagationHost = 0
  repeated  transmissionMethod transmissionMethod = 0
  repeated  sequence sequence = 0
-  string cultivability = 0
+  cultivabilityEnumeration cultivability = 0
   string clinicalInformation = 0
   string identificationTechnique = 0
-  string infectivity = 0
+  infectivityEnumeration infectivity = 0
   string infectivityTest = 0
   string isolationTechnique = 0
   string isolationConditions = 0
-  string letterOfAuthority = 0
+  letterOfAuthorityEnumeration letterOfAuthority = 0
   string passage = 0
-  string genomeSequencing = 0
+  genomeSequencingEnumeration genomeSequencing = 0
   string titer = 0
  }
 // A provider of products or services, as a specific organization
@@ -913,7 +913,7 @@ message Sequence
 message SequenceReference
  {
   string accessionNumber = 0
-  string sequenceProvider = 0
+  sequenceProviderEnumeration sequenceProvider = 0
  }
 // A service
 message Service
@@ -1075,16 +1075,16 @@ message Viroid
  repeated  propagationHost propagationHost = 0
  repeated  transmissionMethod transmissionMethod = 0
  repeated  sequence sequence = 0
-  string cultivability = 0
+  cultivabilityEnumeration cultivability = 0
   string clinicalInformation = 0
   string identificationTechnique = 0
-  string infectivity = 0
+  infectivityEnumeration infectivity = 0
   string infectivityTest = 0
   string isolationTechnique = 0
   string isolationConditions = 0
-  string letterOfAuthority = 0
+  letterOfAuthorityEnumeration letterOfAuthority = 0
   string passage = 0
-  string genomeSequencing = 0
+  genomeSequencingEnumeration genomeSequencing = 0
   string titer = 0
  }
 // The virus as a biological material
@@ -1130,16 +1130,16 @@ message Virus
  repeated  propagationHost propagationHost = 0
  repeated  transmissionMethod transmissionMethod = 0
  repeated  sequence sequence = 0
-  string cultivability = 0
+  cultivabilityEnumeration cultivability = 0
   string clinicalInformation = 0
   string identificationTechnique = 0
-  string infectivity = 0
+  infectivityEnumeration infectivity = 0
   string infectivityTest = 0
   string isolationTechnique = 0
   string isolationConditions = 0
-  string letterOfAuthority = 0
+  letterOfAuthorityEnumeration letterOfAuthority = 0
   string passage = 0
-  string genomeSequencing = 0
+  genomeSequencingEnumeration genomeSequencing = 0
   string titer = 0
  repeated  virusName coInfectingViruses = 0
   boolean contaminationWithCoInfectingViruses = 0

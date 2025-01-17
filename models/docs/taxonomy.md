@@ -18,8 +18,8 @@ URI: [EVORAO:taxonomy](https://raw.githubusercontent.com/EVORA-project/evora-ont
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [TaxonomicRank](TaxonomicRank.md) | The possible taxonomic ranks and their description |  yes  |
 | [Taxon](Taxon.md) | Conceptual entity that groups one or more populations of an organism or organ... |  yes  |
+| [TaxonomicRank](TaxonomicRank.md) | The possible taxonomic ranks and their description |  yes  |
 
 
 

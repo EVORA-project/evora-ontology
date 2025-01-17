@@ -1,8 +1,8 @@
-# Enum: ExpressionSystem
+# Enum: ExpressionSystemEnumeration
 
 
 
-URI: [ExpressionSystem](ExpressionSystem.md)
+URI: [ExpressionSystemEnumeration](ExpressionSystemEnumeration.md)
 
 ## Permissible Values
 
@@ -14,6 +14,12 @@ URI: [ExpressionSystem](ExpressionSystem.md)
 
 
 
+
+## Slots
+
+| Name | Description |
+| ---  | --- |
+| [expressionSystem](expressionSystem.md) | The host organism or cellular environment used to produce a protein from a sp... |
 
 
 
@@ -28,13 +34,12 @@ URI: [ExpressionSystem](ExpressionSystem.md)
 
 
 
+### Schema Source
 
-## Mappings
 
-| Mapping Type | Mapped Value |
-| ---  | ---  |
-| self | EVORAO:expressionSystem |
-| native | EVORAO:expressionSystem |
+* from schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+
+
 
 
 
@@ -43,7 +48,8 @@ URI: [ExpressionSystem](ExpressionSystem.md)
 
 <details>
 ```yaml
-name: expressionSystem
+name: expressionSystemEnumeration
+from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
 rank: 1000
 permissible_values:
   E. coli:

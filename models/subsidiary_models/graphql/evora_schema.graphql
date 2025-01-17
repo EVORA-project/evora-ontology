@@ -1,59 +1,59 @@
 # metamodel_version: 1.7.0
-# version: 1.0.7785
-enum Cultivability
+# version: 1.0.7894
+enum CultivabilityEnumeration
   {
     Cultivable
     Uncultivable
     Inactivated
   }
 
-enum ExpressedAs
+enum ExpressedAsEnumeration
   {
     Soluble
     Inclusion_bodies
   }
 
-enum ExpressionSystem
+enum ExpressionSystemEnumeration
   {
     E__FULL_STOP___coli
     Insect_cells
     Mammalian_cells
   }
 
-enum FunctionalCharacterization
+enum FunctionalCharacterizationEnumeration
   {
     Functionally_characterized
     No_functional_characterization
   }
 
-enum GenomeSequencing
+enum GenomeSequencingEnumeration
   {
     Complete_genome
     Complete_coding_sequence
     Partial_sequence
   }
 
-enum HostType
+enum HostTypeEnumeration
   {
     Animal
     Human
     Plant
   }
 
-enum InclusionBodiesType
+enum InclusionBodiesTypeEnumeration
   {
     Denatured
     Refolded
   }
 
-enum Infectivity
+enum InfectivityEnumeration
   {
     Infectivity_tested
     Infectivity_tested_and_quantified
     Non_cultivable_sample__COMMA___infectivity_cannot_be_tested
   }
 
-enum LetterOfAuthority
+enum LetterOfAuthorityEnumeration
   {
     Not_applicable
     Not_required
@@ -61,13 +61,7 @@ enum LetterOfAuthority
     Required
   }
 
-enum LoginRequestMethod
-  {
-    GET
-    POST
-  }
-
-enum PathogenType
+enum PathogenTypeEnumeration
   {
     Virus
     Bacterium
@@ -77,32 +71,32 @@ enum PathogenType
     Prion
   }
 
-enum ProteinPurification
+enum ProteinPurificationEnumeration
   {
-    Superior_to_95_percents
+    Greater_than_95_percent
     Unpurified_expression_host_lysate_or_partly_purified_protein
   }
 
-enum QueryMethod
+enum QueryMethodEnumeration
   {
     GET
     POST
   }
 
-enum SequenceProvider
+enum SequenceProviderEnumeration
   {
     ENA
     GenBank
   }
 
-enum Sequencing
+enum SequencingEnumeration
   {
     Not_sequenced
     Partly_sequenced
     Fully_sequenced
   }
 
-enum TypeOfFunctionalCharacterization
+enum TypeOfFunctionalCharacterizationEnumeration
   {
     Enzymatic
     Antigenic
@@ -211,16 +205,16 @@ type Bacterium
     propagationHost: [PropagationHost]
     transmissionMethod: [TransmissionMethod]
     sequence: [Sequence]!
-    cultivability: String!
+    cultivability: CultivabilityEnumeration!
     clinicalInformation: String
     identificationTechnique: String
-    infectivity: String!
+    infectivity: InfectivityEnumeration!
     infectivityTest: String
     isolationTechnique: String
     isolationConditions: String
-    letterOfAuthority: String!
+    letterOfAuthority: LetterOfAuthorityEnumeration!
     passage: String
-    genomeSequencing: String!
+    genomeSequencing: GenomeSequencingEnumeration!
     titer: String!
   }
 
@@ -345,11 +339,11 @@ type DataProvider
     name: String!
     description: String
     license: License
-    loginRequestMethod: String
+    loginRequestMethod: QueryMethodEnumeration
     loginURL: Uri
     loginTokenName: String
     queryURL: Uri!
-    queryMethod: String!
+    queryMethod: QueryMethodEnumeration!
     contentType: String!
     providedEntityType: Uri!
     weight: Integer!
@@ -490,16 +484,16 @@ type Fungus
     propagationHost: [PropagationHost]
     transmissionMethod: [TransmissionMethod]
     sequence: [Sequence]!
-    cultivability: String!
+    cultivability: CultivabilityEnumeration!
     clinicalInformation: String
     identificationTechnique: String
-    infectivity: String!
+    infectivity: InfectivityEnumeration!
     infectivityTest: String
     isolationTechnique: String
     isolationConditions: String
-    letterOfAuthority: String!
+    letterOfAuthority: LetterOfAuthorityEnumeration!
     passage: String
-    genomeSequencing: String!
+    genomeSequencing: GenomeSequencingEnumeration!
     titer: String!
   }
 
@@ -701,7 +695,7 @@ type NucleicAcid
     mutationObserved: Boolean!
     observedMutations: String
     identificationTechnique: String
-    sequencing: String!
+    sequencing: SequencingEnumeration!
     titer: String
     sequenceChecked: Boolean!
   }
@@ -768,16 +762,16 @@ interface Pathogen
     propagationHost: [PropagationHost]
     transmissionMethod: [TransmissionMethod]
     sequence: [Sequence]!
-    cultivability: String!
+    cultivability: CultivabilityEnumeration!
     clinicalInformation: String
     identificationTechnique: String
-    infectivity: String!
+    infectivity: InfectivityEnumeration!
     infectivityTest: String
     isolationTechnique: String
     isolationConditions: String
-    letterOfAuthority: String!
+    letterOfAuthority: LetterOfAuthorityEnumeration!
     passage: String
-    genomeSequencing: String!
+    genomeSequencing: GenomeSequencingEnumeration!
     titer: String!
   }
 
@@ -785,8 +779,8 @@ type PathogenIdentification
   {
     taxon: Taxon!
     pathogenName: CommonName!
-    pathogenType: String!
-    hostType: [String]
+    pathogenType: PathogenTypeEnumeration!
+    hostType: [HostTypeEnumeration]
     subspecies: String
     strain: String
     isolate: String
@@ -872,16 +866,16 @@ type Prion
     propagationHost: [PropagationHost]
     transmissionMethod: [TransmissionMethod]
     sequence: [Sequence]!
-    cultivability: String!
+    cultivability: CultivabilityEnumeration!
     clinicalInformation: String
     identificationTechnique: String
-    infectivity: String!
+    infectivity: InfectivityEnumeration!
     infectivityTest: String
     isolationTechnique: String
     isolationConditions: String
-    letterOfAuthority: String!
+    letterOfAuthority: LetterOfAuthorityEnumeration!
     passage: String
-    genomeSequencing: String!
+    genomeSequencing: GenomeSequencingEnumeration!
     titer: String!
   }
 
@@ -1018,14 +1012,14 @@ type Protein
     specialFeature: [SpecialFeature]
     proteinTAG: [ProteinTag]
     domain: [String]
-    expressedAs: [String]
-    inclusionBodiesType: [String]
-    expressionSystem: [String]
-    functionalCharacterization: [String]
+    expressedAs: [ExpressedAsEnumeration]
+    inclusionBodiesType: [InclusionBodiesTypeEnumeration]
+    expressionSystem: [ExpressionSystemEnumeration]
+    functionalCharacterization: [FunctionalCharacterizationEnumeration]
     functionalTechnicalDescription: [String]
-    proteinPurification: [String]
+    proteinPurification: [ProteinPurificationEnumeration]
     theTAGStatusOfTheSolubilizedProtein: [String]
-    typeOfFunctionalCharacterization: [String]
+    typeOfFunctionalCharacterization: [TypeOfFunctionalCharacterizationEnumeration]
   }
 
 type ProteinTag
@@ -1078,16 +1072,16 @@ type Protozoan
     propagationHost: [PropagationHost]
     transmissionMethod: [TransmissionMethod]
     sequence: [Sequence]!
-    cultivability: String!
+    cultivability: CultivabilityEnumeration!
     clinicalInformation: String
     identificationTechnique: String
-    infectivity: String!
+    infectivity: InfectivityEnumeration!
     infectivityTest: String
     isolationTechnique: String
     isolationConditions: String
-    letterOfAuthority: String!
+    letterOfAuthority: LetterOfAuthorityEnumeration!
     passage: String
-    genomeSequencing: String!
+    genomeSequencing: GenomeSequencingEnumeration!
     titer: String!
   }
 
@@ -1146,7 +1140,7 @@ type Sequence
 type SequenceReference
   {
     accessionNumber: String!
-    sequenceProvider: String!
+    sequenceProvider: SequenceProviderEnumeration!
   }
 
 type Service
@@ -1316,16 +1310,16 @@ type Viroid
     propagationHost: [PropagationHost]
     transmissionMethod: [TransmissionMethod]
     sequence: [Sequence]!
-    cultivability: String!
+    cultivability: CultivabilityEnumeration!
     clinicalInformation: String
     identificationTechnique: String
-    infectivity: String!
+    infectivity: InfectivityEnumeration!
     infectivityTest: String
     isolationTechnique: String
     isolationConditions: String
-    letterOfAuthority: String!
+    letterOfAuthority: LetterOfAuthorityEnumeration!
     passage: String
-    genomeSequencing: String!
+    genomeSequencing: GenomeSequencingEnumeration!
     titer: String!
   }
 
@@ -1371,16 +1365,16 @@ type Virus
     propagationHost: [PropagationHost]
     transmissionMethod: [TransmissionMethod]
     sequence: [Sequence]!
-    cultivability: String!
+    cultivability: CultivabilityEnumeration!
     clinicalInformation: String
     identificationTechnique: String
-    infectivity: String!
+    infectivity: InfectivityEnumeration!
     infectivityTest: String
     isolationTechnique: String
     isolationConditions: String
-    letterOfAuthority: String!
+    letterOfAuthority: LetterOfAuthorityEnumeration!
     passage: String
-    genomeSequencing: String!
+    genomeSequencing: GenomeSequencingEnumeration!
     titer: String!
     coInfectingViruses: [VirusName]
     contaminationWithCoInfectingViruses: Boolean!

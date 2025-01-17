@@ -98,6 +98,13 @@ URI: [EVORAO:Fungus](https://raw.githubusercontent.com/EVORA-project/evora-ontol
         
       Fungus : cultivability
         
+          
+    
+    
+    Fungus --> "1" CultivabilityEnumeration : cultivability
+    click CultivabilityEnumeration href "../CultivabilityEnumeration"
+
+        
       Fungus : description
         
       Fungus : externalRelatedReference
@@ -111,6 +118,13 @@ URI: [EVORAO:Fungus](https://raw.githubusercontent.com/EVORA-project/evora-ontol
         
       Fungus : genomeSequencing
         
+          
+    
+    
+    Fungus --> "1" GenomeSequencingEnumeration : genomeSequencing
+    click GenomeSequencingEnumeration href "../GenomeSequencingEnumeration"
+
+        
       Fungus : hasIATAClassification
         
           
@@ -123,6 +137,13 @@ URI: [EVORAO:Fungus](https://raw.githubusercontent.com/EVORA-project/evora-ontol
       Fungus : identificationTechnique
         
       Fungus : infectivity
+        
+          
+    
+    
+    Fungus --> "1" InfectivityEnumeration : infectivity
+    click InfectivityEnumeration href "../InfectivityEnumeration"
+
         
       Fungus : infectivityTest
         
@@ -151,6 +172,13 @@ URI: [EVORAO:Fungus](https://raw.githubusercontent.com/EVORA-project/evora-ontol
 
         
       Fungus : letterOfAuthority
+        
+          
+    
+    
+    Fungus --> "1" LetterOfAuthorityEnumeration : letterOfAuthority
+    click LetterOfAuthorityEnumeration href "../LetterOfAuthorityEnumeration"
+
         
       Fungus : materialSafetyDataSheet
         
@@ -314,16 +342,16 @@ URI: [EVORAO:Fungus](https://raw.githubusercontent.com/EVORA-project/evora-ontol
 | [propagationHost](propagationHost.md) | * <br/> [PropagationHost](PropagationHost.md) | The host organism that propagates the pathogen | [Pathogen](Pathogen.md) |
 | [transmissionMethod](transmissionMethod.md) | * <br/> [TransmissionMethod](TransmissionMethod.md) | The method or route through which the pathogen is transmitted from one host t... | [Pathogen](Pathogen.md) |
 | [sequence](sequence.md) | 1..* <br/> [Sequence](Sequence.md) | The related sequence information from a sequence provider or in fasta format | [Pathogen](Pathogen.md) |
-| [cultivability](cultivability.md) | 1 <br/> [String](String.md) | The ability of the pathogen to be cultivated or grown in laboratory condition... | [Pathogen](Pathogen.md) |
+| [cultivability](cultivability.md) | 1 <br/> [CultivabilityEnumeration](CultivabilityEnumeration.md) | The ability of the pathogen to be cultivated or grown in laboratory condition... | [Pathogen](Pathogen.md) |
 | [clinicalInformation](clinicalInformation.md) | 0..1 <br/> [String](String.md) | Details about the clinical aspects of the pathogen, including symptoms, sever... | [Pathogen](Pathogen.md) |
 | [identificationTechnique](identificationTechnique.md) | 0..1 <br/> [String](String.md) | The method or technique used to identify and confirm the presence of the path... | [Pathogen](Pathogen.md) |
-| [infectivity](infectivity.md) | 1 <br/> [String](String.md) | Indicates the ability of the pathogen to establish an infection in a host org... | [Pathogen](Pathogen.md) |
+| [infectivity](infectivity.md) | 1 <br/> [InfectivityEnumeration](InfectivityEnumeration.md) | Indicates the ability of the pathogen to establish an infection in a host org... | [Pathogen](Pathogen.md) |
 | [infectivityTest](infectivityTest.md) | 0..1 <br/> [String](String.md) | The description of the completed infectivity test, providing details on the m... | [Pathogen](Pathogen.md) |
 | [isolationTechnique](isolationTechnique.md) | 0..1 <br/> [String](String.md) | The specific method or procedure used to isolate the pathogen from a host org... | [Pathogen](Pathogen.md) |
 | [isolationConditions](isolationConditions.md) | 0..1 <br/> [String](String.md) | The environmental and procedural conditions under which the pathogen was isol... | [Pathogen](Pathogen.md) |
-| [letterOfAuthority](letterOfAuthority.md) | 1 <br/> [String](String.md) | Indicate whether a Letter of Authority is required, confirming the necessity ... | [Pathogen](Pathogen.md) |
+| [letterOfAuthority](letterOfAuthority.md) | 1 <br/> [LetterOfAuthorityEnumeration](LetterOfAuthorityEnumeration.md) | Indicate whether a Letter of Authority is required, confirming the necessity ... | [Pathogen](Pathogen.md) |
 | [passage](passage.md) | 0..1 <br/> [String](String.md) | The number of times the pathogen was cultured through serial passage, a proce... | [Pathogen](Pathogen.md) |
-| [genomeSequencing](genomeSequencing.md) | 1 <br/> [String](String.md) | The extent of the pathogen's genetic material that has been sequenced, with p... | [Pathogen](Pathogen.md) |
+| [genomeSequencing](genomeSequencing.md) | 1 <br/> [GenomeSequencingEnumeration](GenomeSequencingEnumeration.md) | The extent of the pathogen's genetic material that has been sequenced, with p... | [Pathogen](Pathogen.md) |
 | [titer](titer.md) | 1 <br/> [String](String.md) | The titer value, its corresponding unit, and the method of quantification (e | [Pathogen](Pathogen.md) |
 | [hasIATAClassification](hasIATAClassification.md) | 1 <br/> [IATAClassification](IATAClassification.md) | The corresponding International Air Transport Association (IATA)'s category f... | [Product](Product.md) |
 | [shippingConditions](shippingConditions.md) | 1 <br/> [String](String.md) | Specification of the terms and parameters for transporting | [Product](Product.md) |
@@ -542,12 +570,12 @@ attributes:
     - Might also be related to a product sub-category that helps filtering
     from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
     rank: 1000
-    ifabsent: string(Cultivable pathogen)
+    ifabsent: string(Cultivable)
     alias: cultivability
     owner: Fungus
     domain_of:
     - Pathogen
-    range: string
+    range: cultivabilityEnumeration
     required: true
     multivalued: false
   clinicalInformation:
@@ -592,7 +620,7 @@ attributes:
     owner: Fungus
     domain_of:
     - Pathogen
-    range: string
+    range: infectivityEnumeration
     required: true
     multivalued: false
   infectivityTest:
@@ -652,7 +680,7 @@ attributes:
     owner: Fungus
     domain_of:
     - Pathogen
-    range: string
+    range: letterOfAuthorityEnumeration
     required: true
     multivalued: false
   passage:
@@ -683,7 +711,7 @@ attributes:
     owner: Fungus
     domain_of:
     - Pathogen
-    range: string
+    range: genomeSequencingEnumeration
     required: true
     multivalued: false
   titer:

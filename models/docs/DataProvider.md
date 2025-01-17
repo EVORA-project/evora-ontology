@@ -38,6 +38,13 @@ URI: [EVORAO:DataProvider](https://raw.githubusercontent.com/EVORA-project/evora
         
       DataProvider : loginRequestMethod
         
+          
+    
+    
+    DataProvider --> "0..1" QueryMethodEnumeration : loginRequestMethod
+    click QueryMethodEnumeration href "../QueryMethodEnumeration"
+
+        
       DataProvider : loginTokenName
         
       DataProvider : loginURL
@@ -47,6 +54,13 @@ URI: [EVORAO:DataProvider](https://raw.githubusercontent.com/EVORA-project/evora
       DataProvider : providedEntityType
         
       DataProvider : queryMethod
+        
+          
+    
+    
+    DataProvider --> "1" QueryMethodEnumeration : queryMethod
+    click QueryMethodEnumeration href "../QueryMethodEnumeration"
+
         
       DataProvider : queryURL
         
@@ -71,11 +85,11 @@ URI: [EVORAO:DataProvider](https://raw.githubusercontent.com/EVORA-project/evora
 | Name | Cardinality and Range | Description | Inheritance |
 | ---  | --- | --- | --- |
 | [license](license.md) | 0..1 <br/> [License](License.md) | Information about terms and conditions under which the subject can be used, s... | direct |
-| [loginRequestMethod](loginRequestMethod.md) | 0..1 <br/> [String](String.md) | The http request method used to acces the login request url | direct |
+| [loginRequestMethod](loginRequestMethod.md) | 0..1 <br/> [QueryMethodEnumeration](QueryMethodEnumeration.md) | The http request method used to acces the login request url | direct |
 | [loginURL](loginURL.md) | 0..1 <br/> [Uri](Uri.md) | The URL template that allows to log in if required | direct |
 | [loginTokenName](loginTokenName.md) | 0..1 <br/> [String](String.md) | The name of the token, unique identifier of an interaction session, that will... | direct |
 | [queryURL](queryURL.md) | 1 <br/> [Uri](Uri.md) | The URL template that allows to get the content | direct |
-| [queryMethod](queryMethod.md) | 1 <br/> [String](String.md) | The http request method used to access the requested query url | direct |
+| [queryMethod](queryMethod.md) | 1 <br/> [QueryMethodEnumeration](QueryMethodEnumeration.md) | The http request method used to access the requested query url | direct |
 | [contentType](contentType.md) | 1 <br/> [String](String.md) | The content type of the response to the queries | direct |
 | [providedEntityType](providedEntityType.md) | 1 <br/> [Uri](Uri.md) | The identification of the entity type (Class) described by the response to th... | direct |
 | [weight](weight.md) | 1 <br/> [Integer](Integer.md) | A numerical value indicating relative importance or priority, generally proce... | direct |
@@ -175,7 +189,7 @@ slot_usage:
     close_mappings:
     - dcat:endpointDescription
     ifabsent: string(GET)
-    range: string
+    range: queryMethodEnumeration
     required: false
     multivalued: false
   loginURL:
@@ -215,7 +229,7 @@ slot_usage:
     title: query method
     close_mappings:
     - dcat:endpointDescription
-    range: string
+    range: queryMethodEnumeration
     required: true
     multivalued: false
   contentType:
@@ -287,7 +301,7 @@ slot_usage:
     close_mappings:
     - dcat:endpointDescription
     ifabsent: string(GET)
-    range: string
+    range: queryMethodEnumeration
     required: false
     multivalued: false
   loginURL:
@@ -327,7 +341,7 @@ slot_usage:
     title: query method
     close_mappings:
     - dcat:endpointDescription
-    range: string
+    range: queryMethodEnumeration
     required: true
     multivalued: false
   contentType:
@@ -396,7 +410,7 @@ attributes:
     owner: DataProvider
     domain_of:
     - DataProvider
-    range: string
+    range: queryMethodEnumeration
     required: false
     multivalued: false
   loginURL:
@@ -460,7 +474,7 @@ attributes:
     owner: DataProvider
     domain_of:
     - DataProvider
-    range: string
+    range: queryMethodEnumeration
     required: true
     multivalued: false
   contentType:

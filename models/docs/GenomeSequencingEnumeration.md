@@ -1,8 +1,8 @@
-# Enum: GenomeSequencing
+# Enum: GenomeSequencingEnumeration
 
 
 
-URI: [GenomeSequencing](GenomeSequencing.md)
+URI: [GenomeSequencingEnumeration](GenomeSequencingEnumeration.md)
 
 ## Permissible Values
 
@@ -14,6 +14,12 @@ URI: [GenomeSequencing](GenomeSequencing.md)
 
 
 
+
+## Slots
+
+| Name | Description |
+| ---  | --- |
+| [genomeSequencing](genomeSequencing.md) | The extent of the pathogen's genetic material that has been sequenced, with p... |
 
 
 
@@ -28,13 +34,12 @@ URI: [GenomeSequencing](GenomeSequencing.md)
 
 
 
+### Schema Source
 
-## Mappings
 
-| Mapping Type | Mapped Value |
-| ---  | ---  |
-| self | EVORAO:genomeSequencing |
-| native | EVORAO:genomeSequencing |
+* from schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+
+
 
 
 
@@ -43,7 +48,8 @@ URI: [GenomeSequencing](GenomeSequencing.md)
 
 <details>
 ```yaml
-name: genomeSequencing
+name: genomeSequencingEnumeration
+from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
 rank: 1000
 permissible_values:
   Complete genome:

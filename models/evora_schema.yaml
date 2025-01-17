@@ -18,7 +18,7 @@ contributors:
 - https://orcid.org/0000-0002-1257-6862
 - https://orcid.org/0000-0002-2042-2839
 id: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
-version: 1.0.7785
+version: 1.0.7894
 imports:
 - linkml:types
 license: https://creativecommons.org/publicdomain/zero/1.0/
@@ -47,7 +47,8 @@ prefixes:
 default_prefix: EVORAO
 default_range: string
 enums:
-  loginRequestMethod:
+  queryMethodEnumeration:
+    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
     permissible_values:
       GET:
         description: GET http method, used to send information, such as a query string,
@@ -57,17 +58,8 @@ enums:
         description: POST http method, used to send information to a server by storing
           it in the request body of the http request
         meaning: wd:Q2764521
-  queryMethod:
-    permissible_values:
-      GET:
-        description: GET http method, used to send information, such as a query string,
-          directly in the URL
-        meaning: wd:Q3504817
-      POST:
-        description: POST http method, used to send information to a server by storing
-          it in the request body of the http request
-        meaning: wd:Q2764521
-  pathogenType:
+  pathogenTypeEnumeration:
+    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
     permissible_values:
       Virus:
         description: The virus as a biological material
@@ -87,7 +79,8 @@ enums:
       Prion:
         description: The prion as a biological material
         meaning: EVORAO:Prion
-  hostType:
+  hostTypeEnumeration:
+    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
     permissible_values:
       Animal:
         description: Kingdom of multicellular eukaryotic organisms
@@ -99,7 +92,8 @@ enums:
       Plant:
         description: Living thing in the kingdom of photosynthetic eukaryotes
         meaning: wd:Q756
-  sequenceProvider:
+  sequenceProviderEnumeration:
+    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
     permissible_values:
       ENA:
         description: The European Nucleotide Archive
@@ -108,7 +102,8 @@ enums:
         description: The NIH genetic sequence database, an annotated collection of
           all publicly available DNA sequences
         meaning: wd:Q901755
-  expressedAs:
+  expressedAsEnumeration:
+    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
     permissible_values:
       Soluble:
         description: Expressed as soluble protein
@@ -116,13 +111,15 @@ enums:
       Inclusion bodies:
         description: Expressed as aggregated molecules
         meaning: wd:Q1308970
-  inclusionBodiesType:
+  inclusionBodiesTypeEnumeration:
+    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
     permissible_values:
       Denatured:
         description: Having losed their folded structure present in their native state
       Refolded:
         description: Having regained a folded structure
-  expressionSystem:
+  expressionSystemEnumeration:
+    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
     permissible_values:
       E. coli:
         description: Expressed in E. Coli bacteria
@@ -132,20 +129,23 @@ enums:
         meaning: wd:Q108929499
       Mammalian cells:
         description: Expressed in mammalian cells
-  functionalCharacterization:
+  functionalCharacterizationEnumeration:
+    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
     permissible_values:
       Functionally characterized:
         description: The related protein has been functionally characterized
       No functional characterization:
         description: The related protein has curently no functional characterization
-  proteinPurification:
+  proteinPurificationEnumeration:
+    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
     permissible_values:
-      Superior to 95 percents:
-        description: The protein is purified over 95%
+      Greater than 95 percent:
+        description: The protein is purified to a level exceeding 95%
       Unpurified expression host lysate or partly purified protein:
         description: The protein is provided as unpurified expression host lysate
           or partly purified protein
-  typeOfFunctionalCharacterization:
+  typeOfFunctionalCharacterizationEnumeration:
+    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
     permissible_values:
       Enzymatic:
         description: Enzymatic functional characterization involves studying the specific
@@ -153,7 +153,8 @@ enums:
       Antigenic:
         description: Antigenic functional characterization involves studying the properties
           and behaviors of antigens
-  sequencing:
+  sequencingEnumeration:
+    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
     permissible_values:
       Not sequenced:
         description: The biological material has not been sequenced
@@ -161,7 +162,8 @@ enums:
         description: The biological material has been partly sequenced
       Fully sequenced:
         description: The biological material has been fully sequenced
-  cultivability:
+  cultivabilityEnumeration:
+    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
     permissible_values:
       Cultivable:
         description: The pathogen can be grown using standard culture techniques
@@ -171,7 +173,8 @@ enums:
       Inactivated:
         description: The pathogen has been killed or rendered inactive so it cannot
           cause disease
-  infectivity:
+  infectivityEnumeration:
+    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
     permissible_values:
       Infectivity tested:
         description: The infectivity of the pathogen has been tested
@@ -180,7 +183,8 @@ enums:
       Non cultivable sample, infectivity cannot be tested:
         description: The pathogen is provided as a non cultivable sample, so its infectivity
           cannot be tested
-  letterOfAuthority:
+  letterOfAuthorityEnumeration:
+    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
     permissible_values:
       Not applicable:
         description: The letter of authority is not applicable for this biological
@@ -192,7 +196,8 @@ enums:
           in case only if its destination is in the European Union
       Required:
         description: The letter of authority is required for this biological material
-  genomeSequencing:
+  genomeSequencingEnumeration:
+    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
     permissible_values:
       Complete genome:
         description: The complete genome has been sequenced
@@ -779,7 +784,7 @@ classes:
         close_mappings:
         - dcat:endpointDescription
         ifabsent: string(GET)
-        range: string
+        range: queryMethodEnumeration
         required: false
         multivalued: false
       loginURL:
@@ -815,7 +820,7 @@ classes:
         title: query method
         close_mappings:
         - dcat:endpointDescription
-        range: string
+        range: queryMethodEnumeration
         required: true
         multivalued: false
       contentType:
@@ -889,14 +894,14 @@ classes:
         description: Identification of the specific type of pathogen among the listed
           categories e.g. "Virus","Viroid","Bacterium"...
         title: pathogen type
-        range: string
+        range: pathogenTypeEnumeration
         required: true
         multivalued: false
       hostType:
         description: Indication of the possible host(s) for the identified pathogens
           among the listed main categories
         title: host type
-        range: string
+        range: hostTypeEnumeration
         required: false
         recommended: true
         multivalued: true
@@ -1514,7 +1519,7 @@ classes:
         title: sequence provider
         close_mappings:
         - dct:publisher
-        range: string
+        range: sequenceProviderEnumeration
         required: true
         multivalued: false
   PersonOrOrganization:
@@ -2317,7 +2322,7 @@ classes:
           are dissolved in the cellular or extracellular fluid) and "Inclusion bodies"
           (aggregated proteins that are insoluble and form within the cell)
         title: expressed as
-        range: string
+        range: expressedAsEnumeration
         required: false
         multivalued: true
       inclusionBodiesType:
@@ -2326,7 +2331,7 @@ classes:
           and "Refolded" (proteins have been processed to regain their functional,
           active conformation).
         title: inclusion bodies type
-        range: string
+        range: inclusionBodiesTypeEnumeration
         required: false
         multivalued: true
       expressionSystem:
@@ -2335,7 +2340,7 @@ classes:
           "Insect cells" (using baculovirus vectors), and "Mammalian cells" (mammalian
           cell lines).
         title: expression system
-        range: string
+        range: expressionSystemEnumeration
         required: false
         multivalued: true
       functionalCharacterization:
@@ -2345,7 +2350,7 @@ classes:
           and "No functional characterization" (the protein's functions have not been
           identified or described).
         title: functional characterization
-        range: string
+        range: functionalCharacterizationEnumeration
         required: false
         multivalued: true
       functionalTechnicalDescription:
@@ -2365,7 +2370,7 @@ classes:
           protein" (the protein is either unpurified and present in the host cell
           lysate or only partially purified).
         title: protein purification
-        range: string
+        range: proteinPurificationEnumeration
         required: false
         multivalued: true
       theTAGStatusOfTheSolubilizedProtein:
@@ -2384,7 +2389,7 @@ classes:
           for its enzyme activity) and "Antigenic" (the protein has been characterized
           for its ability to elicit an immune response).
         title: type of functional Characterization
-        range: string
+        range: typeOfFunctionalCharacterizationEnumeration
         required: false
         multivalued: true
   Nucleic Acid:
@@ -2498,7 +2503,7 @@ classes:
         title: sequencing
         comments:
         - Cloned products have to be sequenced
-        range: string
+        range: sequencingEnumeration
         required: true
         multivalued: false
       titer:
@@ -2674,8 +2679,8 @@ classes:
         title: cultivability
         comments:
         - Might also be related to a product sub-category that helps filtering
-        ifabsent: string(Cultivable pathogen)
-        range: string
+        ifabsent: string(Cultivable)
+        range: cultivabilityEnumeration
         required: true
         multivalued: false
       clinicalInformation:
@@ -2698,7 +2703,7 @@ classes:
           in a host organism, with possible values detailing whether infectivity has
           been tested, quantified, or cannot be tested due to non-cultivable nature.
         title: infectivity
-        range: string
+        range: infectivityEnumeration
         required: true
         multivalued: false
       infectivityTest:
@@ -2730,7 +2735,7 @@ classes:
           Required", "Required for customers in the EU" or "Required"
         title: letter of authority
         ifabsent: string(Not applicable)
-        range: string
+        range: letterOfAuthorityEnumeration
         required: true
         multivalued: false
       passage:
@@ -2747,7 +2752,7 @@ classes:
           "Complete coding sequence" for all coding regions, and "Partial sequence"
           for only a portion of the genetic material
         title: genome sequencing
-        range: string
+        range: genomeSequencingEnumeration
         required: true
         multivalued: false
       titer:
@@ -3263,4 +3268,4 @@ classes:
         required: false
         multivalued: false
 source_file: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl
-generation_date: '2025-01-17T16:27:56'
+generation_date: '2025-01-17T17:09:43'

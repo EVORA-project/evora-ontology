@@ -1,8 +1,8 @@
-# Enum: TypeOfFunctionalCharacterization
+# Enum: TypeOfFunctionalCharacterizationEnumeration
 
 
 
-URI: [TypeOfFunctionalCharacterization](TypeOfFunctionalCharacterization.md)
+URI: [TypeOfFunctionalCharacterizationEnumeration](TypeOfFunctionalCharacterizationEnumeration.md)
 
 ## Permissible Values
 
@@ -13,6 +13,12 @@ URI: [TypeOfFunctionalCharacterization](TypeOfFunctionalCharacterization.md)
 
 
 
+
+## Slots
+
+| Name | Description |
+| ---  | --- |
+| [typeOfFunctionalCharacterization](typeOfFunctionalCharacterization.md) | Refers to the classification of a protein based on the specific type of funct... |
 
 
 
@@ -27,13 +33,12 @@ URI: [TypeOfFunctionalCharacterization](TypeOfFunctionalCharacterization.md)
 
 
 
+### Schema Source
 
-## Mappings
 
-| Mapping Type | Mapped Value |
-| ---  | ---  |
-| self | EVORAO:typeOfFunctionalCharacterization |
-| native | EVORAO:typeOfFunctionalCharacterization |
+* from schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+
+
 
 
 
@@ -42,7 +47,8 @@ URI: [TypeOfFunctionalCharacterization](TypeOfFunctionalCharacterization.md)
 
 <details>
 ```yaml
-name: typeOfFunctionalCharacterization
+name: typeOfFunctionalCharacterizationEnumeration
+from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
 rank: 1000
 permissible_values:
   Enzymatic:

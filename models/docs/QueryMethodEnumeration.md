@@ -1,8 +1,8 @@
-# Enum: LoginRequestMethod
+# Enum: QueryMethodEnumeration
 
 
 
-URI: [LoginRequestMethod](LoginRequestMethod.md)
+URI: [QueryMethodEnumeration](QueryMethodEnumeration.md)
 
 ## Permissible Values
 
@@ -13,6 +13,13 @@ URI: [LoginRequestMethod](LoginRequestMethod.md)
 
 
 
+
+## Slots
+
+| Name | Description |
+| ---  | --- |
+| [loginRequestMethod](loginRequestMethod.md) | The http request method used to acces the login request url |
+| [queryMethod](queryMethod.md) | The http request method used to access the requested query url |
 
 
 
@@ -27,13 +34,12 @@ URI: [LoginRequestMethod](LoginRequestMethod.md)
 
 
 
+### Schema Source
 
-## Mappings
 
-| Mapping Type | Mapped Value |
-| ---  | ---  |
-| self | EVORAO:loginRequestMethod |
-| native | EVORAO:loginRequestMethod |
+* from schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+
+
 
 
 
@@ -42,7 +48,8 @@ URI: [LoginRequestMethod](LoginRequestMethod.md)
 
 <details>
 ```yaml
-name: loginRequestMethod
+name: queryMethodEnumeration
+from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
 rank: 1000
 permissible_values:
   GET:

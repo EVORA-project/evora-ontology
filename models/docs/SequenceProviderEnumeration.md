@@ -1,8 +1,8 @@
-# Enum: SequenceProvider
+# Enum: SequenceProviderEnumeration
 
 
 
-URI: [SequenceProvider](SequenceProvider.md)
+URI: [SequenceProviderEnumeration](SequenceProviderEnumeration.md)
 
 ## Permissible Values
 
@@ -13,6 +13,12 @@ URI: [SequenceProvider](SequenceProvider.md)
 
 
 
+
+## Slots
+
+| Name | Description |
+| ---  | --- |
+| [sequenceProvider](sequenceProvider.md) | The name of the sequence provider within the list of accepted sequence provid... |
 
 
 
@@ -27,13 +33,12 @@ URI: [SequenceProvider](SequenceProvider.md)
 
 
 
+### Schema Source
 
-## Mappings
 
-| Mapping Type | Mapped Value |
-| ---  | ---  |
-| self | EVORAO:sequenceProvider |
-| native | EVORAO:sequenceProvider |
+* from schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+
+
 
 
 
@@ -42,7 +47,8 @@ URI: [SequenceProvider](SequenceProvider.md)
 
 <details>
 ```yaml
-name: sequenceProvider
+name: sequenceProviderEnumeration
+from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
 rank: 1000
 permissible_values:
   ENA:

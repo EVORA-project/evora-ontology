@@ -1,8 +1,8 @@
-# Enum: HostType
+# Enum: HostTypeEnumeration
 
 
 
-URI: [HostType](HostType.md)
+URI: [HostTypeEnumeration](HostTypeEnumeration.md)
 
 ## Permissible Values
 
@@ -14,6 +14,12 @@ URI: [HostType](HostType.md)
 
 
 
+
+## Slots
+
+| Name | Description |
+| ---  | --- |
+| [hostType](hostType.md) | Indication of the possible host(s) for the identified pathogens among the lis... |
 
 
 
@@ -28,13 +34,12 @@ URI: [HostType](HostType.md)
 
 
 
+### Schema Source
 
-## Mappings
 
-| Mapping Type | Mapped Value |
-| ---  | ---  |
-| self | EVORAO:hostType |
-| native | EVORAO:hostType |
+* from schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+
+
 
 
 
@@ -43,7 +48,8 @@ URI: [HostType](HostType.md)
 
 <details>
 ```yaml
-name: hostType
+name: hostTypeEnumeration
+from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
 rank: 1000
 permissible_values:
   Animal:

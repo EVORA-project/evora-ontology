@@ -288,22 +288,21 @@ Name: EVORAO
 
 | Enumeration | Description |
 | --- | --- |
-| [Cultivability](Cultivability.md) |  |
-| [ExpressedAs](ExpressedAs.md) |  |
-| [ExpressionSystem](ExpressionSystem.md) |  |
-| [FunctionalCharacterization](FunctionalCharacterization.md) |  |
-| [GenomeSequencing](GenomeSequencing.md) |  |
-| [HostType](HostType.md) |  |
-| [InclusionBodiesType](InclusionBodiesType.md) |  |
-| [Infectivity](Infectivity.md) |  |
-| [LetterOfAuthority](LetterOfAuthority.md) |  |
-| [LoginRequestMethod](LoginRequestMethod.md) |  |
-| [PathogenType](PathogenType.md) |  |
-| [ProteinPurification](ProteinPurification.md) |  |
-| [QueryMethod](QueryMethod.md) |  |
-| [SequenceProvider](SequenceProvider.md) |  |
-| [Sequencing](Sequencing.md) |  |
-| [TypeOfFunctionalCharacterization](TypeOfFunctionalCharacterization.md) |  |
+| [CultivabilityEnumeration](CultivabilityEnumeration.md) |  |
+| [ExpressedAsEnumeration](ExpressedAsEnumeration.md) |  |
+| [ExpressionSystemEnumeration](ExpressionSystemEnumeration.md) |  |
+| [FunctionalCharacterizationEnumeration](FunctionalCharacterizationEnumeration.md) |  |
+| [GenomeSequencingEnumeration](GenomeSequencingEnumeration.md) |  |
+| [HostTypeEnumeration](HostTypeEnumeration.md) |  |
+| [InclusionBodiesTypeEnumeration](InclusionBodiesTypeEnumeration.md) |  |
+| [InfectivityEnumeration](InfectivityEnumeration.md) |  |
+| [LetterOfAuthorityEnumeration](LetterOfAuthorityEnumeration.md) |  |
+| [PathogenTypeEnumeration](PathogenTypeEnumeration.md) |  |
+| [ProteinPurificationEnumeration](ProteinPurificationEnumeration.md) |  |
+| [QueryMethodEnumeration](QueryMethodEnumeration.md) |  |
+| [SequenceProviderEnumeration](SequenceProviderEnumeration.md) |  |
+| [SequencingEnumeration](SequencingEnumeration.md) |  |
+| [TypeOfFunctionalCharacterizationEnumeration](TypeOfFunctionalCharacterizationEnumeration.md) |  |
 
 
 ## Types

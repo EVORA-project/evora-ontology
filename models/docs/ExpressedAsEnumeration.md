@@ -1,8 +1,8 @@
-# Enum: ExpressedAs
+# Enum: ExpressedAsEnumeration
 
 
 
-URI: [ExpressedAs](ExpressedAs.md)
+URI: [ExpressedAsEnumeration](ExpressedAsEnumeration.md)
 
 ## Permissible Values
 
@@ -13,6 +13,12 @@ URI: [ExpressedAs](ExpressedAs.md)
 
 
 
+
+## Slots
+
+| Name | Description |
+| ---  | --- |
+| [expressedAs](expressedAs.md) | Refers to the form in which the protein is produced and manifested in a biolo... |
 
 
 
@@ -27,13 +33,12 @@ URI: [ExpressedAs](ExpressedAs.md)
 
 
 
+### Schema Source
 
-## Mappings
 
-| Mapping Type | Mapped Value |
-| ---  | ---  |
-| self | EVORAO:expressedAs |
-| native | EVORAO:expressedAs |
+* from schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+
+
 
 
 
@@ -42,7 +47,8 @@ URI: [ExpressedAs](ExpressedAs.md)
 
 <details>
 ```yaml
-name: expressedAs
+name: expressedAsEnumeration
+from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
 rank: 1000
 permissible_values:
   Soluble:

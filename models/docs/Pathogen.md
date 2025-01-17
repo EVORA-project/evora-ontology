@@ -115,6 +115,13 @@ URI: [EVORAO:Pathogen](https://raw.githubusercontent.com/EVORA-project/evora-ont
         
       Pathogen : cultivability
         
+          
+    
+    
+    Pathogen --> "1" CultivabilityEnumeration : cultivability
+    click CultivabilityEnumeration href "../CultivabilityEnumeration"
+
+        
       Pathogen : description
         
       Pathogen : externalRelatedReference
@@ -128,6 +135,13 @@ URI: [EVORAO:Pathogen](https://raw.githubusercontent.com/EVORA-project/evora-ont
         
       Pathogen : genomeSequencing
         
+          
+    
+    
+    Pathogen --> "1" GenomeSequencingEnumeration : genomeSequencing
+    click GenomeSequencingEnumeration href "../GenomeSequencingEnumeration"
+
+        
       Pathogen : hasIATAClassification
         
           
@@ -140,6 +154,13 @@ URI: [EVORAO:Pathogen](https://raw.githubusercontent.com/EVORA-project/evora-ont
       Pathogen : identificationTechnique
         
       Pathogen : infectivity
+        
+          
+    
+    
+    Pathogen --> "1" InfectivityEnumeration : infectivity
+    click InfectivityEnumeration href "../InfectivityEnumeration"
+
         
       Pathogen : infectivityTest
         
@@ -168,6 +189,13 @@ URI: [EVORAO:Pathogen](https://raw.githubusercontent.com/EVORA-project/evora-ont
 
         
       Pathogen : letterOfAuthority
+        
+          
+    
+    
+    Pathogen --> "1" LetterOfAuthorityEnumeration : letterOfAuthority
+    click LetterOfAuthorityEnumeration href "../LetterOfAuthorityEnumeration"
+
         
       Pathogen : materialSafetyDataSheet
         
@@ -336,16 +364,16 @@ URI: [EVORAO:Pathogen](https://raw.githubusercontent.com/EVORA-project/evora-ont
 | [propagationHost](propagationHost.md) | * <br/> [PropagationHost](PropagationHost.md) | The host organism that propagates the pathogen | direct |
 | [transmissionMethod](transmissionMethod.md) | * <br/> [TransmissionMethod](TransmissionMethod.md) | The method or route through which the pathogen is transmitted from one host t... | direct |
 | [sequence](sequence.md) | 1..* <br/> [Sequence](Sequence.md) | The related sequence information from a sequence provider or in fasta format | direct |
-| [cultivability](cultivability.md) | 1 <br/> [String](String.md) | The ability of the pathogen to be cultivated or grown in laboratory condition... | direct |
+| [cultivability](cultivability.md) | 1 <br/> [CultivabilityEnumeration](CultivabilityEnumeration.md) | The ability of the pathogen to be cultivated or grown in laboratory condition... | direct |
 | [clinicalInformation](clinicalInformation.md) | 0..1 <br/> [String](String.md) | Details about the clinical aspects of the pathogen, including symptoms, sever... | direct |
 | [identificationTechnique](identificationTechnique.md) | 0..1 <br/> [String](String.md) | The method or technique used to identify and confirm the presence of the path... | direct |
-| [infectivity](infectivity.md) | 1 <br/> [String](String.md) | Indicates the ability of the pathogen to establish an infection in a host org... | direct |
+| [infectivity](infectivity.md) | 1 <br/> [InfectivityEnumeration](InfectivityEnumeration.md) | Indicates the ability of the pathogen to establish an infection in a host org... | direct |
 | [infectivityTest](infectivityTest.md) | 0..1 <br/> [String](String.md) | The description of the completed infectivity test, providing details on the m... | direct |
 | [isolationTechnique](isolationTechnique.md) | 0..1 <br/> [String](String.md) | The specific method or procedure used to isolate the pathogen from a host org... | direct |
 | [isolationConditions](isolationConditions.md) | 0..1 <br/> [String](String.md) | The environmental and procedural conditions under which the pathogen was isol... | direct |
-| [letterOfAuthority](letterOfAuthority.md) | 1 <br/> [String](String.md) | Indicate whether a Letter of Authority is required, confirming the necessity ... | direct |
+| [letterOfAuthority](letterOfAuthority.md) | 1 <br/> [LetterOfAuthorityEnumeration](LetterOfAuthorityEnumeration.md) | Indicate whether a Letter of Authority is required, confirming the necessity ... | direct |
 | [passage](passage.md) | 0..1 <br/> [String](String.md) | The number of times the pathogen was cultured through serial passage, a proce... | direct |
-| [genomeSequencing](genomeSequencing.md) | 1 <br/> [String](String.md) | The extent of the pathogen's genetic material that has been sequenced, with p... | direct |
+| [genomeSequencing](genomeSequencing.md) | 1 <br/> [GenomeSequencingEnumeration](GenomeSequencingEnumeration.md) | The extent of the pathogen's genetic material that has been sequenced, with p... | direct |
 | [titer](titer.md) | 1 <br/> [String](String.md) | The titer value, its corresponding unit, and the method of quantification (e | direct |
 | [hasIATAClassification](hasIATAClassification.md) | 1 <br/> [IATAClassification](IATAClassification.md) | The corresponding International Air Transport Association (IATA)'s category f... | [Product](Product.md) |
 | [shippingConditions](shippingConditions.md) | 1 <br/> [String](String.md) | Specification of the terms and parameters for transporting | [Product](Product.md) |
@@ -522,8 +550,8 @@ slot_usage:
     title: cultivability
     comments:
     - Might also be related to a product sub-category that helps filtering
-    ifabsent: string(Cultivable pathogen)
-    range: string
+    ifabsent: string(Cultivable)
+    range: cultivabilityEnumeration
     required: true
     multivalued: false
   clinicalInformation:
@@ -549,7 +577,7 @@ slot_usage:
       a host organism, with possible values detailing whether infectivity has been
       tested, quantified, or cannot be tested due to non-cultivable nature.
     title: infectivity
-    range: string
+    range: infectivityEnumeration
     required: true
     multivalued: false
   infectivityTest:
@@ -585,7 +613,7 @@ slot_usage:
       "Required for customers in the EU" or "Required"
     title: letter of authority
     ifabsent: string(Not applicable)
-    range: string
+    range: letterOfAuthorityEnumeration
     required: true
     multivalued: false
   passage:
@@ -604,7 +632,7 @@ slot_usage:
       coding sequence" for all coding regions, and "Partial sequence" for only a portion
       of the genetic material
     title: genome sequencing
-    range: string
+    range: genomeSequencingEnumeration
     required: true
     multivalued: false
   titer:
@@ -703,8 +731,8 @@ slot_usage:
     title: cultivability
     comments:
     - Might also be related to a product sub-category that helps filtering
-    ifabsent: string(Cultivable pathogen)
-    range: string
+    ifabsent: string(Cultivable)
+    range: cultivabilityEnumeration
     required: true
     multivalued: false
   clinicalInformation:
@@ -730,7 +758,7 @@ slot_usage:
       a host organism, with possible values detailing whether infectivity has been
       tested, quantified, or cannot be tested due to non-cultivable nature.
     title: infectivity
-    range: string
+    range: infectivityEnumeration
     required: true
     multivalued: false
   infectivityTest:
@@ -766,7 +794,7 @@ slot_usage:
       "Required for customers in the EU" or "Required"
     title: letter of authority
     ifabsent: string(Not applicable)
-    range: string
+    range: letterOfAuthorityEnumeration
     required: true
     multivalued: false
   passage:
@@ -785,7 +813,7 @@ slot_usage:
       coding sequence" for all coding regions, and "Partial sequence" for only a portion
       of the genetic material
     title: genome sequencing
-    range: string
+    range: genomeSequencingEnumeration
     required: true
     multivalued: false
   titer:
@@ -915,12 +943,12 @@ attributes:
     - Might also be related to a product sub-category that helps filtering
     from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
     rank: 1000
-    ifabsent: string(Cultivable pathogen)
+    ifabsent: string(Cultivable)
     alias: cultivability
     owner: Pathogen
     domain_of:
     - Pathogen
-    range: string
+    range: cultivabilityEnumeration
     required: true
     multivalued: false
   clinicalInformation:
@@ -965,7 +993,7 @@ attributes:
     owner: Pathogen
     domain_of:
     - Pathogen
-    range: string
+    range: infectivityEnumeration
     required: true
     multivalued: false
   infectivityTest:
@@ -1025,7 +1053,7 @@ attributes:
     owner: Pathogen
     domain_of:
     - Pathogen
-    range: string
+    range: letterOfAuthorityEnumeration
     required: true
     multivalued: false
   passage:
@@ -1056,7 +1084,7 @@ attributes:
     owner: Pathogen
     domain_of:
     - Pathogen
-    range: string
+    range: genomeSequencingEnumeration
     required: true
     multivalued: false
   titer:

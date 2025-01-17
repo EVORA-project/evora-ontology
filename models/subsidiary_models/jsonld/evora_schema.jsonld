@@ -17,7 +17,7 @@
     "https://orcid.org/0000-0002-2042-2839"
   ],
   "id": "https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#",
-  "version": "1.0.7785",
+  "version": "1.0.7894",
   "imports": [
     "linkml:types"
   ],
@@ -422,8 +422,8 @@
   ],
   "enums": [
     {
-      "name": "loginRequestMethod",
-      "definition_uri": "https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#LoginRequestMethod",
+      "name": "queryMethodEnumeration",
+      "definition_uri": "https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#QueryMethodEnumeration",
       "from_schema": "https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#",
       "permissible_values": [
         {
@@ -439,25 +439,8 @@
       ]
     },
     {
-      "name": "queryMethod",
-      "definition_uri": "https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#QueryMethod",
-      "from_schema": "https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#",
-      "permissible_values": [
-        {
-          "text": "GET",
-          "description": "GET http method, used to send information, such as a query string, directly in the URL",
-          "meaning": "wd:Q3504817"
-        },
-        {
-          "text": "POST",
-          "description": "POST http method, used to send information to a server by storing it in the request body of the http request",
-          "meaning": "wd:Q2764521"
-        }
-      ]
-    },
-    {
-      "name": "pathogenType",
-      "definition_uri": "https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#PathogenType",
+      "name": "pathogenTypeEnumeration",
+      "definition_uri": "https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#PathogenTypeEnumeration",
       "from_schema": "https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#",
       "permissible_values": [
         {
@@ -493,8 +476,8 @@
       ]
     },
     {
-      "name": "hostType",
-      "definition_uri": "https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#HostType",
+      "name": "hostTypeEnumeration",
+      "definition_uri": "https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#HostTypeEnumeration",
       "from_schema": "https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#",
       "permissible_values": [
         {
@@ -515,8 +498,8 @@
       ]
     },
     {
-      "name": "sequenceProvider",
-      "definition_uri": "https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#SequenceProvider",
+      "name": "sequenceProviderEnumeration",
+      "definition_uri": "https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#SequenceProviderEnumeration",
       "from_schema": "https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#",
       "permissible_values": [
         {
@@ -532,8 +515,8 @@
       ]
     },
     {
-      "name": "expressedAs",
-      "definition_uri": "https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#ExpressedAs",
+      "name": "expressedAsEnumeration",
+      "definition_uri": "https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#ExpressedAsEnumeration",
       "from_schema": "https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#",
       "permissible_values": [
         {
@@ -549,8 +532,8 @@
       ]
     },
     {
-      "name": "inclusionBodiesType",
-      "definition_uri": "https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#InclusionBodiesType",
+      "name": "inclusionBodiesTypeEnumeration",
+      "definition_uri": "https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#InclusionBodiesTypeEnumeration",
       "from_schema": "https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#",
       "permissible_values": [
         {
@@ -564,8 +547,8 @@
       ]
     },
     {
-      "name": "expressionSystem",
-      "definition_uri": "https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#ExpressionSystem",
+      "name": "expressionSystemEnumeration",
+      "definition_uri": "https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#ExpressionSystemEnumeration",
       "from_schema": "https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#",
       "permissible_values": [
         {
@@ -585,8 +568,8 @@
       ]
     },
     {
-      "name": "functionalCharacterization",
-      "definition_uri": "https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#FunctionalCharacterization",
+      "name": "functionalCharacterizationEnumeration",
+      "definition_uri": "https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#FunctionalCharacterizationEnumeration",
       "from_schema": "https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#",
       "permissible_values": [
         {
@@ -600,13 +583,13 @@
       ]
     },
     {
-      "name": "proteinPurification",
-      "definition_uri": "https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#ProteinPurification",
+      "name": "proteinPurificationEnumeration",
+      "definition_uri": "https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#ProteinPurificationEnumeration",
       "from_schema": "https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#",
       "permissible_values": [
         {
-          "text": "Superior to 95 percents",
-          "description": "The protein is purified over 95%"
+          "text": "Greater than 95 percent",
+          "description": "The protein is purified to a level exceeding 95%"
         },
         {
           "text": "Unpurified expression host lysate or partly purified protein",
@@ -615,8 +598,8 @@
       ]
     },
     {
-      "name": "typeOfFunctionalCharacterization",
-      "definition_uri": "https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#TypeOfFunctionalCharacterization",
+      "name": "typeOfFunctionalCharacterizationEnumeration",
+      "definition_uri": "https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#TypeOfFunctionalCharacterizationEnumeration",
       "from_schema": "https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#",
       "permissible_values": [
         {
@@ -630,8 +613,8 @@
       ]
     },
     {
-      "name": "sequencing",
-      "definition_uri": "https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#Sequencing",
+      "name": "sequencingEnumeration",
+      "definition_uri": "https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#SequencingEnumeration",
       "from_schema": "https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#",
       "permissible_values": [
         {
@@ -649,8 +632,8 @@
       ]
     },
     {
-      "name": "cultivability",
-      "definition_uri": "https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#Cultivability",
+      "name": "cultivabilityEnumeration",
+      "definition_uri": "https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#CultivabilityEnumeration",
       "from_schema": "https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#",
       "permissible_values": [
         {
@@ -668,8 +651,8 @@
       ]
     },
     {
-      "name": "infectivity",
-      "definition_uri": "https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#Infectivity",
+      "name": "infectivityEnumeration",
+      "definition_uri": "https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#InfectivityEnumeration",
       "from_schema": "https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#",
       "permissible_values": [
         {
@@ -687,8 +670,8 @@
       ]
     },
     {
-      "name": "letterOfAuthority",
-      "definition_uri": "https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#LetterOfAuthority",
+      "name": "letterOfAuthorityEnumeration",
+      "definition_uri": "https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#LetterOfAuthorityEnumeration",
       "from_schema": "https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#",
       "permissible_values": [
         {
@@ -710,8 +693,8 @@
       ]
     },
     {
-      "name": "genomeSequencing",
-      "definition_uri": "https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#GenomeSequencing",
+      "name": "genomeSequencingEnumeration",
+      "definition_uri": "https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#GenomeSequencingEnumeration",
       "from_schema": "https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#",
       "permissible_values": [
         {
@@ -3256,7 +3239,7 @@
       ],
       "is_usage_slot": true,
       "usage_slot_name": "loginRequestMethod",
-      "range": "string",
+      "range": "queryMethodEnumeration",
       "@type": "SlotDefinition"
     },
     {
@@ -3349,7 +3332,7 @@
       ],
       "is_usage_slot": true,
       "usage_slot_name": "queryMethod",
-      "range": "string",
+      "range": "queryMethodEnumeration",
       "required": true,
       "@type": "SlotDefinition"
     },
@@ -3487,7 +3470,7 @@
       ],
       "is_usage_slot": true,
       "usage_slot_name": "pathogenType",
-      "range": "string",
+      "range": "pathogenTypeEnumeration",
       "required": true,
       "@type": "SlotDefinition"
     },
@@ -3507,7 +3490,7 @@
       ],
       "is_usage_slot": true,
       "usage_slot_name": "hostType",
-      "range": "string",
+      "range": "hostTypeEnumeration",
       "recommended": true,
       "multivalued": true,
       "@type": "SlotDefinition"
@@ -4334,7 +4317,7 @@
       ],
       "is_usage_slot": true,
       "usage_slot_name": "sequenceProvider",
-      "range": "string",
+      "range": "sequenceProviderEnumeration",
       "required": true,
       "@type": "SlotDefinition"
     },
@@ -5823,7 +5806,7 @@
       ],
       "is_usage_slot": true,
       "usage_slot_name": "expressedAs",
-      "range": "string",
+      "range": "expressedAsEnumeration",
       "multivalued": true,
       "@type": "SlotDefinition"
     },
@@ -5843,7 +5826,7 @@
       ],
       "is_usage_slot": true,
       "usage_slot_name": "inclusionBodiesType",
-      "range": "string",
+      "range": "inclusionBodiesTypeEnumeration",
       "multivalued": true,
       "@type": "SlotDefinition"
     },
@@ -5863,7 +5846,7 @@
       ],
       "is_usage_slot": true,
       "usage_slot_name": "expressionSystem",
-      "range": "string",
+      "range": "expressionSystemEnumeration",
       "multivalued": true,
       "@type": "SlotDefinition"
     },
@@ -5883,7 +5866,7 @@
       ],
       "is_usage_slot": true,
       "usage_slot_name": "functionalCharacterization",
-      "range": "string",
+      "range": "functionalCharacterizationEnumeration",
       "multivalued": true,
       "@type": "SlotDefinition"
     },
@@ -5923,7 +5906,7 @@
       ],
       "is_usage_slot": true,
       "usage_slot_name": "proteinPurification",
-      "range": "string",
+      "range": "proteinPurificationEnumeration",
       "multivalued": true,
       "@type": "SlotDefinition"
     },
@@ -5963,7 +5946,7 @@
       ],
       "is_usage_slot": true,
       "usage_slot_name": "typeOfFunctionalCharacterization",
-      "range": "string",
+      "range": "typeOfFunctionalCharacterizationEnumeration",
       "multivalued": true,
       "@type": "SlotDefinition"
     },
@@ -6212,7 +6195,7 @@
       ],
       "is_usage_slot": true,
       "usage_slot_name": "sequencing",
-      "range": "string",
+      "range": "sequencingEnumeration",
       "required": true,
       "@type": "SlotDefinition"
     },
@@ -6543,7 +6526,7 @@
       "is_a": "cultivability",
       "domain": "Pathogen",
       "slot_uri": "https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#cultivability",
-      "ifabsent": "string(Cultivable pathogen)",
+      "ifabsent": "string(Cultivable)",
       "alias": "cultivability",
       "owner": "Pathogen",
       "domain_of": [
@@ -6551,7 +6534,7 @@
       ],
       "is_usage_slot": true,
       "usage_slot_name": "cultivability",
-      "range": "string",
+      "range": "cultivabilityEnumeration",
       "required": true,
       "@type": "SlotDefinition"
     },
@@ -6609,7 +6592,7 @@
       ],
       "is_usage_slot": true,
       "usage_slot_name": "infectivity",
-      "range": "string",
+      "range": "infectivityEnumeration",
       "required": true,
       "@type": "SlotDefinition"
     },
@@ -6687,7 +6670,7 @@
       ],
       "is_usage_slot": true,
       "usage_slot_name": "letterOfAuthority",
-      "range": "string",
+      "range": "letterOfAuthorityEnumeration",
       "required": true,
       "@type": "SlotDefinition"
     },
@@ -6726,7 +6709,7 @@
       ],
       "is_usage_slot": true,
       "usage_slot_name": "genomeSequencing",
-      "range": "string",
+      "range": "genomeSequencingEnumeration",
       "required": true,
       "@type": "SlotDefinition"
     },
@@ -9762,9 +9745,9 @@
   ],
   "metamodel_version": "1.7.0",
   "source_file": "evora_schema.yaml",
-  "source_file_date": "2025-01-17T15:28:21",
-  "source_file_size": 136689,
-  "generation_date": "2025-01-17T15:28:35",
+  "source_file_date": "2025-01-17T16:10:08",
+  "source_file_size": 138769,
+  "generation_date": "2025-01-17T16:10:24",
   "@type": "SchemaDefinition",
   "@context": [
     "https://w3id.org/linkml/types.context.jsonld",

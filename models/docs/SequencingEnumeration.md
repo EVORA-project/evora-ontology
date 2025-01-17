@@ -1,8 +1,8 @@
-# Enum: Sequencing
+# Enum: SequencingEnumeration
 
 
 
-URI: [Sequencing](Sequencing.md)
+URI: [SequencingEnumeration](SequencingEnumeration.md)
 
 ## Permissible Values
 
@@ -14,6 +14,12 @@ URI: [Sequencing](Sequencing.md)
 
 
 
+
+## Slots
+
+| Name | Description |
+| ---  | --- |
+| [sequencing](sequencing.md) | Refers to the level of sequencing performed on the nucleic acid |
 
 
 
@@ -28,13 +34,12 @@ URI: [Sequencing](Sequencing.md)
 
 
 
+### Schema Source
 
-## Mappings
 
-| Mapping Type | Mapped Value |
-| ---  | ---  |
-| self | EVORAO:sequencing |
-| native | EVORAO:sequencing |
+* from schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+
+
 
 
 
@@ -43,7 +48,8 @@ URI: [Sequencing](Sequencing.md)
 
 <details>
 ```yaml
-name: sequencing
+name: sequencingEnumeration
+from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
 rank: 1000
 permissible_values:
   Not sequenced:

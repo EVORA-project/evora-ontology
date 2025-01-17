@@ -1,8 +1,8 @@
-# Enum: Infectivity
+# Enum: InfectivityEnumeration
 
 
 
-URI: [Infectivity](Infectivity.md)
+URI: [InfectivityEnumeration](InfectivityEnumeration.md)
 
 ## Permissible Values
 
@@ -14,6 +14,12 @@ URI: [Infectivity](Infectivity.md)
 
 
 
+
+## Slots
+
+| Name | Description |
+| ---  | --- |
+| [infectivity](infectivity.md) | Indicates the ability of the pathogen to establish an infection in a host org... |
 
 
 
@@ -28,13 +34,12 @@ URI: [Infectivity](Infectivity.md)
 
 
 
+### Schema Source
 
-## Mappings
 
-| Mapping Type | Mapped Value |
-| ---  | ---  |
-| self | EVORAO:infectivity |
-| native | EVORAO:infectivity |
+* from schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+
+
 
 
 
@@ -43,7 +48,8 @@ URI: [Infectivity](Infectivity.md)
 
 <details>
 ```yaml
-name: infectivity
+name: infectivityEnumeration
+from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
 rank: 1000
 permissible_values:
   Infectivity tested:

@@ -1,8 +1,8 @@
-# Enum: LetterOfAuthority
+# Enum: LetterOfAuthorityEnumeration
 
 
 
-URI: [LetterOfAuthority](LetterOfAuthority.md)
+URI: [LetterOfAuthorityEnumeration](LetterOfAuthorityEnumeration.md)
 
 ## Permissible Values
 
@@ -15,6 +15,12 @@ URI: [LetterOfAuthority](LetterOfAuthority.md)
 
 
 
+
+## Slots
+
+| Name | Description |
+| ---  | --- |
+| [letterOfAuthority](letterOfAuthority.md) | Indicate whether a Letter of Authority is required, confirming the necessity ... |
 
 
 
@@ -29,13 +35,12 @@ URI: [LetterOfAuthority](LetterOfAuthority.md)
 
 
 
+### Schema Source
 
-## Mappings
 
-| Mapping Type | Mapped Value |
-| ---  | ---  |
-| self | EVORAO:letterOfAuthority |
-| native | EVORAO:letterOfAuthority |
+* from schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+
+
 
 
 
@@ -44,7 +49,8 @@ URI: [LetterOfAuthority](LetterOfAuthority.md)
 
 <details>
 ```yaml
-name: letterOfAuthority
+name: letterOfAuthorityEnumeration
+from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
 rank: 1000
 permissible_values:
   Not applicable:

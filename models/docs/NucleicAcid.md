@@ -255,6 +255,13 @@ URI: [EVORAO:NucleicAcid](https://raw.githubusercontent.com/EVORA-project/evora-
         
       NucleicAcid : sequencing
         
+          
+    
+    
+    NucleicAcid --> "1" SequencingEnumeration : sequencing
+    click SequencingEnumeration href "../SequencingEnumeration"
+
+        
       NucleicAcid : shippingConditions
         
       NucleicAcid : storageConditions
@@ -302,7 +309,7 @@ URI: [EVORAO:NucleicAcid](https://raw.githubusercontent.com/EVORA-project/evora-
 | [mutationObserved](mutationObserved.md) | 1 <br/> [Boolean](Boolean.md) | Indicates if the current nucleic acid has No mutation compared to the referen... | direct |
 | [observedMutations](observedMutations.md) | 0..1 <br/> [String](String.md) | The specific mutations that have been identified and documented in the nuclei... | direct |
 | [identificationTechnique](identificationTechnique.md) | 0..1 <br/> [String](String.md) | The method used to identify the nucleic acid sequence or its associated const... | direct |
-| [sequencing](sequencing.md) | 1 <br/> [String](String.md) | Refers to the level of sequencing performed on the nucleic acid | direct |
+| [sequencing](sequencing.md) | 1 <br/> [SequencingEnumeration](SequencingEnumeration.md) | Refers to the level of sequencing performed on the nucleic acid | direct |
 | [titer](titer.md) | 0..1 <br/> [String](String.md) | The titer value, its corresponding unit, and the method of quantification (e | direct |
 | [sequenceChecked](sequenceChecked.md) | 1 <br/> [Boolean](Boolean.md) | Tell whether or not the sequence of the product was controlled (compulsory fo... | direct |
 | [hasIATAClassification](hasIATAClassification.md) | 1 <br/> [IATAClassification](IATAClassification.md) | The corresponding International Air Transport Association (IATA)'s category f... | [Product](Product.md) |
@@ -507,7 +514,7 @@ slot_usage:
     title: sequencing
     comments:
     - Cloned products have to be sequenced
-    range: string
+    range: sequencingEnumeration
     required: true
     multivalued: false
   titer:
@@ -645,7 +652,7 @@ slot_usage:
     title: sequencing
     comments:
     - Cloned products have to be sequenced
-    range: string
+    range: sequencingEnumeration
     required: true
     multivalued: false
   titer:
@@ -846,7 +853,7 @@ attributes:
     owner: Nucleic Acid
     domain_of:
     - Nucleic Acid
-    range: string
+    range: sequencingEnumeration
     required: true
     multivalued: false
   titer:

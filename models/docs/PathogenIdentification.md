@@ -27,6 +27,13 @@ URI: [EVORAO:PathogenIdentification](https://raw.githubusercontent.com/EVORA-pro
         
       PathogenIdentification : hostType
         
+          
+    
+    
+    PathogenIdentification --> "* _recommended_" HostTypeEnumeration : hostType
+    click HostTypeEnumeration href "../HostTypeEnumeration"
+
+        
       PathogenIdentification : isolate
         
       PathogenIdentification : pathogenName
@@ -39,6 +46,13 @@ URI: [EVORAO:PathogenIdentification](https://raw.githubusercontent.com/EVORA-pro
 
         
       PathogenIdentification : pathogenType
+        
+          
+    
+    
+    PathogenIdentification --> "1" PathogenTypeEnumeration : pathogenType
+    click PathogenTypeEnumeration href "../PathogenTypeEnumeration"
+
         
       PathogenIdentification : serotype
         
@@ -83,8 +97,8 @@ URI: [EVORAO:PathogenIdentification](https://raw.githubusercontent.com/EVORA-pro
 | ---  | --- | --- | --- |
 | [taxon](taxon.md) | 1 <br/> [Taxon](Taxon.md) | Scientifically classified group or entity within the reference taxonomy | direct |
 | [pathogenName](pathogenName.md) | 1 <br/> [CommonName](CommonName.md) | A pathogen common name or a name that describes a group of pathogens | direct |
-| [pathogenType](pathogenType.md) | 1 <br/> [String](String.md) | Identification of the specific type of pathogen among the listed categories e | direct |
-| [hostType](hostType.md) | * _recommended_ <br/> [String](String.md) | Indication of the possible host(s) for the identified pathogens among the lis... | direct |
+| [pathogenType](pathogenType.md) | 1 <br/> [PathogenTypeEnumeration](PathogenTypeEnumeration.md) | Identification of the specific type of pathogen among the listed categories e | direct |
+| [hostType](hostType.md) | * _recommended_ <br/> [HostTypeEnumeration](HostTypeEnumeration.md) | Indication of the possible host(s) for the identified pathogens among the lis... | direct |
 | [subspecies](subspecies.md) | 0..1 <br/> [String](String.md) | The subspecies information differentiates closely related pathogens within a ... | direct |
 | [strain](strain.md) | 0..1 _recommended_ <br/> [String](String.md) | Identifier given to a genetic variant within a single species | direct |
 | [isolate](isolate.md) | 0..1 <br/> [String](String.md) | Identifier given to a pathogen that has been isolated from an infected host a... | direct |
@@ -199,7 +213,7 @@ slot_usage:
     description: Identification of the specific type of pathogen among the listed
       categories e.g. "Virus","Viroid","Bacterium"...
     title: pathogen type
-    range: string
+    range: pathogenTypeEnumeration
     required: true
     multivalued: false
   hostType:
@@ -207,7 +221,7 @@ slot_usage:
     description: Indication of the possible host(s) for the identified pathogens among
       the listed main categories
     title: host type
-    range: string
+    range: hostTypeEnumeration
     required: false
     recommended: true
     multivalued: true
@@ -300,7 +314,7 @@ slot_usage:
     description: Identification of the specific type of pathogen among the listed
       categories e.g. "Virus","Viroid","Bacterium"...
     title: pathogen type
-    range: string
+    range: pathogenTypeEnumeration
     required: true
     multivalued: false
   hostType:
@@ -308,7 +322,7 @@ slot_usage:
     description: Indication of the possible host(s) for the identified pathogens among
       the listed main categories
     title: host type
-    range: string
+    range: hostTypeEnumeration
     required: false
     recommended: true
     multivalued: true
@@ -406,7 +420,7 @@ attributes:
     owner: PathogenIdentification
     domain_of:
     - PathogenIdentification
-    range: string
+    range: pathogenTypeEnumeration
     required: true
     multivalued: false
   hostType:
@@ -420,7 +434,7 @@ attributes:
     owner: PathogenIdentification
     domain_of:
     - PathogenIdentification
-    range: string
+    range: hostTypeEnumeration
     required: false
     recommended: true
     multivalued: true

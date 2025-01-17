@@ -100,7 +100,21 @@ URI: [EVORAO:Protein](https://raw.githubusercontent.com/EVORA-project/evora-onto
         
       Protein : expressedAs
         
+          
+    
+    
+    Protein --> "*" ExpressedAsEnumeration : expressedAs
+    click ExpressedAsEnumeration href "../ExpressedAsEnumeration"
+
+        
       Protein : expressionSystem
+        
+          
+    
+    
+    Protein --> "*" ExpressionSystemEnumeration : expressionSystem
+    click ExpressionSystemEnumeration href "../ExpressionSystemEnumeration"
+
         
       Protein : externalRelatedReference
         
@@ -112,6 +126,13 @@ URI: [EVORAO:Protein](https://raw.githubusercontent.com/EVORA-project/evora-onto
 
         
       Protein : functionalCharacterization
+        
+          
+    
+    
+    Protein --> "*" FunctionalCharacterizationEnumeration : functionalCharacterization
+    click FunctionalCharacterizationEnumeration href "../FunctionalCharacterizationEnumeration"
+
         
       Protein : functionalTechnicalDescription
         
@@ -125,6 +146,13 @@ URI: [EVORAO:Protein](https://raw.githubusercontent.com/EVORA-project/evora-onto
 
         
       Protein : inclusionBodiesType
+        
+          
+    
+    
+    Protein --> "*" InclusionBodiesTypeEnumeration : inclusionBodiesType
+    click InclusionBodiesTypeEnumeration href "../InclusionBodiesTypeEnumeration"
+
         
       Protein : internalReference
         
@@ -178,6 +206,13 @@ URI: [EVORAO:Protein](https://raw.githubusercontent.com/EVORA-project/evora-onto
 
         
       Protein : proteinPurification
+        
+          
+    
+    
+    Protein --> "*" ProteinPurificationEnumeration : proteinPurification
+    click ProteinPurificationEnumeration href "../ProteinPurificationEnumeration"
+
         
       Protein : proteinTAG
         
@@ -258,6 +293,13 @@ URI: [EVORAO:Protein](https://raw.githubusercontent.com/EVORA-project/evora-onto
         
       Protein : typeOfFunctionalCharacterization
         
+          
+    
+    
+    Protein --> "*" TypeOfFunctionalCharacterizationEnumeration : typeOfFunctionalCharacterization
+    click TypeOfFunctionalCharacterizationEnumeration href "../TypeOfFunctionalCharacterizationEnumeration"
+
+        
       Protein : unitCost
         
       Protein : unitDefinition
@@ -290,14 +332,14 @@ URI: [EVORAO:Protein](https://raw.githubusercontent.com/EVORA-project/evora-onto
 | [specialFeature](specialFeature.md) | * <br/> [SpecialFeature](SpecialFeature.md) | Distinctive attributes of a product that set it apart from other similar item... | direct |
 | [proteinTAG](proteinTAG.md) | * <br/> [ProteinTag](ProteinTag.md) | Peptide sequences genetically grafted onto a recombinant protein | direct |
 | [domain](domain.md) | * <br/> [String](String.md) | A distinct structural and functional unit within the protein, often capable o... | direct |
-| [expressedAs](expressedAs.md) | * <br/> [String](String.md) | Refers to the form in which the protein is produced and manifested in a biolo... | direct |
-| [inclusionBodiesType](inclusionBodiesType.md) | * <br/> [String](String.md) | Refers to the state of aggregated proteins within a cell | direct |
-| [expressionSystem](expressionSystem.md) | * <br/> [String](String.md) | The host organism or cellular environment used to produce a protein from a sp... | direct |
-| [functionalCharacterization](functionalCharacterization.md) | * <br/> [String](String.md) | The process of determining and describing the specific biological activities ... | direct |
+| [expressedAs](expressedAs.md) | * <br/> [ExpressedAsEnumeration](ExpressedAsEnumeration.md) | Refers to the form in which the protein is produced and manifested in a biolo... | direct |
+| [inclusionBodiesType](inclusionBodiesType.md) | * <br/> [InclusionBodiesTypeEnumeration](InclusionBodiesTypeEnumeration.md) | Refers to the state of aggregated proteins within a cell | direct |
+| [expressionSystem](expressionSystem.md) | * <br/> [ExpressionSystemEnumeration](ExpressionSystemEnumeration.md) | The host organism or cellular environment used to produce a protein from a sp... | direct |
+| [functionalCharacterization](functionalCharacterization.md) | * <br/> [FunctionalCharacterizationEnumeration](FunctionalCharacterizationEnumeration.md) | The process of determining and describing the specific biological activities ... | direct |
 | [functionalTechnicalDescription](functionalTechnicalDescription.md) | * <br/> [String](String.md) | Detailed information about the specific biological functions, mechanisms of a... | direct |
-| [proteinPurification](proteinPurification.md) | * <br/> [String](String.md) | Refers to the degree of purity achieved for a protein sample | direct |
+| [proteinPurification](proteinPurification.md) | * <br/> [ProteinPurificationEnumeration](ProteinPurificationEnumeration.md) | Refers to the degree of purity achieved for a protein sample | direct |
 | [theTAGStatusOfTheSolubilizedProtein](theTAGStatusOfTheSolubilizedProtein.md) | * <br/> [String](String.md) | Indicates the presence and condition of a tag on the protein after solubiliza... | direct |
-| [typeOfFunctionalCharacterization](typeOfFunctionalCharacterization.md) | * <br/> [String](String.md) | Refers to the classification of a protein based on the specific type of funct... | direct |
+| [typeOfFunctionalCharacterization](typeOfFunctionalCharacterization.md) | * <br/> [TypeOfFunctionalCharacterizationEnumeration](TypeOfFunctionalCharacterizationEnumeration.md) | Refers to the classification of a protein based on the specific type of funct... | direct |
 | [hasIATAClassification](hasIATAClassification.md) | 1 <br/> [IATAClassification](IATAClassification.md) | The corresponding International Air Transport Association (IATA)'s category f... | [Product](Product.md) |
 | [shippingConditions](shippingConditions.md) | 1 <br/> [String](String.md) | Specification of the terms and parameters for transporting | [Product](Product.md) |
 | [materialSafetyDataSheet](materialSafetyDataSheet.md) | 0..1 <br/> [MSDS](MSDS.md) | A Material Safety Data Sheet (MSDS) or Safety Data Sheet (SDS) is a standardi... | [Product](Product.md) |
@@ -460,7 +502,7 @@ slot_usage:
       dissolved in the cellular or extracellular fluid) and "Inclusion bodies" (aggregated
       proteins that are insoluble and form within the cell)
     title: expressed as
-    range: string
+    range: expressedAsEnumeration
     required: false
     multivalued: true
   inclusionBodiesType:
@@ -470,7 +512,7 @@ slot_usage:
       "Refolded" (proteins have been processed to regain their functional, active
       conformation).
     title: inclusion bodies type
-    range: string
+    range: inclusionBodiesTypeEnumeration
     required: false
     multivalued: true
   expressionSystem:
@@ -480,7 +522,7 @@ slot_usage:
       "Insect cells" (using baculovirus vectors), and "Mammalian cells" (mammalian
       cell lines).
     title: expression system
-    range: string
+    range: expressionSystemEnumeration
     required: false
     multivalued: true
   functionalCharacterization:
@@ -490,7 +532,7 @@ slot_usage:
       (the protein's functions have been identified and described) and "No functional
       characterization" (the protein's functions have not been identified or described).
     title: functional characterization
-    range: string
+    range: functionalCharacterizationEnumeration
     required: false
     multivalued: true
   functionalTechnicalDescription:
@@ -511,7 +553,7 @@ slot_usage:
       and "Unpurified expression host lysate or partly purified protein" (the protein
       is either unpurified and present in the host cell lysate or only partially purified).
     title: protein purification
-    range: string
+    range: proteinPurificationEnumeration
     required: false
     multivalued: true
   theTAGStatusOfTheSolubilizedProtein:
@@ -532,7 +574,7 @@ slot_usage:
       for its enzyme activity) and "Antigenic" (the protein has been characterized
       for its ability to elicit an immune response).
     title: type of functional Characterization
-    range: string
+    range: typeOfFunctionalCharacterizationEnumeration
     required: false
     multivalued: true
 
@@ -610,7 +652,7 @@ slot_usage:
       dissolved in the cellular or extracellular fluid) and "Inclusion bodies" (aggregated
       proteins that are insoluble and form within the cell)
     title: expressed as
-    range: string
+    range: expressedAsEnumeration
     required: false
     multivalued: true
   inclusionBodiesType:
@@ -620,7 +662,7 @@ slot_usage:
       "Refolded" (proteins have been processed to regain their functional, active
       conformation).
     title: inclusion bodies type
-    range: string
+    range: inclusionBodiesTypeEnumeration
     required: false
     multivalued: true
   expressionSystem:
@@ -630,7 +672,7 @@ slot_usage:
       "Insect cells" (using baculovirus vectors), and "Mammalian cells" (mammalian
       cell lines).
     title: expression system
-    range: string
+    range: expressionSystemEnumeration
     required: false
     multivalued: true
   functionalCharacterization:
@@ -640,7 +682,7 @@ slot_usage:
       (the protein's functions have been identified and described) and "No functional
       characterization" (the protein's functions have not been identified or described).
     title: functional characterization
-    range: string
+    range: functionalCharacterizationEnumeration
     required: false
     multivalued: true
   functionalTechnicalDescription:
@@ -661,7 +703,7 @@ slot_usage:
       and "Unpurified expression host lysate or partly purified protein" (the protein
       is either unpurified and present in the host cell lysate or only partially purified).
     title: protein purification
-    range: string
+    range: proteinPurificationEnumeration
     required: false
     multivalued: true
   theTAGStatusOfTheSolubilizedProtein:
@@ -682,7 +724,7 @@ slot_usage:
       for its enzyme activity) and "Antigenic" (the protein has been characterized
       for its ability to elicit an immune response).
     title: type of functional Characterization
-    range: string
+    range: typeOfFunctionalCharacterizationEnumeration
     required: false
     multivalued: true
 attributes:
@@ -792,7 +834,7 @@ attributes:
     owner: Protein
     domain_of:
     - Protein
-    range: string
+    range: expressedAsEnumeration
     required: false
     multivalued: true
   inclusionBodiesType:
@@ -808,7 +850,7 @@ attributes:
     owner: Protein
     domain_of:
     - Protein
-    range: string
+    range: inclusionBodiesTypeEnumeration
     required: false
     multivalued: true
   expressionSystem:
@@ -824,7 +866,7 @@ attributes:
     owner: Protein
     domain_of:
     - Protein
-    range: string
+    range: expressionSystemEnumeration
     required: false
     multivalued: true
   functionalCharacterization:
@@ -840,7 +882,7 @@ attributes:
     owner: Protein
     domain_of:
     - Protein
-    range: string
+    range: functionalCharacterizationEnumeration
     required: false
     multivalued: true
   functionalTechnicalDescription:
@@ -873,7 +915,7 @@ attributes:
     owner: Protein
     domain_of:
     - Protein
-    range: string
+    range: proteinPurificationEnumeration
     required: false
     multivalued: true
   theTAGStatusOfTheSolubilizedProtein:
@@ -906,7 +948,7 @@ attributes:
     owner: Protein
     domain_of:
     - Protein
-    range: string
+    range: typeOfFunctionalCharacterizationEnumeration
     required: false
     multivalued: true
   hasIATAClassification:

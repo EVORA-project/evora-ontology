@@ -1,8 +1,8 @@
-# Enum: Cultivability
+# Enum: CultivabilityEnumeration
 
 
 
-URI: [Cultivability](Cultivability.md)
+URI: [CultivabilityEnumeration](CultivabilityEnumeration.md)
 
 ## Permissible Values
 
@@ -14,6 +14,12 @@ URI: [Cultivability](Cultivability.md)
 
 
 
+
+## Slots
+
+| Name | Description |
+| ---  | --- |
+| [cultivability](cultivability.md) | The ability of the pathogen to be cultivated or grown in laboratory condition... |
 
 
 
@@ -28,13 +34,12 @@ URI: [Cultivability](Cultivability.md)
 
 
 
+### Schema Source
 
-## Mappings
 
-| Mapping Type | Mapped Value |
-| ---  | ---  |
-| self | EVORAO:cultivability |
-| native | EVORAO:cultivability |
+* from schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+
+
 
 
 
@@ -43,7 +48,8 @@ URI: [Cultivability](Cultivability.md)
 
 <details>
 ```yaml
-name: cultivability
+name: cultivabilityEnumeration
+from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
 rank: 1000
 permissible_values:
   Cultivable:

@@ -28,51 +28,51 @@
     dcterms:license "https://creativecommons.org/publicdomain/zero/1.0/" ;
     dcterms:title "European Viral Outbreak Response Alliance Ontology" ;
     pav:createdBy <https://github.com/Angatar> ;
-    pav:version "1.0.7785" ;
+    pav:version "1.0.7894" ;
     schema1:inLanguage "en" ;
     skos:definition "The EVORA Ontology harmonizes metadata in virology to describe viral resources, their derived products, and services. It aligns with FAIR principles to ensure interoperability, accessibility, and reusability across various projects. The EVORA Ontology aims to support preparedness and response to pandemics." ;
-    sh:declare [ sh:namespace skos: ;
-            sh:prefix "skos" ],
+    sh:declare [ sh:namespace linkml: ;
+            sh:prefix "linkml" ],
+        [ sh:namespace <http://www.w3.org/2006/vcard/ns#> ;
+            sh:prefix "vcard" ],
+        [ sh:namespace <http://www.w3.org/ns/regorg#> ;
+            sh:prefix "rov" ],
+        [ sh:namespace dcterms: ;
+            sh:prefix "dct" ],
+        [ sh:namespace <http://www.w3.org/ns/adms#> ;
+            sh:prefix "adms" ],
+        [ sh:namespace <http://www.wikidata.org/prop/> ;
+            sh:prefix "wdp" ],
+        [ sh:namespace xsd: ;
+            sh:prefix "xsd" ],
+        [ sh:namespace <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#> ;
+            sh:prefix "EVORAO" ],
         [ sh:namespace <http://www.wikidata.org/entity/> ;
             sh:prefix "wd" ],
         [ sh:namespace foaf: ;
             sh:prefix "foaf" ],
         [ sh:namespace schema1: ;
             sh:prefix "schema" ],
-        [ sh:namespace linkml: ;
-            sh:prefix "linkml" ],
         [ sh:namespace dcat: ;
             sh:prefix "dcat" ],
-        [ sh:namespace dcterms: ;
-            sh:prefix "dct" ],
-        [ sh:namespace owl: ;
-            sh:prefix "owl" ],
-        [ sh:namespace prov: ;
-            sh:prefix "prov" ],
-        [ sh:namespace pav: ;
-            sh:prefix "pav" ],
-        [ sh:namespace <http://www.w3.org/ns/regorg#> ;
-            sh:prefix "rov" ],
-        [ sh:namespace rdfs: ;
-            sh:prefix "rdfs" ],
-        [ sh:namespace xsd: ;
-            sh:prefix "xsd" ],
-        [ sh:namespace <http://www.w3.org/ns/adms#> ;
-            sh:prefix "adms" ],
         [ sh:namespace dcmitype: ;
             sh:prefix "dcmi" ],
-        [ sh:namespace <http://www.wikidata.org/prop/> ;
-            sh:prefix "wdp" ],
-        [ sh:namespace <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#> ;
-            sh:prefix "EVORAO" ],
-        [ sh:namespace rdf: ;
-            sh:prefix "rdf" ],
+        [ sh:namespace <http://rs.tdwg.org/dwc/terms/> ;
+            sh:prefix "dwc" ],
+        [ sh:namespace prov: ;
+            sh:prefix "prov" ],
+        [ sh:namespace skos: ;
+            sh:prefix "skos" ],
         [ sh:namespace <http://purl.obolibrary.org/obo/IAO_> ;
             sh:prefix "IAO" ],
-        [ sh:namespace <http://www.w3.org/2006/vcard/ns#> ;
-            sh:prefix "vcard" ],
-        [ sh:namespace <http://rs.tdwg.org/dwc/terms/> ;
-            sh:prefix "dwc" ] ;
+        [ sh:namespace owl: ;
+            sh:prefix "owl" ],
+        [ sh:namespace rdfs: ;
+            sh:prefix "rdfs" ],
+        [ sh:namespace rdf: ;
+            sh:prefix "rdf" ],
+        [ sh:namespace pav: ;
+            sh:prefix "pav" ] ;
     linkml:classes <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/AlternateName>,
         <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Antibody>,
         <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Audio>,
@@ -152,23 +152,22 @@
         <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Vocabulary> ;
     linkml:default_prefix "EVORAO" ;
     linkml:default_range <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/string> ;
-    linkml:enums <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/cultivability>,
-        <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/expressedAs>,
-        <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/expressionSystem>,
-        <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/functionalCharacterization>,
-        <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/genomeSequencing>,
-        <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/hostType>,
-        <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/inclusionBodiesType>,
-        <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/infectivity>,
-        <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/letterOfAuthority>,
-        <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/loginRequestMethod>,
-        <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/pathogenType>,
-        <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/proteinPurification>,
-        <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/queryMethod>,
-        <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/sequenceProvider>,
-        <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/sequencing>,
-        <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/typeOfFunctionalCharacterization> ;
-    linkml:generation_date "2025-01-17T15:29:52"^^xsd:dateTime ;
+    linkml:enums <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/cultivabilityEnumeration>,
+        <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/expressedAsEnumeration>,
+        <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/expressionSystemEnumeration>,
+        <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/functionalCharacterizationEnumeration>,
+        <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/genomeSequencingEnumeration>,
+        <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/hostTypeEnumeration>,
+        <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/inclusionBodiesTypeEnumeration>,
+        <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/infectivityEnumeration>,
+        <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/letterOfAuthorityEnumeration>,
+        <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/pathogenTypeEnumeration>,
+        <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/proteinPurificationEnumeration>,
+        <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/queryMethodEnumeration>,
+        <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/sequenceProviderEnumeration>,
+        <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/sequencingEnumeration>,
+        <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/typeOfFunctionalCharacterizationEnumeration> ;
+    linkml:generation_date "2025-01-17T16:11:38"^^xsd:dateTime ;
     linkml:id <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#> ;
     linkml:imports linkml:types ;
     linkml:metamodel_version "1.7.0" ;
@@ -569,8 +568,8 @@
         <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/versionOf>,
         <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/weight> ;
     linkml:source_file "evora_schema.yaml" ;
-    linkml:source_file_date "2025-01-17T15:28:21"^^xsd:dateTime ;
-    linkml:source_file_size 136689 ;
+    linkml:source_file_date "2025-01-17T16:10:08"^^xsd:dateTime ;
+    linkml:source_file_size 138769 ;
     linkml:types <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/boolean>,
         <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/curie>,
         <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/date>,
@@ -632,8 +631,13 @@
 
 <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Functionally%20characterized> skos:definition "The related protein has been functionally characterized" .
 
+<https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/GET> skos:definition "GET http method, used to send information, such as a query string, directly in the URL" ;
+    linkml:meaning <wd:Q3504817> .
+
 <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/GenBank> skos:definition "The NIH genetic sequence database, an annotated collection of all publicly available DNA sequences" ;
     linkml:meaning <wd:Q901755> .
+
+<https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Greater%20than%2095%20percent> skos:definition "The protein is purified to a level exceeding 95%" .
 
 <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Human> skos:definition "Any member of Homo sapiens, unique extant species of the genus Homo" ;
     linkml:meaning <wd:Q5> .
@@ -662,6 +666,9 @@
 
 <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Not%20sequenced> skos:definition "The biological material has not been sequenced" .
 
+<https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/POST> skos:definition "POST http method, used to send information to a server by storing it in the request body of the http request" ;
+    linkml:meaning <wd:Q2764521> .
+
 <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Partial%20sequence> skos:definition "Only a partial sequence was sequenced" .
 
 <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Partly%20sequenced> skos:definition "The biological material has been partly sequenced" .
@@ -677,8 +684,6 @@
 
 <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Soluble> skos:definition "Expressed as soluble protein" ;
     linkml:meaning <wd:Q87723650> .
-
-<https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Superior%20to%2095%20percents> skos:definition "The protein is purified over 95%" .
 
 <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Uncultivable> skos:definition "The pathogen cannot be grown in a laboratory using standard culture techniques and often requires special methods for study" .
 
@@ -1339,7 +1344,7 @@
     linkml:is_a <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/loginRequestMethod> ;
     linkml:is_usage_slot true ;
     linkml:owner <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/DataProvider> ;
-    linkml:range <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/string> ;
+    linkml:range <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/queryMethodEnumeration> ;
     linkml:slot_uri <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#loginRequestMethod> ;
     linkml:usage_slot_name "loginRequestMethod" .
 
@@ -1405,7 +1410,7 @@
     linkml:is_a <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/queryMethod> ;
     linkml:is_usage_slot true ;
     linkml:owner <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/DataProvider> ;
-    linkml:range <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/string> ;
+    linkml:range <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/queryMethodEnumeration> ;
     linkml:required true ;
     linkml:slot_uri <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#queryMethod> ;
     linkml:usage_slot_name "queryMethod" .
@@ -1668,9 +1673,6 @@
         <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Product_storageConditions>,
         <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Product_thirdPartyDistributionConsent>,
         <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Product_usageRestrictions> .
-
-<https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/GET> skos:definition "GET http method, used to send information, such as a query string, directly in the URL" ;
-    linkml:meaning <wd:Q3504817> .
 
 <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Hybridoma_hybridomaDescription> a linkml:SlotDefinition ;
     dcterms:title "hybridoma description" ;
@@ -2366,7 +2368,7 @@
     linkml:is_a <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/sequencing> ;
     linkml:is_usage_slot true ;
     linkml:owner <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/NucleicAcid> ;
-    linkml:range <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/string> ;
+    linkml:range <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/sequencingEnumeration> ;
     linkml:required true ;
     linkml:slot_uri <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#sequencing> ;
     linkml:usage_slot_name "sequencing" .
@@ -2415,9 +2417,6 @@
         <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Term_inVocabulary>,
         <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Term_weight> .
 
-<https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/POST> skos:definition "POST http method, used to send information to a server by storing it in the request body of the http request" ;
-    linkml:meaning <wd:Q2764521> .
-
 <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/PathogenIdentification_genotype> a linkml:SlotDefinition ;
     dcterms:title "genotype" ;
     skos:definition "Genotype information that identifies organisms that cluster in phylogenetic trees, thus different clusters are distinct genotypes" ;
@@ -2445,7 +2444,7 @@
     linkml:is_usage_slot true ;
     linkml:multivalued true ;
     linkml:owner <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/PathogenIdentification> ;
-    linkml:range <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/string> ;
+    linkml:range <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/hostTypeEnumeration> ;
     linkml:recommended true ;
     linkml:slot_uri <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#hostType> ;
     linkml:usage_slot_name "hostType" .
@@ -2493,7 +2492,7 @@
     linkml:is_a <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/pathogenType> ;
     linkml:is_usage_slot true ;
     linkml:owner <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/PathogenIdentification> ;
-    linkml:range <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/string> ;
+    linkml:range <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/pathogenTypeEnumeration> ;
     linkml:required true ;
     linkml:slot_uri <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#pathogenType> ;
     linkml:usage_slot_name "pathogenType" .
@@ -2757,7 +2756,7 @@
     linkml:is_usage_slot true ;
     linkml:multivalued true ;
     linkml:owner <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Protein> ;
-    linkml:range <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/string> ;
+    linkml:range <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/expressedAsEnumeration> ;
     linkml:slot_uri <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#expressedAs> ;
     linkml:usage_slot_name "expressedAs" .
 
@@ -2773,7 +2772,7 @@
     linkml:is_usage_slot true ;
     linkml:multivalued true ;
     linkml:owner <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Protein> ;
-    linkml:range <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/string> ;
+    linkml:range <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/expressionSystemEnumeration> ;
     linkml:slot_uri <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#expressionSystem> ;
     linkml:usage_slot_name "expressionSystem" .
 
@@ -2789,7 +2788,7 @@
     linkml:is_usage_slot true ;
     linkml:multivalued true ;
     linkml:owner <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Protein> ;
-    linkml:range <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/string> ;
+    linkml:range <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/functionalCharacterizationEnumeration> ;
     linkml:slot_uri <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#functionalCharacterization> ;
     linkml:usage_slot_name "functionalCharacterization" .
 
@@ -2821,7 +2820,7 @@
     linkml:is_usage_slot true ;
     linkml:multivalued true ;
     linkml:owner <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Protein> ;
-    linkml:range <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/string> ;
+    linkml:range <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/inclusionBodiesTypeEnumeration> ;
     linkml:slot_uri <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#inclusionBodiesType> ;
     linkml:usage_slot_name "inclusionBodiesType" .
 
@@ -2837,7 +2836,7 @@
     linkml:is_usage_slot true ;
     linkml:multivalued true ;
     linkml:owner <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Protein> ;
-    linkml:range <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/string> ;
+    linkml:range <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/proteinPurificationEnumeration> ;
     linkml:slot_uri <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#proteinPurification> ;
     linkml:usage_slot_name "proteinPurification" .
 
@@ -2939,7 +2938,7 @@
     linkml:is_usage_slot true ;
     linkml:multivalued true ;
     linkml:owner <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Protein> ;
-    linkml:range <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/string> ;
+    linkml:range <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/typeOfFunctionalCharacterizationEnumeration> ;
     linkml:slot_uri <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#typeOfFunctionalCharacterization> ;
     linkml:usage_slot_name "typeOfFunctionalCharacterization" .
 
@@ -3202,7 +3201,7 @@
     linkml:is_a <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/sequenceProvider> ;
     linkml:is_usage_slot true ;
     linkml:owner <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/SequenceReference> ;
-    linkml:range <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/string> ;
+    linkml:range <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/sequenceProviderEnumeration> ;
     linkml:required true ;
     linkml:slot_uri <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#sequenceProvider> ;
     linkml:usage_slot_name "sequenceProvider" .
@@ -4058,6 +4057,20 @@
     linkml:range <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/string> ;
     linkml:slot_uri <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#countryOfCollection> .
 
+<https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/cultivability> a linkml:SlotDefinition ;
+    skos:inScheme <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#> ;
+    linkml:definition_uri <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#cultivability> ;
+    linkml:domain_of <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Pathogen> ;
+    linkml:owner <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Pathogen> ;
+    linkml:range <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/string> ;
+    linkml:slot_uri <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#cultivability> .
+
+<https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/cultivabilityEnumeration> skos:inScheme <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#> ;
+    linkml:definition_uri <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#CultivabilityEnumeration> ;
+    linkml:permissible_values <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Cultivable>,
+        <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Inactivated>,
+        <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Uncultivable> .
+
 <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/datetime> a linkml:TypeDefinition ;
     skos:definition "The combination of a date and time" ;
     skos:editorialNote "If you are authoring schemas in LinkML YAML, the type is referenced with the lower case \"datetime\"." ;
@@ -4125,6 +4138,33 @@
     linkml:range <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/string> ;
     linkml:slot_uri <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#exposureControlsPersonalProtection> .
 
+<https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/expressedAs> a linkml:SlotDefinition ;
+    skos:inScheme <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#> ;
+    linkml:definition_uri <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#expressedAs> ;
+    linkml:domain_of <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Protein> ;
+    linkml:owner <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Protein> ;
+    linkml:range <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/string> ;
+    linkml:slot_uri <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#expressedAs> .
+
+<https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/expressedAsEnumeration> skos:inScheme <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#> ;
+    linkml:definition_uri <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#ExpressedAsEnumeration> ;
+    linkml:permissible_values <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Inclusion%20bodies>,
+        <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Soluble> .
+
+<https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/expressionSystem> a linkml:SlotDefinition ;
+    skos:inScheme <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#> ;
+    linkml:definition_uri <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#expressionSystem> ;
+    linkml:domain_of <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Protein> ;
+    linkml:owner <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Protein> ;
+    linkml:range <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/string> ;
+    linkml:slot_uri <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#expressionSystem> .
+
+<https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/expressionSystemEnumeration> skos:inScheme <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#> ;
+    linkml:definition_uri <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#ExpressionSystemEnumeration> ;
+    linkml:permissible_values <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/E.%20coli>,
+        <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Insect%20cells>,
+        <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Mammalian%20cells> .
+
 <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/externalEquivalentTaxon> a linkml:SlotDefinition ;
     skos:inScheme <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#> ;
     linkml:definition_uri <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#externalEquivalentTaxon> ;
@@ -4165,6 +4205,19 @@
     linkml:range <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/string> ;
     linkml:slot_uri <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#format> .
 
+<https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/functionalCharacterization> a linkml:SlotDefinition ;
+    skos:inScheme <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#> ;
+    linkml:definition_uri <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#functionalCharacterization> ;
+    linkml:domain_of <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Protein> ;
+    linkml:owner <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Protein> ;
+    linkml:range <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/string> ;
+    linkml:slot_uri <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#functionalCharacterization> .
+
+<https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/functionalCharacterizationEnumeration> skos:inScheme <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#> ;
+    linkml:definition_uri <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#FunctionalCharacterizationEnumeration> ;
+    linkml:permissible_values <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Functionally%20characterized>,
+        <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/No%20functional%20characterization> .
+
 <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/functionalTechnicalDescription> a linkml:SlotDefinition ;
     skos:inScheme <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#> ;
     linkml:definition_uri <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#functionalTechnicalDescription> ;
@@ -4180,6 +4233,20 @@
     linkml:owner <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/MSDS> ;
     linkml:range <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/string> ;
     linkml:slot_uri <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#furtherInformation> .
+
+<https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/genomeSequencing> a linkml:SlotDefinition ;
+    skos:inScheme <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#> ;
+    linkml:definition_uri <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#genomeSequencing> ;
+    linkml:domain_of <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Pathogen> ;
+    linkml:owner <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Pathogen> ;
+    linkml:range <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/string> ;
+    linkml:slot_uri <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#genomeSequencing> .
+
+<https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/genomeSequencingEnumeration> skos:inScheme <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#> ;
+    linkml:definition_uri <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#GenomeSequencingEnumeration> ;
+    linkml:permissible_values <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Complete%20coding%20sequence>,
+        <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Complete%20genome>,
+        <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Partial%20sequence> .
 
 <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/genotype> a linkml:SlotDefinition ;
     skos:inScheme <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#> ;
@@ -4245,6 +4312,20 @@
     linkml:range <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/string> ;
     linkml:slot_uri <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#homePage> .
 
+<https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/hostType> a linkml:SlotDefinition ;
+    skos:inScheme <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#> ;
+    linkml:definition_uri <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#hostType> ;
+    linkml:domain_of <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/PathogenIdentification> ;
+    linkml:owner <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/PathogenIdentification> ;
+    linkml:range <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/string> ;
+    linkml:slot_uri <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#hostType> .
+
+<https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/hostTypeEnumeration> skos:inScheme <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#> ;
+    linkml:definition_uri <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#HostTypeEnumeration> ;
+    linkml:permissible_values <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Animal>,
+        <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Human>,
+        <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Plant> .
+
 <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/hybridomaDescription> a linkml:SlotDefinition ;
     skos:inScheme <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#> ;
     linkml:definition_uri <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#hybridomaDescription> ;
@@ -4261,6 +4342,19 @@
     linkml:range <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/string> ;
     linkml:slot_uri <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#inVocabulary> .
 
+<https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/inclusionBodiesType> a linkml:SlotDefinition ;
+    skos:inScheme <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#> ;
+    linkml:definition_uri <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#inclusionBodiesType> ;
+    linkml:domain_of <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Protein> ;
+    linkml:owner <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Protein> ;
+    linkml:range <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/string> ;
+    linkml:slot_uri <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#inclusionBodiesType> .
+
+<https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/inclusionBodiesTypeEnumeration> skos:inScheme <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#> ;
+    linkml:definition_uri <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#InclusionBodiesTypeEnumeration> ;
+    linkml:permissible_values <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Denatured>,
+        <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Refolded> .
+
 <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/indigenousPoepleAndLocalCommunityOrigin> a linkml:SlotDefinition ;
     skos:inScheme <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#> ;
     linkml:definition_uri <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#indigenousPoepleAndLocalCommunityOrigin> ;
@@ -4268,6 +4362,20 @@
     linkml:owner <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/NaturalPartOrigin> ;
     linkml:range <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/string> ;
     linkml:slot_uri <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#indigenousPoepleAndLocalCommunityOrigin> .
+
+<https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/infectivity> a linkml:SlotDefinition ;
+    skos:inScheme <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#> ;
+    linkml:definition_uri <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#infectivity> ;
+    linkml:domain_of <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Pathogen> ;
+    linkml:owner <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Pathogen> ;
+    linkml:range <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/string> ;
+    linkml:slot_uri <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#infectivity> .
+
+<https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/infectivityEnumeration> skos:inScheme <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#> ;
+    linkml:definition_uri <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#InfectivityEnumeration> ;
+    linkml:permissible_values <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Infectivity%20tested>,
+        <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Infectivity%20tested%20and%20quantified>,
+        <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Non%20cultivable%20sample%2C%20infectivity%20cannot%20be%20tested> .
 
 <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/infectivityTest> a linkml:SlotDefinition ;
     skos:inScheme <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#> ;
@@ -4341,6 +4449,21 @@
     linkml:range <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/string> ;
     linkml:slot_uri <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#keywords> .
 
+<https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/letterOfAuthority> a linkml:SlotDefinition ;
+    skos:inScheme <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#> ;
+    linkml:definition_uri <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#letterOfAuthority> ;
+    linkml:domain_of <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Pathogen> ;
+    linkml:owner <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Pathogen> ;
+    linkml:range <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/string> ;
+    linkml:slot_uri <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#letterOfAuthority> .
+
+<https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/letterOfAuthorityEnumeration> skos:inScheme <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#> ;
+    linkml:definition_uri <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#LetterOfAuthorityEnumeration> ;
+    linkml:permissible_values <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Not%20applicable>,
+        <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Not%20required>,
+        <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Required>,
+        <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Required%20for%20customers%20in%20the%20EU> .
+
 <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/licensingOrAttribution> a linkml:SlotDefinition ;
     skos:inScheme <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#> ;
     linkml:definition_uri <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#licensingOrAttribution> ;
@@ -4348,6 +4471,14 @@
     linkml:owner <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/License> ;
     linkml:range <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/string> ;
     linkml:slot_uri <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#licensingOrAttribution> .
+
+<https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/loginRequestMethod> a linkml:SlotDefinition ;
+    skos:inScheme <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#> ;
+    linkml:definition_uri <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#loginRequestMethod> ;
+    linkml:domain_of <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/DataProvider> ;
+    linkml:owner <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/DataProvider> ;
+    linkml:range <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/string> ;
+    linkml:slot_uri <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#loginRequestMethod> .
 
 <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/loginTokenName> a linkml:SlotDefinition ;
     skos:inScheme <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#> ;
@@ -4517,6 +4648,23 @@
     linkml:range <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/string> ;
     linkml:slot_uri <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#pathogenName> .
 
+<https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/pathogenType> a linkml:SlotDefinition ;
+    skos:inScheme <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#> ;
+    linkml:definition_uri <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#pathogenType> ;
+    linkml:domain_of <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/PathogenIdentification> ;
+    linkml:owner <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/PathogenIdentification> ;
+    linkml:range <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/string> ;
+    linkml:slot_uri <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#pathogenType> .
+
+<https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/pathogenTypeEnumeration> skos:inScheme <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#> ;
+    linkml:definition_uri <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#PathogenTypeEnumeration> ;
+    linkml:permissible_values <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Bacterium>,
+        <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Fungus>,
+        <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Prion>,
+        <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Protozoan>,
+        <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Viroid>,
+        <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Virus> .
+
 <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/permitIdentifierForABS> a linkml:SlotDefinition ;
     skos:inScheme <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#> ;
     linkml:definition_uri <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#permitIdentifierForABS> ;
@@ -4589,6 +4737,19 @@
     linkml:range <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/string> ;
     linkml:slot_uri <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#propagationHost> .
 
+<https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/proteinPurification> a linkml:SlotDefinition ;
+    skos:inScheme <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#> ;
+    linkml:definition_uri <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#proteinPurification> ;
+    linkml:domain_of <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Protein> ;
+    linkml:owner <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Protein> ;
+    linkml:range <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/string> ;
+    linkml:slot_uri <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#proteinPurification> .
+
+<https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/proteinPurificationEnumeration> skos:inScheme <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#> ;
+    linkml:definition_uri <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#ProteinPurificationEnumeration> ;
+    linkml:permissible_values <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Greater%20than%2095%20percent>,
+        <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Unpurified%20expression%20host%20lysate%20or%20partly%20purified%20protein> .
+
 <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/proteinTAG> a linkml:SlotDefinition ;
     skos:inScheme <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#> ;
     linkml:definition_uri <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#proteinTAG> ;
@@ -4620,6 +4781,14 @@
     linkml:owner <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/ProductOrService> ;
     linkml:range <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/string> ;
     linkml:slot_uri <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#qualityGrading> .
+
+<https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/queryMethod> a linkml:SlotDefinition ;
+    skos:inScheme <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#> ;
+    linkml:definition_uri <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#queryMethod> ;
+    linkml:domain_of <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/DataProvider> ;
+    linkml:owner <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/DataProvider> ;
+    linkml:range <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/string> ;
+    linkml:slot_uri <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#queryMethod> .
 
 <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/queryURL> a linkml:SlotDefinition ;
     skos:inScheme <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#> ;
@@ -4740,6 +4909,33 @@
     linkml:owner <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Sequence> ;
     linkml:range <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/string> ;
     linkml:slot_uri <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#sequenceFASTA> .
+
+<https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/sequenceProvider> a linkml:SlotDefinition ;
+    skos:inScheme <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#> ;
+    linkml:definition_uri <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#sequenceProvider> ;
+    linkml:domain_of <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/SequenceReference> ;
+    linkml:owner <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/SequenceReference> ;
+    linkml:range <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/string> ;
+    linkml:slot_uri <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#sequenceProvider> .
+
+<https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/sequenceProviderEnumeration> skos:inScheme <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#> ;
+    linkml:definition_uri <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#SequenceProviderEnumeration> ;
+    linkml:permissible_values <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/ENA>,
+        <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/GenBank> .
+
+<https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/sequencing> a linkml:SlotDefinition ;
+    skos:inScheme <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#> ;
+    linkml:definition_uri <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#sequencing> ;
+    linkml:domain_of <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/NucleicAcid> ;
+    linkml:owner <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/NucleicAcid> ;
+    linkml:range <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/string> ;
+    linkml:slot_uri <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#sequencing> .
+
+<https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/sequencingEnumeration> skos:inScheme <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#> ;
+    linkml:definition_uri <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#SequencingEnumeration> ;
+    linkml:permissible_values <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Fully%20sequenced>,
+        <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Not%20sequenced>,
+        <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Partly%20sequenced> .
 
 <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/serotype> a linkml:SlotDefinition ;
     skos:inScheme <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#> ;
@@ -4940,6 +5136,19 @@
     linkml:owner <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/MSDS> ;
     linkml:range <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/string> ;
     linkml:slot_uri <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#transportInformation> .
+
+<https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/typeOfFunctionalCharacterization> a linkml:SlotDefinition ;
+    skos:inScheme <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#> ;
+    linkml:definition_uri <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#typeOfFunctionalCharacterization> ;
+    linkml:domain_of <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Protein> ;
+    linkml:owner <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Protein> ;
+    linkml:range <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/string> ;
+    linkml:slot_uri <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#typeOfFunctionalCharacterization> .
+
+<https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/typeOfFunctionalCharacterizationEnumeration> skos:inScheme <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#> ;
+    linkml:definition_uri <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#TypeOfFunctionalCharacterizationEnumeration> ;
+    linkml:permissible_values <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Antigenic>,
+        <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Enzymatic> .
 
 <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/unitCost> a linkml:SlotDefinition ;
     skos:inScheme <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#> ;
@@ -5171,76 +5380,6 @@
     linkml:range <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/string> ;
     linkml:slot_uri <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#contactPoint> .
 
-<https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/cultivability> a linkml:SlotDefinition ;
-    skos:inScheme <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#> ;
-    linkml:definition_uri <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#Cultivability>,
-        <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#cultivability> ;
-    linkml:domain_of <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Pathogen> ;
-    linkml:owner <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Pathogen> ;
-    linkml:permissible_values <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Cultivable>,
-        <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Inactivated>,
-        <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Uncultivable> ;
-    linkml:range <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/string> ;
-    linkml:slot_uri <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#cultivability> .
-
-<https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/expressedAs> a linkml:SlotDefinition ;
-    skos:inScheme <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#> ;
-    linkml:definition_uri <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#ExpressedAs>,
-        <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#expressedAs> ;
-    linkml:domain_of <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Protein> ;
-    linkml:owner <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Protein> ;
-    linkml:permissible_values <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Inclusion%20bodies>,
-        <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Soluble> ;
-    linkml:range <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/string> ;
-    linkml:slot_uri <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#expressedAs> .
-
-<https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/expressionSystem> a linkml:SlotDefinition ;
-    skos:inScheme <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#> ;
-    linkml:definition_uri <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#ExpressionSystem>,
-        <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#expressionSystem> ;
-    linkml:domain_of <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Protein> ;
-    linkml:owner <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Protein> ;
-    linkml:permissible_values <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/E.%20coli>,
-        <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Insect%20cells>,
-        <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Mammalian%20cells> ;
-    linkml:range <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/string> ;
-    linkml:slot_uri <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#expressionSystem> .
-
-<https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/functionalCharacterization> a linkml:SlotDefinition ;
-    skos:inScheme <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#> ;
-    linkml:definition_uri <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#FunctionalCharacterization>,
-        <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#functionalCharacterization> ;
-    linkml:domain_of <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Protein> ;
-    linkml:owner <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Protein> ;
-    linkml:permissible_values <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Functionally%20characterized>,
-        <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/No%20functional%20characterization> ;
-    linkml:range <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/string> ;
-    linkml:slot_uri <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#functionalCharacterization> .
-
-<https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/genomeSequencing> a linkml:SlotDefinition ;
-    skos:inScheme <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#> ;
-    linkml:definition_uri <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#GenomeSequencing>,
-        <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#genomeSequencing> ;
-    linkml:domain_of <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Pathogen> ;
-    linkml:owner <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Pathogen> ;
-    linkml:permissible_values <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Complete%20coding%20sequence>,
-        <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Complete%20genome>,
-        <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Partial%20sequence> ;
-    linkml:range <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/string> ;
-    linkml:slot_uri <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#genomeSequencing> .
-
-<https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/hostType> a linkml:SlotDefinition ;
-    skos:inScheme <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#> ;
-    linkml:definition_uri <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#HostType>,
-        <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#hostType> ;
-    linkml:domain_of <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/PathogenIdentification> ;
-    linkml:owner <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/PathogenIdentification> ;
-    linkml:permissible_values <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Animal>,
-        <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Human>,
-        <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Plant> ;
-    linkml:range <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/string> ;
-    linkml:slot_uri <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#hostType> .
-
 <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/identificationTechnique> a linkml:SlotDefinition ;
     skos:inScheme <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#> ;
     linkml:definition_uri <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#identificationTechnique> ;
@@ -5249,29 +5388,6 @@
     linkml:owner <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Pathogen> ;
     linkml:range <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/string> ;
     linkml:slot_uri <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#identificationTechnique> .
-
-<https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/inclusionBodiesType> a linkml:SlotDefinition ;
-    skos:inScheme <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#> ;
-    linkml:definition_uri <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#InclusionBodiesType>,
-        <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#inclusionBodiesType> ;
-    linkml:domain_of <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Protein> ;
-    linkml:owner <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Protein> ;
-    linkml:permissible_values <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Denatured>,
-        <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Refolded> ;
-    linkml:range <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/string> ;
-    linkml:slot_uri <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#inclusionBodiesType> .
-
-<https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/infectivity> a linkml:SlotDefinition ;
-    skos:inScheme <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#> ;
-    linkml:definition_uri <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#Infectivity>,
-        <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#infectivity> ;
-    linkml:domain_of <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Pathogen> ;
-    linkml:owner <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Pathogen> ;
-    linkml:permissible_values <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Infectivity%20tested>,
-        <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Infectivity%20tested%20and%20quantified>,
-        <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Non%20cultivable%20sample%2C%20infectivity%20cannot%20be%20tested> ;
-    linkml:range <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/string> ;
-    linkml:slot_uri <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#infectivity> .
 
 <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/integer> a linkml:TypeDefinition ;
     skos:definition "An integer" ;
@@ -5283,19 +5399,6 @@
     linkml:imported_from "linkml:types" ;
     linkml:uri xsd:integer .
 
-<https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/letterOfAuthority> a linkml:SlotDefinition ;
-    skos:inScheme <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#> ;
-    linkml:definition_uri <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#LetterOfAuthority>,
-        <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#letterOfAuthority> ;
-    linkml:domain_of <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Pathogen> ;
-    linkml:owner <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Pathogen> ;
-    linkml:permissible_values <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Not%20applicable>,
-        <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Not%20required>,
-        <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Required>,
-        <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Required%20for%20customers%20in%20the%20EU> ;
-    linkml:range <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/string> ;
-    linkml:slot_uri <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#letterOfAuthority> .
-
 <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/license> a linkml:SlotDefinition ;
     skos:inScheme <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#> ;
     linkml:definition_uri <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#license> ;
@@ -5304,17 +5407,6 @@
     linkml:owner <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/File> ;
     linkml:range <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/string> ;
     linkml:slot_uri <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#license> .
-
-<https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/loginRequestMethod> a linkml:SlotDefinition ;
-    skos:inScheme <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#> ;
-    linkml:definition_uri <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#LoginRequestMethod>,
-        <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#loginRequestMethod> ;
-    linkml:domain_of <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/DataProvider> ;
-    linkml:owner <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/DataProvider> ;
-    linkml:permissible_values <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/GET>,
-        <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/POST> ;
-    linkml:range <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/string> ;
-    linkml:slot_uri <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#loginRequestMethod> .
 
 <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/oRCIDiD> a linkml:SlotDefinition ;
     skos:inScheme <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#> ;
@@ -5325,42 +5417,10 @@
     linkml:range <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/string> ;
     linkml:slot_uri <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#oRCIDiD> .
 
-<https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/pathogenType> a linkml:SlotDefinition ;
-    skos:inScheme <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#> ;
-    linkml:definition_uri <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#PathogenType>,
-        <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#pathogenType> ;
-    linkml:domain_of <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/PathogenIdentification> ;
-    linkml:owner <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/PathogenIdentification> ;
-    linkml:permissible_values <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Bacterium>,
-        <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Fungus>,
-        <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Prion>,
-        <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Protozoan>,
-        <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Viroid>,
-        <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Virus> ;
-    linkml:range <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/string> ;
-    linkml:slot_uri <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#pathogenType> .
-
-<https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/proteinPurification> a linkml:SlotDefinition ;
-    skos:inScheme <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#> ;
-    linkml:definition_uri <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#ProteinPurification>,
-        <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#proteinPurification> ;
-    linkml:domain_of <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Protein> ;
-    linkml:owner <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Protein> ;
-    linkml:permissible_values <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Superior%20to%2095%20percents>,
-        <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Unpurified%20expression%20host%20lysate%20or%20partly%20purified%20protein> ;
-    linkml:range <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/string> ;
-    linkml:slot_uri <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#proteinPurification> .
-
-<https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/queryMethod> a linkml:SlotDefinition ;
-    skos:inScheme <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#> ;
-    linkml:definition_uri <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#QueryMethod>,
-        <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#queryMethod> ;
-    linkml:domain_of <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/DataProvider> ;
-    linkml:owner <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/DataProvider> ;
+<https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/queryMethodEnumeration> skos:inScheme <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#> ;
+    linkml:definition_uri <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#QueryMethodEnumeration> ;
     linkml:permissible_values <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/GET>,
-        <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/POST> ;
-    linkml:range <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/string> ;
-    linkml:slot_uri <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#queryMethod> .
+        <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/POST> .
 
 <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/rank> a linkml:SlotDefinition ;
     skos:inScheme <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#> ;
@@ -5389,17 +5449,6 @@
     linkml:range <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/string> ;
     linkml:slot_uri <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#resourceURL> .
 
-<https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/sequenceProvider> a linkml:SlotDefinition ;
-    skos:inScheme <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#> ;
-    linkml:definition_uri <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#SequenceProvider>,
-        <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#sequenceProvider> ;
-    linkml:domain_of <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/SequenceReference> ;
-    linkml:owner <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/SequenceReference> ;
-    linkml:permissible_values <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/ENA>,
-        <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/GenBank> ;
-    linkml:range <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/string> ;
-    linkml:slot_uri <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#sequenceProvider> .
-
 <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/sequenceReference> a linkml:SlotDefinition ;
     skos:inScheme <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#> ;
     linkml:definition_uri <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#sequenceReference> ;
@@ -5408,18 +5457,6 @@
     linkml:owner <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Antibody> ;
     linkml:range <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/string> ;
     linkml:slot_uri <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#sequenceReference> .
-
-<https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/sequencing> a linkml:SlotDefinition ;
-    skos:inScheme <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#> ;
-    linkml:definition_uri <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#Sequencing>,
-        <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#sequencing> ;
-    linkml:domain_of <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/NucleicAcid> ;
-    linkml:owner <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/NucleicAcid> ;
-    linkml:permissible_values <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Fully%20sequenced>,
-        <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Not%20sequenced>,
-        <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Partly%20sequenced> ;
-    linkml:range <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/string> ;
-    linkml:slot_uri <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#sequencing> .
 
 <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/sourceOfInformation> a linkml:SlotDefinition ;
     skos:inScheme <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#> ;
@@ -5465,17 +5502,6 @@
     linkml:owner <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Pathogen> ;
     linkml:range <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/string> ;
     linkml:slot_uri <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#titer> .
-
-<https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/typeOfFunctionalCharacterization> a linkml:SlotDefinition ;
-    skos:inScheme <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#> ;
-    linkml:definition_uri <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#TypeOfFunctionalCharacterization>,
-        <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#typeOfFunctionalCharacterization> ;
-    linkml:domain_of <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Protein> ;
-    linkml:owner <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Protein> ;
-    linkml:permissible_values <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Antigenic>,
-        <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Enzymatic> ;
-    linkml:range <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/string> ;
-    linkml:slot_uri <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#typeOfFunctionalCharacterization> .
 
 <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/weight> a linkml:SlotDefinition ;
     skos:inScheme <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#> ;
@@ -5884,11 +5910,11 @@
     linkml:definition_uri <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#cultivability> ;
     linkml:domain <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Pathogen> ;
     linkml:domain_of <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Pathogen> ;
-    linkml:ifabsent "string(Cultivable pathogen)" ;
+    linkml:ifabsent "string(Cultivable)" ;
     linkml:is_a <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/cultivability> ;
     linkml:is_usage_slot true ;
     linkml:owner <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Pathogen> ;
-    linkml:range <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/string> ;
+    linkml:range <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/cultivabilityEnumeration> ;
     linkml:required true ;
     linkml:slot_uri <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#cultivability> ;
     linkml:usage_slot_name "cultivability" .
@@ -5904,7 +5930,7 @@
     linkml:is_a <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/genomeSequencing> ;
     linkml:is_usage_slot true ;
     linkml:owner <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Pathogen> ;
-    linkml:range <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/string> ;
+    linkml:range <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/genomeSequencingEnumeration> ;
     linkml:required true ;
     linkml:slot_uri <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#genomeSequencing> ;
     linkml:usage_slot_name "genomeSequencing" .
@@ -5935,7 +5961,7 @@
     linkml:is_a <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/infectivity> ;
     linkml:is_usage_slot true ;
     linkml:owner <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Pathogen> ;
-    linkml:range <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/string> ;
+    linkml:range <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/infectivityEnumeration> ;
     linkml:required true ;
     linkml:slot_uri <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#infectivity> ;
     linkml:usage_slot_name "infectivity" .
@@ -6014,7 +6040,7 @@
     linkml:is_a <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/letterOfAuthority> ;
     linkml:is_usage_slot true ;
     linkml:owner <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Pathogen> ;
-    linkml:range <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/string> ;
+    linkml:range <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/letterOfAuthorityEnumeration> ;
     linkml:required true ;
     linkml:slot_uri <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#letterOfAuthority> ;
     linkml:usage_slot_name "letterOfAuthority" .

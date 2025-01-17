@@ -1650,7 +1650,7 @@ CREATE TABLE "Sequence" (
 CREATE TABLE "SequenceReference" (
 	id INTEGER NOT NULL, 
 	"accessionNumber" TEXT NOT NULL, 
-	"sequenceProvider" TEXT NOT NULL, 
+	"sequenceProvider" VARCHAR(7) NOT NULL, 
 	PRIMARY KEY (id)
 );
 CREATE TABLE "BiologicalMaterialOrigin" (
@@ -1687,11 +1687,11 @@ CREATE TABLE "License" (
 );
 CREATE TABLE "DataProvider" (
 	id INTEGER NOT NULL, 
-	"loginRequestMethod" TEXT, 
+	"loginRequestMethod" VARCHAR(4), 
 	"loginURL" TEXT, 
 	"loginTokenName" TEXT, 
 	"queryURL" TEXT NOT NULL, 
-	"queryMethod" TEXT NOT NULL, 
+	"queryMethod" VARCHAR(4) NOT NULL, 
 	"contentType" TEXT NOT NULL, 
 	"providedEntityType" TEXT NOT NULL, 
 	weight INTEGER NOT NULL, 
@@ -2183,7 +2183,7 @@ CREATE TABLE "TaxonomicRank_taxonomy" (
 );
 CREATE TABLE "PathogenIdentification" (
 	id INTEGER NOT NULL, 
-	"pathogenType" TEXT NOT NULL, 
+	"pathogenType" VARCHAR(9) NOT NULL, 
 	subspecies TEXT, 
 	strain TEXT, 
 	isolate TEXT, 
@@ -2534,7 +2534,7 @@ CREATE TABLE "Nucleic Acid" (
 	"mutationObserved" BOOLEAN NOT NULL, 
 	"observedMutations" TEXT, 
 	"identificationTechnique" TEXT, 
-	sequencing TEXT NOT NULL, 
+	sequencing VARCHAR(16) NOT NULL, 
 	titer TEXT, 
 	"sequenceChecked" BOOLEAN NOT NULL, 
 	"shippingConditions" TEXT NOT NULL, 
@@ -2651,16 +2651,16 @@ CREATE TABLE "Bundle" (
 );
 CREATE TABLE "Pathogen" (
 	id INTEGER NOT NULL, 
-	cultivability TEXT NOT NULL, 
+	cultivability VARCHAR(12) NOT NULL, 
 	"clinicalInformation" TEXT, 
 	"identificationTechnique" TEXT, 
-	infectivity TEXT NOT NULL, 
+	infectivity VARCHAR(51) NOT NULL, 
 	"infectivityTest" TEXT, 
 	"isolationTechnique" TEXT, 
 	"isolationConditions" TEXT, 
-	"letterOfAuthority" TEXT NOT NULL, 
+	"letterOfAuthority" VARCHAR(32) NOT NULL, 
 	passage TEXT, 
-	"genomeSequencing" TEXT NOT NULL, 
+	"genomeSequencing" VARCHAR(24) NOT NULL, 
 	titer TEXT NOT NULL, 
 	"shippingConditions" TEXT NOT NULL, 
 	"storageConditions" TEXT NOT NULL, 
@@ -2701,16 +2701,16 @@ CREATE TABLE "Virus" (
 	id INTEGER NOT NULL, 
 	"contaminationWithCoInfectingViruses" BOOLEAN NOT NULL, 
 	"mycoplasmicContent" BOOLEAN NOT NULL, 
-	cultivability TEXT NOT NULL, 
+	cultivability VARCHAR(12) NOT NULL, 
 	"clinicalInformation" TEXT, 
 	"identificationTechnique" TEXT, 
-	infectivity TEXT NOT NULL, 
+	infectivity VARCHAR(51) NOT NULL, 
 	"infectivityTest" TEXT, 
 	"isolationTechnique" TEXT, 
 	"isolationConditions" TEXT, 
-	"letterOfAuthority" TEXT NOT NULL, 
+	"letterOfAuthority" VARCHAR(32) NOT NULL, 
 	passage TEXT, 
-	"genomeSequencing" TEXT NOT NULL, 
+	"genomeSequencing" VARCHAR(24) NOT NULL, 
 	titer TEXT NOT NULL, 
 	"shippingConditions" TEXT NOT NULL, 
 	"storageConditions" TEXT NOT NULL, 
@@ -2749,16 +2749,16 @@ CREATE TABLE "Virus" (
 );
 CREATE TABLE "Bacterium" (
 	id INTEGER NOT NULL, 
-	cultivability TEXT NOT NULL, 
+	cultivability VARCHAR(12) NOT NULL, 
 	"clinicalInformation" TEXT, 
 	"identificationTechnique" TEXT, 
-	infectivity TEXT NOT NULL, 
+	infectivity VARCHAR(51) NOT NULL, 
 	"infectivityTest" TEXT, 
 	"isolationTechnique" TEXT, 
 	"isolationConditions" TEXT, 
-	"letterOfAuthority" TEXT NOT NULL, 
+	"letterOfAuthority" VARCHAR(32) NOT NULL, 
 	passage TEXT, 
-	"genomeSequencing" TEXT NOT NULL, 
+	"genomeSequencing" VARCHAR(24) NOT NULL, 
 	titer TEXT NOT NULL, 
 	"shippingConditions" TEXT NOT NULL, 
 	"storageConditions" TEXT NOT NULL, 
@@ -2797,16 +2797,16 @@ CREATE TABLE "Bacterium" (
 );
 CREATE TABLE "Fungus" (
 	id INTEGER NOT NULL, 
-	cultivability TEXT NOT NULL, 
+	cultivability VARCHAR(12) NOT NULL, 
 	"clinicalInformation" TEXT, 
 	"identificationTechnique" TEXT, 
-	infectivity TEXT NOT NULL, 
+	infectivity VARCHAR(51) NOT NULL, 
 	"infectivityTest" TEXT, 
 	"isolationTechnique" TEXT, 
 	"isolationConditions" TEXT, 
-	"letterOfAuthority" TEXT NOT NULL, 
+	"letterOfAuthority" VARCHAR(32) NOT NULL, 
 	passage TEXT, 
-	"genomeSequencing" TEXT NOT NULL, 
+	"genomeSequencing" VARCHAR(24) NOT NULL, 
 	titer TEXT NOT NULL, 
 	"shippingConditions" TEXT NOT NULL, 
 	"storageConditions" TEXT NOT NULL, 
@@ -2845,16 +2845,16 @@ CREATE TABLE "Fungus" (
 );
 CREATE TABLE "Protozoan" (
 	id INTEGER NOT NULL, 
-	cultivability TEXT NOT NULL, 
+	cultivability VARCHAR(12) NOT NULL, 
 	"clinicalInformation" TEXT, 
 	"identificationTechnique" TEXT, 
-	infectivity TEXT NOT NULL, 
+	infectivity VARCHAR(51) NOT NULL, 
 	"infectivityTest" TEXT, 
 	"isolationTechnique" TEXT, 
 	"isolationConditions" TEXT, 
-	"letterOfAuthority" TEXT NOT NULL, 
+	"letterOfAuthority" VARCHAR(32) NOT NULL, 
 	passage TEXT, 
-	"genomeSequencing" TEXT NOT NULL, 
+	"genomeSequencing" VARCHAR(24) NOT NULL, 
 	titer TEXT NOT NULL, 
 	"shippingConditions" TEXT NOT NULL, 
 	"storageConditions" TEXT NOT NULL, 
@@ -2893,16 +2893,16 @@ CREATE TABLE "Protozoan" (
 );
 CREATE TABLE "Viroid" (
 	id INTEGER NOT NULL, 
-	cultivability TEXT NOT NULL, 
+	cultivability VARCHAR(12) NOT NULL, 
 	"clinicalInformation" TEXT, 
 	"identificationTechnique" TEXT, 
-	infectivity TEXT NOT NULL, 
+	infectivity VARCHAR(51) NOT NULL, 
 	"infectivityTest" TEXT, 
 	"isolationTechnique" TEXT, 
 	"isolationConditions" TEXT, 
-	"letterOfAuthority" TEXT NOT NULL, 
+	"letterOfAuthority" VARCHAR(32) NOT NULL, 
 	passage TEXT, 
-	"genomeSequencing" TEXT NOT NULL, 
+	"genomeSequencing" VARCHAR(24) NOT NULL, 
 	titer TEXT NOT NULL, 
 	"shippingConditions" TEXT NOT NULL, 
 	"storageConditions" TEXT NOT NULL, 
@@ -2941,16 +2941,16 @@ CREATE TABLE "Viroid" (
 );
 CREATE TABLE "Prion" (
 	id INTEGER NOT NULL, 
-	cultivability TEXT NOT NULL, 
+	cultivability VARCHAR(12) NOT NULL, 
 	"clinicalInformation" TEXT, 
 	"identificationTechnique" TEXT, 
-	infectivity TEXT NOT NULL, 
+	infectivity VARCHAR(51) NOT NULL, 
 	"infectivityTest" TEXT, 
 	"isolationTechnique" TEXT, 
 	"isolationConditions" TEXT, 
-	"letterOfAuthority" TEXT NOT NULL, 
+	"letterOfAuthority" VARCHAR(32) NOT NULL, 
 	passage TEXT, 
-	"genomeSequencing" TEXT NOT NULL, 
+	"genomeSequencing" VARCHAR(24) NOT NULL, 
 	titer TEXT NOT NULL, 
 	"shippingConditions" TEXT NOT NULL, 
 	"storageConditions" TEXT NOT NULL, 
@@ -2989,7 +2989,7 @@ CREATE TABLE "Prion" (
 );
 CREATE TABLE "PathogenIdentification_hostType" (
 	"PathogenIdentification_id" INTEGER, 
-	"hostType" TEXT, 
+	"hostType" VARCHAR(6), 
 	PRIMARY KEY ("PathogenIdentification_id", "hostType"), 
 	FOREIGN KEY("PathogenIdentification_id") REFERENCES "PathogenIdentification" (id)
 );
@@ -3372,25 +3372,25 @@ CREATE TABLE "Protein_domain" (
 );
 CREATE TABLE "Protein_expressedAs" (
 	"Protein_id" INTEGER, 
-	"expressedAs" TEXT, 
+	"expressedAs" VARCHAR(16), 
 	PRIMARY KEY ("Protein_id", "expressedAs"), 
 	FOREIGN KEY("Protein_id") REFERENCES "Protein" (id)
 );
 CREATE TABLE "Protein_inclusionBodiesType" (
 	"Protein_id" INTEGER, 
-	"inclusionBodiesType" TEXT, 
+	"inclusionBodiesType" VARCHAR(9), 
 	PRIMARY KEY ("Protein_id", "inclusionBodiesType"), 
 	FOREIGN KEY("Protein_id") REFERENCES "Protein" (id)
 );
 CREATE TABLE "Protein_expressionSystem" (
 	"Protein_id" INTEGER, 
-	"expressionSystem" TEXT, 
+	"expressionSystem" VARCHAR(15), 
 	PRIMARY KEY ("Protein_id", "expressionSystem"), 
 	FOREIGN KEY("Protein_id") REFERENCES "Protein" (id)
 );
 CREATE TABLE "Protein_functionalCharacterization" (
 	"Protein_id" INTEGER, 
-	"functionalCharacterization" TEXT, 
+	"functionalCharacterization" VARCHAR(30), 
 	PRIMARY KEY ("Protein_id", "functionalCharacterization"), 
 	FOREIGN KEY("Protein_id") REFERENCES "Protein" (id)
 );
@@ -3402,7 +3402,7 @@ CREATE TABLE "Protein_functionalTechnicalDescription" (
 );
 CREATE TABLE "Protein_proteinPurification" (
 	"Protein_id" INTEGER, 
-	"proteinPurification" TEXT, 
+	"proteinPurification" VARCHAR(60), 
 	PRIMARY KEY ("Protein_id", "proteinPurification"), 
 	FOREIGN KEY("Protein_id") REFERENCES "Protein" (id)
 );
@@ -3414,7 +3414,7 @@ CREATE TABLE "Protein_theTAGStatusOfTheSolubilizedProtein" (
 );
 CREATE TABLE "Protein_typeOfFunctionalCharacterization" (
 	"Protein_id" INTEGER, 
-	"typeOfFunctionalCharacterization" TEXT, 
+	"typeOfFunctionalCharacterization" VARCHAR(9), 
 	PRIMARY KEY ("Protein_id", "typeOfFunctionalCharacterization"), 
 	FOREIGN KEY("Protein_id") REFERENCES "Protein" (id)
 );

@@ -18,8 +18,8 @@ URI: [EVORAO:rank](https://raw.githubusercontent.com/EVORA-project/evora-ontolog
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [Taxon](Taxon.md) | Conceptual entity that groups one or more populations of an organism or organ... |  yes  |
 | [Taxonomy](Taxonomy.md) | Science of naming, defining and classifying organisms |  yes  |
+| [Taxon](Taxon.md) | Conceptual entity that groups one or more populations of an organism or organ... |  yes  |
 
 
 
