@@ -126,6 +126,8 @@ URI: [EVORAO:Pathogen](https://raw.githubusercontent.com/EVORA-project/evora-ont
     click ExternalRelatedReference href "../ExternalRelatedReference"
 
         
+      Pathogen : genomeSequencing
+        
       Pathogen : hasIATAClassification
         
           
@@ -267,8 +269,6 @@ URI: [EVORAO:Pathogen](https://raw.githubusercontent.com/EVORA-project/evora-ont
     click Sequence href "../Sequence"
 
         
-      Pathogen : sequencing
-        
       Pathogen : shippingConditions
         
       Pathogen : storageConditions
@@ -345,7 +345,7 @@ URI: [EVORAO:Pathogen](https://raw.githubusercontent.com/EVORA-project/evora-ont
 | [isolationConditions](isolationConditions.md) | 0..1 <br/> [String](String.md) | The environmental and procedural conditions under which the pathogen was isol... | direct |
 | [letterOfAuthority](letterOfAuthority.md) | 1 <br/> [String](String.md) | Indicate whether a Letter of Authority is required, confirming the necessity ... | direct |
 | [passage](passage.md) | 0..1 <br/> [String](String.md) | The number of times the pathogen was cultured through serial passage, a proce... | direct |
-| [sequencing](sequencing.md) | 1 <br/> [String](String.md) | The extent of the pathogen's genetic material that has been sequenced, with p... | direct |
+| [genomeSequencing](genomeSequencing.md) | 1 <br/> [String](String.md) | The extent of the pathogen's genetic material that has been sequenced, with p... | direct |
 | [titer](titer.md) | 1 <br/> [String](String.md) | The titer value, its corresponding unit, and the method of quantification (e | direct |
 | [hasIATAClassification](hasIATAClassification.md) | 1 <br/> [IATAClassification](IATAClassification.md) | The corresponding International Air Transport Association (IATA)'s category f... | [Product](Product.md) |
 | [shippingConditions](shippingConditions.md) | 1 <br/> [String](String.md) | Specification of the terms and parameters for transporting | [Product](Product.md) |
@@ -454,7 +454,7 @@ slots:
 - isolationConditions
 - letterOfAuthority
 - passage
-- sequencing
+- genomeSequencing
 - titer
 slot_usage:
   biologicalMaterialOrigin:
@@ -584,7 +584,7 @@ slot_usage:
       necessity of formal authorization. The possible values are "N/A", "NOT Required",
       "Required for customers in the EU" or "Required"
     title: letter of authority
-    ifabsent: string(N/A)
+    ifabsent: string(Not applicable)
     range: string
     required: true
     multivalued: false
@@ -597,13 +597,13 @@ slot_usage:
     range: string
     required: false
     multivalued: false
-  sequencing:
-    name: sequencing
+  genomeSequencing:
+    name: genomeSequencing
     description: The extent of the pathogen's genetic material that has been sequenced,
       with possible values including "Complete genome" for the entire genome, "Complete
       coding sequence" for all coding regions, and "Partial sequence" for only a portion
       of the genetic material
-    title: sequencing
+    title: genome sequencing
     range: string
     required: true
     multivalued: false
@@ -765,7 +765,7 @@ slot_usage:
       necessity of formal authorization. The possible values are "N/A", "NOT Required",
       "Required for customers in the EU" or "Required"
     title: letter of authority
-    ifabsent: string(N/A)
+    ifabsent: string(Not applicable)
     range: string
     required: true
     multivalued: false
@@ -778,13 +778,13 @@ slot_usage:
     range: string
     required: false
     multivalued: false
-  sequencing:
-    name: sequencing
+  genomeSequencing:
+    name: genomeSequencing
     description: The extent of the pathogen's genetic material that has been sequenced,
       with possible values including "Complete genome" for the entire genome, "Complete
       coding sequence" for all coding regions, and "Partial sequence" for only a portion
       of the genetic material
-    title: sequencing
+    title: genome sequencing
     range: string
     required: true
     multivalued: false
@@ -1020,7 +1020,7 @@ attributes:
     title: letter of authority
     from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
     rank: 1000
-    ifabsent: string(N/A)
+    ifabsent: string(Not applicable)
     alias: letterOfAuthority
     owner: Pathogen
     domain_of:
@@ -1043,19 +1043,18 @@ attributes:
     range: string
     required: false
     multivalued: false
-  sequencing:
-    name: sequencing
+  genomeSequencing:
+    name: genomeSequencing
     description: The extent of the pathogen's genetic material that has been sequenced,
       with possible values including "Complete genome" for the entire genome, "Complete
       coding sequence" for all coding regions, and "Partial sequence" for only a portion
       of the genetic material
-    title: sequencing
+    title: genome sequencing
     from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
     rank: 1000
-    alias: sequencing
+    alias: genomeSequencing
     owner: Pathogen
     domain_of:
-    - Nucleic Acid
     - Pathogen
     range: string
     required: true
@@ -1382,7 +1381,8 @@ attributes:
       GMO
     title: can it be used to produce GMO
     comments:
-    - Set to TRUE if it can produce GMO
+    - Set to TRUE if it can produce GMO. It is recommended to have a value for this
+      field, no value will be understood as unknown
     from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
     rank: 1000
     alias: canItBeUsedToProduceGMO

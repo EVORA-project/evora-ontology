@@ -6720,7 +6720,7 @@ class Pathogen(Product):
     isolationConditions = Column(Text())
     letterOfAuthority = Column(Text(), nullable=False )
     passage = Column(Text())
-    sequencing = Column(Text(), nullable=False )
+    genomeSequencing = Column(Text(), nullable=False )
     titer = Column(Text(), nullable=False )
     shippingConditions = Column(Text(), nullable=False )
     storageConditions = Column(Text(), nullable=False )
@@ -6818,7 +6818,7 @@ class Pathogen(Product):
     
 
     def __repr__(self):
-        return f"Pathogen(id={self.id},cultivability={self.cultivability},clinicalInformation={self.clinicalInformation},identificationTechnique={self.identificationTechnique},infectivity={self.infectivity},infectivityTest={self.infectivityTest},isolationTechnique={self.isolationTechnique},isolationConditions={self.isolationConditions},letterOfAuthority={self.letterOfAuthority},passage={self.passage},sequencing={self.sequencing},titer={self.titer},shippingConditions={self.shippingConditions},storageConditions={self.storageConditions},thirdPartyDistributionConsent={self.thirdPartyDistributionConsent},usageRestrictions={self.usageRestrictions},accessPointURL={self.accessPointURL},refSKU={self.refSKU},unitDefinition={self.unitDefinition},unitCost={self.unitCost},qualityGrading={self.qualityGrading},biosafetyRestrictions={self.biosafetyRestrictions},canItBeUsedToProduceGMO={self.canItBeUsedToProduceGMO},availability={self.availability},technicalRecommendation={self.technicalRecommendation},internalReference={self.internalReference},note={self.note},name={self.name},description={self.description},biologicalMaterialOrigin_id={self.biologicalMaterialOrigin_id},hasIATAClassification_id={self.hasIATAClassification_id},materialSafetyDataSheet_id={self.materialSafetyDataSheet_id},originator_id={self.originator_id},category_id={self.category_id},riskGroup_id={self.riskGroup_id},provider_id={self.provider_id},contactPoint_id={self.contactPoint_id},)"
+        return f"Pathogen(id={self.id},cultivability={self.cultivability},clinicalInformation={self.clinicalInformation},identificationTechnique={self.identificationTechnique},infectivity={self.infectivity},infectivityTest={self.infectivityTest},isolationTechnique={self.isolationTechnique},isolationConditions={self.isolationConditions},letterOfAuthority={self.letterOfAuthority},passage={self.passage},genomeSequencing={self.genomeSequencing},titer={self.titer},shippingConditions={self.shippingConditions},storageConditions={self.storageConditions},thirdPartyDistributionConsent={self.thirdPartyDistributionConsent},usageRestrictions={self.usageRestrictions},accessPointURL={self.accessPointURL},refSKU={self.refSKU},unitDefinition={self.unitDefinition},unitCost={self.unitCost},qualityGrading={self.qualityGrading},biosafetyRestrictions={self.biosafetyRestrictions},canItBeUsedToProduceGMO={self.canItBeUsedToProduceGMO},availability={self.availability},technicalRecommendation={self.technicalRecommendation},internalReference={self.internalReference},note={self.note},name={self.name},description={self.description},biologicalMaterialOrigin_id={self.biologicalMaterialOrigin_id},hasIATAClassification_id={self.hasIATAClassification_id},materialSafetyDataSheet_id={self.materialSafetyDataSheet_id},originator_id={self.originator_id},category_id={self.category_id},riskGroup_id={self.riskGroup_id},provider_id={self.provider_id},contactPoint_id={self.contactPoint_id},)"
 
 
 
@@ -6946,7 +6946,7 @@ class Virus(Pathogen):
     isolationConditions = Column(Text())
     letterOfAuthority = Column(Text(), nullable=False )
     passage = Column(Text())
-    sequencing = Column(Text(), nullable=False )
+    genomeSequencing = Column(Text(), nullable=False )
     titer = Column(Text(), nullable=False )
     shippingConditions = Column(Text(), nullable=False )
     storageConditions = Column(Text(), nullable=False )
@@ -7048,7 +7048,7 @@ class Virus(Pathogen):
     
 
     def __repr__(self):
-        return f"Virus(id={self.id},contaminationWithCoInfectingViruses={self.contaminationWithCoInfectingViruses},mycoplasmicContent={self.mycoplasmicContent},cultivability={self.cultivability},clinicalInformation={self.clinicalInformation},identificationTechnique={self.identificationTechnique},infectivity={self.infectivity},infectivityTest={self.infectivityTest},isolationTechnique={self.isolationTechnique},isolationConditions={self.isolationConditions},letterOfAuthority={self.letterOfAuthority},passage={self.passage},sequencing={self.sequencing},titer={self.titer},shippingConditions={self.shippingConditions},storageConditions={self.storageConditions},thirdPartyDistributionConsent={self.thirdPartyDistributionConsent},usageRestrictions={self.usageRestrictions},accessPointURL={self.accessPointURL},refSKU={self.refSKU},unitDefinition={self.unitDefinition},unitCost={self.unitCost},qualityGrading={self.qualityGrading},biosafetyRestrictions={self.biosafetyRestrictions},canItBeUsedToProduceGMO={self.canItBeUsedToProduceGMO},availability={self.availability},technicalRecommendation={self.technicalRecommendation},internalReference={self.internalReference},note={self.note},name={self.name},description={self.description},biologicalMaterialOrigin_id={self.biologicalMaterialOrigin_id},hasIATAClassification_id={self.hasIATAClassification_id},materialSafetyDataSheet_id={self.materialSafetyDataSheet_id},originator_id={self.originator_id},category_id={self.category_id},riskGroup_id={self.riskGroup_id},provider_id={self.provider_id},contactPoint_id={self.contactPoint_id},)"
+        return f"Virus(id={self.id},contaminationWithCoInfectingViruses={self.contaminationWithCoInfectingViruses},mycoplasmicContent={self.mycoplasmicContent},cultivability={self.cultivability},clinicalInformation={self.clinicalInformation},identificationTechnique={self.identificationTechnique},infectivity={self.infectivity},infectivityTest={self.infectivityTest},isolationTechnique={self.isolationTechnique},isolationConditions={self.isolationConditions},letterOfAuthority={self.letterOfAuthority},passage={self.passage},genomeSequencing={self.genomeSequencing},titer={self.titer},shippingConditions={self.shippingConditions},storageConditions={self.storageConditions},thirdPartyDistributionConsent={self.thirdPartyDistributionConsent},usageRestrictions={self.usageRestrictions},accessPointURL={self.accessPointURL},refSKU={self.refSKU},unitDefinition={self.unitDefinition},unitCost={self.unitCost},qualityGrading={self.qualityGrading},biosafetyRestrictions={self.biosafetyRestrictions},canItBeUsedToProduceGMO={self.canItBeUsedToProduceGMO},availability={self.availability},technicalRecommendation={self.technicalRecommendation},internalReference={self.internalReference},note={self.note},name={self.name},description={self.description},biologicalMaterialOrigin_id={self.biologicalMaterialOrigin_id},hasIATAClassification_id={self.hasIATAClassification_id},materialSafetyDataSheet_id={self.materialSafetyDataSheet_id},originator_id={self.originator_id},category_id={self.category_id},riskGroup_id={self.riskGroup_id},provider_id={self.provider_id},contactPoint_id={self.contactPoint_id},)"
 
 
 
@@ -7076,7 +7076,7 @@ class Bacterium(Pathogen):
     isolationConditions = Column(Text())
     letterOfAuthority = Column(Text(), nullable=False )
     passage = Column(Text())
-    sequencing = Column(Text(), nullable=False )
+    genomeSequencing = Column(Text(), nullable=False )
     titer = Column(Text(), nullable=False )
     shippingConditions = Column(Text(), nullable=False )
     storageConditions = Column(Text(), nullable=False )
@@ -7174,7 +7174,7 @@ class Bacterium(Pathogen):
     
 
     def __repr__(self):
-        return f"Bacterium(id={self.id},cultivability={self.cultivability},clinicalInformation={self.clinicalInformation},identificationTechnique={self.identificationTechnique},infectivity={self.infectivity},infectivityTest={self.infectivityTest},isolationTechnique={self.isolationTechnique},isolationConditions={self.isolationConditions},letterOfAuthority={self.letterOfAuthority},passage={self.passage},sequencing={self.sequencing},titer={self.titer},shippingConditions={self.shippingConditions},storageConditions={self.storageConditions},thirdPartyDistributionConsent={self.thirdPartyDistributionConsent},usageRestrictions={self.usageRestrictions},accessPointURL={self.accessPointURL},refSKU={self.refSKU},unitDefinition={self.unitDefinition},unitCost={self.unitCost},qualityGrading={self.qualityGrading},biosafetyRestrictions={self.biosafetyRestrictions},canItBeUsedToProduceGMO={self.canItBeUsedToProduceGMO},availability={self.availability},technicalRecommendation={self.technicalRecommendation},internalReference={self.internalReference},note={self.note},name={self.name},description={self.description},biologicalMaterialOrigin_id={self.biologicalMaterialOrigin_id},hasIATAClassification_id={self.hasIATAClassification_id},materialSafetyDataSheet_id={self.materialSafetyDataSheet_id},originator_id={self.originator_id},category_id={self.category_id},riskGroup_id={self.riskGroup_id},provider_id={self.provider_id},contactPoint_id={self.contactPoint_id},)"
+        return f"Bacterium(id={self.id},cultivability={self.cultivability},clinicalInformation={self.clinicalInformation},identificationTechnique={self.identificationTechnique},infectivity={self.infectivity},infectivityTest={self.infectivityTest},isolationTechnique={self.isolationTechnique},isolationConditions={self.isolationConditions},letterOfAuthority={self.letterOfAuthority},passage={self.passage},genomeSequencing={self.genomeSequencing},titer={self.titer},shippingConditions={self.shippingConditions},storageConditions={self.storageConditions},thirdPartyDistributionConsent={self.thirdPartyDistributionConsent},usageRestrictions={self.usageRestrictions},accessPointURL={self.accessPointURL},refSKU={self.refSKU},unitDefinition={self.unitDefinition},unitCost={self.unitCost},qualityGrading={self.qualityGrading},biosafetyRestrictions={self.biosafetyRestrictions},canItBeUsedToProduceGMO={self.canItBeUsedToProduceGMO},availability={self.availability},technicalRecommendation={self.technicalRecommendation},internalReference={self.internalReference},note={self.note},name={self.name},description={self.description},biologicalMaterialOrigin_id={self.biologicalMaterialOrigin_id},hasIATAClassification_id={self.hasIATAClassification_id},materialSafetyDataSheet_id={self.materialSafetyDataSheet_id},originator_id={self.originator_id},category_id={self.category_id},riskGroup_id={self.riskGroup_id},provider_id={self.provider_id},contactPoint_id={self.contactPoint_id},)"
 
 
 
@@ -7202,7 +7202,7 @@ class Fungus(Pathogen):
     isolationConditions = Column(Text())
     letterOfAuthority = Column(Text(), nullable=False )
     passage = Column(Text())
-    sequencing = Column(Text(), nullable=False )
+    genomeSequencing = Column(Text(), nullable=False )
     titer = Column(Text(), nullable=False )
     shippingConditions = Column(Text(), nullable=False )
     storageConditions = Column(Text(), nullable=False )
@@ -7300,7 +7300,7 @@ class Fungus(Pathogen):
     
 
     def __repr__(self):
-        return f"Fungus(id={self.id},cultivability={self.cultivability},clinicalInformation={self.clinicalInformation},identificationTechnique={self.identificationTechnique},infectivity={self.infectivity},infectivityTest={self.infectivityTest},isolationTechnique={self.isolationTechnique},isolationConditions={self.isolationConditions},letterOfAuthority={self.letterOfAuthority},passage={self.passage},sequencing={self.sequencing},titer={self.titer},shippingConditions={self.shippingConditions},storageConditions={self.storageConditions},thirdPartyDistributionConsent={self.thirdPartyDistributionConsent},usageRestrictions={self.usageRestrictions},accessPointURL={self.accessPointURL},refSKU={self.refSKU},unitDefinition={self.unitDefinition},unitCost={self.unitCost},qualityGrading={self.qualityGrading},biosafetyRestrictions={self.biosafetyRestrictions},canItBeUsedToProduceGMO={self.canItBeUsedToProduceGMO},availability={self.availability},technicalRecommendation={self.technicalRecommendation},internalReference={self.internalReference},note={self.note},name={self.name},description={self.description},biologicalMaterialOrigin_id={self.biologicalMaterialOrigin_id},hasIATAClassification_id={self.hasIATAClassification_id},materialSafetyDataSheet_id={self.materialSafetyDataSheet_id},originator_id={self.originator_id},category_id={self.category_id},riskGroup_id={self.riskGroup_id},provider_id={self.provider_id},contactPoint_id={self.contactPoint_id},)"
+        return f"Fungus(id={self.id},cultivability={self.cultivability},clinicalInformation={self.clinicalInformation},identificationTechnique={self.identificationTechnique},infectivity={self.infectivity},infectivityTest={self.infectivityTest},isolationTechnique={self.isolationTechnique},isolationConditions={self.isolationConditions},letterOfAuthority={self.letterOfAuthority},passage={self.passage},genomeSequencing={self.genomeSequencing},titer={self.titer},shippingConditions={self.shippingConditions},storageConditions={self.storageConditions},thirdPartyDistributionConsent={self.thirdPartyDistributionConsent},usageRestrictions={self.usageRestrictions},accessPointURL={self.accessPointURL},refSKU={self.refSKU},unitDefinition={self.unitDefinition},unitCost={self.unitCost},qualityGrading={self.qualityGrading},biosafetyRestrictions={self.biosafetyRestrictions},canItBeUsedToProduceGMO={self.canItBeUsedToProduceGMO},availability={self.availability},technicalRecommendation={self.technicalRecommendation},internalReference={self.internalReference},note={self.note},name={self.name},description={self.description},biologicalMaterialOrigin_id={self.biologicalMaterialOrigin_id},hasIATAClassification_id={self.hasIATAClassification_id},materialSafetyDataSheet_id={self.materialSafetyDataSheet_id},originator_id={self.originator_id},category_id={self.category_id},riskGroup_id={self.riskGroup_id},provider_id={self.provider_id},contactPoint_id={self.contactPoint_id},)"
 
 
 
@@ -7328,7 +7328,7 @@ class Protozoan(Pathogen):
     isolationConditions = Column(Text())
     letterOfAuthority = Column(Text(), nullable=False )
     passage = Column(Text())
-    sequencing = Column(Text(), nullable=False )
+    genomeSequencing = Column(Text(), nullable=False )
     titer = Column(Text(), nullable=False )
     shippingConditions = Column(Text(), nullable=False )
     storageConditions = Column(Text(), nullable=False )
@@ -7426,7 +7426,7 @@ class Protozoan(Pathogen):
     
 
     def __repr__(self):
-        return f"Protozoan(id={self.id},cultivability={self.cultivability},clinicalInformation={self.clinicalInformation},identificationTechnique={self.identificationTechnique},infectivity={self.infectivity},infectivityTest={self.infectivityTest},isolationTechnique={self.isolationTechnique},isolationConditions={self.isolationConditions},letterOfAuthority={self.letterOfAuthority},passage={self.passage},sequencing={self.sequencing},titer={self.titer},shippingConditions={self.shippingConditions},storageConditions={self.storageConditions},thirdPartyDistributionConsent={self.thirdPartyDistributionConsent},usageRestrictions={self.usageRestrictions},accessPointURL={self.accessPointURL},refSKU={self.refSKU},unitDefinition={self.unitDefinition},unitCost={self.unitCost},qualityGrading={self.qualityGrading},biosafetyRestrictions={self.biosafetyRestrictions},canItBeUsedToProduceGMO={self.canItBeUsedToProduceGMO},availability={self.availability},technicalRecommendation={self.technicalRecommendation},internalReference={self.internalReference},note={self.note},name={self.name},description={self.description},biologicalMaterialOrigin_id={self.biologicalMaterialOrigin_id},hasIATAClassification_id={self.hasIATAClassification_id},materialSafetyDataSheet_id={self.materialSafetyDataSheet_id},originator_id={self.originator_id},category_id={self.category_id},riskGroup_id={self.riskGroup_id},provider_id={self.provider_id},contactPoint_id={self.contactPoint_id},)"
+        return f"Protozoan(id={self.id},cultivability={self.cultivability},clinicalInformation={self.clinicalInformation},identificationTechnique={self.identificationTechnique},infectivity={self.infectivity},infectivityTest={self.infectivityTest},isolationTechnique={self.isolationTechnique},isolationConditions={self.isolationConditions},letterOfAuthority={self.letterOfAuthority},passage={self.passage},genomeSequencing={self.genomeSequencing},titer={self.titer},shippingConditions={self.shippingConditions},storageConditions={self.storageConditions},thirdPartyDistributionConsent={self.thirdPartyDistributionConsent},usageRestrictions={self.usageRestrictions},accessPointURL={self.accessPointURL},refSKU={self.refSKU},unitDefinition={self.unitDefinition},unitCost={self.unitCost},qualityGrading={self.qualityGrading},biosafetyRestrictions={self.biosafetyRestrictions},canItBeUsedToProduceGMO={self.canItBeUsedToProduceGMO},availability={self.availability},technicalRecommendation={self.technicalRecommendation},internalReference={self.internalReference},note={self.note},name={self.name},description={self.description},biologicalMaterialOrigin_id={self.biologicalMaterialOrigin_id},hasIATAClassification_id={self.hasIATAClassification_id},materialSafetyDataSheet_id={self.materialSafetyDataSheet_id},originator_id={self.originator_id},category_id={self.category_id},riskGroup_id={self.riskGroup_id},provider_id={self.provider_id},contactPoint_id={self.contactPoint_id},)"
 
 
 
@@ -7454,7 +7454,7 @@ class Viroid(Pathogen):
     isolationConditions = Column(Text())
     letterOfAuthority = Column(Text(), nullable=False )
     passage = Column(Text())
-    sequencing = Column(Text(), nullable=False )
+    genomeSequencing = Column(Text(), nullable=False )
     titer = Column(Text(), nullable=False )
     shippingConditions = Column(Text(), nullable=False )
     storageConditions = Column(Text(), nullable=False )
@@ -7552,7 +7552,7 @@ class Viroid(Pathogen):
     
 
     def __repr__(self):
-        return f"Viroid(id={self.id},cultivability={self.cultivability},clinicalInformation={self.clinicalInformation},identificationTechnique={self.identificationTechnique},infectivity={self.infectivity},infectivityTest={self.infectivityTest},isolationTechnique={self.isolationTechnique},isolationConditions={self.isolationConditions},letterOfAuthority={self.letterOfAuthority},passage={self.passage},sequencing={self.sequencing},titer={self.titer},shippingConditions={self.shippingConditions},storageConditions={self.storageConditions},thirdPartyDistributionConsent={self.thirdPartyDistributionConsent},usageRestrictions={self.usageRestrictions},accessPointURL={self.accessPointURL},refSKU={self.refSKU},unitDefinition={self.unitDefinition},unitCost={self.unitCost},qualityGrading={self.qualityGrading},biosafetyRestrictions={self.biosafetyRestrictions},canItBeUsedToProduceGMO={self.canItBeUsedToProduceGMO},availability={self.availability},technicalRecommendation={self.technicalRecommendation},internalReference={self.internalReference},note={self.note},name={self.name},description={self.description},biologicalMaterialOrigin_id={self.biologicalMaterialOrigin_id},hasIATAClassification_id={self.hasIATAClassification_id},materialSafetyDataSheet_id={self.materialSafetyDataSheet_id},originator_id={self.originator_id},category_id={self.category_id},riskGroup_id={self.riskGroup_id},provider_id={self.provider_id},contactPoint_id={self.contactPoint_id},)"
+        return f"Viroid(id={self.id},cultivability={self.cultivability},clinicalInformation={self.clinicalInformation},identificationTechnique={self.identificationTechnique},infectivity={self.infectivity},infectivityTest={self.infectivityTest},isolationTechnique={self.isolationTechnique},isolationConditions={self.isolationConditions},letterOfAuthority={self.letterOfAuthority},passage={self.passage},genomeSequencing={self.genomeSequencing},titer={self.titer},shippingConditions={self.shippingConditions},storageConditions={self.storageConditions},thirdPartyDistributionConsent={self.thirdPartyDistributionConsent},usageRestrictions={self.usageRestrictions},accessPointURL={self.accessPointURL},refSKU={self.refSKU},unitDefinition={self.unitDefinition},unitCost={self.unitCost},qualityGrading={self.qualityGrading},biosafetyRestrictions={self.biosafetyRestrictions},canItBeUsedToProduceGMO={self.canItBeUsedToProduceGMO},availability={self.availability},technicalRecommendation={self.technicalRecommendation},internalReference={self.internalReference},note={self.note},name={self.name},description={self.description},biologicalMaterialOrigin_id={self.biologicalMaterialOrigin_id},hasIATAClassification_id={self.hasIATAClassification_id},materialSafetyDataSheet_id={self.materialSafetyDataSheet_id},originator_id={self.originator_id},category_id={self.category_id},riskGroup_id={self.riskGroup_id},provider_id={self.provider_id},contactPoint_id={self.contactPoint_id},)"
 
 
 
@@ -7580,7 +7580,7 @@ class Prion(Pathogen):
     isolationConditions = Column(Text())
     letterOfAuthority = Column(Text(), nullable=False )
     passage = Column(Text())
-    sequencing = Column(Text(), nullable=False )
+    genomeSequencing = Column(Text(), nullable=False )
     titer = Column(Text(), nullable=False )
     shippingConditions = Column(Text(), nullable=False )
     storageConditions = Column(Text(), nullable=False )
@@ -7678,7 +7678,7 @@ class Prion(Pathogen):
     
 
     def __repr__(self):
-        return f"Prion(id={self.id},cultivability={self.cultivability},clinicalInformation={self.clinicalInformation},identificationTechnique={self.identificationTechnique},infectivity={self.infectivity},infectivityTest={self.infectivityTest},isolationTechnique={self.isolationTechnique},isolationConditions={self.isolationConditions},letterOfAuthority={self.letterOfAuthority},passage={self.passage},sequencing={self.sequencing},titer={self.titer},shippingConditions={self.shippingConditions},storageConditions={self.storageConditions},thirdPartyDistributionConsent={self.thirdPartyDistributionConsent},usageRestrictions={self.usageRestrictions},accessPointURL={self.accessPointURL},refSKU={self.refSKU},unitDefinition={self.unitDefinition},unitCost={self.unitCost},qualityGrading={self.qualityGrading},biosafetyRestrictions={self.biosafetyRestrictions},canItBeUsedToProduceGMO={self.canItBeUsedToProduceGMO},availability={self.availability},technicalRecommendation={self.technicalRecommendation},internalReference={self.internalReference},note={self.note},name={self.name},description={self.description},biologicalMaterialOrigin_id={self.biologicalMaterialOrigin_id},hasIATAClassification_id={self.hasIATAClassification_id},materialSafetyDataSheet_id={self.materialSafetyDataSheet_id},originator_id={self.originator_id},category_id={self.category_id},riskGroup_id={self.riskGroup_id},provider_id={self.provider_id},contactPoint_id={self.contactPoint_id},)"
+        return f"Prion(id={self.id},cultivability={self.cultivability},clinicalInformation={self.clinicalInformation},identificationTechnique={self.identificationTechnique},infectivity={self.infectivity},infectivityTest={self.infectivityTest},isolationTechnique={self.isolationTechnique},isolationConditions={self.isolationConditions},letterOfAuthority={self.letterOfAuthority},passage={self.passage},genomeSequencing={self.genomeSequencing},titer={self.titer},shippingConditions={self.shippingConditions},storageConditions={self.storageConditions},thirdPartyDistributionConsent={self.thirdPartyDistributionConsent},usageRestrictions={self.usageRestrictions},accessPointURL={self.accessPointURL},refSKU={self.refSKU},unitDefinition={self.unitDefinition},unitCost={self.unitCost},qualityGrading={self.qualityGrading},biosafetyRestrictions={self.biosafetyRestrictions},canItBeUsedToProduceGMO={self.canItBeUsedToProduceGMO},availability={self.availability},technicalRecommendation={self.technicalRecommendation},internalReference={self.internalReference},note={self.note},name={self.name},description={self.description},biologicalMaterialOrigin_id={self.biologicalMaterialOrigin_id},hasIATAClassification_id={self.hasIATAClassification_id},materialSafetyDataSheet_id={self.materialSafetyDataSheet_id},originator_id={self.originator_id},category_id={self.category_id},riskGroup_id={self.riskGroup_id},provider_id={self.provider_id},contactPoint_id={self.contactPoint_id},)"
 
 
 

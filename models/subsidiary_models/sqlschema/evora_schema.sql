@@ -570,7 +570,7 @@
 --     * Slot: isolationConditions Description: The environmental and procedural conditions under which the pathogen was isolated
 --     * Slot: letterOfAuthority Description: Indicate whether a Letter of Authority is required, confirming the necessity of formal authorization. The possible values are "N/A", "NOT Required", "Required for customers in the EU" or "Required"
 --     * Slot: passage Description: The number of times the pathogen was cultured through serial passage, a process used to increase the stock but which can also lead to the evolution of the original pathogen.
---     * Slot: sequencing Description: The extent of the pathogen's genetic material that has been sequenced, with possible values including "Complete genome" for the entire genome, "Complete coding sequence" for all coding regions, and "Partial sequence" for only a portion of the genetic material
+--     * Slot: genomeSequencing Description: The extent of the pathogen's genetic material that has been sequenced, with possible values including "Complete genome" for the entire genome, "Complete coding sequence" for all coding regions, and "Partial sequence" for only a portion of the genetic material
 --     * Slot: titer Description: The titer value, its corresponding unit, and the method of quantification (e.g., RT-qPCR, TCID50), representing the concentration or amount of unit present in the sample. The titer corresponds to the highest dilution factor that still yields a positive reading
 --     * Slot: shippingConditions Description: Specification of the terms and parameters for transporting
 --     * Slot: storageConditions Description: Specifies the conditions under which the product has to be stored to maintain stability and integrity, such as temperature, buffer, and other environmental factors.
@@ -610,7 +610,7 @@
 --     * Slot: isolationConditions Description: The environmental and procedural conditions under which the pathogen was isolated
 --     * Slot: letterOfAuthority Description: Indicate whether a Letter of Authority is required, confirming the necessity of formal authorization. The possible values are "N/A", "NOT Required", "Required for customers in the EU" or "Required"
 --     * Slot: passage Description: The number of times the pathogen was cultured through serial passage, a process used to increase the stock but which can also lead to the evolution of the original pathogen.
---     * Slot: sequencing Description: The extent of the pathogen's genetic material that has been sequenced, with possible values including "Complete genome" for the entire genome, "Complete coding sequence" for all coding regions, and "Partial sequence" for only a portion of the genetic material
+--     * Slot: genomeSequencing Description: The extent of the pathogen's genetic material that has been sequenced, with possible values including "Complete genome" for the entire genome, "Complete coding sequence" for all coding regions, and "Partial sequence" for only a portion of the genetic material
 --     * Slot: titer Description: The titer value, its corresponding unit, and the method of quantification (e.g., RT-qPCR, TCID50), representing the concentration or amount of unit present in the sample. The titer corresponds to the highest dilution factor that still yields a positive reading
 --     * Slot: shippingConditions Description: Specification of the terms and parameters for transporting
 --     * Slot: storageConditions Description: Specifies the conditions under which the product has to be stored to maintain stability and integrity, such as temperature, buffer, and other environmental factors.
@@ -648,7 +648,7 @@
 --     * Slot: isolationConditions Description: The environmental and procedural conditions under which the pathogen was isolated
 --     * Slot: letterOfAuthority Description: Indicate whether a Letter of Authority is required, confirming the necessity of formal authorization. The possible values are "N/A", "NOT Required", "Required for customers in the EU" or "Required"
 --     * Slot: passage Description: The number of times the pathogen was cultured through serial passage, a process used to increase the stock but which can also lead to the evolution of the original pathogen.
---     * Slot: sequencing Description: The extent of the pathogen's genetic material that has been sequenced, with possible values including "Complete genome" for the entire genome, "Complete coding sequence" for all coding regions, and "Partial sequence" for only a portion of the genetic material
+--     * Slot: genomeSequencing Description: The extent of the pathogen's genetic material that has been sequenced, with possible values including "Complete genome" for the entire genome, "Complete coding sequence" for all coding regions, and "Partial sequence" for only a portion of the genetic material
 --     * Slot: titer Description: The titer value, its corresponding unit, and the method of quantification (e.g., RT-qPCR, TCID50), representing the concentration or amount of unit present in the sample. The titer corresponds to the highest dilution factor that still yields a positive reading
 --     * Slot: shippingConditions Description: Specification of the terms and parameters for transporting
 --     * Slot: storageConditions Description: Specifies the conditions under which the product has to be stored to maintain stability and integrity, such as temperature, buffer, and other environmental factors.
@@ -686,7 +686,7 @@
 --     * Slot: isolationConditions Description: The environmental and procedural conditions under which the pathogen was isolated
 --     * Slot: letterOfAuthority Description: Indicate whether a Letter of Authority is required, confirming the necessity of formal authorization. The possible values are "N/A", "NOT Required", "Required for customers in the EU" or "Required"
 --     * Slot: passage Description: The number of times the pathogen was cultured through serial passage, a process used to increase the stock but which can also lead to the evolution of the original pathogen.
---     * Slot: sequencing Description: The extent of the pathogen's genetic material that has been sequenced, with possible values including "Complete genome" for the entire genome, "Complete coding sequence" for all coding regions, and "Partial sequence" for only a portion of the genetic material
+--     * Slot: genomeSequencing Description: The extent of the pathogen's genetic material that has been sequenced, with possible values including "Complete genome" for the entire genome, "Complete coding sequence" for all coding regions, and "Partial sequence" for only a portion of the genetic material
 --     * Slot: titer Description: The titer value, its corresponding unit, and the method of quantification (e.g., RT-qPCR, TCID50), representing the concentration or amount of unit present in the sample. The titer corresponds to the highest dilution factor that still yields a positive reading
 --     * Slot: shippingConditions Description: Specification of the terms and parameters for transporting
 --     * Slot: storageConditions Description: Specifies the conditions under which the product has to be stored to maintain stability and integrity, such as temperature, buffer, and other environmental factors.
@@ -724,7 +724,7 @@
 --     * Slot: isolationConditions Description: The environmental and procedural conditions under which the pathogen was isolated
 --     * Slot: letterOfAuthority Description: Indicate whether a Letter of Authority is required, confirming the necessity of formal authorization. The possible values are "N/A", "NOT Required", "Required for customers in the EU" or "Required"
 --     * Slot: passage Description: The number of times the pathogen was cultured through serial passage, a process used to increase the stock but which can also lead to the evolution of the original pathogen.
---     * Slot: sequencing Description: The extent of the pathogen's genetic material that has been sequenced, with possible values including "Complete genome" for the entire genome, "Complete coding sequence" for all coding regions, and "Partial sequence" for only a portion of the genetic material
+--     * Slot: genomeSequencing Description: The extent of the pathogen's genetic material that has been sequenced, with possible values including "Complete genome" for the entire genome, "Complete coding sequence" for all coding regions, and "Partial sequence" for only a portion of the genetic material
 --     * Slot: titer Description: The titer value, its corresponding unit, and the method of quantification (e.g., RT-qPCR, TCID50), representing the concentration or amount of unit present in the sample. The titer corresponds to the highest dilution factor that still yields a positive reading
 --     * Slot: shippingConditions Description: Specification of the terms and parameters for transporting
 --     * Slot: storageConditions Description: Specifies the conditions under which the product has to be stored to maintain stability and integrity, such as temperature, buffer, and other environmental factors.
@@ -762,7 +762,7 @@
 --     * Slot: isolationConditions Description: The environmental and procedural conditions under which the pathogen was isolated
 --     * Slot: letterOfAuthority Description: Indicate whether a Letter of Authority is required, confirming the necessity of formal authorization. The possible values are "N/A", "NOT Required", "Required for customers in the EU" or "Required"
 --     * Slot: passage Description: The number of times the pathogen was cultured through serial passage, a process used to increase the stock but which can also lead to the evolution of the original pathogen.
---     * Slot: sequencing Description: The extent of the pathogen's genetic material that has been sequenced, with possible values including "Complete genome" for the entire genome, "Complete coding sequence" for all coding regions, and "Partial sequence" for only a portion of the genetic material
+--     * Slot: genomeSequencing Description: The extent of the pathogen's genetic material that has been sequenced, with possible values including "Complete genome" for the entire genome, "Complete coding sequence" for all coding regions, and "Partial sequence" for only a portion of the genetic material
 --     * Slot: titer Description: The titer value, its corresponding unit, and the method of quantification (e.g., RT-qPCR, TCID50), representing the concentration or amount of unit present in the sample. The titer corresponds to the highest dilution factor that still yields a positive reading
 --     * Slot: shippingConditions Description: Specification of the terms and parameters for transporting
 --     * Slot: storageConditions Description: Specifies the conditions under which the product has to be stored to maintain stability and integrity, such as temperature, buffer, and other environmental factors.
@@ -800,7 +800,7 @@
 --     * Slot: isolationConditions Description: The environmental and procedural conditions under which the pathogen was isolated
 --     * Slot: letterOfAuthority Description: Indicate whether a Letter of Authority is required, confirming the necessity of formal authorization. The possible values are "N/A", "NOT Required", "Required for customers in the EU" or "Required"
 --     * Slot: passage Description: The number of times the pathogen was cultured through serial passage, a process used to increase the stock but which can also lead to the evolution of the original pathogen.
---     * Slot: sequencing Description: The extent of the pathogen's genetic material that has been sequenced, with possible values including "Complete genome" for the entire genome, "Complete coding sequence" for all coding regions, and "Partial sequence" for only a portion of the genetic material
+--     * Slot: genomeSequencing Description: The extent of the pathogen's genetic material that has been sequenced, with possible values including "Complete genome" for the entire genome, "Complete coding sequence" for all coding regions, and "Partial sequence" for only a portion of the genetic material
 --     * Slot: titer Description: The titer value, its corresponding unit, and the method of quantification (e.g., RT-qPCR, TCID50), representing the concentration or amount of unit present in the sample. The titer corresponds to the highest dilution factor that still yields a positive reading
 --     * Slot: shippingConditions Description: Specification of the terms and parameters for transporting
 --     * Slot: storageConditions Description: Specifies the conditions under which the product has to be stored to maintain stability and integrity, such as temperature, buffer, and other environmental factors.
@@ -2660,7 +2660,7 @@ CREATE TABLE "Pathogen" (
 	"isolationConditions" TEXT, 
 	"letterOfAuthority" TEXT NOT NULL, 
 	passage TEXT, 
-	sequencing TEXT NOT NULL, 
+	"genomeSequencing" TEXT NOT NULL, 
 	titer TEXT NOT NULL, 
 	"shippingConditions" TEXT NOT NULL, 
 	"storageConditions" TEXT NOT NULL, 
@@ -2710,7 +2710,7 @@ CREATE TABLE "Virus" (
 	"isolationConditions" TEXT, 
 	"letterOfAuthority" TEXT NOT NULL, 
 	passage TEXT, 
-	sequencing TEXT NOT NULL, 
+	"genomeSequencing" TEXT NOT NULL, 
 	titer TEXT NOT NULL, 
 	"shippingConditions" TEXT NOT NULL, 
 	"storageConditions" TEXT NOT NULL, 
@@ -2758,7 +2758,7 @@ CREATE TABLE "Bacterium" (
 	"isolationConditions" TEXT, 
 	"letterOfAuthority" TEXT NOT NULL, 
 	passage TEXT, 
-	sequencing TEXT NOT NULL, 
+	"genomeSequencing" TEXT NOT NULL, 
 	titer TEXT NOT NULL, 
 	"shippingConditions" TEXT NOT NULL, 
 	"storageConditions" TEXT NOT NULL, 
@@ -2806,7 +2806,7 @@ CREATE TABLE "Fungus" (
 	"isolationConditions" TEXT, 
 	"letterOfAuthority" TEXT NOT NULL, 
 	passage TEXT, 
-	sequencing TEXT NOT NULL, 
+	"genomeSequencing" TEXT NOT NULL, 
 	titer TEXT NOT NULL, 
 	"shippingConditions" TEXT NOT NULL, 
 	"storageConditions" TEXT NOT NULL, 
@@ -2854,7 +2854,7 @@ CREATE TABLE "Protozoan" (
 	"isolationConditions" TEXT, 
 	"letterOfAuthority" TEXT NOT NULL, 
 	passage TEXT, 
-	sequencing TEXT NOT NULL, 
+	"genomeSequencing" TEXT NOT NULL, 
 	titer TEXT NOT NULL, 
 	"shippingConditions" TEXT NOT NULL, 
 	"storageConditions" TEXT NOT NULL, 
@@ -2902,7 +2902,7 @@ CREATE TABLE "Viroid" (
 	"isolationConditions" TEXT, 
 	"letterOfAuthority" TEXT NOT NULL, 
 	passage TEXT, 
-	sequencing TEXT NOT NULL, 
+	"genomeSequencing" TEXT NOT NULL, 
 	titer TEXT NOT NULL, 
 	"shippingConditions" TEXT NOT NULL, 
 	"storageConditions" TEXT NOT NULL, 
@@ -2950,7 +2950,7 @@ CREATE TABLE "Prion" (
 	"isolationConditions" TEXT, 
 	"letterOfAuthority" TEXT NOT NULL, 
 	passage TEXT, 
-	sequencing TEXT NOT NULL, 
+	"genomeSequencing" TEXT NOT NULL, 
 	titer TEXT NOT NULL, 
 	"shippingConditions" TEXT NOT NULL, 
 	"storageConditions" TEXT NOT NULL, 

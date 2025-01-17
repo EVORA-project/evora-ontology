@@ -436,7 +436,8 @@ slot_usage:
       GMO
     title: can it be used to produce GMO
     comments:
-    - Set to TRUE if it can produce GMO
+    - Set to TRUE if it can produce GMO. It is recommended to have a value for this
+      field, no value will be understood as unknown
     range: boolean
     required: false
     recommended: true
@@ -682,7 +683,8 @@ slot_usage:
       GMO
     title: can it be used to produce GMO
     comments:
-    - Set to TRUE if it can produce GMO
+    - Set to TRUE if it can produce GMO. It is recommended to have a value for this
+      field, no value will be understood as unknown
     range: boolean
     required: false
     recommended: true
@@ -979,7 +981,8 @@ attributes:
       GMO
     title: can it be used to produce GMO
     comments:
-    - Set to TRUE if it can produce GMO
+    - Set to TRUE if it can produce GMO. It is recommended to have a value for this
+      field, no value will be understood as unknown
     from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
     rank: 1000
     alias: canItBeUsedToProduceGMO

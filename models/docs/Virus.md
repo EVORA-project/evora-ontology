@@ -120,6 +120,8 @@ URI: [EVORAO:Virus](https://raw.githubusercontent.com/EVORA-project/evora-ontolo
     click ExternalRelatedReference href "../ExternalRelatedReference"
 
         
+      Virus : genomeSequencing
+        
       Virus : hasIATAClassification
         
           
@@ -263,8 +265,6 @@ URI: [EVORAO:Virus](https://raw.githubusercontent.com/EVORA-project/evora-ontolo
     click Sequence href "../Sequence"
 
         
-      Virus : sequencing
-        
       Virus : shippingConditions
         
       Virus : storageConditions
@@ -339,7 +339,7 @@ URI: [EVORAO:Virus](https://raw.githubusercontent.com/EVORA-project/evora-ontolo
 | [isolationConditions](isolationConditions.md) | 0..1 <br/> [String](String.md) | The environmental and procedural conditions under which the pathogen was isol... | [Pathogen](Pathogen.md) |
 | [letterOfAuthority](letterOfAuthority.md) | 1 <br/> [String](String.md) | Indicate whether a Letter of Authority is required, confirming the necessity ... | [Pathogen](Pathogen.md) |
 | [passage](passage.md) | 0..1 <br/> [String](String.md) | The number of times the pathogen was cultured through serial passage, a proce... | [Pathogen](Pathogen.md) |
-| [sequencing](sequencing.md) | 1 <br/> [String](String.md) | The extent of the pathogen's genetic material that has been sequenced, with p... | [Pathogen](Pathogen.md) |
+| [genomeSequencing](genomeSequencing.md) | 1 <br/> [String](String.md) | The extent of the pathogen's genetic material that has been sequenced, with p... | [Pathogen](Pathogen.md) |
 | [titer](titer.md) | 1 <br/> [String](String.md) | The titer value, its corresponding unit, and the method of quantification (e | [Pathogen](Pathogen.md) |
 | [hasIATAClassification](hasIATAClassification.md) | 1 <br/> [IATAClassification](IATAClassification.md) | The corresponding International Air Transport Association (IATA)'s category f... | [Product](Product.md) |
 | [shippingConditions](shippingConditions.md) | 1 <br/> [String](String.md) | Specification of the terms and parameters for transporting | [Product](Product.md) |
@@ -762,7 +762,7 @@ attributes:
     title: letter of authority
     from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
     rank: 1000
-    ifabsent: string(N/A)
+    ifabsent: string(Not applicable)
     alias: letterOfAuthority
     owner: Virus
     domain_of:
@@ -785,19 +785,18 @@ attributes:
     range: string
     required: false
     multivalued: false
-  sequencing:
-    name: sequencing
+  genomeSequencing:
+    name: genomeSequencing
     description: The extent of the pathogen's genetic material that has been sequenced,
       with possible values including "Complete genome" for the entire genome, "Complete
       coding sequence" for all coding regions, and "Partial sequence" for only a portion
       of the genetic material
-    title: sequencing
+    title: genome sequencing
     from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
     rank: 1000
-    alias: sequencing
+    alias: genomeSequencing
     owner: Virus
     domain_of:
-    - Nucleic Acid
     - Pathogen
     range: string
     required: true
@@ -1124,7 +1123,8 @@ attributes:
       GMO
     title: can it be used to produce GMO
     comments:
-    - Set to TRUE if it can produce GMO
+    - Set to TRUE if it can produce GMO. It is recommended to have a value for this
+      field, no value will be understood as unknown
     from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
     rank: 1000
     alias: canItBeUsedToProduceGMO

@@ -26,11 +26,11 @@ SELECT
   ?subject
   ?predicate WHERE {
  GRAPH ?graph {
-  ?subject rdf:type EVORAO:Prion .
-  FILTER NOT EXISTS { ?subject  EVORAO:sequencing ?o  }
+  ?subject rdf:type EVORAO:Protozoan .
+  FILTER NOT EXISTS { ?subject  EVORAO:genomeSequencing ?o  }
  }
  VALUES ?check { linkml:required }
- VALUES ?predicate { EVORAO:sequencing }
+ VALUES ?predicate { EVORAO:genomeSequencing }
  
 }  
 

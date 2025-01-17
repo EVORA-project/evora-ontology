@@ -1,7 +1,7 @@
  syntax="proto3";
  package
 // metamodel_version: 1.7.0
-// version: 1.0.7504
+// version: 1.0.7785
 // List of alternate names for things
 message AlternateName
  {
@@ -115,7 +115,7 @@ message Bacterium
   string isolationConditions = 0
   string letterOfAuthority = 0
   string passage = 0
-  string sequencing = 0
+  string genomeSequencing = 0
   string titer = 0
  }
 // Information about the origin of the biological material, compulsory for access, utilization, and benefit-sharing of genetic resources in compliance with the Nagoya Protocol
@@ -234,7 +234,7 @@ message DataProvider
   uri queryURL = 0
   string queryMethod = 0
   string contentType = 0
-  string providedEntityType = 0
+  uri providedEntityType = 0
   integer weight = 0
  }
 // A detection kit for specific pathogens
@@ -363,7 +363,7 @@ message Fungus
   string isolationConditions = 0
   string letterOfAuthority = 0
   string passage = 0
-  string sequencing = 0
+  string genomeSequencing = 0
   string titer = 0
  }
 // The specific location or region where a physical item, originates or is naturally found
@@ -678,7 +678,7 @@ message Prion
   string isolationConditions = 0
   string letterOfAuthority = 0
   string passage = 0
-  string sequencing = 0
+  string genomeSequencing = 0
   string titer = 0
  }
 // A product
@@ -854,7 +854,7 @@ message Protozoan
   string isolationConditions = 0
   string letterOfAuthority = 0
   string passage = 0
-  string sequencing = 0
+  string genomeSequencing = 0
   string titer = 0
  }
 // A provider of products or services, as a specific organization
@@ -1084,7 +1084,7 @@ message Viroid
   string isolationConditions = 0
   string letterOfAuthority = 0
   string passage = 0
-  string sequencing = 0
+  string genomeSequencing = 0
   string titer = 0
  }
 // The virus as a biological material
@@ -1139,7 +1139,7 @@ message Virus
   string isolationConditions = 0
   string letterOfAuthority = 0
   string passage = 0
-  string sequencing = 0
+  string genomeSequencing = 0
   string titer = 0
  repeated  virusName coInfectingViruses = 0
   boolean contaminationWithCoInfectingViruses = 0

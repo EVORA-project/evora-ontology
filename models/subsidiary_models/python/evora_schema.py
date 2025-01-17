@@ -1,5 +1,5 @@
 # Auto generated from evora_schema.yaml by pythongen.py version: 0.0.1
-# Generation date: 2025-01-15T15:56:47
+# Generation date: 2025-01-17T15:28:40
 # Schema: EVORAO
 #
 # id: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
@@ -61,7 +61,7 @@ from linkml_runtime.linkml_model.types import Boolean, Datetime, Integer, String
 from linkml_runtime.utils.metamodelcore import Bool, URI, XSDDateTime
 
 metamodel_version = "1.7.0"
-version = "1.0.7504"
+version = "1.0.7785"
 
 # Overwrite dataclasses _init_fn to add **kwargs in __init__
 dataclasses._init_fn = dataclasses_init_fn_with_kwargs
@@ -267,7 +267,7 @@ class DataProvider(DataService):
     name: str = None
     queryURL: Union[str, URI] = None
     queryMethod: str = None
-    providedEntityType: str = None
+    providedEntityType: Union[str, URI] = None
     weight: int = None
     contentType: str = "JSON"
     license: Optional[Union[dict, "License"]] = None
@@ -293,8 +293,8 @@ class DataProvider(DataService):
 
         if self._is_empty(self.providedEntityType):
             self.MissingRequiredField("providedEntityType")
-        if not isinstance(self.providedEntityType, str):
-            self.providedEntityType = str(self.providedEntityType)
+        if not isinstance(self.providedEntityType, URI):
+            self.providedEntityType = URI(self.providedEntityType)
 
         if self._is_empty(self.weight):
             self.MissingRequiredField("weight")
@@ -1997,12 +1997,12 @@ class Pathogen(Product):
     biologicalMaterialOrigin: Union[dict, BiologicalMaterialOrigin] = None
     sequence: Union[Union[dict, Sequence], List[Union[dict, Sequence]]] = None
     infectivity: str = None
-    sequencing: str = None
+    genomeSequencing: str = None
     titer: str = None
     unitCost: str = "on request"
     availability: str = "on request"
     cultivability: str = "Cultivable pathogen"
-    letterOfAuthority: str = "N/A"
+    letterOfAuthority: str = "Not applicable"
     suspectedEpidemiologicalOrigin: Optional[Union[Union[dict, GeographicalOrigin], List[Union[dict, GeographicalOrigin]]]] = empty_list()
     isolationHost: Optional[Union[Union[dict, IsolationHost], List[Union[dict, IsolationHost]]]] = empty_list()
     productionCellLine: Optional[Union[Union[dict, ProductionCellLine], List[Union[dict, ProductionCellLine]]]] = empty_list()
@@ -2042,10 +2042,10 @@ class Pathogen(Product):
         if not isinstance(self.letterOfAuthority, str):
             self.letterOfAuthority = str(self.letterOfAuthority)
 
-        if self._is_empty(self.sequencing):
-            self.MissingRequiredField("sequencing")
-        if not isinstance(self.sequencing, str):
-            self.sequencing = str(self.sequencing)
+        if self._is_empty(self.genomeSequencing):
+            self.MissingRequiredField("genomeSequencing")
+        if not isinstance(self.genomeSequencing, str):
+            self.genomeSequencing = str(self.genomeSequencing)
 
         if self._is_empty(self.titer):
             self.MissingRequiredField("titer")
@@ -2109,13 +2109,13 @@ class Virus(Pathogen):
     biologicalMaterialOrigin: Union[dict, BiologicalMaterialOrigin] = None
     sequence: Union[Union[dict, Sequence], List[Union[dict, Sequence]]] = None
     infectivity: str = None
-    sequencing: str = None
+    genomeSequencing: str = None
     titer: str = None
     mycoplasmicContent: Union[bool, Bool] = None
     unitCost: str = "on request"
     availability: str = "on request"
     cultivability: str = "Cultivable pathogen"
-    letterOfAuthority: str = "N/A"
+    letterOfAuthority: str = "Not applicable"
     contaminationWithCoInfectingViruses: Union[bool, Bool] = False
     coInfectingViruses: Optional[Union[Union[dict, VirusName], List[Union[dict, VirusName]]]] = empty_list()
 
@@ -2161,12 +2161,12 @@ class Bacterium(Pathogen):
     biologicalMaterialOrigin: Union[dict, BiologicalMaterialOrigin] = None
     sequence: Union[Union[dict, Sequence], List[Union[dict, Sequence]]] = None
     infectivity: str = None
-    sequencing: str = None
+    genomeSequencing: str = None
     titer: str = None
     unitCost: str = "on request"
     availability: str = "on request"
     cultivability: str = "Cultivable pathogen"
-    letterOfAuthority: str = "N/A"
+    letterOfAuthority: str = "Not applicable"
 
 @dataclass(repr=False)
 class Fungus(Pathogen):
@@ -2194,12 +2194,12 @@ class Fungus(Pathogen):
     biologicalMaterialOrigin: Union[dict, BiologicalMaterialOrigin] = None
     sequence: Union[Union[dict, Sequence], List[Union[dict, Sequence]]] = None
     infectivity: str = None
-    sequencing: str = None
+    genomeSequencing: str = None
     titer: str = None
     unitCost: str = "on request"
     availability: str = "on request"
     cultivability: str = "Cultivable pathogen"
-    letterOfAuthority: str = "N/A"
+    letterOfAuthority: str = "Not applicable"
 
 @dataclass(repr=False)
 class Protozoan(Pathogen):
@@ -2227,12 +2227,12 @@ class Protozoan(Pathogen):
     biologicalMaterialOrigin: Union[dict, BiologicalMaterialOrigin] = None
     sequence: Union[Union[dict, Sequence], List[Union[dict, Sequence]]] = None
     infectivity: str = None
-    sequencing: str = None
+    genomeSequencing: str = None
     titer: str = None
     unitCost: str = "on request"
     availability: str = "on request"
     cultivability: str = "Cultivable pathogen"
-    letterOfAuthority: str = "N/A"
+    letterOfAuthority: str = "Not applicable"
 
 @dataclass(repr=False)
 class Viroid(Pathogen):
@@ -2260,12 +2260,12 @@ class Viroid(Pathogen):
     biologicalMaterialOrigin: Union[dict, BiologicalMaterialOrigin] = None
     sequence: Union[Union[dict, Sequence], List[Union[dict, Sequence]]] = None
     infectivity: str = None
-    sequencing: str = None
+    genomeSequencing: str = None
     titer: str = None
     unitCost: str = "on request"
     availability: str = "on request"
     cultivability: str = "Cultivable pathogen"
-    letterOfAuthority: str = "N/A"
+    letterOfAuthority: str = "Not applicable"
 
 @dataclass(repr=False)
 class Prion(Pathogen):
@@ -2293,12 +2293,12 @@ class Prion(Pathogen):
     biologicalMaterialOrigin: Union[dict, BiologicalMaterialOrigin] = None
     sequence: Union[Union[dict, Sequence], List[Union[dict, Sequence]]] = None
     infectivity: str = None
-    sequencing: str = None
+    genomeSequencing: str = None
     titer: str = None
     unitCost: str = "on request"
     availability: str = "on request"
     cultivability: str = "Cultivable pathogen"
-    letterOfAuthority: str = "N/A"
+    letterOfAuthority: str = "Not applicable"
 
 @dataclass(repr=False)
 class MSDS(Dataset):
@@ -2615,7 +2615,307 @@ class Certification(Nameable):
 
 
 # Enumerations
+class LoginRequestMethod(EnumDefinitionImpl):
 
+    GET = PermissibleValue(
+        text="GET",
+        description="GET http method, used to send information, such as a query string, directly in the URL",
+        meaning=WD["Q3504817"])
+    POST = PermissibleValue(
+        text="POST",
+        description="""POST http method, used to send information to a server by storing it in the request body of the http request""",
+        meaning=WD["Q2764521"])
+
+    _defn = EnumDefinition(
+        name="LoginRequestMethod",
+    )
+
+class QueryMethod(EnumDefinitionImpl):
+
+    GET = PermissibleValue(
+        text="GET",
+        description="GET http method, used to send information, such as a query string, directly in the URL",
+        meaning=WD["Q3504817"])
+    POST = PermissibleValue(
+        text="POST",
+        description="""POST http method, used to send information to a server by storing it in the request body of the http request""",
+        meaning=WD["Q2764521"])
+
+    _defn = EnumDefinition(
+        name="QueryMethod",
+    )
+
+class PathogenType(EnumDefinitionImpl):
+
+    Virus = PermissibleValue(
+        text="Virus",
+        description="The virus as a biological material",
+        meaning=EVORAO["Virus"])
+    Bacterium = PermissibleValue(
+        text="Bacterium",
+        description="The bacterium as a biological material",
+        meaning=EVORAO["Bacterium"])
+    Fungus = PermissibleValue(
+        text="Fungus",
+        description="The fungus as a biological material",
+        meaning=EVORAO["Fungus"])
+    Protozoan = PermissibleValue(
+        text="Protozoan",
+        description="The protozoan as a biological material",
+        meaning=EVORAO["Protozoan"])
+    Viroid = PermissibleValue(
+        text="Viroid",
+        description="The viroid as a biological material",
+        meaning=EVORAO["Viroid"])
+    Prion = PermissibleValue(
+        text="Prion",
+        description="The prion as a biological material",
+        meaning=EVORAO["Prion"])
+
+    _defn = EnumDefinition(
+        name="PathogenType",
+    )
+
+class HostType(EnumDefinitionImpl):
+
+    Animal = PermissibleValue(
+        text="Animal",
+        description="Kingdom of multicellular eukaryotic organisms",
+        meaning=WD["Q729"])
+    Human = PermissibleValue(
+        text="Human",
+        description="Any member of Homo sapiens, unique extant species of the genus Homo",
+        meaning=WD["Q5"])
+    Plant = PermissibleValue(
+        text="Plant",
+        description="Living thing in the kingdom of photosynthetic eukaryotes",
+        meaning=WD["Q756"])
+
+    _defn = EnumDefinition(
+        name="HostType",
+    )
+
+class SequenceProvider(EnumDefinitionImpl):
+
+    ENA = PermissibleValue(
+        text="ENA",
+        description="The European Nucleotide Archive",
+        meaning=WD["Q5412874"])
+    GenBank = PermissibleValue(
+        text="GenBank",
+        description="""The NIH genetic sequence database, an annotated collection of all publicly available DNA sequences""",
+        meaning=WD["Q901755"])
+
+    _defn = EnumDefinition(
+        name="SequenceProvider",
+    )
+
+class ExpressedAs(EnumDefinitionImpl):
+
+    Soluble = PermissibleValue(
+        text="Soluble",
+        description="Expressed as soluble protein",
+        meaning=WD["Q87723650"])
+
+    _defn = EnumDefinition(
+        name="ExpressedAs",
+    )
+
+    @classmethod
+    def _addvals(cls):
+        setattr(cls, "Inclusion bodies",
+            PermissibleValue(
+                text="Inclusion bodies",
+                description="Expressed as aggregated molecules",
+                meaning=WD["Q1308970"]))
+
+class InclusionBodiesType(EnumDefinitionImpl):
+
+    Denatured = PermissibleValue(
+        text="Denatured",
+        description="Having losed their folded structure present in their native state")
+    Refolded = PermissibleValue(
+        text="Refolded",
+        description="Having regained a folded structure")
+
+    _defn = EnumDefinition(
+        name="InclusionBodiesType",
+    )
+
+class ExpressionSystem(EnumDefinitionImpl):
+
+    _defn = EnumDefinition(
+        name="ExpressionSystem",
+    )
+
+    @classmethod
+    def _addvals(cls):
+        setattr(cls, "E. coli",
+            PermissibleValue(
+                text="E. coli",
+                description="Expressed in E. Coli bacteria",
+                meaning=WD["Q25419"]))
+        setattr(cls, "Insect cells",
+            PermissibleValue(
+                text="Insect cells",
+                description="Expressed in insect cells",
+                meaning=WD["Q108929499"]))
+        setattr(cls, "Mammalian cells",
+            PermissibleValue(
+                text="Mammalian cells",
+                description="Expressed in mammalian cells"))
+
+class FunctionalCharacterization(EnumDefinitionImpl):
+
+    _defn = EnumDefinition(
+        name="FunctionalCharacterization",
+    )
+
+    @classmethod
+    def _addvals(cls):
+        setattr(cls, "Functionally characterized",
+            PermissibleValue(
+                text="Functionally characterized",
+                description="The related protein has been functionally characterized"))
+        setattr(cls, "No functional characterization",
+            PermissibleValue(
+                text="No functional characterization",
+                description="The related protein has curently no functional characterization"))
+
+class ProteinPurification(EnumDefinitionImpl):
+
+    _defn = EnumDefinition(
+        name="ProteinPurification",
+    )
+
+    @classmethod
+    def _addvals(cls):
+        setattr(cls, "Superior to 95 percents",
+            PermissibleValue(
+                text="Superior to 95 percents",
+                description="The protein is purified over 95%"))
+        setattr(cls, "Unpurified expression host lysate or partly purified protein",
+            PermissibleValue(
+                text="Unpurified expression host lysate or partly purified protein",
+                description="""The protein is provided as unpurified expression host lysate or partly purified protein"""))
+
+class TypeOfFunctionalCharacterization(EnumDefinitionImpl):
+
+    Enzymatic = PermissibleValue(
+        text="Enzymatic",
+        description="""Enzymatic functional characterization involves studying the specific activities and roles of enzymes in biochemical processes""")
+    Antigenic = PermissibleValue(
+        text="Antigenic",
+        description="""Antigenic functional characterization involves studying the properties and behaviors of antigens""")
+
+    _defn = EnumDefinition(
+        name="TypeOfFunctionalCharacterization",
+    )
+
+class Sequencing(EnumDefinitionImpl):
+
+    _defn = EnumDefinition(
+        name="Sequencing",
+    )
+
+    @classmethod
+    def _addvals(cls):
+        setattr(cls, "Not sequenced",
+            PermissibleValue(
+                text="Not sequenced",
+                description="The biological material has not been sequenced"))
+        setattr(cls, "Partly sequenced",
+            PermissibleValue(
+                text="Partly sequenced",
+                description="The biological material has been partly sequenced"))
+        setattr(cls, "Fully sequenced",
+            PermissibleValue(
+                text="Fully sequenced",
+                description="The biological material has been fully sequenced"))
+
+class Cultivability(EnumDefinitionImpl):
+
+    Cultivable = PermissibleValue(
+        text="Cultivable",
+        description="The pathogen can be grown using standard culture techniques")
+    Uncultivable = PermissibleValue(
+        text="Uncultivable",
+        description="""The pathogen cannot be grown in a laboratory using standard culture techniques and often requires special methods for study""")
+    Inactivated = PermissibleValue(
+        text="Inactivated",
+        description="The pathogen has been killed or rendered inactive so it cannot cause disease")
+
+    _defn = EnumDefinition(
+        name="Cultivability",
+    )
+
+class Infectivity(EnumDefinitionImpl):
+
+    _defn = EnumDefinition(
+        name="Infectivity",
+    )
+
+    @classmethod
+    def _addvals(cls):
+        setattr(cls, "Infectivity tested",
+            PermissibleValue(
+                text="Infectivity tested",
+                description="The infectivity of the pathogen has been tested"))
+        setattr(cls, "Infectivity tested and quantified",
+            PermissibleValue(
+                text="Infectivity tested and quantified",
+                description="The infectivity of the pathogen has been tested and quantified"))
+        setattr(cls, "Non cultivable sample, infectivity cannot be tested",
+            PermissibleValue(
+                text="Non cultivable sample, infectivity cannot be tested",
+                description="""The pathogen is provided as a non cultivable sample, so its infectivity cannot be tested"""))
+
+class LetterOfAuthority(EnumDefinitionImpl):
+
+    Required = PermissibleValue(
+        text="Required",
+        description="The letter of authority is required for this biological material")
+
+    _defn = EnumDefinition(
+        name="LetterOfAuthority",
+    )
+
+    @classmethod
+    def _addvals(cls):
+        setattr(cls, "Not applicable",
+            PermissibleValue(
+                text="Not applicable",
+                description="The letter of authority is not applicable for this biological material"))
+        setattr(cls, "Not required",
+            PermissibleValue(
+                text="Not required",
+                description="The letter of authority is not required for this biological material"))
+        setattr(cls, "Required for customers in the EU",
+            PermissibleValue(
+                text="Required for customers in the EU",
+                description="""The letter of authority is required for this biological material in case only if its destination is in the European Union"""))
+
+class GenomeSequencing(EnumDefinitionImpl):
+
+    _defn = EnumDefinition(
+        name="GenomeSequencing",
+    )
+
+    @classmethod
+    def _addvals(cls):
+        setattr(cls, "Complete genome",
+            PermissibleValue(
+                text="Complete genome",
+                description="The complete genome has been sequenced",
+                meaning=WD["Q2068526"]))
+        setattr(cls, "Complete coding sequence",
+            PermissibleValue(
+                text="Complete coding sequence",
+                description="Only the complete conding sequence has been sequenced"))
+        setattr(cls, "Partial sequence",
+            PermissibleValue(
+                text="Partial sequence",
+                description="Only a partial sequence was sequenced"))
 
 # Slots
 class slots:
@@ -3083,6 +3383,9 @@ slots.letterOfAuthority = Slot(uri=EVORAO.letterOfAuthority, name="letterOfAutho
 slots.passage = Slot(uri=EVORAO.passage, name="passage", curie=EVORAO.curie('passage'),
                    model_uri=EVORAO.passage, domain=None, range=Optional[str])
 
+slots.genomeSequencing = Slot(uri=EVORAO.genomeSequencing, name="genomeSequencing", curie=EVORAO.curie('genomeSequencing'),
+                   model_uri=EVORAO.genomeSequencing, domain=None, range=Optional[str])
+
 slots.coInfectingViruses = Slot(uri=EVORAO.coInfectingViruses, name="coInfectingViruses", curie=EVORAO.curie('coInfectingViruses'),
                    model_uri=EVORAO.coInfectingViruses, domain=None, range=Optional[str])
 
@@ -3228,7 +3531,7 @@ slots.DataProvider_contentType = Slot(uri=EVORAO.contentType, name="DataProvider
                    model_uri=EVORAO.DataProvider_contentType, domain=DataProvider, range=str)
 
 slots.DataProvider_providedEntityType = Slot(uri=EVORAO.providedEntityType, name="DataProvider_providedEntityType", curie=EVORAO.curie('providedEntityType'),
-                   model_uri=EVORAO.DataProvider_providedEntityType, domain=DataProvider, range=str)
+                   model_uri=EVORAO.DataProvider_providedEntityType, domain=DataProvider, range=Union[str, URI])
 
 slots.DataProvider_weight = Slot(uri=EVORAO.weight, name="DataProvider_weight", curie=EVORAO.curie('weight'),
                    model_uri=EVORAO.DataProvider_weight, domain=DataProvider, range=int)
@@ -3692,8 +3995,8 @@ slots.Pathogen_letterOfAuthority = Slot(uri=EVORAO.letterOfAuthority, name="Path
 slots.Pathogen_passage = Slot(uri=EVORAO.passage, name="Pathogen_passage", curie=EVORAO.curie('passage'),
                    model_uri=EVORAO.Pathogen_passage, domain=Pathogen, range=Optional[str])
 
-slots.Pathogen_sequencing = Slot(uri=EVORAO.sequencing, name="Pathogen_sequencing", curie=EVORAO.curie('sequencing'),
-                   model_uri=EVORAO.Pathogen_sequencing, domain=Pathogen, range=str)
+slots.Pathogen_genomeSequencing = Slot(uri=EVORAO.genomeSequencing, name="Pathogen_genomeSequencing", curie=EVORAO.curie('genomeSequencing'),
+                   model_uri=EVORAO.Pathogen_genomeSequencing, domain=Pathogen, range=str)
 
 slots.Pathogen_titer = Slot(uri=EVORAO.titer, name="Pathogen_titer", curie=EVORAO.curie('titer'),
                    model_uri=EVORAO.Pathogen_titer, domain=Pathogen, range=str)

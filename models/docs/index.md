@@ -152,6 +152,7 @@ Name: EVORAO
 | [functionalCharacterization](functionalCharacterization.md) |  |
 | [functionalTechnicalDescription](functionalTechnicalDescription.md) |  |
 | [furtherInformation](furtherInformation.md) |  |
+| [genomeSequencing](genomeSequencing.md) |  |
 | [genotype](genotype.md) |  |
 | [handlingAndStorage](handlingAndStorage.md) |  |
 | [hasGbFileOfTheConstruct](hasGbFileOfTheConstruct.md) |  |
@@ -287,6 +288,22 @@ Name: EVORAO
 
 | Enumeration | Description |
 | --- | --- |
+| [Cultivability](Cultivability.md) |  |
+| [ExpressedAs](ExpressedAs.md) |  |
+| [ExpressionSystem](ExpressionSystem.md) |  |
+| [FunctionalCharacterization](FunctionalCharacterization.md) |  |
+| [GenomeSequencing](GenomeSequencing.md) |  |
+| [HostType](HostType.md) |  |
+| [InclusionBodiesType](InclusionBodiesType.md) |  |
+| [Infectivity](Infectivity.md) |  |
+| [LetterOfAuthority](LetterOfAuthority.md) |  |
+| [LoginRequestMethod](LoginRequestMethod.md) |  |
+| [PathogenType](PathogenType.md) |  |
+| [ProteinPurification](ProteinPurification.md) |  |
+| [QueryMethod](QueryMethod.md) |  |
+| [SequenceProvider](SequenceProvider.md) |  |
+| [Sequencing](Sequencing.md) |  |
+| [TypeOfFunctionalCharacterization](TypeOfFunctionalCharacterization.md) |  |
 
 
 ## Types

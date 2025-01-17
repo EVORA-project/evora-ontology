@@ -5,7 +5,7 @@ import lombok.*;
 
 
 
-/* version: 1.0.7504 */
+/* version: 1.0.7785 */
 
 
 /**
@@ -31,7 +31,7 @@ public abstract class Pathogen extends Product {
   private String isolationConditions;
   private String letterOfAuthority;
   private String passage;
-  private String sequencing;
+  private String genomeSequencing;
   private String titer;
 
 }

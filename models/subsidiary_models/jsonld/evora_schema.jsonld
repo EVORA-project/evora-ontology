@@ -17,7 +17,7 @@
     "https://orcid.org/0000-0002-2042-2839"
   ],
   "id": "https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#",
-  "version": "1.0.7504",
+  "version": "1.0.7785",
   "imports": [
     "linkml:types"
   ],
@@ -418,6 +418,316 @@
       "uri": "http://www.w3.org/2001/XMLSchema#string",
       "repr": "str",
       "@type": "TypeDefinition"
+    }
+  ],
+  "enums": [
+    {
+      "name": "loginRequestMethod",
+      "definition_uri": "https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#LoginRequestMethod",
+      "from_schema": "https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#",
+      "permissible_values": [
+        {
+          "text": "GET",
+          "description": "GET http method, used to send information, such as a query string, directly in the URL",
+          "meaning": "wd:Q3504817"
+        },
+        {
+          "text": "POST",
+          "description": "POST http method, used to send information to a server by storing it in the request body of the http request",
+          "meaning": "wd:Q2764521"
+        }
+      ]
+    },
+    {
+      "name": "queryMethod",
+      "definition_uri": "https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#QueryMethod",
+      "from_schema": "https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#",
+      "permissible_values": [
+        {
+          "text": "GET",
+          "description": "GET http method, used to send information, such as a query string, directly in the URL",
+          "meaning": "wd:Q3504817"
+        },
+        {
+          "text": "POST",
+          "description": "POST http method, used to send information to a server by storing it in the request body of the http request",
+          "meaning": "wd:Q2764521"
+        }
+      ]
+    },
+    {
+      "name": "pathogenType",
+      "definition_uri": "https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#PathogenType",
+      "from_schema": "https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#",
+      "permissible_values": [
+        {
+          "text": "Virus",
+          "description": "The virus as a biological material",
+          "meaning": "EVORAO:Virus"
+        },
+        {
+          "text": "Bacterium",
+          "description": "The bacterium as a biological material",
+          "meaning": "EVORAO:Bacterium"
+        },
+        {
+          "text": "Fungus",
+          "description": "The fungus as a biological material",
+          "meaning": "EVORAO:Fungus"
+        },
+        {
+          "text": "Protozoan",
+          "description": "The protozoan as a biological material",
+          "meaning": "EVORAO:Protozoan"
+        },
+        {
+          "text": "Viroid",
+          "description": "The viroid as a biological material",
+          "meaning": "EVORAO:Viroid"
+        },
+        {
+          "text": "Prion",
+          "description": "The prion as a biological material",
+          "meaning": "EVORAO:Prion"
+        }
+      ]
+    },
+    {
+      "name": "hostType",
+      "definition_uri": "https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#HostType",
+      "from_schema": "https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#",
+      "permissible_values": [
+        {
+          "text": "Animal",
+          "description": "Kingdom of multicellular eukaryotic organisms",
+          "meaning": "wd:Q729"
+        },
+        {
+          "text": "Human",
+          "description": "Any member of Homo sapiens, unique extant species of the genus Homo",
+          "meaning": "wd:Q5"
+        },
+        {
+          "text": "Plant",
+          "description": "Living thing in the kingdom of photosynthetic eukaryotes",
+          "meaning": "wd:Q756"
+        }
+      ]
+    },
+    {
+      "name": "sequenceProvider",
+      "definition_uri": "https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#SequenceProvider",
+      "from_schema": "https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#",
+      "permissible_values": [
+        {
+          "text": "ENA",
+          "description": "The European Nucleotide Archive",
+          "meaning": "wd:Q5412874"
+        },
+        {
+          "text": "GenBank",
+          "description": "The NIH genetic sequence database, an annotated collection of all publicly available DNA sequences",
+          "meaning": "wd:Q901755"
+        }
+      ]
+    },
+    {
+      "name": "expressedAs",
+      "definition_uri": "https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#ExpressedAs",
+      "from_schema": "https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#",
+      "permissible_values": [
+        {
+          "text": "Soluble",
+          "description": "Expressed as soluble protein",
+          "meaning": "wd:Q87723650"
+        },
+        {
+          "text": "Inclusion bodies",
+          "description": "Expressed as aggregated molecules",
+          "meaning": "wd:Q1308970"
+        }
+      ]
+    },
+    {
+      "name": "inclusionBodiesType",
+      "definition_uri": "https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#InclusionBodiesType",
+      "from_schema": "https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#",
+      "permissible_values": [
+        {
+          "text": "Denatured",
+          "description": "Having losed their folded structure present in their native state"
+        },
+        {
+          "text": "Refolded",
+          "description": "Having regained a folded structure"
+        }
+      ]
+    },
+    {
+      "name": "expressionSystem",
+      "definition_uri": "https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#ExpressionSystem",
+      "from_schema": "https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#",
+      "permissible_values": [
+        {
+          "text": "E. coli",
+          "description": "Expressed in E. Coli bacteria",
+          "meaning": "wd:Q25419"
+        },
+        {
+          "text": "Insect cells",
+          "description": "Expressed in insect cells",
+          "meaning": "wd:Q108929499"
+        },
+        {
+          "text": "Mammalian cells",
+          "description": "Expressed in mammalian cells"
+        }
+      ]
+    },
+    {
+      "name": "functionalCharacterization",
+      "definition_uri": "https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#FunctionalCharacterization",
+      "from_schema": "https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#",
+      "permissible_values": [
+        {
+          "text": "Functionally characterized",
+          "description": "The related protein has been functionally characterized"
+        },
+        {
+          "text": "No functional characterization",
+          "description": "The related protein has curently no functional characterization"
+        }
+      ]
+    },
+    {
+      "name": "proteinPurification",
+      "definition_uri": "https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#ProteinPurification",
+      "from_schema": "https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#",
+      "permissible_values": [
+        {
+          "text": "Superior to 95 percents",
+          "description": "The protein is purified over 95%"
+        },
+        {
+          "text": "Unpurified expression host lysate or partly purified protein",
+          "description": "The protein is provided as unpurified expression host lysate or partly purified protein"
+        }
+      ]
+    },
+    {
+      "name": "typeOfFunctionalCharacterization",
+      "definition_uri": "https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#TypeOfFunctionalCharacterization",
+      "from_schema": "https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#",
+      "permissible_values": [
+        {
+          "text": "Enzymatic",
+          "description": "Enzymatic functional characterization involves studying the specific activities and roles of enzymes in biochemical processes"
+        },
+        {
+          "text": "Antigenic",
+          "description": "Antigenic functional characterization involves studying the properties and behaviors of antigens"
+        }
+      ]
+    },
+    {
+      "name": "sequencing",
+      "definition_uri": "https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#Sequencing",
+      "from_schema": "https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#",
+      "permissible_values": [
+        {
+          "text": "Not sequenced",
+          "description": "The biological material has not been sequenced"
+        },
+        {
+          "text": "Partly sequenced",
+          "description": "The biological material has been partly sequenced"
+        },
+        {
+          "text": "Fully sequenced",
+          "description": "The biological material has been fully sequenced"
+        }
+      ]
+    },
+    {
+      "name": "cultivability",
+      "definition_uri": "https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#Cultivability",
+      "from_schema": "https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#",
+      "permissible_values": [
+        {
+          "text": "Cultivable",
+          "description": "The pathogen can be grown using standard culture techniques"
+        },
+        {
+          "text": "Uncultivable",
+          "description": "The pathogen cannot be grown in a laboratory using standard culture techniques and often requires special methods for study"
+        },
+        {
+          "text": "Inactivated",
+          "description": "The pathogen has been killed or rendered inactive so it cannot cause disease"
+        }
+      ]
+    },
+    {
+      "name": "infectivity",
+      "definition_uri": "https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#Infectivity",
+      "from_schema": "https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#",
+      "permissible_values": [
+        {
+          "text": "Infectivity tested",
+          "description": "The infectivity of the pathogen has been tested"
+        },
+        {
+          "text": "Infectivity tested and quantified",
+          "description": "The infectivity of the pathogen has been tested and quantified"
+        },
+        {
+          "text": "Non cultivable sample, infectivity cannot be tested",
+          "description": "The pathogen is provided as a non cultivable sample, so its infectivity cannot be tested"
+        }
+      ]
+    },
+    {
+      "name": "letterOfAuthority",
+      "definition_uri": "https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#LetterOfAuthority",
+      "from_schema": "https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#",
+      "permissible_values": [
+        {
+          "text": "Not applicable",
+          "description": "The letter of authority is not applicable for this biological material"
+        },
+        {
+          "text": "Not required",
+          "description": "The letter of authority is not required for this biological material"
+        },
+        {
+          "text": "Required for customers in the EU",
+          "description": "The letter of authority is required for this biological material in case only if its destination is in the European Union"
+        },
+        {
+          "text": "Required",
+          "description": "The letter of authority is required for this biological material"
+        }
+      ]
+    },
+    {
+      "name": "genomeSequencing",
+      "definition_uri": "https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#GenomeSequencing",
+      "from_schema": "https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#",
+      "permissible_values": [
+        {
+          "text": "Complete genome",
+          "description": "The complete genome has been sequenced",
+          "meaning": "wd:Q2068526"
+        },
+        {
+          "text": "Complete coding sequence",
+          "description": "Only the complete conding sequence has been sequenced"
+        },
+        {
+          "text": "Partial sequence",
+          "description": "Only a partial sequence was sequenced"
+        }
+      ]
     }
   ],
   "slots": [
@@ -2056,10 +2366,9 @@
       "definition_uri": "https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#sequencing",
       "from_schema": "https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#",
       "slot_uri": "https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#sequencing",
-      "owner": "Pathogen",
+      "owner": "NucleicAcid",
       "domain_of": [
-        "NucleicAcid",
-        "Pathogen"
+        "NucleicAcid"
       ],
       "range": "string",
       "@type": "SlotDefinition"
@@ -2286,6 +2595,18 @@
       "definition_uri": "https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#passage",
       "from_schema": "https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#",
       "slot_uri": "https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#passage",
+      "owner": "Pathogen",
+      "domain_of": [
+        "Pathogen"
+      ],
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "genomeSequencing",
+      "definition_uri": "https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#genomeSequencing",
+      "from_schema": "https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#",
+      "slot_uri": "https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#genomeSequencing",
       "owner": "Pathogen",
       "domain_of": [
         "Pathogen"
@@ -3075,7 +3396,7 @@
       ],
       "is_usage_slot": true,
       "usage_slot_name": "providedEntityType",
-      "range": "string",
+      "range": "uri",
       "required": true,
       "@type": "SlotDefinition"
     },
@@ -4774,7 +5095,7 @@
       "description": "Indicates if the current service or product can be used to produce GMO",
       "title": "can it be used to produce GMO",
       "comments": [
-        "Set to TRUE if it can produce GMO"
+        "Set to TRUE if it can produce GMO. It is recommended to have a value for this field, no value will be understood as unknown"
       ],
       "from_schema": "https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#",
       "is_a": "canItBeUsedToProduceGMO",
@@ -6358,7 +6679,7 @@
       "is_a": "letterOfAuthority",
       "domain": "Pathogen",
       "slot_uri": "https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#letterOfAuthority",
-      "ifabsent": "string(N/A)",
+      "ifabsent": "string(Not applicable)",
       "alias": "letterOfAuthority",
       "owner": "Pathogen",
       "domain_of": [
@@ -6390,21 +6711,21 @@
       "@type": "SlotDefinition"
     },
     {
-      "name": "Pathogen_sequencing",
-      "definition_uri": "https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#sequencing",
+      "name": "Pathogen_genomeSequencing",
+      "definition_uri": "https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#genomeSequencing",
       "description": "The extent of the pathogen's genetic material that has been sequenced, with possible values including \"Complete genome\" for the entire genome, \"Complete coding sequence\" for all coding regions, and \"Partial sequence\" for only a portion of the genetic material",
-      "title": "sequencing",
+      "title": "genome sequencing",
       "from_schema": "https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#",
-      "is_a": "sequencing",
+      "is_a": "genomeSequencing",
       "domain": "Pathogen",
-      "slot_uri": "https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#sequencing",
-      "alias": "sequencing",
+      "slot_uri": "https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#genomeSequencing",
+      "alias": "genomeSequencing",
       "owner": "Pathogen",
       "domain_of": [
         "Pathogen"
       ],
       "is_usage_slot": true,
-      "usage_slot_name": "sequencing",
+      "usage_slot_name": "genomeSequencing",
       "range": "string",
       "required": true,
       "@type": "SlotDefinition"
@@ -8790,7 +9111,7 @@
         "Pathogen_isolationConditions",
         "Pathogen_letterOfAuthority",
         "Pathogen_passage",
-        "Pathogen_sequencing",
+        "Pathogen_genomeSequencing",
         "Pathogen_titer"
       ],
       "slot_usage": {},
@@ -8857,7 +9178,7 @@
         "Pathogen_isolationConditions",
         "Pathogen_letterOfAuthority",
         "Pathogen_passage",
-        "Pathogen_sequencing",
+        "Pathogen_genomeSequencing",
         "Pathogen_titer",
         "Virus_coInfectingViruses",
         "Virus_contaminationWithCoInfectingViruses",
@@ -8927,7 +9248,7 @@
         "Pathogen_isolationConditions",
         "Pathogen_letterOfAuthority",
         "Pathogen_passage",
-        "Pathogen_sequencing",
+        "Pathogen_genomeSequencing",
         "Pathogen_titer"
       ],
       "slot_usage": {},
@@ -8994,7 +9315,7 @@
         "Pathogen_isolationConditions",
         "Pathogen_letterOfAuthority",
         "Pathogen_passage",
-        "Pathogen_sequencing",
+        "Pathogen_genomeSequencing",
         "Pathogen_titer"
       ],
       "slot_usage": {},
@@ -9061,7 +9382,7 @@
         "Pathogen_isolationConditions",
         "Pathogen_letterOfAuthority",
         "Pathogen_passage",
-        "Pathogen_sequencing",
+        "Pathogen_genomeSequencing",
         "Pathogen_titer"
       ],
       "slot_usage": {},
@@ -9128,7 +9449,7 @@
         "Pathogen_isolationConditions",
         "Pathogen_letterOfAuthority",
         "Pathogen_passage",
-        "Pathogen_sequencing",
+        "Pathogen_genomeSequencing",
         "Pathogen_titer"
       ],
       "slot_usage": {},
@@ -9195,7 +9516,7 @@
         "Pathogen_isolationConditions",
         "Pathogen_letterOfAuthority",
         "Pathogen_passage",
-        "Pathogen_sequencing",
+        "Pathogen_genomeSequencing",
         "Pathogen_titer"
       ],
       "slot_usage": {},
@@ -9441,9 +9762,9 @@
   ],
   "metamodel_version": "1.7.0",
   "source_file": "evora_schema.yaml",
-  "source_file_date": "2025-01-15T15:56:27",
-  "source_file_size": 130378,
-  "generation_date": "2025-01-15T15:56:42",
+  "source_file_date": "2025-01-17T15:28:21",
+  "source_file_size": 136689,
+  "generation_date": "2025-01-17T15:28:35",
   "@type": "SchemaDefinition",
   "@context": [
     "https://w3id.org/linkml/types.context.jsonld",

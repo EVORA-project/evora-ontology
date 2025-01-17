@@ -77,7 +77,7 @@ URI: [EVORAO:DataProvider](https://raw.githubusercontent.com/EVORA-project/evora
 | [queryURL](queryURL.md) | 1 <br/> [Uri](Uri.md) | The URL template that allows to get the content | direct |
 | [queryMethod](queryMethod.md) | 1 <br/> [String](String.md) | The http request method used to access the requested query url | direct |
 | [contentType](contentType.md) | 1 <br/> [String](String.md) | The content type of the response to the queries | direct |
-| [providedEntityType](providedEntityType.md) | 1 <br/> [String](String.md) | The identification of the entity type (Class) described by the response to th... | direct |
+| [providedEntityType](providedEntityType.md) | 1 <br/> [Uri](Uri.md) | The identification of the entity type (Class) described by the response to th... | direct |
 | [weight](weight.md) | 1 <br/> [Integer](Integer.md) | A numerical value indicating relative importance or priority, generally proce... | direct |
 | [name](name.md) | 1 <br/> [String](String.md) | The label that allows humans to identify the current item | [Nameable](Nameable.md) |
 | [description](description.md) | 0..1 _recommended_ <br/> [String](String.md) | A short explanation of the characteristics, features, or nature of the curren... | [Nameable](Nameable.md) |
@@ -235,6 +235,7 @@ slot_usage:
     title: provided entity type
     exact_mappings:
     - dcat:servesDataset
+    range: uri
     required: true
     multivalued: false
   weight:
@@ -346,6 +347,7 @@ slot_usage:
     title: provided entity type
     exact_mappings:
     - dcat:servesDataset
+    range: uri
     required: true
     multivalued: false
   weight:
@@ -490,7 +492,7 @@ attributes:
     owner: DataProvider
     domain_of:
     - DataProvider
-    range: string
+    range: uri
     required: true
     multivalued: false
   weight:

@@ -27,10 +27,10 @@ SELECT
   ?predicate WHERE {
  GRAPH ?graph {
   ?subject rdf:type EVORAO:Fungus .
-  FILTER NOT EXISTS { ?subject  EVORAO:sequencing ?o  }
+  FILTER NOT EXISTS { ?subject  EVORAO:genomeSequencing ?o  }
  }
  VALUES ?check { linkml:required }
- VALUES ?predicate { EVORAO:sequencing }
+ VALUES ?predicate { EVORAO:genomeSequencing }
  
 }  
 

@@ -18,7 +18,7 @@ contributors:
 - https://orcid.org/0000-0002-1257-6862
 - https://orcid.org/0000-0002-2042-2839
 id: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
-version: 1.0.7504
+version: 1.0.7785
 imports:
 - linkml:types
 license: https://creativecommons.org/publicdomain/zero/1.0/
@@ -46,6 +46,161 @@ prefixes:
   linkml: https://w3id.org/linkml/
 default_prefix: EVORAO
 default_range: string
+enums:
+  loginRequestMethod:
+    permissible_values:
+      GET:
+        description: GET http method, used to send information, such as a query string,
+          directly in the URL
+        meaning: wd:Q3504817
+      POST:
+        description: POST http method, used to send information to a server by storing
+          it in the request body of the http request
+        meaning: wd:Q2764521
+  queryMethod:
+    permissible_values:
+      GET:
+        description: GET http method, used to send information, such as a query string,
+          directly in the URL
+        meaning: wd:Q3504817
+      POST:
+        description: POST http method, used to send information to a server by storing
+          it in the request body of the http request
+        meaning: wd:Q2764521
+  pathogenType:
+    permissible_values:
+      Virus:
+        description: The virus as a biological material
+        meaning: EVORAO:Virus
+      Bacterium:
+        description: The bacterium as a biological material
+        meaning: EVORAO:Bacterium
+      Fungus:
+        description: The fungus as a biological material
+        meaning: EVORAO:Fungus
+      Protozoan:
+        description: The protozoan as a biological material
+        meaning: EVORAO:Protozoan
+      Viroid:
+        description: The viroid as a biological material
+        meaning: EVORAO:Viroid
+      Prion:
+        description: The prion as a biological material
+        meaning: EVORAO:Prion
+  hostType:
+    permissible_values:
+      Animal:
+        description: Kingdom of multicellular eukaryotic organisms
+        meaning: wd:Q729
+      Human:
+        description: Any member of Homo sapiens, unique extant species of the genus
+          Homo
+        meaning: wd:Q5
+      Plant:
+        description: Living thing in the kingdom of photosynthetic eukaryotes
+        meaning: wd:Q756
+  sequenceProvider:
+    permissible_values:
+      ENA:
+        description: The European Nucleotide Archive
+        meaning: wd:Q5412874
+      GenBank:
+        description: The NIH genetic sequence database, an annotated collection of
+          all publicly available DNA sequences
+        meaning: wd:Q901755
+  expressedAs:
+    permissible_values:
+      Soluble:
+        description: Expressed as soluble protein
+        meaning: wd:Q87723650
+      Inclusion bodies:
+        description: Expressed as aggregated molecules
+        meaning: wd:Q1308970
+  inclusionBodiesType:
+    permissible_values:
+      Denatured:
+        description: Having losed their folded structure present in their native state
+      Refolded:
+        description: Having regained a folded structure
+  expressionSystem:
+    permissible_values:
+      E. coli:
+        description: Expressed in E. Coli bacteria
+        meaning: wd:Q25419
+      Insect cells:
+        description: Expressed in insect cells
+        meaning: wd:Q108929499
+      Mammalian cells:
+        description: Expressed in mammalian cells
+  functionalCharacterization:
+    permissible_values:
+      Functionally characterized:
+        description: The related protein has been functionally characterized
+      No functional characterization:
+        description: The related protein has curently no functional characterization
+  proteinPurification:
+    permissible_values:
+      Superior to 95 percents:
+        description: The protein is purified over 95%
+      Unpurified expression host lysate or partly purified protein:
+        description: The protein is provided as unpurified expression host lysate
+          or partly purified protein
+  typeOfFunctionalCharacterization:
+    permissible_values:
+      Enzymatic:
+        description: Enzymatic functional characterization involves studying the specific
+          activities and roles of enzymes in biochemical processes
+      Antigenic:
+        description: Antigenic functional characterization involves studying the properties
+          and behaviors of antigens
+  sequencing:
+    permissible_values:
+      Not sequenced:
+        description: The biological material has not been sequenced
+      Partly sequenced:
+        description: The biological material has been partly sequenced
+      Fully sequenced:
+        description: The biological material has been fully sequenced
+  cultivability:
+    permissible_values:
+      Cultivable:
+        description: The pathogen can be grown using standard culture techniques
+      Uncultivable:
+        description: The pathogen cannot be grown in a laboratory using standard culture
+          techniques and often requires special methods for study
+      Inactivated:
+        description: The pathogen has been killed or rendered inactive so it cannot
+          cause disease
+  infectivity:
+    permissible_values:
+      Infectivity tested:
+        description: The infectivity of the pathogen has been tested
+      Infectivity tested and quantified:
+        description: The infectivity of the pathogen has been tested and quantified
+      Non cultivable sample, infectivity cannot be tested:
+        description: The pathogen is provided as a non cultivable sample, so its infectivity
+          cannot be tested
+  letterOfAuthority:
+    permissible_values:
+      Not applicable:
+        description: The letter of authority is not applicable for this biological
+          material
+      Not required:
+        description: The letter of authority is not required for this biological material
+      Required for customers in the EU:
+        description: The letter of authority is required for this biological material
+          in case only if its destination is in the European Union
+      Required:
+        description: The letter of authority is required for this biological material
+  genomeSequencing:
+    permissible_values:
+      Complete genome:
+        description: The complete genome has been sequenced
+        meaning: wd:Q2068526
+      Complete coding sequence:
+        description: Only the complete conding sequence has been sequenced
+      Partial sequence:
+        description: Only a partial sequence was sequenced
 slots:
   ID:
     from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
@@ -354,6 +509,8 @@ slots:
   letterOfAuthority:
     from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
   passage:
+    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+  genomeSequencing:
     from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
   coInfectingViruses:
     from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
@@ -676,6 +833,7 @@ classes:
         title: provided entity type
         exact_mappings:
         - dcat:servesDataset
+        range: uri
         required: true
         multivalued: false
       weight:
@@ -1820,7 +1978,8 @@ classes:
           GMO
         title: can it be used to produce GMO
         comments:
-        - Set to TRUE if it can produce GMO
+        - Set to TRUE if it can produce GMO. It is recommended to have a value for
+          this field, no value will be understood as unknown
         range: boolean
         required: false
         recommended: true
@@ -2455,7 +2614,7 @@ classes:
     - isolationConditions
     - letterOfAuthority
     - passage
-    - sequencing
+    - genomeSequencing
     - titer
     slot_usage:
       biologicalMaterialOrigin:
@@ -2570,7 +2729,7 @@ classes:
           the necessity of formal authorization. The possible values are "N/A", "NOT
           Required", "Required for customers in the EU" or "Required"
         title: letter of authority
-        ifabsent: string(N/A)
+        ifabsent: string(Not applicable)
         range: string
         required: true
         multivalued: false
@@ -2582,12 +2741,12 @@ classes:
         range: string
         required: false
         multivalued: false
-      sequencing:
+      genomeSequencing:
         description: The extent of the pathogen's genetic material that has been sequenced,
           with possible values including "Complete genome" for the entire genome,
           "Complete coding sequence" for all coding regions, and "Partial sequence"
           for only a portion of the genetic material
-        title: sequencing
+        title: genome sequencing
         range: string
         required: true
         multivalued: false
@@ -3104,4 +3263,4 @@ classes:
         required: false
         multivalued: false
 source_file: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl
-generation_date: '2025-01-15T16:56:04'
+generation_date: '2025-01-17T16:27:56'

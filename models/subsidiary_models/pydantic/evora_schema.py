@@ -29,7 +29,7 @@ from pydantic import (
 
 
 metamodel_version = "None"
-version = "1.0.7504"
+version = "1.0.7785"
 
 
 class ConfiguredBaseModel(BaseModel):
@@ -82,7 +82,7 @@ linkml_meta = LinkMLMeta({'contributors': ['https://github.com/Angatar',
                     'interoperability, accessibility, and reusability across '
                     'various projects. The EVORA Ontology aims to support '
                     'preparedness and response to pandemics.',
-     'generation_date': '2025-01-15T16:56:04',
+     'generation_date': '2025-01-17T16:27:56',
      'id': 'https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#',
      'imports': ['linkml:types'],
      'in_language': 'en',
@@ -132,6 +132,142 @@ linkml_meta = LinkMLMeta({'contributors': ['https://github.com/Angatar',
                           'prefix_reference': 'http://www.w3.org/2001/XMLSchema#'}},
      'source_file': 'models/evora_schema.yaml',
      'title': 'European Viral Outbreak Response Alliance Ontology'} )
+
+class LoginRequestMethod(str, Enum):
+    # GET http method, used to send information, such as a query string, directly in the URL
+    GET = "GET"
+    # POST http method, used to send information to a server by storing it in the request body of the http request
+    POST = "POST"
+
+
+class QueryMethod(str, Enum):
+    # GET http method, used to send information, such as a query string, directly in the URL
+    GET = "GET"
+    # POST http method, used to send information to a server by storing it in the request body of the http request
+    POST = "POST"
+
+
+class PathogenType(str, Enum):
+    # The virus as a biological material
+    Virus = "Virus"
+    # The bacterium as a biological material
+    Bacterium = "Bacterium"
+    # The fungus as a biological material
+    Fungus = "Fungus"
+    # The protozoan as a biological material
+    Protozoan = "Protozoan"
+    # The viroid as a biological material
+    Viroid = "Viroid"
+    # The prion as a biological material
+    Prion = "Prion"
+
+
+class HostType(str, Enum):
+    # Kingdom of multicellular eukaryotic organisms
+    Animal = "Animal"
+    # Any member of Homo sapiens, unique extant species of the genus Homo
+    Human = "Human"
+    # Living thing in the kingdom of photosynthetic eukaryotes
+    Plant = "Plant"
+
+
+class SequenceProvider(str, Enum):
+    # The European Nucleotide Archive
+    ENA = "ENA"
+    # The NIH genetic sequence database, an annotated collection of all publicly available DNA sequences
+    GenBank = "GenBank"
+
+
+class ExpressedAs(str, Enum):
+    # Expressed as soluble protein
+    Soluble = "Soluble"
+    # Expressed as aggregated molecules
+    Inclusion_bodies = "Inclusion bodies"
+
+
+class InclusionBodiesType(str, Enum):
+    # Having losed their folded structure present in their native state
+    Denatured = "Denatured"
+    # Having regained a folded structure
+    Refolded = "Refolded"
+
+
+class ExpressionSystem(str, Enum):
+    # Expressed in E. Coli bacteria
+    EFULL_STOP_coli = "E. coli"
+    # Expressed in insect cells
+    Insect_cells = "Insect cells"
+    # Expressed in mammalian cells
+    Mammalian_cells = "Mammalian cells"
+
+
+class FunctionalCharacterization(str, Enum):
+    # The related protein has been functionally characterized
+    Functionally_characterized = "Functionally characterized"
+    # The related protein has curently no functional characterization
+    No_functional_characterization = "No functional characterization"
+
+
+class ProteinPurification(str, Enum):
+    # The protein is purified over 95%
+    Superior_to_95_percents = "Superior to 95 percents"
+    # The protein is provided as unpurified expression host lysate or partly purified protein
+    Unpurified_expression_host_lysate_or_partly_purified_protein = "Unpurified expression host lysate or partly purified protein"
+
+
+class TypeOfFunctionalCharacterization(str, Enum):
+    # Enzymatic functional characterization involves studying the specific activities and roles of enzymes in biochemical processes
+    Enzymatic = "Enzymatic"
+    # Antigenic functional characterization involves studying the properties and behaviors of antigens
+    Antigenic = "Antigenic"
+
+
+class Sequencing(str, Enum):
+    # The biological material has not been sequenced
+    Not_sequenced = "Not sequenced"
+    # The biological material has been partly sequenced
+    Partly_sequenced = "Partly sequenced"
+    # The biological material has been fully sequenced
+    Fully_sequenced = "Fully sequenced"
+
+
+class Cultivability(str, Enum):
+    # The pathogen can be grown using standard culture techniques
+    Cultivable = "Cultivable"
+    # The pathogen cannot be grown in a laboratory using standard culture techniques and often requires special methods for study
+    Uncultivable = "Uncultivable"
+    # The pathogen has been killed or rendered inactive so it cannot cause disease
+    Inactivated = "Inactivated"
+
+
+class Infectivity(str, Enum):
+    # The infectivity of the pathogen has been tested
+    Infectivity_tested = "Infectivity tested"
+    # The infectivity of the pathogen has been tested and quantified
+    Infectivity_tested_and_quantified = "Infectivity tested and quantified"
+    # The pathogen is provided as a non cultivable sample, so its infectivity cannot be tested
+    Non_cultivable_sample_infectivity_cannot_be_tested = "Non cultivable sample, infectivity cannot be tested"
+
+
+class LetterOfAuthority(str, Enum):
+    # The letter of authority is not applicable for this biological material
+    Not_applicable = "Not applicable"
+    # The letter of authority is not required for this biological material
+    Not_required = "Not required"
+    # The letter of authority is required for this biological material in case only if its destination is in the European Union
+    Required_for_customers_in_the_EU = "Required for customers in the EU"
+    # The letter of authority is required for this biological material
+    Required = "Required"
+
+
+class GenomeSequencing(str, Enum):
+    # The complete genome has been sequenced
+    Complete_genome = "Complete genome"
+    # Only the complete conding sequence has been sequenced
+    Complete_coding_sequence = "Complete coding sequence"
+    # Only a partial sequence was sequenced
+    Partial_sequence = "Partial sequence"
+
 
 
 class Nameable(ConfiguredBaseModel):
@@ -461,6 +597,7 @@ class DataProvider(DataService):
                                                'exact_mappings': ['dcat:servesDataset'],
                                                'multivalued': False,
                                                'name': 'providedEntityType',
+                                               'range': 'uri',
                                                'required': True,
                                                'title': 'provided entity type'},
                         'queryMethod': {'close_mappings': ['dcat:endpointDescription'],
@@ -2715,7 +2852,12 @@ class ProductOrService(NamedDataset):
                                                   'required': False,
                                                   'title': 'biosafety restrictions'},
                         'canItBeUsedToProduceGMO': {'comments': ['Set to TRUE if it '
-                                                                 'can produce GMO'],
+                                                                 'can produce GMO. It '
+                                                                 'is recommended to '
+                                                                 'have a value for '
+                                                                 'this field, no value '
+                                                                 'will be understood '
+                                                                 'as unknown'],
                                                     'description': 'Indicates if the '
                                                                    'current service or '
                                                                    'product can be '
@@ -2981,7 +3123,8 @@ class ProductOrService(NamedDataset):
          'recommended': True} })
     biosafetyRestrictions: Optional[str] = Field(None, title="biosafety restrictions", description="""Information about guidelines and regulations designed to prevent the exposure to or release of potentially harmful biological agents. It thereby contributes to protecting people and the environment from biohazards while accessing this product or service""", json_schema_extra = { "linkml_meta": {'alias': 'biosafetyRestrictions', 'domain_of': ['ProductOrService']} })
     canItBeUsedToProduceGMO: Optional[bool] = Field(None, title="can it be used to produce GMO", description="""Indicates if the current service or product can be used to produce GMO""", json_schema_extra = { "linkml_meta": {'alias': 'canItBeUsedToProduceGMO',
-         'comments': ['Set to TRUE if it can produce GMO'],
+         'comments': ['Set to TRUE if it can produce GMO. It is recommended to have a '
+                      'value for this field, no value will be understood as unknown'],
          'domain_of': ['ProductOrService'],
          'recommended': True} })
     provider: Provider = Field(..., title="provider", description="""A provider of this product or service, as a specific organization""", json_schema_extra = { "linkml_meta": {'alias': 'provider', 'domain_of': ['ProductOrService']} })
@@ -3092,7 +3235,8 @@ class Service(ProductOrService):
          'recommended': True} })
     biosafetyRestrictions: Optional[str] = Field(None, title="biosafety restrictions", description="""Information about guidelines and regulations designed to prevent the exposure to or release of potentially harmful biological agents. It thereby contributes to protecting people and the environment from biohazards while accessing this product or service""", json_schema_extra = { "linkml_meta": {'alias': 'biosafetyRestrictions', 'domain_of': ['ProductOrService']} })
     canItBeUsedToProduceGMO: Optional[bool] = Field(None, title="can it be used to produce GMO", description="""Indicates if the current service or product can be used to produce GMO""", json_schema_extra = { "linkml_meta": {'alias': 'canItBeUsedToProduceGMO',
-         'comments': ['Set to TRUE if it can produce GMO'],
+         'comments': ['Set to TRUE if it can produce GMO. It is recommended to have a '
+                      'value for this field, no value will be understood as unknown'],
          'domain_of': ['ProductOrService'],
          'recommended': True} })
     provider: Provider = Field(..., title="provider", description="""A provider of this product or service, as a specific organization""", json_schema_extra = { "linkml_meta": {'alias': 'provider', 'domain_of': ['ProductOrService']} })
@@ -3324,7 +3468,8 @@ class Product(ProductOrService):
          'recommended': True} })
     biosafetyRestrictions: Optional[str] = Field(None, title="biosafety restrictions", description="""Information about guidelines and regulations designed to prevent the exposure to or release of potentially harmful biological agents. It thereby contributes to protecting people and the environment from biohazards while accessing this product or service""", json_schema_extra = { "linkml_meta": {'alias': 'biosafetyRestrictions', 'domain_of': ['ProductOrService']} })
     canItBeUsedToProduceGMO: Optional[bool] = Field(None, title="can it be used to produce GMO", description="""Indicates if the current service or product can be used to produce GMO""", json_schema_extra = { "linkml_meta": {'alias': 'canItBeUsedToProduceGMO',
-         'comments': ['Set to TRUE if it can produce GMO'],
+         'comments': ['Set to TRUE if it can produce GMO. It is recommended to have a '
+                      'value for this field, no value will be understood as unknown'],
          'domain_of': ['ProductOrService'],
          'recommended': True} })
     provider: Provider = Field(..., title="provider", description="""A provider of this product or service, as a specific organization""", json_schema_extra = { "linkml_meta": {'alias': 'provider', 'domain_of': ['ProductOrService']} })
@@ -3490,7 +3635,8 @@ class Antibody(Product):
          'recommended': True} })
     biosafetyRestrictions: Optional[str] = Field(None, title="biosafety restrictions", description="""Information about guidelines and regulations designed to prevent the exposure to or release of potentially harmful biological agents. It thereby contributes to protecting people and the environment from biohazards while accessing this product or service""", json_schema_extra = { "linkml_meta": {'alias': 'biosafetyRestrictions', 'domain_of': ['ProductOrService']} })
     canItBeUsedToProduceGMO: Optional[bool] = Field(None, title="can it be used to produce GMO", description="""Indicates if the current service or product can be used to produce GMO""", json_schema_extra = { "linkml_meta": {'alias': 'canItBeUsedToProduceGMO',
-         'comments': ['Set to TRUE if it can produce GMO'],
+         'comments': ['Set to TRUE if it can produce GMO. It is recommended to have a '
+                      'value for this field, no value will be understood as unknown'],
          'domain_of': ['ProductOrService'],
          'recommended': True} })
     provider: Provider = Field(..., title="provider", description="""A provider of this product or service, as a specific organization""", json_schema_extra = { "linkml_meta": {'alias': 'provider', 'domain_of': ['ProductOrService']} })
@@ -3616,7 +3762,8 @@ class Hybridoma(Antibody):
          'recommended': True} })
     biosafetyRestrictions: Optional[str] = Field(None, title="biosafety restrictions", description="""Information about guidelines and regulations designed to prevent the exposure to or release of potentially harmful biological agents. It thereby contributes to protecting people and the environment from biohazards while accessing this product or service""", json_schema_extra = { "linkml_meta": {'alias': 'biosafetyRestrictions', 'domain_of': ['ProductOrService']} })
     canItBeUsedToProduceGMO: Optional[bool] = Field(None, title="can it be used to produce GMO", description="""Indicates if the current service or product can be used to produce GMO""", json_schema_extra = { "linkml_meta": {'alias': 'canItBeUsedToProduceGMO',
-         'comments': ['Set to TRUE if it can produce GMO'],
+         'comments': ['Set to TRUE if it can produce GMO. It is recommended to have a '
+                      'value for this field, no value will be understood as unknown'],
          'domain_of': ['ProductOrService'],
          'recommended': True} })
     provider: Provider = Field(..., title="provider", description="""A provider of this product or service, as a specific organization""", json_schema_extra = { "linkml_meta": {'alias': 'provider', 'domain_of': ['ProductOrService']} })
@@ -4051,7 +4198,8 @@ class Protein(Product):
          'recommended': True} })
     biosafetyRestrictions: Optional[str] = Field(None, title="biosafety restrictions", description="""Information about guidelines and regulations designed to prevent the exposure to or release of potentially harmful biological agents. It thereby contributes to protecting people and the environment from biohazards while accessing this product or service""", json_schema_extra = { "linkml_meta": {'alias': 'biosafetyRestrictions', 'domain_of': ['ProductOrService']} })
     canItBeUsedToProduceGMO: Optional[bool] = Field(None, title="can it be used to produce GMO", description="""Indicates if the current service or product can be used to produce GMO""", json_schema_extra = { "linkml_meta": {'alias': 'canItBeUsedToProduceGMO',
-         'comments': ['Set to TRUE if it can produce GMO'],
+         'comments': ['Set to TRUE if it can produce GMO. It is recommended to have a '
+                      'value for this field, no value will be understood as unknown'],
          'domain_of': ['ProductOrService'],
          'recommended': True} })
     provider: Provider = Field(..., title="provider", description="""A provider of this product or service, as a specific organization""", json_schema_extra = { "linkml_meta": {'alias': 'provider', 'domain_of': ['ProductOrService']} })
@@ -4305,7 +4453,7 @@ class NucleicAcid(Product):
     identificationTechnique: Optional[str] = Field(None, title="identification technique", description="""The method used to identify the nucleic acid sequence or its associated constructs, such as PCR, sequencing, or hybridization""", json_schema_extra = { "linkml_meta": {'alias': 'identificationTechnique', 'domain_of': ['Nucleic Acid', 'Pathogen']} })
     sequencing: str = Field(..., title="sequencing", description="""Refers to the level of sequencing performed on the nucleic acid. Possible values include \"Not sequenced\" (no sequencing has been performed), \"Partly sequenced\" (only a portion of the nucleic acid sequence has been determined), and \"Fully sequenced\" (the entire nucleic acid sequence has been determined).""", json_schema_extra = { "linkml_meta": {'alias': 'sequencing',
          'comments': ['Cloned products have to be sequenced'],
-         'domain_of': ['Nucleic Acid', 'Pathogen']} })
+         'domain_of': ['Nucleic Acid']} })
     titer: Optional[str] = Field(None, title="titer", description="""The titer value, its corresponding unit, and the method of quantification (e.g., RT-qPCR, TCID50), representing the concentration or amount of unit present in the sample. The titer corresponds to the highest dilution factor that still yields a positive reading""", json_schema_extra = { "linkml_meta": {'alias': 'titer', 'domain_of': ['Nucleic Acid', 'Pathogen']} })
     sequenceChecked: bool = Field(..., title="sequence checked", description="""Tell whether or not the sequence of the product was controlled (compulsory for cloned products)""", json_schema_extra = { "linkml_meta": {'alias': 'sequenceChecked',
          'comments': ['Sequence check is mandatory for cloned products'],
@@ -4369,7 +4517,8 @@ class NucleicAcid(Product):
          'recommended': True} })
     biosafetyRestrictions: Optional[str] = Field(None, title="biosafety restrictions", description="""Information about guidelines and regulations designed to prevent the exposure to or release of potentially harmful biological agents. It thereby contributes to protecting people and the environment from biohazards while accessing this product or service""", json_schema_extra = { "linkml_meta": {'alias': 'biosafetyRestrictions', 'domain_of': ['ProductOrService']} })
     canItBeUsedToProduceGMO: Optional[bool] = Field(None, title="can it be used to produce GMO", description="""Indicates if the current service or product can be used to produce GMO""", json_schema_extra = { "linkml_meta": {'alias': 'canItBeUsedToProduceGMO',
-         'comments': ['Set to TRUE if it can produce GMO'],
+         'comments': ['Set to TRUE if it can produce GMO. It is recommended to have a '
+                      'value for this field, no value will be understood as unknown'],
          'domain_of': ['ProductOrService'],
          'recommended': True} })
     provider: Provider = Field(..., title="provider", description="""A provider of this product or service, as a specific organization""", json_schema_extra = { "linkml_meta": {'alias': 'provider', 'domain_of': ['ProductOrService']} })
@@ -4525,7 +4674,8 @@ class DetectionKit(Product):
          'recommended': True} })
     biosafetyRestrictions: Optional[str] = Field(None, title="biosafety restrictions", description="""Information about guidelines and regulations designed to prevent the exposure to or release of potentially harmful biological agents. It thereby contributes to protecting people and the environment from biohazards while accessing this product or service""", json_schema_extra = { "linkml_meta": {'alias': 'biosafetyRestrictions', 'domain_of': ['ProductOrService']} })
     canItBeUsedToProduceGMO: Optional[bool] = Field(None, title="can it be used to produce GMO", description="""Indicates if the current service or product can be used to produce GMO""", json_schema_extra = { "linkml_meta": {'alias': 'canItBeUsedToProduceGMO',
-         'comments': ['Set to TRUE if it can produce GMO'],
+         'comments': ['Set to TRUE if it can produce GMO. It is recommended to have a '
+                      'value for this field, no value will be understood as unknown'],
          'domain_of': ['ProductOrService'],
          'recommended': True} })
     provider: Provider = Field(..., title="provider", description="""A provider of this product or service, as a specific organization""", json_schema_extra = { "linkml_meta": {'alias': 'provider', 'domain_of': ['ProductOrService']} })
@@ -4666,7 +4816,8 @@ class Bundle(Product):
          'recommended': True} })
     biosafetyRestrictions: Optional[str] = Field(None, title="biosafety restrictions", description="""Information about guidelines and regulations designed to prevent the exposure to or release of potentially harmful biological agents. It thereby contributes to protecting people and the environment from biohazards while accessing this product or service""", json_schema_extra = { "linkml_meta": {'alias': 'biosafetyRestrictions', 'domain_of': ['ProductOrService']} })
     canItBeUsedToProduceGMO: Optional[bool] = Field(None, title="can it be used to produce GMO", description="""Indicates if the current service or product can be used to produce GMO""", json_schema_extra = { "linkml_meta": {'alias': 'canItBeUsedToProduceGMO',
-         'comments': ['Set to TRUE if it can produce GMO'],
+         'comments': ['Set to TRUE if it can produce GMO. It is recommended to have a '
+                      'value for this field, no value will be understood as unknown'],
          'domain_of': ['ProductOrService'],
          'recommended': True} })
     provider: Provider = Field(..., title="provider", description="""A provider of this product or service, as a specific organization""", json_schema_extra = { "linkml_meta": {'alias': 'provider', 'domain_of': ['ProductOrService']} })
@@ -4763,6 +4914,23 @@ class Pathogen(Product):
                                           'range': 'string',
                                           'required': True,
                                           'title': 'cultivability'},
+                        'genomeSequencing': {'description': 'The extent of the '
+                                                            "pathogen's genetic "
+                                                            'material that has been '
+                                                            'sequenced, with possible '
+                                                            'values including '
+                                                            '"Complete genome" for the '
+                                                            'entire genome, "Complete '
+                                                            'coding sequence" for all '
+                                                            'coding regions, and '
+                                                            '"Partial sequence" for '
+                                                            'only a portion of the '
+                                                            'genetic material',
+                                             'multivalued': False,
+                                             'name': 'genomeSequencing',
+                                             'range': 'string',
+                                             'required': True,
+                                             'title': 'genome sequencing'},
                         'identificationTechnique': {'description': 'The method or '
                                                                    'technique used to '
                                                                    'identify and '
@@ -4846,7 +5014,7 @@ class Pathogen(Product):
                                                              '"N/A", "NOT Required", '
                                                              '"Required for customers '
                                                              'in the EU" or "Required"',
-                                              'ifabsent': 'string(N/A)',
+                                              'ifabsent': 'string(Not applicable)',
                                               'multivalued': False,
                                               'name': 'letterOfAuthority',
                                               'range': 'string',
@@ -4890,20 +5058,6 @@ class Pathogen(Product):
                                      'range': 'Sequence',
                                      'required': True,
                                      'title': 'sequence'},
-                        'sequencing': {'description': "The extent of the pathogen's "
-                                                      'genetic material that has been '
-                                                      'sequenced, with possible values '
-                                                      'including "Complete genome" for '
-                                                      'the entire genome, "Complete '
-                                                      'coding sequence" for all coding '
-                                                      'regions, and "Partial sequence" '
-                                                      'for only a portion of the '
-                                                      'genetic material',
-                                       'multivalued': False,
-                                       'name': 'sequencing',
-                                       'range': 'string',
-                                       'required': True,
-                                       'title': 'sequencing'},
                         'suspectedEpidemiologicalOrigin': {'close_mappings': ['dct:spatial'],
                                                            'description': 'The '
                                                                           'potential '
@@ -4979,11 +5133,11 @@ class Pathogen(Product):
     infectivityTest: Optional[str] = Field(None, title="infectivity Test", description="""The description of the completed infectivity test, providing details on the methods, conditions, and results of the test used to assess the pathogen's ability to infect a host organism""", json_schema_extra = { "linkml_meta": {'alias': 'infectivityTest', 'domain_of': ['Pathogen']} })
     isolationTechnique: Optional[str] = Field(None, title="isolation technique", description="""The specific method or procedure used to isolate the pathogen from a host organism or sample, detailing the techniques and tools employed in the isolation process""", json_schema_extra = { "linkml_meta": {'alias': 'isolationTechnique', 'domain_of': ['Pathogen']} })
     isolationConditions: Optional[str] = Field(None, title="isolation conditions", description="""The environmental and procedural conditions under which the pathogen was isolated""", json_schema_extra = { "linkml_meta": {'alias': 'isolationConditions', 'domain_of': ['Pathogen']} })
-    letterOfAuthority: str = Field("N/A", title="letter of authority", description="""Indicate whether a Letter of Authority is required, confirming the necessity of formal authorization. The possible values are \"N/A\", \"NOT Required\", \"Required for customers in the EU\" or \"Required\"""", json_schema_extra = { "linkml_meta": {'alias': 'letterOfAuthority',
+    letterOfAuthority: str = Field("Not applicable", title="letter of authority", description="""Indicate whether a Letter of Authority is required, confirming the necessity of formal authorization. The possible values are \"N/A\", \"NOT Required\", \"Required for customers in the EU\" or \"Required\"""", json_schema_extra = { "linkml_meta": {'alias': 'letterOfAuthority',
          'domain_of': ['Pathogen'],
-         'ifabsent': 'string(N/A)'} })
+         'ifabsent': 'string(Not applicable)'} })
     passage: Optional[str] = Field(None, title="passage", description="""The number of times the pathogen was cultured through serial passage, a process used to increase the stock but which can also lead to the evolution of the original pathogen.""", json_schema_extra = { "linkml_meta": {'alias': 'passage', 'domain_of': ['Pathogen']} })
-    sequencing: str = Field(..., title="sequencing", description="""The extent of the pathogen's genetic material that has been sequenced, with possible values including \"Complete genome\" for the entire genome, \"Complete coding sequence\" for all coding regions, and \"Partial sequence\" for only a portion of the genetic material""", json_schema_extra = { "linkml_meta": {'alias': 'sequencing', 'domain_of': ['Nucleic Acid', 'Pathogen']} })
+    genomeSequencing: str = Field(..., title="genome sequencing", description="""The extent of the pathogen's genetic material that has been sequenced, with possible values including \"Complete genome\" for the entire genome, \"Complete coding sequence\" for all coding regions, and \"Partial sequence\" for only a portion of the genetic material""", json_schema_extra = { "linkml_meta": {'alias': 'genomeSequencing', 'domain_of': ['Pathogen']} })
     titer: str = Field(..., title="titer", description="""The titer value, its corresponding unit, and the method of quantification (e.g., RT-qPCR, TCID50), representing the concentration or amount of unit present in the sample. The titer corresponds to the highest dilution factor that still yields a positive reading""", json_schema_extra = { "linkml_meta": {'alias': 'titer',
          'close_mappings': ['wd:Q2166189'],
          'domain_of': ['Nucleic Acid', 'Pathogen']} })
@@ -5046,7 +5200,8 @@ class Pathogen(Product):
          'recommended': True} })
     biosafetyRestrictions: Optional[str] = Field(None, title="biosafety restrictions", description="""Information about guidelines and regulations designed to prevent the exposure to or release of potentially harmful biological agents. It thereby contributes to protecting people and the environment from biohazards while accessing this product or service""", json_schema_extra = { "linkml_meta": {'alias': 'biosafetyRestrictions', 'domain_of': ['ProductOrService']} })
     canItBeUsedToProduceGMO: Optional[bool] = Field(None, title="can it be used to produce GMO", description="""Indicates if the current service or product can be used to produce GMO""", json_schema_extra = { "linkml_meta": {'alias': 'canItBeUsedToProduceGMO',
-         'comments': ['Set to TRUE if it can produce GMO'],
+         'comments': ['Set to TRUE if it can produce GMO. It is recommended to have a '
+                      'value for this field, no value will be understood as unknown'],
          'domain_of': ['ProductOrService'],
          'recommended': True} })
     provider: Provider = Field(..., title="provider", description="""A provider of this product or service, as a specific organization""", json_schema_extra = { "linkml_meta": {'alias': 'provider', 'domain_of': ['ProductOrService']} })
@@ -5171,11 +5326,11 @@ class Virus(Pathogen):
     infectivityTest: Optional[str] = Field(None, title="infectivity Test", description="""The description of the completed infectivity test, providing details on the methods, conditions, and results of the test used to assess the pathogen's ability to infect a host organism""", json_schema_extra = { "linkml_meta": {'alias': 'infectivityTest', 'domain_of': ['Pathogen']} })
     isolationTechnique: Optional[str] = Field(None, title="isolation technique", description="""The specific method or procedure used to isolate the pathogen from a host organism or sample, detailing the techniques and tools employed in the isolation process""", json_schema_extra = { "linkml_meta": {'alias': 'isolationTechnique', 'domain_of': ['Pathogen']} })
     isolationConditions: Optional[str] = Field(None, title="isolation conditions", description="""The environmental and procedural conditions under which the pathogen was isolated""", json_schema_extra = { "linkml_meta": {'alias': 'isolationConditions', 'domain_of': ['Pathogen']} })
-    letterOfAuthority: str = Field("N/A", title="letter of authority", description="""Indicate whether a Letter of Authority is required, confirming the necessity of formal authorization. The possible values are \"N/A\", \"NOT Required\", \"Required for customers in the EU\" or \"Required\"""", json_schema_extra = { "linkml_meta": {'alias': 'letterOfAuthority',
+    letterOfAuthority: str = Field("Not applicable", title="letter of authority", description="""Indicate whether a Letter of Authority is required, confirming the necessity of formal authorization. The possible values are \"N/A\", \"NOT Required\", \"Required for customers in the EU\" or \"Required\"""", json_schema_extra = { "linkml_meta": {'alias': 'letterOfAuthority',
          'domain_of': ['Pathogen'],
-         'ifabsent': 'string(N/A)'} })
+         'ifabsent': 'string(Not applicable)'} })
     passage: Optional[str] = Field(None, title="passage", description="""The number of times the pathogen was cultured through serial passage, a process used to increase the stock but which can also lead to the evolution of the original pathogen.""", json_schema_extra = { "linkml_meta": {'alias': 'passage', 'domain_of': ['Pathogen']} })
-    sequencing: str = Field(..., title="sequencing", description="""The extent of the pathogen's genetic material that has been sequenced, with possible values including \"Complete genome\" for the entire genome, \"Complete coding sequence\" for all coding regions, and \"Partial sequence\" for only a portion of the genetic material""", json_schema_extra = { "linkml_meta": {'alias': 'sequencing', 'domain_of': ['Nucleic Acid', 'Pathogen']} })
+    genomeSequencing: str = Field(..., title="genome sequencing", description="""The extent of the pathogen's genetic material that has been sequenced, with possible values including \"Complete genome\" for the entire genome, \"Complete coding sequence\" for all coding regions, and \"Partial sequence\" for only a portion of the genetic material""", json_schema_extra = { "linkml_meta": {'alias': 'genomeSequencing', 'domain_of': ['Pathogen']} })
     titer: str = Field(..., title="titer", description="""The titer value, its corresponding unit, and the method of quantification (e.g., RT-qPCR, TCID50), representing the concentration or amount of unit present in the sample. The titer corresponds to the highest dilution factor that still yields a positive reading""", json_schema_extra = { "linkml_meta": {'alias': 'titer',
          'close_mappings': ['wd:Q2166189'],
          'domain_of': ['Nucleic Acid', 'Pathogen']} })
@@ -5238,7 +5393,8 @@ class Virus(Pathogen):
          'recommended': True} })
     biosafetyRestrictions: Optional[str] = Field(None, title="biosafety restrictions", description="""Information about guidelines and regulations designed to prevent the exposure to or release of potentially harmful biological agents. It thereby contributes to protecting people and the environment from biohazards while accessing this product or service""", json_schema_extra = { "linkml_meta": {'alias': 'biosafetyRestrictions', 'domain_of': ['ProductOrService']} })
     canItBeUsedToProduceGMO: Optional[bool] = Field(None, title="can it be used to produce GMO", description="""Indicates if the current service or product can be used to produce GMO""", json_schema_extra = { "linkml_meta": {'alias': 'canItBeUsedToProduceGMO',
-         'comments': ['Set to TRUE if it can produce GMO'],
+         'comments': ['Set to TRUE if it can produce GMO. It is recommended to have a '
+                      'value for this field, no value will be understood as unknown'],
          'domain_of': ['ProductOrService'],
          'recommended': True} })
     provider: Provider = Field(..., title="provider", description="""A provider of this product or service, as a specific organization""", json_schema_extra = { "linkml_meta": {'alias': 'provider', 'domain_of': ['ProductOrService']} })
@@ -5315,11 +5471,11 @@ class Bacterium(Pathogen):
     infectivityTest: Optional[str] = Field(None, title="infectivity Test", description="""The description of the completed infectivity test, providing details on the methods, conditions, and results of the test used to assess the pathogen's ability to infect a host organism""", json_schema_extra = { "linkml_meta": {'alias': 'infectivityTest', 'domain_of': ['Pathogen']} })
     isolationTechnique: Optional[str] = Field(None, title="isolation technique", description="""The specific method or procedure used to isolate the pathogen from a host organism or sample, detailing the techniques and tools employed in the isolation process""", json_schema_extra = { "linkml_meta": {'alias': 'isolationTechnique', 'domain_of': ['Pathogen']} })
     isolationConditions: Optional[str] = Field(None, title="isolation conditions", description="""The environmental and procedural conditions under which the pathogen was isolated""", json_schema_extra = { "linkml_meta": {'alias': 'isolationConditions', 'domain_of': ['Pathogen']} })
-    letterOfAuthority: str = Field("N/A", title="letter of authority", description="""Indicate whether a Letter of Authority is required, confirming the necessity of formal authorization. The possible values are \"N/A\", \"NOT Required\", \"Required for customers in the EU\" or \"Required\"""", json_schema_extra = { "linkml_meta": {'alias': 'letterOfAuthority',
+    letterOfAuthority: str = Field("Not applicable", title="letter of authority", description="""Indicate whether a Letter of Authority is required, confirming the necessity of formal authorization. The possible values are \"N/A\", \"NOT Required\", \"Required for customers in the EU\" or \"Required\"""", json_schema_extra = { "linkml_meta": {'alias': 'letterOfAuthority',
          'domain_of': ['Pathogen'],
-         'ifabsent': 'string(N/A)'} })
+         'ifabsent': 'string(Not applicable)'} })
     passage: Optional[str] = Field(None, title="passage", description="""The number of times the pathogen was cultured through serial passage, a process used to increase the stock but which can also lead to the evolution of the original pathogen.""", json_schema_extra = { "linkml_meta": {'alias': 'passage', 'domain_of': ['Pathogen']} })
-    sequencing: str = Field(..., title="sequencing", description="""The extent of the pathogen's genetic material that has been sequenced, with possible values including \"Complete genome\" for the entire genome, \"Complete coding sequence\" for all coding regions, and \"Partial sequence\" for only a portion of the genetic material""", json_schema_extra = { "linkml_meta": {'alias': 'sequencing', 'domain_of': ['Nucleic Acid', 'Pathogen']} })
+    genomeSequencing: str = Field(..., title="genome sequencing", description="""The extent of the pathogen's genetic material that has been sequenced, with possible values including \"Complete genome\" for the entire genome, \"Complete coding sequence\" for all coding regions, and \"Partial sequence\" for only a portion of the genetic material""", json_schema_extra = { "linkml_meta": {'alias': 'genomeSequencing', 'domain_of': ['Pathogen']} })
     titer: str = Field(..., title="titer", description="""The titer value, its corresponding unit, and the method of quantification (e.g., RT-qPCR, TCID50), representing the concentration or amount of unit present in the sample. The titer corresponds to the highest dilution factor that still yields a positive reading""", json_schema_extra = { "linkml_meta": {'alias': 'titer',
          'close_mappings': ['wd:Q2166189'],
          'domain_of': ['Nucleic Acid', 'Pathogen']} })
@@ -5382,7 +5538,8 @@ class Bacterium(Pathogen):
          'recommended': True} })
     biosafetyRestrictions: Optional[str] = Field(None, title="biosafety restrictions", description="""Information about guidelines and regulations designed to prevent the exposure to or release of potentially harmful biological agents. It thereby contributes to protecting people and the environment from biohazards while accessing this product or service""", json_schema_extra = { "linkml_meta": {'alias': 'biosafetyRestrictions', 'domain_of': ['ProductOrService']} })
     canItBeUsedToProduceGMO: Optional[bool] = Field(None, title="can it be used to produce GMO", description="""Indicates if the current service or product can be used to produce GMO""", json_schema_extra = { "linkml_meta": {'alias': 'canItBeUsedToProduceGMO',
-         'comments': ['Set to TRUE if it can produce GMO'],
+         'comments': ['Set to TRUE if it can produce GMO. It is recommended to have a '
+                      'value for this field, no value will be understood as unknown'],
          'domain_of': ['ProductOrService'],
          'recommended': True} })
     provider: Provider = Field(..., title="provider", description="""A provider of this product or service, as a specific organization""", json_schema_extra = { "linkml_meta": {'alias': 'provider', 'domain_of': ['ProductOrService']} })
@@ -5459,11 +5616,11 @@ class Fungus(Pathogen):
     infectivityTest: Optional[str] = Field(None, title="infectivity Test", description="""The description of the completed infectivity test, providing details on the methods, conditions, and results of the test used to assess the pathogen's ability to infect a host organism""", json_schema_extra = { "linkml_meta": {'alias': 'infectivityTest', 'domain_of': ['Pathogen']} })
     isolationTechnique: Optional[str] = Field(None, title="isolation technique", description="""The specific method or procedure used to isolate the pathogen from a host organism or sample, detailing the techniques and tools employed in the isolation process""", json_schema_extra = { "linkml_meta": {'alias': 'isolationTechnique', 'domain_of': ['Pathogen']} })
     isolationConditions: Optional[str] = Field(None, title="isolation conditions", description="""The environmental and procedural conditions under which the pathogen was isolated""", json_schema_extra = { "linkml_meta": {'alias': 'isolationConditions', 'domain_of': ['Pathogen']} })
-    letterOfAuthority: str = Field("N/A", title="letter of authority", description="""Indicate whether a Letter of Authority is required, confirming the necessity of formal authorization. The possible values are \"N/A\", \"NOT Required\", \"Required for customers in the EU\" or \"Required\"""", json_schema_extra = { "linkml_meta": {'alias': 'letterOfAuthority',
+    letterOfAuthority: str = Field("Not applicable", title="letter of authority", description="""Indicate whether a Letter of Authority is required, confirming the necessity of formal authorization. The possible values are \"N/A\", \"NOT Required\", \"Required for customers in the EU\" or \"Required\"""", json_schema_extra = { "linkml_meta": {'alias': 'letterOfAuthority',
          'domain_of': ['Pathogen'],
-         'ifabsent': 'string(N/A)'} })
+         'ifabsent': 'string(Not applicable)'} })
     passage: Optional[str] = Field(None, title="passage", description="""The number of times the pathogen was cultured through serial passage, a process used to increase the stock but which can also lead to the evolution of the original pathogen.""", json_schema_extra = { "linkml_meta": {'alias': 'passage', 'domain_of': ['Pathogen']} })
-    sequencing: str = Field(..., title="sequencing", description="""The extent of the pathogen's genetic material that has been sequenced, with possible values including \"Complete genome\" for the entire genome, \"Complete coding sequence\" for all coding regions, and \"Partial sequence\" for only a portion of the genetic material""", json_schema_extra = { "linkml_meta": {'alias': 'sequencing', 'domain_of': ['Nucleic Acid', 'Pathogen']} })
+    genomeSequencing: str = Field(..., title="genome sequencing", description="""The extent of the pathogen's genetic material that has been sequenced, with possible values including \"Complete genome\" for the entire genome, \"Complete coding sequence\" for all coding regions, and \"Partial sequence\" for only a portion of the genetic material""", json_schema_extra = { "linkml_meta": {'alias': 'genomeSequencing', 'domain_of': ['Pathogen']} })
     titer: str = Field(..., title="titer", description="""The titer value, its corresponding unit, and the method of quantification (e.g., RT-qPCR, TCID50), representing the concentration or amount of unit present in the sample. The titer corresponds to the highest dilution factor that still yields a positive reading""", json_schema_extra = { "linkml_meta": {'alias': 'titer',
          'close_mappings': ['wd:Q2166189'],
          'domain_of': ['Nucleic Acid', 'Pathogen']} })
@@ -5526,7 +5683,8 @@ class Fungus(Pathogen):
          'recommended': True} })
     biosafetyRestrictions: Optional[str] = Field(None, title="biosafety restrictions", description="""Information about guidelines and regulations designed to prevent the exposure to or release of potentially harmful biological agents. It thereby contributes to protecting people and the environment from biohazards while accessing this product or service""", json_schema_extra = { "linkml_meta": {'alias': 'biosafetyRestrictions', 'domain_of': ['ProductOrService']} })
     canItBeUsedToProduceGMO: Optional[bool] = Field(None, title="can it be used to produce GMO", description="""Indicates if the current service or product can be used to produce GMO""", json_schema_extra = { "linkml_meta": {'alias': 'canItBeUsedToProduceGMO',
-         'comments': ['Set to TRUE if it can produce GMO'],
+         'comments': ['Set to TRUE if it can produce GMO. It is recommended to have a '
+                      'value for this field, no value will be understood as unknown'],
          'domain_of': ['ProductOrService'],
          'recommended': True} })
     provider: Provider = Field(..., title="provider", description="""A provider of this product or service, as a specific organization""", json_schema_extra = { "linkml_meta": {'alias': 'provider', 'domain_of': ['ProductOrService']} })
@@ -5603,11 +5761,11 @@ class Protozoan(Pathogen):
     infectivityTest: Optional[str] = Field(None, title="infectivity Test", description="""The description of the completed infectivity test, providing details on the methods, conditions, and results of the test used to assess the pathogen's ability to infect a host organism""", json_schema_extra = { "linkml_meta": {'alias': 'infectivityTest', 'domain_of': ['Pathogen']} })
     isolationTechnique: Optional[str] = Field(None, title="isolation technique", description="""The specific method or procedure used to isolate the pathogen from a host organism or sample, detailing the techniques and tools employed in the isolation process""", json_schema_extra = { "linkml_meta": {'alias': 'isolationTechnique', 'domain_of': ['Pathogen']} })
     isolationConditions: Optional[str] = Field(None, title="isolation conditions", description="""The environmental and procedural conditions under which the pathogen was isolated""", json_schema_extra = { "linkml_meta": {'alias': 'isolationConditions', 'domain_of': ['Pathogen']} })
-    letterOfAuthority: str = Field("N/A", title="letter of authority", description="""Indicate whether a Letter of Authority is required, confirming the necessity of formal authorization. The possible values are \"N/A\", \"NOT Required\", \"Required for customers in the EU\" or \"Required\"""", json_schema_extra = { "linkml_meta": {'alias': 'letterOfAuthority',
+    letterOfAuthority: str = Field("Not applicable", title="letter of authority", description="""Indicate whether a Letter of Authority is required, confirming the necessity of formal authorization. The possible values are \"N/A\", \"NOT Required\", \"Required for customers in the EU\" or \"Required\"""", json_schema_extra = { "linkml_meta": {'alias': 'letterOfAuthority',
          'domain_of': ['Pathogen'],
-         'ifabsent': 'string(N/A)'} })
+         'ifabsent': 'string(Not applicable)'} })
     passage: Optional[str] = Field(None, title="passage", description="""The number of times the pathogen was cultured through serial passage, a process used to increase the stock but which can also lead to the evolution of the original pathogen.""", json_schema_extra = { "linkml_meta": {'alias': 'passage', 'domain_of': ['Pathogen']} })
-    sequencing: str = Field(..., title="sequencing", description="""The extent of the pathogen's genetic material that has been sequenced, with possible values including \"Complete genome\" for the entire genome, \"Complete coding sequence\" for all coding regions, and \"Partial sequence\" for only a portion of the genetic material""", json_schema_extra = { "linkml_meta": {'alias': 'sequencing', 'domain_of': ['Nucleic Acid', 'Pathogen']} })
+    genomeSequencing: str = Field(..., title="genome sequencing", description="""The extent of the pathogen's genetic material that has been sequenced, with possible values including \"Complete genome\" for the entire genome, \"Complete coding sequence\" for all coding regions, and \"Partial sequence\" for only a portion of the genetic material""", json_schema_extra = { "linkml_meta": {'alias': 'genomeSequencing', 'domain_of': ['Pathogen']} })
     titer: str = Field(..., title="titer", description="""The titer value, its corresponding unit, and the method of quantification (e.g., RT-qPCR, TCID50), representing the concentration or amount of unit present in the sample. The titer corresponds to the highest dilution factor that still yields a positive reading""", json_schema_extra = { "linkml_meta": {'alias': 'titer',
          'close_mappings': ['wd:Q2166189'],
          'domain_of': ['Nucleic Acid', 'Pathogen']} })
@@ -5670,7 +5828,8 @@ class Protozoan(Pathogen):
          'recommended': True} })
     biosafetyRestrictions: Optional[str] = Field(None, title="biosafety restrictions", description="""Information about guidelines and regulations designed to prevent the exposure to or release of potentially harmful biological agents. It thereby contributes to protecting people and the environment from biohazards while accessing this product or service""", json_schema_extra = { "linkml_meta": {'alias': 'biosafetyRestrictions', 'domain_of': ['ProductOrService']} })
     canItBeUsedToProduceGMO: Optional[bool] = Field(None, title="can it be used to produce GMO", description="""Indicates if the current service or product can be used to produce GMO""", json_schema_extra = { "linkml_meta": {'alias': 'canItBeUsedToProduceGMO',
-         'comments': ['Set to TRUE if it can produce GMO'],
+         'comments': ['Set to TRUE if it can produce GMO. It is recommended to have a '
+                      'value for this field, no value will be understood as unknown'],
          'domain_of': ['ProductOrService'],
          'recommended': True} })
     provider: Provider = Field(..., title="provider", description="""A provider of this product or service, as a specific organization""", json_schema_extra = { "linkml_meta": {'alias': 'provider', 'domain_of': ['ProductOrService']} })
@@ -5747,11 +5906,11 @@ class Viroid(Pathogen):
     infectivityTest: Optional[str] = Field(None, title="infectivity Test", description="""The description of the completed infectivity test, providing details on the methods, conditions, and results of the test used to assess the pathogen's ability to infect a host organism""", json_schema_extra = { "linkml_meta": {'alias': 'infectivityTest', 'domain_of': ['Pathogen']} })
     isolationTechnique: Optional[str] = Field(None, title="isolation technique", description="""The specific method or procedure used to isolate the pathogen from a host organism or sample, detailing the techniques and tools employed in the isolation process""", json_schema_extra = { "linkml_meta": {'alias': 'isolationTechnique', 'domain_of': ['Pathogen']} })
     isolationConditions: Optional[str] = Field(None, title="isolation conditions", description="""The environmental and procedural conditions under which the pathogen was isolated""", json_schema_extra = { "linkml_meta": {'alias': 'isolationConditions', 'domain_of': ['Pathogen']} })
-    letterOfAuthority: str = Field("N/A", title="letter of authority", description="""Indicate whether a Letter of Authority is required, confirming the necessity of formal authorization. The possible values are \"N/A\", \"NOT Required\", \"Required for customers in the EU\" or \"Required\"""", json_schema_extra = { "linkml_meta": {'alias': 'letterOfAuthority',
+    letterOfAuthority: str = Field("Not applicable", title="letter of authority", description="""Indicate whether a Letter of Authority is required, confirming the necessity of formal authorization. The possible values are \"N/A\", \"NOT Required\", \"Required for customers in the EU\" or \"Required\"""", json_schema_extra = { "linkml_meta": {'alias': 'letterOfAuthority',
          'domain_of': ['Pathogen'],
-         'ifabsent': 'string(N/A)'} })
+         'ifabsent': 'string(Not applicable)'} })
     passage: Optional[str] = Field(None, title="passage", description="""The number of times the pathogen was cultured through serial passage, a process used to increase the stock but which can also lead to the evolution of the original pathogen.""", json_schema_extra = { "linkml_meta": {'alias': 'passage', 'domain_of': ['Pathogen']} })
-    sequencing: str = Field(..., title="sequencing", description="""The extent of the pathogen's genetic material that has been sequenced, with possible values including \"Complete genome\" for the entire genome, \"Complete coding sequence\" for all coding regions, and \"Partial sequence\" for only a portion of the genetic material""", json_schema_extra = { "linkml_meta": {'alias': 'sequencing', 'domain_of': ['Nucleic Acid', 'Pathogen']} })
+    genomeSequencing: str = Field(..., title="genome sequencing", description="""The extent of the pathogen's genetic material that has been sequenced, with possible values including \"Complete genome\" for the entire genome, \"Complete coding sequence\" for all coding regions, and \"Partial sequence\" for only a portion of the genetic material""", json_schema_extra = { "linkml_meta": {'alias': 'genomeSequencing', 'domain_of': ['Pathogen']} })
     titer: str = Field(..., title="titer", description="""The titer value, its corresponding unit, and the method of quantification (e.g., RT-qPCR, TCID50), representing the concentration or amount of unit present in the sample. The titer corresponds to the highest dilution factor that still yields a positive reading""", json_schema_extra = { "linkml_meta": {'alias': 'titer',
          'close_mappings': ['wd:Q2166189'],
          'domain_of': ['Nucleic Acid', 'Pathogen']} })
@@ -5814,7 +5973,8 @@ class Viroid(Pathogen):
          'recommended': True} })
     biosafetyRestrictions: Optional[str] = Field(None, title="biosafety restrictions", description="""Information about guidelines and regulations designed to prevent the exposure to or release of potentially harmful biological agents. It thereby contributes to protecting people and the environment from biohazards while accessing this product or service""", json_schema_extra = { "linkml_meta": {'alias': 'biosafetyRestrictions', 'domain_of': ['ProductOrService']} })
     canItBeUsedToProduceGMO: Optional[bool] = Field(None, title="can it be used to produce GMO", description="""Indicates if the current service or product can be used to produce GMO""", json_schema_extra = { "linkml_meta": {'alias': 'canItBeUsedToProduceGMO',
-         'comments': ['Set to TRUE if it can produce GMO'],
+         'comments': ['Set to TRUE if it can produce GMO. It is recommended to have a '
+                      'value for this field, no value will be understood as unknown'],
          'domain_of': ['ProductOrService'],
          'recommended': True} })
     provider: Provider = Field(..., title="provider", description="""A provider of this product or service, as a specific organization""", json_schema_extra = { "linkml_meta": {'alias': 'provider', 'domain_of': ['ProductOrService']} })
@@ -5891,11 +6051,11 @@ class Prion(Pathogen):
     infectivityTest: Optional[str] = Field(None, title="infectivity Test", description="""The description of the completed infectivity test, providing details on the methods, conditions, and results of the test used to assess the pathogen's ability to infect a host organism""", json_schema_extra = { "linkml_meta": {'alias': 'infectivityTest', 'domain_of': ['Pathogen']} })
     isolationTechnique: Optional[str] = Field(None, title="isolation technique", description="""The specific method or procedure used to isolate the pathogen from a host organism or sample, detailing the techniques and tools employed in the isolation process""", json_schema_extra = { "linkml_meta": {'alias': 'isolationTechnique', 'domain_of': ['Pathogen']} })
     isolationConditions: Optional[str] = Field(None, title="isolation conditions", description="""The environmental and procedural conditions under which the pathogen was isolated""", json_schema_extra = { "linkml_meta": {'alias': 'isolationConditions', 'domain_of': ['Pathogen']} })
-    letterOfAuthority: str = Field("N/A", title="letter of authority", description="""Indicate whether a Letter of Authority is required, confirming the necessity of formal authorization. The possible values are \"N/A\", \"NOT Required\", \"Required for customers in the EU\" or \"Required\"""", json_schema_extra = { "linkml_meta": {'alias': 'letterOfAuthority',
+    letterOfAuthority: str = Field("Not applicable", title="letter of authority", description="""Indicate whether a Letter of Authority is required, confirming the necessity of formal authorization. The possible values are \"N/A\", \"NOT Required\", \"Required for customers in the EU\" or \"Required\"""", json_schema_extra = { "linkml_meta": {'alias': 'letterOfAuthority',
          'domain_of': ['Pathogen'],
-         'ifabsent': 'string(N/A)'} })
+         'ifabsent': 'string(Not applicable)'} })
     passage: Optional[str] = Field(None, title="passage", description="""The number of times the pathogen was cultured through serial passage, a process used to increase the stock but which can also lead to the evolution of the original pathogen.""", json_schema_extra = { "linkml_meta": {'alias': 'passage', 'domain_of': ['Pathogen']} })
-    sequencing: str = Field(..., title="sequencing", description="""The extent of the pathogen's genetic material that has been sequenced, with possible values including \"Complete genome\" for the entire genome, \"Complete coding sequence\" for all coding regions, and \"Partial sequence\" for only a portion of the genetic material""", json_schema_extra = { "linkml_meta": {'alias': 'sequencing', 'domain_of': ['Nucleic Acid', 'Pathogen']} })
+    genomeSequencing: str = Field(..., title="genome sequencing", description="""The extent of the pathogen's genetic material that has been sequenced, with possible values including \"Complete genome\" for the entire genome, \"Complete coding sequence\" for all coding regions, and \"Partial sequence\" for only a portion of the genetic material""", json_schema_extra = { "linkml_meta": {'alias': 'genomeSequencing', 'domain_of': ['Pathogen']} })
     titer: str = Field(..., title="titer", description="""The titer value, its corresponding unit, and the method of quantification (e.g., RT-qPCR, TCID50), representing the concentration or amount of unit present in the sample. The titer corresponds to the highest dilution factor that still yields a positive reading""", json_schema_extra = { "linkml_meta": {'alias': 'titer',
          'close_mappings': ['wd:Q2166189'],
          'domain_of': ['Nucleic Acid', 'Pathogen']} })
@@ -5958,7 +6118,8 @@ class Prion(Pathogen):
          'recommended': True} })
     biosafetyRestrictions: Optional[str] = Field(None, title="biosafety restrictions", description="""Information about guidelines and regulations designed to prevent the exposure to or release of potentially harmful biological agents. It thereby contributes to protecting people and the environment from biohazards while accessing this product or service""", json_schema_extra = { "linkml_meta": {'alias': 'biosafetyRestrictions', 'domain_of': ['ProductOrService']} })
     canItBeUsedToProduceGMO: Optional[bool] = Field(None, title="can it be used to produce GMO", description="""Indicates if the current service or product can be used to produce GMO""", json_schema_extra = { "linkml_meta": {'alias': 'canItBeUsedToProduceGMO',
-         'comments': ['Set to TRUE if it can produce GMO'],
+         'comments': ['Set to TRUE if it can produce GMO. It is recommended to have a '
+                      'value for this field, no value will be understood as unknown'],
          'domain_of': ['ProductOrService'],
          'recommended': True} })
     provider: Provider = Field(..., title="provider", description="""A provider of this product or service, as a specific organization""", json_schema_extra = { "linkml_meta": {'alias': 'provider', 'domain_of': ['ProductOrService']} })

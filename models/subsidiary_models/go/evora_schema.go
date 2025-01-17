@@ -2924,7 +2924,7 @@ type Pathogen struct {
 	/*
 	 * The extent of the pathogen's genetic material that has been sequenced, with possible values including "Complete genome" for the entire genome, "Complete coding sequence" for all coding regions, and "Partial sequence" for only a portion of the genetic material
 	 */
-	Sequencing string `json:"sequencing"`
+	GenomeSequencing string `json:"genomeSequencing"`
 	/*
 	 * The titer value, its corresponding unit, and the method of quantification (e.g., RT-qPCR, TCID50), representing the concentration or amount of unit present in the sample. The titer corresponds to the highest dilution factor that still yields a positive reading
 	 */
@@ -3151,7 +3151,7 @@ type Virus struct {
 	/*
 	 * The extent of the pathogen's genetic material that has been sequenced, with possible values including "Complete genome" for the entire genome, "Complete coding sequence" for all coding regions, and "Partial sequence" for only a portion of the genetic material
 	 */
-	Sequencing string `json:"sequencing"`
+	GenomeSequencing string `json:"genomeSequencing"`
 	/*
 	 * The titer value, its corresponding unit, and the method of quantification (e.g., RT-qPCR, TCID50), representing the concentration or amount of unit present in the sample. The titer corresponds to the highest dilution factor that still yields a positive reading
 	 */
@@ -3366,7 +3366,7 @@ type Bacterium struct {
 	/*
 	 * The extent of the pathogen's genetic material that has been sequenced, with possible values including "Complete genome" for the entire genome, "Complete coding sequence" for all coding regions, and "Partial sequence" for only a portion of the genetic material
 	 */
-	Sequencing string `json:"sequencing"`
+	GenomeSequencing string `json:"genomeSequencing"`
 	/*
 	 * The titer value, its corresponding unit, and the method of quantification (e.g., RT-qPCR, TCID50), representing the concentration or amount of unit present in the sample. The titer corresponds to the highest dilution factor that still yields a positive reading
 	 */
@@ -3581,7 +3581,7 @@ type Fungus struct {
 	/*
 	 * The extent of the pathogen's genetic material that has been sequenced, with possible values including "Complete genome" for the entire genome, "Complete coding sequence" for all coding regions, and "Partial sequence" for only a portion of the genetic material
 	 */
-	Sequencing string `json:"sequencing"`
+	GenomeSequencing string `json:"genomeSequencing"`
 	/*
 	 * The titer value, its corresponding unit, and the method of quantification (e.g., RT-qPCR, TCID50), representing the concentration or amount of unit present in the sample. The titer corresponds to the highest dilution factor that still yields a positive reading
 	 */
@@ -3796,7 +3796,7 @@ type Protozoan struct {
 	/*
 	 * The extent of the pathogen's genetic material that has been sequenced, with possible values including "Complete genome" for the entire genome, "Complete coding sequence" for all coding regions, and "Partial sequence" for only a portion of the genetic material
 	 */
-	Sequencing string `json:"sequencing"`
+	GenomeSequencing string `json:"genomeSequencing"`
 	/*
 	 * The titer value, its corresponding unit, and the method of quantification (e.g., RT-qPCR, TCID50), representing the concentration or amount of unit present in the sample. The titer corresponds to the highest dilution factor that still yields a positive reading
 	 */
@@ -4011,7 +4011,7 @@ type Viroid struct {
 	/*
 	 * The extent of the pathogen's genetic material that has been sequenced, with possible values including "Complete genome" for the entire genome, "Complete coding sequence" for all coding regions, and "Partial sequence" for only a portion of the genetic material
 	 */
-	Sequencing string `json:"sequencing"`
+	GenomeSequencing string `json:"genomeSequencing"`
 	/*
 	 * The titer value, its corresponding unit, and the method of quantification (e.g., RT-qPCR, TCID50), representing the concentration or amount of unit present in the sample. The titer corresponds to the highest dilution factor that still yields a positive reading
 	 */
@@ -4226,7 +4226,7 @@ type Prion struct {
 	/*
 	 * The extent of the pathogen's genetic material that has been sequenced, with possible values including "Complete genome" for the entire genome, "Complete coding sequence" for all coding regions, and "Partial sequence" for only a portion of the genetic material
 	 */
-	Sequencing string `json:"sequencing"`
+	GenomeSequencing string `json:"genomeSequencing"`
 	/*
 	 * The titer value, its corresponding unit, and the method of quantification (e.g., RT-qPCR, TCID50), representing the concentration or amount of unit present in the sample. The titer corresponds to the highest dilution factor that still yields a positive reading
 	 */

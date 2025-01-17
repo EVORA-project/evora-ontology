@@ -44,7 +44,7 @@ SELECT ?g ?s ?p WHERE {
    EVORAO:isolationConditions,
    EVORAO:letterOfAuthority,
    EVORAO:passage,
-   EVORAO:sequencing,
+   EVORAO:genomeSequencing,
    EVORAO:titer,
    EVORAO:hasIATAClassification,
    EVORAO:shippingConditions,
