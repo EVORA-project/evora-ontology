@@ -1399,6 +1399,10 @@ type SyntheticPartOrigin struct {
  */
 type RecombinantPartIdentification struct {
 	/*
+	 * parent types
+	 */
+	Dataset
+	/*
 	 * A short designation of this recombinant part of the related biological material
 	 */
 	PartIdentification string `json:"partIdentification"`

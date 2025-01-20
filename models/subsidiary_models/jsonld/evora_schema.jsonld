@@ -17,7 +17,7 @@
     "https://orcid.org/0000-0002-2042-2839"
   ],
   "id": "https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#",
-  "version": "1.0.7894",
+  "version": "1.0.7897",
   "imports": [
     "linkml:types"
   ],
@@ -8533,6 +8533,7 @@
       "description": "Identification of a recombinant part",
       "title": "Recombinant part identification",
       "from_schema": "https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#",
+      "is_a": "Dataset",
       "slots": [
         "RecombinantPartIdentification_partIdentification",
         "RecombinantPartIdentification_sequence"
@@ -9745,9 +9746,9 @@
   ],
   "metamodel_version": "1.7.0",
   "source_file": "evora_schema.yaml",
-  "source_file_date": "2025-01-17T16:10:08",
-  "source_file_size": 138769,
-  "generation_date": "2025-01-17T16:10:24",
+  "source_file_date": "2025-01-20T15:33:26",
+  "source_file_size": 138787,
+  "generation_date": "2025-01-20T15:33:42",
   "@type": "SchemaDefinition",
   "@context": [
     "https://w3id.org/linkml/types.context.jsonld",

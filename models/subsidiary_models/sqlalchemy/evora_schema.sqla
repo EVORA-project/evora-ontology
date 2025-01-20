@@ -45,28 +45,6 @@ class Dataset(Base):
     
 
 
-class RecombinantPartIdentification(Base):
-    """
-    Identification of a recombinant part
-    """
-    __tablename__ = 'RecombinantPartIdentification'
-
-    id = Column(Integer(), primary_key=True, autoincrement=True , nullable=False )
-    partIdentification = Column(Text(), nullable=False )
-    
-    
-    # ManyToMany
-    sequence = relationship( "Sequence", secondary="RecombinantPartIdentification_sequence")
-    
-
-    def __repr__(self):
-        return f"RecombinantPartIdentification(id={self.id},partIdentification={self.partIdentification},)"
-
-
-
-    
-
-
 class TaxonomyTaxon(Base):
     """
     
@@ -4501,6 +4479,33 @@ class BiologicalPartOrigin(Dataset):
 
     def __repr__(self):
         return f"BiologicalPartOrigin(id={self.id},accessToPhysicalGeneticResource={self.accessToPhysicalGeneticResource},recombinantPartIdentification_id={self.recombinantPartIdentification_id},)"
+
+
+
+    
+    # Using concrete inheritance: see https://docs.sqlalchemy.org/en/14/orm/inheritance.html
+    __mapper_args__ = {
+        'concrete': True
+    }
+    
+
+
+class RecombinantPartIdentification(Dataset):
+    """
+    Identification of a recombinant part
+    """
+    __tablename__ = 'RecombinantPartIdentification'
+
+    id = Column(Integer(), primary_key=True, autoincrement=True , nullable=False )
+    partIdentification = Column(Text(), nullable=False )
+    
+    
+    # ManyToMany
+    sequence = relationship( "Sequence", secondary="RecombinantPartIdentification_sequence")
+    
+
+    def __repr__(self):
+        return f"RecombinantPartIdentification(id={self.id},partIdentification={self.partIdentification},)"
 
 
 

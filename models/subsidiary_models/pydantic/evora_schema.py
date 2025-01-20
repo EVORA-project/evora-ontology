@@ -29,7 +29,7 @@ from pydantic import (
 
 
 metamodel_version = "None"
-version = "1.0.7894"
+version = "1.0.7897"
 
 
 class ConfiguredBaseModel(BaseModel):
@@ -82,7 +82,7 @@ linkml_meta = LinkMLMeta({'contributors': ['https://github.com/Angatar',
                     'interoperability, accessibility, and reusability across '
                     'various projects. The EVORA Ontology aims to support '
                     'preparedness and response to pandemics.',
-     'generation_date': '2025-01-17T17:09:43',
+     'generation_date': '2025-01-20T16:32:58',
      'id': 'https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#',
      'imports': ['linkml:types'],
      'in_language': 'en',
@@ -2694,7 +2694,7 @@ class SyntheticPartOrigin(BiologicalPartOrigin):
          'domain_of': ['BiologicalPartOrigin']} })
 
 
-class RecombinantPartIdentification(ConfiguredBaseModel):
+class RecombinantPartIdentification(Dataset):
     """
     Identification of a recombinant part
     """

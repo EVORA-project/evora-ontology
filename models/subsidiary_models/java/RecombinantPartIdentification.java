@@ -5,7 +5,7 @@ import lombok.*;
 
 
 
-/* version: 1.0.7894 */
+/* version: 1.0.7897 */
 
 
 /**
@@ -13,7 +13,7 @@ import lombok.*;
 **/
 @Data
 @EqualsAndHashCode(callSuper=false)
-public class RecombinantPartIdentification  {
+public class RecombinantPartIdentification extends Dataset {
 
   private String partIdentification;
   private List<Sequence> sequence;

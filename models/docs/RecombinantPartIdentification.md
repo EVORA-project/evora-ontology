@@ -20,6 +20,9 @@ URI: [EVORAO:RecombinantPartIdentification](https://raw.githubusercontent.com/EV
  classDiagram
     class RecombinantPartIdentification
     click RecombinantPartIdentification href "../RecombinantPartIdentification"
+      Dataset <|-- RecombinantPartIdentification
+        click Dataset href "../Dataset"
+      
       RecombinantPartIdentification : partIdentification
         
       RecombinantPartIdentification : sequence
@@ -37,7 +40,11 @@ URI: [EVORAO:RecombinantPartIdentification](https://raw.githubusercontent.com/EV
 
 
 
-<!-- no inheritance hierarchy -->
+
+## Inheritance
+* [Dataset](Dataset.md)
+    * **RecombinantPartIdentification**
+
 
 
 ## Slots
@@ -105,6 +112,7 @@ name: RecombinantPartIdentification
 description: Identification of a recombinant part
 title: Recombinant part identification
 from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+is_a: Dataset
 slots:
 - partIdentification
 - sequence
@@ -138,6 +146,7 @@ name: RecombinantPartIdentification
 description: Identification of a recombinant part
 title: Recombinant part identification
 from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+is_a: Dataset
 slot_usage:
   partIdentification:
     name: partIdentification

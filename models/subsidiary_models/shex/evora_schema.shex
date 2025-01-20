@@ -1,5 +1,5 @@
 # metamodel_version: 1.7.0
-# version: 1.0.7894
+# version: 1.0.7897
 BASE <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#>
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
@@ -228,7 +228,7 @@ linkml:Sparqlpath xsd:string
 
 <Dataset>  (
     @<BiologicalMaterialOrigin> OR @<BiologicalPartOrigin> OR @<ExternalRelatedReference> OR @<MSDS> OR @<PathogenIdentification>
-    OR @<Publication> OR @<Sequence> OR @<SequenceReference> OR @<Version>
+    OR @<Publication> OR @<RecombinantPartIdentification> OR @<Sequence> OR @<SequenceReference> OR @<Version>
 )
 
 <Dataset_struct> {
@@ -757,7 +757,9 @@ linkml:Sparqlpath xsd:string
 }
 
 <RecombinantPartIdentification> CLOSED {
-    (  $<RecombinantPartIdentification_tes> (  <partIdentification> @linkml:String ;
+    (  $<RecombinantPartIdentification_tes> (  &<Dataset_tes> ;
+          rdf:type [ <Dataset> ] ? ;
+          <partIdentification> @linkml:String ;
           <sequence> @<Sequence> +
        ) ;
        rdf:type [ <RecombinantPartIdentification> ] ?

@@ -38,6 +38,8 @@ URI: [EVORAO:Dataset](https://raw.githubusercontent.com/EVORA-project/evora-onto
         click BiologicalMaterialOrigin href "../BiologicalMaterialOrigin"
       Dataset <|-- BiologicalPartOrigin
         click BiologicalPartOrigin href "../BiologicalPartOrigin"
+      Dataset <|-- RecombinantPartIdentification
+        click RecombinantPartIdentification href "../RecombinantPartIdentification"
       Dataset <|-- MSDS
         click MSDS href "../MSDS"
       
@@ -58,6 +60,7 @@ URI: [EVORAO:Dataset](https://raw.githubusercontent.com/EVORA-project/evora-onto
     * [SequenceReference](SequenceReference.md)
     * [BiologicalMaterialOrigin](BiologicalMaterialOrigin.md)
     * [BiologicalPartOrigin](BiologicalPartOrigin.md)
+    * [RecombinantPartIdentification](RecombinantPartIdentification.md)
     * [MSDS](MSDS.md)
 
 
