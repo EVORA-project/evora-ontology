@@ -29,7 +29,7 @@ from pydantic import (
 
 
 metamodel_version = "None"
-version = "1.0.8336"
+version = "1.0.8352"
 
 
 class ConfiguredBaseModel(BaseModel):
@@ -66,6 +66,7 @@ class LinkMLMeta(RootModel):
 linkml_meta = LinkMLMeta({'contributors': ['https://github.com/Angatar',
                       'https://orcid.org/0000-0002-5080-3456',
                       'https://github.com/jamesamcl',
+                      'https://orcid.org/0000-0002-8361-2795',
                       'https://orcid.org/0000-0003-3035-4195',
                       'https://orcid.org/0000-0003-4073-7456',
                       'https://orcid.org/0000-0002-2004-4073',
@@ -82,7 +83,7 @@ linkml_meta = LinkMLMeta({'contributors': ['https://github.com/Angatar',
                     'interoperability, accessibility, and reusability across '
                     'various projects. The EVORA Ontology aims to support '
                     'preparedness and response to pandemics.',
-     'generation_date': '2025-01-23T11:13:22',
+     'generation_date': '2025-01-23T15:43:45',
      'id': 'https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#',
      'imports': ['linkml:types'],
      'in_language': 'en',

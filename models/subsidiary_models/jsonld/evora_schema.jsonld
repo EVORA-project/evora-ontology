@@ -8,6 +8,7 @@
     "https://github.com/Angatar",
     "https://orcid.org/0000-0002-5080-3456",
     "https://github.com/jamesamcl",
+    "https://orcid.org/0000-0002-8361-2795",
     "https://orcid.org/0000-0003-3035-4195",
     "https://orcid.org/0000-0003-4073-7456",
     "https://orcid.org/0000-0002-2004-4073",
@@ -17,7 +18,7 @@
     "https://orcid.org/0000-0002-2042-2839"
   ],
   "id": "https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#",
-  "version": "1.0.8336",
+  "version": "1.0.8352",
   "imports": [
     "linkml:types"
   ],
@@ -10041,9 +10042,9 @@
   ],
   "metamodel_version": "1.7.0",
   "source_file": "evora_schema.yaml",
-  "source_file_date": "2025-01-23T10:13:46",
-  "source_file_size": 150388,
-  "generation_date": "2025-01-23T10:14:01",
+  "source_file_date": "2025-01-23T14:44:09",
+  "source_file_size": 150428,
+  "generation_date": "2025-01-23T14:44:23",
   "@type": "SchemaDefinition",
   "@context": [
     "https://w3id.org/linkml/types.context.jsonld",

@@ -22,57 +22,58 @@
         <https://orcid.org/0000-0002-2042-2839>,
         <https://orcid.org/0000-0002-5080-3456>,
         <https://orcid.org/0000-0002-6963-8673>,
+        <https://orcid.org/0000-0002-8361-2795>,
         <https://orcid.org/0000-0003-3035-4195>,
         <https://orcid.org/0000-0003-3067-827X>,
         <https://orcid.org/0000-0003-4073-7456> ;
     dcterms:license "https://creativecommons.org/publicdomain/zero/1.0/" ;
     dcterms:title "European Viral Outbreak Response Alliance Ontology" ;
     pav:createdBy <https://github.com/Angatar> ;
-    pav:version "1.0.8336" ;
+    pav:version "1.0.8352" ;
     schema1:inLanguage "en" ;
     skos:definition "The EVORA Ontology harmonizes metadata in virology to describe viral resources, their derived products, and services. It aligns with FAIR principles to ensure interoperability, accessibility, and reusability across various projects. The EVORA Ontology aims to support preparedness and response to pandemics." ;
-    sh:declare [ sh:namespace owl: ;
+    sh:declare [ sh:namespace foaf: ;
+            sh:prefix "foaf" ],
+        [ sh:namespace linkml: ;
+            sh:prefix "linkml" ],
+        [ sh:namespace <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#> ;
+            sh:prefix "EVORAO" ],
+        [ sh:namespace <http://www.wikidata.org/entity/> ;
+            sh:prefix "wd" ],
+        [ sh:namespace owl: ;
             sh:prefix "owl" ],
-        [ sh:namespace dcterms: ;
-            sh:prefix "dct" ],
+        [ sh:namespace skos: ;
+            sh:prefix "skos" ],
+        [ sh:namespace <http://www.w3.org/2006/vcard/ns#> ;
+            sh:prefix "vcard" ],
+        [ sh:namespace rdf: ;
+            sh:prefix "rdf" ],
         [ sh:namespace pav: ;
             sh:prefix "pav" ],
+        [ sh:namespace <http://purl.obolibrary.org/obo/IAO_> ;
+            sh:prefix "IAO" ],
+        [ sh:namespace dcat: ;
+            sh:prefix "dcat" ],
+        [ sh:namespace <http://rs.tdwg.org/dwc/terms/> ;
+            sh:prefix "dwc" ],
+        [ sh:namespace schema1: ;
+            sh:prefix "schema" ],
+        [ sh:namespace <http://www.w3.org/ns/regorg#> ;
+            sh:prefix "rov" ],
         [ sh:namespace rdfs: ;
             sh:prefix "rdfs" ],
+        [ sh:namespace dcterms: ;
+            sh:prefix "dct" ],
+        [ sh:namespace <http://www.wikidata.org/prop/> ;
+            sh:prefix "wdp" ],
+        [ sh:namespace dcmitype: ;
+            sh:prefix "dcmi" ],
         [ sh:namespace xsd: ;
             sh:prefix "xsd" ],
         [ sh:namespace prov: ;
             sh:prefix "prov" ],
-        [ sh:namespace foaf: ;
-            sh:prefix "foaf" ],
-        [ sh:namespace <http://www.w3.org/2006/vcard/ns#> ;
-            sh:prefix "vcard" ],
-        [ sh:namespace <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#> ;
-            sh:prefix "EVORAO" ],
-        [ sh:namespace dcat: ;
-            sh:prefix "dcat" ],
-        [ sh:namespace dcmitype: ;
-            sh:prefix "dcmi" ],
-        [ sh:namespace <http://www.wikidata.org/entity/> ;
-            sh:prefix "wd" ],
-        [ sh:namespace rdf: ;
-            sh:prefix "rdf" ],
-        [ sh:namespace <http://www.wikidata.org/prop/> ;
-            sh:prefix "wdp" ],
-        [ sh:namespace <http://www.w3.org/ns/regorg#> ;
-            sh:prefix "rov" ],
-        [ sh:namespace linkml: ;
-            sh:prefix "linkml" ],
-        [ sh:namespace schema1: ;
-            sh:prefix "schema" ],
-        [ sh:namespace <http://purl.obolibrary.org/obo/IAO_> ;
-            sh:prefix "IAO" ],
-        [ sh:namespace skos: ;
-            sh:prefix "skos" ],
         [ sh:namespace <http://www.w3.org/ns/adms#> ;
-            sh:prefix "adms" ],
-        [ sh:namespace <http://rs.tdwg.org/dwc/terms/> ;
-            sh:prefix "dwc" ] ;
+            sh:prefix "adms" ] ;
     linkml:classes <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/AlternateName>,
         <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Antibody>,
         <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Audio>,
@@ -151,7 +152,7 @@
         <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Vocabulary> ;
     linkml:default_prefix "EVORAO" ;
     linkml:default_range <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/string> ;
-    linkml:generation_date "2025-01-23T10:15:17"^^xsd:dateTime ;
+    linkml:generation_date "2025-01-23T14:45:40"^^xsd:dateTime ;
     linkml:id <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#> ;
     linkml:imports linkml:types ;
     linkml:metamodel_version "1.7.0" ;
@@ -568,8 +569,8 @@
         <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/versionOf>,
         <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/weight> ;
     linkml:source_file "evora_schema.yaml" ;
-    linkml:source_file_date "2025-01-23T10:13:46"^^xsd:dateTime ;
-    linkml:source_file_size 150388 ;
+    linkml:source_file_date "2025-01-23T14:44:09"^^xsd:dateTime ;
+    linkml:source_file_size 150428 ;
     linkml:types <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/boolean>,
         <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/curie>,
         <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/date>,

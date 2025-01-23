@@ -10,6 +10,7 @@ contributors:
 - https://github.com/Angatar
 - https://orcid.org/0000-0002-5080-3456
 - https://github.com/jamesamcl
+- https://orcid.org/0000-0002-8361-2795
 - https://orcid.org/0000-0003-3035-4195
 - https://orcid.org/0000-0003-4073-7456
 - https://orcid.org/0000-0002-2004-4073
@@ -18,7 +19,7 @@ contributors:
 - https://orcid.org/0000-0002-1257-6862
 - https://orcid.org/0000-0002-2042-2839
 id: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
-version: 1.0.8336
+version: 1.0.8352
 imports:
 - linkml:types
 license: https://creativecommons.org/publicdomain/zero/1.0/
@@ -3902,4 +3903,4 @@ classes:
         required: false
         multivalued: false
 source_file: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl
-generation_date: '2025-01-23T11:13:22'
+generation_date: '2025-01-23T15:43:45'
