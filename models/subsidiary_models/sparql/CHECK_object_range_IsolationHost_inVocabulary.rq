@@ -43,3 +43,12 @@ WHERE {
  
 }  
 
+
+
+## -- End of checks for IsolationHost
+
+
+## --
+## Checks for GeographicalOrigin
+## --
+

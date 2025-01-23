@@ -9,36 +9,40 @@ Base = declarative_base()
 metadata = Base.metadata
 
 
-class Nameable(Base):
+class Resource(Base):
     """
-    Any entity that has a name and can have a textual description
+    Resource published or curated by a single agent.
     """
-    __tablename__ = 'Nameable'
+    __tablename__ = 'Resource'
+
+    id = Column(Integer(), primary_key=True, autoincrement=True , nullable=False )
+    
+
+    def __repr__(self):
+        return f"Resource(id={self.id},)"
+
+
+
+    
+
+
+class File(Base):
+    """
+    Digital document or record stored in a specific format that contains data or information
+    """
+    __tablename__ = 'File'
 
     id = Column(Integer(), primary_key=True, autoincrement=True , nullable=False )
     name = Column(Text(), nullable=False )
     description = Column(Text())
+    contentURL = Column(Text(), nullable=False )
+    format = Column(Text(), nullable=False )
+    license_id = Column(Integer(), ForeignKey('License.id'))
+    license = relationship("License", uselist=False, foreign_keys=[license_id])
     
 
     def __repr__(self):
-        return f"Nameable(id={self.id},name={self.name},description={self.description},)"
-
-
-
-    
-
-
-class Dataset(Base):
-    """
-    A collection of data, published or curated by a single agent, and available for access
-    """
-    __tablename__ = 'Dataset'
-
-    id = Column(Integer(), primary_key=True, autoincrement=True , nullable=False )
-    
-
-    def __repr__(self):
-        return f"Dataset(id={self.id},)"
+        return f"File(id={self.id},name={self.name},description={self.description},contentURL={self.contentURL},format={self.format},license_id={self.license_id},)"
 
 
 
@@ -88,7 +92,7 @@ class PathogenIdentificationHostType(Base):
     __tablename__ = 'PathogenIdentification_hostType'
 
     PathogenIdentification_id = Column(Integer(), ForeignKey('PathogenIdentification.id'), primary_key=True)
-    hostType = Column(Enum('Animal', 'Human', 'Plant', name='hostTypeEnumeration'), primary_key=True)
+    hostType = Column(Text(), primary_key=True)
     
 
     def __repr__(self):
@@ -1366,7 +1370,7 @@ class ProteinExpressedAs(Base):
     __tablename__ = 'Protein_expressedAs'
 
     Protein_id = Column(Integer(), ForeignKey('Protein.id'), primary_key=True)
-    expressedAs = Column(Enum('Soluble', 'Inclusion bodies', name='expressedAsEnumeration'), primary_key=True)
+    expressedAs = Column(Text(), primary_key=True)
     
 
     def __repr__(self):
@@ -1384,7 +1388,7 @@ class ProteinInclusionBodiesType(Base):
     __tablename__ = 'Protein_inclusionBodiesType'
 
     Protein_id = Column(Integer(), ForeignKey('Protein.id'), primary_key=True)
-    inclusionBodiesType = Column(Enum('Denatured', 'Refolded', name='inclusionBodiesTypeEnumeration'), primary_key=True)
+    inclusionBodiesType = Column(Text(), primary_key=True)
     
 
     def __repr__(self):
@@ -1402,7 +1406,7 @@ class ProteinExpressionSystem(Base):
     __tablename__ = 'Protein_expressionSystem'
 
     Protein_id = Column(Integer(), ForeignKey('Protein.id'), primary_key=True)
-    expressionSystem = Column(Enum('E. coli', 'Insect cells', 'Mammalian cells', name='expressionSystemEnumeration'), primary_key=True)
+    expressionSystem = Column(Text(), primary_key=True)
     
 
     def __repr__(self):
@@ -1420,7 +1424,7 @@ class ProteinFunctionalCharacterization(Base):
     __tablename__ = 'Protein_functionalCharacterization'
 
     Protein_id = Column(Integer(), ForeignKey('Protein.id'), primary_key=True)
-    functionalCharacterization = Column(Enum('Functionally characterized', 'No functional characterization', name='functionalCharacterizationEnumeration'), primary_key=True)
+    functionalCharacterization = Column(Text(), primary_key=True)
     
 
     def __repr__(self):
@@ -1456,7 +1460,7 @@ class ProteinProteinPurification(Base):
     __tablename__ = 'Protein_proteinPurification'
 
     Protein_id = Column(Integer(), ForeignKey('Protein.id'), primary_key=True)
-    proteinPurification = Column(Enum('Greater than 95 percent', 'Unpurified expression host lysate or partly purified protein', name='proteinPurificationEnumeration'), primary_key=True)
+    proteinPurification = Column(Text(), primary_key=True)
     
 
     def __repr__(self):
@@ -1492,7 +1496,7 @@ class ProteinTypeOfFunctionalCharacterization(Base):
     __tablename__ = 'Protein_typeOfFunctionalCharacterization'
 
     Protein_id = Column(Integer(), ForeignKey('Protein.id'), primary_key=True)
-    typeOfFunctionalCharacterization = Column(Enum('Enzymatic', 'Antigenic', name='typeOfFunctionalCharacterizationEnumeration'), primary_key=True)
+    typeOfFunctionalCharacterization = Column(Text(), primary_key=True)
     
 
     def __repr__(self):
@@ -4167,19 +4171,17 @@ class CertificationCertificationDocument(Base):
     
 
 
-class Version(Dataset):
+class Dataset(Resource):
     """
-    Numeric code assigned to identify a particular historical version of a work (e.g. software or technical standards)
+    A collection of data, published or curated by a single agent, and available for access
     """
-    __tablename__ = 'Version'
+    __tablename__ = 'Dataset'
 
     id = Column(Integer(), primary_key=True, autoincrement=True , nullable=False )
-    ID = Column(Text(), nullable=False )
-    versionOf = Column(Text(), nullable=False )
     
 
     def __repr__(self):
-        return f"Version(id={self.id},ID={self.ID},versionOf={self.versionOf},)"
+        return f"Dataset(id={self.id},)"
 
 
 
@@ -4191,55 +4193,7 @@ class Version(Dataset):
     
 
 
-class Catalogue(Nameable):
-    """
-    A curated collection of metadata about resources
-    """
-    __tablename__ = 'Catalogue'
-
-    id = Column(Integer(), primary_key=True, autoincrement=True , nullable=False )
-    name = Column(Text(), nullable=False )
-    description = Column(Text())
-    
-
-    def __repr__(self):
-        return f"Catalogue(id={self.id},name={self.name},description={self.description},)"
-
-
-
-    
-    # Using concrete inheritance: see https://docs.sqlalchemy.org/en/14/orm/inheritance.html
-    __mapper_args__ = {
-        'concrete': True
-    }
-    
-
-
-class NamedDataset(Nameable):
-    """
-    A collection of data, that has a name and can have a description, published or curated by a single agent, and available for access
-    """
-    __tablename__ = 'NamedDataset'
-
-    id = Column(Integer(), primary_key=True, autoincrement=True , nullable=False )
-    name = Column(Text(), nullable=False )
-    description = Column(Text())
-    
-
-    def __repr__(self):
-        return f"NamedDataset(id={self.id},name={self.name},description={self.description},)"
-
-
-
-    
-    # Using concrete inheritance: see https://docs.sqlalchemy.org/en/14/orm/inheritance.html
-    __mapper_args__ = {
-        'concrete': True
-    }
-    
-
-
-class DataService(Nameable):
+class DataService(Resource):
     """
     A collection of operations that provides access to one or more datasets or data processing functions
     """
@@ -4263,6 +4217,231 @@ class DataService(Nameable):
     
 
 
+class Data(File):
+    """
+    Subclass of File representing structured or unstructured datasets, often used for analysis, storage, or transfer of information
+    """
+    __tablename__ = 'Data'
+
+    id = Column(Integer(), primary_key=True, autoincrement=True , nullable=False )
+    name = Column(Text(), nullable=False )
+    description = Column(Text())
+    contentURL = Column(Text(), nullable=False )
+    format = Column(Text(), nullable=False )
+    license_id = Column(Integer(), ForeignKey('License.id'))
+    license = relationship("License", uselist=False, foreign_keys=[license_id])
+    
+
+    def __repr__(self):
+        return f"Data(id={self.id},name={self.name},description={self.description},contentURL={self.contentURL},format={self.format},license_id={self.license_id},)"
+
+
+
+    
+    # Using concrete inheritance: see https://docs.sqlalchemy.org/en/14/orm/inheritance.html
+    __mapper_args__ = {
+        'concrete': True
+    }
+    
+
+
+class Document(File):
+    """
+    Subclass of File representing textual or written files such as reports, manuals, or forms
+    """
+    __tablename__ = 'Document'
+
+    id = Column(Integer(), primary_key=True, autoincrement=True , nullable=False )
+    name = Column(Text(), nullable=False )
+    description = Column(Text())
+    contentURL = Column(Text(), nullable=False )
+    format = Column(Text(), nullable=False )
+    license_id = Column(Integer(), ForeignKey('License.id'))
+    license = relationship("License", uselist=False, foreign_keys=[license_id])
+    
+
+    def __repr__(self):
+        return f"Document(id={self.id},name={self.name},description={self.description},contentURL={self.contentURL},format={self.format},license_id={self.license_id},)"
+
+
+
+    
+    # Using concrete inheritance: see https://docs.sqlalchemy.org/en/14/orm/inheritance.html
+    __mapper_args__ = {
+        'concrete': True
+    }
+    
+
+
+class Audio(File):
+    """
+    Subclass of File representing sound recordings or audio tracks
+    """
+    __tablename__ = 'Audio'
+
+    id = Column(Integer(), primary_key=True, autoincrement=True , nullable=False )
+    name = Column(Text(), nullable=False )
+    description = Column(Text())
+    contentURL = Column(Text(), nullable=False )
+    format = Column(Text(), nullable=False )
+    license_id = Column(Integer(), ForeignKey('License.id'))
+    license = relationship("License", uselist=False, foreign_keys=[license_id])
+    
+
+    def __repr__(self):
+        return f"Audio(id={self.id},name={self.name},description={self.description},contentURL={self.contentURL},format={self.format},license_id={self.license_id},)"
+
+
+
+    
+    # Using concrete inheritance: see https://docs.sqlalchemy.org/en/14/orm/inheritance.html
+    __mapper_args__ = {
+        'concrete': True
+    }
+    
+
+
+class Video(File):
+    """
+    Subclass of File representing moving visual media, such as recordings, presentations, or movies
+    """
+    __tablename__ = 'Video'
+
+    id = Column(Integer(), primary_key=True, autoincrement=True , nullable=False )
+    name = Column(Text(), nullable=False )
+    description = Column(Text())
+    contentURL = Column(Text(), nullable=False )
+    format = Column(Text(), nullable=False )
+    license_id = Column(Integer(), ForeignKey('License.id'))
+    license = relationship("License", uselist=False, foreign_keys=[license_id])
+    
+
+    def __repr__(self):
+        return f"Video(id={self.id},name={self.name},description={self.description},contentURL={self.contentURL},format={self.format},license_id={self.license_id},)"
+
+
+
+    
+    # Using concrete inheritance: see https://docs.sqlalchemy.org/en/14/orm/inheritance.html
+    __mapper_args__ = {
+        'concrete': True
+    }
+    
+
+
+class Image(File):
+    """
+    Subclass of File representing visual content such as pictures, diagrams, or illustrations
+    """
+    __tablename__ = 'Image'
+
+    id = Column(Integer(), primary_key=True, autoincrement=True , nullable=False )
+    altText = Column(Text())
+    name = Column(Text(), nullable=False )
+    description = Column(Text())
+    contentURL = Column(Text(), nullable=False )
+    format = Column(Text(), nullable=False )
+    license_id = Column(Integer(), ForeignKey('License.id'))
+    license = relationship("License", uselist=False, foreign_keys=[license_id])
+    
+
+    def __repr__(self):
+        return f"Image(id={self.id},altText={self.altText},name={self.name},description={self.description},contentURL={self.contentURL},format={self.format},license_id={self.license_id},)"
+
+
+
+    
+    # Using concrete inheritance: see https://docs.sqlalchemy.org/en/14/orm/inheritance.html
+    __mapper_args__ = {
+        'concrete': True
+    }
+    
+
+
+class Version(Dataset):
+    """
+    Numeric code assigned to identify a particular historical version of a work (e.g. software or technical standards)
+    """
+    __tablename__ = 'Version'
+
+    id = Column(Integer(), primary_key=True, autoincrement=True , nullable=False )
+    ID = Column(Text(), nullable=False )
+    versionOf_id = Column(Integer(), ForeignKey('Dataset.id'), nullable=False )
+    versionOf = relationship("Dataset", uselist=False, foreign_keys=[versionOf_id])
+    
+
+    def __repr__(self):
+        return f"Version(id={self.id},ID={self.ID},versionOf_id={self.versionOf_id},)"
+
+
+
+    
+    # Using concrete inheritance: see https://docs.sqlalchemy.org/en/14/orm/inheritance.html
+    __mapper_args__ = {
+        'concrete': True
+    }
+    
+
+
+class Catalogue(Dataset):
+    """
+    A curated collection of metadata about resources
+    """
+    __tablename__ = 'Catalogue'
+
+    id = Column(Integer(), primary_key=True, autoincrement=True , nullable=False )
+    name = Column(Text(), nullable=False )
+    description = Column(Text())
+    
+
+    def __repr__(self):
+        return f"Catalogue(id={self.id},name={self.name},description={self.description},)"
+
+
+
+    
+    # Using concrete inheritance: see https://docs.sqlalchemy.org/en/14/orm/inheritance.html
+    __mapper_args__ = {
+        'concrete': True
+    }
+    
+
+
+class DataProvider(DataService):
+    """
+    An external API (Application Programming Interface) or Endpoint that permits to retrieve data from other sources
+    """
+    __tablename__ = 'DataProvider'
+
+    id = Column(Integer(), primary_key=True, autoincrement=True , nullable=False )
+    loginRequestMethod = Column(Text())
+    loginURL = Column(Text())
+    loginTokenName = Column(Text())
+    queryURL = Column(Text(), nullable=False )
+    queryMethod = Column(Text(), nullable=False )
+    contentType = Column(Text(), nullable=False )
+    weight = Column(Integer(), nullable=False )
+    name = Column(Text(), nullable=False )
+    description = Column(Text())
+    license_id = Column(Integer(), ForeignKey('License.id'))
+    license = relationship("License", uselist=False, foreign_keys=[license_id])
+    providedEntityType_id = Column(Integer(), ForeignKey('Dataset.id'), nullable=False )
+    providedEntityType = relationship("Dataset", uselist=False, foreign_keys=[providedEntityType_id])
+    
+
+    def __repr__(self):
+        return f"DataProvider(id={self.id},loginRequestMethod={self.loginRequestMethod},loginURL={self.loginURL},loginTokenName={self.loginTokenName},queryURL={self.queryURL},queryMethod={self.queryMethod},contentType={self.contentType},weight={self.weight},name={self.name},description={self.description},license_id={self.license_id},providedEntityType_id={self.providedEntityType_id},)"
+
+
+
+    
+    # Using concrete inheritance: see https://docs.sqlalchemy.org/en/14/orm/inheritance.html
+    __mapper_args__ = {
+        'concrete': True
+    }
+    
+
+
 class PathogenIdentification(Dataset):
     """
     A collection of distinguishing information that enables the differentiation of a pathogen from another
@@ -4270,7 +4449,7 @@ class PathogenIdentification(Dataset):
     __tablename__ = 'PathogenIdentification'
 
     id = Column(Integer(), primary_key=True, autoincrement=True , nullable=False )
-    pathogenType = Column(Enum('Virus', 'Bacterium', 'Fungus', 'Protozoan', 'Viroid', 'Prion', name='pathogenTypeEnumeration'), nullable=False )
+    pathogenType = Column(Text(), nullable=False )
     subspecies = Column(Text())
     strain = Column(Text())
     isolate = Column(Text())
@@ -4320,6 +4499,33 @@ class Publication(Dataset):
 
     def __repr__(self):
         return f"Publication(id={self.id},title={self.title},authors={self.authors},abstract={self.abstract},relatedDOI_id={self.relatedDOI_id},journal_id={self.journal_id},)"
+
+
+
+    
+    # Using concrete inheritance: see https://docs.sqlalchemy.org/en/14/orm/inheritance.html
+    __mapper_args__ = {
+        'concrete': True
+    }
+    
+
+
+class Term(Dataset):
+    """
+    Word or phrase from a specialized area of knowledge
+    """
+    __tablename__ = 'Term'
+
+    id = Column(Integer(), primary_key=True, autoincrement=True , nullable=False )
+    name = Column(Text(), nullable=False )
+    description = Column(Text())
+    weight = Column(Integer(), nullable=False )
+    inVocabulary_id = Column(Integer(), ForeignKey('Vocabulary.id'), nullable=False )
+    inVocabulary = relationship("Vocabulary", uselist=False, foreign_keys=[inVocabulary_id])
+    
+
+    def __repr__(self):
+        return f"Term(id={self.id},name={self.name},description={self.description},weight={self.weight},inVocabulary_id={self.inVocabulary_id},)"
 
 
 
@@ -4392,7 +4598,7 @@ class SequenceReference(Dataset):
 
     id = Column(Integer(), primary_key=True, autoincrement=True , nullable=False )
     accessionNumber = Column(Text(), nullable=False )
-    sequenceProvider = Column(Enum('ENA', 'GenBank', name='sequenceProviderEnumeration'), nullable=False )
+    sequenceProvider = Column(Text(), nullable=False )
     
 
     def __repr__(self):
@@ -4408,16 +4614,16 @@ class SequenceReference(Dataset):
     
 
 
-class PersonOrOrganization(Nameable):
+class PersonOrOrganization(Dataset):
     """
     A person or an organization
     """
     __tablename__ = 'PersonOrOrganization'
 
     id = Column(Integer(), primary_key=True, autoincrement=True , nullable=False )
-    homePage = Column(Text())
     name = Column(Text(), nullable=False )
     description = Column(Text())
+    homePage = Column(Text())
     contactPoint_id = Column(Integer(), ForeignKey('ContactPoint.id'))
     contactPoint = relationship("ContactPoint", uselist=False, foreign_keys=[contactPoint_id])
     logo_id = Column(Integer(), ForeignKey('Image.id'))
@@ -4425,7 +4631,7 @@ class PersonOrOrganization(Nameable):
     
 
     def __repr__(self):
-        return f"PersonOrOrganization(id={self.id},homePage={self.homePage},name={self.name},description={self.description},contactPoint_id={self.contactPoint_id},logo_id={self.logo_id},)"
+        return f"PersonOrOrganization(id={self.id},name={self.name},description={self.description},homePage={self.homePage},contactPoint_id={self.contactPoint_id},logo_id={self.logo_id},)"
 
 
 
@@ -4517,6 +4723,85 @@ class RecombinantPartIdentification(Dataset):
     
 
 
+class ProductOrService(Dataset):
+    """
+    A product or a service
+    """
+    __tablename__ = 'ProductOrService'
+
+    id = Column(Integer(), primary_key=True, autoincrement=True , nullable=False )
+    name = Column(Text(), nullable=False )
+    description = Column(Text())
+    accessPointURL = Column(Text(), nullable=False )
+    refSKU = Column(Text(), nullable=False )
+    unitDefinition = Column(Text())
+    unitCost = Column(Text(), nullable=False )
+    qualityGrading = Column(Text())
+    biosafetyRestrictions = Column(Text())
+    canItBeUsedToProduceGMO = Column(Boolean(), nullable=False )
+    availability = Column(Text(), nullable=False )
+    technicalRecommendation = Column(Text())
+    internalReference = Column(Text())
+    note = Column(Text())
+    category_id = Column(Integer(), ForeignKey('ProductCategory.id'), nullable=False )
+    category = relationship("ProductCategory", uselist=False, foreign_keys=[category_id])
+    riskGroup_id = Column(Integer(), ForeignKey('RiskGroup.id'))
+    riskGroup = relationship("RiskGroup", uselist=False, foreign_keys=[riskGroup_id])
+    provider_id = Column(Integer(), ForeignKey('Provider.id'), nullable=False )
+    provider = relationship("Provider", uselist=False, foreign_keys=[provider_id])
+    contactPoint_id = Column(Integer(), ForeignKey('ContactPoint.id'))
+    contactPoint = relationship("ContactPoint", uselist=False, foreign_keys=[contactPoint_id])
+    
+    
+    # ManyToMany
+    additionalCategory = relationship( "ProductCategory", secondary="ProductOrService_additionalCategory")
+    
+    
+    # ManyToMany
+    pathogenIdentification = relationship( "PathogenIdentification", secondary="ProductOrService_pathogenIdentification")
+    
+    
+    # ManyToMany
+    relatedDOI = relationship( "DOI", secondary="ProductOrService_relatedDOI")
+    
+    
+    # ManyToMany
+    collection = relationship( "Collection", secondary="ProductOrService_collection")
+    
+    
+    # ManyToMany
+    keywords = relationship( "Keyword", secondary="ProductOrService_keywords")
+    
+    
+    # ManyToMany
+    complementaryDocument = relationship( "Document", secondary="ProductOrService_complementaryDocument")
+    
+    
+    # ManyToMany
+    productPicture = relationship( "Image", secondary="ProductOrService_productPicture")
+    
+    
+    # ManyToMany
+    externalRelatedReference = relationship( "ExternalRelatedReference", secondary="ProductOrService_externalRelatedReference")
+    
+    
+    # ManyToMany
+    certification = relationship( "Certification", secondary="ProductOrService_certification")
+    
+
+    def __repr__(self):
+        return f"ProductOrService(id={self.id},name={self.name},description={self.description},accessPointURL={self.accessPointURL},refSKU={self.refSKU},unitDefinition={self.unitDefinition},unitCost={self.unitCost},qualityGrading={self.qualityGrading},biosafetyRestrictions={self.biosafetyRestrictions},canItBeUsedToProduceGMO={self.canItBeUsedToProduceGMO},availability={self.availability},technicalRecommendation={self.technicalRecommendation},internalReference={self.internalReference},note={self.note},category_id={self.category_id},riskGroup_id={self.riskGroup_id},provider_id={self.provider_id},contactPoint_id={self.contactPoint_id},)"
+
+
+
+    
+    # Using concrete inheritance: see https://docs.sqlalchemy.org/en/14/orm/inheritance.html
+    __mapper_args__ = {
+        'concrete': True
+    }
+    
+
+
 class MSDS(Dataset):
     """
     A Material Safety Data Sheet (MSDS) or Safety Data Sheet (SDS) is a standardized document that contains crucial occupational safety and health information related to the product
@@ -4555,41 +4840,15 @@ class MSDS(Dataset):
     
 
 
-class File(Nameable):
-    """
-    Digital document or record stored in a specific format that contains data or information
-    """
-    __tablename__ = 'File'
-
-    id = Column(Integer(), primary_key=True, autoincrement=True , nullable=False )
-    contentURL = Column(Text(), nullable=False )
-    format = Column(Text(), nullable=False )
-    name = Column(Text(), nullable=False )
-    description = Column(Text())
-    license_id = Column(Integer(), ForeignKey('License.id'))
-    license = relationship("License", uselist=False, foreign_keys=[license_id])
-    
-
-    def __repr__(self):
-        return f"File(id={self.id},contentURL={self.contentURL},format={self.format},name={self.name},description={self.description},license_id={self.license_id},)"
-
-
-
-    
-    # Using concrete inheritance: see https://docs.sqlalchemy.org/en/14/orm/inheritance.html
-    __mapper_args__ = {
-        'concrete': True
-    }
-    
-
-
-class ContactPoint(Nameable):
+class ContactPoint(Dataset):
     """
     Entity serving as focal point of information
     """
     __tablename__ = 'ContactPoint'
 
     id = Column(Integer(), primary_key=True, autoincrement=True , nullable=False )
+    name = Column(Text(), nullable=False )
+    description = Column(Text())
     email = Column(Text())
     telephone = Column(Text())
     streetAddress = Column(Text())
@@ -4597,14 +4856,12 @@ class ContactPoint(Nameable):
     addressRegion = Column(Text())
     postalCode = Column(Text())
     oRCIDiD = Column(Text())
-    name = Column(Text(), nullable=False )
-    description = Column(Text())
     addressCountry_id = Column(Integer(), ForeignKey('Country.id'))
     addressCountry = relationship("Country", uselist=False, foreign_keys=[addressCountry_id])
     
 
     def __repr__(self):
-        return f"ContactPoint(id={self.id},email={self.email},telephone={self.telephone},streetAddress={self.streetAddress},addressLocality={self.addressLocality},addressRegion={self.addressRegion},postalCode={self.postalCode},oRCIDiD={self.oRCIDiD},name={self.name},description={self.description},addressCountry_id={self.addressCountry_id},)"
+        return f"ContactPoint(id={self.id},name={self.name},description={self.description},email={self.email},telephone={self.telephone},streetAddress={self.streetAddress},addressLocality={self.addressLocality},addressRegion={self.addressRegion},postalCode={self.postalCode},oRCIDiD={self.oRCIDiD},addressCountry_id={self.addressCountry_id},)"
 
 
 
@@ -4616,23 +4873,23 @@ class ContactPoint(Nameable):
     
 
 
-class License(Nameable):
+class License(Dataset):
     """
     The legal terms and conditions under which the subject can be used, shared, or distributed, indicating any restrictions or permissions
     """
     __tablename__ = 'License'
 
     id = Column(Integer(), primary_key=True, autoincrement=True , nullable=False )
-    resourceURL = Column(Text())
-    licensingOrAttribution = Column(Text())
     name = Column(Text(), nullable=False )
     description = Column(Text())
+    resourceURL = Column(Text())
+    licensingOrAttribution = Column(Text())
     logo_id = Column(Integer(), ForeignKey('Image.id'))
     logo = relationship("Image", uselist=False, foreign_keys=[logo_id])
     
 
     def __repr__(self):
-        return f"License(id={self.id},resourceURL={self.resourceURL},licensingOrAttribution={self.licensingOrAttribution},name={self.name},description={self.description},logo_id={self.logo_id},)"
+        return f"License(id={self.id},name={self.name},description={self.description},resourceURL={self.resourceURL},licensingOrAttribution={self.licensingOrAttribution},logo_id={self.logo_id},)"
 
 
 
@@ -4644,16 +4901,16 @@ class License(Nameable):
     
 
 
-class Certification(Nameable):
+class Certification(Dataset):
     """
     Assurance given by an independent certification body that a product, service or system meets the requirements of a standard
     """
     __tablename__ = 'Certification'
 
     id = Column(Integer(), primary_key=True, autoincrement=True , nullable=False )
-    resourceURL = Column(Text())
     name = Column(Text(), nullable=False )
     description = Column(Text())
+    resourceURL = Column(Text())
     logo_id = Column(Integer(), ForeignKey('Image.id'))
     logo = relationship("Image", uselist=False, foreign_keys=[logo_id])
     
@@ -4663,7 +4920,7 @@ class Certification(Nameable):
     
 
     def __repr__(self):
-        return f"Certification(id={self.id},resourceURL={self.resourceURL},name={self.name},description={self.description},logo_id={self.logo_id},)"
+        return f"Certification(id={self.id},name={self.name},description={self.description},resourceURL={self.resourceURL},logo_id={self.logo_id},)"
 
 
 
@@ -4715,40 +4972,6 @@ class Taxonomy(Catalogue):
     
 
 
-class DataProvider(DataService):
-    """
-    An external API (Application Programming Interface) or Endpoint that permits to retrieve data from other sources
-    """
-    __tablename__ = 'DataProvider'
-
-    id = Column(Integer(), primary_key=True, autoincrement=True , nullable=False )
-    loginRequestMethod = Column(Enum('GET', 'POST', name='queryMethodEnumeration'))
-    loginURL = Column(Text())
-    loginTokenName = Column(Text())
-    queryURL = Column(Text(), nullable=False )
-    queryMethod = Column(Enum('GET', 'POST', name='queryMethodEnumeration'), nullable=False )
-    contentType = Column(Text(), nullable=False )
-    providedEntityType = Column(Text(), nullable=False )
-    weight = Column(Integer(), nullable=False )
-    name = Column(Text(), nullable=False )
-    description = Column(Text())
-    license_id = Column(Integer(), ForeignKey('License.id'))
-    license = relationship("License", uselist=False, foreign_keys=[license_id])
-    
-
-    def __repr__(self):
-        return f"DataProvider(id={self.id},loginRequestMethod={self.loginRequestMethod},loginURL={self.loginURL},loginTokenName={self.loginTokenName},queryURL={self.queryURL},queryMethod={self.queryMethod},contentType={self.contentType},providedEntityType={self.providedEntityType},weight={self.weight},name={self.name},description={self.description},license_id={self.license_id},)"
-
-
-
-    
-    # Using concrete inheritance: see https://docs.sqlalchemy.org/en/14/orm/inheritance.html
-    __mapper_args__ = {
-        'concrete': True
-    }
-    
-
-
 class Vocabulary(Catalogue):
     """
     A subset of words or phrases specific to a particular subject or field
@@ -4779,22 +5002,605 @@ class Vocabulary(Catalogue):
     
 
 
-class Term(NamedDataset):
+class CommonName(Term):
     """
-    Word or phrase from a specialized area of knowledge
+    Vernacular name that is the name used in everyday language to refer to an organism or group of organisms. This name is typically easier to remember and pronounce compared to the scientific name
     """
-    __tablename__ = 'Term'
+    __tablename__ = 'CommonName'
 
     id = Column(Integer(), primary_key=True, autoincrement=True , nullable=False )
-    weight = Column(Integer(), nullable=False )
     name = Column(Text(), nullable=False )
     description = Column(Text())
+    weight = Column(Integer(), nullable=False )
+    inVocabulary_id = Column(Integer(), ForeignKey('Vocabulary.id'), nullable=False )
+    inVocabulary = relationship("Vocabulary", uselist=False, foreign_keys=[inVocabulary_id])
+    
+    
+    # ManyToMany
+    alternateName = relationship( "AlternateName", secondary="CommonName_alternateName")
+    
+    
+    sourceOfInformation_rel = relationship( "CommonNameSourceOfInformation" )
+    sourceOfInformation = association_proxy("sourceOfInformation_rel", "sourceOfInformation",
+                                  creator=lambda x_: CommonNameSourceOfInformation(sourceOfInformation=x_))
+    
+
+    def __repr__(self):
+        return f"CommonName(id={self.id},name={self.name},description={self.description},weight={self.weight},inVocabulary_id={self.inVocabulary_id},)"
+
+
+
+    
+    # Using concrete inheritance: see https://docs.sqlalchemy.org/en/14/orm/inheritance.html
+    __mapper_args__ = {
+        'concrete': True
+    }
+    
+
+
+class AlternateName(Term):
+    """
+    List of alternate names for things
+    """
+    __tablename__ = 'AlternateName'
+
+    id = Column(Integer(), primary_key=True, autoincrement=True , nullable=False )
+    name = Column(Text(), nullable=False )
+    description = Column(Text())
+    weight = Column(Integer(), nullable=False )
+    inVocabulary_id = Column(Integer(), ForeignKey('Vocabulary.id'), nullable=False )
+    inVocabulary = relationship("Vocabulary", uselist=False, foreign_keys=[inVocabulary_id])
+    
+    
+    # ManyToMany
+    alternateName = relationship( "AlternateName", secondary="AlternateName_alternateName")
+    
+    
+    sourceOfInformation_rel = relationship( "AlternateNameSourceOfInformation" )
+    sourceOfInformation = association_proxy("sourceOfInformation_rel", "sourceOfInformation",
+                                  creator=lambda x_: AlternateNameSourceOfInformation(sourceOfInformation=x_))
+    
+
+    def __repr__(self):
+        return f"AlternateName(id={self.id},name={self.name},description={self.description},weight={self.weight},inVocabulary_id={self.inVocabulary_id},)"
+
+
+
+    
+    # Using concrete inheritance: see https://docs.sqlalchemy.org/en/14/orm/inheritance.html
+    __mapper_args__ = {
+        'concrete': True
+    }
+    
+
+
+class RiskGroup(Term):
+    """
+    Risk group classification guides initial handling of biological agents in labs but doesn't systematically equate to biosafety levels. Actual risk varies with the agent, procedures, and personnel competence
+    """
+    __tablename__ = 'RiskGroup'
+
+    id = Column(Integer(), primary_key=True, autoincrement=True , nullable=False )
+    name = Column(Text(), nullable=False )
+    description = Column(Text())
+    weight = Column(Integer(), nullable=False )
     inVocabulary_id = Column(Integer(), ForeignKey('Vocabulary.id'), nullable=False )
     inVocabulary = relationship("Vocabulary", uselist=False, foreign_keys=[inVocabulary_id])
     
 
     def __repr__(self):
-        return f"Term(id={self.id},weight={self.weight},name={self.name},description={self.description},inVocabulary_id={self.inVocabulary_id},)"
+        return f"RiskGroup(id={self.id},name={self.name},description={self.description},weight={self.weight},inVocabulary_id={self.inVocabulary_id},)"
+
+
+
+    
+    # Using concrete inheritance: see https://docs.sqlalchemy.org/en/14/orm/inheritance.html
+    __mapper_args__ = {
+        'concrete': True
+    }
+    
+
+
+class DOI(Term):
+    """
+    A unique string identifier assigned to a digital object, providing a permanent link for reliable citation and access.  The Digital Object Identifier (DOI) is a persistent identifier that is an ISO standard
+    """
+    __tablename__ = 'DOI'
+
+    id = Column(Integer(), primary_key=True, autoincrement=True , nullable=False )
+    name = Column(Text(), nullable=False )
+    description = Column(Text())
+    weight = Column(Integer(), nullable=False )
+    inVocabulary_id = Column(Integer(), ForeignKey('Vocabulary.id'), nullable=False )
+    inVocabulary = relationship("Vocabulary", uselist=False, foreign_keys=[inVocabulary_id])
+    
+
+    def __repr__(self):
+        return f"DOI(id={self.id},name={self.name},description={self.description},weight={self.weight},inVocabulary_id={self.inVocabulary_id},)"
+
+
+
+    
+    # Using concrete inheritance: see https://docs.sqlalchemy.org/en/14/orm/inheritance.html
+    __mapper_args__ = {
+        'concrete': True
+    }
+    
+
+
+class Journal(Term):
+    """
+    Periodical journal publishing scientific research
+    """
+    __tablename__ = 'Journal'
+
+    id = Column(Integer(), primary_key=True, autoincrement=True , nullable=False )
+    name = Column(Text(), nullable=False )
+    description = Column(Text())
+    weight = Column(Integer(), nullable=False )
+    inVocabulary_id = Column(Integer(), ForeignKey('Vocabulary.id'), nullable=False )
+    inVocabulary = relationship("Vocabulary", uselist=False, foreign_keys=[inVocabulary_id])
+    
+
+    def __repr__(self):
+        return f"Journal(id={self.id},name={self.name},description={self.description},weight={self.weight},inVocabulary_id={self.inVocabulary_id},)"
+
+
+
+    
+    # Using concrete inheritance: see https://docs.sqlalchemy.org/en/14/orm/inheritance.html
+    __mapper_args__ = {
+        'concrete': True
+    }
+    
+
+
+class PDBReference(Term):
+    """
+    Identifier for 3D structural data as per the PDB (Protein Data Bank) database
+    """
+    __tablename__ = 'PDBReference'
+
+    id = Column(Integer(), primary_key=True, autoincrement=True , nullable=False )
+    name = Column(Text(), nullable=False )
+    description = Column(Text())
+    weight = Column(Integer(), nullable=False )
+    inVocabulary_id = Column(Integer(), ForeignKey('Vocabulary.id'), nullable=False )
+    inVocabulary = relationship("Vocabulary", uselist=False, foreign_keys=[inVocabulary_id])
+    
+
+    def __repr__(self):
+        return f"PDBReference(id={self.id},name={self.name},description={self.description},weight={self.weight},inVocabulary_id={self.inVocabulary_id},)"
+
+
+
+    
+    # Using concrete inheritance: see https://docs.sqlalchemy.org/en/14/orm/inheritance.html
+    __mapper_args__ = {
+        'concrete': True
+    }
+    
+
+
+class Keyword(Term):
+    """
+    A term or phrase used to tag and categorize content
+    """
+    __tablename__ = 'Keyword'
+
+    id = Column(Integer(), primary_key=True, autoincrement=True , nullable=False )
+    name = Column(Text(), nullable=False )
+    description = Column(Text())
+    weight = Column(Integer(), nullable=False )
+    inVocabulary_id = Column(Integer(), ForeignKey('Vocabulary.id'), nullable=False )
+    inVocabulary = relationship("Vocabulary", uselist=False, foreign_keys=[inVocabulary_id])
+    
+
+    def __repr__(self):
+        return f"Keyword(id={self.id},name={self.name},description={self.description},weight={self.weight},inVocabulary_id={self.inVocabulary_id},)"
+
+
+
+    
+    # Using concrete inheritance: see https://docs.sqlalchemy.org/en/14/orm/inheritance.html
+    __mapper_args__ = {
+        'concrete': True
+    }
+    
+
+
+class ProteinTag(Term):
+    """
+    Peptide sequence genetically grafted onto a recombinant protein
+    """
+    __tablename__ = 'ProteinTag'
+
+    id = Column(Integer(), primary_key=True, autoincrement=True , nullable=False )
+    name = Column(Text(), nullable=False )
+    description = Column(Text())
+    weight = Column(Integer(), nullable=False )
+    inVocabulary_id = Column(Integer(), ForeignKey('Vocabulary.id'), nullable=False )
+    inVocabulary = relationship("Vocabulary", uselist=False, foreign_keys=[inVocabulary_id])
+    
+
+    def __repr__(self):
+        return f"ProteinTag(id={self.id},name={self.name},description={self.description},weight={self.weight},inVocabulary_id={self.inVocabulary_id},)"
+
+
+
+    
+    # Using concrete inheritance: see https://docs.sqlalchemy.org/en/14/orm/inheritance.html
+    __mapper_args__ = {
+        'concrete': True
+    }
+    
+
+
+class SpecialFeature(Term):
+    """
+    Distinctive attributes of a product that set it apart from other similar items e.g., Reference strain, Vaccinal strain, Antiviral resistant strain ...
+    """
+    __tablename__ = 'SpecialFeature'
+
+    id = Column(Integer(), primary_key=True, autoincrement=True , nullable=False )
+    name = Column(Text(), nullable=False )
+    description = Column(Text())
+    weight = Column(Integer(), nullable=False )
+    inVocabulary_id = Column(Integer(), ForeignKey('Vocabulary.id'), nullable=False )
+    inVocabulary = relationship("Vocabulary", uselist=False, foreign_keys=[inVocabulary_id])
+    
+
+    def __repr__(self):
+        return f"SpecialFeature(id={self.id},name={self.name},description={self.description},weight={self.weight},inVocabulary_id={self.inVocabulary_id},)"
+
+
+
+    
+    # Using concrete inheritance: see https://docs.sqlalchemy.org/en/14/orm/inheritance.html
+    __mapper_args__ = {
+        'concrete': True
+    }
+    
+
+
+class ExpressionVector(Term):
+    """
+    A reference to an expression vector plasmid, typically embedding a resistance marker for inducible protein expression
+    """
+    __tablename__ = 'ExpressionVector'
+
+    id = Column(Integer(), primary_key=True, autoincrement=True , nullable=False )
+    name = Column(Text(), nullable=False )
+    description = Column(Text())
+    weight = Column(Integer(), nullable=False )
+    inVocabulary_id = Column(Integer(), ForeignKey('Vocabulary.id'), nullable=False )
+    inVocabulary = relationship("Vocabulary", uselist=False, foreign_keys=[inVocabulary_id])
+    
+
+    def __repr__(self):
+        return f"ExpressionVector(id={self.id},name={self.name},description={self.description},weight={self.weight},inVocabulary_id={self.inVocabulary_id},)"
+
+
+
+    
+    # Using concrete inheritance: see https://docs.sqlalchemy.org/en/14/orm/inheritance.html
+    __mapper_args__ = {
+        'concrete': True
+    }
+    
+
+
+class PlasmidSelection(Term):
+    """
+    The process of identifying cells that have successfully incorporated a plasmid, typically using antibiotic resistance markers
+    """
+    __tablename__ = 'PlasmidSelection'
+
+    id = Column(Integer(), primary_key=True, autoincrement=True , nullable=False )
+    name = Column(Text(), nullable=False )
+    description = Column(Text())
+    weight = Column(Integer(), nullable=False )
+    inVocabulary_id = Column(Integer(), ForeignKey('Vocabulary.id'), nullable=False )
+    inVocabulary = relationship("Vocabulary", uselist=False, foreign_keys=[inVocabulary_id])
+    
+
+    def __repr__(self):
+        return f"PlasmidSelection(id={self.id},name={self.name},description={self.description},weight={self.weight},inVocabulary_id={self.inVocabulary_id},)"
+
+
+
+    
+    # Using concrete inheritance: see https://docs.sqlalchemy.org/en/14/orm/inheritance.html
+    __mapper_args__ = {
+        'concrete': True
+    }
+    
+
+
+class PropagationHost(Term):
+    """
+    The organism used to grow and multiply the pathogen under controlled conditions
+    """
+    __tablename__ = 'PropagationHost'
+
+    id = Column(Integer(), primary_key=True, autoincrement=True , nullable=False )
+    name = Column(Text(), nullable=False )
+    description = Column(Text())
+    weight = Column(Integer(), nullable=False )
+    inVocabulary_id = Column(Integer(), ForeignKey('Vocabulary.id'), nullable=False )
+    inVocabulary = relationship("Vocabulary", uselist=False, foreign_keys=[inVocabulary_id])
+    
+
+    def __repr__(self):
+        return f"PropagationHost(id={self.id},name={self.name},description={self.description},weight={self.weight},inVocabulary_id={self.inVocabulary_id},)"
+
+
+
+    
+    # Using concrete inheritance: see https://docs.sqlalchemy.org/en/14/orm/inheritance.html
+    __mapper_args__ = {
+        'concrete': True
+    }
+    
+
+
+class TransmissionMethod(Term):
+    """
+    The process by which the pathogen spreads between hosts
+    """
+    __tablename__ = 'TransmissionMethod'
+
+    id = Column(Integer(), primary_key=True, autoincrement=True , nullable=False )
+    name = Column(Text(), nullable=False )
+    description = Column(Text())
+    weight = Column(Integer(), nullable=False )
+    inVocabulary_id = Column(Integer(), ForeignKey('Vocabulary.id'), nullable=False )
+    inVocabulary = relationship("Vocabulary", uselist=False, foreign_keys=[inVocabulary_id])
+    
+
+    def __repr__(self):
+        return f"TransmissionMethod(id={self.id},name={self.name},description={self.description},weight={self.weight},inVocabulary_id={self.inVocabulary_id},)"
+
+
+
+    
+    # Using concrete inheritance: see https://docs.sqlalchemy.org/en/14/orm/inheritance.html
+    __mapper_args__ = {
+        'concrete': True
+    }
+    
+
+
+class ProductionCellLine(Term):
+    """
+    A population of cells that originates from a primary culture, adapted to grow and divide under laboratory conditions. Used in biotechnology to consistently produce biological substances
+    """
+    __tablename__ = 'ProductionCellLine'
+
+    id = Column(Integer(), primary_key=True, autoincrement=True , nullable=False )
+    name = Column(Text(), nullable=False )
+    description = Column(Text())
+    weight = Column(Integer(), nullable=False )
+    inVocabulary_id = Column(Integer(), ForeignKey('Vocabulary.id'), nullable=False )
+    inVocabulary = relationship("Vocabulary", uselist=False, foreign_keys=[inVocabulary_id])
+    
+
+    def __repr__(self):
+        return f"ProductionCellLine(id={self.id},name={self.name},description={self.description},weight={self.weight},inVocabulary_id={self.inVocabulary_id},)"
+
+
+
+    
+    # Using concrete inheritance: see https://docs.sqlalchemy.org/en/14/orm/inheritance.html
+    __mapper_args__ = {
+        'concrete': True
+    }
+    
+
+
+class ProductCategory(Term):
+    """
+    A term used to classify a group of products that share common characteristics or functions, which helps in their organization
+    """
+    __tablename__ = 'ProductCategory'
+
+    id = Column(Integer(), primary_key=True, autoincrement=True , nullable=False )
+    name = Column(Text(), nullable=False )
+    description = Column(Text())
+    weight = Column(Integer(), nullable=False )
+    parentCategory_id = Column(Integer(), ForeignKey('ProductCategory.id'))
+    parentCategory = relationship("ProductCategory", uselist=False, foreign_keys=[parentCategory_id])
+    inVocabulary_id = Column(Integer(), ForeignKey('Vocabulary.id'), nullable=False )
+    inVocabulary = relationship("Vocabulary", uselist=False, foreign_keys=[inVocabulary_id])
+    
+
+    def __repr__(self):
+        return f"ProductCategory(id={self.id},name={self.name},description={self.description},weight={self.weight},parentCategory_id={self.parentCategory_id},inVocabulary_id={self.inVocabulary_id},)"
+
+
+
+    
+    # Using concrete inheritance: see https://docs.sqlalchemy.org/en/14/orm/inheritance.html
+    __mapper_args__ = {
+        'concrete': True
+    }
+    
+
+
+class IsolationHost(Term):
+    """
+    Host organism from which the pathogen was isolated
+    """
+    __tablename__ = 'IsolationHost'
+
+    id = Column(Integer(), primary_key=True, autoincrement=True , nullable=False )
+    name = Column(Text(), nullable=False )
+    description = Column(Text())
+    weight = Column(Integer(), nullable=False )
+    inVocabulary_id = Column(Integer(), ForeignKey('Vocabulary.id'), nullable=False )
+    inVocabulary = relationship("Vocabulary", uselist=False, foreign_keys=[inVocabulary_id])
+    
+
+    def __repr__(self):
+        return f"IsolationHost(id={self.id},name={self.name},description={self.description},weight={self.weight},inVocabulary_id={self.inVocabulary_id},)"
+
+
+
+    
+    # Using concrete inheritance: see https://docs.sqlalchemy.org/en/14/orm/inheritance.html
+    __mapper_args__ = {
+        'concrete': True
+    }
+    
+
+
+class GeographicalOrigin(Term):
+    """
+    The specific location or region where a physical item, originates or is naturally found
+    """
+    __tablename__ = 'GeographicalOrigin'
+
+    id = Column(Integer(), primary_key=True, autoincrement=True , nullable=False )
+    name = Column(Text(), nullable=False )
+    description = Column(Text())
+    weight = Column(Integer(), nullable=False )
+    inVocabulary_id = Column(Integer(), ForeignKey('Vocabulary.id'), nullable=False )
+    inVocabulary = relationship("Vocabulary", uselist=False, foreign_keys=[inVocabulary_id])
+    
+
+    def __repr__(self):
+        return f"GeographicalOrigin(id={self.id},name={self.name},description={self.description},weight={self.weight},inVocabulary_id={self.inVocabulary_id},)"
+
+
+
+    
+    # Using concrete inheritance: see https://docs.sqlalchemy.org/en/14/orm/inheritance.html
+    __mapper_args__ = {
+        'concrete': True
+    }
+    
+
+
+class Country(Term):
+    """
+    The country as of ISO3166
+    """
+    __tablename__ = 'Country'
+
+    id = Column(Integer(), primary_key=True, autoincrement=True , nullable=False )
+    alpha2Code = Column(Text(), nullable=False )
+    name = Column(Text(), nullable=False )
+    description = Column(Text())
+    weight = Column(Integer(), nullable=False )
+    inVocabulary_id = Column(Integer(), ForeignKey('Vocabulary.id'), nullable=False )
+    inVocabulary = relationship("Vocabulary", uselist=False, foreign_keys=[inVocabulary_id])
+    
+
+    def __repr__(self):
+        return f"Country(id={self.id},alpha2Code={self.alpha2Code},name={self.name},description={self.description},weight={self.weight},inVocabulary_id={self.inVocabulary_id},)"
+
+
+
+    
+    # Using concrete inheritance: see https://docs.sqlalchemy.org/en/14/orm/inheritance.html
+    __mapper_args__ = {
+        'concrete': True
+    }
+    
+
+
+class IATAClassification(Term):
+    """
+    The corresponding International Air Transport Association (IATA)'s category for dangerous goods that are transported by air
+    """
+    __tablename__ = 'IATAClassification'
+
+    id = Column(Integer(), primary_key=True, autoincrement=True , nullable=False )
+    name = Column(Text(), nullable=False )
+    description = Column(Text())
+    weight = Column(Integer(), nullable=False )
+    inVocabulary_id = Column(Integer(), ForeignKey('Vocabulary.id'), nullable=False )
+    inVocabulary = relationship("Vocabulary", uselist=False, foreign_keys=[inVocabulary_id])
+    
+
+    def __repr__(self):
+        return f"IATAClassification(id={self.id},name={self.name},description={self.description},weight={self.weight},inVocabulary_id={self.inVocabulary_id},)"
+
+
+
+    
+    # Using concrete inheritance: see https://docs.sqlalchemy.org/en/14/orm/inheritance.html
+    __mapper_args__ = {
+        'concrete': True
+    }
+    
+
+
+class TaxonomicRank(Term):
+    """
+    The possible taxonomic ranks and their description
+    """
+    __tablename__ = 'TaxonomicRank'
+
+    id = Column(Integer(), primary_key=True, autoincrement=True , nullable=False )
+    name = Column(Text(), nullable=False )
+    description = Column(Text())
+    weight = Column(Integer(), nullable=False )
+    inVocabulary_id = Column(Integer(), ForeignKey('Vocabulary.id'), nullable=False )
+    inVocabulary = relationship("Vocabulary", uselist=False, foreign_keys=[inVocabulary_id])
+    
+    
+    # ManyToMany
+    taxonomy = relationship( "Taxonomy", secondary="TaxonomicRank_taxonomy")
+    
+
+    def __repr__(self):
+        return f"TaxonomicRank(id={self.id},name={self.name},description={self.description},weight={self.weight},inVocabulary_id={self.inVocabulary_id},)"
+
+
+
+    
+    # Using concrete inheritance: see https://docs.sqlalchemy.org/en/14/orm/inheritance.html
+    __mapper_args__ = {
+        'concrete': True
+    }
+    
+
+
+class Taxon(Term):
+    """
+    Conceptual entity that groups one or more populations of an organism or organisms, as seen by taxonomists, to form a unit
+    """
+    __tablename__ = 'Taxon'
+
+    id = Column(Integer(), primary_key=True, autoincrement=True , nullable=False )
+    taxonomicID = Column(Text(), nullable=False )
+    taxonomicNodeID = Column(Text())
+    name = Column(Text(), nullable=False )
+    description = Column(Text())
+    weight = Column(Integer(), nullable=False )
+    parentTaxon_id = Column(Integer(), ForeignKey('Taxon.id'), nullable=False )
+    parentTaxon = relationship("Taxon", uselist=False, foreign_keys=[parentTaxon_id])
+    rank_id = Column(Integer(), ForeignKey('TaxonomicRank.id'), nullable=False )
+    rank = relationship("TaxonomicRank", uselist=False, foreign_keys=[rank_id])
+    inVocabulary_id = Column(Integer(), ForeignKey('Vocabulary.id'), nullable=False )
+    inVocabulary = relationship("Vocabulary", uselist=False, foreign_keys=[inVocabulary_id])
+    
+    
+    # ManyToMany
+    taxonomy = relationship( "Taxonomy", secondary="Taxon_taxonomy")
+    
+    
+    # ManyToMany
+    previouslyKnownAs = relationship( "Taxon", secondary="Taxon_previouslyKnownAs")
+    
+    
+    # ManyToMany
+    externalEquivalentTaxon = relationship( "Taxon", secondary="Taxon_externalEquivalentTaxon")
+    
+
+    def __repr__(self):
+        return f"Taxon(id={self.id},taxonomicID={self.taxonomicID},taxonomicNodeID={self.taxonomicNodeID},name={self.name},description={self.description},weight={self.weight},parentTaxon_id={self.parentTaxon_id},rank_id={self.rank_id},inVocabulary_id={self.inVocabulary_id},)"
 
 
 
@@ -4814,9 +5620,9 @@ class Person(PersonOrOrganization):
 
     id = Column(Integer(), primary_key=True, autoincrement=True , nullable=False )
     oRCIDiD = Column(Text())
-    homePage = Column(Text())
     name = Column(Text(), nullable=False )
     description = Column(Text())
+    homePage = Column(Text())
     contactPoint_id = Column(Integer(), ForeignKey('ContactPoint.id'))
     contactPoint = relationship("ContactPoint", uselist=False, foreign_keys=[contactPoint_id])
     logo_id = Column(Integer(), ForeignKey('Image.id'))
@@ -4824,7 +5630,7 @@ class Person(PersonOrOrganization):
     
 
     def __repr__(self):
-        return f"Person(id={self.id},oRCIDiD={self.oRCIDiD},homePage={self.homePage},name={self.name},description={self.description},contactPoint_id={self.contactPoint_id},logo_id={self.logo_id},)"
+        return f"Person(id={self.id},oRCIDiD={self.oRCIDiD},name={self.name},description={self.description},homePage={self.homePage},contactPoint_id={self.contactPoint_id},logo_id={self.logo_id},)"
 
 
 
@@ -4843,9 +5649,9 @@ class Organization(PersonOrOrganization):
     __tablename__ = 'Organization'
 
     id = Column(Integer(), primary_key=True, autoincrement=True , nullable=False )
-    homePage = Column(Text())
     name = Column(Text(), nullable=False )
     description = Column(Text())
+    homePage = Column(Text())
     alternateName_id = Column(Integer(), ForeignKey('AlternateName.id'))
     alternateName = relationship("AlternateName", uselist=False, foreign_keys=[alternateName_id])
     country_id = Column(Integer(), ForeignKey('Country.id'))
@@ -4857,7 +5663,7 @@ class Organization(PersonOrOrganization):
     
 
     def __repr__(self):
-        return f"Organization(id={self.id},homePage={self.homePage},name={self.name},description={self.description},alternateName_id={self.alternateName_id},country_id={self.country_id},contactPoint_id={self.contactPoint_id},logo_id={self.logo_id},)"
+        return f"Organization(id={self.id},name={self.name},description={self.description},homePage={self.homePage},alternateName_id={self.alternateName_id},country_id={self.country_id},contactPoint_id={self.contactPoint_id},logo_id={self.logo_id},)"
 
 
 
@@ -4876,9 +5682,9 @@ class Originator(PersonOrOrganization):
     __tablename__ = 'Originator'
 
     id = Column(Integer(), primary_key=True, autoincrement=True , nullable=False )
-    homePage = Column(Text())
     name = Column(Text(), nullable=False )
     description = Column(Text())
+    homePage = Column(Text())
     contactPoint_id = Column(Integer(), ForeignKey('ContactPoint.id'))
     contactPoint = relationship("ContactPoint", uselist=False, foreign_keys=[contactPoint_id])
     logo_id = Column(Integer(), ForeignKey('Image.id'))
@@ -4886,7 +5692,7 @@ class Originator(PersonOrOrganization):
     
 
     def __repr__(self):
-        return f"Originator(id={self.id},homePage={self.homePage},name={self.name},description={self.description},contactPoint_id={self.contactPoint_id},logo_id={self.logo_id},)"
+        return f"Originator(id={self.id},name={self.name},description={self.description},homePage={self.homePage},contactPoint_id={self.contactPoint_id},logo_id={self.logo_id},)"
 
 
 
@@ -4987,906 +5793,6 @@ class Collection(Catalogue):
     
 
 
-class ProductOrService(NamedDataset):
-    """
-    A product or a service
-    """
-    __tablename__ = 'ProductOrService'
-
-    id = Column(Integer(), primary_key=True, autoincrement=True , nullable=False )
-    accessPointURL = Column(Text(), nullable=False )
-    refSKU = Column(Text(), nullable=False )
-    unitDefinition = Column(Text())
-    unitCost = Column(Text(), nullable=False )
-    qualityGrading = Column(Text())
-    biosafetyRestrictions = Column(Text())
-    canItBeUsedToProduceGMO = Column(Boolean())
-    availability = Column(Text(), nullable=False )
-    technicalRecommendation = Column(Text())
-    internalReference = Column(Text())
-    note = Column(Text())
-    name = Column(Text(), nullable=False )
-    description = Column(Text())
-    category_id = Column(Integer(), ForeignKey('ProductCategory.id'), nullable=False )
-    category = relationship("ProductCategory", uselist=False, foreign_keys=[category_id])
-    riskGroup_id = Column(Integer(), ForeignKey('RiskGroup.id'))
-    riskGroup = relationship("RiskGroup", uselist=False, foreign_keys=[riskGroup_id])
-    provider_id = Column(Integer(), ForeignKey('Provider.id'), nullable=False )
-    provider = relationship("Provider", uselist=False, foreign_keys=[provider_id])
-    contactPoint_id = Column(Integer(), ForeignKey('ContactPoint.id'))
-    contactPoint = relationship("ContactPoint", uselist=False, foreign_keys=[contactPoint_id])
-    
-    
-    # ManyToMany
-    additionalCategory = relationship( "ProductCategory", secondary="ProductOrService_additionalCategory")
-    
-    
-    # ManyToMany
-    pathogenIdentification = relationship( "PathogenIdentification", secondary="ProductOrService_pathogenIdentification")
-    
-    
-    # ManyToMany
-    relatedDOI = relationship( "DOI", secondary="ProductOrService_relatedDOI")
-    
-    
-    # ManyToMany
-    collection = relationship( "Collection", secondary="ProductOrService_collection")
-    
-    
-    # ManyToMany
-    keywords = relationship( "Keyword", secondary="ProductOrService_keywords")
-    
-    
-    # ManyToMany
-    complementaryDocument = relationship( "Document", secondary="ProductOrService_complementaryDocument")
-    
-    
-    # ManyToMany
-    productPicture = relationship( "Image", secondary="ProductOrService_productPicture")
-    
-    
-    # ManyToMany
-    externalRelatedReference = relationship( "ExternalRelatedReference", secondary="ProductOrService_externalRelatedReference")
-    
-    
-    # ManyToMany
-    certification = relationship( "Certification", secondary="ProductOrService_certification")
-    
-
-    def __repr__(self):
-        return f"ProductOrService(id={self.id},accessPointURL={self.accessPointURL},refSKU={self.refSKU},unitDefinition={self.unitDefinition},unitCost={self.unitCost},qualityGrading={self.qualityGrading},biosafetyRestrictions={self.biosafetyRestrictions},canItBeUsedToProduceGMO={self.canItBeUsedToProduceGMO},availability={self.availability},technicalRecommendation={self.technicalRecommendation},internalReference={self.internalReference},note={self.note},name={self.name},description={self.description},category_id={self.category_id},riskGroup_id={self.riskGroup_id},provider_id={self.provider_id},contactPoint_id={self.contactPoint_id},)"
-
-
-
-    
-    # Using concrete inheritance: see https://docs.sqlalchemy.org/en/14/orm/inheritance.html
-    __mapper_args__ = {
-        'concrete': True
-    }
-    
-
-
-class Data(File):
-    """
-    Subclass of File representing structured or unstructured datasets, often used for analysis, storage, or transfer of information
-    """
-    __tablename__ = 'Data'
-
-    id = Column(Integer(), primary_key=True, autoincrement=True , nullable=False )
-    contentURL = Column(Text(), nullable=False )
-    format = Column(Text(), nullable=False )
-    name = Column(Text(), nullable=False )
-    description = Column(Text())
-    license_id = Column(Integer(), ForeignKey('License.id'))
-    license = relationship("License", uselist=False, foreign_keys=[license_id])
-    
-
-    def __repr__(self):
-        return f"Data(id={self.id},contentURL={self.contentURL},format={self.format},name={self.name},description={self.description},license_id={self.license_id},)"
-
-
-
-    
-    # Using concrete inheritance: see https://docs.sqlalchemy.org/en/14/orm/inheritance.html
-    __mapper_args__ = {
-        'concrete': True
-    }
-    
-
-
-class Document(File):
-    """
-    Subclass of File representing textual or written files such as reports, manuals, or forms
-    """
-    __tablename__ = 'Document'
-
-    id = Column(Integer(), primary_key=True, autoincrement=True , nullable=False )
-    contentURL = Column(Text(), nullable=False )
-    format = Column(Text(), nullable=False )
-    name = Column(Text(), nullable=False )
-    description = Column(Text())
-    license_id = Column(Integer(), ForeignKey('License.id'))
-    license = relationship("License", uselist=False, foreign_keys=[license_id])
-    
-
-    def __repr__(self):
-        return f"Document(id={self.id},contentURL={self.contentURL},format={self.format},name={self.name},description={self.description},license_id={self.license_id},)"
-
-
-
-    
-    # Using concrete inheritance: see https://docs.sqlalchemy.org/en/14/orm/inheritance.html
-    __mapper_args__ = {
-        'concrete': True
-    }
-    
-
-
-class Audio(File):
-    """
-    Subclass of File representing sound recordings or audio tracks
-    """
-    __tablename__ = 'Audio'
-
-    id = Column(Integer(), primary_key=True, autoincrement=True , nullable=False )
-    contentURL = Column(Text(), nullable=False )
-    format = Column(Text(), nullable=False )
-    name = Column(Text(), nullable=False )
-    description = Column(Text())
-    license_id = Column(Integer(), ForeignKey('License.id'))
-    license = relationship("License", uselist=False, foreign_keys=[license_id])
-    
-
-    def __repr__(self):
-        return f"Audio(id={self.id},contentURL={self.contentURL},format={self.format},name={self.name},description={self.description},license_id={self.license_id},)"
-
-
-
-    
-    # Using concrete inheritance: see https://docs.sqlalchemy.org/en/14/orm/inheritance.html
-    __mapper_args__ = {
-        'concrete': True
-    }
-    
-
-
-class Video(File):
-    """
-    Subclass of File representing moving visual media, such as recordings, presentations, or movies
-    """
-    __tablename__ = 'Video'
-
-    id = Column(Integer(), primary_key=True, autoincrement=True , nullable=False )
-    contentURL = Column(Text(), nullable=False )
-    format = Column(Text(), nullable=False )
-    name = Column(Text(), nullable=False )
-    description = Column(Text())
-    license_id = Column(Integer(), ForeignKey('License.id'))
-    license = relationship("License", uselist=False, foreign_keys=[license_id])
-    
-
-    def __repr__(self):
-        return f"Video(id={self.id},contentURL={self.contentURL},format={self.format},name={self.name},description={self.description},license_id={self.license_id},)"
-
-
-
-    
-    # Using concrete inheritance: see https://docs.sqlalchemy.org/en/14/orm/inheritance.html
-    __mapper_args__ = {
-        'concrete': True
-    }
-    
-
-
-class Image(File):
-    """
-    Subclass of File representing visual content such as pictures, diagrams, or illustrations
-    """
-    __tablename__ = 'Image'
-
-    id = Column(Integer(), primary_key=True, autoincrement=True , nullable=False )
-    altText = Column(Text())
-    contentURL = Column(Text(), nullable=False )
-    format = Column(Text(), nullable=False )
-    name = Column(Text(), nullable=False )
-    description = Column(Text())
-    license_id = Column(Integer(), ForeignKey('License.id'))
-    license = relationship("License", uselist=False, foreign_keys=[license_id])
-    
-
-    def __repr__(self):
-        return f"Image(id={self.id},altText={self.altText},contentURL={self.contentURL},format={self.format},name={self.name},description={self.description},license_id={self.license_id},)"
-
-
-
-    
-    # Using concrete inheritance: see https://docs.sqlalchemy.org/en/14/orm/inheritance.html
-    __mapper_args__ = {
-        'concrete': True
-    }
-    
-
-
-class CommonName(Term):
-    """
-    Vernacular name that is the name used in everyday language to refer to an organism or group of organisms. This name is typically easier to remember and pronounce compared to the scientific name
-    """
-    __tablename__ = 'CommonName'
-
-    id = Column(Integer(), primary_key=True, autoincrement=True , nullable=False )
-    weight = Column(Integer(), nullable=False )
-    name = Column(Text(), nullable=False )
-    description = Column(Text())
-    inVocabulary_id = Column(Integer(), ForeignKey('Vocabulary.id'), nullable=False )
-    inVocabulary = relationship("Vocabulary", uselist=False, foreign_keys=[inVocabulary_id])
-    
-    
-    # ManyToMany
-    alternateName = relationship( "AlternateName", secondary="CommonName_alternateName")
-    
-    
-    sourceOfInformation_rel = relationship( "CommonNameSourceOfInformation" )
-    sourceOfInformation = association_proxy("sourceOfInformation_rel", "sourceOfInformation",
-                                  creator=lambda x_: CommonNameSourceOfInformation(sourceOfInformation=x_))
-    
-
-    def __repr__(self):
-        return f"CommonName(id={self.id},weight={self.weight},name={self.name},description={self.description},inVocabulary_id={self.inVocabulary_id},)"
-
-
-
-    
-    # Using concrete inheritance: see https://docs.sqlalchemy.org/en/14/orm/inheritance.html
-    __mapper_args__ = {
-        'concrete': True
-    }
-    
-
-
-class AlternateName(Term):
-    """
-    List of alternate names for things
-    """
-    __tablename__ = 'AlternateName'
-
-    id = Column(Integer(), primary_key=True, autoincrement=True , nullable=False )
-    weight = Column(Integer(), nullable=False )
-    name = Column(Text(), nullable=False )
-    description = Column(Text())
-    inVocabulary_id = Column(Integer(), ForeignKey('Vocabulary.id'), nullable=False )
-    inVocabulary = relationship("Vocabulary", uselist=False, foreign_keys=[inVocabulary_id])
-    
-    
-    # ManyToMany
-    alternateName = relationship( "AlternateName", secondary="AlternateName_alternateName")
-    
-    
-    sourceOfInformation_rel = relationship( "AlternateNameSourceOfInformation" )
-    sourceOfInformation = association_proxy("sourceOfInformation_rel", "sourceOfInformation",
-                                  creator=lambda x_: AlternateNameSourceOfInformation(sourceOfInformation=x_))
-    
-
-    def __repr__(self):
-        return f"AlternateName(id={self.id},weight={self.weight},name={self.name},description={self.description},inVocabulary_id={self.inVocabulary_id},)"
-
-
-
-    
-    # Using concrete inheritance: see https://docs.sqlalchemy.org/en/14/orm/inheritance.html
-    __mapper_args__ = {
-        'concrete': True
-    }
-    
-
-
-class RiskGroup(Term):
-    """
-    Risk group classification guides initial handling of biological agents in labs but doesn't systematically equate to biosafety levels. Actual risk varies with the agent, procedures, and personnel competence
-    """
-    __tablename__ = 'RiskGroup'
-
-    id = Column(Integer(), primary_key=True, autoincrement=True , nullable=False )
-    weight = Column(Integer(), nullable=False )
-    name = Column(Text(), nullable=False )
-    description = Column(Text())
-    inVocabulary_id = Column(Integer(), ForeignKey('Vocabulary.id'), nullable=False )
-    inVocabulary = relationship("Vocabulary", uselist=False, foreign_keys=[inVocabulary_id])
-    
-
-    def __repr__(self):
-        return f"RiskGroup(id={self.id},weight={self.weight},name={self.name},description={self.description},inVocabulary_id={self.inVocabulary_id},)"
-
-
-
-    
-    # Using concrete inheritance: see https://docs.sqlalchemy.org/en/14/orm/inheritance.html
-    __mapper_args__ = {
-        'concrete': True
-    }
-    
-
-
-class DOI(Term):
-    """
-    A unique string identifier assigned to a digital object, providing a permanent link for reliable citation and access.  The Digital Object Identifier (DOI) is a persistent identifier that is an ISO standard
-    """
-    __tablename__ = 'DOI'
-
-    id = Column(Integer(), primary_key=True, autoincrement=True , nullable=False )
-    weight = Column(Integer(), nullable=False )
-    name = Column(Text(), nullable=False )
-    description = Column(Text())
-    inVocabulary_id = Column(Integer(), ForeignKey('Vocabulary.id'), nullable=False )
-    inVocabulary = relationship("Vocabulary", uselist=False, foreign_keys=[inVocabulary_id])
-    
-
-    def __repr__(self):
-        return f"DOI(id={self.id},weight={self.weight},name={self.name},description={self.description},inVocabulary_id={self.inVocabulary_id},)"
-
-
-
-    
-    # Using concrete inheritance: see https://docs.sqlalchemy.org/en/14/orm/inheritance.html
-    __mapper_args__ = {
-        'concrete': True
-    }
-    
-
-
-class Journal(Term):
-    """
-    Periodical journal publishing scientific research
-    """
-    __tablename__ = 'Journal'
-
-    id = Column(Integer(), primary_key=True, autoincrement=True , nullable=False )
-    weight = Column(Integer(), nullable=False )
-    name = Column(Text(), nullable=False )
-    description = Column(Text())
-    inVocabulary_id = Column(Integer(), ForeignKey('Vocabulary.id'), nullable=False )
-    inVocabulary = relationship("Vocabulary", uselist=False, foreign_keys=[inVocabulary_id])
-    
-
-    def __repr__(self):
-        return f"Journal(id={self.id},weight={self.weight},name={self.name},description={self.description},inVocabulary_id={self.inVocabulary_id},)"
-
-
-
-    
-    # Using concrete inheritance: see https://docs.sqlalchemy.org/en/14/orm/inheritance.html
-    __mapper_args__ = {
-        'concrete': True
-    }
-    
-
-
-class PDBReference(Term):
-    """
-    Identifier for 3D structural data as per the PDB (Protein Data Bank) database
-    """
-    __tablename__ = 'PDBReference'
-
-    id = Column(Integer(), primary_key=True, autoincrement=True , nullable=False )
-    weight = Column(Integer(), nullable=False )
-    name = Column(Text(), nullable=False )
-    description = Column(Text())
-    inVocabulary_id = Column(Integer(), ForeignKey('Vocabulary.id'), nullable=False )
-    inVocabulary = relationship("Vocabulary", uselist=False, foreign_keys=[inVocabulary_id])
-    
-
-    def __repr__(self):
-        return f"PDBReference(id={self.id},weight={self.weight},name={self.name},description={self.description},inVocabulary_id={self.inVocabulary_id},)"
-
-
-
-    
-    # Using concrete inheritance: see https://docs.sqlalchemy.org/en/14/orm/inheritance.html
-    __mapper_args__ = {
-        'concrete': True
-    }
-    
-
-
-class Keyword(Term):
-    """
-    A term or phrase used to tag and categorize content
-    """
-    __tablename__ = 'Keyword'
-
-    id = Column(Integer(), primary_key=True, autoincrement=True , nullable=False )
-    weight = Column(Integer(), nullable=False )
-    name = Column(Text(), nullable=False )
-    description = Column(Text())
-    inVocabulary_id = Column(Integer(), ForeignKey('Vocabulary.id'), nullable=False )
-    inVocabulary = relationship("Vocabulary", uselist=False, foreign_keys=[inVocabulary_id])
-    
-
-    def __repr__(self):
-        return f"Keyword(id={self.id},weight={self.weight},name={self.name},description={self.description},inVocabulary_id={self.inVocabulary_id},)"
-
-
-
-    
-    # Using concrete inheritance: see https://docs.sqlalchemy.org/en/14/orm/inheritance.html
-    __mapper_args__ = {
-        'concrete': True
-    }
-    
-
-
-class ProteinTag(Term):
-    """
-    Peptide sequence genetically grafted onto a recombinant protein
-    """
-    __tablename__ = 'ProteinTag'
-
-    id = Column(Integer(), primary_key=True, autoincrement=True , nullable=False )
-    weight = Column(Integer(), nullable=False )
-    name = Column(Text(), nullable=False )
-    description = Column(Text())
-    inVocabulary_id = Column(Integer(), ForeignKey('Vocabulary.id'), nullable=False )
-    inVocabulary = relationship("Vocabulary", uselist=False, foreign_keys=[inVocabulary_id])
-    
-
-    def __repr__(self):
-        return f"ProteinTag(id={self.id},weight={self.weight},name={self.name},description={self.description},inVocabulary_id={self.inVocabulary_id},)"
-
-
-
-    
-    # Using concrete inheritance: see https://docs.sqlalchemy.org/en/14/orm/inheritance.html
-    __mapper_args__ = {
-        'concrete': True
-    }
-    
-
-
-class SpecialFeature(Term):
-    """
-    Distinctive attributes of a product that set it apart from other similar items e.g., Reference strain, Vaccinal strain, Antiviral resistant strain ...
-    """
-    __tablename__ = 'SpecialFeature'
-
-    id = Column(Integer(), primary_key=True, autoincrement=True , nullable=False )
-    weight = Column(Integer(), nullable=False )
-    name = Column(Text(), nullable=False )
-    description = Column(Text())
-    inVocabulary_id = Column(Integer(), ForeignKey('Vocabulary.id'), nullable=False )
-    inVocabulary = relationship("Vocabulary", uselist=False, foreign_keys=[inVocabulary_id])
-    
-
-    def __repr__(self):
-        return f"SpecialFeature(id={self.id},weight={self.weight},name={self.name},description={self.description},inVocabulary_id={self.inVocabulary_id},)"
-
-
-
-    
-    # Using concrete inheritance: see https://docs.sqlalchemy.org/en/14/orm/inheritance.html
-    __mapper_args__ = {
-        'concrete': True
-    }
-    
-
-
-class ExpressionVector(Term):
-    """
-    A reference to an expression vector plasmid, typically embedding a resistance marker for inducible protein expression
-    """
-    __tablename__ = 'ExpressionVector'
-
-    id = Column(Integer(), primary_key=True, autoincrement=True , nullable=False )
-    weight = Column(Integer(), nullable=False )
-    name = Column(Text(), nullable=False )
-    description = Column(Text())
-    inVocabulary_id = Column(Integer(), ForeignKey('Vocabulary.id'), nullable=False )
-    inVocabulary = relationship("Vocabulary", uselist=False, foreign_keys=[inVocabulary_id])
-    
-
-    def __repr__(self):
-        return f"ExpressionVector(id={self.id},weight={self.weight},name={self.name},description={self.description},inVocabulary_id={self.inVocabulary_id},)"
-
-
-
-    
-    # Using concrete inheritance: see https://docs.sqlalchemy.org/en/14/orm/inheritance.html
-    __mapper_args__ = {
-        'concrete': True
-    }
-    
-
-
-class PlasmidSelection(Term):
-    """
-    The process of identifying cells that have successfully incorporated a plasmid, typically using antibiotic resistance markers
-    """
-    __tablename__ = 'PlasmidSelection'
-
-    id = Column(Integer(), primary_key=True, autoincrement=True , nullable=False )
-    weight = Column(Integer(), nullable=False )
-    name = Column(Text(), nullable=False )
-    description = Column(Text())
-    inVocabulary_id = Column(Integer(), ForeignKey('Vocabulary.id'), nullable=False )
-    inVocabulary = relationship("Vocabulary", uselist=False, foreign_keys=[inVocabulary_id])
-    
-
-    def __repr__(self):
-        return f"PlasmidSelection(id={self.id},weight={self.weight},name={self.name},description={self.description},inVocabulary_id={self.inVocabulary_id},)"
-
-
-
-    
-    # Using concrete inheritance: see https://docs.sqlalchemy.org/en/14/orm/inheritance.html
-    __mapper_args__ = {
-        'concrete': True
-    }
-    
-
-
-class PropagationHost(Term):
-    """
-    The organism used to grow and multiply the pathogen under controlled conditions
-    """
-    __tablename__ = 'PropagationHost'
-
-    id = Column(Integer(), primary_key=True, autoincrement=True , nullable=False )
-    weight = Column(Integer(), nullable=False )
-    name = Column(Text(), nullable=False )
-    description = Column(Text())
-    inVocabulary_id = Column(Integer(), ForeignKey('Vocabulary.id'), nullable=False )
-    inVocabulary = relationship("Vocabulary", uselist=False, foreign_keys=[inVocabulary_id])
-    
-
-    def __repr__(self):
-        return f"PropagationHost(id={self.id},weight={self.weight},name={self.name},description={self.description},inVocabulary_id={self.inVocabulary_id},)"
-
-
-
-    
-    # Using concrete inheritance: see https://docs.sqlalchemy.org/en/14/orm/inheritance.html
-    __mapper_args__ = {
-        'concrete': True
-    }
-    
-
-
-class TransmissionMethod(Term):
-    """
-    The process by which the pathogen spreads between hosts
-    """
-    __tablename__ = 'TransmissionMethod'
-
-    id = Column(Integer(), primary_key=True, autoincrement=True , nullable=False )
-    weight = Column(Integer(), nullable=False )
-    name = Column(Text(), nullable=False )
-    description = Column(Text())
-    inVocabulary_id = Column(Integer(), ForeignKey('Vocabulary.id'), nullable=False )
-    inVocabulary = relationship("Vocabulary", uselist=False, foreign_keys=[inVocabulary_id])
-    
-
-    def __repr__(self):
-        return f"TransmissionMethod(id={self.id},weight={self.weight},name={self.name},description={self.description},inVocabulary_id={self.inVocabulary_id},)"
-
-
-
-    
-    # Using concrete inheritance: see https://docs.sqlalchemy.org/en/14/orm/inheritance.html
-    __mapper_args__ = {
-        'concrete': True
-    }
-    
-
-
-class ProductionCellLine(Term):
-    """
-    A population of cells that originates from a primary culture, adapted to grow and divide under laboratory conditions. Used in biotechnology to consistently produce biological substances
-    """
-    __tablename__ = 'ProductionCellLine'
-
-    id = Column(Integer(), primary_key=True, autoincrement=True , nullable=False )
-    weight = Column(Integer(), nullable=False )
-    name = Column(Text(), nullable=False )
-    description = Column(Text())
-    inVocabulary_id = Column(Integer(), ForeignKey('Vocabulary.id'), nullable=False )
-    inVocabulary = relationship("Vocabulary", uselist=False, foreign_keys=[inVocabulary_id])
-    
-
-    def __repr__(self):
-        return f"ProductionCellLine(id={self.id},weight={self.weight},name={self.name},description={self.description},inVocabulary_id={self.inVocabulary_id},)"
-
-
-
-    
-    # Using concrete inheritance: see https://docs.sqlalchemy.org/en/14/orm/inheritance.html
-    __mapper_args__ = {
-        'concrete': True
-    }
-    
-
-
-class ProductCategory(Term):
-    """
-    A term used to classify a group of products that share common characteristics or functions, which helps in their organization
-    """
-    __tablename__ = 'ProductCategory'
-
-    id = Column(Integer(), primary_key=True, autoincrement=True , nullable=False )
-    weight = Column(Integer(), nullable=False )
-    name = Column(Text(), nullable=False )
-    description = Column(Text())
-    parentCategory_id = Column(Integer(), ForeignKey('ProductCategory.id'))
-    parentCategory = relationship("ProductCategory", uselist=False, foreign_keys=[parentCategory_id])
-    inVocabulary_id = Column(Integer(), ForeignKey('Vocabulary.id'), nullable=False )
-    inVocabulary = relationship("Vocabulary", uselist=False, foreign_keys=[inVocabulary_id])
-    
-
-    def __repr__(self):
-        return f"ProductCategory(id={self.id},weight={self.weight},name={self.name},description={self.description},parentCategory_id={self.parentCategory_id},inVocabulary_id={self.inVocabulary_id},)"
-
-
-
-    
-    # Using concrete inheritance: see https://docs.sqlalchemy.org/en/14/orm/inheritance.html
-    __mapper_args__ = {
-        'concrete': True
-    }
-    
-
-
-class IsolationHost(Term):
-    """
-    Host organism from which the pathogen was isolated
-    """
-    __tablename__ = 'IsolationHost'
-
-    id = Column(Integer(), primary_key=True, autoincrement=True , nullable=False )
-    weight = Column(Integer(), nullable=False )
-    name = Column(Text(), nullable=False )
-    description = Column(Text())
-    inVocabulary_id = Column(Integer(), ForeignKey('Vocabulary.id'), nullable=False )
-    inVocabulary = relationship("Vocabulary", uselist=False, foreign_keys=[inVocabulary_id])
-    
-
-    def __repr__(self):
-        return f"IsolationHost(id={self.id},weight={self.weight},name={self.name},description={self.description},inVocabulary_id={self.inVocabulary_id},)"
-
-
-
-    
-    # Using concrete inheritance: see https://docs.sqlalchemy.org/en/14/orm/inheritance.html
-    __mapper_args__ = {
-        'concrete': True
-    }
-    
-
-
-class GeographicalOrigin(Term):
-    """
-    The specific location or region where a physical item, originates or is naturally found
-    """
-    __tablename__ = 'GeographicalOrigin'
-
-    id = Column(Integer(), primary_key=True, autoincrement=True , nullable=False )
-    weight = Column(Integer(), nullable=False )
-    name = Column(Text(), nullable=False )
-    description = Column(Text())
-    inVocabulary_id = Column(Integer(), ForeignKey('Vocabulary.id'), nullable=False )
-    inVocabulary = relationship("Vocabulary", uselist=False, foreign_keys=[inVocabulary_id])
-    
-
-    def __repr__(self):
-        return f"GeographicalOrigin(id={self.id},weight={self.weight},name={self.name},description={self.description},inVocabulary_id={self.inVocabulary_id},)"
-
-
-
-    
-    # Using concrete inheritance: see https://docs.sqlalchemy.org/en/14/orm/inheritance.html
-    __mapper_args__ = {
-        'concrete': True
-    }
-    
-
-
-class Country(Term):
-    """
-    The country as of ISO3166
-    """
-    __tablename__ = 'Country'
-
-    id = Column(Integer(), primary_key=True, autoincrement=True , nullable=False )
-    alpha2Code = Column(Text(), nullable=False )
-    weight = Column(Integer(), nullable=False )
-    name = Column(Text(), nullable=False )
-    description = Column(Text())
-    inVocabulary_id = Column(Integer(), ForeignKey('Vocabulary.id'), nullable=False )
-    inVocabulary = relationship("Vocabulary", uselist=False, foreign_keys=[inVocabulary_id])
-    
-
-    def __repr__(self):
-        return f"Country(id={self.id},alpha2Code={self.alpha2Code},weight={self.weight},name={self.name},description={self.description},inVocabulary_id={self.inVocabulary_id},)"
-
-
-
-    
-    # Using concrete inheritance: see https://docs.sqlalchemy.org/en/14/orm/inheritance.html
-    __mapper_args__ = {
-        'concrete': True
-    }
-    
-
-
-class IATAClassification(Term):
-    """
-    The corresponding International Air Transport Association (IATA)'s category for dangerous goods that are transported by air
-    """
-    __tablename__ = 'IATAClassification'
-
-    id = Column(Integer(), primary_key=True, autoincrement=True , nullable=False )
-    weight = Column(Integer(), nullable=False )
-    name = Column(Text(), nullable=False )
-    description = Column(Text())
-    inVocabulary_id = Column(Integer(), ForeignKey('Vocabulary.id'), nullable=False )
-    inVocabulary = relationship("Vocabulary", uselist=False, foreign_keys=[inVocabulary_id])
-    
-
-    def __repr__(self):
-        return f"IATAClassification(id={self.id},weight={self.weight},name={self.name},description={self.description},inVocabulary_id={self.inVocabulary_id},)"
-
-
-
-    
-    # Using concrete inheritance: see https://docs.sqlalchemy.org/en/14/orm/inheritance.html
-    __mapper_args__ = {
-        'concrete': True
-    }
-    
-
-
-class TaxonomicRank(Term):
-    """
-    The possible taxonomic ranks and their description
-    """
-    __tablename__ = 'TaxonomicRank'
-
-    id = Column(Integer(), primary_key=True, autoincrement=True , nullable=False )
-    weight = Column(Integer(), nullable=False )
-    name = Column(Text(), nullable=False )
-    description = Column(Text())
-    inVocabulary_id = Column(Integer(), ForeignKey('Vocabulary.id'), nullable=False )
-    inVocabulary = relationship("Vocabulary", uselist=False, foreign_keys=[inVocabulary_id])
-    
-    
-    # ManyToMany
-    taxonomy = relationship( "Taxonomy", secondary="TaxonomicRank_taxonomy")
-    
-
-    def __repr__(self):
-        return f"TaxonomicRank(id={self.id},weight={self.weight},name={self.name},description={self.description},inVocabulary_id={self.inVocabulary_id},)"
-
-
-
-    
-    # Using concrete inheritance: see https://docs.sqlalchemy.org/en/14/orm/inheritance.html
-    __mapper_args__ = {
-        'concrete': True
-    }
-    
-
-
-class Taxon(Term):
-    """
-    Conceptual entity that groups one or more populations of an organism or organisms, as seen by taxonomists, to form a unit
-    """
-    __tablename__ = 'Taxon'
-
-    id = Column(Integer(), primary_key=True, autoincrement=True , nullable=False )
-    taxonomicID = Column(Text(), nullable=False )
-    taxonomicNodeID = Column(Text())
-    weight = Column(Integer(), nullable=False )
-    name = Column(Text(), nullable=False )
-    description = Column(Text())
-    parentTaxon_id = Column(Integer(), ForeignKey('Taxon.id'), nullable=False )
-    parentTaxon = relationship("Taxon", uselist=False, foreign_keys=[parentTaxon_id])
-    rank_id = Column(Integer(), ForeignKey('TaxonomicRank.id'), nullable=False )
-    rank = relationship("TaxonomicRank", uselist=False, foreign_keys=[rank_id])
-    inVocabulary_id = Column(Integer(), ForeignKey('Vocabulary.id'), nullable=False )
-    inVocabulary = relationship("Vocabulary", uselist=False, foreign_keys=[inVocabulary_id])
-    
-    
-    # ManyToMany
-    taxonomy = relationship( "Taxonomy", secondary="Taxon_taxonomy")
-    
-    
-    # ManyToMany
-    previouslyKnownAs = relationship( "Taxon", secondary="Taxon_previouslyKnownAs")
-    
-    
-    # ManyToMany
-    externalEquivalentTaxon = relationship( "Taxon", secondary="Taxon_externalEquivalentTaxon")
-    
-
-    def __repr__(self):
-        return f"Taxon(id={self.id},taxonomicID={self.taxonomicID},taxonomicNodeID={self.taxonomicNodeID},weight={self.weight},name={self.name},description={self.description},parentTaxon_id={self.parentTaxon_id},rank_id={self.rank_id},inVocabulary_id={self.inVocabulary_id},)"
-
-
-
-    
-    # Using concrete inheritance: see https://docs.sqlalchemy.org/en/14/orm/inheritance.html
-    __mapper_args__ = {
-        'concrete': True
-    }
-    
-
-
-class RI(Organization):
-    """
-    A research infrastructure
-    """
-    __tablename__ = 'RI'
-
-    id = Column(Integer(), primary_key=True, autoincrement=True , nullable=False )
-    homePage = Column(Text())
-    name = Column(Text(), nullable=False )
-    description = Column(Text())
-    alternateName_id = Column(Integer(), ForeignKey('AlternateName.id'))
-    alternateName = relationship("AlternateName", uselist=False, foreign_keys=[alternateName_id])
-    country_id = Column(Integer(), ForeignKey('Country.id'))
-    country = relationship("Country", uselist=False, foreign_keys=[country_id])
-    contactPoint_id = Column(Integer(), ForeignKey('ContactPoint.id'))
-    contactPoint = relationship("ContactPoint", uselist=False, foreign_keys=[contactPoint_id])
-    logo_id = Column(Integer(), ForeignKey('Image.id'))
-    logo = relationship("Image", uselist=False, foreign_keys=[logo_id])
-    
-
-    def __repr__(self):
-        return f"RI(id={self.id},homePage={self.homePage},name={self.name},description={self.description},alternateName_id={self.alternateName_id},country_id={self.country_id},contactPoint_id={self.contactPoint_id},logo_id={self.logo_id},)"
-
-
-
-    
-    # Using concrete inheritance: see https://docs.sqlalchemy.org/en/14/orm/inheritance.html
-    __mapper_args__ = {
-        'concrete': True
-    }
-    
-
-
-class Provider(Organization):
-    """
-    A provider of products or services, as a specific organization
-    """
-    __tablename__ = 'Provider'
-
-    id = Column(Integer(), primary_key=True, autoincrement=True , nullable=False )
-    homePage = Column(Text())
-    name = Column(Text(), nullable=False )
-    description = Column(Text())
-    alternateName_id = Column(Integer(), ForeignKey('AlternateName.id'))
-    alternateName = relationship("AlternateName", uselist=False, foreign_keys=[alternateName_id])
-    country_id = Column(Integer(), ForeignKey('Country.id'))
-    country = relationship("Country", uselist=False, foreign_keys=[country_id])
-    contactPoint_id = Column(Integer(), ForeignKey('ContactPoint.id'))
-    contactPoint = relationship("ContactPoint", uselist=False, foreign_keys=[contactPoint_id])
-    logo_id = Column(Integer(), ForeignKey('Image.id'))
-    logo = relationship("Image", uselist=False, foreign_keys=[logo_id])
-    
-    
-    # ManyToMany
-    memberOfRI = relationship( "RI", secondary="Provider_memberOfRI")
-    
-
-    def __repr__(self):
-        return f"Provider(id={self.id},homePage={self.homePage},name={self.name},description={self.description},alternateName_id={self.alternateName_id},country_id={self.country_id},contactPoint_id={self.contactPoint_id},logo_id={self.logo_id},)"
-
-
-
-    
-    # Using concrete inheritance: see https://docs.sqlalchemy.org/en/14/orm/inheritance.html
-    __mapper_args__ = {
-        'concrete': True
-    }
-    
-
-
 class Service(ProductOrService):
     """
     A service
@@ -5896,19 +5802,19 @@ class Service(ProductOrService):
     id = Column(Integer(), primary_key=True, autoincrement=True , nullable=False )
     modelSpecies = Column(Text())
     modelType = Column(Text())
+    name = Column(Text(), nullable=False )
+    description = Column(Text())
     accessPointURL = Column(Text(), nullable=False )
     refSKU = Column(Text(), nullable=False )
     unitDefinition = Column(Text())
     unitCost = Column(Text(), nullable=False )
     qualityGrading = Column(Text())
     biosafetyRestrictions = Column(Text())
-    canItBeUsedToProduceGMO = Column(Boolean())
+    canItBeUsedToProduceGMO = Column(Boolean(), nullable=False )
     availability = Column(Text(), nullable=False )
     technicalRecommendation = Column(Text())
     internalReference = Column(Text())
     note = Column(Text())
-    name = Column(Text(), nullable=False )
-    description = Column(Text())
     category_id = Column(Integer(), ForeignKey('ProductCategory.id'), nullable=False )
     category = relationship("ProductCategory", uselist=False, foreign_keys=[category_id])
     riskGroup_id = Column(Integer(), ForeignKey('RiskGroup.id'))
@@ -5956,7 +5862,7 @@ class Service(ProductOrService):
     
 
     def __repr__(self):
-        return f"Service(id={self.id},modelSpecies={self.modelSpecies},modelType={self.modelType},accessPointURL={self.accessPointURL},refSKU={self.refSKU},unitDefinition={self.unitDefinition},unitCost={self.unitCost},qualityGrading={self.qualityGrading},biosafetyRestrictions={self.biosafetyRestrictions},canItBeUsedToProduceGMO={self.canItBeUsedToProduceGMO},availability={self.availability},technicalRecommendation={self.technicalRecommendation},internalReference={self.internalReference},note={self.note},name={self.name},description={self.description},category_id={self.category_id},riskGroup_id={self.riskGroup_id},provider_id={self.provider_id},contactPoint_id={self.contactPoint_id},)"
+        return f"Service(id={self.id},modelSpecies={self.modelSpecies},modelType={self.modelType},name={self.name},description={self.description},accessPointURL={self.accessPointURL},refSKU={self.refSKU},unitDefinition={self.unitDefinition},unitCost={self.unitCost},qualityGrading={self.qualityGrading},biosafetyRestrictions={self.biosafetyRestrictions},canItBeUsedToProduceGMO={self.canItBeUsedToProduceGMO},availability={self.availability},technicalRecommendation={self.technicalRecommendation},internalReference={self.internalReference},note={self.note},category_id={self.category_id},riskGroup_id={self.riskGroup_id},provider_id={self.provider_id},contactPoint_id={self.contactPoint_id},)"
 
 
 
@@ -5979,19 +5885,19 @@ class Product(ProductOrService):
     storageConditions = Column(Text(), nullable=False )
     thirdPartyDistributionConsent = Column(Boolean())
     usageRestrictions = Column(Text())
+    name = Column(Text(), nullable=False )
+    description = Column(Text())
     accessPointURL = Column(Text(), nullable=False )
     refSKU = Column(Text(), nullable=False )
     unitDefinition = Column(Text())
     unitCost = Column(Text(), nullable=False )
     qualityGrading = Column(Text())
     biosafetyRestrictions = Column(Text())
-    canItBeUsedToProduceGMO = Column(Boolean())
+    canItBeUsedToProduceGMO = Column(Boolean(), nullable=False )
     availability = Column(Text(), nullable=False )
     technicalRecommendation = Column(Text())
     internalReference = Column(Text())
     note = Column(Text())
-    name = Column(Text(), nullable=False )
-    description = Column(Text())
     hasIATAClassification_id = Column(Integer(), ForeignKey('IATAClassification.id'), nullable=False )
     hasIATAClassification = relationship("IATAClassification", uselist=False, foreign_keys=[hasIATAClassification_id])
     materialSafetyDataSheet_id = Column(Integer(), ForeignKey('MSDS.id'))
@@ -6045,7 +5951,7 @@ class Product(ProductOrService):
     
 
     def __repr__(self):
-        return f"Product(id={self.id},shippingConditions={self.shippingConditions},storageConditions={self.storageConditions},thirdPartyDistributionConsent={self.thirdPartyDistributionConsent},usageRestrictions={self.usageRestrictions},accessPointURL={self.accessPointURL},refSKU={self.refSKU},unitDefinition={self.unitDefinition},unitCost={self.unitCost},qualityGrading={self.qualityGrading},biosafetyRestrictions={self.biosafetyRestrictions},canItBeUsedToProduceGMO={self.canItBeUsedToProduceGMO},availability={self.availability},technicalRecommendation={self.technicalRecommendation},internalReference={self.internalReference},note={self.note},name={self.name},description={self.description},hasIATAClassification_id={self.hasIATAClassification_id},materialSafetyDataSheet_id={self.materialSafetyDataSheet_id},originator_id={self.originator_id},category_id={self.category_id},riskGroup_id={self.riskGroup_id},provider_id={self.provider_id},contactPoint_id={self.contactPoint_id},)"
+        return f"Product(id={self.id},shippingConditions={self.shippingConditions},storageConditions={self.storageConditions},thirdPartyDistributionConsent={self.thirdPartyDistributionConsent},usageRestrictions={self.usageRestrictions},name={self.name},description={self.description},accessPointURL={self.accessPointURL},refSKU={self.refSKU},unitDefinition={self.unitDefinition},unitCost={self.unitCost},qualityGrading={self.qualityGrading},biosafetyRestrictions={self.biosafetyRestrictions},canItBeUsedToProduceGMO={self.canItBeUsedToProduceGMO},availability={self.availability},technicalRecommendation={self.technicalRecommendation},internalReference={self.internalReference},note={self.note},hasIATAClassification_id={self.hasIATAClassification_id},materialSafetyDataSheet_id={self.materialSafetyDataSheet_id},originator_id={self.originator_id},category_id={self.category_id},riskGroup_id={self.riskGroup_id},provider_id={self.provider_id},contactPoint_id={self.contactPoint_id},)"
 
 
 
@@ -6064,9 +5970,9 @@ class VirusName(CommonName):
     __tablename__ = 'VirusName'
 
     id = Column(Integer(), primary_key=True, autoincrement=True , nullable=False )
-    weight = Column(Integer(), nullable=False )
     name = Column(Text(), nullable=False )
     description = Column(Text())
+    weight = Column(Integer(), nullable=False )
     inVocabulary_id = Column(Integer(), ForeignKey('Vocabulary.id'), nullable=False )
     inVocabulary = relationship("Vocabulary", uselist=False, foreign_keys=[inVocabulary_id])
     
@@ -6081,7 +5987,7 @@ class VirusName(CommonName):
     
 
     def __repr__(self):
-        return f"VirusName(id={self.id},weight={self.weight},name={self.name},description={self.description},inVocabulary_id={self.inVocabulary_id},)"
+        return f"VirusName(id={self.id},name={self.name},description={self.description},weight={self.weight},inVocabulary_id={self.inVocabulary_id},)"
 
 
 
@@ -6100,15 +6006,15 @@ class IPLCOrigin(GeographicalOrigin):
     __tablename__ = 'IPLCOrigin'
 
     id = Column(Integer(), primary_key=True, autoincrement=True , nullable=False )
-    weight = Column(Integer(), nullable=False )
     name = Column(Text(), nullable=False )
     description = Column(Text())
+    weight = Column(Integer(), nullable=False )
     inVocabulary_id = Column(Integer(), ForeignKey('Vocabulary.id'), nullable=False )
     inVocabulary = relationship("Vocabulary", uselist=False, foreign_keys=[inVocabulary_id])
     
 
     def __repr__(self):
-        return f"IPLCOrigin(id={self.id},weight={self.weight},name={self.name},description={self.description},inVocabulary_id={self.inVocabulary_id},)"
+        return f"IPLCOrigin(id={self.id},name={self.name},description={self.description},weight={self.weight},inVocabulary_id={self.inVocabulary_id},)"
 
 
 
@@ -6127,9 +6033,9 @@ class Variant(CommonName):
     __tablename__ = 'Variant'
 
     id = Column(Integer(), primary_key=True, autoincrement=True , nullable=False )
-    weight = Column(Integer(), nullable=False )
     name = Column(Text(), nullable=False )
     description = Column(Text())
+    weight = Column(Integer(), nullable=False )
     inVocabulary_id = Column(Integer(), ForeignKey('Vocabulary.id'), nullable=False )
     inVocabulary = relationship("Vocabulary", uselist=False, foreign_keys=[inVocabulary_id])
     
@@ -6144,7 +6050,77 @@ class Variant(CommonName):
     
 
     def __repr__(self):
-        return f"Variant(id={self.id},weight={self.weight},name={self.name},description={self.description},inVocabulary_id={self.inVocabulary_id},)"
+        return f"Variant(id={self.id},name={self.name},description={self.description},weight={self.weight},inVocabulary_id={self.inVocabulary_id},)"
+
+
+
+    
+    # Using concrete inheritance: see https://docs.sqlalchemy.org/en/14/orm/inheritance.html
+    __mapper_args__ = {
+        'concrete': True
+    }
+    
+
+
+class RI(Organization):
+    """
+    A research infrastructure
+    """
+    __tablename__ = 'RI'
+
+    id = Column(Integer(), primary_key=True, autoincrement=True , nullable=False )
+    name = Column(Text(), nullable=False )
+    description = Column(Text())
+    homePage = Column(Text())
+    alternateName_id = Column(Integer(), ForeignKey('AlternateName.id'))
+    alternateName = relationship("AlternateName", uselist=False, foreign_keys=[alternateName_id])
+    country_id = Column(Integer(), ForeignKey('Country.id'))
+    country = relationship("Country", uselist=False, foreign_keys=[country_id])
+    contactPoint_id = Column(Integer(), ForeignKey('ContactPoint.id'))
+    contactPoint = relationship("ContactPoint", uselist=False, foreign_keys=[contactPoint_id])
+    logo_id = Column(Integer(), ForeignKey('Image.id'))
+    logo = relationship("Image", uselist=False, foreign_keys=[logo_id])
+    
+
+    def __repr__(self):
+        return f"RI(id={self.id},name={self.name},description={self.description},homePage={self.homePage},alternateName_id={self.alternateName_id},country_id={self.country_id},contactPoint_id={self.contactPoint_id},logo_id={self.logo_id},)"
+
+
+
+    
+    # Using concrete inheritance: see https://docs.sqlalchemy.org/en/14/orm/inheritance.html
+    __mapper_args__ = {
+        'concrete': True
+    }
+    
+
+
+class Provider(Organization):
+    """
+    A provider of products or services, as a specific organization
+    """
+    __tablename__ = 'Provider'
+
+    id = Column(Integer(), primary_key=True, autoincrement=True , nullable=False )
+    name = Column(Text(), nullable=False )
+    description = Column(Text())
+    homePage = Column(Text())
+    alternateName_id = Column(Integer(), ForeignKey('AlternateName.id'))
+    alternateName = relationship("AlternateName", uselist=False, foreign_keys=[alternateName_id])
+    country_id = Column(Integer(), ForeignKey('Country.id'))
+    country = relationship("Country", uselist=False, foreign_keys=[country_id])
+    contactPoint_id = Column(Integer(), ForeignKey('ContactPoint.id'))
+    contactPoint = relationship("ContactPoint", uselist=False, foreign_keys=[contactPoint_id])
+    logo_id = Column(Integer(), ForeignKey('Image.id'))
+    logo = relationship("Image", uselist=False, foreign_keys=[logo_id])
+    
+    
+    # ManyToMany
+    memberOfRI = relationship( "RI", secondary="Provider_memberOfRI")
+    
+
+    def __repr__(self):
+        return f"Provider(id={self.id},name={self.name},description={self.description},homePage={self.homePage},alternateName_id={self.alternateName_id},country_id={self.country_id},contactPoint_id={self.contactPoint_id},logo_id={self.logo_id},)"
 
 
 
@@ -6171,19 +6147,19 @@ class Antibody(Product):
     storageConditions = Column(Text(), nullable=False )
     thirdPartyDistributionConsent = Column(Boolean())
     usageRestrictions = Column(Text())
+    name = Column(Text(), nullable=False )
+    description = Column(Text())
     accessPointURL = Column(Text(), nullable=False )
     refSKU = Column(Text(), nullable=False )
     unitDefinition = Column(Text())
     unitCost = Column(Text(), nullable=False )
     qualityGrading = Column(Text())
     biosafetyRestrictions = Column(Text())
-    canItBeUsedToProduceGMO = Column(Boolean())
+    canItBeUsedToProduceGMO = Column(Boolean(), nullable=False )
     availability = Column(Text(), nullable=False )
     technicalRecommendation = Column(Text())
     internalReference = Column(Text())
     note = Column(Text())
-    name = Column(Text(), nullable=False )
-    description = Column(Text())
     hasIATAClassification_id = Column(Integer(), ForeignKey('IATAClassification.id'), nullable=False )
     hasIATAClassification = relationship("IATAClassification", uselist=False, foreign_keys=[hasIATAClassification_id])
     materialSafetyDataSheet_id = Column(Integer(), ForeignKey('MSDS.id'))
@@ -6241,7 +6217,7 @@ class Antibody(Product):
     
 
     def __repr__(self):
-        return f"Antibody(id={self.id},productionSystem={self.productionSystem},antibodyPurifiedByAffinity={self.antibodyPurifiedByAffinity},specificityDocumented={self.specificityDocumented},targetedAntigen={self.targetedAntigen},shippingConditions={self.shippingConditions},storageConditions={self.storageConditions},thirdPartyDistributionConsent={self.thirdPartyDistributionConsent},usageRestrictions={self.usageRestrictions},accessPointURL={self.accessPointURL},refSKU={self.refSKU},unitDefinition={self.unitDefinition},unitCost={self.unitCost},qualityGrading={self.qualityGrading},biosafetyRestrictions={self.biosafetyRestrictions},canItBeUsedToProduceGMO={self.canItBeUsedToProduceGMO},availability={self.availability},technicalRecommendation={self.technicalRecommendation},internalReference={self.internalReference},note={self.note},name={self.name},description={self.description},hasIATAClassification_id={self.hasIATAClassification_id},materialSafetyDataSheet_id={self.materialSafetyDataSheet_id},originator_id={self.originator_id},category_id={self.category_id},riskGroup_id={self.riskGroup_id},provider_id={self.provider_id},contactPoint_id={self.contactPoint_id},)"
+        return f"Antibody(id={self.id},productionSystem={self.productionSystem},antibodyPurifiedByAffinity={self.antibodyPurifiedByAffinity},specificityDocumented={self.specificityDocumented},targetedAntigen={self.targetedAntigen},shippingConditions={self.shippingConditions},storageConditions={self.storageConditions},thirdPartyDistributionConsent={self.thirdPartyDistributionConsent},usageRestrictions={self.usageRestrictions},name={self.name},description={self.description},accessPointURL={self.accessPointURL},refSKU={self.refSKU},unitDefinition={self.unitDefinition},unitCost={self.unitCost},qualityGrading={self.qualityGrading},biosafetyRestrictions={self.biosafetyRestrictions},canItBeUsedToProduceGMO={self.canItBeUsedToProduceGMO},availability={self.availability},technicalRecommendation={self.technicalRecommendation},internalReference={self.internalReference},note={self.note},hasIATAClassification_id={self.hasIATAClassification_id},materialSafetyDataSheet_id={self.materialSafetyDataSheet_id},originator_id={self.originator_id},category_id={self.category_id},riskGroup_id={self.riskGroup_id},provider_id={self.provider_id},contactPoint_id={self.contactPoint_id},)"
 
 
 
@@ -6264,19 +6240,19 @@ class Protein(Product):
     storageConditions = Column(Text(), nullable=False )
     thirdPartyDistributionConsent = Column(Boolean())
     usageRestrictions = Column(Text())
+    name = Column(Text(), nullable=False )
+    description = Column(Text())
     accessPointURL = Column(Text(), nullable=False )
     refSKU = Column(Text(), nullable=False )
     unitDefinition = Column(Text())
     unitCost = Column(Text(), nullable=False )
     qualityGrading = Column(Text())
     biosafetyRestrictions = Column(Text())
-    canItBeUsedToProduceGMO = Column(Boolean())
+    canItBeUsedToProduceGMO = Column(Boolean(), nullable=False )
     availability = Column(Text(), nullable=False )
     technicalRecommendation = Column(Text())
     internalReference = Column(Text())
     note = Column(Text())
-    name = Column(Text(), nullable=False )
-    description = Column(Text())
     biologicalMaterialOrigin_id = Column(Integer(), ForeignKey('BiologicalMaterialOrigin.id'), nullable=False )
     biologicalMaterialOrigin = relationship("BiologicalMaterialOrigin", uselist=False, foreign_keys=[biologicalMaterialOrigin_id])
     hasIATAClassification_id = Column(Integer(), ForeignKey('IATAClassification.id'), nullable=False )
@@ -6393,7 +6369,7 @@ class Protein(Product):
     
 
     def __repr__(self):
-        return f"Protein(id={self.id},shippingConditions={self.shippingConditions},storageConditions={self.storageConditions},thirdPartyDistributionConsent={self.thirdPartyDistributionConsent},usageRestrictions={self.usageRestrictions},accessPointURL={self.accessPointURL},refSKU={self.refSKU},unitDefinition={self.unitDefinition},unitCost={self.unitCost},qualityGrading={self.qualityGrading},biosafetyRestrictions={self.biosafetyRestrictions},canItBeUsedToProduceGMO={self.canItBeUsedToProduceGMO},availability={self.availability},technicalRecommendation={self.technicalRecommendation},internalReference={self.internalReference},note={self.note},name={self.name},description={self.description},biologicalMaterialOrigin_id={self.biologicalMaterialOrigin_id},hasIATAClassification_id={self.hasIATAClassification_id},materialSafetyDataSheet_id={self.materialSafetyDataSheet_id},originator_id={self.originator_id},category_id={self.category_id},riskGroup_id={self.riskGroup_id},provider_id={self.provider_id},contactPoint_id={self.contactPoint_id},)"
+        return f"Protein(id={self.id},shippingConditions={self.shippingConditions},storageConditions={self.storageConditions},thirdPartyDistributionConsent={self.thirdPartyDistributionConsent},usageRestrictions={self.usageRestrictions},name={self.name},description={self.description},accessPointURL={self.accessPointURL},refSKU={self.refSKU},unitDefinition={self.unitDefinition},unitCost={self.unitCost},qualityGrading={self.qualityGrading},biosafetyRestrictions={self.biosafetyRestrictions},canItBeUsedToProduceGMO={self.canItBeUsedToProduceGMO},availability={self.availability},technicalRecommendation={self.technicalRecommendation},internalReference={self.internalReference},note={self.note},biologicalMaterialOrigin_id={self.biologicalMaterialOrigin_id},hasIATAClassification_id={self.hasIATAClassification_id},materialSafetyDataSheet_id={self.materialSafetyDataSheet_id},originator_id={self.originator_id},category_id={self.category_id},riskGroup_id={self.riskGroup_id},provider_id={self.provider_id},contactPoint_id={self.contactPoint_id},)"
 
 
 
@@ -6417,26 +6393,26 @@ class NucleicAcid(Product):
     mutationObserved = Column(Boolean(), nullable=False )
     observedMutations = Column(Text())
     identificationTechnique = Column(Text())
-    sequencing = Column(Enum('Not sequenced', 'Partly sequenced', 'Fully sequenced', name='sequencingEnumeration'), nullable=False )
+    sequencing = Column(Text(), nullable=False )
     titer = Column(Text())
     sequenceChecked = Column(Boolean(), nullable=False )
     shippingConditions = Column(Text(), nullable=False )
     storageConditions = Column(Text(), nullable=False )
     thirdPartyDistributionConsent = Column(Boolean())
     usageRestrictions = Column(Text())
+    name = Column(Text(), nullable=False )
+    description = Column(Text())
     accessPointURL = Column(Text(), nullable=False )
     refSKU = Column(Text(), nullable=False )
     unitDefinition = Column(Text())
     unitCost = Column(Text(), nullable=False )
     qualityGrading = Column(Text())
     biosafetyRestrictions = Column(Text())
-    canItBeUsedToProduceGMO = Column(Boolean())
+    canItBeUsedToProduceGMO = Column(Boolean(), nullable=False )
     availability = Column(Text(), nullable=False )
     technicalRecommendation = Column(Text())
     internalReference = Column(Text())
     note = Column(Text())
-    name = Column(Text(), nullable=False )
-    description = Column(Text())
     biologicalMaterialOrigin_id = Column(Integer(), ForeignKey('BiologicalMaterialOrigin.id'), nullable=False )
     biologicalMaterialOrigin = relationship("BiologicalMaterialOrigin", uselist=False, foreign_keys=[biologicalMaterialOrigin_id])
     clonedIntoPlasmid_id = Column(Integer(), ForeignKey('ExpressionVector.id'))
@@ -6508,7 +6484,7 @@ class NucleicAcid(Product):
     
 
     def __repr__(self):
-        return f"Nucleic Acid(id={self.id},isItAClonedNucleicAcid={self.isItAClonedNucleicAcid},regionEncompassedInThisProduct={self.regionEncompassedInThisProduct},mutationObserved={self.mutationObserved},observedMutations={self.observedMutations},identificationTechnique={self.identificationTechnique},sequencing={self.sequencing},titer={self.titer},sequenceChecked={self.sequenceChecked},shippingConditions={self.shippingConditions},storageConditions={self.storageConditions},thirdPartyDistributionConsent={self.thirdPartyDistributionConsent},usageRestrictions={self.usageRestrictions},accessPointURL={self.accessPointURL},refSKU={self.refSKU},unitDefinition={self.unitDefinition},unitCost={self.unitCost},qualityGrading={self.qualityGrading},biosafetyRestrictions={self.biosafetyRestrictions},canItBeUsedToProduceGMO={self.canItBeUsedToProduceGMO},availability={self.availability},technicalRecommendation={self.technicalRecommendation},internalReference={self.internalReference},note={self.note},name={self.name},description={self.description},biologicalMaterialOrigin_id={self.biologicalMaterialOrigin_id},clonedIntoPlasmid_id={self.clonedIntoPlasmid_id},hasTAG_id={self.hasTAG_id},hasIATAClassification_id={self.hasIATAClassification_id},materialSafetyDataSheet_id={self.materialSafetyDataSheet_id},originator_id={self.originator_id},category_id={self.category_id},riskGroup_id={self.riskGroup_id},provider_id={self.provider_id},contactPoint_id={self.contactPoint_id},)"
+        return f"Nucleic Acid(id={self.id},isItAClonedNucleicAcid={self.isItAClonedNucleicAcid},regionEncompassedInThisProduct={self.regionEncompassedInThisProduct},mutationObserved={self.mutationObserved},observedMutations={self.observedMutations},identificationTechnique={self.identificationTechnique},sequencing={self.sequencing},titer={self.titer},sequenceChecked={self.sequenceChecked},shippingConditions={self.shippingConditions},storageConditions={self.storageConditions},thirdPartyDistributionConsent={self.thirdPartyDistributionConsent},usageRestrictions={self.usageRestrictions},name={self.name},description={self.description},accessPointURL={self.accessPointURL},refSKU={self.refSKU},unitDefinition={self.unitDefinition},unitCost={self.unitCost},qualityGrading={self.qualityGrading},biosafetyRestrictions={self.biosafetyRestrictions},canItBeUsedToProduceGMO={self.canItBeUsedToProduceGMO},availability={self.availability},technicalRecommendation={self.technicalRecommendation},internalReference={self.internalReference},note={self.note},biologicalMaterialOrigin_id={self.biologicalMaterialOrigin_id},clonedIntoPlasmid_id={self.clonedIntoPlasmid_id},hasTAG_id={self.hasTAG_id},hasIATAClassification_id={self.hasIATAClassification_id},materialSafetyDataSheet_id={self.materialSafetyDataSheet_id},originator_id={self.originator_id},category_id={self.category_id},riskGroup_id={self.riskGroup_id},provider_id={self.provider_id},contactPoint_id={self.contactPoint_id},)"
 
 
 
@@ -6534,19 +6510,19 @@ class DetectionKit(Product):
     storageConditions = Column(Text(), nullable=False )
     thirdPartyDistributionConsent = Column(Boolean())
     usageRestrictions = Column(Text())
+    name = Column(Text(), nullable=False )
+    description = Column(Text())
     accessPointURL = Column(Text(), nullable=False )
     refSKU = Column(Text(), nullable=False )
     unitDefinition = Column(Text())
     unitCost = Column(Text(), nullable=False )
     qualityGrading = Column(Text())
     biosafetyRestrictions = Column(Text())
-    canItBeUsedToProduceGMO = Column(Boolean())
+    canItBeUsedToProduceGMO = Column(Boolean(), nullable=False )
     availability = Column(Text(), nullable=False )
     technicalRecommendation = Column(Text())
     internalReference = Column(Text())
     note = Column(Text())
-    name = Column(Text(), nullable=False )
-    description = Column(Text())
     hasIATAClassification_id = Column(Integer(), ForeignKey('IATAClassification.id'), nullable=False )
     hasIATAClassification = relationship("IATAClassification", uselist=False, foreign_keys=[hasIATAClassification_id])
     materialSafetyDataSheet_id = Column(Integer(), ForeignKey('MSDS.id'))
@@ -6604,7 +6580,7 @@ class DetectionKit(Product):
     
 
     def __repr__(self):
-        return f"Detection Kit(id={self.id},specificityDocumented={self.specificityDocumented},specificity={self.specificity},targetedRegion={self.targetedRegion},shippingConditions={self.shippingConditions},storageConditions={self.storageConditions},thirdPartyDistributionConsent={self.thirdPartyDistributionConsent},usageRestrictions={self.usageRestrictions},accessPointURL={self.accessPointURL},refSKU={self.refSKU},unitDefinition={self.unitDefinition},unitCost={self.unitCost},qualityGrading={self.qualityGrading},biosafetyRestrictions={self.biosafetyRestrictions},canItBeUsedToProduceGMO={self.canItBeUsedToProduceGMO},availability={self.availability},technicalRecommendation={self.technicalRecommendation},internalReference={self.internalReference},note={self.note},name={self.name},description={self.description},hasIATAClassification_id={self.hasIATAClassification_id},materialSafetyDataSheet_id={self.materialSafetyDataSheet_id},originator_id={self.originator_id},category_id={self.category_id},riskGroup_id={self.riskGroup_id},provider_id={self.provider_id},contactPoint_id={self.contactPoint_id},)"
+        return f"Detection Kit(id={self.id},specificityDocumented={self.specificityDocumented},specificity={self.specificity},targetedRegion={self.targetedRegion},shippingConditions={self.shippingConditions},storageConditions={self.storageConditions},thirdPartyDistributionConsent={self.thirdPartyDistributionConsent},usageRestrictions={self.usageRestrictions},name={self.name},description={self.description},accessPointURL={self.accessPointURL},refSKU={self.refSKU},unitDefinition={self.unitDefinition},unitCost={self.unitCost},qualityGrading={self.qualityGrading},biosafetyRestrictions={self.biosafetyRestrictions},canItBeUsedToProduceGMO={self.canItBeUsedToProduceGMO},availability={self.availability},technicalRecommendation={self.technicalRecommendation},internalReference={self.internalReference},note={self.note},hasIATAClassification_id={self.hasIATAClassification_id},materialSafetyDataSheet_id={self.materialSafetyDataSheet_id},originator_id={self.originator_id},category_id={self.category_id},riskGroup_id={self.riskGroup_id},provider_id={self.provider_id},contactPoint_id={self.contactPoint_id},)"
 
 
 
@@ -6627,19 +6603,19 @@ class Bundle(Product):
     storageConditions = Column(Text(), nullable=False )
     thirdPartyDistributionConsent = Column(Boolean())
     usageRestrictions = Column(Text())
+    name = Column(Text(), nullable=False )
+    description = Column(Text())
     accessPointURL = Column(Text(), nullable=False )
     refSKU = Column(Text(), nullable=False )
     unitDefinition = Column(Text())
     unitCost = Column(Text(), nullable=False )
     qualityGrading = Column(Text())
     biosafetyRestrictions = Column(Text())
-    canItBeUsedToProduceGMO = Column(Boolean())
+    canItBeUsedToProduceGMO = Column(Boolean(), nullable=False )
     availability = Column(Text(), nullable=False )
     technicalRecommendation = Column(Text())
     internalReference = Column(Text())
     note = Column(Text())
-    name = Column(Text(), nullable=False )
-    description = Column(Text())
     hasIATAClassification_id = Column(Integer(), ForeignKey('IATAClassification.id'), nullable=False )
     hasIATAClassification = relationship("IATAClassification", uselist=False, foreign_keys=[hasIATAClassification_id])
     materialSafetyDataSheet_id = Column(Integer(), ForeignKey('MSDS.id'))
@@ -6697,7 +6673,7 @@ class Bundle(Product):
     
 
     def __repr__(self):
-        return f"Bundle(id={self.id},shippingConditions={self.shippingConditions},storageConditions={self.storageConditions},thirdPartyDistributionConsent={self.thirdPartyDistributionConsent},usageRestrictions={self.usageRestrictions},accessPointURL={self.accessPointURL},refSKU={self.refSKU},unitDefinition={self.unitDefinition},unitCost={self.unitCost},qualityGrading={self.qualityGrading},biosafetyRestrictions={self.biosafetyRestrictions},canItBeUsedToProduceGMO={self.canItBeUsedToProduceGMO},availability={self.availability},technicalRecommendation={self.technicalRecommendation},internalReference={self.internalReference},note={self.note},name={self.name},description={self.description},hasIATAClassification_id={self.hasIATAClassification_id},materialSafetyDataSheet_id={self.materialSafetyDataSheet_id},originator_id={self.originator_id},category_id={self.category_id},riskGroup_id={self.riskGroup_id},provider_id={self.provider_id},contactPoint_id={self.contactPoint_id},)"
+        return f"Bundle(id={self.id},shippingConditions={self.shippingConditions},storageConditions={self.storageConditions},thirdPartyDistributionConsent={self.thirdPartyDistributionConsent},usageRestrictions={self.usageRestrictions},name={self.name},description={self.description},accessPointURL={self.accessPointURL},refSKU={self.refSKU},unitDefinition={self.unitDefinition},unitCost={self.unitCost},qualityGrading={self.qualityGrading},biosafetyRestrictions={self.biosafetyRestrictions},canItBeUsedToProduceGMO={self.canItBeUsedToProduceGMO},availability={self.availability},technicalRecommendation={self.technicalRecommendation},internalReference={self.internalReference},note={self.note},hasIATAClassification_id={self.hasIATAClassification_id},materialSafetyDataSheet_id={self.materialSafetyDataSheet_id},originator_id={self.originator_id},category_id={self.category_id},riskGroup_id={self.riskGroup_id},provider_id={self.provider_id},contactPoint_id={self.contactPoint_id},)"
 
 
 
@@ -6716,34 +6692,34 @@ class Pathogen(Product):
     __tablename__ = 'Pathogen'
 
     id = Column(Integer(), primary_key=True, autoincrement=True , nullable=False )
-    cultivability = Column(Enum('Cultivable', 'Uncultivable', 'Inactivated', name='cultivabilityEnumeration'), nullable=False )
+    cultivability = Column(Text(), nullable=False )
     clinicalInformation = Column(Text())
     identificationTechnique = Column(Text())
-    infectivity = Column(Enum('Infectivity tested', 'Infectivity tested and quantified', 'Non cultivable sample, infectivity cannot be tested', name='infectivityEnumeration'), nullable=False )
+    infectivity = Column(Text(), nullable=False )
     infectivityTest = Column(Text())
     isolationTechnique = Column(Text())
     isolationConditions = Column(Text())
-    letterOfAuthority = Column(Enum('Not applicable', 'Not required', 'Required for customers in the EU', 'Required', name='letterOfAuthorityEnumeration'), nullable=False )
+    letterOfAuthority = Column(Text(), nullable=False )
     passage = Column(Text())
-    genomeSequencing = Column(Enum('Complete genome', 'Complete coding sequence', 'Partial sequence', name='genomeSequencingEnumeration'), nullable=False )
+    genomeSequencing = Column(Text(), nullable=False )
     titer = Column(Text(), nullable=False )
     shippingConditions = Column(Text(), nullable=False )
     storageConditions = Column(Text(), nullable=False )
     thirdPartyDistributionConsent = Column(Boolean())
     usageRestrictions = Column(Text())
+    name = Column(Text(), nullable=False )
+    description = Column(Text())
     accessPointURL = Column(Text(), nullable=False )
     refSKU = Column(Text(), nullable=False )
     unitDefinition = Column(Text())
     unitCost = Column(Text(), nullable=False )
     qualityGrading = Column(Text())
     biosafetyRestrictions = Column(Text())
-    canItBeUsedToProduceGMO = Column(Boolean())
+    canItBeUsedToProduceGMO = Column(Boolean(), nullable=False )
     availability = Column(Text(), nullable=False )
     technicalRecommendation = Column(Text())
     internalReference = Column(Text())
     note = Column(Text())
-    name = Column(Text(), nullable=False )
-    description = Column(Text())
     biologicalMaterialOrigin_id = Column(Integer(), ForeignKey('BiologicalMaterialOrigin.id'), nullable=False )
     biologicalMaterialOrigin = relationship("BiologicalMaterialOrigin", uselist=False, foreign_keys=[biologicalMaterialOrigin_id])
     hasIATAClassification_id = Column(Integer(), ForeignKey('IATAClassification.id'), nullable=False )
@@ -6823,7 +6799,7 @@ class Pathogen(Product):
     
 
     def __repr__(self):
-        return f"Pathogen(id={self.id},cultivability={self.cultivability},clinicalInformation={self.clinicalInformation},identificationTechnique={self.identificationTechnique},infectivity={self.infectivity},infectivityTest={self.infectivityTest},isolationTechnique={self.isolationTechnique},isolationConditions={self.isolationConditions},letterOfAuthority={self.letterOfAuthority},passage={self.passage},genomeSequencing={self.genomeSequencing},titer={self.titer},shippingConditions={self.shippingConditions},storageConditions={self.storageConditions},thirdPartyDistributionConsent={self.thirdPartyDistributionConsent},usageRestrictions={self.usageRestrictions},accessPointURL={self.accessPointURL},refSKU={self.refSKU},unitDefinition={self.unitDefinition},unitCost={self.unitCost},qualityGrading={self.qualityGrading},biosafetyRestrictions={self.biosafetyRestrictions},canItBeUsedToProduceGMO={self.canItBeUsedToProduceGMO},availability={self.availability},technicalRecommendation={self.technicalRecommendation},internalReference={self.internalReference},note={self.note},name={self.name},description={self.description},biologicalMaterialOrigin_id={self.biologicalMaterialOrigin_id},hasIATAClassification_id={self.hasIATAClassification_id},materialSafetyDataSheet_id={self.materialSafetyDataSheet_id},originator_id={self.originator_id},category_id={self.category_id},riskGroup_id={self.riskGroup_id},provider_id={self.provider_id},contactPoint_id={self.contactPoint_id},)"
+        return f"Pathogen(id={self.id},cultivability={self.cultivability},clinicalInformation={self.clinicalInformation},identificationTechnique={self.identificationTechnique},infectivity={self.infectivity},infectivityTest={self.infectivityTest},isolationTechnique={self.isolationTechnique},isolationConditions={self.isolationConditions},letterOfAuthority={self.letterOfAuthority},passage={self.passage},genomeSequencing={self.genomeSequencing},titer={self.titer},shippingConditions={self.shippingConditions},storageConditions={self.storageConditions},thirdPartyDistributionConsent={self.thirdPartyDistributionConsent},usageRestrictions={self.usageRestrictions},name={self.name},description={self.description},accessPointURL={self.accessPointURL},refSKU={self.refSKU},unitDefinition={self.unitDefinition},unitCost={self.unitCost},qualityGrading={self.qualityGrading},biosafetyRestrictions={self.biosafetyRestrictions},canItBeUsedToProduceGMO={self.canItBeUsedToProduceGMO},availability={self.availability},technicalRecommendation={self.technicalRecommendation},internalReference={self.internalReference},note={self.note},biologicalMaterialOrigin_id={self.biologicalMaterialOrigin_id},hasIATAClassification_id={self.hasIATAClassification_id},materialSafetyDataSheet_id={self.materialSafetyDataSheet_id},originator_id={self.originator_id},category_id={self.category_id},riskGroup_id={self.riskGroup_id},provider_id={self.provider_id},contactPoint_id={self.contactPoint_id},)"
 
 
 
@@ -6851,19 +6827,19 @@ class Hybridoma(Antibody):
     storageConditions = Column(Text(), nullable=False )
     thirdPartyDistributionConsent = Column(Boolean())
     usageRestrictions = Column(Text())
+    name = Column(Text(), nullable=False )
+    description = Column(Text())
     accessPointURL = Column(Text(), nullable=False )
     refSKU = Column(Text(), nullable=False )
     unitDefinition = Column(Text())
     unitCost = Column(Text(), nullable=False )
     qualityGrading = Column(Text())
     biosafetyRestrictions = Column(Text())
-    canItBeUsedToProduceGMO = Column(Boolean())
+    canItBeUsedToProduceGMO = Column(Boolean(), nullable=False )
     availability = Column(Text(), nullable=False )
     technicalRecommendation = Column(Text())
     internalReference = Column(Text())
     note = Column(Text())
-    name = Column(Text(), nullable=False )
-    description = Column(Text())
     hasIATAClassification_id = Column(Integer(), ForeignKey('IATAClassification.id'), nullable=False )
     hasIATAClassification = relationship("IATAClassification", uselist=False, foreign_keys=[hasIATAClassification_id])
     materialSafetyDataSheet_id = Column(Integer(), ForeignKey('MSDS.id'))
@@ -6921,7 +6897,7 @@ class Hybridoma(Antibody):
     
 
     def __repr__(self):
-        return f"Hybridoma(id={self.id},hybridomaDescription={self.hybridomaDescription},productionSystem={self.productionSystem},antibodyPurifiedByAffinity={self.antibodyPurifiedByAffinity},specificityDocumented={self.specificityDocumented},targetedAntigen={self.targetedAntigen},shippingConditions={self.shippingConditions},storageConditions={self.storageConditions},thirdPartyDistributionConsent={self.thirdPartyDistributionConsent},usageRestrictions={self.usageRestrictions},accessPointURL={self.accessPointURL},refSKU={self.refSKU},unitDefinition={self.unitDefinition},unitCost={self.unitCost},qualityGrading={self.qualityGrading},biosafetyRestrictions={self.biosafetyRestrictions},canItBeUsedToProduceGMO={self.canItBeUsedToProduceGMO},availability={self.availability},technicalRecommendation={self.technicalRecommendation},internalReference={self.internalReference},note={self.note},name={self.name},description={self.description},hasIATAClassification_id={self.hasIATAClassification_id},materialSafetyDataSheet_id={self.materialSafetyDataSheet_id},originator_id={self.originator_id},category_id={self.category_id},riskGroup_id={self.riskGroup_id},provider_id={self.provider_id},contactPoint_id={self.contactPoint_id},)"
+        return f"Hybridoma(id={self.id},hybridomaDescription={self.hybridomaDescription},productionSystem={self.productionSystem},antibodyPurifiedByAffinity={self.antibodyPurifiedByAffinity},specificityDocumented={self.specificityDocumented},targetedAntigen={self.targetedAntigen},shippingConditions={self.shippingConditions},storageConditions={self.storageConditions},thirdPartyDistributionConsent={self.thirdPartyDistributionConsent},usageRestrictions={self.usageRestrictions},name={self.name},description={self.description},accessPointURL={self.accessPointURL},refSKU={self.refSKU},unitDefinition={self.unitDefinition},unitCost={self.unitCost},qualityGrading={self.qualityGrading},biosafetyRestrictions={self.biosafetyRestrictions},canItBeUsedToProduceGMO={self.canItBeUsedToProduceGMO},availability={self.availability},technicalRecommendation={self.technicalRecommendation},internalReference={self.internalReference},note={self.note},hasIATAClassification_id={self.hasIATAClassification_id},materialSafetyDataSheet_id={self.materialSafetyDataSheet_id},originator_id={self.originator_id},category_id={self.category_id},riskGroup_id={self.riskGroup_id},provider_id={self.provider_id},contactPoint_id={self.contactPoint_id},)"
 
 
 
@@ -6942,34 +6918,34 @@ class Virus(Pathogen):
     id = Column(Integer(), primary_key=True, autoincrement=True , nullable=False )
     contaminationWithCoInfectingViruses = Column(Boolean(), nullable=False )
     mycoplasmicContent = Column(Boolean(), nullable=False )
-    cultivability = Column(Enum('Cultivable', 'Uncultivable', 'Inactivated', name='cultivabilityEnumeration'), nullable=False )
+    cultivability = Column(Text(), nullable=False )
     clinicalInformation = Column(Text())
     identificationTechnique = Column(Text())
-    infectivity = Column(Enum('Infectivity tested', 'Infectivity tested and quantified', 'Non cultivable sample, infectivity cannot be tested', name='infectivityEnumeration'), nullable=False )
+    infectivity = Column(Text(), nullable=False )
     infectivityTest = Column(Text())
     isolationTechnique = Column(Text())
     isolationConditions = Column(Text())
-    letterOfAuthority = Column(Enum('Not applicable', 'Not required', 'Required for customers in the EU', 'Required', name='letterOfAuthorityEnumeration'), nullable=False )
+    letterOfAuthority = Column(Text(), nullable=False )
     passage = Column(Text())
-    genomeSequencing = Column(Enum('Complete genome', 'Complete coding sequence', 'Partial sequence', name='genomeSequencingEnumeration'), nullable=False )
+    genomeSequencing = Column(Text(), nullable=False )
     titer = Column(Text(), nullable=False )
     shippingConditions = Column(Text(), nullable=False )
     storageConditions = Column(Text(), nullable=False )
     thirdPartyDistributionConsent = Column(Boolean())
     usageRestrictions = Column(Text())
+    name = Column(Text(), nullable=False )
+    description = Column(Text())
     accessPointURL = Column(Text(), nullable=False )
     refSKU = Column(Text(), nullable=False )
     unitDefinition = Column(Text())
     unitCost = Column(Text(), nullable=False )
     qualityGrading = Column(Text())
     biosafetyRestrictions = Column(Text())
-    canItBeUsedToProduceGMO = Column(Boolean())
+    canItBeUsedToProduceGMO = Column(Boolean(), nullable=False )
     availability = Column(Text(), nullable=False )
     technicalRecommendation = Column(Text())
     internalReference = Column(Text())
     note = Column(Text())
-    name = Column(Text(), nullable=False )
-    description = Column(Text())
     biologicalMaterialOrigin_id = Column(Integer(), ForeignKey('BiologicalMaterialOrigin.id'), nullable=False )
     biologicalMaterialOrigin = relationship("BiologicalMaterialOrigin", uselist=False, foreign_keys=[biologicalMaterialOrigin_id])
     hasIATAClassification_id = Column(Integer(), ForeignKey('IATAClassification.id'), nullable=False )
@@ -7053,7 +7029,7 @@ class Virus(Pathogen):
     
 
     def __repr__(self):
-        return f"Virus(id={self.id},contaminationWithCoInfectingViruses={self.contaminationWithCoInfectingViruses},mycoplasmicContent={self.mycoplasmicContent},cultivability={self.cultivability},clinicalInformation={self.clinicalInformation},identificationTechnique={self.identificationTechnique},infectivity={self.infectivity},infectivityTest={self.infectivityTest},isolationTechnique={self.isolationTechnique},isolationConditions={self.isolationConditions},letterOfAuthority={self.letterOfAuthority},passage={self.passage},genomeSequencing={self.genomeSequencing},titer={self.titer},shippingConditions={self.shippingConditions},storageConditions={self.storageConditions},thirdPartyDistributionConsent={self.thirdPartyDistributionConsent},usageRestrictions={self.usageRestrictions},accessPointURL={self.accessPointURL},refSKU={self.refSKU},unitDefinition={self.unitDefinition},unitCost={self.unitCost},qualityGrading={self.qualityGrading},biosafetyRestrictions={self.biosafetyRestrictions},canItBeUsedToProduceGMO={self.canItBeUsedToProduceGMO},availability={self.availability},technicalRecommendation={self.technicalRecommendation},internalReference={self.internalReference},note={self.note},name={self.name},description={self.description},biologicalMaterialOrigin_id={self.biologicalMaterialOrigin_id},hasIATAClassification_id={self.hasIATAClassification_id},materialSafetyDataSheet_id={self.materialSafetyDataSheet_id},originator_id={self.originator_id},category_id={self.category_id},riskGroup_id={self.riskGroup_id},provider_id={self.provider_id},contactPoint_id={self.contactPoint_id},)"
+        return f"Virus(id={self.id},contaminationWithCoInfectingViruses={self.contaminationWithCoInfectingViruses},mycoplasmicContent={self.mycoplasmicContent},cultivability={self.cultivability},clinicalInformation={self.clinicalInformation},identificationTechnique={self.identificationTechnique},infectivity={self.infectivity},infectivityTest={self.infectivityTest},isolationTechnique={self.isolationTechnique},isolationConditions={self.isolationConditions},letterOfAuthority={self.letterOfAuthority},passage={self.passage},genomeSequencing={self.genomeSequencing},titer={self.titer},shippingConditions={self.shippingConditions},storageConditions={self.storageConditions},thirdPartyDistributionConsent={self.thirdPartyDistributionConsent},usageRestrictions={self.usageRestrictions},name={self.name},description={self.description},accessPointURL={self.accessPointURL},refSKU={self.refSKU},unitDefinition={self.unitDefinition},unitCost={self.unitCost},qualityGrading={self.qualityGrading},biosafetyRestrictions={self.biosafetyRestrictions},canItBeUsedToProduceGMO={self.canItBeUsedToProduceGMO},availability={self.availability},technicalRecommendation={self.technicalRecommendation},internalReference={self.internalReference},note={self.note},biologicalMaterialOrigin_id={self.biologicalMaterialOrigin_id},hasIATAClassification_id={self.hasIATAClassification_id},materialSafetyDataSheet_id={self.materialSafetyDataSheet_id},originator_id={self.originator_id},category_id={self.category_id},riskGroup_id={self.riskGroup_id},provider_id={self.provider_id},contactPoint_id={self.contactPoint_id},)"
 
 
 
@@ -7072,34 +7048,34 @@ class Bacterium(Pathogen):
     __tablename__ = 'Bacterium'
 
     id = Column(Integer(), primary_key=True, autoincrement=True , nullable=False )
-    cultivability = Column(Enum('Cultivable', 'Uncultivable', 'Inactivated', name='cultivabilityEnumeration'), nullable=False )
+    cultivability = Column(Text(), nullable=False )
     clinicalInformation = Column(Text())
     identificationTechnique = Column(Text())
-    infectivity = Column(Enum('Infectivity tested', 'Infectivity tested and quantified', 'Non cultivable sample, infectivity cannot be tested', name='infectivityEnumeration'), nullable=False )
+    infectivity = Column(Text(), nullable=False )
     infectivityTest = Column(Text())
     isolationTechnique = Column(Text())
     isolationConditions = Column(Text())
-    letterOfAuthority = Column(Enum('Not applicable', 'Not required', 'Required for customers in the EU', 'Required', name='letterOfAuthorityEnumeration'), nullable=False )
+    letterOfAuthority = Column(Text(), nullable=False )
     passage = Column(Text())
-    genomeSequencing = Column(Enum('Complete genome', 'Complete coding sequence', 'Partial sequence', name='genomeSequencingEnumeration'), nullable=False )
+    genomeSequencing = Column(Text(), nullable=False )
     titer = Column(Text(), nullable=False )
     shippingConditions = Column(Text(), nullable=False )
     storageConditions = Column(Text(), nullable=False )
     thirdPartyDistributionConsent = Column(Boolean())
     usageRestrictions = Column(Text())
+    name = Column(Text(), nullable=False )
+    description = Column(Text())
     accessPointURL = Column(Text(), nullable=False )
     refSKU = Column(Text(), nullable=False )
     unitDefinition = Column(Text())
     unitCost = Column(Text(), nullable=False )
     qualityGrading = Column(Text())
     biosafetyRestrictions = Column(Text())
-    canItBeUsedToProduceGMO = Column(Boolean())
+    canItBeUsedToProduceGMO = Column(Boolean(), nullable=False )
     availability = Column(Text(), nullable=False )
     technicalRecommendation = Column(Text())
     internalReference = Column(Text())
     note = Column(Text())
-    name = Column(Text(), nullable=False )
-    description = Column(Text())
     biologicalMaterialOrigin_id = Column(Integer(), ForeignKey('BiologicalMaterialOrigin.id'), nullable=False )
     biologicalMaterialOrigin = relationship("BiologicalMaterialOrigin", uselist=False, foreign_keys=[biologicalMaterialOrigin_id])
     hasIATAClassification_id = Column(Integer(), ForeignKey('IATAClassification.id'), nullable=False )
@@ -7179,7 +7155,7 @@ class Bacterium(Pathogen):
     
 
     def __repr__(self):
-        return f"Bacterium(id={self.id},cultivability={self.cultivability},clinicalInformation={self.clinicalInformation},identificationTechnique={self.identificationTechnique},infectivity={self.infectivity},infectivityTest={self.infectivityTest},isolationTechnique={self.isolationTechnique},isolationConditions={self.isolationConditions},letterOfAuthority={self.letterOfAuthority},passage={self.passage},genomeSequencing={self.genomeSequencing},titer={self.titer},shippingConditions={self.shippingConditions},storageConditions={self.storageConditions},thirdPartyDistributionConsent={self.thirdPartyDistributionConsent},usageRestrictions={self.usageRestrictions},accessPointURL={self.accessPointURL},refSKU={self.refSKU},unitDefinition={self.unitDefinition},unitCost={self.unitCost},qualityGrading={self.qualityGrading},biosafetyRestrictions={self.biosafetyRestrictions},canItBeUsedToProduceGMO={self.canItBeUsedToProduceGMO},availability={self.availability},technicalRecommendation={self.technicalRecommendation},internalReference={self.internalReference},note={self.note},name={self.name},description={self.description},biologicalMaterialOrigin_id={self.biologicalMaterialOrigin_id},hasIATAClassification_id={self.hasIATAClassification_id},materialSafetyDataSheet_id={self.materialSafetyDataSheet_id},originator_id={self.originator_id},category_id={self.category_id},riskGroup_id={self.riskGroup_id},provider_id={self.provider_id},contactPoint_id={self.contactPoint_id},)"
+        return f"Bacterium(id={self.id},cultivability={self.cultivability},clinicalInformation={self.clinicalInformation},identificationTechnique={self.identificationTechnique},infectivity={self.infectivity},infectivityTest={self.infectivityTest},isolationTechnique={self.isolationTechnique},isolationConditions={self.isolationConditions},letterOfAuthority={self.letterOfAuthority},passage={self.passage},genomeSequencing={self.genomeSequencing},titer={self.titer},shippingConditions={self.shippingConditions},storageConditions={self.storageConditions},thirdPartyDistributionConsent={self.thirdPartyDistributionConsent},usageRestrictions={self.usageRestrictions},name={self.name},description={self.description},accessPointURL={self.accessPointURL},refSKU={self.refSKU},unitDefinition={self.unitDefinition},unitCost={self.unitCost},qualityGrading={self.qualityGrading},biosafetyRestrictions={self.biosafetyRestrictions},canItBeUsedToProduceGMO={self.canItBeUsedToProduceGMO},availability={self.availability},technicalRecommendation={self.technicalRecommendation},internalReference={self.internalReference},note={self.note},biologicalMaterialOrigin_id={self.biologicalMaterialOrigin_id},hasIATAClassification_id={self.hasIATAClassification_id},materialSafetyDataSheet_id={self.materialSafetyDataSheet_id},originator_id={self.originator_id},category_id={self.category_id},riskGroup_id={self.riskGroup_id},provider_id={self.provider_id},contactPoint_id={self.contactPoint_id},)"
 
 
 
@@ -7198,34 +7174,34 @@ class Fungus(Pathogen):
     __tablename__ = 'Fungus'
 
     id = Column(Integer(), primary_key=True, autoincrement=True , nullable=False )
-    cultivability = Column(Enum('Cultivable', 'Uncultivable', 'Inactivated', name='cultivabilityEnumeration'), nullable=False )
+    cultivability = Column(Text(), nullable=False )
     clinicalInformation = Column(Text())
     identificationTechnique = Column(Text())
-    infectivity = Column(Enum('Infectivity tested', 'Infectivity tested and quantified', 'Non cultivable sample, infectivity cannot be tested', name='infectivityEnumeration'), nullable=False )
+    infectivity = Column(Text(), nullable=False )
     infectivityTest = Column(Text())
     isolationTechnique = Column(Text())
     isolationConditions = Column(Text())
-    letterOfAuthority = Column(Enum('Not applicable', 'Not required', 'Required for customers in the EU', 'Required', name='letterOfAuthorityEnumeration'), nullable=False )
+    letterOfAuthority = Column(Text(), nullable=False )
     passage = Column(Text())
-    genomeSequencing = Column(Enum('Complete genome', 'Complete coding sequence', 'Partial sequence', name='genomeSequencingEnumeration'), nullable=False )
+    genomeSequencing = Column(Text(), nullable=False )
     titer = Column(Text(), nullable=False )
     shippingConditions = Column(Text(), nullable=False )
     storageConditions = Column(Text(), nullable=False )
     thirdPartyDistributionConsent = Column(Boolean())
     usageRestrictions = Column(Text())
+    name = Column(Text(), nullable=False )
+    description = Column(Text())
     accessPointURL = Column(Text(), nullable=False )
     refSKU = Column(Text(), nullable=False )
     unitDefinition = Column(Text())
     unitCost = Column(Text(), nullable=False )
     qualityGrading = Column(Text())
     biosafetyRestrictions = Column(Text())
-    canItBeUsedToProduceGMO = Column(Boolean())
+    canItBeUsedToProduceGMO = Column(Boolean(), nullable=False )
     availability = Column(Text(), nullable=False )
     technicalRecommendation = Column(Text())
     internalReference = Column(Text())
     note = Column(Text())
-    name = Column(Text(), nullable=False )
-    description = Column(Text())
     biologicalMaterialOrigin_id = Column(Integer(), ForeignKey('BiologicalMaterialOrigin.id'), nullable=False )
     biologicalMaterialOrigin = relationship("BiologicalMaterialOrigin", uselist=False, foreign_keys=[biologicalMaterialOrigin_id])
     hasIATAClassification_id = Column(Integer(), ForeignKey('IATAClassification.id'), nullable=False )
@@ -7305,7 +7281,7 @@ class Fungus(Pathogen):
     
 
     def __repr__(self):
-        return f"Fungus(id={self.id},cultivability={self.cultivability},clinicalInformation={self.clinicalInformation},identificationTechnique={self.identificationTechnique},infectivity={self.infectivity},infectivityTest={self.infectivityTest},isolationTechnique={self.isolationTechnique},isolationConditions={self.isolationConditions},letterOfAuthority={self.letterOfAuthority},passage={self.passage},genomeSequencing={self.genomeSequencing},titer={self.titer},shippingConditions={self.shippingConditions},storageConditions={self.storageConditions},thirdPartyDistributionConsent={self.thirdPartyDistributionConsent},usageRestrictions={self.usageRestrictions},accessPointURL={self.accessPointURL},refSKU={self.refSKU},unitDefinition={self.unitDefinition},unitCost={self.unitCost},qualityGrading={self.qualityGrading},biosafetyRestrictions={self.biosafetyRestrictions},canItBeUsedToProduceGMO={self.canItBeUsedToProduceGMO},availability={self.availability},technicalRecommendation={self.technicalRecommendation},internalReference={self.internalReference},note={self.note},name={self.name},description={self.description},biologicalMaterialOrigin_id={self.biologicalMaterialOrigin_id},hasIATAClassification_id={self.hasIATAClassification_id},materialSafetyDataSheet_id={self.materialSafetyDataSheet_id},originator_id={self.originator_id},category_id={self.category_id},riskGroup_id={self.riskGroup_id},provider_id={self.provider_id},contactPoint_id={self.contactPoint_id},)"
+        return f"Fungus(id={self.id},cultivability={self.cultivability},clinicalInformation={self.clinicalInformation},identificationTechnique={self.identificationTechnique},infectivity={self.infectivity},infectivityTest={self.infectivityTest},isolationTechnique={self.isolationTechnique},isolationConditions={self.isolationConditions},letterOfAuthority={self.letterOfAuthority},passage={self.passage},genomeSequencing={self.genomeSequencing},titer={self.titer},shippingConditions={self.shippingConditions},storageConditions={self.storageConditions},thirdPartyDistributionConsent={self.thirdPartyDistributionConsent},usageRestrictions={self.usageRestrictions},name={self.name},description={self.description},accessPointURL={self.accessPointURL},refSKU={self.refSKU},unitDefinition={self.unitDefinition},unitCost={self.unitCost},qualityGrading={self.qualityGrading},biosafetyRestrictions={self.biosafetyRestrictions},canItBeUsedToProduceGMO={self.canItBeUsedToProduceGMO},availability={self.availability},technicalRecommendation={self.technicalRecommendation},internalReference={self.internalReference},note={self.note},biologicalMaterialOrigin_id={self.biologicalMaterialOrigin_id},hasIATAClassification_id={self.hasIATAClassification_id},materialSafetyDataSheet_id={self.materialSafetyDataSheet_id},originator_id={self.originator_id},category_id={self.category_id},riskGroup_id={self.riskGroup_id},provider_id={self.provider_id},contactPoint_id={self.contactPoint_id},)"
 
 
 
@@ -7324,34 +7300,34 @@ class Protozoan(Pathogen):
     __tablename__ = 'Protozoan'
 
     id = Column(Integer(), primary_key=True, autoincrement=True , nullable=False )
-    cultivability = Column(Enum('Cultivable', 'Uncultivable', 'Inactivated', name='cultivabilityEnumeration'), nullable=False )
+    cultivability = Column(Text(), nullable=False )
     clinicalInformation = Column(Text())
     identificationTechnique = Column(Text())
-    infectivity = Column(Enum('Infectivity tested', 'Infectivity tested and quantified', 'Non cultivable sample, infectivity cannot be tested', name='infectivityEnumeration'), nullable=False )
+    infectivity = Column(Text(), nullable=False )
     infectivityTest = Column(Text())
     isolationTechnique = Column(Text())
     isolationConditions = Column(Text())
-    letterOfAuthority = Column(Enum('Not applicable', 'Not required', 'Required for customers in the EU', 'Required', name='letterOfAuthorityEnumeration'), nullable=False )
+    letterOfAuthority = Column(Text(), nullable=False )
     passage = Column(Text())
-    genomeSequencing = Column(Enum('Complete genome', 'Complete coding sequence', 'Partial sequence', name='genomeSequencingEnumeration'), nullable=False )
+    genomeSequencing = Column(Text(), nullable=False )
     titer = Column(Text(), nullable=False )
     shippingConditions = Column(Text(), nullable=False )
     storageConditions = Column(Text(), nullable=False )
     thirdPartyDistributionConsent = Column(Boolean())
     usageRestrictions = Column(Text())
+    name = Column(Text(), nullable=False )
+    description = Column(Text())
     accessPointURL = Column(Text(), nullable=False )
     refSKU = Column(Text(), nullable=False )
     unitDefinition = Column(Text())
     unitCost = Column(Text(), nullable=False )
     qualityGrading = Column(Text())
     biosafetyRestrictions = Column(Text())
-    canItBeUsedToProduceGMO = Column(Boolean())
+    canItBeUsedToProduceGMO = Column(Boolean(), nullable=False )
     availability = Column(Text(), nullable=False )
     technicalRecommendation = Column(Text())
     internalReference = Column(Text())
     note = Column(Text())
-    name = Column(Text(), nullable=False )
-    description = Column(Text())
     biologicalMaterialOrigin_id = Column(Integer(), ForeignKey('BiologicalMaterialOrigin.id'), nullable=False )
     biologicalMaterialOrigin = relationship("BiologicalMaterialOrigin", uselist=False, foreign_keys=[biologicalMaterialOrigin_id])
     hasIATAClassification_id = Column(Integer(), ForeignKey('IATAClassification.id'), nullable=False )
@@ -7431,7 +7407,7 @@ class Protozoan(Pathogen):
     
 
     def __repr__(self):
-        return f"Protozoan(id={self.id},cultivability={self.cultivability},clinicalInformation={self.clinicalInformation},identificationTechnique={self.identificationTechnique},infectivity={self.infectivity},infectivityTest={self.infectivityTest},isolationTechnique={self.isolationTechnique},isolationConditions={self.isolationConditions},letterOfAuthority={self.letterOfAuthority},passage={self.passage},genomeSequencing={self.genomeSequencing},titer={self.titer},shippingConditions={self.shippingConditions},storageConditions={self.storageConditions},thirdPartyDistributionConsent={self.thirdPartyDistributionConsent},usageRestrictions={self.usageRestrictions},accessPointURL={self.accessPointURL},refSKU={self.refSKU},unitDefinition={self.unitDefinition},unitCost={self.unitCost},qualityGrading={self.qualityGrading},biosafetyRestrictions={self.biosafetyRestrictions},canItBeUsedToProduceGMO={self.canItBeUsedToProduceGMO},availability={self.availability},technicalRecommendation={self.technicalRecommendation},internalReference={self.internalReference},note={self.note},name={self.name},description={self.description},biologicalMaterialOrigin_id={self.biologicalMaterialOrigin_id},hasIATAClassification_id={self.hasIATAClassification_id},materialSafetyDataSheet_id={self.materialSafetyDataSheet_id},originator_id={self.originator_id},category_id={self.category_id},riskGroup_id={self.riskGroup_id},provider_id={self.provider_id},contactPoint_id={self.contactPoint_id},)"
+        return f"Protozoan(id={self.id},cultivability={self.cultivability},clinicalInformation={self.clinicalInformation},identificationTechnique={self.identificationTechnique},infectivity={self.infectivity},infectivityTest={self.infectivityTest},isolationTechnique={self.isolationTechnique},isolationConditions={self.isolationConditions},letterOfAuthority={self.letterOfAuthority},passage={self.passage},genomeSequencing={self.genomeSequencing},titer={self.titer},shippingConditions={self.shippingConditions},storageConditions={self.storageConditions},thirdPartyDistributionConsent={self.thirdPartyDistributionConsent},usageRestrictions={self.usageRestrictions},name={self.name},description={self.description},accessPointURL={self.accessPointURL},refSKU={self.refSKU},unitDefinition={self.unitDefinition},unitCost={self.unitCost},qualityGrading={self.qualityGrading},biosafetyRestrictions={self.biosafetyRestrictions},canItBeUsedToProduceGMO={self.canItBeUsedToProduceGMO},availability={self.availability},technicalRecommendation={self.technicalRecommendation},internalReference={self.internalReference},note={self.note},biologicalMaterialOrigin_id={self.biologicalMaterialOrigin_id},hasIATAClassification_id={self.hasIATAClassification_id},materialSafetyDataSheet_id={self.materialSafetyDataSheet_id},originator_id={self.originator_id},category_id={self.category_id},riskGroup_id={self.riskGroup_id},provider_id={self.provider_id},contactPoint_id={self.contactPoint_id},)"
 
 
 
@@ -7450,34 +7426,34 @@ class Viroid(Pathogen):
     __tablename__ = 'Viroid'
 
     id = Column(Integer(), primary_key=True, autoincrement=True , nullable=False )
-    cultivability = Column(Enum('Cultivable', 'Uncultivable', 'Inactivated', name='cultivabilityEnumeration'), nullable=False )
+    cultivability = Column(Text(), nullable=False )
     clinicalInformation = Column(Text())
     identificationTechnique = Column(Text())
-    infectivity = Column(Enum('Infectivity tested', 'Infectivity tested and quantified', 'Non cultivable sample, infectivity cannot be tested', name='infectivityEnumeration'), nullable=False )
+    infectivity = Column(Text(), nullable=False )
     infectivityTest = Column(Text())
     isolationTechnique = Column(Text())
     isolationConditions = Column(Text())
-    letterOfAuthority = Column(Enum('Not applicable', 'Not required', 'Required for customers in the EU', 'Required', name='letterOfAuthorityEnumeration'), nullable=False )
+    letterOfAuthority = Column(Text(), nullable=False )
     passage = Column(Text())
-    genomeSequencing = Column(Enum('Complete genome', 'Complete coding sequence', 'Partial sequence', name='genomeSequencingEnumeration'), nullable=False )
+    genomeSequencing = Column(Text(), nullable=False )
     titer = Column(Text(), nullable=False )
     shippingConditions = Column(Text(), nullable=False )
     storageConditions = Column(Text(), nullable=False )
     thirdPartyDistributionConsent = Column(Boolean())
     usageRestrictions = Column(Text())
+    name = Column(Text(), nullable=False )
+    description = Column(Text())
     accessPointURL = Column(Text(), nullable=False )
     refSKU = Column(Text(), nullable=False )
     unitDefinition = Column(Text())
     unitCost = Column(Text(), nullable=False )
     qualityGrading = Column(Text())
     biosafetyRestrictions = Column(Text())
-    canItBeUsedToProduceGMO = Column(Boolean())
+    canItBeUsedToProduceGMO = Column(Boolean(), nullable=False )
     availability = Column(Text(), nullable=False )
     technicalRecommendation = Column(Text())
     internalReference = Column(Text())
     note = Column(Text())
-    name = Column(Text(), nullable=False )
-    description = Column(Text())
     biologicalMaterialOrigin_id = Column(Integer(), ForeignKey('BiologicalMaterialOrigin.id'), nullable=False )
     biologicalMaterialOrigin = relationship("BiologicalMaterialOrigin", uselist=False, foreign_keys=[biologicalMaterialOrigin_id])
     hasIATAClassification_id = Column(Integer(), ForeignKey('IATAClassification.id'), nullable=False )
@@ -7557,7 +7533,7 @@ class Viroid(Pathogen):
     
 
     def __repr__(self):
-        return f"Viroid(id={self.id},cultivability={self.cultivability},clinicalInformation={self.clinicalInformation},identificationTechnique={self.identificationTechnique},infectivity={self.infectivity},infectivityTest={self.infectivityTest},isolationTechnique={self.isolationTechnique},isolationConditions={self.isolationConditions},letterOfAuthority={self.letterOfAuthority},passage={self.passage},genomeSequencing={self.genomeSequencing},titer={self.titer},shippingConditions={self.shippingConditions},storageConditions={self.storageConditions},thirdPartyDistributionConsent={self.thirdPartyDistributionConsent},usageRestrictions={self.usageRestrictions},accessPointURL={self.accessPointURL},refSKU={self.refSKU},unitDefinition={self.unitDefinition},unitCost={self.unitCost},qualityGrading={self.qualityGrading},biosafetyRestrictions={self.biosafetyRestrictions},canItBeUsedToProduceGMO={self.canItBeUsedToProduceGMO},availability={self.availability},technicalRecommendation={self.technicalRecommendation},internalReference={self.internalReference},note={self.note},name={self.name},description={self.description},biologicalMaterialOrigin_id={self.biologicalMaterialOrigin_id},hasIATAClassification_id={self.hasIATAClassification_id},materialSafetyDataSheet_id={self.materialSafetyDataSheet_id},originator_id={self.originator_id},category_id={self.category_id},riskGroup_id={self.riskGroup_id},provider_id={self.provider_id},contactPoint_id={self.contactPoint_id},)"
+        return f"Viroid(id={self.id},cultivability={self.cultivability},clinicalInformation={self.clinicalInformation},identificationTechnique={self.identificationTechnique},infectivity={self.infectivity},infectivityTest={self.infectivityTest},isolationTechnique={self.isolationTechnique},isolationConditions={self.isolationConditions},letterOfAuthority={self.letterOfAuthority},passage={self.passage},genomeSequencing={self.genomeSequencing},titer={self.titer},shippingConditions={self.shippingConditions},storageConditions={self.storageConditions},thirdPartyDistributionConsent={self.thirdPartyDistributionConsent},usageRestrictions={self.usageRestrictions},name={self.name},description={self.description},accessPointURL={self.accessPointURL},refSKU={self.refSKU},unitDefinition={self.unitDefinition},unitCost={self.unitCost},qualityGrading={self.qualityGrading},biosafetyRestrictions={self.biosafetyRestrictions},canItBeUsedToProduceGMO={self.canItBeUsedToProduceGMO},availability={self.availability},technicalRecommendation={self.technicalRecommendation},internalReference={self.internalReference},note={self.note},biologicalMaterialOrigin_id={self.biologicalMaterialOrigin_id},hasIATAClassification_id={self.hasIATAClassification_id},materialSafetyDataSheet_id={self.materialSafetyDataSheet_id},originator_id={self.originator_id},category_id={self.category_id},riskGroup_id={self.riskGroup_id},provider_id={self.provider_id},contactPoint_id={self.contactPoint_id},)"
 
 
 
@@ -7576,34 +7552,34 @@ class Prion(Pathogen):
     __tablename__ = 'Prion'
 
     id = Column(Integer(), primary_key=True, autoincrement=True , nullable=False )
-    cultivability = Column(Enum('Cultivable', 'Uncultivable', 'Inactivated', name='cultivabilityEnumeration'), nullable=False )
+    cultivability = Column(Text(), nullable=False )
     clinicalInformation = Column(Text())
     identificationTechnique = Column(Text())
-    infectivity = Column(Enum('Infectivity tested', 'Infectivity tested and quantified', 'Non cultivable sample, infectivity cannot be tested', name='infectivityEnumeration'), nullable=False )
+    infectivity = Column(Text(), nullable=False )
     infectivityTest = Column(Text())
     isolationTechnique = Column(Text())
     isolationConditions = Column(Text())
-    letterOfAuthority = Column(Enum('Not applicable', 'Not required', 'Required for customers in the EU', 'Required', name='letterOfAuthorityEnumeration'), nullable=False )
+    letterOfAuthority = Column(Text(), nullable=False )
     passage = Column(Text())
-    genomeSequencing = Column(Enum('Complete genome', 'Complete coding sequence', 'Partial sequence', name='genomeSequencingEnumeration'), nullable=False )
+    genomeSequencing = Column(Text(), nullable=False )
     titer = Column(Text(), nullable=False )
     shippingConditions = Column(Text(), nullable=False )
     storageConditions = Column(Text(), nullable=False )
     thirdPartyDistributionConsent = Column(Boolean())
     usageRestrictions = Column(Text())
+    name = Column(Text(), nullable=False )
+    description = Column(Text())
     accessPointURL = Column(Text(), nullable=False )
     refSKU = Column(Text(), nullable=False )
     unitDefinition = Column(Text())
     unitCost = Column(Text(), nullable=False )
     qualityGrading = Column(Text())
     biosafetyRestrictions = Column(Text())
-    canItBeUsedToProduceGMO = Column(Boolean())
+    canItBeUsedToProduceGMO = Column(Boolean(), nullable=False )
     availability = Column(Text(), nullable=False )
     technicalRecommendation = Column(Text())
     internalReference = Column(Text())
     note = Column(Text())
-    name = Column(Text(), nullable=False )
-    description = Column(Text())
     biologicalMaterialOrigin_id = Column(Integer(), ForeignKey('BiologicalMaterialOrigin.id'), nullable=False )
     biologicalMaterialOrigin = relationship("BiologicalMaterialOrigin", uselist=False, foreign_keys=[biologicalMaterialOrigin_id])
     hasIATAClassification_id = Column(Integer(), ForeignKey('IATAClassification.id'), nullable=False )
@@ -7683,7 +7659,7 @@ class Prion(Pathogen):
     
 
     def __repr__(self):
-        return f"Prion(id={self.id},cultivability={self.cultivability},clinicalInformation={self.clinicalInformation},identificationTechnique={self.identificationTechnique},infectivity={self.infectivity},infectivityTest={self.infectivityTest},isolationTechnique={self.isolationTechnique},isolationConditions={self.isolationConditions},letterOfAuthority={self.letterOfAuthority},passage={self.passage},genomeSequencing={self.genomeSequencing},titer={self.titer},shippingConditions={self.shippingConditions},storageConditions={self.storageConditions},thirdPartyDistributionConsent={self.thirdPartyDistributionConsent},usageRestrictions={self.usageRestrictions},accessPointURL={self.accessPointURL},refSKU={self.refSKU},unitDefinition={self.unitDefinition},unitCost={self.unitCost},qualityGrading={self.qualityGrading},biosafetyRestrictions={self.biosafetyRestrictions},canItBeUsedToProduceGMO={self.canItBeUsedToProduceGMO},availability={self.availability},technicalRecommendation={self.technicalRecommendation},internalReference={self.internalReference},note={self.note},name={self.name},description={self.description},biologicalMaterialOrigin_id={self.biologicalMaterialOrigin_id},hasIATAClassification_id={self.hasIATAClassification_id},materialSafetyDataSheet_id={self.materialSafetyDataSheet_id},originator_id={self.originator_id},category_id={self.category_id},riskGroup_id={self.riskGroup_id},provider_id={self.provider_id},contactPoint_id={self.contactPoint_id},)"
+        return f"Prion(id={self.id},cultivability={self.cultivability},clinicalInformation={self.clinicalInformation},identificationTechnique={self.identificationTechnique},infectivity={self.infectivity},infectivityTest={self.infectivityTest},isolationTechnique={self.isolationTechnique},isolationConditions={self.isolationConditions},letterOfAuthority={self.letterOfAuthority},passage={self.passage},genomeSequencing={self.genomeSequencing},titer={self.titer},shippingConditions={self.shippingConditions},storageConditions={self.storageConditions},thirdPartyDistributionConsent={self.thirdPartyDistributionConsent},usageRestrictions={self.usageRestrictions},name={self.name},description={self.description},accessPointURL={self.accessPointURL},refSKU={self.refSKU},unitDefinition={self.unitDefinition},unitCost={self.unitCost},qualityGrading={self.qualityGrading},biosafetyRestrictions={self.biosafetyRestrictions},canItBeUsedToProduceGMO={self.canItBeUsedToProduceGMO},availability={self.availability},technicalRecommendation={self.technicalRecommendation},internalReference={self.internalReference},note={self.note},biologicalMaterialOrigin_id={self.biologicalMaterialOrigin_id},hasIATAClassification_id={self.hasIATAClassification_id},materialSafetyDataSheet_id={self.materialSafetyDataSheet_id},originator_id={self.originator_id},category_id={self.category_id},riskGroup_id={self.riskGroup_id},provider_id={self.provider_id},contactPoint_id={self.contactPoint_id},)"
 
 
 

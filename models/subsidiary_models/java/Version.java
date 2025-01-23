@@ -5,7 +5,7 @@ import lombok.*;
 
 
 
-/* version: 1.0.7897 */
+/* version: 1.0.8305 */
 
 
 /**
@@ -16,6 +16,6 @@ import lombok.*;
 public class Version extends Dataset {
 
   private String iD;
-  private String versionOf;
+  private Dataset versionOf;
 
 }

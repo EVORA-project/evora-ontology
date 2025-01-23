@@ -27,6 +27,13 @@ URI: [EVORAO:Version](https://raw.githubusercontent.com/EVORA-project/evora-onto
         
       Version : versionOf
         
+          
+    
+    
+    Version --> "1" Dataset : versionOf
+    click Dataset href "../Dataset"
+
+        
       
 ```
 
@@ -35,8 +42,9 @@ URI: [EVORAO:Version](https://raw.githubusercontent.com/EVORA-project/evora-onto
 
 
 ## Inheritance
-* [Dataset](Dataset.md)
-    * **Version**
+* [Resource](Resource.md)
+    * [Dataset](Dataset.md)
+        * **Version**
 
 
 
@@ -45,7 +53,7 @@ URI: [EVORAO:Version](https://raw.githubusercontent.com/EVORA-project/evora-onto
 | Name | Cardinality and Range | Description | Inheritance |
 | ---  | --- | --- | --- |
 | [ID](ID.md) | 1 <br/> [String](String.md) | The version identifier | direct |
-| [versionOf](versionOf.md) | 1 <br/> [Uri](Uri.md) | Identifier of what the version qualifies | direct |
+| [versionOf](versionOf.md) | 1 <br/> [Dataset](Dataset.md) | Identifier of what the version qualifies | direct |
 
 
 
@@ -119,6 +127,8 @@ slot_usage:
     close_mappings:
     - wdp:P393
     - schema:version
+    domain_of:
+    - Version
     range: string
     required: true
     multivalued: false
@@ -126,7 +136,9 @@ slot_usage:
     name: versionOf
     description: Identifier of what the version qualifies
     title: version Of
-    range: uri
+    domain_of:
+    - Version
+    range: Dataset
     required: true
     multivalued: false
 
@@ -153,6 +165,8 @@ slot_usage:
     close_mappings:
     - wdp:P393
     - schema:version
+    domain_of:
+    - Version
     range: string
     required: true
     multivalued: false
@@ -160,7 +174,9 @@ slot_usage:
     name: versionOf
     description: Identifier of what the version qualifies
     title: version Of
-    range: uri
+    domain_of:
+    - Version
+    range: Dataset
     required: true
     multivalued: false
 attributes:
@@ -190,7 +206,7 @@ attributes:
     owner: Version
     domain_of:
     - Version
-    range: uri
+    range: Dataset
     required: true
     multivalued: false
 

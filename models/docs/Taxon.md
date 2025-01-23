@@ -95,8 +95,8 @@ URI: [EVORAO:Taxon](https://raw.githubusercontent.com/EVORA-project/evora-ontolo
 
 
 ## Inheritance
-* [Nameable](Nameable.md)
-    * [NamedDataset](NamedDataset.md)
+* [Resource](Resource.md)
+    * [Dataset](Dataset.md)
         * [Term](Term.md)
             * **Taxon**
 
@@ -113,10 +113,10 @@ URI: [EVORAO:Taxon](https://raw.githubusercontent.com/EVORA-project/evora-ontolo
 | [externalEquivalentTaxon](externalEquivalentTaxon.md) | * <br/> [Taxon](Taxon.md) | Any equivalent taxon in a different taxonomy if exists/known to serve as a br... | direct |
 | [taxonomicID](taxonomicID.md) | 1 <br/> [String](String.md) | The taxonomic identifier as a persistent identifier accross releases | direct |
 | [taxonomicNodeID](taxonomicNodeID.md) | 0..1 _recommended_ <br/> [String](String.md) | The taxonomic_Node Identifier as an identifier specific the current taxon in ... | direct |
+| [name](name.md) | 1 <br/> [String](String.md) | The label that allows humans to identify the current item | [Term](Term.md) |
+| [description](description.md) | 0..1 _recommended_ <br/> [String](String.md) | A short explanation of the characteristics, features, or nature of the curren... | [Term](Term.md) |
 | [weight](weight.md) | 1 <br/> [Integer](Integer.md) | A numerical value indicating relative importance or priority, generally proce... | [Term](Term.md) |
 | [inVocabulary](inVocabulary.md) | 1 <br/> [Vocabulary](Vocabulary.md) | Terms belong to a specific vocabulary | [Term](Term.md) |
-| [name](name.md) | 1 <br/> [String](String.md) | The label that allows humans to identify the current item | [Nameable](Nameable.md) |
-| [description](description.md) | 0..1 _recommended_ <br/> [String](String.md) | A short explanation of the characteristics, features, or nature of the curren... | [Nameable](Nameable.md) |
 
 
 
@@ -206,6 +206,9 @@ slot_usage:
     name: taxonomy
     description: The taxonomy release(s) in which this entity exists
     title: taxonomy
+    domain_of:
+    - Taxon
+    - TaxonomicRank
     range: Taxonomy
     required: false
     recommended: true
@@ -216,6 +219,8 @@ slot_usage:
     title: parent taxon
     close_mappings:
     - dwc:Taxon
+    domain_of:
+    - Taxon
     range: Taxon
     required: true
     multivalued: false
@@ -225,6 +230,9 @@ slot_usage:
     title: rank
     exact_mappings:
     - dwc:taxonRank
+    domain_of:
+    - Taxon
+    - Taxonomy
     range: TaxonomicRank
     required: true
     multivalued: false
@@ -234,6 +242,8 @@ slot_usage:
     title: previously known as
     close_mappings:
     - dwc:Taxon
+    domain_of:
+    - Taxon
     range: Taxon
     required: false
     multivalued: true
@@ -247,6 +257,8 @@ slot_usage:
       uses NCBI Taxonomy
     close_mappings:
     - dwc:taxonID
+    domain_of:
+    - Taxon
     range: Taxon
     required: false
     multivalued: true
@@ -256,6 +268,8 @@ slot_usage:
     title: taxonomic ID
     close_mappings:
     - dwc:taxonID
+    domain_of:
+    - Taxon
     range: string
     required: true
     multivalued: false
@@ -271,6 +285,8 @@ slot_usage:
       node_ID" will be generated and provided by the ICTV
     close_mappings:
     - dwc:taxonID
+    domain_of:
+    - Taxon
     range: string
     required: false
     recommended: true
@@ -301,6 +317,9 @@ slot_usage:
     name: taxonomy
     description: The taxonomy release(s) in which this entity exists
     title: taxonomy
+    domain_of:
+    - Taxon
+    - TaxonomicRank
     range: Taxonomy
     required: false
     recommended: true
@@ -311,6 +330,8 @@ slot_usage:
     title: parent taxon
     close_mappings:
     - dwc:Taxon
+    domain_of:
+    - Taxon
     range: Taxon
     required: true
     multivalued: false
@@ -320,6 +341,9 @@ slot_usage:
     title: rank
     exact_mappings:
     - dwc:taxonRank
+    domain_of:
+    - Taxon
+    - Taxonomy
     range: TaxonomicRank
     required: true
     multivalued: false
@@ -329,6 +353,8 @@ slot_usage:
     title: previously known as
     close_mappings:
     - dwc:Taxon
+    domain_of:
+    - Taxon
     range: Taxon
     required: false
     multivalued: true
@@ -342,6 +368,8 @@ slot_usage:
       uses NCBI Taxonomy
     close_mappings:
     - dwc:taxonID
+    domain_of:
+    - Taxon
     range: Taxon
     required: false
     multivalued: true
@@ -351,6 +379,8 @@ slot_usage:
     title: taxonomic ID
     close_mappings:
     - dwc:taxonID
+    domain_of:
+    - Taxon
     range: string
     required: true
     multivalued: false
@@ -366,6 +396,8 @@ slot_usage:
       node_ID" will be generated and provided by the ICTV
     close_mappings:
     - dwc:taxonID
+    domain_of:
+    - Taxon
     range: string
     required: false
     recommended: true
@@ -380,8 +412,8 @@ attributes:
     alias: taxonomy
     owner: Taxon
     domain_of:
-    - TaxonomicRank
     - Taxon
+    - TaxonomicRank
     range: Taxonomy
     required: false
     recommended: true
@@ -412,8 +444,8 @@ attributes:
     alias: rank
     owner: Taxon
     domain_of:
-    - Taxonomy
     - Taxon
+    - Taxonomy
     range: TaxonomicRank
     required: true
     multivalued: false
@@ -488,40 +520,6 @@ attributes:
     required: false
     recommended: true
     multivalued: false
-  weight:
-    name: weight
-    description: A numerical value indicating relative importance or priority, generally
-      processed in ascending order. This weight helps prioritize content when organizing
-      or processing data. Its value can be negative, with a default set to 0
-    title: weight
-    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
-    close_mappings:
-    - adms:status
-    rank: 1000
-    ifabsent: int(0)
-    alias: weight
-    owner: Taxon
-    domain_of:
-    - DataProvider
-    - Term
-    range: integer
-    required: true
-    multivalued: false
-  inVocabulary:
-    name: inVocabulary
-    description: Terms belong to a specific vocabulary
-    title: in Vocabulary
-    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
-    close_mappings:
-    - wdp:P972
-    rank: 1000
-    alias: inVocabulary
-    owner: Taxon
-    domain_of:
-    - Term
-    range: Vocabulary
-    required: true
-    multivalued: false
   name:
     name: name
     description: The label that allows humans to identify the current item
@@ -542,7 +540,15 @@ attributes:
     alias: name
     owner: Taxon
     domain_of:
-    - Nameable
+    - Term
+    - DataService
+    - Catalogue
+    - PersonOrOrganization
+    - ProductOrService
+    - File
+    - ContactPoint
+    - License
+    - Certification
     range: string
     required: true
     multivalued: false
@@ -563,10 +569,52 @@ attributes:
     alias: description
     owner: Taxon
     domain_of:
-    - Nameable
+    - Term
+    - DataService
+    - Catalogue
+    - PersonOrOrganization
+    - ProductOrService
+    - File
+    - ContactPoint
+    - License
+    - Certification
     range: string
     required: false
     recommended: true
+    multivalued: false
+  weight:
+    name: weight
+    description: A numerical value indicating relative importance or priority, generally
+      processed in ascending order. This weight helps prioritize content when organizing
+      or processing data. Its value can be negative, with a default set to 0
+    title: weight
+    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+    close_mappings:
+    - adms:status
+    rank: 1000
+    ifabsent: int(0)
+    alias: weight
+    owner: Taxon
+    domain_of:
+    - Term
+    - DataProvider
+    range: integer
+    required: true
+    multivalued: false
+  inVocabulary:
+    name: inVocabulary
+    description: Terms belong to a specific vocabulary
+    title: in Vocabulary
+    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+    close_mappings:
+    - wdp:P972
+    rank: 1000
+    alias: inVocabulary
+    owner: Taxon
+    domain_of:
+    - Term
+    range: Vocabulary
+    required: true
     multivalued: false
 
 ```

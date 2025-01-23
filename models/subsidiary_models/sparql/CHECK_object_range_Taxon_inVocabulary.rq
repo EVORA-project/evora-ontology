@@ -43,3 +43,12 @@ WHERE {
  
 }  
 
+
+
+## -- End of checks for Taxon
+
+
+## --
+## Checks for ExternalRelatedReference
+## --
+

@@ -43,3 +43,12 @@ WHERE {
  
 }  
 
+
+
+## -- End of checks for Journal
+
+
+## --
+## Checks for PDBReference
+## --
+

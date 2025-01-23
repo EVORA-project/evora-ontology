@@ -26,11 +26,11 @@ SELECT ?g ?s ?p WHERE {
      ?p ?o .
   FILTER ( ?p NOT IN (
    EVORAO:altText,
+   EVORAO:name,
+   EVORAO:description,
    EVORAO:contentURL,
    EVORAO:format,
    EVORAO:license,
-   EVORAO:name,
-   EVORAO:description,
    rdf:type ))
  }
  

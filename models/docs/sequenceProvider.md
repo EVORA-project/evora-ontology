@@ -71,6 +71,9 @@ alias: sequenceProvider
 domain_of:
 - SequenceReference
 range: string
+equals_string_in:
+- ENA
+- GenBank
 
 ```
 </details>

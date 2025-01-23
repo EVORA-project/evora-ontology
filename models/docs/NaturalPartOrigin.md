@@ -66,9 +66,10 @@ URI: [EVORAO:NaturalPartOrigin](https://raw.githubusercontent.com/EVORA-project/
 
 
 ## Inheritance
-* [Dataset](Dataset.md)
-    * [BiologicalPartOrigin](BiologicalPartOrigin.md)
-        * **NaturalPartOrigin**
+* [Resource](Resource.md)
+    * [Dataset](Dataset.md)
+        * [BiologicalPartOrigin](BiologicalPartOrigin.md)
+            * **NaturalPartOrigin**
 
 
 
@@ -150,6 +151,8 @@ slot_usage:
     close_mappings:
     - dct:spatial
     - dwc:country
+    domain_of:
+    - NaturalPartOrigin
     range: Country
     required: true
     multivalued: false
@@ -158,6 +161,8 @@ slot_usage:
     description: The specific IPLC area (Indigenous People and Local Communities)
       from which this sample/element was sampled, if relevant
     title: indigenous people and local community origin
+    domain_of:
+    - NaturalPartOrigin
     range: IPLCOrigin
     required: false
     multivalued: false
@@ -167,6 +172,8 @@ slot_usage:
       use a proxy date such as "date received" and indicate this by setting to true
       the before date property
     title: collection date
+    domain_of:
+    - NaturalPartOrigin
     range: datetime
     required: true
     multivalued: false
@@ -175,6 +182,8 @@ slot_usage:
     description: Set to TRUE if a proxy date for the collection date is used
     title: before date
     ifabsent: 'false'
+    domain_of:
+    - NaturalPartOrigin
     range: boolean
     required: true
     multivalued: false
@@ -184,6 +193,8 @@ slot_usage:
       applicable if the genetic resource falls under Access and Benefit-Sharing (ABS)
       regulations
     title: permit identifier for ABS
+    domain_of:
+    - NaturalPartOrigin
     required: false
     multivalued: false
 
@@ -209,6 +220,8 @@ slot_usage:
     close_mappings:
     - dct:spatial
     - dwc:country
+    domain_of:
+    - NaturalPartOrigin
     range: Country
     required: true
     multivalued: false
@@ -217,6 +230,8 @@ slot_usage:
     description: The specific IPLC area (Indigenous People and Local Communities)
       from which this sample/element was sampled, if relevant
     title: indigenous people and local community origin
+    domain_of:
+    - NaturalPartOrigin
     range: IPLCOrigin
     required: false
     multivalued: false
@@ -226,6 +241,8 @@ slot_usage:
       use a proxy date such as "date received" and indicate this by setting to true
       the before date property
     title: collection date
+    domain_of:
+    - NaturalPartOrigin
     range: datetime
     required: true
     multivalued: false
@@ -234,6 +251,8 @@ slot_usage:
     description: Set to TRUE if a proxy date for the collection date is used
     title: before date
     ifabsent: 'false'
+    domain_of:
+    - NaturalPartOrigin
     range: boolean
     required: true
     multivalued: false
@@ -243,6 +262,8 @@ slot_usage:
       applicable if the genetic resource falls under Access and Benefit-Sharing (ABS)
       regulations
     title: permit identifier for ABS
+    domain_of:
+    - NaturalPartOrigin
     required: false
     multivalued: false
 attributes:

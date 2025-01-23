@@ -26,19 +26,15 @@ SELECT ?g ?s ?p WHERE {
      ?p ?o .
   FILTER ( ?p NOT IN (
    EVORAO:oRCIDiD,
+   EVORAO:name,
+   EVORAO:description,
    EVORAO:homePage,
    EVORAO:contactPoint,
    EVORAO:logo,
-   EVORAO:name,
-   EVORAO:description,
    rdf:type ))
  }
  
 } 
-
-
-
-
 
 
 

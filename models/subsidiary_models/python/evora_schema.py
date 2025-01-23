@@ -1,5 +1,5 @@
 # Auto generated from evora_schema.yaml by pythongen.py version: 0.0.1
-# Generation date: 2025-01-20T15:33:47
+# Generation date: 2025-01-23T09:47:54
 # Schema: EVORAO
 #
 # id: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
@@ -61,7 +61,7 @@ from linkml_runtime.linkml_model.types import Boolean, Datetime, Integer, String
 from linkml_runtime.utils.metamodelcore import Bool, URI, XSDDateTime
 
 metamodel_version = "1.7.0"
-version = "1.0.7897"
+version = "1.0.8305"
 
 # Overwrite dataclasses _init_fn to add **kwargs in __init__
 dataclasses._init_fn = dataclasses_init_fn_with_kwargs
@@ -97,17 +97,41 @@ DEFAULT_ = EVORAO
 
 
 
-@dataclass(repr=False)
-class Nameable(YAMLRoot):
+class Resource(YAMLRoot):
     """
-    Any entity that has a name and can have a textual description
+    Resource published or curated by a single agent.
     """
     _inherited_slots: ClassVar[List[str]] = []
 
-    class_class_uri: ClassVar[URIRef] = EVORAO["Nameable"]
-    class_class_curie: ClassVar[str] = "EVORAO:Nameable"
-    class_name: ClassVar[str] = "Nameable"
-    class_model_uri: ClassVar[URIRef] = EVORAO.Nameable
+    class_class_uri: ClassVar[URIRef] = EVORAO["Resource"]
+    class_class_curie: ClassVar[str] = "EVORAO:Resource"
+    class_name: ClassVar[str] = "Resource"
+    class_model_uri: ClassVar[URIRef] = EVORAO.Resource
+
+
+class Dataset(Resource):
+    """
+    A collection of data, published or curated by a single agent, and available for access
+    """
+    _inherited_slots: ClassVar[List[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = EVORAO["Dataset"]
+    class_class_curie: ClassVar[str] = "EVORAO:Dataset"
+    class_name: ClassVar[str] = "Dataset"
+    class_model_uri: ClassVar[URIRef] = EVORAO.Dataset
+
+
+@dataclass(repr=False)
+class DataService(Resource):
+    """
+    A collection of operations that provides access to one or more datasets or data processing functions
+    """
+    _inherited_slots: ClassVar[List[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = EVORAO["DataService"]
+    class_class_curie: ClassVar[str] = "EVORAO:DataService"
+    class_name: ClassVar[str] = "DataService"
+    class_model_uri: ClassVar[URIRef] = EVORAO.DataService
 
     name: str = None
     description: Optional[str] = None
@@ -125,32 +149,6 @@ class Nameable(YAMLRoot):
 
 
 @dataclass(repr=False)
-class Catalogue(Nameable):
-    """
-    A curated collection of metadata about resources
-    """
-    _inherited_slots: ClassVar[List[str]] = []
-
-    class_class_uri: ClassVar[URIRef] = EVORAO["Catalogue"]
-    class_class_curie: ClassVar[str] = "EVORAO:Catalogue"
-    class_name: ClassVar[str] = "Catalogue"
-    class_model_uri: ClassVar[URIRef] = EVORAO.Catalogue
-
-    name: str = None
-
-class Dataset(YAMLRoot):
-    """
-    A collection of data, published or curated by a single agent, and available for access
-    """
-    _inherited_slots: ClassVar[List[str]] = []
-
-    class_class_uri: ClassVar[URIRef] = EVORAO["Dataset"]
-    class_class_curie: ClassVar[str] = "EVORAO:Dataset"
-    class_name: ClassVar[str] = "Dataset"
-    class_model_uri: ClassVar[URIRef] = EVORAO.Dataset
-
-
-@dataclass(repr=False)
 class Version(Dataset):
     """
     Numeric code assigned to identify a particular historical version of a work (e.g. software or technical standards)
@@ -163,7 +161,7 @@ class Version(Dataset):
     class_model_uri: ClassVar[URIRef] = EVORAO.Version
 
     ID: str = None
-    versionOf: Union[str, URI] = None
+    versionOf: Union[dict, Dataset] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
         if self._is_empty(self.ID):
@@ -173,40 +171,38 @@ class Version(Dataset):
 
         if self._is_empty(self.versionOf):
             self.MissingRequiredField("versionOf")
-        if not isinstance(self.versionOf, URI):
-            self.versionOf = URI(self.versionOf)
+        if not isinstance(self.versionOf, Dataset):
+            self.versionOf = Dataset()
 
         super().__post_init__(**kwargs)
 
 
 @dataclass(repr=False)
-class NamedDataset(Nameable):
+class Catalogue(Dataset):
     """
-    A collection of data, that has a name and can have a description, published or curated by a single agent, and
-    available for access
-    """
-    _inherited_slots: ClassVar[List[str]] = []
-
-    class_class_uri: ClassVar[URIRef] = EVORAO["NamedDataset"]
-    class_class_curie: ClassVar[str] = "EVORAO:NamedDataset"
-    class_name: ClassVar[str] = "NamedDataset"
-    class_model_uri: ClassVar[URIRef] = EVORAO.NamedDataset
-
-    name: str = None
-
-@dataclass(repr=False)
-class DataService(Nameable):
-    """
-    A collection of operations that provides access to one or more datasets or data processing functions
+    A curated collection of metadata about resources
     """
     _inherited_slots: ClassVar[List[str]] = []
 
-    class_class_uri: ClassVar[URIRef] = EVORAO["DataService"]
-    class_class_curie: ClassVar[str] = "EVORAO:DataService"
-    class_name: ClassVar[str] = "DataService"
-    class_model_uri: ClassVar[URIRef] = EVORAO.DataService
+    class_class_uri: ClassVar[URIRef] = EVORAO["Catalogue"]
+    class_class_curie: ClassVar[str] = "EVORAO:Catalogue"
+    class_name: ClassVar[str] = "Catalogue"
+    class_model_uri: ClassVar[URIRef] = EVORAO.Catalogue
 
     name: str = None
+    description: Optional[str] = None
+
+    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+        if self._is_empty(self.name):
+            self.MissingRequiredField("name")
+        if not isinstance(self.name, str):
+            self.name = str(self.name)
+
+        if self.description is not None and not isinstance(self.description, str):
+            self.description = str(self.description)
+
+        super().__post_init__(**kwargs)
+
 
 @dataclass(repr=False)
 class Taxonomy(Catalogue):
@@ -266,12 +262,12 @@ class DataProvider(DataService):
 
     name: str = None
     queryURL: Union[str, URI] = None
-    queryMethod: Union[str, "QueryMethodEnumeration"] = None
-    providedEntityType: Union[str, URI] = None
+    queryMethod: str = None
+    providedEntityType: Union[dict, Dataset] = None
     weight: int = None
     contentType: str = "JSON"
     license: Optional[Union[dict, "License"]] = None
-    loginRequestMethod: Optional[Union[str, "QueryMethodEnumeration"]] = 'GET'
+    loginRequestMethod: Optional[str] = "GET"
     loginURL: Optional[Union[str, URI]] = None
     loginTokenName: Optional[str] = None
 
@@ -283,8 +279,8 @@ class DataProvider(DataService):
 
         if self._is_empty(self.queryMethod):
             self.MissingRequiredField("queryMethod")
-        if not isinstance(self.queryMethod, QueryMethodEnumeration):
-            self.queryMethod = QueryMethodEnumeration(self.queryMethod)
+        if not isinstance(self.queryMethod, str):
+            self.queryMethod = str(self.queryMethod)
 
         if self._is_empty(self.contentType):
             self.MissingRequiredField("contentType")
@@ -293,8 +289,8 @@ class DataProvider(DataService):
 
         if self._is_empty(self.providedEntityType):
             self.MissingRequiredField("providedEntityType")
-        if not isinstance(self.providedEntityType, URI):
-            self.providedEntityType = URI(self.providedEntityType)
+        if not isinstance(self.providedEntityType, Dataset):
+            self.providedEntityType = Dataset()
 
         if self._is_empty(self.weight):
             self.MissingRequiredField("weight")
@@ -304,8 +300,8 @@ class DataProvider(DataService):
         if self.license is not None and not isinstance(self.license, License):
             self.license = License(**as_dict(self.license))
 
-        if self.loginRequestMethod is not None and not isinstance(self.loginRequestMethod, QueryMethodEnumeration):
-            self.loginRequestMethod = getattr(queryMethodEnumeration, self.loginRequestMethod)
+        if self.loginRequestMethod is not None and not isinstance(self.loginRequestMethod, str):
+            self.loginRequestMethod = str(self.loginRequestMethod)
 
         if self.loginURL is not None and not isinstance(self.loginURL, URI):
             self.loginURL = URI(self.loginURL)
@@ -330,8 +326,8 @@ class PathogenIdentification(Dataset):
 
     taxon: Union[dict, "Taxon"] = None
     pathogenName: Union[dict, "CommonName"] = None
-    pathogenType: Union[str, "PathogenTypeEnumeration"] = None
-    hostType: Optional[Union[Union[str, "HostTypeEnumeration"], List[Union[str, "HostTypeEnumeration"]]]] = empty_list()
+    pathogenType: str = None
+    hostType: Optional[Union[str, List[str]]] = empty_list()
     subspecies: Optional[str] = None
     strain: Optional[str] = None
     isolate: Optional[str] = None
@@ -352,12 +348,12 @@ class PathogenIdentification(Dataset):
 
         if self._is_empty(self.pathogenType):
             self.MissingRequiredField("pathogenType")
-        if not isinstance(self.pathogenType, PathogenTypeEnumeration):
-            self.pathogenType = PathogenTypeEnumeration(self.pathogenType)
+        if not isinstance(self.pathogenType, str):
+            self.pathogenType = str(self.pathogenType)
 
         if not isinstance(self.hostType, list):
             self.hostType = [self.hostType] if self.hostType is not None else []
-        self.hostType = [v if isinstance(v, HostTypeEnumeration) else HostTypeEnumeration(v) for v in self.hostType]
+        self.hostType = [v if isinstance(v, str) else str(v) for v in self.hostType]
 
         if self.subspecies is not None and not isinstance(self.subspecies, str):
             self.subspecies = str(self.subspecies)
@@ -451,7 +447,7 @@ class Vocabulary(Catalogue):
 
 
 @dataclass(repr=False)
-class Term(NamedDataset):
+class Term(Dataset):
     """
     Word or phrase from a specialized area of knowledge
     """
@@ -465,8 +461,14 @@ class Term(NamedDataset):
     name: str = None
     inVocabulary: Union[dict, Vocabulary] = None
     weight: int = 0
+    description: Optional[str] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+        if self._is_empty(self.name):
+            self.MissingRequiredField("name")
+        if not isinstance(self.name, str):
+            self.name = str(self.name)
+
         if self._is_empty(self.weight):
             self.MissingRequiredField("weight")
         if not isinstance(self.weight, int):
@@ -476,6 +478,9 @@ class Term(NamedDataset):
             self.MissingRequiredField("inVocabulary")
         if not isinstance(self.inVocabulary, Vocabulary):
             self.inVocabulary = Vocabulary(**as_dict(self.inVocabulary))
+
+        if self.description is not None and not isinstance(self.description, str):
+            self.description = str(self.description)
 
         super().__post_init__(**kwargs)
 
@@ -1037,7 +1042,7 @@ class SequenceReference(Dataset):
     class_model_uri: ClassVar[URIRef] = EVORAO.SequenceReference
 
     accessionNumber: str = None
-    sequenceProvider: Union[str, "SequenceProviderEnumeration"] = None
+    sequenceProvider: str = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
         if self._is_empty(self.accessionNumber):
@@ -1047,14 +1052,14 @@ class SequenceReference(Dataset):
 
         if self._is_empty(self.sequenceProvider):
             self.MissingRequiredField("sequenceProvider")
-        if not isinstance(self.sequenceProvider, SequenceProviderEnumeration):
-            self.sequenceProvider = SequenceProviderEnumeration(self.sequenceProvider)
+        if not isinstance(self.sequenceProvider, str):
+            self.sequenceProvider = str(self.sequenceProvider)
 
         super().__post_init__(**kwargs)
 
 
 @dataclass(repr=False)
-class PersonOrOrganization(Nameable):
+class PersonOrOrganization(Dataset):
     """
     A person or an organization
     """
@@ -1066,11 +1071,20 @@ class PersonOrOrganization(Nameable):
     class_model_uri: ClassVar[URIRef] = EVORAO.PersonOrOrganization
 
     name: str = None
+    description: Optional[str] = None
     homePage: Optional[str] = None
     contactPoint: Optional[Union[dict, "ContactPoint"]] = None
     logo: Optional[Union[dict, "Image"]] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+        if self._is_empty(self.name):
+            self.MissingRequiredField("name")
+        if not isinstance(self.name, str):
+            self.name = str(self.name)
+
+        if self.description is not None and not isinstance(self.description, str):
+            self.description = str(self.description)
+
         if self.homePage is not None and not isinstance(self.homePage, str):
             self.homePage = str(self.homePage)
 
@@ -1372,7 +1386,7 @@ class Collection(Catalogue):
 
 
 @dataclass(repr=False)
-class ProductOrService(NamedDataset):
+class ProductOrService(Dataset):
     """
     A product or a service
     """
@@ -1388,18 +1402,19 @@ class ProductOrService(NamedDataset):
     refSKU: str = None
     category: Union[dict, ProductCategory] = None
     pathogenIdentification: Union[Union[dict, PathogenIdentification], List[Union[dict, PathogenIdentification]]] = None
+    canItBeUsedToProduceGMO: Union[bool, Bool] = None
     provider: Union[dict, Provider] = None
     collection: Union[Union[dict, Collection], List[Union[dict, Collection]]] = None
     keywords: Union[Union[dict, Keyword], List[Union[dict, Keyword]]] = None
     unitCost: str = "on request"
     availability: str = "on request"
+    description: Optional[str] = None
     unitDefinition: Optional[str] = None
     additionalCategory: Optional[Union[Union[dict, ProductCategory], List[Union[dict, ProductCategory]]]] = empty_list()
     qualityGrading: Optional[str] = None
     relatedDOI: Optional[Union[Union[dict, DOI], List[Union[dict, DOI]]]] = empty_list()
     riskGroup: Optional[Union[dict, RiskGroup]] = None
     biosafetyRestrictions: Optional[str] = None
-    canItBeUsedToProduceGMO: Optional[Union[bool, Bool]] = None
     complementaryDocument: Optional[Union[Union[dict, "Document"], List[Union[dict, "Document"]]]] = empty_list()
     technicalRecommendation: Optional[str] = None
     productPicture: Optional[Union[Union[dict, "Image"], List[Union[dict, "Image"]]]] = empty_list()
@@ -1410,6 +1425,11 @@ class ProductOrService(NamedDataset):
     contactPoint: Optional[Union[dict, "ContactPoint"]] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+        if self._is_empty(self.name):
+            self.MissingRequiredField("name")
+        if not isinstance(self.name, str):
+            self.name = str(self.name)
+
         if self._is_empty(self.accessPointURL):
             self.MissingRequiredField("accessPointURL")
         if not isinstance(self.accessPointURL, URI):
@@ -1434,6 +1454,11 @@ class ProductOrService(NamedDataset):
             self.MissingRequiredField("pathogenIdentification")
         self._normalize_inlined_as_dict(slot_name="pathogenIdentification", slot_type=PathogenIdentification, key_name="taxon", keyed=False)
 
+        if self._is_empty(self.canItBeUsedToProduceGMO):
+            self.MissingRequiredField("canItBeUsedToProduceGMO")
+        if not isinstance(self.canItBeUsedToProduceGMO, Bool):
+            self.canItBeUsedToProduceGMO = Bool(self.canItBeUsedToProduceGMO)
+
         if self._is_empty(self.provider):
             self.MissingRequiredField("provider")
         if not isinstance(self.provider, Provider):
@@ -1452,6 +1477,9 @@ class ProductOrService(NamedDataset):
         if not isinstance(self.availability, str):
             self.availability = str(self.availability)
 
+        if self.description is not None and not isinstance(self.description, str):
+            self.description = str(self.description)
+
         if self.unitDefinition is not None and not isinstance(self.unitDefinition, str):
             self.unitDefinition = str(self.unitDefinition)
 
@@ -1467,9 +1495,6 @@ class ProductOrService(NamedDataset):
 
         if self.biosafetyRestrictions is not None and not isinstance(self.biosafetyRestrictions, str):
             self.biosafetyRestrictions = str(self.biosafetyRestrictions)
-
-        if self.canItBeUsedToProduceGMO is not None and not isinstance(self.canItBeUsedToProduceGMO, Bool):
-            self.canItBeUsedToProduceGMO = Bool(self.canItBeUsedToProduceGMO)
 
         self._normalize_inlined_as_dict(slot_name="complementaryDocument", slot_type=Document, key_name="name", keyed=False)
 
@@ -1511,6 +1536,7 @@ class Service(ProductOrService):
     refSKU: str = None
     category: Union[dict, ProductCategory] = None
     pathogenIdentification: Union[Union[dict, PathogenIdentification], List[Union[dict, PathogenIdentification]]] = None
+    canItBeUsedToProduceGMO: Union[bool, Bool] = None
     provider: Union[dict, Provider] = None
     collection: Union[Union[dict, Collection], List[Union[dict, Collection]]] = None
     keywords: Union[Union[dict, Keyword], List[Union[dict, Keyword]]] = None
@@ -1546,6 +1572,7 @@ class Product(ProductOrService):
     refSKU: str = None
     category: Union[dict, ProductCategory] = None
     pathogenIdentification: Union[Union[dict, PathogenIdentification], List[Union[dict, PathogenIdentification]]] = None
+    canItBeUsedToProduceGMO: Union[bool, Bool] = None
     provider: Union[dict, Provider] = None
     collection: Union[Union[dict, Collection], List[Union[dict, Collection]]] = None
     keywords: Union[Union[dict, Keyword], List[Union[dict, Keyword]]] = None
@@ -1607,6 +1634,7 @@ class Antibody(Product):
     refSKU: str = None
     category: Union[dict, ProductCategory] = None
     pathogenIdentification: Union[Union[dict, PathogenIdentification], List[Union[dict, PathogenIdentification]]] = None
+    canItBeUsedToProduceGMO: Union[bool, Bool] = None
     provider: Union[dict, Provider] = None
     collection: Union[Union[dict, Collection], List[Union[dict, Collection]]] = None
     keywords: Union[Union[dict, Keyword], List[Union[dict, Keyword]]] = None
@@ -1662,6 +1690,7 @@ class Hybridoma(Antibody):
     refSKU: str = None
     category: Union[dict, ProductCategory] = None
     pathogenIdentification: Union[Union[dict, PathogenIdentification], List[Union[dict, PathogenIdentification]]] = None
+    canItBeUsedToProduceGMO: Union[bool, Bool] = None
     provider: Union[dict, Provider] = None
     collection: Union[Union[dict, Collection], List[Union[dict, Collection]]] = None
     keywords: Union[Union[dict, Keyword], List[Union[dict, Keyword]]] = None
@@ -1701,6 +1730,7 @@ class Protein(Product):
     refSKU: str = None
     category: Union[dict, ProductCategory] = None
     pathogenIdentification: Union[Union[dict, PathogenIdentification], List[Union[dict, PathogenIdentification]]] = None
+    canItBeUsedToProduceGMO: Union[bool, Bool] = None
     provider: Union[dict, Provider] = None
     collection: Union[Union[dict, Collection], List[Union[dict, Collection]]] = None
     keywords: Union[Union[dict, Keyword], List[Union[dict, Keyword]]] = None
@@ -1715,14 +1745,14 @@ class Protein(Product):
     specialFeature: Optional[Union[Union[dict, SpecialFeature], List[Union[dict, SpecialFeature]]]] = empty_list()
     proteinTAG: Optional[Union[Union[dict, ProteinTag], List[Union[dict, ProteinTag]]]] = empty_list()
     domain: Optional[Union[str, List[str]]] = empty_list()
-    expressedAs: Optional[Union[Union[str, "ExpressedAsEnumeration"], List[Union[str, "ExpressedAsEnumeration"]]]] = empty_list()
-    inclusionBodiesType: Optional[Union[Union[str, "InclusionBodiesTypeEnumeration"], List[Union[str, "InclusionBodiesTypeEnumeration"]]]] = empty_list()
-    expressionSystem: Optional[Union[Union[str, "ExpressionSystemEnumeration"], List[Union[str, "ExpressionSystemEnumeration"]]]] = empty_list()
-    functionalCharacterization: Optional[Union[Union[str, "FunctionalCharacterizationEnumeration"], List[Union[str, "FunctionalCharacterizationEnumeration"]]]] = empty_list()
+    expressedAs: Optional[Union[str, List[str]]] = empty_list()
+    inclusionBodiesType: Optional[Union[str, List[str]]] = empty_list()
+    expressionSystem: Optional[Union[str, List[str]]] = empty_list()
+    functionalCharacterization: Optional[Union[str, List[str]]] = empty_list()
     functionalTechnicalDescription: Optional[Union[str, List[str]]] = empty_list()
-    proteinPurification: Optional[Union[Union[str, "ProteinPurificationEnumeration"], List[Union[str, "ProteinPurificationEnumeration"]]]] = empty_list()
+    proteinPurification: Optional[Union[str, List[str]]] = empty_list()
     theTAGStatusOfTheSolubilizedProtein: Optional[Union[str, List[str]]] = empty_list()
-    typeOfFunctionalCharacterization: Optional[Union[Union[str, "TypeOfFunctionalCharacterizationEnumeration"], List[Union[str, "TypeOfFunctionalCharacterizationEnumeration"]]]] = empty_list()
+    typeOfFunctionalCharacterization: Optional[Union[str, List[str]]] = empty_list()
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
         if self._is_empty(self.biologicalMaterialOrigin):
@@ -1748,19 +1778,19 @@ class Protein(Product):
 
         if not isinstance(self.expressedAs, list):
             self.expressedAs = [self.expressedAs] if self.expressedAs is not None else []
-        self.expressedAs = [v if isinstance(v, ExpressedAsEnumeration) else ExpressedAsEnumeration(v) for v in self.expressedAs]
+        self.expressedAs = [v if isinstance(v, str) else str(v) for v in self.expressedAs]
 
         if not isinstance(self.inclusionBodiesType, list):
             self.inclusionBodiesType = [self.inclusionBodiesType] if self.inclusionBodiesType is not None else []
-        self.inclusionBodiesType = [v if isinstance(v, InclusionBodiesTypeEnumeration) else InclusionBodiesTypeEnumeration(v) for v in self.inclusionBodiesType]
+        self.inclusionBodiesType = [v if isinstance(v, str) else str(v) for v in self.inclusionBodiesType]
 
         if not isinstance(self.expressionSystem, list):
             self.expressionSystem = [self.expressionSystem] if self.expressionSystem is not None else []
-        self.expressionSystem = [v if isinstance(v, ExpressionSystemEnumeration) else ExpressionSystemEnumeration(v) for v in self.expressionSystem]
+        self.expressionSystem = [v if isinstance(v, str) else str(v) for v in self.expressionSystem]
 
         if not isinstance(self.functionalCharacterization, list):
             self.functionalCharacterization = [self.functionalCharacterization] if self.functionalCharacterization is not None else []
-        self.functionalCharacterization = [v if isinstance(v, FunctionalCharacterizationEnumeration) else FunctionalCharacterizationEnumeration(v) for v in self.functionalCharacterization]
+        self.functionalCharacterization = [v if isinstance(v, str) else str(v) for v in self.functionalCharacterization]
 
         if not isinstance(self.functionalTechnicalDescription, list):
             self.functionalTechnicalDescription = [self.functionalTechnicalDescription] if self.functionalTechnicalDescription is not None else []
@@ -1768,7 +1798,7 @@ class Protein(Product):
 
         if not isinstance(self.proteinPurification, list):
             self.proteinPurification = [self.proteinPurification] if self.proteinPurification is not None else []
-        self.proteinPurification = [v if isinstance(v, ProteinPurificationEnumeration) else ProteinPurificationEnumeration(v) for v in self.proteinPurification]
+        self.proteinPurification = [v if isinstance(v, str) else str(v) for v in self.proteinPurification]
 
         if not isinstance(self.theTAGStatusOfTheSolubilizedProtein, list):
             self.theTAGStatusOfTheSolubilizedProtein = [self.theTAGStatusOfTheSolubilizedProtein] if self.theTAGStatusOfTheSolubilizedProtein is not None else []
@@ -1776,7 +1806,7 @@ class Protein(Product):
 
         if not isinstance(self.typeOfFunctionalCharacterization, list):
             self.typeOfFunctionalCharacterization = [self.typeOfFunctionalCharacterization] if self.typeOfFunctionalCharacterization is not None else []
-        self.typeOfFunctionalCharacterization = [v if isinstance(v, TypeOfFunctionalCharacterizationEnumeration) else TypeOfFunctionalCharacterizationEnumeration(v) for v in self.typeOfFunctionalCharacterization]
+        self.typeOfFunctionalCharacterization = [v if isinstance(v, str) else str(v) for v in self.typeOfFunctionalCharacterization]
 
         super().__post_init__(**kwargs)
 
@@ -1798,6 +1828,7 @@ class NucleicAcid(Product):
     refSKU: str = None
     category: Union[dict, ProductCategory] = None
     pathogenIdentification: Union[Union[dict, PathogenIdentification], List[Union[dict, PathogenIdentification]]] = None
+    canItBeUsedToProduceGMO: Union[bool, Bool] = None
     provider: Union[dict, Provider] = None
     collection: Union[Union[dict, Collection], List[Union[dict, Collection]]] = None
     keywords: Union[Union[dict, Keyword], List[Union[dict, Keyword]]] = None
@@ -1810,7 +1841,7 @@ class NucleicAcid(Product):
     hasTAG: Union[dict, ProteinTag] = None
     regionEncompassedInThisProduct: str = None
     mutationObserved: Union[bool, Bool] = None
-    sequencing: Union[str, "SequencingEnumeration"] = None
+    sequencing: str = None
     sequenceChecked: Union[bool, Bool] = None
     unitCost: str = "on request"
     availability: str = "on request"
@@ -1855,8 +1886,8 @@ class NucleicAcid(Product):
 
         if self._is_empty(self.sequencing):
             self.MissingRequiredField("sequencing")
-        if not isinstance(self.sequencing, SequencingEnumeration):
-            self.sequencing = SequencingEnumeration(self.sequencing)
+        if not isinstance(self.sequencing, str):
+            self.sequencing = str(self.sequencing)
 
         if self._is_empty(self.sequenceChecked):
             self.MissingRequiredField("sequenceChecked")
@@ -1899,6 +1930,7 @@ class DetectionKit(Product):
     refSKU: str = None
     category: Union[dict, ProductCategory] = None
     pathogenIdentification: Union[Union[dict, PathogenIdentification], List[Union[dict, PathogenIdentification]]] = None
+    canItBeUsedToProduceGMO: Union[bool, Bool] = None
     provider: Union[dict, Provider] = None
     collection: Union[Union[dict, Collection], List[Union[dict, Collection]]] = None
     keywords: Union[Union[dict, Keyword], List[Union[dict, Keyword]]] = None
@@ -1946,6 +1978,7 @@ class Bundle(Product):
     refSKU: str = None
     category: Union[dict, ProductCategory] = None
     pathogenIdentification: Union[Union[dict, PathogenIdentification], List[Union[dict, PathogenIdentification]]] = None
+    canItBeUsedToProduceGMO: Union[bool, Bool] = None
     provider: Union[dict, Provider] = None
     collection: Union[Union[dict, Collection], List[Union[dict, Collection]]] = None
     keywords: Union[Union[dict, Keyword], List[Union[dict, Keyword]]] = None
@@ -1988,6 +2021,7 @@ class Pathogen(Product):
     refSKU: str = None
     category: Union[dict, ProductCategory] = None
     pathogenIdentification: Union[Union[dict, PathogenIdentification], List[Union[dict, PathogenIdentification]]] = None
+    canItBeUsedToProduceGMO: Union[bool, Bool] = None
     provider: Union[dict, Provider] = None
     collection: Union[Union[dict, Collection], List[Union[dict, Collection]]] = None
     keywords: Union[Union[dict, Keyword], List[Union[dict, Keyword]]] = None
@@ -1996,13 +2030,13 @@ class Pathogen(Product):
     storageConditions: str = None
     biologicalMaterialOrigin: Union[dict, BiologicalMaterialOrigin] = None
     sequence: Union[Union[dict, Sequence], List[Union[dict, Sequence]]] = None
-    infectivity: Union[str, "InfectivityEnumeration"] = None
-    genomeSequencing: Union[str, "GenomeSequencingEnumeration"] = None
+    infectivity: str = None
+    genomeSequencing: str = None
     titer: str = None
     unitCost: str = "on request"
     availability: str = "on request"
-    cultivability: Union[str, "CultivabilityEnumeration"] = 'Cultivable'
-    letterOfAuthority: Union[str, "LetterOfAuthorityEnumeration"] = 'Not applicable'
+    cultivability: str = "Cultivable"
+    letterOfAuthority: str = "Not applicable"
     suspectedEpidemiologicalOrigin: Optional[Union[Union[dict, GeographicalOrigin], List[Union[dict, GeographicalOrigin]]]] = empty_list()
     isolationHost: Optional[Union[Union[dict, IsolationHost], List[Union[dict, IsolationHost]]]] = empty_list()
     productionCellLine: Optional[Union[Union[dict, ProductionCellLine], List[Union[dict, ProductionCellLine]]]] = empty_list()
@@ -2029,23 +2063,23 @@ class Pathogen(Product):
 
         if self._is_empty(self.cultivability):
             self.MissingRequiredField("cultivability")
-        if not isinstance(self.cultivability, CultivabilityEnumeration):
-            self.cultivability = getattr(cultivabilityEnumeration, self.cultivability)
+        if not isinstance(self.cultivability, str):
+            self.cultivability = str(self.cultivability)
 
         if self._is_empty(self.infectivity):
             self.MissingRequiredField("infectivity")
-        if not isinstance(self.infectivity, InfectivityEnumeration):
-            self.infectivity = InfectivityEnumeration(self.infectivity)
+        if not isinstance(self.infectivity, str):
+            self.infectivity = str(self.infectivity)
 
         if self._is_empty(self.letterOfAuthority):
             self.MissingRequiredField("letterOfAuthority")
-        if not isinstance(self.letterOfAuthority, LetterOfAuthorityEnumeration):
-            self.letterOfAuthority = getattr(letterOfAuthorityEnumeration, self.letterOfAuthority)
+        if not isinstance(self.letterOfAuthority, str):
+            self.letterOfAuthority = str(self.letterOfAuthority)
 
         if self._is_empty(self.genomeSequencing):
             self.MissingRequiredField("genomeSequencing")
-        if not isinstance(self.genomeSequencing, GenomeSequencingEnumeration):
-            self.genomeSequencing = GenomeSequencingEnumeration(self.genomeSequencing)
+        if not isinstance(self.genomeSequencing, str):
+            self.genomeSequencing = str(self.genomeSequencing)
 
         if self._is_empty(self.titer):
             self.MissingRequiredField("titer")
@@ -2100,6 +2134,7 @@ class Virus(Pathogen):
     refSKU: str = None
     category: Union[dict, ProductCategory] = None
     pathogenIdentification: Union[Union[dict, PathogenIdentification], List[Union[dict, PathogenIdentification]]] = None
+    canItBeUsedToProduceGMO: Union[bool, Bool] = None
     provider: Union[dict, Provider] = None
     collection: Union[Union[dict, Collection], List[Union[dict, Collection]]] = None
     keywords: Union[Union[dict, Keyword], List[Union[dict, Keyword]]] = None
@@ -2108,14 +2143,14 @@ class Virus(Pathogen):
     storageConditions: str = None
     biologicalMaterialOrigin: Union[dict, BiologicalMaterialOrigin] = None
     sequence: Union[Union[dict, Sequence], List[Union[dict, Sequence]]] = None
-    infectivity: Union[str, "InfectivityEnumeration"] = None
-    genomeSequencing: Union[str, "GenomeSequencingEnumeration"] = None
+    infectivity: str = None
+    genomeSequencing: str = None
     titer: str = None
     mycoplasmicContent: Union[bool, Bool] = None
     unitCost: str = "on request"
     availability: str = "on request"
-    cultivability: Union[str, "CultivabilityEnumeration"] = 'Cultivable'
-    letterOfAuthority: Union[str, "LetterOfAuthorityEnumeration"] = 'Not applicable'
+    cultivability: str = "Cultivable"
+    letterOfAuthority: str = "Not applicable"
     contaminationWithCoInfectingViruses: Union[bool, Bool] = False
     coInfectingViruses: Optional[Union[Union[dict, VirusName], List[Union[dict, VirusName]]]] = empty_list()
 
@@ -2152,6 +2187,7 @@ class Bacterium(Pathogen):
     refSKU: str = None
     category: Union[dict, ProductCategory] = None
     pathogenIdentification: Union[Union[dict, PathogenIdentification], List[Union[dict, PathogenIdentification]]] = None
+    canItBeUsedToProduceGMO: Union[bool, Bool] = None
     provider: Union[dict, Provider] = None
     collection: Union[Union[dict, Collection], List[Union[dict, Collection]]] = None
     keywords: Union[Union[dict, Keyword], List[Union[dict, Keyword]]] = None
@@ -2160,13 +2196,13 @@ class Bacterium(Pathogen):
     storageConditions: str = None
     biologicalMaterialOrigin: Union[dict, BiologicalMaterialOrigin] = None
     sequence: Union[Union[dict, Sequence], List[Union[dict, Sequence]]] = None
-    infectivity: Union[str, "InfectivityEnumeration"] = None
-    genomeSequencing: Union[str, "GenomeSequencingEnumeration"] = None
+    infectivity: str = None
+    genomeSequencing: str = None
     titer: str = None
     unitCost: str = "on request"
     availability: str = "on request"
-    cultivability: Union[str, "CultivabilityEnumeration"] = 'Cultivable'
-    letterOfAuthority: Union[str, "LetterOfAuthorityEnumeration"] = 'Not applicable'
+    cultivability: str = "Cultivable"
+    letterOfAuthority: str = "Not applicable"
 
 @dataclass(repr=False)
 class Fungus(Pathogen):
@@ -2185,6 +2221,7 @@ class Fungus(Pathogen):
     refSKU: str = None
     category: Union[dict, ProductCategory] = None
     pathogenIdentification: Union[Union[dict, PathogenIdentification], List[Union[dict, PathogenIdentification]]] = None
+    canItBeUsedToProduceGMO: Union[bool, Bool] = None
     provider: Union[dict, Provider] = None
     collection: Union[Union[dict, Collection], List[Union[dict, Collection]]] = None
     keywords: Union[Union[dict, Keyword], List[Union[dict, Keyword]]] = None
@@ -2193,13 +2230,13 @@ class Fungus(Pathogen):
     storageConditions: str = None
     biologicalMaterialOrigin: Union[dict, BiologicalMaterialOrigin] = None
     sequence: Union[Union[dict, Sequence], List[Union[dict, Sequence]]] = None
-    infectivity: Union[str, "InfectivityEnumeration"] = None
-    genomeSequencing: Union[str, "GenomeSequencingEnumeration"] = None
+    infectivity: str = None
+    genomeSequencing: str = None
     titer: str = None
     unitCost: str = "on request"
     availability: str = "on request"
-    cultivability: Union[str, "CultivabilityEnumeration"] = 'Cultivable'
-    letterOfAuthority: Union[str, "LetterOfAuthorityEnumeration"] = 'Not applicable'
+    cultivability: str = "Cultivable"
+    letterOfAuthority: str = "Not applicable"
 
 @dataclass(repr=False)
 class Protozoan(Pathogen):
@@ -2218,6 +2255,7 @@ class Protozoan(Pathogen):
     refSKU: str = None
     category: Union[dict, ProductCategory] = None
     pathogenIdentification: Union[Union[dict, PathogenIdentification], List[Union[dict, PathogenIdentification]]] = None
+    canItBeUsedToProduceGMO: Union[bool, Bool] = None
     provider: Union[dict, Provider] = None
     collection: Union[Union[dict, Collection], List[Union[dict, Collection]]] = None
     keywords: Union[Union[dict, Keyword], List[Union[dict, Keyword]]] = None
@@ -2226,13 +2264,13 @@ class Protozoan(Pathogen):
     storageConditions: str = None
     biologicalMaterialOrigin: Union[dict, BiologicalMaterialOrigin] = None
     sequence: Union[Union[dict, Sequence], List[Union[dict, Sequence]]] = None
-    infectivity: Union[str, "InfectivityEnumeration"] = None
-    genomeSequencing: Union[str, "GenomeSequencingEnumeration"] = None
+    infectivity: str = None
+    genomeSequencing: str = None
     titer: str = None
     unitCost: str = "on request"
     availability: str = "on request"
-    cultivability: Union[str, "CultivabilityEnumeration"] = 'Cultivable'
-    letterOfAuthority: Union[str, "LetterOfAuthorityEnumeration"] = 'Not applicable'
+    cultivability: str = "Cultivable"
+    letterOfAuthority: str = "Not applicable"
 
 @dataclass(repr=False)
 class Viroid(Pathogen):
@@ -2251,6 +2289,7 @@ class Viroid(Pathogen):
     refSKU: str = None
     category: Union[dict, ProductCategory] = None
     pathogenIdentification: Union[Union[dict, PathogenIdentification], List[Union[dict, PathogenIdentification]]] = None
+    canItBeUsedToProduceGMO: Union[bool, Bool] = None
     provider: Union[dict, Provider] = None
     collection: Union[Union[dict, Collection], List[Union[dict, Collection]]] = None
     keywords: Union[Union[dict, Keyword], List[Union[dict, Keyword]]] = None
@@ -2259,13 +2298,13 @@ class Viroid(Pathogen):
     storageConditions: str = None
     biologicalMaterialOrigin: Union[dict, BiologicalMaterialOrigin] = None
     sequence: Union[Union[dict, Sequence], List[Union[dict, Sequence]]] = None
-    infectivity: Union[str, "InfectivityEnumeration"] = None
-    genomeSequencing: Union[str, "GenomeSequencingEnumeration"] = None
+    infectivity: str = None
+    genomeSequencing: str = None
     titer: str = None
     unitCost: str = "on request"
     availability: str = "on request"
-    cultivability: Union[str, "CultivabilityEnumeration"] = 'Cultivable'
-    letterOfAuthority: Union[str, "LetterOfAuthorityEnumeration"] = 'Not applicable'
+    cultivability: str = "Cultivable"
+    letterOfAuthority: str = "Not applicable"
 
 @dataclass(repr=False)
 class Prion(Pathogen):
@@ -2284,6 +2323,7 @@ class Prion(Pathogen):
     refSKU: str = None
     category: Union[dict, ProductCategory] = None
     pathogenIdentification: Union[Union[dict, PathogenIdentification], List[Union[dict, PathogenIdentification]]] = None
+    canItBeUsedToProduceGMO: Union[bool, Bool] = None
     provider: Union[dict, Provider] = None
     collection: Union[Union[dict, Collection], List[Union[dict, Collection]]] = None
     keywords: Union[Union[dict, Keyword], List[Union[dict, Keyword]]] = None
@@ -2292,13 +2332,13 @@ class Prion(Pathogen):
     storageConditions: str = None
     biologicalMaterialOrigin: Union[dict, BiologicalMaterialOrigin] = None
     sequence: Union[Union[dict, Sequence], List[Union[dict, Sequence]]] = None
-    infectivity: Union[str, "InfectivityEnumeration"] = None
-    genomeSequencing: Union[str, "GenomeSequencingEnumeration"] = None
+    infectivity: str = None
+    genomeSequencing: str = None
     titer: str = None
     unitCost: str = "on request"
     availability: str = "on request"
-    cultivability: Union[str, "CultivabilityEnumeration"] = 'Cultivable'
-    letterOfAuthority: Union[str, "LetterOfAuthorityEnumeration"] = 'Not applicable'
+    cultivability: str = "Cultivable"
+    letterOfAuthority: str = "Not applicable"
 
 @dataclass(repr=False)
 class MSDS(Dataset):
@@ -2381,7 +2421,7 @@ class MSDS(Dataset):
 
 
 @dataclass(repr=False)
-class File(Nameable):
+class File(YAMLRoot):
     """
     Digital document or record stored in a specific format that contains data or information
     """
@@ -2395,9 +2435,15 @@ class File(Nameable):
     name: str = None
     contentURL: Union[str, URI] = None
     format: str = None
+    description: Optional[str] = None
     license: Optional[Union[dict, "License"]] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+        if self._is_empty(self.name):
+            self.MissingRequiredField("name")
+        if not isinstance(self.name, str):
+            self.name = str(self.name)
+
         if self._is_empty(self.contentURL):
             self.MissingRequiredField("contentURL")
         if not isinstance(self.contentURL, URI):
@@ -2407,6 +2453,9 @@ class File(Nameable):
             self.MissingRequiredField("format")
         if not isinstance(self.format, str):
             self.format = str(self.format)
+
+        if self.description is not None and not isinstance(self.description, str):
+            self.description = str(self.description)
 
         if self.license is not None and not isinstance(self.license, License):
             self.license = License(**as_dict(self.license))
@@ -2504,7 +2553,7 @@ class Image(File):
 
 
 @dataclass(repr=False)
-class ContactPoint(Nameable):
+class ContactPoint(Dataset):
     """
     Entity serving as focal point of information
     """
@@ -2516,6 +2565,7 @@ class ContactPoint(Nameable):
     class_model_uri: ClassVar[URIRef] = EVORAO.ContactPoint
 
     name: str = None
+    description: Optional[str] = None
     email: Optional[str] = None
     telephone: Optional[str] = None
     streetAddress: Optional[str] = None
@@ -2526,6 +2576,14 @@ class ContactPoint(Nameable):
     oRCIDiD: Optional[str] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+        if self._is_empty(self.name):
+            self.MissingRequiredField("name")
+        if not isinstance(self.name, str):
+            self.name = str(self.name)
+
+        if self.description is not None and not isinstance(self.description, str):
+            self.description = str(self.description)
+
         if self.email is not None and not isinstance(self.email, str):
             self.email = str(self.email)
 
@@ -2554,7 +2612,7 @@ class ContactPoint(Nameable):
 
 
 @dataclass(repr=False)
-class License(Nameable):
+class License(Dataset):
     """
     The legal terms and conditions under which the subject can be used, shared, or distributed, indicating any
     restrictions or permissions
@@ -2567,11 +2625,20 @@ class License(Nameable):
     class_model_uri: ClassVar[URIRef] = EVORAO.License
 
     name: str = None
+    description: Optional[str] = None
     resourceURL: Optional[Union[str, URI]] = None
     licensingOrAttribution: Optional[str] = None
     logo: Optional[Union[dict, Image]] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+        if self._is_empty(self.name):
+            self.MissingRequiredField("name")
+        if not isinstance(self.name, str):
+            self.name = str(self.name)
+
+        if self.description is not None and not isinstance(self.description, str):
+            self.description = str(self.description)
+
         if self.resourceURL is not None and not isinstance(self.resourceURL, URI):
             self.resourceURL = URI(self.resourceURL)
 
@@ -2585,7 +2652,7 @@ class License(Nameable):
 
 
 @dataclass(repr=False)
-class Certification(Nameable):
+class Certification(Dataset):
     """
     Assurance given by an independent certification body that a product, service or system meets the requirements of a
     standard
@@ -2598,11 +2665,20 @@ class Certification(Nameable):
     class_model_uri: ClassVar[URIRef] = EVORAO.Certification
 
     name: str = None
+    description: Optional[str] = None
     logo: Optional[Union[dict, Image]] = None
     certificationDocument: Optional[Union[Union[dict, Document], List[Union[dict, Document]]]] = empty_list()
     resourceURL: Optional[Union[str, URI]] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+        if self._is_empty(self.name):
+            self.MissingRequiredField("name")
+        if not isinstance(self.name, str):
+            self.name = str(self.name)
+
+        if self.description is not None and not isinstance(self.description, str):
+            self.description = str(self.description)
+
         if self.logo is not None and not isinstance(self.logo, Image):
             self.logo = Image(**as_dict(self.logo))
 
@@ -2615,308 +2691,23 @@ class Certification(Nameable):
 
 
 # Enumerations
-class QueryMethodEnumeration(EnumDefinitionImpl):
 
-    GET = PermissibleValue(
-        text="GET",
-        description="GET http method, used to send information, such as a query string, directly in the URL",
-        meaning=WD["Q3504817"])
-    POST = PermissibleValue(
-        text="POST",
-        description="""POST http method, used to send information to a server by storing it in the request body of the http request""",
-        meaning=WD["Q2764521"])
-
-    _defn = EnumDefinition(
-        name="QueryMethodEnumeration",
-    )
-
-class PathogenTypeEnumeration(EnumDefinitionImpl):
-
-    Virus = PermissibleValue(
-        text="Virus",
-        description="The virus as a biological material",
-        meaning=EVORAO["Virus"])
-    Bacterium = PermissibleValue(
-        text="Bacterium",
-        description="The bacterium as a biological material",
-        meaning=EVORAO["Bacterium"])
-    Fungus = PermissibleValue(
-        text="Fungus",
-        description="The fungus as a biological material",
-        meaning=EVORAO["Fungus"])
-    Protozoan = PermissibleValue(
-        text="Protozoan",
-        description="The protozoan as a biological material",
-        meaning=EVORAO["Protozoan"])
-    Viroid = PermissibleValue(
-        text="Viroid",
-        description="The viroid as a biological material",
-        meaning=EVORAO["Viroid"])
-    Prion = PermissibleValue(
-        text="Prion",
-        description="The prion as a biological material",
-        meaning=EVORAO["Prion"])
-
-    _defn = EnumDefinition(
-        name="PathogenTypeEnumeration",
-    )
-
-class HostTypeEnumeration(EnumDefinitionImpl):
-
-    Animal = PermissibleValue(
-        text="Animal",
-        description="Kingdom of multicellular eukaryotic organisms",
-        meaning=WD["Q729"])
-    Human = PermissibleValue(
-        text="Human",
-        description="Any member of Homo sapiens, unique extant species of the genus Homo",
-        meaning=WD["Q5"])
-    Plant = PermissibleValue(
-        text="Plant",
-        description="Living thing in the kingdom of photosynthetic eukaryotes",
-        meaning=WD["Q756"])
-
-    _defn = EnumDefinition(
-        name="HostTypeEnumeration",
-    )
-
-class SequenceProviderEnumeration(EnumDefinitionImpl):
-
-    ENA = PermissibleValue(
-        text="ENA",
-        description="The European Nucleotide Archive",
-        meaning=WD["Q5412874"])
-    GenBank = PermissibleValue(
-        text="GenBank",
-        description="""The NIH genetic sequence database, an annotated collection of all publicly available DNA sequences""",
-        meaning=WD["Q901755"])
-
-    _defn = EnumDefinition(
-        name="SequenceProviderEnumeration",
-    )
-
-class ExpressedAsEnumeration(EnumDefinitionImpl):
-
-    Soluble = PermissibleValue(
-        text="Soluble",
-        description="Expressed as soluble protein",
-        meaning=WD["Q87723650"])
-
-    _defn = EnumDefinition(
-        name="ExpressedAsEnumeration",
-    )
-
-    @classmethod
-    def _addvals(cls):
-        setattr(cls, "Inclusion bodies",
-            PermissibleValue(
-                text="Inclusion bodies",
-                description="Expressed as aggregated molecules",
-                meaning=WD["Q1308970"]))
-
-class InclusionBodiesTypeEnumeration(EnumDefinitionImpl):
-
-    Denatured = PermissibleValue(
-        text="Denatured",
-        description="Having losed their folded structure present in their native state")
-    Refolded = PermissibleValue(
-        text="Refolded",
-        description="Having regained a folded structure")
-
-    _defn = EnumDefinition(
-        name="InclusionBodiesTypeEnumeration",
-    )
-
-class ExpressionSystemEnumeration(EnumDefinitionImpl):
-
-    _defn = EnumDefinition(
-        name="ExpressionSystemEnumeration",
-    )
-
-    @classmethod
-    def _addvals(cls):
-        setattr(cls, "E. coli",
-            PermissibleValue(
-                text="E. coli",
-                description="Expressed in E. Coli bacteria",
-                meaning=WD["Q25419"]))
-        setattr(cls, "Insect cells",
-            PermissibleValue(
-                text="Insect cells",
-                description="Expressed in insect cells",
-                meaning=WD["Q108929499"]))
-        setattr(cls, "Mammalian cells",
-            PermissibleValue(
-                text="Mammalian cells",
-                description="Expressed in mammalian cells"))
-
-class FunctionalCharacterizationEnumeration(EnumDefinitionImpl):
-
-    _defn = EnumDefinition(
-        name="FunctionalCharacterizationEnumeration",
-    )
-
-    @classmethod
-    def _addvals(cls):
-        setattr(cls, "Functionally characterized",
-            PermissibleValue(
-                text="Functionally characterized",
-                description="The related protein has been functionally characterized"))
-        setattr(cls, "No functional characterization",
-            PermissibleValue(
-                text="No functional characterization",
-                description="The related protein has curently no functional characterization"))
-
-class ProteinPurificationEnumeration(EnumDefinitionImpl):
-
-    _defn = EnumDefinition(
-        name="ProteinPurificationEnumeration",
-    )
-
-    @classmethod
-    def _addvals(cls):
-        setattr(cls, "Greater than 95 percent",
-            PermissibleValue(
-                text="Greater than 95 percent",
-                description="The protein is purified to a level exceeding 95%"))
-        setattr(cls, "Unpurified expression host lysate or partly purified protein",
-            PermissibleValue(
-                text="Unpurified expression host lysate or partly purified protein",
-                description="""The protein is provided as unpurified expression host lysate or partly purified protein"""))
-
-class TypeOfFunctionalCharacterizationEnumeration(EnumDefinitionImpl):
-
-    Enzymatic = PermissibleValue(
-        text="Enzymatic",
-        description="""Enzymatic functional characterization involves studying the specific activities and roles of enzymes in biochemical processes""")
-    Antigenic = PermissibleValue(
-        text="Antigenic",
-        description="""Antigenic functional characterization involves studying the properties and behaviors of antigens""")
-
-    _defn = EnumDefinition(
-        name="TypeOfFunctionalCharacterizationEnumeration",
-    )
-
-class SequencingEnumeration(EnumDefinitionImpl):
-
-    _defn = EnumDefinition(
-        name="SequencingEnumeration",
-    )
-
-    @classmethod
-    def _addvals(cls):
-        setattr(cls, "Not sequenced",
-            PermissibleValue(
-                text="Not sequenced",
-                description="The biological material has not been sequenced"))
-        setattr(cls, "Partly sequenced",
-            PermissibleValue(
-                text="Partly sequenced",
-                description="The biological material has been partly sequenced"))
-        setattr(cls, "Fully sequenced",
-            PermissibleValue(
-                text="Fully sequenced",
-                description="The biological material has been fully sequenced"))
-
-class CultivabilityEnumeration(EnumDefinitionImpl):
-
-    Cultivable = PermissibleValue(
-        text="Cultivable",
-        description="The pathogen can be grown using standard culture techniques")
-    Uncultivable = PermissibleValue(
-        text="Uncultivable",
-        description="""The pathogen cannot be grown in a laboratory using standard culture techniques and often requires special methods for study""")
-    Inactivated = PermissibleValue(
-        text="Inactivated",
-        description="The pathogen has been killed or rendered inactive so it cannot cause disease")
-
-    _defn = EnumDefinition(
-        name="CultivabilityEnumeration",
-    )
-
-class InfectivityEnumeration(EnumDefinitionImpl):
-
-    _defn = EnumDefinition(
-        name="InfectivityEnumeration",
-    )
-
-    @classmethod
-    def _addvals(cls):
-        setattr(cls, "Infectivity tested",
-            PermissibleValue(
-                text="Infectivity tested",
-                description="The infectivity of the pathogen has been tested"))
-        setattr(cls, "Infectivity tested and quantified",
-            PermissibleValue(
-                text="Infectivity tested and quantified",
-                description="The infectivity of the pathogen has been tested and quantified"))
-        setattr(cls, "Non cultivable sample, infectivity cannot be tested",
-            PermissibleValue(
-                text="Non cultivable sample, infectivity cannot be tested",
-                description="""The pathogen is provided as a non cultivable sample, so its infectivity cannot be tested"""))
-
-class LetterOfAuthorityEnumeration(EnumDefinitionImpl):
-
-    Required = PermissibleValue(
-        text="Required",
-        description="The letter of authority is required for this biological material")
-
-    _defn = EnumDefinition(
-        name="LetterOfAuthorityEnumeration",
-    )
-
-    @classmethod
-    def _addvals(cls):
-        setattr(cls, "Not applicable",
-            PermissibleValue(
-                text="Not applicable",
-                description="The letter of authority is not applicable for this biological material"))
-        setattr(cls, "Not required",
-            PermissibleValue(
-                text="Not required",
-                description="The letter of authority is not required for this biological material"))
-        setattr(cls, "Required for customers in the EU",
-            PermissibleValue(
-                text="Required for customers in the EU",
-                description="""The letter of authority is required for this biological material in case only if its destination is in the European Union"""))
-
-class GenomeSequencingEnumeration(EnumDefinitionImpl):
-
-    _defn = EnumDefinition(
-        name="GenomeSequencingEnumeration",
-    )
-
-    @classmethod
-    def _addvals(cls):
-        setattr(cls, "Complete genome",
-            PermissibleValue(
-                text="Complete genome",
-                description="The complete genome has been sequenced",
-                meaning=WD["Q2068526"]))
-        setattr(cls, "Complete coding sequence",
-            PermissibleValue(
-                text="Complete coding sequence",
-                description="Only the complete conding sequence has been sequenced"))
-        setattr(cls, "Partial sequence",
-            PermissibleValue(
-                text="Partial sequence",
-                description="Only a partial sequence was sequenced"))
 
 # Slots
 class slots:
     pass
-
-slots.ID = Slot(uri=EVORAO.ID, name="ID", curie=EVORAO.curie('ID'),
-                   model_uri=EVORAO.ID, domain=None, range=Optional[str])
-
-slots.versionOf = Slot(uri=EVORAO.versionOf, name="versionOf", curie=EVORAO.curie('versionOf'),
-                   model_uri=EVORAO.versionOf, domain=None, range=Optional[str])
 
 slots.name = Slot(uri=EVORAO.name, name="name", curie=EVORAO.curie('name'),
                    model_uri=EVORAO.name, domain=None, range=Optional[str])
 
 slots.description = Slot(uri=EVORAO.description, name="description", curie=EVORAO.curie('description'),
                    model_uri=EVORAO.description, domain=None, range=Optional[str])
+
+slots.ID = Slot(uri=EVORAO.ID, name="ID", curie=EVORAO.curie('ID'),
+                   model_uri=EVORAO.ID, domain=None, range=Optional[str])
+
+slots.versionOf = Slot(uri=EVORAO.versionOf, name="versionOf", curie=EVORAO.curie('versionOf'),
+                   model_uri=EVORAO.versionOf, domain=None, range=Optional[str])
 
 slots.taxon = Slot(uri=EVORAO.taxon, name="taxon", curie=EVORAO.curie('taxon'),
                    model_uri=EVORAO.taxon, domain=None, range=Optional[str])
@@ -3464,17 +3255,23 @@ slots.licensingOrAttribution = Slot(uri=EVORAO.licensingOrAttribution, name="lic
 slots.certificationDocument = Slot(uri=EVORAO.certificationDocument, name="certificationDocument", curie=EVORAO.curie('certificationDocument'),
                    model_uri=EVORAO.certificationDocument, domain=None, range=Optional[str])
 
+slots.DataService_name = Slot(uri=EVORAO.name, name="DataService_name", curie=EVORAO.curie('name'),
+                   model_uri=EVORAO.DataService_name, domain=DataService, range=str)
+
+slots.DataService_description = Slot(uri=EVORAO.description, name="DataService_description", curie=EVORAO.curie('description'),
+                   model_uri=EVORAO.DataService_description, domain=DataService, range=Optional[str])
+
 slots.Version_ID = Slot(uri=EVORAO.ID, name="Version_ID", curie=EVORAO.curie('ID'),
                    model_uri=EVORAO.Version_ID, domain=Version, range=str)
 
 slots.Version_versionOf = Slot(uri=EVORAO.versionOf, name="Version_versionOf", curie=EVORAO.curie('versionOf'),
-                   model_uri=EVORAO.Version_versionOf, domain=Version, range=Union[str, URI])
+                   model_uri=EVORAO.Version_versionOf, domain=Version, range=Union[dict, Dataset])
 
-slots.Nameable_name = Slot(uri=EVORAO.name, name="Nameable_name", curie=EVORAO.curie('name'),
-                   model_uri=EVORAO.Nameable_name, domain=Nameable, range=str)
+slots.Catalogue_name = Slot(uri=EVORAO.name, name="Catalogue_name", curie=EVORAO.curie('name'),
+                   model_uri=EVORAO.Catalogue_name, domain=Catalogue, range=str)
 
-slots.Nameable_description = Slot(uri=EVORAO.description, name="Nameable_description", curie=EVORAO.curie('description'),
-                   model_uri=EVORAO.Nameable_description, domain=Nameable, range=Optional[str])
+slots.Catalogue_description = Slot(uri=EVORAO.description, name="Catalogue_description", curie=EVORAO.curie('description'),
+                   model_uri=EVORAO.Catalogue_description, domain=Catalogue, range=Optional[str])
 
 slots.Taxonomy_taxon = Slot(uri=EVORAO.taxon, name="Taxonomy_taxon", curie=EVORAO.curie('taxon'),
                    model_uri=EVORAO.Taxonomy_taxon, domain=Taxonomy, range=Optional[Union[Union[dict, "Taxon"], List[Union[dict, "Taxon"]]]])
@@ -3498,7 +3295,7 @@ slots.DataProvider_license = Slot(uri=EVORAO.license, name="DataProvider_license
                    model_uri=EVORAO.DataProvider_license, domain=DataProvider, range=Optional[Union[dict, "License"]])
 
 slots.DataProvider_loginRequestMethod = Slot(uri=EVORAO.loginRequestMethod, name="DataProvider_loginRequestMethod", curie=EVORAO.curie('loginRequestMethod'),
-                   model_uri=EVORAO.DataProvider_loginRequestMethod, domain=DataProvider, range=Optional[Union[str, "QueryMethodEnumeration"]])
+                   model_uri=EVORAO.DataProvider_loginRequestMethod, domain=DataProvider, range=Optional[str])
 
 slots.DataProvider_loginURL = Slot(uri=EVORAO.loginURL, name="DataProvider_loginURL", curie=EVORAO.curie('loginURL'),
                    model_uri=EVORAO.DataProvider_loginURL, domain=DataProvider, range=Optional[Union[str, URI]])
@@ -3510,13 +3307,13 @@ slots.DataProvider_queryURL = Slot(uri=EVORAO.queryURL, name="DataProvider_query
                    model_uri=EVORAO.DataProvider_queryURL, domain=DataProvider, range=Union[str, URI])
 
 slots.DataProvider_queryMethod = Slot(uri=EVORAO.queryMethod, name="DataProvider_queryMethod", curie=EVORAO.curie('queryMethod'),
-                   model_uri=EVORAO.DataProvider_queryMethod, domain=DataProvider, range=Union[str, "QueryMethodEnumeration"])
+                   model_uri=EVORAO.DataProvider_queryMethod, domain=DataProvider, range=str)
 
 slots.DataProvider_contentType = Slot(uri=EVORAO.contentType, name="DataProvider_contentType", curie=EVORAO.curie('contentType'),
                    model_uri=EVORAO.DataProvider_contentType, domain=DataProvider, range=str)
 
 slots.DataProvider_providedEntityType = Slot(uri=EVORAO.providedEntityType, name="DataProvider_providedEntityType", curie=EVORAO.curie('providedEntityType'),
-                   model_uri=EVORAO.DataProvider_providedEntityType, domain=DataProvider, range=Union[str, URI])
+                   model_uri=EVORAO.DataProvider_providedEntityType, domain=DataProvider, range=Union[dict, Dataset])
 
 slots.DataProvider_weight = Slot(uri=EVORAO.weight, name="DataProvider_weight", curie=EVORAO.curie('weight'),
                    model_uri=EVORAO.DataProvider_weight, domain=DataProvider, range=int)
@@ -3528,10 +3325,10 @@ slots.PathogenIdentification_pathogenName = Slot(uri=EVORAO.pathogenName, name="
                    model_uri=EVORAO.PathogenIdentification_pathogenName, domain=PathogenIdentification, range=Union[dict, "CommonName"])
 
 slots.PathogenIdentification_pathogenType = Slot(uri=EVORAO.pathogenType, name="PathogenIdentification_pathogenType", curie=EVORAO.curie('pathogenType'),
-                   model_uri=EVORAO.PathogenIdentification_pathogenType, domain=PathogenIdentification, range=Union[str, "PathogenTypeEnumeration"])
+                   model_uri=EVORAO.PathogenIdentification_pathogenType, domain=PathogenIdentification, range=str)
 
 slots.PathogenIdentification_hostType = Slot(uri=EVORAO.hostType, name="PathogenIdentification_hostType", curie=EVORAO.curie('hostType'),
-                   model_uri=EVORAO.PathogenIdentification_hostType, domain=PathogenIdentification, range=Optional[Union[Union[str, "HostTypeEnumeration"], List[Union[str, "HostTypeEnumeration"]]]])
+                   model_uri=EVORAO.PathogenIdentification_hostType, domain=PathogenIdentification, range=Optional[Union[str, List[str]]])
 
 slots.PathogenIdentification_subspecies = Slot(uri=EVORAO.subspecies, name="PathogenIdentification_subspecies", curie=EVORAO.curie('subspecies'),
                    model_uri=EVORAO.PathogenIdentification_subspecies, domain=PathogenIdentification, range=Optional[str])
@@ -3571,6 +3368,12 @@ slots.Vocabulary_termDataProvider = Slot(uri=EVORAO.termDataProvider, name="Voca
 
 slots.Vocabulary_term = Slot(uri=EVORAO.term, name="Vocabulary_term", curie=EVORAO.curie('term'),
                    model_uri=EVORAO.Vocabulary_term, domain=Vocabulary, range=Optional[Union[Union[dict, "Term"], List[Union[dict, "Term"]]]])
+
+slots.Term_name = Slot(uri=EVORAO.name, name="Term_name", curie=EVORAO.curie('name'),
+                   model_uri=EVORAO.Term_name, domain=Term, range=str)
+
+slots.Term_description = Slot(uri=EVORAO.description, name="Term_description", curie=EVORAO.curie('description'),
+                   model_uri=EVORAO.Term_description, domain=Term, range=Optional[str])
 
 slots.Term_weight = Slot(uri=EVORAO.weight, name="Term_weight", curie=EVORAO.curie('weight'),
                    model_uri=EVORAO.Term_weight, domain=Term, range=int)
@@ -3642,7 +3445,13 @@ slots.SequenceReference_accessionNumber = Slot(uri=EVORAO.accessionNumber, name=
                    model_uri=EVORAO.SequenceReference_accessionNumber, domain=SequenceReference, range=str)
 
 slots.SequenceReference_sequenceProvider = Slot(uri=EVORAO.sequenceProvider, name="SequenceReference_sequenceProvider", curie=EVORAO.curie('sequenceProvider'),
-                   model_uri=EVORAO.SequenceReference_sequenceProvider, domain=SequenceReference, range=Union[str, "SequenceProviderEnumeration"])
+                   model_uri=EVORAO.SequenceReference_sequenceProvider, domain=SequenceReference, range=str)
+
+slots.PersonOrOrganization_name = Slot(uri=EVORAO.name, name="PersonOrOrganization_name", curie=EVORAO.curie('name'),
+                   model_uri=EVORAO.PersonOrOrganization_name, domain=PersonOrOrganization, range=str)
+
+slots.PersonOrOrganization_description = Slot(uri=EVORAO.description, name="PersonOrOrganization_description", curie=EVORAO.curie('description'),
+                   model_uri=EVORAO.PersonOrOrganization_description, domain=PersonOrOrganization, range=Optional[str])
 
 slots.PersonOrOrganization_homePage = Slot(uri=EVORAO.homePage, name="PersonOrOrganization_homePage", curie=EVORAO.curie('homePage'),
                    model_uri=EVORAO.PersonOrOrganization_homePage, domain=PersonOrOrganization, range=Optional[str])
@@ -3713,6 +3522,12 @@ slots.Collection_collectionItem = Slot(uri=EVORAO.collectionItem, name="Collecti
 slots.Collection_collectionDataProvider = Slot(uri=EVORAO.collectionDataProvider, name="Collection_collectionDataProvider", curie=EVORAO.curie('collectionDataProvider'),
                    model_uri=EVORAO.Collection_collectionDataProvider, domain=Collection, range=Optional[Union[dict, DataProvider]])
 
+slots.ProductOrService_name = Slot(uri=EVORAO.name, name="ProductOrService_name", curie=EVORAO.curie('name'),
+                   model_uri=EVORAO.ProductOrService_name, domain=ProductOrService, range=str)
+
+slots.ProductOrService_description = Slot(uri=EVORAO.description, name="ProductOrService_description", curie=EVORAO.curie('description'),
+                   model_uri=EVORAO.ProductOrService_description, domain=ProductOrService, range=Optional[str])
+
 slots.ProductOrService_accessPointURL = Slot(uri=EVORAO.accessPointURL, name="ProductOrService_accessPointURL", curie=EVORAO.curie('accessPointURL'),
                    model_uri=EVORAO.ProductOrService_accessPointURL, domain=ProductOrService, range=Union[str, URI])
 
@@ -3747,7 +3562,7 @@ slots.ProductOrService_biosafetyRestrictions = Slot(uri=EVORAO.biosafetyRestrict
                    model_uri=EVORAO.ProductOrService_biosafetyRestrictions, domain=ProductOrService, range=Optional[str])
 
 slots.ProductOrService_canItBeUsedToProduceGMO = Slot(uri=EVORAO.canItBeUsedToProduceGMO, name="ProductOrService_canItBeUsedToProduceGMO", curie=EVORAO.curie('canItBeUsedToProduceGMO'),
-                   model_uri=EVORAO.ProductOrService_canItBeUsedToProduceGMO, domain=ProductOrService, range=Optional[Union[bool, Bool]])
+                   model_uri=EVORAO.ProductOrService_canItBeUsedToProduceGMO, domain=ProductOrService, range=Union[bool, Bool])
 
 slots.ProductOrService_provider = Slot(uri=EVORAO.provider, name="ProductOrService_provider", curie=EVORAO.curie('provider'),
                    model_uri=EVORAO.ProductOrService_provider, domain=ProductOrService, range=Union[dict, Provider])
@@ -3849,28 +3664,28 @@ slots.Protein_domain = Slot(uri=EVORAO.domain, name="Protein_domain", curie=EVOR
                    model_uri=EVORAO.Protein_domain, domain=Protein, range=Optional[Union[str, List[str]]])
 
 slots.Protein_expressedAs = Slot(uri=EVORAO.expressedAs, name="Protein_expressedAs", curie=EVORAO.curie('expressedAs'),
-                   model_uri=EVORAO.Protein_expressedAs, domain=Protein, range=Optional[Union[Union[str, "ExpressedAsEnumeration"], List[Union[str, "ExpressedAsEnumeration"]]]])
+                   model_uri=EVORAO.Protein_expressedAs, domain=Protein, range=Optional[Union[str, List[str]]])
 
 slots.Protein_inclusionBodiesType = Slot(uri=EVORAO.inclusionBodiesType, name="Protein_inclusionBodiesType", curie=EVORAO.curie('inclusionBodiesType'),
-                   model_uri=EVORAO.Protein_inclusionBodiesType, domain=Protein, range=Optional[Union[Union[str, "InclusionBodiesTypeEnumeration"], List[Union[str, "InclusionBodiesTypeEnumeration"]]]])
+                   model_uri=EVORAO.Protein_inclusionBodiesType, domain=Protein, range=Optional[Union[str, List[str]]])
 
 slots.Protein_expressionSystem = Slot(uri=EVORAO.expressionSystem, name="Protein_expressionSystem", curie=EVORAO.curie('expressionSystem'),
-                   model_uri=EVORAO.Protein_expressionSystem, domain=Protein, range=Optional[Union[Union[str, "ExpressionSystemEnumeration"], List[Union[str, "ExpressionSystemEnumeration"]]]])
+                   model_uri=EVORAO.Protein_expressionSystem, domain=Protein, range=Optional[Union[str, List[str]]])
 
 slots.Protein_functionalCharacterization = Slot(uri=EVORAO.functionalCharacterization, name="Protein_functionalCharacterization", curie=EVORAO.curie('functionalCharacterization'),
-                   model_uri=EVORAO.Protein_functionalCharacterization, domain=Protein, range=Optional[Union[Union[str, "FunctionalCharacterizationEnumeration"], List[Union[str, "FunctionalCharacterizationEnumeration"]]]])
+                   model_uri=EVORAO.Protein_functionalCharacterization, domain=Protein, range=Optional[Union[str, List[str]]])
 
 slots.Protein_functionalTechnicalDescription = Slot(uri=EVORAO.functionalTechnicalDescription, name="Protein_functionalTechnicalDescription", curie=EVORAO.curie('functionalTechnicalDescription'),
                    model_uri=EVORAO.Protein_functionalTechnicalDescription, domain=Protein, range=Optional[Union[str, List[str]]])
 
 slots.Protein_proteinPurification = Slot(uri=EVORAO.proteinPurification, name="Protein_proteinPurification", curie=EVORAO.curie('proteinPurification'),
-                   model_uri=EVORAO.Protein_proteinPurification, domain=Protein, range=Optional[Union[Union[str, "ProteinPurificationEnumeration"], List[Union[str, "ProteinPurificationEnumeration"]]]])
+                   model_uri=EVORAO.Protein_proteinPurification, domain=Protein, range=Optional[Union[str, List[str]]])
 
 slots.Protein_theTAGStatusOfTheSolubilizedProtein = Slot(uri=EVORAO.theTAGStatusOfTheSolubilizedProtein, name="Protein_theTAGStatusOfTheSolubilizedProtein", curie=EVORAO.curie('theTAGStatusOfTheSolubilizedProtein'),
                    model_uri=EVORAO.Protein_theTAGStatusOfTheSolubilizedProtein, domain=Protein, range=Optional[Union[str, List[str]]])
 
 slots.Protein_typeOfFunctionalCharacterization = Slot(uri=EVORAO.typeOfFunctionalCharacterization, name="Protein_typeOfFunctionalCharacterization", curie=EVORAO.curie('typeOfFunctionalCharacterization'),
-                   model_uri=EVORAO.Protein_typeOfFunctionalCharacterization, domain=Protein, range=Optional[Union[Union[str, "TypeOfFunctionalCharacterizationEnumeration"], List[Union[str, "TypeOfFunctionalCharacterizationEnumeration"]]]])
+                   model_uri=EVORAO.Protein_typeOfFunctionalCharacterization, domain=Protein, range=Optional[Union[str, List[str]]])
 
 slots.Nucleic_Acid_biologicalMaterialOrigin = Slot(uri=EVORAO.biologicalMaterialOrigin, name="Nucleic Acid_biologicalMaterialOrigin", curie=EVORAO.curie('biologicalMaterialOrigin'),
                    model_uri=EVORAO.Nucleic_Acid_biologicalMaterialOrigin, domain=NucleicAcid, range=Union[dict, BiologicalMaterialOrigin])
@@ -3906,7 +3721,7 @@ slots.Nucleic_Acid_identificationTechnique = Slot(uri=EVORAO.identificationTechn
                    model_uri=EVORAO.Nucleic_Acid_identificationTechnique, domain=NucleicAcid, range=Optional[str])
 
 slots.Nucleic_Acid_sequencing = Slot(uri=EVORAO.sequencing, name="Nucleic Acid_sequencing", curie=EVORAO.curie('sequencing'),
-                   model_uri=EVORAO.Nucleic_Acid_sequencing, domain=NucleicAcid, range=Union[str, "SequencingEnumeration"])
+                   model_uri=EVORAO.Nucleic_Acid_sequencing, domain=NucleicAcid, range=str)
 
 slots.Nucleic_Acid_titer = Slot(uri=EVORAO.titer, name="Nucleic Acid_titer", curie=EVORAO.curie('titer'),
                    model_uri=EVORAO.Nucleic_Acid_titer, domain=NucleicAcid, range=Optional[str])
@@ -3954,7 +3769,7 @@ slots.Pathogen_sequence = Slot(uri=EVORAO.sequence, name="Pathogen_sequence", cu
                    model_uri=EVORAO.Pathogen_sequence, domain=Pathogen, range=Union[Union[dict, Sequence], List[Union[dict, Sequence]]])
 
 slots.Pathogen_cultivability = Slot(uri=EVORAO.cultivability, name="Pathogen_cultivability", curie=EVORAO.curie('cultivability'),
-                   model_uri=EVORAO.Pathogen_cultivability, domain=Pathogen, range=Union[str, "CultivabilityEnumeration"])
+                   model_uri=EVORAO.Pathogen_cultivability, domain=Pathogen, range=str)
 
 slots.Pathogen_clinicalInformation = Slot(uri=EVORAO.clinicalInformation, name="Pathogen_clinicalInformation", curie=EVORAO.curie('clinicalInformation'),
                    model_uri=EVORAO.Pathogen_clinicalInformation, domain=Pathogen, range=Optional[str])
@@ -3963,7 +3778,7 @@ slots.Pathogen_identificationTechnique = Slot(uri=EVORAO.identificationTechnique
                    model_uri=EVORAO.Pathogen_identificationTechnique, domain=Pathogen, range=Optional[str])
 
 slots.Pathogen_infectivity = Slot(uri=EVORAO.infectivity, name="Pathogen_infectivity", curie=EVORAO.curie('infectivity'),
-                   model_uri=EVORAO.Pathogen_infectivity, domain=Pathogen, range=Union[str, "InfectivityEnumeration"])
+                   model_uri=EVORAO.Pathogen_infectivity, domain=Pathogen, range=str)
 
 slots.Pathogen_infectivityTest = Slot(uri=EVORAO.infectivityTest, name="Pathogen_infectivityTest", curie=EVORAO.curie('infectivityTest'),
                    model_uri=EVORAO.Pathogen_infectivityTest, domain=Pathogen, range=Optional[str])
@@ -3975,13 +3790,13 @@ slots.Pathogen_isolationConditions = Slot(uri=EVORAO.isolationConditions, name="
                    model_uri=EVORAO.Pathogen_isolationConditions, domain=Pathogen, range=Optional[str])
 
 slots.Pathogen_letterOfAuthority = Slot(uri=EVORAO.letterOfAuthority, name="Pathogen_letterOfAuthority", curie=EVORAO.curie('letterOfAuthority'),
-                   model_uri=EVORAO.Pathogen_letterOfAuthority, domain=Pathogen, range=Union[str, "LetterOfAuthorityEnumeration"])
+                   model_uri=EVORAO.Pathogen_letterOfAuthority, domain=Pathogen, range=str)
 
 slots.Pathogen_passage = Slot(uri=EVORAO.passage, name="Pathogen_passage", curie=EVORAO.curie('passage'),
                    model_uri=EVORAO.Pathogen_passage, domain=Pathogen, range=Optional[str])
 
 slots.Pathogen_genomeSequencing = Slot(uri=EVORAO.genomeSequencing, name="Pathogen_genomeSequencing", curie=EVORAO.curie('genomeSequencing'),
-                   model_uri=EVORAO.Pathogen_genomeSequencing, domain=Pathogen, range=Union[str, "GenomeSequencingEnumeration"])
+                   model_uri=EVORAO.Pathogen_genomeSequencing, domain=Pathogen, range=str)
 
 slots.Pathogen_titer = Slot(uri=EVORAO.titer, name="Pathogen_titer", curie=EVORAO.curie('titer'),
                    model_uri=EVORAO.Pathogen_titer, domain=Pathogen, range=str)
@@ -4040,6 +3855,12 @@ slots.MSDS_regulatoryInformation = Slot(uri=EVORAO.regulatoryInformation, name="
 slots.MSDS_furtherInformation = Slot(uri=EVORAO.furtherInformation, name="MSDS_furtherInformation", curie=EVORAO.curie('furtherInformation'),
                    model_uri=EVORAO.MSDS_furtherInformation, domain=MSDS, range=Optional[str])
 
+slots.File_name = Slot(uri=EVORAO.name, name="File_name", curie=EVORAO.curie('name'),
+                   model_uri=EVORAO.File_name, domain=File, range=str)
+
+slots.File_description = Slot(uri=EVORAO.description, name="File_description", curie=EVORAO.curie('description'),
+                   model_uri=EVORAO.File_description, domain=File, range=Optional[str])
+
 slots.File_contentURL = Slot(uri=EVORAO.contentURL, name="File_contentURL", curie=EVORAO.curie('contentURL'),
                    model_uri=EVORAO.File_contentURL, domain=File, range=Union[str, URI])
 
@@ -4051,6 +3872,12 @@ slots.File_license = Slot(uri=EVORAO.license, name="File_license", curie=EVORAO.
 
 slots.Image_altText = Slot(uri=EVORAO.altText, name="Image_altText", curie=EVORAO.curie('altText'),
                    model_uri=EVORAO.Image_altText, domain=Image, range=Optional[str])
+
+slots.ContactPoint_name = Slot(uri=EVORAO.name, name="ContactPoint_name", curie=EVORAO.curie('name'),
+                   model_uri=EVORAO.ContactPoint_name, domain=ContactPoint, range=str)
+
+slots.ContactPoint_description = Slot(uri=EVORAO.description, name="ContactPoint_description", curie=EVORAO.curie('description'),
+                   model_uri=EVORAO.ContactPoint_description, domain=ContactPoint, range=Optional[str])
 
 slots.ContactPoint_email = Slot(uri=EVORAO.email, name="ContactPoint_email", curie=EVORAO.curie('email'),
                    model_uri=EVORAO.ContactPoint_email, domain=ContactPoint, range=Optional[str])
@@ -4076,6 +3903,12 @@ slots.ContactPoint_addressCountry = Slot(uri=EVORAO.addressCountry, name="Contac
 slots.ContactPoint_oRCIDiD = Slot(uri=EVORAO.oRCIDiD, name="ContactPoint_oRCIDiD", curie=EVORAO.curie('oRCIDiD'),
                    model_uri=EVORAO.ContactPoint_oRCIDiD, domain=ContactPoint, range=Optional[str])
 
+slots.License_name = Slot(uri=EVORAO.name, name="License_name", curie=EVORAO.curie('name'),
+                   model_uri=EVORAO.License_name, domain=License, range=str)
+
+slots.License_description = Slot(uri=EVORAO.description, name="License_description", curie=EVORAO.curie('description'),
+                   model_uri=EVORAO.License_description, domain=License, range=Optional[str])
+
 slots.License_resourceURL = Slot(uri=EVORAO.resourceURL, name="License_resourceURL", curie=EVORAO.curie('resourceURL'),
                    model_uri=EVORAO.License_resourceURL, domain=License, range=Optional[Union[str, URI]])
 
@@ -4084,6 +3917,12 @@ slots.License_licensingOrAttribution = Slot(uri=EVORAO.licensingOrAttribution, n
 
 slots.License_logo = Slot(uri=EVORAO.logo, name="License_logo", curie=EVORAO.curie('logo'),
                    model_uri=EVORAO.License_logo, domain=License, range=Optional[Union[dict, Image]])
+
+slots.Certification_name = Slot(uri=EVORAO.name, name="Certification_name", curie=EVORAO.curie('name'),
+                   model_uri=EVORAO.Certification_name, domain=Certification, range=str)
+
+slots.Certification_description = Slot(uri=EVORAO.description, name="Certification_description", curie=EVORAO.curie('description'),
+                   model_uri=EVORAO.Certification_description, domain=Certification, range=Optional[str])
 
 slots.Certification_logo = Slot(uri=EVORAO.logo, name="Certification_logo", curie=EVORAO.curie('logo'),
                    model_uri=EVORAO.Certification_logo, domain=Certification, range=Optional[Union[dict, Image]])

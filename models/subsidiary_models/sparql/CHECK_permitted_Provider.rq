@@ -28,11 +28,11 @@ SELECT ?g ?s ?p WHERE {
    EVORAO:memberOfRI,
    EVORAO:alternateName,
    EVORAO:country,
+   EVORAO:name,
+   EVORAO:description,
    EVORAO:homePage,
    EVORAO:contactPoint,
    EVORAO:logo,
-   EVORAO:name,
-   EVORAO:description,
    rdf:type ))
  }
  

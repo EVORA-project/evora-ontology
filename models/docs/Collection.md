@@ -53,9 +53,10 @@ URI: [EVORAO:Collection](https://raw.githubusercontent.com/EVORA-project/evora-o
 
 
 ## Inheritance
-* [Nameable](Nameable.md)
-    * [Catalogue](Catalogue.md)
-        * **Collection**
+* [Resource](Resource.md)
+    * [Dataset](Dataset.md)
+        * [Catalogue](Catalogue.md)
+            * **Collection**
 
 
 
@@ -65,8 +66,8 @@ URI: [EVORAO:Collection](https://raw.githubusercontent.com/EVORA-project/evora-o
 | ---  | --- | --- | --- |
 | [collectionItem](collectionItem.md) | * _recommended_ <br/> [ProductOrService](ProductOrService.md) | An item of the collection | direct |
 | [collectionDataProvider](collectionDataProvider.md) | 0..1 <br/> [DataProvider](DataProvider.md) | The provider of the data of the collection | direct |
-| [name](name.md) | 1 <br/> [String](String.md) | The label that allows humans to identify the current item | [Nameable](Nameable.md) |
-| [description](description.md) | 0..1 _recommended_ <br/> [String](String.md) | A short explanation of the characteristics, features, or nature of the curren... | [Nameable](Nameable.md) |
+| [name](name.md) | 1 <br/> [String](String.md) | The label that allows humans to identify the current item | [Catalogue](Catalogue.md) |
+| [description](description.md) | 0..1 _recommended_ <br/> [String](String.md) | A short explanation of the characteristics, features, or nature of the curren... | [Catalogue](Catalogue.md) |
 
 
 
@@ -153,6 +154,8 @@ slot_usage:
     title: collection item
     close_mappings:
     - dcat:resource
+    domain_of:
+    - Collection
     range: ProductOrService
     required: false
     recommended: true
@@ -163,6 +166,8 @@ slot_usage:
     title: collection data provider
     close_mappings:
     - dct:isReferencedBy
+    domain_of:
+    - Collection
     range: DataProvider
     required: false
     multivalued: false
@@ -188,6 +193,8 @@ slot_usage:
     title: collection item
     close_mappings:
     - dcat:resource
+    domain_of:
+    - Collection
     range: ProductOrService
     required: false
     recommended: true
@@ -198,6 +205,8 @@ slot_usage:
     title: collection data provider
     close_mappings:
     - dct:isReferencedBy
+    domain_of:
+    - Collection
     range: DataProvider
     required: false
     multivalued: false
@@ -253,7 +262,15 @@ attributes:
     alias: name
     owner: Collection
     domain_of:
-    - Nameable
+    - Catalogue
+    - DataService
+    - Term
+    - PersonOrOrganization
+    - ProductOrService
+    - File
+    - ContactPoint
+    - License
+    - Certification
     range: string
     required: true
     multivalued: false
@@ -274,7 +291,15 @@ attributes:
     alias: description
     owner: Collection
     domain_of:
-    - Nameable
+    - Catalogue
+    - DataService
+    - Term
+    - PersonOrOrganization
+    - ProductOrService
+    - File
+    - ContactPoint
+    - License
+    - Certification
     range: string
     required: false
     recommended: true

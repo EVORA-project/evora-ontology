@@ -51,8 +51,8 @@ URI: [EVORAO:GeographicalOrigin](https://raw.githubusercontent.com/EVORA-project
 
 
 ## Inheritance
-* [Nameable](Nameable.md)
-    * [NamedDataset](NamedDataset.md)
+* [Resource](Resource.md)
+    * [Dataset](Dataset.md)
         * [Term](Term.md)
             * **GeographicalOrigin**
                 * [IPLCOrigin](IPLCOrigin.md)
@@ -63,10 +63,10 @@ URI: [EVORAO:GeographicalOrigin](https://raw.githubusercontent.com/EVORA-project
 
 | Name | Cardinality and Range | Description | Inheritance |
 | ---  | --- | --- | --- |
+| [name](name.md) | 1 <br/> [String](String.md) | The label that allows humans to identify the current item | [Term](Term.md) |
+| [description](description.md) | 0..1 _recommended_ <br/> [String](String.md) | A short explanation of the characteristics, features, or nature of the curren... | [Term](Term.md) |
 | [weight](weight.md) | 1 <br/> [Integer](Integer.md) | A numerical value indicating relative importance or priority, generally proce... | [Term](Term.md) |
 | [inVocabulary](inVocabulary.md) | 1 <br/> [Vocabulary](Vocabulary.md) | Terms belong to a specific vocabulary | [Term](Term.md) |
-| [name](name.md) | 1 <br/> [String](String.md) | The label that allows humans to identify the current item | [Nameable](Nameable.md) |
-| [description](description.md) | 0..1 _recommended_ <br/> [String](String.md) | A short explanation of the characteristics, features, or nature of the curren... | [Nameable](Nameable.md) |
 
 
 
@@ -165,40 +165,6 @@ close_mappings:
 - wd:Q3885844
 is_a: Term
 attributes:
-  weight:
-    name: weight
-    description: A numerical value indicating relative importance or priority, generally
-      processed in ascending order. This weight helps prioritize content when organizing
-      or processing data. Its value can be negative, with a default set to 0
-    title: weight
-    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
-    close_mappings:
-    - adms:status
-    rank: 1000
-    ifabsent: int(0)
-    alias: weight
-    owner: GeographicalOrigin
-    domain_of:
-    - DataProvider
-    - Term
-    range: integer
-    required: true
-    multivalued: false
-  inVocabulary:
-    name: inVocabulary
-    description: Terms belong to a specific vocabulary
-    title: in Vocabulary
-    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
-    close_mappings:
-    - wdp:P972
-    rank: 1000
-    alias: inVocabulary
-    owner: GeographicalOrigin
-    domain_of:
-    - Term
-    range: Vocabulary
-    required: true
-    multivalued: false
   name:
     name: name
     description: The label that allows humans to identify the current item
@@ -219,7 +185,15 @@ attributes:
     alias: name
     owner: GeographicalOrigin
     domain_of:
-    - Nameable
+    - Term
+    - DataService
+    - Catalogue
+    - PersonOrOrganization
+    - ProductOrService
+    - File
+    - ContactPoint
+    - License
+    - Certification
     range: string
     required: true
     multivalued: false
@@ -240,10 +214,52 @@ attributes:
     alias: description
     owner: GeographicalOrigin
     domain_of:
-    - Nameable
+    - Term
+    - DataService
+    - Catalogue
+    - PersonOrOrganization
+    - ProductOrService
+    - File
+    - ContactPoint
+    - License
+    - Certification
     range: string
     required: false
     recommended: true
+    multivalued: false
+  weight:
+    name: weight
+    description: A numerical value indicating relative importance or priority, generally
+      processed in ascending order. This weight helps prioritize content when organizing
+      or processing data. Its value can be negative, with a default set to 0
+    title: weight
+    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+    close_mappings:
+    - adms:status
+    rank: 1000
+    ifabsent: int(0)
+    alias: weight
+    owner: GeographicalOrigin
+    domain_of:
+    - Term
+    - DataProvider
+    range: integer
+    required: true
+    multivalued: false
+  inVocabulary:
+    name: inVocabulary
+    description: Terms belong to a specific vocabulary
+    title: in Vocabulary
+    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+    close_mappings:
+    - wdp:P972
+    rank: 1000
+    alias: inVocabulary
+    owner: GeographicalOrigin
+    domain_of:
+    - Term
+    range: Vocabulary
+    required: true
     multivalued: false
 
 ```

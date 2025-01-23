@@ -53,9 +53,10 @@ URI: [EVORAO:Vocabulary](https://raw.githubusercontent.com/EVORA-project/evora-o
 
 
 ## Inheritance
-* [Nameable](Nameable.md)
-    * [Catalogue](Catalogue.md)
-        * **Vocabulary**
+* [Resource](Resource.md)
+    * [Dataset](Dataset.md)
+        * [Catalogue](Catalogue.md)
+            * **Vocabulary**
 
 
 
@@ -65,8 +66,8 @@ URI: [EVORAO:Vocabulary](https://raw.githubusercontent.com/EVORA-project/evora-o
 | ---  | --- | --- | --- |
 | [termDataProvider](termDataProvider.md) | 0..1 <br/> [DataProvider](DataProvider.md) | An external API or Endpoint that permits to retrieve the terms of this vocabu... | direct |
 | [term](term.md) | * _recommended_ <br/> [Term](Term.md) | The terms related to this vocabulary | direct |
-| [name](name.md) | 1 <br/> [String](String.md) | The label that allows humans to identify the current item | [Nameable](Nameable.md) |
-| [description](description.md) | 0..1 _recommended_ <br/> [String](String.md) | A short explanation of the characteristics, features, or nature of the curren... | [Nameable](Nameable.md) |
+| [name](name.md) | 1 <br/> [String](String.md) | The label that allows humans to identify the current item | [Catalogue](Catalogue.md) |
+| [description](description.md) | 0..1 _recommended_ <br/> [String](String.md) | A short explanation of the characteristics, features, or nature of the curren... | [Catalogue](Catalogue.md) |
 
 
 
@@ -162,6 +163,8 @@ slot_usage:
     description: An external API or Endpoint that permits to retrieve the terms of
       this vocabulary
     title: term data provider
+    domain_of:
+    - Vocabulary
     range: DataProvider
     required: false
     multivalued: false
@@ -169,6 +172,8 @@ slot_usage:
     name: term
     description: The terms related to this vocabulary
     title: term
+    domain_of:
+    - Vocabulary
     range: Term
     required: false
     recommended: true
@@ -195,6 +200,8 @@ slot_usage:
     description: An external API or Endpoint that permits to retrieve the terms of
       this vocabulary
     title: term data provider
+    domain_of:
+    - Vocabulary
     range: DataProvider
     required: false
     multivalued: false
@@ -202,6 +209,8 @@ slot_usage:
     name: term
     description: The terms related to this vocabulary
     title: term
+    domain_of:
+    - Vocabulary
     range: Term
     required: false
     recommended: true
@@ -255,7 +264,15 @@ attributes:
     alias: name
     owner: Vocabulary
     domain_of:
-    - Nameable
+    - Catalogue
+    - DataService
+    - Term
+    - PersonOrOrganization
+    - ProductOrService
+    - File
+    - ContactPoint
+    - License
+    - Certification
     range: string
     required: true
     multivalued: false
@@ -276,7 +293,15 @@ attributes:
     alias: description
     owner: Vocabulary
     domain_of:
-    - Nameable
+    - Catalogue
+    - DataService
+    - Term
+    - PersonOrOrganization
+    - ProductOrService
+    - File
+    - ContactPoint
+    - License
+    - Certification
     range: string
     required: false
     recommended: true

@@ -27,10 +27,10 @@ SELECT ?g ?s ?p WHERE {
   FILTER ( ?p NOT IN (
    EVORAO:alternateName,
    EVORAO:sourceOfInformation,
-   EVORAO:weight,
-   EVORAO:inVocabulary,
    EVORAO:name,
    EVORAO:description,
+   EVORAO:weight,
+   EVORAO:inVocabulary,
    rdf:type ))
  }
  

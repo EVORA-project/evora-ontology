@@ -71,6 +71,9 @@ alias: queryMethod
 domain_of:
 - DataProvider
 range: string
+equals_string_in:
+- GET
+- POST
 
 ```
 </details>

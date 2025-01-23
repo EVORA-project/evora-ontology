@@ -55,8 +55,9 @@ URI: [EVORAO:Publication](https://raw.githubusercontent.com/EVORA-project/evora-
 
 
 ## Inheritance
-* [Dataset](Dataset.md)
-    * **Publication**
+* [Resource](Resource.md)
+    * [Dataset](Dataset.md)
+        * **Publication**
 
 
 
@@ -144,6 +145,8 @@ slot_usage:
       specific feature"'
     exact_mappings:
     - dct:title
+    domain_of:
+    - Publication
     range: string
     required: true
     multivalued: false
@@ -151,6 +154,8 @@ slot_usage:
     name: authors
     description: The list of authors
     title: authors
+    domain_of:
+    - Publication
     range: string
     required: true
     multivalued: false
@@ -158,6 +163,8 @@ slot_usage:
     name: abstract
     description: Concise summary of the publication
     title: abstract
+    domain_of:
+    - Publication
     range: string
     required: true
     multivalued: false
@@ -165,6 +172,9 @@ slot_usage:
     name: relatedDOI
     description: Any Digital Object Identifier that can be related
     title: DOI
+    domain_of:
+    - Publication
+    - ProductOrService
     range: DOI
     required: true
     multivalued: false
@@ -172,6 +182,8 @@ slot_usage:
     name: journal
     description: The scientific journal in which the publication was published
     title: journal
+    domain_of:
+    - Publication
     range: Journal
     required: false
     multivalued: false
@@ -205,6 +217,8 @@ slot_usage:
       specific feature"'
     exact_mappings:
     - dct:title
+    domain_of:
+    - Publication
     range: string
     required: true
     multivalued: false
@@ -212,6 +226,8 @@ slot_usage:
     name: authors
     description: The list of authors
     title: authors
+    domain_of:
+    - Publication
     range: string
     required: true
     multivalued: false
@@ -219,6 +235,8 @@ slot_usage:
     name: abstract
     description: Concise summary of the publication
     title: abstract
+    domain_of:
+    - Publication
     range: string
     required: true
     multivalued: false
@@ -226,6 +244,9 @@ slot_usage:
     name: relatedDOI
     description: Any Digital Object Identifier that can be related
     title: DOI
+    domain_of:
+    - Publication
+    - ProductOrService
     range: DOI
     required: true
     multivalued: false
@@ -233,6 +254,8 @@ slot_usage:
     name: journal
     description: The scientific journal in which the publication was published
     title: journal
+    domain_of:
+    - Publication
     range: Journal
     required: false
     multivalued: false

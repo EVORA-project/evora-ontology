@@ -18,7 +18,7 @@ contributors:
 - https://orcid.org/0000-0002-1257-6862
 - https://orcid.org/0000-0002-2042-2839
 id: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
-version: 1.0.7897
+version: 1.0.8305
 imports:
 - linkml:types
 license: https://creativecommons.org/publicdomain/zero/1.0/
@@ -46,174 +46,14 @@ prefixes:
   linkml: https://w3id.org/linkml/
 default_prefix: EVORAO
 default_range: string
-enums:
-  queryMethodEnumeration:
-    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
-    permissible_values:
-      GET:
-        description: GET http method, used to send information, such as a query string,
-          directly in the URL
-        meaning: wd:Q3504817
-      POST:
-        description: POST http method, used to send information to a server by storing
-          it in the request body of the http request
-        meaning: wd:Q2764521
-  pathogenTypeEnumeration:
-    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
-    permissible_values:
-      Virus:
-        description: The virus as a biological material
-        meaning: EVORAO:Virus
-      Bacterium:
-        description: The bacterium as a biological material
-        meaning: EVORAO:Bacterium
-      Fungus:
-        description: The fungus as a biological material
-        meaning: EVORAO:Fungus
-      Protozoan:
-        description: The protozoan as a biological material
-        meaning: EVORAO:Protozoan
-      Viroid:
-        description: The viroid as a biological material
-        meaning: EVORAO:Viroid
-      Prion:
-        description: The prion as a biological material
-        meaning: EVORAO:Prion
-  hostTypeEnumeration:
-    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
-    permissible_values:
-      Animal:
-        description: Kingdom of multicellular eukaryotic organisms
-        meaning: wd:Q729
-      Human:
-        description: Any member of Homo sapiens, unique extant species of the genus
-          Homo
-        meaning: wd:Q5
-      Plant:
-        description: Living thing in the kingdom of photosynthetic eukaryotes
-        meaning: wd:Q756
-  sequenceProviderEnumeration:
-    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
-    permissible_values:
-      ENA:
-        description: The European Nucleotide Archive
-        meaning: wd:Q5412874
-      GenBank:
-        description: The NIH genetic sequence database, an annotated collection of
-          all publicly available DNA sequences
-        meaning: wd:Q901755
-  expressedAsEnumeration:
-    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
-    permissible_values:
-      Soluble:
-        description: Expressed as soluble protein
-        meaning: wd:Q87723650
-      Inclusion bodies:
-        description: Expressed as aggregated molecules
-        meaning: wd:Q1308970
-  inclusionBodiesTypeEnumeration:
-    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
-    permissible_values:
-      Denatured:
-        description: Having losed their folded structure present in their native state
-      Refolded:
-        description: Having regained a folded structure
-  expressionSystemEnumeration:
-    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
-    permissible_values:
-      E. coli:
-        description: Expressed in E. Coli bacteria
-        meaning: wd:Q25419
-      Insect cells:
-        description: Expressed in insect cells
-        meaning: wd:Q108929499
-      Mammalian cells:
-        description: Expressed in mammalian cells
-  functionalCharacterizationEnumeration:
-    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
-    permissible_values:
-      Functionally characterized:
-        description: The related protein has been functionally characterized
-      No functional characterization:
-        description: The related protein has curently no functional characterization
-  proteinPurificationEnumeration:
-    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
-    permissible_values:
-      Greater than 95 percent:
-        description: The protein is purified to a level exceeding 95%
-      Unpurified expression host lysate or partly purified protein:
-        description: The protein is provided as unpurified expression host lysate
-          or partly purified protein
-  typeOfFunctionalCharacterizationEnumeration:
-    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
-    permissible_values:
-      Enzymatic:
-        description: Enzymatic functional characterization involves studying the specific
-          activities and roles of enzymes in biochemical processes
-      Antigenic:
-        description: Antigenic functional characterization involves studying the properties
-          and behaviors of antigens
-  sequencingEnumeration:
-    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
-    permissible_values:
-      Not sequenced:
-        description: The biological material has not been sequenced
-      Partly sequenced:
-        description: The biological material has been partly sequenced
-      Fully sequenced:
-        description: The biological material has been fully sequenced
-  cultivabilityEnumeration:
-    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
-    permissible_values:
-      Cultivable:
-        description: The pathogen can be grown using standard culture techniques
-      Uncultivable:
-        description: The pathogen cannot be grown in a laboratory using standard culture
-          techniques and often requires special methods for study
-      Inactivated:
-        description: The pathogen has been killed or rendered inactive so it cannot
-          cause disease
-  infectivityEnumeration:
-    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
-    permissible_values:
-      Infectivity tested:
-        description: The infectivity of the pathogen has been tested
-      Infectivity tested and quantified:
-        description: The infectivity of the pathogen has been tested and quantified
-      Non cultivable sample, infectivity cannot be tested:
-        description: The pathogen is provided as a non cultivable sample, so its infectivity
-          cannot be tested
-  letterOfAuthorityEnumeration:
-    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
-    permissible_values:
-      Not applicable:
-        description: The letter of authority is not applicable for this biological
-          material
-      Not required:
-        description: The letter of authority is not required for this biological material
-      Required for customers in the EU:
-        description: The letter of authority is required for this biological material
-          in case only if its destination is in the European Union
-      Required:
-        description: The letter of authority is required for this biological material
-  genomeSequencingEnumeration:
-    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
-    permissible_values:
-      Complete genome:
-        description: The complete genome has been sequenced
-        meaning: wd:Q2068526
-      Complete coding sequence:
-        description: Only the complete conding sequence has been sequenced
-      Partial sequence:
-        description: Only a partial sequence was sequenced
 slots:
-  ID:
-    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
-  versionOf:
-    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
   name:
     from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
   description:
+    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+  ID:
+    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+  versionOf:
     from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
   taxon:
     from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
@@ -231,6 +71,10 @@ slots:
     from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
   loginRequestMethod:
     from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+    range: string
+    equals_string_in:
+    - GET
+    - POST
   loginURL:
     from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
   loginTokenName:
@@ -239,6 +83,10 @@ slots:
     from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
   queryMethod:
     from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+    range: string
+    equals_string_in:
+    - GET
+    - POST
   contentType:
     from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
   providedEntityType:
@@ -249,8 +97,21 @@ slots:
     from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
   pathogenType:
     from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+    range: string
+    equals_string_in:
+    - Virus
+    - Bacterium
+    - Fungus
+    - Protozoan
+    - Viroid
+    - Prion
   hostType:
     from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+    range: string
+    equals_string_in:
+    - Animal
+    - Human
+    - Plant
   subspecies:
     from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
   strain:
@@ -315,6 +176,10 @@ slots:
     from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
   sequenceProvider:
     from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+    range: string
+    equals_string_in:
+    - ENA
+    - GenBank
   homePage:
     from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
   contactPoint:
@@ -443,20 +308,45 @@ slots:
     from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
   expressedAs:
     from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+    range: string
+    equals_string_in:
+    - Soluble
+    - Inclusion bodies
   inclusionBodiesType:
     from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+    range: string
+    equals_string_in:
+    - Denatured
+    - Refolded
   expressionSystem:
     from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+    range: string
+    equals_string_in:
+    - E. coli
+    - Insect cells
+    - Mammalian cells
   functionalCharacterization:
     from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+    range: string
+    equals_string_in:
+    - Functionally characterized
+    - No functional characterization
   functionalTechnicalDescription:
     from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
   proteinPurification:
     from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+    range: string
+    equals_string_in:
+    - Greater than 95 percent
+    - Unpurified expression host lysate or partly purified protein
   theTAGStatusOfTheSolubilizedProtein:
     from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
   typeOfFunctionalCharacterization:
     from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+    range: string
+    equals_string_in:
+    - Enzymatic
+    - Antigenic
   hasGbFileOfTheConstruct:
     from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
   isItAClonedNucleicAcid:
@@ -477,6 +367,11 @@ slots:
     from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
   sequencing:
     from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+    range: string
+    equals_string_in:
+    - Not sequenced
+    - Partly sequenced
+    - Fully sequenced
   titer:
     from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
   sequenceChecked:
@@ -501,10 +396,20 @@ slots:
     from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
   cultivability:
     from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+    range: string
+    equals_string_in:
+    - Cultivable
+    - Uncultivable
+    - Inactivated
   clinicalInformation:
     from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
   infectivity:
     from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+    range: string
+    equals_string_in:
+    - Infectivity tested
+    - Infectivity tested and quantified
+    - Non cultivable sample, infectivity cannot be tested
   infectivityTest:
     from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
   isolationTechnique:
@@ -513,10 +418,21 @@ slots:
     from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
   letterOfAuthority:
     from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+    range: string
+    equals_string_in:
+    - Not applicable
+    - Not required
+    - Required for customers in the EU
+    - Required
   passage:
     from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
   genomeSequencing:
     from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+    range: string
+    equals_string_in:
+    - Complete genome
+    - Complete coding sequence
+    - Partial sequence
   coInfectingViruses:
     from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
   contaminationWithCoInfectingViruses:
@@ -580,37 +496,35 @@ slots:
   certificationDocument:
     from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
 classes:
-  Version:
-    description: Numeric code assigned to identify a particular historical version
-      of a work (e.g. software or technical standards)
-    title: Version
+  Resource:
+    description: Resource published or curated by a single agent.
+    title: Resource
     from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+    exact_mappings:
+    - dcat:Resource
+  Dataset:
+    description: A collection of data, published or curated by a single agent, and
+      available for access
+    title: Dataset
+    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+    exact_mappings:
+    - dcat:Dataset
     close_mappings:
-    - wd:Q114469879
-    is_a: Dataset
-    slots:
-    - ID
-    - versionOf
-    slot_usage:
-      ID:
-        description: The version identifier
-        title: ID
-        close_mappings:
-        - wdp:P393
-        - schema:version
-        range: string
-        required: true
-        multivalued: false
-      versionOf:
-        description: Identifier of what the version qualifies
-        title: version Of
-        range: uri
-        required: true
-        multivalued: false
-  Nameable:
-    description: Any entity that has a name and can have a textual description
-    title: Nameable
+    - wd:Q1172284
+    - schema:DataCatalog
+    is_a: Resource
+    abstract: true
+  DataService:
+    description: A collection of operations that provides access to one or more datasets
+      or data processing functions
+    title: Data Service
     from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+    exact_mappings:
+    - dcat:DataService
+    close_mappings:
+    - wd:Q193424
+    - schema:WebAPI
+    is_a: Resource
     abstract: true
     slots:
     - name
@@ -630,6 +544,8 @@ classes:
         - dct:title
         close_mappings:
         - rdfs:label
+        domain_of:
+        - DataService
         range: string
         required: true
         multivalued: false
@@ -644,9 +560,42 @@ classes:
           '
         exact_mappings:
         - dct:description
+        domain_of:
+        - DataService
         range: string
         required: false
         recommended: true
+        multivalued: false
+  Version:
+    description: Numeric code assigned to identify a particular historical version
+      of a work (e.g. software or technical standards)
+    title: Version
+    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+    close_mappings:
+    - wd:Q114469879
+    is_a: Dataset
+    slots:
+    - ID
+    - versionOf
+    slot_usage:
+      ID:
+        description: The version identifier
+        title: ID
+        close_mappings:
+        - wdp:P393
+        - schema:version
+        domain_of:
+        - Version
+        range: string
+        required: true
+        multivalued: false
+      versionOf:
+        description: Identifier of what the version qualifies
+        title: version Of
+        domain_of:
+        - Version
+        range: Dataset
+        required: true
         multivalued: false
   Catalogue:
     description: A curated collection of metadata about resources
@@ -657,43 +606,48 @@ classes:
     close_mappings:
     - wd:Q2352616
     - schema:Dataset
-    is_a: Nameable
+    is_a: Dataset
     abstract: true
-  Dataset:
-    description: A collection of data, published or curated by a single agent, and
-      available for access
-    title: Dataset
-    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
-    exact_mappings:
-    - dcat:Dataset
-    close_mappings:
-    - wd:Q1172284
-    - schema:DataCatalog
-    abstract: true
-  NamedDataset:
-    description: A collection of data, that has a name and can have a description,
-      published or curated by a single agent, and available for access
-    title: Named Dataset
-    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
-    exact_mappings:
-    - dcat:Dataset
-    close_mappings:
-    - wd:Q1172284
-    - schema:DataCatalog
-    is_a: Nameable
-    abstract: true
-  DataService:
-    description: A collection of operations that provides access to one or more datasets
-      or data processing functions
-    title: Data Service
-    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
-    exact_mappings:
-    - dcat:DataService
-    close_mappings:
-    - wd:Q193424
-    - schema:WebAPI
-    is_a: Nameable
-    abstract: true
+    slots:
+    - name
+    - description
+    slot_usage:
+      name:
+        description: The label that allows humans to identify the current item
+        title: name
+        comments:
+        - 'The title of the item should be as short and descriptive as possible. E.g.
+          for virus products it should basically be based on the following Pattern:
+
+          "Virus name", "virus host type", "collection year", "country of collection"
+          ex "suspected epidemiological origin", "genotype", "strain", "variant name
+          or specific feature"'
+        exact_mappings:
+        - dct:title
+        close_mappings:
+        - rdfs:label
+        domain_of:
+        - Catalogue
+        range: string
+        required: true
+        multivalued: false
+      description:
+        description: A short explanation of the characteristics, features, or nature
+          of the current item
+        title: description
+        comments:
+        - 'Describe this item in few lines. This description will serve as a summary
+          to present the item.
+
+          '
+        exact_mappings:
+        - dct:description
+        domain_of:
+        - Catalogue
+        range: string
+        required: false
+        recommended: true
+        multivalued: false
   Taxonomy:
     description: Science of naming, defining and classifying organisms
     title: Taxonomy
@@ -716,30 +670,40 @@ classes:
         title: taxon
         close_mappings:
         - dwc:Taxon
+        domain_of:
+        - Taxonomy
         range: Taxon
         required: false
         multivalued: true
       taxonDataProvider:
         description: The data provider for the taxons of the taxonomy
         title: taxon data provider
+        domain_of:
+        - Taxonomy
         range: DataProvider
         required: false
         multivalued: false
       version:
         description: The version of this instance of entity
         title: version
+        domain_of:
+        - Taxonomy
         range: Version
         required: true
         multivalued: false
       versionDataProvider:
         description: The data provider for the Version ID of this taxonomy
         title: version data provider
+        domain_of:
+        - Taxonomy
         range: DataProvider
         required: true
         multivalued: false
       rank:
         description: Relative level or position of the identified taxon in the taxonomy
         title: rank
+        domain_of:
+        - Taxonomy
         range: TaxonomicRank
         required: false
         multivalued: true
@@ -747,6 +711,8 @@ classes:
         description: The data provider for the description of the taxonomic ranks
           used in this taxonomy
         title: rank data provider
+        domain_of:
+        - Taxonomy
         range: DataProvider
         required: false
         multivalued: false
@@ -775,6 +741,8 @@ classes:
         title: license
         exact_mappings:
         - dct:license
+        domain_of:
+        - DataProvider
         range: License
         required: false
         multivalued: false
@@ -784,7 +752,9 @@ classes:
         close_mappings:
         - dcat:endpointDescription
         ifabsent: string(GET)
-        range: queryMethodEnumeration
+        domain_of:
+        - DataProvider
+        range: string
         required: false
         multivalued: false
       loginURL:
@@ -793,6 +763,8 @@ classes:
         close_mappings:
         - wdp:P1630
         - dcat:endpointDescription
+        domain_of:
+        - DataProvider
         range: uri
         required: false
         multivalued: false
@@ -802,6 +774,8 @@ classes:
         title: login token name
         close_mappings:
         - dcat:endpointDescription
+        domain_of:
+        - DataProvider
         range: string
         required: false
         multivalued: false
@@ -812,6 +786,8 @@ classes:
         - dcat:endpointURL
         close_mappings:
         - wdp:P1630
+        domain_of:
+        - DataProvider
         range: uri
         required: true
         multivalued: false
@@ -820,7 +796,9 @@ classes:
         title: query method
         close_mappings:
         - dcat:endpointDescription
-        range: queryMethodEnumeration
+        domain_of:
+        - DataProvider
+        range: string
         required: true
         multivalued: false
       contentType:
@@ -829,6 +807,8 @@ classes:
         close_mappings:
         - dct:format
         ifabsent: string(JSON)
+        domain_of:
+        - DataProvider
         range: string
         required: true
         multivalued: false
@@ -838,7 +818,9 @@ classes:
         title: provided entity type
         exact_mappings:
         - dcat:servesDataset
-        range: uri
+        domain_of:
+        - DataProvider
+        range: Dataset
         required: true
         multivalued: false
       weight:
@@ -853,6 +835,8 @@ classes:
           ahead of Rank ahead of Taxon)
         close_mappings:
         - adms:status
+        domain_of:
+        - DataProvider
         range: integer
         required: true
         multivalued: false
@@ -881,12 +865,16 @@ classes:
         comments:
         - The taxon of the highest rank known that can be used to classify a pathogen
           or group of pathogens (e.g viruses) in the reference taxonomy
+        domain_of:
+        - PathogenIdentification
         range: Taxon
         required: true
         multivalued: false
       pathogenName:
         description: A pathogen common name or a name that describes a group of pathogens
         title: pathogen name
+        domain_of:
+        - PathogenIdentification
         range: CommonName
         required: true
         multivalued: false
@@ -894,14 +882,18 @@ classes:
         description: Identification of the specific type of pathogen among the listed
           categories e.g. "Virus","Viroid","Bacterium"...
         title: pathogen type
-        range: pathogenTypeEnumeration
+        domain_of:
+        - PathogenIdentification
+        range: string
         required: true
         multivalued: false
       hostType:
         description: Indication of the possible host(s) for the identified pathogens
           among the listed main categories
         title: host type
-        range: hostTypeEnumeration
+        domain_of:
+        - PathogenIdentification
+        range: string
         required: false
         recommended: true
         multivalued: true
@@ -909,12 +901,16 @@ classes:
         description: The subspecies information differentiates closely related pathogens
           within a single species
         title: subspecies
+        domain_of:
+        - PathogenIdentification
         range: string
         required: false
         multivalued: false
       strain:
         description: Identifier given to a genetic variant within a single species
         title: strain
+        domain_of:
+        - PathogenIdentification
         range: string
         required: false
         recommended: true
@@ -927,6 +923,8 @@ classes:
           conditions of isolation, such as the name of the town, hospital, and type
           of host
         title: isolate
+        domain_of:
+        - PathogenIdentification
         range: string
         required: false
         multivalued: false
@@ -934,6 +932,8 @@ classes:
         description: Genotype information that identifies organisms that cluster in
           phylogenetic trees, thus different clusters are distinct genotypes
         title: genotype
+        domain_of:
+        - PathogenIdentification
         range: string
         required: false
         multivalued: false
@@ -941,6 +941,8 @@ classes:
         description: Genetically related pathogens that group together based on serological
           relationships
         title: serotype
+        domain_of:
+        - PathogenIdentification
         range: string
         required: false
         multivalued: false
@@ -949,6 +951,8 @@ classes:
           \ a \u201Cvariant\u201D of the original organism if not sufficiently different\
           \ to be termed a distinct strain"
         title: variant
+        domain_of:
+        - PathogenIdentification
         range: Variant
         required: false
         multivalued: false
@@ -979,30 +983,40 @@ classes:
           or specific feature"'
         exact_mappings:
         - dct:title
+        domain_of:
+        - Publication
         range: string
         required: true
         multivalued: false
       authors:
         description: The list of authors
         title: authors
+        domain_of:
+        - Publication
         range: string
         required: true
         multivalued: false
       abstract:
         description: Concise summary of the publication
         title: abstract
+        domain_of:
+        - Publication
         range: string
         required: true
         multivalued: false
       relatedDOI:
         description: Any Digital Object Identifier that can be related
         title: DOI
+        domain_of:
+        - Publication
         range: DOI
         required: true
         multivalued: false
       journal:
         description: The scientific journal in which the publication was published
         title: journal
+        domain_of:
+        - Publication
         range: Journal
         required: false
         multivalued: false
@@ -1023,12 +1037,16 @@ classes:
         description: An external API or Endpoint that permits to retrieve the terms
           of this vocabulary
         title: term data provider
+        domain_of:
+        - Vocabulary
         range: DataProvider
         required: false
         multivalued: false
       term:
         description: The terms related to this vocabulary
         title: term
+        domain_of:
+        - Vocabulary
         range: Term
         required: false
         recommended: true
@@ -1039,12 +1057,50 @@ classes:
     from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
     close_mappings:
     - wd:Q1969448
-    is_a: NamedDataset
+    is_a: Dataset
     abstract: true
     slots:
+    - name
+    - description
     - weight
     - inVocabulary
     slot_usage:
+      name:
+        description: The label that allows humans to identify the current item
+        title: name
+        comments:
+        - 'The title of the item should be as short and descriptive as possible. E.g.
+          for virus products it should basically be based on the following Pattern:
+
+          "Virus name", "virus host type", "collection year", "country of collection"
+          ex "suspected epidemiological origin", "genotype", "strain", "variant name
+          or specific feature"'
+        exact_mappings:
+        - dct:title
+        close_mappings:
+        - rdfs:label
+        domain_of:
+        - Term
+        range: string
+        required: true
+        multivalued: false
+      description:
+        description: A short explanation of the characteristics, features, or nature
+          of the current item
+        title: description
+        comments:
+        - 'Describe this item in few lines. This description will serve as a summary
+          to present the item.
+
+          '
+        exact_mappings:
+        - dct:description
+        domain_of:
+        - Term
+        range: string
+        required: false
+        recommended: true
+        multivalued: false
       weight:
         description: A numerical value indicating relative importance or priority,
           generally processed in ascending order. This weight helps prioritize content
@@ -1054,6 +1110,8 @@ classes:
         close_mappings:
         - adms:status
         ifabsent: int(0)
+        domain_of:
+        - Term
         range: integer
         required: true
         multivalued: false
@@ -1062,6 +1120,8 @@ classes:
         title: in Vocabulary
         close_mappings:
         - wdp:P972
+        domain_of:
+        - Term
         range: Vocabulary
         required: true
         multivalued: false
@@ -1090,6 +1150,8 @@ classes:
           e.g. the NCBI taxonomy
         close_mappings:
         - wdp:P4970
+        domain_of:
+        - CommonName
         range: AlternateName
         required: false
         multivalued: true
@@ -1099,6 +1161,8 @@ classes:
         title: source of information
         close_mappings:
         - wdp:P248
+        domain_of:
+        - CommonName
         range: string
         required: false
         multivalued: true
@@ -1125,6 +1189,8 @@ classes:
         title: alternate name
         close_mappings:
         - wdp:P4970
+        domain_of:
+        - AlternateName
         range: AlternateName
         required: false
         multivalued: true
@@ -1134,6 +1200,8 @@ classes:
         title: source of information
         close_mappings:
         - wdp:P248
+        domain_of:
+        - AlternateName
         range: string
         required: false
         multivalued: true
@@ -1248,6 +1316,8 @@ classes:
           classification, organizing related subcategories under its umbrella to create
           a structured and logical order.
         title: parent category
+        domain_of:
+        - ProductCategory
         range: ProductCategory
         required: false
         multivalued: false
@@ -1289,6 +1359,8 @@ classes:
       alpha2Code:
         description: Two-letter country codes from ISO 3166-1 alpha-2
         title: alpha-2 code
+        domain_of:
+        - Country
         range: string
         required: true
         multivalued: false
@@ -1322,6 +1394,8 @@ classes:
       taxonomy:
         description: The taxonomy release(s) in which this entity exists
         title: taxonomy
+        domain_of:
+        - TaxonomicRank
         range: Taxonomy
         required: false
         multivalued: true
@@ -1350,6 +1424,8 @@ classes:
       taxonomy:
         description: The taxonomy release(s) in which this entity exists
         title: taxonomy
+        domain_of:
+        - Taxon
         range: Taxonomy
         required: false
         recommended: true
@@ -1359,6 +1435,8 @@ classes:
         title: parent taxon
         close_mappings:
         - dwc:Taxon
+        domain_of:
+        - Taxon
         range: Taxon
         required: true
         multivalued: false
@@ -1367,6 +1445,8 @@ classes:
         title: rank
         exact_mappings:
         - dwc:taxonRank
+        domain_of:
+        - Taxon
         range: TaxonomicRank
         required: true
         multivalued: false
@@ -1375,6 +1455,8 @@ classes:
         title: previously known as
         close_mappings:
         - dwc:Taxon
+        domain_of:
+        - Taxon
         range: Taxon
         required: false
         multivalued: true
@@ -1387,6 +1469,8 @@ classes:
           uses NCBI Taxonomy
         close_mappings:
         - dwc:taxonID
+        domain_of:
+        - Taxon
         range: Taxon
         required: false
         multivalued: true
@@ -1395,6 +1479,8 @@ classes:
         title: taxonomic ID
         close_mappings:
         - dwc:taxonID
+        domain_of:
+        - Taxon
         range: string
         required: true
         multivalued: false
@@ -1409,6 +1495,8 @@ classes:
           the "taxonomic node_ID" will be generated and provided by the ICTV
         close_mappings:
         - dwc:taxonID
+        domain_of:
+        - Taxon
         range: string
         required: false
         recommended: true
@@ -1429,6 +1517,8 @@ classes:
         title: reference
         close_mappings:
         - dct:identifier
+        domain_of:
+        - ExternalRelatedReference
         range: string
         required: true
         multivalued: false
@@ -1439,6 +1529,8 @@ classes:
         - e.g., 'Infravec2 related product'
         close_mappings:
         - dct:title
+        domain_of:
+        - ExternalRelatedReference
         range: string
         required: true
         multivalued: false
@@ -1448,6 +1540,8 @@ classes:
         title: reference provider prefix
         close_mappings:
         - dcat:landingPage
+        domain_of:
+        - ExternalRelatedReference
         range: string
         required: true
         multivalued: false
@@ -1456,6 +1550,8 @@ classes:
         title: reference provider name
         close_mappings:
         - dct:publisher
+        domain_of:
+        - ExternalRelatedReference
         range: string
         required: true
         multivalued: false
@@ -1474,6 +1570,8 @@ classes:
         description: A reference that permits to retrieve the sequence information
           from a sequence provider
         title: sequence reference
+        domain_of:
+        - Sequence
         range: SequenceReference
         required: false
         recommended: true
@@ -1487,6 +1585,8 @@ classes:
           definition line, must begin with a carat (">"), followed by a unique SeqID
           (sequence identifier). In case the sequence is made of multiple parts several
           fasta sequences can be provided
+        domain_of:
+        - Sequence
         range: string
         required: false
         multivalued: false
@@ -1510,6 +1610,8 @@ classes:
         title: accession number
         close_mappings:
         - dct:identifier
+        domain_of:
+        - SequenceReference
         range: string
         required: true
         multivalued: false
@@ -1519,7 +1621,9 @@ classes:
         title: sequence provider
         close_mappings:
         - dct:publisher
-        range: sequenceProviderEnumeration
+        domain_of:
+        - SequenceReference
+        range: string
         required: true
         multivalued: false
   PersonOrOrganization:
@@ -1530,12 +1634,50 @@ classes:
     - dct:Agent
     close_mappings:
     - foaf:Agent
-    is_a: Nameable
+    is_a: Dataset
     slots:
+    - name
+    - description
     - homePage
     - contactPoint
     - logo
     slot_usage:
+      name:
+        description: The label that allows humans to identify the current item
+        title: name
+        comments:
+        - 'The title of the item should be as short and descriptive as possible. E.g.
+          for virus products it should basically be based on the following Pattern:
+
+          "Virus name", "virus host type", "collection year", "country of collection"
+          ex "suspected epidemiological origin", "genotype", "strain", "variant name
+          or specific feature"'
+        exact_mappings:
+        - dct:title
+        close_mappings:
+        - rdfs:label
+        domain_of:
+        - PersonOrOrganization
+        range: string
+        required: true
+        multivalued: false
+      description:
+        description: A short explanation of the characteristics, features, or nature
+          of the current item
+        title: description
+        comments:
+        - 'Describe this item in few lines. This description will serve as a summary
+          to present the item.
+
+          '
+        exact_mappings:
+        - dct:description
+        domain_of:
+        - PersonOrOrganization
+        range: string
+        required: false
+        recommended: true
+        multivalued: false
       homePage:
         description: Refers to the degree of purity achieved for a protein sample.
           Possible values include ">95%" (the protein is highly purified, with more
@@ -1543,6 +1685,8 @@ classes:
           protein" (the protein is either unpurified and present in the host cell
           lysate or only partially purified).
         title: home page
+        domain_of:
+        - PersonOrOrganization
         range: string
         required: false
         multivalued: false
@@ -1551,6 +1695,8 @@ classes:
         title: contact point
         exact_mappings:
         - dcat:contactPoint
+        domain_of:
+        - PersonOrOrganization
         range: ContactPoint
         required: false
         recommended: true
@@ -1558,6 +1704,8 @@ classes:
       logo:
         description: A path or URL to the related logo
         title: logo
+        domain_of:
+        - PersonOrOrganization
         range: Image
         required: false
         multivalued: false
@@ -1576,6 +1724,8 @@ classes:
         description: Unique persistent identifier for a person, provided by the Open
           Researcher and Contributor ID (ORCID) organisation
         title: ORCID iD
+        domain_of:
+        - Person
         range: string
         required: false
         recommended: true
@@ -1597,6 +1747,8 @@ classes:
         title: alternate name
         close_mappings:
         - dwc:institutionCode
+        domain_of:
+        - Organization
         range: AlternateName
         required: false
         recommended: true
@@ -1604,6 +1756,8 @@ classes:
       country:
         description: The country of the organization
         title: country
+        domain_of:
+        - Organization
         range: Country
         required: false
         recommended: true
@@ -1628,6 +1782,8 @@ classes:
       memberOfRI:
         description: The research infrastructure of which this organization is a member
         title: member of RI
+        domain_of:
+        - Provider
         range: RI
         required: false
         multivalued: true
@@ -1657,6 +1813,8 @@ classes:
           material.
         title: recombinant material
         ifabsent: 'false'
+        domain_of:
+        - BiologicalMaterialOrigin
         range: boolean
         required: true
         multivalued: false
@@ -1668,6 +1826,8 @@ classes:
         comments:
         - It makes sense that only recombinant biological materials can have a mixed
           material origin!
+        domain_of:
+        - BiologicalMaterialOrigin
         range: boolean
         required: true
         multivalued: false
@@ -1678,6 +1838,8 @@ classes:
         title: biological part origin
         comments:
         - It can be multiple parts in case of a recombinant biological material.
+        domain_of:
+        - BiologicalMaterialOrigin
         range: BiologicalPartOrigin
         required: true
         multivalued: true
@@ -1699,6 +1861,8 @@ classes:
         comments:
         - Information not required if the current biological part constitutes the
           complete biological material
+        domain_of:
+        - BiologicalPartOrigin
         range: RecombinantPartIdentification
         required: false
         multivalued: false
@@ -1707,6 +1871,8 @@ classes:
           resource, applicable if the genetic resource falls under Access and Benefit-Sharing
           (ABS) regulations
         title: access to physical genetic resource
+        domain_of:
+        - BiologicalPartOrigin
         range: boolean
         required: true
         multivalued: false
@@ -1730,6 +1896,8 @@ classes:
         close_mappings:
         - dct:spatial
         - dwc:country
+        domain_of:
+        - NaturalPartOrigin
         range: Country
         required: true
         multivalued: false
@@ -1737,6 +1905,8 @@ classes:
         description: The specific IPLC area (Indigenous People and Local Communities)
           from which this sample/element was sampled, if relevant
         title: indigenous people and local community origin
+        domain_of:
+        - NaturalPartOrigin
         range: IPLCOrigin
         required: false
         multivalued: false
@@ -1745,6 +1915,8 @@ classes:
           use a proxy date such as "date received" and indicate this by setting to
           true the before date property
         title: collection date
+        domain_of:
+        - NaturalPartOrigin
         range: datetime
         required: true
         multivalued: false
@@ -1752,6 +1924,8 @@ classes:
         description: Set to TRUE if a proxy date for the collection date is used
         title: before date
         ifabsent: 'false'
+        domain_of:
+        - NaturalPartOrigin
         range: boolean
         required: true
         multivalued: false
@@ -1760,6 +1934,8 @@ classes:
           resource, applicable if the genetic resource falls under Access and Benefit-Sharing
           (ABS) regulations
         title: permit identifier for ABS
+        domain_of:
+        - NaturalPartOrigin
         required: false
         multivalued: false
   SyntheticPartOrigin:
@@ -1776,12 +1952,16 @@ classes:
         description: Set to TRUE if there was is any modification made from the reference
           sequence
         title: modifications from the reference sequence(s)
+        domain_of:
+        - SyntheticPartOrigin
         range: boolean
         required: true
         multivalued: false
       descriptionOfModificationsMadeFromTheReferenceSequences:
         description: List the modifications mades from the reference sequence if any
         title: description of modification(s) made from the reference sequence(s)
+        domain_of:
+        - SyntheticPartOrigin
         range: string
         required: false
         recommended: true
@@ -1799,6 +1979,8 @@ classes:
         description: A short designation of this recombinant part of the related biological
           material
         title: Part identification
+        domain_of:
+        - RecombinantPartIdentification
         range: string
         required: true
         multivalued: false
@@ -1806,6 +1988,8 @@ classes:
         description: The related sequence information from a sequence provider or
           in fasta format
         title: sequence
+        domain_of:
+        - RecombinantPartIdentification
         range: Sequence
         required: true
         recommended: true
@@ -1826,6 +2010,8 @@ classes:
         title: collection item
         close_mappings:
         - dcat:resource
+        domain_of:
+        - Collection
         range: ProductOrService
         required: false
         recommended: true
@@ -1835,6 +2021,8 @@ classes:
         title: collection data provider
         close_mappings:
         - dct:isReferencedBy
+        domain_of:
+        - Collection
         range: DataProvider
         required: false
         multivalued: false
@@ -1844,9 +2032,11 @@ classes:
     comments:
     - part of  wd:Q2897903 (goods and services )
     from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
-    is_a: NamedDataset
+    is_a: Dataset
     abstract: true
     slots:
+    - name
+    - description
     - accessPointURL
     - refSKU
     - unitDefinition
@@ -1872,6 +2062,42 @@ classes:
     - note
     - contactPoint
     slot_usage:
+      name:
+        description: The label that allows humans to identify the current item
+        title: name
+        comments:
+        - 'The title of the item should be as short and descriptive as possible. E.g.
+          for virus products it should basically be based on the following Pattern:
+
+          "Virus name", "virus host type", "collection year", "country of collection"
+          ex "suspected epidemiological origin", "genotype", "strain", "variant name
+          or specific feature"'
+        exact_mappings:
+        - dct:title
+        close_mappings:
+        - rdfs:label
+        domain_of:
+        - ProductOrService
+        range: string
+        required: true
+        multivalued: false
+      description:
+        description: A short explanation of the characteristics, features, or nature
+          of the current item
+        title: description
+        comments:
+        - 'Describe this item in few lines. This description will serve as a summary
+          to present the item.
+
+          '
+        exact_mappings:
+        - dct:description
+        domain_of:
+        - ProductOrService
+        range: string
+        required: false
+        recommended: true
+        multivalued: false
       accessPointURL:
         description: The URL that permits to access to the product/service detailed
           description page on the provider's website and/or allows to place an order
@@ -1879,6 +2105,8 @@ classes:
         title: access point URL
         exact_mappings:
         - dcat:landingPage
+        domain_of:
+        - ProductOrService
         range: uri
         required: true
         multivalued: false
@@ -1888,6 +2116,8 @@ classes:
         title: ref-SKU
         exact_mappings:
         - dct:identifier
+        domain_of:
+        - ProductOrService
         range: string
         required: true
         multivalued: false
@@ -1898,6 +2128,8 @@ classes:
         comments:
         - 'The description of what will be delivered to the end-user (e.g.: packaging,
           quantity...)'
+        domain_of:
+        - ProductOrService
         range: string
         required: false
         recommended: true
@@ -1907,6 +2139,8 @@ classes:
         title: category
         exact_mappings:
         - dcat:theme
+        domain_of:
+        - ProductOrService
         range: ProductCategory
         required: true
         multivalued: false
@@ -1916,6 +2150,8 @@ classes:
         title: additional category
         exact_mappings:
         - dcat:theme
+        domain_of:
+        - ProductOrService
         range: ProductCategory
         required: false
         recommended: true
@@ -1928,6 +2164,8 @@ classes:
           has to be a xsd:string instead of an xsd:float as initialy suggested to
           permit description of cost as conditional to what is requested
         ifabsent: string(on request)
+        domain_of:
+        - ProductOrService
         range: string
         required: true
         recommended: true
@@ -1936,6 +2174,8 @@ classes:
         description: Information that permits to assess the quality level of what
           will be provided
         title: quality grading
+        domain_of:
+        - ProductOrService
         range: string
         required: false
         multivalued: false
@@ -1948,6 +2188,8 @@ classes:
           in some cases(e.g: FAIRSHARING) there may have no direct pathogen related
           but simply a taxonomic information .... the default value should be the
           root of virology: Viruses'
+        domain_of:
+        - ProductOrService
         range: PathogenIdentification
         required: true
         multivalued: true
@@ -1956,6 +2198,8 @@ classes:
         title: DOI
         close_mappings:
         - wdp:P356
+        domain_of:
+        - ProductOrService
         range: DOI
         required: false
         multivalued: true
@@ -1966,6 +2210,8 @@ classes:
         title: risk group
         close_mappings:
         - wdp:P12663
+        domain_of:
+        - ProductOrService
         range: RiskGroup
         required: false
         recommended: true
@@ -1976,6 +2222,8 @@ classes:
           thereby contributes to protecting people and the environment from biohazards
           while accessing this product or service
         title: biosafety restrictions
+        domain_of:
+        - ProductOrService
         range: string
         required: false
         multivalued: false
@@ -1986,19 +2234,25 @@ classes:
         comments:
         - Set to TRUE if it can produce GMO. It is recommended to have a value for
           this field, no value will be understood as unknown
+        domain_of:
+        - ProductOrService
         range: boolean
-        required: false
+        required: true
         recommended: true
         multivalued: false
       provider:
         description: A provider of this product or service, as a specific organization
         title: provider
+        domain_of:
+        - ProductOrService
         range: Provider
         required: true
         multivalued: false
       collection:
         description: The collection(s) to which belongs this item
         title: collection
+        domain_of:
+        - ProductOrService
         range: Collection
         required: true
         multivalued: true
@@ -2007,6 +2261,8 @@ classes:
         title: keywords
         exact_mappings:
         - dcat:keyword
+        domain_of:
+        - ProductOrService
         range: Keyword
         required: true
         recommended: true
@@ -2018,12 +2274,16 @@ classes:
         comments:
         - Possible availabilities may differ from a project to another
         ifabsent: string(on request)
+        domain_of:
+        - ProductOrService
         range: string
         required: true
         multivalued: false
       complementaryDocument:
         description: Any complementary document that can be related to this Item
         title: complementary document
+        domain_of:
+        - ProductOrService
         range: Document
         required: false
         multivalued: true
@@ -2032,12 +2292,16 @@ classes:
           performance, and maintenance of what is provided, including best practices,
           troubleshooting tips, and procedural instructions
         title: technical recommendation
+        domain_of:
+        - ProductOrService
         range: string
         required: false
         multivalued: false
       productPicture:
         description: A picture that can represent the item
         title: product picture
+        domain_of:
+        - ProductOrService
         range: Image
         required: false
         multivalued: true
@@ -2045,6 +2309,8 @@ classes:
         description: A reference that permits to retrieve another related item from
           an external provider
         title: external related reference
+        domain_of:
+        - ProductOrService
         range: ExternalRelatedReference
         required: false
         multivalued: true
@@ -2054,18 +2320,24 @@ classes:
         title: certification
         close_mappings:
         - dct:conformsTo
+        domain_of:
+        - ProductOrService
         range: Certification
         required: false
         multivalued: true
       internalReference:
         description: Any reference or indication to be used for local retrieval purpose
         title: internal reference
+        domain_of:
+        - ProductOrService
         range: string
         required: false
         multivalued: false
       note:
         description: An aditional information as a textual comment
         title: note
+        domain_of:
+        - ProductOrService
         range: string
         required: false
         multivalued: false
@@ -2074,6 +2346,8 @@ classes:
         title: contact point
         exact_mappings:
         - dcat:contactPoint
+        domain_of:
+        - ProductOrService
         range: ContactPoint
         required: false
         recommended: true
@@ -2092,6 +2366,8 @@ classes:
       modelSpecies:
         description: The species of the infected organism in the experiment
         title: model species
+        domain_of:
+        - Service
         range: string
         required: false
         multivalued: false
@@ -2099,6 +2375,8 @@ classes:
         description: The specific name of the infected organism, including its modification
           if necessary
         title: model type
+        domain_of:
+        - Service
         range: string
         required: false
         multivalued: false
@@ -2122,6 +2400,8 @@ classes:
         description: The corresponding International Air Transport Association (IATA)'s
           category for this Product
         title: IATA classification
+        domain_of:
+        - Product
         range: IATAClassification
         required: true
         multivalued: false
@@ -2130,6 +2410,8 @@ classes:
 
           '
         title: shipping conditions
+        domain_of:
+        - Product
         range: string
         required: true
         multivalued: false
@@ -2142,6 +2424,8 @@ classes:
         - The MSD  is a document that provides detailed information about the properties,
           hazards, handling, storage, and emergency procedures related to the use
           of a chemical or substance
+        domain_of:
+        - Product
         range: MSDS
         required: false
         multivalued: false
@@ -2150,6 +2434,8 @@ classes:
           isolation, or creation of an item, providing information about the source
           or origin of the sample
         title: originator
+        domain_of:
+        - Product
         range: Originator
         required: false
         multivalued: false
@@ -2163,6 +2449,8 @@ classes:
           , \"Viral Storage Medium -20C\", \"Viral Storage Medium -80C\", \"Living\
           \ plant material (>= +4\xB0C)\", \"Gas Phase\", \"Ethanol -20C\", \"Ethanol\
           \ -80C\", \"Dried\")"
+        domain_of:
+        - Product
         range: string
         required: true
         multivalued: false
@@ -2171,6 +2459,8 @@ classes:
           without restriction to third parties, as indicated by the ABS permit, in
           case an ABS permit is required
         title: third party distribution consent
+        domain_of:
+        - Product
         range: boolean
         required: false
         multivalued: false
@@ -2179,6 +2469,8 @@ classes:
           material, including restrictions on research, commercial use, or distribution,
           considering any potential concerns about the related genetic material
         title: usage restrictions
+        domain_of:
+        - Product
         range: string
         required: false
         multivalued: false
@@ -2201,6 +2493,8 @@ classes:
         description: The biological and technological methods and processes used to
           produce the antibody
         title: production system
+        domain_of:
+        - Antibody
         range: string
         required: false
         recommended: true
@@ -2208,12 +2502,16 @@ classes:
       antibodyPurifiedByAffinity:
         description: Indicates whether or not if the antibody was purified by affinity
         title: antibody purified by affinity
+        domain_of:
+        - Antibody
         range: boolean
         required: true
         multivalued: false
       specificityDocumented:
         description: Tell if the antibody specificity was documented
         title: specificity documented
+        domain_of:
+        - Antibody
         range: boolean
         required: true
         multivalued: false
@@ -2221,6 +2519,8 @@ classes:
         description: Specific molecular structure or epitope recognized and bound
           by an antibody
         title: targeted antigen
+        domain_of:
+        - Antibody
         range: string
         required: true
         multivalued: false
@@ -2228,6 +2528,8 @@ classes:
         description: A reference that permits to retreive the sequence information
           from a sequence provider
         title: sequence reference
+        domain_of:
+        - Antibody
         range: SequenceReference
         required: false
         recommended: true
@@ -2245,6 +2547,8 @@ classes:
       hybridomaDescription:
         description: The description of the hybridoma
         title: hybridoma description
+        domain_of:
+        - Hybridoma
         range: string
         required: true
         multivalued: false
@@ -2276,6 +2580,8 @@ classes:
           for access, utilization, and benefit-sharing of genetic resources in compliance
           with the Nagoya Protocol.
         title: Biological Material origin
+        domain_of:
+        - Protein
         range: BiologicalMaterialOrigin
         required: true
         multivalued: false
@@ -2283,6 +2589,8 @@ classes:
         description: The related sequence information from a sequence provider or
           in fasta format
         title: sequence
+        domain_of:
+        - Protein
         range: Sequence
         required: true
         multivalued: true
@@ -2292,6 +2600,8 @@ classes:
         title: related PDB
         close_mappings:
         - wdp:P638
+        domain_of:
+        - Protein
         range: PDBReference
         required: false
         multivalued: true
@@ -2300,12 +2610,16 @@ classes:
           similar items e.g., Reference strain, Vaccinal strain, Antiviral resistant
           strain ...
         title: special feature
+        domain_of:
+        - Protein
         range: SpecialFeature
         required: false
         multivalued: true
       proteinTAG:
         description: Peptide sequences genetically grafted onto a recombinant protein
         title: protein TAG
+        domain_of:
+        - Protein
         range: ProteinTag
         required: false
         multivalued: true
@@ -2314,6 +2628,8 @@ classes:
           often capable of independent folding and stability, which contributes to
           the protein's overall function
         title: domain
+        domain_of:
+        - Protein
         range: string
         required: false
         multivalued: true
@@ -2323,7 +2639,9 @@ classes:
           are dissolved in the cellular or extracellular fluid) and "Inclusion bodies"
           (aggregated proteins that are insoluble and form within the cell)
         title: expressed as
-        range: expressedAsEnumeration
+        domain_of:
+        - Protein
+        range: string
         required: false
         multivalued: true
       inclusionBodiesType:
@@ -2332,7 +2650,9 @@ classes:
           and "Refolded" (proteins have been processed to regain their functional,
           active conformation).
         title: inclusion bodies type
-        range: inclusionBodiesTypeEnumeration
+        domain_of:
+        - Protein
+        range: string
         required: false
         multivalued: true
       expressionSystem:
@@ -2341,7 +2661,9 @@ classes:
           "Insect cells" (using baculovirus vectors), and "Mammalian cells" (mammalian
           cell lines).
         title: expression system
-        range: expressionSystemEnumeration
+        domain_of:
+        - Protein
+        range: string
         required: false
         multivalued: true
       functionalCharacterization:
@@ -2351,7 +2673,9 @@ classes:
           and "No functional characterization" (the protein's functions have not been
           identified or described).
         title: functional characterization
-        range: functionalCharacterizationEnumeration
+        domain_of:
+        - Protein
+        range: string
         required: false
         multivalued: true
       functionalTechnicalDescription:
@@ -2361,6 +2685,8 @@ classes:
           processes, and any relevant technical details such as structure, activity,
           and interactions with other molecules.
         title: functional/Technical description
+        domain_of:
+        - Protein
         range: string
         required: false
         multivalued: true
@@ -2371,7 +2697,9 @@ classes:
           protein" (the protein is either unpurified and present in the host cell
           lysate or only partially purified).
         title: protein purification
-        range: proteinPurificationEnumeration
+        domain_of:
+        - Protein
+        range: string
         required: false
         multivalued: true
       theTAGStatusOfTheSolubilizedProtein:
@@ -2380,6 +2708,8 @@ classes:
           still attached to the protein), "Cleaved Tag" (the tag has been removed
           from the protein), and "No Tag" (the protein does not have a tag)
         title: TAG status of the solubilized protein
+        domain_of:
+        - Protein
         range: string
         required: false
         multivalued: true
@@ -2390,7 +2720,9 @@ classes:
           for its enzyme activity) and "Antigenic" (the protein has been characterized
           for its ability to elicit an immune response).
         title: type of functional Characterization
-        range: typeOfFunctionalCharacterizationEnumeration
+        domain_of:
+        - Protein
+        range: string
         required: false
         multivalued: true
   Nucleic Acid:
@@ -2421,6 +2753,8 @@ classes:
           for access, utilization, and benefit-sharing of genetic resources in compliance
           with the Nagoya Protocol
         title: Biological Material origin
+        domain_of:
+        - Nucleic Acid
         range: BiologicalMaterialOrigin
         required: true
         multivalued: false
@@ -2428,6 +2762,8 @@ classes:
         description: A GenBank formatted file that contains detailed sequence and
           annotation information of a nucleic acid construct
         title: has .gb file of the construct
+        domain_of:
+        - Nucleic Acid
         range: Data
         required: false
         multivalued: true
@@ -2435,6 +2771,8 @@ classes:
         description: The related sequence information from a sequence provider or
           in fasta format
         title: sequence
+        domain_of:
+        - Nucleic Acid
         range: Sequence
         required: true
         multivalued: true
@@ -2442,12 +2780,16 @@ classes:
         description: Indicates that the nucleic acid sequence has been inserted into
           a plasmid vector for propagation or expression in a host organism
         title: is it a Cloned Nucleic Acid?
+        domain_of:
+        - Nucleic Acid
         range: boolean
         required: true
         multivalued: false
       clonedIntoPlasmid:
         description: The plasmid into which the nucleic acid has been cloned
         title: cloned into plasmid
+        domain_of:
+        - Nucleic Acid
         range: ExpressionVector
         required: false
         recommended: true
@@ -2456,6 +2798,8 @@ classes:
         description: Specific selectable markers in the plasmid, such as antibiotic
           resistance genes, used to identify and maintain cells that contain the plasmid
         title: plasmid selection
+        domain_of:
+        - Nucleic Acid
         range: PlasmidSelection
         required: false
         recommended: true
@@ -2464,12 +2808,16 @@ classes:
         description: TAG sequence used for purposes such as purification, detection,
           or localization
         title: TAG
+        domain_of:
+        - Nucleic Acid
         range: ProteinTag
         required: true
         multivalued: false
       regionEncompassedInThisProduct:
         description: The specific region encompassed in the product
         title: region encompassed in this Product
+        domain_of:
+        - Nucleic Acid
         range: string
         required: true
         multivalued: false
@@ -2478,6 +2826,8 @@ classes:
           \ to the reference sequence if the value is set to false or if it\n contains\
           \ mutations (no frameshift, no unexpected STOP codon) if set to true"
         title: mutation observed
+        domain_of:
+        - Nucleic Acid
         range: boolean
         required: true
         multivalued: false
@@ -2485,6 +2835,8 @@ classes:
         description: The specific mutations that have been identified and documented
           in the nucleic acid sequence
         title: observed mutations
+        domain_of:
+        - Nucleic Acid
         range: string
         required: false
         multivalued: false
@@ -2492,6 +2844,8 @@ classes:
         description: The method used to identify the nucleic acid sequence or its
           associated constructs, such as PCR, sequencing, or hybridization
         title: identification technique
+        domain_of:
+        - Nucleic Acid
         range: string
         required: false
         multivalued: false
@@ -2504,7 +2858,9 @@ classes:
         title: sequencing
         comments:
         - Cloned products have to be sequenced
-        range: sequencingEnumeration
+        domain_of:
+        - Nucleic Acid
+        range: string
         required: true
         multivalued: false
       titer:
@@ -2513,6 +2869,8 @@ classes:
           present in the sample. The titer corresponds to the highest dilution factor
           that still yields a positive reading
         title: titer
+        domain_of:
+        - Nucleic Acid
         range: string
         required: false
         multivalued: false
@@ -2522,6 +2880,8 @@ classes:
         title: sequence checked
         comments:
         - Sequence check is mandatory for cloned products
+        domain_of:
+        - Nucleic Acid
         range: boolean
         required: true
         multivalued: false
@@ -2539,6 +2899,8 @@ classes:
       hasSOPFile:
         description: The related standard operating procedure file
         title: has SOP File
+        domain_of:
+        - Detection Kit
         range: File
         required: false
         multivalued: true
@@ -2546,6 +2908,8 @@ classes:
         description: Boolean value indicating whether the specificity of the detection
           kit has been formally documented.
         title: specificity documented
+        domain_of:
+        - Detection Kit
         range: boolean
         required: true
         multivalued: false
@@ -2554,6 +2918,8 @@ classes:
           negative results, distinguishing between the target analyte and other substances
           without cross-reacting
         title: specificity
+        domain_of:
+        - Detection Kit
         range: string
         required: false
         multivalued: false
@@ -2562,6 +2928,8 @@ classes:
           the detection kit is designed to identify and interact with, ensuring accurate
           detection and analysis.
         title: targeted region
+        domain_of:
+        - Detection Kit
         range: string
         required: false
         multivalued: false
@@ -2580,6 +2948,8 @@ classes:
         description: Associates the bundle with the individual products it contains,
           specifying the components included within the bundle.
         title: products of the bundle
+        domain_of:
+        - Bundle
         range: Product
         required: true
         multivalued: true
@@ -2590,6 +2960,8 @@ classes:
 
           '
         title: complementary document
+        domain_of:
+        - Bundle
         range: File
         required: false
         multivalued: true
@@ -2628,6 +3000,8 @@ classes:
           for access, utilization, and benefit-sharing of genetic resources in compliance
           with the Nagoya Protocol.
         title: Biological Material origin
+        domain_of:
+        - Pathogen
         range: BiologicalMaterialOrigin
         required: true
         multivalued: false
@@ -2637,12 +3011,16 @@ classes:
         title: suspected epidemiological origin
         close_mappings:
         - dct:spatial
+        domain_of:
+        - Pathogen
         range: GeographicalOrigin
         required: false
         multivalued: true
       isolationHost:
         description: The host organism from which the pathogen was originally isolated
         title: isolation host
+        domain_of:
+        - Pathogen
         range: IsolationHost
         required: false
         multivalued: true
@@ -2650,12 +3028,16 @@ classes:
         description: The cell line used for the production or propagation of the pathogen,
           detailing the cellular environment employed in its cultivation and study
         title: production cell line
+        domain_of:
+        - Pathogen
         range: ProductionCellLine
         required: false
         multivalued: true
       propagationHost:
         description: The host organism that propagates the pathogen
         title: propagation host
+        domain_of:
+        - Pathogen
         range: PropagationHost
         required: false
         multivalued: true
@@ -2663,6 +3045,8 @@ classes:
         description: The method or route through which the pathogen is transmitted
           from one host to another, detailing the mechanisms of infection spread.
         title: transmission method
+        domain_of:
+        - Pathogen
         range: TransmissionMethod
         required: false
         multivalued: true
@@ -2670,6 +3054,8 @@ classes:
         description: The related sequence information from a sequence provider or
           in fasta format
         title: sequence
+        domain_of:
+        - Pathogen
         range: Sequence
         required: true
         multivalued: true
@@ -2681,13 +3067,17 @@ classes:
         comments:
         - Might also be related to a product sub-category that helps filtering
         ifabsent: string(Cultivable)
-        range: cultivabilityEnumeration
+        domain_of:
+        - Pathogen
+        range: string
         required: true
         multivalued: false
       clinicalInformation:
         description: Details about the clinical aspects of the pathogen, including
           symptoms, severity, treatment protocols, and patient outcomes
         title: clinical information
+        domain_of:
+        - Pathogen
         range: string
         required: false
         multivalued: false
@@ -2696,6 +3086,8 @@ classes:
           of the pathogen, detailing the specific procedures and tools employed in
           the detection process
         title: identification technique
+        domain_of:
+        - Pathogen
         range: string
         required: false
         multivalued: false
@@ -2704,7 +3096,9 @@ classes:
           in a host organism, with possible values detailing whether infectivity has
           been tested, quantified, or cannot be tested due to non-cultivable nature.
         title: infectivity
-        range: infectivityEnumeration
+        domain_of:
+        - Pathogen
+        range: string
         required: true
         multivalued: false
       infectivityTest:
@@ -2712,6 +3106,8 @@ classes:
           details on the methods, conditions, and results of the test used to assess
           the pathogen's ability to infect a host organism
         title: infectivity Test
+        domain_of:
+        - Pathogen
         range: string
         required: false
         multivalued: false
@@ -2720,6 +3116,8 @@ classes:
           from a host organism or sample, detailing the techniques and tools employed
           in the isolation process
         title: isolation technique
+        domain_of:
+        - Pathogen
         range: string
         required: false
         multivalued: false
@@ -2727,6 +3125,8 @@ classes:
         description: The environmental and procedural conditions under which the pathogen
           was isolated
         title: isolation conditions
+        domain_of:
+        - Pathogen
         range: string
         required: false
         multivalued: false
@@ -2736,7 +3136,9 @@ classes:
           Required", "Required for customers in the EU" or "Required"
         title: letter of authority
         ifabsent: string(Not applicable)
-        range: letterOfAuthorityEnumeration
+        domain_of:
+        - Pathogen
+        range: string
         required: true
         multivalued: false
       passage:
@@ -2744,6 +3146,8 @@ classes:
           passage, a process used to increase the stock but which can also lead to
           the evolution of the original pathogen.
         title: passage
+        domain_of:
+        - Pathogen
         range: string
         required: false
         multivalued: false
@@ -2753,7 +3157,9 @@ classes:
           "Complete coding sequence" for all coding regions, and "Partial sequence"
           for only a portion of the genetic material
         title: genome sequencing
-        range: genomeSequencingEnumeration
+        domain_of:
+        - Pathogen
+        range: string
         required: true
         multivalued: false
       titer:
@@ -2764,6 +3170,8 @@ classes:
         title: titer
         close_mappings:
         - wd:Q2166189
+        domain_of:
+        - Pathogen
         range: string
         required: true
         multivalued: false
@@ -2784,6 +3192,8 @@ classes:
           along with the primary virus, indicating the presence of multiple viral
           infections within the same host.
         title: co-infecting viruses
+        domain_of:
+        - Virus
         range: VirusName
         required: false
         multivalued: true
@@ -2792,6 +3202,8 @@ classes:
           co-infecting viruses
         title: contamination with co-infecting viruses
         ifabsent: 'false'
+        domain_of:
+        - Virus
         range: boolean
         required: true
         multivalued: false
@@ -2799,6 +3211,8 @@ classes:
         description: Indicates the presence of mycoplasma contamination within the
           sample
         title: mycoplasmic content
+        domain_of:
+        - Virus
         range: boolean
         required: true
         multivalued: false
@@ -2870,6 +3284,8 @@ classes:
         title: MSDS contact
         exact_mappings:
         - dcat:contactPoint
+        domain_of:
+        - MSDS
         range: ContactPoint
         required: true
         multivalued: false
@@ -2878,6 +3294,8 @@ classes:
           solubility, pH, chemical composition, and molecular weight, essential for
           safe handling and storage
         title: physical and chemical properties and information on ingredients
+        domain_of:
+        - MSDS
         range: string
         required: false
         recommended: true
@@ -2888,6 +3306,8 @@ classes:
           section provides information on toxicity, flammability, reactivity, and
           other relevant risks for safe use.
         title: hazards identification
+        domain_of:
+        - MSDS
         range: string
         required: false
         recommended: true
@@ -2897,6 +3317,8 @@ classes:
           to the product, including inhalation, ingestion, skin, or eye contact. This
           section outlines steps to minimize harm before medical help is available.
         title: first aid measures
+        domain_of:
+        - MSDS
         range: string
         required: false
         recommended: true
@@ -2906,6 +3328,8 @@ classes:
           including suitable extinguishing agents, special protective equipment for
           firefighters, and any specific hazards from combustion.
         title: fire fighting measures
+        domain_of:
+        - MSDS
         range: string
         required: false
         recommended: true
@@ -2915,6 +3339,8 @@ classes:
           including containment, cleanup procedures, and precautions to prevent harm
           to people, property, and the environment.
         title: accidental release measures
+        domain_of:
+        - MSDS
         range: string
         required: false
         recommended: true
@@ -2925,6 +3351,8 @@ classes:
           or contamination, as well as recommended temperature, humidity, and container
           requirements.
         title: handling and storage
+        domain_of:
+        - MSDS
         range: string
         required: false
         recommended: true
@@ -2935,6 +3363,8 @@ classes:
           equipment (PPE) such as gloves, masks, goggles, and clothing to ensure safe
           handling.
         title: exposure controls/personal protection
+        domain_of:
+        - MSDS
         range: string
         required: false
         recommended: true
@@ -2945,6 +3375,8 @@ classes:
           \ information on hazardous reactions, conditions to avoid, and incompatible\
           \ materials that could cause degradation or dangerous reactions."
         title: stability and reactivity
+        domain_of:
+        - MSDS
         range: string
         required: false
         recommended: true
@@ -2954,6 +3386,8 @@ classes:
           routes of exposure (inhalation, ingestion, skin, eye contact), acute and
           chronic toxicity and symptoms of exposure
         title: toxicological information
+        domain_of:
+        - MSDS
         range: string
         required: false
         recommended: true
@@ -2963,6 +3397,8 @@ classes:
           its effects on ecosystems, persistence, degradability, bioaccumulation potential,
           and toxicity to aquatic and terrestrial organisms.
         title: ecological information
+        domain_of:
+        - MSDS
         range: string
         required: false
         recommended: true
@@ -2972,6 +3408,8 @@ classes:
           of the product, including recommended disposal methods, regulatory requirements,
           and precautions to avoid harm to people and the environment during disposal.
         title: disposal considerations
+        domain_of:
+        - MSDS
         range: string
         required: false
         recommended: true
@@ -2982,6 +3420,8 @@ classes:
           UN numbers, packaging requirements, and any special precautions to ensure
           safe transit.
         title: transport information
+        domain_of:
+        - MSDS
         range: string
         required: false
         recommended: true
@@ -2992,6 +3432,8 @@ classes:
           handling, use, transportation, and disposal, ensuring compliance with legal
           obligations.
         title: regulatory information
+        domain_of:
+        - MSDS
         range: string
         required: false
         recommended: true
@@ -3001,6 +3443,8 @@ classes:
           in other sections of the MSDS, such as references, supporting documents,
           or specific instructions for safe handling and use of the product.
         title: further information
+        domain_of:
+        - MSDS
         range: string
         required: false
         recommended: true
@@ -3014,17 +3458,56 @@ classes:
     - dcat:mediaType
     close_mappings:
     - wd:Q82753
-    is_a: Nameable
     abstract: true
     slots:
+    - name
+    - description
     - contentURL
     - format
     - license
     slot_usage:
+      name:
+        description: The label that allows humans to identify the current item
+        title: name
+        comments:
+        - 'The title of the item should be as short and descriptive as possible. E.g.
+          for virus products it should basically be based on the following Pattern:
+
+          "Virus name", "virus host type", "collection year", "country of collection"
+          ex "suspected epidemiological origin", "genotype", "strain", "variant name
+          or specific feature"'
+        exact_mappings:
+        - dct:title
+        close_mappings:
+        - rdfs:label
+        domain_of:
+        - File
+        range: string
+        required: true
+        multivalued: false
+      description:
+        description: A short explanation of the characteristics, features, or nature
+          of the current item
+        title: description
+        comments:
+        - 'Describe this item in few lines. This description will serve as a summary
+          to present the item.
+
+          '
+        exact_mappings:
+        - dct:description
+        domain_of:
+        - File
+        range: string
+        required: false
+        recommended: true
+        multivalued: false
       contentURL:
         description: The web address or location where the file content is stored
           and can be accessed or downloaded.
         title: content URL
+        domain_of:
+        - File
         range: uri
         required: true
         multivalued: false
@@ -3032,6 +3515,8 @@ classes:
         description: The file type or format that indicates how the data within the
           file is structured
         title: format
+        domain_of:
+        - File
         range: string
         required: true
         multivalued: false
@@ -3039,6 +3524,8 @@ classes:
         description: The legal terms and conditions under which the file can be used,
           shared, or distributed, indicating any restrictions or permissions.
         title: license
+        domain_of:
+        - File
         range: License
         required: false
         multivalued: false
@@ -3087,6 +3574,8 @@ classes:
       altText:
         description: An alternate text for the image, if the image cannot be displayed
         title: alt text
+        domain_of:
+        - Image
         range: string
         required: false
         recommended: true
@@ -3098,8 +3587,10 @@ classes:
     close_mappings:
     - wd:Q30322502
     - vcard:Contact
-    is_a: Nameable
+    is_a: Dataset
     slots:
+    - name
+    - description
     - email
     - telephone
     - streetAddress
@@ -3109,12 +3600,50 @@ classes:
     - addressCountry
     - oRCIDiD
     slot_usage:
+      name:
+        description: The label that allows humans to identify the current item
+        title: name
+        comments:
+        - 'The title of the item should be as short and descriptive as possible. E.g.
+          for virus products it should basically be based on the following Pattern:
+
+          "Virus name", "virus host type", "collection year", "country of collection"
+          ex "suspected epidemiological origin", "genotype", "strain", "variant name
+          or specific feature"'
+        exact_mappings:
+        - dct:title
+        close_mappings:
+        - rdfs:label
+        domain_of:
+        - ContactPoint
+        range: string
+        required: true
+        multivalued: false
+      description:
+        description: A short explanation of the characteristics, features, or nature
+          of the current item
+        title: description
+        comments:
+        - 'Describe this item in few lines. This description will serve as a summary
+          to present the item.
+
+          '
+        exact_mappings:
+        - dct:description
+        domain_of:
+        - ContactPoint
+        range: string
+        required: false
+        recommended: true
+        multivalued: false
       email:
         description: Email address
         title: email
         close_mappings:
         - schema:email
         - vcard:email
+        domain_of:
+        - ContactPoint
         range: string
         required: false
         recommended: true
@@ -3125,6 +3654,8 @@ classes:
         close_mappings:
         - schema:telephone
         - vcard:telephone
+        domain_of:
+        - ContactPoint
         range: string
         required: false
         recommended: true
@@ -3135,6 +3666,8 @@ classes:
         close_mappings:
         - schema:streetAddress
         - vcard:hasStreetAddress
+        domain_of:
+        - ContactPoint
         range: string
         required: false
         multivalued: false
@@ -3145,6 +3678,8 @@ classes:
         close_mappings:
         - schema:addressLocality
         - vcard:hasLocality
+        domain_of:
+        - ContactPoint
         range: string
         required: false
         multivalued: false
@@ -3156,6 +3691,8 @@ classes:
         close_mappings:
         - schema:addressRegion
         - vcard:hasRegion
+        domain_of:
+        - ContactPoint
         range: string
         required: false
         multivalued: false
@@ -3165,6 +3702,8 @@ classes:
         close_mappings:
         - schema:postalCode
         - vcard:hasPostalCode
+        domain_of:
+        - ContactPoint
         range: string
         required: false
         multivalued: false
@@ -3174,6 +3713,8 @@ classes:
         close_mappings:
         - schema:addressCountry
         - vcard:hasCountryName
+        domain_of:
+        - ContactPoint
         range: Country
         required: false
         multivalued: false
@@ -3183,6 +3724,8 @@ classes:
         title: ORCID iD
         exact_mappings:
         - IAO:0000708
+        domain_of:
+        - ContactPoint
         range: string
         required: false
         recommended: true
@@ -3197,12 +3740,50 @@ classes:
     close_mappings:
     - wd:Q79719
     - dct:LicenseDocument
-    is_a: Nameable
+    is_a: Dataset
     slots:
+    - name
+    - description
     - resourceURL
     - licensingOrAttribution
     - logo
     slot_usage:
+      name:
+        description: The label that allows humans to identify the current item
+        title: name
+        comments:
+        - 'The title of the item should be as short and descriptive as possible. E.g.
+          for virus products it should basically be based on the following Pattern:
+
+          "Virus name", "virus host type", "collection year", "country of collection"
+          ex "suspected epidemiological origin", "genotype", "strain", "variant name
+          or specific feature"'
+        exact_mappings:
+        - dct:title
+        close_mappings:
+        - rdfs:label
+        domain_of:
+        - License
+        range: string
+        required: true
+        multivalued: false
+      description:
+        description: A short explanation of the characteristics, features, or nature
+          of the current item
+        title: description
+        comments:
+        - 'Describe this item in few lines. This description will serve as a summary
+          to present the item.
+
+          '
+        exact_mappings:
+        - dct:description
+        domain_of:
+        - License
+        range: string
+        required: false
+        recommended: true
+        multivalued: false
       resourceURL:
         description: The web address or location where the details or content is stored
           and can be accessed or downloaded.
@@ -3211,6 +3792,8 @@ classes:
         - dct:license
         close_mappings:
         - schema:url
+        domain_of:
+        - License
         range: uri
         required: false
         multivalued: false
@@ -3222,12 +3805,16 @@ classes:
         - dct:rights
         close_mappings:
         - schema:license
+        domain_of:
+        - License
         range: string
         required: false
         multivalued: false
       logo:
         description: A path or URL to the related logo
         title: logo
+        domain_of:
+        - License
         range: Image
         required: false
         multivalued: false
@@ -3239,15 +3826,55 @@ classes:
     close_mappings:
     - wd:Q374814
     - schema:Certification
-    is_a: Nameable
+    is_a: Dataset
     slots:
+    - name
+    - description
     - logo
     - certificationDocument
     - resourceURL
     slot_usage:
+      name:
+        description: The label that allows humans to identify the current item
+        title: name
+        comments:
+        - 'The title of the item should be as short and descriptive as possible. E.g.
+          for virus products it should basically be based on the following Pattern:
+
+          "Virus name", "virus host type", "collection year", "country of collection"
+          ex "suspected epidemiological origin", "genotype", "strain", "variant name
+          or specific feature"'
+        exact_mappings:
+        - dct:title
+        close_mappings:
+        - rdfs:label
+        domain_of:
+        - Certification
+        range: string
+        required: true
+        multivalued: false
+      description:
+        description: A short explanation of the characteristics, features, or nature
+          of the current item
+        title: description
+        comments:
+        - 'Describe this item in few lines. This description will serve as a summary
+          to present the item.
+
+          '
+        exact_mappings:
+        - dct:description
+        domain_of:
+        - Certification
+        range: string
+        required: false
+        recommended: true
+        multivalued: false
       logo:
         description: A path or URL to the related logo
         title: logo
+        domain_of:
+        - Certification
         range: Image
         required: false
         multivalued: false
@@ -3256,6 +3883,8 @@ classes:
           of the subject to the applicable scheme, including, as the case may be,
           the documents attesting the equivalence to another certification scheme.
         title: certification document
+        domain_of:
+        - Certification
         range: Document
         required: false
         multivalued: true
@@ -3265,8 +3894,10 @@ classes:
         title: resource URL
         close_mappings:
         - schema:url
+        domain_of:
+        - Certification
         range: uri
         required: false
         multivalued: false
 source_file: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl
-generation_date: '2025-01-20T16:32:58'
+generation_date: '2025-01-23T10:47:04'

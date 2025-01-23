@@ -17,7 +17,7 @@
     "https://orcid.org/0000-0002-2042-2839"
   ],
   "id": "https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#",
-  "version": "1.0.7897",
+  "version": "1.0.8305",
   "imports": [
     "linkml:types"
   ],
@@ -420,300 +420,47 @@
       "@type": "TypeDefinition"
     }
   ],
-  "enums": [
-    {
-      "name": "queryMethodEnumeration",
-      "definition_uri": "https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#QueryMethodEnumeration",
-      "from_schema": "https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#",
-      "permissible_values": [
-        {
-          "text": "GET",
-          "description": "GET http method, used to send information, such as a query string, directly in the URL",
-          "meaning": "wd:Q3504817"
-        },
-        {
-          "text": "POST",
-          "description": "POST http method, used to send information to a server by storing it in the request body of the http request",
-          "meaning": "wd:Q2764521"
-        }
-      ]
-    },
-    {
-      "name": "pathogenTypeEnumeration",
-      "definition_uri": "https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#PathogenTypeEnumeration",
-      "from_schema": "https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#",
-      "permissible_values": [
-        {
-          "text": "Virus",
-          "description": "The virus as a biological material",
-          "meaning": "EVORAO:Virus"
-        },
-        {
-          "text": "Bacterium",
-          "description": "The bacterium as a biological material",
-          "meaning": "EVORAO:Bacterium"
-        },
-        {
-          "text": "Fungus",
-          "description": "The fungus as a biological material",
-          "meaning": "EVORAO:Fungus"
-        },
-        {
-          "text": "Protozoan",
-          "description": "The protozoan as a biological material",
-          "meaning": "EVORAO:Protozoan"
-        },
-        {
-          "text": "Viroid",
-          "description": "The viroid as a biological material",
-          "meaning": "EVORAO:Viroid"
-        },
-        {
-          "text": "Prion",
-          "description": "The prion as a biological material",
-          "meaning": "EVORAO:Prion"
-        }
-      ]
-    },
-    {
-      "name": "hostTypeEnumeration",
-      "definition_uri": "https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#HostTypeEnumeration",
-      "from_schema": "https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#",
-      "permissible_values": [
-        {
-          "text": "Animal",
-          "description": "Kingdom of multicellular eukaryotic organisms",
-          "meaning": "wd:Q729"
-        },
-        {
-          "text": "Human",
-          "description": "Any member of Homo sapiens, unique extant species of the genus Homo",
-          "meaning": "wd:Q5"
-        },
-        {
-          "text": "Plant",
-          "description": "Living thing in the kingdom of photosynthetic eukaryotes",
-          "meaning": "wd:Q756"
-        }
-      ]
-    },
-    {
-      "name": "sequenceProviderEnumeration",
-      "definition_uri": "https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#SequenceProviderEnumeration",
-      "from_schema": "https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#",
-      "permissible_values": [
-        {
-          "text": "ENA",
-          "description": "The European Nucleotide Archive",
-          "meaning": "wd:Q5412874"
-        },
-        {
-          "text": "GenBank",
-          "description": "The NIH genetic sequence database, an annotated collection of all publicly available DNA sequences",
-          "meaning": "wd:Q901755"
-        }
-      ]
-    },
-    {
-      "name": "expressedAsEnumeration",
-      "definition_uri": "https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#ExpressedAsEnumeration",
-      "from_schema": "https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#",
-      "permissible_values": [
-        {
-          "text": "Soluble",
-          "description": "Expressed as soluble protein",
-          "meaning": "wd:Q87723650"
-        },
-        {
-          "text": "Inclusion bodies",
-          "description": "Expressed as aggregated molecules",
-          "meaning": "wd:Q1308970"
-        }
-      ]
-    },
-    {
-      "name": "inclusionBodiesTypeEnumeration",
-      "definition_uri": "https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#InclusionBodiesTypeEnumeration",
-      "from_schema": "https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#",
-      "permissible_values": [
-        {
-          "text": "Denatured",
-          "description": "Having losed their folded structure present in their native state"
-        },
-        {
-          "text": "Refolded",
-          "description": "Having regained a folded structure"
-        }
-      ]
-    },
-    {
-      "name": "expressionSystemEnumeration",
-      "definition_uri": "https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#ExpressionSystemEnumeration",
-      "from_schema": "https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#",
-      "permissible_values": [
-        {
-          "text": "E. coli",
-          "description": "Expressed in E. Coli bacteria",
-          "meaning": "wd:Q25419"
-        },
-        {
-          "text": "Insect cells",
-          "description": "Expressed in insect cells",
-          "meaning": "wd:Q108929499"
-        },
-        {
-          "text": "Mammalian cells",
-          "description": "Expressed in mammalian cells"
-        }
-      ]
-    },
-    {
-      "name": "functionalCharacterizationEnumeration",
-      "definition_uri": "https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#FunctionalCharacterizationEnumeration",
-      "from_schema": "https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#",
-      "permissible_values": [
-        {
-          "text": "Functionally characterized",
-          "description": "The related protein has been functionally characterized"
-        },
-        {
-          "text": "No functional characterization",
-          "description": "The related protein has curently no functional characterization"
-        }
-      ]
-    },
-    {
-      "name": "proteinPurificationEnumeration",
-      "definition_uri": "https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#ProteinPurificationEnumeration",
-      "from_schema": "https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#",
-      "permissible_values": [
-        {
-          "text": "Greater than 95 percent",
-          "description": "The protein is purified to a level exceeding 95%"
-        },
-        {
-          "text": "Unpurified expression host lysate or partly purified protein",
-          "description": "The protein is provided as unpurified expression host lysate or partly purified protein"
-        }
-      ]
-    },
-    {
-      "name": "typeOfFunctionalCharacterizationEnumeration",
-      "definition_uri": "https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#TypeOfFunctionalCharacterizationEnumeration",
-      "from_schema": "https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#",
-      "permissible_values": [
-        {
-          "text": "Enzymatic",
-          "description": "Enzymatic functional characterization involves studying the specific activities and roles of enzymes in biochemical processes"
-        },
-        {
-          "text": "Antigenic",
-          "description": "Antigenic functional characterization involves studying the properties and behaviors of antigens"
-        }
-      ]
-    },
-    {
-      "name": "sequencingEnumeration",
-      "definition_uri": "https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#SequencingEnumeration",
-      "from_schema": "https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#",
-      "permissible_values": [
-        {
-          "text": "Not sequenced",
-          "description": "The biological material has not been sequenced"
-        },
-        {
-          "text": "Partly sequenced",
-          "description": "The biological material has been partly sequenced"
-        },
-        {
-          "text": "Fully sequenced",
-          "description": "The biological material has been fully sequenced"
-        }
-      ]
-    },
-    {
-      "name": "cultivabilityEnumeration",
-      "definition_uri": "https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#CultivabilityEnumeration",
-      "from_schema": "https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#",
-      "permissible_values": [
-        {
-          "text": "Cultivable",
-          "description": "The pathogen can be grown using standard culture techniques"
-        },
-        {
-          "text": "Uncultivable",
-          "description": "The pathogen cannot be grown in a laboratory using standard culture techniques and often requires special methods for study"
-        },
-        {
-          "text": "Inactivated",
-          "description": "The pathogen has been killed or rendered inactive so it cannot cause disease"
-        }
-      ]
-    },
-    {
-      "name": "infectivityEnumeration",
-      "definition_uri": "https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#InfectivityEnumeration",
-      "from_schema": "https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#",
-      "permissible_values": [
-        {
-          "text": "Infectivity tested",
-          "description": "The infectivity of the pathogen has been tested"
-        },
-        {
-          "text": "Infectivity tested and quantified",
-          "description": "The infectivity of the pathogen has been tested and quantified"
-        },
-        {
-          "text": "Non cultivable sample, infectivity cannot be tested",
-          "description": "The pathogen is provided as a non cultivable sample, so its infectivity cannot be tested"
-        }
-      ]
-    },
-    {
-      "name": "letterOfAuthorityEnumeration",
-      "definition_uri": "https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#LetterOfAuthorityEnumeration",
-      "from_schema": "https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#",
-      "permissible_values": [
-        {
-          "text": "Not applicable",
-          "description": "The letter of authority is not applicable for this biological material"
-        },
-        {
-          "text": "Not required",
-          "description": "The letter of authority is not required for this biological material"
-        },
-        {
-          "text": "Required for customers in the EU",
-          "description": "The letter of authority is required for this biological material in case only if its destination is in the European Union"
-        },
-        {
-          "text": "Required",
-          "description": "The letter of authority is required for this biological material"
-        }
-      ]
-    },
-    {
-      "name": "genomeSequencingEnumeration",
-      "definition_uri": "https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#GenomeSequencingEnumeration",
-      "from_schema": "https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#",
-      "permissible_values": [
-        {
-          "text": "Complete genome",
-          "description": "The complete genome has been sequenced",
-          "meaning": "wd:Q2068526"
-        },
-        {
-          "text": "Complete coding sequence",
-          "description": "Only the complete conding sequence has been sequenced"
-        },
-        {
-          "text": "Partial sequence",
-          "description": "Only a partial sequence was sequenced"
-        }
-      ]
-    }
-  ],
   "slots": [
+    {
+      "name": "name",
+      "definition_uri": "https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#name",
+      "from_schema": "https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#",
+      "slot_uri": "https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#name",
+      "owner": "Certification",
+      "domain_of": [
+        "DataService",
+        "Catalogue",
+        "Term",
+        "PersonOrOrganization",
+        "ProductOrService",
+        "File",
+        "ContactPoint",
+        "License",
+        "Certification"
+      ],
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "description",
+      "definition_uri": "https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#description",
+      "from_schema": "https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#",
+      "slot_uri": "https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#description",
+      "owner": "Certification",
+      "domain_of": [
+        "DataService",
+        "Catalogue",
+        "Term",
+        "PersonOrOrganization",
+        "ProductOrService",
+        "File",
+        "ContactPoint",
+        "License",
+        "Certification"
+      ],
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
     {
       "name": "ID",
       "definition_uri": "https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#ID",
@@ -734,30 +481,6 @@
       "owner": "Version",
       "domain_of": [
         "Version"
-      ],
-      "range": "string",
-      "@type": "SlotDefinition"
-    },
-    {
-      "name": "name",
-      "definition_uri": "https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#name",
-      "from_schema": "https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#",
-      "slot_uri": "https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#name",
-      "owner": "Nameable",
-      "domain_of": [
-        "Nameable"
-      ],
-      "range": "string",
-      "@type": "SlotDefinition"
-    },
-    {
-      "name": "description",
-      "definition_uri": "https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#description",
-      "from_schema": "https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#",
-      "slot_uri": "https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#description",
-      "owner": "Nameable",
-      "domain_of": [
-        "Nameable"
       ],
       "range": "string",
       "@type": "SlotDefinition"
@@ -859,6 +582,10 @@
         "DataProvider"
       ],
       "range": "string",
+      "equals_string_in": [
+        "GET",
+        "POST"
+      ],
       "@type": "SlotDefinition"
     },
     {
@@ -907,6 +634,10 @@
         "DataProvider"
       ],
       "range": "string",
+      "equals_string_in": [
+        "GET",
+        "POST"
+      ],
       "@type": "SlotDefinition"
     },
     {
@@ -968,6 +699,14 @@
         "PathogenIdentification"
       ],
       "range": "string",
+      "equals_string_in": [
+        "Virus",
+        "Bacterium",
+        "Fungus",
+        "Protozoan",
+        "Viroid",
+        "Prion"
+      ],
       "@type": "SlotDefinition"
     },
     {
@@ -980,6 +719,11 @@
         "PathogenIdentification"
       ],
       "range": "string",
+      "equals_string_in": [
+        "Animal",
+        "Human",
+        "Plant"
+      ],
       "@type": "SlotDefinition"
     },
     {
@@ -1370,6 +1114,10 @@
         "SequenceReference"
       ],
       "range": "string",
+      "equals_string_in": [
+        "ENA",
+        "GenBank"
+      ],
       "@type": "SlotDefinition"
     },
     {
@@ -2149,6 +1897,10 @@
         "Protein"
       ],
       "range": "string",
+      "equals_string_in": [
+        "Soluble",
+        "Inclusion bodies"
+      ],
       "@type": "SlotDefinition"
     },
     {
@@ -2161,6 +1913,10 @@
         "Protein"
       ],
       "range": "string",
+      "equals_string_in": [
+        "Denatured",
+        "Refolded"
+      ],
       "@type": "SlotDefinition"
     },
     {
@@ -2173,6 +1929,11 @@
         "Protein"
       ],
       "range": "string",
+      "equals_string_in": [
+        "E. coli",
+        "Insect cells",
+        "Mammalian cells"
+      ],
       "@type": "SlotDefinition"
     },
     {
@@ -2185,6 +1946,10 @@
         "Protein"
       ],
       "range": "string",
+      "equals_string_in": [
+        "Functionally characterized",
+        "No functional characterization"
+      ],
       "@type": "SlotDefinition"
     },
     {
@@ -2209,6 +1974,10 @@
         "Protein"
       ],
       "range": "string",
+      "equals_string_in": [
+        "Greater than 95 percent",
+        "Unpurified expression host lysate or partly purified protein"
+      ],
       "@type": "SlotDefinition"
     },
     {
@@ -2233,6 +2002,10 @@
         "Protein"
       ],
       "range": "string",
+      "equals_string_in": [
+        "Enzymatic",
+        "Antigenic"
+      ],
       "@type": "SlotDefinition"
     },
     {
@@ -2354,6 +2127,11 @@
         "NucleicAcid"
       ],
       "range": "string",
+      "equals_string_in": [
+        "Not sequenced",
+        "Partly sequenced",
+        "Fully sequenced"
+      ],
       "@type": "SlotDefinition"
     },
     {
@@ -2499,6 +2277,11 @@
         "Pathogen"
       ],
       "range": "string",
+      "equals_string_in": [
+        "Cultivable",
+        "Uncultivable",
+        "Inactivated"
+      ],
       "@type": "SlotDefinition"
     },
     {
@@ -2523,6 +2306,11 @@
         "Pathogen"
       ],
       "range": "string",
+      "equals_string_in": [
+        "Infectivity tested",
+        "Infectivity tested and quantified",
+        "Non cultivable sample, infectivity cannot be tested"
+      ],
       "@type": "SlotDefinition"
     },
     {
@@ -2571,6 +2359,12 @@
         "Pathogen"
       ],
       "range": "string",
+      "equals_string_in": [
+        "Not applicable",
+        "Not required",
+        "Required for customers in the EU",
+        "Required"
+      ],
       "@type": "SlotDefinition"
     },
     {
@@ -2595,6 +2389,11 @@
         "Pathogen"
       ],
       "range": "string",
+      "equals_string_in": [
+        "Complete genome",
+        "Complete coding sequence",
+        "Partial sequence"
+      ],
       "@type": "SlotDefinition"
     },
     {
@@ -2971,6 +2770,61 @@
       "@type": "SlotDefinition"
     },
     {
+      "name": "DataService_name",
+      "definition_uri": "https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#name",
+      "description": "The label that allows humans to identify the current item",
+      "title": "name",
+      "comments": [
+        "The title of the item should be as short and descriptive as possible. E.g. for virus products it should basically be based on the following Pattern:\n\"Virus name\", \"virus host type\", \"collection year\", \"country of collection\" ex \"suspected epidemiological origin\", \"genotype\", \"strain\", \"variant name or specific feature\""
+      ],
+      "from_schema": "https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#",
+      "exact_mappings": [
+        "http://purl.org/dc/terms/title"
+      ],
+      "close_mappings": [
+        "http://www.w3.org/2000/01/rdf-schema#label"
+      ],
+      "is_a": "name",
+      "domain": "DataService",
+      "slot_uri": "https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#name",
+      "alias": "name",
+      "owner": "DataService",
+      "domain_of": [
+        "DataService"
+      ],
+      "is_usage_slot": true,
+      "usage_slot_name": "name",
+      "range": "string",
+      "required": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "DataService_description",
+      "definition_uri": "https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#description",
+      "description": "A short explanation of the characteristics, features, or nature of the current item",
+      "title": "description",
+      "comments": [
+        "Describe this item in few lines. This description will serve as a summary to present the item.\n"
+      ],
+      "from_schema": "https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#",
+      "exact_mappings": [
+        "http://purl.org/dc/terms/description"
+      ],
+      "is_a": "description",
+      "domain": "DataService",
+      "slot_uri": "https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#description",
+      "alias": "description",
+      "owner": "DataService",
+      "domain_of": [
+        "DataService"
+      ],
+      "is_usage_slot": true,
+      "usage_slot_name": "description",
+      "range": "string",
+      "recommended": true,
+      "@type": "SlotDefinition"
+    },
+    {
       "name": "Version_ID",
       "definition_uri": "https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#ID",
       "description": "The version identifier",
@@ -3010,12 +2864,13 @@
       ],
       "is_usage_slot": true,
       "usage_slot_name": "versionOf",
-      "range": "uri",
+      "range": "Dataset",
       "required": true,
+      "inlined": true,
       "@type": "SlotDefinition"
     },
     {
-      "name": "Nameable_name",
+      "name": "Catalogue_name",
       "definition_uri": "https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#name",
       "description": "The label that allows humans to identify the current item",
       "title": "name",
@@ -3030,12 +2885,12 @@
         "http://www.w3.org/2000/01/rdf-schema#label"
       ],
       "is_a": "name",
-      "domain": "Nameable",
+      "domain": "Catalogue",
       "slot_uri": "https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#name",
       "alias": "name",
-      "owner": "Nameable",
+      "owner": "Catalogue",
       "domain_of": [
-        "Nameable"
+        "Catalogue"
       ],
       "is_usage_slot": true,
       "usage_slot_name": "name",
@@ -3044,7 +2899,7 @@
       "@type": "SlotDefinition"
     },
     {
-      "name": "Nameable_description",
+      "name": "Catalogue_description",
       "definition_uri": "https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#description",
       "description": "A short explanation of the characteristics, features, or nature of the current item",
       "title": "description",
@@ -3056,12 +2911,12 @@
         "http://purl.org/dc/terms/description"
       ],
       "is_a": "description",
-      "domain": "Nameable",
+      "domain": "Catalogue",
       "slot_uri": "https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#description",
       "alias": "description",
-      "owner": "Nameable",
+      "owner": "Catalogue",
       "domain_of": [
-        "Nameable"
+        "Catalogue"
       ],
       "is_usage_slot": true,
       "usage_slot_name": "description",
@@ -3239,7 +3094,11 @@
       ],
       "is_usage_slot": true,
       "usage_slot_name": "loginRequestMethod",
-      "range": "queryMethodEnumeration",
+      "range": "string",
+      "equals_string_in": [
+        "GET",
+        "POST"
+      ],
       "@type": "SlotDefinition"
     },
     {
@@ -3332,8 +3191,12 @@
       ],
       "is_usage_slot": true,
       "usage_slot_name": "queryMethod",
-      "range": "queryMethodEnumeration",
+      "range": "string",
       "required": true,
+      "equals_string_in": [
+        "GET",
+        "POST"
+      ],
       "@type": "SlotDefinition"
     },
     {
@@ -3379,8 +3242,9 @@
       ],
       "is_usage_slot": true,
       "usage_slot_name": "providedEntityType",
-      "range": "uri",
+      "range": "Dataset",
       "required": true,
+      "inlined": true,
       "@type": "SlotDefinition"
     },
     {
@@ -3470,8 +3334,16 @@
       ],
       "is_usage_slot": true,
       "usage_slot_name": "pathogenType",
-      "range": "pathogenTypeEnumeration",
+      "range": "string",
       "required": true,
+      "equals_string_in": [
+        "Virus",
+        "Bacterium",
+        "Fungus",
+        "Protozoan",
+        "Viroid",
+        "Prion"
+      ],
       "@type": "SlotDefinition"
     },
     {
@@ -3490,9 +3362,14 @@
       ],
       "is_usage_slot": true,
       "usage_slot_name": "hostType",
-      "range": "hostTypeEnumeration",
+      "range": "string",
       "recommended": true,
       "multivalued": true,
+      "equals_string_in": [
+        "Animal",
+        "Human",
+        "Plant"
+      ],
       "@type": "SlotDefinition"
     },
     {
@@ -3758,6 +3635,61 @@
       "recommended": true,
       "multivalued": true,
       "inlined": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "Term_name",
+      "definition_uri": "https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#name",
+      "description": "The label that allows humans to identify the current item",
+      "title": "name",
+      "comments": [
+        "The title of the item should be as short and descriptive as possible. E.g. for virus products it should basically be based on the following Pattern:\n\"Virus name\", \"virus host type\", \"collection year\", \"country of collection\" ex \"suspected epidemiological origin\", \"genotype\", \"strain\", \"variant name or specific feature\""
+      ],
+      "from_schema": "https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#",
+      "exact_mappings": [
+        "http://purl.org/dc/terms/title"
+      ],
+      "close_mappings": [
+        "http://www.w3.org/2000/01/rdf-schema#label"
+      ],
+      "is_a": "name",
+      "domain": "Term",
+      "slot_uri": "https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#name",
+      "alias": "name",
+      "owner": "Term",
+      "domain_of": [
+        "Term"
+      ],
+      "is_usage_slot": true,
+      "usage_slot_name": "name",
+      "range": "string",
+      "required": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "Term_description",
+      "definition_uri": "https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#description",
+      "description": "A short explanation of the characteristics, features, or nature of the current item",
+      "title": "description",
+      "comments": [
+        "Describe this item in few lines. This description will serve as a summary to present the item.\n"
+      ],
+      "from_schema": "https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#",
+      "exact_mappings": [
+        "http://purl.org/dc/terms/description"
+      ],
+      "is_a": "description",
+      "domain": "Term",
+      "slot_uri": "https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#description",
+      "alias": "description",
+      "owner": "Term",
+      "domain_of": [
+        "Term"
+      ],
+      "is_usage_slot": true,
+      "usage_slot_name": "description",
+      "range": "string",
+      "recommended": true,
       "@type": "SlotDefinition"
     },
     {
@@ -4317,8 +4249,67 @@
       ],
       "is_usage_slot": true,
       "usage_slot_name": "sequenceProvider",
-      "range": "sequenceProviderEnumeration",
+      "range": "string",
       "required": true,
+      "equals_string_in": [
+        "ENA",
+        "GenBank"
+      ],
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "PersonOrOrganization_name",
+      "definition_uri": "https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#name",
+      "description": "The label that allows humans to identify the current item",
+      "title": "name",
+      "comments": [
+        "The title of the item should be as short and descriptive as possible. E.g. for virus products it should basically be based on the following Pattern:\n\"Virus name\", \"virus host type\", \"collection year\", \"country of collection\" ex \"suspected epidemiological origin\", \"genotype\", \"strain\", \"variant name or specific feature\""
+      ],
+      "from_schema": "https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#",
+      "exact_mappings": [
+        "http://purl.org/dc/terms/title"
+      ],
+      "close_mappings": [
+        "http://www.w3.org/2000/01/rdf-schema#label"
+      ],
+      "is_a": "name",
+      "domain": "PersonOrOrganization",
+      "slot_uri": "https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#name",
+      "alias": "name",
+      "owner": "PersonOrOrganization",
+      "domain_of": [
+        "PersonOrOrganization"
+      ],
+      "is_usage_slot": true,
+      "usage_slot_name": "name",
+      "range": "string",
+      "required": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "PersonOrOrganization_description",
+      "definition_uri": "https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#description",
+      "description": "A short explanation of the characteristics, features, or nature of the current item",
+      "title": "description",
+      "comments": [
+        "Describe this item in few lines. This description will serve as a summary to present the item.\n"
+      ],
+      "from_schema": "https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#",
+      "exact_mappings": [
+        "http://purl.org/dc/terms/description"
+      ],
+      "is_a": "description",
+      "domain": "PersonOrOrganization",
+      "slot_uri": "https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#description",
+      "alias": "description",
+      "owner": "PersonOrOrganization",
+      "domain_of": [
+        "PersonOrOrganization"
+      ],
+      "is_usage_slot": true,
+      "usage_slot_name": "description",
+      "range": "string",
+      "recommended": true,
       "@type": "SlotDefinition"
     },
     {
@@ -4819,6 +4810,61 @@
       "@type": "SlotDefinition"
     },
     {
+      "name": "ProductOrService_name",
+      "definition_uri": "https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#name",
+      "description": "The label that allows humans to identify the current item",
+      "title": "name",
+      "comments": [
+        "The title of the item should be as short and descriptive as possible. E.g. for virus products it should basically be based on the following Pattern:\n\"Virus name\", \"virus host type\", \"collection year\", \"country of collection\" ex \"suspected epidemiological origin\", \"genotype\", \"strain\", \"variant name or specific feature\""
+      ],
+      "from_schema": "https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#",
+      "exact_mappings": [
+        "http://purl.org/dc/terms/title"
+      ],
+      "close_mappings": [
+        "http://www.w3.org/2000/01/rdf-schema#label"
+      ],
+      "is_a": "name",
+      "domain": "ProductOrService",
+      "slot_uri": "https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#name",
+      "alias": "name",
+      "owner": "ProductOrService",
+      "domain_of": [
+        "ProductOrService"
+      ],
+      "is_usage_slot": true,
+      "usage_slot_name": "name",
+      "range": "string",
+      "required": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "ProductOrService_description",
+      "definition_uri": "https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#description",
+      "description": "A short explanation of the characteristics, features, or nature of the current item",
+      "title": "description",
+      "comments": [
+        "Describe this item in few lines. This description will serve as a summary to present the item.\n"
+      ],
+      "from_schema": "https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#",
+      "exact_mappings": [
+        "http://purl.org/dc/terms/description"
+      ],
+      "is_a": "description",
+      "domain": "ProductOrService",
+      "slot_uri": "https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#description",
+      "alias": "description",
+      "owner": "ProductOrService",
+      "domain_of": [
+        "ProductOrService"
+      ],
+      "is_usage_slot": true,
+      "usage_slot_name": "description",
+      "range": "string",
+      "recommended": true,
+      "@type": "SlotDefinition"
+    },
+    {
       "name": "ProductOrService_accessPointURL",
       "definition_uri": "https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#accessPointURL",
       "description": "The URL that permits to access to the product/service detailed description page on the provider's website and/or allows to place an order about it or at least describe the process to place an order/enquiry",
@@ -5092,6 +5138,7 @@
       "is_usage_slot": true,
       "usage_slot_name": "canItBeUsedToProduceGMO",
       "range": "boolean",
+      "required": true,
       "recommended": true,
       "@type": "SlotDefinition"
     },
@@ -5806,8 +5853,12 @@
       ],
       "is_usage_slot": true,
       "usage_slot_name": "expressedAs",
-      "range": "expressedAsEnumeration",
+      "range": "string",
       "multivalued": true,
+      "equals_string_in": [
+        "Soluble",
+        "Inclusion bodies"
+      ],
       "@type": "SlotDefinition"
     },
     {
@@ -5826,8 +5877,12 @@
       ],
       "is_usage_slot": true,
       "usage_slot_name": "inclusionBodiesType",
-      "range": "inclusionBodiesTypeEnumeration",
+      "range": "string",
       "multivalued": true,
+      "equals_string_in": [
+        "Denatured",
+        "Refolded"
+      ],
       "@type": "SlotDefinition"
     },
     {
@@ -5846,8 +5901,13 @@
       ],
       "is_usage_slot": true,
       "usage_slot_name": "expressionSystem",
-      "range": "expressionSystemEnumeration",
+      "range": "string",
       "multivalued": true,
+      "equals_string_in": [
+        "E. coli",
+        "Insect cells",
+        "Mammalian cells"
+      ],
       "@type": "SlotDefinition"
     },
     {
@@ -5866,8 +5926,12 @@
       ],
       "is_usage_slot": true,
       "usage_slot_name": "functionalCharacterization",
-      "range": "functionalCharacterizationEnumeration",
+      "range": "string",
       "multivalued": true,
+      "equals_string_in": [
+        "Functionally characterized",
+        "No functional characterization"
+      ],
       "@type": "SlotDefinition"
     },
     {
@@ -5906,8 +5970,12 @@
       ],
       "is_usage_slot": true,
       "usage_slot_name": "proteinPurification",
-      "range": "proteinPurificationEnumeration",
+      "range": "string",
       "multivalued": true,
+      "equals_string_in": [
+        "Greater than 95 percent",
+        "Unpurified expression host lysate or partly purified protein"
+      ],
       "@type": "SlotDefinition"
     },
     {
@@ -5946,8 +6014,12 @@
       ],
       "is_usage_slot": true,
       "usage_slot_name": "typeOfFunctionalCharacterization",
-      "range": "typeOfFunctionalCharacterizationEnumeration",
+      "range": "string",
       "multivalued": true,
+      "equals_string_in": [
+        "Enzymatic",
+        "Antigenic"
+      ],
       "@type": "SlotDefinition"
     },
     {
@@ -6195,8 +6267,13 @@
       ],
       "is_usage_slot": true,
       "usage_slot_name": "sequencing",
-      "range": "sequencingEnumeration",
+      "range": "string",
       "required": true,
+      "equals_string_in": [
+        "Not sequenced",
+        "Partly sequenced",
+        "Fully sequenced"
+      ],
       "@type": "SlotDefinition"
     },
     {
@@ -6534,8 +6611,13 @@
       ],
       "is_usage_slot": true,
       "usage_slot_name": "cultivability",
-      "range": "cultivabilityEnumeration",
+      "range": "string",
       "required": true,
+      "equals_string_in": [
+        "Cultivable",
+        "Uncultivable",
+        "Inactivated"
+      ],
       "@type": "SlotDefinition"
     },
     {
@@ -6592,8 +6674,13 @@
       ],
       "is_usage_slot": true,
       "usage_slot_name": "infectivity",
-      "range": "infectivityEnumeration",
+      "range": "string",
       "required": true,
+      "equals_string_in": [
+        "Infectivity tested",
+        "Infectivity tested and quantified",
+        "Non cultivable sample, infectivity cannot be tested"
+      ],
       "@type": "SlotDefinition"
     },
     {
@@ -6670,8 +6757,14 @@
       ],
       "is_usage_slot": true,
       "usage_slot_name": "letterOfAuthority",
-      "range": "letterOfAuthorityEnumeration",
+      "range": "string",
       "required": true,
+      "equals_string_in": [
+        "Not applicable",
+        "Not required",
+        "Required for customers in the EU",
+        "Required"
+      ],
       "@type": "SlotDefinition"
     },
     {
@@ -6709,8 +6802,13 @@
       ],
       "is_usage_slot": true,
       "usage_slot_name": "genomeSequencing",
-      "range": "genomeSequencingEnumeration",
+      "range": "string",
       "required": true,
+      "equals_string_in": [
+        "Complete genome",
+        "Complete coding sequence",
+        "Partial sequence"
+      ],
       "@type": "SlotDefinition"
     },
     {
@@ -7103,6 +7201,61 @@
       "@type": "SlotDefinition"
     },
     {
+      "name": "File_name",
+      "definition_uri": "https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#name",
+      "description": "The label that allows humans to identify the current item",
+      "title": "name",
+      "comments": [
+        "The title of the item should be as short and descriptive as possible. E.g. for virus products it should basically be based on the following Pattern:\n\"Virus name\", \"virus host type\", \"collection year\", \"country of collection\" ex \"suspected epidemiological origin\", \"genotype\", \"strain\", \"variant name or specific feature\""
+      ],
+      "from_schema": "https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#",
+      "exact_mappings": [
+        "http://purl.org/dc/terms/title"
+      ],
+      "close_mappings": [
+        "http://www.w3.org/2000/01/rdf-schema#label"
+      ],
+      "is_a": "name",
+      "domain": "File",
+      "slot_uri": "https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#name",
+      "alias": "name",
+      "owner": "File",
+      "domain_of": [
+        "File"
+      ],
+      "is_usage_slot": true,
+      "usage_slot_name": "name",
+      "range": "string",
+      "required": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "File_description",
+      "definition_uri": "https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#description",
+      "description": "A short explanation of the characteristics, features, or nature of the current item",
+      "title": "description",
+      "comments": [
+        "Describe this item in few lines. This description will serve as a summary to present the item.\n"
+      ],
+      "from_schema": "https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#",
+      "exact_mappings": [
+        "http://purl.org/dc/terms/description"
+      ],
+      "is_a": "description",
+      "domain": "File",
+      "slot_uri": "https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#description",
+      "alias": "description",
+      "owner": "File",
+      "domain_of": [
+        "File"
+      ],
+      "is_usage_slot": true,
+      "usage_slot_name": "description",
+      "range": "string",
+      "recommended": true,
+      "@type": "SlotDefinition"
+    },
+    {
       "name": "File_contentURL",
       "definition_uri": "https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#contentURL",
       "description": "The web address or location where the file content is stored and can be accessed or downloaded.",
@@ -7178,6 +7331,61 @@
       ],
       "is_usage_slot": true,
       "usage_slot_name": "altText",
+      "range": "string",
+      "recommended": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "ContactPoint_name",
+      "definition_uri": "https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#name",
+      "description": "The label that allows humans to identify the current item",
+      "title": "name",
+      "comments": [
+        "The title of the item should be as short and descriptive as possible. E.g. for virus products it should basically be based on the following Pattern:\n\"Virus name\", \"virus host type\", \"collection year\", \"country of collection\" ex \"suspected epidemiological origin\", \"genotype\", \"strain\", \"variant name or specific feature\""
+      ],
+      "from_schema": "https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#",
+      "exact_mappings": [
+        "http://purl.org/dc/terms/title"
+      ],
+      "close_mappings": [
+        "http://www.w3.org/2000/01/rdf-schema#label"
+      ],
+      "is_a": "name",
+      "domain": "ContactPoint",
+      "slot_uri": "https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#name",
+      "alias": "name",
+      "owner": "ContactPoint",
+      "domain_of": [
+        "ContactPoint"
+      ],
+      "is_usage_slot": true,
+      "usage_slot_name": "name",
+      "range": "string",
+      "required": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "ContactPoint_description",
+      "definition_uri": "https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#description",
+      "description": "A short explanation of the characteristics, features, or nature of the current item",
+      "title": "description",
+      "comments": [
+        "Describe this item in few lines. This description will serve as a summary to present the item.\n"
+      ],
+      "from_schema": "https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#",
+      "exact_mappings": [
+        "http://purl.org/dc/terms/description"
+      ],
+      "is_a": "description",
+      "domain": "ContactPoint",
+      "slot_uri": "https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#description",
+      "alias": "description",
+      "owner": "ContactPoint",
+      "domain_of": [
+        "ContactPoint"
+      ],
+      "is_usage_slot": true,
+      "usage_slot_name": "description",
       "range": "string",
       "recommended": true,
       "@type": "SlotDefinition"
@@ -7370,6 +7578,61 @@
       "@type": "SlotDefinition"
     },
     {
+      "name": "License_name",
+      "definition_uri": "https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#name",
+      "description": "The label that allows humans to identify the current item",
+      "title": "name",
+      "comments": [
+        "The title of the item should be as short and descriptive as possible. E.g. for virus products it should basically be based on the following Pattern:\n\"Virus name\", \"virus host type\", \"collection year\", \"country of collection\" ex \"suspected epidemiological origin\", \"genotype\", \"strain\", \"variant name or specific feature\""
+      ],
+      "from_schema": "https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#",
+      "exact_mappings": [
+        "http://purl.org/dc/terms/title"
+      ],
+      "close_mappings": [
+        "http://www.w3.org/2000/01/rdf-schema#label"
+      ],
+      "is_a": "name",
+      "domain": "License",
+      "slot_uri": "https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#name",
+      "alias": "name",
+      "owner": "License",
+      "domain_of": [
+        "License"
+      ],
+      "is_usage_slot": true,
+      "usage_slot_name": "name",
+      "range": "string",
+      "required": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "License_description",
+      "definition_uri": "https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#description",
+      "description": "A short explanation of the characteristics, features, or nature of the current item",
+      "title": "description",
+      "comments": [
+        "Describe this item in few lines. This description will serve as a summary to present the item.\n"
+      ],
+      "from_schema": "https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#",
+      "exact_mappings": [
+        "http://purl.org/dc/terms/description"
+      ],
+      "is_a": "description",
+      "domain": "License",
+      "slot_uri": "https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#description",
+      "alias": "description",
+      "owner": "License",
+      "domain_of": [
+        "License"
+      ],
+      "is_usage_slot": true,
+      "usage_slot_name": "description",
+      "range": "string",
+      "recommended": true,
+      "@type": "SlotDefinition"
+    },
+    {
       "name": "License_resourceURL",
       "definition_uri": "https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#resourceURL",
       "description": "The web address or location where the details or content is stored and can be accessed or downloaded.",
@@ -7440,6 +7703,61 @@
       "@type": "SlotDefinition"
     },
     {
+      "name": "Certification_name",
+      "definition_uri": "https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#name",
+      "description": "The label that allows humans to identify the current item",
+      "title": "name",
+      "comments": [
+        "The title of the item should be as short and descriptive as possible. E.g. for virus products it should basically be based on the following Pattern:\n\"Virus name\", \"virus host type\", \"collection year\", \"country of collection\" ex \"suspected epidemiological origin\", \"genotype\", \"strain\", \"variant name or specific feature\""
+      ],
+      "from_schema": "https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#",
+      "exact_mappings": [
+        "http://purl.org/dc/terms/title"
+      ],
+      "close_mappings": [
+        "http://www.w3.org/2000/01/rdf-schema#label"
+      ],
+      "is_a": "name",
+      "domain": "Certification",
+      "slot_uri": "https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#name",
+      "alias": "name",
+      "owner": "Certification",
+      "domain_of": [
+        "Certification"
+      ],
+      "is_usage_slot": true,
+      "usage_slot_name": "name",
+      "range": "string",
+      "required": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "Certification_description",
+      "definition_uri": "https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#description",
+      "description": "A short explanation of the characteristics, features, or nature of the current item",
+      "title": "description",
+      "comments": [
+        "Describe this item in few lines. This description will serve as a summary to present the item.\n"
+      ],
+      "from_schema": "https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#",
+      "exact_mappings": [
+        "http://purl.org/dc/terms/description"
+      ],
+      "is_a": "description",
+      "domain": "Certification",
+      "slot_uri": "https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#description",
+      "alias": "description",
+      "owner": "Certification",
+      "domain_of": [
+        "Certification"
+      ],
+      "is_usage_slot": true,
+      "usage_slot_name": "description",
+      "range": "string",
+      "recommended": true,
+      "@type": "SlotDefinition"
+    },
+    {
       "name": "Certification_logo",
       "definition_uri": "https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#logo",
       "description": "A path or URL to the related logo",
@@ -7505,6 +7823,61 @@
   ],
   "classes": [
     {
+      "name": "Resource",
+      "definition_uri": "https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#Resource",
+      "description": "Resource published or curated by a single agent.",
+      "title": "Resource",
+      "from_schema": "https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#",
+      "exact_mappings": [
+        "dcat:Resource"
+      ],
+      "slot_usage": {},
+      "class_uri": "https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#Resource",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "Dataset",
+      "definition_uri": "https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#Dataset",
+      "description": "A collection of data, published or curated by a single agent, and available for access",
+      "title": "Dataset",
+      "from_schema": "https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#",
+      "exact_mappings": [
+        "dcat:Dataset"
+      ],
+      "close_mappings": [
+        "wd:Q1172284",
+        "schema:DataCatalog"
+      ],
+      "is_a": "Resource",
+      "abstract": true,
+      "slot_usage": {},
+      "class_uri": "https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#Dataset",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "DataService",
+      "definition_uri": "https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#DataService",
+      "description": "A collection of operations that provides access to one or more datasets or data processing functions",
+      "title": "Data Service",
+      "from_schema": "https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#",
+      "exact_mappings": [
+        "dcat:DataService"
+      ],
+      "close_mappings": [
+        "wd:Q193424",
+        "schema:WebAPI"
+      ],
+      "is_a": "Resource",
+      "abstract": true,
+      "slots": [
+        "DataService_name",
+        "DataService_description"
+      ],
+      "slot_usage": {},
+      "class_uri": "https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#DataService",
+      "@type": "ClassDefinition"
+    },
+    {
       "name": "Version",
       "definition_uri": "https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#Version",
       "description": "Numeric code assigned to identify a particular historical version of a work (e.g. software or technical standards)",
@@ -7523,21 +7896,6 @@
       "@type": "ClassDefinition"
     },
     {
-      "name": "Nameable",
-      "definition_uri": "https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#Nameable",
-      "description": "Any entity that has a name and can have a textual description",
-      "title": "Nameable",
-      "from_schema": "https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#",
-      "abstract": true,
-      "slots": [
-        "Nameable_name",
-        "Nameable_description"
-      ],
-      "slot_usage": {},
-      "class_uri": "https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#Nameable",
-      "@type": "ClassDefinition"
-    },
-    {
       "name": "Catalogue",
       "definition_uri": "https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#Catalogue",
       "description": "A curated collection of metadata about resources",
@@ -7550,78 +7908,14 @@
         "wd:Q2352616",
         "schema:Dataset"
       ],
-      "is_a": "Nameable",
+      "is_a": "Dataset",
       "abstract": true,
       "slots": [
-        "Nameable_name",
-        "Nameable_description"
+        "Catalogue_name",
+        "Catalogue_description"
       ],
       "slot_usage": {},
       "class_uri": "https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#Catalogue",
-      "@type": "ClassDefinition"
-    },
-    {
-      "name": "Dataset",
-      "definition_uri": "https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#Dataset",
-      "description": "A collection of data, published or curated by a single agent, and available for access",
-      "title": "Dataset",
-      "from_schema": "https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#",
-      "exact_mappings": [
-        "dcat:Dataset"
-      ],
-      "close_mappings": [
-        "wd:Q1172284",
-        "schema:DataCatalog"
-      ],
-      "abstract": true,
-      "slot_usage": {},
-      "class_uri": "https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#Dataset",
-      "@type": "ClassDefinition"
-    },
-    {
-      "name": "NamedDataset",
-      "definition_uri": "https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#NamedDataset",
-      "description": "A collection of data, that has a name and can have a description, published or curated by a single agent, and available for access",
-      "title": "Named Dataset",
-      "from_schema": "https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#",
-      "exact_mappings": [
-        "dcat:Dataset"
-      ],
-      "close_mappings": [
-        "wd:Q1172284",
-        "schema:DataCatalog"
-      ],
-      "is_a": "Nameable",
-      "abstract": true,
-      "slots": [
-        "Nameable_name",
-        "Nameable_description"
-      ],
-      "slot_usage": {},
-      "class_uri": "https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#NamedDataset",
-      "@type": "ClassDefinition"
-    },
-    {
-      "name": "DataService",
-      "definition_uri": "https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#DataService",
-      "description": "A collection of operations that provides access to one or more datasets or data processing functions",
-      "title": "Data Service",
-      "from_schema": "https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#",
-      "exact_mappings": [
-        "dcat:DataService"
-      ],
-      "close_mappings": [
-        "wd:Q193424",
-        "schema:WebAPI"
-      ],
-      "is_a": "Nameable",
-      "abstract": true,
-      "slots": [
-        "Nameable_name",
-        "Nameable_description"
-      ],
-      "slot_usage": {},
-      "class_uri": "https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#DataService",
       "@type": "ClassDefinition"
     },
     {
@@ -7636,8 +7930,8 @@
       ],
       "is_a": "Catalogue",
       "slots": [
-        "Nameable_name",
-        "Nameable_description",
+        "Catalogue_name",
+        "Catalogue_description",
         "Taxonomy_taxon",
         "Taxonomy_taxonDataProvider",
         "Taxonomy_version",
@@ -7660,8 +7954,8 @@
       ],
       "is_a": "DataService",
       "slots": [
-        "Nameable_name",
-        "Nameable_description",
+        "DataService_name",
+        "DataService_description",
         "DataProvider_license",
         "DataProvider_loginRequestMethod",
         "DataProvider_loginURL",
@@ -7732,8 +8026,8 @@
       ],
       "is_a": "Catalogue",
       "slots": [
-        "Nameable_name",
-        "Nameable_description",
+        "Catalogue_name",
+        "Catalogue_description",
         "Vocabulary_termDataProvider",
         "Vocabulary_term"
       ],
@@ -7750,11 +8044,11 @@
       "close_mappings": [
         "wd:Q1969448"
       ],
-      "is_a": "NamedDataset",
+      "is_a": "Dataset",
       "abstract": true,
       "slots": [
-        "Nameable_name",
-        "Nameable_description",
+        "Term_name",
+        "Term_description",
         "Term_weight",
         "Term_inVocabulary"
       ],
@@ -7776,8 +8070,8 @@
       ],
       "is_a": "Term",
       "slots": [
-        "Nameable_name",
-        "Nameable_description",
+        "Term_name",
+        "Term_description",
         "Term_weight",
         "Term_inVocabulary",
         "CommonName_alternateName",
@@ -7798,8 +8092,8 @@
       ],
       "is_a": "CommonName",
       "slots": [
-        "Nameable_name",
-        "Nameable_description",
+        "Term_name",
+        "Term_description",
         "Term_weight",
         "Term_inVocabulary",
         "CommonName_alternateName",
@@ -7820,8 +8114,8 @@
       ],
       "is_a": "Term",
       "slots": [
-        "Nameable_name",
-        "Nameable_description",
+        "Term_name",
+        "Term_description",
         "Term_weight",
         "Term_inVocabulary",
         "AlternateName_alternateName",
@@ -7845,8 +8139,8 @@
       ],
       "is_a": "Term",
       "slots": [
-        "Nameable_name",
-        "Nameable_description",
+        "Term_name",
+        "Term_description",
         "Term_weight",
         "Term_inVocabulary"
       ],
@@ -7865,8 +8159,8 @@
       ],
       "is_a": "Term",
       "slots": [
-        "Nameable_name",
-        "Nameable_description",
+        "Term_name",
+        "Term_description",
         "Term_weight",
         "Term_inVocabulary"
       ],
@@ -7885,8 +8179,8 @@
       ],
       "is_a": "Term",
       "slots": [
-        "Nameable_name",
-        "Nameable_description",
+        "Term_name",
+        "Term_description",
         "Term_weight",
         "Term_inVocabulary"
       ],
@@ -7905,8 +8199,8 @@
       ],
       "is_a": "Term",
       "slots": [
-        "Nameable_name",
-        "Nameable_description",
+        "Term_name",
+        "Term_description",
         "Term_weight",
         "Term_inVocabulary"
       ],
@@ -7925,8 +8219,8 @@
       ],
       "is_a": "Term",
       "slots": [
-        "Nameable_name",
-        "Nameable_description",
+        "Term_name",
+        "Term_description",
         "Term_weight",
         "Term_inVocabulary"
       ],
@@ -7945,8 +8239,8 @@
       ],
       "is_a": "Term",
       "slots": [
-        "Nameable_name",
-        "Nameable_description",
+        "Term_name",
+        "Term_description",
         "Term_weight",
         "Term_inVocabulary"
       ],
@@ -7965,8 +8259,8 @@
       "from_schema": "https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#",
       "is_a": "Term",
       "slots": [
-        "Nameable_name",
-        "Nameable_description",
+        "Term_name",
+        "Term_description",
         "Term_weight",
         "Term_inVocabulary"
       ],
@@ -7985,8 +8279,8 @@
       ],
       "is_a": "Term",
       "slots": [
-        "Nameable_name",
-        "Nameable_description",
+        "Term_name",
+        "Term_description",
         "Term_weight",
         "Term_inVocabulary"
       ],
@@ -8002,8 +8296,8 @@
       "from_schema": "https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#",
       "is_a": "Term",
       "slots": [
-        "Nameable_name",
-        "Nameable_description",
+        "Term_name",
+        "Term_description",
         "Term_weight",
         "Term_inVocabulary"
       ],
@@ -8019,8 +8313,8 @@
       "from_schema": "https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#",
       "is_a": "Term",
       "slots": [
-        "Nameable_name",
-        "Nameable_description",
+        "Term_name",
+        "Term_description",
         "Term_weight",
         "Term_inVocabulary"
       ],
@@ -8036,8 +8330,8 @@
       "from_schema": "https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#",
       "is_a": "Term",
       "slots": [
-        "Nameable_name",
-        "Nameable_description",
+        "Term_name",
+        "Term_description",
         "Term_weight",
         "Term_inVocabulary"
       ],
@@ -8056,8 +8350,8 @@
       ],
       "is_a": "Term",
       "slots": [
-        "Nameable_name",
-        "Nameable_description",
+        "Term_name",
+        "Term_description",
         "Term_weight",
         "Term_inVocabulary"
       ],
@@ -8076,8 +8370,8 @@
       ],
       "is_a": "Term",
       "slots": [
-        "Nameable_name",
-        "Nameable_description",
+        "Term_name",
+        "Term_description",
         "Term_weight",
         "Term_inVocabulary",
         "ProductCategory_parentCategory"
@@ -8094,8 +8388,8 @@
       "from_schema": "https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#",
       "is_a": "Term",
       "slots": [
-        "Nameable_name",
-        "Nameable_description",
+        "Term_name",
+        "Term_description",
         "Term_weight",
         "Term_inVocabulary"
       ],
@@ -8120,8 +8414,8 @@
       ],
       "is_a": "Term",
       "slots": [
-        "Nameable_name",
-        "Nameable_description",
+        "Term_name",
+        "Term_description",
         "Term_weight",
         "Term_inVocabulary"
       ],
@@ -8137,8 +8431,8 @@
       "from_schema": "https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#",
       "is_a": "GeographicalOrigin",
       "slots": [
-        "Nameable_name",
-        "Nameable_description",
+        "Term_name",
+        "Term_description",
         "Term_weight",
         "Term_inVocabulary"
       ],
@@ -8160,8 +8454,8 @@
       ],
       "is_a": "Term",
       "slots": [
-        "Nameable_name",
-        "Nameable_description",
+        "Term_name",
+        "Term_description",
         "Term_weight",
         "Term_inVocabulary",
         "Country_alpha2Code"
@@ -8178,8 +8472,8 @@
       "from_schema": "https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#",
       "is_a": "Term",
       "slots": [
-        "Nameable_name",
-        "Nameable_description",
+        "Term_name",
+        "Term_description",
         "Term_weight",
         "Term_inVocabulary"
       ],
@@ -8198,8 +8492,8 @@
       ],
       "is_a": "CommonName",
       "slots": [
-        "Nameable_name",
-        "Nameable_description",
+        "Term_name",
+        "Term_description",
         "Term_weight",
         "Term_inVocabulary",
         "CommonName_alternateName",
@@ -8223,8 +8517,8 @@
       ],
       "is_a": "Term",
       "slots": [
-        "Nameable_name",
-        "Nameable_description",
+        "Term_name",
+        "Term_description",
         "Term_weight",
         "Term_inVocabulary",
         "TaxonomicRank_taxonomy"
@@ -8250,8 +8544,8 @@
       ],
       "is_a": "Term",
       "slots": [
-        "Nameable_name",
-        "Nameable_description",
+        "Term_name",
+        "Term_description",
         "Term_weight",
         "Term_inVocabulary",
         "Taxon_taxonomy",
@@ -8331,10 +8625,10 @@
       "close_mappings": [
         "foaf:Agent"
       ],
-      "is_a": "Nameable",
+      "is_a": "Dataset",
       "slots": [
-        "Nameable_name",
-        "Nameable_description",
+        "PersonOrOrganization_name",
+        "PersonOrOrganization_description",
         "PersonOrOrganization_homePage",
         "PersonOrOrganization_contactPoint",
         "PersonOrOrganization_logo"
@@ -8355,8 +8649,8 @@
       ],
       "is_a": "PersonOrOrganization",
       "slots": [
-        "Nameable_name",
-        "Nameable_description",
+        "PersonOrOrganization_name",
+        "PersonOrOrganization_description",
         "PersonOrOrganization_homePage",
         "PersonOrOrganization_contactPoint",
         "PersonOrOrganization_logo",
@@ -8378,8 +8672,8 @@
       ],
       "is_a": "PersonOrOrganization",
       "slots": [
-        "Nameable_name",
-        "Nameable_description",
+        "PersonOrOrganization_name",
+        "PersonOrOrganization_description",
         "PersonOrOrganization_homePage",
         "PersonOrOrganization_contactPoint",
         "PersonOrOrganization_logo",
@@ -8401,8 +8695,8 @@
       ],
       "is_a": "Organization",
       "slots": [
-        "Nameable_name",
-        "Nameable_description",
+        "PersonOrOrganization_name",
+        "PersonOrOrganization_description",
         "PersonOrOrganization_homePage",
         "PersonOrOrganization_contactPoint",
         "PersonOrOrganization_logo",
@@ -8424,8 +8718,8 @@
       ],
       "is_a": "Organization",
       "slots": [
-        "Nameable_name",
-        "Nameable_description",
+        "PersonOrOrganization_name",
+        "PersonOrOrganization_description",
         "PersonOrOrganization_homePage",
         "PersonOrOrganization_contactPoint",
         "PersonOrOrganization_logo",
@@ -8448,8 +8742,8 @@
       ],
       "is_a": "PersonOrOrganization",
       "slots": [
-        "Nameable_name",
-        "Nameable_description",
+        "PersonOrOrganization_name",
+        "PersonOrOrganization_description",
         "PersonOrOrganization_homePage",
         "PersonOrOrganization_contactPoint",
         "PersonOrOrganization_logo"
@@ -8553,8 +8847,8 @@
       ],
       "is_a": "Catalogue",
       "slots": [
-        "Nameable_name",
-        "Nameable_description",
+        "Catalogue_name",
+        "Catalogue_description",
         "Collection_collectionItem",
         "Collection_collectionDataProvider"
       ],
@@ -8571,11 +8865,11 @@
         "part of  wd:Q2897903 (goods and services )"
       ],
       "from_schema": "https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#",
-      "is_a": "NamedDataset",
+      "is_a": "Dataset",
       "abstract": true,
       "slots": [
-        "Nameable_name",
-        "Nameable_description",
+        "ProductOrService_name",
+        "ProductOrService_description",
         "ProductOrService_accessPointURL",
         "ProductOrService_refSKU",
         "ProductOrService_unitDefinition",
@@ -8616,8 +8910,8 @@
       ],
       "is_a": "ProductOrService",
       "slots": [
-        "Nameable_name",
-        "Nameable_description",
+        "ProductOrService_name",
+        "ProductOrService_description",
         "ProductOrService_accessPointURL",
         "ProductOrService_refSKU",
         "ProductOrService_unitDefinition",
@@ -8660,8 +8954,8 @@
       ],
       "is_a": "ProductOrService",
       "slots": [
-        "Nameable_name",
-        "Nameable_description",
+        "ProductOrService_name",
+        "ProductOrService_description",
         "ProductOrService_accessPointURL",
         "ProductOrService_refSKU",
         "ProductOrService_unitDefinition",
@@ -8709,8 +9003,8 @@
       ],
       "is_a": "Product",
       "slots": [
-        "Nameable_name",
-        "Nameable_description",
+        "ProductOrService_name",
+        "ProductOrService_description",
         "ProductOrService_accessPointURL",
         "ProductOrService_refSKU",
         "ProductOrService_unitDefinition",
@@ -8763,8 +9057,8 @@
       ],
       "is_a": "Antibody",
       "slots": [
-        "Nameable_name",
-        "Nameable_description",
+        "ProductOrService_name",
+        "ProductOrService_description",
         "ProductOrService_accessPointURL",
         "ProductOrService_refSKU",
         "ProductOrService_unitDefinition",
@@ -8818,8 +9112,8 @@
       ],
       "is_a": "Product",
       "slots": [
-        "Nameable_name",
-        "Nameable_description",
+        "ProductOrService_name",
+        "ProductOrService_description",
         "ProductOrService_accessPointURL",
         "ProductOrService_refSKU",
         "ProductOrService_unitDefinition",
@@ -8881,8 +9175,8 @@
       ],
       "is_a": "Product",
       "slots": [
-        "Nameable_name",
-        "Nameable_description",
+        "ProductOrService_name",
+        "ProductOrService_description",
         "ProductOrService_accessPointURL",
         "ProductOrService_refSKU",
         "ProductOrService_unitDefinition",
@@ -8941,8 +9235,8 @@
       "from_schema": "https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#",
       "is_a": "Product",
       "slots": [
-        "Nameable_name",
-        "Nameable_description",
+        "ProductOrService_name",
+        "ProductOrService_description",
         "ProductOrService_accessPointURL",
         "ProductOrService_refSKU",
         "ProductOrService_unitDefinition",
@@ -8994,8 +9288,8 @@
       ],
       "is_a": "Product",
       "slots": [
-        "Nameable_name",
-        "Nameable_description",
+        "ProductOrService_name",
+        "ProductOrService_description",
         "ProductOrService_accessPointURL",
         "ProductOrService_refSKU",
         "ProductOrService_unitDefinition",
@@ -9046,8 +9340,8 @@
       "is_a": "Product",
       "abstract": true,
       "slots": [
-        "Nameable_name",
-        "Nameable_description",
+        "ProductOrService_name",
+        "ProductOrService_description",
         "ProductOrService_accessPointURL",
         "ProductOrService_refSKU",
         "ProductOrService_unitDefinition",
@@ -9113,8 +9407,8 @@
       ],
       "is_a": "Pathogen",
       "slots": [
-        "Nameable_name",
-        "Nameable_description",
+        "ProductOrService_name",
+        "ProductOrService_description",
         "ProductOrService_accessPointURL",
         "ProductOrService_refSKU",
         "ProductOrService_unitDefinition",
@@ -9183,8 +9477,8 @@
       ],
       "is_a": "Pathogen",
       "slots": [
-        "Nameable_name",
-        "Nameable_description",
+        "ProductOrService_name",
+        "ProductOrService_description",
         "ProductOrService_accessPointURL",
         "ProductOrService_refSKU",
         "ProductOrService_unitDefinition",
@@ -9250,8 +9544,8 @@
       ],
       "is_a": "Pathogen",
       "slots": [
-        "Nameable_name",
-        "Nameable_description",
+        "ProductOrService_name",
+        "ProductOrService_description",
         "ProductOrService_accessPointURL",
         "ProductOrService_refSKU",
         "ProductOrService_unitDefinition",
@@ -9317,8 +9611,8 @@
       ],
       "is_a": "Pathogen",
       "slots": [
-        "Nameable_name",
-        "Nameable_description",
+        "ProductOrService_name",
+        "ProductOrService_description",
         "ProductOrService_accessPointURL",
         "ProductOrService_refSKU",
         "ProductOrService_unitDefinition",
@@ -9384,8 +9678,8 @@
       ],
       "is_a": "Pathogen",
       "slots": [
-        "Nameable_name",
-        "Nameable_description",
+        "ProductOrService_name",
+        "ProductOrService_description",
         "ProductOrService_accessPointURL",
         "ProductOrService_refSKU",
         "ProductOrService_unitDefinition",
@@ -9451,8 +9745,8 @@
       ],
       "is_a": "Pathogen",
       "slots": [
-        "Nameable_name",
-        "Nameable_description",
+        "ProductOrService_name",
+        "ProductOrService_description",
         "ProductOrService_accessPointURL",
         "ProductOrService_refSKU",
         "ProductOrService_unitDefinition",
@@ -9550,11 +9844,10 @@
       "close_mappings": [
         "wd:Q82753"
       ],
-      "is_a": "Nameable",
       "abstract": true,
       "slots": [
-        "Nameable_name",
-        "Nameable_description",
+        "File_name",
+        "File_description",
         "File_contentURL",
         "File_format",
         "File_license"
@@ -9574,8 +9867,8 @@
       ],
       "is_a": "File",
       "slots": [
-        "Nameable_name",
-        "Nameable_description",
+        "File_name",
+        "File_description",
         "File_contentURL",
         "File_format",
         "File_license"
@@ -9595,8 +9888,8 @@
       ],
       "is_a": "File",
       "slots": [
-        "Nameable_name",
-        "Nameable_description",
+        "File_name",
+        "File_description",
         "File_contentURL",
         "File_format",
         "File_license"
@@ -9616,8 +9909,8 @@
       ],
       "is_a": "File",
       "slots": [
-        "Nameable_name",
-        "Nameable_description",
+        "File_name",
+        "File_description",
         "File_contentURL",
         "File_format",
         "File_license"
@@ -9637,8 +9930,8 @@
       ],
       "is_a": "File",
       "slots": [
-        "Nameable_name",
-        "Nameable_description",
+        "File_name",
+        "File_description",
         "File_contentURL",
         "File_format",
         "File_license"
@@ -9658,8 +9951,8 @@
       ],
       "is_a": "File",
       "slots": [
-        "Nameable_name",
-        "Nameable_description",
+        "File_name",
+        "File_description",
         "File_contentURL",
         "File_format",
         "File_license",
@@ -9679,10 +9972,10 @@
         "wd:Q30322502",
         "vcard:Contact"
       ],
-      "is_a": "Nameable",
+      "is_a": "Dataset",
       "slots": [
-        "Nameable_name",
-        "Nameable_description",
+        "ContactPoint_name",
+        "ContactPoint_description",
         "ContactPoint_email",
         "ContactPoint_telephone",
         "ContactPoint_streetAddress",
@@ -9709,10 +10002,10 @@
         "wd:Q79719",
         "dct:LicenseDocument"
       ],
-      "is_a": "Nameable",
+      "is_a": "Dataset",
       "slots": [
-        "Nameable_name",
-        "Nameable_description",
+        "License_name",
+        "License_description",
         "License_resourceURL",
         "License_licensingOrAttribution",
         "License_logo"
@@ -9731,10 +10024,10 @@
         "wd:Q374814",
         "schema:Certification"
       ],
-      "is_a": "Nameable",
+      "is_a": "Dataset",
       "slots": [
-        "Nameable_name",
-        "Nameable_description",
+        "Certification_name",
+        "Certification_description",
         "Certification_logo",
         "Certification_certificationDocument",
         "Certification_resourceURL"
@@ -9746,9 +10039,9 @@
   ],
   "metamodel_version": "1.7.0",
   "source_file": "evora_schema.yaml",
-  "source_file_date": "2025-01-20T15:33:26",
-  "source_file_size": 138787,
-  "generation_date": "2025-01-20T15:33:42",
+  "source_file_date": "2025-01-23T09:47:32",
+  "source_file_size": 150343,
+  "generation_date": "2025-01-23T09:47:49",
   "@type": "SchemaDefinition",
   "@context": [
     "https://w3id.org/linkml/types.context.jsonld",

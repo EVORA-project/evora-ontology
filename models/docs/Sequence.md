@@ -42,8 +42,9 @@ URI: [EVORAO:Sequence](https://raw.githubusercontent.com/EVORA-project/evora-ont
 
 
 ## Inheritance
-* [Dataset](Dataset.md)
-    * **Sequence**
+* [Resource](Resource.md)
+    * [Dataset](Dataset.md)
+        * **Sequence**
 
 
 
@@ -132,6 +133,9 @@ slot_usage:
     description: A reference that permits to retrieve the sequence information from
       a sequence provider
     title: sequence reference
+    domain_of:
+    - Sequence
+    - Antibody
     range: SequenceReference
     required: false
     recommended: true
@@ -146,6 +150,8 @@ slot_usage:
       line, must begin with a carat (">"), followed by a unique SeqID (sequence identifier).
       In case the sequence is made of multiple parts several fasta sequences can be
       provided
+    domain_of:
+    - Sequence
     range: string
     required: false
     multivalued: false
@@ -170,6 +176,9 @@ slot_usage:
     description: A reference that permits to retrieve the sequence information from
       a sequence provider
     title: sequence reference
+    domain_of:
+    - Sequence
+    - Antibody
     range: SequenceReference
     required: false
     recommended: true
@@ -184,6 +193,8 @@ slot_usage:
       line, must begin with a carat (">"), followed by a unique SeqID (sequence identifier).
       In case the sequence is made of multiple parts several fasta sequences can be
       provided
+    domain_of:
+    - Sequence
     range: string
     required: false
     multivalued: false

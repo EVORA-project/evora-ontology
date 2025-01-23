@@ -71,6 +71,9 @@ alias: inclusionBodiesType
 domain_of:
 - Protein
 range: string
+equals_string_in:
+- Denatured
+- Refolded
 
 ```
 </details>

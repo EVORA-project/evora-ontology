@@ -71,6 +71,9 @@ alias: expressedAs
 domain_of:
 - Protein
 range: string
+equals_string_in:
+- Soluble
+- Inclusion bodies
 
 ```
 </details>

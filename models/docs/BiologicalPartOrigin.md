@@ -51,10 +51,11 @@ URI: [EVORAO:BiologicalPartOrigin](https://raw.githubusercontent.com/EVORA-proje
 
 
 ## Inheritance
-* [Dataset](Dataset.md)
-    * **BiologicalPartOrigin**
-        * [NaturalPartOrigin](NaturalPartOrigin.md)
-        * [SyntheticPartOrigin](SyntheticPartOrigin.md)
+* [Resource](Resource.md)
+    * [Dataset](Dataset.md)
+        * **BiologicalPartOrigin**
+            * [NaturalPartOrigin](NaturalPartOrigin.md)
+            * [SyntheticPartOrigin](SyntheticPartOrigin.md)
 
 
 
@@ -136,6 +137,8 @@ slot_usage:
     comments:
     - Information not required if the current biological part constitutes the complete
       biological material
+    domain_of:
+    - BiologicalPartOrigin
     range: RecombinantPartIdentification
     required: false
     multivalued: false
@@ -145,6 +148,8 @@ slot_usage:
       applicable if the genetic resource falls under Access and Benefit-Sharing (ABS)
       regulations
     title: access to physical genetic resource
+    domain_of:
+    - BiologicalPartOrigin
     range: boolean
     required: true
     multivalued: false
@@ -172,6 +177,8 @@ slot_usage:
     comments:
     - Information not required if the current biological part constitutes the complete
       biological material
+    domain_of:
+    - BiologicalPartOrigin
     range: RecombinantPartIdentification
     required: false
     multivalued: false
@@ -181,6 +188,8 @@ slot_usage:
       applicable if the genetic resource falls under Access and Benefit-Sharing (ABS)
       regulations
     title: access to physical genetic resource
+    domain_of:
+    - BiologicalPartOrigin
     range: boolean
     required: true
     multivalued: false

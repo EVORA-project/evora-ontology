@@ -100,21 +100,7 @@ URI: [EVORAO:Protein](https://raw.githubusercontent.com/EVORA-project/evora-onto
         
       Protein : expressedAs
         
-          
-    
-    
-    Protein --> "*" ExpressedAsEnumeration : expressedAs
-    click ExpressedAsEnumeration href "../ExpressedAsEnumeration"
-
-        
       Protein : expressionSystem
-        
-          
-    
-    
-    Protein --> "*" ExpressionSystemEnumeration : expressionSystem
-    click ExpressionSystemEnumeration href "../ExpressionSystemEnumeration"
-
         
       Protein : externalRelatedReference
         
@@ -126,13 +112,6 @@ URI: [EVORAO:Protein](https://raw.githubusercontent.com/EVORA-project/evora-onto
 
         
       Protein : functionalCharacterization
-        
-          
-    
-    
-    Protein --> "*" FunctionalCharacterizationEnumeration : functionalCharacterization
-    click FunctionalCharacterizationEnumeration href "../FunctionalCharacterizationEnumeration"
-
         
       Protein : functionalTechnicalDescription
         
@@ -146,13 +125,6 @@ URI: [EVORAO:Protein](https://raw.githubusercontent.com/EVORA-project/evora-onto
 
         
       Protein : inclusionBodiesType
-        
-          
-    
-    
-    Protein --> "*" InclusionBodiesTypeEnumeration : inclusionBodiesType
-    click InclusionBodiesTypeEnumeration href "../InclusionBodiesTypeEnumeration"
-
         
       Protein : internalReference
         
@@ -206,13 +178,6 @@ URI: [EVORAO:Protein](https://raw.githubusercontent.com/EVORA-project/evora-onto
 
         
       Protein : proteinPurification
-        
-          
-    
-    
-    Protein --> "*" ProteinPurificationEnumeration : proteinPurification
-    click ProteinPurificationEnumeration href "../ProteinPurificationEnumeration"
-
         
       Protein : proteinTAG
         
@@ -293,13 +258,6 @@ URI: [EVORAO:Protein](https://raw.githubusercontent.com/EVORA-project/evora-onto
         
       Protein : typeOfFunctionalCharacterization
         
-          
-    
-    
-    Protein --> "*" TypeOfFunctionalCharacterizationEnumeration : typeOfFunctionalCharacterization
-    click TypeOfFunctionalCharacterizationEnumeration href "../TypeOfFunctionalCharacterizationEnumeration"
-
-        
       Protein : unitCost
         
       Protein : unitDefinition
@@ -314,8 +272,8 @@ URI: [EVORAO:Protein](https://raw.githubusercontent.com/EVORA-project/evora-onto
 
 
 ## Inheritance
-* [Nameable](Nameable.md)
-    * [NamedDataset](NamedDataset.md)
+* [Resource](Resource.md)
+    * [Dataset](Dataset.md)
         * [ProductOrService](ProductOrService.md)
             * [Product](Product.md)
                 * **Protein**
@@ -332,14 +290,14 @@ URI: [EVORAO:Protein](https://raw.githubusercontent.com/EVORA-project/evora-onto
 | [specialFeature](specialFeature.md) | * <br/> [SpecialFeature](SpecialFeature.md) | Distinctive attributes of a product that set it apart from other similar item... | direct |
 | [proteinTAG](proteinTAG.md) | * <br/> [ProteinTag](ProteinTag.md) | Peptide sequences genetically grafted onto a recombinant protein | direct |
 | [domain](domain.md) | * <br/> [String](String.md) | A distinct structural and functional unit within the protein, often capable o... | direct |
-| [expressedAs](expressedAs.md) | * <br/> [ExpressedAsEnumeration](ExpressedAsEnumeration.md) | Refers to the form in which the protein is produced and manifested in a biolo... | direct |
-| [inclusionBodiesType](inclusionBodiesType.md) | * <br/> [InclusionBodiesTypeEnumeration](InclusionBodiesTypeEnumeration.md) | Refers to the state of aggregated proteins within a cell | direct |
-| [expressionSystem](expressionSystem.md) | * <br/> [ExpressionSystemEnumeration](ExpressionSystemEnumeration.md) | The host organism or cellular environment used to produce a protein from a sp... | direct |
-| [functionalCharacterization](functionalCharacterization.md) | * <br/> [FunctionalCharacterizationEnumeration](FunctionalCharacterizationEnumeration.md) | The process of determining and describing the specific biological activities ... | direct |
+| [expressedAs](expressedAs.md) | * <br/> [String](String.md) | Refers to the form in which the protein is produced and manifested in a biolo... | direct |
+| [inclusionBodiesType](inclusionBodiesType.md) | * <br/> [String](String.md) | Refers to the state of aggregated proteins within a cell | direct |
+| [expressionSystem](expressionSystem.md) | * <br/> [String](String.md) | The host organism or cellular environment used to produce a protein from a sp... | direct |
+| [functionalCharacterization](functionalCharacterization.md) | * <br/> [String](String.md) | The process of determining and describing the specific biological activities ... | direct |
 | [functionalTechnicalDescription](functionalTechnicalDescription.md) | * <br/> [String](String.md) | Detailed information about the specific biological functions, mechanisms of a... | direct |
-| [proteinPurification](proteinPurification.md) | * <br/> [ProteinPurificationEnumeration](ProteinPurificationEnumeration.md) | Refers to the degree of purity achieved for a protein sample | direct |
+| [proteinPurification](proteinPurification.md) | * <br/> [String](String.md) | Refers to the degree of purity achieved for a protein sample | direct |
 | [theTAGStatusOfTheSolubilizedProtein](theTAGStatusOfTheSolubilizedProtein.md) | * <br/> [String](String.md) | Indicates the presence and condition of a tag on the protein after solubiliza... | direct |
-| [typeOfFunctionalCharacterization](typeOfFunctionalCharacterization.md) | * <br/> [TypeOfFunctionalCharacterizationEnumeration](TypeOfFunctionalCharacterizationEnumeration.md) | Refers to the classification of a protein based on the specific type of funct... | direct |
+| [typeOfFunctionalCharacterization](typeOfFunctionalCharacterization.md) | * <br/> [String](String.md) | Refers to the classification of a protein based on the specific type of funct... | direct |
 | [hasIATAClassification](hasIATAClassification.md) | 1 <br/> [IATAClassification](IATAClassification.md) | The corresponding International Air Transport Association (IATA)'s category f... | [Product](Product.md) |
 | [shippingConditions](shippingConditions.md) | 1 <br/> [String](String.md) | Specification of the terms and parameters for transporting | [Product](Product.md) |
 | [materialSafetyDataSheet](materialSafetyDataSheet.md) | 0..1 <br/> [MSDS](MSDS.md) | A Material Safety Data Sheet (MSDS) or Safety Data Sheet (SDS) is a standardi... | [Product](Product.md) |
@@ -347,6 +305,8 @@ URI: [EVORAO:Protein](https://raw.githubusercontent.com/EVORA-project/evora-onto
 | [storageConditions](storageConditions.md) | 1 <br/> [String](String.md) | Specifies the conditions under which the product has to be stored to maintain... | [Product](Product.md) |
 | [thirdPartyDistributionConsent](thirdPartyDistributionConsent.md) | 0..1 <br/> [Boolean](Boolean.md) | Indicates whether the biological material can be distributed without restrict... | [Product](Product.md) |
 | [usageRestrictions](usageRestrictions.md) | 0..1 <br/> [String](String.md) | Specifies any limitations or conditions on the use of the biological material... | [Product](Product.md) |
+| [name](name.md) | 1 <br/> [String](String.md) | The label that allows humans to identify the current item | [ProductOrService](ProductOrService.md) |
+| [description](description.md) | 0..1 _recommended_ <br/> [String](String.md) | A short explanation of the characteristics, features, or nature of the curren... | [ProductOrService](ProductOrService.md) |
 | [accessPointURL](accessPointURL.md) | 1 <br/> [Uri](Uri.md) | The URL that permits to access to the product/service detailed description pa... | [ProductOrService](ProductOrService.md) |
 | [refSKU](refSKU.md) | 1 <br/> [String](String.md) | The reference or the stock keeping unit of the service or item provided in th... | [ProductOrService](ProductOrService.md) |
 | [unitDefinition](unitDefinition.md) | 0..1 _recommended_ <br/> [String](String.md) | A short description of what will be delivered by ordering one unit of this it... | [ProductOrService](ProductOrService.md) |
@@ -358,7 +318,7 @@ URI: [EVORAO:Protein](https://raw.githubusercontent.com/EVORA-project/evora-onto
 | [relatedDOI](relatedDOI.md) | * <br/> [DOI](DOI.md) | Any DOI that can be related | [ProductOrService](ProductOrService.md) |
 | [riskGroup](riskGroup.md) | 0..1 _recommended_ <br/> [RiskGroup](RiskGroup.md) | The highest risk group related to this resource | [ProductOrService](ProductOrService.md) |
 | [biosafetyRestrictions](biosafetyRestrictions.md) | 0..1 <br/> [String](String.md) | Information about guidelines and regulations designed to prevent the exposure... | [ProductOrService](ProductOrService.md) |
-| [canItBeUsedToProduceGMO](canItBeUsedToProduceGMO.md) | 0..1 _recommended_ <br/> [Boolean](Boolean.md) | Indicates if the current service or product can be used to produce GMO | [ProductOrService](ProductOrService.md) |
+| [canItBeUsedToProduceGMO](canItBeUsedToProduceGMO.md) | 1 _recommended_ <br/> [Boolean](Boolean.md) | Indicates if the current service or product can be used to produce GMO | [ProductOrService](ProductOrService.md) |
 | [provider](provider.md) | 1 <br/> [Provider](Provider.md) | A provider of this product or service, as a specific organization | [ProductOrService](ProductOrService.md) |
 | [collection](collection.md) | 1..* <br/> [Collection](Collection.md) | The collection(s) to which belongs this item | [ProductOrService](ProductOrService.md) |
 | [keywords](keywords.md) | 1..* _recommended_ <br/> [Keyword](Keyword.md) | List of terms used to tag and categorize this Item | [ProductOrService](ProductOrService.md) |
@@ -371,8 +331,6 @@ URI: [EVORAO:Protein](https://raw.githubusercontent.com/EVORA-project/evora-onto
 | [internalReference](internalReference.md) | 0..1 <br/> [String](String.md) | Any reference or indication to be used for local retrieval purpose | [ProductOrService](ProductOrService.md) |
 | [note](note.md) | 0..1 <br/> [String](String.md) | An aditional information as a textual comment | [ProductOrService](ProductOrService.md) |
 | [contactPoint](contactPoint.md) | 0..1 _recommended_ <br/> [ContactPoint](ContactPoint.md) | An information that allows someone to establish communication | [ProductOrService](ProductOrService.md) |
-| [name](name.md) | 1 <br/> [String](String.md) | The label that allows humans to identify the current item | [Nameable](Nameable.md) |
-| [description](description.md) | 0..1 _recommended_ <br/> [String](String.md) | A short explanation of the characteristics, features, or nature of the curren... | [Nameable](Nameable.md) |
 
 
 
@@ -449,6 +407,10 @@ slot_usage:
       for access, utilization, and benefit-sharing of genetic resources in compliance
       with the Nagoya Protocol.
     title: Biological Material origin
+    domain_of:
+    - Protein
+    - Nucleic Acid
+    - Pathogen
     range: BiologicalMaterialOrigin
     required: true
     multivalued: false
@@ -457,6 +419,11 @@ slot_usage:
     description: The related sequence information from a sequence provider or in fasta
       format
     title: sequence
+    domain_of:
+    - Protein
+    - RecombinantPartIdentification
+    - Nucleic Acid
+    - Pathogen
     range: Sequence
     required: true
     multivalued: true
@@ -467,6 +434,8 @@ slot_usage:
     title: related PDB
     close_mappings:
     - wdp:P638
+    domain_of:
+    - Protein
     range: PDBReference
     required: false
     multivalued: true
@@ -476,6 +445,8 @@ slot_usage:
       similar items e.g., Reference strain, Vaccinal strain, Antiviral resistant strain
       ...
     title: special feature
+    domain_of:
+    - Protein
     range: SpecialFeature
     required: false
     multivalued: true
@@ -483,6 +454,8 @@ slot_usage:
     name: proteinTAG
     description: Peptide sequences genetically grafted onto a recombinant protein
     title: protein TAG
+    domain_of:
+    - Protein
     range: ProteinTag
     required: false
     multivalued: true
@@ -492,6 +465,8 @@ slot_usage:
       capable of independent folding and stability, which contributes to the protein's
       overall function
     title: domain
+    domain_of:
+    - Protein
     range: string
     required: false
     multivalued: true
@@ -502,7 +477,9 @@ slot_usage:
       dissolved in the cellular or extracellular fluid) and "Inclusion bodies" (aggregated
       proteins that are insoluble and form within the cell)
     title: expressed as
-    range: expressedAsEnumeration
+    domain_of:
+    - Protein
+    range: string
     required: false
     multivalued: true
   inclusionBodiesType:
@@ -512,7 +489,9 @@ slot_usage:
       "Refolded" (proteins have been processed to regain their functional, active
       conformation).
     title: inclusion bodies type
-    range: inclusionBodiesTypeEnumeration
+    domain_of:
+    - Protein
+    range: string
     required: false
     multivalued: true
   expressionSystem:
@@ -522,7 +501,9 @@ slot_usage:
       "Insect cells" (using baculovirus vectors), and "Mammalian cells" (mammalian
       cell lines).
     title: expression system
-    range: expressionSystemEnumeration
+    domain_of:
+    - Protein
+    range: string
     required: false
     multivalued: true
   functionalCharacterization:
@@ -532,7 +513,9 @@ slot_usage:
       (the protein's functions have been identified and described) and "No functional
       characterization" (the protein's functions have not been identified or described).
     title: functional characterization
-    range: functionalCharacterizationEnumeration
+    domain_of:
+    - Protein
+    range: string
     required: false
     multivalued: true
   functionalTechnicalDescription:
@@ -543,6 +526,8 @@ slot_usage:
       relevant technical details such as structure, activity, and interactions with
       other molecules.
     title: functional/Technical description
+    domain_of:
+    - Protein
     range: string
     required: false
     multivalued: true
@@ -553,7 +538,9 @@ slot_usage:
       and "Unpurified expression host lysate or partly purified protein" (the protein
       is either unpurified and present in the host cell lysate or only partially purified).
     title: protein purification
-    range: proteinPurificationEnumeration
+    domain_of:
+    - Protein
+    range: string
     required: false
     multivalued: true
   theTAGStatusOfTheSolubilizedProtein:
@@ -563,6 +550,8 @@ slot_usage:
       to the protein), "Cleaved Tag" (the tag has been removed from the protein),
       and "No Tag" (the protein does not have a tag)
     title: TAG status of the solubilized protein
+    domain_of:
+    - Protein
     range: string
     required: false
     multivalued: true
@@ -574,7 +563,9 @@ slot_usage:
       for its enzyme activity) and "Antigenic" (the protein has been characterized
       for its ability to elicit an immune response).
     title: type of functional Characterization
-    range: typeOfFunctionalCharacterizationEnumeration
+    domain_of:
+    - Protein
+    range: string
     required: false
     multivalued: true
 
@@ -599,6 +590,10 @@ slot_usage:
       for access, utilization, and benefit-sharing of genetic resources in compliance
       with the Nagoya Protocol.
     title: Biological Material origin
+    domain_of:
+    - Protein
+    - Nucleic Acid
+    - Pathogen
     range: BiologicalMaterialOrigin
     required: true
     multivalued: false
@@ -607,6 +602,11 @@ slot_usage:
     description: The related sequence information from a sequence provider or in fasta
       format
     title: sequence
+    domain_of:
+    - Protein
+    - RecombinantPartIdentification
+    - Nucleic Acid
+    - Pathogen
     range: Sequence
     required: true
     multivalued: true
@@ -617,6 +617,8 @@ slot_usage:
     title: related PDB
     close_mappings:
     - wdp:P638
+    domain_of:
+    - Protein
     range: PDBReference
     required: false
     multivalued: true
@@ -626,6 +628,8 @@ slot_usage:
       similar items e.g., Reference strain, Vaccinal strain, Antiviral resistant strain
       ...
     title: special feature
+    domain_of:
+    - Protein
     range: SpecialFeature
     required: false
     multivalued: true
@@ -633,6 +637,8 @@ slot_usage:
     name: proteinTAG
     description: Peptide sequences genetically grafted onto a recombinant protein
     title: protein TAG
+    domain_of:
+    - Protein
     range: ProteinTag
     required: false
     multivalued: true
@@ -642,6 +648,8 @@ slot_usage:
       capable of independent folding and stability, which contributes to the protein's
       overall function
     title: domain
+    domain_of:
+    - Protein
     range: string
     required: false
     multivalued: true
@@ -652,7 +660,9 @@ slot_usage:
       dissolved in the cellular or extracellular fluid) and "Inclusion bodies" (aggregated
       proteins that are insoluble and form within the cell)
     title: expressed as
-    range: expressedAsEnumeration
+    domain_of:
+    - Protein
+    range: string
     required: false
     multivalued: true
   inclusionBodiesType:
@@ -662,7 +672,9 @@ slot_usage:
       "Refolded" (proteins have been processed to regain their functional, active
       conformation).
     title: inclusion bodies type
-    range: inclusionBodiesTypeEnumeration
+    domain_of:
+    - Protein
+    range: string
     required: false
     multivalued: true
   expressionSystem:
@@ -672,7 +684,9 @@ slot_usage:
       "Insect cells" (using baculovirus vectors), and "Mammalian cells" (mammalian
       cell lines).
     title: expression system
-    range: expressionSystemEnumeration
+    domain_of:
+    - Protein
+    range: string
     required: false
     multivalued: true
   functionalCharacterization:
@@ -682,7 +696,9 @@ slot_usage:
       (the protein's functions have been identified and described) and "No functional
       characterization" (the protein's functions have not been identified or described).
     title: functional characterization
-    range: functionalCharacterizationEnumeration
+    domain_of:
+    - Protein
+    range: string
     required: false
     multivalued: true
   functionalTechnicalDescription:
@@ -693,6 +709,8 @@ slot_usage:
       relevant technical details such as structure, activity, and interactions with
       other molecules.
     title: functional/Technical description
+    domain_of:
+    - Protein
     range: string
     required: false
     multivalued: true
@@ -703,7 +721,9 @@ slot_usage:
       and "Unpurified expression host lysate or partly purified protein" (the protein
       is either unpurified and present in the host cell lysate or only partially purified).
     title: protein purification
-    range: proteinPurificationEnumeration
+    domain_of:
+    - Protein
+    range: string
     required: false
     multivalued: true
   theTAGStatusOfTheSolubilizedProtein:
@@ -713,6 +733,8 @@ slot_usage:
       to the protein), "Cleaved Tag" (the tag has been removed from the protein),
       and "No Tag" (the protein does not have a tag)
     title: TAG status of the solubilized protein
+    domain_of:
+    - Protein
     range: string
     required: false
     multivalued: true
@@ -724,7 +746,9 @@ slot_usage:
       for its enzyme activity) and "Antigenic" (the protein has been characterized
       for its ability to elicit an immune response).
     title: type of functional Characterization
-    range: typeOfFunctionalCharacterizationEnumeration
+    domain_of:
+    - Protein
+    range: string
     required: false
     multivalued: true
 attributes:
@@ -755,8 +779,8 @@ attributes:
     alias: sequence
     owner: Protein
     domain_of:
-    - RecombinantPartIdentification
     - Protein
+    - RecombinantPartIdentification
     - Nucleic Acid
     - Pathogen
     range: Sequence
@@ -834,9 +858,12 @@ attributes:
     owner: Protein
     domain_of:
     - Protein
-    range: expressedAsEnumeration
+    range: string
     required: false
     multivalued: true
+    equals_string_in:
+    - Soluble
+    - Inclusion bodies
   inclusionBodiesType:
     name: inclusionBodiesType
     description: Refers to the state of aggregated proteins within a cell. Possible
@@ -850,9 +877,12 @@ attributes:
     owner: Protein
     domain_of:
     - Protein
-    range: inclusionBodiesTypeEnumeration
+    range: string
     required: false
     multivalued: true
+    equals_string_in:
+    - Denatured
+    - Refolded
   expressionSystem:
     name: expressionSystem
     description: The host organism or cellular environment used to produce a protein
@@ -866,9 +896,13 @@ attributes:
     owner: Protein
     domain_of:
     - Protein
-    range: expressionSystemEnumeration
+    range: string
     required: false
     multivalued: true
+    equals_string_in:
+    - E. coli
+    - Insect cells
+    - Mammalian cells
   functionalCharacterization:
     name: functionalCharacterization
     description: The process of determining and describing the specific biological
@@ -882,9 +916,12 @@ attributes:
     owner: Protein
     domain_of:
     - Protein
-    range: functionalCharacterizationEnumeration
+    range: string
     required: false
     multivalued: true
+    equals_string_in:
+    - Functionally characterized
+    - No functional characterization
   functionalTechnicalDescription:
     name: functionalTechnicalDescription
     description: Detailed information about the specific biological functions, mechanisms
@@ -915,9 +952,12 @@ attributes:
     owner: Protein
     domain_of:
     - Protein
-    range: proteinPurificationEnumeration
+    range: string
     required: false
     multivalued: true
+    equals_string_in:
+    - Greater than 95 percent
+    - Unpurified expression host lysate or partly purified protein
   theTAGStatusOfTheSolubilizedProtein:
     name: theTAGStatusOfTheSolubilizedProtein
     description: Indicates the presence and condition of a tag on the protein after
@@ -948,9 +988,12 @@ attributes:
     owner: Protein
     domain_of:
     - Protein
-    range: typeOfFunctionalCharacterizationEnumeration
+    range: string
     required: false
     multivalued: true
+    equals_string_in:
+    - Enzymatic
+    - Antigenic
   hasIATAClassification:
     name: hasIATAClassification
     description: The corresponding International Air Transport Association (IATA)'s
@@ -1062,6 +1105,68 @@ attributes:
     - Product
     range: string
     required: false
+    multivalued: false
+  name:
+    name: name
+    description: The label that allows humans to identify the current item
+    title: name
+    comments:
+    - 'The title of the item should be as short and descriptive as possible. E.g.
+      for virus products it should basically be based on the following Pattern:
+
+      "Virus name", "virus host type", "collection year", "country of collection"
+      ex "suspected epidemiological origin", "genotype", "strain", "variant name or
+      specific feature"'
+    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+    exact_mappings:
+    - dct:title
+    close_mappings:
+    - rdfs:label
+    rank: 1000
+    alias: name
+    owner: Protein
+    domain_of:
+    - ProductOrService
+    - DataService
+    - Catalogue
+    - Term
+    - PersonOrOrganization
+    - File
+    - ContactPoint
+    - License
+    - Certification
+    range: string
+    required: true
+    multivalued: false
+  description:
+    name: description
+    description: A short explanation of the characteristics, features, or nature of
+      the current item
+    title: description
+    comments:
+    - 'Describe this item in few lines. This description will serve as a summary to
+      present the item.
+
+      '
+    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+    exact_mappings:
+    - dct:description
+    rank: 1000
+    alias: description
+    owner: Protein
+    domain_of:
+    - ProductOrService
+    - DataService
+    - Catalogue
+    - Term
+    - PersonOrOrganization
+    - File
+    - ContactPoint
+    - License
+    - Certification
+    range: string
+    required: false
+    recommended: true
     multivalued: false
   accessPointURL:
     name: accessPointURL
@@ -1209,8 +1314,8 @@ attributes:
     alias: relatedDOI
     owner: Protein
     domain_of:
-    - Publication
     - ProductOrService
+    - Publication
     range: DOI
     required: false
     multivalued: true
@@ -1263,7 +1368,7 @@ attributes:
     domain_of:
     - ProductOrService
     range: boolean
-    required: false
+    required: true
     recommended: true
     multivalued: false
   provider:
@@ -1434,55 +1539,9 @@ attributes:
     alias: contactPoint
     owner: Protein
     domain_of:
-    - PersonOrOrganization
     - ProductOrService
+    - PersonOrOrganization
     range: ContactPoint
-    required: false
-    recommended: true
-    multivalued: false
-  name:
-    name: name
-    description: The label that allows humans to identify the current item
-    title: name
-    comments:
-    - 'The title of the item should be as short and descriptive as possible. E.g.
-      for virus products it should basically be based on the following Pattern:
-
-      "Virus name", "virus host type", "collection year", "country of collection"
-      ex "suspected epidemiological origin", "genotype", "strain", "variant name or
-      specific feature"'
-    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
-    exact_mappings:
-    - dct:title
-    close_mappings:
-    - rdfs:label
-    rank: 1000
-    alias: name
-    owner: Protein
-    domain_of:
-    - Nameable
-    range: string
-    required: true
-    multivalued: false
-  description:
-    name: description
-    description: A short explanation of the characteristics, features, or nature of
-      the current item
-    title: description
-    comments:
-    - 'Describe this item in few lines. This description will serve as a summary to
-      present the item.
-
-      '
-    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
-    exact_mappings:
-    - dct:description
-    rank: 1000
-    alias: description
-    owner: Protein
-    domain_of:
-    - Nameable
-    range: string
     required: false
     recommended: true
     multivalued: false

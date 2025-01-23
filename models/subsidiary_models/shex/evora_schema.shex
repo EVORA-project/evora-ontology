@@ -1,9 +1,8 @@
 # metamodel_version: 1.7.0
-# version: 1.0.7897
+# version: 1.0.8305
 BASE <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#>
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
-PREFIX wd: <http://www.wikidata.org/entity/>
 PREFIX linkml: <https://w3id.org/linkml/>
 
 
@@ -126,16 +125,20 @@ linkml:Sparqlpath xsd:string
 )
 
 <Catalogue_struct> {
-    (  $<Catalogue_tes> (  &<Nameable_tes> ;
-          rdf:type [ <Nameable> ] ?
+    (  $<Catalogue_tes> (  &<Dataset_tes> ;
+          rdf:type [ <Dataset> ] ? ;
+          <name> @linkml:String ;
+          <description> @linkml:String ?
        ) ;
        rdf:type [ <Catalogue> ] ?
     )
 }
 
 <Certification> CLOSED {
-    (  $<Certification_tes> (  &<Nameable_tes> ;
-          rdf:type [ <Nameable> ] ? ;
+    (  $<Certification_tes> (  &<Dataset_tes> ;
+          rdf:type [ <Dataset> ] ? ;
+          <name> @linkml:String ;
+          <description> @linkml:String ? ;
           <logo> @<Image> ? ;
           <certificationDocument> @<Document> * ;
           <resourceURL> @linkml:Uri ?
@@ -167,8 +170,10 @@ linkml:Sparqlpath xsd:string
 )
 
 <ContactPoint> CLOSED {
-    (  $<ContactPoint_tes> (  &<Nameable_tes> ;
-          rdf:type [ <Nameable> ] ? ;
+    (  $<ContactPoint_tes> (  &<Dataset_tes> ;
+          rdf:type [ <Dataset> ] ? ;
+          <name> @linkml:String ;
+          <description> @linkml:String ? ;
           <email> @linkml:String ? ;
           <telephone> @linkml:String ? ;
           <streetAddress> @linkml:String ? ;
@@ -203,13 +208,13 @@ linkml:Sparqlpath xsd:string
     (  $<DataProvider_tes> (  &<DataService_tes> ;
           rdf:type [ <DataService> ] ? ;
           <license> @<License> ? ;
-          <loginRequestMethod> [ wd:Q3504817 wd:Q2764521 ] ? ;
+          <loginRequestMethod> @linkml:String ? ;
           <loginURL> @linkml:Uri ? ;
           <loginTokenName> @linkml:String ? ;
           <queryURL> @linkml:Uri ;
-          <queryMethod> [ wd:Q3504817 wd:Q2764521 ] ;
+          <queryMethod> @linkml:String ;
           <contentType> @linkml:String ;
-          <providedEntityType> @linkml:Uri ;
+          <providedEntityType> @<Dataset> ;
           <weight> @linkml:Integer
        ) ;
        rdf:type [ <DataProvider> ] ?
@@ -218,8 +223,10 @@ linkml:Sparqlpath xsd:string
 
 <DataService>  (
     {
-       (  $<DataService_tes> (  &<Nameable_tes> ;
-             rdf:type [ <Nameable> ] ?
+       (  $<DataService_tes> (  &<Resource_tes> ;
+             rdf:type [ <Resource> ] ? ;
+             <name> @linkml:String ;
+             <description> @linkml:String ?
           ) ;
           rdf:type [ <DataService> ] ?
        )
@@ -227,12 +234,16 @@ linkml:Sparqlpath xsd:string
 )
 
 <Dataset>  (
-    @<BiologicalMaterialOrigin> OR @<BiologicalPartOrigin> OR @<ExternalRelatedReference> OR @<MSDS> OR @<PathogenIdentification>
-    OR @<Publication> OR @<RecombinantPartIdentification> OR @<Sequence> OR @<SequenceReference> OR @<Version>
+    @<BiologicalMaterialOrigin> OR @<BiologicalPartOrigin> OR @<Catalogue> OR @<Certification> OR @<ContactPoint> OR
+    @<ExternalRelatedReference> OR @<License> OR @<MSDS> OR @<PathogenIdentification> OR @<PersonOrOrganization> OR
+    @<ProductOrService> OR @<Publication> OR @<RecombinantPartIdentification> OR @<Sequence> OR @<SequenceReference> OR @<Term> OR
+    @<Version>
 )
 
 <Dataset_struct> {
-    (  $<Dataset_tes> rdf:type . * ;
+    (  $<Dataset_tes> (  &<Resource_tes> ;
+          rdf:type [ <Resource> ] ?
+       ) ;
        rdf:type [ <Dataset> ] ?
     )
 }
@@ -290,8 +301,8 @@ linkml:Sparqlpath xsd:string
 )
 
 <File_struct> {
-    (  $<File_tes> (  &<Nameable_tes> ;
-          rdf:type [ <Nameable> ] ? ;
+    (  $<File_tes> (  <name> @linkml:String ;
+          <description> @linkml:String ? ;
           <contentURL> @linkml:Uri ;
           <format> @linkml:String ;
           <license> @<License> ?
@@ -377,8 +388,10 @@ linkml:Sparqlpath xsd:string
 }
 
 <License> CLOSED {
-    (  $<License_tes> (  &<Nameable_tes> ;
-          rdf:type [ <Nameable> ] ? ;
+    (  $<License_tes> (  &<Dataset_tes> ;
+          rdf:type [ <Dataset> ] ? ;
+          <name> @linkml:String ;
+          <description> @linkml:String ? ;
           <resourceURL> @linkml:Uri ? ;
           <licensingOrAttribution> @linkml:String ? ;
           <logo> @<Image> ?
@@ -410,31 +423,6 @@ linkml:Sparqlpath xsd:string
     )
 }
 
-<Nameable>  (
-    @<Catalogue> OR @<Certification> OR @<ContactPoint> OR @<DataService> OR @<File> OR @<License> OR @<NamedDataset> OR
-    @<PersonOrOrganization>
-)
-
-<Nameable_struct> {
-    (  $<Nameable_tes> (  <name> @linkml:String ;
-          <description> @linkml:String ?
-       ) ;
-       rdf:type [ <Nameable> ] ?
-    )
-}
-
-<NamedDataset>  (
-    @<ProductOrService> OR @<Term>
-)
-
-<NamedDataset_struct> {
-    (  $<NamedDataset_tes> (  &<Nameable_tes> ;
-          rdf:type [ <Nameable> ] ?
-       ) ;
-       rdf:type [ <NamedDataset> ] ?
-    )
-}
-
 <NaturalPartOrigin> CLOSED {
     (  $<NaturalPartOrigin_tes> (  &<BiologicalPartOrigin_tes> ;
           rdf:type [ <BiologicalPartOrigin> ] ? ;
@@ -462,11 +450,7 @@ linkml:Sparqlpath xsd:string
           <mutationObserved> @linkml:Boolean ;
           <observedMutations> @linkml:String ? ;
           <identificationTechnique> @linkml:String ? ;
-          <sequencing> [
-             <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#SequencingEnumeration#Not%20sequenced>
-             <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#SequencingEnumeration#Partly%20sequenced>
-             <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#SequencingEnumeration#Fully%20sequenced>
-             ] ;
+          <sequencing> @linkml:String ;
           <titer> @linkml:String ? ;
           <sequenceChecked> @linkml:Boolean
        ) ;
@@ -508,32 +492,16 @@ linkml:Sparqlpath xsd:string
           <propagationHost> @<PropagationHost> * ;
           <transmissionMethod> @<TransmissionMethod> * ;
           <sequence> @<Sequence> + ;
-          <cultivability> [
-             <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#CultivabilityEnumeration#Cultivable>
-             <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#CultivabilityEnumeration#Uncultivable>
-             <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#CultivabilityEnumeration#Inactivated>
-             ] ;
+          <cultivability> @linkml:String ;
           <clinicalInformation> @linkml:String ? ;
           <identificationTechnique> @linkml:String ? ;
-          <infectivity> [
-             <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#InfectivityEnumeration#Infectivity%20tested>
-             <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#InfectivityEnumeration#Infectivity%20tested%20and%20quantified>
-             <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#InfectivityEnumeration#Non%20cultivable%20sample%2C%20infectivity%20cannot%20be%20tested>
-             ] ;
+          <infectivity> @linkml:String ;
           <infectivityTest> @linkml:String ? ;
           <isolationTechnique> @linkml:String ? ;
           <isolationConditions> @linkml:String ? ;
-          <letterOfAuthority> [
-             <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#LetterOfAuthorityEnumeration#Not%20applicable>
-             <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#LetterOfAuthorityEnumeration#Not%20required>
-             <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#LetterOfAuthorityEnumeration#Required%20for%20customers%20in%20the%20EU>
-             <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#LetterOfAuthorityEnumeration#Required>
-             ] ;
+          <letterOfAuthority> @linkml:String ;
           <passage> @linkml:String ? ;
-          <genomeSequencing> [ wd:Q2068526
-             <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#GenomeSequencingEnumeration#Complete%20coding%20sequence>
-             <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#GenomeSequencingEnumeration#Partial%20sequence>
-             ] ;
+          <genomeSequencing> @linkml:String ;
           <titer> @linkml:String
        ) ;
        rdf:type [ <Pathogen> ] ?
@@ -545,8 +513,8 @@ linkml:Sparqlpath xsd:string
           rdf:type [ <Dataset> ] ? ;
           <taxon> @<Taxon> ;
           <pathogenName> @<CommonName> ;
-          <pathogenType> [ <Virus> <Bacterium> <Fungus> <Protozoan> <Viroid> <Prion> ] ;
-          <hostType> [ wd:Q729 wd:Q5 wd:Q756 ] * ;
+          <pathogenType> @linkml:String ;
+          <hostType> @linkml:String * ;
           <subspecies> @linkml:String ? ;
           <strain> @linkml:String ? ;
           <isolate> @linkml:String ? ;
@@ -577,8 +545,10 @@ linkml:Sparqlpath xsd:string
 
 <PersonOrOrganization>  (
     CLOSED {
-       (  $<PersonOrOrganization_tes> (  &<Nameable_tes> ;
-             rdf:type [ <Nameable> ] ? ;
+       (  $<PersonOrOrganization_tes> (  &<Dataset_tes> ;
+             rdf:type [ <Dataset> ] ? ;
+             <name> @linkml:String ;
+             <description> @linkml:String ? ;
              <homePage> @linkml:String ? ;
              <contactPoint> @<ContactPoint> ? ;
              <logo> @<Image> ?
@@ -643,8 +613,10 @@ linkml:Sparqlpath xsd:string
 )
 
 <ProductOrService_struct> {
-    (  $<ProductOrService_tes> (  &<NamedDataset_tes> ;
-          rdf:type [ <NamedDataset> ] ? ;
+    (  $<ProductOrService_tes> (  &<Dataset_tes> ;
+          rdf:type [ <Dataset> ] ? ;
+          <name> @linkml:String ;
+          <description> @linkml:String ? ;
           <accessPointURL> @linkml:Uri ;
           <refSKU> @linkml:String ;
           <unitDefinition> @linkml:String ? ;
@@ -656,7 +628,7 @@ linkml:Sparqlpath xsd:string
           <relatedDOI> @<DOI> * ;
           <riskGroup> @<RiskGroup> ? ;
           <biosafetyRestrictions> @linkml:String ? ;
-          <canItBeUsedToProduceGMO> @linkml:Boolean ? ;
+          <canItBeUsedToProduceGMO> @linkml:Boolean ;
           <provider> @<Provider> ;
           <collection> @<Collection> + ;
           <keywords> @<Keyword> + ;
@@ -691,28 +663,14 @@ linkml:Sparqlpath xsd:string
           <specialFeature> @<SpecialFeature> * ;
           <proteinTAG> @<ProteinTag> * ;
           <domain> @linkml:String * ;
-          <expressedAs> [ wd:Q87723650 wd:Q1308970 ] * ;
-          <inclusionBodiesType> [
-             <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#InclusionBodiesTypeEnumeration#Denatured>
-             <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#InclusionBodiesTypeEnumeration#Refolded>
-             ] * ;
-          <expressionSystem> [ wd:Q25419 wd:Q108929499
-             <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#ExpressionSystemEnumeration#Mammalian%20cells>
-             ] * ;
-          <functionalCharacterization> [
-             <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#FunctionalCharacterizationEnumeration#Functionally%20characterized>
-             <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#FunctionalCharacterizationEnumeration#No%20functional%20characterization>
-             ] * ;
+          <expressedAs> @linkml:String * ;
+          <inclusionBodiesType> @linkml:String * ;
+          <expressionSystem> @linkml:String * ;
+          <functionalCharacterization> @linkml:String * ;
           <functionalTechnicalDescription> @linkml:String * ;
-          <proteinPurification> [
-             <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#ProteinPurificationEnumeration#Greater%20than%2095%20percent>
-             <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#ProteinPurificationEnumeration#Unpurified%20expression%20host%20lysate%20or%20partly%20purified%20protein>
-             ] * ;
+          <proteinPurification> @linkml:String * ;
           <theTAGStatusOfTheSolubilizedProtein> @linkml:String * ;
-          <typeOfFunctionalCharacterization> [
-             <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#TypeOfFunctionalCharacterizationEnumeration#Enzymatic>
-             <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#TypeOfFunctionalCharacterizationEnumeration#Antigenic>
-             ] *
+          <typeOfFunctionalCharacterization> @linkml:String *
        ) ;
        rdf:type [ <Protein> ] ?
     )
@@ -766,6 +724,14 @@ linkml:Sparqlpath xsd:string
     )
 }
 
+<Resource>  (
+    CLOSED {
+       (  $<Resource_tes> rdf:type . * ;
+          rdf:type [ <Resource> ] ?
+       )
+    } OR @<DataService> OR @<Dataset>
+)
+
 <RI> CLOSED {
     (  $<RI_tes> (  &<Organization_tes> ;
           rdf:type [ <Organization> ] ?
@@ -796,7 +762,7 @@ linkml:Sparqlpath xsd:string
     (  $<SequenceReference_tes> (  &<Dataset_tes> ;
           rdf:type [ <Dataset> ] ? ;
           <accessionNumber> @linkml:String ;
-          <sequenceProvider> [ wd:Q5412874 wd:Q901755 ]
+          <sequenceProvider> @linkml:String
        ) ;
        rdf:type [ <SequenceReference> ] ?
     )
@@ -876,8 +842,10 @@ linkml:Sparqlpath xsd:string
 )
 
 <Term_struct> {
-    (  $<Term_tes> (  &<NamedDataset_tes> ;
-          rdf:type [ <NamedDataset> ] ? ;
+    (  $<Term_tes> (  &<Dataset_tes> ;
+          rdf:type [ <Dataset> ] ? ;
+          <name> @linkml:String ;
+          <description> @linkml:String ? ;
           <weight> @linkml:Integer ;
           <inVocabulary> @<Vocabulary>
        ) ;
@@ -905,7 +873,7 @@ linkml:Sparqlpath xsd:string
     (  $<Version_tes> (  &<Dataset_tes> ;
           rdf:type [ <Dataset> ] ? ;
           <ID> @linkml:String ;
-          <versionOf> @linkml:Uri
+          <versionOf> @<Dataset>
        ) ;
        rdf:type [ <Version> ] ?
     )

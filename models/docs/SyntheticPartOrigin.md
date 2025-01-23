@@ -46,9 +46,10 @@ URI: [EVORAO:SyntheticPartOrigin](https://raw.githubusercontent.com/EVORA-projec
 
 
 ## Inheritance
-* [Dataset](Dataset.md)
-    * [BiologicalPartOrigin](BiologicalPartOrigin.md)
-        * **SyntheticPartOrigin**
+* [Resource](Resource.md)
+    * [Dataset](Dataset.md)
+        * [BiologicalPartOrigin](BiologicalPartOrigin.md)
+            * **SyntheticPartOrigin**
 
 
 
@@ -121,6 +122,8 @@ slot_usage:
     description: Set to TRUE if there was is any modification made from the reference
       sequence
     title: modifications from the reference sequence(s)
+    domain_of:
+    - SyntheticPartOrigin
     range: boolean
     required: true
     multivalued: false
@@ -128,6 +131,8 @@ slot_usage:
     name: descriptionOfModificationsMadeFromTheReferenceSequences
     description: List the modifications mades from the reference sequence if any
     title: description of modification(s) made from the reference sequence(s)
+    domain_of:
+    - SyntheticPartOrigin
     range: string
     required: false
     recommended: true
@@ -152,6 +157,8 @@ slot_usage:
     description: Set to TRUE if there was is any modification made from the reference
       sequence
     title: modifications from the reference sequence(s)
+    domain_of:
+    - SyntheticPartOrigin
     range: boolean
     required: true
     multivalued: false
@@ -159,6 +166,8 @@ slot_usage:
     name: descriptionOfModificationsMadeFromTheReferenceSequences
     description: List the modifications mades from the reference sequence if any
     title: description of modification(s) made from the reference sequence(s)
+    domain_of:
+    - SyntheticPartOrigin
     range: string
     required: false
     recommended: true

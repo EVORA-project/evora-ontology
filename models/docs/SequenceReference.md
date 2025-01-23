@@ -27,13 +27,6 @@ URI: [EVORAO:SequenceReference](https://raw.githubusercontent.com/EVORA-project/
         
       SequenceReference : sequenceProvider
         
-          
-    
-    
-    SequenceReference --> "1" SequenceProviderEnumeration : sequenceProvider
-    click SequenceProviderEnumeration href "../SequenceProviderEnumeration"
-
-        
       
 ```
 
@@ -42,8 +35,9 @@ URI: [EVORAO:SequenceReference](https://raw.githubusercontent.com/EVORA-project/
 
 
 ## Inheritance
-* [Dataset](Dataset.md)
-    * **SequenceReference**
+* [Resource](Resource.md)
+    * [Dataset](Dataset.md)
+        * **SequenceReference**
 
 
 
@@ -52,7 +46,7 @@ URI: [EVORAO:SequenceReference](https://raw.githubusercontent.com/EVORA-project/
 | Name | Cardinality and Range | Description | Inheritance |
 | ---  | --- | --- | --- |
 | [accessionNumber](accessionNumber.md) | 1 <br/> [String](String.md) | The sequence ID that permits to retrieve the sequence information from the se... | direct |
-| [sequenceProvider](sequenceProvider.md) | 1 <br/> [SequenceProviderEnumeration](SequenceProviderEnumeration.md) | The name of the sequence provider within the list of accepted sequence provid... | direct |
+| [sequenceProvider](sequenceProvider.md) | 1 <br/> [String](String.md) | The name of the sequence provider within the list of accepted sequence provid... | direct |
 
 
 
@@ -133,6 +127,8 @@ slot_usage:
     title: accession number
     close_mappings:
     - dct:identifier
+    domain_of:
+    - SequenceReference
     range: string
     required: true
     multivalued: false
@@ -143,7 +139,9 @@ slot_usage:
     title: sequence provider
     close_mappings:
     - dct:publisher
-    range: sequenceProviderEnumeration
+    domain_of:
+    - SequenceReference
+    range: string
     required: true
     multivalued: false
 
@@ -172,6 +170,8 @@ slot_usage:
     title: accession number
     close_mappings:
     - dct:identifier
+    domain_of:
+    - SequenceReference
     range: string
     required: true
     multivalued: false
@@ -182,7 +182,9 @@ slot_usage:
     title: sequence provider
     close_mappings:
     - dct:publisher
-    range: sequenceProviderEnumeration
+    domain_of:
+    - SequenceReference
+    range: string
     required: true
     multivalued: false
 attributes:
@@ -215,9 +217,12 @@ attributes:
     owner: SequenceReference
     domain_of:
     - SequenceReference
-    range: sequenceProviderEnumeration
+    range: string
     required: true
     multivalued: false
+    equals_string_in:
+    - ENA
+    - GenBank
 
 ```
 </details>

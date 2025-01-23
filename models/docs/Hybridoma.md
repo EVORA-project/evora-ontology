@@ -228,8 +228,8 @@ URI: [EVORAO:Hybridoma](https://raw.githubusercontent.com/EVORA-project/evora-on
 
 
 ## Inheritance
-* [Nameable](Nameable.md)
-    * [NamedDataset](NamedDataset.md)
+* [Resource](Resource.md)
+    * [Dataset](Dataset.md)
         * [ProductOrService](ProductOrService.md)
             * [Product](Product.md)
                 * [Antibody](Antibody.md)
@@ -254,6 +254,8 @@ URI: [EVORAO:Hybridoma](https://raw.githubusercontent.com/EVORA-project/evora-on
 | [storageConditions](storageConditions.md) | 1 <br/> [String](String.md) | Specifies the conditions under which the product has to be stored to maintain... | [Product](Product.md) |
 | [thirdPartyDistributionConsent](thirdPartyDistributionConsent.md) | 0..1 <br/> [Boolean](Boolean.md) | Indicates whether the biological material can be distributed without restrict... | [Product](Product.md) |
 | [usageRestrictions](usageRestrictions.md) | 0..1 <br/> [String](String.md) | Specifies any limitations or conditions on the use of the biological material... | [Product](Product.md) |
+| [name](name.md) | 1 <br/> [String](String.md) | The label that allows humans to identify the current item | [ProductOrService](ProductOrService.md) |
+| [description](description.md) | 0..1 _recommended_ <br/> [String](String.md) | A short explanation of the characteristics, features, or nature of the curren... | [ProductOrService](ProductOrService.md) |
 | [accessPointURL](accessPointURL.md) | 1 <br/> [Uri](Uri.md) | The URL that permits to access to the product/service detailed description pa... | [ProductOrService](ProductOrService.md) |
 | [refSKU](refSKU.md) | 1 <br/> [String](String.md) | The reference or the stock keeping unit of the service or item provided in th... | [ProductOrService](ProductOrService.md) |
 | [unitDefinition](unitDefinition.md) | 0..1 _recommended_ <br/> [String](String.md) | A short description of what will be delivered by ordering one unit of this it... | [ProductOrService](ProductOrService.md) |
@@ -265,7 +267,7 @@ URI: [EVORAO:Hybridoma](https://raw.githubusercontent.com/EVORA-project/evora-on
 | [relatedDOI](relatedDOI.md) | * <br/> [DOI](DOI.md) | Any DOI that can be related | [ProductOrService](ProductOrService.md) |
 | [riskGroup](riskGroup.md) | 0..1 _recommended_ <br/> [RiskGroup](RiskGroup.md) | The highest risk group related to this resource | [ProductOrService](ProductOrService.md) |
 | [biosafetyRestrictions](biosafetyRestrictions.md) | 0..1 <br/> [String](String.md) | Information about guidelines and regulations designed to prevent the exposure... | [ProductOrService](ProductOrService.md) |
-| [canItBeUsedToProduceGMO](canItBeUsedToProduceGMO.md) | 0..1 _recommended_ <br/> [Boolean](Boolean.md) | Indicates if the current service or product can be used to produce GMO | [ProductOrService](ProductOrService.md) |
+| [canItBeUsedToProduceGMO](canItBeUsedToProduceGMO.md) | 1 _recommended_ <br/> [Boolean](Boolean.md) | Indicates if the current service or product can be used to produce GMO | [ProductOrService](ProductOrService.md) |
 | [provider](provider.md) | 1 <br/> [Provider](Provider.md) | A provider of this product or service, as a specific organization | [ProductOrService](ProductOrService.md) |
 | [collection](collection.md) | 1..* <br/> [Collection](Collection.md) | The collection(s) to which belongs this item | [ProductOrService](ProductOrService.md) |
 | [keywords](keywords.md) | 1..* _recommended_ <br/> [Keyword](Keyword.md) | List of terms used to tag and categorize this Item | [ProductOrService](ProductOrService.md) |
@@ -278,8 +280,6 @@ URI: [EVORAO:Hybridoma](https://raw.githubusercontent.com/EVORA-project/evora-on
 | [internalReference](internalReference.md) | 0..1 <br/> [String](String.md) | Any reference or indication to be used for local retrieval purpose | [ProductOrService](ProductOrService.md) |
 | [note](note.md) | 0..1 <br/> [String](String.md) | An aditional information as a textual comment | [ProductOrService](ProductOrService.md) |
 | [contactPoint](contactPoint.md) | 0..1 _recommended_ <br/> [ContactPoint](ContactPoint.md) | An information that allows someone to establish communication | [ProductOrService](ProductOrService.md) |
-| [name](name.md) | 1 <br/> [String](String.md) | The label that allows humans to identify the current item | [Nameable](Nameable.md) |
-| [description](description.md) | 0..1 _recommended_ <br/> [String](String.md) | A short explanation of the characteristics, features, or nature of the curren... | [Nameable](Nameable.md) |
 
 
 
@@ -341,6 +341,8 @@ slot_usage:
     name: hybridomaDescription
     description: The description of the hybridoma
     title: hybridoma description
+    domain_of:
+    - Hybridoma
     range: string
     required: true
     multivalued: false
@@ -364,6 +366,8 @@ slot_usage:
     name: hybridomaDescription
     description: The description of the hybridoma
     title: hybridoma description
+    domain_of:
+    - Hybridoma
     range: string
     required: true
     multivalued: false
@@ -447,8 +451,8 @@ attributes:
     alias: sequenceReference
     owner: Hybridoma
     domain_of:
-    - Sequence
     - Antibody
+    - Sequence
     range: SequenceReference
     required: false
     recommended: true
@@ -564,6 +568,68 @@ attributes:
     - Product
     range: string
     required: false
+    multivalued: false
+  name:
+    name: name
+    description: The label that allows humans to identify the current item
+    title: name
+    comments:
+    - 'The title of the item should be as short and descriptive as possible. E.g.
+      for virus products it should basically be based on the following Pattern:
+
+      "Virus name", "virus host type", "collection year", "country of collection"
+      ex "suspected epidemiological origin", "genotype", "strain", "variant name or
+      specific feature"'
+    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+    exact_mappings:
+    - dct:title
+    close_mappings:
+    - rdfs:label
+    rank: 1000
+    alias: name
+    owner: Hybridoma
+    domain_of:
+    - ProductOrService
+    - DataService
+    - Catalogue
+    - Term
+    - PersonOrOrganization
+    - File
+    - ContactPoint
+    - License
+    - Certification
+    range: string
+    required: true
+    multivalued: false
+  description:
+    name: description
+    description: A short explanation of the characteristics, features, or nature of
+      the current item
+    title: description
+    comments:
+    - 'Describe this item in few lines. This description will serve as a summary to
+      present the item.
+
+      '
+    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+    exact_mappings:
+    - dct:description
+    rank: 1000
+    alias: description
+    owner: Hybridoma
+    domain_of:
+    - ProductOrService
+    - DataService
+    - Catalogue
+    - Term
+    - PersonOrOrganization
+    - File
+    - ContactPoint
+    - License
+    - Certification
+    range: string
+    required: false
+    recommended: true
     multivalued: false
   accessPointURL:
     name: accessPointURL
@@ -711,8 +777,8 @@ attributes:
     alias: relatedDOI
     owner: Hybridoma
     domain_of:
-    - Publication
     - ProductOrService
+    - Publication
     range: DOI
     required: false
     multivalued: true
@@ -765,7 +831,7 @@ attributes:
     domain_of:
     - ProductOrService
     range: boolean
-    required: false
+    required: true
     recommended: true
     multivalued: false
   provider:
@@ -936,55 +1002,9 @@ attributes:
     alias: contactPoint
     owner: Hybridoma
     domain_of:
-    - PersonOrOrganization
     - ProductOrService
+    - PersonOrOrganization
     range: ContactPoint
-    required: false
-    recommended: true
-    multivalued: false
-  name:
-    name: name
-    description: The label that allows humans to identify the current item
-    title: name
-    comments:
-    - 'The title of the item should be as short and descriptive as possible. E.g.
-      for virus products it should basically be based on the following Pattern:
-
-      "Virus name", "virus host type", "collection year", "country of collection"
-      ex "suspected epidemiological origin", "genotype", "strain", "variant name or
-      specific feature"'
-    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
-    exact_mappings:
-    - dct:title
-    close_mappings:
-    - rdfs:label
-    rank: 1000
-    alias: name
-    owner: Hybridoma
-    domain_of:
-    - Nameable
-    range: string
-    required: true
-    multivalued: false
-  description:
-    name: description
-    description: A short explanation of the characteristics, features, or nature of
-      the current item
-    title: description
-    comments:
-    - 'Describe this item in few lines. This description will serve as a summary to
-      present the item.
-
-      '
-    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
-    exact_mappings:
-    - dct:description
-    rank: 1000
-    alias: description
-    owner: Hybridoma
-    domain_of:
-    - Nameable
-    range: string
     required: false
     recommended: true
     multivalued: false

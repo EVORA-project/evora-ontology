@@ -71,6 +71,10 @@ alias: sequencing
 domain_of:
 - Nucleic Acid
 range: string
+equals_string_in:
+- Not sequenced
+- Partly sequenced
+- Fully sequenced
 
 ```
 </details>

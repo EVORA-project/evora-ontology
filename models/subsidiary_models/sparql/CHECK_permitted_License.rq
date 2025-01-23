@@ -25,21 +25,15 @@ SELECT ?g ?s ?p WHERE {
   ?s rdf:type EVORAO:License ;
      ?p ?o .
   FILTER ( ?p NOT IN (
+   EVORAO:name,
+   EVORAO:description,
    EVORAO:resourceURL,
    EVORAO:licensingOrAttribution,
    EVORAO:logo,
-   EVORAO:name,
-   EVORAO:description,
    rdf:type ))
  }
  
 } 
-
-
-
-
-
-
 
 
 

@@ -42,8 +42,9 @@ URI: [EVORAO:RecombinantPartIdentification](https://raw.githubusercontent.com/EV
 
 
 ## Inheritance
-* [Dataset](Dataset.md)
-    * **RecombinantPartIdentification**
+* [Resource](Resource.md)
+    * [Dataset](Dataset.md)
+        * **RecombinantPartIdentification**
 
 
 
@@ -122,6 +123,8 @@ slot_usage:
     description: A short designation of this recombinant part of the related biological
       material
     title: Part identification
+    domain_of:
+    - RecombinantPartIdentification
     range: string
     required: true
     multivalued: false
@@ -130,6 +133,11 @@ slot_usage:
     description: The related sequence information from a sequence provider or in fasta
       format
     title: sequence
+    domain_of:
+    - RecombinantPartIdentification
+    - Protein
+    - Nucleic Acid
+    - Pathogen
     range: Sequence
     required: true
     recommended: true
@@ -153,6 +161,8 @@ slot_usage:
     description: A short designation of this recombinant part of the related biological
       material
     title: Part identification
+    domain_of:
+    - RecombinantPartIdentification
     range: string
     required: true
     multivalued: false
@@ -161,6 +171,11 @@ slot_usage:
     description: The related sequence information from a sequence provider or in fasta
       format
     title: sequence
+    domain_of:
+    - RecombinantPartIdentification
+    - Protein
+    - Nucleic Acid
+    - Pathogen
     range: Sequence
     required: true
     recommended: true

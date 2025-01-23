@@ -25,10 +25,10 @@ SELECT ?g ?s ?p WHERE {
   ?s rdf:type EVORAO:IATAClassification ;
      ?p ?o .
   FILTER ( ?p NOT IN (
-   EVORAO:weight,
-   EVORAO:inVocabulary,
    EVORAO:name,
    EVORAO:description,
+   EVORAO:weight,
+   EVORAO:inVocabulary,
    rdf:type ))
  }
  

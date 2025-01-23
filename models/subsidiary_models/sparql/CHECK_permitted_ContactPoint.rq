@@ -25,6 +25,8 @@ SELECT ?g ?s ?p WHERE {
   ?s rdf:type EVORAO:ContactPoint ;
      ?p ?o .
   FILTER ( ?p NOT IN (
+   EVORAO:name,
+   EVORAO:description,
    EVORAO:email,
    EVORAO:telephone,
    EVORAO:streetAddress,
@@ -33,26 +35,10 @@ SELECT ?g ?s ?p WHERE {
    EVORAO:postalCode,
    EVORAO:addressCountry,
    EVORAO:oRCIDiD,
-   EVORAO:name,
-   EVORAO:description,
    rdf:type ))
  }
  
 } 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

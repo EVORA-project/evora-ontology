@@ -20,8 +20,8 @@ URI: [EVORAO:PersonOrOrganization](https://raw.githubusercontent.com/EVORA-proje
  classDiagram
     class PersonOrOrganization
     click PersonOrOrganization href "../PersonOrOrganization"
-      Nameable <|-- PersonOrOrganization
-        click Nameable href "../Nameable"
+      Dataset <|-- PersonOrOrganization
+        click Dataset href "../Dataset"
       
 
       PersonOrOrganization <|-- Person
@@ -64,11 +64,12 @@ URI: [EVORAO:PersonOrOrganization](https://raw.githubusercontent.com/EVORA-proje
 
 
 ## Inheritance
-* [Nameable](Nameable.md)
-    * **PersonOrOrganization**
-        * [Person](Person.md)
-        * [Organization](Organization.md)
-        * [Originator](Originator.md)
+* [Resource](Resource.md)
+    * [Dataset](Dataset.md)
+        * **PersonOrOrganization**
+            * [Person](Person.md)
+            * [Organization](Organization.md)
+            * [Originator](Originator.md)
 
 
 
@@ -76,11 +77,11 @@ URI: [EVORAO:PersonOrOrganization](https://raw.githubusercontent.com/EVORA-proje
 
 | Name | Cardinality and Range | Description | Inheritance |
 | ---  | --- | --- | --- |
+| [name](name.md) | 1 <br/> [String](String.md) | The label that allows humans to identify the current item | direct |
+| [description](description.md) | 0..1 _recommended_ <br/> [String](String.md) | A short explanation of the characteristics, features, or nature of the curren... | direct |
 | [homePage](homePage.md) | 0..1 <br/> [String](String.md) | Refers to the degree of purity achieved for a protein sample | direct |
 | [contactPoint](contactPoint.md) | 0..1 _recommended_ <br/> [ContactPoint](ContactPoint.md) | An information that allows someone to establish communication | direct |
 | [logo](logo.md) | 0..1 <br/> [Image](Image.md) | A path or URL to the related logo | direct |
-| [name](name.md) | 1 <br/> [String](String.md) | The label that allows humans to identify the current item | [Nameable](Nameable.md) |
-| [description](description.md) | 0..1 _recommended_ <br/> [String](String.md) | A short explanation of the characteristics, features, or nature of the curren... | [Nameable](Nameable.md) |
 
 
 
@@ -137,12 +138,68 @@ exact_mappings:
 - dct:Agent
 close_mappings:
 - foaf:Agent
-is_a: Nameable
+is_a: Dataset
 slots:
+- name
+- description
 - homePage
 - contactPoint
 - logo
 slot_usage:
+  name:
+    name: name
+    description: The label that allows humans to identify the current item
+    title: name
+    comments:
+    - 'The title of the item should be as short and descriptive as possible. E.g.
+      for virus products it should basically be based on the following Pattern:
+
+      "Virus name", "virus host type", "collection year", "country of collection"
+      ex "suspected epidemiological origin", "genotype", "strain", "variant name or
+      specific feature"'
+    exact_mappings:
+    - dct:title
+    close_mappings:
+    - rdfs:label
+    domain_of:
+    - PersonOrOrganization
+    - DataService
+    - Catalogue
+    - Term
+    - ProductOrService
+    - File
+    - ContactPoint
+    - License
+    - Certification
+    range: string
+    required: true
+    multivalued: false
+  description:
+    name: description
+    description: A short explanation of the characteristics, features, or nature of
+      the current item
+    title: description
+    comments:
+    - 'Describe this item in few lines. This description will serve as a summary to
+      present the item.
+
+      '
+    exact_mappings:
+    - dct:description
+    domain_of:
+    - PersonOrOrganization
+    - DataService
+    - Catalogue
+    - Term
+    - ProductOrService
+    - File
+    - ContactPoint
+    - License
+    - Certification
+    range: string
+    required: false
+    recommended: true
+    multivalued: false
   homePage:
     name: homePage
     description: Refers to the degree of purity achieved for a protein sample. Possible
@@ -150,6 +207,8 @@ slot_usage:
       and "Unpurified expression host lysate or partly purified protein" (the protein
       is either unpurified and present in the host cell lysate or only partially purified).
     title: home page
+    domain_of:
+    - PersonOrOrganization
     range: string
     required: false
     multivalued: false
@@ -159,6 +218,9 @@ slot_usage:
     title: contact point
     exact_mappings:
     - dcat:contactPoint
+    domain_of:
+    - PersonOrOrganization
+    - ProductOrService
     range: ContactPoint
     required: false
     recommended: true
@@ -167,6 +229,10 @@ slot_usage:
     name: logo
     description: A path or URL to the related logo
     title: logo
+    domain_of:
+    - PersonOrOrganization
+    - License
+    - Certification
     range: Image
     required: false
     multivalued: false
@@ -186,8 +252,62 @@ exact_mappings:
 - dct:Agent
 close_mappings:
 - foaf:Agent
-is_a: Nameable
+is_a: Dataset
 slot_usage:
+  name:
+    name: name
+    description: The label that allows humans to identify the current item
+    title: name
+    comments:
+    - 'The title of the item should be as short and descriptive as possible. E.g.
+      for virus products it should basically be based on the following Pattern:
+
+      "Virus name", "virus host type", "collection year", "country of collection"
+      ex "suspected epidemiological origin", "genotype", "strain", "variant name or
+      specific feature"'
+    exact_mappings:
+    - dct:title
+    close_mappings:
+    - rdfs:label
+    domain_of:
+    - PersonOrOrganization
+    - DataService
+    - Catalogue
+    - Term
+    - ProductOrService
+    - File
+    - ContactPoint
+    - License
+    - Certification
+    range: string
+    required: true
+    multivalued: false
+  description:
+    name: description
+    description: A short explanation of the characteristics, features, or nature of
+      the current item
+    title: description
+    comments:
+    - 'Describe this item in few lines. This description will serve as a summary to
+      present the item.
+
+      '
+    exact_mappings:
+    - dct:description
+    domain_of:
+    - PersonOrOrganization
+    - DataService
+    - Catalogue
+    - Term
+    - ProductOrService
+    - File
+    - ContactPoint
+    - License
+    - Certification
+    range: string
+    required: false
+    recommended: true
+    multivalued: false
   homePage:
     name: homePage
     description: Refers to the degree of purity achieved for a protein sample. Possible
@@ -195,6 +315,8 @@ slot_usage:
       and "Unpurified expression host lysate or partly purified protein" (the protein
       is either unpurified and present in the host cell lysate or only partially purified).
     title: home page
+    domain_of:
+    - PersonOrOrganization
     range: string
     required: false
     multivalued: false
@@ -204,6 +326,9 @@ slot_usage:
     title: contact point
     exact_mappings:
     - dcat:contactPoint
+    domain_of:
+    - PersonOrOrganization
+    - ProductOrService
     range: ContactPoint
     required: false
     recommended: true
@@ -212,10 +337,76 @@ slot_usage:
     name: logo
     description: A path or URL to the related logo
     title: logo
+    domain_of:
+    - PersonOrOrganization
+    - License
+    - Certification
     range: Image
     required: false
     multivalued: false
 attributes:
+  name:
+    name: name
+    description: The label that allows humans to identify the current item
+    title: name
+    comments:
+    - 'The title of the item should be as short and descriptive as possible. E.g.
+      for virus products it should basically be based on the following Pattern:
+
+      "Virus name", "virus host type", "collection year", "country of collection"
+      ex "suspected epidemiological origin", "genotype", "strain", "variant name or
+      specific feature"'
+    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+    exact_mappings:
+    - dct:title
+    close_mappings:
+    - rdfs:label
+    rank: 1000
+    alias: name
+    owner: PersonOrOrganization
+    domain_of:
+    - PersonOrOrganization
+    - DataService
+    - Catalogue
+    - Term
+    - ProductOrService
+    - File
+    - ContactPoint
+    - License
+    - Certification
+    range: string
+    required: true
+    multivalued: false
+  description:
+    name: description
+    description: A short explanation of the characteristics, features, or nature of
+      the current item
+    title: description
+    comments:
+    - 'Describe this item in few lines. This description will serve as a summary to
+      present the item.
+
+      '
+    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+    exact_mappings:
+    - dct:description
+    rank: 1000
+    alias: description
+    owner: PersonOrOrganization
+    domain_of:
+    - PersonOrOrganization
+    - DataService
+    - Catalogue
+    - Term
+    - ProductOrService
+    - File
+    - ContactPoint
+    - License
+    - Certification
+    range: string
+    required: false
+    recommended: true
+    multivalued: false
   homePage:
     name: homePage
     description: Refers to the degree of purity achieved for a protein sample. Possible
@@ -263,52 +454,6 @@ attributes:
     - Certification
     range: Image
     required: false
-    multivalued: false
-  name:
-    name: name
-    description: The label that allows humans to identify the current item
-    title: name
-    comments:
-    - 'The title of the item should be as short and descriptive as possible. E.g.
-      for virus products it should basically be based on the following Pattern:
-
-      "Virus name", "virus host type", "collection year", "country of collection"
-      ex "suspected epidemiological origin", "genotype", "strain", "variant name or
-      specific feature"'
-    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
-    exact_mappings:
-    - dct:title
-    close_mappings:
-    - rdfs:label
-    rank: 1000
-    alias: name
-    owner: PersonOrOrganization
-    domain_of:
-    - Nameable
-    range: string
-    required: true
-    multivalued: false
-  description:
-    name: description
-    description: A short explanation of the characteristics, features, or nature of
-      the current item
-    title: description
-    comments:
-    - 'Describe this item in few lines. This description will serve as a summary to
-      present the item.
-
-      '
-    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
-    exact_mappings:
-    - dct:description
-    rank: 1000
-    alias: description
-    owner: PersonOrOrganization
-    domain_of:
-    - Nameable
-    range: string
-    required: false
-    recommended: true
     multivalued: false
 
 ```

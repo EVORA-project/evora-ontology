@@ -27,13 +27,6 @@ URI: [EVORAO:PathogenIdentification](https://raw.githubusercontent.com/EVORA-pro
         
       PathogenIdentification : hostType
         
-          
-    
-    
-    PathogenIdentification --> "* _recommended_" HostTypeEnumeration : hostType
-    click HostTypeEnumeration href "../HostTypeEnumeration"
-
-        
       PathogenIdentification : isolate
         
       PathogenIdentification : pathogenName
@@ -46,13 +39,6 @@ URI: [EVORAO:PathogenIdentification](https://raw.githubusercontent.com/EVORA-pro
 
         
       PathogenIdentification : pathogenType
-        
-          
-    
-    
-    PathogenIdentification --> "1" PathogenTypeEnumeration : pathogenType
-    click PathogenTypeEnumeration href "../PathogenTypeEnumeration"
-
         
       PathogenIdentification : serotype
         
@@ -86,8 +72,9 @@ URI: [EVORAO:PathogenIdentification](https://raw.githubusercontent.com/EVORA-pro
 
 
 ## Inheritance
-* [Dataset](Dataset.md)
-    * **PathogenIdentification**
+* [Resource](Resource.md)
+    * [Dataset](Dataset.md)
+        * **PathogenIdentification**
 
 
 
@@ -97,8 +84,8 @@ URI: [EVORAO:PathogenIdentification](https://raw.githubusercontent.com/EVORA-pro
 | ---  | --- | --- | --- |
 | [taxon](taxon.md) | 1 <br/> [Taxon](Taxon.md) | Scientifically classified group or entity within the reference taxonomy | direct |
 | [pathogenName](pathogenName.md) | 1 <br/> [CommonName](CommonName.md) | A pathogen common name or a name that describes a group of pathogens | direct |
-| [pathogenType](pathogenType.md) | 1 <br/> [PathogenTypeEnumeration](PathogenTypeEnumeration.md) | Identification of the specific type of pathogen among the listed categories e | direct |
-| [hostType](hostType.md) | * _recommended_ <br/> [HostTypeEnumeration](HostTypeEnumeration.md) | Indication of the possible host(s) for the identified pathogens among the lis... | direct |
+| [pathogenType](pathogenType.md) | 1 <br/> [String](String.md) | Identification of the specific type of pathogen among the listed categories e | direct |
+| [hostType](hostType.md) | * _recommended_ <br/> [String](String.md) | Indication of the possible host(s) for the identified pathogens among the lis... | direct |
 | [subspecies](subspecies.md) | 0..1 <br/> [String](String.md) | The subspecies information differentiates closely related pathogens within a ... | direct |
 | [strain](strain.md) | 0..1 _recommended_ <br/> [String](String.md) | Identifier given to a genetic variant within a single species | direct |
 | [isolate](isolate.md) | 0..1 <br/> [String](String.md) | Identifier given to a pathogen that has been isolated from an infected host a... | direct |
@@ -198,6 +185,9 @@ slot_usage:
     comments:
     - The taxon of the highest rank known that can be used to classify a pathogen
       or group of pathogens (e.g viruses) in the reference taxonomy
+    domain_of:
+    - PathogenIdentification
+    - Taxonomy
     range: Taxon
     required: true
     multivalued: false
@@ -205,6 +195,8 @@ slot_usage:
     name: pathogenName
     description: A pathogen common name or a name that describes a group of pathogens
     title: pathogen name
+    domain_of:
+    - PathogenIdentification
     range: CommonName
     required: true
     multivalued: false
@@ -213,7 +205,9 @@ slot_usage:
     description: Identification of the specific type of pathogen among the listed
       categories e.g. "Virus","Viroid","Bacterium"...
     title: pathogen type
-    range: pathogenTypeEnumeration
+    domain_of:
+    - PathogenIdentification
+    range: string
     required: true
     multivalued: false
   hostType:
@@ -221,7 +215,9 @@ slot_usage:
     description: Indication of the possible host(s) for the identified pathogens among
       the listed main categories
     title: host type
-    range: hostTypeEnumeration
+    domain_of:
+    - PathogenIdentification
+    range: string
     required: false
     recommended: true
     multivalued: true
@@ -230,6 +226,8 @@ slot_usage:
     description: The subspecies information differentiates closely related pathogens
       within a single species
     title: subspecies
+    domain_of:
+    - PathogenIdentification
     range: string
     required: false
     multivalued: false
@@ -237,6 +235,8 @@ slot_usage:
     name: strain
     description: Identifier given to a genetic variant within a single species
     title: strain
+    domain_of:
+    - PathogenIdentification
     range: string
     required: false
     recommended: true
@@ -249,6 +249,8 @@ slot_usage:
       the isolation, as well as details about the specific conditions of isolation,
       such as the name of the town, hospital, and type of host
     title: isolate
+    domain_of:
+    - PathogenIdentification
     range: string
     required: false
     multivalued: false
@@ -257,6 +259,8 @@ slot_usage:
     description: Genotype information that identifies organisms that cluster in phylogenetic
       trees, thus different clusters are distinct genotypes
     title: genotype
+    domain_of:
+    - PathogenIdentification
     range: string
     required: false
     multivalued: false
@@ -265,6 +269,8 @@ slot_usage:
     description: Genetically related pathogens that group together based on serological
       relationships
     title: serotype
+    domain_of:
+    - PathogenIdentification
     range: string
     required: false
     multivalued: false
@@ -274,6 +280,8 @@ slot_usage:
       of the original organism if not sufficiently different to be termed a distinct
       strain
     title: variant
+    domain_of:
+    - PathogenIdentification
     range: Variant
     required: false
     multivalued: false
@@ -299,6 +307,9 @@ slot_usage:
     comments:
     - The taxon of the highest rank known that can be used to classify a pathogen
       or group of pathogens (e.g viruses) in the reference taxonomy
+    domain_of:
+    - PathogenIdentification
+    - Taxonomy
     range: Taxon
     required: true
     multivalued: false
@@ -306,6 +317,8 @@ slot_usage:
     name: pathogenName
     description: A pathogen common name or a name that describes a group of pathogens
     title: pathogen name
+    domain_of:
+    - PathogenIdentification
     range: CommonName
     required: true
     multivalued: false
@@ -314,7 +327,9 @@ slot_usage:
     description: Identification of the specific type of pathogen among the listed
       categories e.g. "Virus","Viroid","Bacterium"...
     title: pathogen type
-    range: pathogenTypeEnumeration
+    domain_of:
+    - PathogenIdentification
+    range: string
     required: true
     multivalued: false
   hostType:
@@ -322,7 +337,9 @@ slot_usage:
     description: Indication of the possible host(s) for the identified pathogens among
       the listed main categories
     title: host type
-    range: hostTypeEnumeration
+    domain_of:
+    - PathogenIdentification
+    range: string
     required: false
     recommended: true
     multivalued: true
@@ -331,6 +348,8 @@ slot_usage:
     description: The subspecies information differentiates closely related pathogens
       within a single species
     title: subspecies
+    domain_of:
+    - PathogenIdentification
     range: string
     required: false
     multivalued: false
@@ -338,6 +357,8 @@ slot_usage:
     name: strain
     description: Identifier given to a genetic variant within a single species
     title: strain
+    domain_of:
+    - PathogenIdentification
     range: string
     required: false
     recommended: true
@@ -350,6 +371,8 @@ slot_usage:
       the isolation, as well as details about the specific conditions of isolation,
       such as the name of the town, hospital, and type of host
     title: isolate
+    domain_of:
+    - PathogenIdentification
     range: string
     required: false
     multivalued: false
@@ -358,6 +381,8 @@ slot_usage:
     description: Genotype information that identifies organisms that cluster in phylogenetic
       trees, thus different clusters are distinct genotypes
     title: genotype
+    domain_of:
+    - PathogenIdentification
     range: string
     required: false
     multivalued: false
@@ -366,6 +391,8 @@ slot_usage:
     description: Genetically related pathogens that group together based on serological
       relationships
     title: serotype
+    domain_of:
+    - PathogenIdentification
     range: string
     required: false
     multivalued: false
@@ -375,6 +402,8 @@ slot_usage:
       of the original organism if not sufficiently different to be termed a distinct
       strain
     title: variant
+    domain_of:
+    - PathogenIdentification
     range: Variant
     required: false
     multivalued: false
@@ -391,8 +420,8 @@ attributes:
     alias: taxon
     owner: PathogenIdentification
     domain_of:
-    - Taxonomy
     - PathogenIdentification
+    - Taxonomy
     range: Taxon
     required: true
     multivalued: false
@@ -420,9 +449,16 @@ attributes:
     owner: PathogenIdentification
     domain_of:
     - PathogenIdentification
-    range: pathogenTypeEnumeration
+    range: string
     required: true
     multivalued: false
+    equals_string_in:
+    - Virus
+    - Bacterium
+    - Fungus
+    - Protozoan
+    - Viroid
+    - Prion
   hostType:
     name: hostType
     description: Indication of the possible host(s) for the identified pathogens among
@@ -434,10 +470,14 @@ attributes:
     owner: PathogenIdentification
     domain_of:
     - PathogenIdentification
-    range: hostTypeEnumeration
+    range: string
     required: false
     recommended: true
     multivalued: true
+    equals_string_in:
+    - Animal
+    - Human
+    - Plant
   subspecies:
     name: subspecies
     description: The subspecies information differentiates closely related pathogens

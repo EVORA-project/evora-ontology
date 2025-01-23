@@ -39,8 +39,9 @@ URI: [EVORAO:ExternalRelatedReference](https://raw.githubusercontent.com/EVORA-p
 
 
 ## Inheritance
-* [Dataset](Dataset.md)
-    * **ExternalRelatedReference**
+* [Resource](Resource.md)
+    * [Dataset](Dataset.md)
+        * **ExternalRelatedReference**
 
 
 
@@ -137,6 +138,8 @@ slot_usage:
     title: reference
     close_mappings:
     - dct:identifier
+    domain_of:
+    - ExternalRelatedReference
     range: string
     required: true
     multivalued: false
@@ -148,6 +151,8 @@ slot_usage:
     - e.g., 'Infravec2 related product'
     close_mappings:
     - dct:title
+    domain_of:
+    - ExternalRelatedReference
     range: string
     required: true
     multivalued: false
@@ -158,6 +163,8 @@ slot_usage:
     title: reference provider prefix
     close_mappings:
     - dcat:landingPage
+    domain_of:
+    - ExternalRelatedReference
     range: string
     required: true
     multivalued: false
@@ -167,6 +174,8 @@ slot_usage:
     title: reference provider name
     close_mappings:
     - dct:publisher
+    domain_of:
+    - ExternalRelatedReference
     range: string
     required: true
     multivalued: false
@@ -190,6 +199,8 @@ slot_usage:
     title: reference
     close_mappings:
     - dct:identifier
+    domain_of:
+    - ExternalRelatedReference
     range: string
     required: true
     multivalued: false
@@ -201,6 +212,8 @@ slot_usage:
     - e.g., 'Infravec2 related product'
     close_mappings:
     - dct:title
+    domain_of:
+    - ExternalRelatedReference
     range: string
     required: true
     multivalued: false
@@ -211,6 +224,8 @@ slot_usage:
     title: reference provider prefix
     close_mappings:
     - dcat:landingPage
+    domain_of:
+    - ExternalRelatedReference
     range: string
     required: true
     multivalued: false
@@ -220,6 +235,8 @@ slot_usage:
     title: reference provider name
     close_mappings:
     - dct:publisher
+    domain_of:
+    - ExternalRelatedReference
     range: string
     required: true
     multivalued: false

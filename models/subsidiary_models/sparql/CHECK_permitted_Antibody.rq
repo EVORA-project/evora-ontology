@@ -37,6 +37,8 @@ SELECT ?g ?s ?p WHERE {
    EVORAO:storageConditions,
    EVORAO:thirdPartyDistributionConsent,
    EVORAO:usageRestrictions,
+   EVORAO:name,
+   EVORAO:description,
    EVORAO:accessPointURL,
    EVORAO:refSKU,
    EVORAO:unitDefinition,
@@ -61,8 +63,6 @@ SELECT ?g ?s ?p WHERE {
    EVORAO:internalReference,
    EVORAO:note,
    EVORAO:contactPoint,
-   EVORAO:name,
-   EVORAO:description,
    rdf:type ))
  }
  

@@ -71,6 +71,10 @@ alias: hostType
 domain_of:
 - PathogenIdentification
 range: string
+equals_string_in:
+- Animal
+- Human
+- Plant
 
 ```
 </details>

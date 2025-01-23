@@ -68,8 +68,9 @@ URI: [EVORAO:MSDS](https://raw.githubusercontent.com/EVORA-project/evora-ontolog
 
 
 ## Inheritance
-* [Dataset](Dataset.md)
-    * **MSDS**
+* [Resource](Resource.md)
+    * [Dataset](Dataset.md)
+        * **MSDS**
 
 
 
@@ -193,6 +194,8 @@ slot_usage:
     title: MSDS contact
     exact_mappings:
     - dcat:contactPoint
+    domain_of:
+    - MSDS
     range: ContactPoint
     required: true
     multivalued: false
@@ -202,6 +205,8 @@ slot_usage:
       solubility, pH, chemical composition, and molecular weight, essential for safe
       handling and storage
     title: physical and chemical properties and information on ingredients
+    domain_of:
+    - MSDS
     range: string
     required: false
     recommended: true
@@ -213,6 +218,8 @@ slot_usage:
       provides information on toxicity, flammability, reactivity, and other relevant
       risks for safe use.
     title: hazards identification
+    domain_of:
+    - MSDS
     range: string
     required: false
     recommended: true
@@ -223,6 +230,8 @@ slot_usage:
       the product, including inhalation, ingestion, skin, or eye contact. This section
       outlines steps to minimize harm before medical help is available.
     title: first aid measures
+    domain_of:
+    - MSDS
     range: string
     required: false
     recommended: true
@@ -233,6 +242,8 @@ slot_usage:
       including suitable extinguishing agents, special protective equipment for firefighters,
       and any specific hazards from combustion.
     title: fire fighting measures
+    domain_of:
+    - MSDS
     range: string
     required: false
     recommended: true
@@ -243,6 +254,8 @@ slot_usage:
       containment, cleanup procedures, and precautions to prevent harm to people,
       property, and the environment.
     title: accidental release measures
+    domain_of:
+    - MSDS
     range: string
     required: false
     recommended: true
@@ -253,6 +266,8 @@ slot_usage:
       for the product, including precautions to prevent accidents, degradation, or
       contamination, as well as recommended temperature, humidity, and container requirements.
     title: handling and storage
+    domain_of:
+    - MSDS
     range: string
     required: false
     recommended: true
@@ -263,6 +278,8 @@ slot_usage:
       engineering controls (e.g., ventilation) and personal protective equipment (PPE)
       such as gloves, masks, goggles, and clothing to ensure safe handling.
     title: exposure controls/personal protection
+    domain_of:
+    - MSDS
     range: string
     required: false
     recommended: true
@@ -274,6 +291,8 @@ slot_usage:
       on hazardous reactions, conditions to avoid, and incompatible materials that
       could cause degradation or dangerous reactions.
     title: stability and reactivity
+    domain_of:
+    - MSDS
     range: string
     required: false
     recommended: true
@@ -284,6 +303,8 @@ slot_usage:
       routes of exposure (inhalation, ingestion, skin, eye contact), acute and chronic
       toxicity and symptoms of exposure
     title: toxicological information
+    domain_of:
+    - MSDS
     range: string
     required: false
     recommended: true
@@ -294,6 +315,8 @@ slot_usage:
       its effects on ecosystems, persistence, degradability, bioaccumulation potential,
       and toxicity to aquatic and terrestrial organisms.
     title: ecological information
+    domain_of:
+    - MSDS
     range: string
     required: false
     recommended: true
@@ -304,6 +327,8 @@ slot_usage:
       the product, including recommended disposal methods, regulatory requirements,
       and precautions to avoid harm to people and the environment during disposal.
     title: disposal considerations
+    domain_of:
+    - MSDS
     range: string
     required: false
     recommended: true
@@ -315,6 +340,8 @@ slot_usage:
       numbers, packaging requirements, and any special precautions to ensure safe
       transit.
     title: transport information
+    domain_of:
+    - MSDS
     range: string
     required: false
     recommended: true
@@ -325,6 +352,8 @@ slot_usage:
       including local, national, or international requirements for its handling, use,
       transportation, and disposal, ensuring compliance with legal obligations.
     title: regulatory information
+    domain_of:
+    - MSDS
     range: string
     required: false
     recommended: true
@@ -335,6 +364,8 @@ slot_usage:
       other sections of the MSDS, such as references, supporting documents, or specific
       instructions for safe handling and use of the product.
     title: further information
+    domain_of:
+    - MSDS
     range: string
     required: false
     recommended: true
@@ -365,6 +396,8 @@ slot_usage:
     title: MSDS contact
     exact_mappings:
     - dcat:contactPoint
+    domain_of:
+    - MSDS
     range: ContactPoint
     required: true
     multivalued: false
@@ -374,6 +407,8 @@ slot_usage:
       solubility, pH, chemical composition, and molecular weight, essential for safe
       handling and storage
     title: physical and chemical properties and information on ingredients
+    domain_of:
+    - MSDS
     range: string
     required: false
     recommended: true
@@ -385,6 +420,8 @@ slot_usage:
       provides information on toxicity, flammability, reactivity, and other relevant
       risks for safe use.
     title: hazards identification
+    domain_of:
+    - MSDS
     range: string
     required: false
     recommended: true
@@ -395,6 +432,8 @@ slot_usage:
       the product, including inhalation, ingestion, skin, or eye contact. This section
       outlines steps to minimize harm before medical help is available.
     title: first aid measures
+    domain_of:
+    - MSDS
     range: string
     required: false
     recommended: true
@@ -405,6 +444,8 @@ slot_usage:
       including suitable extinguishing agents, special protective equipment for firefighters,
       and any specific hazards from combustion.
     title: fire fighting measures
+    domain_of:
+    - MSDS
     range: string
     required: false
     recommended: true
@@ -415,6 +456,8 @@ slot_usage:
       containment, cleanup procedures, and precautions to prevent harm to people,
       property, and the environment.
     title: accidental release measures
+    domain_of:
+    - MSDS
     range: string
     required: false
     recommended: true
@@ -425,6 +468,8 @@ slot_usage:
       for the product, including precautions to prevent accidents, degradation, or
       contamination, as well as recommended temperature, humidity, and container requirements.
     title: handling and storage
+    domain_of:
+    - MSDS
     range: string
     required: false
     recommended: true
@@ -435,6 +480,8 @@ slot_usage:
       engineering controls (e.g., ventilation) and personal protective equipment (PPE)
       such as gloves, masks, goggles, and clothing to ensure safe handling.
     title: exposure controls/personal protection
+    domain_of:
+    - MSDS
     range: string
     required: false
     recommended: true
@@ -446,6 +493,8 @@ slot_usage:
       on hazardous reactions, conditions to avoid, and incompatible materials that
       could cause degradation or dangerous reactions.
     title: stability and reactivity
+    domain_of:
+    - MSDS
     range: string
     required: false
     recommended: true
@@ -456,6 +505,8 @@ slot_usage:
       routes of exposure (inhalation, ingestion, skin, eye contact), acute and chronic
       toxicity and symptoms of exposure
     title: toxicological information
+    domain_of:
+    - MSDS
     range: string
     required: false
     recommended: true
@@ -466,6 +517,8 @@ slot_usage:
       its effects on ecosystems, persistence, degradability, bioaccumulation potential,
       and toxicity to aquatic and terrestrial organisms.
     title: ecological information
+    domain_of:
+    - MSDS
     range: string
     required: false
     recommended: true
@@ -476,6 +529,8 @@ slot_usage:
       the product, including recommended disposal methods, regulatory requirements,
       and precautions to avoid harm to people and the environment during disposal.
     title: disposal considerations
+    domain_of:
+    - MSDS
     range: string
     required: false
     recommended: true
@@ -487,6 +542,8 @@ slot_usage:
       numbers, packaging requirements, and any special precautions to ensure safe
       transit.
     title: transport information
+    domain_of:
+    - MSDS
     range: string
     required: false
     recommended: true
@@ -497,6 +554,8 @@ slot_usage:
       including local, national, or international requirements for its handling, use,
       transportation, and disposal, ensuring compliance with legal obligations.
     title: regulatory information
+    domain_of:
+    - MSDS
     range: string
     required: false
     recommended: true
@@ -507,6 +566,8 @@ slot_usage:
       other sections of the MSDS, such as references, supporting documents, or specific
       instructions for safe handling and use of the product.
     title: further information
+    domain_of:
+    - MSDS
     range: string
     required: false
     recommended: true

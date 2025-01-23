@@ -22,8 +22,8 @@ URI: [EVORAO:Term](https://raw.githubusercontent.com/EVORA-project/evora-ontolog
  classDiagram
     class Term
     click Term href "../Term"
-      NamedDataset <|-- Term
-        click NamedDataset href "../NamedDataset"
+      Dataset <|-- Term
+        click Dataset href "../Dataset"
       
 
       Term <|-- CommonName
@@ -93,8 +93,8 @@ URI: [EVORAO:Term](https://raw.githubusercontent.com/EVORA-project/evora-ontolog
 
 
 ## Inheritance
-* [Nameable](Nameable.md)
-    * [NamedDataset](NamedDataset.md)
+* [Resource](Resource.md)
+    * [Dataset](Dataset.md)
         * **Term**
             * [CommonName](CommonName.md)
             * [AlternateName](AlternateName.md)
@@ -124,10 +124,10 @@ URI: [EVORAO:Term](https://raw.githubusercontent.com/EVORA-project/evora-ontolog
 
 | Name | Cardinality and Range | Description | Inheritance |
 | ---  | --- | --- | --- |
+| [name](name.md) | 1 <br/> [String](String.md) | The label that allows humans to identify the current item | direct |
+| [description](description.md) | 0..1 _recommended_ <br/> [String](String.md) | A short explanation of the characteristics, features, or nature of the curren... | direct |
 | [weight](weight.md) | 1 <br/> [Integer](Integer.md) | A numerical value indicating relative importance or priority, generally proce... | direct |
 | [inVocabulary](inVocabulary.md) | 1 <br/> [Vocabulary](Vocabulary.md) | Terms belong to a specific vocabulary | direct |
-| [name](name.md) | 1 <br/> [String](String.md) | The label that allows humans to identify the current item | [Nameable](Nameable.md) |
-| [description](description.md) | 0..1 _recommended_ <br/> [String](String.md) | A short explanation of the characteristics, features, or nature of the curren... | [Nameable](Nameable.md) |
 
 
 
@@ -188,12 +188,68 @@ title: Term
 from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
 close_mappings:
 - wd:Q1969448
-is_a: NamedDataset
+is_a: Dataset
 abstract: true
 slots:
+- name
+- description
 - weight
 - inVocabulary
 slot_usage:
+  name:
+    name: name
+    description: The label that allows humans to identify the current item
+    title: name
+    comments:
+    - 'The title of the item should be as short and descriptive as possible. E.g.
+      for virus products it should basically be based on the following Pattern:
+
+      "Virus name", "virus host type", "collection year", "country of collection"
+      ex "suspected epidemiological origin", "genotype", "strain", "variant name or
+      specific feature"'
+    exact_mappings:
+    - dct:title
+    close_mappings:
+    - rdfs:label
+    domain_of:
+    - Term
+    - DataService
+    - Catalogue
+    - PersonOrOrganization
+    - ProductOrService
+    - File
+    - ContactPoint
+    - License
+    - Certification
+    range: string
+    required: true
+    multivalued: false
+  description:
+    name: description
+    description: A short explanation of the characteristics, features, or nature of
+      the current item
+    title: description
+    comments:
+    - 'Describe this item in few lines. This description will serve as a summary to
+      present the item.
+
+      '
+    exact_mappings:
+    - dct:description
+    domain_of:
+    - Term
+    - DataService
+    - Catalogue
+    - PersonOrOrganization
+    - ProductOrService
+    - File
+    - ContactPoint
+    - License
+    - Certification
+    range: string
+    required: false
+    recommended: true
+    multivalued: false
   weight:
     name: weight
     description: A numerical value indicating relative importance or priority, generally
@@ -203,6 +259,9 @@ slot_usage:
     close_mappings:
     - adms:status
     ifabsent: int(0)
+    domain_of:
+    - Term
+    - DataProvider
     range: integer
     required: true
     multivalued: false
@@ -212,6 +271,8 @@ slot_usage:
     title: in Vocabulary
     close_mappings:
     - wdp:P972
+    domain_of:
+    - Term
     range: Vocabulary
     required: true
     multivalued: false
@@ -229,9 +290,63 @@ title: Term
 from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
 close_mappings:
 - wd:Q1969448
-is_a: NamedDataset
+is_a: Dataset
 abstract: true
 slot_usage:
+  name:
+    name: name
+    description: The label that allows humans to identify the current item
+    title: name
+    comments:
+    - 'The title of the item should be as short and descriptive as possible. E.g.
+      for virus products it should basically be based on the following Pattern:
+
+      "Virus name", "virus host type", "collection year", "country of collection"
+      ex "suspected epidemiological origin", "genotype", "strain", "variant name or
+      specific feature"'
+    exact_mappings:
+    - dct:title
+    close_mappings:
+    - rdfs:label
+    domain_of:
+    - Term
+    - DataService
+    - Catalogue
+    - PersonOrOrganization
+    - ProductOrService
+    - File
+    - ContactPoint
+    - License
+    - Certification
+    range: string
+    required: true
+    multivalued: false
+  description:
+    name: description
+    description: A short explanation of the characteristics, features, or nature of
+      the current item
+    title: description
+    comments:
+    - 'Describe this item in few lines. This description will serve as a summary to
+      present the item.
+
+      '
+    exact_mappings:
+    - dct:description
+    domain_of:
+    - Term
+    - DataService
+    - Catalogue
+    - PersonOrOrganization
+    - ProductOrService
+    - File
+    - ContactPoint
+    - License
+    - Certification
+    range: string
+    required: false
+    recommended: true
+    multivalued: false
   weight:
     name: weight
     description: A numerical value indicating relative importance or priority, generally
@@ -241,6 +356,9 @@ slot_usage:
     close_mappings:
     - adms:status
     ifabsent: int(0)
+    domain_of:
+    - Term
+    - DataProvider
     range: integer
     required: true
     multivalued: false
@@ -250,44 +368,12 @@ slot_usage:
     title: in Vocabulary
     close_mappings:
     - wdp:P972
+    domain_of:
+    - Term
     range: Vocabulary
     required: true
     multivalued: false
 attributes:
-  weight:
-    name: weight
-    description: A numerical value indicating relative importance or priority, generally
-      processed in ascending order. This weight helps prioritize content when organizing
-      or processing data. Its value can be negative, with a default set to 0
-    title: weight
-    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
-    close_mappings:
-    - adms:status
-    rank: 1000
-    ifabsent: int(0)
-    alias: weight
-    owner: Term
-    domain_of:
-    - DataProvider
-    - Term
-    range: integer
-    required: true
-    multivalued: false
-  inVocabulary:
-    name: inVocabulary
-    description: Terms belong to a specific vocabulary
-    title: in Vocabulary
-    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
-    close_mappings:
-    - wdp:P972
-    rank: 1000
-    alias: inVocabulary
-    owner: Term
-    domain_of:
-    - Term
-    range: Vocabulary
-    required: true
-    multivalued: false
   name:
     name: name
     description: The label that allows humans to identify the current item
@@ -308,7 +394,15 @@ attributes:
     alias: name
     owner: Term
     domain_of:
-    - Nameable
+    - Term
+    - DataService
+    - Catalogue
+    - PersonOrOrganization
+    - ProductOrService
+    - File
+    - ContactPoint
+    - License
+    - Certification
     range: string
     required: true
     multivalued: false
@@ -329,10 +423,52 @@ attributes:
     alias: description
     owner: Term
     domain_of:
-    - Nameable
+    - Term
+    - DataService
+    - Catalogue
+    - PersonOrOrganization
+    - ProductOrService
+    - File
+    - ContactPoint
+    - License
+    - Certification
     range: string
     required: false
     recommended: true
+    multivalued: false
+  weight:
+    name: weight
+    description: A numerical value indicating relative importance or priority, generally
+      processed in ascending order. This weight helps prioritize content when organizing
+      or processing data. Its value can be negative, with a default set to 0
+    title: weight
+    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+    close_mappings:
+    - adms:status
+    rank: 1000
+    ifabsent: int(0)
+    alias: weight
+    owner: Term
+    domain_of:
+    - Term
+    - DataProvider
+    range: integer
+    required: true
+    multivalued: false
+  inVocabulary:
+    name: inVocabulary
+    description: Terms belong to a specific vocabulary
+    title: in Vocabulary
+    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+    close_mappings:
+    - wdp:P972
+    rank: 1000
+    alias: inVocabulary
+    owner: Term
+    domain_of:
+    - Term
+    range: Vocabulary
+    required: true
     multivalued: false
 
 ```

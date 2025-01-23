@@ -5,7 +5,7 @@ import lombok.*;
 
 
 
-/* version: 1.0.7897 */
+/* version: 1.0.8305 */
 
 
 /**
@@ -13,8 +13,10 @@ import lombok.*;
 **/
 @Data
 @EqualsAndHashCode(callSuper=false)
-public abstract class File extends Nameable {
+public abstract class File  {
 
+  private String name;
+  private String description;
   private String contentURL;
   private String format;
   private License license;

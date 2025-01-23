@@ -18,23 +18,23 @@ URI: [EVORAO:relatedDOI](https://raw.githubusercontent.com/EVORA-project/evora-o
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [ProductOrService](ProductOrService.md) | A product or a service |  yes  |
-| [Protozoan](Protozoan.md) | The protozoan as a biological material |  no  |
-| [Virus](Virus.md) | The virus as a biological material |  no  |
-| [Pathogen](Pathogen.md) | Biological entity that causes disease in its host, which is typically an infe... |  no  |
-| [Publication](Publication.md) | A scientific publication |  yes  |
 | [Protein](Protein.md) | A protein as a derived product from a pathogen |  no  |
-| [Viroid](Viroid.md) | The viroid as a biological material |  no  |
-| [Fungus](Fungus.md) | The fungus as a biological material |  no  |
-| [Bundle](Bundle.md) | A group of products |  no  |
-| [Product](Product.md) | A product |  no  |
 | [Hybridoma](Hybridoma.md) | An hybridoma that provides antibodies that can be related to a pathogen |  no  |
-| [Bacterium](Bacterium.md) | The bacterium as a biological material |  no  |
-| [NucleicAcid](NucleicAcid.md) | Nucleic acid related to a pathogen |  no  |
-| [DetectionKit](DetectionKit.md) | A detection kit for specific pathogens |  no  |
+| [Protozoan](Protozoan.md) | The protozoan as a biological material |  no  |
+| [Viroid](Viroid.md) | The viroid as a biological material |  no  |
 | [Antibody](Antibody.md) | Protein that can bind to certain types of foreign bodies, such as pathogens |  no  |
-| [Service](Service.md) | A service |  no  |
+| [ProductOrService](ProductOrService.md) | A product or a service |  yes  |
+| [NucleicAcid](NucleicAcid.md) | Nucleic acid related to a pathogen |  no  |
+| [Bundle](Bundle.md) | A group of products |  no  |
+| [Pathogen](Pathogen.md) | Biological entity that causes disease in its host, which is typically an infe... |  no  |
+| [Virus](Virus.md) | The virus as a biological material |  no  |
 | [Prion](Prion.md) | The prion as a biological material |  no  |
+| [Publication](Publication.md) | A scientific publication |  yes  |
+| [Bacterium](Bacterium.md) | The bacterium as a biological material |  no  |
+| [Fungus](Fungus.md) | The fungus as a biological material |  no  |
+| [DetectionKit](DetectionKit.md) | A detection kit for specific pathogens |  no  |
+| [Product](Product.md) | A product |  no  |
+| [Service](Service.md) | A service |  no  |
 
 
 

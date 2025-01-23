@@ -71,6 +71,9 @@ alias: functionalCharacterization
 domain_of:
 - Protein
 range: string
+equals_string_in:
+- Functionally characterized
+- No functional characterization
 
 ```
 </details>

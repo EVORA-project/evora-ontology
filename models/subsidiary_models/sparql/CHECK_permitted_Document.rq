@@ -25,11 +25,11 @@ SELECT ?g ?s ?p WHERE {
   ?s rdf:type EVORAO:Document ;
      ?p ?o .
   FILTER ( ?p NOT IN (
+   EVORAO:name,
+   EVORAO:description,
    EVORAO:contentURL,
    EVORAO:format,
    EVORAO:license,
-   EVORAO:name,
-   EVORAO:description,
    rdf:type ))
  }
  

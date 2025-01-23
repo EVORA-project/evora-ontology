@@ -89,9 +89,10 @@ URI: [EVORAO:Taxonomy](https://raw.githubusercontent.com/EVORA-project/evora-ont
 
 
 ## Inheritance
-* [Nameable](Nameable.md)
-    * [Catalogue](Catalogue.md)
-        * **Taxonomy**
+* [Resource](Resource.md)
+    * [Dataset](Dataset.md)
+        * [Catalogue](Catalogue.md)
+            * **Taxonomy**
 
 
 
@@ -105,8 +106,8 @@ URI: [EVORAO:Taxonomy](https://raw.githubusercontent.com/EVORA-project/evora-ont
 | [versionDataProvider](versionDataProvider.md) | 1 <br/> [DataProvider](DataProvider.md) | The data provider for the Version ID of this taxonomy | direct |
 | [rank](rank.md) | * <br/> [TaxonomicRank](TaxonomicRank.md) | Relative level or position of the identified taxon in the taxonomy | direct |
 | [rankDataProvider](rankDataProvider.md) | 0..1 <br/> [DataProvider](DataProvider.md) | The data provider for the description of the taxonomic ranks used in this tax... | direct |
-| [name](name.md) | 1 <br/> [String](String.md) | The label that allows humans to identify the current item | [Nameable](Nameable.md) |
-| [description](description.md) | 0..1 _recommended_ <br/> [String](String.md) | A short explanation of the characteristics, features, or nature of the curren... | [Nameable](Nameable.md) |
+| [name](name.md) | 1 <br/> [String](String.md) | The label that allows humans to identify the current item | [Catalogue](Catalogue.md) |
+| [description](description.md) | 0..1 _recommended_ <br/> [String](String.md) | A short explanation of the characteristics, features, or nature of the curren... | [Catalogue](Catalogue.md) |
 
 
 
@@ -184,6 +185,9 @@ slot_usage:
     title: taxon
     close_mappings:
     - dwc:Taxon
+    domain_of:
+    - Taxonomy
+    - PathogenIdentification
     range: Taxon
     required: false
     multivalued: true
@@ -191,6 +195,8 @@ slot_usage:
     name: taxonDataProvider
     description: The data provider for the taxons of the taxonomy
     title: taxon data provider
+    domain_of:
+    - Taxonomy
     range: DataProvider
     required: false
     multivalued: false
@@ -198,6 +204,8 @@ slot_usage:
     name: version
     description: The version of this instance of entity
     title: version
+    domain_of:
+    - Taxonomy
     range: Version
     required: true
     multivalued: false
@@ -205,6 +213,8 @@ slot_usage:
     name: versionDataProvider
     description: The data provider for the Version ID of this taxonomy
     title: version data provider
+    domain_of:
+    - Taxonomy
     range: DataProvider
     required: true
     multivalued: false
@@ -212,6 +222,9 @@ slot_usage:
     name: rank
     description: Relative level or position of the identified taxon in the taxonomy
     title: rank
+    domain_of:
+    - Taxonomy
+    - Taxon
     range: TaxonomicRank
     required: false
     multivalued: true
@@ -220,6 +233,8 @@ slot_usage:
     description: The data provider for the description of the taxonomic ranks used
       in this taxonomy
     title: rank data provider
+    domain_of:
+    - Taxonomy
     range: DataProvider
     required: false
     multivalued: false
@@ -246,6 +261,9 @@ slot_usage:
     title: taxon
     close_mappings:
     - dwc:Taxon
+    domain_of:
+    - Taxonomy
+    - PathogenIdentification
     range: Taxon
     required: false
     multivalued: true
@@ -253,6 +271,8 @@ slot_usage:
     name: taxonDataProvider
     description: The data provider for the taxons of the taxonomy
     title: taxon data provider
+    domain_of:
+    - Taxonomy
     range: DataProvider
     required: false
     multivalued: false
@@ -260,6 +280,8 @@ slot_usage:
     name: version
     description: The version of this instance of entity
     title: version
+    domain_of:
+    - Taxonomy
     range: Version
     required: true
     multivalued: false
@@ -267,6 +289,8 @@ slot_usage:
     name: versionDataProvider
     description: The data provider for the Version ID of this taxonomy
     title: version data provider
+    domain_of:
+    - Taxonomy
     range: DataProvider
     required: true
     multivalued: false
@@ -274,6 +298,9 @@ slot_usage:
     name: rank
     description: Relative level or position of the identified taxon in the taxonomy
     title: rank
+    domain_of:
+    - Taxonomy
+    - Taxon
     range: TaxonomicRank
     required: false
     multivalued: true
@@ -282,6 +309,8 @@ slot_usage:
     description: The data provider for the description of the taxonomic ranks used
       in this taxonomy
     title: rank data provider
+    domain_of:
+    - Taxonomy
     range: DataProvider
     required: false
     multivalued: false
@@ -389,7 +418,15 @@ attributes:
     alias: name
     owner: Taxonomy
     domain_of:
-    - Nameable
+    - Catalogue
+    - DataService
+    - Term
+    - PersonOrOrganization
+    - ProductOrService
+    - File
+    - ContactPoint
+    - License
+    - Certification
     range: string
     required: true
     multivalued: false
@@ -410,7 +447,15 @@ attributes:
     alias: description
     owner: Taxonomy
     domain_of:
-    - Nameable
+    - Catalogue
+    - DataService
+    - Term
+    - PersonOrOrganization
+    - ProductOrService
+    - File
+    - ContactPoint
+    - License
+    - Certification
     range: string
     required: false
     recommended: true

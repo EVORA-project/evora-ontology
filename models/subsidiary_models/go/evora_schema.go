@@ -1,6 +1,40 @@
 package EVORAO
 
 /*
+ * Resource published or curated by a single agent.
+ */
+type Resource struct {
+}
+
+/*
+ * A collection of data, published or curated by a single agent, and available for access
+ */
+type Dataset struct {
+	/*
+	 * parent types
+	 */
+	Resource
+}
+
+/*
+ * A collection of operations that provides access to one or more datasets or data processing functions
+ */
+type DataService struct {
+	/*
+	 * parent types
+	 */
+	Resource
+	/*
+	 * The label that allows humans to identify the current item
+	 */
+	Name string `json:"name"`
+	/*
+	 * A short explanation of the characteristics, features, or nature of the current item
+	 */
+	Description string `json:"description"`
+}
+
+/*
  * Numeric code assigned to identify a particular historical version of a work (e.g. software or technical standards)
  */
 type Version struct {
@@ -15,21 +49,7 @@ type Version struct {
 	/*
 	 * Identifier of what the version qualifies
 	 */
-	VersionOf string `json:"versionOf"`
-}
-
-/*
- * Any entity that has a name and can have a textual description
- */
-type Nameable struct {
-	/*
-	 * The label that allows humans to identify the current item
-	 */
-	Name string `json:"name"`
-	/*
-	 * A short explanation of the characteristics, features, or nature of the current item
-	 */
-	Description string `json:"description"`
+	VersionOf Dataset `json:"versionOf"`
 }
 
 /*
@@ -39,49 +59,7 @@ type Catalogue struct {
 	/*
 	 * parent types
 	 */
-	Nameable
-	/*
-	 * The label that allows humans to identify the current item
-	 */
-	Name string `json:"name"`
-	/*
-	 * A short explanation of the characteristics, features, or nature of the current item
-	 */
-	Description string `json:"description"`
-}
-
-/*
- * A collection of data, published or curated by a single agent, and available for access
- */
-type Dataset struct {
-}
-
-/*
- * A collection of data, that has a name and can have a description, published or curated by a single agent, and available for access
- */
-type NamedDataset struct {
-	/*
-	 * parent types
-	 */
-	Nameable
-	/*
-	 * The label that allows humans to identify the current item
-	 */
-	Name string `json:"name"`
-	/*
-	 * A short explanation of the characteristics, features, or nature of the current item
-	 */
-	Description string `json:"description"`
-}
-
-/*
- * A collection of operations that provides access to one or more datasets or data processing functions
- */
-type DataService struct {
-	/*
-	 * parent types
-	 */
-	Nameable
+	Dataset
 	/*
 	 * The label that allows humans to identify the current item
 	 */
@@ -173,7 +151,7 @@ type DataProvider struct {
 	/*
 	 * The identification of the entity type (Class) described by the response to the query
 	 */
-	ProvidedEntityType string `json:"providedEntityType"`
+	ProvidedEntityType Dataset `json:"providedEntityType"`
 	/*
 	 * A numerical value indicating relative importance or priority, generally processed in ascending order. This weight helps prioritize content when organizing or processing data. Its value can be negative, with a default set to 0
 	 */
@@ -301,15 +279,7 @@ type Term struct {
 	/*
 	 * parent types
 	 */
-	NamedDataset
-	/*
-	 * A numerical value indicating relative importance or priority, generally processed in ascending order. This weight helps prioritize content when organizing or processing data. Its value can be negative, with a default set to 0
-	 */
-	Weight int `json:"weight"`
-	/*
-	 * Terms belong to a specific vocabulary
-	 */
-	InVocabulary Vocabulary `json:"inVocabulary"`
+	Dataset
 	/*
 	 * The label that allows humans to identify the current item
 	 */
@@ -318,6 +288,14 @@ type Term struct {
 	 * A short explanation of the characteristics, features, or nature of the current item
 	 */
 	Description string `json:"description"`
+	/*
+	 * A numerical value indicating relative importance or priority, generally processed in ascending order. This weight helps prioritize content when organizing or processing data. Its value can be negative, with a default set to 0
+	 */
+	Weight int `json:"weight"`
+	/*
+	 * Terms belong to a specific vocabulary
+	 */
+	InVocabulary Vocabulary `json:"inVocabulary"`
 }
 
 /*
@@ -337,14 +315,6 @@ type CommonName struct {
 	 */
 	SourceOfInformation string `json:"sourceOfInformation"`
 	/*
-	 * A numerical value indicating relative importance or priority, generally processed in ascending order. This weight helps prioritize content when organizing or processing data. Its value can be negative, with a default set to 0
-	 */
-	Weight int `json:"weight"`
-	/*
-	 * Terms belong to a specific vocabulary
-	 */
-	InVocabulary Vocabulary `json:"inVocabulary"`
-	/*
 	 * The label that allows humans to identify the current item
 	 */
 	Name string `json:"name"`
@@ -352,6 +322,14 @@ type CommonName struct {
 	 * A short explanation of the characteristics, features, or nature of the current item
 	 */
 	Description string `json:"description"`
+	/*
+	 * A numerical value indicating relative importance or priority, generally processed in ascending order. This weight helps prioritize content when organizing or processing data. Its value can be negative, with a default set to 0
+	 */
+	Weight int `json:"weight"`
+	/*
+	 * Terms belong to a specific vocabulary
+	 */
+	InVocabulary Vocabulary `json:"inVocabulary"`
 }
 
 /*
@@ -371,14 +349,6 @@ type VirusName struct {
 	 */
 	SourceOfInformation string `json:"sourceOfInformation"`
 	/*
-	 * A numerical value indicating relative importance or priority, generally processed in ascending order. This weight helps prioritize content when organizing or processing data. Its value can be negative, with a default set to 0
-	 */
-	Weight int `json:"weight"`
-	/*
-	 * Terms belong to a specific vocabulary
-	 */
-	InVocabulary Vocabulary `json:"inVocabulary"`
-	/*
 	 * The label that allows humans to identify the current item
 	 */
 	Name string `json:"name"`
@@ -386,6 +356,14 @@ type VirusName struct {
 	 * A short explanation of the characteristics, features, or nature of the current item
 	 */
 	Description string `json:"description"`
+	/*
+	 * A numerical value indicating relative importance or priority, generally processed in ascending order. This weight helps prioritize content when organizing or processing data. Its value can be negative, with a default set to 0
+	 */
+	Weight int `json:"weight"`
+	/*
+	 * Terms belong to a specific vocabulary
+	 */
+	InVocabulary Vocabulary `json:"inVocabulary"`
 }
 
 /*
@@ -405,14 +383,6 @@ type AlternateName struct {
 	 */
 	SourceOfInformation string `json:"sourceOfInformation"`
 	/*
-	 * A numerical value indicating relative importance or priority, generally processed in ascending order. This weight helps prioritize content when organizing or processing data. Its value can be negative, with a default set to 0
-	 */
-	Weight int `json:"weight"`
-	/*
-	 * Terms belong to a specific vocabulary
-	 */
-	InVocabulary Vocabulary `json:"inVocabulary"`
-	/*
 	 * The label that allows humans to identify the current item
 	 */
 	Name string `json:"name"`
@@ -420,6 +390,14 @@ type AlternateName struct {
 	 * A short explanation of the characteristics, features, or nature of the current item
 	 */
 	Description string `json:"description"`
+	/*
+	 * A numerical value indicating relative importance or priority, generally processed in ascending order. This weight helps prioritize content when organizing or processing data. Its value can be negative, with a default set to 0
+	 */
+	Weight int `json:"weight"`
+	/*
+	 * Terms belong to a specific vocabulary
+	 */
+	InVocabulary Vocabulary `json:"inVocabulary"`
 }
 
 /*
@@ -431,14 +409,6 @@ type RiskGroup struct {
 	 */
 	Term
 	/*
-	 * A numerical value indicating relative importance or priority, generally processed in ascending order. This weight helps prioritize content when organizing or processing data. Its value can be negative, with a default set to 0
-	 */
-	Weight int `json:"weight"`
-	/*
-	 * Terms belong to a specific vocabulary
-	 */
-	InVocabulary Vocabulary `json:"inVocabulary"`
-	/*
 	 * The label that allows humans to identify the current item
 	 */
 	Name string `json:"name"`
@@ -446,6 +416,14 @@ type RiskGroup struct {
 	 * A short explanation of the characteristics, features, or nature of the current item
 	 */
 	Description string `json:"description"`
+	/*
+	 * A numerical value indicating relative importance or priority, generally processed in ascending order. This weight helps prioritize content when organizing or processing data. Its value can be negative, with a default set to 0
+	 */
+	Weight int `json:"weight"`
+	/*
+	 * Terms belong to a specific vocabulary
+	 */
+	InVocabulary Vocabulary `json:"inVocabulary"`
 }
 
 /*
@@ -457,14 +435,6 @@ type DOI struct {
 	 */
 	Term
 	/*
-	 * A numerical value indicating relative importance or priority, generally processed in ascending order. This weight helps prioritize content when organizing or processing data. Its value can be negative, with a default set to 0
-	 */
-	Weight int `json:"weight"`
-	/*
-	 * Terms belong to a specific vocabulary
-	 */
-	InVocabulary Vocabulary `json:"inVocabulary"`
-	/*
 	 * The label that allows humans to identify the current item
 	 */
 	Name string `json:"name"`
@@ -472,6 +442,14 @@ type DOI struct {
 	 * A short explanation of the characteristics, features, or nature of the current item
 	 */
 	Description string `json:"description"`
+	/*
+	 * A numerical value indicating relative importance or priority, generally processed in ascending order. This weight helps prioritize content when organizing or processing data. Its value can be negative, with a default set to 0
+	 */
+	Weight int `json:"weight"`
+	/*
+	 * Terms belong to a specific vocabulary
+	 */
+	InVocabulary Vocabulary `json:"inVocabulary"`
 }
 
 /*
@@ -483,14 +461,6 @@ type Journal struct {
 	 */
 	Term
 	/*
-	 * A numerical value indicating relative importance or priority, generally processed in ascending order. This weight helps prioritize content when organizing or processing data. Its value can be negative, with a default set to 0
-	 */
-	Weight int `json:"weight"`
-	/*
-	 * Terms belong to a specific vocabulary
-	 */
-	InVocabulary Vocabulary `json:"inVocabulary"`
-	/*
 	 * The label that allows humans to identify the current item
 	 */
 	Name string `json:"name"`
@@ -498,6 +468,14 @@ type Journal struct {
 	 * A short explanation of the characteristics, features, or nature of the current item
 	 */
 	Description string `json:"description"`
+	/*
+	 * A numerical value indicating relative importance or priority, generally processed in ascending order. This weight helps prioritize content when organizing or processing data. Its value can be negative, with a default set to 0
+	 */
+	Weight int `json:"weight"`
+	/*
+	 * Terms belong to a specific vocabulary
+	 */
+	InVocabulary Vocabulary `json:"inVocabulary"`
 }
 
 /*
@@ -509,14 +487,6 @@ type PDBReference struct {
 	 */
 	Term
 	/*
-	 * A numerical value indicating relative importance or priority, generally processed in ascending order. This weight helps prioritize content when organizing or processing data. Its value can be negative, with a default set to 0
-	 */
-	Weight int `json:"weight"`
-	/*
-	 * Terms belong to a specific vocabulary
-	 */
-	InVocabulary Vocabulary `json:"inVocabulary"`
-	/*
 	 * The label that allows humans to identify the current item
 	 */
 	Name string `json:"name"`
@@ -524,6 +494,14 @@ type PDBReference struct {
 	 * A short explanation of the characteristics, features, or nature of the current item
 	 */
 	Description string `json:"description"`
+	/*
+	 * A numerical value indicating relative importance or priority, generally processed in ascending order. This weight helps prioritize content when organizing or processing data. Its value can be negative, with a default set to 0
+	 */
+	Weight int `json:"weight"`
+	/*
+	 * Terms belong to a specific vocabulary
+	 */
+	InVocabulary Vocabulary `json:"inVocabulary"`
 }
 
 /*
@@ -535,14 +513,6 @@ type Keyword struct {
 	 */
 	Term
 	/*
-	 * A numerical value indicating relative importance or priority, generally processed in ascending order. This weight helps prioritize content when organizing or processing data. Its value can be negative, with a default set to 0
-	 */
-	Weight int `json:"weight"`
-	/*
-	 * Terms belong to a specific vocabulary
-	 */
-	InVocabulary Vocabulary `json:"inVocabulary"`
-	/*
 	 * The label that allows humans to identify the current item
 	 */
 	Name string `json:"name"`
@@ -550,6 +520,14 @@ type Keyword struct {
 	 * A short explanation of the characteristics, features, or nature of the current item
 	 */
 	Description string `json:"description"`
+	/*
+	 * A numerical value indicating relative importance or priority, generally processed in ascending order. This weight helps prioritize content when organizing or processing data. Its value can be negative, with a default set to 0
+	 */
+	Weight int `json:"weight"`
+	/*
+	 * Terms belong to a specific vocabulary
+	 */
+	InVocabulary Vocabulary `json:"inVocabulary"`
 }
 
 /*
@@ -561,14 +539,6 @@ type ProteinTag struct {
 	 */
 	Term
 	/*
-	 * A numerical value indicating relative importance or priority, generally processed in ascending order. This weight helps prioritize content when organizing or processing data. Its value can be negative, with a default set to 0
-	 */
-	Weight int `json:"weight"`
-	/*
-	 * Terms belong to a specific vocabulary
-	 */
-	InVocabulary Vocabulary `json:"inVocabulary"`
-	/*
 	 * The label that allows humans to identify the current item
 	 */
 	Name string `json:"name"`
@@ -576,6 +546,14 @@ type ProteinTag struct {
 	 * A short explanation of the characteristics, features, or nature of the current item
 	 */
 	Description string `json:"description"`
+	/*
+	 * A numerical value indicating relative importance or priority, generally processed in ascending order. This weight helps prioritize content when organizing or processing data. Its value can be negative, with a default set to 0
+	 */
+	Weight int `json:"weight"`
+	/*
+	 * Terms belong to a specific vocabulary
+	 */
+	InVocabulary Vocabulary `json:"inVocabulary"`
 }
 
 /*
@@ -587,14 +565,6 @@ type SpecialFeature struct {
 	 */
 	Term
 	/*
-	 * A numerical value indicating relative importance or priority, generally processed in ascending order. This weight helps prioritize content when organizing or processing data. Its value can be negative, with a default set to 0
-	 */
-	Weight int `json:"weight"`
-	/*
-	 * Terms belong to a specific vocabulary
-	 */
-	InVocabulary Vocabulary `json:"inVocabulary"`
-	/*
 	 * The label that allows humans to identify the current item
 	 */
 	Name string `json:"name"`
@@ -602,6 +572,14 @@ type SpecialFeature struct {
 	 * A short explanation of the characteristics, features, or nature of the current item
 	 */
 	Description string `json:"description"`
+	/*
+	 * A numerical value indicating relative importance or priority, generally processed in ascending order. This weight helps prioritize content when organizing or processing data. Its value can be negative, with a default set to 0
+	 */
+	Weight int `json:"weight"`
+	/*
+	 * Terms belong to a specific vocabulary
+	 */
+	InVocabulary Vocabulary `json:"inVocabulary"`
 }
 
 /*
@@ -613,14 +591,6 @@ type ExpressionVector struct {
 	 */
 	Term
 	/*
-	 * A numerical value indicating relative importance or priority, generally processed in ascending order. This weight helps prioritize content when organizing or processing data. Its value can be negative, with a default set to 0
-	 */
-	Weight int `json:"weight"`
-	/*
-	 * Terms belong to a specific vocabulary
-	 */
-	InVocabulary Vocabulary `json:"inVocabulary"`
-	/*
 	 * The label that allows humans to identify the current item
 	 */
 	Name string `json:"name"`
@@ -628,6 +598,14 @@ type ExpressionVector struct {
 	 * A short explanation of the characteristics, features, or nature of the current item
 	 */
 	Description string `json:"description"`
+	/*
+	 * A numerical value indicating relative importance or priority, generally processed in ascending order. This weight helps prioritize content when organizing or processing data. Its value can be negative, with a default set to 0
+	 */
+	Weight int `json:"weight"`
+	/*
+	 * Terms belong to a specific vocabulary
+	 */
+	InVocabulary Vocabulary `json:"inVocabulary"`
 }
 
 /*
@@ -639,14 +617,6 @@ type PlasmidSelection struct {
 	 */
 	Term
 	/*
-	 * A numerical value indicating relative importance or priority, generally processed in ascending order. This weight helps prioritize content when organizing or processing data. Its value can be negative, with a default set to 0
-	 */
-	Weight int `json:"weight"`
-	/*
-	 * Terms belong to a specific vocabulary
-	 */
-	InVocabulary Vocabulary `json:"inVocabulary"`
-	/*
 	 * The label that allows humans to identify the current item
 	 */
 	Name string `json:"name"`
@@ -654,6 +624,14 @@ type PlasmidSelection struct {
 	 * A short explanation of the characteristics, features, or nature of the current item
 	 */
 	Description string `json:"description"`
+	/*
+	 * A numerical value indicating relative importance or priority, generally processed in ascending order. This weight helps prioritize content when organizing or processing data. Its value can be negative, with a default set to 0
+	 */
+	Weight int `json:"weight"`
+	/*
+	 * Terms belong to a specific vocabulary
+	 */
+	InVocabulary Vocabulary `json:"inVocabulary"`
 }
 
 /*
@@ -665,14 +643,6 @@ type PropagationHost struct {
 	 */
 	Term
 	/*
-	 * A numerical value indicating relative importance or priority, generally processed in ascending order. This weight helps prioritize content when organizing or processing data. Its value can be negative, with a default set to 0
-	 */
-	Weight int `json:"weight"`
-	/*
-	 * Terms belong to a specific vocabulary
-	 */
-	InVocabulary Vocabulary `json:"inVocabulary"`
-	/*
 	 * The label that allows humans to identify the current item
 	 */
 	Name string `json:"name"`
@@ -680,6 +650,14 @@ type PropagationHost struct {
 	 * A short explanation of the characteristics, features, or nature of the current item
 	 */
 	Description string `json:"description"`
+	/*
+	 * A numerical value indicating relative importance or priority, generally processed in ascending order. This weight helps prioritize content when organizing or processing data. Its value can be negative, with a default set to 0
+	 */
+	Weight int `json:"weight"`
+	/*
+	 * Terms belong to a specific vocabulary
+	 */
+	InVocabulary Vocabulary `json:"inVocabulary"`
 }
 
 /*
@@ -691,14 +669,6 @@ type TransmissionMethod struct {
 	 */
 	Term
 	/*
-	 * A numerical value indicating relative importance or priority, generally processed in ascending order. This weight helps prioritize content when organizing or processing data. Its value can be negative, with a default set to 0
-	 */
-	Weight int `json:"weight"`
-	/*
-	 * Terms belong to a specific vocabulary
-	 */
-	InVocabulary Vocabulary `json:"inVocabulary"`
-	/*
 	 * The label that allows humans to identify the current item
 	 */
 	Name string `json:"name"`
@@ -706,6 +676,14 @@ type TransmissionMethod struct {
 	 * A short explanation of the characteristics, features, or nature of the current item
 	 */
 	Description string `json:"description"`
+	/*
+	 * A numerical value indicating relative importance or priority, generally processed in ascending order. This weight helps prioritize content when organizing or processing data. Its value can be negative, with a default set to 0
+	 */
+	Weight int `json:"weight"`
+	/*
+	 * Terms belong to a specific vocabulary
+	 */
+	InVocabulary Vocabulary `json:"inVocabulary"`
 }
 
 /*
@@ -717,14 +695,6 @@ type ProductionCellLine struct {
 	 */
 	Term
 	/*
-	 * A numerical value indicating relative importance or priority, generally processed in ascending order. This weight helps prioritize content when organizing or processing data. Its value can be negative, with a default set to 0
-	 */
-	Weight int `json:"weight"`
-	/*
-	 * Terms belong to a specific vocabulary
-	 */
-	InVocabulary Vocabulary `json:"inVocabulary"`
-	/*
 	 * The label that allows humans to identify the current item
 	 */
 	Name string `json:"name"`
@@ -732,6 +702,14 @@ type ProductionCellLine struct {
 	 * A short explanation of the characteristics, features, or nature of the current item
 	 */
 	Description string `json:"description"`
+	/*
+	 * A numerical value indicating relative importance or priority, generally processed in ascending order. This weight helps prioritize content when organizing or processing data. Its value can be negative, with a default set to 0
+	 */
+	Weight int `json:"weight"`
+	/*
+	 * Terms belong to a specific vocabulary
+	 */
+	InVocabulary Vocabulary `json:"inVocabulary"`
 }
 
 /*
@@ -747,14 +725,6 @@ type ProductCategory struct {
 	 */
 	ParentCategory ProductCategory `json:"parentCategory"`
 	/*
-	 * A numerical value indicating relative importance or priority, generally processed in ascending order. This weight helps prioritize content when organizing or processing data. Its value can be negative, with a default set to 0
-	 */
-	Weight int `json:"weight"`
-	/*
-	 * Terms belong to a specific vocabulary
-	 */
-	InVocabulary Vocabulary `json:"inVocabulary"`
-	/*
 	 * The label that allows humans to identify the current item
 	 */
 	Name string `json:"name"`
@@ -762,6 +732,14 @@ type ProductCategory struct {
 	 * A short explanation of the characteristics, features, or nature of the current item
 	 */
 	Description string `json:"description"`
+	/*
+	 * A numerical value indicating relative importance or priority, generally processed in ascending order. This weight helps prioritize content when organizing or processing data. Its value can be negative, with a default set to 0
+	 */
+	Weight int `json:"weight"`
+	/*
+	 * Terms belong to a specific vocabulary
+	 */
+	InVocabulary Vocabulary `json:"inVocabulary"`
 }
 
 /*
@@ -773,14 +751,6 @@ type IsolationHost struct {
 	 */
 	Term
 	/*
-	 * A numerical value indicating relative importance or priority, generally processed in ascending order. This weight helps prioritize content when organizing or processing data. Its value can be negative, with a default set to 0
-	 */
-	Weight int `json:"weight"`
-	/*
-	 * Terms belong to a specific vocabulary
-	 */
-	InVocabulary Vocabulary `json:"inVocabulary"`
-	/*
 	 * The label that allows humans to identify the current item
 	 */
 	Name string `json:"name"`
@@ -788,6 +758,14 @@ type IsolationHost struct {
 	 * A short explanation of the characteristics, features, or nature of the current item
 	 */
 	Description string `json:"description"`
+	/*
+	 * A numerical value indicating relative importance or priority, generally processed in ascending order. This weight helps prioritize content when organizing or processing data. Its value can be negative, with a default set to 0
+	 */
+	Weight int `json:"weight"`
+	/*
+	 * Terms belong to a specific vocabulary
+	 */
+	InVocabulary Vocabulary `json:"inVocabulary"`
 }
 
 /*
@@ -799,14 +777,6 @@ type GeographicalOrigin struct {
 	 */
 	Term
 	/*
-	 * A numerical value indicating relative importance or priority, generally processed in ascending order. This weight helps prioritize content when organizing or processing data. Its value can be negative, with a default set to 0
-	 */
-	Weight int `json:"weight"`
-	/*
-	 * Terms belong to a specific vocabulary
-	 */
-	InVocabulary Vocabulary `json:"inVocabulary"`
-	/*
 	 * The label that allows humans to identify the current item
 	 */
 	Name string `json:"name"`
@@ -814,6 +784,14 @@ type GeographicalOrigin struct {
 	 * A short explanation of the characteristics, features, or nature of the current item
 	 */
 	Description string `json:"description"`
+	/*
+	 * A numerical value indicating relative importance or priority, generally processed in ascending order. This weight helps prioritize content when organizing or processing data. Its value can be negative, with a default set to 0
+	 */
+	Weight int `json:"weight"`
+	/*
+	 * Terms belong to a specific vocabulary
+	 */
+	InVocabulary Vocabulary `json:"inVocabulary"`
 }
 
 /*
@@ -825,14 +803,6 @@ type IPLCOrigin struct {
 	 */
 	GeographicalOrigin
 	/*
-	 * A numerical value indicating relative importance or priority, generally processed in ascending order. This weight helps prioritize content when organizing or processing data. Its value can be negative, with a default set to 0
-	 */
-	Weight int `json:"weight"`
-	/*
-	 * Terms belong to a specific vocabulary
-	 */
-	InVocabulary Vocabulary `json:"inVocabulary"`
-	/*
 	 * The label that allows humans to identify the current item
 	 */
 	Name string `json:"name"`
@@ -840,6 +810,14 @@ type IPLCOrigin struct {
 	 * A short explanation of the characteristics, features, or nature of the current item
 	 */
 	Description string `json:"description"`
+	/*
+	 * A numerical value indicating relative importance or priority, generally processed in ascending order. This weight helps prioritize content when organizing or processing data. Its value can be negative, with a default set to 0
+	 */
+	Weight int `json:"weight"`
+	/*
+	 * Terms belong to a specific vocabulary
+	 */
+	InVocabulary Vocabulary `json:"inVocabulary"`
 }
 
 /*
@@ -855,14 +833,6 @@ type Country struct {
 	 */
 	Alpha2Code string `json:"alpha2Code"`
 	/*
-	 * A numerical value indicating relative importance or priority, generally processed in ascending order. This weight helps prioritize content when organizing or processing data. Its value can be negative, with a default set to 0
-	 */
-	Weight int `json:"weight"`
-	/*
-	 * Terms belong to a specific vocabulary
-	 */
-	InVocabulary Vocabulary `json:"inVocabulary"`
-	/*
 	 * The label that allows humans to identify the current item
 	 */
 	Name string `json:"name"`
@@ -870,6 +840,14 @@ type Country struct {
 	 * A short explanation of the characteristics, features, or nature of the current item
 	 */
 	Description string `json:"description"`
+	/*
+	 * A numerical value indicating relative importance or priority, generally processed in ascending order. This weight helps prioritize content when organizing or processing data. Its value can be negative, with a default set to 0
+	 */
+	Weight int `json:"weight"`
+	/*
+	 * Terms belong to a specific vocabulary
+	 */
+	InVocabulary Vocabulary `json:"inVocabulary"`
 }
 
 /*
@@ -881,14 +859,6 @@ type IATAClassification struct {
 	 */
 	Term
 	/*
-	 * A numerical value indicating relative importance or priority, generally processed in ascending order. This weight helps prioritize content when organizing or processing data. Its value can be negative, with a default set to 0
-	 */
-	Weight int `json:"weight"`
-	/*
-	 * Terms belong to a specific vocabulary
-	 */
-	InVocabulary Vocabulary `json:"inVocabulary"`
-	/*
 	 * The label that allows humans to identify the current item
 	 */
 	Name string `json:"name"`
@@ -896,6 +866,14 @@ type IATAClassification struct {
 	 * A short explanation of the characteristics, features, or nature of the current item
 	 */
 	Description string `json:"description"`
+	/*
+	 * A numerical value indicating relative importance or priority, generally processed in ascending order. This weight helps prioritize content when organizing or processing data. Its value can be negative, with a default set to 0
+	 */
+	Weight int `json:"weight"`
+	/*
+	 * Terms belong to a specific vocabulary
+	 */
+	InVocabulary Vocabulary `json:"inVocabulary"`
 }
 
 /*
@@ -915,14 +893,6 @@ type Variant struct {
 	 */
 	SourceOfInformation string `json:"sourceOfInformation"`
 	/*
-	 * A numerical value indicating relative importance or priority, generally processed in ascending order. This weight helps prioritize content when organizing or processing data. Its value can be negative, with a default set to 0
-	 */
-	Weight int `json:"weight"`
-	/*
-	 * Terms belong to a specific vocabulary
-	 */
-	InVocabulary Vocabulary `json:"inVocabulary"`
-	/*
 	 * The label that allows humans to identify the current item
 	 */
 	Name string `json:"name"`
@@ -930,6 +900,14 @@ type Variant struct {
 	 * A short explanation of the characteristics, features, or nature of the current item
 	 */
 	Description string `json:"description"`
+	/*
+	 * A numerical value indicating relative importance or priority, generally processed in ascending order. This weight helps prioritize content when organizing or processing data. Its value can be negative, with a default set to 0
+	 */
+	Weight int `json:"weight"`
+	/*
+	 * Terms belong to a specific vocabulary
+	 */
+	InVocabulary Vocabulary `json:"inVocabulary"`
 }
 
 /*
@@ -945,14 +923,6 @@ type TaxonomicRank struct {
 	 */
 	Taxonomy []Taxonomy `json:"taxonomy"`
 	/*
-	 * A numerical value indicating relative importance or priority, generally processed in ascending order. This weight helps prioritize content when organizing or processing data. Its value can be negative, with a default set to 0
-	 */
-	Weight int `json:"weight"`
-	/*
-	 * Terms belong to a specific vocabulary
-	 */
-	InVocabulary Vocabulary `json:"inVocabulary"`
-	/*
 	 * The label that allows humans to identify the current item
 	 */
 	Name string `json:"name"`
@@ -960,6 +930,14 @@ type TaxonomicRank struct {
 	 * A short explanation of the characteristics, features, or nature of the current item
 	 */
 	Description string `json:"description"`
+	/*
+	 * A numerical value indicating relative importance or priority, generally processed in ascending order. This weight helps prioritize content when organizing or processing data. Its value can be negative, with a default set to 0
+	 */
+	Weight int `json:"weight"`
+	/*
+	 * Terms belong to a specific vocabulary
+	 */
+	InVocabulary Vocabulary `json:"inVocabulary"`
 }
 
 /*
@@ -999,14 +977,6 @@ type Taxon struct {
 	 */
 	TaxonomicNodeID string `json:"taxonomicNodeID"`
 	/*
-	 * A numerical value indicating relative importance or priority, generally processed in ascending order. This weight helps prioritize content when organizing or processing data. Its value can be negative, with a default set to 0
-	 */
-	Weight int `json:"weight"`
-	/*
-	 * Terms belong to a specific vocabulary
-	 */
-	InVocabulary Vocabulary `json:"inVocabulary"`
-	/*
 	 * The label that allows humans to identify the current item
 	 */
 	Name string `json:"name"`
@@ -1014,6 +984,14 @@ type Taxon struct {
 	 * A short explanation of the characteristics, features, or nature of the current item
 	 */
 	Description string `json:"description"`
+	/*
+	 * A numerical value indicating relative importance or priority, generally processed in ascending order. This weight helps prioritize content when organizing or processing data. Its value can be negative, with a default set to 0
+	 */
+	Weight int `json:"weight"`
+	/*
+	 * Terms belong to a specific vocabulary
+	 */
+	InVocabulary Vocabulary `json:"inVocabulary"`
 }
 
 /*
@@ -1085,7 +1063,15 @@ type PersonOrOrganization struct {
 	/*
 	 * parent types
 	 */
-	Nameable
+	Dataset
+	/*
+	 * The label that allows humans to identify the current item
+	 */
+	Name string `json:"name"`
+	/*
+	 * A short explanation of the characteristics, features, or nature of the current item
+	 */
+	Description string `json:"description"`
 	/*
 	 * Refers to the degree of purity achieved for a protein sample. Possible values include ">95%" (the protein is highly purified, with more than 95% purity) and "Unpurified expression host lysate or partly purified protein" (the protein is either unpurified and present in the host cell lysate or only partially purified).
 	 */
@@ -1098,14 +1084,6 @@ type PersonOrOrganization struct {
 	 * A path or URL to the related logo
 	 */
 	Logo Image `json:"logo"`
-	/*
-	 * The label that allows humans to identify the current item
-	 */
-	Name string `json:"name"`
-	/*
-	 * A short explanation of the characteristics, features, or nature of the current item
-	 */
-	Description string `json:"description"`
 }
 
 /*
@@ -1121,6 +1099,14 @@ type Person struct {
 	 */
 	ORCIDiD string `json:"oRCIDiD"`
 	/*
+	 * The label that allows humans to identify the current item
+	 */
+	Name string `json:"name"`
+	/*
+	 * A short explanation of the characteristics, features, or nature of the current item
+	 */
+	Description string `json:"description"`
+	/*
 	 * Refers to the degree of purity achieved for a protein sample. Possible values include ">95%" (the protein is highly purified, with more than 95% purity) and "Unpurified expression host lysate or partly purified protein" (the protein is either unpurified and present in the host cell lysate or only partially purified).
 	 */
 	HomePage string `json:"homePage"`
@@ -1132,14 +1118,6 @@ type Person struct {
 	 * A path or URL to the related logo
 	 */
 	Logo Image `json:"logo"`
-	/*
-	 * The label that allows humans to identify the current item
-	 */
-	Name string `json:"name"`
-	/*
-	 * A short explanation of the characteristics, features, or nature of the current item
-	 */
-	Description string `json:"description"`
 }
 
 /*
@@ -1159,6 +1137,14 @@ type Organization struct {
 	 */
 	Country Country `json:"country"`
 	/*
+	 * The label that allows humans to identify the current item
+	 */
+	Name string `json:"name"`
+	/*
+	 * A short explanation of the characteristics, features, or nature of the current item
+	 */
+	Description string `json:"description"`
+	/*
 	 * Refers to the degree of purity achieved for a protein sample. Possible values include ">95%" (the protein is highly purified, with more than 95% purity) and "Unpurified expression host lysate or partly purified protein" (the protein is either unpurified and present in the host cell lysate or only partially purified).
 	 */
 	HomePage string `json:"homePage"`
@@ -1170,14 +1156,6 @@ type Organization struct {
 	 * A path or URL to the related logo
 	 */
 	Logo Image `json:"logo"`
-	/*
-	 * The label that allows humans to identify the current item
-	 */
-	Name string `json:"name"`
-	/*
-	 * A short explanation of the characteristics, features, or nature of the current item
-	 */
-	Description string `json:"description"`
 }
 
 /*
@@ -1197,6 +1175,14 @@ type RI struct {
 	 */
 	Country Country `json:"country"`
 	/*
+	 * The label that allows humans to identify the current item
+	 */
+	Name string `json:"name"`
+	/*
+	 * A short explanation of the characteristics, features, or nature of the current item
+	 */
+	Description string `json:"description"`
+	/*
 	 * Refers to the degree of purity achieved for a protein sample. Possible values include ">95%" (the protein is highly purified, with more than 95% purity) and "Unpurified expression host lysate or partly purified protein" (the protein is either unpurified and present in the host cell lysate or only partially purified).
 	 */
 	HomePage string `json:"homePage"`
@@ -1208,14 +1194,6 @@ type RI struct {
 	 * A path or URL to the related logo
 	 */
 	Logo Image `json:"logo"`
-	/*
-	 * The label that allows humans to identify the current item
-	 */
-	Name string `json:"name"`
-	/*
-	 * A short explanation of the characteristics, features, or nature of the current item
-	 */
-	Description string `json:"description"`
 }
 
 /*
@@ -1239,6 +1217,14 @@ type Provider struct {
 	 */
 	Country Country `json:"country"`
 	/*
+	 * The label that allows humans to identify the current item
+	 */
+	Name string `json:"name"`
+	/*
+	 * A short explanation of the characteristics, features, or nature of the current item
+	 */
+	Description string `json:"description"`
+	/*
 	 * Refers to the degree of purity achieved for a protein sample. Possible values include ">95%" (the protein is highly purified, with more than 95% purity) and "Unpurified expression host lysate or partly purified protein" (the protein is either unpurified and present in the host cell lysate or only partially purified).
 	 */
 	HomePage string `json:"homePage"`
@@ -1250,14 +1236,6 @@ type Provider struct {
 	 * A path or URL to the related logo
 	 */
 	Logo Image `json:"logo"`
-	/*
-	 * The label that allows humans to identify the current item
-	 */
-	Name string `json:"name"`
-	/*
-	 * A short explanation of the characteristics, features, or nature of the current item
-	 */
-	Description string `json:"description"`
 }
 
 /*
@@ -1269,6 +1247,14 @@ type Originator struct {
 	 */
 	PersonOrOrganization
 	/*
+	 * The label that allows humans to identify the current item
+	 */
+	Name string `json:"name"`
+	/*
+	 * A short explanation of the characteristics, features, or nature of the current item
+	 */
+	Description string `json:"description"`
+	/*
 	 * Refers to the degree of purity achieved for a protein sample. Possible values include ">95%" (the protein is highly purified, with more than 95% purity) and "Unpurified expression host lysate or partly purified protein" (the protein is either unpurified and present in the host cell lysate or only partially purified).
 	 */
 	HomePage string `json:"homePage"`
@@ -1280,14 +1266,6 @@ type Originator struct {
 	 * A path or URL to the related logo
 	 */
 	Logo Image `json:"logo"`
-	/*
-	 * The label that allows humans to identify the current item
-	 */
-	Name string `json:"name"`
-	/*
-	 * A short explanation of the characteristics, features, or nature of the current item
-	 */
-	Description string `json:"description"`
 }
 
 /*
@@ -1445,7 +1423,15 @@ type ProductOrService struct {
 	/*
 	 * parent types
 	 */
-	NamedDataset
+	Dataset
+	/*
+	 * The label that allows humans to identify the current item
+	 */
+	Name string `json:"name"`
+	/*
+	 * A short explanation of the characteristics, features, or nature of the current item
+	 */
+	Description string `json:"description"`
 	/*
 	 * The URL that permits to access to the product/service detailed description page on the provider's website and/or allows to place an order about it or at least describe the process to place an order/enquiry
 	 */
@@ -1542,14 +1528,6 @@ type ProductOrService struct {
 	 * An information that allows someone to establish communication
 	 */
 	ContactPoint ContactPoint `json:"contactPoint"`
-	/*
-	 * The label that allows humans to identify the current item
-	 */
-	Name string `json:"name"`
-	/*
-	 * A short explanation of the characteristics, features, or nature of the current item
-	 */
-	Description string `json:"description"`
 }
 
 /*
@@ -1569,6 +1547,14 @@ type Service struct {
 	 */
 	ModelType string `json:"modelType"`
 	/*
+	 * The label that allows humans to identify the current item
+	 */
+	Name string `json:"name"`
+	/*
+	 * A short explanation of the characteristics, features, or nature of the current item
+	 */
+	Description string `json:"description"`
+	/*
 	 * The URL that permits to access to the product/service detailed description page on the provider's website and/or allows to place an order about it or at least describe the process to place an order/enquiry
 	 */
 	AccessPointURL string `json:"accessPointURL"`
@@ -1664,14 +1650,6 @@ type Service struct {
 	 * An information that allows someone to establish communication
 	 */
 	ContactPoint ContactPoint `json:"contactPoint"`
-	/*
-	 * The label that allows humans to identify the current item
-	 */
-	Name string `json:"name"`
-	/*
-	 * A short explanation of the characteristics, features, or nature of the current item
-	 */
-	Description string `json:"description"`
 }
 
 /*
@@ -1712,6 +1690,14 @@ type Product struct {
 	 */
 	UsageRestrictions string `json:"usageRestrictions"`
 	/*
+	 * The label that allows humans to identify the current item
+	 */
+	Name string `json:"name"`
+	/*
+	 * A short explanation of the characteristics, features, or nature of the current item
+	 */
+	Description string `json:"description"`
+	/*
 	 * The URL that permits to access to the product/service detailed description page on the provider's website and/or allows to place an order about it or at least describe the process to place an order/enquiry
 	 */
 	AccessPointURL string `json:"accessPointURL"`
@@ -1807,14 +1793,6 @@ type Product struct {
 	 * An information that allows someone to establish communication
 	 */
 	ContactPoint ContactPoint `json:"contactPoint"`
-	/*
-	 * The label that allows humans to identify the current item
-	 */
-	Name string `json:"name"`
-	/*
-	 * A short explanation of the characteristics, features, or nature of the current item
-	 */
-	Description string `json:"description"`
 }
 
 /*
@@ -1875,6 +1853,14 @@ type Antibody struct {
 	 */
 	UsageRestrictions string `json:"usageRestrictions"`
 	/*
+	 * The label that allows humans to identify the current item
+	 */
+	Name string `json:"name"`
+	/*
+	 * A short explanation of the characteristics, features, or nature of the current item
+	 */
+	Description string `json:"description"`
+	/*
 	 * The URL that permits to access to the product/service detailed description page on the provider's website and/or allows to place an order about it or at least describe the process to place an order/enquiry
 	 */
 	AccessPointURL string `json:"accessPointURL"`
@@ -1970,14 +1956,6 @@ type Antibody struct {
 	 * An information that allows someone to establish communication
 	 */
 	ContactPoint ContactPoint `json:"contactPoint"`
-	/*
-	 * The label that allows humans to identify the current item
-	 */
-	Name string `json:"name"`
-	/*
-	 * A short explanation of the characteristics, features, or nature of the current item
-	 */
-	Description string `json:"description"`
 }
 
 /*
@@ -2042,6 +2020,14 @@ type Hybridoma struct {
 	 */
 	UsageRestrictions string `json:"usageRestrictions"`
 	/*
+	 * The label that allows humans to identify the current item
+	 */
+	Name string `json:"name"`
+	/*
+	 * A short explanation of the characteristics, features, or nature of the current item
+	 */
+	Description string `json:"description"`
+	/*
 	 * The URL that permits to access to the product/service detailed description page on the provider's website and/or allows to place an order about it or at least describe the process to place an order/enquiry
 	 */
 	AccessPointURL string `json:"accessPointURL"`
@@ -2137,14 +2123,6 @@ type Hybridoma struct {
 	 * An information that allows someone to establish communication
 	 */
 	ContactPoint ContactPoint `json:"contactPoint"`
-	/*
-	 * The label that allows humans to identify the current item
-	 */
-	Name string `json:"name"`
-	/*
-	 * A short explanation of the characteristics, features, or nature of the current item
-	 */
-	Description string `json:"description"`
 }
 
 /*
@@ -2241,6 +2219,14 @@ type Protein struct {
 	 */
 	UsageRestrictions string `json:"usageRestrictions"`
 	/*
+	 * The label that allows humans to identify the current item
+	 */
+	Name string `json:"name"`
+	/*
+	 * A short explanation of the characteristics, features, or nature of the current item
+	 */
+	Description string `json:"description"`
+	/*
 	 * The URL that permits to access to the product/service detailed description page on the provider's website and/or allows to place an order about it or at least describe the process to place an order/enquiry
 	 */
 	AccessPointURL string `json:"accessPointURL"`
@@ -2336,14 +2322,6 @@ type Protein struct {
 	 * An information that allows someone to establish communication
 	 */
 	ContactPoint ContactPoint `json:"contactPoint"`
-	/*
-	 * The label that allows humans to identify the current item
-	 */
-	Name string `json:"name"`
-	/*
-	 * A short explanation of the characteristics, features, or nature of the current item
-	 */
-	Description string `json:"description"`
 }
 
 /*
@@ -2441,6 +2419,14 @@ type NucleicAcid struct {
 	 */
 	UsageRestrictions string `json:"usageRestrictions"`
 	/*
+	 * The label that allows humans to identify the current item
+	 */
+	Name string `json:"name"`
+	/*
+	 * A short explanation of the characteristics, features, or nature of the current item
+	 */
+	Description string `json:"description"`
+	/*
 	 * The URL that permits to access to the product/service detailed description page on the provider's website and/or allows to place an order about it or at least describe the process to place an order/enquiry
 	 */
 	AccessPointURL string `json:"accessPointURL"`
@@ -2536,14 +2522,6 @@ type NucleicAcid struct {
 	 * An information that allows someone to establish communication
 	 */
 	ContactPoint ContactPoint `json:"contactPoint"`
-	/*
-	 * The label that allows humans to identify the current item
-	 */
-	Name string `json:"name"`
-	/*
-	 * A short explanation of the characteristics, features, or nature of the current item
-	 */
-	Description string `json:"description"`
 }
 
 /*
@@ -2600,6 +2578,14 @@ type DetectionKit struct {
 	 */
 	UsageRestrictions string `json:"usageRestrictions"`
 	/*
+	 * The label that allows humans to identify the current item
+	 */
+	Name string `json:"name"`
+	/*
+	 * A short explanation of the characteristics, features, or nature of the current item
+	 */
+	Description string `json:"description"`
+	/*
 	 * The URL that permits to access to the product/service detailed description page on the provider's website and/or allows to place an order about it or at least describe the process to place an order/enquiry
 	 */
 	AccessPointURL string `json:"accessPointURL"`
@@ -2695,14 +2681,6 @@ type DetectionKit struct {
 	 * An information that allows someone to establish communication
 	 */
 	ContactPoint ContactPoint `json:"contactPoint"`
-	/*
-	 * The label that allows humans to identify the current item
-	 */
-	Name string `json:"name"`
-	/*
-	 * A short explanation of the characteristics, features, or nature of the current item
-	 */
-	Description string `json:"description"`
 }
 
 /*
@@ -2751,6 +2729,14 @@ type Bundle struct {
 	 * Specifies any limitations or conditions on the use of the biological material, including restrictions on research, commercial use, or distribution, considering any potential concerns about the related genetic material
 	 */
 	UsageRestrictions string `json:"usageRestrictions"`
+	/*
+	 * The label that allows humans to identify the current item
+	 */
+	Name string `json:"name"`
+	/*
+	 * A short explanation of the characteristics, features, or nature of the current item
+	 */
+	Description string `json:"description"`
 	/*
 	 * The URL that permits to access to the product/service detailed description page on the provider's website and/or allows to place an order about it or at least describe the process to place an order/enquiry
 	 */
@@ -2843,14 +2829,6 @@ type Bundle struct {
 	 * An information that allows someone to establish communication
 	 */
 	ContactPoint ContactPoint `json:"contactPoint"`
-	/*
-	 * The label that allows humans to identify the current item
-	 */
-	Name string `json:"name"`
-	/*
-	 * A short explanation of the characteristics, features, or nature of the current item
-	 */
-	Description string `json:"description"`
 }
 
 /*
@@ -2963,6 +2941,14 @@ type Pathogen struct {
 	 */
 	UsageRestrictions string `json:"usageRestrictions"`
 	/*
+	 * The label that allows humans to identify the current item
+	 */
+	Name string `json:"name"`
+	/*
+	 * A short explanation of the characteristics, features, or nature of the current item
+	 */
+	Description string `json:"description"`
+	/*
 	 * The URL that permits to access to the product/service detailed description page on the provider's website and/or allows to place an order about it or at least describe the process to place an order/enquiry
 	 */
 	AccessPointURL string `json:"accessPointURL"`
@@ -3058,14 +3044,6 @@ type Pathogen struct {
 	 * An information that allows someone to establish communication
 	 */
 	ContactPoint ContactPoint `json:"contactPoint"`
-	/*
-	 * The label that allows humans to identify the current item
-	 */
-	Name string `json:"name"`
-	/*
-	 * A short explanation of the characteristics, features, or nature of the current item
-	 */
-	Description string `json:"description"`
 }
 
 /*
@@ -3190,6 +3168,14 @@ type Virus struct {
 	 */
 	UsageRestrictions string `json:"usageRestrictions"`
 	/*
+	 * The label that allows humans to identify the current item
+	 */
+	Name string `json:"name"`
+	/*
+	 * A short explanation of the characteristics, features, or nature of the current item
+	 */
+	Description string `json:"description"`
+	/*
 	 * The URL that permits to access to the product/service detailed description page on the provider's website and/or allows to place an order about it or at least describe the process to place an order/enquiry
 	 */
 	AccessPointURL string `json:"accessPointURL"`
@@ -3285,14 +3271,6 @@ type Virus struct {
 	 * An information that allows someone to establish communication
 	 */
 	ContactPoint ContactPoint `json:"contactPoint"`
-	/*
-	 * The label that allows humans to identify the current item
-	 */
-	Name string `json:"name"`
-	/*
-	 * A short explanation of the characteristics, features, or nature of the current item
-	 */
-	Description string `json:"description"`
 }
 
 /*
@@ -3405,6 +3383,14 @@ type Bacterium struct {
 	 */
 	UsageRestrictions string `json:"usageRestrictions"`
 	/*
+	 * The label that allows humans to identify the current item
+	 */
+	Name string `json:"name"`
+	/*
+	 * A short explanation of the characteristics, features, or nature of the current item
+	 */
+	Description string `json:"description"`
+	/*
 	 * The URL that permits to access to the product/service detailed description page on the provider's website and/or allows to place an order about it or at least describe the process to place an order/enquiry
 	 */
 	AccessPointURL string `json:"accessPointURL"`
@@ -3500,14 +3486,6 @@ type Bacterium struct {
 	 * An information that allows someone to establish communication
 	 */
 	ContactPoint ContactPoint `json:"contactPoint"`
-	/*
-	 * The label that allows humans to identify the current item
-	 */
-	Name string `json:"name"`
-	/*
-	 * A short explanation of the characteristics, features, or nature of the current item
-	 */
-	Description string `json:"description"`
 }
 
 /*
@@ -3620,6 +3598,14 @@ type Fungus struct {
 	 */
 	UsageRestrictions string `json:"usageRestrictions"`
 	/*
+	 * The label that allows humans to identify the current item
+	 */
+	Name string `json:"name"`
+	/*
+	 * A short explanation of the characteristics, features, or nature of the current item
+	 */
+	Description string `json:"description"`
+	/*
 	 * The URL that permits to access to the product/service detailed description page on the provider's website and/or allows to place an order about it or at least describe the process to place an order/enquiry
 	 */
 	AccessPointURL string `json:"accessPointURL"`
@@ -3715,14 +3701,6 @@ type Fungus struct {
 	 * An information that allows someone to establish communication
 	 */
 	ContactPoint ContactPoint `json:"contactPoint"`
-	/*
-	 * The label that allows humans to identify the current item
-	 */
-	Name string `json:"name"`
-	/*
-	 * A short explanation of the characteristics, features, or nature of the current item
-	 */
-	Description string `json:"description"`
 }
 
 /*
@@ -3835,6 +3813,14 @@ type Protozoan struct {
 	 */
 	UsageRestrictions string `json:"usageRestrictions"`
 	/*
+	 * The label that allows humans to identify the current item
+	 */
+	Name string `json:"name"`
+	/*
+	 * A short explanation of the characteristics, features, or nature of the current item
+	 */
+	Description string `json:"description"`
+	/*
 	 * The URL that permits to access to the product/service detailed description page on the provider's website and/or allows to place an order about it or at least describe the process to place an order/enquiry
 	 */
 	AccessPointURL string `json:"accessPointURL"`
@@ -3930,14 +3916,6 @@ type Protozoan struct {
 	 * An information that allows someone to establish communication
 	 */
 	ContactPoint ContactPoint `json:"contactPoint"`
-	/*
-	 * The label that allows humans to identify the current item
-	 */
-	Name string `json:"name"`
-	/*
-	 * A short explanation of the characteristics, features, or nature of the current item
-	 */
-	Description string `json:"description"`
 }
 
 /*
@@ -4050,6 +4028,14 @@ type Viroid struct {
 	 */
 	UsageRestrictions string `json:"usageRestrictions"`
 	/*
+	 * The label that allows humans to identify the current item
+	 */
+	Name string `json:"name"`
+	/*
+	 * A short explanation of the characteristics, features, or nature of the current item
+	 */
+	Description string `json:"description"`
+	/*
 	 * The URL that permits to access to the product/service detailed description page on the provider's website and/or allows to place an order about it or at least describe the process to place an order/enquiry
 	 */
 	AccessPointURL string `json:"accessPointURL"`
@@ -4145,14 +4131,6 @@ type Viroid struct {
 	 * An information that allows someone to establish communication
 	 */
 	ContactPoint ContactPoint `json:"contactPoint"`
-	/*
-	 * The label that allows humans to identify the current item
-	 */
-	Name string `json:"name"`
-	/*
-	 * A short explanation of the characteristics, features, or nature of the current item
-	 */
-	Description string `json:"description"`
 }
 
 /*
@@ -4265,6 +4243,14 @@ type Prion struct {
 	 */
 	UsageRestrictions string `json:"usageRestrictions"`
 	/*
+	 * The label that allows humans to identify the current item
+	 */
+	Name string `json:"name"`
+	/*
+	 * A short explanation of the characteristics, features, or nature of the current item
+	 */
+	Description string `json:"description"`
+	/*
 	 * The URL that permits to access to the product/service detailed description page on the provider's website and/or allows to place an order about it or at least describe the process to place an order/enquiry
 	 */
 	AccessPointURL string `json:"accessPointURL"`
@@ -4360,14 +4346,6 @@ type Prion struct {
 	 * An information that allows someone to establish communication
 	 */
 	ContactPoint ContactPoint `json:"contactPoint"`
-	/*
-	 * The label that allows humans to identify the current item
-	 */
-	Name string `json:"name"`
-	/*
-	 * A short explanation of the characteristics, features, or nature of the current item
-	 */
-	Description string `json:"description"`
 }
 
 /*
@@ -4445,9 +4423,13 @@ type MSDS struct {
  */
 type File struct {
 	/*
-	 * parent types
+	 * The label that allows humans to identify the current item
 	 */
-	Nameable
+	Name string `json:"name"`
+	/*
+	 * A short explanation of the characteristics, features, or nature of the current item
+	 */
+	Description string `json:"description"`
 	/*
 	 * The web address or location where the file content is stored and can be accessed or downloaded.
 	 */
@@ -4460,14 +4442,6 @@ type File struct {
 	 * The legal terms and conditions under which the file can be used, shared, or distributed, indicating any restrictions or permissions.
 	 */
 	License License `json:"license"`
-	/*
-	 * The label that allows humans to identify the current item
-	 */
-	Name string `json:"name"`
-	/*
-	 * A short explanation of the characteristics, features, or nature of the current item
-	 */
-	Description string `json:"description"`
 }
 
 /*
@@ -4479,6 +4453,14 @@ type Data struct {
 	 */
 	File
 	/*
+	 * The label that allows humans to identify the current item
+	 */
+	Name string `json:"name"`
+	/*
+	 * A short explanation of the characteristics, features, or nature of the current item
+	 */
+	Description string `json:"description"`
+	/*
 	 * The web address or location where the file content is stored and can be accessed or downloaded.
 	 */
 	ContentURL string `json:"contentURL"`
@@ -4490,14 +4472,6 @@ type Data struct {
 	 * The legal terms and conditions under which the file can be used, shared, or distributed, indicating any restrictions or permissions.
 	 */
 	License License `json:"license"`
-	/*
-	 * The label that allows humans to identify the current item
-	 */
-	Name string `json:"name"`
-	/*
-	 * A short explanation of the characteristics, features, or nature of the current item
-	 */
-	Description string `json:"description"`
 }
 
 /*
@@ -4509,6 +4483,14 @@ type Document struct {
 	 */
 	File
 	/*
+	 * The label that allows humans to identify the current item
+	 */
+	Name string `json:"name"`
+	/*
+	 * A short explanation of the characteristics, features, or nature of the current item
+	 */
+	Description string `json:"description"`
+	/*
 	 * The web address or location where the file content is stored and can be accessed or downloaded.
 	 */
 	ContentURL string `json:"contentURL"`
@@ -4520,14 +4502,6 @@ type Document struct {
 	 * The legal terms and conditions under which the file can be used, shared, or distributed, indicating any restrictions or permissions.
 	 */
 	License License `json:"license"`
-	/*
-	 * The label that allows humans to identify the current item
-	 */
-	Name string `json:"name"`
-	/*
-	 * A short explanation of the characteristics, features, or nature of the current item
-	 */
-	Description string `json:"description"`
 }
 
 /*
@@ -4539,6 +4513,14 @@ type Audio struct {
 	 */
 	File
 	/*
+	 * The label that allows humans to identify the current item
+	 */
+	Name string `json:"name"`
+	/*
+	 * A short explanation of the characteristics, features, or nature of the current item
+	 */
+	Description string `json:"description"`
+	/*
 	 * The web address or location where the file content is stored and can be accessed or downloaded.
 	 */
 	ContentURL string `json:"contentURL"`
@@ -4550,14 +4532,6 @@ type Audio struct {
 	 * The legal terms and conditions under which the file can be used, shared, or distributed, indicating any restrictions or permissions.
 	 */
 	License License `json:"license"`
-	/*
-	 * The label that allows humans to identify the current item
-	 */
-	Name string `json:"name"`
-	/*
-	 * A short explanation of the characteristics, features, or nature of the current item
-	 */
-	Description string `json:"description"`
 }
 
 /*
@@ -4569,6 +4543,14 @@ type Video struct {
 	 */
 	File
 	/*
+	 * The label that allows humans to identify the current item
+	 */
+	Name string `json:"name"`
+	/*
+	 * A short explanation of the characteristics, features, or nature of the current item
+	 */
+	Description string `json:"description"`
+	/*
 	 * The web address or location where the file content is stored and can be accessed or downloaded.
 	 */
 	ContentURL string `json:"contentURL"`
@@ -4580,14 +4562,6 @@ type Video struct {
 	 * The legal terms and conditions under which the file can be used, shared, or distributed, indicating any restrictions or permissions.
 	 */
 	License License `json:"license"`
-	/*
-	 * The label that allows humans to identify the current item
-	 */
-	Name string `json:"name"`
-	/*
-	 * A short explanation of the characteristics, features, or nature of the current item
-	 */
-	Description string `json:"description"`
 }
 
 /*
@@ -4603,6 +4577,14 @@ type Image struct {
 	 */
 	AltText string `json:"altText"`
 	/*
+	 * The label that allows humans to identify the current item
+	 */
+	Name string `json:"name"`
+	/*
+	 * A short explanation of the characteristics, features, or nature of the current item
+	 */
+	Description string `json:"description"`
+	/*
 	 * The web address or location where the file content is stored and can be accessed or downloaded.
 	 */
 	ContentURL string `json:"contentURL"`
@@ -4614,14 +4596,6 @@ type Image struct {
 	 * The legal terms and conditions under which the file can be used, shared, or distributed, indicating any restrictions or permissions.
 	 */
 	License License `json:"license"`
-	/*
-	 * The label that allows humans to identify the current item
-	 */
-	Name string `json:"name"`
-	/*
-	 * A short explanation of the characteristics, features, or nature of the current item
-	 */
-	Description string `json:"description"`
 }
 
 /*
@@ -4631,7 +4605,15 @@ type ContactPoint struct {
 	/*
 	 * parent types
 	 */
-	Nameable
+	Dataset
+	/*
+	 * The label that allows humans to identify the current item
+	 */
+	Name string `json:"name"`
+	/*
+	 * A short explanation of the characteristics, features, or nature of the current item
+	 */
+	Description string `json:"description"`
 	/*
 	 * Email address
 	 */
@@ -4664,14 +4646,6 @@ type ContactPoint struct {
 	 * Unique persistent identifier for a person, provided by the Open Researcher and Contributor ID (ORCID) organisation
 	 */
 	ORCIDiD string `json:"oRCIDiD"`
-	/*
-	 * The label that allows humans to identify the current item
-	 */
-	Name string `json:"name"`
-	/*
-	 * A short explanation of the characteristics, features, or nature of the current item
-	 */
-	Description string `json:"description"`
 }
 
 /*
@@ -4681,7 +4655,15 @@ type License struct {
 	/*
 	 * parent types
 	 */
-	Nameable
+	Dataset
+	/*
+	 * The label that allows humans to identify the current item
+	 */
+	Name string `json:"name"`
+	/*
+	 * A short explanation of the characteristics, features, or nature of the current item
+	 */
+	Description string `json:"description"`
 	/*
 	 * The web address or location where the details or content is stored and can be accessed or downloaded.
 	 */
@@ -4694,14 +4676,6 @@ type License struct {
 	 * A path or URL to the related logo
 	 */
 	Logo Image `json:"logo"`
-	/*
-	 * The label that allows humans to identify the current item
-	 */
-	Name string `json:"name"`
-	/*
-	 * A short explanation of the characteristics, features, or nature of the current item
-	 */
-	Description string `json:"description"`
 }
 
 /*
@@ -4711,7 +4685,15 @@ type Certification struct {
 	/*
 	 * parent types
 	 */
-	Nameable
+	Dataset
+	/*
+	 * The label that allows humans to identify the current item
+	 */
+	Name string `json:"name"`
+	/*
+	 * A short explanation of the characteristics, features, or nature of the current item
+	 */
+	Description string `json:"description"`
 	/*
 	 * A path or URL to the related logo
 	 */
@@ -4724,14 +4706,6 @@ type Certification struct {
 	 * The web address or location where the details or content is stored and can be accessed or downloaded.
 	 */
 	ResourceURL string `json:"resourceURL"`
-	/*
-	 * The label that allows humans to identify the current item
-	 */
-	Name string `json:"name"`
-	/*
-	 * A short explanation of the characteristics, features, or nature of the current item
-	 */
-	Description string `json:"description"`
 }
 
 

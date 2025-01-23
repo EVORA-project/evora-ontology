@@ -38,13 +38,6 @@ URI: [EVORAO:DataProvider](https://raw.githubusercontent.com/EVORA-project/evora
         
       DataProvider : loginRequestMethod
         
-          
-    
-    
-    DataProvider --> "0..1" QueryMethodEnumeration : loginRequestMethod
-    click QueryMethodEnumeration href "../QueryMethodEnumeration"
-
-        
       DataProvider : loginTokenName
         
       DataProvider : loginURL
@@ -53,14 +46,14 @@ URI: [EVORAO:DataProvider](https://raw.githubusercontent.com/EVORA-project/evora
         
       DataProvider : providedEntityType
         
-      DataProvider : queryMethod
-        
           
     
     
-    DataProvider --> "1" QueryMethodEnumeration : queryMethod
-    click QueryMethodEnumeration href "../QueryMethodEnumeration"
+    DataProvider --> "1" Dataset : providedEntityType
+    click Dataset href "../Dataset"
 
+        
+      DataProvider : queryMethod
         
       DataProvider : queryURL
         
@@ -74,7 +67,7 @@ URI: [EVORAO:DataProvider](https://raw.githubusercontent.com/EVORA-project/evora
 
 
 ## Inheritance
-* [Nameable](Nameable.md)
+* [Resource](Resource.md)
     * [DataService](DataService.md)
         * **DataProvider**
 
@@ -85,16 +78,16 @@ URI: [EVORAO:DataProvider](https://raw.githubusercontent.com/EVORA-project/evora
 | Name | Cardinality and Range | Description | Inheritance |
 | ---  | --- | --- | --- |
 | [license](license.md) | 0..1 <br/> [License](License.md) | Information about terms and conditions under which the subject can be used, s... | direct |
-| [loginRequestMethod](loginRequestMethod.md) | 0..1 <br/> [QueryMethodEnumeration](QueryMethodEnumeration.md) | The http request method used to acces the login request url | direct |
+| [loginRequestMethod](loginRequestMethod.md) | 0..1 <br/> [String](String.md) | The http request method used to acces the login request url | direct |
 | [loginURL](loginURL.md) | 0..1 <br/> [Uri](Uri.md) | The URL template that allows to log in if required | direct |
 | [loginTokenName](loginTokenName.md) | 0..1 <br/> [String](String.md) | The name of the token, unique identifier of an interaction session, that will... | direct |
 | [queryURL](queryURL.md) | 1 <br/> [Uri](Uri.md) | The URL template that allows to get the content | direct |
-| [queryMethod](queryMethod.md) | 1 <br/> [QueryMethodEnumeration](QueryMethodEnumeration.md) | The http request method used to access the requested query url | direct |
+| [queryMethod](queryMethod.md) | 1 <br/> [String](String.md) | The http request method used to access the requested query url | direct |
 | [contentType](contentType.md) | 1 <br/> [String](String.md) | The content type of the response to the queries | direct |
-| [providedEntityType](providedEntityType.md) | 1 <br/> [Uri](Uri.md) | The identification of the entity type (Class) described by the response to th... | direct |
+| [providedEntityType](providedEntityType.md) | 1 <br/> [Dataset](Dataset.md) | The identification of the entity type (Class) described by the response to th... | direct |
 | [weight](weight.md) | 1 <br/> [Integer](Integer.md) | A numerical value indicating relative importance or priority, generally proce... | direct |
-| [name](name.md) | 1 <br/> [String](String.md) | The label that allows humans to identify the current item | [Nameable](Nameable.md) |
-| [description](description.md) | 0..1 _recommended_ <br/> [String](String.md) | A short explanation of the characteristics, features, or nature of the curren... | [Nameable](Nameable.md) |
+| [name](name.md) | 1 <br/> [String](String.md) | The label that allows humans to identify the current item | [DataService](DataService.md) |
+| [description](description.md) | 0..1 _recommended_ <br/> [String](String.md) | A short explanation of the characteristics, features, or nature of the curren... | [DataService](DataService.md) |
 
 
 
@@ -179,6 +172,9 @@ slot_usage:
     title: license
     exact_mappings:
     - dct:license
+    domain_of:
+    - DataProvider
+    - File
     range: License
     required: false
     multivalued: false
@@ -189,7 +185,9 @@ slot_usage:
     close_mappings:
     - dcat:endpointDescription
     ifabsent: string(GET)
-    range: queryMethodEnumeration
+    domain_of:
+    - DataProvider
+    range: string
     required: false
     multivalued: false
   loginURL:
@@ -199,6 +197,8 @@ slot_usage:
     close_mappings:
     - wdp:P1630
     - dcat:endpointDescription
+    domain_of:
+    - DataProvider
     range: uri
     required: false
     multivalued: false
@@ -209,6 +209,8 @@ slot_usage:
     title: login token name
     close_mappings:
     - dcat:endpointDescription
+    domain_of:
+    - DataProvider
     range: string
     required: false
     multivalued: false
@@ -220,6 +222,8 @@ slot_usage:
     - dcat:endpointURL
     close_mappings:
     - wdp:P1630
+    domain_of:
+    - DataProvider
     range: uri
     required: true
     multivalued: false
@@ -229,7 +233,9 @@ slot_usage:
     title: query method
     close_mappings:
     - dcat:endpointDescription
-    range: queryMethodEnumeration
+    domain_of:
+    - DataProvider
+    range: string
     required: true
     multivalued: false
   contentType:
@@ -239,6 +245,8 @@ slot_usage:
     close_mappings:
     - dct:format
     ifabsent: string(JSON)
+    domain_of:
+    - DataProvider
     range: string
     required: true
     multivalued: false
@@ -249,7 +257,9 @@ slot_usage:
     title: provided entity type
     exact_mappings:
     - dcat:servesDataset
-    range: uri
+    domain_of:
+    - DataProvider
+    range: Dataset
     required: true
     multivalued: false
   weight:
@@ -264,6 +274,9 @@ slot_usage:
       of Rank ahead of Taxon)
     close_mappings:
     - adms:status
+    domain_of:
+    - DataProvider
+    - Term
     range: integer
     required: true
     multivalued: false
@@ -291,6 +304,9 @@ slot_usage:
     title: license
     exact_mappings:
     - dct:license
+    domain_of:
+    - DataProvider
+    - File
     range: License
     required: false
     multivalued: false
@@ -301,7 +317,9 @@ slot_usage:
     close_mappings:
     - dcat:endpointDescription
     ifabsent: string(GET)
-    range: queryMethodEnumeration
+    domain_of:
+    - DataProvider
+    range: string
     required: false
     multivalued: false
   loginURL:
@@ -311,6 +329,8 @@ slot_usage:
     close_mappings:
     - wdp:P1630
     - dcat:endpointDescription
+    domain_of:
+    - DataProvider
     range: uri
     required: false
     multivalued: false
@@ -321,6 +341,8 @@ slot_usage:
     title: login token name
     close_mappings:
     - dcat:endpointDescription
+    domain_of:
+    - DataProvider
     range: string
     required: false
     multivalued: false
@@ -332,6 +354,8 @@ slot_usage:
     - dcat:endpointURL
     close_mappings:
     - wdp:P1630
+    domain_of:
+    - DataProvider
     range: uri
     required: true
     multivalued: false
@@ -341,7 +365,9 @@ slot_usage:
     title: query method
     close_mappings:
     - dcat:endpointDescription
-    range: queryMethodEnumeration
+    domain_of:
+    - DataProvider
+    range: string
     required: true
     multivalued: false
   contentType:
@@ -351,6 +377,8 @@ slot_usage:
     close_mappings:
     - dct:format
     ifabsent: string(JSON)
+    domain_of:
+    - DataProvider
     range: string
     required: true
     multivalued: false
@@ -361,7 +389,9 @@ slot_usage:
     title: provided entity type
     exact_mappings:
     - dcat:servesDataset
-    range: uri
+    domain_of:
+    - DataProvider
+    range: Dataset
     required: true
     multivalued: false
   weight:
@@ -376,6 +406,9 @@ slot_usage:
       of Rank ahead of Taxon)
     close_mappings:
     - adms:status
+    domain_of:
+    - DataProvider
+    - Term
     range: integer
     required: true
     multivalued: false
@@ -410,9 +443,12 @@ attributes:
     owner: DataProvider
     domain_of:
     - DataProvider
-    range: queryMethodEnumeration
+    range: string
     required: false
     multivalued: false
+    equals_string_in:
+    - GET
+    - POST
   loginURL:
     name: loginURL
     description: The URL template that allows to log in if required
@@ -474,9 +510,12 @@ attributes:
     owner: DataProvider
     domain_of:
     - DataProvider
-    range: queryMethodEnumeration
+    range: string
     required: true
     multivalued: false
+    equals_string_in:
+    - GET
+    - POST
   contentType:
     name: contentType
     description: The content type of the response to the queries
@@ -506,7 +545,7 @@ attributes:
     owner: DataProvider
     domain_of:
     - DataProvider
-    range: uri
+    range: Dataset
     required: true
     multivalued: false
   weight:
@@ -551,7 +590,15 @@ attributes:
     alias: name
     owner: DataProvider
     domain_of:
-    - Nameable
+    - DataService
+    - Catalogue
+    - Term
+    - PersonOrOrganization
+    - ProductOrService
+    - File
+    - ContactPoint
+    - License
+    - Certification
     range: string
     required: true
     multivalued: false
@@ -572,7 +619,15 @@ attributes:
     alias: description
     owner: DataProvider
     domain_of:
-    - Nameable
+    - DataService
+    - Catalogue
+    - Term
+    - PersonOrOrganization
+    - ProductOrService
+    - File
+    - ContactPoint
+    - License
+    - Certification
     range: string
     required: false
     recommended: true

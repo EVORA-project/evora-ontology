@@ -22,8 +22,8 @@ URI: [EVORAO:Catalogue](https://raw.githubusercontent.com/EVORA-project/evora-on
  classDiagram
     class Catalogue
     click Catalogue href "../Catalogue"
-      Nameable <|-- Catalogue
-        click Nameable href "../Nameable"
+      Dataset <|-- Catalogue
+        click Dataset href "../Dataset"
       
 
       Catalogue <|-- Taxonomy
@@ -46,11 +46,12 @@ URI: [EVORAO:Catalogue](https://raw.githubusercontent.com/EVORA-project/evora-on
 
 
 ## Inheritance
-* [Nameable](Nameable.md)
-    * **Catalogue**
-        * [Taxonomy](Taxonomy.md)
-        * [Vocabulary](Vocabulary.md)
-        * [Collection](Collection.md)
+* [Resource](Resource.md)
+    * [Dataset](Dataset.md)
+        * **Catalogue**
+            * [Taxonomy](Taxonomy.md)
+            * [Vocabulary](Vocabulary.md)
+            * [Collection](Collection.md)
 
 
 
@@ -58,8 +59,8 @@ URI: [EVORAO:Catalogue](https://raw.githubusercontent.com/EVORA-project/evora-on
 
 | Name | Cardinality and Range | Description | Inheritance |
 | ---  | --- | --- | --- |
-| [name](name.md) | 1 <br/> [String](String.md) | The label that allows humans to identify the current item | [Nameable](Nameable.md) |
-| [description](description.md) | 0..1 _recommended_ <br/> [String](String.md) | A short explanation of the characteristics, features, or nature of the curren... | [Nameable](Nameable.md) |
+| [name](name.md) | 1 <br/> [String](String.md) | The label that allows humans to identify the current item | direct |
+| [description](description.md) | 0..1 _recommended_ <br/> [String](String.md) | A short explanation of the characteristics, features, or nature of the curren... | direct |
 
 
 
@@ -117,8 +118,66 @@ exact_mappings:
 close_mappings:
 - wd:Q2352616
 - schema:Dataset
-is_a: Nameable
+is_a: Dataset
 abstract: true
+slots:
+- name
+- description
+slot_usage:
+  name:
+    name: name
+    description: The label that allows humans to identify the current item
+    title: name
+    comments:
+    - 'The title of the item should be as short and descriptive as possible. E.g.
+      for virus products it should basically be based on the following Pattern:
+
+      "Virus name", "virus host type", "collection year", "country of collection"
+      ex "suspected epidemiological origin", "genotype", "strain", "variant name or
+      specific feature"'
+    exact_mappings:
+    - dct:title
+    close_mappings:
+    - rdfs:label
+    domain_of:
+    - Catalogue
+    - DataService
+    - Term
+    - PersonOrOrganization
+    - ProductOrService
+    - File
+    - ContactPoint
+    - License
+    - Certification
+    range: string
+    required: true
+    multivalued: false
+  description:
+    name: description
+    description: A short explanation of the characteristics, features, or nature of
+      the current item
+    title: description
+    comments:
+    - 'Describe this item in few lines. This description will serve as a summary to
+      present the item.
+
+      '
+    exact_mappings:
+    - dct:description
+    domain_of:
+    - Catalogue
+    - DataService
+    - Term
+    - PersonOrOrganization
+    - ProductOrService
+    - File
+    - ContactPoint
+    - License
+    - Certification
+    range: string
+    required: false
+    recommended: true
+    multivalued: false
 
 ```
 </details>
@@ -136,8 +195,63 @@ exact_mappings:
 close_mappings:
 - wd:Q2352616
 - schema:Dataset
-is_a: Nameable
+is_a: Dataset
 abstract: true
+slot_usage:
+  name:
+    name: name
+    description: The label that allows humans to identify the current item
+    title: name
+    comments:
+    - 'The title of the item should be as short and descriptive as possible. E.g.
+      for virus products it should basically be based on the following Pattern:
+
+      "Virus name", "virus host type", "collection year", "country of collection"
+      ex "suspected epidemiological origin", "genotype", "strain", "variant name or
+      specific feature"'
+    exact_mappings:
+    - dct:title
+    close_mappings:
+    - rdfs:label
+    domain_of:
+    - Catalogue
+    - DataService
+    - Term
+    - PersonOrOrganization
+    - ProductOrService
+    - File
+    - ContactPoint
+    - License
+    - Certification
+    range: string
+    required: true
+    multivalued: false
+  description:
+    name: description
+    description: A short explanation of the characteristics, features, or nature of
+      the current item
+    title: description
+    comments:
+    - 'Describe this item in few lines. This description will serve as a summary to
+      present the item.
+
+      '
+    exact_mappings:
+    - dct:description
+    domain_of:
+    - Catalogue
+    - DataService
+    - Term
+    - PersonOrOrganization
+    - ProductOrService
+    - File
+    - ContactPoint
+    - License
+    - Certification
+    range: string
+    required: false
+    recommended: true
+    multivalued: false
 attributes:
   name:
     name: name
@@ -159,7 +273,15 @@ attributes:
     alias: name
     owner: Catalogue
     domain_of:
-    - Nameable
+    - Catalogue
+    - DataService
+    - Term
+    - PersonOrOrganization
+    - ProductOrService
+    - File
+    - ContactPoint
+    - License
+    - Certification
     range: string
     required: true
     multivalued: false
@@ -180,7 +302,15 @@ attributes:
     alias: description
     owner: Catalogue
     domain_of:
-    - Nameable
+    - Catalogue
+    - DataService
+    - Term
+    - PersonOrOrganization
+    - ProductOrService
+    - File
+    - ContactPoint
+    - License
+    - Certification
     range: string
     required: false
     recommended: true

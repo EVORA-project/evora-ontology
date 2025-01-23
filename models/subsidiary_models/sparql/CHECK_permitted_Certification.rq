@@ -25,17 +25,15 @@ SELECT ?g ?s ?p WHERE {
   ?s rdf:type EVORAO:Certification ;
      ?p ?o .
   FILTER ( ?p NOT IN (
+   EVORAO:name,
+   EVORAO:description,
    EVORAO:logo,
    EVORAO:certificationDocument,
    EVORAO:resourceURL,
-   EVORAO:name,
-   EVORAO:description,
    rdf:type ))
  }
  
 } 
-
-
 
 
 

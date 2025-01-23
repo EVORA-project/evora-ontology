@@ -71,6 +71,13 @@ alias: pathogenType
 domain_of:
 - PathogenIdentification
 range: string
+equals_string_in:
+- Virus
+- Bacterium
+- Fungus
+- Protozoan
+- Viroid
+- Prion
 
 ```
 </details>

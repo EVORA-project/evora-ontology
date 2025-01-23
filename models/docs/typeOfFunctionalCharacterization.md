@@ -71,6 +71,9 @@ alias: typeOfFunctionalCharacterization
 domain_of:
 - Protein
 range: string
+equals_string_in:
+- Enzymatic
+- Antigenic
 
 ```
 </details>

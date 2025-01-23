@@ -44,8 +44,9 @@ URI: [EVORAO:BiologicalMaterialOrigin](https://raw.githubusercontent.com/EVORA-p
 
 
 ## Inheritance
-* [Dataset](Dataset.md)
-    * **BiologicalMaterialOrigin**
+* [Resource](Resource.md)
+    * [Dataset](Dataset.md)
+        * **BiologicalMaterialOrigin**
 
 
 
@@ -135,6 +136,8 @@ slot_usage:
       material.
     title: recombinant material
     ifabsent: 'false'
+    domain_of:
+    - BiologicalMaterialOrigin
     range: boolean
     required: true
     multivalued: false
@@ -147,6 +150,8 @@ slot_usage:
     comments:
     - It makes sense that only recombinant biological materials can have a mixed material
       origin!
+    domain_of:
+    - BiologicalMaterialOrigin
     range: boolean
     required: true
     multivalued: false
@@ -158,6 +163,8 @@ slot_usage:
     title: biological part origin
     comments:
     - It can be multiple parts in case of a recombinant biological material.
+    domain_of:
+    - BiologicalMaterialOrigin
     range: BiologicalPartOrigin
     required: true
     multivalued: true
@@ -183,6 +190,8 @@ slot_usage:
       material.
     title: recombinant material
     ifabsent: 'false'
+    domain_of:
+    - BiologicalMaterialOrigin
     range: boolean
     required: true
     multivalued: false
@@ -195,6 +204,8 @@ slot_usage:
     comments:
     - It makes sense that only recombinant biological materials can have a mixed material
       origin!
+    domain_of:
+    - BiologicalMaterialOrigin
     range: boolean
     required: true
     multivalued: false
@@ -206,6 +217,8 @@ slot_usage:
     title: biological part origin
     comments:
     - It can be multiple parts in case of a recombinant biological material.
+    domain_of:
+    - BiologicalMaterialOrigin
     range: BiologicalPartOrigin
     required: true
     multivalued: true

@@ -20,8 +20,8 @@ URI: [EVORAO:Certification](https://raw.githubusercontent.com/EVORA-project/evor
  classDiagram
     class Certification
     click Certification href "../Certification"
-      Nameable <|-- Certification
-        click Nameable href "../Nameable"
+      Dataset <|-- Certification
+        click Dataset href "../Dataset"
       
       Certification : certificationDocument
         
@@ -55,8 +55,9 @@ URI: [EVORAO:Certification](https://raw.githubusercontent.com/EVORA-project/evor
 
 
 ## Inheritance
-* [Nameable](Nameable.md)
-    * **Certification**
+* [Resource](Resource.md)
+    * [Dataset](Dataset.md)
+        * **Certification**
 
 
 
@@ -64,11 +65,11 @@ URI: [EVORAO:Certification](https://raw.githubusercontent.com/EVORA-project/evor
 
 | Name | Cardinality and Range | Description | Inheritance |
 | ---  | --- | --- | --- |
+| [name](name.md) | 1 <br/> [String](String.md) | The label that allows humans to identify the current item | direct |
+| [description](description.md) | 0..1 _recommended_ <br/> [String](String.md) | A short explanation of the characteristics, features, or nature of the curren... | direct |
 | [logo](logo.md) | 0..1 <br/> [Image](Image.md) | A path or URL to the related logo | direct |
 | [certificationDocument](certificationDocument.md) | * <br/> [Document](Document.md) | The document(s) issued by an authority certifying the conformity of the subje... | direct |
 | [resourceURL](resourceURL.md) | 0..1 <br/> [Uri](Uri.md) | The web address or location where the details or content is stored and can be... | direct |
-| [name](name.md) | 1 <br/> [String](String.md) | The label that allows humans to identify the current item | [Nameable](Nameable.md) |
-| [description](description.md) | 0..1 _recommended_ <br/> [String](String.md) | A short explanation of the characteristics, features, or nature of the curren... | [Nameable](Nameable.md) |
 
 
 
@@ -146,16 +147,76 @@ from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs
 close_mappings:
 - wd:Q374814
 - schema:Certification
-is_a: Nameable
+is_a: Dataset
 slots:
+- name
+- description
 - logo
 - certificationDocument
 - resourceURL
 slot_usage:
+  name:
+    name: name
+    description: The label that allows humans to identify the current item
+    title: name
+    comments:
+    - 'The title of the item should be as short and descriptive as possible. E.g.
+      for virus products it should basically be based on the following Pattern:
+
+      "Virus name", "virus host type", "collection year", "country of collection"
+      ex "suspected epidemiological origin", "genotype", "strain", "variant name or
+      specific feature"'
+    exact_mappings:
+    - dct:title
+    close_mappings:
+    - rdfs:label
+    domain_of:
+    - Certification
+    - DataService
+    - Catalogue
+    - Term
+    - PersonOrOrganization
+    - ProductOrService
+    - File
+    - ContactPoint
+    - License
+    range: string
+    required: true
+    multivalued: false
+  description:
+    name: description
+    description: A short explanation of the characteristics, features, or nature of
+      the current item
+    title: description
+    comments:
+    - 'Describe this item in few lines. This description will serve as a summary to
+      present the item.
+
+      '
+    exact_mappings:
+    - dct:description
+    domain_of:
+    - Certification
+    - DataService
+    - Catalogue
+    - Term
+    - PersonOrOrganization
+    - ProductOrService
+    - File
+    - ContactPoint
+    - License
+    range: string
+    required: false
+    recommended: true
+    multivalued: false
   logo:
     name: logo
     description: A path or URL to the related logo
     title: logo
+    domain_of:
+    - Certification
+    - PersonOrOrganization
+    - License
     range: Image
     required: false
     multivalued: false
@@ -165,6 +226,8 @@ slot_usage:
       of the subject to the applicable scheme, including, as the case may be, the
       documents attesting the equivalence to another certification scheme.
     title: certification document
+    domain_of:
+    - Certification
     range: Document
     required: false
     multivalued: true
@@ -175,6 +238,9 @@ slot_usage:
     title: resource URL
     close_mappings:
     - schema:url
+    domain_of:
+    - Certification
+    - License
     range: uri
     required: false
     multivalued: false
@@ -194,12 +260,70 @@ from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs
 close_mappings:
 - wd:Q374814
 - schema:Certification
-is_a: Nameable
+is_a: Dataset
 slot_usage:
+  name:
+    name: name
+    description: The label that allows humans to identify the current item
+    title: name
+    comments:
+    - 'The title of the item should be as short and descriptive as possible. E.g.
+      for virus products it should basically be based on the following Pattern:
+
+      "Virus name", "virus host type", "collection year", "country of collection"
+      ex "suspected epidemiological origin", "genotype", "strain", "variant name or
+      specific feature"'
+    exact_mappings:
+    - dct:title
+    close_mappings:
+    - rdfs:label
+    domain_of:
+    - Certification
+    - DataService
+    - Catalogue
+    - Term
+    - PersonOrOrganization
+    - ProductOrService
+    - File
+    - ContactPoint
+    - License
+    range: string
+    required: true
+    multivalued: false
+  description:
+    name: description
+    description: A short explanation of the characteristics, features, or nature of
+      the current item
+    title: description
+    comments:
+    - 'Describe this item in few lines. This description will serve as a summary to
+      present the item.
+
+      '
+    exact_mappings:
+    - dct:description
+    domain_of:
+    - Certification
+    - DataService
+    - Catalogue
+    - Term
+    - PersonOrOrganization
+    - ProductOrService
+    - File
+    - ContactPoint
+    - License
+    range: string
+    required: false
+    recommended: true
+    multivalued: false
   logo:
     name: logo
     description: A path or URL to the related logo
     title: logo
+    domain_of:
+    - Certification
+    - PersonOrOrganization
+    - License
     range: Image
     required: false
     multivalued: false
@@ -209,6 +333,8 @@ slot_usage:
       of the subject to the applicable scheme, including, as the case may be, the
       documents attesting the equivalence to another certification scheme.
     title: certification document
+    domain_of:
+    - Certification
     range: Document
     required: false
     multivalued: true
@@ -219,10 +345,75 @@ slot_usage:
     title: resource URL
     close_mappings:
     - schema:url
+    domain_of:
+    - Certification
+    - License
     range: uri
     required: false
     multivalued: false
 attributes:
+  name:
+    name: name
+    description: The label that allows humans to identify the current item
+    title: name
+    comments:
+    - 'The title of the item should be as short and descriptive as possible. E.g.
+      for virus products it should basically be based on the following Pattern:
+
+      "Virus name", "virus host type", "collection year", "country of collection"
+      ex "suspected epidemiological origin", "genotype", "strain", "variant name or
+      specific feature"'
+    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+    exact_mappings:
+    - dct:title
+    close_mappings:
+    - rdfs:label
+    rank: 1000
+    alias: name
+    owner: Certification
+    domain_of:
+    - Certification
+    - DataService
+    - Catalogue
+    - Term
+    - PersonOrOrganization
+    - ProductOrService
+    - File
+    - ContactPoint
+    - License
+    range: string
+    required: true
+    multivalued: false
+  description:
+    name: description
+    description: A short explanation of the characteristics, features, or nature of
+      the current item
+    title: description
+    comments:
+    - 'Describe this item in few lines. This description will serve as a summary to
+      present the item.
+
+      '
+    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+    exact_mappings:
+    - dct:description
+    rank: 1000
+    alias: description
+    owner: Certification
+    domain_of:
+    - Certification
+    - DataService
+    - Catalogue
+    - Term
+    - PersonOrOrganization
+    - ProductOrService
+    - File
+    - ContactPoint
+    - License
+    range: string
+    required: false
+    recommended: true
+    multivalued: false
   logo:
     name: logo
     description: A path or URL to the related logo
@@ -232,9 +423,9 @@ attributes:
     alias: logo
     owner: Certification
     domain_of:
+    - Certification
     - PersonOrOrganization
     - License
-    - Certification
     range: Image
     required: false
     multivalued: false
@@ -265,56 +456,10 @@ attributes:
     alias: resourceURL
     owner: Certification
     domain_of:
-    - License
     - Certification
+    - License
     range: uri
     required: false
-    multivalued: false
-  name:
-    name: name
-    description: The label that allows humans to identify the current item
-    title: name
-    comments:
-    - 'The title of the item should be as short and descriptive as possible. E.g.
-      for virus products it should basically be based on the following Pattern:
-
-      "Virus name", "virus host type", "collection year", "country of collection"
-      ex "suspected epidemiological origin", "genotype", "strain", "variant name or
-      specific feature"'
-    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
-    exact_mappings:
-    - dct:title
-    close_mappings:
-    - rdfs:label
-    rank: 1000
-    alias: name
-    owner: Certification
-    domain_of:
-    - Nameable
-    range: string
-    required: true
-    multivalued: false
-  description:
-    name: description
-    description: A short explanation of the characteristics, features, or nature of
-      the current item
-    title: description
-    comments:
-    - 'Describe this item in few lines. This description will serve as a summary to
-      present the item.
-
-      '
-    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
-    exact_mappings:
-    - dct:description
-    rank: 1000
-    alias: description
-    owner: Certification
-    domain_of:
-    - Nameable
-    range: string
-    required: false
-    recommended: true
     multivalued: false
 
 ```

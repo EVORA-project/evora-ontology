@@ -32,10 +32,10 @@ SELECT ?g ?s ?p WHERE {
    EVORAO:externalEquivalentTaxon,
    EVORAO:taxonomicID,
    EVORAO:taxonomicNodeID,
-   EVORAO:weight,
-   EVORAO:inVocabulary,
    EVORAO:name,
    EVORAO:description,
+   EVORAO:weight,
+   EVORAO:inVocabulary,
    rdf:type ))
  }
  

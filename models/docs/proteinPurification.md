@@ -71,6 +71,9 @@ alias: proteinPurification
 domain_of:
 - Protein
 range: string
+equals_string_in:
+- Greater than 95 percent
+- Unpurified expression host lysate or partly purified protein
 
 ```
 </details>

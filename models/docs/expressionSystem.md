@@ -71,6 +71,10 @@ alias: expressionSystem
 domain_of:
 - Protein
 range: string
+equals_string_in:
+- E. coli
+- Insect cells
+- Mammalian cells
 
 ```
 </details>
