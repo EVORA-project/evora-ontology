@@ -18,7 +18,7 @@ contributors:
 - https://orcid.org/0000-0002-1257-6862
 - https://orcid.org/0000-0002-2042-2839
 id: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
-version: 1.0.8305
+version: 1.0.8336
 imports:
 - linkml:types
 license: https://creativecommons.org/publicdomain/zero/1.0/
@@ -502,6 +502,7 @@ classes:
     from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
     exact_mappings:
     - dcat:Resource
+    abstract: true
   Dataset:
     description: A collection of data, published or curated by a single agent, and
       available for access
@@ -573,7 +574,7 @@ classes:
     from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
     close_mappings:
     - wd:Q114469879
-    is_a: Dataset
+    is_a: Resource
     slots:
     - ID
     - versionOf
@@ -962,7 +963,7 @@ classes:
     from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
     close_mappings:
     - wd:Q591041
-    is_a: Dataset
+    is_a: Resource
     slots:
     - title
     - authors
@@ -1057,7 +1058,7 @@ classes:
     from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
     close_mappings:
     - wd:Q1969448
-    is_a: Dataset
+    is_a: Resource
     abstract: true
     slots:
     - name
@@ -1634,7 +1635,7 @@ classes:
     - dct:Agent
     close_mappings:
     - foaf:Agent
-    is_a: Dataset
+    is_a: Resource
     slots:
     - name
     - description
@@ -3458,6 +3459,7 @@ classes:
     - dcat:mediaType
     close_mappings:
     - wd:Q82753
+    is_a: Resource
     abstract: true
     slots:
     - name
@@ -3587,7 +3589,7 @@ classes:
     close_mappings:
     - wd:Q30322502
     - vcard:Contact
-    is_a: Dataset
+    is_a: Resource
     slots:
     - name
     - description
@@ -3740,7 +3742,7 @@ classes:
     close_mappings:
     - wd:Q79719
     - dct:LicenseDocument
-    is_a: Dataset
+    is_a: Resource
     slots:
     - name
     - description
@@ -3826,7 +3828,7 @@ classes:
     close_mappings:
     - wd:Q374814
     - schema:Certification
-    is_a: Dataset
+    is_a: Resource
     slots:
     - name
     - description
@@ -3900,4 +3902,4 @@ classes:
         required: false
         multivalued: false
 source_file: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl
-generation_date: '2025-01-23T10:47:04'
+generation_date: '2025-01-23T11:13:22'

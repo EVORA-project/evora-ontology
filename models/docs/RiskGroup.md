@@ -47,9 +47,8 @@ URI: [EVORAO:RiskGroup](https://raw.githubusercontent.com/EVORA-project/evora-on
 
 ## Inheritance
 * [Resource](Resource.md)
-    * [Dataset](Dataset.md)
-        * [Term](Term.md)
-            * **RiskGroup**
+    * [Term](Term.md)
+        * **RiskGroup**
 
 
 

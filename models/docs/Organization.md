@@ -81,11 +81,10 @@ URI: [EVORAO:Organization](https://raw.githubusercontent.com/EVORA-project/evora
 
 ## Inheritance
 * [Resource](Resource.md)
-    * [Dataset](Dataset.md)
-        * [PersonOrOrganization](PersonOrOrganization.md)
-            * **Organization**
-                * [RI](RI.md)
-                * [Provider](Provider.md)
+    * [PersonOrOrganization](PersonOrOrganization.md)
+        * **Organization**
+            * [RI](RI.md)
+            * [Provider](Provider.md)
 
 
 

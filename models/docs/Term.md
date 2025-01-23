@@ -22,8 +22,8 @@ URI: [EVORAO:Term](https://raw.githubusercontent.com/EVORA-project/evora-ontolog
  classDiagram
     class Term
     click Term href "../Term"
-      Dataset <|-- Term
-        click Dataset href "../Dataset"
+      Resource <|-- Term
+        click Resource href "../Resource"
       
 
       Term <|-- CommonName
@@ -94,29 +94,28 @@ URI: [EVORAO:Term](https://raw.githubusercontent.com/EVORA-project/evora-ontolog
 
 ## Inheritance
 * [Resource](Resource.md)
-    * [Dataset](Dataset.md)
-        * **Term**
-            * [CommonName](CommonName.md)
-            * [AlternateName](AlternateName.md)
-            * [RiskGroup](RiskGroup.md)
-            * [DOI](DOI.md)
-            * [Journal](Journal.md)
-            * [PDBReference](PDBReference.md)
-            * [Keyword](Keyword.md)
-            * [ProteinTag](ProteinTag.md)
-            * [SpecialFeature](SpecialFeature.md)
-            * [ExpressionVector](ExpressionVector.md)
-            * [PlasmidSelection](PlasmidSelection.md)
-            * [PropagationHost](PropagationHost.md)
-            * [TransmissionMethod](TransmissionMethod.md)
-            * [ProductionCellLine](ProductionCellLine.md)
-            * [ProductCategory](ProductCategory.md)
-            * [IsolationHost](IsolationHost.md)
-            * [GeographicalOrigin](GeographicalOrigin.md)
-            * [Country](Country.md)
-            * [IATAClassification](IATAClassification.md)
-            * [TaxonomicRank](TaxonomicRank.md)
-            * [Taxon](Taxon.md)
+    * **Term**
+        * [CommonName](CommonName.md)
+        * [AlternateName](AlternateName.md)
+        * [RiskGroup](RiskGroup.md)
+        * [DOI](DOI.md)
+        * [Journal](Journal.md)
+        * [PDBReference](PDBReference.md)
+        * [Keyword](Keyword.md)
+        * [ProteinTag](ProteinTag.md)
+        * [SpecialFeature](SpecialFeature.md)
+        * [ExpressionVector](ExpressionVector.md)
+        * [PlasmidSelection](PlasmidSelection.md)
+        * [PropagationHost](PropagationHost.md)
+        * [TransmissionMethod](TransmissionMethod.md)
+        * [ProductionCellLine](ProductionCellLine.md)
+        * [ProductCategory](ProductCategory.md)
+        * [IsolationHost](IsolationHost.md)
+        * [GeographicalOrigin](GeographicalOrigin.md)
+        * [Country](Country.md)
+        * [IATAClassification](IATAClassification.md)
+        * [TaxonomicRank](TaxonomicRank.md)
+        * [Taxon](Taxon.md)
 
 
 
@@ -188,7 +187,7 @@ title: Term
 from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
 close_mappings:
 - wd:Q1969448
-is_a: Dataset
+is_a: Resource
 abstract: true
 slots:
 - name
@@ -290,7 +289,7 @@ title: Term
 from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
 close_mappings:
 - wd:Q1969448
-is_a: Dataset
+is_a: Resource
 abstract: true
 slot_usage:
   name:

@@ -22,6 +22,10 @@ URI: [EVORAO:File](https://raw.githubusercontent.com/EVORA-project/evora-ontolog
  classDiagram
     class File
     click File href "../File"
+      Resource <|-- File
+        click Resource href "../Resource"
+      
+
       File <|-- Data
         click Data href "../Data"
       File <|-- Document
@@ -32,6 +36,7 @@ URI: [EVORAO:File](https://raw.githubusercontent.com/EVORA-project/evora-ontolog
         click Video href "../Video"
       File <|-- Image
         click Image href "../Image"
+      
       
       File : contentURL
         
@@ -58,12 +63,13 @@ URI: [EVORAO:File](https://raw.githubusercontent.com/EVORA-project/evora-ontolog
 
 
 ## Inheritance
-* **File**
-    * [Data](Data.md)
-    * [Document](Document.md)
-    * [Audio](Audio.md)
-    * [Video](Video.md)
-    * [Image](Image.md)
+* [Resource](Resource.md)
+    * **File**
+        * [Data](Data.md)
+        * [Document](Document.md)
+        * [Audio](Audio.md)
+        * [Video](Video.md)
+        * [Image](Image.md)
 
 
 
@@ -141,6 +147,7 @@ exact_mappings:
 - dcat:mediaType
 close_mappings:
 - wd:Q82753
+is_a: Resource
 abstract: true
 slots:
 - name
@@ -251,6 +258,7 @@ exact_mappings:
 - dcat:mediaType
 close_mappings:
 - wd:Q82753
+is_a: Resource
 abstract: true
 slot_usage:
   name:

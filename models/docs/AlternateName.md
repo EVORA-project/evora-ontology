@@ -58,9 +58,8 @@ URI: [EVORAO:AlternateName](https://raw.githubusercontent.com/EVORA-project/evor
 
 ## Inheritance
 * [Resource](Resource.md)
-    * [Dataset](Dataset.md)
-        * [Term](Term.md)
-            * **AlternateName**
+    * [Term](Term.md)
+        * **AlternateName**
 
 
 

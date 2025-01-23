@@ -5,7 +5,7 @@ import lombok.*;
 
 
 
-/* version: 1.0.8305 */
+/* version: 1.0.8336 */
 
 
 /**
@@ -13,7 +13,7 @@ import lombok.*;
 **/
 @Data
 @EqualsAndHashCode(callSuper=false)
-public abstract class Term extends Dataset {
+public abstract class Term extends Resource {
 
   private String name;
   private String description;

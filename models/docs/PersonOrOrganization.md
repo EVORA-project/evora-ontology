@@ -20,8 +20,8 @@ URI: [EVORAO:PersonOrOrganization](https://raw.githubusercontent.com/EVORA-proje
  classDiagram
     class PersonOrOrganization
     click PersonOrOrganization href "../PersonOrOrganization"
-      Dataset <|-- PersonOrOrganization
-        click Dataset href "../Dataset"
+      Resource <|-- PersonOrOrganization
+        click Resource href "../Resource"
       
 
       PersonOrOrganization <|-- Person
@@ -65,11 +65,10 @@ URI: [EVORAO:PersonOrOrganization](https://raw.githubusercontent.com/EVORA-proje
 
 ## Inheritance
 * [Resource](Resource.md)
-    * [Dataset](Dataset.md)
-        * **PersonOrOrganization**
-            * [Person](Person.md)
-            * [Organization](Organization.md)
-            * [Originator](Originator.md)
+    * **PersonOrOrganization**
+        * [Person](Person.md)
+        * [Organization](Organization.md)
+        * [Originator](Originator.md)
 
 
 
@@ -138,7 +137,7 @@ exact_mappings:
 - dct:Agent
 close_mappings:
 - foaf:Agent
-is_a: Dataset
+is_a: Resource
 slots:
 - name
 - description
@@ -252,7 +251,7 @@ exact_mappings:
 - dct:Agent
 close_mappings:
 - foaf:Agent
-is_a: Dataset
+is_a: Resource
 slot_usage:
   name:
     name: name

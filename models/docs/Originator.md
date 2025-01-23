@@ -56,9 +56,8 @@ URI: [EVORAO:Originator](https://raw.githubusercontent.com/EVORA-project/evora-o
 
 ## Inheritance
 * [Resource](Resource.md)
-    * [Dataset](Dataset.md)
-        * [PersonOrOrganization](PersonOrOrganization.md)
-            * **Originator**
+    * [PersonOrOrganization](PersonOrOrganization.md)
+        * **Originator**
 
 
 

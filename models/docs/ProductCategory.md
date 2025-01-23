@@ -56,9 +56,8 @@ URI: [EVORAO:ProductCategory](https://raw.githubusercontent.com/EVORA-project/ev
 
 ## Inheritance
 * [Resource](Resource.md)
-    * [Dataset](Dataset.md)
-        * [Term](Term.md)
-            * **ProductCategory**
+    * [Term](Term.md)
+        * **ProductCategory**
 
 
 

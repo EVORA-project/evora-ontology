@@ -50,8 +50,9 @@ URI: [EVORAO:Image](https://raw.githubusercontent.com/EVORA-project/evora-ontolo
 
 
 ## Inheritance
-* [File](File.md)
-    * **Image**
+* [Resource](Resource.md)
+    * [File](File.md)
+        * **Image**
 
 
 

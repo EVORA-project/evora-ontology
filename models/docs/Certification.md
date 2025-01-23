@@ -20,8 +20,8 @@ URI: [EVORAO:Certification](https://raw.githubusercontent.com/EVORA-project/evor
  classDiagram
     class Certification
     click Certification href "../Certification"
-      Dataset <|-- Certification
-        click Dataset href "../Dataset"
+      Resource <|-- Certification
+        click Resource href "../Resource"
       
       Certification : certificationDocument
         
@@ -56,8 +56,7 @@ URI: [EVORAO:Certification](https://raw.githubusercontent.com/EVORA-project/evor
 
 ## Inheritance
 * [Resource](Resource.md)
-    * [Dataset](Dataset.md)
-        * **Certification**
+    * **Certification**
 
 
 
@@ -147,7 +146,7 @@ from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs
 close_mappings:
 - wd:Q374814
 - schema:Certification
-is_a: Dataset
+is_a: Resource
 slots:
 - name
 - description
@@ -260,7 +259,7 @@ from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs
 close_mappings:
 - wd:Q374814
 - schema:Certification
-is_a: Dataset
+is_a: Resource
 slot_usage:
   name:
     name: name

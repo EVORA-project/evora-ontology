@@ -47,9 +47,8 @@ URI: [EVORAO:IATAClassification](https://raw.githubusercontent.com/EVORA-project
 
 ## Inheritance
 * [Resource](Resource.md)
-    * [Dataset](Dataset.md)
-        * [Term](Term.md)
-            * **IATAClassification**
+    * [Term](Term.md)
+        * **IATAClassification**
 
 
 

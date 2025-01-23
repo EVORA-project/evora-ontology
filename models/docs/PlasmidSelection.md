@@ -47,9 +47,8 @@ URI: [EVORAO:PlasmidSelection](https://raw.githubusercontent.com/EVORA-project/e
 
 ## Inheritance
 * [Resource](Resource.md)
-    * [Dataset](Dataset.md)
-        * [Term](Term.md)
-            * **PlasmidSelection**
+    * [Term](Term.md)
+        * **PlasmidSelection**
 
 
 

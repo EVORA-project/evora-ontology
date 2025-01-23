@@ -58,10 +58,9 @@ URI: [EVORAO:Variant](https://raw.githubusercontent.com/EVORA-project/evora-onto
 
 ## Inheritance
 * [Resource](Resource.md)
-    * [Dataset](Dataset.md)
-        * [Term](Term.md)
-            * [CommonName](CommonName.md)
-                * **Variant**
+    * [Term](Term.md)
+        * [CommonName](CommonName.md)
+            * **Variant**
 
 
 

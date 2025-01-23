@@ -20,8 +20,8 @@ URI: [EVORAO:Publication](https://raw.githubusercontent.com/EVORA-project/evora-
  classDiagram
     class Publication
     click Publication href "../Publication"
-      Dataset <|-- Publication
-        click Dataset href "../Dataset"
+      Resource <|-- Publication
+        click Resource href "../Resource"
       
       Publication : abstract
         
@@ -56,8 +56,7 @@ URI: [EVORAO:Publication](https://raw.githubusercontent.com/EVORA-project/evora-
 
 ## Inheritance
 * [Resource](Resource.md)
-    * [Dataset](Dataset.md)
-        * **Publication**
+    * **Publication**
 
 
 
@@ -123,7 +122,7 @@ title: Publication
 from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
 close_mappings:
 - wd:Q591041
-is_a: Dataset
+is_a: Resource
 slots:
 - title
 - authors
@@ -201,7 +200,7 @@ title: Publication
 from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
 close_mappings:
 - wd:Q591041
-is_a: Dataset
+is_a: Resource
 slot_usage:
   title:
     name: title

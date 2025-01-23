@@ -48,8 +48,9 @@ URI: [EVORAO:Document](https://raw.githubusercontent.com/EVORA-project/evora-ont
 
 
 ## Inheritance
-* [File](File.md)
-    * **Document**
+* [Resource](Resource.md)
+    * [File](File.md)
+        * **Document**
 
 
 

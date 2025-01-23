@@ -17,7 +17,7 @@
     "https://orcid.org/0000-0002-2042-2839"
   ],
   "id": "https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#",
-  "version": "1.0.8305",
+  "version": "1.0.8336",
   "imports": [
     "linkml:types"
   ],
@@ -7831,6 +7831,7 @@
       "exact_mappings": [
         "dcat:Resource"
       ],
+      "abstract": true,
       "slot_usage": {},
       "class_uri": "https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#Resource",
       "@type": "ClassDefinition"
@@ -7886,7 +7887,7 @@
       "close_mappings": [
         "wd:Q114469879"
       ],
-      "is_a": "Dataset",
+      "is_a": "Resource",
       "slots": [
         "Version_ID",
         "Version_versionOf"
@@ -8002,7 +8003,7 @@
       "close_mappings": [
         "wd:Q591041"
       ],
-      "is_a": "Dataset",
+      "is_a": "Resource",
       "slots": [
         "Publication_title",
         "Publication_authors",
@@ -8044,7 +8045,7 @@
       "close_mappings": [
         "wd:Q1969448"
       ],
-      "is_a": "Dataset",
+      "is_a": "Resource",
       "abstract": true,
       "slots": [
         "Term_name",
@@ -8625,7 +8626,7 @@
       "close_mappings": [
         "foaf:Agent"
       ],
-      "is_a": "Dataset",
+      "is_a": "Resource",
       "slots": [
         "PersonOrOrganization_name",
         "PersonOrOrganization_description",
@@ -9844,6 +9845,7 @@
       "close_mappings": [
         "wd:Q82753"
       ],
+      "is_a": "Resource",
       "abstract": true,
       "slots": [
         "File_name",
@@ -9972,7 +9974,7 @@
         "wd:Q30322502",
         "vcard:Contact"
       ],
-      "is_a": "Dataset",
+      "is_a": "Resource",
       "slots": [
         "ContactPoint_name",
         "ContactPoint_description",
@@ -10002,7 +10004,7 @@
         "wd:Q79719",
         "dct:LicenseDocument"
       ],
-      "is_a": "Dataset",
+      "is_a": "Resource",
       "slots": [
         "License_name",
         "License_description",
@@ -10024,7 +10026,7 @@
         "wd:Q374814",
         "schema:Certification"
       ],
-      "is_a": "Dataset",
+      "is_a": "Resource",
       "slots": [
         "Certification_name",
         "Certification_description",
@@ -10039,9 +10041,9 @@
   ],
   "metamodel_version": "1.7.0",
   "source_file": "evora_schema.yaml",
-  "source_file_date": "2025-01-23T09:47:32",
-  "source_file_size": 150343,
-  "generation_date": "2025-01-23T09:47:49",
+  "source_file_date": "2025-01-23T10:13:46",
+  "source_file_size": 150388,
+  "generation_date": "2025-01-23T10:14:01",
   "@type": "SchemaDefinition",
   "@context": [
     "https://w3id.org/linkml/types.context.jsonld",

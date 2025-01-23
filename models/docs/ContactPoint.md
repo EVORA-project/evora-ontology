@@ -20,8 +20,8 @@ URI: [EVORAO:ContactPoint](https://raw.githubusercontent.com/EVORA-project/evora
  classDiagram
     class ContactPoint
     click ContactPoint href "../ContactPoint"
-      Dataset <|-- ContactPoint
-        click Dataset href "../Dataset"
+      Resource <|-- ContactPoint
+        click Resource href "../Resource"
       
       ContactPoint : addressCountry
         
@@ -59,8 +59,7 @@ URI: [EVORAO:ContactPoint](https://raw.githubusercontent.com/EVORA-project/evora
 
 ## Inheritance
 * [Resource](Resource.md)
-    * [Dataset](Dataset.md)
-        * **ContactPoint**
+    * **ContactPoint**
 
 
 
@@ -161,7 +160,7 @@ from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs
 close_mappings:
 - wd:Q30322502
 - vcard:Contact
-is_a: Dataset
+is_a: Resource
 slots:
 - name
 - description
@@ -345,7 +344,7 @@ from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs
 close_mappings:
 - wd:Q30322502
 - vcard:Contact
-is_a: Dataset
+is_a: Resource
 slot_usage:
   name:
     name: name

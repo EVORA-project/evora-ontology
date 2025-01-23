@@ -48,8 +48,9 @@ URI: [EVORAO:Video](https://raw.githubusercontent.com/EVORA-project/evora-ontolo
 
 
 ## Inheritance
-* [File](File.md)
-    * **Video**
+* [Resource](Resource.md)
+    * [File](File.md)
+        * **Video**
 
 
 

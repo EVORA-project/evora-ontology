@@ -49,9 +49,8 @@ URI: [EVORAO:Country](https://raw.githubusercontent.com/EVORA-project/evora-onto
 
 ## Inheritance
 * [Resource](Resource.md)
-    * [Dataset](Dataset.md)
-        * [Term](Term.md)
-            * **Country**
+    * [Term](Term.md)
+        * **Country**
 
 
 

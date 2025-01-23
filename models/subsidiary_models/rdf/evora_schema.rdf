@@ -28,51 +28,51 @@
     dcterms:license "https://creativecommons.org/publicdomain/zero/1.0/" ;
     dcterms:title "European Viral Outbreak Response Alliance Ontology" ;
     pav:createdBy <https://github.com/Angatar> ;
-    pav:version "1.0.8305" ;
+    pav:version "1.0.8336" ;
     schema1:inLanguage "en" ;
     skos:definition "The EVORA Ontology harmonizes metadata in virology to describe viral resources, their derived products, and services. It aligns with FAIR principles to ensure interoperability, accessibility, and reusability across various projects. The EVORA Ontology aims to support preparedness and response to pandemics." ;
-    sh:declare [ sh:namespace schema1: ;
-            sh:prefix "schema" ],
-        [ sh:namespace <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#> ;
-            sh:prefix "EVORAO" ],
-        [ sh:namespace owl: ;
+    sh:declare [ sh:namespace owl: ;
             sh:prefix "owl" ],
-        [ sh:namespace rdfs: ;
-            sh:prefix "rdfs" ],
         [ sh:namespace dcterms: ;
             sh:prefix "dct" ],
-        [ sh:namespace rdf: ;
-            sh:prefix "rdf" ],
-        [ sh:namespace skos: ;
-            sh:prefix "skos" ],
         [ sh:namespace pav: ;
             sh:prefix "pav" ],
-        [ sh:namespace <http://www.w3.org/ns/regorg#> ;
-            sh:prefix "rov" ],
-        [ sh:namespace foaf: ;
-            sh:prefix "foaf" ],
-        [ sh:namespace <http://rs.tdwg.org/dwc/terms/> ;
-            sh:prefix "dwc" ],
-        [ sh:namespace prov: ;
-            sh:prefix "prov" ],
-        [ sh:namespace <http://www.w3.org/2006/vcard/ns#> ;
-            sh:prefix "vcard" ],
-        [ sh:namespace linkml: ;
-            sh:prefix "linkml" ],
+        [ sh:namespace rdfs: ;
+            sh:prefix "rdfs" ],
         [ sh:namespace xsd: ;
             sh:prefix "xsd" ],
-        [ sh:namespace <http://www.w3.org/ns/adms#> ;
-            sh:prefix "adms" ],
+        [ sh:namespace prov: ;
+            sh:prefix "prov" ],
+        [ sh:namespace foaf: ;
+            sh:prefix "foaf" ],
+        [ sh:namespace <http://www.w3.org/2006/vcard/ns#> ;
+            sh:prefix "vcard" ],
+        [ sh:namespace <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#> ;
+            sh:prefix "EVORAO" ],
         [ sh:namespace dcat: ;
             sh:prefix "dcat" ],
-        [ sh:namespace <http://purl.obolibrary.org/obo/IAO_> ;
-            sh:prefix "IAO" ],
+        [ sh:namespace dcmitype: ;
+            sh:prefix "dcmi" ],
         [ sh:namespace <http://www.wikidata.org/entity/> ;
             sh:prefix "wd" ],
+        [ sh:namespace rdf: ;
+            sh:prefix "rdf" ],
         [ sh:namespace <http://www.wikidata.org/prop/> ;
             sh:prefix "wdp" ],
-        [ sh:namespace dcmitype: ;
-            sh:prefix "dcmi" ] ;
+        [ sh:namespace <http://www.w3.org/ns/regorg#> ;
+            sh:prefix "rov" ],
+        [ sh:namespace linkml: ;
+            sh:prefix "linkml" ],
+        [ sh:namespace schema1: ;
+            sh:prefix "schema" ],
+        [ sh:namespace <http://purl.obolibrary.org/obo/IAO_> ;
+            sh:prefix "IAO" ],
+        [ sh:namespace skos: ;
+            sh:prefix "skos" ],
+        [ sh:namespace <http://www.w3.org/ns/adms#> ;
+            sh:prefix "adms" ],
+        [ sh:namespace <http://rs.tdwg.org/dwc/terms/> ;
+            sh:prefix "dwc" ] ;
     linkml:classes <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/AlternateName>,
         <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Antibody>,
         <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Audio>,
@@ -151,7 +151,7 @@
         <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Vocabulary> ;
     linkml:default_prefix "EVORAO" ;
     linkml:default_range <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/string> ;
-    linkml:generation_date "2025-01-23T09:49:06"^^xsd:dateTime ;
+    linkml:generation_date "2025-01-23T10:15:17"^^xsd:dateTime ;
     linkml:id <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#> ;
     linkml:imports linkml:types ;
     linkml:metamodel_version "1.7.0" ;
@@ -568,8 +568,8 @@
         <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/versionOf>,
         <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/weight> ;
     linkml:source_file "evora_schema.yaml" ;
-    linkml:source_file_date "2025-01-23T09:47:32"^^xsd:dateTime ;
-    linkml:source_file_size 150343 ;
+    linkml:source_file_date "2025-01-23T10:13:46"^^xsd:dateTime ;
+    linkml:source_file_size 150388 ;
     linkml:types <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/boolean>,
         <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/curie>,
         <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/date>,
@@ -5378,15 +5378,6 @@
         <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Term_name>,
         <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Term_weight> .
 
-<https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Resource> a linkml:ClassDefinition ;
-    dcterms:title "Resource" ;
-    skos:definition "Resource published or curated by a single agent." ;
-    skos:exactMatch <dcat:Resource> ;
-    skos:inScheme <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#> ;
-    linkml:class_uri <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#Resource> ;
-    linkml:definition_uri <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#Resource> ;
-    linkml:slot_usage [ ] .
-
 <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/complementaryDocument> a linkml:SlotDefinition ;
     skos:inScheme <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#> ;
     linkml:definition_uri <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#complementaryDocument> ;
@@ -6462,6 +6453,16 @@
     linkml:slots <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/RecombinantPartIdentification_partIdentification>,
         <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/RecombinantPartIdentification_sequence> .
 
+<https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Resource> a linkml:ClassDefinition ;
+    dcterms:title "Resource" ;
+    skos:definition "Resource published or curated by a single agent." ;
+    skos:exactMatch <dcat:Resource> ;
+    skos:inScheme <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#> ;
+    linkml:abstract true ;
+    linkml:class_uri <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#Resource> ;
+    linkml:definition_uri <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#Resource> ;
+    linkml:slot_usage [ ] .
+
 <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Service> a linkml:ClassDefinition ;
     dcterms:title "Service" ;
     skos:closeMatch <wd:Q7406919> ;
@@ -6566,7 +6567,7 @@
     skos:inScheme <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#> ;
     linkml:class_uri <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#Version> ;
     linkml:definition_uri <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#Version> ;
-    linkml:is_a <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Dataset> ;
+    linkml:is_a <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Resource> ;
     linkml:slot_usage [ ] ;
     linkml:slots <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Version_ID>,
         <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Version_versionOf> .
@@ -6601,6 +6602,19 @@
         <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Term_inVocabulary>,
         <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Term_name>,
         <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Term_weight> .
+
+<https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Dataset> a linkml:ClassDefinition ;
+    dcterms:title "Dataset" ;
+    skos:closeMatch schema1:DataCatalog,
+        <wd:Q1172284> ;
+    skos:definition "A collection of data, published or curated by a single agent, and available for access" ;
+    skos:exactMatch <dcat:Dataset> ;
+    skos:inScheme <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#> ;
+    linkml:abstract true ;
+    linkml:class_uri <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#Dataset> ;
+    linkml:definition_uri <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#Dataset> ;
+    linkml:is_a <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Resource> ;
+    linkml:slot_usage [ ] .
 
 <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Organization> a linkml:ClassDefinition ;
     dcterms:title "Organization" ;
@@ -7311,19 +7325,6 @@
         <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/BiologicalMaterialOrigin_biologicalSourceType>,
         <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/BiologicalMaterialOrigin_recombinantMaterial> .
 
-<https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Dataset> a linkml:ClassDefinition ;
-    dcterms:title "Dataset" ;
-    skos:closeMatch schema1:DataCatalog,
-        <wd:Q1172284> ;
-    skos:definition "A collection of data, published or curated by a single agent, and available for access" ;
-    skos:exactMatch <dcat:Dataset> ;
-    skos:inScheme <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#> ;
-    linkml:abstract true ;
-    linkml:class_uri <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#Dataset> ;
-    linkml:definition_uri <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#Dataset> ;
-    linkml:is_a <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Resource> ;
-    linkml:slot_usage [ ] .
-
 <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/DetectionKit> a linkml:ClassDefinition ;
     dcterms:title "Detection Kit" ;
     skos:definition "A detection kit for specific pathogens" ;
@@ -7392,7 +7393,7 @@
     skos:inScheme <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#> ;
     linkml:class_uri <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#License> ;
     linkml:definition_uri <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#License> ;
-    linkml:is_a <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Dataset> ;
+    linkml:is_a <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Resource> ;
     linkml:slot_usage [ ] ;
     linkml:slots <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/License_description>,
         <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/License_licensingOrAttribution>,
@@ -7408,7 +7409,7 @@
     skos:inScheme <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#> ;
     linkml:class_uri <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#PersonOrOrganization> ;
     linkml:definition_uri <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#PersonOrOrganization> ;
-    linkml:is_a <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Dataset> ;
+    linkml:is_a <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Resource> ;
     linkml:slot_usage [ ] ;
     linkml:slots <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/PersonOrOrganization_contactPoint>,
         <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/PersonOrOrganization_description>,
@@ -7423,7 +7424,7 @@
     skos:inScheme <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#> ;
     linkml:class_uri <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#Publication> ;
     linkml:definition_uri <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#Publication> ;
-    linkml:is_a <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Dataset> ;
+    linkml:is_a <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Resource> ;
     linkml:slot_usage [ ] ;
     linkml:slots <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Publication_abstract>,
         <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Publication_authors>,
@@ -7578,7 +7579,7 @@
     skos:inScheme <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#> ;
     linkml:class_uri <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#Certification> ;
     linkml:definition_uri <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#Certification> ;
-    linkml:is_a <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Dataset> ;
+    linkml:is_a <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Resource> ;
     linkml:slot_usage [ ] ;
     linkml:slots <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Certification_certificationDocument>,
         <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Certification_description>,
@@ -7595,6 +7596,7 @@
     linkml:abstract true ;
     linkml:class_uri <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#File> ;
     linkml:definition_uri <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#File> ;
+    linkml:is_a <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Resource> ;
     linkml:slot_usage [ ] ;
     linkml:slots <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/File_contentURL>,
         <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/File_description>,
@@ -7652,7 +7654,7 @@
     linkml:abstract true ;
     linkml:class_uri <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#Term> ;
     linkml:definition_uri <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#Term> ;
-    linkml:is_a <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Dataset> ;
+    linkml:is_a <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Resource> ;
     linkml:slot_usage [ ] ;
     linkml:slots <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Term_description>,
         <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Term_inVocabulary>,
@@ -7731,7 +7733,7 @@
     skos:inScheme <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#> ;
     linkml:class_uri <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#ContactPoint> ;
     linkml:definition_uri <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#ContactPoint> ;
-    linkml:is_a <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Dataset> ;
+    linkml:is_a <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Resource> ;
     linkml:slot_usage [ ] ;
     linkml:slots <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/ContactPoint_addressCountry>,
         <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/ContactPoint_addressLocality>,

@@ -47,9 +47,8 @@ URI: [EVORAO:ExpressionVector](https://raw.githubusercontent.com/EVORA-project/e
 
 ## Inheritance
 * [Resource](Resource.md)
-    * [Dataset](Dataset.md)
-        * [Term](Term.md)
-            * **ExpressionVector**
+    * [Term](Term.md)
+        * **ExpressionVector**
 
 
 

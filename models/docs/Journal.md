@@ -47,9 +47,8 @@ URI: [EVORAO:Journal](https://raw.githubusercontent.com/EVORA-project/evora-onto
 
 ## Inheritance
 * [Resource](Resource.md)
-    * [Dataset](Dataset.md)
-        * [Term](Term.md)
-            * **Journal**
+    * [Term](Term.md)
+        * **Journal**
 
 
 

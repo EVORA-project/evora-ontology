@@ -47,10 +47,9 @@ URI: [EVORAO:IPLCOrigin](https://raw.githubusercontent.com/EVORA-project/evora-o
 
 ## Inheritance
 * [Resource](Resource.md)
-    * [Dataset](Dataset.md)
-        * [Term](Term.md)
-            * [GeographicalOrigin](GeographicalOrigin.md)
-                * **IPLCOrigin**
+    * [Term](Term.md)
+        * [GeographicalOrigin](GeographicalOrigin.md)
+            * **IPLCOrigin**
 
 
 

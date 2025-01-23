@@ -47,9 +47,8 @@ URI: [EVORAO:ProductionCellLine](https://raw.githubusercontent.com/EVORA-project
 
 ## Inheritance
 * [Resource](Resource.md)
-    * [Dataset](Dataset.md)
-        * [Term](Term.md)
-            * **ProductionCellLine**
+    * [Term](Term.md)
+        * **ProductionCellLine**
 
 
 

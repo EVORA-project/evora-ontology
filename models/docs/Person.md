@@ -58,9 +58,8 @@ URI: [EVORAO:Person](https://raw.githubusercontent.com/EVORA-project/evora-ontol
 
 ## Inheritance
 * [Resource](Resource.md)
-    * [Dataset](Dataset.md)
-        * [PersonOrOrganization](PersonOrOrganization.md)
-            * **Person**
+    * [PersonOrOrganization](PersonOrOrganization.md)
+        * **Person**
 
 
 

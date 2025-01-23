@@ -83,10 +83,9 @@ URI: [EVORAO:Provider](https://raw.githubusercontent.com/EVORA-project/evora-ont
 
 ## Inheritance
 * [Resource](Resource.md)
-    * [Dataset](Dataset.md)
-        * [PersonOrOrganization](PersonOrOrganization.md)
-            * [Organization](Organization.md)
-                * **Provider**
+    * [PersonOrOrganization](PersonOrOrganization.md)
+        * [Organization](Organization.md)
+            * **Provider**
 
 
 

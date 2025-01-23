@@ -20,8 +20,8 @@ URI: [EVORAO:Version](https://raw.githubusercontent.com/EVORA-project/evora-onto
  classDiagram
     class Version
     click Version href "../Version"
-      Dataset <|-- Version
-        click Dataset href "../Dataset"
+      Resource <|-- Version
+        click Resource href "../Resource"
       
       Version : ID
         
@@ -43,8 +43,7 @@ URI: [EVORAO:Version](https://raw.githubusercontent.com/EVORA-project/evora-onto
 
 ## Inheritance
 * [Resource](Resource.md)
-    * [Dataset](Dataset.md)
-        * **Version**
+    * **Version**
 
 
 
@@ -115,7 +114,7 @@ title: Version
 from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
 close_mappings:
 - wd:Q114469879
-is_a: Dataset
+is_a: Resource
 slots:
 - ID
 - versionOf
@@ -156,7 +155,7 @@ title: Version
 from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
 close_mappings:
 - wd:Q114469879
-is_a: Dataset
+is_a: Resource
 slot_usage:
   ID:
     name: ID

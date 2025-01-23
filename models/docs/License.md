@@ -20,8 +20,8 @@ URI: [EVORAO:License](https://raw.githubusercontent.com/EVORA-project/evora-onto
  classDiagram
     class License
     click License href "../License"
-      Dataset <|-- License
-        click Dataset href "../Dataset"
+      Resource <|-- License
+        click Resource href "../Resource"
       
       License : description
         
@@ -49,8 +49,7 @@ URI: [EVORAO:License](https://raw.githubusercontent.com/EVORA-project/evora-onto
 
 ## Inheritance
 * [Resource](Resource.md)
-    * [Dataset](Dataset.md)
-        * **License**
+    * **License**
 
 
 
@@ -134,7 +133,7 @@ exact_mappings:
 close_mappings:
 - wd:Q79719
 - dct:LicenseDocument
-is_a: Dataset
+is_a: Resource
 slots:
 - name
 - description
@@ -254,7 +253,7 @@ exact_mappings:
 close_mappings:
 - wd:Q79719
 - dct:LicenseDocument
-is_a: Dataset
+is_a: Resource
 slot_usage:
   name:
     name: name

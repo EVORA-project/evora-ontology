@@ -5,7 +5,7 @@ import lombok.*;
 
 
 
-/* version: 1.0.8305 */
+/* version: 1.0.8336 */
 
 
 /**
@@ -13,7 +13,7 @@ import lombok.*;
 **/
 @Data
 @EqualsAndHashCode(callSuper=false)
-public class Version extends Dataset {
+public class Version extends Resource {
 
   private String iD;
   private Dataset versionOf;

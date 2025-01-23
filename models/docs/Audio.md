@@ -48,8 +48,9 @@ URI: [EVORAO:Audio](https://raw.githubusercontent.com/EVORA-project/evora-ontolo
 
 
 ## Inheritance
-* [File](File.md)
-    * **Audio**
+* [Resource](Resource.md)
+    * [File](File.md)
+        * **Audio**
 
 
 

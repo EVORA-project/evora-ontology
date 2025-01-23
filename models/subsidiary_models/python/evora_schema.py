@@ -1,5 +1,5 @@
 # Auto generated from evora_schema.yaml by pythongen.py version: 0.0.1
-# Generation date: 2025-01-23T09:47:54
+# Generation date: 2025-01-23T10:14:06
 # Schema: EVORAO
 #
 # id: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
@@ -61,7 +61,7 @@ from linkml_runtime.linkml_model.types import Boolean, Datetime, Integer, String
 from linkml_runtime.utils.metamodelcore import Bool, URI, XSDDateTime
 
 metamodel_version = "1.7.0"
-version = "1.0.8305"
+version = "1.0.8336"
 
 # Overwrite dataclasses _init_fn to add **kwargs in __init__
 dataclasses._init_fn = dataclasses_init_fn_with_kwargs
@@ -149,7 +149,7 @@ class DataService(Resource):
 
 
 @dataclass(repr=False)
-class Version(Dataset):
+class Version(Resource):
     """
     Numeric code assigned to identify a particular historical version of a work (e.g. software or technical standards)
     """
@@ -377,7 +377,7 @@ class PathogenIdentification(Dataset):
 
 
 @dataclass(repr=False)
-class Publication(Dataset):
+class Publication(Resource):
     """
     A scientific publication
     """
@@ -447,7 +447,7 @@ class Vocabulary(Catalogue):
 
 
 @dataclass(repr=False)
-class Term(Dataset):
+class Term(Resource):
     """
     Word or phrase from a specialized area of knowledge
     """
@@ -1059,7 +1059,7 @@ class SequenceReference(Dataset):
 
 
 @dataclass(repr=False)
-class PersonOrOrganization(Dataset):
+class PersonOrOrganization(Resource):
     """
     A person or an organization
     """
@@ -2421,7 +2421,7 @@ class MSDS(Dataset):
 
 
 @dataclass(repr=False)
-class File(YAMLRoot):
+class File(Resource):
     """
     Digital document or record stored in a specific format that contains data or information
     """
@@ -2553,7 +2553,7 @@ class Image(File):
 
 
 @dataclass(repr=False)
-class ContactPoint(Dataset):
+class ContactPoint(Resource):
     """
     Entity serving as focal point of information
     """
@@ -2612,7 +2612,7 @@ class ContactPoint(Dataset):
 
 
 @dataclass(repr=False)
-class License(Dataset):
+class License(Resource):
     """
     The legal terms and conditions under which the subject can be used, shared, or distributed, indicating any
     restrictions or permissions
@@ -2652,7 +2652,7 @@ class License(Dataset):
 
 
 @dataclass(repr=False)
-class Certification(Dataset):
+class Certification(Resource):
     """
     Assurance given by an independent certification body that a product, service or system meets the requirements of a
     standard

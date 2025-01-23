@@ -47,9 +47,8 @@ URI: [EVORAO:IsolationHost](https://raw.githubusercontent.com/EVORA-project/evor
 
 ## Inheritance
 * [Resource](Resource.md)
-    * [Dataset](Dataset.md)
-        * [Term](Term.md)
-            * **IsolationHost**
+    * [Term](Term.md)
+        * **IsolationHost**
 
 
 

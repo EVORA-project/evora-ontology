@@ -29,7 +29,7 @@ from pydantic import (
 
 
 metamodel_version = "None"
-version = "1.0.8305"
+version = "1.0.8336"
 
 
 class ConfiguredBaseModel(BaseModel):
@@ -82,7 +82,7 @@ linkml_meta = LinkMLMeta({'contributors': ['https://github.com/Angatar',
                     'interoperability, accessibility, and reusability across '
                     'various projects. The EVORA Ontology aims to support '
                     'preparedness and response to pandemics.',
-     'generation_date': '2025-01-23T10:47:04',
+     'generation_date': '2025-01-23T11:13:22',
      'id': 'https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#',
      'imports': ['linkml:types'],
      'in_language': 'en',
@@ -138,7 +138,8 @@ class Resource(ConfiguredBaseModel):
     """
     Resource published or curated by a single agent.
     """
-    linkml_meta: ClassVar[LinkMLMeta] = LinkMLMeta({'exact_mappings': ['dcat:Resource'],
+    linkml_meta: ClassVar[LinkMLMeta] = LinkMLMeta({'abstract': True,
+         'exact_mappings': ['dcat:Resource'],
          'from_schema': 'https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#',
          'title': 'Resource'})
 
@@ -252,7 +253,7 @@ class DataService(Resource):
          'recommended': True} })
 
 
-class Version(Dataset):
+class Version(Resource):
     """
     Numeric code assigned to identify a particular historical version of a work (e.g. software or technical standards)
     """
@@ -809,7 +810,7 @@ class PathogenIdentification(Dataset):
     variant: Optional[Variant] = Field(default=None, title="variant", description="""An organism with one or more new mutations is referred to as a “variant” of the original organism if not sufficiently different to be termed a distinct strain""", json_schema_extra = { "linkml_meta": {'alias': 'variant', 'domain_of': ['PathogenIdentification']} })
 
 
-class Publication(Dataset):
+class Publication(Resource):
     """
     A scientific publication
     """
@@ -945,7 +946,7 @@ class Vocabulary(Catalogue):
          'recommended': True} })
 
 
-class Term(Dataset):
+class Term(Resource):
     """
     Word or phrase from a specialized area of knowledge
     """
@@ -2620,7 +2621,7 @@ class SequenceReference(Dataset):
          'equals_string_in': ['ENA', 'GenBank']} })
 
 
-class PersonOrOrganization(Dataset):
+class PersonOrOrganization(Resource):
     """
     A person or an organization
     """
@@ -7734,7 +7735,7 @@ class MSDS(Dataset):
     furtherInformation: Optional[str] = Field(default=None, title="further information", description="""Provides any additional details or clarifications not covered in other sections of the MSDS, such as references, supporting documents, or specific instructions for safe handling and use of the product.""", json_schema_extra = { "linkml_meta": {'alias': 'furtherInformation', 'domain_of': ['MSDS'], 'recommended': True} })
 
 
-class File(ConfiguredBaseModel):
+class File(Resource):
     """
     Digital document or record stored in a specific format that contains data or information
     """
@@ -8095,7 +8096,7 @@ class Image(File):
     license: Optional[License] = Field(default=None, title="license", description="""The legal terms and conditions under which the file can be used, shared, or distributed, indicating any restrictions or permissions.""", json_schema_extra = { "linkml_meta": {'alias': 'license', 'domain_of': ['File', 'DataProvider']} })
 
 
-class ContactPoint(Dataset):
+class ContactPoint(Resource):
     """
     Entity serving as focal point of information
     """
@@ -8299,7 +8300,7 @@ class ContactPoint(Dataset):
          'recommended': True} })
 
 
-class License(Dataset):
+class License(Resource):
     """
     The legal terms and conditions under which the subject can be used, shared, or distributed, indicating any restrictions or permissions
     """
@@ -8436,7 +8437,7 @@ class License(Dataset):
          'domain_of': ['License', 'PersonOrOrganization', 'Certification']} })
 
 
-class Certification(Dataset):
+class Certification(Resource):
     """
     Assurance given by an independent certification body that a product, service or system meets the requirements of a standard
     """

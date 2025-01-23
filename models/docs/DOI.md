@@ -47,9 +47,8 @@ URI: [EVORAO:DOI](https://raw.githubusercontent.com/EVORA-project/evora-ontology
 
 ## Inheritance
 * [Resource](Resource.md)
-    * [Dataset](Dataset.md)
-        * [Term](Term.md)
-            * **DOI**
+    * [Term](Term.md)
+        * **DOI**
 
 
 

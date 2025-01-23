@@ -74,10 +74,9 @@ URI: [EVORAO:RI](https://raw.githubusercontent.com/EVORA-project/evora-ontology/
 
 ## Inheritance
 * [Resource](Resource.md)
-    * [Dataset](Dataset.md)
-        * [PersonOrOrganization](PersonOrOrganization.md)
-            * [Organization](Organization.md)
-                * **RI**
+    * [PersonOrOrganization](PersonOrOrganization.md)
+        * [Organization](Organization.md)
+            * **RI**
 
 
 

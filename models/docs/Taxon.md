@@ -96,9 +96,8 @@ URI: [EVORAO:Taxon](https://raw.githubusercontent.com/EVORA-project/evora-ontolo
 
 ## Inheritance
 * [Resource](Resource.md)
-    * [Dataset](Dataset.md)
-        * [Term](Term.md)
-            * **Taxon**
+    * [Term](Term.md)
+        * **Taxon**
 
 
 

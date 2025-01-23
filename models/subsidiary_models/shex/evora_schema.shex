@@ -1,5 +1,5 @@
 # metamodel_version: 1.7.0
-# version: 1.0.8305
+# version: 1.0.8336
 BASE <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#>
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
@@ -135,8 +135,8 @@ linkml:Sparqlpath xsd:string
 }
 
 <Certification> CLOSED {
-    (  $<Certification_tes> (  &<Dataset_tes> ;
-          rdf:type [ <Dataset> ] ? ;
+    (  $<Certification_tes> (  &<Resource_tes> ;
+          rdf:type [ <Resource> ] ? ;
           <name> @linkml:String ;
           <description> @linkml:String ? ;
           <logo> @<Image> ? ;
@@ -170,8 +170,8 @@ linkml:Sparqlpath xsd:string
 )
 
 <ContactPoint> CLOSED {
-    (  $<ContactPoint_tes> (  &<Dataset_tes> ;
-          rdf:type [ <Dataset> ] ? ;
+    (  $<ContactPoint_tes> (  &<Resource_tes> ;
+          rdf:type [ <Resource> ] ? ;
           <name> @linkml:String ;
           <description> @linkml:String ? ;
           <email> @linkml:String ? ;
@@ -234,10 +234,8 @@ linkml:Sparqlpath xsd:string
 )
 
 <Dataset>  (
-    @<BiologicalMaterialOrigin> OR @<BiologicalPartOrigin> OR @<Catalogue> OR @<Certification> OR @<ContactPoint> OR
-    @<ExternalRelatedReference> OR @<License> OR @<MSDS> OR @<PathogenIdentification> OR @<PersonOrOrganization> OR
-    @<ProductOrService> OR @<Publication> OR @<RecombinantPartIdentification> OR @<Sequence> OR @<SequenceReference> OR @<Term> OR
-    @<Version>
+    @<BiologicalMaterialOrigin> OR @<BiologicalPartOrigin> OR @<Catalogue> OR @<ExternalRelatedReference> OR @<MSDS> OR
+    @<PathogenIdentification> OR @<ProductOrService> OR @<RecombinantPartIdentification> OR @<Sequence> OR @<SequenceReference>
 )
 
 <Dataset_struct> {
@@ -301,7 +299,9 @@ linkml:Sparqlpath xsd:string
 )
 
 <File_struct> {
-    (  $<File_tes> (  <name> @linkml:String ;
+    (  $<File_tes> (  &<Resource_tes> ;
+          rdf:type [ <Resource> ] ? ;
+          <name> @linkml:String ;
           <description> @linkml:String ? ;
           <contentURL> @linkml:Uri ;
           <format> @linkml:String ;
@@ -388,8 +388,8 @@ linkml:Sparqlpath xsd:string
 }
 
 <License> CLOSED {
-    (  $<License_tes> (  &<Dataset_tes> ;
-          rdf:type [ <Dataset> ] ? ;
+    (  $<License_tes> (  &<Resource_tes> ;
+          rdf:type [ <Resource> ] ? ;
           <name> @linkml:String ;
           <description> @linkml:String ? ;
           <resourceURL> @linkml:Uri ? ;
@@ -545,8 +545,8 @@ linkml:Sparqlpath xsd:string
 
 <PersonOrOrganization>  (
     CLOSED {
-       (  $<PersonOrOrganization_tes> (  &<Dataset_tes> ;
-             rdf:type [ <Dataset> ] ? ;
+       (  $<PersonOrOrganization_tes> (  &<Resource_tes> ;
+             rdf:type [ <Resource> ] ? ;
              <name> @linkml:String ;
              <description> @linkml:String ? ;
              <homePage> @linkml:String ? ;
@@ -702,8 +702,8 @@ linkml:Sparqlpath xsd:string
 }
 
 <Publication> CLOSED {
-    (  $<Publication_tes> (  &<Dataset_tes> ;
-          rdf:type [ <Dataset> ] ? ;
+    (  $<Publication_tes> (  &<Resource_tes> ;
+          rdf:type [ <Resource> ] ? ;
           <title> @linkml:String ;
           <authors> @linkml:String ;
           <abstract> @linkml:String ;
@@ -725,12 +725,15 @@ linkml:Sparqlpath xsd:string
 }
 
 <Resource>  (
-    CLOSED {
-       (  $<Resource_tes> rdf:type . * ;
-          rdf:type [ <Resource> ] ?
-       )
-    } OR @<DataService> OR @<Dataset>
+    @<Certification> OR @<ContactPoint> OR @<DataService> OR @<Dataset> OR @<File> OR @<License> OR @<PersonOrOrganization> OR
+    @<Publication> OR @<Term> OR @<Version>
 )
+
+<Resource_struct> {
+    (  $<Resource_tes> rdf:type . * ;
+       rdf:type [ <Resource> ] ?
+    )
+}
 
 <RI> CLOSED {
     (  $<RI_tes> (  &<Organization_tes> ;
@@ -842,8 +845,8 @@ linkml:Sparqlpath xsd:string
 )
 
 <Term_struct> {
-    (  $<Term_tes> (  &<Dataset_tes> ;
-          rdf:type [ <Dataset> ] ? ;
+    (  $<Term_tes> (  &<Resource_tes> ;
+          rdf:type [ <Resource> ] ? ;
           <name> @linkml:String ;
           <description> @linkml:String ? ;
           <weight> @linkml:Integer ;
@@ -870,8 +873,8 @@ linkml:Sparqlpath xsd:string
 }
 
 <Version> CLOSED {
-    (  $<Version_tes> (  &<Dataset_tes> ;
-          rdf:type [ <Dataset> ] ? ;
+    (  $<Version_tes> (  &<Resource_tes> ;
+          rdf:type [ <Resource> ] ? ;
           <ID> @linkml:String ;
           <versionOf> @<Dataset>
        ) ;

@@ -26,24 +26,16 @@ URI: [EVORAO:Dataset](https://raw.githubusercontent.com/EVORA-project/evora-onto
         click Resource href "../Resource"
       
 
-      Dataset <|-- Version
-        click Version href "../Version"
       Dataset <|-- Catalogue
         click Catalogue href "../Catalogue"
       Dataset <|-- PathogenIdentification
         click PathogenIdentification href "../PathogenIdentification"
-      Dataset <|-- Publication
-        click Publication href "../Publication"
-      Dataset <|-- Term
-        click Term href "../Term"
       Dataset <|-- ExternalRelatedReference
         click ExternalRelatedReference href "../ExternalRelatedReference"
       Dataset <|-- Sequence
         click Sequence href "../Sequence"
       Dataset <|-- SequenceReference
         click SequenceReference href "../SequenceReference"
-      Dataset <|-- PersonOrOrganization
-        click PersonOrOrganization href "../PersonOrOrganization"
       Dataset <|-- BiologicalMaterialOrigin
         click BiologicalMaterialOrigin href "../BiologicalMaterialOrigin"
       Dataset <|-- BiologicalPartOrigin
@@ -54,12 +46,6 @@ URI: [EVORAO:Dataset](https://raw.githubusercontent.com/EVORA-project/evora-onto
         click ProductOrService href "../ProductOrService"
       Dataset <|-- MSDS
         click MSDS href "../MSDS"
-      Dataset <|-- ContactPoint
-        click ContactPoint href "../ContactPoint"
-      Dataset <|-- License
-        click License href "../License"
-      Dataset <|-- Certification
-        click Certification href "../Certification"
       
       
       
@@ -72,23 +58,16 @@ URI: [EVORAO:Dataset](https://raw.githubusercontent.com/EVORA-project/evora-onto
 ## Inheritance
 * [Resource](Resource.md)
     * **Dataset**
-        * [Version](Version.md)
         * [Catalogue](Catalogue.md)
         * [PathogenIdentification](PathogenIdentification.md)
-        * [Publication](Publication.md)
-        * [Term](Term.md)
         * [ExternalRelatedReference](ExternalRelatedReference.md)
         * [Sequence](Sequence.md)
         * [SequenceReference](SequenceReference.md)
-        * [PersonOrOrganization](PersonOrOrganization.md)
         * [BiologicalMaterialOrigin](BiologicalMaterialOrigin.md)
         * [BiologicalPartOrigin](BiologicalPartOrigin.md)
         * [RecombinantPartIdentification](RecombinantPartIdentification.md)
         * [ProductOrService](ProductOrService.md)
         * [MSDS](MSDS.md)
-        * [ContactPoint](ContactPoint.md)
-        * [License](License.md)
-        * [Certification](Certification.md)
 
 
 

@@ -58,10 +58,9 @@ URI: [EVORAO:VirusName](https://raw.githubusercontent.com/EVORA-project/evora-on
 
 ## Inheritance
 * [Resource](Resource.md)
-    * [Dataset](Dataset.md)
-        * [Term](Term.md)
-            * [CommonName](CommonName.md)
-                * **VirusName**
+    * [Term](Term.md)
+        * [CommonName](CommonName.md)
+            * **VirusName**
 
 
 

@@ -35,23 +35,15 @@ WHERE {
     FILTER ( ?otype IN (
       EVORAO:Dataset
       , 
-      EVORAO:Version
-      , 
       EVORAO:Catalogue
       , 
       EVORAO:PathogenIdentification
-      , 
-      EVORAO:Publication
-      , 
-      EVORAO:Term
       , 
       EVORAO:ExternalRelatedReference
       , 
       EVORAO:Sequence
       , 
       EVORAO:SequenceReference
-      , 
-      EVORAO:PersonOrOrganization
       , 
       EVORAO:BiologicalMaterialOrigin
       , 
@@ -62,12 +54,6 @@ WHERE {
       EVORAO:ProductOrService
       , 
       EVORAO:MSDS
-      , 
-      EVORAO:ContactPoint
-      , 
-      EVORAO:License
-      , 
-      EVORAO:Certification
       , 
       EVORAO:Service
       , 
@@ -102,64 +88,6 @@ WHERE {
       EVORAO:NaturalPartOrigin
       , 
       EVORAO:SyntheticPartOrigin
-      , 
-      EVORAO:Person
-      , 
-      EVORAO:Organization
-      , 
-      EVORAO:Originator
-      , 
-      EVORAO:RI
-      , 
-      EVORAO:Provider
-      , 
-      EVORAO:CommonName
-      , 
-      EVORAO:AlternateName
-      , 
-      EVORAO:RiskGroup
-      , 
-      EVORAO:DOI
-      , 
-      EVORAO:Journal
-      , 
-      EVORAO:PDBReference
-      , 
-      EVORAO:Keyword
-      , 
-      EVORAO:ProteinTag
-      , 
-      EVORAO:SpecialFeature
-      , 
-      EVORAO:ExpressionVector
-      , 
-      EVORAO:PlasmidSelection
-      , 
-      EVORAO:PropagationHost
-      , 
-      EVORAO:TransmissionMethod
-      , 
-      EVORAO:ProductionCellLine
-      , 
-      EVORAO:ProductCategory
-      , 
-      EVORAO:IsolationHost
-      , 
-      EVORAO:GeographicalOrigin
-      , 
-      EVORAO:Country
-      , 
-      EVORAO:IATAClassification
-      , 
-      EVORAO:TaxonomicRank
-      , 
-      EVORAO:Taxon
-      , 
-      EVORAO:IPLCOrigin
-      , 
-      EVORAO:VirusName
-      , 
-      EVORAO:Variant
       , 
       EVORAO:Taxonomy
       , 

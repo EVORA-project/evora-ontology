@@ -47,9 +47,8 @@ URI: [EVORAO:TransmissionMethod](https://raw.githubusercontent.com/EVORA-project
 
 ## Inheritance
 * [Resource](Resource.md)
-    * [Dataset](Dataset.md)
-        * [Term](Term.md)
-            * **TransmissionMethod**
+    * [Term](Term.md)
+        * **TransmissionMethod**
 
 
 

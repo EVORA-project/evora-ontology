@@ -8,6 +8,8 @@ _Resource published or curated by a single agent._
 
 
 
+* __NOTE__: this is an abstract class and should not be instantiated directly
+
 
 URI: [EVORAO:Resource](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#Resource)
 
@@ -24,6 +26,22 @@ URI: [EVORAO:Resource](https://raw.githubusercontent.com/EVORA-project/evora-ont
         click Dataset href "../Dataset"
       Resource <|-- DataService
         click DataService href "../DataService"
+      Resource <|-- Version
+        click Version href "../Version"
+      Resource <|-- Publication
+        click Publication href "../Publication"
+      Resource <|-- Term
+        click Term href "../Term"
+      Resource <|-- PersonOrOrganization
+        click PersonOrOrganization href "../PersonOrOrganization"
+      Resource <|-- File
+        click File href "../File"
+      Resource <|-- ContactPoint
+        click ContactPoint href "../ContactPoint"
+      Resource <|-- License
+        click License href "../License"
+      Resource <|-- Certification
+        click Certification href "../Certification"
       
       
 ```
@@ -36,6 +54,14 @@ URI: [EVORAO:Resource](https://raw.githubusercontent.com/EVORA-project/evora-ont
 * **Resource**
     * [Dataset](Dataset.md)
     * [DataService](DataService.md)
+    * [Version](Version.md)
+    * [Publication](Publication.md)
+    * [Term](Term.md)
+    * [PersonOrOrganization](PersonOrOrganization.md)
+    * [File](File.md)
+    * [ContactPoint](ContactPoint.md)
+    * [License](License.md)
+    * [Certification](Certification.md)
 
 
 
@@ -96,6 +122,7 @@ title: Resource
 from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
 exact_mappings:
 - dcat:Resource
+abstract: true
 
 ```
 </details>
@@ -110,6 +137,7 @@ title: Resource
 from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
 exact_mappings:
 - dcat:Resource
+abstract: true
 
 ```
 </details>

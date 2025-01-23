@@ -47,9 +47,8 @@ URI: [EVORAO:PDBReference](https://raw.githubusercontent.com/EVORA-project/evora
 
 ## Inheritance
 * [Resource](Resource.md)
-    * [Dataset](Dataset.md)
-        * [Term](Term.md)
-            * **PDBReference**
+    * [Term](Term.md)
+        * **PDBReference**
 
 
 

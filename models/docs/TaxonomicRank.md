@@ -56,9 +56,8 @@ URI: [EVORAO:TaxonomicRank](https://raw.githubusercontent.com/EVORA-project/evor
 
 ## Inheritance
 * [Resource](Resource.md)
-    * [Dataset](Dataset.md)
-        * [Term](Term.md)
-            * **TaxonomicRank**
+    * [Term](Term.md)
+        * **TaxonomicRank**
 
 
 

@@ -48,8 +48,9 @@ URI: [EVORAO:Data](https://raw.githubusercontent.com/EVORA-project/evora-ontolog
 
 
 ## Inheritance
-* [File](File.md)
-    * **Data**
+* [Resource](Resource.md)
+    * [File](File.md)
+        * **Data**
 
 
 

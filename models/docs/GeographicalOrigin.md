@@ -52,10 +52,9 @@ URI: [EVORAO:GeographicalOrigin](https://raw.githubusercontent.com/EVORA-project
 
 ## Inheritance
 * [Resource](Resource.md)
-    * [Dataset](Dataset.md)
-        * [Term](Term.md)
-            * **GeographicalOrigin**
-                * [IPLCOrigin](IPLCOrigin.md)
+    * [Term](Term.md)
+        * **GeographicalOrigin**
+            * [IPLCOrigin](IPLCOrigin.md)
 
 
 

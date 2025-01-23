@@ -47,9 +47,8 @@ URI: [EVORAO:SpecialFeature](https://raw.githubusercontent.com/EVORA-project/evo
 
 ## Inheritance
 * [Resource](Resource.md)
-    * [Dataset](Dataset.md)
-        * [Term](Term.md)
-            * **SpecialFeature**
+    * [Term](Term.md)
+        * **SpecialFeature**
 
 
 

@@ -41,7 +41,7 @@ type Version struct {
 	/*
 	 * parent types
 	 */
-	Dataset
+	Resource
 	/*
 	 * The version identifier
 	 */
@@ -223,7 +223,7 @@ type Publication struct {
 	/*
 	 * parent types
 	 */
-	Dataset
+	Resource
 	/*
 	 * The descriptive word or phrase that identifies the current piece of work
 	 */
@@ -279,7 +279,7 @@ type Term struct {
 	/*
 	 * parent types
 	 */
-	Dataset
+	Resource
 	/*
 	 * The label that allows humans to identify the current item
 	 */
@@ -1063,7 +1063,7 @@ type PersonOrOrganization struct {
 	/*
 	 * parent types
 	 */
-	Dataset
+	Resource
 	/*
 	 * The label that allows humans to identify the current item
 	 */
@@ -4423,6 +4423,10 @@ type MSDS struct {
  */
 type File struct {
 	/*
+	 * parent types
+	 */
+	Resource
+	/*
 	 * The label that allows humans to identify the current item
 	 */
 	Name string `json:"name"`
@@ -4605,7 +4609,7 @@ type ContactPoint struct {
 	/*
 	 * parent types
 	 */
-	Dataset
+	Resource
 	/*
 	 * The label that allows humans to identify the current item
 	 */
@@ -4655,7 +4659,7 @@ type License struct {
 	/*
 	 * parent types
 	 */
-	Dataset
+	Resource
 	/*
 	 * The label that allows humans to identify the current item
 	 */
@@ -4685,7 +4689,7 @@ type Certification struct {
 	/*
 	 * parent types
 	 */
-	Dataset
+	Resource
 	/*
 	 * The label that allows humans to identify the current item
 	 */

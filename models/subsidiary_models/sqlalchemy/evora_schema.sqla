@@ -26,29 +26,6 @@ class Resource(Base):
     
 
 
-class File(Base):
-    """
-    Digital document or record stored in a specific format that contains data or information
-    """
-    __tablename__ = 'File'
-
-    id = Column(Integer(), primary_key=True, autoincrement=True , nullable=False )
-    name = Column(Text(), nullable=False )
-    description = Column(Text())
-    contentURL = Column(Text(), nullable=False )
-    format = Column(Text(), nullable=False )
-    license_id = Column(Integer(), ForeignKey('License.id'))
-    license = relationship("License", uselist=False, foreign_keys=[license_id])
-    
-
-    def __repr__(self):
-        return f"File(id={self.id},name={self.name},description={self.description},contentURL={self.contentURL},format={self.format},license_id={self.license_id},)"
-
-
-
-    
-
-
 class TaxonomyTaxon(Base):
     """
     
@@ -4217,148 +4194,7 @@ class DataService(Resource):
     
 
 
-class Data(File):
-    """
-    Subclass of File representing structured or unstructured datasets, often used for analysis, storage, or transfer of information
-    """
-    __tablename__ = 'Data'
-
-    id = Column(Integer(), primary_key=True, autoincrement=True , nullable=False )
-    name = Column(Text(), nullable=False )
-    description = Column(Text())
-    contentURL = Column(Text(), nullable=False )
-    format = Column(Text(), nullable=False )
-    license_id = Column(Integer(), ForeignKey('License.id'))
-    license = relationship("License", uselist=False, foreign_keys=[license_id])
-    
-
-    def __repr__(self):
-        return f"Data(id={self.id},name={self.name},description={self.description},contentURL={self.contentURL},format={self.format},license_id={self.license_id},)"
-
-
-
-    
-    # Using concrete inheritance: see https://docs.sqlalchemy.org/en/14/orm/inheritance.html
-    __mapper_args__ = {
-        'concrete': True
-    }
-    
-
-
-class Document(File):
-    """
-    Subclass of File representing textual or written files such as reports, manuals, or forms
-    """
-    __tablename__ = 'Document'
-
-    id = Column(Integer(), primary_key=True, autoincrement=True , nullable=False )
-    name = Column(Text(), nullable=False )
-    description = Column(Text())
-    contentURL = Column(Text(), nullable=False )
-    format = Column(Text(), nullable=False )
-    license_id = Column(Integer(), ForeignKey('License.id'))
-    license = relationship("License", uselist=False, foreign_keys=[license_id])
-    
-
-    def __repr__(self):
-        return f"Document(id={self.id},name={self.name},description={self.description},contentURL={self.contentURL},format={self.format},license_id={self.license_id},)"
-
-
-
-    
-    # Using concrete inheritance: see https://docs.sqlalchemy.org/en/14/orm/inheritance.html
-    __mapper_args__ = {
-        'concrete': True
-    }
-    
-
-
-class Audio(File):
-    """
-    Subclass of File representing sound recordings or audio tracks
-    """
-    __tablename__ = 'Audio'
-
-    id = Column(Integer(), primary_key=True, autoincrement=True , nullable=False )
-    name = Column(Text(), nullable=False )
-    description = Column(Text())
-    contentURL = Column(Text(), nullable=False )
-    format = Column(Text(), nullable=False )
-    license_id = Column(Integer(), ForeignKey('License.id'))
-    license = relationship("License", uselist=False, foreign_keys=[license_id])
-    
-
-    def __repr__(self):
-        return f"Audio(id={self.id},name={self.name},description={self.description},contentURL={self.contentURL},format={self.format},license_id={self.license_id},)"
-
-
-
-    
-    # Using concrete inheritance: see https://docs.sqlalchemy.org/en/14/orm/inheritance.html
-    __mapper_args__ = {
-        'concrete': True
-    }
-    
-
-
-class Video(File):
-    """
-    Subclass of File representing moving visual media, such as recordings, presentations, or movies
-    """
-    __tablename__ = 'Video'
-
-    id = Column(Integer(), primary_key=True, autoincrement=True , nullable=False )
-    name = Column(Text(), nullable=False )
-    description = Column(Text())
-    contentURL = Column(Text(), nullable=False )
-    format = Column(Text(), nullable=False )
-    license_id = Column(Integer(), ForeignKey('License.id'))
-    license = relationship("License", uselist=False, foreign_keys=[license_id])
-    
-
-    def __repr__(self):
-        return f"Video(id={self.id},name={self.name},description={self.description},contentURL={self.contentURL},format={self.format},license_id={self.license_id},)"
-
-
-
-    
-    # Using concrete inheritance: see https://docs.sqlalchemy.org/en/14/orm/inheritance.html
-    __mapper_args__ = {
-        'concrete': True
-    }
-    
-
-
-class Image(File):
-    """
-    Subclass of File representing visual content such as pictures, diagrams, or illustrations
-    """
-    __tablename__ = 'Image'
-
-    id = Column(Integer(), primary_key=True, autoincrement=True , nullable=False )
-    altText = Column(Text())
-    name = Column(Text(), nullable=False )
-    description = Column(Text())
-    contentURL = Column(Text(), nullable=False )
-    format = Column(Text(), nullable=False )
-    license_id = Column(Integer(), ForeignKey('License.id'))
-    license = relationship("License", uselist=False, foreign_keys=[license_id])
-    
-
-    def __repr__(self):
-        return f"Image(id={self.id},altText={self.altText},name={self.name},description={self.description},contentURL={self.contentURL},format={self.format},license_id={self.license_id},)"
-
-
-
-    
-    # Using concrete inheritance: see https://docs.sqlalchemy.org/en/14/orm/inheritance.html
-    __mapper_args__ = {
-        'concrete': True
-    }
-    
-
-
-class Version(Dataset):
+class Version(Resource):
     """
     Numeric code assigned to identify a particular historical version of a work (e.g. software or technical standards)
     """
@@ -4372,6 +4208,211 @@ class Version(Dataset):
 
     def __repr__(self):
         return f"Version(id={self.id},ID={self.ID},versionOf_id={self.versionOf_id},)"
+
+
+
+    
+    # Using concrete inheritance: see https://docs.sqlalchemy.org/en/14/orm/inheritance.html
+    __mapper_args__ = {
+        'concrete': True
+    }
+    
+
+
+class Publication(Resource):
+    """
+    A scientific publication
+    """
+    __tablename__ = 'Publication'
+
+    id = Column(Integer(), primary_key=True, autoincrement=True , nullable=False )
+    title = Column(Text(), nullable=False )
+    authors = Column(Text(), nullable=False )
+    abstract = Column(Text(), nullable=False )
+    relatedDOI_id = Column(Integer(), ForeignKey('DOI.id'), nullable=False )
+    relatedDOI = relationship("DOI", uselist=False, foreign_keys=[relatedDOI_id])
+    journal_id = Column(Integer(), ForeignKey('Journal.id'))
+    journal = relationship("Journal", uselist=False, foreign_keys=[journal_id])
+    
+
+    def __repr__(self):
+        return f"Publication(id={self.id},title={self.title},authors={self.authors},abstract={self.abstract},relatedDOI_id={self.relatedDOI_id},journal_id={self.journal_id},)"
+
+
+
+    
+    # Using concrete inheritance: see https://docs.sqlalchemy.org/en/14/orm/inheritance.html
+    __mapper_args__ = {
+        'concrete': True
+    }
+    
+
+
+class Term(Resource):
+    """
+    Word or phrase from a specialized area of knowledge
+    """
+    __tablename__ = 'Term'
+
+    id = Column(Integer(), primary_key=True, autoincrement=True , nullable=False )
+    name = Column(Text(), nullable=False )
+    description = Column(Text())
+    weight = Column(Integer(), nullable=False )
+    inVocabulary_id = Column(Integer(), ForeignKey('Vocabulary.id'), nullable=False )
+    inVocabulary = relationship("Vocabulary", uselist=False, foreign_keys=[inVocabulary_id])
+    
+
+    def __repr__(self):
+        return f"Term(id={self.id},name={self.name},description={self.description},weight={self.weight},inVocabulary_id={self.inVocabulary_id},)"
+
+
+
+    
+    # Using concrete inheritance: see https://docs.sqlalchemy.org/en/14/orm/inheritance.html
+    __mapper_args__ = {
+        'concrete': True
+    }
+    
+
+
+class PersonOrOrganization(Resource):
+    """
+    A person or an organization
+    """
+    __tablename__ = 'PersonOrOrganization'
+
+    id = Column(Integer(), primary_key=True, autoincrement=True , nullable=False )
+    name = Column(Text(), nullable=False )
+    description = Column(Text())
+    homePage = Column(Text())
+    contactPoint_id = Column(Integer(), ForeignKey('ContactPoint.id'))
+    contactPoint = relationship("ContactPoint", uselist=False, foreign_keys=[contactPoint_id])
+    logo_id = Column(Integer(), ForeignKey('Image.id'))
+    logo = relationship("Image", uselist=False, foreign_keys=[logo_id])
+    
+
+    def __repr__(self):
+        return f"PersonOrOrganization(id={self.id},name={self.name},description={self.description},homePage={self.homePage},contactPoint_id={self.contactPoint_id},logo_id={self.logo_id},)"
+
+
+
+    
+    # Using concrete inheritance: see https://docs.sqlalchemy.org/en/14/orm/inheritance.html
+    __mapper_args__ = {
+        'concrete': True
+    }
+    
+
+
+class File(Resource):
+    """
+    Digital document or record stored in a specific format that contains data or information
+    """
+    __tablename__ = 'File'
+
+    id = Column(Integer(), primary_key=True, autoincrement=True , nullable=False )
+    name = Column(Text(), nullable=False )
+    description = Column(Text())
+    contentURL = Column(Text(), nullable=False )
+    format = Column(Text(), nullable=False )
+    license_id = Column(Integer(), ForeignKey('License.id'))
+    license = relationship("License", uselist=False, foreign_keys=[license_id])
+    
+
+    def __repr__(self):
+        return f"File(id={self.id},name={self.name},description={self.description},contentURL={self.contentURL},format={self.format},license_id={self.license_id},)"
+
+
+
+    
+    # Using concrete inheritance: see https://docs.sqlalchemy.org/en/14/orm/inheritance.html
+    __mapper_args__ = {
+        'concrete': True
+    }
+    
+
+
+class ContactPoint(Resource):
+    """
+    Entity serving as focal point of information
+    """
+    __tablename__ = 'ContactPoint'
+
+    id = Column(Integer(), primary_key=True, autoincrement=True , nullable=False )
+    name = Column(Text(), nullable=False )
+    description = Column(Text())
+    email = Column(Text())
+    telephone = Column(Text())
+    streetAddress = Column(Text())
+    addressLocality = Column(Text())
+    addressRegion = Column(Text())
+    postalCode = Column(Text())
+    oRCIDiD = Column(Text())
+    addressCountry_id = Column(Integer(), ForeignKey('Country.id'))
+    addressCountry = relationship("Country", uselist=False, foreign_keys=[addressCountry_id])
+    
+
+    def __repr__(self):
+        return f"ContactPoint(id={self.id},name={self.name},description={self.description},email={self.email},telephone={self.telephone},streetAddress={self.streetAddress},addressLocality={self.addressLocality},addressRegion={self.addressRegion},postalCode={self.postalCode},oRCIDiD={self.oRCIDiD},addressCountry_id={self.addressCountry_id},)"
+
+
+
+    
+    # Using concrete inheritance: see https://docs.sqlalchemy.org/en/14/orm/inheritance.html
+    __mapper_args__ = {
+        'concrete': True
+    }
+    
+
+
+class License(Resource):
+    """
+    The legal terms and conditions under which the subject can be used, shared, or distributed, indicating any restrictions or permissions
+    """
+    __tablename__ = 'License'
+
+    id = Column(Integer(), primary_key=True, autoincrement=True , nullable=False )
+    name = Column(Text(), nullable=False )
+    description = Column(Text())
+    resourceURL = Column(Text())
+    licensingOrAttribution = Column(Text())
+    logo_id = Column(Integer(), ForeignKey('Image.id'))
+    logo = relationship("Image", uselist=False, foreign_keys=[logo_id])
+    
+
+    def __repr__(self):
+        return f"License(id={self.id},name={self.name},description={self.description},resourceURL={self.resourceURL},licensingOrAttribution={self.licensingOrAttribution},logo_id={self.logo_id},)"
+
+
+
+    
+    # Using concrete inheritance: see https://docs.sqlalchemy.org/en/14/orm/inheritance.html
+    __mapper_args__ = {
+        'concrete': True
+    }
+    
+
+
+class Certification(Resource):
+    """
+    Assurance given by an independent certification body that a product, service or system meets the requirements of a standard
+    """
+    __tablename__ = 'Certification'
+
+    id = Column(Integer(), primary_key=True, autoincrement=True , nullable=False )
+    name = Column(Text(), nullable=False )
+    description = Column(Text())
+    resourceURL = Column(Text())
+    logo_id = Column(Integer(), ForeignKey('Image.id'))
+    logo = relationship("Image", uselist=False, foreign_keys=[logo_id])
+    
+    
+    # ManyToMany
+    certificationDocument = relationship( "Document", secondary="Certification_certificationDocument")
+    
+
+    def __repr__(self):
+        return f"Certification(id={self.id},name={self.name},description={self.description},resourceURL={self.resourceURL},logo_id={self.logo_id},)"
 
 
 
@@ -4470,527 +4511,6 @@ class PathogenIdentification(Dataset):
 
     def __repr__(self):
         return f"PathogenIdentification(id={self.id},pathogenType={self.pathogenType},subspecies={self.subspecies},strain={self.strain},isolate={self.isolate},genotype={self.genotype},serotype={self.serotype},taxon_id={self.taxon_id},pathogenName_id={self.pathogenName_id},variant_id={self.variant_id},)"
-
-
-
-    
-    # Using concrete inheritance: see https://docs.sqlalchemy.org/en/14/orm/inheritance.html
-    __mapper_args__ = {
-        'concrete': True
-    }
-    
-
-
-class Publication(Dataset):
-    """
-    A scientific publication
-    """
-    __tablename__ = 'Publication'
-
-    id = Column(Integer(), primary_key=True, autoincrement=True , nullable=False )
-    title = Column(Text(), nullable=False )
-    authors = Column(Text(), nullable=False )
-    abstract = Column(Text(), nullable=False )
-    relatedDOI_id = Column(Integer(), ForeignKey('DOI.id'), nullable=False )
-    relatedDOI = relationship("DOI", uselist=False, foreign_keys=[relatedDOI_id])
-    journal_id = Column(Integer(), ForeignKey('Journal.id'))
-    journal = relationship("Journal", uselist=False, foreign_keys=[journal_id])
-    
-
-    def __repr__(self):
-        return f"Publication(id={self.id},title={self.title},authors={self.authors},abstract={self.abstract},relatedDOI_id={self.relatedDOI_id},journal_id={self.journal_id},)"
-
-
-
-    
-    # Using concrete inheritance: see https://docs.sqlalchemy.org/en/14/orm/inheritance.html
-    __mapper_args__ = {
-        'concrete': True
-    }
-    
-
-
-class Term(Dataset):
-    """
-    Word or phrase from a specialized area of knowledge
-    """
-    __tablename__ = 'Term'
-
-    id = Column(Integer(), primary_key=True, autoincrement=True , nullable=False )
-    name = Column(Text(), nullable=False )
-    description = Column(Text())
-    weight = Column(Integer(), nullable=False )
-    inVocabulary_id = Column(Integer(), ForeignKey('Vocabulary.id'), nullable=False )
-    inVocabulary = relationship("Vocabulary", uselist=False, foreign_keys=[inVocabulary_id])
-    
-
-    def __repr__(self):
-        return f"Term(id={self.id},name={self.name},description={self.description},weight={self.weight},inVocabulary_id={self.inVocabulary_id},)"
-
-
-
-    
-    # Using concrete inheritance: see https://docs.sqlalchemy.org/en/14/orm/inheritance.html
-    __mapper_args__ = {
-        'concrete': True
-    }
-    
-
-
-class ExternalRelatedReference(Dataset):
-    """
-    A reference that permits to retrieve an item from an external provider
-    """
-    __tablename__ = 'ExternalRelatedReference'
-
-    id = Column(Integer(), primary_key=True, autoincrement=True , nullable=False )
-    reference = Column(Text(), nullable=False )
-    referenceLabel = Column(Text(), nullable=False )
-    referenceProviderPrefix = Column(Text(), nullable=False )
-    referenceProviderName = Column(Text(), nullable=False )
-    
-
-    def __repr__(self):
-        return f"ExternalRelatedReference(id={self.id},reference={self.reference},referenceLabel={self.referenceLabel},referenceProviderPrefix={self.referenceProviderPrefix},referenceProviderName={self.referenceProviderName},)"
-
-
-
-    
-    # Using concrete inheritance: see https://docs.sqlalchemy.org/en/14/orm/inheritance.html
-    __mapper_args__ = {
-        'concrete': True
-    }
-    
-
-
-class Sequence(Dataset):
-    """
-    A nucleic acid or protein sequence information
-    """
-    __tablename__ = 'Sequence'
-
-    id = Column(Integer(), primary_key=True, autoincrement=True , nullable=False )
-    sequenceFASTA = Column(Text())
-    
-    
-    # ManyToMany
-    sequenceReference = relationship( "SequenceReference", secondary="Sequence_sequenceReference")
-    
-
-    def __repr__(self):
-        return f"Sequence(id={self.id},sequenceFASTA={self.sequenceFASTA},)"
-
-
-
-    
-    # Using concrete inheritance: see https://docs.sqlalchemy.org/en/14/orm/inheritance.html
-    __mapper_args__ = {
-        'concrete': True
-    }
-    
-
-
-class SequenceReference(Dataset):
-    """
-    A reference that permits to retrieve the sequence information from a sequence provider
-    """
-    __tablename__ = 'SequenceReference'
-
-    id = Column(Integer(), primary_key=True, autoincrement=True , nullable=False )
-    accessionNumber = Column(Text(), nullable=False )
-    sequenceProvider = Column(Text(), nullable=False )
-    
-
-    def __repr__(self):
-        return f"SequenceReference(id={self.id},accessionNumber={self.accessionNumber},sequenceProvider={self.sequenceProvider},)"
-
-
-
-    
-    # Using concrete inheritance: see https://docs.sqlalchemy.org/en/14/orm/inheritance.html
-    __mapper_args__ = {
-        'concrete': True
-    }
-    
-
-
-class PersonOrOrganization(Dataset):
-    """
-    A person or an organization
-    """
-    __tablename__ = 'PersonOrOrganization'
-
-    id = Column(Integer(), primary_key=True, autoincrement=True , nullable=False )
-    name = Column(Text(), nullable=False )
-    description = Column(Text())
-    homePage = Column(Text())
-    contactPoint_id = Column(Integer(), ForeignKey('ContactPoint.id'))
-    contactPoint = relationship("ContactPoint", uselist=False, foreign_keys=[contactPoint_id])
-    logo_id = Column(Integer(), ForeignKey('Image.id'))
-    logo = relationship("Image", uselist=False, foreign_keys=[logo_id])
-    
-
-    def __repr__(self):
-        return f"PersonOrOrganization(id={self.id},name={self.name},description={self.description},homePage={self.homePage},contactPoint_id={self.contactPoint_id},logo_id={self.logo_id},)"
-
-
-
-    
-    # Using concrete inheritance: see https://docs.sqlalchemy.org/en/14/orm/inheritance.html
-    __mapper_args__ = {
-        'concrete': True
-    }
-    
-
-
-class BiologicalMaterialOrigin(Dataset):
-    """
-    Information about the origin of the biological material, compulsory for access, utilization, and benefit-sharing of genetic resources in compliance with the Nagoya Protocol
-    """
-    __tablename__ = 'BiologicalMaterialOrigin'
-
-    id = Column(Integer(), primary_key=True, autoincrement=True , nullable=False )
-    recombinantMaterial = Column(Boolean(), nullable=False )
-    biologicalSourceType = Column(Boolean(), nullable=False )
-    
-    
-    # ManyToMany
-    biologicalPartOrigin = relationship( "BiologicalPartOrigin", secondary="BiologicalMaterialOrigin_biologicalPartOrigin")
-    
-
-    def __repr__(self):
-        return f"BiologicalMaterialOrigin(id={self.id},recombinantMaterial={self.recombinantMaterial},biologicalSourceType={self.biologicalSourceType},)"
-
-
-
-    
-    # Using concrete inheritance: see https://docs.sqlalchemy.org/en/14/orm/inheritance.html
-    __mapper_args__ = {
-        'concrete': True
-    }
-    
-
-
-class BiologicalPartOrigin(Dataset):
-    """
-    Information on the origin of a unitary, cohesive part that is part of, or constitutes the biological material. It can be multiple parts in case of a recombinant biological material
-    """
-    __tablename__ = 'BiologicalPartOrigin'
-
-    id = Column(Integer(), primary_key=True, autoincrement=True , nullable=False )
-    accessToPhysicalGeneticResource = Column(Boolean(), nullable=False )
-    recombinantPartIdentification_id = Column(Integer(), ForeignKey('RecombinantPartIdentification.id'))
-    recombinantPartIdentification = relationship("RecombinantPartIdentification", uselist=False, foreign_keys=[recombinantPartIdentification_id])
-    
-
-    def __repr__(self):
-        return f"BiologicalPartOrigin(id={self.id},accessToPhysicalGeneticResource={self.accessToPhysicalGeneticResource},recombinantPartIdentification_id={self.recombinantPartIdentification_id},)"
-
-
-
-    
-    # Using concrete inheritance: see https://docs.sqlalchemy.org/en/14/orm/inheritance.html
-    __mapper_args__ = {
-        'concrete': True
-    }
-    
-
-
-class RecombinantPartIdentification(Dataset):
-    """
-    Identification of a recombinant part
-    """
-    __tablename__ = 'RecombinantPartIdentification'
-
-    id = Column(Integer(), primary_key=True, autoincrement=True , nullable=False )
-    partIdentification = Column(Text(), nullable=False )
-    
-    
-    # ManyToMany
-    sequence = relationship( "Sequence", secondary="RecombinantPartIdentification_sequence")
-    
-
-    def __repr__(self):
-        return f"RecombinantPartIdentification(id={self.id},partIdentification={self.partIdentification},)"
-
-
-
-    
-    # Using concrete inheritance: see https://docs.sqlalchemy.org/en/14/orm/inheritance.html
-    __mapper_args__ = {
-        'concrete': True
-    }
-    
-
-
-class ProductOrService(Dataset):
-    """
-    A product or a service
-    """
-    __tablename__ = 'ProductOrService'
-
-    id = Column(Integer(), primary_key=True, autoincrement=True , nullable=False )
-    name = Column(Text(), nullable=False )
-    description = Column(Text())
-    accessPointURL = Column(Text(), nullable=False )
-    refSKU = Column(Text(), nullable=False )
-    unitDefinition = Column(Text())
-    unitCost = Column(Text(), nullable=False )
-    qualityGrading = Column(Text())
-    biosafetyRestrictions = Column(Text())
-    canItBeUsedToProduceGMO = Column(Boolean(), nullable=False )
-    availability = Column(Text(), nullable=False )
-    technicalRecommendation = Column(Text())
-    internalReference = Column(Text())
-    note = Column(Text())
-    category_id = Column(Integer(), ForeignKey('ProductCategory.id'), nullable=False )
-    category = relationship("ProductCategory", uselist=False, foreign_keys=[category_id])
-    riskGroup_id = Column(Integer(), ForeignKey('RiskGroup.id'))
-    riskGroup = relationship("RiskGroup", uselist=False, foreign_keys=[riskGroup_id])
-    provider_id = Column(Integer(), ForeignKey('Provider.id'), nullable=False )
-    provider = relationship("Provider", uselist=False, foreign_keys=[provider_id])
-    contactPoint_id = Column(Integer(), ForeignKey('ContactPoint.id'))
-    contactPoint = relationship("ContactPoint", uselist=False, foreign_keys=[contactPoint_id])
-    
-    
-    # ManyToMany
-    additionalCategory = relationship( "ProductCategory", secondary="ProductOrService_additionalCategory")
-    
-    
-    # ManyToMany
-    pathogenIdentification = relationship( "PathogenIdentification", secondary="ProductOrService_pathogenIdentification")
-    
-    
-    # ManyToMany
-    relatedDOI = relationship( "DOI", secondary="ProductOrService_relatedDOI")
-    
-    
-    # ManyToMany
-    collection = relationship( "Collection", secondary="ProductOrService_collection")
-    
-    
-    # ManyToMany
-    keywords = relationship( "Keyword", secondary="ProductOrService_keywords")
-    
-    
-    # ManyToMany
-    complementaryDocument = relationship( "Document", secondary="ProductOrService_complementaryDocument")
-    
-    
-    # ManyToMany
-    productPicture = relationship( "Image", secondary="ProductOrService_productPicture")
-    
-    
-    # ManyToMany
-    externalRelatedReference = relationship( "ExternalRelatedReference", secondary="ProductOrService_externalRelatedReference")
-    
-    
-    # ManyToMany
-    certification = relationship( "Certification", secondary="ProductOrService_certification")
-    
-
-    def __repr__(self):
-        return f"ProductOrService(id={self.id},name={self.name},description={self.description},accessPointURL={self.accessPointURL},refSKU={self.refSKU},unitDefinition={self.unitDefinition},unitCost={self.unitCost},qualityGrading={self.qualityGrading},biosafetyRestrictions={self.biosafetyRestrictions},canItBeUsedToProduceGMO={self.canItBeUsedToProduceGMO},availability={self.availability},technicalRecommendation={self.technicalRecommendation},internalReference={self.internalReference},note={self.note},category_id={self.category_id},riskGroup_id={self.riskGroup_id},provider_id={self.provider_id},contactPoint_id={self.contactPoint_id},)"
-
-
-
-    
-    # Using concrete inheritance: see https://docs.sqlalchemy.org/en/14/orm/inheritance.html
-    __mapper_args__ = {
-        'concrete': True
-    }
-    
-
-
-class MSDS(Dataset):
-    """
-    A Material Safety Data Sheet (MSDS) or Safety Data Sheet (SDS) is a standardized document that contains crucial occupational safety and health information related to the product
-    """
-    __tablename__ = 'MSDS'
-
-    id = Column(Integer(), primary_key=True, autoincrement=True , nullable=False )
-    physicalChemicalProperties = Column(Text())
-    hazardsIdentification = Column(Text())
-    firstAidMeasures = Column(Text())
-    fireFightingMeasures = Column(Text())
-    accidentalReleaseMeasures = Column(Text())
-    handlingAndStorage = Column(Text())
-    exposureControlsPersonalProtection = Column(Text())
-    stabilityAndReactivity = Column(Text())
-    toxicologicalInformation = Column(Text())
-    ecologicalInformation = Column(Text())
-    disposalConsiderations = Column(Text())
-    transportInformation = Column(Text())
-    regulatoryInformation = Column(Text())
-    furtherInformation = Column(Text())
-    msdsContact_id = Column(Integer(), ForeignKey('ContactPoint.id'), nullable=False )
-    msdsContact = relationship("ContactPoint", uselist=False, foreign_keys=[msdsContact_id])
-    
-
-    def __repr__(self):
-        return f"MSDS(id={self.id},physicalChemicalProperties={self.physicalChemicalProperties},hazardsIdentification={self.hazardsIdentification},firstAidMeasures={self.firstAidMeasures},fireFightingMeasures={self.fireFightingMeasures},accidentalReleaseMeasures={self.accidentalReleaseMeasures},handlingAndStorage={self.handlingAndStorage},exposureControlsPersonalProtection={self.exposureControlsPersonalProtection},stabilityAndReactivity={self.stabilityAndReactivity},toxicologicalInformation={self.toxicologicalInformation},ecologicalInformation={self.ecologicalInformation},disposalConsiderations={self.disposalConsiderations},transportInformation={self.transportInformation},regulatoryInformation={self.regulatoryInformation},furtherInformation={self.furtherInformation},msdsContact_id={self.msdsContact_id},)"
-
-
-
-    
-    # Using concrete inheritance: see https://docs.sqlalchemy.org/en/14/orm/inheritance.html
-    __mapper_args__ = {
-        'concrete': True
-    }
-    
-
-
-class ContactPoint(Dataset):
-    """
-    Entity serving as focal point of information
-    """
-    __tablename__ = 'ContactPoint'
-
-    id = Column(Integer(), primary_key=True, autoincrement=True , nullable=False )
-    name = Column(Text(), nullable=False )
-    description = Column(Text())
-    email = Column(Text())
-    telephone = Column(Text())
-    streetAddress = Column(Text())
-    addressLocality = Column(Text())
-    addressRegion = Column(Text())
-    postalCode = Column(Text())
-    oRCIDiD = Column(Text())
-    addressCountry_id = Column(Integer(), ForeignKey('Country.id'))
-    addressCountry = relationship("Country", uselist=False, foreign_keys=[addressCountry_id])
-    
-
-    def __repr__(self):
-        return f"ContactPoint(id={self.id},name={self.name},description={self.description},email={self.email},telephone={self.telephone},streetAddress={self.streetAddress},addressLocality={self.addressLocality},addressRegion={self.addressRegion},postalCode={self.postalCode},oRCIDiD={self.oRCIDiD},addressCountry_id={self.addressCountry_id},)"
-
-
-
-    
-    # Using concrete inheritance: see https://docs.sqlalchemy.org/en/14/orm/inheritance.html
-    __mapper_args__ = {
-        'concrete': True
-    }
-    
-
-
-class License(Dataset):
-    """
-    The legal terms and conditions under which the subject can be used, shared, or distributed, indicating any restrictions or permissions
-    """
-    __tablename__ = 'License'
-
-    id = Column(Integer(), primary_key=True, autoincrement=True , nullable=False )
-    name = Column(Text(), nullable=False )
-    description = Column(Text())
-    resourceURL = Column(Text())
-    licensingOrAttribution = Column(Text())
-    logo_id = Column(Integer(), ForeignKey('Image.id'))
-    logo = relationship("Image", uselist=False, foreign_keys=[logo_id])
-    
-
-    def __repr__(self):
-        return f"License(id={self.id},name={self.name},description={self.description},resourceURL={self.resourceURL},licensingOrAttribution={self.licensingOrAttribution},logo_id={self.logo_id},)"
-
-
-
-    
-    # Using concrete inheritance: see https://docs.sqlalchemy.org/en/14/orm/inheritance.html
-    __mapper_args__ = {
-        'concrete': True
-    }
-    
-
-
-class Certification(Dataset):
-    """
-    Assurance given by an independent certification body that a product, service or system meets the requirements of a standard
-    """
-    __tablename__ = 'Certification'
-
-    id = Column(Integer(), primary_key=True, autoincrement=True , nullable=False )
-    name = Column(Text(), nullable=False )
-    description = Column(Text())
-    resourceURL = Column(Text())
-    logo_id = Column(Integer(), ForeignKey('Image.id'))
-    logo = relationship("Image", uselist=False, foreign_keys=[logo_id])
-    
-    
-    # ManyToMany
-    certificationDocument = relationship( "Document", secondary="Certification_certificationDocument")
-    
-
-    def __repr__(self):
-        return f"Certification(id={self.id},name={self.name},description={self.description},resourceURL={self.resourceURL},logo_id={self.logo_id},)"
-
-
-
-    
-    # Using concrete inheritance: see https://docs.sqlalchemy.org/en/14/orm/inheritance.html
-    __mapper_args__ = {
-        'concrete': True
-    }
-    
-
-
-class Taxonomy(Catalogue):
-    """
-    Science of naming, defining and classifying organisms
-    """
-    __tablename__ = 'Taxonomy'
-
-    id = Column(Integer(), primary_key=True, autoincrement=True , nullable=False )
-    name = Column(Text(), nullable=False )
-    description = Column(Text())
-    taxonDataProvider_id = Column(Integer(), ForeignKey('DataProvider.id'))
-    taxonDataProvider = relationship("DataProvider", uselist=False, foreign_keys=[taxonDataProvider_id])
-    version_id = Column(Integer(), ForeignKey('Version.id'), nullable=False )
-    version = relationship("Version", uselist=False, foreign_keys=[version_id])
-    versionDataProvider_id = Column(Integer(), ForeignKey('DataProvider.id'), nullable=False )
-    versionDataProvider = relationship("DataProvider", uselist=False, foreign_keys=[versionDataProvider_id])
-    rankDataProvider_id = Column(Integer(), ForeignKey('DataProvider.id'))
-    rankDataProvider = relationship("DataProvider", uselist=False, foreign_keys=[rankDataProvider_id])
-    
-    
-    # ManyToMany
-    taxon = relationship( "Taxon", secondary="Taxonomy_taxon")
-    
-    
-    # ManyToMany
-    rank = relationship( "TaxonomicRank", secondary="Taxonomy_rank")
-    
-
-    def __repr__(self):
-        return f"Taxonomy(id={self.id},name={self.name},description={self.description},taxonDataProvider_id={self.taxonDataProvider_id},version_id={self.version_id},versionDataProvider_id={self.versionDataProvider_id},rankDataProvider_id={self.rankDataProvider_id},)"
-
-
-
-    
-    # Using concrete inheritance: see https://docs.sqlalchemy.org/en/14/orm/inheritance.html
-    __mapper_args__ = {
-        'concrete': True
-    }
-    
-
-
-class Vocabulary(Catalogue):
-    """
-    A subset of words or phrases specific to a particular subject or field
-    """
-    __tablename__ = 'Vocabulary'
-
-    id = Column(Integer(), primary_key=True, autoincrement=True , nullable=False )
-    name = Column(Text(), nullable=False )
-    description = Column(Text())
-    termDataProvider_id = Column(Integer(), ForeignKey('DataProvider.id'))
-    termDataProvider = relationship("DataProvider", uselist=False, foreign_keys=[termDataProvider_id])
-    
-    
-    # ManyToMany
-    term = relationship( "Term", secondary="Vocabulary_term")
-    
-
-    def __repr__(self):
-        return f"Vocabulary(id={self.id},name={self.name},description={self.description},termDataProvider_id={self.termDataProvider_id},)"
 
 
 
@@ -5612,6 +5132,83 @@ class Taxon(Term):
     
 
 
+class ExternalRelatedReference(Dataset):
+    """
+    A reference that permits to retrieve an item from an external provider
+    """
+    __tablename__ = 'ExternalRelatedReference'
+
+    id = Column(Integer(), primary_key=True, autoincrement=True , nullable=False )
+    reference = Column(Text(), nullable=False )
+    referenceLabel = Column(Text(), nullable=False )
+    referenceProviderPrefix = Column(Text(), nullable=False )
+    referenceProviderName = Column(Text(), nullable=False )
+    
+
+    def __repr__(self):
+        return f"ExternalRelatedReference(id={self.id},reference={self.reference},referenceLabel={self.referenceLabel},referenceProviderPrefix={self.referenceProviderPrefix},referenceProviderName={self.referenceProviderName},)"
+
+
+
+    
+    # Using concrete inheritance: see https://docs.sqlalchemy.org/en/14/orm/inheritance.html
+    __mapper_args__ = {
+        'concrete': True
+    }
+    
+
+
+class Sequence(Dataset):
+    """
+    A nucleic acid or protein sequence information
+    """
+    __tablename__ = 'Sequence'
+
+    id = Column(Integer(), primary_key=True, autoincrement=True , nullable=False )
+    sequenceFASTA = Column(Text())
+    
+    
+    # ManyToMany
+    sequenceReference = relationship( "SequenceReference", secondary="Sequence_sequenceReference")
+    
+
+    def __repr__(self):
+        return f"Sequence(id={self.id},sequenceFASTA={self.sequenceFASTA},)"
+
+
+
+    
+    # Using concrete inheritance: see https://docs.sqlalchemy.org/en/14/orm/inheritance.html
+    __mapper_args__ = {
+        'concrete': True
+    }
+    
+
+
+class SequenceReference(Dataset):
+    """
+    A reference that permits to retrieve the sequence information from a sequence provider
+    """
+    __tablename__ = 'SequenceReference'
+
+    id = Column(Integer(), primary_key=True, autoincrement=True , nullable=False )
+    accessionNumber = Column(Text(), nullable=False )
+    sequenceProvider = Column(Text(), nullable=False )
+    
+
+    def __repr__(self):
+        return f"SequenceReference(id={self.id},accessionNumber={self.accessionNumber},sequenceProvider={self.sequenceProvider},)"
+
+
+
+    
+    # Using concrete inheritance: see https://docs.sqlalchemy.org/en/14/orm/inheritance.html
+    __mapper_args__ = {
+        'concrete': True
+    }
+    
+
+
 class Person(PersonOrOrganization):
     """
     An individual
@@ -5693,6 +5290,583 @@ class Originator(PersonOrOrganization):
 
     def __repr__(self):
         return f"Originator(id={self.id},name={self.name},description={self.description},homePage={self.homePage},contactPoint_id={self.contactPoint_id},logo_id={self.logo_id},)"
+
+
+
+    
+    # Using concrete inheritance: see https://docs.sqlalchemy.org/en/14/orm/inheritance.html
+    __mapper_args__ = {
+        'concrete': True
+    }
+    
+
+
+class BiologicalMaterialOrigin(Dataset):
+    """
+    Information about the origin of the biological material, compulsory for access, utilization, and benefit-sharing of genetic resources in compliance with the Nagoya Protocol
+    """
+    __tablename__ = 'BiologicalMaterialOrigin'
+
+    id = Column(Integer(), primary_key=True, autoincrement=True , nullable=False )
+    recombinantMaterial = Column(Boolean(), nullable=False )
+    biologicalSourceType = Column(Boolean(), nullable=False )
+    
+    
+    # ManyToMany
+    biologicalPartOrigin = relationship( "BiologicalPartOrigin", secondary="BiologicalMaterialOrigin_biologicalPartOrigin")
+    
+
+    def __repr__(self):
+        return f"BiologicalMaterialOrigin(id={self.id},recombinantMaterial={self.recombinantMaterial},biologicalSourceType={self.biologicalSourceType},)"
+
+
+
+    
+    # Using concrete inheritance: see https://docs.sqlalchemy.org/en/14/orm/inheritance.html
+    __mapper_args__ = {
+        'concrete': True
+    }
+    
+
+
+class BiologicalPartOrigin(Dataset):
+    """
+    Information on the origin of a unitary, cohesive part that is part of, or constitutes the biological material. It can be multiple parts in case of a recombinant biological material
+    """
+    __tablename__ = 'BiologicalPartOrigin'
+
+    id = Column(Integer(), primary_key=True, autoincrement=True , nullable=False )
+    accessToPhysicalGeneticResource = Column(Boolean(), nullable=False )
+    recombinantPartIdentification_id = Column(Integer(), ForeignKey('RecombinantPartIdentification.id'))
+    recombinantPartIdentification = relationship("RecombinantPartIdentification", uselist=False, foreign_keys=[recombinantPartIdentification_id])
+    
+
+    def __repr__(self):
+        return f"BiologicalPartOrigin(id={self.id},accessToPhysicalGeneticResource={self.accessToPhysicalGeneticResource},recombinantPartIdentification_id={self.recombinantPartIdentification_id},)"
+
+
+
+    
+    # Using concrete inheritance: see https://docs.sqlalchemy.org/en/14/orm/inheritance.html
+    __mapper_args__ = {
+        'concrete': True
+    }
+    
+
+
+class RecombinantPartIdentification(Dataset):
+    """
+    Identification of a recombinant part
+    """
+    __tablename__ = 'RecombinantPartIdentification'
+
+    id = Column(Integer(), primary_key=True, autoincrement=True , nullable=False )
+    partIdentification = Column(Text(), nullable=False )
+    
+    
+    # ManyToMany
+    sequence = relationship( "Sequence", secondary="RecombinantPartIdentification_sequence")
+    
+
+    def __repr__(self):
+        return f"RecombinantPartIdentification(id={self.id},partIdentification={self.partIdentification},)"
+
+
+
+    
+    # Using concrete inheritance: see https://docs.sqlalchemy.org/en/14/orm/inheritance.html
+    __mapper_args__ = {
+        'concrete': True
+    }
+    
+
+
+class ProductOrService(Dataset):
+    """
+    A product or a service
+    """
+    __tablename__ = 'ProductOrService'
+
+    id = Column(Integer(), primary_key=True, autoincrement=True , nullable=False )
+    name = Column(Text(), nullable=False )
+    description = Column(Text())
+    accessPointURL = Column(Text(), nullable=False )
+    refSKU = Column(Text(), nullable=False )
+    unitDefinition = Column(Text())
+    unitCost = Column(Text(), nullable=False )
+    qualityGrading = Column(Text())
+    biosafetyRestrictions = Column(Text())
+    canItBeUsedToProduceGMO = Column(Boolean(), nullable=False )
+    availability = Column(Text(), nullable=False )
+    technicalRecommendation = Column(Text())
+    internalReference = Column(Text())
+    note = Column(Text())
+    category_id = Column(Integer(), ForeignKey('ProductCategory.id'), nullable=False )
+    category = relationship("ProductCategory", uselist=False, foreign_keys=[category_id])
+    riskGroup_id = Column(Integer(), ForeignKey('RiskGroup.id'))
+    riskGroup = relationship("RiskGroup", uselist=False, foreign_keys=[riskGroup_id])
+    provider_id = Column(Integer(), ForeignKey('Provider.id'), nullable=False )
+    provider = relationship("Provider", uselist=False, foreign_keys=[provider_id])
+    contactPoint_id = Column(Integer(), ForeignKey('ContactPoint.id'))
+    contactPoint = relationship("ContactPoint", uselist=False, foreign_keys=[contactPoint_id])
+    
+    
+    # ManyToMany
+    additionalCategory = relationship( "ProductCategory", secondary="ProductOrService_additionalCategory")
+    
+    
+    # ManyToMany
+    pathogenIdentification = relationship( "PathogenIdentification", secondary="ProductOrService_pathogenIdentification")
+    
+    
+    # ManyToMany
+    relatedDOI = relationship( "DOI", secondary="ProductOrService_relatedDOI")
+    
+    
+    # ManyToMany
+    collection = relationship( "Collection", secondary="ProductOrService_collection")
+    
+    
+    # ManyToMany
+    keywords = relationship( "Keyword", secondary="ProductOrService_keywords")
+    
+    
+    # ManyToMany
+    complementaryDocument = relationship( "Document", secondary="ProductOrService_complementaryDocument")
+    
+    
+    # ManyToMany
+    productPicture = relationship( "Image", secondary="ProductOrService_productPicture")
+    
+    
+    # ManyToMany
+    externalRelatedReference = relationship( "ExternalRelatedReference", secondary="ProductOrService_externalRelatedReference")
+    
+    
+    # ManyToMany
+    certification = relationship( "Certification", secondary="ProductOrService_certification")
+    
+
+    def __repr__(self):
+        return f"ProductOrService(id={self.id},name={self.name},description={self.description},accessPointURL={self.accessPointURL},refSKU={self.refSKU},unitDefinition={self.unitDefinition},unitCost={self.unitCost},qualityGrading={self.qualityGrading},biosafetyRestrictions={self.biosafetyRestrictions},canItBeUsedToProduceGMO={self.canItBeUsedToProduceGMO},availability={self.availability},technicalRecommendation={self.technicalRecommendation},internalReference={self.internalReference},note={self.note},category_id={self.category_id},riskGroup_id={self.riskGroup_id},provider_id={self.provider_id},contactPoint_id={self.contactPoint_id},)"
+
+
+
+    
+    # Using concrete inheritance: see https://docs.sqlalchemy.org/en/14/orm/inheritance.html
+    __mapper_args__ = {
+        'concrete': True
+    }
+    
+
+
+class MSDS(Dataset):
+    """
+    A Material Safety Data Sheet (MSDS) or Safety Data Sheet (SDS) is a standardized document that contains crucial occupational safety and health information related to the product
+    """
+    __tablename__ = 'MSDS'
+
+    id = Column(Integer(), primary_key=True, autoincrement=True , nullable=False )
+    physicalChemicalProperties = Column(Text())
+    hazardsIdentification = Column(Text())
+    firstAidMeasures = Column(Text())
+    fireFightingMeasures = Column(Text())
+    accidentalReleaseMeasures = Column(Text())
+    handlingAndStorage = Column(Text())
+    exposureControlsPersonalProtection = Column(Text())
+    stabilityAndReactivity = Column(Text())
+    toxicologicalInformation = Column(Text())
+    ecologicalInformation = Column(Text())
+    disposalConsiderations = Column(Text())
+    transportInformation = Column(Text())
+    regulatoryInformation = Column(Text())
+    furtherInformation = Column(Text())
+    msdsContact_id = Column(Integer(), ForeignKey('ContactPoint.id'), nullable=False )
+    msdsContact = relationship("ContactPoint", uselist=False, foreign_keys=[msdsContact_id])
+    
+
+    def __repr__(self):
+        return f"MSDS(id={self.id},physicalChemicalProperties={self.physicalChemicalProperties},hazardsIdentification={self.hazardsIdentification},firstAidMeasures={self.firstAidMeasures},fireFightingMeasures={self.fireFightingMeasures},accidentalReleaseMeasures={self.accidentalReleaseMeasures},handlingAndStorage={self.handlingAndStorage},exposureControlsPersonalProtection={self.exposureControlsPersonalProtection},stabilityAndReactivity={self.stabilityAndReactivity},toxicologicalInformation={self.toxicologicalInformation},ecologicalInformation={self.ecologicalInformation},disposalConsiderations={self.disposalConsiderations},transportInformation={self.transportInformation},regulatoryInformation={self.regulatoryInformation},furtherInformation={self.furtherInformation},msdsContact_id={self.msdsContact_id},)"
+
+
+
+    
+    # Using concrete inheritance: see https://docs.sqlalchemy.org/en/14/orm/inheritance.html
+    __mapper_args__ = {
+        'concrete': True
+    }
+    
+
+
+class Data(File):
+    """
+    Subclass of File representing structured or unstructured datasets, often used for analysis, storage, or transfer of information
+    """
+    __tablename__ = 'Data'
+
+    id = Column(Integer(), primary_key=True, autoincrement=True , nullable=False )
+    name = Column(Text(), nullable=False )
+    description = Column(Text())
+    contentURL = Column(Text(), nullable=False )
+    format = Column(Text(), nullable=False )
+    license_id = Column(Integer(), ForeignKey('License.id'))
+    license = relationship("License", uselist=False, foreign_keys=[license_id])
+    
+
+    def __repr__(self):
+        return f"Data(id={self.id},name={self.name},description={self.description},contentURL={self.contentURL},format={self.format},license_id={self.license_id},)"
+
+
+
+    
+    # Using concrete inheritance: see https://docs.sqlalchemy.org/en/14/orm/inheritance.html
+    __mapper_args__ = {
+        'concrete': True
+    }
+    
+
+
+class Document(File):
+    """
+    Subclass of File representing textual or written files such as reports, manuals, or forms
+    """
+    __tablename__ = 'Document'
+
+    id = Column(Integer(), primary_key=True, autoincrement=True , nullable=False )
+    name = Column(Text(), nullable=False )
+    description = Column(Text())
+    contentURL = Column(Text(), nullable=False )
+    format = Column(Text(), nullable=False )
+    license_id = Column(Integer(), ForeignKey('License.id'))
+    license = relationship("License", uselist=False, foreign_keys=[license_id])
+    
+
+    def __repr__(self):
+        return f"Document(id={self.id},name={self.name},description={self.description},contentURL={self.contentURL},format={self.format},license_id={self.license_id},)"
+
+
+
+    
+    # Using concrete inheritance: see https://docs.sqlalchemy.org/en/14/orm/inheritance.html
+    __mapper_args__ = {
+        'concrete': True
+    }
+    
+
+
+class Audio(File):
+    """
+    Subclass of File representing sound recordings or audio tracks
+    """
+    __tablename__ = 'Audio'
+
+    id = Column(Integer(), primary_key=True, autoincrement=True , nullable=False )
+    name = Column(Text(), nullable=False )
+    description = Column(Text())
+    contentURL = Column(Text(), nullable=False )
+    format = Column(Text(), nullable=False )
+    license_id = Column(Integer(), ForeignKey('License.id'))
+    license = relationship("License", uselist=False, foreign_keys=[license_id])
+    
+
+    def __repr__(self):
+        return f"Audio(id={self.id},name={self.name},description={self.description},contentURL={self.contentURL},format={self.format},license_id={self.license_id},)"
+
+
+
+    
+    # Using concrete inheritance: see https://docs.sqlalchemy.org/en/14/orm/inheritance.html
+    __mapper_args__ = {
+        'concrete': True
+    }
+    
+
+
+class Video(File):
+    """
+    Subclass of File representing moving visual media, such as recordings, presentations, or movies
+    """
+    __tablename__ = 'Video'
+
+    id = Column(Integer(), primary_key=True, autoincrement=True , nullable=False )
+    name = Column(Text(), nullable=False )
+    description = Column(Text())
+    contentURL = Column(Text(), nullable=False )
+    format = Column(Text(), nullable=False )
+    license_id = Column(Integer(), ForeignKey('License.id'))
+    license = relationship("License", uselist=False, foreign_keys=[license_id])
+    
+
+    def __repr__(self):
+        return f"Video(id={self.id},name={self.name},description={self.description},contentURL={self.contentURL},format={self.format},license_id={self.license_id},)"
+
+
+
+    
+    # Using concrete inheritance: see https://docs.sqlalchemy.org/en/14/orm/inheritance.html
+    __mapper_args__ = {
+        'concrete': True
+    }
+    
+
+
+class Image(File):
+    """
+    Subclass of File representing visual content such as pictures, diagrams, or illustrations
+    """
+    __tablename__ = 'Image'
+
+    id = Column(Integer(), primary_key=True, autoincrement=True , nullable=False )
+    altText = Column(Text())
+    name = Column(Text(), nullable=False )
+    description = Column(Text())
+    contentURL = Column(Text(), nullable=False )
+    format = Column(Text(), nullable=False )
+    license_id = Column(Integer(), ForeignKey('License.id'))
+    license = relationship("License", uselist=False, foreign_keys=[license_id])
+    
+
+    def __repr__(self):
+        return f"Image(id={self.id},altText={self.altText},name={self.name},description={self.description},contentURL={self.contentURL},format={self.format},license_id={self.license_id},)"
+
+
+
+    
+    # Using concrete inheritance: see https://docs.sqlalchemy.org/en/14/orm/inheritance.html
+    __mapper_args__ = {
+        'concrete': True
+    }
+    
+
+
+class Taxonomy(Catalogue):
+    """
+    Science of naming, defining and classifying organisms
+    """
+    __tablename__ = 'Taxonomy'
+
+    id = Column(Integer(), primary_key=True, autoincrement=True , nullable=False )
+    name = Column(Text(), nullable=False )
+    description = Column(Text())
+    taxonDataProvider_id = Column(Integer(), ForeignKey('DataProvider.id'))
+    taxonDataProvider = relationship("DataProvider", uselist=False, foreign_keys=[taxonDataProvider_id])
+    version_id = Column(Integer(), ForeignKey('Version.id'), nullable=False )
+    version = relationship("Version", uselist=False, foreign_keys=[version_id])
+    versionDataProvider_id = Column(Integer(), ForeignKey('DataProvider.id'), nullable=False )
+    versionDataProvider = relationship("DataProvider", uselist=False, foreign_keys=[versionDataProvider_id])
+    rankDataProvider_id = Column(Integer(), ForeignKey('DataProvider.id'))
+    rankDataProvider = relationship("DataProvider", uselist=False, foreign_keys=[rankDataProvider_id])
+    
+    
+    # ManyToMany
+    taxon = relationship( "Taxon", secondary="Taxonomy_taxon")
+    
+    
+    # ManyToMany
+    rank = relationship( "TaxonomicRank", secondary="Taxonomy_rank")
+    
+
+    def __repr__(self):
+        return f"Taxonomy(id={self.id},name={self.name},description={self.description},taxonDataProvider_id={self.taxonDataProvider_id},version_id={self.version_id},versionDataProvider_id={self.versionDataProvider_id},rankDataProvider_id={self.rankDataProvider_id},)"
+
+
+
+    
+    # Using concrete inheritance: see https://docs.sqlalchemy.org/en/14/orm/inheritance.html
+    __mapper_args__ = {
+        'concrete': True
+    }
+    
+
+
+class Vocabulary(Catalogue):
+    """
+    A subset of words or phrases specific to a particular subject or field
+    """
+    __tablename__ = 'Vocabulary'
+
+    id = Column(Integer(), primary_key=True, autoincrement=True , nullable=False )
+    name = Column(Text(), nullable=False )
+    description = Column(Text())
+    termDataProvider_id = Column(Integer(), ForeignKey('DataProvider.id'))
+    termDataProvider = relationship("DataProvider", uselist=False, foreign_keys=[termDataProvider_id])
+    
+    
+    # ManyToMany
+    term = relationship( "Term", secondary="Vocabulary_term")
+    
+
+    def __repr__(self):
+        return f"Vocabulary(id={self.id},name={self.name},description={self.description},termDataProvider_id={self.termDataProvider_id},)"
+
+
+
+    
+    # Using concrete inheritance: see https://docs.sqlalchemy.org/en/14/orm/inheritance.html
+    __mapper_args__ = {
+        'concrete': True
+    }
+    
+
+
+class VirusName(CommonName):
+    """
+    A virus vernacular name or a name that describes a group of viruses
+    """
+    __tablename__ = 'VirusName'
+
+    id = Column(Integer(), primary_key=True, autoincrement=True , nullable=False )
+    name = Column(Text(), nullable=False )
+    description = Column(Text())
+    weight = Column(Integer(), nullable=False )
+    inVocabulary_id = Column(Integer(), ForeignKey('Vocabulary.id'), nullable=False )
+    inVocabulary = relationship("Vocabulary", uselist=False, foreign_keys=[inVocabulary_id])
+    
+    
+    # ManyToMany
+    alternateName = relationship( "AlternateName", secondary="VirusName_alternateName")
+    
+    
+    sourceOfInformation_rel = relationship( "VirusNameSourceOfInformation" )
+    sourceOfInformation = association_proxy("sourceOfInformation_rel", "sourceOfInformation",
+                                  creator=lambda x_: VirusNameSourceOfInformation(sourceOfInformation=x_))
+    
+
+    def __repr__(self):
+        return f"VirusName(id={self.id},name={self.name},description={self.description},weight={self.weight},inVocabulary_id={self.inVocabulary_id},)"
+
+
+
+    
+    # Using concrete inheritance: see https://docs.sqlalchemy.org/en/14/orm/inheritance.html
+    __mapper_args__ = {
+        'concrete': True
+    }
+    
+
+
+class IPLCOrigin(GeographicalOrigin):
+    """
+    The IPLC area (Indigenous People and Local Communities) from which a physical item originates
+    """
+    __tablename__ = 'IPLCOrigin'
+
+    id = Column(Integer(), primary_key=True, autoincrement=True , nullable=False )
+    name = Column(Text(), nullable=False )
+    description = Column(Text())
+    weight = Column(Integer(), nullable=False )
+    inVocabulary_id = Column(Integer(), ForeignKey('Vocabulary.id'), nullable=False )
+    inVocabulary = relationship("Vocabulary", uselist=False, foreign_keys=[inVocabulary_id])
+    
+
+    def __repr__(self):
+        return f"IPLCOrigin(id={self.id},name={self.name},description={self.description},weight={self.weight},inVocabulary_id={self.inVocabulary_id},)"
+
+
+
+    
+    # Using concrete inheritance: see https://docs.sqlalchemy.org/en/14/orm/inheritance.html
+    __mapper_args__ = {
+        'concrete': True
+    }
+    
+
+
+class Variant(CommonName):
+    """
+    An organism with one or more new mutations is referred to as a “variant” of the original organism if not sufficiently different to be termed a distinct strain
+    """
+    __tablename__ = 'Variant'
+
+    id = Column(Integer(), primary_key=True, autoincrement=True , nullable=False )
+    name = Column(Text(), nullable=False )
+    description = Column(Text())
+    weight = Column(Integer(), nullable=False )
+    inVocabulary_id = Column(Integer(), ForeignKey('Vocabulary.id'), nullable=False )
+    inVocabulary = relationship("Vocabulary", uselist=False, foreign_keys=[inVocabulary_id])
+    
+    
+    # ManyToMany
+    alternateName = relationship( "AlternateName", secondary="Variant_alternateName")
+    
+    
+    sourceOfInformation_rel = relationship( "VariantSourceOfInformation" )
+    sourceOfInformation = association_proxy("sourceOfInformation_rel", "sourceOfInformation",
+                                  creator=lambda x_: VariantSourceOfInformation(sourceOfInformation=x_))
+    
+
+    def __repr__(self):
+        return f"Variant(id={self.id},name={self.name},description={self.description},weight={self.weight},inVocabulary_id={self.inVocabulary_id},)"
+
+
+
+    
+    # Using concrete inheritance: see https://docs.sqlalchemy.org/en/14/orm/inheritance.html
+    __mapper_args__ = {
+        'concrete': True
+    }
+    
+
+
+class RI(Organization):
+    """
+    A research infrastructure
+    """
+    __tablename__ = 'RI'
+
+    id = Column(Integer(), primary_key=True, autoincrement=True , nullable=False )
+    name = Column(Text(), nullable=False )
+    description = Column(Text())
+    homePage = Column(Text())
+    alternateName_id = Column(Integer(), ForeignKey('AlternateName.id'))
+    alternateName = relationship("AlternateName", uselist=False, foreign_keys=[alternateName_id])
+    country_id = Column(Integer(), ForeignKey('Country.id'))
+    country = relationship("Country", uselist=False, foreign_keys=[country_id])
+    contactPoint_id = Column(Integer(), ForeignKey('ContactPoint.id'))
+    contactPoint = relationship("ContactPoint", uselist=False, foreign_keys=[contactPoint_id])
+    logo_id = Column(Integer(), ForeignKey('Image.id'))
+    logo = relationship("Image", uselist=False, foreign_keys=[logo_id])
+    
+
+    def __repr__(self):
+        return f"RI(id={self.id},name={self.name},description={self.description},homePage={self.homePage},alternateName_id={self.alternateName_id},country_id={self.country_id},contactPoint_id={self.contactPoint_id},logo_id={self.logo_id},)"
+
+
+
+    
+    # Using concrete inheritance: see https://docs.sqlalchemy.org/en/14/orm/inheritance.html
+    __mapper_args__ = {
+        'concrete': True
+    }
+    
+
+
+class Provider(Organization):
+    """
+    A provider of products or services, as a specific organization
+    """
+    __tablename__ = 'Provider'
+
+    id = Column(Integer(), primary_key=True, autoincrement=True , nullable=False )
+    name = Column(Text(), nullable=False )
+    description = Column(Text())
+    homePage = Column(Text())
+    alternateName_id = Column(Integer(), ForeignKey('AlternateName.id'))
+    alternateName = relationship("AlternateName", uselist=False, foreign_keys=[alternateName_id])
+    country_id = Column(Integer(), ForeignKey('Country.id'))
+    country = relationship("Country", uselist=False, foreign_keys=[country_id])
+    contactPoint_id = Column(Integer(), ForeignKey('ContactPoint.id'))
+    contactPoint = relationship("ContactPoint", uselist=False, foreign_keys=[contactPoint_id])
+    logo_id = Column(Integer(), ForeignKey('Image.id'))
+    logo = relationship("Image", uselist=False, foreign_keys=[logo_id])
+    
+    
+    # ManyToMany
+    memberOfRI = relationship( "RI", secondary="Provider_memberOfRI")
+    
+
+    def __repr__(self):
+        return f"Provider(id={self.id},name={self.name},description={self.description},homePage={self.homePage},alternateName_id={self.alternateName_id},country_id={self.country_id},contactPoint_id={self.contactPoint_id},logo_id={self.logo_id},)"
 
 
 
@@ -5952,175 +6126,6 @@ class Product(ProductOrService):
 
     def __repr__(self):
         return f"Product(id={self.id},shippingConditions={self.shippingConditions},storageConditions={self.storageConditions},thirdPartyDistributionConsent={self.thirdPartyDistributionConsent},usageRestrictions={self.usageRestrictions},name={self.name},description={self.description},accessPointURL={self.accessPointURL},refSKU={self.refSKU},unitDefinition={self.unitDefinition},unitCost={self.unitCost},qualityGrading={self.qualityGrading},biosafetyRestrictions={self.biosafetyRestrictions},canItBeUsedToProduceGMO={self.canItBeUsedToProduceGMO},availability={self.availability},technicalRecommendation={self.technicalRecommendation},internalReference={self.internalReference},note={self.note},hasIATAClassification_id={self.hasIATAClassification_id},materialSafetyDataSheet_id={self.materialSafetyDataSheet_id},originator_id={self.originator_id},category_id={self.category_id},riskGroup_id={self.riskGroup_id},provider_id={self.provider_id},contactPoint_id={self.contactPoint_id},)"
-
-
-
-    
-    # Using concrete inheritance: see https://docs.sqlalchemy.org/en/14/orm/inheritance.html
-    __mapper_args__ = {
-        'concrete': True
-    }
-    
-
-
-class VirusName(CommonName):
-    """
-    A virus vernacular name or a name that describes a group of viruses
-    """
-    __tablename__ = 'VirusName'
-
-    id = Column(Integer(), primary_key=True, autoincrement=True , nullable=False )
-    name = Column(Text(), nullable=False )
-    description = Column(Text())
-    weight = Column(Integer(), nullable=False )
-    inVocabulary_id = Column(Integer(), ForeignKey('Vocabulary.id'), nullable=False )
-    inVocabulary = relationship("Vocabulary", uselist=False, foreign_keys=[inVocabulary_id])
-    
-    
-    # ManyToMany
-    alternateName = relationship( "AlternateName", secondary="VirusName_alternateName")
-    
-    
-    sourceOfInformation_rel = relationship( "VirusNameSourceOfInformation" )
-    sourceOfInformation = association_proxy("sourceOfInformation_rel", "sourceOfInformation",
-                                  creator=lambda x_: VirusNameSourceOfInformation(sourceOfInformation=x_))
-    
-
-    def __repr__(self):
-        return f"VirusName(id={self.id},name={self.name},description={self.description},weight={self.weight},inVocabulary_id={self.inVocabulary_id},)"
-
-
-
-    
-    # Using concrete inheritance: see https://docs.sqlalchemy.org/en/14/orm/inheritance.html
-    __mapper_args__ = {
-        'concrete': True
-    }
-    
-
-
-class IPLCOrigin(GeographicalOrigin):
-    """
-    The IPLC area (Indigenous People and Local Communities) from which a physical item originates
-    """
-    __tablename__ = 'IPLCOrigin'
-
-    id = Column(Integer(), primary_key=True, autoincrement=True , nullable=False )
-    name = Column(Text(), nullable=False )
-    description = Column(Text())
-    weight = Column(Integer(), nullable=False )
-    inVocabulary_id = Column(Integer(), ForeignKey('Vocabulary.id'), nullable=False )
-    inVocabulary = relationship("Vocabulary", uselist=False, foreign_keys=[inVocabulary_id])
-    
-
-    def __repr__(self):
-        return f"IPLCOrigin(id={self.id},name={self.name},description={self.description},weight={self.weight},inVocabulary_id={self.inVocabulary_id},)"
-
-
-
-    
-    # Using concrete inheritance: see https://docs.sqlalchemy.org/en/14/orm/inheritance.html
-    __mapper_args__ = {
-        'concrete': True
-    }
-    
-
-
-class Variant(CommonName):
-    """
-    An organism with one or more new mutations is referred to as a “variant” of the original organism if not sufficiently different to be termed a distinct strain
-    """
-    __tablename__ = 'Variant'
-
-    id = Column(Integer(), primary_key=True, autoincrement=True , nullable=False )
-    name = Column(Text(), nullable=False )
-    description = Column(Text())
-    weight = Column(Integer(), nullable=False )
-    inVocabulary_id = Column(Integer(), ForeignKey('Vocabulary.id'), nullable=False )
-    inVocabulary = relationship("Vocabulary", uselist=False, foreign_keys=[inVocabulary_id])
-    
-    
-    # ManyToMany
-    alternateName = relationship( "AlternateName", secondary="Variant_alternateName")
-    
-    
-    sourceOfInformation_rel = relationship( "VariantSourceOfInformation" )
-    sourceOfInformation = association_proxy("sourceOfInformation_rel", "sourceOfInformation",
-                                  creator=lambda x_: VariantSourceOfInformation(sourceOfInformation=x_))
-    
-
-    def __repr__(self):
-        return f"Variant(id={self.id},name={self.name},description={self.description},weight={self.weight},inVocabulary_id={self.inVocabulary_id},)"
-
-
-
-    
-    # Using concrete inheritance: see https://docs.sqlalchemy.org/en/14/orm/inheritance.html
-    __mapper_args__ = {
-        'concrete': True
-    }
-    
-
-
-class RI(Organization):
-    """
-    A research infrastructure
-    """
-    __tablename__ = 'RI'
-
-    id = Column(Integer(), primary_key=True, autoincrement=True , nullable=False )
-    name = Column(Text(), nullable=False )
-    description = Column(Text())
-    homePage = Column(Text())
-    alternateName_id = Column(Integer(), ForeignKey('AlternateName.id'))
-    alternateName = relationship("AlternateName", uselist=False, foreign_keys=[alternateName_id])
-    country_id = Column(Integer(), ForeignKey('Country.id'))
-    country = relationship("Country", uselist=False, foreign_keys=[country_id])
-    contactPoint_id = Column(Integer(), ForeignKey('ContactPoint.id'))
-    contactPoint = relationship("ContactPoint", uselist=False, foreign_keys=[contactPoint_id])
-    logo_id = Column(Integer(), ForeignKey('Image.id'))
-    logo = relationship("Image", uselist=False, foreign_keys=[logo_id])
-    
-
-    def __repr__(self):
-        return f"RI(id={self.id},name={self.name},description={self.description},homePage={self.homePage},alternateName_id={self.alternateName_id},country_id={self.country_id},contactPoint_id={self.contactPoint_id},logo_id={self.logo_id},)"
-
-
-
-    
-    # Using concrete inheritance: see https://docs.sqlalchemy.org/en/14/orm/inheritance.html
-    __mapper_args__ = {
-        'concrete': True
-    }
-    
-
-
-class Provider(Organization):
-    """
-    A provider of products or services, as a specific organization
-    """
-    __tablename__ = 'Provider'
-
-    id = Column(Integer(), primary_key=True, autoincrement=True , nullable=False )
-    name = Column(Text(), nullable=False )
-    description = Column(Text())
-    homePage = Column(Text())
-    alternateName_id = Column(Integer(), ForeignKey('AlternateName.id'))
-    alternateName = relationship("AlternateName", uselist=False, foreign_keys=[alternateName_id])
-    country_id = Column(Integer(), ForeignKey('Country.id'))
-    country = relationship("Country", uselist=False, foreign_keys=[country_id])
-    contactPoint_id = Column(Integer(), ForeignKey('ContactPoint.id'))
-    contactPoint = relationship("ContactPoint", uselist=False, foreign_keys=[contactPoint_id])
-    logo_id = Column(Integer(), ForeignKey('Image.id'))
-    logo = relationship("Image", uselist=False, foreign_keys=[logo_id])
-    
-    
-    # ManyToMany
-    memberOfRI = relationship( "RI", secondary="Provider_memberOfRI")
-    
-
-    def __repr__(self):
-        return f"Provider(id={self.id},name={self.name},description={self.description},homePage={self.homePage},alternateName_id={self.alternateName_id},country_id={self.country_id},contactPoint_id={self.contactPoint_id},logo_id={self.logo_id},)"
 
 
 

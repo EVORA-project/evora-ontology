@@ -47,9 +47,8 @@ URI: [EVORAO:ProteinTag](https://raw.githubusercontent.com/EVORA-project/evora-o
 
 ## Inheritance
 * [Resource](Resource.md)
-    * [Dataset](Dataset.md)
-        * [Term](Term.md)
-            * **ProteinTag**
+    * [Term](Term.md)
+        * **ProteinTag**
 
 
 
