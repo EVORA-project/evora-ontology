@@ -1,7 +1,7 @@
  syntax="proto3";
  package
 // metamodel_version: 1.7.0
-// version: 1.0.8352
+// version: 1.0.8369
 // List of alternate names for things
 message AlternateName
  {
@@ -567,6 +567,7 @@ message Organization
   image logo = 0
   alternateName alternateName = 0
   country country = 0
+  string rORiD = 0
  }
 // The individual or organization responsible for the original discovery, isolation, or creation of an item, providing information about the source or origin of the sample
 message Originator
@@ -867,6 +868,7 @@ message Provider
   image logo = 0
   alternateName alternateName = 0
   country country = 0
+  string rORiD = 0
  repeated  rI memberOfRI = 0
  }
 // A scientific publication
@@ -894,6 +896,7 @@ message RI
   image logo = 0
   alternateName alternateName = 0
   country country = 0
+  string rORiD = 0
  }
 // Risk group classification guides initial handling of biological agents in labs but doesn't systematically equate to biosafety levels. Actual risk varies with the agent, procedures, and personnel competence
 message RiskGroup

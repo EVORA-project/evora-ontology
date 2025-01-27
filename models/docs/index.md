@@ -236,6 +236,7 @@ Name: EVORAO
 | [relatedPDB](relatedPDB.md) |  |
 | [resourceURL](resourceURL.md) |  |
 | [riskGroup](riskGroup.md) |  |
+| [rORiD](rORiD.md) |  |
 | [sequence](sequence.md) |  |
 | [sequenceChecked](sequenceChecked.md) |  |
 | [sequenceFASTA](sequenceFASTA.md) |  |

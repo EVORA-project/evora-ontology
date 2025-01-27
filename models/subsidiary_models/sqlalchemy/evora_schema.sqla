@@ -5246,6 +5246,7 @@ class Organization(PersonOrOrganization):
     __tablename__ = 'Organization'
 
     id = Column(Integer(), primary_key=True, autoincrement=True , nullable=False )
+    rORiD = Column(Text())
     name = Column(Text(), nullable=False )
     description = Column(Text())
     homePage = Column(Text())
@@ -5260,7 +5261,7 @@ class Organization(PersonOrOrganization):
     
 
     def __repr__(self):
-        return f"Organization(id={self.id},name={self.name},description={self.description},homePage={self.homePage},alternateName_id={self.alternateName_id},country_id={self.country_id},contactPoint_id={self.contactPoint_id},logo_id={self.logo_id},)"
+        return f"Organization(id={self.id},rORiD={self.rORiD},name={self.name},description={self.description},homePage={self.homePage},alternateName_id={self.alternateName_id},country_id={self.country_id},contactPoint_id={self.contactPoint_id},logo_id={self.logo_id},)"
 
 
 
@@ -5815,6 +5816,7 @@ class RI(Organization):
     __tablename__ = 'RI'
 
     id = Column(Integer(), primary_key=True, autoincrement=True , nullable=False )
+    rORiD = Column(Text())
     name = Column(Text(), nullable=False )
     description = Column(Text())
     homePage = Column(Text())
@@ -5829,7 +5831,7 @@ class RI(Organization):
     
 
     def __repr__(self):
-        return f"RI(id={self.id},name={self.name},description={self.description},homePage={self.homePage},alternateName_id={self.alternateName_id},country_id={self.country_id},contactPoint_id={self.contactPoint_id},logo_id={self.logo_id},)"
+        return f"RI(id={self.id},rORiD={self.rORiD},name={self.name},description={self.description},homePage={self.homePage},alternateName_id={self.alternateName_id},country_id={self.country_id},contactPoint_id={self.contactPoint_id},logo_id={self.logo_id},)"
 
 
 
@@ -5848,6 +5850,7 @@ class Provider(Organization):
     __tablename__ = 'Provider'
 
     id = Column(Integer(), primary_key=True, autoincrement=True , nullable=False )
+    rORiD = Column(Text())
     name = Column(Text(), nullable=False )
     description = Column(Text())
     homePage = Column(Text())
@@ -5866,7 +5869,7 @@ class Provider(Organization):
     
 
     def __repr__(self):
-        return f"Provider(id={self.id},name={self.name},description={self.description},homePage={self.homePage},alternateName_id={self.alternateName_id},country_id={self.country_id},contactPoint_id={self.contactPoint_id},logo_id={self.logo_id},)"
+        return f"Provider(id={self.id},rORiD={self.rORiD},name={self.name},description={self.description},homePage={self.homePage},alternateName_id={self.alternateName_id},country_id={self.country_id},contactPoint_id={self.contactPoint_id},logo_id={self.logo_id},)"
 
 
 

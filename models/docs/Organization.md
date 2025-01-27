@@ -72,6 +72,8 @@ URI: [EVORAO:Organization](https://raw.githubusercontent.com/EVORA-project/evora
         
       Organization : name
         
+      Organization : rORiD
+        
       
 ```
 
@@ -94,6 +96,7 @@ URI: [EVORAO:Organization](https://raw.githubusercontent.com/EVORA-project/evora
 | ---  | --- | --- | --- |
 | [alternateName](alternateName.md) | 0..1 _recommended_ <br/> [AlternateName](AlternateName.md) | An alternate name or acronym | direct |
 | [country](country.md) | 0..1 _recommended_ <br/> [Country](Country.md) | The country of the organization | direct |
+| [rORiD](rORiD.md) | 0..1 _recommended_ <br/> [String](String.md) | The corresponding organization's persistent identifier from the Research Orga... | direct |
 | [name](name.md) | 1 <br/> [String](String.md) | The label that allows humans to identify the current item | [PersonOrOrganization](PersonOrOrganization.md) |
 | [description](description.md) | 0..1 _recommended_ <br/> [String](String.md) | A short explanation of the characteristics, features, or nature of the curren... | [PersonOrOrganization](PersonOrOrganization.md) |
 | [homePage](homePage.md) | 0..1 <br/> [String](String.md) | Refers to the degree of purity achieved for a protein sample | [PersonOrOrganization](PersonOrOrganization.md) |
@@ -157,6 +160,7 @@ is_a: PersonOrOrganization
 slots:
 - alternateName
 - country
+- rORiD
 slot_usage:
   alternateName:
     name: alternateName
@@ -179,6 +183,19 @@ slot_usage:
     domain_of:
     - Organization
     range: Country
+    required: false
+    recommended: true
+    multivalued: false
+  rORiD:
+    name: rORiD
+    description: The corresponding organization's persistent identifier from the Research
+      Organization Registry (ROR)
+    title: ROR iD
+    exact_mappings:
+    - wdp:P6782
+    domain_of:
+    - Organization
+    range: string
     required: false
     recommended: true
     multivalued: false
@@ -223,6 +240,19 @@ slot_usage:
     required: false
     recommended: true
     multivalued: false
+  rORiD:
+    name: rORiD
+    description: The corresponding organization's persistent identifier from the Research
+      Organization Registry (ROR)
+    title: ROR iD
+    exact_mappings:
+    - wdp:P6782
+    domain_of:
+    - Organization
+    range: string
+    required: false
+    recommended: true
+    multivalued: false
 attributes:
   alternateName:
     name: alternateName
@@ -253,6 +283,23 @@ attributes:
     domain_of:
     - Organization
     range: Country
+    required: false
+    recommended: true
+    multivalued: false
+  rORiD:
+    name: rORiD
+    description: The corresponding organization's persistent identifier from the Research
+      Organization Registry (ROR)
+    title: ROR iD
+    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+    exact_mappings:
+    - wdp:P6782
+    rank: 1000
+    alias: rORiD
+    owner: Organization
+    domain_of:
+    - Organization
+    range: string
     required: false
     recommended: true
     multivalued: false

@@ -29,51 +29,51 @@
     dcterms:license "https://creativecommons.org/publicdomain/zero/1.0/" ;
     dcterms:title "European Viral Outbreak Response Alliance Ontology" ;
     pav:createdBy <https://github.com/Angatar> ;
-    pav:version "1.0.8352" ;
+    pav:version "1.0.8369" ;
     schema1:inLanguage "en" ;
     skos:definition "The EVORA Ontology harmonizes metadata in virology to describe viral resources, their derived products, and services. It aligns with FAIR principles to ensure interoperability, accessibility, and reusability across various projects. The EVORA Ontology aims to support preparedness and response to pandemics." ;
     sh:declare [ sh:namespace foaf: ;
             sh:prefix "foaf" ],
-        [ sh:namespace linkml: ;
-            sh:prefix "linkml" ],
-        [ sh:namespace <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#> ;
-            sh:prefix "EVORAO" ],
-        [ sh:namespace <http://www.wikidata.org/entity/> ;
-            sh:prefix "wd" ],
-        [ sh:namespace owl: ;
-            sh:prefix "owl" ],
-        [ sh:namespace skos: ;
-            sh:prefix "skos" ],
-        [ sh:namespace <http://www.w3.org/2006/vcard/ns#> ;
-            sh:prefix "vcard" ],
-        [ sh:namespace rdf: ;
-            sh:prefix "rdf" ],
-        [ sh:namespace pav: ;
-            sh:prefix "pav" ],
-        [ sh:namespace <http://purl.obolibrary.org/obo/IAO_> ;
-            sh:prefix "IAO" ],
-        [ sh:namespace dcat: ;
-            sh:prefix "dcat" ],
-        [ sh:namespace <http://rs.tdwg.org/dwc/terms/> ;
-            sh:prefix "dwc" ],
-        [ sh:namespace schema1: ;
-            sh:prefix "schema" ],
-        [ sh:namespace <http://www.w3.org/ns/regorg#> ;
-            sh:prefix "rov" ],
-        [ sh:namespace rdfs: ;
-            sh:prefix "rdfs" ],
-        [ sh:namespace dcterms: ;
-            sh:prefix "dct" ],
-        [ sh:namespace <http://www.wikidata.org/prop/> ;
-            sh:prefix "wdp" ],
         [ sh:namespace dcmitype: ;
             sh:prefix "dcmi" ],
+        [ sh:namespace pav: ;
+            sh:prefix "pav" ],
+        [ sh:namespace dcat: ;
+            sh:prefix "dcat" ],
+        [ sh:namespace owl: ;
+            sh:prefix "owl" ],
+        [ sh:namespace <http://www.wikidata.org/prop/> ;
+            sh:prefix "wdp" ],
+        [ sh:namespace <http://www.w3.org/ns/adms#> ;
+            sh:prefix "adms" ],
+        [ sh:namespace schema1: ;
+            sh:prefix "schema" ],
         [ sh:namespace xsd: ;
             sh:prefix "xsd" ],
+        [ sh:namespace linkml: ;
+            sh:prefix "linkml" ],
         [ sh:namespace prov: ;
             sh:prefix "prov" ],
-        [ sh:namespace <http://www.w3.org/ns/adms#> ;
-            sh:prefix "adms" ] ;
+        [ sh:namespace <http://www.w3.org/ns/regorg#> ;
+            sh:prefix "rov" ],
+        [ sh:namespace <http://rs.tdwg.org/dwc/terms/> ;
+            sh:prefix "dwc" ],
+        [ sh:namespace skos: ;
+            sh:prefix "skos" ],
+        [ sh:namespace <http://www.wikidata.org/entity/> ;
+            sh:prefix "wd" ],
+        [ sh:namespace <http://purl.obolibrary.org/obo/IAO_> ;
+            sh:prefix "IAO" ],
+        [ sh:namespace <http://www.w3.org/2006/vcard/ns#> ;
+            sh:prefix "vcard" ],
+        [ sh:namespace dcterms: ;
+            sh:prefix "dct" ],
+        [ sh:namespace <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#> ;
+            sh:prefix "EVORAO" ],
+        [ sh:namespace rdfs: ;
+            sh:prefix "rdfs" ],
+        [ sh:namespace rdf: ;
+            sh:prefix "rdf" ] ;
     linkml:classes <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/AlternateName>,
         <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Antibody>,
         <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Audio>,
@@ -152,7 +152,7 @@
         <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Vocabulary> ;
     linkml:default_prefix "EVORAO" ;
     linkml:default_range <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/string> ;
-    linkml:generation_date "2025-01-23T14:45:40"^^xsd:dateTime ;
+    linkml:generation_date "2025-01-27T09:19:48"^^xsd:dateTime ;
     linkml:id <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#> ;
     linkml:imports linkml:types ;
     linkml:metamodel_version "1.7.0" ;
@@ -260,6 +260,7 @@
         <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Nucleic_Acid_titer>,
         <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Organization_alternateName>,
         <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Organization_country>,
+        <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Organization_rORiD>,
         <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/PathogenIdentification_genotype>,
         <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/PathogenIdentification_hostType>,
         <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/PathogenIdentification_isolate>,
@@ -508,6 +509,7 @@
         <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/qualityGrading>,
         <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/queryMethod>,
         <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/queryURL>,
+        <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/rORiD>,
         <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/rank>,
         <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/rankDataProvider>,
         <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/recombinantMaterial>,
@@ -569,8 +571,8 @@
         <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/versionOf>,
         <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/weight> ;
     linkml:source_file "evora_schema.yaml" ;
-    linkml:source_file_date "2025-01-23T14:44:09"^^xsd:dateTime ;
-    linkml:source_file_size 150428 ;
+    linkml:source_file_date "2025-01-27T09:18:15"^^xsd:dateTime ;
+    linkml:source_file_size 150889 ;
     linkml:types <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/boolean>,
         <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/curie>,
         <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/date>,
@@ -2797,6 +2799,7 @@
 <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Person_oRCIDiD> a linkml:SlotDefinition ;
     dcterms:title "ORCID iD" ;
     skos:definition "Unique persistent identifier for a person, provided by the Open Researcher and Contributor ID (ORCID) organisation" ;
+    skos:exactMatch <http://www.wikidata.org/prop/P496> ;
     skos:inScheme <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#> ;
     skos:prefLabel "oRCIDiD" ;
     linkml:definition_uri <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#oRCIDiD> ;
@@ -3222,6 +3225,7 @@
     linkml:slot_usage [ ] ;
     linkml:slots <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Organization_alternateName>,
         <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Organization_country>,
+        <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Organization_rORiD>,
         <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/PersonOrOrganization_contactPoint>,
         <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/PersonOrOrganization_description>,
         <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/PersonOrOrganization_homePage>,
@@ -4800,6 +4804,14 @@
     linkml:range <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/string> ;
     linkml:slot_uri <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#queryURL> .
 
+<https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/rORiD> a linkml:SlotDefinition ;
+    skos:inScheme <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#> ;
+    linkml:definition_uri <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#rORiD> ;
+    linkml:domain_of <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Organization> ;
+    linkml:owner <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Organization> ;
+    linkml:range <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/string> ;
+    linkml:slot_uri <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#rORiD> .
+
 <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/rankDataProvider> a linkml:SlotDefinition ;
     skos:inScheme <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#> ;
     linkml:definition_uri <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#rankDataProvider> ;
@@ -5526,7 +5538,7 @@
 
 <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/BiologicalPartOrigin_accessToPhysicalGeneticResource> a linkml:SlotDefinition ;
     dcterms:title "access to physical genetic resource" ;
-    skos:definition "Reference of the permit identifiers for access to the genetic resource, applicable if the genetic resource falls under Access and Benefit-Sharing (ABS) regulations" ;
+    skos:definition "Indicate if the biological part was produced with access to a physical genetic resource" ;
     skos:inScheme <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#> ;
     skos:prefLabel "accessToPhysicalGeneticResource" ;
     linkml:definition_uri <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#accessToPhysicalGeneticResource> ;
@@ -5627,6 +5639,23 @@
     linkml:recommended true ;
     linkml:slot_uri <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#country> ;
     linkml:usage_slot_name "country" .
+
+<https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Organization_rORiD> a linkml:SlotDefinition ;
+    dcterms:title "ROR iD" ;
+    skos:definition "The corresponding organization's persistent identifier from the Research Organization Registry (ROR)" ;
+    skos:exactMatch <http://www.wikidata.org/prop/P6782> ;
+    skos:inScheme <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#> ;
+    skos:prefLabel "rORiD" ;
+    linkml:definition_uri <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#rORiD> ;
+    linkml:domain <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Organization> ;
+    linkml:domain_of <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Organization> ;
+    linkml:is_a <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/rORiD> ;
+    linkml:is_usage_slot true ;
+    linkml:owner <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Organization> ;
+    linkml:range <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/string> ;
+    linkml:recommended true ;
+    linkml:slot_uri <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#rORiD> ;
+    linkml:usage_slot_name "rORiD" .
 
 <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/alternateName> a linkml:SlotDefinition ;
     skos:inScheme <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#> ;
@@ -5960,6 +5989,7 @@
     linkml:slot_usage [ ] ;
     linkml:slots <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Organization_alternateName>,
         <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Organization_country>,
+        <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Organization_rORiD>,
         <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/PersonOrOrganization_contactPoint>,
         <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/PersonOrOrganization_description>,
         <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/PersonOrOrganization_homePage>,
@@ -6616,24 +6646,6 @@
     linkml:definition_uri <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#Dataset> ;
     linkml:is_a <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Resource> ;
     linkml:slot_usage [ ] .
-
-<https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Organization> a linkml:ClassDefinition ;
-    dcterms:title "Organization" ;
-    skos:closeMatch <vcard:Organization>,
-        <wd:Q43229> ;
-    skos:definition "A social entity established to meet needs or pursue specific goals" ;
-    skos:inScheme <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#> ;
-    linkml:class_uri <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#Organization> ;
-    linkml:definition_uri <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#Organization> ;
-    linkml:is_a <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/PersonOrOrganization> ;
-    linkml:slot_usage [ ] ;
-    linkml:slots <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Organization_alternateName>,
-        <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Organization_country>,
-        <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/PersonOrOrganization_contactPoint>,
-        <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/PersonOrOrganization_description>,
-        <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/PersonOrOrganization_homePage>,
-        <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/PersonOrOrganization_logo>,
-        <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/PersonOrOrganization_name> .
 
 <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/SequenceReference> a linkml:ClassDefinition ;
     dcterms:title "Sequence reference" ;
@@ -7313,6 +7325,25 @@
     linkml:recommended true ;
     linkml:slot_uri <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#unitDefinition> ;
     linkml:usage_slot_name "unitDefinition" .
+
+<https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Organization> a linkml:ClassDefinition ;
+    dcterms:title "Organization" ;
+    skos:closeMatch <vcard:Organization>,
+        <wd:Q43229> ;
+    skos:definition "A social entity established to meet needs or pursue specific goals" ;
+    skos:inScheme <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#> ;
+    linkml:class_uri <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#Organization> ;
+    linkml:definition_uri <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#Organization> ;
+    linkml:is_a <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/PersonOrOrganization> ;
+    linkml:slot_usage [ ] ;
+    linkml:slots <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Organization_alternateName>,
+        <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Organization_country>,
+        <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Organization_rORiD>,
+        <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/PersonOrOrganization_contactPoint>,
+        <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/PersonOrOrganization_description>,
+        <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/PersonOrOrganization_homePage>,
+        <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/PersonOrOrganization_logo>,
+        <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/PersonOrOrganization_name> .
 
 <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/BiologicalMaterialOrigin> a linkml:ClassDefinition ;
     dcterms:title "Biological material origin" ;

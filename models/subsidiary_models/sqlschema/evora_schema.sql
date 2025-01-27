@@ -244,6 +244,7 @@
 --     * Slot: logo_id Description: A path or URL to the related logo
 -- # Class: "Organization" Description: "A social entity established to meet needs or pursue specific goals"
 --     * Slot: id Description: 
+--     * Slot: rORiD Description: The corresponding organization's persistent identifier from the Research Organization Registry (ROR)
 --     * Slot: name Description: The label that allows humans to identify the current item
 --     * Slot: description Description: A short explanation of the characteristics, features, or nature of the current item
 --     * Slot: homePage Description: Refers to the degree of purity achieved for a protein sample. Possible values include ">95%" (the protein is highly purified, with more than 95% purity) and "Unpurified expression host lysate or partly purified protein" (the protein is either unpurified and present in the host cell lysate or only partially purified).
@@ -253,6 +254,7 @@
 --     * Slot: logo_id Description: A path or URL to the related logo
 -- # Class: "RI" Description: "A research infrastructure"
 --     * Slot: id Description: 
+--     * Slot: rORiD Description: The corresponding organization's persistent identifier from the Research Organization Registry (ROR)
 --     * Slot: name Description: The label that allows humans to identify the current item
 --     * Slot: description Description: A short explanation of the characteristics, features, or nature of the current item
 --     * Slot: homePage Description: Refers to the degree of purity achieved for a protein sample. Possible values include ">95%" (the protein is highly purified, with more than 95% purity) and "Unpurified expression host lysate or partly purified protein" (the protein is either unpurified and present in the host cell lysate or only partially purified).
@@ -262,6 +264,7 @@
 --     * Slot: logo_id Description: A path or URL to the related logo
 -- # Class: "Provider" Description: "A provider of products or services, as a specific organization"
 --     * Slot: id Description: 
+--     * Slot: rORiD Description: The corresponding organization's persistent identifier from the Research Organization Registry (ROR)
 --     * Slot: name Description: The label that allows humans to identify the current item
 --     * Slot: description Description: A short explanation of the characteristics, features, or nature of the current item
 --     * Slot: homePage Description: Refers to the degree of purity achieved for a protein sample. Possible values include ">95%" (the protein is highly purified, with more than 95% purity) and "Unpurified expression host lysate or partly purified protein" (the protein is either unpurified and present in the host cell lysate or only partially purified).
@@ -282,14 +285,14 @@
 --     * Slot: biologicalSourceType Description: Defines if the current biological material is natural and was collected or if it is a synthetic biological material. It makes sense that only recombinant biological materials can have a mixed material origin!
 -- # Class: "BiologicalPartOrigin" Description: "Information on the origin of a unitary, cohesive part that is part of, or constitutes the biological material. It can be multiple parts in case of a recombinant biological material"
 --     * Slot: id Description: 
---     * Slot: accessToPhysicalGeneticResource Description: Reference of the permit identifiers for access to the genetic resource, applicable if the genetic resource falls under Access and Benefit-Sharing (ABS) regulations
+--     * Slot: accessToPhysicalGeneticResource Description: Indicate if the biological part was produced with access to a physical genetic resource
 --     * Slot: recombinantPartIdentification_id Description: Identification of a recombinant part
 -- # Class: "NaturalPartOrigin" Description: "Information on the origin of a natural part that composes the biological material"
 --     * Slot: id Description: 
 --     * Slot: collectionDate Description: The date when the sample was collected in situ. If unknown/private, use a proxy date such as "date received" and indicate this by setting to true the before date property
 --     * Slot: beforeDate Description: Set to TRUE if a proxy date for the collection date is used
 --     * Slot: permitIdentifierForABS Description: Reference of the permit identifiers for access to the genetic resource, applicable if the genetic resource falls under Access and Benefit-Sharing (ABS) regulations
---     * Slot: accessToPhysicalGeneticResource Description: Reference of the permit identifiers for access to the genetic resource, applicable if the genetic resource falls under Access and Benefit-Sharing (ABS) regulations
+--     * Slot: accessToPhysicalGeneticResource Description: Indicate if the biological part was produced with access to a physical genetic resource
 --     * Slot: countryOfCollection_id Description: The geographical location where the sample was collected in situ. Used for Nagoya/CBD; equivalent to "country of origin".
 --     * Slot: indigenousPoepleAndLocalCommunityOrigin_id Description: The specific IPLC area (Indigenous People and Local Communities) from which this sample/element was sampled, if relevant
 --     * Slot: recombinantPartIdentification_id Description: Identification of a recombinant part
@@ -297,7 +300,7 @@
 --     * Slot: id Description: 
 --     * Slot: modificationsFromTheReferenceSequences Description: Set to TRUE if there was is any modification made from the reference sequence
 --     * Slot: descriptionOfModificationsMadeFromTheReferenceSequences Description: List the modifications mades from the reference sequence if any
---     * Slot: accessToPhysicalGeneticResource Description: Reference of the permit identifiers for access to the genetic resource, applicable if the genetic resource falls under Access and Benefit-Sharing (ABS) regulations
+--     * Slot: accessToPhysicalGeneticResource Description: Indicate if the biological part was produced with access to a physical genetic resource
 --     * Slot: recombinantPartIdentification_id Description: Identification of a recombinant part
 -- # Class: "RecombinantPartIdentification" Description: "Identification of a recombinant part"
 --     * Slot: id Description: 
@@ -2210,6 +2213,7 @@ CREATE TABLE "Person" (
 );
 CREATE TABLE "Organization" (
 	id INTEGER NOT NULL, 
+	"rORiD" TEXT, 
 	name TEXT NOT NULL, 
 	description TEXT, 
 	"homePage" TEXT, 
@@ -2225,6 +2229,7 @@ CREATE TABLE "Organization" (
 );
 CREATE TABLE "RI" (
 	id INTEGER NOT NULL, 
+	"rORiD" TEXT, 
 	name TEXT NOT NULL, 
 	description TEXT, 
 	"homePage" TEXT, 
@@ -2240,6 +2245,7 @@ CREATE TABLE "RI" (
 );
 CREATE TABLE "Provider" (
 	id INTEGER NOT NULL, 
+	"rORiD" TEXT, 
 	name TEXT NOT NULL, 
 	description TEXT, 
 	"homePage" TEXT, 

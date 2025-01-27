@@ -18,7 +18,7 @@
     "https://orcid.org/0000-0002-2042-2839"
   ],
   "id": "https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#",
-  "version": "1.0.8352",
+  "version": "1.0.8369",
   "imports": [
     "linkml:types"
   ],
@@ -1178,6 +1178,18 @@
       "definition_uri": "https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#country",
       "from_schema": "https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#",
       "slot_uri": "https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#country",
+      "owner": "Organization",
+      "domain_of": [
+        "Organization"
+      ],
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "rORiD",
+      "definition_uri": "https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#rORiD",
+      "from_schema": "https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#",
+      "slot_uri": "https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#rORiD",
       "owner": "Organization",
       "domain_of": [
         "Organization"
@@ -4382,6 +4394,9 @@
       "description": "Unique persistent identifier for a person, provided by the Open Researcher and Contributor ID (ORCID) organisation",
       "title": "ORCID iD",
       "from_schema": "https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#",
+      "exact_mappings": [
+        "http://www.wikidata.org/prop/P496"
+      ],
       "is_a": "oRCIDiD",
       "domain": "Person",
       "slot_uri": "https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#oRCIDiD",
@@ -4439,6 +4454,29 @@
       "range": "Country",
       "recommended": true,
       "inlined": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "Organization_rORiD",
+      "definition_uri": "https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#rORiD",
+      "description": "The corresponding organization's persistent identifier from the Research Organization Registry (ROR)",
+      "title": "ROR iD",
+      "from_schema": "https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#",
+      "exact_mappings": [
+        "http://www.wikidata.org/prop/P6782"
+      ],
+      "is_a": "rORiD",
+      "domain": "Organization",
+      "slot_uri": "https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#rORiD",
+      "alias": "rORiD",
+      "owner": "Organization",
+      "domain_of": [
+        "Organization"
+      ],
+      "is_usage_slot": true,
+      "usage_slot_name": "rORiD",
+      "range": "string",
+      "recommended": true,
       "@type": "SlotDefinition"
     },
     {
@@ -4557,7 +4595,7 @@
     {
       "name": "BiologicalPartOrigin_accessToPhysicalGeneticResource",
       "definition_uri": "https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#accessToPhysicalGeneticResource",
-      "description": "Reference of the permit identifiers for access to the genetic resource, applicable if the genetic resource falls under Access and Benefit-Sharing (ABS) regulations",
+      "description": "Indicate if the biological part was produced with access to a physical genetic resource",
       "title": "access to physical genetic resource",
       "from_schema": "https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#",
       "is_a": "accessToPhysicalGeneticResource",
@@ -8680,7 +8718,8 @@
         "PersonOrOrganization_contactPoint",
         "PersonOrOrganization_logo",
         "Organization_alternateName",
-        "Organization_country"
+        "Organization_country",
+        "Organization_rORiD"
       ],
       "slot_usage": {},
       "class_uri": "https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#Organization",
@@ -8703,7 +8742,8 @@
         "PersonOrOrganization_contactPoint",
         "PersonOrOrganization_logo",
         "Organization_alternateName",
-        "Organization_country"
+        "Organization_country",
+        "Organization_rORiD"
       ],
       "slot_usage": {},
       "class_uri": "https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#RI",
@@ -8727,6 +8767,7 @@
         "PersonOrOrganization_logo",
         "Organization_alternateName",
         "Organization_country",
+        "Organization_rORiD",
         "Provider_memberOfRI"
       ],
       "slot_usage": {},
@@ -10042,9 +10083,9 @@
   ],
   "metamodel_version": "1.7.0",
   "source_file": "evora_schema.yaml",
-  "source_file_date": "2025-01-23T14:44:09",
-  "source_file_size": 150428,
-  "generation_date": "2025-01-23T14:44:23",
+  "source_file_date": "2025-01-27T09:18:15",
+  "source_file_size": 150889,
+  "generation_date": "2025-01-27T09:18:31",
   "@type": "SchemaDefinition",
   "@context": [
     "https://w3id.org/linkml/types.context.jsonld",

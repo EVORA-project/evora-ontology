@@ -83,7 +83,7 @@ URI: [EVORAO:NaturalPartOrigin](https://raw.githubusercontent.com/EVORA-project/
 | [beforeDate](beforeDate.md) | 1 <br/> [Boolean](Boolean.md) | Set to TRUE if a proxy date for the collection date is used | direct |
 | [permitIdentifierForABS](permitIdentifierForABS.md) | 0..1 <br/> [String](String.md) | Reference of the permit identifiers for access to the genetic resource, appli... | direct |
 | [recombinantPartIdentification](recombinantPartIdentification.md) | 0..1 <br/> [RecombinantPartIdentification](RecombinantPartIdentification.md) | Identification of a recombinant part | [BiologicalPartOrigin](BiologicalPartOrigin.md) |
-| [accessToPhysicalGeneticResource](accessToPhysicalGeneticResource.md) | 1 <br/> [Boolean](Boolean.md) | Reference of the permit identifiers for access to the genetic resource, appli... | [BiologicalPartOrigin](BiologicalPartOrigin.md) |
+| [accessToPhysicalGeneticResource](accessToPhysicalGeneticResource.md) | 1 <br/> [Boolean](Boolean.md) | Indicate if the biological part was produced with access to a physical geneti... | [BiologicalPartOrigin](BiologicalPartOrigin.md) |
 
 
 
@@ -360,9 +360,8 @@ attributes:
     multivalued: false
   accessToPhysicalGeneticResource:
     name: accessToPhysicalGeneticResource
-    description: Reference of the permit identifiers for access to the genetic resource,
-      applicable if the genetic resource falls under Access and Benefit-Sharing (ABS)
-      regulations
+    description: Indicate if the biological part was produced with access to a physical
+      genetic resource
     title: access to physical genetic resource
     from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
     rank: 1000

@@ -136,6 +136,8 @@ slot_usage:
     description: Unique persistent identifier for a person, provided by the Open Researcher
       and Contributor ID (ORCID) organisation
     title: ORCID iD
+    exact_mappings:
+    - wdp:P496
     domain_of:
     - Person
     - ContactPoint
@@ -165,6 +167,8 @@ slot_usage:
     description: Unique persistent identifier for a person, provided by the Open Researcher
       and Contributor ID (ORCID) organisation
     title: ORCID iD
+    exact_mappings:
+    - wdp:P496
     domain_of:
     - Person
     - ContactPoint
@@ -179,6 +183,8 @@ attributes:
       and Contributor ID (ORCID) organisation
     title: ORCID iD
     from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+    exact_mappings:
+    - wdp:P496
     rank: 1000
     alias: oRCIDiD
     owner: Person

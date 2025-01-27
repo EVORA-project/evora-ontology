@@ -29,7 +29,7 @@ from pydantic import (
 
 
 metamodel_version = "None"
-version = "1.0.8352"
+version = "1.0.8369"
 
 
 class ConfiguredBaseModel(BaseModel):
@@ -83,7 +83,7 @@ linkml_meta = LinkMLMeta({'contributors': ['https://github.com/Angatar',
                     'interoperability, accessibility, and reusability across '
                     'various projects. The EVORA Ontology aims to support '
                     'preparedness and response to pandemics.',
-     'generation_date': '2025-01-23T15:43:45',
+     'generation_date': '2025-01-27T10:17:49',
      'id': 'https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#',
      'imports': ['linkml:types'],
      'in_language': 'en',
@@ -2771,6 +2771,7 @@ class Person(PersonOrOrganization):
                                                    'Researcher and Contributor ID '
                                                    '(ORCID) organisation',
                                     'domain_of': ['Person', 'ContactPoint'],
+                                    'exact_mappings': ['wdp:P496'],
                                     'multivalued': False,
                                     'name': 'oRCIDiD',
                                     'range': 'string',
@@ -2781,6 +2782,7 @@ class Person(PersonOrOrganization):
 
     oRCIDiD: Optional[str] = Field(default=None, title="ORCID iD", description="""Unique persistent identifier for a person, provided by the Open Researcher and Contributor ID (ORCID) organisation""", json_schema_extra = { "linkml_meta": {'alias': 'oRCIDiD',
          'domain_of': ['Person', 'ContactPoint'],
+         'exact_mappings': ['wdp:P496'],
          'recommended': True} })
     name: str = Field(default=..., title="name", description="""The label that allows humans to identify the current item""", json_schema_extra = { "linkml_meta": {'alias': 'name',
          'close_mappings': ['rdfs:label'],
@@ -2847,7 +2849,18 @@ class Organization(PersonOrOrganization):
                                     'range': 'Country',
                                     'recommended': True,
                                     'required': False,
-                                    'title': 'country'}},
+                                    'title': 'country'},
+                        'rORiD': {'description': "The corresponding organization's "
+                                                 'persistent identifier from the '
+                                                 'Research Organization Registry (ROR)',
+                                  'domain_of': ['Organization'],
+                                  'exact_mappings': ['wdp:P6782'],
+                                  'multivalued': False,
+                                  'name': 'rORiD',
+                                  'range': 'string',
+                                  'recommended': True,
+                                  'required': False,
+                                  'title': 'ROR iD'}},
          'title': 'Organization'})
 
     alternateName: Optional[AlternateName] = Field(default=None, title="alternate name", description="""An alternate name or acronym""", json_schema_extra = { "linkml_meta": {'alias': 'alternateName',
@@ -2855,6 +2868,10 @@ class Organization(PersonOrOrganization):
          'domain_of': ['Organization', 'CommonName', 'AlternateName'],
          'recommended': True} })
     country: Optional[Country] = Field(default=None, title="country", description="""The country of the organization""", json_schema_extra = { "linkml_meta": {'alias': 'country', 'domain_of': ['Organization'], 'recommended': True} })
+    rORiD: Optional[str] = Field(default=None, title="ROR iD", description="""The corresponding organization's persistent identifier from the Research Organization Registry (ROR)""", json_schema_extra = { "linkml_meta": {'alias': 'rORiD',
+         'domain_of': ['Organization'],
+         'exact_mappings': ['wdp:P6782'],
+         'recommended': True} })
     name: str = Field(default=..., title="name", description="""The label that allows humans to identify the current item""", json_schema_extra = { "linkml_meta": {'alias': 'name',
          'close_mappings': ['rdfs:label'],
          'comments': ['The title of the item should be as short and descriptive as '
@@ -2909,6 +2926,10 @@ class RI(Organization):
          'domain_of': ['Organization', 'CommonName', 'AlternateName'],
          'recommended': True} })
     country: Optional[Country] = Field(default=None, title="country", description="""The country of the organization""", json_schema_extra = { "linkml_meta": {'alias': 'country', 'domain_of': ['Organization'], 'recommended': True} })
+    rORiD: Optional[str] = Field(default=None, title="ROR iD", description="""The corresponding organization's persistent identifier from the Research Organization Registry (ROR)""", json_schema_extra = { "linkml_meta": {'alias': 'rORiD',
+         'domain_of': ['Organization'],
+         'exact_mappings': ['wdp:P6782'],
+         'recommended': True} })
     name: str = Field(default=..., title="name", description="""The label that allows humans to identify the current item""", json_schema_extra = { "linkml_meta": {'alias': 'name',
          'close_mappings': ['rdfs:label'],
          'comments': ['The title of the item should be as short and descriptive as '
@@ -2973,6 +2994,10 @@ class Provider(Organization):
          'domain_of': ['Organization', 'CommonName', 'AlternateName'],
          'recommended': True} })
     country: Optional[Country] = Field(default=None, title="country", description="""The country of the organization""", json_schema_extra = { "linkml_meta": {'alias': 'country', 'domain_of': ['Organization'], 'recommended': True} })
+    rORiD: Optional[str] = Field(default=None, title="ROR iD", description="""The corresponding organization's persistent identifier from the Research Organization Registry (ROR)""", json_schema_extra = { "linkml_meta": {'alias': 'rORiD',
+         'domain_of': ['Organization'],
+         'exact_mappings': ['wdp:P6782'],
+         'recommended': True} })
     name: str = Field(default=..., title="name", description="""The label that allows humans to identify the current item""", json_schema_extra = { "linkml_meta": {'alias': 'name',
          'close_mappings': ['rdfs:label'],
          'comments': ['The title of the item should be as short and descriptive as '
@@ -3141,24 +3166,16 @@ class BiologicalPartOrigin(Dataset):
     """
     linkml_meta: ClassVar[LinkMLMeta] = LinkMLMeta({'abstract': True,
          'from_schema': 'https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#',
-         'slot_usage': {'accessToPhysicalGeneticResource': {'description': 'Reference '
-                                                                           'of the '
-                                                                           'permit '
-                                                                           'identifiers '
-                                                                           'for access '
-                                                                           'to the '
-                                                                           'genetic '
-                                                                           'resource, '
-                                                                           'applicable '
+         'slot_usage': {'accessToPhysicalGeneticResource': {'description': 'Indicate '
                                                                            'if the '
+                                                                           'biological '
+                                                                           'part was '
+                                                                           'produced '
+                                                                           'with '
+                                                                           'access to '
+                                                                           'a physical '
                                                                            'genetic '
-                                                                           'resource '
-                                                                           'falls '
-                                                                           'under '
-                                                                           'Access and '
-                                                                           'Benefit-Sharing '
-                                                                           '(ABS) '
-                                                                           'regulations',
+                                                                           'resource',
                                                             'domain_of': ['BiologicalPartOrigin'],
                                                             'multivalued': False,
                                                             'name': 'accessToPhysicalGeneticResource',
@@ -3193,7 +3210,7 @@ class BiologicalPartOrigin(Dataset):
          'comments': ['Information not required if the current biological part '
                       'constitutes the complete biological material'],
          'domain_of': ['BiologicalPartOrigin']} })
-    accessToPhysicalGeneticResource: bool = Field(default=..., title="access to physical genetic resource", description="""Reference of the permit identifiers for access to the genetic resource, applicable if the genetic resource falls under Access and Benefit-Sharing (ABS) regulations""", json_schema_extra = { "linkml_meta": {'alias': 'accessToPhysicalGeneticResource',
+    accessToPhysicalGeneticResource: bool = Field(default=..., title="access to physical genetic resource", description="""Indicate if the biological part was produced with access to a physical genetic resource""", json_schema_extra = { "linkml_meta": {'alias': 'accessToPhysicalGeneticResource',
          'domain_of': ['BiologicalPartOrigin']} })
 
 
@@ -3296,7 +3313,7 @@ class NaturalPartOrigin(BiologicalPartOrigin):
          'comments': ['Information not required if the current biological part '
                       'constitutes the complete biological material'],
          'domain_of': ['BiologicalPartOrigin']} })
-    accessToPhysicalGeneticResource: bool = Field(default=..., title="access to physical genetic resource", description="""Reference of the permit identifiers for access to the genetic resource, applicable if the genetic resource falls under Access and Benefit-Sharing (ABS) regulations""", json_schema_extra = { "linkml_meta": {'alias': 'accessToPhysicalGeneticResource',
+    accessToPhysicalGeneticResource: bool = Field(default=..., title="access to physical genetic resource", description="""Indicate if the biological part was produced with access to a physical genetic resource""", json_schema_extra = { "linkml_meta": {'alias': 'accessToPhysicalGeneticResource',
          'domain_of': ['BiologicalPartOrigin']} })
 
 
@@ -3363,7 +3380,7 @@ class SyntheticPartOrigin(BiologicalPartOrigin):
          'comments': ['Information not required if the current biological part '
                       'constitutes the complete biological material'],
          'domain_of': ['BiologicalPartOrigin']} })
-    accessToPhysicalGeneticResource: bool = Field(default=..., title="access to physical genetic resource", description="""Reference of the permit identifiers for access to the genetic resource, applicable if the genetic resource falls under Access and Benefit-Sharing (ABS) regulations""", json_schema_extra = { "linkml_meta": {'alias': 'accessToPhysicalGeneticResource',
+    accessToPhysicalGeneticResource: bool = Field(default=..., title="access to physical genetic resource", description="""Indicate if the biological part was produced with access to a physical genetic resource""", json_schema_extra = { "linkml_meta": {'alias': 'accessToPhysicalGeneticResource',
          'domain_of': ['BiologicalPartOrigin']} })
 
 

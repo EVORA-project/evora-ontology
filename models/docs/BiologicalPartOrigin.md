@@ -64,7 +64,7 @@ URI: [EVORAO:BiologicalPartOrigin](https://raw.githubusercontent.com/EVORA-proje
 | Name | Cardinality and Range | Description | Inheritance |
 | ---  | --- | --- | --- |
 | [recombinantPartIdentification](recombinantPartIdentification.md) | 0..1 <br/> [RecombinantPartIdentification](RecombinantPartIdentification.md) | Identification of a recombinant part | direct |
-| [accessToPhysicalGeneticResource](accessToPhysicalGeneticResource.md) | 1 <br/> [Boolean](Boolean.md) | Reference of the permit identifiers for access to the genetic resource, appli... | direct |
+| [accessToPhysicalGeneticResource](accessToPhysicalGeneticResource.md) | 1 <br/> [Boolean](Boolean.md) | Indicate if the biological part was produced with access to a physical geneti... | direct |
 
 
 
@@ -144,9 +144,8 @@ slot_usage:
     multivalued: false
   accessToPhysicalGeneticResource:
     name: accessToPhysicalGeneticResource
-    description: Reference of the permit identifiers for access to the genetic resource,
-      applicable if the genetic resource falls under Access and Benefit-Sharing (ABS)
-      regulations
+    description: Indicate if the biological part was produced with access to a physical
+      genetic resource
     title: access to physical genetic resource
     domain_of:
     - BiologicalPartOrigin
@@ -184,9 +183,8 @@ slot_usage:
     multivalued: false
   accessToPhysicalGeneticResource:
     name: accessToPhysicalGeneticResource
-    description: Reference of the permit identifiers for access to the genetic resource,
-      applicable if the genetic resource falls under Access and Benefit-Sharing (ABS)
-      regulations
+    description: Indicate if the biological part was produced with access to a physical
+      genetic resource
     title: access to physical genetic resource
     domain_of:
     - BiologicalPartOrigin
@@ -212,9 +210,8 @@ attributes:
     multivalued: false
   accessToPhysicalGeneticResource:
     name: accessToPhysicalGeneticResource
-    description: Reference of the permit identifiers for access to the genetic resource,
-      applicable if the genetic resource falls under Access and Benefit-Sharing (ABS)
-      regulations
+    description: Indicate if the biological part was produced with access to a physical
+      genetic resource
     title: access to physical genetic resource
     from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
     rank: 1000

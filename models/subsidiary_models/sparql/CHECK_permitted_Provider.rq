@@ -28,6 +28,7 @@ SELECT ?g ?s ?p WHERE {
    EVORAO:memberOfRI,
    EVORAO:alternateName,
    EVORAO:country,
+   EVORAO:rORiD,
    EVORAO:name,
    EVORAO:description,
    EVORAO:homePage,

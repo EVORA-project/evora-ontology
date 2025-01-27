@@ -19,7 +19,7 @@ contributors:
 - https://orcid.org/0000-0002-1257-6862
 - https://orcid.org/0000-0002-2042-2839
 id: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
-version: 1.0.8352
+version: 1.0.8369
 imports:
 - linkml:types
 license: https://creativecommons.org/publicdomain/zero/1.0/
@@ -190,6 +190,8 @@ slots:
   oRCIDiD:
     from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
   country:
+    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+  rORiD:
     from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
   memberOfRI:
     from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
@@ -1726,6 +1728,8 @@ classes:
         description: Unique persistent identifier for a person, provided by the Open
           Researcher and Contributor ID (ORCID) organisation
         title: ORCID iD
+        exact_mappings:
+        - wdp:P496
         domain_of:
         - Person
         range: string
@@ -1743,6 +1747,7 @@ classes:
     slots:
     - alternateName
     - country
+    - rORiD
     slot_usage:
       alternateName:
         description: An alternate name or acronym
@@ -1761,6 +1766,18 @@ classes:
         domain_of:
         - Organization
         range: Country
+        required: false
+        recommended: true
+        multivalued: false
+      rORiD:
+        description: The corresponding organization's persistent identifier from the
+          Research Organization Registry (ROR)
+        title: ROR iD
+        exact_mappings:
+        - wdp:P6782
+        domain_of:
+        - Organization
+        range: string
         required: false
         recommended: true
         multivalued: false
@@ -1869,9 +1886,8 @@ classes:
         required: false
         multivalued: false
       accessToPhysicalGeneticResource:
-        description: Reference of the permit identifiers for access to the genetic
-          resource, applicable if the genetic resource falls under Access and Benefit-Sharing
-          (ABS) regulations
+        description: Indicate if the biological part was produced with access to a
+          physical genetic resource
         title: access to physical genetic resource
         domain_of:
         - BiologicalPartOrigin
@@ -3903,4 +3919,4 @@ classes:
         required: false
         multivalued: false
 source_file: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl
-generation_date: '2025-01-23T15:43:45'
+generation_date: '2025-01-27T10:17:49'

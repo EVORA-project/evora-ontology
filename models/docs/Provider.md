@@ -74,6 +74,8 @@ URI: [EVORAO:Provider](https://raw.githubusercontent.com/EVORA-project/evora-ont
         
       Provider : name
         
+      Provider : rORiD
+        
       
 ```
 
@@ -96,6 +98,7 @@ URI: [EVORAO:Provider](https://raw.githubusercontent.com/EVORA-project/evora-ont
 | [memberOfRI](memberOfRI.md) | * <br/> [RI](RI.md) | The research infrastructure of which this organization is a member | direct |
 | [alternateName](alternateName.md) | 0..1 _recommended_ <br/> [AlternateName](AlternateName.md) | An alternate name or acronym | [Organization](Organization.md) |
 | [country](country.md) | 0..1 _recommended_ <br/> [Country](Country.md) | The country of the organization | [Organization](Organization.md) |
+| [rORiD](rORiD.md) | 0..1 _recommended_ <br/> [String](String.md) | The corresponding organization's persistent identifier from the Research Orga... | [Organization](Organization.md) |
 | [name](name.md) | 1 <br/> [String](String.md) | The label that allows humans to identify the current item | [PersonOrOrganization](PersonOrOrganization.md) |
 | [description](description.md) | 0..1 _recommended_ <br/> [String](String.md) | A short explanation of the characteristics, features, or nature of the curren... | [PersonOrOrganization](PersonOrOrganization.md) |
 | [homePage](homePage.md) | 0..1 <br/> [String](String.md) | Refers to the degree of purity achieved for a protein sample | [PersonOrOrganization](PersonOrOrganization.md) |
@@ -257,6 +260,23 @@ attributes:
     domain_of:
     - Organization
     range: Country
+    required: false
+    recommended: true
+    multivalued: false
+  rORiD:
+    name: rORiD
+    description: The corresponding organization's persistent identifier from the Research
+      Organization Registry (ROR)
+    title: ROR iD
+    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+    exact_mappings:
+    - wdp:P6782
+    rank: 1000
+    alias: rORiD
+    owner: Provider
+    domain_of:
+    - Organization
+    range: string
     required: false
     recommended: true
     multivalued: false

@@ -1,5 +1,5 @@
 # metamodel_version: 1.7.0
-# version: 1.0.8352
+# version: 1.0.8369
 type AlternateName
   {
     name: String!
@@ -595,6 +595,7 @@ type Organization
     logo: Image
     alternateName: AlternateName
     country: Country
+    rORiD: String
   }
 
 type Originator
@@ -980,6 +981,7 @@ type Provider
     logo: Image
     alternateName: AlternateName
     country: Country
+    rORiD: String
     memberOfRI: [RI]
   }
 
@@ -1011,6 +1013,7 @@ type RI
     logo: Image
     alternateName: AlternateName
     country: Country
+    rORiD: String
   }
 
 type RiskGroup

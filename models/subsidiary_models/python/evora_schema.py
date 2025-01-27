@@ -1,5 +1,5 @@
 # Auto generated from evora_schema.yaml by pythongen.py version: 0.0.1
-# Generation date: 2025-01-23T14:44:28
+# Generation date: 2025-01-27T09:18:36
 # Schema: EVORAO
 #
 # id: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
@@ -61,7 +61,7 @@ from linkml_runtime.linkml_model.types import Boolean, Datetime, Integer, String
 from linkml_runtime.utils.metamodelcore import Bool, URI, XSDDateTime
 
 metamodel_version = "1.7.0"
-version = "1.0.8352"
+version = "1.0.8369"
 
 # Overwrite dataclasses _init_fn to add **kwargs in __init__
 dataclasses._init_fn = dataclasses_init_fn_with_kwargs
@@ -1134,6 +1134,7 @@ class Organization(PersonOrOrganization):
     name: str = None
     alternateName: Optional[Union[dict, AlternateName]] = None
     country: Optional[Union[dict, Country]] = None
+    rORiD: Optional[str] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
         if self.alternateName is not None and not isinstance(self.alternateName, AlternateName):
@@ -1141,6 +1142,9 @@ class Organization(PersonOrOrganization):
 
         if self.country is not None and not isinstance(self.country, Country):
             self.country = Country(**as_dict(self.country))
+
+        if self.rORiD is not None and not isinstance(self.rORiD, str):
+            self.rORiD = str(self.rORiD)
 
         super().__post_init__(**kwargs)
 
@@ -2874,6 +2878,9 @@ slots.oRCIDiD = Slot(uri=EVORAO.oRCIDiD, name="oRCIDiD", curie=EVORAO.curie('oRC
 slots.country = Slot(uri=EVORAO.country, name="country", curie=EVORAO.curie('country'),
                    model_uri=EVORAO.country, domain=None, range=Optional[str])
 
+slots.rORiD = Slot(uri=EVORAO.rORiD, name="rORiD", curie=EVORAO.curie('rORiD'),
+                   model_uri=EVORAO.rORiD, domain=None, range=Optional[str])
+
 slots.memberOfRI = Slot(uri=EVORAO.memberOfRI, name="memberOfRI", curie=EVORAO.curie('memberOfRI'),
                    model_uri=EVORAO.memberOfRI, domain=None, range=Optional[str])
 
@@ -3470,6 +3477,9 @@ slots.Organization_alternateName = Slot(uri=EVORAO.alternateName, name="Organiza
 
 slots.Organization_country = Slot(uri=EVORAO.country, name="Organization_country", curie=EVORAO.curie('country'),
                    model_uri=EVORAO.Organization_country, domain=Organization, range=Optional[Union[dict, Country]])
+
+slots.Organization_rORiD = Slot(uri=EVORAO.rORiD, name="Organization_rORiD", curie=EVORAO.curie('rORiD'),
+                   model_uri=EVORAO.Organization_rORiD, domain=Organization, range=Optional[str])
 
 slots.Provider_memberOfRI = Slot(uri=EVORAO.memberOfRI, name="Provider_memberOfRI", curie=EVORAO.curie('memberOfRI'),
                    model_uri=EVORAO.Provider_memberOfRI, domain=Provider, range=Optional[Union[Union[dict, RI], List[Union[dict, RI]]]])

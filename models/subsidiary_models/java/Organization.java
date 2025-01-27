@@ -5,7 +5,7 @@ import lombok.*;
 
 
 
-/* version: 1.0.8352 */
+/* version: 1.0.8369 */
 
 
 /**
@@ -17,5 +17,6 @@ public class Organization extends PersonOrOrganization {
 
   private AlternateName alternateName;
   private Country country;
+  private String rORiD;
 
 }

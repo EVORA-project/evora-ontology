@@ -1137,6 +1137,10 @@ type Organization struct {
 	 */
 	Country Country `json:"country"`
 	/*
+	 * The corresponding organization's persistent identifier from the Research Organization Registry (ROR)
+	 */
+	RORiD string `json:"rORiD"`
+	/*
 	 * The label that allows humans to identify the current item
 	 */
 	Name string `json:"name"`
@@ -1174,6 +1178,10 @@ type RI struct {
 	 * The country of the organization
 	 */
 	Country Country `json:"country"`
+	/*
+	 * The corresponding organization's persistent identifier from the Research Organization Registry (ROR)
+	 */
+	RORiD string `json:"rORiD"`
 	/*
 	 * The label that allows humans to identify the current item
 	 */
@@ -1216,6 +1224,10 @@ type Provider struct {
 	 * The country of the organization
 	 */
 	Country Country `json:"country"`
+	/*
+	 * The corresponding organization's persistent identifier from the Research Organization Registry (ROR)
+	 */
+	RORiD string `json:"rORiD"`
 	/*
 	 * The label that allows humans to identify the current item
 	 */
@@ -1303,7 +1315,7 @@ type BiologicalPartOrigin struct {
 	 */
 	RecombinantPartIdentification RecombinantPartIdentification `json:"recombinantPartIdentification"`
 	/*
-	 * Reference of the permit identifiers for access to the genetic resource, applicable if the genetic resource falls under Access and Benefit-Sharing (ABS) regulations
+	 * Indicate if the biological part was produced with access to a physical genetic resource
 	 */
 	AccessToPhysicalGeneticResource bool `json:"accessToPhysicalGeneticResource"`
 }
@@ -1341,7 +1353,7 @@ type NaturalPartOrigin struct {
 	 */
 	RecombinantPartIdentification RecombinantPartIdentification `json:"recombinantPartIdentification"`
 	/*
-	 * Reference of the permit identifiers for access to the genetic resource, applicable if the genetic resource falls under Access and Benefit-Sharing (ABS) regulations
+	 * Indicate if the biological part was produced with access to a physical genetic resource
 	 */
 	AccessToPhysicalGeneticResource bool `json:"accessToPhysicalGeneticResource"`
 }
@@ -1367,7 +1379,7 @@ type SyntheticPartOrigin struct {
 	 */
 	RecombinantPartIdentification RecombinantPartIdentification `json:"recombinantPartIdentification"`
 	/*
-	 * Reference of the permit identifiers for access to the genetic resource, applicable if the genetic resource falls under Access and Benefit-Sharing (ABS) regulations
+	 * Indicate if the biological part was produced with access to a physical genetic resource
 	 */
 	AccessToPhysicalGeneticResource bool `json:"accessToPhysicalGeneticResource"`
 }

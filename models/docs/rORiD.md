@@ -1,10 +1,10 @@
 
 
-# Slot: homePage
+# Slot: rORiD
 
 
 
-URI: [EVORAO:homePage](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#homePage)
+URI: [EVORAO:rORiD](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#rORiD)
 
 
 
@@ -18,11 +18,8 @@ URI: [EVORAO:homePage](https://raw.githubusercontent.com/EVORA-project/evora-ont
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [Organization](Organization.md) | A social entity established to meet needs or pursue specific goals |  no  |
+| [Organization](Organization.md) | A social entity established to meet needs or pursue specific goals |  yes  |
 | [RI](RI.md) | A research infrastructure |  no  |
-| [Person](Person.md) | An individual |  no  |
-| [PersonOrOrganization](PersonOrOrganization.md) | A person or an organization |  yes  |
-| [Originator](Originator.md) | The individual or organization responsible for the original discovery, isolat... |  no  |
 | [Provider](Provider.md) | A provider of products or services, as a specific organization |  no  |
 
 
@@ -59,8 +56,8 @@ URI: [EVORAO:homePage](https://raw.githubusercontent.com/EVORA-project/evora-ont
 
 | Mapping Type | Mapped Value |
 | ---  | ---  |
-| self | EVORAO:homePage |
-| native | EVORAO:homePage |
+| self | EVORAO:rORiD |
+| native | EVORAO:rORiD |
 
 
 
@@ -69,12 +66,12 @@ URI: [EVORAO:homePage](https://raw.githubusercontent.com/EVORA-project/evora-ont
 
 <details>
 ```yaml
-name: homePage
+name: rORiD
 from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
 rank: 1000
-alias: homePage
+alias: rORiD
 domain_of:
-- PersonOrOrganization
+- Organization
 range: string
 
 ```
