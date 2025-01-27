@@ -5,7 +5,7 @@ import lombok.*;
 
 
 
-/* version: 1.0.8369 */
+/* version: 1.0.8373 */
 
 
 /**
@@ -13,7 +13,7 @@ import lombok.*;
 **/
 @Data
 @EqualsAndHashCode(callSuper=false)
-public class ExternalRelatedReference extends Dataset {
+public class ExternalRelatedReference extends Resource {
 
   private String reference;
   private String referenceLabel;

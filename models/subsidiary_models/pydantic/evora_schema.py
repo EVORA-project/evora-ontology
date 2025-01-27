@@ -29,7 +29,7 @@ from pydantic import (
 
 
 metamodel_version = "None"
-version = "1.0.8369"
+version = "1.0.8373"
 
 
 class ConfiguredBaseModel(BaseModel):
@@ -83,7 +83,7 @@ linkml_meta = LinkMLMeta({'contributors': ['https://github.com/Angatar',
                     'interoperability, accessibility, and reusability across '
                     'various projects. The EVORA Ontology aims to support '
                     'preparedness and response to pandemics.',
-     'generation_date': '2025-01-27T10:17:49',
+     'generation_date': '2025-01-27T11:43:48',
      'id': 'https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#',
      'imports': ['linkml:types'],
      'in_language': 'en',
@@ -2463,7 +2463,7 @@ class Taxon(Term):
     inVocabulary: Vocabulary = Field(default=..., title="in Vocabulary", description="""Terms belong to a specific vocabulary""", json_schema_extra = { "linkml_meta": {'alias': 'inVocabulary', 'close_mappings': ['wdp:P972'], 'domain_of': ['Term']} })
 
 
-class ExternalRelatedReference(Dataset):
+class ExternalRelatedReference(Resource):
     """
     A reference that permits to retrieve an item from an external provider
     """
@@ -2580,7 +2580,7 @@ class Sequence(Dataset):
          'domain_of': ['Sequence']} })
 
 
-class SequenceReference(Dataset):
+class SequenceReference(Resource):
     """
     A reference that permits to retrieve the sequence information from a sequence provider
     """

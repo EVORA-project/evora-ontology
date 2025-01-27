@@ -18,7 +18,7 @@
     "https://orcid.org/0000-0002-2042-2839"
   ],
   "id": "https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#",
-  "version": "1.0.8369",
+  "version": "1.0.8373",
   "imports": [
     "linkml:types"
   ],
@@ -8606,7 +8606,7 @@
       "description": "A reference that permits to retrieve an item from an external provider",
       "title": "External related reference",
       "from_schema": "https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#",
-      "is_a": "Dataset",
+      "is_a": "Resource",
       "slots": [
         "ExternalRelatedReference_reference",
         "ExternalRelatedReference_referenceLabel",
@@ -8644,7 +8644,7 @@
         "A work on making it a subclass of External related reference might be consistent and beneficial for data structuration but special attention will have to be take to ensure it remains consistent with the actual the use cases for users"
       ],
       "from_schema": "https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#",
-      "is_a": "Dataset",
+      "is_a": "Resource",
       "slots": [
         "SequenceReference_accessionNumber",
         "SequenceReference_sequenceProvider"
@@ -10083,9 +10083,9 @@
   ],
   "metamodel_version": "1.7.0",
   "source_file": "evora_schema.yaml",
-  "source_file_date": "2025-01-27T09:18:15",
-  "source_file_size": 150889,
-  "generation_date": "2025-01-27T09:18:31",
+  "source_file_date": "2025-01-27T10:44:10",
+  "source_file_size": 150891,
+  "generation_date": "2025-01-27T10:44:25",
   "@type": "SchemaDefinition",
   "@context": [
     "https://w3id.org/linkml/types.context.jsonld",

@@ -39,11 +39,7 @@ WHERE {
       , 
       EVORAO:PathogenIdentification
       , 
-      EVORAO:ExternalRelatedReference
-      , 
       EVORAO:Sequence
-      , 
-      EVORAO:SequenceReference
       , 
       EVORAO:BiologicalMaterialOrigin
       , 

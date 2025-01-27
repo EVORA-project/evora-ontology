@@ -5,7 +5,7 @@ import lombok.*;
 
 
 
-/* version: 1.0.8369 */
+/* version: 1.0.8373 */
 
 
 /**
@@ -13,7 +13,7 @@ import lombok.*;
 **/
 @Data
 @EqualsAndHashCode(callSuper=false)
-public class SequenceReference extends Dataset {
+public class SequenceReference extends Resource {
 
   private String accessionNumber;
   private String sequenceProvider;

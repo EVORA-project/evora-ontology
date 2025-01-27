@@ -4275,6 +4275,56 @@ class Term(Resource):
     
 
 
+class ExternalRelatedReference(Resource):
+    """
+    A reference that permits to retrieve an item from an external provider
+    """
+    __tablename__ = 'ExternalRelatedReference'
+
+    id = Column(Integer(), primary_key=True, autoincrement=True , nullable=False )
+    reference = Column(Text(), nullable=False )
+    referenceLabel = Column(Text(), nullable=False )
+    referenceProviderPrefix = Column(Text(), nullable=False )
+    referenceProviderName = Column(Text(), nullable=False )
+    
+
+    def __repr__(self):
+        return f"ExternalRelatedReference(id={self.id},reference={self.reference},referenceLabel={self.referenceLabel},referenceProviderPrefix={self.referenceProviderPrefix},referenceProviderName={self.referenceProviderName},)"
+
+
+
+    
+    # Using concrete inheritance: see https://docs.sqlalchemy.org/en/14/orm/inheritance.html
+    __mapper_args__ = {
+        'concrete': True
+    }
+    
+
+
+class SequenceReference(Resource):
+    """
+    A reference that permits to retrieve the sequence information from a sequence provider
+    """
+    __tablename__ = 'SequenceReference'
+
+    id = Column(Integer(), primary_key=True, autoincrement=True , nullable=False )
+    accessionNumber = Column(Text(), nullable=False )
+    sequenceProvider = Column(Text(), nullable=False )
+    
+
+    def __repr__(self):
+        return f"SequenceReference(id={self.id},accessionNumber={self.accessionNumber},sequenceProvider={self.sequenceProvider},)"
+
+
+
+    
+    # Using concrete inheritance: see https://docs.sqlalchemy.org/en/14/orm/inheritance.html
+    __mapper_args__ = {
+        'concrete': True
+    }
+    
+
+
 class PersonOrOrganization(Resource):
     """
     A person or an organization
@@ -5132,32 +5182,6 @@ class Taxon(Term):
     
 
 
-class ExternalRelatedReference(Dataset):
-    """
-    A reference that permits to retrieve an item from an external provider
-    """
-    __tablename__ = 'ExternalRelatedReference'
-
-    id = Column(Integer(), primary_key=True, autoincrement=True , nullable=False )
-    reference = Column(Text(), nullable=False )
-    referenceLabel = Column(Text(), nullable=False )
-    referenceProviderPrefix = Column(Text(), nullable=False )
-    referenceProviderName = Column(Text(), nullable=False )
-    
-
-    def __repr__(self):
-        return f"ExternalRelatedReference(id={self.id},reference={self.reference},referenceLabel={self.referenceLabel},referenceProviderPrefix={self.referenceProviderPrefix},referenceProviderName={self.referenceProviderName},)"
-
-
-
-    
-    # Using concrete inheritance: see https://docs.sqlalchemy.org/en/14/orm/inheritance.html
-    __mapper_args__ = {
-        'concrete': True
-    }
-    
-
-
 class Sequence(Dataset):
     """
     A nucleic acid or protein sequence information
@@ -5174,30 +5198,6 @@ class Sequence(Dataset):
 
     def __repr__(self):
         return f"Sequence(id={self.id},sequenceFASTA={self.sequenceFASTA},)"
-
-
-
-    
-    # Using concrete inheritance: see https://docs.sqlalchemy.org/en/14/orm/inheritance.html
-    __mapper_args__ = {
-        'concrete': True
-    }
-    
-
-
-class SequenceReference(Dataset):
-    """
-    A reference that permits to retrieve the sequence information from a sequence provider
-    """
-    __tablename__ = 'SequenceReference'
-
-    id = Column(Integer(), primary_key=True, autoincrement=True , nullable=False )
-    accessionNumber = Column(Text(), nullable=False )
-    sequenceProvider = Column(Text(), nullable=False )
-    
-
-    def __repr__(self):
-        return f"SequenceReference(id={self.id},accessionNumber={self.accessionNumber},sequenceProvider={self.sequenceProvider},)"
 
 
 

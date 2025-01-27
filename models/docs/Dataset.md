@@ -30,12 +30,8 @@ URI: [EVORAO:Dataset](https://raw.githubusercontent.com/EVORA-project/evora-onto
         click Catalogue href "../Catalogue"
       Dataset <|-- PathogenIdentification
         click PathogenIdentification href "../PathogenIdentification"
-      Dataset <|-- ExternalRelatedReference
-        click ExternalRelatedReference href "../ExternalRelatedReference"
       Dataset <|-- Sequence
         click Sequence href "../Sequence"
-      Dataset <|-- SequenceReference
-        click SequenceReference href "../SequenceReference"
       Dataset <|-- BiologicalMaterialOrigin
         click BiologicalMaterialOrigin href "../BiologicalMaterialOrigin"
       Dataset <|-- BiologicalPartOrigin
@@ -60,9 +56,7 @@ URI: [EVORAO:Dataset](https://raw.githubusercontent.com/EVORA-project/evora-onto
     * **Dataset**
         * [Catalogue](Catalogue.md)
         * [PathogenIdentification](PathogenIdentification.md)
-        * [ExternalRelatedReference](ExternalRelatedReference.md)
         * [Sequence](Sequence.md)
-        * [SequenceReference](SequenceReference.md)
         * [BiologicalMaterialOrigin](BiologicalMaterialOrigin.md)
         * [BiologicalPartOrigin](BiologicalPartOrigin.md)
         * [RecombinantPartIdentification](RecombinantPartIdentification.md)

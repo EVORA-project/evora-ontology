@@ -1,5 +1,5 @@
 # metamodel_version: 1.7.0
-# version: 1.0.8369
+# version: 1.0.8373
 BASE <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#>
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
@@ -234,8 +234,8 @@ linkml:Sparqlpath xsd:string
 )
 
 <Dataset>  (
-    @<BiologicalMaterialOrigin> OR @<BiologicalPartOrigin> OR @<Catalogue> OR @<ExternalRelatedReference> OR @<MSDS> OR
-    @<PathogenIdentification> OR @<ProductOrService> OR @<RecombinantPartIdentification> OR @<Sequence> OR @<SequenceReference>
+    @<BiologicalMaterialOrigin> OR @<BiologicalPartOrigin> OR @<Catalogue> OR @<MSDS> OR @<PathogenIdentification> OR
+    @<ProductOrService> OR @<RecombinantPartIdentification> OR @<Sequence>
 )
 
 <Dataset_struct> {
@@ -283,8 +283,8 @@ linkml:Sparqlpath xsd:string
 }
 
 <ExternalRelatedReference> CLOSED {
-    (  $<ExternalRelatedReference_tes> (  &<Dataset_tes> ;
-          rdf:type [ <Dataset> ] ? ;
+    (  $<ExternalRelatedReference_tes> (  &<Resource_tes> ;
+          rdf:type [ <Resource> ] ? ;
           <reference> @linkml:String ;
           <referenceLabel> @linkml:String ;
           <referenceProviderPrefix> @linkml:String ;
@@ -726,8 +726,8 @@ linkml:Sparqlpath xsd:string
 }
 
 <Resource>  (
-    @<Certification> OR @<ContactPoint> OR @<DataService> OR @<Dataset> OR @<File> OR @<License> OR @<PersonOrOrganization> OR
-    @<Publication> OR @<Term> OR @<Version>
+    @<Certification> OR @<ContactPoint> OR @<DataService> OR @<Dataset> OR @<ExternalRelatedReference> OR @<File> OR @<License> OR
+    @<PersonOrOrganization> OR @<Publication> OR @<SequenceReference> OR @<Term> OR @<Version>
 )
 
 <Resource_struct> {
@@ -763,8 +763,8 @@ linkml:Sparqlpath xsd:string
 }
 
 <SequenceReference> CLOSED {
-    (  $<SequenceReference_tes> (  &<Dataset_tes> ;
-          rdf:type [ <Dataset> ] ? ;
+    (  $<SequenceReference_tes> (  &<Resource_tes> ;
+          rdf:type [ <Resource> ] ? ;
           <accessionNumber> @linkml:String ;
           <sequenceProvider> @linkml:String
        ) ;

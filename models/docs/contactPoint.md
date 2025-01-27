@@ -18,28 +18,28 @@ URI: [EVORAO:contactPoint](https://raw.githubusercontent.com/EVORA-project/evora
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [Viroid](Viroid.md) | The viroid as a biological material |  no  |
+| [ProductOrService](ProductOrService.md) | A product or a service |  yes  |
+| [Protozoan](Protozoan.md) | The protozoan as a biological material |  no  |
+| [Organization](Organization.md) | A social entity established to meet needs or pursue specific goals |  no  |
+| [Prion](Prion.md) | The prion as a biological material |  no  |
+| [Bacterium](Bacterium.md) | The bacterium as a biological material |  no  |
+| [Fungus](Fungus.md) | The fungus as a biological material |  no  |
+| [NucleicAcid](NucleicAcid.md) | Nucleic acid related to a pathogen |  no  |
+| [Originator](Originator.md) | The individual or organization responsible for the original discovery, isolat... |  no  |
+| [Virus](Virus.md) | The virus as a biological material |  no  |
 | [DetectionKit](DetectionKit.md) | A detection kit for specific pathogens |  no  |
+| [Antibody](Antibody.md) | Protein that can bind to certain types of foreign bodies, such as pathogens |  no  |
+| [Person](Person.md) | An individual |  no  |
 | [PersonOrOrganization](PersonOrOrganization.md) | A person or an organization |  yes  |
-| [Hybridoma](Hybridoma.md) | An hybridoma that provides antibodies that can be related to a pathogen |  no  |
+| [Pathogen](Pathogen.md) | Biological entity that causes disease in its host, which is typically an infe... |  no  |
+| [Service](Service.md) | A service |  no  |
+| [Protein](Protein.md) | A protein as a derived product from a pathogen |  no  |
 | [Provider](Provider.md) | A provider of products or services, as a specific organization |  no  |
 | [Bundle](Bundle.md) | A group of products |  no  |
-| [ProductOrService](ProductOrService.md) | A product or a service |  yes  |
 | [RI](RI.md) | A research infrastructure |  no  |
-| [NucleicAcid](NucleicAcid.md) | Nucleic acid related to a pathogen |  no  |
-| [Antibody](Antibody.md) | Protein that can bind to certain types of foreign bodies, such as pathogens |  no  |
-| [Prion](Prion.md) | The prion as a biological material |  no  |
-| [Pathogen](Pathogen.md) | Biological entity that causes disease in its host, which is typically an infe... |  no  |
-| [Person](Person.md) | An individual |  no  |
-| [Bacterium](Bacterium.md) | The bacterium as a biological material |  no  |
-| [Originator](Originator.md) | The individual or organization responsible for the original discovery, isolat... |  no  |
-| [Protein](Protein.md) | A protein as a derived product from a pathogen |  no  |
-| [Fungus](Fungus.md) | The fungus as a biological material |  no  |
-| [Virus](Virus.md) | The virus as a biological material |  no  |
-| [Organization](Organization.md) | A social entity established to meet needs or pursue specific goals |  no  |
-| [Protozoan](Protozoan.md) | The protozoan as a biological material |  no  |
-| [Service](Service.md) | A service |  no  |
+| [Viroid](Viroid.md) | The viroid as a biological material |  no  |
 | [Product](Product.md) | A product |  no  |
+| [Hybridoma](Hybridoma.md) | An hybridoma that provides antibodies that can be related to a pathogen |  no  |
 
 
 

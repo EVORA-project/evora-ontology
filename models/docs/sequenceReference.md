@@ -18,9 +18,9 @@ URI: [EVORAO:sequenceReference](https://raw.githubusercontent.com/EVORA-project/
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
+| [Antibody](Antibody.md) | Protein that can bind to certain types of foreign bodies, such as pathogens |  yes  |
 | [Hybridoma](Hybridoma.md) | An hybridoma that provides antibodies that can be related to a pathogen |  no  |
 | [Sequence](Sequence.md) | A nucleic acid or protein sequence information |  yes  |
-| [Antibody](Antibody.md) | Protein that can bind to certain types of foreign bodies, such as pathogens |  yes  |
 
 
 

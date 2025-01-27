@@ -1001,7 +1001,7 @@ type ExternalRelatedReference struct {
 	/*
 	 * parent types
 	 */
-	Dataset
+	Resource
 	/*
 	 * The identifier reference of the connected external item
 	 */
@@ -1045,7 +1045,7 @@ type SequenceReference struct {
 	/*
 	 * parent types
 	 */
-	Dataset
+	Resource
 	/*
 	 * The sequence ID that permits to retrieve the sequence information from the sequence provider
 	 */

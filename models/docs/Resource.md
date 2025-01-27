@@ -32,6 +32,10 @@ URI: [EVORAO:Resource](https://raw.githubusercontent.com/EVORA-project/evora-ont
         click Publication href "../Publication"
       Resource <|-- Term
         click Term href "../Term"
+      Resource <|-- ExternalRelatedReference
+        click ExternalRelatedReference href "../ExternalRelatedReference"
+      Resource <|-- SequenceReference
+        click SequenceReference href "../SequenceReference"
       Resource <|-- PersonOrOrganization
         click PersonOrOrganization href "../PersonOrOrganization"
       Resource <|-- File
@@ -57,6 +61,8 @@ URI: [EVORAO:Resource](https://raw.githubusercontent.com/EVORA-project/evora-ont
     * [Version](Version.md)
     * [Publication](Publication.md)
     * [Term](Term.md)
+    * [ExternalRelatedReference](ExternalRelatedReference.md)
+    * [SequenceReference](SequenceReference.md)
     * [PersonOrOrganization](PersonOrOrganization.md)
     * [File](File.md)
     * [ContactPoint](ContactPoint.md)

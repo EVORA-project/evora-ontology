@@ -1,5 +1,5 @@
 # metamodel_version: 1.7.0
-# version: 1.0.8369
+# version: 1.0.8373
 type AlternateName
   {
     name: String!

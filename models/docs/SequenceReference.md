@@ -20,8 +20,8 @@ URI: [EVORAO:SequenceReference](https://raw.githubusercontent.com/EVORA-project/
  classDiagram
     class SequenceReference
     click SequenceReference href "../SequenceReference"
-      Dataset <|-- SequenceReference
-        click Dataset href "../Dataset"
+      Resource <|-- SequenceReference
+        click Resource href "../Resource"
       
       SequenceReference : accessionNumber
         
@@ -36,8 +36,7 @@ URI: [EVORAO:SequenceReference](https://raw.githubusercontent.com/EVORA-project/
 
 ## Inheritance
 * [Resource](Resource.md)
-    * [Dataset](Dataset.md)
-        * **SequenceReference**
+    * **SequenceReference**
 
 
 
@@ -115,7 +114,7 @@ comments:
   and beneficial for data structuration but special attention will have to be take
   to ensure it remains consistent with the actual the use cases for users
 from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
-is_a: Dataset
+is_a: Resource
 slots:
 - accessionNumber
 - sequenceProvider
@@ -161,7 +160,7 @@ comments:
   and beneficial for data structuration but special attention will have to be take
   to ensure it remains consistent with the actual the use cases for users
 from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
-is_a: Dataset
+is_a: Resource
 slot_usage:
   accessionNumber:
     name: accessionNumber

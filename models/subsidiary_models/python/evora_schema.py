@@ -1,5 +1,5 @@
 # Auto generated from evora_schema.yaml by pythongen.py version: 0.0.1
-# Generation date: 2025-01-27T09:18:36
+# Generation date: 2025-01-27T10:44:30
 # Schema: EVORAO
 #
 # id: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
@@ -61,7 +61,7 @@ from linkml_runtime.linkml_model.types import Boolean, Datetime, Integer, String
 from linkml_runtime.utils.metamodelcore import Bool, URI, XSDDateTime
 
 metamodel_version = "1.7.0"
-version = "1.0.8369"
+version = "1.0.8373"
 
 # Overwrite dataclasses _init_fn to add **kwargs in __init__
 dataclasses._init_fn = dataclasses_init_fn_with_kwargs
@@ -965,7 +965,7 @@ class Taxon(Term):
 
 
 @dataclass(repr=False)
-class ExternalRelatedReference(Dataset):
+class ExternalRelatedReference(Resource):
     """
     A reference that permits to retrieve an item from an external provider
     """
@@ -1030,7 +1030,7 @@ class Sequence(Dataset):
 
 
 @dataclass(repr=False)
-class SequenceReference(Dataset):
+class SequenceReference(Resource):
     """
     A reference that permits to retrieve the sequence information from a sequence provider
     """

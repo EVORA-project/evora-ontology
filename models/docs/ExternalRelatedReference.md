@@ -20,8 +20,8 @@ URI: [EVORAO:ExternalRelatedReference](https://raw.githubusercontent.com/EVORA-p
  classDiagram
     class ExternalRelatedReference
     click ExternalRelatedReference href "../ExternalRelatedReference"
-      Dataset <|-- ExternalRelatedReference
-        click Dataset href "../Dataset"
+      Resource <|-- ExternalRelatedReference
+        click Resource href "../Resource"
       
       ExternalRelatedReference : reference
         
@@ -40,8 +40,7 @@ URI: [EVORAO:ExternalRelatedReference](https://raw.githubusercontent.com/EVORA-p
 
 ## Inheritance
 * [Resource](Resource.md)
-    * [Dataset](Dataset.md)
-        * **ExternalRelatedReference**
+    * **ExternalRelatedReference**
 
 
 
@@ -125,7 +124,7 @@ name: ExternalRelatedReference
 description: A reference that permits to retrieve an item from an external provider
 title: External related reference
 from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
-is_a: Dataset
+is_a: Resource
 slots:
 - reference
 - referenceLabel
@@ -191,7 +190,7 @@ name: ExternalRelatedReference
 description: A reference that permits to retrieve an item from an external provider
 title: External related reference
 from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
-is_a: Dataset
+is_a: Resource
 slot_usage:
   reference:
     name: reference
