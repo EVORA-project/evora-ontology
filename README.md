@@ -51,7 +51,7 @@ In addition to the core ontology, the repository includes subsidiary data models
 
 These models facilitate easy integration of EVORAO metadata into diverse research workflows.
 
-For a comprehensive overview, refer to the [Google Sheet document](https://docs.google.com/spreadsheets/d/1zcyNKuhkpH-0FqEGSt6UwHAiSYzsUUSkHYcDOYz67zI) that is reviewed by the scientist of our partner research infrastructures, and its derived YAML-based LinkML schema([/models/evora_schema.yaml](https://github.com/EVORA-project/evora-ontology/tree/main/models/evora_schema.yaml)).
+For a comprehensive overview, refer to the [Google Sheet document](https://docs.google.com/spreadsheets/d/1zcyNKuhkpH-0FqEGSt6UwHAiSYzsUUSkHYcDOYz67zI) that is reviewed by the scientist of our partner research infrastructures, and its derived YAML-based LinkML schema ([/models/evora_schema.yaml](https://github.com/EVORA-project/evora-ontology/tree/main/models/evora_schema.yaml)).
 
 
 ## Reusing and Extending EVORAO metadata
@@ -59,7 +59,9 @@ For a comprehensive overview, refer to the [Google Sheet document](https://docs.
 EVORAO is designed to be reused, extensible and adaptable to evolving research needs. Reuse and Extensions can include:
 
 -1. **Contribute to EVORAO**: Is the way to be privileged if you intend to extend in the scope of preparedness and response, community-driven contributions are encouraged via pull requests for the development aspects, or via suggestion through github issues as explained in the contribution guidelines.
+
 -2. **Create Custom Ontologies**: If your needs for new terms and structuration exceed the current scope, EVORAO can be imported, and additional terms added as required.
+
 -3. **Mapping to EVORAO**: EVORAO terms can be referenced in conjunction with other ontologies or vocabularies(e.g. OBO, OLS) by adding EVORAO among your prefixes; then you can make reference to only specific EVORAO terms of interest and declare EVORAO IRIS in your mappings.
 
 Therefore building uppon EVORAO by importing or mapping will makes you declare the EVORAO among your prefixes:
@@ -68,7 +70,7 @@ prefixes:
       EVORAO: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
 ```
 
-For guidance on extending EVORAO by contribution, please refer to the[contribution guidelines](https://github.com/EVORA-project/evora-ontology/blob/main/CONTRIBUTING.md).
+For guidance on extending EVORAO by contribution, please refer to the [contribution guidelines](https://github.com/EVORA-project/evora-ontology/blob/main/CONTRIBUTING.md).
 
 ## How to Contribute
 
@@ -84,7 +86,7 @@ For guidance on extending EVORAO by contribution, please refer to the[contributi
   -  To improve how our LinkML schema ([/models/evora_schema.yaml](https://github.com/EVORA-project/evora-ontology/tree/main/models/evora_schema.yaml)) is generated from our Google Sheet of metadata, you can contribute directly through pull request on the corresponding [schemasheet github repository](https://github.com/linkml/schemasheets)
   -  To improve the other models outputs (OWL, JSON-LD, SQL, Python, Java, Go...) improvements can be made throught contributing to LinkML improvements y making a pull request on the corresponding [LinkML github repository](https://github.com/linkml/linkml)
 
-For guidance on extending EVORAO by contribution, please refer to the[contribution guidelines](https://github.com/EVORA-project/evora-ontology/blob/main/CONTRIBUTING.md).
+For guidance on extending EVORAO by contribution, please refer to the [contribution guidelines](https://github.com/EVORA-project/evora-ontology/blob/main/CONTRIBUTING.md).
 
 ##  License
 
@@ -95,10 +97,10 @@ EVORAO is released under the **Creative Commons Universal (CC0 1.0)** license, e
 - Free use, modification, and integration into other projects.
 - Promotion of broad adoption and interoperability within the scientific community.
   
-A recommended best practice for extending or reusing EVORAO is to contribute to the ontology as a community member. If the project scope differs, EVORAO can be imported partially for specific use cases, see ## Reusing and Extending EVORAO metadata chapter
+A recommended best practice for extending or reusing EVORAO is to contribute to the ontology as a community member. If the project scope differs, EVORAO can be imported partially for specific use cases, see [## Reusing and Extending EVORAO metadata chapter](#reusing-and-extending-evorao-metadata)
 
 ##
 
-For more information, visit the [EVORA Project website](https://evora-project.eu).
+For more information about the EVORA project, visit our website:[https://evora-project.eu](https://evora-project.eu).
 
 
