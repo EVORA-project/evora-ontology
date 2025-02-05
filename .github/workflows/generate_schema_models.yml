@@ -19,7 +19,7 @@ jobs:
 
     env:
       DOCKER_IMAGE: evoratools/schemasheets:EVORA_0.3.1
-      DOCKER_RUN_CMD: docker run --rm -v $(pwd):/workdir -u $(id -u):$(id -g) ${{ env.DOCKER_IMAGE }}
+      DOCKER_RUN_CMD: docker run --rm -v $(pwd):/workdir -u $(id -u):$(id -g) $DOCKER_IMAGE
     
     steps:
       - uses: actions/checkout@v4
@@ -35,7 +35,7 @@ jobs:
         
       - name: Create LinkML schema from the project s googlesheet of metadata
         run: |
-          ${{ env.DOCKER_RUN_CMD }} \
+          $DOCKER_RUN_CMD \
           sheets2linkml --gsheet-id 1zcyNKuhkpH-0FqEGSt6UwHAiSYzsUUSkHYcDOYz67zI \
           --name EVORA Prefixes Schema CompleteList ClassesDetails PropertiesDetails PropertiesDomains AllowedValues \
           -o models/evora_schema.yaml
@@ -51,7 +51,7 @@ jobs:
       # Generate owl ahead of project generation to avoid inclusion of linkml datatypes in owl and keep artifact
       - name: Generate project owl ttl file with LinkML
         run: |
-          ${{ env.DOCKER_RUN_CMD }} \ docker run --rm -v $(pwd):/workdir -u $(id -u):$(id -g) ${{ env.DOCKER_IMAGE }} \
+          $DOCKER_RUN_CMD \ docker run --rm -v $(pwd):/workdir -u $(id -u):$(id -g) ${{ env.DOCKER_IMAGE }} \
           linkml generate owl models/evora_schema.yaml > models/owl/evora_ontology.owl.ttl
           
       - uses: actions/upload-artifact@v4
@@ -64,7 +64,7 @@ jobs:
       - name: Generate project doc files with LinkML
         run: |
           rm -rf models/docs/*
-          ${{ env.DOCKER_RUN_CMD }} \
+          $DOCKER_RUN_CMD \
           linkml generate doc -d models/docs models/evora_schema.yaml
           
           
@@ -82,41 +82,41 @@ jobs:
                    $SUBPATH/prefixmap $SUBPATH/pydantic $SUBPATH/rdf $SUBPATH/shex \
                    $SUBPATH/sqlalchemy $SUBPATH/go $SUBPATH/java $SUBPATH/jsonschema \
                    $SUBPATH/protobuf $SUBPATH/python $SUBPATH/shacl $SUBPATH/sparql 
-          ${{ env.DOCKER_RUN_CMD }} \
+          $DOCKER_RUN_CMD \
           linkml generate jsonld-context models/evora_schema.yaml > models/subsidiary_models/jsonld/evora_schema.context.jsonld 
-          ${{ env.DOCKER_RUN_CMD }} \
+          $DOCKER_RUN_CMD \
           linkml generate jsonld models/evora_schema.yaml > models/subsidiary_models/jsonld/evora_schema.jsonld
-          ${{ env.DOCKER_RUN_CMD }} \
+          $DOCKER_RUN_CMD \
           linkml generate jsonld-context models/evora_schema.yaml > models/subsidiary_models/jsonschema/evora_schema.schema.json
-          ${{ env.DOCKER_RUN_CMD }} \
+          $DOCKER_RUN_CMD \
           linkml generate python models/evora_schema.yaml > models/subsidiary_models/python/evora_schema.py     
-          ${{ env.DOCKER_RUN_CMD }} \
+          $DOCKER_RUN_CMD \
           linkml generate excel -o models/subsidiary_models/excel/evora_schema.xlsx models/evora_schema.yaml
-          ${{ env.DOCKER_RUN_CMD }} \
+          $DOCKER_RUN_CMD \
           linkml generate graphql models/evora_schema.yaml > models/subsidiary_models/graphql/evora_schema.graphql
-          ${{ env.DOCKER_RUN_CMD }} \
+          $DOCKER_RUN_CMD \
           linkml generate prefix-map -o models/subsidiary_models/prefixmap/evora_schema_prefixes.yaml models/evora_schema.yaml
-          ${{ env.DOCKER_RUN_CMD }} \
+          $DOCKER_RUN_CMD \
           linkml generate proto models/evora_schema.yaml > models/subsidiary_models/protobuf/evora_schema.proto
-          ${{ env.DOCKER_RUN_CMD }} \
+          $DOCKER_RUN_CMD \
           linkml generate shacl models/evora_schema.yaml > models/subsidiary_models/shacl/evora_schema.shacl.ttl
-          ${{ env.DOCKER_RUN_CMD }} \
+          $DOCKER_RUN_CMD \
           linkml generate shex models/evora_schema.yaml > models/subsidiary_models/shex/evora_schema.shex
-          ${{ env.DOCKER_RUN_CMD }} \
+          $DOCKER_RUN_CMD \
           linkml generate sqltables models/evora_schema.yaml > models/subsidiary_models/sqlschema/evora_schema.sql
-          ${{ env.DOCKER_RUN_CMD }} \
+          $DOCKER_RUN_CMD \
           linkml generate golang --log_level ERROR models/evora_schema.yaml > models/subsidiary_models/go/evora_schema.go
           rm -f models/subsidiary_models/java/*
-          ${{ env.DOCKER_RUN_CMD }} \
+          $DOCKER_RUN_CMD \
           linkml generate java --output-directory models/subsidiary_models/java/  models/evora_schema.yaml
-          ${{ env.DOCKER_RUN_CMD }} \
+          $DOCKER_RUN_CMD \
           linkml generate rdf models/evora_schema.yaml > models/subsidiary_models/rdf/evora_schema.rdf
           rm -f models/subsidiary_models/sparql/*
-          ${{ env.DOCKER_RUN_CMD }} \
+          $DOCKER_RUN_CMD \
           linkml generate sparql -d models/subsidiary_models/sparql/ models/evora_schema.yaml
-          ${{ env.DOCKER_RUN_CMD }} \
+          $DOCKER_RUN_CMD \
           linkml generate sqla models/evora_schema.yaml > models/subsidiary_models/sqlalchemy/evora_schema.sqla
-          ${{ env.DOCKER_RUN_CMD }} \
+          $DOCKER_RUN_CMD \
           linkml generate pydantic models/evora_schema.yaml > models/subsidiary_models/pydantic/evora_schema.py
 
 
