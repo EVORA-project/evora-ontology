@@ -1,6 +1,11 @@
 
 
-# Slot: countryOfCollection
+# Slot: country of collection (countryOfCollection)
+
+
+_The geographical location where the sample was collected in situ. Used for Nagoya/CBD; equivalent to 'country of origin'._
+
+
 
 
 
@@ -28,7 +33,9 @@ URI: [EVORAO:countryOfCollection](https://raw.githubusercontent.com/EVORA-projec
 
 ## Properties
 
-* Range: [String](String.md)
+* Range: [Country](Country.md)
+
+* Required: True
 
 
 
@@ -56,6 +63,7 @@ URI: [EVORAO:countryOfCollection](https://raw.githubusercontent.com/EVORA-projec
 | ---  | ---  |
 | self | EVORAO:countryOfCollection |
 | native | EVORAO:countryOfCollection |
+| close | dct:spatial, dwc:country |
 
 
 
@@ -65,12 +73,20 @@ URI: [EVORAO:countryOfCollection](https://raw.githubusercontent.com/EVORA-projec
 <details>
 ```yaml
 name: countryOfCollection
+description: The geographical location where the sample was collected in situ. Used
+  for Nagoya/CBD; equivalent to 'country of origin'.
+title: country of collection
 from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+close_mappings:
+- dct:spatial
+- dwc:country
 rank: 1000
 alias: countryOfCollection
 domain_of:
 - NaturalPartOrigin
-range: string
+range: Country
+required: true
+multivalued: false
 
 ```
 </details>

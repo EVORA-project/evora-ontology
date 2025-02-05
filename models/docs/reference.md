@@ -1,6 +1,11 @@
 
 
-# Slot: reference
+# Slot: reference (reference)
+
+
+_The identifier reference of the connected external item_
+
+
 
 
 
@@ -30,6 +35,8 @@ URI: [EVORAO:reference](https://raw.githubusercontent.com/EVORA-project/evora-on
 
 * Range: [String](String.md)
 
+* Required: True
+
 
 
 
@@ -56,6 +63,7 @@ URI: [EVORAO:reference](https://raw.githubusercontent.com/EVORA-project/evora-on
 | ---  | ---  |
 | self | EVORAO:reference |
 | native | EVORAO:reference |
+| close | dct:identifier |
 
 
 
@@ -65,12 +73,18 @@ URI: [EVORAO:reference](https://raw.githubusercontent.com/EVORA-project/evora-on
 <details>
 ```yaml
 name: reference
+description: The identifier reference of the connected external item
+title: reference
 from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+close_mappings:
+- dct:identifier
 rank: 1000
 alias: reference
 domain_of:
 - ExternalRelatedReference
 range: string
+required: true
+multivalued: false
 
 ```
 </details>

@@ -68,7 +68,7 @@ URI: [EVORAO:VirusName](https://raw.githubusercontent.com/EVORA-project/evora-on
 
 | Name | Cardinality and Range | Description | Inheritance |
 | ---  | --- | --- | --- |
-| [alternateName](alternateName.md) | * <br/> [AlternateName](AlternateName.md) | Any known alternate name related to this name | [CommonName](CommonName.md) |
+| [alternateName](alternateName.md) | * <br/> [AlternateName](AlternateName.md) | Any other name under which the entity can be known | [CommonName](CommonName.md) |
 | [sourceOfInformation](sourceOfInformation.md) | * <br/> [String](String.md) | The name of the origin from which knowledge is obtained | [CommonName](CommonName.md) |
 | [name](name.md) | 1 <br/> [String](String.md) | The label that allows humans to identify the current item | [Term](Term.md) |
 | [description](description.md) | 0..1 _recommended_ <br/> [String](String.md) | A short explanation of the characteristics, features, or nature of the curren... | [Term](Term.md) |
@@ -112,7 +112,7 @@ URI: [EVORAO:VirusName](https://raw.githubusercontent.com/EVORA-project/evora-on
 | ---  | ---  |
 | self | EVORAO:VirusName |
 | native | EVORAO:VirusName |
-| close | wd:Q125481078 |
+| close | wd:Q125481078, wd:Q125481078 |
 
 
 
@@ -134,6 +134,7 @@ title: Virus Name
 from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
 close_mappings:
 - wd:Q125481078
+- wd:Q125481078
 is_a: CommonName
 
 ```
@@ -149,17 +150,17 @@ title: Virus Name
 from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
 close_mappings:
 - wd:Q125481078
+- wd:Q125481078
 is_a: CommonName
 attributes:
   alternateName:
     name: alternateName
-    description: Any known alternate name related to this name
+    description: Any other name under which the entity can be known
     title: alternate name
     comments:
-    - including previous names and former taxonomic terms, this information can also
-      serve as keywords arround the pathogen name for search and as a bridge with
-      other projects that are still using other naming systems or taxonomies e.g.
-      the NCBI taxonomy
+    - This includes previous names, acronyms, former taxonomic terms, and other variations.
+      This information can serve as keywords for search purposes and as a bridge with
+      other projects that use different naming systems or taxonomies
     from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
     close_mappings:
     - wdp:P4970
@@ -198,9 +199,9 @@ attributes:
     - 'The title of the item should be as short and descriptive as possible. E.g.
       for virus products it should basically be based on the following Pattern:
 
-      "Virus name", "virus host type", "collection year", "country of collection"
-      ex "suspected epidemiological origin", "genotype", "strain", "variant name or
-      specific feature"'
+      ''Virus name'', ''virus host type'', ''collection year'', ''country of collection''
+      ex ''suspected epidemiological origin'', ''genotype'', ''strain'', ''variant
+      name or specific feature'
     from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
     exact_mappings:
     - dct:title
@@ -258,6 +259,10 @@ attributes:
       processed in ascending order. This weight helps prioritize content when organizing
       or processing data. Its value can be negative, with a default set to 0
     title: weight
+    comments:
+    - The lowest weighted Data providers are triggered first, this may be usefull
+      to populate at first entities that are referenced by others (e.g. Version ahead
+      of Rank ahead of Taxon)
     from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
     close_mappings:
     - adms:status

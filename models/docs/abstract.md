@@ -1,6 +1,11 @@
 
 
-# Slot: abstract
+# Slot: abstract (abstract)
+
+
+_Concise summary of the publication_
+
+
 
 
 
@@ -29,6 +34,8 @@ URI: [EVORAO:abstract](https://raw.githubusercontent.com/EVORA-project/evora-ont
 ## Properties
 
 * Range: [String](String.md)
+
+* Required: True
 
 
 
@@ -65,12 +72,16 @@ URI: [EVORAO:abstract](https://raw.githubusercontent.com/EVORA-project/evora-ont
 <details>
 ```yaml
 name: abstract
+description: Concise summary of the publication
+title: abstract
 from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
 rank: 1000
 alias: abstract
 domain_of:
 - Publication
 range: string
+required: true
+multivalued: false
 
 ```
 </details>

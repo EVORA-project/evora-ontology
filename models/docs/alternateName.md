@@ -1,6 +1,11 @@
 
 
-# Slot: alternateName
+# Slot: alternate name (alternateName)
+
+
+_Any other name under which the entity can be known_
+
+
 
 
 
@@ -18,13 +23,13 @@ URI: [EVORAO:alternateName](https://raw.githubusercontent.com/EVORA-project/evor
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [RI](RI.md) | A research infrastructure |  no  |
-| [Organization](Organization.md) | A social entity established to meet needs or pursue specific goals |  yes  |
-| [AlternateName](AlternateName.md) | List of alternate names for things |  yes  |
 | [VirusName](VirusName.md) | A virus vernacular name or a name that describes a group of viruses |  no  |
-| [Variant](Variant.md) | An organism with one or more new mutations is referred to as a “variant” of t... |  no  |
 | [Provider](Provider.md) | A provider of products or services, as a specific organization |  no  |
 | [CommonName](CommonName.md) | Vernacular name that is the name used in everyday language to refer to an org... |  yes  |
+| [RI](RI.md) | A research infrastructure |  no  |
+| [Organization](Organization.md) | A social entity established to meet needs or pursue specific goals |  yes  |
+| [Variant](Variant.md) | An organism with one or more new mutations is referred to as a “variant” of t... |  no  |
+| [AlternateName](AlternateName.md) | List of other names for things |  yes  |
 
 
 
@@ -34,11 +39,17 @@ URI: [EVORAO:alternateName](https://raw.githubusercontent.com/EVORA-project/evor
 
 ## Properties
 
-* Range: [String](String.md)
+* Range: [AlternateName](AlternateName.md)
+
+* Multivalued: True
 
 
 
 
+
+## Comments
+
+* This includes previous names, acronyms, former taxonomic terms, and other variations. This information can serve as keywords for search purposes and as a bridge with other projects that use different naming systems or taxonomies
 
 ## Identifier and Mapping Information
 
@@ -62,6 +73,7 @@ URI: [EVORAO:alternateName](https://raw.githubusercontent.com/EVORA-project/evor
 | ---  | ---  |
 | self | EVORAO:alternateName |
 | native | EVORAO:alternateName |
+| close | wdp:P4970 |
 
 
 
@@ -71,14 +83,24 @@ URI: [EVORAO:alternateName](https://raw.githubusercontent.com/EVORA-project/evor
 <details>
 ```yaml
 name: alternateName
+description: Any other name under which the entity can be known
+title: alternate name
+comments:
+- This includes previous names, acronyms, former taxonomic terms, and other variations.
+  This information can serve as keywords for search purposes and as a bridge with
+  other projects that use different naming systems or taxonomies
 from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+close_mappings:
+- wdp:P4970
 rank: 1000
 alias: alternateName
 domain_of:
 - CommonName
 - AlternateName
 - Organization
-range: string
+range: AlternateName
+required: false
+multivalued: true
 
 ```
 </details>

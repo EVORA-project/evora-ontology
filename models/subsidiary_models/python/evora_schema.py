@@ -1,5 +1,5 @@
 # Auto generated from evora_schema.yaml by pythongen.py version: 0.0.1
-# Generation date: 2025-01-27T10:44:30
+# Generation date: 2025-02-05T11:29:14
 # Schema: EVORAO
 #
 # id: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
@@ -61,7 +61,7 @@ from linkml_runtime.linkml_model.types import Boolean, Datetime, Integer, String
 from linkml_runtime.utils.metamodelcore import Bool, URI, XSDDateTime
 
 metamodel_version = "1.7.0"
-version = "1.0.8373"
+version = "1.0.8498"
 
 # Overwrite dataclasses _init_fn to add **kwargs in __init__
 dataclasses._init_fn = dataclasses_init_fn_with_kwargs
@@ -217,14 +217,18 @@ class Taxonomy(Catalogue):
     class_model_uri: ClassVar[URIRef] = EVORAO.Taxonomy
 
     name: str = None
+    taxon: Union[Union[dict, "Taxon"], List[Union[dict, "Taxon"]]] = None
     version: Union[dict, Version] = None
     versionDataProvider: Union[dict, "DataProvider"] = None
-    taxon: Optional[Union[Union[dict, "Taxon"], List[Union[dict, "Taxon"]]]] = empty_list()
+    rank: Union[Union[dict, "TaxonomicRank"], List[Union[dict, "TaxonomicRank"]]] = None
     taxonDataProvider: Optional[Union[dict, "DataProvider"]] = None
-    rank: Optional[Union[Union[dict, "TaxonomicRank"], List[Union[dict, "TaxonomicRank"]]]] = empty_list()
     rankDataProvider: Optional[Union[dict, "DataProvider"]] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+        if self._is_empty(self.taxon):
+            self.MissingRequiredField("taxon")
+        self._normalize_inlined_as_dict(slot_name="taxon", slot_type=Taxon, key_name="name", keyed=False)
+
         if self._is_empty(self.version):
             self.MissingRequiredField("version")
         if not isinstance(self.version, Version):
@@ -235,12 +239,12 @@ class Taxonomy(Catalogue):
         if not isinstance(self.versionDataProvider, DataProvider):
             self.versionDataProvider = DataProvider(**as_dict(self.versionDataProvider))
 
-        self._normalize_inlined_as_dict(slot_name="taxon", slot_type=Taxon, key_name="name", keyed=False)
+        if self._is_empty(self.rank):
+            self.MissingRequiredField("rank")
+        self._normalize_inlined_as_dict(slot_name="rank", slot_type=TaxonomicRank, key_name="name", keyed=False)
 
         if self.taxonDataProvider is not None and not isinstance(self.taxonDataProvider, DataProvider):
             self.taxonDataProvider = DataProvider(**as_dict(self.taxonDataProvider))
-
-        self._normalize_inlined_as_dict(slot_name="rank", slot_type=TaxonomicRank, key_name="name", keyed=False)
 
         if self.rankDataProvider is not None and not isinstance(self.rankDataProvider, DataProvider):
             self.rankDataProvider = DataProvider(**as_dict(self.rankDataProvider))
@@ -264,8 +268,8 @@ class DataProvider(DataService):
     queryURL: Union[str, URI] = None
     queryMethod: str = None
     providedEntityType: Union[dict, Dataset] = None
-    weight: int = None
     contentType: str = "JSON"
+    weight: int = 0
     license: Optional[Union[dict, "License"]] = None
     loginRequestMethod: Optional[str] = "GET"
     loginURL: Optional[Union[str, URI]] = None
@@ -391,7 +395,7 @@ class Publication(Resource):
     title: str = None
     authors: str = None
     abstract: str = None
-    relatedDOI: Union[dict, "DOI"] = None
+    relatedDOI: Union[Union[dict, "DOI"], List[Union[dict, "DOI"]]] = None
     journal: Optional[Union[dict, "Journal"]] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
@@ -412,8 +416,7 @@ class Publication(Resource):
 
         if self._is_empty(self.relatedDOI):
             self.MissingRequiredField("relatedDOI")
-        if not isinstance(self.relatedDOI, DOI):
-            self.relatedDOI = DOI(**as_dict(self.relatedDOI))
+        self._normalize_inlined_as_dict(slot_name="relatedDOI", slot_type=DOI, key_name="name", keyed=False)
 
         if self.journal is not None and not isinstance(self.journal, Journal):
             self.journal = Journal(**as_dict(self.journal))
@@ -533,7 +536,7 @@ class VirusName(CommonName):
 @dataclass(repr=False)
 class AlternateName(Term):
     """
-    List of alternate names for things
+    List of other names for things
     """
     _inherited_slots: ClassVar[List[str]] = []
 
@@ -1072,7 +1075,7 @@ class PersonOrOrganization(Resource):
 
     name: str = None
     description: Optional[str] = None
-    homePage: Optional[str] = None
+    homePage: Optional[Union[str, URI]] = None
     contactPoint: Optional[Union[dict, "ContactPoint"]] = None
     logo: Optional[Union[dict, "Image"]] = None
 
@@ -1085,8 +1088,8 @@ class PersonOrOrganization(Resource):
         if self.description is not None and not isinstance(self.description, str):
             self.description = str(self.description)
 
-        if self.homePage is not None and not isinstance(self.homePage, str):
-            self.homePage = str(self.homePage)
+        if self.homePage is not None and not isinstance(self.homePage, URI):
+            self.homePage = URI(self.homePage)
 
         if self.contactPoint is not None and not isinstance(self.contactPoint, ContactPoint):
             self.contactPoint = ContactPoint(**as_dict(self.contactPoint))
@@ -1132,13 +1135,12 @@ class Organization(PersonOrOrganization):
     class_model_uri: ClassVar[URIRef] = EVORAO.Organization
 
     name: str = None
-    alternateName: Optional[Union[dict, AlternateName]] = None
+    alternateName: Optional[Union[Union[dict, AlternateName], List[Union[dict, AlternateName]]]] = empty_list()
     country: Optional[Union[dict, Country]] = None
     rORiD: Optional[str] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if self.alternateName is not None and not isinstance(self.alternateName, AlternateName):
-            self.alternateName = AlternateName(**as_dict(self.alternateName))
+        self._normalize_inlined_as_dict(slot_name="alternateName", slot_type=AlternateName, key_name="name", keyed=False)
 
         if self.country is not None and not isinstance(self.country, Country):
             self.country = Country(**as_dict(self.country))
@@ -1846,6 +1848,7 @@ class NucleicAcid(Product):
     regionEncompassedInThisProduct: str = None
     mutationObserved: Union[bool, Bool] = None
     sequencing: str = None
+    titer: str = None
     sequenceChecked: Union[bool, Bool] = None
     unitCost: str = "on request"
     availability: str = "on request"
@@ -1854,7 +1857,6 @@ class NucleicAcid(Product):
     pasmidSelection: Optional[Union[Union[dict, PlasmidSelection], List[Union[dict, PlasmidSelection]]]] = empty_list()
     observedMutations: Optional[str] = None
     identificationTechnique: Optional[str] = None
-    titer: Optional[str] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
         if self._is_empty(self.biologicalMaterialOrigin):
@@ -1893,6 +1895,11 @@ class NucleicAcid(Product):
         if not isinstance(self.sequencing, str):
             self.sequencing = str(self.sequencing)
 
+        if self._is_empty(self.titer):
+            self.MissingRequiredField("titer")
+        if not isinstance(self.titer, str):
+            self.titer = str(self.titer)
+
         if self._is_empty(self.sequenceChecked):
             self.MissingRequiredField("sequenceChecked")
         if not isinstance(self.sequenceChecked, Bool):
@@ -1910,9 +1917,6 @@ class NucleicAcid(Product):
 
         if self.identificationTechnique is not None and not isinstance(self.identificationTechnique, str):
             self.identificationTechnique = str(self.identificationTechnique)
-
-        if self.titer is not None and not isinstance(self.titer, str):
-            self.titer = str(self.titer)
 
         super().__post_init__(**kwargs)
 
@@ -1992,17 +1996,11 @@ class Bundle(Product):
     productsOfTheBundle: Union[Union[dict, Product], List[Union[dict, Product]]] = None
     unitCost: str = "on request"
     availability: str = "on request"
-    complementaryDocument: Optional[str] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
         if self._is_empty(self.productsOfTheBundle):
             self.MissingRequiredField("productsOfTheBundle")
         self._normalize_inlined_as_dict(slot_name="productsOfTheBundle", slot_type=Product, key_name="name", keyed=False)
-
-        if self.complementaryDocument is not None and not isinstance(self.complementaryDocument, str):
-            self.complementaryDocument = str(self.complementaryDocument)
-
-        self._normalize_inlined_as_dict(slot_name="complementaryDocument", slot_type=File, key_name="name", keyed=False)
 
         super().__post_init__(**kwargs)
 
@@ -2702,70 +2700,70 @@ class slots:
     pass
 
 slots.name = Slot(uri=EVORAO.name, name="name", curie=EVORAO.curie('name'),
-                   model_uri=EVORAO.name, domain=None, range=Optional[str])
+                   model_uri=EVORAO.name, domain=None, range=str)
 
 slots.description = Slot(uri=EVORAO.description, name="description", curie=EVORAO.curie('description'),
                    model_uri=EVORAO.description, domain=None, range=Optional[str])
 
 slots.ID = Slot(uri=EVORAO.ID, name="ID", curie=EVORAO.curie('ID'),
-                   model_uri=EVORAO.ID, domain=None, range=Optional[str])
+                   model_uri=EVORAO.ID, domain=None, range=str)
 
 slots.versionOf = Slot(uri=EVORAO.versionOf, name="versionOf", curie=EVORAO.curie('versionOf'),
-                   model_uri=EVORAO.versionOf, domain=None, range=Optional[str])
+                   model_uri=EVORAO.versionOf, domain=None, range=Union[dict, Dataset])
 
 slots.taxon = Slot(uri=EVORAO.taxon, name="taxon", curie=EVORAO.curie('taxon'),
-                   model_uri=EVORAO.taxon, domain=None, range=Optional[str])
+                   model_uri=EVORAO.taxon, domain=None, range=Union[dict, Taxon])
 
 slots.taxonDataProvider = Slot(uri=EVORAO.taxonDataProvider, name="taxonDataProvider", curie=EVORAO.curie('taxonDataProvider'),
-                   model_uri=EVORAO.taxonDataProvider, domain=None, range=Optional[str])
+                   model_uri=EVORAO.taxonDataProvider, domain=None, range=Optional[Union[dict, DataProvider]])
 
 slots.version = Slot(uri=EVORAO.version, name="version", curie=EVORAO.curie('version'),
-                   model_uri=EVORAO.version, domain=None, range=Optional[str])
+                   model_uri=EVORAO.version, domain=None, range=Union[dict, Version])
 
 slots.versionDataProvider = Slot(uri=EVORAO.versionDataProvider, name="versionDataProvider", curie=EVORAO.curie('versionDataProvider'),
-                   model_uri=EVORAO.versionDataProvider, domain=None, range=Optional[str])
+                   model_uri=EVORAO.versionDataProvider, domain=None, range=Union[dict, DataProvider])
 
 slots.rank = Slot(uri=EVORAO.rank, name="rank", curie=EVORAO.curie('rank'),
-                   model_uri=EVORAO.rank, domain=None, range=Optional[str])
+                   model_uri=EVORAO.rank, domain=None, range=Union[dict, TaxonomicRank])
 
 slots.rankDataProvider = Slot(uri=EVORAO.rankDataProvider, name="rankDataProvider", curie=EVORAO.curie('rankDataProvider'),
-                   model_uri=EVORAO.rankDataProvider, domain=None, range=Optional[str])
+                   model_uri=EVORAO.rankDataProvider, domain=None, range=Optional[Union[dict, DataProvider]])
 
 slots.license = Slot(uri=EVORAO.license, name="license", curie=EVORAO.curie('license'),
-                   model_uri=EVORAO.license, domain=None, range=Optional[str])
+                   model_uri=EVORAO.license, domain=None, range=Optional[Union[dict, License]])
 
 slots.loginRequestMethod = Slot(uri=EVORAO.loginRequestMethod, name="loginRequestMethod", curie=EVORAO.curie('loginRequestMethod'),
                    model_uri=EVORAO.loginRequestMethod, domain=None, range=Optional[str])
 
 slots.loginURL = Slot(uri=EVORAO.loginURL, name="loginURL", curie=EVORAO.curie('loginURL'),
-                   model_uri=EVORAO.loginURL, domain=None, range=Optional[str])
+                   model_uri=EVORAO.loginURL, domain=None, range=Optional[Union[str, URI]])
 
 slots.loginTokenName = Slot(uri=EVORAO.loginTokenName, name="loginTokenName", curie=EVORAO.curie('loginTokenName'),
                    model_uri=EVORAO.loginTokenName, domain=None, range=Optional[str])
 
 slots.queryURL = Slot(uri=EVORAO.queryURL, name="queryURL", curie=EVORAO.curie('queryURL'),
-                   model_uri=EVORAO.queryURL, domain=None, range=Optional[str])
+                   model_uri=EVORAO.queryURL, domain=None, range=Union[str, URI])
 
 slots.queryMethod = Slot(uri=EVORAO.queryMethod, name="queryMethod", curie=EVORAO.curie('queryMethod'),
-                   model_uri=EVORAO.queryMethod, domain=None, range=Optional[str])
+                   model_uri=EVORAO.queryMethod, domain=None, range=str)
 
 slots.contentType = Slot(uri=EVORAO.contentType, name="contentType", curie=EVORAO.curie('contentType'),
-                   model_uri=EVORAO.contentType, domain=None, range=Optional[str])
+                   model_uri=EVORAO.contentType, domain=None, range=str)
 
 slots.providedEntityType = Slot(uri=EVORAO.providedEntityType, name="providedEntityType", curie=EVORAO.curie('providedEntityType'),
-                   model_uri=EVORAO.providedEntityType, domain=None, range=Optional[str])
+                   model_uri=EVORAO.providedEntityType, domain=None, range=Union[dict, Dataset])
 
 slots.weight = Slot(uri=EVORAO.weight, name="weight", curie=EVORAO.curie('weight'),
-                   model_uri=EVORAO.weight, domain=None, range=Optional[str])
+                   model_uri=EVORAO.weight, domain=None, range=int)
 
 slots.pathogenName = Slot(uri=EVORAO.pathogenName, name="pathogenName", curie=EVORAO.curie('pathogenName'),
-                   model_uri=EVORAO.pathogenName, domain=None, range=Optional[str])
+                   model_uri=EVORAO.pathogenName, domain=None, range=Union[dict, CommonName])
 
 slots.pathogenType = Slot(uri=EVORAO.pathogenType, name="pathogenType", curie=EVORAO.curie('pathogenType'),
-                   model_uri=EVORAO.pathogenType, domain=None, range=Optional[str])
+                   model_uri=EVORAO.pathogenType, domain=None, range=str)
 
 slots.hostType = Slot(uri=EVORAO.hostType, name="hostType", curie=EVORAO.curie('hostType'),
-                   model_uri=EVORAO.hostType, domain=None, range=Optional[str])
+                   model_uri=EVORAO.hostType, domain=None, range=Optional[Union[str, List[str]]])
 
 slots.subspecies = Slot(uri=EVORAO.subspecies, name="subspecies", curie=EVORAO.curie('subspecies'),
                    model_uri=EVORAO.subspecies, domain=None, range=Optional[str])
@@ -2783,214 +2781,214 @@ slots.serotype = Slot(uri=EVORAO.serotype, name="serotype", curie=EVORAO.curie('
                    model_uri=EVORAO.serotype, domain=None, range=Optional[str])
 
 slots.variant = Slot(uri=EVORAO.variant, name="variant", curie=EVORAO.curie('variant'),
-                   model_uri=EVORAO.variant, domain=None, range=Optional[str])
+                   model_uri=EVORAO.variant, domain=None, range=Optional[Union[dict, Variant]])
 
 slots.title = Slot(uri=EVORAO.title, name="title", curie=EVORAO.curie('title'),
-                   model_uri=EVORAO.title, domain=None, range=Optional[str])
+                   model_uri=EVORAO.title, domain=None, range=str)
 
 slots.authors = Slot(uri=EVORAO.authors, name="authors", curie=EVORAO.curie('authors'),
-                   model_uri=EVORAO.authors, domain=None, range=Optional[str])
+                   model_uri=EVORAO.authors, domain=None, range=str)
 
 slots.abstract = Slot(uri=EVORAO.abstract, name="abstract", curie=EVORAO.curie('abstract'),
-                   model_uri=EVORAO.abstract, domain=None, range=Optional[str])
+                   model_uri=EVORAO.abstract, domain=None, range=str)
 
 slots.relatedDOI = Slot(uri=EVORAO.relatedDOI, name="relatedDOI", curie=EVORAO.curie('relatedDOI'),
-                   model_uri=EVORAO.relatedDOI, domain=None, range=Optional[str])
+                   model_uri=EVORAO.relatedDOI, domain=None, range=Optional[Union[Union[dict, DOI], List[Union[dict, DOI]]]])
 
 slots.journal = Slot(uri=EVORAO.journal, name="journal", curie=EVORAO.curie('journal'),
-                   model_uri=EVORAO.journal, domain=None, range=Optional[str])
+                   model_uri=EVORAO.journal, domain=None, range=Optional[Union[dict, Journal]])
 
 slots.termDataProvider = Slot(uri=EVORAO.termDataProvider, name="termDataProvider", curie=EVORAO.curie('termDataProvider'),
-                   model_uri=EVORAO.termDataProvider, domain=None, range=Optional[str])
+                   model_uri=EVORAO.termDataProvider, domain=None, range=Optional[Union[dict, DataProvider]])
 
 slots.term = Slot(uri=EVORAO.term, name="term", curie=EVORAO.curie('term'),
-                   model_uri=EVORAO.term, domain=None, range=Optional[str])
+                   model_uri=EVORAO.term, domain=None, range=Optional[Union[Union[dict, Term], List[Union[dict, Term]]]])
 
 slots.inVocabulary = Slot(uri=EVORAO.inVocabulary, name="inVocabulary", curie=EVORAO.curie('inVocabulary'),
-                   model_uri=EVORAO.inVocabulary, domain=None, range=Optional[str])
+                   model_uri=EVORAO.inVocabulary, domain=None, range=Union[dict, Vocabulary])
 
 slots.alternateName = Slot(uri=EVORAO.alternateName, name="alternateName", curie=EVORAO.curie('alternateName'),
-                   model_uri=EVORAO.alternateName, domain=None, range=Optional[str])
+                   model_uri=EVORAO.alternateName, domain=None, range=Optional[Union[Union[dict, AlternateName], List[Union[dict, AlternateName]]]])
 
 slots.sourceOfInformation = Slot(uri=EVORAO.sourceOfInformation, name="sourceOfInformation", curie=EVORAO.curie('sourceOfInformation'),
-                   model_uri=EVORAO.sourceOfInformation, domain=None, range=Optional[str])
+                   model_uri=EVORAO.sourceOfInformation, domain=None, range=Optional[Union[str, List[str]]])
 
 slots.parentCategory = Slot(uri=EVORAO.parentCategory, name="parentCategory", curie=EVORAO.curie('parentCategory'),
-                   model_uri=EVORAO.parentCategory, domain=None, range=Optional[str])
+                   model_uri=EVORAO.parentCategory, domain=None, range=Optional[Union[dict, ProductCategory]])
 
 slots.alpha2Code = Slot(uri=EVORAO.alpha2Code, name="alpha2Code", curie=EVORAO.curie('alpha2Code'),
-                   model_uri=EVORAO.alpha2Code, domain=None, range=Optional[str])
+                   model_uri=EVORAO.alpha2Code, domain=None, range=str)
 
 slots.taxonomy = Slot(uri=EVORAO.taxonomy, name="taxonomy", curie=EVORAO.curie('taxonomy'),
-                   model_uri=EVORAO.taxonomy, domain=None, range=Optional[str])
+                   model_uri=EVORAO.taxonomy, domain=None, range=Optional[Union[Union[dict, Taxonomy], List[Union[dict, Taxonomy]]]])
 
 slots.parentTaxon = Slot(uri=EVORAO.parentTaxon, name="parentTaxon", curie=EVORAO.curie('parentTaxon'),
-                   model_uri=EVORAO.parentTaxon, domain=None, range=Optional[str])
+                   model_uri=EVORAO.parentTaxon, domain=None, range=Union[dict, Taxon])
 
 slots.previouslyKnownAs = Slot(uri=EVORAO.previouslyKnownAs, name="previouslyKnownAs", curie=EVORAO.curie('previouslyKnownAs'),
-                   model_uri=EVORAO.previouslyKnownAs, domain=None, range=Optional[str])
+                   model_uri=EVORAO.previouslyKnownAs, domain=None, range=Optional[Union[Union[dict, Taxon], List[Union[dict, Taxon]]]])
 
 slots.externalEquivalentTaxon = Slot(uri=EVORAO.externalEquivalentTaxon, name="externalEquivalentTaxon", curie=EVORAO.curie('externalEquivalentTaxon'),
-                   model_uri=EVORAO.externalEquivalentTaxon, domain=None, range=Optional[str])
+                   model_uri=EVORAO.externalEquivalentTaxon, domain=None, range=Optional[Union[Union[dict, Taxon], List[Union[dict, Taxon]]]])
 
 slots.taxonomicID = Slot(uri=EVORAO.taxonomicID, name="taxonomicID", curie=EVORAO.curie('taxonomicID'),
-                   model_uri=EVORAO.taxonomicID, domain=None, range=Optional[str])
+                   model_uri=EVORAO.taxonomicID, domain=None, range=str)
 
 slots.taxonomicNodeID = Slot(uri=EVORAO.taxonomicNodeID, name="taxonomicNodeID", curie=EVORAO.curie('taxonomicNodeID'),
                    model_uri=EVORAO.taxonomicNodeID, domain=None, range=Optional[str])
 
 slots.reference = Slot(uri=EVORAO.reference, name="reference", curie=EVORAO.curie('reference'),
-                   model_uri=EVORAO.reference, domain=None, range=Optional[str])
+                   model_uri=EVORAO.reference, domain=None, range=str)
 
 slots.referenceLabel = Slot(uri=EVORAO.referenceLabel, name="referenceLabel", curie=EVORAO.curie('referenceLabel'),
-                   model_uri=EVORAO.referenceLabel, domain=None, range=Optional[str])
+                   model_uri=EVORAO.referenceLabel, domain=None, range=str)
 
 slots.referenceProviderPrefix = Slot(uri=EVORAO.referenceProviderPrefix, name="referenceProviderPrefix", curie=EVORAO.curie('referenceProviderPrefix'),
-                   model_uri=EVORAO.referenceProviderPrefix, domain=None, range=Optional[str])
+                   model_uri=EVORAO.referenceProviderPrefix, domain=None, range=str)
 
 slots.referenceProviderName = Slot(uri=EVORAO.referenceProviderName, name="referenceProviderName", curie=EVORAO.curie('referenceProviderName'),
-                   model_uri=EVORAO.referenceProviderName, domain=None, range=Optional[str])
+                   model_uri=EVORAO.referenceProviderName, domain=None, range=str)
 
 slots.sequenceReference = Slot(uri=EVORAO.sequenceReference, name="sequenceReference", curie=EVORAO.curie('sequenceReference'),
-                   model_uri=EVORAO.sequenceReference, domain=None, range=Optional[str])
+                   model_uri=EVORAO.sequenceReference, domain=None, range=Optional[Union[Union[dict, SequenceReference], List[Union[dict, SequenceReference]]]])
 
 slots.sequenceFASTA = Slot(uri=EVORAO.sequenceFASTA, name="sequenceFASTA", curie=EVORAO.curie('sequenceFASTA'),
                    model_uri=EVORAO.sequenceFASTA, domain=None, range=Optional[str])
 
 slots.accessionNumber = Slot(uri=EVORAO.accessionNumber, name="accessionNumber", curie=EVORAO.curie('accessionNumber'),
-                   model_uri=EVORAO.accessionNumber, domain=None, range=Optional[str])
+                   model_uri=EVORAO.accessionNumber, domain=None, range=str)
 
 slots.sequenceProvider = Slot(uri=EVORAO.sequenceProvider, name="sequenceProvider", curie=EVORAO.curie('sequenceProvider'),
-                   model_uri=EVORAO.sequenceProvider, domain=None, range=Optional[str])
+                   model_uri=EVORAO.sequenceProvider, domain=None, range=str)
 
 slots.homePage = Slot(uri=EVORAO.homePage, name="homePage", curie=EVORAO.curie('homePage'),
-                   model_uri=EVORAO.homePage, domain=None, range=Optional[str])
+                   model_uri=EVORAO.homePage, domain=None, range=Optional[Union[str, URI]])
 
 slots.contactPoint = Slot(uri=EVORAO.contactPoint, name="contactPoint", curie=EVORAO.curie('contactPoint'),
-                   model_uri=EVORAO.contactPoint, domain=None, range=Optional[str])
+                   model_uri=EVORAO.contactPoint, domain=None, range=Optional[Union[dict, ContactPoint]])
 
 slots.logo = Slot(uri=EVORAO.logo, name="logo", curie=EVORAO.curie('logo'),
-                   model_uri=EVORAO.logo, domain=None, range=Optional[str])
+                   model_uri=EVORAO.logo, domain=None, range=Optional[Union[dict, Image]])
 
 slots.oRCIDiD = Slot(uri=EVORAO.oRCIDiD, name="oRCIDiD", curie=EVORAO.curie('oRCIDiD'),
                    model_uri=EVORAO.oRCIDiD, domain=None, range=Optional[str])
 
 slots.country = Slot(uri=EVORAO.country, name="country", curie=EVORAO.curie('country'),
-                   model_uri=EVORAO.country, domain=None, range=Optional[str])
+                   model_uri=EVORAO.country, domain=None, range=Optional[Union[dict, Country]])
 
 slots.rORiD = Slot(uri=EVORAO.rORiD, name="rORiD", curie=EVORAO.curie('rORiD'),
                    model_uri=EVORAO.rORiD, domain=None, range=Optional[str])
 
 slots.memberOfRI = Slot(uri=EVORAO.memberOfRI, name="memberOfRI", curie=EVORAO.curie('memberOfRI'),
-                   model_uri=EVORAO.memberOfRI, domain=None, range=Optional[str])
+                   model_uri=EVORAO.memberOfRI, domain=None, range=Optional[Union[Union[dict, RI], List[Union[dict, RI]]]])
 
 slots.recombinantMaterial = Slot(uri=EVORAO.recombinantMaterial, name="recombinantMaterial", curie=EVORAO.curie('recombinantMaterial'),
-                   model_uri=EVORAO.recombinantMaterial, domain=None, range=Optional[str])
+                   model_uri=EVORAO.recombinantMaterial, domain=None, range=Union[bool, Bool])
 
 slots.biologicalSourceType = Slot(uri=EVORAO.biologicalSourceType, name="biologicalSourceType", curie=EVORAO.curie('biologicalSourceType'),
-                   model_uri=EVORAO.biologicalSourceType, domain=None, range=Optional[str])
+                   model_uri=EVORAO.biologicalSourceType, domain=None, range=Union[bool, Bool])
 
 slots.biologicalPartOrigin = Slot(uri=EVORAO.biologicalPartOrigin, name="biologicalPartOrigin", curie=EVORAO.curie('biologicalPartOrigin'),
-                   model_uri=EVORAO.biologicalPartOrigin, domain=None, range=Optional[str])
+                   model_uri=EVORAO.biologicalPartOrigin, domain=None, range=Union[Union[dict, BiologicalPartOrigin], List[Union[dict, BiologicalPartOrigin]]])
 
 slots.recombinantPartIdentification = Slot(uri=EVORAO.recombinantPartIdentification, name="recombinantPartIdentification", curie=EVORAO.curie('recombinantPartIdentification'),
-                   model_uri=EVORAO.recombinantPartIdentification, domain=None, range=Optional[str])
+                   model_uri=EVORAO.recombinantPartIdentification, domain=None, range=Optional[Union[dict, RecombinantPartIdentification]])
 
 slots.accessToPhysicalGeneticResource = Slot(uri=EVORAO.accessToPhysicalGeneticResource, name="accessToPhysicalGeneticResource", curie=EVORAO.curie('accessToPhysicalGeneticResource'),
-                   model_uri=EVORAO.accessToPhysicalGeneticResource, domain=None, range=Optional[str])
+                   model_uri=EVORAO.accessToPhysicalGeneticResource, domain=None, range=Union[bool, Bool])
 
 slots.countryOfCollection = Slot(uri=EVORAO.countryOfCollection, name="countryOfCollection", curie=EVORAO.curie('countryOfCollection'),
-                   model_uri=EVORAO.countryOfCollection, domain=None, range=Optional[str])
+                   model_uri=EVORAO.countryOfCollection, domain=None, range=Union[dict, Country])
 
 slots.indigenousPoepleAndLocalCommunityOrigin = Slot(uri=EVORAO.indigenousPoepleAndLocalCommunityOrigin, name="indigenousPoepleAndLocalCommunityOrigin", curie=EVORAO.curie('indigenousPoepleAndLocalCommunityOrigin'),
-                   model_uri=EVORAO.indigenousPoepleAndLocalCommunityOrigin, domain=None, range=Optional[str])
+                   model_uri=EVORAO.indigenousPoepleAndLocalCommunityOrigin, domain=None, range=Optional[Union[dict, IPLCOrigin]])
 
 slots.collectionDate = Slot(uri=EVORAO.collectionDate, name="collectionDate", curie=EVORAO.curie('collectionDate'),
-                   model_uri=EVORAO.collectionDate, domain=None, range=Optional[str])
+                   model_uri=EVORAO.collectionDate, domain=None, range=Union[str, XSDDateTime])
 
 slots.beforeDate = Slot(uri=EVORAO.beforeDate, name="beforeDate", curie=EVORAO.curie('beforeDate'),
-                   model_uri=EVORAO.beforeDate, domain=None, range=Optional[str])
+                   model_uri=EVORAO.beforeDate, domain=None, range=Union[bool, Bool])
 
 slots.permitIdentifierForABS = Slot(uri=EVORAO.permitIdentifierForABS, name="permitIdentifierForABS", curie=EVORAO.curie('permitIdentifierForABS'),
                    model_uri=EVORAO.permitIdentifierForABS, domain=None, range=Optional[str])
 
 slots.modificationsFromTheReferenceSequences = Slot(uri=EVORAO.modificationsFromTheReferenceSequences, name="modificationsFromTheReferenceSequences", curie=EVORAO.curie('modificationsFromTheReferenceSequences'),
-                   model_uri=EVORAO.modificationsFromTheReferenceSequences, domain=None, range=Optional[str])
+                   model_uri=EVORAO.modificationsFromTheReferenceSequences, domain=None, range=Union[bool, Bool])
 
 slots.descriptionOfModificationsMadeFromTheReferenceSequences = Slot(uri=EVORAO.descriptionOfModificationsMadeFromTheReferenceSequences, name="descriptionOfModificationsMadeFromTheReferenceSequences", curie=EVORAO.curie('descriptionOfModificationsMadeFromTheReferenceSequences'),
                    model_uri=EVORAO.descriptionOfModificationsMadeFromTheReferenceSequences, domain=None, range=Optional[str])
 
 slots.partIdentification = Slot(uri=EVORAO.partIdentification, name="partIdentification", curie=EVORAO.curie('partIdentification'),
-                   model_uri=EVORAO.partIdentification, domain=None, range=Optional[str])
+                   model_uri=EVORAO.partIdentification, domain=None, range=str)
 
 slots.sequence = Slot(uri=EVORAO.sequence, name="sequence", curie=EVORAO.curie('sequence'),
-                   model_uri=EVORAO.sequence, domain=None, range=Optional[str])
+                   model_uri=EVORAO.sequence, domain=None, range=Union[Union[dict, Sequence], List[Union[dict, Sequence]]])
 
 slots.collectionItem = Slot(uri=EVORAO.collectionItem, name="collectionItem", curie=EVORAO.curie('collectionItem'),
-                   model_uri=EVORAO.collectionItem, domain=None, range=Optional[str])
+                   model_uri=EVORAO.collectionItem, domain=None, range=Optional[Union[Union[dict, ProductOrService], List[Union[dict, ProductOrService]]]])
 
 slots.collectionDataProvider = Slot(uri=EVORAO.collectionDataProvider, name="collectionDataProvider", curie=EVORAO.curie('collectionDataProvider'),
-                   model_uri=EVORAO.collectionDataProvider, domain=None, range=Optional[str])
+                   model_uri=EVORAO.collectionDataProvider, domain=None, range=Optional[Union[dict, DataProvider]])
 
 slots.accessPointURL = Slot(uri=EVORAO.accessPointURL, name="accessPointURL", curie=EVORAO.curie('accessPointURL'),
-                   model_uri=EVORAO.accessPointURL, domain=None, range=Optional[str])
+                   model_uri=EVORAO.accessPointURL, domain=None, range=Union[str, URI])
 
 slots.refSKU = Slot(uri=EVORAO.refSKU, name="refSKU", curie=EVORAO.curie('refSKU'),
-                   model_uri=EVORAO.refSKU, domain=None, range=Optional[str])
+                   model_uri=EVORAO.refSKU, domain=None, range=str)
 
 slots.unitDefinition = Slot(uri=EVORAO.unitDefinition, name="unitDefinition", curie=EVORAO.curie('unitDefinition'),
                    model_uri=EVORAO.unitDefinition, domain=None, range=Optional[str])
 
 slots.category = Slot(uri=EVORAO.category, name="category", curie=EVORAO.curie('category'),
-                   model_uri=EVORAO.category, domain=None, range=Optional[str])
+                   model_uri=EVORAO.category, domain=None, range=Union[dict, ProductCategory])
 
 slots.additionalCategory = Slot(uri=EVORAO.additionalCategory, name="additionalCategory", curie=EVORAO.curie('additionalCategory'),
-                   model_uri=EVORAO.additionalCategory, domain=None, range=Optional[str])
+                   model_uri=EVORAO.additionalCategory, domain=None, range=Optional[Union[Union[dict, ProductCategory], List[Union[dict, ProductCategory]]]])
 
 slots.unitCost = Slot(uri=EVORAO.unitCost, name="unitCost", curie=EVORAO.curie('unitCost'),
-                   model_uri=EVORAO.unitCost, domain=None, range=Optional[str])
+                   model_uri=EVORAO.unitCost, domain=None, range=str)
 
 slots.qualityGrading = Slot(uri=EVORAO.qualityGrading, name="qualityGrading", curie=EVORAO.curie('qualityGrading'),
                    model_uri=EVORAO.qualityGrading, domain=None, range=Optional[str])
 
 slots.pathogenIdentification = Slot(uri=EVORAO.pathogenIdentification, name="pathogenIdentification", curie=EVORAO.curie('pathogenIdentification'),
-                   model_uri=EVORAO.pathogenIdentification, domain=None, range=Optional[str])
+                   model_uri=EVORAO.pathogenIdentification, domain=None, range=Union[Union[dict, PathogenIdentification], List[Union[dict, PathogenIdentification]]])
 
 slots.riskGroup = Slot(uri=EVORAO.riskGroup, name="riskGroup", curie=EVORAO.curie('riskGroup'),
-                   model_uri=EVORAO.riskGroup, domain=None, range=Optional[str])
+                   model_uri=EVORAO.riskGroup, domain=None, range=Optional[Union[dict, RiskGroup]])
 
 slots.biosafetyRestrictions = Slot(uri=EVORAO.biosafetyRestrictions, name="biosafetyRestrictions", curie=EVORAO.curie('biosafetyRestrictions'),
                    model_uri=EVORAO.biosafetyRestrictions, domain=None, range=Optional[str])
 
 slots.canItBeUsedToProduceGMO = Slot(uri=EVORAO.canItBeUsedToProduceGMO, name="canItBeUsedToProduceGMO", curie=EVORAO.curie('canItBeUsedToProduceGMO'),
-                   model_uri=EVORAO.canItBeUsedToProduceGMO, domain=None, range=Optional[str])
+                   model_uri=EVORAO.canItBeUsedToProduceGMO, domain=None, range=Union[bool, Bool])
 
 slots.provider = Slot(uri=EVORAO.provider, name="provider", curie=EVORAO.curie('provider'),
-                   model_uri=EVORAO.provider, domain=None, range=Optional[str])
+                   model_uri=EVORAO.provider, domain=None, range=Union[dict, Provider])
 
 slots.collection = Slot(uri=EVORAO.collection, name="collection", curie=EVORAO.curie('collection'),
-                   model_uri=EVORAO.collection, domain=None, range=Optional[str])
+                   model_uri=EVORAO.collection, domain=None, range=Union[Union[dict, Collection], List[Union[dict, Collection]]])
 
 slots.keywords = Slot(uri=EVORAO.keywords, name="keywords", curie=EVORAO.curie('keywords'),
-                   model_uri=EVORAO.keywords, domain=None, range=Optional[str])
+                   model_uri=EVORAO.keywords, domain=None, range=Union[Union[dict, Keyword], List[Union[dict, Keyword]]])
 
 slots.availability = Slot(uri=EVORAO.availability, name="availability", curie=EVORAO.curie('availability'),
-                   model_uri=EVORAO.availability, domain=None, range=Optional[str])
+                   model_uri=EVORAO.availability, domain=None, range=str)
 
 slots.complementaryDocument = Slot(uri=EVORAO.complementaryDocument, name="complementaryDocument", curie=EVORAO.curie('complementaryDocument'),
-                   model_uri=EVORAO.complementaryDocument, domain=None, range=Optional[str])
+                   model_uri=EVORAO.complementaryDocument, domain=None, range=Optional[Union[Union[dict, Document], List[Union[dict, Document]]]])
 
 slots.technicalRecommendation = Slot(uri=EVORAO.technicalRecommendation, name="technicalRecommendation", curie=EVORAO.curie('technicalRecommendation'),
                    model_uri=EVORAO.technicalRecommendation, domain=None, range=Optional[str])
 
 slots.productPicture = Slot(uri=EVORAO.productPicture, name="productPicture", curie=EVORAO.curie('productPicture'),
-                   model_uri=EVORAO.productPicture, domain=None, range=Optional[str])
+                   model_uri=EVORAO.productPicture, domain=None, range=Optional[Union[Union[dict, Image], List[Union[dict, Image]]]])
 
 slots.externalRelatedReference = Slot(uri=EVORAO.externalRelatedReference, name="externalRelatedReference", curie=EVORAO.curie('externalRelatedReference'),
-                   model_uri=EVORAO.externalRelatedReference, domain=None, range=Optional[str])
+                   model_uri=EVORAO.externalRelatedReference, domain=None, range=Optional[Union[Union[dict, ExternalRelatedReference], List[Union[dict, ExternalRelatedReference]]]])
 
 slots.certification = Slot(uri=EVORAO.certification, name="certification", curie=EVORAO.curie('certification'),
-                   model_uri=EVORAO.certification, domain=None, range=Optional[str])
+                   model_uri=EVORAO.certification, domain=None, range=Optional[Union[Union[dict, Certification], List[Union[dict, Certification]]]])
 
 slots.internalReference = Slot(uri=EVORAO.internalReference, name="internalReference", curie=EVORAO.curie('internalReference'),
                    model_uri=EVORAO.internalReference, domain=None, range=Optional[str])
@@ -3005,22 +3003,22 @@ slots.modelType = Slot(uri=EVORAO.modelType, name="modelType", curie=EVORAO.curi
                    model_uri=EVORAO.modelType, domain=None, range=Optional[str])
 
 slots.hasIATAClassification = Slot(uri=EVORAO.hasIATAClassification, name="hasIATAClassification", curie=EVORAO.curie('hasIATAClassification'),
-                   model_uri=EVORAO.hasIATAClassification, domain=None, range=Optional[str])
+                   model_uri=EVORAO.hasIATAClassification, domain=None, range=Union[dict, IATAClassification])
 
 slots.shippingConditions = Slot(uri=EVORAO.shippingConditions, name="shippingConditions", curie=EVORAO.curie('shippingConditions'),
-                   model_uri=EVORAO.shippingConditions, domain=None, range=Optional[str])
+                   model_uri=EVORAO.shippingConditions, domain=None, range=str)
 
 slots.materialSafetyDataSheet = Slot(uri=EVORAO.materialSafetyDataSheet, name="materialSafetyDataSheet", curie=EVORAO.curie('materialSafetyDataSheet'),
-                   model_uri=EVORAO.materialSafetyDataSheet, domain=None, range=Optional[str])
+                   model_uri=EVORAO.materialSafetyDataSheet, domain=None, range=Optional[Union[dict, MSDS]])
 
 slots.originator = Slot(uri=EVORAO.originator, name="originator", curie=EVORAO.curie('originator'),
-                   model_uri=EVORAO.originator, domain=None, range=Optional[str])
+                   model_uri=EVORAO.originator, domain=None, range=Optional[Union[dict, Originator]])
 
 slots.storageConditions = Slot(uri=EVORAO.storageConditions, name="storageConditions", curie=EVORAO.curie('storageConditions'),
-                   model_uri=EVORAO.storageConditions, domain=None, range=Optional[str])
+                   model_uri=EVORAO.storageConditions, domain=None, range=str)
 
 slots.thirdPartyDistributionConsent = Slot(uri=EVORAO.thirdPartyDistributionConsent, name="thirdPartyDistributionConsent", curie=EVORAO.curie('thirdPartyDistributionConsent'),
-                   model_uri=EVORAO.thirdPartyDistributionConsent, domain=None, range=Optional[str])
+                   model_uri=EVORAO.thirdPartyDistributionConsent, domain=None, range=Optional[Union[bool, Bool]])
 
 slots.usageRestrictions = Slot(uri=EVORAO.usageRestrictions, name="usageRestrictions", curie=EVORAO.curie('usageRestrictions'),
                    model_uri=EVORAO.usageRestrictions, domain=None, range=Optional[str])
@@ -3029,76 +3027,76 @@ slots.productionSystem = Slot(uri=EVORAO.productionSystem, name="productionSyste
                    model_uri=EVORAO.productionSystem, domain=None, range=Optional[str])
 
 slots.antibodyPurifiedByAffinity = Slot(uri=EVORAO.antibodyPurifiedByAffinity, name="antibodyPurifiedByAffinity", curie=EVORAO.curie('antibodyPurifiedByAffinity'),
-                   model_uri=EVORAO.antibodyPurifiedByAffinity, domain=None, range=Optional[str])
+                   model_uri=EVORAO.antibodyPurifiedByAffinity, domain=None, range=Union[bool, Bool])
 
 slots.specificityDocumented = Slot(uri=EVORAO.specificityDocumented, name="specificityDocumented", curie=EVORAO.curie('specificityDocumented'),
-                   model_uri=EVORAO.specificityDocumented, domain=None, range=Optional[str])
+                   model_uri=EVORAO.specificityDocumented, domain=None, range=Union[bool, Bool])
 
 slots.targetedAntigen = Slot(uri=EVORAO.targetedAntigen, name="targetedAntigen", curie=EVORAO.curie('targetedAntigen'),
-                   model_uri=EVORAO.targetedAntigen, domain=None, range=Optional[str])
+                   model_uri=EVORAO.targetedAntigen, domain=None, range=str)
 
 slots.hybridomaDescription = Slot(uri=EVORAO.hybridomaDescription, name="hybridomaDescription", curie=EVORAO.curie('hybridomaDescription'),
-                   model_uri=EVORAO.hybridomaDescription, domain=None, range=Optional[str])
+                   model_uri=EVORAO.hybridomaDescription, domain=None, range=str)
 
 slots.biologicalMaterialOrigin = Slot(uri=EVORAO.biologicalMaterialOrigin, name="biologicalMaterialOrigin", curie=EVORAO.curie('biologicalMaterialOrigin'),
-                   model_uri=EVORAO.biologicalMaterialOrigin, domain=None, range=Optional[str])
+                   model_uri=EVORAO.biologicalMaterialOrigin, domain=None, range=Union[dict, BiologicalMaterialOrigin])
 
 slots.relatedPDB = Slot(uri=EVORAO.relatedPDB, name="relatedPDB", curie=EVORAO.curie('relatedPDB'),
-                   model_uri=EVORAO.relatedPDB, domain=None, range=Optional[str])
+                   model_uri=EVORAO.relatedPDB, domain=None, range=Optional[Union[Union[dict, PDBReference], List[Union[dict, PDBReference]]]])
 
 slots.specialFeature = Slot(uri=EVORAO.specialFeature, name="specialFeature", curie=EVORAO.curie('specialFeature'),
-                   model_uri=EVORAO.specialFeature, domain=None, range=Optional[str])
+                   model_uri=EVORAO.specialFeature, domain=None, range=Optional[Union[Union[dict, SpecialFeature], List[Union[dict, SpecialFeature]]]])
 
 slots.proteinTAG = Slot(uri=EVORAO.proteinTAG, name="proteinTAG", curie=EVORAO.curie('proteinTAG'),
-                   model_uri=EVORAO.proteinTAG, domain=None, range=Optional[str])
+                   model_uri=EVORAO.proteinTAG, domain=None, range=Optional[Union[Union[dict, ProteinTag], List[Union[dict, ProteinTag]]]])
 
 slots.domain = Slot(uri=EVORAO.domain, name="domain", curie=EVORAO.curie('domain'),
-                   model_uri=EVORAO.domain, domain=None, range=Optional[str])
+                   model_uri=EVORAO.domain, domain=None, range=Optional[Union[str, List[str]]])
 
 slots.expressedAs = Slot(uri=EVORAO.expressedAs, name="expressedAs", curie=EVORAO.curie('expressedAs'),
-                   model_uri=EVORAO.expressedAs, domain=None, range=Optional[str])
+                   model_uri=EVORAO.expressedAs, domain=None, range=Optional[Union[str, List[str]]])
 
 slots.inclusionBodiesType = Slot(uri=EVORAO.inclusionBodiesType, name="inclusionBodiesType", curie=EVORAO.curie('inclusionBodiesType'),
-                   model_uri=EVORAO.inclusionBodiesType, domain=None, range=Optional[str])
+                   model_uri=EVORAO.inclusionBodiesType, domain=None, range=Optional[Union[str, List[str]]])
 
 slots.expressionSystem = Slot(uri=EVORAO.expressionSystem, name="expressionSystem", curie=EVORAO.curie('expressionSystem'),
-                   model_uri=EVORAO.expressionSystem, domain=None, range=Optional[str])
+                   model_uri=EVORAO.expressionSystem, domain=None, range=Optional[Union[str, List[str]]])
 
 slots.functionalCharacterization = Slot(uri=EVORAO.functionalCharacterization, name="functionalCharacterization", curie=EVORAO.curie('functionalCharacterization'),
-                   model_uri=EVORAO.functionalCharacterization, domain=None, range=Optional[str])
+                   model_uri=EVORAO.functionalCharacterization, domain=None, range=Optional[Union[str, List[str]]])
 
 slots.functionalTechnicalDescription = Slot(uri=EVORAO.functionalTechnicalDescription, name="functionalTechnicalDescription", curie=EVORAO.curie('functionalTechnicalDescription'),
-                   model_uri=EVORAO.functionalTechnicalDescription, domain=None, range=Optional[str])
+                   model_uri=EVORAO.functionalTechnicalDescription, domain=None, range=Optional[Union[str, List[str]]])
 
 slots.proteinPurification = Slot(uri=EVORAO.proteinPurification, name="proteinPurification", curie=EVORAO.curie('proteinPurification'),
-                   model_uri=EVORAO.proteinPurification, domain=None, range=Optional[str])
+                   model_uri=EVORAO.proteinPurification, domain=None, range=Optional[Union[str, List[str]]])
 
 slots.theTAGStatusOfTheSolubilizedProtein = Slot(uri=EVORAO.theTAGStatusOfTheSolubilizedProtein, name="theTAGStatusOfTheSolubilizedProtein", curie=EVORAO.curie('theTAGStatusOfTheSolubilizedProtein'),
-                   model_uri=EVORAO.theTAGStatusOfTheSolubilizedProtein, domain=None, range=Optional[str])
+                   model_uri=EVORAO.theTAGStatusOfTheSolubilizedProtein, domain=None, range=Optional[Union[str, List[str]]])
 
 slots.typeOfFunctionalCharacterization = Slot(uri=EVORAO.typeOfFunctionalCharacterization, name="typeOfFunctionalCharacterization", curie=EVORAO.curie('typeOfFunctionalCharacterization'),
-                   model_uri=EVORAO.typeOfFunctionalCharacterization, domain=None, range=Optional[str])
+                   model_uri=EVORAO.typeOfFunctionalCharacterization, domain=None, range=Optional[Union[str, List[str]]])
 
 slots.hasGbFileOfTheConstruct = Slot(uri=EVORAO.hasGbFileOfTheConstruct, name="hasGbFileOfTheConstruct", curie=EVORAO.curie('hasGbFileOfTheConstruct'),
-                   model_uri=EVORAO.hasGbFileOfTheConstruct, domain=None, range=Optional[str])
+                   model_uri=EVORAO.hasGbFileOfTheConstruct, domain=None, range=Optional[Union[Union[dict, Data], List[Union[dict, Data]]]])
 
 slots.isItAClonedNucleicAcid = Slot(uri=EVORAO.isItAClonedNucleicAcid, name="isItAClonedNucleicAcid", curie=EVORAO.curie('isItAClonedNucleicAcid'),
-                   model_uri=EVORAO.isItAClonedNucleicAcid, domain=None, range=Optional[str])
+                   model_uri=EVORAO.isItAClonedNucleicAcid, domain=None, range=Union[bool, Bool])
 
 slots.clonedIntoPlasmid = Slot(uri=EVORAO.clonedIntoPlasmid, name="clonedIntoPlasmid", curie=EVORAO.curie('clonedIntoPlasmid'),
-                   model_uri=EVORAO.clonedIntoPlasmid, domain=None, range=Optional[str])
+                   model_uri=EVORAO.clonedIntoPlasmid, domain=None, range=Optional[Union[dict, ExpressionVector]])
 
 slots.pasmidSelection = Slot(uri=EVORAO.pasmidSelection, name="pasmidSelection", curie=EVORAO.curie('pasmidSelection'),
-                   model_uri=EVORAO.pasmidSelection, domain=None, range=Optional[str])
+                   model_uri=EVORAO.pasmidSelection, domain=None, range=Optional[Union[Union[dict, PlasmidSelection], List[Union[dict, PlasmidSelection]]]])
 
 slots.hasTAG = Slot(uri=EVORAO.hasTAG, name="hasTAG", curie=EVORAO.curie('hasTAG'),
-                   model_uri=EVORAO.hasTAG, domain=None, range=Optional[str])
+                   model_uri=EVORAO.hasTAG, domain=None, range=Union[dict, ProteinTag])
 
 slots.regionEncompassedInThisProduct = Slot(uri=EVORAO.regionEncompassedInThisProduct, name="regionEncompassedInThisProduct", curie=EVORAO.curie('regionEncompassedInThisProduct'),
-                   model_uri=EVORAO.regionEncompassedInThisProduct, domain=None, range=Optional[str])
+                   model_uri=EVORAO.regionEncompassedInThisProduct, domain=None, range=str)
 
 slots.mutationObserved = Slot(uri=EVORAO.mutationObserved, name="mutationObserved", curie=EVORAO.curie('mutationObserved'),
-                   model_uri=EVORAO.mutationObserved, domain=None, range=Optional[str])
+                   model_uri=EVORAO.mutationObserved, domain=None, range=Union[bool, Bool])
 
 slots.observedMutations = Slot(uri=EVORAO.observedMutations, name="observedMutations", curie=EVORAO.curie('observedMutations'),
                    model_uri=EVORAO.observedMutations, domain=None, range=Optional[str])
@@ -3107,16 +3105,16 @@ slots.identificationTechnique = Slot(uri=EVORAO.identificationTechnique, name="i
                    model_uri=EVORAO.identificationTechnique, domain=None, range=Optional[str])
 
 slots.sequencing = Slot(uri=EVORAO.sequencing, name="sequencing", curie=EVORAO.curie('sequencing'),
-                   model_uri=EVORAO.sequencing, domain=None, range=Optional[str])
+                   model_uri=EVORAO.sequencing, domain=None, range=str)
 
 slots.titer = Slot(uri=EVORAO.titer, name="titer", curie=EVORAO.curie('titer'),
-                   model_uri=EVORAO.titer, domain=None, range=Optional[str])
+                   model_uri=EVORAO.titer, domain=None, range=str)
 
 slots.sequenceChecked = Slot(uri=EVORAO.sequenceChecked, name="sequenceChecked", curie=EVORAO.curie('sequenceChecked'),
-                   model_uri=EVORAO.sequenceChecked, domain=None, range=Optional[str])
+                   model_uri=EVORAO.sequenceChecked, domain=None, range=Union[bool, Bool])
 
 slots.hasSOPFile = Slot(uri=EVORAO.hasSOPFile, name="hasSOPFile", curie=EVORAO.curie('hasSOPFile'),
-                   model_uri=EVORAO.hasSOPFile, domain=None, range=Optional[str])
+                   model_uri=EVORAO.hasSOPFile, domain=None, range=Optional[Union[Union[dict, File], List[Union[dict, File]]]])
 
 slots.specificity = Slot(uri=EVORAO.specificity, name="specificity", curie=EVORAO.curie('specificity'),
                    model_uri=EVORAO.specificity, domain=None, range=Optional[str])
@@ -3125,31 +3123,31 @@ slots.targetedRegion = Slot(uri=EVORAO.targetedRegion, name="targetedRegion", cu
                    model_uri=EVORAO.targetedRegion, domain=None, range=Optional[str])
 
 slots.productsOfTheBundle = Slot(uri=EVORAO.productsOfTheBundle, name="productsOfTheBundle", curie=EVORAO.curie('productsOfTheBundle'),
-                   model_uri=EVORAO.productsOfTheBundle, domain=None, range=Optional[str])
+                   model_uri=EVORAO.productsOfTheBundle, domain=None, range=Union[Union[dict, Product], List[Union[dict, Product]]])
 
 slots.suspectedEpidemiologicalOrigin = Slot(uri=EVORAO.suspectedEpidemiologicalOrigin, name="suspectedEpidemiologicalOrigin", curie=EVORAO.curie('suspectedEpidemiologicalOrigin'),
-                   model_uri=EVORAO.suspectedEpidemiologicalOrigin, domain=None, range=Optional[str])
+                   model_uri=EVORAO.suspectedEpidemiologicalOrigin, domain=None, range=Optional[Union[Union[dict, GeographicalOrigin], List[Union[dict, GeographicalOrigin]]]])
 
 slots.isolationHost = Slot(uri=EVORAO.isolationHost, name="isolationHost", curie=EVORAO.curie('isolationHost'),
-                   model_uri=EVORAO.isolationHost, domain=None, range=Optional[str])
+                   model_uri=EVORAO.isolationHost, domain=None, range=Optional[Union[Union[dict, IsolationHost], List[Union[dict, IsolationHost]]]])
 
 slots.productionCellLine = Slot(uri=EVORAO.productionCellLine, name="productionCellLine", curie=EVORAO.curie('productionCellLine'),
-                   model_uri=EVORAO.productionCellLine, domain=None, range=Optional[str])
+                   model_uri=EVORAO.productionCellLine, domain=None, range=Optional[Union[Union[dict, ProductionCellLine], List[Union[dict, ProductionCellLine]]]])
 
 slots.propagationHost = Slot(uri=EVORAO.propagationHost, name="propagationHost", curie=EVORAO.curie('propagationHost'),
-                   model_uri=EVORAO.propagationHost, domain=None, range=Optional[str])
+                   model_uri=EVORAO.propagationHost, domain=None, range=Optional[Union[Union[dict, PropagationHost], List[Union[dict, PropagationHost]]]])
 
 slots.transmissionMethod = Slot(uri=EVORAO.transmissionMethod, name="transmissionMethod", curie=EVORAO.curie('transmissionMethod'),
-                   model_uri=EVORAO.transmissionMethod, domain=None, range=Optional[str])
+                   model_uri=EVORAO.transmissionMethod, domain=None, range=Optional[Union[Union[dict, TransmissionMethod], List[Union[dict, TransmissionMethod]]]])
 
 slots.cultivability = Slot(uri=EVORAO.cultivability, name="cultivability", curie=EVORAO.curie('cultivability'),
-                   model_uri=EVORAO.cultivability, domain=None, range=Optional[str])
+                   model_uri=EVORAO.cultivability, domain=None, range=str)
 
 slots.clinicalInformation = Slot(uri=EVORAO.clinicalInformation, name="clinicalInformation", curie=EVORAO.curie('clinicalInformation'),
                    model_uri=EVORAO.clinicalInformation, domain=None, range=Optional[str])
 
 slots.infectivity = Slot(uri=EVORAO.infectivity, name="infectivity", curie=EVORAO.curie('infectivity'),
-                   model_uri=EVORAO.infectivity, domain=None, range=Optional[str])
+                   model_uri=EVORAO.infectivity, domain=None, range=str)
 
 slots.infectivityTest = Slot(uri=EVORAO.infectivityTest, name="infectivityTest", curie=EVORAO.curie('infectivityTest'),
                    model_uri=EVORAO.infectivityTest, domain=None, range=Optional[str])
@@ -3161,25 +3159,25 @@ slots.isolationConditions = Slot(uri=EVORAO.isolationConditions, name="isolation
                    model_uri=EVORAO.isolationConditions, domain=None, range=Optional[str])
 
 slots.letterOfAuthority = Slot(uri=EVORAO.letterOfAuthority, name="letterOfAuthority", curie=EVORAO.curie('letterOfAuthority'),
-                   model_uri=EVORAO.letterOfAuthority, domain=None, range=Optional[str])
+                   model_uri=EVORAO.letterOfAuthority, domain=None, range=str)
 
 slots.passage = Slot(uri=EVORAO.passage, name="passage", curie=EVORAO.curie('passage'),
                    model_uri=EVORAO.passage, domain=None, range=Optional[str])
 
 slots.genomeSequencing = Slot(uri=EVORAO.genomeSequencing, name="genomeSequencing", curie=EVORAO.curie('genomeSequencing'),
-                   model_uri=EVORAO.genomeSequencing, domain=None, range=Optional[str])
+                   model_uri=EVORAO.genomeSequencing, domain=None, range=str)
 
 slots.coInfectingViruses = Slot(uri=EVORAO.coInfectingViruses, name="coInfectingViruses", curie=EVORAO.curie('coInfectingViruses'),
-                   model_uri=EVORAO.coInfectingViruses, domain=None, range=Optional[str])
+                   model_uri=EVORAO.coInfectingViruses, domain=None, range=Optional[Union[Union[dict, VirusName], List[Union[dict, VirusName]]]])
 
 slots.contaminationWithCoInfectingViruses = Slot(uri=EVORAO.contaminationWithCoInfectingViruses, name="contaminationWithCoInfectingViruses", curie=EVORAO.curie('contaminationWithCoInfectingViruses'),
-                   model_uri=EVORAO.contaminationWithCoInfectingViruses, domain=None, range=Optional[str])
+                   model_uri=EVORAO.contaminationWithCoInfectingViruses, domain=None, range=Union[bool, Bool])
 
 slots.mycoplasmicContent = Slot(uri=EVORAO.mycoplasmicContent, name="mycoplasmicContent", curie=EVORAO.curie('mycoplasmicContent'),
-                   model_uri=EVORAO.mycoplasmicContent, domain=None, range=Optional[str])
+                   model_uri=EVORAO.mycoplasmicContent, domain=None, range=Union[bool, Bool])
 
 slots.msdsContact = Slot(uri=EVORAO.msdsContact, name="msdsContact", curie=EVORAO.curie('msdsContact'),
-                   model_uri=EVORAO.msdsContact, domain=None, range=Optional[str])
+                   model_uri=EVORAO.msdsContact, domain=None, range=Union[dict, ContactPoint])
 
 slots.physicalChemicalProperties = Slot(uri=EVORAO.physicalChemicalProperties, name="physicalChemicalProperties", curie=EVORAO.curie('physicalChemicalProperties'),
                    model_uri=EVORAO.physicalChemicalProperties, domain=None, range=Optional[str])
@@ -3224,10 +3222,10 @@ slots.furtherInformation = Slot(uri=EVORAO.furtherInformation, name="furtherInfo
                    model_uri=EVORAO.furtherInformation, domain=None, range=Optional[str])
 
 slots.contentURL = Slot(uri=EVORAO.contentURL, name="contentURL", curie=EVORAO.curie('contentURL'),
-                   model_uri=EVORAO.contentURL, domain=None, range=Optional[str])
+                   model_uri=EVORAO.contentURL, domain=None, range=Union[str, URI])
 
 slots.format = Slot(uri=EVORAO.format, name="format", curie=EVORAO.curie('format'),
-                   model_uri=EVORAO.format, domain=None, range=Optional[str])
+                   model_uri=EVORAO.format, domain=None, range=str)
 
 slots.altText = Slot(uri=EVORAO.altText, name="altText", curie=EVORAO.curie('altText'),
                    model_uri=EVORAO.altText, domain=None, range=Optional[str])
@@ -3251,16 +3249,16 @@ slots.postalCode = Slot(uri=EVORAO.postalCode, name="postalCode", curie=EVORAO.c
                    model_uri=EVORAO.postalCode, domain=None, range=Optional[str])
 
 slots.addressCountry = Slot(uri=EVORAO.addressCountry, name="addressCountry", curie=EVORAO.curie('addressCountry'),
-                   model_uri=EVORAO.addressCountry, domain=None, range=Optional[str])
+                   model_uri=EVORAO.addressCountry, domain=None, range=Optional[Union[dict, Country]])
 
 slots.resourceURL = Slot(uri=EVORAO.resourceURL, name="resourceURL", curie=EVORAO.curie('resourceURL'),
-                   model_uri=EVORAO.resourceURL, domain=None, range=Optional[str])
+                   model_uri=EVORAO.resourceURL, domain=None, range=Optional[Union[str, URI]])
 
 slots.licensingOrAttribution = Slot(uri=EVORAO.licensingOrAttribution, name="licensingOrAttribution", curie=EVORAO.curie('licensingOrAttribution'),
                    model_uri=EVORAO.licensingOrAttribution, domain=None, range=Optional[str])
 
 slots.certificationDocument = Slot(uri=EVORAO.certificationDocument, name="certificationDocument", curie=EVORAO.curie('certificationDocument'),
-                   model_uri=EVORAO.certificationDocument, domain=None, range=Optional[str])
+                   model_uri=EVORAO.certificationDocument, domain=None, range=Optional[Union[Union[dict, Document], List[Union[dict, Document]]]])
 
 slots.DataService_name = Slot(uri=EVORAO.name, name="DataService_name", curie=EVORAO.curie('name'),
                    model_uri=EVORAO.DataService_name, domain=DataService, range=str)
@@ -3281,7 +3279,7 @@ slots.Catalogue_description = Slot(uri=EVORAO.description, name="Catalogue_descr
                    model_uri=EVORAO.Catalogue_description, domain=Catalogue, range=Optional[str])
 
 slots.Taxonomy_taxon = Slot(uri=EVORAO.taxon, name="Taxonomy_taxon", curie=EVORAO.curie('taxon'),
-                   model_uri=EVORAO.Taxonomy_taxon, domain=Taxonomy, range=Optional[Union[Union[dict, "Taxon"], List[Union[dict, "Taxon"]]]])
+                   model_uri=EVORAO.Taxonomy_taxon, domain=Taxonomy, range=Union[Union[dict, "Taxon"], List[Union[dict, "Taxon"]]])
 
 slots.Taxonomy_taxonDataProvider = Slot(uri=EVORAO.taxonDataProvider, name="Taxonomy_taxonDataProvider", curie=EVORAO.curie('taxonDataProvider'),
                    model_uri=EVORAO.Taxonomy_taxonDataProvider, domain=Taxonomy, range=Optional[Union[dict, "DataProvider"]])
@@ -3293,7 +3291,7 @@ slots.Taxonomy_versionDataProvider = Slot(uri=EVORAO.versionDataProvider, name="
                    model_uri=EVORAO.Taxonomy_versionDataProvider, domain=Taxonomy, range=Union[dict, "DataProvider"])
 
 slots.Taxonomy_rank = Slot(uri=EVORAO.rank, name="Taxonomy_rank", curie=EVORAO.curie('rank'),
-                   model_uri=EVORAO.Taxonomy_rank, domain=Taxonomy, range=Optional[Union[Union[dict, "TaxonomicRank"], List[Union[dict, "TaxonomicRank"]]]])
+                   model_uri=EVORAO.Taxonomy_rank, domain=Taxonomy, range=Union[Union[dict, "TaxonomicRank"], List[Union[dict, "TaxonomicRank"]]])
 
 slots.Taxonomy_rankDataProvider = Slot(uri=EVORAO.rankDataProvider, name="Taxonomy_rankDataProvider", curie=EVORAO.curie('rankDataProvider'),
                    model_uri=EVORAO.Taxonomy_rankDataProvider, domain=Taxonomy, range=Optional[Union[dict, "DataProvider"]])
@@ -3365,7 +3363,7 @@ slots.Publication_abstract = Slot(uri=EVORAO.abstract, name="Publication_abstrac
                    model_uri=EVORAO.Publication_abstract, domain=Publication, range=str)
 
 slots.Publication_relatedDOI = Slot(uri=EVORAO.relatedDOI, name="Publication_relatedDOI", curie=EVORAO.curie('relatedDOI'),
-                   model_uri=EVORAO.Publication_relatedDOI, domain=Publication, range=Union[dict, "DOI"])
+                   model_uri=EVORAO.Publication_relatedDOI, domain=Publication, range=Union[Union[dict, "DOI"], List[Union[dict, "DOI"]]])
 
 slots.Publication_journal = Slot(uri=EVORAO.journal, name="Publication_journal", curie=EVORAO.curie('journal'),
                    model_uri=EVORAO.Publication_journal, domain=Publication, range=Optional[Union[dict, "Journal"]])
@@ -3461,7 +3459,7 @@ slots.PersonOrOrganization_description = Slot(uri=EVORAO.description, name="Pers
                    model_uri=EVORAO.PersonOrOrganization_description, domain=PersonOrOrganization, range=Optional[str])
 
 slots.PersonOrOrganization_homePage = Slot(uri=EVORAO.homePage, name="PersonOrOrganization_homePage", curie=EVORAO.curie('homePage'),
-                   model_uri=EVORAO.PersonOrOrganization_homePage, domain=PersonOrOrganization, range=Optional[str])
+                   model_uri=EVORAO.PersonOrOrganization_homePage, domain=PersonOrOrganization, range=Optional[Union[str, URI]])
 
 slots.PersonOrOrganization_contactPoint = Slot(uri=EVORAO.contactPoint, name="PersonOrOrganization_contactPoint", curie=EVORAO.curie('contactPoint'),
                    model_uri=EVORAO.PersonOrOrganization_contactPoint, domain=PersonOrOrganization, range=Optional[Union[dict, "ContactPoint"]])
@@ -3473,7 +3471,7 @@ slots.Person_oRCIDiD = Slot(uri=EVORAO.oRCIDiD, name="Person_oRCIDiD", curie=EVO
                    model_uri=EVORAO.Person_oRCIDiD, domain=Person, range=Optional[str])
 
 slots.Organization_alternateName = Slot(uri=EVORAO.alternateName, name="Organization_alternateName", curie=EVORAO.curie('alternateName'),
-                   model_uri=EVORAO.Organization_alternateName, domain=Organization, range=Optional[Union[dict, AlternateName]])
+                   model_uri=EVORAO.Organization_alternateName, domain=Organization, range=Optional[Union[Union[dict, AlternateName], List[Union[dict, AlternateName]]]])
 
 slots.Organization_country = Slot(uri=EVORAO.country, name="Organization_country", curie=EVORAO.curie('country'),
                    model_uri=EVORAO.Organization_country, domain=Organization, range=Optional[Union[dict, Country]])
@@ -3734,7 +3732,7 @@ slots.Nucleic_Acid_sequencing = Slot(uri=EVORAO.sequencing, name="Nucleic Acid_s
                    model_uri=EVORAO.Nucleic_Acid_sequencing, domain=NucleicAcid, range=str)
 
 slots.Nucleic_Acid_titer = Slot(uri=EVORAO.titer, name="Nucleic Acid_titer", curie=EVORAO.curie('titer'),
-                   model_uri=EVORAO.Nucleic_Acid_titer, domain=NucleicAcid, range=Optional[str])
+                   model_uri=EVORAO.Nucleic_Acid_titer, domain=NucleicAcid, range=str)
 
 slots.Nucleic_Acid_sequenceChecked = Slot(uri=EVORAO.sequenceChecked, name="Nucleic Acid_sequenceChecked", curie=EVORAO.curie('sequenceChecked'),
                    model_uri=EVORAO.Nucleic_Acid_sequenceChecked, domain=NucleicAcid, range=Union[bool, Bool])
@@ -3753,9 +3751,6 @@ slots.Detection_Kit_targetedRegion = Slot(uri=EVORAO.targetedRegion, name="Detec
 
 slots.Bundle_productsOfTheBundle = Slot(uri=EVORAO.productsOfTheBundle, name="Bundle_productsOfTheBundle", curie=EVORAO.curie('productsOfTheBundle'),
                    model_uri=EVORAO.Bundle_productsOfTheBundle, domain=Bundle, range=Union[Union[dict, Product], List[Union[dict, Product]]])
-
-slots.Bundle_complementaryDocument = Slot(uri=EVORAO.complementaryDocument, name="Bundle_complementaryDocument", curie=EVORAO.curie('complementaryDocument'),
-                   model_uri=EVORAO.Bundle_complementaryDocument, domain=Bundle, range=Optional[Union[Union[dict, "File"], List[Union[dict, "File"]]]])
 
 slots.Pathogen_biologicalMaterialOrigin = Slot(uri=EVORAO.biologicalMaterialOrigin, name="Pathogen_biologicalMaterialOrigin", curie=EVORAO.curie('biologicalMaterialOrigin'),
                    model_uri=EVORAO.Pathogen_biologicalMaterialOrigin, domain=Pathogen, range=Union[dict, BiologicalMaterialOrigin])

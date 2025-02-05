@@ -1,6 +1,11 @@
 
 
-# Slot: modelType
+# Slot: model type (modelType)
+
+
+_The specific name of the infected organism, including its modification if necessary_
+
+
 
 
 
@@ -65,12 +70,17 @@ URI: [EVORAO:modelType](https://raw.githubusercontent.com/EVORA-project/evora-on
 <details>
 ```yaml
 name: modelType
+description: The specific name of the infected organism, including its modification
+  if necessary
+title: model type
 from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
 rank: 1000
 alias: modelType
 domain_of:
 - Service
 range: string
+required: false
+multivalued: false
 
 ```
 </details>

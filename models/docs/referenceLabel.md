@@ -1,6 +1,11 @@
 
 
-# Slot: referenceLabel
+# Slot: reference label (referenceLabel)
+
+
+_The label informing what this reference is about_
+
+
 
 
 
@@ -30,9 +35,15 @@ URI: [EVORAO:referenceLabel](https://raw.githubusercontent.com/EVORA-project/evo
 
 * Range: [String](String.md)
 
+* Required: True
 
 
 
+
+
+## Comments
+
+* e.g., 'Infravec2 related product'
 
 ## Identifier and Mapping Information
 
@@ -56,6 +67,7 @@ URI: [EVORAO:referenceLabel](https://raw.githubusercontent.com/EVORA-project/evo
 | ---  | ---  |
 | self | EVORAO:referenceLabel |
 | native | EVORAO:referenceLabel |
+| close | dct:title |
 
 
 
@@ -65,12 +77,20 @@ URI: [EVORAO:referenceLabel](https://raw.githubusercontent.com/EVORA-project/evo
 <details>
 ```yaml
 name: referenceLabel
+description: The label informing what this reference is about
+title: reference label
+comments:
+- e.g., 'Infravec2 related product'
 from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+close_mappings:
+- dct:title
 rank: 1000
 alias: referenceLabel
 domain_of:
 - ExternalRelatedReference
 range: string
+required: true
+multivalued: false
 
 ```
 </details>

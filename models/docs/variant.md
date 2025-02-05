@@ -1,6 +1,11 @@
 
 
-# Slot: variant
+# Slot: variant (variant)
+
+
+_An organism with one or more new mutations is referred to as a “variant” of the original organism if not sufficiently different to be termed a distinct strain_
+
+
 
 
 
@@ -28,7 +33,7 @@ URI: [EVORAO:variant](https://raw.githubusercontent.com/EVORA-project/evora-onto
 
 ## Properties
 
-* Range: [String](String.md)
+* Range: [Variant](Variant.md)
 
 
 
@@ -65,12 +70,17 @@ URI: [EVORAO:variant](https://raw.githubusercontent.com/EVORA-project/evora-onto
 <details>
 ```yaml
 name: variant
+description: An organism with one or more new mutations is referred to as a “variant”
+  of the original organism if not sufficiently different to be termed a distinct strain
+title: variant
 from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
 rank: 1000
 alias: variant
 domain_of:
 - PathogenIdentification
-range: string
+range: Variant
+required: false
+multivalued: false
 
 ```
 </details>

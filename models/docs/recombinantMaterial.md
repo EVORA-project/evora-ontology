@@ -1,6 +1,11 @@
 
 
-# Slot: recombinantMaterial
+# Slot: recombinant material (recombinantMaterial)
+
+
+_Indicates if this biological material is a recombinant biological material._
+
+
 
 
 
@@ -28,7 +33,9 @@ URI: [EVORAO:recombinantMaterial](https://raw.githubusercontent.com/EVORA-projec
 
 ## Properties
 
-* Range: [String](String.md)
+* Range: [Boolean](Boolean.md)
+
+* Required: True
 
 
 
@@ -65,12 +72,17 @@ URI: [EVORAO:recombinantMaterial](https://raw.githubusercontent.com/EVORA-projec
 <details>
 ```yaml
 name: recombinantMaterial
+description: Indicates if this biological material is a recombinant biological material.
+title: recombinant material
 from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
 rank: 1000
+ifabsent: 'false'
 alias: recombinantMaterial
 domain_of:
 - BiologicalMaterialOrigin
-range: string
+range: boolean
+required: true
+multivalued: false
 
 ```
 </details>

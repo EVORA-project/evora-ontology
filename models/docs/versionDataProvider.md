@@ -1,6 +1,11 @@
 
 
-# Slot: versionDataProvider
+# Slot: version data provider (versionDataProvider)
+
+
+_The data provider for the Version ID of this taxonomy_
+
+
 
 
 
@@ -28,7 +33,9 @@ URI: [EVORAO:versionDataProvider](https://raw.githubusercontent.com/EVORA-projec
 
 ## Properties
 
-* Range: [String](String.md)
+* Range: [DataProvider](DataProvider.md)
+
+* Required: True
 
 
 
@@ -65,12 +72,16 @@ URI: [EVORAO:versionDataProvider](https://raw.githubusercontent.com/EVORA-projec
 <details>
 ```yaml
 name: versionDataProvider
+description: The data provider for the Version ID of this taxonomy
+title: version data provider
 from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
 rank: 1000
 alias: versionDataProvider
 domain_of:
 - Taxonomy
-range: string
+range: DataProvider
+required: true
+multivalued: false
 
 ```
 </details>

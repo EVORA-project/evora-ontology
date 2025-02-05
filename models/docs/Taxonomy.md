@@ -147,7 +147,7 @@ URI: [EVORAO:Taxonomy](https://raw.githubusercontent.com/EVORA-project/evora-ont
 | ---  | ---  |
 | self | EVORAO:Taxonomy |
 | native | EVORAO:Taxonomy |
-| close | wd:Q8269924, skos:Collection |
+| close | wd:Q8269924, skos:Collection, wd:Q8269924, skos:Collection |
 
 
 
@@ -168,6 +168,8 @@ description: Science of naming, defining and classifying organisms
 title: Taxonomy
 from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
 close_mappings:
+- wd:Q8269924
+- skos:Collection
 - wd:Q8269924
 - skos:Collection
 is_a: Catalogue
@@ -253,6 +255,8 @@ from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs
 close_mappings:
 - wd:Q8269924
 - skos:Collection
+- wd:Q8269924
+- skos:Collection
 is_a: Catalogue
 slot_usage:
   taxon:
@@ -319,6 +323,9 @@ attributes:
     name: taxon
     description: Scientifically classified group or entity within the reference taxonomy
     title: taxon
+    comments:
+    - The taxon of the highest rank known that can be used to classify a pathogen
+      or group of pathogens (e.g viruses) in the reference taxonomy
     from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
     close_mappings:
     - dwc:Taxon
@@ -375,6 +382,8 @@ attributes:
     description: Relative level or position of the identified taxon in the taxonomy
     title: rank
     from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+    exact_mappings:
+    - dwc:taxonRank
     rank: 1000
     alias: rank
     owner: Taxonomy
@@ -406,9 +415,9 @@ attributes:
     - 'The title of the item should be as short and descriptive as possible. E.g.
       for virus products it should basically be based on the following Pattern:
 
-      "Virus name", "virus host type", "collection year", "country of collection"
-      ex "suspected epidemiological origin", "genotype", "strain", "variant name or
-      specific feature"'
+      ''Virus name'', ''virus host type'', ''collection year'', ''country of collection''
+      ex ''suspected epidemiological origin'', ''genotype'', ''strain'', ''variant
+      name or specific feature'
     from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
     exact_mappings:
     - dct:title

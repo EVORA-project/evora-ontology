@@ -1,6 +1,11 @@
 
 
-# Slot: pathogenType
+# Slot: pathogen type (pathogenType)
+
+
+_Identification of the specific type of pathogen among the listed categories e.g. 'Virus','Viroid','Bacterium'..._
+
+
 
 
 
@@ -29,6 +34,8 @@ URI: [EVORAO:pathogenType](https://raw.githubusercontent.com/EVORA-project/evora
 ## Properties
 
 * Range: [String](String.md)
+
+* Required: True
 
 
 
@@ -65,12 +72,17 @@ URI: [EVORAO:pathogenType](https://raw.githubusercontent.com/EVORA-project/evora
 <details>
 ```yaml
 name: pathogenType
+description: Identification of the specific type of pathogen among the listed categories
+  e.g. 'Virus','Viroid','Bacterium'...
+title: pathogen type
 from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
 rank: 1000
 alias: pathogenType
 domain_of:
 - PathogenIdentification
 range: string
+required: true
+multivalued: false
 equals_string_in:
 - Virus
 - Bacterium

@@ -1,6 +1,11 @@
 
 
-# Slot: pasmidSelection
+# Slot: plasmid selection (pasmidSelection)
+
+
+_Specific selectable markers in the plasmid, such as antibiotic resistance genes, used to identify and maintain cells that contain the plasmid_
+
+
 
 
 
@@ -28,7 +33,11 @@ URI: [EVORAO:pasmidSelection](https://raw.githubusercontent.com/EVORA-project/ev
 
 ## Properties
 
-* Range: [String](String.md)
+* Range: [PlasmidSelection](PlasmidSelection.md)
+
+* Multivalued: True
+
+* Recommended: True
 
 
 
@@ -65,12 +74,18 @@ URI: [EVORAO:pasmidSelection](https://raw.githubusercontent.com/EVORA-project/ev
 <details>
 ```yaml
 name: pasmidSelection
+description: Specific selectable markers in the plasmid, such as antibiotic resistance
+  genes, used to identify and maintain cells that contain the plasmid
+title: plasmid selection
 from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
 rank: 1000
 alias: pasmidSelection
 domain_of:
 - Nucleic Acid
-range: string
+range: PlasmidSelection
+required: false
+recommended: true
+multivalued: true
 
 ```
 </details>

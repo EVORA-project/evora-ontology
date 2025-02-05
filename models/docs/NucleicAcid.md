@@ -247,7 +247,7 @@ URI: [EVORAO:NucleicAcid](https://raw.githubusercontent.com/EVORA-project/evora-
           
     
     
-    NucleicAcid --> "1..*" Sequence : sequence
+    NucleicAcid --> "1..* _recommended_" Sequence : sequence
     click Sequence href "../Sequence"
 
         
@@ -293,7 +293,7 @@ URI: [EVORAO:NucleicAcid](https://raw.githubusercontent.com/EVORA-project/evora-
 | ---  | --- | --- | --- |
 | [biologicalMaterialOrigin](biologicalMaterialOrigin.md) | 1 <br/> [BiologicalMaterialOrigin](BiologicalMaterialOrigin.md) | Information about the origin of the biological material, essential for access... | direct |
 | [hasGbFileOfTheConstruct](hasGbFileOfTheConstruct.md) | * <br/> [Data](Data.md) | A GenBank formatted file that contains detailed sequence and annotation infor... | direct |
-| [sequence](sequence.md) | 1..* <br/> [Sequence](Sequence.md) | The related sequence information from a sequence provider or in fasta format | direct |
+| [sequence](sequence.md) | 1..* _recommended_ <br/> [Sequence](Sequence.md) | The related sequence information from a sequence provider or in fasta format | direct |
 | [isItAClonedNucleicAcid](isItAClonedNucleicAcid.md) | 1 <br/> [Boolean](Boolean.md) | Indicates that the nucleic acid sequence has been inserted into a plasmid vec... | direct |
 | [clonedIntoPlasmid](clonedIntoPlasmid.md) | 0..1 _recommended_ <br/> [ExpressionVector](ExpressionVector.md) | The plasmid into which the nucleic acid has been cloned | direct |
 | [pasmidSelection](pasmidSelection.md) | * _recommended_ <br/> [PlasmidSelection](PlasmidSelection.md) | Specific selectable markers in the plasmid, such as antibiotic resistance gen... | direct |
@@ -301,7 +301,7 @@ URI: [EVORAO:NucleicAcid](https://raw.githubusercontent.com/EVORA-project/evora-
 | [regionEncompassedInThisProduct](regionEncompassedInThisProduct.md) | 1 <br/> [String](String.md) | The specific region encompassed in the product | direct |
 | [mutationObserved](mutationObserved.md) | 1 <br/> [Boolean](Boolean.md) | Indicates if the current nucleic acid has No mutation compared to the referen... | direct |
 | [observedMutations](observedMutations.md) | 0..1 <br/> [String](String.md) | The specific mutations that have been identified and documented in the nuclei... | direct |
-| [identificationTechnique](identificationTechnique.md) | 0..1 <br/> [String](String.md) | The method used to identify the nucleic acid sequence or its associated const... | direct |
+| [identificationTechnique](identificationTechnique.md) | 0..1 <br/> [String](String.md) | A method or procedure used to detect, identify, and confirm the presence of a... | direct |
 | [sequencing](sequencing.md) | 1 <br/> [String](String.md) | Refers to the level of sequencing performed on the nucleic acid | direct |
 | [titer](titer.md) | 0..1 <br/> [String](String.md) | The titer value, its corresponding unit, and the method of quantification (e | direct |
 | [sequenceChecked](sequenceChecked.md) | 1 <br/> [Boolean](Boolean.md) | Tell whether or not the sequence of the product was controlled (compulsory fo... | direct |
@@ -322,7 +322,7 @@ URI: [EVORAO:NucleicAcid](https://raw.githubusercontent.com/EVORA-project/evora-
 | [unitCost](unitCost.md) | 1 _recommended_ <br/> [String](String.md) | The cost per access for one unit as defined by the unit definition | [ProductOrService](ProductOrService.md) |
 | [qualityGrading](qualityGrading.md) | 0..1 <br/> [String](String.md) | Information that permits to assess the quality level of what will be provided | [ProductOrService](ProductOrService.md) |
 | [pathogenIdentification](pathogenIdentification.md) | 1..* <br/> [PathogenIdentification](PathogenIdentification.md) | The identification of the pathogen or group of pathogens (e | [ProductOrService](ProductOrService.md) |
-| [relatedDOI](relatedDOI.md) | * <br/> [DOI](DOI.md) | Any DOI that can be related | [ProductOrService](ProductOrService.md) |
+| [relatedDOI](relatedDOI.md) | * <br/> [DOI](DOI.md) | Any Digital Object Identifier that can be related | [ProductOrService](ProductOrService.md) |
 | [riskGroup](riskGroup.md) | 0..1 _recommended_ <br/> [RiskGroup](RiskGroup.md) | The highest risk group related to this resource | [ProductOrService](ProductOrService.md) |
 | [biosafetyRestrictions](biosafetyRestrictions.md) | 0..1 <br/> [String](String.md) | Information about guidelines and regulations designed to prevent the exposure... | [ProductOrService](ProductOrService.md) |
 | [canItBeUsedToProduceGMO](canItBeUsedToProduceGMO.md) | 1 _recommended_ <br/> [Boolean](Boolean.md) | Indicates if the current service or product can be used to produce GMO | [ProductOrService](ProductOrService.md) |
@@ -330,7 +330,7 @@ URI: [EVORAO:NucleicAcid](https://raw.githubusercontent.com/EVORA-project/evora-
 | [collection](collection.md) | 1..* <br/> [Collection](Collection.md) | The collection(s) to which belongs this item | [ProductOrService](ProductOrService.md) |
 | [keywords](keywords.md) | 1..* _recommended_ <br/> [Keyword](Keyword.md) | List of terms used to tag and categorize this Item | [ProductOrService](ProductOrService.md) |
 | [availability](availability.md) | 1 <br/> [String](String.md) | The state or condition in which this item is accessible and ready for use or ... | [ProductOrService](ProductOrService.md) |
-| [complementaryDocument](complementaryDocument.md) | * <br/> [Document](Document.md) | Any complementary document that can be related to this Item | [ProductOrService](ProductOrService.md) |
+| [complementaryDocument](complementaryDocument.md) | * <br/> [Document](Document.md) | Any additional documents that provide supplementary information, instructions... | [ProductOrService](ProductOrService.md) |
 | [technicalRecommendation](technicalRecommendation.md) | 0..1 <br/> [String](String.md) | Expert advice or guidelines provided to ensure the optimal use, performance, ... | [ProductOrService](ProductOrService.md) |
 | [productPicture](productPicture.md) | * <br/> [Image](Image.md) | A picture that can represent the item | [ProductOrService](ProductOrService.md) |
 | [externalRelatedReference](externalRelatedReference.md) | * <br/> [ExternalRelatedReference](ExternalRelatedReference.md) | A reference that permits to retrieve another related item from an external pr... | [ProductOrService](ProductOrService.md) |
@@ -369,7 +369,7 @@ URI: [EVORAO:NucleicAcid](https://raw.githubusercontent.com/EVORA-project/evora-
 | ---  | ---  |
 | self | EVORAO:NucleicAcid |
 | native | EVORAO:NucleicAcid |
-| close | wd:Q123619 |
+| close | wd:Q123619, wd:Q123619 |
 
 
 
@@ -390,6 +390,7 @@ description: Nucleic acid related to a pathogen. It can be extracted or syntheti
 title: Nucleic Acid
 from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
 close_mappings:
+- wd:Q123619
 - wd:Q123619
 is_a: Product
 slots:
@@ -517,8 +518,11 @@ slot_usage:
     multivalued: false
   identificationTechnique:
     name: identificationTechnique
-    description: The method used to identify the nucleic acid sequence or its associated
-      constructs, such as PCR, sequencing, or hybridization
+    description: A method or procedure used to detect, identify, and confirm the presence
+      of a specific nucleic acid sequence, pathogen, or associated constructs. This
+      may involve various techniques such as PCR, sequencing, hybridization, or other
+      molecular methods, utilizing specific tools and procedures for accurate detection
+      and analysis
     title: identification technique
     domain_of:
     - Nucleic Acid
@@ -529,9 +533,9 @@ slot_usage:
   sequencing:
     name: sequencing
     description: Refers to the level of sequencing performed on the nucleic acid.
-      Possible values include "Not sequenced" (no sequencing has been performed),
-      "Partly sequenced" (only a portion of the nucleic acid sequence has been determined),
-      and "Fully sequenced" (the entire nucleic acid sequence has been determined).
+      Possible values include 'Not sequenced' (no sequencing has been performed),
+      'Partly sequenced' (only a portion of the nucleic acid sequence has been determined),
+      and 'Fully sequenced' (the entire nucleic acid sequence has been determined).
     title: sequencing
     comments:
     - Cloned products have to be sequenced
@@ -578,6 +582,7 @@ description: Nucleic acid related to a pathogen. It can be extracted or syntheti
 title: Nucleic Acid
 from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
 close_mappings:
+- wd:Q123619
 - wd:Q123619
 is_a: Product
 slot_usage:
@@ -690,8 +695,11 @@ slot_usage:
     multivalued: false
   identificationTechnique:
     name: identificationTechnique
-    description: The method used to identify the nucleic acid sequence or its associated
-      constructs, such as PCR, sequencing, or hybridization
+    description: A method or procedure used to detect, identify, and confirm the presence
+      of a specific nucleic acid sequence, pathogen, or associated constructs. This
+      may involve various techniques such as PCR, sequencing, hybridization, or other
+      molecular methods, utilizing specific tools and procedures for accurate detection
+      and analysis
     title: identification technique
     domain_of:
     - Nucleic Acid
@@ -702,9 +710,9 @@ slot_usage:
   sequencing:
     name: sequencing
     description: Refers to the level of sequencing performed on the nucleic acid.
-      Possible values include "Not sequenced" (no sequencing has been performed),
-      "Partly sequenced" (only a portion of the nucleic acid sequence has been determined),
-      and "Fully sequenced" (the entire nucleic acid sequence has been determined).
+      Possible values include 'Not sequenced' (no sequencing has been performed),
+      'Partly sequenced' (only a portion of the nucleic acid sequence has been determined),
+      and 'Fully sequenced' (the entire nucleic acid sequence has been determined).
     title: sequencing
     comments:
     - Cloned products have to be sequenced
@@ -786,6 +794,7 @@ attributes:
     - Pathogen
     range: Sequence
     required: true
+    recommended: true
     multivalued: true
   isItAClonedNucleicAcid:
     name: isItAClonedNucleicAcid
@@ -888,8 +897,11 @@ attributes:
     multivalued: false
   identificationTechnique:
     name: identificationTechnique
-    description: The method used to identify the nucleic acid sequence or its associated
-      constructs, such as PCR, sequencing, or hybridization
+    description: A method or procedure used to detect, identify, and confirm the presence
+      of a specific nucleic acid sequence, pathogen, or associated constructs. This
+      may involve various techniques such as PCR, sequencing, hybridization, or other
+      molecular methods, utilizing specific tools and procedures for accurate detection
+      and analysis
     title: identification technique
     from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
     rank: 1000
@@ -904,9 +916,9 @@ attributes:
   sequencing:
     name: sequencing
     description: Refers to the level of sequencing performed on the nucleic acid.
-      Possible values include "Not sequenced" (no sequencing has been performed),
-      "Partly sequenced" (only a portion of the nucleic acid sequence has been determined),
-      and "Fully sequenced" (the entire nucleic acid sequence has been determined).
+      Possible values include 'Not sequenced' (no sequencing has been performed),
+      'Partly sequenced' (only a portion of the nucleic acid sequence has been determined),
+      and 'Fully sequenced' (the entire nucleic acid sequence has been determined).
     title: sequencing
     comments:
     - Cloned products have to be sequenced
@@ -931,6 +943,8 @@ attributes:
       yields a positive reading
     title: titer
     from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+    close_mappings:
+    - wd:Q2166189
     rank: 1000
     alias: titer
     owner: Nucleic Acid
@@ -1026,9 +1040,9 @@ attributes:
       environmental factors.
     title: storage conditions
     comments:
-    - e.g, could be a xsd:string in enumeration ("Freeze Dried", "Liquid Nitrogen",
-      "Viral Storage Medium -20C", "Viral Storage Medium -80C", "Living plant material
-      (>= +4°C)", "Gas Phase", "Ethanol -20C", "Ethanol -80C", "Dried")
+    - e.g, could be a xsd:string in enumeration ('Freeze Dried', 'Liquid Nitrogen',
+      'Viral Storage Medium -20C', 'Viral Storage Medium -80C', 'Living plant material
+      (>= +4°C)', 'Gas Phase', 'Ethanol -20C', 'Ethanol -80C', 'Dried')
     from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
     rank: 1000
     alias: storageConditions
@@ -1076,9 +1090,9 @@ attributes:
     - 'The title of the item should be as short and descriptive as possible. E.g.
       for virus products it should basically be based on the following Pattern:
 
-      "Virus name", "virus host type", "collection year", "country of collection"
-      ex "suspected epidemiological origin", "genotype", "strain", "variant name or
-      specific feature"'
+      ''Virus name'', ''virus host type'', ''collection year'', ''country of collection''
+      ex ''suspected epidemiological origin'', ''genotype'', ''strain'', ''variant
+      name or specific feature'
     from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
     exact_mappings:
     - dct:title
@@ -1267,7 +1281,7 @@ attributes:
     multivalued: true
   relatedDOI:
     name: relatedDOI
-    description: Any DOI that can be related
+    description: Any Digital Object Identifier that can be related
     title: DOI
     from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
     close_mappings:
@@ -1394,7 +1408,8 @@ attributes:
     multivalued: false
   complementaryDocument:
     name: complementaryDocument
-    description: Any complementary document that can be related to this Item
+    description: Any additional documents that provide supplementary information,
+      instructions, or guidelines relevant to the use of this item
     title: complementary document
     from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
     rank: 1000
@@ -1402,7 +1417,6 @@ attributes:
     owner: Nucleic Acid
     domain_of:
     - ProductOrService
-    - Bundle
     range: Document
     required: false
     multivalued: true

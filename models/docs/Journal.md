@@ -98,7 +98,7 @@ URI: [EVORAO:Journal](https://raw.githubusercontent.com/EVORA-project/evora-onto
 | ---  | ---  |
 | self | EVORAO:Journal |
 | native | EVORAO:Journal |
-| close | wd:Q5633421 |
+| close | wd:Q5633421, wd:Q5633421 |
 
 
 
@@ -120,6 +120,7 @@ title: Journal
 from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
 close_mappings:
 - wd:Q5633421
+- wd:Q5633421
 is_a: Term
 
 ```
@@ -135,6 +136,7 @@ title: Journal
 from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
 close_mappings:
 - wd:Q5633421
+- wd:Q5633421
 is_a: Term
 attributes:
   name:
@@ -145,9 +147,9 @@ attributes:
     - 'The title of the item should be as short and descriptive as possible. E.g.
       for virus products it should basically be based on the following Pattern:
 
-      "Virus name", "virus host type", "collection year", "country of collection"
-      ex "suspected epidemiological origin", "genotype", "strain", "variant name or
-      specific feature"'
+      ''Virus name'', ''virus host type'', ''collection year'', ''country of collection''
+      ex ''suspected epidemiological origin'', ''genotype'', ''strain'', ''variant
+      name or specific feature'
     from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
     exact_mappings:
     - dct:title
@@ -205,6 +207,10 @@ attributes:
       processed in ascending order. This weight helps prioritize content when organizing
       or processing data. Its value can be negative, with a default set to 0
     title: weight
+    comments:
+    - The lowest weighted Data providers are triggered first, this may be usefull
+      to populate at first entities that are referenced by others (e.g. Version ahead
+      of Rank ahead of Taxon)
     from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
     close_mappings:
     - adms:status

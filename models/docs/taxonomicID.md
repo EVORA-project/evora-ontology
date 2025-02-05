@@ -1,6 +1,11 @@
 
 
-# Slot: taxonomicID
+# Slot: taxonomic ID (taxonomicID)
+
+
+_The taxonomic identifier as a persistent identifier accross releases_
+
+
 
 
 
@@ -30,6 +35,8 @@ URI: [EVORAO:taxonomicID](https://raw.githubusercontent.com/EVORA-project/evora-
 
 * Range: [String](String.md)
 
+* Required: True
+
 
 
 
@@ -56,6 +63,7 @@ URI: [EVORAO:taxonomicID](https://raw.githubusercontent.com/EVORA-project/evora-
 | ---  | ---  |
 | self | EVORAO:taxonomicID |
 | native | EVORAO:taxonomicID |
+| close | dwc:taxonID |
 
 
 
@@ -65,12 +73,18 @@ URI: [EVORAO:taxonomicID](https://raw.githubusercontent.com/EVORA-project/evora-
 <details>
 ```yaml
 name: taxonomicID
+description: The taxonomic identifier as a persistent identifier accross releases
+title: taxonomic ID
 from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+close_mappings:
+- dwc:taxonID
 rank: 1000
 alias: taxonomicID
 domain_of:
 - Taxon
 range: string
+required: true
+multivalued: false
 
 ```
 </details>

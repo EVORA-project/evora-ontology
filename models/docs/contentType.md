@@ -1,6 +1,11 @@
 
 
-# Slot: contentType
+# Slot: content type (contentType)
+
+
+_The content type of the response to the queries_
+
+
 
 
 
@@ -30,6 +35,8 @@ URI: [EVORAO:contentType](https://raw.githubusercontent.com/EVORA-project/evora-
 
 * Range: [String](String.md)
 
+* Required: True
+
 
 
 
@@ -56,6 +63,7 @@ URI: [EVORAO:contentType](https://raw.githubusercontent.com/EVORA-project/evora-
 | ---  | ---  |
 | self | EVORAO:contentType |
 | native | EVORAO:contentType |
+| close | dct:format |
 
 
 
@@ -65,12 +73,19 @@ URI: [EVORAO:contentType](https://raw.githubusercontent.com/EVORA-project/evora-
 <details>
 ```yaml
 name: contentType
+description: The content type of the response to the queries
+title: content type
 from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+close_mappings:
+- dct:format
 rank: 1000
+ifabsent: string(JSON)
 alias: contentType
 domain_of:
 - DataProvider
 range: string
+required: true
+multivalued: false
 
 ```
 </details>

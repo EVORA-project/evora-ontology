@@ -1,6 +1,11 @@
 
 
-# Slot: exposureControlsPersonalProtection
+# Slot: exposure controls/personal protection (exposureControlsPersonalProtection)
+
+
+_Specifies measures to limit exposure to the product, including recommended engineering controls (e.g., ventilation) and personal protective equipment (PPE) such as gloves, masks, goggles, and clothing to ensure safe handling._
+
+
 
 
 
@@ -29,6 +34,8 @@ URI: [EVORAO:exposureControlsPersonalProtection](https://raw.githubusercontent.c
 ## Properties
 
 * Range: [String](String.md)
+
+* Recommended: True
 
 
 
@@ -65,12 +72,19 @@ URI: [EVORAO:exposureControlsPersonalProtection](https://raw.githubusercontent.c
 <details>
 ```yaml
 name: exposureControlsPersonalProtection
+description: Specifies measures to limit exposure to the product, including recommended
+  engineering controls (e.g., ventilation) and personal protective equipment (PPE)
+  such as gloves, masks, goggles, and clothing to ensure safe handling.
+title: exposure controls/personal protection
 from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
 rank: 1000
 alias: exposureControlsPersonalProtection
 domain_of:
 - MSDS
 range: string
+required: false
+recommended: true
+multivalued: false
 
 ```
 </details>

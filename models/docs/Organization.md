@@ -35,7 +35,7 @@ URI: [EVORAO:Organization](https://raw.githubusercontent.com/EVORA-project/evora
           
     
     
-    Organization --> "0..1 _recommended_" AlternateName : alternateName
+    Organization --> "*" AlternateName : alternateName
     click AlternateName href "../AlternateName"
 
         
@@ -94,12 +94,12 @@ URI: [EVORAO:Organization](https://raw.githubusercontent.com/EVORA-project/evora
 
 | Name | Cardinality and Range | Description | Inheritance |
 | ---  | --- | --- | --- |
-| [alternateName](alternateName.md) | 0..1 _recommended_ <br/> [AlternateName](AlternateName.md) | An alternate name or acronym | direct |
+| [alternateName](alternateName.md) | * <br/> [AlternateName](AlternateName.md) | Any other name under which the entity can be known | direct |
 | [country](country.md) | 0..1 _recommended_ <br/> [Country](Country.md) | The country of the organization | direct |
 | [rORiD](rORiD.md) | 0..1 _recommended_ <br/> [String](String.md) | The corresponding organization's persistent identifier from the Research Orga... | direct |
 | [name](name.md) | 1 <br/> [String](String.md) | The label that allows humans to identify the current item | [PersonOrOrganization](PersonOrOrganization.md) |
 | [description](description.md) | 0..1 _recommended_ <br/> [String](String.md) | A short explanation of the characteristics, features, or nature of the curren... | [PersonOrOrganization](PersonOrOrganization.md) |
-| [homePage](homePage.md) | 0..1 <br/> [String](String.md) | Refers to the degree of purity achieved for a protein sample | [PersonOrOrganization](PersonOrOrganization.md) |
+| [homePage](homePage.md) | 0..1 <br/> [Uri](Uri.md) | A web page that serves as the main or introductory page | [PersonOrOrganization](PersonOrOrganization.md) |
 | [contactPoint](contactPoint.md) | 0..1 _recommended_ <br/> [ContactPoint](ContactPoint.md) | An information that allows someone to establish communication | [PersonOrOrganization](PersonOrOrganization.md) |
 | [logo](logo.md) | 0..1 <br/> [Image](Image.md) | A path or URL to the related logo | [PersonOrOrganization](PersonOrOrganization.md) |
 
@@ -133,7 +133,7 @@ URI: [EVORAO:Organization](https://raw.githubusercontent.com/EVORA-project/evora
 | ---  | ---  |
 | self | EVORAO:Organization |
 | native | EVORAO:Organization |
-| close | wd:Q43229, vcard:Organization |
+| close | wd:Q43229, vcard:Organization, wd:Q43229, vcard:Organization |
 
 
 
@@ -156,6 +156,8 @@ from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs
 close_mappings:
 - wd:Q43229
 - vcard:Organization
+- wd:Q43229
+- vcard:Organization
 is_a: PersonOrOrganization
 slots:
 - alternateName
@@ -164,18 +166,21 @@ slots:
 slot_usage:
   alternateName:
     name: alternateName
-    description: An alternate name or acronym
+    description: Any other name under which the entity can be known
     title: alternate name
+    comments:
+    - This includes previous names, acronyms, former taxonomic terms, and other variations.
+      This information can serve as keywords for search purposes and as a bridge with
+      other projects that use different naming systems or taxonomies
     close_mappings:
-    - dwc:institutionCode
+    - wdp:P4970
     domain_of:
     - Organization
     - CommonName
     - AlternateName
     range: AlternateName
     required: false
-    recommended: true
-    multivalued: false
+    multivalued: true
   country:
     name: country
     description: The country of the organization
@@ -214,22 +219,27 @@ from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs
 close_mappings:
 - wd:Q43229
 - vcard:Organization
+- wd:Q43229
+- vcard:Organization
 is_a: PersonOrOrganization
 slot_usage:
   alternateName:
     name: alternateName
-    description: An alternate name or acronym
+    description: Any other name under which the entity can be known
     title: alternate name
+    comments:
+    - This includes previous names, acronyms, former taxonomic terms, and other variations.
+      This information can serve as keywords for search purposes and as a bridge with
+      other projects that use different naming systems or taxonomies
     close_mappings:
-    - dwc:institutionCode
+    - wdp:P4970
     domain_of:
     - Organization
     - CommonName
     - AlternateName
     range: AlternateName
     required: false
-    recommended: true
-    multivalued: false
+    multivalued: true
   country:
     name: country
     description: The country of the organization
@@ -256,11 +266,15 @@ slot_usage:
 attributes:
   alternateName:
     name: alternateName
-    description: An alternate name or acronym
+    description: Any other name under which the entity can be known
     title: alternate name
+    comments:
+    - This includes previous names, acronyms, former taxonomic terms, and other variations.
+      This information can serve as keywords for search purposes and as a bridge with
+      other projects that use different naming systems or taxonomies
     from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
     close_mappings:
-    - dwc:institutionCode
+    - wdp:P4970
     rank: 1000
     alias: alternateName
     owner: Organization
@@ -270,8 +284,7 @@ attributes:
     - AlternateName
     range: AlternateName
     required: false
-    recommended: true
-    multivalued: false
+    multivalued: true
   country:
     name: country
     description: The country of the organization
@@ -311,9 +324,9 @@ attributes:
     - 'The title of the item should be as short and descriptive as possible. E.g.
       for virus products it should basically be based on the following Pattern:
 
-      "Virus name", "virus host type", "collection year", "country of collection"
-      ex "suspected epidemiological origin", "genotype", "strain", "variant name or
-      specific feature"'
+      ''Virus name'', ''virus host type'', ''collection year'', ''country of collection''
+      ex ''suspected epidemiological origin'', ''genotype'', ''strain'', ''variant
+      name or specific feature'
     from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
     exact_mappings:
     - dct:title
@@ -367,10 +380,7 @@ attributes:
     multivalued: false
   homePage:
     name: homePage
-    description: Refers to the degree of purity achieved for a protein sample. Possible
-      values include ">95%" (the protein is highly purified, with more than 95% purity)
-      and "Unpurified expression host lysate or partly purified protein" (the protein
-      is either unpurified and present in the host cell lysate or only partially purified).
+    description: A web page that serves as the main or introductory page
     title: home page
     from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
     rank: 1000
@@ -378,7 +388,7 @@ attributes:
     owner: Organization
     domain_of:
     - PersonOrOrganization
-    range: string
+    range: uri
     required: false
     multivalued: false
   contactPoint:

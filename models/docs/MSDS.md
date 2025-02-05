@@ -144,7 +144,7 @@ URI: [EVORAO:MSDS](https://raw.githubusercontent.com/EVORA-project/evora-ontolog
 | ---  | ---  |
 | self | EVORAO:MSDS |
 | native | EVORAO:MSDS |
-| close | wd:Q222067 |
+| close | wd:Q222067, wd:Q222067 |
 
 
 
@@ -167,6 +167,7 @@ description: A Material Safety Data Sheet (MSDS) or Safety Data Sheet (SDS) is a
 title: MSDS
 from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
 close_mappings:
+- wd:Q222067
 - wd:Q222067
 is_a: Dataset
 slots:
@@ -385,6 +386,7 @@ description: A Material Safety Data Sheet (MSDS) or Safety Data Sheet (SDS) is a
 title: MSDS
 from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
 close_mappings:
+- wd:Q222067
 - wd:Q222067
 is_a: Dataset
 slot_usage:

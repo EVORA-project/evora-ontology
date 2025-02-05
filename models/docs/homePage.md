@@ -1,6 +1,11 @@
 
 
-# Slot: homePage
+# Slot: home page (homePage)
+
+
+_A web page that serves as the main or introductory page_
+
+
 
 
 
@@ -18,12 +23,12 @@ URI: [EVORAO:homePage](https://raw.githubusercontent.com/EVORA-project/evora-ont
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [RI](RI.md) | A research infrastructure |  no  |
-| [PersonOrOrganization](PersonOrOrganization.md) | A person or an organization |  yes  |
-| [Organization](Organization.md) | A social entity established to meet needs or pursue specific goals |  no  |
-| [Originator](Originator.md) | The individual or organization responsible for the original discovery, isolat... |  no  |
 | [Provider](Provider.md) | A provider of products or services, as a specific organization |  no  |
+| [PersonOrOrganization](PersonOrOrganization.md) | A person or an organization |  yes  |
+| [RI](RI.md) | A research infrastructure |  no  |
+| [Organization](Organization.md) | A social entity established to meet needs or pursue specific goals |  no  |
 | [Person](Person.md) | An individual |  no  |
+| [Originator](Originator.md) | The individual or organization responsible for the original discovery, isolat... |  no  |
 
 
 
@@ -33,7 +38,7 @@ URI: [EVORAO:homePage](https://raw.githubusercontent.com/EVORA-project/evora-ont
 
 ## Properties
 
-* Range: [String](String.md)
+* Range: [Uri](Uri.md)
 
 
 
@@ -70,12 +75,16 @@ URI: [EVORAO:homePage](https://raw.githubusercontent.com/EVORA-project/evora-ont
 <details>
 ```yaml
 name: homePage
+description: A web page that serves as the main or introductory page
+title: home page
 from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
 rank: 1000
 alias: homePage
 domain_of:
 - PersonOrOrganization
-range: string
+range: uri
+required: false
+multivalued: false
 
 ```
 </details>

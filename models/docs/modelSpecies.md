@@ -1,6 +1,11 @@
 
 
-# Slot: modelSpecies
+# Slot: model species (modelSpecies)
+
+
+_The species of the infected organism in the experiment_
+
+
 
 
 
@@ -65,12 +70,16 @@ URI: [EVORAO:modelSpecies](https://raw.githubusercontent.com/EVORA-project/evora
 <details>
 ```yaml
 name: modelSpecies
+description: The species of the infected organism in the experiment
+title: model species
 from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
 rank: 1000
 alias: modelSpecies
 domain_of:
 - Service
 range: string
+required: false
+multivalued: false
 
 ```
 </details>

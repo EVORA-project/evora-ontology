@@ -1,6 +1,11 @@
 
 
-# Slot: version
+# Slot: version (version)
+
+
+_The version of this instance of entity_
+
+
 
 
 
@@ -28,7 +33,9 @@ URI: [EVORAO:version](https://raw.githubusercontent.com/EVORA-project/evora-onto
 
 ## Properties
 
-* Range: [String](String.md)
+* Range: [Version](Version.md)
+
+* Required: True
 
 
 
@@ -65,12 +72,16 @@ URI: [EVORAO:version](https://raw.githubusercontent.com/EVORA-project/evora-onto
 <details>
 ```yaml
 name: version
+description: The version of this instance of entity
+title: version
 from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
 rank: 1000
 alias: version
 domain_of:
 - Taxonomy
-range: string
+range: Version
+required: true
+multivalued: false
 
 ```
 </details>

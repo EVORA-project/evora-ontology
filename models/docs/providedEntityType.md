@@ -1,6 +1,11 @@
 
 
-# Slot: providedEntityType
+# Slot: provided entity type (providedEntityType)
+
+
+_The identification of the entity type (Class) described by the response to the query_
+
+
 
 
 
@@ -28,7 +33,9 @@ URI: [EVORAO:providedEntityType](https://raw.githubusercontent.com/EVORA-project
 
 ## Properties
 
-* Range: [String](String.md)
+* Range: [Dataset](Dataset.md)
+
+* Required: True
 
 
 
@@ -56,6 +63,7 @@ URI: [EVORAO:providedEntityType](https://raw.githubusercontent.com/EVORA-project
 | ---  | ---  |
 | self | EVORAO:providedEntityType |
 | native | EVORAO:providedEntityType |
+| exact | dcat:servesDataset |
 
 
 
@@ -65,12 +73,19 @@ URI: [EVORAO:providedEntityType](https://raw.githubusercontent.com/EVORA-project
 <details>
 ```yaml
 name: providedEntityType
+description: The identification of the entity type (Class) described by the response
+  to the query
+title: provided entity type
 from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+exact_mappings:
+- dcat:servesDataset
 rank: 1000
 alias: providedEntityType
 domain_of:
 - DataProvider
-range: string
+range: Dataset
+required: true
+multivalued: false
 
 ```
 </details>

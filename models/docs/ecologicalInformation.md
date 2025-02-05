@@ -1,6 +1,11 @@
 
 
-# Slot: ecologicalInformation
+# Slot: ecological information (ecologicalInformation)
+
+
+_Details the potential environmental impact of the product, including its effects on ecosystems, persistence, degradability, bioaccumulation potential, and toxicity to aquatic and terrestrial organisms._
+
+
 
 
 
@@ -29,6 +34,8 @@ URI: [EVORAO:ecologicalInformation](https://raw.githubusercontent.com/EVORA-proj
 ## Properties
 
 * Range: [String](String.md)
+
+* Recommended: True
 
 
 
@@ -65,12 +72,19 @@ URI: [EVORAO:ecologicalInformation](https://raw.githubusercontent.com/EVORA-proj
 <details>
 ```yaml
 name: ecologicalInformation
+description: Details the potential environmental impact of the product, including
+  its effects on ecosystems, persistence, degradability, bioaccumulation potential,
+  and toxicity to aquatic and terrestrial organisms.
+title: ecological information
 from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
 rank: 1000
 alias: ecologicalInformation
 domain_of:
 - MSDS
 range: string
+required: false
+recommended: true
+multivalued: false
 
 ```
 </details>

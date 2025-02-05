@@ -1,6 +1,11 @@
 
 
-# Slot: handlingAndStorage
+# Slot: handling and storage (handlingAndStorage)
+
+
+_Instructions on the safe handling practices and storage conditions for the product, including precautions to prevent accidents, degradation, or contamination, as well as recommended temperature, humidity, and container requirements._
+
+
 
 
 
@@ -29,6 +34,8 @@ URI: [EVORAO:handlingAndStorage](https://raw.githubusercontent.com/EVORA-project
 ## Properties
 
 * Range: [String](String.md)
+
+* Recommended: True
 
 
 
@@ -65,12 +72,19 @@ URI: [EVORAO:handlingAndStorage](https://raw.githubusercontent.com/EVORA-project
 <details>
 ```yaml
 name: handlingAndStorage
+description: Instructions on the safe handling practices and storage conditions for
+  the product, including precautions to prevent accidents, degradation, or contamination,
+  as well as recommended temperature, humidity, and container requirements.
+title: handling and storage
 from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
 rank: 1000
 alias: handlingAndStorage
 domain_of:
 - MSDS
 range: string
+required: false
+recommended: true
+multivalued: false
 
 ```
 </details>

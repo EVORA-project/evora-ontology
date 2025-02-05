@@ -1,6 +1,11 @@
 
 
-# Slot: toxicologicalInformation
+# Slot: toxicological information (toxicologicalInformation)
+
+
+_Details on the potential health effects of the product, including routes of exposure (inhalation, ingestion, skin, eye contact), acute and chronic toxicity and symptoms of exposure_
+
+
 
 
 
@@ -29,6 +34,8 @@ URI: [EVORAO:toxicologicalInformation](https://raw.githubusercontent.com/EVORA-p
 ## Properties
 
 * Range: [String](String.md)
+
+* Recommended: True
 
 
 
@@ -65,12 +72,19 @@ URI: [EVORAO:toxicologicalInformation](https://raw.githubusercontent.com/EVORA-p
 <details>
 ```yaml
 name: toxicologicalInformation
+description: Details on the potential health effects of the product, including routes
+  of exposure (inhalation, ingestion, skin, eye contact), acute and chronic toxicity
+  and symptoms of exposure
+title: toxicological information
 from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
 rank: 1000
 alias: toxicologicalInformation
 domain_of:
 - MSDS
 range: string
+required: false
+recommended: true
+multivalued: false
 
 ```
 </details>

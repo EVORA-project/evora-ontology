@@ -1,6 +1,11 @@
 
 
-# Slot: proteinTAG
+# Slot: protein TAG (proteinTAG)
+
+
+_Peptide sequences genetically grafted onto a recombinant protein_
+
+
 
 
 
@@ -28,7 +33,9 @@ URI: [EVORAO:proteinTAG](https://raw.githubusercontent.com/EVORA-project/evora-o
 
 ## Properties
 
-* Range: [String](String.md)
+* Range: [ProteinTag](ProteinTag.md)
+
+* Multivalued: True
 
 
 
@@ -65,12 +72,16 @@ URI: [EVORAO:proteinTAG](https://raw.githubusercontent.com/EVORA-project/evora-o
 <details>
 ```yaml
 name: proteinTAG
+description: Peptide sequences genetically grafted onto a recombinant protein
+title: protein TAG
 from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
 rank: 1000
 alias: proteinTAG
 domain_of:
 - Protein
-range: string
+range: ProteinTag
+required: false
+multivalued: true
 
 ```
 </details>

@@ -332,6 +332,42 @@ class SequenceSequenceReference(Base):
     
 
 
+class OrganizationAlternateName(Base):
+    """
+    
+    """
+    __tablename__ = 'Organization_alternateName'
+
+    Organization_id = Column(Integer(), ForeignKey('Organization.id'), primary_key=True)
+    alternateName_id = Column(Integer(), ForeignKey('AlternateName.id'), primary_key=True)
+    
+
+    def __repr__(self):
+        return f"Organization_alternateName(Organization_id={self.Organization_id},alternateName_id={self.alternateName_id},)"
+
+
+
+    
+
+
+class RIAlternateName(Base):
+    """
+    
+    """
+    __tablename__ = 'RI_alternateName'
+
+    RI_id = Column(Integer(), ForeignKey('RI.id'), primary_key=True)
+    alternateName_id = Column(Integer(), ForeignKey('AlternateName.id'), primary_key=True)
+    
+
+    def __repr__(self):
+        return f"RI_alternateName(RI_id={self.RI_id},alternateName_id={self.alternateName_id},)"
+
+
+
+    
+
+
 class ProviderMemberOfRI(Base):
     """
     
@@ -344,6 +380,24 @@ class ProviderMemberOfRI(Base):
 
     def __repr__(self):
         return f"Provider_memberOfRI(Provider_id={self.Provider_id},memberOfRI_id={self.memberOfRI_id},)"
+
+
+
+    
+
+
+class ProviderAlternateName(Base):
+    """
+    
+    """
+    __tablename__ = 'Provider_alternateName'
+
+    Provider_id = Column(Integer(), ForeignKey('Provider.id'), primary_key=True)
+    alternateName_id = Column(Integer(), ForeignKey('AlternateName.id'), primary_key=True)
+    
+
+    def __repr__(self):
+        return f"Provider_alternateName(Provider_id={self.Provider_id},alternateName_id={self.alternateName_id},)"
 
 
 
@@ -2060,24 +2114,6 @@ class BundleProductsOfTheBundle(Base):
     
 
 
-class BundleComplementaryDocument(Base):
-    """
-    
-    """
-    __tablename__ = 'Bundle_complementaryDocument'
-
-    Bundle_id = Column(Integer(), ForeignKey('Bundle.id'), primary_key=True)
-    complementaryDocument_id = Column(Integer(), ForeignKey('File.id'), primary_key=True)
-    
-
-    def __repr__(self):
-        return f"Bundle_complementaryDocument(Bundle_id={self.Bundle_id},complementaryDocument_id={self.complementaryDocument_id},)"
-
-
-
-    
-
-
 class BundleAdditionalCategory(Base):
     """
     
@@ -2162,6 +2198,24 @@ class BundleKeywords(Base):
 
     def __repr__(self):
         return f"Bundle_keywords(Bundle_id={self.Bundle_id},keywords_id={self.keywords_id},)"
+
+
+
+    
+
+
+class BundleComplementaryDocument(Base):
+    """
+    
+    """
+    __tablename__ = 'Bundle_complementaryDocument'
+
+    Bundle_id = Column(Integer(), ForeignKey('Bundle.id'), primary_key=True)
+    complementaryDocument_id = Column(Integer(), ForeignKey('Document.id'), primary_key=True)
+    
+
+    def __repr__(self):
+        return f"Bundle_complementaryDocument(Bundle_id={self.Bundle_id},complementaryDocument_id={self.complementaryDocument_id},)"
 
 
 
@@ -4610,7 +4664,7 @@ class CommonName(Term):
 
 class AlternateName(Term):
     """
-    List of alternate names for things
+    List of other names for things
     """
     __tablename__ = 'AlternateName'
 
@@ -5250,8 +5304,6 @@ class Organization(PersonOrOrganization):
     name = Column(Text(), nullable=False )
     description = Column(Text())
     homePage = Column(Text())
-    alternateName_id = Column(Integer(), ForeignKey('AlternateName.id'))
-    alternateName = relationship("AlternateName", uselist=False, foreign_keys=[alternateName_id])
     country_id = Column(Integer(), ForeignKey('Country.id'))
     country = relationship("Country", uselist=False, foreign_keys=[country_id])
     contactPoint_id = Column(Integer(), ForeignKey('ContactPoint.id'))
@@ -5259,9 +5311,13 @@ class Organization(PersonOrOrganization):
     logo_id = Column(Integer(), ForeignKey('Image.id'))
     logo = relationship("Image", uselist=False, foreign_keys=[logo_id])
     
+    
+    # ManyToMany
+    alternateName = relationship( "AlternateName", secondary="Organization_alternateName")
+    
 
     def __repr__(self):
-        return f"Organization(id={self.id},rORiD={self.rORiD},name={self.name},description={self.description},homePage={self.homePage},alternateName_id={self.alternateName_id},country_id={self.country_id},contactPoint_id={self.contactPoint_id},logo_id={self.logo_id},)"
+        return f"Organization(id={self.id},rORiD={self.rORiD},name={self.name},description={self.description},homePage={self.homePage},country_id={self.country_id},contactPoint_id={self.contactPoint_id},logo_id={self.logo_id},)"
 
 
 
@@ -5820,8 +5876,6 @@ class RI(Organization):
     name = Column(Text(), nullable=False )
     description = Column(Text())
     homePage = Column(Text())
-    alternateName_id = Column(Integer(), ForeignKey('AlternateName.id'))
-    alternateName = relationship("AlternateName", uselist=False, foreign_keys=[alternateName_id])
     country_id = Column(Integer(), ForeignKey('Country.id'))
     country = relationship("Country", uselist=False, foreign_keys=[country_id])
     contactPoint_id = Column(Integer(), ForeignKey('ContactPoint.id'))
@@ -5829,9 +5883,13 @@ class RI(Organization):
     logo_id = Column(Integer(), ForeignKey('Image.id'))
     logo = relationship("Image", uselist=False, foreign_keys=[logo_id])
     
+    
+    # ManyToMany
+    alternateName = relationship( "AlternateName", secondary="RI_alternateName")
+    
 
     def __repr__(self):
-        return f"RI(id={self.id},rORiD={self.rORiD},name={self.name},description={self.description},homePage={self.homePage},alternateName_id={self.alternateName_id},country_id={self.country_id},contactPoint_id={self.contactPoint_id},logo_id={self.logo_id},)"
+        return f"RI(id={self.id},rORiD={self.rORiD},name={self.name},description={self.description},homePage={self.homePage},country_id={self.country_id},contactPoint_id={self.contactPoint_id},logo_id={self.logo_id},)"
 
 
 
@@ -5854,8 +5912,6 @@ class Provider(Organization):
     name = Column(Text(), nullable=False )
     description = Column(Text())
     homePage = Column(Text())
-    alternateName_id = Column(Integer(), ForeignKey('AlternateName.id'))
-    alternateName = relationship("AlternateName", uselist=False, foreign_keys=[alternateName_id])
     country_id = Column(Integer(), ForeignKey('Country.id'))
     country = relationship("Country", uselist=False, foreign_keys=[country_id])
     contactPoint_id = Column(Integer(), ForeignKey('ContactPoint.id'))
@@ -5867,9 +5923,13 @@ class Provider(Organization):
     # ManyToMany
     memberOfRI = relationship( "RI", secondary="Provider_memberOfRI")
     
+    
+    # ManyToMany
+    alternateName = relationship( "AlternateName", secondary="Provider_alternateName")
+    
 
     def __repr__(self):
-        return f"Provider(id={self.id},rORiD={self.rORiD},name={self.name},description={self.description},homePage={self.homePage},alternateName_id={self.alternateName_id},country_id={self.country_id},contactPoint_id={self.contactPoint_id},logo_id={self.logo_id},)"
+        return f"Provider(id={self.id},rORiD={self.rORiD},name={self.name},description={self.description},homePage={self.homePage},country_id={self.country_id},contactPoint_id={self.contactPoint_id},logo_id={self.logo_id},)"
 
 
 
@@ -6645,10 +6705,6 @@ class Bundle(Product):
     
     
     # ManyToMany
-    complementaryDocument = relationship( "File", secondary="Bundle_complementaryDocument")
-    
-    
-    # ManyToMany
     additionalCategory = relationship( "ProductCategory", secondary="Bundle_additionalCategory")
     
     
@@ -6666,6 +6722,10 @@ class Bundle(Product):
     
     # ManyToMany
     keywords = relationship( "Keyword", secondary="Bundle_keywords")
+    
+    
+    # ManyToMany
+    complementaryDocument = relationship( "Document", secondary="Bundle_complementaryDocument")
     
     
     # ManyToMany

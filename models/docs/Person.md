@@ -70,7 +70,7 @@ URI: [EVORAO:Person](https://raw.githubusercontent.com/EVORA-project/evora-ontol
 | [oRCIDiD](oRCIDiD.md) | 0..1 _recommended_ <br/> [String](String.md) | Unique persistent identifier for a person, provided by the Open Researcher an... | direct |
 | [name](name.md) | 1 <br/> [String](String.md) | The label that allows humans to identify the current item | [PersonOrOrganization](PersonOrOrganization.md) |
 | [description](description.md) | 0..1 _recommended_ <br/> [String](String.md) | A short explanation of the characteristics, features, or nature of the curren... | [PersonOrOrganization](PersonOrOrganization.md) |
-| [homePage](homePage.md) | 0..1 <br/> [String](String.md) | Refers to the degree of purity achieved for a protein sample | [PersonOrOrganization](PersonOrOrganization.md) |
+| [homePage](homePage.md) | 0..1 <br/> [Uri](Uri.md) | A web page that serves as the main or introductory page | [PersonOrOrganization](PersonOrOrganization.md) |
 | [contactPoint](contactPoint.md) | 0..1 _recommended_ <br/> [ContactPoint](ContactPoint.md) | An information that allows someone to establish communication | [PersonOrOrganization](PersonOrOrganization.md) |
 | [logo](logo.md) | 0..1 <br/> [Image](Image.md) | A path or URL to the related logo | [PersonOrOrganization](PersonOrOrganization.md) |
 
@@ -104,7 +104,7 @@ URI: [EVORAO:Person](https://raw.githubusercontent.com/EVORA-project/evora-ontol
 | ---  | ---  |
 | self | EVORAO:Person |
 | native | EVORAO:Person |
-| close | wd:Q215627, vcard:Individual |
+| close | wd:Q215627, vcard:Individual, wd:Q215627, vcard:Individual |
 
 
 
@@ -125,6 +125,8 @@ description: An individual
 title: Person
 from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
 close_mappings:
+- wd:Q215627
+- vcard:Individual
 - wd:Q215627
 - vcard:Individual
 is_a: PersonOrOrganization
@@ -158,6 +160,8 @@ description: An individual
 title: Person
 from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
 close_mappings:
+- wd:Q215627
+- vcard:Individual
 - wd:Q215627
 - vcard:Individual
 is_a: PersonOrOrganization
@@ -203,9 +207,9 @@ attributes:
     - 'The title of the item should be as short and descriptive as possible. E.g.
       for virus products it should basically be based on the following Pattern:
 
-      "Virus name", "virus host type", "collection year", "country of collection"
-      ex "suspected epidemiological origin", "genotype", "strain", "variant name or
-      specific feature"'
+      ''Virus name'', ''virus host type'', ''collection year'', ''country of collection''
+      ex ''suspected epidemiological origin'', ''genotype'', ''strain'', ''variant
+      name or specific feature'
     from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
     exact_mappings:
     - dct:title
@@ -259,10 +263,7 @@ attributes:
     multivalued: false
   homePage:
     name: homePage
-    description: Refers to the degree of purity achieved for a protein sample. Possible
-      values include ">95%" (the protein is highly purified, with more than 95% purity)
-      and "Unpurified expression host lysate or partly purified protein" (the protein
-      is either unpurified and present in the host cell lysate or only partially purified).
+    description: A web page that serves as the main or introductory page
     title: home page
     from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
     rank: 1000
@@ -270,7 +271,7 @@ attributes:
     owner: Person
     domain_of:
     - PersonOrOrganization
-    range: string
+    range: uri
     required: false
     multivalued: false
   contactPoint:

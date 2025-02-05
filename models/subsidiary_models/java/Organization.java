@@ -5,7 +5,7 @@ import lombok.*;
 
 
 
-/* version: 1.0.8373 */
+/* version: 1.0.8498 */
 
 
 /**
@@ -15,7 +15,7 @@ import lombok.*;
 @EqualsAndHashCode(callSuper=false)
 public class Organization extends PersonOrOrganization {
 
-  private AlternateName alternateName;
+  private List<AlternateName> alternateName;
   private Country country;
   private String rORiD;
 

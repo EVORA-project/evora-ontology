@@ -130,7 +130,7 @@ URI: [EVORAO:DataProvider](https://raw.githubusercontent.com/EVORA-project/evora
 | ---  | ---  |
 | self | EVORAO:DataProvider |
 | native | EVORAO:DataProvider |
-| close | wd:Q122625839 |
+| close | wd:Q122625839, wd:Q122625839 |
 
 
 
@@ -152,6 +152,7 @@ description: An external API (Application Programming Interface) or Endpoint tha
 title: Data provider
 from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
 close_mappings:
+- wd:Q122625839
 - wd:Q122625839
 is_a: DataService
 slots:
@@ -294,6 +295,7 @@ description: An external API (Application Programming Interface) or Endpoint tha
 title: Data provider
 from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
 close_mappings:
+- wd:Q122625839
 - wd:Q122625839
 is_a: DataService
 slot_usage:
@@ -562,6 +564,7 @@ attributes:
     close_mappings:
     - adms:status
     rank: 1000
+    ifabsent: int(0)
     alias: weight
     owner: DataProvider
     domain_of:
@@ -578,9 +581,9 @@ attributes:
     - 'The title of the item should be as short and descriptive as possible. E.g.
       for virus products it should basically be based on the following Pattern:
 
-      "Virus name", "virus host type", "collection year", "country of collection"
-      ex "suspected epidemiological origin", "genotype", "strain", "variant name or
-      specific feature"'
+      ''Virus name'', ''virus host type'', ''collection year'', ''country of collection''
+      ex ''suspected epidemiological origin'', ''genotype'', ''strain'', ''variant
+      name or specific feature'
     from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
     exact_mappings:
     - dct:title

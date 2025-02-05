@@ -1,6 +1,11 @@
 
 
-# Slot: inclusionBodiesType
+# Slot: inclusion bodies type (inclusionBodiesType)
+
+
+_Refers to the state of aggregated proteins within a cell. Possible values include 'Denatured' (proteins are in an unfolded, inactive state) and 'Refolded' (proteins have been processed to regain their functional, active conformation)._
+
+
 
 
 
@@ -29,6 +34,8 @@ URI: [EVORAO:inclusionBodiesType](https://raw.githubusercontent.com/EVORA-projec
 ## Properties
 
 * Range: [String](String.md)
+
+* Multivalued: True
 
 
 
@@ -65,12 +72,18 @@ URI: [EVORAO:inclusionBodiesType](https://raw.githubusercontent.com/EVORA-projec
 <details>
 ```yaml
 name: inclusionBodiesType
+description: Refers to the state of aggregated proteins within a cell. Possible values
+  include 'Denatured' (proteins are in an unfolded, inactive state) and 'Refolded'
+  (proteins have been processed to regain their functional, active conformation).
+title: inclusion bodies type
 from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
 rank: 1000
 alias: inclusionBodiesType
 domain_of:
 - Protein
 range: string
+required: false
+multivalued: true
 equals_string_in:
 - Denatured
 - Refolded

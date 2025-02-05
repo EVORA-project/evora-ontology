@@ -265,7 +265,7 @@ URI: [EVORAO:Pathogen](https://raw.githubusercontent.com/EVORA-project/evora-ont
           
     
     
-    Pathogen --> "1..*" Sequence : sequence
+    Pathogen --> "1..* _recommended_" Sequence : sequence
     click Sequence href "../Sequence"
 
         
@@ -335,10 +335,10 @@ URI: [EVORAO:Pathogen](https://raw.githubusercontent.com/EVORA-project/evora-ont
 | [productionCellLine](productionCellLine.md) | * <br/> [ProductionCellLine](ProductionCellLine.md) | The cell line used for the production or propagation of the pathogen, detaili... | direct |
 | [propagationHost](propagationHost.md) | * <br/> [PropagationHost](PropagationHost.md) | The host organism that propagates the pathogen | direct |
 | [transmissionMethod](transmissionMethod.md) | * <br/> [TransmissionMethod](TransmissionMethod.md) | The method or route through which the pathogen is transmitted from one host t... | direct |
-| [sequence](sequence.md) | 1..* <br/> [Sequence](Sequence.md) | The related sequence information from a sequence provider or in fasta format | direct |
+| [sequence](sequence.md) | 1..* _recommended_ <br/> [Sequence](Sequence.md) | The related sequence information from a sequence provider or in fasta format | direct |
 | [cultivability](cultivability.md) | 1 <br/> [String](String.md) | The ability of the pathogen to be cultivated or grown in laboratory condition... | direct |
 | [clinicalInformation](clinicalInformation.md) | 0..1 <br/> [String](String.md) | Details about the clinical aspects of the pathogen, including symptoms, sever... | direct |
-| [identificationTechnique](identificationTechnique.md) | 0..1 <br/> [String](String.md) | The method or technique used to identify and confirm the presence of the path... | direct |
+| [identificationTechnique](identificationTechnique.md) | 0..1 <br/> [String](String.md) | A method or procedure used to detect, identify, and confirm the presence of a... | direct |
 | [infectivity](infectivity.md) | 1 <br/> [String](String.md) | Indicates the ability of the pathogen to establish an infection in a host org... | direct |
 | [infectivityTest](infectivityTest.md) | 0..1 <br/> [String](String.md) | The description of the completed infectivity test, providing details on the m... | direct |
 | [isolationTechnique](isolationTechnique.md) | 0..1 <br/> [String](String.md) | The specific method or procedure used to isolate the pathogen from a host org... | direct |
@@ -364,7 +364,7 @@ URI: [EVORAO:Pathogen](https://raw.githubusercontent.com/EVORA-project/evora-ont
 | [unitCost](unitCost.md) | 1 _recommended_ <br/> [String](String.md) | The cost per access for one unit as defined by the unit definition | [ProductOrService](ProductOrService.md) |
 | [qualityGrading](qualityGrading.md) | 0..1 <br/> [String](String.md) | Information that permits to assess the quality level of what will be provided | [ProductOrService](ProductOrService.md) |
 | [pathogenIdentification](pathogenIdentification.md) | 1..* <br/> [PathogenIdentification](PathogenIdentification.md) | The identification of the pathogen or group of pathogens (e | [ProductOrService](ProductOrService.md) |
-| [relatedDOI](relatedDOI.md) | * <br/> [DOI](DOI.md) | Any DOI that can be related | [ProductOrService](ProductOrService.md) |
+| [relatedDOI](relatedDOI.md) | * <br/> [DOI](DOI.md) | Any Digital Object Identifier that can be related | [ProductOrService](ProductOrService.md) |
 | [riskGroup](riskGroup.md) | 0..1 _recommended_ <br/> [RiskGroup](RiskGroup.md) | The highest risk group related to this resource | [ProductOrService](ProductOrService.md) |
 | [biosafetyRestrictions](biosafetyRestrictions.md) | 0..1 <br/> [String](String.md) | Information about guidelines and regulations designed to prevent the exposure... | [ProductOrService](ProductOrService.md) |
 | [canItBeUsedToProduceGMO](canItBeUsedToProduceGMO.md) | 1 _recommended_ <br/> [Boolean](Boolean.md) | Indicates if the current service or product can be used to produce GMO | [ProductOrService](ProductOrService.md) |
@@ -372,7 +372,7 @@ URI: [EVORAO:Pathogen](https://raw.githubusercontent.com/EVORA-project/evora-ont
 | [collection](collection.md) | 1..* <br/> [Collection](Collection.md) | The collection(s) to which belongs this item | [ProductOrService](ProductOrService.md) |
 | [keywords](keywords.md) | 1..* _recommended_ <br/> [Keyword](Keyword.md) | List of terms used to tag and categorize this Item | [ProductOrService](ProductOrService.md) |
 | [availability](availability.md) | 1 <br/> [String](String.md) | The state or condition in which this item is accessible and ready for use or ... | [ProductOrService](ProductOrService.md) |
-| [complementaryDocument](complementaryDocument.md) | * <br/> [Document](Document.md) | Any complementary document that can be related to this Item | [ProductOrService](ProductOrService.md) |
+| [complementaryDocument](complementaryDocument.md) | * <br/> [Document](Document.md) | Any additional documents that provide supplementary information, instructions... | [ProductOrService](ProductOrService.md) |
 | [technicalRecommendation](technicalRecommendation.md) | 0..1 <br/> [String](String.md) | Expert advice or guidelines provided to ensure the optimal use, performance, ... | [ProductOrService](ProductOrService.md) |
 | [productPicture](productPicture.md) | * <br/> [Image](Image.md) | A picture that can represent the item | [ProductOrService](ProductOrService.md) |
 | [externalRelatedReference](externalRelatedReference.md) | * <br/> [ExternalRelatedReference](ExternalRelatedReference.md) | A reference that permits to retrieve another related item from an external pr... | [ProductOrService](ProductOrService.md) |
@@ -411,7 +411,7 @@ URI: [EVORAO:Pathogen](https://raw.githubusercontent.com/EVORA-project/evora-ont
 | ---  | ---  |
 | self | EVORAO:Pathogen |
 | native | EVORAO:Pathogen |
-| close | wd:Q170065 |
+| close | wd:Q170065, wd:Q170065 |
 
 
 
@@ -434,6 +434,7 @@ description: Biological entity that causes disease in its host, which is typical
 title: Pathogen
 from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
 close_mappings:
+- wd:Q170065
 - wd:Q170065
 is_a: Product
 abstract: true
@@ -461,7 +462,7 @@ slot_usage:
     name: biologicalMaterialOrigin
     description: Information about the origin of the biological material, essential
       for access, utilization, and benefit-sharing of genetic resources in compliance
-      with the Nagoya Protocol.
+      with the Nagoya Protocol
     title: Biological Material origin
     domain_of:
     - Pathogen
@@ -536,8 +537,8 @@ slot_usage:
   cultivability:
     name: cultivability
     description: The ability of the pathogen to be cultivated or grown in laboratory
-      conditions. Possible values are " Cultivable pathogen", "Uncultivable pathogen"
-      or "Inactivated pathogen"
+      conditions. Possible values are  'Cultivable pathogen', 'Uncultivable pathogen'
+      or 'Inactivated pathogen'
     title: cultivability
     comments:
     - Might also be related to a product sub-category that helps filtering
@@ -559,9 +560,11 @@ slot_usage:
     multivalued: false
   identificationTechnique:
     name: identificationTechnique
-    description: The method or technique used to identify and confirm the presence
-      of the pathogen, detailing the specific procedures and tools employed in the
-      detection process
+    description: A method or procedure used to detect, identify, and confirm the presence
+      of a specific nucleic acid sequence, pathogen, or associated constructs. This
+      may involve various techniques such as PCR, sequencing, hybridization, or other
+      molecular methods, utilizing specific tools and procedures for accurate detection
+      and analysis
     title: identification technique
     domain_of:
     - Pathogen
@@ -615,8 +618,8 @@ slot_usage:
   letterOfAuthority:
     name: letterOfAuthority
     description: Indicate whether a Letter of Authority is required, confirming the
-      necessity of formal authorization. The possible values are "N/A", "NOT Required",
-      "Required for customers in the EU" or "Required"
+      necessity of formal authorization. The possible values are 'N/A', 'NOT Required',
+      'Required for customers in the EU' or 'Required'
     title: letter of authority
     ifabsent: string(Not applicable)
     domain_of:
@@ -638,8 +641,8 @@ slot_usage:
   genomeSequencing:
     name: genomeSequencing
     description: The extent of the pathogen's genetic material that has been sequenced,
-      with possible values including "Complete genome" for the entire genome, "Complete
-      coding sequence" for all coding regions, and "Partial sequence" for only a portion
+      with possible values including 'Complete genome' for the entire genome, 'Complete
+      coding sequence' for all coding regions, and 'Partial sequence' for only a portion
       of the genetic material
     title: genome sequencing
     domain_of:
@@ -678,6 +681,7 @@ title: Pathogen
 from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
 close_mappings:
 - wd:Q170065
+- wd:Q170065
 is_a: Product
 abstract: true
 slot_usage:
@@ -685,7 +689,7 @@ slot_usage:
     name: biologicalMaterialOrigin
     description: Information about the origin of the biological material, essential
       for access, utilization, and benefit-sharing of genetic resources in compliance
-      with the Nagoya Protocol.
+      with the Nagoya Protocol
     title: Biological Material origin
     domain_of:
     - Pathogen
@@ -760,8 +764,8 @@ slot_usage:
   cultivability:
     name: cultivability
     description: The ability of the pathogen to be cultivated or grown in laboratory
-      conditions. Possible values are " Cultivable pathogen", "Uncultivable pathogen"
-      or "Inactivated pathogen"
+      conditions. Possible values are  'Cultivable pathogen', 'Uncultivable pathogen'
+      or 'Inactivated pathogen'
     title: cultivability
     comments:
     - Might also be related to a product sub-category that helps filtering
@@ -783,9 +787,11 @@ slot_usage:
     multivalued: false
   identificationTechnique:
     name: identificationTechnique
-    description: The method or technique used to identify and confirm the presence
-      of the pathogen, detailing the specific procedures and tools employed in the
-      detection process
+    description: A method or procedure used to detect, identify, and confirm the presence
+      of a specific nucleic acid sequence, pathogen, or associated constructs. This
+      may involve various techniques such as PCR, sequencing, hybridization, or other
+      molecular methods, utilizing specific tools and procedures for accurate detection
+      and analysis
     title: identification technique
     domain_of:
     - Pathogen
@@ -839,8 +845,8 @@ slot_usage:
   letterOfAuthority:
     name: letterOfAuthority
     description: Indicate whether a Letter of Authority is required, confirming the
-      necessity of formal authorization. The possible values are "N/A", "NOT Required",
-      "Required for customers in the EU" or "Required"
+      necessity of formal authorization. The possible values are 'N/A', 'NOT Required',
+      'Required for customers in the EU' or 'Required'
     title: letter of authority
     ifabsent: string(Not applicable)
     domain_of:
@@ -862,8 +868,8 @@ slot_usage:
   genomeSequencing:
     name: genomeSequencing
     description: The extent of the pathogen's genetic material that has been sequenced,
-      with possible values including "Complete genome" for the entire genome, "Complete
-      coding sequence" for all coding regions, and "Partial sequence" for only a portion
+      with possible values including 'Complete genome' for the entire genome, 'Complete
+      coding sequence' for all coding regions, and 'Partial sequence' for only a portion
       of the genetic material
     title: genome sequencing
     domain_of:
@@ -891,7 +897,7 @@ attributes:
     name: biologicalMaterialOrigin
     description: Information about the origin of the biological material, essential
       for access, utilization, and benefit-sharing of genetic resources in compliance
-      with the Nagoya Protocol.
+      with the Nagoya Protocol
     title: Biological Material origin
     from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
     rank: 1000
@@ -990,12 +996,13 @@ attributes:
     - Nucleic Acid
     range: Sequence
     required: true
+    recommended: true
     multivalued: true
   cultivability:
     name: cultivability
     description: The ability of the pathogen to be cultivated or grown in laboratory
-      conditions. Possible values are " Cultivable pathogen", "Uncultivable pathogen"
-      or "Inactivated pathogen"
+      conditions. Possible values are  'Cultivable pathogen', 'Uncultivable pathogen'
+      or 'Inactivated pathogen'
     title: cultivability
     comments:
     - Might also be related to a product sub-category that helps filtering
@@ -1029,9 +1036,11 @@ attributes:
     multivalued: false
   identificationTechnique:
     name: identificationTechnique
-    description: The method or technique used to identify and confirm the presence
-      of the pathogen, detailing the specific procedures and tools employed in the
-      detection process
+    description: A method or procedure used to detect, identify, and confirm the presence
+      of a specific nucleic acid sequence, pathogen, or associated constructs. This
+      may involve various techniques such as PCR, sequencing, hybridization, or other
+      molecular methods, utilizing specific tools and procedures for accurate detection
+      and analysis
     title: identification technique
     from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
     rank: 1000
@@ -1109,8 +1118,8 @@ attributes:
   letterOfAuthority:
     name: letterOfAuthority
     description: Indicate whether a Letter of Authority is required, confirming the
-      necessity of formal authorization. The possible values are "N/A", "NOT Required",
-      "Required for customers in the EU" or "Required"
+      necessity of formal authorization. The possible values are 'N/A', 'NOT Required',
+      'Required for customers in the EU' or 'Required'
     title: letter of authority
     from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
     rank: 1000
@@ -1145,8 +1154,8 @@ attributes:
   genomeSequencing:
     name: genomeSequencing
     description: The extent of the pathogen's genetic material that has been sequenced,
-      with possible values including "Complete genome" for the entire genome, "Complete
-      coding sequence" for all coding regions, and "Partial sequence" for only a portion
+      with possible values including 'Complete genome' for the entire genome, 'Complete
+      coding sequence' for all coding regions, and 'Partial sequence' for only a portion
       of the genetic material
     title: genome sequencing
     from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
@@ -1251,9 +1260,9 @@ attributes:
       environmental factors.
     title: storage conditions
     comments:
-    - e.g, could be a xsd:string in enumeration ("Freeze Dried", "Liquid Nitrogen",
-      "Viral Storage Medium -20C", "Viral Storage Medium -80C", "Living plant material
-      (>= +4°C)", "Gas Phase", "Ethanol -20C", "Ethanol -80C", "Dried")
+    - e.g, could be a xsd:string in enumeration ('Freeze Dried', 'Liquid Nitrogen',
+      'Viral Storage Medium -20C', 'Viral Storage Medium -80C', 'Living plant material
+      (>= +4°C)', 'Gas Phase', 'Ethanol -20C', 'Ethanol -80C', 'Dried')
     from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
     rank: 1000
     alias: storageConditions
@@ -1301,9 +1310,9 @@ attributes:
     - 'The title of the item should be as short and descriptive as possible. E.g.
       for virus products it should basically be based on the following Pattern:
 
-      "Virus name", "virus host type", "collection year", "country of collection"
-      ex "suspected epidemiological origin", "genotype", "strain", "variant name or
-      specific feature"'
+      ''Virus name'', ''virus host type'', ''collection year'', ''country of collection''
+      ex ''suspected epidemiological origin'', ''genotype'', ''strain'', ''variant
+      name or specific feature'
     from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
     exact_mappings:
     - dct:title
@@ -1492,7 +1501,7 @@ attributes:
     multivalued: true
   relatedDOI:
     name: relatedDOI
-    description: Any DOI that can be related
+    description: Any Digital Object Identifier that can be related
     title: DOI
     from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
     close_mappings:
@@ -1619,7 +1628,8 @@ attributes:
     multivalued: false
   complementaryDocument:
     name: complementaryDocument
-    description: Any complementary document that can be related to this Item
+    description: Any additional documents that provide supplementary information,
+      instructions, or guidelines relevant to the use of this item
     title: complementary document
     from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
     rank: 1000
@@ -1627,7 +1637,6 @@ attributes:
     owner: Pathogen
     domain_of:
     - ProductOrService
-    - Bundle
     range: Document
     required: false
     multivalued: true

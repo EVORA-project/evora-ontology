@@ -1,6 +1,11 @@
 
 
-# Slot: regionEncompassedInThisProduct
+# Slot: region encompassed in this Product (regionEncompassedInThisProduct)
+
+
+_The specific region encompassed in the product_
+
+
 
 
 
@@ -29,6 +34,8 @@ URI: [EVORAO:regionEncompassedInThisProduct](https://raw.githubusercontent.com/E
 ## Properties
 
 * Range: [String](String.md)
+
+* Required: True
 
 
 
@@ -65,12 +72,16 @@ URI: [EVORAO:regionEncompassedInThisProduct](https://raw.githubusercontent.com/E
 <details>
 ```yaml
 name: regionEncompassedInThisProduct
+description: The specific region encompassed in the product
+title: region encompassed in this Product
 from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
 rank: 1000
 alias: regionEncompassedInThisProduct
 domain_of:
 - Nucleic Acid
 range: string
+required: true
+multivalued: false
 
 ```
 </details>

@@ -1,6 +1,11 @@
 
 
-# Slot: physicalChemicalProperties
+# Slot: physical and chemical properties and information on ingredients (physicalChemicalProperties)
+
+
+_Key characteristics of the product, such as physical state, appearance, solubility, pH, chemical composition, and molecular weight, essential for safe handling and storage_
+
+
 
 
 
@@ -29,6 +34,8 @@ URI: [EVORAO:physicalChemicalProperties](https://raw.githubusercontent.com/EVORA
 ## Properties
 
 * Range: [String](String.md)
+
+* Recommended: True
 
 
 
@@ -65,12 +72,19 @@ URI: [EVORAO:physicalChemicalProperties](https://raw.githubusercontent.com/EVORA
 <details>
 ```yaml
 name: physicalChemicalProperties
+description: Key characteristics of the product, such as physical state, appearance,
+  solubility, pH, chemical composition, and molecular weight, essential for safe handling
+  and storage
+title: physical and chemical properties and information on ingredients
 from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
 rank: 1000
 alias: physicalChemicalProperties
 domain_of:
 - MSDS
 range: string
+required: false
+recommended: true
+multivalued: false
 
 ```
 </details>

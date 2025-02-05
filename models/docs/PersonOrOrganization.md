@@ -78,7 +78,7 @@ URI: [EVORAO:PersonOrOrganization](https://raw.githubusercontent.com/EVORA-proje
 | ---  | --- | --- | --- |
 | [name](name.md) | 1 <br/> [String](String.md) | The label that allows humans to identify the current item | direct |
 | [description](description.md) | 0..1 _recommended_ <br/> [String](String.md) | A short explanation of the characteristics, features, or nature of the curren... | direct |
-| [homePage](homePage.md) | 0..1 <br/> [String](String.md) | Refers to the degree of purity achieved for a protein sample | direct |
+| [homePage](homePage.md) | 0..1 <br/> [Uri](Uri.md) | A web page that serves as the main or introductory page | direct |
 | [contactPoint](contactPoint.md) | 0..1 _recommended_ <br/> [ContactPoint](ContactPoint.md) | An information that allows someone to establish communication | direct |
 | [logo](logo.md) | 0..1 <br/> [Image](Image.md) | A path or URL to the related logo | direct |
 
@@ -112,8 +112,8 @@ URI: [EVORAO:PersonOrOrganization](https://raw.githubusercontent.com/EVORA-proje
 | ---  | ---  |
 | self | EVORAO:PersonOrOrganization |
 | native | EVORAO:PersonOrOrganization |
-| exact | dct:Agent |
-| close | foaf:Agent |
+| exact | dct:Agent, dct:Agent |
+| close | foaf:Agent, foaf:Agent |
 
 
 
@@ -135,7 +135,9 @@ title: Person Or Organization
 from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
 exact_mappings:
 - dct:Agent
+- dct:Agent
 close_mappings:
+- foaf:Agent
 - foaf:Agent
 is_a: Resource
 slots:
@@ -153,9 +155,9 @@ slot_usage:
     - 'The title of the item should be as short and descriptive as possible. E.g.
       for virus products it should basically be based on the following Pattern:
 
-      "Virus name", "virus host type", "collection year", "country of collection"
-      ex "suspected epidemiological origin", "genotype", "strain", "variant name or
-      specific feature"'
+      ''Virus name'', ''virus host type'', ''collection year'', ''country of collection''
+      ex ''suspected epidemiological origin'', ''genotype'', ''strain'', ''variant
+      name or specific feature'
     exact_mappings:
     - dct:title
     close_mappings:
@@ -201,14 +203,11 @@ slot_usage:
     multivalued: false
   homePage:
     name: homePage
-    description: Refers to the degree of purity achieved for a protein sample. Possible
-      values include ">95%" (the protein is highly purified, with more than 95% purity)
-      and "Unpurified expression host lysate or partly purified protein" (the protein
-      is either unpurified and present in the host cell lysate or only partially purified).
+    description: A web page that serves as the main or introductory page
     title: home page
     domain_of:
     - PersonOrOrganization
-    range: string
+    range: uri
     required: false
     multivalued: false
   contactPoint:
@@ -249,7 +248,9 @@ title: Person Or Organization
 from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
 exact_mappings:
 - dct:Agent
+- dct:Agent
 close_mappings:
+- foaf:Agent
 - foaf:Agent
 is_a: Resource
 slot_usage:
@@ -261,9 +262,9 @@ slot_usage:
     - 'The title of the item should be as short and descriptive as possible. E.g.
       for virus products it should basically be based on the following Pattern:
 
-      "Virus name", "virus host type", "collection year", "country of collection"
-      ex "suspected epidemiological origin", "genotype", "strain", "variant name or
-      specific feature"'
+      ''Virus name'', ''virus host type'', ''collection year'', ''country of collection''
+      ex ''suspected epidemiological origin'', ''genotype'', ''strain'', ''variant
+      name or specific feature'
     exact_mappings:
     - dct:title
     close_mappings:
@@ -309,14 +310,11 @@ slot_usage:
     multivalued: false
   homePage:
     name: homePage
-    description: Refers to the degree of purity achieved for a protein sample. Possible
-      values include ">95%" (the protein is highly purified, with more than 95% purity)
-      and "Unpurified expression host lysate or partly purified protein" (the protein
-      is either unpurified and present in the host cell lysate or only partially purified).
+    description: A web page that serves as the main or introductory page
     title: home page
     domain_of:
     - PersonOrOrganization
-    range: string
+    range: uri
     required: false
     multivalued: false
   contactPoint:
@@ -352,9 +350,9 @@ attributes:
     - 'The title of the item should be as short and descriptive as possible. E.g.
       for virus products it should basically be based on the following Pattern:
 
-      "Virus name", "virus host type", "collection year", "country of collection"
-      ex "suspected epidemiological origin", "genotype", "strain", "variant name or
-      specific feature"'
+      ''Virus name'', ''virus host type'', ''collection year'', ''country of collection''
+      ex ''suspected epidemiological origin'', ''genotype'', ''strain'', ''variant
+      name or specific feature'
     from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
     exact_mappings:
     - dct:title
@@ -408,10 +406,7 @@ attributes:
     multivalued: false
   homePage:
     name: homePage
-    description: Refers to the degree of purity achieved for a protein sample. Possible
-      values include ">95%" (the protein is highly purified, with more than 95% purity)
-      and "Unpurified expression host lysate or partly purified protein" (the protein
-      is either unpurified and present in the host cell lysate or only partially purified).
+    description: A web page that serves as the main or introductory page
     title: home page
     from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
     rank: 1000
@@ -419,7 +414,7 @@ attributes:
     owner: PersonOrOrganization
     domain_of:
     - PersonOrOrganization
-    range: string
+    range: uri
     required: false
     multivalued: false
   contactPoint:

@@ -1,6 +1,11 @@
 
 
-# Slot: transportInformation
+# Slot: transport information (transportInformation)
+
+
+_Details the regulations and guidelines for safely transporting the product, including classifications for road, air, sea, or rail transport, UN numbers, packaging requirements, and any special precautions to ensure safe transit._
+
+
 
 
 
@@ -29,6 +34,8 @@ URI: [EVORAO:transportInformation](https://raw.githubusercontent.com/EVORA-proje
 ## Properties
 
 * Range: [String](String.md)
+
+* Recommended: True
 
 
 
@@ -65,12 +72,19 @@ URI: [EVORAO:transportInformation](https://raw.githubusercontent.com/EVORA-proje
 <details>
 ```yaml
 name: transportInformation
+description: Details the regulations and guidelines for safely transporting the product,
+  including classifications for road, air, sea, or rail transport, UN numbers, packaging
+  requirements, and any special precautions to ensure safe transit.
+title: transport information
 from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
 rank: 1000
 alias: transportInformation
 domain_of:
 - MSDS
 range: string
+required: false
+recommended: true
+multivalued: false
 
 ```
 </details>

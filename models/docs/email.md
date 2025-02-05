@@ -1,6 +1,11 @@
 
 
-# Slot: email
+# Slot: email (email)
+
+
+_Email address_
+
+
 
 
 
@@ -30,6 +35,8 @@ URI: [EVORAO:email](https://raw.githubusercontent.com/EVORA-project/evora-ontolo
 
 * Range: [String](String.md)
 
+* Recommended: True
+
 
 
 
@@ -56,6 +63,7 @@ URI: [EVORAO:email](https://raw.githubusercontent.com/EVORA-project/evora-ontolo
 | ---  | ---  |
 | self | EVORAO:email |
 | native | EVORAO:email |
+| close | schema:email, vcard:email |
 
 
 
@@ -65,12 +73,20 @@ URI: [EVORAO:email](https://raw.githubusercontent.com/EVORA-project/evora-ontolo
 <details>
 ```yaml
 name: email
+description: Email address
+title: email
 from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+close_mappings:
+- schema:email
+- vcard:email
 rank: 1000
 alias: email
 domain_of:
 - ContactPoint
 range: string
+required: false
+recommended: true
+multivalued: false
 
 ```
 </details>

@@ -3,7 +3,7 @@
 # Class: Alternate Name (AlternateName)
 
 
-_List of alternate names for things_
+_List of other names for things_
 
 
 
@@ -67,7 +67,7 @@ URI: [EVORAO:AlternateName](https://raw.githubusercontent.com/EVORA-project/evor
 
 | Name | Cardinality and Range | Description | Inheritance |
 | ---  | --- | --- | --- |
-| [alternateName](alternateName.md) | * <br/> [AlternateName](AlternateName.md) | Any known alternate name related to this name | direct |
+| [alternateName](alternateName.md) | * <br/> [AlternateName](AlternateName.md) | Any other name under which the entity can be known | direct |
 | [sourceOfInformation](sourceOfInformation.md) | * <br/> [String](String.md) | The name of the origin from which knowledge is obtained | direct |
 | [name](name.md) | 1 <br/> [String](String.md) | The label that allows humans to identify the current item | [Term](Term.md) |
 | [description](description.md) | 0..1 _recommended_ <br/> [String](String.md) | A short explanation of the characteristics, features, or nature of the curren... | [Term](Term.md) |
@@ -117,7 +117,7 @@ URI: [EVORAO:AlternateName](https://raw.githubusercontent.com/EVORA-project/evor
 | ---  | ---  |
 | self | EVORAO:AlternateName |
 | native | EVORAO:AlternateName |
-| close | wd:Q7662595 |
+| close | wd:Q7662595, wd:Q7662595 |
 
 
 
@@ -134,10 +134,11 @@ URI: [EVORAO:AlternateName](https://raw.githubusercontent.com/EVORA-project/evor
 <details>
 ```yaml
 name: AlternateName
-description: List of alternate names for things
+description: List of other names for things
 title: Alternate Name
 from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
 close_mappings:
+- wd:Q7662595
 - wd:Q7662595
 is_a: Term
 slots:
@@ -146,8 +147,12 @@ slots:
 slot_usage:
   alternateName:
     name: alternateName
-    description: Any known alternate name related to this name
+    description: Any other name under which the entity can be known
     title: alternate name
+    comments:
+    - This includes previous names, acronyms, former taxonomic terms, and other variations.
+      This information can serve as keywords for search purposes and as a bridge with
+      other projects that use different naming systems or taxonomies
     close_mappings:
     - wdp:P4970
     domain_of:
@@ -179,17 +184,22 @@ slot_usage:
 <details>
 ```yaml
 name: AlternateName
-description: List of alternate names for things
+description: List of other names for things
 title: Alternate Name
 from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
 close_mappings:
+- wd:Q7662595
 - wd:Q7662595
 is_a: Term
 slot_usage:
   alternateName:
     name: alternateName
-    description: Any known alternate name related to this name
+    description: Any other name under which the entity can be known
     title: alternate name
+    comments:
+    - This includes previous names, acronyms, former taxonomic terms, and other variations.
+      This information can serve as keywords for search purposes and as a bridge with
+      other projects that use different naming systems or taxonomies
     close_mappings:
     - wdp:P4970
     domain_of:
@@ -215,8 +225,12 @@ slot_usage:
 attributes:
   alternateName:
     name: alternateName
-    description: Any known alternate name related to this name
+    description: Any other name under which the entity can be known
     title: alternate name
+    comments:
+    - This includes previous names, acronyms, former taxonomic terms, and other variations.
+      This information can serve as keywords for search purposes and as a bridge with
+      other projects that use different naming systems or taxonomies
     from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
     close_mappings:
     - wdp:P4970
@@ -255,9 +269,9 @@ attributes:
     - 'The title of the item should be as short and descriptive as possible. E.g.
       for virus products it should basically be based on the following Pattern:
 
-      "Virus name", "virus host type", "collection year", "country of collection"
-      ex "suspected epidemiological origin", "genotype", "strain", "variant name or
-      specific feature"'
+      ''Virus name'', ''virus host type'', ''collection year'', ''country of collection''
+      ex ''suspected epidemiological origin'', ''genotype'', ''strain'', ''variant
+      name or specific feature'
     from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
     exact_mappings:
     - dct:title
@@ -315,6 +329,10 @@ attributes:
       processed in ascending order. This weight helps prioritize content when organizing
       or processing data. Its value can be negative, with a default set to 0
     title: weight
+    comments:
+    - The lowest weighted Data providers are triggered first, this may be usefull
+      to populate at first entities that are referenced by others (e.g. Version ahead
+      of Rank ahead of Taxon)
     from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
     close_mappings:
     - adms:status

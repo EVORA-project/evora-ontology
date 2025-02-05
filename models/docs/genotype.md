@@ -1,6 +1,11 @@
 
 
-# Slot: genotype
+# Slot: genotype (genotype)
+
+
+_Genotype information that identifies organisms that cluster in phylogenetic trees, thus different clusters are distinct genotypes_
+
+
 
 
 
@@ -65,12 +70,17 @@ URI: [EVORAO:genotype](https://raw.githubusercontent.com/EVORA-project/evora-ont
 <details>
 ```yaml
 name: genotype
+description: Genotype information that identifies organisms that cluster in phylogenetic
+  trees, thus different clusters are distinct genotypes
+title: genotype
 from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
 rank: 1000
 alias: genotype
 domain_of:
 - PathogenIdentification
 range: string
+required: false
+multivalued: false
 
 ```
 </details>

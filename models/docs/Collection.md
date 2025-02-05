@@ -121,7 +121,7 @@ URI: [EVORAO:Collection](https://raw.githubusercontent.com/EVORA-project/evora-o
 | ---  | ---  |
 | self | EVORAO:Collection |
 | native | EVORAO:Collection |
-| close | wd:Q2668072 |
+| close | wd:Q2668072, wd:Q2668072 |
 
 
 
@@ -142,6 +142,7 @@ description: Set of products and services with some common characteristics
 title: Collection
 from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
 close_mappings:
+- wd:Q2668072
 - wd:Q2668072
 is_a: Catalogue
 slots:
@@ -184,6 +185,7 @@ description: Set of products and services with some common characteristics
 title: Collection
 from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
 close_mappings:
+- wd:Q2668072
 - wd:Q2668072
 is_a: Catalogue
 slot_usage:
@@ -250,9 +252,9 @@ attributes:
     - 'The title of the item should be as short and descriptive as possible. E.g.
       for virus products it should basically be based on the following Pattern:
 
-      "Virus name", "virus host type", "collection year", "country of collection"
-      ex "suspected epidemiological origin", "genotype", "strain", "variant name or
-      specific feature"'
+      ''Virus name'', ''virus host type'', ''collection year'', ''country of collection''
+      ex ''suspected epidemiological origin'', ''genotype'', ''strain'', ''variant
+      name or specific feature'
     from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
     exact_mappings:
     - dct:title

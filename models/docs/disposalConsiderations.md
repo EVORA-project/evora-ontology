@@ -1,6 +1,11 @@
 
 
-# Slot: disposalConsiderations
+# Slot: disposal considerations (disposalConsiderations)
+
+
+_Guidance on the safe and environmentally responsible disposal of the product, including recommended disposal methods, regulatory requirements, and precautions to avoid harm to people and the environment during disposal._
+
+
 
 
 
@@ -29,6 +34,8 @@ URI: [EVORAO:disposalConsiderations](https://raw.githubusercontent.com/EVORA-pro
 ## Properties
 
 * Range: [String](String.md)
+
+* Recommended: True
 
 
 
@@ -65,12 +72,19 @@ URI: [EVORAO:disposalConsiderations](https://raw.githubusercontent.com/EVORA-pro
 <details>
 ```yaml
 name: disposalConsiderations
+description: Guidance on the safe and environmentally responsible disposal of the
+  product, including recommended disposal methods, regulatory requirements, and precautions
+  to avoid harm to people and the environment during disposal.
+title: disposal considerations
 from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
 rank: 1000
 alias: disposalConsiderations
 domain_of:
 - MSDS
 range: string
+required: false
+recommended: true
+multivalued: false
 
 ```
 </details>

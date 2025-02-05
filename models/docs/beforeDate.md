@@ -1,6 +1,11 @@
 
 
-# Slot: beforeDate
+# Slot: before date (beforeDate)
+
+
+_Set to TRUE if a proxy date for the collection date is used_
+
+
 
 
 
@@ -28,7 +33,9 @@ URI: [EVORAO:beforeDate](https://raw.githubusercontent.com/EVORA-project/evora-o
 
 ## Properties
 
-* Range: [String](String.md)
+* Range: [Boolean](Boolean.md)
+
+* Required: True
 
 
 
@@ -65,12 +72,17 @@ URI: [EVORAO:beforeDate](https://raw.githubusercontent.com/EVORA-project/evora-o
 <details>
 ```yaml
 name: beforeDate
+description: Set to TRUE if a proxy date for the collection date is used
+title: before date
 from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
 rank: 1000
+ifabsent: 'false'
 alias: beforeDate
 domain_of:
 - NaturalPartOrigin
-range: string
+range: boolean
+required: true
+multivalued: false
 
 ```
 </details>

@@ -1,6 +1,11 @@
 
 
-# Slot: journal
+# Slot: journal (journal)
+
+
+_The scientific journal in which the publication was published_
+
+
 
 
 
@@ -28,7 +33,7 @@ URI: [EVORAO:journal](https://raw.githubusercontent.com/EVORA-project/evora-onto
 
 ## Properties
 
-* Range: [String](String.md)
+* Range: [Journal](Journal.md)
 
 
 
@@ -65,12 +70,16 @@ URI: [EVORAO:journal](https://raw.githubusercontent.com/EVORA-project/evora-onto
 <details>
 ```yaml
 name: journal
+description: The scientific journal in which the publication was published
+title: journal
 from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
 rank: 1000
 alias: journal
 domain_of:
 - Publication
-range: string
+range: Journal
+required: false
+multivalued: false
 
 ```
 </details>

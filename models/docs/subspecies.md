@@ -1,6 +1,11 @@
 
 
-# Slot: subspecies
+# Slot: subspecies (subspecies)
+
+
+_The subspecies information differentiates closely related pathogens within a single species_
+
+
 
 
 
@@ -65,12 +70,17 @@ URI: [EVORAO:subspecies](https://raw.githubusercontent.com/EVORA-project/evora-o
 <details>
 ```yaml
 name: subspecies
+description: The subspecies information differentiates closely related pathogens within
+  a single species
+title: subspecies
 from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
 rank: 1000
 alias: subspecies
 domain_of:
 - PathogenIdentification
 range: string
+required: false
+multivalued: false
 
 ```
 </details>

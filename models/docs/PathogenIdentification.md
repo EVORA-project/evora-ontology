@@ -203,7 +203,7 @@ slot_usage:
   pathogenType:
     name: pathogenType
     description: Identification of the specific type of pathogen among the listed
-      categories e.g. "Virus","Viroid","Bacterium"...
+      categories e.g. 'Virus','Viroid','Bacterium'...
     title: pathogen type
     domain_of:
     - PathogenIdentification
@@ -325,7 +325,7 @@ slot_usage:
   pathogenType:
     name: pathogenType
     description: Identification of the specific type of pathogen among the listed
-      categories e.g. "Virus","Viroid","Bacterium"...
+      categories e.g. 'Virus','Viroid','Bacterium'...
     title: pathogen type
     domain_of:
     - PathogenIdentification
@@ -416,6 +416,8 @@ attributes:
     - The taxon of the highest rank known that can be used to classify a pathogen
       or group of pathogens (e.g viruses) in the reference taxonomy
     from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+    close_mappings:
+    - dwc:Taxon
     rank: 1000
     alias: taxon
     owner: PathogenIdentification
@@ -441,7 +443,7 @@ attributes:
   pathogenType:
     name: pathogenType
     description: Identification of the specific type of pathogen among the listed
-      categories e.g. "Virus","Viroid","Bacterium"...
+      categories e.g. 'Virus','Viroid','Bacterium'...
     title: pathogen type
     from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
     rank: 1000

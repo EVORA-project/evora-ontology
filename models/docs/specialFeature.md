@@ -1,6 +1,11 @@
 
 
-# Slot: specialFeature
+# Slot: special feature (specialFeature)
+
+
+_Distinctive attributes of a product that set it apart from other similar items e.g., Reference strain, Vaccinal strain, Antiviral resistant strain ..._
+
+
 
 
 
@@ -28,7 +33,9 @@ URI: [EVORAO:specialFeature](https://raw.githubusercontent.com/EVORA-project/evo
 
 ## Properties
 
-* Range: [String](String.md)
+* Range: [SpecialFeature](SpecialFeature.md)
+
+* Multivalued: True
 
 
 
@@ -65,12 +72,17 @@ URI: [EVORAO:specialFeature](https://raw.githubusercontent.com/EVORA-project/evo
 <details>
 ```yaml
 name: specialFeature
+description: Distinctive attributes of a product that set it apart from other similar
+  items e.g., Reference strain, Vaccinal strain, Antiviral resistant strain ...
+title: special feature
 from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
 rank: 1000
 alias: specialFeature
 domain_of:
 - Protein
-range: string
+range: SpecialFeature
+required: false
+multivalued: true
 
 ```
 </details>

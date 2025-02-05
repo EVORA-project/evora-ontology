@@ -41,7 +41,7 @@ URI: [EVORAO:TaxonomicRank](https://raw.githubusercontent.com/EVORA-project/evor
           
     
     
-    TaxonomicRank --> "*" Taxonomy : taxonomy
+    TaxonomicRank --> "* _recommended_" Taxonomy : taxonomy
     click Taxonomy href "../Taxonomy"
 
         
@@ -65,7 +65,7 @@ URI: [EVORAO:TaxonomicRank](https://raw.githubusercontent.com/EVORA-project/evor
 
 | Name | Cardinality and Range | Description | Inheritance |
 | ---  | --- | --- | --- |
-| [taxonomy](taxonomy.md) | * <br/> [Taxonomy](Taxonomy.md) | The taxonomy release(s) in which this entity exists | direct |
+| [taxonomy](taxonomy.md) | * _recommended_ <br/> [Taxonomy](Taxonomy.md) | The taxonomy release(s) in which this entity exists | direct |
 | [name](name.md) | 1 <br/> [String](String.md) | The label that allows humans to identify the current item | [Term](Term.md) |
 | [description](description.md) | 0..1 _recommended_ <br/> [String](String.md) | A short explanation of the characteristics, features, or nature of the curren... | [Term](Term.md) |
 | [weight](weight.md) | 1 <br/> [Integer](Integer.md) | A numerical value indicating relative importance or priority, generally proce... | [Term](Term.md) |
@@ -113,7 +113,7 @@ URI: [EVORAO:TaxonomicRank](https://raw.githubusercontent.com/EVORA-project/evor
 | ---  | ---  |
 | self | EVORAO:TaxonomicRank |
 | native | EVORAO:TaxonomicRank |
-| close | wd:Q427626 |
+| close | wd:Q427626, wd:Q427626 |
 
 
 
@@ -136,6 +136,7 @@ comments:
 - Use of Data provider recommended
 from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
 close_mappings:
+- wd:Q427626
 - wd:Q427626
 is_a: Term
 slots:
@@ -167,6 +168,7 @@ comments:
 from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
 close_mappings:
 - wd:Q427626
+- wd:Q427626
 is_a: Term
 slot_usage:
   taxonomy:
@@ -193,6 +195,7 @@ attributes:
     - Taxon
     range: Taxonomy
     required: false
+    recommended: true
     multivalued: true
   name:
     name: name
@@ -202,9 +205,9 @@ attributes:
     - 'The title of the item should be as short and descriptive as possible. E.g.
       for virus products it should basically be based on the following Pattern:
 
-      "Virus name", "virus host type", "collection year", "country of collection"
-      ex "suspected epidemiological origin", "genotype", "strain", "variant name or
-      specific feature"'
+      ''Virus name'', ''virus host type'', ''collection year'', ''country of collection''
+      ex ''suspected epidemiological origin'', ''genotype'', ''strain'', ''variant
+      name or specific feature'
     from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
     exact_mappings:
     - dct:title
@@ -262,6 +265,10 @@ attributes:
       processed in ascending order. This weight helps prioritize content when organizing
       or processing data. Its value can be negative, with a default set to 0
     title: weight
+    comments:
+    - The lowest weighted Data providers are triggered first, this may be usefull
+      to populate at first entities that are referenced by others (e.g. Version ahead
+      of Rank ahead of Taxon)
     from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
     close_mappings:
     - adms:status

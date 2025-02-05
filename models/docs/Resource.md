@@ -106,7 +106,7 @@ URI: [EVORAO:Resource](https://raw.githubusercontent.com/EVORA-project/evora-ont
 | ---  | ---  |
 | self | EVORAO:Resource |
 | native | EVORAO:Resource |
-| exact | dcat:Resource |
+| exact | dcat:Resource, dcat:Resource |
 
 
 
@@ -128,6 +128,7 @@ title: Resource
 from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
 exact_mappings:
 - dcat:Resource
+- dcat:Resource
 abstract: true
 
 ```
@@ -142,6 +143,7 @@ description: Resource published or curated by a single agent.
 title: Resource
 from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
 exact_mappings:
+- dcat:Resource
 - dcat:Resource
 abstract: true
 

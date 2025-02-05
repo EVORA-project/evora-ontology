@@ -1,6 +1,11 @@
 
 
-# Slot: specificityDocumented
+# Slot: specificity documented (specificityDocumented)
+
+
+_Boolean value indicating whether the specificity of the product has been formally documented_
+
+
 
 
 
@@ -19,8 +24,8 @@ URI: [EVORAO:specificityDocumented](https://raw.githubusercontent.com/EVORA-proj
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
 | [Antibody](Antibody.md) | Protein that can bind to certain types of foreign bodies, such as pathogens |  yes  |
-| [DetectionKit](DetectionKit.md) | A detection kit for specific pathogens |  yes  |
 | [Hybridoma](Hybridoma.md) | An hybridoma that provides antibodies that can be related to a pathogen |  no  |
+| [DetectionKit](DetectionKit.md) | A detection kit for specific pathogens |  yes  |
 
 
 
@@ -30,7 +35,9 @@ URI: [EVORAO:specificityDocumented](https://raw.githubusercontent.com/EVORA-proj
 
 ## Properties
 
-* Range: [String](String.md)
+* Range: [Boolean](Boolean.md)
+
+* Required: True
 
 
 
@@ -67,13 +74,18 @@ URI: [EVORAO:specificityDocumented](https://raw.githubusercontent.com/EVORA-proj
 <details>
 ```yaml
 name: specificityDocumented
+description: Boolean value indicating whether the specificity of the product has been
+  formally documented
+title: specificity documented
 from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
 rank: 1000
 alias: specificityDocumented
 domain_of:
 - Antibody
 - Detection Kit
-range: string
+range: boolean
+required: true
+multivalued: false
 
 ```
 </details>

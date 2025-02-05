@@ -1,6 +1,11 @@
 
 
-# Slot: queryMethod
+# Slot: query method (queryMethod)
+
+
+_The http request method used to access the requested query url_
+
+
 
 
 
@@ -30,6 +35,8 @@ URI: [EVORAO:queryMethod](https://raw.githubusercontent.com/EVORA-project/evora-
 
 * Range: [String](String.md)
 
+* Required: True
+
 
 
 
@@ -56,6 +63,7 @@ URI: [EVORAO:queryMethod](https://raw.githubusercontent.com/EVORA-project/evora-
 | ---  | ---  |
 | self | EVORAO:queryMethod |
 | native | EVORAO:queryMethod |
+| close | dcat:endpointDescription |
 
 
 
@@ -65,12 +73,18 @@ URI: [EVORAO:queryMethod](https://raw.githubusercontent.com/EVORA-project/evora-
 <details>
 ```yaml
 name: queryMethod
+description: The http request method used to access the requested query url
+title: query method
 from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+close_mappings:
+- dcat:endpointDescription
 rank: 1000
 alias: queryMethod
 domain_of:
 - DataProvider
 range: string
+required: true
+multivalued: false
 equals_string_in:
 - GET
 - POST

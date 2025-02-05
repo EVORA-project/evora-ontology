@@ -1,6 +1,11 @@
 
 
-# Slot: hybridomaDescription
+# Slot: hybridoma description (hybridomaDescription)
+
+
+_The description of the hybridoma_
+
+
 
 
 
@@ -29,6 +34,8 @@ URI: [EVORAO:hybridomaDescription](https://raw.githubusercontent.com/EVORA-proje
 ## Properties
 
 * Range: [String](String.md)
+
+* Required: True
 
 
 
@@ -65,12 +72,16 @@ URI: [EVORAO:hybridomaDescription](https://raw.githubusercontent.com/EVORA-proje
 <details>
 ```yaml
 name: hybridomaDescription
+description: The description of the hybridoma
+title: hybridoma description
 from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
 rank: 1000
 alias: hybridomaDescription
 domain_of:
 - Hybridoma
 range: string
+required: true
+multivalued: false
 
 ```
 </details>

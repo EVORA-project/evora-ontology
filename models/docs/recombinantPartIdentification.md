@@ -1,6 +1,11 @@
 
 
-# Slot: recombinantPartIdentification
+# Slot: recombinant part identification (recombinantPartIdentification)
+
+
+_Identification of a recombinant part_
+
+
 
 
 
@@ -18,9 +23,9 @@ URI: [EVORAO:recombinantPartIdentification](https://raw.githubusercontent.com/EV
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [BiologicalPartOrigin](BiologicalPartOrigin.md) | Information on the origin of a unitary, cohesive part that is part of, or con... |  yes  |
-| [SyntheticPartOrigin](SyntheticPartOrigin.md) | Information on the origin of a synthetic part that composes the biological ma... |  no  |
 | [NaturalPartOrigin](NaturalPartOrigin.md) | Information on the origin of a natural part that composes the biological mate... |  no  |
+| [SyntheticPartOrigin](SyntheticPartOrigin.md) | Information on the origin of a synthetic part that composes the biological ma... |  no  |
+| [BiologicalPartOrigin](BiologicalPartOrigin.md) | Information on the origin of a unitary, cohesive part that is part of, or con... |  yes  |
 
 
 
@@ -30,11 +35,15 @@ URI: [EVORAO:recombinantPartIdentification](https://raw.githubusercontent.com/EV
 
 ## Properties
 
-* Range: [String](String.md)
+* Range: [RecombinantPartIdentification](RecombinantPartIdentification.md)
 
 
 
 
+
+## Comments
+
+* Information not required if the current biological part constitutes the complete biological material
 
 ## Identifier and Mapping Information
 
@@ -67,12 +76,19 @@ URI: [EVORAO:recombinantPartIdentification](https://raw.githubusercontent.com/EV
 <details>
 ```yaml
 name: recombinantPartIdentification
+description: Identification of a recombinant part
+title: recombinant part identification
+comments:
+- Information not required if the current biological part constitutes the complete
+  biological material
 from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
 rank: 1000
 alias: recombinantPartIdentification
 domain_of:
 - BiologicalPartOrigin
-range: string
+range: RecombinantPartIdentification
+required: false
+multivalued: false
 
 ```
 </details>

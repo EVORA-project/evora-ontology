@@ -1,6 +1,11 @@
 
 
-# Slot: furtherInformation
+# Slot: further information (furtherInformation)
+
+
+_Provides any additional details or clarifications not covered in other sections of the MSDS, such as references, supporting documents, or specific instructions for safe handling and use of the product._
+
+
 
 
 
@@ -29,6 +34,8 @@ URI: [EVORAO:furtherInformation](https://raw.githubusercontent.com/EVORA-project
 ## Properties
 
 * Range: [String](String.md)
+
+* Recommended: True
 
 
 
@@ -65,12 +72,19 @@ URI: [EVORAO:furtherInformation](https://raw.githubusercontent.com/EVORA-project
 <details>
 ```yaml
 name: furtherInformation
+description: Provides any additional details or clarifications not covered in other
+  sections of the MSDS, such as references, supporting documents, or specific instructions
+  for safe handling and use of the product.
+title: further information
 from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
 rank: 1000
 alias: furtherInformation
 domain_of:
 - MSDS
 range: string
+required: false
+recommended: true
+multivalued: false
 
 ```
 </details>

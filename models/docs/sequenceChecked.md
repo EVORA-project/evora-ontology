@@ -1,6 +1,11 @@
 
 
-# Slot: sequenceChecked
+# Slot: sequence checked (sequenceChecked)
+
+
+_Tell whether or not the sequence of the product was controlled (compulsory for cloned products)_
+
+
 
 
 
@@ -28,11 +33,17 @@ URI: [EVORAO:sequenceChecked](https://raw.githubusercontent.com/EVORA-project/ev
 
 ## Properties
 
-* Range: [String](String.md)
+* Range: [Boolean](Boolean.md)
+
+* Required: True
 
 
 
 
+
+## Comments
+
+* Sequence check is mandatory for cloned products
 
 ## Identifier and Mapping Information
 
@@ -65,12 +76,19 @@ URI: [EVORAO:sequenceChecked](https://raw.githubusercontent.com/EVORA-project/ev
 <details>
 ```yaml
 name: sequenceChecked
+description: Tell whether or not the sequence of the product was controlled (compulsory
+  for cloned products)
+title: sequence checked
+comments:
+- Sequence check is mandatory for cloned products
 from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
 rank: 1000
 alias: sequenceChecked
 domain_of:
 - Nucleic Acid
-range: string
+range: boolean
+required: true
+multivalued: false
 
 ```
 </details>

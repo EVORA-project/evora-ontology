@@ -1,6 +1,11 @@
 
 
-# Slot: collectionDataProvider
+# Slot: collection data provider (collectionDataProvider)
+
+
+_The provider of the data of the collection_
+
+
 
 
 
@@ -28,7 +33,7 @@ URI: [EVORAO:collectionDataProvider](https://raw.githubusercontent.com/EVORA-pro
 
 ## Properties
 
-* Range: [String](String.md)
+* Range: [DataProvider](DataProvider.md)
 
 
 
@@ -56,6 +61,7 @@ URI: [EVORAO:collectionDataProvider](https://raw.githubusercontent.com/EVORA-pro
 | ---  | ---  |
 | self | EVORAO:collectionDataProvider |
 | native | EVORAO:collectionDataProvider |
+| close | dct:isReferencedBy |
 
 
 
@@ -65,12 +71,18 @@ URI: [EVORAO:collectionDataProvider](https://raw.githubusercontent.com/EVORA-pro
 <details>
 ```yaml
 name: collectionDataProvider
+description: The provider of the data of the collection
+title: collection data provider
 from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+close_mappings:
+- dct:isReferencedBy
 rank: 1000
 alias: collectionDataProvider
 domain_of:
 - Collection
-range: string
+range: DataProvider
+required: false
+multivalued: false
 
 ```
 </details>

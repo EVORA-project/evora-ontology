@@ -1,6 +1,11 @@
 
 
-# Slot: externalEquivalentTaxon
+# Slot: external equivalent taxon (externalEquivalentTaxon)
+
+
+_Any equivalent taxon in a different taxonomy if exists/known to serve as a bridge (e.g, ICTV towards NCBI)_
+
+
 
 
 
@@ -28,11 +33,17 @@ URI: [EVORAO:externalEquivalentTaxon](https://raw.githubusercontent.com/EVORA-pr
 
 ## Properties
 
-* Range: [String](String.md)
+* Range: [Taxon](Taxon.md)
+
+* Multivalued: True
 
 
 
 
+
+## Comments
+
+* Could serve as a bridge between ICTV and NCBI as several providers currently uses NCBI Taxonomy
 
 ## Identifier and Mapping Information
 
@@ -56,6 +67,7 @@ URI: [EVORAO:externalEquivalentTaxon](https://raw.githubusercontent.com/EVORA-pr
 | ---  | ---  |
 | self | EVORAO:externalEquivalentTaxon |
 | native | EVORAO:externalEquivalentTaxon |
+| close | dwc:taxonID |
 
 
 
@@ -65,12 +77,22 @@ URI: [EVORAO:externalEquivalentTaxon](https://raw.githubusercontent.com/EVORA-pr
 <details>
 ```yaml
 name: externalEquivalentTaxon
+description: Any equivalent taxon in a different taxonomy if exists/known to serve
+  as a bridge (e.g, ICTV towards NCBI)
+title: external equivalent taxon
+comments:
+- Could serve as a bridge between ICTV and NCBI as several providers currently uses
+  NCBI Taxonomy
 from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+close_mappings:
+- dwc:taxonID
 rank: 1000
 alias: externalEquivalentTaxon
 domain_of:
 - Taxon
-range: string
+range: Taxon
+required: false
+multivalued: true
 
 ```
 </details>

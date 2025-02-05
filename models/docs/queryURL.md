@@ -1,6 +1,11 @@
 
 
-# Slot: queryURL
+# Slot: query URL (queryURL)
+
+
+_The URL template that allows to get the content_
+
+
 
 
 
@@ -28,7 +33,9 @@ URI: [EVORAO:queryURL](https://raw.githubusercontent.com/EVORA-project/evora-ont
 
 ## Properties
 
-* Range: [String](String.md)
+* Range: [Uri](Uri.md)
+
+* Required: True
 
 
 
@@ -56,6 +63,8 @@ URI: [EVORAO:queryURL](https://raw.githubusercontent.com/EVORA-project/evora-ont
 | ---  | ---  |
 | self | EVORAO:queryURL |
 | native | EVORAO:queryURL |
+| exact | dcat:endpointURL |
+| close | wdp:P1630 |
 
 
 
@@ -65,12 +74,20 @@ URI: [EVORAO:queryURL](https://raw.githubusercontent.com/EVORA-project/evora-ont
 <details>
 ```yaml
 name: queryURL
+description: The URL template that allows to get the content
+title: query URL
 from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+exact_mappings:
+- dcat:endpointURL
+close_mappings:
+- wdp:P1630
 rank: 1000
 alias: queryURL
 domain_of:
 - DataProvider
-range: string
+range: uri
+required: true
+multivalued: false
 
 ```
 </details>

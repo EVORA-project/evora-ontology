@@ -1,6 +1,11 @@
 
 
-# Slot: referenceProviderName
+# Slot: reference provider name (referenceProviderName)
+
+
+_The name for the reference provider_
+
+
 
 
 
@@ -30,6 +35,8 @@ URI: [EVORAO:referenceProviderName](https://raw.githubusercontent.com/EVORA-proj
 
 * Range: [String](String.md)
 
+* Required: True
+
 
 
 
@@ -56,6 +63,7 @@ URI: [EVORAO:referenceProviderName](https://raw.githubusercontent.com/EVORA-proj
 | ---  | ---  |
 | self | EVORAO:referenceProviderName |
 | native | EVORAO:referenceProviderName |
+| close | dct:publisher |
 
 
 
@@ -65,12 +73,18 @@ URI: [EVORAO:referenceProviderName](https://raw.githubusercontent.com/EVORA-proj
 <details>
 ```yaml
 name: referenceProviderName
+description: The name for the reference provider
+title: reference provider name
 from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+close_mappings:
+- dct:publisher
 rank: 1000
 alias: referenceProviderName
 domain_of:
 - ExternalRelatedReference
 range: string
+required: true
+multivalued: false
 
 ```
 </details>

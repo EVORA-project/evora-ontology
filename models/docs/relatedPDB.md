@@ -1,6 +1,11 @@
 
 
-# Slot: relatedPDB
+# Slot: related PDB (relatedPDB)
+
+
+_Identifier for 3D structural data as per the PDB (Protein Data Bank) database_
+
+
 
 
 
@@ -28,7 +33,9 @@ URI: [EVORAO:relatedPDB](https://raw.githubusercontent.com/EVORA-project/evora-o
 
 ## Properties
 
-* Range: [String](String.md)
+* Range: [PDBReference](PDBReference.md)
+
+* Multivalued: True
 
 
 
@@ -56,6 +63,7 @@ URI: [EVORAO:relatedPDB](https://raw.githubusercontent.com/EVORA-project/evora-o
 | ---  | ---  |
 | self | EVORAO:relatedPDB |
 | native | EVORAO:relatedPDB |
+| close | wdp:P638 |
 
 
 
@@ -65,12 +73,19 @@ URI: [EVORAO:relatedPDB](https://raw.githubusercontent.com/EVORA-project/evora-o
 <details>
 ```yaml
 name: relatedPDB
+description: Identifier for 3D structural data as per the PDB (Protein Data Bank)
+  database
+title: related PDB
 from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+close_mappings:
+- wdp:P638
 rank: 1000
 alias: relatedPDB
 domain_of:
 - Protein
-range: string
+range: PDBReference
+required: false
+multivalued: true
 
 ```
 </details>

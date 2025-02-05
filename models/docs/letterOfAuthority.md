@@ -1,6 +1,11 @@
 
 
-# Slot: letterOfAuthority
+# Slot: letter of authority (letterOfAuthority)
+
+
+_Indicate whether a Letter of Authority is required, confirming the necessity of formal authorization. The possible values are 'N/A', 'NOT Required', 'Required for customers in the EU' or 'Required'_
+
+
 
 
 
@@ -18,13 +23,13 @@ URI: [EVORAO:letterOfAuthority](https://raw.githubusercontent.com/EVORA-project/
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [Protozoan](Protozoan.md) | The protozoan as a biological material |  no  |
+| [Fungus](Fungus.md) | The fungus as a biological material |  no  |
 | [Virus](Virus.md) | The virus as a biological material |  no  |
+| [Viroid](Viroid.md) | The viroid as a biological material |  no  |
 | [Pathogen](Pathogen.md) | Biological entity that causes disease in its host, which is typically an infe... |  yes  |
+| [Protozoan](Protozoan.md) | The protozoan as a biological material |  no  |
 | [Prion](Prion.md) | The prion as a biological material |  no  |
 | [Bacterium](Bacterium.md) | The bacterium as a biological material |  no  |
-| [Fungus](Fungus.md) | The fungus as a biological material |  no  |
-| [Viroid](Viroid.md) | The viroid as a biological material |  no  |
 
 
 
@@ -35,6 +40,8 @@ URI: [EVORAO:letterOfAuthority](https://raw.githubusercontent.com/EVORA-project/
 ## Properties
 
 * Range: [String](String.md)
+
+* Required: True
 
 
 
@@ -71,12 +78,19 @@ URI: [EVORAO:letterOfAuthority](https://raw.githubusercontent.com/EVORA-project/
 <details>
 ```yaml
 name: letterOfAuthority
+description: Indicate whether a Letter of Authority is required, confirming the necessity
+  of formal authorization. The possible values are 'N/A', 'NOT Required', 'Required
+  for customers in the EU' or 'Required'
+title: letter of authority
 from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
 rank: 1000
+ifabsent: string(Not applicable)
 alias: letterOfAuthority
 domain_of:
 - Pathogen
 range: string
+required: true
+multivalued: false
 equals_string_in:
 - Not applicable
 - Not required

@@ -1,6 +1,11 @@
 
 
-# Slot: targetedAntigen
+# Slot: targeted antigen (targetedAntigen)
+
+
+_Specific molecular structure or epitope recognized and bound by an antibody_
+
+
 
 
 
@@ -30,6 +35,8 @@ URI: [EVORAO:targetedAntigen](https://raw.githubusercontent.com/EVORA-project/ev
 ## Properties
 
 * Range: [String](String.md)
+
+* Required: True
 
 
 
@@ -66,12 +73,16 @@ URI: [EVORAO:targetedAntigen](https://raw.githubusercontent.com/EVORA-project/ev
 <details>
 ```yaml
 name: targetedAntigen
+description: Specific molecular structure or epitope recognized and bound by an antibody
+title: targeted antigen
 from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
 rank: 1000
 alias: targetedAntigen
 domain_of:
 - Antibody
 range: string
+required: true
+multivalued: false
 
 ```
 </details>

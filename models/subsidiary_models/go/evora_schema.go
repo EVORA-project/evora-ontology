@@ -183,7 +183,7 @@ type PathogenIdentification struct {
 	 */
 	PathogenName CommonName `json:"pathogenName"`
 	/*
-	 * Identification of the specific type of pathogen among the listed categories e.g. "Virus","Viroid","Bacterium"...
+	 * Identification of the specific type of pathogen among the listed categories e.g. 'Virus','Viroid','Bacterium'...
 	 */
 	PathogenType string `json:"pathogenType"`
 	/*
@@ -307,7 +307,7 @@ type CommonName struct {
 	 */
 	Term
 	/*
-	 * Any known alternate name related to this name
+	 * Any other name under which the entity can be known
 	 */
 	AlternateName []AlternateName `json:"alternateName"`
 	/*
@@ -341,7 +341,7 @@ type VirusName struct {
 	 */
 	CommonName
 	/*
-	 * Any known alternate name related to this name
+	 * Any other name under which the entity can be known
 	 */
 	AlternateName []AlternateName `json:"alternateName"`
 	/*
@@ -367,7 +367,7 @@ type VirusName struct {
 }
 
 /*
- * List of alternate names for things
+ * List of other names for things
  */
 type AlternateName struct {
 	/*
@@ -375,7 +375,7 @@ type AlternateName struct {
 	 */
 	Term
 	/*
-	 * Any known alternate name related to this name
+	 * Any other name under which the entity can be known
 	 */
 	AlternateName []AlternateName `json:"alternateName"`
 	/*
@@ -885,7 +885,7 @@ type Variant struct {
 	 */
 	CommonName
 	/*
-	 * Any known alternate name related to this name
+	 * Any other name under which the entity can be known
 	 */
 	AlternateName []AlternateName `json:"alternateName"`
 	/*
@@ -1073,7 +1073,7 @@ type PersonOrOrganization struct {
 	 */
 	Description string `json:"description"`
 	/*
-	 * Refers to the degree of purity achieved for a protein sample. Possible values include ">95%" (the protein is highly purified, with more than 95% purity) and "Unpurified expression host lysate or partly purified protein" (the protein is either unpurified and present in the host cell lysate or only partially purified).
+	 * A web page that serves as the main or introductory page
 	 */
 	HomePage string `json:"homePage"`
 	/*
@@ -1107,7 +1107,7 @@ type Person struct {
 	 */
 	Description string `json:"description"`
 	/*
-	 * Refers to the degree of purity achieved for a protein sample. Possible values include ">95%" (the protein is highly purified, with more than 95% purity) and "Unpurified expression host lysate or partly purified protein" (the protein is either unpurified and present in the host cell lysate or only partially purified).
+	 * A web page that serves as the main or introductory page
 	 */
 	HomePage string `json:"homePage"`
 	/*
@@ -1129,9 +1129,9 @@ type Organization struct {
 	 */
 	PersonOrOrganization
 	/*
-	 * An alternate name or acronym
+	 * Any other name under which the entity can be known
 	 */
-	AlternateName AlternateName `json:"alternateName"`
+	AlternateName []AlternateName `json:"alternateName"`
 	/*
 	 * The country of the organization
 	 */
@@ -1149,7 +1149,7 @@ type Organization struct {
 	 */
 	Description string `json:"description"`
 	/*
-	 * Refers to the degree of purity achieved for a protein sample. Possible values include ">95%" (the protein is highly purified, with more than 95% purity) and "Unpurified expression host lysate or partly purified protein" (the protein is either unpurified and present in the host cell lysate or only partially purified).
+	 * A web page that serves as the main or introductory page
 	 */
 	HomePage string `json:"homePage"`
 	/*
@@ -1171,9 +1171,9 @@ type RI struct {
 	 */
 	Organization
 	/*
-	 * An alternate name or acronym
+	 * Any other name under which the entity can be known
 	 */
-	AlternateName AlternateName `json:"alternateName"`
+	AlternateName []AlternateName `json:"alternateName"`
 	/*
 	 * The country of the organization
 	 */
@@ -1191,7 +1191,7 @@ type RI struct {
 	 */
 	Description string `json:"description"`
 	/*
-	 * Refers to the degree of purity achieved for a protein sample. Possible values include ">95%" (the protein is highly purified, with more than 95% purity) and "Unpurified expression host lysate or partly purified protein" (the protein is either unpurified and present in the host cell lysate or only partially purified).
+	 * A web page that serves as the main or introductory page
 	 */
 	HomePage string `json:"homePage"`
 	/*
@@ -1217,9 +1217,9 @@ type Provider struct {
 	 */
 	MemberOfRI []RI `json:"memberOfRI"`
 	/*
-	 * An alternate name or acronym
+	 * Any other name under which the entity can be known
 	 */
-	AlternateName AlternateName `json:"alternateName"`
+	AlternateName []AlternateName `json:"alternateName"`
 	/*
 	 * The country of the organization
 	 */
@@ -1237,7 +1237,7 @@ type Provider struct {
 	 */
 	Description string `json:"description"`
 	/*
-	 * Refers to the degree of purity achieved for a protein sample. Possible values include ">95%" (the protein is highly purified, with more than 95% purity) and "Unpurified expression host lysate or partly purified protein" (the protein is either unpurified and present in the host cell lysate or only partially purified).
+	 * A web page that serves as the main or introductory page
 	 */
 	HomePage string `json:"homePage"`
 	/*
@@ -1267,7 +1267,7 @@ type Originator struct {
 	 */
 	Description string `json:"description"`
 	/*
-	 * Refers to the degree of purity achieved for a protein sample. Possible values include ">95%" (the protein is highly purified, with more than 95% purity) and "Unpurified expression host lysate or partly purified protein" (the protein is either unpurified and present in the host cell lysate or only partially purified).
+	 * A web page that serves as the main or introductory page
 	 */
 	HomePage string `json:"homePage"`
 	/*
@@ -1329,7 +1329,7 @@ type NaturalPartOrigin struct {
 	 */
 	BiologicalPartOrigin
 	/*
-	 * The geographical location where the sample was collected in situ. Used for Nagoya/CBD; equivalent to "country of origin".
+	 * The geographical location where the sample was collected in situ. Used for Nagoya/CBD; equivalent to 'country of origin'.
 	 */
 	CountryOfCollection Country `json:"countryOfCollection"`
 	/*
@@ -1337,7 +1337,7 @@ type NaturalPartOrigin struct {
 	 */
 	IndigenousPoepleAndLocalCommunityOrigin IPLCOrigin `json:"indigenousPoepleAndLocalCommunityOrigin"`
 	/*
-	 * The date when the sample was collected in situ. If unknown/private, use a proxy date such as "date received" and indicate this by setting to true the before date property
+	 * The date when the sample was collected in situ. If unknown/private, use a proxy date such as 'date received' and indicate this by setting to true the before date property
 	 */
 	CollectionDate string `json:"collectionDate"`
 	/*
@@ -1477,7 +1477,7 @@ type ProductOrService struct {
 	 */
 	PathogenIdentification []PathogenIdentification `json:"pathogenIdentification"`
 	/*
-	 * Any DOI that can be related
+	 * Any Digital Object Identifier that can be related
 	 */
 	RelatedDOI []DOI `json:"relatedDOI"`
 	/*
@@ -1509,7 +1509,7 @@ type ProductOrService struct {
 	 */
 	Availability string `json:"availability"`
 	/*
-	 * Any complementary document that can be related to this Item
+	 * Any additional documents that provide supplementary information, instructions, or guidelines relevant to the use of this item
 	 */
 	ComplementaryDocument []Document `json:"complementaryDocument"`
 	/*
@@ -1599,7 +1599,7 @@ type Service struct {
 	 */
 	PathogenIdentification []PathogenIdentification `json:"pathogenIdentification"`
 	/*
-	 * Any DOI that can be related
+	 * Any Digital Object Identifier that can be related
 	 */
 	RelatedDOI []DOI `json:"relatedDOI"`
 	/*
@@ -1631,7 +1631,7 @@ type Service struct {
 	 */
 	Availability string `json:"availability"`
 	/*
-	 * Any complementary document that can be related to this Item
+	 * Any additional documents that provide supplementary information, instructions, or guidelines relevant to the use of this item
 	 */
 	ComplementaryDocument []Document `json:"complementaryDocument"`
 	/*
@@ -1742,7 +1742,7 @@ type Product struct {
 	 */
 	PathogenIdentification []PathogenIdentification `json:"pathogenIdentification"`
 	/*
-	 * Any DOI that can be related
+	 * Any Digital Object Identifier that can be related
 	 */
 	RelatedDOI []DOI `json:"relatedDOI"`
 	/*
@@ -1774,7 +1774,7 @@ type Product struct {
 	 */
 	Availability string `json:"availability"`
 	/*
-	 * Any complementary document that can be related to this Item
+	 * Any additional documents that provide supplementary information, instructions, or guidelines relevant to the use of this item
 	 */
 	ComplementaryDocument []Document `json:"complementaryDocument"`
 	/*
@@ -1824,7 +1824,7 @@ type Antibody struct {
 	 */
 	AntibodyPurifiedByAffinity bool `json:"antibodyPurifiedByAffinity"`
 	/*
-	 * Tell if the antibody specificity was documented
+	 * Boolean value indicating whether the specificity of the product has been formally documented
 	 */
 	SpecificityDocumented bool `json:"specificityDocumented"`
 	/*
@@ -1832,7 +1832,7 @@ type Antibody struct {
 	 */
 	TargetedAntigen string `json:"targetedAntigen"`
 	/*
-	 * A reference that permits to retreive the sequence information from a sequence provider
+	 * A reference that permits to retrieve the sequence information from a sequence provider
 	 */
 	SequenceReference []SequenceReference `json:"sequenceReference"`
 	/*
@@ -1905,7 +1905,7 @@ type Antibody struct {
 	 */
 	PathogenIdentification []PathogenIdentification `json:"pathogenIdentification"`
 	/*
-	 * Any DOI that can be related
+	 * Any Digital Object Identifier that can be related
 	 */
 	RelatedDOI []DOI `json:"relatedDOI"`
 	/*
@@ -1937,7 +1937,7 @@ type Antibody struct {
 	 */
 	Availability string `json:"availability"`
 	/*
-	 * Any complementary document that can be related to this Item
+	 * Any additional documents that provide supplementary information, instructions, or guidelines relevant to the use of this item
 	 */
 	ComplementaryDocument []Document `json:"complementaryDocument"`
 	/*
@@ -1991,7 +1991,7 @@ type Hybridoma struct {
 	 */
 	AntibodyPurifiedByAffinity bool `json:"antibodyPurifiedByAffinity"`
 	/*
-	 * Tell if the antibody specificity was documented
+	 * Boolean value indicating whether the specificity of the product has been formally documented
 	 */
 	SpecificityDocumented bool `json:"specificityDocumented"`
 	/*
@@ -1999,7 +1999,7 @@ type Hybridoma struct {
 	 */
 	TargetedAntigen string `json:"targetedAntigen"`
 	/*
-	 * A reference that permits to retreive the sequence information from a sequence provider
+	 * A reference that permits to retrieve the sequence information from a sequence provider
 	 */
 	SequenceReference []SequenceReference `json:"sequenceReference"`
 	/*
@@ -2072,7 +2072,7 @@ type Hybridoma struct {
 	 */
 	PathogenIdentification []PathogenIdentification `json:"pathogenIdentification"`
 	/*
-	 * Any DOI that can be related
+	 * Any Digital Object Identifier that can be related
 	 */
 	RelatedDOI []DOI `json:"relatedDOI"`
 	/*
@@ -2104,7 +2104,7 @@ type Hybridoma struct {
 	 */
 	Availability string `json:"availability"`
 	/*
-	 * Any complementary document that can be related to this Item
+	 * Any additional documents that provide supplementary information, instructions, or guidelines relevant to the use of this item
 	 */
 	ComplementaryDocument []Document `json:"complementaryDocument"`
 	/*
@@ -2146,7 +2146,7 @@ type Protein struct {
 	 */
 	Product
 	/*
-	 * Information about the origin of the biological material, essential for access, utilization, and benefit-sharing of genetic resources in compliance with the Nagoya Protocol.
+	 * Information about the origin of the biological material, essential for access, utilization, and benefit-sharing of genetic resources in compliance with the Nagoya Protocol
 	 */
 	BiologicalMaterialOrigin BiologicalMaterialOrigin `json:"biologicalMaterialOrigin"`
 	/*
@@ -2170,19 +2170,19 @@ type Protein struct {
 	 */
 	Domain string `json:"domain"`
 	/*
-	 * Refers to the form in which the protein is produced and manifested in a biological system. Possible values include "Soluble" (proteins that are dissolved in the cellular or extracellular fluid) and "Inclusion bodies" (aggregated proteins that are insoluble and form within the cell)
+	 * Refers to the form in which the protein is produced and manifested in a biological system. Possible values include 'Soluble' (proteins that are dissolved in the cellular or extracellular fluid) and 'Inclusion bodies' (aggregated proteins that are insoluble and form within the cell)
 	 */
 	ExpressedAs string `json:"expressedAs"`
 	/*
-	 * Refers to the state of aggregated proteins within a cell. Possible values include "Denatured" (proteins are in an unfolded, inactive state) and "Refolded" (proteins have been processed to regain their functional, active conformation).
+	 * Refers to the state of aggregated proteins within a cell. Possible values include 'Denatured' (proteins are in an unfolded, inactive state) and 'Refolded' (proteins have been processed to regain their functional, active conformation).
 	 */
 	InclusionBodiesType string `json:"inclusionBodiesType"`
 	/*
-	 * The host organism or cellular environment used to produce a protein from a specific gene. Possible values include "E. coli" (bacterial system), "Insect cells" (using baculovirus vectors), and "Mammalian cells" (mammalian cell lines).
+	 * The host organism or cellular environment used to produce a protein from a specific gene. Possible values include 'E. coli' (bacterial system), 'Insect cells' (using baculovirus vectors), and 'Mammalian cells' (mammalian cell lines).
 	 */
 	ExpressionSystem string `json:"expressionSystem"`
 	/*
-	 * The process of determining and describing the specific biological activities and roles of a protein. Possible values include "Functionally characterized" (the protein's functions have been identified and described) and "No functional characterization" (the protein's functions have not been identified or described).
+	 * The process of determining and describing the specific biological activities and roles of a protein. Possible values include 'Functionally characterized' (the protein's functions have been identified and described) and 'No functional characterization' (the protein's functions have not been identified or described).
 	 */
 	FunctionalCharacterization string `json:"functionalCharacterization"`
 	/*
@@ -2190,15 +2190,15 @@ type Protein struct {
 	 */
 	FunctionalTechnicalDescription string `json:"functionalTechnicalDescription"`
 	/*
-	 * Refers to the degree of purity achieved for a protein sample. Possible values include ">95%" (the protein is highly purified, with more than 95% purity) and "Unpurified expression host lysate or partly purified protein" (the protein is either unpurified and present in the host cell lysate or only partially purified).
+	 * Refers to the degree of purity achieved for a protein sample. Possible values include '>95%' (the protein is highly purified, with more than 95% purity) and 'Unpurified expression host lysate or partly purified protein' (the protein is either unpurified and present in the host cell lysate or only partially purified).
 	 */
 	ProteinPurification string `json:"proteinPurification"`
 	/*
-	 * Indicates the presence and condition of a tag on the protein after solubilization. Possible values include "Uncleaved Tag" (the tag is still attached to the protein), "Cleaved Tag" (the tag has been removed from the protein), and "No Tag" (the protein does not have a tag)
+	 * Indicates the presence and condition of a tag on the protein after solubilization. Possible values include 'Uncleaved Tag' (the tag is still attached to the protein), 'Cleaved Tag' (the tag has been removed from the protein), and 'No Tag' (the protein does not have a tag)
 	 */
 	TheTAGStatusOfTheSolubilizedProtein string `json:"theTAGStatusOfTheSolubilizedProtein"`
 	/*
-	 * Refers to the classification of a protein based on the specific type of functional analysis performed to determine its biological activities and roles. Possible values include "Enzymatic" (the protein has been characterized for its enzyme activity) and "Antigenic" (the protein has been characterized for its ability to elicit an immune response).
+	 * Refers to the classification of a protein based on the specific type of functional analysis performed to determine its biological activities and roles. Possible values include 'Enzymatic' (the protein has been characterized for its enzyme activity) and 'Antigenic' (the protein has been characterized for its ability to elicit an immune response).
 	 */
 	TypeOfFunctionalCharacterization string `json:"typeOfFunctionalCharacterization"`
 	/*
@@ -2271,7 +2271,7 @@ type Protein struct {
 	 */
 	PathogenIdentification []PathogenIdentification `json:"pathogenIdentification"`
 	/*
-	 * Any DOI that can be related
+	 * Any Digital Object Identifier that can be related
 	 */
 	RelatedDOI []DOI `json:"relatedDOI"`
 	/*
@@ -2303,7 +2303,7 @@ type Protein struct {
 	 */
 	Availability string `json:"availability"`
 	/*
-	 * Any complementary document that can be related to this Item
+	 * Any additional documents that provide supplementary information, instructions, or guidelines relevant to the use of this item
 	 */
 	ComplementaryDocument []Document `json:"complementaryDocument"`
 	/*
@@ -2386,11 +2386,11 @@ type NucleicAcid struct {
 	 */
 	ObservedMutations string `json:"observedMutations"`
 	/*
-	 * The method used to identify the nucleic acid sequence or its associated constructs, such as PCR, sequencing, or hybridization
+	 * A method or procedure used to detect, identify, and confirm the presence of a specific nucleic acid sequence, pathogen, or associated constructs. This may involve various techniques such as PCR, sequencing, hybridization, or other molecular methods, utilizing specific tools and procedures for accurate detection and analysis
 	 */
 	IdentificationTechnique string `json:"identificationTechnique"`
 	/*
-	 * Refers to the level of sequencing performed on the nucleic acid. Possible values include "Not sequenced" (no sequencing has been performed), "Partly sequenced" (only a portion of the nucleic acid sequence has been determined), and "Fully sequenced" (the entire nucleic acid sequence has been determined).
+	 * Refers to the level of sequencing performed on the nucleic acid. Possible values include 'Not sequenced' (no sequencing has been performed), 'Partly sequenced' (only a portion of the nucleic acid sequence has been determined), and 'Fully sequenced' (the entire nucleic acid sequence has been determined).
 	 */
 	Sequencing string `json:"sequencing"`
 	/*
@@ -2471,7 +2471,7 @@ type NucleicAcid struct {
 	 */
 	PathogenIdentification []PathogenIdentification `json:"pathogenIdentification"`
 	/*
-	 * Any DOI that can be related
+	 * Any Digital Object Identifier that can be related
 	 */
 	RelatedDOI []DOI `json:"relatedDOI"`
 	/*
@@ -2503,7 +2503,7 @@ type NucleicAcid struct {
 	 */
 	Availability string `json:"availability"`
 	/*
-	 * Any complementary document that can be related to this Item
+	 * Any additional documents that provide supplementary information, instructions, or guidelines relevant to the use of this item
 	 */
 	ComplementaryDocument []Document `json:"complementaryDocument"`
 	/*
@@ -2549,7 +2549,7 @@ type DetectionKit struct {
 	 */
 	HasSOPFile []File `json:"hasSOPFile"`
 	/*
-	 * Boolean value indicating whether the specificity of the detection kit has been formally documented.
+	 * Boolean value indicating whether the specificity of the product has been formally documented
 	 */
 	SpecificityDocumented bool `json:"specificityDocumented"`
 	/*
@@ -2630,7 +2630,7 @@ type DetectionKit struct {
 	 */
 	PathogenIdentification []PathogenIdentification `json:"pathogenIdentification"`
 	/*
-	 * Any DOI that can be related
+	 * Any Digital Object Identifier that can be related
 	 */
 	RelatedDOI []DOI `json:"relatedDOI"`
 	/*
@@ -2662,7 +2662,7 @@ type DetectionKit struct {
 	 */
 	Availability string `json:"availability"`
 	/*
-	 * Any complementary document that can be related to this Item
+	 * Any additional documents that provide supplementary information, instructions, or guidelines relevant to the use of this item
 	 */
 	ComplementaryDocument []Document `json:"complementaryDocument"`
 	/*
@@ -2707,11 +2707,6 @@ type Bundle struct {
 	 * Associates the bundle with the individual products it contains, specifying the components included within the bundle.
 	 */
 	ProductsOfTheBundle []Product `json:"productsOfTheBundle"`
-	/*
-	 * Links the bundle to any additional documents that provide supplementary information, instructions, or guidelines relevant to the use and assembly of the bundle's products.
-
-	 */
-	ComplementaryDocument []File `json:"complementaryDocument"`
 	/*
 	 * The corresponding International Air Transport Association (IATA)'s category for this Product
 	 */
@@ -2782,7 +2777,7 @@ type Bundle struct {
 	 */
 	PathogenIdentification []PathogenIdentification `json:"pathogenIdentification"`
 	/*
-	 * Any DOI that can be related
+	 * Any Digital Object Identifier that can be related
 	 */
 	RelatedDOI []DOI `json:"relatedDOI"`
 	/*
@@ -2813,6 +2808,10 @@ type Bundle struct {
 	 * The state or condition in which this item is accessible and ready for use or can be obtained
 	 */
 	Availability string `json:"availability"`
+	/*
+	 * Any additional documents that provide supplementary information, instructions, or guidelines relevant to the use of this item
+	 */
+	ComplementaryDocument []Document `json:"complementaryDocument"`
 	/*
 	 * Expert advice or guidelines provided to ensure the optimal use, performance, and maintenance of what is provided, including best practices, troubleshooting tips, and procedural instructions
 	 */
@@ -2852,7 +2851,7 @@ type Pathogen struct {
 	 */
 	Product
 	/*
-	 * Information about the origin of the biological material, essential for access, utilization, and benefit-sharing of genetic resources in compliance with the Nagoya Protocol.
+	 * Information about the origin of the biological material, essential for access, utilization, and benefit-sharing of genetic resources in compliance with the Nagoya Protocol
 	 */
 	BiologicalMaterialOrigin BiologicalMaterialOrigin `json:"biologicalMaterialOrigin"`
 	/*
@@ -2880,7 +2879,7 @@ type Pathogen struct {
 	 */
 	Sequence []Sequence `json:"sequence"`
 	/*
-	 * The ability of the pathogen to be cultivated or grown in laboratory conditions. Possible values are " Cultivable pathogen", "Uncultivable pathogen" or "Inactivated pathogen"
+	 * The ability of the pathogen to be cultivated or grown in laboratory conditions. Possible values are  'Cultivable pathogen', 'Uncultivable pathogen' or 'Inactivated pathogen'
 	 */
 	Cultivability string `json:"cultivability"`
 	/*
@@ -2888,7 +2887,7 @@ type Pathogen struct {
 	 */
 	ClinicalInformation string `json:"clinicalInformation"`
 	/*
-	 * The method or technique used to identify and confirm the presence of the pathogen, detailing the specific procedures and tools employed in the detection process
+	 * A method or procedure used to detect, identify, and confirm the presence of a specific nucleic acid sequence, pathogen, or associated constructs. This may involve various techniques such as PCR, sequencing, hybridization, or other molecular methods, utilizing specific tools and procedures for accurate detection and analysis
 	 */
 	IdentificationTechnique string `json:"identificationTechnique"`
 	/*
@@ -2908,7 +2907,7 @@ type Pathogen struct {
 	 */
 	IsolationConditions string `json:"isolationConditions"`
 	/*
-	 * Indicate whether a Letter of Authority is required, confirming the necessity of formal authorization. The possible values are "N/A", "NOT Required", "Required for customers in the EU" or "Required"
+	 * Indicate whether a Letter of Authority is required, confirming the necessity of formal authorization. The possible values are 'N/A', 'NOT Required', 'Required for customers in the EU' or 'Required'
 	 */
 	LetterOfAuthority string `json:"letterOfAuthority"`
 	/*
@@ -2916,7 +2915,7 @@ type Pathogen struct {
 	 */
 	Passage string `json:"passage"`
 	/*
-	 * The extent of the pathogen's genetic material that has been sequenced, with possible values including "Complete genome" for the entire genome, "Complete coding sequence" for all coding regions, and "Partial sequence" for only a portion of the genetic material
+	 * The extent of the pathogen's genetic material that has been sequenced, with possible values including 'Complete genome' for the entire genome, 'Complete coding sequence' for all coding regions, and 'Partial sequence' for only a portion of the genetic material
 	 */
 	GenomeSequencing string `json:"genomeSequencing"`
 	/*
@@ -2993,7 +2992,7 @@ type Pathogen struct {
 	 */
 	PathogenIdentification []PathogenIdentification `json:"pathogenIdentification"`
 	/*
-	 * Any DOI that can be related
+	 * Any Digital Object Identifier that can be related
 	 */
 	RelatedDOI []DOI `json:"relatedDOI"`
 	/*
@@ -3025,7 +3024,7 @@ type Pathogen struct {
 	 */
 	Availability string `json:"availability"`
 	/*
-	 * Any complementary document that can be related to this Item
+	 * Any additional documents that provide supplementary information, instructions, or guidelines relevant to the use of this item
 	 */
 	ComplementaryDocument []Document `json:"complementaryDocument"`
 	/*
@@ -3079,7 +3078,7 @@ type Virus struct {
 	 */
 	MycoplasmicContent bool `json:"mycoplasmicContent"`
 	/*
-	 * Information about the origin of the biological material, essential for access, utilization, and benefit-sharing of genetic resources in compliance with the Nagoya Protocol.
+	 * Information about the origin of the biological material, essential for access, utilization, and benefit-sharing of genetic resources in compliance with the Nagoya Protocol
 	 */
 	BiologicalMaterialOrigin BiologicalMaterialOrigin `json:"biologicalMaterialOrigin"`
 	/*
@@ -3107,7 +3106,7 @@ type Virus struct {
 	 */
 	Sequence []Sequence `json:"sequence"`
 	/*
-	 * The ability of the pathogen to be cultivated or grown in laboratory conditions. Possible values are " Cultivable pathogen", "Uncultivable pathogen" or "Inactivated pathogen"
+	 * The ability of the pathogen to be cultivated or grown in laboratory conditions. Possible values are  'Cultivable pathogen', 'Uncultivable pathogen' or 'Inactivated pathogen'
 	 */
 	Cultivability string `json:"cultivability"`
 	/*
@@ -3115,7 +3114,7 @@ type Virus struct {
 	 */
 	ClinicalInformation string `json:"clinicalInformation"`
 	/*
-	 * The method or technique used to identify and confirm the presence of the pathogen, detailing the specific procedures and tools employed in the detection process
+	 * A method or procedure used to detect, identify, and confirm the presence of a specific nucleic acid sequence, pathogen, or associated constructs. This may involve various techniques such as PCR, sequencing, hybridization, or other molecular methods, utilizing specific tools and procedures for accurate detection and analysis
 	 */
 	IdentificationTechnique string `json:"identificationTechnique"`
 	/*
@@ -3135,7 +3134,7 @@ type Virus struct {
 	 */
 	IsolationConditions string `json:"isolationConditions"`
 	/*
-	 * Indicate whether a Letter of Authority is required, confirming the necessity of formal authorization. The possible values are "N/A", "NOT Required", "Required for customers in the EU" or "Required"
+	 * Indicate whether a Letter of Authority is required, confirming the necessity of formal authorization. The possible values are 'N/A', 'NOT Required', 'Required for customers in the EU' or 'Required'
 	 */
 	LetterOfAuthority string `json:"letterOfAuthority"`
 	/*
@@ -3143,7 +3142,7 @@ type Virus struct {
 	 */
 	Passage string `json:"passage"`
 	/*
-	 * The extent of the pathogen's genetic material that has been sequenced, with possible values including "Complete genome" for the entire genome, "Complete coding sequence" for all coding regions, and "Partial sequence" for only a portion of the genetic material
+	 * The extent of the pathogen's genetic material that has been sequenced, with possible values including 'Complete genome' for the entire genome, 'Complete coding sequence' for all coding regions, and 'Partial sequence' for only a portion of the genetic material
 	 */
 	GenomeSequencing string `json:"genomeSequencing"`
 	/*
@@ -3220,7 +3219,7 @@ type Virus struct {
 	 */
 	PathogenIdentification []PathogenIdentification `json:"pathogenIdentification"`
 	/*
-	 * Any DOI that can be related
+	 * Any Digital Object Identifier that can be related
 	 */
 	RelatedDOI []DOI `json:"relatedDOI"`
 	/*
@@ -3252,7 +3251,7 @@ type Virus struct {
 	 */
 	Availability string `json:"availability"`
 	/*
-	 * Any complementary document that can be related to this Item
+	 * Any additional documents that provide supplementary information, instructions, or guidelines relevant to the use of this item
 	 */
 	ComplementaryDocument []Document `json:"complementaryDocument"`
 	/*
@@ -3294,7 +3293,7 @@ type Bacterium struct {
 	 */
 	Pathogen
 	/*
-	 * Information about the origin of the biological material, essential for access, utilization, and benefit-sharing of genetic resources in compliance with the Nagoya Protocol.
+	 * Information about the origin of the biological material, essential for access, utilization, and benefit-sharing of genetic resources in compliance with the Nagoya Protocol
 	 */
 	BiologicalMaterialOrigin BiologicalMaterialOrigin `json:"biologicalMaterialOrigin"`
 	/*
@@ -3322,7 +3321,7 @@ type Bacterium struct {
 	 */
 	Sequence []Sequence `json:"sequence"`
 	/*
-	 * The ability of the pathogen to be cultivated or grown in laboratory conditions. Possible values are " Cultivable pathogen", "Uncultivable pathogen" or "Inactivated pathogen"
+	 * The ability of the pathogen to be cultivated or grown in laboratory conditions. Possible values are  'Cultivable pathogen', 'Uncultivable pathogen' or 'Inactivated pathogen'
 	 */
 	Cultivability string `json:"cultivability"`
 	/*
@@ -3330,7 +3329,7 @@ type Bacterium struct {
 	 */
 	ClinicalInformation string `json:"clinicalInformation"`
 	/*
-	 * The method or technique used to identify and confirm the presence of the pathogen, detailing the specific procedures and tools employed in the detection process
+	 * A method or procedure used to detect, identify, and confirm the presence of a specific nucleic acid sequence, pathogen, or associated constructs. This may involve various techniques such as PCR, sequencing, hybridization, or other molecular methods, utilizing specific tools and procedures for accurate detection and analysis
 	 */
 	IdentificationTechnique string `json:"identificationTechnique"`
 	/*
@@ -3350,7 +3349,7 @@ type Bacterium struct {
 	 */
 	IsolationConditions string `json:"isolationConditions"`
 	/*
-	 * Indicate whether a Letter of Authority is required, confirming the necessity of formal authorization. The possible values are "N/A", "NOT Required", "Required for customers in the EU" or "Required"
+	 * Indicate whether a Letter of Authority is required, confirming the necessity of formal authorization. The possible values are 'N/A', 'NOT Required', 'Required for customers in the EU' or 'Required'
 	 */
 	LetterOfAuthority string `json:"letterOfAuthority"`
 	/*
@@ -3358,7 +3357,7 @@ type Bacterium struct {
 	 */
 	Passage string `json:"passage"`
 	/*
-	 * The extent of the pathogen's genetic material that has been sequenced, with possible values including "Complete genome" for the entire genome, "Complete coding sequence" for all coding regions, and "Partial sequence" for only a portion of the genetic material
+	 * The extent of the pathogen's genetic material that has been sequenced, with possible values including 'Complete genome' for the entire genome, 'Complete coding sequence' for all coding regions, and 'Partial sequence' for only a portion of the genetic material
 	 */
 	GenomeSequencing string `json:"genomeSequencing"`
 	/*
@@ -3435,7 +3434,7 @@ type Bacterium struct {
 	 */
 	PathogenIdentification []PathogenIdentification `json:"pathogenIdentification"`
 	/*
-	 * Any DOI that can be related
+	 * Any Digital Object Identifier that can be related
 	 */
 	RelatedDOI []DOI `json:"relatedDOI"`
 	/*
@@ -3467,7 +3466,7 @@ type Bacterium struct {
 	 */
 	Availability string `json:"availability"`
 	/*
-	 * Any complementary document that can be related to this Item
+	 * Any additional documents that provide supplementary information, instructions, or guidelines relevant to the use of this item
 	 */
 	ComplementaryDocument []Document `json:"complementaryDocument"`
 	/*
@@ -3509,7 +3508,7 @@ type Fungus struct {
 	 */
 	Pathogen
 	/*
-	 * Information about the origin of the biological material, essential for access, utilization, and benefit-sharing of genetic resources in compliance with the Nagoya Protocol.
+	 * Information about the origin of the biological material, essential for access, utilization, and benefit-sharing of genetic resources in compliance with the Nagoya Protocol
 	 */
 	BiologicalMaterialOrigin BiologicalMaterialOrigin `json:"biologicalMaterialOrigin"`
 	/*
@@ -3537,7 +3536,7 @@ type Fungus struct {
 	 */
 	Sequence []Sequence `json:"sequence"`
 	/*
-	 * The ability of the pathogen to be cultivated or grown in laboratory conditions. Possible values are " Cultivable pathogen", "Uncultivable pathogen" or "Inactivated pathogen"
+	 * The ability of the pathogen to be cultivated or grown in laboratory conditions. Possible values are  'Cultivable pathogen', 'Uncultivable pathogen' or 'Inactivated pathogen'
 	 */
 	Cultivability string `json:"cultivability"`
 	/*
@@ -3545,7 +3544,7 @@ type Fungus struct {
 	 */
 	ClinicalInformation string `json:"clinicalInformation"`
 	/*
-	 * The method or technique used to identify and confirm the presence of the pathogen, detailing the specific procedures and tools employed in the detection process
+	 * A method or procedure used to detect, identify, and confirm the presence of a specific nucleic acid sequence, pathogen, or associated constructs. This may involve various techniques such as PCR, sequencing, hybridization, or other molecular methods, utilizing specific tools and procedures for accurate detection and analysis
 	 */
 	IdentificationTechnique string `json:"identificationTechnique"`
 	/*
@@ -3565,7 +3564,7 @@ type Fungus struct {
 	 */
 	IsolationConditions string `json:"isolationConditions"`
 	/*
-	 * Indicate whether a Letter of Authority is required, confirming the necessity of formal authorization. The possible values are "N/A", "NOT Required", "Required for customers in the EU" or "Required"
+	 * Indicate whether a Letter of Authority is required, confirming the necessity of formal authorization. The possible values are 'N/A', 'NOT Required', 'Required for customers in the EU' or 'Required'
 	 */
 	LetterOfAuthority string `json:"letterOfAuthority"`
 	/*
@@ -3573,7 +3572,7 @@ type Fungus struct {
 	 */
 	Passage string `json:"passage"`
 	/*
-	 * The extent of the pathogen's genetic material that has been sequenced, with possible values including "Complete genome" for the entire genome, "Complete coding sequence" for all coding regions, and "Partial sequence" for only a portion of the genetic material
+	 * The extent of the pathogen's genetic material that has been sequenced, with possible values including 'Complete genome' for the entire genome, 'Complete coding sequence' for all coding regions, and 'Partial sequence' for only a portion of the genetic material
 	 */
 	GenomeSequencing string `json:"genomeSequencing"`
 	/*
@@ -3650,7 +3649,7 @@ type Fungus struct {
 	 */
 	PathogenIdentification []PathogenIdentification `json:"pathogenIdentification"`
 	/*
-	 * Any DOI that can be related
+	 * Any Digital Object Identifier that can be related
 	 */
 	RelatedDOI []DOI `json:"relatedDOI"`
 	/*
@@ -3682,7 +3681,7 @@ type Fungus struct {
 	 */
 	Availability string `json:"availability"`
 	/*
-	 * Any complementary document that can be related to this Item
+	 * Any additional documents that provide supplementary information, instructions, or guidelines relevant to the use of this item
 	 */
 	ComplementaryDocument []Document `json:"complementaryDocument"`
 	/*
@@ -3724,7 +3723,7 @@ type Protozoan struct {
 	 */
 	Pathogen
 	/*
-	 * Information about the origin of the biological material, essential for access, utilization, and benefit-sharing of genetic resources in compliance with the Nagoya Protocol.
+	 * Information about the origin of the biological material, essential for access, utilization, and benefit-sharing of genetic resources in compliance with the Nagoya Protocol
 	 */
 	BiologicalMaterialOrigin BiologicalMaterialOrigin `json:"biologicalMaterialOrigin"`
 	/*
@@ -3752,7 +3751,7 @@ type Protozoan struct {
 	 */
 	Sequence []Sequence `json:"sequence"`
 	/*
-	 * The ability of the pathogen to be cultivated or grown in laboratory conditions. Possible values are " Cultivable pathogen", "Uncultivable pathogen" or "Inactivated pathogen"
+	 * The ability of the pathogen to be cultivated or grown in laboratory conditions. Possible values are  'Cultivable pathogen', 'Uncultivable pathogen' or 'Inactivated pathogen'
 	 */
 	Cultivability string `json:"cultivability"`
 	/*
@@ -3760,7 +3759,7 @@ type Protozoan struct {
 	 */
 	ClinicalInformation string `json:"clinicalInformation"`
 	/*
-	 * The method or technique used to identify and confirm the presence of the pathogen, detailing the specific procedures and tools employed in the detection process
+	 * A method or procedure used to detect, identify, and confirm the presence of a specific nucleic acid sequence, pathogen, or associated constructs. This may involve various techniques such as PCR, sequencing, hybridization, or other molecular methods, utilizing specific tools and procedures for accurate detection and analysis
 	 */
 	IdentificationTechnique string `json:"identificationTechnique"`
 	/*
@@ -3780,7 +3779,7 @@ type Protozoan struct {
 	 */
 	IsolationConditions string `json:"isolationConditions"`
 	/*
-	 * Indicate whether a Letter of Authority is required, confirming the necessity of formal authorization. The possible values are "N/A", "NOT Required", "Required for customers in the EU" or "Required"
+	 * Indicate whether a Letter of Authority is required, confirming the necessity of formal authorization. The possible values are 'N/A', 'NOT Required', 'Required for customers in the EU' or 'Required'
 	 */
 	LetterOfAuthority string `json:"letterOfAuthority"`
 	/*
@@ -3788,7 +3787,7 @@ type Protozoan struct {
 	 */
 	Passage string `json:"passage"`
 	/*
-	 * The extent of the pathogen's genetic material that has been sequenced, with possible values including "Complete genome" for the entire genome, "Complete coding sequence" for all coding regions, and "Partial sequence" for only a portion of the genetic material
+	 * The extent of the pathogen's genetic material that has been sequenced, with possible values including 'Complete genome' for the entire genome, 'Complete coding sequence' for all coding regions, and 'Partial sequence' for only a portion of the genetic material
 	 */
 	GenomeSequencing string `json:"genomeSequencing"`
 	/*
@@ -3865,7 +3864,7 @@ type Protozoan struct {
 	 */
 	PathogenIdentification []PathogenIdentification `json:"pathogenIdentification"`
 	/*
-	 * Any DOI that can be related
+	 * Any Digital Object Identifier that can be related
 	 */
 	RelatedDOI []DOI `json:"relatedDOI"`
 	/*
@@ -3897,7 +3896,7 @@ type Protozoan struct {
 	 */
 	Availability string `json:"availability"`
 	/*
-	 * Any complementary document that can be related to this Item
+	 * Any additional documents that provide supplementary information, instructions, or guidelines relevant to the use of this item
 	 */
 	ComplementaryDocument []Document `json:"complementaryDocument"`
 	/*
@@ -3939,7 +3938,7 @@ type Viroid struct {
 	 */
 	Pathogen
 	/*
-	 * Information about the origin of the biological material, essential for access, utilization, and benefit-sharing of genetic resources in compliance with the Nagoya Protocol.
+	 * Information about the origin of the biological material, essential for access, utilization, and benefit-sharing of genetic resources in compliance with the Nagoya Protocol
 	 */
 	BiologicalMaterialOrigin BiologicalMaterialOrigin `json:"biologicalMaterialOrigin"`
 	/*
@@ -3967,7 +3966,7 @@ type Viroid struct {
 	 */
 	Sequence []Sequence `json:"sequence"`
 	/*
-	 * The ability of the pathogen to be cultivated or grown in laboratory conditions. Possible values are " Cultivable pathogen", "Uncultivable pathogen" or "Inactivated pathogen"
+	 * The ability of the pathogen to be cultivated or grown in laboratory conditions. Possible values are  'Cultivable pathogen', 'Uncultivable pathogen' or 'Inactivated pathogen'
 	 */
 	Cultivability string `json:"cultivability"`
 	/*
@@ -3975,7 +3974,7 @@ type Viroid struct {
 	 */
 	ClinicalInformation string `json:"clinicalInformation"`
 	/*
-	 * The method or technique used to identify and confirm the presence of the pathogen, detailing the specific procedures and tools employed in the detection process
+	 * A method or procedure used to detect, identify, and confirm the presence of a specific nucleic acid sequence, pathogen, or associated constructs. This may involve various techniques such as PCR, sequencing, hybridization, or other molecular methods, utilizing specific tools and procedures for accurate detection and analysis
 	 */
 	IdentificationTechnique string `json:"identificationTechnique"`
 	/*
@@ -3995,7 +3994,7 @@ type Viroid struct {
 	 */
 	IsolationConditions string `json:"isolationConditions"`
 	/*
-	 * Indicate whether a Letter of Authority is required, confirming the necessity of formal authorization. The possible values are "N/A", "NOT Required", "Required for customers in the EU" or "Required"
+	 * Indicate whether a Letter of Authority is required, confirming the necessity of formal authorization. The possible values are 'N/A', 'NOT Required', 'Required for customers in the EU' or 'Required'
 	 */
 	LetterOfAuthority string `json:"letterOfAuthority"`
 	/*
@@ -4003,7 +4002,7 @@ type Viroid struct {
 	 */
 	Passage string `json:"passage"`
 	/*
-	 * The extent of the pathogen's genetic material that has been sequenced, with possible values including "Complete genome" for the entire genome, "Complete coding sequence" for all coding regions, and "Partial sequence" for only a portion of the genetic material
+	 * The extent of the pathogen's genetic material that has been sequenced, with possible values including 'Complete genome' for the entire genome, 'Complete coding sequence' for all coding regions, and 'Partial sequence' for only a portion of the genetic material
 	 */
 	GenomeSequencing string `json:"genomeSequencing"`
 	/*
@@ -4080,7 +4079,7 @@ type Viroid struct {
 	 */
 	PathogenIdentification []PathogenIdentification `json:"pathogenIdentification"`
 	/*
-	 * Any DOI that can be related
+	 * Any Digital Object Identifier that can be related
 	 */
 	RelatedDOI []DOI `json:"relatedDOI"`
 	/*
@@ -4112,7 +4111,7 @@ type Viroid struct {
 	 */
 	Availability string `json:"availability"`
 	/*
-	 * Any complementary document that can be related to this Item
+	 * Any additional documents that provide supplementary information, instructions, or guidelines relevant to the use of this item
 	 */
 	ComplementaryDocument []Document `json:"complementaryDocument"`
 	/*
@@ -4154,7 +4153,7 @@ type Prion struct {
 	 */
 	Pathogen
 	/*
-	 * Information about the origin of the biological material, essential for access, utilization, and benefit-sharing of genetic resources in compliance with the Nagoya Protocol.
+	 * Information about the origin of the biological material, essential for access, utilization, and benefit-sharing of genetic resources in compliance with the Nagoya Protocol
 	 */
 	BiologicalMaterialOrigin BiologicalMaterialOrigin `json:"biologicalMaterialOrigin"`
 	/*
@@ -4182,7 +4181,7 @@ type Prion struct {
 	 */
 	Sequence []Sequence `json:"sequence"`
 	/*
-	 * The ability of the pathogen to be cultivated or grown in laboratory conditions. Possible values are " Cultivable pathogen", "Uncultivable pathogen" or "Inactivated pathogen"
+	 * The ability of the pathogen to be cultivated or grown in laboratory conditions. Possible values are  'Cultivable pathogen', 'Uncultivable pathogen' or 'Inactivated pathogen'
 	 */
 	Cultivability string `json:"cultivability"`
 	/*
@@ -4190,7 +4189,7 @@ type Prion struct {
 	 */
 	ClinicalInformation string `json:"clinicalInformation"`
 	/*
-	 * The method or technique used to identify and confirm the presence of the pathogen, detailing the specific procedures and tools employed in the detection process
+	 * A method or procedure used to detect, identify, and confirm the presence of a specific nucleic acid sequence, pathogen, or associated constructs. This may involve various techniques such as PCR, sequencing, hybridization, or other molecular methods, utilizing specific tools and procedures for accurate detection and analysis
 	 */
 	IdentificationTechnique string `json:"identificationTechnique"`
 	/*
@@ -4210,7 +4209,7 @@ type Prion struct {
 	 */
 	IsolationConditions string `json:"isolationConditions"`
 	/*
-	 * Indicate whether a Letter of Authority is required, confirming the necessity of formal authorization. The possible values are "N/A", "NOT Required", "Required for customers in the EU" or "Required"
+	 * Indicate whether a Letter of Authority is required, confirming the necessity of formal authorization. The possible values are 'N/A', 'NOT Required', 'Required for customers in the EU' or 'Required'
 	 */
 	LetterOfAuthority string `json:"letterOfAuthority"`
 	/*
@@ -4218,7 +4217,7 @@ type Prion struct {
 	 */
 	Passage string `json:"passage"`
 	/*
-	 * The extent of the pathogen's genetic material that has been sequenced, with possible values including "Complete genome" for the entire genome, "Complete coding sequence" for all coding regions, and "Partial sequence" for only a portion of the genetic material
+	 * The extent of the pathogen's genetic material that has been sequenced, with possible values including 'Complete genome' for the entire genome, 'Complete coding sequence' for all coding regions, and 'Partial sequence' for only a portion of the genetic material
 	 */
 	GenomeSequencing string `json:"genomeSequencing"`
 	/*
@@ -4295,7 +4294,7 @@ type Prion struct {
 	 */
 	PathogenIdentification []PathogenIdentification `json:"pathogenIdentification"`
 	/*
-	 * Any DOI that can be related
+	 * Any Digital Object Identifier that can be related
 	 */
 	RelatedDOI []DOI `json:"relatedDOI"`
 	/*
@@ -4327,7 +4326,7 @@ type Prion struct {
 	 */
 	Availability string `json:"availability"`
 	/*
-	 * Any complementary document that can be related to this Item
+	 * Any additional documents that provide supplementary information, instructions, or guidelines relevant to the use of this item
 	 */
 	ComplementaryDocument []Document `json:"complementaryDocument"`
 	/*
@@ -4455,7 +4454,7 @@ type File struct {
 	 */
 	Format string `json:"format"`
 	/*
-	 * The legal terms and conditions under which the file can be used, shared, or distributed, indicating any restrictions or permissions.
+	 * Information about terms and conditions under which the subject can be used, shared, or distributed, indicating any restrictions or permissions
 	 */
 	License License `json:"license"`
 }
@@ -4485,7 +4484,7 @@ type Data struct {
 	 */
 	Format string `json:"format"`
 	/*
-	 * The legal terms and conditions under which the file can be used, shared, or distributed, indicating any restrictions or permissions.
+	 * Information about terms and conditions under which the subject can be used, shared, or distributed, indicating any restrictions or permissions
 	 */
 	License License `json:"license"`
 }
@@ -4515,7 +4514,7 @@ type Document struct {
 	 */
 	Format string `json:"format"`
 	/*
-	 * The legal terms and conditions under which the file can be used, shared, or distributed, indicating any restrictions or permissions.
+	 * Information about terms and conditions under which the subject can be used, shared, or distributed, indicating any restrictions or permissions
 	 */
 	License License `json:"license"`
 }
@@ -4545,7 +4544,7 @@ type Audio struct {
 	 */
 	Format string `json:"format"`
 	/*
-	 * The legal terms and conditions under which the file can be used, shared, or distributed, indicating any restrictions or permissions.
+	 * Information about terms and conditions under which the subject can be used, shared, or distributed, indicating any restrictions or permissions
 	 */
 	License License `json:"license"`
 }
@@ -4575,7 +4574,7 @@ type Video struct {
 	 */
 	Format string `json:"format"`
 	/*
-	 * The legal terms and conditions under which the file can be used, shared, or distributed, indicating any restrictions or permissions.
+	 * Information about terms and conditions under which the subject can be used, shared, or distributed, indicating any restrictions or permissions
 	 */
 	License License `json:"license"`
 }
@@ -4609,7 +4608,7 @@ type Image struct {
 	 */
 	Format string `json:"format"`
 	/*
-	 * The legal terms and conditions under which the file can be used, shared, or distributed, indicating any restrictions or permissions.
+	 * Information about terms and conditions under which the subject can be used, shared, or distributed, indicating any restrictions or permissions
 	 */
 	License License `json:"license"`
 }

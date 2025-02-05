@@ -1,6 +1,11 @@
 
 
-# Slot: hostType
+# Slot: host type (hostType)
+
+
+_Indication of the possible host(s) for the identified pathogens among the listed main categories_
+
+
 
 
 
@@ -29,6 +34,10 @@ URI: [EVORAO:hostType](https://raw.githubusercontent.com/EVORA-project/evora-ont
 ## Properties
 
 * Range: [String](String.md)
+
+* Multivalued: True
+
+* Recommended: True
 
 
 
@@ -65,12 +74,18 @@ URI: [EVORAO:hostType](https://raw.githubusercontent.com/EVORA-project/evora-ont
 <details>
 ```yaml
 name: hostType
+description: Indication of the possible host(s) for the identified pathogens among
+  the listed main categories
+title: host type
 from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
 rank: 1000
 alias: hostType
 domain_of:
 - PathogenIdentification
 range: string
+required: false
+recommended: true
+multivalued: true
 equals_string_in:
 - Animal
 - Human

@@ -1,6 +1,11 @@
 
 
-# Slot: specificity
+# Slot: specificity (specificity)
+
+
+_Details on the ability of a detection kit to correctly identify negative results, distinguishing between the target analyte and other substances without cross-reacting_
+
+
 
 
 
@@ -65,12 +70,18 @@ URI: [EVORAO:specificity](https://raw.githubusercontent.com/EVORA-project/evora-
 <details>
 ```yaml
 name: specificity
+description: Details on the ability of a detection kit to correctly identify negative
+  results, distinguishing between the target analyte and other substances without
+  cross-reacting
+title: specificity
 from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
 rank: 1000
 alias: specificity
 domain_of:
 - Detection Kit
 range: string
+required: false
+multivalued: false
 
 ```
 </details>

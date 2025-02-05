@@ -1,5 +1,5 @@
 # metamodel_version: 1.7.0
-# version: 1.0.8373
+# version: 1.0.8498
 type AlternateName
   {
     name: String!
@@ -149,6 +149,7 @@ type Bundle
     collection: [Collection]!
     keywords: [Keyword]!
     availability: String!
+    complementaryDocument: [Document]
     technicalRecommendation: String
     productPicture: [Image]
     externalRelatedReference: [ExternalRelatedReference]
@@ -164,7 +165,6 @@ type Bundle
     thirdPartyDistributionConsent: Boolean
     usageRestrictions: String
     productsOfTheBundle: [Product]!
-    complementaryDocument: String
   }
 
 interface Catalogue
@@ -582,7 +582,7 @@ type NucleicAcid
     observedMutations: String
     identificationTechnique: String
     sequencing: String!
-    titer: String
+    titer: String!
     sequenceChecked: Boolean!
   }
 
@@ -590,10 +590,10 @@ type Organization
   {
     name: String!
     description: String
-    homePage: String
+    homePage: Uri
     contactPoint: ContactPoint
     logo: Image
-    alternateName: AlternateName
+    alternateName: [AlternateName]
     country: Country
     rORiD: String
   }
@@ -602,7 +602,7 @@ type Originator
   {
     name: String!
     description: String
-    homePage: String
+    homePage: Uri
     contactPoint: ContactPoint
     logo: Image
   }
@@ -688,7 +688,7 @@ type Person
   {
     name: String!
     description: String
-    homePage: String
+    homePage: Uri
     contactPoint: ContactPoint
     logo: Image
     oRCIDiD: String
@@ -698,7 +698,7 @@ type PersonOrOrganization
   {
     name: String!
     description: String
-    homePage: String
+    homePage: Uri
     contactPoint: ContactPoint
     logo: Image
   }
@@ -976,10 +976,10 @@ type Provider
   {
     name: String!
     description: String
-    homePage: String
+    homePage: Uri
     contactPoint: ContactPoint
     logo: Image
-    alternateName: AlternateName
+    alternateName: [AlternateName]
     country: Country
     rORiD: String
     memberOfRI: [RI]
@@ -990,7 +990,7 @@ type Publication
     title: String!
     authors: String!
     abstract: String!
-    relatedDOI: DOI!
+    relatedDOI: [DOI]!
     journal: Journal
   }
 
@@ -1008,10 +1008,10 @@ type RI
   {
     name: String!
     description: String
-    homePage: String
+    homePage: Uri
     contactPoint: ContactPoint
     logo: Image
-    alternateName: AlternateName
+    alternateName: [AlternateName]
     country: Country
     rORiD: String
   }
@@ -1112,11 +1112,11 @@ type Taxonomy
   {
     name: String!
     description: String
-    taxon: [Taxon]
+    taxon: [Taxon]!
     taxonDataProvider: DataProvider
     version: Version!
     versionDataProvider: DataProvider!
-    rank: [TaxonomicRank]
+    rank: [TaxonomicRank]!
     rankDataProvider: DataProvider
   }
 

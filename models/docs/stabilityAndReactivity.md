@@ -1,6 +1,11 @@
 
 
-# Slot: stabilityAndReactivity
+# Slot: stability and reactivity (stabilityAndReactivity)
+
+
+_Describes the product’s stability under normal conditions and its potential to react with other substances. This section includes information on hazardous reactions, conditions to avoid, and incompatible materials that could cause degradation or dangerous reactions._
+
+
 
 
 
@@ -29,6 +34,8 @@ URI: [EVORAO:stabilityAndReactivity](https://raw.githubusercontent.com/EVORA-pro
 ## Properties
 
 * Range: [String](String.md)
+
+* Recommended: True
 
 
 
@@ -65,12 +72,20 @@ URI: [EVORAO:stabilityAndReactivity](https://raw.githubusercontent.com/EVORA-pro
 <details>
 ```yaml
 name: stabilityAndReactivity
+description: Describes the product’s stability under normal conditions and its potential
+  to react with other substances. This section includes information on hazardous reactions,
+  conditions to avoid, and incompatible materials that could cause degradation or
+  dangerous reactions.
+title: stability and reactivity
 from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
 rank: 1000
 alias: stabilityAndReactivity
 domain_of:
 - MSDS
 range: string
+required: false
+recommended: true
+multivalued: false
 
 ```
 </details>

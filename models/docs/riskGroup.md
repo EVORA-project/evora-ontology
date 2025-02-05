@@ -1,6 +1,11 @@
 
 
-# Slot: riskGroup
+# Slot: risk group (riskGroup)
+
+
+_The highest risk group related to this resource. The risk group of a biological agent guiding its initial handling in labs according to the risk group classification defined by the WHO laboratory biosafety manual_
+
+
 
 
 
@@ -18,22 +23,22 @@ URI: [EVORAO:riskGroup](https://raw.githubusercontent.com/EVORA-project/evora-on
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [Bundle](Bundle.md) | A group of products |  no  |
-| [ProductOrService](ProductOrService.md) | A product or a service |  yes  |
-| [Virus](Virus.md) | The virus as a biological material |  no  |
-| [Protozoan](Protozoan.md) | The protozoan as a biological material |  no  |
-| [Pathogen](Pathogen.md) | Biological entity that causes disease in its host, which is typically an infe... |  no  |
-| [Service](Service.md) | A service |  no  |
-| [DetectionKit](DetectionKit.md) | A detection kit for specific pathogens |  no  |
-| [Prion](Prion.md) | The prion as a biological material |  no  |
-| [Antibody](Antibody.md) | Protein that can bind to certain types of foreign bodies, such as pathogens |  no  |
-| [Bacterium](Bacterium.md) | The bacterium as a biological material |  no  |
-| [Protein](Protein.md) | A protein as a derived product from a pathogen |  no  |
 | [Fungus](Fungus.md) | The fungus as a biological material |  no  |
+| [Antibody](Antibody.md) | Protein that can bind to certain types of foreign bodies, such as pathogens |  no  |
+| [Virus](Virus.md) | The virus as a biological material |  no  |
+| [Protein](Protein.md) | A protein as a derived product from a pathogen |  no  |
 | [Viroid](Viroid.md) | The viroid as a biological material |  no  |
-| [NucleicAcid](NucleicAcid.md) | Nucleic acid related to a pathogen |  no  |
 | [Product](Product.md) | A product |  no  |
 | [Hybridoma](Hybridoma.md) | An hybridoma that provides antibodies that can be related to a pathogen |  no  |
+| [DetectionKit](DetectionKit.md) | A detection kit for specific pathogens |  no  |
+| [Pathogen](Pathogen.md) | Biological entity that causes disease in its host, which is typically an infe... |  no  |
+| [Service](Service.md) | A service |  no  |
+| [Bundle](Bundle.md) | A group of products |  no  |
+| [Protozoan](Protozoan.md) | The protozoan as a biological material |  no  |
+| [ProductOrService](ProductOrService.md) | A product or a service |  yes  |
+| [Prion](Prion.md) | The prion as a biological material |  no  |
+| [NucleicAcid](NucleicAcid.md) | Nucleic acid related to a pathogen |  no  |
+| [Bacterium](Bacterium.md) | The bacterium as a biological material |  no  |
 
 
 
@@ -43,7 +48,9 @@ URI: [EVORAO:riskGroup](https://raw.githubusercontent.com/EVORA-project/evora-on
 
 ## Properties
 
-* Range: [String](String.md)
+* Range: [RiskGroup](RiskGroup.md)
+
+* Recommended: True
 
 
 
@@ -71,6 +78,7 @@ URI: [EVORAO:riskGroup](https://raw.githubusercontent.com/EVORA-project/evora-on
 | ---  | ---  |
 | self | EVORAO:riskGroup |
 | native | EVORAO:riskGroup |
+| close | wdp:P12663 |
 
 
 
@@ -80,12 +88,21 @@ URI: [EVORAO:riskGroup](https://raw.githubusercontent.com/EVORA-project/evora-on
 <details>
 ```yaml
 name: riskGroup
+description: The highest risk group related to this resource. The risk group of a
+  biological agent guiding its initial handling in labs according to the risk group
+  classification defined by the WHO laboratory biosafety manual
+title: risk group
 from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+close_mappings:
+- wdp:P12663
 rank: 1000
 alias: riskGroup
 domain_of:
 - ProductOrService
-range: string
+range: RiskGroup
+required: false
+recommended: true
+multivalued: false
 
 ```
 </details>

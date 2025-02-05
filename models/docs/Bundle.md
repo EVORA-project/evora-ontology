@@ -72,8 +72,8 @@ URI: [EVORAO:Bundle](https://raw.githubusercontent.com/EVORA-project/evora-ontol
           
     
     
-    Bundle --> "*" File : complementaryDocument
-    click File href "../File"
+    Bundle --> "*" Document : complementaryDocument
+    click Document href "../Document"
 
         
       Bundle : contactPoint
@@ -231,7 +231,6 @@ URI: [EVORAO:Bundle](https://raw.githubusercontent.com/EVORA-project/evora-ontol
 | Name | Cardinality and Range | Description | Inheritance |
 | ---  | --- | --- | --- |
 | [productsOfTheBundle](productsOfTheBundle.md) | 1..* <br/> [Product](Product.md) | Associates the bundle with the individual products it contains, specifying th... | direct |
-| [complementaryDocument](complementaryDocument.md) | * <br/> [File](File.md) | Links the bundle to any additional documents that provide supplementary infor... | direct |
 | [hasIATAClassification](hasIATAClassification.md) | 1 <br/> [IATAClassification](IATAClassification.md) | The corresponding International Air Transport Association (IATA)'s category f... | [Product](Product.md) |
 | [shippingConditions](shippingConditions.md) | 1 <br/> [String](String.md) | Specification of the terms and parameters for transporting | [Product](Product.md) |
 | [materialSafetyDataSheet](materialSafetyDataSheet.md) | 0..1 <br/> [MSDS](MSDS.md) | A Material Safety Data Sheet (MSDS) or Safety Data Sheet (SDS) is a standardi... | [Product](Product.md) |
@@ -249,7 +248,7 @@ URI: [EVORAO:Bundle](https://raw.githubusercontent.com/EVORA-project/evora-ontol
 | [unitCost](unitCost.md) | 1 _recommended_ <br/> [String](String.md) | The cost per access for one unit as defined by the unit definition | [ProductOrService](ProductOrService.md) |
 | [qualityGrading](qualityGrading.md) | 0..1 <br/> [String](String.md) | Information that permits to assess the quality level of what will be provided | [ProductOrService](ProductOrService.md) |
 | [pathogenIdentification](pathogenIdentification.md) | 1..* <br/> [PathogenIdentification](PathogenIdentification.md) | The identification of the pathogen or group of pathogens (e | [ProductOrService](ProductOrService.md) |
-| [relatedDOI](relatedDOI.md) | * <br/> [DOI](DOI.md) | Any DOI that can be related | [ProductOrService](ProductOrService.md) |
+| [relatedDOI](relatedDOI.md) | * <br/> [DOI](DOI.md) | Any Digital Object Identifier that can be related | [ProductOrService](ProductOrService.md) |
 | [riskGroup](riskGroup.md) | 0..1 _recommended_ <br/> [RiskGroup](RiskGroup.md) | The highest risk group related to this resource | [ProductOrService](ProductOrService.md) |
 | [biosafetyRestrictions](biosafetyRestrictions.md) | 0..1 <br/> [String](String.md) | Information about guidelines and regulations designed to prevent the exposure... | [ProductOrService](ProductOrService.md) |
 | [canItBeUsedToProduceGMO](canItBeUsedToProduceGMO.md) | 1 _recommended_ <br/> [Boolean](Boolean.md) | Indicates if the current service or product can be used to produce GMO | [ProductOrService](ProductOrService.md) |
@@ -257,6 +256,7 @@ URI: [EVORAO:Bundle](https://raw.githubusercontent.com/EVORA-project/evora-ontol
 | [collection](collection.md) | 1..* <br/> [Collection](Collection.md) | The collection(s) to which belongs this item | [ProductOrService](ProductOrService.md) |
 | [keywords](keywords.md) | 1..* _recommended_ <br/> [Keyword](Keyword.md) | List of terms used to tag and categorize this Item | [ProductOrService](ProductOrService.md) |
 | [availability](availability.md) | 1 <br/> [String](String.md) | The state or condition in which this item is accessible and ready for use or ... | [ProductOrService](ProductOrService.md) |
+| [complementaryDocument](complementaryDocument.md) | * <br/> [Document](Document.md) | Any additional documents that provide supplementary information, instructions... | [ProductOrService](ProductOrService.md) |
 | [technicalRecommendation](technicalRecommendation.md) | 0..1 <br/> [String](String.md) | Expert advice or guidelines provided to ensure the optimal use, performance, ... | [ProductOrService](ProductOrService.md) |
 | [productPicture](productPicture.md) | * <br/> [Image](Image.md) | A picture that can represent the item | [ProductOrService](ProductOrService.md) |
 | [externalRelatedReference](externalRelatedReference.md) | * <br/> [ExternalRelatedReference](ExternalRelatedReference.md) | A reference that permits to retrieve another related item from an external pr... | [ProductOrService](ProductOrService.md) |
@@ -295,7 +295,7 @@ URI: [EVORAO:Bundle](https://raw.githubusercontent.com/EVORA-project/evora-ontol
 | ---  | ---  |
 | self | EVORAO:Bundle |
 | native | EVORAO:Bundle |
-| close | wd:Q1020767 |
+| close | wd:Q1020767, wd:Q1020767 |
 
 
 
@@ -317,10 +317,10 @@ title: Bundle
 from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
 close_mappings:
 - wd:Q1020767
+- wd:Q1020767
 is_a: Product
 slots:
 - productsOfTheBundle
-- complementaryDocument
 slot_usage:
   productsOfTheBundle:
     name: productsOfTheBundle
@@ -331,20 +331,6 @@ slot_usage:
     - Bundle
     range: Product
     required: true
-    multivalued: true
-  complementaryDocument:
-    name: complementaryDocument
-    description: 'Links the bundle to any additional documents that provide supplementary
-      information, instructions, or guidelines relevant to the use and assembly of
-      the bundle''s products.
-
-      '
-    title: complementary document
-    domain_of:
-    - Bundle
-    - ProductOrService
-    range: File
-    required: false
     multivalued: true
 
 ```
@@ -360,6 +346,7 @@ title: Bundle
 from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
 close_mappings:
 - wd:Q1020767
+- wd:Q1020767
 is_a: Product
 slot_usage:
   productsOfTheBundle:
@@ -371,20 +358,6 @@ slot_usage:
     - Bundle
     range: Product
     required: true
-    multivalued: true
-  complementaryDocument:
-    name: complementaryDocument
-    description: 'Links the bundle to any additional documents that provide supplementary
-      information, instructions, or guidelines relevant to the use and assembly of
-      the bundle''s products.
-
-      '
-    title: complementary document
-    domain_of:
-    - Bundle
-    - ProductOrService
-    range: File
-    required: false
     multivalued: true
 attributes:
   productsOfTheBundle:
@@ -400,24 +373,6 @@ attributes:
     - Bundle
     range: Product
     required: true
-    multivalued: true
-  complementaryDocument:
-    name: complementaryDocument
-    description: 'Links the bundle to any additional documents that provide supplementary
-      information, instructions, or guidelines relevant to the use and assembly of
-      the bundle''s products.
-
-      '
-    title: complementary document
-    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
-    rank: 1000
-    alias: complementaryDocument
-    owner: Bundle
-    domain_of:
-    - Bundle
-    - ProductOrService
-    range: File
-    required: false
     multivalued: true
   hasIATAClassification:
     name: hasIATAClassification
@@ -489,9 +444,9 @@ attributes:
       environmental factors.
     title: storage conditions
     comments:
-    - e.g, could be a xsd:string in enumeration ("Freeze Dried", "Liquid Nitrogen",
-      "Viral Storage Medium -20C", "Viral Storage Medium -80C", "Living plant material
-      (>= +4°C)", "Gas Phase", "Ethanol -20C", "Ethanol -80C", "Dried")
+    - e.g, could be a xsd:string in enumeration ('Freeze Dried', 'Liquid Nitrogen',
+      'Viral Storage Medium -20C', 'Viral Storage Medium -80C', 'Living plant material
+      (>= +4°C)', 'Gas Phase', 'Ethanol -20C', 'Ethanol -80C', 'Dried')
     from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
     rank: 1000
     alias: storageConditions
@@ -539,9 +494,9 @@ attributes:
     - 'The title of the item should be as short and descriptive as possible. E.g.
       for virus products it should basically be based on the following Pattern:
 
-      "Virus name", "virus host type", "collection year", "country of collection"
-      ex "suspected epidemiological origin", "genotype", "strain", "variant name or
-      specific feature"'
+      ''Virus name'', ''virus host type'', ''collection year'', ''country of collection''
+      ex ''suspected epidemiological origin'', ''genotype'', ''strain'', ''variant
+      name or specific feature'
     from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
     exact_mappings:
     - dct:title
@@ -730,7 +685,7 @@ attributes:
     multivalued: true
   relatedDOI:
     name: relatedDOI
-    description: Any DOI that can be related
+    description: Any Digital Object Identifier that can be related
     title: DOI
     from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
     close_mappings:
@@ -855,6 +810,20 @@ attributes:
     range: string
     required: true
     multivalued: false
+  complementaryDocument:
+    name: complementaryDocument
+    description: Any additional documents that provide supplementary information,
+      instructions, or guidelines relevant to the use of this item
+    title: complementary document
+    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+    rank: 1000
+    alias: complementaryDocument
+    owner: Bundle
+    domain_of:
+    - ProductOrService
+    range: Document
+    required: false
+    multivalued: true
   technicalRecommendation:
     name: technicalRecommendation
     description: Expert advice or guidelines provided to ensure the optimal use, performance,

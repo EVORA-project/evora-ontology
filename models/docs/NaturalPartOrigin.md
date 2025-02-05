@@ -146,7 +146,7 @@ slot_usage:
   countryOfCollection:
     name: countryOfCollection
     description: The geographical location where the sample was collected in situ.
-      Used for Nagoya/CBD; equivalent to "country of origin".
+      Used for Nagoya/CBD; equivalent to 'country of origin'.
     title: country of collection
     close_mappings:
     - dct:spatial
@@ -169,7 +169,7 @@ slot_usage:
   collectionDate:
     name: collectionDate
     description: The date when the sample was collected in situ. If unknown/private,
-      use a proxy date such as "date received" and indicate this by setting to true
+      use a proxy date such as 'date received' and indicate this by setting to true
       the before date property
     title: collection date
     domain_of:
@@ -215,7 +215,7 @@ slot_usage:
   countryOfCollection:
     name: countryOfCollection
     description: The geographical location where the sample was collected in situ.
-      Used for Nagoya/CBD; equivalent to "country of origin".
+      Used for Nagoya/CBD; equivalent to 'country of origin'.
     title: country of collection
     close_mappings:
     - dct:spatial
@@ -238,7 +238,7 @@ slot_usage:
   collectionDate:
     name: collectionDate
     description: The date when the sample was collected in situ. If unknown/private,
-      use a proxy date such as "date received" and indicate this by setting to true
+      use a proxy date such as 'date received' and indicate this by setting to true
       the before date property
     title: collection date
     domain_of:
@@ -270,7 +270,7 @@ attributes:
   countryOfCollection:
     name: countryOfCollection
     description: The geographical location where the sample was collected in situ.
-      Used for Nagoya/CBD; equivalent to "country of origin".
+      Used for Nagoya/CBD; equivalent to 'country of origin'.
     title: country of collection
     from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
     close_mappings:
@@ -301,7 +301,7 @@ attributes:
   collectionDate:
     name: collectionDate
     description: The date when the sample was collected in situ. If unknown/private,
-      use a proxy date such as "date received" and indicate this by setting to true
+      use a proxy date such as 'date received' and indicate this by setting to true
       the before date property
     title: collection date
     from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#

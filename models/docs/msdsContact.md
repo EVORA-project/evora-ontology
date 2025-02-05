@@ -1,6 +1,11 @@
 
 
-# Slot: msdsContact
+# Slot: MSDS contact (msdsContact)
+
+
+_The designated contact point responsible for providing information related to the safety, handling, and regulatory compliance of the biological product._
+
+
 
 
 
@@ -28,7 +33,9 @@ URI: [EVORAO:msdsContact](https://raw.githubusercontent.com/EVORA-project/evora-
 
 ## Properties
 
-* Range: [String](String.md)
+* Range: [ContactPoint](ContactPoint.md)
+
+* Required: True
 
 
 
@@ -56,6 +63,7 @@ URI: [EVORAO:msdsContact](https://raw.githubusercontent.com/EVORA-project/evora-
 | ---  | ---  |
 | self | EVORAO:msdsContact |
 | native | EVORAO:msdsContact |
+| exact | dcat:contactPoint |
 
 
 
@@ -65,12 +73,19 @@ URI: [EVORAO:msdsContact](https://raw.githubusercontent.com/EVORA-project/evora-
 <details>
 ```yaml
 name: msdsContact
+description: The designated contact point responsible for providing information related
+  to the safety, handling, and regulatory compliance of the biological product.
+title: MSDS contact
 from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+exact_mappings:
+- dcat:contactPoint
 rank: 1000
 alias: msdsContact
 domain_of:
 - MSDS
-range: string
+range: ContactPoint
+required: true
+multivalued: false
 
 ```
 </details>

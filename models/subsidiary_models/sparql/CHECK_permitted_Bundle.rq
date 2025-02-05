@@ -26,7 +26,6 @@ SELECT ?g ?s ?p WHERE {
      ?p ?o .
   FILTER ( ?p NOT IN (
    EVORAO:productsOfTheBundle,
-   EVORAO:complementaryDocument,
    EVORAO:hasIATAClassification,
    EVORAO:shippingConditions,
    EVORAO:materialSafetyDataSheet,
@@ -52,6 +51,7 @@ SELECT ?g ?s ?p WHERE {
    EVORAO:collection,
    EVORAO:keywords,
    EVORAO:availability,
+   EVORAO:complementaryDocument,
    EVORAO:technicalRecommendation,
    EVORAO:productPicture,
    EVORAO:externalRelatedReference,

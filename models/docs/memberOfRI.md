@@ -1,6 +1,11 @@
 
 
-# Slot: memberOfRI
+# Slot: member of RI (memberOfRI)
+
+
+_The research infrastructure of which this organization is a member_
+
+
 
 
 
@@ -28,7 +33,9 @@ URI: [EVORAO:memberOfRI](https://raw.githubusercontent.com/EVORA-project/evora-o
 
 ## Properties
 
-* Range: [String](String.md)
+* Range: [RI](RI.md)
+
+* Multivalued: True
 
 
 
@@ -65,12 +72,16 @@ URI: [EVORAO:memberOfRI](https://raw.githubusercontent.com/EVORA-project/evora-o
 <details>
 ```yaml
 name: memberOfRI
+description: The research infrastructure of which this organization is a member
+title: member of RI
 from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
 rank: 1000
 alias: memberOfRI
 domain_of:
 - Provider
-range: string
+range: RI
+required: false
+multivalued: true
 
 ```
 </details>

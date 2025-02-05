@@ -1,6 +1,11 @@
 
 
-# Slot: certificationDocument
+# Slot: certification document (certificationDocument)
+
+
+_The document(s) issued by an authority certifying the conformity of the subject to the applicable scheme, including, as the case may be, the documents attesting the equivalence to another certification scheme._
+
+
 
 
 
@@ -28,7 +33,9 @@ URI: [EVORAO:certificationDocument](https://raw.githubusercontent.com/EVORA-proj
 
 ## Properties
 
-* Range: [String](String.md)
+* Range: [Document](Document.md)
+
+* Multivalued: True
 
 
 
@@ -65,12 +72,18 @@ URI: [EVORAO:certificationDocument](https://raw.githubusercontent.com/EVORA-proj
 <details>
 ```yaml
 name: certificationDocument
+description: The document(s) issued by an authority certifying the conformity of the
+  subject to the applicable scheme, including, as the case may be, the documents attesting
+  the equivalence to another certification scheme.
+title: certification document
 from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
 rank: 1000
 alias: certificationDocument
 domain_of:
 - Certification
-range: string
+range: Document
+required: false
+multivalued: true
 
 ```
 </details>

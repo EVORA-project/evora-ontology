@@ -1,6 +1,11 @@
 
 
-# Slot: loginURL
+# Slot: login URL (loginURL)
+
+
+_The URL template that allows to log in if required_
+
+
 
 
 
@@ -28,7 +33,7 @@ URI: [EVORAO:loginURL](https://raw.githubusercontent.com/EVORA-project/evora-ont
 
 ## Properties
 
-* Range: [String](String.md)
+* Range: [Uri](Uri.md)
 
 
 
@@ -56,6 +61,7 @@ URI: [EVORAO:loginURL](https://raw.githubusercontent.com/EVORA-project/evora-ont
 | ---  | ---  |
 | self | EVORAO:loginURL |
 | native | EVORAO:loginURL |
+| close | wdp:P1630, dcat:endpointDescription |
 
 
 
@@ -65,12 +71,19 @@ URI: [EVORAO:loginURL](https://raw.githubusercontent.com/EVORA-project/evora-ont
 <details>
 ```yaml
 name: loginURL
+description: The URL template that allows to log in if required
+title: login URL
 from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+close_mappings:
+- wdp:P1630
+- dcat:endpointDescription
 rank: 1000
 alias: loginURL
 domain_of:
 - DataProvider
-range: string
+range: uri
+required: false
+multivalued: false
 
 ```
 </details>

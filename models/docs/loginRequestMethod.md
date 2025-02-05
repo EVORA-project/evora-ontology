@@ -1,6 +1,11 @@
 
 
-# Slot: loginRequestMethod
+# Slot: login request method (loginRequestMethod)
+
+
+_The http request method used to acces the login request url_
+
+
 
 
 
@@ -56,6 +61,7 @@ URI: [EVORAO:loginRequestMethod](https://raw.githubusercontent.com/EVORA-project
 | ---  | ---  |
 | self | EVORAO:loginRequestMethod |
 | native | EVORAO:loginRequestMethod |
+| close | dcat:endpointDescription |
 
 
 
@@ -65,12 +71,19 @@ URI: [EVORAO:loginRequestMethod](https://raw.githubusercontent.com/EVORA-project
 <details>
 ```yaml
 name: loginRequestMethod
+description: The http request method used to acces the login request url
+title: login request method
 from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+close_mappings:
+- dcat:endpointDescription
 rank: 1000
+ifabsent: string(GET)
 alias: loginRequestMethod
 domain_of:
 - DataProvider
 range: string
+required: false
+multivalued: false
 equals_string_in:
 - GET
 - POST

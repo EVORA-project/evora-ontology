@@ -1,6 +1,11 @@
 
 
-# Slot: pathogenName
+# Slot: pathogen name (pathogenName)
+
+
+_A pathogen common name or a name that describes a group of pathogens_
+
+
 
 
 
@@ -28,7 +33,9 @@ URI: [EVORAO:pathogenName](https://raw.githubusercontent.com/EVORA-project/evora
 
 ## Properties
 
-* Range: [String](String.md)
+* Range: [CommonName](CommonName.md)
+
+* Required: True
 
 
 
@@ -65,12 +72,16 @@ URI: [EVORAO:pathogenName](https://raw.githubusercontent.com/EVORA-project/evora
 <details>
 ```yaml
 name: pathogenName
+description: A pathogen common name or a name that describes a group of pathogens
+title: pathogen name
 from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
 rank: 1000
 alias: pathogenName
 domain_of:
 - PathogenIdentification
-range: string
+range: CommonName
+required: true
+multivalued: false
 
 ```
 </details>

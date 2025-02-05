@@ -1,6 +1,11 @@
 
 
-# Slot: postalCode
+# Slot: postal code (postalCode)
+
+
+_The postal code_
+
+
 
 
 
@@ -56,6 +61,7 @@ URI: [EVORAO:postalCode](https://raw.githubusercontent.com/EVORA-project/evora-o
 | ---  | ---  |
 | self | EVORAO:postalCode |
 | native | EVORAO:postalCode |
+| close | schema:postalCode, vcard:hasPostalCode |
 
 
 
@@ -65,12 +71,19 @@ URI: [EVORAO:postalCode](https://raw.githubusercontent.com/EVORA-project/evora-o
 <details>
 ```yaml
 name: postalCode
+description: The postal code
+title: postal code
 from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+close_mappings:
+- schema:postalCode
+- vcard:hasPostalCode
 rank: 1000
 alias: postalCode
 domain_of:
 - ContactPoint
 range: string
+required: false
+multivalued: false
 
 ```
 </details>

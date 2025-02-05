@@ -1,6 +1,11 @@
 
 
-# Slot: descriptionOfModificationsMadeFromTheReferenceSequences
+# Slot: description of modification(s) made from the reference sequence(s) (descriptionOfModificationsMadeFromTheReferenceSequences)
+
+
+_List the modifications mades from the reference sequence if any_
+
+
 
 
 
@@ -29,6 +34,8 @@ URI: [EVORAO:descriptionOfModificationsMadeFromTheReferenceSequences](https://ra
 ## Properties
 
 * Range: [String](String.md)
+
+* Recommended: True
 
 
 
@@ -65,12 +72,17 @@ URI: [EVORAO:descriptionOfModificationsMadeFromTheReferenceSequences](https://ra
 <details>
 ```yaml
 name: descriptionOfModificationsMadeFromTheReferenceSequences
+description: List the modifications mades from the reference sequence if any
+title: description of modification(s) made from the reference sequence(s)
 from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
 rank: 1000
 alias: descriptionOfModificationsMadeFromTheReferenceSequences
 domain_of:
 - SyntheticPartOrigin
 range: string
+required: false
+recommended: true
+multivalued: false
 
 ```
 </details>

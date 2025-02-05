@@ -1,6 +1,11 @@
 
 
-# Slot: biologicalSourceType
+# Slot: biological source type (biologicalSourceType)
+
+
+_Defines if the current biological material is natural and was collected or if it is a synthetic biological material. It makes sense that only recombinant biological materials can have a mixed material origin!_
+
+
 
 
 
@@ -28,11 +33,17 @@ URI: [EVORAO:biologicalSourceType](https://raw.githubusercontent.com/EVORA-proje
 
 ## Properties
 
-* Range: [String](String.md)
+* Range: [Boolean](Boolean.md)
+
+* Required: True
 
 
 
 
+
+## Comments
+
+* It makes sense that only recombinant biological materials can have a mixed material origin!
 
 ## Identifier and Mapping Information
 
@@ -65,12 +76,21 @@ URI: [EVORAO:biologicalSourceType](https://raw.githubusercontent.com/EVORA-proje
 <details>
 ```yaml
 name: biologicalSourceType
+description: Defines if the current biological material is natural and was collected
+  or if it is a synthetic biological material. It makes sense that only recombinant
+  biological materials can have a mixed material origin!
+title: biological source type
+comments:
+- It makes sense that only recombinant biological materials can have a mixed material
+  origin!
 from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
 rank: 1000
 alias: biologicalSourceType
 domain_of:
 - BiologicalMaterialOrigin
-range: string
+range: boolean
+required: true
+multivalued: false
 
 ```
 </details>

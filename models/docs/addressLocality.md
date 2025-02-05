@@ -1,6 +1,11 @@
 
 
-# Slot: addressLocality
+# Slot: locality/city (addressLocality)
+
+
+_The locality in which the street address is, and which is in the region. e.g, the city_
+
+
 
 
 
@@ -56,6 +61,7 @@ URI: [EVORAO:addressLocality](https://raw.githubusercontent.com/EVORA-project/ev
 | ---  | ---  |
 | self | EVORAO:addressLocality |
 | native | EVORAO:addressLocality |
+| close | schema:addressLocality, vcard:hasLocality |
 
 
 
@@ -65,12 +71,20 @@ URI: [EVORAO:addressLocality](https://raw.githubusercontent.com/EVORA-project/ev
 <details>
 ```yaml
 name: addressLocality
+description: The locality in which the street address is, and which is in the region.
+  e.g, the city
+title: locality/city
 from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+close_mappings:
+- schema:addressLocality
+- vcard:hasLocality
 rank: 1000
 alias: addressLocality
 domain_of:
 - ContactPoint
 range: string
+required: false
+multivalued: false
 
 ```
 </details>

@@ -1,6 +1,11 @@
 
 
-# Slot: rORiD
+# Slot: ROR iD (rORiD)
+
+
+_The corresponding organization's persistent identifier from the Research Organization Registry (ROR)_
+
+
 
 
 
@@ -18,9 +23,9 @@ URI: [EVORAO:rORiD](https://raw.githubusercontent.com/EVORA-project/evora-ontolo
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
+| [RI](RI.md) | A research infrastructure |  no  |
 | [Organization](Organization.md) | A social entity established to meet needs or pursue specific goals |  yes  |
 | [Provider](Provider.md) | A provider of products or services, as a specific organization |  no  |
-| [RI](RI.md) | A research infrastructure |  no  |
 
 
 
@@ -31,6 +36,8 @@ URI: [EVORAO:rORiD](https://raw.githubusercontent.com/EVORA-project/evora-ontolo
 ## Properties
 
 * Range: [String](String.md)
+
+* Recommended: True
 
 
 
@@ -58,6 +65,7 @@ URI: [EVORAO:rORiD](https://raw.githubusercontent.com/EVORA-project/evora-ontolo
 | ---  | ---  |
 | self | EVORAO:rORiD |
 | native | EVORAO:rORiD |
+| exact | wdp:P6782 |
 
 
 
@@ -67,12 +75,20 @@ URI: [EVORAO:rORiD](https://raw.githubusercontent.com/EVORA-project/evora-ontolo
 <details>
 ```yaml
 name: rORiD
+description: The corresponding organization's persistent identifier from the Research
+  Organization Registry (ROR)
+title: ROR iD
 from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+exact_mappings:
+- wdp:P6782
 rank: 1000
 alias: rORiD
 domain_of:
 - Organization
 range: string
+required: false
+recommended: true
+multivalued: false
 
 ```
 </details>

@@ -91,7 +91,7 @@ URI: [EVORAO:Version](https://raw.githubusercontent.com/EVORA-project/evora-onto
 | ---  | ---  |
 | self | EVORAO:Version |
 | native | EVORAO:Version |
-| close | wd:Q114469879 |
+| close | wd:Q114469879, wd:Q114469879 |
 
 
 
@@ -113,6 +113,7 @@ description: Numeric code assigned to identify a particular historical version o
 title: Version
 from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
 close_mappings:
+- wd:Q114469879
 - wd:Q114469879
 is_a: Resource
 slots:
@@ -154,6 +155,7 @@ description: Numeric code assigned to identify a particular historical version o
 title: Version
 from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
 close_mappings:
+- wd:Q114469879
 - wd:Q114469879
 is_a: Resource
 slot_usage:

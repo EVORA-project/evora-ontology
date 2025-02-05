@@ -1,6 +1,11 @@
 
 
-# Slot: indigenousPoepleAndLocalCommunityOrigin
+# Slot: indigenous people and local community origin (indigenousPoepleAndLocalCommunityOrigin)
+
+
+_The specific IPLC area (Indigenous People and Local Communities) from which this sample/element was sampled, if relevant_
+
+
 
 
 
@@ -28,7 +33,7 @@ URI: [EVORAO:indigenousPoepleAndLocalCommunityOrigin](https://raw.githubusercont
 
 ## Properties
 
-* Range: [String](String.md)
+* Range: [IPLCOrigin](IPLCOrigin.md)
 
 
 
@@ -65,12 +70,17 @@ URI: [EVORAO:indigenousPoepleAndLocalCommunityOrigin](https://raw.githubusercont
 <details>
 ```yaml
 name: indigenousPoepleAndLocalCommunityOrigin
+description: The specific IPLC area (Indigenous People and Local Communities) from
+  which this sample/element was sampled, if relevant
+title: indigenous people and local community origin
 from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
 rank: 1000
 alias: indigenousPoepleAndLocalCommunityOrigin
 domain_of:
 - NaturalPartOrigin
-range: string
+range: IPLCOrigin
+required: false
+multivalued: false
 
 ```
 </details>

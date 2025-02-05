@@ -1,6 +1,11 @@
 
 
-# Slot: titer
+# Slot: titer (titer)
+
+
+_The titer value, its corresponding unit, and the method of quantification (e.g., RT-qPCR, TCID50), representing the concentration or amount of unit present in the sample. The titer corresponds to the highest dilution factor that still yields a positive reading_
+
+
 
 
 
@@ -18,14 +23,14 @@ URI: [EVORAO:titer](https://raw.githubusercontent.com/EVORA-project/evora-ontolo
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [Protozoan](Protozoan.md) | The protozoan as a biological material |  no  |
-| [Virus](Virus.md) | The virus as a biological material |  no  |
-| [Pathogen](Pathogen.md) | Biological entity that causes disease in its host, which is typically an infe... |  yes  |
-| [Prion](Prion.md) | The prion as a biological material |  no  |
-| [Bacterium](Bacterium.md) | The bacterium as a biological material |  no  |
 | [Fungus](Fungus.md) | The fungus as a biological material |  no  |
+| [Virus](Virus.md) | The virus as a biological material |  no  |
 | [Viroid](Viroid.md) | The viroid as a biological material |  no  |
+| [Pathogen](Pathogen.md) | Biological entity that causes disease in its host, which is typically an infe... |  yes  |
+| [Protozoan](Protozoan.md) | The protozoan as a biological material |  no  |
+| [Prion](Prion.md) | The prion as a biological material |  no  |
 | [NucleicAcid](NucleicAcid.md) | Nucleic acid related to a pathogen |  yes  |
+| [Bacterium](Bacterium.md) | The bacterium as a biological material |  no  |
 
 
 
@@ -36,6 +41,8 @@ URI: [EVORAO:titer](https://raw.githubusercontent.com/EVORA-project/evora-ontolo
 ## Properties
 
 * Range: [String](String.md)
+
+* Required: True
 
 
 
@@ -63,6 +70,7 @@ URI: [EVORAO:titer](https://raw.githubusercontent.com/EVORA-project/evora-ontolo
 | ---  | ---  |
 | self | EVORAO:titer |
 | native | EVORAO:titer |
+| close | wd:Q2166189 |
 
 
 
@@ -72,13 +80,22 @@ URI: [EVORAO:titer](https://raw.githubusercontent.com/EVORA-project/evora-ontolo
 <details>
 ```yaml
 name: titer
+description: The titer value, its corresponding unit, and the method of quantification
+  (e.g., RT-qPCR, TCID50), representing the concentration or amount of unit present
+  in the sample. The titer corresponds to the highest dilution factor that still yields
+  a positive reading
+title: titer
 from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+close_mappings:
+- wd:Q2166189
 rank: 1000
 alias: titer
 domain_of:
 - Nucleic Acid
 - Pathogen
 range: string
+required: true
+multivalued: false
 
 ```
 </details>

@@ -1,6 +1,11 @@
 
 
-# Slot: accidentalReleaseMeasures
+# Slot: accidental release measures (accidentalReleaseMeasures)
+
+
+_Guidelines for safely managing spills or leaks of the product, including containment, cleanup procedures, and precautions to prevent harm to people, property, and the environment._
+
+
 
 
 
@@ -29,6 +34,8 @@ URI: [EVORAO:accidentalReleaseMeasures](https://raw.githubusercontent.com/EVORA-
 ## Properties
 
 * Range: [String](String.md)
+
+* Recommended: True
 
 
 
@@ -65,12 +72,19 @@ URI: [EVORAO:accidentalReleaseMeasures](https://raw.githubusercontent.com/EVORA-
 <details>
 ```yaml
 name: accidentalReleaseMeasures
+description: Guidelines for safely managing spills or leaks of the product, including
+  containment, cleanup procedures, and precautions to prevent harm to people, property,
+  and the environment.
+title: accidental release measures
 from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
 rank: 1000
 alias: accidentalReleaseMeasures
 domain_of:
 - MSDS
 range: string
+required: false
+recommended: true
+multivalued: false
 
 ```
 </details>

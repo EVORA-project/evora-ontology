@@ -19,7 +19,7 @@ contributors:
 - https://orcid.org/0000-0002-1257-6862
 - https://orcid.org/0000-0002-2042-2839
 id: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
-version: 1.0.8373
+version: 1.0.8498
 imports:
 - linkml:types
 license: https://creativecommons.org/publicdomain/zero/1.0/
@@ -49,56 +49,286 @@ default_prefix: EVORAO
 default_range: string
 slots:
   name:
+    description: The label that allows humans to identify the current item
+    title: name
+    comments:
+    - 'The title of the item should be as short and descriptive as possible. E.g.
+      for virus products it should basically be based on the following Pattern:
+
+      ''Virus name'', ''virus host type'', ''collection year'', ''country of collection''
+      ex ''suspected epidemiological origin'', ''genotype'', ''strain'', ''variant
+      name or specific feature'
     from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
-  description:
-    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
-  ID:
-    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
-  versionOf:
-    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
-  taxon:
-    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
-  taxonDataProvider:
-    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
-  version:
-    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
-  versionDataProvider:
-    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
-  rank:
-    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
-  rankDataProvider:
-    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
-  license:
-    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
-  loginRequestMethod:
-    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+    exact_mappings:
+    - dct:title
+    close_mappings:
+    - rdfs:label
+    domain_of:
+    - DataService
+    - Catalogue
+    - Term
+    - PersonOrOrganization
+    - ProductOrService
+    - File
+    - ContactPoint
+    - License
+    - Certification
     range: string
+    required: true
+    multivalued: false
+  description:
+    description: A short explanation of the characteristics, features, or nature of
+      the current item
+    title: description
+    comments:
+    - 'Describe this item in few lines. This description will serve as a summary to
+      present the item.
+
+      '
+    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+    exact_mappings:
+    - dct:description
+    domain_of:
+    - DataService
+    - Catalogue
+    - Term
+    - PersonOrOrganization
+    - ProductOrService
+    - File
+    - ContactPoint
+    - License
+    - Certification
+    range: string
+    required: false
+    recommended: true
+    multivalued: false
+  ID:
+    description: The version identifier
+    title: ID
+    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+    close_mappings:
+    - wdp:P393
+    - schema:version
+    domain_of:
+    - Version
+    range: string
+    required: true
+    multivalued: false
+  versionOf:
+    description: Identifier of what the version qualifies
+    title: version Of
+    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+    domain_of:
+    - Version
+    range: Dataset
+    required: true
+    multivalued: false
+  taxon:
+    description: Scientifically classified group or entity within the reference taxonomy
+    title: taxon
+    comments:
+    - The taxon of the highest rank known that can be used to classify a pathogen
+      or group of pathogens (e.g viruses) in the reference taxonomy
+    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+    close_mappings:
+    - dwc:Taxon
+    domain_of:
+    - Taxonomy
+    - PathogenIdentification
+    range: Taxon
+    required: true
+    multivalued: false
+  taxonDataProvider:
+    description: The data provider for the taxons of the taxonomy
+    title: taxon data provider
+    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+    domain_of:
+    - Taxonomy
+    range: DataProvider
+    required: false
+    multivalued: false
+  version:
+    description: The version of this instance of entity
+    title: version
+    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+    domain_of:
+    - Taxonomy
+    range: Version
+    required: true
+    multivalued: false
+  versionDataProvider:
+    description: The data provider for the Version ID of this taxonomy
+    title: version data provider
+    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+    domain_of:
+    - Taxonomy
+    range: DataProvider
+    required: true
+    multivalued: false
+  rank:
+    description: Relative level or position of the identified taxon in the taxonomy
+    title: rank
+    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+    exact_mappings:
+    - dwc:taxonRank
+    domain_of:
+    - Taxonomy
+    - Taxon
+    range: TaxonomicRank
+    required: true
+    multivalued: false
+  rankDataProvider:
+    description: The data provider for the description of the taxonomic ranks used
+      in this taxonomy
+    title: rank data provider
+    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+    domain_of:
+    - Taxonomy
+    range: DataProvider
+    required: false
+    multivalued: false
+  license:
+    description: Information about terms and conditions under which the subject can
+      be used, shared, or distributed, indicating any restrictions or permissions
+    title: license
+    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+    exact_mappings:
+    - dct:license
+    domain_of:
+    - DataProvider
+    - File
+    range: License
+    required: false
+    multivalued: false
+  loginRequestMethod:
+    description: The http request method used to acces the login request url
+    title: login request method
+    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+    close_mappings:
+    - dcat:endpointDescription
+    ifabsent: string(GET)
+    domain_of:
+    - DataProvider
+    range: string
+    required: false
+    multivalued: false
     equals_string_in:
     - GET
     - POST
   loginURL:
+    description: The URL template that allows to log in if required
+    title: login URL
     from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+    close_mappings:
+    - wdp:P1630
+    - dcat:endpointDescription
+    domain_of:
+    - DataProvider
+    range: uri
+    required: false
+    multivalued: false
   loginTokenName:
+    description: The name of the token, unique identifier of an interaction session,
+      that will have to be reused as credential in the query
+    title: login token name
     from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
-  queryURL:
-    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
-  queryMethod:
-    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+    close_mappings:
+    - dcat:endpointDescription
+    domain_of:
+    - DataProvider
     range: string
+    required: false
+    multivalued: false
+  queryURL:
+    description: The URL template that allows to get the content
+    title: query URL
+    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+    exact_mappings:
+    - dcat:endpointURL
+    close_mappings:
+    - wdp:P1630
+    domain_of:
+    - DataProvider
+    range: uri
+    required: true
+    multivalued: false
+  queryMethod:
+    description: The http request method used to access the requested query url
+    title: query method
+    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+    close_mappings:
+    - dcat:endpointDescription
+    domain_of:
+    - DataProvider
+    range: string
+    required: true
+    multivalued: false
     equals_string_in:
     - GET
     - POST
   contentType:
+    description: The content type of the response to the queries
+    title: content type
     from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
-  providedEntityType:
-    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
-  weight:
-    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
-  pathogenName:
-    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
-  pathogenType:
-    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+    close_mappings:
+    - dct:format
+    ifabsent: string(JSON)
+    domain_of:
+    - DataProvider
     range: string
+    required: true
+    multivalued: false
+  providedEntityType:
+    description: The identification of the entity type (Class) described by the response
+      to the query
+    title: provided entity type
+    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+    exact_mappings:
+    - dcat:servesDataset
+    domain_of:
+    - DataProvider
+    range: Dataset
+    required: true
+    multivalued: false
+  weight:
+    description: A numerical value indicating relative importance or priority, generally
+      processed in ascending order. This weight helps prioritize content when organizing
+      or processing data. Its value can be negative, with a default set to 0
+    title: weight
+    comments:
+    - The lowest weighted Data providers are triggered first, this may be usefull
+      to populate at first entities that are referenced by others (e.g. Version ahead
+      of Rank ahead of Taxon)
+    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+    close_mappings:
+    - adms:status
+    - adms:status
+    ifabsent: int(0)
+    domain_of:
+    - DataProvider
+    - Term
+    range: integer
+    required: true
+    multivalued: false
+  pathogenName:
+    description: A pathogen common name or a name that describes a group of pathogens
+    title: pathogen name
+    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+    domain_of:
+    - PathogenIdentification
+    range: CommonName
+    required: true
+    multivalued: false
+  pathogenType:
+    description: Identification of the specific type of pathogen among the listed
+      categories e.g. 'Virus','Viroid','Bacterium'...
+    title: pathogen type
+    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+    domain_of:
+    - PathogenIdentification
+    range: string
+    required: true
+    multivalued: false
     equals_string_in:
     - Virus
     - Bacterium
@@ -107,403 +337,1975 @@ slots:
     - Viroid
     - Prion
   hostType:
+    description: Indication of the possible host(s) for the identified pathogens among
+      the listed main categories
+    title: host type
     from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+    domain_of:
+    - PathogenIdentification
     range: string
+    required: false
+    recommended: true
+    multivalued: true
     equals_string_in:
     - Animal
     - Human
     - Plant
   subspecies:
+    description: The subspecies information differentiates closely related pathogens
+      within a single species
+    title: subspecies
     from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
-  strain:
-    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
-  isolate:
-    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
-  genotype:
-    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
-  serotype:
-    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
-  variant:
-    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
-  title:
-    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
-  authors:
-    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
-  abstract:
-    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
-  relatedDOI:
-    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
-  journal:
-    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
-  termDataProvider:
-    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
-  term:
-    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
-  inVocabulary:
-    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
-  alternateName:
-    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
-  sourceOfInformation:
-    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
-  parentCategory:
-    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
-  alpha2Code:
-    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
-  taxonomy:
-    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
-  parentTaxon:
-    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
-  previouslyKnownAs:
-    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
-  externalEquivalentTaxon:
-    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
-  taxonomicID:
-    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
-  taxonomicNodeID:
-    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
-  reference:
-    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
-  referenceLabel:
-    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
-  referenceProviderPrefix:
-    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
-  referenceProviderName:
-    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
-  sequenceReference:
-    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
-  sequenceFASTA:
-    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
-  accessionNumber:
-    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
-  sequenceProvider:
-    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+    domain_of:
+    - PathogenIdentification
     range: string
+    required: false
+    multivalued: false
+  strain:
+    description: Identifier given to a genetic variant within a single species
+    title: strain
+    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+    domain_of:
+    - PathogenIdentification
+    range: string
+    required: false
+    recommended: true
+    multivalued: false
+  isolate:
+    description: Identifier given to a pathogen that has been isolated from an infected
+      host and propagated in a laboratory culture. The isolate information may include
+      an internal reference code from the laboratory that took the sample or performed
+      the isolation, as well as details about the specific conditions of isolation,
+      such as the name of the town, hospital, and type of host
+    title: isolate
+    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+    domain_of:
+    - PathogenIdentification
+    range: string
+    required: false
+    multivalued: false
+  genotype:
+    description: Genotype information that identifies organisms that cluster in phylogenetic
+      trees, thus different clusters are distinct genotypes
+    title: genotype
+    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+    domain_of:
+    - PathogenIdentification
+    range: string
+    required: false
+    multivalued: false
+  serotype:
+    description: Genetically related pathogens that group together based on serological
+      relationships
+    title: serotype
+    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+    domain_of:
+    - PathogenIdentification
+    range: string
+    required: false
+    multivalued: false
+  variant:
+    description: "An organism with one or more new mutations is referred to as a \u201C\
+      variant\u201D of the original organism if not sufficiently different to be termed\
+      \ a distinct strain"
+    title: variant
+    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+    domain_of:
+    - PathogenIdentification
+    range: Variant
+    required: false
+    multivalued: false
+  title:
+    description: The descriptive word or phrase that identifies the current piece
+      of work
+    title: title
+    comments:
+    - 'The title of the item should be as short and descriptive as possible. E.g.
+      for virus products it should basically be based on the following Pattern:
+
+      ''Virus name'', ''virus host type'', ''collection year'', ''country of collection''
+      ex ''suspected epidemiological origin'', ''genotype'', ''strain'', ''variant
+      name or specific feature'
+    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+    exact_mappings:
+    - dct:title
+    domain_of:
+    - Publication
+    range: string
+    required: true
+    multivalued: false
+  authors:
+    description: The list of authors
+    title: authors
+    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+    domain_of:
+    - Publication
+    range: string
+    required: true
+    multivalued: false
+  abstract:
+    description: Concise summary of the publication
+    title: abstract
+    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+    domain_of:
+    - Publication
+    range: string
+    required: true
+    multivalued: false
+  relatedDOI:
+    description: Any Digital Object Identifier that can be related
+    title: DOI
+    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+    close_mappings:
+    - wdp:P356
+    domain_of:
+    - Publication
+    - ProductOrService
+    range: DOI
+    required: false
+    multivalued: true
+  journal:
+    description: The scientific journal in which the publication was published
+    title: journal
+    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+    domain_of:
+    - Publication
+    range: Journal
+    required: false
+    multivalued: false
+  termDataProvider:
+    description: An external API or Endpoint that permits to retrieve the terms of
+      this vocabulary
+    title: term data provider
+    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+    domain_of:
+    - Vocabulary
+    range: DataProvider
+    required: false
+    multivalued: false
+  term:
+    description: The terms related to this vocabulary
+    title: term
+    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+    domain_of:
+    - Vocabulary
+    range: Term
+    required: false
+    recommended: true
+    multivalued: true
+  inVocabulary:
+    description: Terms belong to a specific vocabulary
+    title: in Vocabulary
+    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+    close_mappings:
+    - wdp:P972
+    domain_of:
+    - Term
+    range: Vocabulary
+    required: true
+    multivalued: false
+  alternateName:
+    description: Any other name under which the entity can be known
+    title: alternate name
+    comments:
+    - This includes previous names, acronyms, former taxonomic terms, and other variations.
+      This information can serve as keywords for search purposes and as a bridge with
+      other projects that use different naming systems or taxonomies
+    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+    close_mappings:
+    - wdp:P4970
+    domain_of:
+    - CommonName
+    - AlternateName
+    - Organization
+    range: AlternateName
+    required: false
+    multivalued: true
+  sourceOfInformation:
+    description: The name of the origin from which knowledge is obtained. This can
+      include any entity that provides information
+    title: source of information
+    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+    close_mappings:
+    - wdp:P248
+    domain_of:
+    - CommonName
+    - AlternateName
+    range: string
+    required: false
+    multivalued: true
+  parentCategory:
+    description: An overarching category that encompasses the current category within
+      a hierarchical classification system. It serves as the top-level classification,
+      organizing related subcategories under its umbrella to create a structured and
+      logical order.
+    title: parent category
+    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+    domain_of:
+    - ProductCategory
+    range: ProductCategory
+    required: false
+    multivalued: false
+  alpha2Code:
+    description: Two-letter country codes from ISO 3166-1 alpha-2
+    title: alpha-2 code
+    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+    domain_of:
+    - Country
+    range: string
+    required: true
+    multivalued: false
+  taxonomy:
+    description: The taxonomy release(s) in which this entity exists
+    title: taxonomy
+    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+    domain_of:
+    - TaxonomicRank
+    - Taxon
+    range: Taxonomy
+    required: false
+    recommended: true
+    multivalued: true
+  parentTaxon:
+    description: The parent taxon of the current taxon
+    title: parent taxon
+    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+    close_mappings:
+    - dwc:Taxon
+    domain_of:
+    - Taxon
+    range: Taxon
+    required: true
+    multivalued: false
+  previouslyKnownAs:
+    description: Any historic version of this taxon having a different name
+    title: previously known as
+    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+    close_mappings:
+    - dwc:Taxon
+    domain_of:
+    - Taxon
+    range: Taxon
+    required: false
+    multivalued: true
+  externalEquivalentTaxon:
+    description: Any equivalent taxon in a different taxonomy if exists/known to serve
+      as a bridge (e.g, ICTV towards NCBI)
+    title: external equivalent taxon
+    comments:
+    - Could serve as a bridge between ICTV and NCBI as several providers currently
+      uses NCBI Taxonomy
+    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+    close_mappings:
+    - dwc:taxonID
+    domain_of:
+    - Taxon
+    range: Taxon
+    required: false
+    multivalued: true
+  taxonomicID:
+    description: The taxonomic identifier as a persistent identifier accross releases
+    title: taxonomic ID
+    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+    close_mappings:
+    - dwc:taxonID
+    domain_of:
+    - Taxon
+    range: string
+    required: true
+    multivalued: false
+  taxonomicNodeID:
+    description: The taxonomic_Node Identifier as an identifier specific the current
+      taxon in the corresponding release/version of the taxonomy
+    title: taxonomic node ID
+    comments:
+    - NCBI does not have a taxon_node id, only a taxonomicID. Taxon_node id is Unique  in
+      ICTV= Key of the taxon node !! Could be replaced by a composite key made of
+      'taxonomic ID' + 'has version'
+    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+    close_mappings:
+    - dwc:taxonID
+    domain_of:
+    - Taxon
+    range: string
+    required: false
+    recommended: true
+    multivalued: false
+  reference:
+    description: The identifier reference of the connected external item
+    title: reference
+    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+    close_mappings:
+    - dct:identifier
+    domain_of:
+    - ExternalRelatedReference
+    range: string
+    required: true
+    multivalued: false
+  referenceLabel:
+    description: The label informing what this reference is about
+    title: reference label
+    comments:
+    - e.g., 'Infravec2 related product'
+    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+    close_mappings:
+    - dct:title
+    domain_of:
+    - ExternalRelatedReference
+    range: string
+    required: true
+    multivalued: false
+  referenceProviderPrefix:
+    description: The url prefix that once completed with the reference will lead to
+      the linked external resource
+    title: reference provider prefix
+    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+    close_mappings:
+    - dcat:landingPage
+    domain_of:
+    - ExternalRelatedReference
+    range: string
+    required: true
+    multivalued: false
+  referenceProviderName:
+    description: The name for the reference provider
+    title: reference provider name
+    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+    close_mappings:
+    - dct:publisher
+    domain_of:
+    - ExternalRelatedReference
+    range: string
+    required: true
+    multivalued: false
+  sequenceReference:
+    description: A reference that permits to retrieve the sequence information from
+      a sequence provider
+    title: sequence reference
+    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+    domain_of:
+    - Sequence
+    - Antibody
+    range: SequenceReference
+    required: false
+    recommended: true
+    multivalued: true
+  sequenceFASTA:
+    description: In case no sequence reference exists in public repositories, the
+      corresponding FASTA sequence is required
+    title: sequence FASTA
+    comments:
+    - In FASTA format the line before the nucleotide sequence, called the FASTA definition
+      line, must begin with a charater ('>'), followed by a unique SeqID (sequence
+      identifier). In case the sequence is made of multiple parts several fasta sequences
+      can be provided
+    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+    domain_of:
+    - Sequence
+    range: string
+    required: false
+    multivalued: false
+  accessionNumber:
+    description: The sequence ID that permits to retrieve the sequence information
+      from the sequence provider
+    title: accession number
+    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+    close_mappings:
+    - dct:identifier
+    domain_of:
+    - SequenceReference
+    range: string
+    required: true
+    multivalued: false
+  sequenceProvider:
+    description: The name of the sequence provider within the list of accepted sequence
+      providers
+    title: sequence provider
+    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+    close_mappings:
+    - dct:publisher
+    domain_of:
+    - SequenceReference
+    range: string
+    required: true
+    multivalued: false
     equals_string_in:
     - ENA
     - GenBank
   homePage:
+    description: A web page that serves as the main or introductory page
+    title: home page
     from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+    domain_of:
+    - PersonOrOrganization
+    range: uri
+    required: false
+    multivalued: false
   contactPoint:
+    description: An information that allows someone to establish communication
+    title: contact point
     from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+    exact_mappings:
+    - dcat:contactPoint
+    domain_of:
+    - PersonOrOrganization
+    - ProductOrService
+    range: ContactPoint
+    required: false
+    recommended: true
+    multivalued: false
   logo:
+    description: A path or URL to the related logo
+    title: logo
     from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+    domain_of:
+    - PersonOrOrganization
+    - License
+    - Certification
+    range: Image
+    required: false
+    multivalued: false
   oRCIDiD:
+    description: Unique persistent identifier for a person, provided by the Open Researcher
+      and Contributor ID (ORCID) organisation
+    title: ORCID iD
     from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
-  country:
-    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
-  rORiD:
-    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
-  memberOfRI:
-    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
-  recombinantMaterial:
-    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
-  biologicalSourceType:
-    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
-  biologicalPartOrigin:
-    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
-  recombinantPartIdentification:
-    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
-  accessToPhysicalGeneticResource:
-    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
-  countryOfCollection:
-    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
-  indigenousPoepleAndLocalCommunityOrigin:
-    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
-  collectionDate:
-    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
-  beforeDate:
-    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
-  permitIdentifierForABS:
-    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
-  modificationsFromTheReferenceSequences:
-    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
-  descriptionOfModificationsMadeFromTheReferenceSequences:
-    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
-  partIdentification:
-    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
-  sequence:
-    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
-  collectionItem:
-    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
-  collectionDataProvider:
-    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
-  accessPointURL:
-    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
-  refSKU:
-    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
-  unitDefinition:
-    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
-  category:
-    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
-  additionalCategory:
-    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
-  unitCost:
-    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
-  qualityGrading:
-    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
-  pathogenIdentification:
-    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
-  riskGroup:
-    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
-  biosafetyRestrictions:
-    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
-  canItBeUsedToProduceGMO:
-    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
-  provider:
-    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
-  collection:
-    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
-  keywords:
-    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
-  availability:
-    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
-  complementaryDocument:
-    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
-  technicalRecommendation:
-    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
-  productPicture:
-    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
-  externalRelatedReference:
-    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
-  certification:
-    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
-  internalReference:
-    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
-  note:
-    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
-  modelSpecies:
-    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
-  modelType:
-    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
-  hasIATAClassification:
-    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
-  shippingConditions:
-    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
-  materialSafetyDataSheet:
-    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
-  originator:
-    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
-  storageConditions:
-    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
-  thirdPartyDistributionConsent:
-    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
-  usageRestrictions:
-    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
-  productionSystem:
-    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
-  antibodyPurifiedByAffinity:
-    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
-  specificityDocumented:
-    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
-  targetedAntigen:
-    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
-  hybridomaDescription:
-    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
-  biologicalMaterialOrigin:
-    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
-  relatedPDB:
-    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
-  specialFeature:
-    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
-  proteinTAG:
-    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
-  domain:
-    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
-  expressedAs:
-    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+    exact_mappings:
+    - wdp:P496
+    - IAO:0000708
+    domain_of:
+    - Person
+    - ContactPoint
     range: string
+    required: false
+    recommended: true
+    multivalued: false
+  country:
+    description: The country of the organization
+    title: country
+    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+    domain_of:
+    - Organization
+    range: Country
+    required: false
+    recommended: true
+    multivalued: false
+  rORiD:
+    description: The corresponding organization's persistent identifier from the Research
+      Organization Registry (ROR)
+    title: ROR iD
+    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+    exact_mappings:
+    - wdp:P6782
+    domain_of:
+    - Organization
+    range: string
+    required: false
+    recommended: true
+    multivalued: false
+  memberOfRI:
+    description: The research infrastructure of which this organization is a member
+    title: member of RI
+    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+    domain_of:
+    - Provider
+    range: RI
+    required: false
+    multivalued: true
+  recombinantMaterial:
+    description: Indicates if this biological material is a recombinant biological
+      material.
+    title: recombinant material
+    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+    ifabsent: 'false'
+    domain_of:
+    - BiologicalMaterialOrigin
+    range: boolean
+    required: true
+    multivalued: false
+  biologicalSourceType:
+    description: Defines if the current biological material is natural and was collected
+      or if it is a synthetic biological material. It makes sense that only recombinant
+      biological materials can have a mixed material origin!
+    title: biological source type
+    comments:
+    - It makes sense that only recombinant biological materials can have a mixed material
+      origin!
+    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+    domain_of:
+    - BiologicalMaterialOrigin
+    range: boolean
+    required: true
+    multivalued: false
+  biologicalPartOrigin:
+    description: Details the origin of one or more unitary parts that make up the
+      biological material. In the case of recombinant biological material, multiple
+      parts may be involved.
+    title: biological part origin
+    comments:
+    - It can be multiple parts in case of a recombinant biological material.
+    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+    domain_of:
+    - BiologicalMaterialOrigin
+    range: BiologicalPartOrigin
+    required: true
+    multivalued: true
+  recombinantPartIdentification:
+    description: Identification of a recombinant part
+    title: recombinant part identification
+    comments:
+    - Information not required if the current biological part constitutes the complete
+      biological material
+    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+    domain_of:
+    - BiologicalPartOrigin
+    range: RecombinantPartIdentification
+    required: false
+    multivalued: false
+  accessToPhysicalGeneticResource:
+    description: Indicate if the biological part was produced with access to a physical
+      genetic resource
+    title: access to physical genetic resource
+    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+    domain_of:
+    - BiologicalPartOrigin
+    range: boolean
+    required: true
+    multivalued: false
+  countryOfCollection:
+    description: The geographical location where the sample was collected in situ.
+      Used for Nagoya/CBD; equivalent to 'country of origin'.
+    title: country of collection
+    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+    close_mappings:
+    - dct:spatial
+    - dwc:country
+    domain_of:
+    - NaturalPartOrigin
+    range: Country
+    required: true
+    multivalued: false
+  indigenousPoepleAndLocalCommunityOrigin:
+    description: The specific IPLC area (Indigenous People and Local Communities)
+      from which this sample/element was sampled, if relevant
+    title: indigenous people and local community origin
+    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+    domain_of:
+    - NaturalPartOrigin
+    range: IPLCOrigin
+    required: false
+    multivalued: false
+  collectionDate:
+    description: The date when the sample was collected in situ. If unknown/private,
+      use a proxy date such as 'date received' and indicate this by setting to true
+      the before date property
+    title: collection date
+    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+    domain_of:
+    - NaturalPartOrigin
+    range: datetime
+    required: true
+    multivalued: false
+  beforeDate:
+    description: Set to TRUE if a proxy date for the collection date is used
+    title: before date
+    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+    ifabsent: 'false'
+    domain_of:
+    - NaturalPartOrigin
+    range: boolean
+    required: true
+    multivalued: false
+  permitIdentifierForABS:
+    description: Reference of the permit identifiers for access to the genetic resource,
+      applicable if the genetic resource falls under Access and Benefit-Sharing (ABS)
+      regulations
+    title: permit identifier for ABS
+    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+    domain_of:
+    - NaturalPartOrigin
+    required: false
+    multivalued: false
+  modificationsFromTheReferenceSequences:
+    description: Set to TRUE if there was is any modification made from the reference
+      sequence
+    title: modifications from the reference sequence(s)
+    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+    domain_of:
+    - SyntheticPartOrigin
+    range: boolean
+    required: true
+    multivalued: false
+  descriptionOfModificationsMadeFromTheReferenceSequences:
+    description: List the modifications mades from the reference sequence if any
+    title: description of modification(s) made from the reference sequence(s)
+    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+    domain_of:
+    - SyntheticPartOrigin
+    range: string
+    required: false
+    recommended: true
+    multivalued: false
+  partIdentification:
+    description: A short designation of this recombinant part of the related biological
+      material
+    title: Part identification
+    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+    domain_of:
+    - RecombinantPartIdentification
+    range: string
+    required: true
+    multivalued: false
+  sequence:
+    description: The related sequence information from a sequence provider or in fasta
+      format
+    title: sequence
+    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+    domain_of:
+    - RecombinantPartIdentification
+    - Protein
+    - Nucleic Acid
+    - Pathogen
+    range: Sequence
+    required: true
+    recommended: true
+    multivalued: true
+  collectionItem:
+    description: An item of the collection
+    title: collection item
+    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+    close_mappings:
+    - dcat:resource
+    domain_of:
+    - Collection
+    range: ProductOrService
+    required: false
+    recommended: true
+    multivalued: true
+  collectionDataProvider:
+    description: The provider of the data of the collection
+    title: collection data provider
+    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+    close_mappings:
+    - dct:isReferencedBy
+    domain_of:
+    - Collection
+    range: DataProvider
+    required: false
+    multivalued: false
+  accessPointURL:
+    description: The URL that permits to access to the product/service detailed description
+      page on the provider's website and/or allows to place an order about it or at
+      least describe the process to place an order/enquiry
+    title: access point URL
+    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+    exact_mappings:
+    - dcat:landingPage
+    domain_of:
+    - ProductOrService
+    range: uri
+    required: true
+    multivalued: false
+  refSKU:
+    description: The reference or the stock keeping unit of the service or item provided
+      in the provider's catalogue
+    title: ref-SKU
+    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+    exact_mappings:
+    - dct:identifier
+    domain_of:
+    - ProductOrService
+    range: string
+    required: true
+    multivalued: false
+  unitDefinition:
+    description: A short description of what will be delivered by ordering one unit
+      of this item
+    title: unit definition
+    comments:
+    - 'The description of what will be delivered to the end-user (e.g.: packaging,
+      quantity...)'
+    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+    domain_of:
+    - ProductOrService
+    range: string
+    required: false
+    recommended: true
+    multivalued: false
+  category:
+    description: The main category of the service or product
+    title: category
+    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+    exact_mappings:
+    - dcat:theme
+    domain_of:
+    - ProductOrService
+    range: ProductCategory
+    required: true
+    multivalued: false
+  additionalCategory:
+    description: Any category apart from its main category in which this product or
+      service can fit
+    title: additional category
+    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+    exact_mappings:
+    - dcat:theme
+    domain_of:
+    - ProductOrService
+    range: ProductCategory
+    required: false
+    recommended: true
+    multivalued: true
+  unitCost:
+    description: The cost per access for one unit as defined by the unit definition
+    title: unit cost
+    comments:
+    - The cost per access may not be defined or be specific to a request, so it has
+      to be a xsd:string instead of an xsd:float as initialy suggested to permit description
+      of cost as conditional to what is requested
+    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+    ifabsent: string(on request)
+    domain_of:
+    - ProductOrService
+    range: string
+    required: true
+    recommended: true
+    multivalued: false
+  qualityGrading:
+    description: Information that permits to assess the quality level of what will
+      be provided
+    title: quality grading
+    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+    domain_of:
+    - ProductOrService
+    range: string
+    required: false
+    multivalued: false
+  pathogenIdentification:
+    description: The identification of the pathogen or group of pathogens (e.g; name,
+      taxon identification, etc.) related to the current item.
+    title: pathogen identification
+    comments:
+    - 'The pathogen identification contains information about name and taxon but in
+      some cases(e.g: FAIRSHARING) there may have no direct pathogen related but simply
+      a taxonomic information .... the default value should be the root of virology:
+      Viruses'
+    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+    domain_of:
+    - ProductOrService
+    range: PathogenIdentification
+    required: true
+    multivalued: true
+  riskGroup:
+    description: The highest risk group related to this resource. The risk group of
+      a biological agent guiding its initial handling in labs according to the risk
+      group classification defined by the WHO laboratory biosafety manual
+    title: risk group
+    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+    close_mappings:
+    - wdp:P12663
+    domain_of:
+    - ProductOrService
+    range: RiskGroup
+    required: false
+    recommended: true
+    multivalued: false
+  biosafetyRestrictions:
+    description: Information about guidelines and regulations designed to prevent
+      the exposure to or release of potentially harmful biological agents. It thereby
+      contributes to protecting people and the environment from biohazards while accessing
+      this product or service
+    title: biosafety restrictions
+    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+    domain_of:
+    - ProductOrService
+    range: string
+    required: false
+    multivalued: false
+  canItBeUsedToProduceGMO:
+    description: Indicates if the current service or product can be used to produce
+      GMO
+    title: can it be used to produce GMO
+    comments:
+    - Set to TRUE if it can produce GMO. It is recommended to have a value for this
+      field, no value will be understood as unknown
+    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+    domain_of:
+    - ProductOrService
+    range: boolean
+    required: true
+    recommended: true
+    multivalued: false
+  provider:
+    description: A provider of this product or service, as a specific organization
+    title: provider
+    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+    domain_of:
+    - ProductOrService
+    range: Provider
+    required: true
+    multivalued: false
+  collection:
+    description: The collection(s) to which belongs this item
+    title: collection
+    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+    domain_of:
+    - ProductOrService
+    range: Collection
+    required: true
+    multivalued: true
+  keywords:
+    description: List of terms used to tag and categorize this Item
+    title: keywords
+    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+    exact_mappings:
+    - dcat:keyword
+    domain_of:
+    - ProductOrService
+    range: Keyword
+    required: true
+    recommended: true
+    multivalued: true
+  availability:
+    description: The state or condition in which this item is accessible and ready
+      for use or can be obtained
+    title: availability
+    comments:
+    - Possible availabilities may differ from a project to another
+    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+    ifabsent: string(on request)
+    domain_of:
+    - ProductOrService
+    range: string
+    required: true
+    multivalued: false
+  complementaryDocument:
+    description: Any additional documents that provide supplementary information,
+      instructions, or guidelines relevant to the use of this item
+    title: complementary document
+    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+    domain_of:
+    - ProductOrService
+    range: Document
+    required: false
+    multivalued: true
+  technicalRecommendation:
+    description: Expert advice or guidelines provided to ensure the optimal use, performance,
+      and maintenance of what is provided, including best practices, troubleshooting
+      tips, and procedural instructions
+    title: technical recommendation
+    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+    domain_of:
+    - ProductOrService
+    range: string
+    required: false
+    multivalued: false
+  productPicture:
+    description: A picture that can represent the item
+    title: product picture
+    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+    domain_of:
+    - ProductOrService
+    range: Image
+    required: false
+    multivalued: true
+  externalRelatedReference:
+    description: A reference that permits to retrieve another related item from an
+      external provider
+    title: external related reference
+    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+    domain_of:
+    - ProductOrService
+    range: ExternalRelatedReference
+    required: false
+    multivalued: true
+  certification:
+    description: Any certification related to the current product or service; e.g.,
+      ISO certification
+    title: certification
+    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+    close_mappings:
+    - dct:conformsTo
+    domain_of:
+    - ProductOrService
+    range: Certification
+    required: false
+    multivalued: true
+  internalReference:
+    description: Any reference or indication to be used for local retrieval purpose
+    title: internal reference
+    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+    domain_of:
+    - ProductOrService
+    range: string
+    required: false
+    multivalued: false
+  note:
+    description: An aditional information as a textual comment
+    title: note
+    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+    domain_of:
+    - ProductOrService
+    range: string
+    required: false
+    multivalued: false
+  modelSpecies:
+    description: The species of the infected organism in the experiment
+    title: model species
+    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+    domain_of:
+    - Service
+    range: string
+    required: false
+    multivalued: false
+  modelType:
+    description: The specific name of the infected organism, including its modification
+      if necessary
+    title: model type
+    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+    domain_of:
+    - Service
+    range: string
+    required: false
+    multivalued: false
+  hasIATAClassification:
+    description: The corresponding International Air Transport Association (IATA)'s
+      category for this Product
+    title: IATA classification
+    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+    domain_of:
+    - Product
+    range: IATAClassification
+    required: true
+    multivalued: false
+  shippingConditions:
+    description: 'Specification of the terms and parameters for transporting
+
+      '
+    title: shipping conditions
+    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+    domain_of:
+    - Product
+    range: string
+    required: true
+    multivalued: false
+  materialSafetyDataSheet:
+    description: A Material Safety Data Sheet (MSDS) or Safety Data Sheet (SDS) is
+      a standardized document that contains crucial occupational safety and health
+      information related to the product
+    title: material safety data sheet
+    comments:
+    - The MSD  is a document that provides detailed information about the properties,
+      hazards, handling, storage, and emergency procedures related to the use of a
+      chemical or substance
+    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+    domain_of:
+    - Product
+    range: MSDS
+    required: false
+    multivalued: false
+  originator:
+    description: The individual or organization responsible for the original discovery,
+      isolation, or creation of an item, providing information about the source or
+      origin of the sample
+    title: originator
+    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+    domain_of:
+    - Product
+    range: Originator
+    required: false
+    multivalued: false
+  storageConditions:
+    description: Specifies the conditions under which the product has to be stored
+      to maintain stability and integrity, such as temperature, buffer, and other
+      environmental factors.
+    title: storage conditions
+    comments:
+    - "e.g, could be a xsd:string in enumeration ('Freeze Dried', 'Liquid Nitrogen',\
+      \ 'Viral Storage Medium -20C', 'Viral Storage Medium -80C', 'Living plant material\
+      \ (>= +4\xB0C)', 'Gas Phase', 'Ethanol -20C', 'Ethanol -80C', 'Dried')"
+    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+    domain_of:
+    - Product
+    range: string
+    required: true
+    multivalued: false
+  thirdPartyDistributionConsent:
+    description: Indicates whether the biological material can be distributed without
+      restriction to third parties, as indicated by the ABS permit, in case an ABS
+      permit is required
+    title: third party distribution consent
+    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+    domain_of:
+    - Product
+    range: boolean
+    required: false
+    multivalued: false
+  usageRestrictions:
+    description: Specifies any limitations or conditions on the use of the biological
+      material, including restrictions on research, commercial use, or distribution,
+      considering any potential concerns about the related genetic material
+    title: usage restrictions
+    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+    domain_of:
+    - Product
+    range: string
+    required: false
+    multivalued: false
+  productionSystem:
+    description: The biological and technological methods and processes used to produce
+      the antibody
+    title: production system
+    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+    domain_of:
+    - Antibody
+    range: string
+    required: false
+    recommended: true
+    multivalued: false
+  antibodyPurifiedByAffinity:
+    description: Indicates whether or not if the antibody was purified by affinity
+    title: antibody purified by affinity
+    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+    domain_of:
+    - Antibody
+    range: boolean
+    required: true
+    multivalued: false
+  specificityDocumented:
+    description: Boolean value indicating whether the specificity of the product has
+      been formally documented
+    title: specificity documented
+    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+    domain_of:
+    - Antibody
+    - Detection Kit
+    range: boolean
+    required: true
+    multivalued: false
+  targetedAntigen:
+    description: Specific molecular structure or epitope recognized and bound by an
+      antibody
+    title: targeted antigen
+    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+    domain_of:
+    - Antibody
+    range: string
+    required: true
+    multivalued: false
+  hybridomaDescription:
+    description: The description of the hybridoma
+    title: hybridoma description
+    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+    domain_of:
+    - Hybridoma
+    range: string
+    required: true
+    multivalued: false
+  biologicalMaterialOrigin:
+    description: Information about the origin of the biological material, essential
+      for access, utilization, and benefit-sharing of genetic resources in compliance
+      with the Nagoya Protocol
+    title: Biological Material origin
+    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+    domain_of:
+    - Protein
+    - Nucleic Acid
+    - Pathogen
+    range: BiologicalMaterialOrigin
+    required: true
+    multivalued: false
+  relatedPDB:
+    description: Identifier for 3D structural data as per the PDB (Protein Data Bank)
+      database
+    title: related PDB
+    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+    close_mappings:
+    - wdp:P638
+    domain_of:
+    - Protein
+    range: PDBReference
+    required: false
+    multivalued: true
+  specialFeature:
+    description: Distinctive attributes of a product that set it apart from other
+      similar items e.g., Reference strain, Vaccinal strain, Antiviral resistant strain
+      ...
+    title: special feature
+    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+    domain_of:
+    - Protein
+    range: SpecialFeature
+    required: false
+    multivalued: true
+  proteinTAG:
+    description: Peptide sequences genetically grafted onto a recombinant protein
+    title: protein TAG
+    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+    domain_of:
+    - Protein
+    range: ProteinTag
+    required: false
+    multivalued: true
+  domain:
+    description: A distinct structural and functional unit within the protein, often
+      capable of independent folding and stability, which contributes to the protein's
+      overall function
+    title: domain
+    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+    domain_of:
+    - Protein
+    range: string
+    required: false
+    multivalued: true
+  expressedAs:
+    description: Refers to the form in which the protein is produced and manifested
+      in a biological system. Possible values include 'Soluble' (proteins that are
+      dissolved in the cellular or extracellular fluid) and 'Inclusion bodies' (aggregated
+      proteins that are insoluble and form within the cell)
+    title: expressed as
+    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+    domain_of:
+    - Protein
+    range: string
+    required: false
+    multivalued: true
     equals_string_in:
     - Soluble
     - Inclusion bodies
   inclusionBodiesType:
+    description: Refers to the state of aggregated proteins within a cell. Possible
+      values include 'Denatured' (proteins are in an unfolded, inactive state) and
+      'Refolded' (proteins have been processed to regain their functional, active
+      conformation).
+    title: inclusion bodies type
     from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+    domain_of:
+    - Protein
     range: string
+    required: false
+    multivalued: true
     equals_string_in:
     - Denatured
     - Refolded
   expressionSystem:
+    description: The host organism or cellular environment used to produce a protein
+      from a specific gene. Possible values include 'E. coli' (bacterial system),
+      'Insect cells' (using baculovirus vectors), and 'Mammalian cells' (mammalian
+      cell lines).
+    title: expression system
     from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+    domain_of:
+    - Protein
     range: string
+    required: false
+    multivalued: true
     equals_string_in:
     - E. coli
     - Insect cells
     - Mammalian cells
   functionalCharacterization:
+    description: The process of determining and describing the specific biological
+      activities and roles of a protein. Possible values include 'Functionally characterized'
+      (the protein's functions have been identified and described) and 'No functional
+      characterization' (the protein's functions have not been identified or described).
+    title: functional characterization
     from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+    domain_of:
+    - Protein
     range: string
+    required: false
+    multivalued: true
     equals_string_in:
     - Functionally characterized
     - No functional characterization
   functionalTechnicalDescription:
+    description: Detailed information about the specific biological functions, mechanisms
+      of action, and technical attributes of a protein. This includes how the protein
+      interacts within biological systems, its role in cellular processes, and any
+      relevant technical details such as structure, activity, and interactions with
+      other molecules.
+    title: functional/Technical description
     from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
-  proteinPurification:
-    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+    domain_of:
+    - Protein
     range: string
+    required: false
+    multivalued: true
+  proteinPurification:
+    description: Refers to the degree of purity achieved for a protein sample. Possible
+      values include '>95%' (the protein is highly purified, with more than 95% purity)
+      and 'Unpurified expression host lysate or partly purified protein' (the protein
+      is either unpurified and present in the host cell lysate or only partially purified).
+    title: protein purification
+    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+    domain_of:
+    - Protein
+    range: string
+    required: false
+    multivalued: true
     equals_string_in:
     - Greater than 95 percent
     - Unpurified expression host lysate or partly purified protein
   theTAGStatusOfTheSolubilizedProtein:
+    description: Indicates the presence and condition of a tag on the protein after
+      solubilization. Possible values include 'Uncleaved Tag' (the tag is still attached
+      to the protein), 'Cleaved Tag' (the tag has been removed from the protein),
+      and 'No Tag' (the protein does not have a tag)
+    title: TAG status of the solubilized protein
     from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
-  typeOfFunctionalCharacterization:
-    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+    domain_of:
+    - Protein
     range: string
+    required: false
+    multivalued: true
+  typeOfFunctionalCharacterization:
+    description: Refers to the classification of a protein based on the specific type
+      of functional analysis performed to determine its biological activities and
+      roles. Possible values include 'Enzymatic' (the protein has been characterized
+      for its enzyme activity) and 'Antigenic' (the protein has been characterized
+      for its ability to elicit an immune response).
+    title: type of functional Characterization
+    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+    domain_of:
+    - Protein
+    range: string
+    required: false
+    multivalued: true
     equals_string_in:
     - Enzymatic
     - Antigenic
   hasGbFileOfTheConstruct:
+    description: A GenBank formatted file that contains detailed sequence and annotation
+      information of a nucleic acid construct
+    title: has .gb file of the construct
     from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+    domain_of:
+    - Nucleic Acid
+    range: Data
+    required: false
+    multivalued: true
   isItAClonedNucleicAcid:
+    description: Indicates that the nucleic acid sequence has been inserted into a
+      plasmid vector for propagation or expression in a host organism
+    title: is it a Cloned Nucleic Acid?
     from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+    domain_of:
+    - Nucleic Acid
+    range: boolean
+    required: true
+    multivalued: false
   clonedIntoPlasmid:
+    description: The plasmid into which the nucleic acid has been cloned
+    title: cloned into plasmid
     from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+    domain_of:
+    - Nucleic Acid
+    range: ExpressionVector
+    required: false
+    recommended: true
+    multivalued: false
   pasmidSelection:
+    description: Specific selectable markers in the plasmid, such as antibiotic resistance
+      genes, used to identify and maintain cells that contain the plasmid
+    title: plasmid selection
     from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+    domain_of:
+    - Nucleic Acid
+    range: PlasmidSelection
+    required: false
+    recommended: true
+    multivalued: true
   hasTAG:
+    description: TAG sequence used for purposes such as purification, detection, or
+      localization
+    title: TAG
     from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+    domain_of:
+    - Nucleic Acid
+    range: ProteinTag
+    required: true
+    multivalued: false
   regionEncompassedInThisProduct:
+    description: The specific region encompassed in the product
+    title: region encompassed in this Product
     from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
-  mutationObserved:
-    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
-  observedMutations:
-    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
-  identificationTechnique:
-    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
-  sequencing:
-    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+    domain_of:
+    - Nucleic Acid
     range: string
+    required: true
+    multivalued: false
+  mutationObserved:
+    description: "Indicates if the current nucleic acid has No mutation compared to\
+      \ the reference sequence if the value is set to false or if it\n contains mutations\
+      \ (no frameshift, no unexpected STOP codon) if set to true"
+    title: mutation observed
+    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+    domain_of:
+    - Nucleic Acid
+    range: boolean
+    required: true
+    multivalued: false
+  observedMutations:
+    description: The specific mutations that have been identified and documented in
+      the nucleic acid sequence
+    title: observed mutations
+    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+    domain_of:
+    - Nucleic Acid
+    range: string
+    required: false
+    multivalued: false
+  identificationTechnique:
+    description: A method or procedure used to detect, identify, and confirm the presence
+      of a specific nucleic acid sequence, pathogen, or associated constructs. This
+      may involve various techniques such as PCR, sequencing, hybridization, or other
+      molecular methods, utilizing specific tools and procedures for accurate detection
+      and analysis
+    title: identification technique
+    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+    domain_of:
+    - Nucleic Acid
+    - Pathogen
+    range: string
+    required: false
+    multivalued: false
+  sequencing:
+    description: Refers to the level of sequencing performed on the nucleic acid.
+      Possible values include 'Not sequenced' (no sequencing has been performed),
+      'Partly sequenced' (only a portion of the nucleic acid sequence has been determined),
+      and 'Fully sequenced' (the entire nucleic acid sequence has been determined).
+    title: sequencing
+    comments:
+    - Cloned products have to be sequenced
+    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+    domain_of:
+    - Nucleic Acid
+    range: string
+    required: true
+    multivalued: false
     equals_string_in:
     - Not sequenced
     - Partly sequenced
     - Fully sequenced
   titer:
+    description: The titer value, its corresponding unit, and the method of quantification
+      (e.g., RT-qPCR, TCID50), representing the concentration or amount of unit present
+      in the sample. The titer corresponds to the highest dilution factor that still
+      yields a positive reading
+    title: titer
     from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
-  sequenceChecked:
-    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
-  hasSOPFile:
-    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
-  specificity:
-    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
-  targetedRegion:
-    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
-  productsOfTheBundle:
-    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
-  suspectedEpidemiologicalOrigin:
-    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
-  isolationHost:
-    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
-  productionCellLine:
-    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
-  propagationHost:
-    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
-  transmissionMethod:
-    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
-  cultivability:
-    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+    close_mappings:
+    - wd:Q2166189
+    domain_of:
+    - Nucleic Acid
+    - Pathogen
     range: string
+    required: true
+    multivalued: false
+  sequenceChecked:
+    description: Tell whether or not the sequence of the product was controlled (compulsory
+      for cloned products)
+    title: sequence checked
+    comments:
+    - Sequence check is mandatory for cloned products
+    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+    domain_of:
+    - Nucleic Acid
+    range: boolean
+    required: true
+    multivalued: false
+  hasSOPFile:
+    description: The related standard operating procedure file
+    title: has SOP File
+    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+    domain_of:
+    - Detection Kit
+    range: File
+    required: false
+    multivalued: true
+  specificity:
+    description: Details on the ability of a detection kit to correctly identify negative
+      results, distinguishing between the target analyte and other substances without
+      cross-reacting
+    title: specificity
+    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+    domain_of:
+    - Detection Kit
+    range: string
+    required: false
+    multivalued: false
+  targetedRegion:
+    description: The specific area or sequence within the target analyte that the
+      detection kit is designed to identify and interact with, ensuring accurate detection
+      and analysis.
+    title: targeted region
+    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+    domain_of:
+    - Detection Kit
+    range: string
+    required: false
+    multivalued: false
+  productsOfTheBundle:
+    description: Associates the bundle with the individual products it contains, specifying
+      the components included within the bundle.
+    title: products of the bundle
+    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+    domain_of:
+    - Bundle
+    range: Product
+    required: true
+    multivalued: true
+  suspectedEpidemiologicalOrigin:
+    description: The potential geographical or environmental source from which the
+      pathogen is believed to have originated or been transmitted
+    title: suspected epidemiological origin
+    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+    close_mappings:
+    - dct:spatial
+    domain_of:
+    - Pathogen
+    range: GeographicalOrigin
+    required: false
+    multivalued: true
+  isolationHost:
+    description: The host organism from which the pathogen was originally isolated
+    title: isolation host
+    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+    domain_of:
+    - Pathogen
+    range: IsolationHost
+    required: false
+    multivalued: true
+  productionCellLine:
+    description: The cell line used for the production or propagation of the pathogen,
+      detailing the cellular environment employed in its cultivation and study
+    title: production cell line
+    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+    domain_of:
+    - Pathogen
+    range: ProductionCellLine
+    required: false
+    multivalued: true
+  propagationHost:
+    description: The host organism that propagates the pathogen
+    title: propagation host
+    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+    domain_of:
+    - Pathogen
+    range: PropagationHost
+    required: false
+    multivalued: true
+  transmissionMethod:
+    description: The method or route through which the pathogen is transmitted from
+      one host to another, detailing the mechanisms of infection spread.
+    title: transmission method
+    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+    domain_of:
+    - Pathogen
+    range: TransmissionMethod
+    required: false
+    multivalued: true
+  cultivability:
+    description: The ability of the pathogen to be cultivated or grown in laboratory
+      conditions. Possible values are  'Cultivable pathogen', 'Uncultivable pathogen'
+      or 'Inactivated pathogen'
+    title: cultivability
+    comments:
+    - Might also be related to a product sub-category that helps filtering
+    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+    ifabsent: string(Cultivable)
+    domain_of:
+    - Pathogen
+    range: string
+    required: true
+    multivalued: false
     equals_string_in:
     - Cultivable
     - Uncultivable
     - Inactivated
   clinicalInformation:
+    description: Details about the clinical aspects of the pathogen, including symptoms,
+      severity, treatment protocols, and patient outcomes
+    title: clinical information
     from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
-  infectivity:
-    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+    domain_of:
+    - Pathogen
     range: string
+    required: false
+    multivalued: false
+  infectivity:
+    description: Indicates the ability of the pathogen to establish an infection in
+      a host organism, with possible values detailing whether infectivity has been
+      tested, quantified, or cannot be tested due to non-cultivable nature.
+    title: infectivity
+    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+    domain_of:
+    - Pathogen
+    range: string
+    required: true
+    multivalued: false
     equals_string_in:
     - Infectivity tested
     - Infectivity tested and quantified
     - Non cultivable sample, infectivity cannot be tested
   infectivityTest:
+    description: The description of the completed infectivity test, providing details
+      on the methods, conditions, and results of the test used to assess the pathogen's
+      ability to infect a host organism
+    title: infectivity Test
     from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
-  isolationTechnique:
-    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
-  isolationConditions:
-    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
-  letterOfAuthority:
-    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+    domain_of:
+    - Pathogen
     range: string
+    required: false
+    multivalued: false
+  isolationTechnique:
+    description: The specific method or procedure used to isolate the pathogen from
+      a host organism or sample, detailing the techniques and tools employed in the
+      isolation process
+    title: isolation technique
+    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+    domain_of:
+    - Pathogen
+    range: string
+    required: false
+    multivalued: false
+  isolationConditions:
+    description: The environmental and procedural conditions under which the pathogen
+      was isolated
+    title: isolation conditions
+    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+    domain_of:
+    - Pathogen
+    range: string
+    required: false
+    multivalued: false
+  letterOfAuthority:
+    description: Indicate whether a Letter of Authority is required, confirming the
+      necessity of formal authorization. The possible values are 'N/A', 'NOT Required',
+      'Required for customers in the EU' or 'Required'
+    title: letter of authority
+    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+    ifabsent: string(Not applicable)
+    domain_of:
+    - Pathogen
+    range: string
+    required: true
+    multivalued: false
     equals_string_in:
     - Not applicable
     - Not required
     - Required for customers in the EU
     - Required
   passage:
+    description: The number of times the pathogen was cultured through serial passage,
+      a process used to increase the stock but which can also lead to the evolution
+      of the original pathogen.
+    title: passage
     from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
-  genomeSequencing:
-    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+    domain_of:
+    - Pathogen
     range: string
+    required: false
+    multivalued: false
+  genomeSequencing:
+    description: The extent of the pathogen's genetic material that has been sequenced,
+      with possible values including 'Complete genome' for the entire genome, 'Complete
+      coding sequence' for all coding regions, and 'Partial sequence' for only a portion
+      of the genetic material
+    title: genome sequencing
+    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+    domain_of:
+    - Pathogen
+    range: string
+    required: true
+    multivalued: false
     equals_string_in:
     - Complete genome
     - Complete coding sequence
     - Partial sequence
   coInfectingViruses:
+    description: Identifies other viruses that may co-infect the host organism along
+      with the primary virus, indicating the presence of multiple viral infections
+      within the same host.
+    title: co-infecting viruses
     from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+    domain_of:
+    - Virus
+    range: VirusName
+    required: false
+    multivalued: true
   contaminationWithCoInfectingViruses:
+    description: A boolean value indicating whether there is contamination with co-infecting
+      viruses
+    title: contamination with co-infecting viruses
     from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+    ifabsent: 'false'
+    domain_of:
+    - Virus
+    range: boolean
+    required: true
+    multivalued: false
   mycoplasmicContent:
+    description: Indicates the presence of mycoplasma contamination within the sample
+    title: mycoplasmic content
     from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+    domain_of:
+    - Virus
+    range: boolean
+    required: true
+    multivalued: false
   msdsContact:
+    description: The designated contact point responsible for providing information
+      related to the safety, handling, and regulatory compliance of the biological
+      product.
+    title: MSDS contact
     from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+    exact_mappings:
+    - dcat:contactPoint
+    domain_of:
+    - MSDS
+    range: ContactPoint
+    required: true
+    multivalued: false
   physicalChemicalProperties:
+    description: Key characteristics of the product, such as physical state, appearance,
+      solubility, pH, chemical composition, and molecular weight, essential for safe
+      handling and storage
+    title: physical and chemical properties and information on ingredients
     from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+    domain_of:
+    - MSDS
+    range: string
+    required: false
+    recommended: true
+    multivalued: false
   hazardsIdentification:
+    description: Outlines the potential risks and dangers associated with handling
+      the product, including its physical, chemical, and health hazards. This section
+      provides information on toxicity, flammability, reactivity, and other relevant
+      risks for safe use.
+    title: hazards identification
     from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+    domain_of:
+    - MSDS
+    range: string
+    required: false
+    recommended: true
+    multivalued: false
   firstAidMeasures:
+    description: Instructions on immediate actions to take in case of exposure to
+      the product, including inhalation, ingestion, skin, or eye contact. This section
+      outlines steps to minimize harm before medical help is available.
+    title: first aid measures
     from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+    domain_of:
+    - MSDS
+    range: string
+    required: false
+    recommended: true
+    multivalued: false
   fireFightingMeasures:
+    description: Guidance on how to safely extinguish a fire involving the product,
+      including suitable extinguishing agents, special protective equipment for firefighters,
+      and any specific hazards from combustion.
+    title: fire fighting measures
     from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+    domain_of:
+    - MSDS
+    range: string
+    required: false
+    recommended: true
+    multivalued: false
   accidentalReleaseMeasures:
+    description: Guidelines for safely managing spills or leaks of the product, including
+      containment, cleanup procedures, and precautions to prevent harm to people,
+      property, and the environment.
+    title: accidental release measures
     from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+    domain_of:
+    - MSDS
+    range: string
+    required: false
+    recommended: true
+    multivalued: false
   handlingAndStorage:
+    description: Instructions on the safe handling practices and storage conditions
+      for the product, including precautions to prevent accidents, degradation, or
+      contamination, as well as recommended temperature, humidity, and container requirements.
+    title: handling and storage
     from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+    domain_of:
+    - MSDS
+    range: string
+    required: false
+    recommended: true
+    multivalued: false
   exposureControlsPersonalProtection:
+    description: Specifies measures to limit exposure to the product, including recommended
+      engineering controls (e.g., ventilation) and personal protective equipment (PPE)
+      such as gloves, masks, goggles, and clothing to ensure safe handling.
+    title: exposure controls/personal protection
     from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+    domain_of:
+    - MSDS
+    range: string
+    required: false
+    recommended: true
+    multivalued: false
   stabilityAndReactivity:
+    description: "Describes the product\u2019s stability under normal conditions and\
+      \ its potential to react with other substances. This section includes information\
+      \ on hazardous reactions, conditions to avoid, and incompatible materials that\
+      \ could cause degradation or dangerous reactions."
+    title: stability and reactivity
     from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+    domain_of:
+    - MSDS
+    range: string
+    required: false
+    recommended: true
+    multivalued: false
   toxicologicalInformation:
+    description: Details on the potential health effects of the product, including
+      routes of exposure (inhalation, ingestion, skin, eye contact), acute and chronic
+      toxicity and symptoms of exposure
+    title: toxicological information
     from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+    domain_of:
+    - MSDS
+    range: string
+    required: false
+    recommended: true
+    multivalued: false
   ecologicalInformation:
+    description: Details the potential environmental impact of the product, including
+      its effects on ecosystems, persistence, degradability, bioaccumulation potential,
+      and toxicity to aquatic and terrestrial organisms.
+    title: ecological information
     from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+    domain_of:
+    - MSDS
+    range: string
+    required: false
+    recommended: true
+    multivalued: false
   disposalConsiderations:
+    description: Guidance on the safe and environmentally responsible disposal of
+      the product, including recommended disposal methods, regulatory requirements,
+      and precautions to avoid harm to people and the environment during disposal.
+    title: disposal considerations
     from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+    domain_of:
+    - MSDS
+    range: string
+    required: false
+    recommended: true
+    multivalued: false
   transportInformation:
+    description: Details the regulations and guidelines for safely transporting the
+      product, including classifications for road, air, sea, or rail transport, UN
+      numbers, packaging requirements, and any special precautions to ensure safe
+      transit.
+    title: transport information
     from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+    domain_of:
+    - MSDS
+    range: string
+    required: false
+    recommended: true
+    multivalued: false
   regulatoryInformation:
+    description: Lists applicable laws, regulations, and standards governing the product,
+      including local, national, or international requirements for its handling, use,
+      transportation, and disposal, ensuring compliance with legal obligations.
+    title: regulatory information
     from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+    domain_of:
+    - MSDS
+    range: string
+    required: false
+    recommended: true
+    multivalued: false
   furtherInformation:
+    description: Provides any additional details or clarifications not covered in
+      other sections of the MSDS, such as references, supporting documents, or specific
+      instructions for safe handling and use of the product.
+    title: further information
     from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+    domain_of:
+    - MSDS
+    range: string
+    required: false
+    recommended: true
+    multivalued: false
   contentURL:
+    description: The web address or location where the file content is stored and
+      can be accessed or downloaded.
+    title: content URL
     from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+    domain_of:
+    - File
+    range: uri
+    required: true
+    multivalued: false
   format:
+    description: The file type or format that indicates how the data within the file
+      is structured
+    title: format
     from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+    domain_of:
+    - File
+    range: string
+    required: true
+    multivalued: false
   altText:
+    description: An alternate text for the image, if the image cannot be displayed
+    title: alt text
     from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+    domain_of:
+    - Image
+    range: string
+    required: false
+    recommended: true
+    multivalued: false
   email:
+    description: Email address
+    title: email
     from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+    close_mappings:
+    - schema:email
+    - vcard:email
+    domain_of:
+    - ContactPoint
+    range: string
+    required: false
+    recommended: true
+    multivalued: false
   telephone:
+    description: The telephone number
+    title: telephone
     from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+    close_mappings:
+    - schema:telephone
+    - vcard:telephone
+    domain_of:
+    - ContactPoint
+    range: string
+    required: false
+    recommended: true
+    multivalued: false
   streetAddress:
+    description: The building/apartment number and the street name
+    title: street address
     from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+    close_mappings:
+    - schema:streetAddress
+    - vcard:hasStreetAddress
+    domain_of:
+    - ContactPoint
+    range: string
+    required: false
+    multivalued: false
   addressLocality:
+    description: The locality in which the street address is, and which is in the
+      region. e.g, the city
+    title: locality/city
     from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+    close_mappings:
+    - schema:addressLocality
+    - vcard:hasLocality
+    domain_of:
+    - ContactPoint
+    range: string
+    required: false
+    multivalued: false
   addressRegion:
+    description: The region in which the locality is, and which is in the country.
+      For example, California or another appropriate first-level Administrative division
+    title: region
     from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+    close_mappings:
+    - schema:addressRegion
+    - vcard:hasRegion
+    domain_of:
+    - ContactPoint
+    range: string
+    required: false
+    multivalued: false
   postalCode:
+    description: The postal code
+    title: postal code
     from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+    close_mappings:
+    - schema:postalCode
+    - vcard:hasPostalCode
+    domain_of:
+    - ContactPoint
+    range: string
+    required: false
+    multivalued: false
   addressCountry:
+    description: The country as of  ISO 3166
+    title: address Country
     from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+    close_mappings:
+    - schema:addressCountry
+    - vcard:hasCountryName
+    domain_of:
+    - ContactPoint
+    range: Country
+    required: false
+    multivalued: false
   resourceURL:
+    description: The web address or location where the details or content is stored
+      and can be accessed or downloaded.
+    title: resource URL
     from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+    exact_mappings:
+    - dct:license
+    close_mappings:
+    - schema:url
+    - schema:url
+    domain_of:
+    - License
+    - Certification
+    range: uri
+    required: false
+    multivalued: false
   licensingOrAttribution:
+    description: A text or html code that provides any related data sharing licence
+      and/or attribution
+    title: licensing or attribution
     from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+    exact_mappings:
+    - dct:rights
+    close_mappings:
+    - schema:license
+    domain_of:
+    - License
+    range: string
+    required: false
+    multivalued: false
   certificationDocument:
+    description: The document(s) issued by an authority certifying the conformity
+      of the subject to the applicable scheme, including, as the case may be, the
+      documents attesting the equivalence to another certification scheme.
+    title: certification document
     from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+    domain_of:
+    - Certification
+    range: Document
+    required: false
+    multivalued: true
 classes:
   Resource:
     description: Resource published or curated by a single agent.
     title: Resource
     from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
     exact_mappings:
+    - dcat:Resource
     - dcat:Resource
     abstract: true
   Dataset:
@@ -513,7 +2315,10 @@ classes:
     from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
     exact_mappings:
     - dcat:Dataset
+    - dcat:Dataset
     close_mappings:
+    - wd:Q1172284
+    - schema:DataCatalog
     - wd:Q1172284
     - schema:DataCatalog
     is_a: Resource
@@ -525,7 +2330,10 @@ classes:
     from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
     exact_mappings:
     - dcat:DataService
+    - dcat:DataService
     close_mappings:
+    - wd:Q193424
+    - schema:WebAPI
     - wd:Q193424
     - schema:WebAPI
     is_a: Resource
@@ -541,9 +2349,9 @@ classes:
         - 'The title of the item should be as short and descriptive as possible. E.g.
           for virus products it should basically be based on the following Pattern:
 
-          "Virus name", "virus host type", "collection year", "country of collection"
-          ex "suspected epidemiological origin", "genotype", "strain", "variant name
-          or specific feature"'
+          ''Virus name'', ''virus host type'', ''collection year'', ''country of collection''
+          ex ''suspected epidemiological origin'', ''genotype'', ''strain'', ''variant
+          name or specific feature'
         exact_mappings:
         - dct:title
         close_mappings:
@@ -577,6 +2385,7 @@ classes:
     from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
     close_mappings:
     - wd:Q114469879
+    - wd:Q114469879
     is_a: Resource
     slots:
     - ID
@@ -607,7 +2416,10 @@ classes:
     from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
     exact_mappings:
     - dcat:Catalog
+    - dcat:Catalog
     close_mappings:
+    - wd:Q2352616
+    - schema:Dataset
     - wd:Q2352616
     - schema:Dataset
     is_a: Dataset
@@ -623,9 +2435,9 @@ classes:
         - 'The title of the item should be as short and descriptive as possible. E.g.
           for virus products it should basically be based on the following Pattern:
 
-          "Virus name", "virus host type", "collection year", "country of collection"
-          ex "suspected epidemiological origin", "genotype", "strain", "variant name
-          or specific feature"'
+          ''Virus name'', ''virus host type'', ''collection year'', ''country of collection''
+          ex ''suspected epidemiological origin'', ''genotype'', ''strain'', ''variant
+          name or specific feature'
         exact_mappings:
         - dct:title
         close_mappings:
@@ -657,6 +2469,8 @@ classes:
     title: Taxonomy
     from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
     close_mappings:
+    - wd:Q8269924
+    - skos:Collection
     - wd:Q8269924
     - skos:Collection
     is_a: Catalogue
@@ -726,6 +2540,7 @@ classes:
     title: Data provider
     from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
     close_mappings:
+    - wd:Q122625839
     - wd:Q122625839
     is_a: DataService
     slots:
@@ -884,7 +2699,7 @@ classes:
         multivalued: false
       pathogenType:
         description: Identification of the specific type of pathogen among the listed
-          categories e.g. "Virus","Viroid","Bacterium"...
+          categories e.g. 'Virus','Viroid','Bacterium'...
         title: pathogen type
         domain_of:
         - PathogenIdentification
@@ -966,6 +2781,7 @@ classes:
     from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
     close_mappings:
     - wd:Q591041
+    - wd:Q591041
     is_a: Resource
     slots:
     - title
@@ -982,9 +2798,9 @@ classes:
         - 'The title of the item should be as short and descriptive as possible. E.g.
           for virus products it should basically be based on the following Pattern:
 
-          "Virus name", "virus host type", "collection year", "country of collection"
-          ex "suspected epidemiological origin", "genotype", "strain", "variant name
-          or specific feature"'
+          ''Virus name'', ''virus host type'', ''collection year'', ''country of collection''
+          ex ''suspected epidemiological origin'', ''genotype'', ''strain'', ''variant
+          name or specific feature'
         exact_mappings:
         - dct:title
         domain_of:
@@ -1032,6 +2848,8 @@ classes:
     close_mappings:
     - wd:Q6499736
     - skos:Collection
+    - wd:Q6499736
+    - skos:Collection
     is_a: Catalogue
     slots:
     - termDataProvider
@@ -1061,6 +2879,7 @@ classes:
     from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
     close_mappings:
     - wd:Q1969448
+    - wd:Q1969448
     is_a: Resource
     abstract: true
     slots:
@@ -1076,9 +2895,9 @@ classes:
         - 'The title of the item should be as short and descriptive as possible. E.g.
           for virus products it should basically be based on the following Pattern:
 
-          "Virus name", "virus host type", "collection year", "country of collection"
-          ex "suspected epidemiological origin", "genotype", "strain", "variant name
-          or specific feature"'
+          ''Virus name'', ''virus host type'', ''collection year'', ''country of collection''
+          ex ''suspected epidemiological origin'', ''genotype'', ''strain'', ''variant
+          name or specific feature'
         exact_mappings:
         - dct:title
         close_mappings:
@@ -1137,7 +2956,9 @@ classes:
     from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
     exact_mappings:
     - dwc:vernacularName
+    - dwc:vernacularName
     close_mappings:
+    - wd:Q502895
     - wd:Q502895
     is_a: Term
     slots:
@@ -1145,13 +2966,12 @@ classes:
     - sourceOfInformation
     slot_usage:
       alternateName:
-        description: Any known alternate name related to this name
+        description: Any other name under which the entity can be known
         title: alternate name
         comments:
-        - including previous names and former taxonomic terms, this information can
-          also serve as keywords arround the pathogen name for search and as a bridge
-          with other projects that are still using other naming systems or taxonomies
-          e.g. the NCBI taxonomy
+        - This includes previous names, acronyms, former taxonomic terms, and other
+          variations. This information can serve as keywords for search purposes and
+          as a bridge with other projects that use different naming systems or taxonomies
         close_mappings:
         - wdp:P4970
         domain_of:
@@ -1176,12 +2996,14 @@ classes:
     from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
     close_mappings:
     - wd:Q125481078
+    - wd:Q125481078
     is_a: CommonName
   AlternateName:
-    description: List of alternate names for things
+    description: List of other names for things
     title: Alternate Name
     from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
     close_mappings:
+    - wd:Q7662595
     - wd:Q7662595
     is_a: Term
     slots:
@@ -1189,8 +3011,12 @@ classes:
     - sourceOfInformation
     slot_usage:
       alternateName:
-        description: Any known alternate name related to this name
+        description: Any other name under which the entity can be known
         title: alternate name
+        comments:
+        - This includes previous names, acronyms, former taxonomic terms, and other
+          variations. This information can serve as keywords for search purposes and
+          as a bridge with other projects that use different naming systems or taxonomies
         close_mappings:
         - wdp:P4970
         domain_of:
@@ -1220,6 +3046,7 @@ classes:
     from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
     close_mappings:
     - wd:Q125449255
+    - wd:Q125449255
     is_a: Term
   DOI:
     description: A unique string identifier assigned to a digital object, providing
@@ -1229,12 +3056,14 @@ classes:
     from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
     close_mappings:
     - wd:Q25670
+    - wd:Q25670
     is_a: Term
   Journal:
     description: Periodical journal publishing scientific research
     title: Journal
     from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
     close_mappings:
+    - wd:Q5633421
     - wd:Q5633421
     is_a: Term
   PDBReference:
@@ -1244,6 +3073,7 @@ classes:
     from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
     close_mappings:
     - wdp:Q42415644
+    - wdp:Q42415644
     is_a: Term
   Keyword:
     description: A term or phrase used to tag and categorize content
@@ -1251,12 +3081,14 @@ classes:
     from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
     close_mappings:
     - wd:Q1128340
+    - wd:Q1128340
     is_a: Term
   ProteinTag:
     description: Peptide sequence genetically grafted onto a recombinant protein
     title: Protein tag
     from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
     close_mappings:
+    - wd:Q645590
     - wd:Q645590
     is_a: Term
   SpecialFeature:
@@ -1275,6 +3107,7 @@ classes:
     title: Expression vector
     from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
     close_mappings:
+    - wd:Q5421712
     - wd:Q5421712
     is_a: Term
   PlasmidSelection:
@@ -1302,6 +3135,7 @@ classes:
     from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
     close_mappings:
     - wd:Q21014462
+    - wd:Q21014462
     is_a: Term
   ProductCategory:
     description: A term used to classify a group of products that share common characteristics
@@ -1309,6 +3143,7 @@ classes:
     title: Product category
     from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
     close_mappings:
+    - wd:Q63981612
     - wd:Q63981612
     is_a: Term
     slots:
@@ -1339,7 +3174,9 @@ classes:
     from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
     exact_mappings:
     - dct:Location
+    - dct:Location
     close_mappings:
+    - wd:Q3885844
     - wd:Q3885844
     is_a: Term
   IPLCOrigin:
@@ -1355,6 +3192,7 @@ classes:
     - Use of Data provider recommended... serve as a local cache for ISO3166
     from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
     close_mappings:
+    - wd:Q6256
     - wd:Q6256
     is_a: Term
     slots:
@@ -1382,6 +3220,7 @@ classes:
     from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
     close_mappings:
     - wd:Q104795308
+    - wd:Q104795308
     is_a: CommonName
   TaxonomicRank:
     description: The possible taxonomic ranks and their description
@@ -1390,6 +3229,7 @@ classes:
     - Use of Data provider recommended
     from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
     close_mappings:
+    - wd:Q427626
     - wd:Q427626
     is_a: Term
     slots:
@@ -1413,7 +3253,9 @@ classes:
     from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
     exact_mappings:
     - dwc:Taxon
+    - dwc:Taxon
     close_mappings:
+    - wd:Q16521
     - wd:Q16521
     is_a: Term
     slots:
@@ -1494,9 +3336,8 @@ classes:
         title: taxonomic node ID
         comments:
         - NCBI does not have a taxon_node id, only a taxonomicID. Taxon_node id is
-          Unique  in NCBI= Key of the taxon node !! Could be replaced by a composite
-          key made of "taxonomic ID" + "has version" But can be referenced as it seems
-          the "taxonomic node_ID" will be generated and provided by the ICTV
+          Unique  in ICTV= Key of the taxon node !! Could be replaced by a composite
+          key made of 'taxonomic ID' + 'has version'
         close_mappings:
         - dwc:taxonID
         domain_of:
@@ -1565,6 +3406,7 @@ classes:
     from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
     close_mappings:
     - wd:Q3511065
+    - wd:Q3511065
     is_a: Dataset
     slots:
     - sequenceReference
@@ -1586,9 +3428,9 @@ classes:
         title: sequence FASTA
         comments:
         - In FASTA format the line before the nucleotide sequence, called the FASTA
-          definition line, must begin with a carat (">"), followed by a unique SeqID
-          (sequence identifier). In case the sequence is made of multiple parts several
-          fasta sequences can be provided
+          definition line, must begin with a charater ('>'), followed by a unique
+          SeqID (sequence identifier). In case the sequence is made of multiple parts
+          several fasta sequences can be provided
         domain_of:
         - Sequence
         range: string
@@ -1636,7 +3478,9 @@ classes:
     from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
     exact_mappings:
     - dct:Agent
+    - dct:Agent
     close_mappings:
+    - foaf:Agent
     - foaf:Agent
     is_a: Resource
     slots:
@@ -1653,9 +3497,9 @@ classes:
         - 'The title of the item should be as short and descriptive as possible. E.g.
           for virus products it should basically be based on the following Pattern:
 
-          "Virus name", "virus host type", "collection year", "country of collection"
-          ex "suspected epidemiological origin", "genotype", "strain", "variant name
-          or specific feature"'
+          ''Virus name'', ''virus host type'', ''collection year'', ''country of collection''
+          ex ''suspected epidemiological origin'', ''genotype'', ''strain'', ''variant
+          name or specific feature'
         exact_mappings:
         - dct:title
         close_mappings:
@@ -1683,15 +3527,11 @@ classes:
         recommended: true
         multivalued: false
       homePage:
-        description: Refers to the degree of purity achieved for a protein sample.
-          Possible values include ">95%" (the protein is highly purified, with more
-          than 95% purity) and "Unpurified expression host lysate or partly purified
-          protein" (the protein is either unpurified and present in the host cell
-          lysate or only partially purified).
+        description: A web page that serves as the main or introductory page
         title: home page
         domain_of:
         - PersonOrOrganization
-        range: string
+        range: uri
         required: false
         multivalued: false
       contactPoint:
@@ -1720,6 +3560,8 @@ classes:
     close_mappings:
     - wd:Q215627
     - vcard:Individual
+    - wd:Q215627
+    - vcard:Individual
     is_a: PersonOrOrganization
     slots:
     - oRCIDiD
@@ -1743,6 +3585,8 @@ classes:
     close_mappings:
     - wd:Q43229
     - vcard:Organization
+    - wd:Q43229
+    - vcard:Organization
     is_a: PersonOrOrganization
     slots:
     - alternateName
@@ -1750,16 +3594,19 @@ classes:
     - rORiD
     slot_usage:
       alternateName:
-        description: An alternate name or acronym
+        description: Any other name under which the entity can be known
         title: alternate name
+        comments:
+        - This includes previous names, acronyms, former taxonomic terms, and other
+          variations. This information can serve as keywords for search purposes and
+          as a bridge with other projects that use different naming systems or taxonomies
         close_mappings:
-        - dwc:institutionCode
+        - wdp:P4970
         domain_of:
         - Organization
         range: AlternateName
         required: false
-        recommended: true
-        multivalued: false
+        multivalued: true
       country:
         description: The country of the organization
         title: country
@@ -1787,12 +3634,14 @@ classes:
     from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
     close_mappings:
     - wd:Q1438053
+    - wd:Q1438053
     is_a: Organization
   Provider:
     description: A provider of products or services, as a specific organization
     title: Provider
     from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
     close_mappings:
+    - dct:ProvenanceStatement
     - dct:ProvenanceStatement
     is_a: Organization
     slots:
@@ -1813,6 +3662,7 @@ classes:
     title: Originator
     from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
     close_mappings:
+    - dct:ProvenanceStatement
     - dct:ProvenanceStatement
     is_a: PersonOrOrganization
   BiologicalMaterialOrigin:
@@ -1909,7 +3759,7 @@ classes:
     slot_usage:
       countryOfCollection:
         description: The geographical location where the sample was collected in situ.
-          Used for Nagoya/CBD; equivalent to "country of origin".
+          Used for Nagoya/CBD; equivalent to 'country of origin'.
         title: country of collection
         close_mappings:
         - dct:spatial
@@ -1930,7 +3780,7 @@ classes:
         multivalued: false
       collectionDate:
         description: The date when the sample was collected in situ. If unknown/private,
-          use a proxy date such as "date received" and indicate this by setting to
+          use a proxy date such as 'date received' and indicate this by setting to
           true the before date property
         title: collection date
         domain_of:
@@ -2018,6 +3868,7 @@ classes:
     from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
     close_mappings:
     - wd:Q2668072
+    - wd:Q2668072
     is_a: Catalogue
     slots:
     - collectionItem
@@ -2087,9 +3938,9 @@ classes:
         - 'The title of the item should be as short and descriptive as possible. E.g.
           for virus products it should basically be based on the following Pattern:
 
-          "Virus name", "virus host type", "collection year", "country of collection"
-          ex "suspected epidemiological origin", "genotype", "strain", "variant name
-          or specific feature"'
+          ''Virus name'', ''virus host type'', ''collection year'', ''country of collection''
+          ex ''suspected epidemiological origin'', ''genotype'', ''strain'', ''variant
+          name or specific feature'
         exact_mappings:
         - dct:title
         close_mappings:
@@ -2212,7 +4063,7 @@ classes:
         required: true
         multivalued: true
       relatedDOI:
-        description: Any DOI that can be related
+        description: Any Digital Object Identifier that can be related
         title: DOI
         close_mappings:
         - wdp:P356
@@ -2298,7 +4149,8 @@ classes:
         required: true
         multivalued: false
       complementaryDocument:
-        description: Any complementary document that can be related to this Item
+        description: Any additional documents that provide supplementary information,
+          instructions, or guidelines relevant to the use of this item
         title: complementary document
         domain_of:
         - ProductOrService
@@ -2376,6 +4228,7 @@ classes:
     from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
     close_mappings:
     - wd:Q7406919
+    - wd:Q7406919
     is_a: ProductOrService
     slots:
     - modelSpecies
@@ -2403,6 +4256,7 @@ classes:
     title: Product
     from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
     close_mappings:
+    - wd:Q2424752
     - wd:Q2424752
     is_a: ProductOrService
     slots:
@@ -2463,10 +4317,9 @@ classes:
           environmental factors.
         title: storage conditions
         comments:
-        - "e.g, could be a xsd:string in enumeration (\"Freeze Dried\", \"Liquid Nitrogen\"\
-          , \"Viral Storage Medium -20C\", \"Viral Storage Medium -80C\", \"Living\
-          \ plant material (>= +4\xB0C)\", \"Gas Phase\", \"Ethanol -20C\", \"Ethanol\
-          \ -80C\", \"Dried\")"
+        - "e.g, could be a xsd:string in enumeration ('Freeze Dried', 'Liquid Nitrogen',\
+          \ 'Viral Storage Medium -20C', 'Viral Storage Medium -80C', 'Living plant\
+          \ material (>= +4\xB0C)', 'Gas Phase', 'Ethanol -20C', 'Ethanol -80C', 'Dried')"
         domain_of:
         - Product
         range: string
@@ -2499,6 +4352,7 @@ classes:
     from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
     close_mappings:
     - wd:Q79460
+    - wd:Q79460
     is_a: Product
     slots:
     - productionSystem
@@ -2526,7 +4380,8 @@ classes:
         required: true
         multivalued: false
       specificityDocumented:
-        description: Tell if the antibody specificity was documented
+        description: Boolean value indicating whether the specificity of the product
+          has been formally documented
         title: specificity documented
         domain_of:
         - Antibody
@@ -2543,7 +4398,7 @@ classes:
         required: true
         multivalued: false
       sequenceReference:
-        description: A reference that permits to retreive the sequence information
+        description: A reference that permits to retrieve the sequence information
           from a sequence provider
         title: sequence reference
         domain_of:
@@ -2557,6 +4412,7 @@ classes:
     title: Hybridoma
     from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
     close_mappings:
+    - wd:Q27554370
     - wd:Q27554370
     is_a: Antibody
     slots:
@@ -2575,6 +4431,7 @@ classes:
     title: Protein
     from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
     close_mappings:
+    - wd:Q8054
     - wd:Q8054
     is_a: Product
     slots:
@@ -2596,7 +4453,7 @@ classes:
       biologicalMaterialOrigin:
         description: Information about the origin of the biological material, essential
           for access, utilization, and benefit-sharing of genetic resources in compliance
-          with the Nagoya Protocol.
+          with the Nagoya Protocol
         title: Biological Material origin
         domain_of:
         - Protein
@@ -2653,8 +4510,8 @@ classes:
         multivalued: true
       expressedAs:
         description: Refers to the form in which the protein is produced and manifested
-          in a biological system. Possible values include "Soluble" (proteins that
-          are dissolved in the cellular or extracellular fluid) and "Inclusion bodies"
+          in a biological system. Possible values include 'Soluble' (proteins that
+          are dissolved in the cellular or extracellular fluid) and 'Inclusion bodies'
           (aggregated proteins that are insoluble and form within the cell)
         title: expressed as
         domain_of:
@@ -2664,8 +4521,8 @@ classes:
         multivalued: true
       inclusionBodiesType:
         description: Refers to the state of aggregated proteins within a cell. Possible
-          values include "Denatured" (proteins are in an unfolded, inactive state)
-          and "Refolded" (proteins have been processed to regain their functional,
+          values include 'Denatured' (proteins are in an unfolded, inactive state)
+          and 'Refolded' (proteins have been processed to regain their functional,
           active conformation).
         title: inclusion bodies type
         domain_of:
@@ -2675,8 +4532,8 @@ classes:
         multivalued: true
       expressionSystem:
         description: The host organism or cellular environment used to produce a protein
-          from a specific gene. Possible values include "E. coli" (bacterial system),
-          "Insect cells" (using baculovirus vectors), and "Mammalian cells" (mammalian
+          from a specific gene. Possible values include 'E. coli' (bacterial system),
+          'Insect cells' (using baculovirus vectors), and 'Mammalian cells' (mammalian
           cell lines).
         title: expression system
         domain_of:
@@ -2686,9 +4543,9 @@ classes:
         multivalued: true
       functionalCharacterization:
         description: The process of determining and describing the specific biological
-          activities and roles of a protein. Possible values include "Functionally
-          characterized" (the protein's functions have been identified and described)
-          and "No functional characterization" (the protein's functions have not been
+          activities and roles of a protein. Possible values include 'Functionally
+          characterized' (the protein's functions have been identified and described)
+          and 'No functional characterization' (the protein's functions have not been
           identified or described).
         title: functional characterization
         domain_of:
@@ -2710,9 +4567,9 @@ classes:
         multivalued: true
       proteinPurification:
         description: Refers to the degree of purity achieved for a protein sample.
-          Possible values include ">95%" (the protein is highly purified, with more
-          than 95% purity) and "Unpurified expression host lysate or partly purified
-          protein" (the protein is either unpurified and present in the host cell
+          Possible values include '>95%' (the protein is highly purified, with more
+          than 95% purity) and 'Unpurified expression host lysate or partly purified
+          protein' (the protein is either unpurified and present in the host cell
           lysate or only partially purified).
         title: protein purification
         domain_of:
@@ -2722,9 +4579,9 @@ classes:
         multivalued: true
       theTAGStatusOfTheSolubilizedProtein:
         description: Indicates the presence and condition of a tag on the protein
-          after solubilization. Possible values include "Uncleaved Tag" (the tag is
-          still attached to the protein), "Cleaved Tag" (the tag has been removed
-          from the protein), and "No Tag" (the protein does not have a tag)
+          after solubilization. Possible values include 'Uncleaved Tag' (the tag is
+          still attached to the protein), 'Cleaved Tag' (the tag has been removed
+          from the protein), and 'No Tag' (the protein does not have a tag)
         title: TAG status of the solubilized protein
         domain_of:
         - Protein
@@ -2734,8 +4591,8 @@ classes:
       typeOfFunctionalCharacterization:
         description: Refers to the classification of a protein based on the specific
           type of functional analysis performed to determine its biological activities
-          and roles. Possible values include "Enzymatic" (the protein has been characterized
-          for its enzyme activity) and "Antigenic" (the protein has been characterized
+          and roles. Possible values include 'Enzymatic' (the protein has been characterized
+          for its enzyme activity) and 'Antigenic' (the protein has been characterized
           for its ability to elicit an immune response).
         title: type of functional Characterization
         domain_of:
@@ -2748,6 +4605,7 @@ classes:
     title: Nucleic Acid
     from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
     close_mappings:
+    - wd:Q123619
     - wd:Q123619
     is_a: Product
     slots:
@@ -2859,8 +4717,11 @@ classes:
         required: false
         multivalued: false
       identificationTechnique:
-        description: The method used to identify the nucleic acid sequence or its
-          associated constructs, such as PCR, sequencing, or hybridization
+        description: A method or procedure used to detect, identify, and confirm the
+          presence of a specific nucleic acid sequence, pathogen, or associated constructs.
+          This may involve various techniques such as PCR, sequencing, hybridization,
+          or other molecular methods, utilizing specific tools and procedures for
+          accurate detection and analysis
         title: identification technique
         domain_of:
         - Nucleic Acid
@@ -2869,9 +4730,9 @@ classes:
         multivalued: false
       sequencing:
         description: Refers to the level of sequencing performed on the nucleic acid.
-          Possible values include "Not sequenced" (no sequencing has been performed),
-          "Partly sequenced" (only a portion of the nucleic acid sequence has been
-          determined), and "Fully sequenced" (the entire nucleic acid sequence has
+          Possible values include 'Not sequenced' (no sequencing has been performed),
+          'Partly sequenced' (only a portion of the nucleic acid sequence has been
+          determined), and 'Fully sequenced' (the entire nucleic acid sequence has
           been determined).
         title: sequencing
         comments:
@@ -2923,8 +4784,8 @@ classes:
         required: false
         multivalued: true
       specificityDocumented:
-        description: Boolean value indicating whether the specificity of the detection
-          kit has been formally documented.
+        description: Boolean value indicating whether the specificity of the product
+          has been formally documented
         title: specificity documented
         domain_of:
         - Detection Kit
@@ -2957,10 +4818,10 @@ classes:
     from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
     close_mappings:
     - wd:Q1020767
+    - wd:Q1020767
     is_a: Product
     slots:
     - productsOfTheBundle
-    - complementaryDocument
     slot_usage:
       productsOfTheBundle:
         description: Associates the bundle with the individual products it contains,
@@ -2971,18 +4832,6 @@ classes:
         range: Product
         required: true
         multivalued: true
-      complementaryDocument:
-        description: 'Links the bundle to any additional documents that provide supplementary
-          information, instructions, or guidelines relevant to the use and assembly
-          of the bundle''s products.
-
-          '
-        title: complementary document
-        domain_of:
-        - Bundle
-        range: File
-        required: false
-        multivalued: true
   Pathogen:
     description: Biological entity that causes disease in its host, which is typically
       an infectious microorganism or agent, such as a virus, bacterium, protozoan,
@@ -2990,6 +4839,7 @@ classes:
     title: Pathogen
     from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
     close_mappings:
+    - wd:Q170065
     - wd:Q170065
     is_a: Product
     abstract: true
@@ -3016,7 +4866,7 @@ classes:
       biologicalMaterialOrigin:
         description: Information about the origin of the biological material, essential
           for access, utilization, and benefit-sharing of genetic resources in compliance
-          with the Nagoya Protocol.
+          with the Nagoya Protocol
         title: Biological Material origin
         domain_of:
         - Pathogen
@@ -3079,8 +4929,8 @@ classes:
         multivalued: true
       cultivability:
         description: The ability of the pathogen to be cultivated or grown in laboratory
-          conditions. Possible values are " Cultivable pathogen", "Uncultivable pathogen"
-          or "Inactivated pathogen"
+          conditions. Possible values are  'Cultivable pathogen', 'Uncultivable pathogen'
+          or 'Inactivated pathogen'
         title: cultivability
         comments:
         - Might also be related to a product sub-category that helps filtering
@@ -3100,9 +4950,11 @@ classes:
         required: false
         multivalued: false
       identificationTechnique:
-        description: The method or technique used to identify and confirm the presence
-          of the pathogen, detailing the specific procedures and tools employed in
-          the detection process
+        description: A method or procedure used to detect, identify, and confirm the
+          presence of a specific nucleic acid sequence, pathogen, or associated constructs.
+          This may involve various techniques such as PCR, sequencing, hybridization,
+          or other molecular methods, utilizing specific tools and procedures for
+          accurate detection and analysis
         title: identification technique
         domain_of:
         - Pathogen
@@ -3150,8 +5002,8 @@ classes:
         multivalued: false
       letterOfAuthority:
         description: Indicate whether a Letter of Authority is required, confirming
-          the necessity of formal authorization. The possible values are "N/A", "NOT
-          Required", "Required for customers in the EU" or "Required"
+          the necessity of formal authorization. The possible values are 'N/A', 'NOT
+          Required', 'Required for customers in the EU' or 'Required'
         title: letter of authority
         ifabsent: string(Not applicable)
         domain_of:
@@ -3171,8 +5023,8 @@ classes:
         multivalued: false
       genomeSequencing:
         description: The extent of the pathogen's genetic material that has been sequenced,
-          with possible values including "Complete genome" for the entire genome,
-          "Complete coding sequence" for all coding regions, and "Partial sequence"
+          with possible values including 'Complete genome' for the entire genome,
+          'Complete coding sequence' for all coding regions, and 'Partial sequence'
           for only a portion of the genetic material
         title: genome sequencing
         domain_of:
@@ -3198,6 +5050,7 @@ classes:
     title: Virus
     from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
     close_mappings:
+    - wd:Q808
     - wd:Q808
     is_a: Pathogen
     slots:
@@ -3240,12 +5093,14 @@ classes:
     from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
     close_mappings:
     - wd:Q10876
+    - wd:Q10876
     is_a: Pathogen
   Fungus:
     description: The fungus as a biological material
     title: Fungus
     from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
     close_mappings:
+    - wd:Q764
     - wd:Q764
     is_a: Pathogen
   Protozoan:
@@ -3254,6 +5109,7 @@ classes:
     from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
     close_mappings:
     - wd:Q101274
+    - wd:Q101274
     is_a: Pathogen
   Viroid:
     description: The viroid as a biological material
@@ -3261,12 +5117,14 @@ classes:
     from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
     close_mappings:
     - wd:Q209917
+    - wd:Q209917
     is_a: Pathogen
   Prion:
     description: The prion as a biological material
     title: Prion
     from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
     close_mappings:
+    - wd:Q47051
     - wd:Q47051
     is_a: Pathogen
   MSDS:
@@ -3276,6 +5134,7 @@ classes:
     title: MSDS
     from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
     close_mappings:
+    - wd:Q222067
     - wd:Q222067
     is_a: Dataset
     slots:
@@ -3474,7 +5333,9 @@ classes:
     from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
     exact_mappings:
     - dcat:mediaType
+    - dcat:mediaType
     close_mappings:
+    - wd:Q82753
     - wd:Q82753
     is_a: Resource
     abstract: true
@@ -3492,9 +5353,9 @@ classes:
         - 'The title of the item should be as short and descriptive as possible. E.g.
           for virus products it should basically be based on the following Pattern:
 
-          "Virus name", "virus host type", "collection year", "country of collection"
-          ex "suspected epidemiological origin", "genotype", "strain", "variant name
-          or specific feature"'
+          ''Virus name'', ''virus host type'', ''collection year'', ''country of collection''
+          ex ''suspected epidemiological origin'', ''genotype'', ''strain'', ''variant
+          name or specific feature'
         exact_mappings:
         - dct:title
         close_mappings:
@@ -3540,9 +5401,11 @@ classes:
         required: true
         multivalued: false
       license:
-        description: The legal terms and conditions under which the file can be used,
-          shared, or distributed, indicating any restrictions or permissions.
+        description: Information about terms and conditions under which the subject
+          can be used, shared, or distributed, indicating any restrictions or permissions
         title: license
+        exact_mappings:
+        - dct:license
         domain_of:
         - File
         range: License
@@ -3555,6 +5418,7 @@ classes:
     from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
     close_mappings:
     - wd:Q42848
+    - wd:Q42848
     is_a: File
   Document:
     description: Subclass of File representing textual or written files such as reports,
@@ -3563,12 +5427,14 @@ classes:
     from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
     close_mappings:
     - wd:Q49848
+    - wd:Q49848
     is_a: File
   Audio:
     description: Subclass of File representing sound recordings or audio tracks
     title: Audio
     from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
     close_mappings:
+    - wd:Q26987229
     - wd:Q26987229
     is_a: File
   Video:
@@ -3578,6 +5444,7 @@ classes:
     from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
     close_mappings:
     - wd:Q98405806
+    - wd:Q98405806
     is_a: File
   Image:
     description: Subclass of File representing visual content such as pictures, diagrams,
@@ -3585,6 +5452,7 @@ classes:
     title: Image
     from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
     close_mappings:
+    - wd:Q860625
     - wd:Q860625
     is_a: File
     slots:
@@ -3604,6 +5472,8 @@ classes:
     title: Contact Point
     from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
     close_mappings:
+    - wd:Q30322502
+    - vcard:Contact
     - wd:Q30322502
     - vcard:Contact
     is_a: Resource
@@ -3626,9 +5496,9 @@ classes:
         - 'The title of the item should be as short and descriptive as possible. E.g.
           for virus products it should basically be based on the following Pattern:
 
-          "Virus name", "virus host type", "collection year", "country of collection"
-          ex "suspected epidemiological origin", "genotype", "strain", "variant name
-          or specific feature"'
+          ''Virus name'', ''virus host type'', ''collection year'', ''country of collection''
+          ex ''suspected epidemiological origin'', ''genotype'', ''strain'', ''variant
+          name or specific feature'
         exact_mappings:
         - dct:title
         close_mappings:
@@ -3756,7 +5626,10 @@ classes:
     from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
     exact_mappings:
     - dct:RightsStatement
+    - dct:RightsStatement
     close_mappings:
+    - wd:Q79719
+    - dct:LicenseDocument
     - wd:Q79719
     - dct:LicenseDocument
     is_a: Resource
@@ -3774,9 +5647,9 @@ classes:
         - 'The title of the item should be as short and descriptive as possible. E.g.
           for virus products it should basically be based on the following Pattern:
 
-          "Virus name", "virus host type", "collection year", "country of collection"
-          ex "suspected epidemiological origin", "genotype", "strain", "variant name
-          or specific feature"'
+          ''Virus name'', ''virus host type'', ''collection year'', ''country of collection''
+          ex ''suspected epidemiological origin'', ''genotype'', ''strain'', ''variant
+          name or specific feature'
         exact_mappings:
         - dct:title
         close_mappings:
@@ -3845,6 +5718,8 @@ classes:
     close_mappings:
     - wd:Q374814
     - schema:Certification
+    - wd:Q374814
+    - schema:Certification
     is_a: Resource
     slots:
     - name
@@ -3860,9 +5735,9 @@ classes:
         - 'The title of the item should be as short and descriptive as possible. E.g.
           for virus products it should basically be based on the following Pattern:
 
-          "Virus name", "virus host type", "collection year", "country of collection"
-          ex "suspected epidemiological origin", "genotype", "strain", "variant name
-          or specific feature"'
+          ''Virus name'', ''virus host type'', ''collection year'', ''country of collection''
+          ex ''suspected epidemiological origin'', ''genotype'', ''strain'', ''variant
+          name or specific feature'
         exact_mappings:
         - dct:title
         close_mappings:
@@ -3919,4 +5794,4 @@ classes:
         required: false
         multivalued: false
 source_file: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl
-generation_date: '2025-01-27T11:43:48'
+generation_date: '2025-02-05T11:29:14'

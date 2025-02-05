@@ -1,6 +1,11 @@
 
 
-# Slot: productionSystem
+# Slot: production system (productionSystem)
+
+
+_The biological and technological methods and processes used to produce the antibody_
+
+
 
 
 
@@ -30,6 +35,8 @@ URI: [EVORAO:productionSystem](https://raw.githubusercontent.com/EVORA-project/e
 ## Properties
 
 * Range: [String](String.md)
+
+* Recommended: True
 
 
 
@@ -66,12 +73,18 @@ URI: [EVORAO:productionSystem](https://raw.githubusercontent.com/EVORA-project/e
 <details>
 ```yaml
 name: productionSystem
+description: The biological and technological methods and processes used to produce
+  the antibody
+title: production system
 from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
 rank: 1000
 alias: productionSystem
 domain_of:
 - Antibody
 range: string
+required: false
+recommended: true
+multivalued: false
 
 ```
 </details>

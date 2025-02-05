@@ -37,7 +37,7 @@
 --     * Slot: providedEntityType_id Description: The identification of the entity type (Class) described by the response to the query
 -- # Class: "PathogenIdentification" Description: "A collection of distinguishing information that enables the differentiation of a pathogen from another"
 --     * Slot: id Description: 
---     * Slot: pathogenType Description: Identification of the specific type of pathogen among the listed categories e.g. "Virus","Viroid","Bacterium"...
+--     * Slot: pathogenType Description: Identification of the specific type of pathogen among the listed categories e.g. 'Virus','Viroid','Bacterium'...
 --     * Slot: subspecies Description: The subspecies information differentiates closely related pathogens within a single species
 --     * Slot: strain Description: Identifier given to a genetic variant within a single species
 --     * Slot: isolate Description: Identifier given to a pathogen that has been isolated from an infected host and propagated in a laboratory culture. The isolate information may include an internal reference code from the laboratory that took the sample or performed the isolation, as well as details about the specific conditions of isolation, such as the name of the town, hospital, and type of host
@@ -76,7 +76,7 @@
 --     * Slot: description Description: A short explanation of the characteristics, features, or nature of the current item
 --     * Slot: weight Description: A numerical value indicating relative importance or priority, generally processed in ascending order. This weight helps prioritize content when organizing or processing data. Its value can be negative, with a default set to 0
 --     * Slot: inVocabulary_id Description: Terms belong to a specific vocabulary
--- # Class: "AlternateName" Description: "List of alternate names for things"
+-- # Class: "AlternateName" Description: "List of other names for things"
 --     * Slot: id Description: 
 --     * Slot: name Description: The label that allows humans to identify the current item
 --     * Slot: description Description: A short explanation of the characteristics, features, or nature of the current item
@@ -231,7 +231,7 @@
 --     * Slot: id Description: 
 --     * Slot: name Description: The label that allows humans to identify the current item
 --     * Slot: description Description: A short explanation of the characteristics, features, or nature of the current item
---     * Slot: homePage Description: Refers to the degree of purity achieved for a protein sample. Possible values include ">95%" (the protein is highly purified, with more than 95% purity) and "Unpurified expression host lysate or partly purified protein" (the protein is either unpurified and present in the host cell lysate or only partially purified).
+--     * Slot: homePage Description: A web page that serves as the main or introductory page
 --     * Slot: contactPoint_id Description: An information that allows someone to establish communication
 --     * Slot: logo_id Description: A path or URL to the related logo
 -- # Class: "Person" Description: "An individual"
@@ -239,7 +239,7 @@
 --     * Slot: oRCIDiD Description: Unique persistent identifier for a person, provided by the Open Researcher and Contributor ID (ORCID) organisation
 --     * Slot: name Description: The label that allows humans to identify the current item
 --     * Slot: description Description: A short explanation of the characteristics, features, or nature of the current item
---     * Slot: homePage Description: Refers to the degree of purity achieved for a protein sample. Possible values include ">95%" (the protein is highly purified, with more than 95% purity) and "Unpurified expression host lysate or partly purified protein" (the protein is either unpurified and present in the host cell lysate or only partially purified).
+--     * Slot: homePage Description: A web page that serves as the main or introductory page
 --     * Slot: contactPoint_id Description: An information that allows someone to establish communication
 --     * Slot: logo_id Description: A path or URL to the related logo
 -- # Class: "Organization" Description: "A social entity established to meet needs or pursue specific goals"
@@ -247,8 +247,7 @@
 --     * Slot: rORiD Description: The corresponding organization's persistent identifier from the Research Organization Registry (ROR)
 --     * Slot: name Description: The label that allows humans to identify the current item
 --     * Slot: description Description: A short explanation of the characteristics, features, or nature of the current item
---     * Slot: homePage Description: Refers to the degree of purity achieved for a protein sample. Possible values include ">95%" (the protein is highly purified, with more than 95% purity) and "Unpurified expression host lysate or partly purified protein" (the protein is either unpurified and present in the host cell lysate or only partially purified).
---     * Slot: alternateName_id Description: An alternate name or acronym
+--     * Slot: homePage Description: A web page that serves as the main or introductory page
 --     * Slot: country_id Description: The country of the organization
 --     * Slot: contactPoint_id Description: An information that allows someone to establish communication
 --     * Slot: logo_id Description: A path or URL to the related logo
@@ -257,8 +256,7 @@
 --     * Slot: rORiD Description: The corresponding organization's persistent identifier from the Research Organization Registry (ROR)
 --     * Slot: name Description: The label that allows humans to identify the current item
 --     * Slot: description Description: A short explanation of the characteristics, features, or nature of the current item
---     * Slot: homePage Description: Refers to the degree of purity achieved for a protein sample. Possible values include ">95%" (the protein is highly purified, with more than 95% purity) and "Unpurified expression host lysate or partly purified protein" (the protein is either unpurified and present in the host cell lysate or only partially purified).
---     * Slot: alternateName_id Description: An alternate name or acronym
+--     * Slot: homePage Description: A web page that serves as the main or introductory page
 --     * Slot: country_id Description: The country of the organization
 --     * Slot: contactPoint_id Description: An information that allows someone to establish communication
 --     * Slot: logo_id Description: A path or URL to the related logo
@@ -267,8 +265,7 @@
 --     * Slot: rORiD Description: The corresponding organization's persistent identifier from the Research Organization Registry (ROR)
 --     * Slot: name Description: The label that allows humans to identify the current item
 --     * Slot: description Description: A short explanation of the characteristics, features, or nature of the current item
---     * Slot: homePage Description: Refers to the degree of purity achieved for a protein sample. Possible values include ">95%" (the protein is highly purified, with more than 95% purity) and "Unpurified expression host lysate or partly purified protein" (the protein is either unpurified and present in the host cell lysate or only partially purified).
---     * Slot: alternateName_id Description: An alternate name or acronym
+--     * Slot: homePage Description: A web page that serves as the main or introductory page
 --     * Slot: country_id Description: The country of the organization
 --     * Slot: contactPoint_id Description: An information that allows someone to establish communication
 --     * Slot: logo_id Description: A path or URL to the related logo
@@ -276,7 +273,7 @@
 --     * Slot: id Description: 
 --     * Slot: name Description: The label that allows humans to identify the current item
 --     * Slot: description Description: A short explanation of the characteristics, features, or nature of the current item
---     * Slot: homePage Description: Refers to the degree of purity achieved for a protein sample. Possible values include ">95%" (the protein is highly purified, with more than 95% purity) and "Unpurified expression host lysate or partly purified protein" (the protein is either unpurified and present in the host cell lysate or only partially purified).
+--     * Slot: homePage Description: A web page that serves as the main or introductory page
 --     * Slot: contactPoint_id Description: An information that allows someone to establish communication
 --     * Slot: logo_id Description: A path or URL to the related logo
 -- # Class: "BiologicalMaterialOrigin" Description: "Information about the origin of the biological material, compulsory for access, utilization, and benefit-sharing of genetic resources in compliance with the Nagoya Protocol"
@@ -289,11 +286,11 @@
 --     * Slot: recombinantPartIdentification_id Description: Identification of a recombinant part
 -- # Class: "NaturalPartOrigin" Description: "Information on the origin of a natural part that composes the biological material"
 --     * Slot: id Description: 
---     * Slot: collectionDate Description: The date when the sample was collected in situ. If unknown/private, use a proxy date such as "date received" and indicate this by setting to true the before date property
+--     * Slot: collectionDate Description: The date when the sample was collected in situ. If unknown/private, use a proxy date such as 'date received' and indicate this by setting to true the before date property
 --     * Slot: beforeDate Description: Set to TRUE if a proxy date for the collection date is used
 --     * Slot: permitIdentifierForABS Description: Reference of the permit identifiers for access to the genetic resource, applicable if the genetic resource falls under Access and Benefit-Sharing (ABS) regulations
 --     * Slot: accessToPhysicalGeneticResource Description: Indicate if the biological part was produced with access to a physical genetic resource
---     * Slot: countryOfCollection_id Description: The geographical location where the sample was collected in situ. Used for Nagoya/CBD; equivalent to "country of origin".
+--     * Slot: countryOfCollection_id Description: The geographical location where the sample was collected in situ. Used for Nagoya/CBD; equivalent to 'country of origin'.
 --     * Slot: indigenousPoepleAndLocalCommunityOrigin_id Description: The specific IPLC area (Indigenous People and Local Communities) from which this sample/element was sampled, if relevant
 --     * Slot: recombinantPartIdentification_id Description: Identification of a recombinant part
 -- # Class: "SyntheticPartOrigin" Description: "Information on the origin of a synthetic part that composes the biological material"
@@ -380,7 +377,7 @@
 --     * Slot: id Description: 
 --     * Slot: productionSystem Description: The biological and technological methods and processes used to produce the antibody
 --     * Slot: antibodyPurifiedByAffinity Description: Indicates whether or not if the antibody was purified by affinity
---     * Slot: specificityDocumented Description: Tell if the antibody specificity was documented
+--     * Slot: specificityDocumented Description: Boolean value indicating whether the specificity of the product has been formally documented
 --     * Slot: targetedAntigen Description: Specific molecular structure or epitope recognized and bound by an antibody
 --     * Slot: shippingConditions Description: Specification of the terms and parameters for transporting
 --     * Slot: storageConditions Description: Specifies the conditions under which the product has to be stored to maintain stability and integrity, such as temperature, buffer, and other environmental factors.
@@ -411,7 +408,7 @@
 --     * Slot: hybridomaDescription Description: The description of the hybridoma
 --     * Slot: productionSystem Description: The biological and technological methods and processes used to produce the antibody
 --     * Slot: antibodyPurifiedByAffinity Description: Indicates whether or not if the antibody was purified by affinity
---     * Slot: specificityDocumented Description: Tell if the antibody specificity was documented
+--     * Slot: specificityDocumented Description: Boolean value indicating whether the specificity of the product has been formally documented
 --     * Slot: targetedAntigen Description: Specific molecular structure or epitope recognized and bound by an antibody
 --     * Slot: shippingConditions Description: Specification of the terms and parameters for transporting
 --     * Slot: storageConditions Description: Specifies the conditions under which the product has to be stored to maintain stability and integrity, such as temperature, buffer, and other environmental factors.
@@ -456,7 +453,7 @@
 --     * Slot: technicalRecommendation Description: Expert advice or guidelines provided to ensure the optimal use, performance, and maintenance of what is provided, including best practices, troubleshooting tips, and procedural instructions
 --     * Slot: internalReference Description: Any reference or indication to be used for local retrieval purpose
 --     * Slot: note Description: An aditional information as a textual comment
---     * Slot: biologicalMaterialOrigin_id Description: Information about the origin of the biological material, essential for access, utilization, and benefit-sharing of genetic resources in compliance with the Nagoya Protocol.
+--     * Slot: biologicalMaterialOrigin_id Description: Information about the origin of the biological material, essential for access, utilization, and benefit-sharing of genetic resources in compliance with the Nagoya Protocol
 --     * Slot: hasIATAClassification_id Description: The corresponding International Air Transport Association (IATA)'s category for this Product
 --     * Slot: materialSafetyDataSheet_id Description: A Material Safety Data Sheet (MSDS) or Safety Data Sheet (SDS) is a standardized document that contains crucial occupational safety and health information related to the product
 --     * Slot: originator_id Description: The individual or organization responsible for the original discovery, isolation, or creation of an item, providing information about the source or origin of the sample
@@ -470,8 +467,8 @@
 --     * Slot: regionEncompassedInThisProduct Description: The specific region encompassed in the product
 --     * Slot: mutationObserved Description: Indicates if the current nucleic acid has No mutation compared to the reference sequence if the value is set to false or if it contains mutations (no frameshift, no unexpected STOP codon) if set to true
 --     * Slot: observedMutations Description: The specific mutations that have been identified and documented in the nucleic acid sequence
---     * Slot: identificationTechnique Description: The method used to identify the nucleic acid sequence or its associated constructs, such as PCR, sequencing, or hybridization
---     * Slot: sequencing Description: Refers to the level of sequencing performed on the nucleic acid. Possible values include "Not sequenced" (no sequencing has been performed), "Partly sequenced" (only a portion of the nucleic acid sequence has been determined), and "Fully sequenced" (the entire nucleic acid sequence has been determined).
+--     * Slot: identificationTechnique Description: A method or procedure used to detect, identify, and confirm the presence of a specific nucleic acid sequence, pathogen, or associated constructs. This may involve various techniques such as PCR, sequencing, hybridization, or other molecular methods, utilizing specific tools and procedures for accurate detection and analysis
+--     * Slot: sequencing Description: Refers to the level of sequencing performed on the nucleic acid. Possible values include 'Not sequenced' (no sequencing has been performed), 'Partly sequenced' (only a portion of the nucleic acid sequence has been determined), and 'Fully sequenced' (the entire nucleic acid sequence has been determined).
 --     * Slot: titer Description: The titer value, its corresponding unit, and the method of quantification (e.g., RT-qPCR, TCID50), representing the concentration or amount of unit present in the sample. The titer corresponds to the highest dilution factor that still yields a positive reading
 --     * Slot: sequenceChecked Description: Tell whether or not the sequence of the product was controlled (compulsory for cloned products)
 --     * Slot: shippingConditions Description: Specification of the terms and parameters for transporting
@@ -503,7 +500,7 @@
 --     * Slot: contactPoint_id Description: An information that allows someone to establish communication
 -- # Class: "Detection Kit" Description: "A detection kit for specific pathogens"
 --     * Slot: id Description: 
---     * Slot: specificityDocumented Description: Boolean value indicating whether the specificity of the detection kit has been formally documented.
+--     * Slot: specificityDocumented Description: Boolean value indicating whether the specificity of the product has been formally documented
 --     * Slot: specificity Description: Details on the ability of a detection kit to correctly identify negative results, distinguishing between the target analyte and other substances without cross-reacting
 --     * Slot: targetedRegion Description: The specific area or sequence within the target analyte that the detection kit is designed to identify and interact with, ensuring accurate detection and analysis.
 --     * Slot: shippingConditions Description: Specification of the terms and parameters for transporting
@@ -558,16 +555,16 @@
 --     * Slot: contactPoint_id Description: An information that allows someone to establish communication
 -- # Class: "Pathogen" Description: "Biological entity that causes disease in its host, which is typically an infectious microorganism or agent, such as a virus, bacterium, protozoan, prion, viroid, or fungus"
 --     * Slot: id Description: 
---     * Slot: cultivability Description: The ability of the pathogen to be cultivated or grown in laboratory conditions. Possible values are " Cultivable pathogen", "Uncultivable pathogen" or "Inactivated pathogen"
+--     * Slot: cultivability Description: The ability of the pathogen to be cultivated or grown in laboratory conditions. Possible values are  'Cultivable pathogen', 'Uncultivable pathogen' or 'Inactivated pathogen'
 --     * Slot: clinicalInformation Description: Details about the clinical aspects of the pathogen, including symptoms, severity, treatment protocols, and patient outcomes
---     * Slot: identificationTechnique Description: The method or technique used to identify and confirm the presence of the pathogen, detailing the specific procedures and tools employed in the detection process
+--     * Slot: identificationTechnique Description: A method or procedure used to detect, identify, and confirm the presence of a specific nucleic acid sequence, pathogen, or associated constructs. This may involve various techniques such as PCR, sequencing, hybridization, or other molecular methods, utilizing specific tools and procedures for accurate detection and analysis
 --     * Slot: infectivity Description: Indicates the ability of the pathogen to establish an infection in a host organism, with possible values detailing whether infectivity has been tested, quantified, or cannot be tested due to non-cultivable nature.
 --     * Slot: infectivityTest Description: The description of the completed infectivity test, providing details on the methods, conditions, and results of the test used to assess the pathogen's ability to infect a host organism
 --     * Slot: isolationTechnique Description: The specific method or procedure used to isolate the pathogen from a host organism or sample, detailing the techniques and tools employed in the isolation process
 --     * Slot: isolationConditions Description: The environmental and procedural conditions under which the pathogen was isolated
---     * Slot: letterOfAuthority Description: Indicate whether a Letter of Authority is required, confirming the necessity of formal authorization. The possible values are "N/A", "NOT Required", "Required for customers in the EU" or "Required"
+--     * Slot: letterOfAuthority Description: Indicate whether a Letter of Authority is required, confirming the necessity of formal authorization. The possible values are 'N/A', 'NOT Required', 'Required for customers in the EU' or 'Required'
 --     * Slot: passage Description: The number of times the pathogen was cultured through serial passage, a process used to increase the stock but which can also lead to the evolution of the original pathogen.
---     * Slot: genomeSequencing Description: The extent of the pathogen's genetic material that has been sequenced, with possible values including "Complete genome" for the entire genome, "Complete coding sequence" for all coding regions, and "Partial sequence" for only a portion of the genetic material
+--     * Slot: genomeSequencing Description: The extent of the pathogen's genetic material that has been sequenced, with possible values including 'Complete genome' for the entire genome, 'Complete coding sequence' for all coding regions, and 'Partial sequence' for only a portion of the genetic material
 --     * Slot: titer Description: The titer value, its corresponding unit, and the method of quantification (e.g., RT-qPCR, TCID50), representing the concentration or amount of unit present in the sample. The titer corresponds to the highest dilution factor that still yields a positive reading
 --     * Slot: shippingConditions Description: Specification of the terms and parameters for transporting
 --     * Slot: storageConditions Description: Specifies the conditions under which the product has to be stored to maintain stability and integrity, such as temperature, buffer, and other environmental factors.
@@ -586,7 +583,7 @@
 --     * Slot: technicalRecommendation Description: Expert advice or guidelines provided to ensure the optimal use, performance, and maintenance of what is provided, including best practices, troubleshooting tips, and procedural instructions
 --     * Slot: internalReference Description: Any reference or indication to be used for local retrieval purpose
 --     * Slot: note Description: An aditional information as a textual comment
---     * Slot: biologicalMaterialOrigin_id Description: Information about the origin of the biological material, essential for access, utilization, and benefit-sharing of genetic resources in compliance with the Nagoya Protocol.
+--     * Slot: biologicalMaterialOrigin_id Description: Information about the origin of the biological material, essential for access, utilization, and benefit-sharing of genetic resources in compliance with the Nagoya Protocol
 --     * Slot: hasIATAClassification_id Description: The corresponding International Air Transport Association (IATA)'s category for this Product
 --     * Slot: materialSafetyDataSheet_id Description: A Material Safety Data Sheet (MSDS) or Safety Data Sheet (SDS) is a standardized document that contains crucial occupational safety and health information related to the product
 --     * Slot: originator_id Description: The individual or organization responsible for the original discovery, isolation, or creation of an item, providing information about the source or origin of the sample
@@ -598,16 +595,16 @@
 --     * Slot: id Description: 
 --     * Slot: contaminationWithCoInfectingViruses Description: A boolean value indicating whether there is contamination with co-infecting viruses
 --     * Slot: mycoplasmicContent Description: Indicates the presence of mycoplasma contamination within the sample
---     * Slot: cultivability Description: The ability of the pathogen to be cultivated or grown in laboratory conditions. Possible values are " Cultivable pathogen", "Uncultivable pathogen" or "Inactivated pathogen"
+--     * Slot: cultivability Description: The ability of the pathogen to be cultivated or grown in laboratory conditions. Possible values are  'Cultivable pathogen', 'Uncultivable pathogen' or 'Inactivated pathogen'
 --     * Slot: clinicalInformation Description: Details about the clinical aspects of the pathogen, including symptoms, severity, treatment protocols, and patient outcomes
---     * Slot: identificationTechnique Description: The method or technique used to identify and confirm the presence of the pathogen, detailing the specific procedures and tools employed in the detection process
+--     * Slot: identificationTechnique Description: A method or procedure used to detect, identify, and confirm the presence of a specific nucleic acid sequence, pathogen, or associated constructs. This may involve various techniques such as PCR, sequencing, hybridization, or other molecular methods, utilizing specific tools and procedures for accurate detection and analysis
 --     * Slot: infectivity Description: Indicates the ability of the pathogen to establish an infection in a host organism, with possible values detailing whether infectivity has been tested, quantified, or cannot be tested due to non-cultivable nature.
 --     * Slot: infectivityTest Description: The description of the completed infectivity test, providing details on the methods, conditions, and results of the test used to assess the pathogen's ability to infect a host organism
 --     * Slot: isolationTechnique Description: The specific method or procedure used to isolate the pathogen from a host organism or sample, detailing the techniques and tools employed in the isolation process
 --     * Slot: isolationConditions Description: The environmental and procedural conditions under which the pathogen was isolated
---     * Slot: letterOfAuthority Description: Indicate whether a Letter of Authority is required, confirming the necessity of formal authorization. The possible values are "N/A", "NOT Required", "Required for customers in the EU" or "Required"
+--     * Slot: letterOfAuthority Description: Indicate whether a Letter of Authority is required, confirming the necessity of formal authorization. The possible values are 'N/A', 'NOT Required', 'Required for customers in the EU' or 'Required'
 --     * Slot: passage Description: The number of times the pathogen was cultured through serial passage, a process used to increase the stock but which can also lead to the evolution of the original pathogen.
---     * Slot: genomeSequencing Description: The extent of the pathogen's genetic material that has been sequenced, with possible values including "Complete genome" for the entire genome, "Complete coding sequence" for all coding regions, and "Partial sequence" for only a portion of the genetic material
+--     * Slot: genomeSequencing Description: The extent of the pathogen's genetic material that has been sequenced, with possible values including 'Complete genome' for the entire genome, 'Complete coding sequence' for all coding regions, and 'Partial sequence' for only a portion of the genetic material
 --     * Slot: titer Description: The titer value, its corresponding unit, and the method of quantification (e.g., RT-qPCR, TCID50), representing the concentration or amount of unit present in the sample. The titer corresponds to the highest dilution factor that still yields a positive reading
 --     * Slot: shippingConditions Description: Specification of the terms and parameters for transporting
 --     * Slot: storageConditions Description: Specifies the conditions under which the product has to be stored to maintain stability and integrity, such as temperature, buffer, and other environmental factors.
@@ -626,7 +623,7 @@
 --     * Slot: technicalRecommendation Description: Expert advice or guidelines provided to ensure the optimal use, performance, and maintenance of what is provided, including best practices, troubleshooting tips, and procedural instructions
 --     * Slot: internalReference Description: Any reference or indication to be used for local retrieval purpose
 --     * Slot: note Description: An aditional information as a textual comment
---     * Slot: biologicalMaterialOrigin_id Description: Information about the origin of the biological material, essential for access, utilization, and benefit-sharing of genetic resources in compliance with the Nagoya Protocol.
+--     * Slot: biologicalMaterialOrigin_id Description: Information about the origin of the biological material, essential for access, utilization, and benefit-sharing of genetic resources in compliance with the Nagoya Protocol
 --     * Slot: hasIATAClassification_id Description: The corresponding International Air Transport Association (IATA)'s category for this Product
 --     * Slot: materialSafetyDataSheet_id Description: A Material Safety Data Sheet (MSDS) or Safety Data Sheet (SDS) is a standardized document that contains crucial occupational safety and health information related to the product
 --     * Slot: originator_id Description: The individual or organization responsible for the original discovery, isolation, or creation of an item, providing information about the source or origin of the sample
@@ -636,16 +633,16 @@
 --     * Slot: contactPoint_id Description: An information that allows someone to establish communication
 -- # Class: "Bacterium" Description: "The bacterium as a biological material"
 --     * Slot: id Description: 
---     * Slot: cultivability Description: The ability of the pathogen to be cultivated or grown in laboratory conditions. Possible values are " Cultivable pathogen", "Uncultivable pathogen" or "Inactivated pathogen"
+--     * Slot: cultivability Description: The ability of the pathogen to be cultivated or grown in laboratory conditions. Possible values are  'Cultivable pathogen', 'Uncultivable pathogen' or 'Inactivated pathogen'
 --     * Slot: clinicalInformation Description: Details about the clinical aspects of the pathogen, including symptoms, severity, treatment protocols, and patient outcomes
---     * Slot: identificationTechnique Description: The method or technique used to identify and confirm the presence of the pathogen, detailing the specific procedures and tools employed in the detection process
+--     * Slot: identificationTechnique Description: A method or procedure used to detect, identify, and confirm the presence of a specific nucleic acid sequence, pathogen, or associated constructs. This may involve various techniques such as PCR, sequencing, hybridization, or other molecular methods, utilizing specific tools and procedures for accurate detection and analysis
 --     * Slot: infectivity Description: Indicates the ability of the pathogen to establish an infection in a host organism, with possible values detailing whether infectivity has been tested, quantified, or cannot be tested due to non-cultivable nature.
 --     * Slot: infectivityTest Description: The description of the completed infectivity test, providing details on the methods, conditions, and results of the test used to assess the pathogen's ability to infect a host organism
 --     * Slot: isolationTechnique Description: The specific method or procedure used to isolate the pathogen from a host organism or sample, detailing the techniques and tools employed in the isolation process
 --     * Slot: isolationConditions Description: The environmental and procedural conditions under which the pathogen was isolated
---     * Slot: letterOfAuthority Description: Indicate whether a Letter of Authority is required, confirming the necessity of formal authorization. The possible values are "N/A", "NOT Required", "Required for customers in the EU" or "Required"
+--     * Slot: letterOfAuthority Description: Indicate whether a Letter of Authority is required, confirming the necessity of formal authorization. The possible values are 'N/A', 'NOT Required', 'Required for customers in the EU' or 'Required'
 --     * Slot: passage Description: The number of times the pathogen was cultured through serial passage, a process used to increase the stock but which can also lead to the evolution of the original pathogen.
---     * Slot: genomeSequencing Description: The extent of the pathogen's genetic material that has been sequenced, with possible values including "Complete genome" for the entire genome, "Complete coding sequence" for all coding regions, and "Partial sequence" for only a portion of the genetic material
+--     * Slot: genomeSequencing Description: The extent of the pathogen's genetic material that has been sequenced, with possible values including 'Complete genome' for the entire genome, 'Complete coding sequence' for all coding regions, and 'Partial sequence' for only a portion of the genetic material
 --     * Slot: titer Description: The titer value, its corresponding unit, and the method of quantification (e.g., RT-qPCR, TCID50), representing the concentration or amount of unit present in the sample. The titer corresponds to the highest dilution factor that still yields a positive reading
 --     * Slot: shippingConditions Description: Specification of the terms and parameters for transporting
 --     * Slot: storageConditions Description: Specifies the conditions under which the product has to be stored to maintain stability and integrity, such as temperature, buffer, and other environmental factors.
@@ -664,7 +661,7 @@
 --     * Slot: technicalRecommendation Description: Expert advice or guidelines provided to ensure the optimal use, performance, and maintenance of what is provided, including best practices, troubleshooting tips, and procedural instructions
 --     * Slot: internalReference Description: Any reference or indication to be used for local retrieval purpose
 --     * Slot: note Description: An aditional information as a textual comment
---     * Slot: biologicalMaterialOrigin_id Description: Information about the origin of the biological material, essential for access, utilization, and benefit-sharing of genetic resources in compliance with the Nagoya Protocol.
+--     * Slot: biologicalMaterialOrigin_id Description: Information about the origin of the biological material, essential for access, utilization, and benefit-sharing of genetic resources in compliance with the Nagoya Protocol
 --     * Slot: hasIATAClassification_id Description: The corresponding International Air Transport Association (IATA)'s category for this Product
 --     * Slot: materialSafetyDataSheet_id Description: A Material Safety Data Sheet (MSDS) or Safety Data Sheet (SDS) is a standardized document that contains crucial occupational safety and health information related to the product
 --     * Slot: originator_id Description: The individual or organization responsible for the original discovery, isolation, or creation of an item, providing information about the source or origin of the sample
@@ -674,16 +671,16 @@
 --     * Slot: contactPoint_id Description: An information that allows someone to establish communication
 -- # Class: "Fungus" Description: "The fungus as a biological material"
 --     * Slot: id Description: 
---     * Slot: cultivability Description: The ability of the pathogen to be cultivated or grown in laboratory conditions. Possible values are " Cultivable pathogen", "Uncultivable pathogen" or "Inactivated pathogen"
+--     * Slot: cultivability Description: The ability of the pathogen to be cultivated or grown in laboratory conditions. Possible values are  'Cultivable pathogen', 'Uncultivable pathogen' or 'Inactivated pathogen'
 --     * Slot: clinicalInformation Description: Details about the clinical aspects of the pathogen, including symptoms, severity, treatment protocols, and patient outcomes
---     * Slot: identificationTechnique Description: The method or technique used to identify and confirm the presence of the pathogen, detailing the specific procedures and tools employed in the detection process
+--     * Slot: identificationTechnique Description: A method or procedure used to detect, identify, and confirm the presence of a specific nucleic acid sequence, pathogen, or associated constructs. This may involve various techniques such as PCR, sequencing, hybridization, or other molecular methods, utilizing specific tools and procedures for accurate detection and analysis
 --     * Slot: infectivity Description: Indicates the ability of the pathogen to establish an infection in a host organism, with possible values detailing whether infectivity has been tested, quantified, or cannot be tested due to non-cultivable nature.
 --     * Slot: infectivityTest Description: The description of the completed infectivity test, providing details on the methods, conditions, and results of the test used to assess the pathogen's ability to infect a host organism
 --     * Slot: isolationTechnique Description: The specific method or procedure used to isolate the pathogen from a host organism or sample, detailing the techniques and tools employed in the isolation process
 --     * Slot: isolationConditions Description: The environmental and procedural conditions under which the pathogen was isolated
---     * Slot: letterOfAuthority Description: Indicate whether a Letter of Authority is required, confirming the necessity of formal authorization. The possible values are "N/A", "NOT Required", "Required for customers in the EU" or "Required"
+--     * Slot: letterOfAuthority Description: Indicate whether a Letter of Authority is required, confirming the necessity of formal authorization. The possible values are 'N/A', 'NOT Required', 'Required for customers in the EU' or 'Required'
 --     * Slot: passage Description: The number of times the pathogen was cultured through serial passage, a process used to increase the stock but which can also lead to the evolution of the original pathogen.
---     * Slot: genomeSequencing Description: The extent of the pathogen's genetic material that has been sequenced, with possible values including "Complete genome" for the entire genome, "Complete coding sequence" for all coding regions, and "Partial sequence" for only a portion of the genetic material
+--     * Slot: genomeSequencing Description: The extent of the pathogen's genetic material that has been sequenced, with possible values including 'Complete genome' for the entire genome, 'Complete coding sequence' for all coding regions, and 'Partial sequence' for only a portion of the genetic material
 --     * Slot: titer Description: The titer value, its corresponding unit, and the method of quantification (e.g., RT-qPCR, TCID50), representing the concentration or amount of unit present in the sample. The titer corresponds to the highest dilution factor that still yields a positive reading
 --     * Slot: shippingConditions Description: Specification of the terms and parameters for transporting
 --     * Slot: storageConditions Description: Specifies the conditions under which the product has to be stored to maintain stability and integrity, such as temperature, buffer, and other environmental factors.
@@ -702,7 +699,7 @@
 --     * Slot: technicalRecommendation Description: Expert advice or guidelines provided to ensure the optimal use, performance, and maintenance of what is provided, including best practices, troubleshooting tips, and procedural instructions
 --     * Slot: internalReference Description: Any reference or indication to be used for local retrieval purpose
 --     * Slot: note Description: An aditional information as a textual comment
---     * Slot: biologicalMaterialOrigin_id Description: Information about the origin of the biological material, essential for access, utilization, and benefit-sharing of genetic resources in compliance with the Nagoya Protocol.
+--     * Slot: biologicalMaterialOrigin_id Description: Information about the origin of the biological material, essential for access, utilization, and benefit-sharing of genetic resources in compliance with the Nagoya Protocol
 --     * Slot: hasIATAClassification_id Description: The corresponding International Air Transport Association (IATA)'s category for this Product
 --     * Slot: materialSafetyDataSheet_id Description: A Material Safety Data Sheet (MSDS) or Safety Data Sheet (SDS) is a standardized document that contains crucial occupational safety and health information related to the product
 --     * Slot: originator_id Description: The individual or organization responsible for the original discovery, isolation, or creation of an item, providing information about the source or origin of the sample
@@ -712,16 +709,16 @@
 --     * Slot: contactPoint_id Description: An information that allows someone to establish communication
 -- # Class: "Protozoan" Description: "The protozoan as a biological material"
 --     * Slot: id Description: 
---     * Slot: cultivability Description: The ability of the pathogen to be cultivated or grown in laboratory conditions. Possible values are " Cultivable pathogen", "Uncultivable pathogen" or "Inactivated pathogen"
+--     * Slot: cultivability Description: The ability of the pathogen to be cultivated or grown in laboratory conditions. Possible values are  'Cultivable pathogen', 'Uncultivable pathogen' or 'Inactivated pathogen'
 --     * Slot: clinicalInformation Description: Details about the clinical aspects of the pathogen, including symptoms, severity, treatment protocols, and patient outcomes
---     * Slot: identificationTechnique Description: The method or technique used to identify and confirm the presence of the pathogen, detailing the specific procedures and tools employed in the detection process
+--     * Slot: identificationTechnique Description: A method or procedure used to detect, identify, and confirm the presence of a specific nucleic acid sequence, pathogen, or associated constructs. This may involve various techniques such as PCR, sequencing, hybridization, or other molecular methods, utilizing specific tools and procedures for accurate detection and analysis
 --     * Slot: infectivity Description: Indicates the ability of the pathogen to establish an infection in a host organism, with possible values detailing whether infectivity has been tested, quantified, or cannot be tested due to non-cultivable nature.
 --     * Slot: infectivityTest Description: The description of the completed infectivity test, providing details on the methods, conditions, and results of the test used to assess the pathogen's ability to infect a host organism
 --     * Slot: isolationTechnique Description: The specific method or procedure used to isolate the pathogen from a host organism or sample, detailing the techniques and tools employed in the isolation process
 --     * Slot: isolationConditions Description: The environmental and procedural conditions under which the pathogen was isolated
---     * Slot: letterOfAuthority Description: Indicate whether a Letter of Authority is required, confirming the necessity of formal authorization. The possible values are "N/A", "NOT Required", "Required for customers in the EU" or "Required"
+--     * Slot: letterOfAuthority Description: Indicate whether a Letter of Authority is required, confirming the necessity of formal authorization. The possible values are 'N/A', 'NOT Required', 'Required for customers in the EU' or 'Required'
 --     * Slot: passage Description: The number of times the pathogen was cultured through serial passage, a process used to increase the stock but which can also lead to the evolution of the original pathogen.
---     * Slot: genomeSequencing Description: The extent of the pathogen's genetic material that has been sequenced, with possible values including "Complete genome" for the entire genome, "Complete coding sequence" for all coding regions, and "Partial sequence" for only a portion of the genetic material
+--     * Slot: genomeSequencing Description: The extent of the pathogen's genetic material that has been sequenced, with possible values including 'Complete genome' for the entire genome, 'Complete coding sequence' for all coding regions, and 'Partial sequence' for only a portion of the genetic material
 --     * Slot: titer Description: The titer value, its corresponding unit, and the method of quantification (e.g., RT-qPCR, TCID50), representing the concentration or amount of unit present in the sample. The titer corresponds to the highest dilution factor that still yields a positive reading
 --     * Slot: shippingConditions Description: Specification of the terms and parameters for transporting
 --     * Slot: storageConditions Description: Specifies the conditions under which the product has to be stored to maintain stability and integrity, such as temperature, buffer, and other environmental factors.
@@ -740,7 +737,7 @@
 --     * Slot: technicalRecommendation Description: Expert advice or guidelines provided to ensure the optimal use, performance, and maintenance of what is provided, including best practices, troubleshooting tips, and procedural instructions
 --     * Slot: internalReference Description: Any reference or indication to be used for local retrieval purpose
 --     * Slot: note Description: An aditional information as a textual comment
---     * Slot: biologicalMaterialOrigin_id Description: Information about the origin of the biological material, essential for access, utilization, and benefit-sharing of genetic resources in compliance with the Nagoya Protocol.
+--     * Slot: biologicalMaterialOrigin_id Description: Information about the origin of the biological material, essential for access, utilization, and benefit-sharing of genetic resources in compliance with the Nagoya Protocol
 --     * Slot: hasIATAClassification_id Description: The corresponding International Air Transport Association (IATA)'s category for this Product
 --     * Slot: materialSafetyDataSheet_id Description: A Material Safety Data Sheet (MSDS) or Safety Data Sheet (SDS) is a standardized document that contains crucial occupational safety and health information related to the product
 --     * Slot: originator_id Description: The individual or organization responsible for the original discovery, isolation, or creation of an item, providing information about the source or origin of the sample
@@ -750,16 +747,16 @@
 --     * Slot: contactPoint_id Description: An information that allows someone to establish communication
 -- # Class: "Viroid" Description: "The viroid as a biological material"
 --     * Slot: id Description: 
---     * Slot: cultivability Description: The ability of the pathogen to be cultivated or grown in laboratory conditions. Possible values are " Cultivable pathogen", "Uncultivable pathogen" or "Inactivated pathogen"
+--     * Slot: cultivability Description: The ability of the pathogen to be cultivated or grown in laboratory conditions. Possible values are  'Cultivable pathogen', 'Uncultivable pathogen' or 'Inactivated pathogen'
 --     * Slot: clinicalInformation Description: Details about the clinical aspects of the pathogen, including symptoms, severity, treatment protocols, and patient outcomes
---     * Slot: identificationTechnique Description: The method or technique used to identify and confirm the presence of the pathogen, detailing the specific procedures and tools employed in the detection process
+--     * Slot: identificationTechnique Description: A method or procedure used to detect, identify, and confirm the presence of a specific nucleic acid sequence, pathogen, or associated constructs. This may involve various techniques such as PCR, sequencing, hybridization, or other molecular methods, utilizing specific tools and procedures for accurate detection and analysis
 --     * Slot: infectivity Description: Indicates the ability of the pathogen to establish an infection in a host organism, with possible values detailing whether infectivity has been tested, quantified, or cannot be tested due to non-cultivable nature.
 --     * Slot: infectivityTest Description: The description of the completed infectivity test, providing details on the methods, conditions, and results of the test used to assess the pathogen's ability to infect a host organism
 --     * Slot: isolationTechnique Description: The specific method or procedure used to isolate the pathogen from a host organism or sample, detailing the techniques and tools employed in the isolation process
 --     * Slot: isolationConditions Description: The environmental and procedural conditions under which the pathogen was isolated
---     * Slot: letterOfAuthority Description: Indicate whether a Letter of Authority is required, confirming the necessity of formal authorization. The possible values are "N/A", "NOT Required", "Required for customers in the EU" or "Required"
+--     * Slot: letterOfAuthority Description: Indicate whether a Letter of Authority is required, confirming the necessity of formal authorization. The possible values are 'N/A', 'NOT Required', 'Required for customers in the EU' or 'Required'
 --     * Slot: passage Description: The number of times the pathogen was cultured through serial passage, a process used to increase the stock but which can also lead to the evolution of the original pathogen.
---     * Slot: genomeSequencing Description: The extent of the pathogen's genetic material that has been sequenced, with possible values including "Complete genome" for the entire genome, "Complete coding sequence" for all coding regions, and "Partial sequence" for only a portion of the genetic material
+--     * Slot: genomeSequencing Description: The extent of the pathogen's genetic material that has been sequenced, with possible values including 'Complete genome' for the entire genome, 'Complete coding sequence' for all coding regions, and 'Partial sequence' for only a portion of the genetic material
 --     * Slot: titer Description: The titer value, its corresponding unit, and the method of quantification (e.g., RT-qPCR, TCID50), representing the concentration or amount of unit present in the sample. The titer corresponds to the highest dilution factor that still yields a positive reading
 --     * Slot: shippingConditions Description: Specification of the terms and parameters for transporting
 --     * Slot: storageConditions Description: Specifies the conditions under which the product has to be stored to maintain stability and integrity, such as temperature, buffer, and other environmental factors.
@@ -778,7 +775,7 @@
 --     * Slot: technicalRecommendation Description: Expert advice or guidelines provided to ensure the optimal use, performance, and maintenance of what is provided, including best practices, troubleshooting tips, and procedural instructions
 --     * Slot: internalReference Description: Any reference or indication to be used for local retrieval purpose
 --     * Slot: note Description: An aditional information as a textual comment
---     * Slot: biologicalMaterialOrigin_id Description: Information about the origin of the biological material, essential for access, utilization, and benefit-sharing of genetic resources in compliance with the Nagoya Protocol.
+--     * Slot: biologicalMaterialOrigin_id Description: Information about the origin of the biological material, essential for access, utilization, and benefit-sharing of genetic resources in compliance with the Nagoya Protocol
 --     * Slot: hasIATAClassification_id Description: The corresponding International Air Transport Association (IATA)'s category for this Product
 --     * Slot: materialSafetyDataSheet_id Description: A Material Safety Data Sheet (MSDS) or Safety Data Sheet (SDS) is a standardized document that contains crucial occupational safety and health information related to the product
 --     * Slot: originator_id Description: The individual or organization responsible for the original discovery, isolation, or creation of an item, providing information about the source or origin of the sample
@@ -788,16 +785,16 @@
 --     * Slot: contactPoint_id Description: An information that allows someone to establish communication
 -- # Class: "Prion" Description: "The prion as a biological material"
 --     * Slot: id Description: 
---     * Slot: cultivability Description: The ability of the pathogen to be cultivated or grown in laboratory conditions. Possible values are " Cultivable pathogen", "Uncultivable pathogen" or "Inactivated pathogen"
+--     * Slot: cultivability Description: The ability of the pathogen to be cultivated or grown in laboratory conditions. Possible values are  'Cultivable pathogen', 'Uncultivable pathogen' or 'Inactivated pathogen'
 --     * Slot: clinicalInformation Description: Details about the clinical aspects of the pathogen, including symptoms, severity, treatment protocols, and patient outcomes
---     * Slot: identificationTechnique Description: The method or technique used to identify and confirm the presence of the pathogen, detailing the specific procedures and tools employed in the detection process
+--     * Slot: identificationTechnique Description: A method or procedure used to detect, identify, and confirm the presence of a specific nucleic acid sequence, pathogen, or associated constructs. This may involve various techniques such as PCR, sequencing, hybridization, or other molecular methods, utilizing specific tools and procedures for accurate detection and analysis
 --     * Slot: infectivity Description: Indicates the ability of the pathogen to establish an infection in a host organism, with possible values detailing whether infectivity has been tested, quantified, or cannot be tested due to non-cultivable nature.
 --     * Slot: infectivityTest Description: The description of the completed infectivity test, providing details on the methods, conditions, and results of the test used to assess the pathogen's ability to infect a host organism
 --     * Slot: isolationTechnique Description: The specific method or procedure used to isolate the pathogen from a host organism or sample, detailing the techniques and tools employed in the isolation process
 --     * Slot: isolationConditions Description: The environmental and procedural conditions under which the pathogen was isolated
---     * Slot: letterOfAuthority Description: Indicate whether a Letter of Authority is required, confirming the necessity of formal authorization. The possible values are "N/A", "NOT Required", "Required for customers in the EU" or "Required"
+--     * Slot: letterOfAuthority Description: Indicate whether a Letter of Authority is required, confirming the necessity of formal authorization. The possible values are 'N/A', 'NOT Required', 'Required for customers in the EU' or 'Required'
 --     * Slot: passage Description: The number of times the pathogen was cultured through serial passage, a process used to increase the stock but which can also lead to the evolution of the original pathogen.
---     * Slot: genomeSequencing Description: The extent of the pathogen's genetic material that has been sequenced, with possible values including "Complete genome" for the entire genome, "Complete coding sequence" for all coding regions, and "Partial sequence" for only a portion of the genetic material
+--     * Slot: genomeSequencing Description: The extent of the pathogen's genetic material that has been sequenced, with possible values including 'Complete genome' for the entire genome, 'Complete coding sequence' for all coding regions, and 'Partial sequence' for only a portion of the genetic material
 --     * Slot: titer Description: The titer value, its corresponding unit, and the method of quantification (e.g., RT-qPCR, TCID50), representing the concentration or amount of unit present in the sample. The titer corresponds to the highest dilution factor that still yields a positive reading
 --     * Slot: shippingConditions Description: Specification of the terms and parameters for transporting
 --     * Slot: storageConditions Description: Specifies the conditions under which the product has to be stored to maintain stability and integrity, such as temperature, buffer, and other environmental factors.
@@ -816,7 +813,7 @@
 --     * Slot: technicalRecommendation Description: Expert advice or guidelines provided to ensure the optimal use, performance, and maintenance of what is provided, including best practices, troubleshooting tips, and procedural instructions
 --     * Slot: internalReference Description: Any reference or indication to be used for local retrieval purpose
 --     * Slot: note Description: An aditional information as a textual comment
---     * Slot: biologicalMaterialOrigin_id Description: Information about the origin of the biological material, essential for access, utilization, and benefit-sharing of genetic resources in compliance with the Nagoya Protocol.
+--     * Slot: biologicalMaterialOrigin_id Description: Information about the origin of the biological material, essential for access, utilization, and benefit-sharing of genetic resources in compliance with the Nagoya Protocol
 --     * Slot: hasIATAClassification_id Description: The corresponding International Air Transport Association (IATA)'s category for this Product
 --     * Slot: materialSafetyDataSheet_id Description: A Material Safety Data Sheet (MSDS) or Safety Data Sheet (SDS) is a standardized document that contains crucial occupational safety and health information related to the product
 --     * Slot: originator_id Description: The individual or organization responsible for the original discovery, isolation, or creation of an item, providing information about the source or origin of the sample
@@ -847,35 +844,35 @@
 --     * Slot: description Description: A short explanation of the characteristics, features, or nature of the current item
 --     * Slot: contentURL Description: The web address or location where the file content is stored and can be accessed or downloaded.
 --     * Slot: format Description: The file type or format that indicates how the data within the file is structured
---     * Slot: license_id Description: The legal terms and conditions under which the file can be used, shared, or distributed, indicating any restrictions or permissions.
+--     * Slot: license_id Description: Information about terms and conditions under which the subject can be used, shared, or distributed, indicating any restrictions or permissions
 -- # Class: "Data" Description: "Subclass of File representing structured or unstructured datasets, often used for analysis, storage, or transfer of information"
 --     * Slot: id Description: 
 --     * Slot: name Description: The label that allows humans to identify the current item
 --     * Slot: description Description: A short explanation of the characteristics, features, or nature of the current item
 --     * Slot: contentURL Description: The web address or location where the file content is stored and can be accessed or downloaded.
 --     * Slot: format Description: The file type or format that indicates how the data within the file is structured
---     * Slot: license_id Description: The legal terms and conditions under which the file can be used, shared, or distributed, indicating any restrictions or permissions.
+--     * Slot: license_id Description: Information about terms and conditions under which the subject can be used, shared, or distributed, indicating any restrictions or permissions
 -- # Class: "Document" Description: "Subclass of File representing textual or written files such as reports, manuals, or forms"
 --     * Slot: id Description: 
 --     * Slot: name Description: The label that allows humans to identify the current item
 --     * Slot: description Description: A short explanation of the characteristics, features, or nature of the current item
 --     * Slot: contentURL Description: The web address or location where the file content is stored and can be accessed or downloaded.
 --     * Slot: format Description: The file type or format that indicates how the data within the file is structured
---     * Slot: license_id Description: The legal terms and conditions under which the file can be used, shared, or distributed, indicating any restrictions or permissions.
+--     * Slot: license_id Description: Information about terms and conditions under which the subject can be used, shared, or distributed, indicating any restrictions or permissions
 -- # Class: "Audio" Description: "Subclass of File representing sound recordings or audio tracks"
 --     * Slot: id Description: 
 --     * Slot: name Description: The label that allows humans to identify the current item
 --     * Slot: description Description: A short explanation of the characteristics, features, or nature of the current item
 --     * Slot: contentURL Description: The web address or location where the file content is stored and can be accessed or downloaded.
 --     * Slot: format Description: The file type or format that indicates how the data within the file is structured
---     * Slot: license_id Description: The legal terms and conditions under which the file can be used, shared, or distributed, indicating any restrictions or permissions.
+--     * Slot: license_id Description: Information about terms and conditions under which the subject can be used, shared, or distributed, indicating any restrictions or permissions
 -- # Class: "Video" Description: "Subclass of File representing moving visual media, such as recordings, presentations, or movies"
 --     * Slot: id Description: 
 --     * Slot: name Description: The label that allows humans to identify the current item
 --     * Slot: description Description: A short explanation of the characteristics, features, or nature of the current item
 --     * Slot: contentURL Description: The web address or location where the file content is stored and can be accessed or downloaded.
 --     * Slot: format Description: The file type or format that indicates how the data within the file is structured
---     * Slot: license_id Description: The legal terms and conditions under which the file can be used, shared, or distributed, indicating any restrictions or permissions.
+--     * Slot: license_id Description: Information about terms and conditions under which the subject can be used, shared, or distributed, indicating any restrictions or permissions
 -- # Class: "Image" Description: "Subclass of File representing visual content such as pictures, diagrams, or illustrations"
 --     * Slot: id Description: 
 --     * Slot: altText Description: An alternate text for the image, if the image cannot be displayed
@@ -883,7 +880,7 @@
 --     * Slot: description Description: A short explanation of the characteristics, features, or nature of the current item
 --     * Slot: contentURL Description: The web address or location where the file content is stored and can be accessed or downloaded.
 --     * Slot: format Description: The file type or format that indicates how the data within the file is structured
---     * Slot: license_id Description: The legal terms and conditions under which the file can be used, shared, or distributed, indicating any restrictions or permissions.
+--     * Slot: license_id Description: Information about terms and conditions under which the subject can be used, shared, or distributed, indicating any restrictions or permissions
 -- # Class: "ContactPoint" Description: "Entity serving as focal point of information"
 --     * Slot: id Description: 
 --     * Slot: name Description: The label that allows humans to identify the current item
@@ -923,25 +920,25 @@
 --     * Slot: term_id Description: The terms related to this vocabulary
 -- # Class: "CommonName_alternateName" Description: ""
 --     * Slot: CommonName_id Description: Autocreated FK slot
---     * Slot: alternateName_id Description: Any known alternate name related to this name
+--     * Slot: alternateName_id Description: Any other name under which the entity can be known
 -- # Class: "CommonName_sourceOfInformation" Description: ""
 --     * Slot: CommonName_id Description: Autocreated FK slot
 --     * Slot: sourceOfInformation Description: The name of the origin from which knowledge is obtained. This can include any entity that provides information
 -- # Class: "VirusName_alternateName" Description: ""
 --     * Slot: VirusName_id Description: Autocreated FK slot
---     * Slot: alternateName_id Description: Any known alternate name related to this name
+--     * Slot: alternateName_id Description: Any other name under which the entity can be known
 -- # Class: "VirusName_sourceOfInformation" Description: ""
 --     * Slot: VirusName_id Description: Autocreated FK slot
 --     * Slot: sourceOfInformation Description: The name of the origin from which knowledge is obtained. This can include any entity that provides information
 -- # Class: "AlternateName_alternateName" Description: ""
 --     * Slot: AlternateName_id Description: Autocreated FK slot
---     * Slot: alternateName_id Description: Any known alternate name related to this name
+--     * Slot: alternateName_id Description: Any other name under which the entity can be known
 -- # Class: "AlternateName_sourceOfInformation" Description: ""
 --     * Slot: AlternateName_id Description: Autocreated FK slot
 --     * Slot: sourceOfInformation Description: The name of the origin from which knowledge is obtained. This can include any entity that provides information
 -- # Class: "Variant_alternateName" Description: ""
 --     * Slot: Variant_id Description: Autocreated FK slot
---     * Slot: alternateName_id Description: Any known alternate name related to this name
+--     * Slot: alternateName_id Description: Any other name under which the entity can be known
 -- # Class: "Variant_sourceOfInformation" Description: ""
 --     * Slot: Variant_id Description: Autocreated FK slot
 --     * Slot: sourceOfInformation Description: The name of the origin from which knowledge is obtained. This can include any entity that provides information
@@ -960,9 +957,18 @@
 -- # Class: "Sequence_sequenceReference" Description: ""
 --     * Slot: Sequence_id Description: Autocreated FK slot
 --     * Slot: sequenceReference_id Description: A reference that permits to retrieve the sequence information from a sequence provider
+-- # Class: "Organization_alternateName" Description: ""
+--     * Slot: Organization_id Description: Autocreated FK slot
+--     * Slot: alternateName_id Description: Any other name under which the entity can be known
+-- # Class: "RI_alternateName" Description: ""
+--     * Slot: RI_id Description: Autocreated FK slot
+--     * Slot: alternateName_id Description: Any other name under which the entity can be known
 -- # Class: "Provider_memberOfRI" Description: ""
 --     * Slot: Provider_id Description: Autocreated FK slot
 --     * Slot: memberOfRI_id Description: The research infrastructure of which this organization is a member
+-- # Class: "Provider_alternateName" Description: ""
+--     * Slot: Provider_id Description: Autocreated FK slot
+--     * Slot: alternateName_id Description: Any other name under which the entity can be known
 -- # Class: "BiologicalMaterialOrigin_biologicalPartOrigin" Description: ""
 --     * Slot: BiologicalMaterialOrigin_id Description: Autocreated FK slot
 --     * Slot: biologicalPartOrigin_id Description: Details the origin of one or more unitary parts that make up the biological material. In the case of recombinant biological material, multiple parts may be involved.
@@ -980,7 +986,7 @@
 --     * Slot: pathogenIdentification_id Description: The identification of the pathogen or group of pathogens (e.g; name, taxon identification, etc.) related to the current item.
 -- # Class: "ProductOrService_relatedDOI" Description: ""
 --     * Slot: ProductOrService_id Description: Autocreated FK slot
---     * Slot: relatedDOI_id Description: Any DOI that can be related
+--     * Slot: relatedDOI_id Description: Any Digital Object Identifier that can be related
 -- # Class: "ProductOrService_collection" Description: ""
 --     * Slot: ProductOrService_id Description: Autocreated FK slot
 --     * Slot: collection_id Description: The collection(s) to which belongs this item
@@ -989,7 +995,7 @@
 --     * Slot: keywords_id Description: List of terms used to tag and categorize this Item
 -- # Class: "ProductOrService_complementaryDocument" Description: ""
 --     * Slot: ProductOrService_id Description: Autocreated FK slot
---     * Slot: complementaryDocument_id Description: Any complementary document that can be related to this Item
+--     * Slot: complementaryDocument_id Description: Any additional documents that provide supplementary information, instructions, or guidelines relevant to the use of this item
 -- # Class: "ProductOrService_productPicture" Description: ""
 --     * Slot: ProductOrService_id Description: Autocreated FK slot
 --     * Slot: productPicture_id Description: A picture that can represent the item
@@ -1007,7 +1013,7 @@
 --     * Slot: pathogenIdentification_id Description: The identification of the pathogen or group of pathogens (e.g; name, taxon identification, etc.) related to the current item.
 -- # Class: "Service_relatedDOI" Description: ""
 --     * Slot: Service_id Description: Autocreated FK slot
---     * Slot: relatedDOI_id Description: Any DOI that can be related
+--     * Slot: relatedDOI_id Description: Any Digital Object Identifier that can be related
 -- # Class: "Service_collection" Description: ""
 --     * Slot: Service_id Description: Autocreated FK slot
 --     * Slot: collection_id Description: The collection(s) to which belongs this item
@@ -1016,7 +1022,7 @@
 --     * Slot: keywords_id Description: List of terms used to tag and categorize this Item
 -- # Class: "Service_complementaryDocument" Description: ""
 --     * Slot: Service_id Description: Autocreated FK slot
---     * Slot: complementaryDocument_id Description: Any complementary document that can be related to this Item
+--     * Slot: complementaryDocument_id Description: Any additional documents that provide supplementary information, instructions, or guidelines relevant to the use of this item
 -- # Class: "Service_productPicture" Description: ""
 --     * Slot: Service_id Description: Autocreated FK slot
 --     * Slot: productPicture_id Description: A picture that can represent the item
@@ -1034,7 +1040,7 @@
 --     * Slot: pathogenIdentification_id Description: The identification of the pathogen or group of pathogens (e.g; name, taxon identification, etc.) related to the current item.
 -- # Class: "Product_relatedDOI" Description: ""
 --     * Slot: Product_id Description: Autocreated FK slot
---     * Slot: relatedDOI_id Description: Any DOI that can be related
+--     * Slot: relatedDOI_id Description: Any Digital Object Identifier that can be related
 -- # Class: "Product_collection" Description: ""
 --     * Slot: Product_id Description: Autocreated FK slot
 --     * Slot: collection_id Description: The collection(s) to which belongs this item
@@ -1043,7 +1049,7 @@
 --     * Slot: keywords_id Description: List of terms used to tag and categorize this Item
 -- # Class: "Product_complementaryDocument" Description: ""
 --     * Slot: Product_id Description: Autocreated FK slot
---     * Slot: complementaryDocument_id Description: Any complementary document that can be related to this Item
+--     * Slot: complementaryDocument_id Description: Any additional documents that provide supplementary information, instructions, or guidelines relevant to the use of this item
 -- # Class: "Product_productPicture" Description: ""
 --     * Slot: Product_id Description: Autocreated FK slot
 --     * Slot: productPicture_id Description: A picture that can represent the item
@@ -1055,7 +1061,7 @@
 --     * Slot: certification_id Description: Any certification related to the current product or service; e.g., ISO certification
 -- # Class: "Antibody_sequenceReference" Description: ""
 --     * Slot: Antibody_id Description: Autocreated FK slot
---     * Slot: sequenceReference_id Description: A reference that permits to retreive the sequence information from a sequence provider
+--     * Slot: sequenceReference_id Description: A reference that permits to retrieve the sequence information from a sequence provider
 -- # Class: "Antibody_additionalCategory" Description: ""
 --     * Slot: Antibody_id Description: Autocreated FK slot
 --     * Slot: additionalCategory_id Description: Any category apart from its main category in which this product or service can fit
@@ -1064,7 +1070,7 @@
 --     * Slot: pathogenIdentification_id Description: The identification of the pathogen or group of pathogens (e.g; name, taxon identification, etc.) related to the current item.
 -- # Class: "Antibody_relatedDOI" Description: ""
 --     * Slot: Antibody_id Description: Autocreated FK slot
---     * Slot: relatedDOI_id Description: Any DOI that can be related
+--     * Slot: relatedDOI_id Description: Any Digital Object Identifier that can be related
 -- # Class: "Antibody_collection" Description: ""
 --     * Slot: Antibody_id Description: Autocreated FK slot
 --     * Slot: collection_id Description: The collection(s) to which belongs this item
@@ -1073,7 +1079,7 @@
 --     * Slot: keywords_id Description: List of terms used to tag and categorize this Item
 -- # Class: "Antibody_complementaryDocument" Description: ""
 --     * Slot: Antibody_id Description: Autocreated FK slot
---     * Slot: complementaryDocument_id Description: Any complementary document that can be related to this Item
+--     * Slot: complementaryDocument_id Description: Any additional documents that provide supplementary information, instructions, or guidelines relevant to the use of this item
 -- # Class: "Antibody_productPicture" Description: ""
 --     * Slot: Antibody_id Description: Autocreated FK slot
 --     * Slot: productPicture_id Description: A picture that can represent the item
@@ -1085,7 +1091,7 @@
 --     * Slot: certification_id Description: Any certification related to the current product or service; e.g., ISO certification
 -- # Class: "Hybridoma_sequenceReference" Description: ""
 --     * Slot: Hybridoma_id Description: Autocreated FK slot
---     * Slot: sequenceReference_id Description: A reference that permits to retreive the sequence information from a sequence provider
+--     * Slot: sequenceReference_id Description: A reference that permits to retrieve the sequence information from a sequence provider
 -- # Class: "Hybridoma_additionalCategory" Description: ""
 --     * Slot: Hybridoma_id Description: Autocreated FK slot
 --     * Slot: additionalCategory_id Description: Any category apart from its main category in which this product or service can fit
@@ -1094,7 +1100,7 @@
 --     * Slot: pathogenIdentification_id Description: The identification of the pathogen or group of pathogens (e.g; name, taxon identification, etc.) related to the current item.
 -- # Class: "Hybridoma_relatedDOI" Description: ""
 --     * Slot: Hybridoma_id Description: Autocreated FK slot
---     * Slot: relatedDOI_id Description: Any DOI that can be related
+--     * Slot: relatedDOI_id Description: Any Digital Object Identifier that can be related
 -- # Class: "Hybridoma_collection" Description: ""
 --     * Slot: Hybridoma_id Description: Autocreated FK slot
 --     * Slot: collection_id Description: The collection(s) to which belongs this item
@@ -1103,7 +1109,7 @@
 --     * Slot: keywords_id Description: List of terms used to tag and categorize this Item
 -- # Class: "Hybridoma_complementaryDocument" Description: ""
 --     * Slot: Hybridoma_id Description: Autocreated FK slot
---     * Slot: complementaryDocument_id Description: Any complementary document that can be related to this Item
+--     * Slot: complementaryDocument_id Description: Any additional documents that provide supplementary information, instructions, or guidelines relevant to the use of this item
 -- # Class: "Hybridoma_productPicture" Description: ""
 --     * Slot: Hybridoma_id Description: Autocreated FK slot
 --     * Slot: productPicture_id Description: A picture that can represent the item
@@ -1130,28 +1136,28 @@
 --     * Slot: domain Description: A distinct structural and functional unit within the protein, often capable of independent folding and stability, which contributes to the protein's overall function
 -- # Class: "Protein_expressedAs" Description: ""
 --     * Slot: Protein_id Description: Autocreated FK slot
---     * Slot: expressedAs Description: Refers to the form in which the protein is produced and manifested in a biological system. Possible values include "Soluble" (proteins that are dissolved in the cellular or extracellular fluid) and "Inclusion bodies" (aggregated proteins that are insoluble and form within the cell)
+--     * Slot: expressedAs Description: Refers to the form in which the protein is produced and manifested in a biological system. Possible values include 'Soluble' (proteins that are dissolved in the cellular or extracellular fluid) and 'Inclusion bodies' (aggregated proteins that are insoluble and form within the cell)
 -- # Class: "Protein_inclusionBodiesType" Description: ""
 --     * Slot: Protein_id Description: Autocreated FK slot
---     * Slot: inclusionBodiesType Description: Refers to the state of aggregated proteins within a cell. Possible values include "Denatured" (proteins are in an unfolded, inactive state) and "Refolded" (proteins have been processed to regain their functional, active conformation).
+--     * Slot: inclusionBodiesType Description: Refers to the state of aggregated proteins within a cell. Possible values include 'Denatured' (proteins are in an unfolded, inactive state) and 'Refolded' (proteins have been processed to regain their functional, active conformation).
 -- # Class: "Protein_expressionSystem" Description: ""
 --     * Slot: Protein_id Description: Autocreated FK slot
---     * Slot: expressionSystem Description: The host organism or cellular environment used to produce a protein from a specific gene. Possible values include "E. coli" (bacterial system), "Insect cells" (using baculovirus vectors), and "Mammalian cells" (mammalian cell lines).
+--     * Slot: expressionSystem Description: The host organism or cellular environment used to produce a protein from a specific gene. Possible values include 'E. coli' (bacterial system), 'Insect cells' (using baculovirus vectors), and 'Mammalian cells' (mammalian cell lines).
 -- # Class: "Protein_functionalCharacterization" Description: ""
 --     * Slot: Protein_id Description: Autocreated FK slot
---     * Slot: functionalCharacterization Description: The process of determining and describing the specific biological activities and roles of a protein. Possible values include "Functionally characterized" (the protein's functions have been identified and described) and "No functional characterization" (the protein's functions have not been identified or described).
+--     * Slot: functionalCharacterization Description: The process of determining and describing the specific biological activities and roles of a protein. Possible values include 'Functionally characterized' (the protein's functions have been identified and described) and 'No functional characterization' (the protein's functions have not been identified or described).
 -- # Class: "Protein_functionalTechnicalDescription" Description: ""
 --     * Slot: Protein_id Description: Autocreated FK slot
 --     * Slot: functionalTechnicalDescription Description: Detailed information about the specific biological functions, mechanisms of action, and technical attributes of a protein. This includes how the protein interacts within biological systems, its role in cellular processes, and any relevant technical details such as structure, activity, and interactions with other molecules.
 -- # Class: "Protein_proteinPurification" Description: ""
 --     * Slot: Protein_id Description: Autocreated FK slot
---     * Slot: proteinPurification Description: Refers to the degree of purity achieved for a protein sample. Possible values include ">95%" (the protein is highly purified, with more than 95% purity) and "Unpurified expression host lysate or partly purified protein" (the protein is either unpurified and present in the host cell lysate or only partially purified).
+--     * Slot: proteinPurification Description: Refers to the degree of purity achieved for a protein sample. Possible values include '>95%' (the protein is highly purified, with more than 95% purity) and 'Unpurified expression host lysate or partly purified protein' (the protein is either unpurified and present in the host cell lysate or only partially purified).
 -- # Class: "Protein_theTAGStatusOfTheSolubilizedProtein" Description: ""
 --     * Slot: Protein_id Description: Autocreated FK slot
---     * Slot: theTAGStatusOfTheSolubilizedProtein Description: Indicates the presence and condition of a tag on the protein after solubilization. Possible values include "Uncleaved Tag" (the tag is still attached to the protein), "Cleaved Tag" (the tag has been removed from the protein), and "No Tag" (the protein does not have a tag)
+--     * Slot: theTAGStatusOfTheSolubilizedProtein Description: Indicates the presence and condition of a tag on the protein after solubilization. Possible values include 'Uncleaved Tag' (the tag is still attached to the protein), 'Cleaved Tag' (the tag has been removed from the protein), and 'No Tag' (the protein does not have a tag)
 -- # Class: "Protein_typeOfFunctionalCharacterization" Description: ""
 --     * Slot: Protein_id Description: Autocreated FK slot
---     * Slot: typeOfFunctionalCharacterization Description: Refers to the classification of a protein based on the specific type of functional analysis performed to determine its biological activities and roles. Possible values include "Enzymatic" (the protein has been characterized for its enzyme activity) and "Antigenic" (the protein has been characterized for its ability to elicit an immune response).
+--     * Slot: typeOfFunctionalCharacterization Description: Refers to the classification of a protein based on the specific type of functional analysis performed to determine its biological activities and roles. Possible values include 'Enzymatic' (the protein has been characterized for its enzyme activity) and 'Antigenic' (the protein has been characterized for its ability to elicit an immune response).
 -- # Class: "Protein_additionalCategory" Description: ""
 --     * Slot: Protein_id Description: Autocreated FK slot
 --     * Slot: additionalCategory_id Description: Any category apart from its main category in which this product or service can fit
@@ -1160,7 +1166,7 @@
 --     * Slot: pathogenIdentification_id Description: The identification of the pathogen or group of pathogens (e.g; name, taxon identification, etc.) related to the current item.
 -- # Class: "Protein_relatedDOI" Description: ""
 --     * Slot: Protein_id Description: Autocreated FK slot
---     * Slot: relatedDOI_id Description: Any DOI that can be related
+--     * Slot: relatedDOI_id Description: Any Digital Object Identifier that can be related
 -- # Class: "Protein_collection" Description: ""
 --     * Slot: Protein_id Description: Autocreated FK slot
 --     * Slot: collection_id Description: The collection(s) to which belongs this item
@@ -1169,7 +1175,7 @@
 --     * Slot: keywords_id Description: List of terms used to tag and categorize this Item
 -- # Class: "Protein_complementaryDocument" Description: ""
 --     * Slot: Protein_id Description: Autocreated FK slot
---     * Slot: complementaryDocument_id Description: Any complementary document that can be related to this Item
+--     * Slot: complementaryDocument_id Description: Any additional documents that provide supplementary information, instructions, or guidelines relevant to the use of this item
 -- # Class: "Protein_productPicture" Description: ""
 --     * Slot: Protein_id Description: Autocreated FK slot
 --     * Slot: productPicture_id Description: A picture that can represent the item
@@ -1196,7 +1202,7 @@
 --     * Slot: pathogenIdentification_id Description: The identification of the pathogen or group of pathogens (e.g; name, taxon identification, etc.) related to the current item.
 -- # Class: "Nucleic Acid_relatedDOI" Description: ""
 --     * Slot: Nucleic Acid_id Description: Autocreated FK slot
---     * Slot: relatedDOI_id Description: Any DOI that can be related
+--     * Slot: relatedDOI_id Description: Any Digital Object Identifier that can be related
 -- # Class: "Nucleic Acid_collection" Description: ""
 --     * Slot: Nucleic Acid_id Description: Autocreated FK slot
 --     * Slot: collection_id Description: The collection(s) to which belongs this item
@@ -1205,7 +1211,7 @@
 --     * Slot: keywords_id Description: List of terms used to tag and categorize this Item
 -- # Class: "Nucleic Acid_complementaryDocument" Description: ""
 --     * Slot: Nucleic Acid_id Description: Autocreated FK slot
---     * Slot: complementaryDocument_id Description: Any complementary document that can be related to this Item
+--     * Slot: complementaryDocument_id Description: Any additional documents that provide supplementary information, instructions, or guidelines relevant to the use of this item
 -- # Class: "Nucleic Acid_productPicture" Description: ""
 --     * Slot: Nucleic Acid_id Description: Autocreated FK slot
 --     * Slot: productPicture_id Description: A picture that can represent the item
@@ -1226,7 +1232,7 @@
 --     * Slot: pathogenIdentification_id Description: The identification of the pathogen or group of pathogens (e.g; name, taxon identification, etc.) related to the current item.
 -- # Class: "Detection Kit_relatedDOI" Description: ""
 --     * Slot: Detection Kit_id Description: Autocreated FK slot
---     * Slot: relatedDOI_id Description: Any DOI that can be related
+--     * Slot: relatedDOI_id Description: Any Digital Object Identifier that can be related
 -- # Class: "Detection Kit_collection" Description: ""
 --     * Slot: Detection Kit_id Description: Autocreated FK slot
 --     * Slot: collection_id Description: The collection(s) to which belongs this item
@@ -1235,7 +1241,7 @@
 --     * Slot: keywords_id Description: List of terms used to tag and categorize this Item
 -- # Class: "Detection Kit_complementaryDocument" Description: ""
 --     * Slot: Detection Kit_id Description: Autocreated FK slot
---     * Slot: complementaryDocument_id Description: Any complementary document that can be related to this Item
+--     * Slot: complementaryDocument_id Description: Any additional documents that provide supplementary information, instructions, or guidelines relevant to the use of this item
 -- # Class: "Detection Kit_productPicture" Description: ""
 --     * Slot: Detection Kit_id Description: Autocreated FK slot
 --     * Slot: productPicture_id Description: A picture that can represent the item
@@ -1248,9 +1254,6 @@
 -- # Class: "Bundle_productsOfTheBundle" Description: ""
 --     * Slot: Bundle_id Description: Autocreated FK slot
 --     * Slot: productsOfTheBundle_id Description: Associates the bundle with the individual products it contains, specifying the components included within the bundle.
--- # Class: "Bundle_complementaryDocument" Description: ""
---     * Slot: Bundle_id Description: Autocreated FK slot
---     * Slot: complementaryDocument_id Description: Links the bundle to any additional documents that provide supplementary information, instructions, or guidelines relevant to the use and assembly of the bundle's products.
 -- # Class: "Bundle_additionalCategory" Description: ""
 --     * Slot: Bundle_id Description: Autocreated FK slot
 --     * Slot: additionalCategory_id Description: Any category apart from its main category in which this product or service can fit
@@ -1259,13 +1262,16 @@
 --     * Slot: pathogenIdentification_id Description: The identification of the pathogen or group of pathogens (e.g; name, taxon identification, etc.) related to the current item.
 -- # Class: "Bundle_relatedDOI" Description: ""
 --     * Slot: Bundle_id Description: Autocreated FK slot
---     * Slot: relatedDOI_id Description: Any DOI that can be related
+--     * Slot: relatedDOI_id Description: Any Digital Object Identifier that can be related
 -- # Class: "Bundle_collection" Description: ""
 --     * Slot: Bundle_id Description: Autocreated FK slot
 --     * Slot: collection_id Description: The collection(s) to which belongs this item
 -- # Class: "Bundle_keywords" Description: ""
 --     * Slot: Bundle_id Description: Autocreated FK slot
 --     * Slot: keywords_id Description: List of terms used to tag and categorize this Item
+-- # Class: "Bundle_complementaryDocument" Description: ""
+--     * Slot: Bundle_id Description: Autocreated FK slot
+--     * Slot: complementaryDocument_id Description: Any additional documents that provide supplementary information, instructions, or guidelines relevant to the use of this item
 -- # Class: "Bundle_productPicture" Description: ""
 --     * Slot: Bundle_id Description: Autocreated FK slot
 --     * Slot: productPicture_id Description: A picture that can represent the item
@@ -1301,7 +1307,7 @@
 --     * Slot: pathogenIdentification_id Description: The identification of the pathogen or group of pathogens (e.g; name, taxon identification, etc.) related to the current item.
 -- # Class: "Pathogen_relatedDOI" Description: ""
 --     * Slot: Pathogen_id Description: Autocreated FK slot
---     * Slot: relatedDOI_id Description: Any DOI that can be related
+--     * Slot: relatedDOI_id Description: Any Digital Object Identifier that can be related
 -- # Class: "Pathogen_collection" Description: ""
 --     * Slot: Pathogen_id Description: Autocreated FK slot
 --     * Slot: collection_id Description: The collection(s) to which belongs this item
@@ -1310,7 +1316,7 @@
 --     * Slot: keywords_id Description: List of terms used to tag and categorize this Item
 -- # Class: "Pathogen_complementaryDocument" Description: ""
 --     * Slot: Pathogen_id Description: Autocreated FK slot
---     * Slot: complementaryDocument_id Description: Any complementary document that can be related to this Item
+--     * Slot: complementaryDocument_id Description: Any additional documents that provide supplementary information, instructions, or guidelines relevant to the use of this item
 -- # Class: "Pathogen_productPicture" Description: ""
 --     * Slot: Pathogen_id Description: Autocreated FK slot
 --     * Slot: productPicture_id Description: A picture that can represent the item
@@ -1349,7 +1355,7 @@
 --     * Slot: pathogenIdentification_id Description: The identification of the pathogen or group of pathogens (e.g; name, taxon identification, etc.) related to the current item.
 -- # Class: "Virus_relatedDOI" Description: ""
 --     * Slot: Virus_id Description: Autocreated FK slot
---     * Slot: relatedDOI_id Description: Any DOI that can be related
+--     * Slot: relatedDOI_id Description: Any Digital Object Identifier that can be related
 -- # Class: "Virus_collection" Description: ""
 --     * Slot: Virus_id Description: Autocreated FK slot
 --     * Slot: collection_id Description: The collection(s) to which belongs this item
@@ -1358,7 +1364,7 @@
 --     * Slot: keywords_id Description: List of terms used to tag and categorize this Item
 -- # Class: "Virus_complementaryDocument" Description: ""
 --     * Slot: Virus_id Description: Autocreated FK slot
---     * Slot: complementaryDocument_id Description: Any complementary document that can be related to this Item
+--     * Slot: complementaryDocument_id Description: Any additional documents that provide supplementary information, instructions, or guidelines relevant to the use of this item
 -- # Class: "Virus_productPicture" Description: ""
 --     * Slot: Virus_id Description: Autocreated FK slot
 --     * Slot: productPicture_id Description: A picture that can represent the item
@@ -1394,7 +1400,7 @@
 --     * Slot: pathogenIdentification_id Description: The identification of the pathogen or group of pathogens (e.g; name, taxon identification, etc.) related to the current item.
 -- # Class: "Bacterium_relatedDOI" Description: ""
 --     * Slot: Bacterium_id Description: Autocreated FK slot
---     * Slot: relatedDOI_id Description: Any DOI that can be related
+--     * Slot: relatedDOI_id Description: Any Digital Object Identifier that can be related
 -- # Class: "Bacterium_collection" Description: ""
 --     * Slot: Bacterium_id Description: Autocreated FK slot
 --     * Slot: collection_id Description: The collection(s) to which belongs this item
@@ -1403,7 +1409,7 @@
 --     * Slot: keywords_id Description: List of terms used to tag and categorize this Item
 -- # Class: "Bacterium_complementaryDocument" Description: ""
 --     * Slot: Bacterium_id Description: Autocreated FK slot
---     * Slot: complementaryDocument_id Description: Any complementary document that can be related to this Item
+--     * Slot: complementaryDocument_id Description: Any additional documents that provide supplementary information, instructions, or guidelines relevant to the use of this item
 -- # Class: "Bacterium_productPicture" Description: ""
 --     * Slot: Bacterium_id Description: Autocreated FK slot
 --     * Slot: productPicture_id Description: A picture that can represent the item
@@ -1439,7 +1445,7 @@
 --     * Slot: pathogenIdentification_id Description: The identification of the pathogen or group of pathogens (e.g; name, taxon identification, etc.) related to the current item.
 -- # Class: "Fungus_relatedDOI" Description: ""
 --     * Slot: Fungus_id Description: Autocreated FK slot
---     * Slot: relatedDOI_id Description: Any DOI that can be related
+--     * Slot: relatedDOI_id Description: Any Digital Object Identifier that can be related
 -- # Class: "Fungus_collection" Description: ""
 --     * Slot: Fungus_id Description: Autocreated FK slot
 --     * Slot: collection_id Description: The collection(s) to which belongs this item
@@ -1448,7 +1454,7 @@
 --     * Slot: keywords_id Description: List of terms used to tag and categorize this Item
 -- # Class: "Fungus_complementaryDocument" Description: ""
 --     * Slot: Fungus_id Description: Autocreated FK slot
---     * Slot: complementaryDocument_id Description: Any complementary document that can be related to this Item
+--     * Slot: complementaryDocument_id Description: Any additional documents that provide supplementary information, instructions, or guidelines relevant to the use of this item
 -- # Class: "Fungus_productPicture" Description: ""
 --     * Slot: Fungus_id Description: Autocreated FK slot
 --     * Slot: productPicture_id Description: A picture that can represent the item
@@ -1484,7 +1490,7 @@
 --     * Slot: pathogenIdentification_id Description: The identification of the pathogen or group of pathogens (e.g; name, taxon identification, etc.) related to the current item.
 -- # Class: "Protozoan_relatedDOI" Description: ""
 --     * Slot: Protozoan_id Description: Autocreated FK slot
---     * Slot: relatedDOI_id Description: Any DOI that can be related
+--     * Slot: relatedDOI_id Description: Any Digital Object Identifier that can be related
 -- # Class: "Protozoan_collection" Description: ""
 --     * Slot: Protozoan_id Description: Autocreated FK slot
 --     * Slot: collection_id Description: The collection(s) to which belongs this item
@@ -1493,7 +1499,7 @@
 --     * Slot: keywords_id Description: List of terms used to tag and categorize this Item
 -- # Class: "Protozoan_complementaryDocument" Description: ""
 --     * Slot: Protozoan_id Description: Autocreated FK slot
---     * Slot: complementaryDocument_id Description: Any complementary document that can be related to this Item
+--     * Slot: complementaryDocument_id Description: Any additional documents that provide supplementary information, instructions, or guidelines relevant to the use of this item
 -- # Class: "Protozoan_productPicture" Description: ""
 --     * Slot: Protozoan_id Description: Autocreated FK slot
 --     * Slot: productPicture_id Description: A picture that can represent the item
@@ -1529,7 +1535,7 @@
 --     * Slot: pathogenIdentification_id Description: The identification of the pathogen or group of pathogens (e.g; name, taxon identification, etc.) related to the current item.
 -- # Class: "Viroid_relatedDOI" Description: ""
 --     * Slot: Viroid_id Description: Autocreated FK slot
---     * Slot: relatedDOI_id Description: Any DOI that can be related
+--     * Slot: relatedDOI_id Description: Any Digital Object Identifier that can be related
 -- # Class: "Viroid_collection" Description: ""
 --     * Slot: Viroid_id Description: Autocreated FK slot
 --     * Slot: collection_id Description: The collection(s) to which belongs this item
@@ -1538,7 +1544,7 @@
 --     * Slot: keywords_id Description: List of terms used to tag and categorize this Item
 -- # Class: "Viroid_complementaryDocument" Description: ""
 --     * Slot: Viroid_id Description: Autocreated FK slot
---     * Slot: complementaryDocument_id Description: Any complementary document that can be related to this Item
+--     * Slot: complementaryDocument_id Description: Any additional documents that provide supplementary information, instructions, or guidelines relevant to the use of this item
 -- # Class: "Viroid_productPicture" Description: ""
 --     * Slot: Viroid_id Description: Autocreated FK slot
 --     * Slot: productPicture_id Description: A picture that can represent the item
@@ -1574,7 +1580,7 @@
 --     * Slot: pathogenIdentification_id Description: The identification of the pathogen or group of pathogens (e.g; name, taxon identification, etc.) related to the current item.
 -- # Class: "Prion_relatedDOI" Description: ""
 --     * Slot: Prion_id Description: Autocreated FK slot
---     * Slot: relatedDOI_id Description: Any DOI that can be related
+--     * Slot: relatedDOI_id Description: Any Digital Object Identifier that can be related
 -- # Class: "Prion_collection" Description: ""
 --     * Slot: Prion_id Description: Autocreated FK slot
 --     * Slot: collection_id Description: The collection(s) to which belongs this item
@@ -1583,7 +1589,7 @@
 --     * Slot: keywords_id Description: List of terms used to tag and categorize this Item
 -- # Class: "Prion_complementaryDocument" Description: ""
 --     * Slot: Prion_id Description: Autocreated FK slot
---     * Slot: complementaryDocument_id Description: Any complementary document that can be related to this Item
+--     * Slot: complementaryDocument_id Description: Any additional documents that provide supplementary information, instructions, or guidelines relevant to the use of this item
 -- # Class: "Prion_productPicture" Description: ""
 --     * Slot: Prion_id Description: Autocreated FK slot
 --     * Slot: productPicture_id Description: A picture that can represent the item
@@ -2217,12 +2223,10 @@ CREATE TABLE "Organization" (
 	name TEXT NOT NULL, 
 	description TEXT, 
 	"homePage" TEXT, 
-	"alternateName_id" INTEGER, 
 	country_id INTEGER, 
 	"contactPoint_id" INTEGER, 
 	logo_id INTEGER, 
 	PRIMARY KEY (id), 
-	FOREIGN KEY("alternateName_id") REFERENCES "AlternateName" (id), 
 	FOREIGN KEY(country_id) REFERENCES "Country" (id), 
 	FOREIGN KEY("contactPoint_id") REFERENCES "ContactPoint" (id), 
 	FOREIGN KEY(logo_id) REFERENCES "Image" (id)
@@ -2233,12 +2237,10 @@ CREATE TABLE "RI" (
 	name TEXT NOT NULL, 
 	description TEXT, 
 	"homePage" TEXT, 
-	"alternateName_id" INTEGER, 
 	country_id INTEGER, 
 	"contactPoint_id" INTEGER, 
 	logo_id INTEGER, 
 	PRIMARY KEY (id), 
-	FOREIGN KEY("alternateName_id") REFERENCES "AlternateName" (id), 
 	FOREIGN KEY(country_id) REFERENCES "Country" (id), 
 	FOREIGN KEY("contactPoint_id") REFERENCES "ContactPoint" (id), 
 	FOREIGN KEY(logo_id) REFERENCES "Image" (id)
@@ -2249,12 +2251,10 @@ CREATE TABLE "Provider" (
 	name TEXT NOT NULL, 
 	description TEXT, 
 	"homePage" TEXT, 
-	"alternateName_id" INTEGER, 
 	country_id INTEGER, 
 	"contactPoint_id" INTEGER, 
 	logo_id INTEGER, 
 	PRIMARY KEY (id), 
-	FOREIGN KEY("alternateName_id") REFERENCES "AlternateName" (id), 
 	FOREIGN KEY(country_id) REFERENCES "Country" (id), 
 	FOREIGN KEY("contactPoint_id") REFERENCES "ContactPoint" (id), 
 	FOREIGN KEY(logo_id) REFERENCES "Image" (id)
@@ -2987,12 +2987,33 @@ CREATE TABLE "PathogenIdentification_hostType" (
 	PRIMARY KEY ("PathogenIdentification_id", "hostType"), 
 	FOREIGN KEY("PathogenIdentification_id") REFERENCES "PathogenIdentification" (id)
 );
+CREATE TABLE "Organization_alternateName" (
+	"Organization_id" INTEGER, 
+	"alternateName_id" INTEGER, 
+	PRIMARY KEY ("Organization_id", "alternateName_id"), 
+	FOREIGN KEY("Organization_id") REFERENCES "Organization" (id), 
+	FOREIGN KEY("alternateName_id") REFERENCES "AlternateName" (id)
+);
+CREATE TABLE "RI_alternateName" (
+	"RI_id" INTEGER, 
+	"alternateName_id" INTEGER, 
+	PRIMARY KEY ("RI_id", "alternateName_id"), 
+	FOREIGN KEY("RI_id") REFERENCES "RI" (id), 
+	FOREIGN KEY("alternateName_id") REFERENCES "AlternateName" (id)
+);
 CREATE TABLE "Provider_memberOfRI" (
 	"Provider_id" INTEGER, 
 	"memberOfRI_id" INTEGER, 
 	PRIMARY KEY ("Provider_id", "memberOfRI_id"), 
 	FOREIGN KEY("Provider_id") REFERENCES "Provider" (id), 
 	FOREIGN KEY("memberOfRI_id") REFERENCES "RI" (id)
+);
+CREATE TABLE "Provider_alternateName" (
+	"Provider_id" INTEGER, 
+	"alternateName_id" INTEGER, 
+	PRIMARY KEY ("Provider_id", "alternateName_id"), 
+	FOREIGN KEY("Provider_id") REFERENCES "Provider" (id), 
+	FOREIGN KEY("alternateName_id") REFERENCES "AlternateName" (id)
 );
 CREATE TABLE "Collection_collectionItem" (
 	"Collection_id" INTEGER, 
@@ -3636,13 +3657,6 @@ CREATE TABLE "Bundle_productsOfTheBundle" (
 	FOREIGN KEY("Bundle_id") REFERENCES "Bundle" (id), 
 	FOREIGN KEY("productsOfTheBundle_id") REFERENCES "Product" (id)
 );
-CREATE TABLE "Bundle_complementaryDocument" (
-	"Bundle_id" INTEGER, 
-	"complementaryDocument_id" INTEGER, 
-	PRIMARY KEY ("Bundle_id", "complementaryDocument_id"), 
-	FOREIGN KEY("Bundle_id") REFERENCES "Bundle" (id), 
-	FOREIGN KEY("complementaryDocument_id") REFERENCES "File" (id)
-);
 CREATE TABLE "Bundle_additionalCategory" (
 	"Bundle_id" INTEGER, 
 	"additionalCategory_id" INTEGER, 
@@ -3677,6 +3691,13 @@ CREATE TABLE "Bundle_keywords" (
 	PRIMARY KEY ("Bundle_id", keywords_id), 
 	FOREIGN KEY("Bundle_id") REFERENCES "Bundle" (id), 
 	FOREIGN KEY(keywords_id) REFERENCES "Keyword" (id)
+);
+CREATE TABLE "Bundle_complementaryDocument" (
+	"Bundle_id" INTEGER, 
+	"complementaryDocument_id" INTEGER, 
+	PRIMARY KEY ("Bundle_id", "complementaryDocument_id"), 
+	FOREIGN KEY("Bundle_id") REFERENCES "Bundle" (id), 
+	FOREIGN KEY("complementaryDocument_id") REFERENCES "Document" (id)
 );
 CREATE TABLE "Bundle_productPicture" (
 	"Bundle_id" INTEGER, 

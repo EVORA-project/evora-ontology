@@ -1,6 +1,11 @@
 
 
-# Slot: passage
+# Slot: passage (passage)
+
+
+_The number of times the pathogen was cultured through serial passage, a process used to increase the stock but which can also lead to the evolution of the original pathogen._
+
+
 
 
 
@@ -18,13 +23,13 @@ URI: [EVORAO:passage](https://raw.githubusercontent.com/EVORA-project/evora-onto
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [Protozoan](Protozoan.md) | The protozoan as a biological material |  no  |
+| [Fungus](Fungus.md) | The fungus as a biological material |  no  |
 | [Virus](Virus.md) | The virus as a biological material |  no  |
+| [Viroid](Viroid.md) | The viroid as a biological material |  no  |
 | [Pathogen](Pathogen.md) | Biological entity that causes disease in its host, which is typically an infe... |  yes  |
+| [Protozoan](Protozoan.md) | The protozoan as a biological material |  no  |
 | [Prion](Prion.md) | The prion as a biological material |  no  |
 | [Bacterium](Bacterium.md) | The bacterium as a biological material |  no  |
-| [Fungus](Fungus.md) | The fungus as a biological material |  no  |
-| [Viroid](Viroid.md) | The viroid as a biological material |  no  |
 
 
 
@@ -71,12 +76,18 @@ URI: [EVORAO:passage](https://raw.githubusercontent.com/EVORA-project/evora-onto
 <details>
 ```yaml
 name: passage
+description: The number of times the pathogen was cultured through serial passage,
+  a process used to increase the stock but which can also lead to the evolution of
+  the original pathogen.
+title: passage
 from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
 rank: 1000
 alias: passage
 domain_of:
 - Pathogen
 range: string
+required: false
+multivalued: false
 
 ```
 </details>

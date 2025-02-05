@@ -1,6 +1,11 @@
 
 
-# Slot: sequenceProvider
+# Slot: sequence provider (sequenceProvider)
+
+
+_The name of the sequence provider within the list of accepted sequence providers_
+
+
 
 
 
@@ -30,6 +35,8 @@ URI: [EVORAO:sequenceProvider](https://raw.githubusercontent.com/EVORA-project/e
 
 * Range: [String](String.md)
 
+* Required: True
+
 
 
 
@@ -56,6 +63,7 @@ URI: [EVORAO:sequenceProvider](https://raw.githubusercontent.com/EVORA-project/e
 | ---  | ---  |
 | self | EVORAO:sequenceProvider |
 | native | EVORAO:sequenceProvider |
+| close | dct:publisher |
 
 
 
@@ -65,12 +73,19 @@ URI: [EVORAO:sequenceProvider](https://raw.githubusercontent.com/EVORA-project/e
 <details>
 ```yaml
 name: sequenceProvider
+description: The name of the sequence provider within the list of accepted sequence
+  providers
+title: sequence provider
 from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+close_mappings:
+- dct:publisher
 rank: 1000
 alias: sequenceProvider
 domain_of:
 - SequenceReference
 range: string
+required: true
+multivalued: false
 equals_string_in:
 - ENA
 - GenBank

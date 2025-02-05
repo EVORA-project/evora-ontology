@@ -1,6 +1,11 @@
 
 
-# Slot: addressRegion
+# Slot: region (addressRegion)
+
+
+_The region in which the locality is, and which is in the country. For example, California or another appropriate first-level Administrative division_
+
+
 
 
 
@@ -56,6 +61,7 @@ URI: [EVORAO:addressRegion](https://raw.githubusercontent.com/EVORA-project/evor
 | ---  | ---  |
 | self | EVORAO:addressRegion |
 | native | EVORAO:addressRegion |
+| close | schema:addressRegion, vcard:hasRegion |
 
 
 
@@ -65,12 +71,20 @@ URI: [EVORAO:addressRegion](https://raw.githubusercontent.com/EVORA-project/evor
 <details>
 ```yaml
 name: addressRegion
+description: The region in which the locality is, and which is in the country. For
+  example, California or another appropriate first-level Administrative division
+title: region
 from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+close_mappings:
+- schema:addressRegion
+- vcard:hasRegion
 rank: 1000
 alias: addressRegion
 domain_of:
 - ContactPoint
 range: string
+required: false
+multivalued: false
 
 ```
 </details>

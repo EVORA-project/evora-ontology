@@ -1,6 +1,11 @@
 
 
-# Slot: collectionItem
+# Slot: collection item (collectionItem)
+
+
+_An item of the collection_
+
+
 
 
 
@@ -28,7 +33,11 @@ URI: [EVORAO:collectionItem](https://raw.githubusercontent.com/EVORA-project/evo
 
 ## Properties
 
-* Range: [String](String.md)
+* Range: [ProductOrService](ProductOrService.md)
+
+* Multivalued: True
+
+* Recommended: True
 
 
 
@@ -56,6 +65,7 @@ URI: [EVORAO:collectionItem](https://raw.githubusercontent.com/EVORA-project/evo
 | ---  | ---  |
 | self | EVORAO:collectionItem |
 | native | EVORAO:collectionItem |
+| close | dcat:resource |
 
 
 
@@ -65,12 +75,19 @@ URI: [EVORAO:collectionItem](https://raw.githubusercontent.com/EVORA-project/evo
 <details>
 ```yaml
 name: collectionItem
+description: An item of the collection
+title: collection item
 from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+close_mappings:
+- dcat:resource
 rank: 1000
 alias: collectionItem
 domain_of:
 - Collection
-range: string
+range: ProductOrService
+required: false
+recommended: true
+multivalued: true
 
 ```
 </details>

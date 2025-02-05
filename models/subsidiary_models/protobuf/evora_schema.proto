@@ -1,8 +1,8 @@
  syntax="proto3";
  package
 // metamodel_version: 1.7.0
-// version: 1.0.8373
-// List of alternate names for things
+// version: 1.0.8498
+// List of other names for things
 message AlternateName
  {
   string name = 0
@@ -146,6 +146,7 @@ message Bundle
  repeated  collection collection = 0
  repeated  keyword keywords = 0
   string availability = 0
+ repeated  document complementaryDocument = 0
   string technicalRecommendation = 0
  repeated  image productPicture = 0
  repeated  externalRelatedReference externalRelatedReference = 0
@@ -161,7 +162,6 @@ message Bundle
   boolean thirdPartyDistributionConsent = 0
   string usageRestrictions = 0
  repeated  product productsOfTheBundle = 0
-  string complementaryDocument = 0
  }
 // Assurance given by an independent certification body that a product, service or system meets the requirements of a standard
 message Certification
@@ -562,10 +562,10 @@ message Organization
  {
   string name = 0
   string description = 0
-  string homePage = 0
+  uri homePage = 0
   contactPoint contactPoint = 0
   image logo = 0
-  alternateName alternateName = 0
+ repeated  alternateName alternateName = 0
   country country = 0
   string rORiD = 0
  }
@@ -574,7 +574,7 @@ message Originator
  {
   string name = 0
   string description = 0
-  string homePage = 0
+  uri homePage = 0
   contactPoint contactPoint = 0
   image logo = 0
  }
@@ -605,7 +605,7 @@ message Person
  {
   string name = 0
   string description = 0
-  string homePage = 0
+  uri homePage = 0
   contactPoint contactPoint = 0
   image logo = 0
   string oRCIDiD = 0
@@ -615,7 +615,7 @@ message PersonOrOrganization
  {
   string name = 0
   string description = 0
-  string homePage = 0
+  uri homePage = 0
   contactPoint contactPoint = 0
   image logo = 0
  }
@@ -863,10 +863,10 @@ message Provider
  {
   string name = 0
   string description = 0
-  string homePage = 0
+  uri homePage = 0
   contactPoint contactPoint = 0
   image logo = 0
-  alternateName alternateName = 0
+ repeated  alternateName alternateName = 0
   country country = 0
   string rORiD = 0
  repeated  rI memberOfRI = 0
@@ -877,7 +877,7 @@ message Publication
   string title = 0
   string authors = 0
   string abstract = 0
-  dOI relatedDOI = 0
+ repeated  dOI relatedDOI = 0
   journal journal = 0
  }
 // Identification of a recombinant part
@@ -891,10 +891,10 @@ message RI
  {
   string name = 0
   string description = 0
-  string homePage = 0
+  uri homePage = 0
   contactPoint contactPoint = 0
   image logo = 0
-  alternateName alternateName = 0
+ repeated  alternateName alternateName = 0
   country country = 0
   string rORiD = 0
  }

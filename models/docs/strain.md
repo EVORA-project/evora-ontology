@@ -1,6 +1,11 @@
 
 
-# Slot: strain
+# Slot: strain (strain)
+
+
+_Identifier given to a genetic variant within a single species_
+
+
 
 
 
@@ -29,6 +34,8 @@ URI: [EVORAO:strain](https://raw.githubusercontent.com/EVORA-project/evora-ontol
 ## Properties
 
 * Range: [String](String.md)
+
+* Recommended: True
 
 
 
@@ -65,12 +72,17 @@ URI: [EVORAO:strain](https://raw.githubusercontent.com/EVORA-project/evora-ontol
 <details>
 ```yaml
 name: strain
+description: Identifier given to a genetic variant within a single species
+title: strain
 from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
 rank: 1000
 alias: strain
 domain_of:
 - PathogenIdentification
 range: string
+required: false
+recommended: true
+multivalued: false
 
 ```
 </details>

@@ -162,8 +162,8 @@ URI: [EVORAO:Taxon](https://raw.githubusercontent.com/EVORA-project/evora-ontolo
 | ---  | ---  |
 | self | EVORAO:Taxon |
 | native | EVORAO:Taxon |
-| exact | dwc:Taxon |
-| close | wd:Q16521 |
+| exact | dwc:Taxon, dwc:Taxon |
+| close | wd:Q16521, wd:Q16521 |
 
 
 
@@ -189,7 +189,9 @@ comments:
 from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
 exact_mappings:
 - dwc:Taxon
+- dwc:Taxon
 close_mappings:
+- wd:Q16521
 - wd:Q16521
 is_a: Term
 slots:
@@ -279,9 +281,8 @@ slot_usage:
     title: taxonomic node ID
     comments:
     - NCBI does not have a taxon_node id, only a taxonomicID. Taxon_node id is Unique  in
-      NCBI= Key of the taxon node !! Could be replaced by a composite key made of
-      "taxonomic ID" + "has version" But can be referenced as it seems the "taxonomic
-      node_ID" will be generated and provided by the ICTV
+      ICTV= Key of the taxon node !! Could be replaced by a composite key made of
+      'taxonomic ID' + 'has version'
     close_mappings:
     - dwc:taxonID
     domain_of:
@@ -308,7 +309,9 @@ comments:
 from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
 exact_mappings:
 - dwc:Taxon
+- dwc:Taxon
 close_mappings:
+- wd:Q16521
 - wd:Q16521
 is_a: Term
 slot_usage:
@@ -390,9 +393,8 @@ slot_usage:
     title: taxonomic node ID
     comments:
     - NCBI does not have a taxon_node id, only a taxonomicID. Taxon_node id is Unique  in
-      NCBI= Key of the taxon node !! Could be replaced by a composite key made of
-      "taxonomic ID" + "has version" But can be referenced as it seems the "taxonomic
-      node_ID" will be generated and provided by the ICTV
+      ICTV= Key of the taxon node !! Could be replaced by a composite key made of
+      'taxonomic ID' + 'has version'
     close_mappings:
     - dwc:taxonID
     domain_of:
@@ -504,9 +506,8 @@ attributes:
     title: taxonomic node ID
     comments:
     - NCBI does not have a taxon_node id, only a taxonomicID. Taxon_node id is Unique  in
-      NCBI= Key of the taxon node !! Could be replaced by a composite key made of
-      "taxonomic ID" + "has version" But can be referenced as it seems the "taxonomic
-      node_ID" will be generated and provided by the ICTV
+      ICTV= Key of the taxon node !! Could be replaced by a composite key made of
+      'taxonomic ID' + 'has version'
     from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
     close_mappings:
     - dwc:taxonID
@@ -527,9 +528,9 @@ attributes:
     - 'The title of the item should be as short and descriptive as possible. E.g.
       for virus products it should basically be based on the following Pattern:
 
-      "Virus name", "virus host type", "collection year", "country of collection"
-      ex "suspected epidemiological origin", "genotype", "strain", "variant name or
-      specific feature"'
+      ''Virus name'', ''virus host type'', ''collection year'', ''country of collection''
+      ex ''suspected epidemiological origin'', ''genotype'', ''strain'', ''variant
+      name or specific feature'
     from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
     exact_mappings:
     - dct:title
@@ -587,6 +588,10 @@ attributes:
       processed in ascending order. This weight helps prioritize content when organizing
       or processing data. Its value can be negative, with a default set to 0
     title: weight
+    comments:
+    - The lowest weighted Data providers are triggered first, this may be usefull
+      to populate at first entities that are referenced by others (e.g. Version ahead
+      of Rank ahead of Taxon)
     from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
     close_mappings:
     - adms:status

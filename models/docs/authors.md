@@ -1,6 +1,11 @@
 
 
-# Slot: authors
+# Slot: authors (authors)
+
+
+_The list of authors_
+
+
 
 
 
@@ -29,6 +34,8 @@ URI: [EVORAO:authors](https://raw.githubusercontent.com/EVORA-project/evora-onto
 ## Properties
 
 * Range: [String](String.md)
+
+* Required: True
 
 
 
@@ -65,12 +72,16 @@ URI: [EVORAO:authors](https://raw.githubusercontent.com/EVORA-project/evora-onto
 <details>
 ```yaml
 name: authors
+description: The list of authors
+title: authors
 from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
 rank: 1000
 alias: authors
 domain_of:
 - Publication
 range: string
+required: true
+multivalued: false
 
 ```
 </details>

@@ -108,8 +108,8 @@ URI: [EVORAO:Dataset](https://raw.githubusercontent.com/EVORA-project/evora-onto
 | ---  | ---  |
 | self | EVORAO:Dataset |
 | native | EVORAO:Dataset |
-| exact | dcat:Dataset |
-| close | wd:Q1172284, schema:DataCatalog |
+| exact | dcat:Dataset, dcat:Dataset |
+| close | wd:Q1172284, schema:DataCatalog, wd:Q1172284, schema:DataCatalog |
 
 
 
@@ -132,7 +132,10 @@ title: Dataset
 from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
 exact_mappings:
 - dcat:Dataset
+- dcat:Dataset
 close_mappings:
+- wd:Q1172284
+- schema:DataCatalog
 - wd:Q1172284
 - schema:DataCatalog
 is_a: Resource
@@ -152,7 +155,10 @@ title: Dataset
 from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
 exact_mappings:
 - dcat:Dataset
+- dcat:Dataset
 close_mappings:
+- wd:Q1172284
+- schema:DataCatalog
 - wd:Q1172284
 - schema:DataCatalog
 is_a: Resource

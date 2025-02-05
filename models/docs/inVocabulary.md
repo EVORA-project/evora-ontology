@@ -1,6 +1,11 @@
 
 
-# Slot: inVocabulary
+# Slot: in Vocabulary (inVocabulary)
+
+
+_Terms belong to a specific vocabulary_
+
+
 
 
 
@@ -18,31 +23,31 @@ URI: [EVORAO:inVocabulary](https://raw.githubusercontent.com/EVORA-project/evora
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [PropagationHost](PropagationHost.md) | The organism used to grow and multiply the pathogen under controlled conditio... |  no  |
-| [ProductionCellLine](ProductionCellLine.md) | A population of cells that originates from a primary culture, adapted to grow... |  no  |
-| [VirusName](VirusName.md) | A virus vernacular name or a name that describes a group of viruses |  no  |
-| [TransmissionMethod](TransmissionMethod.md) | The process by which the pathogen spreads between hosts |  no  |
-| [RiskGroup](RiskGroup.md) | Risk group classification guides initial handling of biological agents in lab... |  no  |
 | [TaxonomicRank](TaxonomicRank.md) | The possible taxonomic ranks and their description |  no  |
-| [Keyword](Keyword.md) | A term or phrase used to tag and categorize content |  no  |
-| [Country](Country.md) | The country as of ISO3166 |  no  |
-| [ExpressionVector](ExpressionVector.md) | A reference to an expression vector plasmid, typically embedding a resistance... |  no  |
-| [PlasmidSelection](PlasmidSelection.md) | The process of identifying cells that have successfully incorporated a plasmi... |  no  |
-| [Term](Term.md) | Word or phrase from a specialized area of knowledge |  yes  |
-| [ProteinTag](ProteinTag.md) | Peptide sequence genetically grafted onto a recombinant protein |  no  |
-| [Taxon](Taxon.md) | Conceptual entity that groups one or more populations of an organism or organ... |  no  |
-| [DOI](DOI.md) | A unique string identifier assigned to a digital object, providing a permanen... |  no  |
-| [PDBReference](PDBReference.md) | Identifier for 3D structural data as per the PDB (Protein Data Bank) database |  no  |
 | [GeographicalOrigin](GeographicalOrigin.md) | The specific location or region where a physical item, originates or is natur... |  no  |
 | [IPLCOrigin](IPLCOrigin.md) | The IPLC area (Indigenous People and Local Communities) from which a physical... |  no  |
-| [Journal](Journal.md) | Periodical journal publishing scientific research |  no  |
-| [CommonName](CommonName.md) | Vernacular name that is the name used in everyday language to refer to an org... |  no  |
-| [IsolationHost](IsolationHost.md) | Host organism from which the pathogen was isolated |  no  |
-| [AlternateName](AlternateName.md) | List of alternate names for things |  no  |
-| [ProductCategory](ProductCategory.md) | A term used to classify a group of products that share common characteristics... |  no  |
+| [TransmissionMethod](TransmissionMethod.md) | The process by which the pathogen spreads between hosts |  no  |
 | [IATAClassification](IATAClassification.md) | The corresponding International Air Transport Association (IATA)'s category f... |  no  |
-| [Variant](Variant.md) | An organism with one or more new mutations is referred to as a “variant” of t... |  no  |
+| [Term](Term.md) | Word or phrase from a specialized area of knowledge |  yes  |
+| [ProteinTag](ProteinTag.md) | Peptide sequence genetically grafted onto a recombinant protein |  no  |
+| [PlasmidSelection](PlasmidSelection.md) | The process of identifying cells that have successfully incorporated a plasmi... |  no  |
+| [Journal](Journal.md) | Periodical journal publishing scientific research |  no  |
+| [IsolationHost](IsolationHost.md) | Host organism from which the pathogen was isolated |  no  |
+| [PropagationHost](PropagationHost.md) | The organism used to grow and multiply the pathogen under controlled conditio... |  no  |
+| [DOI](DOI.md) | A unique string identifier assigned to a digital object, providing a permanen... |  no  |
+| [ProductionCellLine](ProductionCellLine.md) | A population of cells that originates from a primary culture, adapted to grow... |  no  |
+| [ProductCategory](ProductCategory.md) | A term used to classify a group of products that share common characteristics... |  no  |
 | [SpecialFeature](SpecialFeature.md) | Distinctive attributes of a product that set it apart from other similar item... |  no  |
+| [Variant](Variant.md) | An organism with one or more new mutations is referred to as a “variant” of t... |  no  |
+| [Taxon](Taxon.md) | Conceptual entity that groups one or more populations of an organism or organ... |  no  |
+| [AlternateName](AlternateName.md) | List of other names for things |  no  |
+| [Country](Country.md) | The country as of ISO3166 |  no  |
+| [VirusName](VirusName.md) | A virus vernacular name or a name that describes a group of viruses |  no  |
+| [RiskGroup](RiskGroup.md) | Risk group classification guides initial handling of biological agents in lab... |  no  |
+| [CommonName](CommonName.md) | Vernacular name that is the name used in everyday language to refer to an org... |  no  |
+| [ExpressionVector](ExpressionVector.md) | A reference to an expression vector plasmid, typically embedding a resistance... |  no  |
+| [PDBReference](PDBReference.md) | Identifier for 3D structural data as per the PDB (Protein Data Bank) database |  no  |
+| [Keyword](Keyword.md) | A term or phrase used to tag and categorize content |  no  |
 
 
 
@@ -52,7 +57,9 @@ URI: [EVORAO:inVocabulary](https://raw.githubusercontent.com/EVORA-project/evora
 
 ## Properties
 
-* Range: [String](String.md)
+* Range: [Vocabulary](Vocabulary.md)
+
+* Required: True
 
 
 
@@ -80,6 +87,7 @@ URI: [EVORAO:inVocabulary](https://raw.githubusercontent.com/EVORA-project/evora
 | ---  | ---  |
 | self | EVORAO:inVocabulary |
 | native | EVORAO:inVocabulary |
+| close | wdp:P972 |
 
 
 
@@ -89,12 +97,18 @@ URI: [EVORAO:inVocabulary](https://raw.githubusercontent.com/EVORA-project/evora
 <details>
 ```yaml
 name: inVocabulary
+description: Terms belong to a specific vocabulary
+title: in Vocabulary
 from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+close_mappings:
+- wdp:P972
 rank: 1000
 alias: inVocabulary
 domain_of:
 - Term
-range: string
+range: Vocabulary
+required: true
+multivalued: false
 
 ```
 </details>

@@ -1,6 +1,11 @@
 
 
-# Slot: rankDataProvider
+# Slot: rank data provider (rankDataProvider)
+
+
+_The data provider for the description of the taxonomic ranks used in this taxonomy_
+
+
 
 
 
@@ -28,7 +33,7 @@ URI: [EVORAO:rankDataProvider](https://raw.githubusercontent.com/EVORA-project/e
 
 ## Properties
 
-* Range: [String](String.md)
+* Range: [DataProvider](DataProvider.md)
 
 
 
@@ -65,12 +70,17 @@ URI: [EVORAO:rankDataProvider](https://raw.githubusercontent.com/EVORA-project/e
 <details>
 ```yaml
 name: rankDataProvider
+description: The data provider for the description of the taxonomic ranks used in
+  this taxonomy
+title: rank data provider
 from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
 rank: 1000
 alias: rankDataProvider
 domain_of:
 - Taxonomy
-range: string
+range: DataProvider
+required: false
+multivalued: false
 
 ```
 </details>

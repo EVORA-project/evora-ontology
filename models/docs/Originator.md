@@ -67,7 +67,7 @@ URI: [EVORAO:Originator](https://raw.githubusercontent.com/EVORA-project/evora-o
 | ---  | --- | --- | --- |
 | [name](name.md) | 1 <br/> [String](String.md) | The label that allows humans to identify the current item | [PersonOrOrganization](PersonOrOrganization.md) |
 | [description](description.md) | 0..1 _recommended_ <br/> [String](String.md) | A short explanation of the characteristics, features, or nature of the curren... | [PersonOrOrganization](PersonOrOrganization.md) |
-| [homePage](homePage.md) | 0..1 <br/> [String](String.md) | Refers to the degree of purity achieved for a protein sample | [PersonOrOrganization](PersonOrOrganization.md) |
+| [homePage](homePage.md) | 0..1 <br/> [Uri](Uri.md) | A web page that serves as the main or introductory page | [PersonOrOrganization](PersonOrOrganization.md) |
 | [contactPoint](contactPoint.md) | 0..1 _recommended_ <br/> [ContactPoint](ContactPoint.md) | An information that allows someone to establish communication | [PersonOrOrganization](PersonOrOrganization.md) |
 | [logo](logo.md) | 0..1 <br/> [Image](Image.md) | A path or URL to the related logo | [PersonOrOrganization](PersonOrOrganization.md) |
 
@@ -121,7 +121,7 @@ URI: [EVORAO:Originator](https://raw.githubusercontent.com/EVORA-project/evora-o
 | ---  | ---  |
 | self | EVORAO:Originator |
 | native | EVORAO:Originator |
-| close | dct:ProvenanceStatement |
+| close | dct:ProvenanceStatement, dct:ProvenanceStatement |
 
 
 
@@ -145,6 +145,7 @@ title: Originator
 from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
 close_mappings:
 - dct:ProvenanceStatement
+- dct:ProvenanceStatement
 is_a: PersonOrOrganization
 
 ```
@@ -162,6 +163,7 @@ title: Originator
 from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
 close_mappings:
 - dct:ProvenanceStatement
+- dct:ProvenanceStatement
 is_a: PersonOrOrganization
 attributes:
   name:
@@ -172,9 +174,9 @@ attributes:
     - 'The title of the item should be as short and descriptive as possible. E.g.
       for virus products it should basically be based on the following Pattern:
 
-      "Virus name", "virus host type", "collection year", "country of collection"
-      ex "suspected epidemiological origin", "genotype", "strain", "variant name or
-      specific feature"'
+      ''Virus name'', ''virus host type'', ''collection year'', ''country of collection''
+      ex ''suspected epidemiological origin'', ''genotype'', ''strain'', ''variant
+      name or specific feature'
     from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
     exact_mappings:
     - dct:title
@@ -228,10 +230,7 @@ attributes:
     multivalued: false
   homePage:
     name: homePage
-    description: Refers to the degree of purity achieved for a protein sample. Possible
-      values include ">95%" (the protein is highly purified, with more than 95% purity)
-      and "Unpurified expression host lysate or partly purified protein" (the protein
-      is either unpurified and present in the host cell lysate or only partially purified).
+    description: A web page that serves as the main or introductory page
     title: home page
     from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
     rank: 1000
@@ -239,7 +238,7 @@ attributes:
     owner: Originator
     domain_of:
     - PersonOrOrganization
-    range: string
+    range: uri
     required: false
     multivalued: false
   contactPoint:

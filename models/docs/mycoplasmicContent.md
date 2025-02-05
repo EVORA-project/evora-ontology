@@ -1,6 +1,11 @@
 
 
-# Slot: mycoplasmicContent
+# Slot: mycoplasmic content (mycoplasmicContent)
+
+
+_Indicates the presence of mycoplasma contamination within the sample_
+
+
 
 
 
@@ -28,7 +33,9 @@ URI: [EVORAO:mycoplasmicContent](https://raw.githubusercontent.com/EVORA-project
 
 ## Properties
 
-* Range: [String](String.md)
+* Range: [Boolean](Boolean.md)
+
+* Required: True
 
 
 
@@ -65,12 +72,16 @@ URI: [EVORAO:mycoplasmicContent](https://raw.githubusercontent.com/EVORA-project
 <details>
 ```yaml
 name: mycoplasmicContent
+description: Indicates the presence of mycoplasma contamination within the sample
+title: mycoplasmic content
 from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
 rank: 1000
 alias: mycoplasmicContent
 domain_of:
 - Virus
-range: string
+range: boolean
+required: true
+multivalued: false
 
 ```
 </details>

@@ -1,6 +1,11 @@
 
 
-# Slot: regulatoryInformation
+# Slot: regulatory information (regulatoryInformation)
+
+
+_Lists applicable laws, regulations, and standards governing the product, including local, national, or international requirements for its handling, use, transportation, and disposal, ensuring compliance with legal obligations._
+
+
 
 
 
@@ -29,6 +34,8 @@ URI: [EVORAO:regulatoryInformation](https://raw.githubusercontent.com/EVORA-proj
 ## Properties
 
 * Range: [String](String.md)
+
+* Recommended: True
 
 
 
@@ -65,12 +72,19 @@ URI: [EVORAO:regulatoryInformation](https://raw.githubusercontent.com/EVORA-proj
 <details>
 ```yaml
 name: regulatoryInformation
+description: Lists applicable laws, regulations, and standards governing the product,
+  including local, national, or international requirements for its handling, use,
+  transportation, and disposal, ensuring compliance with legal obligations.
+title: regulatory information
 from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
 rank: 1000
 alias: regulatoryInformation
 domain_of:
 - MSDS
 range: string
+required: false
+recommended: true
+multivalued: false
 
 ```
 </details>

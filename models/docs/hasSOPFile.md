@@ -1,6 +1,11 @@
 
 
-# Slot: hasSOPFile
+# Slot: has SOP File (hasSOPFile)
+
+
+_The related standard operating procedure file_
+
+
 
 
 
@@ -28,7 +33,9 @@ URI: [EVORAO:hasSOPFile](https://raw.githubusercontent.com/EVORA-project/evora-o
 
 ## Properties
 
-* Range: [String](String.md)
+* Range: [File](File.md)
+
+* Multivalued: True
 
 
 
@@ -65,12 +72,16 @@ URI: [EVORAO:hasSOPFile](https://raw.githubusercontent.com/EVORA-project/evora-o
 <details>
 ```yaml
 name: hasSOPFile
+description: The related standard operating procedure file
+title: has SOP File
 from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
 rank: 1000
 alias: hasSOPFile
 domain_of:
 - Detection Kit
-range: string
+range: File
+required: false
+multivalued: true
 
 ```
 </details>

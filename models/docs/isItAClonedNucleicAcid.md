@@ -1,6 +1,11 @@
 
 
-# Slot: isItAClonedNucleicAcid
+# Slot: is it a Cloned Nucleic Acid? (isItAClonedNucleicAcid)
+
+
+_Indicates that the nucleic acid sequence has been inserted into a plasmid vector for propagation or expression in a host organism_
+
+
 
 
 
@@ -28,7 +33,9 @@ URI: [EVORAO:isItAClonedNucleicAcid](https://raw.githubusercontent.com/EVORA-pro
 
 ## Properties
 
-* Range: [String](String.md)
+* Range: [Boolean](Boolean.md)
+
+* Required: True
 
 
 
@@ -65,12 +72,17 @@ URI: [EVORAO:isItAClonedNucleicAcid](https://raw.githubusercontent.com/EVORA-pro
 <details>
 ```yaml
 name: isItAClonedNucleicAcid
+description: Indicates that the nucleic acid sequence has been inserted into a plasmid
+  vector for propagation or expression in a host organism
+title: is it a Cloned Nucleic Acid?
 from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
 rank: 1000
 alias: isItAClonedNucleicAcid
 domain_of:
 - Nucleic Acid
-range: string
+range: boolean
+required: true
+multivalued: false
 
 ```
 </details>

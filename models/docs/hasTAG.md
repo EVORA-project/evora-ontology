@@ -1,6 +1,11 @@
 
 
-# Slot: hasTAG
+# Slot: TAG (hasTAG)
+
+
+_TAG sequence used for purposes such as purification, detection, or localization_
+
+
 
 
 
@@ -28,7 +33,9 @@ URI: [EVORAO:hasTAG](https://raw.githubusercontent.com/EVORA-project/evora-ontol
 
 ## Properties
 
-* Range: [String](String.md)
+* Range: [ProteinTag](ProteinTag.md)
+
+* Required: True
 
 
 
@@ -65,12 +72,16 @@ URI: [EVORAO:hasTAG](https://raw.githubusercontent.com/EVORA-project/evora-ontol
 <details>
 ```yaml
 name: hasTAG
+description: TAG sequence used for purposes such as purification, detection, or localization
+title: TAG
 from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
 rank: 1000
 alias: hasTAG
 domain_of:
 - Nucleic Acid
-range: string
+range: ProteinTag
+required: true
+multivalued: false
 
 ```
 </details>

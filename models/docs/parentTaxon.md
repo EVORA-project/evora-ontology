@@ -1,6 +1,11 @@
 
 
-# Slot: parentTaxon
+# Slot: parent taxon (parentTaxon)
+
+
+_The parent taxon of the current taxon_
+
+
 
 
 
@@ -28,7 +33,9 @@ URI: [EVORAO:parentTaxon](https://raw.githubusercontent.com/EVORA-project/evora-
 
 ## Properties
 
-* Range: [String](String.md)
+* Range: [Taxon](Taxon.md)
+
+* Required: True
 
 
 
@@ -56,6 +63,7 @@ URI: [EVORAO:parentTaxon](https://raw.githubusercontent.com/EVORA-project/evora-
 | ---  | ---  |
 | self | EVORAO:parentTaxon |
 | native | EVORAO:parentTaxon |
+| close | dwc:Taxon |
 
 
 
@@ -65,12 +73,18 @@ URI: [EVORAO:parentTaxon](https://raw.githubusercontent.com/EVORA-project/evora-
 <details>
 ```yaml
 name: parentTaxon
+description: The parent taxon of the current taxon
+title: parent taxon
 from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+close_mappings:
+- dwc:Taxon
 rank: 1000
 alias: parentTaxon
 domain_of:
 - Taxon
-range: string
+range: Taxon
+required: true
+multivalued: false
 
 ```
 </details>

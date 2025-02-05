@@ -233,7 +233,7 @@ URI: [EVORAO:Protein](https://raw.githubusercontent.com/EVORA-project/evora-onto
           
     
     
-    Protein --> "1..*" Sequence : sequence
+    Protein --> "1..* _recommended_" Sequence : sequence
     click Sequence href "../Sequence"
 
         
@@ -285,7 +285,7 @@ URI: [EVORAO:Protein](https://raw.githubusercontent.com/EVORA-project/evora-onto
 | Name | Cardinality and Range | Description | Inheritance |
 | ---  | --- | --- | --- |
 | [biologicalMaterialOrigin](biologicalMaterialOrigin.md) | 1 <br/> [BiologicalMaterialOrigin](BiologicalMaterialOrigin.md) | Information about the origin of the biological material, essential for access... | direct |
-| [sequence](sequence.md) | 1..* <br/> [Sequence](Sequence.md) | The related sequence information from a sequence provider or in fasta format | direct |
+| [sequence](sequence.md) | 1..* _recommended_ <br/> [Sequence](Sequence.md) | The related sequence information from a sequence provider or in fasta format | direct |
 | [relatedPDB](relatedPDB.md) | * <br/> [PDBReference](PDBReference.md) | Identifier for 3D structural data as per the PDB (Protein Data Bank) database | direct |
 | [specialFeature](specialFeature.md) | * <br/> [SpecialFeature](SpecialFeature.md) | Distinctive attributes of a product that set it apart from other similar item... | direct |
 | [proteinTAG](proteinTAG.md) | * <br/> [ProteinTag](ProteinTag.md) | Peptide sequences genetically grafted onto a recombinant protein | direct |
@@ -315,7 +315,7 @@ URI: [EVORAO:Protein](https://raw.githubusercontent.com/EVORA-project/evora-onto
 | [unitCost](unitCost.md) | 1 _recommended_ <br/> [String](String.md) | The cost per access for one unit as defined by the unit definition | [ProductOrService](ProductOrService.md) |
 | [qualityGrading](qualityGrading.md) | 0..1 <br/> [String](String.md) | Information that permits to assess the quality level of what will be provided | [ProductOrService](ProductOrService.md) |
 | [pathogenIdentification](pathogenIdentification.md) | 1..* <br/> [PathogenIdentification](PathogenIdentification.md) | The identification of the pathogen or group of pathogens (e | [ProductOrService](ProductOrService.md) |
-| [relatedDOI](relatedDOI.md) | * <br/> [DOI](DOI.md) | Any DOI that can be related | [ProductOrService](ProductOrService.md) |
+| [relatedDOI](relatedDOI.md) | * <br/> [DOI](DOI.md) | Any Digital Object Identifier that can be related | [ProductOrService](ProductOrService.md) |
 | [riskGroup](riskGroup.md) | 0..1 _recommended_ <br/> [RiskGroup](RiskGroup.md) | The highest risk group related to this resource | [ProductOrService](ProductOrService.md) |
 | [biosafetyRestrictions](biosafetyRestrictions.md) | 0..1 <br/> [String](String.md) | Information about guidelines and regulations designed to prevent the exposure... | [ProductOrService](ProductOrService.md) |
 | [canItBeUsedToProduceGMO](canItBeUsedToProduceGMO.md) | 1 _recommended_ <br/> [Boolean](Boolean.md) | Indicates if the current service or product can be used to produce GMO | [ProductOrService](ProductOrService.md) |
@@ -323,7 +323,7 @@ URI: [EVORAO:Protein](https://raw.githubusercontent.com/EVORA-project/evora-onto
 | [collection](collection.md) | 1..* <br/> [Collection](Collection.md) | The collection(s) to which belongs this item | [ProductOrService](ProductOrService.md) |
 | [keywords](keywords.md) | 1..* _recommended_ <br/> [Keyword](Keyword.md) | List of terms used to tag and categorize this Item | [ProductOrService](ProductOrService.md) |
 | [availability](availability.md) | 1 <br/> [String](String.md) | The state or condition in which this item is accessible and ready for use or ... | [ProductOrService](ProductOrService.md) |
-| [complementaryDocument](complementaryDocument.md) | * <br/> [Document](Document.md) | Any complementary document that can be related to this Item | [ProductOrService](ProductOrService.md) |
+| [complementaryDocument](complementaryDocument.md) | * <br/> [Document](Document.md) | Any additional documents that provide supplementary information, instructions... | [ProductOrService](ProductOrService.md) |
 | [technicalRecommendation](technicalRecommendation.md) | 0..1 <br/> [String](String.md) | Expert advice or guidelines provided to ensure the optimal use, performance, ... | [ProductOrService](ProductOrService.md) |
 | [productPicture](productPicture.md) | * <br/> [Image](Image.md) | A picture that can represent the item | [ProductOrService](ProductOrService.md) |
 | [externalRelatedReference](externalRelatedReference.md) | * <br/> [ExternalRelatedReference](ExternalRelatedReference.md) | A reference that permits to retrieve another related item from an external pr... | [ProductOrService](ProductOrService.md) |
@@ -362,7 +362,7 @@ URI: [EVORAO:Protein](https://raw.githubusercontent.com/EVORA-project/evora-onto
 | ---  | ---  |
 | self | EVORAO:Protein |
 | native | EVORAO:Protein |
-| close | wd:Q8054 |
+| close | wd:Q8054, wd:Q8054 |
 
 
 
@@ -383,6 +383,7 @@ description: A protein as a derived product from a pathogen
 title: Protein
 from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
 close_mappings:
+- wd:Q8054
 - wd:Q8054
 is_a: Product
 slots:
@@ -405,7 +406,7 @@ slot_usage:
     name: biologicalMaterialOrigin
     description: Information about the origin of the biological material, essential
       for access, utilization, and benefit-sharing of genetic resources in compliance
-      with the Nagoya Protocol.
+      with the Nagoya Protocol
     title: Biological Material origin
     domain_of:
     - Protein
@@ -473,8 +474,8 @@ slot_usage:
   expressedAs:
     name: expressedAs
     description: Refers to the form in which the protein is produced and manifested
-      in a biological system. Possible values include "Soluble" (proteins that are
-      dissolved in the cellular or extracellular fluid) and "Inclusion bodies" (aggregated
+      in a biological system. Possible values include 'Soluble' (proteins that are
+      dissolved in the cellular or extracellular fluid) and 'Inclusion bodies' (aggregated
       proteins that are insoluble and form within the cell)
     title: expressed as
     domain_of:
@@ -485,8 +486,8 @@ slot_usage:
   inclusionBodiesType:
     name: inclusionBodiesType
     description: Refers to the state of aggregated proteins within a cell. Possible
-      values include "Denatured" (proteins are in an unfolded, inactive state) and
-      "Refolded" (proteins have been processed to regain their functional, active
+      values include 'Denatured' (proteins are in an unfolded, inactive state) and
+      'Refolded' (proteins have been processed to regain their functional, active
       conformation).
     title: inclusion bodies type
     domain_of:
@@ -497,8 +498,8 @@ slot_usage:
   expressionSystem:
     name: expressionSystem
     description: The host organism or cellular environment used to produce a protein
-      from a specific gene. Possible values include "E. coli" (bacterial system),
-      "Insect cells" (using baculovirus vectors), and "Mammalian cells" (mammalian
+      from a specific gene. Possible values include 'E. coli' (bacterial system),
+      'Insect cells' (using baculovirus vectors), and 'Mammalian cells' (mammalian
       cell lines).
     title: expression system
     domain_of:
@@ -509,9 +510,9 @@ slot_usage:
   functionalCharacterization:
     name: functionalCharacterization
     description: The process of determining and describing the specific biological
-      activities and roles of a protein. Possible values include "Functionally characterized"
-      (the protein's functions have been identified and described) and "No functional
-      characterization" (the protein's functions have not been identified or described).
+      activities and roles of a protein. Possible values include 'Functionally characterized'
+      (the protein's functions have been identified and described) and 'No functional
+      characterization' (the protein's functions have not been identified or described).
     title: functional characterization
     domain_of:
     - Protein
@@ -534,8 +535,8 @@ slot_usage:
   proteinPurification:
     name: proteinPurification
     description: Refers to the degree of purity achieved for a protein sample. Possible
-      values include ">95%" (the protein is highly purified, with more than 95% purity)
-      and "Unpurified expression host lysate or partly purified protein" (the protein
+      values include '>95%' (the protein is highly purified, with more than 95% purity)
+      and 'Unpurified expression host lysate or partly purified protein' (the protein
       is either unpurified and present in the host cell lysate or only partially purified).
     title: protein purification
     domain_of:
@@ -546,9 +547,9 @@ slot_usage:
   theTAGStatusOfTheSolubilizedProtein:
     name: theTAGStatusOfTheSolubilizedProtein
     description: Indicates the presence and condition of a tag on the protein after
-      solubilization. Possible values include "Uncleaved Tag" (the tag is still attached
-      to the protein), "Cleaved Tag" (the tag has been removed from the protein),
-      and "No Tag" (the protein does not have a tag)
+      solubilization. Possible values include 'Uncleaved Tag' (the tag is still attached
+      to the protein), 'Cleaved Tag' (the tag has been removed from the protein),
+      and 'No Tag' (the protein does not have a tag)
     title: TAG status of the solubilized protein
     domain_of:
     - Protein
@@ -559,8 +560,8 @@ slot_usage:
     name: typeOfFunctionalCharacterization
     description: Refers to the classification of a protein based on the specific type
       of functional analysis performed to determine its biological activities and
-      roles. Possible values include "Enzymatic" (the protein has been characterized
-      for its enzyme activity) and "Antigenic" (the protein has been characterized
+      roles. Possible values include 'Enzymatic' (the protein has been characterized
+      for its enzyme activity) and 'Antigenic' (the protein has been characterized
       for its ability to elicit an immune response).
     title: type of functional Characterization
     domain_of:
@@ -582,13 +583,14 @@ title: Protein
 from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
 close_mappings:
 - wd:Q8054
+- wd:Q8054
 is_a: Product
 slot_usage:
   biologicalMaterialOrigin:
     name: biologicalMaterialOrigin
     description: Information about the origin of the biological material, essential
       for access, utilization, and benefit-sharing of genetic resources in compliance
-      with the Nagoya Protocol.
+      with the Nagoya Protocol
     title: Biological Material origin
     domain_of:
     - Protein
@@ -656,8 +658,8 @@ slot_usage:
   expressedAs:
     name: expressedAs
     description: Refers to the form in which the protein is produced and manifested
-      in a biological system. Possible values include "Soluble" (proteins that are
-      dissolved in the cellular or extracellular fluid) and "Inclusion bodies" (aggregated
+      in a biological system. Possible values include 'Soluble' (proteins that are
+      dissolved in the cellular or extracellular fluid) and 'Inclusion bodies' (aggregated
       proteins that are insoluble and form within the cell)
     title: expressed as
     domain_of:
@@ -668,8 +670,8 @@ slot_usage:
   inclusionBodiesType:
     name: inclusionBodiesType
     description: Refers to the state of aggregated proteins within a cell. Possible
-      values include "Denatured" (proteins are in an unfolded, inactive state) and
-      "Refolded" (proteins have been processed to regain their functional, active
+      values include 'Denatured' (proteins are in an unfolded, inactive state) and
+      'Refolded' (proteins have been processed to regain their functional, active
       conformation).
     title: inclusion bodies type
     domain_of:
@@ -680,8 +682,8 @@ slot_usage:
   expressionSystem:
     name: expressionSystem
     description: The host organism or cellular environment used to produce a protein
-      from a specific gene. Possible values include "E. coli" (bacterial system),
-      "Insect cells" (using baculovirus vectors), and "Mammalian cells" (mammalian
+      from a specific gene. Possible values include 'E. coli' (bacterial system),
+      'Insect cells' (using baculovirus vectors), and 'Mammalian cells' (mammalian
       cell lines).
     title: expression system
     domain_of:
@@ -692,9 +694,9 @@ slot_usage:
   functionalCharacterization:
     name: functionalCharacterization
     description: The process of determining and describing the specific biological
-      activities and roles of a protein. Possible values include "Functionally characterized"
-      (the protein's functions have been identified and described) and "No functional
-      characterization" (the protein's functions have not been identified or described).
+      activities and roles of a protein. Possible values include 'Functionally characterized'
+      (the protein's functions have been identified and described) and 'No functional
+      characterization' (the protein's functions have not been identified or described).
     title: functional characterization
     domain_of:
     - Protein
@@ -717,8 +719,8 @@ slot_usage:
   proteinPurification:
     name: proteinPurification
     description: Refers to the degree of purity achieved for a protein sample. Possible
-      values include ">95%" (the protein is highly purified, with more than 95% purity)
-      and "Unpurified expression host lysate or partly purified protein" (the protein
+      values include '>95%' (the protein is highly purified, with more than 95% purity)
+      and 'Unpurified expression host lysate or partly purified protein' (the protein
       is either unpurified and present in the host cell lysate or only partially purified).
     title: protein purification
     domain_of:
@@ -729,9 +731,9 @@ slot_usage:
   theTAGStatusOfTheSolubilizedProtein:
     name: theTAGStatusOfTheSolubilizedProtein
     description: Indicates the presence and condition of a tag on the protein after
-      solubilization. Possible values include "Uncleaved Tag" (the tag is still attached
-      to the protein), "Cleaved Tag" (the tag has been removed from the protein),
-      and "No Tag" (the protein does not have a tag)
+      solubilization. Possible values include 'Uncleaved Tag' (the tag is still attached
+      to the protein), 'Cleaved Tag' (the tag has been removed from the protein),
+      and 'No Tag' (the protein does not have a tag)
     title: TAG status of the solubilized protein
     domain_of:
     - Protein
@@ -742,8 +744,8 @@ slot_usage:
     name: typeOfFunctionalCharacterization
     description: Refers to the classification of a protein based on the specific type
       of functional analysis performed to determine its biological activities and
-      roles. Possible values include "Enzymatic" (the protein has been characterized
-      for its enzyme activity) and "Antigenic" (the protein has been characterized
+      roles. Possible values include 'Enzymatic' (the protein has been characterized
+      for its enzyme activity) and 'Antigenic' (the protein has been characterized
       for its ability to elicit an immune response).
     title: type of functional Characterization
     domain_of:
@@ -756,7 +758,7 @@ attributes:
     name: biologicalMaterialOrigin
     description: Information about the origin of the biological material, essential
       for access, utilization, and benefit-sharing of genetic resources in compliance
-      with the Nagoya Protocol.
+      with the Nagoya Protocol
     title: Biological Material origin
     from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
     rank: 1000
@@ -785,6 +787,7 @@ attributes:
     - Pathogen
     range: Sequence
     required: true
+    recommended: true
     multivalued: true
   relatedPDB:
     name: relatedPDB
@@ -848,8 +851,8 @@ attributes:
   expressedAs:
     name: expressedAs
     description: Refers to the form in which the protein is produced and manifested
-      in a biological system. Possible values include "Soluble" (proteins that are
-      dissolved in the cellular or extracellular fluid) and "Inclusion bodies" (aggregated
+      in a biological system. Possible values include 'Soluble' (proteins that are
+      dissolved in the cellular or extracellular fluid) and 'Inclusion bodies' (aggregated
       proteins that are insoluble and form within the cell)
     title: expressed as
     from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
@@ -867,8 +870,8 @@ attributes:
   inclusionBodiesType:
     name: inclusionBodiesType
     description: Refers to the state of aggregated proteins within a cell. Possible
-      values include "Denatured" (proteins are in an unfolded, inactive state) and
-      "Refolded" (proteins have been processed to regain their functional, active
+      values include 'Denatured' (proteins are in an unfolded, inactive state) and
+      'Refolded' (proteins have been processed to regain their functional, active
       conformation).
     title: inclusion bodies type
     from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
@@ -886,8 +889,8 @@ attributes:
   expressionSystem:
     name: expressionSystem
     description: The host organism or cellular environment used to produce a protein
-      from a specific gene. Possible values include "E. coli" (bacterial system),
-      "Insect cells" (using baculovirus vectors), and "Mammalian cells" (mammalian
+      from a specific gene. Possible values include 'E. coli' (bacterial system),
+      'Insect cells' (using baculovirus vectors), and 'Mammalian cells' (mammalian
       cell lines).
     title: expression system
     from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
@@ -906,9 +909,9 @@ attributes:
   functionalCharacterization:
     name: functionalCharacterization
     description: The process of determining and describing the specific biological
-      activities and roles of a protein. Possible values include "Functionally characterized"
-      (the protein's functions have been identified and described) and "No functional
-      characterization" (the protein's functions have not been identified or described).
+      activities and roles of a protein. Possible values include 'Functionally characterized'
+      (the protein's functions have been identified and described) and 'No functional
+      characterization' (the protein's functions have not been identified or described).
     title: functional characterization
     from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
     rank: 1000
@@ -942,8 +945,8 @@ attributes:
   proteinPurification:
     name: proteinPurification
     description: Refers to the degree of purity achieved for a protein sample. Possible
-      values include ">95%" (the protein is highly purified, with more than 95% purity)
-      and "Unpurified expression host lysate or partly purified protein" (the protein
+      values include '>95%' (the protein is highly purified, with more than 95% purity)
+      and 'Unpurified expression host lysate or partly purified protein' (the protein
       is either unpurified and present in the host cell lysate or only partially purified).
     title: protein purification
     from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
@@ -961,9 +964,9 @@ attributes:
   theTAGStatusOfTheSolubilizedProtein:
     name: theTAGStatusOfTheSolubilizedProtein
     description: Indicates the presence and condition of a tag on the protein after
-      solubilization. Possible values include "Uncleaved Tag" (the tag is still attached
-      to the protein), "Cleaved Tag" (the tag has been removed from the protein),
-      and "No Tag" (the protein does not have a tag)
+      solubilization. Possible values include 'Uncleaved Tag' (the tag is still attached
+      to the protein), 'Cleaved Tag' (the tag has been removed from the protein),
+      and 'No Tag' (the protein does not have a tag)
     title: TAG status of the solubilized protein
     from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
     rank: 1000
@@ -978,8 +981,8 @@ attributes:
     name: typeOfFunctionalCharacterization
     description: Refers to the classification of a protein based on the specific type
       of functional analysis performed to determine its biological activities and
-      roles. Possible values include "Enzymatic" (the protein has been characterized
-      for its enzyme activity) and "Antigenic" (the protein has been characterized
+      roles. Possible values include 'Enzymatic' (the protein has been characterized
+      for its enzyme activity) and 'Antigenic' (the protein has been characterized
       for its ability to elicit an immune response).
     title: type of functional Characterization
     from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
@@ -1064,9 +1067,9 @@ attributes:
       environmental factors.
     title: storage conditions
     comments:
-    - e.g, could be a xsd:string in enumeration ("Freeze Dried", "Liquid Nitrogen",
-      "Viral Storage Medium -20C", "Viral Storage Medium -80C", "Living plant material
-      (>= +4°C)", "Gas Phase", "Ethanol -20C", "Ethanol -80C", "Dried")
+    - e.g, could be a xsd:string in enumeration ('Freeze Dried', 'Liquid Nitrogen',
+      'Viral Storage Medium -20C', 'Viral Storage Medium -80C', 'Living plant material
+      (>= +4°C)', 'Gas Phase', 'Ethanol -20C', 'Ethanol -80C', 'Dried')
     from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
     rank: 1000
     alias: storageConditions
@@ -1114,9 +1117,9 @@ attributes:
     - 'The title of the item should be as short and descriptive as possible. E.g.
       for virus products it should basically be based on the following Pattern:
 
-      "Virus name", "virus host type", "collection year", "country of collection"
-      ex "suspected epidemiological origin", "genotype", "strain", "variant name or
-      specific feature"'
+      ''Virus name'', ''virus host type'', ''collection year'', ''country of collection''
+      ex ''suspected epidemiological origin'', ''genotype'', ''strain'', ''variant
+      name or specific feature'
     from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
     exact_mappings:
     - dct:title
@@ -1305,7 +1308,7 @@ attributes:
     multivalued: true
   relatedDOI:
     name: relatedDOI
-    description: Any DOI that can be related
+    description: Any Digital Object Identifier that can be related
     title: DOI
     from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
     close_mappings:
@@ -1432,7 +1435,8 @@ attributes:
     multivalued: false
   complementaryDocument:
     name: complementaryDocument
-    description: Any complementary document that can be related to this Item
+    description: Any additional documents that provide supplementary information,
+      instructions, or guidelines relevant to the use of this item
     title: complementary document
     from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
     rank: 1000
@@ -1440,7 +1444,6 @@ attributes:
     owner: Protein
     domain_of:
     - ProductOrService
-    - Bundle
     range: Document
     required: false
     multivalued: true

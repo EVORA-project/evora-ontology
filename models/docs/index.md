@@ -63,7 +63,7 @@ Name: EVORAO
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Publication](Publication.md) | A scientific publication |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[SequenceReference](SequenceReference.md) | A reference that permits to retrieve the sequence information from a sequence provider |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Term](Term.md) | Word or phrase from a specialized area of knowledge |
-| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[AlternateName](AlternateName.md) | List of alternate names for things |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[AlternateName](AlternateName.md) | List of other names for things |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[CommonName](CommonName.md) | Vernacular name that is the name used in everyday language to refer to an organism or group of organisms. This name is typically easier to remember and pronounce compared to the scientific name |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Variant](Variant.md) | An organism with one or more new mutations is referred to as a “variant” of the original organism if not sufficiently different to be termed a distinct strain |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[VirusName](VirusName.md) | A virus vernacular name or a name that describes a group of viruses |
@@ -95,193 +95,193 @@ Name: EVORAO
 
 | Slot | Description |
 | --- | --- |
-| [abstract](abstract.md) |  |
-| [accessionNumber](accessionNumber.md) |  |
-| [accessPointURL](accessPointURL.md) |  |
-| [accessToPhysicalGeneticResource](accessToPhysicalGeneticResource.md) |  |
-| [accidentalReleaseMeasures](accidentalReleaseMeasures.md) |  |
-| [additionalCategory](additionalCategory.md) |  |
-| [addressCountry](addressCountry.md) |  |
-| [addressLocality](addressLocality.md) |  |
-| [addressRegion](addressRegion.md) |  |
-| [alpha2Code](alpha2Code.md) |  |
-| [alternateName](alternateName.md) |  |
-| [altText](altText.md) |  |
-| [antibodyPurifiedByAffinity](antibodyPurifiedByAffinity.md) |  |
-| [authors](authors.md) |  |
-| [availability](availability.md) |  |
-| [beforeDate](beforeDate.md) |  |
-| [biologicalMaterialOrigin](biologicalMaterialOrigin.md) |  |
-| [biologicalPartOrigin](biologicalPartOrigin.md) |  |
-| [biologicalSourceType](biologicalSourceType.md) |  |
-| [biosafetyRestrictions](biosafetyRestrictions.md) |  |
-| [canItBeUsedToProduceGMO](canItBeUsedToProduceGMO.md) |  |
-| [category](category.md) |  |
-| [certification](certification.md) |  |
-| [certificationDocument](certificationDocument.md) |  |
-| [clinicalInformation](clinicalInformation.md) |  |
-| [clonedIntoPlasmid](clonedIntoPlasmid.md) |  |
-| [coInfectingViruses](coInfectingViruses.md) |  |
-| [collection](collection.md) |  |
-| [collectionDataProvider](collectionDataProvider.md) |  |
-| [collectionDate](collectionDate.md) |  |
-| [collectionItem](collectionItem.md) |  |
-| [complementaryDocument](complementaryDocument.md) |  |
-| [contactPoint](contactPoint.md) |  |
-| [contaminationWithCoInfectingViruses](contaminationWithCoInfectingViruses.md) |  |
-| [contentType](contentType.md) |  |
-| [contentURL](contentURL.md) |  |
-| [country](country.md) |  |
-| [countryOfCollection](countryOfCollection.md) |  |
-| [cultivability](cultivability.md) |  |
-| [description](description.md) |  |
-| [descriptionOfModificationsMadeFromTheReferenceSequences](descriptionOfModificationsMadeFromTheReferenceSequences.md) |  |
-| [disposalConsiderations](disposalConsiderations.md) |  |
-| [domain](domain.md) |  |
-| [ecologicalInformation](ecologicalInformation.md) |  |
-| [email](email.md) |  |
-| [exposureControlsPersonalProtection](exposureControlsPersonalProtection.md) |  |
-| [expressedAs](expressedAs.md) |  |
-| [expressionSystem](expressionSystem.md) |  |
-| [externalEquivalentTaxon](externalEquivalentTaxon.md) |  |
-| [externalRelatedReference](externalRelatedReference.md) |  |
-| [fireFightingMeasures](fireFightingMeasures.md) |  |
-| [firstAidMeasures](firstAidMeasures.md) |  |
-| [format](format.md) |  |
-| [functionalCharacterization](functionalCharacterization.md) |  |
-| [functionalTechnicalDescription](functionalTechnicalDescription.md) |  |
-| [furtherInformation](furtherInformation.md) |  |
-| [genomeSequencing](genomeSequencing.md) |  |
-| [genotype](genotype.md) |  |
-| [handlingAndStorage](handlingAndStorage.md) |  |
-| [hasGbFileOfTheConstruct](hasGbFileOfTheConstruct.md) |  |
-| [hasIATAClassification](hasIATAClassification.md) |  |
-| [hasSOPFile](hasSOPFile.md) |  |
-| [hasTAG](hasTAG.md) |  |
-| [hazardsIdentification](hazardsIdentification.md) |  |
-| [homePage](homePage.md) |  |
-| [hostType](hostType.md) |  |
-| [hybridomaDescription](hybridomaDescription.md) |  |
-| [ID](ID.md) |  |
-| [identificationTechnique](identificationTechnique.md) |  |
-| [inclusionBodiesType](inclusionBodiesType.md) |  |
-| [indigenousPoepleAndLocalCommunityOrigin](indigenousPoepleAndLocalCommunityOrigin.md) |  |
-| [infectivity](infectivity.md) |  |
-| [infectivityTest](infectivityTest.md) |  |
-| [internalReference](internalReference.md) |  |
-| [inVocabulary](inVocabulary.md) |  |
-| [isItAClonedNucleicAcid](isItAClonedNucleicAcid.md) |  |
-| [isolate](isolate.md) |  |
-| [isolationConditions](isolationConditions.md) |  |
-| [isolationHost](isolationHost.md) |  |
-| [isolationTechnique](isolationTechnique.md) |  |
-| [journal](journal.md) |  |
-| [keywords](keywords.md) |  |
-| [letterOfAuthority](letterOfAuthority.md) |  |
-| [license](license.md) |  |
-| [licensingOrAttribution](licensingOrAttribution.md) |  |
-| [loginRequestMethod](loginRequestMethod.md) |  |
-| [loginTokenName](loginTokenName.md) |  |
-| [loginURL](loginURL.md) |  |
-| [logo](logo.md) |  |
-| [materialSafetyDataSheet](materialSafetyDataSheet.md) |  |
-| [memberOfRI](memberOfRI.md) |  |
-| [modelSpecies](modelSpecies.md) |  |
-| [modelType](modelType.md) |  |
-| [modificationsFromTheReferenceSequences](modificationsFromTheReferenceSequences.md) |  |
-| [msdsContact](msdsContact.md) |  |
-| [mutationObserved](mutationObserved.md) |  |
-| [mycoplasmicContent](mycoplasmicContent.md) |  |
-| [name](name.md) |  |
-| [note](note.md) |  |
-| [observedMutations](observedMutations.md) |  |
-| [oRCIDiD](oRCIDiD.md) |  |
-| [originator](originator.md) |  |
-| [parentCategory](parentCategory.md) |  |
-| [parentTaxon](parentTaxon.md) |  |
-| [partIdentification](partIdentification.md) |  |
-| [pasmidSelection](pasmidSelection.md) |  |
-| [passage](passage.md) |  |
-| [pathogenIdentification](pathogenIdentification.md) |  |
-| [pathogenName](pathogenName.md) |  |
-| [pathogenType](pathogenType.md) |  |
-| [permitIdentifierForABS](permitIdentifierForABS.md) |  |
-| [physicalChemicalProperties](physicalChemicalProperties.md) |  |
-| [postalCode](postalCode.md) |  |
-| [previouslyKnownAs](previouslyKnownAs.md) |  |
-| [productionCellLine](productionCellLine.md) |  |
-| [productionSystem](productionSystem.md) |  |
-| [productPicture](productPicture.md) |  |
-| [productsOfTheBundle](productsOfTheBundle.md) |  |
-| [propagationHost](propagationHost.md) |  |
-| [proteinPurification](proteinPurification.md) |  |
-| [proteinTAG](proteinTAG.md) |  |
-| [providedEntityType](providedEntityType.md) |  |
-| [provider](provider.md) |  |
-| [qualityGrading](qualityGrading.md) |  |
-| [queryMethod](queryMethod.md) |  |
-| [queryURL](queryURL.md) |  |
-| [rank](rank.md) |  |
-| [rankDataProvider](rankDataProvider.md) |  |
-| [recombinantMaterial](recombinantMaterial.md) |  |
-| [recombinantPartIdentification](recombinantPartIdentification.md) |  |
-| [reference](reference.md) |  |
-| [referenceLabel](referenceLabel.md) |  |
-| [referenceProviderName](referenceProviderName.md) |  |
-| [referenceProviderPrefix](referenceProviderPrefix.md) |  |
-| [refSKU](refSKU.md) |  |
-| [regionEncompassedInThisProduct](regionEncompassedInThisProduct.md) |  |
-| [regulatoryInformation](regulatoryInformation.md) |  |
-| [relatedDOI](relatedDOI.md) |  |
-| [relatedPDB](relatedPDB.md) |  |
-| [resourceURL](resourceURL.md) |  |
-| [riskGroup](riskGroup.md) |  |
-| [rORiD](rORiD.md) |  |
-| [sequence](sequence.md) |  |
-| [sequenceChecked](sequenceChecked.md) |  |
-| [sequenceFASTA](sequenceFASTA.md) |  |
-| [sequenceProvider](sequenceProvider.md) |  |
-| [sequenceReference](sequenceReference.md) |  |
-| [sequencing](sequencing.md) |  |
-| [serotype](serotype.md) |  |
-| [shippingConditions](shippingConditions.md) |  |
-| [sourceOfInformation](sourceOfInformation.md) |  |
-| [specialFeature](specialFeature.md) |  |
-| [specificity](specificity.md) |  |
-| [specificityDocumented](specificityDocumented.md) |  |
-| [stabilityAndReactivity](stabilityAndReactivity.md) |  |
-| [storageConditions](storageConditions.md) |  |
-| [strain](strain.md) |  |
-| [streetAddress](streetAddress.md) |  |
-| [subspecies](subspecies.md) |  |
-| [suspectedEpidemiologicalOrigin](suspectedEpidemiologicalOrigin.md) |  |
-| [targetedAntigen](targetedAntigen.md) |  |
-| [targetedRegion](targetedRegion.md) |  |
-| [taxon](taxon.md) |  |
-| [taxonDataProvider](taxonDataProvider.md) |  |
-| [taxonomicID](taxonomicID.md) |  |
-| [taxonomicNodeID](taxonomicNodeID.md) |  |
-| [taxonomy](taxonomy.md) |  |
-| [technicalRecommendation](technicalRecommendation.md) |  |
-| [telephone](telephone.md) |  |
-| [term](term.md) |  |
-| [termDataProvider](termDataProvider.md) |  |
-| [theTAGStatusOfTheSolubilizedProtein](theTAGStatusOfTheSolubilizedProtein.md) |  |
-| [thirdPartyDistributionConsent](thirdPartyDistributionConsent.md) |  |
-| [titer](titer.md) |  |
-| [title](title.md) |  |
-| [toxicologicalInformation](toxicologicalInformation.md) |  |
-| [transmissionMethod](transmissionMethod.md) |  |
-| [transportInformation](transportInformation.md) |  |
-| [typeOfFunctionalCharacterization](typeOfFunctionalCharacterization.md) |  |
-| [unitCost](unitCost.md) |  |
-| [unitDefinition](unitDefinition.md) |  |
-| [usageRestrictions](usageRestrictions.md) |  |
-| [variant](variant.md) |  |
-| [version](version.md) |  |
-| [versionDataProvider](versionDataProvider.md) |  |
-| [versionOf](versionOf.md) |  |
-| [weight](weight.md) |  |
+| [abstract](abstract.md) | Concise summary of the publication |
+| [accessionNumber](accessionNumber.md) | The sequence ID that permits to retrieve the sequence information from the se... |
+| [accessPointURL](accessPointURL.md) | The URL that permits to access to the product/service detailed description pa... |
+| [accessToPhysicalGeneticResource](accessToPhysicalGeneticResource.md) | Indicate if the biological part was produced with access to a physical geneti... |
+| [accidentalReleaseMeasures](accidentalReleaseMeasures.md) | Guidelines for safely managing spills or leaks of the product, including cont... |
+| [additionalCategory](additionalCategory.md) | Any category apart from its main category in which this product or service ca... |
+| [addressCountry](addressCountry.md) | The country as of  ISO 3166 |
+| [addressLocality](addressLocality.md) | The locality in which the street address is, and which is in the region |
+| [addressRegion](addressRegion.md) | The region in which the locality is, and which is in the country |
+| [alpha2Code](alpha2Code.md) | Two-letter country codes from ISO 3166-1 alpha-2 |
+| [alternateName](alternateName.md) | Any other name under which the entity can be known |
+| [altText](altText.md) | An alternate text for the image, if the image cannot be displayed |
+| [antibodyPurifiedByAffinity](antibodyPurifiedByAffinity.md) | Indicates whether or not if the antibody was purified by affinity |
+| [authors](authors.md) | The list of authors |
+| [availability](availability.md) | The state or condition in which this item is accessible and ready for use or ... |
+| [beforeDate](beforeDate.md) | Set to TRUE if a proxy date for the collection date is used |
+| [biologicalMaterialOrigin](biologicalMaterialOrigin.md) | Information about the origin of the biological material, essential for access... |
+| [biologicalPartOrigin](biologicalPartOrigin.md) | Details the origin of one or more unitary parts that make up the biological m... |
+| [biologicalSourceType](biologicalSourceType.md) | Defines if the current biological material is natural and was collected or if... |
+| [biosafetyRestrictions](biosafetyRestrictions.md) | Information about guidelines and regulations designed to prevent the exposure... |
+| [canItBeUsedToProduceGMO](canItBeUsedToProduceGMO.md) | Indicates if the current service or product can be used to produce GMO |
+| [category](category.md) | The main category of the service or product |
+| [certification](certification.md) | Any certification related to the current product or service; e |
+| [certificationDocument](certificationDocument.md) | The document(s) issued by an authority certifying the conformity of the subje... |
+| [clinicalInformation](clinicalInformation.md) | Details about the clinical aspects of the pathogen, including symptoms, sever... |
+| [clonedIntoPlasmid](clonedIntoPlasmid.md) | The plasmid into which the nucleic acid has been cloned |
+| [coInfectingViruses](coInfectingViruses.md) | Identifies other viruses that may co-infect the host organism along with the ... |
+| [collection](collection.md) | The collection(s) to which belongs this item |
+| [collectionDataProvider](collectionDataProvider.md) | The provider of the data of the collection |
+| [collectionDate](collectionDate.md) | The date when the sample was collected in situ |
+| [collectionItem](collectionItem.md) | An item of the collection |
+| [complementaryDocument](complementaryDocument.md) | Any additional documents that provide supplementary information, instructions... |
+| [contactPoint](contactPoint.md) | An information that allows someone to establish communication |
+| [contaminationWithCoInfectingViruses](contaminationWithCoInfectingViruses.md) | A boolean value indicating whether there is contamination with co-infecting v... |
+| [contentType](contentType.md) | The content type of the response to the queries |
+| [contentURL](contentURL.md) | The web address or location where the file content is stored and can be acces... |
+| [country](country.md) | The country of the organization |
+| [countryOfCollection](countryOfCollection.md) | The geographical location where the sample was collected in situ |
+| [cultivability](cultivability.md) | The ability of the pathogen to be cultivated or grown in laboratory condition... |
+| [description](description.md) | A short explanation of the characteristics, features, or nature of the curren... |
+| [descriptionOfModificationsMadeFromTheReferenceSequences](descriptionOfModificationsMadeFromTheReferenceSequences.md) | List the modifications mades from the reference sequence if any |
+| [disposalConsiderations](disposalConsiderations.md) | Guidance on the safe and environmentally responsible disposal of the product,... |
+| [domain](domain.md) | A distinct structural and functional unit within the protein, often capable o... |
+| [ecologicalInformation](ecologicalInformation.md) | Details the potential environmental impact of the product, including its effe... |
+| [email](email.md) | Email address |
+| [exposureControlsPersonalProtection](exposureControlsPersonalProtection.md) | Specifies measures to limit exposure to the product, including recommended en... |
+| [expressedAs](expressedAs.md) | Refers to the form in which the protein is produced and manifested in a biolo... |
+| [expressionSystem](expressionSystem.md) | The host organism or cellular environment used to produce a protein from a sp... |
+| [externalEquivalentTaxon](externalEquivalentTaxon.md) | Any equivalent taxon in a different taxonomy if exists/known to serve as a br... |
+| [externalRelatedReference](externalRelatedReference.md) | A reference that permits to retrieve another related item from an external pr... |
+| [fireFightingMeasures](fireFightingMeasures.md) | Guidance on how to safely extinguish a fire involving the product, including ... |
+| [firstAidMeasures](firstAidMeasures.md) | Instructions on immediate actions to take in case of exposure to the product,... |
+| [format](format.md) | The file type or format that indicates how the data within the file is struct... |
+| [functionalCharacterization](functionalCharacterization.md) | The process of determining and describing the specific biological activities ... |
+| [functionalTechnicalDescription](functionalTechnicalDescription.md) | Detailed information about the specific biological functions, mechanisms of a... |
+| [furtherInformation](furtherInformation.md) | Provides any additional details or clarifications not covered in other sectio... |
+| [genomeSequencing](genomeSequencing.md) | The extent of the pathogen's genetic material that has been sequenced, with p... |
+| [genotype](genotype.md) | Genotype information that identifies organisms that cluster in phylogenetic t... |
+| [handlingAndStorage](handlingAndStorage.md) | Instructions on the safe handling practices and storage conditions for the pr... |
+| [hasGbFileOfTheConstruct](hasGbFileOfTheConstruct.md) | A GenBank formatted file that contains detailed sequence and annotation infor... |
+| [hasIATAClassification](hasIATAClassification.md) | The corresponding International Air Transport Association (IATA)'s category f... |
+| [hasSOPFile](hasSOPFile.md) | The related standard operating procedure file |
+| [hasTAG](hasTAG.md) | TAG sequence used for purposes such as purification, detection, or localizati... |
+| [hazardsIdentification](hazardsIdentification.md) | Outlines the potential risks and dangers associated with handling the product... |
+| [homePage](homePage.md) | A web page that serves as the main or introductory page |
+| [hostType](hostType.md) | Indication of the possible host(s) for the identified pathogens among the lis... |
+| [hybridomaDescription](hybridomaDescription.md) | The description of the hybridoma |
+| [ID](ID.md) | The version identifier |
+| [identificationTechnique](identificationTechnique.md) | A method or procedure used to detect, identify, and confirm the presence of a... |
+| [inclusionBodiesType](inclusionBodiesType.md) | Refers to the state of aggregated proteins within a cell |
+| [indigenousPoepleAndLocalCommunityOrigin](indigenousPoepleAndLocalCommunityOrigin.md) | The specific IPLC area (Indigenous People and Local Communities) from which t... |
+| [infectivity](infectivity.md) | Indicates the ability of the pathogen to establish an infection in a host org... |
+| [infectivityTest](infectivityTest.md) | The description of the completed infectivity test, providing details on the m... |
+| [internalReference](internalReference.md) | Any reference or indication to be used for local retrieval purpose |
+| [inVocabulary](inVocabulary.md) | Terms belong to a specific vocabulary |
+| [isItAClonedNucleicAcid](isItAClonedNucleicAcid.md) | Indicates that the nucleic acid sequence has been inserted into a plasmid vec... |
+| [isolate](isolate.md) | Identifier given to a pathogen that has been isolated from an infected host a... |
+| [isolationConditions](isolationConditions.md) | The environmental and procedural conditions under which the pathogen was isol... |
+| [isolationHost](isolationHost.md) | The host organism from which the pathogen was originally isolated |
+| [isolationTechnique](isolationTechnique.md) | The specific method or procedure used to isolate the pathogen from a host org... |
+| [journal](journal.md) | The scientific journal in which the publication was published |
+| [keywords](keywords.md) | List of terms used to tag and categorize this Item |
+| [letterOfAuthority](letterOfAuthority.md) | Indicate whether a Letter of Authority is required, confirming the necessity ... |
+| [license](license.md) | Information about terms and conditions under which the subject can be used, s... |
+| [licensingOrAttribution](licensingOrAttribution.md) | A text or html code that provides any related data sharing licence and/or att... |
+| [loginRequestMethod](loginRequestMethod.md) | The http request method used to acces the login request url |
+| [loginTokenName](loginTokenName.md) | The name of the token, unique identifier of an interaction session, that will... |
+| [loginURL](loginURL.md) | The URL template that allows to log in if required |
+| [logo](logo.md) | A path or URL to the related logo |
+| [materialSafetyDataSheet](materialSafetyDataSheet.md) | A Material Safety Data Sheet (MSDS) or Safety Data Sheet (SDS) is a standardi... |
+| [memberOfRI](memberOfRI.md) | The research infrastructure of which this organization is a member |
+| [modelSpecies](modelSpecies.md) | The species of the infected organism in the experiment |
+| [modelType](modelType.md) | The specific name of the infected organism, including its modification if nec... |
+| [modificationsFromTheReferenceSequences](modificationsFromTheReferenceSequences.md) | Set to TRUE if there was is any modification made from the reference sequence |
+| [msdsContact](msdsContact.md) | The designated contact point responsible for providing information related to... |
+| [mutationObserved](mutationObserved.md) | Indicates if the current nucleic acid has No mutation compared to the referen... |
+| [mycoplasmicContent](mycoplasmicContent.md) | Indicates the presence of mycoplasma contamination within the sample |
+| [name](name.md) | The label that allows humans to identify the current item |
+| [note](note.md) | An aditional information as a textual comment |
+| [observedMutations](observedMutations.md) | The specific mutations that have been identified and documented in the nuclei... |
+| [oRCIDiD](oRCIDiD.md) | Unique persistent identifier for a person, provided by the Open Researcher an... |
+| [originator](originator.md) | The individual or organization responsible for the original discovery, isolat... |
+| [parentCategory](parentCategory.md) | An overarching category that encompasses the current category within a hierar... |
+| [parentTaxon](parentTaxon.md) | The parent taxon of the current taxon |
+| [partIdentification](partIdentification.md) | A short designation of this recombinant part of the related biological materi... |
+| [pasmidSelection](pasmidSelection.md) | Specific selectable markers in the plasmid, such as antibiotic resistance gen... |
+| [passage](passage.md) | The number of times the pathogen was cultured through serial passage, a proce... |
+| [pathogenIdentification](pathogenIdentification.md) | The identification of the pathogen or group of pathogens (e |
+| [pathogenName](pathogenName.md) | A pathogen common name or a name that describes a group of pathogens |
+| [pathogenType](pathogenType.md) | Identification of the specific type of pathogen among the listed categories e |
+| [permitIdentifierForABS](permitIdentifierForABS.md) | Reference of the permit identifiers for access to the genetic resource, appli... |
+| [physicalChemicalProperties](physicalChemicalProperties.md) | Key characteristics of the product, such as physical state, appearance, solub... |
+| [postalCode](postalCode.md) | The postal code |
+| [previouslyKnownAs](previouslyKnownAs.md) | Any historic version of this taxon having a different name |
+| [productionCellLine](productionCellLine.md) | The cell line used for the production or propagation of the pathogen, detaili... |
+| [productionSystem](productionSystem.md) | The biological and technological methods and processes used to produce the an... |
+| [productPicture](productPicture.md) | A picture that can represent the item |
+| [productsOfTheBundle](productsOfTheBundle.md) | Associates the bundle with the individual products it contains, specifying th... |
+| [propagationHost](propagationHost.md) | The host organism that propagates the pathogen |
+| [proteinPurification](proteinPurification.md) | Refers to the degree of purity achieved for a protein sample |
+| [proteinTAG](proteinTAG.md) | Peptide sequences genetically grafted onto a recombinant protein |
+| [providedEntityType](providedEntityType.md) | The identification of the entity type (Class) described by the response to th... |
+| [provider](provider.md) | A provider of this product or service, as a specific organization |
+| [qualityGrading](qualityGrading.md) | Information that permits to assess the quality level of what will be provided |
+| [queryMethod](queryMethod.md) | The http request method used to access the requested query url |
+| [queryURL](queryURL.md) | The URL template that allows to get the content |
+| [rank](rank.md) | Relative level or position of the identified taxon in the taxonomy |
+| [rankDataProvider](rankDataProvider.md) | The data provider for the description of the taxonomic ranks used in this tax... |
+| [recombinantMaterial](recombinantMaterial.md) | Indicates if this biological material is a recombinant biological material |
+| [recombinantPartIdentification](recombinantPartIdentification.md) | Identification of a recombinant part |
+| [reference](reference.md) | The identifier reference of the connected external item |
+| [referenceLabel](referenceLabel.md) | The label informing what this reference is about |
+| [referenceProviderName](referenceProviderName.md) | The name for the reference provider |
+| [referenceProviderPrefix](referenceProviderPrefix.md) | The url prefix that once completed with the reference will lead to the linked... |
+| [refSKU](refSKU.md) | The reference or the stock keeping unit of the service or item provided in th... |
+| [regionEncompassedInThisProduct](regionEncompassedInThisProduct.md) | The specific region encompassed in the product |
+| [regulatoryInformation](regulatoryInformation.md) | Lists applicable laws, regulations, and standards governing the product, incl... |
+| [relatedDOI](relatedDOI.md) | Any Digital Object Identifier that can be related |
+| [relatedPDB](relatedPDB.md) | Identifier for 3D structural data as per the PDB (Protein Data Bank) database |
+| [resourceURL](resourceURL.md) | The web address or location where the details or content is stored and can be... |
+| [riskGroup](riskGroup.md) | The highest risk group related to this resource |
+| [rORiD](rORiD.md) | The corresponding organization's persistent identifier from the Research Orga... |
+| [sequence](sequence.md) | The related sequence information from a sequence provider or in fasta format |
+| [sequenceChecked](sequenceChecked.md) | Tell whether or not the sequence of the product was controlled (compulsory fo... |
+| [sequenceFASTA](sequenceFASTA.md) | In case no sequence reference exists in public repositories, the correspondin... |
+| [sequenceProvider](sequenceProvider.md) | The name of the sequence provider within the list of accepted sequence provid... |
+| [sequenceReference](sequenceReference.md) | A reference that permits to retrieve the sequence information from a sequence... |
+| [sequencing](sequencing.md) | Refers to the level of sequencing performed on the nucleic acid |
+| [serotype](serotype.md) | Genetically related pathogens that group together based on serological relati... |
+| [shippingConditions](shippingConditions.md) | Specification of the terms and parameters for transporting |
+| [sourceOfInformation](sourceOfInformation.md) | The name of the origin from which knowledge is obtained |
+| [specialFeature](specialFeature.md) | Distinctive attributes of a product that set it apart from other similar item... |
+| [specificity](specificity.md) | Details on the ability of a detection kit to correctly identify negative resu... |
+| [specificityDocumented](specificityDocumented.md) | Boolean value indicating whether the specificity of the product has been form... |
+| [stabilityAndReactivity](stabilityAndReactivity.md) | Describes the product’s stability under normal conditions and its potential t... |
+| [storageConditions](storageConditions.md) | Specifies the conditions under which the product has to be stored to maintain... |
+| [strain](strain.md) | Identifier given to a genetic variant within a single species |
+| [streetAddress](streetAddress.md) | The building/apartment number and the street name |
+| [subspecies](subspecies.md) | The subspecies information differentiates closely related pathogens within a ... |
+| [suspectedEpidemiologicalOrigin](suspectedEpidemiologicalOrigin.md) | The potential geographical or environmental source from which the pathogen is... |
+| [targetedAntigen](targetedAntigen.md) | Specific molecular structure or epitope recognized and bound by an antibody |
+| [targetedRegion](targetedRegion.md) | The specific area or sequence within the target analyte that the detection ki... |
+| [taxon](taxon.md) | Scientifically classified group or entity within the reference taxonomy |
+| [taxonDataProvider](taxonDataProvider.md) | The data provider for the taxons of the taxonomy |
+| [taxonomicID](taxonomicID.md) | The taxonomic identifier as a persistent identifier accross releases |
+| [taxonomicNodeID](taxonomicNodeID.md) | The taxonomic_Node Identifier as an identifier specific the current taxon in ... |
+| [taxonomy](taxonomy.md) | The taxonomy release(s) in which this entity exists |
+| [technicalRecommendation](technicalRecommendation.md) | Expert advice or guidelines provided to ensure the optimal use, performance, ... |
+| [telephone](telephone.md) | The telephone number |
+| [term](term.md) | The terms related to this vocabulary |
+| [termDataProvider](termDataProvider.md) | An external API or Endpoint that permits to retrieve the terms of this vocabu... |
+| [theTAGStatusOfTheSolubilizedProtein](theTAGStatusOfTheSolubilizedProtein.md) | Indicates the presence and condition of a tag on the protein after solubiliza... |
+| [thirdPartyDistributionConsent](thirdPartyDistributionConsent.md) | Indicates whether the biological material can be distributed without restrict... |
+| [titer](titer.md) | The titer value, its corresponding unit, and the method of quantification (e |
+| [title](title.md) | The descriptive word or phrase that identifies the current piece of work |
+| [toxicologicalInformation](toxicologicalInformation.md) | Details on the potential health effects of the product, including routes of e... |
+| [transmissionMethod](transmissionMethod.md) | The method or route through which the pathogen is transmitted from one host t... |
+| [transportInformation](transportInformation.md) | Details the regulations and guidelines for safely transporting the product, i... |
+| [typeOfFunctionalCharacterization](typeOfFunctionalCharacterization.md) | Refers to the classification of a protein based on the specific type of funct... |
+| [unitCost](unitCost.md) | The cost per access for one unit as defined by the unit definition |
+| [unitDefinition](unitDefinition.md) | A short description of what will be delivered by ordering one unit of this it... |
+| [usageRestrictions](usageRestrictions.md) | Specifies any limitations or conditions on the use of the biological material... |
+| [variant](variant.md) | An organism with one or more new mutations is referred to as a “variant” of t... |
+| [version](version.md) | The version of this instance of entity |
+| [versionDataProvider](versionDataProvider.md) | The data provider for the Version ID of this taxonomy |
+| [versionOf](versionOf.md) | Identifier of what the version qualifies |
+| [weight](weight.md) | A numerical value indicating relative importance or priority, generally proce... |
 
 
 ## Enumerations

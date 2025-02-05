@@ -1,6 +1,11 @@
 
 
-# Slot: suspectedEpidemiologicalOrigin
+# Slot: suspected epidemiological origin (suspectedEpidemiologicalOrigin)
+
+
+_The potential geographical or environmental source from which the pathogen is believed to have originated or been transmitted_
+
+
 
 
 
@@ -18,13 +23,13 @@ URI: [EVORAO:suspectedEpidemiologicalOrigin](https://raw.githubusercontent.com/E
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [Protozoan](Protozoan.md) | The protozoan as a biological material |  no  |
+| [Fungus](Fungus.md) | The fungus as a biological material |  no  |
 | [Virus](Virus.md) | The virus as a biological material |  no  |
+| [Viroid](Viroid.md) | The viroid as a biological material |  no  |
 | [Pathogen](Pathogen.md) | Biological entity that causes disease in its host, which is typically an infe... |  yes  |
+| [Protozoan](Protozoan.md) | The protozoan as a biological material |  no  |
 | [Prion](Prion.md) | The prion as a biological material |  no  |
 | [Bacterium](Bacterium.md) | The bacterium as a biological material |  no  |
-| [Fungus](Fungus.md) | The fungus as a biological material |  no  |
-| [Viroid](Viroid.md) | The viroid as a biological material |  no  |
 
 
 
@@ -34,7 +39,9 @@ URI: [EVORAO:suspectedEpidemiologicalOrigin](https://raw.githubusercontent.com/E
 
 ## Properties
 
-* Range: [String](String.md)
+* Range: [GeographicalOrigin](GeographicalOrigin.md)
+
+* Multivalued: True
 
 
 
@@ -62,6 +69,7 @@ URI: [EVORAO:suspectedEpidemiologicalOrigin](https://raw.githubusercontent.com/E
 | ---  | ---  |
 | self | EVORAO:suspectedEpidemiologicalOrigin |
 | native | EVORAO:suspectedEpidemiologicalOrigin |
+| close | dct:spatial |
 
 
 
@@ -71,12 +79,19 @@ URI: [EVORAO:suspectedEpidemiologicalOrigin](https://raw.githubusercontent.com/E
 <details>
 ```yaml
 name: suspectedEpidemiologicalOrigin
+description: The potential geographical or environmental source from which the pathogen
+  is believed to have originated or been transmitted
+title: suspected epidemiological origin
 from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+close_mappings:
+- dct:spatial
 rank: 1000
 alias: suspectedEpidemiologicalOrigin
 domain_of:
 - Pathogen
-range: string
+range: GeographicalOrigin
+required: false
+multivalued: true
 
 ```
 </details>

@@ -1,6 +1,11 @@
 
 
-# Slot: accessionNumber
+# Slot: accession number (accessionNumber)
+
+
+_The sequence ID that permits to retrieve the sequence information from the sequence provider_
+
+
 
 
 
@@ -30,6 +35,8 @@ URI: [EVORAO:accessionNumber](https://raw.githubusercontent.com/EVORA-project/ev
 
 * Range: [String](String.md)
 
+* Required: True
+
 
 
 
@@ -56,6 +63,7 @@ URI: [EVORAO:accessionNumber](https://raw.githubusercontent.com/EVORA-project/ev
 | ---  | ---  |
 | self | EVORAO:accessionNumber |
 | native | EVORAO:accessionNumber |
+| close | dct:identifier |
 
 
 
@@ -65,12 +73,19 @@ URI: [EVORAO:accessionNumber](https://raw.githubusercontent.com/EVORA-project/ev
 <details>
 ```yaml
 name: accessionNumber
+description: The sequence ID that permits to retrieve the sequence information from
+  the sequence provider
+title: accession number
 from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+close_mappings:
+- dct:identifier
 rank: 1000
 alias: accessionNumber
 domain_of:
 - SequenceReference
 range: string
+required: true
+multivalued: false
 
 ```
 </details>

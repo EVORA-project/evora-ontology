@@ -62,7 +62,7 @@ URI: [EVORAO:Document](https://raw.githubusercontent.com/EVORA-project/evora-ont
 | [description](description.md) | 0..1 _recommended_ <br/> [String](String.md) | A short explanation of the characteristics, features, or nature of the curren... | [File](File.md) |
 | [contentURL](contentURL.md) | 1 <br/> [Uri](Uri.md) | The web address or location where the file content is stored and can be acces... | [File](File.md) |
 | [format](format.md) | 1 <br/> [String](String.md) | The file type or format that indicates how the data within the file is struct... | [File](File.md) |
-| [license](license.md) | 0..1 <br/> [License](License.md) | The legal terms and conditions under which the file can be used, shared, or d... | [File](File.md) |
+| [license](license.md) | 0..1 <br/> [License](License.md) | Information about terms and conditions under which the subject can be used, s... | [File](File.md) |
 
 
 
@@ -80,6 +80,7 @@ URI: [EVORAO:Document](https://raw.githubusercontent.com/EVORA-project/evora-ont
 | [Protein](Protein.md) | [complementaryDocument](complementaryDocument.md) | range | [Document](Document.md) |
 | [NucleicAcid](NucleicAcid.md) | [complementaryDocument](complementaryDocument.md) | range | [Document](Document.md) |
 | [DetectionKit](DetectionKit.md) | [complementaryDocument](complementaryDocument.md) | range | [Document](Document.md) |
+| [Bundle](Bundle.md) | [complementaryDocument](complementaryDocument.md) | range | [Document](Document.md) |
 | [Pathogen](Pathogen.md) | [complementaryDocument](complementaryDocument.md) | range | [Document](Document.md) |
 | [Virus](Virus.md) | [complementaryDocument](complementaryDocument.md) | range | [Document](Document.md) |
 | [Bacterium](Bacterium.md) | [complementaryDocument](complementaryDocument.md) | range | [Document](Document.md) |
@@ -116,7 +117,7 @@ URI: [EVORAO:Document](https://raw.githubusercontent.com/EVORA-project/evora-ont
 | ---  | ---  |
 | self | EVORAO:Document |
 | native | EVORAO:Document |
-| close | wd:Q49848 |
+| close | wd:Q49848, wd:Q49848 |
 
 
 
@@ -139,6 +140,7 @@ title: Document
 from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
 close_mappings:
 - wd:Q49848
+- wd:Q49848
 is_a: File
 
 ```
@@ -155,6 +157,7 @@ title: Document
 from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
 close_mappings:
 - wd:Q49848
+- wd:Q49848
 is_a: File
 attributes:
   name:
@@ -165,9 +168,9 @@ attributes:
     - 'The title of the item should be as short and descriptive as possible. E.g.
       for virus products it should basically be based on the following Pattern:
 
-      "Virus name", "virus host type", "collection year", "country of collection"
-      ex "suspected epidemiological origin", "genotype", "strain", "variant name or
-      specific feature"'
+      ''Virus name'', ''virus host type'', ''collection year'', ''country of collection''
+      ex ''suspected epidemiological origin'', ''genotype'', ''strain'', ''variant
+      name or specific feature'
     from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
     exact_mappings:
     - dct:title
@@ -249,10 +252,12 @@ attributes:
     multivalued: false
   license:
     name: license
-    description: The legal terms and conditions under which the file can be used,
-      shared, or distributed, indicating any restrictions or permissions.
+    description: Information about terms and conditions under which the subject can
+      be used, shared, or distributed, indicating any restrictions or permissions
     title: license
     from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+    exact_mappings:
+    - dct:license
     rank: 1000
     alias: license
     owner: Document

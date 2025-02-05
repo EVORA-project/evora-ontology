@@ -122,7 +122,7 @@ URI: [EVORAO:Certification](https://raw.githubusercontent.com/EVORA-project/evor
 | ---  | ---  |
 | self | EVORAO:Certification |
 | native | EVORAO:Certification |
-| close | wd:Q374814, schema:Certification |
+| close | wd:Q374814, schema:Certification, wd:Q374814, schema:Certification |
 
 
 
@@ -146,6 +146,8 @@ from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs
 close_mappings:
 - wd:Q374814
 - schema:Certification
+- wd:Q374814
+- schema:Certification
 is_a: Resource
 slots:
 - name
@@ -162,9 +164,9 @@ slot_usage:
     - 'The title of the item should be as short and descriptive as possible. E.g.
       for virus products it should basically be based on the following Pattern:
 
-      "Virus name", "virus host type", "collection year", "country of collection"
-      ex "suspected epidemiological origin", "genotype", "strain", "variant name or
-      specific feature"'
+      ''Virus name'', ''virus host type'', ''collection year'', ''country of collection''
+      ex ''suspected epidemiological origin'', ''genotype'', ''strain'', ''variant
+      name or specific feature'
     exact_mappings:
     - dct:title
     close_mappings:
@@ -259,6 +261,8 @@ from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs
 close_mappings:
 - wd:Q374814
 - schema:Certification
+- wd:Q374814
+- schema:Certification
 is_a: Resource
 slot_usage:
   name:
@@ -269,9 +273,9 @@ slot_usage:
     - 'The title of the item should be as short and descriptive as possible. E.g.
       for virus products it should basically be based on the following Pattern:
 
-      "Virus name", "virus host type", "collection year", "country of collection"
-      ex "suspected epidemiological origin", "genotype", "strain", "variant name or
-      specific feature"'
+      ''Virus name'', ''virus host type'', ''collection year'', ''country of collection''
+      ex ''suspected epidemiological origin'', ''genotype'', ''strain'', ''variant
+      name or specific feature'
     exact_mappings:
     - dct:title
     close_mappings:
@@ -359,9 +363,9 @@ attributes:
     - 'The title of the item should be as short and descriptive as possible. E.g.
       for virus products it should basically be based on the following Pattern:
 
-      "Virus name", "virus host type", "collection year", "country of collection"
-      ex "suspected epidemiological origin", "genotype", "strain", "variant name or
-      specific feature"'
+      ''Virus name'', ''virus host type'', ''collection year'', ''country of collection''
+      ex ''suspected epidemiological origin'', ''genotype'', ''strain'', ''variant
+      name or specific feature'
     from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
     exact_mappings:
     - dct:title
@@ -449,6 +453,8 @@ attributes:
       and can be accessed or downloaded.
     title: resource URL
     from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+    exact_mappings:
+    - dct:license
     close_mappings:
     - schema:url
     rank: 1000

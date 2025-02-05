@@ -1,6 +1,11 @@
 
 
-# Slot: streetAddress
+# Slot: street address (streetAddress)
+
+
+_The building/apartment number and the street name_
+
+
 
 
 
@@ -56,6 +61,7 @@ URI: [EVORAO:streetAddress](https://raw.githubusercontent.com/EVORA-project/evor
 | ---  | ---  |
 | self | EVORAO:streetAddress |
 | native | EVORAO:streetAddress |
+| close | schema:streetAddress, vcard:hasStreetAddress |
 
 
 
@@ -65,12 +71,19 @@ URI: [EVORAO:streetAddress](https://raw.githubusercontent.com/EVORA-project/evor
 <details>
 ```yaml
 name: streetAddress
+description: The building/apartment number and the street name
+title: street address
 from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+close_mappings:
+- schema:streetAddress
+- vcard:hasStreetAddress
 rank: 1000
 alias: streetAddress
 domain_of:
 - ContactPoint
 range: string
+required: false
+multivalued: false
 
 ```
 </details>

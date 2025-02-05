@@ -1,6 +1,11 @@
 
 
-# Slot: serotype
+# Slot: serotype (serotype)
+
+
+_Genetically related pathogens that group together based on serological relationships_
+
+
 
 
 
@@ -65,12 +70,17 @@ URI: [EVORAO:serotype](https://raw.githubusercontent.com/EVORA-project/evora-ont
 <details>
 ```yaml
 name: serotype
+description: Genetically related pathogens that group together based on serological
+  relationships
+title: serotype
 from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
 rank: 1000
 alias: serotype
 domain_of:
 - PathogenIdentification
 range: string
+required: false
+multivalued: false
 
 ```
 </details>

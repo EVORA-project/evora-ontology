@@ -1,6 +1,11 @@
 
 
-# Slot: modificationsFromTheReferenceSequences
+# Slot: modifications from the reference sequence(s) (modificationsFromTheReferenceSequences)
+
+
+_Set to TRUE if there was is any modification made from the reference sequence_
+
+
 
 
 
@@ -28,7 +33,9 @@ URI: [EVORAO:modificationsFromTheReferenceSequences](https://raw.githubuserconte
 
 ## Properties
 
-* Range: [String](String.md)
+* Range: [Boolean](Boolean.md)
+
+* Required: True
 
 
 
@@ -65,12 +72,17 @@ URI: [EVORAO:modificationsFromTheReferenceSequences](https://raw.githubuserconte
 <details>
 ```yaml
 name: modificationsFromTheReferenceSequences
+description: Set to TRUE if there was is any modification made from the reference
+  sequence
+title: modifications from the reference sequence(s)
 from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
 rank: 1000
 alias: modificationsFromTheReferenceSequences
 domain_of:
 - SyntheticPartOrigin
-range: string
+range: boolean
+required: true
+multivalued: false
 
 ```
 </details>

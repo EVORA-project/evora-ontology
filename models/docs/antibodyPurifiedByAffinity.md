@@ -1,6 +1,11 @@
 
 
-# Slot: antibodyPurifiedByAffinity
+# Slot: antibody purified by affinity (antibodyPurifiedByAffinity)
+
+
+_Indicates whether or not if the antibody was purified by affinity_
+
+
 
 
 
@@ -29,7 +34,9 @@ URI: [EVORAO:antibodyPurifiedByAffinity](https://raw.githubusercontent.com/EVORA
 
 ## Properties
 
-* Range: [String](String.md)
+* Range: [Boolean](Boolean.md)
+
+* Required: True
 
 
 
@@ -66,12 +73,16 @@ URI: [EVORAO:antibodyPurifiedByAffinity](https://raw.githubusercontent.com/EVORA
 <details>
 ```yaml
 name: antibodyPurifiedByAffinity
+description: Indicates whether or not if the antibody was purified by affinity
+title: antibody purified by affinity
 from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
 rank: 1000
 alias: antibodyPurifiedByAffinity
 domain_of:
 - Antibody
-range: string
+range: boolean
+required: true
+multivalued: false
 
 ```
 </details>

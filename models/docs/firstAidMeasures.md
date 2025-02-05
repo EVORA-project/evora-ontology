@@ -1,6 +1,11 @@
 
 
-# Slot: firstAidMeasures
+# Slot: first aid measures (firstAidMeasures)
+
+
+_Instructions on immediate actions to take in case of exposure to the product, including inhalation, ingestion, skin, or eye contact. This section outlines steps to minimize harm before medical help is available._
+
+
 
 
 
@@ -29,6 +34,8 @@ URI: [EVORAO:firstAidMeasures](https://raw.githubusercontent.com/EVORA-project/e
 ## Properties
 
 * Range: [String](String.md)
+
+* Recommended: True
 
 
 
@@ -65,12 +72,19 @@ URI: [EVORAO:firstAidMeasures](https://raw.githubusercontent.com/EVORA-project/e
 <details>
 ```yaml
 name: firstAidMeasures
+description: Instructions on immediate actions to take in case of exposure to the
+  product, including inhalation, ingestion, skin, or eye contact. This section outlines
+  steps to minimize harm before medical help is available.
+title: first aid measures
 from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
 rank: 1000
 alias: firstAidMeasures
 domain_of:
 - MSDS
 range: string
+required: false
+recommended: true
+multivalued: false
 
 ```
 </details>

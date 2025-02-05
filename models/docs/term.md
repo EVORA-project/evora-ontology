@@ -1,6 +1,11 @@
 
 
-# Slot: term
+# Slot: term (term)
+
+
+_The terms related to this vocabulary_
+
+
 
 
 
@@ -28,7 +33,11 @@ URI: [EVORAO:term](https://raw.githubusercontent.com/EVORA-project/evora-ontolog
 
 ## Properties
 
-* Range: [String](String.md)
+* Range: [Term](Term.md)
+
+* Multivalued: True
+
+* Recommended: True
 
 
 
@@ -65,12 +74,17 @@ URI: [EVORAO:term](https://raw.githubusercontent.com/EVORA-project/evora-ontolog
 <details>
 ```yaml
 name: term
+description: The terms related to this vocabulary
+title: term
 from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
 rank: 1000
 alias: term
 domain_of:
 - Vocabulary
-range: string
+range: Term
+required: false
+recommended: true
+multivalued: true
 
 ```
 </details>

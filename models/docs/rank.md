@@ -1,6 +1,11 @@
 
 
-# Slot: rank
+# Slot: rank (rank)
+
+
+_Relative level or position of the identified taxon in the taxonomy_
+
+
 
 
 
@@ -29,7 +34,9 @@ URI: [EVORAO:rank](https://raw.githubusercontent.com/EVORA-project/evora-ontolog
 
 ## Properties
 
-* Range: [String](String.md)
+* Range: [TaxonomicRank](TaxonomicRank.md)
+
+* Required: True
 
 
 
@@ -57,6 +64,7 @@ URI: [EVORAO:rank](https://raw.githubusercontent.com/EVORA-project/evora-ontolog
 | ---  | ---  |
 | self | EVORAO:rank |
 | native | EVORAO:rank |
+| exact | dwc:taxonRank |
 
 
 
@@ -66,13 +74,19 @@ URI: [EVORAO:rank](https://raw.githubusercontent.com/EVORA-project/evora-ontolog
 <details>
 ```yaml
 name: rank
+description: Relative level or position of the identified taxon in the taxonomy
+title: rank
 from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+exact_mappings:
+- dwc:taxonRank
 rank: 1000
 alias: rank
 domain_of:
 - Taxonomy
 - Taxon
-range: string
+range: TaxonomicRank
+required: true
+multivalued: false
 
 ```
 </details>

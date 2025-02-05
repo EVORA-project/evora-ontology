@@ -1,6 +1,11 @@
 
 
-# Slot: resourceURL
+# Slot: resource URL (resourceURL)
+
+
+_The web address or location where the details or content is stored and can be accessed or downloaded._
+
+
 
 
 
@@ -29,7 +34,7 @@ URI: [EVORAO:resourceURL](https://raw.githubusercontent.com/EVORA-project/evora-
 
 ## Properties
 
-* Range: [String](String.md)
+* Range: [Uri](Uri.md)
 
 
 
@@ -57,6 +62,8 @@ URI: [EVORAO:resourceURL](https://raw.githubusercontent.com/EVORA-project/evora-
 | ---  | ---  |
 | self | EVORAO:resourceURL |
 | native | EVORAO:resourceURL |
+| exact | dct:license |
+| close | schema:url, schema:url |
 
 
 
@@ -66,13 +73,23 @@ URI: [EVORAO:resourceURL](https://raw.githubusercontent.com/EVORA-project/evora-
 <details>
 ```yaml
 name: resourceURL
+description: The web address or location where the details or content is stored and
+  can be accessed or downloaded.
+title: resource URL
 from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+exact_mappings:
+- dct:license
+close_mappings:
+- schema:url
+- schema:url
 rank: 1000
 alias: resourceURL
 domain_of:
 - License
 - Certification
-range: string
+range: uri
+required: false
+multivalued: false
 
 ```
 </details>

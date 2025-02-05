@@ -1,6 +1,11 @@
 
 
-# Slot: versionOf
+# Slot: version Of (versionOf)
+
+
+_Identifier of what the version qualifies_
+
+
 
 
 
@@ -28,7 +33,9 @@ URI: [EVORAO:versionOf](https://raw.githubusercontent.com/EVORA-project/evora-on
 
 ## Properties
 
-* Range: [String](String.md)
+* Range: [Dataset](Dataset.md)
+
+* Required: True
 
 
 
@@ -65,12 +72,16 @@ URI: [EVORAO:versionOf](https://raw.githubusercontent.com/EVORA-project/evora-on
 <details>
 ```yaml
 name: versionOf
+description: Identifier of what the version qualifies
+title: version Of
 from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
 rank: 1000
 alias: versionOf
 domain_of:
 - Version
-range: string
+range: Dataset
+required: true
+multivalued: false
 
 ```
 </details>

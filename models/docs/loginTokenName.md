@@ -1,6 +1,11 @@
 
 
-# Slot: loginTokenName
+# Slot: login token name (loginTokenName)
+
+
+_The name of the token, unique identifier of an interaction session, that will have to be reused as credential in the query_
+
+
 
 
 
@@ -56,6 +61,7 @@ URI: [EVORAO:loginTokenName](https://raw.githubusercontent.com/EVORA-project/evo
 | ---  | ---  |
 | self | EVORAO:loginTokenName |
 | native | EVORAO:loginTokenName |
+| close | dcat:endpointDescription |
 
 
 
@@ -65,12 +71,19 @@ URI: [EVORAO:loginTokenName](https://raw.githubusercontent.com/EVORA-project/evo
 <details>
 ```yaml
 name: loginTokenName
+description: The name of the token, unique identifier of an interaction session, that
+  will have to be reused as credential in the query
+title: login token name
 from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+close_mappings:
+- dcat:endpointDescription
 rank: 1000
 alias: loginTokenName
 domain_of:
 - DataProvider
 range: string
+required: false
+multivalued: false
 
 ```
 </details>

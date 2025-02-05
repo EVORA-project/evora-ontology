@@ -1,6 +1,11 @@
 
 
-# Slot: previouslyKnownAs
+# Slot: previously known as (previouslyKnownAs)
+
+
+_Any historic version of this taxon having a different name_
+
+
 
 
 
@@ -28,7 +33,9 @@ URI: [EVORAO:previouslyKnownAs](https://raw.githubusercontent.com/EVORA-project/
 
 ## Properties
 
-* Range: [String](String.md)
+* Range: [Taxon](Taxon.md)
+
+* Multivalued: True
 
 
 
@@ -56,6 +63,7 @@ URI: [EVORAO:previouslyKnownAs](https://raw.githubusercontent.com/EVORA-project/
 | ---  | ---  |
 | self | EVORAO:previouslyKnownAs |
 | native | EVORAO:previouslyKnownAs |
+| close | dwc:Taxon |
 
 
 
@@ -65,12 +73,18 @@ URI: [EVORAO:previouslyKnownAs](https://raw.githubusercontent.com/EVORA-project/
 <details>
 ```yaml
 name: previouslyKnownAs
+description: Any historic version of this taxon having a different name
+title: previously known as
 from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+close_mappings:
+- dwc:Taxon
 rank: 1000
 alias: previouslyKnownAs
 domain_of:
 - Taxon
-range: string
+range: Taxon
+required: false
+multivalued: true
 
 ```
 </details>

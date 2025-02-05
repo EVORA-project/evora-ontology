@@ -140,7 +140,7 @@ URI: [EVORAO:ProductCategory](https://raw.githubusercontent.com/EVORA-project/ev
 | ---  | ---  |
 | self | EVORAO:ProductCategory |
 | native | EVORAO:ProductCategory |
-| close | wd:Q63981612 |
+| close | wd:Q63981612, wd:Q63981612 |
 
 
 
@@ -162,6 +162,7 @@ description: A term used to classify a group of products that share common chara
 title: Product category
 from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
 close_mappings:
+- wd:Q63981612
 - wd:Q63981612
 is_a: Term
 slots:
@@ -193,6 +194,7 @@ description: A term used to classify a group of products that share common chara
 title: Product category
 from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
 close_mappings:
+- wd:Q63981612
 - wd:Q63981612
 is_a: Term
 slot_usage:
@@ -233,9 +235,9 @@ attributes:
     - 'The title of the item should be as short and descriptive as possible. E.g.
       for virus products it should basically be based on the following Pattern:
 
-      "Virus name", "virus host type", "collection year", "country of collection"
-      ex "suspected epidemiological origin", "genotype", "strain", "variant name or
-      specific feature"'
+      ''Virus name'', ''virus host type'', ''collection year'', ''country of collection''
+      ex ''suspected epidemiological origin'', ''genotype'', ''strain'', ''variant
+      name or specific feature'
     from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
     exact_mappings:
     - dct:title
@@ -293,6 +295,10 @@ attributes:
       processed in ascending order. This weight helps prioritize content when organizing
       or processing data. Its value can be negative, with a default set to 0
     title: weight
+    comments:
+    - The lowest weighted Data providers are triggered first, this may be usefull
+      to populate at first entities that are referenced by others (e.g. Version ahead
+      of Rank ahead of Taxon)
     from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
     close_mappings:
     - adms:status

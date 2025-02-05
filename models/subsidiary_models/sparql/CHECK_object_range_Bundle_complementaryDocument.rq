@@ -33,17 +33,7 @@ WHERE {
   FILTER NOT EXISTS {
     ?object rdf:type ?otype .
     FILTER ( ?otype IN (
-      EVORAO:File
-      , 
-      EVORAO:Data
-      , 
       EVORAO:Document
-      , 
-      EVORAO:Audio
-      , 
-      EVORAO:Video
-      , 
-      EVORAO:Image
       
       ))
   }
@@ -52,4 +42,8 @@ WHERE {
  VALUES ?predicate { EVORAO:complementaryDocument  }
  
 }  
+
+
+
+
 

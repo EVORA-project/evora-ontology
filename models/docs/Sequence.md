@@ -101,7 +101,7 @@ URI: [EVORAO:Sequence](https://raw.githubusercontent.com/EVORA-project/evora-ont
 | ---  | ---  |
 | self | EVORAO:Sequence |
 | native | EVORAO:Sequence |
-| close | wd:Q3511065 |
+| close | wd:Q3511065, wd:Q3511065 |
 
 
 
@@ -122,6 +122,7 @@ description: A nucleic acid or protein sequence information
 title: Sequence
 from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
 close_mappings:
+- wd:Q3511065
 - wd:Q3511065
 is_a: Dataset
 slots:
@@ -147,9 +148,9 @@ slot_usage:
     title: sequence FASTA
     comments:
     - In FASTA format the line before the nucleotide sequence, called the FASTA definition
-      line, must begin with a carat (">"), followed by a unique SeqID (sequence identifier).
-      In case the sequence is made of multiple parts several fasta sequences can be
-      provided
+      line, must begin with a charater ('>'), followed by a unique SeqID (sequence
+      identifier). In case the sequence is made of multiple parts several fasta sequences
+      can be provided
     domain_of:
     - Sequence
     range: string
@@ -168,6 +169,7 @@ description: A nucleic acid or protein sequence information
 title: Sequence
 from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
 close_mappings:
+- wd:Q3511065
 - wd:Q3511065
 is_a: Dataset
 slot_usage:
@@ -190,9 +192,9 @@ slot_usage:
     title: sequence FASTA
     comments:
     - In FASTA format the line before the nucleotide sequence, called the FASTA definition
-      line, must begin with a carat (">"), followed by a unique SeqID (sequence identifier).
-      In case the sequence is made of multiple parts several fasta sequences can be
-      provided
+      line, must begin with a charater ('>'), followed by a unique SeqID (sequence
+      identifier). In case the sequence is made of multiple parts several fasta sequences
+      can be provided
     domain_of:
     - Sequence
     range: string
@@ -222,9 +224,9 @@ attributes:
     title: sequence FASTA
     comments:
     - In FASTA format the line before the nucleotide sequence, called the FASTA definition
-      line, must begin with a carat (">"), followed by a unique SeqID (sequence identifier).
-      In case the sequence is made of multiple parts several fasta sequences can be
-      provided
+      line, must begin with a charater ('>'), followed by a unique SeqID (sequence
+      identifier). In case the sequence is made of multiple parts several fasta sequences
+      can be provided
     from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
     rank: 1000
     alias: sequenceFASTA

@@ -1,5 +1,5 @@
 # metamodel_version: 1.7.0
-# version: 1.0.8373
+# version: 1.0.8498
 BASE <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#>
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
@@ -113,8 +113,7 @@ linkml:Sparqlpath xsd:string
 <Bundle> CLOSED {
     (  $<Bundle_tes> (  &<Product_tes> ;
           rdf:type [ <Product> ] ? ;
-          <productsOfTheBundle> @<Product> + ;
-          <complementaryDocument> @linkml:String ?
+          <productsOfTheBundle> @<Product> +
        ) ;
        rdf:type [ <Bundle> ] ?
     )
@@ -451,7 +450,7 @@ linkml:Sparqlpath xsd:string
           <observedMutations> @linkml:String ? ;
           <identificationTechnique> @linkml:String ? ;
           <sequencing> @linkml:String ;
-          <titer> @linkml:String ? ;
+          <titer> @linkml:String ;
           <sequenceChecked> @linkml:Boolean
        ) ;
        rdf:type [ <NucleicAcid> ] ?
@@ -462,7 +461,7 @@ linkml:Sparqlpath xsd:string
     CLOSED {
        (  $<Organization_tes> (  &<PersonOrOrganization_tes> ;
              rdf:type [ <PersonOrOrganization> ] ? ;
-             <alternateName> @<AlternateName> ? ;
+             <alternateName> @<AlternateName> * ;
              <country> @<Country> ? ;
              <rORiD> @linkml:String ?
           ) ;
@@ -550,7 +549,7 @@ linkml:Sparqlpath xsd:string
              rdf:type [ <Resource> ] ? ;
              <name> @linkml:String ;
              <description> @linkml:String ? ;
-             <homePage> @linkml:String ? ;
+             <homePage> @linkml:Uri ? ;
              <contactPoint> @<ContactPoint> ? ;
              <logo> @<Image> ?
           ) ;
@@ -708,7 +707,7 @@ linkml:Sparqlpath xsd:string
           <title> @linkml:String ;
           <authors> @linkml:String ;
           <abstract> @linkml:String ;
-          <relatedDOI> @<DOI> ;
+          <relatedDOI> @<DOI> + ;
           <journal> @<Journal> ?
        ) ;
        rdf:type [ <Publication> ] ?
@@ -827,11 +826,11 @@ linkml:Sparqlpath xsd:string
 <Taxonomy> CLOSED {
     (  $<Taxonomy_tes> (  &<Catalogue_tes> ;
           rdf:type [ <Catalogue> ] ? ;
-          <taxon> @<Taxon> * ;
+          <taxon> @<Taxon> + ;
           <taxonDataProvider> @<DataProvider> ? ;
           <version> @<Version> ;
           <versionDataProvider> @<DataProvider> ;
-          <rank> @<TaxonomicRank> * ;
+          <rank> @<TaxonomicRank> + ;
           <rankDataProvider> @<DataProvider> ?
        ) ;
        rdf:type [ <Taxonomy> ] ?

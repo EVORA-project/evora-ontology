@@ -130,7 +130,7 @@ URI: [EVORAO:Vocabulary](https://raw.githubusercontent.com/EVORA-project/evora-o
 | ---  | ---  |
 | self | EVORAO:Vocabulary |
 | native | EVORAO:Vocabulary |
-| close | wd:Q6499736, skos:Collection |
+| close | wd:Q6499736, skos:Collection, wd:Q6499736, skos:Collection |
 
 
 
@@ -151,6 +151,8 @@ description: A subset of words or phrases specific to a particular subject or fi
 title: Vocabulary
 from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
 close_mappings:
+- wd:Q6499736
+- skos:Collection
 - wd:Q6499736
 - skos:Collection
 is_a: Catalogue
@@ -191,6 +193,8 @@ description: A subset of words or phrases specific to a particular subject or fi
 title: Vocabulary
 from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
 close_mappings:
+- wd:Q6499736
+- skos:Collection
 - wd:Q6499736
 - skos:Collection
 is_a: Catalogue
@@ -252,9 +256,9 @@ attributes:
     - 'The title of the item should be as short and descriptive as possible. E.g.
       for virus products it should basically be based on the following Pattern:
 
-      "Virus name", "virus host type", "collection year", "country of collection"
-      ex "suspected epidemiological origin", "genotype", "strain", "variant name or
-      specific feature"'
+      ''Virus name'', ''virus host type'', ''collection year'', ''country of collection''
+      ex ''suspected epidemiological origin'', ''genotype'', ''strain'', ''variant
+      name or specific feature'
     from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
     exact_mappings:
     - dct:title

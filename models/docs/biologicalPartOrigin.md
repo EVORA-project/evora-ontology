@@ -1,6 +1,11 @@
 
 
-# Slot: biologicalPartOrigin
+# Slot: biological part origin (biologicalPartOrigin)
+
+
+_Details the origin of one or more unitary parts that make up the biological material. In the case of recombinant biological material, multiple parts may be involved._
+
+
 
 
 
@@ -28,11 +33,19 @@ URI: [EVORAO:biologicalPartOrigin](https://raw.githubusercontent.com/EVORA-proje
 
 ## Properties
 
-* Range: [String](String.md)
+* Range: [BiologicalPartOrigin](BiologicalPartOrigin.md)
+
+* Multivalued: True
+
+* Required: True
 
 
 
 
+
+## Comments
+
+* It can be multiple parts in case of a recombinant biological material.
 
 ## Identifier and Mapping Information
 
@@ -65,12 +78,20 @@ URI: [EVORAO:biologicalPartOrigin](https://raw.githubusercontent.com/EVORA-proje
 <details>
 ```yaml
 name: biologicalPartOrigin
+description: Details the origin of one or more unitary parts that make up the biological
+  material. In the case of recombinant biological material, multiple parts may be
+  involved.
+title: biological part origin
+comments:
+- It can be multiple parts in case of a recombinant biological material.
 from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
 rank: 1000
 alias: biologicalPartOrigin
 domain_of:
 - BiologicalMaterialOrigin
-range: string
+range: BiologicalPartOrigin
+required: true
+multivalued: true
 
 ```
 </details>
