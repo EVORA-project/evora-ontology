@@ -50,7 +50,7 @@ jobs:
       # Generate owl ahead of project generation to avoid inclusion of linkml datatypes in owl and keep artifact
       - name: Generate project owl ttl file with LinkML
         run: |
-          docker run --rm -v $(pwd):/workdir -u $(id -u):$(id -g) $DOCKER_IMAGE \ docker run --rm -v $(pwd):/workdir -u $(id -u):$(id -g) ${{ env.DOCKER_IMAGE }} \
+          docker run --rm -v $(pwd):/workdir -u $(id -u):$(id -g) $DOCKER_IMAGE \
           linkml generate owl models/evora_schema.yaml > models/owl/evora_ontology.owl.ttl
 
       - uses: actions/upload-artifact@v4
