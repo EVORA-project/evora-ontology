@@ -37,7 +37,7 @@ jobs:
         run: |
           ${{ env.DOCKER_RUN_CMD }} \
           sheets2linkml --gsheet-id 1zcyNKuhkpH-0FqEGSt6UwHAiSYzsUUSkHYcDOYz67zI \
-          --name EVORA CompleteList Prefixes Schema AllowedValues \
+          --name EVORA Prefixes Schema CompleteList ClassesDetails PropertiesDetails PropertiesDomains AllowedValues \
           -o models/evora_schema.yaml
           
       - uses: actions/upload-artifact@v4
