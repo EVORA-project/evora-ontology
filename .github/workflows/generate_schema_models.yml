@@ -19,41 +19,40 @@ jobs:
 
     env:
       DOCKER_IMAGE: evoratools/schemasheets:EVORA_0.3.1
-      DOCKER_RUN_CMD: docker run --rm -v $(pwd):/workdir -u $(id -u):$(id -g) $DOCKER_IMAGE
-    
+
     steps:
       - uses: actions/checkout@v4
         with:
           token: ${{ secrets.WORKFLOW_GIT_ACCESS_TOKEN }}
-          
+
       - name: Create required paths if not exist
         run: mkdir -p models models/owl
 
       - name: update metadata version
         if: ${{ inputs.version != ''}}
         run: echo ${{ inputs.version }} > metadata_version
-        
+
       - name: Create LinkML schema from the project s googlesheet of metadata
         run: |
-          $DOCKER_RUN_CMD \
+          docker run --rm -v $(pwd):/workdir -u $(id -u):$(id -g) $DOCKER_IMAGE \
           sheets2linkml --gsheet-id 1zcyNKuhkpH-0FqEGSt6UwHAiSYzsUUSkHYcDOYz67zI \
           --name EVORA Prefixes Schema CompleteList ClassesDetails PropertiesDetails PropertiesDomains AllowedValues \
           -o models/evora_schema.yaml
-          
+
       - uses: actions/upload-artifact@v4
         with:
           name: evora-schema.yaml
           path: models/evora_schema.yaml
           compression-level: 9 # maximum compression
-      
-      # Using independant generators of interest to benefit from initial configuration compared to project generator         
-      
+
+      # Using independant generators of interest to benefit from initial configuration compared to project generator
+
       # Generate owl ahead of project generation to avoid inclusion of linkml datatypes in owl and keep artifact
       - name: Generate project owl ttl file with LinkML
         run: |
-          $DOCKER_RUN_CMD \ docker run --rm -v $(pwd):/workdir -u $(id -u):$(id -g) ${{ env.DOCKER_IMAGE }} \
+          docker run --rm -v $(pwd):/workdir -u $(id -u):$(id -g) $DOCKER_IMAGE \ docker run --rm -v $(pwd):/workdir -u $(id -u):$(id -g) ${{ env.DOCKER_IMAGE }} \
           linkml generate owl models/evora_schema.yaml > models/owl/evora_ontology.owl.ttl
-          
+
       - uses: actions/upload-artifact@v4
         with:
           name: evora-ontology.owl.ttl
@@ -64,10 +63,10 @@ jobs:
       - name: Generate project doc files with LinkML
         run: |
           rm -rf models/docs/*
-          $DOCKER_RUN_CMD \
+          docker run --rm -v $(pwd):/workdir -u $(id -u):$(id -g) $DOCKER_IMAGE \
           linkml generate doc -d models/docs models/evora_schema.yaml
-          
-          
+
+
       - uses: actions/upload-artifact@v4
         with:
           name: evora-schema-docs
@@ -81,48 +80,48 @@ jobs:
           mkdir -p $SUBPATH $SUBPATH/excel $SUBPATH/graphql $SUBPATH/jsonld $SUBPATH/sqlschema \
                    $SUBPATH/prefixmap $SUBPATH/pydantic $SUBPATH/rdf $SUBPATH/shex \
                    $SUBPATH/sqlalchemy $SUBPATH/go $SUBPATH/java $SUBPATH/jsonschema \
-                   $SUBPATH/protobuf $SUBPATH/python $SUBPATH/shacl $SUBPATH/sparql 
-          $DOCKER_RUN_CMD \
-          linkml generate jsonld-context models/evora_schema.yaml > models/subsidiary_models/jsonld/evora_schema.context.jsonld 
-          $DOCKER_RUN_CMD \
+                   $SUBPATH/protobuf $SUBPATH/python $SUBPATH/shacl $SUBPATH/sparql
+          docker run --rm -v $(pwd):/workdir -u $(id -u):$(id -g) $DOCKER_IMAGE \
+          linkml generate jsonld-context models/evora_schema.yaml > models/subsidiary_models/jsonld/evora_schema.context.jsonld
+          docker run --rm -v $(pwd):/workdir -u $(id -u):$(id -g) $DOCKER_IMAGE \
           linkml generate jsonld models/evora_schema.yaml > models/subsidiary_models/jsonld/evora_schema.jsonld
-          $DOCKER_RUN_CMD \
+          docker run --rm -v $(pwd):/workdir -u $(id -u):$(id -g) $DOCKER_IMAGE \
           linkml generate jsonld-context models/evora_schema.yaml > models/subsidiary_models/jsonschema/evora_schema.schema.json
-          $DOCKER_RUN_CMD \
-          linkml generate python models/evora_schema.yaml > models/subsidiary_models/python/evora_schema.py     
-          $DOCKER_RUN_CMD \
+          docker run --rm -v $(pwd):/workdir -u $(id -u):$(id -g) $DOCKER_IMAGE \
+          linkml generate python models/evora_schema.yaml > models/subsidiary_models/python/evora_schema.py
+          docker run --rm -v $(pwd):/workdir -u $(id -u):$(id -g) $DOCKER_IMAGE \
           linkml generate excel -o models/subsidiary_models/excel/evora_schema.xlsx models/evora_schema.yaml
-          $DOCKER_RUN_CMD \
+          docker run --rm -v $(pwd):/workdir -u $(id -u):$(id -g) $DOCKER_IMAGE \
           linkml generate graphql models/evora_schema.yaml > models/subsidiary_models/graphql/evora_schema.graphql
-          $DOCKER_RUN_CMD \
+          docker run --rm -v $(pwd):/workdir -u $(id -u):$(id -g) $DOCKER_IMAGE \
           linkml generate prefix-map -o models/subsidiary_models/prefixmap/evora_schema_prefixes.yaml models/evora_schema.yaml
-          $DOCKER_RUN_CMD \
+          docker run --rm -v $(pwd):/workdir -u $(id -u):$(id -g) $DOCKER_IMAGE \
           linkml generate proto models/evora_schema.yaml > models/subsidiary_models/protobuf/evora_schema.proto
-          $DOCKER_RUN_CMD \
+          docker run --rm -v $(pwd):/workdir -u $(id -u):$(id -g) $DOCKER_IMAGE \
           linkml generate shacl models/evora_schema.yaml > models/subsidiary_models/shacl/evora_schema.shacl.ttl
-          $DOCKER_RUN_CMD \
+          docker run --rm -v $(pwd):/workdir -u $(id -u):$(id -g) $DOCKER_IMAGE \
           linkml generate shex models/evora_schema.yaml > models/subsidiary_models/shex/evora_schema.shex
-          $DOCKER_RUN_CMD \
+          docker run --rm -v $(pwd):/workdir -u $(id -u):$(id -g) $DOCKER_IMAGE \
           linkml generate sqltables models/evora_schema.yaml > models/subsidiary_models/sqlschema/evora_schema.sql
-          $DOCKER_RUN_CMD \
+          docker run --rm -v $(pwd):/workdir -u $(id -u):$(id -g) $DOCKER_IMAGE \
           linkml generate golang --log_level ERROR models/evora_schema.yaml > models/subsidiary_models/go/evora_schema.go
           rm -f models/subsidiary_models/java/*
-          $DOCKER_RUN_CMD \
+          docker run --rm -v $(pwd):/workdir -u $(id -u):$(id -g) $DOCKER_IMAGE \
           linkml generate java --output-directory models/subsidiary_models/java/  models/evora_schema.yaml
-          $DOCKER_RUN_CMD \
+          docker run --rm -v $(pwd):/workdir -u $(id -u):$(id -g) $DOCKER_IMAGE \
           linkml generate rdf models/evora_schema.yaml > models/subsidiary_models/rdf/evora_schema.rdf
           rm -f models/subsidiary_models/sparql/*
-          $DOCKER_RUN_CMD \
+          docker run --rm -v $(pwd):/workdir -u $(id -u):$(id -g) $DOCKER_IMAGE \
           linkml generate sparql -d models/subsidiary_models/sparql/ models/evora_schema.yaml
-          $DOCKER_RUN_CMD \
+          docker run --rm -v $(pwd):/workdir -u $(id -u):$(id -g) $DOCKER_IMAGE \
           linkml generate sqla models/evora_schema.yaml > models/subsidiary_models/sqlalchemy/evora_schema.sqla
-          $DOCKER_RUN_CMD \
+          docker run --rm -v $(pwd):/workdir -u $(id -u):$(id -g) $DOCKER_IMAGE \
           linkml generate pydantic models/evora_schema.yaml > models/subsidiary_models/pydantic/evora_schema.py
 
 
 
       - name: GIT commit and push all changed files
-        env: 
+        env:
           CI_COMMIT_MESSAGE: "CI Build: Synchronisation of the project's models with the google sheet metadata version  ${{ inputs.version}}"
           USER_COMMIT_MESSAGE: ${{inputs.commitMessage}}
           CI_COMMIT_AUTHOR: GithubAction CI
@@ -132,4 +131,4 @@ jobs:
           git add -A
           git commit -m "${{ env.CI_COMMIT_MESSAGE }}" -m "${{ env.USER_COMMIT_MESSAGE }}"
           git push
-        
+
