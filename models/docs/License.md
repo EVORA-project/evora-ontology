@@ -36,9 +36,9 @@ URI: [EVORAO:License](https://raw.githubusercontent.com/EVORA-project/evora-onto
     click Image href "../Image"
 
         
-      License : name
-        
       License : resourceURL
+        
+      License : title
         
       
 ```
@@ -57,7 +57,7 @@ URI: [EVORAO:License](https://raw.githubusercontent.com/EVORA-project/evora-onto
 
 | Name | Cardinality and Range | Description | Inheritance |
 | ---  | --- | --- | --- |
-| [name](name.md) | 1 <br/> [String](String.md) | The label that allows humans to identify the current item | direct |
+| [title](title.md) | 1 <br/> [String](String.md) | A name given to the resource | direct |
 | [description](description.md) | 0..1 _recommended_ <br/> [String](String.md) | A short explanation of the characteristics, features, or nature of the curren... | direct |
 | [resourceURL](resourceURL.md) | 0..1 <br/> [Uri](Uri.md) | The web address or location where the details or content is stored and can be... | direct |
 | [licensingOrAttribution](licensingOrAttribution.md) | 0..1 <br/> [String](String.md) | A text or html code that provides any related data sharing licence and/or att... | direct |
@@ -138,16 +138,16 @@ close_mappings:
 - dct:LicenseDocument
 is_a: Resource
 slots:
-- name
+- title
 - description
 - resourceURL
 - licensingOrAttribution
 - logo
 slot_usage:
-  name:
-    name: name
-    description: The label that allows humans to identify the current item
-    title: name
+  title:
+    name: title
+    description: A name given to the resource
+    title: title
     comments:
     - 'The title of the item should be as short and descriptive as possible. E.g.
       for virus products it should basically be based on the following Pattern:
@@ -155,19 +155,15 @@ slot_usage:
       ''Virus name'', ''virus host type'', ''collection year'', ''country of collection''
       ex ''suspected epidemiological origin'', ''genotype'', ''strain'', ''variant
       name or specific feature'
-    exact_mappings:
-    - dct:title
     close_mappings:
     - rdfs:label
+    slot_uri: dct:title
     domain_of:
     - License
+    - Dataset
     - DataService
-    - Catalogue
+    - Publication
     - Term
-    - PersonOrOrganization
-    - ProductOrService
-    - File
-    - ContactPoint
     - Certification
     range: string
     required: true
@@ -179,18 +175,16 @@ slot_usage:
     title: description
     comments:
     - 'Describe this item in few lines. This description will serve as a summary to
-      present the item.
+      present the resource.
 
       '
-    exact_mappings:
-    - dct:description
+    slot_uri: dct:description
     domain_of:
     - License
+    - Dataset
     - DataService
-    - Catalogue
     - Term
     - PersonOrOrganization
-    - ProductOrService
     - File
     - ContactPoint
     - Certification
@@ -261,10 +255,10 @@ close_mappings:
 - dct:LicenseDocument
 is_a: Resource
 slot_usage:
-  name:
-    name: name
-    description: The label that allows humans to identify the current item
-    title: name
+  title:
+    name: title
+    description: A name given to the resource
+    title: title
     comments:
     - 'The title of the item should be as short and descriptive as possible. E.g.
       for virus products it should basically be based on the following Pattern:
@@ -272,19 +266,15 @@ slot_usage:
       ''Virus name'', ''virus host type'', ''collection year'', ''country of collection''
       ex ''suspected epidemiological origin'', ''genotype'', ''strain'', ''variant
       name or specific feature'
-    exact_mappings:
-    - dct:title
     close_mappings:
     - rdfs:label
+    slot_uri: dct:title
     domain_of:
     - License
+    - Dataset
     - DataService
-    - Catalogue
+    - Publication
     - Term
-    - PersonOrOrganization
-    - ProductOrService
-    - File
-    - ContactPoint
     - Certification
     range: string
     required: true
@@ -296,18 +286,16 @@ slot_usage:
     title: description
     comments:
     - 'Describe this item in few lines. This description will serve as a summary to
-      present the item.
+      present the resource.
 
       '
-    exact_mappings:
-    - dct:description
+    slot_uri: dct:description
     domain_of:
     - License
+    - Dataset
     - DataService
-    - Catalogue
     - Term
     - PersonOrOrganization
-    - ProductOrService
     - File
     - ContactPoint
     - Certification
@@ -356,10 +344,10 @@ slot_usage:
     required: false
     multivalued: false
 attributes:
-  name:
-    name: name
-    description: The label that allows humans to identify the current item
-    title: name
+  title:
+    name: title
+    description: A name given to the resource
+    title: title
     comments:
     - 'The title of the item should be as short and descriptive as possible. E.g.
       for virus products it should basically be based on the following Pattern:
@@ -368,22 +356,18 @@ attributes:
       ex ''suspected epidemiological origin'', ''genotype'', ''strain'', ''variant
       name or specific feature'
     from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
-    exact_mappings:
-    - dct:title
     close_mappings:
     - rdfs:label
     rank: 1000
-    alias: name
+    slot_uri: dct:title
+    alias: title
     owner: License
     domain_of:
     - License
+    - Dataset
     - DataService
-    - Catalogue
+    - Publication
     - Term
-    - PersonOrOrganization
-    - ProductOrService
-    - File
-    - ContactPoint
     - Certification
     range: string
     required: true
@@ -395,22 +379,20 @@ attributes:
     title: description
     comments:
     - 'Describe this item in few lines. This description will serve as a summary to
-      present the item.
+      present the resource.
 
       '
     from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
-    exact_mappings:
-    - dct:description
     rank: 1000
+    slot_uri: dct:description
     alias: description
     owner: License
     domain_of:
     - License
+    - Dataset
     - DataService
-    - Catalogue
     - Term
     - PersonOrOrganization
-    - ProductOrService
     - File
     - ContactPoint
     - Certification

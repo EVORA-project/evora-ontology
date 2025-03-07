@@ -20,8 +20,8 @@ URI: [EVORAO:BiologicalMaterialOrigin](https://raw.githubusercontent.com/EVORA-p
  classDiagram
     class BiologicalMaterialOrigin
     click BiologicalMaterialOrigin href "../BiologicalMaterialOrigin"
-      Dataset <|-- BiologicalMaterialOrigin
-        click Dataset href "../Dataset"
+      Resource <|-- BiologicalMaterialOrigin
+        click Resource href "../Resource"
       
       BiologicalMaterialOrigin : biologicalPartOrigin
         
@@ -45,8 +45,7 @@ URI: [EVORAO:BiologicalMaterialOrigin](https://raw.githubusercontent.com/EVORA-p
 
 ## Inheritance
 * [Resource](Resource.md)
-    * [Dataset](Dataset.md)
-        * **BiologicalMaterialOrigin**
+    * **BiologicalMaterialOrigin**
 
 
 
@@ -124,7 +123,7 @@ description: Information about the origin of the biological material, compulsory
   the Nagoya Protocol
 title: Biological material origin
 from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
-is_a: Dataset
+is_a: Resource
 slots:
 - recombinantMaterial
 - biologicalSourceType
@@ -182,7 +181,7 @@ description: Information about the origin of the biological material, compulsory
   the Nagoya Protocol
 title: Biological material origin
 from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
-is_a: Dataset
+is_a: Resource
 slot_usage:
   recombinantMaterial:
     name: recombinantMaterial

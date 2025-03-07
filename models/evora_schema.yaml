@@ -19,7 +19,7 @@ contributors:
 - https://orcid.org/0000-0002-1257-6862
 - https://orcid.org/0000-0002-2042-2839
 id: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
-version: 1.0.8498
+version: 1.0.8636
 imports:
 - linkml:types
 license: https://creativecommons.org/publicdomain/zero/1.0/
@@ -48,9 +48,9 @@ prefixes:
 default_prefix: EVORAO
 default_range: string
 slots:
-  name:
-    description: The label that allows humans to identify the current item
-    title: name
+  title:
+    description: A name given to the resource
+    title: title
     comments:
     - 'The title of the item should be as short and descriptive as possible. E.g.
       for virus products it should basically be based on the following Pattern:
@@ -59,18 +59,14 @@ slots:
       ex ''suspected epidemiological origin'', ''genotype'', ''strain'', ''variant
       name or specific feature'
     from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
-    exact_mappings:
-    - dct:title
     close_mappings:
     - rdfs:label
+    slot_uri: dct:title
     domain_of:
+    - Dataset
     - DataService
-    - Catalogue
+    - Publication
     - Term
-    - PersonOrOrganization
-    - ProductOrService
-    - File
-    - ContactPoint
     - License
     - Certification
     range: string
@@ -82,18 +78,20 @@ slots:
     title: description
     comments:
     - 'Describe this item in few lines. This description will serve as a summary to
-      present the item.
+      present the resource.
+
+      '
+    - 'Describe this item in few lines. This description will serve as a summary to
+      present the resource.
 
       '
     from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
-    exact_mappings:
-    - dct:description
+    slot_uri: dct:description
     domain_of:
+    - Dataset
     - DataService
-    - Catalogue
     - Term
     - PersonOrOrganization
-    - ProductOrService
     - File
     - ContactPoint
     - License
@@ -101,6 +99,18 @@ slots:
     range: string
     required: false
     recommended: true
+    multivalued: false
+  endpointURL:
+    description: The URL template that allows to get the content
+    title: endpoint URL
+    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+    close_mappings:
+    - wdp:P1630
+    slot_uri: dcat:endpointURL
+    domain_of:
+    - DataService
+    range: uri
+    required: true
     multivalued: false
   ID:
     description: The version identifier
@@ -238,19 +248,6 @@ slots:
     - DataProvider
     range: string
     required: false
-    multivalued: false
-  queryURL:
-    description: The URL template that allows to get the content
-    title: query URL
-    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
-    exact_mappings:
-    - dcat:endpointURL
-    close_mappings:
-    - wdp:P1630
-    domain_of:
-    - DataProvider
-    range: uri
-    required: true
     multivalued: false
   queryMethod:
     description: The http request method used to access the requested query url
@@ -414,25 +411,6 @@ slots:
     - PathogenIdentification
     range: Variant
     required: false
-    multivalued: false
-  title:
-    description: The descriptive word or phrase that identifies the current piece
-      of work
-    title: title
-    comments:
-    - 'The title of the item should be as short and descriptive as possible. E.g.
-      for virus products it should basically be based on the following Pattern:
-
-      ''Virus name'', ''virus host type'', ''collection year'', ''country of collection''
-      ex ''suspected epidemiological origin'', ''genotype'', ''strain'', ''variant
-      name or specific feature'
-    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
-    exact_mappings:
-    - dct:title
-    domain_of:
-    - Publication
-    range: string
-    required: true
     multivalued: false
   authors:
     description: The list of authors
@@ -732,6 +710,22 @@ slots:
     equals_string_in:
     - ENA
     - GenBank
+  name:
+    description: A word or set of words used to identify and refer to an entity
+    title: name
+    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+    exact_mappings:
+    - schema:name
+    close_mappings:
+    - foaf:name
+    - dct:title
+    domain_of:
+    - PersonOrOrganization
+    - File
+    - ContactPoint
+    range: string
+    required: true
+    multivalued: false
   homePage:
     description: A web page that serves as the main or introductory page
     title: home page
@@ -2304,18 +2298,13 @@ classes:
     description: Resource published or curated by a single agent.
     title: Resource
     from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
-    exact_mappings:
-    - dcat:Resource
-    - dcat:Resource
     abstract: true
+    class_uri: dcat:Resource
   Dataset:
     description: A collection of data, published or curated by a single agent, and
       available for access
     title: Dataset
     from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
-    exact_mappings:
-    - dcat:Dataset
-    - dcat:Dataset
     close_mappings:
     - wd:Q1172284
     - schema:DataCatalog
@@ -2323,14 +2312,49 @@ classes:
     - schema:DataCatalog
     is_a: Resource
     abstract: true
+    slots:
+    - title
+    - description
+    slot_usage:
+      title:
+        description: A name given to the resource
+        title: title
+        comments:
+        - 'The title of the item should be as short and descriptive as possible. E.g.
+          for virus products it should basically be based on the following Pattern:
+
+          ''Virus name'', ''virus host type'', ''collection year'', ''country of collection''
+          ex ''suspected epidemiological origin'', ''genotype'', ''strain'', ''variant
+          name or specific feature'
+        close_mappings:
+        - rdfs:label
+        slot_uri: dct:title
+        domain_of:
+        - Dataset
+        range: string
+        required: true
+        multivalued: false
+      description:
+        description: A short explanation of the characteristics, features, or nature
+          of the current item
+        title: description
+        comments:
+        - 'Describe this item in few lines. This description will serve as a summary
+          to present the resource.
+
+          '
+        slot_uri: dct:description
+        domain_of:
+        - Dataset
+        range: string
+        required: true
+        multivalued: false
+    class_uri: dcat:Dataset
   DataService:
     description: A collection of operations that provides access to one or more datasets
       or data processing functions
     title: Data Service
     from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
-    exact_mappings:
-    - dcat:DataService
-    - dcat:DataService
     close_mappings:
     - wd:Q193424
     - schema:WebAPI
@@ -2339,12 +2363,13 @@ classes:
     is_a: Resource
     abstract: true
     slots:
-    - name
+    - title
     - description
+    - endpointURL
     slot_usage:
-      name:
-        description: The label that allows humans to identify the current item
-        title: name
+      title:
+        description: A name given to the resource
+        title: title
         comments:
         - 'The title of the item should be as short and descriptive as possible. E.g.
           for virus products it should basically be based on the following Pattern:
@@ -2352,10 +2377,9 @@ classes:
           ''Virus name'', ''virus host type'', ''collection year'', ''country of collection''
           ex ''suspected epidemiological origin'', ''genotype'', ''strain'', ''variant
           name or specific feature'
-        exact_mappings:
-        - dct:title
         close_mappings:
         - rdfs:label
+        slot_uri: dct:title
         domain_of:
         - DataService
         range: string
@@ -2367,17 +2391,28 @@ classes:
         title: description
         comments:
         - 'Describe this item in few lines. This description will serve as a summary
-          to present the item.
+          to present the resource.
 
           '
-        exact_mappings:
-        - dct:description
+        slot_uri: dct:description
         domain_of:
         - DataService
         range: string
         required: false
         recommended: true
         multivalued: false
+      endpointURL:
+        description: The URL template that allows to get the content
+        title: endpoint URL
+        close_mappings:
+        - wdp:P1630
+        slot_uri: dcat:endpointURL
+        domain_of:
+        - DataService
+        range: uri
+        required: true
+        multivalued: false
+    class_uri: dcat:DataService
   Version:
     description: Numeric code assigned to identify a particular historical version
       of a work (e.g. software or technical standards)
@@ -2414,9 +2449,6 @@ classes:
     description: A curated collection of metadata about resources
     title: Catalogue
     from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
-    exact_mappings:
-    - dcat:Catalog
-    - dcat:Catalog
     close_mappings:
     - wd:Q2352616
     - schema:Dataset
@@ -2424,46 +2456,7 @@ classes:
     - schema:Dataset
     is_a: Dataset
     abstract: true
-    slots:
-    - name
-    - description
-    slot_usage:
-      name:
-        description: The label that allows humans to identify the current item
-        title: name
-        comments:
-        - 'The title of the item should be as short and descriptive as possible. E.g.
-          for virus products it should basically be based on the following Pattern:
-
-          ''Virus name'', ''virus host type'', ''collection year'', ''country of collection''
-          ex ''suspected epidemiological origin'', ''genotype'', ''strain'', ''variant
-          name or specific feature'
-        exact_mappings:
-        - dct:title
-        close_mappings:
-        - rdfs:label
-        domain_of:
-        - Catalogue
-        range: string
-        required: true
-        multivalued: false
-      description:
-        description: A short explanation of the characteristics, features, or nature
-          of the current item
-        title: description
-        comments:
-        - 'Describe this item in few lines. This description will serve as a summary
-          to present the item.
-
-          '
-        exact_mappings:
-        - dct:description
-        domain_of:
-        - Catalogue
-        range: string
-        required: false
-        recommended: true
-        multivalued: false
+    class_uri: dcat:Catalog
   Taxonomy:
     description: Science of naming, defining and classifying organisms
     title: Taxonomy
@@ -2548,7 +2541,6 @@ classes:
     - loginRequestMethod
     - loginURL
     - loginTokenName
-    - queryURL
     - queryMethod
     - contentType
     - providedEntityType
@@ -2597,18 +2589,6 @@ classes:
         - DataProvider
         range: string
         required: false
-        multivalued: false
-      queryURL:
-        description: The URL template that allows to get the content
-        title: query URL
-        exact_mappings:
-        - dcat:endpointURL
-        close_mappings:
-        - wdp:P1630
-        domain_of:
-        - DataProvider
-        range: uri
-        required: true
         multivalued: false
       queryMethod:
         description: The http request method used to access the requested query url
@@ -2664,7 +2644,7 @@ classes:
       of a pathogen from another
     title: Pathogen identification
     from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
-    is_a: Dataset
+    is_a: Resource
     slots:
     - taxon
     - pathogenName
@@ -2791,8 +2771,7 @@ classes:
     - journal
     slot_usage:
       title:
-        description: The descriptive word or phrase that identifies the current piece
-          of work
+        description: A name given to the resource
         title: title
         comments:
         - 'The title of the item should be as short and descriptive as possible. E.g.
@@ -2801,8 +2780,9 @@ classes:
           ''Virus name'', ''virus host type'', ''collection year'', ''country of collection''
           ex ''suspected epidemiological origin'', ''genotype'', ''strain'', ''variant
           name or specific feature'
-        exact_mappings:
-        - dct:title
+        close_mappings:
+        - rdfs:label
+        slot_uri: dct:title
         domain_of:
         - Publication
         range: string
@@ -2883,14 +2863,14 @@ classes:
     is_a: Resource
     abstract: true
     slots:
-    - name
+    - title
     - description
     - weight
     - inVocabulary
     slot_usage:
-      name:
-        description: The label that allows humans to identify the current item
-        title: name
+      title:
+        description: A name given to the resource
+        title: title
         comments:
         - 'The title of the item should be as short and descriptive as possible. E.g.
           for virus products it should basically be based on the following Pattern:
@@ -2898,10 +2878,9 @@ classes:
           ''Virus name'', ''virus host type'', ''collection year'', ''country of collection''
           ex ''suspected epidemiological origin'', ''genotype'', ''strain'', ''variant
           name or specific feature'
-        exact_mappings:
-        - dct:title
         close_mappings:
         - rdfs:label
+        slot_uri: dct:title
         domain_of:
         - Term
         range: string
@@ -2913,11 +2892,10 @@ classes:
         title: description
         comments:
         - 'Describe this item in few lines. This description will serve as a summary
-          to present the item.
+          to present the resource.
 
           '
-        exact_mappings:
-        - dct:description
+        slot_uri: dct:description
         domain_of:
         - Term
         range: string
@@ -3407,7 +3385,7 @@ classes:
     close_mappings:
     - wd:Q3511065
     - wd:Q3511065
-    is_a: Dataset
+    is_a: Resource
     slots:
     - sequenceReference
     - sequenceFASTA
@@ -3480,8 +3458,8 @@ classes:
     - dct:Agent
     - dct:Agent
     close_mappings:
-    - foaf:Agent
-    - foaf:Agent
+    - vcard:Agent
+    - vcard:Agent
     is_a: Resource
     slots:
     - name
@@ -3491,19 +3469,13 @@ classes:
     - logo
     slot_usage:
       name:
-        description: The label that allows humans to identify the current item
+        description: A word or set of words used to identify and refer to an entity
         title: name
-        comments:
-        - 'The title of the item should be as short and descriptive as possible. E.g.
-          for virus products it should basically be based on the following Pattern:
-
-          ''Virus name'', ''virus host type'', ''collection year'', ''country of collection''
-          ex ''suspected epidemiological origin'', ''genotype'', ''strain'', ''variant
-          name or specific feature'
         exact_mappings:
-        - dct:title
+        - schema:name
         close_mappings:
-        - rdfs:label
+        - foaf:name
+        - dct:title
         domain_of:
         - PersonOrOrganization
         range: string
@@ -3515,11 +3487,10 @@ classes:
         title: description
         comments:
         - 'Describe this item in few lines. This description will serve as a summary
-          to present the item.
+          to present the resource.
 
           '
-        exact_mappings:
-        - dct:description
+        slot_uri: dct:description
         domain_of:
         - PersonOrOrganization
         range: string
@@ -3553,6 +3524,7 @@ classes:
         range: Image
         required: false
         multivalued: false
+    class_uri: foaf:Agent
   Person:
     description: An individual
     title: Person
@@ -3578,6 +3550,7 @@ classes:
         required: false
         recommended: true
         multivalued: false
+    class_uri: foaf:Person
   Organization:
     description: A social entity established to meet needs or pursue specific goals
     title: Organization
@@ -3628,6 +3601,7 @@ classes:
         required: false
         recommended: true
         multivalued: false
+    class_uri: foaf:Organization
   RI:
     description: A research infrastructure
     title: RI
@@ -3671,7 +3645,7 @@ classes:
       with the Nagoya Protocol
     title: Biological material origin
     from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
-    is_a: Dataset
+    is_a: Resource
     slots:
     - recombinantMaterial
     - biologicalSourceType
@@ -3718,7 +3692,7 @@ classes:
       of a recombinant biological material
     title: Biological part origin
     from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
-    is_a: Dataset
+    is_a: Resource
     abstract: true
     slots:
     - recombinantPartIdentification
@@ -3838,7 +3812,7 @@ classes:
     description: Identification of a recombinant part
     title: Recombinant part identification
     from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
-    is_a: Dataset
+    is_a: Resource
     slots:
     - partIdentification
     - sequence
@@ -3904,8 +3878,6 @@ classes:
     is_a: Dataset
     abstract: true
     slots:
-    - name
-    - description
     - accessPointURL
     - refSKU
     - unitDefinition
@@ -3931,42 +3903,6 @@ classes:
     - note
     - contactPoint
     slot_usage:
-      name:
-        description: The label that allows humans to identify the current item
-        title: name
-        comments:
-        - 'The title of the item should be as short and descriptive as possible. E.g.
-          for virus products it should basically be based on the following Pattern:
-
-          ''Virus name'', ''virus host type'', ''collection year'', ''country of collection''
-          ex ''suspected epidemiological origin'', ''genotype'', ''strain'', ''variant
-          name or specific feature'
-        exact_mappings:
-        - dct:title
-        close_mappings:
-        - rdfs:label
-        domain_of:
-        - ProductOrService
-        range: string
-        required: true
-        multivalued: false
-      description:
-        description: A short explanation of the characteristics, features, or nature
-          of the current item
-        title: description
-        comments:
-        - 'Describe this item in few lines. This description will serve as a summary
-          to present the item.
-
-          '
-        exact_mappings:
-        - dct:description
-        domain_of:
-        - ProductOrService
-        range: string
-        required: false
-        recommended: true
-        multivalued: false
       accessPointURL:
         description: The URL that permits to access to the product/service detailed
           description page on the provider's website and/or allows to place an order
@@ -5136,7 +5072,7 @@ classes:
     close_mappings:
     - wd:Q222067
     - wd:Q222067
-    is_a: Dataset
+    is_a: Resource
     slots:
     - msdsContact
     - physicalChemicalProperties
@@ -5347,19 +5283,13 @@ classes:
     - license
     slot_usage:
       name:
-        description: The label that allows humans to identify the current item
+        description: A word or set of words used to identify and refer to an entity
         title: name
-        comments:
-        - 'The title of the item should be as short and descriptive as possible. E.g.
-          for virus products it should basically be based on the following Pattern:
-
-          ''Virus name'', ''virus host type'', ''collection year'', ''country of collection''
-          ex ''suspected epidemiological origin'', ''genotype'', ''strain'', ''variant
-          name or specific feature'
         exact_mappings:
-        - dct:title
+        - schema:name
         close_mappings:
-        - rdfs:label
+        - foaf:name
+        - dct:title
         domain_of:
         - File
         range: string
@@ -5371,11 +5301,10 @@ classes:
         title: description
         comments:
         - 'Describe this item in few lines. This description will serve as a summary
-          to present the item.
+          to present the resource.
 
           '
-        exact_mappings:
-        - dct:description
+        slot_uri: dct:description
         domain_of:
         - File
         range: string
@@ -5490,19 +5419,13 @@ classes:
     - oRCIDiD
     slot_usage:
       name:
-        description: The label that allows humans to identify the current item
+        description: A word or set of words used to identify and refer to an entity
         title: name
-        comments:
-        - 'The title of the item should be as short and descriptive as possible. E.g.
-          for virus products it should basically be based on the following Pattern:
-
-          ''Virus name'', ''virus host type'', ''collection year'', ''country of collection''
-          ex ''suspected epidemiological origin'', ''genotype'', ''strain'', ''variant
-          name or specific feature'
         exact_mappings:
-        - dct:title
+        - schema:name
         close_mappings:
-        - rdfs:label
+        - foaf:name
+        - dct:title
         domain_of:
         - ContactPoint
         range: string
@@ -5514,11 +5437,10 @@ classes:
         title: description
         comments:
         - 'Describe this item in few lines. This description will serve as a summary
-          to present the item.
+          to present the resource.
 
           '
-        exact_mappings:
-        - dct:description
+        slot_uri: dct:description
         domain_of:
         - ContactPoint
         range: string
@@ -5634,15 +5556,15 @@ classes:
     - dct:LicenseDocument
     is_a: Resource
     slots:
-    - name
+    - title
     - description
     - resourceURL
     - licensingOrAttribution
     - logo
     slot_usage:
-      name:
-        description: The label that allows humans to identify the current item
-        title: name
+      title:
+        description: A name given to the resource
+        title: title
         comments:
         - 'The title of the item should be as short and descriptive as possible. E.g.
           for virus products it should basically be based on the following Pattern:
@@ -5650,10 +5572,9 @@ classes:
           ''Virus name'', ''virus host type'', ''collection year'', ''country of collection''
           ex ''suspected epidemiological origin'', ''genotype'', ''strain'', ''variant
           name or specific feature'
-        exact_mappings:
-        - dct:title
         close_mappings:
         - rdfs:label
+        slot_uri: dct:title
         domain_of:
         - License
         range: string
@@ -5665,11 +5586,10 @@ classes:
         title: description
         comments:
         - 'Describe this item in few lines. This description will serve as a summary
-          to present the item.
+          to present the resource.
 
           '
-        exact_mappings:
-        - dct:description
+        slot_uri: dct:description
         domain_of:
         - License
         range: string
@@ -5722,15 +5642,15 @@ classes:
     - schema:Certification
     is_a: Resource
     slots:
-    - name
+    - title
     - description
     - logo
     - certificationDocument
     - resourceURL
     slot_usage:
-      name:
-        description: The label that allows humans to identify the current item
-        title: name
+      title:
+        description: A name given to the resource
+        title: title
         comments:
         - 'The title of the item should be as short and descriptive as possible. E.g.
           for virus products it should basically be based on the following Pattern:
@@ -5738,10 +5658,9 @@ classes:
           ''Virus name'', ''virus host type'', ''collection year'', ''country of collection''
           ex ''suspected epidemiological origin'', ''genotype'', ''strain'', ''variant
           name or specific feature'
-        exact_mappings:
-        - dct:title
         close_mappings:
         - rdfs:label
+        slot_uri: dct:title
         domain_of:
         - Certification
         range: string
@@ -5753,11 +5672,10 @@ classes:
         title: description
         comments:
         - 'Describe this item in few lines. This description will serve as a summary
-          to present the item.
+          to present the resource.
 
           '
-        exact_mappings:
-        - dct:description
+        slot_uri: dct:description
         domain_of:
         - Certification
         range: string
@@ -5794,4 +5712,4 @@ classes:
         required: false
         multivalued: false
 source_file: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl
-generation_date: '2025-02-05T11:29:14'
+generation_date: '2025-03-07T14:41:02'

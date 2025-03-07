@@ -1,5 +1,5 @@
 # Auto generated from evora_schema.yaml by pythongen.py version: 0.0.1
-# Generation date: 2025-02-05T11:29:14
+# Generation date: 2025-03-07T13:41:45
 # Schema: EVORAO
 #
 # id: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
@@ -61,7 +61,7 @@ from linkml_runtime.linkml_model.types import Boolean, Datetime, Integer, String
 from linkml_runtime.utils.metamodelcore import Bool, URI, XSDDateTime
 
 metamodel_version = "1.7.0"
-version = "1.0.8498"
+version = "1.0.8636"
 
 # Overwrite dataclasses _init_fn to add **kwargs in __init__
 dataclasses._init_fn = dataclasses_init_fn_with_kwargs
@@ -103,22 +103,39 @@ class Resource(YAMLRoot):
     """
     _inherited_slots: ClassVar[List[str]] = []
 
-    class_class_uri: ClassVar[URIRef] = EVORAO["Resource"]
-    class_class_curie: ClassVar[str] = "EVORAO:Resource"
+    class_class_uri: ClassVar[URIRef] = DCAT["Resource"]
+    class_class_curie: ClassVar[str] = "dcat:Resource"
     class_name: ClassVar[str] = "Resource"
     class_model_uri: ClassVar[URIRef] = EVORAO.Resource
 
 
+@dataclass(repr=False)
 class Dataset(Resource):
     """
     A collection of data, published or curated by a single agent, and available for access
     """
     _inherited_slots: ClassVar[List[str]] = []
 
-    class_class_uri: ClassVar[URIRef] = EVORAO["Dataset"]
-    class_class_curie: ClassVar[str] = "EVORAO:Dataset"
+    class_class_uri: ClassVar[URIRef] = DCAT["Dataset"]
+    class_class_curie: ClassVar[str] = "dcat:Dataset"
     class_name: ClassVar[str] = "Dataset"
     class_model_uri: ClassVar[URIRef] = EVORAO.Dataset
+
+    title: str = None
+    description: str = None
+
+    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+        if self._is_empty(self.title):
+            self.MissingRequiredField("title")
+        if not isinstance(self.title, str):
+            self.title = str(self.title)
+
+        if self._is_empty(self.description):
+            self.MissingRequiredField("description")
+        if not isinstance(self.description, str):
+            self.description = str(self.description)
+
+        super().__post_init__(**kwargs)
 
 
 @dataclass(repr=False)
@@ -128,19 +145,25 @@ class DataService(Resource):
     """
     _inherited_slots: ClassVar[List[str]] = []
 
-    class_class_uri: ClassVar[URIRef] = EVORAO["DataService"]
-    class_class_curie: ClassVar[str] = "EVORAO:DataService"
+    class_class_uri: ClassVar[URIRef] = DCAT["DataService"]
+    class_class_curie: ClassVar[str] = "dcat:DataService"
     class_name: ClassVar[str] = "DataService"
     class_model_uri: ClassVar[URIRef] = EVORAO.DataService
 
-    name: str = None
+    title: str = None
+    endpointURL: Union[str, URI] = None
     description: Optional[str] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if self._is_empty(self.name):
-            self.MissingRequiredField("name")
-        if not isinstance(self.name, str):
-            self.name = str(self.name)
+        if self._is_empty(self.title):
+            self.MissingRequiredField("title")
+        if not isinstance(self.title, str):
+            self.title = str(self.title)
+
+        if self._is_empty(self.endpointURL):
+            self.MissingRequiredField("endpointURL")
+        if not isinstance(self.endpointURL, URI):
+            self.endpointURL = URI(self.endpointURL)
 
         if self.description is not None and not isinstance(self.description, str):
             self.description = str(self.description)
@@ -172,7 +195,7 @@ class Version(Resource):
         if self._is_empty(self.versionOf):
             self.MissingRequiredField("versionOf")
         if not isinstance(self.versionOf, Dataset):
-            self.versionOf = Dataset()
+            self.versionOf = Dataset(**as_dict(self.versionOf))
 
         super().__post_init__(**kwargs)
 
@@ -184,25 +207,13 @@ class Catalogue(Dataset):
     """
     _inherited_slots: ClassVar[List[str]] = []
 
-    class_class_uri: ClassVar[URIRef] = EVORAO["Catalogue"]
-    class_class_curie: ClassVar[str] = "EVORAO:Catalogue"
+    class_class_uri: ClassVar[URIRef] = DCAT["Catalog"]
+    class_class_curie: ClassVar[str] = "dcat:Catalog"
     class_name: ClassVar[str] = "Catalogue"
     class_model_uri: ClassVar[URIRef] = EVORAO.Catalogue
 
-    name: str = None
-    description: Optional[str] = None
-
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if self._is_empty(self.name):
-            self.MissingRequiredField("name")
-        if not isinstance(self.name, str):
-            self.name = str(self.name)
-
-        if self.description is not None and not isinstance(self.description, str):
-            self.description = str(self.description)
-
-        super().__post_init__(**kwargs)
-
+    title: str = None
+    description: str = None
 
 @dataclass(repr=False)
 class Taxonomy(Catalogue):
@@ -216,7 +227,8 @@ class Taxonomy(Catalogue):
     class_name: ClassVar[str] = "Taxonomy"
     class_model_uri: ClassVar[URIRef] = EVORAO.Taxonomy
 
-    name: str = None
+    title: str = None
+    description: str = None
     taxon: Union[Union[dict, "Taxon"], List[Union[dict, "Taxon"]]] = None
     version: Union[dict, Version] = None
     versionDataProvider: Union[dict, "DataProvider"] = None
@@ -227,7 +239,7 @@ class Taxonomy(Catalogue):
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
         if self._is_empty(self.taxon):
             self.MissingRequiredField("taxon")
-        self._normalize_inlined_as_dict(slot_name="taxon", slot_type=Taxon, key_name="name", keyed=False)
+        self._normalize_inlined_as_dict(slot_name="taxon", slot_type=Taxon, key_name="title", keyed=False)
 
         if self._is_empty(self.version):
             self.MissingRequiredField("version")
@@ -241,7 +253,7 @@ class Taxonomy(Catalogue):
 
         if self._is_empty(self.rank):
             self.MissingRequiredField("rank")
-        self._normalize_inlined_as_dict(slot_name="rank", slot_type=TaxonomicRank, key_name="name", keyed=False)
+        self._normalize_inlined_as_dict(slot_name="rank", slot_type=TaxonomicRank, key_name="title", keyed=False)
 
         if self.taxonDataProvider is not None and not isinstance(self.taxonDataProvider, DataProvider):
             self.taxonDataProvider = DataProvider(**as_dict(self.taxonDataProvider))
@@ -264,8 +276,8 @@ class DataProvider(DataService):
     class_name: ClassVar[str] = "DataProvider"
     class_model_uri: ClassVar[URIRef] = EVORAO.DataProvider
 
-    name: str = None
-    queryURL: Union[str, URI] = None
+    title: str = None
+    endpointURL: Union[str, URI] = None
     queryMethod: str = None
     providedEntityType: Union[dict, Dataset] = None
     contentType: str = "JSON"
@@ -276,11 +288,6 @@ class DataProvider(DataService):
     loginTokenName: Optional[str] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if self._is_empty(self.queryURL):
-            self.MissingRequiredField("queryURL")
-        if not isinstance(self.queryURL, URI):
-            self.queryURL = URI(self.queryURL)
-
         if self._is_empty(self.queryMethod):
             self.MissingRequiredField("queryMethod")
         if not isinstance(self.queryMethod, str):
@@ -294,7 +301,7 @@ class DataProvider(DataService):
         if self._is_empty(self.providedEntityType):
             self.MissingRequiredField("providedEntityType")
         if not isinstance(self.providedEntityType, Dataset):
-            self.providedEntityType = Dataset()
+            self.providedEntityType = Dataset(**as_dict(self.providedEntityType))
 
         if self._is_empty(self.weight):
             self.MissingRequiredField("weight")
@@ -317,7 +324,7 @@ class DataProvider(DataService):
 
 
 @dataclass(repr=False)
-class PathogenIdentification(Dataset):
+class PathogenIdentification(Resource):
     """
     A collection of distinguishing information that enables the differentiation of a pathogen from another
     """
@@ -416,7 +423,7 @@ class Publication(Resource):
 
         if self._is_empty(self.relatedDOI):
             self.MissingRequiredField("relatedDOI")
-        self._normalize_inlined_as_dict(slot_name="relatedDOI", slot_type=DOI, key_name="name", keyed=False)
+        self._normalize_inlined_as_dict(slot_name="relatedDOI", slot_type=DOI, key_name="title", keyed=False)
 
         if self.journal is not None and not isinstance(self.journal, Journal):
             self.journal = Journal(**as_dict(self.journal))
@@ -436,7 +443,8 @@ class Vocabulary(Catalogue):
     class_name: ClassVar[str] = "Vocabulary"
     class_model_uri: ClassVar[URIRef] = EVORAO.Vocabulary
 
-    name: str = None
+    title: str = None
+    description: str = None
     termDataProvider: Optional[Union[dict, DataProvider]] = None
     term: Optional[Union[Union[dict, "Term"], List[Union[dict, "Term"]]]] = empty_list()
 
@@ -444,7 +452,7 @@ class Vocabulary(Catalogue):
         if self.termDataProvider is not None and not isinstance(self.termDataProvider, DataProvider):
             self.termDataProvider = DataProvider(**as_dict(self.termDataProvider))
 
-        self._normalize_inlined_as_dict(slot_name="term", slot_type=Term, key_name="name", keyed=False)
+        self._normalize_inlined_as_dict(slot_name="term", slot_type=Term, key_name="title", keyed=False)
 
         super().__post_init__(**kwargs)
 
@@ -461,16 +469,16 @@ class Term(Resource):
     class_name: ClassVar[str] = "Term"
     class_model_uri: ClassVar[URIRef] = EVORAO.Term
 
-    name: str = None
+    title: str = None
     inVocabulary: Union[dict, Vocabulary] = None
     weight: int = 0
     description: Optional[str] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if self._is_empty(self.name):
-            self.MissingRequiredField("name")
-        if not isinstance(self.name, str):
-            self.name = str(self.name)
+        if self._is_empty(self.title):
+            self.MissingRequiredField("title")
+        if not isinstance(self.title, str):
+            self.title = str(self.title)
 
         if self._is_empty(self.weight):
             self.MissingRequiredField("weight")
@@ -501,14 +509,14 @@ class CommonName(Term):
     class_name: ClassVar[str] = "CommonName"
     class_model_uri: ClassVar[URIRef] = EVORAO.CommonName
 
-    name: str = None
+    title: str = None
     inVocabulary: Union[dict, Vocabulary] = None
     weight: int = 0
     alternateName: Optional[Union[Union[dict, "AlternateName"], List[Union[dict, "AlternateName"]]]] = empty_list()
     sourceOfInformation: Optional[Union[str, List[str]]] = empty_list()
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        self._normalize_inlined_as_dict(slot_name="alternateName", slot_type=AlternateName, key_name="name", keyed=False)
+        self._normalize_inlined_as_dict(slot_name="alternateName", slot_type=AlternateName, key_name="title", keyed=False)
 
         if not isinstance(self.sourceOfInformation, list):
             self.sourceOfInformation = [self.sourceOfInformation] if self.sourceOfInformation is not None else []
@@ -529,7 +537,7 @@ class VirusName(CommonName):
     class_name: ClassVar[str] = "VirusName"
     class_model_uri: ClassVar[URIRef] = EVORAO.VirusName
 
-    name: str = None
+    title: str = None
     inVocabulary: Union[dict, Vocabulary] = None
     weight: int = 0
 
@@ -545,14 +553,14 @@ class AlternateName(Term):
     class_name: ClassVar[str] = "AlternateName"
     class_model_uri: ClassVar[URIRef] = EVORAO.AlternateName
 
-    name: str = None
+    title: str = None
     inVocabulary: Union[dict, Vocabulary] = None
     weight: int = 0
     alternateName: Optional[Union[Union[dict, "AlternateName"], List[Union[dict, "AlternateName"]]]] = empty_list()
     sourceOfInformation: Optional[Union[str, List[str]]] = empty_list()
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        self._normalize_inlined_as_dict(slot_name="alternateName", slot_type=AlternateName, key_name="name", keyed=False)
+        self._normalize_inlined_as_dict(slot_name="alternateName", slot_type=AlternateName, key_name="title", keyed=False)
 
         if not isinstance(self.sourceOfInformation, list):
             self.sourceOfInformation = [self.sourceOfInformation] if self.sourceOfInformation is not None else []
@@ -574,7 +582,7 @@ class RiskGroup(Term):
     class_name: ClassVar[str] = "RiskGroup"
     class_model_uri: ClassVar[URIRef] = EVORAO.RiskGroup
 
-    name: str = None
+    title: str = None
     inVocabulary: Union[dict, Vocabulary] = None
     weight: int = 0
 
@@ -591,7 +599,7 @@ class DOI(Term):
     class_name: ClassVar[str] = "DOI"
     class_model_uri: ClassVar[URIRef] = EVORAO.DOI
 
-    name: str = None
+    title: str = None
     inVocabulary: Union[dict, Vocabulary] = None
     weight: int = 0
 
@@ -607,7 +615,7 @@ class Journal(Term):
     class_name: ClassVar[str] = "Journal"
     class_model_uri: ClassVar[URIRef] = EVORAO.Journal
 
-    name: str = None
+    title: str = None
     inVocabulary: Union[dict, Vocabulary] = None
     weight: int = 0
 
@@ -623,7 +631,7 @@ class PDBReference(Term):
     class_name: ClassVar[str] = "PDBReference"
     class_model_uri: ClassVar[URIRef] = EVORAO.PDBReference
 
-    name: str = None
+    title: str = None
     inVocabulary: Union[dict, Vocabulary] = None
     weight: int = 0
 
@@ -639,7 +647,7 @@ class Keyword(Term):
     class_name: ClassVar[str] = "Keyword"
     class_model_uri: ClassVar[URIRef] = EVORAO.Keyword
 
-    name: str = None
+    title: str = None
     inVocabulary: Union[dict, Vocabulary] = None
     weight: int = 0
 
@@ -655,7 +663,7 @@ class ProteinTag(Term):
     class_name: ClassVar[str] = "ProteinTag"
     class_model_uri: ClassVar[URIRef] = EVORAO.ProteinTag
 
-    name: str = None
+    title: str = None
     inVocabulary: Union[dict, Vocabulary] = None
     weight: int = 0
 
@@ -672,7 +680,7 @@ class SpecialFeature(Term):
     class_name: ClassVar[str] = "SpecialFeature"
     class_model_uri: ClassVar[URIRef] = EVORAO.SpecialFeature
 
-    name: str = None
+    title: str = None
     inVocabulary: Union[dict, Vocabulary] = None
     weight: int = 0
 
@@ -689,7 +697,7 @@ class ExpressionVector(Term):
     class_name: ClassVar[str] = "ExpressionVector"
     class_model_uri: ClassVar[URIRef] = EVORAO.ExpressionVector
 
-    name: str = None
+    title: str = None
     inVocabulary: Union[dict, Vocabulary] = None
     weight: int = 0
 
@@ -706,7 +714,7 @@ class PlasmidSelection(Term):
     class_name: ClassVar[str] = "PlasmidSelection"
     class_model_uri: ClassVar[URIRef] = EVORAO.PlasmidSelection
 
-    name: str = None
+    title: str = None
     inVocabulary: Union[dict, Vocabulary] = None
     weight: int = 0
 
@@ -722,7 +730,7 @@ class PropagationHost(Term):
     class_name: ClassVar[str] = "PropagationHost"
     class_model_uri: ClassVar[URIRef] = EVORAO.PropagationHost
 
-    name: str = None
+    title: str = None
     inVocabulary: Union[dict, Vocabulary] = None
     weight: int = 0
 
@@ -738,7 +746,7 @@ class TransmissionMethod(Term):
     class_name: ClassVar[str] = "TransmissionMethod"
     class_model_uri: ClassVar[URIRef] = EVORAO.TransmissionMethod
 
-    name: str = None
+    title: str = None
     inVocabulary: Union[dict, Vocabulary] = None
     weight: int = 0
 
@@ -755,7 +763,7 @@ class ProductionCellLine(Term):
     class_name: ClassVar[str] = "ProductionCellLine"
     class_model_uri: ClassVar[URIRef] = EVORAO.ProductionCellLine
 
-    name: str = None
+    title: str = None
     inVocabulary: Union[dict, Vocabulary] = None
     weight: int = 0
 
@@ -772,7 +780,7 @@ class ProductCategory(Term):
     class_name: ClassVar[str] = "ProductCategory"
     class_model_uri: ClassVar[URIRef] = EVORAO.ProductCategory
 
-    name: str = None
+    title: str = None
     inVocabulary: Union[dict, Vocabulary] = None
     weight: int = 0
     parentCategory: Optional[Union[dict, "ProductCategory"]] = None
@@ -796,7 +804,7 @@ class IsolationHost(Term):
     class_name: ClassVar[str] = "IsolationHost"
     class_model_uri: ClassVar[URIRef] = EVORAO.IsolationHost
 
-    name: str = None
+    title: str = None
     inVocabulary: Union[dict, Vocabulary] = None
     weight: int = 0
 
@@ -812,7 +820,7 @@ class GeographicalOrigin(Term):
     class_name: ClassVar[str] = "GeographicalOrigin"
     class_model_uri: ClassVar[URIRef] = EVORAO.GeographicalOrigin
 
-    name: str = None
+    title: str = None
     inVocabulary: Union[dict, Vocabulary] = None
     weight: int = 0
 
@@ -828,7 +836,7 @@ class IPLCOrigin(GeographicalOrigin):
     class_name: ClassVar[str] = "IPLCOrigin"
     class_model_uri: ClassVar[URIRef] = EVORAO.IPLCOrigin
 
-    name: str = None
+    title: str = None
     inVocabulary: Union[dict, Vocabulary] = None
     weight: int = 0
 
@@ -844,7 +852,7 @@ class Country(Term):
     class_name: ClassVar[str] = "Country"
     class_model_uri: ClassVar[URIRef] = EVORAO.Country
 
-    name: str = None
+    title: str = None
     inVocabulary: Union[dict, Vocabulary] = None
     alpha2Code: str = None
     weight: int = 0
@@ -871,7 +879,7 @@ class IATAClassification(Term):
     class_name: ClassVar[str] = "IATAClassification"
     class_model_uri: ClassVar[URIRef] = EVORAO.IATAClassification
 
-    name: str = None
+    title: str = None
     inVocabulary: Union[dict, Vocabulary] = None
     weight: int = 0
 
@@ -888,7 +896,7 @@ class Variant(CommonName):
     class_name: ClassVar[str] = "Variant"
     class_model_uri: ClassVar[URIRef] = EVORAO.Variant
 
-    name: str = None
+    title: str = None
     inVocabulary: Union[dict, Vocabulary] = None
     weight: int = 0
 
@@ -904,13 +912,13 @@ class TaxonomicRank(Term):
     class_name: ClassVar[str] = "TaxonomicRank"
     class_model_uri: ClassVar[URIRef] = EVORAO.TaxonomicRank
 
-    name: str = None
+    title: str = None
     inVocabulary: Union[dict, Vocabulary] = None
     weight: int = 0
     taxonomy: Optional[Union[Union[dict, Taxonomy], List[Union[dict, Taxonomy]]]] = empty_list()
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        self._normalize_inlined_as_dict(slot_name="taxonomy", slot_type=Taxonomy, key_name="name", keyed=False)
+        self._normalize_inlined_as_dict(slot_name="taxonomy", slot_type=Taxonomy, key_name="title", keyed=False)
 
         super().__post_init__(**kwargs)
 
@@ -928,7 +936,7 @@ class Taxon(Term):
     class_name: ClassVar[str] = "Taxon"
     class_model_uri: ClassVar[URIRef] = EVORAO.Taxon
 
-    name: str = None
+    title: str = None
     inVocabulary: Union[dict, Vocabulary] = None
     parentTaxon: Union[dict, "Taxon"] = None
     rank: Union[dict, TaxonomicRank] = None
@@ -955,11 +963,11 @@ class Taxon(Term):
         if not isinstance(self.taxonomicID, str):
             self.taxonomicID = str(self.taxonomicID)
 
-        self._normalize_inlined_as_dict(slot_name="taxonomy", slot_type=Taxonomy, key_name="name", keyed=False)
+        self._normalize_inlined_as_dict(slot_name="taxonomy", slot_type=Taxonomy, key_name="title", keyed=False)
 
-        self._normalize_inlined_as_dict(slot_name="previouslyKnownAs", slot_type=Taxon, key_name="name", keyed=False)
+        self._normalize_inlined_as_dict(slot_name="previouslyKnownAs", slot_type=Taxon, key_name="title", keyed=False)
 
-        self._normalize_inlined_as_dict(slot_name="externalEquivalentTaxon", slot_type=Taxon, key_name="name", keyed=False)
+        self._normalize_inlined_as_dict(slot_name="externalEquivalentTaxon", slot_type=Taxon, key_name="title", keyed=False)
 
         if self.taxonomicNodeID is not None and not isinstance(self.taxonomicNodeID, str):
             self.taxonomicNodeID = str(self.taxonomicNodeID)
@@ -1009,7 +1017,7 @@ class ExternalRelatedReference(Resource):
 
 
 @dataclass(repr=False)
-class Sequence(Dataset):
+class Sequence(Resource):
     """
     A nucleic acid or protein sequence information
     """
@@ -1068,8 +1076,8 @@ class PersonOrOrganization(Resource):
     """
     _inherited_slots: ClassVar[List[str]] = []
 
-    class_class_uri: ClassVar[URIRef] = EVORAO["PersonOrOrganization"]
-    class_class_curie: ClassVar[str] = "EVORAO:PersonOrOrganization"
+    class_class_uri: ClassVar[URIRef] = FOAF["Agent"]
+    class_class_curie: ClassVar[str] = "foaf:Agent"
     class_name: ClassVar[str] = "PersonOrOrganization"
     class_model_uri: ClassVar[URIRef] = EVORAO.PersonOrOrganization
 
@@ -1107,8 +1115,8 @@ class Person(PersonOrOrganization):
     """
     _inherited_slots: ClassVar[List[str]] = []
 
-    class_class_uri: ClassVar[URIRef] = EVORAO["Person"]
-    class_class_curie: ClassVar[str] = "EVORAO:Person"
+    class_class_uri: ClassVar[URIRef] = FOAF["Person"]
+    class_class_curie: ClassVar[str] = "foaf:Person"
     class_name: ClassVar[str] = "Person"
     class_model_uri: ClassVar[URIRef] = EVORAO.Person
 
@@ -1129,8 +1137,8 @@ class Organization(PersonOrOrganization):
     """
     _inherited_slots: ClassVar[List[str]] = []
 
-    class_class_uri: ClassVar[URIRef] = EVORAO["Organization"]
-    class_class_curie: ClassVar[str] = "EVORAO:Organization"
+    class_class_uri: ClassVar[URIRef] = FOAF["Organization"]
+    class_class_curie: ClassVar[str] = "foaf:Organization"
     class_name: ClassVar[str] = "Organization"
     class_model_uri: ClassVar[URIRef] = EVORAO.Organization
 
@@ -1140,7 +1148,7 @@ class Organization(PersonOrOrganization):
     rORiD: Optional[str] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        self._normalize_inlined_as_dict(slot_name="alternateName", slot_type=AlternateName, key_name="name", keyed=False)
+        self._normalize_inlined_as_dict(slot_name="alternateName", slot_type=AlternateName, key_name="title", keyed=False)
 
         if self.country is not None and not isinstance(self.country, Country):
             self.country = Country(**as_dict(self.country))
@@ -1202,7 +1210,7 @@ class Originator(PersonOrOrganization):
     name: str = None
 
 @dataclass(repr=False)
-class BiologicalMaterialOrigin(Dataset):
+class BiologicalMaterialOrigin(Resource):
     """
     Information about the origin of the biological material, compulsory for access, utilization, and benefit-sharing
     of genetic resources in compliance with the Nagoya Protocol
@@ -1237,7 +1245,7 @@ class BiologicalMaterialOrigin(Dataset):
 
 
 @dataclass(repr=False)
-class BiologicalPartOrigin(Dataset):
+class BiologicalPartOrigin(Resource):
     """
     Information on the origin of a unitary, cohesive part that is part of, or constitutes the biological material. It
     can be multiple parts in case of a recombinant biological material
@@ -1337,7 +1345,7 @@ class SyntheticPartOrigin(BiologicalPartOrigin):
 
 
 @dataclass(repr=False)
-class RecombinantPartIdentification(Dataset):
+class RecombinantPartIdentification(Resource):
     """
     Identification of a recombinant part
     """
@@ -1378,12 +1386,13 @@ class Collection(Catalogue):
     class_name: ClassVar[str] = "Collection"
     class_model_uri: ClassVar[URIRef] = EVORAO.Collection
 
-    name: str = None
+    title: str = None
+    description: str = None
     collectionItem: Optional[Union[Union[dict, "ProductOrService"], List[Union[dict, "ProductOrService"]]]] = empty_list()
     collectionDataProvider: Optional[Union[dict, DataProvider]] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        self._normalize_inlined_as_dict(slot_name="collectionItem", slot_type=ProductOrService, key_name="name", keyed=False)
+        self._normalize_inlined_as_dict(slot_name="collectionItem", slot_type=ProductOrService, key_name="title", keyed=False)
 
         if self.collectionDataProvider is not None and not isinstance(self.collectionDataProvider, DataProvider):
             self.collectionDataProvider = DataProvider(**as_dict(self.collectionDataProvider))
@@ -1403,7 +1412,8 @@ class ProductOrService(Dataset):
     class_name: ClassVar[str] = "ProductOrService"
     class_model_uri: ClassVar[URIRef] = EVORAO.ProductOrService
 
-    name: str = None
+    title: str = None
+    description: str = None
     accessPointURL: Union[str, URI] = None
     refSKU: str = None
     category: Union[dict, ProductCategory] = None
@@ -1414,7 +1424,6 @@ class ProductOrService(Dataset):
     keywords: Union[Union[dict, Keyword], List[Union[dict, Keyword]]] = None
     unitCost: str = "on request"
     availability: str = "on request"
-    description: Optional[str] = None
     unitDefinition: Optional[str] = None
     additionalCategory: Optional[Union[Union[dict, ProductCategory], List[Union[dict, ProductCategory]]]] = empty_list()
     qualityGrading: Optional[str] = None
@@ -1431,11 +1440,6 @@ class ProductOrService(Dataset):
     contactPoint: Optional[Union[dict, "ContactPoint"]] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if self._is_empty(self.name):
-            self.MissingRequiredField("name")
-        if not isinstance(self.name, str):
-            self.name = str(self.name)
-
         if self._is_empty(self.accessPointURL):
             self.MissingRequiredField("accessPointURL")
         if not isinstance(self.accessPointURL, URI):
@@ -1472,29 +1476,26 @@ class ProductOrService(Dataset):
 
         if self._is_empty(self.collection):
             self.MissingRequiredField("collection")
-        self._normalize_inlined_as_dict(slot_name="collection", slot_type=Collection, key_name="name", keyed=False)
+        self._normalize_inlined_as_dict(slot_name="collection", slot_type=Collection, key_name="title", keyed=False)
 
         if self._is_empty(self.keywords):
             self.MissingRequiredField("keywords")
-        self._normalize_inlined_as_dict(slot_name="keywords", slot_type=Keyword, key_name="name", keyed=False)
+        self._normalize_inlined_as_dict(slot_name="keywords", slot_type=Keyword, key_name="title", keyed=False)
 
         if self._is_empty(self.availability):
             self.MissingRequiredField("availability")
         if not isinstance(self.availability, str):
             self.availability = str(self.availability)
 
-        if self.description is not None and not isinstance(self.description, str):
-            self.description = str(self.description)
-
         if self.unitDefinition is not None and not isinstance(self.unitDefinition, str):
             self.unitDefinition = str(self.unitDefinition)
 
-        self._normalize_inlined_as_dict(slot_name="additionalCategory", slot_type=ProductCategory, key_name="name", keyed=False)
+        self._normalize_inlined_as_dict(slot_name="additionalCategory", slot_type=ProductCategory, key_name="title", keyed=False)
 
         if self.qualityGrading is not None and not isinstance(self.qualityGrading, str):
             self.qualityGrading = str(self.qualityGrading)
 
-        self._normalize_inlined_as_dict(slot_name="relatedDOI", slot_type=DOI, key_name="name", keyed=False)
+        self._normalize_inlined_as_dict(slot_name="relatedDOI", slot_type=DOI, key_name="title", keyed=False)
 
         if self.riskGroup is not None and not isinstance(self.riskGroup, RiskGroup):
             self.riskGroup = RiskGroup(**as_dict(self.riskGroup))
@@ -1511,7 +1512,7 @@ class ProductOrService(Dataset):
 
         self._normalize_inlined_as_dict(slot_name="externalRelatedReference", slot_type=ExternalRelatedReference, key_name="reference", keyed=False)
 
-        self._normalize_inlined_as_dict(slot_name="certification", slot_type=Certification, key_name="name", keyed=False)
+        self._normalize_inlined_as_dict(slot_name="certification", slot_type=Certification, key_name="title", keyed=False)
 
         if self.internalReference is not None and not isinstance(self.internalReference, str):
             self.internalReference = str(self.internalReference)
@@ -1537,7 +1538,8 @@ class Service(ProductOrService):
     class_name: ClassVar[str] = "Service"
     class_model_uri: ClassVar[URIRef] = EVORAO.Service
 
-    name: str = None
+    title: str = None
+    description: str = None
     accessPointURL: Union[str, URI] = None
     refSKU: str = None
     category: Union[dict, ProductCategory] = None
@@ -1573,7 +1575,8 @@ class Product(ProductOrService):
     class_name: ClassVar[str] = "Product"
     class_model_uri: ClassVar[URIRef] = EVORAO.Product
 
-    name: str = None
+    title: str = None
+    description: str = None
     accessPointURL: Union[str, URI] = None
     refSKU: str = None
     category: Union[dict, ProductCategory] = None
@@ -1635,7 +1638,8 @@ class Antibody(Product):
     class_name: ClassVar[str] = "Antibody"
     class_model_uri: ClassVar[URIRef] = EVORAO.Antibody
 
-    name: str = None
+    title: str = None
+    description: str = None
     accessPointURL: Union[str, URI] = None
     refSKU: str = None
     category: Union[dict, ProductCategory] = None
@@ -1691,7 +1695,8 @@ class Hybridoma(Antibody):
     class_name: ClassVar[str] = "Hybridoma"
     class_model_uri: ClassVar[URIRef] = EVORAO.Hybridoma
 
-    name: str = None
+    title: str = None
+    description: str = None
     accessPointURL: Union[str, URI] = None
     refSKU: str = None
     category: Union[dict, ProductCategory] = None
@@ -1731,7 +1736,8 @@ class Protein(Product):
     class_name: ClassVar[str] = "Protein"
     class_model_uri: ClassVar[URIRef] = EVORAO.Protein
 
-    name: str = None
+    title: str = None
+    description: str = None
     accessPointURL: Union[str, URI] = None
     refSKU: str = None
     category: Union[dict, ProductCategory] = None
@@ -1772,11 +1778,11 @@ class Protein(Product):
             self.sequence = [self.sequence] if self.sequence is not None else []
         self.sequence = [v if isinstance(v, Sequence) else Sequence(**as_dict(v)) for v in self.sequence]
 
-        self._normalize_inlined_as_dict(slot_name="relatedPDB", slot_type=PDBReference, key_name="name", keyed=False)
+        self._normalize_inlined_as_dict(slot_name="relatedPDB", slot_type=PDBReference, key_name="title", keyed=False)
 
-        self._normalize_inlined_as_dict(slot_name="specialFeature", slot_type=SpecialFeature, key_name="name", keyed=False)
+        self._normalize_inlined_as_dict(slot_name="specialFeature", slot_type=SpecialFeature, key_name="title", keyed=False)
 
-        self._normalize_inlined_as_dict(slot_name="proteinTAG", slot_type=ProteinTag, key_name="name", keyed=False)
+        self._normalize_inlined_as_dict(slot_name="proteinTAG", slot_type=ProteinTag, key_name="title", keyed=False)
 
         if not isinstance(self.domain, list):
             self.domain = [self.domain] if self.domain is not None else []
@@ -1829,7 +1835,8 @@ class NucleicAcid(Product):
     class_name: ClassVar[str] = "Nucleic Acid"
     class_model_uri: ClassVar[URIRef] = EVORAO.NucleicAcid
 
-    name: str = None
+    title: str = None
+    description: str = None
     accessPointURL: Union[str, URI] = None
     refSKU: str = None
     category: Union[dict, ProductCategory] = None
@@ -1910,7 +1917,7 @@ class NucleicAcid(Product):
         if self.clonedIntoPlasmid is not None and not isinstance(self.clonedIntoPlasmid, ExpressionVector):
             self.clonedIntoPlasmid = ExpressionVector(**as_dict(self.clonedIntoPlasmid))
 
-        self._normalize_inlined_as_dict(slot_name="pasmidSelection", slot_type=PlasmidSelection, key_name="name", keyed=False)
+        self._normalize_inlined_as_dict(slot_name="pasmidSelection", slot_type=PlasmidSelection, key_name="title", keyed=False)
 
         if self.observedMutations is not None and not isinstance(self.observedMutations, str):
             self.observedMutations = str(self.observedMutations)
@@ -1933,7 +1940,8 @@ class DetectionKit(Product):
     class_name: ClassVar[str] = "Detection Kit"
     class_model_uri: ClassVar[URIRef] = EVORAO.DetectionKit
 
-    name: str = None
+    title: str = None
+    description: str = None
     accessPointURL: Union[str, URI] = None
     refSKU: str = None
     category: Union[dict, ProductCategory] = None
@@ -1981,7 +1989,8 @@ class Bundle(Product):
     class_name: ClassVar[str] = "Bundle"
     class_model_uri: ClassVar[URIRef] = EVORAO.Bundle
 
-    name: str = None
+    title: str = None
+    description: str = None
     accessPointURL: Union[str, URI] = None
     refSKU: str = None
     category: Union[dict, ProductCategory] = None
@@ -2000,7 +2009,7 @@ class Bundle(Product):
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
         if self._is_empty(self.productsOfTheBundle):
             self.MissingRequiredField("productsOfTheBundle")
-        self._normalize_inlined_as_dict(slot_name="productsOfTheBundle", slot_type=Product, key_name="name", keyed=False)
+        self._normalize_inlined_as_dict(slot_name="productsOfTheBundle", slot_type=Product, key_name="title", keyed=False)
 
         super().__post_init__(**kwargs)
 
@@ -2018,7 +2027,8 @@ class Pathogen(Product):
     class_name: ClassVar[str] = "Pathogen"
     class_model_uri: ClassVar[URIRef] = EVORAO.Pathogen
 
-    name: str = None
+    title: str = None
+    description: str = None
     accessPointURL: Union[str, URI] = None
     refSKU: str = None
     category: Union[dict, ProductCategory] = None
@@ -2088,15 +2098,15 @@ class Pathogen(Product):
         if not isinstance(self.titer, str):
             self.titer = str(self.titer)
 
-        self._normalize_inlined_as_dict(slot_name="suspectedEpidemiologicalOrigin", slot_type=GeographicalOrigin, key_name="name", keyed=False)
+        self._normalize_inlined_as_dict(slot_name="suspectedEpidemiologicalOrigin", slot_type=GeographicalOrigin, key_name="title", keyed=False)
 
-        self._normalize_inlined_as_dict(slot_name="isolationHost", slot_type=IsolationHost, key_name="name", keyed=False)
+        self._normalize_inlined_as_dict(slot_name="isolationHost", slot_type=IsolationHost, key_name="title", keyed=False)
 
-        self._normalize_inlined_as_dict(slot_name="productionCellLine", slot_type=ProductionCellLine, key_name="name", keyed=False)
+        self._normalize_inlined_as_dict(slot_name="productionCellLine", slot_type=ProductionCellLine, key_name="title", keyed=False)
 
-        self._normalize_inlined_as_dict(slot_name="propagationHost", slot_type=PropagationHost, key_name="name", keyed=False)
+        self._normalize_inlined_as_dict(slot_name="propagationHost", slot_type=PropagationHost, key_name="title", keyed=False)
 
-        self._normalize_inlined_as_dict(slot_name="transmissionMethod", slot_type=TransmissionMethod, key_name="name", keyed=False)
+        self._normalize_inlined_as_dict(slot_name="transmissionMethod", slot_type=TransmissionMethod, key_name="title", keyed=False)
 
         if self.clinicalInformation is not None and not isinstance(self.clinicalInformation, str):
             self.clinicalInformation = str(self.clinicalInformation)
@@ -2131,7 +2141,8 @@ class Virus(Pathogen):
     class_name: ClassVar[str] = "Virus"
     class_model_uri: ClassVar[URIRef] = EVORAO.Virus
 
-    name: str = None
+    title: str = None
+    description: str = None
     accessPointURL: Union[str, URI] = None
     refSKU: str = None
     category: Union[dict, ProductCategory] = None
@@ -2167,7 +2178,7 @@ class Virus(Pathogen):
         if not isinstance(self.mycoplasmicContent, Bool):
             self.mycoplasmicContent = Bool(self.mycoplasmicContent)
 
-        self._normalize_inlined_as_dict(slot_name="coInfectingViruses", slot_type=VirusName, key_name="name", keyed=False)
+        self._normalize_inlined_as_dict(slot_name="coInfectingViruses", slot_type=VirusName, key_name="title", keyed=False)
 
         super().__post_init__(**kwargs)
 
@@ -2184,7 +2195,8 @@ class Bacterium(Pathogen):
     class_name: ClassVar[str] = "Bacterium"
     class_model_uri: ClassVar[URIRef] = EVORAO.Bacterium
 
-    name: str = None
+    title: str = None
+    description: str = None
     accessPointURL: Union[str, URI] = None
     refSKU: str = None
     category: Union[dict, ProductCategory] = None
@@ -2218,7 +2230,8 @@ class Fungus(Pathogen):
     class_name: ClassVar[str] = "Fungus"
     class_model_uri: ClassVar[URIRef] = EVORAO.Fungus
 
-    name: str = None
+    title: str = None
+    description: str = None
     accessPointURL: Union[str, URI] = None
     refSKU: str = None
     category: Union[dict, ProductCategory] = None
@@ -2252,7 +2265,8 @@ class Protozoan(Pathogen):
     class_name: ClassVar[str] = "Protozoan"
     class_model_uri: ClassVar[URIRef] = EVORAO.Protozoan
 
-    name: str = None
+    title: str = None
+    description: str = None
     accessPointURL: Union[str, URI] = None
     refSKU: str = None
     category: Union[dict, ProductCategory] = None
@@ -2286,7 +2300,8 @@ class Viroid(Pathogen):
     class_name: ClassVar[str] = "Viroid"
     class_model_uri: ClassVar[URIRef] = EVORAO.Viroid
 
-    name: str = None
+    title: str = None
+    description: str = None
     accessPointURL: Union[str, URI] = None
     refSKU: str = None
     category: Union[dict, ProductCategory] = None
@@ -2320,7 +2335,8 @@ class Prion(Pathogen):
     class_name: ClassVar[str] = "Prion"
     class_model_uri: ClassVar[URIRef] = EVORAO.Prion
 
-    name: str = None
+    title: str = None
+    description: str = None
     accessPointURL: Union[str, URI] = None
     refSKU: str = None
     category: Union[dict, ProductCategory] = None
@@ -2343,7 +2359,7 @@ class Prion(Pathogen):
     letterOfAuthority: str = "Not applicable"
 
 @dataclass(repr=False)
-class MSDS(Dataset):
+class MSDS(Resource):
     """
     A Material Safety Data Sheet (MSDS) or Safety Data Sheet (SDS) is a standardized document that contains crucial
     occupational safety and health information related to the product
@@ -2626,17 +2642,17 @@ class License(Resource):
     class_name: ClassVar[str] = "License"
     class_model_uri: ClassVar[URIRef] = EVORAO.License
 
-    name: str = None
+    title: str = None
     description: Optional[str] = None
     resourceURL: Optional[Union[str, URI]] = None
     licensingOrAttribution: Optional[str] = None
     logo: Optional[Union[dict, Image]] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if self._is_empty(self.name):
-            self.MissingRequiredField("name")
-        if not isinstance(self.name, str):
-            self.name = str(self.name)
+        if self._is_empty(self.title):
+            self.MissingRequiredField("title")
+        if not isinstance(self.title, str):
+            self.title = str(self.title)
 
         if self.description is not None and not isinstance(self.description, str):
             self.description = str(self.description)
@@ -2666,17 +2682,17 @@ class Certification(Resource):
     class_name: ClassVar[str] = "Certification"
     class_model_uri: ClassVar[URIRef] = EVORAO.Certification
 
-    name: str = None
+    title: str = None
     description: Optional[str] = None
     logo: Optional[Union[dict, Image]] = None
     certificationDocument: Optional[Union[Union[dict, Document], List[Union[dict, Document]]]] = empty_list()
     resourceURL: Optional[Union[str, URI]] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if self._is_empty(self.name):
-            self.MissingRequiredField("name")
-        if not isinstance(self.name, str):
-            self.name = str(self.name)
+        if self._is_empty(self.title):
+            self.MissingRequiredField("title")
+        if not isinstance(self.title, str):
+            self.title = str(self.title)
 
         if self.description is not None and not isinstance(self.description, str):
             self.description = str(self.description)
@@ -2699,11 +2715,14 @@ class Certification(Resource):
 class slots:
     pass
 
-slots.name = Slot(uri=EVORAO.name, name="name", curie=EVORAO.curie('name'),
-                   model_uri=EVORAO.name, domain=None, range=str)
+slots.title = Slot(uri=DCT.title, name="title", curie=DCT.curie('title'),
+                   model_uri=EVORAO.title, domain=None, range=str)
 
-slots.description = Slot(uri=EVORAO.description, name="description", curie=EVORAO.curie('description'),
+slots.description = Slot(uri=DCT.description, name="description", curie=DCT.curie('description'),
                    model_uri=EVORAO.description, domain=None, range=Optional[str])
+
+slots.endpointURL = Slot(uri=DCAT.endpointURL, name="endpointURL", curie=DCAT.curie('endpointURL'),
+                   model_uri=EVORAO.endpointURL, domain=None, range=Union[str, URI])
 
 slots.ID = Slot(uri=EVORAO.ID, name="ID", curie=EVORAO.curie('ID'),
                    model_uri=EVORAO.ID, domain=None, range=str)
@@ -2740,9 +2759,6 @@ slots.loginURL = Slot(uri=EVORAO.loginURL, name="loginURL", curie=EVORAO.curie('
 
 slots.loginTokenName = Slot(uri=EVORAO.loginTokenName, name="loginTokenName", curie=EVORAO.curie('loginTokenName'),
                    model_uri=EVORAO.loginTokenName, domain=None, range=Optional[str])
-
-slots.queryURL = Slot(uri=EVORAO.queryURL, name="queryURL", curie=EVORAO.curie('queryURL'),
-                   model_uri=EVORAO.queryURL, domain=None, range=Union[str, URI])
 
 slots.queryMethod = Slot(uri=EVORAO.queryMethod, name="queryMethod", curie=EVORAO.curie('queryMethod'),
                    model_uri=EVORAO.queryMethod, domain=None, range=str)
@@ -2782,9 +2798,6 @@ slots.serotype = Slot(uri=EVORAO.serotype, name="serotype", curie=EVORAO.curie('
 
 slots.variant = Slot(uri=EVORAO.variant, name="variant", curie=EVORAO.curie('variant'),
                    model_uri=EVORAO.variant, domain=None, range=Optional[Union[dict, Variant]])
-
-slots.title = Slot(uri=EVORAO.title, name="title", curie=EVORAO.curie('title'),
-                   model_uri=EVORAO.title, domain=None, range=str)
 
 slots.authors = Slot(uri=EVORAO.authors, name="authors", curie=EVORAO.curie('authors'),
                    model_uri=EVORAO.authors, domain=None, range=str)
@@ -2860,6 +2873,9 @@ slots.accessionNumber = Slot(uri=EVORAO.accessionNumber, name="accessionNumber",
 
 slots.sequenceProvider = Slot(uri=EVORAO.sequenceProvider, name="sequenceProvider", curie=EVORAO.curie('sequenceProvider'),
                    model_uri=EVORAO.sequenceProvider, domain=None, range=str)
+
+slots.name = Slot(uri=EVORAO.name, name="name", curie=EVORAO.curie('name'),
+                   model_uri=EVORAO.name, domain=None, range=str)
 
 slots.homePage = Slot(uri=EVORAO.homePage, name="homePage", curie=EVORAO.curie('homePage'),
                    model_uri=EVORAO.homePage, domain=None, range=Optional[Union[str, URI]])
@@ -3260,23 +3276,26 @@ slots.licensingOrAttribution = Slot(uri=EVORAO.licensingOrAttribution, name="lic
 slots.certificationDocument = Slot(uri=EVORAO.certificationDocument, name="certificationDocument", curie=EVORAO.curie('certificationDocument'),
                    model_uri=EVORAO.certificationDocument, domain=None, range=Optional[Union[Union[dict, Document], List[Union[dict, Document]]]])
 
-slots.DataService_name = Slot(uri=EVORAO.name, name="DataService_name", curie=EVORAO.curie('name'),
-                   model_uri=EVORAO.DataService_name, domain=DataService, range=str)
+slots.Dataset_title = Slot(uri=DCT.title, name="Dataset_title", curie=DCT.curie('title'),
+                   model_uri=EVORAO.Dataset_title, domain=Dataset, range=str)
 
-slots.DataService_description = Slot(uri=EVORAO.description, name="DataService_description", curie=EVORAO.curie('description'),
+slots.Dataset_description = Slot(uri=DCT.description, name="Dataset_description", curie=DCT.curie('description'),
+                   model_uri=EVORAO.Dataset_description, domain=Dataset, range=str)
+
+slots.DataService_title = Slot(uri=DCT.title, name="DataService_title", curie=DCT.curie('title'),
+                   model_uri=EVORAO.DataService_title, domain=DataService, range=str)
+
+slots.DataService_description = Slot(uri=DCT.description, name="DataService_description", curie=DCT.curie('description'),
                    model_uri=EVORAO.DataService_description, domain=DataService, range=Optional[str])
+
+slots.DataService_endpointURL = Slot(uri=DCAT.endpointURL, name="DataService_endpointURL", curie=DCAT.curie('endpointURL'),
+                   model_uri=EVORAO.DataService_endpointURL, domain=DataService, range=Union[str, URI])
 
 slots.Version_ID = Slot(uri=EVORAO.ID, name="Version_ID", curie=EVORAO.curie('ID'),
                    model_uri=EVORAO.Version_ID, domain=Version, range=str)
 
 slots.Version_versionOf = Slot(uri=EVORAO.versionOf, name="Version_versionOf", curie=EVORAO.curie('versionOf'),
                    model_uri=EVORAO.Version_versionOf, domain=Version, range=Union[dict, Dataset])
-
-slots.Catalogue_name = Slot(uri=EVORAO.name, name="Catalogue_name", curie=EVORAO.curie('name'),
-                   model_uri=EVORAO.Catalogue_name, domain=Catalogue, range=str)
-
-slots.Catalogue_description = Slot(uri=EVORAO.description, name="Catalogue_description", curie=EVORAO.curie('description'),
-                   model_uri=EVORAO.Catalogue_description, domain=Catalogue, range=Optional[str])
 
 slots.Taxonomy_taxon = Slot(uri=EVORAO.taxon, name="Taxonomy_taxon", curie=EVORAO.curie('taxon'),
                    model_uri=EVORAO.Taxonomy_taxon, domain=Taxonomy, range=Union[Union[dict, "Taxon"], List[Union[dict, "Taxon"]]])
@@ -3307,9 +3326,6 @@ slots.DataProvider_loginURL = Slot(uri=EVORAO.loginURL, name="DataProvider_login
 
 slots.DataProvider_loginTokenName = Slot(uri=EVORAO.loginTokenName, name="DataProvider_loginTokenName", curie=EVORAO.curie('loginTokenName'),
                    model_uri=EVORAO.DataProvider_loginTokenName, domain=DataProvider, range=Optional[str])
-
-slots.DataProvider_queryURL = Slot(uri=EVORAO.queryURL, name="DataProvider_queryURL", curie=EVORAO.curie('queryURL'),
-                   model_uri=EVORAO.DataProvider_queryURL, domain=DataProvider, range=Union[str, URI])
 
 slots.DataProvider_queryMethod = Slot(uri=EVORAO.queryMethod, name="DataProvider_queryMethod", curie=EVORAO.curie('queryMethod'),
                    model_uri=EVORAO.DataProvider_queryMethod, domain=DataProvider, range=str)
@@ -3353,7 +3369,7 @@ slots.PathogenIdentification_serotype = Slot(uri=EVORAO.serotype, name="Pathogen
 slots.PathogenIdentification_variant = Slot(uri=EVORAO.variant, name="PathogenIdentification_variant", curie=EVORAO.curie('variant'),
                    model_uri=EVORAO.PathogenIdentification_variant, domain=PathogenIdentification, range=Optional[Union[dict, "Variant"]])
 
-slots.Publication_title = Slot(uri=EVORAO.title, name="Publication_title", curie=EVORAO.curie('title'),
+slots.Publication_title = Slot(uri=DCT.title, name="Publication_title", curie=DCT.curie('title'),
                    model_uri=EVORAO.Publication_title, domain=Publication, range=str)
 
 slots.Publication_authors = Slot(uri=EVORAO.authors, name="Publication_authors", curie=EVORAO.curie('authors'),
@@ -3374,10 +3390,10 @@ slots.Vocabulary_termDataProvider = Slot(uri=EVORAO.termDataProvider, name="Voca
 slots.Vocabulary_term = Slot(uri=EVORAO.term, name="Vocabulary_term", curie=EVORAO.curie('term'),
                    model_uri=EVORAO.Vocabulary_term, domain=Vocabulary, range=Optional[Union[Union[dict, "Term"], List[Union[dict, "Term"]]]])
 
-slots.Term_name = Slot(uri=EVORAO.name, name="Term_name", curie=EVORAO.curie('name'),
-                   model_uri=EVORAO.Term_name, domain=Term, range=str)
+slots.Term_title = Slot(uri=DCT.title, name="Term_title", curie=DCT.curie('title'),
+                   model_uri=EVORAO.Term_title, domain=Term, range=str)
 
-slots.Term_description = Slot(uri=EVORAO.description, name="Term_description", curie=EVORAO.curie('description'),
+slots.Term_description = Slot(uri=DCT.description, name="Term_description", curie=DCT.curie('description'),
                    model_uri=EVORAO.Term_description, domain=Term, range=Optional[str])
 
 slots.Term_weight = Slot(uri=EVORAO.weight, name="Term_weight", curie=EVORAO.curie('weight'),
@@ -3455,7 +3471,7 @@ slots.SequenceReference_sequenceProvider = Slot(uri=EVORAO.sequenceProvider, nam
 slots.PersonOrOrganization_name = Slot(uri=EVORAO.name, name="PersonOrOrganization_name", curie=EVORAO.curie('name'),
                    model_uri=EVORAO.PersonOrOrganization_name, domain=PersonOrOrganization, range=str)
 
-slots.PersonOrOrganization_description = Slot(uri=EVORAO.description, name="PersonOrOrganization_description", curie=EVORAO.curie('description'),
+slots.PersonOrOrganization_description = Slot(uri=DCT.description, name="PersonOrOrganization_description", curie=DCT.curie('description'),
                    model_uri=EVORAO.PersonOrOrganization_description, domain=PersonOrOrganization, range=Optional[str])
 
 slots.PersonOrOrganization_homePage = Slot(uri=EVORAO.homePage, name="PersonOrOrganization_homePage", curie=EVORAO.curie('homePage'),
@@ -3529,12 +3545,6 @@ slots.Collection_collectionItem = Slot(uri=EVORAO.collectionItem, name="Collecti
 
 slots.Collection_collectionDataProvider = Slot(uri=EVORAO.collectionDataProvider, name="Collection_collectionDataProvider", curie=EVORAO.curie('collectionDataProvider'),
                    model_uri=EVORAO.Collection_collectionDataProvider, domain=Collection, range=Optional[Union[dict, DataProvider]])
-
-slots.ProductOrService_name = Slot(uri=EVORAO.name, name="ProductOrService_name", curie=EVORAO.curie('name'),
-                   model_uri=EVORAO.ProductOrService_name, domain=ProductOrService, range=str)
-
-slots.ProductOrService_description = Slot(uri=EVORAO.description, name="ProductOrService_description", curie=EVORAO.curie('description'),
-                   model_uri=EVORAO.ProductOrService_description, domain=ProductOrService, range=Optional[str])
 
 slots.ProductOrService_accessPointURL = Slot(uri=EVORAO.accessPointURL, name="ProductOrService_accessPointURL", curie=EVORAO.curie('accessPointURL'),
                    model_uri=EVORAO.ProductOrService_accessPointURL, domain=ProductOrService, range=Union[str, URI])
@@ -3863,7 +3873,7 @@ slots.MSDS_furtherInformation = Slot(uri=EVORAO.furtherInformation, name="MSDS_f
 slots.File_name = Slot(uri=EVORAO.name, name="File_name", curie=EVORAO.curie('name'),
                    model_uri=EVORAO.File_name, domain=File, range=str)
 
-slots.File_description = Slot(uri=EVORAO.description, name="File_description", curie=EVORAO.curie('description'),
+slots.File_description = Slot(uri=DCT.description, name="File_description", curie=DCT.curie('description'),
                    model_uri=EVORAO.File_description, domain=File, range=Optional[str])
 
 slots.File_contentURL = Slot(uri=EVORAO.contentURL, name="File_contentURL", curie=EVORAO.curie('contentURL'),
@@ -3881,7 +3891,7 @@ slots.Image_altText = Slot(uri=EVORAO.altText, name="Image_altText", curie=EVORA
 slots.ContactPoint_name = Slot(uri=EVORAO.name, name="ContactPoint_name", curie=EVORAO.curie('name'),
                    model_uri=EVORAO.ContactPoint_name, domain=ContactPoint, range=str)
 
-slots.ContactPoint_description = Slot(uri=EVORAO.description, name="ContactPoint_description", curie=EVORAO.curie('description'),
+slots.ContactPoint_description = Slot(uri=DCT.description, name="ContactPoint_description", curie=DCT.curie('description'),
                    model_uri=EVORAO.ContactPoint_description, domain=ContactPoint, range=Optional[str])
 
 slots.ContactPoint_email = Slot(uri=EVORAO.email, name="ContactPoint_email", curie=EVORAO.curie('email'),
@@ -3908,10 +3918,10 @@ slots.ContactPoint_addressCountry = Slot(uri=EVORAO.addressCountry, name="Contac
 slots.ContactPoint_oRCIDiD = Slot(uri=EVORAO.oRCIDiD, name="ContactPoint_oRCIDiD", curie=EVORAO.curie('oRCIDiD'),
                    model_uri=EVORAO.ContactPoint_oRCIDiD, domain=ContactPoint, range=Optional[str])
 
-slots.License_name = Slot(uri=EVORAO.name, name="License_name", curie=EVORAO.curie('name'),
-                   model_uri=EVORAO.License_name, domain=License, range=str)
+slots.License_title = Slot(uri=DCT.title, name="License_title", curie=DCT.curie('title'),
+                   model_uri=EVORAO.License_title, domain=License, range=str)
 
-slots.License_description = Slot(uri=EVORAO.description, name="License_description", curie=EVORAO.curie('description'),
+slots.License_description = Slot(uri=DCT.description, name="License_description", curie=DCT.curie('description'),
                    model_uri=EVORAO.License_description, domain=License, range=Optional[str])
 
 slots.License_resourceURL = Slot(uri=EVORAO.resourceURL, name="License_resourceURL", curie=EVORAO.curie('resourceURL'),
@@ -3923,10 +3933,10 @@ slots.License_licensingOrAttribution = Slot(uri=EVORAO.licensingOrAttribution, n
 slots.License_logo = Slot(uri=EVORAO.logo, name="License_logo", curie=EVORAO.curie('logo'),
                    model_uri=EVORAO.License_logo, domain=License, range=Optional[Union[dict, Image]])
 
-slots.Certification_name = Slot(uri=EVORAO.name, name="Certification_name", curie=EVORAO.curie('name'),
-                   model_uri=EVORAO.Certification_name, domain=Certification, range=str)
+slots.Certification_title = Slot(uri=DCT.title, name="Certification_title", curie=DCT.curie('title'),
+                   model_uri=EVORAO.Certification_title, domain=Certification, range=str)
 
-slots.Certification_description = Slot(uri=EVORAO.description, name="Certification_description", curie=EVORAO.curie('description'),
+slots.Certification_description = Slot(uri=DCT.description, name="Certification_description", curie=DCT.curie('description'),
                    model_uri=EVORAO.Certification_description, domain=Certification, range=Optional[str])
 
 slots.Certification_logo = Slot(uri=EVORAO.logo, name="Certification_logo", curie=EVORAO.curie('logo'),

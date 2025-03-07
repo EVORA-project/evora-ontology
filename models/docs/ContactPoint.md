@@ -67,7 +67,7 @@ URI: [EVORAO:ContactPoint](https://raw.githubusercontent.com/EVORA-project/evora
 
 | Name | Cardinality and Range | Description | Inheritance |
 | ---  | --- | --- | --- |
-| [name](name.md) | 1 <br/> [String](String.md) | The label that allows humans to identify the current item | direct |
+| [name](name.md) | 1 <br/> [String](String.md) | A word or set of words used to identify and refer to an entity | direct |
 | [description](description.md) | 0..1 _recommended_ <br/> [String](String.md) | A short explanation of the characteristics, features, or nature of the curren... | direct |
 | [email](email.md) | 0..1 _recommended_ <br/> [String](String.md) | Email address | direct |
 | [telephone](telephone.md) | 0..1 _recommended_ <br/> [String](String.md) | The telephone number | direct |
@@ -177,29 +177,17 @@ slots:
 slot_usage:
   name:
     name: name
-    description: The label that allows humans to identify the current item
+    description: A word or set of words used to identify and refer to an entity
     title: name
-    comments:
-    - 'The title of the item should be as short and descriptive as possible. E.g.
-      for virus products it should basically be based on the following Pattern:
-
-      ''Virus name'', ''virus host type'', ''collection year'', ''country of collection''
-      ex ''suspected epidemiological origin'', ''genotype'', ''strain'', ''variant
-      name or specific feature'
     exact_mappings:
-    - dct:title
+    - schema:name
     close_mappings:
-    - rdfs:label
+    - foaf:name
+    - dct:title
     domain_of:
     - ContactPoint
-    - DataService
-    - Catalogue
-    - Term
     - PersonOrOrganization
-    - ProductOrService
     - File
-    - License
-    - Certification
     range: string
     required: true
     multivalued: false
@@ -210,18 +198,16 @@ slot_usage:
     title: description
     comments:
     - 'Describe this item in few lines. This description will serve as a summary to
-      present the item.
+      present the resource.
 
       '
-    exact_mappings:
-    - dct:description
+    slot_uri: dct:description
     domain_of:
     - ContactPoint
+    - Dataset
     - DataService
-    - Catalogue
     - Term
     - PersonOrOrganization
-    - ProductOrService
     - File
     - License
     - Certification
@@ -352,29 +338,17 @@ is_a: Resource
 slot_usage:
   name:
     name: name
-    description: The label that allows humans to identify the current item
+    description: A word or set of words used to identify and refer to an entity
     title: name
-    comments:
-    - 'The title of the item should be as short and descriptive as possible. E.g.
-      for virus products it should basically be based on the following Pattern:
-
-      ''Virus name'', ''virus host type'', ''collection year'', ''country of collection''
-      ex ''suspected epidemiological origin'', ''genotype'', ''strain'', ''variant
-      name or specific feature'
     exact_mappings:
-    - dct:title
+    - schema:name
     close_mappings:
-    - rdfs:label
+    - foaf:name
+    - dct:title
     domain_of:
     - ContactPoint
-    - DataService
-    - Catalogue
-    - Term
     - PersonOrOrganization
-    - ProductOrService
     - File
-    - License
-    - Certification
     range: string
     required: true
     multivalued: false
@@ -385,18 +359,16 @@ slot_usage:
     title: description
     comments:
     - 'Describe this item in few lines. This description will serve as a summary to
-      present the item.
+      present the resource.
 
       '
-    exact_mappings:
-    - dct:description
+    slot_uri: dct:description
     domain_of:
     - ContactPoint
+    - Dataset
     - DataService
-    - Catalogue
     - Term
     - PersonOrOrganization
-    - ProductOrService
     - File
     - License
     - Certification
@@ -509,33 +481,21 @@ slot_usage:
 attributes:
   name:
     name: name
-    description: The label that allows humans to identify the current item
+    description: A word or set of words used to identify and refer to an entity
     title: name
-    comments:
-    - 'The title of the item should be as short and descriptive as possible. E.g.
-      for virus products it should basically be based on the following Pattern:
-
-      ''Virus name'', ''virus host type'', ''collection year'', ''country of collection''
-      ex ''suspected epidemiological origin'', ''genotype'', ''strain'', ''variant
-      name or specific feature'
     from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
     exact_mappings:
-    - dct:title
+    - schema:name
     close_mappings:
-    - rdfs:label
+    - foaf:name
+    - dct:title
     rank: 1000
     alias: name
     owner: ContactPoint
     domain_of:
     - ContactPoint
-    - DataService
-    - Catalogue
-    - Term
     - PersonOrOrganization
-    - ProductOrService
     - File
-    - License
-    - Certification
     range: string
     required: true
     multivalued: false
@@ -546,22 +506,20 @@ attributes:
     title: description
     comments:
     - 'Describe this item in few lines. This description will serve as a summary to
-      present the item.
+      present the resource.
 
       '
     from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
-    exact_mappings:
-    - dct:description
     rank: 1000
+    slot_uri: dct:description
     alias: description
     owner: ContactPoint
     domain_of:
     - ContactPoint
+    - Dataset
     - DataService
-    - Catalogue
     - Term
     - PersonOrOrganization
-    - ProductOrService
     - File
     - License
     - Certification

@@ -27,7 +27,7 @@ SELECT ?g ?s ?p WHERE {
   FILTER ( ?p NOT IN (
    EVORAO:altText,
    EVORAO:name,
-   EVORAO:description,
+   dct:description,
    EVORAO:contentURL,
    EVORAO:format,
    EVORAO:license,

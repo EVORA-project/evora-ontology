@@ -9,7 +9,7 @@ _An individual_
 
 
 
-URI: [EVORAO:Person](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#Person)
+URI: [foaf:Person](http://xmlns.com/foaf/0.1/Person)
 
 
 
@@ -68,7 +68,7 @@ URI: [EVORAO:Person](https://raw.githubusercontent.com/EVORA-project/evora-ontol
 | Name | Cardinality and Range | Description | Inheritance |
 | ---  | --- | --- | --- |
 | [oRCIDiD](oRCIDiD.md) | 0..1 _recommended_ <br/> [String](String.md) | Unique persistent identifier for a person, provided by the Open Researcher an... | direct |
-| [name](name.md) | 1 <br/> [String](String.md) | The label that allows humans to identify the current item | [PersonOrOrganization](PersonOrOrganization.md) |
+| [name](name.md) | 1 <br/> [String](String.md) | A word or set of words used to identify and refer to an entity | [PersonOrOrganization](PersonOrOrganization.md) |
 | [description](description.md) | 0..1 _recommended_ <br/> [String](String.md) | A short explanation of the characteristics, features, or nature of the curren... | [PersonOrOrganization](PersonOrOrganization.md) |
 | [homePage](homePage.md) | 0..1 <br/> [Uri](Uri.md) | A web page that serves as the main or introductory page | [PersonOrOrganization](PersonOrOrganization.md) |
 | [contactPoint](contactPoint.md) | 0..1 _recommended_ <br/> [ContactPoint](ContactPoint.md) | An information that allows someone to establish communication | [PersonOrOrganization](PersonOrOrganization.md) |
@@ -102,7 +102,7 @@ URI: [EVORAO:Person](https://raw.githubusercontent.com/EVORA-project/evora-ontol
 
 | Mapping Type | Mapped Value |
 | ---  | ---  |
-| self | EVORAO:Person |
+| self | foaf:Person |
 | native | EVORAO:Person |
 | close | wd:Q215627, vcard:Individual, wd:Q215627, vcard:Individual |
 
@@ -147,6 +147,7 @@ slot_usage:
     required: false
     recommended: true
     multivalued: false
+class_uri: foaf:Person
 
 ```
 </details>
@@ -201,33 +202,21 @@ attributes:
     multivalued: false
   name:
     name: name
-    description: The label that allows humans to identify the current item
+    description: A word or set of words used to identify and refer to an entity
     title: name
-    comments:
-    - 'The title of the item should be as short and descriptive as possible. E.g.
-      for virus products it should basically be based on the following Pattern:
-
-      ''Virus name'', ''virus host type'', ''collection year'', ''country of collection''
-      ex ''suspected epidemiological origin'', ''genotype'', ''strain'', ''variant
-      name or specific feature'
     from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
     exact_mappings:
-    - dct:title
+    - schema:name
     close_mappings:
-    - rdfs:label
+    - foaf:name
+    - dct:title
     rank: 1000
     alias: name
     owner: Person
     domain_of:
     - PersonOrOrganization
-    - DataService
-    - Catalogue
-    - Term
-    - ProductOrService
     - File
     - ContactPoint
-    - License
-    - Certification
     range: string
     required: true
     multivalued: false
@@ -238,21 +227,19 @@ attributes:
     title: description
     comments:
     - 'Describe this item in few lines. This description will serve as a summary to
-      present the item.
+      present the resource.
 
       '
     from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
-    exact_mappings:
-    - dct:description
     rank: 1000
+    slot_uri: dct:description
     alias: description
     owner: Person
     domain_of:
     - PersonOrOrganization
+    - Dataset
     - DataService
-    - Catalogue
     - Term
-    - ProductOrService
     - File
     - ContactPoint
     - License
@@ -306,6 +293,7 @@ attributes:
     range: Image
     required: false
     multivalued: false
+class_uri: foaf:Person
 
 ```
 </details>

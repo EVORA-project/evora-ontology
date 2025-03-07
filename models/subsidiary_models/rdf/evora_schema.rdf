@@ -29,51 +29,51 @@
     dcterms:license "https://creativecommons.org/publicdomain/zero/1.0/" ;
     dcterms:title "European Viral Outbreak Response Alliance Ontology" ;
     pav:createdBy <https://github.com/Angatar> ;
-    pav:version "1.0.8498" ;
+    pav:version "1.0.8636" ;
     schema1:inLanguage "en" ;
     skos:definition "The EVORA Ontology harmonizes metadata in virology to describe viral resources, their derived products, and services. It aligns with FAIR principles to ensure interoperability, accessibility, and reusability across various projects. The EVORA Ontology aims to support preparedness and response to pandemics." ;
-    sh:declare [ sh:namespace <http://www.wikidata.org/prop/> ;
+    sh:declare [ sh:namespace <http://purl.obolibrary.org/obo/IAO_> ;
+            sh:prefix "IAO" ],
+        [ sh:namespace <http://www.wikidata.org/prop/> ;
             sh:prefix "wdp" ],
-        [ sh:namespace <http://www.w3.org/2006/vcard/ns#> ;
-            sh:prefix "vcard" ],
-        [ sh:namespace <http://www.w3.org/ns/regorg#> ;
-            sh:prefix "rov" ],
         [ sh:namespace pav: ;
             sh:prefix "pav" ],
-        [ sh:namespace dcmitype: ;
-            sh:prefix "dcmi" ],
-        [ sh:namespace xsd: ;
-            sh:prefix "xsd" ],
-        [ sh:namespace rdf: ;
-            sh:prefix "rdf" ],
-        [ sh:namespace owl: ;
-            sh:prefix "owl" ],
-        [ sh:namespace <http://purl.obolibrary.org/obo/IAO_> ;
-            sh:prefix "IAO" ],
-        [ sh:namespace rdfs: ;
-            sh:prefix "rdfs" ],
-        [ sh:namespace prov: ;
-            sh:prefix "prov" ],
-        [ sh:namespace <http://rs.tdwg.org/dwc/terms/> ;
-            sh:prefix "dwc" ],
-        [ sh:namespace foaf: ;
-            sh:prefix "foaf" ],
-        [ sh:namespace schema1: ;
-            sh:prefix "schema" ],
-        [ sh:namespace dcterms: ;
-            sh:prefix "dct" ],
-        [ sh:namespace <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#> ;
-            sh:prefix "EVORAO" ],
         [ sh:namespace <http://www.wikidata.org/entity/> ;
             sh:prefix "wd" ],
-        [ sh:namespace dcat: ;
-            sh:prefix "dcat" ],
+        [ sh:namespace <http://rs.tdwg.org/dwc/terms/> ;
+            sh:prefix "dwc" ],
         [ sh:namespace linkml: ;
             sh:prefix "linkml" ],
+        [ sh:namespace <http://www.w3.org/ns/regorg#> ;
+            sh:prefix "rov" ],
+        [ sh:namespace dcat: ;
+            sh:prefix "dcat" ],
+        [ sh:namespace schema1: ;
+            sh:prefix "schema" ],
+        [ sh:namespace rdfs: ;
+            sh:prefix "rdfs" ],
+        [ sh:namespace <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#> ;
+            sh:prefix "EVORAO" ],
+        [ sh:namespace dcterms: ;
+            sh:prefix "dct" ],
+        [ sh:namespace dcmitype: ;
+            sh:prefix "dcmi" ],
+        [ sh:namespace <http://www.w3.org/ns/adms#> ;
+            sh:prefix "adms" ],
+        [ sh:namespace prov: ;
+            sh:prefix "prov" ],
+        [ sh:namespace rdf: ;
+            sh:prefix "rdf" ],
+        [ sh:namespace <http://www.w3.org/2006/vcard/ns#> ;
+            sh:prefix "vcard" ],
+        [ sh:namespace foaf: ;
+            sh:prefix "foaf" ],
+        [ sh:namespace xsd: ;
+            sh:prefix "xsd" ],
         [ sh:namespace skos: ;
             sh:prefix "skos" ],
-        [ sh:namespace <http://www.w3.org/ns/adms#> ;
-            sh:prefix "adms" ] ;
+        [ sh:namespace owl: ;
+            sh:prefix "owl" ] ;
     linkml:classes <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/AlternateName>,
         <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Antibody>,
         <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Audio>,
@@ -152,7 +152,7 @@
         <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Vocabulary> ;
     linkml:default_prefix "EVORAO" ;
     linkml:default_range <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/string> ;
-    linkml:generation_date "2025-02-05T11:30:26"^^xsd:dateTime ;
+    linkml:generation_date "2025-03-07T13:42:58"^^xsd:dateTime ;
     linkml:id <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#> ;
     linkml:imports linkml:types ;
     linkml:metamodel_version "1.7.0" ;
@@ -169,13 +169,11 @@
         <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/BiologicalPartOrigin_accessToPhysicalGeneticResource>,
         <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/BiologicalPartOrigin_recombinantPartIdentification>,
         <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Bundle_productsOfTheBundle>,
-        <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Catalogue_description>,
-        <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Catalogue_name>,
         <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Certification_certificationDocument>,
         <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Certification_description>,
         <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Certification_logo>,
-        <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Certification_name>,
         <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Certification_resourceURL>,
+        <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Certification_title>,
         <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Collection_collectionDataProvider>,
         <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Collection_collectionItem>,
         <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/CommonName_alternateName>,
@@ -198,10 +196,12 @@
         <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/DataProvider_loginURL>,
         <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/DataProvider_providedEntityType>,
         <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/DataProvider_queryMethod>,
-        <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/DataProvider_queryURL>,
         <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/DataProvider_weight>,
         <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/DataService_description>,
-        <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/DataService_name>,
+        <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/DataService_endpointURL>,
+        <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/DataService_title>,
+        <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Dataset_description>,
+        <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Dataset_title>,
         <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Detection_Kit_hasSOPFile>,
         <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Detection_Kit_specificity>,
         <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Detection_Kit_specificityDocumented>,
@@ -221,8 +221,8 @@
         <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/License_description>,
         <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/License_licensingOrAttribution>,
         <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/License_logo>,
-        <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/License_name>,
         <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/License_resourceURL>,
+        <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/License_title>,
         <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/MSDS_accidentalReleaseMeasures>,
         <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/MSDS_disposalConsiderations>,
         <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/MSDS_ecologicalInformation>,
@@ -305,11 +305,9 @@
         <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/ProductOrService_collection>,
         <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/ProductOrService_complementaryDocument>,
         <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/ProductOrService_contactPoint>,
-        <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/ProductOrService_description>,
         <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/ProductOrService_externalRelatedReference>,
         <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/ProductOrService_internalReference>,
         <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/ProductOrService_keywords>,
-        <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/ProductOrService_name>,
         <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/ProductOrService_note>,
         <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/ProductOrService_pathogenIdentification>,
         <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/ProductOrService_productPicture>,
@@ -374,7 +372,7 @@
         <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Taxonomy_versionDataProvider>,
         <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Term_description>,
         <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Term_inVocabulary>,
-        <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Term_name>,
+        <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Term_title>,
         <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Term_weight>,
         <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Version_ID>,
         <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Version_versionOf>,
@@ -428,6 +426,7 @@
         <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/domain>,
         <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/ecologicalInformation>,
         <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/email>,
+        <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/endpointURL>,
         <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/exposureControlsPersonalProtection>,
         <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/expressedAs>,
         <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/expressionSystem>,
@@ -507,7 +506,6 @@
         <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/provider>,
         <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/qualityGrading>,
         <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/queryMethod>,
-        <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/queryURL>,
         <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/rORiD>,
         <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/rank>,
         <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/rankDataProvider>,
@@ -570,8 +568,8 @@
         <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/versionOf>,
         <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/weight> ;
     linkml:source_file "evora_schema.yaml" ;
-    linkml:source_file_date "2025-02-05T11:28:54"^^xsd:dateTime ;
-    linkml:source_file_size 211004 ;
+    linkml:source_file_date "2025-03-07T13:41:25"^^xsd:dateTime ;
+    linkml:source_file_size 207878 ;
     linkml:types <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/boolean>,
         <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/curie>,
         <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/date>,
@@ -616,7 +614,9 @@
     linkml:definition_uri <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#Bacterium> ;
     linkml:is_a <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Pathogen> ;
     linkml:slot_usage [ ] ;
-    linkml:slots <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Pathogen_biologicalMaterialOrigin>,
+    linkml:slots <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Dataset_description>,
+        <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Dataset_title>,
+        <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Pathogen_biologicalMaterialOrigin>,
         <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Pathogen_clinicalInformation>,
         <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Pathogen_cultivability>,
         <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Pathogen_genomeSequencing>,
@@ -644,11 +644,9 @@
         <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/ProductOrService_collection>,
         <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/ProductOrService_complementaryDocument>,
         <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/ProductOrService_contactPoint>,
-        <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/ProductOrService_description>,
         <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/ProductOrService_externalRelatedReference>,
         <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/ProductOrService_internalReference>,
         <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/ProductOrService_keywords>,
-        <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/ProductOrService_name>,
         <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/ProductOrService_note>,
         <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/ProductOrService_pathogenIdentification>,
         <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/ProductOrService_productPicture>,
@@ -677,7 +675,9 @@
     linkml:definition_uri <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#Fungus> ;
     linkml:is_a <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Pathogen> ;
     linkml:slot_usage [ ] ;
-    linkml:slots <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Pathogen_biologicalMaterialOrigin>,
+    linkml:slots <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Dataset_description>,
+        <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Dataset_title>,
+        <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Pathogen_biologicalMaterialOrigin>,
         <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Pathogen_clinicalInformation>,
         <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Pathogen_cultivability>,
         <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Pathogen_genomeSequencing>,
@@ -705,11 +705,9 @@
         <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/ProductOrService_collection>,
         <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/ProductOrService_complementaryDocument>,
         <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/ProductOrService_contactPoint>,
-        <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/ProductOrService_description>,
         <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/ProductOrService_externalRelatedReference>,
         <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/ProductOrService_internalReference>,
         <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/ProductOrService_keywords>,
-        <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/ProductOrService_name>,
         <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/ProductOrService_note>,
         <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/ProductOrService_pathogenIdentification>,
         <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/ProductOrService_productPicture>,
@@ -738,7 +736,9 @@
     linkml:definition_uri <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#Prion> ;
     linkml:is_a <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Pathogen> ;
     linkml:slot_usage [ ] ;
-    linkml:slots <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Pathogen_biologicalMaterialOrigin>,
+    linkml:slots <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Dataset_description>,
+        <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Dataset_title>,
+        <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Pathogen_biologicalMaterialOrigin>,
         <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Pathogen_clinicalInformation>,
         <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Pathogen_cultivability>,
         <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Pathogen_genomeSequencing>,
@@ -766,11 +766,9 @@
         <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/ProductOrService_collection>,
         <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/ProductOrService_complementaryDocument>,
         <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/ProductOrService_contactPoint>,
-        <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/ProductOrService_description>,
         <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/ProductOrService_externalRelatedReference>,
         <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/ProductOrService_internalReference>,
         <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/ProductOrService_keywords>,
-        <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/ProductOrService_name>,
         <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/ProductOrService_note>,
         <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/ProductOrService_pathogenIdentification>,
         <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/ProductOrService_productPicture>,
@@ -799,7 +797,9 @@
     linkml:definition_uri <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#Protozoan> ;
     linkml:is_a <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Pathogen> ;
     linkml:slot_usage [ ] ;
-    linkml:slots <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Pathogen_biologicalMaterialOrigin>,
+    linkml:slots <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Dataset_description>,
+        <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Dataset_title>,
+        <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Pathogen_biologicalMaterialOrigin>,
         <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Pathogen_clinicalInformation>,
         <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Pathogen_cultivability>,
         <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Pathogen_genomeSequencing>,
@@ -827,11 +827,9 @@
         <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/ProductOrService_collection>,
         <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/ProductOrService_complementaryDocument>,
         <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/ProductOrService_contactPoint>,
-        <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/ProductOrService_description>,
         <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/ProductOrService_externalRelatedReference>,
         <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/ProductOrService_internalReference>,
         <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/ProductOrService_keywords>,
-        <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/ProductOrService_name>,
         <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/ProductOrService_note>,
         <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/ProductOrService_pathogenIdentification>,
         <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/ProductOrService_productPicture>,
@@ -875,7 +873,9 @@
     linkml:definition_uri <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#Viroid> ;
     linkml:is_a <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Pathogen> ;
     linkml:slot_usage [ ] ;
-    linkml:slots <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Pathogen_biologicalMaterialOrigin>,
+    linkml:slots <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Dataset_description>,
+        <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Dataset_title>,
+        <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Pathogen_biologicalMaterialOrigin>,
         <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Pathogen_clinicalInformation>,
         <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Pathogen_cultivability>,
         <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Pathogen_genomeSequencing>,
@@ -903,11 +903,9 @@
         <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/ProductOrService_collection>,
         <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/ProductOrService_complementaryDocument>,
         <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/ProductOrService_contactPoint>,
-        <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/ProductOrService_description>,
         <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/ProductOrService_externalRelatedReference>,
         <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/ProductOrService_internalReference>,
         <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/ProductOrService_keywords>,
-        <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/ProductOrService_name>,
         <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/ProductOrService_note>,
         <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/ProductOrService_pathogenIdentification>,
         <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/ProductOrService_productPicture>,
@@ -1205,9 +1203,9 @@
 <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Certification_description> a linkml:SlotDefinition ;
     dcterms:title "description" ;
     skos:definition "A short explanation of the characteristics, features, or nature of the current item" ;
-    skos:exactMatch dcterms:description ;
     skos:inScheme <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#> ;
-    skos:note """Describe this item in few lines. This description will serve as a summary to present the item.
+    skos:mappingRelation dcterms:description ;
+    skos:note """Describe this item in few lines. This description will serve as a summary to present the resource.
 """ ;
     skos:prefLabel "description" ;
     linkml:definition_uri <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#description> ;
@@ -1218,7 +1216,7 @@
     linkml:owner <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Certification> ;
     linkml:range <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/string> ;
     linkml:recommended true ;
-    linkml:slot_uri <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#description> ;
+    linkml:slot_uri dcterms:description ;
     linkml:usage_slot_name "description" .
 
 <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Certification_logo> a linkml:SlotDefinition ;
@@ -1237,26 +1235,6 @@
     linkml:slot_uri <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#logo> ;
     linkml:usage_slot_name "logo" .
 
-<https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Certification_name> a linkml:SlotDefinition ;
-    dcterms:title "name" ;
-    skos:closeMatch rdfs:label ;
-    skos:definition "The label that allows humans to identify the current item" ;
-    skos:exactMatch dcterms:title ;
-    skos:inScheme <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#> ;
-    skos:note """The title of the item should be as short and descriptive as possible. E.g. for virus products it should basically be based on the following Pattern:
-'Virus name', 'virus host type', 'collection year', 'country of collection' ex 'suspected epidemiological origin', 'genotype', 'strain', 'variant name or specific feature""" ;
-    skos:prefLabel "name" ;
-    linkml:definition_uri <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#name> ;
-    linkml:domain <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Certification> ;
-    linkml:domain_of <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Certification> ;
-    linkml:is_a <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/name> ;
-    linkml:is_usage_slot true ;
-    linkml:owner <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Certification> ;
-    linkml:range <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/string> ;
-    linkml:required true ;
-    linkml:slot_uri <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#name> ;
-    linkml:usage_slot_name "name" .
-
 <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Certification_resourceURL> a linkml:SlotDefinition ;
     dcterms:title "resource URL" ;
     skos:closeMatch schema1:url ;
@@ -1273,6 +1251,26 @@
     linkml:range <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/uri> ;
     linkml:slot_uri <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#resourceURL> ;
     linkml:usage_slot_name "resourceURL" .
+
+<https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Certification_title> a linkml:SlotDefinition ;
+    dcterms:title "title" ;
+    skos:closeMatch rdfs:label ;
+    skos:definition "A name given to the resource" ;
+    skos:inScheme <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#> ;
+    skos:mappingRelation dcterms:title ;
+    skos:note """The title of the item should be as short and descriptive as possible. E.g. for virus products it should basically be based on the following Pattern:
+'Virus name', 'virus host type', 'collection year', 'country of collection' ex 'suspected epidemiological origin', 'genotype', 'strain', 'variant name or specific feature""" ;
+    skos:prefLabel "title" ;
+    linkml:definition_uri <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#title> ;
+    linkml:domain <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Certification> ;
+    linkml:domain_of <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Certification> ;
+    linkml:is_a <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/title> ;
+    linkml:is_usage_slot true ;
+    linkml:owner <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Certification> ;
+    linkml:range <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/string> ;
+    linkml:required true ;
+    linkml:slot_uri dcterms:title ;
+    linkml:usage_slot_name "title" .
 
 <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Collection_collectionDataProvider> a linkml:SlotDefinition ;
     dcterms:title "collection data provider" ;
@@ -1365,9 +1363,9 @@
 <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/ContactPoint_description> a linkml:SlotDefinition ;
     dcterms:title "description" ;
     skos:definition "A short explanation of the characteristics, features, or nature of the current item" ;
-    skos:exactMatch dcterms:description ;
     skos:inScheme <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#> ;
-    skos:note """Describe this item in few lines. This description will serve as a summary to present the item.
+    skos:mappingRelation dcterms:description ;
+    skos:note """Describe this item in few lines. This description will serve as a summary to present the resource.
 """ ;
     skos:prefLabel "description" ;
     linkml:definition_uri <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#description> ;
@@ -1378,7 +1376,7 @@
     linkml:owner <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/ContactPoint> ;
     linkml:range <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/string> ;
     linkml:recommended true ;
-    linkml:slot_uri <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#description> ;
+    linkml:slot_uri dcterms:description ;
     linkml:usage_slot_name "description" .
 
 <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/ContactPoint_email> a linkml:SlotDefinition ;
@@ -1401,12 +1399,11 @@
 
 <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/ContactPoint_name> a linkml:SlotDefinition ;
     dcterms:title "name" ;
-    skos:closeMatch rdfs:label ;
-    skos:definition "The label that allows humans to identify the current item" ;
-    skos:exactMatch dcterms:title ;
+    skos:closeMatch dcterms:title,
+        foaf:name ;
+    skos:definition "A word or set of words used to identify and refer to an entity" ;
+    skos:exactMatch schema1:name ;
     skos:inScheme <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#> ;
-    skos:note """The title of the item should be as short and descriptive as possible. E.g. for virus products it should basically be based on the following Pattern:
-'Virus name', 'virus host type', 'collection year', 'country of collection' ex 'suspected epidemiological origin', 'genotype', 'strain', 'variant name or specific feature""" ;
     skos:prefLabel "name" ;
     linkml:definition_uri <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#name> ;
     linkml:domain <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/ContactPoint> ;
@@ -1628,24 +1625,6 @@
     linkml:slot_uri <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#queryMethod> ;
     linkml:usage_slot_name "queryMethod" .
 
-<https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/DataProvider_queryURL> a linkml:SlotDefinition ;
-    dcterms:title "query URL" ;
-    skos:closeMatch <http://www.wikidata.org/prop/P1630> ;
-    skos:definition "The URL template that allows to get the content" ;
-    skos:exactMatch dcat:endpointURL ;
-    skos:inScheme <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#> ;
-    skos:prefLabel "queryURL" ;
-    linkml:definition_uri <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#queryURL> ;
-    linkml:domain <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/DataProvider> ;
-    linkml:domain_of <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/DataProvider> ;
-    linkml:is_a <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/queryURL> ;
-    linkml:is_usage_slot true ;
-    linkml:owner <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/DataProvider> ;
-    linkml:range <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/uri> ;
-    linkml:required true ;
-    linkml:slot_uri <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#queryURL> ;
-    linkml:usage_slot_name "queryURL" .
-
 <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/DataProvider_weight> a linkml:SlotDefinition ;
     dcterms:title "weight" ;
     skos:closeMatch <http://www.w3.org/ns/adms#status> ;
@@ -1845,9 +1824,9 @@
 <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/License_description> a linkml:SlotDefinition ;
     dcterms:title "description" ;
     skos:definition "A short explanation of the characteristics, features, or nature of the current item" ;
-    skos:exactMatch dcterms:description ;
     skos:inScheme <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#> ;
-    skos:note """Describe this item in few lines. This description will serve as a summary to present the item.
+    skos:mappingRelation dcterms:description ;
+    skos:note """Describe this item in few lines. This description will serve as a summary to present the resource.
 """ ;
     skos:prefLabel "description" ;
     linkml:definition_uri <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#description> ;
@@ -1858,7 +1837,7 @@
     linkml:owner <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/License> ;
     linkml:range <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/string> ;
     linkml:recommended true ;
-    linkml:slot_uri <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#description> ;
+    linkml:slot_uri dcterms:description ;
     linkml:usage_slot_name "description" .
 
 <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/License_licensingOrAttribution> a linkml:SlotDefinition ;
@@ -1894,26 +1873,6 @@
     linkml:slot_uri <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#logo> ;
     linkml:usage_slot_name "logo" .
 
-<https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/License_name> a linkml:SlotDefinition ;
-    dcterms:title "name" ;
-    skos:closeMatch rdfs:label ;
-    skos:definition "The label that allows humans to identify the current item" ;
-    skos:exactMatch dcterms:title ;
-    skos:inScheme <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#> ;
-    skos:note """The title of the item should be as short and descriptive as possible. E.g. for virus products it should basically be based on the following Pattern:
-'Virus name', 'virus host type', 'collection year', 'country of collection' ex 'suspected epidemiological origin', 'genotype', 'strain', 'variant name or specific feature""" ;
-    skos:prefLabel "name" ;
-    linkml:definition_uri <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#name> ;
-    linkml:domain <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/License> ;
-    linkml:domain_of <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/License> ;
-    linkml:is_a <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/name> ;
-    linkml:is_usage_slot true ;
-    linkml:owner <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/License> ;
-    linkml:range <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/string> ;
-    linkml:required true ;
-    linkml:slot_uri <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#name> ;
-    linkml:usage_slot_name "name" .
-
 <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/License_resourceURL> a linkml:SlotDefinition ;
     dcterms:title "resource URL" ;
     skos:closeMatch schema1:url ;
@@ -1930,6 +1889,26 @@
     linkml:range <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/uri> ;
     linkml:slot_uri <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#resourceURL> ;
     linkml:usage_slot_name "resourceURL" .
+
+<https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/License_title> a linkml:SlotDefinition ;
+    dcterms:title "title" ;
+    skos:closeMatch rdfs:label ;
+    skos:definition "A name given to the resource" ;
+    skos:inScheme <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#> ;
+    skos:mappingRelation dcterms:title ;
+    skos:note """The title of the item should be as short and descriptive as possible. E.g. for virus products it should basically be based on the following Pattern:
+'Virus name', 'virus host type', 'collection year', 'country of collection' ex 'suspected epidemiological origin', 'genotype', 'strain', 'variant name or specific feature""" ;
+    skos:prefLabel "title" ;
+    linkml:definition_uri <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#title> ;
+    linkml:domain <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/License> ;
+    linkml:domain_of <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/License> ;
+    linkml:is_a <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/title> ;
+    linkml:is_usage_slot true ;
+    linkml:owner <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/License> ;
+    linkml:range <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/string> ;
+    linkml:required true ;
+    linkml:slot_uri dcterms:title ;
+    linkml:usage_slot_name "title" .
 
 <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/MSDS_accidentalReleaseMeasures> a linkml:SlotDefinition ;
     dcterms:title "accidental release measures" ;
@@ -3028,9 +3007,10 @@
 
 <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Publication_title> a linkml:SlotDefinition ;
     dcterms:title "title" ;
-    skos:definition "The descriptive word or phrase that identifies the current piece of work" ;
-    skos:exactMatch dcterms:title ;
+    skos:closeMatch rdfs:label ;
+    skos:definition "A name given to the resource" ;
     skos:inScheme <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#> ;
+    skos:mappingRelation dcterms:title ;
     skos:note """The title of the item should be as short and descriptive as possible. E.g. for virus products it should basically be based on the following Pattern:
 'Virus name', 'virus host type', 'collection year', 'country of collection' ex 'suspected epidemiological origin', 'genotype', 'strain', 'variant name or specific feature""" ;
     skos:prefLabel "title" ;
@@ -3042,7 +3022,7 @@
     linkml:owner <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Publication> ;
     linkml:range <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/string> ;
     linkml:required true ;
-    linkml:slot_uri <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#title> ;
+    linkml:slot_uri dcterms:title ;
     linkml:usage_slot_name "title" .
 
 <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/RecombinantPartIdentification_partIdentification> a linkml:SlotDefinition ;
@@ -4075,6 +4055,19 @@
     linkml:recommended true ;
     linkml:slot_uri <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#email> .
 
+<https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/endpointURL> a linkml:SlotDefinition ;
+    dcterms:title "endpoint URL" ;
+    skos:closeMatch <http://www.wikidata.org/prop/P1630> ;
+    skos:definition "The URL template that allows to get the content" ;
+    skos:inScheme <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#> ;
+    skos:mappingRelation dcat:endpointURL ;
+    linkml:definition_uri <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#endpointURL> ;
+    linkml:domain_of <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/DataService> ;
+    linkml:owner <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/DataService> ;
+    linkml:range <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/uri> ;
+    linkml:required true ;
+    linkml:slot_uri dcat:endpointURL .
+
 <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/exposureControlsPersonalProtection> a linkml:SlotDefinition ;
     dcterms:title "exposure controls/personal protection" ;
     skos:definition "Specifies measures to limit exposure to the product, including recommended engineering controls (e.g., ventilation) and personal protective equipment (PPE) such as gloves, masks, goggles, and clothing to ensure safe handling." ;
@@ -4955,19 +4948,6 @@
     linkml:required true ;
     linkml:slot_uri <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#queryMethod> .
 
-<https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/queryURL> a linkml:SlotDefinition ;
-    dcterms:title "query URL" ;
-    skos:closeMatch <http://www.wikidata.org/prop/P1630> ;
-    skos:definition "The URL template that allows to get the content" ;
-    skos:exactMatch dcat:endpointURL ;
-    skos:inScheme <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#> ;
-    linkml:definition_uri <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#queryURL> ;
-    linkml:domain_of <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/DataProvider> ;
-    linkml:owner <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/DataProvider> ;
-    linkml:range <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/uri> ;
-    linkml:required true ;
-    linkml:slot_uri <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#queryURL> .
-
 <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/rORiD> a linkml:SlotDefinition ;
     dcterms:title "ROR iD" ;
     skos:definition "The corresponding organization's persistent identifier from the Research Organization Registry (ROR)" ;
@@ -5414,20 +5394,6 @@
     linkml:range <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/boolean> ;
     linkml:slot_uri <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#thirdPartyDistributionConsent> .
 
-<https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/title> a linkml:SlotDefinition ;
-    dcterms:title "title" ;
-    skos:definition "The descriptive word or phrase that identifies the current piece of work" ;
-    skos:exactMatch dcterms:title ;
-    skos:inScheme <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#> ;
-    skos:note """The title of the item should be as short and descriptive as possible. E.g. for virus products it should basically be based on the following Pattern:
-'Virus name', 'virus host type', 'collection year', 'country of collection' ex 'suspected epidemiological origin', 'genotype', 'strain', 'variant name or specific feature""" ;
-    linkml:definition_uri <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#title> ;
-    linkml:domain_of <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Publication> ;
-    linkml:owner <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Publication> ;
-    linkml:range <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/string> ;
-    linkml:required true ;
-    linkml:slot_uri <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#title> .
-
 <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/toxicologicalInformation> a linkml:SlotDefinition ;
     dcterms:title "toxicological information" ;
     skos:definition "Details on the potential health effects of the product, including routes of exposure (inhalation, ingestion, skin, eye contact), acute and chronic toxicity and symptoms of exposure" ;
@@ -5658,9 +5624,9 @@
 <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/DataService_description> a linkml:SlotDefinition ;
     dcterms:title "description" ;
     skos:definition "A short explanation of the characteristics, features, or nature of the current item" ;
-    skos:exactMatch dcterms:description ;
     skos:inScheme <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#> ;
-    skos:note """Describe this item in few lines. This description will serve as a summary to present the item.
+    skos:mappingRelation dcterms:description ;
+    skos:note """Describe this item in few lines. This description will serve as a summary to present the resource.
 """ ;
     skos:prefLabel "description" ;
     linkml:definition_uri <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#description> ;
@@ -5671,28 +5637,46 @@
     linkml:owner <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/DataService> ;
     linkml:range <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/string> ;
     linkml:recommended true ;
-    linkml:slot_uri <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#description> ;
+    linkml:slot_uri dcterms:description ;
     linkml:usage_slot_name "description" .
 
-<https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/DataService_name> a linkml:SlotDefinition ;
-    dcterms:title "name" ;
-    skos:closeMatch rdfs:label ;
-    skos:definition "The label that allows humans to identify the current item" ;
-    skos:exactMatch dcterms:title ;
+<https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/DataService_endpointURL> a linkml:SlotDefinition ;
+    dcterms:title "endpoint URL" ;
+    skos:closeMatch <http://www.wikidata.org/prop/P1630> ;
+    skos:definition "The URL template that allows to get the content" ;
     skos:inScheme <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#> ;
-    skos:note """The title of the item should be as short and descriptive as possible. E.g. for virus products it should basically be based on the following Pattern:
-'Virus name', 'virus host type', 'collection year', 'country of collection' ex 'suspected epidemiological origin', 'genotype', 'strain', 'variant name or specific feature""" ;
-    skos:prefLabel "name" ;
-    linkml:definition_uri <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#name> ;
+    skos:mappingRelation dcat:endpointURL ;
+    skos:prefLabel "endpointURL" ;
+    linkml:definition_uri <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#endpointURL> ;
     linkml:domain <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/DataService> ;
     linkml:domain_of <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/DataService> ;
-    linkml:is_a <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/name> ;
+    linkml:is_a <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/endpointURL> ;
+    linkml:is_usage_slot true ;
+    linkml:owner <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/DataService> ;
+    linkml:range <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/uri> ;
+    linkml:required true ;
+    linkml:slot_uri dcat:endpointURL ;
+    linkml:usage_slot_name "endpointURL" .
+
+<https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/DataService_title> a linkml:SlotDefinition ;
+    dcterms:title "title" ;
+    skos:closeMatch rdfs:label ;
+    skos:definition "A name given to the resource" ;
+    skos:inScheme <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#> ;
+    skos:mappingRelation dcterms:title ;
+    skos:note """The title of the item should be as short and descriptive as possible. E.g. for virus products it should basically be based on the following Pattern:
+'Virus name', 'virus host type', 'collection year', 'country of collection' ex 'suspected epidemiological origin', 'genotype', 'strain', 'variant name or specific feature""" ;
+    skos:prefLabel "title" ;
+    linkml:definition_uri <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#title> ;
+    linkml:domain <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/DataService> ;
+    linkml:domain_of <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/DataService> ;
+    linkml:is_a <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/title> ;
     linkml:is_usage_slot true ;
     linkml:owner <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/DataService> ;
     linkml:range <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/string> ;
     linkml:required true ;
-    linkml:slot_uri <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#name> ;
-    linkml:usage_slot_name "name" .
+    linkml:slot_uri dcterms:title ;
+    linkml:usage_slot_name "title" .
 
 <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/ExpressionVector> a linkml:ClassDefinition ;
     dcterms:title "Expression vector" ;
@@ -5705,7 +5689,7 @@
     linkml:slot_usage [ ] ;
     linkml:slots <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Term_description>,
         <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Term_inVocabulary>,
-        <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Term_name>,
+        <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Term_title>,
         <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Term_weight> .
 
 <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/IATAClassification> a linkml:ClassDefinition ;
@@ -5718,7 +5702,7 @@
     linkml:slot_usage [ ] ;
     linkml:slots <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Term_description>,
         <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Term_inVocabulary>,
-        <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Term_name>,
+        <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Term_title>,
         <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Term_weight> .
 
 <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/IPLCOrigin> a linkml:ClassDefinition ;
@@ -5731,7 +5715,7 @@
     linkml:slot_usage [ ] ;
     linkml:slots <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Term_description>,
         <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Term_inVocabulary>,
-        <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Term_name>,
+        <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Term_title>,
         <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Term_weight> .
 
 <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/IsolationHost> a linkml:ClassDefinition ;
@@ -5744,7 +5728,7 @@
     linkml:slot_usage [ ] ;
     linkml:slots <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Term_description>,
         <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Term_inVocabulary>,
-        <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Term_name>,
+        <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Term_title>,
         <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Term_weight> .
 
 <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Journal> a linkml:ClassDefinition ;
@@ -5758,7 +5742,7 @@
     linkml:slot_usage [ ] ;
     linkml:slots <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Term_description>,
         <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Term_inVocabulary>,
-        <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Term_name>,
+        <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Term_title>,
         <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Term_weight> .
 
 <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Keyword> a linkml:ClassDefinition ;
@@ -5772,7 +5756,7 @@
     linkml:slot_usage [ ] ;
     linkml:slots <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Term_description>,
         <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Term_inVocabulary>,
-        <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Term_name>,
+        <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Term_title>,
         <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Term_weight> .
 
 <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Originator> a linkml:ClassDefinition ;
@@ -5801,7 +5785,7 @@
     linkml:slot_usage [ ] ;
     linkml:slots <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Term_description>,
         <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Term_inVocabulary>,
-        <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Term_name>,
+        <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Term_title>,
         <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Term_weight> .
 
 <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/PlasmidSelection> a linkml:ClassDefinition ;
@@ -5814,7 +5798,7 @@
     linkml:slot_usage [ ] ;
     linkml:slots <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Term_description>,
         <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Term_inVocabulary>,
-        <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Term_name>,
+        <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Term_title>,
         <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Term_weight> .
 
 <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/ProductionCellLine> a linkml:ClassDefinition ;
@@ -5828,7 +5812,7 @@
     linkml:slot_usage [ ] ;
     linkml:slots <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Term_description>,
         <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Term_inVocabulary>,
-        <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Term_name>,
+        <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Term_title>,
         <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Term_weight> .
 
 <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/PropagationHost> a linkml:ClassDefinition ;
@@ -5841,7 +5825,7 @@
     linkml:slot_usage [ ] ;
     linkml:slots <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Term_description>,
         <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Term_inVocabulary>,
-        <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Term_name>,
+        <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Term_title>,
         <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Term_weight> .
 
 <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/RI> a linkml:ClassDefinition ;
@@ -5874,7 +5858,7 @@
     linkml:slot_usage [ ] ;
     linkml:slots <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Term_description>,
         <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Term_inVocabulary>,
-        <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Term_name>,
+        <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Term_title>,
         <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Term_weight> .
 
 <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/SpecialFeature> a linkml:ClassDefinition ;
@@ -5888,7 +5872,7 @@
     linkml:slot_usage [ ] ;
     linkml:slots <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Term_description>,
         <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Term_inVocabulary>,
-        <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Term_name>,
+        <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Term_title>,
         <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Term_weight> .
 
 <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/TransmissionMethod> a linkml:ClassDefinition ;
@@ -5901,7 +5885,7 @@
     linkml:slot_usage [ ] ;
     linkml:slots <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Term_description>,
         <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Term_inVocabulary>,
-        <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Term_name>,
+        <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Term_title>,
         <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Term_weight> .
 
 <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Variant> a linkml:ClassDefinition ;
@@ -5917,7 +5901,7 @@
         <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/CommonName_sourceOfInformation>,
         <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Term_description>,
         <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Term_inVocabulary>,
-        <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Term_name>,
+        <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Term_title>,
         <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Term_weight> .
 
 <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/VirusName> a linkml:ClassDefinition ;
@@ -5933,7 +5917,7 @@
         <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/CommonName_sourceOfInformation>,
         <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Term_description>,
         <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Term_inVocabulary>,
-        <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Term_name>,
+        <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Term_title>,
         <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Term_weight> .
 
 <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/contactPoint> a linkml:SlotDefinition ;
@@ -6169,6 +6153,21 @@
     linkml:slot_uri <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#recombinantPartIdentification> ;
     linkml:usage_slot_name "recombinantPartIdentification" .
 
+<https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Catalogue> a linkml:ClassDefinition ;
+    dcterms:title "Catalogue" ;
+    skos:closeMatch schema1:Dataset,
+        <wd:Q2352616> ;
+    skos:definition "A curated collection of metadata about resources" ;
+    skos:inScheme <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#> ;
+    skos:mappingRelation <dcat:Catalog> ;
+    linkml:abstract true ;
+    linkml:class_uri dcat:Catalog ;
+    linkml:definition_uri <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#Catalogue> ;
+    linkml:is_a <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Dataset> ;
+    linkml:slot_usage [ ] ;
+    linkml:slots <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Dataset_description>,
+        <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Dataset_title> .
+
 <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/CommonName_alternateName> a linkml:SlotDefinition ;
     dcterms:title "alternate name" ;
     skos:closeMatch <http://www.wikidata.org/prop/P4970> ;
@@ -6216,7 +6215,7 @@
     linkml:slot_usage [ ] ;
     linkml:slots <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Term_description>,
         <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Term_inVocabulary>,
-        <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Term_name>,
+        <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Term_title>,
         <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Term_weight> .
 
 <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/GeographicalOrigin> a linkml:ClassDefinition ;
@@ -6232,7 +6231,7 @@
     linkml:slot_usage [ ] ;
     linkml:slots <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Term_description>,
         <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Term_inVocabulary>,
-        <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Term_name>,
+        <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Term_title>,
         <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Term_weight> .
 
 <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Organization_alternateName> a linkml:SlotDefinition ;
@@ -6341,44 +6340,21 @@
     linkml:range <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Image> ;
     linkml:slot_uri <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#logo> .
 
-<https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Catalogue_description> a linkml:SlotDefinition ;
-    dcterms:title "description" ;
-    skos:definition "A short explanation of the characteristics, features, or nature of the current item" ;
-    skos:exactMatch dcterms:description ;
-    skos:inScheme <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#> ;
-    skos:note """Describe this item in few lines. This description will serve as a summary to present the item.
-""" ;
-    skos:prefLabel "description" ;
-    linkml:definition_uri <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#description> ;
-    linkml:domain <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Catalogue> ;
-    linkml:domain_of <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Catalogue> ;
-    linkml:is_a <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/description> ;
-    linkml:is_usage_slot true ;
-    linkml:owner <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Catalogue> ;
-    linkml:range <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/string> ;
-    linkml:recommended true ;
-    linkml:slot_uri <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#description> ;
-    linkml:usage_slot_name "description" .
-
-<https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Catalogue_name> a linkml:SlotDefinition ;
+<https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/name> a linkml:SlotDefinition ;
     dcterms:title "name" ;
-    skos:closeMatch rdfs:label ;
-    skos:definition "The label that allows humans to identify the current item" ;
-    skos:exactMatch dcterms:title ;
+    skos:closeMatch dcterms:title,
+        foaf:name ;
+    skos:definition "A word or set of words used to identify and refer to an entity" ;
+    skos:exactMatch schema1:name ;
     skos:inScheme <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#> ;
-    skos:note """The title of the item should be as short and descriptive as possible. E.g. for virus products it should basically be based on the following Pattern:
-'Virus name', 'virus host type', 'collection year', 'country of collection' ex 'suspected epidemiological origin', 'genotype', 'strain', 'variant name or specific feature""" ;
-    skos:prefLabel "name" ;
     linkml:definition_uri <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#name> ;
-    linkml:domain <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Catalogue> ;
-    linkml:domain_of <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Catalogue> ;
-    linkml:is_a <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/name> ;
-    linkml:is_usage_slot true ;
-    linkml:owner <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Catalogue> ;
+    linkml:domain_of <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/ContactPoint>,
+        <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/File>,
+        <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/PersonOrOrganization> ;
+    linkml:owner <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/ContactPoint> ;
     linkml:range <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/string> ;
     linkml:required true ;
-    linkml:slot_uri <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#name> ;
-    linkml:usage_slot_name "name" .
+    linkml:slot_uri <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#name> .
 
 <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Document> a linkml:ClassDefinition ;
     dcterms:title "Document" ;
@@ -6401,7 +6377,8 @@
         <wd:Q215627> ;
     skos:definition "An individual" ;
     skos:inScheme <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#> ;
-    linkml:class_uri <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#Person> ;
+    skos:mappingRelation <foaf:Person> ;
+    linkml:class_uri foaf:Person ;
     linkml:definition_uri <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#Person> ;
     linkml:is_a <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/PersonOrOrganization> ;
     linkml:slot_usage [ ] ;
@@ -6423,7 +6400,7 @@
     linkml:slot_usage [ ] ;
     linkml:slots <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Term_description>,
         <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Term_inVocabulary>,
-        <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Term_name>,
+        <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Term_title>,
         <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Term_weight> .
 
 <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/sequence> a linkml:SlotDefinition ;
@@ -6453,6 +6430,8 @@
     linkml:is_a <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Product> ;
     linkml:slot_usage [ ] ;
     linkml:slots <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Bundle_productsOfTheBundle>,
+        <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Dataset_description>,
+        <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Dataset_title>,
         <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/ProductOrService_accessPointURL>,
         <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/ProductOrService_additionalCategory>,
         <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/ProductOrService_availability>,
@@ -6463,11 +6442,9 @@
         <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/ProductOrService_collection>,
         <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/ProductOrService_complementaryDocument>,
         <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/ProductOrService_contactPoint>,
-        <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/ProductOrService_description>,
         <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/ProductOrService_externalRelatedReference>,
         <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/ProductOrService_internalReference>,
         <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/ProductOrService_keywords>,
-        <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/ProductOrService_name>,
         <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/ProductOrService_note>,
         <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/ProductOrService_pathogenIdentification>,
         <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/ProductOrService_productPicture>,
@@ -6501,6 +6478,8 @@
         <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Antibody_sequenceReference>,
         <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Antibody_specificityDocumented>,
         <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Antibody_targetedAntigen>,
+        <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Dataset_description>,
+        <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Dataset_title>,
         <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Hybridoma_hybridomaDescription>,
         <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/ProductOrService_accessPointURL>,
         <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/ProductOrService_additionalCategory>,
@@ -6512,11 +6491,9 @@
         <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/ProductOrService_collection>,
         <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/ProductOrService_complementaryDocument>,
         <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/ProductOrService_contactPoint>,
-        <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/ProductOrService_description>,
         <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/ProductOrService_externalRelatedReference>,
         <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/ProductOrService_internalReference>,
         <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/ProductOrService_keywords>,
-        <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/ProductOrService_name>,
         <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/ProductOrService_note>,
         <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/ProductOrService_pathogenIdentification>,
         <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/ProductOrService_productPicture>,
@@ -6555,9 +6532,9 @@
 <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/File_description> a linkml:SlotDefinition ;
     dcterms:title "description" ;
     skos:definition "A short explanation of the characteristics, features, or nature of the current item" ;
-    skos:exactMatch dcterms:description ;
     skos:inScheme <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#> ;
-    skos:note """Describe this item in few lines. This description will serve as a summary to present the item.
+    skos:mappingRelation dcterms:description ;
+    skos:note """Describe this item in few lines. This description will serve as a summary to present the resource.
 """ ;
     skos:prefLabel "description" ;
     linkml:definition_uri <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#description> ;
@@ -6568,7 +6545,7 @@
     linkml:owner <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/File> ;
     linkml:range <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/string> ;
     linkml:recommended true ;
-    linkml:slot_uri <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#description> ;
+    linkml:slot_uri dcterms:description ;
     linkml:usage_slot_name "description" .
 
 <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/File_format> a linkml:SlotDefinition ;
@@ -6606,12 +6583,11 @@
 
 <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/File_name> a linkml:SlotDefinition ;
     dcterms:title "name" ;
-    skos:closeMatch rdfs:label ;
-    skos:definition "The label that allows humans to identify the current item" ;
-    skos:exactMatch dcterms:title ;
+    skos:closeMatch dcterms:title,
+        foaf:name ;
+    skos:definition "A word or set of words used to identify and refer to an entity" ;
+    skos:exactMatch schema1:name ;
     skos:inScheme <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#> ;
-    skos:note """The title of the item should be as short and descriptive as possible. E.g. for virus products it should basically be based on the following Pattern:
-'Virus name', 'virus host type', 'collection year', 'country of collection' ex 'suspected epidemiological origin', 'genotype', 'strain', 'variant name or specific feature""" ;
     skos:prefLabel "name" ;
     linkml:definition_uri <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#name> ;
     linkml:domain <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/File> ;
@@ -6645,9 +6621,9 @@
 <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/PersonOrOrganization_description> a linkml:SlotDefinition ;
     dcterms:title "description" ;
     skos:definition "A short explanation of the characteristics, features, or nature of the current item" ;
-    skos:exactMatch dcterms:description ;
     skos:inScheme <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#> ;
-    skos:note """Describe this item in few lines. This description will serve as a summary to present the item.
+    skos:mappingRelation dcterms:description ;
+    skos:note """Describe this item in few lines. This description will serve as a summary to present the resource.
 """ ;
     skos:prefLabel "description" ;
     linkml:definition_uri <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#description> ;
@@ -6658,7 +6634,7 @@
     linkml:owner <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/PersonOrOrganization> ;
     linkml:range <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/string> ;
     linkml:recommended true ;
-    linkml:slot_uri <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#description> ;
+    linkml:slot_uri dcterms:description ;
     linkml:usage_slot_name "description" .
 
 <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/PersonOrOrganization_homePage> a linkml:SlotDefinition ;
@@ -6694,12 +6670,11 @@
 
 <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/PersonOrOrganization_name> a linkml:SlotDefinition ;
     dcterms:title "name" ;
-    skos:closeMatch rdfs:label ;
-    skos:definition "The label that allows humans to identify the current item" ;
-    skos:exactMatch dcterms:title ;
+    skos:closeMatch dcterms:title,
+        foaf:name ;
+    skos:definition "A word or set of words used to identify and refer to an entity" ;
+    skos:exactMatch schema1:name ;
     skos:inScheme <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#> ;
-    skos:note """The title of the item should be as short and descriptive as possible. E.g. for virus products it should basically be based on the following Pattern:
-'Virus name', 'virus host type', 'collection year', 'country of collection' ex 'suspected epidemiological origin', 'genotype', 'strain', 'variant name or specific feature""" ;
     skos:prefLabel "name" ;
     linkml:definition_uri <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#name> ;
     linkml:domain <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/PersonOrOrganization> ;
@@ -6711,6 +6686,26 @@
     linkml:required true ;
     linkml:slot_uri <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#name> ;
     linkml:usage_slot_name "name" .
+
+<https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/title> a linkml:SlotDefinition ;
+    dcterms:title "title" ;
+    skos:closeMatch rdfs:label ;
+    skos:definition "A name given to the resource" ;
+    skos:inScheme <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#> ;
+    skos:mappingRelation dcterms:title ;
+    skos:note """The title of the item should be as short and descriptive as possible. E.g. for virus products it should basically be based on the following Pattern:
+'Virus name', 'virus host type', 'collection year', 'country of collection' ex 'suspected epidemiological origin', 'genotype', 'strain', 'variant name or specific feature""" ;
+    linkml:definition_uri <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#title> ;
+    linkml:domain_of <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Certification>,
+        <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/DataService>,
+        <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Dataset>,
+        <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/License>,
+        <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Publication>,
+        <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Term> ;
+    linkml:owner <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Certification> ;
+    linkml:range <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/string> ;
+    linkml:required true ;
+    linkml:slot_uri dcterms:title .
 
 <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Pathogen_biologicalMaterialOrigin> a linkml:SlotDefinition ;
     dcterms:title "Biological Material origin" ;
@@ -7053,68 +7048,29 @@
     linkml:slots <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/TaxonomicRank_taxonomy>,
         <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Term_description>,
         <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Term_inVocabulary>,
-        <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Term_name>,
+        <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Term_title>,
         <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Term_weight> .
-
-<https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/DataService> a linkml:ClassDefinition ;
-    dcterms:title "Data Service" ;
-    skos:closeMatch schema1:WebAPI,
-        <wd:Q193424> ;
-    skos:definition "A collection of operations that provides access to one or more datasets or data processing functions" ;
-    skos:exactMatch <dcat:DataService> ;
-    skos:inScheme <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#> ;
-    linkml:abstract true ;
-    linkml:class_uri <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#DataService> ;
-    linkml:definition_uri <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#DataService> ;
-    linkml:is_a <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Resource> ;
-    linkml:slot_usage [ ] ;
-    linkml:slots <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/DataService_description>,
-        <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/DataService_name> .
 
 <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/description> a linkml:SlotDefinition ;
     dcterms:title "description" ;
     skos:definition "A short explanation of the characteristics, features, or nature of the current item" ;
-    skos:exactMatch dcterms:description ;
     skos:inScheme <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#> ;
-    skos:note """Describe this item in few lines. This description will serve as a summary to present the item.
+    skos:mappingRelation dcterms:description ;
+    skos:note """Describe this item in few lines. This description will serve as a summary to present the resource.
 """ ;
     linkml:definition_uri <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#description> ;
-    linkml:domain_of <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Catalogue>,
-        <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Certification>,
+    linkml:domain_of <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Certification>,
         <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/ContactPoint>,
         <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/DataService>,
+        <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Dataset>,
         <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/File>,
         <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/License>,
         <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/PersonOrOrganization>,
-        <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/ProductOrService>,
         <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Term> ;
     linkml:owner <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Certification> ;
     linkml:range <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/string> ;
     linkml:recommended true ;
-    linkml:slot_uri <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#description> .
-
-<https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/name> a linkml:SlotDefinition ;
-    dcterms:title "name" ;
-    skos:closeMatch rdfs:label ;
-    skos:definition "The label that allows humans to identify the current item" ;
-    skos:exactMatch dcterms:title ;
-    skos:inScheme <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#> ;
-    skos:note """The title of the item should be as short and descriptive as possible. E.g. for virus products it should basically be based on the following Pattern:
-'Virus name', 'virus host type', 'collection year', 'country of collection' ex 'suspected epidemiological origin', 'genotype', 'strain', 'variant name or specific feature""" ;
-    linkml:definition_uri <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#name> ;
-    linkml:domain_of <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Catalogue>,
-        <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Certification>,
-        <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/ContactPoint>,
-        <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/DataService>,
-        <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/File>,
-        <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/License>,
-        <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/PersonOrOrganization>,
-        <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/ProductOrService>,
-        <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Term> ;
-    linkml:owner <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Certification> ;
-    linkml:range <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/string> ;
-    linkml:required true ;
-    linkml:slot_uri <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#name> .
+    linkml:slot_uri dcterms:description .
 
 <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Service> a linkml:ClassDefinition ;
     dcterms:title "Service" ;
@@ -7125,7 +7081,9 @@
     linkml:definition_uri <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#Service> ;
     linkml:is_a <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/ProductOrService> ;
     linkml:slot_usage [ ] ;
-    linkml:slots <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/ProductOrService_accessPointURL>,
+    linkml:slots <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Dataset_description>,
+        <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Dataset_title>,
+        <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/ProductOrService_accessPointURL>,
         <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/ProductOrService_additionalCategory>,
         <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/ProductOrService_availability>,
         <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/ProductOrService_biosafetyRestrictions>,
@@ -7135,11 +7093,9 @@
         <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/ProductOrService_collection>,
         <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/ProductOrService_complementaryDocument>,
         <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/ProductOrService_contactPoint>,
-        <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/ProductOrService_description>,
         <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/ProductOrService_externalRelatedReference>,
         <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/ProductOrService_internalReference>,
         <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/ProductOrService_keywords>,
-        <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/ProductOrService_name>,
         <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/ProductOrService_note>,
         <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/ProductOrService_pathogenIdentification>,
         <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/ProductOrService_productPicture>,
@@ -7167,21 +7123,6 @@
         <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/SyntheticPartOrigin_descriptionOfModificationsMadeFromTheReferenceSequences>,
         <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/SyntheticPartOrigin_modificationsFromTheReferenceSequences> .
 
-<https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Catalogue> a linkml:ClassDefinition ;
-    dcterms:title "Catalogue" ;
-    skos:closeMatch schema1:Dataset,
-        <wd:Q2352616> ;
-    skos:definition "A curated collection of metadata about resources" ;
-    skos:exactMatch <dcat:Catalog> ;
-    skos:inScheme <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#> ;
-    linkml:abstract true ;
-    linkml:class_uri <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#Catalogue> ;
-    linkml:definition_uri <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#Catalogue> ;
-    linkml:is_a <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Dataset> ;
-    linkml:slot_usage [ ] ;
-    linkml:slots <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Catalogue_description>,
-        <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Catalogue_name> .
-
 <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Country> a linkml:ClassDefinition ;
     dcterms:title "Country" ;
     skos:closeMatch <wd:Q6256> ;
@@ -7195,7 +7136,7 @@
     linkml:slots <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Country_alpha2Code>,
         <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Term_description>,
         <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Term_inVocabulary>,
-        <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Term_name>,
+        <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Term_title>,
         <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Term_weight> .
 
 <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Image> a linkml:ClassDefinition ;
@@ -7226,7 +7167,7 @@
     linkml:slots <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/ProductCategory_parentCategory>,
         <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Term_description>,
         <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Term_inVocabulary>,
-        <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Term_name>,
+        <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Term_title>,
         <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Term_weight> .
 
 <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/RecombinantPartIdentification> a linkml:ClassDefinition ;
@@ -7235,7 +7176,7 @@
     skos:inScheme <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#> ;
     linkml:class_uri <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#RecombinantPartIdentification> ;
     linkml:definition_uri <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#RecombinantPartIdentification> ;
-    linkml:is_a <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Dataset> ;
+    linkml:is_a <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Resource> ;
     linkml:slot_usage [ ] ;
     linkml:slots <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/RecombinantPartIdentification_partIdentification>,
         <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/RecombinantPartIdentification_sequence> .
@@ -7249,10 +7190,10 @@
     linkml:definition_uri <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#Collection> ;
     linkml:is_a <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Catalogue> ;
     linkml:slot_usage [ ] ;
-    linkml:slots <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Catalogue_description>,
-        <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Catalogue_name>,
-        <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Collection_collectionDataProvider>,
-        <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Collection_collectionItem> .
+    linkml:slots <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Collection_collectionDataProvider>,
+        <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Collection_collectionItem>,
+        <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Dataset_description>,
+        <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Dataset_title> .
 
 <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/CommonName> a linkml:ClassDefinition ;
     dcterms:title "Common Name" ;
@@ -7268,31 +7209,8 @@
         <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/CommonName_sourceOfInformation>,
         <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Term_description>,
         <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Term_inVocabulary>,
-        <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Term_name>,
+        <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Term_title>,
         <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Term_weight> .
-
-<https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Dataset> a linkml:ClassDefinition ;
-    dcterms:title "Dataset" ;
-    skos:closeMatch schema1:DataCatalog,
-        <wd:Q1172284> ;
-    skos:definition "A collection of data, published or curated by a single agent, and available for access" ;
-    skos:exactMatch <dcat:Dataset> ;
-    skos:inScheme <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#> ;
-    linkml:abstract true ;
-    linkml:class_uri <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#Dataset> ;
-    linkml:definition_uri <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#Dataset> ;
-    linkml:is_a <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Resource> ;
-    linkml:slot_usage [ ] .
-
-<https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Resource> a linkml:ClassDefinition ;
-    dcterms:title "Resource" ;
-    skos:definition "Resource published or curated by a single agent." ;
-    skos:exactMatch <dcat:Resource> ;
-    skos:inScheme <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#> ;
-    linkml:abstract true ;
-    linkml:class_uri <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#Resource> ;
-    linkml:definition_uri <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#Resource> ;
-    linkml:slot_usage [ ] .
 
 <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Version> a linkml:ClassDefinition ;
     dcterms:title "Version" ;
@@ -7316,8 +7234,8 @@
     linkml:definition_uri <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#Vocabulary> ;
     linkml:is_a <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Catalogue> ;
     linkml:slot_usage [ ] ;
-    linkml:slots <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Catalogue_description>,
-        <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Catalogue_name>,
+    linkml:slots <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Dataset_description>,
+        <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Dataset_title>,
         <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Vocabulary_term>,
         <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Vocabulary_termDataProvider> .
 
@@ -7334,7 +7252,7 @@
         <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/AlternateName_sourceOfInformation>,
         <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Term_description>,
         <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Term_inVocabulary>,
-        <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Term_name>,
+        <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Term_title>,
         <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Term_weight> .
 
 <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/SequenceReference> a linkml:ClassDefinition ;
@@ -7369,10 +7287,41 @@
     linkml:abstract true ;
     linkml:class_uri <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#BiologicalPartOrigin> ;
     linkml:definition_uri <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#BiologicalPartOrigin> ;
-    linkml:is_a <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Dataset> ;
+    linkml:is_a <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Resource> ;
     linkml:slot_usage [ ] ;
     linkml:slots <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/BiologicalPartOrigin_accessToPhysicalGeneticResource>,
         <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/BiologicalPartOrigin_recombinantPartIdentification> .
+
+<https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/DataService> a linkml:ClassDefinition ;
+    dcterms:title "Data Service" ;
+    skos:closeMatch schema1:WebAPI,
+        <wd:Q193424> ;
+    skos:definition "A collection of operations that provides access to one or more datasets or data processing functions" ;
+    skos:inScheme <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#> ;
+    skos:mappingRelation <dcat:DataService> ;
+    linkml:abstract true ;
+    linkml:class_uri dcat:DataService ;
+    linkml:definition_uri <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#DataService> ;
+    linkml:is_a <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Resource> ;
+    linkml:slot_usage [ ] ;
+    linkml:slots <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/DataService_description>,
+        <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/DataService_endpointURL>,
+        <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/DataService_title> .
+
+<https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Dataset> a linkml:ClassDefinition ;
+    dcterms:title "Dataset" ;
+    skos:closeMatch schema1:DataCatalog,
+        <wd:Q1172284> ;
+    skos:definition "A collection of data, published or curated by a single agent, and available for access" ;
+    skos:inScheme <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#> ;
+    skos:mappingRelation <dcat:Dataset> ;
+    linkml:abstract true ;
+    linkml:class_uri dcat:Dataset ;
+    linkml:definition_uri <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#Dataset> ;
+    linkml:is_a <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Resource> ;
+    linkml:slot_usage [ ] ;
+    linkml:slots <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Dataset_description>,
+        <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Dataset_title> .
 
 <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Product_hasIATAClassification> a linkml:SlotDefinition ;
     dcterms:title "IATA classification" ;
@@ -7495,7 +7444,7 @@
     skos:inScheme <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#> ;
     linkml:class_uri <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#Sequence> ;
     linkml:definition_uri <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#Sequence> ;
-    linkml:is_a <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Dataset> ;
+    linkml:is_a <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Resource> ;
     linkml:slot_usage [ ] ;
     linkml:slots <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Sequence_sequenceFASTA>,
         <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Sequence_sequenceReference> .
@@ -7509,7 +7458,9 @@
     linkml:definition_uri <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#Virus> ;
     linkml:is_a <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Pathogen> ;
     linkml:slot_usage [ ] ;
-    linkml:slots <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Pathogen_biologicalMaterialOrigin>,
+    linkml:slots <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Dataset_description>,
+        <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Dataset_title>,
+        <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Pathogen_biologicalMaterialOrigin>,
         <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Pathogen_clinicalInformation>,
         <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Pathogen_cultivability>,
         <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Pathogen_genomeSequencing>,
@@ -7537,11 +7488,9 @@
         <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/ProductOrService_collection>,
         <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/ProductOrService_complementaryDocument>,
         <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/ProductOrService_contactPoint>,
-        <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/ProductOrService_description>,
         <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/ProductOrService_externalRelatedReference>,
         <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/ProductOrService_internalReference>,
         <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/ProductOrService_keywords>,
-        <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/ProductOrService_name>,
         <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/ProductOrService_note>,
         <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/ProductOrService_pathogenIdentification>,
         <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/ProductOrService_productPicture>,
@@ -7740,25 +7689,6 @@
     linkml:slot_uri <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#contactPoint> ;
     linkml:usage_slot_name "contactPoint" .
 
-<https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/ProductOrService_description> a linkml:SlotDefinition ;
-    dcterms:title "description" ;
-    skos:definition "A short explanation of the characteristics, features, or nature of the current item" ;
-    skos:exactMatch dcterms:description ;
-    skos:inScheme <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#> ;
-    skos:note """Describe this item in few lines. This description will serve as a summary to present the item.
-""" ;
-    skos:prefLabel "description" ;
-    linkml:definition_uri <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#description> ;
-    linkml:domain <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/ProductOrService> ;
-    linkml:domain_of <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/ProductOrService> ;
-    linkml:is_a <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/description> ;
-    linkml:is_usage_slot true ;
-    linkml:owner <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/ProductOrService> ;
-    linkml:range <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/string> ;
-    linkml:recommended true ;
-    linkml:slot_uri <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#description> ;
-    linkml:usage_slot_name "description" .
-
 <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/ProductOrService_externalRelatedReference> a linkml:SlotDefinition ;
     dcterms:title "external related reference" ;
     skos:definition "A reference that permits to retrieve another related item from an external provider" ;
@@ -7810,26 +7740,6 @@
     linkml:required true ;
     linkml:slot_uri <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#keywords> ;
     linkml:usage_slot_name "keywords" .
-
-<https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/ProductOrService_name> a linkml:SlotDefinition ;
-    dcterms:title "name" ;
-    skos:closeMatch rdfs:label ;
-    skos:definition "The label that allows humans to identify the current item" ;
-    skos:exactMatch dcterms:title ;
-    skos:inScheme <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#> ;
-    skos:note """The title of the item should be as short and descriptive as possible. E.g. for virus products it should basically be based on the following Pattern:
-'Virus name', 'virus host type', 'collection year', 'country of collection' ex 'suspected epidemiological origin', 'genotype', 'strain', 'variant name or specific feature""" ;
-    skos:prefLabel "name" ;
-    linkml:definition_uri <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#name> ;
-    linkml:domain <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/ProductOrService> ;
-    linkml:domain_of <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/ProductOrService> ;
-    linkml:is_a <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/name> ;
-    linkml:is_usage_slot true ;
-    linkml:owner <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/ProductOrService> ;
-    linkml:range <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/string> ;
-    linkml:required true ;
-    linkml:slot_uri <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#name> ;
-    linkml:usage_slot_name "name" .
 
 <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/ProductOrService_note> a linkml:SlotDefinition ;
     dcterms:title "note" ;
@@ -8024,7 +7934,8 @@
         <wd:Q43229> ;
     skos:definition "A social entity established to meet needs or pursue specific goals" ;
     skos:inScheme <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#> ;
-    linkml:class_uri <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#Organization> ;
+    skos:mappingRelation <foaf:Organization> ;
+    linkml:class_uri foaf:Organization ;
     linkml:definition_uri <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#Organization> ;
     linkml:is_a <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/PersonOrOrganization> ;
     linkml:slot_usage [ ] ;
@@ -8037,13 +7948,23 @@
         <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/PersonOrOrganization_logo>,
         <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/PersonOrOrganization_name> .
 
+<https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Resource> a linkml:ClassDefinition ;
+    dcterms:title "Resource" ;
+    skos:definition "Resource published or curated by a single agent." ;
+    skos:inScheme <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#> ;
+    skos:mappingRelation <dcat:Resource> ;
+    linkml:abstract true ;
+    linkml:class_uri dcat:Resource ;
+    linkml:definition_uri <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#Resource> ;
+    linkml:slot_usage [ ] .
+
 <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/BiologicalMaterialOrigin> a linkml:ClassDefinition ;
     dcterms:title "Biological material origin" ;
     skos:definition "Information about the origin of the biological material, compulsory for access, utilization, and benefit-sharing of genetic resources in compliance with the Nagoya Protocol" ;
     skos:inScheme <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#> ;
     linkml:class_uri <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#BiologicalMaterialOrigin> ;
     linkml:definition_uri <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#BiologicalMaterialOrigin> ;
-    linkml:is_a <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Dataset> ;
+    linkml:is_a <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Resource> ;
     linkml:slot_usage [ ] ;
     linkml:slots <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/BiologicalMaterialOrigin_biologicalPartOrigin>,
         <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/BiologicalMaterialOrigin_biologicalSourceType>,
@@ -8057,7 +7978,9 @@
     linkml:definition_uri <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#DetectionKit> ;
     linkml:is_a <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Product> ;
     linkml:slot_usage [ ] ;
-    linkml:slots <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Detection_Kit_hasSOPFile>,
+    linkml:slots <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Dataset_description>,
+        <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Dataset_title>,
+        <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Detection_Kit_hasSOPFile>,
         <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Detection_Kit_specificity>,
         <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Detection_Kit_specificityDocumented>,
         <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Detection_Kit_targetedRegion>,
@@ -8071,11 +7994,9 @@
         <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/ProductOrService_collection>,
         <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/ProductOrService_complementaryDocument>,
         <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/ProductOrService_contactPoint>,
-        <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/ProductOrService_description>,
         <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/ProductOrService_externalRelatedReference>,
         <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/ProductOrService_internalReference>,
         <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/ProductOrService_keywords>,
-        <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/ProductOrService_name>,
         <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/ProductOrService_note>,
         <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/ProductOrService_pathogenIdentification>,
         <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/ProductOrService_productPicture>,
@@ -8095,6 +8016,46 @@
         <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Product_thirdPartyDistributionConsent>,
         <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Product_usageRestrictions> .
 
+<https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Dataset_description> a linkml:SlotDefinition ;
+    dcterms:title "description" ;
+    skos:definition "A short explanation of the characteristics, features, or nature of the current item" ;
+    skos:inScheme <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#> ;
+    skos:mappingRelation dcterms:description ;
+    skos:note """Describe this item in few lines. This description will serve as a summary to present the resource.
+""" ;
+    skos:prefLabel "description" ;
+    linkml:definition_uri <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#description> ;
+    linkml:domain <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Dataset> ;
+    linkml:domain_of <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Dataset> ;
+    linkml:is_a <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/description> ;
+    linkml:is_usage_slot true ;
+    linkml:owner <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Dataset> ;
+    linkml:range <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/string> ;
+    linkml:recommended true ;
+    linkml:required true ;
+    linkml:slot_uri dcterms:description ;
+    linkml:usage_slot_name "description" .
+
+<https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Dataset_title> a linkml:SlotDefinition ;
+    dcterms:title "title" ;
+    skos:closeMatch rdfs:label ;
+    skos:definition "A name given to the resource" ;
+    skos:inScheme <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#> ;
+    skos:mappingRelation dcterms:title ;
+    skos:note """The title of the item should be as short and descriptive as possible. E.g. for virus products it should basically be based on the following Pattern:
+'Virus name', 'virus host type', 'collection year', 'country of collection' ex 'suspected epidemiological origin', 'genotype', 'strain', 'variant name or specific feature""" ;
+    skos:prefLabel "title" ;
+    linkml:definition_uri <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#title> ;
+    linkml:domain <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Dataset> ;
+    linkml:domain_of <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Dataset> ;
+    linkml:is_a <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/title> ;
+    linkml:is_usage_slot true ;
+    linkml:owner <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Dataset> ;
+    linkml:range <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/string> ;
+    linkml:required true ;
+    linkml:slot_uri dcterms:title ;
+    linkml:usage_slot_name "title" .
+
 <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/ExternalRelatedReference> a linkml:ClassDefinition ;
     dcterms:title "External related reference" ;
     skos:definition "A reference that permits to retrieve an item from an external provider" ;
@@ -8107,39 +8068,6 @@
         <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/ExternalRelatedReference_referenceLabel>,
         <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/ExternalRelatedReference_referenceProviderName>,
         <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/ExternalRelatedReference_referenceProviderPrefix> .
-
-<https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/License> a linkml:ClassDefinition ;
-    dcterms:title "License" ;
-    skos:closeMatch <dct:LicenseDocument>,
-        <wd:Q79719> ;
-    skos:definition "The legal terms and conditions under which the subject can be used, shared, or distributed, indicating any restrictions or permissions" ;
-    skos:exactMatch <dct:RightsStatement> ;
-    skos:inScheme <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#> ;
-    linkml:class_uri <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#License> ;
-    linkml:definition_uri <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#License> ;
-    linkml:is_a <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Resource> ;
-    linkml:slot_usage [ ] ;
-    linkml:slots <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/License_description>,
-        <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/License_licensingOrAttribution>,
-        <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/License_logo>,
-        <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/License_name>,
-        <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/License_resourceURL> .
-
-<https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/PersonOrOrganization> a linkml:ClassDefinition ;
-    dcterms:title "Person Or Organization" ;
-    skos:closeMatch <foaf:Agent> ;
-    skos:definition "A person or an organization" ;
-    skos:exactMatch <dct:Agent> ;
-    skos:inScheme <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#> ;
-    linkml:class_uri <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#PersonOrOrganization> ;
-    linkml:definition_uri <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#PersonOrOrganization> ;
-    linkml:is_a <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Resource> ;
-    linkml:slot_usage [ ] ;
-    linkml:slots <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/PersonOrOrganization_contactPoint>,
-        <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/PersonOrOrganization_description>,
-        <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/PersonOrOrganization_homePage>,
-        <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/PersonOrOrganization_logo>,
-        <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/PersonOrOrganization_name> .
 
 <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Publication> a linkml:ClassDefinition ;
     dcterms:title "Publication" ;
@@ -8156,6 +8084,40 @@
         <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Publication_relatedDOI>,
         <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Publication_title> .
 
+<https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/License> a linkml:ClassDefinition ;
+    dcterms:title "License" ;
+    skos:closeMatch <dct:LicenseDocument>,
+        <wd:Q79719> ;
+    skos:definition "The legal terms and conditions under which the subject can be used, shared, or distributed, indicating any restrictions or permissions" ;
+    skos:exactMatch <dct:RightsStatement> ;
+    skos:inScheme <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#> ;
+    linkml:class_uri <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#License> ;
+    linkml:definition_uri <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#License> ;
+    linkml:is_a <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Resource> ;
+    linkml:slot_usage [ ] ;
+    linkml:slots <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/License_description>,
+        <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/License_licensingOrAttribution>,
+        <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/License_logo>,
+        <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/License_resourceURL>,
+        <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/License_title> .
+
+<https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/PersonOrOrganization> a linkml:ClassDefinition ;
+    dcterms:title "Person Or Organization" ;
+    skos:closeMatch <vcard:Agent> ;
+    skos:definition "A person or an organization" ;
+    skos:exactMatch <dct:Agent> ;
+    skos:inScheme <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#> ;
+    skos:mappingRelation <foaf:Agent> ;
+    linkml:class_uri foaf:Agent ;
+    linkml:definition_uri <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#PersonOrOrganization> ;
+    linkml:is_a <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Resource> ;
+    linkml:slot_usage [ ] ;
+    linkml:slots <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/PersonOrOrganization_contactPoint>,
+        <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/PersonOrOrganization_description>,
+        <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/PersonOrOrganization_homePage>,
+        <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/PersonOrOrganization_logo>,
+        <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/PersonOrOrganization_name> .
+
 <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Antibody> a linkml:ClassDefinition ;
     dcterms:title "Antibody" ;
     skos:closeMatch <wd:Q79460> ;
@@ -8170,6 +8132,8 @@
         <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Antibody_sequenceReference>,
         <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Antibody_specificityDocumented>,
         <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Antibody_targetedAntigen>,
+        <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Dataset_description>,
+        <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Dataset_title>,
         <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/ProductOrService_accessPointURL>,
         <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/ProductOrService_additionalCategory>,
         <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/ProductOrService_availability>,
@@ -8180,11 +8144,9 @@
         <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/ProductOrService_collection>,
         <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/ProductOrService_complementaryDocument>,
         <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/ProductOrService_contactPoint>,
-        <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/ProductOrService_description>,
         <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/ProductOrService_externalRelatedReference>,
         <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/ProductOrService_internalReference>,
         <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/ProductOrService_keywords>,
-        <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/ProductOrService_name>,
         <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/ProductOrService_note>,
         <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/ProductOrService_pathogenIdentification>,
         <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/ProductOrService_productPicture>,
@@ -8223,9 +8185,9 @@
 <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Term_description> a linkml:SlotDefinition ;
     dcterms:title "description" ;
     skos:definition "A short explanation of the characteristics, features, or nature of the current item" ;
-    skos:exactMatch dcterms:description ;
     skos:inScheme <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#> ;
-    skos:note """Describe this item in few lines. This description will serve as a summary to present the item.
+    skos:mappingRelation dcterms:description ;
+    skos:note """Describe this item in few lines. This description will serve as a summary to present the resource.
 """ ;
     skos:prefLabel "description" ;
     linkml:definition_uri <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#description> ;
@@ -8236,7 +8198,7 @@
     linkml:owner <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Term> ;
     linkml:range <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/string> ;
     linkml:recommended true ;
-    linkml:slot_uri <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#description> ;
+    linkml:slot_uri dcterms:description ;
     linkml:usage_slot_name "description" .
 
 <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Term_inVocabulary> a linkml:SlotDefinition ;
@@ -8257,25 +8219,25 @@
     linkml:slot_uri <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#inVocabulary> ;
     linkml:usage_slot_name "inVocabulary" .
 
-<https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Term_name> a linkml:SlotDefinition ;
-    dcterms:title "name" ;
+<https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Term_title> a linkml:SlotDefinition ;
+    dcterms:title "title" ;
     skos:closeMatch rdfs:label ;
-    skos:definition "The label that allows humans to identify the current item" ;
-    skos:exactMatch dcterms:title ;
+    skos:definition "A name given to the resource" ;
     skos:inScheme <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#> ;
+    skos:mappingRelation dcterms:title ;
     skos:note """The title of the item should be as short and descriptive as possible. E.g. for virus products it should basically be based on the following Pattern:
 'Virus name', 'virus host type', 'collection year', 'country of collection' ex 'suspected epidemiological origin', 'genotype', 'strain', 'variant name or specific feature""" ;
-    skos:prefLabel "name" ;
-    linkml:definition_uri <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#name> ;
+    skos:prefLabel "title" ;
+    linkml:definition_uri <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#title> ;
     linkml:domain <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Term> ;
     linkml:domain_of <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Term> ;
-    linkml:is_a <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/name> ;
+    linkml:is_a <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/title> ;
     linkml:is_usage_slot true ;
     linkml:owner <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Term> ;
     linkml:range <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/string> ;
     linkml:required true ;
-    linkml:slot_uri <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#name> ;
-    linkml:usage_slot_name "name" .
+    linkml:slot_uri dcterms:title ;
+    linkml:usage_slot_name "title" .
 
 <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Term_weight> a linkml:SlotDefinition ;
     dcterms:title "weight" ;
@@ -8309,8 +8271,8 @@
     linkml:slots <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Certification_certificationDocument>,
         <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Certification_description>,
         <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Certification_logo>,
-        <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Certification_name>,
-        <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Certification_resourceURL> .
+        <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Certification_resourceURL>,
+        <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Certification_title> .
 
 <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/boolean> a linkml:TypeDefinition ;
     skos:definition "A binary (true or false) value" ;
@@ -8350,8 +8312,8 @@
     linkml:definition_uri <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#Taxonomy> ;
     linkml:is_a <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Catalogue> ;
     linkml:slot_usage [ ] ;
-    linkml:slots <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Catalogue_description>,
-        <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Catalogue_name>,
+    linkml:slots <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Dataset_description>,
+        <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Dataset_title>,
         <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Taxonomy_rank>,
         <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Taxonomy_rankDataProvider>,
         <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Taxonomy_taxon>,
@@ -8371,7 +8333,7 @@
     linkml:slot_usage [ ] ;
     linkml:slots <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Term_description>,
         <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Term_inVocabulary>,
-        <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Term_name>,
+        <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Term_title>,
         <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Term_weight> .
 
 <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Product> a linkml:ClassDefinition ;
@@ -8383,7 +8345,9 @@
     linkml:definition_uri <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#Product> ;
     linkml:is_a <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/ProductOrService> ;
     linkml:slot_usage [ ] ;
-    linkml:slots <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/ProductOrService_accessPointURL>,
+    linkml:slots <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Dataset_description>,
+        <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Dataset_title>,
+        <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/ProductOrService_accessPointURL>,
         <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/ProductOrService_additionalCategory>,
         <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/ProductOrService_availability>,
         <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/ProductOrService_biosafetyRestrictions>,
@@ -8393,11 +8357,9 @@
         <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/ProductOrService_collection>,
         <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/ProductOrService_complementaryDocument>,
         <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/ProductOrService_contactPoint>,
-        <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/ProductOrService_description>,
         <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/ProductOrService_externalRelatedReference>,
         <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/ProductOrService_internalReference>,
         <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/ProductOrService_keywords>,
-        <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/ProductOrService_name>,
         <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/ProductOrService_note>,
         <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/ProductOrService_pathogenIdentification>,
         <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/ProductOrService_productPicture>,
@@ -8437,8 +8399,29 @@
         <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Taxon_taxonomy>,
         <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Term_description>,
         <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Term_inVocabulary>,
-        <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Term_name>,
+        <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Term_title>,
         <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Term_weight> .
+
+<https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/DataProvider> a linkml:ClassDefinition ;
+    dcterms:title "Data provider" ;
+    skos:closeMatch <wd:Q122625839> ;
+    skos:definition "An external API (Application Programming Interface) or Endpoint that permits to retrieve data from other sources" ;
+    skos:inScheme <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#> ;
+    linkml:class_uri <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#DataProvider> ;
+    linkml:definition_uri <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#DataProvider> ;
+    linkml:is_a <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/DataService> ;
+    linkml:slot_usage [ ] ;
+    linkml:slots <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/DataProvider_contentType>,
+        <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/DataProvider_license>,
+        <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/DataProvider_loginRequestMethod>,
+        <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/DataProvider_loginTokenName>,
+        <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/DataProvider_loginURL>,
+        <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/DataProvider_providedEntityType>,
+        <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/DataProvider_queryMethod>,
+        <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/DataProvider_weight>,
+        <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/DataService_description>,
+        <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/DataService_endpointURL>,
+        <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/DataService_title> .
 
 <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/PathogenIdentification> a linkml:ClassDefinition ;
     dcterms:title "Pathogen identification" ;
@@ -8446,7 +8429,7 @@
     skos:inScheme <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#> ;
     linkml:class_uri <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#PathogenIdentification> ;
     linkml:definition_uri <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#PathogenIdentification> ;
-    linkml:is_a <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Dataset> ;
+    linkml:is_a <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Resource> ;
     linkml:slot_usage [ ] ;
     linkml:slots <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/PathogenIdentification_genotype>,
         <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/PathogenIdentification_hostType>,
@@ -8480,27 +8463,6 @@
         <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/ContactPoint_streetAddress>,
         <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/ContactPoint_telephone> .
 
-<https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/DataProvider> a linkml:ClassDefinition ;
-    dcterms:title "Data provider" ;
-    skos:closeMatch <wd:Q122625839> ;
-    skos:definition "An external API (Application Programming Interface) or Endpoint that permits to retrieve data from other sources" ;
-    skos:inScheme <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#> ;
-    linkml:class_uri <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#DataProvider> ;
-    linkml:definition_uri <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#DataProvider> ;
-    linkml:is_a <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/DataService> ;
-    linkml:slot_usage [ ] ;
-    linkml:slots <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/DataProvider_contentType>,
-        <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/DataProvider_license>,
-        <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/DataProvider_loginRequestMethod>,
-        <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/DataProvider_loginTokenName>,
-        <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/DataProvider_loginURL>,
-        <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/DataProvider_providedEntityType>,
-        <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/DataProvider_queryMethod>,
-        <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/DataProvider_queryURL>,
-        <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/DataProvider_weight>,
-        <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/DataService_description>,
-        <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/DataService_name> .
-
 <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/NucleicAcid> a linkml:ClassDefinition ;
     dcterms:title "Nucleic Acid" ;
     skos:closeMatch <wd:Q123619> ;
@@ -8510,7 +8472,9 @@
     linkml:definition_uri <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#NucleicAcid> ;
     linkml:is_a <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Product> ;
     linkml:slot_usage [ ] ;
-    linkml:slots <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Nucleic_Acid_biologicalMaterialOrigin>,
+    linkml:slots <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Dataset_description>,
+        <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Dataset_title>,
+        <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Nucleic_Acid_biologicalMaterialOrigin>,
         <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Nucleic_Acid_clonedIntoPlasmid>,
         <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Nucleic_Acid_hasGbFileOfTheConstruct>,
         <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Nucleic_Acid_hasTAG>,
@@ -8534,11 +8498,9 @@
         <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/ProductOrService_collection>,
         <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/ProductOrService_complementaryDocument>,
         <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/ProductOrService_contactPoint>,
-        <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/ProductOrService_description>,
         <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/ProductOrService_externalRelatedReference>,
         <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/ProductOrService_internalReference>,
         <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/ProductOrService_keywords>,
-        <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/ProductOrService_name>,
         <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/ProductOrService_note>,
         <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/ProductOrService_pathogenIdentification>,
         <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/ProductOrService_productPicture>,
@@ -8567,7 +8529,9 @@
     linkml:definition_uri <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#Protein> ;
     linkml:is_a <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Product> ;
     linkml:slot_usage [ ] ;
-    linkml:slots <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/ProductOrService_accessPointURL>,
+    linkml:slots <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Dataset_description>,
+        <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Dataset_title>,
+        <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/ProductOrService_accessPointURL>,
         <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/ProductOrService_additionalCategory>,
         <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/ProductOrService_availability>,
         <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/ProductOrService_biosafetyRestrictions>,
@@ -8577,11 +8541,9 @@
         <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/ProductOrService_collection>,
         <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/ProductOrService_complementaryDocument>,
         <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/ProductOrService_contactPoint>,
-        <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/ProductOrService_description>,
         <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/ProductOrService_externalRelatedReference>,
         <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/ProductOrService_internalReference>,
         <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/ProductOrService_keywords>,
-        <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/ProductOrService_name>,
         <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/ProductOrService_note>,
         <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/ProductOrService_pathogenIdentification>,
         <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/ProductOrService_productPicture>,
@@ -8622,7 +8584,7 @@
     skos:inScheme <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#> ;
     linkml:class_uri <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#MSDS> ;
     linkml:definition_uri <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#MSDS> ;
-    linkml:is_a <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Dataset> ;
+    linkml:is_a <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Resource> ;
     linkml:slot_usage [ ] ;
     linkml:slots <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/MSDS_accidentalReleaseMeasures>,
         <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/MSDS_disposalConsiderations>,
@@ -8650,7 +8612,9 @@
     linkml:definition_uri <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#Pathogen> ;
     linkml:is_a <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Product> ;
     linkml:slot_usage [ ] ;
-    linkml:slots <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Pathogen_biologicalMaterialOrigin>,
+    linkml:slots <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Dataset_description>,
+        <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Dataset_title>,
+        <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Pathogen_biologicalMaterialOrigin>,
         <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Pathogen_clinicalInformation>,
         <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Pathogen_cultivability>,
         <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Pathogen_genomeSequencing>,
@@ -8678,11 +8642,9 @@
         <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/ProductOrService_collection>,
         <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/ProductOrService_complementaryDocument>,
         <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/ProductOrService_contactPoint>,
-        <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/ProductOrService_description>,
         <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/ProductOrService_externalRelatedReference>,
         <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/ProductOrService_internalReference>,
         <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/ProductOrService_keywords>,
-        <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/ProductOrService_name>,
         <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/ProductOrService_note>,
         <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/ProductOrService_pathogenIdentification>,
         <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/ProductOrService_productPicture>,
@@ -8712,7 +8674,9 @@
     linkml:definition_uri <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#ProductOrService> ;
     linkml:is_a <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Dataset> ;
     linkml:slot_usage [ ] ;
-    linkml:slots <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/ProductOrService_accessPointURL>,
+    linkml:slots <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Dataset_description>,
+        <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/Dataset_title>,
+        <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/ProductOrService_accessPointURL>,
         <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/ProductOrService_additionalCategory>,
         <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/ProductOrService_availability>,
         <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/ProductOrService_biosafetyRestrictions>,
@@ -8722,11 +8686,9 @@
         <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/ProductOrService_collection>,
         <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/ProductOrService_complementaryDocument>,
         <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/ProductOrService_contactPoint>,
-        <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/ProductOrService_description>,
         <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/ProductOrService_externalRelatedReference>,
         <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/ProductOrService_internalReference>,
         <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/ProductOrService_keywords>,
-        <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/ProductOrService_name>,
         <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/ProductOrService_note>,
         <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/ProductOrService_pathogenIdentification>,
         <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/ProductOrService_productPicture>,

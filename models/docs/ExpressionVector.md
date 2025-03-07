@@ -34,7 +34,7 @@ URI: [EVORAO:ExpressionVector](https://raw.githubusercontent.com/EVORA-project/e
     click Vocabulary href "../Vocabulary"
 
         
-      ExpressionVector : name
+      ExpressionVector : title
         
       ExpressionVector : weight
         
@@ -56,7 +56,7 @@ URI: [EVORAO:ExpressionVector](https://raw.githubusercontent.com/EVORA-project/e
 
 | Name | Cardinality and Range | Description | Inheritance |
 | ---  | --- | --- | --- |
-| [name](name.md) | 1 <br/> [String](String.md) | The label that allows humans to identify the current item | [Term](Term.md) |
+| [title](title.md) | 1 <br/> [String](String.md) | A name given to the resource | [Term](Term.md) |
 | [description](description.md) | 0..1 _recommended_ <br/> [String](String.md) | A short explanation of the characteristics, features, or nature of the curren... | [Term](Term.md) |
 | [weight](weight.md) | 1 <br/> [Integer](Integer.md) | A numerical value indicating relative importance or priority, generally proce... | [Term](Term.md) |
 | [inVocabulary](inVocabulary.md) | 1 <br/> [Vocabulary](Vocabulary.md) | Terms belong to a specific vocabulary | [Term](Term.md) |
@@ -141,10 +141,10 @@ close_mappings:
 - wd:Q5421712
 is_a: Term
 attributes:
-  name:
-    name: name
-    description: The label that allows humans to identify the current item
-    title: name
+  title:
+    name: title
+    description: A name given to the resource
+    title: title
     comments:
     - 'The title of the item should be as short and descriptive as possible. E.g.
       for virus products it should basically be based on the following Pattern:
@@ -153,21 +153,17 @@ attributes:
       ex ''suspected epidemiological origin'', ''genotype'', ''strain'', ''variant
       name or specific feature'
     from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
-    exact_mappings:
-    - dct:title
     close_mappings:
     - rdfs:label
     rank: 1000
-    alias: name
+    slot_uri: dct:title
+    alias: title
     owner: ExpressionVector
     domain_of:
     - Term
+    - Dataset
     - DataService
-    - Catalogue
-    - PersonOrOrganization
-    - ProductOrService
-    - File
-    - ContactPoint
+    - Publication
     - License
     - Certification
     range: string
@@ -180,21 +176,19 @@ attributes:
     title: description
     comments:
     - 'Describe this item in few lines. This description will serve as a summary to
-      present the item.
+      present the resource.
 
       '
     from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
-    exact_mappings:
-    - dct:description
     rank: 1000
+    slot_uri: dct:description
     alias: description
     owner: ExpressionVector
     domain_of:
     - Term
+    - Dataset
     - DataService
-    - Catalogue
     - PersonOrOrganization
-    - ProductOrService
     - File
     - ContactPoint
     - License

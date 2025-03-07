@@ -47,9 +47,8 @@ URI: [EVORAO:SyntheticPartOrigin](https://raw.githubusercontent.com/EVORA-projec
 
 ## Inheritance
 * [Resource](Resource.md)
-    * [Dataset](Dataset.md)
-        * [BiologicalPartOrigin](BiologicalPartOrigin.md)
-            * **SyntheticPartOrigin**
+    * [BiologicalPartOrigin](BiologicalPartOrigin.md)
+        * **SyntheticPartOrigin**
 
 
 

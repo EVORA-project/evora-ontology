@@ -20,8 +20,8 @@ URI: [EVORAO:RecombinantPartIdentification](https://raw.githubusercontent.com/EV
  classDiagram
     class RecombinantPartIdentification
     click RecombinantPartIdentification href "../RecombinantPartIdentification"
-      Dataset <|-- RecombinantPartIdentification
-        click Dataset href "../Dataset"
+      Resource <|-- RecombinantPartIdentification
+        click Resource href "../Resource"
       
       RecombinantPartIdentification : partIdentification
         
@@ -43,8 +43,7 @@ URI: [EVORAO:RecombinantPartIdentification](https://raw.githubusercontent.com/EV
 
 ## Inheritance
 * [Resource](Resource.md)
-    * [Dataset](Dataset.md)
-        * **RecombinantPartIdentification**
+    * **RecombinantPartIdentification**
 
 
 
@@ -113,7 +112,7 @@ name: RecombinantPartIdentification
 description: Identification of a recombinant part
 title: Recombinant part identification
 from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
-is_a: Dataset
+is_a: Resource
 slots:
 - partIdentification
 - sequence
@@ -154,7 +153,7 @@ name: RecombinantPartIdentification
 description: Identification of a recombinant part
 title: Recombinant part identification
 from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
-is_a: Dataset
+is_a: Resource
 slot_usage:
   partIdentification:
     name: partIdentification

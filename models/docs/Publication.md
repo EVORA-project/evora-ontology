@@ -64,7 +64,7 @@ URI: [EVORAO:Publication](https://raw.githubusercontent.com/EVORA-project/evora-
 
 | Name | Cardinality and Range | Description | Inheritance |
 | ---  | --- | --- | --- |
-| [title](title.md) | 1 <br/> [String](String.md) | The descriptive word or phrase that identifies the current piece of work | direct |
+| [title](title.md) | 1 <br/> [String](String.md) | A name given to the resource | direct |
 | [authors](authors.md) | 1 <br/> [String](String.md) | The list of authors | direct |
 | [abstract](abstract.md) | 1 <br/> [String](String.md) | Concise summary of the publication | direct |
 | [relatedDOI](relatedDOI.md) | 1 <br/> [DOI](DOI.md) | Any Digital Object Identifier that can be related | direct |
@@ -133,8 +133,7 @@ slots:
 slot_usage:
   title:
     name: title
-    description: The descriptive word or phrase that identifies the current piece
-      of work
+    description: A name given to the resource
     title: title
     comments:
     - 'The title of the item should be as short and descriptive as possible. E.g.
@@ -143,10 +142,16 @@ slot_usage:
       ''Virus name'', ''virus host type'', ''collection year'', ''country of collection''
       ex ''suspected epidemiological origin'', ''genotype'', ''strain'', ''variant
       name or specific feature'
-    exact_mappings:
-    - dct:title
+    close_mappings:
+    - rdfs:label
+    slot_uri: dct:title
     domain_of:
     - Publication
+    - Dataset
+    - DataService
+    - Term
+    - License
+    - Certification
     range: string
     required: true
     multivalued: false
@@ -206,8 +211,7 @@ is_a: Resource
 slot_usage:
   title:
     name: title
-    description: The descriptive word or phrase that identifies the current piece
-      of work
+    description: A name given to the resource
     title: title
     comments:
     - 'The title of the item should be as short and descriptive as possible. E.g.
@@ -216,10 +220,16 @@ slot_usage:
       ''Virus name'', ''virus host type'', ''collection year'', ''country of collection''
       ex ''suspected epidemiological origin'', ''genotype'', ''strain'', ''variant
       name or specific feature'
-    exact_mappings:
-    - dct:title
+    close_mappings:
+    - rdfs:label
+    slot_uri: dct:title
     domain_of:
     - Publication
+    - Dataset
+    - DataService
+    - Term
+    - License
+    - Certification
     range: string
     required: true
     multivalued: false
@@ -263,8 +273,7 @@ slot_usage:
 attributes:
   title:
     name: title
-    description: The descriptive word or phrase that identifies the current piece
-      of work
+    description: A name given to the resource
     title: title
     comments:
     - 'The title of the item should be as short and descriptive as possible. E.g.
@@ -274,13 +283,19 @@ attributes:
       ex ''suspected epidemiological origin'', ''genotype'', ''strain'', ''variant
       name or specific feature'
     from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
-    exact_mappings:
-    - dct:title
+    close_mappings:
+    - rdfs:label
     rank: 1000
+    slot_uri: dct:title
     alias: title
     owner: Publication
     domain_of:
     - Publication
+    - Dataset
+    - DataService
+    - Term
+    - License
+    - Certification
     range: string
     required: true
     multivalued: false

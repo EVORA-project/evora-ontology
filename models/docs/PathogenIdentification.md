@@ -20,8 +20,8 @@ URI: [EVORAO:PathogenIdentification](https://raw.githubusercontent.com/EVORA-pro
  classDiagram
     class PathogenIdentification
     click PathogenIdentification href "../PathogenIdentification"
-      Dataset <|-- PathogenIdentification
-        click Dataset href "../Dataset"
+      Resource <|-- PathogenIdentification
+        click Resource href "../Resource"
       
       PathogenIdentification : genotype
         
@@ -73,8 +73,7 @@ URI: [EVORAO:PathogenIdentification](https://raw.githubusercontent.com/EVORA-pro
 
 ## Inheritance
 * [Resource](Resource.md)
-    * [Dataset](Dataset.md)
-        * **PathogenIdentification**
+    * **PathogenIdentification**
 
 
 
@@ -165,7 +164,7 @@ description: A collection of distinguishing information that enables the differe
   of a pathogen from another
 title: Pathogen identification
 from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
-is_a: Dataset
+is_a: Resource
 slots:
 - taxon
 - pathogenName
@@ -298,7 +297,7 @@ description: A collection of distinguishing information that enables the differe
   of a pathogen from another
 title: Pathogen identification
 from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
-is_a: Dataset
+is_a: Resource
 slot_usage:
   taxon:
     name: taxon

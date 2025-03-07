@@ -99,7 +99,7 @@ URI: [EVORAO:Provider](https://raw.githubusercontent.com/EVORA-project/evora-ont
 | [alternateName](alternateName.md) | * <br/> [AlternateName](AlternateName.md) | Any other name under which the entity can be known | [Organization](Organization.md) |
 | [country](country.md) | 0..1 _recommended_ <br/> [Country](Country.md) | The country of the organization | [Organization](Organization.md) |
 | [rORiD](rORiD.md) | 0..1 _recommended_ <br/> [String](String.md) | The corresponding organization's persistent identifier from the Research Orga... | [Organization](Organization.md) |
-| [name](name.md) | 1 <br/> [String](String.md) | The label that allows humans to identify the current item | [PersonOrOrganization](PersonOrOrganization.md) |
+| [name](name.md) | 1 <br/> [String](String.md) | A word or set of words used to identify and refer to an entity | [PersonOrOrganization](PersonOrOrganization.md) |
 | [description](description.md) | 0..1 _recommended_ <br/> [String](String.md) | A short explanation of the characteristics, features, or nature of the curren... | [PersonOrOrganization](PersonOrOrganization.md) |
 | [homePage](homePage.md) | 0..1 <br/> [Uri](Uri.md) | A web page that serves as the main or introductory page | [PersonOrOrganization](PersonOrOrganization.md) |
 | [contactPoint](contactPoint.md) | 0..1 _recommended_ <br/> [ContactPoint](ContactPoint.md) | An information that allows someone to establish communication | [PersonOrOrganization](PersonOrOrganization.md) |
@@ -287,33 +287,21 @@ attributes:
     multivalued: false
   name:
     name: name
-    description: The label that allows humans to identify the current item
+    description: A word or set of words used to identify and refer to an entity
     title: name
-    comments:
-    - 'The title of the item should be as short and descriptive as possible. E.g.
-      for virus products it should basically be based on the following Pattern:
-
-      ''Virus name'', ''virus host type'', ''collection year'', ''country of collection''
-      ex ''suspected epidemiological origin'', ''genotype'', ''strain'', ''variant
-      name or specific feature'
     from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
     exact_mappings:
-    - dct:title
+    - schema:name
     close_mappings:
-    - rdfs:label
+    - foaf:name
+    - dct:title
     rank: 1000
     alias: name
     owner: Provider
     domain_of:
     - PersonOrOrganization
-    - DataService
-    - Catalogue
-    - Term
-    - ProductOrService
     - File
     - ContactPoint
-    - License
-    - Certification
     range: string
     required: true
     multivalued: false
@@ -324,21 +312,19 @@ attributes:
     title: description
     comments:
     - 'Describe this item in few lines. This description will serve as a summary to
-      present the item.
+      present the resource.
 
       '
     from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
-    exact_mappings:
-    - dct:description
     rank: 1000
+    slot_uri: dct:description
     alias: description
     owner: Provider
     domain_of:
     - PersonOrOrganization
+    - Dataset
     - DataService
-    - Catalogue
     - Term
-    - ProductOrService
     - File
     - ContactPoint
     - License

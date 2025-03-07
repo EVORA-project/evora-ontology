@@ -27,6 +27,8 @@ URI: [EVORAO:DataProvider](https://raw.githubusercontent.com/EVORA-project/evora
         
       DataProvider : description
         
+      DataProvider : endpointURL
+        
       DataProvider : license
         
           
@@ -42,8 +44,6 @@ URI: [EVORAO:DataProvider](https://raw.githubusercontent.com/EVORA-project/evora
         
       DataProvider : loginURL
         
-      DataProvider : name
-        
       DataProvider : providedEntityType
         
           
@@ -55,7 +55,7 @@ URI: [EVORAO:DataProvider](https://raw.githubusercontent.com/EVORA-project/evora
         
       DataProvider : queryMethod
         
-      DataProvider : queryURL
+      DataProvider : title
         
       DataProvider : weight
         
@@ -81,13 +81,13 @@ URI: [EVORAO:DataProvider](https://raw.githubusercontent.com/EVORA-project/evora
 | [loginRequestMethod](loginRequestMethod.md) | 0..1 <br/> [String](String.md) | The http request method used to acces the login request url | direct |
 | [loginURL](loginURL.md) | 0..1 <br/> [Uri](Uri.md) | The URL template that allows to log in if required | direct |
 | [loginTokenName](loginTokenName.md) | 0..1 <br/> [String](String.md) | The name of the token, unique identifier of an interaction session, that will... | direct |
-| [queryURL](queryURL.md) | 1 <br/> [Uri](Uri.md) | The URL template that allows to get the content | direct |
 | [queryMethod](queryMethod.md) | 1 <br/> [String](String.md) | The http request method used to access the requested query url | direct |
 | [contentType](contentType.md) | 1 <br/> [String](String.md) | The content type of the response to the queries | direct |
 | [providedEntityType](providedEntityType.md) | 1 <br/> [Dataset](Dataset.md) | The identification of the entity type (Class) described by the response to th... | direct |
 | [weight](weight.md) | 1 <br/> [Integer](Integer.md) | A numerical value indicating relative importance or priority, generally proce... | direct |
-| [name](name.md) | 1 <br/> [String](String.md) | The label that allows humans to identify the current item | [DataService](DataService.md) |
+| [title](title.md) | 1 <br/> [String](String.md) | A name given to the resource | [DataService](DataService.md) |
 | [description](description.md) | 0..1 _recommended_ <br/> [String](String.md) | A short explanation of the characteristics, features, or nature of the curren... | [DataService](DataService.md) |
+| [endpointURL](endpointURL.md) | 1 <br/> [Uri](Uri.md) | The URL template that allows to get the content | [DataService](DataService.md) |
 
 
 
@@ -160,7 +160,6 @@ slots:
 - loginRequestMethod
 - loginURL
 - loginTokenName
-- queryURL
 - queryMethod
 - contentType
 - providedEntityType
@@ -214,19 +213,6 @@ slot_usage:
     - DataProvider
     range: string
     required: false
-    multivalued: false
-  queryURL:
-    name: queryURL
-    description: The URL template that allows to get the content
-    title: query URL
-    exact_mappings:
-    - dcat:endpointURL
-    close_mappings:
-    - wdp:P1630
-    domain_of:
-    - DataProvider
-    range: uri
-    required: true
     multivalued: false
   queryMethod:
     name: queryMethod
@@ -347,19 +333,6 @@ slot_usage:
     - DataProvider
     range: string
     required: false
-    multivalued: false
-  queryURL:
-    name: queryURL
-    description: The URL template that allows to get the content
-    title: query URL
-    exact_mappings:
-    - dcat:endpointURL
-    close_mappings:
-    - wdp:P1630
-    domain_of:
-    - DataProvider
-    range: uri
-    required: true
     multivalued: false
   queryMethod:
     name: queryMethod
@@ -483,23 +456,6 @@ attributes:
     range: string
     required: false
     multivalued: false
-  queryURL:
-    name: queryURL
-    description: The URL template that allows to get the content
-    title: query URL
-    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
-    exact_mappings:
-    - dcat:endpointURL
-    close_mappings:
-    - wdp:P1630
-    rank: 1000
-    alias: queryURL
-    owner: DataProvider
-    domain_of:
-    - DataProvider
-    range: uri
-    required: true
-    multivalued: false
   queryMethod:
     name: queryMethod
     description: The http request method used to access the requested query url
@@ -573,10 +529,10 @@ attributes:
     range: integer
     required: true
     multivalued: false
-  name:
-    name: name
-    description: The label that allows humans to identify the current item
-    title: name
+  title:
+    name: title
+    description: A name given to the resource
+    title: title
     comments:
     - 'The title of the item should be as short and descriptive as possible. E.g.
       for virus products it should basically be based on the following Pattern:
@@ -585,21 +541,17 @@ attributes:
       ex ''suspected epidemiological origin'', ''genotype'', ''strain'', ''variant
       name or specific feature'
     from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
-    exact_mappings:
-    - dct:title
     close_mappings:
     - rdfs:label
     rank: 1000
-    alias: name
+    slot_uri: dct:title
+    alias: title
     owner: DataProvider
     domain_of:
     - DataService
-    - Catalogue
+    - Dataset
+    - Publication
     - Term
-    - PersonOrOrganization
-    - ProductOrService
-    - File
-    - ContactPoint
     - License
     - Certification
     range: string
@@ -612,21 +564,19 @@ attributes:
     title: description
     comments:
     - 'Describe this item in few lines. This description will serve as a summary to
-      present the item.
+      present the resource.
 
       '
     from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
-    exact_mappings:
-    - dct:description
     rank: 1000
+    slot_uri: dct:description
     alias: description
     owner: DataProvider
     domain_of:
     - DataService
-    - Catalogue
+    - Dataset
     - Term
     - PersonOrOrganization
-    - ProductOrService
     - File
     - ContactPoint
     - License
@@ -634,6 +584,22 @@ attributes:
     range: string
     required: false
     recommended: true
+    multivalued: false
+  endpointURL:
+    name: endpointURL
+    description: The URL template that allows to get the content
+    title: endpoint URL
+    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+    close_mappings:
+    - wdp:P1630
+    rank: 1000
+    slot_uri: dcat:endpointURL
+    alias: endpointURL
+    owner: DataProvider
+    domain_of:
+    - DataService
+    range: uri
+    required: true
     multivalued: false
 
 ```

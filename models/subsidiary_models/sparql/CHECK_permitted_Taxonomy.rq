@@ -31,8 +31,8 @@ SELECT ?g ?s ?p WHERE {
    EVORAO:versionDataProvider,
    EVORAO:rank,
    EVORAO:rankDataProvider,
-   EVORAO:name,
-   EVORAO:description,
+   dct:title,
+   dct:description,
    rdf:type ))
  }
  

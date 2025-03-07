@@ -25,7 +25,7 @@ SELECT ?g ?s ?p WHERE {
   ?s rdf:type EVORAO:Publication ;
      ?p ?o .
   FILTER ( ?p NOT IN (
-   EVORAO:title,
+   dct:title,
    EVORAO:authors,
    EVORAO:abstract,
    EVORAO:relatedDOI,

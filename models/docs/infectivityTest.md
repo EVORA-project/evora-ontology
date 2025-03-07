@@ -23,13 +23,13 @@ URI: [EVORAO:infectivityTest](https://raw.githubusercontent.com/EVORA-project/ev
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [Fungus](Fungus.md) | The fungus as a biological material |  no  |
 | [Virus](Virus.md) | The virus as a biological material |  no  |
 | [Viroid](Viroid.md) | The viroid as a biological material |  no  |
 | [Pathogen](Pathogen.md) | Biological entity that causes disease in its host, which is typically an infe... |  yes  |
-| [Protozoan](Protozoan.md) | The protozoan as a biological material |  no  |
-| [Prion](Prion.md) | The prion as a biological material |  no  |
 | [Bacterium](Bacterium.md) | The bacterium as a biological material |  no  |
+| [Prion](Prion.md) | The prion as a biological material |  no  |
+| [Fungus](Fungus.md) | The fungus as a biological material |  no  |
+| [Protozoan](Protozoan.md) | The protozoan as a biological material |  no  |
 
 
 

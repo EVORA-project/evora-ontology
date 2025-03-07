@@ -5,7 +5,7 @@ import lombok.*;
 
 
 
-/* version: 1.0.8498 */
+/* version: 1.0.8636 */
 
 
 /**
@@ -15,8 +15,6 @@ import lombok.*;
 @EqualsAndHashCode(callSuper=false)
 public abstract class ProductOrService extends Dataset {
 
-  private String name;
-  private String description;
   private String accessPointURL;
   private String refSKU;
   private String unitDefinition;

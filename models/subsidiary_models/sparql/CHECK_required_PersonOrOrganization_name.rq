@@ -26,7 +26,7 @@ SELECT
   ?subject
   ?predicate WHERE {
  GRAPH ?graph {
-  ?subject rdf:type EVORAO:PersonOrOrganization .
+  ?subject rdf:type foaf:Agent .
   FILTER NOT EXISTS { ?subject  EVORAO:name ?o  }
  }
  VALUES ?check { linkml:required }

@@ -5,7 +5,7 @@ import lombok.*;
 
 
 
-/* version: 1.0.8498 */
+/* version: 1.0.8636 */
 
 
 /**
@@ -15,7 +15,7 @@ import lombok.*;
 @EqualsAndHashCode(callSuper=false)
 public abstract class Term extends Resource {
 
-  private String name;
+  private String title;
   private String description;
   private int weight;
   private Vocabulary inVocabulary;

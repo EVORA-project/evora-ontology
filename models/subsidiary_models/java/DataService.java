@@ -5,7 +5,7 @@ import lombok.*;
 
 
 
-/* version: 1.0.8498 */
+/* version: 1.0.8636 */
 
 
 /**
@@ -15,7 +15,8 @@ import lombok.*;
 @EqualsAndHashCode(callSuper=false)
 public abstract class DataService extends Resource {
 
-  private String name;
+  private String title;
   private String description;
+  private String endpointURL;
 
 }

@@ -22,12 +22,12 @@ PREFIX linkml: <https://w3id.org/linkml/>
 
 SELECT ?g ?s ?p WHERE {
  GRAPH ?g {
-  ?s rdf:type EVORAO:Person ;
+  ?s rdf:type foaf:Person ;
      ?p ?o .
   FILTER ( ?p NOT IN (
    EVORAO:oRCIDiD,
    EVORAO:name,
-   EVORAO:description,
+   dct:description,
    EVORAO:homePage,
    EVORAO:contactPoint,
    EVORAO:logo,

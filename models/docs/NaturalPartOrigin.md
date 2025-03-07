@@ -67,9 +67,8 @@ URI: [EVORAO:NaturalPartOrigin](https://raw.githubusercontent.com/EVORA-project/
 
 ## Inheritance
 * [Resource](Resource.md)
-    * [Dataset](Dataset.md)
-        * [BiologicalPartOrigin](BiologicalPartOrigin.md)
-            * **NaturalPartOrigin**
+    * [BiologicalPartOrigin](BiologicalPartOrigin.md)
+        * **NaturalPartOrigin**
 
 
 

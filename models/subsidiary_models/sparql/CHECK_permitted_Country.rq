@@ -26,8 +26,8 @@ SELECT ?g ?s ?p WHERE {
      ?p ?o .
   FILTER ( ?p NOT IN (
    EVORAO:alpha2Code,
-   EVORAO:name,
-   EVORAO:description,
+   dct:title,
+   dct:description,
    EVORAO:weight,
    EVORAO:inVocabulary,
    rdf:type ))

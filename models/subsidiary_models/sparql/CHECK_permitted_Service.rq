@@ -27,8 +27,6 @@ SELECT ?g ?s ?p WHERE {
   FILTER ( ?p NOT IN (
    EVORAO:modelSpecies,
    EVORAO:modelType,
-   EVORAO:name,
-   EVORAO:description,
    EVORAO:accessPointURL,
    EVORAO:refSKU,
    EVORAO:unitDefinition,
@@ -53,6 +51,8 @@ SELECT ?g ?s ?p WHERE {
    EVORAO:internalReference,
    EVORAO:note,
    EVORAO:contactPoint,
+   dct:title,
+   dct:description,
    rdf:type ))
  }
  

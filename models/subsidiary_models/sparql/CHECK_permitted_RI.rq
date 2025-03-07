@@ -29,7 +29,7 @@ SELECT ?g ?s ?p WHERE {
    EVORAO:country,
    EVORAO:rORiD,
    EVORAO:name,
-   EVORAO:description,
+   dct:description,
    EVORAO:homePage,
    EVORAO:contactPoint,
    EVORAO:logo,

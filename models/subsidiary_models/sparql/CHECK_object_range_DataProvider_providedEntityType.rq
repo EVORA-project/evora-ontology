@@ -33,23 +33,11 @@ WHERE {
   FILTER NOT EXISTS {
     ?object rdf:type ?otype .
     FILTER ( ?otype IN (
-      EVORAO:Dataset
+      dcat:Dataset
       , 
-      EVORAO:Catalogue
-      , 
-      EVORAO:PathogenIdentification
-      , 
-      EVORAO:Sequence
-      , 
-      EVORAO:BiologicalMaterialOrigin
-      , 
-      EVORAO:BiologicalPartOrigin
-      , 
-      EVORAO:RecombinantPartIdentification
+      dcat:Catalog
       , 
       EVORAO:ProductOrService
-      , 
-      EVORAO:MSDS
       , 
       EVORAO:Service
       , 
@@ -80,10 +68,6 @@ WHERE {
       EVORAO:Prion
       , 
       EVORAO:Hybridoma
-      , 
-      EVORAO:NaturalPartOrigin
-      , 
-      EVORAO:SyntheticPartOrigin
       , 
       EVORAO:Taxonomy
       , 

@@ -14,6 +14,14 @@ type Dataset struct {
 	 * parent types
 	 */
 	Resource
+	/*
+	 * A name given to the resource
+	 */
+	Title string `json:"title"`
+	/*
+	 * A short explanation of the characteristics, features, or nature of the current item
+	 */
+	Description string `json:"description"`
 }
 
 /*
@@ -25,13 +33,17 @@ type DataService struct {
 	 */
 	Resource
 	/*
-	 * The label that allows humans to identify the current item
+	 * A name given to the resource
 	 */
-	Name string `json:"name"`
+	Title string `json:"title"`
 	/*
 	 * A short explanation of the characteristics, features, or nature of the current item
 	 */
 	Description string `json:"description"`
+	/*
+	 * The URL template that allows to get the content
+	 */
+	EndpointURL string `json:"endpointURL"`
 }
 
 /*
@@ -61,9 +73,9 @@ type Catalogue struct {
 	 */
 	Dataset
 	/*
-	 * The label that allows humans to identify the current item
+	 * A name given to the resource
 	 */
-	Name string `json:"name"`
+	Title string `json:"title"`
 	/*
 	 * A short explanation of the characteristics, features, or nature of the current item
 	 */
@@ -103,9 +115,9 @@ type Taxonomy struct {
 	 */
 	RankDataProvider DataProvider `json:"rankDataProvider"`
 	/*
-	 * The label that allows humans to identify the current item
+	 * A name given to the resource
 	 */
-	Name string `json:"name"`
+	Title string `json:"title"`
 	/*
 	 * A short explanation of the characteristics, features, or nature of the current item
 	 */
@@ -137,10 +149,6 @@ type DataProvider struct {
 	 */
 	LoginTokenName string `json:"loginTokenName"`
 	/*
-	 * The URL template that allows to get the content
-	 */
-	QueryURL string `json:"queryURL"`
-	/*
 	 * The http request method used to access the requested query url
 	 */
 	QueryMethod string `json:"queryMethod"`
@@ -157,13 +165,17 @@ type DataProvider struct {
 	 */
 	Weight int `json:"weight"`
 	/*
-	 * The label that allows humans to identify the current item
+	 * A name given to the resource
 	 */
-	Name string `json:"name"`
+	Title string `json:"title"`
 	/*
 	 * A short explanation of the characteristics, features, or nature of the current item
 	 */
 	Description string `json:"description"`
+	/*
+	 * The URL template that allows to get the content
+	 */
+	EndpointURL string `json:"endpointURL"`
 }
 
 /*
@@ -173,7 +185,7 @@ type PathogenIdentification struct {
 	/*
 	 * parent types
 	 */
-	Dataset
+	Resource
 	/*
 	 * Scientifically classified group or entity within the reference taxonomy
 	 */
@@ -225,7 +237,7 @@ type Publication struct {
 	 */
 	Resource
 	/*
-	 * The descriptive word or phrase that identifies the current piece of work
+	 * A name given to the resource
 	 */
 	Title string `json:"title"`
 	/*
@@ -263,9 +275,9 @@ type Vocabulary struct {
 	 */
 	Term []Term `json:"term"`
 	/*
-	 * The label that allows humans to identify the current item
+	 * A name given to the resource
 	 */
-	Name string `json:"name"`
+	Title string `json:"title"`
 	/*
 	 * A short explanation of the characteristics, features, or nature of the current item
 	 */
@@ -281,9 +293,9 @@ type Term struct {
 	 */
 	Resource
 	/*
-	 * The label that allows humans to identify the current item
+	 * A name given to the resource
 	 */
-	Name string `json:"name"`
+	Title string `json:"title"`
 	/*
 	 * A short explanation of the characteristics, features, or nature of the current item
 	 */
@@ -315,9 +327,9 @@ type CommonName struct {
 	 */
 	SourceOfInformation string `json:"sourceOfInformation"`
 	/*
-	 * The label that allows humans to identify the current item
+	 * A name given to the resource
 	 */
-	Name string `json:"name"`
+	Title string `json:"title"`
 	/*
 	 * A short explanation of the characteristics, features, or nature of the current item
 	 */
@@ -349,9 +361,9 @@ type VirusName struct {
 	 */
 	SourceOfInformation string `json:"sourceOfInformation"`
 	/*
-	 * The label that allows humans to identify the current item
+	 * A name given to the resource
 	 */
-	Name string `json:"name"`
+	Title string `json:"title"`
 	/*
 	 * A short explanation of the characteristics, features, or nature of the current item
 	 */
@@ -383,9 +395,9 @@ type AlternateName struct {
 	 */
 	SourceOfInformation string `json:"sourceOfInformation"`
 	/*
-	 * The label that allows humans to identify the current item
+	 * A name given to the resource
 	 */
-	Name string `json:"name"`
+	Title string `json:"title"`
 	/*
 	 * A short explanation of the characteristics, features, or nature of the current item
 	 */
@@ -409,9 +421,9 @@ type RiskGroup struct {
 	 */
 	Term
 	/*
-	 * The label that allows humans to identify the current item
+	 * A name given to the resource
 	 */
-	Name string `json:"name"`
+	Title string `json:"title"`
 	/*
 	 * A short explanation of the characteristics, features, or nature of the current item
 	 */
@@ -435,9 +447,9 @@ type DOI struct {
 	 */
 	Term
 	/*
-	 * The label that allows humans to identify the current item
+	 * A name given to the resource
 	 */
-	Name string `json:"name"`
+	Title string `json:"title"`
 	/*
 	 * A short explanation of the characteristics, features, or nature of the current item
 	 */
@@ -461,9 +473,9 @@ type Journal struct {
 	 */
 	Term
 	/*
-	 * The label that allows humans to identify the current item
+	 * A name given to the resource
 	 */
-	Name string `json:"name"`
+	Title string `json:"title"`
 	/*
 	 * A short explanation of the characteristics, features, or nature of the current item
 	 */
@@ -487,9 +499,9 @@ type PDBReference struct {
 	 */
 	Term
 	/*
-	 * The label that allows humans to identify the current item
+	 * A name given to the resource
 	 */
-	Name string `json:"name"`
+	Title string `json:"title"`
 	/*
 	 * A short explanation of the characteristics, features, or nature of the current item
 	 */
@@ -513,9 +525,9 @@ type Keyword struct {
 	 */
 	Term
 	/*
-	 * The label that allows humans to identify the current item
+	 * A name given to the resource
 	 */
-	Name string `json:"name"`
+	Title string `json:"title"`
 	/*
 	 * A short explanation of the characteristics, features, or nature of the current item
 	 */
@@ -539,9 +551,9 @@ type ProteinTag struct {
 	 */
 	Term
 	/*
-	 * The label that allows humans to identify the current item
+	 * A name given to the resource
 	 */
-	Name string `json:"name"`
+	Title string `json:"title"`
 	/*
 	 * A short explanation of the characteristics, features, or nature of the current item
 	 */
@@ -565,9 +577,9 @@ type SpecialFeature struct {
 	 */
 	Term
 	/*
-	 * The label that allows humans to identify the current item
+	 * A name given to the resource
 	 */
-	Name string `json:"name"`
+	Title string `json:"title"`
 	/*
 	 * A short explanation of the characteristics, features, or nature of the current item
 	 */
@@ -591,9 +603,9 @@ type ExpressionVector struct {
 	 */
 	Term
 	/*
-	 * The label that allows humans to identify the current item
+	 * A name given to the resource
 	 */
-	Name string `json:"name"`
+	Title string `json:"title"`
 	/*
 	 * A short explanation of the characteristics, features, or nature of the current item
 	 */
@@ -617,9 +629,9 @@ type PlasmidSelection struct {
 	 */
 	Term
 	/*
-	 * The label that allows humans to identify the current item
+	 * A name given to the resource
 	 */
-	Name string `json:"name"`
+	Title string `json:"title"`
 	/*
 	 * A short explanation of the characteristics, features, or nature of the current item
 	 */
@@ -643,9 +655,9 @@ type PropagationHost struct {
 	 */
 	Term
 	/*
-	 * The label that allows humans to identify the current item
+	 * A name given to the resource
 	 */
-	Name string `json:"name"`
+	Title string `json:"title"`
 	/*
 	 * A short explanation of the characteristics, features, or nature of the current item
 	 */
@@ -669,9 +681,9 @@ type TransmissionMethod struct {
 	 */
 	Term
 	/*
-	 * The label that allows humans to identify the current item
+	 * A name given to the resource
 	 */
-	Name string `json:"name"`
+	Title string `json:"title"`
 	/*
 	 * A short explanation of the characteristics, features, or nature of the current item
 	 */
@@ -695,9 +707,9 @@ type ProductionCellLine struct {
 	 */
 	Term
 	/*
-	 * The label that allows humans to identify the current item
+	 * A name given to the resource
 	 */
-	Name string `json:"name"`
+	Title string `json:"title"`
 	/*
 	 * A short explanation of the characteristics, features, or nature of the current item
 	 */
@@ -725,9 +737,9 @@ type ProductCategory struct {
 	 */
 	ParentCategory ProductCategory `json:"parentCategory"`
 	/*
-	 * The label that allows humans to identify the current item
+	 * A name given to the resource
 	 */
-	Name string `json:"name"`
+	Title string `json:"title"`
 	/*
 	 * A short explanation of the characteristics, features, or nature of the current item
 	 */
@@ -751,9 +763,9 @@ type IsolationHost struct {
 	 */
 	Term
 	/*
-	 * The label that allows humans to identify the current item
+	 * A name given to the resource
 	 */
-	Name string `json:"name"`
+	Title string `json:"title"`
 	/*
 	 * A short explanation of the characteristics, features, or nature of the current item
 	 */
@@ -777,9 +789,9 @@ type GeographicalOrigin struct {
 	 */
 	Term
 	/*
-	 * The label that allows humans to identify the current item
+	 * A name given to the resource
 	 */
-	Name string `json:"name"`
+	Title string `json:"title"`
 	/*
 	 * A short explanation of the characteristics, features, or nature of the current item
 	 */
@@ -803,9 +815,9 @@ type IPLCOrigin struct {
 	 */
 	GeographicalOrigin
 	/*
-	 * The label that allows humans to identify the current item
+	 * A name given to the resource
 	 */
-	Name string `json:"name"`
+	Title string `json:"title"`
 	/*
 	 * A short explanation of the characteristics, features, or nature of the current item
 	 */
@@ -833,9 +845,9 @@ type Country struct {
 	 */
 	Alpha2Code string `json:"alpha2Code"`
 	/*
-	 * The label that allows humans to identify the current item
+	 * A name given to the resource
 	 */
-	Name string `json:"name"`
+	Title string `json:"title"`
 	/*
 	 * A short explanation of the characteristics, features, or nature of the current item
 	 */
@@ -859,9 +871,9 @@ type IATAClassification struct {
 	 */
 	Term
 	/*
-	 * The label that allows humans to identify the current item
+	 * A name given to the resource
 	 */
-	Name string `json:"name"`
+	Title string `json:"title"`
 	/*
 	 * A short explanation of the characteristics, features, or nature of the current item
 	 */
@@ -893,9 +905,9 @@ type Variant struct {
 	 */
 	SourceOfInformation string `json:"sourceOfInformation"`
 	/*
-	 * The label that allows humans to identify the current item
+	 * A name given to the resource
 	 */
-	Name string `json:"name"`
+	Title string `json:"title"`
 	/*
 	 * A short explanation of the characteristics, features, or nature of the current item
 	 */
@@ -923,9 +935,9 @@ type TaxonomicRank struct {
 	 */
 	Taxonomy []Taxonomy `json:"taxonomy"`
 	/*
-	 * The label that allows humans to identify the current item
+	 * A name given to the resource
 	 */
-	Name string `json:"name"`
+	Title string `json:"title"`
 	/*
 	 * A short explanation of the characteristics, features, or nature of the current item
 	 */
@@ -977,9 +989,9 @@ type Taxon struct {
 	 */
 	TaxonomicNodeID string `json:"taxonomicNodeID"`
 	/*
-	 * The label that allows humans to identify the current item
+	 * A name given to the resource
 	 */
-	Name string `json:"name"`
+	Title string `json:"title"`
 	/*
 	 * A short explanation of the characteristics, features, or nature of the current item
 	 */
@@ -1027,7 +1039,7 @@ type Sequence struct {
 	/*
 	 * parent types
 	 */
-	Dataset
+	Resource
 	/*
 	 * A reference that permits to retrieve the sequence information from a sequence provider
 	 */
@@ -1065,7 +1077,7 @@ type PersonOrOrganization struct {
 	 */
 	Resource
 	/*
-	 * The label that allows humans to identify the current item
+	 * A word or set of words used to identify and refer to an entity
 	 */
 	Name string `json:"name"`
 	/*
@@ -1099,7 +1111,7 @@ type Person struct {
 	 */
 	ORCIDiD string `json:"oRCIDiD"`
 	/*
-	 * The label that allows humans to identify the current item
+	 * A word or set of words used to identify and refer to an entity
 	 */
 	Name string `json:"name"`
 	/*
@@ -1141,7 +1153,7 @@ type Organization struct {
 	 */
 	RORiD string `json:"rORiD"`
 	/*
-	 * The label that allows humans to identify the current item
+	 * A word or set of words used to identify and refer to an entity
 	 */
 	Name string `json:"name"`
 	/*
@@ -1183,7 +1195,7 @@ type RI struct {
 	 */
 	RORiD string `json:"rORiD"`
 	/*
-	 * The label that allows humans to identify the current item
+	 * A word or set of words used to identify and refer to an entity
 	 */
 	Name string `json:"name"`
 	/*
@@ -1229,7 +1241,7 @@ type Provider struct {
 	 */
 	RORiD string `json:"rORiD"`
 	/*
-	 * The label that allows humans to identify the current item
+	 * A word or set of words used to identify and refer to an entity
 	 */
 	Name string `json:"name"`
 	/*
@@ -1259,7 +1271,7 @@ type Originator struct {
 	 */
 	PersonOrOrganization
 	/*
-	 * The label that allows humans to identify the current item
+	 * A word or set of words used to identify and refer to an entity
 	 */
 	Name string `json:"name"`
 	/*
@@ -1287,7 +1299,7 @@ type BiologicalMaterialOrigin struct {
 	/*
 	 * parent types
 	 */
-	Dataset
+	Resource
 	/*
 	 * Indicates if this biological material is a recombinant biological material.
 	 */
@@ -1309,7 +1321,7 @@ type BiologicalPartOrigin struct {
 	/*
 	 * parent types
 	 */
-	Dataset
+	Resource
 	/*
 	 * Identification of a recombinant part
 	 */
@@ -1391,7 +1403,7 @@ type RecombinantPartIdentification struct {
 	/*
 	 * parent types
 	 */
-	Dataset
+	Resource
 	/*
 	 * A short designation of this recombinant part of the related biological material
 	 */
@@ -1419,9 +1431,9 @@ type Collection struct {
 	 */
 	CollectionDataProvider DataProvider `json:"collectionDataProvider"`
 	/*
-	 * The label that allows humans to identify the current item
+	 * A name given to the resource
 	 */
-	Name string `json:"name"`
+	Title string `json:"title"`
 	/*
 	 * A short explanation of the characteristics, features, or nature of the current item
 	 */
@@ -1436,14 +1448,6 @@ type ProductOrService struct {
 	 * parent types
 	 */
 	Dataset
-	/*
-	 * The label that allows humans to identify the current item
-	 */
-	Name string `json:"name"`
-	/*
-	 * A short explanation of the characteristics, features, or nature of the current item
-	 */
-	Description string `json:"description"`
 	/*
 	 * The URL that permits to access to the product/service detailed description page on the provider's website and/or allows to place an order about it or at least describe the process to place an order/enquiry
 	 */
@@ -1540,6 +1544,14 @@ type ProductOrService struct {
 	 * An information that allows someone to establish communication
 	 */
 	ContactPoint ContactPoint `json:"contactPoint"`
+	/*
+	 * A name given to the resource
+	 */
+	Title string `json:"title"`
+	/*
+	 * A short explanation of the characteristics, features, or nature of the current item
+	 */
+	Description string `json:"description"`
 }
 
 /*
@@ -1559,14 +1571,6 @@ type Service struct {
 	 */
 	ModelType string `json:"modelType"`
 	/*
-	 * The label that allows humans to identify the current item
-	 */
-	Name string `json:"name"`
-	/*
-	 * A short explanation of the characteristics, features, or nature of the current item
-	 */
-	Description string `json:"description"`
-	/*
 	 * The URL that permits to access to the product/service detailed description page on the provider's website and/or allows to place an order about it or at least describe the process to place an order/enquiry
 	 */
 	AccessPointURL string `json:"accessPointURL"`
@@ -1662,6 +1666,14 @@ type Service struct {
 	 * An information that allows someone to establish communication
 	 */
 	ContactPoint ContactPoint `json:"contactPoint"`
+	/*
+	 * A name given to the resource
+	 */
+	Title string `json:"title"`
+	/*
+	 * A short explanation of the characteristics, features, or nature of the current item
+	 */
+	Description string `json:"description"`
 }
 
 /*
@@ -1702,14 +1714,6 @@ type Product struct {
 	 */
 	UsageRestrictions string `json:"usageRestrictions"`
 	/*
-	 * The label that allows humans to identify the current item
-	 */
-	Name string `json:"name"`
-	/*
-	 * A short explanation of the characteristics, features, or nature of the current item
-	 */
-	Description string `json:"description"`
-	/*
 	 * The URL that permits to access to the product/service detailed description page on the provider's website and/or allows to place an order about it or at least describe the process to place an order/enquiry
 	 */
 	AccessPointURL string `json:"accessPointURL"`
@@ -1805,6 +1809,14 @@ type Product struct {
 	 * An information that allows someone to establish communication
 	 */
 	ContactPoint ContactPoint `json:"contactPoint"`
+	/*
+	 * A name given to the resource
+	 */
+	Title string `json:"title"`
+	/*
+	 * A short explanation of the characteristics, features, or nature of the current item
+	 */
+	Description string `json:"description"`
 }
 
 /*
@@ -1865,14 +1877,6 @@ type Antibody struct {
 	 */
 	UsageRestrictions string `json:"usageRestrictions"`
 	/*
-	 * The label that allows humans to identify the current item
-	 */
-	Name string `json:"name"`
-	/*
-	 * A short explanation of the characteristics, features, or nature of the current item
-	 */
-	Description string `json:"description"`
-	/*
 	 * The URL that permits to access to the product/service detailed description page on the provider's website and/or allows to place an order about it or at least describe the process to place an order/enquiry
 	 */
 	AccessPointURL string `json:"accessPointURL"`
@@ -1968,6 +1972,14 @@ type Antibody struct {
 	 * An information that allows someone to establish communication
 	 */
 	ContactPoint ContactPoint `json:"contactPoint"`
+	/*
+	 * A name given to the resource
+	 */
+	Title string `json:"title"`
+	/*
+	 * A short explanation of the characteristics, features, or nature of the current item
+	 */
+	Description string `json:"description"`
 }
 
 /*
@@ -2032,14 +2044,6 @@ type Hybridoma struct {
 	 */
 	UsageRestrictions string `json:"usageRestrictions"`
 	/*
-	 * The label that allows humans to identify the current item
-	 */
-	Name string `json:"name"`
-	/*
-	 * A short explanation of the characteristics, features, or nature of the current item
-	 */
-	Description string `json:"description"`
-	/*
 	 * The URL that permits to access to the product/service detailed description page on the provider's website and/or allows to place an order about it or at least describe the process to place an order/enquiry
 	 */
 	AccessPointURL string `json:"accessPointURL"`
@@ -2135,6 +2139,14 @@ type Hybridoma struct {
 	 * An information that allows someone to establish communication
 	 */
 	ContactPoint ContactPoint `json:"contactPoint"`
+	/*
+	 * A name given to the resource
+	 */
+	Title string `json:"title"`
+	/*
+	 * A short explanation of the characteristics, features, or nature of the current item
+	 */
+	Description string `json:"description"`
 }
 
 /*
@@ -2231,14 +2243,6 @@ type Protein struct {
 	 */
 	UsageRestrictions string `json:"usageRestrictions"`
 	/*
-	 * The label that allows humans to identify the current item
-	 */
-	Name string `json:"name"`
-	/*
-	 * A short explanation of the characteristics, features, or nature of the current item
-	 */
-	Description string `json:"description"`
-	/*
 	 * The URL that permits to access to the product/service detailed description page on the provider's website and/or allows to place an order about it or at least describe the process to place an order/enquiry
 	 */
 	AccessPointURL string `json:"accessPointURL"`
@@ -2334,6 +2338,14 @@ type Protein struct {
 	 * An information that allows someone to establish communication
 	 */
 	ContactPoint ContactPoint `json:"contactPoint"`
+	/*
+	 * A name given to the resource
+	 */
+	Title string `json:"title"`
+	/*
+	 * A short explanation of the characteristics, features, or nature of the current item
+	 */
+	Description string `json:"description"`
 }
 
 /*
@@ -2431,14 +2443,6 @@ type NucleicAcid struct {
 	 */
 	UsageRestrictions string `json:"usageRestrictions"`
 	/*
-	 * The label that allows humans to identify the current item
-	 */
-	Name string `json:"name"`
-	/*
-	 * A short explanation of the characteristics, features, or nature of the current item
-	 */
-	Description string `json:"description"`
-	/*
 	 * The URL that permits to access to the product/service detailed description page on the provider's website and/or allows to place an order about it or at least describe the process to place an order/enquiry
 	 */
 	AccessPointURL string `json:"accessPointURL"`
@@ -2534,6 +2538,14 @@ type NucleicAcid struct {
 	 * An information that allows someone to establish communication
 	 */
 	ContactPoint ContactPoint `json:"contactPoint"`
+	/*
+	 * A name given to the resource
+	 */
+	Title string `json:"title"`
+	/*
+	 * A short explanation of the characteristics, features, or nature of the current item
+	 */
+	Description string `json:"description"`
 }
 
 /*
@@ -2590,14 +2602,6 @@ type DetectionKit struct {
 	 */
 	UsageRestrictions string `json:"usageRestrictions"`
 	/*
-	 * The label that allows humans to identify the current item
-	 */
-	Name string `json:"name"`
-	/*
-	 * A short explanation of the characteristics, features, or nature of the current item
-	 */
-	Description string `json:"description"`
-	/*
 	 * The URL that permits to access to the product/service detailed description page on the provider's website and/or allows to place an order about it or at least describe the process to place an order/enquiry
 	 */
 	AccessPointURL string `json:"accessPointURL"`
@@ -2693,6 +2697,14 @@ type DetectionKit struct {
 	 * An information that allows someone to establish communication
 	 */
 	ContactPoint ContactPoint `json:"contactPoint"`
+	/*
+	 * A name given to the resource
+	 */
+	Title string `json:"title"`
+	/*
+	 * A short explanation of the characteristics, features, or nature of the current item
+	 */
+	Description string `json:"description"`
 }
 
 /*
@@ -2737,14 +2749,6 @@ type Bundle struct {
 	 */
 	UsageRestrictions string `json:"usageRestrictions"`
 	/*
-	 * The label that allows humans to identify the current item
-	 */
-	Name string `json:"name"`
-	/*
-	 * A short explanation of the characteristics, features, or nature of the current item
-	 */
-	Description string `json:"description"`
-	/*
 	 * The URL that permits to access to the product/service detailed description page on the provider's website and/or allows to place an order about it or at least describe the process to place an order/enquiry
 	 */
 	AccessPointURL string `json:"accessPointURL"`
@@ -2840,6 +2844,14 @@ type Bundle struct {
 	 * An information that allows someone to establish communication
 	 */
 	ContactPoint ContactPoint `json:"contactPoint"`
+	/*
+	 * A name given to the resource
+	 */
+	Title string `json:"title"`
+	/*
+	 * A short explanation of the characteristics, features, or nature of the current item
+	 */
+	Description string `json:"description"`
 }
 
 /*
@@ -2952,14 +2964,6 @@ type Pathogen struct {
 	 */
 	UsageRestrictions string `json:"usageRestrictions"`
 	/*
-	 * The label that allows humans to identify the current item
-	 */
-	Name string `json:"name"`
-	/*
-	 * A short explanation of the characteristics, features, or nature of the current item
-	 */
-	Description string `json:"description"`
-	/*
 	 * The URL that permits to access to the product/service detailed description page on the provider's website and/or allows to place an order about it or at least describe the process to place an order/enquiry
 	 */
 	AccessPointURL string `json:"accessPointURL"`
@@ -3055,6 +3059,14 @@ type Pathogen struct {
 	 * An information that allows someone to establish communication
 	 */
 	ContactPoint ContactPoint `json:"contactPoint"`
+	/*
+	 * A name given to the resource
+	 */
+	Title string `json:"title"`
+	/*
+	 * A short explanation of the characteristics, features, or nature of the current item
+	 */
+	Description string `json:"description"`
 }
 
 /*
@@ -3179,14 +3191,6 @@ type Virus struct {
 	 */
 	UsageRestrictions string `json:"usageRestrictions"`
 	/*
-	 * The label that allows humans to identify the current item
-	 */
-	Name string `json:"name"`
-	/*
-	 * A short explanation of the characteristics, features, or nature of the current item
-	 */
-	Description string `json:"description"`
-	/*
 	 * The URL that permits to access to the product/service detailed description page on the provider's website and/or allows to place an order about it or at least describe the process to place an order/enquiry
 	 */
 	AccessPointURL string `json:"accessPointURL"`
@@ -3282,6 +3286,14 @@ type Virus struct {
 	 * An information that allows someone to establish communication
 	 */
 	ContactPoint ContactPoint `json:"contactPoint"`
+	/*
+	 * A name given to the resource
+	 */
+	Title string `json:"title"`
+	/*
+	 * A short explanation of the characteristics, features, or nature of the current item
+	 */
+	Description string `json:"description"`
 }
 
 /*
@@ -3394,14 +3406,6 @@ type Bacterium struct {
 	 */
 	UsageRestrictions string `json:"usageRestrictions"`
 	/*
-	 * The label that allows humans to identify the current item
-	 */
-	Name string `json:"name"`
-	/*
-	 * A short explanation of the characteristics, features, or nature of the current item
-	 */
-	Description string `json:"description"`
-	/*
 	 * The URL that permits to access to the product/service detailed description page on the provider's website and/or allows to place an order about it or at least describe the process to place an order/enquiry
 	 */
 	AccessPointURL string `json:"accessPointURL"`
@@ -3497,6 +3501,14 @@ type Bacterium struct {
 	 * An information that allows someone to establish communication
 	 */
 	ContactPoint ContactPoint `json:"contactPoint"`
+	/*
+	 * A name given to the resource
+	 */
+	Title string `json:"title"`
+	/*
+	 * A short explanation of the characteristics, features, or nature of the current item
+	 */
+	Description string `json:"description"`
 }
 
 /*
@@ -3609,14 +3621,6 @@ type Fungus struct {
 	 */
 	UsageRestrictions string `json:"usageRestrictions"`
 	/*
-	 * The label that allows humans to identify the current item
-	 */
-	Name string `json:"name"`
-	/*
-	 * A short explanation of the characteristics, features, or nature of the current item
-	 */
-	Description string `json:"description"`
-	/*
 	 * The URL that permits to access to the product/service detailed description page on the provider's website and/or allows to place an order about it or at least describe the process to place an order/enquiry
 	 */
 	AccessPointURL string `json:"accessPointURL"`
@@ -3712,6 +3716,14 @@ type Fungus struct {
 	 * An information that allows someone to establish communication
 	 */
 	ContactPoint ContactPoint `json:"contactPoint"`
+	/*
+	 * A name given to the resource
+	 */
+	Title string `json:"title"`
+	/*
+	 * A short explanation of the characteristics, features, or nature of the current item
+	 */
+	Description string `json:"description"`
 }
 
 /*
@@ -3824,14 +3836,6 @@ type Protozoan struct {
 	 */
 	UsageRestrictions string `json:"usageRestrictions"`
 	/*
-	 * The label that allows humans to identify the current item
-	 */
-	Name string `json:"name"`
-	/*
-	 * A short explanation of the characteristics, features, or nature of the current item
-	 */
-	Description string `json:"description"`
-	/*
 	 * The URL that permits to access to the product/service detailed description page on the provider's website and/or allows to place an order about it or at least describe the process to place an order/enquiry
 	 */
 	AccessPointURL string `json:"accessPointURL"`
@@ -3927,6 +3931,14 @@ type Protozoan struct {
 	 * An information that allows someone to establish communication
 	 */
 	ContactPoint ContactPoint `json:"contactPoint"`
+	/*
+	 * A name given to the resource
+	 */
+	Title string `json:"title"`
+	/*
+	 * A short explanation of the characteristics, features, or nature of the current item
+	 */
+	Description string `json:"description"`
 }
 
 /*
@@ -4039,14 +4051,6 @@ type Viroid struct {
 	 */
 	UsageRestrictions string `json:"usageRestrictions"`
 	/*
-	 * The label that allows humans to identify the current item
-	 */
-	Name string `json:"name"`
-	/*
-	 * A short explanation of the characteristics, features, or nature of the current item
-	 */
-	Description string `json:"description"`
-	/*
 	 * The URL that permits to access to the product/service detailed description page on the provider's website and/or allows to place an order about it or at least describe the process to place an order/enquiry
 	 */
 	AccessPointURL string `json:"accessPointURL"`
@@ -4142,6 +4146,14 @@ type Viroid struct {
 	 * An information that allows someone to establish communication
 	 */
 	ContactPoint ContactPoint `json:"contactPoint"`
+	/*
+	 * A name given to the resource
+	 */
+	Title string `json:"title"`
+	/*
+	 * A short explanation of the characteristics, features, or nature of the current item
+	 */
+	Description string `json:"description"`
 }
 
 /*
@@ -4254,14 +4266,6 @@ type Prion struct {
 	 */
 	UsageRestrictions string `json:"usageRestrictions"`
 	/*
-	 * The label that allows humans to identify the current item
-	 */
-	Name string `json:"name"`
-	/*
-	 * A short explanation of the characteristics, features, or nature of the current item
-	 */
-	Description string `json:"description"`
-	/*
 	 * The URL that permits to access to the product/service detailed description page on the provider's website and/or allows to place an order about it or at least describe the process to place an order/enquiry
 	 */
 	AccessPointURL string `json:"accessPointURL"`
@@ -4357,6 +4361,14 @@ type Prion struct {
 	 * An information that allows someone to establish communication
 	 */
 	ContactPoint ContactPoint `json:"contactPoint"`
+	/*
+	 * A name given to the resource
+	 */
+	Title string `json:"title"`
+	/*
+	 * A short explanation of the characteristics, features, or nature of the current item
+	 */
+	Description string `json:"description"`
 }
 
 /*
@@ -4366,7 +4378,7 @@ type MSDS struct {
 	/*
 	 * parent types
 	 */
-	Dataset
+	Resource
 	/*
 	 * The designated contact point responsible for providing information related to the safety, handling, and regulatory compliance of the biological product.
 	 */
@@ -4438,7 +4450,7 @@ type File struct {
 	 */
 	Resource
 	/*
-	 * The label that allows humans to identify the current item
+	 * A word or set of words used to identify and refer to an entity
 	 */
 	Name string `json:"name"`
 	/*
@@ -4468,7 +4480,7 @@ type Data struct {
 	 */
 	File
 	/*
-	 * The label that allows humans to identify the current item
+	 * A word or set of words used to identify and refer to an entity
 	 */
 	Name string `json:"name"`
 	/*
@@ -4498,7 +4510,7 @@ type Document struct {
 	 */
 	File
 	/*
-	 * The label that allows humans to identify the current item
+	 * A word or set of words used to identify and refer to an entity
 	 */
 	Name string `json:"name"`
 	/*
@@ -4528,7 +4540,7 @@ type Audio struct {
 	 */
 	File
 	/*
-	 * The label that allows humans to identify the current item
+	 * A word or set of words used to identify and refer to an entity
 	 */
 	Name string `json:"name"`
 	/*
@@ -4558,7 +4570,7 @@ type Video struct {
 	 */
 	File
 	/*
-	 * The label that allows humans to identify the current item
+	 * A word or set of words used to identify and refer to an entity
 	 */
 	Name string `json:"name"`
 	/*
@@ -4592,7 +4604,7 @@ type Image struct {
 	 */
 	AltText string `json:"altText"`
 	/*
-	 * The label that allows humans to identify the current item
+	 * A word or set of words used to identify and refer to an entity
 	 */
 	Name string `json:"name"`
 	/*
@@ -4622,7 +4634,7 @@ type ContactPoint struct {
 	 */
 	Resource
 	/*
-	 * The label that allows humans to identify the current item
+	 * A word or set of words used to identify and refer to an entity
 	 */
 	Name string `json:"name"`
 	/*
@@ -4672,9 +4684,9 @@ type License struct {
 	 */
 	Resource
 	/*
-	 * The label that allows humans to identify the current item
+	 * A name given to the resource
 	 */
-	Name string `json:"name"`
+	Title string `json:"title"`
 	/*
 	 * A short explanation of the characteristics, features, or nature of the current item
 	 */
@@ -4702,9 +4714,9 @@ type Certification struct {
 	 */
 	Resource
 	/*
-	 * The label that allows humans to identify the current item
+	 * A name given to the resource
 	 */
-	Name string `json:"name"`
+	Title string `json:"title"`
 	/*
 	 * A short explanation of the characteristics, features, or nature of the current item
 	 */

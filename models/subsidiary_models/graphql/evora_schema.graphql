@@ -1,8 +1,8 @@
 # metamodel_version: 1.7.0
-# version: 1.0.8498
+# version: 1.0.8636
 type AlternateName
   {
-    name: String!
+    title: String!
     description: String
     weight: Integer!
     inVocabulary: Vocabulary!
@@ -12,8 +12,8 @@ type AlternateName
 
 type Antibody
   {
-    name: String!
-    description: String
+    title: String!
+    description: String!
     accessPointURL: Uri!
     refSKU: String!
     unitDefinition: String
@@ -63,8 +63,8 @@ type Audio
 
 type Bacterium
   {
-    name: String!
-    description: String
+    title: String!
+    description: String!
     accessPointURL: Uri!
     refSKU: String!
     unitDefinition: String
@@ -131,8 +131,8 @@ interface BiologicalPartOrigin
 
 type Bundle
   {
-    name: String!
-    description: String
+    title: String!
+    description: String!
     accessPointURL: Uri!
     refSKU: String!
     unitDefinition: String
@@ -169,13 +169,13 @@ type Bundle
 
 interface Catalogue
   {
-    name: String!
-    description: String
+    title: String!
+    description: String!
   }
 
 type Certification
   {
-    name: String!
+    title: String!
     description: String
     logo: Image
     certificationDocument: [Document]
@@ -184,15 +184,15 @@ type Certification
 
 type Collection
   {
-    name: String!
-    description: String
+    title: String!
+    description: String!
     collectionItem: [ProductOrService]
     collectionDataProvider: DataProvider
   }
 
 type CommonName
   {
-    name: String!
+    title: String!
     description: String
     weight: Integer!
     inVocabulary: Vocabulary!
@@ -216,7 +216,7 @@ type ContactPoint
 
 type Country
   {
-    name: String!
+    title: String!
     description: String
     weight: Integer!
     inVocabulary: Vocabulary!
@@ -234,13 +234,13 @@ type Data
 
 type DataProvider
   {
-    name: String!
+    title: String!
     description: String
+    endpointURL: Uri!
     license: License
     loginRequestMethod: String
     loginURL: Uri
     loginTokenName: String
-    queryURL: Uri!
     queryMethod: String!
     contentType: String!
     providedEntityType: Dataset!
@@ -249,18 +249,21 @@ type DataProvider
 
 interface DataService
   {
-    name: String!
+    title: String!
     description: String
+    endpointURL: Uri!
   }
 
 interface Dataset
   {
+    title: String!
+    description: String!
   }
 
 type DetectionKit
   {
-    name: String!
-    description: String
+    title: String!
+    description: String!
     accessPointURL: Uri!
     refSKU: String!
     unitDefinition: String
@@ -309,7 +312,7 @@ type Document
 
 type DOI
   {
-    name: String!
+    title: String!
     description: String
     weight: Integer!
     inVocabulary: Vocabulary!
@@ -317,7 +320,7 @@ type DOI
 
 type ExpressionVector
   {
-    name: String!
+    title: String!
     description: String
     weight: Integer!
     inVocabulary: Vocabulary!
@@ -342,8 +345,8 @@ interface File
 
 type Fungus
   {
-    name: String!
-    description: String
+    title: String!
+    description: String!
     accessPointURL: Uri!
     refSKU: String!
     unitDefinition: String
@@ -397,7 +400,7 @@ type Fungus
 
 type GeographicalOrigin
   {
-    name: String!
+    title: String!
     description: String
     weight: Integer!
     inVocabulary: Vocabulary!
@@ -405,8 +408,8 @@ type GeographicalOrigin
 
 type Hybridoma
   {
-    name: String!
-    description: String
+    title: String!
+    description: String!
     accessPointURL: Uri!
     refSKU: String!
     unitDefinition: String
@@ -448,7 +451,7 @@ type Hybridoma
 
 type IATAClassification
   {
-    name: String!
+    title: String!
     description: String
     weight: Integer!
     inVocabulary: Vocabulary!
@@ -466,7 +469,7 @@ type Image
 
 type IPLCOrigin
   {
-    name: String!
+    title: String!
     description: String
     weight: Integer!
     inVocabulary: Vocabulary!
@@ -474,7 +477,7 @@ type IPLCOrigin
 
 type IsolationHost
   {
-    name: String!
+    title: String!
     description: String
     weight: Integer!
     inVocabulary: Vocabulary!
@@ -482,7 +485,7 @@ type IsolationHost
 
 type Journal
   {
-    name: String!
+    title: String!
     description: String
     weight: Integer!
     inVocabulary: Vocabulary!
@@ -490,7 +493,7 @@ type Journal
 
 type Keyword
   {
-    name: String!
+    title: String!
     description: String
     weight: Integer!
     inVocabulary: Vocabulary!
@@ -498,7 +501,7 @@ type Keyword
 
 type License
   {
-    name: String!
+    title: String!
     description: String
     resourceURL: Uri
     licensingOrAttribution: String
@@ -537,8 +540,8 @@ type NaturalPartOrigin
 
 type NucleicAcid
   {
-    name: String!
-    description: String
+    title: String!
+    description: String!
     accessPointURL: Uri!
     refSKU: String!
     unitDefinition: String
@@ -609,8 +612,8 @@ type Originator
 
 interface Pathogen
   {
-    name: String!
-    description: String
+    title: String!
+    description: String!
     accessPointURL: Uri!
     refSKU: String!
     unitDefinition: String
@@ -678,7 +681,7 @@ type PathogenIdentification
 
 type PDBReference
   {
-    name: String!
+    title: String!
     description: String
     weight: Integer!
     inVocabulary: Vocabulary!
@@ -705,7 +708,7 @@ type PersonOrOrganization
 
 type PlasmidSelection
   {
-    name: String!
+    title: String!
     description: String
     weight: Integer!
     inVocabulary: Vocabulary!
@@ -713,8 +716,8 @@ type PlasmidSelection
 
 type Prion
   {
-    name: String!
-    description: String
+    title: String!
+    description: String!
     accessPointURL: Uri!
     refSKU: String!
     unitDefinition: String
@@ -768,8 +771,8 @@ type Prion
 
 type Product
   {
-    name: String!
-    description: String
+    title: String!
+    description: String!
     accessPointURL: Uri!
     refSKU: String!
     unitDefinition: String
@@ -805,7 +808,7 @@ type Product
 
 type ProductCategory
   {
-    name: String!
+    title: String!
     description: String
     weight: Integer!
     inVocabulary: Vocabulary!
@@ -814,7 +817,7 @@ type ProductCategory
 
 type ProductionCellLine
   {
-    name: String!
+    title: String!
     description: String
     weight: Integer!
     inVocabulary: Vocabulary!
@@ -822,8 +825,8 @@ type ProductionCellLine
 
 interface ProductOrService
   {
-    name: String!
-    description: String
+    title: String!
+    description: String!
     accessPointURL: Uri!
     refSKU: String!
     unitDefinition: String
@@ -852,7 +855,7 @@ interface ProductOrService
 
 type PropagationHost
   {
-    name: String!
+    title: String!
     description: String
     weight: Integer!
     inVocabulary: Vocabulary!
@@ -860,8 +863,8 @@ type PropagationHost
 
 type Protein
   {
-    name: String!
-    description: String
+    title: String!
+    description: String!
     accessPointURL: Uri!
     refSKU: String!
     unitDefinition: String
@@ -911,7 +914,7 @@ type Protein
 
 type ProteinTag
   {
-    name: String!
+    title: String!
     description: String
     weight: Integer!
     inVocabulary: Vocabulary!
@@ -919,8 +922,8 @@ type ProteinTag
 
 type Protozoan
   {
-    name: String!
-    description: String
+    title: String!
+    description: String!
     accessPointURL: Uri!
     refSKU: String!
     unitDefinition: String
@@ -1018,7 +1021,7 @@ type RI
 
 type RiskGroup
   {
-    name: String!
+    title: String!
     description: String
     weight: Integer!
     inVocabulary: Vocabulary!
@@ -1038,8 +1041,8 @@ type SequenceReference
 
 type Service
   {
-    name: String!
-    description: String
+    title: String!
+    description: String!
     accessPointURL: Uri!
     refSKU: String!
     unitDefinition: String
@@ -1070,7 +1073,7 @@ type Service
 
 type SpecialFeature
   {
-    name: String!
+    title: String!
     description: String
     weight: Integer!
     inVocabulary: Vocabulary!
@@ -1086,7 +1089,7 @@ type SyntheticPartOrigin
 
 type Taxon
   {
-    name: String!
+    title: String!
     description: String
     weight: Integer!
     inVocabulary: Vocabulary!
@@ -1101,7 +1104,7 @@ type Taxon
 
 type TaxonomicRank
   {
-    name: String!
+    title: String!
     description: String
     weight: Integer!
     inVocabulary: Vocabulary!
@@ -1110,8 +1113,8 @@ type TaxonomicRank
 
 type Taxonomy
   {
-    name: String!
-    description: String
+    title: String!
+    description: String!
     taxon: [Taxon]!
     taxonDataProvider: DataProvider
     version: Version!
@@ -1122,7 +1125,7 @@ type Taxonomy
 
 interface Term
   {
-    name: String!
+    title: String!
     description: String
     weight: Integer!
     inVocabulary: Vocabulary!
@@ -1130,7 +1133,7 @@ interface Term
 
 type TransmissionMethod
   {
-    name: String!
+    title: String!
     description: String
     weight: Integer!
     inVocabulary: Vocabulary!
@@ -1138,7 +1141,7 @@ type TransmissionMethod
 
 type Variant
   {
-    name: String!
+    title: String!
     description: String
     weight: Integer!
     inVocabulary: Vocabulary!
@@ -1163,8 +1166,8 @@ type Video
 
 type Viroid
   {
-    name: String!
-    description: String
+    title: String!
+    description: String!
     accessPointURL: Uri!
     refSKU: String!
     unitDefinition: String
@@ -1218,8 +1221,8 @@ type Viroid
 
 type Virus
   {
-    name: String!
-    description: String
+    title: String!
+    description: String!
     accessPointURL: Uri!
     refSKU: String!
     unitDefinition: String
@@ -1276,7 +1279,7 @@ type Virus
 
 type VirusName
   {
-    name: String!
+    title: String!
     description: String
     weight: Integer!
     inVocabulary: Vocabulary!
@@ -1286,8 +1289,8 @@ type VirusName
 
 type Vocabulary
   {
-    name: String!
-    description: String
+    title: String!
+    description: String!
     termDataProvider: DataProvider
     term: [Term]
   }

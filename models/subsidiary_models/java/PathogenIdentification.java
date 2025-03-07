@@ -5,7 +5,7 @@ import lombok.*;
 
 
 
-/* version: 1.0.8498 */
+/* version: 1.0.8636 */
 
 
 /**
@@ -13,7 +13,7 @@ import lombok.*;
 **/
 @Data
 @EqualsAndHashCode(callSuper=false)
-public class PathogenIdentification extends Dataset {
+public class PathogenIdentification extends Resource {
 
   private Taxon taxon;
   private CommonName pathogenName;

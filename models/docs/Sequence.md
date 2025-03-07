@@ -20,8 +20,8 @@ URI: [EVORAO:Sequence](https://raw.githubusercontent.com/EVORA-project/evora-ont
  classDiagram
     class Sequence
     click Sequence href "../Sequence"
-      Dataset <|-- Sequence
-        click Dataset href "../Dataset"
+      Resource <|-- Sequence
+        click Resource href "../Resource"
       
       Sequence : sequenceFASTA
         
@@ -43,8 +43,7 @@ URI: [EVORAO:Sequence](https://raw.githubusercontent.com/EVORA-project/evora-ont
 
 ## Inheritance
 * [Resource](Resource.md)
-    * [Dataset](Dataset.md)
-        * **Sequence**
+    * **Sequence**
 
 
 
@@ -124,7 +123,7 @@ from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs
 close_mappings:
 - wd:Q3511065
 - wd:Q3511065
-is_a: Dataset
+is_a: Resource
 slots:
 - sequenceReference
 - sequenceFASTA
@@ -171,7 +170,7 @@ from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs
 close_mappings:
 - wd:Q3511065
 - wd:Q3511065
-is_a: Dataset
+is_a: Resource
 slot_usage:
   sequenceReference:
     name: sequenceReference

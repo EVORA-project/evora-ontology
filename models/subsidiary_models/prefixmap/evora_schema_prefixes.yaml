@@ -19,5 +19,26 @@
    "vcard": "http://www.w3.org/2006/vcard/ns#",
    "wd": "http://www.wikidata.org/entity/",
    "wdp": "http://www.wikidata.org/prop/",
-   "xsd": "http://www.w3.org/2001/XMLSchema#"
+   "xsd": "http://www.w3.org/2001/XMLSchema#",
+   "Catalogue": {
+      "@id": "dcat:Catalog"
+   },
+   "DataService": {
+      "@id": "dcat:DataService"
+   },
+   "Dataset": {
+      "@id": "dcat:Dataset"
+   },
+   "Organization": {
+      "@id": "foaf:Organization"
+   },
+   "Person": {
+      "@id": "foaf:Person"
+   },
+   "PersonOrOrganization": {
+      "@id": "foaf:Agent"
+   },
+   "Resource": {
+      "@id": "dcat:Resource"
+   }
 }

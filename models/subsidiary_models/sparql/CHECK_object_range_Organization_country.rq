@@ -28,7 +28,7 @@ SELECT
   ?object
 WHERE {
  GRAPH ?graph {
-  ?subject rdf:type EVORAO:Organization ;
+  ?subject rdf:type foaf:Organization ;
      ?predicate ?object .
   FILTER NOT EXISTS {
     ?object rdf:type ?otype .

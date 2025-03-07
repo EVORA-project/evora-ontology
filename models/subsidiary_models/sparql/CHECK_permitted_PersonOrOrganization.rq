@@ -22,11 +22,11 @@ PREFIX linkml: <https://w3id.org/linkml/>
 
 SELECT ?g ?s ?p WHERE {
  GRAPH ?g {
-  ?s rdf:type EVORAO:PersonOrOrganization ;
+  ?s rdf:type foaf:Agent ;
      ?p ?o .
   FILTER ( ?p NOT IN (
    EVORAO:name,
-   EVORAO:description,
+   dct:description,
    EVORAO:homePage,
    EVORAO:contactPoint,
    EVORAO:logo,

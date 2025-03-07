@@ -2,21 +2,24 @@
 --     * Slot: id Description: 
 -- # Class: "Dataset" Description: "A collection of data, published or curated by a single agent, and available for access"
 --     * Slot: id Description: 
+--     * Slot: title Description: A name given to the resource
+--     * Slot: description Description: A short explanation of the characteristics, features, or nature of the current item
 -- # Class: "DataService" Description: "A collection of operations that provides access to one or more datasets or data processing functions"
 --     * Slot: id Description: 
---     * Slot: name Description: The label that allows humans to identify the current item
+--     * Slot: title Description: A name given to the resource
 --     * Slot: description Description: A short explanation of the characteristics, features, or nature of the current item
+--     * Slot: endpointURL Description: The URL template that allows to get the content
 -- # Class: "Version" Description: "Numeric code assigned to identify a particular historical version of a work (e.g. software or technical standards)"
 --     * Slot: id Description: 
 --     * Slot: ID Description: The version identifier
 --     * Slot: versionOf_id Description: Identifier of what the version qualifies
 -- # Class: "Catalogue" Description: "A curated collection of metadata about resources"
 --     * Slot: id Description: 
---     * Slot: name Description: The label that allows humans to identify the current item
+--     * Slot: title Description: A name given to the resource
 --     * Slot: description Description: A short explanation of the characteristics, features, or nature of the current item
 -- # Class: "Taxonomy" Description: "Science of naming, defining and classifying organisms"
 --     * Slot: id Description: 
---     * Slot: name Description: The label that allows humans to identify the current item
+--     * Slot: title Description: A name given to the resource
 --     * Slot: description Description: A short explanation of the characteristics, features, or nature of the current item
 --     * Slot: taxonDataProvider_id Description: The data provider for the taxons of the taxonomy
 --     * Slot: version_id Description: The version of this instance of entity
@@ -27,12 +30,12 @@
 --     * Slot: loginRequestMethod Description: The http request method used to acces the login request url
 --     * Slot: loginURL Description: The URL template that allows to log in if required
 --     * Slot: loginTokenName Description: The name of the token, unique identifier of an interaction session, that will have to be reused as credential in the query
---     * Slot: queryURL Description: The URL template that allows to get the content
 --     * Slot: queryMethod Description: The http request method used to access the requested query url
 --     * Slot: contentType Description: The content type of the response to the queries
 --     * Slot: weight Description: A numerical value indicating relative importance or priority, generally processed in ascending order. This weight helps prioritize content when organizing or processing data. Its value can be negative, with a default set to 0
---     * Slot: name Description: The label that allows humans to identify the current item
+--     * Slot: title Description: A name given to the resource
 --     * Slot: description Description: A short explanation of the characteristics, features, or nature of the current item
+--     * Slot: endpointURL Description: The URL template that allows to get the content
 --     * Slot: license_id Description: Information about terms and conditions under which the subject can be used, shared, or distributed, indicating any restrictions or permissions
 --     * Slot: providedEntityType_id Description: The identification of the entity type (Class) described by the response to the query
 -- # Class: "PathogenIdentification" Description: "A collection of distinguishing information that enables the differentiation of a pathogen from another"
@@ -48,159 +51,159 @@
 --     * Slot: variant_id Description: An organism with one or more new mutations is referred to as a “variant” of the original organism if not sufficiently different to be termed a distinct strain
 -- # Class: "Publication" Description: "A scientific publication"
 --     * Slot: id Description: 
---     * Slot: title Description: The descriptive word or phrase that identifies the current piece of work
+--     * Slot: title Description: A name given to the resource
 --     * Slot: authors Description: The list of authors
 --     * Slot: abstract Description: Concise summary of the publication
 --     * Slot: relatedDOI_id Description: Any Digital Object Identifier that can be related
 --     * Slot: journal_id Description: The scientific journal in which the publication was published
 -- # Class: "Vocabulary" Description: "A subset of words or phrases specific to a particular subject or field"
 --     * Slot: id Description: 
---     * Slot: name Description: The label that allows humans to identify the current item
+--     * Slot: title Description: A name given to the resource
 --     * Slot: description Description: A short explanation of the characteristics, features, or nature of the current item
 --     * Slot: termDataProvider_id Description: An external API or Endpoint that permits to retrieve the terms of this vocabulary
 -- # Class: "Term" Description: "Word or phrase from a specialized area of knowledge"
 --     * Slot: id Description: 
---     * Slot: name Description: The label that allows humans to identify the current item
+--     * Slot: title Description: A name given to the resource
 --     * Slot: description Description: A short explanation of the characteristics, features, or nature of the current item
 --     * Slot: weight Description: A numerical value indicating relative importance or priority, generally processed in ascending order. This weight helps prioritize content when organizing or processing data. Its value can be negative, with a default set to 0
 --     * Slot: inVocabulary_id Description: Terms belong to a specific vocabulary
 -- # Class: "CommonName" Description: "Vernacular name that is the name used in everyday language to refer to an organism or group of organisms. This name is typically easier to remember and pronounce compared to the scientific name"
 --     * Slot: id Description: 
---     * Slot: name Description: The label that allows humans to identify the current item
+--     * Slot: title Description: A name given to the resource
 --     * Slot: description Description: A short explanation of the characteristics, features, or nature of the current item
 --     * Slot: weight Description: A numerical value indicating relative importance or priority, generally processed in ascending order. This weight helps prioritize content when organizing or processing data. Its value can be negative, with a default set to 0
 --     * Slot: inVocabulary_id Description: Terms belong to a specific vocabulary
 -- # Class: "VirusName" Description: "A virus vernacular name or a name that describes a group of viruses"
 --     * Slot: id Description: 
---     * Slot: name Description: The label that allows humans to identify the current item
+--     * Slot: title Description: A name given to the resource
 --     * Slot: description Description: A short explanation of the characteristics, features, or nature of the current item
 --     * Slot: weight Description: A numerical value indicating relative importance or priority, generally processed in ascending order. This weight helps prioritize content when organizing or processing data. Its value can be negative, with a default set to 0
 --     * Slot: inVocabulary_id Description: Terms belong to a specific vocabulary
 -- # Class: "AlternateName" Description: "List of other names for things"
 --     * Slot: id Description: 
---     * Slot: name Description: The label that allows humans to identify the current item
+--     * Slot: title Description: A name given to the resource
 --     * Slot: description Description: A short explanation of the characteristics, features, or nature of the current item
 --     * Slot: weight Description: A numerical value indicating relative importance or priority, generally processed in ascending order. This weight helps prioritize content when organizing or processing data. Its value can be negative, with a default set to 0
 --     * Slot: inVocabulary_id Description: Terms belong to a specific vocabulary
 -- # Class: "RiskGroup" Description: "Risk group classification guides initial handling of biological agents in labs but doesn't systematically equate to biosafety levels. Actual risk varies with the agent, procedures, and personnel competence"
 --     * Slot: id Description: 
---     * Slot: name Description: The label that allows humans to identify the current item
+--     * Slot: title Description: A name given to the resource
 --     * Slot: description Description: A short explanation of the characteristics, features, or nature of the current item
 --     * Slot: weight Description: A numerical value indicating relative importance or priority, generally processed in ascending order. This weight helps prioritize content when organizing or processing data. Its value can be negative, with a default set to 0
 --     * Slot: inVocabulary_id Description: Terms belong to a specific vocabulary
 -- # Class: "DOI" Description: "A unique string identifier assigned to a digital object, providing a permanent link for reliable citation and access.  The Digital Object Identifier (DOI) is a persistent identifier that is an ISO standard"
 --     * Slot: id Description: 
---     * Slot: name Description: The label that allows humans to identify the current item
+--     * Slot: title Description: A name given to the resource
 --     * Slot: description Description: A short explanation of the characteristics, features, or nature of the current item
 --     * Slot: weight Description: A numerical value indicating relative importance or priority, generally processed in ascending order. This weight helps prioritize content when organizing or processing data. Its value can be negative, with a default set to 0
 --     * Slot: inVocabulary_id Description: Terms belong to a specific vocabulary
 -- # Class: "Journal" Description: "Periodical journal publishing scientific research"
 --     * Slot: id Description: 
---     * Slot: name Description: The label that allows humans to identify the current item
+--     * Slot: title Description: A name given to the resource
 --     * Slot: description Description: A short explanation of the characteristics, features, or nature of the current item
 --     * Slot: weight Description: A numerical value indicating relative importance or priority, generally processed in ascending order. This weight helps prioritize content when organizing or processing data. Its value can be negative, with a default set to 0
 --     * Slot: inVocabulary_id Description: Terms belong to a specific vocabulary
 -- # Class: "PDBReference" Description: "Identifier for 3D structural data as per the PDB (Protein Data Bank) database"
 --     * Slot: id Description: 
---     * Slot: name Description: The label that allows humans to identify the current item
+--     * Slot: title Description: A name given to the resource
 --     * Slot: description Description: A short explanation of the characteristics, features, or nature of the current item
 --     * Slot: weight Description: A numerical value indicating relative importance or priority, generally processed in ascending order. This weight helps prioritize content when organizing or processing data. Its value can be negative, with a default set to 0
 --     * Slot: inVocabulary_id Description: Terms belong to a specific vocabulary
 -- # Class: "Keyword" Description: "A term or phrase used to tag and categorize content"
 --     * Slot: id Description: 
---     * Slot: name Description: The label that allows humans to identify the current item
+--     * Slot: title Description: A name given to the resource
 --     * Slot: description Description: A short explanation of the characteristics, features, or nature of the current item
 --     * Slot: weight Description: A numerical value indicating relative importance or priority, generally processed in ascending order. This weight helps prioritize content when organizing or processing data. Its value can be negative, with a default set to 0
 --     * Slot: inVocabulary_id Description: Terms belong to a specific vocabulary
 -- # Class: "ProteinTag" Description: "Peptide sequence genetically grafted onto a recombinant protein"
 --     * Slot: id Description: 
---     * Slot: name Description: The label that allows humans to identify the current item
+--     * Slot: title Description: A name given to the resource
 --     * Slot: description Description: A short explanation of the characteristics, features, or nature of the current item
 --     * Slot: weight Description: A numerical value indicating relative importance or priority, generally processed in ascending order. This weight helps prioritize content when organizing or processing data. Its value can be negative, with a default set to 0
 --     * Slot: inVocabulary_id Description: Terms belong to a specific vocabulary
 -- # Class: "SpecialFeature" Description: "Distinctive attributes of a product that set it apart from other similar items e.g., Reference strain, Vaccinal strain, Antiviral resistant strain ..."
 --     * Slot: id Description: 
---     * Slot: name Description: The label that allows humans to identify the current item
+--     * Slot: title Description: A name given to the resource
 --     * Slot: description Description: A short explanation of the characteristics, features, or nature of the current item
 --     * Slot: weight Description: A numerical value indicating relative importance or priority, generally processed in ascending order. This weight helps prioritize content when organizing or processing data. Its value can be negative, with a default set to 0
 --     * Slot: inVocabulary_id Description: Terms belong to a specific vocabulary
 -- # Class: "ExpressionVector" Description: "A reference to an expression vector plasmid, typically embedding a resistance marker for inducible protein expression"
 --     * Slot: id Description: 
---     * Slot: name Description: The label that allows humans to identify the current item
+--     * Slot: title Description: A name given to the resource
 --     * Slot: description Description: A short explanation of the characteristics, features, or nature of the current item
 --     * Slot: weight Description: A numerical value indicating relative importance or priority, generally processed in ascending order. This weight helps prioritize content when organizing or processing data. Its value can be negative, with a default set to 0
 --     * Slot: inVocabulary_id Description: Terms belong to a specific vocabulary
 -- # Class: "PlasmidSelection" Description: "The process of identifying cells that have successfully incorporated a plasmid, typically using antibiotic resistance markers"
 --     * Slot: id Description: 
---     * Slot: name Description: The label that allows humans to identify the current item
+--     * Slot: title Description: A name given to the resource
 --     * Slot: description Description: A short explanation of the characteristics, features, or nature of the current item
 --     * Slot: weight Description: A numerical value indicating relative importance or priority, generally processed in ascending order. This weight helps prioritize content when organizing or processing data. Its value can be negative, with a default set to 0
 --     * Slot: inVocabulary_id Description: Terms belong to a specific vocabulary
 -- # Class: "PropagationHost" Description: "The organism used to grow and multiply the pathogen under controlled conditions"
 --     * Slot: id Description: 
---     * Slot: name Description: The label that allows humans to identify the current item
+--     * Slot: title Description: A name given to the resource
 --     * Slot: description Description: A short explanation of the characteristics, features, or nature of the current item
 --     * Slot: weight Description: A numerical value indicating relative importance or priority, generally processed in ascending order. This weight helps prioritize content when organizing or processing data. Its value can be negative, with a default set to 0
 --     * Slot: inVocabulary_id Description: Terms belong to a specific vocabulary
 -- # Class: "TransmissionMethod" Description: "The process by which the pathogen spreads between hosts"
 --     * Slot: id Description: 
---     * Slot: name Description: The label that allows humans to identify the current item
+--     * Slot: title Description: A name given to the resource
 --     * Slot: description Description: A short explanation of the characteristics, features, or nature of the current item
 --     * Slot: weight Description: A numerical value indicating relative importance or priority, generally processed in ascending order. This weight helps prioritize content when organizing or processing data. Its value can be negative, with a default set to 0
 --     * Slot: inVocabulary_id Description: Terms belong to a specific vocabulary
 -- # Class: "ProductionCellLine" Description: "A population of cells that originates from a primary culture, adapted to grow and divide under laboratory conditions. Used in biotechnology to consistently produce biological substances"
 --     * Slot: id Description: 
---     * Slot: name Description: The label that allows humans to identify the current item
+--     * Slot: title Description: A name given to the resource
 --     * Slot: description Description: A short explanation of the characteristics, features, or nature of the current item
 --     * Slot: weight Description: A numerical value indicating relative importance or priority, generally processed in ascending order. This weight helps prioritize content when organizing or processing data. Its value can be negative, with a default set to 0
 --     * Slot: inVocabulary_id Description: Terms belong to a specific vocabulary
 -- # Class: "ProductCategory" Description: "A term used to classify a group of products that share common characteristics or functions, which helps in their organization"
 --     * Slot: id Description: 
---     * Slot: name Description: The label that allows humans to identify the current item
+--     * Slot: title Description: A name given to the resource
 --     * Slot: description Description: A short explanation of the characteristics, features, or nature of the current item
 --     * Slot: weight Description: A numerical value indicating relative importance or priority, generally processed in ascending order. This weight helps prioritize content when organizing or processing data. Its value can be negative, with a default set to 0
 --     * Slot: parentCategory_id Description: An overarching category that encompasses the current category within a hierarchical classification system. It serves as the top-level classification, organizing related subcategories under its umbrella to create a structured and logical order.
 --     * Slot: inVocabulary_id Description: Terms belong to a specific vocabulary
 -- # Class: "IsolationHost" Description: "Host organism from which the pathogen was isolated"
 --     * Slot: id Description: 
---     * Slot: name Description: The label that allows humans to identify the current item
+--     * Slot: title Description: A name given to the resource
 --     * Slot: description Description: A short explanation of the characteristics, features, or nature of the current item
 --     * Slot: weight Description: A numerical value indicating relative importance or priority, generally processed in ascending order. This weight helps prioritize content when organizing or processing data. Its value can be negative, with a default set to 0
 --     * Slot: inVocabulary_id Description: Terms belong to a specific vocabulary
 -- # Class: "GeographicalOrigin" Description: "The specific location or region where a physical item, originates or is naturally found"
 --     * Slot: id Description: 
---     * Slot: name Description: The label that allows humans to identify the current item
+--     * Slot: title Description: A name given to the resource
 --     * Slot: description Description: A short explanation of the characteristics, features, or nature of the current item
 --     * Slot: weight Description: A numerical value indicating relative importance or priority, generally processed in ascending order. This weight helps prioritize content when organizing or processing data. Its value can be negative, with a default set to 0
 --     * Slot: inVocabulary_id Description: Terms belong to a specific vocabulary
 -- # Class: "IPLCOrigin" Description: "The IPLC area (Indigenous People and Local Communities) from which a physical item originates"
 --     * Slot: id Description: 
---     * Slot: name Description: The label that allows humans to identify the current item
+--     * Slot: title Description: A name given to the resource
 --     * Slot: description Description: A short explanation of the characteristics, features, or nature of the current item
 --     * Slot: weight Description: A numerical value indicating relative importance or priority, generally processed in ascending order. This weight helps prioritize content when organizing or processing data. Its value can be negative, with a default set to 0
 --     * Slot: inVocabulary_id Description: Terms belong to a specific vocabulary
 -- # Class: "Country" Description: "The country as of ISO3166"
 --     * Slot: id Description: 
 --     * Slot: alpha2Code Description: Two-letter country codes from ISO 3166-1 alpha-2
---     * Slot: name Description: The label that allows humans to identify the current item
+--     * Slot: title Description: A name given to the resource
 --     * Slot: description Description: A short explanation of the characteristics, features, or nature of the current item
 --     * Slot: weight Description: A numerical value indicating relative importance or priority, generally processed in ascending order. This weight helps prioritize content when organizing or processing data. Its value can be negative, with a default set to 0
 --     * Slot: inVocabulary_id Description: Terms belong to a specific vocabulary
 -- # Class: "IATAClassification" Description: "The corresponding International Air Transport Association (IATA)'s category for dangerous goods that are transported by air"
 --     * Slot: id Description: 
---     * Slot: name Description: The label that allows humans to identify the current item
+--     * Slot: title Description: A name given to the resource
 --     * Slot: description Description: A short explanation of the characteristics, features, or nature of the current item
 --     * Slot: weight Description: A numerical value indicating relative importance or priority, generally processed in ascending order. This weight helps prioritize content when organizing or processing data. Its value can be negative, with a default set to 0
 --     * Slot: inVocabulary_id Description: Terms belong to a specific vocabulary
 -- # Class: "Variant" Description: "An organism with one or more new mutations is referred to as a “variant” of the original organism if not sufficiently different to be termed a distinct strain"
 --     * Slot: id Description: 
---     * Slot: name Description: The label that allows humans to identify the current item
+--     * Slot: title Description: A name given to the resource
 --     * Slot: description Description: A short explanation of the characteristics, features, or nature of the current item
 --     * Slot: weight Description: A numerical value indicating relative importance or priority, generally processed in ascending order. This weight helps prioritize content when organizing or processing data. Its value can be negative, with a default set to 0
 --     * Slot: inVocabulary_id Description: Terms belong to a specific vocabulary
 -- # Class: "TaxonomicRank" Description: "The possible taxonomic ranks and their description"
 --     * Slot: id Description: 
---     * Slot: name Description: The label that allows humans to identify the current item
+--     * Slot: title Description: A name given to the resource
 --     * Slot: description Description: A short explanation of the characteristics, features, or nature of the current item
 --     * Slot: weight Description: A numerical value indicating relative importance or priority, generally processed in ascending order. This weight helps prioritize content when organizing or processing data. Its value can be negative, with a default set to 0
 --     * Slot: inVocabulary_id Description: Terms belong to a specific vocabulary
@@ -208,7 +211,7 @@
 --     * Slot: id Description: 
 --     * Slot: taxonomicID Description: The taxonomic identifier as a persistent identifier accross releases
 --     * Slot: taxonomicNodeID Description: The taxonomic_Node Identifier as an identifier specific the current taxon in the corresponding release/version of the taxonomy
---     * Slot: name Description: The label that allows humans to identify the current item
+--     * Slot: title Description: A name given to the resource
 --     * Slot: description Description: A short explanation of the characteristics, features, or nature of the current item
 --     * Slot: weight Description: A numerical value indicating relative importance or priority, generally processed in ascending order. This weight helps prioritize content when organizing or processing data. Its value can be negative, with a default set to 0
 --     * Slot: parentTaxon_id Description: The parent taxon of the current taxon
@@ -229,7 +232,7 @@
 --     * Slot: sequenceProvider Description: The name of the sequence provider within the list of accepted sequence providers
 -- # Class: "PersonOrOrganization" Description: "A person or an organization"
 --     * Slot: id Description: 
---     * Slot: name Description: The label that allows humans to identify the current item
+--     * Slot: name Description: A word or set of words used to identify and refer to an entity
 --     * Slot: description Description: A short explanation of the characteristics, features, or nature of the current item
 --     * Slot: homePage Description: A web page that serves as the main or introductory page
 --     * Slot: contactPoint_id Description: An information that allows someone to establish communication
@@ -237,7 +240,7 @@
 -- # Class: "Person" Description: "An individual"
 --     * Slot: id Description: 
 --     * Slot: oRCIDiD Description: Unique persistent identifier for a person, provided by the Open Researcher and Contributor ID (ORCID) organisation
---     * Slot: name Description: The label that allows humans to identify the current item
+--     * Slot: name Description: A word or set of words used to identify and refer to an entity
 --     * Slot: description Description: A short explanation of the characteristics, features, or nature of the current item
 --     * Slot: homePage Description: A web page that serves as the main or introductory page
 --     * Slot: contactPoint_id Description: An information that allows someone to establish communication
@@ -245,7 +248,7 @@
 -- # Class: "Organization" Description: "A social entity established to meet needs or pursue specific goals"
 --     * Slot: id Description: 
 --     * Slot: rORiD Description: The corresponding organization's persistent identifier from the Research Organization Registry (ROR)
---     * Slot: name Description: The label that allows humans to identify the current item
+--     * Slot: name Description: A word or set of words used to identify and refer to an entity
 --     * Slot: description Description: A short explanation of the characteristics, features, or nature of the current item
 --     * Slot: homePage Description: A web page that serves as the main or introductory page
 --     * Slot: country_id Description: The country of the organization
@@ -254,7 +257,7 @@
 -- # Class: "RI" Description: "A research infrastructure"
 --     * Slot: id Description: 
 --     * Slot: rORiD Description: The corresponding organization's persistent identifier from the Research Organization Registry (ROR)
---     * Slot: name Description: The label that allows humans to identify the current item
+--     * Slot: name Description: A word or set of words used to identify and refer to an entity
 --     * Slot: description Description: A short explanation of the characteristics, features, or nature of the current item
 --     * Slot: homePage Description: A web page that serves as the main or introductory page
 --     * Slot: country_id Description: The country of the organization
@@ -263,7 +266,7 @@
 -- # Class: "Provider" Description: "A provider of products or services, as a specific organization"
 --     * Slot: id Description: 
 --     * Slot: rORiD Description: The corresponding organization's persistent identifier from the Research Organization Registry (ROR)
---     * Slot: name Description: The label that allows humans to identify the current item
+--     * Slot: name Description: A word or set of words used to identify and refer to an entity
 --     * Slot: description Description: A short explanation of the characteristics, features, or nature of the current item
 --     * Slot: homePage Description: A web page that serves as the main or introductory page
 --     * Slot: country_id Description: The country of the organization
@@ -271,7 +274,7 @@
 --     * Slot: logo_id Description: A path or URL to the related logo
 -- # Class: "Originator" Description: "The individual or organization responsible for the original discovery, isolation, or creation of an item, providing information about the source or origin of the sample"
 --     * Slot: id Description: 
---     * Slot: name Description: The label that allows humans to identify the current item
+--     * Slot: name Description: A word or set of words used to identify and refer to an entity
 --     * Slot: description Description: A short explanation of the characteristics, features, or nature of the current item
 --     * Slot: homePage Description: A web page that serves as the main or introductory page
 --     * Slot: contactPoint_id Description: An information that allows someone to establish communication
@@ -304,13 +307,11 @@
 --     * Slot: partIdentification Description: A short designation of this recombinant part of the related biological material
 -- # Class: "Collection" Description: "Set of products and services with some common characteristics"
 --     * Slot: id Description: 
---     * Slot: name Description: The label that allows humans to identify the current item
+--     * Slot: title Description: A name given to the resource
 --     * Slot: description Description: A short explanation of the characteristics, features, or nature of the current item
 --     * Slot: collectionDataProvider_id Description: The provider of the data of the collection
 -- # Class: "ProductOrService" Description: "A product or a service"
 --     * Slot: id Description: 
---     * Slot: name Description: The label that allows humans to identify the current item
---     * Slot: description Description: A short explanation of the characteristics, features, or nature of the current item
 --     * Slot: accessPointURL Description: The URL that permits to access to the product/service detailed description page on the provider's website and/or allows to place an order about it or at least describe the process to place an order/enquiry
 --     * Slot: refSKU Description: The reference or the stock keeping unit of the service or item provided in the provider's catalogue
 --     * Slot: unitDefinition Description: A short description of what will be delivered by ordering one unit of this item
@@ -322,6 +323,8 @@
 --     * Slot: technicalRecommendation Description: Expert advice or guidelines provided to ensure the optimal use, performance, and maintenance of what is provided, including best practices, troubleshooting tips, and procedural instructions
 --     * Slot: internalReference Description: Any reference or indication to be used for local retrieval purpose
 --     * Slot: note Description: An aditional information as a textual comment
+--     * Slot: title Description: A name given to the resource
+--     * Slot: description Description: A short explanation of the characteristics, features, or nature of the current item
 --     * Slot: category_id Description: The main category of the service or product
 --     * Slot: riskGroup_id Description: The highest risk group related to this resource. The risk group of a biological agent guiding its initial handling in labs according to the risk group classification defined by the WHO laboratory biosafety manual
 --     * Slot: provider_id Description: A provider of this product or service, as a specific organization
@@ -330,8 +333,6 @@
 --     * Slot: id Description: 
 --     * Slot: modelSpecies Description: The species of the infected organism in the experiment
 --     * Slot: modelType Description: The specific name of the infected organism, including its modification if necessary
---     * Slot: name Description: The label that allows humans to identify the current item
---     * Slot: description Description: A short explanation of the characteristics, features, or nature of the current item
 --     * Slot: accessPointURL Description: The URL that permits to access to the product/service detailed description page on the provider's website and/or allows to place an order about it or at least describe the process to place an order/enquiry
 --     * Slot: refSKU Description: The reference or the stock keeping unit of the service or item provided in the provider's catalogue
 --     * Slot: unitDefinition Description: A short description of what will be delivered by ordering one unit of this item
@@ -343,6 +344,8 @@
 --     * Slot: technicalRecommendation Description: Expert advice or guidelines provided to ensure the optimal use, performance, and maintenance of what is provided, including best practices, troubleshooting tips, and procedural instructions
 --     * Slot: internalReference Description: Any reference or indication to be used for local retrieval purpose
 --     * Slot: note Description: An aditional information as a textual comment
+--     * Slot: title Description: A name given to the resource
+--     * Slot: description Description: A short explanation of the characteristics, features, or nature of the current item
 --     * Slot: category_id Description: The main category of the service or product
 --     * Slot: riskGroup_id Description: The highest risk group related to this resource. The risk group of a biological agent guiding its initial handling in labs according to the risk group classification defined by the WHO laboratory biosafety manual
 --     * Slot: provider_id Description: A provider of this product or service, as a specific organization
@@ -353,8 +356,6 @@
 --     * Slot: storageConditions Description: Specifies the conditions under which the product has to be stored to maintain stability and integrity, such as temperature, buffer, and other environmental factors.
 --     * Slot: thirdPartyDistributionConsent Description: Indicates whether the biological material can be distributed without restriction to third parties, as indicated by the ABS permit, in case an ABS permit is required
 --     * Slot: usageRestrictions Description: Specifies any limitations or conditions on the use of the biological material, including restrictions on research, commercial use, or distribution, considering any potential concerns about the related genetic material
---     * Slot: name Description: The label that allows humans to identify the current item
---     * Slot: description Description: A short explanation of the characteristics, features, or nature of the current item
 --     * Slot: accessPointURL Description: The URL that permits to access to the product/service detailed description page on the provider's website and/or allows to place an order about it or at least describe the process to place an order/enquiry
 --     * Slot: refSKU Description: The reference or the stock keeping unit of the service or item provided in the provider's catalogue
 --     * Slot: unitDefinition Description: A short description of what will be delivered by ordering one unit of this item
@@ -366,6 +367,8 @@
 --     * Slot: technicalRecommendation Description: Expert advice or guidelines provided to ensure the optimal use, performance, and maintenance of what is provided, including best practices, troubleshooting tips, and procedural instructions
 --     * Slot: internalReference Description: Any reference or indication to be used for local retrieval purpose
 --     * Slot: note Description: An aditional information as a textual comment
+--     * Slot: title Description: A name given to the resource
+--     * Slot: description Description: A short explanation of the characteristics, features, or nature of the current item
 --     * Slot: hasIATAClassification_id Description: The corresponding International Air Transport Association (IATA)'s category for this Product
 --     * Slot: materialSafetyDataSheet_id Description: A Material Safety Data Sheet (MSDS) or Safety Data Sheet (SDS) is a standardized document that contains crucial occupational safety and health information related to the product
 --     * Slot: originator_id Description: The individual or organization responsible for the original discovery, isolation, or creation of an item, providing information about the source or origin of the sample
@@ -383,8 +386,6 @@
 --     * Slot: storageConditions Description: Specifies the conditions under which the product has to be stored to maintain stability and integrity, such as temperature, buffer, and other environmental factors.
 --     * Slot: thirdPartyDistributionConsent Description: Indicates whether the biological material can be distributed without restriction to third parties, as indicated by the ABS permit, in case an ABS permit is required
 --     * Slot: usageRestrictions Description: Specifies any limitations or conditions on the use of the biological material, including restrictions on research, commercial use, or distribution, considering any potential concerns about the related genetic material
---     * Slot: name Description: The label that allows humans to identify the current item
---     * Slot: description Description: A short explanation of the characteristics, features, or nature of the current item
 --     * Slot: accessPointURL Description: The URL that permits to access to the product/service detailed description page on the provider's website and/or allows to place an order about it or at least describe the process to place an order/enquiry
 --     * Slot: refSKU Description: The reference or the stock keeping unit of the service or item provided in the provider's catalogue
 --     * Slot: unitDefinition Description: A short description of what will be delivered by ordering one unit of this item
@@ -396,6 +397,8 @@
 --     * Slot: technicalRecommendation Description: Expert advice or guidelines provided to ensure the optimal use, performance, and maintenance of what is provided, including best practices, troubleshooting tips, and procedural instructions
 --     * Slot: internalReference Description: Any reference or indication to be used for local retrieval purpose
 --     * Slot: note Description: An aditional information as a textual comment
+--     * Slot: title Description: A name given to the resource
+--     * Slot: description Description: A short explanation of the characteristics, features, or nature of the current item
 --     * Slot: hasIATAClassification_id Description: The corresponding International Air Transport Association (IATA)'s category for this Product
 --     * Slot: materialSafetyDataSheet_id Description: A Material Safety Data Sheet (MSDS) or Safety Data Sheet (SDS) is a standardized document that contains crucial occupational safety and health information related to the product
 --     * Slot: originator_id Description: The individual or organization responsible for the original discovery, isolation, or creation of an item, providing information about the source or origin of the sample
@@ -414,8 +417,6 @@
 --     * Slot: storageConditions Description: Specifies the conditions under which the product has to be stored to maintain stability and integrity, such as temperature, buffer, and other environmental factors.
 --     * Slot: thirdPartyDistributionConsent Description: Indicates whether the biological material can be distributed without restriction to third parties, as indicated by the ABS permit, in case an ABS permit is required
 --     * Slot: usageRestrictions Description: Specifies any limitations or conditions on the use of the biological material, including restrictions on research, commercial use, or distribution, considering any potential concerns about the related genetic material
---     * Slot: name Description: The label that allows humans to identify the current item
---     * Slot: description Description: A short explanation of the characteristics, features, or nature of the current item
 --     * Slot: accessPointURL Description: The URL that permits to access to the product/service detailed description page on the provider's website and/or allows to place an order about it or at least describe the process to place an order/enquiry
 --     * Slot: refSKU Description: The reference or the stock keeping unit of the service or item provided in the provider's catalogue
 --     * Slot: unitDefinition Description: A short description of what will be delivered by ordering one unit of this item
@@ -427,6 +428,8 @@
 --     * Slot: technicalRecommendation Description: Expert advice or guidelines provided to ensure the optimal use, performance, and maintenance of what is provided, including best practices, troubleshooting tips, and procedural instructions
 --     * Slot: internalReference Description: Any reference or indication to be used for local retrieval purpose
 --     * Slot: note Description: An aditional information as a textual comment
+--     * Slot: title Description: A name given to the resource
+--     * Slot: description Description: A short explanation of the characteristics, features, or nature of the current item
 --     * Slot: hasIATAClassification_id Description: The corresponding International Air Transport Association (IATA)'s category for this Product
 --     * Slot: materialSafetyDataSheet_id Description: A Material Safety Data Sheet (MSDS) or Safety Data Sheet (SDS) is a standardized document that contains crucial occupational safety and health information related to the product
 --     * Slot: originator_id Description: The individual or organization responsible for the original discovery, isolation, or creation of an item, providing information about the source or origin of the sample
@@ -440,8 +443,6 @@
 --     * Slot: storageConditions Description: Specifies the conditions under which the product has to be stored to maintain stability and integrity, such as temperature, buffer, and other environmental factors.
 --     * Slot: thirdPartyDistributionConsent Description: Indicates whether the biological material can be distributed without restriction to third parties, as indicated by the ABS permit, in case an ABS permit is required
 --     * Slot: usageRestrictions Description: Specifies any limitations or conditions on the use of the biological material, including restrictions on research, commercial use, or distribution, considering any potential concerns about the related genetic material
---     * Slot: name Description: The label that allows humans to identify the current item
---     * Slot: description Description: A short explanation of the characteristics, features, or nature of the current item
 --     * Slot: accessPointURL Description: The URL that permits to access to the product/service detailed description page on the provider's website and/or allows to place an order about it or at least describe the process to place an order/enquiry
 --     * Slot: refSKU Description: The reference or the stock keeping unit of the service or item provided in the provider's catalogue
 --     * Slot: unitDefinition Description: A short description of what will be delivered by ordering one unit of this item
@@ -453,6 +454,8 @@
 --     * Slot: technicalRecommendation Description: Expert advice or guidelines provided to ensure the optimal use, performance, and maintenance of what is provided, including best practices, troubleshooting tips, and procedural instructions
 --     * Slot: internalReference Description: Any reference or indication to be used for local retrieval purpose
 --     * Slot: note Description: An aditional information as a textual comment
+--     * Slot: title Description: A name given to the resource
+--     * Slot: description Description: A short explanation of the characteristics, features, or nature of the current item
 --     * Slot: biologicalMaterialOrigin_id Description: Information about the origin of the biological material, essential for access, utilization, and benefit-sharing of genetic resources in compliance with the Nagoya Protocol
 --     * Slot: hasIATAClassification_id Description: The corresponding International Air Transport Association (IATA)'s category for this Product
 --     * Slot: materialSafetyDataSheet_id Description: A Material Safety Data Sheet (MSDS) or Safety Data Sheet (SDS) is a standardized document that contains crucial occupational safety and health information related to the product
@@ -475,8 +478,6 @@
 --     * Slot: storageConditions Description: Specifies the conditions under which the product has to be stored to maintain stability and integrity, such as temperature, buffer, and other environmental factors.
 --     * Slot: thirdPartyDistributionConsent Description: Indicates whether the biological material can be distributed without restriction to third parties, as indicated by the ABS permit, in case an ABS permit is required
 --     * Slot: usageRestrictions Description: Specifies any limitations or conditions on the use of the biological material, including restrictions on research, commercial use, or distribution, considering any potential concerns about the related genetic material
---     * Slot: name Description: The label that allows humans to identify the current item
---     * Slot: description Description: A short explanation of the characteristics, features, or nature of the current item
 --     * Slot: accessPointURL Description: The URL that permits to access to the product/service detailed description page on the provider's website and/or allows to place an order about it or at least describe the process to place an order/enquiry
 --     * Slot: refSKU Description: The reference or the stock keeping unit of the service or item provided in the provider's catalogue
 --     * Slot: unitDefinition Description: A short description of what will be delivered by ordering one unit of this item
@@ -488,6 +489,8 @@
 --     * Slot: technicalRecommendation Description: Expert advice or guidelines provided to ensure the optimal use, performance, and maintenance of what is provided, including best practices, troubleshooting tips, and procedural instructions
 --     * Slot: internalReference Description: Any reference or indication to be used for local retrieval purpose
 --     * Slot: note Description: An aditional information as a textual comment
+--     * Slot: title Description: A name given to the resource
+--     * Slot: description Description: A short explanation of the characteristics, features, or nature of the current item
 --     * Slot: biologicalMaterialOrigin_id Description: Information about the origin of the biological material, essential for access, utilization, and benefit-sharing of genetic resources in compliance with the Nagoya Protocol
 --     * Slot: clonedIntoPlasmid_id Description: The plasmid into which the nucleic acid has been cloned
 --     * Slot: hasTAG_id Description: TAG sequence used for purposes such as purification, detection, or localization
@@ -507,8 +510,6 @@
 --     * Slot: storageConditions Description: Specifies the conditions under which the product has to be stored to maintain stability and integrity, such as temperature, buffer, and other environmental factors.
 --     * Slot: thirdPartyDistributionConsent Description: Indicates whether the biological material can be distributed without restriction to third parties, as indicated by the ABS permit, in case an ABS permit is required
 --     * Slot: usageRestrictions Description: Specifies any limitations or conditions on the use of the biological material, including restrictions on research, commercial use, or distribution, considering any potential concerns about the related genetic material
---     * Slot: name Description: The label that allows humans to identify the current item
---     * Slot: description Description: A short explanation of the characteristics, features, or nature of the current item
 --     * Slot: accessPointURL Description: The URL that permits to access to the product/service detailed description page on the provider's website and/or allows to place an order about it or at least describe the process to place an order/enquiry
 --     * Slot: refSKU Description: The reference or the stock keeping unit of the service or item provided in the provider's catalogue
 --     * Slot: unitDefinition Description: A short description of what will be delivered by ordering one unit of this item
@@ -520,6 +521,8 @@
 --     * Slot: technicalRecommendation Description: Expert advice or guidelines provided to ensure the optimal use, performance, and maintenance of what is provided, including best practices, troubleshooting tips, and procedural instructions
 --     * Slot: internalReference Description: Any reference or indication to be used for local retrieval purpose
 --     * Slot: note Description: An aditional information as a textual comment
+--     * Slot: title Description: A name given to the resource
+--     * Slot: description Description: A short explanation of the characteristics, features, or nature of the current item
 --     * Slot: hasIATAClassification_id Description: The corresponding International Air Transport Association (IATA)'s category for this Product
 --     * Slot: materialSafetyDataSheet_id Description: A Material Safety Data Sheet (MSDS) or Safety Data Sheet (SDS) is a standardized document that contains crucial occupational safety and health information related to the product
 --     * Slot: originator_id Description: The individual or organization responsible for the original discovery, isolation, or creation of an item, providing information about the source or origin of the sample
@@ -533,8 +536,6 @@
 --     * Slot: storageConditions Description: Specifies the conditions under which the product has to be stored to maintain stability and integrity, such as temperature, buffer, and other environmental factors.
 --     * Slot: thirdPartyDistributionConsent Description: Indicates whether the biological material can be distributed without restriction to third parties, as indicated by the ABS permit, in case an ABS permit is required
 --     * Slot: usageRestrictions Description: Specifies any limitations or conditions on the use of the biological material, including restrictions on research, commercial use, or distribution, considering any potential concerns about the related genetic material
---     * Slot: name Description: The label that allows humans to identify the current item
---     * Slot: description Description: A short explanation of the characteristics, features, or nature of the current item
 --     * Slot: accessPointURL Description: The URL that permits to access to the product/service detailed description page on the provider's website and/or allows to place an order about it or at least describe the process to place an order/enquiry
 --     * Slot: refSKU Description: The reference or the stock keeping unit of the service or item provided in the provider's catalogue
 --     * Slot: unitDefinition Description: A short description of what will be delivered by ordering one unit of this item
@@ -546,6 +547,8 @@
 --     * Slot: technicalRecommendation Description: Expert advice or guidelines provided to ensure the optimal use, performance, and maintenance of what is provided, including best practices, troubleshooting tips, and procedural instructions
 --     * Slot: internalReference Description: Any reference or indication to be used for local retrieval purpose
 --     * Slot: note Description: An aditional information as a textual comment
+--     * Slot: title Description: A name given to the resource
+--     * Slot: description Description: A short explanation of the characteristics, features, or nature of the current item
 --     * Slot: hasIATAClassification_id Description: The corresponding International Air Transport Association (IATA)'s category for this Product
 --     * Slot: materialSafetyDataSheet_id Description: A Material Safety Data Sheet (MSDS) or Safety Data Sheet (SDS) is a standardized document that contains crucial occupational safety and health information related to the product
 --     * Slot: originator_id Description: The individual or organization responsible for the original discovery, isolation, or creation of an item, providing information about the source or origin of the sample
@@ -570,8 +573,6 @@
 --     * Slot: storageConditions Description: Specifies the conditions under which the product has to be stored to maintain stability and integrity, such as temperature, buffer, and other environmental factors.
 --     * Slot: thirdPartyDistributionConsent Description: Indicates whether the biological material can be distributed without restriction to third parties, as indicated by the ABS permit, in case an ABS permit is required
 --     * Slot: usageRestrictions Description: Specifies any limitations or conditions on the use of the biological material, including restrictions on research, commercial use, or distribution, considering any potential concerns about the related genetic material
---     * Slot: name Description: The label that allows humans to identify the current item
---     * Slot: description Description: A short explanation of the characteristics, features, or nature of the current item
 --     * Slot: accessPointURL Description: The URL that permits to access to the product/service detailed description page on the provider's website and/or allows to place an order about it or at least describe the process to place an order/enquiry
 --     * Slot: refSKU Description: The reference or the stock keeping unit of the service or item provided in the provider's catalogue
 --     * Slot: unitDefinition Description: A short description of what will be delivered by ordering one unit of this item
@@ -583,6 +584,8 @@
 --     * Slot: technicalRecommendation Description: Expert advice or guidelines provided to ensure the optimal use, performance, and maintenance of what is provided, including best practices, troubleshooting tips, and procedural instructions
 --     * Slot: internalReference Description: Any reference or indication to be used for local retrieval purpose
 --     * Slot: note Description: An aditional information as a textual comment
+--     * Slot: title Description: A name given to the resource
+--     * Slot: description Description: A short explanation of the characteristics, features, or nature of the current item
 --     * Slot: biologicalMaterialOrigin_id Description: Information about the origin of the biological material, essential for access, utilization, and benefit-sharing of genetic resources in compliance with the Nagoya Protocol
 --     * Slot: hasIATAClassification_id Description: The corresponding International Air Transport Association (IATA)'s category for this Product
 --     * Slot: materialSafetyDataSheet_id Description: A Material Safety Data Sheet (MSDS) or Safety Data Sheet (SDS) is a standardized document that contains crucial occupational safety and health information related to the product
@@ -610,8 +613,6 @@
 --     * Slot: storageConditions Description: Specifies the conditions under which the product has to be stored to maintain stability and integrity, such as temperature, buffer, and other environmental factors.
 --     * Slot: thirdPartyDistributionConsent Description: Indicates whether the biological material can be distributed without restriction to third parties, as indicated by the ABS permit, in case an ABS permit is required
 --     * Slot: usageRestrictions Description: Specifies any limitations or conditions on the use of the biological material, including restrictions on research, commercial use, or distribution, considering any potential concerns about the related genetic material
---     * Slot: name Description: The label that allows humans to identify the current item
---     * Slot: description Description: A short explanation of the characteristics, features, or nature of the current item
 --     * Slot: accessPointURL Description: The URL that permits to access to the product/service detailed description page on the provider's website and/or allows to place an order about it or at least describe the process to place an order/enquiry
 --     * Slot: refSKU Description: The reference or the stock keeping unit of the service or item provided in the provider's catalogue
 --     * Slot: unitDefinition Description: A short description of what will be delivered by ordering one unit of this item
@@ -623,6 +624,8 @@
 --     * Slot: technicalRecommendation Description: Expert advice or guidelines provided to ensure the optimal use, performance, and maintenance of what is provided, including best practices, troubleshooting tips, and procedural instructions
 --     * Slot: internalReference Description: Any reference or indication to be used for local retrieval purpose
 --     * Slot: note Description: An aditional information as a textual comment
+--     * Slot: title Description: A name given to the resource
+--     * Slot: description Description: A short explanation of the characteristics, features, or nature of the current item
 --     * Slot: biologicalMaterialOrigin_id Description: Information about the origin of the biological material, essential for access, utilization, and benefit-sharing of genetic resources in compliance with the Nagoya Protocol
 --     * Slot: hasIATAClassification_id Description: The corresponding International Air Transport Association (IATA)'s category for this Product
 --     * Slot: materialSafetyDataSheet_id Description: A Material Safety Data Sheet (MSDS) or Safety Data Sheet (SDS) is a standardized document that contains crucial occupational safety and health information related to the product
@@ -648,8 +651,6 @@
 --     * Slot: storageConditions Description: Specifies the conditions under which the product has to be stored to maintain stability and integrity, such as temperature, buffer, and other environmental factors.
 --     * Slot: thirdPartyDistributionConsent Description: Indicates whether the biological material can be distributed without restriction to third parties, as indicated by the ABS permit, in case an ABS permit is required
 --     * Slot: usageRestrictions Description: Specifies any limitations or conditions on the use of the biological material, including restrictions on research, commercial use, or distribution, considering any potential concerns about the related genetic material
---     * Slot: name Description: The label that allows humans to identify the current item
---     * Slot: description Description: A short explanation of the characteristics, features, or nature of the current item
 --     * Slot: accessPointURL Description: The URL that permits to access to the product/service detailed description page on the provider's website and/or allows to place an order about it or at least describe the process to place an order/enquiry
 --     * Slot: refSKU Description: The reference or the stock keeping unit of the service or item provided in the provider's catalogue
 --     * Slot: unitDefinition Description: A short description of what will be delivered by ordering one unit of this item
@@ -661,6 +662,8 @@
 --     * Slot: technicalRecommendation Description: Expert advice or guidelines provided to ensure the optimal use, performance, and maintenance of what is provided, including best practices, troubleshooting tips, and procedural instructions
 --     * Slot: internalReference Description: Any reference or indication to be used for local retrieval purpose
 --     * Slot: note Description: An aditional information as a textual comment
+--     * Slot: title Description: A name given to the resource
+--     * Slot: description Description: A short explanation of the characteristics, features, or nature of the current item
 --     * Slot: biologicalMaterialOrigin_id Description: Information about the origin of the biological material, essential for access, utilization, and benefit-sharing of genetic resources in compliance with the Nagoya Protocol
 --     * Slot: hasIATAClassification_id Description: The corresponding International Air Transport Association (IATA)'s category for this Product
 --     * Slot: materialSafetyDataSheet_id Description: A Material Safety Data Sheet (MSDS) or Safety Data Sheet (SDS) is a standardized document that contains crucial occupational safety and health information related to the product
@@ -686,8 +689,6 @@
 --     * Slot: storageConditions Description: Specifies the conditions under which the product has to be stored to maintain stability and integrity, such as temperature, buffer, and other environmental factors.
 --     * Slot: thirdPartyDistributionConsent Description: Indicates whether the biological material can be distributed without restriction to third parties, as indicated by the ABS permit, in case an ABS permit is required
 --     * Slot: usageRestrictions Description: Specifies any limitations or conditions on the use of the biological material, including restrictions on research, commercial use, or distribution, considering any potential concerns about the related genetic material
---     * Slot: name Description: The label that allows humans to identify the current item
---     * Slot: description Description: A short explanation of the characteristics, features, or nature of the current item
 --     * Slot: accessPointURL Description: The URL that permits to access to the product/service detailed description page on the provider's website and/or allows to place an order about it or at least describe the process to place an order/enquiry
 --     * Slot: refSKU Description: The reference or the stock keeping unit of the service or item provided in the provider's catalogue
 --     * Slot: unitDefinition Description: A short description of what will be delivered by ordering one unit of this item
@@ -699,6 +700,8 @@
 --     * Slot: technicalRecommendation Description: Expert advice or guidelines provided to ensure the optimal use, performance, and maintenance of what is provided, including best practices, troubleshooting tips, and procedural instructions
 --     * Slot: internalReference Description: Any reference or indication to be used for local retrieval purpose
 --     * Slot: note Description: An aditional information as a textual comment
+--     * Slot: title Description: A name given to the resource
+--     * Slot: description Description: A short explanation of the characteristics, features, or nature of the current item
 --     * Slot: biologicalMaterialOrigin_id Description: Information about the origin of the biological material, essential for access, utilization, and benefit-sharing of genetic resources in compliance with the Nagoya Protocol
 --     * Slot: hasIATAClassification_id Description: The corresponding International Air Transport Association (IATA)'s category for this Product
 --     * Slot: materialSafetyDataSheet_id Description: A Material Safety Data Sheet (MSDS) or Safety Data Sheet (SDS) is a standardized document that contains crucial occupational safety and health information related to the product
@@ -724,8 +727,6 @@
 --     * Slot: storageConditions Description: Specifies the conditions under which the product has to be stored to maintain stability and integrity, such as temperature, buffer, and other environmental factors.
 --     * Slot: thirdPartyDistributionConsent Description: Indicates whether the biological material can be distributed without restriction to third parties, as indicated by the ABS permit, in case an ABS permit is required
 --     * Slot: usageRestrictions Description: Specifies any limitations or conditions on the use of the biological material, including restrictions on research, commercial use, or distribution, considering any potential concerns about the related genetic material
---     * Slot: name Description: The label that allows humans to identify the current item
---     * Slot: description Description: A short explanation of the characteristics, features, or nature of the current item
 --     * Slot: accessPointURL Description: The URL that permits to access to the product/service detailed description page on the provider's website and/or allows to place an order about it or at least describe the process to place an order/enquiry
 --     * Slot: refSKU Description: The reference or the stock keeping unit of the service or item provided in the provider's catalogue
 --     * Slot: unitDefinition Description: A short description of what will be delivered by ordering one unit of this item
@@ -737,6 +738,8 @@
 --     * Slot: technicalRecommendation Description: Expert advice or guidelines provided to ensure the optimal use, performance, and maintenance of what is provided, including best practices, troubleshooting tips, and procedural instructions
 --     * Slot: internalReference Description: Any reference or indication to be used for local retrieval purpose
 --     * Slot: note Description: An aditional information as a textual comment
+--     * Slot: title Description: A name given to the resource
+--     * Slot: description Description: A short explanation of the characteristics, features, or nature of the current item
 --     * Slot: biologicalMaterialOrigin_id Description: Information about the origin of the biological material, essential for access, utilization, and benefit-sharing of genetic resources in compliance with the Nagoya Protocol
 --     * Slot: hasIATAClassification_id Description: The corresponding International Air Transport Association (IATA)'s category for this Product
 --     * Slot: materialSafetyDataSheet_id Description: A Material Safety Data Sheet (MSDS) or Safety Data Sheet (SDS) is a standardized document that contains crucial occupational safety and health information related to the product
@@ -762,8 +765,6 @@
 --     * Slot: storageConditions Description: Specifies the conditions under which the product has to be stored to maintain stability and integrity, such as temperature, buffer, and other environmental factors.
 --     * Slot: thirdPartyDistributionConsent Description: Indicates whether the biological material can be distributed without restriction to third parties, as indicated by the ABS permit, in case an ABS permit is required
 --     * Slot: usageRestrictions Description: Specifies any limitations or conditions on the use of the biological material, including restrictions on research, commercial use, or distribution, considering any potential concerns about the related genetic material
---     * Slot: name Description: The label that allows humans to identify the current item
---     * Slot: description Description: A short explanation of the characteristics, features, or nature of the current item
 --     * Slot: accessPointURL Description: The URL that permits to access to the product/service detailed description page on the provider's website and/or allows to place an order about it or at least describe the process to place an order/enquiry
 --     * Slot: refSKU Description: The reference or the stock keeping unit of the service or item provided in the provider's catalogue
 --     * Slot: unitDefinition Description: A short description of what will be delivered by ordering one unit of this item
@@ -775,6 +776,8 @@
 --     * Slot: technicalRecommendation Description: Expert advice or guidelines provided to ensure the optimal use, performance, and maintenance of what is provided, including best practices, troubleshooting tips, and procedural instructions
 --     * Slot: internalReference Description: Any reference or indication to be used for local retrieval purpose
 --     * Slot: note Description: An aditional information as a textual comment
+--     * Slot: title Description: A name given to the resource
+--     * Slot: description Description: A short explanation of the characteristics, features, or nature of the current item
 --     * Slot: biologicalMaterialOrigin_id Description: Information about the origin of the biological material, essential for access, utilization, and benefit-sharing of genetic resources in compliance with the Nagoya Protocol
 --     * Slot: hasIATAClassification_id Description: The corresponding International Air Transport Association (IATA)'s category for this Product
 --     * Slot: materialSafetyDataSheet_id Description: A Material Safety Data Sheet (MSDS) or Safety Data Sheet (SDS) is a standardized document that contains crucial occupational safety and health information related to the product
@@ -800,8 +803,6 @@
 --     * Slot: storageConditions Description: Specifies the conditions under which the product has to be stored to maintain stability and integrity, such as temperature, buffer, and other environmental factors.
 --     * Slot: thirdPartyDistributionConsent Description: Indicates whether the biological material can be distributed without restriction to third parties, as indicated by the ABS permit, in case an ABS permit is required
 --     * Slot: usageRestrictions Description: Specifies any limitations or conditions on the use of the biological material, including restrictions on research, commercial use, or distribution, considering any potential concerns about the related genetic material
---     * Slot: name Description: The label that allows humans to identify the current item
---     * Slot: description Description: A short explanation of the characteristics, features, or nature of the current item
 --     * Slot: accessPointURL Description: The URL that permits to access to the product/service detailed description page on the provider's website and/or allows to place an order about it or at least describe the process to place an order/enquiry
 --     * Slot: refSKU Description: The reference or the stock keeping unit of the service or item provided in the provider's catalogue
 --     * Slot: unitDefinition Description: A short description of what will be delivered by ordering one unit of this item
@@ -813,6 +814,8 @@
 --     * Slot: technicalRecommendation Description: Expert advice or guidelines provided to ensure the optimal use, performance, and maintenance of what is provided, including best practices, troubleshooting tips, and procedural instructions
 --     * Slot: internalReference Description: Any reference or indication to be used for local retrieval purpose
 --     * Slot: note Description: An aditional information as a textual comment
+--     * Slot: title Description: A name given to the resource
+--     * Slot: description Description: A short explanation of the characteristics, features, or nature of the current item
 --     * Slot: biologicalMaterialOrigin_id Description: Information about the origin of the biological material, essential for access, utilization, and benefit-sharing of genetic resources in compliance with the Nagoya Protocol
 --     * Slot: hasIATAClassification_id Description: The corresponding International Air Transport Association (IATA)'s category for this Product
 --     * Slot: materialSafetyDataSheet_id Description: A Material Safety Data Sheet (MSDS) or Safety Data Sheet (SDS) is a standardized document that contains crucial occupational safety and health information related to the product
@@ -840,35 +843,35 @@
 --     * Slot: msdsContact_id Description: The designated contact point responsible for providing information related to the safety, handling, and regulatory compliance of the biological product.
 -- # Class: "File" Description: "Digital document or record stored in a specific format that contains data or information"
 --     * Slot: id Description: 
---     * Slot: name Description: The label that allows humans to identify the current item
+--     * Slot: name Description: A word or set of words used to identify and refer to an entity
 --     * Slot: description Description: A short explanation of the characteristics, features, or nature of the current item
 --     * Slot: contentURL Description: The web address or location where the file content is stored and can be accessed or downloaded.
 --     * Slot: format Description: The file type or format that indicates how the data within the file is structured
 --     * Slot: license_id Description: Information about terms and conditions under which the subject can be used, shared, or distributed, indicating any restrictions or permissions
 -- # Class: "Data" Description: "Subclass of File representing structured or unstructured datasets, often used for analysis, storage, or transfer of information"
 --     * Slot: id Description: 
---     * Slot: name Description: The label that allows humans to identify the current item
+--     * Slot: name Description: A word or set of words used to identify and refer to an entity
 --     * Slot: description Description: A short explanation of the characteristics, features, or nature of the current item
 --     * Slot: contentURL Description: The web address or location where the file content is stored and can be accessed or downloaded.
 --     * Slot: format Description: The file type or format that indicates how the data within the file is structured
 --     * Slot: license_id Description: Information about terms and conditions under which the subject can be used, shared, or distributed, indicating any restrictions or permissions
 -- # Class: "Document" Description: "Subclass of File representing textual or written files such as reports, manuals, or forms"
 --     * Slot: id Description: 
---     * Slot: name Description: The label that allows humans to identify the current item
+--     * Slot: name Description: A word or set of words used to identify and refer to an entity
 --     * Slot: description Description: A short explanation of the characteristics, features, or nature of the current item
 --     * Slot: contentURL Description: The web address or location where the file content is stored and can be accessed or downloaded.
 --     * Slot: format Description: The file type or format that indicates how the data within the file is structured
 --     * Slot: license_id Description: Information about terms and conditions under which the subject can be used, shared, or distributed, indicating any restrictions or permissions
 -- # Class: "Audio" Description: "Subclass of File representing sound recordings or audio tracks"
 --     * Slot: id Description: 
---     * Slot: name Description: The label that allows humans to identify the current item
+--     * Slot: name Description: A word or set of words used to identify and refer to an entity
 --     * Slot: description Description: A short explanation of the characteristics, features, or nature of the current item
 --     * Slot: contentURL Description: The web address or location where the file content is stored and can be accessed or downloaded.
 --     * Slot: format Description: The file type or format that indicates how the data within the file is structured
 --     * Slot: license_id Description: Information about terms and conditions under which the subject can be used, shared, or distributed, indicating any restrictions or permissions
 -- # Class: "Video" Description: "Subclass of File representing moving visual media, such as recordings, presentations, or movies"
 --     * Slot: id Description: 
---     * Slot: name Description: The label that allows humans to identify the current item
+--     * Slot: name Description: A word or set of words used to identify and refer to an entity
 --     * Slot: description Description: A short explanation of the characteristics, features, or nature of the current item
 --     * Slot: contentURL Description: The web address or location where the file content is stored and can be accessed or downloaded.
 --     * Slot: format Description: The file type or format that indicates how the data within the file is structured
@@ -876,14 +879,14 @@
 -- # Class: "Image" Description: "Subclass of File representing visual content such as pictures, diagrams, or illustrations"
 --     * Slot: id Description: 
 --     * Slot: altText Description: An alternate text for the image, if the image cannot be displayed
---     * Slot: name Description: The label that allows humans to identify the current item
+--     * Slot: name Description: A word or set of words used to identify and refer to an entity
 --     * Slot: description Description: A short explanation of the characteristics, features, or nature of the current item
 --     * Slot: contentURL Description: The web address or location where the file content is stored and can be accessed or downloaded.
 --     * Slot: format Description: The file type or format that indicates how the data within the file is structured
 --     * Slot: license_id Description: Information about terms and conditions under which the subject can be used, shared, or distributed, indicating any restrictions or permissions
 -- # Class: "ContactPoint" Description: "Entity serving as focal point of information"
 --     * Slot: id Description: 
---     * Slot: name Description: The label that allows humans to identify the current item
+--     * Slot: name Description: A word or set of words used to identify and refer to an entity
 --     * Slot: description Description: A short explanation of the characteristics, features, or nature of the current item
 --     * Slot: email Description: Email address
 --     * Slot: telephone Description: The telephone number
@@ -895,14 +898,14 @@
 --     * Slot: addressCountry_id Description: The country as of  ISO 3166
 -- # Class: "License" Description: "The legal terms and conditions under which the subject can be used, shared, or distributed, indicating any restrictions or permissions"
 --     * Slot: id Description: 
---     * Slot: name Description: The label that allows humans to identify the current item
+--     * Slot: title Description: A name given to the resource
 --     * Slot: description Description: A short explanation of the characteristics, features, or nature of the current item
 --     * Slot: resourceURL Description: The web address or location where the details or content is stored and can be accessed or downloaded.
 --     * Slot: licensingOrAttribution Description: A text or html code that provides any related data sharing licence and/or attribution
 --     * Slot: logo_id Description: A path or URL to the related logo
 -- # Class: "Certification" Description: "Assurance given by an independent certification body that a product, service or system meets the requirements of a standard"
 --     * Slot: id Description: 
---     * Slot: name Description: The label that allows humans to identify the current item
+--     * Slot: title Description: A name given to the resource
 --     * Slot: description Description: A short explanation of the characteristics, features, or nature of the current item
 --     * Slot: resourceURL Description: The web address or location where the details or content is stored and can be accessed or downloaded.
 --     * Slot: logo_id Description: A path or URL to the related logo
@@ -1609,18 +1612,21 @@ CREATE TABLE "Resource" (
 );
 CREATE TABLE "Dataset" (
 	id INTEGER NOT NULL, 
+	title TEXT NOT NULL, 
+	description TEXT NOT NULL, 
 	PRIMARY KEY (id)
 );
 CREATE TABLE "DataService" (
 	id INTEGER NOT NULL, 
-	name TEXT NOT NULL, 
+	title TEXT NOT NULL, 
 	description TEXT, 
+	"endpointURL" TEXT NOT NULL, 
 	PRIMARY KEY (id)
 );
 CREATE TABLE "Catalogue" (
 	id INTEGER NOT NULL, 
-	name TEXT NOT NULL, 
-	description TEXT, 
+	title TEXT NOT NULL, 
+	description TEXT NOT NULL, 
 	PRIMARY KEY (id)
 );
 CREATE TABLE "ExternalRelatedReference" (
@@ -1666,7 +1672,7 @@ CREATE TABLE "Image" (
 );
 CREATE TABLE "License" (
 	id INTEGER NOT NULL, 
-	name TEXT NOT NULL, 
+	title TEXT NOT NULL, 
 	description TEXT, 
 	"resourceURL" TEXT, 
 	"licensingOrAttribution" TEXT, 
@@ -1686,12 +1692,12 @@ CREATE TABLE "DataProvider" (
 	"loginRequestMethod" TEXT, 
 	"loginURL" TEXT, 
 	"loginTokenName" TEXT, 
-	"queryURL" TEXT NOT NULL, 
 	"queryMethod" TEXT NOT NULL, 
 	"contentType" TEXT NOT NULL, 
 	weight INTEGER NOT NULL, 
-	name TEXT NOT NULL, 
+	title TEXT NOT NULL, 
 	description TEXT, 
+	"endpointURL" TEXT NOT NULL, 
 	license_id INTEGER, 
 	"providedEntityType_id" INTEGER NOT NULL, 
 	PRIMARY KEY (id), 
@@ -1766,7 +1772,7 @@ CREATE TABLE "Video" (
 );
 CREATE TABLE "Certification" (
 	id INTEGER NOT NULL, 
-	name TEXT NOT NULL, 
+	title TEXT NOT NULL, 
 	description TEXT, 
 	"resourceURL" TEXT, 
 	logo_id INTEGER, 
@@ -1789,8 +1795,8 @@ CREATE TABLE "RecombinantPartIdentification_sequence" (
 );
 CREATE TABLE "Taxonomy" (
 	id INTEGER NOT NULL, 
-	name TEXT NOT NULL, 
-	description TEXT, 
+	title TEXT NOT NULL, 
+	description TEXT NOT NULL, 
 	"taxonDataProvider_id" INTEGER, 
 	version_id INTEGER NOT NULL, 
 	"versionDataProvider_id" INTEGER NOT NULL, 
@@ -1803,16 +1809,16 @@ CREATE TABLE "Taxonomy" (
 );
 CREATE TABLE "Vocabulary" (
 	id INTEGER NOT NULL, 
-	name TEXT NOT NULL, 
-	description TEXT, 
+	title TEXT NOT NULL, 
+	description TEXT NOT NULL, 
 	"termDataProvider_id" INTEGER, 
 	PRIMARY KEY (id), 
 	FOREIGN KEY("termDataProvider_id") REFERENCES "DataProvider" (id)
 );
 CREATE TABLE "Collection" (
 	id INTEGER NOT NULL, 
-	name TEXT NOT NULL, 
-	description TEXT, 
+	title TEXT NOT NULL, 
+	description TEXT NOT NULL, 
 	"collectionDataProvider_id" INTEGER, 
 	PRIMARY KEY (id), 
 	FOREIGN KEY("collectionDataProvider_id") REFERENCES "DataProvider" (id)
@@ -1833,7 +1839,7 @@ CREATE TABLE "Certification_certificationDocument" (
 );
 CREATE TABLE "Term" (
 	id INTEGER NOT NULL, 
-	name TEXT NOT NULL, 
+	title TEXT NOT NULL, 
 	description TEXT, 
 	weight INTEGER NOT NULL, 
 	"inVocabulary_id" INTEGER NOT NULL, 
@@ -1842,7 +1848,7 @@ CREATE TABLE "Term" (
 );
 CREATE TABLE "CommonName" (
 	id INTEGER NOT NULL, 
-	name TEXT NOT NULL, 
+	title TEXT NOT NULL, 
 	description TEXT, 
 	weight INTEGER NOT NULL, 
 	"inVocabulary_id" INTEGER NOT NULL, 
@@ -1851,7 +1857,7 @@ CREATE TABLE "CommonName" (
 );
 CREATE TABLE "VirusName" (
 	id INTEGER NOT NULL, 
-	name TEXT NOT NULL, 
+	title TEXT NOT NULL, 
 	description TEXT, 
 	weight INTEGER NOT NULL, 
 	"inVocabulary_id" INTEGER NOT NULL, 
@@ -1860,7 +1866,7 @@ CREATE TABLE "VirusName" (
 );
 CREATE TABLE "AlternateName" (
 	id INTEGER NOT NULL, 
-	name TEXT NOT NULL, 
+	title TEXT NOT NULL, 
 	description TEXT, 
 	weight INTEGER NOT NULL, 
 	"inVocabulary_id" INTEGER NOT NULL, 
@@ -1869,7 +1875,7 @@ CREATE TABLE "AlternateName" (
 );
 CREATE TABLE "RiskGroup" (
 	id INTEGER NOT NULL, 
-	name TEXT NOT NULL, 
+	title TEXT NOT NULL, 
 	description TEXT, 
 	weight INTEGER NOT NULL, 
 	"inVocabulary_id" INTEGER NOT NULL, 
@@ -1878,7 +1884,7 @@ CREATE TABLE "RiskGroup" (
 );
 CREATE TABLE "DOI" (
 	id INTEGER NOT NULL, 
-	name TEXT NOT NULL, 
+	title TEXT NOT NULL, 
 	description TEXT, 
 	weight INTEGER NOT NULL, 
 	"inVocabulary_id" INTEGER NOT NULL, 
@@ -1887,7 +1893,7 @@ CREATE TABLE "DOI" (
 );
 CREATE TABLE "Journal" (
 	id INTEGER NOT NULL, 
-	name TEXT NOT NULL, 
+	title TEXT NOT NULL, 
 	description TEXT, 
 	weight INTEGER NOT NULL, 
 	"inVocabulary_id" INTEGER NOT NULL, 
@@ -1896,7 +1902,7 @@ CREATE TABLE "Journal" (
 );
 CREATE TABLE "PDBReference" (
 	id INTEGER NOT NULL, 
-	name TEXT NOT NULL, 
+	title TEXT NOT NULL, 
 	description TEXT, 
 	weight INTEGER NOT NULL, 
 	"inVocabulary_id" INTEGER NOT NULL, 
@@ -1905,7 +1911,7 @@ CREATE TABLE "PDBReference" (
 );
 CREATE TABLE "Keyword" (
 	id INTEGER NOT NULL, 
-	name TEXT NOT NULL, 
+	title TEXT NOT NULL, 
 	description TEXT, 
 	weight INTEGER NOT NULL, 
 	"inVocabulary_id" INTEGER NOT NULL, 
@@ -1914,7 +1920,7 @@ CREATE TABLE "Keyword" (
 );
 CREATE TABLE "ProteinTag" (
 	id INTEGER NOT NULL, 
-	name TEXT NOT NULL, 
+	title TEXT NOT NULL, 
 	description TEXT, 
 	weight INTEGER NOT NULL, 
 	"inVocabulary_id" INTEGER NOT NULL, 
@@ -1923,7 +1929,7 @@ CREATE TABLE "ProteinTag" (
 );
 CREATE TABLE "SpecialFeature" (
 	id INTEGER NOT NULL, 
-	name TEXT NOT NULL, 
+	title TEXT NOT NULL, 
 	description TEXT, 
 	weight INTEGER NOT NULL, 
 	"inVocabulary_id" INTEGER NOT NULL, 
@@ -1932,7 +1938,7 @@ CREATE TABLE "SpecialFeature" (
 );
 CREATE TABLE "ExpressionVector" (
 	id INTEGER NOT NULL, 
-	name TEXT NOT NULL, 
+	title TEXT NOT NULL, 
 	description TEXT, 
 	weight INTEGER NOT NULL, 
 	"inVocabulary_id" INTEGER NOT NULL, 
@@ -1941,7 +1947,7 @@ CREATE TABLE "ExpressionVector" (
 );
 CREATE TABLE "PlasmidSelection" (
 	id INTEGER NOT NULL, 
-	name TEXT NOT NULL, 
+	title TEXT NOT NULL, 
 	description TEXT, 
 	weight INTEGER NOT NULL, 
 	"inVocabulary_id" INTEGER NOT NULL, 
@@ -1950,7 +1956,7 @@ CREATE TABLE "PlasmidSelection" (
 );
 CREATE TABLE "PropagationHost" (
 	id INTEGER NOT NULL, 
-	name TEXT NOT NULL, 
+	title TEXT NOT NULL, 
 	description TEXT, 
 	weight INTEGER NOT NULL, 
 	"inVocabulary_id" INTEGER NOT NULL, 
@@ -1959,7 +1965,7 @@ CREATE TABLE "PropagationHost" (
 );
 CREATE TABLE "TransmissionMethod" (
 	id INTEGER NOT NULL, 
-	name TEXT NOT NULL, 
+	title TEXT NOT NULL, 
 	description TEXT, 
 	weight INTEGER NOT NULL, 
 	"inVocabulary_id" INTEGER NOT NULL, 
@@ -1968,7 +1974,7 @@ CREATE TABLE "TransmissionMethod" (
 );
 CREATE TABLE "ProductionCellLine" (
 	id INTEGER NOT NULL, 
-	name TEXT NOT NULL, 
+	title TEXT NOT NULL, 
 	description TEXT, 
 	weight INTEGER NOT NULL, 
 	"inVocabulary_id" INTEGER NOT NULL, 
@@ -1977,7 +1983,7 @@ CREATE TABLE "ProductionCellLine" (
 );
 CREATE TABLE "ProductCategory" (
 	id INTEGER NOT NULL, 
-	name TEXT NOT NULL, 
+	title TEXT NOT NULL, 
 	description TEXT, 
 	weight INTEGER NOT NULL, 
 	"parentCategory_id" INTEGER, 
@@ -1988,7 +1994,7 @@ CREATE TABLE "ProductCategory" (
 );
 CREATE TABLE "IsolationHost" (
 	id INTEGER NOT NULL, 
-	name TEXT NOT NULL, 
+	title TEXT NOT NULL, 
 	description TEXT, 
 	weight INTEGER NOT NULL, 
 	"inVocabulary_id" INTEGER NOT NULL, 
@@ -1997,7 +2003,7 @@ CREATE TABLE "IsolationHost" (
 );
 CREATE TABLE "GeographicalOrigin" (
 	id INTEGER NOT NULL, 
-	name TEXT NOT NULL, 
+	title TEXT NOT NULL, 
 	description TEXT, 
 	weight INTEGER NOT NULL, 
 	"inVocabulary_id" INTEGER NOT NULL, 
@@ -2006,7 +2012,7 @@ CREATE TABLE "GeographicalOrigin" (
 );
 CREATE TABLE "IPLCOrigin" (
 	id INTEGER NOT NULL, 
-	name TEXT NOT NULL, 
+	title TEXT NOT NULL, 
 	description TEXT, 
 	weight INTEGER NOT NULL, 
 	"inVocabulary_id" INTEGER NOT NULL, 
@@ -2016,7 +2022,7 @@ CREATE TABLE "IPLCOrigin" (
 CREATE TABLE "Country" (
 	id INTEGER NOT NULL, 
 	"alpha2Code" TEXT NOT NULL, 
-	name TEXT NOT NULL, 
+	title TEXT NOT NULL, 
 	description TEXT, 
 	weight INTEGER NOT NULL, 
 	"inVocabulary_id" INTEGER NOT NULL, 
@@ -2025,7 +2031,7 @@ CREATE TABLE "Country" (
 );
 CREATE TABLE "IATAClassification" (
 	id INTEGER NOT NULL, 
-	name TEXT NOT NULL, 
+	title TEXT NOT NULL, 
 	description TEXT, 
 	weight INTEGER NOT NULL, 
 	"inVocabulary_id" INTEGER NOT NULL, 
@@ -2034,7 +2040,7 @@ CREATE TABLE "IATAClassification" (
 );
 CREATE TABLE "Variant" (
 	id INTEGER NOT NULL, 
-	name TEXT NOT NULL, 
+	title TEXT NOT NULL, 
 	description TEXT, 
 	weight INTEGER NOT NULL, 
 	"inVocabulary_id" INTEGER NOT NULL, 
@@ -2043,7 +2049,7 @@ CREATE TABLE "Variant" (
 );
 CREATE TABLE "TaxonomicRank" (
 	id INTEGER NOT NULL, 
-	name TEXT NOT NULL, 
+	title TEXT NOT NULL, 
 	description TEXT, 
 	weight INTEGER NOT NULL, 
 	"inVocabulary_id" INTEGER NOT NULL, 
@@ -2065,7 +2071,7 @@ CREATE TABLE "Taxon" (
 	id INTEGER NOT NULL, 
 	"taxonomicID" TEXT NOT NULL, 
 	"taxonomicNodeID" TEXT, 
-	name TEXT NOT NULL, 
+	title TEXT NOT NULL, 
 	description TEXT, 
 	weight INTEGER NOT NULL, 
 	"parentTaxon_id" INTEGER NOT NULL, 
@@ -2320,8 +2326,6 @@ CREATE TABLE "Taxon_externalEquivalentTaxon" (
 );
 CREATE TABLE "ProductOrService" (
 	id INTEGER NOT NULL, 
-	name TEXT NOT NULL, 
-	description TEXT, 
 	"accessPointURL" TEXT NOT NULL, 
 	"refSKU" TEXT NOT NULL, 
 	"unitDefinition" TEXT, 
@@ -2333,6 +2337,8 @@ CREATE TABLE "ProductOrService" (
 	"technicalRecommendation" TEXT, 
 	"internalReference" TEXT, 
 	note TEXT, 
+	title TEXT NOT NULL, 
+	description TEXT NOT NULL, 
 	category_id INTEGER NOT NULL, 
 	"riskGroup_id" INTEGER, 
 	provider_id INTEGER NOT NULL, 
@@ -2347,8 +2353,6 @@ CREATE TABLE "Service" (
 	id INTEGER NOT NULL, 
 	"modelSpecies" TEXT, 
 	"modelType" TEXT, 
-	name TEXT NOT NULL, 
-	description TEXT, 
 	"accessPointURL" TEXT NOT NULL, 
 	"refSKU" TEXT NOT NULL, 
 	"unitDefinition" TEXT, 
@@ -2360,6 +2364,8 @@ CREATE TABLE "Service" (
 	"technicalRecommendation" TEXT, 
 	"internalReference" TEXT, 
 	note TEXT, 
+	title TEXT NOT NULL, 
+	description TEXT NOT NULL, 
 	category_id INTEGER NOT NULL, 
 	"riskGroup_id" INTEGER, 
 	provider_id INTEGER NOT NULL, 
@@ -2376,8 +2382,6 @@ CREATE TABLE "Product" (
 	"storageConditions" TEXT NOT NULL, 
 	"thirdPartyDistributionConsent" BOOLEAN, 
 	"usageRestrictions" TEXT, 
-	name TEXT NOT NULL, 
-	description TEXT, 
 	"accessPointURL" TEXT NOT NULL, 
 	"refSKU" TEXT NOT NULL, 
 	"unitDefinition" TEXT, 
@@ -2389,6 +2393,8 @@ CREATE TABLE "Product" (
 	"technicalRecommendation" TEXT, 
 	"internalReference" TEXT, 
 	note TEXT, 
+	title TEXT NOT NULL, 
+	description TEXT NOT NULL, 
 	"hasIATAClassification_id" INTEGER NOT NULL, 
 	"materialSafetyDataSheet_id" INTEGER, 
 	originator_id INTEGER, 
@@ -2415,8 +2421,6 @@ CREATE TABLE "Antibody" (
 	"storageConditions" TEXT NOT NULL, 
 	"thirdPartyDistributionConsent" BOOLEAN, 
 	"usageRestrictions" TEXT, 
-	name TEXT NOT NULL, 
-	description TEXT, 
 	"accessPointURL" TEXT NOT NULL, 
 	"refSKU" TEXT NOT NULL, 
 	"unitDefinition" TEXT, 
@@ -2428,6 +2432,8 @@ CREATE TABLE "Antibody" (
 	"technicalRecommendation" TEXT, 
 	"internalReference" TEXT, 
 	note TEXT, 
+	title TEXT NOT NULL, 
+	description TEXT NOT NULL, 
 	"hasIATAClassification_id" INTEGER NOT NULL, 
 	"materialSafetyDataSheet_id" INTEGER, 
 	originator_id INTEGER, 
@@ -2455,8 +2461,6 @@ CREATE TABLE "Hybridoma" (
 	"storageConditions" TEXT NOT NULL, 
 	"thirdPartyDistributionConsent" BOOLEAN, 
 	"usageRestrictions" TEXT, 
-	name TEXT NOT NULL, 
-	description TEXT, 
 	"accessPointURL" TEXT NOT NULL, 
 	"refSKU" TEXT NOT NULL, 
 	"unitDefinition" TEXT, 
@@ -2468,6 +2472,8 @@ CREATE TABLE "Hybridoma" (
 	"technicalRecommendation" TEXT, 
 	"internalReference" TEXT, 
 	note TEXT, 
+	title TEXT NOT NULL, 
+	description TEXT NOT NULL, 
 	"hasIATAClassification_id" INTEGER NOT NULL, 
 	"materialSafetyDataSheet_id" INTEGER, 
 	originator_id INTEGER, 
@@ -2490,8 +2496,6 @@ CREATE TABLE "Protein" (
 	"storageConditions" TEXT NOT NULL, 
 	"thirdPartyDistributionConsent" BOOLEAN, 
 	"usageRestrictions" TEXT, 
-	name TEXT NOT NULL, 
-	description TEXT, 
 	"accessPointURL" TEXT NOT NULL, 
 	"refSKU" TEXT NOT NULL, 
 	"unitDefinition" TEXT, 
@@ -2503,6 +2507,8 @@ CREATE TABLE "Protein" (
 	"technicalRecommendation" TEXT, 
 	"internalReference" TEXT, 
 	note TEXT, 
+	title TEXT NOT NULL, 
+	description TEXT NOT NULL, 
 	"biologicalMaterialOrigin_id" INTEGER NOT NULL, 
 	"hasIATAClassification_id" INTEGER NOT NULL, 
 	"materialSafetyDataSheet_id" INTEGER, 
@@ -2535,8 +2541,6 @@ CREATE TABLE "Nucleic Acid" (
 	"storageConditions" TEXT NOT NULL, 
 	"thirdPartyDistributionConsent" BOOLEAN, 
 	"usageRestrictions" TEXT, 
-	name TEXT NOT NULL, 
-	description TEXT, 
 	"accessPointURL" TEXT NOT NULL, 
 	"refSKU" TEXT NOT NULL, 
 	"unitDefinition" TEXT, 
@@ -2548,6 +2552,8 @@ CREATE TABLE "Nucleic Acid" (
 	"technicalRecommendation" TEXT, 
 	"internalReference" TEXT, 
 	note TEXT, 
+	title TEXT NOT NULL, 
+	description TEXT NOT NULL, 
 	"biologicalMaterialOrigin_id" INTEGER NOT NULL, 
 	"clonedIntoPlasmid_id" INTEGER, 
 	"hasTAG_id" INTEGER NOT NULL, 
@@ -2579,8 +2585,6 @@ CREATE TABLE "Detection Kit" (
 	"storageConditions" TEXT NOT NULL, 
 	"thirdPartyDistributionConsent" BOOLEAN, 
 	"usageRestrictions" TEXT, 
-	name TEXT NOT NULL, 
-	description TEXT, 
 	"accessPointURL" TEXT NOT NULL, 
 	"refSKU" TEXT NOT NULL, 
 	"unitDefinition" TEXT, 
@@ -2592,6 +2596,8 @@ CREATE TABLE "Detection Kit" (
 	"technicalRecommendation" TEXT, 
 	"internalReference" TEXT, 
 	note TEXT, 
+	title TEXT NOT NULL, 
+	description TEXT NOT NULL, 
 	"hasIATAClassification_id" INTEGER NOT NULL, 
 	"materialSafetyDataSheet_id" INTEGER, 
 	originator_id INTEGER, 
@@ -2614,8 +2620,6 @@ CREATE TABLE "Bundle" (
 	"storageConditions" TEXT NOT NULL, 
 	"thirdPartyDistributionConsent" BOOLEAN, 
 	"usageRestrictions" TEXT, 
-	name TEXT NOT NULL, 
-	description TEXT, 
 	"accessPointURL" TEXT NOT NULL, 
 	"refSKU" TEXT NOT NULL, 
 	"unitDefinition" TEXT, 
@@ -2627,6 +2631,8 @@ CREATE TABLE "Bundle" (
 	"technicalRecommendation" TEXT, 
 	"internalReference" TEXT, 
 	note TEXT, 
+	title TEXT NOT NULL, 
+	description TEXT NOT NULL, 
 	"hasIATAClassification_id" INTEGER NOT NULL, 
 	"materialSafetyDataSheet_id" INTEGER, 
 	originator_id INTEGER, 
@@ -2660,8 +2666,6 @@ CREATE TABLE "Pathogen" (
 	"storageConditions" TEXT NOT NULL, 
 	"thirdPartyDistributionConsent" BOOLEAN, 
 	"usageRestrictions" TEXT, 
-	name TEXT NOT NULL, 
-	description TEXT, 
 	"accessPointURL" TEXT NOT NULL, 
 	"refSKU" TEXT NOT NULL, 
 	"unitDefinition" TEXT, 
@@ -2673,6 +2677,8 @@ CREATE TABLE "Pathogen" (
 	"technicalRecommendation" TEXT, 
 	"internalReference" TEXT, 
 	note TEXT, 
+	title TEXT NOT NULL, 
+	description TEXT NOT NULL, 
 	"biologicalMaterialOrigin_id" INTEGER NOT NULL, 
 	"hasIATAClassification_id" INTEGER NOT NULL, 
 	"materialSafetyDataSheet_id" INTEGER, 
@@ -2710,8 +2716,6 @@ CREATE TABLE "Virus" (
 	"storageConditions" TEXT NOT NULL, 
 	"thirdPartyDistributionConsent" BOOLEAN, 
 	"usageRestrictions" TEXT, 
-	name TEXT NOT NULL, 
-	description TEXT, 
 	"accessPointURL" TEXT NOT NULL, 
 	"refSKU" TEXT NOT NULL, 
 	"unitDefinition" TEXT, 
@@ -2723,6 +2727,8 @@ CREATE TABLE "Virus" (
 	"technicalRecommendation" TEXT, 
 	"internalReference" TEXT, 
 	note TEXT, 
+	title TEXT NOT NULL, 
+	description TEXT NOT NULL, 
 	"biologicalMaterialOrigin_id" INTEGER NOT NULL, 
 	"hasIATAClassification_id" INTEGER NOT NULL, 
 	"materialSafetyDataSheet_id" INTEGER, 
@@ -2758,8 +2764,6 @@ CREATE TABLE "Bacterium" (
 	"storageConditions" TEXT NOT NULL, 
 	"thirdPartyDistributionConsent" BOOLEAN, 
 	"usageRestrictions" TEXT, 
-	name TEXT NOT NULL, 
-	description TEXT, 
 	"accessPointURL" TEXT NOT NULL, 
 	"refSKU" TEXT NOT NULL, 
 	"unitDefinition" TEXT, 
@@ -2771,6 +2775,8 @@ CREATE TABLE "Bacterium" (
 	"technicalRecommendation" TEXT, 
 	"internalReference" TEXT, 
 	note TEXT, 
+	title TEXT NOT NULL, 
+	description TEXT NOT NULL, 
 	"biologicalMaterialOrigin_id" INTEGER NOT NULL, 
 	"hasIATAClassification_id" INTEGER NOT NULL, 
 	"materialSafetyDataSheet_id" INTEGER, 
@@ -2806,8 +2812,6 @@ CREATE TABLE "Fungus" (
 	"storageConditions" TEXT NOT NULL, 
 	"thirdPartyDistributionConsent" BOOLEAN, 
 	"usageRestrictions" TEXT, 
-	name TEXT NOT NULL, 
-	description TEXT, 
 	"accessPointURL" TEXT NOT NULL, 
 	"refSKU" TEXT NOT NULL, 
 	"unitDefinition" TEXT, 
@@ -2819,6 +2823,8 @@ CREATE TABLE "Fungus" (
 	"technicalRecommendation" TEXT, 
 	"internalReference" TEXT, 
 	note TEXT, 
+	title TEXT NOT NULL, 
+	description TEXT NOT NULL, 
 	"biologicalMaterialOrigin_id" INTEGER NOT NULL, 
 	"hasIATAClassification_id" INTEGER NOT NULL, 
 	"materialSafetyDataSheet_id" INTEGER, 
@@ -2854,8 +2860,6 @@ CREATE TABLE "Protozoan" (
 	"storageConditions" TEXT NOT NULL, 
 	"thirdPartyDistributionConsent" BOOLEAN, 
 	"usageRestrictions" TEXT, 
-	name TEXT NOT NULL, 
-	description TEXT, 
 	"accessPointURL" TEXT NOT NULL, 
 	"refSKU" TEXT NOT NULL, 
 	"unitDefinition" TEXT, 
@@ -2867,6 +2871,8 @@ CREATE TABLE "Protozoan" (
 	"technicalRecommendation" TEXT, 
 	"internalReference" TEXT, 
 	note TEXT, 
+	title TEXT NOT NULL, 
+	description TEXT NOT NULL, 
 	"biologicalMaterialOrigin_id" INTEGER NOT NULL, 
 	"hasIATAClassification_id" INTEGER NOT NULL, 
 	"materialSafetyDataSheet_id" INTEGER, 
@@ -2902,8 +2908,6 @@ CREATE TABLE "Viroid" (
 	"storageConditions" TEXT NOT NULL, 
 	"thirdPartyDistributionConsent" BOOLEAN, 
 	"usageRestrictions" TEXT, 
-	name TEXT NOT NULL, 
-	description TEXT, 
 	"accessPointURL" TEXT NOT NULL, 
 	"refSKU" TEXT NOT NULL, 
 	"unitDefinition" TEXT, 
@@ -2915,6 +2919,8 @@ CREATE TABLE "Viroid" (
 	"technicalRecommendation" TEXT, 
 	"internalReference" TEXT, 
 	note TEXT, 
+	title TEXT NOT NULL, 
+	description TEXT NOT NULL, 
 	"biologicalMaterialOrigin_id" INTEGER NOT NULL, 
 	"hasIATAClassification_id" INTEGER NOT NULL, 
 	"materialSafetyDataSheet_id" INTEGER, 
@@ -2950,8 +2956,6 @@ CREATE TABLE "Prion" (
 	"storageConditions" TEXT NOT NULL, 
 	"thirdPartyDistributionConsent" BOOLEAN, 
 	"usageRestrictions" TEXT, 
-	name TEXT NOT NULL, 
-	description TEXT, 
 	"accessPointURL" TEXT NOT NULL, 
 	"refSKU" TEXT NOT NULL, 
 	"unitDefinition" TEXT, 
@@ -2963,6 +2967,8 @@ CREATE TABLE "Prion" (
 	"technicalRecommendation" TEXT, 
 	"internalReference" TEXT, 
 	note TEXT, 
+	title TEXT NOT NULL, 
+	description TEXT NOT NULL, 
 	"biologicalMaterialOrigin_id" INTEGER NOT NULL, 
 	"hasIATAClassification_id" INTEGER NOT NULL, 
 	"materialSafetyDataSheet_id" INTEGER, 

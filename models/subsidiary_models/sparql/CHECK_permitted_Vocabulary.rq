@@ -27,8 +27,8 @@ SELECT ?g ?s ?p WHERE {
   FILTER ( ?p NOT IN (
    EVORAO:termDataProvider,
    EVORAO:term,
-   EVORAO:name,
-   EVORAO:description,
+   dct:title,
+   dct:description,
    rdf:type ))
  }
  

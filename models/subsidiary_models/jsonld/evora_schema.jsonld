@@ -18,7 +18,7 @@
     "https://orcid.org/0000-0002-2042-2839"
   ],
   "id": "https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#",
-  "version": "1.0.8498",
+  "version": "1.0.8636",
   "imports": [
     "linkml:types"
   ],
@@ -423,30 +423,27 @@
   ],
   "slots": [
     {
-      "name": "name",
-      "definition_uri": "https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#name",
-      "description": "The label that allows humans to identify the current item",
-      "title": "name",
+      "name": "title",
+      "definition_uri": "https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#title",
+      "description": "A name given to the resource",
+      "title": "title",
       "comments": [
         "The title of the item should be as short and descriptive as possible. E.g. for virus products it should basically be based on the following Pattern:\n'Virus name', 'virus host type', 'collection year', 'country of collection' ex 'suspected epidemiological origin', 'genotype', 'strain', 'variant name or specific feature"
       ],
       "from_schema": "https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#",
-      "exact_mappings": [
+      "mappings": [
         "http://purl.org/dc/terms/title"
       ],
       "close_mappings": [
         "http://www.w3.org/2000/01/rdf-schema#label"
       ],
-      "slot_uri": "https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#name",
+      "slot_uri": "http://purl.org/dc/terms/title",
       "owner": "Certification",
       "domain_of": [
+        "Dataset",
         "DataService",
-        "Catalogue",
+        "Publication",
         "Term",
-        "PersonOrOrganization",
-        "ProductOrService",
-        "File",
-        "ContactPoint",
         "License",
         "Certification"
       ],
@@ -460,20 +457,20 @@
       "description": "A short explanation of the characteristics, features, or nature of the current item",
       "title": "description",
       "comments": [
-        "Describe this item in few lines. This description will serve as a summary to present the item.\n"
+        "Describe this item in few lines. This description will serve as a summary to present the resource.\n",
+        "Describe this item in few lines. This description will serve as a summary to present the resource.\n"
       ],
       "from_schema": "https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#",
-      "exact_mappings": [
+      "mappings": [
         "http://purl.org/dc/terms/description"
       ],
-      "slot_uri": "https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#description",
+      "slot_uri": "http://purl.org/dc/terms/description",
       "owner": "Certification",
       "domain_of": [
+        "Dataset",
         "DataService",
-        "Catalogue",
         "Term",
         "PersonOrOrganization",
-        "ProductOrService",
         "File",
         "ContactPoint",
         "License",
@@ -481,6 +478,27 @@
       ],
       "range": "string",
       "recommended": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "endpointURL",
+      "definition_uri": "https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#endpointURL",
+      "description": "The URL template that allows to get the content",
+      "title": "endpoint URL",
+      "from_schema": "https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#",
+      "mappings": [
+        "http://www.w3.org/ns/dcat#endpointURL"
+      ],
+      "close_mappings": [
+        "http://www.wikidata.org/prop/P1630"
+      ],
+      "slot_uri": "http://www.w3.org/ns/dcat#endpointURL",
+      "owner": "DataService",
+      "domain_of": [
+        "DataService"
+      ],
+      "range": "uri",
+      "required": true,
       "@type": "SlotDefinition"
     },
     {
@@ -697,27 +715,6 @@
         "DataProvider"
       ],
       "range": "string",
-      "@type": "SlotDefinition"
-    },
-    {
-      "name": "queryURL",
-      "definition_uri": "https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#queryURL",
-      "description": "The URL template that allows to get the content",
-      "title": "query URL",
-      "from_schema": "https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#",
-      "exact_mappings": [
-        "http://www.w3.org/ns/dcat#endpointURL"
-      ],
-      "close_mappings": [
-        "http://www.wikidata.org/prop/P1630"
-      ],
-      "slot_uri": "https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#queryURL",
-      "owner": "DataProvider",
-      "domain_of": [
-        "DataProvider"
-      ],
-      "range": "uri",
-      "required": true,
       "@type": "SlotDefinition"
     },
     {
@@ -948,27 +945,6 @@
       ],
       "range": "Variant",
       "inlined": true,
-      "@type": "SlotDefinition"
-    },
-    {
-      "name": "title",
-      "definition_uri": "https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#title",
-      "description": "The descriptive word or phrase that identifies the current piece of work",
-      "title": "title",
-      "comments": [
-        "The title of the item should be as short and descriptive as possible. E.g. for virus products it should basically be based on the following Pattern:\n'Virus name', 'virus host type', 'collection year', 'country of collection' ex 'suspected epidemiological origin', 'genotype', 'strain', 'variant name or specific feature"
-      ],
-      "from_schema": "https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#",
-      "exact_mappings": [
-        "http://purl.org/dc/terms/title"
-      ],
-      "slot_uri": "https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#title",
-      "owner": "Publication",
-      "domain_of": [
-        "Publication"
-      ],
-      "range": "string",
-      "required": true,
       "@type": "SlotDefinition"
     },
     {
@@ -1425,6 +1401,30 @@
         "ENA",
         "GenBank"
       ],
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "name",
+      "definition_uri": "https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#name",
+      "description": "A word or set of words used to identify and refer to an entity",
+      "title": "name",
+      "from_schema": "https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#",
+      "exact_mappings": [
+        "http://schema.org/name"
+      ],
+      "close_mappings": [
+        "http://xmlns.com/foaf/0.1/name",
+        "http://purl.org/dc/terms/title"
+      ],
+      "slot_uri": "https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#name",
+      "owner": "ContactPoint",
+      "domain_of": [
+        "PersonOrOrganization",
+        "File",
+        "ContactPoint"
+      ],
+      "range": "string",
+      "required": true,
       "@type": "SlotDefinition"
     },
     {
@@ -3651,30 +3651,86 @@
       "@type": "SlotDefinition"
     },
     {
-      "name": "DataService_name",
-      "definition_uri": "https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#name",
-      "description": "The label that allows humans to identify the current item",
-      "title": "name",
+      "name": "Dataset_title",
+      "definition_uri": "https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#title",
+      "description": "A name given to the resource",
+      "title": "title",
       "comments": [
         "The title of the item should be as short and descriptive as possible. E.g. for virus products it should basically be based on the following Pattern:\n'Virus name', 'virus host type', 'collection year', 'country of collection' ex 'suspected epidemiological origin', 'genotype', 'strain', 'variant name or specific feature"
       ],
       "from_schema": "https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#",
-      "exact_mappings": [
+      "mappings": [
         "http://purl.org/dc/terms/title"
       ],
       "close_mappings": [
         "http://www.w3.org/2000/01/rdf-schema#label"
       ],
-      "is_a": "name",
+      "is_a": "title",
+      "domain": "Dataset",
+      "slot_uri": "http://purl.org/dc/terms/title",
+      "alias": "title",
+      "owner": "Dataset",
+      "domain_of": [
+        "Dataset"
+      ],
+      "is_usage_slot": true,
+      "usage_slot_name": "title",
+      "range": "string",
+      "required": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "Dataset_description",
+      "definition_uri": "https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#description",
+      "description": "A short explanation of the characteristics, features, or nature of the current item",
+      "title": "description",
+      "comments": [
+        "Describe this item in few lines. This description will serve as a summary to present the resource.\n"
+      ],
+      "from_schema": "https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#",
+      "mappings": [
+        "http://purl.org/dc/terms/description"
+      ],
+      "is_a": "description",
+      "domain": "Dataset",
+      "slot_uri": "http://purl.org/dc/terms/description",
+      "alias": "description",
+      "owner": "Dataset",
+      "domain_of": [
+        "Dataset"
+      ],
+      "is_usage_slot": true,
+      "usage_slot_name": "description",
+      "range": "string",
+      "required": true,
+      "recommended": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "DataService_title",
+      "definition_uri": "https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#title",
+      "description": "A name given to the resource",
+      "title": "title",
+      "comments": [
+        "The title of the item should be as short and descriptive as possible. E.g. for virus products it should basically be based on the following Pattern:\n'Virus name', 'virus host type', 'collection year', 'country of collection' ex 'suspected epidemiological origin', 'genotype', 'strain', 'variant name or specific feature"
+      ],
+      "from_schema": "https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#",
+      "mappings": [
+        "http://purl.org/dc/terms/title"
+      ],
+      "close_mappings": [
+        "http://www.w3.org/2000/01/rdf-schema#label"
+      ],
+      "is_a": "title",
       "domain": "DataService",
-      "slot_uri": "https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#name",
-      "alias": "name",
+      "slot_uri": "http://purl.org/dc/terms/title",
+      "alias": "title",
       "owner": "DataService",
       "domain_of": [
         "DataService"
       ],
       "is_usage_slot": true,
-      "usage_slot_name": "name",
+      "usage_slot_name": "title",
       "range": "string",
       "required": true,
       "@type": "SlotDefinition"
@@ -3685,15 +3741,15 @@
       "description": "A short explanation of the characteristics, features, or nature of the current item",
       "title": "description",
       "comments": [
-        "Describe this item in few lines. This description will serve as a summary to present the item.\n"
+        "Describe this item in few lines. This description will serve as a summary to present the resource.\n"
       ],
       "from_schema": "https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#",
-      "exact_mappings": [
+      "mappings": [
         "http://purl.org/dc/terms/description"
       ],
       "is_a": "description",
       "domain": "DataService",
-      "slot_uri": "https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#description",
+      "slot_uri": "http://purl.org/dc/terms/description",
       "alias": "description",
       "owner": "DataService",
       "domain_of": [
@@ -3703,6 +3759,32 @@
       "usage_slot_name": "description",
       "range": "string",
       "recommended": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "DataService_endpointURL",
+      "definition_uri": "https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#endpointURL",
+      "description": "The URL template that allows to get the content",
+      "title": "endpoint URL",
+      "from_schema": "https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#",
+      "mappings": [
+        "http://www.w3.org/ns/dcat#endpointURL"
+      ],
+      "close_mappings": [
+        "http://www.wikidata.org/prop/P1630"
+      ],
+      "is_a": "endpointURL",
+      "domain": "DataService",
+      "slot_uri": "http://www.w3.org/ns/dcat#endpointURL",
+      "alias": "endpointURL",
+      "owner": "DataService",
+      "domain_of": [
+        "DataService"
+      ],
+      "is_usage_slot": true,
+      "usage_slot_name": "endpointURL",
+      "range": "uri",
+      "required": true,
       "@type": "SlotDefinition"
     },
     {
@@ -3748,61 +3830,6 @@
       "range": "Dataset",
       "required": true,
       "inlined": true,
-      "@type": "SlotDefinition"
-    },
-    {
-      "name": "Catalogue_name",
-      "definition_uri": "https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#name",
-      "description": "The label that allows humans to identify the current item",
-      "title": "name",
-      "comments": [
-        "The title of the item should be as short and descriptive as possible. E.g. for virus products it should basically be based on the following Pattern:\n'Virus name', 'virus host type', 'collection year', 'country of collection' ex 'suspected epidemiological origin', 'genotype', 'strain', 'variant name or specific feature"
-      ],
-      "from_schema": "https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#",
-      "exact_mappings": [
-        "http://purl.org/dc/terms/title"
-      ],
-      "close_mappings": [
-        "http://www.w3.org/2000/01/rdf-schema#label"
-      ],
-      "is_a": "name",
-      "domain": "Catalogue",
-      "slot_uri": "https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#name",
-      "alias": "name",
-      "owner": "Catalogue",
-      "domain_of": [
-        "Catalogue"
-      ],
-      "is_usage_slot": true,
-      "usage_slot_name": "name",
-      "range": "string",
-      "required": true,
-      "@type": "SlotDefinition"
-    },
-    {
-      "name": "Catalogue_description",
-      "definition_uri": "https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#description",
-      "description": "A short explanation of the characteristics, features, or nature of the current item",
-      "title": "description",
-      "comments": [
-        "Describe this item in few lines. This description will serve as a summary to present the item.\n"
-      ],
-      "from_schema": "https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#",
-      "exact_mappings": [
-        "http://purl.org/dc/terms/description"
-      ],
-      "is_a": "description",
-      "domain": "Catalogue",
-      "slot_uri": "https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#description",
-      "alias": "description",
-      "owner": "Catalogue",
-      "domain_of": [
-        "Catalogue"
-      ],
-      "is_usage_slot": true,
-      "usage_slot_name": "description",
-      "range": "string",
-      "recommended": true,
       "@type": "SlotDefinition"
     },
     {
@@ -4033,32 +4060,6 @@
       "is_usage_slot": true,
       "usage_slot_name": "loginTokenName",
       "range": "string",
-      "@type": "SlotDefinition"
-    },
-    {
-      "name": "DataProvider_queryURL",
-      "definition_uri": "https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#queryURL",
-      "description": "The URL template that allows to get the content",
-      "title": "query URL",
-      "from_schema": "https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#",
-      "exact_mappings": [
-        "http://www.w3.org/ns/dcat#endpointURL"
-      ],
-      "close_mappings": [
-        "http://www.wikidata.org/prop/P1630"
-      ],
-      "is_a": "queryURL",
-      "domain": "DataProvider",
-      "slot_uri": "https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#queryURL",
-      "alias": "queryURL",
-      "owner": "DataProvider",
-      "domain_of": [
-        "DataProvider"
-      ],
-      "is_usage_slot": true,
-      "usage_slot_name": "queryURL",
-      "range": "uri",
-      "required": true,
       "@type": "SlotDefinition"
     },
     {
@@ -4384,18 +4385,21 @@
     {
       "name": "Publication_title",
       "definition_uri": "https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#title",
-      "description": "The descriptive word or phrase that identifies the current piece of work",
+      "description": "A name given to the resource",
       "title": "title",
       "comments": [
         "The title of the item should be as short and descriptive as possible. E.g. for virus products it should basically be based on the following Pattern:\n'Virus name', 'virus host type', 'collection year', 'country of collection' ex 'suspected epidemiological origin', 'genotype', 'strain', 'variant name or specific feature"
       ],
       "from_schema": "https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#",
-      "exact_mappings": [
+      "mappings": [
         "http://purl.org/dc/terms/title"
+      ],
+      "close_mappings": [
+        "http://www.w3.org/2000/01/rdf-schema#label"
       ],
       "is_a": "title",
       "domain": "Publication",
-      "slot_uri": "https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#title",
+      "slot_uri": "http://purl.org/dc/terms/title",
       "alias": "title",
       "owner": "Publication",
       "domain_of": [
@@ -4535,30 +4539,30 @@
       "@type": "SlotDefinition"
     },
     {
-      "name": "Term_name",
-      "definition_uri": "https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#name",
-      "description": "The label that allows humans to identify the current item",
-      "title": "name",
+      "name": "Term_title",
+      "definition_uri": "https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#title",
+      "description": "A name given to the resource",
+      "title": "title",
       "comments": [
         "The title of the item should be as short and descriptive as possible. E.g. for virus products it should basically be based on the following Pattern:\n'Virus name', 'virus host type', 'collection year', 'country of collection' ex 'suspected epidemiological origin', 'genotype', 'strain', 'variant name or specific feature"
       ],
       "from_schema": "https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#",
-      "exact_mappings": [
+      "mappings": [
         "http://purl.org/dc/terms/title"
       ],
       "close_mappings": [
         "http://www.w3.org/2000/01/rdf-schema#label"
       ],
-      "is_a": "name",
+      "is_a": "title",
       "domain": "Term",
-      "slot_uri": "https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#name",
-      "alias": "name",
+      "slot_uri": "http://purl.org/dc/terms/title",
+      "alias": "title",
       "owner": "Term",
       "domain_of": [
         "Term"
       ],
       "is_usage_slot": true,
-      "usage_slot_name": "name",
+      "usage_slot_name": "title",
       "range": "string",
       "required": true,
       "@type": "SlotDefinition"
@@ -4569,15 +4573,15 @@
       "description": "A short explanation of the characteristics, features, or nature of the current item",
       "title": "description",
       "comments": [
-        "Describe this item in few lines. This description will serve as a summary to present the item.\n"
+        "Describe this item in few lines. This description will serve as a summary to present the resource.\n"
       ],
       "from_schema": "https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#",
-      "exact_mappings": [
+      "mappings": [
         "http://purl.org/dc/terms/description"
       ],
       "is_a": "description",
       "domain": "Term",
-      "slot_uri": "https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#description",
+      "slot_uri": "http://purl.org/dc/terms/description",
       "alias": "description",
       "owner": "Term",
       "domain_of": [
@@ -5164,17 +5168,15 @@
     {
       "name": "PersonOrOrganization_name",
       "definition_uri": "https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#name",
-      "description": "The label that allows humans to identify the current item",
+      "description": "A word or set of words used to identify and refer to an entity",
       "title": "name",
-      "comments": [
-        "The title of the item should be as short and descriptive as possible. E.g. for virus products it should basically be based on the following Pattern:\n'Virus name', 'virus host type', 'collection year', 'country of collection' ex 'suspected epidemiological origin', 'genotype', 'strain', 'variant name or specific feature"
-      ],
       "from_schema": "https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#",
       "exact_mappings": [
-        "http://purl.org/dc/terms/title"
+        "http://schema.org/name"
       ],
       "close_mappings": [
-        "http://www.w3.org/2000/01/rdf-schema#label"
+        "http://xmlns.com/foaf/0.1/name",
+        "http://purl.org/dc/terms/title"
       ],
       "is_a": "name",
       "domain": "PersonOrOrganization",
@@ -5196,15 +5198,15 @@
       "description": "A short explanation of the characteristics, features, or nature of the current item",
       "title": "description",
       "comments": [
-        "Describe this item in few lines. This description will serve as a summary to present the item.\n"
+        "Describe this item in few lines. This description will serve as a summary to present the resource.\n"
       ],
       "from_schema": "https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#",
-      "exact_mappings": [
+      "mappings": [
         "http://purl.org/dc/terms/description"
       ],
       "is_a": "description",
       "domain": "PersonOrOrganization",
-      "slot_uri": "https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#description",
+      "slot_uri": "http://purl.org/dc/terms/description",
       "alias": "description",
       "owner": "PersonOrOrganization",
       "domain_of": [
@@ -5740,61 +5742,6 @@
       "usage_slot_name": "collectionDataProvider",
       "range": "DataProvider",
       "inlined": true,
-      "@type": "SlotDefinition"
-    },
-    {
-      "name": "ProductOrService_name",
-      "definition_uri": "https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#name",
-      "description": "The label that allows humans to identify the current item",
-      "title": "name",
-      "comments": [
-        "The title of the item should be as short and descriptive as possible. E.g. for virus products it should basically be based on the following Pattern:\n'Virus name', 'virus host type', 'collection year', 'country of collection' ex 'suspected epidemiological origin', 'genotype', 'strain', 'variant name or specific feature"
-      ],
-      "from_schema": "https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#",
-      "exact_mappings": [
-        "http://purl.org/dc/terms/title"
-      ],
-      "close_mappings": [
-        "http://www.w3.org/2000/01/rdf-schema#label"
-      ],
-      "is_a": "name",
-      "domain": "ProductOrService",
-      "slot_uri": "https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#name",
-      "alias": "name",
-      "owner": "ProductOrService",
-      "domain_of": [
-        "ProductOrService"
-      ],
-      "is_usage_slot": true,
-      "usage_slot_name": "name",
-      "range": "string",
-      "required": true,
-      "@type": "SlotDefinition"
-    },
-    {
-      "name": "ProductOrService_description",
-      "definition_uri": "https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#description",
-      "description": "A short explanation of the characteristics, features, or nature of the current item",
-      "title": "description",
-      "comments": [
-        "Describe this item in few lines. This description will serve as a summary to present the item.\n"
-      ],
-      "from_schema": "https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#",
-      "exact_mappings": [
-        "http://purl.org/dc/terms/description"
-      ],
-      "is_a": "description",
-      "domain": "ProductOrService",
-      "slot_uri": "https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#description",
-      "alias": "description",
-      "owner": "ProductOrService",
-      "domain_of": [
-        "ProductOrService"
-      ],
-      "is_usage_slot": true,
-      "usage_slot_name": "description",
-      "range": "string",
-      "recommended": true,
       "@type": "SlotDefinition"
     },
     {
@@ -8122,17 +8069,15 @@
     {
       "name": "File_name",
       "definition_uri": "https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#name",
-      "description": "The label that allows humans to identify the current item",
+      "description": "A word or set of words used to identify and refer to an entity",
       "title": "name",
-      "comments": [
-        "The title of the item should be as short and descriptive as possible. E.g. for virus products it should basically be based on the following Pattern:\n'Virus name', 'virus host type', 'collection year', 'country of collection' ex 'suspected epidemiological origin', 'genotype', 'strain', 'variant name or specific feature"
-      ],
       "from_schema": "https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#",
       "exact_mappings": [
-        "http://purl.org/dc/terms/title"
+        "http://schema.org/name"
       ],
       "close_mappings": [
-        "http://www.w3.org/2000/01/rdf-schema#label"
+        "http://xmlns.com/foaf/0.1/name",
+        "http://purl.org/dc/terms/title"
       ],
       "is_a": "name",
       "domain": "File",
@@ -8154,15 +8099,15 @@
       "description": "A short explanation of the characteristics, features, or nature of the current item",
       "title": "description",
       "comments": [
-        "Describe this item in few lines. This description will serve as a summary to present the item.\n"
+        "Describe this item in few lines. This description will serve as a summary to present the resource.\n"
       ],
       "from_schema": "https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#",
-      "exact_mappings": [
+      "mappings": [
         "http://purl.org/dc/terms/description"
       ],
       "is_a": "description",
       "domain": "File",
-      "slot_uri": "https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#description",
+      "slot_uri": "http://purl.org/dc/terms/description",
       "alias": "description",
       "owner": "File",
       "domain_of": [
@@ -8260,17 +8205,15 @@
     {
       "name": "ContactPoint_name",
       "definition_uri": "https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#name",
-      "description": "The label that allows humans to identify the current item",
+      "description": "A word or set of words used to identify and refer to an entity",
       "title": "name",
-      "comments": [
-        "The title of the item should be as short and descriptive as possible. E.g. for virus products it should basically be based on the following Pattern:\n'Virus name', 'virus host type', 'collection year', 'country of collection' ex 'suspected epidemiological origin', 'genotype', 'strain', 'variant name or specific feature"
-      ],
       "from_schema": "https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#",
       "exact_mappings": [
-        "http://purl.org/dc/terms/title"
+        "http://schema.org/name"
       ],
       "close_mappings": [
-        "http://www.w3.org/2000/01/rdf-schema#label"
+        "http://xmlns.com/foaf/0.1/name",
+        "http://purl.org/dc/terms/title"
       ],
       "is_a": "name",
       "domain": "ContactPoint",
@@ -8292,15 +8235,15 @@
       "description": "A short explanation of the characteristics, features, or nature of the current item",
       "title": "description",
       "comments": [
-        "Describe this item in few lines. This description will serve as a summary to present the item.\n"
+        "Describe this item in few lines. This description will serve as a summary to present the resource.\n"
       ],
       "from_schema": "https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#",
-      "exact_mappings": [
+      "mappings": [
         "http://purl.org/dc/terms/description"
       ],
       "is_a": "description",
       "domain": "ContactPoint",
-      "slot_uri": "https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#description",
+      "slot_uri": "http://purl.org/dc/terms/description",
       "alias": "description",
       "owner": "ContactPoint",
       "domain_of": [
@@ -8500,30 +8443,30 @@
       "@type": "SlotDefinition"
     },
     {
-      "name": "License_name",
-      "definition_uri": "https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#name",
-      "description": "The label that allows humans to identify the current item",
-      "title": "name",
+      "name": "License_title",
+      "definition_uri": "https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#title",
+      "description": "A name given to the resource",
+      "title": "title",
       "comments": [
         "The title of the item should be as short and descriptive as possible. E.g. for virus products it should basically be based on the following Pattern:\n'Virus name', 'virus host type', 'collection year', 'country of collection' ex 'suspected epidemiological origin', 'genotype', 'strain', 'variant name or specific feature"
       ],
       "from_schema": "https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#",
-      "exact_mappings": [
+      "mappings": [
         "http://purl.org/dc/terms/title"
       ],
       "close_mappings": [
         "http://www.w3.org/2000/01/rdf-schema#label"
       ],
-      "is_a": "name",
+      "is_a": "title",
       "domain": "License",
-      "slot_uri": "https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#name",
-      "alias": "name",
+      "slot_uri": "http://purl.org/dc/terms/title",
+      "alias": "title",
       "owner": "License",
       "domain_of": [
         "License"
       ],
       "is_usage_slot": true,
-      "usage_slot_name": "name",
+      "usage_slot_name": "title",
       "range": "string",
       "required": true,
       "@type": "SlotDefinition"
@@ -8534,15 +8477,15 @@
       "description": "A short explanation of the characteristics, features, or nature of the current item",
       "title": "description",
       "comments": [
-        "Describe this item in few lines. This description will serve as a summary to present the item.\n"
+        "Describe this item in few lines. This description will serve as a summary to present the resource.\n"
       ],
       "from_schema": "https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#",
-      "exact_mappings": [
+      "mappings": [
         "http://purl.org/dc/terms/description"
       ],
       "is_a": "description",
       "domain": "License",
-      "slot_uri": "https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#description",
+      "slot_uri": "http://purl.org/dc/terms/description",
       "alias": "description",
       "owner": "License",
       "domain_of": [
@@ -8625,30 +8568,30 @@
       "@type": "SlotDefinition"
     },
     {
-      "name": "Certification_name",
-      "definition_uri": "https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#name",
-      "description": "The label that allows humans to identify the current item",
-      "title": "name",
+      "name": "Certification_title",
+      "definition_uri": "https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#title",
+      "description": "A name given to the resource",
+      "title": "title",
       "comments": [
         "The title of the item should be as short and descriptive as possible. E.g. for virus products it should basically be based on the following Pattern:\n'Virus name', 'virus host type', 'collection year', 'country of collection' ex 'suspected epidemiological origin', 'genotype', 'strain', 'variant name or specific feature"
       ],
       "from_schema": "https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#",
-      "exact_mappings": [
+      "mappings": [
         "http://purl.org/dc/terms/title"
       ],
       "close_mappings": [
         "http://www.w3.org/2000/01/rdf-schema#label"
       ],
-      "is_a": "name",
+      "is_a": "title",
       "domain": "Certification",
-      "slot_uri": "https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#name",
-      "alias": "name",
+      "slot_uri": "http://purl.org/dc/terms/title",
+      "alias": "title",
       "owner": "Certification",
       "domain_of": [
         "Certification"
       ],
       "is_usage_slot": true,
-      "usage_slot_name": "name",
+      "usage_slot_name": "title",
       "range": "string",
       "required": true,
       "@type": "SlotDefinition"
@@ -8659,15 +8602,15 @@
       "description": "A short explanation of the characteristics, features, or nature of the current item",
       "title": "description",
       "comments": [
-        "Describe this item in few lines. This description will serve as a summary to present the item.\n"
+        "Describe this item in few lines. This description will serve as a summary to present the resource.\n"
       ],
       "from_schema": "https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#",
-      "exact_mappings": [
+      "mappings": [
         "http://purl.org/dc/terms/description"
       ],
       "is_a": "description",
       "domain": "Certification",
-      "slot_uri": "https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#description",
+      "slot_uri": "http://purl.org/dc/terms/description",
       "alias": "description",
       "owner": "Certification",
       "domain_of": [
@@ -8753,13 +8696,12 @@
       "description": "Resource published or curated by a single agent.",
       "title": "Resource",
       "from_schema": "https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#",
-      "exact_mappings": [
-        "dcat:Resource",
+      "mappings": [
         "dcat:Resource"
       ],
       "abstract": true,
       "slot_usage": {},
-      "class_uri": "https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#Resource",
+      "class_uri": "http://www.w3.org/ns/dcat#Resource",
       "@type": "ClassDefinition"
     },
     {
@@ -8768,8 +8710,7 @@
       "description": "A collection of data, published or curated by a single agent, and available for access",
       "title": "Dataset",
       "from_schema": "https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#",
-      "exact_mappings": [
-        "dcat:Dataset",
+      "mappings": [
         "dcat:Dataset"
       ],
       "close_mappings": [
@@ -8780,8 +8721,12 @@
       ],
       "is_a": "Resource",
       "abstract": true,
+      "slots": [
+        "Dataset_title",
+        "Dataset_description"
+      ],
       "slot_usage": {},
-      "class_uri": "https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#Dataset",
+      "class_uri": "http://www.w3.org/ns/dcat#Dataset",
       "@type": "ClassDefinition"
     },
     {
@@ -8790,8 +8735,7 @@
       "description": "A collection of operations that provides access to one or more datasets or data processing functions",
       "title": "Data Service",
       "from_schema": "https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#",
-      "exact_mappings": [
-        "dcat:DataService",
+      "mappings": [
         "dcat:DataService"
       ],
       "close_mappings": [
@@ -8803,11 +8747,12 @@
       "is_a": "Resource",
       "abstract": true,
       "slots": [
-        "DataService_name",
-        "DataService_description"
+        "DataService_title",
+        "DataService_description",
+        "DataService_endpointURL"
       ],
       "slot_usage": {},
-      "class_uri": "https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#DataService",
+      "class_uri": "http://www.w3.org/ns/dcat#DataService",
       "@type": "ClassDefinition"
     },
     {
@@ -8835,8 +8780,7 @@
       "description": "A curated collection of metadata about resources",
       "title": "Catalogue",
       "from_schema": "https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#",
-      "exact_mappings": [
-        "dcat:Catalog",
+      "mappings": [
         "dcat:Catalog"
       ],
       "close_mappings": [
@@ -8848,11 +8792,11 @@
       "is_a": "Dataset",
       "abstract": true,
       "slots": [
-        "Catalogue_name",
-        "Catalogue_description"
+        "Dataset_title",
+        "Dataset_description"
       ],
       "slot_usage": {},
-      "class_uri": "https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#Catalogue",
+      "class_uri": "http://www.w3.org/ns/dcat#Catalog",
       "@type": "ClassDefinition"
     },
     {
@@ -8869,8 +8813,8 @@
       ],
       "is_a": "Catalogue",
       "slots": [
-        "Catalogue_name",
-        "Catalogue_description",
+        "Dataset_title",
+        "Dataset_description",
         "Taxonomy_taxon",
         "Taxonomy_taxonDataProvider",
         "Taxonomy_version",
@@ -8894,13 +8838,13 @@
       ],
       "is_a": "DataService",
       "slots": [
-        "DataService_name",
+        "DataService_title",
         "DataService_description",
+        "DataService_endpointURL",
         "DataProvider_license",
         "DataProvider_loginRequestMethod",
         "DataProvider_loginURL",
         "DataProvider_loginTokenName",
-        "DataProvider_queryURL",
         "DataProvider_queryMethod",
         "DataProvider_contentType",
         "DataProvider_providedEntityType",
@@ -8916,7 +8860,7 @@
       "description": "A collection of distinguishing information that enables the differentiation of a pathogen from another",
       "title": "Pathogen identification",
       "from_schema": "https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#",
-      "is_a": "Dataset",
+      "is_a": "Resource",
       "slots": [
         "PathogenIdentification_taxon",
         "PathogenIdentification_pathogenName",
@@ -8969,8 +8913,8 @@
       ],
       "is_a": "Catalogue",
       "slots": [
-        "Catalogue_name",
-        "Catalogue_description",
+        "Dataset_title",
+        "Dataset_description",
         "Vocabulary_termDataProvider",
         "Vocabulary_term"
       ],
@@ -8991,7 +8935,7 @@
       "is_a": "Resource",
       "abstract": true,
       "slots": [
-        "Term_name",
+        "Term_title",
         "Term_description",
         "Term_weight",
         "Term_inVocabulary"
@@ -9016,7 +8960,7 @@
       ],
       "is_a": "Term",
       "slots": [
-        "Term_name",
+        "Term_title",
         "Term_description",
         "Term_weight",
         "Term_inVocabulary",
@@ -9039,7 +8983,7 @@
       ],
       "is_a": "CommonName",
       "slots": [
-        "Term_name",
+        "Term_title",
         "Term_description",
         "Term_weight",
         "Term_inVocabulary",
@@ -9062,7 +9006,7 @@
       ],
       "is_a": "Term",
       "slots": [
-        "Term_name",
+        "Term_title",
         "Term_description",
         "Term_weight",
         "Term_inVocabulary",
@@ -9088,7 +9032,7 @@
       ],
       "is_a": "Term",
       "slots": [
-        "Term_name",
+        "Term_title",
         "Term_description",
         "Term_weight",
         "Term_inVocabulary"
@@ -9109,7 +9053,7 @@
       ],
       "is_a": "Term",
       "slots": [
-        "Term_name",
+        "Term_title",
         "Term_description",
         "Term_weight",
         "Term_inVocabulary"
@@ -9130,7 +9074,7 @@
       ],
       "is_a": "Term",
       "slots": [
-        "Term_name",
+        "Term_title",
         "Term_description",
         "Term_weight",
         "Term_inVocabulary"
@@ -9151,7 +9095,7 @@
       ],
       "is_a": "Term",
       "slots": [
-        "Term_name",
+        "Term_title",
         "Term_description",
         "Term_weight",
         "Term_inVocabulary"
@@ -9172,7 +9116,7 @@
       ],
       "is_a": "Term",
       "slots": [
-        "Term_name",
+        "Term_title",
         "Term_description",
         "Term_weight",
         "Term_inVocabulary"
@@ -9193,7 +9137,7 @@
       ],
       "is_a": "Term",
       "slots": [
-        "Term_name",
+        "Term_title",
         "Term_description",
         "Term_weight",
         "Term_inVocabulary"
@@ -9213,7 +9157,7 @@
       "from_schema": "https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#",
       "is_a": "Term",
       "slots": [
-        "Term_name",
+        "Term_title",
         "Term_description",
         "Term_weight",
         "Term_inVocabulary"
@@ -9234,7 +9178,7 @@
       ],
       "is_a": "Term",
       "slots": [
-        "Term_name",
+        "Term_title",
         "Term_description",
         "Term_weight",
         "Term_inVocabulary"
@@ -9251,7 +9195,7 @@
       "from_schema": "https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#",
       "is_a": "Term",
       "slots": [
-        "Term_name",
+        "Term_title",
         "Term_description",
         "Term_weight",
         "Term_inVocabulary"
@@ -9268,7 +9212,7 @@
       "from_schema": "https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#",
       "is_a": "Term",
       "slots": [
-        "Term_name",
+        "Term_title",
         "Term_description",
         "Term_weight",
         "Term_inVocabulary"
@@ -9285,7 +9229,7 @@
       "from_schema": "https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#",
       "is_a": "Term",
       "slots": [
-        "Term_name",
+        "Term_title",
         "Term_description",
         "Term_weight",
         "Term_inVocabulary"
@@ -9306,7 +9250,7 @@
       ],
       "is_a": "Term",
       "slots": [
-        "Term_name",
+        "Term_title",
         "Term_description",
         "Term_weight",
         "Term_inVocabulary"
@@ -9327,7 +9271,7 @@
       ],
       "is_a": "Term",
       "slots": [
-        "Term_name",
+        "Term_title",
         "Term_description",
         "Term_weight",
         "Term_inVocabulary",
@@ -9345,7 +9289,7 @@
       "from_schema": "https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#",
       "is_a": "Term",
       "slots": [
-        "Term_name",
+        "Term_title",
         "Term_description",
         "Term_weight",
         "Term_inVocabulary"
@@ -9373,7 +9317,7 @@
       ],
       "is_a": "Term",
       "slots": [
-        "Term_name",
+        "Term_title",
         "Term_description",
         "Term_weight",
         "Term_inVocabulary"
@@ -9390,7 +9334,7 @@
       "from_schema": "https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#",
       "is_a": "GeographicalOrigin",
       "slots": [
-        "Term_name",
+        "Term_title",
         "Term_description",
         "Term_weight",
         "Term_inVocabulary"
@@ -9414,7 +9358,7 @@
       ],
       "is_a": "Term",
       "slots": [
-        "Term_name",
+        "Term_title",
         "Term_description",
         "Term_weight",
         "Term_inVocabulary",
@@ -9432,7 +9376,7 @@
       "from_schema": "https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#",
       "is_a": "Term",
       "slots": [
-        "Term_name",
+        "Term_title",
         "Term_description",
         "Term_weight",
         "Term_inVocabulary"
@@ -9453,7 +9397,7 @@
       ],
       "is_a": "CommonName",
       "slots": [
-        "Term_name",
+        "Term_title",
         "Term_description",
         "Term_weight",
         "Term_inVocabulary",
@@ -9479,7 +9423,7 @@
       ],
       "is_a": "Term",
       "slots": [
-        "Term_name",
+        "Term_title",
         "Term_description",
         "Term_weight",
         "Term_inVocabulary",
@@ -9508,7 +9452,7 @@
       ],
       "is_a": "Term",
       "slots": [
-        "Term_name",
+        "Term_title",
         "Term_description",
         "Term_weight",
         "Term_inVocabulary",
@@ -9551,7 +9495,7 @@
         "wd:Q3511065",
         "wd:Q3511065"
       ],
-      "is_a": "Dataset",
+      "is_a": "Resource",
       "slots": [
         "Sequence_sequenceReference",
         "Sequence_sequenceFASTA"
@@ -9584,13 +9528,16 @@
       "description": "A person or an organization",
       "title": "Person Or Organization",
       "from_schema": "https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#",
+      "mappings": [
+        "foaf:Agent"
+      ],
       "exact_mappings": [
         "dct:Agent",
         "dct:Agent"
       ],
       "close_mappings": [
-        "foaf:Agent",
-        "foaf:Agent"
+        "vcard:Agent",
+        "vcard:Agent"
       ],
       "is_a": "Resource",
       "slots": [
@@ -9601,7 +9548,7 @@
         "PersonOrOrganization_logo"
       ],
       "slot_usage": {},
-      "class_uri": "https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#PersonOrOrganization",
+      "class_uri": "http://xmlns.com/foaf/0.1/Agent",
       "@type": "ClassDefinition"
     },
     {
@@ -9610,6 +9557,9 @@
       "description": "An individual",
       "title": "Person",
       "from_schema": "https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#",
+      "mappings": [
+        "foaf:Person"
+      ],
       "close_mappings": [
         "wd:Q215627",
         "vcard:Individual",
@@ -9626,7 +9576,7 @@
         "Person_oRCIDiD"
       ],
       "slot_usage": {},
-      "class_uri": "https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#Person",
+      "class_uri": "http://xmlns.com/foaf/0.1/Person",
       "@type": "ClassDefinition"
     },
     {
@@ -9635,6 +9585,9 @@
       "description": "A social entity established to meet needs or pursue specific goals",
       "title": "Organization",
       "from_schema": "https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#",
+      "mappings": [
+        "foaf:Organization"
+      ],
       "close_mappings": [
         "wd:Q43229",
         "vcard:Organization",
@@ -9653,7 +9606,7 @@
         "Organization_rORiD"
       ],
       "slot_usage": {},
-      "class_uri": "https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#Organization",
+      "class_uri": "http://xmlns.com/foaf/0.1/Organization",
       "@type": "ClassDefinition"
     },
     {
@@ -9735,7 +9688,7 @@
       "description": "Information about the origin of the biological material, compulsory for access, utilization, and benefit-sharing of genetic resources in compliance with the Nagoya Protocol",
       "title": "Biological material origin",
       "from_schema": "https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#",
-      "is_a": "Dataset",
+      "is_a": "Resource",
       "slots": [
         "BiologicalMaterialOrigin_recombinantMaterial",
         "BiologicalMaterialOrigin_biologicalSourceType",
@@ -9751,7 +9704,7 @@
       "description": "Information on the origin of a unitary, cohesive part that is part of, or constitutes the biological material. It can be multiple parts in case of a recombinant biological material",
       "title": "Biological part origin",
       "from_schema": "https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#",
-      "is_a": "Dataset",
+      "is_a": "Resource",
       "abstract": true,
       "slots": [
         "BiologicalPartOrigin_recombinantPartIdentification",
@@ -9804,7 +9757,7 @@
       "description": "Identification of a recombinant part",
       "title": "Recombinant part identification",
       "from_schema": "https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#",
-      "is_a": "Dataset",
+      "is_a": "Resource",
       "slots": [
         "RecombinantPartIdentification_partIdentification",
         "RecombinantPartIdentification_sequence"
@@ -9825,8 +9778,8 @@
       ],
       "is_a": "Catalogue",
       "slots": [
-        "Catalogue_name",
-        "Catalogue_description",
+        "Dataset_title",
+        "Dataset_description",
         "Collection_collectionItem",
         "Collection_collectionDataProvider"
       ],
@@ -9846,8 +9799,8 @@
       "is_a": "Dataset",
       "abstract": true,
       "slots": [
-        "ProductOrService_name",
-        "ProductOrService_description",
+        "Dataset_title",
+        "Dataset_description",
         "ProductOrService_accessPointURL",
         "ProductOrService_refSKU",
         "ProductOrService_unitDefinition",
@@ -9889,8 +9842,8 @@
       ],
       "is_a": "ProductOrService",
       "slots": [
-        "ProductOrService_name",
-        "ProductOrService_description",
+        "Dataset_title",
+        "Dataset_description",
         "ProductOrService_accessPointURL",
         "ProductOrService_refSKU",
         "ProductOrService_unitDefinition",
@@ -9934,8 +9887,8 @@
       ],
       "is_a": "ProductOrService",
       "slots": [
-        "ProductOrService_name",
-        "ProductOrService_description",
+        "Dataset_title",
+        "Dataset_description",
         "ProductOrService_accessPointURL",
         "ProductOrService_refSKU",
         "ProductOrService_unitDefinition",
@@ -9984,8 +9937,8 @@
       ],
       "is_a": "Product",
       "slots": [
-        "ProductOrService_name",
-        "ProductOrService_description",
+        "Dataset_title",
+        "Dataset_description",
         "ProductOrService_accessPointURL",
         "ProductOrService_refSKU",
         "ProductOrService_unitDefinition",
@@ -10039,8 +9992,8 @@
       ],
       "is_a": "Antibody",
       "slots": [
-        "ProductOrService_name",
-        "ProductOrService_description",
+        "Dataset_title",
+        "Dataset_description",
         "ProductOrService_accessPointURL",
         "ProductOrService_refSKU",
         "ProductOrService_unitDefinition",
@@ -10095,8 +10048,8 @@
       ],
       "is_a": "Product",
       "slots": [
-        "ProductOrService_name",
-        "ProductOrService_description",
+        "Dataset_title",
+        "Dataset_description",
         "ProductOrService_accessPointURL",
         "ProductOrService_refSKU",
         "ProductOrService_unitDefinition",
@@ -10159,8 +10112,8 @@
       ],
       "is_a": "Product",
       "slots": [
-        "ProductOrService_name",
-        "ProductOrService_description",
+        "Dataset_title",
+        "Dataset_description",
         "ProductOrService_accessPointURL",
         "ProductOrService_refSKU",
         "ProductOrService_unitDefinition",
@@ -10219,8 +10172,8 @@
       "from_schema": "https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#",
       "is_a": "Product",
       "slots": [
-        "ProductOrService_name",
-        "ProductOrService_description",
+        "Dataset_title",
+        "Dataset_description",
         "ProductOrService_accessPointURL",
         "ProductOrService_refSKU",
         "ProductOrService_unitDefinition",
@@ -10273,8 +10226,8 @@
       ],
       "is_a": "Product",
       "slots": [
-        "ProductOrService_name",
-        "ProductOrService_description",
+        "Dataset_title",
+        "Dataset_description",
         "ProductOrService_accessPointURL",
         "ProductOrService_refSKU",
         "ProductOrService_unitDefinition",
@@ -10325,8 +10278,8 @@
       "is_a": "Product",
       "abstract": true,
       "slots": [
-        "ProductOrService_name",
-        "ProductOrService_description",
+        "Dataset_title",
+        "Dataset_description",
         "ProductOrService_accessPointURL",
         "ProductOrService_refSKU",
         "ProductOrService_unitDefinition",
@@ -10393,8 +10346,8 @@
       ],
       "is_a": "Pathogen",
       "slots": [
-        "ProductOrService_name",
-        "ProductOrService_description",
+        "Dataset_title",
+        "Dataset_description",
         "ProductOrService_accessPointURL",
         "ProductOrService_refSKU",
         "ProductOrService_unitDefinition",
@@ -10464,8 +10417,8 @@
       ],
       "is_a": "Pathogen",
       "slots": [
-        "ProductOrService_name",
-        "ProductOrService_description",
+        "Dataset_title",
+        "Dataset_description",
         "ProductOrService_accessPointURL",
         "ProductOrService_refSKU",
         "ProductOrService_unitDefinition",
@@ -10532,8 +10485,8 @@
       ],
       "is_a": "Pathogen",
       "slots": [
-        "ProductOrService_name",
-        "ProductOrService_description",
+        "Dataset_title",
+        "Dataset_description",
         "ProductOrService_accessPointURL",
         "ProductOrService_refSKU",
         "ProductOrService_unitDefinition",
@@ -10600,8 +10553,8 @@
       ],
       "is_a": "Pathogen",
       "slots": [
-        "ProductOrService_name",
-        "ProductOrService_description",
+        "Dataset_title",
+        "Dataset_description",
         "ProductOrService_accessPointURL",
         "ProductOrService_refSKU",
         "ProductOrService_unitDefinition",
@@ -10668,8 +10621,8 @@
       ],
       "is_a": "Pathogen",
       "slots": [
-        "ProductOrService_name",
-        "ProductOrService_description",
+        "Dataset_title",
+        "Dataset_description",
         "ProductOrService_accessPointURL",
         "ProductOrService_refSKU",
         "ProductOrService_unitDefinition",
@@ -10736,8 +10689,8 @@
       ],
       "is_a": "Pathogen",
       "slots": [
-        "ProductOrService_name",
-        "ProductOrService_description",
+        "Dataset_title",
+        "Dataset_description",
         "ProductOrService_accessPointURL",
         "ProductOrService_refSKU",
         "ProductOrService_unitDefinition",
@@ -10802,7 +10755,7 @@
         "wd:Q222067",
         "wd:Q222067"
       ],
-      "is_a": "Dataset",
+      "is_a": "Resource",
       "slots": [
         "MSDS_msdsContact",
         "MSDS_physicalChemicalProperties",
@@ -11009,7 +10962,7 @@
       ],
       "is_a": "Resource",
       "slots": [
-        "License_name",
+        "License_title",
         "License_description",
         "License_resourceURL",
         "License_licensingOrAttribution",
@@ -11033,7 +10986,7 @@
       ],
       "is_a": "Resource",
       "slots": [
-        "Certification_name",
+        "Certification_title",
         "Certification_description",
         "Certification_logo",
         "Certification_certificationDocument",
@@ -11046,9 +10999,9 @@
   ],
   "metamodel_version": "1.7.0",
   "source_file": "evora_schema.yaml",
-  "source_file_date": "2025-02-05T11:28:54",
-  "source_file_size": 211004,
-  "generation_date": "2025-02-05T11:29:09",
+  "source_file_date": "2025-03-07T13:41:25",
+  "source_file_size": 207878,
+  "generation_date": "2025-03-07T13:41:40",
   "@type": "SchemaDefinition",
   "@context": [
     "https://w3id.org/linkml/types.context.jsonld",

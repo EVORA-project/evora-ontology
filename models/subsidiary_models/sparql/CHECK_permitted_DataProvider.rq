@@ -29,13 +29,13 @@ SELECT ?g ?s ?p WHERE {
    EVORAO:loginRequestMethod,
    EVORAO:loginURL,
    EVORAO:loginTokenName,
-   EVORAO:queryURL,
    EVORAO:queryMethod,
    EVORAO:contentType,
    EVORAO:providedEntityType,
    EVORAO:weight,
-   EVORAO:name,
-   EVORAO:description,
+   dct:title,
+   dct:description,
+   dcat:endpointURL,
    rdf:type ))
  }
  

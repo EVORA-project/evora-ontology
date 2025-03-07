@@ -25,8 +25,6 @@ URI: [EVORAO:Vocabulary](https://raw.githubusercontent.com/EVORA-project/evora-o
       
       Vocabulary : description
         
-      Vocabulary : name
-        
       Vocabulary : term
         
           
@@ -44,6 +42,8 @@ URI: [EVORAO:Vocabulary](https://raw.githubusercontent.com/EVORA-project/evora-o
     Vocabulary --> "0..1" DataProvider : termDataProvider
     click DataProvider href "../DataProvider"
 
+        
+      Vocabulary : title
         
       
 ```
@@ -66,8 +66,8 @@ URI: [EVORAO:Vocabulary](https://raw.githubusercontent.com/EVORA-project/evora-o
 | ---  | --- | --- | --- |
 | [termDataProvider](termDataProvider.md) | 0..1 <br/> [DataProvider](DataProvider.md) | An external API or Endpoint that permits to retrieve the terms of this vocabu... | direct |
 | [term](term.md) | * _recommended_ <br/> [Term](Term.md) | The terms related to this vocabulary | direct |
-| [name](name.md) | 1 <br/> [String](String.md) | The label that allows humans to identify the current item | [Catalogue](Catalogue.md) |
-| [description](description.md) | 0..1 _recommended_ <br/> [String](String.md) | A short explanation of the characteristics, features, or nature of the curren... | [Catalogue](Catalogue.md) |
+| [title](title.md) | 1 <br/> [String](String.md) | A name given to the resource | [Dataset](Dataset.md) |
+| [description](description.md) | 1 _recommended_ <br/> [String](String.md) | A short explanation of the characteristics, features, or nature of the curren... | [Dataset](Dataset.md) |
 
 
 
@@ -248,10 +248,10 @@ attributes:
     required: false
     recommended: true
     multivalued: true
-  name:
-    name: name
-    description: The label that allows humans to identify the current item
-    title: name
+  title:
+    name: title
+    description: A name given to the resource
+    title: title
     comments:
     - 'The title of the item should be as short and descriptive as possible. E.g.
       for virus products it should basically be based on the following Pattern:
@@ -260,21 +260,17 @@ attributes:
       ex ''suspected epidemiological origin'', ''genotype'', ''strain'', ''variant
       name or specific feature'
     from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
-    exact_mappings:
-    - dct:title
     close_mappings:
     - rdfs:label
     rank: 1000
-    alias: name
+    slot_uri: dct:title
+    alias: title
     owner: Vocabulary
     domain_of:
-    - Catalogue
+    - Dataset
     - DataService
+    - Publication
     - Term
-    - PersonOrOrganization
-    - ProductOrService
-    - File
-    - ContactPoint
     - License
     - Certification
     range: string
@@ -287,27 +283,25 @@ attributes:
     title: description
     comments:
     - 'Describe this item in few lines. This description will serve as a summary to
-      present the item.
+      present the resource.
 
       '
     from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
-    exact_mappings:
-    - dct:description
     rank: 1000
+    slot_uri: dct:description
     alias: description
     owner: Vocabulary
     domain_of:
-    - Catalogue
+    - Dataset
     - DataService
     - Term
     - PersonOrOrganization
-    - ProductOrService
     - File
     - ContactPoint
     - License
     - Certification
     range: string
-    required: false
+    required: true
     recommended: true
     multivalued: false
 

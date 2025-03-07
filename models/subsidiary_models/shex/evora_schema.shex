@@ -1,8 +1,11 @@
 # metamodel_version: 1.7.0
-# version: 1.0.8498
+# version: 1.0.8636
 BASE <https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#>
+PREFIX dcat: <http://www.w3.org/ns/dcat#>
+PREFIX foaf: <http://xmlns.com/foaf/0.1/>
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX dct: <http://purl.org/dc/terms/>
 PREFIX linkml: <https://w3id.org/linkml/>
 
 
@@ -86,8 +89,8 @@ linkml:Sparqlpath xsd:string
 }
 
 <BiologicalMaterialOrigin> CLOSED {
-    (  $<BiologicalMaterialOrigin_tes> (  &<Dataset_tes> ;
-          rdf:type [ <Dataset> ] ? ;
+    (  $<BiologicalMaterialOrigin_tes> (  &<Resource_tes> ;
+          rdf:type [ dcat:Resource ] ? ;
           <recombinantMaterial> @linkml:Boolean ;
           <biologicalSourceType> @linkml:Boolean ;
           <biologicalPartOrigin> @<BiologicalPartOrigin> +
@@ -101,8 +104,8 @@ linkml:Sparqlpath xsd:string
 )
 
 <BiologicalPartOrigin_struct> {
-    (  $<BiologicalPartOrigin_tes> (  &<Dataset_tes> ;
-          rdf:type [ <Dataset> ] ? ;
+    (  $<BiologicalPartOrigin_tes> (  &<Resource_tes> ;
+          rdf:type [ dcat:Resource ] ? ;
           <recombinantPartIdentification> @<RecombinantPartIdentification> ? ;
           <accessToPhysicalGeneticResource> @linkml:Boolean
        ) ;
@@ -125,19 +128,17 @@ linkml:Sparqlpath xsd:string
 
 <Catalogue_struct> {
     (  $<Catalogue_tes> (  &<Dataset_tes> ;
-          rdf:type [ <Dataset> ] ? ;
-          <name> @linkml:String ;
-          <description> @linkml:String ?
+          rdf:type [ dcat:Dataset ] ?
        ) ;
-       rdf:type [ <Catalogue> ] ?
+       rdf:type [ dcat:Catalog ] ?
     )
 }
 
 <Certification> CLOSED {
     (  $<Certification_tes> (  &<Resource_tes> ;
-          rdf:type [ <Resource> ] ? ;
-          <name> @linkml:String ;
-          <description> @linkml:String ? ;
+          rdf:type [ dcat:Resource ] ? ;
+          dct:title @linkml:String ;
+          dct:description @linkml:String ? ;
           <logo> @<Image> ? ;
           <certificationDocument> @<Document> * ;
           <resourceURL> @linkml:Uri ?
@@ -148,7 +149,7 @@ linkml:Sparqlpath xsd:string
 
 <Collection> CLOSED {
     (  $<Collection_tes> (  &<Catalogue_tes> ;
-          rdf:type [ <Catalogue> ] ? ;
+          rdf:type [ dcat:Catalog ] ? ;
           <collectionItem> @<ProductOrService> * ;
           <collectionDataProvider> @<DataProvider> ?
        ) ;
@@ -170,9 +171,9 @@ linkml:Sparqlpath xsd:string
 
 <ContactPoint> CLOSED {
     (  $<ContactPoint_tes> (  &<Resource_tes> ;
-          rdf:type [ <Resource> ] ? ;
+          rdf:type [ dcat:Resource ] ? ;
           <name> @linkml:String ;
-          <description> @linkml:String ? ;
+          dct:description @linkml:String ? ;
           <email> @linkml:String ? ;
           <telephone> @linkml:String ? ;
           <streetAddress> @linkml:String ? ;
@@ -205,12 +206,11 @@ linkml:Sparqlpath xsd:string
 
 <DataProvider> CLOSED {
     (  $<DataProvider_tes> (  &<DataService_tes> ;
-          rdf:type [ <DataService> ] ? ;
+          rdf:type [ dcat:DataService ] ? ;
           <license> @<License> ? ;
           <loginRequestMethod> @linkml:String ? ;
           <loginURL> @linkml:Uri ? ;
           <loginTokenName> @linkml:String ? ;
-          <queryURL> @linkml:Uri ;
           <queryMethod> @linkml:String ;
           <contentType> @linkml:String ;
           <providedEntityType> @<Dataset> ;
@@ -223,25 +223,27 @@ linkml:Sparqlpath xsd:string
 <DataService>  (
     {
        (  $<DataService_tes> (  &<Resource_tes> ;
-             rdf:type [ <Resource> ] ? ;
-             <name> @linkml:String ;
-             <description> @linkml:String ?
+             rdf:type [ dcat:Resource ] ? ;
+             dct:title @linkml:String ;
+             dct:description @linkml:String ? ;
+             dcat:endpointURL @linkml:Uri
           ) ;
-          rdf:type [ <DataService> ] ?
+          rdf:type [ dcat:DataService ] ?
        )
     } OR @<DataProvider>
 )
 
 <Dataset>  (
-    @<BiologicalMaterialOrigin> OR @<BiologicalPartOrigin> OR @<Catalogue> OR @<MSDS> OR @<PathogenIdentification> OR
-    @<ProductOrService> OR @<RecombinantPartIdentification> OR @<Sequence>
+    @<Catalogue> OR @<ProductOrService>
 )
 
 <Dataset_struct> {
     (  $<Dataset_tes> (  &<Resource_tes> ;
-          rdf:type [ <Resource> ] ?
+          rdf:type [ dcat:Resource ] ? ;
+          dct:title @linkml:String ;
+          dct:description @linkml:String
        ) ;
-       rdf:type [ <Dataset> ] ?
+       rdf:type [ dcat:Dataset ] ?
     )
 }
 
@@ -283,7 +285,7 @@ linkml:Sparqlpath xsd:string
 
 <ExternalRelatedReference> CLOSED {
     (  $<ExternalRelatedReference_tes> (  &<Resource_tes> ;
-          rdf:type [ <Resource> ] ? ;
+          rdf:type [ dcat:Resource ] ? ;
           <reference> @linkml:String ;
           <referenceLabel> @linkml:String ;
           <referenceProviderPrefix> @linkml:String ;
@@ -299,9 +301,9 @@ linkml:Sparqlpath xsd:string
 
 <File_struct> {
     (  $<File_tes> (  &<Resource_tes> ;
-          rdf:type [ <Resource> ] ? ;
+          rdf:type [ dcat:Resource ] ? ;
           <name> @linkml:String ;
-          <description> @linkml:String ? ;
+          dct:description @linkml:String ? ;
           <contentURL> @linkml:Uri ;
           <format> @linkml:String ;
           <license> @<License> ?
@@ -388,9 +390,9 @@ linkml:Sparqlpath xsd:string
 
 <License> CLOSED {
     (  $<License_tes> (  &<Resource_tes> ;
-          rdf:type [ <Resource> ] ? ;
-          <name> @linkml:String ;
-          <description> @linkml:String ? ;
+          rdf:type [ dcat:Resource ] ? ;
+          dct:title @linkml:String ;
+          dct:description @linkml:String ? ;
           <resourceURL> @linkml:Uri ? ;
           <licensingOrAttribution> @linkml:String ? ;
           <logo> @<Image> ?
@@ -400,8 +402,8 @@ linkml:Sparqlpath xsd:string
 }
 
 <MSDS> CLOSED {
-    (  $<MSDS_tes> (  &<Dataset_tes> ;
-          rdf:type [ <Dataset> ] ? ;
+    (  $<MSDS_tes> (  &<Resource_tes> ;
+          rdf:type [ dcat:Resource ] ? ;
           <msdsContact> @<ContactPoint> ;
           <physicalChemicalProperties> @linkml:String ? ;
           <hazardsIdentification> @linkml:String ? ;
@@ -460,19 +462,19 @@ linkml:Sparqlpath xsd:string
 <Organization>  (
     CLOSED {
        (  $<Organization_tes> (  &<PersonOrOrganization_tes> ;
-             rdf:type [ <PersonOrOrganization> ] ? ;
+             rdf:type [ foaf:Agent ] ? ;
              <alternateName> @<AlternateName> * ;
              <country> @<Country> ? ;
              <rORiD> @linkml:String ?
           ) ;
-          rdf:type [ <Organization> ] ?
+          rdf:type [ foaf:Organization ] ?
        )
     } OR @<Provider> OR @<RI>
 )
 
 <Originator> CLOSED {
     (  $<Originator_tes> (  &<PersonOrOrganization_tes> ;
-          rdf:type [ <PersonOrOrganization> ] ?
+          rdf:type [ foaf:Agent ] ?
        ) ;
        rdf:type [ <Originator> ] ?
     )
@@ -509,8 +511,8 @@ linkml:Sparqlpath xsd:string
 }
 
 <PathogenIdentification> CLOSED {
-    (  $<PathogenIdentification_tes> (  &<Dataset_tes> ;
-          rdf:type [ <Dataset> ] ? ;
+    (  $<PathogenIdentification_tes> (  &<Resource_tes> ;
+          rdf:type [ dcat:Resource ] ? ;
           <taxon> @<Taxon> ;
           <pathogenName> @<CommonName> ;
           <pathogenType> @linkml:String ;
@@ -536,24 +538,24 @@ linkml:Sparqlpath xsd:string
 
 <Person> CLOSED {
     (  $<Person_tes> (  &<PersonOrOrganization_tes> ;
-          rdf:type [ <PersonOrOrganization> ] ? ;
+          rdf:type [ foaf:Agent ] ? ;
           <oRCIDiD> @linkml:String ?
        ) ;
-       rdf:type [ <Person> ] ?
+       rdf:type [ foaf:Person ] ?
     )
 }
 
 <PersonOrOrganization>  (
     CLOSED {
        (  $<PersonOrOrganization_tes> (  &<Resource_tes> ;
-             rdf:type [ <Resource> ] ? ;
+             rdf:type [ dcat:Resource ] ? ;
              <name> @linkml:String ;
-             <description> @linkml:String ? ;
+             dct:description @linkml:String ? ;
              <homePage> @linkml:Uri ? ;
              <contactPoint> @<ContactPoint> ? ;
              <logo> @<Image> ?
           ) ;
-          rdf:type [ <PersonOrOrganization> ] ?
+          rdf:type [ foaf:Agent ] ?
        )
     } OR @<Organization> OR @<Originator> OR @<Person>
 )
@@ -614,9 +616,7 @@ linkml:Sparqlpath xsd:string
 
 <ProductOrService_struct> {
     (  $<ProductOrService_tes> (  &<Dataset_tes> ;
-          rdf:type [ <Dataset> ] ? ;
-          <name> @linkml:String ;
-          <description> @linkml:String ? ;
+          rdf:type [ dcat:Dataset ] ? ;
           <accessPointURL> @linkml:Uri ;
           <refSKU> @linkml:String ;
           <unitDefinition> @linkml:String ? ;
@@ -694,7 +694,7 @@ linkml:Sparqlpath xsd:string
 
 <Provider> CLOSED {
     (  $<Provider_tes> (  &<Organization_tes> ;
-          rdf:type [ <Organization> ] ? ;
+          rdf:type [ foaf:Organization ] ? ;
           <memberOfRI> @<RI> *
        ) ;
        rdf:type [ <Provider> ] ?
@@ -703,8 +703,8 @@ linkml:Sparqlpath xsd:string
 
 <Publication> CLOSED {
     (  $<Publication_tes> (  &<Resource_tes> ;
-          rdf:type [ <Resource> ] ? ;
-          <title> @linkml:String ;
+          rdf:type [ dcat:Resource ] ? ;
+          dct:title @linkml:String ;
           <authors> @linkml:String ;
           <abstract> @linkml:String ;
           <relatedDOI> @<DOI> + ;
@@ -715,8 +715,8 @@ linkml:Sparqlpath xsd:string
 }
 
 <RecombinantPartIdentification> CLOSED {
-    (  $<RecombinantPartIdentification_tes> (  &<Dataset_tes> ;
-          rdf:type [ <Dataset> ] ? ;
+    (  $<RecombinantPartIdentification_tes> (  &<Resource_tes> ;
+          rdf:type [ dcat:Resource ] ? ;
           <partIdentification> @linkml:String ;
           <sequence> @<Sequence> +
        ) ;
@@ -725,19 +725,20 @@ linkml:Sparqlpath xsd:string
 }
 
 <Resource>  (
-    @<Certification> OR @<ContactPoint> OR @<DataService> OR @<Dataset> OR @<ExternalRelatedReference> OR @<File> OR @<License> OR
-    @<PersonOrOrganization> OR @<Publication> OR @<SequenceReference> OR @<Term> OR @<Version>
+    @<BiologicalMaterialOrigin> OR @<BiologicalPartOrigin> OR @<Certification> OR @<ContactPoint> OR @<DataService> OR @<Dataset>
+    OR @<ExternalRelatedReference> OR @<File> OR @<License> OR @<MSDS> OR @<PathogenIdentification> OR @<PersonOrOrganization> OR
+    @<Publication> OR @<RecombinantPartIdentification> OR @<Sequence> OR @<SequenceReference> OR @<Term> OR @<Version>
 )
 
 <Resource_struct> {
     (  $<Resource_tes> rdf:type . * ;
-       rdf:type [ <Resource> ] ?
+       rdf:type [ dcat:Resource ] ?
     )
 }
 
 <RI> CLOSED {
     (  $<RI_tes> (  &<Organization_tes> ;
-          rdf:type [ <Organization> ] ?
+          rdf:type [ foaf:Organization ] ?
        ) ;
        rdf:type [ <RI> ] ?
     )
@@ -752,8 +753,8 @@ linkml:Sparqlpath xsd:string
 }
 
 <Sequence> CLOSED {
-    (  $<Sequence_tes> (  &<Dataset_tes> ;
-          rdf:type [ <Dataset> ] ? ;
+    (  $<Sequence_tes> (  &<Resource_tes> ;
+          rdf:type [ dcat:Resource ] ? ;
           <sequenceReference> @<SequenceReference> * ;
           <sequenceFASTA> @linkml:String ?
        ) ;
@@ -763,7 +764,7 @@ linkml:Sparqlpath xsd:string
 
 <SequenceReference> CLOSED {
     (  $<SequenceReference_tes> (  &<Resource_tes> ;
-          rdf:type [ <Resource> ] ? ;
+          rdf:type [ dcat:Resource ] ? ;
           <accessionNumber> @linkml:String ;
           <sequenceProvider> @linkml:String
        ) ;
@@ -825,7 +826,7 @@ linkml:Sparqlpath xsd:string
 
 <Taxonomy> CLOSED {
     (  $<Taxonomy_tes> (  &<Catalogue_tes> ;
-          rdf:type [ <Catalogue> ] ? ;
+          rdf:type [ dcat:Catalog ] ? ;
           <taxon> @<Taxon> + ;
           <taxonDataProvider> @<DataProvider> ? ;
           <version> @<Version> ;
@@ -846,9 +847,9 @@ linkml:Sparqlpath xsd:string
 
 <Term_struct> {
     (  $<Term_tes> (  &<Resource_tes> ;
-          rdf:type [ <Resource> ] ? ;
-          <name> @linkml:String ;
-          <description> @linkml:String ? ;
+          rdf:type [ dcat:Resource ] ? ;
+          dct:title @linkml:String ;
+          dct:description @linkml:String ? ;
           <weight> @linkml:Integer ;
           <inVocabulary> @<Vocabulary>
        ) ;
@@ -874,7 +875,7 @@ linkml:Sparqlpath xsd:string
 
 <Version> CLOSED {
     (  $<Version_tes> (  &<Resource_tes> ;
-          rdf:type [ <Resource> ] ? ;
+          rdf:type [ dcat:Resource ] ? ;
           <ID> @linkml:String ;
           <versionOf> @<Dataset>
        ) ;
@@ -919,7 +920,7 @@ linkml:Sparqlpath xsd:string
 
 <Vocabulary> CLOSED {
     (  $<Vocabulary_tes> (  &<Catalogue_tes> ;
-          rdf:type [ <Catalogue> ] ? ;
+          rdf:type [ dcat:Catalog ] ? ;
           <termDataProvider> @<DataProvider> ? ;
           <term> @<Term> *
        ) ;

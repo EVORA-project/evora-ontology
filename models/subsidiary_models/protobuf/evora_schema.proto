@@ -1,11 +1,11 @@
  syntax="proto3";
  package
 // metamodel_version: 1.7.0
-// version: 1.0.8498
+// version: 1.0.8636
 // List of other names for things
 message AlternateName
  {
-  string name = 0
+  string title = 0
   string description = 0
   integer weight = 0
   vocabulary inVocabulary = 0
@@ -15,7 +15,7 @@ message AlternateName
 // Protein that can bind to certain types of foreign bodies, such as pathogens
 message Antibody
  {
-  string name = 0
+  string title = 0
   string description = 0
   uri accessPointURL = 0
   string refSKU = 0
@@ -66,7 +66,7 @@ message Audio
 // The bacterium as a biological material
 message Bacterium
  {
-  string name = 0
+  string title = 0
   string description = 0
   uri accessPointURL = 0
   string refSKU = 0
@@ -128,7 +128,7 @@ message BiologicalMaterialOrigin
 // A group of products
 message Bundle
  {
-  string name = 0
+  string title = 0
   string description = 0
   uri accessPointURL = 0
   string refSKU = 0
@@ -166,7 +166,7 @@ message Bundle
 // Assurance given by an independent certification body that a product, service or system meets the requirements of a standard
 message Certification
  {
-  string name = 0
+  string title = 0
   string description = 0
   image logo = 0
  repeated  document certificationDocument = 0
@@ -175,7 +175,7 @@ message Certification
 // Set of products and services with some common characteristics
 message Collection
  {
-  string name = 0
+  string title = 0
   string description = 0
  repeated  productOrService collectionItem = 0
   dataProvider collectionDataProvider = 0
@@ -183,7 +183,7 @@ message Collection
 // Vernacular name that is the name used in everyday language to refer to an organism or group of organisms. This name is typically easier to remember and pronounce compared to the scientific name
 message CommonName
  {
-  string name = 0
+  string title = 0
   string description = 0
   integer weight = 0
   vocabulary inVocabulary = 0
@@ -207,7 +207,7 @@ message ContactPoint
 // The country as of ISO3166
 message Country
  {
-  string name = 0
+  string title = 0
   string description = 0
   integer weight = 0
   vocabulary inVocabulary = 0
@@ -225,13 +225,13 @@ message Data
 // An external API (Application Programming Interface) or Endpoint that permits to retrieve data from other sources
 message DataProvider
  {
-  string name = 0
+  string title = 0
   string description = 0
+  uri endpointURL = 0
   license license = 0
   string loginRequestMethod = 0
   uri loginURL = 0
   string loginTokenName = 0
-  uri queryURL = 0
   string queryMethod = 0
   string contentType = 0
   dataset providedEntityType = 0
@@ -240,7 +240,7 @@ message DataProvider
 // A detection kit for specific pathogens
 message DetectionKit
  {
-  string name = 0
+  string title = 0
   string description = 0
   uri accessPointURL = 0
   string refSKU = 0
@@ -290,7 +290,7 @@ message Document
 // A unique string identifier assigned to a digital object, providing a permanent link for reliable citation and access.  The Digital Object Identifier (DOI) is a persistent identifier that is an ISO standard
 message DOI
  {
-  string name = 0
+  string title = 0
   string description = 0
   integer weight = 0
   vocabulary inVocabulary = 0
@@ -298,7 +298,7 @@ message DOI
 // A reference to an expression vector plasmid, typically embedding a resistance marker for inducible protein expression
 message ExpressionVector
  {
-  string name = 0
+  string title = 0
   string description = 0
   integer weight = 0
   vocabulary inVocabulary = 0
@@ -314,7 +314,7 @@ message ExternalRelatedReference
 // The fungus as a biological material
 message Fungus
  {
-  string name = 0
+  string title = 0
   string description = 0
   uri accessPointURL = 0
   string refSKU = 0
@@ -369,7 +369,7 @@ message Fungus
 // The specific location or region where a physical item, originates or is naturally found
 message GeographicalOrigin
  {
-  string name = 0
+  string title = 0
   string description = 0
   integer weight = 0
   vocabulary inVocabulary = 0
@@ -377,7 +377,7 @@ message GeographicalOrigin
 // An hybridoma that provides antibodies that can be related to a pathogen
 message Hybridoma
  {
-  string name = 0
+  string title = 0
   string description = 0
   uri accessPointURL = 0
   string refSKU = 0
@@ -420,7 +420,7 @@ message Hybridoma
 // The corresponding International Air Transport Association (IATA)'s category for dangerous goods that are transported by air
 message IATAClassification
  {
-  string name = 0
+  string title = 0
   string description = 0
   integer weight = 0
   vocabulary inVocabulary = 0
@@ -438,7 +438,7 @@ message Image
 // The IPLC area (Indigenous People and Local Communities) from which a physical item originates
 message IPLCOrigin
  {
-  string name = 0
+  string title = 0
   string description = 0
   integer weight = 0
   vocabulary inVocabulary = 0
@@ -446,7 +446,7 @@ message IPLCOrigin
 // Host organism from which the pathogen was isolated
 message IsolationHost
  {
-  string name = 0
+  string title = 0
   string description = 0
   integer weight = 0
   vocabulary inVocabulary = 0
@@ -454,7 +454,7 @@ message IsolationHost
 // Periodical journal publishing scientific research
 message Journal
  {
-  string name = 0
+  string title = 0
   string description = 0
   integer weight = 0
   vocabulary inVocabulary = 0
@@ -462,7 +462,7 @@ message Journal
 // A term or phrase used to tag and categorize content
 message Keyword
  {
-  string name = 0
+  string title = 0
   string description = 0
   integer weight = 0
   vocabulary inVocabulary = 0
@@ -470,7 +470,7 @@ message Keyword
 // The legal terms and conditions under which the subject can be used, shared, or distributed, indicating any restrictions or permissions
 message License
  {
-  string name = 0
+  string title = 0
   string description = 0
   uri resourceURL = 0
   string licensingOrAttribution = 0
@@ -509,7 +509,7 @@ message NaturalPartOrigin
 // Nucleic acid related to a pathogen. It can be extracted or synthetic
 message NucleicAcid
  {
-  string name = 0
+  string title = 0
   string description = 0
   uri accessPointURL = 0
   string refSKU = 0
@@ -595,7 +595,7 @@ message PathogenIdentification
 // Identifier for 3D structural data as per the PDB (Protein Data Bank) database
 message PDBReference
  {
-  string name = 0
+  string title = 0
   string description = 0
   integer weight = 0
   vocabulary inVocabulary = 0
@@ -622,7 +622,7 @@ message PersonOrOrganization
 // The process of identifying cells that have successfully incorporated a plasmid, typically using antibiotic resistance markers
 message PlasmidSelection
  {
-  string name = 0
+  string title = 0
   string description = 0
   integer weight = 0
   vocabulary inVocabulary = 0
@@ -630,7 +630,7 @@ message PlasmidSelection
 // The prion as a biological material
 message Prion
  {
-  string name = 0
+  string title = 0
   string description = 0
   uri accessPointURL = 0
   string refSKU = 0
@@ -685,7 +685,7 @@ message Prion
 // A product
 message Product
  {
-  string name = 0
+  string title = 0
   string description = 0
   uri accessPointURL = 0
   string refSKU = 0
@@ -722,7 +722,7 @@ message Product
 // A term used to classify a group of products that share common characteristics or functions, which helps in their organization
 message ProductCategory
  {
-  string name = 0
+  string title = 0
   string description = 0
   integer weight = 0
   vocabulary inVocabulary = 0
@@ -731,7 +731,7 @@ message ProductCategory
 // A population of cells that originates from a primary culture, adapted to grow and divide under laboratory conditions. Used in biotechnology to consistently produce biological substances
 message ProductionCellLine
  {
-  string name = 0
+  string title = 0
   string description = 0
   integer weight = 0
   vocabulary inVocabulary = 0
@@ -739,7 +739,7 @@ message ProductionCellLine
 // The organism used to grow and multiply the pathogen under controlled conditions
 message PropagationHost
  {
-  string name = 0
+  string title = 0
   string description = 0
   integer weight = 0
   vocabulary inVocabulary = 0
@@ -747,7 +747,7 @@ message PropagationHost
 // A protein as a derived product from a pathogen
 message Protein
  {
-  string name = 0
+  string title = 0
   string description = 0
   uri accessPointURL = 0
   string refSKU = 0
@@ -798,7 +798,7 @@ message Protein
 // Peptide sequence genetically grafted onto a recombinant protein
 message ProteinTag
  {
-  string name = 0
+  string title = 0
   string description = 0
   integer weight = 0
   vocabulary inVocabulary = 0
@@ -806,7 +806,7 @@ message ProteinTag
 // The protozoan as a biological material
 message Protozoan
  {
-  string name = 0
+  string title = 0
   string description = 0
   uri accessPointURL = 0
   string refSKU = 0
@@ -901,7 +901,7 @@ message RI
 // Risk group classification guides initial handling of biological agents in labs but doesn't systematically equate to biosafety levels. Actual risk varies with the agent, procedures, and personnel competence
 message RiskGroup
  {
-  string name = 0
+  string title = 0
   string description = 0
   integer weight = 0
   vocabulary inVocabulary = 0
@@ -921,7 +921,7 @@ message SequenceReference
 // A service
 message Service
  {
-  string name = 0
+  string title = 0
   string description = 0
   uri accessPointURL = 0
   string refSKU = 0
@@ -953,7 +953,7 @@ message Service
 // Distinctive attributes of a product that set it apart from other similar items e.g., Reference strain, Vaccinal strain, Antiviral resistant strain ...
 message SpecialFeature
  {
-  string name = 0
+  string title = 0
   string description = 0
   integer weight = 0
   vocabulary inVocabulary = 0
@@ -969,7 +969,7 @@ message SyntheticPartOrigin
 // Conceptual entity that groups one or more populations of an organism or organisms, as seen by taxonomists, to form a unit
 message Taxon
  {
-  string name = 0
+  string title = 0
   string description = 0
   integer weight = 0
   vocabulary inVocabulary = 0
@@ -984,7 +984,7 @@ message Taxon
 // The possible taxonomic ranks and their description
 message TaxonomicRank
  {
-  string name = 0
+  string title = 0
   string description = 0
   integer weight = 0
   vocabulary inVocabulary = 0
@@ -993,7 +993,7 @@ message TaxonomicRank
 // Science of naming, defining and classifying organisms
 message Taxonomy
  {
-  string name = 0
+  string title = 0
   string description = 0
  repeated  taxon taxon = 0
   dataProvider taxonDataProvider = 0
@@ -1005,7 +1005,7 @@ message Taxonomy
 // The process by which the pathogen spreads between hosts
 message TransmissionMethod
  {
-  string name = 0
+  string title = 0
   string description = 0
   integer weight = 0
   vocabulary inVocabulary = 0
@@ -1013,7 +1013,7 @@ message TransmissionMethod
 // An organism with one or more new mutations is referred to as a “variant” of the original organism if not sufficiently different to be termed a distinct strain
 message Variant
  {
-  string name = 0
+  string title = 0
   string description = 0
   integer weight = 0
   vocabulary inVocabulary = 0
@@ -1038,7 +1038,7 @@ message Video
 // The viroid as a biological material
 message Viroid
  {
-  string name = 0
+  string title = 0
   string description = 0
   uri accessPointURL = 0
   string refSKU = 0
@@ -1093,7 +1093,7 @@ message Viroid
 // The virus as a biological material
 message Virus
  {
-  string name = 0
+  string title = 0
   string description = 0
   uri accessPointURL = 0
   string refSKU = 0
@@ -1151,7 +1151,7 @@ message Virus
 // A virus vernacular name or a name that describes a group of viruses
 message VirusName
  {
-  string name = 0
+  string title = 0
   string description = 0
   integer weight = 0
   vocabulary inVocabulary = 0
@@ -1161,7 +1161,7 @@ message VirusName
 // A subset of words or phrases specific to a particular subject or field
 message Vocabulary
  {
-  string name = 0
+  string title = 0
   string description = 0
   dataProvider termDataProvider = 0
  repeated  term term = 0

@@ -20,8 +20,8 @@ URI: [EVORAO:MSDS](https://raw.githubusercontent.com/EVORA-project/evora-ontolog
  classDiagram
     class MSDS
     click MSDS href "../MSDS"
-      Dataset <|-- MSDS
-        click Dataset href "../Dataset"
+      Resource <|-- MSDS
+        click Resource href "../Resource"
       
       MSDS : accidentalReleaseMeasures
         
@@ -69,8 +69,7 @@ URI: [EVORAO:MSDS](https://raw.githubusercontent.com/EVORA-project/evora-ontolog
 
 ## Inheritance
 * [Resource](Resource.md)
-    * [Dataset](Dataset.md)
-        * **MSDS**
+    * **MSDS**
 
 
 
@@ -169,7 +168,7 @@ from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs
 close_mappings:
 - wd:Q222067
 - wd:Q222067
-is_a: Dataset
+is_a: Resource
 slots:
 - msdsContact
 - physicalChemicalProperties
@@ -388,7 +387,7 @@ from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs
 close_mappings:
 - wd:Q222067
 - wd:Q222067
-is_a: Dataset
+is_a: Resource
 slot_usage:
   msdsContact:
     name: msdsContact

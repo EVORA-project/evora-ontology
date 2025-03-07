@@ -23,8 +23,8 @@ URI: [EVORAO:oRCIDiD](https://raw.githubusercontent.com/EVORA-project/evora-onto
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [ContactPoint](ContactPoint.md) | Entity serving as focal point of information |  yes  |
 | [Person](Person.md) | An individual |  yes  |
+| [ContactPoint](ContactPoint.md) | Entity serving as focal point of information |  yes  |
 
 
 

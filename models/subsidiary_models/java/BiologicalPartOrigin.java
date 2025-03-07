@@ -5,7 +5,7 @@ import lombok.*;
 
 
 
-/* version: 1.0.8498 */
+/* version: 1.0.8636 */
 
 
 /**
@@ -13,7 +13,7 @@ import lombok.*;
 **/
 @Data
 @EqualsAndHashCode(callSuper=false)
-public abstract class BiologicalPartOrigin extends Dataset {
+public abstract class BiologicalPartOrigin extends Resource {
 
   private RecombinantPartIdentification recombinantPartIdentification;
   private boolean accessToPhysicalGeneticResource;

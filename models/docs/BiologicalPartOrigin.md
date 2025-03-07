@@ -22,8 +22,8 @@ URI: [EVORAO:BiologicalPartOrigin](https://raw.githubusercontent.com/EVORA-proje
  classDiagram
     class BiologicalPartOrigin
     click BiologicalPartOrigin href "../BiologicalPartOrigin"
-      Dataset <|-- BiologicalPartOrigin
-        click Dataset href "../Dataset"
+      Resource <|-- BiologicalPartOrigin
+        click Resource href "../Resource"
       
 
       BiologicalPartOrigin <|-- NaturalPartOrigin
@@ -52,10 +52,9 @@ URI: [EVORAO:BiologicalPartOrigin](https://raw.githubusercontent.com/EVORA-proje
 
 ## Inheritance
 * [Resource](Resource.md)
-    * [Dataset](Dataset.md)
-        * **BiologicalPartOrigin**
-            * [NaturalPartOrigin](NaturalPartOrigin.md)
-            * [SyntheticPartOrigin](SyntheticPartOrigin.md)
+    * **BiologicalPartOrigin**
+        * [NaturalPartOrigin](NaturalPartOrigin.md)
+        * [SyntheticPartOrigin](SyntheticPartOrigin.md)
 
 
 
@@ -124,7 +123,7 @@ description: Information on the origin of a unitary, cohesive part that is part 
   biological material
 title: Biological part origin
 from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
-is_a: Dataset
+is_a: Resource
 abstract: true
 slots:
 - recombinantPartIdentification
@@ -166,7 +165,7 @@ description: Information on the origin of a unitary, cohesive part that is part 
   biological material
 title: Biological part origin
 from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
-is_a: Dataset
+is_a: Resource
 abstract: true
 slot_usage:
   recombinantPartIdentification:
