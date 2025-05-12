@@ -18,7 +18,7 @@ jobs:
     runs-on: ubuntu-latest
 
     env:
-      DOCKER_IMAGE: evoratools/schemasheets:EVORA_0.3.1
+      DOCKER_IMAGE: evoratools/schemasheets:0.3.1
 
     steps:
       - uses: actions/checkout@v4
