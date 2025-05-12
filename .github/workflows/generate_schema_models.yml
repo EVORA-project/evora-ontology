@@ -116,7 +116,7 @@ jobs:
           docker run --rm -v $(pwd):/workdir -u $(id -u):$(id -g) $DOCKER_IMAGE \
           linkml generate sqla models/evora_schema.yaml > models/subsidiary_models/sqlalchemy/evora_schema.sqla
           docker run --rm -v $(pwd):/workdir -u $(id -u):$(id -g) $DOCKER_IMAGE \
-          linkml generate pydantic models/evora_schema.yaml > models/subsidiary_models/pydantic/evora_schema.py
+          linkml generate pydantic --meta AUTO models/evora_schema.yaml > models/subsidiary_models/pydantic/evora_schema.py
 
 
 
