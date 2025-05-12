@@ -1,6 +1,6 @@
 
 
-# Slot: further information (furtherInformation)
+# Slot: further information (furtherInformation) 
 
 
 _Provides any additional details or clarifications not covered in other sections of the MSDS, such as references, supporting documents, or specific instructions for safe handling and use of the product._
@@ -9,9 +9,8 @@ _Provides any additional details or clarifications not covered in other sections
 
 
 
-URI: [EVORAO:furtherInformation](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#furtherInformation)
-
-
+URI: [EVORAO:furtherInformation](https://w3id.org/evorao/furtherInformation)
+Alias: furtherInformation
 
 <!-- no inheritance hierarchy -->
 
@@ -52,7 +51,7 @@ URI: [EVORAO:furtherInformation](https://raw.githubusercontent.com/EVORA-project
 ### Schema Source
 
 
-* from schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+* from schema: https://w3id.org/evorao/
 
 
 
@@ -76,7 +75,7 @@ description: Provides any additional details or clarifications not covered in ot
   sections of the MSDS, such as references, supporting documents, or specific instructions
   for safe handling and use of the product.
 title: further information
-from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+from_schema: https://w3id.org/evorao/
 rank: 1000
 alias: furtherInformation
 domain_of:

@@ -1,6 +1,6 @@
 
 
-# Slot: version data provider (versionDataProvider)
+# Slot: version data provider (versionDataProvider) 
 
 
 _The data provider for the Version ID of this taxonomy_
@@ -9,9 +9,8 @@ _The data provider for the Version ID of this taxonomy_
 
 
 
-URI: [EVORAO:versionDataProvider](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#versionDataProvider)
-
-
+URI: [EVORAO:versionDataProvider](https://w3id.org/evorao/versionDataProvider)
+Alias: versionDataProvider
 
 <!-- no inheritance hierarchy -->
 
@@ -52,7 +51,7 @@ URI: [EVORAO:versionDataProvider](https://raw.githubusercontent.com/EVORA-projec
 ### Schema Source
 
 
-* from schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+* from schema: https://w3id.org/evorao/
 
 
 
@@ -74,7 +73,7 @@ URI: [EVORAO:versionDataProvider](https://raw.githubusercontent.com/EVORA-projec
 name: versionDataProvider
 description: The data provider for the Version ID of this taxonomy
 title: version data provider
-from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+from_schema: https://w3id.org/evorao/
 rank: 1000
 alias: versionDataProvider
 domain_of:

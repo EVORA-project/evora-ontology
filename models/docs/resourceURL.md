@@ -1,6 +1,6 @@
 
 
-# Slot: resource URL (resourceURL)
+# Slot: resource URL (resourceURL) 
 
 
 _The web address or location where the details or content is stored and can be accessed or downloaded._
@@ -9,9 +9,8 @@ _The web address or location where the details or content is stored and can be a
 
 
 
-URI: [EVORAO:resourceURL](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#resourceURL)
-
-
+URI: [EVORAO:resourceURL](https://w3id.org/evorao/resourceURL)
+Alias: resourceURL
 
 <!-- no inheritance hierarchy -->
 
@@ -51,7 +50,7 @@ URI: [EVORAO:resourceURL](https://raw.githubusercontent.com/EVORA-project/evora-
 ### Schema Source
 
 
-* from schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+* from schema: https://w3id.org/evorao/
 
 
 
@@ -76,7 +75,7 @@ name: resourceURL
 description: The web address or location where the details or content is stored and
   can be accessed or downloaded.
 title: resource URL
-from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+from_schema: https://w3id.org/evorao/
 exact_mappings:
 - dct:license
 close_mappings:

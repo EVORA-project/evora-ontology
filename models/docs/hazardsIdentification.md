@@ -1,6 +1,6 @@
 
 
-# Slot: hazards identification (hazardsIdentification)
+# Slot: hazards identification (hazardsIdentification) 
 
 
 _Outlines the potential risks and dangers associated with handling the product, including its physical, chemical, and health hazards. This section provides information on toxicity, flammability, reactivity, and other relevant risks for safe use._
@@ -9,9 +9,8 @@ _Outlines the potential risks and dangers associated with handling the product, 
 
 
 
-URI: [EVORAO:hazardsIdentification](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#hazardsIdentification)
-
-
+URI: [EVORAO:hazardsIdentification](https://w3id.org/evorao/hazardsIdentification)
+Alias: hazardsIdentification
 
 <!-- no inheritance hierarchy -->
 
@@ -52,7 +51,7 @@ URI: [EVORAO:hazardsIdentification](https://raw.githubusercontent.com/EVORA-proj
 ### Schema Source
 
 
-* from schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+* from schema: https://w3id.org/evorao/
 
 
 
@@ -77,7 +76,7 @@ description: Outlines the potential risks and dangers associated with handling t
   information on toxicity, flammability, reactivity, and other relevant risks for
   safe use.
 title: hazards identification
-from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+from_schema: https://w3id.org/evorao/
 rank: 1000
 alias: hazardsIdentification
 domain_of:

@@ -1,6 +1,6 @@
 
 
-# Slot: accidental release measures (accidentalReleaseMeasures)
+# Slot: accidental release measures (accidentalReleaseMeasures) 
 
 
 _Guidelines for safely managing spills or leaks of the product, including containment, cleanup procedures, and precautions to prevent harm to people, property, and the environment._
@@ -9,9 +9,8 @@ _Guidelines for safely managing spills or leaks of the product, including contai
 
 
 
-URI: [EVORAO:accidentalReleaseMeasures](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#accidentalReleaseMeasures)
-
-
+URI: [EVORAO:accidentalReleaseMeasures](https://w3id.org/evorao/accidentalReleaseMeasures)
+Alias: accidentalReleaseMeasures
 
 <!-- no inheritance hierarchy -->
 
@@ -52,7 +51,7 @@ URI: [EVORAO:accidentalReleaseMeasures](https://raw.githubusercontent.com/EVORA-
 ### Schema Source
 
 
-* from schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+* from schema: https://w3id.org/evorao/
 
 
 
@@ -76,7 +75,7 @@ description: Guidelines for safely managing spills or leaks of the product, incl
   containment, cleanup procedures, and precautions to prevent harm to people, property,
   and the environment.
 title: accidental release measures
-from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+from_schema: https://w3id.org/evorao/
 rank: 1000
 alias: accidentalReleaseMeasures
 domain_of:

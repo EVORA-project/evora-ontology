@@ -1,6 +1,6 @@
 
 
-# Class: Propagation host (PropagationHost)
+# Class: Propagation host (PropagationHost) 
 
 
 _The organism used to grow and multiply the pathogen under controlled conditions_
@@ -9,7 +9,7 @@ _The organism used to grow and multiply the pathogen under controlled conditions
 
 
 
-URI: [EVORAO:PropagationHost](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#PropagationHost)
+URI: [EVORAO:PropagationHost](https://w3id.org/evorao/PropagationHost)
 
 
 
@@ -93,7 +93,7 @@ URI: [EVORAO:PropagationHost](https://raw.githubusercontent.com/EVORA-project/ev
 ### Schema Source
 
 
-* from schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+* from schema: https://w3id.org/evorao/
 
 
 
@@ -123,7 +123,7 @@ name: PropagationHost
 description: The organism used to grow and multiply the pathogen under controlled
   conditions
 title: Propagation host
-from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+from_schema: https://w3id.org/evorao/
 is_a: Term
 
 ```
@@ -137,7 +137,7 @@ name: PropagationHost
 description: The organism used to grow and multiply the pathogen under controlled
   conditions
 title: Propagation host
-from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+from_schema: https://w3id.org/evorao/
 is_a: Term
 attributes:
   title:
@@ -151,7 +151,7 @@ attributes:
       ''Virus name'', ''virus host type'', ''collection year'', ''country of collection''
       ex ''suspected epidemiological origin'', ''genotype'', ''strain'', ''variant
       name or specific feature'
-    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+    from_schema: https://w3id.org/evorao/
     close_mappings:
     - rdfs:label
     rank: 1000
@@ -178,7 +178,7 @@ attributes:
       present the resource.
 
       '
-    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+    from_schema: https://w3id.org/evorao/
     rank: 1000
     slot_uri: dct:description
     alias: description
@@ -206,7 +206,7 @@ attributes:
     - The lowest weighted Data providers are triggered first, this may be usefull
       to populate at first entities that are referenced by others (e.g. Version ahead
       of Rank ahead of Taxon)
-    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+    from_schema: https://w3id.org/evorao/
     close_mappings:
     - adms:status
     rank: 1000
@@ -223,7 +223,7 @@ attributes:
     name: inVocabulary
     description: Terms belong to a specific vocabulary
     title: in Vocabulary
-    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+    from_schema: https://w3id.org/evorao/
     close_mappings:
     - wdp:P972
     rank: 1000

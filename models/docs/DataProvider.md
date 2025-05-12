@@ -1,6 +1,6 @@
 
 
-# Class: Data provider (DataProvider)
+# Class: Data provider (DataProvider) 
 
 
 _An external API (Application Programming Interface) or Endpoint that permits to retrieve data from other sources_
@@ -9,7 +9,7 @@ _An external API (Application Programming Interface) or Endpoint that permits to
 
 
 
-URI: [EVORAO:DataProvider](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#DataProvider)
+URI: [EVORAO:DataProvider](https://w3id.org/evorao/DataProvider)
 
 
 
@@ -119,7 +119,7 @@ URI: [EVORAO:DataProvider](https://raw.githubusercontent.com/EVORA-project/evora
 ### Schema Source
 
 
-* from schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+* from schema: https://w3id.org/evorao/
 
 
 
@@ -150,7 +150,7 @@ name: DataProvider
 description: An external API (Application Programming Interface) or Endpoint that
   permits to retrieve data from other sources
 title: Data provider
-from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+from_schema: https://w3id.org/evorao/
 close_mappings:
 - wd:Q122625839
 - wd:Q122625839
@@ -279,7 +279,7 @@ name: DataProvider
 description: An external API (Application Programming Interface) or Endpoint that
   permits to retrieve data from other sources
 title: Data provider
-from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+from_schema: https://w3id.org/evorao/
 close_mappings:
 - wd:Q122625839
 - wd:Q122625839
@@ -393,7 +393,7 @@ attributes:
     description: Information about terms and conditions under which the subject can
       be used, shared, or distributed, indicating any restrictions or permissions
     title: license
-    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+    from_schema: https://w3id.org/evorao/
     exact_mappings:
     - dct:license
     rank: 1000
@@ -409,7 +409,7 @@ attributes:
     name: loginRequestMethod
     description: The http request method used to acces the login request url
     title: login request method
-    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+    from_schema: https://w3id.org/evorao/
     close_mappings:
     - dcat:endpointDescription
     rank: 1000
@@ -428,7 +428,7 @@ attributes:
     name: loginURL
     description: The URL template that allows to log in if required
     title: login URL
-    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+    from_schema: https://w3id.org/evorao/
     close_mappings:
     - wdp:P1630
     - dcat:endpointDescription
@@ -445,7 +445,7 @@ attributes:
     description: The name of the token, unique identifier of an interaction session,
       that will have to be reused as credential in the query
     title: login token name
-    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+    from_schema: https://w3id.org/evorao/
     close_mappings:
     - dcat:endpointDescription
     rank: 1000
@@ -460,7 +460,7 @@ attributes:
     name: queryMethod
     description: The http request method used to access the requested query url
     title: query method
-    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+    from_schema: https://w3id.org/evorao/
     close_mappings:
     - dcat:endpointDescription
     rank: 1000
@@ -478,7 +478,7 @@ attributes:
     name: contentType
     description: The content type of the response to the queries
     title: content type
-    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+    from_schema: https://w3id.org/evorao/
     close_mappings:
     - dct:format
     rank: 1000
@@ -495,7 +495,7 @@ attributes:
     description: The identification of the entity type (Class) described by the response
       to the query
     title: provided entity type
-    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+    from_schema: https://w3id.org/evorao/
     exact_mappings:
     - dcat:servesDataset
     rank: 1000
@@ -516,7 +516,7 @@ attributes:
     - The lowest weighted Data providers are triggered first, this may be usefull
       to populate at first entities that are referenced by others (e.g. Version ahead
       of Rank ahead of Taxon)
-    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+    from_schema: https://w3id.org/evorao/
     close_mappings:
     - adms:status
     rank: 1000
@@ -540,7 +540,7 @@ attributes:
       ''Virus name'', ''virus host type'', ''collection year'', ''country of collection''
       ex ''suspected epidemiological origin'', ''genotype'', ''strain'', ''variant
       name or specific feature'
-    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+    from_schema: https://w3id.org/evorao/
     close_mappings:
     - rdfs:label
     rank: 1000
@@ -567,7 +567,7 @@ attributes:
       present the resource.
 
       '
-    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+    from_schema: https://w3id.org/evorao/
     rank: 1000
     slot_uri: dct:description
     alias: description
@@ -589,7 +589,7 @@ attributes:
     name: endpointURL
     description: The URL template that allows to get the content
     title: endpoint URL
-    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+    from_schema: https://w3id.org/evorao/
     close_mappings:
     - wdp:P1630
     rank: 1000

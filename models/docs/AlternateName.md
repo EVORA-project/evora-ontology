@@ -1,6 +1,6 @@
 
 
-# Class: Alternate Name (AlternateName)
+# Class: Alternate Name (AlternateName) 
 
 
 _List of other names for things_
@@ -9,7 +9,7 @@ _List of other names for things_
 
 
 
-URI: [EVORAO:AlternateName](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#AlternateName)
+URI: [EVORAO:AlternateName](https://w3id.org/evorao/AlternateName)
 
 
 
@@ -106,7 +106,7 @@ URI: [EVORAO:AlternateName](https://raw.githubusercontent.com/EVORA-project/evor
 ### Schema Source
 
 
-* from schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+* from schema: https://w3id.org/evorao/
 
 
 
@@ -136,7 +136,7 @@ URI: [EVORAO:AlternateName](https://raw.githubusercontent.com/EVORA-project/evor
 name: AlternateName
 description: List of other names for things
 title: Alternate Name
-from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+from_schema: https://w3id.org/evorao/
 close_mappings:
 - wd:Q7662595
 - wd:Q7662595
@@ -186,7 +186,7 @@ slot_usage:
 name: AlternateName
 description: List of other names for things
 title: Alternate Name
-from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+from_schema: https://w3id.org/evorao/
 close_mappings:
 - wd:Q7662595
 - wd:Q7662595
@@ -231,7 +231,7 @@ attributes:
     - This includes previous names, acronyms, former taxonomic terms, and other variations.
       This information can serve as keywords for search purposes and as a bridge with
       other projects that use different naming systems or taxonomies
-    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+    from_schema: https://w3id.org/evorao/
     close_mappings:
     - wdp:P4970
     rank: 1000
@@ -249,7 +249,7 @@ attributes:
     description: The name of the origin from which knowledge is obtained. This can
       include any entity that provides information
     title: source of information
-    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+    from_schema: https://w3id.org/evorao/
     close_mappings:
     - wdp:P248
     rank: 1000
@@ -272,7 +272,7 @@ attributes:
       ''Virus name'', ''virus host type'', ''collection year'', ''country of collection''
       ex ''suspected epidemiological origin'', ''genotype'', ''strain'', ''variant
       name or specific feature'
-    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+    from_schema: https://w3id.org/evorao/
     close_mappings:
     - rdfs:label
     rank: 1000
@@ -299,7 +299,7 @@ attributes:
       present the resource.
 
       '
-    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+    from_schema: https://w3id.org/evorao/
     rank: 1000
     slot_uri: dct:description
     alias: description
@@ -327,7 +327,7 @@ attributes:
     - The lowest weighted Data providers are triggered first, this may be usefull
       to populate at first entities that are referenced by others (e.g. Version ahead
       of Rank ahead of Taxon)
-    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+    from_schema: https://w3id.org/evorao/
     close_mappings:
     - adms:status
     rank: 1000
@@ -344,7 +344,7 @@ attributes:
     name: inVocabulary
     description: Terms belong to a specific vocabulary
     title: in Vocabulary
-    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+    from_schema: https://w3id.org/evorao/
     close_mappings:
     - wdp:P972
     rank: 1000

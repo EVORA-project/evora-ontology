@@ -1,6 +1,6 @@
 
 
-# Slot: login token name (loginTokenName)
+# Slot: login token name (loginTokenName) 
 
 
 _The name of the token, unique identifier of an interaction session, that will have to be reused as credential in the query_
@@ -9,9 +9,8 @@ _The name of the token, unique identifier of an interaction session, that will h
 
 
 
-URI: [EVORAO:loginTokenName](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#loginTokenName)
-
-
+URI: [EVORAO:loginTokenName](https://w3id.org/evorao/loginTokenName)
+Alias: loginTokenName
 
 <!-- no inheritance hierarchy -->
 
@@ -50,7 +49,7 @@ URI: [EVORAO:loginTokenName](https://raw.githubusercontent.com/EVORA-project/evo
 ### Schema Source
 
 
-* from schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+* from schema: https://w3id.org/evorao/
 
 
 
@@ -74,7 +73,7 @@ name: loginTokenName
 description: The name of the token, unique identifier of an interaction session, that
   will have to be reused as credential in the query
 title: login token name
-from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+from_schema: https://w3id.org/evorao/
 close_mappings:
 - dcat:endpointDescription
 rank: 1000

@@ -1,6 +1,6 @@
 
 
-# Slot: model type (modelType)
+# Slot: model type (modelType) 
 
 
 _The specific name of the infected organism, including its modification if necessary_
@@ -9,9 +9,8 @@ _The specific name of the infected organism, including its modification if neces
 
 
 
-URI: [EVORAO:modelType](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#modelType)
-
-
+URI: [EVORAO:modelType](https://w3id.org/evorao/modelType)
+Alias: modelType
 
 <!-- no inheritance hierarchy -->
 
@@ -50,7 +49,7 @@ URI: [EVORAO:modelType](https://raw.githubusercontent.com/EVORA-project/evora-on
 ### Schema Source
 
 
-* from schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+* from schema: https://w3id.org/evorao/
 
 
 
@@ -73,7 +72,7 @@ name: modelType
 description: The specific name of the infected organism, including its modification
   if necessary
 title: model type
-from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+from_schema: https://w3id.org/evorao/
 rank: 1000
 alias: modelType
 domain_of:

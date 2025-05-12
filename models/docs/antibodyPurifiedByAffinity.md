@@ -1,6 +1,6 @@
 
 
-# Slot: antibody purified by affinity (antibodyPurifiedByAffinity)
+# Slot: antibody purified by affinity (antibodyPurifiedByAffinity) 
 
 
 _Indicates whether or not if the antibody was purified by affinity_
@@ -9,9 +9,8 @@ _Indicates whether or not if the antibody was purified by affinity_
 
 
 
-URI: [EVORAO:antibodyPurifiedByAffinity](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#antibodyPurifiedByAffinity)
-
-
+URI: [EVORAO:antibodyPurifiedByAffinity](https://w3id.org/evorao/antibodyPurifiedByAffinity)
+Alias: antibodyPurifiedByAffinity
 
 <!-- no inheritance hierarchy -->
 
@@ -53,7 +52,7 @@ URI: [EVORAO:antibodyPurifiedByAffinity](https://raw.githubusercontent.com/EVORA
 ### Schema Source
 
 
-* from schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+* from schema: https://w3id.org/evorao/
 
 
 
@@ -75,7 +74,7 @@ URI: [EVORAO:antibodyPurifiedByAffinity](https://raw.githubusercontent.com/EVORA
 name: antibodyPurifiedByAffinity
 description: Indicates whether or not if the antibody was purified by affinity
 title: antibody purified by affinity
-from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+from_schema: https://w3id.org/evorao/
 rank: 1000
 alias: antibodyPurifiedByAffinity
 domain_of:

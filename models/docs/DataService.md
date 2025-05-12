@@ -1,6 +1,6 @@
 
 
-# Class: Data Service (DataService)
+# Class: Data Service (DataService) 
 
 
 _A collection of operations that provides access to one or more datasets or data processing functions_
@@ -77,7 +77,7 @@ URI: [dcat:DataService](http://www.w3.org/ns/dcat#DataService)
 ### Schema Source
 
 
-* from schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+* from schema: https://w3id.org/evorao/
 
 
 
@@ -108,7 +108,7 @@ name: DataService
 description: A collection of operations that provides access to one or more datasets
   or data processing functions
 title: Data Service
-from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+from_schema: https://w3id.org/evorao/
 close_mappings:
 - wd:Q193424
 - schema:WebAPI
@@ -194,7 +194,7 @@ name: DataService
 description: A collection of operations that provides access to one or more datasets
   or data processing functions
 title: Data Service
-from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+from_schema: https://w3id.org/evorao/
 close_mappings:
 - wd:Q193424
 - schema:WebAPI
@@ -275,7 +275,7 @@ attributes:
       ''Virus name'', ''virus host type'', ''collection year'', ''country of collection''
       ex ''suspected epidemiological origin'', ''genotype'', ''strain'', ''variant
       name or specific feature'
-    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+    from_schema: https://w3id.org/evorao/
     close_mappings:
     - rdfs:label
     rank: 1000
@@ -302,7 +302,7 @@ attributes:
       present the resource.
 
       '
-    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+    from_schema: https://w3id.org/evorao/
     rank: 1000
     slot_uri: dct:description
     alias: description
@@ -324,7 +324,7 @@ attributes:
     name: endpointURL
     description: The URL template that allows to get the content
     title: endpoint URL
-    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+    from_schema: https://w3id.org/evorao/
     close_mappings:
     - wdp:P1630
     rank: 1000

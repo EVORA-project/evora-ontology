@@ -1,6 +1,6 @@
 
 
-# Class: Vocabulary (Vocabulary)
+# Class: Vocabulary (Vocabulary) 
 
 
 _A subset of words or phrases specific to a particular subject or field_
@@ -9,7 +9,7 @@ _A subset of words or phrases specific to a particular subject or field_
 
 
 
-URI: [EVORAO:Vocabulary](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#Vocabulary)
+URI: [EVORAO:Vocabulary](https://w3id.org/evorao/Vocabulary)
 
 
 
@@ -119,7 +119,7 @@ URI: [EVORAO:Vocabulary](https://raw.githubusercontent.com/EVORA-project/evora-o
 ### Schema Source
 
 
-* from schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+* from schema: https://w3id.org/evorao/
 
 
 
@@ -149,7 +149,7 @@ URI: [EVORAO:Vocabulary](https://raw.githubusercontent.com/EVORA-project/evora-o
 name: Vocabulary
 description: A subset of words or phrases specific to a particular subject or field
 title: Vocabulary
-from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+from_schema: https://w3id.org/evorao/
 close_mappings:
 - wd:Q6499736
 - skos:Collection
@@ -191,7 +191,7 @@ slot_usage:
 name: Vocabulary
 description: A subset of words or phrases specific to a particular subject or field
 title: Vocabulary
-from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+from_schema: https://w3id.org/evorao/
 close_mappings:
 - wd:Q6499736
 - skos:Collection
@@ -225,7 +225,7 @@ attributes:
     description: An external API or Endpoint that permits to retrieve the terms of
       this vocabulary
     title: term data provider
-    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+    from_schema: https://w3id.org/evorao/
     rank: 1000
     alias: termDataProvider
     owner: Vocabulary
@@ -238,7 +238,7 @@ attributes:
     name: term
     description: The terms related to this vocabulary
     title: term
-    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+    from_schema: https://w3id.org/evorao/
     rank: 1000
     alias: term
     owner: Vocabulary
@@ -259,7 +259,7 @@ attributes:
       ''Virus name'', ''virus host type'', ''collection year'', ''country of collection''
       ex ''suspected epidemiological origin'', ''genotype'', ''strain'', ''variant
       name or specific feature'
-    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+    from_schema: https://w3id.org/evorao/
     close_mappings:
     - rdfs:label
     rank: 1000
@@ -286,7 +286,7 @@ attributes:
       present the resource.
 
       '
-    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+    from_schema: https://w3id.org/evorao/
     rank: 1000
     slot_uri: dct:description
     alias: description

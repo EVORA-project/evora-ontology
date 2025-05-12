@@ -1,6 +1,6 @@
 
 
-# Slot: reference (reference)
+# Slot: reference (reference) 
 
 
 _The identifier reference of the connected external item_
@@ -9,9 +9,8 @@ _The identifier reference of the connected external item_
 
 
 
-URI: [EVORAO:reference](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#reference)
-
-
+URI: [EVORAO:reference](https://w3id.org/evorao/reference)
+Alias: reference
 
 <!-- no inheritance hierarchy -->
 
@@ -52,7 +51,7 @@ URI: [EVORAO:reference](https://raw.githubusercontent.com/EVORA-project/evora-on
 ### Schema Source
 
 
-* from schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+* from schema: https://w3id.org/evorao/
 
 
 
@@ -75,7 +74,7 @@ URI: [EVORAO:reference](https://raw.githubusercontent.com/EVORA-project/evora-on
 name: reference
 description: The identifier reference of the connected external item
 title: reference
-from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+from_schema: https://w3id.org/evorao/
 close_mappings:
 - dct:identifier
 rank: 1000

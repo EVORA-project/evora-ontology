@@ -1,6 +1,6 @@
 
 
-# Slot: serotype (serotype)
+# Slot: serotype (serotype) 
 
 
 _Genetically related pathogens that group together based on serological relationships_
@@ -9,9 +9,8 @@ _Genetically related pathogens that group together based on serological relation
 
 
 
-URI: [EVORAO:serotype](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#serotype)
-
-
+URI: [EVORAO:serotype](https://w3id.org/evorao/serotype)
+Alias: serotype
 
 <!-- no inheritance hierarchy -->
 
@@ -50,7 +49,7 @@ URI: [EVORAO:serotype](https://raw.githubusercontent.com/EVORA-project/evora-ont
 ### Schema Source
 
 
-* from schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+* from schema: https://w3id.org/evorao/
 
 
 
@@ -73,7 +72,7 @@ name: serotype
 description: Genetically related pathogens that group together based on serological
   relationships
 title: serotype
-from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+from_schema: https://w3id.org/evorao/
 rank: 1000
 alias: serotype
 domain_of:

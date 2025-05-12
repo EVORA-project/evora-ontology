@@ -1,6 +1,6 @@
 
 
-# Slot: first aid measures (firstAidMeasures)
+# Slot: first aid measures (firstAidMeasures) 
 
 
 _Instructions on immediate actions to take in case of exposure to the product, including inhalation, ingestion, skin, or eye contact. This section outlines steps to minimize harm before medical help is available._
@@ -9,9 +9,8 @@ _Instructions on immediate actions to take in case of exposure to the product, i
 
 
 
-URI: [EVORAO:firstAidMeasures](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#firstAidMeasures)
-
-
+URI: [EVORAO:firstAidMeasures](https://w3id.org/evorao/firstAidMeasures)
+Alias: firstAidMeasures
 
 <!-- no inheritance hierarchy -->
 
@@ -52,7 +51,7 @@ URI: [EVORAO:firstAidMeasures](https://raw.githubusercontent.com/EVORA-project/e
 ### Schema Source
 
 
-* from schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+* from schema: https://w3id.org/evorao/
 
 
 
@@ -76,7 +75,7 @@ description: Instructions on immediate actions to take in case of exposure to th
   product, including inhalation, ingestion, skin, or eye contact. This section outlines
   steps to minimize harm before medical help is available.
 title: first aid measures
-from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+from_schema: https://w3id.org/evorao/
 rank: 1000
 alias: firstAidMeasures
 domain_of:

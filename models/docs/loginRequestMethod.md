@@ -1,6 +1,6 @@
 
 
-# Slot: login request method (loginRequestMethod)
+# Slot: login request method (loginRequestMethod) 
 
 
 _The http request method used to acces the login request url_
@@ -9,9 +9,8 @@ _The http request method used to acces the login request url_
 
 
 
-URI: [EVORAO:loginRequestMethod](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#loginRequestMethod)
-
-
+URI: [EVORAO:loginRequestMethod](https://w3id.org/evorao/loginRequestMethod)
+Alias: loginRequestMethod
 
 <!-- no inheritance hierarchy -->
 
@@ -50,7 +49,7 @@ URI: [EVORAO:loginRequestMethod](https://raw.githubusercontent.com/EVORA-project
 ### Schema Source
 
 
-* from schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+* from schema: https://w3id.org/evorao/
 
 
 
@@ -73,7 +72,7 @@ URI: [EVORAO:loginRequestMethod](https://raw.githubusercontent.com/EVORA-project
 name: loginRequestMethod
 description: The http request method used to acces the login request url
 title: login request method
-from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+from_schema: https://w3id.org/evorao/
 close_mappings:
 - dcat:endpointDescription
 rank: 1000

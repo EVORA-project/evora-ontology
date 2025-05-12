@@ -1,6 +1,6 @@
 
 
-# Slot: fire fighting measures (fireFightingMeasures)
+# Slot: fire fighting measures (fireFightingMeasures) 
 
 
 _Guidance on how to safely extinguish a fire involving the product, including suitable extinguishing agents, special protective equipment for firefighters, and any specific hazards from combustion._
@@ -9,9 +9,8 @@ _Guidance on how to safely extinguish a fire involving the product, including su
 
 
 
-URI: [EVORAO:fireFightingMeasures](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#fireFightingMeasures)
-
-
+URI: [EVORAO:fireFightingMeasures](https://w3id.org/evorao/fireFightingMeasures)
+Alias: fireFightingMeasures
 
 <!-- no inheritance hierarchy -->
 
@@ -52,7 +51,7 @@ URI: [EVORAO:fireFightingMeasures](https://raw.githubusercontent.com/EVORA-proje
 ### Schema Source
 
 
-* from schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+* from schema: https://w3id.org/evorao/
 
 
 
@@ -76,7 +75,7 @@ description: Guidance on how to safely extinguish a fire involving the product, 
   suitable extinguishing agents, special protective equipment for firefighters, and
   any specific hazards from combustion.
 title: fire fighting measures
-from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+from_schema: https://w3id.org/evorao/
 rank: 1000
 alias: fireFightingMeasures
 domain_of:

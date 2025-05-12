@@ -1,6 +1,6 @@
 
 
-# Class: Risk group (RiskGroup)
+# Class: Risk group (RiskGroup) 
 
 
 _Risk group classification guides initial handling of biological agents in labs but doesn't systematically equate to biosafety levels. Actual risk varies with the agent, procedures, and personnel competence_
@@ -9,7 +9,7 @@ _Risk group classification guides initial handling of biological agents in labs 
 
 
 
-URI: [EVORAO:RiskGroup](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#RiskGroup)
+URI: [EVORAO:RiskGroup](https://w3id.org/evorao/RiskGroup)
 
 
 
@@ -106,7 +106,7 @@ URI: [EVORAO:RiskGroup](https://raw.githubusercontent.com/EVORA-project/evora-on
 ### Schema Source
 
 
-* from schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+* from schema: https://w3id.org/evorao/
 
 
 
@@ -141,7 +141,7 @@ title: Risk group
 comments:
 - Use of Data provider if any or manual import of information from wd:Q125449389,
   wd:Q125449412, wd:Q125449429, wd:Q125449439
-from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+from_schema: https://w3id.org/evorao/
 close_mappings:
 - wd:Q125449255
 - wd:Q125449255
@@ -162,7 +162,7 @@ title: Risk group
 comments:
 - Use of Data provider if any or manual import of information from wd:Q125449389,
   wd:Q125449412, wd:Q125449429, wd:Q125449439
-from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+from_schema: https://w3id.org/evorao/
 close_mappings:
 - wd:Q125449255
 - wd:Q125449255
@@ -179,7 +179,7 @@ attributes:
       ''Virus name'', ''virus host type'', ''collection year'', ''country of collection''
       ex ''suspected epidemiological origin'', ''genotype'', ''strain'', ''variant
       name or specific feature'
-    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+    from_schema: https://w3id.org/evorao/
     close_mappings:
     - rdfs:label
     rank: 1000
@@ -206,7 +206,7 @@ attributes:
       present the resource.
 
       '
-    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+    from_schema: https://w3id.org/evorao/
     rank: 1000
     slot_uri: dct:description
     alias: description
@@ -234,7 +234,7 @@ attributes:
     - The lowest weighted Data providers are triggered first, this may be usefull
       to populate at first entities that are referenced by others (e.g. Version ahead
       of Rank ahead of Taxon)
-    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+    from_schema: https://w3id.org/evorao/
     close_mappings:
     - adms:status
     rank: 1000
@@ -251,7 +251,7 @@ attributes:
     name: inVocabulary
     description: Terms belong to a specific vocabulary
     title: in Vocabulary
-    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+    from_schema: https://w3id.org/evorao/
     close_mappings:
     - wdp:P972
     rank: 1000

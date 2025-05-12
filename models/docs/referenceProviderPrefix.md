@@ -1,6 +1,6 @@
 
 
-# Slot: reference provider prefix (referenceProviderPrefix)
+# Slot: reference provider prefix (referenceProviderPrefix) 
 
 
 _The url prefix that once completed with the reference will lead to the linked external resource_
@@ -9,9 +9,8 @@ _The url prefix that once completed with the reference will lead to the linked e
 
 
 
-URI: [EVORAO:referenceProviderPrefix](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#referenceProviderPrefix)
-
-
+URI: [EVORAO:referenceProviderPrefix](https://w3id.org/evorao/referenceProviderPrefix)
+Alias: referenceProviderPrefix
 
 <!-- no inheritance hierarchy -->
 
@@ -52,7 +51,7 @@ URI: [EVORAO:referenceProviderPrefix](https://raw.githubusercontent.com/EVORA-pr
 ### Schema Source
 
 
-* from schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+* from schema: https://w3id.org/evorao/
 
 
 
@@ -76,7 +75,7 @@ name: referenceProviderPrefix
 description: The url prefix that once completed with the reference will lead to the
   linked external resource
 title: reference provider prefix
-from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+from_schema: https://w3id.org/evorao/
 close_mappings:
 - dcat:landingPage
 rank: 1000

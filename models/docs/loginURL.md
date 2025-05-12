@@ -1,6 +1,6 @@
 
 
-# Slot: login URL (loginURL)
+# Slot: login URL (loginURL) 
 
 
 _The URL template that allows to log in if required_
@@ -9,9 +9,8 @@ _The URL template that allows to log in if required_
 
 
 
-URI: [EVORAO:loginURL](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#loginURL)
-
-
+URI: [EVORAO:loginURL](https://w3id.org/evorao/loginURL)
+Alias: loginURL
 
 <!-- no inheritance hierarchy -->
 
@@ -50,7 +49,7 @@ URI: [EVORAO:loginURL](https://raw.githubusercontent.com/EVORA-project/evora-ont
 ### Schema Source
 
 
-* from schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+* from schema: https://w3id.org/evorao/
 
 
 
@@ -73,7 +72,7 @@ URI: [EVORAO:loginURL](https://raw.githubusercontent.com/EVORA-project/evora-ont
 name: loginURL
 description: The URL template that allows to log in if required
 title: login URL
-from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+from_schema: https://w3id.org/evorao/
 close_mappings:
 - wdp:P1630
 - dcat:endpointDescription

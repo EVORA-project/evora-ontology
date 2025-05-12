@@ -1,6 +1,6 @@
 
 
-# Slot: before date (beforeDate)
+# Slot: before date (beforeDate) 
 
 
 _Set to TRUE if a proxy date for the collection date is used_
@@ -9,9 +9,8 @@ _Set to TRUE if a proxy date for the collection date is used_
 
 
 
-URI: [EVORAO:beforeDate](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#beforeDate)
-
-
+URI: [EVORAO:beforeDate](https://w3id.org/evorao/beforeDate)
+Alias: beforeDate
 
 <!-- no inheritance hierarchy -->
 
@@ -52,7 +51,7 @@ URI: [EVORAO:beforeDate](https://raw.githubusercontent.com/EVORA-project/evora-o
 ### Schema Source
 
 
-* from schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+* from schema: https://w3id.org/evorao/
 
 
 
@@ -74,7 +73,7 @@ URI: [EVORAO:beforeDate](https://raw.githubusercontent.com/EVORA-project/evora-o
 name: beforeDate
 description: Set to TRUE if a proxy date for the collection date is used
 title: before date
-from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+from_schema: https://w3id.org/evorao/
 rank: 1000
 ifabsent: 'false'
 alias: beforeDate

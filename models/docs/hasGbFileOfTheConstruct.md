@@ -1,6 +1,6 @@
 
 
-# Slot: has .gb file of the construct (hasGbFileOfTheConstruct)
+# Slot: has .gb file of the construct (hasGbFileOfTheConstruct) 
 
 
 _A GenBank formatted file that contains detailed sequence and annotation information of a nucleic acid construct_
@@ -9,9 +9,8 @@ _A GenBank formatted file that contains detailed sequence and annotation informa
 
 
 
-URI: [EVORAO:hasGbFileOfTheConstruct](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#hasGbFileOfTheConstruct)
-
-
+URI: [EVORAO:hasGbFileOfTheConstruct](https://w3id.org/evorao/hasGbFileOfTheConstruct)
+Alias: hasGbFileOfTheConstruct
 
 <!-- no inheritance hierarchy -->
 
@@ -52,7 +51,7 @@ URI: [EVORAO:hasGbFileOfTheConstruct](https://raw.githubusercontent.com/EVORA-pr
 ### Schema Source
 
 
-* from schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+* from schema: https://w3id.org/evorao/
 
 
 
@@ -75,7 +74,7 @@ name: hasGbFileOfTheConstruct
 description: A GenBank formatted file that contains detailed sequence and annotation
   information of a nucleic acid construct
 title: has .gb file of the construct
-from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+from_schema: https://w3id.org/evorao/
 rank: 1000
 alias: hasGbFileOfTheConstruct
 domain_of:

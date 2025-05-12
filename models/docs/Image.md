@@ -1,6 +1,6 @@
 
 
-# Class: Image (Image)
+# Class: Image (Image) 
 
 
 _Subclass of File representing visual content such as pictures, diagrams, or illustrations_
@@ -9,7 +9,7 @@ _Subclass of File representing visual content such as pictures, diagrams, or ill
 
 
 
-URI: [EVORAO:Image](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#Image)
+URI: [EVORAO:Image](https://w3id.org/evorao/Image)
 
 
 
@@ -116,7 +116,7 @@ URI: [EVORAO:Image](https://raw.githubusercontent.com/EVORA-project/evora-ontolo
 ### Schema Source
 
 
-* from schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+* from schema: https://w3id.org/evorao/
 
 
 
@@ -147,7 +147,7 @@ name: Image
 description: Subclass of File representing visual content such as pictures, diagrams,
   or illustrations
 title: Image
-from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+from_schema: https://w3id.org/evorao/
 close_mappings:
 - wd:Q860625
 - wd:Q860625
@@ -177,7 +177,7 @@ name: Image
 description: Subclass of File representing visual content such as pictures, diagrams,
   or illustrations
 title: Image
-from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+from_schema: https://w3id.org/evorao/
 close_mappings:
 - wd:Q860625
 - wd:Q860625
@@ -198,7 +198,7 @@ attributes:
     name: altText
     description: An alternate text for the image, if the image cannot be displayed
     title: alt text
-    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+    from_schema: https://w3id.org/evorao/
     rank: 1000
     alias: altText
     owner: Image
@@ -212,7 +212,7 @@ attributes:
     name: name
     description: A word or set of words used to identify and refer to an entity
     title: name
-    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+    from_schema: https://w3id.org/evorao/
     exact_mappings:
     - schema:name
     close_mappings:
@@ -238,7 +238,7 @@ attributes:
       present the resource.
 
       '
-    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+    from_schema: https://w3id.org/evorao/
     rank: 1000
     slot_uri: dct:description
     alias: description
@@ -261,7 +261,7 @@ attributes:
     description: The web address or location where the file content is stored and
       can be accessed or downloaded.
     title: content URL
-    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+    from_schema: https://w3id.org/evorao/
     rank: 1000
     alias: contentURL
     owner: Image
@@ -275,7 +275,7 @@ attributes:
     description: The file type or format that indicates how the data within the file
       is structured
     title: format
-    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+    from_schema: https://w3id.org/evorao/
     rank: 1000
     alias: format
     owner: Image
@@ -289,7 +289,7 @@ attributes:
     description: Information about terms and conditions under which the subject can
       be used, shared, or distributed, indicating any restrictions or permissions
     title: license
-    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+    from_schema: https://w3id.org/evorao/
     exact_mappings:
     - dct:license
     rank: 1000

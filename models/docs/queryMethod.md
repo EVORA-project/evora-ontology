@@ -1,6 +1,6 @@
 
 
-# Slot: query method (queryMethod)
+# Slot: query method (queryMethod) 
 
 
 _The http request method used to access the requested query url_
@@ -9,9 +9,8 @@ _The http request method used to access the requested query url_
 
 
 
-URI: [EVORAO:queryMethod](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#queryMethod)
-
-
+URI: [EVORAO:queryMethod](https://w3id.org/evorao/queryMethod)
+Alias: queryMethod
 
 <!-- no inheritance hierarchy -->
 
@@ -52,7 +51,7 @@ URI: [EVORAO:queryMethod](https://raw.githubusercontent.com/EVORA-project/evora-
 ### Schema Source
 
 
-* from schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+* from schema: https://w3id.org/evorao/
 
 
 
@@ -75,7 +74,7 @@ URI: [EVORAO:queryMethod](https://raw.githubusercontent.com/EVORA-project/evora-
 name: queryMethod
 description: The http request method used to access the requested query url
 title: query method
-from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+from_schema: https://w3id.org/evorao/
 close_mappings:
 - dcat:endpointDescription
 rank: 1000

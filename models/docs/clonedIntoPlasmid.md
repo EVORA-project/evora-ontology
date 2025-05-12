@@ -1,6 +1,6 @@
 
 
-# Slot: cloned into plasmid (clonedIntoPlasmid)
+# Slot: cloned into plasmid (clonedIntoPlasmid) 
 
 
 _The plasmid into which the nucleic acid has been cloned_
@@ -9,9 +9,8 @@ _The plasmid into which the nucleic acid has been cloned_
 
 
 
-URI: [EVORAO:clonedIntoPlasmid](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#clonedIntoPlasmid)
-
-
+URI: [EVORAO:clonedIntoPlasmid](https://w3id.org/evorao/clonedIntoPlasmid)
+Alias: clonedIntoPlasmid
 
 <!-- no inheritance hierarchy -->
 
@@ -52,7 +51,7 @@ URI: [EVORAO:clonedIntoPlasmid](https://raw.githubusercontent.com/EVORA-project/
 ### Schema Source
 
 
-* from schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+* from schema: https://w3id.org/evorao/
 
 
 
@@ -74,7 +73,7 @@ URI: [EVORAO:clonedIntoPlasmid](https://raw.githubusercontent.com/EVORA-project/
 name: clonedIntoPlasmid
 description: The plasmid into which the nucleic acid has been cloned
 title: cloned into plasmid
-from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+from_schema: https://w3id.org/evorao/
 rank: 1000
 alias: clonedIntoPlasmid
 domain_of:

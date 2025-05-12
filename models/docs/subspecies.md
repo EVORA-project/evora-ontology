@@ -1,6 +1,6 @@
 
 
-# Slot: subspecies (subspecies)
+# Slot: subspecies (subspecies) 
 
 
 _The subspecies information differentiates closely related pathogens within a single species_
@@ -9,9 +9,8 @@ _The subspecies information differentiates closely related pathogens within a si
 
 
 
-URI: [EVORAO:subspecies](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#subspecies)
-
-
+URI: [EVORAO:subspecies](https://w3id.org/evorao/subspecies)
+Alias: subspecies
 
 <!-- no inheritance hierarchy -->
 
@@ -50,7 +49,7 @@ URI: [EVORAO:subspecies](https://raw.githubusercontent.com/EVORA-project/evora-o
 ### Schema Source
 
 
-* from schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+* from schema: https://w3id.org/evorao/
 
 
 
@@ -73,7 +72,7 @@ name: subspecies
 description: The subspecies information differentiates closely related pathogens within
   a single species
 title: subspecies
-from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+from_schema: https://w3id.org/evorao/
 rank: 1000
 alias: subspecies
 domain_of:

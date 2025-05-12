@@ -1,6 +1,6 @@
 
 
-# Slot: pathogen type (pathogenType)
+# Slot: pathogen type (pathogenType) 
 
 
 _Identification of the specific type of pathogen among the listed categories e.g. 'Virus','Viroid','Bacterium'..._
@@ -9,9 +9,8 @@ _Identification of the specific type of pathogen among the listed categories e.g
 
 
 
-URI: [EVORAO:pathogenType](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#pathogenType)
-
-
+URI: [EVORAO:pathogenType](https://w3id.org/evorao/pathogenType)
+Alias: pathogenType
 
 <!-- no inheritance hierarchy -->
 
@@ -52,7 +51,7 @@ URI: [EVORAO:pathogenType](https://raw.githubusercontent.com/EVORA-project/evora
 ### Schema Source
 
 
-* from schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+* from schema: https://w3id.org/evorao/
 
 
 
@@ -75,7 +74,7 @@ name: pathogenType
 description: Identification of the specific type of pathogen among the listed categories
   e.g. 'Virus','Viroid','Bacterium'...
 title: pathogen type
-from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+from_schema: https://w3id.org/evorao/
 rank: 1000
 alias: pathogenType
 domain_of:

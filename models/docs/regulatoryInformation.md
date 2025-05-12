@@ -1,6 +1,6 @@
 
 
-# Slot: regulatory information (regulatoryInformation)
+# Slot: regulatory information (regulatoryInformation) 
 
 
 _Lists applicable laws, regulations, and standards governing the product, including local, national, or international requirements for its handling, use, transportation, and disposal, ensuring compliance with legal obligations._
@@ -9,9 +9,8 @@ _Lists applicable laws, regulations, and standards governing the product, includ
 
 
 
-URI: [EVORAO:regulatoryInformation](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#regulatoryInformation)
-
-
+URI: [EVORAO:regulatoryInformation](https://w3id.org/evorao/regulatoryInformation)
+Alias: regulatoryInformation
 
 <!-- no inheritance hierarchy -->
 
@@ -52,7 +51,7 @@ URI: [EVORAO:regulatoryInformation](https://raw.githubusercontent.com/EVORA-proj
 ### Schema Source
 
 
-* from schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+* from schema: https://w3id.org/evorao/
 
 
 
@@ -76,7 +75,7 @@ description: Lists applicable laws, regulations, and standards governing the pro
   including local, national, or international requirements for its handling, use,
   transportation, and disposal, ensuring compliance with legal obligations.
 title: regulatory information
-from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+from_schema: https://w3id.org/evorao/
 rank: 1000
 alias: regulatoryInformation
 domain_of:

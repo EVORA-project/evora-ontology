@@ -1,6 +1,6 @@
 
 
-# Slot: indigenous people and local community origin (indigenousPoepleAndLocalCommunityOrigin)
+# Slot: indigenous people and local community origin (indigenousPoepleAndLocalCommunityOrigin) 
 
 
 _The specific IPLC area (Indigenous People and Local Communities) from which this sample/element was sampled, if relevant_
@@ -9,9 +9,8 @@ _The specific IPLC area (Indigenous People and Local Communities) from which thi
 
 
 
-URI: [EVORAO:indigenousPoepleAndLocalCommunityOrigin](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#indigenousPoepleAndLocalCommunityOrigin)
-
-
+URI: [EVORAO:indigenousPoepleAndLocalCommunityOrigin](https://w3id.org/evorao/indigenousPoepleAndLocalCommunityOrigin)
+Alias: indigenousPoepleAndLocalCommunityOrigin
 
 <!-- no inheritance hierarchy -->
 
@@ -50,7 +49,7 @@ URI: [EVORAO:indigenousPoepleAndLocalCommunityOrigin](https://raw.githubusercont
 ### Schema Source
 
 
-* from schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+* from schema: https://w3id.org/evorao/
 
 
 
@@ -73,7 +72,7 @@ name: indigenousPoepleAndLocalCommunityOrigin
 description: The specific IPLC area (Indigenous People and Local Communities) from
   which this sample/element was sampled, if relevant
 title: indigenous people and local community origin
-from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+from_schema: https://w3id.org/evorao/
 rank: 1000
 alias: indigenousPoepleAndLocalCommunityOrigin
 domain_of:

@@ -1,6 +1,6 @@
 
 
-# Slot: sequence checked (sequenceChecked)
+# Slot: sequence checked (sequenceChecked) 
 
 
 _Tell whether or not the sequence of the product was controlled (compulsory for cloned products)_
@@ -9,9 +9,8 @@ _Tell whether or not the sequence of the product was controlled (compulsory for 
 
 
 
-URI: [EVORAO:sequenceChecked](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#sequenceChecked)
-
-
+URI: [EVORAO:sequenceChecked](https://w3id.org/evorao/sequenceChecked)
+Alias: sequenceChecked
 
 <!-- no inheritance hierarchy -->
 
@@ -56,7 +55,7 @@ URI: [EVORAO:sequenceChecked](https://raw.githubusercontent.com/EVORA-project/ev
 ### Schema Source
 
 
-* from schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+* from schema: https://w3id.org/evorao/
 
 
 
@@ -81,7 +80,7 @@ description: Tell whether or not the sequence of the product was controlled (com
 title: sequence checked
 comments:
 - Sequence check is mandatory for cloned products
-from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+from_schema: https://w3id.org/evorao/
 rank: 1000
 alias: sequenceChecked
 domain_of:

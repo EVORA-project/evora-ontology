@@ -1,6 +1,6 @@
 
 
-# Slot: rank (rank)
+# Slot: rank (rank) 
 
 
 _Relative level or position of the identified taxon in the taxonomy_
@@ -9,9 +9,8 @@ _Relative level or position of the identified taxon in the taxonomy_
 
 
 
-URI: [EVORAO:rank](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#rank)
-
-
+URI: [EVORAO:rank](https://w3id.org/evorao/rank)
+Alias: rank
 
 <!-- no inheritance hierarchy -->
 
@@ -23,8 +22,8 @@ URI: [EVORAO:rank](https://raw.githubusercontent.com/EVORA-project/evora-ontolog
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [Taxonomy](Taxonomy.md) | Science of naming, defining and classifying organisms |  yes  |
 | [Taxon](Taxon.md) | Conceptual entity that groups one or more populations of an organism or organ... |  yes  |
+| [Taxonomy](Taxonomy.md) | Science of naming, defining and classifying organisms |  yes  |
 
 
 
@@ -53,7 +52,7 @@ URI: [EVORAO:rank](https://raw.githubusercontent.com/EVORA-project/evora-ontolog
 ### Schema Source
 
 
-* from schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+* from schema: https://w3id.org/evorao/
 
 
 
@@ -76,7 +75,7 @@ URI: [EVORAO:rank](https://raw.githubusercontent.com/EVORA-project/evora-ontolog
 name: rank
 description: Relative level or position of the identified taxon in the taxonomy
 title: rank
-from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+from_schema: https://w3id.org/evorao/
 exact_mappings:
 - dwc:taxonRank
 rank: 1000

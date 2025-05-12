@@ -1,6 +1,6 @@
 
 
-# Slot: model species (modelSpecies)
+# Slot: model species (modelSpecies) 
 
 
 _The species of the infected organism in the experiment_
@@ -9,9 +9,8 @@ _The species of the infected organism in the experiment_
 
 
 
-URI: [EVORAO:modelSpecies](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#modelSpecies)
-
-
+URI: [EVORAO:modelSpecies](https://w3id.org/evorao/modelSpecies)
+Alias: modelSpecies
 
 <!-- no inheritance hierarchy -->
 
@@ -50,7 +49,7 @@ URI: [EVORAO:modelSpecies](https://raw.githubusercontent.com/EVORA-project/evora
 ### Schema Source
 
 
-* from schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+* from schema: https://w3id.org/evorao/
 
 
 
@@ -72,7 +71,7 @@ URI: [EVORAO:modelSpecies](https://raw.githubusercontent.com/EVORA-project/evora
 name: modelSpecies
 description: The species of the infected organism in the experiment
 title: model species
-from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+from_schema: https://w3id.org/evorao/
 rank: 1000
 alias: modelSpecies
 domain_of:

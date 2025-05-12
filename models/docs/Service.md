@@ -1,6 +1,6 @@
 
 
-# Class: Service (Service)
+# Class: Service (Service) 
 
 
 _A service_
@@ -9,7 +9,7 @@ _A service_
 
 
 
-URI: [EVORAO:Service](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#Service)
+URI: [EVORAO:Service](https://w3id.org/evorao/Service)
 
 
 
@@ -237,7 +237,7 @@ URI: [EVORAO:Service](https://raw.githubusercontent.com/EVORA-project/evora-onto
 ### Schema Source
 
 
-* from schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+* from schema: https://w3id.org/evorao/
 
 
 
@@ -267,7 +267,7 @@ URI: [EVORAO:Service](https://raw.githubusercontent.com/EVORA-project/evora-onto
 name: Service
 description: A service
 title: Service
-from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+from_schema: https://w3id.org/evorao/
 close_mappings:
 - wd:Q7406919
 - wd:Q7406919
@@ -306,7 +306,7 @@ slot_usage:
 name: Service
 description: A service
 title: Service
-from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+from_schema: https://w3id.org/evorao/
 close_mappings:
 - wd:Q7406919
 - wd:Q7406919
@@ -336,7 +336,7 @@ attributes:
     name: modelSpecies
     description: The species of the infected organism in the experiment
     title: model species
-    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+    from_schema: https://w3id.org/evorao/
     rank: 1000
     alias: modelSpecies
     owner: Service
@@ -350,7 +350,7 @@ attributes:
     description: The specific name of the infected organism, including its modification
       if necessary
     title: model type
-    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+    from_schema: https://w3id.org/evorao/
     rank: 1000
     alias: modelType
     owner: Service
@@ -365,7 +365,7 @@ attributes:
       page on the provider's website and/or allows to place an order about it or at
       least describe the process to place an order/enquiry
     title: access point URL
-    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+    from_schema: https://w3id.org/evorao/
     exact_mappings:
     - dcat:landingPage
     rank: 1000
@@ -381,7 +381,7 @@ attributes:
     description: The reference or the stock keeping unit of the service or item provided
       in the provider's catalogue
     title: ref-SKU
-    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+    from_schema: https://w3id.org/evorao/
     exact_mappings:
     - dct:identifier
     rank: 1000
@@ -400,7 +400,7 @@ attributes:
     comments:
     - 'The description of what will be delivered to the end-user (e.g.: packaging,
       quantity...)'
-    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+    from_schema: https://w3id.org/evorao/
     rank: 1000
     alias: unitDefinition
     owner: Service
@@ -414,7 +414,7 @@ attributes:
     name: category
     description: The main category of the service or product
     title: category
-    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+    from_schema: https://w3id.org/evorao/
     exact_mappings:
     - dcat:theme
     rank: 1000
@@ -430,7 +430,7 @@ attributes:
     description: Any category apart from its main category in which this product or
       service can fit
     title: additional category
-    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+    from_schema: https://w3id.org/evorao/
     exact_mappings:
     - dcat:theme
     rank: 1000
@@ -450,7 +450,7 @@ attributes:
     - The cost per access may not be defined or be specific to a request, so it has
       to be a xsd:string instead of an xsd:float as initialy suggested to permit description
       of cost as conditional to what is requested
-    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+    from_schema: https://w3id.org/evorao/
     rank: 1000
     ifabsent: string(on request)
     alias: unitCost
@@ -466,7 +466,7 @@ attributes:
     description: Information that permits to assess the quality level of what will
       be provided
     title: quality grading
-    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+    from_schema: https://w3id.org/evorao/
     rank: 1000
     alias: qualityGrading
     owner: Service
@@ -485,7 +485,7 @@ attributes:
       some cases(e.g: FAIRSHARING) there may have no direct pathogen related but simply
       a taxonomic information .... the default value should be the root of virology:
       Viruses'
-    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+    from_schema: https://w3id.org/evorao/
     rank: 1000
     alias: pathogenIdentification
     owner: Service
@@ -498,7 +498,7 @@ attributes:
     name: relatedDOI
     description: Any Digital Object Identifier that can be related
     title: DOI
-    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+    from_schema: https://w3id.org/evorao/
     close_mappings:
     - wdp:P356
     rank: 1000
@@ -516,7 +516,7 @@ attributes:
       a biological agent guiding its initial handling in labs according to the risk
       group classification defined by the WHO laboratory biosafety manual
     title: risk group
-    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+    from_schema: https://w3id.org/evorao/
     close_mappings:
     - wdp:P12663
     rank: 1000
@@ -535,7 +535,7 @@ attributes:
       contributes to protecting people and the environment from biohazards while accessing
       this product or service
     title: biosafety restrictions
-    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+    from_schema: https://w3id.org/evorao/
     rank: 1000
     alias: biosafetyRestrictions
     owner: Service
@@ -552,7 +552,7 @@ attributes:
     comments:
     - Set to TRUE if it can produce GMO. It is recommended to have a value for this
       field, no value will be understood as unknown
-    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+    from_schema: https://w3id.org/evorao/
     rank: 1000
     alias: canItBeUsedToProduceGMO
     owner: Service
@@ -566,7 +566,7 @@ attributes:
     name: provider
     description: A provider of this product or service, as a specific organization
     title: provider
-    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+    from_schema: https://w3id.org/evorao/
     rank: 1000
     alias: provider
     owner: Service
@@ -579,7 +579,7 @@ attributes:
     name: collection
     description: The collection(s) to which belongs this item
     title: collection
-    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+    from_schema: https://w3id.org/evorao/
     rank: 1000
     alias: collection
     owner: Service
@@ -592,7 +592,7 @@ attributes:
     name: keywords
     description: List of terms used to tag and categorize this Item
     title: keywords
-    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+    from_schema: https://w3id.org/evorao/
     exact_mappings:
     - dcat:keyword
     rank: 1000
@@ -611,7 +611,7 @@ attributes:
     title: availability
     comments:
     - Possible availabilities may differ from a project to another
-    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+    from_schema: https://w3id.org/evorao/
     rank: 1000
     ifabsent: string(on request)
     alias: availability
@@ -626,7 +626,7 @@ attributes:
     description: Any additional documents that provide supplementary information,
       instructions, or guidelines relevant to the use of this item
     title: complementary document
-    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+    from_schema: https://w3id.org/evorao/
     rank: 1000
     alias: complementaryDocument
     owner: Service
@@ -641,7 +641,7 @@ attributes:
       and maintenance of what is provided, including best practices, troubleshooting
       tips, and procedural instructions
     title: technical recommendation
-    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+    from_schema: https://w3id.org/evorao/
     rank: 1000
     alias: technicalRecommendation
     owner: Service
@@ -654,7 +654,7 @@ attributes:
     name: productPicture
     description: A picture that can represent the item
     title: product picture
-    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+    from_schema: https://w3id.org/evorao/
     rank: 1000
     alias: productPicture
     owner: Service
@@ -668,7 +668,7 @@ attributes:
     description: A reference that permits to retrieve another related item from an
       external provider
     title: external related reference
-    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+    from_schema: https://w3id.org/evorao/
     rank: 1000
     alias: externalRelatedReference
     owner: Service
@@ -682,7 +682,7 @@ attributes:
     description: Any certification related to the current product or service; e.g.,
       ISO certification
     title: certification
-    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+    from_schema: https://w3id.org/evorao/
     close_mappings:
     - dct:conformsTo
     rank: 1000
@@ -697,7 +697,7 @@ attributes:
     name: internalReference
     description: Any reference or indication to be used for local retrieval purpose
     title: internal reference
-    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+    from_schema: https://w3id.org/evorao/
     rank: 1000
     alias: internalReference
     owner: Service
@@ -710,7 +710,7 @@ attributes:
     name: note
     description: An aditional information as a textual comment
     title: note
-    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+    from_schema: https://w3id.org/evorao/
     rank: 1000
     alias: note
     owner: Service
@@ -723,7 +723,7 @@ attributes:
     name: contactPoint
     description: An information that allows someone to establish communication
     title: contact point
-    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+    from_schema: https://w3id.org/evorao/
     exact_mappings:
     - dcat:contactPoint
     rank: 1000
@@ -747,7 +747,7 @@ attributes:
       ''Virus name'', ''virus host type'', ''collection year'', ''country of collection''
       ex ''suspected epidemiological origin'', ''genotype'', ''strain'', ''variant
       name or specific feature'
-    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+    from_schema: https://w3id.org/evorao/
     close_mappings:
     - rdfs:label
     rank: 1000
@@ -774,7 +774,7 @@ attributes:
       present the resource.
 
       '
-    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+    from_schema: https://w3id.org/evorao/
     rank: 1000
     slot_uri: dct:description
     alias: description

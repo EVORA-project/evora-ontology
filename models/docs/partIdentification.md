@@ -1,6 +1,6 @@
 
 
-# Slot: Part identification (partIdentification)
+# Slot: Part identification (partIdentification) 
 
 
 _A short designation of this recombinant part of the related biological material_
@@ -9,9 +9,8 @@ _A short designation of this recombinant part of the related biological material
 
 
 
-URI: [EVORAO:partIdentification](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#partIdentification)
-
-
+URI: [EVORAO:partIdentification](https://w3id.org/evorao/partIdentification)
+Alias: partIdentification
 
 <!-- no inheritance hierarchy -->
 
@@ -52,7 +51,7 @@ URI: [EVORAO:partIdentification](https://raw.githubusercontent.com/EVORA-project
 ### Schema Source
 
 
-* from schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+* from schema: https://w3id.org/evorao/
 
 
 
@@ -75,7 +74,7 @@ name: partIdentification
 description: A short designation of this recombinant part of the related biological
   material
 title: Part identification
-from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+from_schema: https://w3id.org/evorao/
 rank: 1000
 alias: partIdentification
 domain_of:

@@ -1,6 +1,6 @@
 
 
-# Slot: taxon (taxon)
+# Slot: taxon (taxon) 
 
 
 _Scientifically classified group or entity within the reference taxonomy_
@@ -9,9 +9,8 @@ _Scientifically classified group or entity within the reference taxonomy_
 
 
 
-URI: [EVORAO:taxon](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#taxon)
-
-
+URI: [EVORAO:taxon](https://w3id.org/evorao/taxon)
+Alias: taxon
 
 <!-- no inheritance hierarchy -->
 
@@ -23,8 +22,8 @@ URI: [EVORAO:taxon](https://raw.githubusercontent.com/EVORA-project/evora-ontolo
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [Taxonomy](Taxonomy.md) | Science of naming, defining and classifying organisms |  yes  |
 | [PathogenIdentification](PathogenIdentification.md) | A collection of distinguishing information that enables the differentiation o... |  yes  |
+| [Taxonomy](Taxonomy.md) | Science of naming, defining and classifying organisms |  yes  |
 
 
 
@@ -57,7 +56,7 @@ URI: [EVORAO:taxon](https://raw.githubusercontent.com/EVORA-project/evora-ontolo
 ### Schema Source
 
 
-* from schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+* from schema: https://w3id.org/evorao/
 
 
 
@@ -83,7 +82,7 @@ title: taxon
 comments:
 - The taxon of the highest rank known that can be used to classify a pathogen or group
   of pathogens (e.g viruses) in the reference taxonomy
-from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+from_schema: https://w3id.org/evorao/
 close_mappings:
 - dwc:Taxon
 rank: 1000

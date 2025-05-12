@@ -1,6 +1,6 @@
 
 
-# Slot: co-infecting viruses (coInfectingViruses)
+# Slot: co-infecting viruses (coInfectingViruses) 
 
 
 _Identifies other viruses that may co-infect the host organism along with the primary virus, indicating the presence of multiple viral infections within the same host._
@@ -9,9 +9,8 @@ _Identifies other viruses that may co-infect the host organism along with the pr
 
 
 
-URI: [EVORAO:coInfectingViruses](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#coInfectingViruses)
-
-
+URI: [EVORAO:coInfectingViruses](https://w3id.org/evorao/coInfectingViruses)
+Alias: coInfectingViruses
 
 <!-- no inheritance hierarchy -->
 
@@ -52,7 +51,7 @@ URI: [EVORAO:coInfectingViruses](https://raw.githubusercontent.com/EVORA-project
 ### Schema Source
 
 
-* from schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+* from schema: https://w3id.org/evorao/
 
 
 
@@ -76,7 +75,7 @@ description: Identifies other viruses that may co-infect the host organism along
   the primary virus, indicating the presence of multiple viral infections within the
   same host.
 title: co-infecting viruses
-from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+from_schema: https://w3id.org/evorao/
 rank: 1000
 alias: coInfectingViruses
 domain_of:

@@ -1,6 +1,6 @@
 
 
-# Slot: isolation conditions (isolationConditions)
+# Slot: isolation conditions (isolationConditions) 
 
 
 _The environmental and procedural conditions under which the pathogen was isolated_
@@ -9,9 +9,8 @@ _The environmental and procedural conditions under which the pathogen was isolat
 
 
 
-URI: [EVORAO:isolationConditions](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#isolationConditions)
-
-
+URI: [EVORAO:isolationConditions](https://w3id.org/evorao/isolationConditions)
+Alias: isolationConditions
 
 <!-- no inheritance hierarchy -->
 
@@ -23,13 +22,13 @@ URI: [EVORAO:isolationConditions](https://raw.githubusercontent.com/EVORA-projec
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
+| [Protozoan](Protozoan.md) | The protozoan as a biological material |  no  |
+| [Fungus](Fungus.md) | The fungus as a biological material |  no  |
+| [Pathogen](Pathogen.md) | Biological entity that causes disease in its host, which is typically an infe... |  yes  |
+| [Prion](Prion.md) | The prion as a biological material |  no  |
+| [Bacterium](Bacterium.md) | The bacterium as a biological material |  no  |
 | [Virus](Virus.md) | The virus as a biological material |  no  |
 | [Viroid](Viroid.md) | The viroid as a biological material |  no  |
-| [Pathogen](Pathogen.md) | Biological entity that causes disease in its host, which is typically an infe... |  yes  |
-| [Bacterium](Bacterium.md) | The bacterium as a biological material |  no  |
-| [Prion](Prion.md) | The prion as a biological material |  no  |
-| [Fungus](Fungus.md) | The fungus as a biological material |  no  |
-| [Protozoan](Protozoan.md) | The protozoan as a biological material |  no  |
 
 
 
@@ -56,7 +55,7 @@ URI: [EVORAO:isolationConditions](https://raw.githubusercontent.com/EVORA-projec
 ### Schema Source
 
 
-* from schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+* from schema: https://w3id.org/evorao/
 
 
 
@@ -79,7 +78,7 @@ name: isolationConditions
 description: The environmental and procedural conditions under which the pathogen
   was isolated
 title: isolation conditions
-from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+from_schema: https://w3id.org/evorao/
 rank: 1000
 alias: isolationConditions
 domain_of:

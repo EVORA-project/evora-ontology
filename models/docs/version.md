@@ -1,6 +1,6 @@
 
 
-# Slot: version (version)
+# Slot: version (version) 
 
 
 _The version of this instance of entity_
@@ -9,9 +9,8 @@ _The version of this instance of entity_
 
 
 
-URI: [EVORAO:version](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#version)
-
-
+URI: [EVORAO:version](https://w3id.org/evorao/version)
+Alias: version
 
 <!-- no inheritance hierarchy -->
 
@@ -52,7 +51,7 @@ URI: [EVORAO:version](https://raw.githubusercontent.com/EVORA-project/evora-onto
 ### Schema Source
 
 
-* from schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+* from schema: https://w3id.org/evorao/
 
 
 
@@ -74,7 +73,7 @@ URI: [EVORAO:version](https://raw.githubusercontent.com/EVORA-project/evora-onto
 name: version
 description: The version of this instance of entity
 title: version
-from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+from_schema: https://w3id.org/evorao/
 rank: 1000
 alias: version
 domain_of:

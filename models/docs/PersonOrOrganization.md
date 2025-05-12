@@ -1,6 +1,6 @@
 
 
-# Class: Person Or Organization (PersonOrOrganization)
+# Class: Person Or Organization (PersonOrOrganization) 
 
 
 _A person or an organization_
@@ -101,7 +101,7 @@ URI: [foaf:Agent](http://xmlns.com/foaf/0.1/Agent)
 ### Schema Source
 
 
-* from schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+* from schema: https://w3id.org/evorao/
 
 
 
@@ -132,7 +132,7 @@ URI: [foaf:Agent](http://xmlns.com/foaf/0.1/Agent)
 name: PersonOrOrganization
 description: A person or an organization
 title: Person Or Organization
-from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+from_schema: https://w3id.org/evorao/
 exact_mappings:
 - dct:Agent
 - dct:Agent
@@ -232,7 +232,7 @@ class_uri: foaf:Agent
 name: PersonOrOrganization
 description: A person or an organization
 title: Person Or Organization
-from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+from_schema: https://w3id.org/evorao/
 exact_mappings:
 - dct:Agent
 - dct:Agent
@@ -319,7 +319,7 @@ attributes:
     name: name
     description: A word or set of words used to identify and refer to an entity
     title: name
-    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+    from_schema: https://w3id.org/evorao/
     exact_mappings:
     - schema:name
     close_mappings:
@@ -345,7 +345,7 @@ attributes:
       present the resource.
 
       '
-    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+    from_schema: https://w3id.org/evorao/
     rank: 1000
     slot_uri: dct:description
     alias: description
@@ -367,7 +367,7 @@ attributes:
     name: homePage
     description: A web page that serves as the main or introductory page
     title: home page
-    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+    from_schema: https://w3id.org/evorao/
     rank: 1000
     alias: homePage
     owner: PersonOrOrganization
@@ -380,7 +380,7 @@ attributes:
     name: contactPoint
     description: An information that allows someone to establish communication
     title: contact point
-    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+    from_schema: https://w3id.org/evorao/
     exact_mappings:
     - dcat:contactPoint
     rank: 1000
@@ -397,7 +397,7 @@ attributes:
     name: logo
     description: A path or URL to the related logo
     title: logo
-    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+    from_schema: https://w3id.org/evorao/
     rank: 1000
     alias: logo
     owner: PersonOrOrganization

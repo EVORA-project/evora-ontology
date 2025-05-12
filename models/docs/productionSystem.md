@@ -1,6 +1,6 @@
 
 
-# Slot: production system (productionSystem)
+# Slot: production system (productionSystem) 
 
 
 _The biological and technological methods and processes used to produce the antibody_
@@ -9,9 +9,8 @@ _The biological and technological methods and processes used to produce the anti
 
 
 
-URI: [EVORAO:productionSystem](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#productionSystem)
-
-
+URI: [EVORAO:productionSystem](https://w3id.org/evorao/productionSystem)
+Alias: productionSystem
 
 <!-- no inheritance hierarchy -->
 
@@ -53,7 +52,7 @@ URI: [EVORAO:productionSystem](https://raw.githubusercontent.com/EVORA-project/e
 ### Schema Source
 
 
-* from schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+* from schema: https://w3id.org/evorao/
 
 
 
@@ -76,7 +75,7 @@ name: productionSystem
 description: The biological and technological methods and processes used to produce
   the antibody
 title: production system
-from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+from_schema: https://w3id.org/evorao/
 rank: 1000
 alias: productionSystem
 domain_of:

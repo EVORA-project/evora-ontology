@@ -1,6 +1,6 @@
 
 
-# Class: Sequence (Sequence)
+# Class: Sequence (Sequence) 
 
 
 _A nucleic acid or protein sequence information_
@@ -9,7 +9,7 @@ _A nucleic acid or protein sequence information_
 
 
 
-URI: [EVORAO:Sequence](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#Sequence)
+URI: [EVORAO:Sequence](https://w3id.org/evorao/Sequence)
 
 
 
@@ -89,7 +89,7 @@ URI: [EVORAO:Sequence](https://raw.githubusercontent.com/EVORA-project/evora-ont
 ### Schema Source
 
 
-* from schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+* from schema: https://w3id.org/evorao/
 
 
 
@@ -119,7 +119,7 @@ URI: [EVORAO:Sequence](https://raw.githubusercontent.com/EVORA-project/evora-ont
 name: Sequence
 description: A nucleic acid or protein sequence information
 title: Sequence
-from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+from_schema: https://w3id.org/evorao/
 close_mappings:
 - wd:Q3511065
 - wd:Q3511065
@@ -166,7 +166,7 @@ slot_usage:
 name: Sequence
 description: A nucleic acid or protein sequence information
 title: Sequence
-from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+from_schema: https://w3id.org/evorao/
 close_mappings:
 - wd:Q3511065
 - wd:Q3511065
@@ -205,7 +205,7 @@ attributes:
     description: A reference that permits to retrieve the sequence information from
       a sequence provider
     title: sequence reference
-    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+    from_schema: https://w3id.org/evorao/
     rank: 1000
     alias: sequenceReference
     owner: Sequence
@@ -226,7 +226,7 @@ attributes:
       line, must begin with a charater ('>'), followed by a unique SeqID (sequence
       identifier). In case the sequence is made of multiple parts several fasta sequences
       can be provided
-    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+    from_schema: https://w3id.org/evorao/
     rank: 1000
     alias: sequenceFASTA
     owner: Sequence

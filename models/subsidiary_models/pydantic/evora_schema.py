@@ -12,8 +12,6 @@ from enum import Enum
 from typing import (
     Any,
     ClassVar,
-    Dict,
-    List,
     Literal,
     Optional,
     Union
@@ -29,7 +27,7 @@ from pydantic import (
 
 
 metamodel_version = "None"
-version = "1.0.8636"
+version = "1.0.8651"
 
 
 class ConfiguredBaseModel(BaseModel):
@@ -47,7 +45,7 @@ class ConfiguredBaseModel(BaseModel):
 
 
 class LinkMLMeta(RootModel):
-    root: Dict[str, Any] = {}
+    root: dict[str, Any] = {}
     model_config = ConfigDict(frozen=True)
 
     def __getattr__(self, key:str):
@@ -83,14 +81,14 @@ linkml_meta = LinkMLMeta({'contributors': ['https://github.com/Angatar',
                     'interoperability, accessibility, and reusability across '
                     'various projects. The EVORA Ontology aims to support '
                     'preparedness and response to pandemics.',
-     'generation_date': '2025-03-07T14:41:02',
-     'id': 'https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#',
+     'generation_date': '2025-05-12T16:32:44',
+     'id': 'https://w3id.org/evorao/',
      'imports': ['linkml:types'],
      'in_language': 'en',
      'license': 'https://creativecommons.org/publicdomain/zero/1.0/',
      'name': 'EVORAO',
      'prefixes': {'EVORAO': {'prefix_prefix': 'EVORAO',
-                             'prefix_reference': 'https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#'},
+                             'prefix_reference': 'https://w3id.org/evorao/'},
                   'IAO': {'prefix_prefix': 'IAO',
                           'prefix_reference': 'http://purl.obolibrary.org/obo/IAO_'},
                   'adms': {'prefix_prefix': 'adms',
@@ -141,7 +139,7 @@ class Resource(ConfiguredBaseModel):
     """
     linkml_meta: ClassVar[LinkMLMeta] = LinkMLMeta({'abstract': True,
          'class_uri': 'dcat:Resource',
-         'from_schema': 'https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#',
+         'from_schema': 'https://w3id.org/evorao/',
          'title': 'Resource'})
 
     pass
@@ -157,7 +155,7 @@ class Dataset(Resource):
                             'schema:DataCatalog',
                             'wd:Q1172284',
                             'schema:DataCatalog'],
-         'from_schema': 'https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#',
+         'from_schema': 'https://w3id.org/evorao/',
          'slot_usage': {'description': {'comments': ['Describe this item in few lines. '
                                                      'This description will serve as a '
                                                      'summary to present the '
@@ -246,7 +244,7 @@ class DataService(Resource):
                             'schema:WebAPI',
                             'wd:Q193424',
                             'schema:WebAPI'],
-         'from_schema': 'https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#',
+         'from_schema': 'https://w3id.org/evorao/',
          'slot_usage': {'description': {'comments': ['Describe this item in few lines. '
                                                      'This description will serve as a '
                                                      'summary to present the '
@@ -345,7 +343,7 @@ class Version(Resource):
     Numeric code assigned to identify a particular historical version of a work (e.g. software or technical standards)
     """
     linkml_meta: ClassVar[LinkMLMeta] = LinkMLMeta({'close_mappings': ['wd:Q114469879', 'wd:Q114469879'],
-         'from_schema': 'https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#',
+         'from_schema': 'https://w3id.org/evorao/',
          'slot_usage': {'ID': {'close_mappings': ['wdp:P393', 'schema:version'],
                                'description': 'The version identifier',
                                'domain_of': ['Version'],
@@ -380,7 +378,7 @@ class Catalogue(Dataset):
                             'schema:Dataset',
                             'wd:Q2352616',
                             'schema:Dataset'],
-         'from_schema': 'https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#',
+         'from_schema': 'https://w3id.org/evorao/',
          'title': 'Catalogue'})
 
     title: str = Field(default=..., title="title", description="""A name given to the resource""", json_schema_extra = { "linkml_meta": {'alias': 'title',
@@ -421,7 +419,7 @@ class Taxonomy(Catalogue):
                             'skos:Collection',
                             'wd:Q8269924',
                             'skos:Collection'],
-         'from_schema': 'https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#',
+         'from_schema': 'https://w3id.org/evorao/',
          'slot_usage': {'rank': {'description': 'Relative level or position of the '
                                                 'identified taxon in the taxonomy',
                                  'domain_of': ['Taxonomy', 'Taxon'],
@@ -477,7 +475,7 @@ class Taxonomy(Catalogue):
                                                 'title': 'version data provider'}},
          'title': 'Taxonomy'})
 
-    taxon: Optional[List[Taxon]] = Field(default=None, title="taxon", description="""Scientifically classified group or entity within the reference taxonomy""", json_schema_extra = { "linkml_meta": {'alias': 'taxon',
+    taxon: Optional[list[Taxon]] = Field(default=None, title="taxon", description="""Scientifically classified group or entity within the reference taxonomy""", json_schema_extra = { "linkml_meta": {'alias': 'taxon',
          'close_mappings': ['dwc:Taxon'],
          'comments': ['The taxon of the highest rank known that can be used to '
                       'classify a pathogen or group of pathogens (e.g viruses) in the '
@@ -486,7 +484,7 @@ class Taxonomy(Catalogue):
     taxonDataProvider: Optional[DataProvider] = Field(default=None, title="taxon data provider", description="""The data provider for the taxons of the taxonomy""", json_schema_extra = { "linkml_meta": {'alias': 'taxonDataProvider', 'domain_of': ['Taxonomy']} })
     version: Version = Field(default=..., title="version", description="""The version of this instance of entity""", json_schema_extra = { "linkml_meta": {'alias': 'version', 'domain_of': ['Taxonomy']} })
     versionDataProvider: DataProvider = Field(default=..., title="version data provider", description="""The data provider for the Version ID of this taxonomy""", json_schema_extra = { "linkml_meta": {'alias': 'versionDataProvider', 'domain_of': ['Taxonomy']} })
-    rank: Optional[List[TaxonomicRank]] = Field(default=None, title="rank", description="""Relative level or position of the identified taxon in the taxonomy""", json_schema_extra = { "linkml_meta": {'alias': 'rank',
+    rank: Optional[list[TaxonomicRank]] = Field(default=None, title="rank", description="""Relative level or position of the identified taxon in the taxonomy""", json_schema_extra = { "linkml_meta": {'alias': 'rank',
          'domain_of': ['Taxonomy', 'Taxon'],
          'exact_mappings': ['dwc:taxonRank']} })
     rankDataProvider: Optional[DataProvider] = Field(default=None, title="rank data provider", description="""The data provider for the description of the taxonomic ranks used in this taxonomy""", json_schema_extra = { "linkml_meta": {'alias': 'rankDataProvider', 'domain_of': ['Taxonomy']} })
@@ -525,7 +523,7 @@ class DataProvider(DataService):
     An external API (Application Programming Interface) or Endpoint that permits to retrieve data from other sources
     """
     linkml_meta: ClassVar[LinkMLMeta] = LinkMLMeta({'close_mappings': ['wd:Q122625839', 'wd:Q122625839'],
-         'from_schema': 'https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#',
+         'from_schema': 'https://w3id.org/evorao/',
          'slot_usage': {'contentType': {'close_mappings': ['dct:format'],
                                         'description': 'The content type of the '
                                                        'response to the queries',
@@ -695,7 +693,7 @@ class PathogenIdentification(Resource):
     """
     A collection of distinguishing information that enables the differentiation of a pathogen from another
     """
-    linkml_meta: ClassVar[LinkMLMeta] = LinkMLMeta({'from_schema': 'https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#',
+    linkml_meta: ClassVar[LinkMLMeta] = LinkMLMeta({'from_schema': 'https://w3id.org/evorao/',
          'slot_usage': {'genotype': {'description': 'Genotype information that '
                                                     'identifies organisms that cluster '
                                                     'in phylogenetic trees, thus '
@@ -824,7 +822,7 @@ class PathogenIdentification(Resource):
                               'Protozoan',
                               'Viroid',
                               'Prion']} })
-    hostType: Optional[List[Literal["Animal", "Human", "Plant"]]] = Field(default=None, title="host type", description="""Indication of the possible host(s) for the identified pathogens among the listed main categories""", json_schema_extra = { "linkml_meta": {'alias': 'hostType',
+    hostType: Optional[list[Literal["Animal", "Human", "Plant"]]] = Field(default=None, title="host type", description="""Indication of the possible host(s) for the identified pathogens among the listed main categories""", json_schema_extra = { "linkml_meta": {'alias': 'hostType',
          'domain_of': ['PathogenIdentification'],
          'equals_string_in': ['Animal', 'Human', 'Plant'],
          'recommended': True} })
@@ -843,7 +841,7 @@ class Publication(Resource):
     A scientific publication
     """
     linkml_meta: ClassVar[LinkMLMeta] = LinkMLMeta({'close_mappings': ['wd:Q591041', 'wd:Q591041'],
-         'from_schema': 'https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#',
+         'from_schema': 'https://w3id.org/evorao/',
          'slot_usage': {'abstract': {'description': 'Concise summary of the '
                                                     'publication',
                                      'domain_of': ['Publication'],
@@ -933,7 +931,7 @@ class Vocabulary(Catalogue):
                             'skos:Collection',
                             'wd:Q6499736',
                             'skos:Collection'],
-         'from_schema': 'https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#',
+         'from_schema': 'https://w3id.org/evorao/',
          'slot_usage': {'term': {'description': 'The terms related to this vocabulary',
                                  'domain_of': ['Vocabulary'],
                                  'multivalued': True,
@@ -955,7 +953,7 @@ class Vocabulary(Catalogue):
          'title': 'Vocabulary'})
 
     termDataProvider: Optional[DataProvider] = Field(default=None, title="term data provider", description="""An external API or Endpoint that permits to retrieve the terms of this vocabulary""", json_schema_extra = { "linkml_meta": {'alias': 'termDataProvider', 'domain_of': ['Vocabulary']} })
-    term: Optional[List[Term]] = Field(default=None, title="term", description="""The terms related to this vocabulary""", json_schema_extra = { "linkml_meta": {'alias': 'term', 'domain_of': ['Vocabulary'], 'recommended': True} })
+    term: Optional[list[Term]] = Field(default=None, title="term", description="""The terms related to this vocabulary""", json_schema_extra = { "linkml_meta": {'alias': 'term', 'domain_of': ['Vocabulary'], 'recommended': True} })
     title: str = Field(default=..., title="title", description="""A name given to the resource""", json_schema_extra = { "linkml_meta": {'alias': 'title',
          'close_mappings': ['rdfs:label'],
          'comments': ['The title of the item should be as short and descriptive as '
@@ -992,7 +990,7 @@ class Term(Resource):
     """
     linkml_meta: ClassVar[LinkMLMeta] = LinkMLMeta({'abstract': True,
          'close_mappings': ['wd:Q1969448', 'wd:Q1969448'],
-         'from_schema': 'https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#',
+         'from_schema': 'https://w3id.org/evorao/',
          'slot_usage': {'description': {'comments': ['Describe this item in few lines. '
                                                      'This description will serve as a '
                                                      'summary to present the '
@@ -1111,7 +1109,7 @@ class CommonName(Term):
     """
     linkml_meta: ClassVar[LinkMLMeta] = LinkMLMeta({'close_mappings': ['wd:Q502895', 'wd:Q502895'],
          'exact_mappings': ['dwc:vernacularName', 'dwc:vernacularName'],
-         'from_schema': 'https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#',
+         'from_schema': 'https://w3id.org/evorao/',
          'slot_usage': {'alternateName': {'close_mappings': ['wdp:P4970'],
                                           'comments': ['This includes previous names, '
                                                        'acronyms, former taxonomic '
@@ -1147,14 +1145,14 @@ class CommonName(Term):
                                                 'title': 'source of information'}},
          'title': 'Common Name'})
 
-    alternateName: Optional[List[AlternateName]] = Field(default=None, title="alternate name", description="""Any other name under which the entity can be known""", json_schema_extra = { "linkml_meta": {'alias': 'alternateName',
+    alternateName: Optional[list[AlternateName]] = Field(default=None, title="alternate name", description="""Any other name under which the entity can be known""", json_schema_extra = { "linkml_meta": {'alias': 'alternateName',
          'close_mappings': ['wdp:P4970'],
          'comments': ['This includes previous names, acronyms, former taxonomic terms, '
                       'and other variations. This information can serve as keywords '
                       'for search purposes and as a bridge with other projects that '
                       'use different naming systems or taxonomies'],
          'domain_of': ['CommonName', 'AlternateName', 'Organization']} })
-    sourceOfInformation: Optional[List[str]] = Field(default=None, title="source of information", description="""The name of the origin from which knowledge is obtained. This can include any entity that provides information""", json_schema_extra = { "linkml_meta": {'alias': 'sourceOfInformation',
+    sourceOfInformation: Optional[list[str]] = Field(default=None, title="source of information", description="""The name of the origin from which knowledge is obtained. This can include any entity that provides information""", json_schema_extra = { "linkml_meta": {'alias': 'sourceOfInformation',
          'close_mappings': ['wdp:P248'],
          'domain_of': ['CommonName', 'AlternateName']} })
     title: str = Field(default=..., title="title", description="""A name given to the resource""", json_schema_extra = { "linkml_meta": {'alias': 'title',
@@ -1201,17 +1199,17 @@ class VirusName(CommonName):
     A virus vernacular name or a name that describes a group of viruses
     """
     linkml_meta: ClassVar[LinkMLMeta] = LinkMLMeta({'close_mappings': ['wd:Q125481078', 'wd:Q125481078'],
-         'from_schema': 'https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#',
+         'from_schema': 'https://w3id.org/evorao/',
          'title': 'Virus Name'})
 
-    alternateName: Optional[List[AlternateName]] = Field(default=None, title="alternate name", description="""Any other name under which the entity can be known""", json_schema_extra = { "linkml_meta": {'alias': 'alternateName',
+    alternateName: Optional[list[AlternateName]] = Field(default=None, title="alternate name", description="""Any other name under which the entity can be known""", json_schema_extra = { "linkml_meta": {'alias': 'alternateName',
          'close_mappings': ['wdp:P4970'],
          'comments': ['This includes previous names, acronyms, former taxonomic terms, '
                       'and other variations. This information can serve as keywords '
                       'for search purposes and as a bridge with other projects that '
                       'use different naming systems or taxonomies'],
          'domain_of': ['CommonName', 'AlternateName', 'Organization']} })
-    sourceOfInformation: Optional[List[str]] = Field(default=None, title="source of information", description="""The name of the origin from which knowledge is obtained. This can include any entity that provides information""", json_schema_extra = { "linkml_meta": {'alias': 'sourceOfInformation',
+    sourceOfInformation: Optional[list[str]] = Field(default=None, title="source of information", description="""The name of the origin from which knowledge is obtained. This can include any entity that provides information""", json_schema_extra = { "linkml_meta": {'alias': 'sourceOfInformation',
          'close_mappings': ['wdp:P248'],
          'domain_of': ['CommonName', 'AlternateName']} })
     title: str = Field(default=..., title="title", description="""A name given to the resource""", json_schema_extra = { "linkml_meta": {'alias': 'title',
@@ -1258,7 +1256,7 @@ class AlternateName(Term):
     List of other names for things
     """
     linkml_meta: ClassVar[LinkMLMeta] = LinkMLMeta({'close_mappings': ['wd:Q7662595', 'wd:Q7662595'],
-         'from_schema': 'https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#',
+         'from_schema': 'https://w3id.org/evorao/',
          'slot_usage': {'alternateName': {'close_mappings': ['wdp:P4970'],
                                           'comments': ['This includes previous names, '
                                                        'acronyms, former taxonomic '
@@ -1294,14 +1292,14 @@ class AlternateName(Term):
                                                 'title': 'source of information'}},
          'title': 'Alternate Name'})
 
-    alternateName: Optional[List[AlternateName]] = Field(default=None, title="alternate name", description="""Any other name under which the entity can be known""", json_schema_extra = { "linkml_meta": {'alias': 'alternateName',
+    alternateName: Optional[list[AlternateName]] = Field(default=None, title="alternate name", description="""Any other name under which the entity can be known""", json_schema_extra = { "linkml_meta": {'alias': 'alternateName',
          'close_mappings': ['wdp:P4970'],
          'comments': ['This includes previous names, acronyms, former taxonomic terms, '
                       'and other variations. This information can serve as keywords '
                       'for search purposes and as a bridge with other projects that '
                       'use different naming systems or taxonomies'],
          'domain_of': ['AlternateName', 'CommonName', 'Organization']} })
-    sourceOfInformation: Optional[List[str]] = Field(default=None, title="source of information", description="""The name of the origin from which knowledge is obtained. This can include any entity that provides information""", json_schema_extra = { "linkml_meta": {'alias': 'sourceOfInformation',
+    sourceOfInformation: Optional[list[str]] = Field(default=None, title="source of information", description="""The name of the origin from which knowledge is obtained. This can include any entity that provides information""", json_schema_extra = { "linkml_meta": {'alias': 'sourceOfInformation',
          'close_mappings': ['wdp:P248'],
          'domain_of': ['AlternateName', 'CommonName']} })
     title: str = Field(default=..., title="title", description="""A name given to the resource""", json_schema_extra = { "linkml_meta": {'alias': 'title',
@@ -1351,7 +1349,7 @@ class RiskGroup(Term):
          'comments': ['Use of Data provider if any or manual import of information '
                       'from wd:Q125449389, wd:Q125449412, wd:Q125449429, '
                       'wd:Q125449439'],
-         'from_schema': 'https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#',
+         'from_schema': 'https://w3id.org/evorao/',
          'title': 'Risk group'})
 
     title: str = Field(default=..., title="title", description="""A name given to the resource""", json_schema_extra = { "linkml_meta": {'alias': 'title',
@@ -1398,7 +1396,7 @@ class DOI(Term):
     A unique string identifier assigned to a digital object, providing a permanent link for reliable citation and access.  The Digital Object Identifier (DOI) is a persistent identifier that is an ISO standard
     """
     linkml_meta: ClassVar[LinkMLMeta] = LinkMLMeta({'close_mappings': ['wd:Q25670', 'wd:Q25670'],
-         'from_schema': 'https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#',
+         'from_schema': 'https://w3id.org/evorao/',
          'title': 'DOI'})
 
     title: str = Field(default=..., title="title", description="""A name given to the resource""", json_schema_extra = { "linkml_meta": {'alias': 'title',
@@ -1445,7 +1443,7 @@ class Journal(Term):
     Periodical journal publishing scientific research
     """
     linkml_meta: ClassVar[LinkMLMeta] = LinkMLMeta({'close_mappings': ['wd:Q5633421', 'wd:Q5633421'],
-         'from_schema': 'https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#',
+         'from_schema': 'https://w3id.org/evorao/',
          'title': 'Journal'})
 
     title: str = Field(default=..., title="title", description="""A name given to the resource""", json_schema_extra = { "linkml_meta": {'alias': 'title',
@@ -1492,7 +1490,7 @@ class PDBReference(Term):
     Identifier for 3D structural data as per the PDB (Protein Data Bank) database
     """
     linkml_meta: ClassVar[LinkMLMeta] = LinkMLMeta({'close_mappings': ['wdp:Q42415644', 'wdp:Q42415644'],
-         'from_schema': 'https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#',
+         'from_schema': 'https://w3id.org/evorao/',
          'title': 'PDB reference'})
 
     title: str = Field(default=..., title="title", description="""A name given to the resource""", json_schema_extra = { "linkml_meta": {'alias': 'title',
@@ -1539,7 +1537,7 @@ class Keyword(Term):
     A term or phrase used to tag and categorize content
     """
     linkml_meta: ClassVar[LinkMLMeta] = LinkMLMeta({'close_mappings': ['wd:Q1128340', 'wd:Q1128340'],
-         'from_schema': 'https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#',
+         'from_schema': 'https://w3id.org/evorao/',
          'title': 'Keyword'})
 
     title: str = Field(default=..., title="title", description="""A name given to the resource""", json_schema_extra = { "linkml_meta": {'alias': 'title',
@@ -1586,7 +1584,7 @@ class ProteinTag(Term):
     Peptide sequence genetically grafted onto a recombinant protein
     """
     linkml_meta: ClassVar[LinkMLMeta] = LinkMLMeta({'close_mappings': ['wd:Q645590', 'wd:Q645590'],
-         'from_schema': 'https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#',
+         'from_schema': 'https://w3id.org/evorao/',
          'title': 'Protein tag'})
 
     title: str = Field(default=..., title="title", description="""A name given to the resource""", json_schema_extra = { "linkml_meta": {'alias': 'title',
@@ -1635,7 +1633,7 @@ class SpecialFeature(Term):
     linkml_meta: ClassVar[LinkMLMeta] = LinkMLMeta({'comments': ['These special features help researchers and professionals in '
                       'the field to select appropriate virus strains for their '
                       'specific research needs and applications.'],
-         'from_schema': 'https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#',
+         'from_schema': 'https://w3id.org/evorao/',
          'title': 'Special feature'})
 
     title: str = Field(default=..., title="title", description="""A name given to the resource""", json_schema_extra = { "linkml_meta": {'alias': 'title',
@@ -1682,7 +1680,7 @@ class ExpressionVector(Term):
     A reference to an expression vector plasmid, typically embedding a resistance marker for inducible protein expression
     """
     linkml_meta: ClassVar[LinkMLMeta] = LinkMLMeta({'close_mappings': ['wd:Q5421712', 'wd:Q5421712'],
-         'from_schema': 'https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#',
+         'from_schema': 'https://w3id.org/evorao/',
          'title': 'Expression vector'})
 
     title: str = Field(default=..., title="title", description="""A name given to the resource""", json_schema_extra = { "linkml_meta": {'alias': 'title',
@@ -1728,8 +1726,7 @@ class PlasmidSelection(Term):
     """
     The process of identifying cells that have successfully incorporated a plasmid, typically using antibiotic resistance markers
     """
-    linkml_meta: ClassVar[LinkMLMeta] = LinkMLMeta({'from_schema': 'https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#',
-         'title': 'Plasmid selection'})
+    linkml_meta: ClassVar[LinkMLMeta] = LinkMLMeta({'from_schema': 'https://w3id.org/evorao/', 'title': 'Plasmid selection'})
 
     title: str = Field(default=..., title="title", description="""A name given to the resource""", json_schema_extra = { "linkml_meta": {'alias': 'title',
          'close_mappings': ['rdfs:label'],
@@ -1774,8 +1771,7 @@ class PropagationHost(Term):
     """
     The organism used to grow and multiply the pathogen under controlled conditions
     """
-    linkml_meta: ClassVar[LinkMLMeta] = LinkMLMeta({'from_schema': 'https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#',
-         'title': 'Propagation host'})
+    linkml_meta: ClassVar[LinkMLMeta] = LinkMLMeta({'from_schema': 'https://w3id.org/evorao/', 'title': 'Propagation host'})
 
     title: str = Field(default=..., title="title", description="""A name given to the resource""", json_schema_extra = { "linkml_meta": {'alias': 'title',
          'close_mappings': ['rdfs:label'],
@@ -1820,8 +1816,7 @@ class TransmissionMethod(Term):
     """
     The process by which the pathogen spreads between hosts
     """
-    linkml_meta: ClassVar[LinkMLMeta] = LinkMLMeta({'from_schema': 'https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#',
-         'title': 'Transmission method'})
+    linkml_meta: ClassVar[LinkMLMeta] = LinkMLMeta({'from_schema': 'https://w3id.org/evorao/', 'title': 'Transmission method'})
 
     title: str = Field(default=..., title="title", description="""A name given to the resource""", json_schema_extra = { "linkml_meta": {'alias': 'title',
          'close_mappings': ['rdfs:label'],
@@ -1867,7 +1862,7 @@ class ProductionCellLine(Term):
     A population of cells that originates from a primary culture, adapted to grow and divide under laboratory conditions. Used in biotechnology to consistently produce biological substances
     """
     linkml_meta: ClassVar[LinkMLMeta] = LinkMLMeta({'close_mappings': ['wd:Q21014462', 'wd:Q21014462'],
-         'from_schema': 'https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#',
+         'from_schema': 'https://w3id.org/evorao/',
          'title': 'Production cell line'})
 
     title: str = Field(default=..., title="title", description="""A name given to the resource""", json_schema_extra = { "linkml_meta": {'alias': 'title',
@@ -1914,7 +1909,7 @@ class ProductCategory(Term):
     A term used to classify a group of products that share common characteristics or functions, which helps in their organization
     """
     linkml_meta: ClassVar[LinkMLMeta] = LinkMLMeta({'close_mappings': ['wd:Q63981612', 'wd:Q63981612'],
-         'from_schema': 'https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#',
+         'from_schema': 'https://w3id.org/evorao/',
          'slot_usage': {'parentCategory': {'description': 'An overarching category '
                                                           'that encompasses the '
                                                           'current category within a '
@@ -1978,8 +1973,7 @@ class IsolationHost(Term):
     """
     Host organism from which the pathogen was isolated
     """
-    linkml_meta: ClassVar[LinkMLMeta] = LinkMLMeta({'from_schema': 'https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#',
-         'title': 'Isolation host'})
+    linkml_meta: ClassVar[LinkMLMeta] = LinkMLMeta({'from_schema': 'https://w3id.org/evorao/', 'title': 'Isolation host'})
 
     title: str = Field(default=..., title="title", description="""A name given to the resource""", json_schema_extra = { "linkml_meta": {'alias': 'title',
          'close_mappings': ['rdfs:label'],
@@ -2028,7 +2022,7 @@ class GeographicalOrigin(Term):
          'comments': ['geonames.org API could be a good service data provider as '
                       'suggested by DCAT-AP'],
          'exact_mappings': ['dct:Location', 'dct:Location'],
-         'from_schema': 'https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#',
+         'from_schema': 'https://w3id.org/evorao/',
          'title': 'Geographical origin'})
 
     title: str = Field(default=..., title="title", description="""A name given to the resource""", json_schema_extra = { "linkml_meta": {'alias': 'title',
@@ -2074,8 +2068,7 @@ class IPLCOrigin(GeographicalOrigin):
     """
     The IPLC area (Indigenous People and Local Communities) from which a physical item originates
     """
-    linkml_meta: ClassVar[LinkMLMeta] = LinkMLMeta({'from_schema': 'https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#',
-         'title': 'IPLC origin'})
+    linkml_meta: ClassVar[LinkMLMeta] = LinkMLMeta({'from_schema': 'https://w3id.org/evorao/', 'title': 'IPLC origin'})
 
     title: str = Field(default=..., title="title", description="""A name given to the resource""", json_schema_extra = { "linkml_meta": {'alias': 'title',
          'close_mappings': ['rdfs:label'],
@@ -2123,7 +2116,7 @@ class Country(Term):
     linkml_meta: ClassVar[LinkMLMeta] = LinkMLMeta({'close_mappings': ['wd:Q6256', 'wd:Q6256'],
          'comments': ['Use of Data provider recommended... serve as a local cache for '
                       'ISO3166'],
-         'from_schema': 'https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#',
+         'from_schema': 'https://w3id.org/evorao/',
          'slot_usage': {'alpha2Code': {'description': 'Two-letter country codes from '
                                                       'ISO 3166-1 alpha-2',
                                        'domain_of': ['Country'],
@@ -2178,8 +2171,7 @@ class IATAClassification(Term):
     """
     The corresponding International Air Transport Association (IATA)'s category for dangerous goods that are transported by air
     """
-    linkml_meta: ClassVar[LinkMLMeta] = LinkMLMeta({'from_schema': 'https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#',
-         'title': 'IATA classification'})
+    linkml_meta: ClassVar[LinkMLMeta] = LinkMLMeta({'from_schema': 'https://w3id.org/evorao/', 'title': 'IATA classification'})
 
     title: str = Field(default=..., title="title", description="""A name given to the resource""", json_schema_extra = { "linkml_meta": {'alias': 'title',
          'close_mappings': ['rdfs:label'],
@@ -2225,17 +2217,17 @@ class Variant(CommonName):
     An organism with one or more new mutations is referred to as a “variant” of the original organism if not sufficiently different to be termed a distinct strain
     """
     linkml_meta: ClassVar[LinkMLMeta] = LinkMLMeta({'close_mappings': ['wd:Q104795308', 'wd:Q104795308'],
-         'from_schema': 'https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#',
+         'from_schema': 'https://w3id.org/evorao/',
          'title': 'Variant'})
 
-    alternateName: Optional[List[AlternateName]] = Field(default=None, title="alternate name", description="""Any other name under which the entity can be known""", json_schema_extra = { "linkml_meta": {'alias': 'alternateName',
+    alternateName: Optional[list[AlternateName]] = Field(default=None, title="alternate name", description="""Any other name under which the entity can be known""", json_schema_extra = { "linkml_meta": {'alias': 'alternateName',
          'close_mappings': ['wdp:P4970'],
          'comments': ['This includes previous names, acronyms, former taxonomic terms, '
                       'and other variations. This information can serve as keywords '
                       'for search purposes and as a bridge with other projects that '
                       'use different naming systems or taxonomies'],
          'domain_of': ['CommonName', 'AlternateName', 'Organization']} })
-    sourceOfInformation: Optional[List[str]] = Field(default=None, title="source of information", description="""The name of the origin from which knowledge is obtained. This can include any entity that provides information""", json_schema_extra = { "linkml_meta": {'alias': 'sourceOfInformation',
+    sourceOfInformation: Optional[list[str]] = Field(default=None, title="source of information", description="""The name of the origin from which knowledge is obtained. This can include any entity that provides information""", json_schema_extra = { "linkml_meta": {'alias': 'sourceOfInformation',
          'close_mappings': ['wdp:P248'],
          'domain_of': ['CommonName', 'AlternateName']} })
     title: str = Field(default=..., title="title", description="""A name given to the resource""", json_schema_extra = { "linkml_meta": {'alias': 'title',
@@ -2283,7 +2275,7 @@ class TaxonomicRank(Term):
     """
     linkml_meta: ClassVar[LinkMLMeta] = LinkMLMeta({'close_mappings': ['wd:Q427626', 'wd:Q427626'],
          'comments': ['Use of Data provider recommended'],
-         'from_schema': 'https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#',
+         'from_schema': 'https://w3id.org/evorao/',
          'slot_usage': {'taxonomy': {'description': 'The taxonomy release(s) in which '
                                                     'this entity exists',
                                      'domain_of': ['TaxonomicRank', 'Taxon'],
@@ -2294,7 +2286,7 @@ class TaxonomicRank(Term):
                                      'title': 'taxonomy'}},
          'title': 'Taxonomic rank'})
 
-    taxonomy: Optional[List[Taxonomy]] = Field(default=None, title="taxonomy", description="""The taxonomy release(s) in which this entity exists""", json_schema_extra = { "linkml_meta": {'alias': 'taxonomy',
+    taxonomy: Optional[list[Taxonomy]] = Field(default=None, title="taxonomy", description="""The taxonomy release(s) in which this entity exists""", json_schema_extra = { "linkml_meta": {'alias': 'taxonomy',
          'domain_of': ['TaxonomicRank', 'Taxon'],
          'recommended': True} })
     title: str = Field(default=..., title="title", description="""A name given to the resource""", json_schema_extra = { "linkml_meta": {'alias': 'title',
@@ -2344,7 +2336,7 @@ class Taxon(Term):
          'comments': ['The taxonomic taxons connected to their parent so that a full '
                       'lienage can be rebuild. Use of Data provider recommended'],
          'exact_mappings': ['dwc:Taxon', 'dwc:Taxon'],
-         'from_schema': 'https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#',
+         'from_schema': 'https://w3id.org/evorao/',
          'slot_usage': {'externalEquivalentTaxon': {'close_mappings': ['dwc:taxonID'],
                                                     'comments': ['Could serve as a '
                                                                  'bridge between ICTV '
@@ -2437,7 +2429,7 @@ class Taxon(Term):
                                      'title': 'taxonomy'}},
          'title': 'Taxon'})
 
-    taxonomy: Optional[List[Taxonomy]] = Field(default=None, title="taxonomy", description="""The taxonomy release(s) in which this entity exists""", json_schema_extra = { "linkml_meta": {'alias': 'taxonomy',
+    taxonomy: Optional[list[Taxonomy]] = Field(default=None, title="taxonomy", description="""The taxonomy release(s) in which this entity exists""", json_schema_extra = { "linkml_meta": {'alias': 'taxonomy',
          'domain_of': ['Taxon', 'TaxonomicRank'],
          'recommended': True} })
     parentTaxon: Taxon = Field(default=..., title="parent taxon", description="""The parent taxon of the current taxon""", json_schema_extra = { "linkml_meta": {'alias': 'parentTaxon',
@@ -2446,10 +2438,10 @@ class Taxon(Term):
     rank: TaxonomicRank = Field(default=..., title="rank", description="""Relative level or position of the identified taxon in the taxonomy""", json_schema_extra = { "linkml_meta": {'alias': 'rank',
          'domain_of': ['Taxon', 'Taxonomy'],
          'exact_mappings': ['dwc:taxonRank']} })
-    previouslyKnownAs: Optional[List[Taxon]] = Field(default=None, title="previously known as", description="""Any historic version of this taxon having a different name""", json_schema_extra = { "linkml_meta": {'alias': 'previouslyKnownAs',
+    previouslyKnownAs: Optional[list[Taxon]] = Field(default=None, title="previously known as", description="""Any historic version of this taxon having a different name""", json_schema_extra = { "linkml_meta": {'alias': 'previouslyKnownAs',
          'close_mappings': ['dwc:Taxon'],
          'domain_of': ['Taxon']} })
-    externalEquivalentTaxon: Optional[List[Taxon]] = Field(default=None, title="external equivalent taxon", description="""Any equivalent taxon in a different taxonomy if exists/known to serve as a bridge (e.g, ICTV towards NCBI)""", json_schema_extra = { "linkml_meta": {'alias': 'externalEquivalentTaxon',
+    externalEquivalentTaxon: Optional[list[Taxon]] = Field(default=None, title="external equivalent taxon", description="""Any equivalent taxon in a different taxonomy if exists/known to serve as a bridge (e.g, ICTV towards NCBI)""", json_schema_extra = { "linkml_meta": {'alias': 'externalEquivalentTaxon',
          'close_mappings': ['dwc:taxonID'],
          'comments': ['Could serve as a bridge between ICTV and NCBI as several '
                       'providers currently uses NCBI Taxonomy'],
@@ -2508,7 +2500,7 @@ class ExternalRelatedReference(Resource):
     """
     A reference that permits to retrieve an item from an external provider
     """
-    linkml_meta: ClassVar[LinkMLMeta] = LinkMLMeta({'from_schema': 'https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#',
+    linkml_meta: ClassVar[LinkMLMeta] = LinkMLMeta({'from_schema': 'https://w3id.org/evorao/',
          'slot_usage': {'reference': {'close_mappings': ['dct:identifier'],
                                       'description': 'The identifier reference of the '
                                                      'connected external item',
@@ -2574,7 +2566,7 @@ class Sequence(Resource):
     A nucleic acid or protein sequence information
     """
     linkml_meta: ClassVar[LinkMLMeta] = LinkMLMeta({'close_mappings': ['wd:Q3511065', 'wd:Q3511065'],
-         'from_schema': 'https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#',
+         'from_schema': 'https://w3id.org/evorao/',
          'slot_usage': {'sequenceFASTA': {'comments': ['In FASTA format the line '
                                                        'before the nucleotide '
                                                        'sequence, called the FASTA '
@@ -2609,7 +2601,7 @@ class Sequence(Resource):
                                               'title': 'sequence reference'}},
          'title': 'Sequence'})
 
-    sequenceReference: Optional[List[SequenceReference]] = Field(default=None, title="sequence reference", description="""A reference that permits to retrieve the sequence information from a sequence provider""", json_schema_extra = { "linkml_meta": {'alias': 'sequenceReference',
+    sequenceReference: Optional[list[SequenceReference]] = Field(default=None, title="sequence reference", description="""A reference that permits to retrieve the sequence information from a sequence provider""", json_schema_extra = { "linkml_meta": {'alias': 'sequenceReference',
          'domain_of': ['Sequence', 'Antibody'],
          'recommended': True} })
     sequenceFASTA: Optional[str] = Field(default=None, title="sequence FASTA", description="""In case no sequence reference exists in public repositories, the corresponding FASTA sequence is required""", json_schema_extra = { "linkml_meta": {'alias': 'sequenceFASTA',
@@ -2629,7 +2621,7 @@ class SequenceReference(Resource):
                       'might be consistent and beneficial for data structuration but '
                       'special attention will have to be take to ensure it remains '
                       'consistent with the actual the use cases for users'],
-         'from_schema': 'https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#',
+         'from_schema': 'https://w3id.org/evorao/',
          'slot_usage': {'accessionNumber': {'close_mappings': ['dct:identifier'],
                                             'description': 'The sequence ID that '
                                                            'permits to retrieve the '
@@ -2670,7 +2662,7 @@ class PersonOrOrganization(Resource):
     linkml_meta: ClassVar[LinkMLMeta] = LinkMLMeta({'class_uri': 'foaf:Agent',
          'close_mappings': ['vcard:Agent', 'vcard:Agent'],
          'exact_mappings': ['dct:Agent', 'dct:Agent'],
-         'from_schema': 'https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#',
+         'from_schema': 'https://w3id.org/evorao/',
          'slot_usage': {'contactPoint': {'description': 'An information that allows '
                                                         'someone to establish '
                                                         'communication',
@@ -2771,7 +2763,7 @@ class Person(PersonOrOrganization):
                             'vcard:Individual',
                             'wd:Q215627',
                             'vcard:Individual'],
-         'from_schema': 'https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#',
+         'from_schema': 'https://w3id.org/evorao/',
          'slot_usage': {'oRCIDiD': {'description': 'Unique persistent identifier for a '
                                                    'person, provided by the Open '
                                                    'Researcher and Contributor ID '
@@ -2825,7 +2817,7 @@ class Organization(PersonOrOrganization):
                             'vcard:Organization',
                             'wd:Q43229',
                             'vcard:Organization'],
-         'from_schema': 'https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#',
+         'from_schema': 'https://w3id.org/evorao/',
          'slot_usage': {'alternateName': {'close_mappings': ['wdp:P4970'],
                                           'comments': ['This includes previous names, '
                                                        'acronyms, former taxonomic '
@@ -2866,7 +2858,7 @@ class Organization(PersonOrOrganization):
                                   'title': 'ROR iD'}},
          'title': 'Organization'})
 
-    alternateName: Optional[List[AlternateName]] = Field(default=None, title="alternate name", description="""Any other name under which the entity can be known""", json_schema_extra = { "linkml_meta": {'alias': 'alternateName',
+    alternateName: Optional[list[AlternateName]] = Field(default=None, title="alternate name", description="""Any other name under which the entity can be known""", json_schema_extra = { "linkml_meta": {'alias': 'alternateName',
          'close_mappings': ['wdp:P4970'],
          'comments': ['This includes previous names, acronyms, former taxonomic terms, '
                       'and other variations. This information can serve as keywords '
@@ -2909,10 +2901,10 @@ class RI(Organization):
     A research infrastructure
     """
     linkml_meta: ClassVar[LinkMLMeta] = LinkMLMeta({'close_mappings': ['wd:Q1438053', 'wd:Q1438053'],
-         'from_schema': 'https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#',
+         'from_schema': 'https://w3id.org/evorao/',
          'title': 'RI'})
 
-    alternateName: Optional[List[AlternateName]] = Field(default=None, title="alternate name", description="""Any other name under which the entity can be known""", json_schema_extra = { "linkml_meta": {'alias': 'alternateName',
+    alternateName: Optional[list[AlternateName]] = Field(default=None, title="alternate name", description="""Any other name under which the entity can be known""", json_schema_extra = { "linkml_meta": {'alias': 'alternateName',
          'close_mappings': ['wdp:P4970'],
          'comments': ['This includes previous names, acronyms, former taxonomic terms, '
                       'and other variations. This information can serve as keywords '
@@ -2955,7 +2947,7 @@ class Provider(Organization):
     A provider of products or services, as a specific organization
     """
     linkml_meta: ClassVar[LinkMLMeta] = LinkMLMeta({'close_mappings': ['dct:ProvenanceStatement', 'dct:ProvenanceStatement'],
-         'from_schema': 'https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#',
+         'from_schema': 'https://w3id.org/evorao/',
          'slot_usage': {'memberOfRI': {'description': 'The research infrastructure of '
                                                       'which this organization is a '
                                                       'member',
@@ -2967,8 +2959,8 @@ class Provider(Organization):
                                        'title': 'member of RI'}},
          'title': 'Provider'})
 
-    memberOfRI: Optional[List[RI]] = Field(default=None, title="member of RI", description="""The research infrastructure of which this organization is a member""", json_schema_extra = { "linkml_meta": {'alias': 'memberOfRI', 'domain_of': ['Provider']} })
-    alternateName: Optional[List[AlternateName]] = Field(default=None, title="alternate name", description="""Any other name under which the entity can be known""", json_schema_extra = { "linkml_meta": {'alias': 'alternateName',
+    memberOfRI: Optional[list[RI]] = Field(default=None, title="member of RI", description="""The research infrastructure of which this organization is a member""", json_schema_extra = { "linkml_meta": {'alias': 'memberOfRI', 'domain_of': ['Provider']} })
+    alternateName: Optional[list[AlternateName]] = Field(default=None, title="alternate name", description="""Any other name under which the entity can be known""", json_schema_extra = { "linkml_meta": {'alias': 'alternateName',
          'close_mappings': ['wdp:P4970'],
          'comments': ['This includes previous names, acronyms, former taxonomic terms, '
                       'and other variations. This information can serve as keywords '
@@ -3011,7 +3003,7 @@ class Originator(PersonOrOrganization):
     The individual or organization responsible for the original discovery, isolation, or creation of an item, providing information about the source or origin of the sample
     """
     linkml_meta: ClassVar[LinkMLMeta] = LinkMLMeta({'close_mappings': ['dct:ProvenanceStatement', 'dct:ProvenanceStatement'],
-         'from_schema': 'https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#',
+         'from_schema': 'https://w3id.org/evorao/',
          'title': 'Originator'})
 
     name: str = Field(default=..., title="name", description="""A word or set of words used to identify and refer to an entity""", json_schema_extra = { "linkml_meta": {'alias': 'name',
@@ -3044,7 +3036,7 @@ class BiologicalMaterialOrigin(Resource):
     """
     Information about the origin of the biological material, compulsory for access, utilization, and benefit-sharing of genetic resources in compliance with the Nagoya Protocol
     """
-    linkml_meta: ClassVar[LinkMLMeta] = LinkMLMeta({'from_schema': 'https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#',
+    linkml_meta: ClassVar[LinkMLMeta] = LinkMLMeta({'from_schema': 'https://w3id.org/evorao/',
          'slot_usage': {'biologicalPartOrigin': {'comments': ['It can be multiple '
                                                               'parts in case of a '
                                                               'recombinant biological '
@@ -3106,7 +3098,7 @@ class BiologicalMaterialOrigin(Resource):
          'comments': ['It makes sense that only recombinant biological materials can '
                       'have a mixed material origin!'],
          'domain_of': ['BiologicalMaterialOrigin']} })
-    biologicalPartOrigin: List[BiologicalPartOrigin] = Field(default=..., title="biological part origin", description="""Details the origin of one or more unitary parts that make up the biological material. In the case of recombinant biological material, multiple parts may be involved.""", json_schema_extra = { "linkml_meta": {'alias': 'biologicalPartOrigin',
+    biologicalPartOrigin: list[BiologicalPartOrigin] = Field(default=..., title="biological part origin", description="""Details the origin of one or more unitary parts that make up the biological material. In the case of recombinant biological material, multiple parts may be involved.""", json_schema_extra = { "linkml_meta": {'alias': 'biologicalPartOrigin',
          'comments': ['It can be multiple parts in case of a recombinant biological '
                       'material.'],
          'domain_of': ['BiologicalMaterialOrigin']} })
@@ -3117,7 +3109,7 @@ class BiologicalPartOrigin(Resource):
     Information on the origin of a unitary, cohesive part that is part of, or constitutes the biological material. It can be multiple parts in case of a recombinant biological material
     """
     linkml_meta: ClassVar[LinkMLMeta] = LinkMLMeta({'abstract': True,
-         'from_schema': 'https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#',
+         'from_schema': 'https://w3id.org/evorao/',
          'slot_usage': {'accessToPhysicalGeneticResource': {'description': 'Indicate '
                                                                            'if the '
                                                                            'biological '
@@ -3170,7 +3162,7 @@ class NaturalPartOrigin(BiologicalPartOrigin):
     """
     Information on the origin of a natural part that composes the biological material
     """
-    linkml_meta: ClassVar[LinkMLMeta] = LinkMLMeta({'from_schema': 'https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#',
+    linkml_meta: ClassVar[LinkMLMeta] = LinkMLMeta({'from_schema': 'https://w3id.org/evorao/',
          'slot_usage': {'beforeDate': {'description': 'Set to TRUE if a proxy date for '
                                                       'the collection date is used',
                                        'domain_of': ['NaturalPartOrigin'],
@@ -3273,7 +3265,7 @@ class SyntheticPartOrigin(BiologicalPartOrigin):
     """
     Information on the origin of a synthetic part that composes the biological material
     """
-    linkml_meta: ClassVar[LinkMLMeta] = LinkMLMeta({'from_schema': 'https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#',
+    linkml_meta: ClassVar[LinkMLMeta] = LinkMLMeta({'from_schema': 'https://w3id.org/evorao/',
          'slot_usage': {'descriptionOfModificationsMadeFromTheReferenceSequences': {'description': 'List '
                                                                                                    'the '
                                                                                                    'modifications '
@@ -3340,7 +3332,7 @@ class RecombinantPartIdentification(Resource):
     """
     Identification of a recombinant part
     """
-    linkml_meta: ClassVar[LinkMLMeta] = LinkMLMeta({'from_schema': 'https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#',
+    linkml_meta: ClassVar[LinkMLMeta] = LinkMLMeta({'from_schema': 'https://w3id.org/evorao/',
          'slot_usage': {'partIdentification': {'description': 'A short designation of '
                                                               'this recombinant part '
                                                               'of the related '
@@ -3367,7 +3359,7 @@ class RecombinantPartIdentification(Resource):
          'title': 'Recombinant part identification'})
 
     partIdentification: str = Field(default=..., title="Part identification", description="""A short designation of this recombinant part of the related biological material""", json_schema_extra = { "linkml_meta": {'alias': 'partIdentification', 'domain_of': ['RecombinantPartIdentification']} })
-    sequence: List[Sequence] = Field(default=..., title="sequence", description="""The related sequence information from a sequence provider or in fasta format""", json_schema_extra = { "linkml_meta": {'alias': 'sequence',
+    sequence: list[Sequence] = Field(default=..., title="sequence", description="""The related sequence information from a sequence provider or in fasta format""", json_schema_extra = { "linkml_meta": {'alias': 'sequence',
          'domain_of': ['RecombinantPartIdentification',
                        'Protein',
                        'Nucleic Acid',
@@ -3380,7 +3372,7 @@ class Collection(Catalogue):
     Set of products and services with some common characteristics
     """
     linkml_meta: ClassVar[LinkMLMeta] = LinkMLMeta({'close_mappings': ['wd:Q2668072', 'wd:Q2668072'],
-         'from_schema': 'https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#',
+         'from_schema': 'https://w3id.org/evorao/',
          'slot_usage': {'collectionDataProvider': {'close_mappings': ['dct:isReferencedBy'],
                                                    'description': 'The provider of the '
                                                                   'data of the '
@@ -3402,7 +3394,7 @@ class Collection(Catalogue):
                                            'title': 'collection item'}},
          'title': 'Collection'})
 
-    collectionItem: Optional[List[ProductOrService]] = Field(default=None, title="collection item", description="""An item of the collection""", json_schema_extra = { "linkml_meta": {'alias': 'collectionItem',
+    collectionItem: Optional[list[ProductOrService]] = Field(default=None, title="collection item", description="""An item of the collection""", json_schema_extra = { "linkml_meta": {'alias': 'collectionItem',
          'close_mappings': ['dcat:resource'],
          'domain_of': ['Collection'],
          'recommended': True} })
@@ -3445,7 +3437,7 @@ class ProductOrService(Dataset):
     """
     linkml_meta: ClassVar[LinkMLMeta] = LinkMLMeta({'abstract': True,
          'comments': ['part of  wd:Q2897903 (goods and services )'],
-         'from_schema': 'https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#',
+         'from_schema': 'https://w3id.org/evorao/',
          'slot_usage': {'accessPointURL': {'description': 'The URL that permits to '
                                                           'access to the '
                                                           'product/service detailed '
@@ -3781,7 +3773,7 @@ class ProductOrService(Dataset):
     category: ProductCategory = Field(default=..., title="category", description="""The main category of the service or product""", json_schema_extra = { "linkml_meta": {'alias': 'category',
          'domain_of': ['ProductOrService'],
          'exact_mappings': ['dcat:theme']} })
-    additionalCategory: Optional[List[ProductCategory]] = Field(default=None, title="additional category", description="""Any category apart from its main category in which this product or service can fit""", json_schema_extra = { "linkml_meta": {'alias': 'additionalCategory',
+    additionalCategory: Optional[list[ProductCategory]] = Field(default=None, title="additional category", description="""Any category apart from its main category in which this product or service can fit""", json_schema_extra = { "linkml_meta": {'alias': 'additionalCategory',
          'domain_of': ['ProductOrService'],
          'exact_mappings': ['dcat:theme'],
          'recommended': True} })
@@ -3794,13 +3786,13 @@ class ProductOrService(Dataset):
          'ifabsent': 'string(on request)',
          'recommended': True} })
     qualityGrading: Optional[str] = Field(default=None, title="quality grading", description="""Information that permits to assess the quality level of what will be provided""", json_schema_extra = { "linkml_meta": {'alias': 'qualityGrading', 'domain_of': ['ProductOrService']} })
-    pathogenIdentification: List[PathogenIdentification] = Field(default=..., title="pathogen identification", description="""The identification of the pathogen or group of pathogens (e.g; name, taxon identification, etc.) related to the current item.""", json_schema_extra = { "linkml_meta": {'alias': 'pathogenIdentification',
+    pathogenIdentification: list[PathogenIdentification] = Field(default=..., title="pathogen identification", description="""The identification of the pathogen or group of pathogens (e.g; name, taxon identification, etc.) related to the current item.""", json_schema_extra = { "linkml_meta": {'alias': 'pathogenIdentification',
          'comments': ['The pathogen identification contains information about name and '
                       'taxon but in some cases(e.g: FAIRSHARING) there may have no '
                       'direct pathogen related but simply a taxonomic information .... '
                       'the default value should be the root of virology: Viruses'],
          'domain_of': ['ProductOrService']} })
-    relatedDOI: Optional[List[DOI]] = Field(default=None, title="DOI", description="""Any Digital Object Identifier that can be related""", json_schema_extra = { "linkml_meta": {'alias': 'relatedDOI',
+    relatedDOI: Optional[list[DOI]] = Field(default=None, title="DOI", description="""Any Digital Object Identifier that can be related""", json_schema_extra = { "linkml_meta": {'alias': 'relatedDOI',
          'close_mappings': ['wdp:P356'],
          'domain_of': ['ProductOrService', 'Publication']} })
     riskGroup: Optional[RiskGroup] = Field(default=None, title="risk group", description="""The highest risk group related to this resource. The risk group of a biological agent guiding its initial handling in labs according to the risk group classification defined by the WHO laboratory biosafety manual""", json_schema_extra = { "linkml_meta": {'alias': 'riskGroup',
@@ -3814,8 +3806,8 @@ class ProductOrService(Dataset):
          'domain_of': ['ProductOrService'],
          'recommended': True} })
     provider: Provider = Field(default=..., title="provider", description="""A provider of this product or service, as a specific organization""", json_schema_extra = { "linkml_meta": {'alias': 'provider', 'domain_of': ['ProductOrService']} })
-    collection: List[Collection] = Field(default=..., title="collection", description="""The collection(s) to which belongs this item""", json_schema_extra = { "linkml_meta": {'alias': 'collection', 'domain_of': ['ProductOrService']} })
-    keywords: List[Keyword] = Field(default=..., title="keywords", description="""List of terms used to tag and categorize this Item""", json_schema_extra = { "linkml_meta": {'alias': 'keywords',
+    collection: list[Collection] = Field(default=..., title="collection", description="""The collection(s) to which belongs this item""", json_schema_extra = { "linkml_meta": {'alias': 'collection', 'domain_of': ['ProductOrService']} })
+    keywords: list[Keyword] = Field(default=..., title="keywords", description="""List of terms used to tag and categorize this Item""", json_schema_extra = { "linkml_meta": {'alias': 'keywords',
          'domain_of': ['ProductOrService'],
          'exact_mappings': ['dcat:keyword'],
          'recommended': True} })
@@ -3823,11 +3815,11 @@ class ProductOrService(Dataset):
          'comments': ['Possible availabilities may differ from a project to another'],
          'domain_of': ['ProductOrService'],
          'ifabsent': 'string(on request)'} })
-    complementaryDocument: Optional[List[Document]] = Field(default=None, title="complementary document", description="""Any additional documents that provide supplementary information, instructions, or guidelines relevant to the use of this item""", json_schema_extra = { "linkml_meta": {'alias': 'complementaryDocument', 'domain_of': ['ProductOrService']} })
+    complementaryDocument: Optional[list[Document]] = Field(default=None, title="complementary document", description="""Any additional documents that provide supplementary information, instructions, or guidelines relevant to the use of this item""", json_schema_extra = { "linkml_meta": {'alias': 'complementaryDocument', 'domain_of': ['ProductOrService']} })
     technicalRecommendation: Optional[str] = Field(default=None, title="technical recommendation", description="""Expert advice or guidelines provided to ensure the optimal use, performance, and maintenance of what is provided, including best practices, troubleshooting tips, and procedural instructions""", json_schema_extra = { "linkml_meta": {'alias': 'technicalRecommendation', 'domain_of': ['ProductOrService']} })
-    productPicture: Optional[List[Image]] = Field(default=None, title="product picture", description="""A picture that can represent the item""", json_schema_extra = { "linkml_meta": {'alias': 'productPicture', 'domain_of': ['ProductOrService']} })
-    externalRelatedReference: Optional[List[ExternalRelatedReference]] = Field(default=None, title="external related reference", description="""A reference that permits to retrieve another related item from an external provider""", json_schema_extra = { "linkml_meta": {'alias': 'externalRelatedReference', 'domain_of': ['ProductOrService']} })
-    certification: Optional[List[Certification]] = Field(default=None, title="certification", description="""Any certification related to the current product or service; e.g., ISO certification""", json_schema_extra = { "linkml_meta": {'alias': 'certification',
+    productPicture: Optional[list[Image]] = Field(default=None, title="product picture", description="""A picture that can represent the item""", json_schema_extra = { "linkml_meta": {'alias': 'productPicture', 'domain_of': ['ProductOrService']} })
+    externalRelatedReference: Optional[list[ExternalRelatedReference]] = Field(default=None, title="external related reference", description="""A reference that permits to retrieve another related item from an external provider""", json_schema_extra = { "linkml_meta": {'alias': 'externalRelatedReference', 'domain_of': ['ProductOrService']} })
+    certification: Optional[list[Certification]] = Field(default=None, title="certification", description="""Any certification related to the current product or service; e.g., ISO certification""", json_schema_extra = { "linkml_meta": {'alias': 'certification',
          'close_mappings': ['dct:conformsTo'],
          'domain_of': ['ProductOrService']} })
     internalReference: Optional[str] = Field(default=None, title="internal reference", description="""Any reference or indication to be used for local retrieval purpose""", json_schema_extra = { "linkml_meta": {'alias': 'internalReference', 'domain_of': ['ProductOrService']} })
@@ -3871,7 +3863,7 @@ class Service(ProductOrService):
     A service
     """
     linkml_meta: ClassVar[LinkMLMeta] = LinkMLMeta({'close_mappings': ['wd:Q7406919', 'wd:Q7406919'],
-         'from_schema': 'https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#',
+         'from_schema': 'https://w3id.org/evorao/',
          'slot_usage': {'modelSpecies': {'description': 'The species of the infected '
                                                         'organism in the experiment',
                                          'domain_of': ['Service'],
@@ -3907,7 +3899,7 @@ class Service(ProductOrService):
     category: ProductCategory = Field(default=..., title="category", description="""The main category of the service or product""", json_schema_extra = { "linkml_meta": {'alias': 'category',
          'domain_of': ['ProductOrService'],
          'exact_mappings': ['dcat:theme']} })
-    additionalCategory: Optional[List[ProductCategory]] = Field(default=None, title="additional category", description="""Any category apart from its main category in which this product or service can fit""", json_schema_extra = { "linkml_meta": {'alias': 'additionalCategory',
+    additionalCategory: Optional[list[ProductCategory]] = Field(default=None, title="additional category", description="""Any category apart from its main category in which this product or service can fit""", json_schema_extra = { "linkml_meta": {'alias': 'additionalCategory',
          'domain_of': ['ProductOrService'],
          'exact_mappings': ['dcat:theme'],
          'recommended': True} })
@@ -3920,13 +3912,13 @@ class Service(ProductOrService):
          'ifabsent': 'string(on request)',
          'recommended': True} })
     qualityGrading: Optional[str] = Field(default=None, title="quality grading", description="""Information that permits to assess the quality level of what will be provided""", json_schema_extra = { "linkml_meta": {'alias': 'qualityGrading', 'domain_of': ['ProductOrService']} })
-    pathogenIdentification: List[PathogenIdentification] = Field(default=..., title="pathogen identification", description="""The identification of the pathogen or group of pathogens (e.g; name, taxon identification, etc.) related to the current item.""", json_schema_extra = { "linkml_meta": {'alias': 'pathogenIdentification',
+    pathogenIdentification: list[PathogenIdentification] = Field(default=..., title="pathogen identification", description="""The identification of the pathogen or group of pathogens (e.g; name, taxon identification, etc.) related to the current item.""", json_schema_extra = { "linkml_meta": {'alias': 'pathogenIdentification',
          'comments': ['The pathogen identification contains information about name and '
                       'taxon but in some cases(e.g: FAIRSHARING) there may have no '
                       'direct pathogen related but simply a taxonomic information .... '
                       'the default value should be the root of virology: Viruses'],
          'domain_of': ['ProductOrService']} })
-    relatedDOI: Optional[List[DOI]] = Field(default=None, title="DOI", description="""Any Digital Object Identifier that can be related""", json_schema_extra = { "linkml_meta": {'alias': 'relatedDOI',
+    relatedDOI: Optional[list[DOI]] = Field(default=None, title="DOI", description="""Any Digital Object Identifier that can be related""", json_schema_extra = { "linkml_meta": {'alias': 'relatedDOI',
          'close_mappings': ['wdp:P356'],
          'domain_of': ['ProductOrService', 'Publication']} })
     riskGroup: Optional[RiskGroup] = Field(default=None, title="risk group", description="""The highest risk group related to this resource. The risk group of a biological agent guiding its initial handling in labs according to the risk group classification defined by the WHO laboratory biosafety manual""", json_schema_extra = { "linkml_meta": {'alias': 'riskGroup',
@@ -3940,8 +3932,8 @@ class Service(ProductOrService):
          'domain_of': ['ProductOrService'],
          'recommended': True} })
     provider: Provider = Field(default=..., title="provider", description="""A provider of this product or service, as a specific organization""", json_schema_extra = { "linkml_meta": {'alias': 'provider', 'domain_of': ['ProductOrService']} })
-    collection: List[Collection] = Field(default=..., title="collection", description="""The collection(s) to which belongs this item""", json_schema_extra = { "linkml_meta": {'alias': 'collection', 'domain_of': ['ProductOrService']} })
-    keywords: List[Keyword] = Field(default=..., title="keywords", description="""List of terms used to tag and categorize this Item""", json_schema_extra = { "linkml_meta": {'alias': 'keywords',
+    collection: list[Collection] = Field(default=..., title="collection", description="""The collection(s) to which belongs this item""", json_schema_extra = { "linkml_meta": {'alias': 'collection', 'domain_of': ['ProductOrService']} })
+    keywords: list[Keyword] = Field(default=..., title="keywords", description="""List of terms used to tag and categorize this Item""", json_schema_extra = { "linkml_meta": {'alias': 'keywords',
          'domain_of': ['ProductOrService'],
          'exact_mappings': ['dcat:keyword'],
          'recommended': True} })
@@ -3949,11 +3941,11 @@ class Service(ProductOrService):
          'comments': ['Possible availabilities may differ from a project to another'],
          'domain_of': ['ProductOrService'],
          'ifabsent': 'string(on request)'} })
-    complementaryDocument: Optional[List[Document]] = Field(default=None, title="complementary document", description="""Any additional documents that provide supplementary information, instructions, or guidelines relevant to the use of this item""", json_schema_extra = { "linkml_meta": {'alias': 'complementaryDocument', 'domain_of': ['ProductOrService']} })
+    complementaryDocument: Optional[list[Document]] = Field(default=None, title="complementary document", description="""Any additional documents that provide supplementary information, instructions, or guidelines relevant to the use of this item""", json_schema_extra = { "linkml_meta": {'alias': 'complementaryDocument', 'domain_of': ['ProductOrService']} })
     technicalRecommendation: Optional[str] = Field(default=None, title="technical recommendation", description="""Expert advice or guidelines provided to ensure the optimal use, performance, and maintenance of what is provided, including best practices, troubleshooting tips, and procedural instructions""", json_schema_extra = { "linkml_meta": {'alias': 'technicalRecommendation', 'domain_of': ['ProductOrService']} })
-    productPicture: Optional[List[Image]] = Field(default=None, title="product picture", description="""A picture that can represent the item""", json_schema_extra = { "linkml_meta": {'alias': 'productPicture', 'domain_of': ['ProductOrService']} })
-    externalRelatedReference: Optional[List[ExternalRelatedReference]] = Field(default=None, title="external related reference", description="""A reference that permits to retrieve another related item from an external provider""", json_schema_extra = { "linkml_meta": {'alias': 'externalRelatedReference', 'domain_of': ['ProductOrService']} })
-    certification: Optional[List[Certification]] = Field(default=None, title="certification", description="""Any certification related to the current product or service; e.g., ISO certification""", json_schema_extra = { "linkml_meta": {'alias': 'certification',
+    productPicture: Optional[list[Image]] = Field(default=None, title="product picture", description="""A picture that can represent the item""", json_schema_extra = { "linkml_meta": {'alias': 'productPicture', 'domain_of': ['ProductOrService']} })
+    externalRelatedReference: Optional[list[ExternalRelatedReference]] = Field(default=None, title="external related reference", description="""A reference that permits to retrieve another related item from an external provider""", json_schema_extra = { "linkml_meta": {'alias': 'externalRelatedReference', 'domain_of': ['ProductOrService']} })
+    certification: Optional[list[Certification]] = Field(default=None, title="certification", description="""Any certification related to the current product or service; e.g., ISO certification""", json_schema_extra = { "linkml_meta": {'alias': 'certification',
          'close_mappings': ['dct:conformsTo'],
          'domain_of': ['ProductOrService']} })
     internalReference: Optional[str] = Field(default=None, title="internal reference", description="""Any reference or indication to be used for local retrieval purpose""", json_schema_extra = { "linkml_meta": {'alias': 'internalReference', 'domain_of': ['ProductOrService']} })
@@ -3997,7 +3989,7 @@ class Product(ProductOrService):
     A product
     """
     linkml_meta: ClassVar[LinkMLMeta] = LinkMLMeta({'close_mappings': ['wd:Q2424752', 'wd:Q2424752'],
-         'from_schema': 'https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#',
+         'from_schema': 'https://w3id.org/evorao/',
          'slot_usage': {'hasIATAClassification': {'description': 'The corresponding '
                                                                  'International Air '
                                                                  'Transport '
@@ -4159,7 +4151,7 @@ class Product(ProductOrService):
     category: ProductCategory = Field(default=..., title="category", description="""The main category of the service or product""", json_schema_extra = { "linkml_meta": {'alias': 'category',
          'domain_of': ['ProductOrService'],
          'exact_mappings': ['dcat:theme']} })
-    additionalCategory: Optional[List[ProductCategory]] = Field(default=None, title="additional category", description="""Any category apart from its main category in which this product or service can fit""", json_schema_extra = { "linkml_meta": {'alias': 'additionalCategory',
+    additionalCategory: Optional[list[ProductCategory]] = Field(default=None, title="additional category", description="""Any category apart from its main category in which this product or service can fit""", json_schema_extra = { "linkml_meta": {'alias': 'additionalCategory',
          'domain_of': ['ProductOrService'],
          'exact_mappings': ['dcat:theme'],
          'recommended': True} })
@@ -4172,13 +4164,13 @@ class Product(ProductOrService):
          'ifabsent': 'string(on request)',
          'recommended': True} })
     qualityGrading: Optional[str] = Field(default=None, title="quality grading", description="""Information that permits to assess the quality level of what will be provided""", json_schema_extra = { "linkml_meta": {'alias': 'qualityGrading', 'domain_of': ['ProductOrService']} })
-    pathogenIdentification: List[PathogenIdentification] = Field(default=..., title="pathogen identification", description="""The identification of the pathogen or group of pathogens (e.g; name, taxon identification, etc.) related to the current item.""", json_schema_extra = { "linkml_meta": {'alias': 'pathogenIdentification',
+    pathogenIdentification: list[PathogenIdentification] = Field(default=..., title="pathogen identification", description="""The identification of the pathogen or group of pathogens (e.g; name, taxon identification, etc.) related to the current item.""", json_schema_extra = { "linkml_meta": {'alias': 'pathogenIdentification',
          'comments': ['The pathogen identification contains information about name and '
                       'taxon but in some cases(e.g: FAIRSHARING) there may have no '
                       'direct pathogen related but simply a taxonomic information .... '
                       'the default value should be the root of virology: Viruses'],
          'domain_of': ['ProductOrService']} })
-    relatedDOI: Optional[List[DOI]] = Field(default=None, title="DOI", description="""Any Digital Object Identifier that can be related""", json_schema_extra = { "linkml_meta": {'alias': 'relatedDOI',
+    relatedDOI: Optional[list[DOI]] = Field(default=None, title="DOI", description="""Any Digital Object Identifier that can be related""", json_schema_extra = { "linkml_meta": {'alias': 'relatedDOI',
          'close_mappings': ['wdp:P356'],
          'domain_of': ['ProductOrService', 'Publication']} })
     riskGroup: Optional[RiskGroup] = Field(default=None, title="risk group", description="""The highest risk group related to this resource. The risk group of a biological agent guiding its initial handling in labs according to the risk group classification defined by the WHO laboratory biosafety manual""", json_schema_extra = { "linkml_meta": {'alias': 'riskGroup',
@@ -4192,8 +4184,8 @@ class Product(ProductOrService):
          'domain_of': ['ProductOrService'],
          'recommended': True} })
     provider: Provider = Field(default=..., title="provider", description="""A provider of this product or service, as a specific organization""", json_schema_extra = { "linkml_meta": {'alias': 'provider', 'domain_of': ['ProductOrService']} })
-    collection: List[Collection] = Field(default=..., title="collection", description="""The collection(s) to which belongs this item""", json_schema_extra = { "linkml_meta": {'alias': 'collection', 'domain_of': ['ProductOrService']} })
-    keywords: List[Keyword] = Field(default=..., title="keywords", description="""List of terms used to tag and categorize this Item""", json_schema_extra = { "linkml_meta": {'alias': 'keywords',
+    collection: list[Collection] = Field(default=..., title="collection", description="""The collection(s) to which belongs this item""", json_schema_extra = { "linkml_meta": {'alias': 'collection', 'domain_of': ['ProductOrService']} })
+    keywords: list[Keyword] = Field(default=..., title="keywords", description="""List of terms used to tag and categorize this Item""", json_schema_extra = { "linkml_meta": {'alias': 'keywords',
          'domain_of': ['ProductOrService'],
          'exact_mappings': ['dcat:keyword'],
          'recommended': True} })
@@ -4201,11 +4193,11 @@ class Product(ProductOrService):
          'comments': ['Possible availabilities may differ from a project to another'],
          'domain_of': ['ProductOrService'],
          'ifabsent': 'string(on request)'} })
-    complementaryDocument: Optional[List[Document]] = Field(default=None, title="complementary document", description="""Any additional documents that provide supplementary information, instructions, or guidelines relevant to the use of this item""", json_schema_extra = { "linkml_meta": {'alias': 'complementaryDocument', 'domain_of': ['ProductOrService']} })
+    complementaryDocument: Optional[list[Document]] = Field(default=None, title="complementary document", description="""Any additional documents that provide supplementary information, instructions, or guidelines relevant to the use of this item""", json_schema_extra = { "linkml_meta": {'alias': 'complementaryDocument', 'domain_of': ['ProductOrService']} })
     technicalRecommendation: Optional[str] = Field(default=None, title="technical recommendation", description="""Expert advice or guidelines provided to ensure the optimal use, performance, and maintenance of what is provided, including best practices, troubleshooting tips, and procedural instructions""", json_schema_extra = { "linkml_meta": {'alias': 'technicalRecommendation', 'domain_of': ['ProductOrService']} })
-    productPicture: Optional[List[Image]] = Field(default=None, title="product picture", description="""A picture that can represent the item""", json_schema_extra = { "linkml_meta": {'alias': 'productPicture', 'domain_of': ['ProductOrService']} })
-    externalRelatedReference: Optional[List[ExternalRelatedReference]] = Field(default=None, title="external related reference", description="""A reference that permits to retrieve another related item from an external provider""", json_schema_extra = { "linkml_meta": {'alias': 'externalRelatedReference', 'domain_of': ['ProductOrService']} })
-    certification: Optional[List[Certification]] = Field(default=None, title="certification", description="""Any certification related to the current product or service; e.g., ISO certification""", json_schema_extra = { "linkml_meta": {'alias': 'certification',
+    productPicture: Optional[list[Image]] = Field(default=None, title="product picture", description="""A picture that can represent the item""", json_schema_extra = { "linkml_meta": {'alias': 'productPicture', 'domain_of': ['ProductOrService']} })
+    externalRelatedReference: Optional[list[ExternalRelatedReference]] = Field(default=None, title="external related reference", description="""A reference that permits to retrieve another related item from an external provider""", json_schema_extra = { "linkml_meta": {'alias': 'externalRelatedReference', 'domain_of': ['ProductOrService']} })
+    certification: Optional[list[Certification]] = Field(default=None, title="certification", description="""Any certification related to the current product or service; e.g., ISO certification""", json_schema_extra = { "linkml_meta": {'alias': 'certification',
          'close_mappings': ['dct:conformsTo'],
          'domain_of': ['ProductOrService']} })
     internalReference: Optional[str] = Field(default=None, title="internal reference", description="""Any reference or indication to be used for local retrieval purpose""", json_schema_extra = { "linkml_meta": {'alias': 'internalReference', 'domain_of': ['ProductOrService']} })
@@ -4249,7 +4241,7 @@ class Antibody(Product):
     Protein that can bind to certain types of foreign bodies, such as pathogens
     """
     linkml_meta: ClassVar[LinkMLMeta] = LinkMLMeta({'close_mappings': ['wd:Q79460', 'wd:Q79460'],
-         'from_schema': 'https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#',
+         'from_schema': 'https://w3id.org/evorao/',
          'slot_usage': {'antibodyPurifiedByAffinity': {'description': 'Indicates '
                                                                       'whether or not '
                                                                       'if the antibody '
@@ -4312,7 +4304,7 @@ class Antibody(Product):
     antibodyPurifiedByAffinity: bool = Field(default=..., title="antibody purified by affinity", description="""Indicates whether or not if the antibody was purified by affinity""", json_schema_extra = { "linkml_meta": {'alias': 'antibodyPurifiedByAffinity', 'domain_of': ['Antibody']} })
     specificityDocumented: bool = Field(default=..., title="specificity documented", description="""Boolean value indicating whether the specificity of the product has been formally documented""", json_schema_extra = { "linkml_meta": {'alias': 'specificityDocumented', 'domain_of': ['Antibody', 'Detection Kit']} })
     targetedAntigen: str = Field(default=..., title="targeted antigen", description="""Specific molecular structure or epitope recognized and bound by an antibody""", json_schema_extra = { "linkml_meta": {'alias': 'targetedAntigen', 'domain_of': ['Antibody']} })
-    sequenceReference: Optional[List[SequenceReference]] = Field(default=None, title="sequence reference", description="""A reference that permits to retrieve the sequence information from a sequence provider""", json_schema_extra = { "linkml_meta": {'alias': 'sequenceReference',
+    sequenceReference: Optional[list[SequenceReference]] = Field(default=None, title="sequence reference", description="""A reference that permits to retrieve the sequence information from a sequence provider""", json_schema_extra = { "linkml_meta": {'alias': 'sequenceReference',
          'domain_of': ['Antibody', 'Sequence'],
          'recommended': True} })
     hasIATAClassification: IATAClassification = Field(default=..., title="IATA classification", description="""The corresponding International Air Transport Association (IATA)'s category for this Product""", json_schema_extra = { "linkml_meta": {'alias': 'hasIATAClassification', 'domain_of': ['Product']} })
@@ -4346,7 +4338,7 @@ class Antibody(Product):
     category: ProductCategory = Field(default=..., title="category", description="""The main category of the service or product""", json_schema_extra = { "linkml_meta": {'alias': 'category',
          'domain_of': ['ProductOrService'],
          'exact_mappings': ['dcat:theme']} })
-    additionalCategory: Optional[List[ProductCategory]] = Field(default=None, title="additional category", description="""Any category apart from its main category in which this product or service can fit""", json_schema_extra = { "linkml_meta": {'alias': 'additionalCategory',
+    additionalCategory: Optional[list[ProductCategory]] = Field(default=None, title="additional category", description="""Any category apart from its main category in which this product or service can fit""", json_schema_extra = { "linkml_meta": {'alias': 'additionalCategory',
          'domain_of': ['ProductOrService'],
          'exact_mappings': ['dcat:theme'],
          'recommended': True} })
@@ -4359,13 +4351,13 @@ class Antibody(Product):
          'ifabsent': 'string(on request)',
          'recommended': True} })
     qualityGrading: Optional[str] = Field(default=None, title="quality grading", description="""Information that permits to assess the quality level of what will be provided""", json_schema_extra = { "linkml_meta": {'alias': 'qualityGrading', 'domain_of': ['ProductOrService']} })
-    pathogenIdentification: List[PathogenIdentification] = Field(default=..., title="pathogen identification", description="""The identification of the pathogen or group of pathogens (e.g; name, taxon identification, etc.) related to the current item.""", json_schema_extra = { "linkml_meta": {'alias': 'pathogenIdentification',
+    pathogenIdentification: list[PathogenIdentification] = Field(default=..., title="pathogen identification", description="""The identification of the pathogen or group of pathogens (e.g; name, taxon identification, etc.) related to the current item.""", json_schema_extra = { "linkml_meta": {'alias': 'pathogenIdentification',
          'comments': ['The pathogen identification contains information about name and '
                       'taxon but in some cases(e.g: FAIRSHARING) there may have no '
                       'direct pathogen related but simply a taxonomic information .... '
                       'the default value should be the root of virology: Viruses'],
          'domain_of': ['ProductOrService']} })
-    relatedDOI: Optional[List[DOI]] = Field(default=None, title="DOI", description="""Any Digital Object Identifier that can be related""", json_schema_extra = { "linkml_meta": {'alias': 'relatedDOI',
+    relatedDOI: Optional[list[DOI]] = Field(default=None, title="DOI", description="""Any Digital Object Identifier that can be related""", json_schema_extra = { "linkml_meta": {'alias': 'relatedDOI',
          'close_mappings': ['wdp:P356'],
          'domain_of': ['ProductOrService', 'Publication']} })
     riskGroup: Optional[RiskGroup] = Field(default=None, title="risk group", description="""The highest risk group related to this resource. The risk group of a biological agent guiding its initial handling in labs according to the risk group classification defined by the WHO laboratory biosafety manual""", json_schema_extra = { "linkml_meta": {'alias': 'riskGroup',
@@ -4379,8 +4371,8 @@ class Antibody(Product):
          'domain_of': ['ProductOrService'],
          'recommended': True} })
     provider: Provider = Field(default=..., title="provider", description="""A provider of this product or service, as a specific organization""", json_schema_extra = { "linkml_meta": {'alias': 'provider', 'domain_of': ['ProductOrService']} })
-    collection: List[Collection] = Field(default=..., title="collection", description="""The collection(s) to which belongs this item""", json_schema_extra = { "linkml_meta": {'alias': 'collection', 'domain_of': ['ProductOrService']} })
-    keywords: List[Keyword] = Field(default=..., title="keywords", description="""List of terms used to tag and categorize this Item""", json_schema_extra = { "linkml_meta": {'alias': 'keywords',
+    collection: list[Collection] = Field(default=..., title="collection", description="""The collection(s) to which belongs this item""", json_schema_extra = { "linkml_meta": {'alias': 'collection', 'domain_of': ['ProductOrService']} })
+    keywords: list[Keyword] = Field(default=..., title="keywords", description="""List of terms used to tag and categorize this Item""", json_schema_extra = { "linkml_meta": {'alias': 'keywords',
          'domain_of': ['ProductOrService'],
          'exact_mappings': ['dcat:keyword'],
          'recommended': True} })
@@ -4388,11 +4380,11 @@ class Antibody(Product):
          'comments': ['Possible availabilities may differ from a project to another'],
          'domain_of': ['ProductOrService'],
          'ifabsent': 'string(on request)'} })
-    complementaryDocument: Optional[List[Document]] = Field(default=None, title="complementary document", description="""Any additional documents that provide supplementary information, instructions, or guidelines relevant to the use of this item""", json_schema_extra = { "linkml_meta": {'alias': 'complementaryDocument', 'domain_of': ['ProductOrService']} })
+    complementaryDocument: Optional[list[Document]] = Field(default=None, title="complementary document", description="""Any additional documents that provide supplementary information, instructions, or guidelines relevant to the use of this item""", json_schema_extra = { "linkml_meta": {'alias': 'complementaryDocument', 'domain_of': ['ProductOrService']} })
     technicalRecommendation: Optional[str] = Field(default=None, title="technical recommendation", description="""Expert advice or guidelines provided to ensure the optimal use, performance, and maintenance of what is provided, including best practices, troubleshooting tips, and procedural instructions""", json_schema_extra = { "linkml_meta": {'alias': 'technicalRecommendation', 'domain_of': ['ProductOrService']} })
-    productPicture: Optional[List[Image]] = Field(default=None, title="product picture", description="""A picture that can represent the item""", json_schema_extra = { "linkml_meta": {'alias': 'productPicture', 'domain_of': ['ProductOrService']} })
-    externalRelatedReference: Optional[List[ExternalRelatedReference]] = Field(default=None, title="external related reference", description="""A reference that permits to retrieve another related item from an external provider""", json_schema_extra = { "linkml_meta": {'alias': 'externalRelatedReference', 'domain_of': ['ProductOrService']} })
-    certification: Optional[List[Certification]] = Field(default=None, title="certification", description="""Any certification related to the current product or service; e.g., ISO certification""", json_schema_extra = { "linkml_meta": {'alias': 'certification',
+    productPicture: Optional[list[Image]] = Field(default=None, title="product picture", description="""A picture that can represent the item""", json_schema_extra = { "linkml_meta": {'alias': 'productPicture', 'domain_of': ['ProductOrService']} })
+    externalRelatedReference: Optional[list[ExternalRelatedReference]] = Field(default=None, title="external related reference", description="""A reference that permits to retrieve another related item from an external provider""", json_schema_extra = { "linkml_meta": {'alias': 'externalRelatedReference', 'domain_of': ['ProductOrService']} })
+    certification: Optional[list[Certification]] = Field(default=None, title="certification", description="""Any certification related to the current product or service; e.g., ISO certification""", json_schema_extra = { "linkml_meta": {'alias': 'certification',
          'close_mappings': ['dct:conformsTo'],
          'domain_of': ['ProductOrService']} })
     internalReference: Optional[str] = Field(default=None, title="internal reference", description="""Any reference or indication to be used for local retrieval purpose""", json_schema_extra = { "linkml_meta": {'alias': 'internalReference', 'domain_of': ['ProductOrService']} })
@@ -4436,7 +4428,7 @@ class Hybridoma(Antibody):
     An hybridoma that provides antibodies that can be related to a pathogen
     """
     linkml_meta: ClassVar[LinkMLMeta] = LinkMLMeta({'close_mappings': ['wd:Q27554370', 'wd:Q27554370'],
-         'from_schema': 'https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#',
+         'from_schema': 'https://w3id.org/evorao/',
          'slot_usage': {'hybridomaDescription': {'description': 'The description of '
                                                                 'the hybridoma',
                                                  'domain_of': ['Hybridoma'],
@@ -4452,7 +4444,7 @@ class Hybridoma(Antibody):
     antibodyPurifiedByAffinity: bool = Field(default=..., title="antibody purified by affinity", description="""Indicates whether or not if the antibody was purified by affinity""", json_schema_extra = { "linkml_meta": {'alias': 'antibodyPurifiedByAffinity', 'domain_of': ['Antibody']} })
     specificityDocumented: bool = Field(default=..., title="specificity documented", description="""Boolean value indicating whether the specificity of the product has been formally documented""", json_schema_extra = { "linkml_meta": {'alias': 'specificityDocumented', 'domain_of': ['Antibody', 'Detection Kit']} })
     targetedAntigen: str = Field(default=..., title="targeted antigen", description="""Specific molecular structure or epitope recognized and bound by an antibody""", json_schema_extra = { "linkml_meta": {'alias': 'targetedAntigen', 'domain_of': ['Antibody']} })
-    sequenceReference: Optional[List[SequenceReference]] = Field(default=None, title="sequence reference", description="""A reference that permits to retrieve the sequence information from a sequence provider""", json_schema_extra = { "linkml_meta": {'alias': 'sequenceReference',
+    sequenceReference: Optional[list[SequenceReference]] = Field(default=None, title="sequence reference", description="""A reference that permits to retrieve the sequence information from a sequence provider""", json_schema_extra = { "linkml_meta": {'alias': 'sequenceReference',
          'domain_of': ['Antibody', 'Sequence'],
          'recommended': True} })
     hasIATAClassification: IATAClassification = Field(default=..., title="IATA classification", description="""The corresponding International Air Transport Association (IATA)'s category for this Product""", json_schema_extra = { "linkml_meta": {'alias': 'hasIATAClassification', 'domain_of': ['Product']} })
@@ -4486,7 +4478,7 @@ class Hybridoma(Antibody):
     category: ProductCategory = Field(default=..., title="category", description="""The main category of the service or product""", json_schema_extra = { "linkml_meta": {'alias': 'category',
          'domain_of': ['ProductOrService'],
          'exact_mappings': ['dcat:theme']} })
-    additionalCategory: Optional[List[ProductCategory]] = Field(default=None, title="additional category", description="""Any category apart from its main category in which this product or service can fit""", json_schema_extra = { "linkml_meta": {'alias': 'additionalCategory',
+    additionalCategory: Optional[list[ProductCategory]] = Field(default=None, title="additional category", description="""Any category apart from its main category in which this product or service can fit""", json_schema_extra = { "linkml_meta": {'alias': 'additionalCategory',
          'domain_of': ['ProductOrService'],
          'exact_mappings': ['dcat:theme'],
          'recommended': True} })
@@ -4499,13 +4491,13 @@ class Hybridoma(Antibody):
          'ifabsent': 'string(on request)',
          'recommended': True} })
     qualityGrading: Optional[str] = Field(default=None, title="quality grading", description="""Information that permits to assess the quality level of what will be provided""", json_schema_extra = { "linkml_meta": {'alias': 'qualityGrading', 'domain_of': ['ProductOrService']} })
-    pathogenIdentification: List[PathogenIdentification] = Field(default=..., title="pathogen identification", description="""The identification of the pathogen or group of pathogens (e.g; name, taxon identification, etc.) related to the current item.""", json_schema_extra = { "linkml_meta": {'alias': 'pathogenIdentification',
+    pathogenIdentification: list[PathogenIdentification] = Field(default=..., title="pathogen identification", description="""The identification of the pathogen or group of pathogens (e.g; name, taxon identification, etc.) related to the current item.""", json_schema_extra = { "linkml_meta": {'alias': 'pathogenIdentification',
          'comments': ['The pathogen identification contains information about name and '
                       'taxon but in some cases(e.g: FAIRSHARING) there may have no '
                       'direct pathogen related but simply a taxonomic information .... '
                       'the default value should be the root of virology: Viruses'],
          'domain_of': ['ProductOrService']} })
-    relatedDOI: Optional[List[DOI]] = Field(default=None, title="DOI", description="""Any Digital Object Identifier that can be related""", json_schema_extra = { "linkml_meta": {'alias': 'relatedDOI',
+    relatedDOI: Optional[list[DOI]] = Field(default=None, title="DOI", description="""Any Digital Object Identifier that can be related""", json_schema_extra = { "linkml_meta": {'alias': 'relatedDOI',
          'close_mappings': ['wdp:P356'],
          'domain_of': ['ProductOrService', 'Publication']} })
     riskGroup: Optional[RiskGroup] = Field(default=None, title="risk group", description="""The highest risk group related to this resource. The risk group of a biological agent guiding its initial handling in labs according to the risk group classification defined by the WHO laboratory biosafety manual""", json_schema_extra = { "linkml_meta": {'alias': 'riskGroup',
@@ -4519,8 +4511,8 @@ class Hybridoma(Antibody):
          'domain_of': ['ProductOrService'],
          'recommended': True} })
     provider: Provider = Field(default=..., title="provider", description="""A provider of this product or service, as a specific organization""", json_schema_extra = { "linkml_meta": {'alias': 'provider', 'domain_of': ['ProductOrService']} })
-    collection: List[Collection] = Field(default=..., title="collection", description="""The collection(s) to which belongs this item""", json_schema_extra = { "linkml_meta": {'alias': 'collection', 'domain_of': ['ProductOrService']} })
-    keywords: List[Keyword] = Field(default=..., title="keywords", description="""List of terms used to tag and categorize this Item""", json_schema_extra = { "linkml_meta": {'alias': 'keywords',
+    collection: list[Collection] = Field(default=..., title="collection", description="""The collection(s) to which belongs this item""", json_schema_extra = { "linkml_meta": {'alias': 'collection', 'domain_of': ['ProductOrService']} })
+    keywords: list[Keyword] = Field(default=..., title="keywords", description="""List of terms used to tag and categorize this Item""", json_schema_extra = { "linkml_meta": {'alias': 'keywords',
          'domain_of': ['ProductOrService'],
          'exact_mappings': ['dcat:keyword'],
          'recommended': True} })
@@ -4528,11 +4520,11 @@ class Hybridoma(Antibody):
          'comments': ['Possible availabilities may differ from a project to another'],
          'domain_of': ['ProductOrService'],
          'ifabsent': 'string(on request)'} })
-    complementaryDocument: Optional[List[Document]] = Field(default=None, title="complementary document", description="""Any additional documents that provide supplementary information, instructions, or guidelines relevant to the use of this item""", json_schema_extra = { "linkml_meta": {'alias': 'complementaryDocument', 'domain_of': ['ProductOrService']} })
+    complementaryDocument: Optional[list[Document]] = Field(default=None, title="complementary document", description="""Any additional documents that provide supplementary information, instructions, or guidelines relevant to the use of this item""", json_schema_extra = { "linkml_meta": {'alias': 'complementaryDocument', 'domain_of': ['ProductOrService']} })
     technicalRecommendation: Optional[str] = Field(default=None, title="technical recommendation", description="""Expert advice or guidelines provided to ensure the optimal use, performance, and maintenance of what is provided, including best practices, troubleshooting tips, and procedural instructions""", json_schema_extra = { "linkml_meta": {'alias': 'technicalRecommendation', 'domain_of': ['ProductOrService']} })
-    productPicture: Optional[List[Image]] = Field(default=None, title="product picture", description="""A picture that can represent the item""", json_schema_extra = { "linkml_meta": {'alias': 'productPicture', 'domain_of': ['ProductOrService']} })
-    externalRelatedReference: Optional[List[ExternalRelatedReference]] = Field(default=None, title="external related reference", description="""A reference that permits to retrieve another related item from an external provider""", json_schema_extra = { "linkml_meta": {'alias': 'externalRelatedReference', 'domain_of': ['ProductOrService']} })
-    certification: Optional[List[Certification]] = Field(default=None, title="certification", description="""Any certification related to the current product or service; e.g., ISO certification""", json_schema_extra = { "linkml_meta": {'alias': 'certification',
+    productPicture: Optional[list[Image]] = Field(default=None, title="product picture", description="""A picture that can represent the item""", json_schema_extra = { "linkml_meta": {'alias': 'productPicture', 'domain_of': ['ProductOrService']} })
+    externalRelatedReference: Optional[list[ExternalRelatedReference]] = Field(default=None, title="external related reference", description="""A reference that permits to retrieve another related item from an external provider""", json_schema_extra = { "linkml_meta": {'alias': 'externalRelatedReference', 'domain_of': ['ProductOrService']} })
+    certification: Optional[list[Certification]] = Field(default=None, title="certification", description="""Any certification related to the current product or service; e.g., ISO certification""", json_schema_extra = { "linkml_meta": {'alias': 'certification',
          'close_mappings': ['dct:conformsTo'],
          'domain_of': ['ProductOrService']} })
     internalReference: Optional[str] = Field(default=None, title="internal reference", description="""Any reference or indication to be used for local retrieval purpose""", json_schema_extra = { "linkml_meta": {'alias': 'internalReference', 'domain_of': ['ProductOrService']} })
@@ -4576,7 +4568,7 @@ class Protein(Product):
     A protein as a derived product from a pathogen
     """
     linkml_meta: ClassVar[LinkMLMeta] = LinkMLMeta({'close_mappings': ['wd:Q8054', 'wd:Q8054'],
-         'from_schema': 'https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#',
+         'from_schema': 'https://w3id.org/evorao/',
          'slot_usage': {'biologicalMaterialOrigin': {'description': 'Information about '
                                                                     'the origin of the '
                                                                     'biological '
@@ -4903,39 +4895,39 @@ class Protein(Product):
 
     biologicalMaterialOrigin: BiologicalMaterialOrigin = Field(default=..., title="Biological Material origin", description="""Information about the origin of the biological material, essential for access, utilization, and benefit-sharing of genetic resources in compliance with the Nagoya Protocol""", json_schema_extra = { "linkml_meta": {'alias': 'biologicalMaterialOrigin',
          'domain_of': ['Protein', 'Nucleic Acid', 'Pathogen']} })
-    sequence: List[Sequence] = Field(default=..., title="sequence", description="""The related sequence information from a sequence provider or in fasta format""", json_schema_extra = { "linkml_meta": {'alias': 'sequence',
+    sequence: list[Sequence] = Field(default=..., title="sequence", description="""The related sequence information from a sequence provider or in fasta format""", json_schema_extra = { "linkml_meta": {'alias': 'sequence',
          'domain_of': ['Protein',
                        'RecombinantPartIdentification',
                        'Nucleic Acid',
                        'Pathogen'],
          'recommended': True} })
-    relatedPDB: Optional[List[PDBReference]] = Field(default=None, title="related PDB", description="""Identifier for 3D structural data as per the PDB (Protein Data Bank) database""", json_schema_extra = { "linkml_meta": {'alias': 'relatedPDB',
+    relatedPDB: Optional[list[PDBReference]] = Field(default=None, title="related PDB", description="""Identifier for 3D structural data as per the PDB (Protein Data Bank) database""", json_schema_extra = { "linkml_meta": {'alias': 'relatedPDB',
          'close_mappings': ['wdp:P638'],
          'domain_of': ['Protein']} })
-    specialFeature: Optional[List[SpecialFeature]] = Field(default=None, title="special feature", description="""Distinctive attributes of a product that set it apart from other similar items e.g., Reference strain, Vaccinal strain, Antiviral resistant strain ...""", json_schema_extra = { "linkml_meta": {'alias': 'specialFeature', 'domain_of': ['Protein']} })
-    proteinTAG: Optional[List[ProteinTag]] = Field(default=None, title="protein TAG", description="""Peptide sequences genetically grafted onto a recombinant protein""", json_schema_extra = { "linkml_meta": {'alias': 'proteinTAG', 'domain_of': ['Protein']} })
-    domain: Optional[List[str]] = Field(default=None, title="domain", description="""A distinct structural and functional unit within the protein, often capable of independent folding and stability, which contributes to the protein's overall function""", json_schema_extra = { "linkml_meta": {'alias': 'domain', 'domain_of': ['Protein']} })
-    expressedAs: Optional[List[Literal["Soluble", "Inclusion bodies"]]] = Field(default=None, title="expressed as", description="""Refers to the form in which the protein is produced and manifested in a biological system. Possible values include 'Soluble' (proteins that are dissolved in the cellular or extracellular fluid) and 'Inclusion bodies' (aggregated proteins that are insoluble and form within the cell)""", json_schema_extra = { "linkml_meta": {'alias': 'expressedAs',
+    specialFeature: Optional[list[SpecialFeature]] = Field(default=None, title="special feature", description="""Distinctive attributes of a product that set it apart from other similar items e.g., Reference strain, Vaccinal strain, Antiviral resistant strain ...""", json_schema_extra = { "linkml_meta": {'alias': 'specialFeature', 'domain_of': ['Protein']} })
+    proteinTAG: Optional[list[ProteinTag]] = Field(default=None, title="protein TAG", description="""Peptide sequences genetically grafted onto a recombinant protein""", json_schema_extra = { "linkml_meta": {'alias': 'proteinTAG', 'domain_of': ['Protein']} })
+    domain: Optional[list[str]] = Field(default=None, title="domain", description="""A distinct structural and functional unit within the protein, often capable of independent folding and stability, which contributes to the protein's overall function""", json_schema_extra = { "linkml_meta": {'alias': 'domain', 'domain_of': ['Protein']} })
+    expressedAs: Optional[list[Literal["Soluble", "Inclusion bodies"]]] = Field(default=None, title="expressed as", description="""Refers to the form in which the protein is produced and manifested in a biological system. Possible values include 'Soluble' (proteins that are dissolved in the cellular or extracellular fluid) and 'Inclusion bodies' (aggregated proteins that are insoluble and form within the cell)""", json_schema_extra = { "linkml_meta": {'alias': 'expressedAs',
          'domain_of': ['Protein'],
          'equals_string_in': ['Soluble', 'Inclusion bodies']} })
-    inclusionBodiesType: Optional[List[Literal["Denatured", "Refolded"]]] = Field(default=None, title="inclusion bodies type", description="""Refers to the state of aggregated proteins within a cell. Possible values include 'Denatured' (proteins are in an unfolded, inactive state) and 'Refolded' (proteins have been processed to regain their functional, active conformation).""", json_schema_extra = { "linkml_meta": {'alias': 'inclusionBodiesType',
+    inclusionBodiesType: Optional[list[Literal["Denatured", "Refolded"]]] = Field(default=None, title="inclusion bodies type", description="""Refers to the state of aggregated proteins within a cell. Possible values include 'Denatured' (proteins are in an unfolded, inactive state) and 'Refolded' (proteins have been processed to regain their functional, active conformation).""", json_schema_extra = { "linkml_meta": {'alias': 'inclusionBodiesType',
          'domain_of': ['Protein'],
          'equals_string_in': ['Denatured', 'Refolded']} })
-    expressionSystem: Optional[List[Literal["E. coli", "Insect cells", "Mammalian cells"]]] = Field(default=None, title="expression system", description="""The host organism or cellular environment used to produce a protein from a specific gene. Possible values include 'E. coli' (bacterial system), 'Insect cells' (using baculovirus vectors), and 'Mammalian cells' (mammalian cell lines).""", json_schema_extra = { "linkml_meta": {'alias': 'expressionSystem',
+    expressionSystem: Optional[list[Literal["E. coli", "Insect cells", "Mammalian cells"]]] = Field(default=None, title="expression system", description="""The host organism or cellular environment used to produce a protein from a specific gene. Possible values include 'E. coli' (bacterial system), 'Insect cells' (using baculovirus vectors), and 'Mammalian cells' (mammalian cell lines).""", json_schema_extra = { "linkml_meta": {'alias': 'expressionSystem',
          'domain_of': ['Protein'],
          'equals_string_in': ['E. coli', 'Insect cells', 'Mammalian cells']} })
-    functionalCharacterization: Optional[List[Literal["Functionally characterized", "No functional characterization"]]] = Field(default=None, title="functional characterization", description="""The process of determining and describing the specific biological activities and roles of a protein. Possible values include 'Functionally characterized' (the protein's functions have been identified and described) and 'No functional characterization' (the protein's functions have not been identified or described).""", json_schema_extra = { "linkml_meta": {'alias': 'functionalCharacterization',
+    functionalCharacterization: Optional[list[Literal["Functionally characterized", "No functional characterization"]]] = Field(default=None, title="functional characterization", description="""The process of determining and describing the specific biological activities and roles of a protein. Possible values include 'Functionally characterized' (the protein's functions have been identified and described) and 'No functional characterization' (the protein's functions have not been identified or described).""", json_schema_extra = { "linkml_meta": {'alias': 'functionalCharacterization',
          'domain_of': ['Protein'],
          'equals_string_in': ['Functionally characterized',
                               'No functional characterization']} })
-    functionalTechnicalDescription: Optional[List[str]] = Field(default=None, title="functional/Technical description", description="""Detailed information about the specific biological functions, mechanisms of action, and technical attributes of a protein. This includes how the protein interacts within biological systems, its role in cellular processes, and any relevant technical details such as structure, activity, and interactions with other molecules.""", json_schema_extra = { "linkml_meta": {'alias': 'functionalTechnicalDescription', 'domain_of': ['Protein']} })
-    proteinPurification: Optional[List[Literal["Greater than 95 percent", "Unpurified expression host lysate or partly purified protein"]]] = Field(default=None, title="protein purification", description="""Refers to the degree of purity achieved for a protein sample. Possible values include '>95%' (the protein is highly purified, with more than 95% purity) and 'Unpurified expression host lysate or partly purified protein' (the protein is either unpurified and present in the host cell lysate or only partially purified).""", json_schema_extra = { "linkml_meta": {'alias': 'proteinPurification',
+    functionalTechnicalDescription: Optional[list[str]] = Field(default=None, title="functional/Technical description", description="""Detailed information about the specific biological functions, mechanisms of action, and technical attributes of a protein. This includes how the protein interacts within biological systems, its role in cellular processes, and any relevant technical details such as structure, activity, and interactions with other molecules.""", json_schema_extra = { "linkml_meta": {'alias': 'functionalTechnicalDescription', 'domain_of': ['Protein']} })
+    proteinPurification: Optional[list[Literal["Greater than 95 percent", "Unpurified expression host lysate or partly purified protein"]]] = Field(default=None, title="protein purification", description="""Refers to the degree of purity achieved for a protein sample. Possible values include '>95%' (the protein is highly purified, with more than 95% purity) and 'Unpurified expression host lysate or partly purified protein' (the protein is either unpurified and present in the host cell lysate or only partially purified).""", json_schema_extra = { "linkml_meta": {'alias': 'proteinPurification',
          'domain_of': ['Protein'],
          'equals_string_in': ['Greater than 95 percent',
                               'Unpurified expression host lysate or partly purified '
                               'protein']} })
-    theTAGStatusOfTheSolubilizedProtein: Optional[List[str]] = Field(default=None, title="TAG status of the solubilized protein", description="""Indicates the presence and condition of a tag on the protein after solubilization. Possible values include 'Uncleaved Tag' (the tag is still attached to the protein), 'Cleaved Tag' (the tag has been removed from the protein), and 'No Tag' (the protein does not have a tag)""", json_schema_extra = { "linkml_meta": {'alias': 'theTAGStatusOfTheSolubilizedProtein', 'domain_of': ['Protein']} })
-    typeOfFunctionalCharacterization: Optional[List[Literal["Enzymatic", "Antigenic"]]] = Field(default=None, title="type of functional Characterization", description="""Refers to the classification of a protein based on the specific type of functional analysis performed to determine its biological activities and roles. Possible values include 'Enzymatic' (the protein has been characterized for its enzyme activity) and 'Antigenic' (the protein has been characterized for its ability to elicit an immune response).""", json_schema_extra = { "linkml_meta": {'alias': 'typeOfFunctionalCharacterization',
+    theTAGStatusOfTheSolubilizedProtein: Optional[list[str]] = Field(default=None, title="TAG status of the solubilized protein", description="""Indicates the presence and condition of a tag on the protein after solubilization. Possible values include 'Uncleaved Tag' (the tag is still attached to the protein), 'Cleaved Tag' (the tag has been removed from the protein), and 'No Tag' (the protein does not have a tag)""", json_schema_extra = { "linkml_meta": {'alias': 'theTAGStatusOfTheSolubilizedProtein', 'domain_of': ['Protein']} })
+    typeOfFunctionalCharacterization: Optional[list[Literal["Enzymatic", "Antigenic"]]] = Field(default=None, title="type of functional Characterization", description="""Refers to the classification of a protein based on the specific type of functional analysis performed to determine its biological activities and roles. Possible values include 'Enzymatic' (the protein has been characterized for its enzyme activity) and 'Antigenic' (the protein has been characterized for its ability to elicit an immune response).""", json_schema_extra = { "linkml_meta": {'alias': 'typeOfFunctionalCharacterization',
          'domain_of': ['Protein'],
          'equals_string_in': ['Enzymatic', 'Antigenic']} })
     hasIATAClassification: IATAClassification = Field(default=..., title="IATA classification", description="""The corresponding International Air Transport Association (IATA)'s category for this Product""", json_schema_extra = { "linkml_meta": {'alias': 'hasIATAClassification', 'domain_of': ['Product']} })
@@ -4969,7 +4961,7 @@ class Protein(Product):
     category: ProductCategory = Field(default=..., title="category", description="""The main category of the service or product""", json_schema_extra = { "linkml_meta": {'alias': 'category',
          'domain_of': ['ProductOrService'],
          'exact_mappings': ['dcat:theme']} })
-    additionalCategory: Optional[List[ProductCategory]] = Field(default=None, title="additional category", description="""Any category apart from its main category in which this product or service can fit""", json_schema_extra = { "linkml_meta": {'alias': 'additionalCategory',
+    additionalCategory: Optional[list[ProductCategory]] = Field(default=None, title="additional category", description="""Any category apart from its main category in which this product or service can fit""", json_schema_extra = { "linkml_meta": {'alias': 'additionalCategory',
          'domain_of': ['ProductOrService'],
          'exact_mappings': ['dcat:theme'],
          'recommended': True} })
@@ -4982,13 +4974,13 @@ class Protein(Product):
          'ifabsent': 'string(on request)',
          'recommended': True} })
     qualityGrading: Optional[str] = Field(default=None, title="quality grading", description="""Information that permits to assess the quality level of what will be provided""", json_schema_extra = { "linkml_meta": {'alias': 'qualityGrading', 'domain_of': ['ProductOrService']} })
-    pathogenIdentification: List[PathogenIdentification] = Field(default=..., title="pathogen identification", description="""The identification of the pathogen or group of pathogens (e.g; name, taxon identification, etc.) related to the current item.""", json_schema_extra = { "linkml_meta": {'alias': 'pathogenIdentification',
+    pathogenIdentification: list[PathogenIdentification] = Field(default=..., title="pathogen identification", description="""The identification of the pathogen or group of pathogens (e.g; name, taxon identification, etc.) related to the current item.""", json_schema_extra = { "linkml_meta": {'alias': 'pathogenIdentification',
          'comments': ['The pathogen identification contains information about name and '
                       'taxon but in some cases(e.g: FAIRSHARING) there may have no '
                       'direct pathogen related but simply a taxonomic information .... '
                       'the default value should be the root of virology: Viruses'],
          'domain_of': ['ProductOrService']} })
-    relatedDOI: Optional[List[DOI]] = Field(default=None, title="DOI", description="""Any Digital Object Identifier that can be related""", json_schema_extra = { "linkml_meta": {'alias': 'relatedDOI',
+    relatedDOI: Optional[list[DOI]] = Field(default=None, title="DOI", description="""Any Digital Object Identifier that can be related""", json_schema_extra = { "linkml_meta": {'alias': 'relatedDOI',
          'close_mappings': ['wdp:P356'],
          'domain_of': ['ProductOrService', 'Publication']} })
     riskGroup: Optional[RiskGroup] = Field(default=None, title="risk group", description="""The highest risk group related to this resource. The risk group of a biological agent guiding its initial handling in labs according to the risk group classification defined by the WHO laboratory biosafety manual""", json_schema_extra = { "linkml_meta": {'alias': 'riskGroup',
@@ -5002,8 +4994,8 @@ class Protein(Product):
          'domain_of': ['ProductOrService'],
          'recommended': True} })
     provider: Provider = Field(default=..., title="provider", description="""A provider of this product or service, as a specific organization""", json_schema_extra = { "linkml_meta": {'alias': 'provider', 'domain_of': ['ProductOrService']} })
-    collection: List[Collection] = Field(default=..., title="collection", description="""The collection(s) to which belongs this item""", json_schema_extra = { "linkml_meta": {'alias': 'collection', 'domain_of': ['ProductOrService']} })
-    keywords: List[Keyword] = Field(default=..., title="keywords", description="""List of terms used to tag and categorize this Item""", json_schema_extra = { "linkml_meta": {'alias': 'keywords',
+    collection: list[Collection] = Field(default=..., title="collection", description="""The collection(s) to which belongs this item""", json_schema_extra = { "linkml_meta": {'alias': 'collection', 'domain_of': ['ProductOrService']} })
+    keywords: list[Keyword] = Field(default=..., title="keywords", description="""List of terms used to tag and categorize this Item""", json_schema_extra = { "linkml_meta": {'alias': 'keywords',
          'domain_of': ['ProductOrService'],
          'exact_mappings': ['dcat:keyword'],
          'recommended': True} })
@@ -5011,11 +5003,11 @@ class Protein(Product):
          'comments': ['Possible availabilities may differ from a project to another'],
          'domain_of': ['ProductOrService'],
          'ifabsent': 'string(on request)'} })
-    complementaryDocument: Optional[List[Document]] = Field(default=None, title="complementary document", description="""Any additional documents that provide supplementary information, instructions, or guidelines relevant to the use of this item""", json_schema_extra = { "linkml_meta": {'alias': 'complementaryDocument', 'domain_of': ['ProductOrService']} })
+    complementaryDocument: Optional[list[Document]] = Field(default=None, title="complementary document", description="""Any additional documents that provide supplementary information, instructions, or guidelines relevant to the use of this item""", json_schema_extra = { "linkml_meta": {'alias': 'complementaryDocument', 'domain_of': ['ProductOrService']} })
     technicalRecommendation: Optional[str] = Field(default=None, title="technical recommendation", description="""Expert advice or guidelines provided to ensure the optimal use, performance, and maintenance of what is provided, including best practices, troubleshooting tips, and procedural instructions""", json_schema_extra = { "linkml_meta": {'alias': 'technicalRecommendation', 'domain_of': ['ProductOrService']} })
-    productPicture: Optional[List[Image]] = Field(default=None, title="product picture", description="""A picture that can represent the item""", json_schema_extra = { "linkml_meta": {'alias': 'productPicture', 'domain_of': ['ProductOrService']} })
-    externalRelatedReference: Optional[List[ExternalRelatedReference]] = Field(default=None, title="external related reference", description="""A reference that permits to retrieve another related item from an external provider""", json_schema_extra = { "linkml_meta": {'alias': 'externalRelatedReference', 'domain_of': ['ProductOrService']} })
-    certification: Optional[List[Certification]] = Field(default=None, title="certification", description="""Any certification related to the current product or service; e.g., ISO certification""", json_schema_extra = { "linkml_meta": {'alias': 'certification',
+    productPicture: Optional[list[Image]] = Field(default=None, title="product picture", description="""A picture that can represent the item""", json_schema_extra = { "linkml_meta": {'alias': 'productPicture', 'domain_of': ['ProductOrService']} })
+    externalRelatedReference: Optional[list[ExternalRelatedReference]] = Field(default=None, title="external related reference", description="""A reference that permits to retrieve another related item from an external provider""", json_schema_extra = { "linkml_meta": {'alias': 'externalRelatedReference', 'domain_of': ['ProductOrService']} })
+    certification: Optional[list[Certification]] = Field(default=None, title="certification", description="""Any certification related to the current product or service; e.g., ISO certification""", json_schema_extra = { "linkml_meta": {'alias': 'certification',
          'close_mappings': ['dct:conformsTo'],
          'domain_of': ['ProductOrService']} })
     internalReference: Optional[str] = Field(default=None, title="internal reference", description="""Any reference or indication to be used for local retrieval purpose""", json_schema_extra = { "linkml_meta": {'alias': 'internalReference', 'domain_of': ['ProductOrService']} })
@@ -5059,7 +5051,7 @@ class NucleicAcid(Product):
     Nucleic acid related to a pathogen. It can be extracted or synthetic
     """
     linkml_meta: ClassVar[LinkMLMeta] = LinkMLMeta({'close_mappings': ['wd:Q123619', 'wd:Q123619'],
-         'from_schema': 'https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#',
+         'from_schema': 'https://w3id.org/evorao/',
          'slot_usage': {'biologicalMaterialOrigin': {'description': 'Information about '
                                                                     'the origin of the '
                                                                     'biological '
@@ -5278,8 +5270,8 @@ class NucleicAcid(Product):
 
     biologicalMaterialOrigin: BiologicalMaterialOrigin = Field(default=..., title="Biological Material origin", description="""Information about the origin of the biological material, essential for access, utilization, and benefit-sharing of genetic resources in compliance with the Nagoya Protocol""", json_schema_extra = { "linkml_meta": {'alias': 'biologicalMaterialOrigin',
          'domain_of': ['Nucleic Acid', 'Protein', 'Pathogen']} })
-    hasGbFileOfTheConstruct: Optional[List[Data]] = Field(default=None, title="has .gb file of the construct", description="""A GenBank formatted file that contains detailed sequence and annotation information of a nucleic acid construct""", json_schema_extra = { "linkml_meta": {'alias': 'hasGbFileOfTheConstruct', 'domain_of': ['Nucleic Acid']} })
-    sequence: List[Sequence] = Field(default=..., title="sequence", description="""The related sequence information from a sequence provider or in fasta format""", json_schema_extra = { "linkml_meta": {'alias': 'sequence',
+    hasGbFileOfTheConstruct: Optional[list[Data]] = Field(default=None, title="has .gb file of the construct", description="""A GenBank formatted file that contains detailed sequence and annotation information of a nucleic acid construct""", json_schema_extra = { "linkml_meta": {'alias': 'hasGbFileOfTheConstruct', 'domain_of': ['Nucleic Acid']} })
+    sequence: list[Sequence] = Field(default=..., title="sequence", description="""The related sequence information from a sequence provider or in fasta format""", json_schema_extra = { "linkml_meta": {'alias': 'sequence',
          'domain_of': ['Nucleic Acid',
                        'RecombinantPartIdentification',
                        'Protein',
@@ -5289,7 +5281,7 @@ class NucleicAcid(Product):
     clonedIntoPlasmid: Optional[ExpressionVector] = Field(default=None, title="cloned into plasmid", description="""The plasmid into which the nucleic acid has been cloned""", json_schema_extra = { "linkml_meta": {'alias': 'clonedIntoPlasmid',
          'domain_of': ['Nucleic Acid'],
          'recommended': True} })
-    pasmidSelection: Optional[List[PlasmidSelection]] = Field(default=None, title="plasmid selection", description="""Specific selectable markers in the plasmid, such as antibiotic resistance genes, used to identify and maintain cells that contain the plasmid""", json_schema_extra = { "linkml_meta": {'alias': 'pasmidSelection', 'domain_of': ['Nucleic Acid'], 'recommended': True} })
+    pasmidSelection: Optional[list[PlasmidSelection]] = Field(default=None, title="plasmid selection", description="""Specific selectable markers in the plasmid, such as antibiotic resistance genes, used to identify and maintain cells that contain the plasmid""", json_schema_extra = { "linkml_meta": {'alias': 'pasmidSelection', 'domain_of': ['Nucleic Acid'], 'recommended': True} })
     hasTAG: ProteinTag = Field(default=..., title="TAG", description="""TAG sequence used for purposes such as purification, detection, or localization""", json_schema_extra = { "linkml_meta": {'alias': 'hasTAG', 'domain_of': ['Nucleic Acid']} })
     regionEncompassedInThisProduct: str = Field(default=..., title="region encompassed in this Product", description="""The specific region encompassed in the product""", json_schema_extra = { "linkml_meta": {'alias': 'regionEncompassedInThisProduct', 'domain_of': ['Nucleic Acid']} })
     mutationObserved: bool = Field(default=..., title="mutation observed", description="""Indicates if the current nucleic acid has No mutation compared to the reference sequence if the value is set to false or if it
@@ -5337,7 +5329,7 @@ class NucleicAcid(Product):
     category: ProductCategory = Field(default=..., title="category", description="""The main category of the service or product""", json_schema_extra = { "linkml_meta": {'alias': 'category',
          'domain_of': ['ProductOrService'],
          'exact_mappings': ['dcat:theme']} })
-    additionalCategory: Optional[List[ProductCategory]] = Field(default=None, title="additional category", description="""Any category apart from its main category in which this product or service can fit""", json_schema_extra = { "linkml_meta": {'alias': 'additionalCategory',
+    additionalCategory: Optional[list[ProductCategory]] = Field(default=None, title="additional category", description="""Any category apart from its main category in which this product or service can fit""", json_schema_extra = { "linkml_meta": {'alias': 'additionalCategory',
          'domain_of': ['ProductOrService'],
          'exact_mappings': ['dcat:theme'],
          'recommended': True} })
@@ -5350,13 +5342,13 @@ class NucleicAcid(Product):
          'ifabsent': 'string(on request)',
          'recommended': True} })
     qualityGrading: Optional[str] = Field(default=None, title="quality grading", description="""Information that permits to assess the quality level of what will be provided""", json_schema_extra = { "linkml_meta": {'alias': 'qualityGrading', 'domain_of': ['ProductOrService']} })
-    pathogenIdentification: List[PathogenIdentification] = Field(default=..., title="pathogen identification", description="""The identification of the pathogen or group of pathogens (e.g; name, taxon identification, etc.) related to the current item.""", json_schema_extra = { "linkml_meta": {'alias': 'pathogenIdentification',
+    pathogenIdentification: list[PathogenIdentification] = Field(default=..., title="pathogen identification", description="""The identification of the pathogen or group of pathogens (e.g; name, taxon identification, etc.) related to the current item.""", json_schema_extra = { "linkml_meta": {'alias': 'pathogenIdentification',
          'comments': ['The pathogen identification contains information about name and '
                       'taxon but in some cases(e.g: FAIRSHARING) there may have no '
                       'direct pathogen related but simply a taxonomic information .... '
                       'the default value should be the root of virology: Viruses'],
          'domain_of': ['ProductOrService']} })
-    relatedDOI: Optional[List[DOI]] = Field(default=None, title="DOI", description="""Any Digital Object Identifier that can be related""", json_schema_extra = { "linkml_meta": {'alias': 'relatedDOI',
+    relatedDOI: Optional[list[DOI]] = Field(default=None, title="DOI", description="""Any Digital Object Identifier that can be related""", json_schema_extra = { "linkml_meta": {'alias': 'relatedDOI',
          'close_mappings': ['wdp:P356'],
          'domain_of': ['ProductOrService', 'Publication']} })
     riskGroup: Optional[RiskGroup] = Field(default=None, title="risk group", description="""The highest risk group related to this resource. The risk group of a biological agent guiding its initial handling in labs according to the risk group classification defined by the WHO laboratory biosafety manual""", json_schema_extra = { "linkml_meta": {'alias': 'riskGroup',
@@ -5370,8 +5362,8 @@ class NucleicAcid(Product):
          'domain_of': ['ProductOrService'],
          'recommended': True} })
     provider: Provider = Field(default=..., title="provider", description="""A provider of this product or service, as a specific organization""", json_schema_extra = { "linkml_meta": {'alias': 'provider', 'domain_of': ['ProductOrService']} })
-    collection: List[Collection] = Field(default=..., title="collection", description="""The collection(s) to which belongs this item""", json_schema_extra = { "linkml_meta": {'alias': 'collection', 'domain_of': ['ProductOrService']} })
-    keywords: List[Keyword] = Field(default=..., title="keywords", description="""List of terms used to tag and categorize this Item""", json_schema_extra = { "linkml_meta": {'alias': 'keywords',
+    collection: list[Collection] = Field(default=..., title="collection", description="""The collection(s) to which belongs this item""", json_schema_extra = { "linkml_meta": {'alias': 'collection', 'domain_of': ['ProductOrService']} })
+    keywords: list[Keyword] = Field(default=..., title="keywords", description="""List of terms used to tag and categorize this Item""", json_schema_extra = { "linkml_meta": {'alias': 'keywords',
          'domain_of': ['ProductOrService'],
          'exact_mappings': ['dcat:keyword'],
          'recommended': True} })
@@ -5379,11 +5371,11 @@ class NucleicAcid(Product):
          'comments': ['Possible availabilities may differ from a project to another'],
          'domain_of': ['ProductOrService'],
          'ifabsent': 'string(on request)'} })
-    complementaryDocument: Optional[List[Document]] = Field(default=None, title="complementary document", description="""Any additional documents that provide supplementary information, instructions, or guidelines relevant to the use of this item""", json_schema_extra = { "linkml_meta": {'alias': 'complementaryDocument', 'domain_of': ['ProductOrService']} })
+    complementaryDocument: Optional[list[Document]] = Field(default=None, title="complementary document", description="""Any additional documents that provide supplementary information, instructions, or guidelines relevant to the use of this item""", json_schema_extra = { "linkml_meta": {'alias': 'complementaryDocument', 'domain_of': ['ProductOrService']} })
     technicalRecommendation: Optional[str] = Field(default=None, title="technical recommendation", description="""Expert advice or guidelines provided to ensure the optimal use, performance, and maintenance of what is provided, including best practices, troubleshooting tips, and procedural instructions""", json_schema_extra = { "linkml_meta": {'alias': 'technicalRecommendation', 'domain_of': ['ProductOrService']} })
-    productPicture: Optional[List[Image]] = Field(default=None, title="product picture", description="""A picture that can represent the item""", json_schema_extra = { "linkml_meta": {'alias': 'productPicture', 'domain_of': ['ProductOrService']} })
-    externalRelatedReference: Optional[List[ExternalRelatedReference]] = Field(default=None, title="external related reference", description="""A reference that permits to retrieve another related item from an external provider""", json_schema_extra = { "linkml_meta": {'alias': 'externalRelatedReference', 'domain_of': ['ProductOrService']} })
-    certification: Optional[List[Certification]] = Field(default=None, title="certification", description="""Any certification related to the current product or service; e.g., ISO certification""", json_schema_extra = { "linkml_meta": {'alias': 'certification',
+    productPicture: Optional[list[Image]] = Field(default=None, title="product picture", description="""A picture that can represent the item""", json_schema_extra = { "linkml_meta": {'alias': 'productPicture', 'domain_of': ['ProductOrService']} })
+    externalRelatedReference: Optional[list[ExternalRelatedReference]] = Field(default=None, title="external related reference", description="""A reference that permits to retrieve another related item from an external provider""", json_schema_extra = { "linkml_meta": {'alias': 'externalRelatedReference', 'domain_of': ['ProductOrService']} })
+    certification: Optional[list[Certification]] = Field(default=None, title="certification", description="""Any certification related to the current product or service; e.g., ISO certification""", json_schema_extra = { "linkml_meta": {'alias': 'certification',
          'close_mappings': ['dct:conformsTo'],
          'domain_of': ['ProductOrService']} })
     internalReference: Optional[str] = Field(default=None, title="internal reference", description="""Any reference or indication to be used for local retrieval purpose""", json_schema_extra = { "linkml_meta": {'alias': 'internalReference', 'domain_of': ['ProductOrService']} })
@@ -5426,7 +5418,7 @@ class DetectionKit(Product):
     """
     A detection kit for specific pathogens
     """
-    linkml_meta: ClassVar[LinkMLMeta] = LinkMLMeta({'from_schema': 'https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#',
+    linkml_meta: ClassVar[LinkMLMeta] = LinkMLMeta({'from_schema': 'https://w3id.org/evorao/',
          'slot_usage': {'hasSOPFile': {'description': 'The related standard operating '
                                                       'procedure file',
                                        'domain_of': ['Detection Kit'],
@@ -5475,7 +5467,7 @@ class DetectionKit(Product):
                                            'title': 'targeted region'}},
          'title': 'Detection Kit'})
 
-    hasSOPFile: Optional[List[File]] = Field(default=None, title="has SOP File", description="""The related standard operating procedure file""", json_schema_extra = { "linkml_meta": {'alias': 'hasSOPFile', 'domain_of': ['Detection Kit']} })
+    hasSOPFile: Optional[list[File]] = Field(default=None, title="has SOP File", description="""The related standard operating procedure file""", json_schema_extra = { "linkml_meta": {'alias': 'hasSOPFile', 'domain_of': ['Detection Kit']} })
     specificityDocumented: bool = Field(default=..., title="specificity documented", description="""Boolean value indicating whether the specificity of the product has been formally documented""", json_schema_extra = { "linkml_meta": {'alias': 'specificityDocumented', 'domain_of': ['Detection Kit', 'Antibody']} })
     specificity: Optional[str] = Field(default=None, title="specificity", description="""Details on the ability of a detection kit to correctly identify negative results, distinguishing between the target analyte and other substances without cross-reacting""", json_schema_extra = { "linkml_meta": {'alias': 'specificity', 'domain_of': ['Detection Kit']} })
     targetedRegion: Optional[str] = Field(default=None, title="targeted region", description="""The specific area or sequence within the target analyte that the detection kit is designed to identify and interact with, ensuring accurate detection and analysis.""", json_schema_extra = { "linkml_meta": {'alias': 'targetedRegion', 'domain_of': ['Detection Kit']} })
@@ -5510,7 +5502,7 @@ class DetectionKit(Product):
     category: ProductCategory = Field(default=..., title="category", description="""The main category of the service or product""", json_schema_extra = { "linkml_meta": {'alias': 'category',
          'domain_of': ['ProductOrService'],
          'exact_mappings': ['dcat:theme']} })
-    additionalCategory: Optional[List[ProductCategory]] = Field(default=None, title="additional category", description="""Any category apart from its main category in which this product or service can fit""", json_schema_extra = { "linkml_meta": {'alias': 'additionalCategory',
+    additionalCategory: Optional[list[ProductCategory]] = Field(default=None, title="additional category", description="""Any category apart from its main category in which this product or service can fit""", json_schema_extra = { "linkml_meta": {'alias': 'additionalCategory',
          'domain_of': ['ProductOrService'],
          'exact_mappings': ['dcat:theme'],
          'recommended': True} })
@@ -5523,13 +5515,13 @@ class DetectionKit(Product):
          'ifabsent': 'string(on request)',
          'recommended': True} })
     qualityGrading: Optional[str] = Field(default=None, title="quality grading", description="""Information that permits to assess the quality level of what will be provided""", json_schema_extra = { "linkml_meta": {'alias': 'qualityGrading', 'domain_of': ['ProductOrService']} })
-    pathogenIdentification: List[PathogenIdentification] = Field(default=..., title="pathogen identification", description="""The identification of the pathogen or group of pathogens (e.g; name, taxon identification, etc.) related to the current item.""", json_schema_extra = { "linkml_meta": {'alias': 'pathogenIdentification',
+    pathogenIdentification: list[PathogenIdentification] = Field(default=..., title="pathogen identification", description="""The identification of the pathogen or group of pathogens (e.g; name, taxon identification, etc.) related to the current item.""", json_schema_extra = { "linkml_meta": {'alias': 'pathogenIdentification',
          'comments': ['The pathogen identification contains information about name and '
                       'taxon but in some cases(e.g: FAIRSHARING) there may have no '
                       'direct pathogen related but simply a taxonomic information .... '
                       'the default value should be the root of virology: Viruses'],
          'domain_of': ['ProductOrService']} })
-    relatedDOI: Optional[List[DOI]] = Field(default=None, title="DOI", description="""Any Digital Object Identifier that can be related""", json_schema_extra = { "linkml_meta": {'alias': 'relatedDOI',
+    relatedDOI: Optional[list[DOI]] = Field(default=None, title="DOI", description="""Any Digital Object Identifier that can be related""", json_schema_extra = { "linkml_meta": {'alias': 'relatedDOI',
          'close_mappings': ['wdp:P356'],
          'domain_of': ['ProductOrService', 'Publication']} })
     riskGroup: Optional[RiskGroup] = Field(default=None, title="risk group", description="""The highest risk group related to this resource. The risk group of a biological agent guiding its initial handling in labs according to the risk group classification defined by the WHO laboratory biosafety manual""", json_schema_extra = { "linkml_meta": {'alias': 'riskGroup',
@@ -5543,8 +5535,8 @@ class DetectionKit(Product):
          'domain_of': ['ProductOrService'],
          'recommended': True} })
     provider: Provider = Field(default=..., title="provider", description="""A provider of this product or service, as a specific organization""", json_schema_extra = { "linkml_meta": {'alias': 'provider', 'domain_of': ['ProductOrService']} })
-    collection: List[Collection] = Field(default=..., title="collection", description="""The collection(s) to which belongs this item""", json_schema_extra = { "linkml_meta": {'alias': 'collection', 'domain_of': ['ProductOrService']} })
-    keywords: List[Keyword] = Field(default=..., title="keywords", description="""List of terms used to tag and categorize this Item""", json_schema_extra = { "linkml_meta": {'alias': 'keywords',
+    collection: list[Collection] = Field(default=..., title="collection", description="""The collection(s) to which belongs this item""", json_schema_extra = { "linkml_meta": {'alias': 'collection', 'domain_of': ['ProductOrService']} })
+    keywords: list[Keyword] = Field(default=..., title="keywords", description="""List of terms used to tag and categorize this Item""", json_schema_extra = { "linkml_meta": {'alias': 'keywords',
          'domain_of': ['ProductOrService'],
          'exact_mappings': ['dcat:keyword'],
          'recommended': True} })
@@ -5552,11 +5544,11 @@ class DetectionKit(Product):
          'comments': ['Possible availabilities may differ from a project to another'],
          'domain_of': ['ProductOrService'],
          'ifabsent': 'string(on request)'} })
-    complementaryDocument: Optional[List[Document]] = Field(default=None, title="complementary document", description="""Any additional documents that provide supplementary information, instructions, or guidelines relevant to the use of this item""", json_schema_extra = { "linkml_meta": {'alias': 'complementaryDocument', 'domain_of': ['ProductOrService']} })
+    complementaryDocument: Optional[list[Document]] = Field(default=None, title="complementary document", description="""Any additional documents that provide supplementary information, instructions, or guidelines relevant to the use of this item""", json_schema_extra = { "linkml_meta": {'alias': 'complementaryDocument', 'domain_of': ['ProductOrService']} })
     technicalRecommendation: Optional[str] = Field(default=None, title="technical recommendation", description="""Expert advice or guidelines provided to ensure the optimal use, performance, and maintenance of what is provided, including best practices, troubleshooting tips, and procedural instructions""", json_schema_extra = { "linkml_meta": {'alias': 'technicalRecommendation', 'domain_of': ['ProductOrService']} })
-    productPicture: Optional[List[Image]] = Field(default=None, title="product picture", description="""A picture that can represent the item""", json_schema_extra = { "linkml_meta": {'alias': 'productPicture', 'domain_of': ['ProductOrService']} })
-    externalRelatedReference: Optional[List[ExternalRelatedReference]] = Field(default=None, title="external related reference", description="""A reference that permits to retrieve another related item from an external provider""", json_schema_extra = { "linkml_meta": {'alias': 'externalRelatedReference', 'domain_of': ['ProductOrService']} })
-    certification: Optional[List[Certification]] = Field(default=None, title="certification", description="""Any certification related to the current product or service; e.g., ISO certification""", json_schema_extra = { "linkml_meta": {'alias': 'certification',
+    productPicture: Optional[list[Image]] = Field(default=None, title="product picture", description="""A picture that can represent the item""", json_schema_extra = { "linkml_meta": {'alias': 'productPicture', 'domain_of': ['ProductOrService']} })
+    externalRelatedReference: Optional[list[ExternalRelatedReference]] = Field(default=None, title="external related reference", description="""A reference that permits to retrieve another related item from an external provider""", json_schema_extra = { "linkml_meta": {'alias': 'externalRelatedReference', 'domain_of': ['ProductOrService']} })
+    certification: Optional[list[Certification]] = Field(default=None, title="certification", description="""Any certification related to the current product or service; e.g., ISO certification""", json_schema_extra = { "linkml_meta": {'alias': 'certification',
          'close_mappings': ['dct:conformsTo'],
          'domain_of': ['ProductOrService']} })
     internalReference: Optional[str] = Field(default=None, title="internal reference", description="""Any reference or indication to be used for local retrieval purpose""", json_schema_extra = { "linkml_meta": {'alias': 'internalReference', 'domain_of': ['ProductOrService']} })
@@ -5600,7 +5592,7 @@ class Bundle(Product):
     A group of products
     """
     linkml_meta: ClassVar[LinkMLMeta] = LinkMLMeta({'close_mappings': ['wd:Q1020767', 'wd:Q1020767'],
-         'from_schema': 'https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#',
+         'from_schema': 'https://w3id.org/evorao/',
          'slot_usage': {'productsOfTheBundle': {'description': 'Associates the bundle '
                                                                'with the individual '
                                                                'products it contains, '
@@ -5615,7 +5607,7 @@ class Bundle(Product):
                                                 'title': 'products of the bundle'}},
          'title': 'Bundle'})
 
-    productsOfTheBundle: List[Product] = Field(default=..., title="products of the bundle", description="""Associates the bundle with the individual products it contains, specifying the components included within the bundle.""", json_schema_extra = { "linkml_meta": {'alias': 'productsOfTheBundle', 'domain_of': ['Bundle']} })
+    productsOfTheBundle: list[Product] = Field(default=..., title="products of the bundle", description="""Associates the bundle with the individual products it contains, specifying the components included within the bundle.""", json_schema_extra = { "linkml_meta": {'alias': 'productsOfTheBundle', 'domain_of': ['Bundle']} })
     hasIATAClassification: IATAClassification = Field(default=..., title="IATA classification", description="""The corresponding International Air Transport Association (IATA)'s category for this Product""", json_schema_extra = { "linkml_meta": {'alias': 'hasIATAClassification', 'domain_of': ['Product']} })
     shippingConditions: str = Field(default=..., title="shipping conditions", description="""Specification of the terms and parameters for transporting
 """, json_schema_extra = { "linkml_meta": {'alias': 'shippingConditions', 'domain_of': ['Product']} })
@@ -5647,7 +5639,7 @@ class Bundle(Product):
     category: ProductCategory = Field(default=..., title="category", description="""The main category of the service or product""", json_schema_extra = { "linkml_meta": {'alias': 'category',
          'domain_of': ['ProductOrService'],
          'exact_mappings': ['dcat:theme']} })
-    additionalCategory: Optional[List[ProductCategory]] = Field(default=None, title="additional category", description="""Any category apart from its main category in which this product or service can fit""", json_schema_extra = { "linkml_meta": {'alias': 'additionalCategory',
+    additionalCategory: Optional[list[ProductCategory]] = Field(default=None, title="additional category", description="""Any category apart from its main category in which this product or service can fit""", json_schema_extra = { "linkml_meta": {'alias': 'additionalCategory',
          'domain_of': ['ProductOrService'],
          'exact_mappings': ['dcat:theme'],
          'recommended': True} })
@@ -5660,13 +5652,13 @@ class Bundle(Product):
          'ifabsent': 'string(on request)',
          'recommended': True} })
     qualityGrading: Optional[str] = Field(default=None, title="quality grading", description="""Information that permits to assess the quality level of what will be provided""", json_schema_extra = { "linkml_meta": {'alias': 'qualityGrading', 'domain_of': ['ProductOrService']} })
-    pathogenIdentification: List[PathogenIdentification] = Field(default=..., title="pathogen identification", description="""The identification of the pathogen or group of pathogens (e.g; name, taxon identification, etc.) related to the current item.""", json_schema_extra = { "linkml_meta": {'alias': 'pathogenIdentification',
+    pathogenIdentification: list[PathogenIdentification] = Field(default=..., title="pathogen identification", description="""The identification of the pathogen or group of pathogens (e.g; name, taxon identification, etc.) related to the current item.""", json_schema_extra = { "linkml_meta": {'alias': 'pathogenIdentification',
          'comments': ['The pathogen identification contains information about name and '
                       'taxon but in some cases(e.g: FAIRSHARING) there may have no '
                       'direct pathogen related but simply a taxonomic information .... '
                       'the default value should be the root of virology: Viruses'],
          'domain_of': ['ProductOrService']} })
-    relatedDOI: Optional[List[DOI]] = Field(default=None, title="DOI", description="""Any Digital Object Identifier that can be related""", json_schema_extra = { "linkml_meta": {'alias': 'relatedDOI',
+    relatedDOI: Optional[list[DOI]] = Field(default=None, title="DOI", description="""Any Digital Object Identifier that can be related""", json_schema_extra = { "linkml_meta": {'alias': 'relatedDOI',
          'close_mappings': ['wdp:P356'],
          'domain_of': ['ProductOrService', 'Publication']} })
     riskGroup: Optional[RiskGroup] = Field(default=None, title="risk group", description="""The highest risk group related to this resource. The risk group of a biological agent guiding its initial handling in labs according to the risk group classification defined by the WHO laboratory biosafety manual""", json_schema_extra = { "linkml_meta": {'alias': 'riskGroup',
@@ -5680,8 +5672,8 @@ class Bundle(Product):
          'domain_of': ['ProductOrService'],
          'recommended': True} })
     provider: Provider = Field(default=..., title="provider", description="""A provider of this product or service, as a specific organization""", json_schema_extra = { "linkml_meta": {'alias': 'provider', 'domain_of': ['ProductOrService']} })
-    collection: List[Collection] = Field(default=..., title="collection", description="""The collection(s) to which belongs this item""", json_schema_extra = { "linkml_meta": {'alias': 'collection', 'domain_of': ['ProductOrService']} })
-    keywords: List[Keyword] = Field(default=..., title="keywords", description="""List of terms used to tag and categorize this Item""", json_schema_extra = { "linkml_meta": {'alias': 'keywords',
+    collection: list[Collection] = Field(default=..., title="collection", description="""The collection(s) to which belongs this item""", json_schema_extra = { "linkml_meta": {'alias': 'collection', 'domain_of': ['ProductOrService']} })
+    keywords: list[Keyword] = Field(default=..., title="keywords", description="""List of terms used to tag and categorize this Item""", json_schema_extra = { "linkml_meta": {'alias': 'keywords',
          'domain_of': ['ProductOrService'],
          'exact_mappings': ['dcat:keyword'],
          'recommended': True} })
@@ -5689,11 +5681,11 @@ class Bundle(Product):
          'comments': ['Possible availabilities may differ from a project to another'],
          'domain_of': ['ProductOrService'],
          'ifabsent': 'string(on request)'} })
-    complementaryDocument: Optional[List[Document]] = Field(default=None, title="complementary document", description="""Any additional documents that provide supplementary information, instructions, or guidelines relevant to the use of this item""", json_schema_extra = { "linkml_meta": {'alias': 'complementaryDocument', 'domain_of': ['ProductOrService']} })
+    complementaryDocument: Optional[list[Document]] = Field(default=None, title="complementary document", description="""Any additional documents that provide supplementary information, instructions, or guidelines relevant to the use of this item""", json_schema_extra = { "linkml_meta": {'alias': 'complementaryDocument', 'domain_of': ['ProductOrService']} })
     technicalRecommendation: Optional[str] = Field(default=None, title="technical recommendation", description="""Expert advice or guidelines provided to ensure the optimal use, performance, and maintenance of what is provided, including best practices, troubleshooting tips, and procedural instructions""", json_schema_extra = { "linkml_meta": {'alias': 'technicalRecommendation', 'domain_of': ['ProductOrService']} })
-    productPicture: Optional[List[Image]] = Field(default=None, title="product picture", description="""A picture that can represent the item""", json_schema_extra = { "linkml_meta": {'alias': 'productPicture', 'domain_of': ['ProductOrService']} })
-    externalRelatedReference: Optional[List[ExternalRelatedReference]] = Field(default=None, title="external related reference", description="""A reference that permits to retrieve another related item from an external provider""", json_schema_extra = { "linkml_meta": {'alias': 'externalRelatedReference', 'domain_of': ['ProductOrService']} })
-    certification: Optional[List[Certification]] = Field(default=None, title="certification", description="""Any certification related to the current product or service; e.g., ISO certification""", json_schema_extra = { "linkml_meta": {'alias': 'certification',
+    productPicture: Optional[list[Image]] = Field(default=None, title="product picture", description="""A picture that can represent the item""", json_schema_extra = { "linkml_meta": {'alias': 'productPicture', 'domain_of': ['ProductOrService']} })
+    externalRelatedReference: Optional[list[ExternalRelatedReference]] = Field(default=None, title="external related reference", description="""A reference that permits to retrieve another related item from an external provider""", json_schema_extra = { "linkml_meta": {'alias': 'externalRelatedReference', 'domain_of': ['ProductOrService']} })
+    certification: Optional[list[Certification]] = Field(default=None, title="certification", description="""Any certification related to the current product or service; e.g., ISO certification""", json_schema_extra = { "linkml_meta": {'alias': 'certification',
          'close_mappings': ['dct:conformsTo'],
          'domain_of': ['ProductOrService']} })
     internalReference: Optional[str] = Field(default=None, title="internal reference", description="""Any reference or indication to be used for local retrieval purpose""", json_schema_extra = { "linkml_meta": {'alias': 'internalReference', 'domain_of': ['ProductOrService']} })
@@ -5738,7 +5730,7 @@ class Pathogen(Product):
     """
     linkml_meta: ClassVar[LinkMLMeta] = LinkMLMeta({'abstract': True,
          'close_mappings': ['wd:Q170065', 'wd:Q170065'],
-         'from_schema': 'https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#',
+         'from_schema': 'https://w3id.org/evorao/',
          'slot_usage': {'biologicalMaterialOrigin': {'description': 'Information about '
                                                                     'the origin of the '
                                                                     'biological '
@@ -6015,14 +6007,14 @@ class Pathogen(Product):
 
     biologicalMaterialOrigin: BiologicalMaterialOrigin = Field(default=..., title="Biological Material origin", description="""Information about the origin of the biological material, essential for access, utilization, and benefit-sharing of genetic resources in compliance with the Nagoya Protocol""", json_schema_extra = { "linkml_meta": {'alias': 'biologicalMaterialOrigin',
          'domain_of': ['Pathogen', 'Protein', 'Nucleic Acid']} })
-    suspectedEpidemiologicalOrigin: Optional[List[GeographicalOrigin]] = Field(default=None, title="suspected epidemiological origin", description="""The potential geographical or environmental source from which the pathogen is believed to have originated or been transmitted""", json_schema_extra = { "linkml_meta": {'alias': 'suspectedEpidemiologicalOrigin',
+    suspectedEpidemiologicalOrigin: Optional[list[GeographicalOrigin]] = Field(default=None, title="suspected epidemiological origin", description="""The potential geographical or environmental source from which the pathogen is believed to have originated or been transmitted""", json_schema_extra = { "linkml_meta": {'alias': 'suspectedEpidemiologicalOrigin',
          'close_mappings': ['dct:spatial'],
          'domain_of': ['Pathogen']} })
-    isolationHost: Optional[List[IsolationHost]] = Field(default=None, title="isolation host", description="""The host organism from which the pathogen was originally isolated""", json_schema_extra = { "linkml_meta": {'alias': 'isolationHost', 'domain_of': ['Pathogen']} })
-    productionCellLine: Optional[List[ProductionCellLine]] = Field(default=None, title="production cell line", description="""The cell line used for the production or propagation of the pathogen, detailing the cellular environment employed in its cultivation and study""", json_schema_extra = { "linkml_meta": {'alias': 'productionCellLine', 'domain_of': ['Pathogen']} })
-    propagationHost: Optional[List[PropagationHost]] = Field(default=None, title="propagation host", description="""The host organism that propagates the pathogen""", json_schema_extra = { "linkml_meta": {'alias': 'propagationHost', 'domain_of': ['Pathogen']} })
-    transmissionMethod: Optional[List[TransmissionMethod]] = Field(default=None, title="transmission method", description="""The method or route through which the pathogen is transmitted from one host to another, detailing the mechanisms of infection spread.""", json_schema_extra = { "linkml_meta": {'alias': 'transmissionMethod', 'domain_of': ['Pathogen']} })
-    sequence: List[Sequence] = Field(default=..., title="sequence", description="""The related sequence information from a sequence provider or in fasta format""", json_schema_extra = { "linkml_meta": {'alias': 'sequence',
+    isolationHost: Optional[list[IsolationHost]] = Field(default=None, title="isolation host", description="""The host organism from which the pathogen was originally isolated""", json_schema_extra = { "linkml_meta": {'alias': 'isolationHost', 'domain_of': ['Pathogen']} })
+    productionCellLine: Optional[list[ProductionCellLine]] = Field(default=None, title="production cell line", description="""The cell line used for the production or propagation of the pathogen, detailing the cellular environment employed in its cultivation and study""", json_schema_extra = { "linkml_meta": {'alias': 'productionCellLine', 'domain_of': ['Pathogen']} })
+    propagationHost: Optional[list[PropagationHost]] = Field(default=None, title="propagation host", description="""The host organism that propagates the pathogen""", json_schema_extra = { "linkml_meta": {'alias': 'propagationHost', 'domain_of': ['Pathogen']} })
+    transmissionMethod: Optional[list[TransmissionMethod]] = Field(default=None, title="transmission method", description="""The method or route through which the pathogen is transmitted from one host to another, detailing the mechanisms of infection spread.""", json_schema_extra = { "linkml_meta": {'alias': 'transmissionMethod', 'domain_of': ['Pathogen']} })
+    sequence: list[Sequence] = Field(default=..., title="sequence", description="""The related sequence information from a sequence provider or in fasta format""", json_schema_extra = { "linkml_meta": {'alias': 'sequence',
          'domain_of': ['Pathogen',
                        'RecombinantPartIdentification',
                        'Protein',
@@ -6091,7 +6083,7 @@ class Pathogen(Product):
     category: ProductCategory = Field(default=..., title="category", description="""The main category of the service or product""", json_schema_extra = { "linkml_meta": {'alias': 'category',
          'domain_of': ['ProductOrService'],
          'exact_mappings': ['dcat:theme']} })
-    additionalCategory: Optional[List[ProductCategory]] = Field(default=None, title="additional category", description="""Any category apart from its main category in which this product or service can fit""", json_schema_extra = { "linkml_meta": {'alias': 'additionalCategory',
+    additionalCategory: Optional[list[ProductCategory]] = Field(default=None, title="additional category", description="""Any category apart from its main category in which this product or service can fit""", json_schema_extra = { "linkml_meta": {'alias': 'additionalCategory',
          'domain_of': ['ProductOrService'],
          'exact_mappings': ['dcat:theme'],
          'recommended': True} })
@@ -6104,13 +6096,13 @@ class Pathogen(Product):
          'ifabsent': 'string(on request)',
          'recommended': True} })
     qualityGrading: Optional[str] = Field(default=None, title="quality grading", description="""Information that permits to assess the quality level of what will be provided""", json_schema_extra = { "linkml_meta": {'alias': 'qualityGrading', 'domain_of': ['ProductOrService']} })
-    pathogenIdentification: List[PathogenIdentification] = Field(default=..., title="pathogen identification", description="""The identification of the pathogen or group of pathogens (e.g; name, taxon identification, etc.) related to the current item.""", json_schema_extra = { "linkml_meta": {'alias': 'pathogenIdentification',
+    pathogenIdentification: list[PathogenIdentification] = Field(default=..., title="pathogen identification", description="""The identification of the pathogen or group of pathogens (e.g; name, taxon identification, etc.) related to the current item.""", json_schema_extra = { "linkml_meta": {'alias': 'pathogenIdentification',
          'comments': ['The pathogen identification contains information about name and '
                       'taxon but in some cases(e.g: FAIRSHARING) there may have no '
                       'direct pathogen related but simply a taxonomic information .... '
                       'the default value should be the root of virology: Viruses'],
          'domain_of': ['ProductOrService']} })
-    relatedDOI: Optional[List[DOI]] = Field(default=None, title="DOI", description="""Any Digital Object Identifier that can be related""", json_schema_extra = { "linkml_meta": {'alias': 'relatedDOI',
+    relatedDOI: Optional[list[DOI]] = Field(default=None, title="DOI", description="""Any Digital Object Identifier that can be related""", json_schema_extra = { "linkml_meta": {'alias': 'relatedDOI',
          'close_mappings': ['wdp:P356'],
          'domain_of': ['ProductOrService', 'Publication']} })
     riskGroup: Optional[RiskGroup] = Field(default=None, title="risk group", description="""The highest risk group related to this resource. The risk group of a biological agent guiding its initial handling in labs according to the risk group classification defined by the WHO laboratory biosafety manual""", json_schema_extra = { "linkml_meta": {'alias': 'riskGroup',
@@ -6124,8 +6116,8 @@ class Pathogen(Product):
          'domain_of': ['ProductOrService'],
          'recommended': True} })
     provider: Provider = Field(default=..., title="provider", description="""A provider of this product or service, as a specific organization""", json_schema_extra = { "linkml_meta": {'alias': 'provider', 'domain_of': ['ProductOrService']} })
-    collection: List[Collection] = Field(default=..., title="collection", description="""The collection(s) to which belongs this item""", json_schema_extra = { "linkml_meta": {'alias': 'collection', 'domain_of': ['ProductOrService']} })
-    keywords: List[Keyword] = Field(default=..., title="keywords", description="""List of terms used to tag and categorize this Item""", json_schema_extra = { "linkml_meta": {'alias': 'keywords',
+    collection: list[Collection] = Field(default=..., title="collection", description="""The collection(s) to which belongs this item""", json_schema_extra = { "linkml_meta": {'alias': 'collection', 'domain_of': ['ProductOrService']} })
+    keywords: list[Keyword] = Field(default=..., title="keywords", description="""List of terms used to tag and categorize this Item""", json_schema_extra = { "linkml_meta": {'alias': 'keywords',
          'domain_of': ['ProductOrService'],
          'exact_mappings': ['dcat:keyword'],
          'recommended': True} })
@@ -6133,11 +6125,11 @@ class Pathogen(Product):
          'comments': ['Possible availabilities may differ from a project to another'],
          'domain_of': ['ProductOrService'],
          'ifabsent': 'string(on request)'} })
-    complementaryDocument: Optional[List[Document]] = Field(default=None, title="complementary document", description="""Any additional documents that provide supplementary information, instructions, or guidelines relevant to the use of this item""", json_schema_extra = { "linkml_meta": {'alias': 'complementaryDocument', 'domain_of': ['ProductOrService']} })
+    complementaryDocument: Optional[list[Document]] = Field(default=None, title="complementary document", description="""Any additional documents that provide supplementary information, instructions, or guidelines relevant to the use of this item""", json_schema_extra = { "linkml_meta": {'alias': 'complementaryDocument', 'domain_of': ['ProductOrService']} })
     technicalRecommendation: Optional[str] = Field(default=None, title="technical recommendation", description="""Expert advice or guidelines provided to ensure the optimal use, performance, and maintenance of what is provided, including best practices, troubleshooting tips, and procedural instructions""", json_schema_extra = { "linkml_meta": {'alias': 'technicalRecommendation', 'domain_of': ['ProductOrService']} })
-    productPicture: Optional[List[Image]] = Field(default=None, title="product picture", description="""A picture that can represent the item""", json_schema_extra = { "linkml_meta": {'alias': 'productPicture', 'domain_of': ['ProductOrService']} })
-    externalRelatedReference: Optional[List[ExternalRelatedReference]] = Field(default=None, title="external related reference", description="""A reference that permits to retrieve another related item from an external provider""", json_schema_extra = { "linkml_meta": {'alias': 'externalRelatedReference', 'domain_of': ['ProductOrService']} })
-    certification: Optional[List[Certification]] = Field(default=None, title="certification", description="""Any certification related to the current product or service; e.g., ISO certification""", json_schema_extra = { "linkml_meta": {'alias': 'certification',
+    productPicture: Optional[list[Image]] = Field(default=None, title="product picture", description="""A picture that can represent the item""", json_schema_extra = { "linkml_meta": {'alias': 'productPicture', 'domain_of': ['ProductOrService']} })
+    externalRelatedReference: Optional[list[ExternalRelatedReference]] = Field(default=None, title="external related reference", description="""A reference that permits to retrieve another related item from an external provider""", json_schema_extra = { "linkml_meta": {'alias': 'externalRelatedReference', 'domain_of': ['ProductOrService']} })
+    certification: Optional[list[Certification]] = Field(default=None, title="certification", description="""Any certification related to the current product or service; e.g., ISO certification""", json_schema_extra = { "linkml_meta": {'alias': 'certification',
          'close_mappings': ['dct:conformsTo'],
          'domain_of': ['ProductOrService']} })
     internalReference: Optional[str] = Field(default=None, title="internal reference", description="""Any reference or indication to be used for local retrieval purpose""", json_schema_extra = { "linkml_meta": {'alias': 'internalReference', 'domain_of': ['ProductOrService']} })
@@ -6181,7 +6173,7 @@ class Virus(Pathogen):
     The virus as a biological material
     """
     linkml_meta: ClassVar[LinkMLMeta] = LinkMLMeta({'close_mappings': ['wd:Q808', 'wd:Q808'],
-         'from_schema': 'https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#',
+         'from_schema': 'https://w3id.org/evorao/',
          'slot_usage': {'coInfectingViruses': {'description': 'Identifies other '
                                                               'viruses that may '
                                                               'co-infect the host '
@@ -6230,21 +6222,21 @@ class Virus(Pathogen):
                                                'title': 'mycoplasmic content'}},
          'title': 'Virus'})
 
-    coInfectingViruses: Optional[List[VirusName]] = Field(default=None, title="co-infecting viruses", description="""Identifies other viruses that may co-infect the host organism along with the primary virus, indicating the presence of multiple viral infections within the same host.""", json_schema_extra = { "linkml_meta": {'alias': 'coInfectingViruses', 'domain_of': ['Virus']} })
+    coInfectingViruses: Optional[list[VirusName]] = Field(default=None, title="co-infecting viruses", description="""Identifies other viruses that may co-infect the host organism along with the primary virus, indicating the presence of multiple viral infections within the same host.""", json_schema_extra = { "linkml_meta": {'alias': 'coInfectingViruses', 'domain_of': ['Virus']} })
     contaminationWithCoInfectingViruses: bool = Field(default=False, title="contamination with co-infecting viruses", description="""A boolean value indicating whether there is contamination with co-infecting viruses""", json_schema_extra = { "linkml_meta": {'alias': 'contaminationWithCoInfectingViruses',
          'domain_of': ['Virus'],
          'ifabsent': 'false'} })
     mycoplasmicContent: bool = Field(default=..., title="mycoplasmic content", description="""Indicates the presence of mycoplasma contamination within the sample""", json_schema_extra = { "linkml_meta": {'alias': 'mycoplasmicContent', 'domain_of': ['Virus']} })
     biologicalMaterialOrigin: BiologicalMaterialOrigin = Field(default=..., title="Biological Material origin", description="""Information about the origin of the biological material, essential for access, utilization, and benefit-sharing of genetic resources in compliance with the Nagoya Protocol""", json_schema_extra = { "linkml_meta": {'alias': 'biologicalMaterialOrigin',
          'domain_of': ['Pathogen', 'Protein', 'Nucleic Acid']} })
-    suspectedEpidemiologicalOrigin: Optional[List[GeographicalOrigin]] = Field(default=None, title="suspected epidemiological origin", description="""The potential geographical or environmental source from which the pathogen is believed to have originated or been transmitted""", json_schema_extra = { "linkml_meta": {'alias': 'suspectedEpidemiologicalOrigin',
+    suspectedEpidemiologicalOrigin: Optional[list[GeographicalOrigin]] = Field(default=None, title="suspected epidemiological origin", description="""The potential geographical or environmental source from which the pathogen is believed to have originated or been transmitted""", json_schema_extra = { "linkml_meta": {'alias': 'suspectedEpidemiologicalOrigin',
          'close_mappings': ['dct:spatial'],
          'domain_of': ['Pathogen']} })
-    isolationHost: Optional[List[IsolationHost]] = Field(default=None, title="isolation host", description="""The host organism from which the pathogen was originally isolated""", json_schema_extra = { "linkml_meta": {'alias': 'isolationHost', 'domain_of': ['Pathogen']} })
-    productionCellLine: Optional[List[ProductionCellLine]] = Field(default=None, title="production cell line", description="""The cell line used for the production or propagation of the pathogen, detailing the cellular environment employed in its cultivation and study""", json_schema_extra = { "linkml_meta": {'alias': 'productionCellLine', 'domain_of': ['Pathogen']} })
-    propagationHost: Optional[List[PropagationHost]] = Field(default=None, title="propagation host", description="""The host organism that propagates the pathogen""", json_schema_extra = { "linkml_meta": {'alias': 'propagationHost', 'domain_of': ['Pathogen']} })
-    transmissionMethod: Optional[List[TransmissionMethod]] = Field(default=None, title="transmission method", description="""The method or route through which the pathogen is transmitted from one host to another, detailing the mechanisms of infection spread.""", json_schema_extra = { "linkml_meta": {'alias': 'transmissionMethod', 'domain_of': ['Pathogen']} })
-    sequence: List[Sequence] = Field(default=..., title="sequence", description="""The related sequence information from a sequence provider or in fasta format""", json_schema_extra = { "linkml_meta": {'alias': 'sequence',
+    isolationHost: Optional[list[IsolationHost]] = Field(default=None, title="isolation host", description="""The host organism from which the pathogen was originally isolated""", json_schema_extra = { "linkml_meta": {'alias': 'isolationHost', 'domain_of': ['Pathogen']} })
+    productionCellLine: Optional[list[ProductionCellLine]] = Field(default=None, title="production cell line", description="""The cell line used for the production or propagation of the pathogen, detailing the cellular environment employed in its cultivation and study""", json_schema_extra = { "linkml_meta": {'alias': 'productionCellLine', 'domain_of': ['Pathogen']} })
+    propagationHost: Optional[list[PropagationHost]] = Field(default=None, title="propagation host", description="""The host organism that propagates the pathogen""", json_schema_extra = { "linkml_meta": {'alias': 'propagationHost', 'domain_of': ['Pathogen']} })
+    transmissionMethod: Optional[list[TransmissionMethod]] = Field(default=None, title="transmission method", description="""The method or route through which the pathogen is transmitted from one host to another, detailing the mechanisms of infection spread.""", json_schema_extra = { "linkml_meta": {'alias': 'transmissionMethod', 'domain_of': ['Pathogen']} })
+    sequence: list[Sequence] = Field(default=..., title="sequence", description="""The related sequence information from a sequence provider or in fasta format""", json_schema_extra = { "linkml_meta": {'alias': 'sequence',
          'domain_of': ['Pathogen',
                        'RecombinantPartIdentification',
                        'Protein',
@@ -6313,7 +6305,7 @@ class Virus(Pathogen):
     category: ProductCategory = Field(default=..., title="category", description="""The main category of the service or product""", json_schema_extra = { "linkml_meta": {'alias': 'category',
          'domain_of': ['ProductOrService'],
          'exact_mappings': ['dcat:theme']} })
-    additionalCategory: Optional[List[ProductCategory]] = Field(default=None, title="additional category", description="""Any category apart from its main category in which this product or service can fit""", json_schema_extra = { "linkml_meta": {'alias': 'additionalCategory',
+    additionalCategory: Optional[list[ProductCategory]] = Field(default=None, title="additional category", description="""Any category apart from its main category in which this product or service can fit""", json_schema_extra = { "linkml_meta": {'alias': 'additionalCategory',
          'domain_of': ['ProductOrService'],
          'exact_mappings': ['dcat:theme'],
          'recommended': True} })
@@ -6326,13 +6318,13 @@ class Virus(Pathogen):
          'ifabsent': 'string(on request)',
          'recommended': True} })
     qualityGrading: Optional[str] = Field(default=None, title="quality grading", description="""Information that permits to assess the quality level of what will be provided""", json_schema_extra = { "linkml_meta": {'alias': 'qualityGrading', 'domain_of': ['ProductOrService']} })
-    pathogenIdentification: List[PathogenIdentification] = Field(default=..., title="pathogen identification", description="""The identification of the pathogen or group of pathogens (e.g; name, taxon identification, etc.) related to the current item.""", json_schema_extra = { "linkml_meta": {'alias': 'pathogenIdentification',
+    pathogenIdentification: list[PathogenIdentification] = Field(default=..., title="pathogen identification", description="""The identification of the pathogen or group of pathogens (e.g; name, taxon identification, etc.) related to the current item.""", json_schema_extra = { "linkml_meta": {'alias': 'pathogenIdentification',
          'comments': ['The pathogen identification contains information about name and '
                       'taxon but in some cases(e.g: FAIRSHARING) there may have no '
                       'direct pathogen related but simply a taxonomic information .... '
                       'the default value should be the root of virology: Viruses'],
          'domain_of': ['ProductOrService']} })
-    relatedDOI: Optional[List[DOI]] = Field(default=None, title="DOI", description="""Any Digital Object Identifier that can be related""", json_schema_extra = { "linkml_meta": {'alias': 'relatedDOI',
+    relatedDOI: Optional[list[DOI]] = Field(default=None, title="DOI", description="""Any Digital Object Identifier that can be related""", json_schema_extra = { "linkml_meta": {'alias': 'relatedDOI',
          'close_mappings': ['wdp:P356'],
          'domain_of': ['ProductOrService', 'Publication']} })
     riskGroup: Optional[RiskGroup] = Field(default=None, title="risk group", description="""The highest risk group related to this resource. The risk group of a biological agent guiding its initial handling in labs according to the risk group classification defined by the WHO laboratory biosafety manual""", json_schema_extra = { "linkml_meta": {'alias': 'riskGroup',
@@ -6346,8 +6338,8 @@ class Virus(Pathogen):
          'domain_of': ['ProductOrService'],
          'recommended': True} })
     provider: Provider = Field(default=..., title="provider", description="""A provider of this product or service, as a specific organization""", json_schema_extra = { "linkml_meta": {'alias': 'provider', 'domain_of': ['ProductOrService']} })
-    collection: List[Collection] = Field(default=..., title="collection", description="""The collection(s) to which belongs this item""", json_schema_extra = { "linkml_meta": {'alias': 'collection', 'domain_of': ['ProductOrService']} })
-    keywords: List[Keyword] = Field(default=..., title="keywords", description="""List of terms used to tag and categorize this Item""", json_schema_extra = { "linkml_meta": {'alias': 'keywords',
+    collection: list[Collection] = Field(default=..., title="collection", description="""The collection(s) to which belongs this item""", json_schema_extra = { "linkml_meta": {'alias': 'collection', 'domain_of': ['ProductOrService']} })
+    keywords: list[Keyword] = Field(default=..., title="keywords", description="""List of terms used to tag and categorize this Item""", json_schema_extra = { "linkml_meta": {'alias': 'keywords',
          'domain_of': ['ProductOrService'],
          'exact_mappings': ['dcat:keyword'],
          'recommended': True} })
@@ -6355,11 +6347,11 @@ class Virus(Pathogen):
          'comments': ['Possible availabilities may differ from a project to another'],
          'domain_of': ['ProductOrService'],
          'ifabsent': 'string(on request)'} })
-    complementaryDocument: Optional[List[Document]] = Field(default=None, title="complementary document", description="""Any additional documents that provide supplementary information, instructions, or guidelines relevant to the use of this item""", json_schema_extra = { "linkml_meta": {'alias': 'complementaryDocument', 'domain_of': ['ProductOrService']} })
+    complementaryDocument: Optional[list[Document]] = Field(default=None, title="complementary document", description="""Any additional documents that provide supplementary information, instructions, or guidelines relevant to the use of this item""", json_schema_extra = { "linkml_meta": {'alias': 'complementaryDocument', 'domain_of': ['ProductOrService']} })
     technicalRecommendation: Optional[str] = Field(default=None, title="technical recommendation", description="""Expert advice or guidelines provided to ensure the optimal use, performance, and maintenance of what is provided, including best practices, troubleshooting tips, and procedural instructions""", json_schema_extra = { "linkml_meta": {'alias': 'technicalRecommendation', 'domain_of': ['ProductOrService']} })
-    productPicture: Optional[List[Image]] = Field(default=None, title="product picture", description="""A picture that can represent the item""", json_schema_extra = { "linkml_meta": {'alias': 'productPicture', 'domain_of': ['ProductOrService']} })
-    externalRelatedReference: Optional[List[ExternalRelatedReference]] = Field(default=None, title="external related reference", description="""A reference that permits to retrieve another related item from an external provider""", json_schema_extra = { "linkml_meta": {'alias': 'externalRelatedReference', 'domain_of': ['ProductOrService']} })
-    certification: Optional[List[Certification]] = Field(default=None, title="certification", description="""Any certification related to the current product or service; e.g., ISO certification""", json_schema_extra = { "linkml_meta": {'alias': 'certification',
+    productPicture: Optional[list[Image]] = Field(default=None, title="product picture", description="""A picture that can represent the item""", json_schema_extra = { "linkml_meta": {'alias': 'productPicture', 'domain_of': ['ProductOrService']} })
+    externalRelatedReference: Optional[list[ExternalRelatedReference]] = Field(default=None, title="external related reference", description="""A reference that permits to retrieve another related item from an external provider""", json_schema_extra = { "linkml_meta": {'alias': 'externalRelatedReference', 'domain_of': ['ProductOrService']} })
+    certification: Optional[list[Certification]] = Field(default=None, title="certification", description="""Any certification related to the current product or service; e.g., ISO certification""", json_schema_extra = { "linkml_meta": {'alias': 'certification',
          'close_mappings': ['dct:conformsTo'],
          'domain_of': ['ProductOrService']} })
     internalReference: Optional[str] = Field(default=None, title="internal reference", description="""Any reference or indication to be used for local retrieval purpose""", json_schema_extra = { "linkml_meta": {'alias': 'internalReference', 'domain_of': ['ProductOrService']} })
@@ -6403,19 +6395,19 @@ class Bacterium(Pathogen):
     The bacterium as a biological material
     """
     linkml_meta: ClassVar[LinkMLMeta] = LinkMLMeta({'close_mappings': ['wd:Q10876', 'wd:Q10876'],
-         'from_schema': 'https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#',
+         'from_schema': 'https://w3id.org/evorao/',
          'title': 'Bacterium'})
 
     biologicalMaterialOrigin: BiologicalMaterialOrigin = Field(default=..., title="Biological Material origin", description="""Information about the origin of the biological material, essential for access, utilization, and benefit-sharing of genetic resources in compliance with the Nagoya Protocol""", json_schema_extra = { "linkml_meta": {'alias': 'biologicalMaterialOrigin',
          'domain_of': ['Pathogen', 'Protein', 'Nucleic Acid']} })
-    suspectedEpidemiologicalOrigin: Optional[List[GeographicalOrigin]] = Field(default=None, title="suspected epidemiological origin", description="""The potential geographical or environmental source from which the pathogen is believed to have originated or been transmitted""", json_schema_extra = { "linkml_meta": {'alias': 'suspectedEpidemiologicalOrigin',
+    suspectedEpidemiologicalOrigin: Optional[list[GeographicalOrigin]] = Field(default=None, title="suspected epidemiological origin", description="""The potential geographical or environmental source from which the pathogen is believed to have originated or been transmitted""", json_schema_extra = { "linkml_meta": {'alias': 'suspectedEpidemiologicalOrigin',
          'close_mappings': ['dct:spatial'],
          'domain_of': ['Pathogen']} })
-    isolationHost: Optional[List[IsolationHost]] = Field(default=None, title="isolation host", description="""The host organism from which the pathogen was originally isolated""", json_schema_extra = { "linkml_meta": {'alias': 'isolationHost', 'domain_of': ['Pathogen']} })
-    productionCellLine: Optional[List[ProductionCellLine]] = Field(default=None, title="production cell line", description="""The cell line used for the production or propagation of the pathogen, detailing the cellular environment employed in its cultivation and study""", json_schema_extra = { "linkml_meta": {'alias': 'productionCellLine', 'domain_of': ['Pathogen']} })
-    propagationHost: Optional[List[PropagationHost]] = Field(default=None, title="propagation host", description="""The host organism that propagates the pathogen""", json_schema_extra = { "linkml_meta": {'alias': 'propagationHost', 'domain_of': ['Pathogen']} })
-    transmissionMethod: Optional[List[TransmissionMethod]] = Field(default=None, title="transmission method", description="""The method or route through which the pathogen is transmitted from one host to another, detailing the mechanisms of infection spread.""", json_schema_extra = { "linkml_meta": {'alias': 'transmissionMethod', 'domain_of': ['Pathogen']} })
-    sequence: List[Sequence] = Field(default=..., title="sequence", description="""The related sequence information from a sequence provider or in fasta format""", json_schema_extra = { "linkml_meta": {'alias': 'sequence',
+    isolationHost: Optional[list[IsolationHost]] = Field(default=None, title="isolation host", description="""The host organism from which the pathogen was originally isolated""", json_schema_extra = { "linkml_meta": {'alias': 'isolationHost', 'domain_of': ['Pathogen']} })
+    productionCellLine: Optional[list[ProductionCellLine]] = Field(default=None, title="production cell line", description="""The cell line used for the production or propagation of the pathogen, detailing the cellular environment employed in its cultivation and study""", json_schema_extra = { "linkml_meta": {'alias': 'productionCellLine', 'domain_of': ['Pathogen']} })
+    propagationHost: Optional[list[PropagationHost]] = Field(default=None, title="propagation host", description="""The host organism that propagates the pathogen""", json_schema_extra = { "linkml_meta": {'alias': 'propagationHost', 'domain_of': ['Pathogen']} })
+    transmissionMethod: Optional[list[TransmissionMethod]] = Field(default=None, title="transmission method", description="""The method or route through which the pathogen is transmitted from one host to another, detailing the mechanisms of infection spread.""", json_schema_extra = { "linkml_meta": {'alias': 'transmissionMethod', 'domain_of': ['Pathogen']} })
+    sequence: list[Sequence] = Field(default=..., title="sequence", description="""The related sequence information from a sequence provider or in fasta format""", json_schema_extra = { "linkml_meta": {'alias': 'sequence',
          'domain_of': ['Pathogen',
                        'RecombinantPartIdentification',
                        'Protein',
@@ -6484,7 +6476,7 @@ class Bacterium(Pathogen):
     category: ProductCategory = Field(default=..., title="category", description="""The main category of the service or product""", json_schema_extra = { "linkml_meta": {'alias': 'category',
          'domain_of': ['ProductOrService'],
          'exact_mappings': ['dcat:theme']} })
-    additionalCategory: Optional[List[ProductCategory]] = Field(default=None, title="additional category", description="""Any category apart from its main category in which this product or service can fit""", json_schema_extra = { "linkml_meta": {'alias': 'additionalCategory',
+    additionalCategory: Optional[list[ProductCategory]] = Field(default=None, title="additional category", description="""Any category apart from its main category in which this product or service can fit""", json_schema_extra = { "linkml_meta": {'alias': 'additionalCategory',
          'domain_of': ['ProductOrService'],
          'exact_mappings': ['dcat:theme'],
          'recommended': True} })
@@ -6497,13 +6489,13 @@ class Bacterium(Pathogen):
          'ifabsent': 'string(on request)',
          'recommended': True} })
     qualityGrading: Optional[str] = Field(default=None, title="quality grading", description="""Information that permits to assess the quality level of what will be provided""", json_schema_extra = { "linkml_meta": {'alias': 'qualityGrading', 'domain_of': ['ProductOrService']} })
-    pathogenIdentification: List[PathogenIdentification] = Field(default=..., title="pathogen identification", description="""The identification of the pathogen or group of pathogens (e.g; name, taxon identification, etc.) related to the current item.""", json_schema_extra = { "linkml_meta": {'alias': 'pathogenIdentification',
+    pathogenIdentification: list[PathogenIdentification] = Field(default=..., title="pathogen identification", description="""The identification of the pathogen or group of pathogens (e.g; name, taxon identification, etc.) related to the current item.""", json_schema_extra = { "linkml_meta": {'alias': 'pathogenIdentification',
          'comments': ['The pathogen identification contains information about name and '
                       'taxon but in some cases(e.g: FAIRSHARING) there may have no '
                       'direct pathogen related but simply a taxonomic information .... '
                       'the default value should be the root of virology: Viruses'],
          'domain_of': ['ProductOrService']} })
-    relatedDOI: Optional[List[DOI]] = Field(default=None, title="DOI", description="""Any Digital Object Identifier that can be related""", json_schema_extra = { "linkml_meta": {'alias': 'relatedDOI',
+    relatedDOI: Optional[list[DOI]] = Field(default=None, title="DOI", description="""Any Digital Object Identifier that can be related""", json_schema_extra = { "linkml_meta": {'alias': 'relatedDOI',
          'close_mappings': ['wdp:P356'],
          'domain_of': ['ProductOrService', 'Publication']} })
     riskGroup: Optional[RiskGroup] = Field(default=None, title="risk group", description="""The highest risk group related to this resource. The risk group of a biological agent guiding its initial handling in labs according to the risk group classification defined by the WHO laboratory biosafety manual""", json_schema_extra = { "linkml_meta": {'alias': 'riskGroup',
@@ -6517,8 +6509,8 @@ class Bacterium(Pathogen):
          'domain_of': ['ProductOrService'],
          'recommended': True} })
     provider: Provider = Field(default=..., title="provider", description="""A provider of this product or service, as a specific organization""", json_schema_extra = { "linkml_meta": {'alias': 'provider', 'domain_of': ['ProductOrService']} })
-    collection: List[Collection] = Field(default=..., title="collection", description="""The collection(s) to which belongs this item""", json_schema_extra = { "linkml_meta": {'alias': 'collection', 'domain_of': ['ProductOrService']} })
-    keywords: List[Keyword] = Field(default=..., title="keywords", description="""List of terms used to tag and categorize this Item""", json_schema_extra = { "linkml_meta": {'alias': 'keywords',
+    collection: list[Collection] = Field(default=..., title="collection", description="""The collection(s) to which belongs this item""", json_schema_extra = { "linkml_meta": {'alias': 'collection', 'domain_of': ['ProductOrService']} })
+    keywords: list[Keyword] = Field(default=..., title="keywords", description="""List of terms used to tag and categorize this Item""", json_schema_extra = { "linkml_meta": {'alias': 'keywords',
          'domain_of': ['ProductOrService'],
          'exact_mappings': ['dcat:keyword'],
          'recommended': True} })
@@ -6526,11 +6518,11 @@ class Bacterium(Pathogen):
          'comments': ['Possible availabilities may differ from a project to another'],
          'domain_of': ['ProductOrService'],
          'ifabsent': 'string(on request)'} })
-    complementaryDocument: Optional[List[Document]] = Field(default=None, title="complementary document", description="""Any additional documents that provide supplementary information, instructions, or guidelines relevant to the use of this item""", json_schema_extra = { "linkml_meta": {'alias': 'complementaryDocument', 'domain_of': ['ProductOrService']} })
+    complementaryDocument: Optional[list[Document]] = Field(default=None, title="complementary document", description="""Any additional documents that provide supplementary information, instructions, or guidelines relevant to the use of this item""", json_schema_extra = { "linkml_meta": {'alias': 'complementaryDocument', 'domain_of': ['ProductOrService']} })
     technicalRecommendation: Optional[str] = Field(default=None, title="technical recommendation", description="""Expert advice or guidelines provided to ensure the optimal use, performance, and maintenance of what is provided, including best practices, troubleshooting tips, and procedural instructions""", json_schema_extra = { "linkml_meta": {'alias': 'technicalRecommendation', 'domain_of': ['ProductOrService']} })
-    productPicture: Optional[List[Image]] = Field(default=None, title="product picture", description="""A picture that can represent the item""", json_schema_extra = { "linkml_meta": {'alias': 'productPicture', 'domain_of': ['ProductOrService']} })
-    externalRelatedReference: Optional[List[ExternalRelatedReference]] = Field(default=None, title="external related reference", description="""A reference that permits to retrieve another related item from an external provider""", json_schema_extra = { "linkml_meta": {'alias': 'externalRelatedReference', 'domain_of': ['ProductOrService']} })
-    certification: Optional[List[Certification]] = Field(default=None, title="certification", description="""Any certification related to the current product or service; e.g., ISO certification""", json_schema_extra = { "linkml_meta": {'alias': 'certification',
+    productPicture: Optional[list[Image]] = Field(default=None, title="product picture", description="""A picture that can represent the item""", json_schema_extra = { "linkml_meta": {'alias': 'productPicture', 'domain_of': ['ProductOrService']} })
+    externalRelatedReference: Optional[list[ExternalRelatedReference]] = Field(default=None, title="external related reference", description="""A reference that permits to retrieve another related item from an external provider""", json_schema_extra = { "linkml_meta": {'alias': 'externalRelatedReference', 'domain_of': ['ProductOrService']} })
+    certification: Optional[list[Certification]] = Field(default=None, title="certification", description="""Any certification related to the current product or service; e.g., ISO certification""", json_schema_extra = { "linkml_meta": {'alias': 'certification',
          'close_mappings': ['dct:conformsTo'],
          'domain_of': ['ProductOrService']} })
     internalReference: Optional[str] = Field(default=None, title="internal reference", description="""Any reference or indication to be used for local retrieval purpose""", json_schema_extra = { "linkml_meta": {'alias': 'internalReference', 'domain_of': ['ProductOrService']} })
@@ -6574,19 +6566,19 @@ class Fungus(Pathogen):
     The fungus as a biological material
     """
     linkml_meta: ClassVar[LinkMLMeta] = LinkMLMeta({'close_mappings': ['wd:Q764', 'wd:Q764'],
-         'from_schema': 'https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#',
+         'from_schema': 'https://w3id.org/evorao/',
          'title': 'Fungus'})
 
     biologicalMaterialOrigin: BiologicalMaterialOrigin = Field(default=..., title="Biological Material origin", description="""Information about the origin of the biological material, essential for access, utilization, and benefit-sharing of genetic resources in compliance with the Nagoya Protocol""", json_schema_extra = { "linkml_meta": {'alias': 'biologicalMaterialOrigin',
          'domain_of': ['Pathogen', 'Protein', 'Nucleic Acid']} })
-    suspectedEpidemiologicalOrigin: Optional[List[GeographicalOrigin]] = Field(default=None, title="suspected epidemiological origin", description="""The potential geographical or environmental source from which the pathogen is believed to have originated or been transmitted""", json_schema_extra = { "linkml_meta": {'alias': 'suspectedEpidemiologicalOrigin',
+    suspectedEpidemiologicalOrigin: Optional[list[GeographicalOrigin]] = Field(default=None, title="suspected epidemiological origin", description="""The potential geographical or environmental source from which the pathogen is believed to have originated or been transmitted""", json_schema_extra = { "linkml_meta": {'alias': 'suspectedEpidemiologicalOrigin',
          'close_mappings': ['dct:spatial'],
          'domain_of': ['Pathogen']} })
-    isolationHost: Optional[List[IsolationHost]] = Field(default=None, title="isolation host", description="""The host organism from which the pathogen was originally isolated""", json_schema_extra = { "linkml_meta": {'alias': 'isolationHost', 'domain_of': ['Pathogen']} })
-    productionCellLine: Optional[List[ProductionCellLine]] = Field(default=None, title="production cell line", description="""The cell line used for the production or propagation of the pathogen, detailing the cellular environment employed in its cultivation and study""", json_schema_extra = { "linkml_meta": {'alias': 'productionCellLine', 'domain_of': ['Pathogen']} })
-    propagationHost: Optional[List[PropagationHost]] = Field(default=None, title="propagation host", description="""The host organism that propagates the pathogen""", json_schema_extra = { "linkml_meta": {'alias': 'propagationHost', 'domain_of': ['Pathogen']} })
-    transmissionMethod: Optional[List[TransmissionMethod]] = Field(default=None, title="transmission method", description="""The method or route through which the pathogen is transmitted from one host to another, detailing the mechanisms of infection spread.""", json_schema_extra = { "linkml_meta": {'alias': 'transmissionMethod', 'domain_of': ['Pathogen']} })
-    sequence: List[Sequence] = Field(default=..., title="sequence", description="""The related sequence information from a sequence provider or in fasta format""", json_schema_extra = { "linkml_meta": {'alias': 'sequence',
+    isolationHost: Optional[list[IsolationHost]] = Field(default=None, title="isolation host", description="""The host organism from which the pathogen was originally isolated""", json_schema_extra = { "linkml_meta": {'alias': 'isolationHost', 'domain_of': ['Pathogen']} })
+    productionCellLine: Optional[list[ProductionCellLine]] = Field(default=None, title="production cell line", description="""The cell line used for the production or propagation of the pathogen, detailing the cellular environment employed in its cultivation and study""", json_schema_extra = { "linkml_meta": {'alias': 'productionCellLine', 'domain_of': ['Pathogen']} })
+    propagationHost: Optional[list[PropagationHost]] = Field(default=None, title="propagation host", description="""The host organism that propagates the pathogen""", json_schema_extra = { "linkml_meta": {'alias': 'propagationHost', 'domain_of': ['Pathogen']} })
+    transmissionMethod: Optional[list[TransmissionMethod]] = Field(default=None, title="transmission method", description="""The method or route through which the pathogen is transmitted from one host to another, detailing the mechanisms of infection spread.""", json_schema_extra = { "linkml_meta": {'alias': 'transmissionMethod', 'domain_of': ['Pathogen']} })
+    sequence: list[Sequence] = Field(default=..., title="sequence", description="""The related sequence information from a sequence provider or in fasta format""", json_schema_extra = { "linkml_meta": {'alias': 'sequence',
          'domain_of': ['Pathogen',
                        'RecombinantPartIdentification',
                        'Protein',
@@ -6655,7 +6647,7 @@ class Fungus(Pathogen):
     category: ProductCategory = Field(default=..., title="category", description="""The main category of the service or product""", json_schema_extra = { "linkml_meta": {'alias': 'category',
          'domain_of': ['ProductOrService'],
          'exact_mappings': ['dcat:theme']} })
-    additionalCategory: Optional[List[ProductCategory]] = Field(default=None, title="additional category", description="""Any category apart from its main category in which this product or service can fit""", json_schema_extra = { "linkml_meta": {'alias': 'additionalCategory',
+    additionalCategory: Optional[list[ProductCategory]] = Field(default=None, title="additional category", description="""Any category apart from its main category in which this product or service can fit""", json_schema_extra = { "linkml_meta": {'alias': 'additionalCategory',
          'domain_of': ['ProductOrService'],
          'exact_mappings': ['dcat:theme'],
          'recommended': True} })
@@ -6668,13 +6660,13 @@ class Fungus(Pathogen):
          'ifabsent': 'string(on request)',
          'recommended': True} })
     qualityGrading: Optional[str] = Field(default=None, title="quality grading", description="""Information that permits to assess the quality level of what will be provided""", json_schema_extra = { "linkml_meta": {'alias': 'qualityGrading', 'domain_of': ['ProductOrService']} })
-    pathogenIdentification: List[PathogenIdentification] = Field(default=..., title="pathogen identification", description="""The identification of the pathogen or group of pathogens (e.g; name, taxon identification, etc.) related to the current item.""", json_schema_extra = { "linkml_meta": {'alias': 'pathogenIdentification',
+    pathogenIdentification: list[PathogenIdentification] = Field(default=..., title="pathogen identification", description="""The identification of the pathogen or group of pathogens (e.g; name, taxon identification, etc.) related to the current item.""", json_schema_extra = { "linkml_meta": {'alias': 'pathogenIdentification',
          'comments': ['The pathogen identification contains information about name and '
                       'taxon but in some cases(e.g: FAIRSHARING) there may have no '
                       'direct pathogen related but simply a taxonomic information .... '
                       'the default value should be the root of virology: Viruses'],
          'domain_of': ['ProductOrService']} })
-    relatedDOI: Optional[List[DOI]] = Field(default=None, title="DOI", description="""Any Digital Object Identifier that can be related""", json_schema_extra = { "linkml_meta": {'alias': 'relatedDOI',
+    relatedDOI: Optional[list[DOI]] = Field(default=None, title="DOI", description="""Any Digital Object Identifier that can be related""", json_schema_extra = { "linkml_meta": {'alias': 'relatedDOI',
          'close_mappings': ['wdp:P356'],
          'domain_of': ['ProductOrService', 'Publication']} })
     riskGroup: Optional[RiskGroup] = Field(default=None, title="risk group", description="""The highest risk group related to this resource. The risk group of a biological agent guiding its initial handling in labs according to the risk group classification defined by the WHO laboratory biosafety manual""", json_schema_extra = { "linkml_meta": {'alias': 'riskGroup',
@@ -6688,8 +6680,8 @@ class Fungus(Pathogen):
          'domain_of': ['ProductOrService'],
          'recommended': True} })
     provider: Provider = Field(default=..., title="provider", description="""A provider of this product or service, as a specific organization""", json_schema_extra = { "linkml_meta": {'alias': 'provider', 'domain_of': ['ProductOrService']} })
-    collection: List[Collection] = Field(default=..., title="collection", description="""The collection(s) to which belongs this item""", json_schema_extra = { "linkml_meta": {'alias': 'collection', 'domain_of': ['ProductOrService']} })
-    keywords: List[Keyword] = Field(default=..., title="keywords", description="""List of terms used to tag and categorize this Item""", json_schema_extra = { "linkml_meta": {'alias': 'keywords',
+    collection: list[Collection] = Field(default=..., title="collection", description="""The collection(s) to which belongs this item""", json_schema_extra = { "linkml_meta": {'alias': 'collection', 'domain_of': ['ProductOrService']} })
+    keywords: list[Keyword] = Field(default=..., title="keywords", description="""List of terms used to tag and categorize this Item""", json_schema_extra = { "linkml_meta": {'alias': 'keywords',
          'domain_of': ['ProductOrService'],
          'exact_mappings': ['dcat:keyword'],
          'recommended': True} })
@@ -6697,11 +6689,11 @@ class Fungus(Pathogen):
          'comments': ['Possible availabilities may differ from a project to another'],
          'domain_of': ['ProductOrService'],
          'ifabsent': 'string(on request)'} })
-    complementaryDocument: Optional[List[Document]] = Field(default=None, title="complementary document", description="""Any additional documents that provide supplementary information, instructions, or guidelines relevant to the use of this item""", json_schema_extra = { "linkml_meta": {'alias': 'complementaryDocument', 'domain_of': ['ProductOrService']} })
+    complementaryDocument: Optional[list[Document]] = Field(default=None, title="complementary document", description="""Any additional documents that provide supplementary information, instructions, or guidelines relevant to the use of this item""", json_schema_extra = { "linkml_meta": {'alias': 'complementaryDocument', 'domain_of': ['ProductOrService']} })
     technicalRecommendation: Optional[str] = Field(default=None, title="technical recommendation", description="""Expert advice or guidelines provided to ensure the optimal use, performance, and maintenance of what is provided, including best practices, troubleshooting tips, and procedural instructions""", json_schema_extra = { "linkml_meta": {'alias': 'technicalRecommendation', 'domain_of': ['ProductOrService']} })
-    productPicture: Optional[List[Image]] = Field(default=None, title="product picture", description="""A picture that can represent the item""", json_schema_extra = { "linkml_meta": {'alias': 'productPicture', 'domain_of': ['ProductOrService']} })
-    externalRelatedReference: Optional[List[ExternalRelatedReference]] = Field(default=None, title="external related reference", description="""A reference that permits to retrieve another related item from an external provider""", json_schema_extra = { "linkml_meta": {'alias': 'externalRelatedReference', 'domain_of': ['ProductOrService']} })
-    certification: Optional[List[Certification]] = Field(default=None, title="certification", description="""Any certification related to the current product or service; e.g., ISO certification""", json_schema_extra = { "linkml_meta": {'alias': 'certification',
+    productPicture: Optional[list[Image]] = Field(default=None, title="product picture", description="""A picture that can represent the item""", json_schema_extra = { "linkml_meta": {'alias': 'productPicture', 'domain_of': ['ProductOrService']} })
+    externalRelatedReference: Optional[list[ExternalRelatedReference]] = Field(default=None, title="external related reference", description="""A reference that permits to retrieve another related item from an external provider""", json_schema_extra = { "linkml_meta": {'alias': 'externalRelatedReference', 'domain_of': ['ProductOrService']} })
+    certification: Optional[list[Certification]] = Field(default=None, title="certification", description="""Any certification related to the current product or service; e.g., ISO certification""", json_schema_extra = { "linkml_meta": {'alias': 'certification',
          'close_mappings': ['dct:conformsTo'],
          'domain_of': ['ProductOrService']} })
     internalReference: Optional[str] = Field(default=None, title="internal reference", description="""Any reference or indication to be used for local retrieval purpose""", json_schema_extra = { "linkml_meta": {'alias': 'internalReference', 'domain_of': ['ProductOrService']} })
@@ -6745,19 +6737,19 @@ class Protozoan(Pathogen):
     The protozoan as a biological material
     """
     linkml_meta: ClassVar[LinkMLMeta] = LinkMLMeta({'close_mappings': ['wd:Q101274', 'wd:Q101274'],
-         'from_schema': 'https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#',
+         'from_schema': 'https://w3id.org/evorao/',
          'title': 'Protozoan'})
 
     biologicalMaterialOrigin: BiologicalMaterialOrigin = Field(default=..., title="Biological Material origin", description="""Information about the origin of the biological material, essential for access, utilization, and benefit-sharing of genetic resources in compliance with the Nagoya Protocol""", json_schema_extra = { "linkml_meta": {'alias': 'biologicalMaterialOrigin',
          'domain_of': ['Pathogen', 'Protein', 'Nucleic Acid']} })
-    suspectedEpidemiologicalOrigin: Optional[List[GeographicalOrigin]] = Field(default=None, title="suspected epidemiological origin", description="""The potential geographical or environmental source from which the pathogen is believed to have originated or been transmitted""", json_schema_extra = { "linkml_meta": {'alias': 'suspectedEpidemiologicalOrigin',
+    suspectedEpidemiologicalOrigin: Optional[list[GeographicalOrigin]] = Field(default=None, title="suspected epidemiological origin", description="""The potential geographical or environmental source from which the pathogen is believed to have originated or been transmitted""", json_schema_extra = { "linkml_meta": {'alias': 'suspectedEpidemiologicalOrigin',
          'close_mappings': ['dct:spatial'],
          'domain_of': ['Pathogen']} })
-    isolationHost: Optional[List[IsolationHost]] = Field(default=None, title="isolation host", description="""The host organism from which the pathogen was originally isolated""", json_schema_extra = { "linkml_meta": {'alias': 'isolationHost', 'domain_of': ['Pathogen']} })
-    productionCellLine: Optional[List[ProductionCellLine]] = Field(default=None, title="production cell line", description="""The cell line used for the production or propagation of the pathogen, detailing the cellular environment employed in its cultivation and study""", json_schema_extra = { "linkml_meta": {'alias': 'productionCellLine', 'domain_of': ['Pathogen']} })
-    propagationHost: Optional[List[PropagationHost]] = Field(default=None, title="propagation host", description="""The host organism that propagates the pathogen""", json_schema_extra = { "linkml_meta": {'alias': 'propagationHost', 'domain_of': ['Pathogen']} })
-    transmissionMethod: Optional[List[TransmissionMethod]] = Field(default=None, title="transmission method", description="""The method or route through which the pathogen is transmitted from one host to another, detailing the mechanisms of infection spread.""", json_schema_extra = { "linkml_meta": {'alias': 'transmissionMethod', 'domain_of': ['Pathogen']} })
-    sequence: List[Sequence] = Field(default=..., title="sequence", description="""The related sequence information from a sequence provider or in fasta format""", json_schema_extra = { "linkml_meta": {'alias': 'sequence',
+    isolationHost: Optional[list[IsolationHost]] = Field(default=None, title="isolation host", description="""The host organism from which the pathogen was originally isolated""", json_schema_extra = { "linkml_meta": {'alias': 'isolationHost', 'domain_of': ['Pathogen']} })
+    productionCellLine: Optional[list[ProductionCellLine]] = Field(default=None, title="production cell line", description="""The cell line used for the production or propagation of the pathogen, detailing the cellular environment employed in its cultivation and study""", json_schema_extra = { "linkml_meta": {'alias': 'productionCellLine', 'domain_of': ['Pathogen']} })
+    propagationHost: Optional[list[PropagationHost]] = Field(default=None, title="propagation host", description="""The host organism that propagates the pathogen""", json_schema_extra = { "linkml_meta": {'alias': 'propagationHost', 'domain_of': ['Pathogen']} })
+    transmissionMethod: Optional[list[TransmissionMethod]] = Field(default=None, title="transmission method", description="""The method or route through which the pathogen is transmitted from one host to another, detailing the mechanisms of infection spread.""", json_schema_extra = { "linkml_meta": {'alias': 'transmissionMethod', 'domain_of': ['Pathogen']} })
+    sequence: list[Sequence] = Field(default=..., title="sequence", description="""The related sequence information from a sequence provider or in fasta format""", json_schema_extra = { "linkml_meta": {'alias': 'sequence',
          'domain_of': ['Pathogen',
                        'RecombinantPartIdentification',
                        'Protein',
@@ -6826,7 +6818,7 @@ class Protozoan(Pathogen):
     category: ProductCategory = Field(default=..., title="category", description="""The main category of the service or product""", json_schema_extra = { "linkml_meta": {'alias': 'category',
          'domain_of': ['ProductOrService'],
          'exact_mappings': ['dcat:theme']} })
-    additionalCategory: Optional[List[ProductCategory]] = Field(default=None, title="additional category", description="""Any category apart from its main category in which this product or service can fit""", json_schema_extra = { "linkml_meta": {'alias': 'additionalCategory',
+    additionalCategory: Optional[list[ProductCategory]] = Field(default=None, title="additional category", description="""Any category apart from its main category in which this product or service can fit""", json_schema_extra = { "linkml_meta": {'alias': 'additionalCategory',
          'domain_of': ['ProductOrService'],
          'exact_mappings': ['dcat:theme'],
          'recommended': True} })
@@ -6839,13 +6831,13 @@ class Protozoan(Pathogen):
          'ifabsent': 'string(on request)',
          'recommended': True} })
     qualityGrading: Optional[str] = Field(default=None, title="quality grading", description="""Information that permits to assess the quality level of what will be provided""", json_schema_extra = { "linkml_meta": {'alias': 'qualityGrading', 'domain_of': ['ProductOrService']} })
-    pathogenIdentification: List[PathogenIdentification] = Field(default=..., title="pathogen identification", description="""The identification of the pathogen or group of pathogens (e.g; name, taxon identification, etc.) related to the current item.""", json_schema_extra = { "linkml_meta": {'alias': 'pathogenIdentification',
+    pathogenIdentification: list[PathogenIdentification] = Field(default=..., title="pathogen identification", description="""The identification of the pathogen or group of pathogens (e.g; name, taxon identification, etc.) related to the current item.""", json_schema_extra = { "linkml_meta": {'alias': 'pathogenIdentification',
          'comments': ['The pathogen identification contains information about name and '
                       'taxon but in some cases(e.g: FAIRSHARING) there may have no '
                       'direct pathogen related but simply a taxonomic information .... '
                       'the default value should be the root of virology: Viruses'],
          'domain_of': ['ProductOrService']} })
-    relatedDOI: Optional[List[DOI]] = Field(default=None, title="DOI", description="""Any Digital Object Identifier that can be related""", json_schema_extra = { "linkml_meta": {'alias': 'relatedDOI',
+    relatedDOI: Optional[list[DOI]] = Field(default=None, title="DOI", description="""Any Digital Object Identifier that can be related""", json_schema_extra = { "linkml_meta": {'alias': 'relatedDOI',
          'close_mappings': ['wdp:P356'],
          'domain_of': ['ProductOrService', 'Publication']} })
     riskGroup: Optional[RiskGroup] = Field(default=None, title="risk group", description="""The highest risk group related to this resource. The risk group of a biological agent guiding its initial handling in labs according to the risk group classification defined by the WHO laboratory biosafety manual""", json_schema_extra = { "linkml_meta": {'alias': 'riskGroup',
@@ -6859,8 +6851,8 @@ class Protozoan(Pathogen):
          'domain_of': ['ProductOrService'],
          'recommended': True} })
     provider: Provider = Field(default=..., title="provider", description="""A provider of this product or service, as a specific organization""", json_schema_extra = { "linkml_meta": {'alias': 'provider', 'domain_of': ['ProductOrService']} })
-    collection: List[Collection] = Field(default=..., title="collection", description="""The collection(s) to which belongs this item""", json_schema_extra = { "linkml_meta": {'alias': 'collection', 'domain_of': ['ProductOrService']} })
-    keywords: List[Keyword] = Field(default=..., title="keywords", description="""List of terms used to tag and categorize this Item""", json_schema_extra = { "linkml_meta": {'alias': 'keywords',
+    collection: list[Collection] = Field(default=..., title="collection", description="""The collection(s) to which belongs this item""", json_schema_extra = { "linkml_meta": {'alias': 'collection', 'domain_of': ['ProductOrService']} })
+    keywords: list[Keyword] = Field(default=..., title="keywords", description="""List of terms used to tag and categorize this Item""", json_schema_extra = { "linkml_meta": {'alias': 'keywords',
          'domain_of': ['ProductOrService'],
          'exact_mappings': ['dcat:keyword'],
          'recommended': True} })
@@ -6868,11 +6860,11 @@ class Protozoan(Pathogen):
          'comments': ['Possible availabilities may differ from a project to another'],
          'domain_of': ['ProductOrService'],
          'ifabsent': 'string(on request)'} })
-    complementaryDocument: Optional[List[Document]] = Field(default=None, title="complementary document", description="""Any additional documents that provide supplementary information, instructions, or guidelines relevant to the use of this item""", json_schema_extra = { "linkml_meta": {'alias': 'complementaryDocument', 'domain_of': ['ProductOrService']} })
+    complementaryDocument: Optional[list[Document]] = Field(default=None, title="complementary document", description="""Any additional documents that provide supplementary information, instructions, or guidelines relevant to the use of this item""", json_schema_extra = { "linkml_meta": {'alias': 'complementaryDocument', 'domain_of': ['ProductOrService']} })
     technicalRecommendation: Optional[str] = Field(default=None, title="technical recommendation", description="""Expert advice or guidelines provided to ensure the optimal use, performance, and maintenance of what is provided, including best practices, troubleshooting tips, and procedural instructions""", json_schema_extra = { "linkml_meta": {'alias': 'technicalRecommendation', 'domain_of': ['ProductOrService']} })
-    productPicture: Optional[List[Image]] = Field(default=None, title="product picture", description="""A picture that can represent the item""", json_schema_extra = { "linkml_meta": {'alias': 'productPicture', 'domain_of': ['ProductOrService']} })
-    externalRelatedReference: Optional[List[ExternalRelatedReference]] = Field(default=None, title="external related reference", description="""A reference that permits to retrieve another related item from an external provider""", json_schema_extra = { "linkml_meta": {'alias': 'externalRelatedReference', 'domain_of': ['ProductOrService']} })
-    certification: Optional[List[Certification]] = Field(default=None, title="certification", description="""Any certification related to the current product or service; e.g., ISO certification""", json_schema_extra = { "linkml_meta": {'alias': 'certification',
+    productPicture: Optional[list[Image]] = Field(default=None, title="product picture", description="""A picture that can represent the item""", json_schema_extra = { "linkml_meta": {'alias': 'productPicture', 'domain_of': ['ProductOrService']} })
+    externalRelatedReference: Optional[list[ExternalRelatedReference]] = Field(default=None, title="external related reference", description="""A reference that permits to retrieve another related item from an external provider""", json_schema_extra = { "linkml_meta": {'alias': 'externalRelatedReference', 'domain_of': ['ProductOrService']} })
+    certification: Optional[list[Certification]] = Field(default=None, title="certification", description="""Any certification related to the current product or service; e.g., ISO certification""", json_schema_extra = { "linkml_meta": {'alias': 'certification',
          'close_mappings': ['dct:conformsTo'],
          'domain_of': ['ProductOrService']} })
     internalReference: Optional[str] = Field(default=None, title="internal reference", description="""Any reference or indication to be used for local retrieval purpose""", json_schema_extra = { "linkml_meta": {'alias': 'internalReference', 'domain_of': ['ProductOrService']} })
@@ -6916,19 +6908,19 @@ class Viroid(Pathogen):
     The viroid as a biological material
     """
     linkml_meta: ClassVar[LinkMLMeta] = LinkMLMeta({'close_mappings': ['wd:Q209917', 'wd:Q209917'],
-         'from_schema': 'https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#',
+         'from_schema': 'https://w3id.org/evorao/',
          'title': 'Viroid'})
 
     biologicalMaterialOrigin: BiologicalMaterialOrigin = Field(default=..., title="Biological Material origin", description="""Information about the origin of the biological material, essential for access, utilization, and benefit-sharing of genetic resources in compliance with the Nagoya Protocol""", json_schema_extra = { "linkml_meta": {'alias': 'biologicalMaterialOrigin',
          'domain_of': ['Pathogen', 'Protein', 'Nucleic Acid']} })
-    suspectedEpidemiologicalOrigin: Optional[List[GeographicalOrigin]] = Field(default=None, title="suspected epidemiological origin", description="""The potential geographical or environmental source from which the pathogen is believed to have originated or been transmitted""", json_schema_extra = { "linkml_meta": {'alias': 'suspectedEpidemiologicalOrigin',
+    suspectedEpidemiologicalOrigin: Optional[list[GeographicalOrigin]] = Field(default=None, title="suspected epidemiological origin", description="""The potential geographical or environmental source from which the pathogen is believed to have originated or been transmitted""", json_schema_extra = { "linkml_meta": {'alias': 'suspectedEpidemiologicalOrigin',
          'close_mappings': ['dct:spatial'],
          'domain_of': ['Pathogen']} })
-    isolationHost: Optional[List[IsolationHost]] = Field(default=None, title="isolation host", description="""The host organism from which the pathogen was originally isolated""", json_schema_extra = { "linkml_meta": {'alias': 'isolationHost', 'domain_of': ['Pathogen']} })
-    productionCellLine: Optional[List[ProductionCellLine]] = Field(default=None, title="production cell line", description="""The cell line used for the production or propagation of the pathogen, detailing the cellular environment employed in its cultivation and study""", json_schema_extra = { "linkml_meta": {'alias': 'productionCellLine', 'domain_of': ['Pathogen']} })
-    propagationHost: Optional[List[PropagationHost]] = Field(default=None, title="propagation host", description="""The host organism that propagates the pathogen""", json_schema_extra = { "linkml_meta": {'alias': 'propagationHost', 'domain_of': ['Pathogen']} })
-    transmissionMethod: Optional[List[TransmissionMethod]] = Field(default=None, title="transmission method", description="""The method or route through which the pathogen is transmitted from one host to another, detailing the mechanisms of infection spread.""", json_schema_extra = { "linkml_meta": {'alias': 'transmissionMethod', 'domain_of': ['Pathogen']} })
-    sequence: List[Sequence] = Field(default=..., title="sequence", description="""The related sequence information from a sequence provider or in fasta format""", json_schema_extra = { "linkml_meta": {'alias': 'sequence',
+    isolationHost: Optional[list[IsolationHost]] = Field(default=None, title="isolation host", description="""The host organism from which the pathogen was originally isolated""", json_schema_extra = { "linkml_meta": {'alias': 'isolationHost', 'domain_of': ['Pathogen']} })
+    productionCellLine: Optional[list[ProductionCellLine]] = Field(default=None, title="production cell line", description="""The cell line used for the production or propagation of the pathogen, detailing the cellular environment employed in its cultivation and study""", json_schema_extra = { "linkml_meta": {'alias': 'productionCellLine', 'domain_of': ['Pathogen']} })
+    propagationHost: Optional[list[PropagationHost]] = Field(default=None, title="propagation host", description="""The host organism that propagates the pathogen""", json_schema_extra = { "linkml_meta": {'alias': 'propagationHost', 'domain_of': ['Pathogen']} })
+    transmissionMethod: Optional[list[TransmissionMethod]] = Field(default=None, title="transmission method", description="""The method or route through which the pathogen is transmitted from one host to another, detailing the mechanisms of infection spread.""", json_schema_extra = { "linkml_meta": {'alias': 'transmissionMethod', 'domain_of': ['Pathogen']} })
+    sequence: list[Sequence] = Field(default=..., title="sequence", description="""The related sequence information from a sequence provider or in fasta format""", json_schema_extra = { "linkml_meta": {'alias': 'sequence',
          'domain_of': ['Pathogen',
                        'RecombinantPartIdentification',
                        'Protein',
@@ -6997,7 +6989,7 @@ class Viroid(Pathogen):
     category: ProductCategory = Field(default=..., title="category", description="""The main category of the service or product""", json_schema_extra = { "linkml_meta": {'alias': 'category',
          'domain_of': ['ProductOrService'],
          'exact_mappings': ['dcat:theme']} })
-    additionalCategory: Optional[List[ProductCategory]] = Field(default=None, title="additional category", description="""Any category apart from its main category in which this product or service can fit""", json_schema_extra = { "linkml_meta": {'alias': 'additionalCategory',
+    additionalCategory: Optional[list[ProductCategory]] = Field(default=None, title="additional category", description="""Any category apart from its main category in which this product or service can fit""", json_schema_extra = { "linkml_meta": {'alias': 'additionalCategory',
          'domain_of': ['ProductOrService'],
          'exact_mappings': ['dcat:theme'],
          'recommended': True} })
@@ -7010,13 +7002,13 @@ class Viroid(Pathogen):
          'ifabsent': 'string(on request)',
          'recommended': True} })
     qualityGrading: Optional[str] = Field(default=None, title="quality grading", description="""Information that permits to assess the quality level of what will be provided""", json_schema_extra = { "linkml_meta": {'alias': 'qualityGrading', 'domain_of': ['ProductOrService']} })
-    pathogenIdentification: List[PathogenIdentification] = Field(default=..., title="pathogen identification", description="""The identification of the pathogen or group of pathogens (e.g; name, taxon identification, etc.) related to the current item.""", json_schema_extra = { "linkml_meta": {'alias': 'pathogenIdentification',
+    pathogenIdentification: list[PathogenIdentification] = Field(default=..., title="pathogen identification", description="""The identification of the pathogen or group of pathogens (e.g; name, taxon identification, etc.) related to the current item.""", json_schema_extra = { "linkml_meta": {'alias': 'pathogenIdentification',
          'comments': ['The pathogen identification contains information about name and '
                       'taxon but in some cases(e.g: FAIRSHARING) there may have no '
                       'direct pathogen related but simply a taxonomic information .... '
                       'the default value should be the root of virology: Viruses'],
          'domain_of': ['ProductOrService']} })
-    relatedDOI: Optional[List[DOI]] = Field(default=None, title="DOI", description="""Any Digital Object Identifier that can be related""", json_schema_extra = { "linkml_meta": {'alias': 'relatedDOI',
+    relatedDOI: Optional[list[DOI]] = Field(default=None, title="DOI", description="""Any Digital Object Identifier that can be related""", json_schema_extra = { "linkml_meta": {'alias': 'relatedDOI',
          'close_mappings': ['wdp:P356'],
          'domain_of': ['ProductOrService', 'Publication']} })
     riskGroup: Optional[RiskGroup] = Field(default=None, title="risk group", description="""The highest risk group related to this resource. The risk group of a biological agent guiding its initial handling in labs according to the risk group classification defined by the WHO laboratory biosafety manual""", json_schema_extra = { "linkml_meta": {'alias': 'riskGroup',
@@ -7030,8 +7022,8 @@ class Viroid(Pathogen):
          'domain_of': ['ProductOrService'],
          'recommended': True} })
     provider: Provider = Field(default=..., title="provider", description="""A provider of this product or service, as a specific organization""", json_schema_extra = { "linkml_meta": {'alias': 'provider', 'domain_of': ['ProductOrService']} })
-    collection: List[Collection] = Field(default=..., title="collection", description="""The collection(s) to which belongs this item""", json_schema_extra = { "linkml_meta": {'alias': 'collection', 'domain_of': ['ProductOrService']} })
-    keywords: List[Keyword] = Field(default=..., title="keywords", description="""List of terms used to tag and categorize this Item""", json_schema_extra = { "linkml_meta": {'alias': 'keywords',
+    collection: list[Collection] = Field(default=..., title="collection", description="""The collection(s) to which belongs this item""", json_schema_extra = { "linkml_meta": {'alias': 'collection', 'domain_of': ['ProductOrService']} })
+    keywords: list[Keyword] = Field(default=..., title="keywords", description="""List of terms used to tag and categorize this Item""", json_schema_extra = { "linkml_meta": {'alias': 'keywords',
          'domain_of': ['ProductOrService'],
          'exact_mappings': ['dcat:keyword'],
          'recommended': True} })
@@ -7039,11 +7031,11 @@ class Viroid(Pathogen):
          'comments': ['Possible availabilities may differ from a project to another'],
          'domain_of': ['ProductOrService'],
          'ifabsent': 'string(on request)'} })
-    complementaryDocument: Optional[List[Document]] = Field(default=None, title="complementary document", description="""Any additional documents that provide supplementary information, instructions, or guidelines relevant to the use of this item""", json_schema_extra = { "linkml_meta": {'alias': 'complementaryDocument', 'domain_of': ['ProductOrService']} })
+    complementaryDocument: Optional[list[Document]] = Field(default=None, title="complementary document", description="""Any additional documents that provide supplementary information, instructions, or guidelines relevant to the use of this item""", json_schema_extra = { "linkml_meta": {'alias': 'complementaryDocument', 'domain_of': ['ProductOrService']} })
     technicalRecommendation: Optional[str] = Field(default=None, title="technical recommendation", description="""Expert advice or guidelines provided to ensure the optimal use, performance, and maintenance of what is provided, including best practices, troubleshooting tips, and procedural instructions""", json_schema_extra = { "linkml_meta": {'alias': 'technicalRecommendation', 'domain_of': ['ProductOrService']} })
-    productPicture: Optional[List[Image]] = Field(default=None, title="product picture", description="""A picture that can represent the item""", json_schema_extra = { "linkml_meta": {'alias': 'productPicture', 'domain_of': ['ProductOrService']} })
-    externalRelatedReference: Optional[List[ExternalRelatedReference]] = Field(default=None, title="external related reference", description="""A reference that permits to retrieve another related item from an external provider""", json_schema_extra = { "linkml_meta": {'alias': 'externalRelatedReference', 'domain_of': ['ProductOrService']} })
-    certification: Optional[List[Certification]] = Field(default=None, title="certification", description="""Any certification related to the current product or service; e.g., ISO certification""", json_schema_extra = { "linkml_meta": {'alias': 'certification',
+    productPicture: Optional[list[Image]] = Field(default=None, title="product picture", description="""A picture that can represent the item""", json_schema_extra = { "linkml_meta": {'alias': 'productPicture', 'domain_of': ['ProductOrService']} })
+    externalRelatedReference: Optional[list[ExternalRelatedReference]] = Field(default=None, title="external related reference", description="""A reference that permits to retrieve another related item from an external provider""", json_schema_extra = { "linkml_meta": {'alias': 'externalRelatedReference', 'domain_of': ['ProductOrService']} })
+    certification: Optional[list[Certification]] = Field(default=None, title="certification", description="""Any certification related to the current product or service; e.g., ISO certification""", json_schema_extra = { "linkml_meta": {'alias': 'certification',
          'close_mappings': ['dct:conformsTo'],
          'domain_of': ['ProductOrService']} })
     internalReference: Optional[str] = Field(default=None, title="internal reference", description="""Any reference or indication to be used for local retrieval purpose""", json_schema_extra = { "linkml_meta": {'alias': 'internalReference', 'domain_of': ['ProductOrService']} })
@@ -7087,19 +7079,19 @@ class Prion(Pathogen):
     The prion as a biological material
     """
     linkml_meta: ClassVar[LinkMLMeta] = LinkMLMeta({'close_mappings': ['wd:Q47051', 'wd:Q47051'],
-         'from_schema': 'https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#',
+         'from_schema': 'https://w3id.org/evorao/',
          'title': 'Prion'})
 
     biologicalMaterialOrigin: BiologicalMaterialOrigin = Field(default=..., title="Biological Material origin", description="""Information about the origin of the biological material, essential for access, utilization, and benefit-sharing of genetic resources in compliance with the Nagoya Protocol""", json_schema_extra = { "linkml_meta": {'alias': 'biologicalMaterialOrigin',
          'domain_of': ['Pathogen', 'Protein', 'Nucleic Acid']} })
-    suspectedEpidemiologicalOrigin: Optional[List[GeographicalOrigin]] = Field(default=None, title="suspected epidemiological origin", description="""The potential geographical or environmental source from which the pathogen is believed to have originated or been transmitted""", json_schema_extra = { "linkml_meta": {'alias': 'suspectedEpidemiologicalOrigin',
+    suspectedEpidemiologicalOrigin: Optional[list[GeographicalOrigin]] = Field(default=None, title="suspected epidemiological origin", description="""The potential geographical or environmental source from which the pathogen is believed to have originated or been transmitted""", json_schema_extra = { "linkml_meta": {'alias': 'suspectedEpidemiologicalOrigin',
          'close_mappings': ['dct:spatial'],
          'domain_of': ['Pathogen']} })
-    isolationHost: Optional[List[IsolationHost]] = Field(default=None, title="isolation host", description="""The host organism from which the pathogen was originally isolated""", json_schema_extra = { "linkml_meta": {'alias': 'isolationHost', 'domain_of': ['Pathogen']} })
-    productionCellLine: Optional[List[ProductionCellLine]] = Field(default=None, title="production cell line", description="""The cell line used for the production or propagation of the pathogen, detailing the cellular environment employed in its cultivation and study""", json_schema_extra = { "linkml_meta": {'alias': 'productionCellLine', 'domain_of': ['Pathogen']} })
-    propagationHost: Optional[List[PropagationHost]] = Field(default=None, title="propagation host", description="""The host organism that propagates the pathogen""", json_schema_extra = { "linkml_meta": {'alias': 'propagationHost', 'domain_of': ['Pathogen']} })
-    transmissionMethod: Optional[List[TransmissionMethod]] = Field(default=None, title="transmission method", description="""The method or route through which the pathogen is transmitted from one host to another, detailing the mechanisms of infection spread.""", json_schema_extra = { "linkml_meta": {'alias': 'transmissionMethod', 'domain_of': ['Pathogen']} })
-    sequence: List[Sequence] = Field(default=..., title="sequence", description="""The related sequence information from a sequence provider or in fasta format""", json_schema_extra = { "linkml_meta": {'alias': 'sequence',
+    isolationHost: Optional[list[IsolationHost]] = Field(default=None, title="isolation host", description="""The host organism from which the pathogen was originally isolated""", json_schema_extra = { "linkml_meta": {'alias': 'isolationHost', 'domain_of': ['Pathogen']} })
+    productionCellLine: Optional[list[ProductionCellLine]] = Field(default=None, title="production cell line", description="""The cell line used for the production or propagation of the pathogen, detailing the cellular environment employed in its cultivation and study""", json_schema_extra = { "linkml_meta": {'alias': 'productionCellLine', 'domain_of': ['Pathogen']} })
+    propagationHost: Optional[list[PropagationHost]] = Field(default=None, title="propagation host", description="""The host organism that propagates the pathogen""", json_schema_extra = { "linkml_meta": {'alias': 'propagationHost', 'domain_of': ['Pathogen']} })
+    transmissionMethod: Optional[list[TransmissionMethod]] = Field(default=None, title="transmission method", description="""The method or route through which the pathogen is transmitted from one host to another, detailing the mechanisms of infection spread.""", json_schema_extra = { "linkml_meta": {'alias': 'transmissionMethod', 'domain_of': ['Pathogen']} })
+    sequence: list[Sequence] = Field(default=..., title="sequence", description="""The related sequence information from a sequence provider or in fasta format""", json_schema_extra = { "linkml_meta": {'alias': 'sequence',
          'domain_of': ['Pathogen',
                        'RecombinantPartIdentification',
                        'Protein',
@@ -7168,7 +7160,7 @@ class Prion(Pathogen):
     category: ProductCategory = Field(default=..., title="category", description="""The main category of the service or product""", json_schema_extra = { "linkml_meta": {'alias': 'category',
          'domain_of': ['ProductOrService'],
          'exact_mappings': ['dcat:theme']} })
-    additionalCategory: Optional[List[ProductCategory]] = Field(default=None, title="additional category", description="""Any category apart from its main category in which this product or service can fit""", json_schema_extra = { "linkml_meta": {'alias': 'additionalCategory',
+    additionalCategory: Optional[list[ProductCategory]] = Field(default=None, title="additional category", description="""Any category apart from its main category in which this product or service can fit""", json_schema_extra = { "linkml_meta": {'alias': 'additionalCategory',
          'domain_of': ['ProductOrService'],
          'exact_mappings': ['dcat:theme'],
          'recommended': True} })
@@ -7181,13 +7173,13 @@ class Prion(Pathogen):
          'ifabsent': 'string(on request)',
          'recommended': True} })
     qualityGrading: Optional[str] = Field(default=None, title="quality grading", description="""Information that permits to assess the quality level of what will be provided""", json_schema_extra = { "linkml_meta": {'alias': 'qualityGrading', 'domain_of': ['ProductOrService']} })
-    pathogenIdentification: List[PathogenIdentification] = Field(default=..., title="pathogen identification", description="""The identification of the pathogen or group of pathogens (e.g; name, taxon identification, etc.) related to the current item.""", json_schema_extra = { "linkml_meta": {'alias': 'pathogenIdentification',
+    pathogenIdentification: list[PathogenIdentification] = Field(default=..., title="pathogen identification", description="""The identification of the pathogen or group of pathogens (e.g; name, taxon identification, etc.) related to the current item.""", json_schema_extra = { "linkml_meta": {'alias': 'pathogenIdentification',
          'comments': ['The pathogen identification contains information about name and '
                       'taxon but in some cases(e.g: FAIRSHARING) there may have no '
                       'direct pathogen related but simply a taxonomic information .... '
                       'the default value should be the root of virology: Viruses'],
          'domain_of': ['ProductOrService']} })
-    relatedDOI: Optional[List[DOI]] = Field(default=None, title="DOI", description="""Any Digital Object Identifier that can be related""", json_schema_extra = { "linkml_meta": {'alias': 'relatedDOI',
+    relatedDOI: Optional[list[DOI]] = Field(default=None, title="DOI", description="""Any Digital Object Identifier that can be related""", json_schema_extra = { "linkml_meta": {'alias': 'relatedDOI',
          'close_mappings': ['wdp:P356'],
          'domain_of': ['ProductOrService', 'Publication']} })
     riskGroup: Optional[RiskGroup] = Field(default=None, title="risk group", description="""The highest risk group related to this resource. The risk group of a biological agent guiding its initial handling in labs according to the risk group classification defined by the WHO laboratory biosafety manual""", json_schema_extra = { "linkml_meta": {'alias': 'riskGroup',
@@ -7201,8 +7193,8 @@ class Prion(Pathogen):
          'domain_of': ['ProductOrService'],
          'recommended': True} })
     provider: Provider = Field(default=..., title="provider", description="""A provider of this product or service, as a specific organization""", json_schema_extra = { "linkml_meta": {'alias': 'provider', 'domain_of': ['ProductOrService']} })
-    collection: List[Collection] = Field(default=..., title="collection", description="""The collection(s) to which belongs this item""", json_schema_extra = { "linkml_meta": {'alias': 'collection', 'domain_of': ['ProductOrService']} })
-    keywords: List[Keyword] = Field(default=..., title="keywords", description="""List of terms used to tag and categorize this Item""", json_schema_extra = { "linkml_meta": {'alias': 'keywords',
+    collection: list[Collection] = Field(default=..., title="collection", description="""The collection(s) to which belongs this item""", json_schema_extra = { "linkml_meta": {'alias': 'collection', 'domain_of': ['ProductOrService']} })
+    keywords: list[Keyword] = Field(default=..., title="keywords", description="""List of terms used to tag and categorize this Item""", json_schema_extra = { "linkml_meta": {'alias': 'keywords',
          'domain_of': ['ProductOrService'],
          'exact_mappings': ['dcat:keyword'],
          'recommended': True} })
@@ -7210,11 +7202,11 @@ class Prion(Pathogen):
          'comments': ['Possible availabilities may differ from a project to another'],
          'domain_of': ['ProductOrService'],
          'ifabsent': 'string(on request)'} })
-    complementaryDocument: Optional[List[Document]] = Field(default=None, title="complementary document", description="""Any additional documents that provide supplementary information, instructions, or guidelines relevant to the use of this item""", json_schema_extra = { "linkml_meta": {'alias': 'complementaryDocument', 'domain_of': ['ProductOrService']} })
+    complementaryDocument: Optional[list[Document]] = Field(default=None, title="complementary document", description="""Any additional documents that provide supplementary information, instructions, or guidelines relevant to the use of this item""", json_schema_extra = { "linkml_meta": {'alias': 'complementaryDocument', 'domain_of': ['ProductOrService']} })
     technicalRecommendation: Optional[str] = Field(default=None, title="technical recommendation", description="""Expert advice or guidelines provided to ensure the optimal use, performance, and maintenance of what is provided, including best practices, troubleshooting tips, and procedural instructions""", json_schema_extra = { "linkml_meta": {'alias': 'technicalRecommendation', 'domain_of': ['ProductOrService']} })
-    productPicture: Optional[List[Image]] = Field(default=None, title="product picture", description="""A picture that can represent the item""", json_schema_extra = { "linkml_meta": {'alias': 'productPicture', 'domain_of': ['ProductOrService']} })
-    externalRelatedReference: Optional[List[ExternalRelatedReference]] = Field(default=None, title="external related reference", description="""A reference that permits to retrieve another related item from an external provider""", json_schema_extra = { "linkml_meta": {'alias': 'externalRelatedReference', 'domain_of': ['ProductOrService']} })
-    certification: Optional[List[Certification]] = Field(default=None, title="certification", description="""Any certification related to the current product or service; e.g., ISO certification""", json_schema_extra = { "linkml_meta": {'alias': 'certification',
+    productPicture: Optional[list[Image]] = Field(default=None, title="product picture", description="""A picture that can represent the item""", json_schema_extra = { "linkml_meta": {'alias': 'productPicture', 'domain_of': ['ProductOrService']} })
+    externalRelatedReference: Optional[list[ExternalRelatedReference]] = Field(default=None, title="external related reference", description="""A reference that permits to retrieve another related item from an external provider""", json_schema_extra = { "linkml_meta": {'alias': 'externalRelatedReference', 'domain_of': ['ProductOrService']} })
+    certification: Optional[list[Certification]] = Field(default=None, title="certification", description="""Any certification related to the current product or service; e.g., ISO certification""", json_schema_extra = { "linkml_meta": {'alias': 'certification',
          'close_mappings': ['dct:conformsTo'],
          'domain_of': ['ProductOrService']} })
     internalReference: Optional[str] = Field(default=None, title="internal reference", description="""Any reference or indication to be used for local retrieval purpose""", json_schema_extra = { "linkml_meta": {'alias': 'internalReference', 'domain_of': ['ProductOrService']} })
@@ -7258,7 +7250,7 @@ class MSDS(Resource):
     A Material Safety Data Sheet (MSDS) or Safety Data Sheet (SDS) is a standardized document that contains crucial occupational safety and health information related to the product
     """
     linkml_meta: ClassVar[LinkMLMeta] = LinkMLMeta({'close_mappings': ['wd:Q222067', 'wd:Q222067'],
-         'from_schema': 'https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#',
+         'from_schema': 'https://w3id.org/evorao/',
          'slot_usage': {'accidentalReleaseMeasures': {'description': 'Guidelines for '
                                                                      'safely managing '
                                                                      'spills or leaks '
@@ -7614,7 +7606,7 @@ class File(Resource):
     linkml_meta: ClassVar[LinkMLMeta] = LinkMLMeta({'abstract': True,
          'close_mappings': ['wd:Q82753', 'wd:Q82753'],
          'exact_mappings': ['dcat:mediaType', 'dcat:mediaType'],
-         'from_schema': 'https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#',
+         'from_schema': 'https://w3id.org/evorao/',
          'slot_usage': {'contentURL': {'description': 'The web address or location '
                                                       'where the file content is '
                                                       'stored and can be accessed or '
@@ -7711,7 +7703,7 @@ class Data(File):
     Subclass of File representing structured or unstructured datasets, often used for analysis, storage, or transfer of information
     """
     linkml_meta: ClassVar[LinkMLMeta] = LinkMLMeta({'close_mappings': ['wd:Q42848', 'wd:Q42848'],
-         'from_schema': 'https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#',
+         'from_schema': 'https://w3id.org/evorao/',
          'title': 'Data'})
 
     name: str = Field(default=..., title="name", description="""A word or set of words used to identify and refer to an entity""", json_schema_extra = { "linkml_meta": {'alias': 'name',
@@ -7743,7 +7735,7 @@ class Document(File):
     Subclass of File representing textual or written files such as reports, manuals, or forms
     """
     linkml_meta: ClassVar[LinkMLMeta] = LinkMLMeta({'close_mappings': ['wd:Q49848', 'wd:Q49848'],
-         'from_schema': 'https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#',
+         'from_schema': 'https://w3id.org/evorao/',
          'title': 'Document'})
 
     name: str = Field(default=..., title="name", description="""A word or set of words used to identify and refer to an entity""", json_schema_extra = { "linkml_meta": {'alias': 'name',
@@ -7775,7 +7767,7 @@ class Audio(File):
     Subclass of File representing sound recordings or audio tracks
     """
     linkml_meta: ClassVar[LinkMLMeta] = LinkMLMeta({'close_mappings': ['wd:Q26987229', 'wd:Q26987229'],
-         'from_schema': 'https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#',
+         'from_schema': 'https://w3id.org/evorao/',
          'title': 'Audio'})
 
     name: str = Field(default=..., title="name", description="""A word or set of words used to identify and refer to an entity""", json_schema_extra = { "linkml_meta": {'alias': 'name',
@@ -7807,7 +7799,7 @@ class Video(File):
     Subclass of File representing moving visual media, such as recordings, presentations, or movies
     """
     linkml_meta: ClassVar[LinkMLMeta] = LinkMLMeta({'close_mappings': ['wd:Q98405806', 'wd:Q98405806'],
-         'from_schema': 'https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#',
+         'from_schema': 'https://w3id.org/evorao/',
          'title': 'Video'})
 
     name: str = Field(default=..., title="name", description="""A word or set of words used to identify and refer to an entity""", json_schema_extra = { "linkml_meta": {'alias': 'name',
@@ -7839,7 +7831,7 @@ class Image(File):
     Subclass of File representing visual content such as pictures, diagrams, or illustrations
     """
     linkml_meta: ClassVar[LinkMLMeta] = LinkMLMeta({'close_mappings': ['wd:Q860625', 'wd:Q860625'],
-         'from_schema': 'https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#',
+         'from_schema': 'https://w3id.org/evorao/',
          'slot_usage': {'altText': {'description': 'An alternate text for the image, '
                                                    'if the image cannot be displayed',
                                     'domain_of': ['Image'],
@@ -7884,7 +7876,7 @@ class ContactPoint(Resource):
                             'vcard:Contact',
                             'wd:Q30322502',
                             'vcard:Contact'],
-         'from_schema': 'https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#',
+         'from_schema': 'https://w3id.org/evorao/',
          'slot_usage': {'addressCountry': {'close_mappings': ['schema:addressCountry',
                                                               'vcard:hasCountryName'],
                                            'description': 'The country as of  ISO 3166',
@@ -8061,7 +8053,7 @@ class License(Resource):
                             'wd:Q79719',
                             'dct:LicenseDocument'],
          'exact_mappings': ['dct:RightsStatement', 'dct:RightsStatement'],
-         'from_schema': 'https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#',
+         'from_schema': 'https://w3id.org/evorao/',
          'slot_usage': {'description': {'comments': ['Describe this item in few lines. '
                                                      'This description will serve as a '
                                                      'summary to present the '
@@ -8193,7 +8185,7 @@ class Certification(Resource):
                             'schema:Certification',
                             'wd:Q374814',
                             'schema:Certification'],
-         'from_schema': 'https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#',
+         'from_schema': 'https://w3id.org/evorao/',
          'slot_usage': {'certificationDocument': {'description': 'The document(s) '
                                                                  'issued by an '
                                                                  'authority certifying '
@@ -8312,7 +8304,7 @@ class Certification(Resource):
          'slot_uri': 'dct:description'} })
     logo: Optional[Image] = Field(default=None, title="logo", description="""A path or URL to the related logo""", json_schema_extra = { "linkml_meta": {'alias': 'logo',
          'domain_of': ['Certification', 'PersonOrOrganization', 'License']} })
-    certificationDocument: Optional[List[Document]] = Field(default=None, title="certification document", description="""The document(s) issued by an authority certifying the conformity of the subject to the applicable scheme, including, as the case may be, the documents attesting the equivalence to another certification scheme.""", json_schema_extra = { "linkml_meta": {'alias': 'certificationDocument', 'domain_of': ['Certification']} })
+    certificationDocument: Optional[list[Document]] = Field(default=None, title="certification document", description="""The document(s) issued by an authority certifying the conformity of the subject to the applicable scheme, including, as the case may be, the documents attesting the equivalence to another certification scheme.""", json_schema_extra = { "linkml_meta": {'alias': 'certificationDocument', 'domain_of': ['Certification']} })
     resourceURL: Optional[str] = Field(default=None, title="resource URL", description="""The web address or location where the details or content is stored and can be accessed or downloaded.""", json_schema_extra = { "linkml_meta": {'alias': 'resourceURL',
          'close_mappings': ['schema:url'],
          'domain_of': ['Certification', 'License'],

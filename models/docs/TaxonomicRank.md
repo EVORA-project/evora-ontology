@@ -1,6 +1,6 @@
 
 
-# Class: Taxonomic rank (TaxonomicRank)
+# Class: Taxonomic rank (TaxonomicRank) 
 
 
 _The possible taxonomic ranks and their description_
@@ -9,7 +9,7 @@ _The possible taxonomic ranks and their description_
 
 
 
-URI: [EVORAO:TaxonomicRank](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#TaxonomicRank)
+URI: [EVORAO:TaxonomicRank](https://w3id.org/evorao/TaxonomicRank)
 
 
 
@@ -102,7 +102,7 @@ URI: [EVORAO:TaxonomicRank](https://raw.githubusercontent.com/EVORA-project/evor
 ### Schema Source
 
 
-* from schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+* from schema: https://w3id.org/evorao/
 
 
 
@@ -134,7 +134,7 @@ description: The possible taxonomic ranks and their description
 title: Taxonomic rank
 comments:
 - Use of Data provider recommended
-from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+from_schema: https://w3id.org/evorao/
 close_mappings:
 - wd:Q427626
 - wd:Q427626
@@ -165,7 +165,7 @@ description: The possible taxonomic ranks and their description
 title: Taxonomic rank
 comments:
 - Use of Data provider recommended
-from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+from_schema: https://w3id.org/evorao/
 close_mappings:
 - wd:Q427626
 - wd:Q427626
@@ -186,7 +186,7 @@ attributes:
     name: taxonomy
     description: The taxonomy release(s) in which this entity exists
     title: taxonomy
-    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+    from_schema: https://w3id.org/evorao/
     rank: 1000
     alias: taxonomy
     owner: TaxonomicRank
@@ -208,7 +208,7 @@ attributes:
       ''Virus name'', ''virus host type'', ''collection year'', ''country of collection''
       ex ''suspected epidemiological origin'', ''genotype'', ''strain'', ''variant
       name or specific feature'
-    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+    from_schema: https://w3id.org/evorao/
     close_mappings:
     - rdfs:label
     rank: 1000
@@ -235,7 +235,7 @@ attributes:
       present the resource.
 
       '
-    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+    from_schema: https://w3id.org/evorao/
     rank: 1000
     slot_uri: dct:description
     alias: description
@@ -263,7 +263,7 @@ attributes:
     - The lowest weighted Data providers are triggered first, this may be usefull
       to populate at first entities that are referenced by others (e.g. Version ahead
       of Rank ahead of Taxon)
-    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+    from_schema: https://w3id.org/evorao/
     close_mappings:
     - adms:status
     rank: 1000
@@ -280,7 +280,7 @@ attributes:
     name: inVocabulary
     description: Terms belong to a specific vocabulary
     title: in Vocabulary
-    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+    from_schema: https://w3id.org/evorao/
     close_mappings:
     - wdp:P972
     rank: 1000

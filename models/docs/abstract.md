@@ -1,6 +1,6 @@
 
 
-# Slot: abstract (abstract)
+# Slot: abstract (abstract) 
 
 
 _Concise summary of the publication_
@@ -9,9 +9,8 @@ _Concise summary of the publication_
 
 
 
-URI: [EVORAO:abstract](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#abstract)
-
-
+URI: [EVORAO:abstract](https://w3id.org/evorao/abstract)
+Alias: abstract
 
 <!-- no inheritance hierarchy -->
 
@@ -52,7 +51,7 @@ URI: [EVORAO:abstract](https://raw.githubusercontent.com/EVORA-project/evora-ont
 ### Schema Source
 
 
-* from schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+* from schema: https://w3id.org/evorao/
 
 
 
@@ -74,7 +73,7 @@ URI: [EVORAO:abstract](https://raw.githubusercontent.com/EVORA-project/evora-ont
 name: abstract
 description: Concise summary of the publication
 title: abstract
-from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+from_schema: https://w3id.org/evorao/
 rank: 1000
 alias: abstract
 domain_of:

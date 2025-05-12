@@ -1,6 +1,6 @@
 
 
-# Slot: logo (logo)
+# Slot: logo (logo) 
 
 
 _A path or URL to the related logo_
@@ -9,9 +9,8 @@ _A path or URL to the related logo_
 
 
 
-URI: [EVORAO:logo](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#logo)
-
-
+URI: [EVORAO:logo](https://w3id.org/evorao/logo)
+Alias: logo
 
 <!-- no inheritance hierarchy -->
 
@@ -24,11 +23,11 @@ URI: [EVORAO:logo](https://raw.githubusercontent.com/EVORA-project/evora-ontolog
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
 | [Originator](Originator.md) | The individual or organization responsible for the original discovery, isolat... |  no  |
+| [PersonOrOrganization](PersonOrOrganization.md) | A person or an organization |  yes  |
+| [Provider](Provider.md) | A provider of products or services, as a specific organization |  no  |
+| [RI](RI.md) | A research infrastructure |  no  |
 | [Organization](Organization.md) | A social entity established to meet needs or pursue specific goals |  no  |
 | [Certification](Certification.md) | Assurance given by an independent certification body that a product, service ... |  yes  |
-| [RI](RI.md) | A research infrastructure |  no  |
-| [Provider](Provider.md) | A provider of products or services, as a specific organization |  no  |
-| [PersonOrOrganization](PersonOrOrganization.md) | A person or an organization |  yes  |
 | [License](License.md) | The legal terms and conditions under which the subject can be used, shared, o... |  yes  |
 | [Person](Person.md) | An individual |  no  |
 
@@ -57,7 +56,7 @@ URI: [EVORAO:logo](https://raw.githubusercontent.com/EVORA-project/evora-ontolog
 ### Schema Source
 
 
-* from schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+* from schema: https://w3id.org/evorao/
 
 
 
@@ -79,7 +78,7 @@ URI: [EVORAO:logo](https://raw.githubusercontent.com/EVORA-project/evora-ontolog
 name: logo
 description: A path or URL to the related logo
 title: logo
-from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+from_schema: https://w3id.org/evorao/
 rank: 1000
 alias: logo
 domain_of:

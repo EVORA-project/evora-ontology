@@ -1,6 +1,6 @@
 
 
-# Slot: infectivity (infectivity)
+# Slot: infectivity (infectivity) 
 
 
 _Indicates the ability of the pathogen to establish an infection in a host organism, with possible values detailing whether infectivity has been tested, quantified, or cannot be tested due to non-cultivable nature._
@@ -9,9 +9,8 @@ _Indicates the ability of the pathogen to establish an infection in a host organ
 
 
 
-URI: [EVORAO:infectivity](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#infectivity)
-
-
+URI: [EVORAO:infectivity](https://w3id.org/evorao/infectivity)
+Alias: infectivity
 
 <!-- no inheritance hierarchy -->
 
@@ -23,13 +22,13 @@ URI: [EVORAO:infectivity](https://raw.githubusercontent.com/EVORA-project/evora-
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
+| [Protozoan](Protozoan.md) | The protozoan as a biological material |  no  |
+| [Fungus](Fungus.md) | The fungus as a biological material |  no  |
+| [Pathogen](Pathogen.md) | Biological entity that causes disease in its host, which is typically an infe... |  yes  |
+| [Prion](Prion.md) | The prion as a biological material |  no  |
+| [Bacterium](Bacterium.md) | The bacterium as a biological material |  no  |
 | [Virus](Virus.md) | The virus as a biological material |  no  |
 | [Viroid](Viroid.md) | The viroid as a biological material |  no  |
-| [Pathogen](Pathogen.md) | Biological entity that causes disease in its host, which is typically an infe... |  yes  |
-| [Bacterium](Bacterium.md) | The bacterium as a biological material |  no  |
-| [Prion](Prion.md) | The prion as a biological material |  no  |
-| [Fungus](Fungus.md) | The fungus as a biological material |  no  |
-| [Protozoan](Protozoan.md) | The protozoan as a biological material |  no  |
 
 
 
@@ -58,7 +57,7 @@ URI: [EVORAO:infectivity](https://raw.githubusercontent.com/EVORA-project/evora-
 ### Schema Source
 
 
-* from schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+* from schema: https://w3id.org/evorao/
 
 
 
@@ -82,7 +81,7 @@ description: Indicates the ability of the pathogen to establish an infection in 
   host organism, with possible values detailing whether infectivity has been tested,
   quantified, or cannot be tested due to non-cultivable nature.
 title: infectivity
-from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+from_schema: https://w3id.org/evorao/
 rank: 1000
 alias: infectivity
 domain_of:

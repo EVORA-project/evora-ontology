@@ -1,6 +1,6 @@
 
 
-# Slot: telephone (telephone)
+# Slot: telephone (telephone) 
 
 
 _The telephone number_
@@ -9,9 +9,8 @@ _The telephone number_
 
 
 
-URI: [EVORAO:telephone](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#telephone)
-
-
+URI: [EVORAO:telephone](https://w3id.org/evorao/telephone)
+Alias: telephone
 
 <!-- no inheritance hierarchy -->
 
@@ -52,7 +51,7 @@ URI: [EVORAO:telephone](https://raw.githubusercontent.com/EVORA-project/evora-on
 ### Schema Source
 
 
-* from schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+* from schema: https://w3id.org/evorao/
 
 
 
@@ -75,7 +74,7 @@ URI: [EVORAO:telephone](https://raw.githubusercontent.com/EVORA-project/evora-on
 name: telephone
 description: The telephone number
 title: telephone
-from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+from_schema: https://w3id.org/evorao/
 close_mappings:
 - schema:telephone
 - vcard:telephone

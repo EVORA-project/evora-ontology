@@ -1,6 +1,6 @@
 
 
-# Slot: collection date (collectionDate)
+# Slot: collection date (collectionDate) 
 
 
 _The date when the sample was collected in situ. If unknown/private, use a proxy date such as 'date received' and indicate this by setting to true the before date property_
@@ -9,9 +9,8 @@ _The date when the sample was collected in situ. If unknown/private, use a proxy
 
 
 
-URI: [EVORAO:collectionDate](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#collectionDate)
-
-
+URI: [EVORAO:collectionDate](https://w3id.org/evorao/collectionDate)
+Alias: collectionDate
 
 <!-- no inheritance hierarchy -->
 
@@ -52,7 +51,7 @@ URI: [EVORAO:collectionDate](https://raw.githubusercontent.com/EVORA-project/evo
 ### Schema Source
 
 
-* from schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+* from schema: https://w3id.org/evorao/
 
 
 
@@ -76,7 +75,7 @@ description: The date when the sample was collected in situ. If unknown/private,
   a proxy date such as 'date received' and indicate this by setting to true the before
   date property
 title: collection date
-from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+from_schema: https://w3id.org/evorao/
 rank: 1000
 alias: collectionDate
 domain_of:

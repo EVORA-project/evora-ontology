@@ -1,6 +1,6 @@
 
 
-# Slot: reference provider name (referenceProviderName)
+# Slot: reference provider name (referenceProviderName) 
 
 
 _The name for the reference provider_
@@ -9,9 +9,8 @@ _The name for the reference provider_
 
 
 
-URI: [EVORAO:referenceProviderName](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#referenceProviderName)
-
-
+URI: [EVORAO:referenceProviderName](https://w3id.org/evorao/referenceProviderName)
+Alias: referenceProviderName
 
 <!-- no inheritance hierarchy -->
 
@@ -52,7 +51,7 @@ URI: [EVORAO:referenceProviderName](https://raw.githubusercontent.com/EVORA-proj
 ### Schema Source
 
 
-* from schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+* from schema: https://w3id.org/evorao/
 
 
 
@@ -75,7 +74,7 @@ URI: [EVORAO:referenceProviderName](https://raw.githubusercontent.com/EVORA-proj
 name: referenceProviderName
 description: The name for the reference provider
 title: reference provider name
-from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+from_schema: https://w3id.org/evorao/
 close_mappings:
 - dct:publisher
 rank: 1000

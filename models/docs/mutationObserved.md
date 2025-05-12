@@ -1,6 +1,6 @@
 
 
-# Slot: mutation observed (mutationObserved)
+# Slot: mutation observed (mutationObserved) 
 
 
 _Indicates if the current nucleic acid has No mutation compared to the reference sequence if the value is set to false or if it_
@@ -11,9 +11,8 @@ _ contains mutations (no frameshift, no unexpected STOP codon) if set to true_
 
 
 
-URI: [EVORAO:mutationObserved](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#mutationObserved)
-
-
+URI: [EVORAO:mutationObserved](https://w3id.org/evorao/mutationObserved)
+Alias: mutationObserved
 
 <!-- no inheritance hierarchy -->
 
@@ -54,7 +53,7 @@ URI: [EVORAO:mutationObserved](https://raw.githubusercontent.com/EVORA-project/e
 ### Schema Source
 
 
-* from schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+* from schema: https://w3id.org/evorao/
 
 
 
@@ -78,7 +77,7 @@ description: "Indicates if the current nucleic acid has No mutation compared to 
   \ reference sequence if the value is set to false or if it\n contains mutations\
   \ (no frameshift, no unexpected STOP codon) if set to true"
 title: mutation observed
-from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+from_schema: https://w3id.org/evorao/
 rank: 1000
 alias: mutationObserved
 domain_of:

@@ -1,6 +1,6 @@
 
 
-# Slot: sequence FASTA (sequenceFASTA)
+# Slot: sequence FASTA (sequenceFASTA) 
 
 
 _In case no sequence reference exists in public repositories, the corresponding FASTA sequence is required_
@@ -9,9 +9,8 @@ _In case no sequence reference exists in public repositories, the corresponding 
 
 
 
-URI: [EVORAO:sequenceFASTA](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#sequenceFASTA)
-
-
+URI: [EVORAO:sequenceFASTA](https://w3id.org/evorao/sequenceFASTA)
+Alias: sequenceFASTA
 
 <!-- no inheritance hierarchy -->
 
@@ -54,7 +53,7 @@ URI: [EVORAO:sequenceFASTA](https://raw.githubusercontent.com/EVORA-project/evor
 ### Schema Source
 
 
-* from schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+* from schema: https://w3id.org/evorao/
 
 
 
@@ -81,7 +80,7 @@ comments:
 - In FASTA format the line before the nucleotide sequence, called the FASTA definition
   line, must begin with a charater ('>'), followed by a unique SeqID (sequence identifier).
   In case the sequence is made of multiple parts several fasta sequences can be provided
-from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+from_schema: https://w3id.org/evorao/
 rank: 1000
 alias: sequenceFASTA
 domain_of:

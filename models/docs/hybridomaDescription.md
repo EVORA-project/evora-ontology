@@ -1,6 +1,6 @@
 
 
-# Slot: hybridoma description (hybridomaDescription)
+# Slot: hybridoma description (hybridomaDescription) 
 
 
 _The description of the hybridoma_
@@ -9,9 +9,8 @@ _The description of the hybridoma_
 
 
 
-URI: [EVORAO:hybridomaDescription](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#hybridomaDescription)
-
-
+URI: [EVORAO:hybridomaDescription](https://w3id.org/evorao/hybridomaDescription)
+Alias: hybridomaDescription
 
 <!-- no inheritance hierarchy -->
 
@@ -52,7 +51,7 @@ URI: [EVORAO:hybridomaDescription](https://raw.githubusercontent.com/EVORA-proje
 ### Schema Source
 
 
-* from schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+* from schema: https://w3id.org/evorao/
 
 
 
@@ -74,7 +73,7 @@ URI: [EVORAO:hybridomaDescription](https://raw.githubusercontent.com/EVORA-proje
 name: hybridomaDescription
 description: The description of the hybridoma
 title: hybridoma description
-from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+from_schema: https://w3id.org/evorao/
 rank: 1000
 alias: hybridomaDescription
 domain_of:

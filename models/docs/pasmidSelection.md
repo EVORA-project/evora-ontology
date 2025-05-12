@@ -1,6 +1,6 @@
 
 
-# Slot: plasmid selection (pasmidSelection)
+# Slot: plasmid selection (pasmidSelection) 
 
 
 _Specific selectable markers in the plasmid, such as antibiotic resistance genes, used to identify and maintain cells that contain the plasmid_
@@ -9,9 +9,8 @@ _Specific selectable markers in the plasmid, such as antibiotic resistance genes
 
 
 
-URI: [EVORAO:pasmidSelection](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#pasmidSelection)
-
-
+URI: [EVORAO:pasmidSelection](https://w3id.org/evorao/pasmidSelection)
+Alias: pasmidSelection
 
 <!-- no inheritance hierarchy -->
 
@@ -54,7 +53,7 @@ URI: [EVORAO:pasmidSelection](https://raw.githubusercontent.com/EVORA-project/ev
 ### Schema Source
 
 
-* from schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+* from schema: https://w3id.org/evorao/
 
 
 
@@ -77,7 +76,7 @@ name: pasmidSelection
 description: Specific selectable markers in the plasmid, such as antibiotic resistance
   genes, used to identify and maintain cells that contain the plasmid
 title: plasmid selection
-from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+from_schema: https://w3id.org/evorao/
 rank: 1000
 alias: pasmidSelection
 domain_of:

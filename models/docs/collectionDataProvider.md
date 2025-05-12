@@ -1,6 +1,6 @@
 
 
-# Slot: collection data provider (collectionDataProvider)
+# Slot: collection data provider (collectionDataProvider) 
 
 
 _The provider of the data of the collection_
@@ -9,9 +9,8 @@ _The provider of the data of the collection_
 
 
 
-URI: [EVORAO:collectionDataProvider](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#collectionDataProvider)
-
-
+URI: [EVORAO:collectionDataProvider](https://w3id.org/evorao/collectionDataProvider)
+Alias: collectionDataProvider
 
 <!-- no inheritance hierarchy -->
 
@@ -50,7 +49,7 @@ URI: [EVORAO:collectionDataProvider](https://raw.githubusercontent.com/EVORA-pro
 ### Schema Source
 
 
-* from schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+* from schema: https://w3id.org/evorao/
 
 
 
@@ -73,7 +72,7 @@ URI: [EVORAO:collectionDataProvider](https://raw.githubusercontent.com/EVORA-pro
 name: collectionDataProvider
 description: The provider of the data of the collection
 title: collection data provider
-from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+from_schema: https://w3id.org/evorao/
 close_mappings:
 - dct:isReferencedBy
 rank: 1000

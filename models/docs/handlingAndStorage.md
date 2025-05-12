@@ -1,6 +1,6 @@
 
 
-# Slot: handling and storage (handlingAndStorage)
+# Slot: handling and storage (handlingAndStorage) 
 
 
 _Instructions on the safe handling practices and storage conditions for the product, including precautions to prevent accidents, degradation, or contamination, as well as recommended temperature, humidity, and container requirements._
@@ -9,9 +9,8 @@ _Instructions on the safe handling practices and storage conditions for the prod
 
 
 
-URI: [EVORAO:handlingAndStorage](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#handlingAndStorage)
-
-
+URI: [EVORAO:handlingAndStorage](https://w3id.org/evorao/handlingAndStorage)
+Alias: handlingAndStorage
 
 <!-- no inheritance hierarchy -->
 
@@ -52,7 +51,7 @@ URI: [EVORAO:handlingAndStorage](https://raw.githubusercontent.com/EVORA-project
 ### Schema Source
 
 
-* from schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+* from schema: https://w3id.org/evorao/
 
 
 
@@ -76,7 +75,7 @@ description: Instructions on the safe handling practices and storage conditions 
   the product, including precautions to prevent accidents, degradation, or contamination,
   as well as recommended temperature, humidity, and container requirements.
 title: handling and storage
-from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+from_schema: https://w3id.org/evorao/
 rank: 1000
 alias: handlingAndStorage
 domain_of:

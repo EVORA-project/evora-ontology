@@ -1,6 +1,6 @@
 
 
-# Class: Geographical origin (GeographicalOrigin)
+# Class: Geographical origin (GeographicalOrigin) 
 
 
 _The specific location or region where a physical item, originates or is naturally found_
@@ -9,7 +9,7 @@ _The specific location or region where a physical item, originates or is natural
 
 
 
-URI: [EVORAO:GeographicalOrigin](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#GeographicalOrigin)
+URI: [EVORAO:GeographicalOrigin](https://w3id.org/evorao/GeographicalOrigin)
 
 
 
@@ -103,7 +103,7 @@ URI: [EVORAO:GeographicalOrigin](https://raw.githubusercontent.com/EVORA-project
 ### Schema Source
 
 
-* from schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+* from schema: https://w3id.org/evorao/
 
 
 
@@ -137,7 +137,7 @@ description: The specific location or region where a physical item, originates o
 title: Geographical origin
 comments:
 - geonames.org API could be a good service data provider as suggested by DCAT-AP
-from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+from_schema: https://w3id.org/evorao/
 exact_mappings:
 - dct:Location
 - dct:Location
@@ -159,7 +159,7 @@ description: The specific location or region where a physical item, originates o
 title: Geographical origin
 comments:
 - geonames.org API could be a good service data provider as suggested by DCAT-AP
-from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+from_schema: https://w3id.org/evorao/
 exact_mappings:
 - dct:Location
 - dct:Location
@@ -179,7 +179,7 @@ attributes:
       ''Virus name'', ''virus host type'', ''collection year'', ''country of collection''
       ex ''suspected epidemiological origin'', ''genotype'', ''strain'', ''variant
       name or specific feature'
-    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+    from_schema: https://w3id.org/evorao/
     close_mappings:
     - rdfs:label
     rank: 1000
@@ -206,7 +206,7 @@ attributes:
       present the resource.
 
       '
-    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+    from_schema: https://w3id.org/evorao/
     rank: 1000
     slot_uri: dct:description
     alias: description
@@ -234,7 +234,7 @@ attributes:
     - The lowest weighted Data providers are triggered first, this may be usefull
       to populate at first entities that are referenced by others (e.g. Version ahead
       of Rank ahead of Taxon)
-    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+    from_schema: https://w3id.org/evorao/
     close_mappings:
     - adms:status
     rank: 1000
@@ -251,7 +251,7 @@ attributes:
     name: inVocabulary
     description: Terms belong to a specific vocabulary
     title: in Vocabulary
-    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+    from_schema: https://w3id.org/evorao/
     close_mappings:
     - wdp:P972
     rank: 1000

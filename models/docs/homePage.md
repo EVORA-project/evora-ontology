@@ -1,6 +1,6 @@
 
 
-# Slot: home page (homePage)
+# Slot: home page (homePage) 
 
 
 _A web page that serves as the main or introductory page_
@@ -9,9 +9,8 @@ _A web page that serves as the main or introductory page_
 
 
 
-URI: [EVORAO:homePage](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#homePage)
-
-
+URI: [EVORAO:homePage](https://w3id.org/evorao/homePage)
+Alias: homePage
 
 <!-- no inheritance hierarchy -->
 
@@ -24,10 +23,10 @@ URI: [EVORAO:homePage](https://raw.githubusercontent.com/EVORA-project/evora-ont
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
 | [Originator](Originator.md) | The individual or organization responsible for the original discovery, isolat... |  no  |
-| [Organization](Organization.md) | A social entity established to meet needs or pursue specific goals |  no  |
-| [RI](RI.md) | A research infrastructure |  no  |
-| [Provider](Provider.md) | A provider of products or services, as a specific organization |  no  |
 | [PersonOrOrganization](PersonOrOrganization.md) | A person or an organization |  yes  |
+| [Provider](Provider.md) | A provider of products or services, as a specific organization |  no  |
+| [RI](RI.md) | A research infrastructure |  no  |
+| [Organization](Organization.md) | A social entity established to meet needs or pursue specific goals |  no  |
 | [Person](Person.md) | An individual |  no  |
 
 
@@ -55,7 +54,7 @@ URI: [EVORAO:homePage](https://raw.githubusercontent.com/EVORA-project/evora-ont
 ### Schema Source
 
 
-* from schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+* from schema: https://w3id.org/evorao/
 
 
 
@@ -77,7 +76,7 @@ URI: [EVORAO:homePage](https://raw.githubusercontent.com/EVORA-project/evora-ont
 name: homePage
 description: A web page that serves as the main or introductory page
 title: home page
-from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+from_schema: https://w3id.org/evorao/
 rank: 1000
 alias: homePage
 domain_of:

@@ -1,6 +1,6 @@
 
 
-# Slot: genome sequencing (genomeSequencing)
+# Slot: genome sequencing (genomeSequencing) 
 
 
 _The extent of the pathogen's genetic material that has been sequenced, with possible values including 'Complete genome' for the entire genome, 'Complete coding sequence' for all coding regions, and 'Partial sequence' for only a portion of the genetic material_
@@ -9,9 +9,8 @@ _The extent of the pathogen's genetic material that has been sequenced, with pos
 
 
 
-URI: [EVORAO:genomeSequencing](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#genomeSequencing)
-
-
+URI: [EVORAO:genomeSequencing](https://w3id.org/evorao/genomeSequencing)
+Alias: genomeSequencing
 
 <!-- no inheritance hierarchy -->
 
@@ -23,13 +22,13 @@ URI: [EVORAO:genomeSequencing](https://raw.githubusercontent.com/EVORA-project/e
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
+| [Protozoan](Protozoan.md) | The protozoan as a biological material |  no  |
+| [Fungus](Fungus.md) | The fungus as a biological material |  no  |
+| [Pathogen](Pathogen.md) | Biological entity that causes disease in its host, which is typically an infe... |  yes  |
+| [Prion](Prion.md) | The prion as a biological material |  no  |
+| [Bacterium](Bacterium.md) | The bacterium as a biological material |  no  |
 | [Virus](Virus.md) | The virus as a biological material |  no  |
 | [Viroid](Viroid.md) | The viroid as a biological material |  no  |
-| [Pathogen](Pathogen.md) | Biological entity that causes disease in its host, which is typically an infe... |  yes  |
-| [Bacterium](Bacterium.md) | The bacterium as a biological material |  no  |
-| [Prion](Prion.md) | The prion as a biological material |  no  |
-| [Fungus](Fungus.md) | The fungus as a biological material |  no  |
-| [Protozoan](Protozoan.md) | The protozoan as a biological material |  no  |
 
 
 
@@ -58,7 +57,7 @@ URI: [EVORAO:genomeSequencing](https://raw.githubusercontent.com/EVORA-project/e
 ### Schema Source
 
 
-* from schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+* from schema: https://w3id.org/evorao/
 
 
 
@@ -83,7 +82,7 @@ description: The extent of the pathogen's genetic material that has been sequenc
   coding sequence' for all coding regions, and 'Partial sequence' for only a portion
   of the genetic material
 title: genome sequencing
-from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+from_schema: https://w3id.org/evorao/
 rank: 1000
 alias: genomeSequencing
 domain_of:

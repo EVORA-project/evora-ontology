@@ -1,6 +1,6 @@
 
 
-# Slot: type of functional Characterization (typeOfFunctionalCharacterization)
+# Slot: type of functional Characterization (typeOfFunctionalCharacterization) 
 
 
 _Refers to the classification of a protein based on the specific type of functional analysis performed to determine its biological activities and roles. Possible values include 'Enzymatic' (the protein has been characterized for its enzyme activity) and 'Antigenic' (the protein has been characterized for its ability to elicit an immune response)._
@@ -9,9 +9,8 @@ _Refers to the classification of a protein based on the specific type of functio
 
 
 
-URI: [EVORAO:typeOfFunctionalCharacterization](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#typeOfFunctionalCharacterization)
-
-
+URI: [EVORAO:typeOfFunctionalCharacterization](https://w3id.org/evorao/typeOfFunctionalCharacterization)
+Alias: typeOfFunctionalCharacterization
 
 <!-- no inheritance hierarchy -->
 
@@ -52,7 +51,7 @@ URI: [EVORAO:typeOfFunctionalCharacterization](https://raw.githubusercontent.com
 ### Schema Source
 
 
-* from schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+* from schema: https://w3id.org/evorao/
 
 
 
@@ -78,7 +77,7 @@ description: Refers to the classification of a protein based on the specific typ
   enzyme activity) and 'Antigenic' (the protein has been characterized for its ability
   to elicit an immune response).
 title: type of functional Characterization
-from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+from_schema: https://w3id.org/evorao/
 rank: 1000
 alias: typeOfFunctionalCharacterization
 domain_of:

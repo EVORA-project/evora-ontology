@@ -1,6 +1,6 @@
 
 
-# Class: External related reference (ExternalRelatedReference)
+# Class: External related reference (ExternalRelatedReference) 
 
 
 _A reference that permits to retrieve an item from an external provider_
@@ -9,7 +9,7 @@ _A reference that permits to retrieve an item from an external provider_
 
 
 
-URI: [EVORAO:ExternalRelatedReference](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#ExternalRelatedReference)
+URI: [EVORAO:ExternalRelatedReference](https://w3id.org/evorao/ExternalRelatedReference)
 
 
 
@@ -94,7 +94,7 @@ URI: [EVORAO:ExternalRelatedReference](https://raw.githubusercontent.com/EVORA-p
 ### Schema Source
 
 
-* from schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+* from schema: https://w3id.org/evorao/
 
 
 
@@ -123,7 +123,7 @@ URI: [EVORAO:ExternalRelatedReference](https://raw.githubusercontent.com/EVORA-p
 name: ExternalRelatedReference
 description: A reference that permits to retrieve an item from an external provider
 title: External related reference
-from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+from_schema: https://w3id.org/evorao/
 is_a: Resource
 slots:
 - reference
@@ -189,7 +189,7 @@ slot_usage:
 name: ExternalRelatedReference
 description: A reference that permits to retrieve an item from an external provider
 title: External related reference
-from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+from_schema: https://w3id.org/evorao/
 is_a: Resource
 slot_usage:
   reference:
@@ -244,7 +244,7 @@ attributes:
     name: reference
     description: The identifier reference of the connected external item
     title: reference
-    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+    from_schema: https://w3id.org/evorao/
     close_mappings:
     - dct:identifier
     rank: 1000
@@ -261,7 +261,7 @@ attributes:
     title: reference label
     comments:
     - e.g., 'Infravec2 related product'
-    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+    from_schema: https://w3id.org/evorao/
     close_mappings:
     - dct:title
     rank: 1000
@@ -277,7 +277,7 @@ attributes:
     description: The url prefix that once completed with the reference will lead to
       the linked external resource
     title: reference provider prefix
-    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+    from_schema: https://w3id.org/evorao/
     close_mappings:
     - dcat:landingPage
     rank: 1000
@@ -292,7 +292,7 @@ attributes:
     name: referenceProviderName
     description: The name for the reference provider
     title: reference provider name
-    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+    from_schema: https://w3id.org/evorao/
     close_mappings:
     - dct:publisher
     rank: 1000

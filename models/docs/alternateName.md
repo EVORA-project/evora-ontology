@@ -1,6 +1,6 @@
 
 
-# Slot: alternate name (alternateName)
+# Slot: alternate name (alternateName) 
 
 
 _Any other name under which the entity can be known_
@@ -9,9 +9,8 @@ _Any other name under which the entity can be known_
 
 
 
-URI: [EVORAO:alternateName](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#alternateName)
-
-
+URI: [EVORAO:alternateName](https://w3id.org/evorao/alternateName)
+Alias: alternateName
 
 <!-- no inheritance hierarchy -->
 
@@ -23,12 +22,12 @@ URI: [EVORAO:alternateName](https://raw.githubusercontent.com/EVORA-project/evor
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [AlternateName](AlternateName.md) | List of other names for things |  yes  |
-| [CommonName](CommonName.md) | Vernacular name that is the name used in everyday language to refer to an org... |  yes  |
-| [Organization](Organization.md) | A social entity established to meet needs or pursue specific goals |  yes  |
-| [RI](RI.md) | A research infrastructure |  no  |
-| [Provider](Provider.md) | A provider of products or services, as a specific organization |  no  |
 | [Variant](Variant.md) | An organism with one or more new mutations is referred to as a “variant” of t... |  no  |
+| [CommonName](CommonName.md) | Vernacular name that is the name used in everyday language to refer to an org... |  yes  |
+| [Provider](Provider.md) | A provider of products or services, as a specific organization |  no  |
+| [RI](RI.md) | A research infrastructure |  no  |
+| [Organization](Organization.md) | A social entity established to meet needs or pursue specific goals |  yes  |
+| [AlternateName](AlternateName.md) | List of other names for things |  yes  |
 | [VirusName](VirusName.md) | A virus vernacular name or a name that describes a group of viruses |  no  |
 
 
@@ -62,7 +61,7 @@ URI: [EVORAO:alternateName](https://raw.githubusercontent.com/EVORA-project/evor
 ### Schema Source
 
 
-* from schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+* from schema: https://w3id.org/evorao/
 
 
 
@@ -89,7 +88,7 @@ comments:
 - This includes previous names, acronyms, former taxonomic terms, and other variations.
   This information can serve as keywords for search purposes and as a bridge with
   other projects that use different naming systems or taxonomies
-from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+from_schema: https://w3id.org/evorao/
 close_mappings:
 - wdp:P4970
 rank: 1000

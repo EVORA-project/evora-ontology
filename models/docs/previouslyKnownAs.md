@@ -1,6 +1,6 @@
 
 
-# Slot: previously known as (previouslyKnownAs)
+# Slot: previously known as (previouslyKnownAs) 
 
 
 _Any historic version of this taxon having a different name_
@@ -9,9 +9,8 @@ _Any historic version of this taxon having a different name_
 
 
 
-URI: [EVORAO:previouslyKnownAs](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#previouslyKnownAs)
-
-
+URI: [EVORAO:previouslyKnownAs](https://w3id.org/evorao/previouslyKnownAs)
+Alias: previouslyKnownAs
 
 <!-- no inheritance hierarchy -->
 
@@ -52,7 +51,7 @@ URI: [EVORAO:previouslyKnownAs](https://raw.githubusercontent.com/EVORA-project/
 ### Schema Source
 
 
-* from schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+* from schema: https://w3id.org/evorao/
 
 
 
@@ -75,7 +74,7 @@ URI: [EVORAO:previouslyKnownAs](https://raw.githubusercontent.com/EVORA-project/
 name: previouslyKnownAs
 description: Any historic version of this taxon having a different name
 title: previously known as
-from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+from_schema: https://w3id.org/evorao/
 close_mappings:
 - dwc:Taxon
 rank: 1000

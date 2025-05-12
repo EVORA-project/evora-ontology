@@ -1,6 +1,6 @@
 
 
-# Slot: endpoint URL (endpointURL)
+# Slot: endpoint URL (endpointURL) 
 
 
 _The URL template that allows to get the content_
@@ -10,8 +10,7 @@ _The URL template that allows to get the content_
 
 
 URI: [dcat:endpointURL](http://www.w3.org/ns/dcat#endpointURL)
-
-
+Alias: endpointURL
 
 <!-- no inheritance hierarchy -->
 
@@ -53,7 +52,7 @@ URI: [dcat:endpointURL](http://www.w3.org/ns/dcat#endpointURL)
 ### Schema Source
 
 
-* from schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+* from schema: https://w3id.org/evorao/
 
 
 
@@ -76,7 +75,7 @@ URI: [dcat:endpointURL](http://www.w3.org/ns/dcat#endpointURL)
 name: endpointURL
 description: The URL template that allows to get the content
 title: endpoint URL
-from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+from_schema: https://w3id.org/evorao/
 close_mappings:
 - wdp:P1630
 rank: 1000

@@ -1,6 +1,6 @@
 
 
-# Class: RI (RI)
+# Class: RI (RI) 
 
 
 _A research infrastructure_
@@ -9,7 +9,7 @@ _A research infrastructure_
 
 
 
-URI: [EVORAO:RI](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#RI)
+URI: [EVORAO:RI](https://w3id.org/evorao/RI)
 
 
 
@@ -121,7 +121,7 @@ URI: [EVORAO:RI](https://raw.githubusercontent.com/EVORA-project/evora-ontology/
 ### Schema Source
 
 
-* from schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+* from schema: https://w3id.org/evorao/
 
 
 
@@ -151,7 +151,7 @@ URI: [EVORAO:RI](https://raw.githubusercontent.com/EVORA-project/evora-ontology/
 name: RI
 description: A research infrastructure
 title: RI
-from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+from_schema: https://w3id.org/evorao/
 close_mappings:
 - wd:Q1438053
 - wd:Q1438053
@@ -167,7 +167,7 @@ is_a: Organization
 name: RI
 description: A research infrastructure
 title: RI
-from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+from_schema: https://w3id.org/evorao/
 close_mappings:
 - wd:Q1438053
 - wd:Q1438053
@@ -181,7 +181,7 @@ attributes:
     - This includes previous names, acronyms, former taxonomic terms, and other variations.
       This information can serve as keywords for search purposes and as a bridge with
       other projects that use different naming systems or taxonomies
-    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+    from_schema: https://w3id.org/evorao/
     close_mappings:
     - wdp:P4970
     rank: 1000
@@ -198,7 +198,7 @@ attributes:
     name: country
     description: The country of the organization
     title: country
-    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+    from_schema: https://w3id.org/evorao/
     rank: 1000
     alias: country
     owner: RI
@@ -213,7 +213,7 @@ attributes:
     description: The corresponding organization's persistent identifier from the Research
       Organization Registry (ROR)
     title: ROR iD
-    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+    from_schema: https://w3id.org/evorao/
     exact_mappings:
     - wdp:P6782
     rank: 1000
@@ -229,7 +229,7 @@ attributes:
     name: name
     description: A word or set of words used to identify and refer to an entity
     title: name
-    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+    from_schema: https://w3id.org/evorao/
     exact_mappings:
     - schema:name
     close_mappings:
@@ -255,7 +255,7 @@ attributes:
       present the resource.
 
       '
-    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+    from_schema: https://w3id.org/evorao/
     rank: 1000
     slot_uri: dct:description
     alias: description
@@ -277,7 +277,7 @@ attributes:
     name: homePage
     description: A web page that serves as the main or introductory page
     title: home page
-    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+    from_schema: https://w3id.org/evorao/
     rank: 1000
     alias: homePage
     owner: RI
@@ -290,7 +290,7 @@ attributes:
     name: contactPoint
     description: An information that allows someone to establish communication
     title: contact point
-    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+    from_schema: https://w3id.org/evorao/
     exact_mappings:
     - dcat:contactPoint
     rank: 1000
@@ -307,7 +307,7 @@ attributes:
     name: logo
     description: A path or URL to the related logo
     title: logo
-    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+    from_schema: https://w3id.org/evorao/
     rank: 1000
     alias: logo
     owner: RI

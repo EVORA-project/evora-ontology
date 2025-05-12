@@ -1,6 +1,6 @@
 
 
-# Slot: transport information (transportInformation)
+# Slot: transport information (transportInformation) 
 
 
 _Details the regulations and guidelines for safely transporting the product, including classifications for road, air, sea, or rail transport, UN numbers, packaging requirements, and any special precautions to ensure safe transit._
@@ -9,9 +9,8 @@ _Details the regulations and guidelines for safely transporting the product, inc
 
 
 
-URI: [EVORAO:transportInformation](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#transportInformation)
-
-
+URI: [EVORAO:transportInformation](https://w3id.org/evorao/transportInformation)
+Alias: transportInformation
 
 <!-- no inheritance hierarchy -->
 
@@ -52,7 +51,7 @@ URI: [EVORAO:transportInformation](https://raw.githubusercontent.com/EVORA-proje
 ### Schema Source
 
 
-* from schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+* from schema: https://w3id.org/evorao/
 
 
 
@@ -76,7 +75,7 @@ description: Details the regulations and guidelines for safely transporting the 
   including classifications for road, air, sea, or rail transport, UN numbers, packaging
   requirements, and any special precautions to ensure safe transit.
 title: transport information
-from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+from_schema: https://w3id.org/evorao/
 rank: 1000
 alias: transportInformation
 domain_of:

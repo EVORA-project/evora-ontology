@@ -1,6 +1,6 @@
 
 
-# Slot: email (email)
+# Slot: email (email) 
 
 
 _Email address_
@@ -9,9 +9,8 @@ _Email address_
 
 
 
-URI: [EVORAO:email](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#email)
-
-
+URI: [EVORAO:email](https://w3id.org/evorao/email)
+Alias: email
 
 <!-- no inheritance hierarchy -->
 
@@ -52,7 +51,7 @@ URI: [EVORAO:email](https://raw.githubusercontent.com/EVORA-project/evora-ontolo
 ### Schema Source
 
 
-* from schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+* from schema: https://w3id.org/evorao/
 
 
 
@@ -75,7 +74,7 @@ URI: [EVORAO:email](https://raw.githubusercontent.com/EVORA-project/evora-ontolo
 name: email
 description: Email address
 title: email
-from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+from_schema: https://w3id.org/evorao/
 close_mappings:
 - schema:email
 - vcard:email

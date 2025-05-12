@@ -1,6 +1,6 @@
 
 
-# Slot: identification technique (identificationTechnique)
+# Slot: identification technique (identificationTechnique) 
 
 
 _A method or procedure used to detect, identify, and confirm the presence of a specific nucleic acid sequence, pathogen, or associated constructs. This may involve various techniques such as PCR, sequencing, hybridization, or other molecular methods, utilizing specific tools and procedures for accurate detection and analysis_
@@ -9,9 +9,8 @@ _A method or procedure used to detect, identify, and confirm the presence of a s
 
 
 
-URI: [EVORAO:identificationTechnique](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#identificationTechnique)
-
-
+URI: [EVORAO:identificationTechnique](https://w3id.org/evorao/identificationTechnique)
+Alias: identificationTechnique
 
 <!-- no inheritance hierarchy -->
 
@@ -23,14 +22,14 @@ URI: [EVORAO:identificationTechnique](https://raw.githubusercontent.com/EVORA-pr
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [Virus](Virus.md) | The virus as a biological material |  no  |
-| [Viroid](Viroid.md) | The viroid as a biological material |  no  |
-| [Pathogen](Pathogen.md) | Biological entity that causes disease in its host, which is typically an infe... |  yes  |
-| [Bacterium](Bacterium.md) | The bacterium as a biological material |  no  |
-| [Prion](Prion.md) | The prion as a biological material |  no  |
-| [NucleicAcid](NucleicAcid.md) | Nucleic acid related to a pathogen |  yes  |
-| [Fungus](Fungus.md) | The fungus as a biological material |  no  |
 | [Protozoan](Protozoan.md) | The protozoan as a biological material |  no  |
+| [Fungus](Fungus.md) | The fungus as a biological material |  no  |
+| [Pathogen](Pathogen.md) | Biological entity that causes disease in its host, which is typically an infe... |  yes  |
+| [Prion](Prion.md) | The prion as a biological material |  no  |
+| [Viroid](Viroid.md) | The viroid as a biological material |  no  |
+| [Bacterium](Bacterium.md) | The bacterium as a biological material |  no  |
+| [Virus](Virus.md) | The virus as a biological material |  no  |
+| [NucleicAcid](NucleicAcid.md) | Nucleic acid related to a pathogen |  yes  |
 
 
 
@@ -57,7 +56,7 @@ URI: [EVORAO:identificationTechnique](https://raw.githubusercontent.com/EVORA-pr
 ### Schema Source
 
 
-* from schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+* from schema: https://w3id.org/evorao/
 
 
 
@@ -82,7 +81,7 @@ description: A method or procedure used to detect, identify, and confirm the pre
   involve various techniques such as PCR, sequencing, hybridization, or other molecular
   methods, utilizing specific tools and procedures for accurate detection and analysis
 title: identification technique
-from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+from_schema: https://w3id.org/evorao/
 rank: 1000
 alias: identificationTechnique
 domain_of:

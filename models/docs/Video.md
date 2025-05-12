@@ -1,6 +1,6 @@
 
 
-# Class: Video (Video)
+# Class: Video (Video) 
 
 
 _Subclass of File representing moving visual media, such as recordings, presentations, or movies_
@@ -9,7 +9,7 @@ _Subclass of File representing moving visual media, such as recordings, presenta
 
 
 
-URI: [EVORAO:Video](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#Video)
+URI: [EVORAO:Video](https://w3id.org/evorao/Video)
 
 
 
@@ -83,7 +83,7 @@ URI: [EVORAO:Video](https://raw.githubusercontent.com/EVORA-project/evora-ontolo
 ### Schema Source
 
 
-* from schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+* from schema: https://w3id.org/evorao/
 
 
 
@@ -114,7 +114,7 @@ name: Video
 description: Subclass of File representing moving visual media, such as recordings,
   presentations, or movies
 title: Video
-from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+from_schema: https://w3id.org/evorao/
 close_mappings:
 - wd:Q98405806
 - wd:Q98405806
@@ -131,7 +131,7 @@ name: Video
 description: Subclass of File representing moving visual media, such as recordings,
   presentations, or movies
 title: Video
-from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+from_schema: https://w3id.org/evorao/
 close_mappings:
 - wd:Q98405806
 - wd:Q98405806
@@ -141,7 +141,7 @@ attributes:
     name: name
     description: A word or set of words used to identify and refer to an entity
     title: name
-    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+    from_schema: https://w3id.org/evorao/
     exact_mappings:
     - schema:name
     close_mappings:
@@ -167,7 +167,7 @@ attributes:
       present the resource.
 
       '
-    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+    from_schema: https://w3id.org/evorao/
     rank: 1000
     slot_uri: dct:description
     alias: description
@@ -190,7 +190,7 @@ attributes:
     description: The web address or location where the file content is stored and
       can be accessed or downloaded.
     title: content URL
-    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+    from_schema: https://w3id.org/evorao/
     rank: 1000
     alias: contentURL
     owner: Video
@@ -204,7 +204,7 @@ attributes:
     description: The file type or format that indicates how the data within the file
       is structured
     title: format
-    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+    from_schema: https://w3id.org/evorao/
     rank: 1000
     alias: format
     owner: Video
@@ -218,7 +218,7 @@ attributes:
     description: Information about terms and conditions under which the subject can
       be used, shared, or distributed, indicating any restrictions or permissions
     title: license
-    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+    from_schema: https://w3id.org/evorao/
     exact_mappings:
     - dct:license
     rank: 1000

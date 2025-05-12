@@ -1,6 +1,6 @@
 
 
-# Slot: street address (streetAddress)
+# Slot: street address (streetAddress) 
 
 
 _The building/apartment number and the street name_
@@ -9,9 +9,8 @@ _The building/apartment number and the street name_
 
 
 
-URI: [EVORAO:streetAddress](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#streetAddress)
-
-
+URI: [EVORAO:streetAddress](https://w3id.org/evorao/streetAddress)
+Alias: streetAddress
 
 <!-- no inheritance hierarchy -->
 
@@ -50,7 +49,7 @@ URI: [EVORAO:streetAddress](https://raw.githubusercontent.com/EVORA-project/evor
 ### Schema Source
 
 
-* from schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+* from schema: https://w3id.org/evorao/
 
 
 
@@ -73,7 +72,7 @@ URI: [EVORAO:streetAddress](https://raw.githubusercontent.com/EVORA-project/evor
 name: streetAddress
 description: The building/apartment number and the street name
 title: street address
-from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+from_schema: https://w3id.org/evorao/
 close_mappings:
 - schema:streetAddress
 - vcard:hasStreetAddress

@@ -1,6 +1,6 @@
 
 
-# Slot: has SOP File (hasSOPFile)
+# Slot: has SOP File (hasSOPFile) 
 
 
 _The related standard operating procedure file_
@@ -9,9 +9,8 @@ _The related standard operating procedure file_
 
 
 
-URI: [EVORAO:hasSOPFile](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#hasSOPFile)
-
-
+URI: [EVORAO:hasSOPFile](https://w3id.org/evorao/hasSOPFile)
+Alias: hasSOPFile
 
 <!-- no inheritance hierarchy -->
 
@@ -52,7 +51,7 @@ URI: [EVORAO:hasSOPFile](https://raw.githubusercontent.com/EVORA-project/evora-o
 ### Schema Source
 
 
-* from schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+* from schema: https://w3id.org/evorao/
 
 
 
@@ -74,7 +73,7 @@ URI: [EVORAO:hasSOPFile](https://raw.githubusercontent.com/EVORA-project/evora-o
 name: hasSOPFile
 description: The related standard operating procedure file
 title: has SOP File
-from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+from_schema: https://w3id.org/evorao/
 rank: 1000
 alias: hasSOPFile
 domain_of:

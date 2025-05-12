@@ -1,6 +1,6 @@
 
 
-# Slot: toxicological information (toxicologicalInformation)
+# Slot: toxicological information (toxicologicalInformation) 
 
 
 _Details on the potential health effects of the product, including routes of exposure (inhalation, ingestion, skin, eye contact), acute and chronic toxicity and symptoms of exposure_
@@ -9,9 +9,8 @@ _Details on the potential health effects of the product, including routes of exp
 
 
 
-URI: [EVORAO:toxicologicalInformation](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#toxicologicalInformation)
-
-
+URI: [EVORAO:toxicologicalInformation](https://w3id.org/evorao/toxicologicalInformation)
+Alias: toxicologicalInformation
 
 <!-- no inheritance hierarchy -->
 
@@ -52,7 +51,7 @@ URI: [EVORAO:toxicologicalInformation](https://raw.githubusercontent.com/EVORA-p
 ### Schema Source
 
 
-* from schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+* from schema: https://w3id.org/evorao/
 
 
 
@@ -76,7 +75,7 @@ description: Details on the potential health effects of the product, including r
   of exposure (inhalation, ingestion, skin, eye contact), acute and chronic toxicity
   and symptoms of exposure
 title: toxicological information
-from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+from_schema: https://w3id.org/evorao/
 rank: 1000
 alias: toxicologicalInformation
 domain_of:

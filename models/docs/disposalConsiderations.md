@@ -1,6 +1,6 @@
 
 
-# Slot: disposal considerations (disposalConsiderations)
+# Slot: disposal considerations (disposalConsiderations) 
 
 
 _Guidance on the safe and environmentally responsible disposal of the product, including recommended disposal methods, regulatory requirements, and precautions to avoid harm to people and the environment during disposal._
@@ -9,9 +9,8 @@ _Guidance on the safe and environmentally responsible disposal of the product, i
 
 
 
-URI: [EVORAO:disposalConsiderations](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#disposalConsiderations)
-
-
+URI: [EVORAO:disposalConsiderations](https://w3id.org/evorao/disposalConsiderations)
+Alias: disposalConsiderations
 
 <!-- no inheritance hierarchy -->
 
@@ -52,7 +51,7 @@ URI: [EVORAO:disposalConsiderations](https://raw.githubusercontent.com/EVORA-pro
 ### Schema Source
 
 
-* from schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+* from schema: https://w3id.org/evorao/
 
 
 
@@ -76,7 +75,7 @@ description: Guidance on the safe and environmentally responsible disposal of th
   product, including recommended disposal methods, regulatory requirements, and precautions
   to avoid harm to people and the environment during disposal.
 title: disposal considerations
-from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+from_schema: https://w3id.org/evorao/
 rank: 1000
 alias: disposalConsiderations
 domain_of:

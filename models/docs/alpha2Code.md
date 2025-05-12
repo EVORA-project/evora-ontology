@@ -1,6 +1,6 @@
 
 
-# Slot: alpha-2 code (alpha2Code)
+# Slot: alpha-2 code (alpha2Code) 
 
 
 _Two-letter country codes from ISO 3166-1 alpha-2_
@@ -9,9 +9,8 @@ _Two-letter country codes from ISO 3166-1 alpha-2_
 
 
 
-URI: [EVORAO:alpha2Code](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#alpha2Code)
-
-
+URI: [EVORAO:alpha2Code](https://w3id.org/evorao/alpha2Code)
+Alias: alpha2Code
 
 <!-- no inheritance hierarchy -->
 
@@ -52,7 +51,7 @@ URI: [EVORAO:alpha2Code](https://raw.githubusercontent.com/EVORA-project/evora-o
 ### Schema Source
 
 
-* from schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+* from schema: https://w3id.org/evorao/
 
 
 
@@ -74,7 +73,7 @@ URI: [EVORAO:alpha2Code](https://raw.githubusercontent.com/EVORA-project/evora-o
 name: alpha2Code
 description: Two-letter country codes from ISO 3166-1 alpha-2
 title: alpha-2 code
-from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+from_schema: https://w3id.org/evorao/
 rank: 1000
 alias: alpha2Code
 domain_of:

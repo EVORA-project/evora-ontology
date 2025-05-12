@@ -1,6 +1,6 @@
 
 
-# Class: Contact Point (ContactPoint)
+# Class: Contact Point (ContactPoint) 
 
 
 _Entity serving as focal point of information_
@@ -9,7 +9,7 @@ _Entity serving as focal point of information_
 
 
 
-URI: [EVORAO:ContactPoint](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#ContactPoint)
+URI: [EVORAO:ContactPoint](https://w3id.org/evorao/ContactPoint)
 
 
 
@@ -126,7 +126,7 @@ URI: [EVORAO:ContactPoint](https://raw.githubusercontent.com/EVORA-project/evora
 ### Schema Source
 
 
-* from schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+* from schema: https://w3id.org/evorao/
 
 
 
@@ -156,7 +156,7 @@ URI: [EVORAO:ContactPoint](https://raw.githubusercontent.com/EVORA-project/evora
 name: ContactPoint
 description: Entity serving as focal point of information
 title: Contact Point
-from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+from_schema: https://w3id.org/evorao/
 close_mappings:
 - wd:Q30322502
 - vcard:Contact
@@ -328,7 +328,7 @@ slot_usage:
 name: ContactPoint
 description: Entity serving as focal point of information
 title: Contact Point
-from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+from_schema: https://w3id.org/evorao/
 close_mappings:
 - wd:Q30322502
 - vcard:Contact
@@ -483,7 +483,7 @@ attributes:
     name: name
     description: A word or set of words used to identify and refer to an entity
     title: name
-    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+    from_schema: https://w3id.org/evorao/
     exact_mappings:
     - schema:name
     close_mappings:
@@ -509,7 +509,7 @@ attributes:
       present the resource.
 
       '
-    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+    from_schema: https://w3id.org/evorao/
     rank: 1000
     slot_uri: dct:description
     alias: description
@@ -531,7 +531,7 @@ attributes:
     name: email
     description: Email address
     title: email
-    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+    from_schema: https://w3id.org/evorao/
     close_mappings:
     - schema:email
     - vcard:email
@@ -548,7 +548,7 @@ attributes:
     name: telephone
     description: The telephone number
     title: telephone
-    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+    from_schema: https://w3id.org/evorao/
     close_mappings:
     - schema:telephone
     - vcard:telephone
@@ -565,7 +565,7 @@ attributes:
     name: streetAddress
     description: The building/apartment number and the street name
     title: street address
-    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+    from_schema: https://w3id.org/evorao/
     close_mappings:
     - schema:streetAddress
     - vcard:hasStreetAddress
@@ -582,7 +582,7 @@ attributes:
     description: The locality in which the street address is, and which is in the
       region. e.g, the city
     title: locality/city
-    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+    from_schema: https://w3id.org/evorao/
     close_mappings:
     - schema:addressLocality
     - vcard:hasLocality
@@ -599,7 +599,7 @@ attributes:
     description: The region in which the locality is, and which is in the country.
       For example, California or another appropriate first-level Administrative division
     title: region
-    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+    from_schema: https://w3id.org/evorao/
     close_mappings:
     - schema:addressRegion
     - vcard:hasRegion
@@ -615,7 +615,7 @@ attributes:
     name: postalCode
     description: The postal code
     title: postal code
-    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+    from_schema: https://w3id.org/evorao/
     close_mappings:
     - schema:postalCode
     - vcard:hasPostalCode
@@ -631,7 +631,7 @@ attributes:
     name: addressCountry
     description: The country as of  ISO 3166
     title: address Country
-    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+    from_schema: https://w3id.org/evorao/
     close_mappings:
     - schema:addressCountry
     - vcard:hasCountryName
@@ -648,7 +648,7 @@ attributes:
     description: Unique persistent identifier for a person, provided by the Open Researcher
       and Contributor ID (ORCID) organisation
     title: ORCID iD
-    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+    from_schema: https://w3id.org/evorao/
     exact_mappings:
     - IAO:0000708
     rank: 1000

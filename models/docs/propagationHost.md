@@ -1,6 +1,6 @@
 
 
-# Slot: propagation host (propagationHost)
+# Slot: propagation host (propagationHost) 
 
 
 _The host organism that propagates the pathogen_
@@ -9,9 +9,8 @@ _The host organism that propagates the pathogen_
 
 
 
-URI: [EVORAO:propagationHost](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#propagationHost)
-
-
+URI: [EVORAO:propagationHost](https://w3id.org/evorao/propagationHost)
+Alias: propagationHost
 
 <!-- no inheritance hierarchy -->
 
@@ -23,13 +22,13 @@ URI: [EVORAO:propagationHost](https://raw.githubusercontent.com/EVORA-project/ev
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
+| [Protozoan](Protozoan.md) | The protozoan as a biological material |  no  |
+| [Fungus](Fungus.md) | The fungus as a biological material |  no  |
+| [Pathogen](Pathogen.md) | Biological entity that causes disease in its host, which is typically an infe... |  yes  |
+| [Prion](Prion.md) | The prion as a biological material |  no  |
+| [Bacterium](Bacterium.md) | The bacterium as a biological material |  no  |
 | [Virus](Virus.md) | The virus as a biological material |  no  |
 | [Viroid](Viroid.md) | The viroid as a biological material |  no  |
-| [Pathogen](Pathogen.md) | Biological entity that causes disease in its host, which is typically an infe... |  yes  |
-| [Bacterium](Bacterium.md) | The bacterium as a biological material |  no  |
-| [Prion](Prion.md) | The prion as a biological material |  no  |
-| [Fungus](Fungus.md) | The fungus as a biological material |  no  |
-| [Protozoan](Protozoan.md) | The protozoan as a biological material |  no  |
 
 
 
@@ -58,7 +57,7 @@ URI: [EVORAO:propagationHost](https://raw.githubusercontent.com/EVORA-project/ev
 ### Schema Source
 
 
-* from schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+* from schema: https://w3id.org/evorao/
 
 
 
@@ -80,7 +79,7 @@ URI: [EVORAO:propagationHost](https://raw.githubusercontent.com/EVORA-project/ev
 name: propagationHost
 description: The host organism that propagates the pathogen
 title: propagation host
-from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+from_schema: https://w3id.org/evorao/
 rank: 1000
 alias: propagationHost
 domain_of:

@@ -1,6 +1,6 @@
 
 
-# Class: Biological material origin (BiologicalMaterialOrigin)
+# Class: Biological material origin (BiologicalMaterialOrigin) 
 
 
 _Information about the origin of the biological material, compulsory for access, utilization, and benefit-sharing of genetic resources in compliance with the Nagoya Protocol_
@@ -9,7 +9,7 @@ _Information about the origin of the biological material, compulsory for access,
 
 
 
-URI: [EVORAO:BiologicalMaterialOrigin](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#BiologicalMaterialOrigin)
+URI: [EVORAO:BiologicalMaterialOrigin](https://w3id.org/evorao/BiologicalMaterialOrigin)
 
 
 
@@ -91,7 +91,7 @@ URI: [EVORAO:BiologicalMaterialOrigin](https://raw.githubusercontent.com/EVORA-p
 ### Schema Source
 
 
-* from schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+* from schema: https://w3id.org/evorao/
 
 
 
@@ -122,7 +122,7 @@ description: Information about the origin of the biological material, compulsory
   access, utilization, and benefit-sharing of genetic resources in compliance with
   the Nagoya Protocol
 title: Biological material origin
-from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+from_schema: https://w3id.org/evorao/
 is_a: Resource
 slots:
 - recombinantMaterial
@@ -180,7 +180,7 @@ description: Information about the origin of the biological material, compulsory
   access, utilization, and benefit-sharing of genetic resources in compliance with
   the Nagoya Protocol
 title: Biological material origin
-from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+from_schema: https://w3id.org/evorao/
 is_a: Resource
 slot_usage:
   recombinantMaterial:
@@ -227,7 +227,7 @@ attributes:
     description: Indicates if this biological material is a recombinant biological
       material.
     title: recombinant material
-    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+    from_schema: https://w3id.org/evorao/
     rank: 1000
     ifabsent: 'false'
     alias: recombinantMaterial
@@ -246,7 +246,7 @@ attributes:
     comments:
     - It makes sense that only recombinant biological materials can have a mixed material
       origin!
-    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+    from_schema: https://w3id.org/evorao/
     rank: 1000
     alias: biologicalSourceType
     owner: BiologicalMaterialOrigin
@@ -263,7 +263,7 @@ attributes:
     title: biological part origin
     comments:
     - It can be multiple parts in case of a recombinant biological material.
-    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+    from_schema: https://w3id.org/evorao/
     rank: 1000
     alias: biologicalPartOrigin
     owner: BiologicalMaterialOrigin

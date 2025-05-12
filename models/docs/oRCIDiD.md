@@ -1,6 +1,6 @@
 
 
-# Slot: ORCID iD (oRCIDiD)
+# Slot: ORCID iD (oRCIDiD) 
 
 
 _Unique persistent identifier for a person, provided by the Open Researcher and Contributor ID (ORCID) organisation_
@@ -9,9 +9,8 @@ _Unique persistent identifier for a person, provided by the Open Researcher and 
 
 
 
-URI: [EVORAO:oRCIDiD](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#oRCIDiD)
-
-
+URI: [EVORAO:oRCIDiD](https://w3id.org/evorao/oRCIDiD)
+Alias: oRCIDiD
 
 <!-- no inheritance hierarchy -->
 
@@ -23,8 +22,8 @@ URI: [EVORAO:oRCIDiD](https://raw.githubusercontent.com/EVORA-project/evora-onto
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [Person](Person.md) | An individual |  yes  |
 | [ContactPoint](ContactPoint.md) | Entity serving as focal point of information |  yes  |
+| [Person](Person.md) | An individual |  yes  |
 
 
 
@@ -53,7 +52,7 @@ URI: [EVORAO:oRCIDiD](https://raw.githubusercontent.com/EVORA-project/evora-onto
 ### Schema Source
 
 
-* from schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+* from schema: https://w3id.org/evorao/
 
 
 
@@ -77,7 +76,7 @@ name: oRCIDiD
 description: Unique persistent identifier for a person, provided by the Open Researcher
   and Contributor ID (ORCID) organisation
 title: ORCID iD
-from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+from_schema: https://w3id.org/evorao/
 exact_mappings:
 - wdp:P496
 - IAO:0000708

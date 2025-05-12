@@ -1,6 +1,6 @@
 
 
-# Slot: physical and chemical properties and information on ingredients (physicalChemicalProperties)
+# Slot: physical and chemical properties and information on ingredients (physicalChemicalProperties) 
 
 
 _Key characteristics of the product, such as physical state, appearance, solubility, pH, chemical composition, and molecular weight, essential for safe handling and storage_
@@ -9,9 +9,8 @@ _Key characteristics of the product, such as physical state, appearance, solubil
 
 
 
-URI: [EVORAO:physicalChemicalProperties](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#physicalChemicalProperties)
-
-
+URI: [EVORAO:physicalChemicalProperties](https://w3id.org/evorao/physicalChemicalProperties)
+Alias: physicalChemicalProperties
 
 <!-- no inheritance hierarchy -->
 
@@ -52,7 +51,7 @@ URI: [EVORAO:physicalChemicalProperties](https://raw.githubusercontent.com/EVORA
 ### Schema Source
 
 
-* from schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+* from schema: https://w3id.org/evorao/
 
 
 
@@ -76,7 +75,7 @@ description: Key characteristics of the product, such as physical state, appeara
   solubility, pH, chemical composition, and molecular weight, essential for safe handling
   and storage
 title: physical and chemical properties and information on ingredients
-from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+from_schema: https://w3id.org/evorao/
 rank: 1000
 alias: physicalChemicalProperties
 domain_of:

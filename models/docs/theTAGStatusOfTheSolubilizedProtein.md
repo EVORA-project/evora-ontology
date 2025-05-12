@@ -1,6 +1,6 @@
 
 
-# Slot: TAG status of the solubilized protein (theTAGStatusOfTheSolubilizedProtein)
+# Slot: TAG status of the solubilized protein (theTAGStatusOfTheSolubilizedProtein) 
 
 
 _Indicates the presence and condition of a tag on the protein after solubilization. Possible values include 'Uncleaved Tag' (the tag is still attached to the protein), 'Cleaved Tag' (the tag has been removed from the protein), and 'No Tag' (the protein does not have a tag)_
@@ -9,9 +9,8 @@ _Indicates the presence and condition of a tag on the protein after solubilizati
 
 
 
-URI: [EVORAO:theTAGStatusOfTheSolubilizedProtein](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#theTAGStatusOfTheSolubilizedProtein)
-
-
+URI: [EVORAO:theTAGStatusOfTheSolubilizedProtein](https://w3id.org/evorao/theTAGStatusOfTheSolubilizedProtein)
+Alias: theTAGStatusOfTheSolubilizedProtein
 
 <!-- no inheritance hierarchy -->
 
@@ -52,7 +51,7 @@ URI: [EVORAO:theTAGStatusOfTheSolubilizedProtein](https://raw.githubusercontent.
 ### Schema Source
 
 
-* from schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+* from schema: https://w3id.org/evorao/
 
 
 
@@ -77,7 +76,7 @@ description: Indicates the presence and condition of a tag on the protein after 
   'Cleaved Tag' (the tag has been removed from the protein), and 'No Tag' (the protein
   does not have a tag)
 title: TAG status of the solubilized protein
-from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+from_schema: https://w3id.org/evorao/
 rank: 1000
 alias: theTAGStatusOfTheSolubilizedProtein
 domain_of:

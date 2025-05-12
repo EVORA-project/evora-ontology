@@ -1,6 +1,6 @@
 
 
-# Class: Recombinant part identification (RecombinantPartIdentification)
+# Class: Recombinant part identification (RecombinantPartIdentification) 
 
 
 _Identification of a recombinant part_
@@ -9,7 +9,7 @@ _Identification of a recombinant part_
 
 
 
-URI: [EVORAO:RecombinantPartIdentification](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#RecombinantPartIdentification)
+URI: [EVORAO:RecombinantPartIdentification](https://w3id.org/evorao/RecombinantPartIdentification)
 
 
 
@@ -82,7 +82,7 @@ URI: [EVORAO:RecombinantPartIdentification](https://raw.githubusercontent.com/EV
 ### Schema Source
 
 
-* from schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+* from schema: https://w3id.org/evorao/
 
 
 
@@ -111,7 +111,7 @@ URI: [EVORAO:RecombinantPartIdentification](https://raw.githubusercontent.com/EV
 name: RecombinantPartIdentification
 description: Identification of a recombinant part
 title: Recombinant part identification
-from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+from_schema: https://w3id.org/evorao/
 is_a: Resource
 slots:
 - partIdentification
@@ -152,7 +152,7 @@ slot_usage:
 name: RecombinantPartIdentification
 description: Identification of a recombinant part
 title: Recombinant part identification
-from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+from_schema: https://w3id.org/evorao/
 is_a: Resource
 slot_usage:
   partIdentification:
@@ -185,7 +185,7 @@ attributes:
     description: A short designation of this recombinant part of the related biological
       material
     title: Part identification
-    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+    from_schema: https://w3id.org/evorao/
     rank: 1000
     alias: partIdentification
     owner: RecombinantPartIdentification
@@ -199,7 +199,7 @@ attributes:
     description: The related sequence information from a sequence provider or in fasta
       format
     title: sequence
-    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+    from_schema: https://w3id.org/evorao/
     rank: 1000
     alias: sequence
     owner: RecombinantPartIdentification

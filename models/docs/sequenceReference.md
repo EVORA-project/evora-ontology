@@ -1,6 +1,6 @@
 
 
-# Slot: sequence reference (sequenceReference)
+# Slot: sequence reference (sequenceReference) 
 
 
 _A reference that permits to retrieve the sequence information from a sequence provider_
@@ -9,9 +9,8 @@ _A reference that permits to retrieve the sequence information from a sequence p
 
 
 
-URI: [EVORAO:sequenceReference](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#sequenceReference)
-
-
+URI: [EVORAO:sequenceReference](https://w3id.org/evorao/sequenceReference)
+Alias: sequenceReference
 
 <!-- no inheritance hierarchy -->
 
@@ -24,8 +23,8 @@ URI: [EVORAO:sequenceReference](https://raw.githubusercontent.com/EVORA-project/
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
 | [Hybridoma](Hybridoma.md) | An hybridoma that provides antibodies that can be related to a pathogen |  no  |
-| [Sequence](Sequence.md) | A nucleic acid or protein sequence information |  yes  |
 | [Antibody](Antibody.md) | Protein that can bind to certain types of foreign bodies, such as pathogens |  yes  |
+| [Sequence](Sequence.md) | A nucleic acid or protein sequence information |  yes  |
 
 
 
@@ -56,7 +55,7 @@ URI: [EVORAO:sequenceReference](https://raw.githubusercontent.com/EVORA-project/
 ### Schema Source
 
 
-* from schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+* from schema: https://w3id.org/evorao/
 
 
 
@@ -79,7 +78,7 @@ name: sequenceReference
 description: A reference that permits to retrieve the sequence information from a
   sequence provider
 title: sequence reference
-from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+from_schema: https://w3id.org/evorao/
 rank: 1000
 alias: sequenceReference
 domain_of:

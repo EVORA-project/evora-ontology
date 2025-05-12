@@ -1,6 +1,6 @@
 
 
-# Slot: recombinant material (recombinantMaterial)
+# Slot: recombinant material (recombinantMaterial) 
 
 
 _Indicates if this biological material is a recombinant biological material._
@@ -9,9 +9,8 @@ _Indicates if this biological material is a recombinant biological material._
 
 
 
-URI: [EVORAO:recombinantMaterial](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#recombinantMaterial)
-
-
+URI: [EVORAO:recombinantMaterial](https://w3id.org/evorao/recombinantMaterial)
+Alias: recombinantMaterial
 
 <!-- no inheritance hierarchy -->
 
@@ -52,7 +51,7 @@ URI: [EVORAO:recombinantMaterial](https://raw.githubusercontent.com/EVORA-projec
 ### Schema Source
 
 
-* from schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+* from schema: https://w3id.org/evorao/
 
 
 
@@ -74,7 +73,7 @@ URI: [EVORAO:recombinantMaterial](https://raw.githubusercontent.com/EVORA-projec
 name: recombinantMaterial
 description: Indicates if this biological material is a recombinant biological material.
 title: recombinant material
-from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+from_schema: https://w3id.org/evorao/
 rank: 1000
 ifabsent: 'false'
 alias: recombinantMaterial

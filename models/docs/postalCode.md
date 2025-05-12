@@ -1,6 +1,6 @@
 
 
-# Slot: postal code (postalCode)
+# Slot: postal code (postalCode) 
 
 
 _The postal code_
@@ -9,9 +9,8 @@ _The postal code_
 
 
 
-URI: [EVORAO:postalCode](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#postalCode)
-
-
+URI: [EVORAO:postalCode](https://w3id.org/evorao/postalCode)
+Alias: postalCode
 
 <!-- no inheritance hierarchy -->
 
@@ -50,7 +49,7 @@ URI: [EVORAO:postalCode](https://raw.githubusercontent.com/EVORA-project/evora-o
 ### Schema Source
 
 
-* from schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+* from schema: https://w3id.org/evorao/
 
 
 
@@ -73,7 +72,7 @@ URI: [EVORAO:postalCode](https://raw.githubusercontent.com/EVORA-project/evora-o
 name: postalCode
 description: The postal code
 title: postal code
-from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+from_schema: https://w3id.org/evorao/
 close_mappings:
 - schema:postalCode
 - vcard:hasPostalCode

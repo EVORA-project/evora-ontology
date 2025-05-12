@@ -1,6 +1,6 @@
 
 
-# Slot: sequence provider (sequenceProvider)
+# Slot: sequence provider (sequenceProvider) 
 
 
 _The name of the sequence provider within the list of accepted sequence providers_
@@ -9,9 +9,8 @@ _The name of the sequence provider within the list of accepted sequence provider
 
 
 
-URI: [EVORAO:sequenceProvider](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#sequenceProvider)
-
-
+URI: [EVORAO:sequenceProvider](https://w3id.org/evorao/sequenceProvider)
+Alias: sequenceProvider
 
 <!-- no inheritance hierarchy -->
 
@@ -52,7 +51,7 @@ URI: [EVORAO:sequenceProvider](https://raw.githubusercontent.com/EVORA-project/e
 ### Schema Source
 
 
-* from schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+* from schema: https://w3id.org/evorao/
 
 
 
@@ -76,7 +75,7 @@ name: sequenceProvider
 description: The name of the sequence provider within the list of accepted sequence
   providers
 title: sequence provider
-from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+from_schema: https://w3id.org/evorao/
 close_mappings:
 - dct:publisher
 rank: 1000

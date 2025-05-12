@@ -1,6 +1,6 @@
 
 
-# Slot: host type (hostType)
+# Slot: host type (hostType) 
 
 
 _Indication of the possible host(s) for the identified pathogens among the listed main categories_
@@ -9,9 +9,8 @@ _Indication of the possible host(s) for the identified pathogens among the liste
 
 
 
-URI: [EVORAO:hostType](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#hostType)
-
-
+URI: [EVORAO:hostType](https://w3id.org/evorao/hostType)
+Alias: hostType
 
 <!-- no inheritance hierarchy -->
 
@@ -54,7 +53,7 @@ URI: [EVORAO:hostType](https://raw.githubusercontent.com/EVORA-project/evora-ont
 ### Schema Source
 
 
-* from schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+* from schema: https://w3id.org/evorao/
 
 
 
@@ -77,7 +76,7 @@ name: hostType
 description: Indication of the possible host(s) for the identified pathogens among
   the listed main categories
 title: host type
-from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+from_schema: https://w3id.org/evorao/
 rank: 1000
 alias: hostType
 domain_of:

@@ -1,6 +1,6 @@
 
 
-# Slot: provided entity type (providedEntityType)
+# Slot: provided entity type (providedEntityType) 
 
 
 _The identification of the entity type (Class) described by the response to the query_
@@ -9,9 +9,8 @@ _The identification of the entity type (Class) described by the response to the 
 
 
 
-URI: [EVORAO:providedEntityType](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#providedEntityType)
-
-
+URI: [EVORAO:providedEntityType](https://w3id.org/evorao/providedEntityType)
+Alias: providedEntityType
 
 <!-- no inheritance hierarchy -->
 
@@ -52,7 +51,7 @@ URI: [EVORAO:providedEntityType](https://raw.githubusercontent.com/EVORA-project
 ### Schema Source
 
 
-* from schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+* from schema: https://w3id.org/evorao/
 
 
 
@@ -76,7 +75,7 @@ name: providedEntityType
 description: The identification of the entity type (Class) described by the response
   to the query
 title: provided entity type
-from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+from_schema: https://w3id.org/evorao/
 exact_mappings:
 - dcat:servesDataset
 rank: 1000

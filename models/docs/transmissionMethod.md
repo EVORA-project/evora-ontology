@@ -1,6 +1,6 @@
 
 
-# Slot: transmission method (transmissionMethod)
+# Slot: transmission method (transmissionMethod) 
 
 
 _The method or route through which the pathogen is transmitted from one host to another, detailing the mechanisms of infection spread._
@@ -9,9 +9,8 @@ _The method or route through which the pathogen is transmitted from one host to 
 
 
 
-URI: [EVORAO:transmissionMethod](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#transmissionMethod)
-
-
+URI: [EVORAO:transmissionMethod](https://w3id.org/evorao/transmissionMethod)
+Alias: transmissionMethod
 
 <!-- no inheritance hierarchy -->
 
@@ -23,13 +22,13 @@ URI: [EVORAO:transmissionMethod](https://raw.githubusercontent.com/EVORA-project
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
+| [Protozoan](Protozoan.md) | The protozoan as a biological material |  no  |
+| [Fungus](Fungus.md) | The fungus as a biological material |  no  |
+| [Pathogen](Pathogen.md) | Biological entity that causes disease in its host, which is typically an infe... |  yes  |
+| [Prion](Prion.md) | The prion as a biological material |  no  |
+| [Bacterium](Bacterium.md) | The bacterium as a biological material |  no  |
 | [Virus](Virus.md) | The virus as a biological material |  no  |
 | [Viroid](Viroid.md) | The viroid as a biological material |  no  |
-| [Pathogen](Pathogen.md) | Biological entity that causes disease in its host, which is typically an infe... |  yes  |
-| [Bacterium](Bacterium.md) | The bacterium as a biological material |  no  |
-| [Prion](Prion.md) | The prion as a biological material |  no  |
-| [Fungus](Fungus.md) | The fungus as a biological material |  no  |
-| [Protozoan](Protozoan.md) | The protozoan as a biological material |  no  |
 
 
 
@@ -58,7 +57,7 @@ URI: [EVORAO:transmissionMethod](https://raw.githubusercontent.com/EVORA-project
 ### Schema Source
 
 
-* from schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+* from schema: https://w3id.org/evorao/
 
 
 
@@ -81,7 +80,7 @@ name: transmissionMethod
 description: The method or route through which the pathogen is transmitted from one
   host to another, detailing the mechanisms of infection spread.
 title: transmission method
-from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+from_schema: https://w3id.org/evorao/
 rank: 1000
 alias: transmissionMethod
 domain_of:

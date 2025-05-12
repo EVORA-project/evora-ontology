@@ -1,6 +1,6 @@
 
 
-# Slot: specificity (specificity)
+# Slot: specificity (specificity) 
 
 
 _Details on the ability of a detection kit to correctly identify negative results, distinguishing between the target analyte and other substances without cross-reacting_
@@ -9,9 +9,8 @@ _Details on the ability of a detection kit to correctly identify negative result
 
 
 
-URI: [EVORAO:specificity](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#specificity)
-
-
+URI: [EVORAO:specificity](https://w3id.org/evorao/specificity)
+Alias: specificity
 
 <!-- no inheritance hierarchy -->
 
@@ -50,7 +49,7 @@ URI: [EVORAO:specificity](https://raw.githubusercontent.com/EVORA-project/evora-
 ### Schema Source
 
 
-* from schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+* from schema: https://w3id.org/evorao/
 
 
 
@@ -74,7 +73,7 @@ description: Details on the ability of a detection kit to correctly identify neg
   results, distinguishing between the target analyte and other substances without
   cross-reacting
 title: specificity
-from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+from_schema: https://w3id.org/evorao/
 rank: 1000
 alias: specificity
 domain_of:

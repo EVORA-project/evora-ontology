@@ -1,6 +1,6 @@
 
 
-# Slot: related PDB (relatedPDB)
+# Slot: related PDB (relatedPDB) 
 
 
 _Identifier for 3D structural data as per the PDB (Protein Data Bank) database_
@@ -9,9 +9,8 @@ _Identifier for 3D structural data as per the PDB (Protein Data Bank) database_
 
 
 
-URI: [EVORAO:relatedPDB](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#relatedPDB)
-
-
+URI: [EVORAO:relatedPDB](https://w3id.org/evorao/relatedPDB)
+Alias: relatedPDB
 
 <!-- no inheritance hierarchy -->
 
@@ -52,7 +51,7 @@ URI: [EVORAO:relatedPDB](https://raw.githubusercontent.com/EVORA-project/evora-o
 ### Schema Source
 
 
-* from schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+* from schema: https://w3id.org/evorao/
 
 
 
@@ -76,7 +75,7 @@ name: relatedPDB
 description: Identifier for 3D structural data as per the PDB (Protein Data Bank)
   database
 title: related PDB
-from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+from_schema: https://w3id.org/evorao/
 close_mappings:
 - wdp:P638
 rank: 1000

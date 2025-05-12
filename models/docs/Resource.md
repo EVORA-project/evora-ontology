@@ -1,6 +1,6 @@
 
 
-# Class: Resource (Resource)
+# Class: Resource (Resource) 
 
 
 _Resource published or curated by a single agent._
@@ -113,7 +113,7 @@ URI: [dcat:Resource](http://www.w3.org/ns/dcat#Resource)
 ### Schema Source
 
 
-* from schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+* from schema: https://w3id.org/evorao/
 
 
 
@@ -142,7 +142,7 @@ URI: [dcat:Resource](http://www.w3.org/ns/dcat#Resource)
 name: Resource
 description: Resource published or curated by a single agent.
 title: Resource
-from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+from_schema: https://w3id.org/evorao/
 abstract: true
 class_uri: dcat:Resource
 
@@ -156,7 +156,7 @@ class_uri: dcat:Resource
 name: Resource
 description: Resource published or curated by a single agent.
 title: Resource
-from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+from_schema: https://w3id.org/evorao/
 abstract: true
 class_uri: dcat:Resource
 

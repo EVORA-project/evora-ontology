@@ -1,6 +1,6 @@
 
 
-# Slot: sequencing (sequencing)
+# Slot: sequencing (sequencing) 
 
 
 _Refers to the level of sequencing performed on the nucleic acid. Possible values include 'Not sequenced' (no sequencing has been performed), 'Partly sequenced' (only a portion of the nucleic acid sequence has been determined), and 'Fully sequenced' (the entire nucleic acid sequence has been determined)._
@@ -9,9 +9,8 @@ _Refers to the level of sequencing performed on the nucleic acid. Possible value
 
 
 
-URI: [EVORAO:sequencing](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#sequencing)
-
-
+URI: [EVORAO:sequencing](https://w3id.org/evorao/sequencing)
+Alias: sequencing
 
 <!-- no inheritance hierarchy -->
 
@@ -56,7 +55,7 @@ URI: [EVORAO:sequencing](https://raw.githubusercontent.com/EVORA-project/evora-o
 ### Schema Source
 
 
-* from schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+* from schema: https://w3id.org/evorao/
 
 
 
@@ -83,7 +82,7 @@ description: Refers to the level of sequencing performed on the nucleic acid. Po
 title: sequencing
 comments:
 - Cloned products have to be sequenced
-from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+from_schema: https://w3id.org/evorao/
 rank: 1000
 alias: sequencing
 domain_of:

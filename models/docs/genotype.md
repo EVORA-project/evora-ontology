@@ -1,6 +1,6 @@
 
 
-# Slot: genotype (genotype)
+# Slot: genotype (genotype) 
 
 
 _Genotype information that identifies organisms that cluster in phylogenetic trees, thus different clusters are distinct genotypes_
@@ -9,9 +9,8 @@ _Genotype information that identifies organisms that cluster in phylogenetic tre
 
 
 
-URI: [EVORAO:genotype](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#genotype)
-
-
+URI: [EVORAO:genotype](https://w3id.org/evorao/genotype)
+Alias: genotype
 
 <!-- no inheritance hierarchy -->
 
@@ -50,7 +49,7 @@ URI: [EVORAO:genotype](https://raw.githubusercontent.com/EVORA-project/evora-ont
 ### Schema Source
 
 
-* from schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+* from schema: https://w3id.org/evorao/
 
 
 
@@ -73,7 +72,7 @@ name: genotype
 description: Genotype information that identifies organisms that cluster in phylogenetic
   trees, thus different clusters are distinct genotypes
 title: genotype
-from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+from_schema: https://w3id.org/evorao/
 rank: 1000
 alias: genotype
 domain_of:

@@ -1,6 +1,6 @@
 
 
-# Slot: region encompassed in this Product (regionEncompassedInThisProduct)
+# Slot: region encompassed in this Product (regionEncompassedInThisProduct) 
 
 
 _The specific region encompassed in the product_
@@ -9,9 +9,8 @@ _The specific region encompassed in the product_
 
 
 
-URI: [EVORAO:regionEncompassedInThisProduct](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#regionEncompassedInThisProduct)
-
-
+URI: [EVORAO:regionEncompassedInThisProduct](https://w3id.org/evorao/regionEncompassedInThisProduct)
+Alias: regionEncompassedInThisProduct
 
 <!-- no inheritance hierarchy -->
 
@@ -52,7 +51,7 @@ URI: [EVORAO:regionEncompassedInThisProduct](https://raw.githubusercontent.com/E
 ### Schema Source
 
 
-* from schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+* from schema: https://w3id.org/evorao/
 
 
 
@@ -74,7 +73,7 @@ URI: [EVORAO:regionEncompassedInThisProduct](https://raw.githubusercontent.com/E
 name: regionEncompassedInThisProduct
 description: The specific region encompassed in the product
 title: region encompassed in this Product
-from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+from_schema: https://w3id.org/evorao/
 rank: 1000
 alias: regionEncompassedInThisProduct
 domain_of:

@@ -1,6 +1,6 @@
 
 
-# Slot: taxonomic ID (taxonomicID)
+# Slot: taxonomic ID (taxonomicID) 
 
 
 _The taxonomic identifier as a persistent identifier accross releases_
@@ -9,9 +9,8 @@ _The taxonomic identifier as a persistent identifier accross releases_
 
 
 
-URI: [EVORAO:taxonomicID](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#taxonomicID)
-
-
+URI: [EVORAO:taxonomicID](https://w3id.org/evorao/taxonomicID)
+Alias: taxonomicID
 
 <!-- no inheritance hierarchy -->
 
@@ -52,7 +51,7 @@ URI: [EVORAO:taxonomicID](https://raw.githubusercontent.com/EVORA-project/evora-
 ### Schema Source
 
 
-* from schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+* from schema: https://w3id.org/evorao/
 
 
 
@@ -75,7 +74,7 @@ URI: [EVORAO:taxonomicID](https://raw.githubusercontent.com/EVORA-project/evora-
 name: taxonomicID
 description: The taxonomic identifier as a persistent identifier accross releases
 title: taxonomic ID
-from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+from_schema: https://w3id.org/evorao/
 close_mappings:
 - dwc:taxonID
 rank: 1000

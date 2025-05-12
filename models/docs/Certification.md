@@ -1,6 +1,6 @@
 
 
-# Class: Certification (Certification)
+# Class: Certification (Certification) 
 
 
 _Assurance given by an independent certification body that a product, service or system meets the requirements of a standard_
@@ -9,7 +9,7 @@ _Assurance given by an independent certification body that a product, service or
 
 
 
-URI: [EVORAO:Certification](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#Certification)
+URI: [EVORAO:Certification](https://w3id.org/evorao/Certification)
 
 
 
@@ -111,7 +111,7 @@ URI: [EVORAO:Certification](https://raw.githubusercontent.com/EVORA-project/evor
 ### Schema Source
 
 
-* from schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+* from schema: https://w3id.org/evorao/
 
 
 
@@ -142,7 +142,7 @@ name: Certification
 description: Assurance given by an independent certification body that a product,
   service or system meets the requirements of a standard
 title: Certification
-from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+from_schema: https://w3id.org/evorao/
 close_mappings:
 - wd:Q374814
 - schema:Certification
@@ -251,7 +251,7 @@ name: Certification
 description: Assurance given by an independent certification body that a product,
   service or system meets the requirements of a standard
 title: Certification
-from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+from_schema: https://w3id.org/evorao/
 close_mappings:
 - wd:Q374814
 - schema:Certification
@@ -354,7 +354,7 @@ attributes:
       ''Virus name'', ''virus host type'', ''collection year'', ''country of collection''
       ex ''suspected epidemiological origin'', ''genotype'', ''strain'', ''variant
       name or specific feature'
-    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+    from_schema: https://w3id.org/evorao/
     close_mappings:
     - rdfs:label
     rank: 1000
@@ -381,7 +381,7 @@ attributes:
       present the resource.
 
       '
-    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+    from_schema: https://w3id.org/evorao/
     rank: 1000
     slot_uri: dct:description
     alias: description
@@ -403,7 +403,7 @@ attributes:
     name: logo
     description: A path or URL to the related logo
     title: logo
-    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+    from_schema: https://w3id.org/evorao/
     rank: 1000
     alias: logo
     owner: Certification
@@ -420,7 +420,7 @@ attributes:
       of the subject to the applicable scheme, including, as the case may be, the
       documents attesting the equivalence to another certification scheme.
     title: certification document
-    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+    from_schema: https://w3id.org/evorao/
     rank: 1000
     alias: certificationDocument
     owner: Certification
@@ -434,7 +434,7 @@ attributes:
     description: The web address or location where the details or content is stored
       and can be accessed or downloaded.
     title: resource URL
-    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+    from_schema: https://w3id.org/evorao/
     exact_mappings:
     - dct:license
     close_mappings:

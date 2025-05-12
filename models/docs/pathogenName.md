@@ -1,6 +1,6 @@
 
 
-# Slot: pathogen name (pathogenName)
+# Slot: pathogen name (pathogenName) 
 
 
 _A pathogen common name or a name that describes a group of pathogens_
@@ -9,9 +9,8 @@ _A pathogen common name or a name that describes a group of pathogens_
 
 
 
-URI: [EVORAO:pathogenName](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#pathogenName)
-
-
+URI: [EVORAO:pathogenName](https://w3id.org/evorao/pathogenName)
+Alias: pathogenName
 
 <!-- no inheritance hierarchy -->
 
@@ -52,7 +51,7 @@ URI: [EVORAO:pathogenName](https://raw.githubusercontent.com/EVORA-project/evora
 ### Schema Source
 
 
-* from schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+* from schema: https://w3id.org/evorao/
 
 
 
@@ -74,7 +73,7 @@ URI: [EVORAO:pathogenName](https://raw.githubusercontent.com/EVORA-project/evora
 name: pathogenName
 description: A pathogen common name or a name that describes a group of pathogens
 title: pathogen name
-from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+from_schema: https://w3id.org/evorao/
 rank: 1000
 alias: pathogenName
 domain_of:

@@ -1,6 +1,6 @@
 
 
-# Slot: permit identifier for ABS (permitIdentifierForABS)
+# Slot: permit identifier for ABS (permitIdentifierForABS) 
 
 
 _Reference of the permit identifiers for access to the genetic resource, applicable if the genetic resource falls under Access and Benefit-Sharing (ABS) regulations_
@@ -9,9 +9,8 @@ _Reference of the permit identifiers for access to the genetic resource, applica
 
 
 
-URI: [EVORAO:permitIdentifierForABS](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#permitIdentifierForABS)
-
-
+URI: [EVORAO:permitIdentifierForABS](https://w3id.org/evorao/permitIdentifierForABS)
+Alias: permitIdentifierForABS
 
 <!-- no inheritance hierarchy -->
 
@@ -50,7 +49,7 @@ URI: [EVORAO:permitIdentifierForABS](https://raw.githubusercontent.com/EVORA-pro
 ### Schema Source
 
 
-* from schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+* from schema: https://w3id.org/evorao/
 
 
 
@@ -74,7 +73,7 @@ description: Reference of the permit identifiers for access to the genetic resou
   applicable if the genetic resource falls under Access and Benefit-Sharing (ABS)
   regulations
 title: permit identifier for ABS
-from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+from_schema: https://w3id.org/evorao/
 rank: 1000
 alias: permitIdentifierForABS
 domain_of:

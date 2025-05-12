@@ -1,6 +1,6 @@
 
 
-# Class: Term (Term)
+# Class: Term (Term) 
 
 
 _Word or phrase from a specialized area of knowledge_
@@ -11,7 +11,7 @@ _Word or phrase from a specialized area of knowledge_
 * __NOTE__: this is an abstract class and should not be instantiated directly
 
 
-URI: [EVORAO:Term](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#Term)
+URI: [EVORAO:Term](https://w3id.org/evorao/Term)
 
 
 
@@ -154,7 +154,7 @@ URI: [EVORAO:Term](https://raw.githubusercontent.com/EVORA-project/evora-ontolog
 ### Schema Source
 
 
-* from schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+* from schema: https://w3id.org/evorao/
 
 
 
@@ -184,7 +184,7 @@ URI: [EVORAO:Term](https://raw.githubusercontent.com/EVORA-project/evora-ontolog
 name: Term
 description: Word or phrase from a specialized area of knowledge
 title: Term
-from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+from_schema: https://w3id.org/evorao/
 close_mappings:
 - wd:Q1969448
 - wd:Q1969448
@@ -281,7 +281,7 @@ slot_usage:
 name: Term
 description: Word or phrase from a specialized area of knowledge
 title: Term
-from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+from_schema: https://w3id.org/evorao/
 close_mappings:
 - wd:Q1969448
 - wd:Q1969448
@@ -374,7 +374,7 @@ attributes:
       ''Virus name'', ''virus host type'', ''collection year'', ''country of collection''
       ex ''suspected epidemiological origin'', ''genotype'', ''strain'', ''variant
       name or specific feature'
-    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+    from_schema: https://w3id.org/evorao/
     close_mappings:
     - rdfs:label
     rank: 1000
@@ -401,7 +401,7 @@ attributes:
       present the resource.
 
       '
-    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+    from_schema: https://w3id.org/evorao/
     rank: 1000
     slot_uri: dct:description
     alias: description
@@ -429,7 +429,7 @@ attributes:
     - The lowest weighted Data providers are triggered first, this may be usefull
       to populate at first entities that are referenced by others (e.g. Version ahead
       of Rank ahead of Taxon)
-    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+    from_schema: https://w3id.org/evorao/
     close_mappings:
     - adms:status
     rank: 1000
@@ -446,7 +446,7 @@ attributes:
     name: inVocabulary
     description: Terms belong to a specific vocabulary
     title: in Vocabulary
-    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+    from_schema: https://w3id.org/evorao/
     close_mappings:
     - wdp:P972
     rank: 1000

@@ -1,6 +1,6 @@
 
 
-# Class: IPLC origin (IPLCOrigin)
+# Class: IPLC origin (IPLCOrigin) 
 
 
 _The IPLC area (Indigenous People and Local Communities) from which a physical item originates_
@@ -9,7 +9,7 @@ _The IPLC area (Indigenous People and Local Communities) from which a physical i
 
 
 
-URI: [EVORAO:IPLCOrigin](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#IPLCOrigin)
+URI: [EVORAO:IPLCOrigin](https://w3id.org/evorao/IPLCOrigin)
 
 
 
@@ -88,7 +88,7 @@ URI: [EVORAO:IPLCOrigin](https://raw.githubusercontent.com/EVORA-project/evora-o
 ### Schema Source
 
 
-* from schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+* from schema: https://w3id.org/evorao/
 
 
 
@@ -118,7 +118,7 @@ name: IPLCOrigin
 description: The IPLC area (Indigenous People and Local Communities) from which a
   physical item originates
 title: IPLC origin
-from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+from_schema: https://w3id.org/evorao/
 is_a: GeographicalOrigin
 
 ```
@@ -132,7 +132,7 @@ name: IPLCOrigin
 description: The IPLC area (Indigenous People and Local Communities) from which a
   physical item originates
 title: IPLC origin
-from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+from_schema: https://w3id.org/evorao/
 is_a: GeographicalOrigin
 attributes:
   title:
@@ -146,7 +146,7 @@ attributes:
       ''Virus name'', ''virus host type'', ''collection year'', ''country of collection''
       ex ''suspected epidemiological origin'', ''genotype'', ''strain'', ''variant
       name or specific feature'
-    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+    from_schema: https://w3id.org/evorao/
     close_mappings:
     - rdfs:label
     rank: 1000
@@ -173,7 +173,7 @@ attributes:
       present the resource.
 
       '
-    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+    from_schema: https://w3id.org/evorao/
     rank: 1000
     slot_uri: dct:description
     alias: description
@@ -201,7 +201,7 @@ attributes:
     - The lowest weighted Data providers are triggered first, this may be usefull
       to populate at first entities that are referenced by others (e.g. Version ahead
       of Rank ahead of Taxon)
-    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+    from_schema: https://w3id.org/evorao/
     close_mappings:
     - adms:status
     rank: 1000
@@ -218,7 +218,7 @@ attributes:
     name: inVocabulary
     description: Terms belong to a specific vocabulary
     title: in Vocabulary
-    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+    from_schema: https://w3id.org/evorao/
     close_mappings:
     - wdp:P972
     rank: 1000

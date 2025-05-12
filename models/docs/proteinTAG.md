@@ -1,6 +1,6 @@
 
 
-# Slot: protein TAG (proteinTAG)
+# Slot: protein TAG (proteinTAG) 
 
 
 _Peptide sequences genetically grafted onto a recombinant protein_
@@ -9,9 +9,8 @@ _Peptide sequences genetically grafted onto a recombinant protein_
 
 
 
-URI: [EVORAO:proteinTAG](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#proteinTAG)
-
-
+URI: [EVORAO:proteinTAG](https://w3id.org/evorao/proteinTAG)
+Alias: proteinTAG
 
 <!-- no inheritance hierarchy -->
 
@@ -52,7 +51,7 @@ URI: [EVORAO:proteinTAG](https://raw.githubusercontent.com/EVORA-project/evora-o
 ### Schema Source
 
 
-* from schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+* from schema: https://w3id.org/evorao/
 
 
 
@@ -74,7 +73,7 @@ URI: [EVORAO:proteinTAG](https://raw.githubusercontent.com/EVORA-project/evora-o
 name: proteinTAG
 description: Peptide sequences genetically grafted onto a recombinant protein
 title: protein TAG
-from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+from_schema: https://w3id.org/evorao/
 rank: 1000
 alias: proteinTAG
 domain_of:

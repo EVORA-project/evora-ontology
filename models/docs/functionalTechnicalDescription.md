@@ -1,6 +1,6 @@
 
 
-# Slot: functional/Technical description (functionalTechnicalDescription)
+# Slot: functional/Technical description (functionalTechnicalDescription) 
 
 
 _Detailed information about the specific biological functions, mechanisms of action, and technical attributes of a protein. This includes how the protein interacts within biological systems, its role in cellular processes, and any relevant technical details such as structure, activity, and interactions with other molecules._
@@ -9,9 +9,8 @@ _Detailed information about the specific biological functions, mechanisms of act
 
 
 
-URI: [EVORAO:functionalTechnicalDescription](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#functionalTechnicalDescription)
-
-
+URI: [EVORAO:functionalTechnicalDescription](https://w3id.org/evorao/functionalTechnicalDescription)
+Alias: functionalTechnicalDescription
 
 <!-- no inheritance hierarchy -->
 
@@ -52,7 +51,7 @@ URI: [EVORAO:functionalTechnicalDescription](https://raw.githubusercontent.com/E
 ### Schema Source
 
 
-* from schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+* from schema: https://w3id.org/evorao/
 
 
 
@@ -77,7 +76,7 @@ description: Detailed information about the specific biological functions, mecha
   interacts within biological systems, its role in cellular processes, and any relevant
   technical details such as structure, activity, and interactions with other molecules.
 title: functional/Technical description
-from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+from_schema: https://w3id.org/evorao/
 rank: 1000
 alias: functionalTechnicalDescription
 domain_of:

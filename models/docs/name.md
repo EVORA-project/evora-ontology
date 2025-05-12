@@ -1,6 +1,6 @@
 
 
-# Slot: name (name)
+# Slot: name (name) 
 
 
 _A word or set of words used to identify and refer to an entity_
@@ -9,9 +9,8 @@ _A word or set of words used to identify and refer to an entity_
 
 
 
-URI: [EVORAO:name](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#name)
-
-
+URI: [EVORAO:name](https://w3id.org/evorao/name)
+Alias: name
 
 <!-- no inheritance hierarchy -->
 
@@ -25,17 +24,17 @@ URI: [EVORAO:name](https://raw.githubusercontent.com/EVORA-project/evora-ontolog
 | --- | --- | --- |
 | [File](File.md) | Digital document or record stored in a specific format that contains data or ... |  yes  |
 | [Data](Data.md) | Subclass of File representing structured or unstructured datasets, often used... |  no  |
-| [Originator](Originator.md) | The individual or organization responsible for the original discovery, isolat... |  no  |
 | [ContactPoint](ContactPoint.md) | Entity serving as focal point of information |  yes  |
-| [Organization](Organization.md) | A social entity established to meet needs or pursue specific goals |  no  |
-| [RI](RI.md) | A research infrastructure |  no  |
-| [Provider](Provider.md) | A provider of products or services, as a specific organization |  no  |
-| [Video](Video.md) | Subclass of File representing moving visual media, such as recordings, presen... |  no  |
+| [Originator](Originator.md) | The individual or organization responsible for the original discovery, isolat... |  no  |
 | [PersonOrOrganization](PersonOrOrganization.md) | A person or an organization |  yes  |
-| [Image](Image.md) | Subclass of File representing visual content such as pictures, diagrams, or i... |  no  |
+| [Provider](Provider.md) | A provider of products or services, as a specific organization |  no  |
+| [RI](RI.md) | A research infrastructure |  no  |
+| [Organization](Organization.md) | A social entity established to meet needs or pursue specific goals |  no  |
 | [Document](Document.md) | Subclass of File representing textual or written files such as reports, manua... |  no  |
-| [Person](Person.md) | An individual |  no  |
+| [Video](Video.md) | Subclass of File representing moving visual media, such as recordings, presen... |  no  |
 | [Audio](Audio.md) | Subclass of File representing sound recordings or audio tracks |  no  |
+| [Image](Image.md) | Subclass of File representing visual content such as pictures, diagrams, or i... |  no  |
+| [Person](Person.md) | An individual |  no  |
 
 
 
@@ -64,7 +63,7 @@ URI: [EVORAO:name](https://raw.githubusercontent.com/EVORA-project/evora-ontolog
 ### Schema Source
 
 
-* from schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+* from schema: https://w3id.org/evorao/
 
 
 
@@ -88,7 +87,7 @@ URI: [EVORAO:name](https://raw.githubusercontent.com/EVORA-project/evora-ontolog
 name: name
 description: A word or set of words used to identify and refer to an entity
 title: name
-from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+from_schema: https://w3id.org/evorao/
 exact_mappings:
 - schema:name
 close_mappings:

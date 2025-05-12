@@ -1,6 +1,6 @@
 
 
-# Slot: targeted antigen (targetedAntigen)
+# Slot: targeted antigen (targetedAntigen) 
 
 
 _Specific molecular structure or epitope recognized and bound by an antibody_
@@ -9,9 +9,8 @@ _Specific molecular structure or epitope recognized and bound by an antibody_
 
 
 
-URI: [EVORAO:targetedAntigen](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#targetedAntigen)
-
-
+URI: [EVORAO:targetedAntigen](https://w3id.org/evorao/targetedAntigen)
+Alias: targetedAntigen
 
 <!-- no inheritance hierarchy -->
 
@@ -53,7 +52,7 @@ URI: [EVORAO:targetedAntigen](https://raw.githubusercontent.com/EVORA-project/ev
 ### Schema Source
 
 
-* from schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+* from schema: https://w3id.org/evorao/
 
 
 
@@ -75,7 +74,7 @@ URI: [EVORAO:targetedAntigen](https://raw.githubusercontent.com/EVORA-project/ev
 name: targetedAntigen
 description: Specific molecular structure or epitope recognized and bound by an antibody
 title: targeted antigen
-from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+from_schema: https://w3id.org/evorao/
 rank: 1000
 alias: targetedAntigen
 domain_of:

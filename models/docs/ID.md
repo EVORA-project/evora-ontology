@@ -1,6 +1,6 @@
 
 
-# Slot: ID (ID)
+# Slot: ID (ID) 
 
 
 _The version identifier_
@@ -9,9 +9,8 @@ _The version identifier_
 
 
 
-URI: [EVORAO:ID](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#ID)
-
-
+URI: [EVORAO:ID](https://w3id.org/evorao/ID)
+Alias: ID
 
 <!-- no inheritance hierarchy -->
 
@@ -52,7 +51,7 @@ URI: [EVORAO:ID](https://raw.githubusercontent.com/EVORA-project/evora-ontology/
 ### Schema Source
 
 
-* from schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+* from schema: https://w3id.org/evorao/
 
 
 
@@ -75,7 +74,7 @@ URI: [EVORAO:ID](https://raw.githubusercontent.com/EVORA-project/evora-ontology/
 name: ID
 description: The version identifier
 title: ID
-from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+from_schema: https://w3id.org/evorao/
 close_mappings:
 - wdp:P393
 - schema:version

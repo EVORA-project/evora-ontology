@@ -1,6 +1,6 @@
 
 
-# Slot: domain (domain)
+# Slot: domain (domain) 
 
 
 _A distinct structural and functional unit within the protein, often capable of independent folding and stability, which contributes to the protein's overall function_
@@ -9,9 +9,8 @@ _A distinct structural and functional unit within the protein, often capable of 
 
 
 
-URI: [EVORAO:domain](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#domain)
-
-
+URI: [EVORAO:domain](https://w3id.org/evorao/domain)
+Alias: domain
 
 <!-- no inheritance hierarchy -->
 
@@ -52,7 +51,7 @@ URI: [EVORAO:domain](https://raw.githubusercontent.com/EVORA-project/evora-ontol
 ### Schema Source
 
 
-* from schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+* from schema: https://w3id.org/evorao/
 
 
 
@@ -76,7 +75,7 @@ description: A distinct structural and functional unit within the protein, often
   of independent folding and stability, which contributes to the protein's overall
   function
 title: domain
-from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+from_schema: https://w3id.org/evorao/
 rank: 1000
 alias: domain
 domain_of:

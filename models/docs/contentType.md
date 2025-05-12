@@ -1,6 +1,6 @@
 
 
-# Slot: content type (contentType)
+# Slot: content type (contentType) 
 
 
 _The content type of the response to the queries_
@@ -9,9 +9,8 @@ _The content type of the response to the queries_
 
 
 
-URI: [EVORAO:contentType](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#contentType)
-
-
+URI: [EVORAO:contentType](https://w3id.org/evorao/contentType)
+Alias: contentType
 
 <!-- no inheritance hierarchy -->
 
@@ -52,7 +51,7 @@ URI: [EVORAO:contentType](https://raw.githubusercontent.com/EVORA-project/evora-
 ### Schema Source
 
 
-* from schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+* from schema: https://w3id.org/evorao/
 
 
 
@@ -75,7 +74,7 @@ URI: [EVORAO:contentType](https://raw.githubusercontent.com/EVORA-project/evora-
 name: contentType
 description: The content type of the response to the queries
 title: content type
-from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+from_schema: https://w3id.org/evorao/
 close_mappings:
 - dct:format
 rank: 1000

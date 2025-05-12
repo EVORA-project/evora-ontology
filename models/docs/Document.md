@@ -1,6 +1,6 @@
 
 
-# Class: Document (Document)
+# Class: Document (Document) 
 
 
 _Subclass of File representing textual or written files such as reports, manuals, or forms_
@@ -9,7 +9,7 @@ _Subclass of File representing textual or written files such as reports, manuals
 
 
 
-URI: [EVORAO:Document](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#Document)
+URI: [EVORAO:Document](https://w3id.org/evorao/Document)
 
 
 
@@ -106,7 +106,7 @@ URI: [EVORAO:Document](https://raw.githubusercontent.com/EVORA-project/evora-ont
 ### Schema Source
 
 
-* from schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+* from schema: https://w3id.org/evorao/
 
 
 
@@ -137,7 +137,7 @@ name: Document
 description: Subclass of File representing textual or written files such as reports,
   manuals, or forms
 title: Document
-from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+from_schema: https://w3id.org/evorao/
 close_mappings:
 - wd:Q49848
 - wd:Q49848
@@ -154,7 +154,7 @@ name: Document
 description: Subclass of File representing textual or written files such as reports,
   manuals, or forms
 title: Document
-from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+from_schema: https://w3id.org/evorao/
 close_mappings:
 - wd:Q49848
 - wd:Q49848
@@ -164,7 +164,7 @@ attributes:
     name: name
     description: A word or set of words used to identify and refer to an entity
     title: name
-    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+    from_schema: https://w3id.org/evorao/
     exact_mappings:
     - schema:name
     close_mappings:
@@ -190,7 +190,7 @@ attributes:
       present the resource.
 
       '
-    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+    from_schema: https://w3id.org/evorao/
     rank: 1000
     slot_uri: dct:description
     alias: description
@@ -213,7 +213,7 @@ attributes:
     description: The web address or location where the file content is stored and
       can be accessed or downloaded.
     title: content URL
-    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+    from_schema: https://w3id.org/evorao/
     rank: 1000
     alias: contentURL
     owner: Document
@@ -227,7 +227,7 @@ attributes:
     description: The file type or format that indicates how the data within the file
       is structured
     title: format
-    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+    from_schema: https://w3id.org/evorao/
     rank: 1000
     alias: format
     owner: Document
@@ -241,7 +241,7 @@ attributes:
     description: Information about terms and conditions under which the subject can
       be used, shared, or distributed, indicating any restrictions or permissions
     title: license
-    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+    from_schema: https://w3id.org/evorao/
     exact_mappings:
     - dct:license
     rank: 1000

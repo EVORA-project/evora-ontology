@@ -1,6 +1,6 @@
 
 
-# Slot: content URL (contentURL)
+# Slot: content URL (contentURL) 
 
 
 _The web address or location where the file content is stored and can be accessed or downloaded._
@@ -9,9 +9,8 @@ _The web address or location where the file content is stored and can be accesse
 
 
 
-URI: [EVORAO:contentURL](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#contentURL)
-
-
+URI: [EVORAO:contentURL](https://w3id.org/evorao/contentURL)
+Alias: contentURL
 
 <!-- no inheritance hierarchy -->
 
@@ -23,12 +22,12 @@ URI: [EVORAO:contentURL](https://raw.githubusercontent.com/EVORA-project/evora-o
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [Data](Data.md) | Subclass of File representing structured or unstructured datasets, often used... |  no  |
 | [File](File.md) | Digital document or record stored in a specific format that contains data or ... |  yes  |
-| [Video](Video.md) | Subclass of File representing moving visual media, such as recordings, presen... |  no  |
-| [Image](Image.md) | Subclass of File representing visual content such as pictures, diagrams, or i... |  no  |
+| [Data](Data.md) | Subclass of File representing structured or unstructured datasets, often used... |  no  |
 | [Document](Document.md) | Subclass of File representing textual or written files such as reports, manua... |  no  |
+| [Video](Video.md) | Subclass of File representing moving visual media, such as recordings, presen... |  no  |
 | [Audio](Audio.md) | Subclass of File representing sound recordings or audio tracks |  no  |
+| [Image](Image.md) | Subclass of File representing visual content such as pictures, diagrams, or i... |  no  |
 
 
 
@@ -57,7 +56,7 @@ URI: [EVORAO:contentURL](https://raw.githubusercontent.com/EVORA-project/evora-o
 ### Schema Source
 
 
-* from schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+* from schema: https://w3id.org/evorao/
 
 
 
@@ -80,7 +79,7 @@ name: contentURL
 description: The web address or location where the file content is stored and can
   be accessed or downloaded.
 title: content URL
-from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+from_schema: https://w3id.org/evorao/
 rank: 1000
 alias: contentURL
 domain_of:

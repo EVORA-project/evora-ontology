@@ -1,6 +1,6 @@
 
 
-# Class: Sequence reference (SequenceReference)
+# Class: Sequence reference (SequenceReference) 
 
 
 _A reference that permits to retrieve the sequence information from a sequence provider_
@@ -9,7 +9,7 @@ _A reference that permits to retrieve the sequence information from a sequence p
 
 
 
-URI: [EVORAO:SequenceReference](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#SequenceReference)
+URI: [EVORAO:SequenceReference](https://w3id.org/evorao/SequenceReference)
 
 
 
@@ -79,7 +79,7 @@ URI: [EVORAO:SequenceReference](https://raw.githubusercontent.com/EVORA-project/
 ### Schema Source
 
 
-* from schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+* from schema: https://w3id.org/evorao/
 
 
 
@@ -113,7 +113,7 @@ comments:
 - A work on making it a subclass of External related reference might be consistent
   and beneficial for data structuration but special attention will have to be take
   to ensure it remains consistent with the actual the use cases for users
-from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+from_schema: https://w3id.org/evorao/
 is_a: Resource
 slots:
 - accessionNumber
@@ -159,7 +159,7 @@ comments:
 - A work on making it a subclass of External related reference might be consistent
   and beneficial for data structuration but special attention will have to be take
   to ensure it remains consistent with the actual the use cases for users
-from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+from_schema: https://w3id.org/evorao/
 is_a: Resource
 slot_usage:
   accessionNumber:
@@ -192,7 +192,7 @@ attributes:
     description: The sequence ID that permits to retrieve the sequence information
       from the sequence provider
     title: accession number
-    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+    from_schema: https://w3id.org/evorao/
     close_mappings:
     - dct:identifier
     rank: 1000
@@ -208,7 +208,7 @@ attributes:
     description: The name of the sequence provider within the list of accepted sequence
       providers
     title: sequence provider
-    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+    from_schema: https://w3id.org/evorao/
     close_mappings:
     - dct:publisher
     rank: 1000

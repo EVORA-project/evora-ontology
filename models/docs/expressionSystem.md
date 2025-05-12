@@ -1,6 +1,6 @@
 
 
-# Slot: expression system (expressionSystem)
+# Slot: expression system (expressionSystem) 
 
 
 _The host organism or cellular environment used to produce a protein from a specific gene. Possible values include 'E. coli' (bacterial system), 'Insect cells' (using baculovirus vectors), and 'Mammalian cells' (mammalian cell lines)._
@@ -9,9 +9,8 @@ _The host organism or cellular environment used to produce a protein from a spec
 
 
 
-URI: [EVORAO:expressionSystem](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#expressionSystem)
-
-
+URI: [EVORAO:expressionSystem](https://w3id.org/evorao/expressionSystem)
+Alias: expressionSystem
 
 <!-- no inheritance hierarchy -->
 
@@ -52,7 +51,7 @@ URI: [EVORAO:expressionSystem](https://raw.githubusercontent.com/EVORA-project/e
 ### Schema Source
 
 
-* from schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+* from schema: https://w3id.org/evorao/
 
 
 
@@ -76,7 +75,7 @@ description: The host organism or cellular environment used to produce a protein
   a specific gene. Possible values include 'E. coli' (bacterial system), 'Insect cells'
   (using baculovirus vectors), and 'Mammalian cells' (mammalian cell lines).
 title: expression system
-from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+from_schema: https://w3id.org/evorao/
 rank: 1000
 alias: expressionSystem
 domain_of:

@@ -1,6 +1,6 @@
 
 
-# Slot: term (term)
+# Slot: term (term) 
 
 
 _The terms related to this vocabulary_
@@ -9,9 +9,8 @@ _The terms related to this vocabulary_
 
 
 
-URI: [EVORAO:term](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#term)
-
-
+URI: [EVORAO:term](https://w3id.org/evorao/term)
+Alias: term
 
 <!-- no inheritance hierarchy -->
 
@@ -54,7 +53,7 @@ URI: [EVORAO:term](https://raw.githubusercontent.com/EVORA-project/evora-ontolog
 ### Schema Source
 
 
-* from schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+* from schema: https://w3id.org/evorao/
 
 
 
@@ -76,7 +75,7 @@ URI: [EVORAO:term](https://raw.githubusercontent.com/EVORA-project/evora-ontolog
 name: term
 description: The terms related to this vocabulary
 title: term
-from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+from_schema: https://w3id.org/evorao/
 rank: 1000
 alias: term
 domain_of:

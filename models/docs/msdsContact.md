@@ -1,6 +1,6 @@
 
 
-# Slot: MSDS contact (msdsContact)
+# Slot: MSDS contact (msdsContact) 
 
 
 _The designated contact point responsible for providing information related to the safety, handling, and regulatory compliance of the biological product._
@@ -9,9 +9,8 @@ _The designated contact point responsible for providing information related to t
 
 
 
-URI: [EVORAO:msdsContact](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#msdsContact)
-
-
+URI: [EVORAO:msdsContact](https://w3id.org/evorao/msdsContact)
+Alias: msdsContact
 
 <!-- no inheritance hierarchy -->
 
@@ -52,7 +51,7 @@ URI: [EVORAO:msdsContact](https://raw.githubusercontent.com/EVORA-project/evora-
 ### Schema Source
 
 
-* from schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+* from schema: https://w3id.org/evorao/
 
 
 
@@ -76,7 +75,7 @@ name: msdsContact
 description: The designated contact point responsible for providing information related
   to the safety, handling, and regulatory compliance of the biological product.
 title: MSDS contact
-from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+from_schema: https://w3id.org/evorao/
 exact_mappings:
 - dcat:contactPoint
 rank: 1000

@@ -1,6 +1,6 @@
 
 
-# Class: MSDS (MSDS)
+# Class: MSDS (MSDS) 
 
 
 _A Material Safety Data Sheet (MSDS) or Safety Data Sheet (SDS) is a standardized document that contains crucial occupational safety and health information related to the product_
@@ -9,7 +9,7 @@ _A Material Safety Data Sheet (MSDS) or Safety Data Sheet (SDS) is a standardize
 
 
 
-URI: [EVORAO:MSDS](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#MSDS)
+URI: [EVORAO:MSDS](https://w3id.org/evorao/MSDS)
 
 
 
@@ -132,7 +132,7 @@ URI: [EVORAO:MSDS](https://raw.githubusercontent.com/EVORA-project/evora-ontolog
 ### Schema Source
 
 
-* from schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+* from schema: https://w3id.org/evorao/
 
 
 
@@ -164,7 +164,7 @@ description: A Material Safety Data Sheet (MSDS) or Safety Data Sheet (SDS) is a
   document that contains crucial occupational safety and health information related
   to the product
 title: MSDS
-from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+from_schema: https://w3id.org/evorao/
 close_mappings:
 - wd:Q222067
 - wd:Q222067
@@ -383,7 +383,7 @@ description: A Material Safety Data Sheet (MSDS) or Safety Data Sheet (SDS) is a
   document that contains crucial occupational safety and health information related
   to the product
 title: MSDS
-from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+from_schema: https://w3id.org/evorao/
 close_mappings:
 - wd:Q222067
 - wd:Q222067
@@ -580,7 +580,7 @@ attributes:
       related to the safety, handling, and regulatory compliance of the biological
       product.
     title: MSDS contact
-    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+    from_schema: https://w3id.org/evorao/
     exact_mappings:
     - dcat:contactPoint
     rank: 1000
@@ -597,7 +597,7 @@ attributes:
       solubility, pH, chemical composition, and molecular weight, essential for safe
       handling and storage
     title: physical and chemical properties and information on ingredients
-    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+    from_schema: https://w3id.org/evorao/
     rank: 1000
     alias: physicalChemicalProperties
     owner: MSDS
@@ -614,7 +614,7 @@ attributes:
       provides information on toxicity, flammability, reactivity, and other relevant
       risks for safe use.
     title: hazards identification
-    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+    from_schema: https://w3id.org/evorao/
     rank: 1000
     alias: hazardsIdentification
     owner: MSDS
@@ -630,7 +630,7 @@ attributes:
       the product, including inhalation, ingestion, skin, or eye contact. This section
       outlines steps to minimize harm before medical help is available.
     title: first aid measures
-    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+    from_schema: https://w3id.org/evorao/
     rank: 1000
     alias: firstAidMeasures
     owner: MSDS
@@ -646,7 +646,7 @@ attributes:
       including suitable extinguishing agents, special protective equipment for firefighters,
       and any specific hazards from combustion.
     title: fire fighting measures
-    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+    from_schema: https://w3id.org/evorao/
     rank: 1000
     alias: fireFightingMeasures
     owner: MSDS
@@ -662,7 +662,7 @@ attributes:
       containment, cleanup procedures, and precautions to prevent harm to people,
       property, and the environment.
     title: accidental release measures
-    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+    from_schema: https://w3id.org/evorao/
     rank: 1000
     alias: accidentalReleaseMeasures
     owner: MSDS
@@ -678,7 +678,7 @@ attributes:
       for the product, including precautions to prevent accidents, degradation, or
       contamination, as well as recommended temperature, humidity, and container requirements.
     title: handling and storage
-    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+    from_schema: https://w3id.org/evorao/
     rank: 1000
     alias: handlingAndStorage
     owner: MSDS
@@ -694,7 +694,7 @@ attributes:
       engineering controls (e.g., ventilation) and personal protective equipment (PPE)
       such as gloves, masks, goggles, and clothing to ensure safe handling.
     title: exposure controls/personal protection
-    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+    from_schema: https://w3id.org/evorao/
     rank: 1000
     alias: exposureControlsPersonalProtection
     owner: MSDS
@@ -711,7 +711,7 @@ attributes:
       on hazardous reactions, conditions to avoid, and incompatible materials that
       could cause degradation or dangerous reactions.
     title: stability and reactivity
-    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+    from_schema: https://w3id.org/evorao/
     rank: 1000
     alias: stabilityAndReactivity
     owner: MSDS
@@ -727,7 +727,7 @@ attributes:
       routes of exposure (inhalation, ingestion, skin, eye contact), acute and chronic
       toxicity and symptoms of exposure
     title: toxicological information
-    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+    from_schema: https://w3id.org/evorao/
     rank: 1000
     alias: toxicologicalInformation
     owner: MSDS
@@ -743,7 +743,7 @@ attributes:
       its effects on ecosystems, persistence, degradability, bioaccumulation potential,
       and toxicity to aquatic and terrestrial organisms.
     title: ecological information
-    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+    from_schema: https://w3id.org/evorao/
     rank: 1000
     alias: ecologicalInformation
     owner: MSDS
@@ -759,7 +759,7 @@ attributes:
       the product, including recommended disposal methods, regulatory requirements,
       and precautions to avoid harm to people and the environment during disposal.
     title: disposal considerations
-    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+    from_schema: https://w3id.org/evorao/
     rank: 1000
     alias: disposalConsiderations
     owner: MSDS
@@ -776,7 +776,7 @@ attributes:
       numbers, packaging requirements, and any special precautions to ensure safe
       transit.
     title: transport information
-    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+    from_schema: https://w3id.org/evorao/
     rank: 1000
     alias: transportInformation
     owner: MSDS
@@ -792,7 +792,7 @@ attributes:
       including local, national, or international requirements for its handling, use,
       transportation, and disposal, ensuring compliance with legal obligations.
     title: regulatory information
-    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+    from_schema: https://w3id.org/evorao/
     rank: 1000
     alias: regulatoryInformation
     owner: MSDS
@@ -808,7 +808,7 @@ attributes:
       other sections of the MSDS, such as references, supporting documents, or specific
       instructions for safe handling and use of the product.
     title: further information
-    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+    from_schema: https://w3id.org/evorao/
     rank: 1000
     alias: furtherInformation
     owner: MSDS

@@ -1,6 +1,6 @@
 
 
-# Slot: strain (strain)
+# Slot: strain (strain) 
 
 
 _Identifier given to a genetic variant within a single species_
@@ -9,9 +9,8 @@ _Identifier given to a genetic variant within a single species_
 
 
 
-URI: [EVORAO:strain](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#strain)
-
-
+URI: [EVORAO:strain](https://w3id.org/evorao/strain)
+Alias: strain
 
 <!-- no inheritance hierarchy -->
 
@@ -52,7 +51,7 @@ URI: [EVORAO:strain](https://raw.githubusercontent.com/EVORA-project/evora-ontol
 ### Schema Source
 
 
-* from schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+* from schema: https://w3id.org/evorao/
 
 
 
@@ -74,7 +73,7 @@ URI: [EVORAO:strain](https://raw.githubusercontent.com/EVORA-project/evora-ontol
 name: strain
 description: Identifier given to a genetic variant within a single species
 title: strain
-from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+from_schema: https://w3id.org/evorao/
 rank: 1000
 alias: strain
 domain_of:

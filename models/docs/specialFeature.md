@@ -1,6 +1,6 @@
 
 
-# Slot: special feature (specialFeature)
+# Slot: special feature (specialFeature) 
 
 
 _Distinctive attributes of a product that set it apart from other similar items e.g., Reference strain, Vaccinal strain, Antiviral resistant strain ..._
@@ -9,9 +9,8 @@ _Distinctive attributes of a product that set it apart from other similar items 
 
 
 
-URI: [EVORAO:specialFeature](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#specialFeature)
-
-
+URI: [EVORAO:specialFeature](https://w3id.org/evorao/specialFeature)
+Alias: specialFeature
 
 <!-- no inheritance hierarchy -->
 
@@ -52,7 +51,7 @@ URI: [EVORAO:specialFeature](https://raw.githubusercontent.com/EVORA-project/evo
 ### Schema Source
 
 
-* from schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+* from schema: https://w3id.org/evorao/
 
 
 
@@ -75,7 +74,7 @@ name: specialFeature
 description: Distinctive attributes of a product that set it apart from other similar
   items e.g., Reference strain, Vaccinal strain, Antiviral resistant strain ...
 title: special feature
-from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+from_schema: https://w3id.org/evorao/
 rank: 1000
 alias: specialFeature
 domain_of:

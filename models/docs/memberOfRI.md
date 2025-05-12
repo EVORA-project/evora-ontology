@@ -1,6 +1,6 @@
 
 
-# Slot: member of RI (memberOfRI)
+# Slot: member of RI (memberOfRI) 
 
 
 _The research infrastructure of which this organization is a member_
@@ -9,9 +9,8 @@ _The research infrastructure of which this organization is a member_
 
 
 
-URI: [EVORAO:memberOfRI](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#memberOfRI)
-
-
+URI: [EVORAO:memberOfRI](https://w3id.org/evorao/memberOfRI)
+Alias: memberOfRI
 
 <!-- no inheritance hierarchy -->
 
@@ -52,7 +51,7 @@ URI: [EVORAO:memberOfRI](https://raw.githubusercontent.com/EVORA-project/evora-o
 ### Schema Source
 
 
-* from schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+* from schema: https://w3id.org/evorao/
 
 
 
@@ -74,7 +73,7 @@ URI: [EVORAO:memberOfRI](https://raw.githubusercontent.com/EVORA-project/evora-o
 name: memberOfRI
 description: The research infrastructure of which this organization is a member
 title: member of RI
-from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+from_schema: https://w3id.org/evorao/
 rank: 1000
 alias: memberOfRI
 domain_of:

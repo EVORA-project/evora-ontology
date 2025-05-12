@@ -1,6 +1,6 @@
 
 
-# Slot: stability and reactivity (stabilityAndReactivity)
+# Slot: stability and reactivity (stabilityAndReactivity) 
 
 
 _Describes the product’s stability under normal conditions and its potential to react with other substances. This section includes information on hazardous reactions, conditions to avoid, and incompatible materials that could cause degradation or dangerous reactions._
@@ -9,9 +9,8 @@ _Describes the product’s stability under normal conditions and its potential t
 
 
 
-URI: [EVORAO:stabilityAndReactivity](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#stabilityAndReactivity)
-
-
+URI: [EVORAO:stabilityAndReactivity](https://w3id.org/evorao/stabilityAndReactivity)
+Alias: stabilityAndReactivity
 
 <!-- no inheritance hierarchy -->
 
@@ -52,7 +51,7 @@ URI: [EVORAO:stabilityAndReactivity](https://raw.githubusercontent.com/EVORA-pro
 ### Schema Source
 
 
-* from schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+* from schema: https://w3id.org/evorao/
 
 
 
@@ -77,7 +76,7 @@ description: Describes the product’s stability under normal conditions and its
   conditions to avoid, and incompatible materials that could cause degradation or
   dangerous reactions.
 title: stability and reactivity
-from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+from_schema: https://w3id.org/evorao/
 rank: 1000
 alias: stabilityAndReactivity
 domain_of:

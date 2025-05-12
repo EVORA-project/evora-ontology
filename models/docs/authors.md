@@ -1,6 +1,6 @@
 
 
-# Slot: authors (authors)
+# Slot: authors (authors) 
 
 
 _The list of authors_
@@ -9,9 +9,8 @@ _The list of authors_
 
 
 
-URI: [EVORAO:authors](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#authors)
-
-
+URI: [EVORAO:authors](https://w3id.org/evorao/authors)
+Alias: authors
 
 <!-- no inheritance hierarchy -->
 
@@ -52,7 +51,7 @@ URI: [EVORAO:authors](https://raw.githubusercontent.com/EVORA-project/evora-onto
 ### Schema Source
 
 
-* from schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+* from schema: https://w3id.org/evorao/
 
 
 
@@ -74,7 +73,7 @@ URI: [EVORAO:authors](https://raw.githubusercontent.com/EVORA-project/evora-onto
 name: authors
 description: The list of authors
 title: authors
-from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+from_schema: https://w3id.org/evorao/
 rank: 1000
 alias: authors
 domain_of:

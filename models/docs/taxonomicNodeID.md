@@ -1,6 +1,6 @@
 
 
-# Slot: taxonomic node ID (taxonomicNodeID)
+# Slot: taxonomic node ID (taxonomicNodeID) 
 
 
 _The taxonomic_Node Identifier as an identifier specific the current taxon in the corresponding release/version of the taxonomy_
@@ -9,9 +9,8 @@ _The taxonomic_Node Identifier as an identifier specific the current taxon in th
 
 
 
-URI: [EVORAO:taxonomicNodeID](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#taxonomicNodeID)
-
-
+URI: [EVORAO:taxonomicNodeID](https://w3id.org/evorao/taxonomicNodeID)
+Alias: taxonomicNodeID
 
 <!-- no inheritance hierarchy -->
 
@@ -56,7 +55,7 @@ URI: [EVORAO:taxonomicNodeID](https://raw.githubusercontent.com/EVORA-project/ev
 ### Schema Source
 
 
-* from schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+* from schema: https://w3id.org/evorao/
 
 
 
@@ -84,7 +83,7 @@ comments:
 - NCBI does not have a taxon_node id, only a taxonomicID. Taxon_node id is Unique  in
   ICTV= Key of the taxon node !! Could be replaced by a composite key made of 'taxonomic
   ID' + 'has version'
-from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+from_schema: https://w3id.org/evorao/
 close_mappings:
 - dwc:taxonID
 rank: 1000

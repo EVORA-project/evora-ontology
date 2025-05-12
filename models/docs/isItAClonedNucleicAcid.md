@@ -1,6 +1,6 @@
 
 
-# Slot: is it a Cloned Nucleic Acid? (isItAClonedNucleicAcid)
+# Slot: is it a Cloned Nucleic Acid? (isItAClonedNucleicAcid) 
 
 
 _Indicates that the nucleic acid sequence has been inserted into a plasmid vector for propagation or expression in a host organism_
@@ -9,9 +9,8 @@ _Indicates that the nucleic acid sequence has been inserted into a plasmid vecto
 
 
 
-URI: [EVORAO:isItAClonedNucleicAcid](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#isItAClonedNucleicAcid)
-
-
+URI: [EVORAO:isItAClonedNucleicAcid](https://w3id.org/evorao/isItAClonedNucleicAcid)
+Alias: isItAClonedNucleicAcid
 
 <!-- no inheritance hierarchy -->
 
@@ -52,7 +51,7 @@ URI: [EVORAO:isItAClonedNucleicAcid](https://raw.githubusercontent.com/EVORA-pro
 ### Schema Source
 
 
-* from schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+* from schema: https://w3id.org/evorao/
 
 
 
@@ -75,7 +74,7 @@ name: isItAClonedNucleicAcid
 description: Indicates that the nucleic acid sequence has been inserted into a plasmid
   vector for propagation or expression in a host organism
 title: is it a Cloned Nucleic Acid?
-from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+from_schema: https://w3id.org/evorao/
 rank: 1000
 alias: isItAClonedNucleicAcid
 domain_of:

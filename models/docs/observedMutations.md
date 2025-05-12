@@ -1,6 +1,6 @@
 
 
-# Slot: observed mutations (observedMutations)
+# Slot: observed mutations (observedMutations) 
 
 
 _The specific mutations that have been identified and documented in the nucleic acid sequence_
@@ -9,9 +9,8 @@ _The specific mutations that have been identified and documented in the nucleic 
 
 
 
-URI: [EVORAO:observedMutations](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#observedMutations)
-
-
+URI: [EVORAO:observedMutations](https://w3id.org/evorao/observedMutations)
+Alias: observedMutations
 
 <!-- no inheritance hierarchy -->
 
@@ -50,7 +49,7 @@ URI: [EVORAO:observedMutations](https://raw.githubusercontent.com/EVORA-project/
 ### Schema Source
 
 
-* from schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+* from schema: https://w3id.org/evorao/
 
 
 
@@ -73,7 +72,7 @@ name: observedMutations
 description: The specific mutations that have been identified and documented in the
   nucleic acid sequence
 title: observed mutations
-from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+from_schema: https://w3id.org/evorao/
 rank: 1000
 alias: observedMutations
 domain_of:

@@ -1,6 +1,6 @@
 
 
-# Class: Taxonomy (Taxonomy)
+# Class: Taxonomy (Taxonomy) 
 
 
 _Science of naming, defining and classifying organisms_
@@ -9,7 +9,7 @@ _Science of naming, defining and classifying organisms_
 
 
 
-URI: [EVORAO:Taxonomy](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#Taxonomy)
+URI: [EVORAO:Taxonomy](https://w3id.org/evorao/Taxonomy)
 
 
 
@@ -136,7 +136,7 @@ URI: [EVORAO:Taxonomy](https://raw.githubusercontent.com/EVORA-project/evora-ont
 ### Schema Source
 
 
-* from schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+* from schema: https://w3id.org/evorao/
 
 
 
@@ -166,7 +166,7 @@ URI: [EVORAO:Taxonomy](https://raw.githubusercontent.com/EVORA-project/evora-ont
 name: Taxonomy
 description: Science of naming, defining and classifying organisms
 title: Taxonomy
-from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+from_schema: https://w3id.org/evorao/
 close_mappings:
 - wd:Q8269924
 - skos:Collection
@@ -251,7 +251,7 @@ slot_usage:
 name: Taxonomy
 description: Science of naming, defining and classifying organisms
 title: Taxonomy
-from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+from_schema: https://w3id.org/evorao/
 close_mappings:
 - wd:Q8269924
 - skos:Collection
@@ -326,7 +326,7 @@ attributes:
     comments:
     - The taxon of the highest rank known that can be used to classify a pathogen
       or group of pathogens (e.g viruses) in the reference taxonomy
-    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+    from_schema: https://w3id.org/evorao/
     close_mappings:
     - dwc:Taxon
     rank: 1000
@@ -342,7 +342,7 @@ attributes:
     name: taxonDataProvider
     description: The data provider for the taxons of the taxonomy
     title: taxon data provider
-    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+    from_schema: https://w3id.org/evorao/
     rank: 1000
     alias: taxonDataProvider
     owner: Taxonomy
@@ -355,7 +355,7 @@ attributes:
     name: version
     description: The version of this instance of entity
     title: version
-    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+    from_schema: https://w3id.org/evorao/
     rank: 1000
     alias: version
     owner: Taxonomy
@@ -368,7 +368,7 @@ attributes:
     name: versionDataProvider
     description: The data provider for the Version ID of this taxonomy
     title: version data provider
-    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+    from_schema: https://w3id.org/evorao/
     rank: 1000
     alias: versionDataProvider
     owner: Taxonomy
@@ -381,7 +381,7 @@ attributes:
     name: rank
     description: Relative level or position of the identified taxon in the taxonomy
     title: rank
-    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+    from_schema: https://w3id.org/evorao/
     exact_mappings:
     - dwc:taxonRank
     rank: 1000
@@ -398,7 +398,7 @@ attributes:
     description: The data provider for the description of the taxonomic ranks used
       in this taxonomy
     title: rank data provider
-    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+    from_schema: https://w3id.org/evorao/
     rank: 1000
     alias: rankDataProvider
     owner: Taxonomy
@@ -418,7 +418,7 @@ attributes:
       ''Virus name'', ''virus host type'', ''collection year'', ''country of collection''
       ex ''suspected epidemiological origin'', ''genotype'', ''strain'', ''variant
       name or specific feature'
-    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+    from_schema: https://w3id.org/evorao/
     close_mappings:
     - rdfs:label
     rank: 1000
@@ -445,7 +445,7 @@ attributes:
       present the resource.
 
       '
-    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+    from_schema: https://w3id.org/evorao/
     rank: 1000
     slot_uri: dct:description
     alias: description

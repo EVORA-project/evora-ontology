@@ -1,6 +1,6 @@
 
 
-# Class: License (License)
+# Class: License (License) 
 
 
 _The legal terms and conditions under which the subject can be used, shared, or distributed, indicating any restrictions or permissions_
@@ -9,7 +9,7 @@ _The legal terms and conditions under which the subject can be used, shared, or 
 
 
 
-URI: [EVORAO:License](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#License)
+URI: [EVORAO:License](https://w3id.org/evorao/License)
 
 
 
@@ -95,7 +95,7 @@ URI: [EVORAO:License](https://raw.githubusercontent.com/EVORA-project/evora-onto
 ### Schema Source
 
 
-* from schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+* from schema: https://w3id.org/evorao/
 
 
 
@@ -127,7 +127,7 @@ name: License
 description: The legal terms and conditions under which the subject can be used, shared,
   or distributed, indicating any restrictions or permissions
 title: License
-from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+from_schema: https://w3id.org/evorao/
 exact_mappings:
 - dct:RightsStatement
 - dct:RightsStatement
@@ -244,7 +244,7 @@ name: License
 description: The legal terms and conditions under which the subject can be used, shared,
   or distributed, indicating any restrictions or permissions
 title: License
-from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+from_schema: https://w3id.org/evorao/
 exact_mappings:
 - dct:RightsStatement
 - dct:RightsStatement
@@ -355,7 +355,7 @@ attributes:
       ''Virus name'', ''virus host type'', ''collection year'', ''country of collection''
       ex ''suspected epidemiological origin'', ''genotype'', ''strain'', ''variant
       name or specific feature'
-    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+    from_schema: https://w3id.org/evorao/
     close_mappings:
     - rdfs:label
     rank: 1000
@@ -382,7 +382,7 @@ attributes:
       present the resource.
 
       '
-    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+    from_schema: https://w3id.org/evorao/
     rank: 1000
     slot_uri: dct:description
     alias: description
@@ -405,7 +405,7 @@ attributes:
     description: The web address or location where the details or content is stored
       and can be accessed or downloaded.
     title: resource URL
-    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+    from_schema: https://w3id.org/evorao/
     exact_mappings:
     - dct:license
     close_mappings:
@@ -424,7 +424,7 @@ attributes:
     description: A text or html code that provides any related data sharing licence
       and/or attribution
     title: licensing or attribution
-    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+    from_schema: https://w3id.org/evorao/
     exact_mappings:
     - dct:rights
     close_mappings:
@@ -441,7 +441,7 @@ attributes:
     name: logo
     description: A path or URL to the related logo
     title: logo
-    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+    from_schema: https://w3id.org/evorao/
     rank: 1000
     alias: logo
     owner: License

@@ -1,6 +1,6 @@
 
 
-# Slot: variant (variant)
+# Slot: variant (variant) 
 
 
 _An organism with one or more new mutations is referred to as a “variant” of the original organism if not sufficiently different to be termed a distinct strain_
@@ -9,9 +9,8 @@ _An organism with one or more new mutations is referred to as a “variant” of
 
 
 
-URI: [EVORAO:variant](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#variant)
-
-
+URI: [EVORAO:variant](https://w3id.org/evorao/variant)
+Alias: variant
 
 <!-- no inheritance hierarchy -->
 
@@ -50,7 +49,7 @@ URI: [EVORAO:variant](https://raw.githubusercontent.com/EVORA-project/evora-onto
 ### Schema Source
 
 
-* from schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+* from schema: https://w3id.org/evorao/
 
 
 
@@ -73,7 +72,7 @@ name: variant
 description: An organism with one or more new mutations is referred to as a “variant”
   of the original organism if not sufficiently different to be termed a distinct strain
 title: variant
-from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+from_schema: https://w3id.org/evorao/
 rank: 1000
 alias: variant
 domain_of:

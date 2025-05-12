@@ -1,6 +1,6 @@
 
 
-# Slot: mycoplasmic content (mycoplasmicContent)
+# Slot: mycoplasmic content (mycoplasmicContent) 
 
 
 _Indicates the presence of mycoplasma contamination within the sample_
@@ -9,9 +9,8 @@ _Indicates the presence of mycoplasma contamination within the sample_
 
 
 
-URI: [EVORAO:mycoplasmicContent](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#mycoplasmicContent)
-
-
+URI: [EVORAO:mycoplasmicContent](https://w3id.org/evorao/mycoplasmicContent)
+Alias: mycoplasmicContent
 
 <!-- no inheritance hierarchy -->
 
@@ -52,7 +51,7 @@ URI: [EVORAO:mycoplasmicContent](https://raw.githubusercontent.com/EVORA-project
 ### Schema Source
 
 
-* from schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+* from schema: https://w3id.org/evorao/
 
 
 
@@ -74,7 +73,7 @@ URI: [EVORAO:mycoplasmicContent](https://raw.githubusercontent.com/EVORA-project
 name: mycoplasmicContent
 description: Indicates the presence of mycoplasma contamination within the sample
 title: mycoplasmic content
-from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+from_schema: https://w3id.org/evorao/
 rank: 1000
 alias: mycoplasmicContent
 domain_of:

@@ -1,6 +1,6 @@
 
 
-# Slot: version Of (versionOf)
+# Slot: version Of (versionOf) 
 
 
 _Identifier of what the version qualifies_
@@ -9,9 +9,8 @@ _Identifier of what the version qualifies_
 
 
 
-URI: [EVORAO:versionOf](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#versionOf)
-
-
+URI: [EVORAO:versionOf](https://w3id.org/evorao/versionOf)
+Alias: versionOf
 
 <!-- no inheritance hierarchy -->
 
@@ -52,7 +51,7 @@ URI: [EVORAO:versionOf](https://raw.githubusercontent.com/EVORA-project/evora-on
 ### Schema Source
 
 
-* from schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+* from schema: https://w3id.org/evorao/
 
 
 
@@ -74,7 +73,7 @@ URI: [EVORAO:versionOf](https://raw.githubusercontent.com/EVORA-project/evora-on
 name: versionOf
 description: Identifier of what the version qualifies
 title: version Of
-from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+from_schema: https://w3id.org/evorao/
 rank: 1000
 alias: versionOf
 domain_of:

@@ -1,6 +1,6 @@
 
 
-# Slot: locality/city (addressLocality)
+# Slot: locality/city (addressLocality) 
 
 
 _The locality in which the street address is, and which is in the region. e.g, the city_
@@ -9,9 +9,8 @@ _The locality in which the street address is, and which is in the region. e.g, t
 
 
 
-URI: [EVORAO:addressLocality](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#addressLocality)
-
-
+URI: [EVORAO:addressLocality](https://w3id.org/evorao/addressLocality)
+Alias: addressLocality
 
 <!-- no inheritance hierarchy -->
 
@@ -50,7 +49,7 @@ URI: [EVORAO:addressLocality](https://raw.githubusercontent.com/EVORA-project/ev
 ### Schema Source
 
 
-* from schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+* from schema: https://w3id.org/evorao/
 
 
 
@@ -74,7 +73,7 @@ name: addressLocality
 description: The locality in which the street address is, and which is in the region.
   e.g, the city
 title: locality/city
-from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+from_schema: https://w3id.org/evorao/
 close_mappings:
 - schema:addressLocality
 - vcard:hasLocality

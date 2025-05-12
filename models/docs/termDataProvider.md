@@ -1,6 +1,6 @@
 
 
-# Slot: term data provider (termDataProvider)
+# Slot: term data provider (termDataProvider) 
 
 
 _An external API or Endpoint that permits to retrieve the terms of this vocabulary_
@@ -9,9 +9,8 @@ _An external API or Endpoint that permits to retrieve the terms of this vocabula
 
 
 
-URI: [EVORAO:termDataProvider](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#termDataProvider)
-
-
+URI: [EVORAO:termDataProvider](https://w3id.org/evorao/termDataProvider)
+Alias: termDataProvider
 
 <!-- no inheritance hierarchy -->
 
@@ -50,7 +49,7 @@ URI: [EVORAO:termDataProvider](https://raw.githubusercontent.com/EVORA-project/e
 ### Schema Source
 
 
-* from schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+* from schema: https://w3id.org/evorao/
 
 
 
@@ -73,7 +72,7 @@ name: termDataProvider
 description: An external API or Endpoint that permits to retrieve the terms of this
   vocabulary
 title: term data provider
-from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+from_schema: https://w3id.org/evorao/
 rank: 1000
 alias: termDataProvider
 domain_of:

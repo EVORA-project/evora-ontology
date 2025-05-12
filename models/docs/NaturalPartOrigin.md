@@ -1,6 +1,6 @@
 
 
-# Class: Natural part origin (NaturalPartOrigin)
+# Class: Natural part origin (NaturalPartOrigin) 
 
 
 _Information on the origin of a natural part that composes the biological material_
@@ -9,7 +9,7 @@ _Information on the origin of a natural part that composes the biological materi
 
 
 
-URI: [EVORAO:NaturalPartOrigin](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#NaturalPartOrigin)
+URI: [EVORAO:NaturalPartOrigin](https://w3id.org/evorao/NaturalPartOrigin)
 
 
 
@@ -103,7 +103,7 @@ URI: [EVORAO:NaturalPartOrigin](https://raw.githubusercontent.com/EVORA-project/
 ### Schema Source
 
 
-* from schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+* from schema: https://w3id.org/evorao/
 
 
 
@@ -133,7 +133,7 @@ name: NaturalPartOrigin
 description: Information on the origin of a natural part that composes the biological
   material
 title: Natural part origin
-from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+from_schema: https://w3id.org/evorao/
 is_a: BiologicalPartOrigin
 slots:
 - countryOfCollection
@@ -208,7 +208,7 @@ name: NaturalPartOrigin
 description: Information on the origin of a natural part that composes the biological
   material
 title: Natural part origin
-from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+from_schema: https://w3id.org/evorao/
 is_a: BiologicalPartOrigin
 slot_usage:
   countryOfCollection:
@@ -271,7 +271,7 @@ attributes:
     description: The geographical location where the sample was collected in situ.
       Used for Nagoya/CBD; equivalent to 'country of origin'.
     title: country of collection
-    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+    from_schema: https://w3id.org/evorao/
     close_mappings:
     - dct:spatial
     - dwc:country
@@ -288,7 +288,7 @@ attributes:
     description: The specific IPLC area (Indigenous People and Local Communities)
       from which this sample/element was sampled, if relevant
     title: indigenous people and local community origin
-    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+    from_schema: https://w3id.org/evorao/
     rank: 1000
     alias: indigenousPoepleAndLocalCommunityOrigin
     owner: NaturalPartOrigin
@@ -303,7 +303,7 @@ attributes:
       use a proxy date such as 'date received' and indicate this by setting to true
       the before date property
     title: collection date
-    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+    from_schema: https://w3id.org/evorao/
     rank: 1000
     alias: collectionDate
     owner: NaturalPartOrigin
@@ -316,7 +316,7 @@ attributes:
     name: beforeDate
     description: Set to TRUE if a proxy date for the collection date is used
     title: before date
-    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+    from_schema: https://w3id.org/evorao/
     rank: 1000
     ifabsent: 'false'
     alias: beforeDate
@@ -332,7 +332,7 @@ attributes:
       applicable if the genetic resource falls under Access and Benefit-Sharing (ABS)
       regulations
     title: permit identifier for ABS
-    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+    from_schema: https://w3id.org/evorao/
     rank: 1000
     alias: permitIdentifierForABS
     owner: NaturalPartOrigin
@@ -348,7 +348,7 @@ attributes:
     comments:
     - Information not required if the current biological part constitutes the complete
       biological material
-    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+    from_schema: https://w3id.org/evorao/
     rank: 1000
     alias: recombinantPartIdentification
     owner: NaturalPartOrigin
@@ -362,7 +362,7 @@ attributes:
     description: Indicate if the biological part was produced with access to a physical
       genetic resource
     title: access to physical genetic resource
-    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+    from_schema: https://w3id.org/evorao/
     rank: 1000
     alias: accessToPhysicalGeneticResource
     owner: NaturalPartOrigin

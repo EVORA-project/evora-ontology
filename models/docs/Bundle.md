@@ -1,6 +1,6 @@
 
 
-# Class: Bundle (Bundle)
+# Class: Bundle (Bundle) 
 
 
 _A group of products_
@@ -9,7 +9,7 @@ _A group of products_
 
 
 
-URI: [EVORAO:Bundle](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#Bundle)
+URI: [EVORAO:Bundle](https://w3id.org/evorao/Bundle)
 
 
 
@@ -284,7 +284,7 @@ URI: [EVORAO:Bundle](https://raw.githubusercontent.com/EVORA-project/evora-ontol
 ### Schema Source
 
 
-* from schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+* from schema: https://w3id.org/evorao/
 
 
 
@@ -314,7 +314,7 @@ URI: [EVORAO:Bundle](https://raw.githubusercontent.com/EVORA-project/evora-ontol
 name: Bundle
 description: A group of products
 title: Bundle
-from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+from_schema: https://w3id.org/evorao/
 close_mappings:
 - wd:Q1020767
 - wd:Q1020767
@@ -343,7 +343,7 @@ slot_usage:
 name: Bundle
 description: A group of products
 title: Bundle
-from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+from_schema: https://w3id.org/evorao/
 close_mappings:
 - wd:Q1020767
 - wd:Q1020767
@@ -365,7 +365,7 @@ attributes:
     description: Associates the bundle with the individual products it contains, specifying
       the components included within the bundle.
     title: products of the bundle
-    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+    from_schema: https://w3id.org/evorao/
     rank: 1000
     alias: productsOfTheBundle
     owner: Bundle
@@ -379,7 +379,7 @@ attributes:
     description: The corresponding International Air Transport Association (IATA)'s
       category for this Product
     title: IATA classification
-    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+    from_schema: https://w3id.org/evorao/
     rank: 1000
     alias: hasIATAClassification
     owner: Bundle
@@ -394,7 +394,7 @@ attributes:
 
       '
     title: shipping conditions
-    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+    from_schema: https://w3id.org/evorao/
     rank: 1000
     alias: shippingConditions
     owner: Bundle
@@ -413,7 +413,7 @@ attributes:
     - The MSD  is a document that provides detailed information about the properties,
       hazards, handling, storage, and emergency procedures related to the use of a
       chemical or substance
-    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+    from_schema: https://w3id.org/evorao/
     rank: 1000
     alias: materialSafetyDataSheet
     owner: Bundle
@@ -428,7 +428,7 @@ attributes:
       isolation, or creation of an item, providing information about the source or
       origin of the sample
     title: originator
-    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+    from_schema: https://w3id.org/evorao/
     rank: 1000
     alias: originator
     owner: Bundle
@@ -447,7 +447,7 @@ attributes:
     - e.g, could be a xsd:string in enumeration ('Freeze Dried', 'Liquid Nitrogen',
       'Viral Storage Medium -20C', 'Viral Storage Medium -80C', 'Living plant material
       (>= +4°C)', 'Gas Phase', 'Ethanol -20C', 'Ethanol -80C', 'Dried')
-    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+    from_schema: https://w3id.org/evorao/
     rank: 1000
     alias: storageConditions
     owner: Bundle
@@ -462,7 +462,7 @@ attributes:
       restriction to third parties, as indicated by the ABS permit, in case an ABS
       permit is required
     title: third party distribution consent
-    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+    from_schema: https://w3id.org/evorao/
     rank: 1000
     alias: thirdPartyDistributionConsent
     owner: Bundle
@@ -477,7 +477,7 @@ attributes:
       material, including restrictions on research, commercial use, or distribution,
       considering any potential concerns about the related genetic material
     title: usage restrictions
-    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+    from_schema: https://w3id.org/evorao/
     rank: 1000
     alias: usageRestrictions
     owner: Bundle
@@ -492,7 +492,7 @@ attributes:
       page on the provider's website and/or allows to place an order about it or at
       least describe the process to place an order/enquiry
     title: access point URL
-    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+    from_schema: https://w3id.org/evorao/
     exact_mappings:
     - dcat:landingPage
     rank: 1000
@@ -508,7 +508,7 @@ attributes:
     description: The reference or the stock keeping unit of the service or item provided
       in the provider's catalogue
     title: ref-SKU
-    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+    from_schema: https://w3id.org/evorao/
     exact_mappings:
     - dct:identifier
     rank: 1000
@@ -527,7 +527,7 @@ attributes:
     comments:
     - 'The description of what will be delivered to the end-user (e.g.: packaging,
       quantity...)'
-    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+    from_schema: https://w3id.org/evorao/
     rank: 1000
     alias: unitDefinition
     owner: Bundle
@@ -541,7 +541,7 @@ attributes:
     name: category
     description: The main category of the service or product
     title: category
-    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+    from_schema: https://w3id.org/evorao/
     exact_mappings:
     - dcat:theme
     rank: 1000
@@ -557,7 +557,7 @@ attributes:
     description: Any category apart from its main category in which this product or
       service can fit
     title: additional category
-    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+    from_schema: https://w3id.org/evorao/
     exact_mappings:
     - dcat:theme
     rank: 1000
@@ -577,7 +577,7 @@ attributes:
     - The cost per access may not be defined or be specific to a request, so it has
       to be a xsd:string instead of an xsd:float as initialy suggested to permit description
       of cost as conditional to what is requested
-    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+    from_schema: https://w3id.org/evorao/
     rank: 1000
     ifabsent: string(on request)
     alias: unitCost
@@ -593,7 +593,7 @@ attributes:
     description: Information that permits to assess the quality level of what will
       be provided
     title: quality grading
-    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+    from_schema: https://w3id.org/evorao/
     rank: 1000
     alias: qualityGrading
     owner: Bundle
@@ -612,7 +612,7 @@ attributes:
       some cases(e.g: FAIRSHARING) there may have no direct pathogen related but simply
       a taxonomic information .... the default value should be the root of virology:
       Viruses'
-    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+    from_schema: https://w3id.org/evorao/
     rank: 1000
     alias: pathogenIdentification
     owner: Bundle
@@ -625,7 +625,7 @@ attributes:
     name: relatedDOI
     description: Any Digital Object Identifier that can be related
     title: DOI
-    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+    from_schema: https://w3id.org/evorao/
     close_mappings:
     - wdp:P356
     rank: 1000
@@ -643,7 +643,7 @@ attributes:
       a biological agent guiding its initial handling in labs according to the risk
       group classification defined by the WHO laboratory biosafety manual
     title: risk group
-    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+    from_schema: https://w3id.org/evorao/
     close_mappings:
     - wdp:P12663
     rank: 1000
@@ -662,7 +662,7 @@ attributes:
       contributes to protecting people and the environment from biohazards while accessing
       this product or service
     title: biosafety restrictions
-    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+    from_schema: https://w3id.org/evorao/
     rank: 1000
     alias: biosafetyRestrictions
     owner: Bundle
@@ -679,7 +679,7 @@ attributes:
     comments:
     - Set to TRUE if it can produce GMO. It is recommended to have a value for this
       field, no value will be understood as unknown
-    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+    from_schema: https://w3id.org/evorao/
     rank: 1000
     alias: canItBeUsedToProduceGMO
     owner: Bundle
@@ -693,7 +693,7 @@ attributes:
     name: provider
     description: A provider of this product or service, as a specific organization
     title: provider
-    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+    from_schema: https://w3id.org/evorao/
     rank: 1000
     alias: provider
     owner: Bundle
@@ -706,7 +706,7 @@ attributes:
     name: collection
     description: The collection(s) to which belongs this item
     title: collection
-    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+    from_schema: https://w3id.org/evorao/
     rank: 1000
     alias: collection
     owner: Bundle
@@ -719,7 +719,7 @@ attributes:
     name: keywords
     description: List of terms used to tag and categorize this Item
     title: keywords
-    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+    from_schema: https://w3id.org/evorao/
     exact_mappings:
     - dcat:keyword
     rank: 1000
@@ -738,7 +738,7 @@ attributes:
     title: availability
     comments:
     - Possible availabilities may differ from a project to another
-    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+    from_schema: https://w3id.org/evorao/
     rank: 1000
     ifabsent: string(on request)
     alias: availability
@@ -753,7 +753,7 @@ attributes:
     description: Any additional documents that provide supplementary information,
       instructions, or guidelines relevant to the use of this item
     title: complementary document
-    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+    from_schema: https://w3id.org/evorao/
     rank: 1000
     alias: complementaryDocument
     owner: Bundle
@@ -768,7 +768,7 @@ attributes:
       and maintenance of what is provided, including best practices, troubleshooting
       tips, and procedural instructions
     title: technical recommendation
-    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+    from_schema: https://w3id.org/evorao/
     rank: 1000
     alias: technicalRecommendation
     owner: Bundle
@@ -781,7 +781,7 @@ attributes:
     name: productPicture
     description: A picture that can represent the item
     title: product picture
-    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+    from_schema: https://w3id.org/evorao/
     rank: 1000
     alias: productPicture
     owner: Bundle
@@ -795,7 +795,7 @@ attributes:
     description: A reference that permits to retrieve another related item from an
       external provider
     title: external related reference
-    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+    from_schema: https://w3id.org/evorao/
     rank: 1000
     alias: externalRelatedReference
     owner: Bundle
@@ -809,7 +809,7 @@ attributes:
     description: Any certification related to the current product or service; e.g.,
       ISO certification
     title: certification
-    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+    from_schema: https://w3id.org/evorao/
     close_mappings:
     - dct:conformsTo
     rank: 1000
@@ -824,7 +824,7 @@ attributes:
     name: internalReference
     description: Any reference or indication to be used for local retrieval purpose
     title: internal reference
-    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+    from_schema: https://w3id.org/evorao/
     rank: 1000
     alias: internalReference
     owner: Bundle
@@ -837,7 +837,7 @@ attributes:
     name: note
     description: An aditional information as a textual comment
     title: note
-    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+    from_schema: https://w3id.org/evorao/
     rank: 1000
     alias: note
     owner: Bundle
@@ -850,7 +850,7 @@ attributes:
     name: contactPoint
     description: An information that allows someone to establish communication
     title: contact point
-    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+    from_schema: https://w3id.org/evorao/
     exact_mappings:
     - dcat:contactPoint
     rank: 1000
@@ -874,7 +874,7 @@ attributes:
       ''Virus name'', ''virus host type'', ''collection year'', ''country of collection''
       ex ''suspected epidemiological origin'', ''genotype'', ''strain'', ''variant
       name or specific feature'
-    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+    from_schema: https://w3id.org/evorao/
     close_mappings:
     - rdfs:label
     rank: 1000
@@ -901,7 +901,7 @@ attributes:
       present the resource.
 
       '
-    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+    from_schema: https://w3id.org/evorao/
     rank: 1000
     slot_uri: dct:description
     alias: description

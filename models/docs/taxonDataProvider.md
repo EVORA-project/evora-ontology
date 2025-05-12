@@ -1,6 +1,6 @@
 
 
-# Slot: taxon data provider (taxonDataProvider)
+# Slot: taxon data provider (taxonDataProvider) 
 
 
 _The data provider for the taxons of the taxonomy_
@@ -9,9 +9,8 @@ _The data provider for the taxons of the taxonomy_
 
 
 
-URI: [EVORAO:taxonDataProvider](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#taxonDataProvider)
-
-
+URI: [EVORAO:taxonDataProvider](https://w3id.org/evorao/taxonDataProvider)
+Alias: taxonDataProvider
 
 <!-- no inheritance hierarchy -->
 
@@ -50,7 +49,7 @@ URI: [EVORAO:taxonDataProvider](https://raw.githubusercontent.com/EVORA-project/
 ### Schema Source
 
 
-* from schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+* from schema: https://w3id.org/evorao/
 
 
 
@@ -72,7 +71,7 @@ URI: [EVORAO:taxonDataProvider](https://raw.githubusercontent.com/EVORA-project/
 name: taxonDataProvider
 description: The data provider for the taxons of the taxonomy
 title: taxon data provider
-from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+from_schema: https://w3id.org/evorao/
 rank: 1000
 alias: taxonDataProvider
 domain_of:

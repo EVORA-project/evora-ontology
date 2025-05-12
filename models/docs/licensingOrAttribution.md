@@ -1,6 +1,6 @@
 
 
-# Slot: licensing or attribution (licensingOrAttribution)
+# Slot: licensing or attribution (licensingOrAttribution) 
 
 
 _A text or html code that provides any related data sharing licence and/or attribution_
@@ -9,9 +9,8 @@ _A text or html code that provides any related data sharing licence and/or attri
 
 
 
-URI: [EVORAO:licensingOrAttribution](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#licensingOrAttribution)
-
-
+URI: [EVORAO:licensingOrAttribution](https://w3id.org/evorao/licensingOrAttribution)
+Alias: licensingOrAttribution
 
 <!-- no inheritance hierarchy -->
 
@@ -50,7 +49,7 @@ URI: [EVORAO:licensingOrAttribution](https://raw.githubusercontent.com/EVORA-pro
 ### Schema Source
 
 
-* from schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+* from schema: https://w3id.org/evorao/
 
 
 
@@ -75,7 +74,7 @@ name: licensingOrAttribution
 description: A text or html code that provides any related data sharing licence and/or
   attribution
 title: licensing or attribution
-from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+from_schema: https://w3id.org/evorao/
 exact_mappings:
 - dct:rights
 close_mappings:

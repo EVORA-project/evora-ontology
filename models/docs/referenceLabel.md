@@ -1,6 +1,6 @@
 
 
-# Slot: reference label (referenceLabel)
+# Slot: reference label (referenceLabel) 
 
 
 _The label informing what this reference is about_
@@ -9,9 +9,8 @@ _The label informing what this reference is about_
 
 
 
-URI: [EVORAO:referenceLabel](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#referenceLabel)
-
-
+URI: [EVORAO:referenceLabel](https://w3id.org/evorao/referenceLabel)
+Alias: referenceLabel
 
 <!-- no inheritance hierarchy -->
 
@@ -56,7 +55,7 @@ URI: [EVORAO:referenceLabel](https://raw.githubusercontent.com/EVORA-project/evo
 ### Schema Source
 
 
-* from schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+* from schema: https://w3id.org/evorao/
 
 
 
@@ -81,7 +80,7 @@ description: The label informing what this reference is about
 title: reference label
 comments:
 - e.g., 'Infravec2 related product'
-from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+from_schema: https://w3id.org/evorao/
 close_mappings:
 - dct:title
 rank: 1000

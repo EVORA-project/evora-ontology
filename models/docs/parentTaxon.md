@@ -1,6 +1,6 @@
 
 
-# Slot: parent taxon (parentTaxon)
+# Slot: parent taxon (parentTaxon) 
 
 
 _The parent taxon of the current taxon_
@@ -9,9 +9,8 @@ _The parent taxon of the current taxon_
 
 
 
-URI: [EVORAO:parentTaxon](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#parentTaxon)
-
-
+URI: [EVORAO:parentTaxon](https://w3id.org/evorao/parentTaxon)
+Alias: parentTaxon
 
 <!-- no inheritance hierarchy -->
 
@@ -52,7 +51,7 @@ URI: [EVORAO:parentTaxon](https://raw.githubusercontent.com/EVORA-project/evora-
 ### Schema Source
 
 
-* from schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+* from schema: https://w3id.org/evorao/
 
 
 
@@ -75,7 +74,7 @@ URI: [EVORAO:parentTaxon](https://raw.githubusercontent.com/EVORA-project/evora-
 name: parentTaxon
 description: The parent taxon of the current taxon
 title: parent taxon
-from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+from_schema: https://w3id.org/evorao/
 close_mappings:
 - dwc:Taxon
 rank: 1000

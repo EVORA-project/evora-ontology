@@ -1,6 +1,6 @@
 
 
-# Slot: address Country (addressCountry)
+# Slot: address Country (addressCountry) 
 
 
 _The country as of  ISO 3166_
@@ -9,9 +9,8 @@ _The country as of  ISO 3166_
 
 
 
-URI: [EVORAO:addressCountry](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#addressCountry)
-
-
+URI: [EVORAO:addressCountry](https://w3id.org/evorao/addressCountry)
+Alias: addressCountry
 
 <!-- no inheritance hierarchy -->
 
@@ -50,7 +49,7 @@ URI: [EVORAO:addressCountry](https://raw.githubusercontent.com/EVORA-project/evo
 ### Schema Source
 
 
-* from schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+* from schema: https://w3id.org/evorao/
 
 
 
@@ -73,7 +72,7 @@ URI: [EVORAO:addressCountry](https://raw.githubusercontent.com/EVORA-project/evo
 name: addressCountry
 description: The country as of  ISO 3166
 title: address Country
-from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+from_schema: https://w3id.org/evorao/
 close_mappings:
 - schema:addressCountry
 - vcard:hasCountryName

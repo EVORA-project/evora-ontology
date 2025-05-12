@@ -1,6 +1,6 @@
 
 
-# Slot: recombinant part identification (recombinantPartIdentification)
+# Slot: recombinant part identification (recombinantPartIdentification) 
 
 
 _Identification of a recombinant part_
@@ -9,9 +9,8 @@ _Identification of a recombinant part_
 
 
 
-URI: [EVORAO:recombinantPartIdentification](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#recombinantPartIdentification)
-
-
+URI: [EVORAO:recombinantPartIdentification](https://w3id.org/evorao/recombinantPartIdentification)
+Alias: recombinantPartIdentification
 
 <!-- no inheritance hierarchy -->
 
@@ -23,8 +22,8 @@ URI: [EVORAO:recombinantPartIdentification](https://raw.githubusercontent.com/EV
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [BiologicalPartOrigin](BiologicalPartOrigin.md) | Information on the origin of a unitary, cohesive part that is part of, or con... |  yes  |
 | [NaturalPartOrigin](NaturalPartOrigin.md) | Information on the origin of a natural part that composes the biological mate... |  no  |
+| [BiologicalPartOrigin](BiologicalPartOrigin.md) | Information on the origin of a unitary, cohesive part that is part of, or con... |  yes  |
 | [SyntheticPartOrigin](SyntheticPartOrigin.md) | Information on the origin of a synthetic part that composes the biological ma... |  no  |
 
 
@@ -56,7 +55,7 @@ URI: [EVORAO:recombinantPartIdentification](https://raw.githubusercontent.com/EV
 ### Schema Source
 
 
-* from schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+* from schema: https://w3id.org/evorao/
 
 
 
@@ -81,7 +80,7 @@ title: recombinant part identification
 comments:
 - Information not required if the current biological part constitutes the complete
   biological material
-from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+from_schema: https://w3id.org/evorao/
 rank: 1000
 alias: recombinantPartIdentification
 domain_of:

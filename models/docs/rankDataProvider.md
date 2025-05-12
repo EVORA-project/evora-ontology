@@ -1,6 +1,6 @@
 
 
-# Slot: rank data provider (rankDataProvider)
+# Slot: rank data provider (rankDataProvider) 
 
 
 _The data provider for the description of the taxonomic ranks used in this taxonomy_
@@ -9,9 +9,8 @@ _The data provider for the description of the taxonomic ranks used in this taxon
 
 
 
-URI: [EVORAO:rankDataProvider](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#rankDataProvider)
-
-
+URI: [EVORAO:rankDataProvider](https://w3id.org/evorao/rankDataProvider)
+Alias: rankDataProvider
 
 <!-- no inheritance hierarchy -->
 
@@ -50,7 +49,7 @@ URI: [EVORAO:rankDataProvider](https://raw.githubusercontent.com/EVORA-project/e
 ### Schema Source
 
 
-* from schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+* from schema: https://w3id.org/evorao/
 
 
 
@@ -73,7 +72,7 @@ name: rankDataProvider
 description: The data provider for the description of the taxonomic ranks used in
   this taxonomy
 title: rank data provider
-from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+from_schema: https://w3id.org/evorao/
 rank: 1000
 alias: rankDataProvider
 domain_of:

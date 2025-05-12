@@ -1,6 +1,6 @@
 
 
-# Slot: taxonomy (taxonomy)
+# Slot: taxonomy (taxonomy) 
 
 
 _The taxonomy release(s) in which this entity exists_
@@ -9,9 +9,8 @@ _The taxonomy release(s) in which this entity exists_
 
 
 
-URI: [EVORAO:taxonomy](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#taxonomy)
-
-
+URI: [EVORAO:taxonomy](https://w3id.org/evorao/taxonomy)
+Alias: taxonomy
 
 <!-- no inheritance hierarchy -->
 
@@ -23,8 +22,8 @@ URI: [EVORAO:taxonomy](https://raw.githubusercontent.com/EVORA-project/evora-ont
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [TaxonomicRank](TaxonomicRank.md) | The possible taxonomic ranks and their description |  yes  |
 | [Taxon](Taxon.md) | Conceptual entity that groups one or more populations of an organism or organ... |  yes  |
+| [TaxonomicRank](TaxonomicRank.md) | The possible taxonomic ranks and their description |  yes  |
 
 
 
@@ -55,7 +54,7 @@ URI: [EVORAO:taxonomy](https://raw.githubusercontent.com/EVORA-project/evora-ont
 ### Schema Source
 
 
-* from schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+* from schema: https://w3id.org/evorao/
 
 
 
@@ -77,7 +76,7 @@ URI: [EVORAO:taxonomy](https://raw.githubusercontent.com/EVORA-project/evora-ont
 name: taxonomy
 description: The taxonomy release(s) in which this entity exists
 title: taxonomy
-from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+from_schema: https://w3id.org/evorao/
 rank: 1000
 alias: taxonomy
 domain_of:

@@ -1,6 +1,6 @@
 
 
-# Class: Collection (Collection)
+# Class: Collection (Collection) 
 
 
 _Set of products and services with some common characteristics_
@@ -9,7 +9,7 @@ _Set of products and services with some common characteristics_
 
 
 
-URI: [EVORAO:Collection](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#Collection)
+URI: [EVORAO:Collection](https://w3id.org/evorao/Collection)
 
 
 
@@ -110,7 +110,7 @@ URI: [EVORAO:Collection](https://raw.githubusercontent.com/EVORA-project/evora-o
 ### Schema Source
 
 
-* from schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+* from schema: https://w3id.org/evorao/
 
 
 
@@ -140,7 +140,7 @@ URI: [EVORAO:Collection](https://raw.githubusercontent.com/EVORA-project/evora-o
 name: Collection
 description: Set of products and services with some common characteristics
 title: Collection
-from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+from_schema: https://w3id.org/evorao/
 close_mappings:
 - wd:Q2668072
 - wd:Q2668072
@@ -183,7 +183,7 @@ slot_usage:
 name: Collection
 description: Set of products and services with some common characteristics
 title: Collection
-from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+from_schema: https://w3id.org/evorao/
 close_mappings:
 - wd:Q2668072
 - wd:Q2668072
@@ -217,7 +217,7 @@ attributes:
     name: collectionItem
     description: An item of the collection
     title: collection item
-    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+    from_schema: https://w3id.org/evorao/
     close_mappings:
     - dcat:resource
     rank: 1000
@@ -233,7 +233,7 @@ attributes:
     name: collectionDataProvider
     description: The provider of the data of the collection
     title: collection data provider
-    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+    from_schema: https://w3id.org/evorao/
     close_mappings:
     - dct:isReferencedBy
     rank: 1000
@@ -255,7 +255,7 @@ attributes:
       ''Virus name'', ''virus host type'', ''collection year'', ''country of collection''
       ex ''suspected epidemiological origin'', ''genotype'', ''strain'', ''variant
       name or specific feature'
-    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+    from_schema: https://w3id.org/evorao/
     close_mappings:
     - rdfs:label
     rank: 1000
@@ -282,7 +282,7 @@ attributes:
       present the resource.
 
       '
-    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+    from_schema: https://w3id.org/evorao/
     rank: 1000
     slot_uri: dct:description
     alias: description

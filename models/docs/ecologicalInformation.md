@@ -1,6 +1,6 @@
 
 
-# Slot: ecological information (ecologicalInformation)
+# Slot: ecological information (ecologicalInformation) 
 
 
 _Details the potential environmental impact of the product, including its effects on ecosystems, persistence, degradability, bioaccumulation potential, and toxicity to aquatic and terrestrial organisms._
@@ -9,9 +9,8 @@ _Details the potential environmental impact of the product, including its effect
 
 
 
-URI: [EVORAO:ecologicalInformation](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#ecologicalInformation)
-
-
+URI: [EVORAO:ecologicalInformation](https://w3id.org/evorao/ecologicalInformation)
+Alias: ecologicalInformation
 
 <!-- no inheritance hierarchy -->
 
@@ -52,7 +51,7 @@ URI: [EVORAO:ecologicalInformation](https://raw.githubusercontent.com/EVORA-proj
 ### Schema Source
 
 
-* from schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+* from schema: https://w3id.org/evorao/
 
 
 
@@ -76,7 +75,7 @@ description: Details the potential environmental impact of the product, includin
   its effects on ecosystems, persistence, degradability, bioaccumulation potential,
   and toxicity to aquatic and terrestrial organisms.
 title: ecological information
-from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+from_schema: https://w3id.org/evorao/
 rank: 1000
 alias: ecologicalInformation
 domain_of:

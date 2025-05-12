@@ -1,6 +1,6 @@
 
 
-# Slot: certification document (certificationDocument)
+# Slot: certification document (certificationDocument) 
 
 
 _The document(s) issued by an authority certifying the conformity of the subject to the applicable scheme, including, as the case may be, the documents attesting the equivalence to another certification scheme._
@@ -9,9 +9,8 @@ _The document(s) issued by an authority certifying the conformity of the subject
 
 
 
-URI: [EVORAO:certificationDocument](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#certificationDocument)
-
-
+URI: [EVORAO:certificationDocument](https://w3id.org/evorao/certificationDocument)
+Alias: certificationDocument
 
 <!-- no inheritance hierarchy -->
 
@@ -52,7 +51,7 @@ URI: [EVORAO:certificationDocument](https://raw.githubusercontent.com/EVORA-proj
 ### Schema Source
 
 
-* from schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+* from schema: https://w3id.org/evorao/
 
 
 
@@ -76,7 +75,7 @@ description: The document(s) issued by an authority certifying the conformity of
   subject to the applicable scheme, including, as the case may be, the documents attesting
   the equivalence to another certification scheme.
 title: certification document
-from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+from_schema: https://w3id.org/evorao/
 rank: 1000
 alias: certificationDocument
 domain_of:

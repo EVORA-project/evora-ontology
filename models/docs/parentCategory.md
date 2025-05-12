@@ -1,6 +1,6 @@
 
 
-# Slot: parent category (parentCategory)
+# Slot: parent category (parentCategory) 
 
 
 _An overarching category that encompasses the current category within a hierarchical classification system. It serves as the top-level classification, organizing related subcategories under its umbrella to create a structured and logical order._
@@ -9,9 +9,8 @@ _An overarching category that encompasses the current category within a hierarch
 
 
 
-URI: [EVORAO:parentCategory](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#parentCategory)
-
-
+URI: [EVORAO:parentCategory](https://w3id.org/evorao/parentCategory)
+Alias: parentCategory
 
 <!-- no inheritance hierarchy -->
 
@@ -50,7 +49,7 @@ URI: [EVORAO:parentCategory](https://raw.githubusercontent.com/EVORA-project/evo
 ### Schema Source
 
 
-* from schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+* from schema: https://w3id.org/evorao/
 
 
 
@@ -75,7 +74,7 @@ description: An overarching category that encompasses the current category withi
   organizing related subcategories under its umbrella to create a structured and logical
   order.
 title: parent category
-from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+from_schema: https://w3id.org/evorao/
 rank: 1000
 alias: parentCategory
 domain_of:

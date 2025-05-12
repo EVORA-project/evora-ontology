@@ -1,6 +1,6 @@
 
 
-# Slot: biological part origin (biologicalPartOrigin)
+# Slot: biological part origin (biologicalPartOrigin) 
 
 
 _Details the origin of one or more unitary parts that make up the biological material. In the case of recombinant biological material, multiple parts may be involved._
@@ -9,9 +9,8 @@ _Details the origin of one or more unitary parts that make up the biological mat
 
 
 
-URI: [EVORAO:biologicalPartOrigin](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#biologicalPartOrigin)
-
-
+URI: [EVORAO:biologicalPartOrigin](https://w3id.org/evorao/biologicalPartOrigin)
+Alias: biologicalPartOrigin
 
 <!-- no inheritance hierarchy -->
 
@@ -58,7 +57,7 @@ URI: [EVORAO:biologicalPartOrigin](https://raw.githubusercontent.com/EVORA-proje
 ### Schema Source
 
 
-* from schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+* from schema: https://w3id.org/evorao/
 
 
 
@@ -84,7 +83,7 @@ description: Details the origin of one or more unitary parts that make up the bi
 title: biological part origin
 comments:
 - It can be multiple parts in case of a recombinant biological material.
-from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+from_schema: https://w3id.org/evorao/
 rank: 1000
 alias: biologicalPartOrigin
 domain_of:

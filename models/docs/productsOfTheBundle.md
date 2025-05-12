@@ -1,6 +1,6 @@
 
 
-# Slot: products of the bundle (productsOfTheBundle)
+# Slot: products of the bundle (productsOfTheBundle) 
 
 
 _Associates the bundle with the individual products it contains, specifying the components included within the bundle._
@@ -9,9 +9,8 @@ _Associates the bundle with the individual products it contains, specifying the 
 
 
 
-URI: [EVORAO:productsOfTheBundle](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#productsOfTheBundle)
-
-
+URI: [EVORAO:productsOfTheBundle](https://w3id.org/evorao/productsOfTheBundle)
+Alias: productsOfTheBundle
 
 <!-- no inheritance hierarchy -->
 
@@ -54,7 +53,7 @@ URI: [EVORAO:productsOfTheBundle](https://raw.githubusercontent.com/EVORA-projec
 ### Schema Source
 
 
-* from schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+* from schema: https://w3id.org/evorao/
 
 
 
@@ -77,7 +76,7 @@ name: productsOfTheBundle
 description: Associates the bundle with the individual products it contains, specifying
   the components included within the bundle.
 title: products of the bundle
-from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+from_schema: https://w3id.org/evorao/
 rank: 1000
 alias: productsOfTheBundle
 domain_of:

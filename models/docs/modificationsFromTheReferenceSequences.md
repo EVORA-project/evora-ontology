@@ -1,6 +1,6 @@
 
 
-# Slot: modifications from the reference sequence(s) (modificationsFromTheReferenceSequences)
+# Slot: modifications from the reference sequence(s) (modificationsFromTheReferenceSequences) 
 
 
 _Set to TRUE if there was is any modification made from the reference sequence_
@@ -9,9 +9,8 @@ _Set to TRUE if there was is any modification made from the reference sequence_
 
 
 
-URI: [EVORAO:modificationsFromTheReferenceSequences](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#modificationsFromTheReferenceSequences)
-
-
+URI: [EVORAO:modificationsFromTheReferenceSequences](https://w3id.org/evorao/modificationsFromTheReferenceSequences)
+Alias: modificationsFromTheReferenceSequences
 
 <!-- no inheritance hierarchy -->
 
@@ -52,7 +51,7 @@ URI: [EVORAO:modificationsFromTheReferenceSequences](https://raw.githubuserconte
 ### Schema Source
 
 
-* from schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+* from schema: https://w3id.org/evorao/
 
 
 
@@ -75,7 +74,7 @@ name: modificationsFromTheReferenceSequences
 description: Set to TRUE if there was is any modification made from the reference
   sequence
 title: modifications from the reference sequence(s)
-from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+from_schema: https://w3id.org/evorao/
 rank: 1000
 alias: modificationsFromTheReferenceSequences
 domain_of:

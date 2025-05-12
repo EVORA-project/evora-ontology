@@ -1,6 +1,6 @@
 
 
-# Class: Biological part origin (BiologicalPartOrigin)
+# Class: Biological part origin (BiologicalPartOrigin) 
 
 
 _Information on the origin of a unitary, cohesive part that is part of, or constitutes the biological material. It can be multiple parts in case of a recombinant biological material_
@@ -11,7 +11,7 @@ _Information on the origin of a unitary, cohesive part that is part of, or const
 * __NOTE__: this is an abstract class and should not be instantiated directly
 
 
-URI: [EVORAO:BiologicalPartOrigin](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#BiologicalPartOrigin)
+URI: [EVORAO:BiologicalPartOrigin](https://w3id.org/evorao/BiologicalPartOrigin)
 
 
 
@@ -91,7 +91,7 @@ URI: [EVORAO:BiologicalPartOrigin](https://raw.githubusercontent.com/EVORA-proje
 ### Schema Source
 
 
-* from schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+* from schema: https://w3id.org/evorao/
 
 
 
@@ -122,7 +122,7 @@ description: Information on the origin of a unitary, cohesive part that is part 
   or constitutes the biological material. It can be multiple parts in case of a recombinant
   biological material
 title: Biological part origin
-from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+from_schema: https://w3id.org/evorao/
 is_a: Resource
 abstract: true
 slots:
@@ -164,7 +164,7 @@ description: Information on the origin of a unitary, cohesive part that is part 
   or constitutes the biological material. It can be multiple parts in case of a recombinant
   biological material
 title: Biological part origin
-from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+from_schema: https://w3id.org/evorao/
 is_a: Resource
 abstract: true
 slot_usage:
@@ -198,7 +198,7 @@ attributes:
     comments:
     - Information not required if the current biological part constitutes the complete
       biological material
-    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+    from_schema: https://w3id.org/evorao/
     rank: 1000
     alias: recombinantPartIdentification
     owner: BiologicalPartOrigin
@@ -212,7 +212,7 @@ attributes:
     description: Indicate if the biological part was produced with access to a physical
       genetic resource
     title: access to physical genetic resource
-    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+    from_schema: https://w3id.org/evorao/
     rank: 1000
     alias: accessToPhysicalGeneticResource
     owner: BiologicalPartOrigin

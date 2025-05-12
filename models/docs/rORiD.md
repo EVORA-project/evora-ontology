@@ -1,6 +1,6 @@
 
 
-# Slot: ROR iD (rORiD)
+# Slot: ROR iD (rORiD) 
 
 
 _The corresponding organization's persistent identifier from the Research Organization Registry (ROR)_
@@ -9,9 +9,8 @@ _The corresponding organization's persistent identifier from the Research Organi
 
 
 
-URI: [EVORAO:rORiD](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#rORiD)
-
-
+URI: [EVORAO:rORiD](https://w3id.org/evorao/rORiD)
+Alias: rORiD
 
 <!-- no inheritance hierarchy -->
 
@@ -23,9 +22,9 @@ URI: [EVORAO:rORiD](https://raw.githubusercontent.com/EVORA-project/evora-ontolo
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [Organization](Organization.md) | A social entity established to meet needs or pursue specific goals |  yes  |
-| [RI](RI.md) | A research infrastructure |  no  |
 | [Provider](Provider.md) | A provider of products or services, as a specific organization |  no  |
+| [RI](RI.md) | A research infrastructure |  no  |
+| [Organization](Organization.md) | A social entity established to meet needs or pursue specific goals |  yes  |
 
 
 
@@ -54,7 +53,7 @@ URI: [EVORAO:rORiD](https://raw.githubusercontent.com/EVORA-project/evora-ontolo
 ### Schema Source
 
 
-* from schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+* from schema: https://w3id.org/evorao/
 
 
 
@@ -78,7 +77,7 @@ name: rORiD
 description: The corresponding organization's persistent identifier from the Research
   Organization Registry (ROR)
 title: ROR iD
-from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+from_schema: https://w3id.org/evorao/
 exact_mappings:
 - wdp:P6782
 rank: 1000

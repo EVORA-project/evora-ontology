@@ -1,6 +1,6 @@
 
 
-# Class: Version (Version)
+# Class: Version (Version) 
 
 
 _Numeric code assigned to identify a particular historical version of a work (e.g. software or technical standards)_
@@ -9,7 +9,7 @@ _Numeric code assigned to identify a particular historical version of a work (e.
 
 
 
-URI: [EVORAO:Version](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#Version)
+URI: [EVORAO:Version](https://w3id.org/evorao/Version)
 
 
 
@@ -80,7 +80,7 @@ URI: [EVORAO:Version](https://raw.githubusercontent.com/EVORA-project/evora-onto
 ### Schema Source
 
 
-* from schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+* from schema: https://w3id.org/evorao/
 
 
 
@@ -111,7 +111,7 @@ name: Version
 description: Numeric code assigned to identify a particular historical version of
   a work (e.g. software or technical standards)
 title: Version
-from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+from_schema: https://w3id.org/evorao/
 close_mappings:
 - wd:Q114469879
 - wd:Q114469879
@@ -153,7 +153,7 @@ name: Version
 description: Numeric code assigned to identify a particular historical version of
   a work (e.g. software or technical standards)
 title: Version
-from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+from_schema: https://w3id.org/evorao/
 close_mappings:
 - wd:Q114469879
 - wd:Q114469879
@@ -185,7 +185,7 @@ attributes:
     name: ID
     description: The version identifier
     title: ID
-    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+    from_schema: https://w3id.org/evorao/
     close_mappings:
     - wdp:P393
     - schema:version
@@ -201,7 +201,7 @@ attributes:
     name: versionOf
     description: Identifier of what the version qualifies
     title: version Of
-    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+    from_schema: https://w3id.org/evorao/
     rank: 1000
     alias: versionOf
     owner: Version

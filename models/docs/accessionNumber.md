@@ -1,6 +1,6 @@
 
 
-# Slot: accession number (accessionNumber)
+# Slot: accession number (accessionNumber) 
 
 
 _The sequence ID that permits to retrieve the sequence information from the sequence provider_
@@ -9,9 +9,8 @@ _The sequence ID that permits to retrieve the sequence information from the sequ
 
 
 
-URI: [EVORAO:accessionNumber](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#accessionNumber)
-
-
+URI: [EVORAO:accessionNumber](https://w3id.org/evorao/accessionNumber)
+Alias: accessionNumber
 
 <!-- no inheritance hierarchy -->
 
@@ -52,7 +51,7 @@ URI: [EVORAO:accessionNumber](https://raw.githubusercontent.com/EVORA-project/ev
 ### Schema Source
 
 
-* from schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+* from schema: https://w3id.org/evorao/
 
 
 
@@ -76,7 +75,7 @@ name: accessionNumber
 description: The sequence ID that permits to retrieve the sequence information from
   the sequence provider
 title: accession number
-from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+from_schema: https://w3id.org/evorao/
 close_mappings:
 - dct:identifier
 rank: 1000

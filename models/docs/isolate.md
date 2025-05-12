@@ -1,6 +1,6 @@
 
 
-# Slot: isolate (isolate)
+# Slot: isolate (isolate) 
 
 
 _Identifier given to a pathogen that has been isolated from an infected host and propagated in a laboratory culture. The isolate information may include an internal reference code from the laboratory that took the sample or performed the isolation, as well as details about the specific conditions of isolation, such as the name of the town, hospital, and type of host_
@@ -9,9 +9,8 @@ _Identifier given to a pathogen that has been isolated from an infected host and
 
 
 
-URI: [EVORAO:isolate](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#isolate)
-
-
+URI: [EVORAO:isolate](https://w3id.org/evorao/isolate)
+Alias: isolate
 
 <!-- no inheritance hierarchy -->
 
@@ -50,7 +49,7 @@ URI: [EVORAO:isolate](https://raw.githubusercontent.com/EVORA-project/evora-onto
 ### Schema Source
 
 
-* from schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+* from schema: https://w3id.org/evorao/
 
 
 
@@ -76,7 +75,7 @@ description: Identifier given to a pathogen that has been isolated from an infec
   the isolation, as well as details about the specific conditions of isolation, such
   as the name of the town, hospital, and type of host
 title: isolate
-from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+from_schema: https://w3id.org/evorao/
 rank: 1000
 alias: isolate
 domain_of:

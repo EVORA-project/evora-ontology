@@ -1,6 +1,6 @@
 
 
-# Slot: inclusion bodies type (inclusionBodiesType)
+# Slot: inclusion bodies type (inclusionBodiesType) 
 
 
 _Refers to the state of aggregated proteins within a cell. Possible values include 'Denatured' (proteins are in an unfolded, inactive state) and 'Refolded' (proteins have been processed to regain their functional, active conformation)._
@@ -9,9 +9,8 @@ _Refers to the state of aggregated proteins within a cell. Possible values inclu
 
 
 
-URI: [EVORAO:inclusionBodiesType](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#inclusionBodiesType)
-
-
+URI: [EVORAO:inclusionBodiesType](https://w3id.org/evorao/inclusionBodiesType)
+Alias: inclusionBodiesType
 
 <!-- no inheritance hierarchy -->
 
@@ -52,7 +51,7 @@ URI: [EVORAO:inclusionBodiesType](https://raw.githubusercontent.com/EVORA-projec
 ### Schema Source
 
 
-* from schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+* from schema: https://w3id.org/evorao/
 
 
 
@@ -76,7 +75,7 @@ description: Refers to the state of aggregated proteins within a cell. Possible 
   include 'Denatured' (proteins are in an unfolded, inactive state) and 'Refolded'
   (proteins have been processed to regain their functional, active conformation).
 title: inclusion bodies type
-from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+from_schema: https://w3id.org/evorao/
 rank: 1000
 alias: inclusionBodiesType
 domain_of:

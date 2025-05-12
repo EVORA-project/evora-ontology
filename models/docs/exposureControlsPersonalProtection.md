@@ -1,6 +1,6 @@
 
 
-# Slot: exposure controls/personal protection (exposureControlsPersonalProtection)
+# Slot: exposure controls/personal protection (exposureControlsPersonalProtection) 
 
 
 _Specifies measures to limit exposure to the product, including recommended engineering controls (e.g., ventilation) and personal protective equipment (PPE) such as gloves, masks, goggles, and clothing to ensure safe handling._
@@ -9,9 +9,8 @@ _Specifies measures to limit exposure to the product, including recommended engi
 
 
 
-URI: [EVORAO:exposureControlsPersonalProtection](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#exposureControlsPersonalProtection)
-
-
+URI: [EVORAO:exposureControlsPersonalProtection](https://w3id.org/evorao/exposureControlsPersonalProtection)
+Alias: exposureControlsPersonalProtection
 
 <!-- no inheritance hierarchy -->
 
@@ -52,7 +51,7 @@ URI: [EVORAO:exposureControlsPersonalProtection](https://raw.githubusercontent.c
 ### Schema Source
 
 
-* from schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+* from schema: https://w3id.org/evorao/
 
 
 
@@ -76,7 +75,7 @@ description: Specifies measures to limit exposure to the product, including reco
   engineering controls (e.g., ventilation) and personal protective equipment (PPE)
   such as gloves, masks, goggles, and clothing to ensure safe handling.
 title: exposure controls/personal protection
-from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+from_schema: https://w3id.org/evorao/
 rank: 1000
 alias: exposureControlsPersonalProtection
 domain_of:

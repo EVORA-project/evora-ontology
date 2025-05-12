@@ -1,6 +1,6 @@
 
 
-# Slot: license (license)
+# Slot: license (license) 
 
 
 _Information about terms and conditions under which the subject can be used, shared, or distributed, indicating any restrictions or permissions_
@@ -9,9 +9,8 @@ _Information about terms and conditions under which the subject can be used, sha
 
 
 
-URI: [EVORAO:license](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#license)
-
-
+URI: [EVORAO:license](https://w3id.org/evorao/license)
+Alias: license
 
 <!-- no inheritance hierarchy -->
 
@@ -23,13 +22,13 @@ URI: [EVORAO:license](https://raw.githubusercontent.com/EVORA-project/evora-onto
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [DataProvider](DataProvider.md) | An external API (Application Programming Interface) or Endpoint that permits ... |  yes  |
-| [Data](Data.md) | Subclass of File representing structured or unstructured datasets, often used... |  no  |
 | [File](File.md) | Digital document or record stored in a specific format that contains data or ... |  yes  |
-| [Video](Video.md) | Subclass of File representing moving visual media, such as recordings, presen... |  no  |
-| [Image](Image.md) | Subclass of File representing visual content such as pictures, diagrams, or i... |  no  |
+| [Data](Data.md) | Subclass of File representing structured or unstructured datasets, often used... |  no  |
+| [DataProvider](DataProvider.md) | An external API (Application Programming Interface) or Endpoint that permits ... |  yes  |
 | [Document](Document.md) | Subclass of File representing textual or written files such as reports, manua... |  no  |
+| [Video](Video.md) | Subclass of File representing moving visual media, such as recordings, presen... |  no  |
 | [Audio](Audio.md) | Subclass of File representing sound recordings or audio tracks |  no  |
+| [Image](Image.md) | Subclass of File representing visual content such as pictures, diagrams, or i... |  no  |
 
 
 
@@ -56,7 +55,7 @@ URI: [EVORAO:license](https://raw.githubusercontent.com/EVORA-project/evora-onto
 ### Schema Source
 
 
-* from schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+* from schema: https://w3id.org/evorao/
 
 
 
@@ -80,7 +79,7 @@ name: license
 description: Information about terms and conditions under which the subject can be
   used, shared, or distributed, indicating any restrictions or permissions
 title: license
-from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+from_schema: https://w3id.org/evorao/
 exact_mappings:
 - dct:license
 rank: 1000

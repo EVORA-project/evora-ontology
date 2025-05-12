@@ -1,6 +1,6 @@
 
 
-# Class: Originator (Originator)
+# Class: Originator (Originator) 
 
 
 _The individual or organization responsible for the original discovery, isolation, or creation of an item, providing information about the source or origin of the sample_
@@ -9,7 +9,7 @@ _The individual or organization responsible for the original discovery, isolatio
 
 
 
-URI: [EVORAO:Originator](https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#Originator)
+URI: [EVORAO:Originator](https://w3id.org/evorao/Originator)
 
 
 
@@ -110,7 +110,7 @@ URI: [EVORAO:Originator](https://raw.githubusercontent.com/EVORA-project/evora-o
 ### Schema Source
 
 
-* from schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+* from schema: https://w3id.org/evorao/
 
 
 
@@ -142,7 +142,7 @@ description: The individual or organization responsible for the original discove
   isolation, or creation of an item, providing information about the source or origin
   of the sample
 title: Originator
-from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+from_schema: https://w3id.org/evorao/
 close_mappings:
 - dct:ProvenanceStatement
 - dct:ProvenanceStatement
@@ -160,7 +160,7 @@ description: The individual or organization responsible for the original discove
   isolation, or creation of an item, providing information about the source or origin
   of the sample
 title: Originator
-from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+from_schema: https://w3id.org/evorao/
 close_mappings:
 - dct:ProvenanceStatement
 - dct:ProvenanceStatement
@@ -170,7 +170,7 @@ attributes:
     name: name
     description: A word or set of words used to identify and refer to an entity
     title: name
-    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+    from_schema: https://w3id.org/evorao/
     exact_mappings:
     - schema:name
     close_mappings:
@@ -196,7 +196,7 @@ attributes:
       present the resource.
 
       '
-    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+    from_schema: https://w3id.org/evorao/
     rank: 1000
     slot_uri: dct:description
     alias: description
@@ -218,7 +218,7 @@ attributes:
     name: homePage
     description: A web page that serves as the main or introductory page
     title: home page
-    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+    from_schema: https://w3id.org/evorao/
     rank: 1000
     alias: homePage
     owner: Originator
@@ -231,7 +231,7 @@ attributes:
     name: contactPoint
     description: An information that allows someone to establish communication
     title: contact point
-    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+    from_schema: https://w3id.org/evorao/
     exact_mappings:
     - dcat:contactPoint
     rank: 1000
@@ -248,7 +248,7 @@ attributes:
     name: logo
     description: A path or URL to the related logo
     title: logo
-    from_schema: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+    from_schema: https://w3id.org/evorao/
     rank: 1000
     alias: logo
     owner: Originator
