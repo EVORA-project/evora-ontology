@@ -22,18 +22,18 @@ Alias: name
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [Data](Data.md) | Subclass of File representing structured or unstructured datasets, often used... |  no  |
-| [Originator](Originator.md) | The individual or organization responsible for the original discovery, isolat... |  no  |
-| [Video](Video.md) | Subclass of File representing moving visual media, such as recordings, presen... |  no  |
-| [Document](Document.md) | Subclass of File representing textual or written files such as reports, manua... |  no  |
-| [PersonOrOrganization](PersonOrOrganization.md) | A person or an organization |  yes  |
-| [Organization](Organization.md) | A social entity established to meet needs or pursue specific goals |  no  |
-| [Provider](Provider.md) | A provider of products or services, as a specific organization |  no  |
-| [Image](Image.md) | Subclass of File representing visual content such as pictures, diagrams, or i... |  no  |
-| [Audio](Audio.md) | Subclass of File representing sound recordings or audio tracks |  no  |
 | [ContactPoint](ContactPoint.md) | Entity serving as focal point of information |  yes  |
-| [Person](Person.md) | An individual |  no  |
+| [PersonOrOrganization](PersonOrOrganization.md) | A person or an organization |  yes  |
 | [File](File.md) | Digital document or record stored in a specific format that contains data or ... |  yes  |
+| [Video](Video.md) | Subclass of File representing moving visual media, such as recordings, presen... |  no  |
+| [Originator](Originator.md) | The individual or organization responsible for the original discovery, isolat... |  no  |
+| [Data](Data.md) | Subclass of File representing structured or unstructured datasets, often used... |  no  |
+| [Audio](Audio.md) | Subclass of File representing sound recordings or audio tracks |  no  |
+| [Person](Person.md) | An individual |  no  |
+| [Provider](Provider.md) | A provider of products or services, as a specific organization |  no  |
+| [Document](Document.md) | Subclass of File representing textual or written files such as reports, manua... |  no  |
+| [Image](Image.md) | Subclass of File representing visual content such as pictures, diagrams, or i... |  no  |
+| [Organization](Organization.md) | A social entity established to meet needs or pursue specific goals |  no  |
 | [RI](RI.md) | A research infrastructure |  no  |
 
 

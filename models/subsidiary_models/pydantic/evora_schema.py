@@ -27,7 +27,7 @@ from pydantic import (
 
 
 metamodel_version = "None"
-version = "1.0.8687"
+version = "1.0.8691"
 
 
 class ConfiguredBaseModel(BaseModel):
@@ -65,7 +65,9 @@ linkml_meta = LinkMLMeta({'comments': ['EVORAO is an ontology for standardized m
                   'sharing of pathogens as biological materials, their derived '
                   'products, and associated services, organized into collections. '
                   'While initially focused on virology, it is designed for '
-                  'interoperability and is extensible to other pathogens.'],
+                  'interoperability and is extensible to other pathogens. EVORAO '
+                  'is compatible with DCAT, making it well-suited for efficiently '
+                  'cataloguing pathogen collections and related resources.'],
      'contributors': ['https://github.com/Angatar',
                       'https://orcid.org/0000-0002-5080-3456',
                       'https://github.com/jamesamcl',
@@ -93,8 +95,10 @@ linkml_meta = LinkMLMeta({'comments': ['EVORAO is an ontology for standardized m
                     'to enhance pandemic preparedness and response. While '
                     'initially focused on virology, EVORAO is designed to be '
                     'extensible and also supports metadata harmonization for other '
-                    'pathogens.',
-     'generation_date': '2025-05-13T13:29:46',
+                    'pathogens. EVORAO is compatible with DCAT, making it '
+                    'well-suited for efficiently cataloguing pathogen collections '
+                    'and related resources.',
+     'generation_date': '2025-05-13T16:28:29',
      'id': 'https://w3id.org/evorao/',
      'imports': ['linkml:types'],
      'in_language': 'en',
