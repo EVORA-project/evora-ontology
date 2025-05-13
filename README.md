@@ -8,7 +8,7 @@
 
 The **EVORAO** Ontology provides a structured and harmonized vocabulary for describing shareable pathogens as characterized biological materials, along with their derived products and associated services, organized into collections. Developed within the EVORA project, it supports consistent metadata annotation across research infrastructures, promoting findability, accessibility, interoperability, and reusability (FAIR). By aligning with relevant standards and ontologies, EVORAO facilitates cross-domain collaboration, integration, and sharing of pathogenic resources and services to enhance pandemic preparedness and response. While initially focused on virology, EVORAO is designed to be extensible and also supports metadata harmonization for other pathogens.
 
-**EVORAO** is compatible with [DCAT](https://www.w3.org/TR/vocab-dcat-3/) and can be used for cataloguing purposes of pathogen collections and related resources.
+**EVORAO** is compatible with [DCAT](https://www.w3.org/TR/vocab-dcat-3/), making it well-suited for efficiently cataloguing pathogen collections and related resources.
 
 **EVORAO** results from a collaborative effort within the [EVORA project](https://evora-project.eu/), comprising three research infrastructures:  [EVA](https://www.european-virus-archive.com/), [ERINHA ](https://erinha.eu/) and [ELIXIR](https://elixir-europe.org/)
 
