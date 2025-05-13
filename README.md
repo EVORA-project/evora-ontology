@@ -15,11 +15,11 @@ EVORAO results from a collaborative effort within the [EVORA project](https://ev
 ## EVORAO Ontology File
 
 The EVORAO ontology is available in **OWL Turtle** format in the [/models/owl](https://github.com/EVORA-project/evora-ontology/tree/main/models/owl) directory. The latest stable version can be accessed directly via the main branch of this rep, while other branches are used for development and staging purposes.
-The URL address of this main branch source OWL file is also the current IRI of EVORAO, its namespace IRI ends with a #
 
-**EVORAO IRI (Namespace)**: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+**EVORAO IRI**: https://w3id.org/evorao.owl.ttl
+**EVORAO Entities IRI (Namespace)**: https://w3id.org/evorao/
 
-The ontology can also be browsed using the [OLS (Ontology Lookup Service)](https://www.ebi.ac.uk/ols4)
+The ontology can also be browsed using the [OLS (Ontology Lookup Service)](https://www.ebi.ac.uk/ols4/evorao)
 
 
 ## Documentation
@@ -67,7 +67,7 @@ EVORAO is designed to be reused, extensible and adaptable to evolving research n
 Therefore building uppon EVORAO by importing or mapping will makes you declare the EVORAO among your prefixes:
 ```YAML
 prefixes:
-      EVORAO: https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl#
+      EVORAO: https://w3id.org/evorao/
 ```
 
 For guidance on extending EVORAO by contribution, please refer to the [contribution guidelines](https://github.com/EVORA-project/evora-ontology/blob/main/CONTRIBUTING.md).
