@@ -29,51 +29,66 @@
     dcterms:license "https://creativecommons.org/publicdomain/zero/1.0/" ;
     dcterms:title "European Viral Outbreak Response Alliance Ontology" ;
     pav:createdBy <https://github.com/Angatar> ;
-    pav:version "1.0.8651" ;
+    pav:version "1.0.8687" ;
     schema1:inLanguage "en" ;
-    skos:definition "The EVORA Ontology harmonizes metadata in virology to describe viral resources, their derived products, and services. It aligns with FAIR principles to ensure interoperability, accessibility, and reusability across various projects. The EVORA Ontology aims to support preparedness and response to pandemics." ;
-    sh:declare [ sh:namespace linkml: ;
-            sh:prefix "linkml" ],
-        [ sh:namespace <http://www.w3.org/ns/adms#> ;
-            sh:prefix "adms" ],
-        [ sh:namespace pav: ;
-            sh:prefix "pav" ],
-        [ sh:namespace <https://w3id.org/evorao/> ;
+    schema1:keywords "biobank",
+        "biological collections",
+        "biological materials",
+        "biosample",
+        "diagnostic material",
+        "infectious diseases",
+        "interoperability",
+        "pandemic preparedness",
+        "pathogen",
+        "pathogen collections",
+        "reference material",
+        "viral resources",
+        "virology",
+        "virus" ;
+    skos:definition "The EVORAO Ontology provides a structured and harmonized vocabulary for describing shareable pathogens as characterized biological materials, along with their derived products and associated services, organized into collections. Developed within the EVORA project, it supports consistent metadata annotation across research infrastructures, promoting findability, accessibility, interoperability, and reusability (FAIR). By aligning with relevant standards and ontologies, EVORAO facilitates cross-domain collaboration, integration, and sharing of pathogenic resources and services to enhance pandemic preparedness and response. While initially focused on virology, EVORAO is designed to be extensible and also supports metadata harmonization for other pathogens." ;
+    skos:note "EVORAO is an ontology for standardized metadata supporting the sharing of pathogens as biological materials, their derived products, and associated services, organized into collections. While initially focused on virology, it is designed for interoperability and is extensible to other pathogens." ;
+    sh:declare [ sh:namespace <https://w3id.org/evorao/> ;
             sh:prefix "EVORAO" ],
-        [ sh:namespace <http://www.w3.org/ns/regorg#> ;
-            sh:prefix "rov" ],
-        [ sh:namespace <http://www.wikidata.org/prop/> ;
-            sh:prefix "wdp" ],
+        [ sh:namespace owl: ;
+            sh:prefix "owl" ],
+        [ sh:namespace schema1: ;
+            sh:prefix "schema" ],
         [ sh:namespace dcterms: ;
             sh:prefix "dct" ],
         [ sh:namespace <http://rs.tdwg.org/dwc/terms/> ;
             sh:prefix "dwc" ],
-        [ sh:namespace rdfs: ;
-            sh:prefix "rdfs" ],
-        [ sh:namespace owl: ;
-            sh:prefix "owl" ],
-        [ sh:namespace dcat: ;
-            sh:prefix "dcat" ],
-        [ sh:namespace foaf: ;
-            sh:prefix "foaf" ],
-        [ sh:namespace skos: ;
-            sh:prefix "skos" ],
         [ sh:namespace <http://www.wikidata.org/entity/> ;
             sh:prefix "wd" ],
-        [ sh:namespace prov: ;
-            sh:prefix "prov" ],
-        [ sh:namespace rdf: ;
-            sh:prefix "rdf" ],
-        [ sh:namespace schema1: ;
-            sh:prefix "schema" ],
-        [ sh:namespace dcmitype: ;
-            sh:prefix "dcmi" ],
-        [ sh:namespace xsd: ;
-            sh:prefix "xsd" ],
+        [ sh:namespace skos: ;
+            sh:prefix "skos" ],
+        [ sh:namespace <http://www.w3.org/2006/vcard/ns#> ;
+            sh:prefix "vcard" ],
+        [ sh:namespace rdfs: ;
+            sh:prefix "rdfs" ],
+        [ sh:namespace pav: ;
+            sh:prefix "pav" ],
         [ sh:namespace <http://purl.obolibrary.org/obo/IAO_> ;
             sh:prefix "IAO" ],
-        [ sh:namespace <http://www.w3.org/2006/vcard/ns#> ;
-            sh:prefix "vcard" ] ;
+        [ sh:namespace <http://www.w3.org/ns/regorg#> ;
+            sh:prefix "rov" ],
+        [ sh:namespace rdf: ;
+            sh:prefix "rdf" ],
+        [ sh:namespace prov: ;
+            sh:prefix "prov" ],
+        [ sh:namespace dcmitype: ;
+            sh:prefix "dcmi" ],
+        [ sh:namespace <http://www.w3.org/ns/adms#> ;
+            sh:prefix "adms" ],
+        [ sh:namespace xsd: ;
+            sh:prefix "xsd" ],
+        [ sh:namespace dcat: ;
+            sh:prefix "dcat" ],
+        [ sh:namespace <http://www.wikidata.org/prop/> ;
+            sh:prefix "wdp" ],
+        [ sh:namespace foaf: ;
+            sh:prefix "foaf" ],
+        [ sh:namespace linkml: ;
+            sh:prefix "linkml" ] ;
     linkml:classes <https://w3id.org/evorao/AlternateName>,
         <https://w3id.org/evorao/Antibody>,
         <https://w3id.org/evorao/Audio>,
@@ -152,7 +167,7 @@
         <https://w3id.org/evorao/Vocabulary> ;
     linkml:default_prefix "EVORAO" ;
     linkml:default_range <https://w3id.org/evorao/string> ;
-    linkml:generation_date "2025-05-12T15:16:22"^^xsd:dateTime ;
+    linkml:generation_date "2025-05-13T11:31:34"^^xsd:dateTime ;
     linkml:id <https://w3id.org/evorao/> ;
     linkml:imports linkml:types ;
     linkml:metamodel_version "1.7.0" ;
@@ -568,8 +583,8 @@
         <https://w3id.org/evorao/versionOf>,
         <https://w3id.org/evorao/weight> ;
     linkml:source_file "evora_schema.yaml" ;
-    linkml:source_file_date "2025-05-12T15:14:50"^^xsd:dateTime ;
-    linkml:source_file_size 184212 ;
+    linkml:source_file_date "2025-05-13T11:30:08"^^xsd:dateTime ;
+    linkml:source_file_size 185254 ;
     linkml:types <https://w3id.org/evorao/boolean>,
         <https://w3id.org/evorao/curie>,
         <https://w3id.org/evorao/date>,

@@ -1,7 +1,10 @@
 {
   "name": "EVORAO",
-  "description": "The EVORA Ontology harmonizes metadata in virology to describe viral resources, their derived products, and services. It aligns with FAIR principles to ensure interoperability, accessibility, and reusability across various projects. The EVORA Ontology aims to support preparedness and response to pandemics.",
+  "description": "The EVORAO Ontology provides a structured and harmonized vocabulary for describing shareable pathogens as characterized biological materials, along with their derived products and associated services, organized into collections. Developed within the EVORA project, it supports consistent metadata annotation across research infrastructures, promoting findability, accessibility, interoperability, and reusability (FAIR). By aligning with relevant standards and ontologies, EVORAO facilitates cross-domain collaboration, integration, and sharing of pathogenic resources and services to enhance pandemic preparedness and response. While initially focused on virology, EVORAO is designed to be extensible and also supports metadata harmonization for other pathogens.",
   "title": "European Viral Outbreak Response Alliance Ontology",
+  "comments": [
+    "EVORAO is an ontology for standardized metadata supporting the sharing of pathogens as biological materials, their derived products, and associated services, organized into collections. While initially focused on virology, it is designed for interoperability and is extensible to other pathogens."
+  ],
   "in_language": "en",
   "created_by": "https://github.com/Angatar",
   "contributors": [
@@ -17,8 +20,24 @@
     "https://orcid.org/0000-0002-1257-6862",
     "https://orcid.org/0000-0002-2042-2839"
   ],
+  "keywords": [
+    "virus",
+    "pathogen",
+    "viral resources",
+    "pandemic preparedness",
+    "virology",
+    "biological materials",
+    "biological collections",
+    "infectious diseases",
+    "biosample",
+    "diagnostic material",
+    "reference material",
+    "biobank",
+    "pathogen collections",
+    "interoperability"
+  ],
   "id": "https://w3id.org/evorao/",
-  "version": "1.0.8651",
+  "version": "1.0.8687",
   "imports": [
     "linkml:types"
   ],
@@ -10999,9 +11018,9 @@
   ],
   "metamodel_version": "1.7.0",
   "source_file": "evora_schema.yaml",
-  "source_file_date": "2025-05-12T15:14:50",
-  "source_file_size": 184212,
-  "generation_date": "2025-05-12T15:15:05",
+  "source_file_date": "2025-05-13T11:30:08",
+  "source_file_size": 185254,
+  "generation_date": "2025-05-13T11:30:21",
   "@type": "SchemaDefinition",
   "@context": [
     "https://w3id.org/linkml/types.context.jsonld",

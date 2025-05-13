@@ -27,7 +27,7 @@ from pydantic import (
 
 
 metamodel_version = "None"
-version = "1.0.8651"
+version = "1.0.8687"
 
 
 class ConfiguredBaseModel(BaseModel):
@@ -61,7 +61,12 @@ class LinkMLMeta(RootModel):
         return key in self.root
 
 
-linkml_meta = LinkMLMeta({'contributors': ['https://github.com/Angatar',
+linkml_meta = LinkMLMeta({'comments': ['EVORAO is an ontology for standardized metadata supporting the '
+                  'sharing of pathogens as biological materials, their derived '
+                  'products, and associated services, organized into collections. '
+                  'While initially focused on virology, it is designed for '
+                  'interoperability and is extensible to other pathogens.'],
+     'contributors': ['https://github.com/Angatar',
                       'https://orcid.org/0000-0002-5080-3456',
                       'https://github.com/jamesamcl',
                       'https://orcid.org/0000-0002-8361-2795',
@@ -75,16 +80,38 @@ linkml_meta = LinkMLMeta({'contributors': ['https://github.com/Angatar',
      'created_by': 'https://github.com/Angatar',
      'default_prefix': 'EVORAO',
      'default_range': 'string',
-     'description': 'The EVORA Ontology harmonizes metadata in virology to '
-                    'describe viral resources, their derived products, and '
-                    'services. It aligns with FAIR principles to ensure '
-                    'interoperability, accessibility, and reusability across '
-                    'various projects. The EVORA Ontology aims to support '
-                    'preparedness and response to pandemics.',
-     'generation_date': '2025-05-12T16:32:44',
+     'description': 'The EVORAO Ontology provides a structured and harmonized '
+                    'vocabulary for describing shareable pathogens as '
+                    'characterized biological materials, along with their derived '
+                    'products and associated services, organized into collections. '
+                    'Developed within the EVORA project, it supports consistent '
+                    'metadata annotation across research infrastructures, '
+                    'promoting findability, accessibility, interoperability, and '
+                    'reusability (FAIR). By aligning with relevant standards and '
+                    'ontologies, EVORAO facilitates cross-domain collaboration, '
+                    'integration, and sharing of pathogenic resources and services '
+                    'to enhance pandemic preparedness and response. While '
+                    'initially focused on virology, EVORAO is designed to be '
+                    'extensible and also supports metadata harmonization for other '
+                    'pathogens.',
+     'generation_date': '2025-05-13T13:29:46',
      'id': 'https://w3id.org/evorao/',
      'imports': ['linkml:types'],
      'in_language': 'en',
+     'keywords': ['virus',
+                  'pathogen',
+                  'viral resources',
+                  'pandemic preparedness',
+                  'virology',
+                  'biological materials',
+                  'biological collections',
+                  'infectious diseases',
+                  'biosample',
+                  'diagnostic material',
+                  'reference material',
+                  'biobank',
+                  'pathogen collections',
+                  'interoperability'],
      'license': 'https://creativecommons.org/publicdomain/zero/1.0/',
      'name': 'EVORAO',
      'prefixes': {'EVORAO': {'prefix_prefix': 'EVORAO',
