@@ -24,7 +24,7 @@ The EVORAO ontology is available in **OWL Turtle** format in the [/models/owl](h
 
 **Main Turtle file (source):** https://w3id.org/evorao/owl.ttl
 
-The ontology can also be browsed using the [OLS (Ontology Lookup Service)](https://www.ebi.ac.uk/ols4/evorao)
+The ontology can also be browsed using the [OLS (Ontology Lookup Service)](https://www.ebi.ac.uk/ols4/ontologies/evorao)
 
 
 ## Documentation
