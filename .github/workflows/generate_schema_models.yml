@@ -109,7 +109,7 @@ jobs:
           docker run --rm -v $(pwd):/workdir -u $(id -u):$(id -g) $DOCKER_IMAGE \
           linkml generate java --output-directory models/subsidiary_models/java/  models/evora_schema.yaml
           docker run --rm -v $(pwd):/workdir -u $(id -u):$(id -g) $DOCKER_IMAGE \
-          linkml generate rdf models/evora_schema.yaml > models/subsidiary_models/rdf/evora_schema.rdf
+          linkml generate rdf -f xml --metadata --useuris models/evora_schema.yaml > models/subsidiary_models/rdf/evora_schema.rdf
           rm -f models/subsidiary_models/sparql/*
           docker run --rm -v $(pwd):/workdir -u $(id -u):$(id -g) $DOCKER_IMAGE \
           linkml generate sparql -d models/subsidiary_models/sparql/ models/evora_schema.yaml
