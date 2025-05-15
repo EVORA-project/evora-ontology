@@ -22,8 +22,8 @@ Alias: oRCIDiD
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [Person](Person.md) | An individual |  yes  |
 | [ContactPoint](ContactPoint.md) | Entity serving as focal point of information |  yes  |
+| [Person](Person.md) | An individual |  yes  |
 
 
 

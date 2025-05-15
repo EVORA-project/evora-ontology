@@ -22,28 +22,28 @@ Alias: contactPoint
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [ProductOrService](ProductOrService.md) | A product or a service |  yes  |
-| [Protein](Protein.md) | A protein as a derived product from a pathogen |  no  |
-| [PersonOrOrganization](PersonOrOrganization.md) | A person or an organization |  yes  |
-| [Organization](Organization.md) | A social entity established to meet needs or pursue specific goals |  no  |
-| [Fungus](Fungus.md) | The fungus as a biological material |  no  |
-| [Viroid](Viroid.md) | The viroid as a biological material |  no  |
-| [Product](Product.md) | A product |  no  |
-| [Pathogen](Pathogen.md) | Biological entity that causes disease in its host, which is typically an infe... |  no  |
-| [Virus](Virus.md) | The virus as a biological material |  no  |
-| [Prion](Prion.md) | The prion as a biological material |  no  |
-| [Originator](Originator.md) | The individual or organization responsible for the original discovery, isolat... |  no  |
-| [Bacterium](Bacterium.md) | The bacterium as a biological material |  no  |
 | [Provider](Provider.md) | A provider of products or services, as a specific organization |  no  |
-| [Bundle](Bundle.md) | A group of products |  no  |
-| [Antibody](Antibody.md) | Protein that can bind to certain types of foreign bodies, such as pathogens |  no  |
-| [Person](Person.md) | An individual |  no  |
-| [NucleicAcid](NucleicAcid.md) | Nucleic acid related to a pathogen |  no  |
 | [Hybridoma](Hybridoma.md) | An hybridoma that provides antibodies that can be related to a pathogen |  no  |
-| [Protozoan](Protozoan.md) | The protozoan as a biological material |  no  |
+| [Organization](Organization.md) | A social entity established to meet needs or pursue specific goals |  no  |
+| [Virus](Virus.md) | The virus as a biological material |  no  |
+| [Bundle](Bundle.md) | A group of products |  no  |
 | [DetectionKit](DetectionKit.md) | A detection kit for specific pathogens |  no  |
+| [Originator](Originator.md) | The individual or organization responsible for the original discovery, isolat... |  no  |
 | [Service](Service.md) | A service |  no  |
+| [Antibody](Antibody.md) | Protein that can bind to certain types of foreign bodies, such as pathogens |  no  |
+| [NucleicAcid](NucleicAcid.md) | Nucleic acid related to a pathogen |  no  |
 | [RI](RI.md) | A research infrastructure |  no  |
+| [Product](Product.md) | A product |  no  |
+| [Fungus](Fungus.md) | The fungus as a biological material |  no  |
+| [PersonOrOrganization](PersonOrOrganization.md) | A person or an organization |  yes  |
+| [Bacterium](Bacterium.md) | The bacterium as a biological material |  no  |
+| [Viroid](Viroid.md) | The viroid as a biological material |  no  |
+| [Protozoan](Protozoan.md) | The protozoan as a biological material |  no  |
+| [Prion](Prion.md) | The prion as a biological material |  no  |
+| [ProductOrService](ProductOrService.md) | A product or a service |  yes  |
+| [Pathogen](Pathogen.md) | Biological entity that causes disease in its host, which is typically an infe... |  no  |
+| [Protein](Protein.md) | A protein as a derived product from a pathogen |  no  |
+| [Person](Person.md) | An individual |  no  |
 
 
 
