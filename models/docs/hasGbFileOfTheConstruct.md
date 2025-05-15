@@ -78,7 +78,7 @@ from_schema: https://w3id.org/evorao/
 rank: 1000
 alias: hasGbFileOfTheConstruct
 domain_of:
-- Nucleic Acid
+- NucleicAcid
 range: Data
 required: false
 multivalued: true

@@ -27,7 +27,7 @@ from pydantic import (
 
 
 metamodel_version = "None"
-version = "1.0.8693"
+version = "1.0.8702"
 
 
 class ConfiguredBaseModel(BaseModel):
@@ -98,7 +98,7 @@ linkml_meta = LinkMLMeta({'comments': ['EVORAO is an ontology for standardized m
                     'pathogens. EVORAO is compatible with DCAT, making it '
                     'well-suited for efficiently cataloguing pathogen collections '
                     'and related resources.',
-     'generation_date': '2025-05-14T11:59:22',
+     'generation_date': '2025-05-15T11:13:18',
      'id': 'https://w3id.org/evorao/',
      'imports': ['linkml:types'],
      'in_language': 'en',
@@ -3379,7 +3379,7 @@ class RecombinantPartIdentification(Resource):
                                                     'fasta format',
                                      'domain_of': ['RecombinantPartIdentification',
                                                    'Protein',
-                                                   'Nucleic Acid',
+                                                   'NucleicAcid',
                                                    'Pathogen'],
                                      'multivalued': True,
                                      'name': 'sequence',
@@ -3393,7 +3393,7 @@ class RecombinantPartIdentification(Resource):
     sequence: list[Sequence] = Field(default=..., title="sequence", description="""The related sequence information from a sequence provider or in fasta format""", json_schema_extra = { "linkml_meta": {'alias': 'sequence',
          'domain_of': ['RecombinantPartIdentification',
                        'Protein',
-                       'Nucleic Acid',
+                       'NucleicAcid',
                        'Pathogen'],
          'recommended': True} })
 
@@ -4313,7 +4313,7 @@ class Antibody(Product):
                                                                  'the product has been '
                                                                  'formally documented',
                                                   'domain_of': ['Antibody',
-                                                                'Detection Kit'],
+                                                                'DetectionKit'],
                                                   'multivalued': False,
                                                   'name': 'specificityDocumented',
                                                   'range': 'boolean',
@@ -4333,7 +4333,7 @@ class Antibody(Product):
 
     productionSystem: Optional[str] = Field(default=None, title="production system", description="""The biological and technological methods and processes used to produce the antibody""", json_schema_extra = { "linkml_meta": {'alias': 'productionSystem', 'domain_of': ['Antibody'], 'recommended': True} })
     antibodyPurifiedByAffinity: bool = Field(default=..., title="antibody purified by affinity", description="""Indicates whether or not if the antibody was purified by affinity""", json_schema_extra = { "linkml_meta": {'alias': 'antibodyPurifiedByAffinity', 'domain_of': ['Antibody']} })
-    specificityDocumented: bool = Field(default=..., title="specificity documented", description="""Boolean value indicating whether the specificity of the product has been formally documented""", json_schema_extra = { "linkml_meta": {'alias': 'specificityDocumented', 'domain_of': ['Antibody', 'Detection Kit']} })
+    specificityDocumented: bool = Field(default=..., title="specificity documented", description="""Boolean value indicating whether the specificity of the product has been formally documented""", json_schema_extra = { "linkml_meta": {'alias': 'specificityDocumented', 'domain_of': ['Antibody', 'DetectionKit']} })
     targetedAntigen: str = Field(default=..., title="targeted antigen", description="""Specific molecular structure or epitope recognized and bound by an antibody""", json_schema_extra = { "linkml_meta": {'alias': 'targetedAntigen', 'domain_of': ['Antibody']} })
     sequenceReference: Optional[list[SequenceReference]] = Field(default=None, title="sequence reference", description="""A reference that permits to retrieve the sequence information from a sequence provider""", json_schema_extra = { "linkml_meta": {'alias': 'sequenceReference',
          'domain_of': ['Antibody', 'Sequence'],
@@ -4473,7 +4473,7 @@ class Hybridoma(Antibody):
     hybridomaDescription: str = Field(default=..., title="hybridoma description", description="""The description of the hybridoma""", json_schema_extra = { "linkml_meta": {'alias': 'hybridomaDescription', 'domain_of': ['Hybridoma']} })
     productionSystem: Optional[str] = Field(default=None, title="production system", description="""The biological and technological methods and processes used to produce the antibody""", json_schema_extra = { "linkml_meta": {'alias': 'productionSystem', 'domain_of': ['Antibody'], 'recommended': True} })
     antibodyPurifiedByAffinity: bool = Field(default=..., title="antibody purified by affinity", description="""Indicates whether or not if the antibody was purified by affinity""", json_schema_extra = { "linkml_meta": {'alias': 'antibodyPurifiedByAffinity', 'domain_of': ['Antibody']} })
-    specificityDocumented: bool = Field(default=..., title="specificity documented", description="""Boolean value indicating whether the specificity of the product has been formally documented""", json_schema_extra = { "linkml_meta": {'alias': 'specificityDocumented', 'domain_of': ['Antibody', 'Detection Kit']} })
+    specificityDocumented: bool = Field(default=..., title="specificity documented", description="""Boolean value indicating whether the specificity of the product has been formally documented""", json_schema_extra = { "linkml_meta": {'alias': 'specificityDocumented', 'domain_of': ['Antibody', 'DetectionKit']} })
     targetedAntigen: str = Field(default=..., title="targeted antigen", description="""Specific molecular structure or epitope recognized and bound by an antibody""", json_schema_extra = { "linkml_meta": {'alias': 'targetedAntigen', 'domain_of': ['Antibody']} })
     sequenceReference: Optional[list[SequenceReference]] = Field(default=None, title="sequence reference", description="""A reference that permits to retrieve the sequence information from a sequence provider""", json_schema_extra = { "linkml_meta": {'alias': 'sequenceReference',
          'domain_of': ['Antibody', 'Sequence'],
@@ -4614,7 +4614,7 @@ class Protein(Product):
                                                                     'the Nagoya '
                                                                     'Protocol',
                                                      'domain_of': ['Protein',
-                                                                   'Nucleic Acid',
+                                                                   'NucleicAcid',
                                                                    'Pathogen'],
                                                      'multivalued': False,
                                                      'name': 'biologicalMaterialOrigin',
@@ -4804,7 +4804,7 @@ class Protein(Product):
                                                     'fasta format',
                                      'domain_of': ['Protein',
                                                    'RecombinantPartIdentification',
-                                                   'Nucleic Acid',
+                                                   'NucleicAcid',
                                                    'Pathogen'],
                                      'multivalued': True,
                                      'name': 'sequence',
@@ -4925,11 +4925,11 @@ class Protein(Product):
          'title': 'Protein'})
 
     biologicalMaterialOrigin: BiologicalMaterialOrigin = Field(default=..., title="Biological Material origin", description="""Information about the origin of the biological material, essential for access, utilization, and benefit-sharing of genetic resources in compliance with the Nagoya Protocol""", json_schema_extra = { "linkml_meta": {'alias': 'biologicalMaterialOrigin',
-         'domain_of': ['Protein', 'Nucleic Acid', 'Pathogen']} })
+         'domain_of': ['Protein', 'NucleicAcid', 'Pathogen']} })
     sequence: list[Sequence] = Field(default=..., title="sequence", description="""The related sequence information from a sequence provider or in fasta format""", json_schema_extra = { "linkml_meta": {'alias': 'sequence',
          'domain_of': ['Protein',
                        'RecombinantPartIdentification',
-                       'Nucleic Acid',
+                       'NucleicAcid',
                        'Pathogen'],
          'recommended': True} })
     relatedPDB: Optional[list[PDBReference]] = Field(default=None, title="related PDB", description="""Identifier for 3D structural data as per the PDB (Protein Data Bank) database""", json_schema_extra = { "linkml_meta": {'alias': 'relatedPDB',
@@ -5096,7 +5096,7 @@ class NucleicAcid(Product):
                                                                     'compliance with '
                                                                     'the Nagoya '
                                                                     'Protocol',
-                                                     'domain_of': ['Nucleic Acid',
+                                                     'domain_of': ['NucleicAcid',
                                                                    'Protein',
                                                                    'Pathogen'],
                                                      'multivalued': False,
@@ -5108,7 +5108,7 @@ class NucleicAcid(Product):
                         'clonedIntoPlasmid': {'description': 'The plasmid into which '
                                                              'the nucleic acid has '
                                                              'been cloned',
-                                              'domain_of': ['Nucleic Acid'],
+                                              'domain_of': ['NucleicAcid'],
                                               'multivalued': False,
                                               'name': 'clonedIntoPlasmid',
                                               'range': 'ExpressionVector',
@@ -5123,7 +5123,7 @@ class NucleicAcid(Product):
                                                                    'information of a '
                                                                    'nucleic acid '
                                                                    'construct',
-                                                    'domain_of': ['Nucleic Acid'],
+                                                    'domain_of': ['NucleicAcid'],
                                                     'multivalued': True,
                                                     'name': 'hasGbFileOfTheConstruct',
                                                     'range': 'Data',
@@ -5133,7 +5133,7 @@ class NucleicAcid(Product):
                         'hasTAG': {'description': 'TAG sequence used for purposes such '
                                                   'as purification, detection, or '
                                                   'localization',
-                                   'domain_of': ['Nucleic Acid'],
+                                   'domain_of': ['NucleicAcid'],
                                    'multivalued': False,
                                    'name': 'hasTAG',
                                    'range': 'ProteinTag',
@@ -5160,7 +5160,7 @@ class NucleicAcid(Product):
                                                                    'procedures for '
                                                                    'accurate detection '
                                                                    'and analysis',
-                                                    'domain_of': ['Nucleic Acid',
+                                                    'domain_of': ['NucleicAcid',
                                                                   'Pathogen'],
                                                     'multivalued': False,
                                                     'name': 'identificationTechnique',
@@ -5176,7 +5176,7 @@ class NucleicAcid(Product):
                                                                   'propagation or '
                                                                   'expression in a '
                                                                   'host organism',
-                                                   'domain_of': ['Nucleic Acid'],
+                                                   'domain_of': ['NucleicAcid'],
                                                    'multivalued': False,
                                                    'name': 'isItAClonedNucleicAcid',
                                                    'range': 'boolean',
@@ -5193,7 +5193,7 @@ class NucleicAcid(Product):
                                                             'frameshift, no unexpected '
                                                             'STOP codon) if set to '
                                                             'true',
-                                             'domain_of': ['Nucleic Acid'],
+                                             'domain_of': ['NucleicAcid'],
                                              'multivalued': False,
                                              'name': 'mutationObserved',
                                              'range': 'boolean',
@@ -5204,7 +5204,7 @@ class NucleicAcid(Product):
                                                              'identified and '
                                                              'documented in the '
                                                              'nucleic acid sequence',
-                                              'domain_of': ['Nucleic Acid'],
+                                              'domain_of': ['NucleicAcid'],
                                               'multivalued': False,
                                               'name': 'observedMutations',
                                               'range': 'string',
@@ -5217,7 +5217,7 @@ class NucleicAcid(Product):
                                                            'identify and maintain '
                                                            'cells that contain the '
                                                            'plasmid',
-                                            'domain_of': ['Nucleic Acid'],
+                                            'domain_of': ['NucleicAcid'],
                                             'multivalued': True,
                                             'name': 'pasmidSelection',
                                             'range': 'PlasmidSelection',
@@ -5230,8 +5230,7 @@ class NucleicAcid(Product):
                                                                           'encompassed '
                                                                           'in the '
                                                                           'product',
-                                                           'domain_of': ['Nucleic '
-                                                                         'Acid'],
+                                                           'domain_of': ['NucleicAcid'],
                                                            'multivalued': False,
                                                            'name': 'regionEncompassedInThisProduct',
                                                            'range': 'string',
@@ -5242,7 +5241,7 @@ class NucleicAcid(Product):
                         'sequence': {'description': 'The related sequence information '
                                                     'from a sequence provider or in '
                                                     'fasta format',
-                                     'domain_of': ['Nucleic Acid',
+                                     'domain_of': ['NucleicAcid',
                                                    'RecombinantPartIdentification',
                                                    'Protein',
                                                    'Pathogen'],
@@ -5257,7 +5256,7 @@ class NucleicAcid(Product):
                                                            'sequence of the product '
                                                            'was controlled (compulsory '
                                                            'for cloned products)',
-                                            'domain_of': ['Nucleic Acid'],
+                                            'domain_of': ['NucleicAcid'],
                                             'multivalued': False,
                                             'name': 'sequenceChecked',
                                             'range': 'boolean',
@@ -5276,7 +5275,7 @@ class NucleicAcid(Product):
                                                       "and 'Fully sequenced' (the "
                                                       'entire nucleic acid sequence '
                                                       'has been determined).',
-                                       'domain_of': ['Nucleic Acid'],
+                                       'domain_of': ['NucleicAcid'],
                                        'multivalued': False,
                                        'name': 'sequencing',
                                        'range': 'string',
@@ -5291,7 +5290,7 @@ class NucleicAcid(Product):
                                                  'corresponds to the highest dilution '
                                                  'factor that still yields a positive '
                                                  'reading',
-                                  'domain_of': ['Nucleic Acid', 'Pathogen'],
+                                  'domain_of': ['NucleicAcid', 'Pathogen'],
                                   'multivalued': False,
                                   'name': 'titer',
                                   'range': 'string',
@@ -5300,35 +5299,35 @@ class NucleicAcid(Product):
          'title': 'Nucleic Acid'})
 
     biologicalMaterialOrigin: BiologicalMaterialOrigin = Field(default=..., title="Biological Material origin", description="""Information about the origin of the biological material, essential for access, utilization, and benefit-sharing of genetic resources in compliance with the Nagoya Protocol""", json_schema_extra = { "linkml_meta": {'alias': 'biologicalMaterialOrigin',
-         'domain_of': ['Nucleic Acid', 'Protein', 'Pathogen']} })
-    hasGbFileOfTheConstruct: Optional[list[Data]] = Field(default=None, title="has .gb file of the construct", description="""A GenBank formatted file that contains detailed sequence and annotation information of a nucleic acid construct""", json_schema_extra = { "linkml_meta": {'alias': 'hasGbFileOfTheConstruct', 'domain_of': ['Nucleic Acid']} })
+         'domain_of': ['NucleicAcid', 'Protein', 'Pathogen']} })
+    hasGbFileOfTheConstruct: Optional[list[Data]] = Field(default=None, title="has .gb file of the construct", description="""A GenBank formatted file that contains detailed sequence and annotation information of a nucleic acid construct""", json_schema_extra = { "linkml_meta": {'alias': 'hasGbFileOfTheConstruct', 'domain_of': ['NucleicAcid']} })
     sequence: list[Sequence] = Field(default=..., title="sequence", description="""The related sequence information from a sequence provider or in fasta format""", json_schema_extra = { "linkml_meta": {'alias': 'sequence',
-         'domain_of': ['Nucleic Acid',
+         'domain_of': ['NucleicAcid',
                        'RecombinantPartIdentification',
                        'Protein',
                        'Pathogen'],
          'recommended': True} })
-    isItAClonedNucleicAcid: bool = Field(default=..., title="is it a Cloned Nucleic Acid?", description="""Indicates that the nucleic acid sequence has been inserted into a plasmid vector for propagation or expression in a host organism""", json_schema_extra = { "linkml_meta": {'alias': 'isItAClonedNucleicAcid', 'domain_of': ['Nucleic Acid']} })
+    isItAClonedNucleicAcid: bool = Field(default=..., title="is it a Cloned Nucleic Acid?", description="""Indicates that the nucleic acid sequence has been inserted into a plasmid vector for propagation or expression in a host organism""", json_schema_extra = { "linkml_meta": {'alias': 'isItAClonedNucleicAcid', 'domain_of': ['NucleicAcid']} })
     clonedIntoPlasmid: Optional[ExpressionVector] = Field(default=None, title="cloned into plasmid", description="""The plasmid into which the nucleic acid has been cloned""", json_schema_extra = { "linkml_meta": {'alias': 'clonedIntoPlasmid',
-         'domain_of': ['Nucleic Acid'],
+         'domain_of': ['NucleicAcid'],
          'recommended': True} })
-    pasmidSelection: Optional[list[PlasmidSelection]] = Field(default=None, title="plasmid selection", description="""Specific selectable markers in the plasmid, such as antibiotic resistance genes, used to identify and maintain cells that contain the plasmid""", json_schema_extra = { "linkml_meta": {'alias': 'pasmidSelection', 'domain_of': ['Nucleic Acid'], 'recommended': True} })
-    hasTAG: ProteinTag = Field(default=..., title="TAG", description="""TAG sequence used for purposes such as purification, detection, or localization""", json_schema_extra = { "linkml_meta": {'alias': 'hasTAG', 'domain_of': ['Nucleic Acid']} })
-    regionEncompassedInThisProduct: str = Field(default=..., title="region encompassed in this Product", description="""The specific region encompassed in the product""", json_schema_extra = { "linkml_meta": {'alias': 'regionEncompassedInThisProduct', 'domain_of': ['Nucleic Acid']} })
+    pasmidSelection: Optional[list[PlasmidSelection]] = Field(default=None, title="plasmid selection", description="""Specific selectable markers in the plasmid, such as antibiotic resistance genes, used to identify and maintain cells that contain the plasmid""", json_schema_extra = { "linkml_meta": {'alias': 'pasmidSelection', 'domain_of': ['NucleicAcid'], 'recommended': True} })
+    hasTAG: ProteinTag = Field(default=..., title="TAG", description="""TAG sequence used for purposes such as purification, detection, or localization""", json_schema_extra = { "linkml_meta": {'alias': 'hasTAG', 'domain_of': ['NucleicAcid']} })
+    regionEncompassedInThisProduct: str = Field(default=..., title="region encompassed in this Product", description="""The specific region encompassed in the product""", json_schema_extra = { "linkml_meta": {'alias': 'regionEncompassedInThisProduct', 'domain_of': ['NucleicAcid']} })
     mutationObserved: bool = Field(default=..., title="mutation observed", description="""Indicates if the current nucleic acid has No mutation compared to the reference sequence if the value is set to false or if it
- contains mutations (no frameshift, no unexpected STOP codon) if set to true""", json_schema_extra = { "linkml_meta": {'alias': 'mutationObserved', 'domain_of': ['Nucleic Acid']} })
-    observedMutations: Optional[str] = Field(default=None, title="observed mutations", description="""The specific mutations that have been identified and documented in the nucleic acid sequence""", json_schema_extra = { "linkml_meta": {'alias': 'observedMutations', 'domain_of': ['Nucleic Acid']} })
-    identificationTechnique: Optional[str] = Field(default=None, title="identification technique", description="""A method or procedure used to detect, identify, and confirm the presence of a specific nucleic acid sequence, pathogen, or associated constructs. This may involve various techniques such as PCR, sequencing, hybridization, or other molecular methods, utilizing specific tools and procedures for accurate detection and analysis""", json_schema_extra = { "linkml_meta": {'alias': 'identificationTechnique', 'domain_of': ['Nucleic Acid', 'Pathogen']} })
+ contains mutations (no frameshift, no unexpected STOP codon) if set to true""", json_schema_extra = { "linkml_meta": {'alias': 'mutationObserved', 'domain_of': ['NucleicAcid']} })
+    observedMutations: Optional[str] = Field(default=None, title="observed mutations", description="""The specific mutations that have been identified and documented in the nucleic acid sequence""", json_schema_extra = { "linkml_meta": {'alias': 'observedMutations', 'domain_of': ['NucleicAcid']} })
+    identificationTechnique: Optional[str] = Field(default=None, title="identification technique", description="""A method or procedure used to detect, identify, and confirm the presence of a specific nucleic acid sequence, pathogen, or associated constructs. This may involve various techniques such as PCR, sequencing, hybridization, or other molecular methods, utilizing specific tools and procedures for accurate detection and analysis""", json_schema_extra = { "linkml_meta": {'alias': 'identificationTechnique', 'domain_of': ['NucleicAcid', 'Pathogen']} })
     sequencing: Literal["Not sequenced", "Partly sequenced", "Fully sequenced"] = Field(default=..., title="sequencing", description="""Refers to the level of sequencing performed on the nucleic acid. Possible values include 'Not sequenced' (no sequencing has been performed), 'Partly sequenced' (only a portion of the nucleic acid sequence has been determined), and 'Fully sequenced' (the entire nucleic acid sequence has been determined).""", json_schema_extra = { "linkml_meta": {'alias': 'sequencing',
          'comments': ['Cloned products have to be sequenced'],
-         'domain_of': ['Nucleic Acid'],
+         'domain_of': ['NucleicAcid'],
          'equals_string_in': ['Not sequenced', 'Partly sequenced', 'Fully sequenced']} })
     titer: Optional[str] = Field(default=None, title="titer", description="""The titer value, its corresponding unit, and the method of quantification (e.g., RT-qPCR, TCID50), representing the concentration or amount of unit present in the sample. The titer corresponds to the highest dilution factor that still yields a positive reading""", json_schema_extra = { "linkml_meta": {'alias': 'titer',
          'close_mappings': ['wd:Q2166189'],
-         'domain_of': ['Nucleic Acid', 'Pathogen']} })
+         'domain_of': ['NucleicAcid', 'Pathogen']} })
     sequenceChecked: bool = Field(default=..., title="sequence checked", description="""Tell whether or not the sequence of the product was controlled (compulsory for cloned products)""", json_schema_extra = { "linkml_meta": {'alias': 'sequenceChecked',
          'comments': ['Sequence check is mandatory for cloned products'],
-         'domain_of': ['Nucleic Acid']} })
+         'domain_of': ['NucleicAcid']} })
     hasIATAClassification: IATAClassification = Field(default=..., title="IATA classification", description="""The corresponding International Air Transport Association (IATA)'s category for this Product""", json_schema_extra = { "linkml_meta": {'alias': 'hasIATAClassification', 'domain_of': ['Product']} })
     shippingConditions: str = Field(default=..., title="shipping conditions", description="""Specification of the terms and parameters for transporting
 """, json_schema_extra = { "linkml_meta": {'alias': 'shippingConditions', 'domain_of': ['Product']} })
@@ -5452,7 +5451,7 @@ class DetectionKit(Product):
     linkml_meta: ClassVar[LinkMLMeta] = LinkMLMeta({'from_schema': 'https://w3id.org/evorao/',
          'slot_usage': {'hasSOPFile': {'description': 'The related standard operating '
                                                       'procedure file',
-                                       'domain_of': ['Detection Kit'],
+                                       'domain_of': ['DetectionKit'],
                                        'multivalued': True,
                                        'name': 'hasSOPFile',
                                        'range': 'File',
@@ -5465,7 +5464,7 @@ class DetectionKit(Product):
                                                        'target analyte and other '
                                                        'substances without '
                                                        'cross-reacting',
-                                        'domain_of': ['Detection Kit'],
+                                        'domain_of': ['DetectionKit'],
                                         'multivalued': False,
                                         'name': 'specificity',
                                         'range': 'string',
@@ -5476,7 +5475,7 @@ class DetectionKit(Product):
                                                                  'the specificity of '
                                                                  'the product has been '
                                                                  'formally documented',
-                                                  'domain_of': ['Detection Kit',
+                                                  'domain_of': ['DetectionKit',
                                                                 'Antibody'],
                                                   'multivalued': False,
                                                   'name': 'specificityDocumented',
@@ -5490,7 +5489,7 @@ class DetectionKit(Product):
                                                           'and interact with, ensuring '
                                                           'accurate detection and '
                                                           'analysis.',
-                                           'domain_of': ['Detection Kit'],
+                                           'domain_of': ['DetectionKit'],
                                            'multivalued': False,
                                            'name': 'targetedRegion',
                                            'range': 'string',
@@ -5498,10 +5497,10 @@ class DetectionKit(Product):
                                            'title': 'targeted region'}},
          'title': 'Detection Kit'})
 
-    hasSOPFile: Optional[list[File]] = Field(default=None, title="has SOP File", description="""The related standard operating procedure file""", json_schema_extra = { "linkml_meta": {'alias': 'hasSOPFile', 'domain_of': ['Detection Kit']} })
-    specificityDocumented: bool = Field(default=..., title="specificity documented", description="""Boolean value indicating whether the specificity of the product has been formally documented""", json_schema_extra = { "linkml_meta": {'alias': 'specificityDocumented', 'domain_of': ['Detection Kit', 'Antibody']} })
-    specificity: Optional[str] = Field(default=None, title="specificity", description="""Details on the ability of a detection kit to correctly identify negative results, distinguishing between the target analyte and other substances without cross-reacting""", json_schema_extra = { "linkml_meta": {'alias': 'specificity', 'domain_of': ['Detection Kit']} })
-    targetedRegion: Optional[str] = Field(default=None, title="targeted region", description="""The specific area or sequence within the target analyte that the detection kit is designed to identify and interact with, ensuring accurate detection and analysis.""", json_schema_extra = { "linkml_meta": {'alias': 'targetedRegion', 'domain_of': ['Detection Kit']} })
+    hasSOPFile: Optional[list[File]] = Field(default=None, title="has SOP File", description="""The related standard operating procedure file""", json_schema_extra = { "linkml_meta": {'alias': 'hasSOPFile', 'domain_of': ['DetectionKit']} })
+    specificityDocumented: bool = Field(default=..., title="specificity documented", description="""Boolean value indicating whether the specificity of the product has been formally documented""", json_schema_extra = { "linkml_meta": {'alias': 'specificityDocumented', 'domain_of': ['DetectionKit', 'Antibody']} })
+    specificity: Optional[str] = Field(default=None, title="specificity", description="""Details on the ability of a detection kit to correctly identify negative results, distinguishing between the target analyte and other substances without cross-reacting""", json_schema_extra = { "linkml_meta": {'alias': 'specificity', 'domain_of': ['DetectionKit']} })
+    targetedRegion: Optional[str] = Field(default=None, title="targeted region", description="""The specific area or sequence within the target analyte that the detection kit is designed to identify and interact with, ensuring accurate detection and analysis.""", json_schema_extra = { "linkml_meta": {'alias': 'targetedRegion', 'domain_of': ['DetectionKit']} })
     hasIATAClassification: IATAClassification = Field(default=..., title="IATA classification", description="""The corresponding International Air Transport Association (IATA)'s category for this Product""", json_schema_extra = { "linkml_meta": {'alias': 'hasIATAClassification', 'domain_of': ['Product']} })
     shippingConditions: str = Field(default=..., title="shipping conditions", description="""Specification of the terms and parameters for transporting
 """, json_schema_extra = { "linkml_meta": {'alias': 'shippingConditions', 'domain_of': ['Product']} })
@@ -5777,7 +5776,7 @@ class Pathogen(Product):
                                                                     'Protocol',
                                                      'domain_of': ['Pathogen',
                                                                    'Protein',
-                                                                   'Nucleic Acid'],
+                                                                   'NucleicAcid'],
                                                      'multivalued': False,
                                                      'name': 'biologicalMaterialOrigin',
                                                      'range': 'BiologicalMaterialOrigin',
@@ -5854,7 +5853,7 @@ class Pathogen(Product):
                                                                    'accurate detection '
                                                                    'and analysis',
                                                     'domain_of': ['Pathogen',
-                                                                  'Nucleic Acid'],
+                                                                  'NucleicAcid'],
                                                     'multivalued': False,
                                                     'name': 'identificationTechnique',
                                                     'range': 'string',
@@ -5977,7 +5976,7 @@ class Pathogen(Product):
                                      'domain_of': ['Pathogen',
                                                    'RecombinantPartIdentification',
                                                    'Protein',
-                                                   'Nucleic Acid'],
+                                                   'NucleicAcid'],
                                      'multivalued': True,
                                      'name': 'sequence',
                                      'range': 'Sequence',
@@ -6015,7 +6014,7 @@ class Pathogen(Product):
                                                  'corresponds to the highest dilution '
                                                  'factor that still yields a positive '
                                                  'reading',
-                                  'domain_of': ['Pathogen', 'Nucleic Acid'],
+                                  'domain_of': ['Pathogen', 'NucleicAcid'],
                                   'multivalued': False,
                                   'name': 'titer',
                                   'range': 'string',
@@ -6037,7 +6036,7 @@ class Pathogen(Product):
          'title': 'Pathogen'})
 
     biologicalMaterialOrigin: BiologicalMaterialOrigin = Field(default=..., title="Biological Material origin", description="""Information about the origin of the biological material, essential for access, utilization, and benefit-sharing of genetic resources in compliance with the Nagoya Protocol""", json_schema_extra = { "linkml_meta": {'alias': 'biologicalMaterialOrigin',
-         'domain_of': ['Pathogen', 'Protein', 'Nucleic Acid']} })
+         'domain_of': ['Pathogen', 'Protein', 'NucleicAcid']} })
     suspectedEpidemiologicalOrigin: Optional[list[GeographicalOrigin]] = Field(default=None, title="suspected epidemiological origin", description="""The potential geographical or environmental source from which the pathogen is believed to have originated or been transmitted""", json_schema_extra = { "linkml_meta": {'alias': 'suspectedEpidemiologicalOrigin',
          'close_mappings': ['dct:spatial'],
          'domain_of': ['Pathogen']} })
@@ -6049,7 +6048,7 @@ class Pathogen(Product):
          'domain_of': ['Pathogen',
                        'RecombinantPartIdentification',
                        'Protein',
-                       'Nucleic Acid'],
+                       'NucleicAcid'],
          'recommended': True} })
     cultivability: Literal["Cultivable", "Uncultivable", "Inactivated"] = Field(default="Cultivable", title="cultivability", description="""The ability of the pathogen to be cultivated or grown in laboratory conditions. Possible values are  'Cultivable pathogen', 'Uncultivable pathogen' or 'Inactivated pathogen'""", json_schema_extra = { "linkml_meta": {'alias': 'cultivability',
          'comments': ['Might also be related to a product sub-category that helps '
@@ -6058,7 +6057,7 @@ class Pathogen(Product):
          'equals_string_in': ['Cultivable', 'Uncultivable', 'Inactivated'],
          'ifabsent': 'string(Cultivable)'} })
     clinicalInformation: Optional[str] = Field(default=None, title="clinical information", description="""Details about the clinical aspects of the pathogen, including symptoms, severity, treatment protocols, and patient outcomes""", json_schema_extra = { "linkml_meta": {'alias': 'clinicalInformation', 'domain_of': ['Pathogen']} })
-    identificationTechnique: Optional[str] = Field(default=None, title="identification technique", description="""A method or procedure used to detect, identify, and confirm the presence of a specific nucleic acid sequence, pathogen, or associated constructs. This may involve various techniques such as PCR, sequencing, hybridization, or other molecular methods, utilizing specific tools and procedures for accurate detection and analysis""", json_schema_extra = { "linkml_meta": {'alias': 'identificationTechnique', 'domain_of': ['Pathogen', 'Nucleic Acid']} })
+    identificationTechnique: Optional[str] = Field(default=None, title="identification technique", description="""A method or procedure used to detect, identify, and confirm the presence of a specific nucleic acid sequence, pathogen, or associated constructs. This may involve various techniques such as PCR, sequencing, hybridization, or other molecular methods, utilizing specific tools and procedures for accurate detection and analysis""", json_schema_extra = { "linkml_meta": {'alias': 'identificationTechnique', 'domain_of': ['Pathogen', 'NucleicAcid']} })
     infectivity: Literal["Infectivity tested", "Infectivity tested and quantified", "Non cultivable sample, infectivity cannot be tested"] = Field(default=..., title="infectivity", description="""Indicates the ability of the pathogen to establish an infection in a host organism, with possible values detailing whether infectivity has been tested, quantified, or cannot be tested due to non-cultivable nature.""", json_schema_extra = { "linkml_meta": {'alias': 'infectivity',
          'domain_of': ['Pathogen'],
          'equals_string_in': ['Infectivity tested',
@@ -6082,7 +6081,7 @@ class Pathogen(Product):
                               'Partial sequence']} })
     titer: str = Field(default=..., title="titer", description="""The titer value, its corresponding unit, and the method of quantification (e.g., RT-qPCR, TCID50), representing the concentration or amount of unit present in the sample. The titer corresponds to the highest dilution factor that still yields a positive reading""", json_schema_extra = { "linkml_meta": {'alias': 'titer',
          'close_mappings': ['wd:Q2166189'],
-         'domain_of': ['Pathogen', 'Nucleic Acid']} })
+         'domain_of': ['Pathogen', 'NucleicAcid']} })
     hasIATAClassification: IATAClassification = Field(default=..., title="IATA classification", description="""The corresponding International Air Transport Association (IATA)'s category for this Product""", json_schema_extra = { "linkml_meta": {'alias': 'hasIATAClassification', 'domain_of': ['Product']} })
     shippingConditions: str = Field(default=..., title="shipping conditions", description="""Specification of the terms and parameters for transporting
 """, json_schema_extra = { "linkml_meta": {'alias': 'shippingConditions', 'domain_of': ['Product']} })
@@ -6259,7 +6258,7 @@ class Virus(Pathogen):
          'ifabsent': 'false'} })
     mycoplasmicContent: bool = Field(default=..., title="mycoplasmic content", description="""Indicates the presence of mycoplasma contamination within the sample""", json_schema_extra = { "linkml_meta": {'alias': 'mycoplasmicContent', 'domain_of': ['Virus']} })
     biologicalMaterialOrigin: BiologicalMaterialOrigin = Field(default=..., title="Biological Material origin", description="""Information about the origin of the biological material, essential for access, utilization, and benefit-sharing of genetic resources in compliance with the Nagoya Protocol""", json_schema_extra = { "linkml_meta": {'alias': 'biologicalMaterialOrigin',
-         'domain_of': ['Pathogen', 'Protein', 'Nucleic Acid']} })
+         'domain_of': ['Pathogen', 'Protein', 'NucleicAcid']} })
     suspectedEpidemiologicalOrigin: Optional[list[GeographicalOrigin]] = Field(default=None, title="suspected epidemiological origin", description="""The potential geographical or environmental source from which the pathogen is believed to have originated or been transmitted""", json_schema_extra = { "linkml_meta": {'alias': 'suspectedEpidemiologicalOrigin',
          'close_mappings': ['dct:spatial'],
          'domain_of': ['Pathogen']} })
@@ -6271,7 +6270,7 @@ class Virus(Pathogen):
          'domain_of': ['Pathogen',
                        'RecombinantPartIdentification',
                        'Protein',
-                       'Nucleic Acid'],
+                       'NucleicAcid'],
          'recommended': True} })
     cultivability: Literal["Cultivable", "Uncultivable", "Inactivated"] = Field(default="Cultivable", title="cultivability", description="""The ability of the pathogen to be cultivated or grown in laboratory conditions. Possible values are  'Cultivable pathogen', 'Uncultivable pathogen' or 'Inactivated pathogen'""", json_schema_extra = { "linkml_meta": {'alias': 'cultivability',
          'comments': ['Might also be related to a product sub-category that helps '
@@ -6280,7 +6279,7 @@ class Virus(Pathogen):
          'equals_string_in': ['Cultivable', 'Uncultivable', 'Inactivated'],
          'ifabsent': 'string(Cultivable)'} })
     clinicalInformation: Optional[str] = Field(default=None, title="clinical information", description="""Details about the clinical aspects of the pathogen, including symptoms, severity, treatment protocols, and patient outcomes""", json_schema_extra = { "linkml_meta": {'alias': 'clinicalInformation', 'domain_of': ['Pathogen']} })
-    identificationTechnique: Optional[str] = Field(default=None, title="identification technique", description="""A method or procedure used to detect, identify, and confirm the presence of a specific nucleic acid sequence, pathogen, or associated constructs. This may involve various techniques such as PCR, sequencing, hybridization, or other molecular methods, utilizing specific tools and procedures for accurate detection and analysis""", json_schema_extra = { "linkml_meta": {'alias': 'identificationTechnique', 'domain_of': ['Pathogen', 'Nucleic Acid']} })
+    identificationTechnique: Optional[str] = Field(default=None, title="identification technique", description="""A method or procedure used to detect, identify, and confirm the presence of a specific nucleic acid sequence, pathogen, or associated constructs. This may involve various techniques such as PCR, sequencing, hybridization, or other molecular methods, utilizing specific tools and procedures for accurate detection and analysis""", json_schema_extra = { "linkml_meta": {'alias': 'identificationTechnique', 'domain_of': ['Pathogen', 'NucleicAcid']} })
     infectivity: Literal["Infectivity tested", "Infectivity tested and quantified", "Non cultivable sample, infectivity cannot be tested"] = Field(default=..., title="infectivity", description="""Indicates the ability of the pathogen to establish an infection in a host organism, with possible values detailing whether infectivity has been tested, quantified, or cannot be tested due to non-cultivable nature.""", json_schema_extra = { "linkml_meta": {'alias': 'infectivity',
          'domain_of': ['Pathogen'],
          'equals_string_in': ['Infectivity tested',
@@ -6304,7 +6303,7 @@ class Virus(Pathogen):
                               'Partial sequence']} })
     titer: str = Field(default=..., title="titer", description="""The titer value, its corresponding unit, and the method of quantification (e.g., RT-qPCR, TCID50), representing the concentration or amount of unit present in the sample. The titer corresponds to the highest dilution factor that still yields a positive reading""", json_schema_extra = { "linkml_meta": {'alias': 'titer',
          'close_mappings': ['wd:Q2166189'],
-         'domain_of': ['Pathogen', 'Nucleic Acid']} })
+         'domain_of': ['Pathogen', 'NucleicAcid']} })
     hasIATAClassification: IATAClassification = Field(default=..., title="IATA classification", description="""The corresponding International Air Transport Association (IATA)'s category for this Product""", json_schema_extra = { "linkml_meta": {'alias': 'hasIATAClassification', 'domain_of': ['Product']} })
     shippingConditions: str = Field(default=..., title="shipping conditions", description="""Specification of the terms and parameters for transporting
 """, json_schema_extra = { "linkml_meta": {'alias': 'shippingConditions', 'domain_of': ['Product']} })
@@ -6430,7 +6429,7 @@ class Bacterium(Pathogen):
          'title': 'Bacterium'})
 
     biologicalMaterialOrigin: BiologicalMaterialOrigin = Field(default=..., title="Biological Material origin", description="""Information about the origin of the biological material, essential for access, utilization, and benefit-sharing of genetic resources in compliance with the Nagoya Protocol""", json_schema_extra = { "linkml_meta": {'alias': 'biologicalMaterialOrigin',
-         'domain_of': ['Pathogen', 'Protein', 'Nucleic Acid']} })
+         'domain_of': ['Pathogen', 'Protein', 'NucleicAcid']} })
     suspectedEpidemiologicalOrigin: Optional[list[GeographicalOrigin]] = Field(default=None, title="suspected epidemiological origin", description="""The potential geographical or environmental source from which the pathogen is believed to have originated or been transmitted""", json_schema_extra = { "linkml_meta": {'alias': 'suspectedEpidemiologicalOrigin',
          'close_mappings': ['dct:spatial'],
          'domain_of': ['Pathogen']} })
@@ -6442,7 +6441,7 @@ class Bacterium(Pathogen):
          'domain_of': ['Pathogen',
                        'RecombinantPartIdentification',
                        'Protein',
-                       'Nucleic Acid'],
+                       'NucleicAcid'],
          'recommended': True} })
     cultivability: Literal["Cultivable", "Uncultivable", "Inactivated"] = Field(default="Cultivable", title="cultivability", description="""The ability of the pathogen to be cultivated or grown in laboratory conditions. Possible values are  'Cultivable pathogen', 'Uncultivable pathogen' or 'Inactivated pathogen'""", json_schema_extra = { "linkml_meta": {'alias': 'cultivability',
          'comments': ['Might also be related to a product sub-category that helps '
@@ -6451,7 +6450,7 @@ class Bacterium(Pathogen):
          'equals_string_in': ['Cultivable', 'Uncultivable', 'Inactivated'],
          'ifabsent': 'string(Cultivable)'} })
     clinicalInformation: Optional[str] = Field(default=None, title="clinical information", description="""Details about the clinical aspects of the pathogen, including symptoms, severity, treatment protocols, and patient outcomes""", json_schema_extra = { "linkml_meta": {'alias': 'clinicalInformation', 'domain_of': ['Pathogen']} })
-    identificationTechnique: Optional[str] = Field(default=None, title="identification technique", description="""A method or procedure used to detect, identify, and confirm the presence of a specific nucleic acid sequence, pathogen, or associated constructs. This may involve various techniques such as PCR, sequencing, hybridization, or other molecular methods, utilizing specific tools and procedures for accurate detection and analysis""", json_schema_extra = { "linkml_meta": {'alias': 'identificationTechnique', 'domain_of': ['Pathogen', 'Nucleic Acid']} })
+    identificationTechnique: Optional[str] = Field(default=None, title="identification technique", description="""A method or procedure used to detect, identify, and confirm the presence of a specific nucleic acid sequence, pathogen, or associated constructs. This may involve various techniques such as PCR, sequencing, hybridization, or other molecular methods, utilizing specific tools and procedures for accurate detection and analysis""", json_schema_extra = { "linkml_meta": {'alias': 'identificationTechnique', 'domain_of': ['Pathogen', 'NucleicAcid']} })
     infectivity: Literal["Infectivity tested", "Infectivity tested and quantified", "Non cultivable sample, infectivity cannot be tested"] = Field(default=..., title="infectivity", description="""Indicates the ability of the pathogen to establish an infection in a host organism, with possible values detailing whether infectivity has been tested, quantified, or cannot be tested due to non-cultivable nature.""", json_schema_extra = { "linkml_meta": {'alias': 'infectivity',
          'domain_of': ['Pathogen'],
          'equals_string_in': ['Infectivity tested',
@@ -6475,7 +6474,7 @@ class Bacterium(Pathogen):
                               'Partial sequence']} })
     titer: str = Field(default=..., title="titer", description="""The titer value, its corresponding unit, and the method of quantification (e.g., RT-qPCR, TCID50), representing the concentration or amount of unit present in the sample. The titer corresponds to the highest dilution factor that still yields a positive reading""", json_schema_extra = { "linkml_meta": {'alias': 'titer',
          'close_mappings': ['wd:Q2166189'],
-         'domain_of': ['Pathogen', 'Nucleic Acid']} })
+         'domain_of': ['Pathogen', 'NucleicAcid']} })
     hasIATAClassification: IATAClassification = Field(default=..., title="IATA classification", description="""The corresponding International Air Transport Association (IATA)'s category for this Product""", json_schema_extra = { "linkml_meta": {'alias': 'hasIATAClassification', 'domain_of': ['Product']} })
     shippingConditions: str = Field(default=..., title="shipping conditions", description="""Specification of the terms and parameters for transporting
 """, json_schema_extra = { "linkml_meta": {'alias': 'shippingConditions', 'domain_of': ['Product']} })
@@ -6601,7 +6600,7 @@ class Fungus(Pathogen):
          'title': 'Fungus'})
 
     biologicalMaterialOrigin: BiologicalMaterialOrigin = Field(default=..., title="Biological Material origin", description="""Information about the origin of the biological material, essential for access, utilization, and benefit-sharing of genetic resources in compliance with the Nagoya Protocol""", json_schema_extra = { "linkml_meta": {'alias': 'biologicalMaterialOrigin',
-         'domain_of': ['Pathogen', 'Protein', 'Nucleic Acid']} })
+         'domain_of': ['Pathogen', 'Protein', 'NucleicAcid']} })
     suspectedEpidemiologicalOrigin: Optional[list[GeographicalOrigin]] = Field(default=None, title="suspected epidemiological origin", description="""The potential geographical or environmental source from which the pathogen is believed to have originated or been transmitted""", json_schema_extra = { "linkml_meta": {'alias': 'suspectedEpidemiologicalOrigin',
          'close_mappings': ['dct:spatial'],
          'domain_of': ['Pathogen']} })
@@ -6613,7 +6612,7 @@ class Fungus(Pathogen):
          'domain_of': ['Pathogen',
                        'RecombinantPartIdentification',
                        'Protein',
-                       'Nucleic Acid'],
+                       'NucleicAcid'],
          'recommended': True} })
     cultivability: Literal["Cultivable", "Uncultivable", "Inactivated"] = Field(default="Cultivable", title="cultivability", description="""The ability of the pathogen to be cultivated or grown in laboratory conditions. Possible values are  'Cultivable pathogen', 'Uncultivable pathogen' or 'Inactivated pathogen'""", json_schema_extra = { "linkml_meta": {'alias': 'cultivability',
          'comments': ['Might also be related to a product sub-category that helps '
@@ -6622,7 +6621,7 @@ class Fungus(Pathogen):
          'equals_string_in': ['Cultivable', 'Uncultivable', 'Inactivated'],
          'ifabsent': 'string(Cultivable)'} })
     clinicalInformation: Optional[str] = Field(default=None, title="clinical information", description="""Details about the clinical aspects of the pathogen, including symptoms, severity, treatment protocols, and patient outcomes""", json_schema_extra = { "linkml_meta": {'alias': 'clinicalInformation', 'domain_of': ['Pathogen']} })
-    identificationTechnique: Optional[str] = Field(default=None, title="identification technique", description="""A method or procedure used to detect, identify, and confirm the presence of a specific nucleic acid sequence, pathogen, or associated constructs. This may involve various techniques such as PCR, sequencing, hybridization, or other molecular methods, utilizing specific tools and procedures for accurate detection and analysis""", json_schema_extra = { "linkml_meta": {'alias': 'identificationTechnique', 'domain_of': ['Pathogen', 'Nucleic Acid']} })
+    identificationTechnique: Optional[str] = Field(default=None, title="identification technique", description="""A method or procedure used to detect, identify, and confirm the presence of a specific nucleic acid sequence, pathogen, or associated constructs. This may involve various techniques such as PCR, sequencing, hybridization, or other molecular methods, utilizing specific tools and procedures for accurate detection and analysis""", json_schema_extra = { "linkml_meta": {'alias': 'identificationTechnique', 'domain_of': ['Pathogen', 'NucleicAcid']} })
     infectivity: Literal["Infectivity tested", "Infectivity tested and quantified", "Non cultivable sample, infectivity cannot be tested"] = Field(default=..., title="infectivity", description="""Indicates the ability of the pathogen to establish an infection in a host organism, with possible values detailing whether infectivity has been tested, quantified, or cannot be tested due to non-cultivable nature.""", json_schema_extra = { "linkml_meta": {'alias': 'infectivity',
          'domain_of': ['Pathogen'],
          'equals_string_in': ['Infectivity tested',
@@ -6646,7 +6645,7 @@ class Fungus(Pathogen):
                               'Partial sequence']} })
     titer: str = Field(default=..., title="titer", description="""The titer value, its corresponding unit, and the method of quantification (e.g., RT-qPCR, TCID50), representing the concentration or amount of unit present in the sample. The titer corresponds to the highest dilution factor that still yields a positive reading""", json_schema_extra = { "linkml_meta": {'alias': 'titer',
          'close_mappings': ['wd:Q2166189'],
-         'domain_of': ['Pathogen', 'Nucleic Acid']} })
+         'domain_of': ['Pathogen', 'NucleicAcid']} })
     hasIATAClassification: IATAClassification = Field(default=..., title="IATA classification", description="""The corresponding International Air Transport Association (IATA)'s category for this Product""", json_schema_extra = { "linkml_meta": {'alias': 'hasIATAClassification', 'domain_of': ['Product']} })
     shippingConditions: str = Field(default=..., title="shipping conditions", description="""Specification of the terms and parameters for transporting
 """, json_schema_extra = { "linkml_meta": {'alias': 'shippingConditions', 'domain_of': ['Product']} })
@@ -6772,7 +6771,7 @@ class Protozoan(Pathogen):
          'title': 'Protozoan'})
 
     biologicalMaterialOrigin: BiologicalMaterialOrigin = Field(default=..., title="Biological Material origin", description="""Information about the origin of the biological material, essential for access, utilization, and benefit-sharing of genetic resources in compliance with the Nagoya Protocol""", json_schema_extra = { "linkml_meta": {'alias': 'biologicalMaterialOrigin',
-         'domain_of': ['Pathogen', 'Protein', 'Nucleic Acid']} })
+         'domain_of': ['Pathogen', 'Protein', 'NucleicAcid']} })
     suspectedEpidemiologicalOrigin: Optional[list[GeographicalOrigin]] = Field(default=None, title="suspected epidemiological origin", description="""The potential geographical or environmental source from which the pathogen is believed to have originated or been transmitted""", json_schema_extra = { "linkml_meta": {'alias': 'suspectedEpidemiologicalOrigin',
          'close_mappings': ['dct:spatial'],
          'domain_of': ['Pathogen']} })
@@ -6784,7 +6783,7 @@ class Protozoan(Pathogen):
          'domain_of': ['Pathogen',
                        'RecombinantPartIdentification',
                        'Protein',
-                       'Nucleic Acid'],
+                       'NucleicAcid'],
          'recommended': True} })
     cultivability: Literal["Cultivable", "Uncultivable", "Inactivated"] = Field(default="Cultivable", title="cultivability", description="""The ability of the pathogen to be cultivated or grown in laboratory conditions. Possible values are  'Cultivable pathogen', 'Uncultivable pathogen' or 'Inactivated pathogen'""", json_schema_extra = { "linkml_meta": {'alias': 'cultivability',
          'comments': ['Might also be related to a product sub-category that helps '
@@ -6793,7 +6792,7 @@ class Protozoan(Pathogen):
          'equals_string_in': ['Cultivable', 'Uncultivable', 'Inactivated'],
          'ifabsent': 'string(Cultivable)'} })
     clinicalInformation: Optional[str] = Field(default=None, title="clinical information", description="""Details about the clinical aspects of the pathogen, including symptoms, severity, treatment protocols, and patient outcomes""", json_schema_extra = { "linkml_meta": {'alias': 'clinicalInformation', 'domain_of': ['Pathogen']} })
-    identificationTechnique: Optional[str] = Field(default=None, title="identification technique", description="""A method or procedure used to detect, identify, and confirm the presence of a specific nucleic acid sequence, pathogen, or associated constructs. This may involve various techniques such as PCR, sequencing, hybridization, or other molecular methods, utilizing specific tools and procedures for accurate detection and analysis""", json_schema_extra = { "linkml_meta": {'alias': 'identificationTechnique', 'domain_of': ['Pathogen', 'Nucleic Acid']} })
+    identificationTechnique: Optional[str] = Field(default=None, title="identification technique", description="""A method or procedure used to detect, identify, and confirm the presence of a specific nucleic acid sequence, pathogen, or associated constructs. This may involve various techniques such as PCR, sequencing, hybridization, or other molecular methods, utilizing specific tools and procedures for accurate detection and analysis""", json_schema_extra = { "linkml_meta": {'alias': 'identificationTechnique', 'domain_of': ['Pathogen', 'NucleicAcid']} })
     infectivity: Literal["Infectivity tested", "Infectivity tested and quantified", "Non cultivable sample, infectivity cannot be tested"] = Field(default=..., title="infectivity", description="""Indicates the ability of the pathogen to establish an infection in a host organism, with possible values detailing whether infectivity has been tested, quantified, or cannot be tested due to non-cultivable nature.""", json_schema_extra = { "linkml_meta": {'alias': 'infectivity',
          'domain_of': ['Pathogen'],
          'equals_string_in': ['Infectivity tested',
@@ -6817,7 +6816,7 @@ class Protozoan(Pathogen):
                               'Partial sequence']} })
     titer: str = Field(default=..., title="titer", description="""The titer value, its corresponding unit, and the method of quantification (e.g., RT-qPCR, TCID50), representing the concentration or amount of unit present in the sample. The titer corresponds to the highest dilution factor that still yields a positive reading""", json_schema_extra = { "linkml_meta": {'alias': 'titer',
          'close_mappings': ['wd:Q2166189'],
-         'domain_of': ['Pathogen', 'Nucleic Acid']} })
+         'domain_of': ['Pathogen', 'NucleicAcid']} })
     hasIATAClassification: IATAClassification = Field(default=..., title="IATA classification", description="""The corresponding International Air Transport Association (IATA)'s category for this Product""", json_schema_extra = { "linkml_meta": {'alias': 'hasIATAClassification', 'domain_of': ['Product']} })
     shippingConditions: str = Field(default=..., title="shipping conditions", description="""Specification of the terms and parameters for transporting
 """, json_schema_extra = { "linkml_meta": {'alias': 'shippingConditions', 'domain_of': ['Product']} })
@@ -6943,7 +6942,7 @@ class Viroid(Pathogen):
          'title': 'Viroid'})
 
     biologicalMaterialOrigin: BiologicalMaterialOrigin = Field(default=..., title="Biological Material origin", description="""Information about the origin of the biological material, essential for access, utilization, and benefit-sharing of genetic resources in compliance with the Nagoya Protocol""", json_schema_extra = { "linkml_meta": {'alias': 'biologicalMaterialOrigin',
-         'domain_of': ['Pathogen', 'Protein', 'Nucleic Acid']} })
+         'domain_of': ['Pathogen', 'Protein', 'NucleicAcid']} })
     suspectedEpidemiologicalOrigin: Optional[list[GeographicalOrigin]] = Field(default=None, title="suspected epidemiological origin", description="""The potential geographical or environmental source from which the pathogen is believed to have originated or been transmitted""", json_schema_extra = { "linkml_meta": {'alias': 'suspectedEpidemiologicalOrigin',
          'close_mappings': ['dct:spatial'],
          'domain_of': ['Pathogen']} })
@@ -6955,7 +6954,7 @@ class Viroid(Pathogen):
          'domain_of': ['Pathogen',
                        'RecombinantPartIdentification',
                        'Protein',
-                       'Nucleic Acid'],
+                       'NucleicAcid'],
          'recommended': True} })
     cultivability: Literal["Cultivable", "Uncultivable", "Inactivated"] = Field(default="Cultivable", title="cultivability", description="""The ability of the pathogen to be cultivated or grown in laboratory conditions. Possible values are  'Cultivable pathogen', 'Uncultivable pathogen' or 'Inactivated pathogen'""", json_schema_extra = { "linkml_meta": {'alias': 'cultivability',
          'comments': ['Might also be related to a product sub-category that helps '
@@ -6964,7 +6963,7 @@ class Viroid(Pathogen):
          'equals_string_in': ['Cultivable', 'Uncultivable', 'Inactivated'],
          'ifabsent': 'string(Cultivable)'} })
     clinicalInformation: Optional[str] = Field(default=None, title="clinical information", description="""Details about the clinical aspects of the pathogen, including symptoms, severity, treatment protocols, and patient outcomes""", json_schema_extra = { "linkml_meta": {'alias': 'clinicalInformation', 'domain_of': ['Pathogen']} })
-    identificationTechnique: Optional[str] = Field(default=None, title="identification technique", description="""A method or procedure used to detect, identify, and confirm the presence of a specific nucleic acid sequence, pathogen, or associated constructs. This may involve various techniques such as PCR, sequencing, hybridization, or other molecular methods, utilizing specific tools and procedures for accurate detection and analysis""", json_schema_extra = { "linkml_meta": {'alias': 'identificationTechnique', 'domain_of': ['Pathogen', 'Nucleic Acid']} })
+    identificationTechnique: Optional[str] = Field(default=None, title="identification technique", description="""A method or procedure used to detect, identify, and confirm the presence of a specific nucleic acid sequence, pathogen, or associated constructs. This may involve various techniques such as PCR, sequencing, hybridization, or other molecular methods, utilizing specific tools and procedures for accurate detection and analysis""", json_schema_extra = { "linkml_meta": {'alias': 'identificationTechnique', 'domain_of': ['Pathogen', 'NucleicAcid']} })
     infectivity: Literal["Infectivity tested", "Infectivity tested and quantified", "Non cultivable sample, infectivity cannot be tested"] = Field(default=..., title="infectivity", description="""Indicates the ability of the pathogen to establish an infection in a host organism, with possible values detailing whether infectivity has been tested, quantified, or cannot be tested due to non-cultivable nature.""", json_schema_extra = { "linkml_meta": {'alias': 'infectivity',
          'domain_of': ['Pathogen'],
          'equals_string_in': ['Infectivity tested',
@@ -6988,7 +6987,7 @@ class Viroid(Pathogen):
                               'Partial sequence']} })
     titer: str = Field(default=..., title="titer", description="""The titer value, its corresponding unit, and the method of quantification (e.g., RT-qPCR, TCID50), representing the concentration or amount of unit present in the sample. The titer corresponds to the highest dilution factor that still yields a positive reading""", json_schema_extra = { "linkml_meta": {'alias': 'titer',
          'close_mappings': ['wd:Q2166189'],
-         'domain_of': ['Pathogen', 'Nucleic Acid']} })
+         'domain_of': ['Pathogen', 'NucleicAcid']} })
     hasIATAClassification: IATAClassification = Field(default=..., title="IATA classification", description="""The corresponding International Air Transport Association (IATA)'s category for this Product""", json_schema_extra = { "linkml_meta": {'alias': 'hasIATAClassification', 'domain_of': ['Product']} })
     shippingConditions: str = Field(default=..., title="shipping conditions", description="""Specification of the terms and parameters for transporting
 """, json_schema_extra = { "linkml_meta": {'alias': 'shippingConditions', 'domain_of': ['Product']} })
@@ -7114,7 +7113,7 @@ class Prion(Pathogen):
          'title': 'Prion'})
 
     biologicalMaterialOrigin: BiologicalMaterialOrigin = Field(default=..., title="Biological Material origin", description="""Information about the origin of the biological material, essential for access, utilization, and benefit-sharing of genetic resources in compliance with the Nagoya Protocol""", json_schema_extra = { "linkml_meta": {'alias': 'biologicalMaterialOrigin',
-         'domain_of': ['Pathogen', 'Protein', 'Nucleic Acid']} })
+         'domain_of': ['Pathogen', 'Protein', 'NucleicAcid']} })
     suspectedEpidemiologicalOrigin: Optional[list[GeographicalOrigin]] = Field(default=None, title="suspected epidemiological origin", description="""The potential geographical or environmental source from which the pathogen is believed to have originated or been transmitted""", json_schema_extra = { "linkml_meta": {'alias': 'suspectedEpidemiologicalOrigin',
          'close_mappings': ['dct:spatial'],
          'domain_of': ['Pathogen']} })
@@ -7126,7 +7125,7 @@ class Prion(Pathogen):
          'domain_of': ['Pathogen',
                        'RecombinantPartIdentification',
                        'Protein',
-                       'Nucleic Acid'],
+                       'NucleicAcid'],
          'recommended': True} })
     cultivability: Literal["Cultivable", "Uncultivable", "Inactivated"] = Field(default="Cultivable", title="cultivability", description="""The ability of the pathogen to be cultivated or grown in laboratory conditions. Possible values are  'Cultivable pathogen', 'Uncultivable pathogen' or 'Inactivated pathogen'""", json_schema_extra = { "linkml_meta": {'alias': 'cultivability',
          'comments': ['Might also be related to a product sub-category that helps '
@@ -7135,7 +7134,7 @@ class Prion(Pathogen):
          'equals_string_in': ['Cultivable', 'Uncultivable', 'Inactivated'],
          'ifabsent': 'string(Cultivable)'} })
     clinicalInformation: Optional[str] = Field(default=None, title="clinical information", description="""Details about the clinical aspects of the pathogen, including symptoms, severity, treatment protocols, and patient outcomes""", json_schema_extra = { "linkml_meta": {'alias': 'clinicalInformation', 'domain_of': ['Pathogen']} })
-    identificationTechnique: Optional[str] = Field(default=None, title="identification technique", description="""A method or procedure used to detect, identify, and confirm the presence of a specific nucleic acid sequence, pathogen, or associated constructs. This may involve various techniques such as PCR, sequencing, hybridization, or other molecular methods, utilizing specific tools and procedures for accurate detection and analysis""", json_schema_extra = { "linkml_meta": {'alias': 'identificationTechnique', 'domain_of': ['Pathogen', 'Nucleic Acid']} })
+    identificationTechnique: Optional[str] = Field(default=None, title="identification technique", description="""A method or procedure used to detect, identify, and confirm the presence of a specific nucleic acid sequence, pathogen, or associated constructs. This may involve various techniques such as PCR, sequencing, hybridization, or other molecular methods, utilizing specific tools and procedures for accurate detection and analysis""", json_schema_extra = { "linkml_meta": {'alias': 'identificationTechnique', 'domain_of': ['Pathogen', 'NucleicAcid']} })
     infectivity: Literal["Infectivity tested", "Infectivity tested and quantified", "Non cultivable sample, infectivity cannot be tested"] = Field(default=..., title="infectivity", description="""Indicates the ability of the pathogen to establish an infection in a host organism, with possible values detailing whether infectivity has been tested, quantified, or cannot be tested due to non-cultivable nature.""", json_schema_extra = { "linkml_meta": {'alias': 'infectivity',
          'domain_of': ['Pathogen'],
          'equals_string_in': ['Infectivity tested',
@@ -7159,7 +7158,7 @@ class Prion(Pathogen):
                               'Partial sequence']} })
     titer: str = Field(default=..., title="titer", description="""The titer value, its corresponding unit, and the method of quantification (e.g., RT-qPCR, TCID50), representing the concentration or amount of unit present in the sample. The titer corresponds to the highest dilution factor that still yields a positive reading""", json_schema_extra = { "linkml_meta": {'alias': 'titer',
          'close_mappings': ['wd:Q2166189'],
-         'domain_of': ['Pathogen', 'Nucleic Acid']} })
+         'domain_of': ['Pathogen', 'NucleicAcid']} })
     hasIATAClassification: IATAClassification = Field(default=..., title="IATA classification", description="""The corresponding International Air Transport Association (IATA)'s category for this Product""", json_schema_extra = { "linkml_meta": {'alias': 'hasIATAClassification', 'domain_of': ['Product']} })
     shippingConditions: str = Field(default=..., title="shipping conditions", description="""Specification of the terms and parameters for transporting
 """, json_schema_extra = { "linkml_meta": {'alias': 'shippingConditions', 'domain_of': ['Product']} })

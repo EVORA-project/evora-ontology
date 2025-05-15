@@ -77,7 +77,7 @@ from_schema: https://w3id.org/evorao/
 rank: 1000
 alias: hasSOPFile
 domain_of:
-- Detection Kit
+- DetectionKit
 range: File
 required: false
 multivalued: true

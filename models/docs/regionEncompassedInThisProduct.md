@@ -77,7 +77,7 @@ from_schema: https://w3id.org/evorao/
 rank: 1000
 alias: regionEncompassedInThisProduct
 domain_of:
-- Nucleic Acid
+- NucleicAcid
 range: string
 required: true
 multivalued: false

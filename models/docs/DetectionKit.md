@@ -1,6 +1,6 @@
 
 
-# Class: Detection Kit (Detection Kit) 
+# Class: Detection Kit (DetectionKit) 
 
 
 _A detection kit for specific pathogens_
@@ -319,7 +319,7 @@ URI: [EVORAO:DetectionKit](https://w3id.org/evorao/DetectionKit)
 
 <details>
 ```yaml
-name: Detection Kit
+name: DetectionKit
 description: A detection kit for specific pathogens
 title: Detection Kit
 from_schema: https://w3id.org/evorao/
@@ -335,7 +335,7 @@ slot_usage:
     description: The related standard operating procedure file
     title: has SOP File
     domain_of:
-    - Detection Kit
+    - DetectionKit
     range: File
     required: false
     multivalued: true
@@ -345,7 +345,7 @@ slot_usage:
       been formally documented
     title: specificity documented
     domain_of:
-    - Detection Kit
+    - DetectionKit
     - Antibody
     range: boolean
     required: true
@@ -357,7 +357,7 @@ slot_usage:
       cross-reacting
     title: specificity
     domain_of:
-    - Detection Kit
+    - DetectionKit
     range: string
     required: false
     multivalued: false
@@ -368,7 +368,7 @@ slot_usage:
       and analysis.
     title: targeted region
     domain_of:
-    - Detection Kit
+    - DetectionKit
     range: string
     required: false
     multivalued: false
@@ -380,7 +380,7 @@ slot_usage:
 
 <details>
 ```yaml
-name: Detection Kit
+name: DetectionKit
 description: A detection kit for specific pathogens
 title: Detection Kit
 from_schema: https://w3id.org/evorao/
@@ -391,7 +391,7 @@ slot_usage:
     description: The related standard operating procedure file
     title: has SOP File
     domain_of:
-    - Detection Kit
+    - DetectionKit
     range: File
     required: false
     multivalued: true
@@ -401,7 +401,7 @@ slot_usage:
       been formally documented
     title: specificity documented
     domain_of:
-    - Detection Kit
+    - DetectionKit
     - Antibody
     range: boolean
     required: true
@@ -413,7 +413,7 @@ slot_usage:
       cross-reacting
     title: specificity
     domain_of:
-    - Detection Kit
+    - DetectionKit
     range: string
     required: false
     multivalued: false
@@ -424,7 +424,7 @@ slot_usage:
       and analysis.
     title: targeted region
     domain_of:
-    - Detection Kit
+    - DetectionKit
     range: string
     required: false
     multivalued: false
@@ -436,9 +436,9 @@ attributes:
     from_schema: https://w3id.org/evorao/
     rank: 1000
     alias: hasSOPFile
-    owner: Detection Kit
+    owner: DetectionKit
     domain_of:
-    - Detection Kit
+    - DetectionKit
     range: File
     required: false
     multivalued: true
@@ -450,9 +450,9 @@ attributes:
     from_schema: https://w3id.org/evorao/
     rank: 1000
     alias: specificityDocumented
-    owner: Detection Kit
+    owner: DetectionKit
     domain_of:
-    - Detection Kit
+    - DetectionKit
     - Antibody
     range: boolean
     required: true
@@ -466,9 +466,9 @@ attributes:
     from_schema: https://w3id.org/evorao/
     rank: 1000
     alias: specificity
-    owner: Detection Kit
+    owner: DetectionKit
     domain_of:
-    - Detection Kit
+    - DetectionKit
     range: string
     required: false
     multivalued: false
@@ -481,9 +481,9 @@ attributes:
     from_schema: https://w3id.org/evorao/
     rank: 1000
     alias: targetedRegion
-    owner: Detection Kit
+    owner: DetectionKit
     domain_of:
-    - Detection Kit
+    - DetectionKit
     range: string
     required: false
     multivalued: false
@@ -495,7 +495,7 @@ attributes:
     from_schema: https://w3id.org/evorao/
     rank: 1000
     alias: hasIATAClassification
-    owner: Detection Kit
+    owner: DetectionKit
     domain_of:
     - Product
     range: IATAClassification
@@ -510,7 +510,7 @@ attributes:
     from_schema: https://w3id.org/evorao/
     rank: 1000
     alias: shippingConditions
-    owner: Detection Kit
+    owner: DetectionKit
     domain_of:
     - Product
     range: string
@@ -529,7 +529,7 @@ attributes:
     from_schema: https://w3id.org/evorao/
     rank: 1000
     alias: materialSafetyDataSheet
-    owner: Detection Kit
+    owner: DetectionKit
     domain_of:
     - Product
     range: MSDS
@@ -544,7 +544,7 @@ attributes:
     from_schema: https://w3id.org/evorao/
     rank: 1000
     alias: originator
-    owner: Detection Kit
+    owner: DetectionKit
     domain_of:
     - Product
     range: Originator
@@ -563,7 +563,7 @@ attributes:
     from_schema: https://w3id.org/evorao/
     rank: 1000
     alias: storageConditions
-    owner: Detection Kit
+    owner: DetectionKit
     domain_of:
     - Product
     range: string
@@ -578,7 +578,7 @@ attributes:
     from_schema: https://w3id.org/evorao/
     rank: 1000
     alias: thirdPartyDistributionConsent
-    owner: Detection Kit
+    owner: DetectionKit
     domain_of:
     - Product
     range: boolean
@@ -593,7 +593,7 @@ attributes:
     from_schema: https://w3id.org/evorao/
     rank: 1000
     alias: usageRestrictions
-    owner: Detection Kit
+    owner: DetectionKit
     domain_of:
     - Product
     range: string
@@ -610,7 +610,7 @@ attributes:
     - dcat:landingPage
     rank: 1000
     alias: accessPointURL
-    owner: Detection Kit
+    owner: DetectionKit
     domain_of:
     - ProductOrService
     range: uri
@@ -626,7 +626,7 @@ attributes:
     - dct:identifier
     rank: 1000
     alias: refSKU
-    owner: Detection Kit
+    owner: DetectionKit
     domain_of:
     - ProductOrService
     range: string
@@ -643,7 +643,7 @@ attributes:
     from_schema: https://w3id.org/evorao/
     rank: 1000
     alias: unitDefinition
-    owner: Detection Kit
+    owner: DetectionKit
     domain_of:
     - ProductOrService
     range: string
@@ -659,7 +659,7 @@ attributes:
     - dcat:theme
     rank: 1000
     alias: category
-    owner: Detection Kit
+    owner: DetectionKit
     domain_of:
     - ProductOrService
     range: ProductCategory
@@ -675,7 +675,7 @@ attributes:
     - dcat:theme
     rank: 1000
     alias: additionalCategory
-    owner: Detection Kit
+    owner: DetectionKit
     domain_of:
     - ProductOrService
     range: ProductCategory
@@ -694,7 +694,7 @@ attributes:
     rank: 1000
     ifabsent: string(on request)
     alias: unitCost
-    owner: Detection Kit
+    owner: DetectionKit
     domain_of:
     - ProductOrService
     range: string
@@ -709,7 +709,7 @@ attributes:
     from_schema: https://w3id.org/evorao/
     rank: 1000
     alias: qualityGrading
-    owner: Detection Kit
+    owner: DetectionKit
     domain_of:
     - ProductOrService
     range: string
@@ -728,7 +728,7 @@ attributes:
     from_schema: https://w3id.org/evorao/
     rank: 1000
     alias: pathogenIdentification
-    owner: Detection Kit
+    owner: DetectionKit
     domain_of:
     - ProductOrService
     range: PathogenIdentification
@@ -743,7 +743,7 @@ attributes:
     - wdp:P356
     rank: 1000
     alias: relatedDOI
-    owner: Detection Kit
+    owner: DetectionKit
     domain_of:
     - ProductOrService
     - Publication
@@ -761,7 +761,7 @@ attributes:
     - wdp:P12663
     rank: 1000
     alias: riskGroup
-    owner: Detection Kit
+    owner: DetectionKit
     domain_of:
     - ProductOrService
     range: RiskGroup
@@ -778,7 +778,7 @@ attributes:
     from_schema: https://w3id.org/evorao/
     rank: 1000
     alias: biosafetyRestrictions
-    owner: Detection Kit
+    owner: DetectionKit
     domain_of:
     - ProductOrService
     range: string
@@ -795,7 +795,7 @@ attributes:
     from_schema: https://w3id.org/evorao/
     rank: 1000
     alias: canItBeUsedToProduceGMO
-    owner: Detection Kit
+    owner: DetectionKit
     domain_of:
     - ProductOrService
     range: boolean
@@ -809,7 +809,7 @@ attributes:
     from_schema: https://w3id.org/evorao/
     rank: 1000
     alias: provider
-    owner: Detection Kit
+    owner: DetectionKit
     domain_of:
     - ProductOrService
     range: Provider
@@ -822,7 +822,7 @@ attributes:
     from_schema: https://w3id.org/evorao/
     rank: 1000
     alias: collection
-    owner: Detection Kit
+    owner: DetectionKit
     domain_of:
     - ProductOrService
     range: Collection
@@ -837,7 +837,7 @@ attributes:
     - dcat:keyword
     rank: 1000
     alias: keywords
-    owner: Detection Kit
+    owner: DetectionKit
     domain_of:
     - ProductOrService
     range: Keyword
@@ -855,7 +855,7 @@ attributes:
     rank: 1000
     ifabsent: string(on request)
     alias: availability
-    owner: Detection Kit
+    owner: DetectionKit
     domain_of:
     - ProductOrService
     range: string
@@ -869,7 +869,7 @@ attributes:
     from_schema: https://w3id.org/evorao/
     rank: 1000
     alias: complementaryDocument
-    owner: Detection Kit
+    owner: DetectionKit
     domain_of:
     - ProductOrService
     range: Document
@@ -884,7 +884,7 @@ attributes:
     from_schema: https://w3id.org/evorao/
     rank: 1000
     alias: technicalRecommendation
-    owner: Detection Kit
+    owner: DetectionKit
     domain_of:
     - ProductOrService
     range: string
@@ -897,7 +897,7 @@ attributes:
     from_schema: https://w3id.org/evorao/
     rank: 1000
     alias: productPicture
-    owner: Detection Kit
+    owner: DetectionKit
     domain_of:
     - ProductOrService
     range: Image
@@ -911,7 +911,7 @@ attributes:
     from_schema: https://w3id.org/evorao/
     rank: 1000
     alias: externalRelatedReference
-    owner: Detection Kit
+    owner: DetectionKit
     domain_of:
     - ProductOrService
     range: ExternalRelatedReference
@@ -927,7 +927,7 @@ attributes:
     - dct:conformsTo
     rank: 1000
     alias: certification
-    owner: Detection Kit
+    owner: DetectionKit
     domain_of:
     - ProductOrService
     range: Certification
@@ -940,7 +940,7 @@ attributes:
     from_schema: https://w3id.org/evorao/
     rank: 1000
     alias: internalReference
-    owner: Detection Kit
+    owner: DetectionKit
     domain_of:
     - ProductOrService
     range: string
@@ -953,7 +953,7 @@ attributes:
     from_schema: https://w3id.org/evorao/
     rank: 1000
     alias: note
-    owner: Detection Kit
+    owner: DetectionKit
     domain_of:
     - ProductOrService
     range: string
@@ -968,7 +968,7 @@ attributes:
     - dcat:contactPoint
     rank: 1000
     alias: contactPoint
-    owner: Detection Kit
+    owner: DetectionKit
     domain_of:
     - ProductOrService
     - PersonOrOrganization
@@ -993,7 +993,7 @@ attributes:
     rank: 1000
     slot_uri: dct:title
     alias: title
-    owner: Detection Kit
+    owner: DetectionKit
     domain_of:
     - Dataset
     - DataService
@@ -1018,7 +1018,7 @@ attributes:
     rank: 1000
     slot_uri: dct:description
     alias: description
-    owner: Detection Kit
+    owner: DetectionKit
     domain_of:
     - Dataset
     - DataService

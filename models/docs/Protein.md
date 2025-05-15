@@ -410,7 +410,7 @@ slot_usage:
     title: Biological Material origin
     domain_of:
     - Protein
-    - Nucleic Acid
+    - NucleicAcid
     - Pathogen
     range: BiologicalMaterialOrigin
     required: true
@@ -423,7 +423,7 @@ slot_usage:
     domain_of:
     - Protein
     - RecombinantPartIdentification
-    - Nucleic Acid
+    - NucleicAcid
     - Pathogen
     range: Sequence
     required: true
@@ -594,7 +594,7 @@ slot_usage:
     title: Biological Material origin
     domain_of:
     - Protein
-    - Nucleic Acid
+    - NucleicAcid
     - Pathogen
     range: BiologicalMaterialOrigin
     required: true
@@ -607,7 +607,7 @@ slot_usage:
     domain_of:
     - Protein
     - RecombinantPartIdentification
-    - Nucleic Acid
+    - NucleicAcid
     - Pathogen
     range: Sequence
     required: true
@@ -766,7 +766,7 @@ attributes:
     owner: Protein
     domain_of:
     - Protein
-    - Nucleic Acid
+    - NucleicAcid
     - Pathogen
     range: BiologicalMaterialOrigin
     required: true
@@ -783,7 +783,7 @@ attributes:
     domain_of:
     - Protein
     - RecombinantPartIdentification
-    - Nucleic Acid
+    - NucleicAcid
     - Pathogen
     range: Sequence
     required: true

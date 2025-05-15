@@ -1,5 +1,5 @@
 # Auto generated from evora_schema.yaml by pythongen.py version: 0.0.1
-# Generation date: 2025-05-14T09:59:59
+# Generation date: 2025-05-15T09:14:02
 # Schema: EVORAO
 #
 # id: https://w3id.org/evorao/
@@ -60,7 +60,7 @@ from linkml_runtime.linkml_model.types import Boolean, Datetime, Integer, String
 from linkml_runtime.utils.metamodelcore import Bool, URI, XSDDateTime
 
 metamodel_version = "1.7.0"
-version = "1.0.8693"
+version = "1.0.8702"
 
 # Namespaces
 EVORAO = CurieNamespace('EVORAO', 'https://w3id.org/evorao/')
@@ -1828,7 +1828,7 @@ class NucleicAcid(Product):
 
     class_class_uri: ClassVar[URIRef] = EVORAO["NucleicAcid"]
     class_class_curie: ClassVar[str] = "EVORAO:NucleicAcid"
-    class_name: ClassVar[str] = "Nucleic Acid"
+    class_name: ClassVar[str] = "NucleicAcid"
     class_model_uri: ClassVar[URIRef] = EVORAO.NucleicAcid
 
     title: str = None
@@ -1933,7 +1933,7 @@ class DetectionKit(Product):
 
     class_class_uri: ClassVar[URIRef] = EVORAO["DetectionKit"]
     class_class_curie: ClassVar[str] = "EVORAO:DetectionKit"
-    class_name: ClassVar[str] = "Detection Kit"
+    class_name: ClassVar[str] = "DetectionKit"
     class_model_uri: ClassVar[URIRef] = EVORAO.DetectionKit
 
     title: str = None
@@ -3701,59 +3701,59 @@ slots.Protein_theTAGStatusOfTheSolubilizedProtein = Slot(uri=EVORAO.theTAGStatus
 slots.Protein_typeOfFunctionalCharacterization = Slot(uri=EVORAO.typeOfFunctionalCharacterization, name="Protein_typeOfFunctionalCharacterization", curie=EVORAO.curie('typeOfFunctionalCharacterization'),
                    model_uri=EVORAO.Protein_typeOfFunctionalCharacterization, domain=Protein, range=Optional[Union[str, list[str]]])
 
-slots.Nucleic_Acid_biologicalMaterialOrigin = Slot(uri=EVORAO.biologicalMaterialOrigin, name="Nucleic Acid_biologicalMaterialOrigin", curie=EVORAO.curie('biologicalMaterialOrigin'),
-                   model_uri=EVORAO.Nucleic_Acid_biologicalMaterialOrigin, domain=NucleicAcid, range=Union[dict, BiologicalMaterialOrigin])
+slots.NucleicAcid_biologicalMaterialOrigin = Slot(uri=EVORAO.biologicalMaterialOrigin, name="NucleicAcid_biologicalMaterialOrigin", curie=EVORAO.curie('biologicalMaterialOrigin'),
+                   model_uri=EVORAO.NucleicAcid_biologicalMaterialOrigin, domain=NucleicAcid, range=Union[dict, BiologicalMaterialOrigin])
 
-slots.Nucleic_Acid_hasGbFileOfTheConstruct = Slot(uri=EVORAO.hasGbFileOfTheConstruct, name="Nucleic Acid_hasGbFileOfTheConstruct", curie=EVORAO.curie('hasGbFileOfTheConstruct'),
-                   model_uri=EVORAO.Nucleic_Acid_hasGbFileOfTheConstruct, domain=NucleicAcid, range=Optional[Union[Union[dict, "Data"], list[Union[dict, "Data"]]]])
+slots.NucleicAcid_hasGbFileOfTheConstruct = Slot(uri=EVORAO.hasGbFileOfTheConstruct, name="NucleicAcid_hasGbFileOfTheConstruct", curie=EVORAO.curie('hasGbFileOfTheConstruct'),
+                   model_uri=EVORAO.NucleicAcid_hasGbFileOfTheConstruct, domain=NucleicAcid, range=Optional[Union[Union[dict, "Data"], list[Union[dict, "Data"]]]])
 
-slots.Nucleic_Acid_sequence = Slot(uri=EVORAO.sequence, name="Nucleic Acid_sequence", curie=EVORAO.curie('sequence'),
-                   model_uri=EVORAO.Nucleic_Acid_sequence, domain=NucleicAcid, range=Union[Union[dict, Sequence], list[Union[dict, Sequence]]])
+slots.NucleicAcid_sequence = Slot(uri=EVORAO.sequence, name="NucleicAcid_sequence", curie=EVORAO.curie('sequence'),
+                   model_uri=EVORAO.NucleicAcid_sequence, domain=NucleicAcid, range=Union[Union[dict, Sequence], list[Union[dict, Sequence]]])
 
-slots.Nucleic_Acid_isItAClonedNucleicAcid = Slot(uri=EVORAO.isItAClonedNucleicAcid, name="Nucleic Acid_isItAClonedNucleicAcid", curie=EVORAO.curie('isItAClonedNucleicAcid'),
-                   model_uri=EVORAO.Nucleic_Acid_isItAClonedNucleicAcid, domain=NucleicAcid, range=Union[bool, Bool])
+slots.NucleicAcid_isItAClonedNucleicAcid = Slot(uri=EVORAO.isItAClonedNucleicAcid, name="NucleicAcid_isItAClonedNucleicAcid", curie=EVORAO.curie('isItAClonedNucleicAcid'),
+                   model_uri=EVORAO.NucleicAcid_isItAClonedNucleicAcid, domain=NucleicAcid, range=Union[bool, Bool])
 
-slots.Nucleic_Acid_clonedIntoPlasmid = Slot(uri=EVORAO.clonedIntoPlasmid, name="Nucleic Acid_clonedIntoPlasmid", curie=EVORAO.curie('clonedIntoPlasmid'),
-                   model_uri=EVORAO.Nucleic_Acid_clonedIntoPlasmid, domain=NucleicAcid, range=Optional[Union[dict, ExpressionVector]])
+slots.NucleicAcid_clonedIntoPlasmid = Slot(uri=EVORAO.clonedIntoPlasmid, name="NucleicAcid_clonedIntoPlasmid", curie=EVORAO.curie('clonedIntoPlasmid'),
+                   model_uri=EVORAO.NucleicAcid_clonedIntoPlasmid, domain=NucleicAcid, range=Optional[Union[dict, ExpressionVector]])
 
-slots.Nucleic_Acid_pasmidSelection = Slot(uri=EVORAO.pasmidSelection, name="Nucleic Acid_pasmidSelection", curie=EVORAO.curie('pasmidSelection'),
-                   model_uri=EVORAO.Nucleic_Acid_pasmidSelection, domain=NucleicAcid, range=Optional[Union[Union[dict, PlasmidSelection], list[Union[dict, PlasmidSelection]]]])
+slots.NucleicAcid_pasmidSelection = Slot(uri=EVORAO.pasmidSelection, name="NucleicAcid_pasmidSelection", curie=EVORAO.curie('pasmidSelection'),
+                   model_uri=EVORAO.NucleicAcid_pasmidSelection, domain=NucleicAcid, range=Optional[Union[Union[dict, PlasmidSelection], list[Union[dict, PlasmidSelection]]]])
 
-slots.Nucleic_Acid_hasTAG = Slot(uri=EVORAO.hasTAG, name="Nucleic Acid_hasTAG", curie=EVORAO.curie('hasTAG'),
-                   model_uri=EVORAO.Nucleic_Acid_hasTAG, domain=NucleicAcid, range=Union[dict, ProteinTag])
+slots.NucleicAcid_hasTAG = Slot(uri=EVORAO.hasTAG, name="NucleicAcid_hasTAG", curie=EVORAO.curie('hasTAG'),
+                   model_uri=EVORAO.NucleicAcid_hasTAG, domain=NucleicAcid, range=Union[dict, ProteinTag])
 
-slots.Nucleic_Acid_regionEncompassedInThisProduct = Slot(uri=EVORAO.regionEncompassedInThisProduct, name="Nucleic Acid_regionEncompassedInThisProduct", curie=EVORAO.curie('regionEncompassedInThisProduct'),
-                   model_uri=EVORAO.Nucleic_Acid_regionEncompassedInThisProduct, domain=NucleicAcid, range=str)
+slots.NucleicAcid_regionEncompassedInThisProduct = Slot(uri=EVORAO.regionEncompassedInThisProduct, name="NucleicAcid_regionEncompassedInThisProduct", curie=EVORAO.curie('regionEncompassedInThisProduct'),
+                   model_uri=EVORAO.NucleicAcid_regionEncompassedInThisProduct, domain=NucleicAcid, range=str)
 
-slots.Nucleic_Acid_mutationObserved = Slot(uri=EVORAO.mutationObserved, name="Nucleic Acid_mutationObserved", curie=EVORAO.curie('mutationObserved'),
-                   model_uri=EVORAO.Nucleic_Acid_mutationObserved, domain=NucleicAcid, range=Union[bool, Bool])
+slots.NucleicAcid_mutationObserved = Slot(uri=EVORAO.mutationObserved, name="NucleicAcid_mutationObserved", curie=EVORAO.curie('mutationObserved'),
+                   model_uri=EVORAO.NucleicAcid_mutationObserved, domain=NucleicAcid, range=Union[bool, Bool])
 
-slots.Nucleic_Acid_observedMutations = Slot(uri=EVORAO.observedMutations, name="Nucleic Acid_observedMutations", curie=EVORAO.curie('observedMutations'),
-                   model_uri=EVORAO.Nucleic_Acid_observedMutations, domain=NucleicAcid, range=Optional[str])
+slots.NucleicAcid_observedMutations = Slot(uri=EVORAO.observedMutations, name="NucleicAcid_observedMutations", curie=EVORAO.curie('observedMutations'),
+                   model_uri=EVORAO.NucleicAcid_observedMutations, domain=NucleicAcid, range=Optional[str])
 
-slots.Nucleic_Acid_identificationTechnique = Slot(uri=EVORAO.identificationTechnique, name="Nucleic Acid_identificationTechnique", curie=EVORAO.curie('identificationTechnique'),
-                   model_uri=EVORAO.Nucleic_Acid_identificationTechnique, domain=NucleicAcid, range=Optional[str])
+slots.NucleicAcid_identificationTechnique = Slot(uri=EVORAO.identificationTechnique, name="NucleicAcid_identificationTechnique", curie=EVORAO.curie('identificationTechnique'),
+                   model_uri=EVORAO.NucleicAcid_identificationTechnique, domain=NucleicAcid, range=Optional[str])
 
-slots.Nucleic_Acid_sequencing = Slot(uri=EVORAO.sequencing, name="Nucleic Acid_sequencing", curie=EVORAO.curie('sequencing'),
-                   model_uri=EVORAO.Nucleic_Acid_sequencing, domain=NucleicAcid, range=str)
+slots.NucleicAcid_sequencing = Slot(uri=EVORAO.sequencing, name="NucleicAcid_sequencing", curie=EVORAO.curie('sequencing'),
+                   model_uri=EVORAO.NucleicAcid_sequencing, domain=NucleicAcid, range=str)
 
-slots.Nucleic_Acid_titer = Slot(uri=EVORAO.titer, name="Nucleic Acid_titer", curie=EVORAO.curie('titer'),
-                   model_uri=EVORAO.Nucleic_Acid_titer, domain=NucleicAcid, range=str)
+slots.NucleicAcid_titer = Slot(uri=EVORAO.titer, name="NucleicAcid_titer", curie=EVORAO.curie('titer'),
+                   model_uri=EVORAO.NucleicAcid_titer, domain=NucleicAcid, range=str)
 
-slots.Nucleic_Acid_sequenceChecked = Slot(uri=EVORAO.sequenceChecked, name="Nucleic Acid_sequenceChecked", curie=EVORAO.curie('sequenceChecked'),
-                   model_uri=EVORAO.Nucleic_Acid_sequenceChecked, domain=NucleicAcid, range=Union[bool, Bool])
+slots.NucleicAcid_sequenceChecked = Slot(uri=EVORAO.sequenceChecked, name="NucleicAcid_sequenceChecked", curie=EVORAO.curie('sequenceChecked'),
+                   model_uri=EVORAO.NucleicAcid_sequenceChecked, domain=NucleicAcid, range=Union[bool, Bool])
 
-slots.Detection_Kit_hasSOPFile = Slot(uri=EVORAO.hasSOPFile, name="Detection Kit_hasSOPFile", curie=EVORAO.curie('hasSOPFile'),
-                   model_uri=EVORAO.Detection_Kit_hasSOPFile, domain=DetectionKit, range=Optional[Union[Union[dict, "File"], list[Union[dict, "File"]]]])
+slots.DetectionKit_hasSOPFile = Slot(uri=EVORAO.hasSOPFile, name="DetectionKit_hasSOPFile", curie=EVORAO.curie('hasSOPFile'),
+                   model_uri=EVORAO.DetectionKit_hasSOPFile, domain=DetectionKit, range=Optional[Union[Union[dict, "File"], list[Union[dict, "File"]]]])
 
-slots.Detection_Kit_specificityDocumented = Slot(uri=EVORAO.specificityDocumented, name="Detection Kit_specificityDocumented", curie=EVORAO.curie('specificityDocumented'),
-                   model_uri=EVORAO.Detection_Kit_specificityDocumented, domain=DetectionKit, range=Union[bool, Bool])
+slots.DetectionKit_specificityDocumented = Slot(uri=EVORAO.specificityDocumented, name="DetectionKit_specificityDocumented", curie=EVORAO.curie('specificityDocumented'),
+                   model_uri=EVORAO.DetectionKit_specificityDocumented, domain=DetectionKit, range=Union[bool, Bool])
 
-slots.Detection_Kit_specificity = Slot(uri=EVORAO.specificity, name="Detection Kit_specificity", curie=EVORAO.curie('specificity'),
-                   model_uri=EVORAO.Detection_Kit_specificity, domain=DetectionKit, range=Optional[str])
+slots.DetectionKit_specificity = Slot(uri=EVORAO.specificity, name="DetectionKit_specificity", curie=EVORAO.curie('specificity'),
+                   model_uri=EVORAO.DetectionKit_specificity, domain=DetectionKit, range=Optional[str])
 
-slots.Detection_Kit_targetedRegion = Slot(uri=EVORAO.targetedRegion, name="Detection Kit_targetedRegion", curie=EVORAO.curie('targetedRegion'),
-                   model_uri=EVORAO.Detection_Kit_targetedRegion, domain=DetectionKit, range=Optional[str])
+slots.DetectionKit_targetedRegion = Slot(uri=EVORAO.targetedRegion, name="DetectionKit_targetedRegion", curie=EVORAO.curie('targetedRegion'),
+                   model_uri=EVORAO.DetectionKit_targetedRegion, domain=DetectionKit, range=Optional[str])
 
 slots.Bundle_productsOfTheBundle = Slot(uri=EVORAO.productsOfTheBundle, name="Bundle_productsOfTheBundle", curie=EVORAO.curie('productsOfTheBundle'),
                    model_uri=EVORAO.Bundle_productsOfTheBundle, domain=Bundle, range=Union[Union[dict, Product], list[Union[dict, Product]]])

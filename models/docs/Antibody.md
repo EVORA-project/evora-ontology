@@ -371,7 +371,7 @@ slot_usage:
     title: specificity documented
     domain_of:
     - Antibody
-    - Detection Kit
+    - DetectionKit
     range: boolean
     required: true
     multivalued: false
@@ -441,7 +441,7 @@ slot_usage:
     title: specificity documented
     domain_of:
     - Antibody
-    - Detection Kit
+    - DetectionKit
     range: boolean
     required: true
     multivalued: false
@@ -507,7 +507,7 @@ attributes:
     owner: Antibody
     domain_of:
     - Antibody
-    - Detection Kit
+    - DetectionKit
     range: boolean
     required: true
     multivalued: false

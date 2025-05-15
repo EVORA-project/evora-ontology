@@ -77,7 +77,7 @@ from_schema: https://w3id.org/evorao/
 rank: 1000
 alias: clonedIntoPlasmid
 domain_of:
-- Nucleic Acid
+- NucleicAcid
 range: ExpressionVector
 required: false
 recommended: true

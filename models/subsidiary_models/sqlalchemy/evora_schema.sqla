@@ -1704,14 +1704,14 @@ class NucleicAcidHasGbFileOfTheConstruct(Base):
     """
     
     """
-    __tablename__ = 'Nucleic Acid_hasGbFileOfTheConstruct'
+    __tablename__ = 'NucleicAcid_hasGbFileOfTheConstruct'
 
-    Nucleic_Acid_id = Column(Integer(), ForeignKey('Nucleic Acid.id'), primary_key=True)
+    NucleicAcid_id = Column(Integer(), ForeignKey('NucleicAcid.id'), primary_key=True)
     hasGbFileOfTheConstruct_id = Column(Integer(), ForeignKey('Data.id'), primary_key=True)
     
 
     def __repr__(self):
-        return f"Nucleic Acid_hasGbFileOfTheConstruct(Nucleic_Acid_id={self.Nucleic_Acid_id},hasGbFileOfTheConstruct_id={self.hasGbFileOfTheConstruct_id},)"
+        return f"NucleicAcid_hasGbFileOfTheConstruct(NucleicAcid_id={self.NucleicAcid_id},hasGbFileOfTheConstruct_id={self.hasGbFileOfTheConstruct_id},)"
 
 
 
@@ -1722,14 +1722,14 @@ class NucleicAcidSequence(Base):
     """
     
     """
-    __tablename__ = 'Nucleic Acid_sequence'
+    __tablename__ = 'NucleicAcid_sequence'
 
-    Nucleic_Acid_id = Column(Integer(), ForeignKey('Nucleic Acid.id'), primary_key=True)
+    NucleicAcid_id = Column(Integer(), ForeignKey('NucleicAcid.id'), primary_key=True)
     sequence_id = Column(Integer(), ForeignKey('Sequence.id'), primary_key=True, nullable=False )
     
 
     def __repr__(self):
-        return f"Nucleic Acid_sequence(Nucleic_Acid_id={self.Nucleic_Acid_id},sequence_id={self.sequence_id},)"
+        return f"NucleicAcid_sequence(NucleicAcid_id={self.NucleicAcid_id},sequence_id={self.sequence_id},)"
 
 
 
@@ -1740,14 +1740,14 @@ class NucleicAcidPasmidSelection(Base):
     """
     
     """
-    __tablename__ = 'Nucleic Acid_pasmidSelection'
+    __tablename__ = 'NucleicAcid_pasmidSelection'
 
-    Nucleic_Acid_id = Column(Integer(), ForeignKey('Nucleic Acid.id'), primary_key=True)
+    NucleicAcid_id = Column(Integer(), ForeignKey('NucleicAcid.id'), primary_key=True)
     pasmidSelection_id = Column(Integer(), ForeignKey('PlasmidSelection.id'), primary_key=True)
     
 
     def __repr__(self):
-        return f"Nucleic Acid_pasmidSelection(Nucleic_Acid_id={self.Nucleic_Acid_id},pasmidSelection_id={self.pasmidSelection_id},)"
+        return f"NucleicAcid_pasmidSelection(NucleicAcid_id={self.NucleicAcid_id},pasmidSelection_id={self.pasmidSelection_id},)"
 
 
 
@@ -1758,14 +1758,14 @@ class NucleicAcidAdditionalCategory(Base):
     """
     
     """
-    __tablename__ = 'Nucleic Acid_additionalCategory'
+    __tablename__ = 'NucleicAcid_additionalCategory'
 
-    Nucleic_Acid_id = Column(Integer(), ForeignKey('Nucleic Acid.id'), primary_key=True)
+    NucleicAcid_id = Column(Integer(), ForeignKey('NucleicAcid.id'), primary_key=True)
     additionalCategory_id = Column(Integer(), ForeignKey('ProductCategory.id'), primary_key=True)
     
 
     def __repr__(self):
-        return f"Nucleic Acid_additionalCategory(Nucleic_Acid_id={self.Nucleic_Acid_id},additionalCategory_id={self.additionalCategory_id},)"
+        return f"NucleicAcid_additionalCategory(NucleicAcid_id={self.NucleicAcid_id},additionalCategory_id={self.additionalCategory_id},)"
 
 
 
@@ -1776,14 +1776,14 @@ class NucleicAcidPathogenIdentification(Base):
     """
     
     """
-    __tablename__ = 'Nucleic Acid_pathogenIdentification'
+    __tablename__ = 'NucleicAcid_pathogenIdentification'
 
-    Nucleic_Acid_id = Column(Integer(), ForeignKey('Nucleic Acid.id'), primary_key=True)
+    NucleicAcid_id = Column(Integer(), ForeignKey('NucleicAcid.id'), primary_key=True)
     pathogenIdentification_id = Column(Integer(), ForeignKey('PathogenIdentification.id'), primary_key=True, nullable=False )
     
 
     def __repr__(self):
-        return f"Nucleic Acid_pathogenIdentification(Nucleic_Acid_id={self.Nucleic_Acid_id},pathogenIdentification_id={self.pathogenIdentification_id},)"
+        return f"NucleicAcid_pathogenIdentification(NucleicAcid_id={self.NucleicAcid_id},pathogenIdentification_id={self.pathogenIdentification_id},)"
 
 
 
@@ -1794,14 +1794,14 @@ class NucleicAcidRelatedDOI(Base):
     """
     
     """
-    __tablename__ = 'Nucleic Acid_relatedDOI'
+    __tablename__ = 'NucleicAcid_relatedDOI'
 
-    Nucleic_Acid_id = Column(Integer(), ForeignKey('Nucleic Acid.id'), primary_key=True)
+    NucleicAcid_id = Column(Integer(), ForeignKey('NucleicAcid.id'), primary_key=True)
     relatedDOI_id = Column(Integer(), ForeignKey('DOI.id'), primary_key=True)
     
 
     def __repr__(self):
-        return f"Nucleic Acid_relatedDOI(Nucleic_Acid_id={self.Nucleic_Acid_id},relatedDOI_id={self.relatedDOI_id},)"
+        return f"NucleicAcid_relatedDOI(NucleicAcid_id={self.NucleicAcid_id},relatedDOI_id={self.relatedDOI_id},)"
 
 
 
@@ -1812,14 +1812,14 @@ class NucleicAcidCollection(Base):
     """
     
     """
-    __tablename__ = 'Nucleic Acid_collection'
+    __tablename__ = 'NucleicAcid_collection'
 
-    Nucleic_Acid_id = Column(Integer(), ForeignKey('Nucleic Acid.id'), primary_key=True)
+    NucleicAcid_id = Column(Integer(), ForeignKey('NucleicAcid.id'), primary_key=True)
     collection_id = Column(Integer(), ForeignKey('Collection.id'), primary_key=True, nullable=False )
     
 
     def __repr__(self):
-        return f"Nucleic Acid_collection(Nucleic_Acid_id={self.Nucleic_Acid_id},collection_id={self.collection_id},)"
+        return f"NucleicAcid_collection(NucleicAcid_id={self.NucleicAcid_id},collection_id={self.collection_id},)"
 
 
 
@@ -1830,14 +1830,14 @@ class NucleicAcidKeywords(Base):
     """
     
     """
-    __tablename__ = 'Nucleic Acid_keywords'
+    __tablename__ = 'NucleicAcid_keywords'
 
-    Nucleic_Acid_id = Column(Integer(), ForeignKey('Nucleic Acid.id'), primary_key=True)
+    NucleicAcid_id = Column(Integer(), ForeignKey('NucleicAcid.id'), primary_key=True)
     keywords_id = Column(Integer(), ForeignKey('Keyword.id'), primary_key=True, nullable=False )
     
 
     def __repr__(self):
-        return f"Nucleic Acid_keywords(Nucleic_Acid_id={self.Nucleic_Acid_id},keywords_id={self.keywords_id},)"
+        return f"NucleicAcid_keywords(NucleicAcid_id={self.NucleicAcid_id},keywords_id={self.keywords_id},)"
 
 
 
@@ -1848,14 +1848,14 @@ class NucleicAcidComplementaryDocument(Base):
     """
     
     """
-    __tablename__ = 'Nucleic Acid_complementaryDocument'
+    __tablename__ = 'NucleicAcid_complementaryDocument'
 
-    Nucleic_Acid_id = Column(Integer(), ForeignKey('Nucleic Acid.id'), primary_key=True)
+    NucleicAcid_id = Column(Integer(), ForeignKey('NucleicAcid.id'), primary_key=True)
     complementaryDocument_id = Column(Integer(), ForeignKey('Document.id'), primary_key=True)
     
 
     def __repr__(self):
-        return f"Nucleic Acid_complementaryDocument(Nucleic_Acid_id={self.Nucleic_Acid_id},complementaryDocument_id={self.complementaryDocument_id},)"
+        return f"NucleicAcid_complementaryDocument(NucleicAcid_id={self.NucleicAcid_id},complementaryDocument_id={self.complementaryDocument_id},)"
 
 
 
@@ -1866,14 +1866,14 @@ class NucleicAcidProductPicture(Base):
     """
     
     """
-    __tablename__ = 'Nucleic Acid_productPicture'
+    __tablename__ = 'NucleicAcid_productPicture'
 
-    Nucleic_Acid_id = Column(Integer(), ForeignKey('Nucleic Acid.id'), primary_key=True)
+    NucleicAcid_id = Column(Integer(), ForeignKey('NucleicAcid.id'), primary_key=True)
     productPicture_id = Column(Integer(), ForeignKey('Image.id'), primary_key=True)
     
 
     def __repr__(self):
-        return f"Nucleic Acid_productPicture(Nucleic_Acid_id={self.Nucleic_Acid_id},productPicture_id={self.productPicture_id},)"
+        return f"NucleicAcid_productPicture(NucleicAcid_id={self.NucleicAcid_id},productPicture_id={self.productPicture_id},)"
 
 
 
@@ -1884,14 +1884,14 @@ class NucleicAcidExternalRelatedReference(Base):
     """
     
     """
-    __tablename__ = 'Nucleic Acid_externalRelatedReference'
+    __tablename__ = 'NucleicAcid_externalRelatedReference'
 
-    Nucleic_Acid_id = Column(Integer(), ForeignKey('Nucleic Acid.id'), primary_key=True)
+    NucleicAcid_id = Column(Integer(), ForeignKey('NucleicAcid.id'), primary_key=True)
     externalRelatedReference_id = Column(Integer(), ForeignKey('ExternalRelatedReference.id'), primary_key=True)
     
 
     def __repr__(self):
-        return f"Nucleic Acid_externalRelatedReference(Nucleic_Acid_id={self.Nucleic_Acid_id},externalRelatedReference_id={self.externalRelatedReference_id},)"
+        return f"NucleicAcid_externalRelatedReference(NucleicAcid_id={self.NucleicAcid_id},externalRelatedReference_id={self.externalRelatedReference_id},)"
 
 
 
@@ -1902,14 +1902,14 @@ class NucleicAcidCertification(Base):
     """
     
     """
-    __tablename__ = 'Nucleic Acid_certification'
+    __tablename__ = 'NucleicAcid_certification'
 
-    Nucleic_Acid_id = Column(Integer(), ForeignKey('Nucleic Acid.id'), primary_key=True)
+    NucleicAcid_id = Column(Integer(), ForeignKey('NucleicAcid.id'), primary_key=True)
     certification_id = Column(Integer(), ForeignKey('Certification.id'), primary_key=True)
     
 
     def __repr__(self):
-        return f"Nucleic Acid_certification(Nucleic_Acid_id={self.Nucleic_Acid_id},certification_id={self.certification_id},)"
+        return f"NucleicAcid_certification(NucleicAcid_id={self.NucleicAcid_id},certification_id={self.certification_id},)"
 
 
 
@@ -1920,14 +1920,14 @@ class DetectionKitHasSOPFile(Base):
     """
     
     """
-    __tablename__ = 'Detection Kit_hasSOPFile'
+    __tablename__ = 'DetectionKit_hasSOPFile'
 
-    Detection_Kit_id = Column(Integer(), ForeignKey('Detection Kit.id'), primary_key=True)
+    DetectionKit_id = Column(Integer(), ForeignKey('DetectionKit.id'), primary_key=True)
     hasSOPFile_id = Column(Integer(), ForeignKey('File.id'), primary_key=True)
     
 
     def __repr__(self):
-        return f"Detection Kit_hasSOPFile(Detection_Kit_id={self.Detection_Kit_id},hasSOPFile_id={self.hasSOPFile_id},)"
+        return f"DetectionKit_hasSOPFile(DetectionKit_id={self.DetectionKit_id},hasSOPFile_id={self.hasSOPFile_id},)"
 
 
 
@@ -1938,14 +1938,14 @@ class DetectionKitAdditionalCategory(Base):
     """
     
     """
-    __tablename__ = 'Detection Kit_additionalCategory'
+    __tablename__ = 'DetectionKit_additionalCategory'
 
-    Detection_Kit_id = Column(Integer(), ForeignKey('Detection Kit.id'), primary_key=True)
+    DetectionKit_id = Column(Integer(), ForeignKey('DetectionKit.id'), primary_key=True)
     additionalCategory_id = Column(Integer(), ForeignKey('ProductCategory.id'), primary_key=True)
     
 
     def __repr__(self):
-        return f"Detection Kit_additionalCategory(Detection_Kit_id={self.Detection_Kit_id},additionalCategory_id={self.additionalCategory_id},)"
+        return f"DetectionKit_additionalCategory(DetectionKit_id={self.DetectionKit_id},additionalCategory_id={self.additionalCategory_id},)"
 
 
 
@@ -1956,14 +1956,14 @@ class DetectionKitPathogenIdentification(Base):
     """
     
     """
-    __tablename__ = 'Detection Kit_pathogenIdentification'
+    __tablename__ = 'DetectionKit_pathogenIdentification'
 
-    Detection_Kit_id = Column(Integer(), ForeignKey('Detection Kit.id'), primary_key=True)
+    DetectionKit_id = Column(Integer(), ForeignKey('DetectionKit.id'), primary_key=True)
     pathogenIdentification_id = Column(Integer(), ForeignKey('PathogenIdentification.id'), primary_key=True, nullable=False )
     
 
     def __repr__(self):
-        return f"Detection Kit_pathogenIdentification(Detection_Kit_id={self.Detection_Kit_id},pathogenIdentification_id={self.pathogenIdentification_id},)"
+        return f"DetectionKit_pathogenIdentification(DetectionKit_id={self.DetectionKit_id},pathogenIdentification_id={self.pathogenIdentification_id},)"
 
 
 
@@ -1974,14 +1974,14 @@ class DetectionKitRelatedDOI(Base):
     """
     
     """
-    __tablename__ = 'Detection Kit_relatedDOI'
+    __tablename__ = 'DetectionKit_relatedDOI'
 
-    Detection_Kit_id = Column(Integer(), ForeignKey('Detection Kit.id'), primary_key=True)
+    DetectionKit_id = Column(Integer(), ForeignKey('DetectionKit.id'), primary_key=True)
     relatedDOI_id = Column(Integer(), ForeignKey('DOI.id'), primary_key=True)
     
 
     def __repr__(self):
-        return f"Detection Kit_relatedDOI(Detection_Kit_id={self.Detection_Kit_id},relatedDOI_id={self.relatedDOI_id},)"
+        return f"DetectionKit_relatedDOI(DetectionKit_id={self.DetectionKit_id},relatedDOI_id={self.relatedDOI_id},)"
 
 
 
@@ -1992,14 +1992,14 @@ class DetectionKitCollection(Base):
     """
     
     """
-    __tablename__ = 'Detection Kit_collection'
+    __tablename__ = 'DetectionKit_collection'
 
-    Detection_Kit_id = Column(Integer(), ForeignKey('Detection Kit.id'), primary_key=True)
+    DetectionKit_id = Column(Integer(), ForeignKey('DetectionKit.id'), primary_key=True)
     collection_id = Column(Integer(), ForeignKey('Collection.id'), primary_key=True, nullable=False )
     
 
     def __repr__(self):
-        return f"Detection Kit_collection(Detection_Kit_id={self.Detection_Kit_id},collection_id={self.collection_id},)"
+        return f"DetectionKit_collection(DetectionKit_id={self.DetectionKit_id},collection_id={self.collection_id},)"
 
 
 
@@ -2010,14 +2010,14 @@ class DetectionKitKeywords(Base):
     """
     
     """
-    __tablename__ = 'Detection Kit_keywords'
+    __tablename__ = 'DetectionKit_keywords'
 
-    Detection_Kit_id = Column(Integer(), ForeignKey('Detection Kit.id'), primary_key=True)
+    DetectionKit_id = Column(Integer(), ForeignKey('DetectionKit.id'), primary_key=True)
     keywords_id = Column(Integer(), ForeignKey('Keyword.id'), primary_key=True, nullable=False )
     
 
     def __repr__(self):
-        return f"Detection Kit_keywords(Detection_Kit_id={self.Detection_Kit_id},keywords_id={self.keywords_id},)"
+        return f"DetectionKit_keywords(DetectionKit_id={self.DetectionKit_id},keywords_id={self.keywords_id},)"
 
 
 
@@ -2028,14 +2028,14 @@ class DetectionKitComplementaryDocument(Base):
     """
     
     """
-    __tablename__ = 'Detection Kit_complementaryDocument'
+    __tablename__ = 'DetectionKit_complementaryDocument'
 
-    Detection_Kit_id = Column(Integer(), ForeignKey('Detection Kit.id'), primary_key=True)
+    DetectionKit_id = Column(Integer(), ForeignKey('DetectionKit.id'), primary_key=True)
     complementaryDocument_id = Column(Integer(), ForeignKey('Document.id'), primary_key=True)
     
 
     def __repr__(self):
-        return f"Detection Kit_complementaryDocument(Detection_Kit_id={self.Detection_Kit_id},complementaryDocument_id={self.complementaryDocument_id},)"
+        return f"DetectionKit_complementaryDocument(DetectionKit_id={self.DetectionKit_id},complementaryDocument_id={self.complementaryDocument_id},)"
 
 
 
@@ -2046,14 +2046,14 @@ class DetectionKitProductPicture(Base):
     """
     
     """
-    __tablename__ = 'Detection Kit_productPicture'
+    __tablename__ = 'DetectionKit_productPicture'
 
-    Detection_Kit_id = Column(Integer(), ForeignKey('Detection Kit.id'), primary_key=True)
+    DetectionKit_id = Column(Integer(), ForeignKey('DetectionKit.id'), primary_key=True)
     productPicture_id = Column(Integer(), ForeignKey('Image.id'), primary_key=True)
     
 
     def __repr__(self):
-        return f"Detection Kit_productPicture(Detection_Kit_id={self.Detection_Kit_id},productPicture_id={self.productPicture_id},)"
+        return f"DetectionKit_productPicture(DetectionKit_id={self.DetectionKit_id},productPicture_id={self.productPicture_id},)"
 
 
 
@@ -2064,14 +2064,14 @@ class DetectionKitExternalRelatedReference(Base):
     """
     
     """
-    __tablename__ = 'Detection Kit_externalRelatedReference'
+    __tablename__ = 'DetectionKit_externalRelatedReference'
 
-    Detection_Kit_id = Column(Integer(), ForeignKey('Detection Kit.id'), primary_key=True)
+    DetectionKit_id = Column(Integer(), ForeignKey('DetectionKit.id'), primary_key=True)
     externalRelatedReference_id = Column(Integer(), ForeignKey('ExternalRelatedReference.id'), primary_key=True)
     
 
     def __repr__(self):
-        return f"Detection Kit_externalRelatedReference(Detection_Kit_id={self.Detection_Kit_id},externalRelatedReference_id={self.externalRelatedReference_id},)"
+        return f"DetectionKit_externalRelatedReference(DetectionKit_id={self.DetectionKit_id},externalRelatedReference_id={self.externalRelatedReference_id},)"
 
 
 
@@ -2082,14 +2082,14 @@ class DetectionKitCertification(Base):
     """
     
     """
-    __tablename__ = 'Detection Kit_certification'
+    __tablename__ = 'DetectionKit_certification'
 
-    Detection_Kit_id = Column(Integer(), ForeignKey('Detection Kit.id'), primary_key=True)
+    DetectionKit_id = Column(Integer(), ForeignKey('DetectionKit.id'), primary_key=True)
     certification_id = Column(Integer(), ForeignKey('Certification.id'), primary_key=True)
     
 
     def __repr__(self):
-        return f"Detection Kit_certification(Detection_Kit_id={self.Detection_Kit_id},certification_id={self.certification_id},)"
+        return f"DetectionKit_certification(DetectionKit_id={self.DetectionKit_id},certification_id={self.certification_id},)"
 
 
 
@@ -6456,7 +6456,7 @@ class NucleicAcid(Product):
     """
     Nucleic acid related to a pathogen. It can be extracted or synthetic
     """
-    __tablename__ = 'Nucleic Acid'
+    __tablename__ = 'NucleicAcid'
 
     id = Column(Integer(), primary_key=True, autoincrement=True , nullable=False )
     isItAClonedNucleicAcid = Column(Boolean(), nullable=False )
@@ -6507,55 +6507,55 @@ class NucleicAcid(Product):
     
     
     # ManyToMany
-    hasGbFileOfTheConstruct = relationship( "Data", secondary="Nucleic Acid_hasGbFileOfTheConstruct")
+    hasGbFileOfTheConstruct = relationship( "Data", secondary="NucleicAcid_hasGbFileOfTheConstruct")
     
     
     # ManyToMany
-    sequence = relationship( "Sequence", secondary="Nucleic Acid_sequence")
+    sequence = relationship( "Sequence", secondary="NucleicAcid_sequence")
     
     
     # ManyToMany
-    pasmidSelection = relationship( "PlasmidSelection", secondary="Nucleic Acid_pasmidSelection")
+    pasmidSelection = relationship( "PlasmidSelection", secondary="NucleicAcid_pasmidSelection")
     
     
     # ManyToMany
-    additionalCategory = relationship( "ProductCategory", secondary="Nucleic Acid_additionalCategory")
+    additionalCategory = relationship( "ProductCategory", secondary="NucleicAcid_additionalCategory")
     
     
     # ManyToMany
-    pathogenIdentification = relationship( "PathogenIdentification", secondary="Nucleic Acid_pathogenIdentification")
+    pathogenIdentification = relationship( "PathogenIdentification", secondary="NucleicAcid_pathogenIdentification")
     
     
     # ManyToMany
-    relatedDOI = relationship( "DOI", secondary="Nucleic Acid_relatedDOI")
+    relatedDOI = relationship( "DOI", secondary="NucleicAcid_relatedDOI")
     
     
     # ManyToMany
-    collection = relationship( "Collection", secondary="Nucleic Acid_collection")
+    collection = relationship( "Collection", secondary="NucleicAcid_collection")
     
     
     # ManyToMany
-    keywords = relationship( "Keyword", secondary="Nucleic Acid_keywords")
+    keywords = relationship( "Keyword", secondary="NucleicAcid_keywords")
     
     
     # ManyToMany
-    complementaryDocument = relationship( "Document", secondary="Nucleic Acid_complementaryDocument")
+    complementaryDocument = relationship( "Document", secondary="NucleicAcid_complementaryDocument")
     
     
     # ManyToMany
-    productPicture = relationship( "Image", secondary="Nucleic Acid_productPicture")
+    productPicture = relationship( "Image", secondary="NucleicAcid_productPicture")
     
     
     # ManyToMany
-    externalRelatedReference = relationship( "ExternalRelatedReference", secondary="Nucleic Acid_externalRelatedReference")
+    externalRelatedReference = relationship( "ExternalRelatedReference", secondary="NucleicAcid_externalRelatedReference")
     
     
     # ManyToMany
-    certification = relationship( "Certification", secondary="Nucleic Acid_certification")
+    certification = relationship( "Certification", secondary="NucleicAcid_certification")
     
 
     def __repr__(self):
-        return f"Nucleic Acid(id={self.id},isItAClonedNucleicAcid={self.isItAClonedNucleicAcid},regionEncompassedInThisProduct={self.regionEncompassedInThisProduct},mutationObserved={self.mutationObserved},observedMutations={self.observedMutations},identificationTechnique={self.identificationTechnique},sequencing={self.sequencing},titer={self.titer},sequenceChecked={self.sequenceChecked},shippingConditions={self.shippingConditions},storageConditions={self.storageConditions},thirdPartyDistributionConsent={self.thirdPartyDistributionConsent},usageRestrictions={self.usageRestrictions},accessPointURL={self.accessPointURL},refSKU={self.refSKU},unitDefinition={self.unitDefinition},unitCost={self.unitCost},qualityGrading={self.qualityGrading},biosafetyRestrictions={self.biosafetyRestrictions},canItBeUsedToProduceGMO={self.canItBeUsedToProduceGMO},availability={self.availability},technicalRecommendation={self.technicalRecommendation},internalReference={self.internalReference},note={self.note},title={self.title},description={self.description},biologicalMaterialOrigin_id={self.biologicalMaterialOrigin_id},clonedIntoPlasmid_id={self.clonedIntoPlasmid_id},hasTAG_id={self.hasTAG_id},hasIATAClassification_id={self.hasIATAClassification_id},materialSafetyDataSheet_id={self.materialSafetyDataSheet_id},originator_id={self.originator_id},category_id={self.category_id},riskGroup_id={self.riskGroup_id},provider_id={self.provider_id},contactPoint_id={self.contactPoint_id},)"
+        return f"NucleicAcid(id={self.id},isItAClonedNucleicAcid={self.isItAClonedNucleicAcid},regionEncompassedInThisProduct={self.regionEncompassedInThisProduct},mutationObserved={self.mutationObserved},observedMutations={self.observedMutations},identificationTechnique={self.identificationTechnique},sequencing={self.sequencing},titer={self.titer},sequenceChecked={self.sequenceChecked},shippingConditions={self.shippingConditions},storageConditions={self.storageConditions},thirdPartyDistributionConsent={self.thirdPartyDistributionConsent},usageRestrictions={self.usageRestrictions},accessPointURL={self.accessPointURL},refSKU={self.refSKU},unitDefinition={self.unitDefinition},unitCost={self.unitCost},qualityGrading={self.qualityGrading},biosafetyRestrictions={self.biosafetyRestrictions},canItBeUsedToProduceGMO={self.canItBeUsedToProduceGMO},availability={self.availability},technicalRecommendation={self.technicalRecommendation},internalReference={self.internalReference},note={self.note},title={self.title},description={self.description},biologicalMaterialOrigin_id={self.biologicalMaterialOrigin_id},clonedIntoPlasmid_id={self.clonedIntoPlasmid_id},hasTAG_id={self.hasTAG_id},hasIATAClassification_id={self.hasIATAClassification_id},materialSafetyDataSheet_id={self.materialSafetyDataSheet_id},originator_id={self.originator_id},category_id={self.category_id},riskGroup_id={self.riskGroup_id},provider_id={self.provider_id},contactPoint_id={self.contactPoint_id},)"
 
 
 
@@ -6571,7 +6571,7 @@ class DetectionKit(Product):
     """
     A detection kit for specific pathogens
     """
-    __tablename__ = 'Detection Kit'
+    __tablename__ = 'DetectionKit'
 
     id = Column(Integer(), primary_key=True, autoincrement=True , nullable=False )
     specificityDocumented = Column(Boolean(), nullable=False )
@@ -6611,47 +6611,47 @@ class DetectionKit(Product):
     
     
     # ManyToMany
-    hasSOPFile = relationship( "File", secondary="Detection Kit_hasSOPFile")
+    hasSOPFile = relationship( "File", secondary="DetectionKit_hasSOPFile")
     
     
     # ManyToMany
-    additionalCategory = relationship( "ProductCategory", secondary="Detection Kit_additionalCategory")
+    additionalCategory = relationship( "ProductCategory", secondary="DetectionKit_additionalCategory")
     
     
     # ManyToMany
-    pathogenIdentification = relationship( "PathogenIdentification", secondary="Detection Kit_pathogenIdentification")
+    pathogenIdentification = relationship( "PathogenIdentification", secondary="DetectionKit_pathogenIdentification")
     
     
     # ManyToMany
-    relatedDOI = relationship( "DOI", secondary="Detection Kit_relatedDOI")
+    relatedDOI = relationship( "DOI", secondary="DetectionKit_relatedDOI")
     
     
     # ManyToMany
-    collection = relationship( "Collection", secondary="Detection Kit_collection")
+    collection = relationship( "Collection", secondary="DetectionKit_collection")
     
     
     # ManyToMany
-    keywords = relationship( "Keyword", secondary="Detection Kit_keywords")
+    keywords = relationship( "Keyword", secondary="DetectionKit_keywords")
     
     
     # ManyToMany
-    complementaryDocument = relationship( "Document", secondary="Detection Kit_complementaryDocument")
+    complementaryDocument = relationship( "Document", secondary="DetectionKit_complementaryDocument")
     
     
     # ManyToMany
-    productPicture = relationship( "Image", secondary="Detection Kit_productPicture")
+    productPicture = relationship( "Image", secondary="DetectionKit_productPicture")
     
     
     # ManyToMany
-    externalRelatedReference = relationship( "ExternalRelatedReference", secondary="Detection Kit_externalRelatedReference")
+    externalRelatedReference = relationship( "ExternalRelatedReference", secondary="DetectionKit_externalRelatedReference")
     
     
     # ManyToMany
-    certification = relationship( "Certification", secondary="Detection Kit_certification")
+    certification = relationship( "Certification", secondary="DetectionKit_certification")
     
 
     def __repr__(self):
-        return f"Detection Kit(id={self.id},specificityDocumented={self.specificityDocumented},specificity={self.specificity},targetedRegion={self.targetedRegion},shippingConditions={self.shippingConditions},storageConditions={self.storageConditions},thirdPartyDistributionConsent={self.thirdPartyDistributionConsent},usageRestrictions={self.usageRestrictions},accessPointURL={self.accessPointURL},refSKU={self.refSKU},unitDefinition={self.unitDefinition},unitCost={self.unitCost},qualityGrading={self.qualityGrading},biosafetyRestrictions={self.biosafetyRestrictions},canItBeUsedToProduceGMO={self.canItBeUsedToProduceGMO},availability={self.availability},technicalRecommendation={self.technicalRecommendation},internalReference={self.internalReference},note={self.note},title={self.title},description={self.description},hasIATAClassification_id={self.hasIATAClassification_id},materialSafetyDataSheet_id={self.materialSafetyDataSheet_id},originator_id={self.originator_id},category_id={self.category_id},riskGroup_id={self.riskGroup_id},provider_id={self.provider_id},contactPoint_id={self.contactPoint_id},)"
+        return f"DetectionKit(id={self.id},specificityDocumented={self.specificityDocumented},specificity={self.specificity},targetedRegion={self.targetedRegion},shippingConditions={self.shippingConditions},storageConditions={self.storageConditions},thirdPartyDistributionConsent={self.thirdPartyDistributionConsent},usageRestrictions={self.usageRestrictions},accessPointURL={self.accessPointURL},refSKU={self.refSKU},unitDefinition={self.unitDefinition},unitCost={self.unitCost},qualityGrading={self.qualityGrading},biosafetyRestrictions={self.biosafetyRestrictions},canItBeUsedToProduceGMO={self.canItBeUsedToProduceGMO},availability={self.availability},technicalRecommendation={self.technicalRecommendation},internalReference={self.internalReference},note={self.note},title={self.title},description={self.description},hasIATAClassification_id={self.hasIATAClassification_id},materialSafetyDataSheet_id={self.materialSafetyDataSheet_id},originator_id={self.originator_id},category_id={self.category_id},riskGroup_id={self.riskGroup_id},provider_id={self.provider_id},contactPoint_id={self.contactPoint_id},)"
 
 
 

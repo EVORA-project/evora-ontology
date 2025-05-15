@@ -37,7 +37,7 @@
     "interoperability"
   ],
   "id": "https://w3id.org/evorao/",
-  "version": "1.0.8693",
+  "version": "1.0.8702",
   "imports": [
     "linkml:types"
   ],
@@ -6923,7 +6923,7 @@
       "@type": "SlotDefinition"
     },
     {
-      "name": "Nucleic_Acid_biologicalMaterialOrigin",
+      "name": "NucleicAcid_biologicalMaterialOrigin",
       "definition_uri": "https://w3id.org/evorao/biologicalMaterialOrigin",
       "description": "Information about the origin of the biological material, essential for access, utilization, and benefit-sharing of genetic resources in compliance with the Nagoya Protocol",
       "title": "Biological Material origin",
@@ -6944,7 +6944,7 @@
       "@type": "SlotDefinition"
     },
     {
-      "name": "Nucleic_Acid_hasGbFileOfTheConstruct",
+      "name": "NucleicAcid_hasGbFileOfTheConstruct",
       "definition_uri": "https://w3id.org/evorao/hasGbFileOfTheConstruct",
       "description": "A GenBank formatted file that contains detailed sequence and annotation information of a nucleic acid construct",
       "title": "has .gb file of the construct",
@@ -6965,7 +6965,7 @@
       "@type": "SlotDefinition"
     },
     {
-      "name": "Nucleic_Acid_sequence",
+      "name": "NucleicAcid_sequence",
       "definition_uri": "https://w3id.org/evorao/sequence",
       "description": "The related sequence information from a sequence provider or in fasta format",
       "title": "sequence",
@@ -6988,7 +6988,7 @@
       "@type": "SlotDefinition"
     },
     {
-      "name": "Nucleic_Acid_isItAClonedNucleicAcid",
+      "name": "NucleicAcid_isItAClonedNucleicAcid",
       "definition_uri": "https://w3id.org/evorao/isItAClonedNucleicAcid",
       "description": "Indicates that the nucleic acid sequence has been inserted into a plasmid vector for propagation or expression in a host organism",
       "title": "is it a Cloned Nucleic Acid?",
@@ -7008,7 +7008,7 @@
       "@type": "SlotDefinition"
     },
     {
-      "name": "Nucleic_Acid_clonedIntoPlasmid",
+      "name": "NucleicAcid_clonedIntoPlasmid",
       "definition_uri": "https://w3id.org/evorao/clonedIntoPlasmid",
       "description": "The plasmid into which the nucleic acid has been cloned",
       "title": "cloned into plasmid",
@@ -7029,7 +7029,7 @@
       "@type": "SlotDefinition"
     },
     {
-      "name": "Nucleic_Acid_pasmidSelection",
+      "name": "NucleicAcid_pasmidSelection",
       "definition_uri": "https://w3id.org/evorao/pasmidSelection",
       "description": "Specific selectable markers in the plasmid, such as antibiotic resistance genes, used to identify and maintain cells that contain the plasmid",
       "title": "plasmid selection",
@@ -7051,7 +7051,7 @@
       "@type": "SlotDefinition"
     },
     {
-      "name": "Nucleic_Acid_hasTAG",
+      "name": "NucleicAcid_hasTAG",
       "definition_uri": "https://w3id.org/evorao/hasTAG",
       "description": "TAG sequence used for purposes such as purification, detection, or localization",
       "title": "TAG",
@@ -7072,7 +7072,7 @@
       "@type": "SlotDefinition"
     },
     {
-      "name": "Nucleic_Acid_regionEncompassedInThisProduct",
+      "name": "NucleicAcid_regionEncompassedInThisProduct",
       "definition_uri": "https://w3id.org/evorao/regionEncompassedInThisProduct",
       "description": "The specific region encompassed in the product",
       "title": "region encompassed in this Product",
@@ -7092,7 +7092,7 @@
       "@type": "SlotDefinition"
     },
     {
-      "name": "Nucleic_Acid_mutationObserved",
+      "name": "NucleicAcid_mutationObserved",
       "definition_uri": "https://w3id.org/evorao/mutationObserved",
       "description": "Indicates if the current nucleic acid has No mutation compared to the reference sequence if the value is set to false or if it\n contains mutations (no frameshift, no unexpected STOP codon) if set to true",
       "title": "mutation observed",
@@ -7112,7 +7112,7 @@
       "@type": "SlotDefinition"
     },
     {
-      "name": "Nucleic_Acid_observedMutations",
+      "name": "NucleicAcid_observedMutations",
       "definition_uri": "https://w3id.org/evorao/observedMutations",
       "description": "The specific mutations that have been identified and documented in the nucleic acid sequence",
       "title": "observed mutations",
@@ -7131,7 +7131,7 @@
       "@type": "SlotDefinition"
     },
     {
-      "name": "Nucleic_Acid_identificationTechnique",
+      "name": "NucleicAcid_identificationTechnique",
       "definition_uri": "https://w3id.org/evorao/identificationTechnique",
       "description": "A method or procedure used to detect, identify, and confirm the presence of a specific nucleic acid sequence, pathogen, or associated constructs. This may involve various techniques such as PCR, sequencing, hybridization, or other molecular methods, utilizing specific tools and procedures for accurate detection and analysis",
       "title": "identification technique",
@@ -7150,7 +7150,7 @@
       "@type": "SlotDefinition"
     },
     {
-      "name": "Nucleic_Acid_sequencing",
+      "name": "NucleicAcid_sequencing",
       "definition_uri": "https://w3id.org/evorao/sequencing",
       "description": "Refers to the level of sequencing performed on the nucleic acid. Possible values include 'Not sequenced' (no sequencing has been performed), 'Partly sequenced' (only a portion of the nucleic acid sequence has been determined), and 'Fully sequenced' (the entire nucleic acid sequence has been determined).",
       "title": "sequencing",
@@ -7178,7 +7178,7 @@
       "@type": "SlotDefinition"
     },
     {
-      "name": "Nucleic_Acid_titer",
+      "name": "NucleicAcid_titer",
       "definition_uri": "https://w3id.org/evorao/titer",
       "description": "The titer value, its corresponding unit, and the method of quantification (e.g., RT-qPCR, TCID50), representing the concentration or amount of unit present in the sample. The titer corresponds to the highest dilution factor that still yields a positive reading",
       "title": "titer",
@@ -7201,7 +7201,7 @@
       "@type": "SlotDefinition"
     },
     {
-      "name": "Nucleic_Acid_sequenceChecked",
+      "name": "NucleicAcid_sequenceChecked",
       "definition_uri": "https://w3id.org/evorao/sequenceChecked",
       "description": "Tell whether or not the sequence of the product was controlled (compulsory for cloned products)",
       "title": "sequence checked",
@@ -7224,7 +7224,7 @@
       "@type": "SlotDefinition"
     },
     {
-      "name": "Detection_Kit_hasSOPFile",
+      "name": "DetectionKit_hasSOPFile",
       "definition_uri": "https://w3id.org/evorao/hasSOPFile",
       "description": "The related standard operating procedure file",
       "title": "has SOP File",
@@ -7245,7 +7245,7 @@
       "@type": "SlotDefinition"
     },
     {
-      "name": "Detection_Kit_specificityDocumented",
+      "name": "DetectionKit_specificityDocumented",
       "definition_uri": "https://w3id.org/evorao/specificityDocumented",
       "description": "Boolean value indicating whether the specificity of the product has been formally documented",
       "title": "specificity documented",
@@ -7265,7 +7265,7 @@
       "@type": "SlotDefinition"
     },
     {
-      "name": "Detection_Kit_specificity",
+      "name": "DetectionKit_specificity",
       "definition_uri": "https://w3id.org/evorao/specificity",
       "description": "Details on the ability of a detection kit to correctly identify negative results, distinguishing between the target analyte and other substances without cross-reacting",
       "title": "specificity",
@@ -7284,7 +7284,7 @@
       "@type": "SlotDefinition"
     },
     {
-      "name": "Detection_Kit_targetedRegion",
+      "name": "DetectionKit_targetedRegion",
       "definition_uri": "https://w3id.org/evorao/targetedRegion",
       "description": "The specific area or sequence within the target analyte that the detection kit is designed to identify and interact with, ensuring accurate detection and analysis.",
       "title": "targeted region",
@@ -10164,20 +10164,20 @@
         "Product_storageConditions",
         "Product_thirdPartyDistributionConsent",
         "Product_usageRestrictions",
-        "Nucleic_Acid_biologicalMaterialOrigin",
-        "Nucleic_Acid_hasGbFileOfTheConstruct",
-        "Nucleic_Acid_sequence",
-        "Nucleic_Acid_isItAClonedNucleicAcid",
-        "Nucleic_Acid_clonedIntoPlasmid",
-        "Nucleic_Acid_pasmidSelection",
-        "Nucleic_Acid_hasTAG",
-        "Nucleic_Acid_regionEncompassedInThisProduct",
-        "Nucleic_Acid_mutationObserved",
-        "Nucleic_Acid_observedMutations",
-        "Nucleic_Acid_identificationTechnique",
-        "Nucleic_Acid_sequencing",
-        "Nucleic_Acid_titer",
-        "Nucleic_Acid_sequenceChecked"
+        "NucleicAcid_biologicalMaterialOrigin",
+        "NucleicAcid_hasGbFileOfTheConstruct",
+        "NucleicAcid_sequence",
+        "NucleicAcid_isItAClonedNucleicAcid",
+        "NucleicAcid_clonedIntoPlasmid",
+        "NucleicAcid_pasmidSelection",
+        "NucleicAcid_hasTAG",
+        "NucleicAcid_regionEncompassedInThisProduct",
+        "NucleicAcid_mutationObserved",
+        "NucleicAcid_observedMutations",
+        "NucleicAcid_identificationTechnique",
+        "NucleicAcid_sequencing",
+        "NucleicAcid_titer",
+        "NucleicAcid_sequenceChecked"
       ],
       "slot_usage": {},
       "class_uri": "https://w3id.org/evorao/NucleicAcid",
@@ -10224,10 +10224,10 @@
         "Product_storageConditions",
         "Product_thirdPartyDistributionConsent",
         "Product_usageRestrictions",
-        "Detection_Kit_hasSOPFile",
-        "Detection_Kit_specificityDocumented",
-        "Detection_Kit_specificity",
-        "Detection_Kit_targetedRegion"
+        "DetectionKit_hasSOPFile",
+        "DetectionKit_specificityDocumented",
+        "DetectionKit_specificity",
+        "DetectionKit_targetedRegion"
       ],
       "slot_usage": {},
       "class_uri": "https://w3id.org/evorao/DetectionKit",
@@ -11018,9 +11018,9 @@
   ],
   "metamodel_version": "1.7.0",
   "source_file": "evora_schema.yaml",
-  "source_file_date": "2025-05-14T09:59:41",
-  "source_file_size": 185510,
-  "generation_date": "2025-05-14T09:59:55",
+  "source_file_date": "2025-05-15T09:13:41",
+  "source_file_size": 185472,
+  "generation_date": "2025-05-15T09:13:57",
   "@type": "SchemaDefinition",
   "@context": [
     "https://w3id.org/linkml/types.context.jsonld",

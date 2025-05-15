@@ -1,6 +1,6 @@
 
 
-# Class: Nucleic Acid (Nucleic Acid) 
+# Class: Nucleic Acid (NucleicAcid) 
 
 
 _Nucleic acid related to a pathogen. It can be extracted or synthetic_
@@ -385,7 +385,7 @@ URI: [EVORAO:NucleicAcid](https://w3id.org/evorao/NucleicAcid)
 
 <details>
 ```yaml
-name: Nucleic Acid
+name: NucleicAcid
 description: Nucleic acid related to a pathogen. It can be extracted or synthetic
 title: Nucleic Acid
 from_schema: https://w3id.org/evorao/
@@ -416,7 +416,7 @@ slot_usage:
       with the Nagoya Protocol
     title: Biological Material origin
     domain_of:
-    - Nucleic Acid
+    - NucleicAcid
     - Protein
     - Pathogen
     range: BiologicalMaterialOrigin
@@ -428,7 +428,7 @@ slot_usage:
       information of a nucleic acid construct
     title: has .gb file of the construct
     domain_of:
-    - Nucleic Acid
+    - NucleicAcid
     range: Data
     required: false
     multivalued: true
@@ -438,7 +438,7 @@ slot_usage:
       format
     title: sequence
     domain_of:
-    - Nucleic Acid
+    - NucleicAcid
     - RecombinantPartIdentification
     - Protein
     - Pathogen
@@ -451,7 +451,7 @@ slot_usage:
       plasmid vector for propagation or expression in a host organism
     title: is it a Cloned Nucleic Acid?
     domain_of:
-    - Nucleic Acid
+    - NucleicAcid
     range: boolean
     required: true
     multivalued: false
@@ -460,7 +460,7 @@ slot_usage:
     description: The plasmid into which the nucleic acid has been cloned
     title: cloned into plasmid
     domain_of:
-    - Nucleic Acid
+    - NucleicAcid
     range: ExpressionVector
     required: false
     recommended: true
@@ -471,7 +471,7 @@ slot_usage:
       genes, used to identify and maintain cells that contain the plasmid
     title: plasmid selection
     domain_of:
-    - Nucleic Acid
+    - NucleicAcid
     range: PlasmidSelection
     required: false
     recommended: true
@@ -482,7 +482,7 @@ slot_usage:
       localization
     title: TAG
     domain_of:
-    - Nucleic Acid
+    - NucleicAcid
     range: ProteinTag
     required: true
     multivalued: false
@@ -491,7 +491,7 @@ slot_usage:
     description: The specific region encompassed in the product
     title: region encompassed in this Product
     domain_of:
-    - Nucleic Acid
+    - NucleicAcid
     range: string
     required: true
     multivalued: false
@@ -502,7 +502,7 @@ slot_usage:
       \ (no frameshift, no unexpected STOP codon) if set to true"
     title: mutation observed
     domain_of:
-    - Nucleic Acid
+    - NucleicAcid
     range: boolean
     required: true
     multivalued: false
@@ -512,7 +512,7 @@ slot_usage:
       the nucleic acid sequence
     title: observed mutations
     domain_of:
-    - Nucleic Acid
+    - NucleicAcid
     range: string
     required: false
     multivalued: false
@@ -525,7 +525,7 @@ slot_usage:
       and analysis
     title: identification technique
     domain_of:
-    - Nucleic Acid
+    - NucleicAcid
     - Pathogen
     range: string
     required: false
@@ -540,7 +540,7 @@ slot_usage:
     comments:
     - Cloned products have to be sequenced
     domain_of:
-    - Nucleic Acid
+    - NucleicAcid
     range: string
     required: true
     multivalued: false
@@ -552,7 +552,7 @@ slot_usage:
       yields a positive reading
     title: titer
     domain_of:
-    - Nucleic Acid
+    - NucleicAcid
     - Pathogen
     range: string
     required: false
@@ -565,7 +565,7 @@ slot_usage:
     comments:
     - Sequence check is mandatory for cloned products
     domain_of:
-    - Nucleic Acid
+    - NucleicAcid
     range: boolean
     required: true
     multivalued: false
@@ -577,7 +577,7 @@ slot_usage:
 
 <details>
 ```yaml
-name: Nucleic Acid
+name: NucleicAcid
 description: Nucleic acid related to a pathogen. It can be extracted or synthetic
 title: Nucleic Acid
 from_schema: https://w3id.org/evorao/
@@ -593,7 +593,7 @@ slot_usage:
       with the Nagoya Protocol
     title: Biological Material origin
     domain_of:
-    - Nucleic Acid
+    - NucleicAcid
     - Protein
     - Pathogen
     range: BiologicalMaterialOrigin
@@ -605,7 +605,7 @@ slot_usage:
       information of a nucleic acid construct
     title: has .gb file of the construct
     domain_of:
-    - Nucleic Acid
+    - NucleicAcid
     range: Data
     required: false
     multivalued: true
@@ -615,7 +615,7 @@ slot_usage:
       format
     title: sequence
     domain_of:
-    - Nucleic Acid
+    - NucleicAcid
     - RecombinantPartIdentification
     - Protein
     - Pathogen
@@ -628,7 +628,7 @@ slot_usage:
       plasmid vector for propagation or expression in a host organism
     title: is it a Cloned Nucleic Acid?
     domain_of:
-    - Nucleic Acid
+    - NucleicAcid
     range: boolean
     required: true
     multivalued: false
@@ -637,7 +637,7 @@ slot_usage:
     description: The plasmid into which the nucleic acid has been cloned
     title: cloned into plasmid
     domain_of:
-    - Nucleic Acid
+    - NucleicAcid
     range: ExpressionVector
     required: false
     recommended: true
@@ -648,7 +648,7 @@ slot_usage:
       genes, used to identify and maintain cells that contain the plasmid
     title: plasmid selection
     domain_of:
-    - Nucleic Acid
+    - NucleicAcid
     range: PlasmidSelection
     required: false
     recommended: true
@@ -659,7 +659,7 @@ slot_usage:
       localization
     title: TAG
     domain_of:
-    - Nucleic Acid
+    - NucleicAcid
     range: ProteinTag
     required: true
     multivalued: false
@@ -668,7 +668,7 @@ slot_usage:
     description: The specific region encompassed in the product
     title: region encompassed in this Product
     domain_of:
-    - Nucleic Acid
+    - NucleicAcid
     range: string
     required: true
     multivalued: false
@@ -679,7 +679,7 @@ slot_usage:
       \ (no frameshift, no unexpected STOP codon) if set to true"
     title: mutation observed
     domain_of:
-    - Nucleic Acid
+    - NucleicAcid
     range: boolean
     required: true
     multivalued: false
@@ -689,7 +689,7 @@ slot_usage:
       the nucleic acid sequence
     title: observed mutations
     domain_of:
-    - Nucleic Acid
+    - NucleicAcid
     range: string
     required: false
     multivalued: false
@@ -702,7 +702,7 @@ slot_usage:
       and analysis
     title: identification technique
     domain_of:
-    - Nucleic Acid
+    - NucleicAcid
     - Pathogen
     range: string
     required: false
@@ -717,7 +717,7 @@ slot_usage:
     comments:
     - Cloned products have to be sequenced
     domain_of:
-    - Nucleic Acid
+    - NucleicAcid
     range: string
     required: true
     multivalued: false
@@ -729,7 +729,7 @@ slot_usage:
       yields a positive reading
     title: titer
     domain_of:
-    - Nucleic Acid
+    - NucleicAcid
     - Pathogen
     range: string
     required: false
@@ -742,7 +742,7 @@ slot_usage:
     comments:
     - Sequence check is mandatory for cloned products
     domain_of:
-    - Nucleic Acid
+    - NucleicAcid
     range: boolean
     required: true
     multivalued: false
@@ -756,9 +756,9 @@ attributes:
     from_schema: https://w3id.org/evorao/
     rank: 1000
     alias: biologicalMaterialOrigin
-    owner: Nucleic Acid
+    owner: NucleicAcid
     domain_of:
-    - Nucleic Acid
+    - NucleicAcid
     - Protein
     - Pathogen
     range: BiologicalMaterialOrigin
@@ -772,9 +772,9 @@ attributes:
     from_schema: https://w3id.org/evorao/
     rank: 1000
     alias: hasGbFileOfTheConstruct
-    owner: Nucleic Acid
+    owner: NucleicAcid
     domain_of:
-    - Nucleic Acid
+    - NucleicAcid
     range: Data
     required: false
     multivalued: true
@@ -786,9 +786,9 @@ attributes:
     from_schema: https://w3id.org/evorao/
     rank: 1000
     alias: sequence
-    owner: Nucleic Acid
+    owner: NucleicAcid
     domain_of:
-    - Nucleic Acid
+    - NucleicAcid
     - RecombinantPartIdentification
     - Protein
     - Pathogen
@@ -804,9 +804,9 @@ attributes:
     from_schema: https://w3id.org/evorao/
     rank: 1000
     alias: isItAClonedNucleicAcid
-    owner: Nucleic Acid
+    owner: NucleicAcid
     domain_of:
-    - Nucleic Acid
+    - NucleicAcid
     range: boolean
     required: true
     multivalued: false
@@ -817,9 +817,9 @@ attributes:
     from_schema: https://w3id.org/evorao/
     rank: 1000
     alias: clonedIntoPlasmid
-    owner: Nucleic Acid
+    owner: NucleicAcid
     domain_of:
-    - Nucleic Acid
+    - NucleicAcid
     range: ExpressionVector
     required: false
     recommended: true
@@ -832,9 +832,9 @@ attributes:
     from_schema: https://w3id.org/evorao/
     rank: 1000
     alias: pasmidSelection
-    owner: Nucleic Acid
+    owner: NucleicAcid
     domain_of:
-    - Nucleic Acid
+    - NucleicAcid
     range: PlasmidSelection
     required: false
     recommended: true
@@ -847,9 +847,9 @@ attributes:
     from_schema: https://w3id.org/evorao/
     rank: 1000
     alias: hasTAG
-    owner: Nucleic Acid
+    owner: NucleicAcid
     domain_of:
-    - Nucleic Acid
+    - NucleicAcid
     range: ProteinTag
     required: true
     multivalued: false
@@ -860,9 +860,9 @@ attributes:
     from_schema: https://w3id.org/evorao/
     rank: 1000
     alias: regionEncompassedInThisProduct
-    owner: Nucleic Acid
+    owner: NucleicAcid
     domain_of:
-    - Nucleic Acid
+    - NucleicAcid
     range: string
     required: true
     multivalued: false
@@ -875,9 +875,9 @@ attributes:
     from_schema: https://w3id.org/evorao/
     rank: 1000
     alias: mutationObserved
-    owner: Nucleic Acid
+    owner: NucleicAcid
     domain_of:
-    - Nucleic Acid
+    - NucleicAcid
     range: boolean
     required: true
     multivalued: false
@@ -889,9 +889,9 @@ attributes:
     from_schema: https://w3id.org/evorao/
     rank: 1000
     alias: observedMutations
-    owner: Nucleic Acid
+    owner: NucleicAcid
     domain_of:
-    - Nucleic Acid
+    - NucleicAcid
     range: string
     required: false
     multivalued: false
@@ -906,9 +906,9 @@ attributes:
     from_schema: https://w3id.org/evorao/
     rank: 1000
     alias: identificationTechnique
-    owner: Nucleic Acid
+    owner: NucleicAcid
     domain_of:
-    - Nucleic Acid
+    - NucleicAcid
     - Pathogen
     range: string
     required: false
@@ -925,9 +925,9 @@ attributes:
     from_schema: https://w3id.org/evorao/
     rank: 1000
     alias: sequencing
-    owner: Nucleic Acid
+    owner: NucleicAcid
     domain_of:
-    - Nucleic Acid
+    - NucleicAcid
     range: string
     required: true
     multivalued: false
@@ -947,9 +947,9 @@ attributes:
     - wd:Q2166189
     rank: 1000
     alias: titer
-    owner: Nucleic Acid
+    owner: NucleicAcid
     domain_of:
-    - Nucleic Acid
+    - NucleicAcid
     - Pathogen
     range: string
     required: false
@@ -964,9 +964,9 @@ attributes:
     from_schema: https://w3id.org/evorao/
     rank: 1000
     alias: sequenceChecked
-    owner: Nucleic Acid
+    owner: NucleicAcid
     domain_of:
-    - Nucleic Acid
+    - NucleicAcid
     range: boolean
     required: true
     multivalued: false
@@ -978,7 +978,7 @@ attributes:
     from_schema: https://w3id.org/evorao/
     rank: 1000
     alias: hasIATAClassification
-    owner: Nucleic Acid
+    owner: NucleicAcid
     domain_of:
     - Product
     range: IATAClassification
@@ -993,7 +993,7 @@ attributes:
     from_schema: https://w3id.org/evorao/
     rank: 1000
     alias: shippingConditions
-    owner: Nucleic Acid
+    owner: NucleicAcid
     domain_of:
     - Product
     range: string
@@ -1012,7 +1012,7 @@ attributes:
     from_schema: https://w3id.org/evorao/
     rank: 1000
     alias: materialSafetyDataSheet
-    owner: Nucleic Acid
+    owner: NucleicAcid
     domain_of:
     - Product
     range: MSDS
@@ -1027,7 +1027,7 @@ attributes:
     from_schema: https://w3id.org/evorao/
     rank: 1000
     alias: originator
-    owner: Nucleic Acid
+    owner: NucleicAcid
     domain_of:
     - Product
     range: Originator
@@ -1046,7 +1046,7 @@ attributes:
     from_schema: https://w3id.org/evorao/
     rank: 1000
     alias: storageConditions
-    owner: Nucleic Acid
+    owner: NucleicAcid
     domain_of:
     - Product
     range: string
@@ -1061,7 +1061,7 @@ attributes:
     from_schema: https://w3id.org/evorao/
     rank: 1000
     alias: thirdPartyDistributionConsent
-    owner: Nucleic Acid
+    owner: NucleicAcid
     domain_of:
     - Product
     range: boolean
@@ -1076,7 +1076,7 @@ attributes:
     from_schema: https://w3id.org/evorao/
     rank: 1000
     alias: usageRestrictions
-    owner: Nucleic Acid
+    owner: NucleicAcid
     domain_of:
     - Product
     range: string
@@ -1093,7 +1093,7 @@ attributes:
     - dcat:landingPage
     rank: 1000
     alias: accessPointURL
-    owner: Nucleic Acid
+    owner: NucleicAcid
     domain_of:
     - ProductOrService
     range: uri
@@ -1109,7 +1109,7 @@ attributes:
     - dct:identifier
     rank: 1000
     alias: refSKU
-    owner: Nucleic Acid
+    owner: NucleicAcid
     domain_of:
     - ProductOrService
     range: string
@@ -1126,7 +1126,7 @@ attributes:
     from_schema: https://w3id.org/evorao/
     rank: 1000
     alias: unitDefinition
-    owner: Nucleic Acid
+    owner: NucleicAcid
     domain_of:
     - ProductOrService
     range: string
@@ -1142,7 +1142,7 @@ attributes:
     - dcat:theme
     rank: 1000
     alias: category
-    owner: Nucleic Acid
+    owner: NucleicAcid
     domain_of:
     - ProductOrService
     range: ProductCategory
@@ -1158,7 +1158,7 @@ attributes:
     - dcat:theme
     rank: 1000
     alias: additionalCategory
-    owner: Nucleic Acid
+    owner: NucleicAcid
     domain_of:
     - ProductOrService
     range: ProductCategory
@@ -1177,7 +1177,7 @@ attributes:
     rank: 1000
     ifabsent: string(on request)
     alias: unitCost
-    owner: Nucleic Acid
+    owner: NucleicAcid
     domain_of:
     - ProductOrService
     range: string
@@ -1192,7 +1192,7 @@ attributes:
     from_schema: https://w3id.org/evorao/
     rank: 1000
     alias: qualityGrading
-    owner: Nucleic Acid
+    owner: NucleicAcid
     domain_of:
     - ProductOrService
     range: string
@@ -1211,7 +1211,7 @@ attributes:
     from_schema: https://w3id.org/evorao/
     rank: 1000
     alias: pathogenIdentification
-    owner: Nucleic Acid
+    owner: NucleicAcid
     domain_of:
     - ProductOrService
     range: PathogenIdentification
@@ -1226,7 +1226,7 @@ attributes:
     - wdp:P356
     rank: 1000
     alias: relatedDOI
-    owner: Nucleic Acid
+    owner: NucleicAcid
     domain_of:
     - ProductOrService
     - Publication
@@ -1244,7 +1244,7 @@ attributes:
     - wdp:P12663
     rank: 1000
     alias: riskGroup
-    owner: Nucleic Acid
+    owner: NucleicAcid
     domain_of:
     - ProductOrService
     range: RiskGroup
@@ -1261,7 +1261,7 @@ attributes:
     from_schema: https://w3id.org/evorao/
     rank: 1000
     alias: biosafetyRestrictions
-    owner: Nucleic Acid
+    owner: NucleicAcid
     domain_of:
     - ProductOrService
     range: string
@@ -1278,7 +1278,7 @@ attributes:
     from_schema: https://w3id.org/evorao/
     rank: 1000
     alias: canItBeUsedToProduceGMO
-    owner: Nucleic Acid
+    owner: NucleicAcid
     domain_of:
     - ProductOrService
     range: boolean
@@ -1292,7 +1292,7 @@ attributes:
     from_schema: https://w3id.org/evorao/
     rank: 1000
     alias: provider
-    owner: Nucleic Acid
+    owner: NucleicAcid
     domain_of:
     - ProductOrService
     range: Provider
@@ -1305,7 +1305,7 @@ attributes:
     from_schema: https://w3id.org/evorao/
     rank: 1000
     alias: collection
-    owner: Nucleic Acid
+    owner: NucleicAcid
     domain_of:
     - ProductOrService
     range: Collection
@@ -1320,7 +1320,7 @@ attributes:
     - dcat:keyword
     rank: 1000
     alias: keywords
-    owner: Nucleic Acid
+    owner: NucleicAcid
     domain_of:
     - ProductOrService
     range: Keyword
@@ -1338,7 +1338,7 @@ attributes:
     rank: 1000
     ifabsent: string(on request)
     alias: availability
-    owner: Nucleic Acid
+    owner: NucleicAcid
     domain_of:
     - ProductOrService
     range: string
@@ -1352,7 +1352,7 @@ attributes:
     from_schema: https://w3id.org/evorao/
     rank: 1000
     alias: complementaryDocument
-    owner: Nucleic Acid
+    owner: NucleicAcid
     domain_of:
     - ProductOrService
     range: Document
@@ -1367,7 +1367,7 @@ attributes:
     from_schema: https://w3id.org/evorao/
     rank: 1000
     alias: technicalRecommendation
-    owner: Nucleic Acid
+    owner: NucleicAcid
     domain_of:
     - ProductOrService
     range: string
@@ -1380,7 +1380,7 @@ attributes:
     from_schema: https://w3id.org/evorao/
     rank: 1000
     alias: productPicture
-    owner: Nucleic Acid
+    owner: NucleicAcid
     domain_of:
     - ProductOrService
     range: Image
@@ -1394,7 +1394,7 @@ attributes:
     from_schema: https://w3id.org/evorao/
     rank: 1000
     alias: externalRelatedReference
-    owner: Nucleic Acid
+    owner: NucleicAcid
     domain_of:
     - ProductOrService
     range: ExternalRelatedReference
@@ -1410,7 +1410,7 @@ attributes:
     - dct:conformsTo
     rank: 1000
     alias: certification
-    owner: Nucleic Acid
+    owner: NucleicAcid
     domain_of:
     - ProductOrService
     range: Certification
@@ -1423,7 +1423,7 @@ attributes:
     from_schema: https://w3id.org/evorao/
     rank: 1000
     alias: internalReference
-    owner: Nucleic Acid
+    owner: NucleicAcid
     domain_of:
     - ProductOrService
     range: string
@@ -1436,7 +1436,7 @@ attributes:
     from_schema: https://w3id.org/evorao/
     rank: 1000
     alias: note
-    owner: Nucleic Acid
+    owner: NucleicAcid
     domain_of:
     - ProductOrService
     range: string
@@ -1451,7 +1451,7 @@ attributes:
     - dcat:contactPoint
     rank: 1000
     alias: contactPoint
-    owner: Nucleic Acid
+    owner: NucleicAcid
     domain_of:
     - ProductOrService
     - PersonOrOrganization
@@ -1476,7 +1476,7 @@ attributes:
     rank: 1000
     slot_uri: dct:title
     alias: title
-    owner: Nucleic Acid
+    owner: NucleicAcid
     domain_of:
     - Dataset
     - DataService
@@ -1501,7 +1501,7 @@ attributes:
     rank: 1000
     slot_uri: dct:description
     alias: description
-    owner: Nucleic Acid
+    owner: NucleicAcid
     domain_of:
     - Dataset
     - DataService

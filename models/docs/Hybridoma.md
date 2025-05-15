@@ -426,7 +426,7 @@ attributes:
     owner: Hybridoma
     domain_of:
     - Antibody
-    - Detection Kit
+    - DetectionKit
     range: boolean
     required: true
     multivalued: false

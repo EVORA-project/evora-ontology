@@ -443,7 +443,7 @@ attributes:
     domain_of:
     - Pathogen
     - Protein
-    - Nucleic Acid
+    - NucleicAcid
     range: BiologicalMaterialOrigin
     required: true
     multivalued: false
@@ -530,7 +530,7 @@ attributes:
     - Pathogen
     - RecombinantPartIdentification
     - Protein
-    - Nucleic Acid
+    - NucleicAcid
     range: Sequence
     required: true
     recommended: true
@@ -585,7 +585,7 @@ attributes:
     owner: Viroid
     domain_of:
     - Pathogen
-    - Nucleic Acid
+    - NucleicAcid
     range: string
     required: false
     multivalued: false
@@ -723,7 +723,7 @@ attributes:
     owner: Viroid
     domain_of:
     - Pathogen
-    - Nucleic Acid
+    - NucleicAcid
     range: string
     required: true
     multivalued: false

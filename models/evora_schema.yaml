@@ -47,7 +47,7 @@ keywords:
 - pathogen collections
 - interoperability
 id: https://w3id.org/evorao/
-version: 1.0.8693
+version: 1.0.8702
 imports:
 - linkml:types
 license: https://creativecommons.org/publicdomain/zero/1.0/
@@ -986,7 +986,7 @@ slots:
     domain_of:
     - RecombinantPartIdentification
     - Protein
-    - Nucleic Acid
+    - NucleicAcid
     - Pathogen
     range: Sequence
     required: true
@@ -1401,7 +1401,7 @@ slots:
     from_schema: https://w3id.org/evorao/
     domain_of:
     - Antibody
-    - Detection Kit
+    - DetectionKit
     range: boolean
     required: true
     multivalued: false
@@ -1432,7 +1432,7 @@ slots:
     from_schema: https://w3id.org/evorao/
     domain_of:
     - Protein
-    - Nucleic Acid
+    - NucleicAcid
     - Pathogen
     range: BiologicalMaterialOrigin
     required: true
@@ -1603,7 +1603,7 @@ slots:
     title: has .gb file of the construct
     from_schema: https://w3id.org/evorao/
     domain_of:
-    - Nucleic Acid
+    - NucleicAcid
     range: Data
     required: false
     multivalued: true
@@ -1613,7 +1613,7 @@ slots:
     title: is it a Cloned Nucleic Acid?
     from_schema: https://w3id.org/evorao/
     domain_of:
-    - Nucleic Acid
+    - NucleicAcid
     range: boolean
     required: true
     multivalued: false
@@ -1622,7 +1622,7 @@ slots:
     title: cloned into plasmid
     from_schema: https://w3id.org/evorao/
     domain_of:
-    - Nucleic Acid
+    - NucleicAcid
     range: ExpressionVector
     required: false
     recommended: true
@@ -1633,7 +1633,7 @@ slots:
     title: plasmid selection
     from_schema: https://w3id.org/evorao/
     domain_of:
-    - Nucleic Acid
+    - NucleicAcid
     range: PlasmidSelection
     required: false
     recommended: true
@@ -1644,7 +1644,7 @@ slots:
     title: TAG
     from_schema: https://w3id.org/evorao/
     domain_of:
-    - Nucleic Acid
+    - NucleicAcid
     range: ProteinTag
     required: true
     multivalued: false
@@ -1653,7 +1653,7 @@ slots:
     title: region encompassed in this Product
     from_schema: https://w3id.org/evorao/
     domain_of:
-    - Nucleic Acid
+    - NucleicAcid
     range: string
     required: true
     multivalued: false
@@ -1664,7 +1664,7 @@ slots:
     title: mutation observed
     from_schema: https://w3id.org/evorao/
     domain_of:
-    - Nucleic Acid
+    - NucleicAcid
     range: boolean
     required: true
     multivalued: false
@@ -1674,7 +1674,7 @@ slots:
     title: observed mutations
     from_schema: https://w3id.org/evorao/
     domain_of:
-    - Nucleic Acid
+    - NucleicAcid
     range: string
     required: false
     multivalued: false
@@ -1687,7 +1687,7 @@ slots:
     title: identification technique
     from_schema: https://w3id.org/evorao/
     domain_of:
-    - Nucleic Acid
+    - NucleicAcid
     - Pathogen
     range: string
     required: false
@@ -1702,7 +1702,7 @@ slots:
     - Cloned products have to be sequenced
     from_schema: https://w3id.org/evorao/
     domain_of:
-    - Nucleic Acid
+    - NucleicAcid
     range: string
     required: true
     multivalued: false
@@ -1720,7 +1720,7 @@ slots:
     close_mappings:
     - wd:Q2166189
     domain_of:
-    - Nucleic Acid
+    - NucleicAcid
     - Pathogen
     range: string
     required: true
@@ -1733,7 +1733,7 @@ slots:
     - Sequence check is mandatory for cloned products
     from_schema: https://w3id.org/evorao/
     domain_of:
-    - Nucleic Acid
+    - NucleicAcid
     range: boolean
     required: true
     multivalued: false
@@ -1742,7 +1742,7 @@ slots:
     title: has SOP File
     from_schema: https://w3id.org/evorao/
     domain_of:
-    - Detection Kit
+    - DetectionKit
     range: File
     required: false
     multivalued: true
@@ -1753,7 +1753,7 @@ slots:
     title: specificity
     from_schema: https://w3id.org/evorao/
     domain_of:
-    - Detection Kit
+    - DetectionKit
     range: string
     required: false
     multivalued: false
@@ -1764,7 +1764,7 @@ slots:
     title: targeted region
     from_schema: https://w3id.org/evorao/
     domain_of:
-    - Detection Kit
+    - DetectionKit
     range: string
     required: false
     multivalued: false
@@ -4564,7 +4564,7 @@ classes:
         range: string
         required: false
         multivalued: true
-  Nucleic Acid:
+  NucleicAcid:
     description: Nucleic acid related to a pathogen. It can be extracted or synthetic
     title: Nucleic Acid
     from_schema: https://w3id.org/evorao/
@@ -4594,7 +4594,7 @@ classes:
           with the Nagoya Protocol
         title: Biological Material origin
         domain_of:
-        - Nucleic Acid
+        - NucleicAcid
         range: BiologicalMaterialOrigin
         required: true
         multivalued: false
@@ -4603,7 +4603,7 @@ classes:
           annotation information of a nucleic acid construct
         title: has .gb file of the construct
         domain_of:
-        - Nucleic Acid
+        - NucleicAcid
         range: Data
         required: false
         multivalued: true
@@ -4612,7 +4612,7 @@ classes:
           in fasta format
         title: sequence
         domain_of:
-        - Nucleic Acid
+        - NucleicAcid
         range: Sequence
         required: true
         multivalued: true
@@ -4621,7 +4621,7 @@ classes:
           a plasmid vector for propagation or expression in a host organism
         title: is it a Cloned Nucleic Acid?
         domain_of:
-        - Nucleic Acid
+        - NucleicAcid
         range: boolean
         required: true
         multivalued: false
@@ -4629,7 +4629,7 @@ classes:
         description: The plasmid into which the nucleic acid has been cloned
         title: cloned into plasmid
         domain_of:
-        - Nucleic Acid
+        - NucleicAcid
         range: ExpressionVector
         required: false
         recommended: true
@@ -4639,7 +4639,7 @@ classes:
           resistance genes, used to identify and maintain cells that contain the plasmid
         title: plasmid selection
         domain_of:
-        - Nucleic Acid
+        - NucleicAcid
         range: PlasmidSelection
         required: false
         recommended: true
@@ -4649,7 +4649,7 @@ classes:
           or localization
         title: TAG
         domain_of:
-        - Nucleic Acid
+        - NucleicAcid
         range: ProteinTag
         required: true
         multivalued: false
@@ -4657,7 +4657,7 @@ classes:
         description: The specific region encompassed in the product
         title: region encompassed in this Product
         domain_of:
-        - Nucleic Acid
+        - NucleicAcid
         range: string
         required: true
         multivalued: false
@@ -4667,7 +4667,7 @@ classes:
           \ mutations (no frameshift, no unexpected STOP codon) if set to true"
         title: mutation observed
         domain_of:
-        - Nucleic Acid
+        - NucleicAcid
         range: boolean
         required: true
         multivalued: false
@@ -4676,7 +4676,7 @@ classes:
           in the nucleic acid sequence
         title: observed mutations
         domain_of:
-        - Nucleic Acid
+        - NucleicAcid
         range: string
         required: false
         multivalued: false
@@ -4688,7 +4688,7 @@ classes:
           accurate detection and analysis
         title: identification technique
         domain_of:
-        - Nucleic Acid
+        - NucleicAcid
         range: string
         required: false
         multivalued: false
@@ -4702,7 +4702,7 @@ classes:
         comments:
         - Cloned products have to be sequenced
         domain_of:
-        - Nucleic Acid
+        - NucleicAcid
         range: string
         required: true
         multivalued: false
@@ -4713,7 +4713,7 @@ classes:
           that still yields a positive reading
         title: titer
         domain_of:
-        - Nucleic Acid
+        - NucleicAcid
         range: string
         required: false
         multivalued: false
@@ -4724,11 +4724,11 @@ classes:
         comments:
         - Sequence check is mandatory for cloned products
         domain_of:
-        - Nucleic Acid
+        - NucleicAcid
         range: boolean
         required: true
         multivalued: false
-  Detection Kit:
+  DetectionKit:
     description: A detection kit for specific pathogens
     title: Detection Kit
     from_schema: https://w3id.org/evorao/
@@ -4743,7 +4743,7 @@ classes:
         description: The related standard operating procedure file
         title: has SOP File
         domain_of:
-        - Detection Kit
+        - DetectionKit
         range: File
         required: false
         multivalued: true
@@ -4752,7 +4752,7 @@ classes:
           has been formally documented
         title: specificity documented
         domain_of:
-        - Detection Kit
+        - DetectionKit
         range: boolean
         required: true
         multivalued: false
@@ -4762,7 +4762,7 @@ classes:
           without cross-reacting
         title: specificity
         domain_of:
-        - Detection Kit
+        - DetectionKit
         range: string
         required: false
         multivalued: false
@@ -4772,7 +4772,7 @@ classes:
           detection and analysis.
         title: targeted region
         domain_of:
-        - Detection Kit
+        - DetectionKit
         range: string
         required: false
         multivalued: false
@@ -5740,4 +5740,4 @@ classes:
         required: false
         multivalued: false
 source_file: https://w3id.org/evorao/owl.ttl
-generation_date: '2025-05-14T11:59:22'
+generation_date: '2025-05-15T11:13:18'

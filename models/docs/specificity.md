@@ -77,7 +77,7 @@ from_schema: https://w3id.org/evorao/
 rank: 1000
 alias: specificity
 domain_of:
-- Detection Kit
+- DetectionKit
 range: string
 required: false
 multivalued: false

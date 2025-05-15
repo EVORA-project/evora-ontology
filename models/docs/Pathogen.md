@@ -467,7 +467,7 @@ slot_usage:
     domain_of:
     - Pathogen
     - Protein
-    - Nucleic Acid
+    - NucleicAcid
     range: BiologicalMaterialOrigin
     required: true
     multivalued: false
@@ -530,7 +530,7 @@ slot_usage:
     - Pathogen
     - RecombinantPartIdentification
     - Protein
-    - Nucleic Acid
+    - NucleicAcid
     range: Sequence
     required: true
     multivalued: true
@@ -568,7 +568,7 @@ slot_usage:
     title: identification technique
     domain_of:
     - Pathogen
-    - Nucleic Acid
+    - NucleicAcid
     range: string
     required: false
     multivalued: false
@@ -661,7 +661,7 @@ slot_usage:
     - wd:Q2166189
     domain_of:
     - Pathogen
-    - Nucleic Acid
+    - NucleicAcid
     range: string
     required: true
     multivalued: false
@@ -694,7 +694,7 @@ slot_usage:
     domain_of:
     - Pathogen
     - Protein
-    - Nucleic Acid
+    - NucleicAcid
     range: BiologicalMaterialOrigin
     required: true
     multivalued: false
@@ -757,7 +757,7 @@ slot_usage:
     - Pathogen
     - RecombinantPartIdentification
     - Protein
-    - Nucleic Acid
+    - NucleicAcid
     range: Sequence
     required: true
     multivalued: true
@@ -795,7 +795,7 @@ slot_usage:
     title: identification technique
     domain_of:
     - Pathogen
-    - Nucleic Acid
+    - NucleicAcid
     range: string
     required: false
     multivalued: false
@@ -888,7 +888,7 @@ slot_usage:
     - wd:Q2166189
     domain_of:
     - Pathogen
-    - Nucleic Acid
+    - NucleicAcid
     range: string
     required: true
     multivalued: false
@@ -906,7 +906,7 @@ attributes:
     domain_of:
     - Pathogen
     - Protein
-    - Nucleic Acid
+    - NucleicAcid
     range: BiologicalMaterialOrigin
     required: true
     multivalued: false
@@ -993,7 +993,7 @@ attributes:
     - Pathogen
     - RecombinantPartIdentification
     - Protein
-    - Nucleic Acid
+    - NucleicAcid
     range: Sequence
     required: true
     recommended: true
@@ -1048,7 +1048,7 @@ attributes:
     owner: Pathogen
     domain_of:
     - Pathogen
-    - Nucleic Acid
+    - NucleicAcid
     range: string
     required: false
     multivalued: false
@@ -1186,7 +1186,7 @@ attributes:
     owner: Pathogen
     domain_of:
     - Pathogen
-    - Nucleic Acid
+    - NucleicAcid
     range: string
     required: true
     multivalued: false

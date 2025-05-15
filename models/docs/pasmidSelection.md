@@ -80,7 +80,7 @@ from_schema: https://w3id.org/evorao/
 rank: 1000
 alias: pasmidSelection
 domain_of:
-- Nucleic Acid
+- NucleicAcid
 range: PlasmidSelection
 required: false
 recommended: true

@@ -135,7 +135,7 @@ slot_usage:
     domain_of:
     - RecombinantPartIdentification
     - Protein
-    - Nucleic Acid
+    - NucleicAcid
     - Pathogen
     range: Sequence
     required: true
@@ -173,7 +173,7 @@ slot_usage:
     domain_of:
     - RecombinantPartIdentification
     - Protein
-    - Nucleic Acid
+    - NucleicAcid
     - Pathogen
     range: Sequence
     required: true
@@ -206,7 +206,7 @@ attributes:
     domain_of:
     - RecombinantPartIdentification
     - Protein
-    - Nucleic Acid
+    - NucleicAcid
     - Pathogen
     range: Sequence
     required: true

@@ -464,7 +464,7 @@
 --     * Slot: riskGroup_id Description: The highest risk group related to this resource. The risk group of a biological agent guiding its initial handling in labs according to the risk group classification defined by the WHO laboratory biosafety manual
 --     * Slot: provider_id Description: A provider of this product or service, as a specific organization
 --     * Slot: contactPoint_id Description: An information that allows someone to establish communication
--- # Class: "Nucleic Acid" Description: "Nucleic acid related to a pathogen. It can be extracted or synthetic"
+-- # Class: "NucleicAcid" Description: "Nucleic acid related to a pathogen. It can be extracted or synthetic"
 --     * Slot: id Description: 
 --     * Slot: isItAClonedNucleicAcid Description: Indicates that the nucleic acid sequence has been inserted into a plasmid vector for propagation or expression in a host organism
 --     * Slot: regionEncompassedInThisProduct Description: The specific region encompassed in the product
@@ -501,7 +501,7 @@
 --     * Slot: riskGroup_id Description: The highest risk group related to this resource. The risk group of a biological agent guiding its initial handling in labs according to the risk group classification defined by the WHO laboratory biosafety manual
 --     * Slot: provider_id Description: A provider of this product or service, as a specific organization
 --     * Slot: contactPoint_id Description: An information that allows someone to establish communication
--- # Class: "Detection Kit" Description: "A detection kit for specific pathogens"
+-- # Class: "DetectionKit" Description: "A detection kit for specific pathogens"
 --     * Slot: id Description: 
 --     * Slot: specificityDocumented Description: Boolean value indicating whether the specificity of the product has been formally documented
 --     * Slot: specificity Description: Details on the ability of a detection kit to correctly identify negative results, distinguishing between the target analyte and other substances without cross-reacting
@@ -1188,71 +1188,71 @@
 -- # Class: "Protein_certification" Description: ""
 --     * Slot: Protein_id Description: Autocreated FK slot
 --     * Slot: certification_id Description: Any certification related to the current product or service; e.g., ISO certification
--- # Class: "Nucleic Acid_hasGbFileOfTheConstruct" Description: ""
---     * Slot: Nucleic Acid_id Description: Autocreated FK slot
+-- # Class: "NucleicAcid_hasGbFileOfTheConstruct" Description: ""
+--     * Slot: NucleicAcid_id Description: Autocreated FK slot
 --     * Slot: hasGbFileOfTheConstruct_id Description: A GenBank formatted file that contains detailed sequence and annotation information of a nucleic acid construct
--- # Class: "Nucleic Acid_sequence" Description: ""
---     * Slot: Nucleic Acid_id Description: Autocreated FK slot
+-- # Class: "NucleicAcid_sequence" Description: ""
+--     * Slot: NucleicAcid_id Description: Autocreated FK slot
 --     * Slot: sequence_id Description: The related sequence information from a sequence provider or in fasta format
--- # Class: "Nucleic Acid_pasmidSelection" Description: ""
---     * Slot: Nucleic Acid_id Description: Autocreated FK slot
+-- # Class: "NucleicAcid_pasmidSelection" Description: ""
+--     * Slot: NucleicAcid_id Description: Autocreated FK slot
 --     * Slot: pasmidSelection_id Description: Specific selectable markers in the plasmid, such as antibiotic resistance genes, used to identify and maintain cells that contain the plasmid
--- # Class: "Nucleic Acid_additionalCategory" Description: ""
---     * Slot: Nucleic Acid_id Description: Autocreated FK slot
+-- # Class: "NucleicAcid_additionalCategory" Description: ""
+--     * Slot: NucleicAcid_id Description: Autocreated FK slot
 --     * Slot: additionalCategory_id Description: Any category apart from its main category in which this product or service can fit
--- # Class: "Nucleic Acid_pathogenIdentification" Description: ""
---     * Slot: Nucleic Acid_id Description: Autocreated FK slot
+-- # Class: "NucleicAcid_pathogenIdentification" Description: ""
+--     * Slot: NucleicAcid_id Description: Autocreated FK slot
 --     * Slot: pathogenIdentification_id Description: The identification of the pathogen or group of pathogens (e.g; name, taxon identification, etc.) related to the current item.
--- # Class: "Nucleic Acid_relatedDOI" Description: ""
---     * Slot: Nucleic Acid_id Description: Autocreated FK slot
+-- # Class: "NucleicAcid_relatedDOI" Description: ""
+--     * Slot: NucleicAcid_id Description: Autocreated FK slot
 --     * Slot: relatedDOI_id Description: Any Digital Object Identifier that can be related
--- # Class: "Nucleic Acid_collection" Description: ""
---     * Slot: Nucleic Acid_id Description: Autocreated FK slot
+-- # Class: "NucleicAcid_collection" Description: ""
+--     * Slot: NucleicAcid_id Description: Autocreated FK slot
 --     * Slot: collection_id Description: The collection(s) to which belongs this item
--- # Class: "Nucleic Acid_keywords" Description: ""
---     * Slot: Nucleic Acid_id Description: Autocreated FK slot
+-- # Class: "NucleicAcid_keywords" Description: ""
+--     * Slot: NucleicAcid_id Description: Autocreated FK slot
 --     * Slot: keywords_id Description: List of terms used to tag and categorize this Item
--- # Class: "Nucleic Acid_complementaryDocument" Description: ""
---     * Slot: Nucleic Acid_id Description: Autocreated FK slot
+-- # Class: "NucleicAcid_complementaryDocument" Description: ""
+--     * Slot: NucleicAcid_id Description: Autocreated FK slot
 --     * Slot: complementaryDocument_id Description: Any additional documents that provide supplementary information, instructions, or guidelines relevant to the use of this item
--- # Class: "Nucleic Acid_productPicture" Description: ""
---     * Slot: Nucleic Acid_id Description: Autocreated FK slot
+-- # Class: "NucleicAcid_productPicture" Description: ""
+--     * Slot: NucleicAcid_id Description: Autocreated FK slot
 --     * Slot: productPicture_id Description: A picture that can represent the item
--- # Class: "Nucleic Acid_externalRelatedReference" Description: ""
---     * Slot: Nucleic Acid_id Description: Autocreated FK slot
+-- # Class: "NucleicAcid_externalRelatedReference" Description: ""
+--     * Slot: NucleicAcid_id Description: Autocreated FK slot
 --     * Slot: externalRelatedReference_id Description: A reference that permits to retrieve another related item from an external provider
--- # Class: "Nucleic Acid_certification" Description: ""
---     * Slot: Nucleic Acid_id Description: Autocreated FK slot
+-- # Class: "NucleicAcid_certification" Description: ""
+--     * Slot: NucleicAcid_id Description: Autocreated FK slot
 --     * Slot: certification_id Description: Any certification related to the current product or service; e.g., ISO certification
--- # Class: "Detection Kit_hasSOPFile" Description: ""
---     * Slot: Detection Kit_id Description: Autocreated FK slot
+-- # Class: "DetectionKit_hasSOPFile" Description: ""
+--     * Slot: DetectionKit_id Description: Autocreated FK slot
 --     * Slot: hasSOPFile_id Description: The related standard operating procedure file
--- # Class: "Detection Kit_additionalCategory" Description: ""
---     * Slot: Detection Kit_id Description: Autocreated FK slot
+-- # Class: "DetectionKit_additionalCategory" Description: ""
+--     * Slot: DetectionKit_id Description: Autocreated FK slot
 --     * Slot: additionalCategory_id Description: Any category apart from its main category in which this product or service can fit
--- # Class: "Detection Kit_pathogenIdentification" Description: ""
---     * Slot: Detection Kit_id Description: Autocreated FK slot
+-- # Class: "DetectionKit_pathogenIdentification" Description: ""
+--     * Slot: DetectionKit_id Description: Autocreated FK slot
 --     * Slot: pathogenIdentification_id Description: The identification of the pathogen or group of pathogens (e.g; name, taxon identification, etc.) related to the current item.
--- # Class: "Detection Kit_relatedDOI" Description: ""
---     * Slot: Detection Kit_id Description: Autocreated FK slot
+-- # Class: "DetectionKit_relatedDOI" Description: ""
+--     * Slot: DetectionKit_id Description: Autocreated FK slot
 --     * Slot: relatedDOI_id Description: Any Digital Object Identifier that can be related
--- # Class: "Detection Kit_collection" Description: ""
---     * Slot: Detection Kit_id Description: Autocreated FK slot
+-- # Class: "DetectionKit_collection" Description: ""
+--     * Slot: DetectionKit_id Description: Autocreated FK slot
 --     * Slot: collection_id Description: The collection(s) to which belongs this item
--- # Class: "Detection Kit_keywords" Description: ""
---     * Slot: Detection Kit_id Description: Autocreated FK slot
+-- # Class: "DetectionKit_keywords" Description: ""
+--     * Slot: DetectionKit_id Description: Autocreated FK slot
 --     * Slot: keywords_id Description: List of terms used to tag and categorize this Item
--- # Class: "Detection Kit_complementaryDocument" Description: ""
---     * Slot: Detection Kit_id Description: Autocreated FK slot
+-- # Class: "DetectionKit_complementaryDocument" Description: ""
+--     * Slot: DetectionKit_id Description: Autocreated FK slot
 --     * Slot: complementaryDocument_id Description: Any additional documents that provide supplementary information, instructions, or guidelines relevant to the use of this item
--- # Class: "Detection Kit_productPicture" Description: ""
---     * Slot: Detection Kit_id Description: Autocreated FK slot
+-- # Class: "DetectionKit_productPicture" Description: ""
+--     * Slot: DetectionKit_id Description: Autocreated FK slot
 --     * Slot: productPicture_id Description: A picture that can represent the item
--- # Class: "Detection Kit_externalRelatedReference" Description: ""
---     * Slot: Detection Kit_id Description: Autocreated FK slot
+-- # Class: "DetectionKit_externalRelatedReference" Description: ""
+--     * Slot: DetectionKit_id Description: Autocreated FK slot
 --     * Slot: externalRelatedReference_id Description: A reference that permits to retrieve another related item from an external provider
--- # Class: "Detection Kit_certification" Description: ""
---     * Slot: Detection Kit_id Description: Autocreated FK slot
+-- # Class: "DetectionKit_certification" Description: ""
+--     * Slot: DetectionKit_id Description: Autocreated FK slot
 --     * Slot: certification_id Description: Any certification related to the current product or service; e.g., ISO certification
 -- # Class: "Bundle_productsOfTheBundle" Description: ""
 --     * Slot: Bundle_id Description: Autocreated FK slot
@@ -2527,7 +2527,7 @@ CREATE TABLE "Protein" (
 	FOREIGN KEY(provider_id) REFERENCES "Provider" (id), 
 	FOREIGN KEY("contactPoint_id") REFERENCES "ContactPoint" (id)
 );
-CREATE TABLE "Nucleic Acid" (
+CREATE TABLE "NucleicAcid" (
 	id INTEGER NOT NULL, 
 	"isItAClonedNucleicAcid" BOOLEAN NOT NULL, 
 	"regionEncompassedInThisProduct" TEXT NOT NULL, 
@@ -2576,7 +2576,7 @@ CREATE TABLE "Nucleic Acid" (
 	FOREIGN KEY(provider_id) REFERENCES "Provider" (id), 
 	FOREIGN KEY("contactPoint_id") REFERENCES "ContactPoint" (id)
 );
-CREATE TABLE "Detection Kit" (
+CREATE TABLE "DetectionKit" (
 	id INTEGER NOT NULL, 
 	"specificityDocumented" BOOLEAN NOT NULL, 
 	specificity TEXT, 
@@ -3502,158 +3502,158 @@ CREATE TABLE "Protein_certification" (
 	FOREIGN KEY("Protein_id") REFERENCES "Protein" (id), 
 	FOREIGN KEY(certification_id) REFERENCES "Certification" (id)
 );
-CREATE TABLE "Nucleic Acid_hasGbFileOfTheConstruct" (
-	"Nucleic Acid_id" INTEGER, 
+CREATE TABLE "NucleicAcid_hasGbFileOfTheConstruct" (
+	"NucleicAcid_id" INTEGER, 
 	"hasGbFileOfTheConstruct_id" INTEGER, 
-	PRIMARY KEY ("Nucleic Acid_id", "hasGbFileOfTheConstruct_id"), 
-	FOREIGN KEY("Nucleic Acid_id") REFERENCES "Nucleic Acid" (id), 
+	PRIMARY KEY ("NucleicAcid_id", "hasGbFileOfTheConstruct_id"), 
+	FOREIGN KEY("NucleicAcid_id") REFERENCES "NucleicAcid" (id), 
 	FOREIGN KEY("hasGbFileOfTheConstruct_id") REFERENCES "Data" (id)
 );
-CREATE TABLE "Nucleic Acid_sequence" (
-	"Nucleic Acid_id" INTEGER, 
+CREATE TABLE "NucleicAcid_sequence" (
+	"NucleicAcid_id" INTEGER, 
 	sequence_id INTEGER NOT NULL, 
-	PRIMARY KEY ("Nucleic Acid_id", sequence_id), 
-	FOREIGN KEY("Nucleic Acid_id") REFERENCES "Nucleic Acid" (id), 
+	PRIMARY KEY ("NucleicAcid_id", sequence_id), 
+	FOREIGN KEY("NucleicAcid_id") REFERENCES "NucleicAcid" (id), 
 	FOREIGN KEY(sequence_id) REFERENCES "Sequence" (id)
 );
-CREATE TABLE "Nucleic Acid_pasmidSelection" (
-	"Nucleic Acid_id" INTEGER, 
+CREATE TABLE "NucleicAcid_pasmidSelection" (
+	"NucleicAcid_id" INTEGER, 
 	"pasmidSelection_id" INTEGER, 
-	PRIMARY KEY ("Nucleic Acid_id", "pasmidSelection_id"), 
-	FOREIGN KEY("Nucleic Acid_id") REFERENCES "Nucleic Acid" (id), 
+	PRIMARY KEY ("NucleicAcid_id", "pasmidSelection_id"), 
+	FOREIGN KEY("NucleicAcid_id") REFERENCES "NucleicAcid" (id), 
 	FOREIGN KEY("pasmidSelection_id") REFERENCES "PlasmidSelection" (id)
 );
-CREATE TABLE "Nucleic Acid_additionalCategory" (
-	"Nucleic Acid_id" INTEGER, 
+CREATE TABLE "NucleicAcid_additionalCategory" (
+	"NucleicAcid_id" INTEGER, 
 	"additionalCategory_id" INTEGER, 
-	PRIMARY KEY ("Nucleic Acid_id", "additionalCategory_id"), 
-	FOREIGN KEY("Nucleic Acid_id") REFERENCES "Nucleic Acid" (id), 
+	PRIMARY KEY ("NucleicAcid_id", "additionalCategory_id"), 
+	FOREIGN KEY("NucleicAcid_id") REFERENCES "NucleicAcid" (id), 
 	FOREIGN KEY("additionalCategory_id") REFERENCES "ProductCategory" (id)
 );
-CREATE TABLE "Nucleic Acid_pathogenIdentification" (
-	"Nucleic Acid_id" INTEGER, 
+CREATE TABLE "NucleicAcid_pathogenIdentification" (
+	"NucleicAcid_id" INTEGER, 
 	"pathogenIdentification_id" INTEGER NOT NULL, 
-	PRIMARY KEY ("Nucleic Acid_id", "pathogenIdentification_id"), 
-	FOREIGN KEY("Nucleic Acid_id") REFERENCES "Nucleic Acid" (id), 
+	PRIMARY KEY ("NucleicAcid_id", "pathogenIdentification_id"), 
+	FOREIGN KEY("NucleicAcid_id") REFERENCES "NucleicAcid" (id), 
 	FOREIGN KEY("pathogenIdentification_id") REFERENCES "PathogenIdentification" (id)
 );
-CREATE TABLE "Nucleic Acid_relatedDOI" (
-	"Nucleic Acid_id" INTEGER, 
+CREATE TABLE "NucleicAcid_relatedDOI" (
+	"NucleicAcid_id" INTEGER, 
 	"relatedDOI_id" INTEGER, 
-	PRIMARY KEY ("Nucleic Acid_id", "relatedDOI_id"), 
-	FOREIGN KEY("Nucleic Acid_id") REFERENCES "Nucleic Acid" (id), 
+	PRIMARY KEY ("NucleicAcid_id", "relatedDOI_id"), 
+	FOREIGN KEY("NucleicAcid_id") REFERENCES "NucleicAcid" (id), 
 	FOREIGN KEY("relatedDOI_id") REFERENCES "DOI" (id)
 );
-CREATE TABLE "Nucleic Acid_collection" (
-	"Nucleic Acid_id" INTEGER, 
+CREATE TABLE "NucleicAcid_collection" (
+	"NucleicAcid_id" INTEGER, 
 	collection_id INTEGER NOT NULL, 
-	PRIMARY KEY ("Nucleic Acid_id", collection_id), 
-	FOREIGN KEY("Nucleic Acid_id") REFERENCES "Nucleic Acid" (id), 
+	PRIMARY KEY ("NucleicAcid_id", collection_id), 
+	FOREIGN KEY("NucleicAcid_id") REFERENCES "NucleicAcid" (id), 
 	FOREIGN KEY(collection_id) REFERENCES "Collection" (id)
 );
-CREATE TABLE "Nucleic Acid_keywords" (
-	"Nucleic Acid_id" INTEGER, 
+CREATE TABLE "NucleicAcid_keywords" (
+	"NucleicAcid_id" INTEGER, 
 	keywords_id INTEGER NOT NULL, 
-	PRIMARY KEY ("Nucleic Acid_id", keywords_id), 
-	FOREIGN KEY("Nucleic Acid_id") REFERENCES "Nucleic Acid" (id), 
+	PRIMARY KEY ("NucleicAcid_id", keywords_id), 
+	FOREIGN KEY("NucleicAcid_id") REFERENCES "NucleicAcid" (id), 
 	FOREIGN KEY(keywords_id) REFERENCES "Keyword" (id)
 );
-CREATE TABLE "Nucleic Acid_complementaryDocument" (
-	"Nucleic Acid_id" INTEGER, 
+CREATE TABLE "NucleicAcid_complementaryDocument" (
+	"NucleicAcid_id" INTEGER, 
 	"complementaryDocument_id" INTEGER, 
-	PRIMARY KEY ("Nucleic Acid_id", "complementaryDocument_id"), 
-	FOREIGN KEY("Nucleic Acid_id") REFERENCES "Nucleic Acid" (id), 
+	PRIMARY KEY ("NucleicAcid_id", "complementaryDocument_id"), 
+	FOREIGN KEY("NucleicAcid_id") REFERENCES "NucleicAcid" (id), 
 	FOREIGN KEY("complementaryDocument_id") REFERENCES "Document" (id)
 );
-CREATE TABLE "Nucleic Acid_productPicture" (
-	"Nucleic Acid_id" INTEGER, 
+CREATE TABLE "NucleicAcid_productPicture" (
+	"NucleicAcid_id" INTEGER, 
 	"productPicture_id" INTEGER, 
-	PRIMARY KEY ("Nucleic Acid_id", "productPicture_id"), 
-	FOREIGN KEY("Nucleic Acid_id") REFERENCES "Nucleic Acid" (id), 
+	PRIMARY KEY ("NucleicAcid_id", "productPicture_id"), 
+	FOREIGN KEY("NucleicAcid_id") REFERENCES "NucleicAcid" (id), 
 	FOREIGN KEY("productPicture_id") REFERENCES "Image" (id)
 );
-CREATE TABLE "Nucleic Acid_externalRelatedReference" (
-	"Nucleic Acid_id" INTEGER, 
+CREATE TABLE "NucleicAcid_externalRelatedReference" (
+	"NucleicAcid_id" INTEGER, 
 	"externalRelatedReference_id" INTEGER, 
-	PRIMARY KEY ("Nucleic Acid_id", "externalRelatedReference_id"), 
-	FOREIGN KEY("Nucleic Acid_id") REFERENCES "Nucleic Acid" (id), 
+	PRIMARY KEY ("NucleicAcid_id", "externalRelatedReference_id"), 
+	FOREIGN KEY("NucleicAcid_id") REFERENCES "NucleicAcid" (id), 
 	FOREIGN KEY("externalRelatedReference_id") REFERENCES "ExternalRelatedReference" (id)
 );
-CREATE TABLE "Nucleic Acid_certification" (
-	"Nucleic Acid_id" INTEGER, 
+CREATE TABLE "NucleicAcid_certification" (
+	"NucleicAcid_id" INTEGER, 
 	certification_id INTEGER, 
-	PRIMARY KEY ("Nucleic Acid_id", certification_id), 
-	FOREIGN KEY("Nucleic Acid_id") REFERENCES "Nucleic Acid" (id), 
+	PRIMARY KEY ("NucleicAcid_id", certification_id), 
+	FOREIGN KEY("NucleicAcid_id") REFERENCES "NucleicAcid" (id), 
 	FOREIGN KEY(certification_id) REFERENCES "Certification" (id)
 );
-CREATE TABLE "Detection Kit_hasSOPFile" (
-	"Detection Kit_id" INTEGER, 
+CREATE TABLE "DetectionKit_hasSOPFile" (
+	"DetectionKit_id" INTEGER, 
 	"hasSOPFile_id" INTEGER, 
-	PRIMARY KEY ("Detection Kit_id", "hasSOPFile_id"), 
-	FOREIGN KEY("Detection Kit_id") REFERENCES "Detection Kit" (id), 
+	PRIMARY KEY ("DetectionKit_id", "hasSOPFile_id"), 
+	FOREIGN KEY("DetectionKit_id") REFERENCES "DetectionKit" (id), 
 	FOREIGN KEY("hasSOPFile_id") REFERENCES "File" (id)
 );
-CREATE TABLE "Detection Kit_additionalCategory" (
-	"Detection Kit_id" INTEGER, 
+CREATE TABLE "DetectionKit_additionalCategory" (
+	"DetectionKit_id" INTEGER, 
 	"additionalCategory_id" INTEGER, 
-	PRIMARY KEY ("Detection Kit_id", "additionalCategory_id"), 
-	FOREIGN KEY("Detection Kit_id") REFERENCES "Detection Kit" (id), 
+	PRIMARY KEY ("DetectionKit_id", "additionalCategory_id"), 
+	FOREIGN KEY("DetectionKit_id") REFERENCES "DetectionKit" (id), 
 	FOREIGN KEY("additionalCategory_id") REFERENCES "ProductCategory" (id)
 );
-CREATE TABLE "Detection Kit_pathogenIdentification" (
-	"Detection Kit_id" INTEGER, 
+CREATE TABLE "DetectionKit_pathogenIdentification" (
+	"DetectionKit_id" INTEGER, 
 	"pathogenIdentification_id" INTEGER NOT NULL, 
-	PRIMARY KEY ("Detection Kit_id", "pathogenIdentification_id"), 
-	FOREIGN KEY("Detection Kit_id") REFERENCES "Detection Kit" (id), 
+	PRIMARY KEY ("DetectionKit_id", "pathogenIdentification_id"), 
+	FOREIGN KEY("DetectionKit_id") REFERENCES "DetectionKit" (id), 
 	FOREIGN KEY("pathogenIdentification_id") REFERENCES "PathogenIdentification" (id)
 );
-CREATE TABLE "Detection Kit_relatedDOI" (
-	"Detection Kit_id" INTEGER, 
+CREATE TABLE "DetectionKit_relatedDOI" (
+	"DetectionKit_id" INTEGER, 
 	"relatedDOI_id" INTEGER, 
-	PRIMARY KEY ("Detection Kit_id", "relatedDOI_id"), 
-	FOREIGN KEY("Detection Kit_id") REFERENCES "Detection Kit" (id), 
+	PRIMARY KEY ("DetectionKit_id", "relatedDOI_id"), 
+	FOREIGN KEY("DetectionKit_id") REFERENCES "DetectionKit" (id), 
 	FOREIGN KEY("relatedDOI_id") REFERENCES "DOI" (id)
 );
-CREATE TABLE "Detection Kit_collection" (
-	"Detection Kit_id" INTEGER, 
+CREATE TABLE "DetectionKit_collection" (
+	"DetectionKit_id" INTEGER, 
 	collection_id INTEGER NOT NULL, 
-	PRIMARY KEY ("Detection Kit_id", collection_id), 
-	FOREIGN KEY("Detection Kit_id") REFERENCES "Detection Kit" (id), 
+	PRIMARY KEY ("DetectionKit_id", collection_id), 
+	FOREIGN KEY("DetectionKit_id") REFERENCES "DetectionKit" (id), 
 	FOREIGN KEY(collection_id) REFERENCES "Collection" (id)
 );
-CREATE TABLE "Detection Kit_keywords" (
-	"Detection Kit_id" INTEGER, 
+CREATE TABLE "DetectionKit_keywords" (
+	"DetectionKit_id" INTEGER, 
 	keywords_id INTEGER NOT NULL, 
-	PRIMARY KEY ("Detection Kit_id", keywords_id), 
-	FOREIGN KEY("Detection Kit_id") REFERENCES "Detection Kit" (id), 
+	PRIMARY KEY ("DetectionKit_id", keywords_id), 
+	FOREIGN KEY("DetectionKit_id") REFERENCES "DetectionKit" (id), 
 	FOREIGN KEY(keywords_id) REFERENCES "Keyword" (id)
 );
-CREATE TABLE "Detection Kit_complementaryDocument" (
-	"Detection Kit_id" INTEGER, 
+CREATE TABLE "DetectionKit_complementaryDocument" (
+	"DetectionKit_id" INTEGER, 
 	"complementaryDocument_id" INTEGER, 
-	PRIMARY KEY ("Detection Kit_id", "complementaryDocument_id"), 
-	FOREIGN KEY("Detection Kit_id") REFERENCES "Detection Kit" (id), 
+	PRIMARY KEY ("DetectionKit_id", "complementaryDocument_id"), 
+	FOREIGN KEY("DetectionKit_id") REFERENCES "DetectionKit" (id), 
 	FOREIGN KEY("complementaryDocument_id") REFERENCES "Document" (id)
 );
-CREATE TABLE "Detection Kit_productPicture" (
-	"Detection Kit_id" INTEGER, 
+CREATE TABLE "DetectionKit_productPicture" (
+	"DetectionKit_id" INTEGER, 
 	"productPicture_id" INTEGER, 
-	PRIMARY KEY ("Detection Kit_id", "productPicture_id"), 
-	FOREIGN KEY("Detection Kit_id") REFERENCES "Detection Kit" (id), 
+	PRIMARY KEY ("DetectionKit_id", "productPicture_id"), 
+	FOREIGN KEY("DetectionKit_id") REFERENCES "DetectionKit" (id), 
 	FOREIGN KEY("productPicture_id") REFERENCES "Image" (id)
 );
-CREATE TABLE "Detection Kit_externalRelatedReference" (
-	"Detection Kit_id" INTEGER, 
+CREATE TABLE "DetectionKit_externalRelatedReference" (
+	"DetectionKit_id" INTEGER, 
 	"externalRelatedReference_id" INTEGER, 
-	PRIMARY KEY ("Detection Kit_id", "externalRelatedReference_id"), 
-	FOREIGN KEY("Detection Kit_id") REFERENCES "Detection Kit" (id), 
+	PRIMARY KEY ("DetectionKit_id", "externalRelatedReference_id"), 
+	FOREIGN KEY("DetectionKit_id") REFERENCES "DetectionKit" (id), 
 	FOREIGN KEY("externalRelatedReference_id") REFERENCES "ExternalRelatedReference" (id)
 );
-CREATE TABLE "Detection Kit_certification" (
-	"Detection Kit_id" INTEGER, 
+CREATE TABLE "DetectionKit_certification" (
+	"DetectionKit_id" INTEGER, 
 	certification_id INTEGER, 
-	PRIMARY KEY ("Detection Kit_id", certification_id), 
-	FOREIGN KEY("Detection Kit_id") REFERENCES "Detection Kit" (id), 
+	PRIMARY KEY ("DetectionKit_id", certification_id), 
+	FOREIGN KEY("DetectionKit_id") REFERENCES "DetectionKit" (id), 
 	FOREIGN KEY(certification_id) REFERENCES "Certification" (id)
 );
 CREATE TABLE "Bundle_productsOfTheBundle" (
