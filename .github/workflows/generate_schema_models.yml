@@ -51,7 +51,7 @@ jobs:
       - name: Generate project owl ttl file with LinkML
         run: |
           docker run --rm -v $(pwd):/workdir -u $(id -u):$(id -g) $DOCKER_IMAGE \
-          linkml generate owl --no-use-native-uris models/evora_schema.yaml > models/owl/evora_ontology.owl.ttl
+          linkml generate owl --no-use-native-uris --ontology-uri-suffix evorao.owl.ttl models/evora_schema.yaml > models/owl/evora_ontology.owl.ttl
 
       - uses: actions/upload-artifact@v4
         with:
