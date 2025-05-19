@@ -37,7 +37,7 @@
     "interoperability"
   ],
   "id": "https://w3id.org/evorao/",
-  "version": "1.0.8702",
+  "version": "1.0.8719",
   "imports": [
     "linkml:types"
   ],
@@ -11018,9 +11018,9 @@
   ],
   "metamodel_version": "1.7.0",
   "source_file": "evora_schema.yaml",
-  "source_file_date": "2025-05-19T12:28:24",
-  "source_file_size": 185472,
-  "generation_date": "2025-05-19T12:28:38",
+  "source_file_date": "2025-05-19T13:32:30",
+  "source_file_size": 185479,
+  "generation_date": "2025-05-19T13:32:46",
   "@type": "SchemaDefinition",
   "@context": [
     "https://w3id.org/linkml/types.context.jsonld",

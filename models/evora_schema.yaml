@@ -47,7 +47,7 @@ keywords:
 - pathogen collections
 - interoperability
 id: https://w3id.org/evorao/
-version: 1.0.8702
+version: 1.0.8719
 imports:
 - linkml:types
 license: https://creativecommons.org/publicdomain/zero/1.0/
@@ -5739,5 +5739,5 @@ classes:
         range: uri
         required: false
         multivalued: false
-source_file: https://w3id.org/evorao/owl.ttl
-generation_date: '2025-05-15T11:16:34'
+source_file: https://w3id.org/evorao/evorao.owl.ttl
+generation_date: '2025-05-19T15:32:06'
