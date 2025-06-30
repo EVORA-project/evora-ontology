@@ -92,7 +92,8 @@ URI: [dcat:Catalog](http://www.w3.org/ns/dcat#Catalog)
 | ---  | ---  |
 | self | dcat:Catalog |
 | native | EVORAO:Catalogue |
-| close | wd:Q2352616, schema:Dataset, wd:Q2352616, schema:Dataset |
+| exact | schema:DataCatalog, schema:DataCatalog |
+| close | wd:Q2352616, wd:Q2352616 |
 
 
 
@@ -112,11 +113,12 @@ name: Catalogue
 description: A curated collection of metadata about resources
 title: Catalogue
 from_schema: https://w3id.org/evorao/
+exact_mappings:
+- schema:DataCatalog
+- schema:DataCatalog
 close_mappings:
 - wd:Q2352616
-- schema:Dataset
 - wd:Q2352616
-- schema:Dataset
 is_a: Dataset
 abstract: true
 class_uri: dcat:Catalog
@@ -132,11 +134,12 @@ name: Catalogue
 description: A curated collection of metadata about resources
 title: Catalogue
 from_schema: https://w3id.org/evorao/
+exact_mappings:
+- schema:DataCatalog
+- schema:DataCatalog
 close_mappings:
 - wd:Q2352616
-- schema:Dataset
 - wd:Q2352616
-- schema:Dataset
 is_a: Dataset
 abstract: true
 attributes:
@@ -154,6 +157,7 @@ attributes:
     from_schema: https://w3id.org/evorao/
     close_mappings:
     - rdfs:label
+    - schema:name
     rank: 1000
     slot_uri: dct:title
     alias: title
@@ -179,6 +183,10 @@ attributes:
 
       '
     from_schema: https://w3id.org/evorao/
+    exact_mappings:
+    - schema:description
+    close_mappings:
+    - schema:description
     rank: 1000
     slot_uri: dct:description
     alias: description

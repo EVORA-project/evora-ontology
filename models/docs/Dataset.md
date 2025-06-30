@@ -96,7 +96,8 @@ URI: [dcat:Dataset](http://www.w3.org/ns/dcat#Dataset)
 | ---  | ---  |
 | self | dcat:Dataset |
 | native | EVORAO:Dataset |
-| close | wd:Q1172284, schema:DataCatalog, wd:Q1172284, schema:DataCatalog |
+| exact | schema:Dataset, schema:Dataset |
+| close | wd:Q1172284, wd:Q1172284 |
 
 
 
@@ -117,11 +118,12 @@ description: A collection of data, published or curated by a single agent, and a
   for access
 title: Dataset
 from_schema: https://w3id.org/evorao/
+exact_mappings:
+- schema:Dataset
+- schema:Dataset
 close_mappings:
 - wd:Q1172284
-- schema:DataCatalog
 - wd:Q1172284
-- schema:DataCatalog
 is_a: Resource
 abstract: true
 slots:
@@ -141,6 +143,7 @@ slot_usage:
       name or specific feature'
     close_mappings:
     - rdfs:label
+    - schema:name
     slot_uri: dct:title
     domain_of:
     - Dataset
@@ -162,6 +165,8 @@ slot_usage:
       present the resource.
 
       '
+    exact_mappings:
+    - schema:description
     slot_uri: dct:description
     domain_of:
     - Dataset
@@ -189,11 +194,12 @@ description: A collection of data, published or curated by a single agent, and a
   for access
 title: Dataset
 from_schema: https://w3id.org/evorao/
+exact_mappings:
+- schema:Dataset
+- schema:Dataset
 close_mappings:
 - wd:Q1172284
-- schema:DataCatalog
 - wd:Q1172284
-- schema:DataCatalog
 is_a: Resource
 abstract: true
 slot_usage:
@@ -210,6 +216,7 @@ slot_usage:
       name or specific feature'
     close_mappings:
     - rdfs:label
+    - schema:name
     slot_uri: dct:title
     domain_of:
     - Dataset
@@ -231,6 +238,8 @@ slot_usage:
       present the resource.
 
       '
+    exact_mappings:
+    - schema:description
     slot_uri: dct:description
     domain_of:
     - Dataset
@@ -259,6 +268,7 @@ attributes:
     from_schema: https://w3id.org/evorao/
     close_mappings:
     - rdfs:label
+    - schema:name
     rank: 1000
     slot_uri: dct:title
     alias: title
@@ -284,6 +294,10 @@ attributes:
 
       '
     from_schema: https://w3id.org/evorao/
+    exact_mappings:
+    - schema:description
+    close_mappings:
+    - schema:description
     rank: 1000
     slot_uri: dct:description
     alias: description

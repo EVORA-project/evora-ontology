@@ -47,7 +47,7 @@ keywords:
 - pathogen collections
 - interoperability
 id: https://w3id.org/evorao/
-version: 1.0.8719
+version: 1.0.8773
 imports:
 - linkml:types
 license: https://creativecommons.org/publicdomain/zero/1.0/
@@ -86,8 +86,16 @@ slots:
       ''Virus name'', ''virus host type'', ''collection year'', ''country of collection''
       ex ''suspected epidemiological origin'', ''genotype'', ''strain'', ''variant
       name or specific feature'
+    - 'The title of the item should be as short and descriptive as possible. E.g.
+      for virus products it should basically be based on the following Pattern:
+
+      ''Virus name'', ''virus host type'', ''collection year'', ''country of collection''
+      ex ''suspected epidemiological origin'', ''genotype'', ''strain'', ''variant
+      name or specific feature'
     from_schema: https://w3id.org/evorao/
     close_mappings:
+    - rdfs:label
+    - schema:name
     - rdfs:label
     slot_uri: dct:title
     domain_of:
@@ -113,7 +121,16 @@ slots:
       present the resource.
 
       '
+    - 'Describe this item in few lines. This description will serve as a summary to
+      present the resource.
+
+      '
     from_schema: https://w3id.org/evorao/
+    exact_mappings:
+    - schema:description
+    - schema:description
+    close_mappings:
+    - schema:description
     slot_uri: dct:description
     domain_of:
     - Dataset
@@ -453,6 +470,8 @@ slots:
     description: Concise summary of the publication
     title: abstract
     from_schema: https://w3id.org/evorao/
+    exact_mappings:
+    - schema:abstract
     domain_of:
     - Publication
     range: string
@@ -517,9 +536,14 @@ slots:
     - This includes previous names, acronyms, former taxonomic terms, and other variations.
       This information can serve as keywords for search purposes and as a bridge with
       other projects that use different naming systems or taxonomies
+    - This includes previous names, acronyms, former taxonomic terms, and other variations.
+      This information can serve as keywords for search purposes and as a bridge with
+      other projects that use different naming systems or taxonomies
     from_schema: https://w3id.org/evorao/
     close_mappings:
     - wdp:P4970
+    - wdp:P4970
+    - schema:alternateName
     domain_of:
     - CommonName
     - AlternateName
@@ -744,9 +768,12 @@ slots:
     from_schema: https://w3id.org/evorao/
     exact_mappings:
     - schema:name
+    - schema:name
     close_mappings:
+    - dct:title
     - foaf:name
     - dct:title
+    slot_uri: foaf:name
     domain_of:
     - PersonOrOrganization
     - File
@@ -758,6 +785,7 @@ slots:
     description: A web page that serves as the main or introductory page
     title: home page
     from_schema: https://w3id.org/evorao/
+    slot_uri: foaf:homepage
     domain_of:
     - PersonOrOrganization
     range: uri
@@ -1070,7 +1098,7 @@ slots:
       service can fit
     title: additional category
     from_schema: https://w3id.org/evorao/
-    exact_mappings:
+    close_mappings:
     - dcat:theme
     domain_of:
     - ProductOrService
@@ -2196,7 +2224,7 @@ slots:
     description: Email address
     title: email
     from_schema: https://w3id.org/evorao/
-    close_mappings:
+    exact_mappings:
     - schema:email
     - vcard:email
     domain_of:
@@ -2209,7 +2237,7 @@ slots:
     description: The telephone number
     title: telephone
     from_schema: https://w3id.org/evorao/
-    close_mappings:
+    exact_mappings:
     - schema:telephone
     - vcard:telephone
     domain_of:
@@ -2333,11 +2361,12 @@ classes:
       available for access
     title: Dataset
     from_schema: https://w3id.org/evorao/
+    exact_mappings:
+    - schema:Dataset
+    - schema:Dataset
     close_mappings:
     - wd:Q1172284
-    - schema:DataCatalog
     - wd:Q1172284
-    - schema:DataCatalog
     is_a: Resource
     abstract: true
     slots:
@@ -2356,6 +2385,7 @@ classes:
           name or specific feature'
         close_mappings:
         - rdfs:label
+        - schema:name
         slot_uri: dct:title
         domain_of:
         - Dataset
@@ -2371,6 +2401,8 @@ classes:
           to present the resource.
 
           '
+        exact_mappings:
+        - schema:description
         slot_uri: dct:description
         domain_of:
         - Dataset
@@ -2407,6 +2439,7 @@ classes:
           name or specific feature'
         close_mappings:
         - rdfs:label
+        - schema:name
         slot_uri: dct:title
         domain_of:
         - DataService
@@ -2422,6 +2455,8 @@ classes:
           to present the resource.
 
           '
+        exact_mappings:
+        - schema:description
         slot_uri: dct:description
         domain_of:
         - DataService
@@ -2477,11 +2512,12 @@ classes:
     description: A curated collection of metadata about resources
     title: Catalogue
     from_schema: https://w3id.org/evorao/
+    exact_mappings:
+    - schema:DataCatalog
+    - schema:DataCatalog
     close_mappings:
     - wd:Q2352616
-    - schema:Dataset
     - wd:Q2352616
-    - schema:Dataset
     is_a: Dataset
     abstract: true
     class_uri: dcat:Catalog
@@ -2810,6 +2846,7 @@ classes:
           name or specific feature'
         close_mappings:
         - rdfs:label
+        - schema:name
         slot_uri: dct:title
         domain_of:
         - Publication
@@ -2827,6 +2864,8 @@ classes:
       abstract:
         description: Concise summary of the publication
         title: abstract
+        exact_mappings:
+        - schema:abstract
         domain_of:
         - Publication
         range: string
@@ -2908,6 +2947,7 @@ classes:
           name or specific feature'
         close_mappings:
         - rdfs:label
+        - schema:name
         slot_uri: dct:title
         domain_of:
         - Term
@@ -2923,6 +2963,8 @@ classes:
           to present the resource.
 
           '
+        exact_mappings:
+        - schema:description
         slot_uri: dct:description
         domain_of:
         - Term
@@ -3025,6 +3067,7 @@ classes:
           as a bridge with other projects that use different naming systems or taxonomies
         close_mappings:
         - wdp:P4970
+        - schema:alternateName
         domain_of:
         - AlternateName
         range: AlternateName
@@ -3502,8 +3545,8 @@ classes:
         exact_mappings:
         - schema:name
         close_mappings:
-        - foaf:name
         - dct:title
+        slot_uri: foaf:name
         domain_of:
         - PersonOrOrganization
         range: string
@@ -3518,6 +3561,8 @@ classes:
           to present the resource.
 
           '
+        exact_mappings:
+        - schema:description
         slot_uri: dct:description
         domain_of:
         - PersonOrOrganization
@@ -3528,6 +3573,7 @@ classes:
       homePage:
         description: A web page that serves as the main or introductory page
         title: home page
+        slot_uri: foaf:homepage
         domain_of:
         - PersonOrOrganization
         range: uri
@@ -3603,6 +3649,7 @@ classes:
           as a bridge with other projects that use different naming systems or taxonomies
         close_mappings:
         - wdp:P4970
+        - schema:alternateName
         domain_of:
         - Organization
         range: AlternateName
@@ -3981,7 +4028,7 @@ classes:
         description: Any category apart from its main category in which this product
           or service can fit
         title: additional category
-        exact_mappings:
+        close_mappings:
         - dcat:theme
         domain_of:
         - ProductOrService
@@ -5332,6 +5379,8 @@ classes:
           to present the resource.
 
           '
+        exact_mappings:
+        - schema:description
         slot_uri: dct:description
         domain_of:
         - File
@@ -5428,11 +5477,14 @@ classes:
     description: Entity serving as focal point of information
     title: Contact Point
     from_schema: https://w3id.org/evorao/
+    exact_mappings:
+    - schema:ContactPoint
+    - vcard:Contact
+    - schema:ContactPoint
+    - vcard:Contact
     close_mappings:
     - wd:Q30322502
-    - vcard:Contact
     - wd:Q30322502
-    - vcard:Contact
     is_a: Resource
     slots:
     - name
@@ -5468,6 +5520,8 @@ classes:
           to present the resource.
 
           '
+        exact_mappings:
+        - schema:description
         slot_uri: dct:description
         domain_of:
         - ContactPoint
@@ -5478,7 +5532,7 @@ classes:
       email:
         description: Email address
         title: email
-        close_mappings:
+        exact_mappings:
         - schema:email
         - vcard:email
         domain_of:
@@ -5490,7 +5544,7 @@ classes:
       telephone:
         description: The telephone number
         title: telephone
-        close_mappings:
+        exact_mappings:
         - schema:telephone
         - vcard:telephone
         domain_of:
@@ -5617,6 +5671,8 @@ classes:
           to present the resource.
 
           '
+        close_mappings:
+        - schema:description
         slot_uri: dct:description
         domain_of:
         - License
@@ -5703,6 +5759,8 @@ classes:
           to present the resource.
 
           '
+        close_mappings:
+        - schema:description
         slot_uri: dct:description
         domain_of:
         - Certification
@@ -5740,4 +5798,4 @@ classes:
         required: false
         multivalued: false
 source_file: https://w3id.org/evorao/evorao.owl.ttl
-generation_date: '2025-05-19T15:32:06'
+generation_date: '2025-06-30T17:25:01'

@@ -134,6 +134,7 @@ slot_usage:
       name or specific feature'
     close_mappings:
     - rdfs:label
+    - schema:name
     slot_uri: dct:title
     domain_of:
     - DataService
@@ -155,6 +156,8 @@ slot_usage:
       present the resource.
 
       '
+    exact_mappings:
+    - schema:description
     slot_uri: dct:description
     domain_of:
     - DataService
@@ -216,6 +219,7 @@ slot_usage:
       name or specific feature'
     close_mappings:
     - rdfs:label
+    - schema:name
     slot_uri: dct:title
     domain_of:
     - DataService
@@ -237,6 +241,8 @@ slot_usage:
       present the resource.
 
       '
+    exact_mappings:
+    - schema:description
     slot_uri: dct:description
     domain_of:
     - DataService
@@ -278,6 +284,7 @@ attributes:
     from_schema: https://w3id.org/evorao/
     close_mappings:
     - rdfs:label
+    - schema:name
     rank: 1000
     slot_uri: dct:title
     alias: title
@@ -303,6 +310,10 @@ attributes:
 
       '
     from_schema: https://w3id.org/evorao/
+    exact_mappings:
+    - schema:description
+    close_mappings:
+    - schema:description
     rank: 1000
     slot_uri: dct:description
     alias: description

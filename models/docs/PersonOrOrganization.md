@@ -154,8 +154,8 @@ slot_usage:
     exact_mappings:
     - schema:name
     close_mappings:
-    - foaf:name
     - dct:title
+    slot_uri: foaf:name
     domain_of:
     - PersonOrOrganization
     - File
@@ -173,6 +173,8 @@ slot_usage:
       present the resource.
 
       '
+    exact_mappings:
+    - schema:description
     slot_uri: dct:description
     domain_of:
     - PersonOrOrganization
@@ -191,6 +193,7 @@ slot_usage:
     name: homePage
     description: A web page that serves as the main or introductory page
     title: home page
+    slot_uri: foaf:homepage
     domain_of:
     - PersonOrOrganization
     range: uri
@@ -248,8 +251,8 @@ slot_usage:
     exact_mappings:
     - schema:name
     close_mappings:
-    - foaf:name
     - dct:title
+    slot_uri: foaf:name
     domain_of:
     - PersonOrOrganization
     - File
@@ -267,6 +270,8 @@ slot_usage:
       present the resource.
 
       '
+    exact_mappings:
+    - schema:description
     slot_uri: dct:description
     domain_of:
     - PersonOrOrganization
@@ -285,6 +290,7 @@ slot_usage:
     name: homePage
     description: A web page that serves as the main or introductory page
     title: home page
+    slot_uri: foaf:homepage
     domain_of:
     - PersonOrOrganization
     range: uri
@@ -323,9 +329,9 @@ attributes:
     exact_mappings:
     - schema:name
     close_mappings:
-    - foaf:name
     - dct:title
     rank: 1000
+    slot_uri: foaf:name
     alias: name
     owner: PersonOrOrganization
     domain_of:
@@ -346,6 +352,10 @@ attributes:
 
       '
     from_schema: https://w3id.org/evorao/
+    exact_mappings:
+    - schema:description
+    close_mappings:
+    - schema:description
     rank: 1000
     slot_uri: dct:description
     alias: description
@@ -369,6 +379,7 @@ attributes:
     title: home page
     from_schema: https://w3id.org/evorao/
     rank: 1000
+    slot_uri: foaf:homepage
     alias: homePage
     owner: PersonOrOrganization
     domain_of:

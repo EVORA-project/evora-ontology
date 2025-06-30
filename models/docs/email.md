@@ -62,7 +62,7 @@ Alias: email
 | ---  | ---  |
 | self | EVORAO:email |
 | native | EVORAO:email |
-| close | schema:email, vcard:email |
+| exact | schema:email, vcard:email |
 
 
 
@@ -75,7 +75,7 @@ name: email
 description: Email address
 title: email
 from_schema: https://w3id.org/evorao/
-close_mappings:
+exact_mappings:
 - schema:email
 - vcard:email
 rank: 1000

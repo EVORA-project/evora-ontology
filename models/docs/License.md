@@ -178,6 +178,8 @@ slot_usage:
       present the resource.
 
       '
+    close_mappings:
+    - schema:description
     slot_uri: dct:description
     domain_of:
     - License
@@ -289,6 +291,8 @@ slot_usage:
       present the resource.
 
       '
+    close_mappings:
+    - schema:description
     slot_uri: dct:description
     domain_of:
     - License
@@ -383,6 +387,11 @@ attributes:
 
       '
     from_schema: https://w3id.org/evorao/
+    exact_mappings:
+    - schema:description
+    - schema:description
+    close_mappings:
+    - schema:description
     rank: 1000
     slot_uri: dct:description
     alias: description

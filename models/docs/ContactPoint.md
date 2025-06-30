@@ -137,7 +137,8 @@ URI: [EVORAO:ContactPoint](https://w3id.org/evorao/ContactPoint)
 | ---  | ---  |
 | self | EVORAO:ContactPoint |
 | native | EVORAO:ContactPoint |
-| close | wd:Q30322502, vcard:Contact, wd:Q30322502, vcard:Contact |
+| exact | schema:ContactPoint, vcard:Contact, schema:ContactPoint, vcard:Contact |
+| close | wd:Q30322502, wd:Q30322502 |
 
 
 
@@ -157,11 +158,14 @@ name: ContactPoint
 description: Entity serving as focal point of information
 title: Contact Point
 from_schema: https://w3id.org/evorao/
+exact_mappings:
+- schema:ContactPoint
+- vcard:Contact
+- schema:ContactPoint
+- vcard:Contact
 close_mappings:
 - wd:Q30322502
-- vcard:Contact
 - wd:Q30322502
-- vcard:Contact
 is_a: Resource
 slots:
 - name
@@ -201,6 +205,8 @@ slot_usage:
       present the resource.
 
       '
+    exact_mappings:
+    - schema:description
     slot_uri: dct:description
     domain_of:
     - ContactPoint
@@ -219,7 +225,7 @@ slot_usage:
     name: email
     description: Email address
     title: email
-    close_mappings:
+    exact_mappings:
     - schema:email
     - vcard:email
     domain_of:
@@ -232,7 +238,7 @@ slot_usage:
     name: telephone
     description: The telephone number
     title: telephone
-    close_mappings:
+    exact_mappings:
     - schema:telephone
     - vcard:telephone
     domain_of:
@@ -329,11 +335,14 @@ name: ContactPoint
 description: Entity serving as focal point of information
 title: Contact Point
 from_schema: https://w3id.org/evorao/
+exact_mappings:
+- schema:ContactPoint
+- vcard:Contact
+- schema:ContactPoint
+- vcard:Contact
 close_mappings:
 - wd:Q30322502
-- vcard:Contact
 - wd:Q30322502
-- vcard:Contact
 is_a: Resource
 slot_usage:
   name:
@@ -362,6 +371,8 @@ slot_usage:
       present the resource.
 
       '
+    exact_mappings:
+    - schema:description
     slot_uri: dct:description
     domain_of:
     - ContactPoint
@@ -380,7 +391,7 @@ slot_usage:
     name: email
     description: Email address
     title: email
-    close_mappings:
+    exact_mappings:
     - schema:email
     - vcard:email
     domain_of:
@@ -393,7 +404,7 @@ slot_usage:
     name: telephone
     description: The telephone number
     title: telephone
-    close_mappings:
+    exact_mappings:
     - schema:telephone
     - vcard:telephone
     domain_of:
@@ -490,6 +501,7 @@ attributes:
     - foaf:name
     - dct:title
     rank: 1000
+    slot_uri: foaf:name
     alias: name
     owner: ContactPoint
     domain_of:
@@ -510,6 +522,10 @@ attributes:
 
       '
     from_schema: https://w3id.org/evorao/
+    exact_mappings:
+    - schema:description
+    close_mappings:
+    - schema:description
     rank: 1000
     slot_uri: dct:description
     alias: description
@@ -532,7 +548,7 @@ attributes:
     description: Email address
     title: email
     from_schema: https://w3id.org/evorao/
-    close_mappings:
+    exact_mappings:
     - schema:email
     - vcard:email
     rank: 1000
@@ -549,7 +565,7 @@ attributes:
     description: The telephone number
     title: telephone
     from_schema: https://w3id.org/evorao/
-    close_mappings:
+    exact_mappings:
     - schema:telephone
     - vcard:telephone
     rank: 1000

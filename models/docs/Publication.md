@@ -144,6 +144,7 @@ slot_usage:
       name or specific feature'
     close_mappings:
     - rdfs:label
+    - schema:name
     slot_uri: dct:title
     domain_of:
     - Publication
@@ -168,6 +169,8 @@ slot_usage:
     name: abstract
     description: Concise summary of the publication
     title: abstract
+    exact_mappings:
+    - schema:abstract
     domain_of:
     - Publication
     range: string
@@ -222,6 +225,7 @@ slot_usage:
       name or specific feature'
     close_mappings:
     - rdfs:label
+    - schema:name
     slot_uri: dct:title
     domain_of:
     - Publication
@@ -246,6 +250,8 @@ slot_usage:
     name: abstract
     description: Concise summary of the publication
     title: abstract
+    exact_mappings:
+    - schema:abstract
     domain_of:
     - Publication
     range: string
@@ -285,6 +291,7 @@ attributes:
     from_schema: https://w3id.org/evorao/
     close_mappings:
     - rdfs:label
+    - schema:name
     rank: 1000
     slot_uri: dct:title
     alias: title
@@ -317,6 +324,8 @@ attributes:
     description: Concise summary of the publication
     title: abstract
     from_schema: https://w3id.org/evorao/
+    exact_mappings:
+    - schema:abstract
     rank: 1000
     alias: abstract
     owner: Publication

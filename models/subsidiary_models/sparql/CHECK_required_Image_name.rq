@@ -27,10 +27,10 @@ SELECT
   ?predicate WHERE {
  GRAPH ?graph {
   ?subject rdf:type EVORAO:Image .
-  FILTER NOT EXISTS { ?subject  EVORAO:name ?o  }
+  FILTER NOT EXISTS { ?subject  foaf:name ?o  }
  }
  VALUES ?check { linkml:required }
- VALUES ?predicate { EVORAO:name }
+ VALUES ?predicate { foaf:name }
  
 }  
 

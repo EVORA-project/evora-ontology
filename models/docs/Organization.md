@@ -174,6 +174,7 @@ slot_usage:
       other projects that use different naming systems or taxonomies
     close_mappings:
     - wdp:P4970
+    - schema:alternateName
     domain_of:
     - Organization
     - CommonName
@@ -234,6 +235,7 @@ slot_usage:
       other projects that use different naming systems or taxonomies
     close_mappings:
     - wdp:P4970
+    - schema:alternateName
     domain_of:
     - Organization
     - CommonName
@@ -276,6 +278,7 @@ attributes:
     from_schema: https://w3id.org/evorao/
     close_mappings:
     - wdp:P4970
+    - schema:alternateName
     rank: 1000
     alias: alternateName
     owner: Organization
@@ -325,9 +328,9 @@ attributes:
     exact_mappings:
     - schema:name
     close_mappings:
-    - foaf:name
     - dct:title
     rank: 1000
+    slot_uri: foaf:name
     alias: name
     owner: Organization
     domain_of:
@@ -348,6 +351,10 @@ attributes:
 
       '
     from_schema: https://w3id.org/evorao/
+    exact_mappings:
+    - schema:description
+    close_mappings:
+    - schema:description
     rank: 1000
     slot_uri: dct:description
     alias: description
@@ -371,6 +378,7 @@ attributes:
     title: home page
     from_schema: https://w3id.org/evorao/
     rank: 1000
+    slot_uri: foaf:homepage
     alias: homePage
     owner: Organization
     domain_of:

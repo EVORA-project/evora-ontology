@@ -27,7 +27,7 @@ from pydantic import (
 
 
 metamodel_version = "None"
-version = "1.0.8719"
+version = "1.0.8773"
 
 
 class ConfiguredBaseModel(BaseModel):
@@ -98,7 +98,7 @@ linkml_meta = LinkMLMeta({'comments': ['EVORAO is an ontology for standardized m
                     'pathogens. EVORAO is compatible with DCAT, making it '
                     'well-suited for efficiently cataloguing pathogen collections '
                     'and related resources.',
-     'generation_date': '2025-05-19T15:32:06',
+     'generation_date': '2025-06-30T17:25:01',
      'id': 'https://w3id.org/evorao/',
      'imports': ['linkml:types'],
      'in_language': 'en',
@@ -182,10 +182,8 @@ class Dataset(Resource):
     """
     linkml_meta: ClassVar[LinkMLMeta] = LinkMLMeta({'abstract': True,
          'class_uri': 'dcat:Dataset',
-         'close_mappings': ['wd:Q1172284',
-                            'schema:DataCatalog',
-                            'wd:Q1172284',
-                            'schema:DataCatalog'],
+         'close_mappings': ['wd:Q1172284', 'wd:Q1172284'],
+         'exact_mappings': ['schema:Dataset', 'schema:Dataset'],
          'from_schema': 'https://w3id.org/evorao/',
          'slot_usage': {'description': {'comments': ['Describe this item in few lines. '
                                                      'This description will serve as a '
@@ -202,13 +200,14 @@ class Dataset(Resource):
                                                       'ContactPoint',
                                                       'License',
                                                       'Certification'],
+                                        'exact_mappings': ['schema:description'],
                                         'multivalued': False,
                                         'name': 'description',
                                         'range': 'string',
                                         'required': True,
                                         'slot_uri': 'dct:description',
                                         'title': 'description'},
-                        'title': {'close_mappings': ['rdfs:label'],
+                        'title': {'close_mappings': ['rdfs:label', 'schema:name'],
                                   'comments': ['The title of the item should be as '
                                                'short and descriptive as possible. '
                                                'E.g. for virus products it should '
@@ -236,7 +235,7 @@ class Dataset(Resource):
          'title': 'Dataset'})
 
     title: str = Field(default=..., title="title", description="""A name given to the resource""", json_schema_extra = { "linkml_meta": {'alias': 'title',
-         'close_mappings': ['rdfs:label'],
+         'close_mappings': ['rdfs:label', 'schema:name'],
          'comments': ['The title of the item should be as short and descriptive as '
                       'possible. E.g. for virus products it should basically be based '
                       'on the following Pattern:\n'
@@ -251,6 +250,7 @@ class Dataset(Resource):
                        'Certification'],
          'slot_uri': 'dct:title'} })
     description: str = Field(default=..., title="description", description="""A short explanation of the characteristics, features, or nature of the current item""", json_schema_extra = { "linkml_meta": {'alias': 'description',
+         'close_mappings': ['schema:description'],
          'comments': ['Describe this item in few lines. This description will serve as '
                       'a summary to present the resource.\n'],
          'domain_of': ['Dataset',
@@ -261,6 +261,7 @@ class Dataset(Resource):
                        'ContactPoint',
                        'License',
                        'Certification'],
+         'exact_mappings': ['schema:description'],
          'recommended': True,
          'slot_uri': 'dct:description'} })
 
@@ -291,6 +292,7 @@ class DataService(Resource):
                                                       'ContactPoint',
                                                       'License',
                                                       'Certification'],
+                                        'exact_mappings': ['schema:description'],
                                         'multivalued': False,
                                         'name': 'description',
                                         'range': 'string',
@@ -308,7 +310,7 @@ class DataService(Resource):
                                         'required': True,
                                         'slot_uri': 'dcat:endpointURL',
                                         'title': 'endpoint URL'},
-                        'title': {'close_mappings': ['rdfs:label'],
+                        'title': {'close_mappings': ['rdfs:label', 'schema:name'],
                                   'comments': ['The title of the item should be as '
                                                'short and descriptive as possible. '
                                                'E.g. for virus products it should '
@@ -336,7 +338,7 @@ class DataService(Resource):
          'title': 'Data Service'})
 
     title: str = Field(default=..., title="title", description="""A name given to the resource""", json_schema_extra = { "linkml_meta": {'alias': 'title',
-         'close_mappings': ['rdfs:label'],
+         'close_mappings': ['rdfs:label', 'schema:name'],
          'comments': ['The title of the item should be as short and descriptive as '
                       'possible. E.g. for virus products it should basically be based '
                       'on the following Pattern:\n'
@@ -351,6 +353,7 @@ class DataService(Resource):
                        'Certification'],
          'slot_uri': 'dct:title'} })
     description: Optional[str] = Field(default=None, title="description", description="""A short explanation of the characteristics, features, or nature of the current item""", json_schema_extra = { "linkml_meta": {'alias': 'description',
+         'close_mappings': ['schema:description'],
          'comments': ['Describe this item in few lines. This description will serve as '
                       'a summary to present the resource.\n'],
          'domain_of': ['DataService',
@@ -361,6 +364,7 @@ class DataService(Resource):
                        'ContactPoint',
                        'License',
                        'Certification'],
+         'exact_mappings': ['schema:description'],
          'recommended': True,
          'slot_uri': 'dct:description'} })
     endpointURL: str = Field(default=..., title="endpoint URL", description="""The URL template that allows to get the content""", json_schema_extra = { "linkml_meta": {'alias': 'endpointURL',
@@ -405,15 +409,13 @@ class Catalogue(Dataset):
     """
     linkml_meta: ClassVar[LinkMLMeta] = LinkMLMeta({'abstract': True,
          'class_uri': 'dcat:Catalog',
-         'close_mappings': ['wd:Q2352616',
-                            'schema:Dataset',
-                            'wd:Q2352616',
-                            'schema:Dataset'],
+         'close_mappings': ['wd:Q2352616', 'wd:Q2352616'],
+         'exact_mappings': ['schema:DataCatalog', 'schema:DataCatalog'],
          'from_schema': 'https://w3id.org/evorao/',
          'title': 'Catalogue'})
 
     title: str = Field(default=..., title="title", description="""A name given to the resource""", json_schema_extra = { "linkml_meta": {'alias': 'title',
-         'close_mappings': ['rdfs:label'],
+         'close_mappings': ['rdfs:label', 'schema:name'],
          'comments': ['The title of the item should be as short and descriptive as '
                       'possible. E.g. for virus products it should basically be based '
                       'on the following Pattern:\n'
@@ -428,6 +430,7 @@ class Catalogue(Dataset):
                        'Certification'],
          'slot_uri': 'dct:title'} })
     description: str = Field(default=..., title="description", description="""A short explanation of the characteristics, features, or nature of the current item""", json_schema_extra = { "linkml_meta": {'alias': 'description',
+         'close_mappings': ['schema:description'],
          'comments': ['Describe this item in few lines. This description will serve as '
                       'a summary to present the resource.\n'],
          'domain_of': ['Dataset',
@@ -438,6 +441,7 @@ class Catalogue(Dataset):
                        'ContactPoint',
                        'License',
                        'Certification'],
+         'exact_mappings': ['schema:description'],
          'recommended': True,
          'slot_uri': 'dct:description'} })
 
@@ -520,7 +524,7 @@ class Taxonomy(Catalogue):
          'exact_mappings': ['dwc:taxonRank']} })
     rankDataProvider: Optional[DataProvider] = Field(default=None, title="rank data provider", description="""The data provider for the description of the taxonomic ranks used in this taxonomy""", json_schema_extra = { "linkml_meta": {'alias': 'rankDataProvider', 'domain_of': ['Taxonomy']} })
     title: str = Field(default=..., title="title", description="""A name given to the resource""", json_schema_extra = { "linkml_meta": {'alias': 'title',
-         'close_mappings': ['rdfs:label'],
+         'close_mappings': ['rdfs:label', 'schema:name'],
          'comments': ['The title of the item should be as short and descriptive as '
                       'possible. E.g. for virus products it should basically be based '
                       'on the following Pattern:\n'
@@ -535,6 +539,7 @@ class Taxonomy(Catalogue):
                        'Certification'],
          'slot_uri': 'dct:title'} })
     description: str = Field(default=..., title="description", description="""A short explanation of the characteristics, features, or nature of the current item""", json_schema_extra = { "linkml_meta": {'alias': 'description',
+         'close_mappings': ['schema:description'],
          'comments': ['Describe this item in few lines. This description will serve as '
                       'a summary to present the resource.\n'],
          'domain_of': ['Dataset',
@@ -545,6 +550,7 @@ class Taxonomy(Catalogue):
                        'ContactPoint',
                        'License',
                        'Certification'],
+         'exact_mappings': ['schema:description'],
          'recommended': True,
          'slot_uri': 'dct:description'} })
 
@@ -687,7 +693,7 @@ class DataProvider(DataService):
          'domain_of': ['DataProvider', 'Term'],
          'ifabsent': 'int(0)'} })
     title: str = Field(default=..., title="title", description="""A name given to the resource""", json_schema_extra = { "linkml_meta": {'alias': 'title',
-         'close_mappings': ['rdfs:label'],
+         'close_mappings': ['rdfs:label', 'schema:name'],
          'comments': ['The title of the item should be as short and descriptive as '
                       'possible. E.g. for virus products it should basically be based '
                       'on the following Pattern:\n'
@@ -702,6 +708,7 @@ class DataProvider(DataService):
                        'Certification'],
          'slot_uri': 'dct:title'} })
     description: Optional[str] = Field(default=None, title="description", description="""A short explanation of the characteristics, features, or nature of the current item""", json_schema_extra = { "linkml_meta": {'alias': 'description',
+         'close_mappings': ['schema:description'],
          'comments': ['Describe this item in few lines. This description will serve as '
                       'a summary to present the resource.\n'],
          'domain_of': ['DataService',
@@ -712,6 +719,7 @@ class DataProvider(DataService):
                        'ContactPoint',
                        'License',
                        'Certification'],
+         'exact_mappings': ['schema:description'],
          'recommended': True,
          'slot_uri': 'dct:description'} })
     endpointURL: str = Field(default=..., title="endpoint URL", description="""The URL template that allows to get the content""", json_schema_extra = { "linkml_meta": {'alias': 'endpointURL',
@@ -876,6 +884,7 @@ class Publication(Resource):
          'slot_usage': {'abstract': {'description': 'Concise summary of the '
                                                     'publication',
                                      'domain_of': ['Publication'],
+                                     'exact_mappings': ['schema:abstract'],
                                      'multivalued': False,
                                      'name': 'abstract',
                                      'range': 'string',
@@ -904,7 +913,7 @@ class Publication(Resource):
                                        'range': 'DOI',
                                        'required': True,
                                        'title': 'DOI'},
-                        'title': {'close_mappings': ['rdfs:label'],
+                        'title': {'close_mappings': ['rdfs:label', 'schema:name'],
                                   'comments': ['The title of the item should be as '
                                                'short and descriptive as possible. '
                                                'E.g. for virus products it should '
@@ -932,7 +941,7 @@ class Publication(Resource):
          'title': 'Publication'})
 
     title: str = Field(default=..., title="title", description="""A name given to the resource""", json_schema_extra = { "linkml_meta": {'alias': 'title',
-         'close_mappings': ['rdfs:label'],
+         'close_mappings': ['rdfs:label', 'schema:name'],
          'comments': ['The title of the item should be as short and descriptive as '
                       'possible. E.g. for virus products it should basically be based '
                       'on the following Pattern:\n'
@@ -947,7 +956,9 @@ class Publication(Resource):
                        'Certification'],
          'slot_uri': 'dct:title'} })
     authors: str = Field(default=..., title="authors", description="""The list of authors""", json_schema_extra = { "linkml_meta": {'alias': 'authors', 'domain_of': ['Publication']} })
-    abstract: str = Field(default=..., title="abstract", description="""Concise summary of the publication""", json_schema_extra = { "linkml_meta": {'alias': 'abstract', 'domain_of': ['Publication']} })
+    abstract: str = Field(default=..., title="abstract", description="""Concise summary of the publication""", json_schema_extra = { "linkml_meta": {'alias': 'abstract',
+         'domain_of': ['Publication'],
+         'exact_mappings': ['schema:abstract']} })
     relatedDOI: DOI = Field(default=..., title="DOI", description="""Any Digital Object Identifier that can be related""", json_schema_extra = { "linkml_meta": {'alias': 'relatedDOI',
          'close_mappings': ['wdp:P356'],
          'domain_of': ['Publication', 'ProductOrService']} })
@@ -986,7 +997,7 @@ class Vocabulary(Catalogue):
     termDataProvider: Optional[DataProvider] = Field(default=None, title="term data provider", description="""An external API or Endpoint that permits to retrieve the terms of this vocabulary""", json_schema_extra = { "linkml_meta": {'alias': 'termDataProvider', 'domain_of': ['Vocabulary']} })
     term: Optional[list[Term]] = Field(default=None, title="term", description="""The terms related to this vocabulary""", json_schema_extra = { "linkml_meta": {'alias': 'term', 'domain_of': ['Vocabulary'], 'recommended': True} })
     title: str = Field(default=..., title="title", description="""A name given to the resource""", json_schema_extra = { "linkml_meta": {'alias': 'title',
-         'close_mappings': ['rdfs:label'],
+         'close_mappings': ['rdfs:label', 'schema:name'],
          'comments': ['The title of the item should be as short and descriptive as '
                       'possible. E.g. for virus products it should basically be based '
                       'on the following Pattern:\n'
@@ -1001,6 +1012,7 @@ class Vocabulary(Catalogue):
                        'Certification'],
          'slot_uri': 'dct:title'} })
     description: str = Field(default=..., title="description", description="""A short explanation of the characteristics, features, or nature of the current item""", json_schema_extra = { "linkml_meta": {'alias': 'description',
+         'close_mappings': ['schema:description'],
          'comments': ['Describe this item in few lines. This description will serve as '
                       'a summary to present the resource.\n'],
          'domain_of': ['Dataset',
@@ -1011,6 +1023,7 @@ class Vocabulary(Catalogue):
                        'ContactPoint',
                        'License',
                        'Certification'],
+         'exact_mappings': ['schema:description'],
          'recommended': True,
          'slot_uri': 'dct:description'} })
 
@@ -1037,6 +1050,7 @@ class Term(Resource):
                                                       'ContactPoint',
                                                       'License',
                                                       'Certification'],
+                                        'exact_mappings': ['schema:description'],
                                         'multivalued': False,
                                         'name': 'description',
                                         'range': 'string',
@@ -1053,7 +1067,7 @@ class Term(Resource):
                                          'range': 'Vocabulary',
                                          'required': True,
                                          'title': 'in Vocabulary'},
-                        'title': {'close_mappings': ['rdfs:label'],
+                        'title': {'close_mappings': ['rdfs:label', 'schema:name'],
                                   'comments': ['The title of the item should be as '
                                                'short and descriptive as possible. '
                                                'E.g. for virus products it should '
@@ -1096,7 +1110,7 @@ class Term(Resource):
          'title': 'Term'})
 
     title: str = Field(default=..., title="title", description="""A name given to the resource""", json_schema_extra = { "linkml_meta": {'alias': 'title',
-         'close_mappings': ['rdfs:label'],
+         'close_mappings': ['rdfs:label', 'schema:name'],
          'comments': ['The title of the item should be as short and descriptive as '
                       'possible. E.g. for virus products it should basically be based '
                       'on the following Pattern:\n'
@@ -1111,6 +1125,7 @@ class Term(Resource):
                        'Certification'],
          'slot_uri': 'dct:title'} })
     description: Optional[str] = Field(default=None, title="description", description="""A short explanation of the characteristics, features, or nature of the current item""", json_schema_extra = { "linkml_meta": {'alias': 'description',
+         'close_mappings': ['schema:description'],
          'comments': ['Describe this item in few lines. This description will serve as '
                       'a summary to present the resource.\n'],
          'domain_of': ['Term',
@@ -1121,6 +1136,7 @@ class Term(Resource):
                        'ContactPoint',
                        'License',
                        'Certification'],
+         'exact_mappings': ['schema:description'],
          'recommended': True,
          'slot_uri': 'dct:description'} })
     weight: int = Field(default=0, title="weight", description="""A numerical value indicating relative importance or priority, generally processed in ascending order. This weight helps prioritize content when organizing or processing data. Its value can be negative, with a default set to 0""", json_schema_extra = { "linkml_meta": {'alias': 'weight',
@@ -1187,7 +1203,7 @@ class CommonName(Term):
          'close_mappings': ['wdp:P248'],
          'domain_of': ['CommonName', 'AlternateName']} })
     title: str = Field(default=..., title="title", description="""A name given to the resource""", json_schema_extra = { "linkml_meta": {'alias': 'title',
-         'close_mappings': ['rdfs:label'],
+         'close_mappings': ['rdfs:label', 'schema:name'],
          'comments': ['The title of the item should be as short and descriptive as '
                       'possible. E.g. for virus products it should basically be based '
                       'on the following Pattern:\n'
@@ -1202,6 +1218,7 @@ class CommonName(Term):
                        'Certification'],
          'slot_uri': 'dct:title'} })
     description: Optional[str] = Field(default=None, title="description", description="""A short explanation of the characteristics, features, or nature of the current item""", json_schema_extra = { "linkml_meta": {'alias': 'description',
+         'close_mappings': ['schema:description'],
          'comments': ['Describe this item in few lines. This description will serve as '
                       'a summary to present the resource.\n'],
          'domain_of': ['Term',
@@ -1212,6 +1229,7 @@ class CommonName(Term):
                        'ContactPoint',
                        'License',
                        'Certification'],
+         'exact_mappings': ['schema:description'],
          'recommended': True,
          'slot_uri': 'dct:description'} })
     weight: int = Field(default=0, title="weight", description="""A numerical value indicating relative importance or priority, generally processed in ascending order. This weight helps prioritize content when organizing or processing data. Its value can be negative, with a default set to 0""", json_schema_extra = { "linkml_meta": {'alias': 'weight',
@@ -1244,7 +1262,7 @@ class VirusName(CommonName):
          'close_mappings': ['wdp:P248'],
          'domain_of': ['CommonName', 'AlternateName']} })
     title: str = Field(default=..., title="title", description="""A name given to the resource""", json_schema_extra = { "linkml_meta": {'alias': 'title',
-         'close_mappings': ['rdfs:label'],
+         'close_mappings': ['rdfs:label', 'schema:name'],
          'comments': ['The title of the item should be as short and descriptive as '
                       'possible. E.g. for virus products it should basically be based '
                       'on the following Pattern:\n'
@@ -1259,6 +1277,7 @@ class VirusName(CommonName):
                        'Certification'],
          'slot_uri': 'dct:title'} })
     description: Optional[str] = Field(default=None, title="description", description="""A short explanation of the characteristics, features, or nature of the current item""", json_schema_extra = { "linkml_meta": {'alias': 'description',
+         'close_mappings': ['schema:description'],
          'comments': ['Describe this item in few lines. This description will serve as '
                       'a summary to present the resource.\n'],
          'domain_of': ['Term',
@@ -1269,6 +1288,7 @@ class VirusName(CommonName):
                        'ContactPoint',
                        'License',
                        'Certification'],
+         'exact_mappings': ['schema:description'],
          'recommended': True,
          'slot_uri': 'dct:description'} })
     weight: int = Field(default=0, title="weight", description="""A numerical value indicating relative importance or priority, generally processed in ascending order. This weight helps prioritize content when organizing or processing data. Its value can be negative, with a default set to 0""", json_schema_extra = { "linkml_meta": {'alias': 'weight',
@@ -1288,7 +1308,8 @@ class AlternateName(Term):
     """
     linkml_meta: ClassVar[LinkMLMeta] = LinkMLMeta({'close_mappings': ['wd:Q7662595', 'wd:Q7662595'],
          'from_schema': 'https://w3id.org/evorao/',
-         'slot_usage': {'alternateName': {'close_mappings': ['wdp:P4970'],
+         'slot_usage': {'alternateName': {'close_mappings': ['wdp:P4970',
+                                                             'schema:alternateName'],
                                           'comments': ['This includes previous names, '
                                                        'acronyms, former taxonomic '
                                                        'terms, and other variations. '
@@ -1324,7 +1345,7 @@ class AlternateName(Term):
          'title': 'Alternate Name'})
 
     alternateName: Optional[list[AlternateName]] = Field(default=None, title="alternate name", description="""Any other name under which the entity can be known""", json_schema_extra = { "linkml_meta": {'alias': 'alternateName',
-         'close_mappings': ['wdp:P4970'],
+         'close_mappings': ['wdp:P4970', 'schema:alternateName'],
          'comments': ['This includes previous names, acronyms, former taxonomic terms, '
                       'and other variations. This information can serve as keywords '
                       'for search purposes and as a bridge with other projects that '
@@ -1334,7 +1355,7 @@ class AlternateName(Term):
          'close_mappings': ['wdp:P248'],
          'domain_of': ['AlternateName', 'CommonName']} })
     title: str = Field(default=..., title="title", description="""A name given to the resource""", json_schema_extra = { "linkml_meta": {'alias': 'title',
-         'close_mappings': ['rdfs:label'],
+         'close_mappings': ['rdfs:label', 'schema:name'],
          'comments': ['The title of the item should be as short and descriptive as '
                       'possible. E.g. for virus products it should basically be based '
                       'on the following Pattern:\n'
@@ -1349,6 +1370,7 @@ class AlternateName(Term):
                        'Certification'],
          'slot_uri': 'dct:title'} })
     description: Optional[str] = Field(default=None, title="description", description="""A short explanation of the characteristics, features, or nature of the current item""", json_schema_extra = { "linkml_meta": {'alias': 'description',
+         'close_mappings': ['schema:description'],
          'comments': ['Describe this item in few lines. This description will serve as '
                       'a summary to present the resource.\n'],
          'domain_of': ['Term',
@@ -1359,6 +1381,7 @@ class AlternateName(Term):
                        'ContactPoint',
                        'License',
                        'Certification'],
+         'exact_mappings': ['schema:description'],
          'recommended': True,
          'slot_uri': 'dct:description'} })
     weight: int = Field(default=0, title="weight", description="""A numerical value indicating relative importance or priority, generally processed in ascending order. This weight helps prioritize content when organizing or processing data. Its value can be negative, with a default set to 0""", json_schema_extra = { "linkml_meta": {'alias': 'weight',
@@ -1384,7 +1407,7 @@ class RiskGroup(Term):
          'title': 'Risk group'})
 
     title: str = Field(default=..., title="title", description="""A name given to the resource""", json_schema_extra = { "linkml_meta": {'alias': 'title',
-         'close_mappings': ['rdfs:label'],
+         'close_mappings': ['rdfs:label', 'schema:name'],
          'comments': ['The title of the item should be as short and descriptive as '
                       'possible. E.g. for virus products it should basically be based '
                       'on the following Pattern:\n'
@@ -1399,6 +1422,7 @@ class RiskGroup(Term):
                        'Certification'],
          'slot_uri': 'dct:title'} })
     description: Optional[str] = Field(default=None, title="description", description="""A short explanation of the characteristics, features, or nature of the current item""", json_schema_extra = { "linkml_meta": {'alias': 'description',
+         'close_mappings': ['schema:description'],
          'comments': ['Describe this item in few lines. This description will serve as '
                       'a summary to present the resource.\n'],
          'domain_of': ['Term',
@@ -1409,6 +1433,7 @@ class RiskGroup(Term):
                        'ContactPoint',
                        'License',
                        'Certification'],
+         'exact_mappings': ['schema:description'],
          'recommended': True,
          'slot_uri': 'dct:description'} })
     weight: int = Field(default=0, title="weight", description="""A numerical value indicating relative importance or priority, generally processed in ascending order. This weight helps prioritize content when organizing or processing data. Its value can be negative, with a default set to 0""", json_schema_extra = { "linkml_meta": {'alias': 'weight',
@@ -1431,7 +1456,7 @@ class DOI(Term):
          'title': 'DOI'})
 
     title: str = Field(default=..., title="title", description="""A name given to the resource""", json_schema_extra = { "linkml_meta": {'alias': 'title',
-         'close_mappings': ['rdfs:label'],
+         'close_mappings': ['rdfs:label', 'schema:name'],
          'comments': ['The title of the item should be as short and descriptive as '
                       'possible. E.g. for virus products it should basically be based '
                       'on the following Pattern:\n'
@@ -1446,6 +1471,7 @@ class DOI(Term):
                        'Certification'],
          'slot_uri': 'dct:title'} })
     description: Optional[str] = Field(default=None, title="description", description="""A short explanation of the characteristics, features, or nature of the current item""", json_schema_extra = { "linkml_meta": {'alias': 'description',
+         'close_mappings': ['schema:description'],
          'comments': ['Describe this item in few lines. This description will serve as '
                       'a summary to present the resource.\n'],
          'domain_of': ['Term',
@@ -1456,6 +1482,7 @@ class DOI(Term):
                        'ContactPoint',
                        'License',
                        'Certification'],
+         'exact_mappings': ['schema:description'],
          'recommended': True,
          'slot_uri': 'dct:description'} })
     weight: int = Field(default=0, title="weight", description="""A numerical value indicating relative importance or priority, generally processed in ascending order. This weight helps prioritize content when organizing or processing data. Its value can be negative, with a default set to 0""", json_schema_extra = { "linkml_meta": {'alias': 'weight',
@@ -1478,7 +1505,7 @@ class Journal(Term):
          'title': 'Journal'})
 
     title: str = Field(default=..., title="title", description="""A name given to the resource""", json_schema_extra = { "linkml_meta": {'alias': 'title',
-         'close_mappings': ['rdfs:label'],
+         'close_mappings': ['rdfs:label', 'schema:name'],
          'comments': ['The title of the item should be as short and descriptive as '
                       'possible. E.g. for virus products it should basically be based '
                       'on the following Pattern:\n'
@@ -1493,6 +1520,7 @@ class Journal(Term):
                        'Certification'],
          'slot_uri': 'dct:title'} })
     description: Optional[str] = Field(default=None, title="description", description="""A short explanation of the characteristics, features, or nature of the current item""", json_schema_extra = { "linkml_meta": {'alias': 'description',
+         'close_mappings': ['schema:description'],
          'comments': ['Describe this item in few lines. This description will serve as '
                       'a summary to present the resource.\n'],
          'domain_of': ['Term',
@@ -1503,6 +1531,7 @@ class Journal(Term):
                        'ContactPoint',
                        'License',
                        'Certification'],
+         'exact_mappings': ['schema:description'],
          'recommended': True,
          'slot_uri': 'dct:description'} })
     weight: int = Field(default=0, title="weight", description="""A numerical value indicating relative importance or priority, generally processed in ascending order. This weight helps prioritize content when organizing or processing data. Its value can be negative, with a default set to 0""", json_schema_extra = { "linkml_meta": {'alias': 'weight',
@@ -1525,7 +1554,7 @@ class PDBReference(Term):
          'title': 'PDB reference'})
 
     title: str = Field(default=..., title="title", description="""A name given to the resource""", json_schema_extra = { "linkml_meta": {'alias': 'title',
-         'close_mappings': ['rdfs:label'],
+         'close_mappings': ['rdfs:label', 'schema:name'],
          'comments': ['The title of the item should be as short and descriptive as '
                       'possible. E.g. for virus products it should basically be based '
                       'on the following Pattern:\n'
@@ -1540,6 +1569,7 @@ class PDBReference(Term):
                        'Certification'],
          'slot_uri': 'dct:title'} })
     description: Optional[str] = Field(default=None, title="description", description="""A short explanation of the characteristics, features, or nature of the current item""", json_schema_extra = { "linkml_meta": {'alias': 'description',
+         'close_mappings': ['schema:description'],
          'comments': ['Describe this item in few lines. This description will serve as '
                       'a summary to present the resource.\n'],
          'domain_of': ['Term',
@@ -1550,6 +1580,7 @@ class PDBReference(Term):
                        'ContactPoint',
                        'License',
                        'Certification'],
+         'exact_mappings': ['schema:description'],
          'recommended': True,
          'slot_uri': 'dct:description'} })
     weight: int = Field(default=0, title="weight", description="""A numerical value indicating relative importance or priority, generally processed in ascending order. This weight helps prioritize content when organizing or processing data. Its value can be negative, with a default set to 0""", json_schema_extra = { "linkml_meta": {'alias': 'weight',
@@ -1572,7 +1603,7 @@ class Keyword(Term):
          'title': 'Keyword'})
 
     title: str = Field(default=..., title="title", description="""A name given to the resource""", json_schema_extra = { "linkml_meta": {'alias': 'title',
-         'close_mappings': ['rdfs:label'],
+         'close_mappings': ['rdfs:label', 'schema:name'],
          'comments': ['The title of the item should be as short and descriptive as '
                       'possible. E.g. for virus products it should basically be based '
                       'on the following Pattern:\n'
@@ -1587,6 +1618,7 @@ class Keyword(Term):
                        'Certification'],
          'slot_uri': 'dct:title'} })
     description: Optional[str] = Field(default=None, title="description", description="""A short explanation of the characteristics, features, or nature of the current item""", json_schema_extra = { "linkml_meta": {'alias': 'description',
+         'close_mappings': ['schema:description'],
          'comments': ['Describe this item in few lines. This description will serve as '
                       'a summary to present the resource.\n'],
          'domain_of': ['Term',
@@ -1597,6 +1629,7 @@ class Keyword(Term):
                        'ContactPoint',
                        'License',
                        'Certification'],
+         'exact_mappings': ['schema:description'],
          'recommended': True,
          'slot_uri': 'dct:description'} })
     weight: int = Field(default=0, title="weight", description="""A numerical value indicating relative importance or priority, generally processed in ascending order. This weight helps prioritize content when organizing or processing data. Its value can be negative, with a default set to 0""", json_schema_extra = { "linkml_meta": {'alias': 'weight',
@@ -1619,7 +1652,7 @@ class ProteinTag(Term):
          'title': 'Protein tag'})
 
     title: str = Field(default=..., title="title", description="""A name given to the resource""", json_schema_extra = { "linkml_meta": {'alias': 'title',
-         'close_mappings': ['rdfs:label'],
+         'close_mappings': ['rdfs:label', 'schema:name'],
          'comments': ['The title of the item should be as short and descriptive as '
                       'possible. E.g. for virus products it should basically be based '
                       'on the following Pattern:\n'
@@ -1634,6 +1667,7 @@ class ProteinTag(Term):
                        'Certification'],
          'slot_uri': 'dct:title'} })
     description: Optional[str] = Field(default=None, title="description", description="""A short explanation of the characteristics, features, or nature of the current item""", json_schema_extra = { "linkml_meta": {'alias': 'description',
+         'close_mappings': ['schema:description'],
          'comments': ['Describe this item in few lines. This description will serve as '
                       'a summary to present the resource.\n'],
          'domain_of': ['Term',
@@ -1644,6 +1678,7 @@ class ProteinTag(Term):
                        'ContactPoint',
                        'License',
                        'Certification'],
+         'exact_mappings': ['schema:description'],
          'recommended': True,
          'slot_uri': 'dct:description'} })
     weight: int = Field(default=0, title="weight", description="""A numerical value indicating relative importance or priority, generally processed in ascending order. This weight helps prioritize content when organizing or processing data. Its value can be negative, with a default set to 0""", json_schema_extra = { "linkml_meta": {'alias': 'weight',
@@ -1668,7 +1703,7 @@ class SpecialFeature(Term):
          'title': 'Special feature'})
 
     title: str = Field(default=..., title="title", description="""A name given to the resource""", json_schema_extra = { "linkml_meta": {'alias': 'title',
-         'close_mappings': ['rdfs:label'],
+         'close_mappings': ['rdfs:label', 'schema:name'],
          'comments': ['The title of the item should be as short and descriptive as '
                       'possible. E.g. for virus products it should basically be based '
                       'on the following Pattern:\n'
@@ -1683,6 +1718,7 @@ class SpecialFeature(Term):
                        'Certification'],
          'slot_uri': 'dct:title'} })
     description: Optional[str] = Field(default=None, title="description", description="""A short explanation of the characteristics, features, or nature of the current item""", json_schema_extra = { "linkml_meta": {'alias': 'description',
+         'close_mappings': ['schema:description'],
          'comments': ['Describe this item in few lines. This description will serve as '
                       'a summary to present the resource.\n'],
          'domain_of': ['Term',
@@ -1693,6 +1729,7 @@ class SpecialFeature(Term):
                        'ContactPoint',
                        'License',
                        'Certification'],
+         'exact_mappings': ['schema:description'],
          'recommended': True,
          'slot_uri': 'dct:description'} })
     weight: int = Field(default=0, title="weight", description="""A numerical value indicating relative importance or priority, generally processed in ascending order. This weight helps prioritize content when organizing or processing data. Its value can be negative, with a default set to 0""", json_schema_extra = { "linkml_meta": {'alias': 'weight',
@@ -1715,7 +1752,7 @@ class ExpressionVector(Term):
          'title': 'Expression vector'})
 
     title: str = Field(default=..., title="title", description="""A name given to the resource""", json_schema_extra = { "linkml_meta": {'alias': 'title',
-         'close_mappings': ['rdfs:label'],
+         'close_mappings': ['rdfs:label', 'schema:name'],
          'comments': ['The title of the item should be as short and descriptive as '
                       'possible. E.g. for virus products it should basically be based '
                       'on the following Pattern:\n'
@@ -1730,6 +1767,7 @@ class ExpressionVector(Term):
                        'Certification'],
          'slot_uri': 'dct:title'} })
     description: Optional[str] = Field(default=None, title="description", description="""A short explanation of the characteristics, features, or nature of the current item""", json_schema_extra = { "linkml_meta": {'alias': 'description',
+         'close_mappings': ['schema:description'],
          'comments': ['Describe this item in few lines. This description will serve as '
                       'a summary to present the resource.\n'],
          'domain_of': ['Term',
@@ -1740,6 +1778,7 @@ class ExpressionVector(Term):
                        'ContactPoint',
                        'License',
                        'Certification'],
+         'exact_mappings': ['schema:description'],
          'recommended': True,
          'slot_uri': 'dct:description'} })
     weight: int = Field(default=0, title="weight", description="""A numerical value indicating relative importance or priority, generally processed in ascending order. This weight helps prioritize content when organizing or processing data. Its value can be negative, with a default set to 0""", json_schema_extra = { "linkml_meta": {'alias': 'weight',
@@ -1760,7 +1799,7 @@ class PlasmidSelection(Term):
     linkml_meta: ClassVar[LinkMLMeta] = LinkMLMeta({'from_schema': 'https://w3id.org/evorao/', 'title': 'Plasmid selection'})
 
     title: str = Field(default=..., title="title", description="""A name given to the resource""", json_schema_extra = { "linkml_meta": {'alias': 'title',
-         'close_mappings': ['rdfs:label'],
+         'close_mappings': ['rdfs:label', 'schema:name'],
          'comments': ['The title of the item should be as short and descriptive as '
                       'possible. E.g. for virus products it should basically be based '
                       'on the following Pattern:\n'
@@ -1775,6 +1814,7 @@ class PlasmidSelection(Term):
                        'Certification'],
          'slot_uri': 'dct:title'} })
     description: Optional[str] = Field(default=None, title="description", description="""A short explanation of the characteristics, features, or nature of the current item""", json_schema_extra = { "linkml_meta": {'alias': 'description',
+         'close_mappings': ['schema:description'],
          'comments': ['Describe this item in few lines. This description will serve as '
                       'a summary to present the resource.\n'],
          'domain_of': ['Term',
@@ -1785,6 +1825,7 @@ class PlasmidSelection(Term):
                        'ContactPoint',
                        'License',
                        'Certification'],
+         'exact_mappings': ['schema:description'],
          'recommended': True,
          'slot_uri': 'dct:description'} })
     weight: int = Field(default=0, title="weight", description="""A numerical value indicating relative importance or priority, generally processed in ascending order. This weight helps prioritize content when organizing or processing data. Its value can be negative, with a default set to 0""", json_schema_extra = { "linkml_meta": {'alias': 'weight',
@@ -1805,7 +1846,7 @@ class PropagationHost(Term):
     linkml_meta: ClassVar[LinkMLMeta] = LinkMLMeta({'from_schema': 'https://w3id.org/evorao/', 'title': 'Propagation host'})
 
     title: str = Field(default=..., title="title", description="""A name given to the resource""", json_schema_extra = { "linkml_meta": {'alias': 'title',
-         'close_mappings': ['rdfs:label'],
+         'close_mappings': ['rdfs:label', 'schema:name'],
          'comments': ['The title of the item should be as short and descriptive as '
                       'possible. E.g. for virus products it should basically be based '
                       'on the following Pattern:\n'
@@ -1820,6 +1861,7 @@ class PropagationHost(Term):
                        'Certification'],
          'slot_uri': 'dct:title'} })
     description: Optional[str] = Field(default=None, title="description", description="""A short explanation of the characteristics, features, or nature of the current item""", json_schema_extra = { "linkml_meta": {'alias': 'description',
+         'close_mappings': ['schema:description'],
          'comments': ['Describe this item in few lines. This description will serve as '
                       'a summary to present the resource.\n'],
          'domain_of': ['Term',
@@ -1830,6 +1872,7 @@ class PropagationHost(Term):
                        'ContactPoint',
                        'License',
                        'Certification'],
+         'exact_mappings': ['schema:description'],
          'recommended': True,
          'slot_uri': 'dct:description'} })
     weight: int = Field(default=0, title="weight", description="""A numerical value indicating relative importance or priority, generally processed in ascending order. This weight helps prioritize content when organizing or processing data. Its value can be negative, with a default set to 0""", json_schema_extra = { "linkml_meta": {'alias': 'weight',
@@ -1850,7 +1893,7 @@ class TransmissionMethod(Term):
     linkml_meta: ClassVar[LinkMLMeta] = LinkMLMeta({'from_schema': 'https://w3id.org/evorao/', 'title': 'Transmission method'})
 
     title: str = Field(default=..., title="title", description="""A name given to the resource""", json_schema_extra = { "linkml_meta": {'alias': 'title',
-         'close_mappings': ['rdfs:label'],
+         'close_mappings': ['rdfs:label', 'schema:name'],
          'comments': ['The title of the item should be as short and descriptive as '
                       'possible. E.g. for virus products it should basically be based '
                       'on the following Pattern:\n'
@@ -1865,6 +1908,7 @@ class TransmissionMethod(Term):
                        'Certification'],
          'slot_uri': 'dct:title'} })
     description: Optional[str] = Field(default=None, title="description", description="""A short explanation of the characteristics, features, or nature of the current item""", json_schema_extra = { "linkml_meta": {'alias': 'description',
+         'close_mappings': ['schema:description'],
          'comments': ['Describe this item in few lines. This description will serve as '
                       'a summary to present the resource.\n'],
          'domain_of': ['Term',
@@ -1875,6 +1919,7 @@ class TransmissionMethod(Term):
                        'ContactPoint',
                        'License',
                        'Certification'],
+         'exact_mappings': ['schema:description'],
          'recommended': True,
          'slot_uri': 'dct:description'} })
     weight: int = Field(default=0, title="weight", description="""A numerical value indicating relative importance or priority, generally processed in ascending order. This weight helps prioritize content when organizing or processing data. Its value can be negative, with a default set to 0""", json_schema_extra = { "linkml_meta": {'alias': 'weight',
@@ -1897,7 +1942,7 @@ class ProductionCellLine(Term):
          'title': 'Production cell line'})
 
     title: str = Field(default=..., title="title", description="""A name given to the resource""", json_schema_extra = { "linkml_meta": {'alias': 'title',
-         'close_mappings': ['rdfs:label'],
+         'close_mappings': ['rdfs:label', 'schema:name'],
          'comments': ['The title of the item should be as short and descriptive as '
                       'possible. E.g. for virus products it should basically be based '
                       'on the following Pattern:\n'
@@ -1912,6 +1957,7 @@ class ProductionCellLine(Term):
                        'Certification'],
          'slot_uri': 'dct:title'} })
     description: Optional[str] = Field(default=None, title="description", description="""A short explanation of the characteristics, features, or nature of the current item""", json_schema_extra = { "linkml_meta": {'alias': 'description',
+         'close_mappings': ['schema:description'],
          'comments': ['Describe this item in few lines. This description will serve as '
                       'a summary to present the resource.\n'],
          'domain_of': ['Term',
@@ -1922,6 +1968,7 @@ class ProductionCellLine(Term):
                        'ContactPoint',
                        'License',
                        'Certification'],
+         'exact_mappings': ['schema:description'],
          'recommended': True,
          'slot_uri': 'dct:description'} })
     weight: int = Field(default=0, title="weight", description="""A numerical value indicating relative importance or priority, generally processed in ascending order. This weight helps prioritize content when organizing or processing data. Its value can be negative, with a default set to 0""", json_schema_extra = { "linkml_meta": {'alias': 'weight',
@@ -1962,7 +2009,7 @@ class ProductCategory(Term):
 
     parentCategory: Optional[ProductCategory] = Field(default=None, title="parent category", description="""An overarching category that encompasses the current category within a hierarchical classification system. It serves as the top-level classification, organizing related subcategories under its umbrella to create a structured and logical order.""", json_schema_extra = { "linkml_meta": {'alias': 'parentCategory', 'domain_of': ['ProductCategory']} })
     title: str = Field(default=..., title="title", description="""A name given to the resource""", json_schema_extra = { "linkml_meta": {'alias': 'title',
-         'close_mappings': ['rdfs:label'],
+         'close_mappings': ['rdfs:label', 'schema:name'],
          'comments': ['The title of the item should be as short and descriptive as '
                       'possible. E.g. for virus products it should basically be based '
                       'on the following Pattern:\n'
@@ -1977,6 +2024,7 @@ class ProductCategory(Term):
                        'Certification'],
          'slot_uri': 'dct:title'} })
     description: Optional[str] = Field(default=None, title="description", description="""A short explanation of the characteristics, features, or nature of the current item""", json_schema_extra = { "linkml_meta": {'alias': 'description',
+         'close_mappings': ['schema:description'],
          'comments': ['Describe this item in few lines. This description will serve as '
                       'a summary to present the resource.\n'],
          'domain_of': ['Term',
@@ -1987,6 +2035,7 @@ class ProductCategory(Term):
                        'ContactPoint',
                        'License',
                        'Certification'],
+         'exact_mappings': ['schema:description'],
          'recommended': True,
          'slot_uri': 'dct:description'} })
     weight: int = Field(default=0, title="weight", description="""A numerical value indicating relative importance or priority, generally processed in ascending order. This weight helps prioritize content when organizing or processing data. Its value can be negative, with a default set to 0""", json_schema_extra = { "linkml_meta": {'alias': 'weight',
@@ -2007,7 +2056,7 @@ class IsolationHost(Term):
     linkml_meta: ClassVar[LinkMLMeta] = LinkMLMeta({'from_schema': 'https://w3id.org/evorao/', 'title': 'Isolation host'})
 
     title: str = Field(default=..., title="title", description="""A name given to the resource""", json_schema_extra = { "linkml_meta": {'alias': 'title',
-         'close_mappings': ['rdfs:label'],
+         'close_mappings': ['rdfs:label', 'schema:name'],
          'comments': ['The title of the item should be as short and descriptive as '
                       'possible. E.g. for virus products it should basically be based '
                       'on the following Pattern:\n'
@@ -2022,6 +2071,7 @@ class IsolationHost(Term):
                        'Certification'],
          'slot_uri': 'dct:title'} })
     description: Optional[str] = Field(default=None, title="description", description="""A short explanation of the characteristics, features, or nature of the current item""", json_schema_extra = { "linkml_meta": {'alias': 'description',
+         'close_mappings': ['schema:description'],
          'comments': ['Describe this item in few lines. This description will serve as '
                       'a summary to present the resource.\n'],
          'domain_of': ['Term',
@@ -2032,6 +2082,7 @@ class IsolationHost(Term):
                        'ContactPoint',
                        'License',
                        'Certification'],
+         'exact_mappings': ['schema:description'],
          'recommended': True,
          'slot_uri': 'dct:description'} })
     weight: int = Field(default=0, title="weight", description="""A numerical value indicating relative importance or priority, generally processed in ascending order. This weight helps prioritize content when organizing or processing data. Its value can be negative, with a default set to 0""", json_schema_extra = { "linkml_meta": {'alias': 'weight',
@@ -2057,7 +2108,7 @@ class GeographicalOrigin(Term):
          'title': 'Geographical origin'})
 
     title: str = Field(default=..., title="title", description="""A name given to the resource""", json_schema_extra = { "linkml_meta": {'alias': 'title',
-         'close_mappings': ['rdfs:label'],
+         'close_mappings': ['rdfs:label', 'schema:name'],
          'comments': ['The title of the item should be as short and descriptive as '
                       'possible. E.g. for virus products it should basically be based '
                       'on the following Pattern:\n'
@@ -2072,6 +2123,7 @@ class GeographicalOrigin(Term):
                        'Certification'],
          'slot_uri': 'dct:title'} })
     description: Optional[str] = Field(default=None, title="description", description="""A short explanation of the characteristics, features, or nature of the current item""", json_schema_extra = { "linkml_meta": {'alias': 'description',
+         'close_mappings': ['schema:description'],
          'comments': ['Describe this item in few lines. This description will serve as '
                       'a summary to present the resource.\n'],
          'domain_of': ['Term',
@@ -2082,6 +2134,7 @@ class GeographicalOrigin(Term):
                        'ContactPoint',
                        'License',
                        'Certification'],
+         'exact_mappings': ['schema:description'],
          'recommended': True,
          'slot_uri': 'dct:description'} })
     weight: int = Field(default=0, title="weight", description="""A numerical value indicating relative importance or priority, generally processed in ascending order. This weight helps prioritize content when organizing or processing data. Its value can be negative, with a default set to 0""", json_schema_extra = { "linkml_meta": {'alias': 'weight',
@@ -2102,7 +2155,7 @@ class IPLCOrigin(GeographicalOrigin):
     linkml_meta: ClassVar[LinkMLMeta] = LinkMLMeta({'from_schema': 'https://w3id.org/evorao/', 'title': 'IPLC origin'})
 
     title: str = Field(default=..., title="title", description="""A name given to the resource""", json_schema_extra = { "linkml_meta": {'alias': 'title',
-         'close_mappings': ['rdfs:label'],
+         'close_mappings': ['rdfs:label', 'schema:name'],
          'comments': ['The title of the item should be as short and descriptive as '
                       'possible. E.g. for virus products it should basically be based '
                       'on the following Pattern:\n'
@@ -2117,6 +2170,7 @@ class IPLCOrigin(GeographicalOrigin):
                        'Certification'],
          'slot_uri': 'dct:title'} })
     description: Optional[str] = Field(default=None, title="description", description="""A short explanation of the characteristics, features, or nature of the current item""", json_schema_extra = { "linkml_meta": {'alias': 'description',
+         'close_mappings': ['schema:description'],
          'comments': ['Describe this item in few lines. This description will serve as '
                       'a summary to present the resource.\n'],
          'domain_of': ['Term',
@@ -2127,6 +2181,7 @@ class IPLCOrigin(GeographicalOrigin):
                        'ContactPoint',
                        'License',
                        'Certification'],
+         'exact_mappings': ['schema:description'],
          'recommended': True,
          'slot_uri': 'dct:description'} })
     weight: int = Field(default=0, title="weight", description="""A numerical value indicating relative importance or priority, generally processed in ascending order. This weight helps prioritize content when organizing or processing data. Its value can be negative, with a default set to 0""", json_schema_extra = { "linkml_meta": {'alias': 'weight',
@@ -2160,7 +2215,7 @@ class Country(Term):
 
     alpha2Code: str = Field(default=..., title="alpha-2 code", description="""Two-letter country codes from ISO 3166-1 alpha-2""", json_schema_extra = { "linkml_meta": {'alias': 'alpha2Code', 'domain_of': ['Country']} })
     title: str = Field(default=..., title="title", description="""A name given to the resource""", json_schema_extra = { "linkml_meta": {'alias': 'title',
-         'close_mappings': ['rdfs:label'],
+         'close_mappings': ['rdfs:label', 'schema:name'],
          'comments': ['The title of the item should be as short and descriptive as '
                       'possible. E.g. for virus products it should basically be based '
                       'on the following Pattern:\n'
@@ -2175,6 +2230,7 @@ class Country(Term):
                        'Certification'],
          'slot_uri': 'dct:title'} })
     description: Optional[str] = Field(default=None, title="description", description="""A short explanation of the characteristics, features, or nature of the current item""", json_schema_extra = { "linkml_meta": {'alias': 'description',
+         'close_mappings': ['schema:description'],
          'comments': ['Describe this item in few lines. This description will serve as '
                       'a summary to present the resource.\n'],
          'domain_of': ['Term',
@@ -2185,6 +2241,7 @@ class Country(Term):
                        'ContactPoint',
                        'License',
                        'Certification'],
+         'exact_mappings': ['schema:description'],
          'recommended': True,
          'slot_uri': 'dct:description'} })
     weight: int = Field(default=0, title="weight", description="""A numerical value indicating relative importance or priority, generally processed in ascending order. This weight helps prioritize content when organizing or processing data. Its value can be negative, with a default set to 0""", json_schema_extra = { "linkml_meta": {'alias': 'weight',
@@ -2205,7 +2262,7 @@ class IATAClassification(Term):
     linkml_meta: ClassVar[LinkMLMeta] = LinkMLMeta({'from_schema': 'https://w3id.org/evorao/', 'title': 'IATA classification'})
 
     title: str = Field(default=..., title="title", description="""A name given to the resource""", json_schema_extra = { "linkml_meta": {'alias': 'title',
-         'close_mappings': ['rdfs:label'],
+         'close_mappings': ['rdfs:label', 'schema:name'],
          'comments': ['The title of the item should be as short and descriptive as '
                       'possible. E.g. for virus products it should basically be based '
                       'on the following Pattern:\n'
@@ -2220,6 +2277,7 @@ class IATAClassification(Term):
                        'Certification'],
          'slot_uri': 'dct:title'} })
     description: Optional[str] = Field(default=None, title="description", description="""A short explanation of the characteristics, features, or nature of the current item""", json_schema_extra = { "linkml_meta": {'alias': 'description',
+         'close_mappings': ['schema:description'],
          'comments': ['Describe this item in few lines. This description will serve as '
                       'a summary to present the resource.\n'],
          'domain_of': ['Term',
@@ -2230,6 +2288,7 @@ class IATAClassification(Term):
                        'ContactPoint',
                        'License',
                        'Certification'],
+         'exact_mappings': ['schema:description'],
          'recommended': True,
          'slot_uri': 'dct:description'} })
     weight: int = Field(default=0, title="weight", description="""A numerical value indicating relative importance or priority, generally processed in ascending order. This weight helps prioritize content when organizing or processing data. Its value can be negative, with a default set to 0""", json_schema_extra = { "linkml_meta": {'alias': 'weight',
@@ -2262,7 +2321,7 @@ class Variant(CommonName):
          'close_mappings': ['wdp:P248'],
          'domain_of': ['CommonName', 'AlternateName']} })
     title: str = Field(default=..., title="title", description="""A name given to the resource""", json_schema_extra = { "linkml_meta": {'alias': 'title',
-         'close_mappings': ['rdfs:label'],
+         'close_mappings': ['rdfs:label', 'schema:name'],
          'comments': ['The title of the item should be as short and descriptive as '
                       'possible. E.g. for virus products it should basically be based '
                       'on the following Pattern:\n'
@@ -2277,6 +2336,7 @@ class Variant(CommonName):
                        'Certification'],
          'slot_uri': 'dct:title'} })
     description: Optional[str] = Field(default=None, title="description", description="""A short explanation of the characteristics, features, or nature of the current item""", json_schema_extra = { "linkml_meta": {'alias': 'description',
+         'close_mappings': ['schema:description'],
          'comments': ['Describe this item in few lines. This description will serve as '
                       'a summary to present the resource.\n'],
          'domain_of': ['Term',
@@ -2287,6 +2347,7 @@ class Variant(CommonName):
                        'ContactPoint',
                        'License',
                        'Certification'],
+         'exact_mappings': ['schema:description'],
          'recommended': True,
          'slot_uri': 'dct:description'} })
     weight: int = Field(default=0, title="weight", description="""A numerical value indicating relative importance or priority, generally processed in ascending order. This weight helps prioritize content when organizing or processing data. Its value can be negative, with a default set to 0""", json_schema_extra = { "linkml_meta": {'alias': 'weight',
@@ -2321,7 +2382,7 @@ class TaxonomicRank(Term):
          'domain_of': ['TaxonomicRank', 'Taxon'],
          'recommended': True} })
     title: str = Field(default=..., title="title", description="""A name given to the resource""", json_schema_extra = { "linkml_meta": {'alias': 'title',
-         'close_mappings': ['rdfs:label'],
+         'close_mappings': ['rdfs:label', 'schema:name'],
          'comments': ['The title of the item should be as short and descriptive as '
                       'possible. E.g. for virus products it should basically be based '
                       'on the following Pattern:\n'
@@ -2336,6 +2397,7 @@ class TaxonomicRank(Term):
                        'Certification'],
          'slot_uri': 'dct:title'} })
     description: Optional[str] = Field(default=None, title="description", description="""A short explanation of the characteristics, features, or nature of the current item""", json_schema_extra = { "linkml_meta": {'alias': 'description',
+         'close_mappings': ['schema:description'],
          'comments': ['Describe this item in few lines. This description will serve as '
                       'a summary to present the resource.\n'],
          'domain_of': ['Term',
@@ -2346,6 +2408,7 @@ class TaxonomicRank(Term):
                        'ContactPoint',
                        'License',
                        'Certification'],
+         'exact_mappings': ['schema:description'],
          'recommended': True,
          'slot_uri': 'dct:description'} })
     weight: int = Field(default=0, title="weight", description="""A numerical value indicating relative importance or priority, generally processed in ascending order. This weight helps prioritize content when organizing or processing data. Its value can be negative, with a default set to 0""", json_schema_extra = { "linkml_meta": {'alias': 'weight',
@@ -2489,7 +2552,7 @@ class Taxon(Term):
          'domain_of': ['Taxon'],
          'recommended': True} })
     title: str = Field(default=..., title="title", description="""A name given to the resource""", json_schema_extra = { "linkml_meta": {'alias': 'title',
-         'close_mappings': ['rdfs:label'],
+         'close_mappings': ['rdfs:label', 'schema:name'],
          'comments': ['The title of the item should be as short and descriptive as '
                       'possible. E.g. for virus products it should basically be based '
                       'on the following Pattern:\n'
@@ -2504,6 +2567,7 @@ class Taxon(Term):
                        'Certification'],
          'slot_uri': 'dct:title'} })
     description: Optional[str] = Field(default=None, title="description", description="""A short explanation of the characteristics, features, or nature of the current item""", json_schema_extra = { "linkml_meta": {'alias': 'description',
+         'close_mappings': ['schema:description'],
          'comments': ['Describe this item in few lines. This description will serve as '
                       'a summary to present the resource.\n'],
          'domain_of': ['Term',
@@ -2514,6 +2578,7 @@ class Taxon(Term):
                        'ContactPoint',
                        'License',
                        'Certification'],
+         'exact_mappings': ['schema:description'],
          'recommended': True,
          'slot_uri': 'dct:description'} })
     weight: int = Field(default=0, title="weight", description="""A numerical value indicating relative importance or priority, generally processed in ascending order. This weight helps prioritize content when organizing or processing data. Its value can be negative, with a default set to 0""", json_schema_extra = { "linkml_meta": {'alias': 'weight',
@@ -2721,6 +2786,7 @@ class PersonOrOrganization(Resource):
                                                       'ContactPoint',
                                                       'License',
                                                       'Certification'],
+                                        'exact_mappings': ['schema:description'],
                                         'multivalued': False,
                                         'name': 'description',
                                         'range': 'string',
@@ -2735,6 +2801,7 @@ class PersonOrOrganization(Resource):
                                      'name': 'homePage',
                                      'range': 'uri',
                                      'required': False,
+                                     'slot_uri': 'foaf:homepage',
                                      'title': 'home page'},
                         'logo': {'description': 'A path or URL to the related logo',
                                  'domain_of': ['PersonOrOrganization',
@@ -2745,7 +2812,7 @@ class PersonOrOrganization(Resource):
                                  'range': 'Image',
                                  'required': False,
                                  'title': 'logo'},
-                        'name': {'close_mappings': ['foaf:name', 'dct:title'],
+                        'name': {'close_mappings': ['dct:title'],
                                  'description': 'A word or set of words used to '
                                                 'identify and refer to an entity',
                                  'domain_of': ['PersonOrOrganization',
@@ -2756,14 +2823,17 @@ class PersonOrOrganization(Resource):
                                  'name': 'name',
                                  'range': 'string',
                                  'required': True,
+                                 'slot_uri': 'foaf:name',
                                  'title': 'name'}},
          'title': 'Person Or Organization'})
 
     name: str = Field(default=..., title="name", description="""A word or set of words used to identify and refer to an entity""", json_schema_extra = { "linkml_meta": {'alias': 'name',
-         'close_mappings': ['foaf:name', 'dct:title'],
+         'close_mappings': ['dct:title'],
          'domain_of': ['PersonOrOrganization', 'File', 'ContactPoint'],
-         'exact_mappings': ['schema:name']} })
+         'exact_mappings': ['schema:name'],
+         'slot_uri': 'foaf:name'} })
     description: Optional[str] = Field(default=None, title="description", description="""A short explanation of the characteristics, features, or nature of the current item""", json_schema_extra = { "linkml_meta": {'alias': 'description',
+         'close_mappings': ['schema:description'],
          'comments': ['Describe this item in few lines. This description will serve as '
                       'a summary to present the resource.\n'],
          'domain_of': ['PersonOrOrganization',
@@ -2774,9 +2844,12 @@ class PersonOrOrganization(Resource):
                        'ContactPoint',
                        'License',
                        'Certification'],
+         'exact_mappings': ['schema:description'],
          'recommended': True,
          'slot_uri': 'dct:description'} })
-    homePage: Optional[str] = Field(default=None, title="home page", description="""A web page that serves as the main or introductory page""", json_schema_extra = { "linkml_meta": {'alias': 'homePage', 'domain_of': ['PersonOrOrganization']} })
+    homePage: Optional[str] = Field(default=None, title="home page", description="""A web page that serves as the main or introductory page""", json_schema_extra = { "linkml_meta": {'alias': 'homePage',
+         'domain_of': ['PersonOrOrganization'],
+         'slot_uri': 'foaf:homepage'} })
     contactPoint: Optional[ContactPoint] = Field(default=None, title="contact point", description="""An information that allows someone to establish communication""", json_schema_extra = { "linkml_meta": {'alias': 'contactPoint',
          'domain_of': ['PersonOrOrganization', 'ProductOrService'],
          'exact_mappings': ['dcat:contactPoint'],
@@ -2814,10 +2887,12 @@ class Person(PersonOrOrganization):
          'exact_mappings': ['wdp:P496'],
          'recommended': True} })
     name: str = Field(default=..., title="name", description="""A word or set of words used to identify and refer to an entity""", json_schema_extra = { "linkml_meta": {'alias': 'name',
-         'close_mappings': ['foaf:name', 'dct:title'],
+         'close_mappings': ['dct:title'],
          'domain_of': ['PersonOrOrganization', 'File', 'ContactPoint'],
-         'exact_mappings': ['schema:name']} })
+         'exact_mappings': ['schema:name'],
+         'slot_uri': 'foaf:name'} })
     description: Optional[str] = Field(default=None, title="description", description="""A short explanation of the characteristics, features, or nature of the current item""", json_schema_extra = { "linkml_meta": {'alias': 'description',
+         'close_mappings': ['schema:description'],
          'comments': ['Describe this item in few lines. This description will serve as '
                       'a summary to present the resource.\n'],
          'domain_of': ['PersonOrOrganization',
@@ -2828,9 +2903,12 @@ class Person(PersonOrOrganization):
                        'ContactPoint',
                        'License',
                        'Certification'],
+         'exact_mappings': ['schema:description'],
          'recommended': True,
          'slot_uri': 'dct:description'} })
-    homePage: Optional[str] = Field(default=None, title="home page", description="""A web page that serves as the main or introductory page""", json_schema_extra = { "linkml_meta": {'alias': 'homePage', 'domain_of': ['PersonOrOrganization']} })
+    homePage: Optional[str] = Field(default=None, title="home page", description="""A web page that serves as the main or introductory page""", json_schema_extra = { "linkml_meta": {'alias': 'homePage',
+         'domain_of': ['PersonOrOrganization'],
+         'slot_uri': 'foaf:homepage'} })
     contactPoint: Optional[ContactPoint] = Field(default=None, title="contact point", description="""An information that allows someone to establish communication""", json_schema_extra = { "linkml_meta": {'alias': 'contactPoint',
          'domain_of': ['PersonOrOrganization', 'ProductOrService'],
          'exact_mappings': ['dcat:contactPoint'],
@@ -2849,7 +2927,8 @@ class Organization(PersonOrOrganization):
                             'wd:Q43229',
                             'vcard:Organization'],
          'from_schema': 'https://w3id.org/evorao/',
-         'slot_usage': {'alternateName': {'close_mappings': ['wdp:P4970'],
+         'slot_usage': {'alternateName': {'close_mappings': ['wdp:P4970',
+                                                             'schema:alternateName'],
                                           'comments': ['This includes previous names, '
                                                        'acronyms, former taxonomic '
                                                        'terms, and other variations. '
@@ -2890,7 +2969,7 @@ class Organization(PersonOrOrganization):
          'title': 'Organization'})
 
     alternateName: Optional[list[AlternateName]] = Field(default=None, title="alternate name", description="""Any other name under which the entity can be known""", json_schema_extra = { "linkml_meta": {'alias': 'alternateName',
-         'close_mappings': ['wdp:P4970'],
+         'close_mappings': ['wdp:P4970', 'schema:alternateName'],
          'comments': ['This includes previous names, acronyms, former taxonomic terms, '
                       'and other variations. This information can serve as keywords '
                       'for search purposes and as a bridge with other projects that '
@@ -2902,10 +2981,12 @@ class Organization(PersonOrOrganization):
          'exact_mappings': ['wdp:P6782'],
          'recommended': True} })
     name: str = Field(default=..., title="name", description="""A word or set of words used to identify and refer to an entity""", json_schema_extra = { "linkml_meta": {'alias': 'name',
-         'close_mappings': ['foaf:name', 'dct:title'],
+         'close_mappings': ['dct:title'],
          'domain_of': ['PersonOrOrganization', 'File', 'ContactPoint'],
-         'exact_mappings': ['schema:name']} })
+         'exact_mappings': ['schema:name'],
+         'slot_uri': 'foaf:name'} })
     description: Optional[str] = Field(default=None, title="description", description="""A short explanation of the characteristics, features, or nature of the current item""", json_schema_extra = { "linkml_meta": {'alias': 'description',
+         'close_mappings': ['schema:description'],
          'comments': ['Describe this item in few lines. This description will serve as '
                       'a summary to present the resource.\n'],
          'domain_of': ['PersonOrOrganization',
@@ -2916,9 +2997,12 @@ class Organization(PersonOrOrganization):
                        'ContactPoint',
                        'License',
                        'Certification'],
+         'exact_mappings': ['schema:description'],
          'recommended': True,
          'slot_uri': 'dct:description'} })
-    homePage: Optional[str] = Field(default=None, title="home page", description="""A web page that serves as the main or introductory page""", json_schema_extra = { "linkml_meta": {'alias': 'homePage', 'domain_of': ['PersonOrOrganization']} })
+    homePage: Optional[str] = Field(default=None, title="home page", description="""A web page that serves as the main or introductory page""", json_schema_extra = { "linkml_meta": {'alias': 'homePage',
+         'domain_of': ['PersonOrOrganization'],
+         'slot_uri': 'foaf:homepage'} })
     contactPoint: Optional[ContactPoint] = Field(default=None, title="contact point", description="""An information that allows someone to establish communication""", json_schema_extra = { "linkml_meta": {'alias': 'contactPoint',
          'domain_of': ['PersonOrOrganization', 'ProductOrService'],
          'exact_mappings': ['dcat:contactPoint'],
@@ -2936,7 +3020,7 @@ class RI(Organization):
          'title': 'RI'})
 
     alternateName: Optional[list[AlternateName]] = Field(default=None, title="alternate name", description="""Any other name under which the entity can be known""", json_schema_extra = { "linkml_meta": {'alias': 'alternateName',
-         'close_mappings': ['wdp:P4970'],
+         'close_mappings': ['wdp:P4970', 'schema:alternateName'],
          'comments': ['This includes previous names, acronyms, former taxonomic terms, '
                       'and other variations. This information can serve as keywords '
                       'for search purposes and as a bridge with other projects that '
@@ -2948,10 +3032,12 @@ class RI(Organization):
          'exact_mappings': ['wdp:P6782'],
          'recommended': True} })
     name: str = Field(default=..., title="name", description="""A word or set of words used to identify and refer to an entity""", json_schema_extra = { "linkml_meta": {'alias': 'name',
-         'close_mappings': ['foaf:name', 'dct:title'],
+         'close_mappings': ['dct:title'],
          'domain_of': ['PersonOrOrganization', 'File', 'ContactPoint'],
-         'exact_mappings': ['schema:name']} })
+         'exact_mappings': ['schema:name'],
+         'slot_uri': 'foaf:name'} })
     description: Optional[str] = Field(default=None, title="description", description="""A short explanation of the characteristics, features, or nature of the current item""", json_schema_extra = { "linkml_meta": {'alias': 'description',
+         'close_mappings': ['schema:description'],
          'comments': ['Describe this item in few lines. This description will serve as '
                       'a summary to present the resource.\n'],
          'domain_of': ['PersonOrOrganization',
@@ -2962,9 +3048,12 @@ class RI(Organization):
                        'ContactPoint',
                        'License',
                        'Certification'],
+         'exact_mappings': ['schema:description'],
          'recommended': True,
          'slot_uri': 'dct:description'} })
-    homePage: Optional[str] = Field(default=None, title="home page", description="""A web page that serves as the main or introductory page""", json_schema_extra = { "linkml_meta": {'alias': 'homePage', 'domain_of': ['PersonOrOrganization']} })
+    homePage: Optional[str] = Field(default=None, title="home page", description="""A web page that serves as the main or introductory page""", json_schema_extra = { "linkml_meta": {'alias': 'homePage',
+         'domain_of': ['PersonOrOrganization'],
+         'slot_uri': 'foaf:homepage'} })
     contactPoint: Optional[ContactPoint] = Field(default=None, title="contact point", description="""An information that allows someone to establish communication""", json_schema_extra = { "linkml_meta": {'alias': 'contactPoint',
          'domain_of': ['PersonOrOrganization', 'ProductOrService'],
          'exact_mappings': ['dcat:contactPoint'],
@@ -2992,7 +3081,7 @@ class Provider(Organization):
 
     memberOfRI: Optional[list[RI]] = Field(default=None, title="member of RI", description="""The research infrastructure of which this organization is a member""", json_schema_extra = { "linkml_meta": {'alias': 'memberOfRI', 'domain_of': ['Provider']} })
     alternateName: Optional[list[AlternateName]] = Field(default=None, title="alternate name", description="""Any other name under which the entity can be known""", json_schema_extra = { "linkml_meta": {'alias': 'alternateName',
-         'close_mappings': ['wdp:P4970'],
+         'close_mappings': ['wdp:P4970', 'schema:alternateName'],
          'comments': ['This includes previous names, acronyms, former taxonomic terms, '
                       'and other variations. This information can serve as keywords '
                       'for search purposes and as a bridge with other projects that '
@@ -3004,10 +3093,12 @@ class Provider(Organization):
          'exact_mappings': ['wdp:P6782'],
          'recommended': True} })
     name: str = Field(default=..., title="name", description="""A word or set of words used to identify and refer to an entity""", json_schema_extra = { "linkml_meta": {'alias': 'name',
-         'close_mappings': ['foaf:name', 'dct:title'],
+         'close_mappings': ['dct:title'],
          'domain_of': ['PersonOrOrganization', 'File', 'ContactPoint'],
-         'exact_mappings': ['schema:name']} })
+         'exact_mappings': ['schema:name'],
+         'slot_uri': 'foaf:name'} })
     description: Optional[str] = Field(default=None, title="description", description="""A short explanation of the characteristics, features, or nature of the current item""", json_schema_extra = { "linkml_meta": {'alias': 'description',
+         'close_mappings': ['schema:description'],
          'comments': ['Describe this item in few lines. This description will serve as '
                       'a summary to present the resource.\n'],
          'domain_of': ['PersonOrOrganization',
@@ -3018,9 +3109,12 @@ class Provider(Organization):
                        'ContactPoint',
                        'License',
                        'Certification'],
+         'exact_mappings': ['schema:description'],
          'recommended': True,
          'slot_uri': 'dct:description'} })
-    homePage: Optional[str] = Field(default=None, title="home page", description="""A web page that serves as the main or introductory page""", json_schema_extra = { "linkml_meta": {'alias': 'homePage', 'domain_of': ['PersonOrOrganization']} })
+    homePage: Optional[str] = Field(default=None, title="home page", description="""A web page that serves as the main or introductory page""", json_schema_extra = { "linkml_meta": {'alias': 'homePage',
+         'domain_of': ['PersonOrOrganization'],
+         'slot_uri': 'foaf:homepage'} })
     contactPoint: Optional[ContactPoint] = Field(default=None, title="contact point", description="""An information that allows someone to establish communication""", json_schema_extra = { "linkml_meta": {'alias': 'contactPoint',
          'domain_of': ['PersonOrOrganization', 'ProductOrService'],
          'exact_mappings': ['dcat:contactPoint'],
@@ -3038,10 +3132,12 @@ class Originator(PersonOrOrganization):
          'title': 'Originator'})
 
     name: str = Field(default=..., title="name", description="""A word or set of words used to identify and refer to an entity""", json_schema_extra = { "linkml_meta": {'alias': 'name',
-         'close_mappings': ['foaf:name', 'dct:title'],
+         'close_mappings': ['dct:title'],
          'domain_of': ['PersonOrOrganization', 'File', 'ContactPoint'],
-         'exact_mappings': ['schema:name']} })
+         'exact_mappings': ['schema:name'],
+         'slot_uri': 'foaf:name'} })
     description: Optional[str] = Field(default=None, title="description", description="""A short explanation of the characteristics, features, or nature of the current item""", json_schema_extra = { "linkml_meta": {'alias': 'description',
+         'close_mappings': ['schema:description'],
          'comments': ['Describe this item in few lines. This description will serve as '
                       'a summary to present the resource.\n'],
          'domain_of': ['PersonOrOrganization',
@@ -3052,9 +3148,12 @@ class Originator(PersonOrOrganization):
                        'ContactPoint',
                        'License',
                        'Certification'],
+         'exact_mappings': ['schema:description'],
          'recommended': True,
          'slot_uri': 'dct:description'} })
-    homePage: Optional[str] = Field(default=None, title="home page", description="""A web page that serves as the main or introductory page""", json_schema_extra = { "linkml_meta": {'alias': 'homePage', 'domain_of': ['PersonOrOrganization']} })
+    homePage: Optional[str] = Field(default=None, title="home page", description="""A web page that serves as the main or introductory page""", json_schema_extra = { "linkml_meta": {'alias': 'homePage',
+         'domain_of': ['PersonOrOrganization'],
+         'slot_uri': 'foaf:homepage'} })
     contactPoint: Optional[ContactPoint] = Field(default=None, title="contact point", description="""An information that allows someone to establish communication""", json_schema_extra = { "linkml_meta": {'alias': 'contactPoint',
          'domain_of': ['PersonOrOrganization', 'ProductOrService'],
          'exact_mappings': ['dcat:contactPoint'],
@@ -3433,7 +3532,7 @@ class Collection(Catalogue):
          'close_mappings': ['dct:isReferencedBy'],
          'domain_of': ['Collection']} })
     title: str = Field(default=..., title="title", description="""A name given to the resource""", json_schema_extra = { "linkml_meta": {'alias': 'title',
-         'close_mappings': ['rdfs:label'],
+         'close_mappings': ['rdfs:label', 'schema:name'],
          'comments': ['The title of the item should be as short and descriptive as '
                       'possible. E.g. for virus products it should basically be based '
                       'on the following Pattern:\n'
@@ -3448,6 +3547,7 @@ class Collection(Catalogue):
                        'Certification'],
          'slot_uri': 'dct:title'} })
     description: str = Field(default=..., title="description", description="""A short explanation of the characteristics, features, or nature of the current item""", json_schema_extra = { "linkml_meta": {'alias': 'description',
+         'close_mappings': ['schema:description'],
          'comments': ['Describe this item in few lines. This description will serve as '
                       'a summary to present the resource.\n'],
          'domain_of': ['Dataset',
@@ -3458,6 +3558,7 @@ class Collection(Catalogue):
                        'ContactPoint',
                        'License',
                        'Certification'],
+         'exact_mappings': ['schema:description'],
          'recommended': True,
          'slot_uri': 'dct:description'} })
 
@@ -3485,12 +3586,12 @@ class ProductOrService(Dataset):
                                            'range': 'uri',
                                            'required': True,
                                            'title': 'access point URL'},
-                        'additionalCategory': {'description': 'Any category apart from '
+                        'additionalCategory': {'close_mappings': ['dcat:theme'],
+                                               'description': 'Any category apart from '
                                                               'its main category in '
                                                               'which this product or '
                                                               'service can fit',
                                                'domain_of': ['ProductOrService'],
-                                               'exact_mappings': ['dcat:theme'],
                                                'multivalued': True,
                                                'name': 'additionalCategory',
                                                'range': 'ProductCategory',
@@ -3805,8 +3906,8 @@ class ProductOrService(Dataset):
          'domain_of': ['ProductOrService'],
          'exact_mappings': ['dcat:theme']} })
     additionalCategory: Optional[list[ProductCategory]] = Field(default=None, title="additional category", description="""Any category apart from its main category in which this product or service can fit""", json_schema_extra = { "linkml_meta": {'alias': 'additionalCategory',
+         'close_mappings': ['dcat:theme'],
          'domain_of': ['ProductOrService'],
-         'exact_mappings': ['dcat:theme'],
          'recommended': True} })
     unitCost: str = Field(default="on request", title="unit cost", description="""The cost per access for one unit as defined by the unit definition""", json_schema_extra = { "linkml_meta": {'alias': 'unitCost',
          'comments': ['The cost per access may not be defined or be specific to a '
@@ -3860,7 +3961,7 @@ class ProductOrService(Dataset):
          'exact_mappings': ['dcat:contactPoint'],
          'recommended': True} })
     title: str = Field(default=..., title="title", description="""A name given to the resource""", json_schema_extra = { "linkml_meta": {'alias': 'title',
-         'close_mappings': ['rdfs:label'],
+         'close_mappings': ['rdfs:label', 'schema:name'],
          'comments': ['The title of the item should be as short and descriptive as '
                       'possible. E.g. for virus products it should basically be based '
                       'on the following Pattern:\n'
@@ -3875,6 +3976,7 @@ class ProductOrService(Dataset):
                        'Certification'],
          'slot_uri': 'dct:title'} })
     description: str = Field(default=..., title="description", description="""A short explanation of the characteristics, features, or nature of the current item""", json_schema_extra = { "linkml_meta": {'alias': 'description',
+         'close_mappings': ['schema:description'],
          'comments': ['Describe this item in few lines. This description will serve as '
                       'a summary to present the resource.\n'],
          'domain_of': ['Dataset',
@@ -3885,6 +3987,7 @@ class ProductOrService(Dataset):
                        'ContactPoint',
                        'License',
                        'Certification'],
+         'exact_mappings': ['schema:description'],
          'recommended': True,
          'slot_uri': 'dct:description'} })
 
@@ -3931,8 +4034,8 @@ class Service(ProductOrService):
          'domain_of': ['ProductOrService'],
          'exact_mappings': ['dcat:theme']} })
     additionalCategory: Optional[list[ProductCategory]] = Field(default=None, title="additional category", description="""Any category apart from its main category in which this product or service can fit""", json_schema_extra = { "linkml_meta": {'alias': 'additionalCategory',
+         'close_mappings': ['dcat:theme'],
          'domain_of': ['ProductOrService'],
-         'exact_mappings': ['dcat:theme'],
          'recommended': True} })
     unitCost: str = Field(default="on request", title="unit cost", description="""The cost per access for one unit as defined by the unit definition""", json_schema_extra = { "linkml_meta": {'alias': 'unitCost',
          'comments': ['The cost per access may not be defined or be specific to a '
@@ -3986,7 +4089,7 @@ class Service(ProductOrService):
          'exact_mappings': ['dcat:contactPoint'],
          'recommended': True} })
     title: str = Field(default=..., title="title", description="""A name given to the resource""", json_schema_extra = { "linkml_meta": {'alias': 'title',
-         'close_mappings': ['rdfs:label'],
+         'close_mappings': ['rdfs:label', 'schema:name'],
          'comments': ['The title of the item should be as short and descriptive as '
                       'possible. E.g. for virus products it should basically be based '
                       'on the following Pattern:\n'
@@ -4001,6 +4104,7 @@ class Service(ProductOrService):
                        'Certification'],
          'slot_uri': 'dct:title'} })
     description: str = Field(default=..., title="description", description="""A short explanation of the characteristics, features, or nature of the current item""", json_schema_extra = { "linkml_meta": {'alias': 'description',
+         'close_mappings': ['schema:description'],
          'comments': ['Describe this item in few lines. This description will serve as '
                       'a summary to present the resource.\n'],
          'domain_of': ['Dataset',
@@ -4011,6 +4115,7 @@ class Service(ProductOrService):
                        'ContactPoint',
                        'License',
                        'Certification'],
+         'exact_mappings': ['schema:description'],
          'recommended': True,
          'slot_uri': 'dct:description'} })
 
@@ -4183,8 +4288,8 @@ class Product(ProductOrService):
          'domain_of': ['ProductOrService'],
          'exact_mappings': ['dcat:theme']} })
     additionalCategory: Optional[list[ProductCategory]] = Field(default=None, title="additional category", description="""Any category apart from its main category in which this product or service can fit""", json_schema_extra = { "linkml_meta": {'alias': 'additionalCategory',
+         'close_mappings': ['dcat:theme'],
          'domain_of': ['ProductOrService'],
-         'exact_mappings': ['dcat:theme'],
          'recommended': True} })
     unitCost: str = Field(default="on request", title="unit cost", description="""The cost per access for one unit as defined by the unit definition""", json_schema_extra = { "linkml_meta": {'alias': 'unitCost',
          'comments': ['The cost per access may not be defined or be specific to a '
@@ -4238,7 +4343,7 @@ class Product(ProductOrService):
          'exact_mappings': ['dcat:contactPoint'],
          'recommended': True} })
     title: str = Field(default=..., title="title", description="""A name given to the resource""", json_schema_extra = { "linkml_meta": {'alias': 'title',
-         'close_mappings': ['rdfs:label'],
+         'close_mappings': ['rdfs:label', 'schema:name'],
          'comments': ['The title of the item should be as short and descriptive as '
                       'possible. E.g. for virus products it should basically be based '
                       'on the following Pattern:\n'
@@ -4253,6 +4358,7 @@ class Product(ProductOrService):
                        'Certification'],
          'slot_uri': 'dct:title'} })
     description: str = Field(default=..., title="description", description="""A short explanation of the characteristics, features, or nature of the current item""", json_schema_extra = { "linkml_meta": {'alias': 'description',
+         'close_mappings': ['schema:description'],
          'comments': ['Describe this item in few lines. This description will serve as '
                       'a summary to present the resource.\n'],
          'domain_of': ['Dataset',
@@ -4263,6 +4369,7 @@ class Product(ProductOrService):
                        'ContactPoint',
                        'License',
                        'Certification'],
+         'exact_mappings': ['schema:description'],
          'recommended': True,
          'slot_uri': 'dct:description'} })
 
@@ -4370,8 +4477,8 @@ class Antibody(Product):
          'domain_of': ['ProductOrService'],
          'exact_mappings': ['dcat:theme']} })
     additionalCategory: Optional[list[ProductCategory]] = Field(default=None, title="additional category", description="""Any category apart from its main category in which this product or service can fit""", json_schema_extra = { "linkml_meta": {'alias': 'additionalCategory',
+         'close_mappings': ['dcat:theme'],
          'domain_of': ['ProductOrService'],
-         'exact_mappings': ['dcat:theme'],
          'recommended': True} })
     unitCost: str = Field(default="on request", title="unit cost", description="""The cost per access for one unit as defined by the unit definition""", json_schema_extra = { "linkml_meta": {'alias': 'unitCost',
          'comments': ['The cost per access may not be defined or be specific to a '
@@ -4425,7 +4532,7 @@ class Antibody(Product):
          'exact_mappings': ['dcat:contactPoint'],
          'recommended': True} })
     title: str = Field(default=..., title="title", description="""A name given to the resource""", json_schema_extra = { "linkml_meta": {'alias': 'title',
-         'close_mappings': ['rdfs:label'],
+         'close_mappings': ['rdfs:label', 'schema:name'],
          'comments': ['The title of the item should be as short and descriptive as '
                       'possible. E.g. for virus products it should basically be based '
                       'on the following Pattern:\n'
@@ -4440,6 +4547,7 @@ class Antibody(Product):
                        'Certification'],
          'slot_uri': 'dct:title'} })
     description: str = Field(default=..., title="description", description="""A short explanation of the characteristics, features, or nature of the current item""", json_schema_extra = { "linkml_meta": {'alias': 'description',
+         'close_mappings': ['schema:description'],
          'comments': ['Describe this item in few lines. This description will serve as '
                       'a summary to present the resource.\n'],
          'domain_of': ['Dataset',
@@ -4450,6 +4558,7 @@ class Antibody(Product):
                        'ContactPoint',
                        'License',
                        'Certification'],
+         'exact_mappings': ['schema:description'],
          'recommended': True,
          'slot_uri': 'dct:description'} })
 
@@ -4510,8 +4619,8 @@ class Hybridoma(Antibody):
          'domain_of': ['ProductOrService'],
          'exact_mappings': ['dcat:theme']} })
     additionalCategory: Optional[list[ProductCategory]] = Field(default=None, title="additional category", description="""Any category apart from its main category in which this product or service can fit""", json_schema_extra = { "linkml_meta": {'alias': 'additionalCategory',
+         'close_mappings': ['dcat:theme'],
          'domain_of': ['ProductOrService'],
-         'exact_mappings': ['dcat:theme'],
          'recommended': True} })
     unitCost: str = Field(default="on request", title="unit cost", description="""The cost per access for one unit as defined by the unit definition""", json_schema_extra = { "linkml_meta": {'alias': 'unitCost',
          'comments': ['The cost per access may not be defined or be specific to a '
@@ -4565,7 +4674,7 @@ class Hybridoma(Antibody):
          'exact_mappings': ['dcat:contactPoint'],
          'recommended': True} })
     title: str = Field(default=..., title="title", description="""A name given to the resource""", json_schema_extra = { "linkml_meta": {'alias': 'title',
-         'close_mappings': ['rdfs:label'],
+         'close_mappings': ['rdfs:label', 'schema:name'],
          'comments': ['The title of the item should be as short and descriptive as '
                       'possible. E.g. for virus products it should basically be based '
                       'on the following Pattern:\n'
@@ -4580,6 +4689,7 @@ class Hybridoma(Antibody):
                        'Certification'],
          'slot_uri': 'dct:title'} })
     description: str = Field(default=..., title="description", description="""A short explanation of the characteristics, features, or nature of the current item""", json_schema_extra = { "linkml_meta": {'alias': 'description',
+         'close_mappings': ['schema:description'],
          'comments': ['Describe this item in few lines. This description will serve as '
                       'a summary to present the resource.\n'],
          'domain_of': ['Dataset',
@@ -4590,6 +4700,7 @@ class Hybridoma(Antibody):
                        'ContactPoint',
                        'License',
                        'Certification'],
+         'exact_mappings': ['schema:description'],
          'recommended': True,
          'slot_uri': 'dct:description'} })
 
@@ -4993,8 +5104,8 @@ class Protein(Product):
          'domain_of': ['ProductOrService'],
          'exact_mappings': ['dcat:theme']} })
     additionalCategory: Optional[list[ProductCategory]] = Field(default=None, title="additional category", description="""Any category apart from its main category in which this product or service can fit""", json_schema_extra = { "linkml_meta": {'alias': 'additionalCategory',
+         'close_mappings': ['dcat:theme'],
          'domain_of': ['ProductOrService'],
-         'exact_mappings': ['dcat:theme'],
          'recommended': True} })
     unitCost: str = Field(default="on request", title="unit cost", description="""The cost per access for one unit as defined by the unit definition""", json_schema_extra = { "linkml_meta": {'alias': 'unitCost',
          'comments': ['The cost per access may not be defined or be specific to a '
@@ -5048,7 +5159,7 @@ class Protein(Product):
          'exact_mappings': ['dcat:contactPoint'],
          'recommended': True} })
     title: str = Field(default=..., title="title", description="""A name given to the resource""", json_schema_extra = { "linkml_meta": {'alias': 'title',
-         'close_mappings': ['rdfs:label'],
+         'close_mappings': ['rdfs:label', 'schema:name'],
          'comments': ['The title of the item should be as short and descriptive as '
                       'possible. E.g. for virus products it should basically be based '
                       'on the following Pattern:\n'
@@ -5063,6 +5174,7 @@ class Protein(Product):
                        'Certification'],
          'slot_uri': 'dct:title'} })
     description: str = Field(default=..., title="description", description="""A short explanation of the characteristics, features, or nature of the current item""", json_schema_extra = { "linkml_meta": {'alias': 'description',
+         'close_mappings': ['schema:description'],
          'comments': ['Describe this item in few lines. This description will serve as '
                       'a summary to present the resource.\n'],
          'domain_of': ['Dataset',
@@ -5073,6 +5185,7 @@ class Protein(Product):
                        'ContactPoint',
                        'License',
                        'Certification'],
+         'exact_mappings': ['schema:description'],
          'recommended': True,
          'slot_uri': 'dct:description'} })
 
@@ -5360,8 +5473,8 @@ class NucleicAcid(Product):
          'domain_of': ['ProductOrService'],
          'exact_mappings': ['dcat:theme']} })
     additionalCategory: Optional[list[ProductCategory]] = Field(default=None, title="additional category", description="""Any category apart from its main category in which this product or service can fit""", json_schema_extra = { "linkml_meta": {'alias': 'additionalCategory',
+         'close_mappings': ['dcat:theme'],
          'domain_of': ['ProductOrService'],
-         'exact_mappings': ['dcat:theme'],
          'recommended': True} })
     unitCost: str = Field(default="on request", title="unit cost", description="""The cost per access for one unit as defined by the unit definition""", json_schema_extra = { "linkml_meta": {'alias': 'unitCost',
          'comments': ['The cost per access may not be defined or be specific to a '
@@ -5415,7 +5528,7 @@ class NucleicAcid(Product):
          'exact_mappings': ['dcat:contactPoint'],
          'recommended': True} })
     title: str = Field(default=..., title="title", description="""A name given to the resource""", json_schema_extra = { "linkml_meta": {'alias': 'title',
-         'close_mappings': ['rdfs:label'],
+         'close_mappings': ['rdfs:label', 'schema:name'],
          'comments': ['The title of the item should be as short and descriptive as '
                       'possible. E.g. for virus products it should basically be based '
                       'on the following Pattern:\n'
@@ -5430,6 +5543,7 @@ class NucleicAcid(Product):
                        'Certification'],
          'slot_uri': 'dct:title'} })
     description: str = Field(default=..., title="description", description="""A short explanation of the characteristics, features, or nature of the current item""", json_schema_extra = { "linkml_meta": {'alias': 'description',
+         'close_mappings': ['schema:description'],
          'comments': ['Describe this item in few lines. This description will serve as '
                       'a summary to present the resource.\n'],
          'domain_of': ['Dataset',
@@ -5440,6 +5554,7 @@ class NucleicAcid(Product):
                        'ContactPoint',
                        'License',
                        'Certification'],
+         'exact_mappings': ['schema:description'],
          'recommended': True,
          'slot_uri': 'dct:description'} })
 
@@ -5533,8 +5648,8 @@ class DetectionKit(Product):
          'domain_of': ['ProductOrService'],
          'exact_mappings': ['dcat:theme']} })
     additionalCategory: Optional[list[ProductCategory]] = Field(default=None, title="additional category", description="""Any category apart from its main category in which this product or service can fit""", json_schema_extra = { "linkml_meta": {'alias': 'additionalCategory',
+         'close_mappings': ['dcat:theme'],
          'domain_of': ['ProductOrService'],
-         'exact_mappings': ['dcat:theme'],
          'recommended': True} })
     unitCost: str = Field(default="on request", title="unit cost", description="""The cost per access for one unit as defined by the unit definition""", json_schema_extra = { "linkml_meta": {'alias': 'unitCost',
          'comments': ['The cost per access may not be defined or be specific to a '
@@ -5588,7 +5703,7 @@ class DetectionKit(Product):
          'exact_mappings': ['dcat:contactPoint'],
          'recommended': True} })
     title: str = Field(default=..., title="title", description="""A name given to the resource""", json_schema_extra = { "linkml_meta": {'alias': 'title',
-         'close_mappings': ['rdfs:label'],
+         'close_mappings': ['rdfs:label', 'schema:name'],
          'comments': ['The title of the item should be as short and descriptive as '
                       'possible. E.g. for virus products it should basically be based '
                       'on the following Pattern:\n'
@@ -5603,6 +5718,7 @@ class DetectionKit(Product):
                        'Certification'],
          'slot_uri': 'dct:title'} })
     description: str = Field(default=..., title="description", description="""A short explanation of the characteristics, features, or nature of the current item""", json_schema_extra = { "linkml_meta": {'alias': 'description',
+         'close_mappings': ['schema:description'],
          'comments': ['Describe this item in few lines. This description will serve as '
                       'a summary to present the resource.\n'],
          'domain_of': ['Dataset',
@@ -5613,6 +5729,7 @@ class DetectionKit(Product):
                        'ContactPoint',
                        'License',
                        'Certification'],
+         'exact_mappings': ['schema:description'],
          'recommended': True,
          'slot_uri': 'dct:description'} })
 
@@ -5670,8 +5787,8 @@ class Bundle(Product):
          'domain_of': ['ProductOrService'],
          'exact_mappings': ['dcat:theme']} })
     additionalCategory: Optional[list[ProductCategory]] = Field(default=None, title="additional category", description="""Any category apart from its main category in which this product or service can fit""", json_schema_extra = { "linkml_meta": {'alias': 'additionalCategory',
+         'close_mappings': ['dcat:theme'],
          'domain_of': ['ProductOrService'],
-         'exact_mappings': ['dcat:theme'],
          'recommended': True} })
     unitCost: str = Field(default="on request", title="unit cost", description="""The cost per access for one unit as defined by the unit definition""", json_schema_extra = { "linkml_meta": {'alias': 'unitCost',
          'comments': ['The cost per access may not be defined or be specific to a '
@@ -5725,7 +5842,7 @@ class Bundle(Product):
          'exact_mappings': ['dcat:contactPoint'],
          'recommended': True} })
     title: str = Field(default=..., title="title", description="""A name given to the resource""", json_schema_extra = { "linkml_meta": {'alias': 'title',
-         'close_mappings': ['rdfs:label'],
+         'close_mappings': ['rdfs:label', 'schema:name'],
          'comments': ['The title of the item should be as short and descriptive as '
                       'possible. E.g. for virus products it should basically be based '
                       'on the following Pattern:\n'
@@ -5740,6 +5857,7 @@ class Bundle(Product):
                        'Certification'],
          'slot_uri': 'dct:title'} })
     description: str = Field(default=..., title="description", description="""A short explanation of the characteristics, features, or nature of the current item""", json_schema_extra = { "linkml_meta": {'alias': 'description',
+         'close_mappings': ['schema:description'],
          'comments': ['Describe this item in few lines. This description will serve as '
                       'a summary to present the resource.\n'],
          'domain_of': ['Dataset',
@@ -5750,6 +5868,7 @@ class Bundle(Product):
                        'ContactPoint',
                        'License',
                        'Certification'],
+         'exact_mappings': ['schema:description'],
          'recommended': True,
          'slot_uri': 'dct:description'} })
 
@@ -6114,8 +6233,8 @@ class Pathogen(Product):
          'domain_of': ['ProductOrService'],
          'exact_mappings': ['dcat:theme']} })
     additionalCategory: Optional[list[ProductCategory]] = Field(default=None, title="additional category", description="""Any category apart from its main category in which this product or service can fit""", json_schema_extra = { "linkml_meta": {'alias': 'additionalCategory',
+         'close_mappings': ['dcat:theme'],
          'domain_of': ['ProductOrService'],
-         'exact_mappings': ['dcat:theme'],
          'recommended': True} })
     unitCost: str = Field(default="on request", title="unit cost", description="""The cost per access for one unit as defined by the unit definition""", json_schema_extra = { "linkml_meta": {'alias': 'unitCost',
          'comments': ['The cost per access may not be defined or be specific to a '
@@ -6169,7 +6288,7 @@ class Pathogen(Product):
          'exact_mappings': ['dcat:contactPoint'],
          'recommended': True} })
     title: str = Field(default=..., title="title", description="""A name given to the resource""", json_schema_extra = { "linkml_meta": {'alias': 'title',
-         'close_mappings': ['rdfs:label'],
+         'close_mappings': ['rdfs:label', 'schema:name'],
          'comments': ['The title of the item should be as short and descriptive as '
                       'possible. E.g. for virus products it should basically be based '
                       'on the following Pattern:\n'
@@ -6184,6 +6303,7 @@ class Pathogen(Product):
                        'Certification'],
          'slot_uri': 'dct:title'} })
     description: str = Field(default=..., title="description", description="""A short explanation of the characteristics, features, or nature of the current item""", json_schema_extra = { "linkml_meta": {'alias': 'description',
+         'close_mappings': ['schema:description'],
          'comments': ['Describe this item in few lines. This description will serve as '
                       'a summary to present the resource.\n'],
          'domain_of': ['Dataset',
@@ -6194,6 +6314,7 @@ class Pathogen(Product):
                        'ContactPoint',
                        'License',
                        'Certification'],
+         'exact_mappings': ['schema:description'],
          'recommended': True,
          'slot_uri': 'dct:description'} })
 
@@ -6336,8 +6457,8 @@ class Virus(Pathogen):
          'domain_of': ['ProductOrService'],
          'exact_mappings': ['dcat:theme']} })
     additionalCategory: Optional[list[ProductCategory]] = Field(default=None, title="additional category", description="""Any category apart from its main category in which this product or service can fit""", json_schema_extra = { "linkml_meta": {'alias': 'additionalCategory',
+         'close_mappings': ['dcat:theme'],
          'domain_of': ['ProductOrService'],
-         'exact_mappings': ['dcat:theme'],
          'recommended': True} })
     unitCost: str = Field(default="on request", title="unit cost", description="""The cost per access for one unit as defined by the unit definition""", json_schema_extra = { "linkml_meta": {'alias': 'unitCost',
          'comments': ['The cost per access may not be defined or be specific to a '
@@ -6391,7 +6512,7 @@ class Virus(Pathogen):
          'exact_mappings': ['dcat:contactPoint'],
          'recommended': True} })
     title: str = Field(default=..., title="title", description="""A name given to the resource""", json_schema_extra = { "linkml_meta": {'alias': 'title',
-         'close_mappings': ['rdfs:label'],
+         'close_mappings': ['rdfs:label', 'schema:name'],
          'comments': ['The title of the item should be as short and descriptive as '
                       'possible. E.g. for virus products it should basically be based '
                       'on the following Pattern:\n'
@@ -6406,6 +6527,7 @@ class Virus(Pathogen):
                        'Certification'],
          'slot_uri': 'dct:title'} })
     description: str = Field(default=..., title="description", description="""A short explanation of the characteristics, features, or nature of the current item""", json_schema_extra = { "linkml_meta": {'alias': 'description',
+         'close_mappings': ['schema:description'],
          'comments': ['Describe this item in few lines. This description will serve as '
                       'a summary to present the resource.\n'],
          'domain_of': ['Dataset',
@@ -6416,6 +6538,7 @@ class Virus(Pathogen):
                        'ContactPoint',
                        'License',
                        'Certification'],
+         'exact_mappings': ['schema:description'],
          'recommended': True,
          'slot_uri': 'dct:description'} })
 
@@ -6507,8 +6630,8 @@ class Bacterium(Pathogen):
          'domain_of': ['ProductOrService'],
          'exact_mappings': ['dcat:theme']} })
     additionalCategory: Optional[list[ProductCategory]] = Field(default=None, title="additional category", description="""Any category apart from its main category in which this product or service can fit""", json_schema_extra = { "linkml_meta": {'alias': 'additionalCategory',
+         'close_mappings': ['dcat:theme'],
          'domain_of': ['ProductOrService'],
-         'exact_mappings': ['dcat:theme'],
          'recommended': True} })
     unitCost: str = Field(default="on request", title="unit cost", description="""The cost per access for one unit as defined by the unit definition""", json_schema_extra = { "linkml_meta": {'alias': 'unitCost',
          'comments': ['The cost per access may not be defined or be specific to a '
@@ -6562,7 +6685,7 @@ class Bacterium(Pathogen):
          'exact_mappings': ['dcat:contactPoint'],
          'recommended': True} })
     title: str = Field(default=..., title="title", description="""A name given to the resource""", json_schema_extra = { "linkml_meta": {'alias': 'title',
-         'close_mappings': ['rdfs:label'],
+         'close_mappings': ['rdfs:label', 'schema:name'],
          'comments': ['The title of the item should be as short and descriptive as '
                       'possible. E.g. for virus products it should basically be based '
                       'on the following Pattern:\n'
@@ -6577,6 +6700,7 @@ class Bacterium(Pathogen):
                        'Certification'],
          'slot_uri': 'dct:title'} })
     description: str = Field(default=..., title="description", description="""A short explanation of the characteristics, features, or nature of the current item""", json_schema_extra = { "linkml_meta": {'alias': 'description',
+         'close_mappings': ['schema:description'],
          'comments': ['Describe this item in few lines. This description will serve as '
                       'a summary to present the resource.\n'],
          'domain_of': ['Dataset',
@@ -6587,6 +6711,7 @@ class Bacterium(Pathogen):
                        'ContactPoint',
                        'License',
                        'Certification'],
+         'exact_mappings': ['schema:description'],
          'recommended': True,
          'slot_uri': 'dct:description'} })
 
@@ -6678,8 +6803,8 @@ class Fungus(Pathogen):
          'domain_of': ['ProductOrService'],
          'exact_mappings': ['dcat:theme']} })
     additionalCategory: Optional[list[ProductCategory]] = Field(default=None, title="additional category", description="""Any category apart from its main category in which this product or service can fit""", json_schema_extra = { "linkml_meta": {'alias': 'additionalCategory',
+         'close_mappings': ['dcat:theme'],
          'domain_of': ['ProductOrService'],
-         'exact_mappings': ['dcat:theme'],
          'recommended': True} })
     unitCost: str = Field(default="on request", title="unit cost", description="""The cost per access for one unit as defined by the unit definition""", json_schema_extra = { "linkml_meta": {'alias': 'unitCost',
          'comments': ['The cost per access may not be defined or be specific to a '
@@ -6733,7 +6858,7 @@ class Fungus(Pathogen):
          'exact_mappings': ['dcat:contactPoint'],
          'recommended': True} })
     title: str = Field(default=..., title="title", description="""A name given to the resource""", json_schema_extra = { "linkml_meta": {'alias': 'title',
-         'close_mappings': ['rdfs:label'],
+         'close_mappings': ['rdfs:label', 'schema:name'],
          'comments': ['The title of the item should be as short and descriptive as '
                       'possible. E.g. for virus products it should basically be based '
                       'on the following Pattern:\n'
@@ -6748,6 +6873,7 @@ class Fungus(Pathogen):
                        'Certification'],
          'slot_uri': 'dct:title'} })
     description: str = Field(default=..., title="description", description="""A short explanation of the characteristics, features, or nature of the current item""", json_schema_extra = { "linkml_meta": {'alias': 'description',
+         'close_mappings': ['schema:description'],
          'comments': ['Describe this item in few lines. This description will serve as '
                       'a summary to present the resource.\n'],
          'domain_of': ['Dataset',
@@ -6758,6 +6884,7 @@ class Fungus(Pathogen):
                        'ContactPoint',
                        'License',
                        'Certification'],
+         'exact_mappings': ['schema:description'],
          'recommended': True,
          'slot_uri': 'dct:description'} })
 
@@ -6849,8 +6976,8 @@ class Protozoan(Pathogen):
          'domain_of': ['ProductOrService'],
          'exact_mappings': ['dcat:theme']} })
     additionalCategory: Optional[list[ProductCategory]] = Field(default=None, title="additional category", description="""Any category apart from its main category in which this product or service can fit""", json_schema_extra = { "linkml_meta": {'alias': 'additionalCategory',
+         'close_mappings': ['dcat:theme'],
          'domain_of': ['ProductOrService'],
-         'exact_mappings': ['dcat:theme'],
          'recommended': True} })
     unitCost: str = Field(default="on request", title="unit cost", description="""The cost per access for one unit as defined by the unit definition""", json_schema_extra = { "linkml_meta": {'alias': 'unitCost',
          'comments': ['The cost per access may not be defined or be specific to a '
@@ -6904,7 +7031,7 @@ class Protozoan(Pathogen):
          'exact_mappings': ['dcat:contactPoint'],
          'recommended': True} })
     title: str = Field(default=..., title="title", description="""A name given to the resource""", json_schema_extra = { "linkml_meta": {'alias': 'title',
-         'close_mappings': ['rdfs:label'],
+         'close_mappings': ['rdfs:label', 'schema:name'],
          'comments': ['The title of the item should be as short and descriptive as '
                       'possible. E.g. for virus products it should basically be based '
                       'on the following Pattern:\n'
@@ -6919,6 +7046,7 @@ class Protozoan(Pathogen):
                        'Certification'],
          'slot_uri': 'dct:title'} })
     description: str = Field(default=..., title="description", description="""A short explanation of the characteristics, features, or nature of the current item""", json_schema_extra = { "linkml_meta": {'alias': 'description',
+         'close_mappings': ['schema:description'],
          'comments': ['Describe this item in few lines. This description will serve as '
                       'a summary to present the resource.\n'],
          'domain_of': ['Dataset',
@@ -6929,6 +7057,7 @@ class Protozoan(Pathogen):
                        'ContactPoint',
                        'License',
                        'Certification'],
+         'exact_mappings': ['schema:description'],
          'recommended': True,
          'slot_uri': 'dct:description'} })
 
@@ -7020,8 +7149,8 @@ class Viroid(Pathogen):
          'domain_of': ['ProductOrService'],
          'exact_mappings': ['dcat:theme']} })
     additionalCategory: Optional[list[ProductCategory]] = Field(default=None, title="additional category", description="""Any category apart from its main category in which this product or service can fit""", json_schema_extra = { "linkml_meta": {'alias': 'additionalCategory',
+         'close_mappings': ['dcat:theme'],
          'domain_of': ['ProductOrService'],
-         'exact_mappings': ['dcat:theme'],
          'recommended': True} })
     unitCost: str = Field(default="on request", title="unit cost", description="""The cost per access for one unit as defined by the unit definition""", json_schema_extra = { "linkml_meta": {'alias': 'unitCost',
          'comments': ['The cost per access may not be defined or be specific to a '
@@ -7075,7 +7204,7 @@ class Viroid(Pathogen):
          'exact_mappings': ['dcat:contactPoint'],
          'recommended': True} })
     title: str = Field(default=..., title="title", description="""A name given to the resource""", json_schema_extra = { "linkml_meta": {'alias': 'title',
-         'close_mappings': ['rdfs:label'],
+         'close_mappings': ['rdfs:label', 'schema:name'],
          'comments': ['The title of the item should be as short and descriptive as '
                       'possible. E.g. for virus products it should basically be based '
                       'on the following Pattern:\n'
@@ -7090,6 +7219,7 @@ class Viroid(Pathogen):
                        'Certification'],
          'slot_uri': 'dct:title'} })
     description: str = Field(default=..., title="description", description="""A short explanation of the characteristics, features, or nature of the current item""", json_schema_extra = { "linkml_meta": {'alias': 'description',
+         'close_mappings': ['schema:description'],
          'comments': ['Describe this item in few lines. This description will serve as '
                       'a summary to present the resource.\n'],
          'domain_of': ['Dataset',
@@ -7100,6 +7230,7 @@ class Viroid(Pathogen):
                        'ContactPoint',
                        'License',
                        'Certification'],
+         'exact_mappings': ['schema:description'],
          'recommended': True,
          'slot_uri': 'dct:description'} })
 
@@ -7191,8 +7322,8 @@ class Prion(Pathogen):
          'domain_of': ['ProductOrService'],
          'exact_mappings': ['dcat:theme']} })
     additionalCategory: Optional[list[ProductCategory]] = Field(default=None, title="additional category", description="""Any category apart from its main category in which this product or service can fit""", json_schema_extra = { "linkml_meta": {'alias': 'additionalCategory',
+         'close_mappings': ['dcat:theme'],
          'domain_of': ['ProductOrService'],
-         'exact_mappings': ['dcat:theme'],
          'recommended': True} })
     unitCost: str = Field(default="on request", title="unit cost", description="""The cost per access for one unit as defined by the unit definition""", json_schema_extra = { "linkml_meta": {'alias': 'unitCost',
          'comments': ['The cost per access may not be defined or be specific to a '
@@ -7246,7 +7377,7 @@ class Prion(Pathogen):
          'exact_mappings': ['dcat:contactPoint'],
          'recommended': True} })
     title: str = Field(default=..., title="title", description="""A name given to the resource""", json_schema_extra = { "linkml_meta": {'alias': 'title',
-         'close_mappings': ['rdfs:label'],
+         'close_mappings': ['rdfs:label', 'schema:name'],
          'comments': ['The title of the item should be as short and descriptive as '
                       'possible. E.g. for virus products it should basically be based '
                       'on the following Pattern:\n'
@@ -7261,6 +7392,7 @@ class Prion(Pathogen):
                        'Certification'],
          'slot_uri': 'dct:title'} })
     description: str = Field(default=..., title="description", description="""A short explanation of the characteristics, features, or nature of the current item""", json_schema_extra = { "linkml_meta": {'alias': 'description',
+         'close_mappings': ['schema:description'],
          'comments': ['Describe this item in few lines. This description will serve as '
                       'a summary to present the resource.\n'],
          'domain_of': ['Dataset',
@@ -7271,6 +7403,7 @@ class Prion(Pathogen):
                        'ContactPoint',
                        'License',
                        'Certification'],
+         'exact_mappings': ['schema:description'],
          'recommended': True,
          'slot_uri': 'dct:description'} })
 
@@ -7662,6 +7795,7 @@ class File(Resource):
                                                       'ContactPoint',
                                                       'License',
                                                       'Certification'],
+                                        'exact_mappings': ['schema:description'],
                                         'multivalued': False,
                                         'name': 'description',
                                         'range': 'string',
@@ -7707,8 +7841,10 @@ class File(Resource):
     name: str = Field(default=..., title="name", description="""A word or set of words used to identify and refer to an entity""", json_schema_extra = { "linkml_meta": {'alias': 'name',
          'close_mappings': ['foaf:name', 'dct:title'],
          'domain_of': ['File', 'PersonOrOrganization', 'ContactPoint'],
-         'exact_mappings': ['schema:name']} })
+         'exact_mappings': ['schema:name'],
+         'slot_uri': 'foaf:name'} })
     description: Optional[str] = Field(default=None, title="description", description="""A short explanation of the characteristics, features, or nature of the current item""", json_schema_extra = { "linkml_meta": {'alias': 'description',
+         'close_mappings': ['schema:description'],
          'comments': ['Describe this item in few lines. This description will serve as '
                       'a summary to present the resource.\n'],
          'domain_of': ['File',
@@ -7719,6 +7855,7 @@ class File(Resource):
                        'ContactPoint',
                        'License',
                        'Certification'],
+         'exact_mappings': ['schema:description'],
          'recommended': True,
          'slot_uri': 'dct:description'} })
     contentURL: str = Field(default=..., title="content URL", description="""The web address or location where the file content is stored and can be accessed or downloaded.""", json_schema_extra = { "linkml_meta": {'alias': 'contentURL', 'domain_of': ['File']} })
@@ -7739,8 +7876,10 @@ class Data(File):
     name: str = Field(default=..., title="name", description="""A word or set of words used to identify and refer to an entity""", json_schema_extra = { "linkml_meta": {'alias': 'name',
          'close_mappings': ['foaf:name', 'dct:title'],
          'domain_of': ['File', 'PersonOrOrganization', 'ContactPoint'],
-         'exact_mappings': ['schema:name']} })
+         'exact_mappings': ['schema:name'],
+         'slot_uri': 'foaf:name'} })
     description: Optional[str] = Field(default=None, title="description", description="""A short explanation of the characteristics, features, or nature of the current item""", json_schema_extra = { "linkml_meta": {'alias': 'description',
+         'close_mappings': ['schema:description'],
          'comments': ['Describe this item in few lines. This description will serve as '
                       'a summary to present the resource.\n'],
          'domain_of': ['File',
@@ -7751,6 +7890,7 @@ class Data(File):
                        'ContactPoint',
                        'License',
                        'Certification'],
+         'exact_mappings': ['schema:description'],
          'recommended': True,
          'slot_uri': 'dct:description'} })
     contentURL: str = Field(default=..., title="content URL", description="""The web address or location where the file content is stored and can be accessed or downloaded.""", json_schema_extra = { "linkml_meta": {'alias': 'contentURL', 'domain_of': ['File']} })
@@ -7771,8 +7911,10 @@ class Document(File):
     name: str = Field(default=..., title="name", description="""A word or set of words used to identify and refer to an entity""", json_schema_extra = { "linkml_meta": {'alias': 'name',
          'close_mappings': ['foaf:name', 'dct:title'],
          'domain_of': ['File', 'PersonOrOrganization', 'ContactPoint'],
-         'exact_mappings': ['schema:name']} })
+         'exact_mappings': ['schema:name'],
+         'slot_uri': 'foaf:name'} })
     description: Optional[str] = Field(default=None, title="description", description="""A short explanation of the characteristics, features, or nature of the current item""", json_schema_extra = { "linkml_meta": {'alias': 'description',
+         'close_mappings': ['schema:description'],
          'comments': ['Describe this item in few lines. This description will serve as '
                       'a summary to present the resource.\n'],
          'domain_of': ['File',
@@ -7783,6 +7925,7 @@ class Document(File):
                        'ContactPoint',
                        'License',
                        'Certification'],
+         'exact_mappings': ['schema:description'],
          'recommended': True,
          'slot_uri': 'dct:description'} })
     contentURL: str = Field(default=..., title="content URL", description="""The web address or location where the file content is stored and can be accessed or downloaded.""", json_schema_extra = { "linkml_meta": {'alias': 'contentURL', 'domain_of': ['File']} })
@@ -7803,8 +7946,10 @@ class Audio(File):
     name: str = Field(default=..., title="name", description="""A word or set of words used to identify and refer to an entity""", json_schema_extra = { "linkml_meta": {'alias': 'name',
          'close_mappings': ['foaf:name', 'dct:title'],
          'domain_of': ['File', 'PersonOrOrganization', 'ContactPoint'],
-         'exact_mappings': ['schema:name']} })
+         'exact_mappings': ['schema:name'],
+         'slot_uri': 'foaf:name'} })
     description: Optional[str] = Field(default=None, title="description", description="""A short explanation of the characteristics, features, or nature of the current item""", json_schema_extra = { "linkml_meta": {'alias': 'description',
+         'close_mappings': ['schema:description'],
          'comments': ['Describe this item in few lines. This description will serve as '
                       'a summary to present the resource.\n'],
          'domain_of': ['File',
@@ -7815,6 +7960,7 @@ class Audio(File):
                        'ContactPoint',
                        'License',
                        'Certification'],
+         'exact_mappings': ['schema:description'],
          'recommended': True,
          'slot_uri': 'dct:description'} })
     contentURL: str = Field(default=..., title="content URL", description="""The web address or location where the file content is stored and can be accessed or downloaded.""", json_schema_extra = { "linkml_meta": {'alias': 'contentURL', 'domain_of': ['File']} })
@@ -7835,8 +7981,10 @@ class Video(File):
     name: str = Field(default=..., title="name", description="""A word or set of words used to identify and refer to an entity""", json_schema_extra = { "linkml_meta": {'alias': 'name',
          'close_mappings': ['foaf:name', 'dct:title'],
          'domain_of': ['File', 'PersonOrOrganization', 'ContactPoint'],
-         'exact_mappings': ['schema:name']} })
+         'exact_mappings': ['schema:name'],
+         'slot_uri': 'foaf:name'} })
     description: Optional[str] = Field(default=None, title="description", description="""A short explanation of the characteristics, features, or nature of the current item""", json_schema_extra = { "linkml_meta": {'alias': 'description',
+         'close_mappings': ['schema:description'],
          'comments': ['Describe this item in few lines. This description will serve as '
                       'a summary to present the resource.\n'],
          'domain_of': ['File',
@@ -7847,6 +7995,7 @@ class Video(File):
                        'ContactPoint',
                        'License',
                        'Certification'],
+         'exact_mappings': ['schema:description'],
          'recommended': True,
          'slot_uri': 'dct:description'} })
     contentURL: str = Field(default=..., title="content URL", description="""The web address or location where the file content is stored and can be accessed or downloaded.""", json_schema_extra = { "linkml_meta": {'alias': 'contentURL', 'domain_of': ['File']} })
@@ -7877,8 +8026,10 @@ class Image(File):
     name: str = Field(default=..., title="name", description="""A word or set of words used to identify and refer to an entity""", json_schema_extra = { "linkml_meta": {'alias': 'name',
          'close_mappings': ['foaf:name', 'dct:title'],
          'domain_of': ['File', 'PersonOrOrganization', 'ContactPoint'],
-         'exact_mappings': ['schema:name']} })
+         'exact_mappings': ['schema:name'],
+         'slot_uri': 'foaf:name'} })
     description: Optional[str] = Field(default=None, title="description", description="""A short explanation of the characteristics, features, or nature of the current item""", json_schema_extra = { "linkml_meta": {'alias': 'description',
+         'close_mappings': ['schema:description'],
          'comments': ['Describe this item in few lines. This description will serve as '
                       'a summary to present the resource.\n'],
          'domain_of': ['File',
@@ -7889,6 +8040,7 @@ class Image(File):
                        'ContactPoint',
                        'License',
                        'Certification'],
+         'exact_mappings': ['schema:description'],
          'recommended': True,
          'slot_uri': 'dct:description'} })
     contentURL: str = Field(default=..., title="content URL", description="""The web address or location where the file content is stored and can be accessed or downloaded.""", json_schema_extra = { "linkml_meta": {'alias': 'contentURL', 'domain_of': ['File']} })
@@ -7902,9 +8054,10 @@ class ContactPoint(Resource):
     """
     Entity serving as focal point of information
     """
-    linkml_meta: ClassVar[LinkMLMeta] = LinkMLMeta({'close_mappings': ['wd:Q30322502',
+    linkml_meta: ClassVar[LinkMLMeta] = LinkMLMeta({'close_mappings': ['wd:Q30322502', 'wd:Q30322502'],
+         'exact_mappings': ['schema:ContactPoint',
                             'vcard:Contact',
-                            'wd:Q30322502',
+                            'schema:ContactPoint',
                             'vcard:Contact'],
          'from_schema': 'https://w3id.org/evorao/',
          'slot_usage': {'addressCountry': {'close_mappings': ['schema:addressCountry',
@@ -7957,6 +8110,7 @@ class ContactPoint(Resource):
                                                       'File',
                                                       'License',
                                                       'Certification'],
+                                        'exact_mappings': ['schema:description'],
                                         'multivalued': False,
                                         'name': 'description',
                                         'range': 'string',
@@ -7964,9 +8118,9 @@ class ContactPoint(Resource):
                                         'required': False,
                                         'slot_uri': 'dct:description',
                                         'title': 'description'},
-                        'email': {'close_mappings': ['schema:email', 'vcard:email'],
-                                  'description': 'Email address',
+                        'email': {'description': 'Email address',
                                   'domain_of': ['ContactPoint'],
+                                  'exact_mappings': ['schema:email', 'vcard:email'],
                                   'multivalued': False,
                                   'name': 'email',
                                   'range': 'string',
@@ -8016,10 +8170,10 @@ class ContactPoint(Resource):
                                           'range': 'string',
                                           'required': False,
                                           'title': 'street address'},
-                        'telephone': {'close_mappings': ['schema:telephone',
-                                                         'vcard:telephone'],
-                                      'description': 'The telephone number',
+                        'telephone': {'description': 'The telephone number',
                                       'domain_of': ['ContactPoint'],
+                                      'exact_mappings': ['schema:telephone',
+                                                         'vcard:telephone'],
                                       'multivalued': False,
                                       'name': 'telephone',
                                       'range': 'string',
@@ -8031,8 +8185,10 @@ class ContactPoint(Resource):
     name: str = Field(default=..., title="name", description="""A word or set of words used to identify and refer to an entity""", json_schema_extra = { "linkml_meta": {'alias': 'name',
          'close_mappings': ['foaf:name', 'dct:title'],
          'domain_of': ['ContactPoint', 'PersonOrOrganization', 'File'],
-         'exact_mappings': ['schema:name']} })
+         'exact_mappings': ['schema:name'],
+         'slot_uri': 'foaf:name'} })
     description: Optional[str] = Field(default=None, title="description", description="""A short explanation of the characteristics, features, or nature of the current item""", json_schema_extra = { "linkml_meta": {'alias': 'description',
+         'close_mappings': ['schema:description'],
          'comments': ['Describe this item in few lines. This description will serve as '
                       'a summary to present the resource.\n'],
          'domain_of': ['ContactPoint',
@@ -8043,15 +8199,16 @@ class ContactPoint(Resource):
                        'File',
                        'License',
                        'Certification'],
+         'exact_mappings': ['schema:description'],
          'recommended': True,
          'slot_uri': 'dct:description'} })
     email: Optional[str] = Field(default=None, title="email", description="""Email address""", json_schema_extra = { "linkml_meta": {'alias': 'email',
-         'close_mappings': ['schema:email', 'vcard:email'],
          'domain_of': ['ContactPoint'],
+         'exact_mappings': ['schema:email', 'vcard:email'],
          'recommended': True} })
     telephone: Optional[str] = Field(default=None, title="telephone", description="""The telephone number""", json_schema_extra = { "linkml_meta": {'alias': 'telephone',
-         'close_mappings': ['schema:telephone', 'vcard:telephone'],
          'domain_of': ['ContactPoint'],
+         'exact_mappings': ['schema:telephone', 'vcard:telephone'],
          'recommended': True} })
     streetAddress: Optional[str] = Field(default=None, title="street address", description="""The building/apartment number and the street name""", json_schema_extra = { "linkml_meta": {'alias': 'streetAddress',
          'close_mappings': ['schema:streetAddress', 'vcard:hasStreetAddress'],
@@ -8084,7 +8241,8 @@ class License(Resource):
                             'dct:LicenseDocument'],
          'exact_mappings': ['dct:RightsStatement', 'dct:RightsStatement'],
          'from_schema': 'https://w3id.org/evorao/',
-         'slot_usage': {'description': {'comments': ['Describe this item in few lines. '
+         'slot_usage': {'description': {'close_mappings': ['schema:description'],
+                                        'comments': ['Describe this item in few lines. '
                                                      'This description will serve as a '
                                                      'summary to present the '
                                                      'resource.\n'],
@@ -8183,6 +8341,7 @@ class License(Resource):
                        'Certification'],
          'slot_uri': 'dct:title'} })
     description: Optional[str] = Field(default=None, title="description", description="""A short explanation of the characteristics, features, or nature of the current item""", json_schema_extra = { "linkml_meta": {'alias': 'description',
+         'close_mappings': ['schema:description'],
          'comments': ['Describe this item in few lines. This description will serve as '
                       'a summary to present the resource.\n'],
          'domain_of': ['License',
@@ -8193,6 +8352,7 @@ class License(Resource):
                        'File',
                        'ContactPoint',
                        'Certification'],
+         'exact_mappings': ['schema:description', 'schema:description'],
          'recommended': True,
          'slot_uri': 'dct:description'} })
     resourceURL: Optional[str] = Field(default=None, title="resource URL", description="""The web address or location where the details or content is stored and can be accessed or downloaded.""", json_schema_extra = { "linkml_meta": {'alias': 'resourceURL',
@@ -8235,7 +8395,8 @@ class Certification(Resource):
                                                   'range': 'Document',
                                                   'required': False,
                                                   'title': 'certification document'},
-                        'description': {'comments': ['Describe this item in few lines. '
+                        'description': {'close_mappings': ['schema:description'],
+                                        'comments': ['Describe this item in few lines. '
                                                      'This description will serve as a '
                                                      'summary to present the '
                                                      'resource.\n'],
@@ -8320,6 +8481,7 @@ class Certification(Resource):
                        'License'],
          'slot_uri': 'dct:title'} })
     description: Optional[str] = Field(default=None, title="description", description="""A short explanation of the characteristics, features, or nature of the current item""", json_schema_extra = { "linkml_meta": {'alias': 'description',
+         'close_mappings': ['schema:description'],
          'comments': ['Describe this item in few lines. This description will serve as '
                       'a summary to present the resource.\n'],
          'domain_of': ['Certification',
@@ -8330,6 +8492,7 @@ class Certification(Resource):
                        'File',
                        'ContactPoint',
                        'License'],
+         'exact_mappings': ['schema:description', 'schema:description'],
          'recommended': True,
          'slot_uri': 'dct:description'} })
     logo: Optional[Image] = Field(default=None, title="logo", description="""A path or URL to the related logo""", json_schema_extra = { "linkml_meta": {'alias': 'logo',

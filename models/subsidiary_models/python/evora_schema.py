@@ -1,5 +1,5 @@
 # Auto generated from evora_schema.yaml by pythongen.py version: 0.0.1
-# Generation date: 2025-05-19T13:32:50
+# Generation date: 2025-06-30T15:25:45
 # Schema: EVORAO
 #
 # id: https://w3id.org/evorao/
@@ -60,7 +60,7 @@ from linkml_runtime.linkml_model.types import Boolean, Datetime, Integer, String
 from linkml_runtime.utils.metamodelcore import Bool, URI, XSDDateTime
 
 metamodel_version = "1.7.0"
-version = "1.0.8719"
+version = "1.0.8773"
 
 # Namespaces
 EVORAO = CurieNamespace('EVORAO', 'https://w3id.org/evorao/')
@@ -2870,10 +2870,10 @@ slots.accessionNumber = Slot(uri=EVORAO.accessionNumber, name="accessionNumber",
 slots.sequenceProvider = Slot(uri=EVORAO.sequenceProvider, name="sequenceProvider", curie=EVORAO.curie('sequenceProvider'),
                    model_uri=EVORAO.sequenceProvider, domain=None, range=str)
 
-slots.name = Slot(uri=EVORAO.name, name="name", curie=EVORAO.curie('name'),
+slots.name = Slot(uri=FOAF.name, name="name", curie=FOAF.curie('name'),
                    model_uri=EVORAO.name, domain=None, range=str)
 
-slots.homePage = Slot(uri=EVORAO.homePage, name="homePage", curie=EVORAO.curie('homePage'),
+slots.homePage = Slot(uri=FOAF.homepage, name="homePage", curie=FOAF.curie('homepage'),
                    model_uri=EVORAO.homePage, domain=None, range=Optional[Union[str, URI]])
 
 slots.contactPoint = Slot(uri=EVORAO.contactPoint, name="contactPoint", curie=EVORAO.curie('contactPoint'),
@@ -3464,13 +3464,13 @@ slots.SequenceReference_accessionNumber = Slot(uri=EVORAO.accessionNumber, name=
 slots.SequenceReference_sequenceProvider = Slot(uri=EVORAO.sequenceProvider, name="SequenceReference_sequenceProvider", curie=EVORAO.curie('sequenceProvider'),
                    model_uri=EVORAO.SequenceReference_sequenceProvider, domain=SequenceReference, range=str)
 
-slots.PersonOrOrganization_name = Slot(uri=EVORAO.name, name="PersonOrOrganization_name", curie=EVORAO.curie('name'),
+slots.PersonOrOrganization_name = Slot(uri=FOAF.name, name="PersonOrOrganization_name", curie=FOAF.curie('name'),
                    model_uri=EVORAO.PersonOrOrganization_name, domain=PersonOrOrganization, range=str)
 
 slots.PersonOrOrganization_description = Slot(uri=DCT.description, name="PersonOrOrganization_description", curie=DCT.curie('description'),
                    model_uri=EVORAO.PersonOrOrganization_description, domain=PersonOrOrganization, range=Optional[str])
 
-slots.PersonOrOrganization_homePage = Slot(uri=EVORAO.homePage, name="PersonOrOrganization_homePage", curie=EVORAO.curie('homePage'),
+slots.PersonOrOrganization_homePage = Slot(uri=FOAF.homepage, name="PersonOrOrganization_homePage", curie=FOAF.curie('homepage'),
                    model_uri=EVORAO.PersonOrOrganization_homePage, domain=PersonOrOrganization, range=Optional[Union[str, URI]])
 
 slots.PersonOrOrganization_contactPoint = Slot(uri=EVORAO.contactPoint, name="PersonOrOrganization_contactPoint", curie=EVORAO.curie('contactPoint'),
@@ -3866,7 +3866,7 @@ slots.MSDS_regulatoryInformation = Slot(uri=EVORAO.regulatoryInformation, name="
 slots.MSDS_furtherInformation = Slot(uri=EVORAO.furtherInformation, name="MSDS_furtherInformation", curie=EVORAO.curie('furtherInformation'),
                    model_uri=EVORAO.MSDS_furtherInformation, domain=MSDS, range=Optional[str])
 
-slots.File_name = Slot(uri=EVORAO.name, name="File_name", curie=EVORAO.curie('name'),
+slots.File_name = Slot(uri=FOAF.name, name="File_name", curie=FOAF.curie('name'),
                    model_uri=EVORAO.File_name, domain=File, range=str)
 
 slots.File_description = Slot(uri=DCT.description, name="File_description", curie=DCT.curie('description'),
@@ -3884,7 +3884,7 @@ slots.File_license = Slot(uri=EVORAO.license, name="File_license", curie=EVORAO.
 slots.Image_altText = Slot(uri=EVORAO.altText, name="Image_altText", curie=EVORAO.curie('altText'),
                    model_uri=EVORAO.Image_altText, domain=Image, range=Optional[str])
 
-slots.ContactPoint_name = Slot(uri=EVORAO.name, name="ContactPoint_name", curie=EVORAO.curie('name'),
+slots.ContactPoint_name = Slot(uri=FOAF.name, name="ContactPoint_name", curie=FOAF.curie('name'),
                    model_uri=EVORAO.ContactPoint_name, domain=ContactPoint, range=str)
 
 slots.ContactPoint_description = Slot(uri=DCT.description, name="ContactPoint_description", curie=DCT.curie('description'),

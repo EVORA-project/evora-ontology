@@ -26,9 +26,9 @@ SELECT ?g ?s ?p WHERE {
      ?p ?o .
   FILTER ( ?p NOT IN (
    EVORAO:oRCIDiD,
-   EVORAO:name,
+   foaf:name,
    dct:description,
-   EVORAO:homePage,
+   foaf:homepage,
    EVORAO:contactPoint,
    EVORAO:logo,
    rdf:type ))

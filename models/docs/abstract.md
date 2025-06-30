@@ -62,6 +62,7 @@ Alias: abstract
 | ---  | ---  |
 | self | EVORAO:abstract |
 | native | EVORAO:abstract |
+| exact | schema:abstract |
 
 
 
@@ -74,6 +75,8 @@ name: abstract
 description: Concise summary of the publication
 title: abstract
 from_schema: https://w3id.org/evorao/
+exact_mappings:
+- schema:abstract
 rank: 1000
 alias: abstract
 domain_of:

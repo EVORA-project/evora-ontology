@@ -22,12 +22,12 @@ Alias: alternateName
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [RI](RI.md) | A research infrastructure |  no  |
 | [VirusName](VirusName.md) | A virus vernacular name or a name that describes a group of viruses |  no  |
-| [Organization](Organization.md) | A social entity established to meet needs or pursue specific goals |  yes  |
 | [Variant](Variant.md) | An organism with one or more new mutations is referred to as a “variant” of t... |  no  |
-| [CommonName](CommonName.md) | Vernacular name that is the name used in everyday language to refer to an org... |  yes  |
 | [Provider](Provider.md) | A provider of products or services, as a specific organization |  no  |
+| [CommonName](CommonName.md) | Vernacular name that is the name used in everyday language to refer to an org... |  yes  |
+| [Organization](Organization.md) | A social entity established to meet needs or pursue specific goals |  yes  |
+| [RI](RI.md) | A research infrastructure |  no  |
 | [AlternateName](AlternateName.md) | List of other names for things |  yes  |
 
 
@@ -48,6 +48,7 @@ Alias: alternateName
 
 ## Comments
 
+* This includes previous names, acronyms, former taxonomic terms, and other variations. This information can serve as keywords for search purposes and as a bridge with other projects that use different naming systems or taxonomies
 * This includes previous names, acronyms, former taxonomic terms, and other variations. This information can serve as keywords for search purposes and as a bridge with other projects that use different naming systems or taxonomies
 
 ## Identifier and Mapping Information
@@ -72,7 +73,7 @@ Alias: alternateName
 | ---  | ---  |
 | self | EVORAO:alternateName |
 | native | EVORAO:alternateName |
-| close | wdp:P4970 |
+| close | wdp:P4970, wdp:P4970, schema:alternateName |
 
 
 
@@ -88,9 +89,14 @@ comments:
 - This includes previous names, acronyms, former taxonomic terms, and other variations.
   This information can serve as keywords for search purposes and as a bridge with
   other projects that use different naming systems or taxonomies
+- This includes previous names, acronyms, former taxonomic terms, and other variations.
+  This information can serve as keywords for search purposes and as a bridge with
+  other projects that use different naming systems or taxonomies
 from_schema: https://w3id.org/evorao/
 close_mappings:
 - wdp:P4970
+- wdp:P4970
+- schema:alternateName
 rank: 1000
 alias: alternateName
 domain_of:

@@ -23,8 +23,8 @@ Alias: rORiD
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
 | [Organization](Organization.md) | A social entity established to meet needs or pursue specific goals |  yes  |
-| [RI](RI.md) | A research infrastructure |  no  |
 | [Provider](Provider.md) | A provider of products or services, as a specific organization |  no  |
+| [RI](RI.md) | A research infrastructure |  no  |
 
 
 

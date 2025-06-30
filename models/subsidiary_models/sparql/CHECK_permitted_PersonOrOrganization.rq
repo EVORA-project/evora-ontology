@@ -25,9 +25,9 @@ SELECT ?g ?s ?p WHERE {
   ?s rdf:type foaf:Agent ;
      ?p ?o .
   FILTER ( ?p NOT IN (
-   EVORAO:name,
+   foaf:name,
    dct:description,
-   EVORAO:homePage,
+   foaf:homepage,
    EVORAO:contactPoint,
    EVORAO:logo,
    rdf:type ))

@@ -62,7 +62,7 @@ Alias: telephone
 | ---  | ---  |
 | self | EVORAO:telephone |
 | native | EVORAO:telephone |
-| close | schema:telephone, vcard:telephone |
+| exact | schema:telephone, vcard:telephone |
 
 
 
@@ -75,7 +75,7 @@ name: telephone
 description: The telephone number
 title: telephone
 from_schema: https://w3id.org/evorao/
-close_mappings:
+exact_mappings:
 - schema:telephone
 - vcard:telephone
 rank: 1000

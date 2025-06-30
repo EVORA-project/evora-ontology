@@ -37,7 +37,7 @@
     "interoperability"
   ],
   "id": "https://w3id.org/evorao/",
-  "version": "1.0.8719",
+  "version": "1.0.8773",
   "imports": [
     "linkml:types"
   ],
@@ -447,6 +447,7 @@
       "description": "A name given to the resource",
       "title": "title",
       "comments": [
+        "The title of the item should be as short and descriptive as possible. E.g. for virus products it should basically be based on the following Pattern:\n'Virus name', 'virus host type', 'collection year', 'country of collection' ex 'suspected epidemiological origin', 'genotype', 'strain', 'variant name or specific feature",
         "The title of the item should be as short and descriptive as possible. E.g. for virus products it should basically be based on the following Pattern:\n'Virus name', 'virus host type', 'collection year', 'country of collection' ex 'suspected epidemiological origin', 'genotype', 'strain', 'variant name or specific feature"
       ],
       "from_schema": "https://w3id.org/evorao/",
@@ -454,6 +455,8 @@
         "http://purl.org/dc/terms/title"
       ],
       "close_mappings": [
+        "http://www.w3.org/2000/01/rdf-schema#label",
+        "http://schema.org/name",
         "http://www.w3.org/2000/01/rdf-schema#label"
       ],
       "slot_uri": "http://purl.org/dc/terms/title",
@@ -477,11 +480,19 @@
       "title": "description",
       "comments": [
         "Describe this item in few lines. This description will serve as a summary to present the resource.\n",
+        "Describe this item in few lines. This description will serve as a summary to present the resource.\n",
         "Describe this item in few lines. This description will serve as a summary to present the resource.\n"
       ],
       "from_schema": "https://w3id.org/evorao/",
       "mappings": [
         "http://purl.org/dc/terms/description"
+      ],
+      "exact_mappings": [
+        "http://schema.org/description",
+        "http://schema.org/description"
+      ],
+      "close_mappings": [
+        "http://schema.org/description"
       ],
       "slot_uri": "http://purl.org/dc/terms/description",
       "owner": "Certification",
@@ -987,6 +998,9 @@
       "description": "Concise summary of the publication",
       "title": "abstract",
       "from_schema": "https://w3id.org/evorao/",
+      "exact_mappings": [
+        "http://schema.org/abstract"
+      ],
       "slot_uri": "https://w3id.org/evorao/abstract",
       "owner": "Publication",
       "domain_of": [
@@ -1088,11 +1102,14 @@
       "description": "Any other name under which the entity can be known",
       "title": "alternate name",
       "comments": [
+        "This includes previous names, acronyms, former taxonomic terms, and other variations. This information can serve as keywords for search purposes and as a bridge with other projects that use different naming systems or taxonomies",
         "This includes previous names, acronyms, former taxonomic terms, and other variations. This information can serve as keywords for search purposes and as a bridge with other projects that use different naming systems or taxonomies"
       ],
       "from_schema": "https://w3id.org/evorao/",
       "close_mappings": [
-        "http://www.wikidata.org/prop/P4970"
+        "http://www.wikidata.org/prop/P4970",
+        "http://www.wikidata.org/prop/P4970",
+        "http://schema.org/alternateName"
       ],
       "slot_uri": "https://w3id.org/evorao/alternateName",
       "owner": "Organization",
@@ -1428,14 +1445,19 @@
       "description": "A word or set of words used to identify and refer to an entity",
       "title": "name",
       "from_schema": "https://w3id.org/evorao/",
+      "mappings": [
+        "http://xmlns.com/foaf/0.1/name"
+      ],
       "exact_mappings": [
+        "http://schema.org/name",
         "http://schema.org/name"
       ],
       "close_mappings": [
+        "http://purl.org/dc/terms/title",
         "http://xmlns.com/foaf/0.1/name",
         "http://purl.org/dc/terms/title"
       ],
-      "slot_uri": "https://w3id.org/evorao/name",
+      "slot_uri": "http://xmlns.com/foaf/0.1/name",
       "owner": "ContactPoint",
       "domain_of": [
         "PersonOrOrganization",
@@ -1452,7 +1474,10 @@
       "description": "A web page that serves as the main or introductory page",
       "title": "home page",
       "from_schema": "https://w3id.org/evorao/",
-      "slot_uri": "https://w3id.org/evorao/homePage",
+      "mappings": [
+        "http://xmlns.com/foaf/0.1/homepage"
+      ],
+      "slot_uri": "http://xmlns.com/foaf/0.1/homepage",
       "owner": "PersonOrOrganization",
       "domain_of": [
         "PersonOrOrganization"
@@ -1917,7 +1942,7 @@
       "description": "Any category apart from its main category in which this product or service can fit",
       "title": "additional category",
       "from_schema": "https://w3id.org/evorao/",
-      "exact_mappings": [
+      "close_mappings": [
         "http://www.w3.org/ns/dcat#theme"
       ],
       "slot_uri": "https://w3id.org/evorao/additionalCategory",
@@ -3488,7 +3513,7 @@
       "description": "Email address",
       "title": "email",
       "from_schema": "https://w3id.org/evorao/",
-      "close_mappings": [
+      "exact_mappings": [
         "http://schema.org/email",
         "http://www.w3.org/2006/vcard/ns#email"
       ],
@@ -3507,7 +3532,7 @@
       "description": "The telephone number",
       "title": "telephone",
       "from_schema": "https://w3id.org/evorao/",
-      "close_mappings": [
+      "exact_mappings": [
         "http://schema.org/telephone",
         "http://www.w3.org/2006/vcard/ns#telephone"
       ],
@@ -3682,7 +3707,8 @@
         "http://purl.org/dc/terms/title"
       ],
       "close_mappings": [
-        "http://www.w3.org/2000/01/rdf-schema#label"
+        "http://www.w3.org/2000/01/rdf-schema#label",
+        "http://schema.org/name"
       ],
       "is_a": "title",
       "domain": "Dataset",
@@ -3709,6 +3735,12 @@
       "from_schema": "https://w3id.org/evorao/",
       "mappings": [
         "http://purl.org/dc/terms/description"
+      ],
+      "exact_mappings": [
+        "http://schema.org/description"
+      ],
+      "close_mappings": [
+        "http://schema.org/description"
       ],
       "is_a": "description",
       "domain": "Dataset",
@@ -3738,7 +3770,8 @@
         "http://purl.org/dc/terms/title"
       ],
       "close_mappings": [
-        "http://www.w3.org/2000/01/rdf-schema#label"
+        "http://www.w3.org/2000/01/rdf-schema#label",
+        "http://schema.org/name"
       ],
       "is_a": "title",
       "domain": "DataService",
@@ -3765,6 +3798,12 @@
       "from_schema": "https://w3id.org/evorao/",
       "mappings": [
         "http://purl.org/dc/terms/description"
+      ],
+      "exact_mappings": [
+        "http://schema.org/description"
+      ],
+      "close_mappings": [
+        "http://schema.org/description"
       ],
       "is_a": "description",
       "domain": "DataService",
@@ -4414,7 +4453,8 @@
         "http://purl.org/dc/terms/title"
       ],
       "close_mappings": [
-        "http://www.w3.org/2000/01/rdf-schema#label"
+        "http://www.w3.org/2000/01/rdf-schema#label",
+        "http://schema.org/name"
       ],
       "is_a": "title",
       "domain": "Publication",
@@ -4456,6 +4496,9 @@
       "description": "Concise summary of the publication",
       "title": "abstract",
       "from_schema": "https://w3id.org/evorao/",
+      "exact_mappings": [
+        "http://schema.org/abstract"
+      ],
       "is_a": "abstract",
       "domain": "Publication",
       "slot_uri": "https://w3id.org/evorao/abstract",
@@ -4570,7 +4613,8 @@
         "http://purl.org/dc/terms/title"
       ],
       "close_mappings": [
-        "http://www.w3.org/2000/01/rdf-schema#label"
+        "http://www.w3.org/2000/01/rdf-schema#label",
+        "http://schema.org/name"
       ],
       "is_a": "title",
       "domain": "Term",
@@ -4597,6 +4641,12 @@
       "from_schema": "https://w3id.org/evorao/",
       "mappings": [
         "http://purl.org/dc/terms/description"
+      ],
+      "exact_mappings": [
+        "http://schema.org/description"
+      ],
+      "close_mappings": [
+        "http://schema.org/description"
       ],
       "is_a": "description",
       "domain": "Term",
@@ -4723,7 +4773,8 @@
       ],
       "from_schema": "https://w3id.org/evorao/",
       "close_mappings": [
-        "http://www.wikidata.org/prop/P4970"
+        "http://www.wikidata.org/prop/P4970",
+        "http://schema.org/alternateName"
       ],
       "is_a": "alternateName",
       "domain": "AlternateName",
@@ -5190,16 +5241,18 @@
       "description": "A word or set of words used to identify and refer to an entity",
       "title": "name",
       "from_schema": "https://w3id.org/evorao/",
+      "mappings": [
+        "http://xmlns.com/foaf/0.1/name"
+      ],
       "exact_mappings": [
         "http://schema.org/name"
       ],
       "close_mappings": [
-        "http://xmlns.com/foaf/0.1/name",
         "http://purl.org/dc/terms/title"
       ],
       "is_a": "name",
       "domain": "PersonOrOrganization",
-      "slot_uri": "https://w3id.org/evorao/name",
+      "slot_uri": "http://xmlns.com/foaf/0.1/name",
       "alias": "name",
       "owner": "PersonOrOrganization",
       "domain_of": [
@@ -5223,6 +5276,12 @@
       "mappings": [
         "http://purl.org/dc/terms/description"
       ],
+      "exact_mappings": [
+        "http://schema.org/description"
+      ],
+      "close_mappings": [
+        "http://schema.org/description"
+      ],
       "is_a": "description",
       "domain": "PersonOrOrganization",
       "slot_uri": "http://purl.org/dc/terms/description",
@@ -5243,9 +5302,12 @@
       "description": "A web page that serves as the main or introductory page",
       "title": "home page",
       "from_schema": "https://w3id.org/evorao/",
+      "mappings": [
+        "http://xmlns.com/foaf/0.1/homepage"
+      ],
       "is_a": "homePage",
       "domain": "PersonOrOrganization",
-      "slot_uri": "https://w3id.org/evorao/homePage",
+      "slot_uri": "http://xmlns.com/foaf/0.1/homepage",
       "alias": "homePage",
       "owner": "PersonOrOrganization",
       "domain_of": [
@@ -5333,7 +5395,8 @@
       ],
       "from_schema": "https://w3id.org/evorao/",
       "close_mappings": [
-        "http://www.wikidata.org/prop/P4970"
+        "http://www.wikidata.org/prop/P4970",
+        "http://schema.org/alternateName"
       ],
       "is_a": "alternateName",
       "domain": "Organization",
@@ -5862,7 +5925,7 @@
       "description": "Any category apart from its main category in which this product or service can fit",
       "title": "additional category",
       "from_schema": "https://w3id.org/evorao/",
-      "exact_mappings": [
+      "close_mappings": [
         "http://www.w3.org/ns/dcat#theme"
       ],
       "is_a": "additionalCategory",
@@ -8091,6 +8154,9 @@
       "description": "A word or set of words used to identify and refer to an entity",
       "title": "name",
       "from_schema": "https://w3id.org/evorao/",
+      "mappings": [
+        "http://xmlns.com/foaf/0.1/name"
+      ],
       "exact_mappings": [
         "http://schema.org/name"
       ],
@@ -8100,7 +8166,7 @@
       ],
       "is_a": "name",
       "domain": "File",
-      "slot_uri": "https://w3id.org/evorao/name",
+      "slot_uri": "http://xmlns.com/foaf/0.1/name",
       "alias": "name",
       "owner": "File",
       "domain_of": [
@@ -8123,6 +8189,12 @@
       "from_schema": "https://w3id.org/evorao/",
       "mappings": [
         "http://purl.org/dc/terms/description"
+      ],
+      "exact_mappings": [
+        "http://schema.org/description"
+      ],
+      "close_mappings": [
+        "http://schema.org/description"
       ],
       "is_a": "description",
       "domain": "File",
@@ -8227,6 +8299,9 @@
       "description": "A word or set of words used to identify and refer to an entity",
       "title": "name",
       "from_schema": "https://w3id.org/evorao/",
+      "mappings": [
+        "http://xmlns.com/foaf/0.1/name"
+      ],
       "exact_mappings": [
         "http://schema.org/name"
       ],
@@ -8236,7 +8311,7 @@
       ],
       "is_a": "name",
       "domain": "ContactPoint",
-      "slot_uri": "https://w3id.org/evorao/name",
+      "slot_uri": "http://xmlns.com/foaf/0.1/name",
       "alias": "name",
       "owner": "ContactPoint",
       "domain_of": [
@@ -8260,6 +8335,12 @@
       "mappings": [
         "http://purl.org/dc/terms/description"
       ],
+      "exact_mappings": [
+        "http://schema.org/description"
+      ],
+      "close_mappings": [
+        "http://schema.org/description"
+      ],
       "is_a": "description",
       "domain": "ContactPoint",
       "slot_uri": "http://purl.org/dc/terms/description",
@@ -8280,7 +8361,7 @@
       "description": "Email address",
       "title": "email",
       "from_schema": "https://w3id.org/evorao/",
-      "close_mappings": [
+      "exact_mappings": [
         "http://schema.org/email",
         "http://www.w3.org/2006/vcard/ns#email"
       ],
@@ -8304,7 +8385,7 @@
       "description": "The telephone number",
       "title": "telephone",
       "from_schema": "https://w3id.org/evorao/",
-      "close_mappings": [
+      "exact_mappings": [
         "http://schema.org/telephone",
         "http://www.w3.org/2006/vcard/ns#telephone"
       ],
@@ -8502,6 +8583,13 @@
       "mappings": [
         "http://purl.org/dc/terms/description"
       ],
+      "exact_mappings": [
+        "http://schema.org/description",
+        "http://schema.org/description"
+      ],
+      "close_mappings": [
+        "http://schema.org/description"
+      ],
       "is_a": "description",
       "domain": "License",
       "slot_uri": "http://purl.org/dc/terms/description",
@@ -8627,6 +8715,13 @@
       "mappings": [
         "http://purl.org/dc/terms/description"
       ],
+      "exact_mappings": [
+        "http://schema.org/description",
+        "http://schema.org/description"
+      ],
+      "close_mappings": [
+        "http://schema.org/description"
+      ],
       "is_a": "description",
       "domain": "Certification",
       "slot_uri": "http://purl.org/dc/terms/description",
@@ -8732,11 +8827,13 @@
       "mappings": [
         "dcat:Dataset"
       ],
+      "exact_mappings": [
+        "schema:Dataset",
+        "schema:Dataset"
+      ],
       "close_mappings": [
         "wd:Q1172284",
-        "schema:DataCatalog",
-        "wd:Q1172284",
-        "schema:DataCatalog"
+        "wd:Q1172284"
       ],
       "is_a": "Resource",
       "abstract": true,
@@ -8802,11 +8899,13 @@
       "mappings": [
         "dcat:Catalog"
       ],
+      "exact_mappings": [
+        "schema:DataCatalog",
+        "schema:DataCatalog"
+      ],
       "close_mappings": [
         "wd:Q2352616",
-        "schema:Dataset",
-        "wd:Q2352616",
-        "schema:Dataset"
+        "wd:Q2352616"
       ],
       "is_a": "Dataset",
       "abstract": true,
@@ -10940,11 +11039,15 @@
       "description": "Entity serving as focal point of information",
       "title": "Contact Point",
       "from_schema": "https://w3id.org/evorao/",
+      "exact_mappings": [
+        "schema:ContactPoint",
+        "vcard:Contact",
+        "schema:ContactPoint",
+        "vcard:Contact"
+      ],
       "close_mappings": [
         "wd:Q30322502",
-        "vcard:Contact",
-        "wd:Q30322502",
-        "vcard:Contact"
+        "wd:Q30322502"
       ],
       "is_a": "Resource",
       "slots": [
@@ -11018,9 +11121,9 @@
   ],
   "metamodel_version": "1.7.0",
   "source_file": "evora_schema.yaml",
-  "source_file_date": "2025-05-19T13:32:30",
-  "source_file_size": 185479,
-  "generation_date": "2025-05-19T13:32:46",
+  "source_file_date": "2025-06-30T15:25:26",
+  "source_file_size": 187312,
+  "generation_date": "2025-06-30T15:25:40",
   "@type": "SchemaDefinition",
   "@context": [
     "https://w3id.org/linkml/types.context.jsonld",

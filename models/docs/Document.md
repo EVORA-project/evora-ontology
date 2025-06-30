@@ -171,6 +171,7 @@ attributes:
     - foaf:name
     - dct:title
     rank: 1000
+    slot_uri: foaf:name
     alias: name
     owner: Document
     domain_of:
@@ -191,6 +192,10 @@ attributes:
 
       '
     from_schema: https://w3id.org/evorao/
+    exact_mappings:
+    - schema:description
+    close_mappings:
+    - schema:description
     rank: 1000
     slot_uri: dct:description
     alias: description

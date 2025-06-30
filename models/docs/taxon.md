@@ -22,8 +22,8 @@ Alias: taxon
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [PathogenIdentification](PathogenIdentification.md) | A collection of distinguishing information that enables the differentiation o... |  yes  |
 | [Taxonomy](Taxonomy.md) | Science of naming, defining and classifying organisms |  yes  |
+| [PathogenIdentification](PathogenIdentification.md) | A collection of distinguishing information that enables the differentiation o... |  yes  |
 
 
 

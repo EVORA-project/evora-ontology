@@ -28,9 +28,9 @@ SELECT ?g ?s ?p WHERE {
    EVORAO:alternateName,
    EVORAO:country,
    EVORAO:rORiD,
-   EVORAO:name,
+   foaf:name,
    dct:description,
-   EVORAO:homePage,
+   foaf:homepage,
    EVORAO:contactPoint,
    EVORAO:logo,
    rdf:type ))

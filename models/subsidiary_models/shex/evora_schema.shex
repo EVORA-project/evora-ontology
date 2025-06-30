@@ -1,5 +1,5 @@
 # metamodel_version: 1.7.0
-# version: 1.0.8719
+# version: 1.0.8773
 BASE <https://w3id.org/evorao/>
 PREFIX dcat: <http://www.w3.org/ns/dcat#>
 PREFIX foaf: <http://xmlns.com/foaf/0.1/>
@@ -172,7 +172,7 @@ linkml:Sparqlpath xsd:string
 <ContactPoint> CLOSED {
     (  $<ContactPoint_tes> (  &<Resource_tes> ;
           rdf:type [ dcat:Resource ] ? ;
-          <name> @linkml:String ;
+          foaf:name @linkml:String ;
           dct:description @linkml:String ? ;
           <email> @linkml:String ? ;
           <telephone> @linkml:String ? ;
@@ -302,7 +302,7 @@ linkml:Sparqlpath xsd:string
 <File_struct> {
     (  $<File_tes> (  &<Resource_tes> ;
           rdf:type [ dcat:Resource ] ? ;
-          <name> @linkml:String ;
+          foaf:name @linkml:String ;
           dct:description @linkml:String ? ;
           <contentURL> @linkml:Uri ;
           <format> @linkml:String ;
@@ -549,9 +549,9 @@ linkml:Sparqlpath xsd:string
     CLOSED {
        (  $<PersonOrOrganization_tes> (  &<Resource_tes> ;
              rdf:type [ dcat:Resource ] ? ;
-             <name> @linkml:String ;
+             foaf:name @linkml:String ;
              dct:description @linkml:String ? ;
-             <homePage> @linkml:Uri ? ;
+             foaf:homepage @linkml:Uri ? ;
              <contactPoint> @<ContactPoint> ? ;
              <logo> @<Image> ?
           ) ;
