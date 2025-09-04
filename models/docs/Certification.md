@@ -43,7 +43,7 @@ URI: [EVORAO:Certification](https://w3id.org/evorao/Certification)
     click Image href "../Image"
 
         
-      Certification : resourceURL
+      Certification : resourceUrl
         
       Certification : title
         
@@ -68,7 +68,7 @@ URI: [EVORAO:Certification](https://w3id.org/evorao/Certification)
 | [description](description.md) | 0..1 _recommended_ <br/> [String](String.md) | A short explanation of the characteristics, features, or nature of the curren... | direct |
 | [logo](logo.md) | 0..1 <br/> [Image](Image.md) | A path or URL to the related logo | direct |
 | [certificationDocument](certificationDocument.md) | * <br/> [Document](Document.md) | The document(s) issued by an authority certifying the conformity of the subje... | direct |
-| [resourceURL](resourceURL.md) | 0..1 <br/> [Uri](Uri.md) | The web address or location where the details or content is stored and can be... | direct |
+| [resourceUrl](resourceUrl.md) | 0..1 <br/> [Uri](Uri.md) | The web address or location where the details or content is stored and can be... | direct |
 
 
 
@@ -154,7 +154,7 @@ slots:
 - description
 - logo
 - certificationDocument
-- resourceURL
+- resourceUrl
 slot_usage:
   title:
     name: title
@@ -228,8 +228,8 @@ slot_usage:
     range: Document
     required: false
     multivalued: true
-  resourceURL:
-    name: resourceURL
+  resourceUrl:
+    name: resourceUrl
     description: The web address or location where the details or content is stored
       and can be accessed or downloaded.
     title: resource URL
@@ -333,8 +333,8 @@ slot_usage:
     range: Document
     required: false
     multivalued: true
-  resourceURL:
-    name: resourceURL
+  resourceUrl:
+    name: resourceUrl
     description: The web address or location where the details or content is stored
       and can be accessed or downloaded.
     title: resource URL
@@ -438,8 +438,8 @@ attributes:
     range: Document
     required: false
     multivalued: true
-  resourceURL:
-    name: resourceURL
+  resourceUrl:
+    name: resourceUrl
     description: The web address or location where the details or content is stored
       and can be accessed or downloaded.
     title: resource URL
@@ -449,7 +449,7 @@ attributes:
     close_mappings:
     - schema:url
     rank: 1000
-    alias: resourceURL
+    alias: resourceUrl
     owner: Certification
     domain_of:
     - Certification

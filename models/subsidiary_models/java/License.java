@@ -5,7 +5,7 @@ import lombok.*;
 
 
 
-/* version: 1.0.8773 */
+/* version: 1.0.8940 */
 
 
 /**
@@ -17,7 +17,7 @@ public class License extends Resource {
 
   private String title;
   private String description;
-  private String resourceURL;
+  private String resourceUrl;
   private String licensingOrAttribution;
   private Image logo;
 

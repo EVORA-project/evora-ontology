@@ -62,7 +62,8 @@ Alias: parentTaxon
 | ---  | ---  |
 | self | EVORAO:parentTaxon |
 | native | EVORAO:parentTaxon |
-| close | dwc:Taxon |
+| exact | schema:parentTaxon |
+| broad | dwc:Taxon |
 
 
 
@@ -75,7 +76,9 @@ name: parentTaxon
 description: The parent taxon of the current taxon
 title: parent taxon
 from_schema: https://w3id.org/evorao/
-close_mappings:
+exact_mappings:
+- schema:parentTaxon
+broad_mappings:
 - dwc:Taxon
 rank: 1000
 alias: parentTaxon

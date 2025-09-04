@@ -5,7 +5,7 @@ import lombok.*;
 
 
 
-/* version: 1.0.8773 */
+/* version: 1.0.8940 */
 
 
 /**
@@ -17,5 +17,6 @@ public abstract class Dataset extends Resource {
 
   private String title;
   private String description;
+  private String version;
 
 }

@@ -27,18 +27,18 @@ SELECT ?g ?s ?p WHERE {
   FILTER ( ?p NOT IN (
    EVORAO:modelSpecies,
    EVORAO:modelType,
-   EVORAO:accessPointURL,
-   EVORAO:refSKU,
+   EVORAO:accessPointUrl,
+   EVORAO:refSku,
    EVORAO:unitDefinition,
    EVORAO:category,
    EVORAO:additionalCategory,
    EVORAO:unitCost,
    EVORAO:qualityGrading,
    EVORAO:pathogenIdentification,
-   EVORAO:relatedDOI,
+   EVORAO:doi,
    EVORAO:riskGroup,
    EVORAO:biosafetyRestrictions,
-   EVORAO:canItBeUsedToProduceGMO,
+   EVORAO:canBeUsedToProduceGmo,
    EVORAO:provider,
    EVORAO:collection,
    EVORAO:keywords,
@@ -53,6 +53,7 @@ SELECT ?g ?s ?p WHERE {
    EVORAO:contactPoint,
    dct:title,
    dct:description,
+   EVORAO:version,
    rdf:type ))
  }
  

@@ -22,7 +22,7 @@ Alias: taxon
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [Taxonomy](Taxonomy.md) | Science of naming, defining and classifying organisms |  yes  |
+| [Taxonomy](Taxonomy.md) | A structured representation of data about the classification and naming of bi... |  yes  |
 | [PathogenIdentification](PathogenIdentification.md) | A collection of distinguishing information that enables the differentiation o... |  yes  |
 
 

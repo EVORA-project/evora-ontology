@@ -25,7 +25,7 @@ SELECT ?g ?s ?p WHERE {
   ?s rdf:type foaf:Person ;
      ?p ?o .
   FILTER ( ?p NOT IN (
-   EVORAO:oRCIDiD,
+   EVORAO:orcidId,
    foaf:name,
    dct:description,
    foaf:homepage,

@@ -36,6 +36,8 @@ URI: [dcat:Dataset](http://www.w3.org/ns/dcat#Dataset)
         
       Dataset : title
         
+      Dataset : version
+        
       
 ```
 
@@ -57,6 +59,7 @@ URI: [dcat:Dataset](http://www.w3.org/ns/dcat#Dataset)
 | ---  | --- | --- | --- |
 | [title](title.md) | 1 <br/> [String](String.md) | A name given to the resource | direct |
 | [description](description.md) | 1 _recommended_ <br/> [String](String.md) | A short explanation of the characteristics, features, or nature of the curren... | direct |
+| [version](version.md) | 0..1 _recommended_ <br/> [String](String.md) | The version indicator (name or identifier) of a resource | direct |
 
 
 
@@ -129,6 +132,7 @@ abstract: true
 slots:
 - title
 - description
+- version
 slot_usage:
   title:
     name: title
@@ -179,6 +183,21 @@ slot_usage:
     - Certification
     range: string
     required: true
+    multivalued: false
+  version:
+    name: version
+    description: The version indicator (name or identifier) of a resource
+    title: version
+    close_mappings:
+    - wdp:P393
+    - schema:version
+    domain_of:
+    - Dataset
+    - Version
+    - Taxonomy
+    range: string
+    required: false
+    recommended: true
     multivalued: false
 class_uri: dcat:Dataset
 
@@ -253,6 +272,21 @@ slot_usage:
     range: string
     required: true
     multivalued: false
+  version:
+    name: version
+    description: The version indicator (name or identifier) of a resource
+    title: version
+    close_mappings:
+    - wdp:P393
+    - schema:version
+    domain_of:
+    - Dataset
+    - Version
+    - Taxonomy
+    range: string
+    required: false
+    recommended: true
+    multivalued: false
 attributes:
   title:
     name: title
@@ -313,6 +347,25 @@ attributes:
     - Certification
     range: string
     required: true
+    recommended: true
+    multivalued: false
+  version:
+    name: version
+    description: The version indicator (name or identifier) of a resource
+    title: version
+    from_schema: https://w3id.org/evorao/
+    close_mappings:
+    - wdp:P393
+    - schema:version
+    rank: 1000
+    alias: version
+    owner: Dataset
+    domain_of:
+    - Dataset
+    - Version
+    - Taxonomy
+    range: string
+    required: false
     recommended: true
     multivalued: false
 class_uri: dcat:Dataset

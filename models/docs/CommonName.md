@@ -1,6 +1,6 @@
 
 
-# Class: Common Name (CommonName) 
+# Class: Common name (CommonName) 
 
 
 _Vernacular name that is the name used in everyday language to refer to an organism or group of organisms. This name is typically easier to remember and pronounce compared to the scientific name_
@@ -141,7 +141,7 @@ name: CommonName
 description: Vernacular name that is the name used in everyday language to refer to
   an organism or group of organisms. This name is typically easier to remember and
   pronounce compared to the scientific name
-title: Common Name
+title: Common name
 from_schema: https://w3id.org/evorao/
 exact_mappings:
 - dwc:vernacularName
@@ -196,7 +196,7 @@ name: CommonName
 description: Vernacular name that is the name used in everyday language to refer to
   an organism or group of organisms. This name is typically easier to remember and
   pronounce compared to the scientific name
-title: Common Name
+title: Common name
 from_schema: https://w3id.org/evorao/
 exact_mappings:
 - dwc:vernacularName

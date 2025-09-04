@@ -5,7 +5,7 @@ import lombok.*;
 
 
 
-/* version: 1.0.8773 */
+/* version: 1.0.8940 */
 
 
 /**
@@ -24,6 +24,6 @@ public class ContactPoint extends Resource {
   private String addressRegion;
   private String postalCode;
   private Country addressCountry;
-  private String oRCIDiD;
+  private String orcidId;
 
 }

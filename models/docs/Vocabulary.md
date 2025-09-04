@@ -45,6 +45,8 @@ URI: [EVORAO:Vocabulary](https://w3id.org/evorao/Vocabulary)
         
       Vocabulary : title
         
+      Vocabulary : version
+        
       
 ```
 
@@ -68,6 +70,7 @@ URI: [EVORAO:Vocabulary](https://w3id.org/evorao/Vocabulary)
 | [term](term.md) | * _recommended_ <br/> [Term](Term.md) | The terms related to this vocabulary | direct |
 | [title](title.md) | 1 <br/> [String](String.md) | A name given to the resource | [Dataset](Dataset.md) |
 | [description](description.md) | 1 _recommended_ <br/> [String](String.md) | A short explanation of the characteristics, features, or nature of the curren... | [Dataset](Dataset.md) |
+| [version](version.md) | 0..1 _recommended_ <br/> [String](String.md) | The version indicator (name or identifier) of a resource | [Dataset](Dataset.md) |
 
 
 
@@ -82,9 +85,9 @@ URI: [EVORAO:Vocabulary](https://w3id.org/evorao/Vocabulary)
 | [VirusName](VirusName.md) | [inVocabulary](inVocabulary.md) | range | [Vocabulary](Vocabulary.md) |
 | [AlternateName](AlternateName.md) | [inVocabulary](inVocabulary.md) | range | [Vocabulary](Vocabulary.md) |
 | [RiskGroup](RiskGroup.md) | [inVocabulary](inVocabulary.md) | range | [Vocabulary](Vocabulary.md) |
-| [DOI](DOI.md) | [inVocabulary](inVocabulary.md) | range | [Vocabulary](Vocabulary.md) |
+| [Doi](Doi.md) | [inVocabulary](inVocabulary.md) | range | [Vocabulary](Vocabulary.md) |
 | [Journal](Journal.md) | [inVocabulary](inVocabulary.md) | range | [Vocabulary](Vocabulary.md) |
-| [PDBReference](PDBReference.md) | [inVocabulary](inVocabulary.md) | range | [Vocabulary](Vocabulary.md) |
+| [PdbReference](PdbReference.md) | [inVocabulary](inVocabulary.md) | range | [Vocabulary](Vocabulary.md) |
 | [Keyword](Keyword.md) | [inVocabulary](inVocabulary.md) | range | [Vocabulary](Vocabulary.md) |
 | [ProteinTag](ProteinTag.md) | [inVocabulary](inVocabulary.md) | range | [Vocabulary](Vocabulary.md) |
 | [SpecialFeature](SpecialFeature.md) | [inVocabulary](inVocabulary.md) | range | [Vocabulary](Vocabulary.md) |
@@ -96,9 +99,9 @@ URI: [EVORAO:Vocabulary](https://w3id.org/evorao/Vocabulary)
 | [ProductCategory](ProductCategory.md) | [inVocabulary](inVocabulary.md) | range | [Vocabulary](Vocabulary.md) |
 | [IsolationHost](IsolationHost.md) | [inVocabulary](inVocabulary.md) | range | [Vocabulary](Vocabulary.md) |
 | [GeographicalOrigin](GeographicalOrigin.md) | [inVocabulary](inVocabulary.md) | range | [Vocabulary](Vocabulary.md) |
-| [IPLCOrigin](IPLCOrigin.md) | [inVocabulary](inVocabulary.md) | range | [Vocabulary](Vocabulary.md) |
+| [IplcOrigin](IplcOrigin.md) | [inVocabulary](inVocabulary.md) | range | [Vocabulary](Vocabulary.md) |
 | [Country](Country.md) | [inVocabulary](inVocabulary.md) | range | [Vocabulary](Vocabulary.md) |
-| [IATAClassification](IATAClassification.md) | [inVocabulary](inVocabulary.md) | range | [Vocabulary](Vocabulary.md) |
+| [IataClassification](IataClassification.md) | [inVocabulary](inVocabulary.md) | range | [Vocabulary](Vocabulary.md) |
 | [Variant](Variant.md) | [inVocabulary](inVocabulary.md) | range | [Vocabulary](Vocabulary.md) |
 | [TaxonomicRank](TaxonomicRank.md) | [inVocabulary](inVocabulary.md) | range | [Vocabulary](Vocabulary.md) |
 | [Taxon](Taxon.md) | [inVocabulary](inVocabulary.md) | range | [Vocabulary](Vocabulary.md) |
@@ -307,6 +310,25 @@ attributes:
     - Certification
     range: string
     required: true
+    recommended: true
+    multivalued: false
+  version:
+    name: version
+    description: The version indicator (name or identifier) of a resource
+    title: version
+    from_schema: https://w3id.org/evorao/
+    close_mappings:
+    - wdp:P393
+    - schema:version
+    rank: 1000
+    alias: version
+    owner: Vocabulary
+    domain_of:
+    - Dataset
+    - Version
+    - Taxonomy
+    range: string
+    required: false
     recommended: true
     multivalued: false
 

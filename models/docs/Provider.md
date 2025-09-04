@@ -63,18 +63,18 @@ URI: [EVORAO:Provider](https://w3id.org/evorao/Provider)
     click Image href "../Image"
 
         
-      Provider : memberOfRI
+      Provider : memberOfRi
         
           
     
     
-    Provider --> "*" RI : memberOfRI
-    click RI href "../RI"
+    Provider --> "*" ReasearchInfrastructure : memberOfRi
+    click ReasearchInfrastructure href "../ReasearchInfrastructure"
 
         
       Provider : name
         
-      Provider : rORiD
+      Provider : rorId
         
       
 ```
@@ -95,10 +95,10 @@ URI: [EVORAO:Provider](https://w3id.org/evorao/Provider)
 
 | Name | Cardinality and Range | Description | Inheritance |
 | ---  | --- | --- | --- |
-| [memberOfRI](memberOfRI.md) | * <br/> [RI](RI.md) | The research infrastructure of which this organization is a member | direct |
+| [memberOfRi](memberOfRi.md) | * <br/> [ReasearchInfrastructure](ReasearchInfrastructure.md) | The research infrastructure of which this organization is a member | direct |
 | [alternateName](alternateName.md) | * <br/> [AlternateName](AlternateName.md) | Any other name under which the entity can be known | [Organization](Organization.md) |
 | [country](country.md) | 0..1 _recommended_ <br/> [Country](Country.md) | The country of the organization | [Organization](Organization.md) |
-| [rORiD](rORiD.md) | 0..1 _recommended_ <br/> [String](String.md) | The corresponding organization's persistent identifier from the Research Orga... | [Organization](Organization.md) |
+| [rorId](rorId.md) | 0..1 _recommended_ <br/> [String](String.md) | The corresponding organization's persistent identifier from the Research Orga... | [Organization](Organization.md) |
 | [name](name.md) | 1 <br/> [String](String.md) | A word or set of words used to identify and refer to an entity | [PersonOrOrganization](PersonOrOrganization.md) |
 | [description](description.md) | 0..1 _recommended_ <br/> [String](String.md) | A short explanation of the characteristics, features, or nature of the curren... | [PersonOrOrganization](PersonOrOrganization.md) |
 | [homePage](homePage.md) | 0..1 <br/> [Uri](Uri.md) | A web page that serves as the main or introductory page | [PersonOrOrganization](PersonOrOrganization.md) |
@@ -182,15 +182,15 @@ close_mappings:
 - dct:ProvenanceStatement
 is_a: Organization
 slots:
-- memberOfRI
+- memberOfRi
 slot_usage:
-  memberOfRI:
-    name: memberOfRI
+  memberOfRi:
+    name: memberOfRi
     description: The research infrastructure of which this organization is a member
     title: member of RI
     domain_of:
     - Provider
-    range: RI
+    range: ReasearchInfrastructure
     required: false
     multivalued: true
 
@@ -210,27 +210,27 @@ close_mappings:
 - dct:ProvenanceStatement
 is_a: Organization
 slot_usage:
-  memberOfRI:
-    name: memberOfRI
+  memberOfRi:
+    name: memberOfRi
     description: The research infrastructure of which this organization is a member
     title: member of RI
     domain_of:
     - Provider
-    range: RI
+    range: ReasearchInfrastructure
     required: false
     multivalued: true
 attributes:
-  memberOfRI:
-    name: memberOfRI
+  memberOfRi:
+    name: memberOfRi
     description: The research infrastructure of which this organization is a member
     title: member of RI
     from_schema: https://w3id.org/evorao/
     rank: 1000
-    alias: memberOfRI
+    alias: memberOfRi
     owner: Provider
     domain_of:
     - Provider
-    range: RI
+    range: ReasearchInfrastructure
     required: false
     multivalued: true
   alternateName:
@@ -269,8 +269,8 @@ attributes:
     required: false
     recommended: true
     multivalued: false
-  rORiD:
-    name: rORiD
+  rorId:
+    name: rorId
     description: The corresponding organization's persistent identifier from the Research
       Organization Registry (ROR)
     title: ROR iD
@@ -278,7 +278,7 @@ attributes:
     exact_mappings:
     - wdp:P6782
     rank: 1000
-    alias: rORiD
+    alias: rorId
     owner: Provider
     domain_of:
     - Organization

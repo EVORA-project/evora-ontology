@@ -42,7 +42,7 @@ URI: [EVORAO:ContactPoint](https://w3id.org/evorao/ContactPoint)
         
       ContactPoint : name
         
-      ContactPoint : oRCIDiD
+      ContactPoint : orcidId
         
       ContactPoint : postalCode
         
@@ -76,7 +76,7 @@ URI: [EVORAO:ContactPoint](https://w3id.org/evorao/ContactPoint)
 | [addressRegion](addressRegion.md) | 0..1 <br/> [String](String.md) | The region in which the locality is, and which is in the country | direct |
 | [postalCode](postalCode.md) | 0..1 <br/> [String](String.md) | The postal code | direct |
 | [addressCountry](addressCountry.md) | 0..1 <br/> [Country](Country.md) | The country as of  ISO 3166 | direct |
-| [oRCIDiD](oRCIDiD.md) | 0..1 _recommended_ <br/> [String](String.md) | Unique persistent identifier for a person, provided by the Open Researcher an... | direct |
+| [orcidId](orcidId.md) | 0..1 _recommended_ <br/> [String](String.md) | Unique persistent identifier for a person, provided by the Open Researcher an... | direct |
 
 
 
@@ -89,7 +89,7 @@ URI: [EVORAO:ContactPoint](https://w3id.org/evorao/ContactPoint)
 | [PersonOrOrganization](PersonOrOrganization.md) | [contactPoint](contactPoint.md) | range | [ContactPoint](ContactPoint.md) |
 | [Person](Person.md) | [contactPoint](contactPoint.md) | range | [ContactPoint](ContactPoint.md) |
 | [Organization](Organization.md) | [contactPoint](contactPoint.md) | range | [ContactPoint](ContactPoint.md) |
-| [RI](RI.md) | [contactPoint](contactPoint.md) | range | [ContactPoint](ContactPoint.md) |
+| [ReasearchInfrastructure](ReasearchInfrastructure.md) | [contactPoint](contactPoint.md) | range | [ContactPoint](ContactPoint.md) |
 | [Provider](Provider.md) | [contactPoint](contactPoint.md) | range | [ContactPoint](ContactPoint.md) |
 | [Originator](Originator.md) | [contactPoint](contactPoint.md) | range | [ContactPoint](ContactPoint.md) |
 | [ProductOrService](ProductOrService.md) | [contactPoint](contactPoint.md) | range | [ContactPoint](ContactPoint.md) |
@@ -108,7 +108,7 @@ URI: [EVORAO:ContactPoint](https://w3id.org/evorao/ContactPoint)
 | [Protozoan](Protozoan.md) | [contactPoint](contactPoint.md) | range | [ContactPoint](ContactPoint.md) |
 | [Viroid](Viroid.md) | [contactPoint](contactPoint.md) | range | [ContactPoint](ContactPoint.md) |
 | [Prion](Prion.md) | [contactPoint](contactPoint.md) | range | [ContactPoint](ContactPoint.md) |
-| [MSDS](MSDS.md) | [msdsContact](msdsContact.md) | range | [ContactPoint](ContactPoint.md) |
+| [MSDS](MSDS.md) | [materialSafetyContact](materialSafetyContact.md) | range | [ContactPoint](ContactPoint.md) |
 
 
 
@@ -177,7 +177,7 @@ slots:
 - addressRegion
 - postalCode
 - addressCountry
-- oRCIDiD
+- orcidId
 slot_usage:
   name:
     name: name
@@ -309,11 +309,11 @@ slot_usage:
     range: Country
     required: false
     multivalued: false
-  oRCIDiD:
-    name: oRCIDiD
+  orcidId:
+    name: orcidId
     description: Unique persistent identifier for a person, provided by the Open Researcher
       and Contributor ID (ORCID) organisation
-    title: ORCID iD
+    title: ORCID id
     exact_mappings:
     - IAO:0000708
     domain_of:
@@ -475,11 +475,11 @@ slot_usage:
     range: Country
     required: false
     multivalued: false
-  oRCIDiD:
-    name: oRCIDiD
+  orcidId:
+    name: orcidId
     description: Unique persistent identifier for a person, provided by the Open Researcher
       and Contributor ID (ORCID) organisation
-    title: ORCID iD
+    title: ORCID id
     exact_mappings:
     - IAO:0000708
     domain_of:
@@ -659,16 +659,16 @@ attributes:
     range: Country
     required: false
     multivalued: false
-  oRCIDiD:
-    name: oRCIDiD
+  orcidId:
+    name: orcidId
     description: Unique persistent identifier for a person, provided by the Open Researcher
       and Contributor ID (ORCID) organisation
-    title: ORCID iD
+    title: ORCID id
     from_schema: https://w3id.org/evorao/
     exact_mappings:
     - IAO:0000708
     rank: 1000
-    alias: oRCIDiD
+    alias: orcidId
     owner: ContactPoint
     domain_of:
     - ContactPoint

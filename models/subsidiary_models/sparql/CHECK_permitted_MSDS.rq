@@ -25,7 +25,7 @@ SELECT ?g ?s ?p WHERE {
   ?s rdf:type EVORAO:MSDS ;
      ?p ?o .
   FILTER ( ?p NOT IN (
-   EVORAO:msdsContact,
+   EVORAO:materialSafetyContact,
    EVORAO:physicalChemicalProperties,
    EVORAO:hazardsIdentification,
    EVORAO:firstAidMeasures,

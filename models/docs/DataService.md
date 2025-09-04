@@ -32,7 +32,7 @@ URI: [dcat:DataService](http://www.w3.org/ns/dcat#DataService)
       
       DataService : description
         
-      DataService : endpointURL
+      DataService : endpointUrl
         
       DataService : title
         
@@ -56,7 +56,7 @@ URI: [dcat:DataService](http://www.w3.org/ns/dcat#DataService)
 | ---  | --- | --- | --- |
 | [title](title.md) | 1 <br/> [String](String.md) | A name given to the resource | direct |
 | [description](description.md) | 0..1 _recommended_ <br/> [String](String.md) | A short explanation of the characteristics, features, or nature of the curren... | direct |
-| [endpointURL](endpointURL.md) | 1 <br/> [Uri](Uri.md) | The URL template that allows to get the content | direct |
+| [endpointUrl](endpointUrl.md) | 1 <br/> [Uri](Uri.md) | The URL template that allows to get the content | direct |
 
 
 
@@ -119,7 +119,7 @@ abstract: true
 slots:
 - title
 - description
-- endpointURL
+- endpointUrl
 slot_usage:
   title:
     name: title
@@ -172,8 +172,8 @@ slot_usage:
     required: false
     recommended: true
     multivalued: false
-  endpointURL:
-    name: endpointURL
+  endpointUrl:
+    name: endpointUrl
     description: The URL template that allows to get the content
     title: endpoint URL
     close_mappings:
@@ -257,8 +257,8 @@ slot_usage:
     required: false
     recommended: true
     multivalued: false
-  endpointURL:
-    name: endpointURL
+  endpointUrl:
+    name: endpointUrl
     description: The URL template that allows to get the content
     title: endpoint URL
     close_mappings:
@@ -331,8 +331,8 @@ attributes:
     required: false
     recommended: true
     multivalued: false
-  endpointURL:
-    name: endpointURL
+  endpointUrl:
+    name: endpointUrl
     description: The URL template that allows to get the content
     title: endpoint URL
     from_schema: https://w3id.org/evorao/
@@ -340,7 +340,7 @@ attributes:
     - wdp:P1630
     rank: 1000
     slot_uri: dcat:endpointURL
-    alias: endpointURL
+    alias: endpointUrl
     owner: DataService
     domain_of:
     - DataService

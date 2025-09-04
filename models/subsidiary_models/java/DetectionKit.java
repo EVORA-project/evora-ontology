@@ -5,7 +5,7 @@ import lombok.*;
 
 
 
-/* version: 1.0.8773 */
+/* version: 1.0.8940 */
 
 
 /**
@@ -15,7 +15,7 @@ import lombok.*;
 @EqualsAndHashCode(callSuper=false)
 public class DetectionKit extends Product {
 
-  private List<File> hasSOPFile;
+  private List<File> standardOperatingProcedureFile;
   private boolean specificityDocumented;
   private String specificity;
   private String targetedRegion;

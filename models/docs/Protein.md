@@ -23,7 +23,7 @@ URI: [EVORAO:Protein](https://w3id.org/evorao/Protein)
       Product <|-- Protein
         click Product href "../Product"
       
-      Protein : accessPointURL
+      Protein : accessPointUrl
         
       Protein : additionalCategory
         
@@ -47,7 +47,7 @@ URI: [EVORAO:Protein](https://w3id.org/evorao/Protein)
         
       Protein : biosafetyRestrictions
         
-      Protein : canItBeUsedToProduceGMO
+      Protein : canBeUsedToProduceGmo
         
       Protein : category
         
@@ -96,6 +96,15 @@ URI: [EVORAO:Protein](https://w3id.org/evorao/Protein)
         
       Protein : description
         
+      Protein : doi
+        
+          
+    
+    
+    Protein --> "*" Doi : doi
+    click Doi href "../Doi"
+
+        
       Protein : domain
         
       Protein : expressedAs
@@ -111,17 +120,17 @@ URI: [EVORAO:Protein](https://w3id.org/evorao/Protein)
     click ExternalRelatedReference href "../ExternalRelatedReference"
 
         
+      Protein : functionalAndTechnicalDescription
+        
       Protein : functionalCharacterization
         
-      Protein : functionalTechnicalDescription
-        
-      Protein : hasIATAClassification
+      Protein : iataClassification
         
           
     
     
-    Protein --> "1" IATAClassification : hasIATAClassification
-    click IATAClassification href "../IATAClassification"
+    Protein --> "1" IataClassification : iataClassification
+    click IataClassification href "../IataClassification"
 
         
       Protein : inclusionBodiesType
@@ -142,8 +151,8 @@ URI: [EVORAO:Protein](https://w3id.org/evorao/Protein)
           
     
     
-    Protein --> "0..1" MSDS : materialSafetyDataSheet
-    click MSDS href "../MSDS"
+    Protein --> "0..1" ReasearchInfrastructure : materialSafetyDataSheet
+    click ReasearchInfrastructure href "../ReasearchInfrastructure"
 
         
       Protein : note
@@ -177,12 +186,12 @@ URI: [EVORAO:Protein](https://w3id.org/evorao/Protein)
         
       Protein : proteinPurification
         
-      Protein : proteinTAG
+      Protein : proteinTag
         
           
     
     
-    Protein --> "*" ProteinTag : proteinTAG
+    Protein --> "*" ProteinTag : proteinTag
     click ProteinTag href "../ProteinTag"
 
         
@@ -197,24 +206,15 @@ URI: [EVORAO:Protein](https://w3id.org/evorao/Protein)
         
       Protein : qualityGrading
         
-      Protein : refSKU
+      Protein : refSku
         
-      Protein : relatedDOI
-        
-          
-    
-    
-    Protein --> "*" DOI : relatedDOI
-    click DOI href "../DOI"
-
-        
-      Protein : relatedPDB
+      Protein : relatedPdb
         
           
     
     
-    Protein --> "*" PDBReference : relatedPDB
-    click PDBReference href "../PDBReference"
+    Protein --> "*" PdbReference : relatedPdb
+    click PdbReference href "../PdbReference"
 
         
       Protein : riskGroup
@@ -248,9 +248,9 @@ URI: [EVORAO:Protein](https://w3id.org/evorao/Protein)
         
       Protein : storageConditions
         
-      Protein : technicalRecommendation
+      Protein : tagStatusOfTheSolubilizedProtein
         
-      Protein : theTAGStatusOfTheSolubilizedProtein
+      Protein : technicalRecommendation
         
       Protein : thirdPartyDistributionConsent
         
@@ -263,6 +263,8 @@ URI: [EVORAO:Protein](https://w3id.org/evorao/Protein)
       Protein : unitDefinition
         
       Protein : usageRestrictions
+        
+      Protein : version
         
       
 ```
@@ -286,37 +288,37 @@ URI: [EVORAO:Protein](https://w3id.org/evorao/Protein)
 | ---  | --- | --- | --- |
 | [biologicalMaterialOrigin](biologicalMaterialOrigin.md) | 1 <br/> [BiologicalMaterialOrigin](BiologicalMaterialOrigin.md) | Information about the origin of the biological material, essential for access... | direct |
 | [sequence](sequence.md) | 1..* _recommended_ <br/> [Sequence](Sequence.md) | The related sequence information from a sequence provider or in fasta format | direct |
-| [relatedPDB](relatedPDB.md) | * <br/> [PDBReference](PDBReference.md) | Identifier for 3D structural data as per the PDB (Protein Data Bank) database | direct |
+| [relatedPdb](relatedPdb.md) | * <br/> [PdbReference](PdbReference.md) | Identifier for 3D structural data as per the PDB (Protein Data Bank) database | direct |
 | [specialFeature](specialFeature.md) | * <br/> [SpecialFeature](SpecialFeature.md) | Distinctive attributes of a product that set it apart from other similar item... | direct |
-| [proteinTAG](proteinTAG.md) | * <br/> [ProteinTag](ProteinTag.md) | Peptide sequences genetically grafted onto a recombinant protein | direct |
+| [proteinTag](proteinTag.md) | * <br/> [ProteinTag](ProteinTag.md) | A DNA coding sequence or corresponding peptide/protein sequence fused to a se... | direct |
 | [domain](domain.md) | * <br/> [String](String.md) | A distinct structural and functional unit within the protein, often capable o... | direct |
 | [expressedAs](expressedAs.md) | * <br/> [String](String.md) | Refers to the form in which the protein is produced and manifested in a biolo... | direct |
 | [inclusionBodiesType](inclusionBodiesType.md) | * <br/> [String](String.md) | Refers to the state of aggregated proteins within a cell | direct |
 | [expressionSystem](expressionSystem.md) | * <br/> [String](String.md) | The host organism or cellular environment used to produce a protein from a sp... | direct |
 | [functionalCharacterization](functionalCharacterization.md) | * <br/> [String](String.md) | The process of determining and describing the specific biological activities ... | direct |
-| [functionalTechnicalDescription](functionalTechnicalDescription.md) | * <br/> [String](String.md) | Detailed information about the specific biological functions, mechanisms of a... | direct |
+| [functionalAndTechnicalDescription](functionalAndTechnicalDescription.md) | * <br/> [String](String.md) | Detailed information about the specific biological functions, mechanisms of a... | direct |
 | [proteinPurification](proteinPurification.md) | * <br/> [String](String.md) | Refers to the degree of purity achieved for a protein sample | direct |
-| [theTAGStatusOfTheSolubilizedProtein](theTAGStatusOfTheSolubilizedProtein.md) | * <br/> [String](String.md) | Indicates the presence and condition of a tag on the protein after solubiliza... | direct |
+| [tagStatusOfTheSolubilizedProtein](tagStatusOfTheSolubilizedProtein.md) | * <br/> [String](String.md) | Indicates the presence and condition of a tag on the protein after solubiliza... | direct |
 | [typeOfFunctionalCharacterization](typeOfFunctionalCharacterization.md) | * <br/> [String](String.md) | Refers to the classification of a protein based on the specific type of funct... | direct |
-| [hasIATAClassification](hasIATAClassification.md) | 1 <br/> [IATAClassification](IATAClassification.md) | The corresponding International Air Transport Association (IATA)'s category f... | [Product](Product.md) |
+| [iataClassification](iataClassification.md) | 1 <br/> [IataClassification](IataClassification.md) | The corresponding International Air Transport Association (IATA)'s category f... | [Product](Product.md) |
 | [shippingConditions](shippingConditions.md) | 1 <br/> [String](String.md) | Specification of the terms and parameters for transporting | [Product](Product.md) |
-| [materialSafetyDataSheet](materialSafetyDataSheet.md) | 0..1 <br/> [MSDS](MSDS.md) | A Material Safety Data Sheet (MSDS) or Safety Data Sheet (SDS) is a standardi... | [Product](Product.md) |
+| [materialSafetyDataSheet](materialSafetyDataSheet.md) | 0..1 <br/> [ReasearchInfrastructure](ReasearchInfrastructure.md) | A Material Safety Data Sheet (MSDS) or Safety Data Sheet (SDS) is a standardi... | [Product](Product.md) |
 | [originator](originator.md) | 0..1 <br/> [Originator](Originator.md) | The individual or organization responsible for the original discovery, isolat... | [Product](Product.md) |
 | [storageConditions](storageConditions.md) | 1 <br/> [String](String.md) | Specifies the conditions under which the product has to be stored to maintain... | [Product](Product.md) |
 | [thirdPartyDistributionConsent](thirdPartyDistributionConsent.md) | 0..1 <br/> [Boolean](Boolean.md) | Indicates whether the biological material can be distributed without restrict... | [Product](Product.md) |
 | [usageRestrictions](usageRestrictions.md) | 0..1 <br/> [String](String.md) | Specifies any limitations or conditions on the use of the biological material... | [Product](Product.md) |
-| [accessPointURL](accessPointURL.md) | 1 <br/> [Uri](Uri.md) | The URL that permits to access to the product/service detailed description pa... | [ProductOrService](ProductOrService.md) |
-| [refSKU](refSKU.md) | 1 <br/> [String](String.md) | The reference or the stock keeping unit of the service or item provided in th... | [ProductOrService](ProductOrService.md) |
+| [accessPointUrl](accessPointUrl.md) | 1 <br/> [Uri](Uri.md) | The URL that permits to access to the product/service detailed description pa... | [ProductOrService](ProductOrService.md) |
+| [refSku](refSku.md) | 1 <br/> [String](String.md) | The reference or the stock keeping unit of the service or item provided in th... | [ProductOrService](ProductOrService.md) |
 | [unitDefinition](unitDefinition.md) | 0..1 _recommended_ <br/> [String](String.md) | A short description of what will be delivered by ordering one unit of this it... | [ProductOrService](ProductOrService.md) |
 | [category](category.md) | 1 <br/> [ProductCategory](ProductCategory.md) | The main category of the service or product | [ProductOrService](ProductOrService.md) |
 | [additionalCategory](additionalCategory.md) | * _recommended_ <br/> [ProductCategory](ProductCategory.md) | Any category apart from its main category in which this product or service ca... | [ProductOrService](ProductOrService.md) |
 | [unitCost](unitCost.md) | 1 _recommended_ <br/> [String](String.md) | The cost per access for one unit as defined by the unit definition | [ProductOrService](ProductOrService.md) |
 | [qualityGrading](qualityGrading.md) | 0..1 <br/> [String](String.md) | Information that permits to assess the quality level of what will be provided | [ProductOrService](ProductOrService.md) |
 | [pathogenIdentification](pathogenIdentification.md) | 1..* <br/> [PathogenIdentification](PathogenIdentification.md) | The identification of the pathogen or group of pathogens (e | [ProductOrService](ProductOrService.md) |
-| [relatedDOI](relatedDOI.md) | * <br/> [DOI](DOI.md) | Any Digital Object Identifier that can be related | [ProductOrService](ProductOrService.md) |
+| [doi](doi.md) | * <br/> [Doi](Doi.md) | A Digital Object Identifier (DOI) that can be related | [ProductOrService](ProductOrService.md) |
 | [riskGroup](riskGroup.md) | 0..1 _recommended_ <br/> [RiskGroup](RiskGroup.md) | The highest risk group related to this resource | [ProductOrService](ProductOrService.md) |
 | [biosafetyRestrictions](biosafetyRestrictions.md) | 0..1 <br/> [String](String.md) | Information about guidelines and regulations designed to prevent the exposure... | [ProductOrService](ProductOrService.md) |
-| [canItBeUsedToProduceGMO](canItBeUsedToProduceGMO.md) | 1 _recommended_ <br/> [Boolean](Boolean.md) | Indicates if the current service or product can be used to produce GMO | [ProductOrService](ProductOrService.md) |
+| [canBeUsedToProduceGmo](canBeUsedToProduceGmo.md) | 1 _recommended_ <br/> [Boolean](Boolean.md) | Indicates if the current service or product can be used to produce GMO | [ProductOrService](ProductOrService.md) |
 | [provider](provider.md) | 1 <br/> [Provider](Provider.md) | A provider of this product or service, as a specific organization | [ProductOrService](ProductOrService.md) |
 | [collection](collection.md) | 1..* <br/> [Collection](Collection.md) | The collection(s) to which belongs this item | [ProductOrService](ProductOrService.md) |
 | [keywords](keywords.md) | 1..* _recommended_ <br/> [Keyword](Keyword.md) | List of terms used to tag and categorize this Item | [ProductOrService](ProductOrService.md) |
@@ -331,6 +333,7 @@ URI: [EVORAO:Protein](https://w3id.org/evorao/Protein)
 | [contactPoint](contactPoint.md) | 0..1 _recommended_ <br/> [ContactPoint](ContactPoint.md) | An information that allows someone to establish communication | [ProductOrService](ProductOrService.md) |
 | [title](title.md) | 1 <br/> [String](String.md) | A name given to the resource | [Dataset](Dataset.md) |
 | [description](description.md) | 1 _recommended_ <br/> [String](String.md) | A short explanation of the characteristics, features, or nature of the curren... | [Dataset](Dataset.md) |
+| [version](version.md) | 0..1 _recommended_ <br/> [String](String.md) | The version indicator (name or identifier) of a resource | [Dataset](Dataset.md) |
 
 
 
@@ -389,17 +392,17 @@ is_a: Product
 slots:
 - biologicalMaterialOrigin
 - sequence
-- relatedPDB
+- relatedPdb
 - specialFeature
-- proteinTAG
+- proteinTag
 - domain
 - expressedAs
 - inclusionBodiesType
 - expressionSystem
 - functionalCharacterization
-- functionalTechnicalDescription
+- functionalAndTechnicalDescription
 - proteinPurification
-- theTAGStatusOfTheSolubilizedProtein
+- tagStatusOfTheSolubilizedProtein
 - typeOfFunctionalCharacterization
 slot_usage:
   biologicalMaterialOrigin:
@@ -407,7 +410,7 @@ slot_usage:
     description: Information about the origin of the biological material, essential
       for access, utilization, and benefit-sharing of genetic resources in compliance
       with the Nagoya Protocol
-    title: Biological Material origin
+    title: biological material origin
     domain_of:
     - Protein
     - NucleicAcid
@@ -428,8 +431,8 @@ slot_usage:
     range: Sequence
     required: true
     multivalued: true
-  relatedPDB:
-    name: relatedPDB
+  relatedPdb:
+    name: relatedPdb
     description: Identifier for 3D structural data as per the PDB (Protein Data Bank)
       database
     title: related PDB
@@ -437,7 +440,7 @@ slot_usage:
     - wdp:P638
     domain_of:
     - Protein
-    range: PDBReference
+    range: PdbReference
     required: false
     multivalued: true
   specialFeature:
@@ -451,12 +454,16 @@ slot_usage:
     range: SpecialFeature
     required: false
     multivalued: true
-  proteinTAG:
-    name: proteinTAG
-    description: Peptide sequences genetically grafted onto a recombinant protein
-    title: protein TAG
+  proteinTag:
+    name: proteinTag
+    description: A DNA coding sequence or corresponding peptide/protein sequence fused
+      to a sequence of interest, used to facilitate experimental operations such as
+      purification, detection, localization, tracking, solubility enhancement, or
+      selection. Applicable to both proteins and nucleic acids
+    title: protein tag
     domain_of:
     - Protein
+    - NucleicAcid
     range: ProteinTag
     required: false
     multivalued: true
@@ -519,14 +526,14 @@ slot_usage:
     range: string
     required: false
     multivalued: true
-  functionalTechnicalDescription:
-    name: functionalTechnicalDescription
+  functionalAndTechnicalDescription:
+    name: functionalAndTechnicalDescription
     description: Detailed information about the specific biological functions, mechanisms
       of action, and technical attributes of a protein. This includes how the protein
       interacts within biological systems, its role in cellular processes, and any
       relevant technical details such as structure, activity, and interactions with
       other molecules.
-    title: functional/Technical description
+    title: functional and technical description
     domain_of:
     - Protein
     range: string
@@ -544,13 +551,13 @@ slot_usage:
     range: string
     required: false
     multivalued: true
-  theTAGStatusOfTheSolubilizedProtein:
-    name: theTAGStatusOfTheSolubilizedProtein
+  tagStatusOfTheSolubilizedProtein:
+    name: tagStatusOfTheSolubilizedProtein
     description: Indicates the presence and condition of a tag on the protein after
       solubilization. Possible values include 'Uncleaved Tag' (the tag is still attached
       to the protein), 'Cleaved Tag' (the tag has been removed from the protein),
       and 'No Tag' (the protein does not have a tag)
-    title: TAG status of the solubilized protein
+    title: tag status of the solubilized protein
     domain_of:
     - Protein
     range: string
@@ -591,7 +598,7 @@ slot_usage:
     description: Information about the origin of the biological material, essential
       for access, utilization, and benefit-sharing of genetic resources in compliance
       with the Nagoya Protocol
-    title: Biological Material origin
+    title: biological material origin
     domain_of:
     - Protein
     - NucleicAcid
@@ -612,8 +619,8 @@ slot_usage:
     range: Sequence
     required: true
     multivalued: true
-  relatedPDB:
-    name: relatedPDB
+  relatedPdb:
+    name: relatedPdb
     description: Identifier for 3D structural data as per the PDB (Protein Data Bank)
       database
     title: related PDB
@@ -621,7 +628,7 @@ slot_usage:
     - wdp:P638
     domain_of:
     - Protein
-    range: PDBReference
+    range: PdbReference
     required: false
     multivalued: true
   specialFeature:
@@ -635,12 +642,16 @@ slot_usage:
     range: SpecialFeature
     required: false
     multivalued: true
-  proteinTAG:
-    name: proteinTAG
-    description: Peptide sequences genetically grafted onto a recombinant protein
-    title: protein TAG
+  proteinTag:
+    name: proteinTag
+    description: A DNA coding sequence or corresponding peptide/protein sequence fused
+      to a sequence of interest, used to facilitate experimental operations such as
+      purification, detection, localization, tracking, solubility enhancement, or
+      selection. Applicable to both proteins and nucleic acids
+    title: protein tag
     domain_of:
     - Protein
+    - NucleicAcid
     range: ProteinTag
     required: false
     multivalued: true
@@ -703,14 +714,14 @@ slot_usage:
     range: string
     required: false
     multivalued: true
-  functionalTechnicalDescription:
-    name: functionalTechnicalDescription
+  functionalAndTechnicalDescription:
+    name: functionalAndTechnicalDescription
     description: Detailed information about the specific biological functions, mechanisms
       of action, and technical attributes of a protein. This includes how the protein
       interacts within biological systems, its role in cellular processes, and any
       relevant technical details such as structure, activity, and interactions with
       other molecules.
-    title: functional/Technical description
+    title: functional and technical description
     domain_of:
     - Protein
     range: string
@@ -728,13 +739,13 @@ slot_usage:
     range: string
     required: false
     multivalued: true
-  theTAGStatusOfTheSolubilizedProtein:
-    name: theTAGStatusOfTheSolubilizedProtein
+  tagStatusOfTheSolubilizedProtein:
+    name: tagStatusOfTheSolubilizedProtein
     description: Indicates the presence and condition of a tag on the protein after
       solubilization. Possible values include 'Uncleaved Tag' (the tag is still attached
       to the protein), 'Cleaved Tag' (the tag has been removed from the protein),
       and 'No Tag' (the protein does not have a tag)
-    title: TAG status of the solubilized protein
+    title: tag status of the solubilized protein
     domain_of:
     - Protein
     range: string
@@ -759,7 +770,7 @@ attributes:
     description: Information about the origin of the biological material, essential
       for access, utilization, and benefit-sharing of genetic resources in compliance
       with the Nagoya Protocol
-    title: Biological Material origin
+    title: biological material origin
     from_schema: https://w3id.org/evorao/
     rank: 1000
     alias: biologicalMaterialOrigin
@@ -789,8 +800,8 @@ attributes:
     required: true
     recommended: true
     multivalued: true
-  relatedPDB:
-    name: relatedPDB
+  relatedPdb:
+    name: relatedPdb
     description: Identifier for 3D structural data as per the PDB (Protein Data Bank)
       database
     title: related PDB
@@ -798,11 +809,11 @@ attributes:
     close_mappings:
     - wdp:P638
     rank: 1000
-    alias: relatedPDB
+    alias: relatedPdb
     owner: Protein
     domain_of:
     - Protein
-    range: PDBReference
+    range: PdbReference
     required: false
     multivalued: true
   specialFeature:
@@ -820,16 +831,20 @@ attributes:
     range: SpecialFeature
     required: false
     multivalued: true
-  proteinTAG:
-    name: proteinTAG
-    description: Peptide sequences genetically grafted onto a recombinant protein
-    title: protein TAG
+  proteinTag:
+    name: proteinTag
+    description: A DNA coding sequence or corresponding peptide/protein sequence fused
+      to a sequence of interest, used to facilitate experimental operations such as
+      purification, detection, localization, tracking, solubility enhancement, or
+      selection. Applicable to both proteins and nucleic acids
+    title: protein tag
     from_schema: https://w3id.org/evorao/
     rank: 1000
-    alias: proteinTAG
+    alias: proteinTag
     owner: Protein
     domain_of:
     - Protein
+    - NucleicAcid
     range: ProteinTag
     required: false
     multivalued: true
@@ -925,17 +940,17 @@ attributes:
     equals_string_in:
     - Functionally characterized
     - No functional characterization
-  functionalTechnicalDescription:
-    name: functionalTechnicalDescription
+  functionalAndTechnicalDescription:
+    name: functionalAndTechnicalDescription
     description: Detailed information about the specific biological functions, mechanisms
       of action, and technical attributes of a protein. This includes how the protein
       interacts within biological systems, its role in cellular processes, and any
       relevant technical details such as structure, activity, and interactions with
       other molecules.
-    title: functional/Technical description
+    title: functional and technical description
     from_schema: https://w3id.org/evorao/
     rank: 1000
-    alias: functionalTechnicalDescription
+    alias: functionalAndTechnicalDescription
     owner: Protein
     domain_of:
     - Protein
@@ -961,16 +976,16 @@ attributes:
     equals_string_in:
     - Greater than 95 percent
     - Unpurified expression host lysate or partly purified protein
-  theTAGStatusOfTheSolubilizedProtein:
-    name: theTAGStatusOfTheSolubilizedProtein
+  tagStatusOfTheSolubilizedProtein:
+    name: tagStatusOfTheSolubilizedProtein
     description: Indicates the presence and condition of a tag on the protein after
       solubilization. Possible values include 'Uncleaved Tag' (the tag is still attached
       to the protein), 'Cleaved Tag' (the tag has been removed from the protein),
       and 'No Tag' (the protein does not have a tag)
-    title: TAG status of the solubilized protein
+    title: tag status of the solubilized protein
     from_schema: https://w3id.org/evorao/
     rank: 1000
-    alias: theTAGStatusOfTheSolubilizedProtein
+    alias: tagStatusOfTheSolubilizedProtein
     owner: Protein
     domain_of:
     - Protein
@@ -997,18 +1012,18 @@ attributes:
     equals_string_in:
     - Enzymatic
     - Antigenic
-  hasIATAClassification:
-    name: hasIATAClassification
+  iataClassification:
+    name: iataClassification
     description: The corresponding International Air Transport Association (IATA)'s
       category for this Product
     title: IATA classification
     from_schema: https://w3id.org/evorao/
     rank: 1000
-    alias: hasIATAClassification
+    alias: iataClassification
     owner: Protein
     domain_of:
     - Product
-    range: IATAClassification
+    range: IataClassification
     required: true
     multivalued: false
   shippingConditions:
@@ -1042,7 +1057,7 @@ attributes:
     owner: Protein
     domain_of:
     - Product
-    range: MSDS
+    range: ReasearchInfrastructure
     required: false
     multivalued: false
   originator:
@@ -1109,8 +1124,8 @@ attributes:
     range: string
     required: false
     multivalued: false
-  accessPointURL:
-    name: accessPointURL
+  accessPointUrl:
+    name: accessPointUrl
     description: The URL that permits to access to the product/service detailed description
       page on the provider's website and/or allows to place an order about it or at
       least describe the process to place an order/enquiry
@@ -1119,23 +1134,23 @@ attributes:
     exact_mappings:
     - dcat:landingPage
     rank: 1000
-    alias: accessPointURL
+    alias: accessPointUrl
     owner: Protein
     domain_of:
     - ProductOrService
     range: uri
     required: true
     multivalued: false
-  refSKU:
-    name: refSKU
+  refSku:
+    name: refSku
     description: The reference or the stock keeping unit of the service or item provided
       in the provider's catalogue
-    title: ref-SKU
+    title: ref SKU
     from_schema: https://w3id.org/evorao/
     exact_mappings:
     - dct:identifier
     rank: 1000
-    alias: refSKU
+    alias: refSku
     owner: Protein
     domain_of:
     - ProductOrService
@@ -1244,20 +1259,20 @@ attributes:
     range: PathogenIdentification
     required: true
     multivalued: true
-  relatedDOI:
-    name: relatedDOI
-    description: Any Digital Object Identifier that can be related
+  doi:
+    name: doi
+    description: A Digital Object Identifier (DOI) that can be related
     title: DOI
     from_schema: https://w3id.org/evorao/
     close_mappings:
     - wdp:P356
     rank: 1000
-    alias: relatedDOI
+    alias: doi
     owner: Protein
     domain_of:
     - ProductOrService
     - Publication
-    range: DOI
+    range: Doi
     required: false
     multivalued: true
   riskGroup:
@@ -1294,17 +1309,17 @@ attributes:
     range: string
     required: false
     multivalued: false
-  canItBeUsedToProduceGMO:
-    name: canItBeUsedToProduceGMO
+  canBeUsedToProduceGmo:
+    name: canBeUsedToProduceGmo
     description: Indicates if the current service or product can be used to produce
       GMO
-    title: can it be used to produce GMO
+    title: can be used to produce GMO
     comments:
     - Set to TRUE if it can produce GMO. It is recommended to have a value for this
       field, no value will be understood as unknown
     from_schema: https://w3id.org/evorao/
     rank: 1000
-    alias: canItBeUsedToProduceGMO
+    alias: canBeUsedToProduceGmo
     owner: Protein
     domain_of:
     - ProductOrService
@@ -1545,6 +1560,25 @@ attributes:
     - Certification
     range: string
     required: true
+    recommended: true
+    multivalued: false
+  version:
+    name: version
+    description: The version indicator (name or identifier) of a resource
+    title: version
+    from_schema: https://w3id.org/evorao/
+    close_mappings:
+    - wdp:P393
+    - schema:version
+    rank: 1000
+    alias: version
+    owner: Protein
+    domain_of:
+    - Dataset
+    - Version
+    - Taxonomy
+    range: string
+    required: false
     recommended: true
     multivalued: false
 

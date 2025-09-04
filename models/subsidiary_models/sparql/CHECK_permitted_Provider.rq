@@ -25,10 +25,10 @@ SELECT ?g ?s ?p WHERE {
   ?s rdf:type EVORAO:Provider ;
      ?p ?o .
   FILTER ( ?p NOT IN (
-   EVORAO:memberOfRI,
+   EVORAO:memberOfRi,
    EVORAO:alternateName,
    EVORAO:country,
-   EVORAO:rORiD,
+   EVORAO:rorId,
    foaf:name,
    dct:description,
    foaf:homepage,

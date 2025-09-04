@@ -35,7 +35,7 @@ WHERE {
     FILTER ( ?otype IN (
       EVORAO:GeographicalOrigin
       , 
-      EVORAO:IPLCOrigin
+      EVORAO:IplcOrigin
       
       ))
   }

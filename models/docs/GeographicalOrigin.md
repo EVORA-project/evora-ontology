@@ -24,8 +24,8 @@ URI: [EVORAO:GeographicalOrigin](https://w3id.org/evorao/GeographicalOrigin)
         click Term href "../Term"
       
 
-      GeographicalOrigin <|-- IPLCOrigin
-        click IPLCOrigin href "../IPLCOrigin"
+      GeographicalOrigin <|-- IplcOrigin
+        click IplcOrigin href "../IplcOrigin"
       
       
       GeographicalOrigin : description
@@ -54,7 +54,7 @@ URI: [EVORAO:GeographicalOrigin](https://w3id.org/evorao/GeographicalOrigin)
 * [Resource](Resource.md)
     * [Term](Term.md)
         * **GeographicalOrigin**
-            * [IPLCOrigin](IPLCOrigin.md)
+            * [IplcOrigin](IplcOrigin.md)
 
 
 

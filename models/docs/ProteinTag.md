@@ -3,7 +3,7 @@
 # Class: Protein tag (ProteinTag) 
 
 
-_Peptide sequence genetically grafted onto a recombinant protein_
+_A DNA coding sequence or corresponding peptide/protein sequence fused to a sequence of interest, used to facilitate experimental operations such as purification, detection, localization, tracking, solubility enhancement, or selection. Applicable to both proteins and nucleic acids_
 
 
 
@@ -69,8 +69,8 @@ URI: [EVORAO:ProteinTag](https://w3id.org/evorao/ProteinTag)
 
 | used by | used in | type | used |
 | ---  | --- | --- | --- |
-| [Protein](Protein.md) | [proteinTAG](proteinTAG.md) | range | [ProteinTag](ProteinTag.md) |
-| [NucleicAcid](NucleicAcid.md) | [hasTAG](hasTAG.md) | range | [ProteinTag](ProteinTag.md) |
+| [Protein](Protein.md) | [proteinTag](proteinTag.md) | range | [ProteinTag](ProteinTag.md) |
+| [NucleicAcid](NucleicAcid.md) | [proteinTag](proteinTag.md) | range | [ProteinTag](ProteinTag.md) |
 
 
 
@@ -116,7 +116,10 @@ URI: [EVORAO:ProteinTag](https://w3id.org/evorao/ProteinTag)
 <details>
 ```yaml
 name: ProteinTag
-description: Peptide sequence genetically grafted onto a recombinant protein
+description: A DNA coding sequence or corresponding peptide/protein sequence fused
+  to a sequence of interest, used to facilitate experimental operations such as purification,
+  detection, localization, tracking, solubility enhancement, or selection. Applicable
+  to both proteins and nucleic acids
 title: Protein tag
 from_schema: https://w3id.org/evorao/
 close_mappings:
@@ -132,7 +135,10 @@ is_a: Term
 <details>
 ```yaml
 name: ProteinTag
-description: Peptide sequence genetically grafted onto a recombinant protein
+description: A DNA coding sequence or corresponding peptide/protein sequence fused
+  to a sequence of interest, used to facilitate experimental operations such as purification,
+  detection, localization, tracking, solubility enhancement, or selection. Applicable
+  to both proteins and nucleic acids
 title: Protein tag
 from_schema: https://w3id.org/evorao/
 close_mappings:

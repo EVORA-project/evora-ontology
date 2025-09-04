@@ -60,6 +60,7 @@ Alias: loginRequestMethod
 | ---  | ---  |
 | self | EVORAO:loginRequestMethod |
 | native | EVORAO:loginRequestMethod |
+| broad | schema:httpMethod |
 | close | dcat:endpointDescription |
 
 
@@ -75,6 +76,8 @@ title: login request method
 from_schema: https://w3id.org/evorao/
 close_mappings:
 - dcat:endpointDescription
+broad_mappings:
+- schema:httpMethod
 rank: 1000
 ifabsent: string(GET)
 alias: loginRequestMethod

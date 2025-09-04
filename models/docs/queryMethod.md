@@ -62,6 +62,7 @@ Alias: queryMethod
 | ---  | ---  |
 | self | EVORAO:queryMethod |
 | native | EVORAO:queryMethod |
+| broad | schema:httpMethod |
 | close | dcat:endpointDescription |
 
 
@@ -77,6 +78,8 @@ title: query method
 from_schema: https://w3id.org/evorao/
 close_mappings:
 - dcat:endpointDescription
+broad_mappings:
+- schema:httpMethod
 rank: 1000
 alias: queryMethod
 domain_of:

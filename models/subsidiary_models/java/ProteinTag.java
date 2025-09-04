@@ -5,11 +5,11 @@ import lombok.*;
 
 
 
-/* version: 1.0.8773 */
+/* version: 1.0.8940 */
 
 
 /**
-  Peptide sequence genetically grafted onto a recombinant protein
+  A DNA coding sequence or corresponding peptide/protein sequence fused to a sequence of interest, used to facilitate experimental operations such as purification, detection, localization, tracking, solubility enhancement, or selection. Applicable to both proteins and nucleic acids
 **/
 @Data
 @EqualsAndHashCode(callSuper=false)

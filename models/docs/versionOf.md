@@ -3,7 +3,7 @@
 # Slot: version Of (versionOf) 
 
 
-_Identifier of what the version qualifies_
+_Identifier of what type of entities the version qualifies_
 
 
 
@@ -71,7 +71,7 @@ Alias: versionOf
 <details>
 ```yaml
 name: versionOf
-description: Identifier of what the version qualifies
+description: Identifier of what type of entities the version qualifies
 title: version Of
 from_schema: https://w3id.org/evorao/
 rank: 1000

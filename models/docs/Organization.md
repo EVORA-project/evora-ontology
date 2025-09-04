@@ -24,8 +24,8 @@ URI: [foaf:Organization](http://xmlns.com/foaf/0.1/Organization)
         click PersonOrOrganization href "../PersonOrOrganization"
       
 
-      Organization <|-- RI
-        click RI href "../RI"
+      Organization <|-- ReasearchInfrastructure
+        click ReasearchInfrastructure href "../ReasearchInfrastructure"
       Organization <|-- Provider
         click Provider href "../Provider"
       
@@ -72,7 +72,7 @@ URI: [foaf:Organization](http://xmlns.com/foaf/0.1/Organization)
         
       Organization : name
         
-      Organization : rORiD
+      Organization : rorId
         
       
 ```
@@ -85,7 +85,7 @@ URI: [foaf:Organization](http://xmlns.com/foaf/0.1/Organization)
 * [Resource](Resource.md)
     * [PersonOrOrganization](PersonOrOrganization.md)
         * **Organization**
-            * [RI](RI.md)
+            * [ReasearchInfrastructure](ReasearchInfrastructure.md)
             * [Provider](Provider.md)
 
 
@@ -96,7 +96,7 @@ URI: [foaf:Organization](http://xmlns.com/foaf/0.1/Organization)
 | ---  | --- | --- | --- |
 | [alternateName](alternateName.md) | * <br/> [AlternateName](AlternateName.md) | Any other name under which the entity can be known | direct |
 | [country](country.md) | 0..1 _recommended_ <br/> [Country](Country.md) | The country of the organization | direct |
-| [rORiD](rORiD.md) | 0..1 _recommended_ <br/> [String](String.md) | The corresponding organization's persistent identifier from the Research Orga... | direct |
+| [rorId](rorId.md) | 0..1 _recommended_ <br/> [String](String.md) | The corresponding organization's persistent identifier from the Research Orga... | direct |
 | [name](name.md) | 1 <br/> [String](String.md) | A word or set of words used to identify and refer to an entity | [PersonOrOrganization](PersonOrOrganization.md) |
 | [description](description.md) | 0..1 _recommended_ <br/> [String](String.md) | A short explanation of the characteristics, features, or nature of the curren... | [PersonOrOrganization](PersonOrOrganization.md) |
 | [homePage](homePage.md) | 0..1 <br/> [Uri](Uri.md) | A web page that serves as the main or introductory page | [PersonOrOrganization](PersonOrOrganization.md) |
@@ -133,7 +133,7 @@ URI: [foaf:Organization](http://xmlns.com/foaf/0.1/Organization)
 | ---  | ---  |
 | self | foaf:Organization |
 | native | EVORAO:Organization |
-| close | wd:Q43229, vcard:Organization, wd:Q43229, vcard:Organization |
+| close | wd:Q43229, vcard:Organization, schema:Organization, wd:Q43229, vcard:Organization, schema:Organization |
 
 
 
@@ -156,13 +156,15 @@ from_schema: https://w3id.org/evorao/
 close_mappings:
 - wd:Q43229
 - vcard:Organization
+- schema:Organization
 - wd:Q43229
 - vcard:Organization
+- schema:Organization
 is_a: PersonOrOrganization
 slots:
 - alternateName
 - country
-- rORiD
+- rorId
 slot_usage:
   alternateName:
     name: alternateName
@@ -192,8 +194,8 @@ slot_usage:
     required: false
     recommended: true
     multivalued: false
-  rORiD:
-    name: rORiD
+  rorId:
+    name: rorId
     description: The corresponding organization's persistent identifier from the Research
       Organization Registry (ROR)
     title: ROR iD
@@ -221,8 +223,10 @@ from_schema: https://w3id.org/evorao/
 close_mappings:
 - wd:Q43229
 - vcard:Organization
+- schema:Organization
 - wd:Q43229
 - vcard:Organization
+- schema:Organization
 is_a: PersonOrOrganization
 slot_usage:
   alternateName:
@@ -253,8 +257,8 @@ slot_usage:
     required: false
     recommended: true
     multivalued: false
-  rORiD:
-    name: rORiD
+  rorId:
+    name: rorId
     description: The corresponding organization's persistent identifier from the Research
       Organization Registry (ROR)
     title: ROR iD
@@ -303,8 +307,8 @@ attributes:
     required: false
     recommended: true
     multivalued: false
-  rORiD:
-    name: rORiD
+  rorId:
+    name: rorId
     description: The corresponding organization's persistent identifier from the Research
       Organization Registry (ROR)
     title: ROR iD
@@ -312,7 +316,7 @@ attributes:
     exact_mappings:
     - wdp:P6782
     rank: 1000
-    alias: rORiD
+    alias: rorId
     owner: Organization
     domain_of:
     - Organization

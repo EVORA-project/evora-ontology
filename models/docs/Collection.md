@@ -45,6 +45,8 @@ URI: [EVORAO:Collection](https://w3id.org/evorao/Collection)
         
       Collection : title
         
+      Collection : version
+        
       
 ```
 
@@ -68,6 +70,7 @@ URI: [EVORAO:Collection](https://w3id.org/evorao/Collection)
 | [collectionDataProvider](collectionDataProvider.md) | 0..1 <br/> [DataProvider](DataProvider.md) | The provider of the data of the collection | direct |
 | [title](title.md) | 1 <br/> [String](String.md) | A name given to the resource | [Dataset](Dataset.md) |
 | [description](description.md) | 1 _recommended_ <br/> [String](String.md) | A short explanation of the characteristics, features, or nature of the curren... | [Dataset](Dataset.md) |
+| [version](version.md) | 0..1 _recommended_ <br/> [String](String.md) | The version indicator (name or identifier) of a resource | [Dataset](Dataset.md) |
 
 
 
@@ -303,6 +306,25 @@ attributes:
     - Certification
     range: string
     required: true
+    recommended: true
+    multivalued: false
+  version:
+    name: version
+    description: The version indicator (name or identifier) of a resource
+    title: version
+    from_schema: https://w3id.org/evorao/
+    close_mappings:
+    - wdp:P393
+    - schema:version
+    rank: 1000
+    alias: version
+    owner: Collection
+    domain_of:
+    - Dataset
+    - Version
+    - Taxonomy
+    range: string
+    required: false
     recommended: true
     multivalued: false
 

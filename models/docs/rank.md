@@ -23,7 +23,7 @@ Alias: rank
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
 | [Taxon](Taxon.md) | Conceptual entity that groups one or more populations of an organism or organ... |  yes  |
-| [Taxonomy](Taxonomy.md) | Science of naming, defining and classifying organisms |  yes  |
+| [Taxonomy](Taxonomy.md) | A structured representation of data about the classification and naming of bi... |  yes  |
 
 
 
@@ -63,7 +63,7 @@ Alias: rank
 | ---  | ---  |
 | self | EVORAO:rank |
 | native | EVORAO:rank |
-| exact | dwc:taxonRank |
+| exact | dwc:taxonRank, schema:taxonRank |
 
 
 
@@ -78,6 +78,7 @@ title: rank
 from_schema: https://w3id.org/evorao/
 exact_mappings:
 - dwc:taxonRank
+- schema:taxonRank
 rank: 1000
 alias: rank
 domain_of:

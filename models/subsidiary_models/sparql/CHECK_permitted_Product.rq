@@ -25,25 +25,25 @@ SELECT ?g ?s ?p WHERE {
   ?s rdf:type EVORAO:Product ;
      ?p ?o .
   FILTER ( ?p NOT IN (
-   EVORAO:hasIATAClassification,
+   EVORAO:iataClassification,
    EVORAO:shippingConditions,
    EVORAO:materialSafetyDataSheet,
    EVORAO:originator,
    EVORAO:storageConditions,
    EVORAO:thirdPartyDistributionConsent,
    EVORAO:usageRestrictions,
-   EVORAO:accessPointURL,
-   EVORAO:refSKU,
+   EVORAO:accessPointUrl,
+   EVORAO:refSku,
    EVORAO:unitDefinition,
    EVORAO:category,
    EVORAO:additionalCategory,
    EVORAO:unitCost,
    EVORAO:qualityGrading,
    EVORAO:pathogenIdentification,
-   EVORAO:relatedDOI,
+   EVORAO:doi,
    EVORAO:riskGroup,
    EVORAO:biosafetyRestrictions,
-   EVORAO:canItBeUsedToProduceGMO,
+   EVORAO:canBeUsedToProduceGmo,
    EVORAO:provider,
    EVORAO:collection,
    EVORAO:keywords,
@@ -58,6 +58,7 @@ SELECT ?g ?s ?p WHERE {
    EVORAO:contactPoint,
    dct:title,
    dct:description,
+   EVORAO:version,
    rdf:type ))
  }
  

@@ -27,6 +27,15 @@ URI: [EVORAO:Publication](https://w3id.org/evorao/Publication)
         
       Publication : authors
         
+      Publication : doi
+        
+          
+    
+    
+    Publication --> "1" Doi : doi
+    click Doi href "../Doi"
+
+        
       Publication : journal
         
           
@@ -34,15 +43,6 @@ URI: [EVORAO:Publication](https://w3id.org/evorao/Publication)
     
     Publication --> "0..1" Journal : journal
     click Journal href "../Journal"
-
-        
-      Publication : relatedDOI
-        
-          
-    
-    
-    Publication --> "1" DOI : relatedDOI
-    click DOI href "../DOI"
 
         
       Publication : title
@@ -67,7 +67,7 @@ URI: [EVORAO:Publication](https://w3id.org/evorao/Publication)
 | [title](title.md) | 1 <br/> [String](String.md) | A name given to the resource | direct |
 | [authors](authors.md) | 1 <br/> [String](String.md) | The list of authors | direct |
 | [abstract](abstract.md) | 1 <br/> [String](String.md) | Concise summary of the publication | direct |
-| [relatedDOI](relatedDOI.md) | 1 <br/> [DOI](DOI.md) | Any Digital Object Identifier that can be related | direct |
+| [doi](doi.md) | 1 <br/> [Doi](Doi.md) | A Digital Object Identifier (DOI) that can be related | direct |
 | [journal](journal.md) | 0..1 <br/> [Journal](Journal.md) | The scientific journal in which the publication was published | direct |
 
 
@@ -128,7 +128,7 @@ slots:
 - title
 - authors
 - abstract
-- relatedDOI
+- doi
 - journal
 slot_usage:
   title:
@@ -176,14 +176,14 @@ slot_usage:
     range: string
     required: true
     multivalued: false
-  relatedDOI:
-    name: relatedDOI
-    description: Any Digital Object Identifier that can be related
+  doi:
+    name: doi
+    description: A Digital Object Identifier (DOI) that can be related
     title: DOI
     domain_of:
     - Publication
     - ProductOrService
-    range: DOI
+    range: Doi
     required: true
     multivalued: false
   journal:
@@ -257,14 +257,14 @@ slot_usage:
     range: string
     required: true
     multivalued: false
-  relatedDOI:
-    name: relatedDOI
-    description: Any Digital Object Identifier that can be related
+  doi:
+    name: doi
+    description: A Digital Object Identifier (DOI) that can be related
     title: DOI
     domain_of:
     - Publication
     - ProductOrService
-    range: DOI
+    range: Doi
     required: true
     multivalued: false
   journal:
@@ -334,20 +334,20 @@ attributes:
     range: string
     required: true
     multivalued: false
-  relatedDOI:
-    name: relatedDOI
-    description: Any Digital Object Identifier that can be related
+  doi:
+    name: doi
+    description: A Digital Object Identifier (DOI) that can be related
     title: DOI
     from_schema: https://w3id.org/evorao/
     close_mappings:
     - wdp:P356
     rank: 1000
-    alias: relatedDOI
+    alias: doi
     owner: Publication
     domain_of:
     - Publication
     - ProductOrService
-    range: DOI
+    range: Doi
     required: true
     multivalued: false
   journal:

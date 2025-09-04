@@ -69,7 +69,7 @@ URI: [EVORAO:PlasmidSelection](https://w3id.org/evorao/PlasmidSelection)
 
 | used by | used in | type | used |
 | ---  | --- | --- | --- |
-| [NucleicAcid](NucleicAcid.md) | [pasmidSelection](pasmidSelection.md) | range | [PlasmidSelection](PlasmidSelection.md) |
+| [NucleicAcid](NucleicAcid.md) | [plasmidSelection](plasmidSelection.md) | range | [PlasmidSelection](PlasmidSelection.md) |
 
 
 

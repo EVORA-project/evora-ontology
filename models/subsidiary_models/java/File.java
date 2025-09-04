@@ -5,7 +5,7 @@ import lombok.*;
 
 
 
-/* version: 1.0.8773 */
+/* version: 1.0.8940 */
 
 
 /**
@@ -17,7 +17,7 @@ public abstract class File extends Resource {
 
   private String name;
   private String description;
-  private String contentURL;
+  private String contentUrl;
   private String format;
   private License license;
 

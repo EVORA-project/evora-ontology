@@ -28,7 +28,7 @@ URI: [EVORAO:Antibody](https://w3id.org/evorao/Antibody)
         click Hybridoma href "../Hybridoma"
       
       
-      Antibody : accessPointURL
+      Antibody : accessPointUrl
         
       Antibody : additionalCategory
         
@@ -45,7 +45,7 @@ URI: [EVORAO:Antibody](https://w3id.org/evorao/Antibody)
         
       Antibody : biosafetyRestrictions
         
-      Antibody : canItBeUsedToProduceGMO
+      Antibody : canBeUsedToProduceGmo
         
       Antibody : category
         
@@ -94,6 +94,15 @@ URI: [EVORAO:Antibody](https://w3id.org/evorao/Antibody)
         
       Antibody : description
         
+      Antibody : doi
+        
+          
+    
+    
+    Antibody --> "*" Doi : doi
+    click Doi href "../Doi"
+
+        
       Antibody : externalRelatedReference
         
           
@@ -103,13 +112,13 @@ URI: [EVORAO:Antibody](https://w3id.org/evorao/Antibody)
     click ExternalRelatedReference href "../ExternalRelatedReference"
 
         
-      Antibody : hasIATAClassification
+      Antibody : iataClassification
         
           
     
     
-    Antibody --> "1" IATAClassification : hasIATAClassification
-    click IATAClassification href "../IATAClassification"
+    Antibody --> "1" IataClassification : iataClassification
+    click IataClassification href "../IataClassification"
 
         
       Antibody : internalReference
@@ -128,8 +137,8 @@ URI: [EVORAO:Antibody](https://w3id.org/evorao/Antibody)
           
     
     
-    Antibody --> "0..1" MSDS : materialSafetyDataSheet
-    click MSDS href "../MSDS"
+    Antibody --> "0..1" ReasearchInfrastructure : materialSafetyDataSheet
+    click ReasearchInfrastructure href "../ReasearchInfrastructure"
 
         
       Antibody : note
@@ -174,16 +183,7 @@ URI: [EVORAO:Antibody](https://w3id.org/evorao/Antibody)
         
       Antibody : qualityGrading
         
-      Antibody : refSKU
-        
-      Antibody : relatedDOI
-        
-          
-    
-    
-    Antibody --> "*" DOI : relatedDOI
-    click DOI href "../DOI"
-
+      Antibody : refSku
         
       Antibody : riskGroup
         
@@ -223,6 +223,8 @@ URI: [EVORAO:Antibody](https://w3id.org/evorao/Antibody)
         
       Antibody : usageRestrictions
         
+      Antibody : version
+        
       
 ```
 
@@ -249,25 +251,25 @@ URI: [EVORAO:Antibody](https://w3id.org/evorao/Antibody)
 | [specificityDocumented](specificityDocumented.md) | 1 <br/> [Boolean](Boolean.md) | Boolean value indicating whether the specificity of the product has been form... | direct |
 | [targetedAntigen](targetedAntigen.md) | 1 <br/> [String](String.md) | Specific molecular structure or epitope recognized and bound by an antibody | direct |
 | [sequenceReference](sequenceReference.md) | * _recommended_ <br/> [SequenceReference](SequenceReference.md) | A reference that permits to retrieve the sequence information from a sequence... | direct |
-| [hasIATAClassification](hasIATAClassification.md) | 1 <br/> [IATAClassification](IATAClassification.md) | The corresponding International Air Transport Association (IATA)'s category f... | [Product](Product.md) |
+| [iataClassification](iataClassification.md) | 1 <br/> [IataClassification](IataClassification.md) | The corresponding International Air Transport Association (IATA)'s category f... | [Product](Product.md) |
 | [shippingConditions](shippingConditions.md) | 1 <br/> [String](String.md) | Specification of the terms and parameters for transporting | [Product](Product.md) |
-| [materialSafetyDataSheet](materialSafetyDataSheet.md) | 0..1 <br/> [MSDS](MSDS.md) | A Material Safety Data Sheet (MSDS) or Safety Data Sheet (SDS) is a standardi... | [Product](Product.md) |
+| [materialSafetyDataSheet](materialSafetyDataSheet.md) | 0..1 <br/> [ReasearchInfrastructure](ReasearchInfrastructure.md) | A Material Safety Data Sheet (MSDS) or Safety Data Sheet (SDS) is a standardi... | [Product](Product.md) |
 | [originator](originator.md) | 0..1 <br/> [Originator](Originator.md) | The individual or organization responsible for the original discovery, isolat... | [Product](Product.md) |
 | [storageConditions](storageConditions.md) | 1 <br/> [String](String.md) | Specifies the conditions under which the product has to be stored to maintain... | [Product](Product.md) |
 | [thirdPartyDistributionConsent](thirdPartyDistributionConsent.md) | 0..1 <br/> [Boolean](Boolean.md) | Indicates whether the biological material can be distributed without restrict... | [Product](Product.md) |
 | [usageRestrictions](usageRestrictions.md) | 0..1 <br/> [String](String.md) | Specifies any limitations or conditions on the use of the biological material... | [Product](Product.md) |
-| [accessPointURL](accessPointURL.md) | 1 <br/> [Uri](Uri.md) | The URL that permits to access to the product/service detailed description pa... | [ProductOrService](ProductOrService.md) |
-| [refSKU](refSKU.md) | 1 <br/> [String](String.md) | The reference or the stock keeping unit of the service or item provided in th... | [ProductOrService](ProductOrService.md) |
+| [accessPointUrl](accessPointUrl.md) | 1 <br/> [Uri](Uri.md) | The URL that permits to access to the product/service detailed description pa... | [ProductOrService](ProductOrService.md) |
+| [refSku](refSku.md) | 1 <br/> [String](String.md) | The reference or the stock keeping unit of the service or item provided in th... | [ProductOrService](ProductOrService.md) |
 | [unitDefinition](unitDefinition.md) | 0..1 _recommended_ <br/> [String](String.md) | A short description of what will be delivered by ordering one unit of this it... | [ProductOrService](ProductOrService.md) |
 | [category](category.md) | 1 <br/> [ProductCategory](ProductCategory.md) | The main category of the service or product | [ProductOrService](ProductOrService.md) |
 | [additionalCategory](additionalCategory.md) | * _recommended_ <br/> [ProductCategory](ProductCategory.md) | Any category apart from its main category in which this product or service ca... | [ProductOrService](ProductOrService.md) |
 | [unitCost](unitCost.md) | 1 _recommended_ <br/> [String](String.md) | The cost per access for one unit as defined by the unit definition | [ProductOrService](ProductOrService.md) |
 | [qualityGrading](qualityGrading.md) | 0..1 <br/> [String](String.md) | Information that permits to assess the quality level of what will be provided | [ProductOrService](ProductOrService.md) |
 | [pathogenIdentification](pathogenIdentification.md) | 1..* <br/> [PathogenIdentification](PathogenIdentification.md) | The identification of the pathogen or group of pathogens (e | [ProductOrService](ProductOrService.md) |
-| [relatedDOI](relatedDOI.md) | * <br/> [DOI](DOI.md) | Any Digital Object Identifier that can be related | [ProductOrService](ProductOrService.md) |
+| [doi](doi.md) | * <br/> [Doi](Doi.md) | A Digital Object Identifier (DOI) that can be related | [ProductOrService](ProductOrService.md) |
 | [riskGroup](riskGroup.md) | 0..1 _recommended_ <br/> [RiskGroup](RiskGroup.md) | The highest risk group related to this resource | [ProductOrService](ProductOrService.md) |
 | [biosafetyRestrictions](biosafetyRestrictions.md) | 0..1 <br/> [String](String.md) | Information about guidelines and regulations designed to prevent the exposure... | [ProductOrService](ProductOrService.md) |
-| [canItBeUsedToProduceGMO](canItBeUsedToProduceGMO.md) | 1 _recommended_ <br/> [Boolean](Boolean.md) | Indicates if the current service or product can be used to produce GMO | [ProductOrService](ProductOrService.md) |
+| [canBeUsedToProduceGmo](canBeUsedToProduceGmo.md) | 1 _recommended_ <br/> [Boolean](Boolean.md) | Indicates if the current service or product can be used to produce GMO | [ProductOrService](ProductOrService.md) |
 | [provider](provider.md) | 1 <br/> [Provider](Provider.md) | A provider of this product or service, as a specific organization | [ProductOrService](ProductOrService.md) |
 | [collection](collection.md) | 1..* <br/> [Collection](Collection.md) | The collection(s) to which belongs this item | [ProductOrService](ProductOrService.md) |
 | [keywords](keywords.md) | 1..* _recommended_ <br/> [Keyword](Keyword.md) | List of terms used to tag and categorize this Item | [ProductOrService](ProductOrService.md) |
@@ -282,6 +284,7 @@ URI: [EVORAO:Antibody](https://w3id.org/evorao/Antibody)
 | [contactPoint](contactPoint.md) | 0..1 _recommended_ <br/> [ContactPoint](ContactPoint.md) | An information that allows someone to establish communication | [ProductOrService](ProductOrService.md) |
 | [title](title.md) | 1 <br/> [String](String.md) | A name given to the resource | [Dataset](Dataset.md) |
 | [description](description.md) | 1 _recommended_ <br/> [String](String.md) | A short explanation of the characteristics, features, or nature of the curren... | [Dataset](Dataset.md) |
+| [version](version.md) | 0..1 _recommended_ <br/> [String](String.md) | The version indicator (name or identifier) of a resource | [Dataset](Dataset.md) |
 
 
 
@@ -541,18 +544,18 @@ attributes:
     required: false
     recommended: true
     multivalued: true
-  hasIATAClassification:
-    name: hasIATAClassification
+  iataClassification:
+    name: iataClassification
     description: The corresponding International Air Transport Association (IATA)'s
       category for this Product
     title: IATA classification
     from_schema: https://w3id.org/evorao/
     rank: 1000
-    alias: hasIATAClassification
+    alias: iataClassification
     owner: Antibody
     domain_of:
     - Product
-    range: IATAClassification
+    range: IataClassification
     required: true
     multivalued: false
   shippingConditions:
@@ -586,7 +589,7 @@ attributes:
     owner: Antibody
     domain_of:
     - Product
-    range: MSDS
+    range: ReasearchInfrastructure
     required: false
     multivalued: false
   originator:
@@ -653,8 +656,8 @@ attributes:
     range: string
     required: false
     multivalued: false
-  accessPointURL:
-    name: accessPointURL
+  accessPointUrl:
+    name: accessPointUrl
     description: The URL that permits to access to the product/service detailed description
       page on the provider's website and/or allows to place an order about it or at
       least describe the process to place an order/enquiry
@@ -663,23 +666,23 @@ attributes:
     exact_mappings:
     - dcat:landingPage
     rank: 1000
-    alias: accessPointURL
+    alias: accessPointUrl
     owner: Antibody
     domain_of:
     - ProductOrService
     range: uri
     required: true
     multivalued: false
-  refSKU:
-    name: refSKU
+  refSku:
+    name: refSku
     description: The reference or the stock keeping unit of the service or item provided
       in the provider's catalogue
-    title: ref-SKU
+    title: ref SKU
     from_schema: https://w3id.org/evorao/
     exact_mappings:
     - dct:identifier
     rank: 1000
-    alias: refSKU
+    alias: refSku
     owner: Antibody
     domain_of:
     - ProductOrService
@@ -788,20 +791,20 @@ attributes:
     range: PathogenIdentification
     required: true
     multivalued: true
-  relatedDOI:
-    name: relatedDOI
-    description: Any Digital Object Identifier that can be related
+  doi:
+    name: doi
+    description: A Digital Object Identifier (DOI) that can be related
     title: DOI
     from_schema: https://w3id.org/evorao/
     close_mappings:
     - wdp:P356
     rank: 1000
-    alias: relatedDOI
+    alias: doi
     owner: Antibody
     domain_of:
     - ProductOrService
     - Publication
-    range: DOI
+    range: Doi
     required: false
     multivalued: true
   riskGroup:
@@ -838,17 +841,17 @@ attributes:
     range: string
     required: false
     multivalued: false
-  canItBeUsedToProduceGMO:
-    name: canItBeUsedToProduceGMO
+  canBeUsedToProduceGmo:
+    name: canBeUsedToProduceGmo
     description: Indicates if the current service or product can be used to produce
       GMO
-    title: can it be used to produce GMO
+    title: can be used to produce GMO
     comments:
     - Set to TRUE if it can produce GMO. It is recommended to have a value for this
       field, no value will be understood as unknown
     from_schema: https://w3id.org/evorao/
     rank: 1000
-    alias: canItBeUsedToProduceGMO
+    alias: canBeUsedToProduceGmo
     owner: Antibody
     domain_of:
     - ProductOrService
@@ -1089,6 +1092,25 @@ attributes:
     - Certification
     range: string
     required: true
+    recommended: true
+    multivalued: false
+  version:
+    name: version
+    description: The version indicator (name or identifier) of a resource
+    title: version
+    from_schema: https://w3id.org/evorao/
+    close_mappings:
+    - wdp:P393
+    - schema:version
+    rank: 1000
+    alias: version
+    owner: Antibody
+    domain_of:
+    - Dataset
+    - Version
+    - Taxonomy
+    range: string
+    required: false
     recommended: true
     multivalued: false
 

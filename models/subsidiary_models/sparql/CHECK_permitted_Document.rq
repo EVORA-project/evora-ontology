@@ -27,7 +27,7 @@ SELECT ?g ?s ?p WHERE {
   FILTER ( ?p NOT IN (
    foaf:name,
    dct:description,
-   EVORAO:contentURL,
+   EVORAO:contentUrl,
    EVORAO:format,
    EVORAO:license,
    rdf:type ))

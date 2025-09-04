@@ -22,7 +22,7 @@ Alias: modelType
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [Service](Service.md) | A service |  yes  |
+| [Service](Service.md) | An intangible offering characterized by an activity, performance, or facilita... |  yes  |
 
 
 

@@ -1,6 +1,6 @@
 
 
-# Class: Alternate Name (AlternateName) 
+# Class: Alternate name (AlternateName) 
 
 
 _List of other names for things_
@@ -87,7 +87,7 @@ URI: [EVORAO:AlternateName](https://w3id.org/evorao/AlternateName)
 | [AlternateName](AlternateName.md) | [alternateName](alternateName.md) | range | [AlternateName](AlternateName.md) |
 | [Variant](Variant.md) | [alternateName](alternateName.md) | range | [AlternateName](AlternateName.md) |
 | [Organization](Organization.md) | [alternateName](alternateName.md) | range | [AlternateName](AlternateName.md) |
-| [RI](RI.md) | [alternateName](alternateName.md) | range | [AlternateName](AlternateName.md) |
+| [ReasearchInfrastructure](ReasearchInfrastructure.md) | [alternateName](alternateName.md) | range | [AlternateName](AlternateName.md) |
 | [Provider](Provider.md) | [alternateName](alternateName.md) | range | [AlternateName](AlternateName.md) |
 
 
@@ -135,7 +135,7 @@ URI: [EVORAO:AlternateName](https://w3id.org/evorao/AlternateName)
 ```yaml
 name: AlternateName
 description: List of other names for things
-title: Alternate Name
+title: Alternate name
 from_schema: https://w3id.org/evorao/
 close_mappings:
 - wd:Q7662595
@@ -186,7 +186,7 @@ slot_usage:
 ```yaml
 name: AlternateName
 description: List of other names for things
-title: Alternate Name
+title: Alternate name
 from_schema: https://w3id.org/evorao/
 close_mappings:
 - wd:Q7662595

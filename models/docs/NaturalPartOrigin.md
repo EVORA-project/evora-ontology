@@ -38,16 +38,16 @@ URI: [EVORAO:NaturalPartOrigin](https://w3id.org/evorao/NaturalPartOrigin)
     click Country href "../Country"
 
         
-      NaturalPartOrigin : indigenousPoepleAndLocalCommunityOrigin
+      NaturalPartOrigin : indigenousPeopleAndLocalCommunityOrigin
         
           
     
     
-    NaturalPartOrigin --> "0..1" IPLCOrigin : indigenousPoepleAndLocalCommunityOrigin
-    click IPLCOrigin href "../IPLCOrigin"
+    NaturalPartOrigin --> "0..1" IplcOrigin : indigenousPeopleAndLocalCommunityOrigin
+    click IplcOrigin href "../IplcOrigin"
 
         
-      NaturalPartOrigin : permitIdentifierForABS
+      NaturalPartOrigin : permitIdentifierForAbs
         
       NaturalPartOrigin : recombinantPartIdentification
         
@@ -77,10 +77,10 @@ URI: [EVORAO:NaturalPartOrigin](https://w3id.org/evorao/NaturalPartOrigin)
 | Name | Cardinality and Range | Description | Inheritance |
 | ---  | --- | --- | --- |
 | [countryOfCollection](countryOfCollection.md) | 1 <br/> [Country](Country.md) | The geographical location where the sample was collected in situ | direct |
-| [indigenousPoepleAndLocalCommunityOrigin](indigenousPoepleAndLocalCommunityOrigin.md) | 0..1 <br/> [IPLCOrigin](IPLCOrigin.md) | The specific IPLC area (Indigenous People and Local Communities) from which t... | direct |
+| [indigenousPeopleAndLocalCommunityOrigin](indigenousPeopleAndLocalCommunityOrigin.md) | 0..1 <br/> [IplcOrigin](IplcOrigin.md) | The specific IPLC area (Indigenous People and Local Communities) from which t... | direct |
 | [collectionDate](collectionDate.md) | 1 <br/> [Datetime](Datetime.md) | The date when the sample was collected in situ | direct |
 | [beforeDate](beforeDate.md) | 1 <br/> [Boolean](Boolean.md) | Set to TRUE if a proxy date for the collection date is used | direct |
-| [permitIdentifierForABS](permitIdentifierForABS.md) | 0..1 <br/> [String](String.md) | Reference of the permit identifiers for access to the genetic resource, appli... | direct |
+| [permitIdentifierForAbs](permitIdentifierForAbs.md) | 0..1 <br/> [String](String.md) | Reference of the permit identifiers for access to the genetic resource, appli... | direct |
 | [recombinantPartIdentification](recombinantPartIdentification.md) | 0..1 <br/> [RecombinantPartIdentification](RecombinantPartIdentification.md) | Identification of a recombinant part | [BiologicalPartOrigin](BiologicalPartOrigin.md) |
 | [accessToPhysicalGeneticResource](accessToPhysicalGeneticResource.md) | 1 <br/> [Boolean](Boolean.md) | Indicate if the biological part was produced with access to a physical geneti... | [BiologicalPartOrigin](BiologicalPartOrigin.md) |
 
@@ -137,10 +137,10 @@ from_schema: https://w3id.org/evorao/
 is_a: BiologicalPartOrigin
 slots:
 - countryOfCollection
-- indigenousPoepleAndLocalCommunityOrigin
+- indigenousPeopleAndLocalCommunityOrigin
 - collectionDate
 - beforeDate
-- permitIdentifierForABS
+- permitIdentifierForAbs
 slot_usage:
   countryOfCollection:
     name: countryOfCollection
@@ -155,14 +155,14 @@ slot_usage:
     range: Country
     required: true
     multivalued: false
-  indigenousPoepleAndLocalCommunityOrigin:
-    name: indigenousPoepleAndLocalCommunityOrigin
+  indigenousPeopleAndLocalCommunityOrigin:
+    name: indigenousPeopleAndLocalCommunityOrigin
     description: The specific IPLC area (Indigenous People and Local Communities)
       from which this sample/element was sampled, if relevant
     title: indigenous people and local community origin
     domain_of:
     - NaturalPartOrigin
-    range: IPLCOrigin
+    range: IplcOrigin
     required: false
     multivalued: false
   collectionDate:
@@ -186,8 +186,8 @@ slot_usage:
     range: boolean
     required: true
     multivalued: false
-  permitIdentifierForABS:
-    name: permitIdentifierForABS
+  permitIdentifierForAbs:
+    name: permitIdentifierForAbs
     description: Reference of the permit identifiers for access to the genetic resource,
       applicable if the genetic resource falls under Access and Benefit-Sharing (ABS)
       regulations
@@ -224,14 +224,14 @@ slot_usage:
     range: Country
     required: true
     multivalued: false
-  indigenousPoepleAndLocalCommunityOrigin:
-    name: indigenousPoepleAndLocalCommunityOrigin
+  indigenousPeopleAndLocalCommunityOrigin:
+    name: indigenousPeopleAndLocalCommunityOrigin
     description: The specific IPLC area (Indigenous People and Local Communities)
       from which this sample/element was sampled, if relevant
     title: indigenous people and local community origin
     domain_of:
     - NaturalPartOrigin
-    range: IPLCOrigin
+    range: IplcOrigin
     required: false
     multivalued: false
   collectionDate:
@@ -255,8 +255,8 @@ slot_usage:
     range: boolean
     required: true
     multivalued: false
-  permitIdentifierForABS:
-    name: permitIdentifierForABS
+  permitIdentifierForAbs:
+    name: permitIdentifierForAbs
     description: Reference of the permit identifiers for access to the genetic resource,
       applicable if the genetic resource falls under Access and Benefit-Sharing (ABS)
       regulations
@@ -283,18 +283,18 @@ attributes:
     range: Country
     required: true
     multivalued: false
-  indigenousPoepleAndLocalCommunityOrigin:
-    name: indigenousPoepleAndLocalCommunityOrigin
+  indigenousPeopleAndLocalCommunityOrigin:
+    name: indigenousPeopleAndLocalCommunityOrigin
     description: The specific IPLC area (Indigenous People and Local Communities)
       from which this sample/element was sampled, if relevant
     title: indigenous people and local community origin
     from_schema: https://w3id.org/evorao/
     rank: 1000
-    alias: indigenousPoepleAndLocalCommunityOrigin
+    alias: indigenousPeopleAndLocalCommunityOrigin
     owner: NaturalPartOrigin
     domain_of:
     - NaturalPartOrigin
-    range: IPLCOrigin
+    range: IplcOrigin
     required: false
     multivalued: false
   collectionDate:
@@ -326,15 +326,15 @@ attributes:
     range: boolean
     required: true
     multivalued: false
-  permitIdentifierForABS:
-    name: permitIdentifierForABS
+  permitIdentifierForAbs:
+    name: permitIdentifierForAbs
     description: Reference of the permit identifiers for access to the genetic resource,
       applicable if the genetic resource falls under Access and Benefit-Sharing (ABS)
       regulations
     title: permit identifier for ABS
     from_schema: https://w3id.org/evorao/
     rank: 1000
-    alias: permitIdentifierForABS
+    alias: permitIdentifierForAbs
     owner: NaturalPartOrigin
     domain_of:
     - NaturalPartOrigin

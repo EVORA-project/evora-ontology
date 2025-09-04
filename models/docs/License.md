@@ -36,7 +36,7 @@ URI: [EVORAO:License](https://w3id.org/evorao/License)
     click Image href "../Image"
 
         
-      License : resourceURL
+      License : resourceUrl
         
       License : title
         
@@ -59,7 +59,7 @@ URI: [EVORAO:License](https://w3id.org/evorao/License)
 | ---  | --- | --- | --- |
 | [title](title.md) | 1 <br/> [String](String.md) | A name given to the resource | direct |
 | [description](description.md) | 0..1 _recommended_ <br/> [String](String.md) | A short explanation of the characteristics, features, or nature of the curren... | direct |
-| [resourceURL](resourceURL.md) | 0..1 <br/> [Uri](Uri.md) | The web address or location where the details or content is stored and can be... | direct |
+| [resourceUrl](resourceUrl.md) | 0..1 <br/> [Uri](Uri.md) | The web address or location where the details or content is stored and can be... | direct |
 | [licensingOrAttribution](licensingOrAttribution.md) | 0..1 <br/> [String](String.md) | A text or html code that provides any related data sharing licence and/or att... | direct |
 | [logo](logo.md) | 0..1 <br/> [Image](Image.md) | A path or URL to the related logo | direct |
 
@@ -140,7 +140,7 @@ is_a: Resource
 slots:
 - title
 - description
-- resourceURL
+- resourceUrl
 - licensingOrAttribution
 - logo
 slot_usage:
@@ -194,8 +194,8 @@ slot_usage:
     required: false
     recommended: true
     multivalued: false
-  resourceURL:
-    name: resourceURL
+  resourceUrl:
+    name: resourceUrl
     description: The web address or location where the details or content is stored
       and can be accessed or downloaded.
     title: resource URL
@@ -307,8 +307,8 @@ slot_usage:
     required: false
     recommended: true
     multivalued: false
-  resourceURL:
-    name: resourceURL
+  resourceUrl:
+    name: resourceUrl
     description: The web address or location where the details or content is stored
       and can be accessed or downloaded.
     title: resource URL
@@ -409,8 +409,8 @@ attributes:
     required: false
     recommended: true
     multivalued: false
-  resourceURL:
-    name: resourceURL
+  resourceUrl:
+    name: resourceUrl
     description: The web address or location where the details or content is stored
       and can be accessed or downloaded.
     title: resource URL
@@ -420,7 +420,7 @@ attributes:
     close_mappings:
     - schema:url
     rank: 1000
-    alias: resourceURL
+    alias: resourceUrl
     owner: License
     domain_of:
     - License

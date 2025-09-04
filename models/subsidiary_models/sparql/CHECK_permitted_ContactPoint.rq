@@ -34,7 +34,7 @@ SELECT ?g ?s ?p WHERE {
    EVORAO:addressRegion,
    EVORAO:postalCode,
    EVORAO:addressCountry,
-   EVORAO:oRCIDiD,
+   EVORAO:orcidId,
    rdf:type ))
  }
  

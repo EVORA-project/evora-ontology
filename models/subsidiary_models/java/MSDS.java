@@ -5,17 +5,15 @@ import lombok.*;
 
 
 
-/* version: 1.0.8773 */
+/* version: 1.0.8940 */
 
 
-/**
-  A Material Safety Data Sheet (MSDS) or Safety Data Sheet (SDS) is a standardized document that contains crucial occupational safety and health information related to the product
-**/
+
 @Data
 @EqualsAndHashCode(callSuper=false)
-public class MSDS extends Resource {
+public class MSDS  {
 
-  private ContactPoint msdsContact;
+  private ContactPoint materialSafetyContact;
   private String physicalChemicalProperties;
   private String hazardsIdentification;
   private String firstAidMeasures;

@@ -73,7 +73,7 @@ URI: [EVORAO:Country](https://w3id.org/evorao/Country)
 | used by | used in | type | used |
 | ---  | --- | --- | --- |
 | [Organization](Organization.md) | [country](country.md) | range | [Country](Country.md) |
-| [RI](RI.md) | [country](country.md) | range | [Country](Country.md) |
+| [ReasearchInfrastructure](ReasearchInfrastructure.md) | [country](country.md) | range | [Country](Country.md) |
 | [Provider](Provider.md) | [country](country.md) | range | [Country](Country.md) |
 | [NaturalPartOrigin](NaturalPartOrigin.md) | [countryOfCollection](countryOfCollection.md) | range | [Country](Country.md) |
 | [ContactPoint](ContactPoint.md) | [addressCountry](addressCountry.md) | range | [Country](Country.md) |
@@ -109,6 +109,7 @@ URI: [EVORAO:Country](https://w3id.org/evorao/Country)
 | ---  | ---  |
 | self | EVORAO:Country |
 | native | EVORAO:Country |
+| exact | schema:Country, schema:Country |
 | close | wd:Q6256, wd:Q6256 |
 
 
@@ -131,6 +132,9 @@ title: Country
 comments:
 - Use of Data provider recommended... serve as a local cache for ISO3166
 from_schema: https://w3id.org/evorao/
+exact_mappings:
+- schema:Country
+- schema:Country
 close_mappings:
 - wd:Q6256
 - wd:Q6256
@@ -141,7 +145,7 @@ slot_usage:
   alpha2Code:
     name: alpha2Code
     description: Two-letter country codes from ISO 3166-1 alpha-2
-    title: alpha-2 code
+    title: alpha 2 code
     domain_of:
     - Country
     range: string
@@ -161,6 +165,9 @@ title: Country
 comments:
 - Use of Data provider recommended... serve as a local cache for ISO3166
 from_schema: https://w3id.org/evorao/
+exact_mappings:
+- schema:Country
+- schema:Country
 close_mappings:
 - wd:Q6256
 - wd:Q6256
@@ -169,7 +176,7 @@ slot_usage:
   alpha2Code:
     name: alpha2Code
     description: Two-letter country codes from ISO 3166-1 alpha-2
-    title: alpha-2 code
+    title: alpha 2 code
     domain_of:
     - Country
     range: string
@@ -179,7 +186,7 @@ attributes:
   alpha2Code:
     name: alpha2Code
     description: Two-letter country codes from ISO 3166-1 alpha-2
-    title: alpha-2 code
+    title: alpha 2 code
     from_schema: https://w3id.org/evorao/
     rank: 1000
     alias: alpha2Code

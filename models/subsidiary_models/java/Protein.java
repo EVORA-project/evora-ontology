@@ -5,7 +5,7 @@ import lombok.*;
 
 
 
-/* version: 1.0.8773 */
+/* version: 1.0.8940 */
 
 
 /**
@@ -17,17 +17,17 @@ public class Protein extends Product {
 
   private BiologicalMaterialOrigin biologicalMaterialOrigin;
   private List<Sequence> sequence;
-  private List<PDBReference> relatedPDB;
+  private List<PdbReference> relatedPdb;
   private List<SpecialFeature> specialFeature;
-  private List<ProteinTag> proteinTAG;
+  private List<ProteinTag> proteinTag;
   private List<String> domain;
   private List<String> expressedAs;
   private List<String> inclusionBodiesType;
   private List<String> expressionSystem;
   private List<String> functionalCharacterization;
-  private List<String> functionalTechnicalDescription;
+  private List<String> functionalAndTechnicalDescription;
   private List<String> proteinPurification;
-  private List<String> theTAGStatusOfTheSolubilizedProtein;
+  private List<String> tagStatusOfTheSolubilizedProtein;
   private List<String> typeOfFunctionalCharacterization;
 
 }

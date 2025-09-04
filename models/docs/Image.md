@@ -25,7 +25,7 @@ URI: [EVORAO:Image](https://w3id.org/evorao/Image)
       
       Image : altText
         
-      Image : contentURL
+      Image : contentUrl
         
       Image : description
         
@@ -63,7 +63,7 @@ URI: [EVORAO:Image](https://w3id.org/evorao/Image)
 | [altText](altText.md) | 0..1 _recommended_ <br/> [String](String.md) | An alternate text for the image, if the image cannot be displayed | direct |
 | [name](name.md) | 1 <br/> [String](String.md) | A word or set of words used to identify and refer to an entity | [File](File.md) |
 | [description](description.md) | 0..1 _recommended_ <br/> [String](String.md) | A short explanation of the characteristics, features, or nature of the curren... | [File](File.md) |
-| [contentURL](contentURL.md) | 1 <br/> [Uri](Uri.md) | The web address or location where the file content is stored and can be acces... | [File](File.md) |
+| [contentUrl](contentUrl.md) | 1 <br/> [Uri](Uri.md) | The web address or location where the file content is stored and can be acces... | [File](File.md) |
 | [format](format.md) | 1 <br/> [String](String.md) | The file type or format that indicates how the data within the file is struct... | [File](File.md) |
 | [license](license.md) | 0..1 <br/> [License](License.md) | Information about terms and conditions under which the subject can be used, s... | [File](File.md) |
 
@@ -78,7 +78,7 @@ URI: [EVORAO:Image](https://w3id.org/evorao/Image)
 | [PersonOrOrganization](PersonOrOrganization.md) | [logo](logo.md) | range | [Image](Image.md) |
 | [Person](Person.md) | [logo](logo.md) | range | [Image](Image.md) |
 | [Organization](Organization.md) | [logo](logo.md) | range | [Image](Image.md) |
-| [RI](RI.md) | [logo](logo.md) | range | [Image](Image.md) |
+| [ReasearchInfrastructure](ReasearchInfrastructure.md) | [logo](logo.md) | range | [Image](Image.md) |
 | [Provider](Provider.md) | [logo](logo.md) | range | [Image](Image.md) |
 | [Originator](Originator.md) | [logo](logo.md) | range | [Image](Image.md) |
 | [ProductOrService](ProductOrService.md) | [productPicture](productPicture.md) | range | [Image](Image.md) |
@@ -261,14 +261,14 @@ attributes:
     required: false
     recommended: true
     multivalued: false
-  contentURL:
-    name: contentURL
+  contentUrl:
+    name: contentUrl
     description: The web address or location where the file content is stored and
       can be accessed or downloaded.
     title: content URL
     from_schema: https://w3id.org/evorao/
     rank: 1000
-    alias: contentURL
+    alias: contentUrl
     owner: Image
     domain_of:
     - File

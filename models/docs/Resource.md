@@ -48,8 +48,8 @@ URI: [dcat:Resource](http://www.w3.org/ns/dcat#Resource)
         click BiologicalPartOrigin href "../BiologicalPartOrigin"
       Resource <|-- RecombinantPartIdentification
         click RecombinantPartIdentification href "../RecombinantPartIdentification"
-      Resource <|-- MSDS
-        click MSDS href "../MSDS"
+      Resource <|-- MaterialSafetyDataSheet
+        click MaterialSafetyDataSheet href "../MaterialSafetyDataSheet"
       Resource <|-- File
         click File href "../File"
       Resource <|-- ContactPoint
@@ -81,7 +81,7 @@ URI: [dcat:Resource](http://www.w3.org/ns/dcat#Resource)
     * [BiologicalMaterialOrigin](BiologicalMaterialOrigin.md)
     * [BiologicalPartOrigin](BiologicalPartOrigin.md)
     * [RecombinantPartIdentification](RecombinantPartIdentification.md)
-    * [MSDS](MSDS.md)
+    * [MaterialSafetyDataSheet](MaterialSafetyDataSheet.md)
     * [File](File.md)
     * [ContactPoint](ContactPoint.md)
     * [License](License.md)

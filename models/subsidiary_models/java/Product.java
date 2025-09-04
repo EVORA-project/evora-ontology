@@ -5,19 +5,19 @@ import lombok.*;
 
 
 
-/* version: 1.0.8773 */
+/* version: 1.0.8940 */
 
 
 /**
-  A product
+  A tangible, physical item made available by a provider for use, consumption, or ownership transfer
 **/
 @Data
 @EqualsAndHashCode(callSuper=false)
 public class Product extends ProductOrService {
 
-  private IATAClassification hasIATAClassification;
+  private IataClassification iataClassification;
   private String shippingConditions;
-  private MSDS materialSafetyDataSheet;
+  private ReasearchInfrastructure materialSafetyDataSheet;
   private Originator originator;
   private String storageConditions;
   private boolean thirdPartyDistributionConsent;

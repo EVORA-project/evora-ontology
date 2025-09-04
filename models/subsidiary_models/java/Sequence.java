@@ -5,7 +5,7 @@ import lombok.*;
 
 
 
-/* version: 1.0.8773 */
+/* version: 1.0.8940 */
 
 
 /**
@@ -16,6 +16,6 @@ import lombok.*;
 public class Sequence extends Resource {
 
   private List<SequenceReference> sequenceReference;
-  private String sequenceFASTA;
+  private String sequenceFasta;
 
 }

@@ -27,7 +27,7 @@ SELECT ?g ?s ?p WHERE {
   FILTER ( ?p NOT IN (
    EVORAO:license,
    EVORAO:loginRequestMethod,
-   EVORAO:loginURL,
+   EVORAO:loginUrl,
    EVORAO:loginTokenName,
    EVORAO:queryMethod,
    EVORAO:contentType,

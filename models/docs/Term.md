@@ -32,12 +32,12 @@ URI: [EVORAO:Term](https://w3id.org/evorao/Term)
         click AlternateName href "../AlternateName"
       Term <|-- RiskGroup
         click RiskGroup href "../RiskGroup"
-      Term <|-- DOI
-        click DOI href "../DOI"
+      Term <|-- Doi
+        click Doi href "../Doi"
       Term <|-- Journal
         click Journal href "../Journal"
-      Term <|-- PDBReference
-        click PDBReference href "../PDBReference"
+      Term <|-- PdbReference
+        click PdbReference href "../PdbReference"
       Term <|-- Keyword
         click Keyword href "../Keyword"
       Term <|-- ProteinTag
@@ -62,8 +62,8 @@ URI: [EVORAO:Term](https://w3id.org/evorao/Term)
         click GeographicalOrigin href "../GeographicalOrigin"
       Term <|-- Country
         click Country href "../Country"
-      Term <|-- IATAClassification
-        click IATAClassification href "../IATAClassification"
+      Term <|-- IataClassification
+        click IataClassification href "../IataClassification"
       Term <|-- TaxonomicRank
         click TaxonomicRank href "../TaxonomicRank"
       Term <|-- Taxon
@@ -98,9 +98,9 @@ URI: [EVORAO:Term](https://w3id.org/evorao/Term)
         * [CommonName](CommonName.md)
         * [AlternateName](AlternateName.md)
         * [RiskGroup](RiskGroup.md)
-        * [DOI](DOI.md)
+        * [Doi](Doi.md)
         * [Journal](Journal.md)
-        * [PDBReference](PDBReference.md)
+        * [PdbReference](PdbReference.md)
         * [Keyword](Keyword.md)
         * [ProteinTag](ProteinTag.md)
         * [SpecialFeature](SpecialFeature.md)
@@ -113,7 +113,7 @@ URI: [EVORAO:Term](https://w3id.org/evorao/Term)
         * [IsolationHost](IsolationHost.md)
         * [GeographicalOrigin](GeographicalOrigin.md)
         * [Country](Country.md)
-        * [IATAClassification](IATAClassification.md)
+        * [IataClassification](IataClassification.md)
         * [TaxonomicRank](TaxonomicRank.md)
         * [Taxon](Taxon.md)
 

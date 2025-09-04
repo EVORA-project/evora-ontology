@@ -1,7 +1,7 @@
  syntax="proto3";
  package
 // metamodel_version: 1.7.0
-// version: 1.0.8773
+// version: 1.0.8940
 // List of other names for things
 message AlternateName
  {
@@ -17,18 +17,19 @@ message Antibody
  {
   string title = 0
   string description = 0
-  uri accessPointURL = 0
-  string refSKU = 0
+  string version = 0
+  uri accessPointUrl = 0
+  string refSku = 0
   string unitDefinition = 0
   productCategory category = 0
  repeated  productCategory additionalCategory = 0
   string unitCost = 0
   string qualityGrading = 0
  repeated  pathogenIdentification pathogenIdentification = 0
- repeated  dOI relatedDOI = 0
+ repeated  doi doi = 0
   riskGroup riskGroup = 0
   string biosafetyRestrictions = 0
-  boolean canItBeUsedToProduceGMO = 0
+  boolean canBeUsedToProduceGmo = 0
   provider provider = 0
  repeated  collection collection = 0
  repeated  keyword keywords = 0
@@ -41,9 +42,9 @@ message Antibody
   string internalReference = 0
   string note = 0
   contactPoint contactPoint = 0
-  iATAClassification hasIATAClassification = 0
+  iataClassification iataClassification = 0
   string shippingConditions = 0
-  mSDS materialSafetyDataSheet = 0
+  reasearchInfrastructure materialSafetyDataSheet = 0
   originator originator = 0
   string storageConditions = 0
   boolean thirdPartyDistributionConsent = 0
@@ -59,7 +60,7 @@ message Audio
  {
   string name = 0
   string description = 0
-  uri contentURL = 0
+  uri contentUrl = 0
   string format = 0
   license license = 0
  }
@@ -68,18 +69,19 @@ message Bacterium
  {
   string title = 0
   string description = 0
-  uri accessPointURL = 0
-  string refSKU = 0
+  string version = 0
+  uri accessPointUrl = 0
+  string refSku = 0
   string unitDefinition = 0
   productCategory category = 0
  repeated  productCategory additionalCategory = 0
   string unitCost = 0
   string qualityGrading = 0
  repeated  pathogenIdentification pathogenIdentification = 0
- repeated  dOI relatedDOI = 0
+ repeated  doi doi = 0
   riskGroup riskGroup = 0
   string biosafetyRestrictions = 0
-  boolean canItBeUsedToProduceGMO = 0
+  boolean canBeUsedToProduceGmo = 0
   provider provider = 0
  repeated  collection collection = 0
  repeated  keyword keywords = 0
@@ -92,9 +94,9 @@ message Bacterium
   string internalReference = 0
   string note = 0
   contactPoint contactPoint = 0
-  iATAClassification hasIATAClassification = 0
+  iataClassification iataClassification = 0
   string shippingConditions = 0
-  mSDS materialSafetyDataSheet = 0
+  reasearchInfrastructure materialSafetyDataSheet = 0
   originator originator = 0
   string storageConditions = 0
   boolean thirdPartyDistributionConsent = 0
@@ -125,23 +127,24 @@ message BiologicalMaterialOrigin
   boolean biologicalSourceType = 0
  repeated  biologicalPartOrigin biologicalPartOrigin = 0
  }
-// A group of products
+// A grouping of products and/or services intentionally combined into a single offering, typically to provide added value, convenience, or specific experimental utility
 message Bundle
  {
   string title = 0
   string description = 0
-  uri accessPointURL = 0
-  string refSKU = 0
+  string version = 0
+  uri accessPointUrl = 0
+  string refSku = 0
   string unitDefinition = 0
   productCategory category = 0
  repeated  productCategory additionalCategory = 0
   string unitCost = 0
   string qualityGrading = 0
  repeated  pathogenIdentification pathogenIdentification = 0
- repeated  dOI relatedDOI = 0
+ repeated  doi doi = 0
   riskGroup riskGroup = 0
   string biosafetyRestrictions = 0
-  boolean canItBeUsedToProduceGMO = 0
+  boolean canBeUsedToProduceGmo = 0
   provider provider = 0
  repeated  collection collection = 0
  repeated  keyword keywords = 0
@@ -154,14 +157,14 @@ message Bundle
   string internalReference = 0
   string note = 0
   contactPoint contactPoint = 0
-  iATAClassification hasIATAClassification = 0
+  iataClassification iataClassification = 0
   string shippingConditions = 0
-  mSDS materialSafetyDataSheet = 0
+  reasearchInfrastructure materialSafetyDataSheet = 0
   originator originator = 0
   string storageConditions = 0
   boolean thirdPartyDistributionConsent = 0
   string usageRestrictions = 0
- repeated  product productsOfTheBundle = 0
+ repeated  product itemsOfTheBundle = 0
  }
 // Assurance given by an independent certification body that a product, service or system meets the requirements of a standard
 message Certification
@@ -170,13 +173,14 @@ message Certification
   string description = 0
   image logo = 0
  repeated  document certificationDocument = 0
-  uri resourceURL = 0
+  uri resourceUrl = 0
  }
 // Set of products and services with some common characteristics
 message Collection
  {
   string title = 0
   string description = 0
+  string version = 0
  repeated  productOrService collectionItem = 0
   dataProvider collectionDataProvider = 0
  }
@@ -202,7 +206,7 @@ message ContactPoint
   string addressRegion = 0
   string postalCode = 0
   country addressCountry = 0
-  string oRCIDiD = 0
+  string orcidId = 0
  }
 // The country as of ISO3166
 message Country
@@ -218,7 +222,7 @@ message Data
  {
   string name = 0
   string description = 0
-  uri contentURL = 0
+  uri contentUrl = 0
   string format = 0
   license license = 0
  }
@@ -227,10 +231,10 @@ message DataProvider
  {
   string title = 0
   string description = 0
-  uri endpointURL = 0
+  uri endpointUrl = 0
   license license = 0
   string loginRequestMethod = 0
-  uri loginURL = 0
+  uri loginUrl = 0
   string loginTokenName = 0
   string queryMethod = 0
   string contentType = 0
@@ -242,18 +246,19 @@ message DetectionKit
  {
   string title = 0
   string description = 0
-  uri accessPointURL = 0
-  string refSKU = 0
+  string version = 0
+  uri accessPointUrl = 0
+  string refSku = 0
   string unitDefinition = 0
   productCategory category = 0
  repeated  productCategory additionalCategory = 0
   string unitCost = 0
   string qualityGrading = 0
  repeated  pathogenIdentification pathogenIdentification = 0
- repeated  dOI relatedDOI = 0
+ repeated  doi doi = 0
   riskGroup riskGroup = 0
   string biosafetyRestrictions = 0
-  boolean canItBeUsedToProduceGMO = 0
+  boolean canBeUsedToProduceGmo = 0
   provider provider = 0
  repeated  collection collection = 0
  repeated  keyword keywords = 0
@@ -266,14 +271,14 @@ message DetectionKit
   string internalReference = 0
   string note = 0
   contactPoint contactPoint = 0
-  iATAClassification hasIATAClassification = 0
+  iataClassification iataClassification = 0
   string shippingConditions = 0
-  mSDS materialSafetyDataSheet = 0
+  reasearchInfrastructure materialSafetyDataSheet = 0
   originator originator = 0
   string storageConditions = 0
   boolean thirdPartyDistributionConsent = 0
   string usageRestrictions = 0
- repeated  file hasSOPFile = 0
+ repeated  file standardOperatingProcedureFile = 0
   boolean specificityDocumented = 0
   string specificity = 0
   string targetedRegion = 0
@@ -283,12 +288,12 @@ message Document
  {
   string name = 0
   string description = 0
-  uri contentURL = 0
+  uri contentUrl = 0
   string format = 0
   license license = 0
  }
 // A unique string identifier assigned to a digital object, providing a permanent link for reliable citation and access.  The Digital Object Identifier (DOI) is a persistent identifier that is an ISO standard
-message DOI
+message Doi
  {
   string title = 0
   string description = 0
@@ -316,18 +321,19 @@ message Fungus
  {
   string title = 0
   string description = 0
-  uri accessPointURL = 0
-  string refSKU = 0
+  string version = 0
+  uri accessPointUrl = 0
+  string refSku = 0
   string unitDefinition = 0
   productCategory category = 0
  repeated  productCategory additionalCategory = 0
   string unitCost = 0
   string qualityGrading = 0
  repeated  pathogenIdentification pathogenIdentification = 0
- repeated  dOI relatedDOI = 0
+ repeated  doi doi = 0
   riskGroup riskGroup = 0
   string biosafetyRestrictions = 0
-  boolean canItBeUsedToProduceGMO = 0
+  boolean canBeUsedToProduceGmo = 0
   provider provider = 0
  repeated  collection collection = 0
  repeated  keyword keywords = 0
@@ -340,9 +346,9 @@ message Fungus
   string internalReference = 0
   string note = 0
   contactPoint contactPoint = 0
-  iATAClassification hasIATAClassification = 0
+  iataClassification iataClassification = 0
   string shippingConditions = 0
-  mSDS materialSafetyDataSheet = 0
+  reasearchInfrastructure materialSafetyDataSheet = 0
   originator originator = 0
   string storageConditions = 0
   boolean thirdPartyDistributionConsent = 0
@@ -379,18 +385,19 @@ message Hybridoma
  {
   string title = 0
   string description = 0
-  uri accessPointURL = 0
-  string refSKU = 0
+  string version = 0
+  uri accessPointUrl = 0
+  string refSku = 0
   string unitDefinition = 0
   productCategory category = 0
  repeated  productCategory additionalCategory = 0
   string unitCost = 0
   string qualityGrading = 0
  repeated  pathogenIdentification pathogenIdentification = 0
- repeated  dOI relatedDOI = 0
+ repeated  doi doi = 0
   riskGroup riskGroup = 0
   string biosafetyRestrictions = 0
-  boolean canItBeUsedToProduceGMO = 0
+  boolean canBeUsedToProduceGmo = 0
   provider provider = 0
  repeated  collection collection = 0
  repeated  keyword keywords = 0
@@ -403,9 +410,9 @@ message Hybridoma
   string internalReference = 0
   string note = 0
   contactPoint contactPoint = 0
-  iATAClassification hasIATAClassification = 0
+  iataClassification iataClassification = 0
   string shippingConditions = 0
-  mSDS materialSafetyDataSheet = 0
+  reasearchInfrastructure materialSafetyDataSheet = 0
   originator originator = 0
   string storageConditions = 0
   boolean thirdPartyDistributionConsent = 0
@@ -418,7 +425,7 @@ message Hybridoma
   string hybridomaDescription = 0
  }
 // The corresponding International Air Transport Association (IATA)'s category for dangerous goods that are transported by air
-message IATAClassification
+message IataClassification
  {
   string title = 0
   string description = 0
@@ -430,13 +437,13 @@ message Image
  {
   string name = 0
   string description = 0
-  uri contentURL = 0
+  uri contentUrl = 0
   string format = 0
   license license = 0
   string altText = 0
  }
 // The IPLC area (Indigenous People and Local Communities) from which a physical item originates
-message IPLCOrigin
+message IplcOrigin
  {
   string title = 0
   string description = 0
@@ -472,14 +479,13 @@ message License
  {
   string title = 0
   string description = 0
-  uri resourceURL = 0
+  uri resourceUrl = 0
   string licensingOrAttribution = 0
   image logo = 0
  }
-// A Material Safety Data Sheet (MSDS) or Safety Data Sheet (SDS) is a standardized document that contains crucial occupational safety and health information related to the product
 message MSDS
  {
-  contactPoint msdsContact = 0
+  contactPoint materialSafetyContact = 0
   string physicalChemicalProperties = 0
   string hazardsIdentification = 0
   string firstAidMeasures = 0
@@ -501,28 +507,29 @@ message NaturalPartOrigin
   recombinantPartIdentification recombinantPartIdentification = 0
   boolean accessToPhysicalGeneticResource = 0
   country countryOfCollection = 0
-  iPLCOrigin indigenousPoepleAndLocalCommunityOrigin = 0
+  iplcOrigin indigenousPeopleAndLocalCommunityOrigin = 0
   datetime collectionDate = 0
   boolean beforeDate = 0
-  string permitIdentifierForABS = 0
+  string permitIdentifierForAbs = 0
  }
 // Nucleic acid related to a pathogen. It can be extracted or synthetic
 message NucleicAcid
  {
   string title = 0
   string description = 0
-  uri accessPointURL = 0
-  string refSKU = 0
+  string version = 0
+  uri accessPointUrl = 0
+  string refSku = 0
   string unitDefinition = 0
   productCategory category = 0
  repeated  productCategory additionalCategory = 0
   string unitCost = 0
   string qualityGrading = 0
  repeated  pathogenIdentification pathogenIdentification = 0
- repeated  dOI relatedDOI = 0
+ repeated  doi doi = 0
   riskGroup riskGroup = 0
   string biosafetyRestrictions = 0
-  boolean canItBeUsedToProduceGMO = 0
+  boolean canBeUsedToProduceGmo = 0
   provider provider = 0
  repeated  collection collection = 0
  repeated  keyword keywords = 0
@@ -535,20 +542,20 @@ message NucleicAcid
   string internalReference = 0
   string note = 0
   contactPoint contactPoint = 0
-  iATAClassification hasIATAClassification = 0
+  iataClassification iataClassification = 0
   string shippingConditions = 0
-  mSDS materialSafetyDataSheet = 0
+  reasearchInfrastructure materialSafetyDataSheet = 0
   originator originator = 0
   string storageConditions = 0
   boolean thirdPartyDistributionConsent = 0
   string usageRestrictions = 0
   biologicalMaterialOrigin biologicalMaterialOrigin = 0
- repeated  data hasGbFileOfTheConstruct = 0
+ repeated  data genBankFileOfTheConstruct = 0
  repeated  sequence sequence = 0
-  boolean isItAClonedNucleicAcid = 0
+  boolean clonedNucleicAcid = 0
   expressionVector clonedIntoPlasmid = 0
- repeated  plasmidSelection pasmidSelection = 0
-  proteinTag hasTAG = 0
+ repeated  plasmidSelection plasmidSelection = 0
+  proteinTag proteinTag = 0
   string regionEncompassedInThisProduct = 0
   boolean mutationObserved = 0
   string observedMutations = 0
@@ -567,7 +574,7 @@ message Organization
   image logo = 0
  repeated  alternateName alternateName = 0
   country country = 0
-  string rORiD = 0
+  string rorId = 0
  }
 // The individual or organization responsible for the original discovery, isolation, or creation of an item, providing information about the source or origin of the sample
 message Originator
@@ -593,7 +600,7 @@ message PathogenIdentification
   variant variant = 0
  }
 // Identifier for 3D structural data as per the PDB (Protein Data Bank) database
-message PDBReference
+message PdbReference
  {
   string title = 0
   string description = 0
@@ -608,7 +615,7 @@ message Person
   uri homePage = 0
   contactPoint contactPoint = 0
   image logo = 0
-  string oRCIDiD = 0
+  string orcidId = 0
  }
 // A person or an organization
 message PersonOrOrganization
@@ -632,18 +639,19 @@ message Prion
  {
   string title = 0
   string description = 0
-  uri accessPointURL = 0
-  string refSKU = 0
+  string version = 0
+  uri accessPointUrl = 0
+  string refSku = 0
   string unitDefinition = 0
   productCategory category = 0
  repeated  productCategory additionalCategory = 0
   string unitCost = 0
   string qualityGrading = 0
  repeated  pathogenIdentification pathogenIdentification = 0
- repeated  dOI relatedDOI = 0
+ repeated  doi doi = 0
   riskGroup riskGroup = 0
   string biosafetyRestrictions = 0
-  boolean canItBeUsedToProduceGMO = 0
+  boolean canBeUsedToProduceGmo = 0
   provider provider = 0
  repeated  collection collection = 0
  repeated  keyword keywords = 0
@@ -656,9 +664,9 @@ message Prion
   string internalReference = 0
   string note = 0
   contactPoint contactPoint = 0
-  iATAClassification hasIATAClassification = 0
+  iataClassification iataClassification = 0
   string shippingConditions = 0
-  mSDS materialSafetyDataSheet = 0
+  reasearchInfrastructure materialSafetyDataSheet = 0
   originator originator = 0
   string storageConditions = 0
   boolean thirdPartyDistributionConsent = 0
@@ -682,23 +690,24 @@ message Prion
   string genomeSequencing = 0
   string titer = 0
  }
-// A product
+// A tangible, physical item made available by a provider for use, consumption, or ownership transfer
 message Product
  {
   string title = 0
   string description = 0
-  uri accessPointURL = 0
-  string refSKU = 0
+  string version = 0
+  uri accessPointUrl = 0
+  string refSku = 0
   string unitDefinition = 0
   productCategory category = 0
  repeated  productCategory additionalCategory = 0
   string unitCost = 0
   string qualityGrading = 0
  repeated  pathogenIdentification pathogenIdentification = 0
- repeated  dOI relatedDOI = 0
+ repeated  doi doi = 0
   riskGroup riskGroup = 0
   string biosafetyRestrictions = 0
-  boolean canItBeUsedToProduceGMO = 0
+  boolean canBeUsedToProduceGmo = 0
   provider provider = 0
  repeated  collection collection = 0
  repeated  keyword keywords = 0
@@ -711,9 +720,9 @@ message Product
   string internalReference = 0
   string note = 0
   contactPoint contactPoint = 0
-  iATAClassification hasIATAClassification = 0
+  iataClassification iataClassification = 0
   string shippingConditions = 0
-  mSDS materialSafetyDataSheet = 0
+  reasearchInfrastructure materialSafetyDataSheet = 0
   originator originator = 0
   string storageConditions = 0
   boolean thirdPartyDistributionConsent = 0
@@ -749,18 +758,19 @@ message Protein
  {
   string title = 0
   string description = 0
-  uri accessPointURL = 0
-  string refSKU = 0
+  string version = 0
+  uri accessPointUrl = 0
+  string refSku = 0
   string unitDefinition = 0
   productCategory category = 0
  repeated  productCategory additionalCategory = 0
   string unitCost = 0
   string qualityGrading = 0
  repeated  pathogenIdentification pathogenIdentification = 0
- repeated  dOI relatedDOI = 0
+ repeated  doi doi = 0
   riskGroup riskGroup = 0
   string biosafetyRestrictions = 0
-  boolean canItBeUsedToProduceGMO = 0
+  boolean canBeUsedToProduceGmo = 0
   provider provider = 0
  repeated  collection collection = 0
  repeated  keyword keywords = 0
@@ -773,29 +783,29 @@ message Protein
   string internalReference = 0
   string note = 0
   contactPoint contactPoint = 0
-  iATAClassification hasIATAClassification = 0
+  iataClassification iataClassification = 0
   string shippingConditions = 0
-  mSDS materialSafetyDataSheet = 0
+  reasearchInfrastructure materialSafetyDataSheet = 0
   originator originator = 0
   string storageConditions = 0
   boolean thirdPartyDistributionConsent = 0
   string usageRestrictions = 0
   biologicalMaterialOrigin biologicalMaterialOrigin = 0
  repeated  sequence sequence = 0
- repeated  pDBReference relatedPDB = 0
+ repeated  pdbReference relatedPdb = 0
  repeated  specialFeature specialFeature = 0
- repeated  proteinTag proteinTAG = 0
+ repeated  proteinTag proteinTag = 0
  repeated  string domain = 0
  repeated  string expressedAs = 0
  repeated  string inclusionBodiesType = 0
  repeated  string expressionSystem = 0
  repeated  string functionalCharacterization = 0
- repeated  string functionalTechnicalDescription = 0
+ repeated  string functionalAndTechnicalDescription = 0
  repeated  string proteinPurification = 0
- repeated  string theTAGStatusOfTheSolubilizedProtein = 0
+ repeated  string tagStatusOfTheSolubilizedProtein = 0
  repeated  string typeOfFunctionalCharacterization = 0
  }
-// Peptide sequence genetically grafted onto a recombinant protein
+// A DNA coding sequence or corresponding peptide/protein sequence fused to a sequence of interest, used to facilitate experimental operations such as purification, detection, localization, tracking, solubility enhancement, or selection. Applicable to both proteins and nucleic acids
 message ProteinTag
  {
   string title = 0
@@ -808,18 +818,19 @@ message Protozoan
  {
   string title = 0
   string description = 0
-  uri accessPointURL = 0
-  string refSKU = 0
+  string version = 0
+  uri accessPointUrl = 0
+  string refSku = 0
   string unitDefinition = 0
   productCategory category = 0
  repeated  productCategory additionalCategory = 0
   string unitCost = 0
   string qualityGrading = 0
  repeated  pathogenIdentification pathogenIdentification = 0
- repeated  dOI relatedDOI = 0
+ repeated  doi doi = 0
   riskGroup riskGroup = 0
   string biosafetyRestrictions = 0
-  boolean canItBeUsedToProduceGMO = 0
+  boolean canBeUsedToProduceGmo = 0
   provider provider = 0
  repeated  collection collection = 0
  repeated  keyword keywords = 0
@@ -832,9 +843,9 @@ message Protozoan
   string internalReference = 0
   string note = 0
   contactPoint contactPoint = 0
-  iATAClassification hasIATAClassification = 0
+  iataClassification iataClassification = 0
   string shippingConditions = 0
-  mSDS materialSafetyDataSheet = 0
+  reasearchInfrastructure materialSafetyDataSheet = 0
   originator originator = 0
   string storageConditions = 0
   boolean thirdPartyDistributionConsent = 0
@@ -868,8 +879,8 @@ message Provider
   image logo = 0
  repeated  alternateName alternateName = 0
   country country = 0
-  string rORiD = 0
- repeated  rI memberOfRI = 0
+  string rorId = 0
+ repeated  reasearchInfrastructure memberOfRi = 0
  }
 // A scientific publication
 message Publication
@@ -877,17 +888,11 @@ message Publication
   string title = 0
   string authors = 0
   string abstract = 0
- repeated  dOI relatedDOI = 0
+ repeated  doi doi = 0
   journal journal = 0
  }
-// Identification of a recombinant part
-message RecombinantPartIdentification
- {
-  string partIdentification = 0
- repeated  sequence sequence = 0
- }
-// A research infrastructure
-message RI
+// A research infrastructure (RI)
+message ReasearchInfrastructure
  {
   string name = 0
   string description = 0
@@ -896,7 +901,13 @@ message RI
   image logo = 0
  repeated  alternateName alternateName = 0
   country country = 0
-  string rORiD = 0
+  string rorId = 0
+ }
+// Identification of a recombinant part
+message RecombinantPartIdentification
+ {
+  string partIdentification = 0
+ repeated  sequence sequence = 0
  }
 // Risk group classification guides initial handling of biological agents in labs but doesn't systematically equate to biosafety levels. Actual risk varies with the agent, procedures, and personnel competence
 message RiskGroup
@@ -910,7 +921,7 @@ message RiskGroup
 message Sequence
  {
  repeated  sequenceReference sequenceReference = 0
-  string sequenceFASTA = 0
+  string sequenceFasta = 0
  }
 // A reference that permits to retrieve the sequence information from a sequence provider
 message SequenceReference
@@ -918,23 +929,24 @@ message SequenceReference
   string accessionNumber = 0
   string sequenceProvider = 0
  }
-// A service
+// An intangible offering characterized by an activity, performance, or facilitation carried out by a provider to fulfill a user’s need
 message Service
  {
   string title = 0
   string description = 0
-  uri accessPointURL = 0
-  string refSKU = 0
+  string version = 0
+  uri accessPointUrl = 0
+  string refSku = 0
   string unitDefinition = 0
   productCategory category = 0
  repeated  productCategory additionalCategory = 0
   string unitCost = 0
   string qualityGrading = 0
  repeated  pathogenIdentification pathogenIdentification = 0
- repeated  dOI relatedDOI = 0
+ repeated  doi doi = 0
   riskGroup riskGroup = 0
   string biosafetyRestrictions = 0
-  boolean canItBeUsedToProduceGMO = 0
+  boolean canBeUsedToProduceGmo = 0
   provider provider = 0
  repeated  collection collection = 0
  repeated  keyword keywords = 0
@@ -978,8 +990,8 @@ message Taxon
   taxonomicRank rank = 0
  repeated  taxon previouslyKnownAs = 0
  repeated  taxon externalEquivalentTaxon = 0
-  string taxonomicID = 0
-  string taxonomicNodeID = 0
+  string taxonomicId = 0
+  string taxonomicNodeId = 0
  }
 // The possible taxonomic ranks and their description
 message TaxonomicRank
@@ -990,14 +1002,14 @@ message TaxonomicRank
   vocabulary inVocabulary = 0
  repeated  taxonomy taxonomy = 0
  }
-// Science of naming, defining and classifying organisms
+// A structured representation of data about the classification and naming of biological organisms into groups according to shared characteristics
 message Taxonomy
  {
   string title = 0
   string description = 0
  repeated  taxon taxon = 0
   dataProvider taxonDataProvider = 0
-  version version = 0
+  string version = 0
   dataProvider versionDataProvider = 0
  repeated  taxonomicRank rank = 0
   dataProvider rankDataProvider = 0
@@ -1023,7 +1035,7 @@ message Variant
 // Numeric code assigned to identify a particular historical version of a work (e.g. software or technical standards)
 message Version
  {
-  string iD = 0
+  string version = 0
   dataset versionOf = 0
  }
 // Subclass of File representing moving visual media, such as recordings, presentations, or movies
@@ -1031,7 +1043,7 @@ message Video
  {
   string name = 0
   string description = 0
-  uri contentURL = 0
+  uri contentUrl = 0
   string format = 0
   license license = 0
  }
@@ -1040,18 +1052,19 @@ message Viroid
  {
   string title = 0
   string description = 0
-  uri accessPointURL = 0
-  string refSKU = 0
+  string version = 0
+  uri accessPointUrl = 0
+  string refSku = 0
   string unitDefinition = 0
   productCategory category = 0
  repeated  productCategory additionalCategory = 0
   string unitCost = 0
   string qualityGrading = 0
  repeated  pathogenIdentification pathogenIdentification = 0
- repeated  dOI relatedDOI = 0
+ repeated  doi doi = 0
   riskGroup riskGroup = 0
   string biosafetyRestrictions = 0
-  boolean canItBeUsedToProduceGMO = 0
+  boolean canBeUsedToProduceGmo = 0
   provider provider = 0
  repeated  collection collection = 0
  repeated  keyword keywords = 0
@@ -1064,9 +1077,9 @@ message Viroid
   string internalReference = 0
   string note = 0
   contactPoint contactPoint = 0
-  iATAClassification hasIATAClassification = 0
+  iataClassification iataClassification = 0
   string shippingConditions = 0
-  mSDS materialSafetyDataSheet = 0
+  reasearchInfrastructure materialSafetyDataSheet = 0
   originator originator = 0
   string storageConditions = 0
   boolean thirdPartyDistributionConsent = 0
@@ -1095,18 +1108,19 @@ message Virus
  {
   string title = 0
   string description = 0
-  uri accessPointURL = 0
-  string refSKU = 0
+  string version = 0
+  uri accessPointUrl = 0
+  string refSku = 0
   string unitDefinition = 0
   productCategory category = 0
  repeated  productCategory additionalCategory = 0
   string unitCost = 0
   string qualityGrading = 0
  repeated  pathogenIdentification pathogenIdentification = 0
- repeated  dOI relatedDOI = 0
+ repeated  doi doi = 0
   riskGroup riskGroup = 0
   string biosafetyRestrictions = 0
-  boolean canItBeUsedToProduceGMO = 0
+  boolean canBeUsedToProduceGmo = 0
   provider provider = 0
  repeated  collection collection = 0
  repeated  keyword keywords = 0
@@ -1119,9 +1133,9 @@ message Virus
   string internalReference = 0
   string note = 0
   contactPoint contactPoint = 0
-  iATAClassification hasIATAClassification = 0
+  iataClassification iataClassification = 0
   string shippingConditions = 0
-  mSDS materialSafetyDataSheet = 0
+  reasearchInfrastructure materialSafetyDataSheet = 0
   originator originator = 0
   string storageConditions = 0
   boolean thirdPartyDistributionConsent = 0
@@ -1163,6 +1177,7 @@ message Vocabulary
  {
   string title = 0
   string description = 0
+  string version = 0
   dataProvider termDataProvider = 0
  repeated  term term = 0
  }

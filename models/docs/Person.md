@@ -47,7 +47,7 @@ URI: [foaf:Person](http://xmlns.com/foaf/0.1/Person)
         
       Person : name
         
-      Person : oRCIDiD
+      Person : orcidId
         
       
 ```
@@ -67,7 +67,7 @@ URI: [foaf:Person](http://xmlns.com/foaf/0.1/Person)
 
 | Name | Cardinality and Range | Description | Inheritance |
 | ---  | --- | --- | --- |
-| [oRCIDiD](oRCIDiD.md) | 0..1 _recommended_ <br/> [String](String.md) | Unique persistent identifier for a person, provided by the Open Researcher an... | direct |
+| [orcidId](orcidId.md) | 0..1 _recommended_ <br/> [String](String.md) | Unique persistent identifier for a person, provided by the Open Researcher an... | direct |
 | [name](name.md) | 1 <br/> [String](String.md) | A word or set of words used to identify and refer to an entity | [PersonOrOrganization](PersonOrOrganization.md) |
 | [description](description.md) | 0..1 _recommended_ <br/> [String](String.md) | A short explanation of the characteristics, features, or nature of the curren... | [PersonOrOrganization](PersonOrOrganization.md) |
 | [homePage](homePage.md) | 0..1 <br/> [Uri](Uri.md) | A web page that serves as the main or introductory page | [PersonOrOrganization](PersonOrOrganization.md) |
@@ -104,7 +104,7 @@ URI: [foaf:Person](http://xmlns.com/foaf/0.1/Person)
 | ---  | ---  |
 | self | foaf:Person |
 | native | EVORAO:Person |
-| close | wd:Q215627, vcard:Individual, wd:Q215627, vcard:Individual |
+| close | wd:Q215627, vcard:Individual, schema:Person, wd:Q215627, vcard:Individual, schema:Person |
 
 
 
@@ -127,17 +127,19 @@ from_schema: https://w3id.org/evorao/
 close_mappings:
 - wd:Q215627
 - vcard:Individual
+- schema:Person
 - wd:Q215627
 - vcard:Individual
+- schema:Person
 is_a: PersonOrOrganization
 slots:
-- oRCIDiD
+- orcidId
 slot_usage:
-  oRCIDiD:
-    name: oRCIDiD
+  orcidId:
+    name: orcidId
     description: Unique persistent identifier for a person, provided by the Open Researcher
       and Contributor ID (ORCID) organisation
-    title: ORCID iD
+    title: ORCID id
     exact_mappings:
     - wdp:P496
     domain_of:
@@ -163,15 +165,17 @@ from_schema: https://w3id.org/evorao/
 close_mappings:
 - wd:Q215627
 - vcard:Individual
+- schema:Person
 - wd:Q215627
 - vcard:Individual
+- schema:Person
 is_a: PersonOrOrganization
 slot_usage:
-  oRCIDiD:
-    name: oRCIDiD
+  orcidId:
+    name: orcidId
     description: Unique persistent identifier for a person, provided by the Open Researcher
       and Contributor ID (ORCID) organisation
-    title: ORCID iD
+    title: ORCID id
     exact_mappings:
     - wdp:P496
     domain_of:
@@ -182,16 +186,16 @@ slot_usage:
     recommended: true
     multivalued: false
 attributes:
-  oRCIDiD:
-    name: oRCIDiD
+  orcidId:
+    name: orcidId
     description: Unique persistent identifier for a person, provided by the Open Researcher
       and Contributor ID (ORCID) organisation
-    title: ORCID iD
+    title: ORCID id
     from_schema: https://w3id.org/evorao/
     exact_mappings:
     - wdp:P496
     rank: 1000
-    alias: oRCIDiD
+    alias: orcidId
     owner: Person
     domain_of:
     - Person

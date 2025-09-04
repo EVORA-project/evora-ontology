@@ -5,7 +5,7 @@ import lombok.*;
 
 
 
-/* version: 1.0.8773 */
+/* version: 1.0.8940 */
 
 
 /**
@@ -19,6 +19,6 @@ public class Certification extends Resource {
   private String description;
   private Image logo;
   private List<Document> certificationDocument;
-  private String resourceURL;
+  private String resourceUrl;
 
 }

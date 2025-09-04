@@ -5,11 +5,11 @@ import lombok.*;
 
 
 
-/* version: 1.0.8773 */
+/* version: 1.0.8940 */
 
 
 /**
-  Science of naming, defining and classifying organisms
+  A structured representation of data about the classification and naming of biological organisms into groups according to shared characteristics
 **/
 @Data
 @EqualsAndHashCode(callSuper=false)
@@ -17,7 +17,6 @@ public class Taxonomy extends Catalogue {
 
   private List<Taxon> taxon;
   private DataProvider taxonDataProvider;
-  private Version version;
   private DataProvider versionDataProvider;
   private List<TaxonomicRank> rank;
   private DataProvider rankDataProvider;

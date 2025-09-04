@@ -5,7 +5,7 @@ import lombok.*;
 
 
 
-/* version: 1.0.8773 */
+/* version: 1.0.8940 */
 
 
 /**
@@ -15,6 +15,6 @@ import lombok.*;
 @EqualsAndHashCode(callSuper=false)
 public class Provider extends Organization {
 
-  private List<RI> memberOfRI;
+  private List<ReasearchInfrastructure> memberOfRi;
 
 }

@@ -26,10 +26,10 @@ SELECT ?g ?s ?p WHERE {
      ?p ?o .
   FILTER ( ?p NOT IN (
    EVORAO:countryOfCollection,
-   EVORAO:indigenousPoepleAndLocalCommunityOrigin,
+   EVORAO:indigenousPeopleAndLocalCommunityOrigin,
    EVORAO:collectionDate,
    EVORAO:beforeDate,
-   EVORAO:permitIdentifierForABS,
+   EVORAO:permitIdentifierForAbs,
    EVORAO:recombinantPartIdentification,
    EVORAO:accessToPhysicalGeneticResource,
    rdf:type ))

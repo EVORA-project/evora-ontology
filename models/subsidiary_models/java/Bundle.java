@@ -5,16 +5,16 @@ import lombok.*;
 
 
 
-/* version: 1.0.8773 */
+/* version: 1.0.8940 */
 
 
 /**
-  A group of products
+  A grouping of products and/or services intentionally combined into a single offering, typically to provide added value, convenience, or specific experimental utility
 **/
 @Data
 @EqualsAndHashCode(callSuper=false)
 public class Bundle extends Product {
 
-  private List<Product> productsOfTheBundle;
+  private List<Product> itemsOfTheBundle;
 
 }

@@ -5,7 +5,7 @@ import lombok.*;
 
 
 
-/* version: 1.0.8773 */
+/* version: 1.0.8940 */
 
 
 /**
@@ -16,12 +16,12 @@ import lombok.*;
 public class NucleicAcid extends Product {
 
   private BiologicalMaterialOrigin biologicalMaterialOrigin;
-  private List<Data> hasGbFileOfTheConstruct;
+  private List<Data> genBankFileOfTheConstruct;
   private List<Sequence> sequence;
-  private boolean isItAClonedNucleicAcid;
+  private boolean clonedNucleicAcid;
   private ExpressionVector clonedIntoPlasmid;
-  private List<PlasmidSelection> pasmidSelection;
-  private ProteinTag hasTAG;
+  private List<PlasmidSelection> plasmidSelection;
+  private ProteinTag proteinTag;
   private String regionEncompassedInThisProduct;
   private boolean mutationObserved;
   private String observedMutations;

@@ -70,9 +70,9 @@ URI: [EVORAO:Taxon](https://w3id.org/evorao/Taxon)
     click TaxonomicRank href "../TaxonomicRank"
 
         
-      Taxon : taxonomicID
+      Taxon : taxonomicId
         
-      Taxon : taxonomicNodeID
+      Taxon : taxonomicNodeId
         
       Taxon : taxonomy
         
@@ -110,8 +110,8 @@ URI: [EVORAO:Taxon](https://w3id.org/evorao/Taxon)
 | [rank](rank.md) | 1 <br/> [TaxonomicRank](TaxonomicRank.md) | Relative level or position of the identified taxon in the taxonomy | direct |
 | [previouslyKnownAs](previouslyKnownAs.md) | * <br/> [Taxon](Taxon.md) | Any historic version of this taxon having a different name | direct |
 | [externalEquivalentTaxon](externalEquivalentTaxon.md) | * <br/> [Taxon](Taxon.md) | Any equivalent taxon in a different taxonomy if exists/known to serve as a br... | direct |
-| [taxonomicID](taxonomicID.md) | 1 <br/> [String](String.md) | The taxonomic identifier as a persistent identifier accross releases | direct |
-| [taxonomicNodeID](taxonomicNodeID.md) | 0..1 _recommended_ <br/> [String](String.md) | The taxonomic_Node Identifier as an identifier specific the current taxon in ... | direct |
+| [taxonomicId](taxonomicId.md) | 1 <br/> [String](String.md) | The taxonomic identifier as a persistent identifier accross releases | direct |
+| [taxonomicNodeId](taxonomicNodeId.md) | 0..1 _recommended_ <br/> [String](String.md) | The taxonomic_Node Identifier as an identifier specific the current taxon in ... | direct |
 | [title](title.md) | 1 <br/> [String](String.md) | A name given to the resource | [Term](Term.md) |
 | [description](description.md) | 0..1 _recommended_ <br/> [String](String.md) | A short explanation of the characteristics, features, or nature of the curren... | [Term](Term.md) |
 | [weight](weight.md) | 1 <br/> [Integer](Integer.md) | A numerical value indicating relative importance or priority, generally proce... | [Term](Term.md) |
@@ -162,7 +162,7 @@ URI: [EVORAO:Taxon](https://w3id.org/evorao/Taxon)
 | ---  | ---  |
 | self | EVORAO:Taxon |
 | native | EVORAO:Taxon |
-| exact | dwc:Taxon, dwc:Taxon |
+| exact | dwc:Taxon, schema:Taxon, dwc:Taxon, schema:Taxon |
 | close | wd:Q16521, wd:Q16521 |
 
 
@@ -189,7 +189,9 @@ comments:
 from_schema: https://w3id.org/evorao/
 exact_mappings:
 - dwc:Taxon
+- schema:Taxon
 - dwc:Taxon
+- schema:Taxon
 close_mappings:
 - wd:Q16521
 - wd:Q16521
@@ -200,8 +202,8 @@ slots:
 - rank
 - previouslyKnownAs
 - externalEquivalentTaxon
-- taxonomicID
-- taxonomicNodeID
+- taxonomicId
+- taxonomicNodeId
 slot_usage:
   taxonomy:
     name: taxonomy
@@ -218,7 +220,9 @@ slot_usage:
     name: parentTaxon
     description: The parent taxon of the current taxon
     title: parent taxon
-    close_mappings:
+    exact_mappings:
+    - schema:parentTaxon
+    broad_mappings:
     - dwc:Taxon
     domain_of:
     - Taxon
@@ -231,6 +235,7 @@ slot_usage:
     title: rank
     exact_mappings:
     - dwc:taxonRank
+    - schema:taxonRank
     domain_of:
     - Taxon
     - Taxonomy
@@ -241,7 +246,7 @@ slot_usage:
     name: previouslyKnownAs
     description: Any historic version of this taxon having a different name
     title: previously known as
-    close_mappings:
+    broad_mappings:
     - dwc:Taxon
     domain_of:
     - Taxon
@@ -263,19 +268,21 @@ slot_usage:
     range: Taxon
     required: false
     multivalued: true
-  taxonomicID:
-    name: taxonomicID
+  taxonomicId:
+    name: taxonomicId
     description: The taxonomic identifier as a persistent identifier accross releases
     title: taxonomic ID
-    close_mappings:
+    exact_mappings:
     - dwc:taxonID
+    broad_mappings:
+    - schema:identifier
     domain_of:
     - Taxon
     range: string
     required: true
     multivalued: false
-  taxonomicNodeID:
-    name: taxonomicNodeID
+  taxonomicNodeId:
+    name: taxonomicNodeId
     description: The taxonomic_Node Identifier as an identifier specific the current
       taxon in the corresponding release/version of the taxonomy
     title: taxonomic node ID
@@ -309,7 +316,9 @@ comments:
 from_schema: https://w3id.org/evorao/
 exact_mappings:
 - dwc:Taxon
+- schema:Taxon
 - dwc:Taxon
+- schema:Taxon
 close_mappings:
 - wd:Q16521
 - wd:Q16521
@@ -330,7 +339,9 @@ slot_usage:
     name: parentTaxon
     description: The parent taxon of the current taxon
     title: parent taxon
-    close_mappings:
+    exact_mappings:
+    - schema:parentTaxon
+    broad_mappings:
     - dwc:Taxon
     domain_of:
     - Taxon
@@ -343,6 +354,7 @@ slot_usage:
     title: rank
     exact_mappings:
     - dwc:taxonRank
+    - schema:taxonRank
     domain_of:
     - Taxon
     - Taxonomy
@@ -353,7 +365,7 @@ slot_usage:
     name: previouslyKnownAs
     description: Any historic version of this taxon having a different name
     title: previously known as
-    close_mappings:
+    broad_mappings:
     - dwc:Taxon
     domain_of:
     - Taxon
@@ -375,19 +387,21 @@ slot_usage:
     range: Taxon
     required: false
     multivalued: true
-  taxonomicID:
-    name: taxonomicID
+  taxonomicId:
+    name: taxonomicId
     description: The taxonomic identifier as a persistent identifier accross releases
     title: taxonomic ID
-    close_mappings:
+    exact_mappings:
     - dwc:taxonID
+    broad_mappings:
+    - schema:identifier
     domain_of:
     - Taxon
     range: string
     required: true
     multivalued: false
-  taxonomicNodeID:
-    name: taxonomicNodeID
+  taxonomicNodeId:
+    name: taxonomicNodeId
     description: The taxonomic_Node Identifier as an identifier specific the current
       taxon in the corresponding release/version of the taxonomy
     title: taxonomic node ID
@@ -424,7 +438,9 @@ attributes:
     description: The parent taxon of the current taxon
     title: parent taxon
     from_schema: https://w3id.org/evorao/
-    close_mappings:
+    exact_mappings:
+    - schema:parentTaxon
+    broad_mappings:
     - dwc:Taxon
     rank: 1000
     alias: parentTaxon
@@ -441,6 +457,7 @@ attributes:
     from_schema: https://w3id.org/evorao/
     exact_mappings:
     - dwc:taxonRank
+    - schema:taxonRank
     rank: 1000
     alias: rank
     owner: Taxon
@@ -455,7 +472,7 @@ attributes:
     description: Any historic version of this taxon having a different name
     title: previously known as
     from_schema: https://w3id.org/evorao/
-    close_mappings:
+    broad_mappings:
     - dwc:Taxon
     rank: 1000
     alias: previouslyKnownAs
@@ -484,23 +501,25 @@ attributes:
     range: Taxon
     required: false
     multivalued: true
-  taxonomicID:
-    name: taxonomicID
+  taxonomicId:
+    name: taxonomicId
     description: The taxonomic identifier as a persistent identifier accross releases
     title: taxonomic ID
     from_schema: https://w3id.org/evorao/
-    close_mappings:
+    exact_mappings:
     - dwc:taxonID
+    broad_mappings:
+    - schema:identifier
     rank: 1000
-    alias: taxonomicID
+    alias: taxonomicId
     owner: Taxon
     domain_of:
     - Taxon
     range: string
     required: true
     multivalued: false
-  taxonomicNodeID:
-    name: taxonomicNodeID
+  taxonomicNodeId:
+    name: taxonomicNodeId
     description: The taxonomic_Node Identifier as an identifier specific the current
       taxon in the corresponding release/version of the taxonomy
     title: taxonomic node ID
@@ -512,7 +531,7 @@ attributes:
     close_mappings:
     - dwc:taxonID
     rank: 1000
-    alias: taxonomicNodeID
+    alias: taxonomicNodeId
     owner: Taxon
     domain_of:
     - Taxon

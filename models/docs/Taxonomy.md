@@ -3,7 +3,7 @@
 # Class: Taxonomy (Taxonomy) 
 
 
-_Science of naming, defining and classifying organisms_
+_A structured representation of data about the classification and naming of biological organisms into groups according to shared characteristics_
 
 
 
@@ -65,13 +65,6 @@ URI: [EVORAO:Taxonomy](https://w3id.org/evorao/Taxonomy)
         
       Taxonomy : version
         
-          
-    
-    
-    Taxonomy --> "1" Version : version
-    click Version href "../Version"
-
-        
       Taxonomy : versionDataProvider
         
           
@@ -102,7 +95,7 @@ URI: [EVORAO:Taxonomy](https://w3id.org/evorao/Taxonomy)
 | ---  | --- | --- | --- |
 | [taxon](taxon.md) | * <br/> [Taxon](Taxon.md) | Scientifically classified group or entity within the reference taxonomy | direct |
 | [taxonDataProvider](taxonDataProvider.md) | 0..1 <br/> [DataProvider](DataProvider.md) | The data provider for the taxons of the taxonomy | direct |
-| [version](version.md) | 1 <br/> [Version](Version.md) | The version of this instance of entity | direct |
+| [version](version.md) | 1 _recommended_ <br/> [String](String.md) | The version indicator (name or identifier) of a resource | direct |
 | [versionDataProvider](versionDataProvider.md) | 1 <br/> [DataProvider](DataProvider.md) | The data provider for the Version ID of this taxonomy | direct |
 | [rank](rank.md) | * <br/> [TaxonomicRank](TaxonomicRank.md) | Relative level or position of the identified taxon in the taxonomy | direct |
 | [rankDataProvider](rankDataProvider.md) | 0..1 <br/> [DataProvider](DataProvider.md) | The data provider for the description of the taxonomic ranks used in this tax... | direct |
@@ -164,7 +157,8 @@ URI: [EVORAO:Taxonomy](https://w3id.org/evorao/Taxonomy)
 <details>
 ```yaml
 name: Taxonomy
-description: Science of naming, defining and classifying organisms
+description: A structured representation of data about the classification and naming
+  of biological organisms into groups according to shared characteristics
 title: Taxonomy
 from_schema: https://w3id.org/evorao/
 close_mappings:
@@ -204,11 +198,16 @@ slot_usage:
     multivalued: false
   version:
     name: version
-    description: The version of this instance of entity
+    description: The version indicator (name or identifier) of a resource
     title: version
+    close_mappings:
+    - wdp:P393
+    - schema:version
     domain_of:
     - Taxonomy
-    range: Version
+    - Dataset
+    - Version
+    range: string
     required: true
     multivalued: false
   versionDataProvider:
@@ -249,7 +248,8 @@ slot_usage:
 <details>
 ```yaml
 name: Taxonomy
-description: Science of naming, defining and classifying organisms
+description: A structured representation of data about the classification and naming
+  of biological organisms into groups according to shared characteristics
 title: Taxonomy
 from_schema: https://w3id.org/evorao/
 close_mappings:
@@ -282,11 +282,16 @@ slot_usage:
     multivalued: false
   version:
     name: version
-    description: The version of this instance of entity
+    description: The version indicator (name or identifier) of a resource
     title: version
+    close_mappings:
+    - wdp:P393
+    - schema:version
     domain_of:
     - Taxonomy
-    range: Version
+    - Dataset
+    - Version
+    range: string
     required: true
     multivalued: false
   versionDataProvider:
@@ -353,16 +358,22 @@ attributes:
     multivalued: false
   version:
     name: version
-    description: The version of this instance of entity
+    description: The version indicator (name or identifier) of a resource
     title: version
     from_schema: https://w3id.org/evorao/
+    close_mappings:
+    - wdp:P393
+    - schema:version
     rank: 1000
     alias: version
     owner: Taxonomy
     domain_of:
     - Taxonomy
-    range: Version
+    - Dataset
+    - Version
+    range: string
     required: true
+    recommended: true
     multivalued: false
   versionDataProvider:
     name: versionDataProvider
@@ -384,6 +395,7 @@ attributes:
     from_schema: https://w3id.org/evorao/
     exact_mappings:
     - dwc:taxonRank
+    - schema:taxonRank
     rank: 1000
     alias: rank
     owner: Taxonomy

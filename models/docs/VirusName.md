@@ -1,6 +1,6 @@
 
 
-# Class: Virus Name (VirusName) 
+# Class: Virus name (VirusName) 
 
 
 _A virus vernacular name or a name that describes a group of viruses_
@@ -130,7 +130,7 @@ URI: [EVORAO:VirusName](https://w3id.org/evorao/VirusName)
 ```yaml
 name: VirusName
 description: A virus vernacular name or a name that describes a group of viruses
-title: Virus Name
+title: Virus name
 from_schema: https://w3id.org/evorao/
 close_mappings:
 - wd:Q125481078
@@ -146,7 +146,7 @@ is_a: CommonName
 ```yaml
 name: VirusName
 description: A virus vernacular name or a name that describes a group of viruses
-title: Virus Name
+title: Virus name
 from_schema: https://w3id.org/evorao/
 close_mappings:
 - wd:Q125481078

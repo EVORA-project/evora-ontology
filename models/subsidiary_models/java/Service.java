@@ -5,11 +5,11 @@ import lombok.*;
 
 
 
-/* version: 1.0.8773 */
+/* version: 1.0.8940 */
 
 
 /**
-  A service
+  An intangible offering characterized by an activity, performance, or facilitation carried out by a provider to fulfill a user’s need
 **/
 @Data
 @EqualsAndHashCode(callSuper=false)

@@ -22,7 +22,7 @@ Alias: stabilityAndReactivity
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [MSDS](MSDS.md) | A Material Safety Data Sheet (MSDS) or Safety Data Sheet (SDS) is a standardi... |  yes  |
+| [MSDS](MSDS.md) |  |  yes  |
 
 
 

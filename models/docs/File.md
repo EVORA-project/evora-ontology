@@ -38,7 +38,7 @@ URI: [EVORAO:File](https://w3id.org/evorao/File)
         click Image href "../Image"
       
       
-      File : contentURL
+      File : contentUrl
         
       File : description
         
@@ -79,7 +79,7 @@ URI: [EVORAO:File](https://w3id.org/evorao/File)
 | ---  | --- | --- | --- |
 | [name](name.md) | 1 <br/> [String](String.md) | A word or set of words used to identify and refer to an entity | direct |
 | [description](description.md) | 0..1 _recommended_ <br/> [String](String.md) | A short explanation of the characteristics, features, or nature of the curren... | direct |
-| [contentURL](contentURL.md) | 1 <br/> [Uri](Uri.md) | The web address or location where the file content is stored and can be acces... | direct |
+| [contentUrl](contentUrl.md) | 1 <br/> [Uri](Uri.md) | The web address or location where the file content is stored and can be acces... | direct |
 | [format](format.md) | 1 <br/> [String](String.md) | The file type or format that indicates how the data within the file is struct... | direct |
 | [license](license.md) | 0..1 <br/> [License](License.md) | Information about terms and conditions under which the subject can be used, s... | direct |
 
@@ -91,7 +91,7 @@ URI: [EVORAO:File](https://w3id.org/evorao/File)
 
 | used by | used in | type | used |
 | ---  | --- | --- | --- |
-| [DetectionKit](DetectionKit.md) | [hasSOPFile](hasSOPFile.md) | range | [File](File.md) |
+| [DetectionKit](DetectionKit.md) | [standardOperatingProcedureFile](standardOperatingProcedureFile.md) | range | [File](File.md) |
 
 
 
@@ -153,7 +153,7 @@ abstract: true
 slots:
 - name
 - description
-- contentURL
+- contentUrl
 - format
 - license
 slot_usage:
@@ -199,8 +199,8 @@ slot_usage:
     required: false
     recommended: true
     multivalued: false
-  contentURL:
-    name: contentURL
+  contentUrl:
+    name: contentUrl
     description: The web address or location where the file content is stored and
       can be accessed or downloaded.
     title: content URL
@@ -296,8 +296,8 @@ slot_usage:
     required: false
     recommended: true
     multivalued: false
-  contentURL:
-    name: contentURL
+  contentUrl:
+    name: contentUrl
     description: The web address or location where the file content is stored and
       can be accessed or downloaded.
     title: content URL
@@ -383,14 +383,14 @@ attributes:
     required: false
     recommended: true
     multivalued: false
-  contentURL:
-    name: contentURL
+  contentUrl:
+    name: contentUrl
     description: The web address or location where the file content is stored and
       can be accessed or downloaded.
     title: content URL
     from_schema: https://w3id.org/evorao/
     rank: 1000
-    alias: contentURL
+    alias: contentUrl
     owner: File
     domain_of:
     - File

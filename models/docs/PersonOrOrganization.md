@@ -1,6 +1,6 @@
 
 
-# Class: Person Or Organization (PersonOrOrganization) 
+# Class: Person or organization (PersonOrOrganization) 
 
 
 _A person or an organization_
@@ -131,7 +131,7 @@ URI: [foaf:Agent](http://xmlns.com/foaf/0.1/Agent)
 ```yaml
 name: PersonOrOrganization
 description: A person or an organization
-title: Person Or Organization
+title: Person or organization
 from_schema: https://w3id.org/evorao/
 exact_mappings:
 - dct:Agent
@@ -234,7 +234,7 @@ class_uri: foaf:Agent
 ```yaml
 name: PersonOrOrganization
 description: A person or an organization
-title: Person Or Organization
+title: Person or organization
 from_schema: https://w3id.org/evorao/
 exact_mappings:
 - dct:Agent

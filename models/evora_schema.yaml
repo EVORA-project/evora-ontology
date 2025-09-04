@@ -31,6 +31,7 @@ contributors:
 - https://orcid.org/0000-0003-3067-827X
 - https://orcid.org/0000-0002-1257-6862
 - https://orcid.org/0000-0002-2042-2839
+- https://orcid.org/0000-0002-2859-7123
 keywords:
 - virus
 - pathogen
@@ -47,7 +48,7 @@ keywords:
 - pathogen collections
 - interoperability
 id: https://w3id.org/evorao/
-version: 1.0.8773
+version: 1.0.8940
 imports:
 - linkml:types
 license: https://creativecommons.org/publicdomain/zero/1.0/
@@ -145,7 +146,24 @@ slots:
     required: false
     recommended: true
     multivalued: false
-  endpointURL:
+  version:
+    description: The version indicator (name or identifier) of a resource
+    title: version
+    from_schema: https://w3id.org/evorao/
+    close_mappings:
+    - wdp:P393
+    - schema:version
+    - wdp:P393
+    - schema:version
+    domain_of:
+    - Dataset
+    - Version
+    - Taxonomy
+    range: string
+    required: true
+    recommended: true
+    multivalued: false
+  endpointUrl:
     description: The URL template that allows to get the content
     title: endpoint URL
     from_schema: https://w3id.org/evorao/
@@ -157,20 +175,8 @@ slots:
     range: uri
     required: true
     multivalued: false
-  ID:
-    description: The version identifier
-    title: ID
-    from_schema: https://w3id.org/evorao/
-    close_mappings:
-    - wdp:P393
-    - schema:version
-    domain_of:
-    - Version
-    range: string
-    required: true
-    multivalued: false
   versionOf:
-    description: Identifier of what the version qualifies
+    description: Identifier of what type of entities the version qualifies
     title: version Of
     from_schema: https://w3id.org/evorao/
     domain_of:
@@ -202,15 +208,6 @@ slots:
     range: DataProvider
     required: false
     multivalued: false
-  version:
-    description: The version of this instance of entity
-    title: version
-    from_schema: https://w3id.org/evorao/
-    domain_of:
-    - Taxonomy
-    range: Version
-    required: true
-    multivalued: false
   versionDataProvider:
     description: The data provider for the Version ID of this taxonomy
     title: version data provider
@@ -226,6 +223,7 @@ slots:
     from_schema: https://w3id.org/evorao/
     exact_mappings:
     - dwc:taxonRank
+    - schema:taxonRank
     domain_of:
     - Taxonomy
     - Taxon
@@ -249,6 +247,8 @@ slots:
     from_schema: https://w3id.org/evorao/
     exact_mappings:
     - dct:license
+    - schema:license
+    - dct:license
     domain_of:
     - DataProvider
     - File
@@ -261,6 +261,8 @@ slots:
     from_schema: https://w3id.org/evorao/
     close_mappings:
     - dcat:endpointDescription
+    broad_mappings:
+    - schema:httpMethod
     ifabsent: string(GET)
     domain_of:
     - DataProvider
@@ -270,13 +272,15 @@ slots:
     equals_string_in:
     - GET
     - POST
-  loginURL:
+  loginUrl:
     description: The URL template that allows to log in if required
     title: login URL
     from_schema: https://w3id.org/evorao/
     close_mappings:
     - wdp:P1630
     - dcat:endpointDescription
+    broad_mappings:
+    - schema:urlTemplate
     domain_of:
     - DataProvider
     range: uri
@@ -300,6 +304,8 @@ slots:
     from_schema: https://w3id.org/evorao/
     close_mappings:
     - dcat:endpointDescription
+    broad_mappings:
+    - schema:httpMethod
     domain_of:
     - DataProvider
     range: string
@@ -314,6 +320,8 @@ slots:
     from_schema: https://w3id.org/evorao/
     close_mappings:
     - dct:format
+    broad_mappings:
+    - schema:contentType
     ifabsent: string(JSON)
     domain_of:
     - DataProvider
@@ -477,8 +485,8 @@ slots:
     range: string
     required: true
     multivalued: false
-  relatedDOI:
-    description: Any Digital Object Identifier that can be related
+  doi:
+    description: A Digital Object Identifier (DOI) that can be related
     title: DOI
     from_schema: https://w3id.org/evorao/
     close_mappings:
@@ -486,7 +494,7 @@ slots:
     domain_of:
     - Publication
     - ProductOrService
-    range: DOI
+    range: Doi
     required: false
     multivalued: true
   journal:
@@ -578,7 +586,7 @@ slots:
     multivalued: false
   alpha2Code:
     description: Two-letter country codes from ISO 3166-1 alpha-2
-    title: alpha-2 code
+    title: alpha 2 code
     from_schema: https://w3id.org/evorao/
     domain_of:
     - Country
@@ -600,7 +608,9 @@ slots:
     description: The parent taxon of the current taxon
     title: parent taxon
     from_schema: https://w3id.org/evorao/
-    close_mappings:
+    exact_mappings:
+    - schema:parentTaxon
+    broad_mappings:
     - dwc:Taxon
     domain_of:
     - Taxon
@@ -611,7 +621,7 @@ slots:
     description: Any historic version of this taxon having a different name
     title: previously known as
     from_schema: https://w3id.org/evorao/
-    close_mappings:
+    broad_mappings:
     - dwc:Taxon
     domain_of:
     - Taxon
@@ -633,18 +643,20 @@ slots:
     range: Taxon
     required: false
     multivalued: true
-  taxonomicID:
+  taxonomicId:
     description: The taxonomic identifier as a persistent identifier accross releases
     title: taxonomic ID
     from_schema: https://w3id.org/evorao/
-    close_mappings:
+    exact_mappings:
     - dwc:taxonID
+    broad_mappings:
+    - schema:identifier
     domain_of:
     - Taxon
     range: string
     required: true
     multivalued: false
-  taxonomicNodeID:
+  taxonomicNodeId:
     description: The taxonomic_Node Identifier as an identifier specific the current
       taxon in the corresponding release/version of the taxonomy
     title: taxonomic node ID
@@ -720,9 +732,8 @@ slots:
     required: false
     recommended: true
     multivalued: true
-  sequenceFASTA:
-    description: In case no sequence reference exists in public repositories, the
-      corresponding FASTA sequence is required
+  sequenceFasta:
+    description: Textual encoding of a biological sequence information in FASTA format
     title: sequence FASTA
     comments:
     - In FASTA format the line before the nucleotide sequence, called the FASTA definition
@@ -815,10 +826,10 @@ slots:
     range: Image
     required: false
     multivalued: false
-  oRCIDiD:
+  orcidId:
     description: Unique persistent identifier for a person, provided by the Open Researcher
       and Contributor ID (ORCID) organisation
-    title: ORCID iD
+    title: ORCID id
     from_schema: https://w3id.org/evorao/
     exact_mappings:
     - wdp:P496
@@ -840,7 +851,7 @@ slots:
     required: false
     recommended: true
     multivalued: false
-  rORiD:
+  rorId:
     description: The corresponding organization's persistent identifier from the Research
       Organization Registry (ROR)
     title: ROR iD
@@ -853,13 +864,13 @@ slots:
     required: false
     recommended: true
     multivalued: false
-  memberOfRI:
+  memberOfRi:
     description: The research infrastructure of which this organization is a member
     title: member of RI
     from_schema: https://w3id.org/evorao/
     domain_of:
     - Provider
-    range: RI
+    range: ReasearchInfrastructure
     required: false
     multivalued: true
   recombinantMaterial:
@@ -935,14 +946,14 @@ slots:
     range: Country
     required: true
     multivalued: false
-  indigenousPoepleAndLocalCommunityOrigin:
+  indigenousPeopleAndLocalCommunityOrigin:
     description: The specific IPLC area (Indigenous People and Local Communities)
       from which this sample/element was sampled, if relevant
     title: indigenous people and local community origin
     from_schema: https://w3id.org/evorao/
     domain_of:
     - NaturalPartOrigin
-    range: IPLCOrigin
+    range: IplcOrigin
     required: false
     multivalued: false
   collectionDate:
@@ -966,7 +977,7 @@ slots:
     range: boolean
     required: true
     multivalued: false
-  permitIdentifierForABS:
+  permitIdentifierForAbs:
     description: Reference of the permit identifiers for access to the genetic resource,
       applicable if the genetic resource falls under Access and Benefit-Sharing (ABS)
       regulations
@@ -1043,7 +1054,7 @@ slots:
     range: DataProvider
     required: false
     multivalued: false
-  accessPointURL:
+  accessPointUrl:
     description: The URL that permits to access to the product/service detailed description
       page on the provider's website and/or allows to place an order about it or at
       least describe the process to place an order/enquiry
@@ -1056,10 +1067,10 @@ slots:
     range: uri
     required: true
     multivalued: false
-  refSKU:
+  refSku:
     description: The reference or the stock keeping unit of the service or item provided
       in the provider's catalogue
-    title: ref-SKU
+    title: ref SKU
     from_schema: https://w3id.org/evorao/
     exact_mappings:
     - dct:identifier
@@ -1172,10 +1183,10 @@ slots:
     range: string
     required: false
     multivalued: false
-  canItBeUsedToProduceGMO:
+  canBeUsedToProduceGmo:
     description: Indicates if the current service or product can be used to produce
       GMO
-    title: can it be used to produce GMO
+    title: can be used to produce GMO
     comments:
     - Set to TRUE if it can produce GMO. It is recommended to have a value for this
       field, no value will be understood as unknown
@@ -1318,14 +1329,14 @@ slots:
     range: string
     required: false
     multivalued: false
-  hasIATAClassification:
+  iataClassification:
     description: The corresponding International Air Transport Association (IATA)'s
       category for this Product
     title: IATA classification
     from_schema: https://w3id.org/evorao/
     domain_of:
     - Product
-    range: IATAClassification
+    range: IataClassification
     required: true
     multivalued: false
   shippingConditions:
@@ -1351,7 +1362,7 @@ slots:
     from_schema: https://w3id.org/evorao/
     domain_of:
     - Product
-    range: MSDS
+    range: ReasearchInfrastructure
     required: false
     multivalued: false
   originator:
@@ -1456,7 +1467,7 @@ slots:
     description: Information about the origin of the biological material, essential
       for access, utilization, and benefit-sharing of genetic resources in compliance
       with the Nagoya Protocol
-    title: Biological Material origin
+    title: biological material origin
     from_schema: https://w3id.org/evorao/
     domain_of:
     - Protein
@@ -1465,7 +1476,7 @@ slots:
     range: BiologicalMaterialOrigin
     required: true
     multivalued: false
-  relatedPDB:
+  relatedPdb:
     description: Identifier for 3D structural data as per the PDB (Protein Data Bank)
       database
     title: related PDB
@@ -1474,7 +1485,7 @@ slots:
     - wdp:P638
     domain_of:
     - Protein
-    range: PDBReference
+    range: PdbReference
     required: false
     multivalued: true
   specialFeature:
@@ -1488,15 +1499,19 @@ slots:
     range: SpecialFeature
     required: false
     multivalued: true
-  proteinTAG:
-    description: Peptide sequences genetically grafted onto a recombinant protein
-    title: protein TAG
+  proteinTag:
+    description: A DNA coding sequence or corresponding peptide/protein sequence fused
+      to a sequence of interest, used to facilitate experimental operations such as
+      purification, detection, localization, tracking, solubility enhancement, or
+      selection. Applicable to both proteins and nucleic acids
+    title: protein tag
     from_schema: https://w3id.org/evorao/
     domain_of:
     - Protein
+    - NucleicAcid
     range: ProteinTag
-    required: false
-    multivalued: true
+    required: true
+    multivalued: false
   domain:
     description: A distinct structural and functional unit within the protein, often
       capable of independent folding and stability, which contributes to the protein's
@@ -1569,13 +1584,13 @@ slots:
     equals_string_in:
     - Functionally characterized
     - No functional characterization
-  functionalTechnicalDescription:
+  functionalAndTechnicalDescription:
     description: Detailed information about the specific biological functions, mechanisms
       of action, and technical attributes of a protein. This includes how the protein
       interacts within biological systems, its role in cellular processes, and any
       relevant technical details such as structure, activity, and interactions with
       other molecules.
-    title: functional/Technical description
+    title: functional and technical description
     from_schema: https://w3id.org/evorao/
     domain_of:
     - Protein
@@ -1597,12 +1612,12 @@ slots:
     equals_string_in:
     - Greater than 95 percent
     - Unpurified expression host lysate or partly purified protein
-  theTAGStatusOfTheSolubilizedProtein:
+  tagStatusOfTheSolubilizedProtein:
     description: Indicates the presence and condition of a tag on the protein after
       solubilization. Possible values include 'Uncleaved Tag' (the tag is still attached
       to the protein), 'Cleaved Tag' (the tag has been removed from the protein),
       and 'No Tag' (the protein does not have a tag)
-    title: TAG status of the solubilized protein
+    title: tag status of the solubilized protein
     from_schema: https://w3id.org/evorao/
     domain_of:
     - Protein
@@ -1625,20 +1640,22 @@ slots:
     equals_string_in:
     - Enzymatic
     - Antigenic
-  hasGbFileOfTheConstruct:
+  genBankFileOfTheConstruct:
     description: A GenBank formatted file that contains detailed sequence and annotation
       information of a nucleic acid construct
-    title: has .gb file of the construct
+    title: GenBank file of the construct
     from_schema: https://w3id.org/evorao/
     domain_of:
     - NucleicAcid
     range: Data
     required: false
     multivalued: true
-  isItAClonedNucleicAcid:
-    description: Indicates that the nucleic acid sequence has been inserted into a
+  clonedNucleicAcid:
+    description: 'Indicates if the nucleic acid sequence has been inserted into a
       plasmid vector for propagation or expression in a host organism
-    title: is it a Cloned Nucleic Acid?
+
+      '
+    title: cloned nucleic acid
     from_schema: https://w3id.org/evorao/
     domain_of:
     - NucleicAcid
@@ -1655,7 +1672,7 @@ slots:
     required: false
     recommended: true
     multivalued: false
-  pasmidSelection:
+  plasmidSelection:
     description: Specific selectable markers in the plasmid, such as antibiotic resistance
       genes, used to identify and maintain cells that contain the plasmid
     title: plasmid selection
@@ -1666,16 +1683,6 @@ slots:
     required: false
     recommended: true
     multivalued: true
-  hasTAG:
-    description: TAG sequence used for purposes such as purification, detection, or
-      localization
-    title: TAG
-    from_schema: https://w3id.org/evorao/
-    domain_of:
-    - NucleicAcid
-    range: ProteinTag
-    required: true
-    multivalued: false
   regionEncompassedInThisProduct:
     description: The specific region encompassed in the product
     title: region encompassed in this Product
@@ -1765,9 +1772,9 @@ slots:
     range: boolean
     required: true
     multivalued: false
-  hasSOPFile:
-    description: The related standard operating procedure file
-    title: has SOP File
+  standardOperatingProcedureFile:
+    description: The related standard operating procedure file (SOP)
+    title: standard operating procedure file
     from_schema: https://w3id.org/evorao/
     domain_of:
     - DetectionKit
@@ -1796,10 +1803,10 @@ slots:
     range: string
     required: false
     multivalued: false
-  productsOfTheBundle:
-    description: Associates the bundle with the individual products it contains, specifying
-      the components included within the bundle.
-    title: products of the bundle
+  itemsOfTheBundle:
+    description: Specifies the constituent products and/or services that are part
+      of the bundle
+    title: items of the bundle
     from_schema: https://w3id.org/evorao/
     domain_of:
     - Bundle
@@ -2006,11 +2013,11 @@ slots:
     range: boolean
     required: true
     multivalued: false
-  msdsContact:
+  materialSafetyContact:
     description: The designated contact point responsible for providing information
       related to the safety, handling, and regulatory compliance of the biological
       product.
-    title: MSDS contact
+    title: material safety contact
     from_schema: https://w3id.org/evorao/
     exact_mappings:
     - dcat:contactPoint
@@ -2190,7 +2197,7 @@ slots:
     required: false
     recommended: true
     multivalued: false
-  contentURL:
+  contentUrl:
     description: The web address or location where the file content is stored and
       can be accessed or downloaded.
     title: content URL
@@ -2308,7 +2315,7 @@ slots:
     range: Country
     required: false
     multivalued: false
-  resourceURL:
+  resourceUrl:
     description: The web address or location where the details or content is stored
       and can be accessed or downloaded.
     title: resource URL
@@ -2372,6 +2379,7 @@ classes:
     slots:
     - title
     - description
+    - version
     slot_usage:
       title:
         description: A name given to the resource
@@ -2409,6 +2417,18 @@ classes:
         range: string
         required: true
         multivalued: false
+      version:
+        description: The version indicator (name or identifier) of a resource
+        title: version
+        close_mappings:
+        - wdp:P393
+        - schema:version
+        domain_of:
+        - Dataset
+        range: string
+        required: false
+        recommended: true
+        multivalued: false
     class_uri: dcat:Dataset
   DataService:
     description: A collection of operations that provides access to one or more datasets
@@ -2425,7 +2445,7 @@ classes:
     slots:
     - title
     - description
-    - endpointURL
+    - endpointUrl
     slot_usage:
       title:
         description: A name given to the resource
@@ -2464,7 +2484,7 @@ classes:
         required: false
         recommended: true
         multivalued: false
-      endpointURL:
+      endpointUrl:
         description: The URL template that allows to get the content
         title: endpoint URL
         close_mappings:
@@ -2486,12 +2506,12 @@ classes:
     - wd:Q114469879
     is_a: Resource
     slots:
-    - ID
+    - version
     - versionOf
     slot_usage:
-      ID:
-        description: The version identifier
-        title: ID
+      version:
+        description: The version indicator (name or identifier) of a resource
+        title: version
         close_mappings:
         - wdp:P393
         - schema:version
@@ -2501,7 +2521,7 @@ classes:
         required: true
         multivalued: false
       versionOf:
-        description: Identifier of what the version qualifies
+        description: Identifier of what type of entities the version qualifies
         title: version Of
         domain_of:
         - Version
@@ -2522,7 +2542,8 @@ classes:
     abstract: true
     class_uri: dcat:Catalog
   Taxonomy:
-    description: Science of naming, defining and classifying organisms
+    description: A structured representation of data about the classification and
+      naming of biological organisms into groups according to shared characteristics
     title: Taxonomy
     from_schema: https://w3id.org/evorao/
     close_mappings:
@@ -2559,11 +2580,14 @@ classes:
         required: false
         multivalued: false
       version:
-        description: The version of this instance of entity
+        description: The version indicator (name or identifier) of a resource
         title: version
+        close_mappings:
+        - wdp:P393
+        - schema:version
         domain_of:
         - Taxonomy
-        range: Version
+        range: string
         required: true
         multivalued: false
       versionDataProvider:
@@ -2603,7 +2627,7 @@ classes:
     slots:
     - license
     - loginRequestMethod
-    - loginURL
+    - loginUrl
     - loginTokenName
     - queryMethod
     - contentType
@@ -2616,6 +2640,7 @@ classes:
         title: license
         exact_mappings:
         - dct:license
+        - schema:license
         domain_of:
         - DataProvider
         range: License
@@ -2626,18 +2651,22 @@ classes:
         title: login request method
         close_mappings:
         - dcat:endpointDescription
+        broad_mappings:
+        - schema:httpMethod
         ifabsent: string(GET)
         domain_of:
         - DataProvider
         range: string
         required: false
         multivalued: false
-      loginURL:
+      loginUrl:
         description: The URL template that allows to log in if required
         title: login URL
         close_mappings:
         - wdp:P1630
         - dcat:endpointDescription
+        broad_mappings:
+        - schema:urlTemplate
         domain_of:
         - DataProvider
         range: uri
@@ -2659,6 +2688,8 @@ classes:
         title: query method
         close_mappings:
         - dcat:endpointDescription
+        broad_mappings:
+        - schema:httpMethod
         domain_of:
         - DataProvider
         range: string
@@ -2669,6 +2700,8 @@ classes:
         title: content type
         close_mappings:
         - dct:format
+        broad_mappings:
+        - schema:contentType
         ifabsent: string(JSON)
         domain_of:
         - DataProvider
@@ -2831,7 +2864,7 @@ classes:
     - title
     - authors
     - abstract
-    - relatedDOI
+    - doi
     - journal
     slot_usage:
       title:
@@ -2871,12 +2904,12 @@ classes:
         range: string
         required: true
         multivalued: false
-      relatedDOI:
-        description: Any Digital Object Identifier that can be related
+      doi:
+        description: A Digital Object Identifier (DOI) that can be related
         title: DOI
         domain_of:
         - Publication
-        range: DOI
+        range: Doi
         required: true
         multivalued: false
       journal:
@@ -3000,7 +3033,7 @@ classes:
     description: Vernacular name that is the name used in everyday language to refer
       to an organism or group of organisms. This name is typically easier to remember
       and pronounce compared to the scientific name
-    title: Common Name
+    title: Common name
     from_schema: https://w3id.org/evorao/
     exact_mappings:
     - dwc:vernacularName
@@ -3040,7 +3073,7 @@ classes:
         multivalued: true
   VirusName:
     description: A virus vernacular name or a name that describes a group of viruses
-    title: Virus Name
+    title: Virus name
     from_schema: https://w3id.org/evorao/
     close_mappings:
     - wd:Q125481078
@@ -3048,7 +3081,7 @@ classes:
     is_a: CommonName
   AlternateName:
     description: List of other names for things
-    title: Alternate Name
+    title: Alternate name
     from_schema: https://w3id.org/evorao/
     close_mappings:
     - wd:Q7662595
@@ -3097,7 +3130,7 @@ classes:
     - wd:Q125449255
     - wd:Q125449255
     is_a: Term
-  DOI:
+  Doi:
     description: A unique string identifier assigned to a digital object, providing
       a permanent link for reliable citation and access.  The Digital Object Identifier
       (DOI) is a persistent identifier that is an ISO standard
@@ -3115,14 +3148,14 @@ classes:
     - wd:Q5633421
     - wd:Q5633421
     is_a: Term
-  PDBReference:
+  PdbReference:
     description: Identifier for 3D structural data as per the PDB (Protein Data Bank)
       database
     title: PDB reference
     from_schema: https://w3id.org/evorao/
     close_mappings:
-    - wdp:Q42415644
-    - wdp:Q42415644
+    - wd:Q42415644
+    - wd:Q42415644
     is_a: Term
   Keyword:
     description: A term or phrase used to tag and categorize content
@@ -3133,7 +3166,10 @@ classes:
     - wd:Q1128340
     is_a: Term
   ProteinTag:
-    description: Peptide sequence genetically grafted onto a recombinant protein
+    description: A DNA coding sequence or corresponding peptide/protein sequence fused
+      to a sequence of interest, used to facilitate experimental operations such as
+      purification, detection, localization, tracking, solubility enhancement, or
+      selection. Applicable to both proteins and nucleic acids
     title: Protein tag
     from_schema: https://w3id.org/evorao/
     close_mappings:
@@ -3228,7 +3264,7 @@ classes:
     - wd:Q3885844
     - wd:Q3885844
     is_a: Term
-  IPLCOrigin:
+  IplcOrigin:
     description: The IPLC area (Indigenous People and Local Communities) from which
       a physical item originates
     title: IPLC origin
@@ -3240,6 +3276,9 @@ classes:
     comments:
     - Use of Data provider recommended... serve as a local cache for ISO3166
     from_schema: https://w3id.org/evorao/
+    exact_mappings:
+    - schema:Country
+    - schema:Country
     close_mappings:
     - wd:Q6256
     - wd:Q6256
@@ -3249,13 +3288,13 @@ classes:
     slot_usage:
       alpha2Code:
         description: Two-letter country codes from ISO 3166-1 alpha-2
-        title: alpha-2 code
+        title: alpha 2 code
         domain_of:
         - Country
         range: string
         required: true
         multivalued: false
-  IATAClassification:
+  IataClassification:
     description: The corresponding International Air Transport Association (IATA)'s
       category for dangerous goods that are transported by air
     title: IATA classification
@@ -3302,7 +3341,9 @@ classes:
     from_schema: https://w3id.org/evorao/
     exact_mappings:
     - dwc:Taxon
+    - schema:Taxon
     - dwc:Taxon
+    - schema:Taxon
     close_mappings:
     - wd:Q16521
     - wd:Q16521
@@ -3313,8 +3354,8 @@ classes:
     - rank
     - previouslyKnownAs
     - externalEquivalentTaxon
-    - taxonomicID
-    - taxonomicNodeID
+    - taxonomicId
+    - taxonomicNodeId
     slot_usage:
       taxonomy:
         description: The taxonomy release(s) in which this entity exists
@@ -3328,7 +3369,9 @@ classes:
       parentTaxon:
         description: The parent taxon of the current taxon
         title: parent taxon
-        close_mappings:
+        exact_mappings:
+        - schema:parentTaxon
+        broad_mappings:
         - dwc:Taxon
         domain_of:
         - Taxon
@@ -3340,6 +3383,7 @@ classes:
         title: rank
         exact_mappings:
         - dwc:taxonRank
+        - schema:taxonRank
         domain_of:
         - Taxon
         range: TaxonomicRank
@@ -3348,7 +3392,7 @@ classes:
       previouslyKnownAs:
         description: Any historic version of this taxon having a different name
         title: previously known as
-        close_mappings:
+        broad_mappings:
         - dwc:Taxon
         domain_of:
         - Taxon
@@ -3369,17 +3413,19 @@ classes:
         range: Taxon
         required: false
         multivalued: true
-      taxonomicID:
+      taxonomicId:
         description: The taxonomic identifier as a persistent identifier accross releases
         title: taxonomic ID
-        close_mappings:
+        exact_mappings:
         - dwc:taxonID
+        broad_mappings:
+        - schema:identifier
         domain_of:
         - Taxon
         range: string
         required: true
         multivalued: false
-      taxonomicNodeID:
+      taxonomicNodeId:
         description: The taxonomic_Node Identifier as an identifier specific the current
           taxon in the corresponding release/version of the taxonomy
         title: taxonomic node ID
@@ -3459,7 +3505,7 @@ classes:
     is_a: Resource
     slots:
     - sequenceReference
-    - sequenceFASTA
+    - sequenceFasta
     slot_usage:
       sequenceReference:
         description: A reference that permits to retrieve the sequence information
@@ -3471,9 +3517,9 @@ classes:
         required: false
         recommended: true
         multivalued: true
-      sequenceFASTA:
-        description: In case no sequence reference exists in public repositories,
-          the corresponding FASTA sequence is required
+      sequenceFasta:
+        description: Textual encoding of a biological sequence information in FASTA
+          format
         title: sequence FASTA
         comments:
         - In FASTA format the line before the nucleotide sequence, called the FASTA
@@ -3523,7 +3569,7 @@ classes:
         multivalued: false
   PersonOrOrganization:
     description: A person or an organization
-    title: Person Or Organization
+    title: Person or organization
     from_schema: https://w3id.org/evorao/
     exact_mappings:
     - dct:Agent
@@ -3606,16 +3652,18 @@ classes:
     close_mappings:
     - wd:Q215627
     - vcard:Individual
+    - schema:Person
     - wd:Q215627
     - vcard:Individual
+    - schema:Person
     is_a: PersonOrOrganization
     slots:
-    - oRCIDiD
+    - orcidId
     slot_usage:
-      oRCIDiD:
+      orcidId:
         description: Unique persistent identifier for a person, provided by the Open
           Researcher and Contributor ID (ORCID) organisation
-        title: ORCID iD
+        title: ORCID id
         exact_mappings:
         - wdp:P496
         domain_of:
@@ -3632,13 +3680,15 @@ classes:
     close_mappings:
     - wd:Q43229
     - vcard:Organization
+    - schema:Organization
     - wd:Q43229
     - vcard:Organization
+    - schema:Organization
     is_a: PersonOrOrganization
     slots:
     - alternateName
     - country
-    - rORiD
+    - rorId
     slot_usage:
       alternateName:
         description: Any other name under which the entity can be known
@@ -3664,7 +3714,7 @@ classes:
         required: false
         recommended: true
         multivalued: false
-      rORiD:
+      rorId:
         description: The corresponding organization's persistent identifier from the
           Research Organization Registry (ROR)
         title: ROR iD
@@ -3677,9 +3727,9 @@ classes:
         recommended: true
         multivalued: false
     class_uri: foaf:Organization
-  RI:
-    description: A research infrastructure
-    title: RI
+  ReasearchInfrastructure:
+    description: A research infrastructure (RI)
+    title: Reasearch infrastructure
     from_schema: https://w3id.org/evorao/
     close_mappings:
     - wd:Q1438053
@@ -3694,14 +3744,14 @@ classes:
     - dct:ProvenanceStatement
     is_a: Organization
     slots:
-    - memberOfRI
+    - memberOfRi
     slot_usage:
-      memberOfRI:
+      memberOfRi:
         description: The research infrastructure of which this organization is a member
         title: member of RI
         domain_of:
         - Provider
-        range: RI
+        range: ReasearchInfrastructure
         required: false
         multivalued: true
   Originator:
@@ -3801,10 +3851,10 @@ classes:
     is_a: BiologicalPartOrigin
     slots:
     - countryOfCollection
-    - indigenousPoepleAndLocalCommunityOrigin
+    - indigenousPeopleAndLocalCommunityOrigin
     - collectionDate
     - beforeDate
-    - permitIdentifierForABS
+    - permitIdentifierForAbs
     slot_usage:
       countryOfCollection:
         description: The geographical location where the sample was collected in situ.
@@ -3818,13 +3868,13 @@ classes:
         range: Country
         required: true
         multivalued: false
-      indigenousPoepleAndLocalCommunityOrigin:
+      indigenousPeopleAndLocalCommunityOrigin:
         description: The specific IPLC area (Indigenous People and Local Communities)
           from which this sample/element was sampled, if relevant
         title: indigenous people and local community origin
         domain_of:
         - NaturalPartOrigin
-        range: IPLCOrigin
+        range: IplcOrigin
         required: false
         multivalued: false
       collectionDate:
@@ -3846,7 +3896,7 @@ classes:
         range: boolean
         required: true
         multivalued: false
-      permitIdentifierForABS:
+      permitIdentifierForAbs:
         description: Reference of the permit identifiers for access to the genetic
           resource, applicable if the genetic resource falls under Access and Benefit-Sharing
           (ABS) regulations
@@ -3945,7 +3995,8 @@ classes:
         required: false
         multivalued: false
   ProductOrService:
-    description: A product or a service
+    description: An offering provided by a provider, which may be tangible (a product)
+      or intangible (a service)
     title: Product or service
     comments:
     - part of  wd:Q2897903 (goods and services )
@@ -3953,18 +4004,18 @@ classes:
     is_a: Dataset
     abstract: true
     slots:
-    - accessPointURL
-    - refSKU
+    - accessPointUrl
+    - refSku
     - unitDefinition
     - category
     - additionalCategory
     - unitCost
     - qualityGrading
     - pathogenIdentification
-    - relatedDOI
+    - doi
     - riskGroup
     - biosafetyRestrictions
-    - canItBeUsedToProduceGMO
+    - canBeUsedToProduceGmo
     - provider
     - collection
     - keywords
@@ -3978,7 +4029,7 @@ classes:
     - note
     - contactPoint
     slot_usage:
-      accessPointURL:
+      accessPointUrl:
         description: The URL that permits to access to the product/service detailed
           description page on the provider's website and/or allows to place an order
           about it or at least describe the process to place an order/enquiry
@@ -3990,10 +4041,10 @@ classes:
         range: uri
         required: true
         multivalued: false
-      refSKU:
+      refSku:
         description: The reference or the stock keeping unit of the service or item
           provided in the provider's catalogue
-        title: ref-SKU
+        title: ref SKU
         exact_mappings:
         - dct:identifier
         domain_of:
@@ -4073,14 +4124,14 @@ classes:
         range: PathogenIdentification
         required: true
         multivalued: true
-      relatedDOI:
-        description: Any Digital Object Identifier that can be related
+      doi:
+        description: A Digital Object Identifier (DOI) that can be related
         title: DOI
         close_mappings:
         - wdp:P356
         domain_of:
         - ProductOrService
-        range: DOI
+        range: Doi
         required: false
         multivalued: true
       riskGroup:
@@ -4107,10 +4158,10 @@ classes:
         range: string
         required: false
         multivalued: false
-      canItBeUsedToProduceGMO:
+      canBeUsedToProduceGmo:
         description: Indicates if the current service or product can be used to produce
           GMO
-        title: can it be used to produce GMO
+        title: can be used to produce GMO
         comments:
         - Set to TRUE if it can produce GMO. It is recommended to have a value for
           this field, no value will be understood as unknown
@@ -4234,7 +4285,8 @@ classes:
         recommended: true
         multivalued: false
   Service:
-    description: A service
+    description: "An intangible offering characterized by an activity, performance,\
+      \ or facilitation carried out by a provider to fulfill a user\u2019s need"
     title: Service
     from_schema: https://w3id.org/evorao/
     close_mappings:
@@ -4263,15 +4315,19 @@ classes:
         required: false
         multivalued: false
   Product:
-    description: A product
+    description: A tangible, physical item made available by a provider for use, consumption,
+      or ownership transfer
     title: Product
     from_schema: https://w3id.org/evorao/
     close_mappings:
     - wd:Q2424752
     - wd:Q2424752
+    broad_mappings:
+    - dct:PhysicalResource
+    - dct:PhysicalResource
     is_a: ProductOrService
     slots:
-    - hasIATAClassification
+    - iataClassification
     - shippingConditions
     - materialSafetyDataSheet
     - originator
@@ -4279,13 +4335,13 @@ classes:
     - thirdPartyDistributionConsent
     - usageRestrictions
     slot_usage:
-      hasIATAClassification:
+      iataClassification:
         description: The corresponding International Air Transport Association (IATA)'s
           category for this Product
         title: IATA classification
         domain_of:
         - Product
-        range: IATAClassification
+        range: IataClassification
         required: true
         multivalued: false
       shippingConditions:
@@ -4309,7 +4365,7 @@ classes:
           of a chemical or substance
         domain_of:
         - Product
-        range: MSDS
+        range: ReasearchInfrastructure
         required: false
         multivalued: false
       originator:
@@ -4448,24 +4504,24 @@ classes:
     slots:
     - biologicalMaterialOrigin
     - sequence
-    - relatedPDB
+    - relatedPdb
     - specialFeature
-    - proteinTAG
+    - proteinTag
     - domain
     - expressedAs
     - inclusionBodiesType
     - expressionSystem
     - functionalCharacterization
-    - functionalTechnicalDescription
+    - functionalAndTechnicalDescription
     - proteinPurification
-    - theTAGStatusOfTheSolubilizedProtein
+    - tagStatusOfTheSolubilizedProtein
     - typeOfFunctionalCharacterization
     slot_usage:
       biologicalMaterialOrigin:
         description: Information about the origin of the biological material, essential
           for access, utilization, and benefit-sharing of genetic resources in compliance
           with the Nagoya Protocol
-        title: Biological Material origin
+        title: biological material origin
         domain_of:
         - Protein
         range: BiologicalMaterialOrigin
@@ -4480,7 +4536,7 @@ classes:
         range: Sequence
         required: true
         multivalued: true
-      relatedPDB:
+      relatedPdb:
         description: Identifier for 3D structural data as per the PDB (Protein Data
           Bank) database
         title: related PDB
@@ -4488,7 +4544,7 @@ classes:
         - wdp:P638
         domain_of:
         - Protein
-        range: PDBReference
+        range: PdbReference
         required: false
         multivalued: true
       specialFeature:
@@ -4501,9 +4557,12 @@ classes:
         range: SpecialFeature
         required: false
         multivalued: true
-      proteinTAG:
-        description: Peptide sequences genetically grafted onto a recombinant protein
-        title: protein TAG
+      proteinTag:
+        description: A DNA coding sequence or corresponding peptide/protein sequence
+          fused to a sequence of interest, used to facilitate experimental operations
+          such as purification, detection, localization, tracking, solubility enhancement,
+          or selection. Applicable to both proteins and nucleic acids
+        title: protein tag
         domain_of:
         - Protein
         range: ProteinTag
@@ -4564,13 +4623,13 @@ classes:
         range: string
         required: false
         multivalued: true
-      functionalTechnicalDescription:
+      functionalAndTechnicalDescription:
         description: Detailed information about the specific biological functions,
           mechanisms of action, and technical attributes of a protein. This includes
           how the protein interacts within biological systems, its role in cellular
           processes, and any relevant technical details such as structure, activity,
           and interactions with other molecules.
-        title: functional/Technical description
+        title: functional and technical description
         domain_of:
         - Protein
         range: string
@@ -4588,12 +4647,12 @@ classes:
         range: string
         required: false
         multivalued: true
-      theTAGStatusOfTheSolubilizedProtein:
+      tagStatusOfTheSolubilizedProtein:
         description: Indicates the presence and condition of a tag on the protein
           after solubilization. Possible values include 'Uncleaved Tag' (the tag is
           still attached to the protein), 'Cleaved Tag' (the tag has been removed
           from the protein), and 'No Tag' (the protein does not have a tag)
-        title: TAG status of the solubilized protein
+        title: tag status of the solubilized protein
         domain_of:
         - Protein
         range: string
@@ -4613,7 +4672,7 @@ classes:
         multivalued: true
   NucleicAcid:
     description: Nucleic acid related to a pathogen. It can be extracted or synthetic
-    title: Nucleic Acid
+    title: Nucleic acid
     from_schema: https://w3id.org/evorao/
     close_mappings:
     - wd:Q123619
@@ -4621,12 +4680,12 @@ classes:
     is_a: Product
     slots:
     - biologicalMaterialOrigin
-    - hasGbFileOfTheConstruct
+    - genBankFileOfTheConstruct
     - sequence
-    - isItAClonedNucleicAcid
+    - clonedNucleicAcid
     - clonedIntoPlasmid
-    - pasmidSelection
-    - hasTAG
+    - plasmidSelection
+    - proteinTag
     - regionEncompassedInThisProduct
     - mutationObserved
     - observedMutations
@@ -4639,16 +4698,16 @@ classes:
         description: Information about the origin of the biological material, essential
           for access, utilization, and benefit-sharing of genetic resources in compliance
           with the Nagoya Protocol
-        title: Biological Material origin
+        title: biological material origin
         domain_of:
         - NucleicAcid
         range: BiologicalMaterialOrigin
         required: true
         multivalued: false
-      hasGbFileOfTheConstruct:
+      genBankFileOfTheConstruct:
         description: A GenBank formatted file that contains detailed sequence and
           annotation information of a nucleic acid construct
-        title: has .gb file of the construct
+        title: GenBank file of the construct
         domain_of:
         - NucleicAcid
         range: Data
@@ -4663,10 +4722,12 @@ classes:
         range: Sequence
         required: true
         multivalued: true
-      isItAClonedNucleicAcid:
-        description: Indicates that the nucleic acid sequence has been inserted into
+      clonedNucleicAcid:
+        description: 'Indicates if the nucleic acid sequence has been inserted into
           a plasmid vector for propagation or expression in a host organism
-        title: is it a Cloned Nucleic Acid?
+
+          '
+        title: cloned nucleic acid
         domain_of:
         - NucleicAcid
         range: boolean
@@ -4681,7 +4742,7 @@ classes:
         required: false
         recommended: true
         multivalued: false
-      pasmidSelection:
+      plasmidSelection:
         description: Specific selectable markers in the plasmid, such as antibiotic
           resistance genes, used to identify and maintain cells that contain the plasmid
         title: plasmid selection
@@ -4691,10 +4752,12 @@ classes:
         required: false
         recommended: true
         multivalued: true
-      hasTAG:
-        description: TAG sequence used for purposes such as purification, detection,
-          or localization
-        title: TAG
+      proteinTag:
+        description: A DNA coding sequence or corresponding peptide/protein sequence
+          fused to a sequence of interest, used to facilitate experimental operations
+          such as purification, detection, localization, tracking, solubility enhancement,
+          or selection. Applicable to both proteins and nucleic acids
+        title: protein tag
         domain_of:
         - NucleicAcid
         range: ProteinTag
@@ -4781,14 +4844,14 @@ classes:
     from_schema: https://w3id.org/evorao/
     is_a: Product
     slots:
-    - hasSOPFile
+    - standardOperatingProcedureFile
     - specificityDocumented
     - specificity
     - targetedRegion
     slot_usage:
-      hasSOPFile:
-        description: The related standard operating procedure file
-        title: has SOP File
+      standardOperatingProcedureFile:
+        description: The related standard operating procedure file (SOP)
+        title: standard operating procedure file
         domain_of:
         - DetectionKit
         range: File
@@ -4824,7 +4887,9 @@ classes:
         required: false
         multivalued: false
   Bundle:
-    description: A group of products
+    description: A grouping of products and/or services intentionally combined into
+      a single offering, typically to provide added value, convenience, or specific
+      experimental utility
     title: Bundle
     from_schema: https://w3id.org/evorao/
     close_mappings:
@@ -4832,12 +4897,12 @@ classes:
     - wd:Q1020767
     is_a: Product
     slots:
-    - productsOfTheBundle
+    - itemsOfTheBundle
     slot_usage:
-      productsOfTheBundle:
-        description: Associates the bundle with the individual products it contains,
-          specifying the components included within the bundle.
-        title: products of the bundle
+      itemsOfTheBundle:
+        description: Specifies the constituent products and/or services that are part
+          of the bundle
+        title: items of the bundle
         domain_of:
         - Bundle
         range: Product
@@ -4878,7 +4943,7 @@ classes:
         description: Information about the origin of the biological material, essential
           for access, utilization, and benefit-sharing of genetic resources in compliance
           with the Nagoya Protocol
-        title: Biological Material origin
+        title: biological material origin
         domain_of:
         - Pathogen
         range: BiologicalMaterialOrigin
@@ -5138,18 +5203,20 @@ classes:
     - wd:Q47051
     - wd:Q47051
     is_a: Pathogen
-  MSDS:
+  MaterialSafetyDataSheet:
     description: A Material Safety Data Sheet (MSDS) or Safety Data Sheet (SDS) is
       a standardized document that contains crucial occupational safety and health
       information related to the product
-    title: MSDS
+    title: Material safety data sheet
     from_schema: https://w3id.org/evorao/
     close_mappings:
     - wd:Q222067
     - wd:Q222067
     is_a: Resource
+  MSDS:
+    from_schema: https://w3id.org/evorao/
     slots:
-    - msdsContact
+    - materialSafetyContact
     - physicalChemicalProperties
     - hazardsIdentification
     - firstAidMeasures
@@ -5165,11 +5232,11 @@ classes:
     - regulatoryInformation
     - furtherInformation
     slot_usage:
-      msdsContact:
+      materialSafetyContact:
         description: The designated contact point responsible for providing information
           related to the safety, handling, and regulatory compliance of the biological
           product.
-        title: MSDS contact
+        title: material safety contact
         exact_mappings:
         - dcat:contactPoint
         domain_of:
@@ -5353,7 +5420,7 @@ classes:
     slots:
     - name
     - description
-    - contentURL
+    - contentUrl
     - format
     - license
     slot_usage:
@@ -5388,7 +5455,7 @@ classes:
         required: false
         recommended: true
         multivalued: false
-      contentURL:
+      contentUrl:
         description: The web address or location where the file content is stored
           and can be accessed or downloaded.
         title: content URL
@@ -5496,7 +5563,7 @@ classes:
     - addressRegion
     - postalCode
     - addressCountry
-    - oRCIDiD
+    - orcidId
     slot_usage:
       name:
         description: A word or set of words used to identify and refer to an entity
@@ -5611,10 +5678,10 @@ classes:
         range: Country
         required: false
         multivalued: false
-      oRCIDiD:
+      orcidId:
         description: Unique persistent identifier for a person, provided by the Open
           Researcher and Contributor ID (ORCID) organisation
-        title: ORCID iD
+        title: ORCID id
         exact_mappings:
         - IAO:0000708
         domain_of:
@@ -5640,7 +5707,7 @@ classes:
     slots:
     - title
     - description
-    - resourceURL
+    - resourceUrl
     - licensingOrAttribution
     - logo
     slot_usage:
@@ -5680,7 +5747,7 @@ classes:
         required: false
         recommended: true
         multivalued: false
-      resourceURL:
+      resourceUrl:
         description: The web address or location where the details or content is stored
           and can be accessed or downloaded.
         title: resource URL
@@ -5730,7 +5797,7 @@ classes:
     - description
     - logo
     - certificationDocument
-    - resourceURL
+    - resourceUrl
     slot_usage:
       title:
         description: A name given to the resource
@@ -5786,7 +5853,7 @@ classes:
         range: Document
         required: false
         multivalued: true
-      resourceURL:
+      resourceUrl:
         description: The web address or location where the details or content is stored
           and can be accessed or downloaded.
         title: resource URL
@@ -5798,4 +5865,4 @@ classes:
         required: false
         multivalued: false
 source_file: https://w3id.org/evorao/evorao.owl.ttl
-generation_date: '2025-06-30T17:25:01'
+generation_date: '2025-09-04T17:30:19'

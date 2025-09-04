@@ -22,6 +22,10 @@ type Dataset struct {
 	 * A short explanation of the characteristics, features, or nature of the current item
 	 */
 	Description string `json:"description"`
+	/*
+	 * The version indicator (name or identifier) of a resource
+	 */
+	Version string `json:"version"`
 }
 
 /*
@@ -43,7 +47,7 @@ type DataService struct {
 	/*
 	 * The URL template that allows to get the content
 	 */
-	EndpointURL string `json:"endpointURL"`
+	EndpointUrl string `json:"endpointUrl"`
 }
 
 /*
@@ -55,11 +59,11 @@ type Version struct {
 	 */
 	Resource
 	/*
-	 * The version identifier
+	 * The version indicator (name or identifier) of a resource
 	 */
-	ID string `json:"ID"`
+	Version string `json:"version"`
 	/*
-	 * Identifier of what the version qualifies
+	 * Identifier of what type of entities the version qualifies
 	 */
 	VersionOf Dataset `json:"versionOf"`
 }
@@ -80,10 +84,14 @@ type Catalogue struct {
 	 * A short explanation of the characteristics, features, or nature of the current item
 	 */
 	Description string `json:"description"`
+	/*
+	 * The version indicator (name or identifier) of a resource
+	 */
+	Version string `json:"version"`
 }
 
 /*
- * Science of naming, defining and classifying organisms
+ * A structured representation of data about the classification and naming of biological organisms into groups according to shared characteristics
  */
 type Taxonomy struct {
 	/*
@@ -99,9 +107,9 @@ type Taxonomy struct {
 	 */
 	TaxonDataProvider DataProvider `json:"taxonDataProvider"`
 	/*
-	 * The version of this instance of entity
+	 * The version indicator (name or identifier) of a resource
 	 */
-	Version Version `json:"version"`
+	Version string `json:"version"`
 	/*
 	 * The data provider for the Version ID of this taxonomy
 	 */
@@ -143,7 +151,7 @@ type DataProvider struct {
 	/*
 	 * The URL template that allows to log in if required
 	 */
-	LoginURL string `json:"loginURL"`
+	LoginUrl string `json:"loginUrl"`
 	/*
 	 * The name of the token, unique identifier of an interaction session, that will have to be reused as credential in the query
 	 */
@@ -175,7 +183,7 @@ type DataProvider struct {
 	/*
 	 * The URL template that allows to get the content
 	 */
-	EndpointURL string `json:"endpointURL"`
+	EndpointUrl string `json:"endpointUrl"`
 }
 
 /*
@@ -249,9 +257,9 @@ type Publication struct {
 	 */
 	Abstract string `json:"abstract"`
 	/*
-	 * Any Digital Object Identifier that can be related
+	 * A Digital Object Identifier (DOI) that can be related
 	 */
-	RelatedDOI DOI `json:"relatedDOI"`
+	Doi Doi `json:"doi"`
 	/*
 	 * The scientific journal in which the publication was published
 	 */
@@ -282,6 +290,10 @@ type Vocabulary struct {
 	 * A short explanation of the characteristics, features, or nature of the current item
 	 */
 	Description string `json:"description"`
+	/*
+	 * The version indicator (name or identifier) of a resource
+	 */
+	Version string `json:"version"`
 }
 
 /*
@@ -441,7 +453,7 @@ type RiskGroup struct {
 /*
  * A unique string identifier assigned to a digital object, providing a permanent link for reliable citation and access.  The Digital Object Identifier (DOI) is a persistent identifier that is an ISO standard
  */
-type DOI struct {
+type Doi struct {
 	/*
 	 * parent types
 	 */
@@ -493,7 +505,7 @@ type Journal struct {
 /*
  * Identifier for 3D structural data as per the PDB (Protein Data Bank) database
  */
-type PDBReference struct {
+type PdbReference struct {
 	/*
 	 * parent types
 	 */
@@ -543,7 +555,7 @@ type Keyword struct {
 }
 
 /*
- * Peptide sequence genetically grafted onto a recombinant protein
+ * A DNA coding sequence or corresponding peptide/protein sequence fused to a sequence of interest, used to facilitate experimental operations such as purification, detection, localization, tracking, solubility enhancement, or selection. Applicable to both proteins and nucleic acids
  */
 type ProteinTag struct {
 	/*
@@ -809,7 +821,7 @@ type GeographicalOrigin struct {
 /*
  * The IPLC area (Indigenous People and Local Communities) from which a physical item originates
  */
-type IPLCOrigin struct {
+type IplcOrigin struct {
 	/*
 	 * parent types
 	 */
@@ -865,7 +877,7 @@ type Country struct {
 /*
  * The corresponding International Air Transport Association (IATA)'s category for dangerous goods that are transported by air
  */
-type IATAClassification struct {
+type IataClassification struct {
 	/*
 	 * parent types
 	 */
@@ -983,11 +995,11 @@ type Taxon struct {
 	/*
 	 * The taxonomic identifier as a persistent identifier accross releases
 	 */
-	TaxonomicID string `json:"taxonomicID"`
+	TaxonomicId string `json:"taxonomicId"`
 	/*
 	 * The taxonomic_Node Identifier as an identifier specific the current taxon in the corresponding release/version of the taxonomy
 	 */
-	TaxonomicNodeID string `json:"taxonomicNodeID"`
+	TaxonomicNodeId string `json:"taxonomicNodeId"`
 	/*
 	 * A name given to the resource
 	 */
@@ -1045,9 +1057,9 @@ type Sequence struct {
 	 */
 	SequenceReference []SequenceReference `json:"sequenceReference"`
 	/*
-	 * In case no sequence reference exists in public repositories, the corresponding FASTA sequence is required
+	 * Textual encoding of a biological sequence information in FASTA format
 	 */
-	SequenceFASTA string `json:"sequenceFASTA"`
+	SequenceFasta string `json:"sequenceFasta"`
 }
 
 /*
@@ -1109,7 +1121,7 @@ type Person struct {
 	/*
 	 * Unique persistent identifier for a person, provided by the Open Researcher and Contributor ID (ORCID) organisation
 	 */
-	ORCIDiD string `json:"oRCIDiD"`
+	OrcidId string `json:"orcidId"`
 	/*
 	 * A word or set of words used to identify and refer to an entity
 	 */
@@ -1151,7 +1163,7 @@ type Organization struct {
 	/*
 	 * The corresponding organization's persistent identifier from the Research Organization Registry (ROR)
 	 */
-	RORiD string `json:"rORiD"`
+	RorId string `json:"rorId"`
 	/*
 	 * A word or set of words used to identify and refer to an entity
 	 */
@@ -1175,9 +1187,9 @@ type Organization struct {
 }
 
 /*
- * A research infrastructure
+ * A research infrastructure (RI)
  */
-type RI struct {
+type ReasearchInfrastructure struct {
 	/*
 	 * parent types
 	 */
@@ -1193,7 +1205,7 @@ type RI struct {
 	/*
 	 * The corresponding organization's persistent identifier from the Research Organization Registry (ROR)
 	 */
-	RORiD string `json:"rORiD"`
+	RorId string `json:"rorId"`
 	/*
 	 * A word or set of words used to identify and refer to an entity
 	 */
@@ -1227,7 +1239,7 @@ type Provider struct {
 	/*
 	 * The research infrastructure of which this organization is a member
 	 */
-	MemberOfRI []RI `json:"memberOfRI"`
+	MemberOfRi []ReasearchInfrastructure `json:"memberOfRi"`
 	/*
 	 * Any other name under which the entity can be known
 	 */
@@ -1239,7 +1251,7 @@ type Provider struct {
 	/*
 	 * The corresponding organization's persistent identifier from the Research Organization Registry (ROR)
 	 */
-	RORiD string `json:"rORiD"`
+	RorId string `json:"rorId"`
 	/*
 	 * A word or set of words used to identify and refer to an entity
 	 */
@@ -1347,7 +1359,7 @@ type NaturalPartOrigin struct {
 	/*
 	 * The specific IPLC area (Indigenous People and Local Communities) from which this sample/element was sampled, if relevant
 	 */
-	IndigenousPoepleAndLocalCommunityOrigin IPLCOrigin `json:"indigenousPoepleAndLocalCommunityOrigin"`
+	IndigenousPeopleAndLocalCommunityOrigin IplcOrigin `json:"indigenousPeopleAndLocalCommunityOrigin"`
 	/*
 	 * The date when the sample was collected in situ. If unknown/private, use a proxy date such as 'date received' and indicate this by setting to true the before date property
 	 */
@@ -1359,7 +1371,7 @@ type NaturalPartOrigin struct {
 	/*
 	 * Reference of the permit identifiers for access to the genetic resource, applicable if the genetic resource falls under Access and Benefit-Sharing (ABS) regulations
 	 */
-	PermitIdentifierForABS string `json:"permitIdentifierForABS"`
+	PermitIdentifierForAbs string `json:"permitIdentifierForAbs"`
 	/*
 	 * Identification of a recombinant part
 	 */
@@ -1438,10 +1450,14 @@ type Collection struct {
 	 * A short explanation of the characteristics, features, or nature of the current item
 	 */
 	Description string `json:"description"`
+	/*
+	 * The version indicator (name or identifier) of a resource
+	 */
+	Version string `json:"version"`
 }
 
 /*
- * A product or a service
+ * An offering provided by a provider, which may be tangible (a product) or intangible (a service)
  */
 type ProductOrService struct {
 	/*
@@ -1451,11 +1467,11 @@ type ProductOrService struct {
 	/*
 	 * The URL that permits to access to the product/service detailed description page on the provider's website and/or allows to place an order about it or at least describe the process to place an order/enquiry
 	 */
-	AccessPointURL string `json:"accessPointURL"`
+	AccessPointUrl string `json:"accessPointUrl"`
 	/*
 	 * The reference or the stock keeping unit of the service or item provided in the provider's catalogue
 	 */
-	RefSKU string `json:"refSKU"`
+	RefSku string `json:"refSku"`
 	/*
 	 * A short description of what will be delivered by ordering one unit of this item
 	 */
@@ -1481,9 +1497,9 @@ type ProductOrService struct {
 	 */
 	PathogenIdentification []PathogenIdentification `json:"pathogenIdentification"`
 	/*
-	 * Any Digital Object Identifier that can be related
+	 * A Digital Object Identifier (DOI) that can be related
 	 */
-	RelatedDOI []DOI `json:"relatedDOI"`
+	Doi []Doi `json:"doi"`
 	/*
 	 * The highest risk group related to this resource. The risk group of a biological agent guiding its initial handling in labs according to the risk group classification defined by the WHO laboratory biosafety manual
 	 */
@@ -1495,7 +1511,7 @@ type ProductOrService struct {
 	/*
 	 * Indicates if the current service or product can be used to produce GMO
 	 */
-	CanItBeUsedToProduceGMO bool `json:"canItBeUsedToProduceGMO"`
+	CanBeUsedToProduceGmo bool `json:"canBeUsedToProduceGmo"`
 	/*
 	 * A provider of this product or service, as a specific organization
 	 */
@@ -1552,10 +1568,14 @@ type ProductOrService struct {
 	 * A short explanation of the characteristics, features, or nature of the current item
 	 */
 	Description string `json:"description"`
+	/*
+	 * The version indicator (name or identifier) of a resource
+	 */
+	Version string `json:"version"`
 }
 
 /*
- * A service
+ * An intangible offering characterized by an activity, performance, or facilitation carried out by a provider to fulfill a user’s need
  */
 type Service struct {
 	/*
@@ -1573,11 +1593,11 @@ type Service struct {
 	/*
 	 * The URL that permits to access to the product/service detailed description page on the provider's website and/or allows to place an order about it or at least describe the process to place an order/enquiry
 	 */
-	AccessPointURL string `json:"accessPointURL"`
+	AccessPointUrl string `json:"accessPointUrl"`
 	/*
 	 * The reference or the stock keeping unit of the service or item provided in the provider's catalogue
 	 */
-	RefSKU string `json:"refSKU"`
+	RefSku string `json:"refSku"`
 	/*
 	 * A short description of what will be delivered by ordering one unit of this item
 	 */
@@ -1603,9 +1623,9 @@ type Service struct {
 	 */
 	PathogenIdentification []PathogenIdentification `json:"pathogenIdentification"`
 	/*
-	 * Any Digital Object Identifier that can be related
+	 * A Digital Object Identifier (DOI) that can be related
 	 */
-	RelatedDOI []DOI `json:"relatedDOI"`
+	Doi []Doi `json:"doi"`
 	/*
 	 * The highest risk group related to this resource. The risk group of a biological agent guiding its initial handling in labs according to the risk group classification defined by the WHO laboratory biosafety manual
 	 */
@@ -1617,7 +1637,7 @@ type Service struct {
 	/*
 	 * Indicates if the current service or product can be used to produce GMO
 	 */
-	CanItBeUsedToProduceGMO bool `json:"canItBeUsedToProduceGMO"`
+	CanBeUsedToProduceGmo bool `json:"canBeUsedToProduceGmo"`
 	/*
 	 * A provider of this product or service, as a specific organization
 	 */
@@ -1674,10 +1694,14 @@ type Service struct {
 	 * A short explanation of the characteristics, features, or nature of the current item
 	 */
 	Description string `json:"description"`
+	/*
+	 * The version indicator (name or identifier) of a resource
+	 */
+	Version string `json:"version"`
 }
 
 /*
- * A product
+ * A tangible, physical item made available by a provider for use, consumption, or ownership transfer
  */
 type Product struct {
 	/*
@@ -1687,7 +1711,7 @@ type Product struct {
 	/*
 	 * The corresponding International Air Transport Association (IATA)'s category for this Product
 	 */
-	HasIATAClassification IATAClassification `json:"hasIATAClassification"`
+	IataClassification IataClassification `json:"iataClassification"`
 	/*
 	 * Specification of the terms and parameters for transporting
 
@@ -1696,7 +1720,7 @@ type Product struct {
 	/*
 	 * A Material Safety Data Sheet (MSDS) or Safety Data Sheet (SDS) is a standardized document that contains crucial occupational safety and health information related to the product
 	 */
-	MaterialSafetyDataSheet MSDS `json:"materialSafetyDataSheet"`
+	MaterialSafetyDataSheet ReasearchInfrastructure `json:"materialSafetyDataSheet"`
 	/*
 	 * The individual or organization responsible for the original discovery, isolation, or creation of an item, providing information about the source or origin of the sample
 	 */
@@ -1716,11 +1740,11 @@ type Product struct {
 	/*
 	 * The URL that permits to access to the product/service detailed description page on the provider's website and/or allows to place an order about it or at least describe the process to place an order/enquiry
 	 */
-	AccessPointURL string `json:"accessPointURL"`
+	AccessPointUrl string `json:"accessPointUrl"`
 	/*
 	 * The reference or the stock keeping unit of the service or item provided in the provider's catalogue
 	 */
-	RefSKU string `json:"refSKU"`
+	RefSku string `json:"refSku"`
 	/*
 	 * A short description of what will be delivered by ordering one unit of this item
 	 */
@@ -1746,9 +1770,9 @@ type Product struct {
 	 */
 	PathogenIdentification []PathogenIdentification `json:"pathogenIdentification"`
 	/*
-	 * Any Digital Object Identifier that can be related
+	 * A Digital Object Identifier (DOI) that can be related
 	 */
-	RelatedDOI []DOI `json:"relatedDOI"`
+	Doi []Doi `json:"doi"`
 	/*
 	 * The highest risk group related to this resource. The risk group of a biological agent guiding its initial handling in labs according to the risk group classification defined by the WHO laboratory biosafety manual
 	 */
@@ -1760,7 +1784,7 @@ type Product struct {
 	/*
 	 * Indicates if the current service or product can be used to produce GMO
 	 */
-	CanItBeUsedToProduceGMO bool `json:"canItBeUsedToProduceGMO"`
+	CanBeUsedToProduceGmo bool `json:"canBeUsedToProduceGmo"`
 	/*
 	 * A provider of this product or service, as a specific organization
 	 */
@@ -1817,6 +1841,10 @@ type Product struct {
 	 * A short explanation of the characteristics, features, or nature of the current item
 	 */
 	Description string `json:"description"`
+	/*
+	 * The version indicator (name or identifier) of a resource
+	 */
+	Version string `json:"version"`
 }
 
 /*
@@ -1850,7 +1878,7 @@ type Antibody struct {
 	/*
 	 * The corresponding International Air Transport Association (IATA)'s category for this Product
 	 */
-	HasIATAClassification IATAClassification `json:"hasIATAClassification"`
+	IataClassification IataClassification `json:"iataClassification"`
 	/*
 	 * Specification of the terms and parameters for transporting
 
@@ -1859,7 +1887,7 @@ type Antibody struct {
 	/*
 	 * A Material Safety Data Sheet (MSDS) or Safety Data Sheet (SDS) is a standardized document that contains crucial occupational safety and health information related to the product
 	 */
-	MaterialSafetyDataSheet MSDS `json:"materialSafetyDataSheet"`
+	MaterialSafetyDataSheet ReasearchInfrastructure `json:"materialSafetyDataSheet"`
 	/*
 	 * The individual or organization responsible for the original discovery, isolation, or creation of an item, providing information about the source or origin of the sample
 	 */
@@ -1879,11 +1907,11 @@ type Antibody struct {
 	/*
 	 * The URL that permits to access to the product/service detailed description page on the provider's website and/or allows to place an order about it or at least describe the process to place an order/enquiry
 	 */
-	AccessPointURL string `json:"accessPointURL"`
+	AccessPointUrl string `json:"accessPointUrl"`
 	/*
 	 * The reference or the stock keeping unit of the service or item provided in the provider's catalogue
 	 */
-	RefSKU string `json:"refSKU"`
+	RefSku string `json:"refSku"`
 	/*
 	 * A short description of what will be delivered by ordering one unit of this item
 	 */
@@ -1909,9 +1937,9 @@ type Antibody struct {
 	 */
 	PathogenIdentification []PathogenIdentification `json:"pathogenIdentification"`
 	/*
-	 * Any Digital Object Identifier that can be related
+	 * A Digital Object Identifier (DOI) that can be related
 	 */
-	RelatedDOI []DOI `json:"relatedDOI"`
+	Doi []Doi `json:"doi"`
 	/*
 	 * The highest risk group related to this resource. The risk group of a biological agent guiding its initial handling in labs according to the risk group classification defined by the WHO laboratory biosafety manual
 	 */
@@ -1923,7 +1951,7 @@ type Antibody struct {
 	/*
 	 * Indicates if the current service or product can be used to produce GMO
 	 */
-	CanItBeUsedToProduceGMO bool `json:"canItBeUsedToProduceGMO"`
+	CanBeUsedToProduceGmo bool `json:"canBeUsedToProduceGmo"`
 	/*
 	 * A provider of this product or service, as a specific organization
 	 */
@@ -1980,6 +2008,10 @@ type Antibody struct {
 	 * A short explanation of the characteristics, features, or nature of the current item
 	 */
 	Description string `json:"description"`
+	/*
+	 * The version indicator (name or identifier) of a resource
+	 */
+	Version string `json:"version"`
 }
 
 /*
@@ -2017,7 +2049,7 @@ type Hybridoma struct {
 	/*
 	 * The corresponding International Air Transport Association (IATA)'s category for this Product
 	 */
-	HasIATAClassification IATAClassification `json:"hasIATAClassification"`
+	IataClassification IataClassification `json:"iataClassification"`
 	/*
 	 * Specification of the terms and parameters for transporting
 
@@ -2026,7 +2058,7 @@ type Hybridoma struct {
 	/*
 	 * A Material Safety Data Sheet (MSDS) or Safety Data Sheet (SDS) is a standardized document that contains crucial occupational safety and health information related to the product
 	 */
-	MaterialSafetyDataSheet MSDS `json:"materialSafetyDataSheet"`
+	MaterialSafetyDataSheet ReasearchInfrastructure `json:"materialSafetyDataSheet"`
 	/*
 	 * The individual or organization responsible for the original discovery, isolation, or creation of an item, providing information about the source or origin of the sample
 	 */
@@ -2046,11 +2078,11 @@ type Hybridoma struct {
 	/*
 	 * The URL that permits to access to the product/service detailed description page on the provider's website and/or allows to place an order about it or at least describe the process to place an order/enquiry
 	 */
-	AccessPointURL string `json:"accessPointURL"`
+	AccessPointUrl string `json:"accessPointUrl"`
 	/*
 	 * The reference or the stock keeping unit of the service or item provided in the provider's catalogue
 	 */
-	RefSKU string `json:"refSKU"`
+	RefSku string `json:"refSku"`
 	/*
 	 * A short description of what will be delivered by ordering one unit of this item
 	 */
@@ -2076,9 +2108,9 @@ type Hybridoma struct {
 	 */
 	PathogenIdentification []PathogenIdentification `json:"pathogenIdentification"`
 	/*
-	 * Any Digital Object Identifier that can be related
+	 * A Digital Object Identifier (DOI) that can be related
 	 */
-	RelatedDOI []DOI `json:"relatedDOI"`
+	Doi []Doi `json:"doi"`
 	/*
 	 * The highest risk group related to this resource. The risk group of a biological agent guiding its initial handling in labs according to the risk group classification defined by the WHO laboratory biosafety manual
 	 */
@@ -2090,7 +2122,7 @@ type Hybridoma struct {
 	/*
 	 * Indicates if the current service or product can be used to produce GMO
 	 */
-	CanItBeUsedToProduceGMO bool `json:"canItBeUsedToProduceGMO"`
+	CanBeUsedToProduceGmo bool `json:"canBeUsedToProduceGmo"`
 	/*
 	 * A provider of this product or service, as a specific organization
 	 */
@@ -2147,6 +2179,10 @@ type Hybridoma struct {
 	 * A short explanation of the characteristics, features, or nature of the current item
 	 */
 	Description string `json:"description"`
+	/*
+	 * The version indicator (name or identifier) of a resource
+	 */
+	Version string `json:"version"`
 }
 
 /*
@@ -2168,15 +2204,15 @@ type Protein struct {
 	/*
 	 * Identifier for 3D structural data as per the PDB (Protein Data Bank) database
 	 */
-	RelatedPDB []PDBReference `json:"relatedPDB"`
+	RelatedPdb []PdbReference `json:"relatedPdb"`
 	/*
 	 * Distinctive attributes of a product that set it apart from other similar items e.g., Reference strain, Vaccinal strain, Antiviral resistant strain ...
 	 */
 	SpecialFeature []SpecialFeature `json:"specialFeature"`
 	/*
-	 * Peptide sequences genetically grafted onto a recombinant protein
+	 * A DNA coding sequence or corresponding peptide/protein sequence fused to a sequence of interest, used to facilitate experimental operations such as purification, detection, localization, tracking, solubility enhancement, or selection. Applicable to both proteins and nucleic acids
 	 */
-	ProteinTAG []ProteinTag `json:"proteinTAG"`
+	ProteinTag []ProteinTag `json:"proteinTag"`
 	/*
 	 * A distinct structural and functional unit within the protein, often capable of independent folding and stability, which contributes to the protein's overall function
 	 */
@@ -2200,7 +2236,7 @@ type Protein struct {
 	/*
 	 * Detailed information about the specific biological functions, mechanisms of action, and technical attributes of a protein. This includes how the protein interacts within biological systems, its role in cellular processes, and any relevant technical details such as structure, activity, and interactions with other molecules.
 	 */
-	FunctionalTechnicalDescription string `json:"functionalTechnicalDescription"`
+	FunctionalAndTechnicalDescription string `json:"functionalAndTechnicalDescription"`
 	/*
 	 * Refers to the degree of purity achieved for a protein sample. Possible values include '>95%' (the protein is highly purified, with more than 95% purity) and 'Unpurified expression host lysate or partly purified protein' (the protein is either unpurified and present in the host cell lysate or only partially purified).
 	 */
@@ -2208,7 +2244,7 @@ type Protein struct {
 	/*
 	 * Indicates the presence and condition of a tag on the protein after solubilization. Possible values include 'Uncleaved Tag' (the tag is still attached to the protein), 'Cleaved Tag' (the tag has been removed from the protein), and 'No Tag' (the protein does not have a tag)
 	 */
-	TheTAGStatusOfTheSolubilizedProtein string `json:"theTAGStatusOfTheSolubilizedProtein"`
+	TagStatusOfTheSolubilizedProtein string `json:"tagStatusOfTheSolubilizedProtein"`
 	/*
 	 * Refers to the classification of a protein based on the specific type of functional analysis performed to determine its biological activities and roles. Possible values include 'Enzymatic' (the protein has been characterized for its enzyme activity) and 'Antigenic' (the protein has been characterized for its ability to elicit an immune response).
 	 */
@@ -2216,7 +2252,7 @@ type Protein struct {
 	/*
 	 * The corresponding International Air Transport Association (IATA)'s category for this Product
 	 */
-	HasIATAClassification IATAClassification `json:"hasIATAClassification"`
+	IataClassification IataClassification `json:"iataClassification"`
 	/*
 	 * Specification of the terms and parameters for transporting
 
@@ -2225,7 +2261,7 @@ type Protein struct {
 	/*
 	 * A Material Safety Data Sheet (MSDS) or Safety Data Sheet (SDS) is a standardized document that contains crucial occupational safety and health information related to the product
 	 */
-	MaterialSafetyDataSheet MSDS `json:"materialSafetyDataSheet"`
+	MaterialSafetyDataSheet ReasearchInfrastructure `json:"materialSafetyDataSheet"`
 	/*
 	 * The individual or organization responsible for the original discovery, isolation, or creation of an item, providing information about the source or origin of the sample
 	 */
@@ -2245,11 +2281,11 @@ type Protein struct {
 	/*
 	 * The URL that permits to access to the product/service detailed description page on the provider's website and/or allows to place an order about it or at least describe the process to place an order/enquiry
 	 */
-	AccessPointURL string `json:"accessPointURL"`
+	AccessPointUrl string `json:"accessPointUrl"`
 	/*
 	 * The reference or the stock keeping unit of the service or item provided in the provider's catalogue
 	 */
-	RefSKU string `json:"refSKU"`
+	RefSku string `json:"refSku"`
 	/*
 	 * A short description of what will be delivered by ordering one unit of this item
 	 */
@@ -2275,9 +2311,9 @@ type Protein struct {
 	 */
 	PathogenIdentification []PathogenIdentification `json:"pathogenIdentification"`
 	/*
-	 * Any Digital Object Identifier that can be related
+	 * A Digital Object Identifier (DOI) that can be related
 	 */
-	RelatedDOI []DOI `json:"relatedDOI"`
+	Doi []Doi `json:"doi"`
 	/*
 	 * The highest risk group related to this resource. The risk group of a biological agent guiding its initial handling in labs according to the risk group classification defined by the WHO laboratory biosafety manual
 	 */
@@ -2289,7 +2325,7 @@ type Protein struct {
 	/*
 	 * Indicates if the current service or product can be used to produce GMO
 	 */
-	CanItBeUsedToProduceGMO bool `json:"canItBeUsedToProduceGMO"`
+	CanBeUsedToProduceGmo bool `json:"canBeUsedToProduceGmo"`
 	/*
 	 * A provider of this product or service, as a specific organization
 	 */
@@ -2346,6 +2382,10 @@ type Protein struct {
 	 * A short explanation of the characteristics, features, or nature of the current item
 	 */
 	Description string `json:"description"`
+	/*
+	 * The version indicator (name or identifier) of a resource
+	 */
+	Version string `json:"version"`
 }
 
 /*
@@ -2363,15 +2403,16 @@ type NucleicAcid struct {
 	/*
 	 * A GenBank formatted file that contains detailed sequence and annotation information of a nucleic acid construct
 	 */
-	HasGbFileOfTheConstruct []Data `json:"hasGbFileOfTheConstruct"`
+	GenBankFileOfTheConstruct []Data `json:"genBankFileOfTheConstruct"`
 	/*
 	 * The related sequence information from a sequence provider or in fasta format
 	 */
 	Sequence []Sequence `json:"sequence"`
 	/*
-	 * Indicates that the nucleic acid sequence has been inserted into a plasmid vector for propagation or expression in a host organism
+	 * Indicates if the nucleic acid sequence has been inserted into a plasmid vector for propagation or expression in a host organism
+
 	 */
-	IsItAClonedNucleicAcid bool `json:"isItAClonedNucleicAcid"`
+	ClonedNucleicAcid bool `json:"clonedNucleicAcid"`
 	/*
 	 * The plasmid into which the nucleic acid has been cloned
 	 */
@@ -2379,11 +2420,11 @@ type NucleicAcid struct {
 	/*
 	 * Specific selectable markers in the plasmid, such as antibiotic resistance genes, used to identify and maintain cells that contain the plasmid
 	 */
-	PasmidSelection []PlasmidSelection `json:"pasmidSelection"`
+	PlasmidSelection []PlasmidSelection `json:"plasmidSelection"`
 	/*
-	 * TAG sequence used for purposes such as purification, detection, or localization
+	 * A DNA coding sequence or corresponding peptide/protein sequence fused to a sequence of interest, used to facilitate experimental operations such as purification, detection, localization, tracking, solubility enhancement, or selection. Applicable to both proteins and nucleic acids
 	 */
-	HasTAG ProteinTag `json:"hasTAG"`
+	ProteinTag ProteinTag `json:"proteinTag"`
 	/*
 	 * The specific region encompassed in the product
 	 */
@@ -2416,7 +2457,7 @@ type NucleicAcid struct {
 	/*
 	 * The corresponding International Air Transport Association (IATA)'s category for this Product
 	 */
-	HasIATAClassification IATAClassification `json:"hasIATAClassification"`
+	IataClassification IataClassification `json:"iataClassification"`
 	/*
 	 * Specification of the terms and parameters for transporting
 
@@ -2425,7 +2466,7 @@ type NucleicAcid struct {
 	/*
 	 * A Material Safety Data Sheet (MSDS) or Safety Data Sheet (SDS) is a standardized document that contains crucial occupational safety and health information related to the product
 	 */
-	MaterialSafetyDataSheet MSDS `json:"materialSafetyDataSheet"`
+	MaterialSafetyDataSheet ReasearchInfrastructure `json:"materialSafetyDataSheet"`
 	/*
 	 * The individual or organization responsible for the original discovery, isolation, or creation of an item, providing information about the source or origin of the sample
 	 */
@@ -2445,11 +2486,11 @@ type NucleicAcid struct {
 	/*
 	 * The URL that permits to access to the product/service detailed description page on the provider's website and/or allows to place an order about it or at least describe the process to place an order/enquiry
 	 */
-	AccessPointURL string `json:"accessPointURL"`
+	AccessPointUrl string `json:"accessPointUrl"`
 	/*
 	 * The reference or the stock keeping unit of the service or item provided in the provider's catalogue
 	 */
-	RefSKU string `json:"refSKU"`
+	RefSku string `json:"refSku"`
 	/*
 	 * A short description of what will be delivered by ordering one unit of this item
 	 */
@@ -2475,9 +2516,9 @@ type NucleicAcid struct {
 	 */
 	PathogenIdentification []PathogenIdentification `json:"pathogenIdentification"`
 	/*
-	 * Any Digital Object Identifier that can be related
+	 * A Digital Object Identifier (DOI) that can be related
 	 */
-	RelatedDOI []DOI `json:"relatedDOI"`
+	Doi []Doi `json:"doi"`
 	/*
 	 * The highest risk group related to this resource. The risk group of a biological agent guiding its initial handling in labs according to the risk group classification defined by the WHO laboratory biosafety manual
 	 */
@@ -2489,7 +2530,7 @@ type NucleicAcid struct {
 	/*
 	 * Indicates if the current service or product can be used to produce GMO
 	 */
-	CanItBeUsedToProduceGMO bool `json:"canItBeUsedToProduceGMO"`
+	CanBeUsedToProduceGmo bool `json:"canBeUsedToProduceGmo"`
 	/*
 	 * A provider of this product or service, as a specific organization
 	 */
@@ -2546,6 +2587,10 @@ type NucleicAcid struct {
 	 * A short explanation of the characteristics, features, or nature of the current item
 	 */
 	Description string `json:"description"`
+	/*
+	 * The version indicator (name or identifier) of a resource
+	 */
+	Version string `json:"version"`
 }
 
 /*
@@ -2557,9 +2602,9 @@ type DetectionKit struct {
 	 */
 	Product
 	/*
-	 * The related standard operating procedure file
+	 * The related standard operating procedure file (SOP)
 	 */
-	HasSOPFile []File `json:"hasSOPFile"`
+	StandardOperatingProcedureFile []File `json:"standardOperatingProcedureFile"`
 	/*
 	 * Boolean value indicating whether the specificity of the product has been formally documented
 	 */
@@ -2575,7 +2620,7 @@ type DetectionKit struct {
 	/*
 	 * The corresponding International Air Transport Association (IATA)'s category for this Product
 	 */
-	HasIATAClassification IATAClassification `json:"hasIATAClassification"`
+	IataClassification IataClassification `json:"iataClassification"`
 	/*
 	 * Specification of the terms and parameters for transporting
 
@@ -2584,7 +2629,7 @@ type DetectionKit struct {
 	/*
 	 * A Material Safety Data Sheet (MSDS) or Safety Data Sheet (SDS) is a standardized document that contains crucial occupational safety and health information related to the product
 	 */
-	MaterialSafetyDataSheet MSDS `json:"materialSafetyDataSheet"`
+	MaterialSafetyDataSheet ReasearchInfrastructure `json:"materialSafetyDataSheet"`
 	/*
 	 * The individual or organization responsible for the original discovery, isolation, or creation of an item, providing information about the source or origin of the sample
 	 */
@@ -2604,11 +2649,11 @@ type DetectionKit struct {
 	/*
 	 * The URL that permits to access to the product/service detailed description page on the provider's website and/or allows to place an order about it or at least describe the process to place an order/enquiry
 	 */
-	AccessPointURL string `json:"accessPointURL"`
+	AccessPointUrl string `json:"accessPointUrl"`
 	/*
 	 * The reference or the stock keeping unit of the service or item provided in the provider's catalogue
 	 */
-	RefSKU string `json:"refSKU"`
+	RefSku string `json:"refSku"`
 	/*
 	 * A short description of what will be delivered by ordering one unit of this item
 	 */
@@ -2634,9 +2679,9 @@ type DetectionKit struct {
 	 */
 	PathogenIdentification []PathogenIdentification `json:"pathogenIdentification"`
 	/*
-	 * Any Digital Object Identifier that can be related
+	 * A Digital Object Identifier (DOI) that can be related
 	 */
-	RelatedDOI []DOI `json:"relatedDOI"`
+	Doi []Doi `json:"doi"`
 	/*
 	 * The highest risk group related to this resource. The risk group of a biological agent guiding its initial handling in labs according to the risk group classification defined by the WHO laboratory biosafety manual
 	 */
@@ -2648,7 +2693,7 @@ type DetectionKit struct {
 	/*
 	 * Indicates if the current service or product can be used to produce GMO
 	 */
-	CanItBeUsedToProduceGMO bool `json:"canItBeUsedToProduceGMO"`
+	CanBeUsedToProduceGmo bool `json:"canBeUsedToProduceGmo"`
 	/*
 	 * A provider of this product or service, as a specific organization
 	 */
@@ -2705,10 +2750,14 @@ type DetectionKit struct {
 	 * A short explanation of the characteristics, features, or nature of the current item
 	 */
 	Description string `json:"description"`
+	/*
+	 * The version indicator (name or identifier) of a resource
+	 */
+	Version string `json:"version"`
 }
 
 /*
- * A group of products
+ * A grouping of products and/or services intentionally combined into a single offering, typically to provide added value, convenience, or specific experimental utility
  */
 type Bundle struct {
 	/*
@@ -2716,13 +2765,13 @@ type Bundle struct {
 	 */
 	Product
 	/*
-	 * Associates the bundle with the individual products it contains, specifying the components included within the bundle.
+	 * Specifies the constituent products and/or services that are part of the bundle
 	 */
-	ProductsOfTheBundle []Product `json:"productsOfTheBundle"`
+	ItemsOfTheBundle []Product `json:"itemsOfTheBundle"`
 	/*
 	 * The corresponding International Air Transport Association (IATA)'s category for this Product
 	 */
-	HasIATAClassification IATAClassification `json:"hasIATAClassification"`
+	IataClassification IataClassification `json:"iataClassification"`
 	/*
 	 * Specification of the terms and parameters for transporting
 
@@ -2731,7 +2780,7 @@ type Bundle struct {
 	/*
 	 * A Material Safety Data Sheet (MSDS) or Safety Data Sheet (SDS) is a standardized document that contains crucial occupational safety and health information related to the product
 	 */
-	MaterialSafetyDataSheet MSDS `json:"materialSafetyDataSheet"`
+	MaterialSafetyDataSheet ReasearchInfrastructure `json:"materialSafetyDataSheet"`
 	/*
 	 * The individual or organization responsible for the original discovery, isolation, or creation of an item, providing information about the source or origin of the sample
 	 */
@@ -2751,11 +2800,11 @@ type Bundle struct {
 	/*
 	 * The URL that permits to access to the product/service detailed description page on the provider's website and/or allows to place an order about it or at least describe the process to place an order/enquiry
 	 */
-	AccessPointURL string `json:"accessPointURL"`
+	AccessPointUrl string `json:"accessPointUrl"`
 	/*
 	 * The reference or the stock keeping unit of the service or item provided in the provider's catalogue
 	 */
-	RefSKU string `json:"refSKU"`
+	RefSku string `json:"refSku"`
 	/*
 	 * A short description of what will be delivered by ordering one unit of this item
 	 */
@@ -2781,9 +2830,9 @@ type Bundle struct {
 	 */
 	PathogenIdentification []PathogenIdentification `json:"pathogenIdentification"`
 	/*
-	 * Any Digital Object Identifier that can be related
+	 * A Digital Object Identifier (DOI) that can be related
 	 */
-	RelatedDOI []DOI `json:"relatedDOI"`
+	Doi []Doi `json:"doi"`
 	/*
 	 * The highest risk group related to this resource. The risk group of a biological agent guiding its initial handling in labs according to the risk group classification defined by the WHO laboratory biosafety manual
 	 */
@@ -2795,7 +2844,7 @@ type Bundle struct {
 	/*
 	 * Indicates if the current service or product can be used to produce GMO
 	 */
-	CanItBeUsedToProduceGMO bool `json:"canItBeUsedToProduceGMO"`
+	CanBeUsedToProduceGmo bool `json:"canBeUsedToProduceGmo"`
 	/*
 	 * A provider of this product or service, as a specific organization
 	 */
@@ -2852,6 +2901,10 @@ type Bundle struct {
 	 * A short explanation of the characteristics, features, or nature of the current item
 	 */
 	Description string `json:"description"`
+	/*
+	 * The version indicator (name or identifier) of a resource
+	 */
+	Version string `json:"version"`
 }
 
 /*
@@ -2937,7 +2990,7 @@ type Pathogen struct {
 	/*
 	 * The corresponding International Air Transport Association (IATA)'s category for this Product
 	 */
-	HasIATAClassification IATAClassification `json:"hasIATAClassification"`
+	IataClassification IataClassification `json:"iataClassification"`
 	/*
 	 * Specification of the terms and parameters for transporting
 
@@ -2946,7 +2999,7 @@ type Pathogen struct {
 	/*
 	 * A Material Safety Data Sheet (MSDS) or Safety Data Sheet (SDS) is a standardized document that contains crucial occupational safety and health information related to the product
 	 */
-	MaterialSafetyDataSheet MSDS `json:"materialSafetyDataSheet"`
+	MaterialSafetyDataSheet ReasearchInfrastructure `json:"materialSafetyDataSheet"`
 	/*
 	 * The individual or organization responsible for the original discovery, isolation, or creation of an item, providing information about the source or origin of the sample
 	 */
@@ -2966,11 +3019,11 @@ type Pathogen struct {
 	/*
 	 * The URL that permits to access to the product/service detailed description page on the provider's website and/or allows to place an order about it or at least describe the process to place an order/enquiry
 	 */
-	AccessPointURL string `json:"accessPointURL"`
+	AccessPointUrl string `json:"accessPointUrl"`
 	/*
 	 * The reference or the stock keeping unit of the service or item provided in the provider's catalogue
 	 */
-	RefSKU string `json:"refSKU"`
+	RefSku string `json:"refSku"`
 	/*
 	 * A short description of what will be delivered by ordering one unit of this item
 	 */
@@ -2996,9 +3049,9 @@ type Pathogen struct {
 	 */
 	PathogenIdentification []PathogenIdentification `json:"pathogenIdentification"`
 	/*
-	 * Any Digital Object Identifier that can be related
+	 * A Digital Object Identifier (DOI) that can be related
 	 */
-	RelatedDOI []DOI `json:"relatedDOI"`
+	Doi []Doi `json:"doi"`
 	/*
 	 * The highest risk group related to this resource. The risk group of a biological agent guiding its initial handling in labs according to the risk group classification defined by the WHO laboratory biosafety manual
 	 */
@@ -3010,7 +3063,7 @@ type Pathogen struct {
 	/*
 	 * Indicates if the current service or product can be used to produce GMO
 	 */
-	CanItBeUsedToProduceGMO bool `json:"canItBeUsedToProduceGMO"`
+	CanBeUsedToProduceGmo bool `json:"canBeUsedToProduceGmo"`
 	/*
 	 * A provider of this product or service, as a specific organization
 	 */
@@ -3067,6 +3120,10 @@ type Pathogen struct {
 	 * A short explanation of the characteristics, features, or nature of the current item
 	 */
 	Description string `json:"description"`
+	/*
+	 * The version indicator (name or identifier) of a resource
+	 */
+	Version string `json:"version"`
 }
 
 /*
@@ -3164,7 +3221,7 @@ type Virus struct {
 	/*
 	 * The corresponding International Air Transport Association (IATA)'s category for this Product
 	 */
-	HasIATAClassification IATAClassification `json:"hasIATAClassification"`
+	IataClassification IataClassification `json:"iataClassification"`
 	/*
 	 * Specification of the terms and parameters for transporting
 
@@ -3173,7 +3230,7 @@ type Virus struct {
 	/*
 	 * A Material Safety Data Sheet (MSDS) or Safety Data Sheet (SDS) is a standardized document that contains crucial occupational safety and health information related to the product
 	 */
-	MaterialSafetyDataSheet MSDS `json:"materialSafetyDataSheet"`
+	MaterialSafetyDataSheet ReasearchInfrastructure `json:"materialSafetyDataSheet"`
 	/*
 	 * The individual or organization responsible for the original discovery, isolation, or creation of an item, providing information about the source or origin of the sample
 	 */
@@ -3193,11 +3250,11 @@ type Virus struct {
 	/*
 	 * The URL that permits to access to the product/service detailed description page on the provider's website and/or allows to place an order about it or at least describe the process to place an order/enquiry
 	 */
-	AccessPointURL string `json:"accessPointURL"`
+	AccessPointUrl string `json:"accessPointUrl"`
 	/*
 	 * The reference or the stock keeping unit of the service or item provided in the provider's catalogue
 	 */
-	RefSKU string `json:"refSKU"`
+	RefSku string `json:"refSku"`
 	/*
 	 * A short description of what will be delivered by ordering one unit of this item
 	 */
@@ -3223,9 +3280,9 @@ type Virus struct {
 	 */
 	PathogenIdentification []PathogenIdentification `json:"pathogenIdentification"`
 	/*
-	 * Any Digital Object Identifier that can be related
+	 * A Digital Object Identifier (DOI) that can be related
 	 */
-	RelatedDOI []DOI `json:"relatedDOI"`
+	Doi []Doi `json:"doi"`
 	/*
 	 * The highest risk group related to this resource. The risk group of a biological agent guiding its initial handling in labs according to the risk group classification defined by the WHO laboratory biosafety manual
 	 */
@@ -3237,7 +3294,7 @@ type Virus struct {
 	/*
 	 * Indicates if the current service or product can be used to produce GMO
 	 */
-	CanItBeUsedToProduceGMO bool `json:"canItBeUsedToProduceGMO"`
+	CanBeUsedToProduceGmo bool `json:"canBeUsedToProduceGmo"`
 	/*
 	 * A provider of this product or service, as a specific organization
 	 */
@@ -3294,6 +3351,10 @@ type Virus struct {
 	 * A short explanation of the characteristics, features, or nature of the current item
 	 */
 	Description string `json:"description"`
+	/*
+	 * The version indicator (name or identifier) of a resource
+	 */
+	Version string `json:"version"`
 }
 
 /*
@@ -3379,7 +3440,7 @@ type Bacterium struct {
 	/*
 	 * The corresponding International Air Transport Association (IATA)'s category for this Product
 	 */
-	HasIATAClassification IATAClassification `json:"hasIATAClassification"`
+	IataClassification IataClassification `json:"iataClassification"`
 	/*
 	 * Specification of the terms and parameters for transporting
 
@@ -3388,7 +3449,7 @@ type Bacterium struct {
 	/*
 	 * A Material Safety Data Sheet (MSDS) or Safety Data Sheet (SDS) is a standardized document that contains crucial occupational safety and health information related to the product
 	 */
-	MaterialSafetyDataSheet MSDS `json:"materialSafetyDataSheet"`
+	MaterialSafetyDataSheet ReasearchInfrastructure `json:"materialSafetyDataSheet"`
 	/*
 	 * The individual or organization responsible for the original discovery, isolation, or creation of an item, providing information about the source or origin of the sample
 	 */
@@ -3408,11 +3469,11 @@ type Bacterium struct {
 	/*
 	 * The URL that permits to access to the product/service detailed description page on the provider's website and/or allows to place an order about it or at least describe the process to place an order/enquiry
 	 */
-	AccessPointURL string `json:"accessPointURL"`
+	AccessPointUrl string `json:"accessPointUrl"`
 	/*
 	 * The reference or the stock keeping unit of the service or item provided in the provider's catalogue
 	 */
-	RefSKU string `json:"refSKU"`
+	RefSku string `json:"refSku"`
 	/*
 	 * A short description of what will be delivered by ordering one unit of this item
 	 */
@@ -3438,9 +3499,9 @@ type Bacterium struct {
 	 */
 	PathogenIdentification []PathogenIdentification `json:"pathogenIdentification"`
 	/*
-	 * Any Digital Object Identifier that can be related
+	 * A Digital Object Identifier (DOI) that can be related
 	 */
-	RelatedDOI []DOI `json:"relatedDOI"`
+	Doi []Doi `json:"doi"`
 	/*
 	 * The highest risk group related to this resource. The risk group of a biological agent guiding its initial handling in labs according to the risk group classification defined by the WHO laboratory biosafety manual
 	 */
@@ -3452,7 +3513,7 @@ type Bacterium struct {
 	/*
 	 * Indicates if the current service or product can be used to produce GMO
 	 */
-	CanItBeUsedToProduceGMO bool `json:"canItBeUsedToProduceGMO"`
+	CanBeUsedToProduceGmo bool `json:"canBeUsedToProduceGmo"`
 	/*
 	 * A provider of this product or service, as a specific organization
 	 */
@@ -3509,6 +3570,10 @@ type Bacterium struct {
 	 * A short explanation of the characteristics, features, or nature of the current item
 	 */
 	Description string `json:"description"`
+	/*
+	 * The version indicator (name or identifier) of a resource
+	 */
+	Version string `json:"version"`
 }
 
 /*
@@ -3594,7 +3659,7 @@ type Fungus struct {
 	/*
 	 * The corresponding International Air Transport Association (IATA)'s category for this Product
 	 */
-	HasIATAClassification IATAClassification `json:"hasIATAClassification"`
+	IataClassification IataClassification `json:"iataClassification"`
 	/*
 	 * Specification of the terms and parameters for transporting
 
@@ -3603,7 +3668,7 @@ type Fungus struct {
 	/*
 	 * A Material Safety Data Sheet (MSDS) or Safety Data Sheet (SDS) is a standardized document that contains crucial occupational safety and health information related to the product
 	 */
-	MaterialSafetyDataSheet MSDS `json:"materialSafetyDataSheet"`
+	MaterialSafetyDataSheet ReasearchInfrastructure `json:"materialSafetyDataSheet"`
 	/*
 	 * The individual or organization responsible for the original discovery, isolation, or creation of an item, providing information about the source or origin of the sample
 	 */
@@ -3623,11 +3688,11 @@ type Fungus struct {
 	/*
 	 * The URL that permits to access to the product/service detailed description page on the provider's website and/or allows to place an order about it or at least describe the process to place an order/enquiry
 	 */
-	AccessPointURL string `json:"accessPointURL"`
+	AccessPointUrl string `json:"accessPointUrl"`
 	/*
 	 * The reference or the stock keeping unit of the service or item provided in the provider's catalogue
 	 */
-	RefSKU string `json:"refSKU"`
+	RefSku string `json:"refSku"`
 	/*
 	 * A short description of what will be delivered by ordering one unit of this item
 	 */
@@ -3653,9 +3718,9 @@ type Fungus struct {
 	 */
 	PathogenIdentification []PathogenIdentification `json:"pathogenIdentification"`
 	/*
-	 * Any Digital Object Identifier that can be related
+	 * A Digital Object Identifier (DOI) that can be related
 	 */
-	RelatedDOI []DOI `json:"relatedDOI"`
+	Doi []Doi `json:"doi"`
 	/*
 	 * The highest risk group related to this resource. The risk group of a biological agent guiding its initial handling in labs according to the risk group classification defined by the WHO laboratory biosafety manual
 	 */
@@ -3667,7 +3732,7 @@ type Fungus struct {
 	/*
 	 * Indicates if the current service or product can be used to produce GMO
 	 */
-	CanItBeUsedToProduceGMO bool `json:"canItBeUsedToProduceGMO"`
+	CanBeUsedToProduceGmo bool `json:"canBeUsedToProduceGmo"`
 	/*
 	 * A provider of this product or service, as a specific organization
 	 */
@@ -3724,6 +3789,10 @@ type Fungus struct {
 	 * A short explanation of the characteristics, features, or nature of the current item
 	 */
 	Description string `json:"description"`
+	/*
+	 * The version indicator (name or identifier) of a resource
+	 */
+	Version string `json:"version"`
 }
 
 /*
@@ -3809,7 +3878,7 @@ type Protozoan struct {
 	/*
 	 * The corresponding International Air Transport Association (IATA)'s category for this Product
 	 */
-	HasIATAClassification IATAClassification `json:"hasIATAClassification"`
+	IataClassification IataClassification `json:"iataClassification"`
 	/*
 	 * Specification of the terms and parameters for transporting
 
@@ -3818,7 +3887,7 @@ type Protozoan struct {
 	/*
 	 * A Material Safety Data Sheet (MSDS) or Safety Data Sheet (SDS) is a standardized document that contains crucial occupational safety and health information related to the product
 	 */
-	MaterialSafetyDataSheet MSDS `json:"materialSafetyDataSheet"`
+	MaterialSafetyDataSheet ReasearchInfrastructure `json:"materialSafetyDataSheet"`
 	/*
 	 * The individual or organization responsible for the original discovery, isolation, or creation of an item, providing information about the source or origin of the sample
 	 */
@@ -3838,11 +3907,11 @@ type Protozoan struct {
 	/*
 	 * The URL that permits to access to the product/service detailed description page on the provider's website and/or allows to place an order about it or at least describe the process to place an order/enquiry
 	 */
-	AccessPointURL string `json:"accessPointURL"`
+	AccessPointUrl string `json:"accessPointUrl"`
 	/*
 	 * The reference or the stock keeping unit of the service or item provided in the provider's catalogue
 	 */
-	RefSKU string `json:"refSKU"`
+	RefSku string `json:"refSku"`
 	/*
 	 * A short description of what will be delivered by ordering one unit of this item
 	 */
@@ -3868,9 +3937,9 @@ type Protozoan struct {
 	 */
 	PathogenIdentification []PathogenIdentification `json:"pathogenIdentification"`
 	/*
-	 * Any Digital Object Identifier that can be related
+	 * A Digital Object Identifier (DOI) that can be related
 	 */
-	RelatedDOI []DOI `json:"relatedDOI"`
+	Doi []Doi `json:"doi"`
 	/*
 	 * The highest risk group related to this resource. The risk group of a biological agent guiding its initial handling in labs according to the risk group classification defined by the WHO laboratory biosafety manual
 	 */
@@ -3882,7 +3951,7 @@ type Protozoan struct {
 	/*
 	 * Indicates if the current service or product can be used to produce GMO
 	 */
-	CanItBeUsedToProduceGMO bool `json:"canItBeUsedToProduceGMO"`
+	CanBeUsedToProduceGmo bool `json:"canBeUsedToProduceGmo"`
 	/*
 	 * A provider of this product or service, as a specific organization
 	 */
@@ -3939,6 +4008,10 @@ type Protozoan struct {
 	 * A short explanation of the characteristics, features, or nature of the current item
 	 */
 	Description string `json:"description"`
+	/*
+	 * The version indicator (name or identifier) of a resource
+	 */
+	Version string `json:"version"`
 }
 
 /*
@@ -4024,7 +4097,7 @@ type Viroid struct {
 	/*
 	 * The corresponding International Air Transport Association (IATA)'s category for this Product
 	 */
-	HasIATAClassification IATAClassification `json:"hasIATAClassification"`
+	IataClassification IataClassification `json:"iataClassification"`
 	/*
 	 * Specification of the terms and parameters for transporting
 
@@ -4033,7 +4106,7 @@ type Viroid struct {
 	/*
 	 * A Material Safety Data Sheet (MSDS) or Safety Data Sheet (SDS) is a standardized document that contains crucial occupational safety and health information related to the product
 	 */
-	MaterialSafetyDataSheet MSDS `json:"materialSafetyDataSheet"`
+	MaterialSafetyDataSheet ReasearchInfrastructure `json:"materialSafetyDataSheet"`
 	/*
 	 * The individual or organization responsible for the original discovery, isolation, or creation of an item, providing information about the source or origin of the sample
 	 */
@@ -4053,11 +4126,11 @@ type Viroid struct {
 	/*
 	 * The URL that permits to access to the product/service detailed description page on the provider's website and/or allows to place an order about it or at least describe the process to place an order/enquiry
 	 */
-	AccessPointURL string `json:"accessPointURL"`
+	AccessPointUrl string `json:"accessPointUrl"`
 	/*
 	 * The reference or the stock keeping unit of the service or item provided in the provider's catalogue
 	 */
-	RefSKU string `json:"refSKU"`
+	RefSku string `json:"refSku"`
 	/*
 	 * A short description of what will be delivered by ordering one unit of this item
 	 */
@@ -4083,9 +4156,9 @@ type Viroid struct {
 	 */
 	PathogenIdentification []PathogenIdentification `json:"pathogenIdentification"`
 	/*
-	 * Any Digital Object Identifier that can be related
+	 * A Digital Object Identifier (DOI) that can be related
 	 */
-	RelatedDOI []DOI `json:"relatedDOI"`
+	Doi []Doi `json:"doi"`
 	/*
 	 * The highest risk group related to this resource. The risk group of a biological agent guiding its initial handling in labs according to the risk group classification defined by the WHO laboratory biosafety manual
 	 */
@@ -4097,7 +4170,7 @@ type Viroid struct {
 	/*
 	 * Indicates if the current service or product can be used to produce GMO
 	 */
-	CanItBeUsedToProduceGMO bool `json:"canItBeUsedToProduceGMO"`
+	CanBeUsedToProduceGmo bool `json:"canBeUsedToProduceGmo"`
 	/*
 	 * A provider of this product or service, as a specific organization
 	 */
@@ -4154,6 +4227,10 @@ type Viroid struct {
 	 * A short explanation of the characteristics, features, or nature of the current item
 	 */
 	Description string `json:"description"`
+	/*
+	 * The version indicator (name or identifier) of a resource
+	 */
+	Version string `json:"version"`
 }
 
 /*
@@ -4239,7 +4316,7 @@ type Prion struct {
 	/*
 	 * The corresponding International Air Transport Association (IATA)'s category for this Product
 	 */
-	HasIATAClassification IATAClassification `json:"hasIATAClassification"`
+	IataClassification IataClassification `json:"iataClassification"`
 	/*
 	 * Specification of the terms and parameters for transporting
 
@@ -4248,7 +4325,7 @@ type Prion struct {
 	/*
 	 * A Material Safety Data Sheet (MSDS) or Safety Data Sheet (SDS) is a standardized document that contains crucial occupational safety and health information related to the product
 	 */
-	MaterialSafetyDataSheet MSDS `json:"materialSafetyDataSheet"`
+	MaterialSafetyDataSheet ReasearchInfrastructure `json:"materialSafetyDataSheet"`
 	/*
 	 * The individual or organization responsible for the original discovery, isolation, or creation of an item, providing information about the source or origin of the sample
 	 */
@@ -4268,11 +4345,11 @@ type Prion struct {
 	/*
 	 * The URL that permits to access to the product/service detailed description page on the provider's website and/or allows to place an order about it or at least describe the process to place an order/enquiry
 	 */
-	AccessPointURL string `json:"accessPointURL"`
+	AccessPointUrl string `json:"accessPointUrl"`
 	/*
 	 * The reference or the stock keeping unit of the service or item provided in the provider's catalogue
 	 */
-	RefSKU string `json:"refSKU"`
+	RefSku string `json:"refSku"`
 	/*
 	 * A short description of what will be delivered by ordering one unit of this item
 	 */
@@ -4298,9 +4375,9 @@ type Prion struct {
 	 */
 	PathogenIdentification []PathogenIdentification `json:"pathogenIdentification"`
 	/*
-	 * Any Digital Object Identifier that can be related
+	 * A Digital Object Identifier (DOI) that can be related
 	 */
-	RelatedDOI []DOI `json:"relatedDOI"`
+	Doi []Doi `json:"doi"`
 	/*
 	 * The highest risk group related to this resource. The risk group of a biological agent guiding its initial handling in labs according to the risk group classification defined by the WHO laboratory biosafety manual
 	 */
@@ -4312,7 +4389,7 @@ type Prion struct {
 	/*
 	 * Indicates if the current service or product can be used to produce GMO
 	 */
-	CanItBeUsedToProduceGMO bool `json:"canItBeUsedToProduceGMO"`
+	CanBeUsedToProduceGmo bool `json:"canBeUsedToProduceGmo"`
 	/*
 	 * A provider of this product or service, as a specific organization
 	 */
@@ -4369,20 +4446,28 @@ type Prion struct {
 	 * A short explanation of the characteristics, features, or nature of the current item
 	 */
 	Description string `json:"description"`
+	/*
+	 * The version indicator (name or identifier) of a resource
+	 */
+	Version string `json:"version"`
 }
 
 /*
  * A Material Safety Data Sheet (MSDS) or Safety Data Sheet (SDS) is a standardized document that contains crucial occupational safety and health information related to the product
  */
-type MSDS struct {
+type MaterialSafetyDataSheet struct {
 	/*
 	 * parent types
 	 */
 	Resource
+}
+
+
+type MSDS struct {
 	/*
 	 * The designated contact point responsible for providing information related to the safety, handling, and regulatory compliance of the biological product.
 	 */
-	MsdsContact ContactPoint `json:"msdsContact"`
+	MaterialSafetyContact ContactPoint `json:"materialSafetyContact"`
 	/*
 	 * Key characteristics of the product, such as physical state, appearance, solubility, pH, chemical composition, and molecular weight, essential for safe handling and storage
 	 */
@@ -4460,7 +4545,7 @@ type File struct {
 	/*
 	 * The web address or location where the file content is stored and can be accessed or downloaded.
 	 */
-	ContentURL string `json:"contentURL"`
+	ContentUrl string `json:"contentUrl"`
 	/*
 	 * The file type or format that indicates how the data within the file is structured
 	 */
@@ -4490,7 +4575,7 @@ type Data struct {
 	/*
 	 * The web address or location where the file content is stored and can be accessed or downloaded.
 	 */
-	ContentURL string `json:"contentURL"`
+	ContentUrl string `json:"contentUrl"`
 	/*
 	 * The file type or format that indicates how the data within the file is structured
 	 */
@@ -4520,7 +4605,7 @@ type Document struct {
 	/*
 	 * The web address or location where the file content is stored and can be accessed or downloaded.
 	 */
-	ContentURL string `json:"contentURL"`
+	ContentUrl string `json:"contentUrl"`
 	/*
 	 * The file type or format that indicates how the data within the file is structured
 	 */
@@ -4550,7 +4635,7 @@ type Audio struct {
 	/*
 	 * The web address or location where the file content is stored and can be accessed or downloaded.
 	 */
-	ContentURL string `json:"contentURL"`
+	ContentUrl string `json:"contentUrl"`
 	/*
 	 * The file type or format that indicates how the data within the file is structured
 	 */
@@ -4580,7 +4665,7 @@ type Video struct {
 	/*
 	 * The web address or location where the file content is stored and can be accessed or downloaded.
 	 */
-	ContentURL string `json:"contentURL"`
+	ContentUrl string `json:"contentUrl"`
 	/*
 	 * The file type or format that indicates how the data within the file is structured
 	 */
@@ -4614,7 +4699,7 @@ type Image struct {
 	/*
 	 * The web address or location where the file content is stored and can be accessed or downloaded.
 	 */
-	ContentURL string `json:"contentURL"`
+	ContentUrl string `json:"contentUrl"`
 	/*
 	 * The file type or format that indicates how the data within the file is structured
 	 */
@@ -4672,7 +4757,7 @@ type ContactPoint struct {
 	/*
 	 * Unique persistent identifier for a person, provided by the Open Researcher and Contributor ID (ORCID) organisation
 	 */
-	ORCIDiD string `json:"oRCIDiD"`
+	OrcidId string `json:"orcidId"`
 }
 
 /*
@@ -4694,7 +4779,7 @@ type License struct {
 	/*
 	 * The web address or location where the details or content is stored and can be accessed or downloaded.
 	 */
-	ResourceURL string `json:"resourceURL"`
+	ResourceUrl string `json:"resourceUrl"`
 	/*
 	 * A text or html code that provides any related data sharing licence and/or attribution
 	 */
@@ -4732,7 +4817,7 @@ type Certification struct {
 	/*
 	 * The web address or location where the details or content is stored and can be accessed or downloaded.
 	 */
-	ResourceURL string `json:"resourceURL"`
+	ResourceUrl string `json:"resourceUrl"`
 }
 
 

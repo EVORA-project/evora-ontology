@@ -27,7 +27,7 @@ URI: [EVORAO:DataProvider](https://w3id.org/evorao/DataProvider)
         
       DataProvider : description
         
-      DataProvider : endpointURL
+      DataProvider : endpointUrl
         
       DataProvider : license
         
@@ -42,7 +42,7 @@ URI: [EVORAO:DataProvider](https://w3id.org/evorao/DataProvider)
         
       DataProvider : loginTokenName
         
-      DataProvider : loginURL
+      DataProvider : loginUrl
         
       DataProvider : providedEntityType
         
@@ -79,7 +79,7 @@ URI: [EVORAO:DataProvider](https://w3id.org/evorao/DataProvider)
 | ---  | --- | --- | --- |
 | [license](license.md) | 0..1 <br/> [License](License.md) | Information about terms and conditions under which the subject can be used, s... | direct |
 | [loginRequestMethod](loginRequestMethod.md) | 0..1 <br/> [String](String.md) | The http request method used to acces the login request url | direct |
-| [loginURL](loginURL.md) | 0..1 <br/> [Uri](Uri.md) | The URL template that allows to log in if required | direct |
+| [loginUrl](loginUrl.md) | 0..1 <br/> [Uri](Uri.md) | The URL template that allows to log in if required | direct |
 | [loginTokenName](loginTokenName.md) | 0..1 <br/> [String](String.md) | The name of the token, unique identifier of an interaction session, that will... | direct |
 | [queryMethod](queryMethod.md) | 1 <br/> [String](String.md) | The http request method used to access the requested query url | direct |
 | [contentType](contentType.md) | 1 <br/> [String](String.md) | The content type of the response to the queries | direct |
@@ -87,7 +87,7 @@ URI: [EVORAO:DataProvider](https://w3id.org/evorao/DataProvider)
 | [weight](weight.md) | 1 <br/> [Integer](Integer.md) | A numerical value indicating relative importance or priority, generally proce... | direct |
 | [title](title.md) | 1 <br/> [String](String.md) | A name given to the resource | [DataService](DataService.md) |
 | [description](description.md) | 0..1 _recommended_ <br/> [String](String.md) | A short explanation of the characteristics, features, or nature of the curren... | [DataService](DataService.md) |
-| [endpointURL](endpointURL.md) | 1 <br/> [Uri](Uri.md) | The URL template that allows to get the content | [DataService](DataService.md) |
+| [endpointUrl](endpointUrl.md) | 1 <br/> [Uri](Uri.md) | The URL template that allows to get the content | [DataService](DataService.md) |
 
 
 
@@ -158,7 +158,7 @@ is_a: DataService
 slots:
 - license
 - loginRequestMethod
-- loginURL
+- loginUrl
 - loginTokenName
 - queryMethod
 - contentType
@@ -172,6 +172,7 @@ slot_usage:
     title: license
     exact_mappings:
     - dct:license
+    - schema:license
     domain_of:
     - DataProvider
     - File
@@ -184,19 +185,23 @@ slot_usage:
     title: login request method
     close_mappings:
     - dcat:endpointDescription
+    broad_mappings:
+    - schema:httpMethod
     ifabsent: string(GET)
     domain_of:
     - DataProvider
     range: string
     required: false
     multivalued: false
-  loginURL:
-    name: loginURL
+  loginUrl:
+    name: loginUrl
     description: The URL template that allows to log in if required
     title: login URL
     close_mappings:
     - wdp:P1630
     - dcat:endpointDescription
+    broad_mappings:
+    - schema:urlTemplate
     domain_of:
     - DataProvider
     range: uri
@@ -220,6 +225,8 @@ slot_usage:
     title: query method
     close_mappings:
     - dcat:endpointDescription
+    broad_mappings:
+    - schema:httpMethod
     domain_of:
     - DataProvider
     range: string
@@ -231,6 +238,8 @@ slot_usage:
     title: content type
     close_mappings:
     - dct:format
+    broad_mappings:
+    - schema:contentType
     ifabsent: string(JSON)
     domain_of:
     - DataProvider
@@ -292,6 +301,7 @@ slot_usage:
     title: license
     exact_mappings:
     - dct:license
+    - schema:license
     domain_of:
     - DataProvider
     - File
@@ -304,19 +314,23 @@ slot_usage:
     title: login request method
     close_mappings:
     - dcat:endpointDescription
+    broad_mappings:
+    - schema:httpMethod
     ifabsent: string(GET)
     domain_of:
     - DataProvider
     range: string
     required: false
     multivalued: false
-  loginURL:
-    name: loginURL
+  loginUrl:
+    name: loginUrl
     description: The URL template that allows to log in if required
     title: login URL
     close_mappings:
     - wdp:P1630
     - dcat:endpointDescription
+    broad_mappings:
+    - schema:urlTemplate
     domain_of:
     - DataProvider
     range: uri
@@ -340,6 +354,8 @@ slot_usage:
     title: query method
     close_mappings:
     - dcat:endpointDescription
+    broad_mappings:
+    - schema:httpMethod
     domain_of:
     - DataProvider
     range: string
@@ -351,6 +367,8 @@ slot_usage:
     title: content type
     close_mappings:
     - dct:format
+    broad_mappings:
+    - schema:contentType
     ifabsent: string(JSON)
     domain_of:
     - DataProvider
@@ -396,6 +414,7 @@ attributes:
     from_schema: https://w3id.org/evorao/
     exact_mappings:
     - dct:license
+    - schema:license
     rank: 1000
     alias: license
     owner: DataProvider
@@ -412,6 +431,8 @@ attributes:
     from_schema: https://w3id.org/evorao/
     close_mappings:
     - dcat:endpointDescription
+    broad_mappings:
+    - schema:httpMethod
     rank: 1000
     ifabsent: string(GET)
     alias: loginRequestMethod
@@ -424,16 +445,18 @@ attributes:
     equals_string_in:
     - GET
     - POST
-  loginURL:
-    name: loginURL
+  loginUrl:
+    name: loginUrl
     description: The URL template that allows to log in if required
     title: login URL
     from_schema: https://w3id.org/evorao/
     close_mappings:
     - wdp:P1630
     - dcat:endpointDescription
+    broad_mappings:
+    - schema:urlTemplate
     rank: 1000
-    alias: loginURL
+    alias: loginUrl
     owner: DataProvider
     domain_of:
     - DataProvider
@@ -463,6 +486,8 @@ attributes:
     from_schema: https://w3id.org/evorao/
     close_mappings:
     - dcat:endpointDescription
+    broad_mappings:
+    - schema:httpMethod
     rank: 1000
     alias: queryMethod
     owner: DataProvider
@@ -481,6 +506,8 @@ attributes:
     from_schema: https://w3id.org/evorao/
     close_mappings:
     - dct:format
+    broad_mappings:
+    - schema:contentType
     rank: 1000
     ifabsent: string(JSON)
     alias: contentType
@@ -590,8 +617,8 @@ attributes:
     required: false
     recommended: true
     multivalued: false
-  endpointURL:
-    name: endpointURL
+  endpointUrl:
+    name: endpointUrl
     description: The URL template that allows to get the content
     title: endpoint URL
     from_schema: https://w3id.org/evorao/
@@ -599,7 +626,7 @@ attributes:
     - wdp:P1630
     rank: 1000
     slot_uri: dcat:endpointURL
-    alias: endpointURL
+    alias: endpointUrl
     owner: DataProvider
     domain_of:
     - DataService

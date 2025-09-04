@@ -23,7 +23,7 @@ URI: [EVORAO:Sequence](https://w3id.org/evorao/Sequence)
       Resource <|-- Sequence
         click Resource href "../Resource"
       
-      Sequence : sequenceFASTA
+      Sequence : sequenceFasta
         
       Sequence : sequenceReference
         
@@ -52,7 +52,7 @@ URI: [EVORAO:Sequence](https://w3id.org/evorao/Sequence)
 | Name | Cardinality and Range | Description | Inheritance |
 | ---  | --- | --- | --- |
 | [sequenceReference](sequenceReference.md) | * _recommended_ <br/> [SequenceReference](SequenceReference.md) | A reference that permits to retrieve the sequence information from a sequence... | direct |
-| [sequenceFASTA](sequenceFASTA.md) | 0..1 <br/> [String](String.md) | In case no sequence reference exists in public repositories, the correspondin... | direct |
+| [sequenceFasta](sequenceFasta.md) | 0..1 <br/> [String](String.md) | Textual encoding of a biological sequence information in FASTA format | direct |
 
 
 
@@ -126,7 +126,7 @@ close_mappings:
 is_a: Resource
 slots:
 - sequenceReference
-- sequenceFASTA
+- sequenceFasta
 slot_usage:
   sequenceReference:
     name: sequenceReference
@@ -140,10 +140,9 @@ slot_usage:
     required: false
     recommended: true
     multivalued: true
-  sequenceFASTA:
-    name: sequenceFASTA
-    description: In case no sequence reference exists in public repositories, the
-      corresponding FASTA sequence is required
+  sequenceFasta:
+    name: sequenceFasta
+    description: Textual encoding of a biological sequence information in FASTA format
     title: sequence FASTA
     comments:
     - In FASTA format the line before the nucleotide sequence, called the FASTA definition
@@ -184,10 +183,9 @@ slot_usage:
     required: false
     recommended: true
     multivalued: true
-  sequenceFASTA:
-    name: sequenceFASTA
-    description: In case no sequence reference exists in public repositories, the
-      corresponding FASTA sequence is required
+  sequenceFasta:
+    name: sequenceFasta
+    description: Textual encoding of a biological sequence information in FASTA format
     title: sequence FASTA
     comments:
     - In FASTA format the line before the nucleotide sequence, called the FASTA definition
@@ -216,10 +214,9 @@ attributes:
     required: false
     recommended: true
     multivalued: true
-  sequenceFASTA:
-    name: sequenceFASTA
-    description: In case no sequence reference exists in public repositories, the
-      corresponding FASTA sequence is required
+  sequenceFasta:
+    name: sequenceFasta
+    description: Textual encoding of a biological sequence information in FASTA format
     title: sequence FASTA
     comments:
     - In FASTA format the line before the nucleotide sequence, called the FASTA definition
@@ -228,7 +225,7 @@ attributes:
       can be provided
     from_schema: https://w3id.org/evorao/
     rank: 1000
-    alias: sequenceFASTA
+    alias: sequenceFasta
     owner: Sequence
     domain_of:
     - Sequence

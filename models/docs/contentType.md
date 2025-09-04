@@ -62,6 +62,7 @@ Alias: contentType
 | ---  | ---  |
 | self | EVORAO:contentType |
 | native | EVORAO:contentType |
+| broad | schema:contentType |
 | close | dct:format |
 
 
@@ -77,6 +78,8 @@ title: content type
 from_schema: https://w3id.org/evorao/
 close_mappings:
 - dct:format
+broad_mappings:
+- schema:contentType
 rank: 1000
 ifabsent: string(JSON)
 alias: contentType

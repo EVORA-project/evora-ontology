@@ -5,28 +5,28 @@ import lombok.*;
 
 
 
-/* version: 1.0.8773 */
+/* version: 1.0.8940 */
 
 
 /**
-  A product or a service
+  An offering provided by a provider, which may be tangible (a product) or intangible (a service)
 **/
 @Data
 @EqualsAndHashCode(callSuper=false)
 public abstract class ProductOrService extends Dataset {
 
-  private String accessPointURL;
-  private String refSKU;
+  private String accessPointUrl;
+  private String refSku;
   private String unitDefinition;
   private ProductCategory category;
   private List<ProductCategory> additionalCategory;
   private String unitCost;
   private String qualityGrading;
   private List<PathogenIdentification> pathogenIdentification;
-  private List<DOI> relatedDOI;
+  private List<Doi> doi;
   private RiskGroup riskGroup;
   private String biosafetyRestrictions;
-  private boolean canItBeUsedToProduceGMO;
+  private boolean canBeUsedToProduceGmo;
   private Provider provider;
   private List<Collection> collection;
   private List<Keyword> keywords;

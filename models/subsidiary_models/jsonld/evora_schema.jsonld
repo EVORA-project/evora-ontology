@@ -18,7 +18,8 @@
     "https://orcid.org/0000-0002-6963-8673",
     "https://orcid.org/0000-0003-3067-827X",
     "https://orcid.org/0000-0002-1257-6862",
-    "https://orcid.org/0000-0002-2042-2839"
+    "https://orcid.org/0000-0002-2042-2839",
+    "https://orcid.org/0000-0002-2859-7123"
   ],
   "keywords": [
     "virus",
@@ -37,7 +38,7 @@
     "interoperability"
   ],
   "id": "https://w3id.org/evorao/",
-  "version": "1.0.8773",
+  "version": "1.0.8940",
   "imports": [
     "linkml:types"
   ],
@@ -511,8 +512,32 @@
       "@type": "SlotDefinition"
     },
     {
-      "name": "endpointURL",
-      "definition_uri": "https://w3id.org/evorao/endpointURL",
+      "name": "version",
+      "definition_uri": "https://w3id.org/evorao/version",
+      "description": "The version indicator (name or identifier) of a resource",
+      "title": "version",
+      "from_schema": "https://w3id.org/evorao/",
+      "close_mappings": [
+        "http://www.wikidata.org/prop/P393",
+        "http://schema.org/version",
+        "http://www.wikidata.org/prop/P393",
+        "http://schema.org/version"
+      ],
+      "slot_uri": "https://w3id.org/evorao/version",
+      "owner": "Taxonomy",
+      "domain_of": [
+        "Dataset",
+        "Version",
+        "Taxonomy"
+      ],
+      "range": "string",
+      "required": true,
+      "recommended": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "endpointUrl",
+      "definition_uri": "https://w3id.org/evorao/endpointUrl",
       "description": "The URL template that allows to get the content",
       "title": "endpoint URL",
       "from_schema": "https://w3id.org/evorao/",
@@ -532,28 +557,9 @@
       "@type": "SlotDefinition"
     },
     {
-      "name": "ID",
-      "definition_uri": "https://w3id.org/evorao/ID",
-      "description": "The version identifier",
-      "title": "ID",
-      "from_schema": "https://w3id.org/evorao/",
-      "close_mappings": [
-        "http://www.wikidata.org/prop/P393",
-        "http://schema.org/version"
-      ],
-      "slot_uri": "https://w3id.org/evorao/ID",
-      "owner": "Version",
-      "domain_of": [
-        "Version"
-      ],
-      "range": "string",
-      "required": true,
-      "@type": "SlotDefinition"
-    },
-    {
       "name": "versionOf",
       "definition_uri": "https://w3id.org/evorao/versionOf",
-      "description": "Identifier of what the version qualifies",
+      "description": "Identifier of what type of entities the version qualifies",
       "title": "version Of",
       "from_schema": "https://w3id.org/evorao/",
       "slot_uri": "https://w3id.org/evorao/versionOf",
@@ -605,22 +611,6 @@
       "@type": "SlotDefinition"
     },
     {
-      "name": "version",
-      "definition_uri": "https://w3id.org/evorao/version",
-      "description": "The version of this instance of entity",
-      "title": "version",
-      "from_schema": "https://w3id.org/evorao/",
-      "slot_uri": "https://w3id.org/evorao/version",
-      "owner": "Taxonomy",
-      "domain_of": [
-        "Taxonomy"
-      ],
-      "range": "Version",
-      "required": true,
-      "inlined": true,
-      "@type": "SlotDefinition"
-    },
-    {
       "name": "versionDataProvider",
       "definition_uri": "https://w3id.org/evorao/versionDataProvider",
       "description": "The data provider for the Version ID of this taxonomy",
@@ -643,7 +633,8 @@
       "title": "rank",
       "from_schema": "https://w3id.org/evorao/",
       "exact_mappings": [
-        "http://rs.tdwg.org/dwc/terms/taxonRank"
+        "http://rs.tdwg.org/dwc/terms/taxonRank",
+        "http://schema.org/taxonRank"
       ],
       "slot_uri": "https://w3id.org/evorao/rank",
       "owner": "Taxon",
@@ -678,6 +669,8 @@
       "title": "license",
       "from_schema": "https://w3id.org/evorao/",
       "exact_mappings": [
+        "http://purl.org/dc/terms/license",
+        "http://schema.org/license",
         "http://purl.org/dc/terms/license"
       ],
       "slot_uri": "https://w3id.org/evorao/license",
@@ -699,6 +692,9 @@
       "close_mappings": [
         "http://www.w3.org/ns/dcat#endpointDescription"
       ],
+      "broad_mappings": [
+        "http://schema.org/httpMethod"
+      ],
       "slot_uri": "https://w3id.org/evorao/loginRequestMethod",
       "ifabsent": "string(GET)",
       "owner": "DataProvider",
@@ -713,8 +709,8 @@
       "@type": "SlotDefinition"
     },
     {
-      "name": "loginURL",
-      "definition_uri": "https://w3id.org/evorao/loginURL",
+      "name": "loginUrl",
+      "definition_uri": "https://w3id.org/evorao/loginUrl",
       "description": "The URL template that allows to log in if required",
       "title": "login URL",
       "from_schema": "https://w3id.org/evorao/",
@@ -722,7 +718,10 @@
         "http://www.wikidata.org/prop/P1630",
         "http://www.w3.org/ns/dcat#endpointDescription"
       ],
-      "slot_uri": "https://w3id.org/evorao/loginURL",
+      "broad_mappings": [
+        "http://schema.org/urlTemplate"
+      ],
+      "slot_uri": "https://w3id.org/evorao/loginUrl",
       "owner": "DataProvider",
       "domain_of": [
         "DataProvider"
@@ -756,6 +755,9 @@
       "close_mappings": [
         "http://www.w3.org/ns/dcat#endpointDescription"
       ],
+      "broad_mappings": [
+        "http://schema.org/httpMethod"
+      ],
       "slot_uri": "https://w3id.org/evorao/queryMethod",
       "owner": "DataProvider",
       "domain_of": [
@@ -777,6 +779,9 @@
       "from_schema": "https://w3id.org/evorao/",
       "close_mappings": [
         "http://purl.org/dc/terms/format"
+      ],
+      "broad_mappings": [
+        "http://schema.org/contentType"
       ],
       "slot_uri": "https://w3id.org/evorao/contentType",
       "ifabsent": "string(JSON)",
@@ -1011,21 +1016,21 @@
       "@type": "SlotDefinition"
     },
     {
-      "name": "relatedDOI",
-      "definition_uri": "https://w3id.org/evorao/relatedDOI",
-      "description": "Any Digital Object Identifier that can be related",
+      "name": "doi",
+      "definition_uri": "https://w3id.org/evorao/doi",
+      "description": "A Digital Object Identifier (DOI) that can be related",
       "title": "DOI",
       "from_schema": "https://w3id.org/evorao/",
       "close_mappings": [
         "http://www.wikidata.org/prop/P356"
       ],
-      "slot_uri": "https://w3id.org/evorao/relatedDOI",
+      "slot_uri": "https://w3id.org/evorao/doi",
       "owner": "ProductOrService",
       "domain_of": [
         "Publication",
         "ProductOrService"
       ],
-      "range": "DOI",
+      "range": "Doi",
       "multivalued": true,
       "inlined": true,
       "@type": "SlotDefinition"
@@ -1161,7 +1166,7 @@
       "name": "alpha2Code",
       "definition_uri": "https://w3id.org/evorao/alpha2Code",
       "description": "Two-letter country codes from ISO 3166-1 alpha-2",
-      "title": "alpha-2 code",
+      "title": "alpha 2 code",
       "from_schema": "https://w3id.org/evorao/",
       "slot_uri": "https://w3id.org/evorao/alpha2Code",
       "owner": "Country",
@@ -1196,7 +1201,10 @@
       "description": "The parent taxon of the current taxon",
       "title": "parent taxon",
       "from_schema": "https://w3id.org/evorao/",
-      "close_mappings": [
+      "exact_mappings": [
+        "http://schema.org/parentTaxon"
+      ],
+      "broad_mappings": [
         "http://rs.tdwg.org/dwc/terms/Taxon"
       ],
       "slot_uri": "https://w3id.org/evorao/parentTaxon",
@@ -1215,7 +1223,7 @@
       "description": "Any historic version of this taxon having a different name",
       "title": "previously known as",
       "from_schema": "https://w3id.org/evorao/",
-      "close_mappings": [
+      "broad_mappings": [
         "http://rs.tdwg.org/dwc/terms/Taxon"
       ],
       "slot_uri": "https://w3id.org/evorao/previouslyKnownAs",
@@ -1251,15 +1259,18 @@
       "@type": "SlotDefinition"
     },
     {
-      "name": "taxonomicID",
-      "definition_uri": "https://w3id.org/evorao/taxonomicID",
+      "name": "taxonomicId",
+      "definition_uri": "https://w3id.org/evorao/taxonomicId",
       "description": "The taxonomic identifier as a persistent identifier accross releases",
       "title": "taxonomic ID",
       "from_schema": "https://w3id.org/evorao/",
-      "close_mappings": [
+      "exact_mappings": [
         "http://rs.tdwg.org/dwc/terms/taxonID"
       ],
-      "slot_uri": "https://w3id.org/evorao/taxonomicID",
+      "broad_mappings": [
+        "http://schema.org/identifier"
+      ],
+      "slot_uri": "https://w3id.org/evorao/taxonomicId",
       "owner": "Taxon",
       "domain_of": [
         "Taxon"
@@ -1269,8 +1280,8 @@
       "@type": "SlotDefinition"
     },
     {
-      "name": "taxonomicNodeID",
-      "definition_uri": "https://w3id.org/evorao/taxonomicNodeID",
+      "name": "taxonomicNodeId",
+      "definition_uri": "https://w3id.org/evorao/taxonomicNodeId",
       "description": "The taxonomic_Node Identifier as an identifier specific the current taxon in the corresponding release/version of the taxonomy",
       "title": "taxonomic node ID",
       "comments": [
@@ -1280,7 +1291,7 @@
       "close_mappings": [
         "http://rs.tdwg.org/dwc/terms/taxonID"
       ],
-      "slot_uri": "https://w3id.org/evorao/taxonomicNodeID",
+      "slot_uri": "https://w3id.org/evorao/taxonomicNodeId",
       "owner": "Taxon",
       "domain_of": [
         "Taxon"
@@ -1383,15 +1394,15 @@
       "@type": "SlotDefinition"
     },
     {
-      "name": "sequenceFASTA",
-      "definition_uri": "https://w3id.org/evorao/sequenceFASTA",
-      "description": "In case no sequence reference exists in public repositories, the corresponding FASTA sequence is required",
+      "name": "sequenceFasta",
+      "definition_uri": "https://w3id.org/evorao/sequenceFasta",
+      "description": "Textual encoding of a biological sequence information in FASTA format",
       "title": "sequence FASTA",
       "comments": [
         "In FASTA format the line before the nucleotide sequence, called the FASTA definition line, must begin with a charater ('>'), followed by a unique SeqID (sequence identifier). In case the sequence is made of multiple parts several fasta sequences can be provided"
       ],
       "from_schema": "https://w3id.org/evorao/",
-      "slot_uri": "https://w3id.org/evorao/sequenceFASTA",
+      "slot_uri": "https://w3id.org/evorao/sequenceFasta",
       "owner": "Sequence",
       "domain_of": [
         "Sequence"
@@ -1523,16 +1534,16 @@
       "@type": "SlotDefinition"
     },
     {
-      "name": "oRCIDiD",
-      "definition_uri": "https://w3id.org/evorao/oRCIDiD",
+      "name": "orcidId",
+      "definition_uri": "https://w3id.org/evorao/orcidId",
       "description": "Unique persistent identifier for a person, provided by the Open Researcher and Contributor ID (ORCID) organisation",
-      "title": "ORCID iD",
+      "title": "ORCID id",
       "from_schema": "https://w3id.org/evorao/",
       "exact_mappings": [
         "http://www.wikidata.org/prop/P496",
         "http://purl.obolibrary.org/obo/IAO_0000708"
       ],
-      "slot_uri": "https://w3id.org/evorao/oRCIDiD",
+      "slot_uri": "https://w3id.org/evorao/orcidId",
       "owner": "ContactPoint",
       "domain_of": [
         "Person",
@@ -1559,15 +1570,15 @@
       "@type": "SlotDefinition"
     },
     {
-      "name": "rORiD",
-      "definition_uri": "https://w3id.org/evorao/rORiD",
+      "name": "rorId",
+      "definition_uri": "https://w3id.org/evorao/rorId",
       "description": "The corresponding organization's persistent identifier from the Research Organization Registry (ROR)",
       "title": "ROR iD",
       "from_schema": "https://w3id.org/evorao/",
       "exact_mappings": [
         "http://www.wikidata.org/prop/P6782"
       ],
-      "slot_uri": "https://w3id.org/evorao/rORiD",
+      "slot_uri": "https://w3id.org/evorao/rorId",
       "owner": "Organization",
       "domain_of": [
         "Organization"
@@ -1577,17 +1588,17 @@
       "@type": "SlotDefinition"
     },
     {
-      "name": "memberOfRI",
-      "definition_uri": "https://w3id.org/evorao/memberOfRI",
+      "name": "memberOfRi",
+      "definition_uri": "https://w3id.org/evorao/memberOfRi",
       "description": "The research infrastructure of which this organization is a member",
       "title": "member of RI",
       "from_schema": "https://w3id.org/evorao/",
-      "slot_uri": "https://w3id.org/evorao/memberOfRI",
+      "slot_uri": "https://w3id.org/evorao/memberOfRi",
       "owner": "Provider",
       "domain_of": [
         "Provider"
       ],
-      "range": "RI",
+      "range": "ReasearchInfrastructure",
       "multivalued": true,
       "inlined": true,
       "@type": "SlotDefinition"
@@ -1700,17 +1711,17 @@
       "@type": "SlotDefinition"
     },
     {
-      "name": "indigenousPoepleAndLocalCommunityOrigin",
-      "definition_uri": "https://w3id.org/evorao/indigenousPoepleAndLocalCommunityOrigin",
+      "name": "indigenousPeopleAndLocalCommunityOrigin",
+      "definition_uri": "https://w3id.org/evorao/indigenousPeopleAndLocalCommunityOrigin",
       "description": "The specific IPLC area (Indigenous People and Local Communities) from which this sample/element was sampled, if relevant",
       "title": "indigenous people and local community origin",
       "from_schema": "https://w3id.org/evorao/",
-      "slot_uri": "https://w3id.org/evorao/indigenousPoepleAndLocalCommunityOrigin",
+      "slot_uri": "https://w3id.org/evorao/indigenousPeopleAndLocalCommunityOrigin",
       "owner": "NaturalPartOrigin",
       "domain_of": [
         "NaturalPartOrigin"
       ],
-      "range": "IPLCOrigin",
+      "range": "IplcOrigin",
       "inlined": true,
       "@type": "SlotDefinition"
     },
@@ -1746,12 +1757,12 @@
       "@type": "SlotDefinition"
     },
     {
-      "name": "permitIdentifierForABS",
-      "definition_uri": "https://w3id.org/evorao/permitIdentifierForABS",
+      "name": "permitIdentifierForAbs",
+      "definition_uri": "https://w3id.org/evorao/permitIdentifierForAbs",
       "description": "Reference of the permit identifiers for access to the genetic resource, applicable if the genetic resource falls under Access and Benefit-Sharing (ABS) regulations",
       "title": "permit identifier for ABS",
       "from_schema": "https://w3id.org/evorao/",
-      "slot_uri": "https://w3id.org/evorao/permitIdentifierForABS",
+      "slot_uri": "https://w3id.org/evorao/permitIdentifierForAbs",
       "owner": "NaturalPartOrigin",
       "domain_of": [
         "NaturalPartOrigin"
@@ -1864,15 +1875,15 @@
       "@type": "SlotDefinition"
     },
     {
-      "name": "accessPointURL",
-      "definition_uri": "https://w3id.org/evorao/accessPointURL",
+      "name": "accessPointUrl",
+      "definition_uri": "https://w3id.org/evorao/accessPointUrl",
       "description": "The URL that permits to access to the product/service detailed description page on the provider's website and/or allows to place an order about it or at least describe the process to place an order/enquiry",
       "title": "access point URL",
       "from_schema": "https://w3id.org/evorao/",
       "exact_mappings": [
         "http://www.w3.org/ns/dcat#landingPage"
       ],
-      "slot_uri": "https://w3id.org/evorao/accessPointURL",
+      "slot_uri": "https://w3id.org/evorao/accessPointUrl",
       "owner": "ProductOrService",
       "domain_of": [
         "ProductOrService"
@@ -1882,15 +1893,15 @@
       "@type": "SlotDefinition"
     },
     {
-      "name": "refSKU",
-      "definition_uri": "https://w3id.org/evorao/refSKU",
+      "name": "refSku",
+      "definition_uri": "https://w3id.org/evorao/refSku",
       "description": "The reference or the stock keeping unit of the service or item provided in the provider's catalogue",
-      "title": "ref-SKU",
+      "title": "ref SKU",
       "from_schema": "https://w3id.org/evorao/",
       "exact_mappings": [
         "http://purl.org/dc/terms/identifier"
       ],
-      "slot_uri": "https://w3id.org/evorao/refSKU",
+      "slot_uri": "https://w3id.org/evorao/refSku",
       "owner": "ProductOrService",
       "domain_of": [
         "ProductOrService"
@@ -2044,15 +2055,15 @@
       "@type": "SlotDefinition"
     },
     {
-      "name": "canItBeUsedToProduceGMO",
-      "definition_uri": "https://w3id.org/evorao/canItBeUsedToProduceGMO",
+      "name": "canBeUsedToProduceGmo",
+      "definition_uri": "https://w3id.org/evorao/canBeUsedToProduceGmo",
       "description": "Indicates if the current service or product can be used to produce GMO",
-      "title": "can it be used to produce GMO",
+      "title": "can be used to produce GMO",
       "comments": [
         "Set to TRUE if it can produce GMO. It is recommended to have a value for this field, no value will be understood as unknown"
       ],
       "from_schema": "https://w3id.org/evorao/",
-      "slot_uri": "https://w3id.org/evorao/canItBeUsedToProduceGMO",
+      "slot_uri": "https://w3id.org/evorao/canBeUsedToProduceGmo",
       "owner": "ProductOrService",
       "domain_of": [
         "ProductOrService"
@@ -2273,17 +2284,17 @@
       "@type": "SlotDefinition"
     },
     {
-      "name": "hasIATAClassification",
-      "definition_uri": "https://w3id.org/evorao/hasIATAClassification",
+      "name": "iataClassification",
+      "definition_uri": "https://w3id.org/evorao/iataClassification",
       "description": "The corresponding International Air Transport Association (IATA)'s category for this Product",
       "title": "IATA classification",
       "from_schema": "https://w3id.org/evorao/",
-      "slot_uri": "https://w3id.org/evorao/hasIATAClassification",
+      "slot_uri": "https://w3id.org/evorao/iataClassification",
       "owner": "Product",
       "domain_of": [
         "Product"
       ],
-      "range": "IATAClassification",
+      "range": "IataClassification",
       "required": true,
       "inlined": true,
       "@type": "SlotDefinition"
@@ -2317,7 +2328,7 @@
       "domain_of": [
         "Product"
       ],
-      "range": "MSDS",
+      "range": "ReasearchInfrastructure",
       "inlined": true,
       "@type": "SlotDefinition"
     },
@@ -2462,7 +2473,7 @@
       "name": "biologicalMaterialOrigin",
       "definition_uri": "https://w3id.org/evorao/biologicalMaterialOrigin",
       "description": "Information about the origin of the biological material, essential for access, utilization, and benefit-sharing of genetic resources in compliance with the Nagoya Protocol",
-      "title": "Biological Material origin",
+      "title": "biological material origin",
       "from_schema": "https://w3id.org/evorao/",
       "slot_uri": "https://w3id.org/evorao/biologicalMaterialOrigin",
       "owner": "Pathogen",
@@ -2477,20 +2488,20 @@
       "@type": "SlotDefinition"
     },
     {
-      "name": "relatedPDB",
-      "definition_uri": "https://w3id.org/evorao/relatedPDB",
+      "name": "relatedPdb",
+      "definition_uri": "https://w3id.org/evorao/relatedPdb",
       "description": "Identifier for 3D structural data as per the PDB (Protein Data Bank) database",
       "title": "related PDB",
       "from_schema": "https://w3id.org/evorao/",
       "close_mappings": [
         "http://www.wikidata.org/prop/P638"
       ],
-      "slot_uri": "https://w3id.org/evorao/relatedPDB",
+      "slot_uri": "https://w3id.org/evorao/relatedPdb",
       "owner": "Protein",
       "domain_of": [
         "Protein"
       ],
-      "range": "PDBReference",
+      "range": "PdbReference",
       "multivalued": true,
       "inlined": true,
       "@type": "SlotDefinition"
@@ -2512,18 +2523,19 @@
       "@type": "SlotDefinition"
     },
     {
-      "name": "proteinTAG",
-      "definition_uri": "https://w3id.org/evorao/proteinTAG",
-      "description": "Peptide sequences genetically grafted onto a recombinant protein",
-      "title": "protein TAG",
+      "name": "proteinTag",
+      "definition_uri": "https://w3id.org/evorao/proteinTag",
+      "description": "A DNA coding sequence or corresponding peptide/protein sequence fused to a sequence of interest, used to facilitate experimental operations such as purification, detection, localization, tracking, solubility enhancement, or selection. Applicable to both proteins and nucleic acids",
+      "title": "protein tag",
       "from_schema": "https://w3id.org/evorao/",
-      "slot_uri": "https://w3id.org/evorao/proteinTAG",
-      "owner": "Protein",
+      "slot_uri": "https://w3id.org/evorao/proteinTag",
+      "owner": "NucleicAcid",
       "domain_of": [
-        "Protein"
+        "Protein",
+        "NucleicAcid"
       ],
       "range": "ProteinTag",
-      "multivalued": true,
+      "required": true,
       "inlined": true,
       "@type": "SlotDefinition"
     },
@@ -2620,12 +2632,12 @@
       "@type": "SlotDefinition"
     },
     {
-      "name": "functionalTechnicalDescription",
-      "definition_uri": "https://w3id.org/evorao/functionalTechnicalDescription",
+      "name": "functionalAndTechnicalDescription",
+      "definition_uri": "https://w3id.org/evorao/functionalAndTechnicalDescription",
       "description": "Detailed information about the specific biological functions, mechanisms of action, and technical attributes of a protein. This includes how the protein interacts within biological systems, its role in cellular processes, and any relevant technical details such as structure, activity, and interactions with other molecules.",
-      "title": "functional/Technical description",
+      "title": "functional and technical description",
       "from_schema": "https://w3id.org/evorao/",
-      "slot_uri": "https://w3id.org/evorao/functionalTechnicalDescription",
+      "slot_uri": "https://w3id.org/evorao/functionalAndTechnicalDescription",
       "owner": "Protein",
       "domain_of": [
         "Protein"
@@ -2654,12 +2666,12 @@
       "@type": "SlotDefinition"
     },
     {
-      "name": "theTAGStatusOfTheSolubilizedProtein",
-      "definition_uri": "https://w3id.org/evorao/theTAGStatusOfTheSolubilizedProtein",
+      "name": "tagStatusOfTheSolubilizedProtein",
+      "definition_uri": "https://w3id.org/evorao/tagStatusOfTheSolubilizedProtein",
       "description": "Indicates the presence and condition of a tag on the protein after solubilization. Possible values include 'Uncleaved Tag' (the tag is still attached to the protein), 'Cleaved Tag' (the tag has been removed from the protein), and 'No Tag' (the protein does not have a tag)",
-      "title": "TAG status of the solubilized protein",
+      "title": "tag status of the solubilized protein",
       "from_schema": "https://w3id.org/evorao/",
-      "slot_uri": "https://w3id.org/evorao/theTAGStatusOfTheSolubilizedProtein",
+      "slot_uri": "https://w3id.org/evorao/tagStatusOfTheSolubilizedProtein",
       "owner": "Protein",
       "domain_of": [
         "Protein"
@@ -2688,12 +2700,12 @@
       "@type": "SlotDefinition"
     },
     {
-      "name": "hasGbFileOfTheConstruct",
-      "definition_uri": "https://w3id.org/evorao/hasGbFileOfTheConstruct",
+      "name": "genBankFileOfTheConstruct",
+      "definition_uri": "https://w3id.org/evorao/genBankFileOfTheConstruct",
       "description": "A GenBank formatted file that contains detailed sequence and annotation information of a nucleic acid construct",
-      "title": "has .gb file of the construct",
+      "title": "GenBank file of the construct",
       "from_schema": "https://w3id.org/evorao/",
-      "slot_uri": "https://w3id.org/evorao/hasGbFileOfTheConstruct",
+      "slot_uri": "https://w3id.org/evorao/genBankFileOfTheConstruct",
       "owner": "NucleicAcid",
       "domain_of": [
         "NucleicAcid"
@@ -2704,12 +2716,12 @@
       "@type": "SlotDefinition"
     },
     {
-      "name": "isItAClonedNucleicAcid",
-      "definition_uri": "https://w3id.org/evorao/isItAClonedNucleicAcid",
-      "description": "Indicates that the nucleic acid sequence has been inserted into a plasmid vector for propagation or expression in a host organism",
-      "title": "is it a Cloned Nucleic Acid?",
+      "name": "clonedNucleicAcid",
+      "definition_uri": "https://w3id.org/evorao/clonedNucleicAcid",
+      "description": "Indicates if the nucleic acid sequence has been inserted into a plasmid vector for propagation or expression in a host organism\n",
+      "title": "cloned nucleic acid",
       "from_schema": "https://w3id.org/evorao/",
-      "slot_uri": "https://w3id.org/evorao/isItAClonedNucleicAcid",
+      "slot_uri": "https://w3id.org/evorao/clonedNucleicAcid",
       "owner": "NucleicAcid",
       "domain_of": [
         "NucleicAcid"
@@ -2735,12 +2747,12 @@
       "@type": "SlotDefinition"
     },
     {
-      "name": "pasmidSelection",
-      "definition_uri": "https://w3id.org/evorao/pasmidSelection",
+      "name": "plasmidSelection",
+      "definition_uri": "https://w3id.org/evorao/plasmidSelection",
       "description": "Specific selectable markers in the plasmid, such as antibiotic resistance genes, used to identify and maintain cells that contain the plasmid",
       "title": "plasmid selection",
       "from_schema": "https://w3id.org/evorao/",
-      "slot_uri": "https://w3id.org/evorao/pasmidSelection",
+      "slot_uri": "https://w3id.org/evorao/plasmidSelection",
       "owner": "NucleicAcid",
       "domain_of": [
         "NucleicAcid"
@@ -2748,22 +2760,6 @@
       "range": "PlasmidSelection",
       "recommended": true,
       "multivalued": true,
-      "inlined": true,
-      "@type": "SlotDefinition"
-    },
-    {
-      "name": "hasTAG",
-      "definition_uri": "https://w3id.org/evorao/hasTAG",
-      "description": "TAG sequence used for purposes such as purification, detection, or localization",
-      "title": "TAG",
-      "from_schema": "https://w3id.org/evorao/",
-      "slot_uri": "https://w3id.org/evorao/hasTAG",
-      "owner": "NucleicAcid",
-      "domain_of": [
-        "NucleicAcid"
-      ],
-      "range": "ProteinTag",
-      "required": true,
       "inlined": true,
       "@type": "SlotDefinition"
     },
@@ -2887,12 +2883,12 @@
       "@type": "SlotDefinition"
     },
     {
-      "name": "hasSOPFile",
-      "definition_uri": "https://w3id.org/evorao/hasSOPFile",
-      "description": "The related standard operating procedure file",
-      "title": "has SOP File",
+      "name": "standardOperatingProcedureFile",
+      "definition_uri": "https://w3id.org/evorao/standardOperatingProcedureFile",
+      "description": "The related standard operating procedure file (SOP)",
+      "title": "standard operating procedure file",
       "from_schema": "https://w3id.org/evorao/",
-      "slot_uri": "https://w3id.org/evorao/hasSOPFile",
+      "slot_uri": "https://w3id.org/evorao/standardOperatingProcedureFile",
       "owner": "DetectionKit",
       "domain_of": [
         "DetectionKit"
@@ -2931,12 +2927,12 @@
       "@type": "SlotDefinition"
     },
     {
-      "name": "productsOfTheBundle",
-      "definition_uri": "https://w3id.org/evorao/productsOfTheBundle",
-      "description": "Associates the bundle with the individual products it contains, specifying the components included within the bundle.",
-      "title": "products of the bundle",
+      "name": "itemsOfTheBundle",
+      "definition_uri": "https://w3id.org/evorao/itemsOfTheBundle",
+      "description": "Specifies the constituent products and/or services that are part of the bundle",
+      "title": "items of the bundle",
       "from_schema": "https://w3id.org/evorao/",
-      "slot_uri": "https://w3id.org/evorao/productsOfTheBundle",
+      "slot_uri": "https://w3id.org/evorao/itemsOfTheBundle",
       "owner": "Bundle",
       "domain_of": [
         "Bundle"
@@ -3234,15 +3230,15 @@
       "@type": "SlotDefinition"
     },
     {
-      "name": "msdsContact",
-      "definition_uri": "https://w3id.org/evorao/msdsContact",
+      "name": "materialSafetyContact",
+      "definition_uri": "https://w3id.org/evorao/materialSafetyContact",
       "description": "The designated contact point responsible for providing information related to the safety, handling, and regulatory compliance of the biological product.",
-      "title": "MSDS contact",
+      "title": "material safety contact",
       "from_schema": "https://w3id.org/evorao/",
       "exact_mappings": [
         "http://www.w3.org/ns/dcat#contactPoint"
       ],
-      "slot_uri": "https://w3id.org/evorao/msdsContact",
+      "slot_uri": "https://w3id.org/evorao/materialSafetyContact",
       "owner": "MSDS",
       "domain_of": [
         "MSDS"
@@ -3463,12 +3459,12 @@
       "@type": "SlotDefinition"
     },
     {
-      "name": "contentURL",
-      "definition_uri": "https://w3id.org/evorao/contentURL",
+      "name": "contentUrl",
+      "definition_uri": "https://w3id.org/evorao/contentUrl",
       "description": "The web address or location where the file content is stored and can be accessed or downloaded.",
       "title": "content URL",
       "from_schema": "https://w3id.org/evorao/",
-      "slot_uri": "https://w3id.org/evorao/contentURL",
+      "slot_uri": "https://w3id.org/evorao/contentUrl",
       "owner": "File",
       "domain_of": [
         "File"
@@ -3637,8 +3633,8 @@
       "@type": "SlotDefinition"
     },
     {
-      "name": "resourceURL",
-      "definition_uri": "https://w3id.org/evorao/resourceURL",
+      "name": "resourceUrl",
+      "definition_uri": "https://w3id.org/evorao/resourceUrl",
       "description": "The web address or location where the details or content is stored and can be accessed or downloaded.",
       "title": "resource URL",
       "from_schema": "https://w3id.org/evorao/",
@@ -3649,7 +3645,7 @@
         "http://schema.org/url",
         "http://schema.org/url"
       ],
-      "slot_uri": "https://w3id.org/evorao/resourceURL",
+      "slot_uri": "https://w3id.org/evorao/resourceUrl",
       "owner": "Certification",
       "domain_of": [
         "License",
@@ -3758,6 +3754,31 @@
       "@type": "SlotDefinition"
     },
     {
+      "name": "Dataset_version",
+      "definition_uri": "https://w3id.org/evorao/version",
+      "description": "The version indicator (name or identifier) of a resource",
+      "title": "version",
+      "from_schema": "https://w3id.org/evorao/",
+      "close_mappings": [
+        "http://www.wikidata.org/prop/P393",
+        "http://schema.org/version"
+      ],
+      "is_a": "version",
+      "domain": "Dataset",
+      "slot_uri": "https://w3id.org/evorao/version",
+      "alias": "version",
+      "owner": "Dataset",
+      "domain_of": [
+        "Dataset"
+      ],
+      "is_usage_slot": true,
+      "usage_slot_name": "version",
+      "range": "string",
+      "required": true,
+      "recommended": true,
+      "@type": "SlotDefinition"
+    },
+    {
       "name": "DataService_title",
       "definition_uri": "https://w3id.org/evorao/title",
       "description": "A name given to the resource",
@@ -3820,8 +3841,8 @@
       "@type": "SlotDefinition"
     },
     {
-      "name": "DataService_endpointURL",
-      "definition_uri": "https://w3id.org/evorao/endpointURL",
+      "name": "DataService_endpointUrl",
+      "definition_uri": "https://w3id.org/evorao/endpointUrl",
       "description": "The URL template that allows to get the content",
       "title": "endpoint URL",
       "from_schema": "https://w3id.org/evorao/",
@@ -3831,48 +3852,49 @@
       "close_mappings": [
         "http://www.wikidata.org/prop/P1630"
       ],
-      "is_a": "endpointURL",
+      "is_a": "endpointUrl",
       "domain": "DataService",
       "slot_uri": "http://www.w3.org/ns/dcat#endpointURL",
-      "alias": "endpointURL",
+      "alias": "endpointUrl",
       "owner": "DataService",
       "domain_of": [
         "DataService"
       ],
       "is_usage_slot": true,
-      "usage_slot_name": "endpointURL",
+      "usage_slot_name": "endpointUrl",
       "range": "uri",
       "required": true,
       "@type": "SlotDefinition"
     },
     {
-      "name": "Version_ID",
-      "definition_uri": "https://w3id.org/evorao/ID",
-      "description": "The version identifier",
-      "title": "ID",
+      "name": "Version_version",
+      "definition_uri": "https://w3id.org/evorao/version",
+      "description": "The version indicator (name or identifier) of a resource",
+      "title": "version",
       "from_schema": "https://w3id.org/evorao/",
       "close_mappings": [
         "http://www.wikidata.org/prop/P393",
         "http://schema.org/version"
       ],
-      "is_a": "ID",
+      "is_a": "version",
       "domain": "Version",
-      "slot_uri": "https://w3id.org/evorao/ID",
-      "alias": "ID",
+      "slot_uri": "https://w3id.org/evorao/version",
+      "alias": "version",
       "owner": "Version",
       "domain_of": [
         "Version"
       ],
       "is_usage_slot": true,
-      "usage_slot_name": "ID",
+      "usage_slot_name": "version",
       "range": "string",
       "required": true,
+      "recommended": true,
       "@type": "SlotDefinition"
     },
     {
       "name": "Version_versionOf",
       "definition_uri": "https://w3id.org/evorao/versionOf",
-      "description": "Identifier of what the version qualifies",
+      "description": "Identifier of what type of entities the version qualifies",
       "title": "version Of",
       "from_schema": "https://w3id.org/evorao/",
       "is_a": "versionOf",
@@ -3941,10 +3963,14 @@
     {
       "name": "Taxonomy_version",
       "definition_uri": "https://w3id.org/evorao/version",
-      "description": "The version of this instance of entity",
+      "description": "The version indicator (name or identifier) of a resource",
       "title": "version",
       "from_schema": "https://w3id.org/evorao/",
-      "is_a": "version",
+      "close_mappings": [
+        "http://www.wikidata.org/prop/P393",
+        "http://schema.org/version"
+      ],
+      "is_a": "Dataset_version",
       "domain": "Taxonomy",
       "slot_uri": "https://w3id.org/evorao/version",
       "alias": "version",
@@ -3954,9 +3980,9 @@
       ],
       "is_usage_slot": true,
       "usage_slot_name": "version",
-      "range": "Version",
+      "range": "string",
       "required": true,
-      "inlined": true,
+      "recommended": true,
       "@type": "SlotDefinition"
     },
     {
@@ -3987,7 +4013,8 @@
       "title": "rank",
       "from_schema": "https://w3id.org/evorao/",
       "exact_mappings": [
-        "http://rs.tdwg.org/dwc/terms/taxonRank"
+        "http://rs.tdwg.org/dwc/terms/taxonRank",
+        "http://schema.org/taxonRank"
       ],
       "is_a": "rank",
       "domain": "Taxonomy",
@@ -4032,7 +4059,8 @@
       "title": "license",
       "from_schema": "https://w3id.org/evorao/",
       "exact_mappings": [
-        "http://purl.org/dc/terms/license"
+        "http://purl.org/dc/terms/license",
+        "http://schema.org/license"
       ],
       "is_a": "license",
       "domain": "DataProvider",
@@ -4057,6 +4085,9 @@
       "close_mappings": [
         "http://www.w3.org/ns/dcat#endpointDescription"
       ],
+      "broad_mappings": [
+        "http://schema.org/httpMethod"
+      ],
       "is_a": "loginRequestMethod",
       "domain": "DataProvider",
       "slot_uri": "https://w3id.org/evorao/loginRequestMethod",
@@ -4076,8 +4107,8 @@
       "@type": "SlotDefinition"
     },
     {
-      "name": "DataProvider_loginURL",
-      "definition_uri": "https://w3id.org/evorao/loginURL",
+      "name": "DataProvider_loginUrl",
+      "definition_uri": "https://w3id.org/evorao/loginUrl",
       "description": "The URL template that allows to log in if required",
       "title": "login URL",
       "from_schema": "https://w3id.org/evorao/",
@@ -4085,16 +4116,19 @@
         "http://www.wikidata.org/prop/P1630",
         "http://www.w3.org/ns/dcat#endpointDescription"
       ],
-      "is_a": "loginURL",
+      "broad_mappings": [
+        "http://schema.org/urlTemplate"
+      ],
+      "is_a": "loginUrl",
       "domain": "DataProvider",
-      "slot_uri": "https://w3id.org/evorao/loginURL",
-      "alias": "loginURL",
+      "slot_uri": "https://w3id.org/evorao/loginUrl",
+      "alias": "loginUrl",
       "owner": "DataProvider",
       "domain_of": [
         "DataProvider"
       ],
       "is_usage_slot": true,
-      "usage_slot_name": "loginURL",
+      "usage_slot_name": "loginUrl",
       "range": "uri",
       "@type": "SlotDefinition"
     },
@@ -4129,6 +4163,9 @@
       "close_mappings": [
         "http://www.w3.org/ns/dcat#endpointDescription"
       ],
+      "broad_mappings": [
+        "http://schema.org/httpMethod"
+      ],
       "is_a": "queryMethod",
       "domain": "DataProvider",
       "slot_uri": "https://w3id.org/evorao/queryMethod",
@@ -4155,6 +4192,9 @@
       "from_schema": "https://w3id.org/evorao/",
       "close_mappings": [
         "http://purl.org/dc/terms/format"
+      ],
+      "broad_mappings": [
+        "http://schema.org/contentType"
       ],
       "is_a": "contentType",
       "domain": "DataProvider",
@@ -4514,25 +4554,25 @@
       "@type": "SlotDefinition"
     },
     {
-      "name": "Publication_relatedDOI",
-      "definition_uri": "https://w3id.org/evorao/relatedDOI",
-      "description": "Any Digital Object Identifier that can be related",
+      "name": "Publication_doi",
+      "definition_uri": "https://w3id.org/evorao/doi",
+      "description": "A Digital Object Identifier (DOI) that can be related",
       "title": "DOI",
       "from_schema": "https://w3id.org/evorao/",
       "close_mappings": [
         "http://www.wikidata.org/prop/P356"
       ],
-      "is_a": "relatedDOI",
+      "is_a": "doi",
       "domain": "Publication",
-      "slot_uri": "https://w3id.org/evorao/relatedDOI",
-      "alias": "relatedDOI",
+      "slot_uri": "https://w3id.org/evorao/doi",
+      "alias": "doi",
       "owner": "Publication",
       "domain_of": [
         "Publication"
       ],
       "is_usage_slot": true,
-      "usage_slot_name": "relatedDOI",
-      "range": "DOI",
+      "usage_slot_name": "doi",
+      "range": "Doi",
       "required": true,
       "multivalued": true,
       "inlined": true,
@@ -4838,7 +4878,7 @@
       "name": "Country_alpha2Code",
       "definition_uri": "https://w3id.org/evorao/alpha2Code",
       "description": "Two-letter country codes from ISO 3166-1 alpha-2",
-      "title": "alpha-2 code",
+      "title": "alpha 2 code",
       "from_schema": "https://w3id.org/evorao/",
       "is_a": "alpha2Code",
       "domain": "Country",
@@ -4904,7 +4944,10 @@
       "description": "The parent taxon of the current taxon",
       "title": "parent taxon",
       "from_schema": "https://w3id.org/evorao/",
-      "close_mappings": [
+      "exact_mappings": [
+        "http://schema.org/parentTaxon"
+      ],
+      "broad_mappings": [
         "http://rs.tdwg.org/dwc/terms/Taxon"
       ],
       "is_a": "parentTaxon",
@@ -4929,7 +4972,8 @@
       "title": "rank",
       "from_schema": "https://w3id.org/evorao/",
       "exact_mappings": [
-        "http://rs.tdwg.org/dwc/terms/taxonRank"
+        "http://rs.tdwg.org/dwc/terms/taxonRank",
+        "http://schema.org/taxonRank"
       ],
       "is_a": "rank",
       "domain": "Taxon",
@@ -4952,7 +4996,7 @@
       "description": "Any historic version of this taxon having a different name",
       "title": "previously known as",
       "from_schema": "https://w3id.org/evorao/",
-      "close_mappings": [
+      "broad_mappings": [
         "http://rs.tdwg.org/dwc/terms/Taxon"
       ],
       "is_a": "previouslyKnownAs",
@@ -4998,31 +5042,34 @@
       "@type": "SlotDefinition"
     },
     {
-      "name": "Taxon_taxonomicID",
-      "definition_uri": "https://w3id.org/evorao/taxonomicID",
+      "name": "Taxon_taxonomicId",
+      "definition_uri": "https://w3id.org/evorao/taxonomicId",
       "description": "The taxonomic identifier as a persistent identifier accross releases",
       "title": "taxonomic ID",
       "from_schema": "https://w3id.org/evorao/",
-      "close_mappings": [
+      "exact_mappings": [
         "http://rs.tdwg.org/dwc/terms/taxonID"
       ],
-      "is_a": "taxonomicID",
+      "broad_mappings": [
+        "http://schema.org/identifier"
+      ],
+      "is_a": "taxonomicId",
       "domain": "Taxon",
-      "slot_uri": "https://w3id.org/evorao/taxonomicID",
-      "alias": "taxonomicID",
+      "slot_uri": "https://w3id.org/evorao/taxonomicId",
+      "alias": "taxonomicId",
       "owner": "Taxon",
       "domain_of": [
         "Taxon"
       ],
       "is_usage_slot": true,
-      "usage_slot_name": "taxonomicID",
+      "usage_slot_name": "taxonomicId",
       "range": "string",
       "required": true,
       "@type": "SlotDefinition"
     },
     {
-      "name": "Taxon_taxonomicNodeID",
-      "definition_uri": "https://w3id.org/evorao/taxonomicNodeID",
+      "name": "Taxon_taxonomicNodeId",
+      "definition_uri": "https://w3id.org/evorao/taxonomicNodeId",
       "description": "The taxonomic_Node Identifier as an identifier specific the current taxon in the corresponding release/version of the taxonomy",
       "title": "taxonomic node ID",
       "comments": [
@@ -5032,16 +5079,16 @@
       "close_mappings": [
         "http://rs.tdwg.org/dwc/terms/taxonID"
       ],
-      "is_a": "taxonomicNodeID",
+      "is_a": "taxonomicNodeId",
       "domain": "Taxon",
-      "slot_uri": "https://w3id.org/evorao/taxonomicNodeID",
-      "alias": "taxonomicNodeID",
+      "slot_uri": "https://w3id.org/evorao/taxonomicNodeId",
+      "alias": "taxonomicNodeId",
       "owner": "Taxon",
       "domain_of": [
         "Taxon"
       ],
       "is_usage_slot": true,
-      "usage_slot_name": "taxonomicNodeID",
+      "usage_slot_name": "taxonomicNodeId",
       "range": "string",
       "recommended": true,
       "@type": "SlotDefinition"
@@ -5164,24 +5211,24 @@
       "@type": "SlotDefinition"
     },
     {
-      "name": "Sequence_sequenceFASTA",
-      "definition_uri": "https://w3id.org/evorao/sequenceFASTA",
-      "description": "In case no sequence reference exists in public repositories, the corresponding FASTA sequence is required",
+      "name": "Sequence_sequenceFasta",
+      "definition_uri": "https://w3id.org/evorao/sequenceFasta",
+      "description": "Textual encoding of a biological sequence information in FASTA format",
       "title": "sequence FASTA",
       "comments": [
         "In FASTA format the line before the nucleotide sequence, called the FASTA definition line, must begin with a charater ('>'), followed by a unique SeqID (sequence identifier). In case the sequence is made of multiple parts several fasta sequences can be provided"
       ],
       "from_schema": "https://w3id.org/evorao/",
-      "is_a": "sequenceFASTA",
+      "is_a": "sequenceFasta",
       "domain": "Sequence",
-      "slot_uri": "https://w3id.org/evorao/sequenceFASTA",
-      "alias": "sequenceFASTA",
+      "slot_uri": "https://w3id.org/evorao/sequenceFasta",
+      "alias": "sequenceFasta",
       "owner": "Sequence",
       "domain_of": [
         "Sequence"
       ],
       "is_usage_slot": true,
-      "usage_slot_name": "sequenceFASTA",
+      "usage_slot_name": "sequenceFasta",
       "range": "string",
       "@type": "SlotDefinition"
     },
@@ -5363,24 +5410,24 @@
       "@type": "SlotDefinition"
     },
     {
-      "name": "Person_oRCIDiD",
-      "definition_uri": "https://w3id.org/evorao/oRCIDiD",
+      "name": "Person_orcidId",
+      "definition_uri": "https://w3id.org/evorao/orcidId",
       "description": "Unique persistent identifier for a person, provided by the Open Researcher and Contributor ID (ORCID) organisation",
-      "title": "ORCID iD",
+      "title": "ORCID id",
       "from_schema": "https://w3id.org/evorao/",
       "exact_mappings": [
         "http://www.wikidata.org/prop/P496"
       ],
-      "is_a": "oRCIDiD",
+      "is_a": "orcidId",
       "domain": "Person",
-      "slot_uri": "https://w3id.org/evorao/oRCIDiD",
-      "alias": "oRCIDiD",
+      "slot_uri": "https://w3id.org/evorao/orcidId",
+      "alias": "orcidId",
       "owner": "Person",
       "domain_of": [
         "Person"
       ],
       "is_usage_slot": true,
-      "usage_slot_name": "oRCIDiD",
+      "usage_slot_name": "orcidId",
       "range": "string",
       "recommended": true,
       "@type": "SlotDefinition"
@@ -5435,45 +5482,45 @@
       "@type": "SlotDefinition"
     },
     {
-      "name": "Organization_rORiD",
-      "definition_uri": "https://w3id.org/evorao/rORiD",
+      "name": "Organization_rorId",
+      "definition_uri": "https://w3id.org/evorao/rorId",
       "description": "The corresponding organization's persistent identifier from the Research Organization Registry (ROR)",
       "title": "ROR iD",
       "from_schema": "https://w3id.org/evorao/",
       "exact_mappings": [
         "http://www.wikidata.org/prop/P6782"
       ],
-      "is_a": "rORiD",
+      "is_a": "rorId",
       "domain": "Organization",
-      "slot_uri": "https://w3id.org/evorao/rORiD",
-      "alias": "rORiD",
+      "slot_uri": "https://w3id.org/evorao/rorId",
+      "alias": "rorId",
       "owner": "Organization",
       "domain_of": [
         "Organization"
       ],
       "is_usage_slot": true,
-      "usage_slot_name": "rORiD",
+      "usage_slot_name": "rorId",
       "range": "string",
       "recommended": true,
       "@type": "SlotDefinition"
     },
     {
-      "name": "Provider_memberOfRI",
-      "definition_uri": "https://w3id.org/evorao/memberOfRI",
+      "name": "Provider_memberOfRi",
+      "definition_uri": "https://w3id.org/evorao/memberOfRi",
       "description": "The research infrastructure of which this organization is a member",
       "title": "member of RI",
       "from_schema": "https://w3id.org/evorao/",
-      "is_a": "memberOfRI",
+      "is_a": "memberOfRi",
       "domain": "Provider",
-      "slot_uri": "https://w3id.org/evorao/memberOfRI",
-      "alias": "memberOfRI",
+      "slot_uri": "https://w3id.org/evorao/memberOfRi",
+      "alias": "memberOfRi",
       "owner": "Provider",
       "domain_of": [
         "Provider"
       ],
       "is_usage_slot": true,
-      "usage_slot_name": "memberOfRI",
-      "range": "RI",
+      "usage_slot_name": "memberOfRi",
+      "range": "ReasearchInfrastructure",
       "multivalued": true,
       "inlined": true,
       "@type": "SlotDefinition"
@@ -5616,22 +5663,22 @@
       "@type": "SlotDefinition"
     },
     {
-      "name": "NaturalPartOrigin_indigenousPoepleAndLocalCommunityOrigin",
-      "definition_uri": "https://w3id.org/evorao/indigenousPoepleAndLocalCommunityOrigin",
+      "name": "NaturalPartOrigin_indigenousPeopleAndLocalCommunityOrigin",
+      "definition_uri": "https://w3id.org/evorao/indigenousPeopleAndLocalCommunityOrigin",
       "description": "The specific IPLC area (Indigenous People and Local Communities) from which this sample/element was sampled, if relevant",
       "title": "indigenous people and local community origin",
       "from_schema": "https://w3id.org/evorao/",
-      "is_a": "indigenousPoepleAndLocalCommunityOrigin",
+      "is_a": "indigenousPeopleAndLocalCommunityOrigin",
       "domain": "NaturalPartOrigin",
-      "slot_uri": "https://w3id.org/evorao/indigenousPoepleAndLocalCommunityOrigin",
-      "alias": "indigenousPoepleAndLocalCommunityOrigin",
+      "slot_uri": "https://w3id.org/evorao/indigenousPeopleAndLocalCommunityOrigin",
+      "alias": "indigenousPeopleAndLocalCommunityOrigin",
       "owner": "NaturalPartOrigin",
       "domain_of": [
         "NaturalPartOrigin"
       ],
       "is_usage_slot": true,
-      "usage_slot_name": "indigenousPoepleAndLocalCommunityOrigin",
-      "range": "IPLCOrigin",
+      "usage_slot_name": "indigenousPeopleAndLocalCommunityOrigin",
+      "range": "IplcOrigin",
       "inlined": true,
       "@type": "SlotDefinition"
     },
@@ -5677,21 +5724,21 @@
       "@type": "SlotDefinition"
     },
     {
-      "name": "NaturalPartOrigin_permitIdentifierForABS",
-      "definition_uri": "https://w3id.org/evorao/permitIdentifierForABS",
+      "name": "NaturalPartOrigin_permitIdentifierForAbs",
+      "definition_uri": "https://w3id.org/evorao/permitIdentifierForAbs",
       "description": "Reference of the permit identifiers for access to the genetic resource, applicable if the genetic resource falls under Access and Benefit-Sharing (ABS) regulations",
       "title": "permit identifier for ABS",
       "from_schema": "https://w3id.org/evorao/",
-      "is_a": "permitIdentifierForABS",
+      "is_a": "permitIdentifierForAbs",
       "domain": "NaturalPartOrigin",
-      "slot_uri": "https://w3id.org/evorao/permitIdentifierForABS",
-      "alias": "permitIdentifierForABS",
+      "slot_uri": "https://w3id.org/evorao/permitIdentifierForAbs",
+      "alias": "permitIdentifierForAbs",
       "owner": "NaturalPartOrigin",
       "domain_of": [
         "NaturalPartOrigin"
       ],
       "is_usage_slot": true,
-      "usage_slot_name": "permitIdentifierForABS",
+      "usage_slot_name": "permitIdentifierForAbs",
       "range": "string",
       "@type": "SlotDefinition"
     },
@@ -5827,47 +5874,47 @@
       "@type": "SlotDefinition"
     },
     {
-      "name": "ProductOrService_accessPointURL",
-      "definition_uri": "https://w3id.org/evorao/accessPointURL",
+      "name": "ProductOrService_accessPointUrl",
+      "definition_uri": "https://w3id.org/evorao/accessPointUrl",
       "description": "The URL that permits to access to the product/service detailed description page on the provider's website and/or allows to place an order about it or at least describe the process to place an order/enquiry",
       "title": "access point URL",
       "from_schema": "https://w3id.org/evorao/",
       "exact_mappings": [
         "http://www.w3.org/ns/dcat#landingPage"
       ],
-      "is_a": "accessPointURL",
+      "is_a": "accessPointUrl",
       "domain": "ProductOrService",
-      "slot_uri": "https://w3id.org/evorao/accessPointURL",
-      "alias": "accessPointURL",
+      "slot_uri": "https://w3id.org/evorao/accessPointUrl",
+      "alias": "accessPointUrl",
       "owner": "ProductOrService",
       "domain_of": [
         "ProductOrService"
       ],
       "is_usage_slot": true,
-      "usage_slot_name": "accessPointURL",
+      "usage_slot_name": "accessPointUrl",
       "range": "uri",
       "required": true,
       "@type": "SlotDefinition"
     },
     {
-      "name": "ProductOrService_refSKU",
-      "definition_uri": "https://w3id.org/evorao/refSKU",
+      "name": "ProductOrService_refSku",
+      "definition_uri": "https://w3id.org/evorao/refSku",
       "description": "The reference or the stock keeping unit of the service or item provided in the provider's catalogue",
-      "title": "ref-SKU",
+      "title": "ref SKU",
       "from_schema": "https://w3id.org/evorao/",
       "exact_mappings": [
         "http://purl.org/dc/terms/identifier"
       ],
-      "is_a": "refSKU",
+      "is_a": "refSku",
       "domain": "ProductOrService",
-      "slot_uri": "https://w3id.org/evorao/refSKU",
-      "alias": "refSKU",
+      "slot_uri": "https://w3id.org/evorao/refSku",
+      "alias": "refSku",
       "owner": "ProductOrService",
       "domain_of": [
         "ProductOrService"
       ],
       "is_usage_slot": true,
-      "usage_slot_name": "refSKU",
+      "usage_slot_name": "refSku",
       "range": "string",
       "required": true,
       "@type": "SlotDefinition"
@@ -6014,25 +6061,25 @@
       "@type": "SlotDefinition"
     },
     {
-      "name": "ProductOrService_relatedDOI",
-      "definition_uri": "https://w3id.org/evorao/relatedDOI",
-      "description": "Any Digital Object Identifier that can be related",
+      "name": "ProductOrService_doi",
+      "definition_uri": "https://w3id.org/evorao/doi",
+      "description": "A Digital Object Identifier (DOI) that can be related",
       "title": "DOI",
       "from_schema": "https://w3id.org/evorao/",
       "close_mappings": [
         "http://www.wikidata.org/prop/P356"
       ],
-      "is_a": "relatedDOI",
+      "is_a": "doi",
       "domain": "ProductOrService",
-      "slot_uri": "https://w3id.org/evorao/relatedDOI",
-      "alias": "relatedDOI",
+      "slot_uri": "https://w3id.org/evorao/doi",
+      "alias": "doi",
       "owner": "ProductOrService",
       "domain_of": [
         "ProductOrService"
       ],
       "is_usage_slot": true,
-      "usage_slot_name": "relatedDOI",
-      "range": "DOI",
+      "usage_slot_name": "doi",
+      "range": "Doi",
       "multivalued": true,
       "inlined": true,
       "@type": "SlotDefinition"
@@ -6081,24 +6128,24 @@
       "@type": "SlotDefinition"
     },
     {
-      "name": "ProductOrService_canItBeUsedToProduceGMO",
-      "definition_uri": "https://w3id.org/evorao/canItBeUsedToProduceGMO",
+      "name": "ProductOrService_canBeUsedToProduceGmo",
+      "definition_uri": "https://w3id.org/evorao/canBeUsedToProduceGmo",
       "description": "Indicates if the current service or product can be used to produce GMO",
-      "title": "can it be used to produce GMO",
+      "title": "can be used to produce GMO",
       "comments": [
         "Set to TRUE if it can produce GMO. It is recommended to have a value for this field, no value will be understood as unknown"
       ],
       "from_schema": "https://w3id.org/evorao/",
-      "is_a": "canItBeUsedToProduceGMO",
+      "is_a": "canBeUsedToProduceGmo",
       "domain": "ProductOrService",
-      "slot_uri": "https://w3id.org/evorao/canItBeUsedToProduceGMO",
-      "alias": "canItBeUsedToProduceGMO",
+      "slot_uri": "https://w3id.org/evorao/canBeUsedToProduceGmo",
+      "alias": "canBeUsedToProduceGmo",
       "owner": "ProductOrService",
       "domain_of": [
         "ProductOrService"
       ],
       "is_usage_slot": true,
-      "usage_slot_name": "canItBeUsedToProduceGMO",
+      "usage_slot_name": "canBeUsedToProduceGmo",
       "range": "boolean",
       "required": true,
       "recommended": true,
@@ -6404,22 +6451,22 @@
       "@type": "SlotDefinition"
     },
     {
-      "name": "Product_hasIATAClassification",
-      "definition_uri": "https://w3id.org/evorao/hasIATAClassification",
+      "name": "Product_iataClassification",
+      "definition_uri": "https://w3id.org/evorao/iataClassification",
       "description": "The corresponding International Air Transport Association (IATA)'s category for this Product",
       "title": "IATA classification",
       "from_schema": "https://w3id.org/evorao/",
-      "is_a": "hasIATAClassification",
+      "is_a": "iataClassification",
       "domain": "Product",
-      "slot_uri": "https://w3id.org/evorao/hasIATAClassification",
-      "alias": "hasIATAClassification",
+      "slot_uri": "https://w3id.org/evorao/iataClassification",
+      "alias": "iataClassification",
       "owner": "Product",
       "domain_of": [
         "Product"
       ],
       "is_usage_slot": true,
-      "usage_slot_name": "hasIATAClassification",
-      "range": "IATAClassification",
+      "usage_slot_name": "iataClassification",
+      "range": "IataClassification",
       "required": true,
       "inlined": true,
       "@type": "SlotDefinition"
@@ -6463,7 +6510,7 @@
       ],
       "is_usage_slot": true,
       "usage_slot_name": "materialSafetyDataSheet",
-      "range": "MSDS",
+      "range": "ReasearchInfrastructure",
       "inlined": true,
       "@type": "SlotDefinition"
     },
@@ -6674,7 +6721,7 @@
       "name": "Protein_biologicalMaterialOrigin",
       "definition_uri": "https://w3id.org/evorao/biologicalMaterialOrigin",
       "description": "Information about the origin of the biological material, essential for access, utilization, and benefit-sharing of genetic resources in compliance with the Nagoya Protocol",
-      "title": "Biological Material origin",
+      "title": "biological material origin",
       "from_schema": "https://w3id.org/evorao/",
       "is_a": "biologicalMaterialOrigin",
       "domain": "Protein",
@@ -6715,25 +6762,25 @@
       "@type": "SlotDefinition"
     },
     {
-      "name": "Protein_relatedPDB",
-      "definition_uri": "https://w3id.org/evorao/relatedPDB",
+      "name": "Protein_relatedPdb",
+      "definition_uri": "https://w3id.org/evorao/relatedPdb",
       "description": "Identifier for 3D structural data as per the PDB (Protein Data Bank) database",
       "title": "related PDB",
       "from_schema": "https://w3id.org/evorao/",
       "close_mappings": [
         "http://www.wikidata.org/prop/P638"
       ],
-      "is_a": "relatedPDB",
+      "is_a": "relatedPdb",
       "domain": "Protein",
-      "slot_uri": "https://w3id.org/evorao/relatedPDB",
-      "alias": "relatedPDB",
+      "slot_uri": "https://w3id.org/evorao/relatedPdb",
+      "alias": "relatedPdb",
       "owner": "Protein",
       "domain_of": [
         "Protein"
       ],
       "is_usage_slot": true,
-      "usage_slot_name": "relatedPDB",
-      "range": "PDBReference",
+      "usage_slot_name": "relatedPdb",
+      "range": "PdbReference",
       "multivalued": true,
       "inlined": true,
       "@type": "SlotDefinition"
@@ -6760,22 +6807,23 @@
       "@type": "SlotDefinition"
     },
     {
-      "name": "Protein_proteinTAG",
-      "definition_uri": "https://w3id.org/evorao/proteinTAG",
-      "description": "Peptide sequences genetically grafted onto a recombinant protein",
-      "title": "protein TAG",
+      "name": "Protein_proteinTag",
+      "definition_uri": "https://w3id.org/evorao/proteinTag",
+      "description": "A DNA coding sequence or corresponding peptide/protein sequence fused to a sequence of interest, used to facilitate experimental operations such as purification, detection, localization, tracking, solubility enhancement, or selection. Applicable to both proteins and nucleic acids",
+      "title": "protein tag",
       "from_schema": "https://w3id.org/evorao/",
-      "is_a": "proteinTAG",
+      "is_a": "proteinTag",
       "domain": "Protein",
-      "slot_uri": "https://w3id.org/evorao/proteinTAG",
-      "alias": "proteinTAG",
+      "slot_uri": "https://w3id.org/evorao/proteinTag",
+      "alias": "proteinTag",
       "owner": "Protein",
       "domain_of": [
         "Protein"
       ],
       "is_usage_slot": true,
-      "usage_slot_name": "proteinTAG",
+      "usage_slot_name": "proteinTag",
       "range": "ProteinTag",
+      "required": true,
       "multivalued": true,
       "inlined": true,
       "@type": "SlotDefinition"
@@ -6898,21 +6946,21 @@
       "@type": "SlotDefinition"
     },
     {
-      "name": "Protein_functionalTechnicalDescription",
-      "definition_uri": "https://w3id.org/evorao/functionalTechnicalDescription",
+      "name": "Protein_functionalAndTechnicalDescription",
+      "definition_uri": "https://w3id.org/evorao/functionalAndTechnicalDescription",
       "description": "Detailed information about the specific biological functions, mechanisms of action, and technical attributes of a protein. This includes how the protein interacts within biological systems, its role in cellular processes, and any relevant technical details such as structure, activity, and interactions with other molecules.",
-      "title": "functional/Technical description",
+      "title": "functional and technical description",
       "from_schema": "https://w3id.org/evorao/",
-      "is_a": "functionalTechnicalDescription",
+      "is_a": "functionalAndTechnicalDescription",
       "domain": "Protein",
-      "slot_uri": "https://w3id.org/evorao/functionalTechnicalDescription",
-      "alias": "functionalTechnicalDescription",
+      "slot_uri": "https://w3id.org/evorao/functionalAndTechnicalDescription",
+      "alias": "functionalAndTechnicalDescription",
       "owner": "Protein",
       "domain_of": [
         "Protein"
       ],
       "is_usage_slot": true,
-      "usage_slot_name": "functionalTechnicalDescription",
+      "usage_slot_name": "functionalAndTechnicalDescription",
       "range": "string",
       "multivalued": true,
       "@type": "SlotDefinition"
@@ -6942,21 +6990,21 @@
       "@type": "SlotDefinition"
     },
     {
-      "name": "Protein_theTAGStatusOfTheSolubilizedProtein",
-      "definition_uri": "https://w3id.org/evorao/theTAGStatusOfTheSolubilizedProtein",
+      "name": "Protein_tagStatusOfTheSolubilizedProtein",
+      "definition_uri": "https://w3id.org/evorao/tagStatusOfTheSolubilizedProtein",
       "description": "Indicates the presence and condition of a tag on the protein after solubilization. Possible values include 'Uncleaved Tag' (the tag is still attached to the protein), 'Cleaved Tag' (the tag has been removed from the protein), and 'No Tag' (the protein does not have a tag)",
-      "title": "TAG status of the solubilized protein",
+      "title": "tag status of the solubilized protein",
       "from_schema": "https://w3id.org/evorao/",
-      "is_a": "theTAGStatusOfTheSolubilizedProtein",
+      "is_a": "tagStatusOfTheSolubilizedProtein",
       "domain": "Protein",
-      "slot_uri": "https://w3id.org/evorao/theTAGStatusOfTheSolubilizedProtein",
-      "alias": "theTAGStatusOfTheSolubilizedProtein",
+      "slot_uri": "https://w3id.org/evorao/tagStatusOfTheSolubilizedProtein",
+      "alias": "tagStatusOfTheSolubilizedProtein",
       "owner": "Protein",
       "domain_of": [
         "Protein"
       ],
       "is_usage_slot": true,
-      "usage_slot_name": "theTAGStatusOfTheSolubilizedProtein",
+      "usage_slot_name": "tagStatusOfTheSolubilizedProtein",
       "range": "string",
       "multivalued": true,
       "@type": "SlotDefinition"
@@ -6989,7 +7037,7 @@
       "name": "NucleicAcid_biologicalMaterialOrigin",
       "definition_uri": "https://w3id.org/evorao/biologicalMaterialOrigin",
       "description": "Information about the origin of the biological material, essential for access, utilization, and benefit-sharing of genetic resources in compliance with the Nagoya Protocol",
-      "title": "Biological Material origin",
+      "title": "biological material origin",
       "from_schema": "https://w3id.org/evorao/",
       "is_a": "biologicalMaterialOrigin",
       "domain": "NucleicAcid",
@@ -7007,21 +7055,21 @@
       "@type": "SlotDefinition"
     },
     {
-      "name": "NucleicAcid_hasGbFileOfTheConstruct",
-      "definition_uri": "https://w3id.org/evorao/hasGbFileOfTheConstruct",
+      "name": "NucleicAcid_genBankFileOfTheConstruct",
+      "definition_uri": "https://w3id.org/evorao/genBankFileOfTheConstruct",
       "description": "A GenBank formatted file that contains detailed sequence and annotation information of a nucleic acid construct",
-      "title": "has .gb file of the construct",
+      "title": "GenBank file of the construct",
       "from_schema": "https://w3id.org/evorao/",
-      "is_a": "hasGbFileOfTheConstruct",
+      "is_a": "genBankFileOfTheConstruct",
       "domain": "NucleicAcid",
-      "slot_uri": "https://w3id.org/evorao/hasGbFileOfTheConstruct",
-      "alias": "hasGbFileOfTheConstruct",
+      "slot_uri": "https://w3id.org/evorao/genBankFileOfTheConstruct",
+      "alias": "genBankFileOfTheConstruct",
       "owner": "NucleicAcid",
       "domain_of": [
         "NucleicAcid"
       ],
       "is_usage_slot": true,
-      "usage_slot_name": "hasGbFileOfTheConstruct",
+      "usage_slot_name": "genBankFileOfTheConstruct",
       "range": "Data",
       "multivalued": true,
       "inlined": true,
@@ -7051,21 +7099,21 @@
       "@type": "SlotDefinition"
     },
     {
-      "name": "NucleicAcid_isItAClonedNucleicAcid",
-      "definition_uri": "https://w3id.org/evorao/isItAClonedNucleicAcid",
-      "description": "Indicates that the nucleic acid sequence has been inserted into a plasmid vector for propagation or expression in a host organism",
-      "title": "is it a Cloned Nucleic Acid?",
+      "name": "NucleicAcid_clonedNucleicAcid",
+      "definition_uri": "https://w3id.org/evorao/clonedNucleicAcid",
+      "description": "Indicates if the nucleic acid sequence has been inserted into a plasmid vector for propagation or expression in a host organism\n",
+      "title": "cloned nucleic acid",
       "from_schema": "https://w3id.org/evorao/",
-      "is_a": "isItAClonedNucleicAcid",
+      "is_a": "clonedNucleicAcid",
       "domain": "NucleicAcid",
-      "slot_uri": "https://w3id.org/evorao/isItAClonedNucleicAcid",
-      "alias": "isItAClonedNucleicAcid",
+      "slot_uri": "https://w3id.org/evorao/clonedNucleicAcid",
+      "alias": "clonedNucleicAcid",
       "owner": "NucleicAcid",
       "domain_of": [
         "NucleicAcid"
       ],
       "is_usage_slot": true,
-      "usage_slot_name": "isItAClonedNucleicAcid",
+      "usage_slot_name": "clonedNucleicAcid",
       "range": "boolean",
       "required": true,
       "@type": "SlotDefinition"
@@ -7092,21 +7140,21 @@
       "@type": "SlotDefinition"
     },
     {
-      "name": "NucleicAcid_pasmidSelection",
-      "definition_uri": "https://w3id.org/evorao/pasmidSelection",
+      "name": "NucleicAcid_plasmidSelection",
+      "definition_uri": "https://w3id.org/evorao/plasmidSelection",
       "description": "Specific selectable markers in the plasmid, such as antibiotic resistance genes, used to identify and maintain cells that contain the plasmid",
       "title": "plasmid selection",
       "from_schema": "https://w3id.org/evorao/",
-      "is_a": "pasmidSelection",
+      "is_a": "plasmidSelection",
       "domain": "NucleicAcid",
-      "slot_uri": "https://w3id.org/evorao/pasmidSelection",
-      "alias": "pasmidSelection",
+      "slot_uri": "https://w3id.org/evorao/plasmidSelection",
+      "alias": "plasmidSelection",
       "owner": "NucleicAcid",
       "domain_of": [
         "NucleicAcid"
       ],
       "is_usage_slot": true,
-      "usage_slot_name": "pasmidSelection",
+      "usage_slot_name": "plasmidSelection",
       "range": "PlasmidSelection",
       "recommended": true,
       "multivalued": true,
@@ -7114,21 +7162,21 @@
       "@type": "SlotDefinition"
     },
     {
-      "name": "NucleicAcid_hasTAG",
-      "definition_uri": "https://w3id.org/evorao/hasTAG",
-      "description": "TAG sequence used for purposes such as purification, detection, or localization",
-      "title": "TAG",
+      "name": "NucleicAcid_proteinTag",
+      "definition_uri": "https://w3id.org/evorao/proteinTag",
+      "description": "A DNA coding sequence or corresponding peptide/protein sequence fused to a sequence of interest, used to facilitate experimental operations such as purification, detection, localization, tracking, solubility enhancement, or selection. Applicable to both proteins and nucleic acids",
+      "title": "protein tag",
       "from_schema": "https://w3id.org/evorao/",
-      "is_a": "hasTAG",
+      "is_a": "proteinTag",
       "domain": "NucleicAcid",
-      "slot_uri": "https://w3id.org/evorao/hasTAG",
-      "alias": "hasTAG",
+      "slot_uri": "https://w3id.org/evorao/proteinTag",
+      "alias": "proteinTag",
       "owner": "NucleicAcid",
       "domain_of": [
         "NucleicAcid"
       ],
       "is_usage_slot": true,
-      "usage_slot_name": "hasTAG",
+      "usage_slot_name": "proteinTag",
       "range": "ProteinTag",
       "required": true,
       "inlined": true,
@@ -7287,21 +7335,21 @@
       "@type": "SlotDefinition"
     },
     {
-      "name": "DetectionKit_hasSOPFile",
-      "definition_uri": "https://w3id.org/evorao/hasSOPFile",
-      "description": "The related standard operating procedure file",
-      "title": "has SOP File",
+      "name": "DetectionKit_standardOperatingProcedureFile",
+      "definition_uri": "https://w3id.org/evorao/standardOperatingProcedureFile",
+      "description": "The related standard operating procedure file (SOP)",
+      "title": "standard operating procedure file",
       "from_schema": "https://w3id.org/evorao/",
-      "is_a": "hasSOPFile",
+      "is_a": "standardOperatingProcedureFile",
       "domain": "DetectionKit",
-      "slot_uri": "https://w3id.org/evorao/hasSOPFile",
-      "alias": "hasSOPFile",
+      "slot_uri": "https://w3id.org/evorao/standardOperatingProcedureFile",
+      "alias": "standardOperatingProcedureFile",
       "owner": "DetectionKit",
       "domain_of": [
         "DetectionKit"
       ],
       "is_usage_slot": true,
-      "usage_slot_name": "hasSOPFile",
+      "usage_slot_name": "standardOperatingProcedureFile",
       "range": "File",
       "multivalued": true,
       "inlined": true,
@@ -7366,21 +7414,21 @@
       "@type": "SlotDefinition"
     },
     {
-      "name": "Bundle_productsOfTheBundle",
-      "definition_uri": "https://w3id.org/evorao/productsOfTheBundle",
-      "description": "Associates the bundle with the individual products it contains, specifying the components included within the bundle.",
-      "title": "products of the bundle",
+      "name": "Bundle_itemsOfTheBundle",
+      "definition_uri": "https://w3id.org/evorao/itemsOfTheBundle",
+      "description": "Specifies the constituent products and/or services that are part of the bundle",
+      "title": "items of the bundle",
       "from_schema": "https://w3id.org/evorao/",
-      "is_a": "productsOfTheBundle",
+      "is_a": "itemsOfTheBundle",
       "domain": "Bundle",
-      "slot_uri": "https://w3id.org/evorao/productsOfTheBundle",
-      "alias": "productsOfTheBundle",
+      "slot_uri": "https://w3id.org/evorao/itemsOfTheBundle",
+      "alias": "itemsOfTheBundle",
       "owner": "Bundle",
       "domain_of": [
         "Bundle"
       ],
       "is_usage_slot": true,
-      "usage_slot_name": "productsOfTheBundle",
+      "usage_slot_name": "itemsOfTheBundle",
       "range": "Product",
       "required": true,
       "multivalued": true,
@@ -7391,7 +7439,7 @@
       "name": "Pathogen_biologicalMaterialOrigin",
       "definition_uri": "https://w3id.org/evorao/biologicalMaterialOrigin",
       "description": "Information about the origin of the biological material, essential for access, utilization, and benefit-sharing of genetic resources in compliance with the Nagoya Protocol",
-      "title": "Biological Material origin",
+      "title": "biological material origin",
       "from_schema": "https://w3id.org/evorao/",
       "is_a": "biologicalMaterialOrigin",
       "domain": "Pathogen",
@@ -7845,24 +7893,24 @@
       "@type": "SlotDefinition"
     },
     {
-      "name": "MSDS_msdsContact",
-      "definition_uri": "https://w3id.org/evorao/msdsContact",
+      "name": "MSDS_materialSafetyContact",
+      "definition_uri": "https://w3id.org/evorao/materialSafetyContact",
       "description": "The designated contact point responsible for providing information related to the safety, handling, and regulatory compliance of the biological product.",
-      "title": "MSDS contact",
+      "title": "material safety contact",
       "from_schema": "https://w3id.org/evorao/",
       "exact_mappings": [
         "http://www.w3.org/ns/dcat#contactPoint"
       ],
-      "is_a": "msdsContact",
+      "is_a": "materialSafetyContact",
       "domain": "MSDS",
-      "slot_uri": "https://w3id.org/evorao/msdsContact",
-      "alias": "msdsContact",
+      "slot_uri": "https://w3id.org/evorao/materialSafetyContact",
+      "alias": "materialSafetyContact",
       "owner": "MSDS",
       "domain_of": [
         "MSDS"
       ],
       "is_usage_slot": true,
-      "usage_slot_name": "msdsContact",
+      "usage_slot_name": "materialSafetyContact",
       "range": "ContactPoint",
       "required": true,
       "inlined": true,
@@ -8211,21 +8259,21 @@
       "@type": "SlotDefinition"
     },
     {
-      "name": "File_contentURL",
-      "definition_uri": "https://w3id.org/evorao/contentURL",
+      "name": "File_contentUrl",
+      "definition_uri": "https://w3id.org/evorao/contentUrl",
       "description": "The web address or location where the file content is stored and can be accessed or downloaded.",
       "title": "content URL",
       "from_schema": "https://w3id.org/evorao/",
-      "is_a": "contentURL",
+      "is_a": "contentUrl",
       "domain": "File",
-      "slot_uri": "https://w3id.org/evorao/contentURL",
-      "alias": "contentURL",
+      "slot_uri": "https://w3id.org/evorao/contentUrl",
+      "alias": "contentUrl",
       "owner": "File",
       "domain_of": [
         "File"
       ],
       "is_usage_slot": true,
-      "usage_slot_name": "contentURL",
+      "usage_slot_name": "contentUrl",
       "range": "uri",
       "required": true,
       "@type": "SlotDefinition"
@@ -8520,24 +8568,24 @@
       "@type": "SlotDefinition"
     },
     {
-      "name": "ContactPoint_oRCIDiD",
-      "definition_uri": "https://w3id.org/evorao/oRCIDiD",
+      "name": "ContactPoint_orcidId",
+      "definition_uri": "https://w3id.org/evorao/orcidId",
       "description": "Unique persistent identifier for a person, provided by the Open Researcher and Contributor ID (ORCID) organisation",
-      "title": "ORCID iD",
+      "title": "ORCID id",
       "from_schema": "https://w3id.org/evorao/",
       "exact_mappings": [
         "http://purl.obolibrary.org/obo/IAO_0000708"
       ],
-      "is_a": "oRCIDiD",
+      "is_a": "orcidId",
       "domain": "ContactPoint",
-      "slot_uri": "https://w3id.org/evorao/oRCIDiD",
-      "alias": "oRCIDiD",
+      "slot_uri": "https://w3id.org/evorao/orcidId",
+      "alias": "orcidId",
       "owner": "ContactPoint",
       "domain_of": [
         "ContactPoint"
       ],
       "is_usage_slot": true,
-      "usage_slot_name": "oRCIDiD",
+      "usage_slot_name": "orcidId",
       "range": "string",
       "recommended": true,
       "@type": "SlotDefinition"
@@ -8605,8 +8653,8 @@
       "@type": "SlotDefinition"
     },
     {
-      "name": "License_resourceURL",
-      "definition_uri": "https://w3id.org/evorao/resourceURL",
+      "name": "License_resourceUrl",
+      "definition_uri": "https://w3id.org/evorao/resourceUrl",
       "description": "The web address or location where the details or content is stored and can be accessed or downloaded.",
       "title": "resource URL",
       "from_schema": "https://w3id.org/evorao/",
@@ -8616,16 +8664,16 @@
       "close_mappings": [
         "http://schema.org/url"
       ],
-      "is_a": "resourceURL",
+      "is_a": "resourceUrl",
       "domain": "License",
-      "slot_uri": "https://w3id.org/evorao/resourceURL",
-      "alias": "resourceURL",
+      "slot_uri": "https://w3id.org/evorao/resourceUrl",
+      "alias": "resourceUrl",
       "owner": "License",
       "domain_of": [
         "License"
       ],
       "is_usage_slot": true,
-      "usage_slot_name": "resourceURL",
+      "usage_slot_name": "resourceUrl",
       "range": "uri",
       "@type": "SlotDefinition"
     },
@@ -8778,8 +8826,8 @@
       "@type": "SlotDefinition"
     },
     {
-      "name": "Certification_resourceURL",
-      "definition_uri": "https://w3id.org/evorao/resourceURL",
+      "name": "Certification_resourceUrl",
+      "definition_uri": "https://w3id.org/evorao/resourceUrl",
       "description": "The web address or location where the details or content is stored and can be accessed or downloaded.",
       "title": "resource URL",
       "from_schema": "https://w3id.org/evorao/",
@@ -8789,16 +8837,16 @@
       "close_mappings": [
         "http://schema.org/url"
       ],
-      "is_a": "resourceURL",
+      "is_a": "resourceUrl",
       "domain": "Certification",
-      "slot_uri": "https://w3id.org/evorao/resourceURL",
-      "alias": "resourceURL",
+      "slot_uri": "https://w3id.org/evorao/resourceUrl",
+      "alias": "resourceUrl",
       "owner": "Certification",
       "domain_of": [
         "Certification"
       ],
       "is_usage_slot": true,
-      "usage_slot_name": "resourceURL",
+      "usage_slot_name": "resourceUrl",
       "range": "uri",
       "@type": "SlotDefinition"
     }
@@ -8839,7 +8887,8 @@
       "abstract": true,
       "slots": [
         "Dataset_title",
-        "Dataset_description"
+        "Dataset_description",
+        "Dataset_version"
       ],
       "slot_usage": {},
       "class_uri": "http://www.w3.org/ns/dcat#Dataset",
@@ -8865,7 +8914,7 @@
       "slots": [
         "DataService_title",
         "DataService_description",
-        "DataService_endpointURL"
+        "DataService_endpointUrl"
       ],
       "slot_usage": {},
       "class_uri": "http://www.w3.org/ns/dcat#DataService",
@@ -8883,7 +8932,7 @@
       ],
       "is_a": "Resource",
       "slots": [
-        "Version_ID",
+        "Version_version",
         "Version_versionOf"
       ],
       "slot_usage": {},
@@ -8911,7 +8960,8 @@
       "abstract": true,
       "slots": [
         "Dataset_title",
-        "Dataset_description"
+        "Dataset_description",
+        "Dataset_version"
       ],
       "slot_usage": {},
       "class_uri": "http://www.w3.org/ns/dcat#Catalog",
@@ -8920,7 +8970,7 @@
     {
       "name": "Taxonomy",
       "definition_uri": "https://w3id.org/evorao/Taxonomy",
-      "description": "Science of naming, defining and classifying organisms",
+      "description": "A structured representation of data about the classification and naming of biological organisms into groups according to shared characteristics",
       "title": "Taxonomy",
       "from_schema": "https://w3id.org/evorao/",
       "close_mappings": [
@@ -8935,10 +8985,11 @@
         "Dataset_description",
         "Taxonomy_taxon",
         "Taxonomy_taxonDataProvider",
-        "Taxonomy_version",
+        "version",
         "Taxonomy_versionDataProvider",
         "Taxonomy_rank",
-        "Taxonomy_rankDataProvider"
+        "Taxonomy_rankDataProvider",
+        "Taxonomy_version"
       ],
       "slot_usage": {},
       "class_uri": "https://w3id.org/evorao/Taxonomy",
@@ -8958,10 +9009,10 @@
       "slots": [
         "DataService_title",
         "DataService_description",
-        "DataService_endpointURL",
+        "DataService_endpointUrl",
         "DataProvider_license",
         "DataProvider_loginRequestMethod",
-        "DataProvider_loginURL",
+        "DataProvider_loginUrl",
         "DataProvider_loginTokenName",
         "DataProvider_queryMethod",
         "DataProvider_contentType",
@@ -9010,7 +9061,7 @@
         "Publication_title",
         "Publication_authors",
         "Publication_abstract",
-        "Publication_relatedDOI",
+        "Publication_doi",
         "Publication_journal"
       ],
       "slot_usage": {},
@@ -9033,6 +9084,7 @@
       "slots": [
         "Dataset_title",
         "Dataset_description",
+        "Dataset_version",
         "Vocabulary_termDataProvider",
         "Vocabulary_term"
       ],
@@ -9066,7 +9118,7 @@
       "name": "CommonName",
       "definition_uri": "https://w3id.org/evorao/CommonName",
       "description": "Vernacular name that is the name used in everyday language to refer to an organism or group of organisms. This name is typically easier to remember and pronounce compared to the scientific name",
-      "title": "Common Name",
+      "title": "Common name",
       "from_schema": "https://w3id.org/evorao/",
       "exact_mappings": [
         "dwc:vernacularName",
@@ -9093,7 +9145,7 @@
       "name": "VirusName",
       "definition_uri": "https://w3id.org/evorao/VirusName",
       "description": "A virus vernacular name or a name that describes a group of viruses",
-      "title": "Virus Name",
+      "title": "Virus name",
       "from_schema": "https://w3id.org/evorao/",
       "close_mappings": [
         "wd:Q125481078",
@@ -9116,7 +9168,7 @@
       "name": "AlternateName",
       "definition_uri": "https://w3id.org/evorao/AlternateName",
       "description": "List of other names for things",
-      "title": "Alternate Name",
+      "title": "Alternate name",
       "from_schema": "https://w3id.org/evorao/",
       "close_mappings": [
         "wd:Q7662595",
@@ -9160,8 +9212,8 @@
       "@type": "ClassDefinition"
     },
     {
-      "name": "DOI",
-      "definition_uri": "https://w3id.org/evorao/DOI",
+      "name": "Doi",
+      "definition_uri": "https://w3id.org/evorao/Doi",
       "description": "A unique string identifier assigned to a digital object, providing a permanent link for reliable citation and access.  The Digital Object Identifier (DOI) is a persistent identifier that is an ISO standard",
       "title": "DOI",
       "from_schema": "https://w3id.org/evorao/",
@@ -9177,7 +9229,7 @@
         "Term_inVocabulary"
       ],
       "slot_usage": {},
-      "class_uri": "https://w3id.org/evorao/DOI",
+      "class_uri": "https://w3id.org/evorao/Doi",
       "@type": "ClassDefinition"
     },
     {
@@ -9202,14 +9254,14 @@
       "@type": "ClassDefinition"
     },
     {
-      "name": "PDBReference",
-      "definition_uri": "https://w3id.org/evorao/PDBReference",
+      "name": "PdbReference",
+      "definition_uri": "https://w3id.org/evorao/PdbReference",
       "description": "Identifier for 3D structural data as per the PDB (Protein Data Bank) database",
       "title": "PDB reference",
       "from_schema": "https://w3id.org/evorao/",
       "close_mappings": [
-        "wdp:Q42415644",
-        "wdp:Q42415644"
+        "wd:Q42415644",
+        "wd:Q42415644"
       ],
       "is_a": "Term",
       "slots": [
@@ -9219,7 +9271,7 @@
         "Term_inVocabulary"
       ],
       "slot_usage": {},
-      "class_uri": "https://w3id.org/evorao/PDBReference",
+      "class_uri": "https://w3id.org/evorao/PdbReference",
       "@type": "ClassDefinition"
     },
     {
@@ -9246,7 +9298,7 @@
     {
       "name": "ProteinTag",
       "definition_uri": "https://w3id.org/evorao/ProteinTag",
-      "description": "Peptide sequence genetically grafted onto a recombinant protein",
+      "description": "A DNA coding sequence or corresponding peptide/protein sequence fused to a sequence of interest, used to facilitate experimental operations such as purification, detection, localization, tracking, solubility enhancement, or selection. Applicable to both proteins and nucleic acids",
       "title": "Protein tag",
       "from_schema": "https://w3id.org/evorao/",
       "close_mappings": [
@@ -9445,8 +9497,8 @@
       "@type": "ClassDefinition"
     },
     {
-      "name": "IPLCOrigin",
-      "definition_uri": "https://w3id.org/evorao/IPLCOrigin",
+      "name": "IplcOrigin",
+      "definition_uri": "https://w3id.org/evorao/IplcOrigin",
       "description": "The IPLC area (Indigenous People and Local Communities) from which a physical item originates",
       "title": "IPLC origin",
       "from_schema": "https://w3id.org/evorao/",
@@ -9458,7 +9510,7 @@
         "Term_inVocabulary"
       ],
       "slot_usage": {},
-      "class_uri": "https://w3id.org/evorao/IPLCOrigin",
+      "class_uri": "https://w3id.org/evorao/IplcOrigin",
       "@type": "ClassDefinition"
     },
     {
@@ -9470,6 +9522,10 @@
         "Use of Data provider recommended... serve as a local cache for ISO3166"
       ],
       "from_schema": "https://w3id.org/evorao/",
+      "exact_mappings": [
+        "schema:Country",
+        "schema:Country"
+      ],
       "close_mappings": [
         "wd:Q6256",
         "wd:Q6256"
@@ -9487,8 +9543,8 @@
       "@type": "ClassDefinition"
     },
     {
-      "name": "IATAClassification",
-      "definition_uri": "https://w3id.org/evorao/IATAClassification",
+      "name": "IataClassification",
+      "definition_uri": "https://w3id.org/evorao/IataClassification",
       "description": "The corresponding International Air Transport Association (IATA)'s category for dangerous goods that are transported by air",
       "title": "IATA classification",
       "from_schema": "https://w3id.org/evorao/",
@@ -9500,7 +9556,7 @@
         "Term_inVocabulary"
       ],
       "slot_usage": {},
-      "class_uri": "https://w3id.org/evorao/IATAClassification",
+      "class_uri": "https://w3id.org/evorao/IataClassification",
       "@type": "ClassDefinition"
     },
     {
@@ -9562,7 +9618,9 @@
       "from_schema": "https://w3id.org/evorao/",
       "exact_mappings": [
         "dwc:Taxon",
-        "dwc:Taxon"
+        "schema:Taxon",
+        "dwc:Taxon",
+        "schema:Taxon"
       ],
       "close_mappings": [
         "wd:Q16521",
@@ -9579,8 +9637,8 @@
         "Taxon_rank",
         "Taxon_previouslyKnownAs",
         "Taxon_externalEquivalentTaxon",
-        "Taxon_taxonomicID",
-        "Taxon_taxonomicNodeID"
+        "Taxon_taxonomicId",
+        "Taxon_taxonomicNodeId"
       ],
       "slot_usage": {},
       "class_uri": "https://w3id.org/evorao/Taxon",
@@ -9616,7 +9674,7 @@
       "is_a": "Resource",
       "slots": [
         "Sequence_sequenceReference",
-        "Sequence_sequenceFASTA"
+        "Sequence_sequenceFasta"
       ],
       "slot_usage": {},
       "class_uri": "https://w3id.org/evorao/Sequence",
@@ -9644,7 +9702,7 @@
       "name": "PersonOrOrganization",
       "definition_uri": "https://w3id.org/evorao/PersonOrOrganization",
       "description": "A person or an organization",
-      "title": "Person Or Organization",
+      "title": "Person or organization",
       "from_schema": "https://w3id.org/evorao/",
       "mappings": [
         "foaf:Agent"
@@ -9681,8 +9739,10 @@
       "close_mappings": [
         "wd:Q215627",
         "vcard:Individual",
+        "schema:Person",
         "wd:Q215627",
-        "vcard:Individual"
+        "vcard:Individual",
+        "schema:Person"
       ],
       "is_a": "PersonOrOrganization",
       "slots": [
@@ -9691,7 +9751,7 @@
         "PersonOrOrganization_homePage",
         "PersonOrOrganization_contactPoint",
         "PersonOrOrganization_logo",
-        "Person_oRCIDiD"
+        "Person_orcidId"
       ],
       "slot_usage": {},
       "class_uri": "http://xmlns.com/foaf/0.1/Person",
@@ -9709,8 +9769,10 @@
       "close_mappings": [
         "wd:Q43229",
         "vcard:Organization",
+        "schema:Organization",
         "wd:Q43229",
-        "vcard:Organization"
+        "vcard:Organization",
+        "schema:Organization"
       ],
       "is_a": "PersonOrOrganization",
       "slots": [
@@ -9721,17 +9783,17 @@
         "PersonOrOrganization_logo",
         "Organization_alternateName",
         "Organization_country",
-        "Organization_rORiD"
+        "Organization_rorId"
       ],
       "slot_usage": {},
       "class_uri": "http://xmlns.com/foaf/0.1/Organization",
       "@type": "ClassDefinition"
     },
     {
-      "name": "RI",
-      "definition_uri": "https://w3id.org/evorao/RI",
-      "description": "A research infrastructure",
-      "title": "RI",
+      "name": "ReasearchInfrastructure",
+      "definition_uri": "https://w3id.org/evorao/ReasearchInfrastructure",
+      "description": "A research infrastructure (RI)",
+      "title": "Reasearch infrastructure",
       "from_schema": "https://w3id.org/evorao/",
       "close_mappings": [
         "wd:Q1438053",
@@ -9746,10 +9808,10 @@
         "PersonOrOrganization_logo",
         "Organization_alternateName",
         "Organization_country",
-        "Organization_rORiD"
+        "Organization_rorId"
       ],
       "slot_usage": {},
-      "class_uri": "https://w3id.org/evorao/RI",
+      "class_uri": "https://w3id.org/evorao/ReasearchInfrastructure",
       "@type": "ClassDefinition"
     },
     {
@@ -9771,8 +9833,8 @@
         "PersonOrOrganization_logo",
         "Organization_alternateName",
         "Organization_country",
-        "Organization_rORiD",
-        "Provider_memberOfRI"
+        "Organization_rorId",
+        "Provider_memberOfRi"
       ],
       "slot_usage": {},
       "class_uri": "https://w3id.org/evorao/Provider",
@@ -9843,10 +9905,10 @@
         "BiologicalPartOrigin_recombinantPartIdentification",
         "BiologicalPartOrigin_accessToPhysicalGeneticResource",
         "NaturalPartOrigin_countryOfCollection",
-        "NaturalPartOrigin_indigenousPoepleAndLocalCommunityOrigin",
+        "NaturalPartOrigin_indigenousPeopleAndLocalCommunityOrigin",
         "NaturalPartOrigin_collectionDate",
         "NaturalPartOrigin_beforeDate",
-        "NaturalPartOrigin_permitIdentifierForABS"
+        "NaturalPartOrigin_permitIdentifierForAbs"
       ],
       "slot_usage": {},
       "class_uri": "https://w3id.org/evorao/NaturalPartOrigin",
@@ -9898,6 +9960,7 @@
       "slots": [
         "Dataset_title",
         "Dataset_description",
+        "Dataset_version",
         "Collection_collectionItem",
         "Collection_collectionDataProvider"
       ],
@@ -9908,7 +9971,7 @@
     {
       "name": "ProductOrService",
       "definition_uri": "https://w3id.org/evorao/ProductOrService",
-      "description": "A product or a service",
+      "description": "An offering provided by a provider, which may be tangible (a product) or intangible (a service)",
       "title": "Product or service",
       "comments": [
         "part of  wd:Q2897903 (goods and services )"
@@ -9919,18 +9982,19 @@
       "slots": [
         "Dataset_title",
         "Dataset_description",
-        "ProductOrService_accessPointURL",
-        "ProductOrService_refSKU",
+        "Dataset_version",
+        "ProductOrService_accessPointUrl",
+        "ProductOrService_refSku",
         "ProductOrService_unitDefinition",
         "ProductOrService_category",
         "ProductOrService_additionalCategory",
         "ProductOrService_unitCost",
         "ProductOrService_qualityGrading",
         "ProductOrService_pathogenIdentification",
-        "ProductOrService_relatedDOI",
+        "ProductOrService_doi",
         "ProductOrService_riskGroup",
         "ProductOrService_biosafetyRestrictions",
-        "ProductOrService_canItBeUsedToProduceGMO",
+        "ProductOrService_canBeUsedToProduceGmo",
         "ProductOrService_provider",
         "ProductOrService_collection",
         "ProductOrService_keywords",
@@ -9951,7 +10015,7 @@
     {
       "name": "Service",
       "definition_uri": "https://w3id.org/evorao/Service",
-      "description": "A service",
+      "description": "An intangible offering characterized by an activity, performance, or facilitation carried out by a provider to fulfill a user\u2019s need",
       "title": "Service",
       "from_schema": "https://w3id.org/evorao/",
       "close_mappings": [
@@ -9962,18 +10026,19 @@
       "slots": [
         "Dataset_title",
         "Dataset_description",
-        "ProductOrService_accessPointURL",
-        "ProductOrService_refSKU",
+        "Dataset_version",
+        "ProductOrService_accessPointUrl",
+        "ProductOrService_refSku",
         "ProductOrService_unitDefinition",
         "ProductOrService_category",
         "ProductOrService_additionalCategory",
         "ProductOrService_unitCost",
         "ProductOrService_qualityGrading",
         "ProductOrService_pathogenIdentification",
-        "ProductOrService_relatedDOI",
+        "ProductOrService_doi",
         "ProductOrService_riskGroup",
         "ProductOrService_biosafetyRestrictions",
-        "ProductOrService_canItBeUsedToProduceGMO",
+        "ProductOrService_canBeUsedToProduceGmo",
         "ProductOrService_provider",
         "ProductOrService_collection",
         "ProductOrService_keywords",
@@ -9996,29 +10061,34 @@
     {
       "name": "Product",
       "definition_uri": "https://w3id.org/evorao/Product",
-      "description": "A product",
+      "description": "A tangible, physical item made available by a provider for use, consumption, or ownership transfer",
       "title": "Product",
       "from_schema": "https://w3id.org/evorao/",
       "close_mappings": [
         "wd:Q2424752",
         "wd:Q2424752"
       ],
+      "broad_mappings": [
+        "dct:PhysicalResource",
+        "dct:PhysicalResource"
+      ],
       "is_a": "ProductOrService",
       "slots": [
         "Dataset_title",
         "Dataset_description",
-        "ProductOrService_accessPointURL",
-        "ProductOrService_refSKU",
+        "Dataset_version",
+        "ProductOrService_accessPointUrl",
+        "ProductOrService_refSku",
         "ProductOrService_unitDefinition",
         "ProductOrService_category",
         "ProductOrService_additionalCategory",
         "ProductOrService_unitCost",
         "ProductOrService_qualityGrading",
         "ProductOrService_pathogenIdentification",
-        "ProductOrService_relatedDOI",
+        "ProductOrService_doi",
         "ProductOrService_riskGroup",
         "ProductOrService_biosafetyRestrictions",
-        "ProductOrService_canItBeUsedToProduceGMO",
+        "ProductOrService_canBeUsedToProduceGmo",
         "ProductOrService_provider",
         "ProductOrService_collection",
         "ProductOrService_keywords",
@@ -10031,7 +10101,7 @@
         "ProductOrService_internalReference",
         "ProductOrService_note",
         "ProductOrService_contactPoint",
-        "Product_hasIATAClassification",
+        "Product_iataClassification",
         "Product_shippingConditions",
         "Product_materialSafetyDataSheet",
         "Product_originator",
@@ -10057,18 +10127,19 @@
       "slots": [
         "Dataset_title",
         "Dataset_description",
-        "ProductOrService_accessPointURL",
-        "ProductOrService_refSKU",
+        "Dataset_version",
+        "ProductOrService_accessPointUrl",
+        "ProductOrService_refSku",
         "ProductOrService_unitDefinition",
         "ProductOrService_category",
         "ProductOrService_additionalCategory",
         "ProductOrService_unitCost",
         "ProductOrService_qualityGrading",
         "ProductOrService_pathogenIdentification",
-        "ProductOrService_relatedDOI",
+        "ProductOrService_doi",
         "ProductOrService_riskGroup",
         "ProductOrService_biosafetyRestrictions",
-        "ProductOrService_canItBeUsedToProduceGMO",
+        "ProductOrService_canBeUsedToProduceGmo",
         "ProductOrService_provider",
         "ProductOrService_collection",
         "ProductOrService_keywords",
@@ -10081,7 +10152,7 @@
         "ProductOrService_internalReference",
         "ProductOrService_note",
         "ProductOrService_contactPoint",
-        "Product_hasIATAClassification",
+        "Product_iataClassification",
         "Product_shippingConditions",
         "Product_materialSafetyDataSheet",
         "Product_originator",
@@ -10112,18 +10183,19 @@
       "slots": [
         "Dataset_title",
         "Dataset_description",
-        "ProductOrService_accessPointURL",
-        "ProductOrService_refSKU",
+        "Dataset_version",
+        "ProductOrService_accessPointUrl",
+        "ProductOrService_refSku",
         "ProductOrService_unitDefinition",
         "ProductOrService_category",
         "ProductOrService_additionalCategory",
         "ProductOrService_unitCost",
         "ProductOrService_qualityGrading",
         "ProductOrService_pathogenIdentification",
-        "ProductOrService_relatedDOI",
+        "ProductOrService_doi",
         "ProductOrService_riskGroup",
         "ProductOrService_biosafetyRestrictions",
-        "ProductOrService_canItBeUsedToProduceGMO",
+        "ProductOrService_canBeUsedToProduceGmo",
         "ProductOrService_provider",
         "ProductOrService_collection",
         "ProductOrService_keywords",
@@ -10136,7 +10208,7 @@
         "ProductOrService_internalReference",
         "ProductOrService_note",
         "ProductOrService_contactPoint",
-        "Product_hasIATAClassification",
+        "Product_iataClassification",
         "Product_shippingConditions",
         "Product_materialSafetyDataSheet",
         "Product_originator",
@@ -10168,18 +10240,19 @@
       "slots": [
         "Dataset_title",
         "Dataset_description",
-        "ProductOrService_accessPointURL",
-        "ProductOrService_refSKU",
+        "Dataset_version",
+        "ProductOrService_accessPointUrl",
+        "ProductOrService_refSku",
         "ProductOrService_unitDefinition",
         "ProductOrService_category",
         "ProductOrService_additionalCategory",
         "ProductOrService_unitCost",
         "ProductOrService_qualityGrading",
         "ProductOrService_pathogenIdentification",
-        "ProductOrService_relatedDOI",
+        "ProductOrService_doi",
         "ProductOrService_riskGroup",
         "ProductOrService_biosafetyRestrictions",
-        "ProductOrService_canItBeUsedToProduceGMO",
+        "ProductOrService_canBeUsedToProduceGmo",
         "ProductOrService_provider",
         "ProductOrService_collection",
         "ProductOrService_keywords",
@@ -10192,7 +10265,7 @@
         "ProductOrService_internalReference",
         "ProductOrService_note",
         "ProductOrService_contactPoint",
-        "Product_hasIATAClassification",
+        "Product_iataClassification",
         "Product_shippingConditions",
         "Product_materialSafetyDataSheet",
         "Product_originator",
@@ -10201,17 +10274,17 @@
         "Product_usageRestrictions",
         "Protein_biologicalMaterialOrigin",
         "Protein_sequence",
-        "Protein_relatedPDB",
+        "Protein_relatedPdb",
         "Protein_specialFeature",
-        "Protein_proteinTAG",
+        "Protein_proteinTag",
         "Protein_domain",
         "Protein_expressedAs",
         "Protein_inclusionBodiesType",
         "Protein_expressionSystem",
         "Protein_functionalCharacterization",
-        "Protein_functionalTechnicalDescription",
+        "Protein_functionalAndTechnicalDescription",
         "Protein_proteinPurification",
-        "Protein_theTAGStatusOfTheSolubilizedProtein",
+        "Protein_tagStatusOfTheSolubilizedProtein",
         "Protein_typeOfFunctionalCharacterization"
       ],
       "slot_usage": {},
@@ -10222,7 +10295,7 @@
       "name": "NucleicAcid",
       "definition_uri": "https://w3id.org/evorao/NucleicAcid",
       "description": "Nucleic acid related to a pathogen. It can be extracted or synthetic",
-      "title": "Nucleic Acid",
+      "title": "Nucleic acid",
       "from_schema": "https://w3id.org/evorao/",
       "close_mappings": [
         "wd:Q123619",
@@ -10232,18 +10305,19 @@
       "slots": [
         "Dataset_title",
         "Dataset_description",
-        "ProductOrService_accessPointURL",
-        "ProductOrService_refSKU",
+        "Dataset_version",
+        "ProductOrService_accessPointUrl",
+        "ProductOrService_refSku",
         "ProductOrService_unitDefinition",
         "ProductOrService_category",
         "ProductOrService_additionalCategory",
         "ProductOrService_unitCost",
         "ProductOrService_qualityGrading",
         "ProductOrService_pathogenIdentification",
-        "ProductOrService_relatedDOI",
+        "ProductOrService_doi",
         "ProductOrService_riskGroup",
         "ProductOrService_biosafetyRestrictions",
-        "ProductOrService_canItBeUsedToProduceGMO",
+        "ProductOrService_canBeUsedToProduceGmo",
         "ProductOrService_provider",
         "ProductOrService_collection",
         "ProductOrService_keywords",
@@ -10256,7 +10330,7 @@
         "ProductOrService_internalReference",
         "ProductOrService_note",
         "ProductOrService_contactPoint",
-        "Product_hasIATAClassification",
+        "Product_iataClassification",
         "Product_shippingConditions",
         "Product_materialSafetyDataSheet",
         "Product_originator",
@@ -10264,12 +10338,12 @@
         "Product_thirdPartyDistributionConsent",
         "Product_usageRestrictions",
         "NucleicAcid_biologicalMaterialOrigin",
-        "NucleicAcid_hasGbFileOfTheConstruct",
+        "NucleicAcid_genBankFileOfTheConstruct",
         "NucleicAcid_sequence",
-        "NucleicAcid_isItAClonedNucleicAcid",
+        "NucleicAcid_clonedNucleicAcid",
         "NucleicAcid_clonedIntoPlasmid",
-        "NucleicAcid_pasmidSelection",
-        "NucleicAcid_hasTAG",
+        "NucleicAcid_plasmidSelection",
+        "NucleicAcid_proteinTag",
         "NucleicAcid_regionEncompassedInThisProduct",
         "NucleicAcid_mutationObserved",
         "NucleicAcid_observedMutations",
@@ -10292,18 +10366,19 @@
       "slots": [
         "Dataset_title",
         "Dataset_description",
-        "ProductOrService_accessPointURL",
-        "ProductOrService_refSKU",
+        "Dataset_version",
+        "ProductOrService_accessPointUrl",
+        "ProductOrService_refSku",
         "ProductOrService_unitDefinition",
         "ProductOrService_category",
         "ProductOrService_additionalCategory",
         "ProductOrService_unitCost",
         "ProductOrService_qualityGrading",
         "ProductOrService_pathogenIdentification",
-        "ProductOrService_relatedDOI",
+        "ProductOrService_doi",
         "ProductOrService_riskGroup",
         "ProductOrService_biosafetyRestrictions",
-        "ProductOrService_canItBeUsedToProduceGMO",
+        "ProductOrService_canBeUsedToProduceGmo",
         "ProductOrService_provider",
         "ProductOrService_collection",
         "ProductOrService_keywords",
@@ -10316,14 +10391,14 @@
         "ProductOrService_internalReference",
         "ProductOrService_note",
         "ProductOrService_contactPoint",
-        "Product_hasIATAClassification",
+        "Product_iataClassification",
         "Product_shippingConditions",
         "Product_materialSafetyDataSheet",
         "Product_originator",
         "Product_storageConditions",
         "Product_thirdPartyDistributionConsent",
         "Product_usageRestrictions",
-        "DetectionKit_hasSOPFile",
+        "DetectionKit_standardOperatingProcedureFile",
         "DetectionKit_specificityDocumented",
         "DetectionKit_specificity",
         "DetectionKit_targetedRegion"
@@ -10335,7 +10410,7 @@
     {
       "name": "Bundle",
       "definition_uri": "https://w3id.org/evorao/Bundle",
-      "description": "A group of products",
+      "description": "A grouping of products and/or services intentionally combined into a single offering, typically to provide added value, convenience, or specific experimental utility",
       "title": "Bundle",
       "from_schema": "https://w3id.org/evorao/",
       "close_mappings": [
@@ -10346,18 +10421,19 @@
       "slots": [
         "Dataset_title",
         "Dataset_description",
-        "ProductOrService_accessPointURL",
-        "ProductOrService_refSKU",
+        "Dataset_version",
+        "ProductOrService_accessPointUrl",
+        "ProductOrService_refSku",
         "ProductOrService_unitDefinition",
         "ProductOrService_category",
         "ProductOrService_additionalCategory",
         "ProductOrService_unitCost",
         "ProductOrService_qualityGrading",
         "ProductOrService_pathogenIdentification",
-        "ProductOrService_relatedDOI",
+        "ProductOrService_doi",
         "ProductOrService_riskGroup",
         "ProductOrService_biosafetyRestrictions",
-        "ProductOrService_canItBeUsedToProduceGMO",
+        "ProductOrService_canBeUsedToProduceGmo",
         "ProductOrService_provider",
         "ProductOrService_collection",
         "ProductOrService_keywords",
@@ -10370,14 +10446,14 @@
         "ProductOrService_internalReference",
         "ProductOrService_note",
         "ProductOrService_contactPoint",
-        "Product_hasIATAClassification",
+        "Product_iataClassification",
         "Product_shippingConditions",
         "Product_materialSafetyDataSheet",
         "Product_originator",
         "Product_storageConditions",
         "Product_thirdPartyDistributionConsent",
         "Product_usageRestrictions",
-        "Bundle_productsOfTheBundle"
+        "Bundle_itemsOfTheBundle"
       ],
       "slot_usage": {},
       "class_uri": "https://w3id.org/evorao/Bundle",
@@ -10398,18 +10474,19 @@
       "slots": [
         "Dataset_title",
         "Dataset_description",
-        "ProductOrService_accessPointURL",
-        "ProductOrService_refSKU",
+        "Dataset_version",
+        "ProductOrService_accessPointUrl",
+        "ProductOrService_refSku",
         "ProductOrService_unitDefinition",
         "ProductOrService_category",
         "ProductOrService_additionalCategory",
         "ProductOrService_unitCost",
         "ProductOrService_qualityGrading",
         "ProductOrService_pathogenIdentification",
-        "ProductOrService_relatedDOI",
+        "ProductOrService_doi",
         "ProductOrService_riskGroup",
         "ProductOrService_biosafetyRestrictions",
-        "ProductOrService_canItBeUsedToProduceGMO",
+        "ProductOrService_canBeUsedToProduceGmo",
         "ProductOrService_provider",
         "ProductOrService_collection",
         "ProductOrService_keywords",
@@ -10422,7 +10499,7 @@
         "ProductOrService_internalReference",
         "ProductOrService_note",
         "ProductOrService_contactPoint",
-        "Product_hasIATAClassification",
+        "Product_iataClassification",
         "Product_shippingConditions",
         "Product_materialSafetyDataSheet",
         "Product_originator",
@@ -10466,18 +10543,19 @@
       "slots": [
         "Dataset_title",
         "Dataset_description",
-        "ProductOrService_accessPointURL",
-        "ProductOrService_refSKU",
+        "Dataset_version",
+        "ProductOrService_accessPointUrl",
+        "ProductOrService_refSku",
         "ProductOrService_unitDefinition",
         "ProductOrService_category",
         "ProductOrService_additionalCategory",
         "ProductOrService_unitCost",
         "ProductOrService_qualityGrading",
         "ProductOrService_pathogenIdentification",
-        "ProductOrService_relatedDOI",
+        "ProductOrService_doi",
         "ProductOrService_riskGroup",
         "ProductOrService_biosafetyRestrictions",
-        "ProductOrService_canItBeUsedToProduceGMO",
+        "ProductOrService_canBeUsedToProduceGmo",
         "ProductOrService_provider",
         "ProductOrService_collection",
         "ProductOrService_keywords",
@@ -10490,7 +10568,7 @@
         "ProductOrService_internalReference",
         "ProductOrService_note",
         "ProductOrService_contactPoint",
-        "Product_hasIATAClassification",
+        "Product_iataClassification",
         "Product_shippingConditions",
         "Product_materialSafetyDataSheet",
         "Product_originator",
@@ -10537,18 +10615,19 @@
       "slots": [
         "Dataset_title",
         "Dataset_description",
-        "ProductOrService_accessPointURL",
-        "ProductOrService_refSKU",
+        "Dataset_version",
+        "ProductOrService_accessPointUrl",
+        "ProductOrService_refSku",
         "ProductOrService_unitDefinition",
         "ProductOrService_category",
         "ProductOrService_additionalCategory",
         "ProductOrService_unitCost",
         "ProductOrService_qualityGrading",
         "ProductOrService_pathogenIdentification",
-        "ProductOrService_relatedDOI",
+        "ProductOrService_doi",
         "ProductOrService_riskGroup",
         "ProductOrService_biosafetyRestrictions",
-        "ProductOrService_canItBeUsedToProduceGMO",
+        "ProductOrService_canBeUsedToProduceGmo",
         "ProductOrService_provider",
         "ProductOrService_collection",
         "ProductOrService_keywords",
@@ -10561,7 +10640,7 @@
         "ProductOrService_internalReference",
         "ProductOrService_note",
         "ProductOrService_contactPoint",
-        "Product_hasIATAClassification",
+        "Product_iataClassification",
         "Product_shippingConditions",
         "Product_materialSafetyDataSheet",
         "Product_originator",
@@ -10605,18 +10684,19 @@
       "slots": [
         "Dataset_title",
         "Dataset_description",
-        "ProductOrService_accessPointURL",
-        "ProductOrService_refSKU",
+        "Dataset_version",
+        "ProductOrService_accessPointUrl",
+        "ProductOrService_refSku",
         "ProductOrService_unitDefinition",
         "ProductOrService_category",
         "ProductOrService_additionalCategory",
         "ProductOrService_unitCost",
         "ProductOrService_qualityGrading",
         "ProductOrService_pathogenIdentification",
-        "ProductOrService_relatedDOI",
+        "ProductOrService_doi",
         "ProductOrService_riskGroup",
         "ProductOrService_biosafetyRestrictions",
-        "ProductOrService_canItBeUsedToProduceGMO",
+        "ProductOrService_canBeUsedToProduceGmo",
         "ProductOrService_provider",
         "ProductOrService_collection",
         "ProductOrService_keywords",
@@ -10629,7 +10709,7 @@
         "ProductOrService_internalReference",
         "ProductOrService_note",
         "ProductOrService_contactPoint",
-        "Product_hasIATAClassification",
+        "Product_iataClassification",
         "Product_shippingConditions",
         "Product_materialSafetyDataSheet",
         "Product_originator",
@@ -10673,18 +10753,19 @@
       "slots": [
         "Dataset_title",
         "Dataset_description",
-        "ProductOrService_accessPointURL",
-        "ProductOrService_refSKU",
+        "Dataset_version",
+        "ProductOrService_accessPointUrl",
+        "ProductOrService_refSku",
         "ProductOrService_unitDefinition",
         "ProductOrService_category",
         "ProductOrService_additionalCategory",
         "ProductOrService_unitCost",
         "ProductOrService_qualityGrading",
         "ProductOrService_pathogenIdentification",
-        "ProductOrService_relatedDOI",
+        "ProductOrService_doi",
         "ProductOrService_riskGroup",
         "ProductOrService_biosafetyRestrictions",
-        "ProductOrService_canItBeUsedToProduceGMO",
+        "ProductOrService_canBeUsedToProduceGmo",
         "ProductOrService_provider",
         "ProductOrService_collection",
         "ProductOrService_keywords",
@@ -10697,7 +10778,7 @@
         "ProductOrService_internalReference",
         "ProductOrService_note",
         "ProductOrService_contactPoint",
-        "Product_hasIATAClassification",
+        "Product_iataClassification",
         "Product_shippingConditions",
         "Product_materialSafetyDataSheet",
         "Product_originator",
@@ -10741,18 +10822,19 @@
       "slots": [
         "Dataset_title",
         "Dataset_description",
-        "ProductOrService_accessPointURL",
-        "ProductOrService_refSKU",
+        "Dataset_version",
+        "ProductOrService_accessPointUrl",
+        "ProductOrService_refSku",
         "ProductOrService_unitDefinition",
         "ProductOrService_category",
         "ProductOrService_additionalCategory",
         "ProductOrService_unitCost",
         "ProductOrService_qualityGrading",
         "ProductOrService_pathogenIdentification",
-        "ProductOrService_relatedDOI",
+        "ProductOrService_doi",
         "ProductOrService_riskGroup",
         "ProductOrService_biosafetyRestrictions",
-        "ProductOrService_canItBeUsedToProduceGMO",
+        "ProductOrService_canBeUsedToProduceGmo",
         "ProductOrService_provider",
         "ProductOrService_collection",
         "ProductOrService_keywords",
@@ -10765,7 +10847,7 @@
         "ProductOrService_internalReference",
         "ProductOrService_note",
         "ProductOrService_contactPoint",
-        "Product_hasIATAClassification",
+        "Product_iataClassification",
         "Product_shippingConditions",
         "Product_materialSafetyDataSheet",
         "Product_originator",
@@ -10809,18 +10891,19 @@
       "slots": [
         "Dataset_title",
         "Dataset_description",
-        "ProductOrService_accessPointURL",
-        "ProductOrService_refSKU",
+        "Dataset_version",
+        "ProductOrService_accessPointUrl",
+        "ProductOrService_refSku",
         "ProductOrService_unitDefinition",
         "ProductOrService_category",
         "ProductOrService_additionalCategory",
         "ProductOrService_unitCost",
         "ProductOrService_qualityGrading",
         "ProductOrService_pathogenIdentification",
-        "ProductOrService_relatedDOI",
+        "ProductOrService_doi",
         "ProductOrService_riskGroup",
         "ProductOrService_biosafetyRestrictions",
-        "ProductOrService_canItBeUsedToProduceGMO",
+        "ProductOrService_canBeUsedToProduceGmo",
         "ProductOrService_provider",
         "ProductOrService_collection",
         "ProductOrService_keywords",
@@ -10833,7 +10916,7 @@
         "ProductOrService_internalReference",
         "ProductOrService_note",
         "ProductOrService_contactPoint",
-        "Product_hasIATAClassification",
+        "Product_iataClassification",
         "Product_shippingConditions",
         "Product_materialSafetyDataSheet",
         "Product_originator",
@@ -10864,18 +10947,26 @@
       "@type": "ClassDefinition"
     },
     {
-      "name": "MSDS",
-      "definition_uri": "https://w3id.org/evorao/MSDS",
+      "name": "MaterialSafetyDataSheet",
+      "definition_uri": "https://w3id.org/evorao/MaterialSafetyDataSheet",
       "description": "A Material Safety Data Sheet (MSDS) or Safety Data Sheet (SDS) is a standardized document that contains crucial occupational safety and health information related to the product",
-      "title": "MSDS",
+      "title": "Material safety data sheet",
       "from_schema": "https://w3id.org/evorao/",
       "close_mappings": [
         "wd:Q222067",
         "wd:Q222067"
       ],
       "is_a": "Resource",
+      "slot_usage": {},
+      "class_uri": "https://w3id.org/evorao/MaterialSafetyDataSheet",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "MSDS",
+      "definition_uri": "https://w3id.org/evorao/MSDS",
+      "from_schema": "https://w3id.org/evorao/",
       "slots": [
-        "MSDS_msdsContact",
+        "MSDS_materialSafetyContact",
         "MSDS_physicalChemicalProperties",
         "MSDS_hazardsIdentification",
         "MSDS_firstAidMeasures",
@@ -10914,7 +11005,7 @@
       "slots": [
         "File_name",
         "File_description",
-        "File_contentURL",
+        "File_contentUrl",
         "File_format",
         "File_license"
       ],
@@ -10936,7 +11027,7 @@
       "slots": [
         "File_name",
         "File_description",
-        "File_contentURL",
+        "File_contentUrl",
         "File_format",
         "File_license"
       ],
@@ -10958,7 +11049,7 @@
       "slots": [
         "File_name",
         "File_description",
-        "File_contentURL",
+        "File_contentUrl",
         "File_format",
         "File_license"
       ],
@@ -10980,7 +11071,7 @@
       "slots": [
         "File_name",
         "File_description",
-        "File_contentURL",
+        "File_contentUrl",
         "File_format",
         "File_license"
       ],
@@ -11002,7 +11093,7 @@
       "slots": [
         "File_name",
         "File_description",
-        "File_contentURL",
+        "File_contentUrl",
         "File_format",
         "File_license"
       ],
@@ -11024,7 +11115,7 @@
       "slots": [
         "File_name",
         "File_description",
-        "File_contentURL",
+        "File_contentUrl",
         "File_format",
         "File_license",
         "Image_altText"
@@ -11060,7 +11151,7 @@
         "ContactPoint_addressRegion",
         "ContactPoint_postalCode",
         "ContactPoint_addressCountry",
-        "ContactPoint_oRCIDiD"
+        "ContactPoint_orcidId"
       ],
       "slot_usage": {},
       "class_uri": "https://w3id.org/evorao/ContactPoint",
@@ -11086,7 +11177,7 @@
       "slots": [
         "License_title",
         "License_description",
-        "License_resourceURL",
+        "License_resourceUrl",
         "License_licensingOrAttribution",
         "License_logo"
       ],
@@ -11112,7 +11203,7 @@
         "Certification_description",
         "Certification_logo",
         "Certification_certificationDocument",
-        "Certification_resourceURL"
+        "Certification_resourceUrl"
       ],
       "slot_usage": {},
       "class_uri": "https://w3id.org/evorao/Certification",
@@ -11121,9 +11212,9 @@
   ],
   "metamodel_version": "1.7.0",
   "source_file": "evora_schema.yaml",
-  "source_file_date": "2025-06-30T15:25:26",
-  "source_file_size": 187312,
-  "generation_date": "2025-06-30T15:25:40",
+  "source_file_date": "2025-09-04T15:30:41",
+  "source_file_size": 190170,
+  "generation_date": "2025-09-04T15:30:55",
   "@type": "SchemaDefinition",
   "@context": [
     "https://w3id.org/linkml/types.context.jsonld",

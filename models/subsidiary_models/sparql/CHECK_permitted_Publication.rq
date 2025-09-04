@@ -28,7 +28,7 @@ SELECT ?g ?s ?p WHERE {
    dct:title,
    EVORAO:authors,
    EVORAO:abstract,
-   EVORAO:relatedDOI,
+   EVORAO:doi,
    EVORAO:journal,
    rdf:type ))
  }

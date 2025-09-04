@@ -4,38 +4,40 @@
 --     * Slot: id Description: 
 --     * Slot: title Description: A name given to the resource
 --     * Slot: description Description: A short explanation of the characteristics, features, or nature of the current item
+--     * Slot: version Description: The version indicator (name or identifier) of a resource
 -- # Class: "DataService" Description: "A collection of operations that provides access to one or more datasets or data processing functions"
 --     * Slot: id Description: 
 --     * Slot: title Description: A name given to the resource
 --     * Slot: description Description: A short explanation of the characteristics, features, or nature of the current item
---     * Slot: endpointURL Description: The URL template that allows to get the content
+--     * Slot: endpointUrl Description: The URL template that allows to get the content
 -- # Class: "Version" Description: "Numeric code assigned to identify a particular historical version of a work (e.g. software or technical standards)"
 --     * Slot: id Description: 
---     * Slot: ID Description: The version identifier
---     * Slot: versionOf_id Description: Identifier of what the version qualifies
+--     * Slot: version Description: The version indicator (name or identifier) of a resource
+--     * Slot: versionOf_id Description: Identifier of what type of entities the version qualifies
 -- # Class: "Catalogue" Description: "A curated collection of metadata about resources"
 --     * Slot: id Description: 
 --     * Slot: title Description: A name given to the resource
 --     * Slot: description Description: A short explanation of the characteristics, features, or nature of the current item
--- # Class: "Taxonomy" Description: "Science of naming, defining and classifying organisms"
+--     * Slot: version Description: The version indicator (name or identifier) of a resource
+-- # Class: "Taxonomy" Description: "A structured representation of data about the classification and naming of biological organisms into groups according to shared characteristics"
 --     * Slot: id Description: 
+--     * Slot: version Description: The version indicator (name or identifier) of a resource
 --     * Slot: title Description: A name given to the resource
 --     * Slot: description Description: A short explanation of the characteristics, features, or nature of the current item
 --     * Slot: taxonDataProvider_id Description: The data provider for the taxons of the taxonomy
---     * Slot: version_id Description: The version of this instance of entity
 --     * Slot: versionDataProvider_id Description: The data provider for the Version ID of this taxonomy
 --     * Slot: rankDataProvider_id Description: The data provider for the description of the taxonomic ranks used in this taxonomy
 -- # Class: "DataProvider" Description: "An external API (Application Programming Interface) or Endpoint that permits to retrieve data from other sources"
 --     * Slot: id Description: 
 --     * Slot: loginRequestMethod Description: The http request method used to acces the login request url
---     * Slot: loginURL Description: The URL template that allows to log in if required
+--     * Slot: loginUrl Description: The URL template that allows to log in if required
 --     * Slot: loginTokenName Description: The name of the token, unique identifier of an interaction session, that will have to be reused as credential in the query
 --     * Slot: queryMethod Description: The http request method used to access the requested query url
 --     * Slot: contentType Description: The content type of the response to the queries
 --     * Slot: weight Description: A numerical value indicating relative importance or priority, generally processed in ascending order. This weight helps prioritize content when organizing or processing data. Its value can be negative, with a default set to 0
 --     * Slot: title Description: A name given to the resource
 --     * Slot: description Description: A short explanation of the characteristics, features, or nature of the current item
---     * Slot: endpointURL Description: The URL template that allows to get the content
+--     * Slot: endpointUrl Description: The URL template that allows to get the content
 --     * Slot: license_id Description: Information about terms and conditions under which the subject can be used, shared, or distributed, indicating any restrictions or permissions
 --     * Slot: providedEntityType_id Description: The identification of the entity type (Class) described by the response to the query
 -- # Class: "PathogenIdentification" Description: "A collection of distinguishing information that enables the differentiation of a pathogen from another"
@@ -54,12 +56,13 @@
 --     * Slot: title Description: A name given to the resource
 --     * Slot: authors Description: The list of authors
 --     * Slot: abstract Description: Concise summary of the publication
---     * Slot: relatedDOI_id Description: Any Digital Object Identifier that can be related
+--     * Slot: doi_id Description: A Digital Object Identifier (DOI) that can be related
 --     * Slot: journal_id Description: The scientific journal in which the publication was published
 -- # Class: "Vocabulary" Description: "A subset of words or phrases specific to a particular subject or field"
 --     * Slot: id Description: 
 --     * Slot: title Description: A name given to the resource
 --     * Slot: description Description: A short explanation of the characteristics, features, or nature of the current item
+--     * Slot: version Description: The version indicator (name or identifier) of a resource
 --     * Slot: termDataProvider_id Description: An external API or Endpoint that permits to retrieve the terms of this vocabulary
 -- # Class: "Term" Description: "Word or phrase from a specialized area of knowledge"
 --     * Slot: id Description: 
@@ -91,7 +94,7 @@
 --     * Slot: description Description: A short explanation of the characteristics, features, or nature of the current item
 --     * Slot: weight Description: A numerical value indicating relative importance or priority, generally processed in ascending order. This weight helps prioritize content when organizing or processing data. Its value can be negative, with a default set to 0
 --     * Slot: inVocabulary_id Description: Terms belong to a specific vocabulary
--- # Class: "DOI" Description: "A unique string identifier assigned to a digital object, providing a permanent link for reliable citation and access.  The Digital Object Identifier (DOI) is a persistent identifier that is an ISO standard"
+-- # Class: "Doi" Description: "A unique string identifier assigned to a digital object, providing a permanent link for reliable citation and access.  The Digital Object Identifier (DOI) is a persistent identifier that is an ISO standard"
 --     * Slot: id Description: 
 --     * Slot: title Description: A name given to the resource
 --     * Slot: description Description: A short explanation of the characteristics, features, or nature of the current item
@@ -103,7 +106,7 @@
 --     * Slot: description Description: A short explanation of the characteristics, features, or nature of the current item
 --     * Slot: weight Description: A numerical value indicating relative importance or priority, generally processed in ascending order. This weight helps prioritize content when organizing or processing data. Its value can be negative, with a default set to 0
 --     * Slot: inVocabulary_id Description: Terms belong to a specific vocabulary
--- # Class: "PDBReference" Description: "Identifier for 3D structural data as per the PDB (Protein Data Bank) database"
+-- # Class: "PdbReference" Description: "Identifier for 3D structural data as per the PDB (Protein Data Bank) database"
 --     * Slot: id Description: 
 --     * Slot: title Description: A name given to the resource
 --     * Slot: description Description: A short explanation of the characteristics, features, or nature of the current item
@@ -115,7 +118,7 @@
 --     * Slot: description Description: A short explanation of the characteristics, features, or nature of the current item
 --     * Slot: weight Description: A numerical value indicating relative importance or priority, generally processed in ascending order. This weight helps prioritize content when organizing or processing data. Its value can be negative, with a default set to 0
 --     * Slot: inVocabulary_id Description: Terms belong to a specific vocabulary
--- # Class: "ProteinTag" Description: "Peptide sequence genetically grafted onto a recombinant protein"
+-- # Class: "ProteinTag" Description: "A DNA coding sequence or corresponding peptide/protein sequence fused to a sequence of interest, used to facilitate experimental operations such as purification, detection, localization, tracking, solubility enhancement, or selection. Applicable to both proteins and nucleic acids"
 --     * Slot: id Description: 
 --     * Slot: title Description: A name given to the resource
 --     * Slot: description Description: A short explanation of the characteristics, features, or nature of the current item
@@ -176,7 +179,7 @@
 --     * Slot: description Description: A short explanation of the characteristics, features, or nature of the current item
 --     * Slot: weight Description: A numerical value indicating relative importance or priority, generally processed in ascending order. This weight helps prioritize content when organizing or processing data. Its value can be negative, with a default set to 0
 --     * Slot: inVocabulary_id Description: Terms belong to a specific vocabulary
--- # Class: "IPLCOrigin" Description: "The IPLC area (Indigenous People and Local Communities) from which a physical item originates"
+-- # Class: "IplcOrigin" Description: "The IPLC area (Indigenous People and Local Communities) from which a physical item originates"
 --     * Slot: id Description: 
 --     * Slot: title Description: A name given to the resource
 --     * Slot: description Description: A short explanation of the characteristics, features, or nature of the current item
@@ -189,7 +192,7 @@
 --     * Slot: description Description: A short explanation of the characteristics, features, or nature of the current item
 --     * Slot: weight Description: A numerical value indicating relative importance or priority, generally processed in ascending order. This weight helps prioritize content when organizing or processing data. Its value can be negative, with a default set to 0
 --     * Slot: inVocabulary_id Description: Terms belong to a specific vocabulary
--- # Class: "IATAClassification" Description: "The corresponding International Air Transport Association (IATA)'s category for dangerous goods that are transported by air"
+-- # Class: "IataClassification" Description: "The corresponding International Air Transport Association (IATA)'s category for dangerous goods that are transported by air"
 --     * Slot: id Description: 
 --     * Slot: title Description: A name given to the resource
 --     * Slot: description Description: A short explanation of the characteristics, features, or nature of the current item
@@ -209,8 +212,8 @@
 --     * Slot: inVocabulary_id Description: Terms belong to a specific vocabulary
 -- # Class: "Taxon" Description: "Conceptual entity that groups one or more populations of an organism or organisms, as seen by taxonomists, to form a unit"
 --     * Slot: id Description: 
---     * Slot: taxonomicID Description: The taxonomic identifier as a persistent identifier accross releases
---     * Slot: taxonomicNodeID Description: The taxonomic_Node Identifier as an identifier specific the current taxon in the corresponding release/version of the taxonomy
+--     * Slot: taxonomicId Description: The taxonomic identifier as a persistent identifier accross releases
+--     * Slot: taxonomicNodeId Description: The taxonomic_Node Identifier as an identifier specific the current taxon in the corresponding release/version of the taxonomy
 --     * Slot: title Description: A name given to the resource
 --     * Slot: description Description: A short explanation of the characteristics, features, or nature of the current item
 --     * Slot: weight Description: A numerical value indicating relative importance or priority, generally processed in ascending order. This weight helps prioritize content when organizing or processing data. Its value can be negative, with a default set to 0
@@ -225,7 +228,7 @@
 --     * Slot: referenceProviderName Description: The name for the reference provider
 -- # Class: "Sequence" Description: "A nucleic acid or protein sequence information"
 --     * Slot: id Description: 
---     * Slot: sequenceFASTA Description: In case no sequence reference exists in public repositories, the corresponding FASTA sequence is required
+--     * Slot: sequenceFasta Description: Textual encoding of a biological sequence information in FASTA format
 -- # Class: "SequenceReference" Description: "A reference that permits to retrieve the sequence information from a sequence provider"
 --     * Slot: id Description: 
 --     * Slot: accessionNumber Description: The sequence ID that permits to retrieve the sequence information from the sequence provider
@@ -239,7 +242,7 @@
 --     * Slot: logo_id Description: A path or URL to the related logo
 -- # Class: "Person" Description: "An individual"
 --     * Slot: id Description: 
---     * Slot: oRCIDiD Description: Unique persistent identifier for a person, provided by the Open Researcher and Contributor ID (ORCID) organisation
+--     * Slot: orcidId Description: Unique persistent identifier for a person, provided by the Open Researcher and Contributor ID (ORCID) organisation
 --     * Slot: name Description: A word or set of words used to identify and refer to an entity
 --     * Slot: description Description: A short explanation of the characteristics, features, or nature of the current item
 --     * Slot: homePage Description: A web page that serves as the main or introductory page
@@ -247,16 +250,16 @@
 --     * Slot: logo_id Description: A path or URL to the related logo
 -- # Class: "Organization" Description: "A social entity established to meet needs or pursue specific goals"
 --     * Slot: id Description: 
---     * Slot: rORiD Description: The corresponding organization's persistent identifier from the Research Organization Registry (ROR)
+--     * Slot: rorId Description: The corresponding organization's persistent identifier from the Research Organization Registry (ROR)
 --     * Slot: name Description: A word or set of words used to identify and refer to an entity
 --     * Slot: description Description: A short explanation of the characteristics, features, or nature of the current item
 --     * Slot: homePage Description: A web page that serves as the main or introductory page
 --     * Slot: country_id Description: The country of the organization
 --     * Slot: contactPoint_id Description: An information that allows someone to establish communication
 --     * Slot: logo_id Description: A path or URL to the related logo
--- # Class: "RI" Description: "A research infrastructure"
+-- # Class: "ReasearchInfrastructure" Description: "A research infrastructure (RI)"
 --     * Slot: id Description: 
---     * Slot: rORiD Description: The corresponding organization's persistent identifier from the Research Organization Registry (ROR)
+--     * Slot: rorId Description: The corresponding organization's persistent identifier from the Research Organization Registry (ROR)
 --     * Slot: name Description: A word or set of words used to identify and refer to an entity
 --     * Slot: description Description: A short explanation of the characteristics, features, or nature of the current item
 --     * Slot: homePage Description: A web page that serves as the main or introductory page
@@ -265,7 +268,7 @@
 --     * Slot: logo_id Description: A path or URL to the related logo
 -- # Class: "Provider" Description: "A provider of products or services, as a specific organization"
 --     * Slot: id Description: 
---     * Slot: rORiD Description: The corresponding organization's persistent identifier from the Research Organization Registry (ROR)
+--     * Slot: rorId Description: The corresponding organization's persistent identifier from the Research Organization Registry (ROR)
 --     * Slot: name Description: A word or set of words used to identify and refer to an entity
 --     * Slot: description Description: A short explanation of the characteristics, features, or nature of the current item
 --     * Slot: homePage Description: A web page that serves as the main or introductory page
@@ -291,10 +294,10 @@
 --     * Slot: id Description: 
 --     * Slot: collectionDate Description: The date when the sample was collected in situ. If unknown/private, use a proxy date such as 'date received' and indicate this by setting to true the before date property
 --     * Slot: beforeDate Description: Set to TRUE if a proxy date for the collection date is used
---     * Slot: permitIdentifierForABS Description: Reference of the permit identifiers for access to the genetic resource, applicable if the genetic resource falls under Access and Benefit-Sharing (ABS) regulations
+--     * Slot: permitIdentifierForAbs Description: Reference of the permit identifiers for access to the genetic resource, applicable if the genetic resource falls under Access and Benefit-Sharing (ABS) regulations
 --     * Slot: accessToPhysicalGeneticResource Description: Indicate if the biological part was produced with access to a physical genetic resource
 --     * Slot: countryOfCollection_id Description: The geographical location where the sample was collected in situ. Used for Nagoya/CBD; equivalent to 'country of origin'.
---     * Slot: indigenousPoepleAndLocalCommunityOrigin_id Description: The specific IPLC area (Indigenous People and Local Communities) from which this sample/element was sampled, if relevant
+--     * Slot: indigenousPeopleAndLocalCommunityOrigin_id Description: The specific IPLC area (Indigenous People and Local Communities) from which this sample/element was sampled, if relevant
 --     * Slot: recombinantPartIdentification_id Description: Identification of a recombinant part
 -- # Class: "SyntheticPartOrigin" Description: "Information on the origin of a synthetic part that composes the biological material"
 --     * Slot: id Description: 
@@ -309,67 +312,71 @@
 --     * Slot: id Description: 
 --     * Slot: title Description: A name given to the resource
 --     * Slot: description Description: A short explanation of the characteristics, features, or nature of the current item
+--     * Slot: version Description: The version indicator (name or identifier) of a resource
 --     * Slot: collectionDataProvider_id Description: The provider of the data of the collection
--- # Class: "ProductOrService" Description: "A product or a service"
+-- # Class: "ProductOrService" Description: "An offering provided by a provider, which may be tangible (a product) or intangible (a service)"
 --     * Slot: id Description: 
---     * Slot: accessPointURL Description: The URL that permits to access to the product/service detailed description page on the provider's website and/or allows to place an order about it or at least describe the process to place an order/enquiry
---     * Slot: refSKU Description: The reference or the stock keeping unit of the service or item provided in the provider's catalogue
+--     * Slot: accessPointUrl Description: The URL that permits to access to the product/service detailed description page on the provider's website and/or allows to place an order about it or at least describe the process to place an order/enquiry
+--     * Slot: refSku Description: The reference or the stock keeping unit of the service or item provided in the provider's catalogue
 --     * Slot: unitDefinition Description: A short description of what will be delivered by ordering one unit of this item
 --     * Slot: unitCost Description: The cost per access for one unit as defined by the unit definition
 --     * Slot: qualityGrading Description: Information that permits to assess the quality level of what will be provided
 --     * Slot: biosafetyRestrictions Description: Information about guidelines and regulations designed to prevent the exposure to or release of potentially harmful biological agents. It thereby contributes to protecting people and the environment from biohazards while accessing this product or service
---     * Slot: canItBeUsedToProduceGMO Description: Indicates if the current service or product can be used to produce GMO
+--     * Slot: canBeUsedToProduceGmo Description: Indicates if the current service or product can be used to produce GMO
 --     * Slot: availability Description: The state or condition in which this item is accessible and ready for use or can be obtained
 --     * Slot: technicalRecommendation Description: Expert advice or guidelines provided to ensure the optimal use, performance, and maintenance of what is provided, including best practices, troubleshooting tips, and procedural instructions
 --     * Slot: internalReference Description: Any reference or indication to be used for local retrieval purpose
 --     * Slot: note Description: An aditional information as a textual comment
 --     * Slot: title Description: A name given to the resource
 --     * Slot: description Description: A short explanation of the characteristics, features, or nature of the current item
+--     * Slot: version Description: The version indicator (name or identifier) of a resource
 --     * Slot: category_id Description: The main category of the service or product
 --     * Slot: riskGroup_id Description: The highest risk group related to this resource. The risk group of a biological agent guiding its initial handling in labs according to the risk group classification defined by the WHO laboratory biosafety manual
 --     * Slot: provider_id Description: A provider of this product or service, as a specific organization
 --     * Slot: contactPoint_id Description: An information that allows someone to establish communication
--- # Class: "Service" Description: "A service"
+-- # Class: "Service" Description: "An intangible offering characterized by an activity, performance, or facilitation carried out by a provider to fulfill a user’s need"
 --     * Slot: id Description: 
 --     * Slot: modelSpecies Description: The species of the infected organism in the experiment
 --     * Slot: modelType Description: The specific name of the infected organism, including its modification if necessary
---     * Slot: accessPointURL Description: The URL that permits to access to the product/service detailed description page on the provider's website and/or allows to place an order about it or at least describe the process to place an order/enquiry
---     * Slot: refSKU Description: The reference or the stock keeping unit of the service or item provided in the provider's catalogue
+--     * Slot: accessPointUrl Description: The URL that permits to access to the product/service detailed description page on the provider's website and/or allows to place an order about it or at least describe the process to place an order/enquiry
+--     * Slot: refSku Description: The reference or the stock keeping unit of the service or item provided in the provider's catalogue
 --     * Slot: unitDefinition Description: A short description of what will be delivered by ordering one unit of this item
 --     * Slot: unitCost Description: The cost per access for one unit as defined by the unit definition
 --     * Slot: qualityGrading Description: Information that permits to assess the quality level of what will be provided
 --     * Slot: biosafetyRestrictions Description: Information about guidelines and regulations designed to prevent the exposure to or release of potentially harmful biological agents. It thereby contributes to protecting people and the environment from biohazards while accessing this product or service
---     * Slot: canItBeUsedToProduceGMO Description: Indicates if the current service or product can be used to produce GMO
+--     * Slot: canBeUsedToProduceGmo Description: Indicates if the current service or product can be used to produce GMO
 --     * Slot: availability Description: The state or condition in which this item is accessible and ready for use or can be obtained
 --     * Slot: technicalRecommendation Description: Expert advice or guidelines provided to ensure the optimal use, performance, and maintenance of what is provided, including best practices, troubleshooting tips, and procedural instructions
 --     * Slot: internalReference Description: Any reference or indication to be used for local retrieval purpose
 --     * Slot: note Description: An aditional information as a textual comment
 --     * Slot: title Description: A name given to the resource
 --     * Slot: description Description: A short explanation of the characteristics, features, or nature of the current item
+--     * Slot: version Description: The version indicator (name or identifier) of a resource
 --     * Slot: category_id Description: The main category of the service or product
 --     * Slot: riskGroup_id Description: The highest risk group related to this resource. The risk group of a biological agent guiding its initial handling in labs according to the risk group classification defined by the WHO laboratory biosafety manual
 --     * Slot: provider_id Description: A provider of this product or service, as a specific organization
 --     * Slot: contactPoint_id Description: An information that allows someone to establish communication
--- # Class: "Product" Description: "A product"
+-- # Class: "Product" Description: "A tangible, physical item made available by a provider for use, consumption, or ownership transfer"
 --     * Slot: id Description: 
 --     * Slot: shippingConditions Description: Specification of the terms and parameters for transporting
 --     * Slot: storageConditions Description: Specifies the conditions under which the product has to be stored to maintain stability and integrity, such as temperature, buffer, and other environmental factors.
 --     * Slot: thirdPartyDistributionConsent Description: Indicates whether the biological material can be distributed without restriction to third parties, as indicated by the ABS permit, in case an ABS permit is required
 --     * Slot: usageRestrictions Description: Specifies any limitations or conditions on the use of the biological material, including restrictions on research, commercial use, or distribution, considering any potential concerns about the related genetic material
---     * Slot: accessPointURL Description: The URL that permits to access to the product/service detailed description page on the provider's website and/or allows to place an order about it or at least describe the process to place an order/enquiry
---     * Slot: refSKU Description: The reference or the stock keeping unit of the service or item provided in the provider's catalogue
+--     * Slot: accessPointUrl Description: The URL that permits to access to the product/service detailed description page on the provider's website and/or allows to place an order about it or at least describe the process to place an order/enquiry
+--     * Slot: refSku Description: The reference or the stock keeping unit of the service or item provided in the provider's catalogue
 --     * Slot: unitDefinition Description: A short description of what will be delivered by ordering one unit of this item
 --     * Slot: unitCost Description: The cost per access for one unit as defined by the unit definition
 --     * Slot: qualityGrading Description: Information that permits to assess the quality level of what will be provided
 --     * Slot: biosafetyRestrictions Description: Information about guidelines and regulations designed to prevent the exposure to or release of potentially harmful biological agents. It thereby contributes to protecting people and the environment from biohazards while accessing this product or service
---     * Slot: canItBeUsedToProduceGMO Description: Indicates if the current service or product can be used to produce GMO
+--     * Slot: canBeUsedToProduceGmo Description: Indicates if the current service or product can be used to produce GMO
 --     * Slot: availability Description: The state or condition in which this item is accessible and ready for use or can be obtained
 --     * Slot: technicalRecommendation Description: Expert advice or guidelines provided to ensure the optimal use, performance, and maintenance of what is provided, including best practices, troubleshooting tips, and procedural instructions
 --     * Slot: internalReference Description: Any reference or indication to be used for local retrieval purpose
 --     * Slot: note Description: An aditional information as a textual comment
 --     * Slot: title Description: A name given to the resource
 --     * Slot: description Description: A short explanation of the characteristics, features, or nature of the current item
---     * Slot: hasIATAClassification_id Description: The corresponding International Air Transport Association (IATA)'s category for this Product
+--     * Slot: version Description: The version indicator (name or identifier) of a resource
+--     * Slot: iataClassification_id Description: The corresponding International Air Transport Association (IATA)'s category for this Product
 --     * Slot: materialSafetyDataSheet_id Description: A Material Safety Data Sheet (MSDS) or Safety Data Sheet (SDS) is a standardized document that contains crucial occupational safety and health information related to the product
 --     * Slot: originator_id Description: The individual or organization responsible for the original discovery, isolation, or creation of an item, providing information about the source or origin of the sample
 --     * Slot: category_id Description: The main category of the service or product
@@ -386,20 +393,21 @@
 --     * Slot: storageConditions Description: Specifies the conditions under which the product has to be stored to maintain stability and integrity, such as temperature, buffer, and other environmental factors.
 --     * Slot: thirdPartyDistributionConsent Description: Indicates whether the biological material can be distributed without restriction to third parties, as indicated by the ABS permit, in case an ABS permit is required
 --     * Slot: usageRestrictions Description: Specifies any limitations or conditions on the use of the biological material, including restrictions on research, commercial use, or distribution, considering any potential concerns about the related genetic material
---     * Slot: accessPointURL Description: The URL that permits to access to the product/service detailed description page on the provider's website and/or allows to place an order about it or at least describe the process to place an order/enquiry
---     * Slot: refSKU Description: The reference or the stock keeping unit of the service or item provided in the provider's catalogue
+--     * Slot: accessPointUrl Description: The URL that permits to access to the product/service detailed description page on the provider's website and/or allows to place an order about it or at least describe the process to place an order/enquiry
+--     * Slot: refSku Description: The reference or the stock keeping unit of the service or item provided in the provider's catalogue
 --     * Slot: unitDefinition Description: A short description of what will be delivered by ordering one unit of this item
 --     * Slot: unitCost Description: The cost per access for one unit as defined by the unit definition
 --     * Slot: qualityGrading Description: Information that permits to assess the quality level of what will be provided
 --     * Slot: biosafetyRestrictions Description: Information about guidelines and regulations designed to prevent the exposure to or release of potentially harmful biological agents. It thereby contributes to protecting people and the environment from biohazards while accessing this product or service
---     * Slot: canItBeUsedToProduceGMO Description: Indicates if the current service or product can be used to produce GMO
+--     * Slot: canBeUsedToProduceGmo Description: Indicates if the current service or product can be used to produce GMO
 --     * Slot: availability Description: The state or condition in which this item is accessible and ready for use or can be obtained
 --     * Slot: technicalRecommendation Description: Expert advice or guidelines provided to ensure the optimal use, performance, and maintenance of what is provided, including best practices, troubleshooting tips, and procedural instructions
 --     * Slot: internalReference Description: Any reference or indication to be used for local retrieval purpose
 --     * Slot: note Description: An aditional information as a textual comment
 --     * Slot: title Description: A name given to the resource
 --     * Slot: description Description: A short explanation of the characteristics, features, or nature of the current item
---     * Slot: hasIATAClassification_id Description: The corresponding International Air Transport Association (IATA)'s category for this Product
+--     * Slot: version Description: The version indicator (name or identifier) of a resource
+--     * Slot: iataClassification_id Description: The corresponding International Air Transport Association (IATA)'s category for this Product
 --     * Slot: materialSafetyDataSheet_id Description: A Material Safety Data Sheet (MSDS) or Safety Data Sheet (SDS) is a standardized document that contains crucial occupational safety and health information related to the product
 --     * Slot: originator_id Description: The individual or organization responsible for the original discovery, isolation, or creation of an item, providing information about the source or origin of the sample
 --     * Slot: category_id Description: The main category of the service or product
@@ -417,20 +425,21 @@
 --     * Slot: storageConditions Description: Specifies the conditions under which the product has to be stored to maintain stability and integrity, such as temperature, buffer, and other environmental factors.
 --     * Slot: thirdPartyDistributionConsent Description: Indicates whether the biological material can be distributed without restriction to third parties, as indicated by the ABS permit, in case an ABS permit is required
 --     * Slot: usageRestrictions Description: Specifies any limitations or conditions on the use of the biological material, including restrictions on research, commercial use, or distribution, considering any potential concerns about the related genetic material
---     * Slot: accessPointURL Description: The URL that permits to access to the product/service detailed description page on the provider's website and/or allows to place an order about it or at least describe the process to place an order/enquiry
---     * Slot: refSKU Description: The reference or the stock keeping unit of the service or item provided in the provider's catalogue
+--     * Slot: accessPointUrl Description: The URL that permits to access to the product/service detailed description page on the provider's website and/or allows to place an order about it or at least describe the process to place an order/enquiry
+--     * Slot: refSku Description: The reference or the stock keeping unit of the service or item provided in the provider's catalogue
 --     * Slot: unitDefinition Description: A short description of what will be delivered by ordering one unit of this item
 --     * Slot: unitCost Description: The cost per access for one unit as defined by the unit definition
 --     * Slot: qualityGrading Description: Information that permits to assess the quality level of what will be provided
 --     * Slot: biosafetyRestrictions Description: Information about guidelines and regulations designed to prevent the exposure to or release of potentially harmful biological agents. It thereby contributes to protecting people and the environment from biohazards while accessing this product or service
---     * Slot: canItBeUsedToProduceGMO Description: Indicates if the current service or product can be used to produce GMO
+--     * Slot: canBeUsedToProduceGmo Description: Indicates if the current service or product can be used to produce GMO
 --     * Slot: availability Description: The state or condition in which this item is accessible and ready for use or can be obtained
 --     * Slot: technicalRecommendation Description: Expert advice or guidelines provided to ensure the optimal use, performance, and maintenance of what is provided, including best practices, troubleshooting tips, and procedural instructions
 --     * Slot: internalReference Description: Any reference or indication to be used for local retrieval purpose
 --     * Slot: note Description: An aditional information as a textual comment
 --     * Slot: title Description: A name given to the resource
 --     * Slot: description Description: A short explanation of the characteristics, features, or nature of the current item
---     * Slot: hasIATAClassification_id Description: The corresponding International Air Transport Association (IATA)'s category for this Product
+--     * Slot: version Description: The version indicator (name or identifier) of a resource
+--     * Slot: iataClassification_id Description: The corresponding International Air Transport Association (IATA)'s category for this Product
 --     * Slot: materialSafetyDataSheet_id Description: A Material Safety Data Sheet (MSDS) or Safety Data Sheet (SDS) is a standardized document that contains crucial occupational safety and health information related to the product
 --     * Slot: originator_id Description: The individual or organization responsible for the original discovery, isolation, or creation of an item, providing information about the source or origin of the sample
 --     * Slot: category_id Description: The main category of the service or product
@@ -443,21 +452,22 @@
 --     * Slot: storageConditions Description: Specifies the conditions under which the product has to be stored to maintain stability and integrity, such as temperature, buffer, and other environmental factors.
 --     * Slot: thirdPartyDistributionConsent Description: Indicates whether the biological material can be distributed without restriction to third parties, as indicated by the ABS permit, in case an ABS permit is required
 --     * Slot: usageRestrictions Description: Specifies any limitations or conditions on the use of the biological material, including restrictions on research, commercial use, or distribution, considering any potential concerns about the related genetic material
---     * Slot: accessPointURL Description: The URL that permits to access to the product/service detailed description page on the provider's website and/or allows to place an order about it or at least describe the process to place an order/enquiry
---     * Slot: refSKU Description: The reference or the stock keeping unit of the service or item provided in the provider's catalogue
+--     * Slot: accessPointUrl Description: The URL that permits to access to the product/service detailed description page on the provider's website and/or allows to place an order about it or at least describe the process to place an order/enquiry
+--     * Slot: refSku Description: The reference or the stock keeping unit of the service or item provided in the provider's catalogue
 --     * Slot: unitDefinition Description: A short description of what will be delivered by ordering one unit of this item
 --     * Slot: unitCost Description: The cost per access for one unit as defined by the unit definition
 --     * Slot: qualityGrading Description: Information that permits to assess the quality level of what will be provided
 --     * Slot: biosafetyRestrictions Description: Information about guidelines and regulations designed to prevent the exposure to or release of potentially harmful biological agents. It thereby contributes to protecting people and the environment from biohazards while accessing this product or service
---     * Slot: canItBeUsedToProduceGMO Description: Indicates if the current service or product can be used to produce GMO
+--     * Slot: canBeUsedToProduceGmo Description: Indicates if the current service or product can be used to produce GMO
 --     * Slot: availability Description: The state or condition in which this item is accessible and ready for use or can be obtained
 --     * Slot: technicalRecommendation Description: Expert advice or guidelines provided to ensure the optimal use, performance, and maintenance of what is provided, including best practices, troubleshooting tips, and procedural instructions
 --     * Slot: internalReference Description: Any reference or indication to be used for local retrieval purpose
 --     * Slot: note Description: An aditional information as a textual comment
 --     * Slot: title Description: A name given to the resource
 --     * Slot: description Description: A short explanation of the characteristics, features, or nature of the current item
+--     * Slot: version Description: The version indicator (name or identifier) of a resource
 --     * Slot: biologicalMaterialOrigin_id Description: Information about the origin of the biological material, essential for access, utilization, and benefit-sharing of genetic resources in compliance with the Nagoya Protocol
---     * Slot: hasIATAClassification_id Description: The corresponding International Air Transport Association (IATA)'s category for this Product
+--     * Slot: iataClassification_id Description: The corresponding International Air Transport Association (IATA)'s category for this Product
 --     * Slot: materialSafetyDataSheet_id Description: A Material Safety Data Sheet (MSDS) or Safety Data Sheet (SDS) is a standardized document that contains crucial occupational safety and health information related to the product
 --     * Slot: originator_id Description: The individual or organization responsible for the original discovery, isolation, or creation of an item, providing information about the source or origin of the sample
 --     * Slot: category_id Description: The main category of the service or product
@@ -466,7 +476,7 @@
 --     * Slot: contactPoint_id Description: An information that allows someone to establish communication
 -- # Class: "NucleicAcid" Description: "Nucleic acid related to a pathogen. It can be extracted or synthetic"
 --     * Slot: id Description: 
---     * Slot: isItAClonedNucleicAcid Description: Indicates that the nucleic acid sequence has been inserted into a plasmid vector for propagation or expression in a host organism
+--     * Slot: clonedNucleicAcid Description: Indicates if the nucleic acid sequence has been inserted into a plasmid vector for propagation or expression in a host organism
 --     * Slot: regionEncompassedInThisProduct Description: The specific region encompassed in the product
 --     * Slot: mutationObserved Description: Indicates if the current nucleic acid has No mutation compared to the reference sequence if the value is set to false or if it contains mutations (no frameshift, no unexpected STOP codon) if set to true
 --     * Slot: observedMutations Description: The specific mutations that have been identified and documented in the nucleic acid sequence
@@ -478,23 +488,24 @@
 --     * Slot: storageConditions Description: Specifies the conditions under which the product has to be stored to maintain stability and integrity, such as temperature, buffer, and other environmental factors.
 --     * Slot: thirdPartyDistributionConsent Description: Indicates whether the biological material can be distributed without restriction to third parties, as indicated by the ABS permit, in case an ABS permit is required
 --     * Slot: usageRestrictions Description: Specifies any limitations or conditions on the use of the biological material, including restrictions on research, commercial use, or distribution, considering any potential concerns about the related genetic material
---     * Slot: accessPointURL Description: The URL that permits to access to the product/service detailed description page on the provider's website and/or allows to place an order about it or at least describe the process to place an order/enquiry
---     * Slot: refSKU Description: The reference or the stock keeping unit of the service or item provided in the provider's catalogue
+--     * Slot: accessPointUrl Description: The URL that permits to access to the product/service detailed description page on the provider's website and/or allows to place an order about it or at least describe the process to place an order/enquiry
+--     * Slot: refSku Description: The reference or the stock keeping unit of the service or item provided in the provider's catalogue
 --     * Slot: unitDefinition Description: A short description of what will be delivered by ordering one unit of this item
 --     * Slot: unitCost Description: The cost per access for one unit as defined by the unit definition
 --     * Slot: qualityGrading Description: Information that permits to assess the quality level of what will be provided
 --     * Slot: biosafetyRestrictions Description: Information about guidelines and regulations designed to prevent the exposure to or release of potentially harmful biological agents. It thereby contributes to protecting people and the environment from biohazards while accessing this product or service
---     * Slot: canItBeUsedToProduceGMO Description: Indicates if the current service or product can be used to produce GMO
+--     * Slot: canBeUsedToProduceGmo Description: Indicates if the current service or product can be used to produce GMO
 --     * Slot: availability Description: The state or condition in which this item is accessible and ready for use or can be obtained
 --     * Slot: technicalRecommendation Description: Expert advice or guidelines provided to ensure the optimal use, performance, and maintenance of what is provided, including best practices, troubleshooting tips, and procedural instructions
 --     * Slot: internalReference Description: Any reference or indication to be used for local retrieval purpose
 --     * Slot: note Description: An aditional information as a textual comment
 --     * Slot: title Description: A name given to the resource
 --     * Slot: description Description: A short explanation of the characteristics, features, or nature of the current item
+--     * Slot: version Description: The version indicator (name or identifier) of a resource
 --     * Slot: biologicalMaterialOrigin_id Description: Information about the origin of the biological material, essential for access, utilization, and benefit-sharing of genetic resources in compliance with the Nagoya Protocol
 --     * Slot: clonedIntoPlasmid_id Description: The plasmid into which the nucleic acid has been cloned
---     * Slot: hasTAG_id Description: TAG sequence used for purposes such as purification, detection, or localization
---     * Slot: hasIATAClassification_id Description: The corresponding International Air Transport Association (IATA)'s category for this Product
+--     * Slot: proteinTag_id Description: A DNA coding sequence or corresponding peptide/protein sequence fused to a sequence of interest, used to facilitate experimental operations such as purification, detection, localization, tracking, solubility enhancement, or selection. Applicable to both proteins and nucleic acids
+--     * Slot: iataClassification_id Description: The corresponding International Air Transport Association (IATA)'s category for this Product
 --     * Slot: materialSafetyDataSheet_id Description: A Material Safety Data Sheet (MSDS) or Safety Data Sheet (SDS) is a standardized document that contains crucial occupational safety and health information related to the product
 --     * Slot: originator_id Description: The individual or organization responsible for the original discovery, isolation, or creation of an item, providing information about the source or origin of the sample
 --     * Slot: category_id Description: The main category of the service or product
@@ -510,46 +521,48 @@
 --     * Slot: storageConditions Description: Specifies the conditions under which the product has to be stored to maintain stability and integrity, such as temperature, buffer, and other environmental factors.
 --     * Slot: thirdPartyDistributionConsent Description: Indicates whether the biological material can be distributed without restriction to third parties, as indicated by the ABS permit, in case an ABS permit is required
 --     * Slot: usageRestrictions Description: Specifies any limitations or conditions on the use of the biological material, including restrictions on research, commercial use, or distribution, considering any potential concerns about the related genetic material
---     * Slot: accessPointURL Description: The URL that permits to access to the product/service detailed description page on the provider's website and/or allows to place an order about it or at least describe the process to place an order/enquiry
---     * Slot: refSKU Description: The reference or the stock keeping unit of the service or item provided in the provider's catalogue
+--     * Slot: accessPointUrl Description: The URL that permits to access to the product/service detailed description page on the provider's website and/or allows to place an order about it or at least describe the process to place an order/enquiry
+--     * Slot: refSku Description: The reference or the stock keeping unit of the service or item provided in the provider's catalogue
 --     * Slot: unitDefinition Description: A short description of what will be delivered by ordering one unit of this item
 --     * Slot: unitCost Description: The cost per access for one unit as defined by the unit definition
 --     * Slot: qualityGrading Description: Information that permits to assess the quality level of what will be provided
 --     * Slot: biosafetyRestrictions Description: Information about guidelines and regulations designed to prevent the exposure to or release of potentially harmful biological agents. It thereby contributes to protecting people and the environment from biohazards while accessing this product or service
---     * Slot: canItBeUsedToProduceGMO Description: Indicates if the current service or product can be used to produce GMO
+--     * Slot: canBeUsedToProduceGmo Description: Indicates if the current service or product can be used to produce GMO
 --     * Slot: availability Description: The state or condition in which this item is accessible and ready for use or can be obtained
 --     * Slot: technicalRecommendation Description: Expert advice or guidelines provided to ensure the optimal use, performance, and maintenance of what is provided, including best practices, troubleshooting tips, and procedural instructions
 --     * Slot: internalReference Description: Any reference or indication to be used for local retrieval purpose
 --     * Slot: note Description: An aditional information as a textual comment
 --     * Slot: title Description: A name given to the resource
 --     * Slot: description Description: A short explanation of the characteristics, features, or nature of the current item
---     * Slot: hasIATAClassification_id Description: The corresponding International Air Transport Association (IATA)'s category for this Product
+--     * Slot: version Description: The version indicator (name or identifier) of a resource
+--     * Slot: iataClassification_id Description: The corresponding International Air Transport Association (IATA)'s category for this Product
 --     * Slot: materialSafetyDataSheet_id Description: A Material Safety Data Sheet (MSDS) or Safety Data Sheet (SDS) is a standardized document that contains crucial occupational safety and health information related to the product
 --     * Slot: originator_id Description: The individual or organization responsible for the original discovery, isolation, or creation of an item, providing information about the source or origin of the sample
 --     * Slot: category_id Description: The main category of the service or product
 --     * Slot: riskGroup_id Description: The highest risk group related to this resource. The risk group of a biological agent guiding its initial handling in labs according to the risk group classification defined by the WHO laboratory biosafety manual
 --     * Slot: provider_id Description: A provider of this product or service, as a specific organization
 --     * Slot: contactPoint_id Description: An information that allows someone to establish communication
--- # Class: "Bundle" Description: "A group of products"
+-- # Class: "Bundle" Description: "A grouping of products and/or services intentionally combined into a single offering, typically to provide added value, convenience, or specific experimental utility"
 --     * Slot: id Description: 
 --     * Slot: shippingConditions Description: Specification of the terms and parameters for transporting
 --     * Slot: storageConditions Description: Specifies the conditions under which the product has to be stored to maintain stability and integrity, such as temperature, buffer, and other environmental factors.
 --     * Slot: thirdPartyDistributionConsent Description: Indicates whether the biological material can be distributed without restriction to third parties, as indicated by the ABS permit, in case an ABS permit is required
 --     * Slot: usageRestrictions Description: Specifies any limitations or conditions on the use of the biological material, including restrictions on research, commercial use, or distribution, considering any potential concerns about the related genetic material
---     * Slot: accessPointURL Description: The URL that permits to access to the product/service detailed description page on the provider's website and/or allows to place an order about it or at least describe the process to place an order/enquiry
---     * Slot: refSKU Description: The reference or the stock keeping unit of the service or item provided in the provider's catalogue
+--     * Slot: accessPointUrl Description: The URL that permits to access to the product/service detailed description page on the provider's website and/or allows to place an order about it or at least describe the process to place an order/enquiry
+--     * Slot: refSku Description: The reference or the stock keeping unit of the service or item provided in the provider's catalogue
 --     * Slot: unitDefinition Description: A short description of what will be delivered by ordering one unit of this item
 --     * Slot: unitCost Description: The cost per access for one unit as defined by the unit definition
 --     * Slot: qualityGrading Description: Information that permits to assess the quality level of what will be provided
 --     * Slot: biosafetyRestrictions Description: Information about guidelines and regulations designed to prevent the exposure to or release of potentially harmful biological agents. It thereby contributes to protecting people and the environment from biohazards while accessing this product or service
---     * Slot: canItBeUsedToProduceGMO Description: Indicates if the current service or product can be used to produce GMO
+--     * Slot: canBeUsedToProduceGmo Description: Indicates if the current service or product can be used to produce GMO
 --     * Slot: availability Description: The state or condition in which this item is accessible and ready for use or can be obtained
 --     * Slot: technicalRecommendation Description: Expert advice or guidelines provided to ensure the optimal use, performance, and maintenance of what is provided, including best practices, troubleshooting tips, and procedural instructions
 --     * Slot: internalReference Description: Any reference or indication to be used for local retrieval purpose
 --     * Slot: note Description: An aditional information as a textual comment
 --     * Slot: title Description: A name given to the resource
 --     * Slot: description Description: A short explanation of the characteristics, features, or nature of the current item
---     * Slot: hasIATAClassification_id Description: The corresponding International Air Transport Association (IATA)'s category for this Product
+--     * Slot: version Description: The version indicator (name or identifier) of a resource
+--     * Slot: iataClassification_id Description: The corresponding International Air Transport Association (IATA)'s category for this Product
 --     * Slot: materialSafetyDataSheet_id Description: A Material Safety Data Sheet (MSDS) or Safety Data Sheet (SDS) is a standardized document that contains crucial occupational safety and health information related to the product
 --     * Slot: originator_id Description: The individual or organization responsible for the original discovery, isolation, or creation of an item, providing information about the source or origin of the sample
 --     * Slot: category_id Description: The main category of the service or product
@@ -573,21 +586,22 @@
 --     * Slot: storageConditions Description: Specifies the conditions under which the product has to be stored to maintain stability and integrity, such as temperature, buffer, and other environmental factors.
 --     * Slot: thirdPartyDistributionConsent Description: Indicates whether the biological material can be distributed without restriction to third parties, as indicated by the ABS permit, in case an ABS permit is required
 --     * Slot: usageRestrictions Description: Specifies any limitations or conditions on the use of the biological material, including restrictions on research, commercial use, or distribution, considering any potential concerns about the related genetic material
---     * Slot: accessPointURL Description: The URL that permits to access to the product/service detailed description page on the provider's website and/or allows to place an order about it or at least describe the process to place an order/enquiry
---     * Slot: refSKU Description: The reference or the stock keeping unit of the service or item provided in the provider's catalogue
+--     * Slot: accessPointUrl Description: The URL that permits to access to the product/service detailed description page on the provider's website and/or allows to place an order about it or at least describe the process to place an order/enquiry
+--     * Slot: refSku Description: The reference or the stock keeping unit of the service or item provided in the provider's catalogue
 --     * Slot: unitDefinition Description: A short description of what will be delivered by ordering one unit of this item
 --     * Slot: unitCost Description: The cost per access for one unit as defined by the unit definition
 --     * Slot: qualityGrading Description: Information that permits to assess the quality level of what will be provided
 --     * Slot: biosafetyRestrictions Description: Information about guidelines and regulations designed to prevent the exposure to or release of potentially harmful biological agents. It thereby contributes to protecting people and the environment from biohazards while accessing this product or service
---     * Slot: canItBeUsedToProduceGMO Description: Indicates if the current service or product can be used to produce GMO
+--     * Slot: canBeUsedToProduceGmo Description: Indicates if the current service or product can be used to produce GMO
 --     * Slot: availability Description: The state or condition in which this item is accessible and ready for use or can be obtained
 --     * Slot: technicalRecommendation Description: Expert advice or guidelines provided to ensure the optimal use, performance, and maintenance of what is provided, including best practices, troubleshooting tips, and procedural instructions
 --     * Slot: internalReference Description: Any reference or indication to be used for local retrieval purpose
 --     * Slot: note Description: An aditional information as a textual comment
 --     * Slot: title Description: A name given to the resource
 --     * Slot: description Description: A short explanation of the characteristics, features, or nature of the current item
+--     * Slot: version Description: The version indicator (name or identifier) of a resource
 --     * Slot: biologicalMaterialOrigin_id Description: Information about the origin of the biological material, essential for access, utilization, and benefit-sharing of genetic resources in compliance with the Nagoya Protocol
---     * Slot: hasIATAClassification_id Description: The corresponding International Air Transport Association (IATA)'s category for this Product
+--     * Slot: iataClassification_id Description: The corresponding International Air Transport Association (IATA)'s category for this Product
 --     * Slot: materialSafetyDataSheet_id Description: A Material Safety Data Sheet (MSDS) or Safety Data Sheet (SDS) is a standardized document that contains crucial occupational safety and health information related to the product
 --     * Slot: originator_id Description: The individual or organization responsible for the original discovery, isolation, or creation of an item, providing information about the source or origin of the sample
 --     * Slot: category_id Description: The main category of the service or product
@@ -613,21 +627,22 @@
 --     * Slot: storageConditions Description: Specifies the conditions under which the product has to be stored to maintain stability and integrity, such as temperature, buffer, and other environmental factors.
 --     * Slot: thirdPartyDistributionConsent Description: Indicates whether the biological material can be distributed without restriction to third parties, as indicated by the ABS permit, in case an ABS permit is required
 --     * Slot: usageRestrictions Description: Specifies any limitations or conditions on the use of the biological material, including restrictions on research, commercial use, or distribution, considering any potential concerns about the related genetic material
---     * Slot: accessPointURL Description: The URL that permits to access to the product/service detailed description page on the provider's website and/or allows to place an order about it or at least describe the process to place an order/enquiry
---     * Slot: refSKU Description: The reference or the stock keeping unit of the service or item provided in the provider's catalogue
+--     * Slot: accessPointUrl Description: The URL that permits to access to the product/service detailed description page on the provider's website and/or allows to place an order about it or at least describe the process to place an order/enquiry
+--     * Slot: refSku Description: The reference or the stock keeping unit of the service or item provided in the provider's catalogue
 --     * Slot: unitDefinition Description: A short description of what will be delivered by ordering one unit of this item
 --     * Slot: unitCost Description: The cost per access for one unit as defined by the unit definition
 --     * Slot: qualityGrading Description: Information that permits to assess the quality level of what will be provided
 --     * Slot: biosafetyRestrictions Description: Information about guidelines and regulations designed to prevent the exposure to or release of potentially harmful biological agents. It thereby contributes to protecting people and the environment from biohazards while accessing this product or service
---     * Slot: canItBeUsedToProduceGMO Description: Indicates if the current service or product can be used to produce GMO
+--     * Slot: canBeUsedToProduceGmo Description: Indicates if the current service or product can be used to produce GMO
 --     * Slot: availability Description: The state or condition in which this item is accessible and ready for use or can be obtained
 --     * Slot: technicalRecommendation Description: Expert advice or guidelines provided to ensure the optimal use, performance, and maintenance of what is provided, including best practices, troubleshooting tips, and procedural instructions
 --     * Slot: internalReference Description: Any reference or indication to be used for local retrieval purpose
 --     * Slot: note Description: An aditional information as a textual comment
 --     * Slot: title Description: A name given to the resource
 --     * Slot: description Description: A short explanation of the characteristics, features, or nature of the current item
+--     * Slot: version Description: The version indicator (name or identifier) of a resource
 --     * Slot: biologicalMaterialOrigin_id Description: Information about the origin of the biological material, essential for access, utilization, and benefit-sharing of genetic resources in compliance with the Nagoya Protocol
---     * Slot: hasIATAClassification_id Description: The corresponding International Air Transport Association (IATA)'s category for this Product
+--     * Slot: iataClassification_id Description: The corresponding International Air Transport Association (IATA)'s category for this Product
 --     * Slot: materialSafetyDataSheet_id Description: A Material Safety Data Sheet (MSDS) or Safety Data Sheet (SDS) is a standardized document that contains crucial occupational safety and health information related to the product
 --     * Slot: originator_id Description: The individual or organization responsible for the original discovery, isolation, or creation of an item, providing information about the source or origin of the sample
 --     * Slot: category_id Description: The main category of the service or product
@@ -651,21 +666,22 @@
 --     * Slot: storageConditions Description: Specifies the conditions under which the product has to be stored to maintain stability and integrity, such as temperature, buffer, and other environmental factors.
 --     * Slot: thirdPartyDistributionConsent Description: Indicates whether the biological material can be distributed without restriction to third parties, as indicated by the ABS permit, in case an ABS permit is required
 --     * Slot: usageRestrictions Description: Specifies any limitations or conditions on the use of the biological material, including restrictions on research, commercial use, or distribution, considering any potential concerns about the related genetic material
---     * Slot: accessPointURL Description: The URL that permits to access to the product/service detailed description page on the provider's website and/or allows to place an order about it or at least describe the process to place an order/enquiry
---     * Slot: refSKU Description: The reference or the stock keeping unit of the service or item provided in the provider's catalogue
+--     * Slot: accessPointUrl Description: The URL that permits to access to the product/service detailed description page on the provider's website and/or allows to place an order about it or at least describe the process to place an order/enquiry
+--     * Slot: refSku Description: The reference or the stock keeping unit of the service or item provided in the provider's catalogue
 --     * Slot: unitDefinition Description: A short description of what will be delivered by ordering one unit of this item
 --     * Slot: unitCost Description: The cost per access for one unit as defined by the unit definition
 --     * Slot: qualityGrading Description: Information that permits to assess the quality level of what will be provided
 --     * Slot: biosafetyRestrictions Description: Information about guidelines and regulations designed to prevent the exposure to or release of potentially harmful biological agents. It thereby contributes to protecting people and the environment from biohazards while accessing this product or service
---     * Slot: canItBeUsedToProduceGMO Description: Indicates if the current service or product can be used to produce GMO
+--     * Slot: canBeUsedToProduceGmo Description: Indicates if the current service or product can be used to produce GMO
 --     * Slot: availability Description: The state or condition in which this item is accessible and ready for use or can be obtained
 --     * Slot: technicalRecommendation Description: Expert advice or guidelines provided to ensure the optimal use, performance, and maintenance of what is provided, including best practices, troubleshooting tips, and procedural instructions
 --     * Slot: internalReference Description: Any reference or indication to be used for local retrieval purpose
 --     * Slot: note Description: An aditional information as a textual comment
 --     * Slot: title Description: A name given to the resource
 --     * Slot: description Description: A short explanation of the characteristics, features, or nature of the current item
+--     * Slot: version Description: The version indicator (name or identifier) of a resource
 --     * Slot: biologicalMaterialOrigin_id Description: Information about the origin of the biological material, essential for access, utilization, and benefit-sharing of genetic resources in compliance with the Nagoya Protocol
---     * Slot: hasIATAClassification_id Description: The corresponding International Air Transport Association (IATA)'s category for this Product
+--     * Slot: iataClassification_id Description: The corresponding International Air Transport Association (IATA)'s category for this Product
 --     * Slot: materialSafetyDataSheet_id Description: A Material Safety Data Sheet (MSDS) or Safety Data Sheet (SDS) is a standardized document that contains crucial occupational safety and health information related to the product
 --     * Slot: originator_id Description: The individual or organization responsible for the original discovery, isolation, or creation of an item, providing information about the source or origin of the sample
 --     * Slot: category_id Description: The main category of the service or product
@@ -689,21 +705,22 @@
 --     * Slot: storageConditions Description: Specifies the conditions under which the product has to be stored to maintain stability and integrity, such as temperature, buffer, and other environmental factors.
 --     * Slot: thirdPartyDistributionConsent Description: Indicates whether the biological material can be distributed without restriction to third parties, as indicated by the ABS permit, in case an ABS permit is required
 --     * Slot: usageRestrictions Description: Specifies any limitations or conditions on the use of the biological material, including restrictions on research, commercial use, or distribution, considering any potential concerns about the related genetic material
---     * Slot: accessPointURL Description: The URL that permits to access to the product/service detailed description page on the provider's website and/or allows to place an order about it or at least describe the process to place an order/enquiry
---     * Slot: refSKU Description: The reference or the stock keeping unit of the service or item provided in the provider's catalogue
+--     * Slot: accessPointUrl Description: The URL that permits to access to the product/service detailed description page on the provider's website and/or allows to place an order about it or at least describe the process to place an order/enquiry
+--     * Slot: refSku Description: The reference or the stock keeping unit of the service or item provided in the provider's catalogue
 --     * Slot: unitDefinition Description: A short description of what will be delivered by ordering one unit of this item
 --     * Slot: unitCost Description: The cost per access for one unit as defined by the unit definition
 --     * Slot: qualityGrading Description: Information that permits to assess the quality level of what will be provided
 --     * Slot: biosafetyRestrictions Description: Information about guidelines and regulations designed to prevent the exposure to or release of potentially harmful biological agents. It thereby contributes to protecting people and the environment from biohazards while accessing this product or service
---     * Slot: canItBeUsedToProduceGMO Description: Indicates if the current service or product can be used to produce GMO
+--     * Slot: canBeUsedToProduceGmo Description: Indicates if the current service or product can be used to produce GMO
 --     * Slot: availability Description: The state or condition in which this item is accessible and ready for use or can be obtained
 --     * Slot: technicalRecommendation Description: Expert advice or guidelines provided to ensure the optimal use, performance, and maintenance of what is provided, including best practices, troubleshooting tips, and procedural instructions
 --     * Slot: internalReference Description: Any reference or indication to be used for local retrieval purpose
 --     * Slot: note Description: An aditional information as a textual comment
 --     * Slot: title Description: A name given to the resource
 --     * Slot: description Description: A short explanation of the characteristics, features, or nature of the current item
+--     * Slot: version Description: The version indicator (name or identifier) of a resource
 --     * Slot: biologicalMaterialOrigin_id Description: Information about the origin of the biological material, essential for access, utilization, and benefit-sharing of genetic resources in compliance with the Nagoya Protocol
---     * Slot: hasIATAClassification_id Description: The corresponding International Air Transport Association (IATA)'s category for this Product
+--     * Slot: iataClassification_id Description: The corresponding International Air Transport Association (IATA)'s category for this Product
 --     * Slot: materialSafetyDataSheet_id Description: A Material Safety Data Sheet (MSDS) or Safety Data Sheet (SDS) is a standardized document that contains crucial occupational safety and health information related to the product
 --     * Slot: originator_id Description: The individual or organization responsible for the original discovery, isolation, or creation of an item, providing information about the source or origin of the sample
 --     * Slot: category_id Description: The main category of the service or product
@@ -727,21 +744,22 @@
 --     * Slot: storageConditions Description: Specifies the conditions under which the product has to be stored to maintain stability and integrity, such as temperature, buffer, and other environmental factors.
 --     * Slot: thirdPartyDistributionConsent Description: Indicates whether the biological material can be distributed without restriction to third parties, as indicated by the ABS permit, in case an ABS permit is required
 --     * Slot: usageRestrictions Description: Specifies any limitations or conditions on the use of the biological material, including restrictions on research, commercial use, or distribution, considering any potential concerns about the related genetic material
---     * Slot: accessPointURL Description: The URL that permits to access to the product/service detailed description page on the provider's website and/or allows to place an order about it or at least describe the process to place an order/enquiry
---     * Slot: refSKU Description: The reference or the stock keeping unit of the service or item provided in the provider's catalogue
+--     * Slot: accessPointUrl Description: The URL that permits to access to the product/service detailed description page on the provider's website and/or allows to place an order about it or at least describe the process to place an order/enquiry
+--     * Slot: refSku Description: The reference or the stock keeping unit of the service or item provided in the provider's catalogue
 --     * Slot: unitDefinition Description: A short description of what will be delivered by ordering one unit of this item
 --     * Slot: unitCost Description: The cost per access for one unit as defined by the unit definition
 --     * Slot: qualityGrading Description: Information that permits to assess the quality level of what will be provided
 --     * Slot: biosafetyRestrictions Description: Information about guidelines and regulations designed to prevent the exposure to or release of potentially harmful biological agents. It thereby contributes to protecting people and the environment from biohazards while accessing this product or service
---     * Slot: canItBeUsedToProduceGMO Description: Indicates if the current service or product can be used to produce GMO
+--     * Slot: canBeUsedToProduceGmo Description: Indicates if the current service or product can be used to produce GMO
 --     * Slot: availability Description: The state or condition in which this item is accessible and ready for use or can be obtained
 --     * Slot: technicalRecommendation Description: Expert advice or guidelines provided to ensure the optimal use, performance, and maintenance of what is provided, including best practices, troubleshooting tips, and procedural instructions
 --     * Slot: internalReference Description: Any reference or indication to be used for local retrieval purpose
 --     * Slot: note Description: An aditional information as a textual comment
 --     * Slot: title Description: A name given to the resource
 --     * Slot: description Description: A short explanation of the characteristics, features, or nature of the current item
+--     * Slot: version Description: The version indicator (name or identifier) of a resource
 --     * Slot: biologicalMaterialOrigin_id Description: Information about the origin of the biological material, essential for access, utilization, and benefit-sharing of genetic resources in compliance with the Nagoya Protocol
---     * Slot: hasIATAClassification_id Description: The corresponding International Air Transport Association (IATA)'s category for this Product
+--     * Slot: iataClassification_id Description: The corresponding International Air Transport Association (IATA)'s category for this Product
 --     * Slot: materialSafetyDataSheet_id Description: A Material Safety Data Sheet (MSDS) or Safety Data Sheet (SDS) is a standardized document that contains crucial occupational safety and health information related to the product
 --     * Slot: originator_id Description: The individual or organization responsible for the original discovery, isolation, or creation of an item, providing information about the source or origin of the sample
 --     * Slot: category_id Description: The main category of the service or product
@@ -765,21 +783,22 @@
 --     * Slot: storageConditions Description: Specifies the conditions under which the product has to be stored to maintain stability and integrity, such as temperature, buffer, and other environmental factors.
 --     * Slot: thirdPartyDistributionConsent Description: Indicates whether the biological material can be distributed without restriction to third parties, as indicated by the ABS permit, in case an ABS permit is required
 --     * Slot: usageRestrictions Description: Specifies any limitations or conditions on the use of the biological material, including restrictions on research, commercial use, or distribution, considering any potential concerns about the related genetic material
---     * Slot: accessPointURL Description: The URL that permits to access to the product/service detailed description page on the provider's website and/or allows to place an order about it or at least describe the process to place an order/enquiry
---     * Slot: refSKU Description: The reference or the stock keeping unit of the service or item provided in the provider's catalogue
+--     * Slot: accessPointUrl Description: The URL that permits to access to the product/service detailed description page on the provider's website and/or allows to place an order about it or at least describe the process to place an order/enquiry
+--     * Slot: refSku Description: The reference or the stock keeping unit of the service or item provided in the provider's catalogue
 --     * Slot: unitDefinition Description: A short description of what will be delivered by ordering one unit of this item
 --     * Slot: unitCost Description: The cost per access for one unit as defined by the unit definition
 --     * Slot: qualityGrading Description: Information that permits to assess the quality level of what will be provided
 --     * Slot: biosafetyRestrictions Description: Information about guidelines and regulations designed to prevent the exposure to or release of potentially harmful biological agents. It thereby contributes to protecting people and the environment from biohazards while accessing this product or service
---     * Slot: canItBeUsedToProduceGMO Description: Indicates if the current service or product can be used to produce GMO
+--     * Slot: canBeUsedToProduceGmo Description: Indicates if the current service or product can be used to produce GMO
 --     * Slot: availability Description: The state or condition in which this item is accessible and ready for use or can be obtained
 --     * Slot: technicalRecommendation Description: Expert advice or guidelines provided to ensure the optimal use, performance, and maintenance of what is provided, including best practices, troubleshooting tips, and procedural instructions
 --     * Slot: internalReference Description: Any reference or indication to be used for local retrieval purpose
 --     * Slot: note Description: An aditional information as a textual comment
 --     * Slot: title Description: A name given to the resource
 --     * Slot: description Description: A short explanation of the characteristics, features, or nature of the current item
+--     * Slot: version Description: The version indicator (name or identifier) of a resource
 --     * Slot: biologicalMaterialOrigin_id Description: Information about the origin of the biological material, essential for access, utilization, and benefit-sharing of genetic resources in compliance with the Nagoya Protocol
---     * Slot: hasIATAClassification_id Description: The corresponding International Air Transport Association (IATA)'s category for this Product
+--     * Slot: iataClassification_id Description: The corresponding International Air Transport Association (IATA)'s category for this Product
 --     * Slot: materialSafetyDataSheet_id Description: A Material Safety Data Sheet (MSDS) or Safety Data Sheet (SDS) is a standardized document that contains crucial occupational safety and health information related to the product
 --     * Slot: originator_id Description: The individual or organization responsible for the original discovery, isolation, or creation of an item, providing information about the source or origin of the sample
 --     * Slot: category_id Description: The main category of the service or product
@@ -803,28 +822,31 @@
 --     * Slot: storageConditions Description: Specifies the conditions under which the product has to be stored to maintain stability and integrity, such as temperature, buffer, and other environmental factors.
 --     * Slot: thirdPartyDistributionConsent Description: Indicates whether the biological material can be distributed without restriction to third parties, as indicated by the ABS permit, in case an ABS permit is required
 --     * Slot: usageRestrictions Description: Specifies any limitations or conditions on the use of the biological material, including restrictions on research, commercial use, or distribution, considering any potential concerns about the related genetic material
---     * Slot: accessPointURL Description: The URL that permits to access to the product/service detailed description page on the provider's website and/or allows to place an order about it or at least describe the process to place an order/enquiry
---     * Slot: refSKU Description: The reference or the stock keeping unit of the service or item provided in the provider's catalogue
+--     * Slot: accessPointUrl Description: The URL that permits to access to the product/service detailed description page on the provider's website and/or allows to place an order about it or at least describe the process to place an order/enquiry
+--     * Slot: refSku Description: The reference or the stock keeping unit of the service or item provided in the provider's catalogue
 --     * Slot: unitDefinition Description: A short description of what will be delivered by ordering one unit of this item
 --     * Slot: unitCost Description: The cost per access for one unit as defined by the unit definition
 --     * Slot: qualityGrading Description: Information that permits to assess the quality level of what will be provided
 --     * Slot: biosafetyRestrictions Description: Information about guidelines and regulations designed to prevent the exposure to or release of potentially harmful biological agents. It thereby contributes to protecting people and the environment from biohazards while accessing this product or service
---     * Slot: canItBeUsedToProduceGMO Description: Indicates if the current service or product can be used to produce GMO
+--     * Slot: canBeUsedToProduceGmo Description: Indicates if the current service or product can be used to produce GMO
 --     * Slot: availability Description: The state or condition in which this item is accessible and ready for use or can be obtained
 --     * Slot: technicalRecommendation Description: Expert advice or guidelines provided to ensure the optimal use, performance, and maintenance of what is provided, including best practices, troubleshooting tips, and procedural instructions
 --     * Slot: internalReference Description: Any reference or indication to be used for local retrieval purpose
 --     * Slot: note Description: An aditional information as a textual comment
 --     * Slot: title Description: A name given to the resource
 --     * Slot: description Description: A short explanation of the characteristics, features, or nature of the current item
+--     * Slot: version Description: The version indicator (name or identifier) of a resource
 --     * Slot: biologicalMaterialOrigin_id Description: Information about the origin of the biological material, essential for access, utilization, and benefit-sharing of genetic resources in compliance with the Nagoya Protocol
---     * Slot: hasIATAClassification_id Description: The corresponding International Air Transport Association (IATA)'s category for this Product
+--     * Slot: iataClassification_id Description: The corresponding International Air Transport Association (IATA)'s category for this Product
 --     * Slot: materialSafetyDataSheet_id Description: A Material Safety Data Sheet (MSDS) or Safety Data Sheet (SDS) is a standardized document that contains crucial occupational safety and health information related to the product
 --     * Slot: originator_id Description: The individual or organization responsible for the original discovery, isolation, or creation of an item, providing information about the source or origin of the sample
 --     * Slot: category_id Description: The main category of the service or product
 --     * Slot: riskGroup_id Description: The highest risk group related to this resource. The risk group of a biological agent guiding its initial handling in labs according to the risk group classification defined by the WHO laboratory biosafety manual
 --     * Slot: provider_id Description: A provider of this product or service, as a specific organization
 --     * Slot: contactPoint_id Description: An information that allows someone to establish communication
--- # Class: "MSDS" Description: "A Material Safety Data Sheet (MSDS) or Safety Data Sheet (SDS) is a standardized document that contains crucial occupational safety and health information related to the product"
+-- # Class: "MaterialSafetyDataSheet" Description: "A Material Safety Data Sheet (MSDS) or Safety Data Sheet (SDS) is a standardized document that contains crucial occupational safety and health information related to the product"
+--     * Slot: id Description: 
+-- # Class: "MSDS" Description: ""
 --     * Slot: id Description: 
 --     * Slot: physicalChemicalProperties Description: Key characteristics of the product, such as physical state, appearance, solubility, pH, chemical composition, and molecular weight, essential for safe handling and storage
 --     * Slot: hazardsIdentification Description: Outlines the potential risks and dangers associated with handling the product, including its physical, chemical, and health hazards. This section provides information on toxicity, flammability, reactivity, and other relevant risks for safe use.
@@ -840,40 +862,40 @@
 --     * Slot: transportInformation Description: Details the regulations and guidelines for safely transporting the product, including classifications for road, air, sea, or rail transport, UN numbers, packaging requirements, and any special precautions to ensure safe transit.
 --     * Slot: regulatoryInformation Description: Lists applicable laws, regulations, and standards governing the product, including local, national, or international requirements for its handling, use, transportation, and disposal, ensuring compliance with legal obligations.
 --     * Slot: furtherInformation Description: Provides any additional details or clarifications not covered in other sections of the MSDS, such as references, supporting documents, or specific instructions for safe handling and use of the product.
---     * Slot: msdsContact_id Description: The designated contact point responsible for providing information related to the safety, handling, and regulatory compliance of the biological product.
+--     * Slot: materialSafetyContact_id Description: The designated contact point responsible for providing information related to the safety, handling, and regulatory compliance of the biological product.
 -- # Class: "File" Description: "Digital document or record stored in a specific format that contains data or information"
 --     * Slot: id Description: 
 --     * Slot: name Description: A word or set of words used to identify and refer to an entity
 --     * Slot: description Description: A short explanation of the characteristics, features, or nature of the current item
---     * Slot: contentURL Description: The web address or location where the file content is stored and can be accessed or downloaded.
+--     * Slot: contentUrl Description: The web address or location where the file content is stored and can be accessed or downloaded.
 --     * Slot: format Description: The file type or format that indicates how the data within the file is structured
 --     * Slot: license_id Description: Information about terms and conditions under which the subject can be used, shared, or distributed, indicating any restrictions or permissions
 -- # Class: "Data" Description: "Subclass of File representing structured or unstructured datasets, often used for analysis, storage, or transfer of information"
 --     * Slot: id Description: 
 --     * Slot: name Description: A word or set of words used to identify and refer to an entity
 --     * Slot: description Description: A short explanation of the characteristics, features, or nature of the current item
---     * Slot: contentURL Description: The web address or location where the file content is stored and can be accessed or downloaded.
+--     * Slot: contentUrl Description: The web address or location where the file content is stored and can be accessed or downloaded.
 --     * Slot: format Description: The file type or format that indicates how the data within the file is structured
 --     * Slot: license_id Description: Information about terms and conditions under which the subject can be used, shared, or distributed, indicating any restrictions or permissions
 -- # Class: "Document" Description: "Subclass of File representing textual or written files such as reports, manuals, or forms"
 --     * Slot: id Description: 
 --     * Slot: name Description: A word or set of words used to identify and refer to an entity
 --     * Slot: description Description: A short explanation of the characteristics, features, or nature of the current item
---     * Slot: contentURL Description: The web address or location where the file content is stored and can be accessed or downloaded.
+--     * Slot: contentUrl Description: The web address or location where the file content is stored and can be accessed or downloaded.
 --     * Slot: format Description: The file type or format that indicates how the data within the file is structured
 --     * Slot: license_id Description: Information about terms and conditions under which the subject can be used, shared, or distributed, indicating any restrictions or permissions
 -- # Class: "Audio" Description: "Subclass of File representing sound recordings or audio tracks"
 --     * Slot: id Description: 
 --     * Slot: name Description: A word or set of words used to identify and refer to an entity
 --     * Slot: description Description: A short explanation of the characteristics, features, or nature of the current item
---     * Slot: contentURL Description: The web address or location where the file content is stored and can be accessed or downloaded.
+--     * Slot: contentUrl Description: The web address or location where the file content is stored and can be accessed or downloaded.
 --     * Slot: format Description: The file type or format that indicates how the data within the file is structured
 --     * Slot: license_id Description: Information about terms and conditions under which the subject can be used, shared, or distributed, indicating any restrictions or permissions
 -- # Class: "Video" Description: "Subclass of File representing moving visual media, such as recordings, presentations, or movies"
 --     * Slot: id Description: 
 --     * Slot: name Description: A word or set of words used to identify and refer to an entity
 --     * Slot: description Description: A short explanation of the characteristics, features, or nature of the current item
---     * Slot: contentURL Description: The web address or location where the file content is stored and can be accessed or downloaded.
+--     * Slot: contentUrl Description: The web address or location where the file content is stored and can be accessed or downloaded.
 --     * Slot: format Description: The file type or format that indicates how the data within the file is structured
 --     * Slot: license_id Description: Information about terms and conditions under which the subject can be used, shared, or distributed, indicating any restrictions or permissions
 -- # Class: "Image" Description: "Subclass of File representing visual content such as pictures, diagrams, or illustrations"
@@ -881,7 +903,7 @@
 --     * Slot: altText Description: An alternate text for the image, if the image cannot be displayed
 --     * Slot: name Description: A word or set of words used to identify and refer to an entity
 --     * Slot: description Description: A short explanation of the characteristics, features, or nature of the current item
---     * Slot: contentURL Description: The web address or location where the file content is stored and can be accessed or downloaded.
+--     * Slot: contentUrl Description: The web address or location where the file content is stored and can be accessed or downloaded.
 --     * Slot: format Description: The file type or format that indicates how the data within the file is structured
 --     * Slot: license_id Description: Information about terms and conditions under which the subject can be used, shared, or distributed, indicating any restrictions or permissions
 -- # Class: "ContactPoint" Description: "Entity serving as focal point of information"
@@ -894,20 +916,20 @@
 --     * Slot: addressLocality Description: The locality in which the street address is, and which is in the region. e.g, the city
 --     * Slot: addressRegion Description: The region in which the locality is, and which is in the country. For example, California or another appropriate first-level Administrative division
 --     * Slot: postalCode Description: The postal code
---     * Slot: oRCIDiD Description: Unique persistent identifier for a person, provided by the Open Researcher and Contributor ID (ORCID) organisation
+--     * Slot: orcidId Description: Unique persistent identifier for a person, provided by the Open Researcher and Contributor ID (ORCID) organisation
 --     * Slot: addressCountry_id Description: The country as of  ISO 3166
 -- # Class: "License" Description: "The legal terms and conditions under which the subject can be used, shared, or distributed, indicating any restrictions or permissions"
 --     * Slot: id Description: 
 --     * Slot: title Description: A name given to the resource
 --     * Slot: description Description: A short explanation of the characteristics, features, or nature of the current item
---     * Slot: resourceURL Description: The web address or location where the details or content is stored and can be accessed or downloaded.
+--     * Slot: resourceUrl Description: The web address or location where the details or content is stored and can be accessed or downloaded.
 --     * Slot: licensingOrAttribution Description: A text or html code that provides any related data sharing licence and/or attribution
 --     * Slot: logo_id Description: A path or URL to the related logo
 -- # Class: "Certification" Description: "Assurance given by an independent certification body that a product, service or system meets the requirements of a standard"
 --     * Slot: id Description: 
 --     * Slot: title Description: A name given to the resource
 --     * Slot: description Description: A short explanation of the characteristics, features, or nature of the current item
---     * Slot: resourceURL Description: The web address or location where the details or content is stored and can be accessed or downloaded.
+--     * Slot: resourceUrl Description: The web address or location where the details or content is stored and can be accessed or downloaded.
 --     * Slot: logo_id Description: A path or URL to the related logo
 -- # Class: "Taxonomy_taxon" Description: ""
 --     * Slot: Taxonomy_id Description: Autocreated FK slot
@@ -963,12 +985,12 @@
 -- # Class: "Organization_alternateName" Description: ""
 --     * Slot: Organization_id Description: Autocreated FK slot
 --     * Slot: alternateName_id Description: Any other name under which the entity can be known
--- # Class: "RI_alternateName" Description: ""
---     * Slot: RI_id Description: Autocreated FK slot
+-- # Class: "ReasearchInfrastructure_alternateName" Description: ""
+--     * Slot: ReasearchInfrastructure_id Description: Autocreated FK slot
 --     * Slot: alternateName_id Description: Any other name under which the entity can be known
--- # Class: "Provider_memberOfRI" Description: ""
+-- # Class: "Provider_memberOfRi" Description: ""
 --     * Slot: Provider_id Description: Autocreated FK slot
---     * Slot: memberOfRI_id Description: The research infrastructure of which this organization is a member
+--     * Slot: memberOfRi_id Description: The research infrastructure of which this organization is a member
 -- # Class: "Provider_alternateName" Description: ""
 --     * Slot: Provider_id Description: Autocreated FK slot
 --     * Slot: alternateName_id Description: Any other name under which the entity can be known
@@ -987,9 +1009,9 @@
 -- # Class: "ProductOrService_pathogenIdentification" Description: ""
 --     * Slot: ProductOrService_id Description: Autocreated FK slot
 --     * Slot: pathogenIdentification_id Description: The identification of the pathogen or group of pathogens (e.g; name, taxon identification, etc.) related to the current item.
--- # Class: "ProductOrService_relatedDOI" Description: ""
+-- # Class: "ProductOrService_doi" Description: ""
 --     * Slot: ProductOrService_id Description: Autocreated FK slot
---     * Slot: relatedDOI_id Description: Any Digital Object Identifier that can be related
+--     * Slot: doi_id Description: A Digital Object Identifier (DOI) that can be related
 -- # Class: "ProductOrService_collection" Description: ""
 --     * Slot: ProductOrService_id Description: Autocreated FK slot
 --     * Slot: collection_id Description: The collection(s) to which belongs this item
@@ -1014,9 +1036,9 @@
 -- # Class: "Service_pathogenIdentification" Description: ""
 --     * Slot: Service_id Description: Autocreated FK slot
 --     * Slot: pathogenIdentification_id Description: The identification of the pathogen or group of pathogens (e.g; name, taxon identification, etc.) related to the current item.
--- # Class: "Service_relatedDOI" Description: ""
+-- # Class: "Service_doi" Description: ""
 --     * Slot: Service_id Description: Autocreated FK slot
---     * Slot: relatedDOI_id Description: Any Digital Object Identifier that can be related
+--     * Slot: doi_id Description: A Digital Object Identifier (DOI) that can be related
 -- # Class: "Service_collection" Description: ""
 --     * Slot: Service_id Description: Autocreated FK slot
 --     * Slot: collection_id Description: The collection(s) to which belongs this item
@@ -1041,9 +1063,9 @@
 -- # Class: "Product_pathogenIdentification" Description: ""
 --     * Slot: Product_id Description: Autocreated FK slot
 --     * Slot: pathogenIdentification_id Description: The identification of the pathogen or group of pathogens (e.g; name, taxon identification, etc.) related to the current item.
--- # Class: "Product_relatedDOI" Description: ""
+-- # Class: "Product_doi" Description: ""
 --     * Slot: Product_id Description: Autocreated FK slot
---     * Slot: relatedDOI_id Description: Any Digital Object Identifier that can be related
+--     * Slot: doi_id Description: A Digital Object Identifier (DOI) that can be related
 -- # Class: "Product_collection" Description: ""
 --     * Slot: Product_id Description: Autocreated FK slot
 --     * Slot: collection_id Description: The collection(s) to which belongs this item
@@ -1071,9 +1093,9 @@
 -- # Class: "Antibody_pathogenIdentification" Description: ""
 --     * Slot: Antibody_id Description: Autocreated FK slot
 --     * Slot: pathogenIdentification_id Description: The identification of the pathogen or group of pathogens (e.g; name, taxon identification, etc.) related to the current item.
--- # Class: "Antibody_relatedDOI" Description: ""
+-- # Class: "Antibody_doi" Description: ""
 --     * Slot: Antibody_id Description: Autocreated FK slot
---     * Slot: relatedDOI_id Description: Any Digital Object Identifier that can be related
+--     * Slot: doi_id Description: A Digital Object Identifier (DOI) that can be related
 -- # Class: "Antibody_collection" Description: ""
 --     * Slot: Antibody_id Description: Autocreated FK slot
 --     * Slot: collection_id Description: The collection(s) to which belongs this item
@@ -1101,9 +1123,9 @@
 -- # Class: "Hybridoma_pathogenIdentification" Description: ""
 --     * Slot: Hybridoma_id Description: Autocreated FK slot
 --     * Slot: pathogenIdentification_id Description: The identification of the pathogen or group of pathogens (e.g; name, taxon identification, etc.) related to the current item.
--- # Class: "Hybridoma_relatedDOI" Description: ""
+-- # Class: "Hybridoma_doi" Description: ""
 --     * Slot: Hybridoma_id Description: Autocreated FK slot
---     * Slot: relatedDOI_id Description: Any Digital Object Identifier that can be related
+--     * Slot: doi_id Description: A Digital Object Identifier (DOI) that can be related
 -- # Class: "Hybridoma_collection" Description: ""
 --     * Slot: Hybridoma_id Description: Autocreated FK slot
 --     * Slot: collection_id Description: The collection(s) to which belongs this item
@@ -1125,15 +1147,15 @@
 -- # Class: "Protein_sequence" Description: ""
 --     * Slot: Protein_id Description: Autocreated FK slot
 --     * Slot: sequence_id Description: The related sequence information from a sequence provider or in fasta format
--- # Class: "Protein_relatedPDB" Description: ""
+-- # Class: "Protein_relatedPdb" Description: ""
 --     * Slot: Protein_id Description: Autocreated FK slot
---     * Slot: relatedPDB_id Description: Identifier for 3D structural data as per the PDB (Protein Data Bank) database
+--     * Slot: relatedPdb_id Description: Identifier for 3D structural data as per the PDB (Protein Data Bank) database
 -- # Class: "Protein_specialFeature" Description: ""
 --     * Slot: Protein_id Description: Autocreated FK slot
 --     * Slot: specialFeature_id Description: Distinctive attributes of a product that set it apart from other similar items e.g., Reference strain, Vaccinal strain, Antiviral resistant strain ...
--- # Class: "Protein_proteinTAG" Description: ""
+-- # Class: "Protein_proteinTag" Description: ""
 --     * Slot: Protein_id Description: Autocreated FK slot
---     * Slot: proteinTAG_id Description: Peptide sequences genetically grafted onto a recombinant protein
+--     * Slot: proteinTag_id Description: A DNA coding sequence or corresponding peptide/protein sequence fused to a sequence of interest, used to facilitate experimental operations such as purification, detection, localization, tracking, solubility enhancement, or selection. Applicable to both proteins and nucleic acids
 -- # Class: "Protein_domain" Description: ""
 --     * Slot: Protein_id Description: Autocreated FK slot
 --     * Slot: domain Description: A distinct structural and functional unit within the protein, often capable of independent folding and stability, which contributes to the protein's overall function
@@ -1149,15 +1171,15 @@
 -- # Class: "Protein_functionalCharacterization" Description: ""
 --     * Slot: Protein_id Description: Autocreated FK slot
 --     * Slot: functionalCharacterization Description: The process of determining and describing the specific biological activities and roles of a protein. Possible values include 'Functionally characterized' (the protein's functions have been identified and described) and 'No functional characterization' (the protein's functions have not been identified or described).
--- # Class: "Protein_functionalTechnicalDescription" Description: ""
+-- # Class: "Protein_functionalAndTechnicalDescription" Description: ""
 --     * Slot: Protein_id Description: Autocreated FK slot
---     * Slot: functionalTechnicalDescription Description: Detailed information about the specific biological functions, mechanisms of action, and technical attributes of a protein. This includes how the protein interacts within biological systems, its role in cellular processes, and any relevant technical details such as structure, activity, and interactions with other molecules.
+--     * Slot: functionalAndTechnicalDescription Description: Detailed information about the specific biological functions, mechanisms of action, and technical attributes of a protein. This includes how the protein interacts within biological systems, its role in cellular processes, and any relevant technical details such as structure, activity, and interactions with other molecules.
 -- # Class: "Protein_proteinPurification" Description: ""
 --     * Slot: Protein_id Description: Autocreated FK slot
 --     * Slot: proteinPurification Description: Refers to the degree of purity achieved for a protein sample. Possible values include '>95%' (the protein is highly purified, with more than 95% purity) and 'Unpurified expression host lysate or partly purified protein' (the protein is either unpurified and present in the host cell lysate or only partially purified).
--- # Class: "Protein_theTAGStatusOfTheSolubilizedProtein" Description: ""
+-- # Class: "Protein_tagStatusOfTheSolubilizedProtein" Description: ""
 --     * Slot: Protein_id Description: Autocreated FK slot
---     * Slot: theTAGStatusOfTheSolubilizedProtein Description: Indicates the presence and condition of a tag on the protein after solubilization. Possible values include 'Uncleaved Tag' (the tag is still attached to the protein), 'Cleaved Tag' (the tag has been removed from the protein), and 'No Tag' (the protein does not have a tag)
+--     * Slot: tagStatusOfTheSolubilizedProtein Description: Indicates the presence and condition of a tag on the protein after solubilization. Possible values include 'Uncleaved Tag' (the tag is still attached to the protein), 'Cleaved Tag' (the tag has been removed from the protein), and 'No Tag' (the protein does not have a tag)
 -- # Class: "Protein_typeOfFunctionalCharacterization" Description: ""
 --     * Slot: Protein_id Description: Autocreated FK slot
 --     * Slot: typeOfFunctionalCharacterization Description: Refers to the classification of a protein based on the specific type of functional analysis performed to determine its biological activities and roles. Possible values include 'Enzymatic' (the protein has been characterized for its enzyme activity) and 'Antigenic' (the protein has been characterized for its ability to elicit an immune response).
@@ -1167,9 +1189,9 @@
 -- # Class: "Protein_pathogenIdentification" Description: ""
 --     * Slot: Protein_id Description: Autocreated FK slot
 --     * Slot: pathogenIdentification_id Description: The identification of the pathogen or group of pathogens (e.g; name, taxon identification, etc.) related to the current item.
--- # Class: "Protein_relatedDOI" Description: ""
+-- # Class: "Protein_doi" Description: ""
 --     * Slot: Protein_id Description: Autocreated FK slot
---     * Slot: relatedDOI_id Description: Any Digital Object Identifier that can be related
+--     * Slot: doi_id Description: A Digital Object Identifier (DOI) that can be related
 -- # Class: "Protein_collection" Description: ""
 --     * Slot: Protein_id Description: Autocreated FK slot
 --     * Slot: collection_id Description: The collection(s) to which belongs this item
@@ -1188,24 +1210,24 @@
 -- # Class: "Protein_certification" Description: ""
 --     * Slot: Protein_id Description: Autocreated FK slot
 --     * Slot: certification_id Description: Any certification related to the current product or service; e.g., ISO certification
--- # Class: "NucleicAcid_hasGbFileOfTheConstruct" Description: ""
+-- # Class: "NucleicAcid_genBankFileOfTheConstruct" Description: ""
 --     * Slot: NucleicAcid_id Description: Autocreated FK slot
---     * Slot: hasGbFileOfTheConstruct_id Description: A GenBank formatted file that contains detailed sequence and annotation information of a nucleic acid construct
+--     * Slot: genBankFileOfTheConstruct_id Description: A GenBank formatted file that contains detailed sequence and annotation information of a nucleic acid construct
 -- # Class: "NucleicAcid_sequence" Description: ""
 --     * Slot: NucleicAcid_id Description: Autocreated FK slot
 --     * Slot: sequence_id Description: The related sequence information from a sequence provider or in fasta format
--- # Class: "NucleicAcid_pasmidSelection" Description: ""
+-- # Class: "NucleicAcid_plasmidSelection" Description: ""
 --     * Slot: NucleicAcid_id Description: Autocreated FK slot
---     * Slot: pasmidSelection_id Description: Specific selectable markers in the plasmid, such as antibiotic resistance genes, used to identify and maintain cells that contain the plasmid
+--     * Slot: plasmidSelection_id Description: Specific selectable markers in the plasmid, such as antibiotic resistance genes, used to identify and maintain cells that contain the plasmid
 -- # Class: "NucleicAcid_additionalCategory" Description: ""
 --     * Slot: NucleicAcid_id Description: Autocreated FK slot
 --     * Slot: additionalCategory_id Description: Any category apart from its main category in which this product or service can fit
 -- # Class: "NucleicAcid_pathogenIdentification" Description: ""
 --     * Slot: NucleicAcid_id Description: Autocreated FK slot
 --     * Slot: pathogenIdentification_id Description: The identification of the pathogen or group of pathogens (e.g; name, taxon identification, etc.) related to the current item.
--- # Class: "NucleicAcid_relatedDOI" Description: ""
+-- # Class: "NucleicAcid_doi" Description: ""
 --     * Slot: NucleicAcid_id Description: Autocreated FK slot
---     * Slot: relatedDOI_id Description: Any Digital Object Identifier that can be related
+--     * Slot: doi_id Description: A Digital Object Identifier (DOI) that can be related
 -- # Class: "NucleicAcid_collection" Description: ""
 --     * Slot: NucleicAcid_id Description: Autocreated FK slot
 --     * Slot: collection_id Description: The collection(s) to which belongs this item
@@ -1224,18 +1246,18 @@
 -- # Class: "NucleicAcid_certification" Description: ""
 --     * Slot: NucleicAcid_id Description: Autocreated FK slot
 --     * Slot: certification_id Description: Any certification related to the current product or service; e.g., ISO certification
--- # Class: "DetectionKit_hasSOPFile" Description: ""
+-- # Class: "DetectionKit_standardOperatingProcedureFile" Description: ""
 --     * Slot: DetectionKit_id Description: Autocreated FK slot
---     * Slot: hasSOPFile_id Description: The related standard operating procedure file
+--     * Slot: standardOperatingProcedureFile_id Description: The related standard operating procedure file (SOP)
 -- # Class: "DetectionKit_additionalCategory" Description: ""
 --     * Slot: DetectionKit_id Description: Autocreated FK slot
 --     * Slot: additionalCategory_id Description: Any category apart from its main category in which this product or service can fit
 -- # Class: "DetectionKit_pathogenIdentification" Description: ""
 --     * Slot: DetectionKit_id Description: Autocreated FK slot
 --     * Slot: pathogenIdentification_id Description: The identification of the pathogen or group of pathogens (e.g; name, taxon identification, etc.) related to the current item.
--- # Class: "DetectionKit_relatedDOI" Description: ""
+-- # Class: "DetectionKit_doi" Description: ""
 --     * Slot: DetectionKit_id Description: Autocreated FK slot
---     * Slot: relatedDOI_id Description: Any Digital Object Identifier that can be related
+--     * Slot: doi_id Description: A Digital Object Identifier (DOI) that can be related
 -- # Class: "DetectionKit_collection" Description: ""
 --     * Slot: DetectionKit_id Description: Autocreated FK slot
 --     * Slot: collection_id Description: The collection(s) to which belongs this item
@@ -1254,18 +1276,18 @@
 -- # Class: "DetectionKit_certification" Description: ""
 --     * Slot: DetectionKit_id Description: Autocreated FK slot
 --     * Slot: certification_id Description: Any certification related to the current product or service; e.g., ISO certification
--- # Class: "Bundle_productsOfTheBundle" Description: ""
+-- # Class: "Bundle_itemsOfTheBundle" Description: ""
 --     * Slot: Bundle_id Description: Autocreated FK slot
---     * Slot: productsOfTheBundle_id Description: Associates the bundle with the individual products it contains, specifying the components included within the bundle.
+--     * Slot: itemsOfTheBundle_id Description: Specifies the constituent products and/or services that are part of the bundle
 -- # Class: "Bundle_additionalCategory" Description: ""
 --     * Slot: Bundle_id Description: Autocreated FK slot
 --     * Slot: additionalCategory_id Description: Any category apart from its main category in which this product or service can fit
 -- # Class: "Bundle_pathogenIdentification" Description: ""
 --     * Slot: Bundle_id Description: Autocreated FK slot
 --     * Slot: pathogenIdentification_id Description: The identification of the pathogen or group of pathogens (e.g; name, taxon identification, etc.) related to the current item.
--- # Class: "Bundle_relatedDOI" Description: ""
+-- # Class: "Bundle_doi" Description: ""
 --     * Slot: Bundle_id Description: Autocreated FK slot
---     * Slot: relatedDOI_id Description: Any Digital Object Identifier that can be related
+--     * Slot: doi_id Description: A Digital Object Identifier (DOI) that can be related
 -- # Class: "Bundle_collection" Description: ""
 --     * Slot: Bundle_id Description: Autocreated FK slot
 --     * Slot: collection_id Description: The collection(s) to which belongs this item
@@ -1308,9 +1330,9 @@
 -- # Class: "Pathogen_pathogenIdentification" Description: ""
 --     * Slot: Pathogen_id Description: Autocreated FK slot
 --     * Slot: pathogenIdentification_id Description: The identification of the pathogen or group of pathogens (e.g; name, taxon identification, etc.) related to the current item.
--- # Class: "Pathogen_relatedDOI" Description: ""
+-- # Class: "Pathogen_doi" Description: ""
 --     * Slot: Pathogen_id Description: Autocreated FK slot
---     * Slot: relatedDOI_id Description: Any Digital Object Identifier that can be related
+--     * Slot: doi_id Description: A Digital Object Identifier (DOI) that can be related
 -- # Class: "Pathogen_collection" Description: ""
 --     * Slot: Pathogen_id Description: Autocreated FK slot
 --     * Slot: collection_id Description: The collection(s) to which belongs this item
@@ -1356,9 +1378,9 @@
 -- # Class: "Virus_pathogenIdentification" Description: ""
 --     * Slot: Virus_id Description: Autocreated FK slot
 --     * Slot: pathogenIdentification_id Description: The identification of the pathogen or group of pathogens (e.g; name, taxon identification, etc.) related to the current item.
--- # Class: "Virus_relatedDOI" Description: ""
+-- # Class: "Virus_doi" Description: ""
 --     * Slot: Virus_id Description: Autocreated FK slot
---     * Slot: relatedDOI_id Description: Any Digital Object Identifier that can be related
+--     * Slot: doi_id Description: A Digital Object Identifier (DOI) that can be related
 -- # Class: "Virus_collection" Description: ""
 --     * Slot: Virus_id Description: Autocreated FK slot
 --     * Slot: collection_id Description: The collection(s) to which belongs this item
@@ -1401,9 +1423,9 @@
 -- # Class: "Bacterium_pathogenIdentification" Description: ""
 --     * Slot: Bacterium_id Description: Autocreated FK slot
 --     * Slot: pathogenIdentification_id Description: The identification of the pathogen or group of pathogens (e.g; name, taxon identification, etc.) related to the current item.
--- # Class: "Bacterium_relatedDOI" Description: ""
+-- # Class: "Bacterium_doi" Description: ""
 --     * Slot: Bacterium_id Description: Autocreated FK slot
---     * Slot: relatedDOI_id Description: Any Digital Object Identifier that can be related
+--     * Slot: doi_id Description: A Digital Object Identifier (DOI) that can be related
 -- # Class: "Bacterium_collection" Description: ""
 --     * Slot: Bacterium_id Description: Autocreated FK slot
 --     * Slot: collection_id Description: The collection(s) to which belongs this item
@@ -1446,9 +1468,9 @@
 -- # Class: "Fungus_pathogenIdentification" Description: ""
 --     * Slot: Fungus_id Description: Autocreated FK slot
 --     * Slot: pathogenIdentification_id Description: The identification of the pathogen or group of pathogens (e.g; name, taxon identification, etc.) related to the current item.
--- # Class: "Fungus_relatedDOI" Description: ""
+-- # Class: "Fungus_doi" Description: ""
 --     * Slot: Fungus_id Description: Autocreated FK slot
---     * Slot: relatedDOI_id Description: Any Digital Object Identifier that can be related
+--     * Slot: doi_id Description: A Digital Object Identifier (DOI) that can be related
 -- # Class: "Fungus_collection" Description: ""
 --     * Slot: Fungus_id Description: Autocreated FK slot
 --     * Slot: collection_id Description: The collection(s) to which belongs this item
@@ -1491,9 +1513,9 @@
 -- # Class: "Protozoan_pathogenIdentification" Description: ""
 --     * Slot: Protozoan_id Description: Autocreated FK slot
 --     * Slot: pathogenIdentification_id Description: The identification of the pathogen or group of pathogens (e.g; name, taxon identification, etc.) related to the current item.
--- # Class: "Protozoan_relatedDOI" Description: ""
+-- # Class: "Protozoan_doi" Description: ""
 --     * Slot: Protozoan_id Description: Autocreated FK slot
---     * Slot: relatedDOI_id Description: Any Digital Object Identifier that can be related
+--     * Slot: doi_id Description: A Digital Object Identifier (DOI) that can be related
 -- # Class: "Protozoan_collection" Description: ""
 --     * Slot: Protozoan_id Description: Autocreated FK slot
 --     * Slot: collection_id Description: The collection(s) to which belongs this item
@@ -1536,9 +1558,9 @@
 -- # Class: "Viroid_pathogenIdentification" Description: ""
 --     * Slot: Viroid_id Description: Autocreated FK slot
 --     * Slot: pathogenIdentification_id Description: The identification of the pathogen or group of pathogens (e.g; name, taxon identification, etc.) related to the current item.
--- # Class: "Viroid_relatedDOI" Description: ""
+-- # Class: "Viroid_doi" Description: ""
 --     * Slot: Viroid_id Description: Autocreated FK slot
---     * Slot: relatedDOI_id Description: Any Digital Object Identifier that can be related
+--     * Slot: doi_id Description: A Digital Object Identifier (DOI) that can be related
 -- # Class: "Viroid_collection" Description: ""
 --     * Slot: Viroid_id Description: Autocreated FK slot
 --     * Slot: collection_id Description: The collection(s) to which belongs this item
@@ -1581,9 +1603,9 @@
 -- # Class: "Prion_pathogenIdentification" Description: ""
 --     * Slot: Prion_id Description: Autocreated FK slot
 --     * Slot: pathogenIdentification_id Description: The identification of the pathogen or group of pathogens (e.g; name, taxon identification, etc.) related to the current item.
--- # Class: "Prion_relatedDOI" Description: ""
+-- # Class: "Prion_doi" Description: ""
 --     * Slot: Prion_id Description: Autocreated FK slot
---     * Slot: relatedDOI_id Description: Any Digital Object Identifier that can be related
+--     * Slot: doi_id Description: A Digital Object Identifier (DOI) that can be related
 -- # Class: "Prion_collection" Description: ""
 --     * Slot: Prion_id Description: Autocreated FK slot
 --     * Slot: collection_id Description: The collection(s) to which belongs this item
@@ -1614,19 +1636,21 @@ CREATE TABLE "Dataset" (
 	id INTEGER NOT NULL, 
 	title TEXT NOT NULL, 
 	description TEXT NOT NULL, 
+	version TEXT, 
 	PRIMARY KEY (id)
 );
 CREATE TABLE "DataService" (
 	id INTEGER NOT NULL, 
 	title TEXT NOT NULL, 
 	description TEXT, 
-	"endpointURL" TEXT NOT NULL, 
+	"endpointUrl" TEXT NOT NULL, 
 	PRIMARY KEY (id)
 );
 CREATE TABLE "Catalogue" (
 	id INTEGER NOT NULL, 
 	title TEXT NOT NULL, 
 	description TEXT NOT NULL, 
+	version TEXT, 
 	PRIMARY KEY (id)
 );
 CREATE TABLE "ExternalRelatedReference" (
@@ -1639,7 +1663,7 @@ CREATE TABLE "ExternalRelatedReference" (
 );
 CREATE TABLE "Sequence" (
 	id INTEGER NOT NULL, 
-	"sequenceFASTA" TEXT, 
+	"sequenceFasta" TEXT, 
 	PRIMARY KEY (id)
 );
 CREATE TABLE "SequenceReference" (
@@ -1659,12 +1683,16 @@ CREATE TABLE "RecombinantPartIdentification" (
 	"partIdentification" TEXT NOT NULL, 
 	PRIMARY KEY (id)
 );
+CREATE TABLE "MaterialSafetyDataSheet" (
+	id INTEGER NOT NULL, 
+	PRIMARY KEY (id)
+);
 CREATE TABLE "Image" (
 	id INTEGER NOT NULL, 
 	"altText" TEXT, 
 	name TEXT NOT NULL, 
 	description TEXT, 
-	"contentURL" TEXT NOT NULL, 
+	"contentUrl" TEXT NOT NULL, 
 	format TEXT NOT NULL, 
 	license_id INTEGER, 
 	PRIMARY KEY (id), 
@@ -1674,7 +1702,7 @@ CREATE TABLE "License" (
 	id INTEGER NOT NULL, 
 	title TEXT NOT NULL, 
 	description TEXT, 
-	"resourceURL" TEXT, 
+	"resourceUrl" TEXT, 
 	"licensingOrAttribution" TEXT, 
 	logo_id INTEGER, 
 	PRIMARY KEY (id), 
@@ -1682,7 +1710,7 @@ CREATE TABLE "License" (
 );
 CREATE TABLE "Version" (
 	id INTEGER NOT NULL, 
-	"ID" TEXT NOT NULL, 
+	version TEXT NOT NULL, 
 	"versionOf_id" INTEGER NOT NULL, 
 	PRIMARY KEY (id), 
 	FOREIGN KEY("versionOf_id") REFERENCES "Dataset" (id)
@@ -1690,14 +1718,14 @@ CREATE TABLE "Version" (
 CREATE TABLE "DataProvider" (
 	id INTEGER NOT NULL, 
 	"loginRequestMethod" TEXT, 
-	"loginURL" TEXT, 
+	"loginUrl" TEXT, 
 	"loginTokenName" TEXT, 
 	"queryMethod" TEXT NOT NULL, 
 	"contentType" TEXT NOT NULL, 
 	weight INTEGER NOT NULL, 
 	title TEXT NOT NULL, 
 	description TEXT, 
-	"endpointURL" TEXT NOT NULL, 
+	"endpointUrl" TEXT NOT NULL, 
 	license_id INTEGER, 
 	"providedEntityType_id" INTEGER NOT NULL, 
 	PRIMARY KEY (id), 
@@ -1724,7 +1752,7 @@ CREATE TABLE "File" (
 	id INTEGER NOT NULL, 
 	name TEXT NOT NULL, 
 	description TEXT, 
-	"contentURL" TEXT NOT NULL, 
+	"contentUrl" TEXT NOT NULL, 
 	format TEXT NOT NULL, 
 	license_id INTEGER, 
 	PRIMARY KEY (id), 
@@ -1734,7 +1762,7 @@ CREATE TABLE "Data" (
 	id INTEGER NOT NULL, 
 	name TEXT NOT NULL, 
 	description TEXT, 
-	"contentURL" TEXT NOT NULL, 
+	"contentUrl" TEXT NOT NULL, 
 	format TEXT NOT NULL, 
 	license_id INTEGER, 
 	PRIMARY KEY (id), 
@@ -1744,7 +1772,7 @@ CREATE TABLE "Document" (
 	id INTEGER NOT NULL, 
 	name TEXT NOT NULL, 
 	description TEXT, 
-	"contentURL" TEXT NOT NULL, 
+	"contentUrl" TEXT NOT NULL, 
 	format TEXT NOT NULL, 
 	license_id INTEGER, 
 	PRIMARY KEY (id), 
@@ -1754,7 +1782,7 @@ CREATE TABLE "Audio" (
 	id INTEGER NOT NULL, 
 	name TEXT NOT NULL, 
 	description TEXT, 
-	"contentURL" TEXT NOT NULL, 
+	"contentUrl" TEXT NOT NULL, 
 	format TEXT NOT NULL, 
 	license_id INTEGER, 
 	PRIMARY KEY (id), 
@@ -1764,7 +1792,7 @@ CREATE TABLE "Video" (
 	id INTEGER NOT NULL, 
 	name TEXT NOT NULL, 
 	description TEXT, 
-	"contentURL" TEXT NOT NULL, 
+	"contentUrl" TEXT NOT NULL, 
 	format TEXT NOT NULL, 
 	license_id INTEGER, 
 	PRIMARY KEY (id), 
@@ -1774,7 +1802,7 @@ CREATE TABLE "Certification" (
 	id INTEGER NOT NULL, 
 	title TEXT NOT NULL, 
 	description TEXT, 
-	"resourceURL" TEXT, 
+	"resourceUrl" TEXT, 
 	logo_id INTEGER, 
 	PRIMARY KEY (id), 
 	FOREIGN KEY(logo_id) REFERENCES "Image" (id)
@@ -1795,15 +1823,14 @@ CREATE TABLE "RecombinantPartIdentification_sequence" (
 );
 CREATE TABLE "Taxonomy" (
 	id INTEGER NOT NULL, 
+	version TEXT NOT NULL, 
 	title TEXT NOT NULL, 
 	description TEXT NOT NULL, 
 	"taxonDataProvider_id" INTEGER, 
-	version_id INTEGER NOT NULL, 
 	"versionDataProvider_id" INTEGER NOT NULL, 
 	"rankDataProvider_id" INTEGER, 
 	PRIMARY KEY (id), 
 	FOREIGN KEY("taxonDataProvider_id") REFERENCES "DataProvider" (id), 
-	FOREIGN KEY(version_id) REFERENCES "Version" (id), 
 	FOREIGN KEY("versionDataProvider_id") REFERENCES "DataProvider" (id), 
 	FOREIGN KEY("rankDataProvider_id") REFERENCES "DataProvider" (id)
 );
@@ -1811,6 +1838,7 @@ CREATE TABLE "Vocabulary" (
 	id INTEGER NOT NULL, 
 	title TEXT NOT NULL, 
 	description TEXT NOT NULL, 
+	version TEXT, 
 	"termDataProvider_id" INTEGER, 
 	PRIMARY KEY (id), 
 	FOREIGN KEY("termDataProvider_id") REFERENCES "DataProvider" (id)
@@ -1819,6 +1847,7 @@ CREATE TABLE "Collection" (
 	id INTEGER NOT NULL, 
 	title TEXT NOT NULL, 
 	description TEXT NOT NULL, 
+	version TEXT, 
 	"collectionDataProvider_id" INTEGER, 
 	PRIMARY KEY (id), 
 	FOREIGN KEY("collectionDataProvider_id") REFERENCES "DataProvider" (id)
@@ -1882,7 +1911,7 @@ CREATE TABLE "RiskGroup" (
 	PRIMARY KEY (id), 
 	FOREIGN KEY("inVocabulary_id") REFERENCES "Vocabulary" (id)
 );
-CREATE TABLE "DOI" (
+CREATE TABLE "Doi" (
 	id INTEGER NOT NULL, 
 	title TEXT NOT NULL, 
 	description TEXT, 
@@ -1900,7 +1929,7 @@ CREATE TABLE "Journal" (
 	PRIMARY KEY (id), 
 	FOREIGN KEY("inVocabulary_id") REFERENCES "Vocabulary" (id)
 );
-CREATE TABLE "PDBReference" (
+CREATE TABLE "PdbReference" (
 	id INTEGER NOT NULL, 
 	title TEXT NOT NULL, 
 	description TEXT, 
@@ -2010,7 +2039,7 @@ CREATE TABLE "GeographicalOrigin" (
 	PRIMARY KEY (id), 
 	FOREIGN KEY("inVocabulary_id") REFERENCES "Vocabulary" (id)
 );
-CREATE TABLE "IPLCOrigin" (
+CREATE TABLE "IplcOrigin" (
 	id INTEGER NOT NULL, 
 	title TEXT NOT NULL, 
 	description TEXT, 
@@ -2029,7 +2058,7 @@ CREATE TABLE "Country" (
 	PRIMARY KEY (id), 
 	FOREIGN KEY("inVocabulary_id") REFERENCES "Vocabulary" (id)
 );
-CREATE TABLE "IATAClassification" (
+CREATE TABLE "IataClassification" (
 	id INTEGER NOT NULL, 
 	title TEXT NOT NULL, 
 	description TEXT, 
@@ -2061,16 +2090,16 @@ CREATE TABLE "Publication" (
 	title TEXT NOT NULL, 
 	authors TEXT NOT NULL, 
 	abstract TEXT NOT NULL, 
-	"relatedDOI_id" INTEGER NOT NULL, 
+	doi_id INTEGER NOT NULL, 
 	journal_id INTEGER, 
 	PRIMARY KEY (id), 
-	FOREIGN KEY("relatedDOI_id") REFERENCES "DOI" (id), 
+	FOREIGN KEY(doi_id) REFERENCES "Doi" (id), 
 	FOREIGN KEY(journal_id) REFERENCES "Journal" (id)
 );
 CREATE TABLE "Taxon" (
 	id INTEGER NOT NULL, 
-	"taxonomicID" TEXT NOT NULL, 
-	"taxonomicNodeID" TEXT, 
+	"taxonomicId" TEXT NOT NULL, 
+	"taxonomicNodeId" TEXT, 
 	title TEXT NOT NULL, 
 	description TEXT, 
 	weight INTEGER NOT NULL, 
@@ -2086,14 +2115,14 @@ CREATE TABLE "NaturalPartOrigin" (
 	id INTEGER NOT NULL, 
 	"collectionDate" DATETIME NOT NULL, 
 	"beforeDate" BOOLEAN NOT NULL, 
-	"permitIdentifierForABS" TEXT, 
+	"permitIdentifierForAbs" TEXT, 
 	"accessToPhysicalGeneticResource" BOOLEAN NOT NULL, 
 	"countryOfCollection_id" INTEGER NOT NULL, 
-	"indigenousPoepleAndLocalCommunityOrigin_id" INTEGER, 
+	"indigenousPeopleAndLocalCommunityOrigin_id" INTEGER, 
 	"recombinantPartIdentification_id" INTEGER, 
 	PRIMARY KEY (id), 
 	FOREIGN KEY("countryOfCollection_id") REFERENCES "Country" (id), 
-	FOREIGN KEY("indigenousPoepleAndLocalCommunityOrigin_id") REFERENCES "IPLCOrigin" (id), 
+	FOREIGN KEY("indigenousPeopleAndLocalCommunityOrigin_id") REFERENCES "IplcOrigin" (id), 
 	FOREIGN KEY("recombinantPartIdentification_id") REFERENCES "RecombinantPartIdentification" (id)
 );
 CREATE TABLE "ContactPoint" (
@@ -2106,7 +2135,7 @@ CREATE TABLE "ContactPoint" (
 	"addressLocality" TEXT, 
 	"addressRegion" TEXT, 
 	"postalCode" TEXT, 
-	"oRCIDiD" TEXT, 
+	"orcidId" TEXT, 
 	"addressCountry_id" INTEGER, 
 	PRIMARY KEY (id), 
 	FOREIGN KEY("addressCountry_id") REFERENCES "Country" (id)
@@ -2213,7 +2242,7 @@ CREATE TABLE "PersonOrOrganization" (
 );
 CREATE TABLE "Person" (
 	id INTEGER NOT NULL, 
-	"oRCIDiD" TEXT, 
+	"orcidId" TEXT, 
 	name TEXT NOT NULL, 
 	description TEXT, 
 	"homePage" TEXT, 
@@ -2225,7 +2254,7 @@ CREATE TABLE "Person" (
 );
 CREATE TABLE "Organization" (
 	id INTEGER NOT NULL, 
-	"rORiD" TEXT, 
+	"rorId" TEXT, 
 	name TEXT NOT NULL, 
 	description TEXT, 
 	"homePage" TEXT, 
@@ -2237,9 +2266,9 @@ CREATE TABLE "Organization" (
 	FOREIGN KEY("contactPoint_id") REFERENCES "ContactPoint" (id), 
 	FOREIGN KEY(logo_id) REFERENCES "Image" (id)
 );
-CREATE TABLE "RI" (
+CREATE TABLE "ReasearchInfrastructure" (
 	id INTEGER NOT NULL, 
-	"rORiD" TEXT, 
+	"rorId" TEXT, 
 	name TEXT NOT NULL, 
 	description TEXT, 
 	"homePage" TEXT, 
@@ -2253,7 +2282,7 @@ CREATE TABLE "RI" (
 );
 CREATE TABLE "Provider" (
 	id INTEGER NOT NULL, 
-	"rORiD" TEXT, 
+	"rorId" TEXT, 
 	name TEXT NOT NULL, 
 	description TEXT, 
 	"homePage" TEXT, 
@@ -2292,9 +2321,9 @@ CREATE TABLE "MSDS" (
 	"transportInformation" TEXT, 
 	"regulatoryInformation" TEXT, 
 	"furtherInformation" TEXT, 
-	"msdsContact_id" INTEGER NOT NULL, 
+	"materialSafetyContact_id" INTEGER NOT NULL, 
 	PRIMARY KEY (id), 
-	FOREIGN KEY("msdsContact_id") REFERENCES "ContactPoint" (id)
+	FOREIGN KEY("materialSafetyContact_id") REFERENCES "ContactPoint" (id)
 );
 CREATE TABLE "Taxonomy_taxon" (
 	"Taxonomy_id" INTEGER, 
@@ -2326,19 +2355,20 @@ CREATE TABLE "Taxon_externalEquivalentTaxon" (
 );
 CREATE TABLE "ProductOrService" (
 	id INTEGER NOT NULL, 
-	"accessPointURL" TEXT NOT NULL, 
-	"refSKU" TEXT NOT NULL, 
+	"accessPointUrl" TEXT NOT NULL, 
+	"refSku" TEXT NOT NULL, 
 	"unitDefinition" TEXT, 
 	"unitCost" TEXT NOT NULL, 
 	"qualityGrading" TEXT, 
 	"biosafetyRestrictions" TEXT, 
-	"canItBeUsedToProduceGMO" BOOLEAN NOT NULL, 
+	"canBeUsedToProduceGmo" BOOLEAN NOT NULL, 
 	availability TEXT NOT NULL, 
 	"technicalRecommendation" TEXT, 
 	"internalReference" TEXT, 
 	note TEXT, 
 	title TEXT NOT NULL, 
 	description TEXT NOT NULL, 
+	version TEXT, 
 	category_id INTEGER NOT NULL, 
 	"riskGroup_id" INTEGER, 
 	provider_id INTEGER NOT NULL, 
@@ -2353,19 +2383,20 @@ CREATE TABLE "Service" (
 	id INTEGER NOT NULL, 
 	"modelSpecies" TEXT, 
 	"modelType" TEXT, 
-	"accessPointURL" TEXT NOT NULL, 
-	"refSKU" TEXT NOT NULL, 
+	"accessPointUrl" TEXT NOT NULL, 
+	"refSku" TEXT NOT NULL, 
 	"unitDefinition" TEXT, 
 	"unitCost" TEXT NOT NULL, 
 	"qualityGrading" TEXT, 
 	"biosafetyRestrictions" TEXT, 
-	"canItBeUsedToProduceGMO" BOOLEAN NOT NULL, 
+	"canBeUsedToProduceGmo" BOOLEAN NOT NULL, 
 	availability TEXT NOT NULL, 
 	"technicalRecommendation" TEXT, 
 	"internalReference" TEXT, 
 	note TEXT, 
 	title TEXT NOT NULL, 
 	description TEXT NOT NULL, 
+	version TEXT, 
 	category_id INTEGER NOT NULL, 
 	"riskGroup_id" INTEGER, 
 	provider_id INTEGER NOT NULL, 
@@ -2382,20 +2413,21 @@ CREATE TABLE "Product" (
 	"storageConditions" TEXT NOT NULL, 
 	"thirdPartyDistributionConsent" BOOLEAN, 
 	"usageRestrictions" TEXT, 
-	"accessPointURL" TEXT NOT NULL, 
-	"refSKU" TEXT NOT NULL, 
+	"accessPointUrl" TEXT NOT NULL, 
+	"refSku" TEXT NOT NULL, 
 	"unitDefinition" TEXT, 
 	"unitCost" TEXT NOT NULL, 
 	"qualityGrading" TEXT, 
 	"biosafetyRestrictions" TEXT, 
-	"canItBeUsedToProduceGMO" BOOLEAN NOT NULL, 
+	"canBeUsedToProduceGmo" BOOLEAN NOT NULL, 
 	availability TEXT NOT NULL, 
 	"technicalRecommendation" TEXT, 
 	"internalReference" TEXT, 
 	note TEXT, 
 	title TEXT NOT NULL, 
 	description TEXT NOT NULL, 
-	"hasIATAClassification_id" INTEGER NOT NULL, 
+	version TEXT, 
+	"iataClassification_id" INTEGER NOT NULL, 
 	"materialSafetyDataSheet_id" INTEGER, 
 	originator_id INTEGER, 
 	category_id INTEGER NOT NULL, 
@@ -2403,8 +2435,8 @@ CREATE TABLE "Product" (
 	provider_id INTEGER NOT NULL, 
 	"contactPoint_id" INTEGER, 
 	PRIMARY KEY (id), 
-	FOREIGN KEY("hasIATAClassification_id") REFERENCES "IATAClassification" (id), 
-	FOREIGN KEY("materialSafetyDataSheet_id") REFERENCES "MSDS" (id), 
+	FOREIGN KEY("iataClassification_id") REFERENCES "IataClassification" (id), 
+	FOREIGN KEY("materialSafetyDataSheet_id") REFERENCES "ReasearchInfrastructure" (id), 
 	FOREIGN KEY(originator_id) REFERENCES "Originator" (id), 
 	FOREIGN KEY(category_id) REFERENCES "ProductCategory" (id), 
 	FOREIGN KEY("riskGroup_id") REFERENCES "RiskGroup" (id), 
@@ -2421,20 +2453,21 @@ CREATE TABLE "Antibody" (
 	"storageConditions" TEXT NOT NULL, 
 	"thirdPartyDistributionConsent" BOOLEAN, 
 	"usageRestrictions" TEXT, 
-	"accessPointURL" TEXT NOT NULL, 
-	"refSKU" TEXT NOT NULL, 
+	"accessPointUrl" TEXT NOT NULL, 
+	"refSku" TEXT NOT NULL, 
 	"unitDefinition" TEXT, 
 	"unitCost" TEXT NOT NULL, 
 	"qualityGrading" TEXT, 
 	"biosafetyRestrictions" TEXT, 
-	"canItBeUsedToProduceGMO" BOOLEAN NOT NULL, 
+	"canBeUsedToProduceGmo" BOOLEAN NOT NULL, 
 	availability TEXT NOT NULL, 
 	"technicalRecommendation" TEXT, 
 	"internalReference" TEXT, 
 	note TEXT, 
 	title TEXT NOT NULL, 
 	description TEXT NOT NULL, 
-	"hasIATAClassification_id" INTEGER NOT NULL, 
+	version TEXT, 
+	"iataClassification_id" INTEGER NOT NULL, 
 	"materialSafetyDataSheet_id" INTEGER, 
 	originator_id INTEGER, 
 	category_id INTEGER NOT NULL, 
@@ -2442,8 +2475,8 @@ CREATE TABLE "Antibody" (
 	provider_id INTEGER NOT NULL, 
 	"contactPoint_id" INTEGER, 
 	PRIMARY KEY (id), 
-	FOREIGN KEY("hasIATAClassification_id") REFERENCES "IATAClassification" (id), 
-	FOREIGN KEY("materialSafetyDataSheet_id") REFERENCES "MSDS" (id), 
+	FOREIGN KEY("iataClassification_id") REFERENCES "IataClassification" (id), 
+	FOREIGN KEY("materialSafetyDataSheet_id") REFERENCES "ReasearchInfrastructure" (id), 
 	FOREIGN KEY(originator_id) REFERENCES "Originator" (id), 
 	FOREIGN KEY(category_id) REFERENCES "ProductCategory" (id), 
 	FOREIGN KEY("riskGroup_id") REFERENCES "RiskGroup" (id), 
@@ -2461,20 +2494,21 @@ CREATE TABLE "Hybridoma" (
 	"storageConditions" TEXT NOT NULL, 
 	"thirdPartyDistributionConsent" BOOLEAN, 
 	"usageRestrictions" TEXT, 
-	"accessPointURL" TEXT NOT NULL, 
-	"refSKU" TEXT NOT NULL, 
+	"accessPointUrl" TEXT NOT NULL, 
+	"refSku" TEXT NOT NULL, 
 	"unitDefinition" TEXT, 
 	"unitCost" TEXT NOT NULL, 
 	"qualityGrading" TEXT, 
 	"biosafetyRestrictions" TEXT, 
-	"canItBeUsedToProduceGMO" BOOLEAN NOT NULL, 
+	"canBeUsedToProduceGmo" BOOLEAN NOT NULL, 
 	availability TEXT NOT NULL, 
 	"technicalRecommendation" TEXT, 
 	"internalReference" TEXT, 
 	note TEXT, 
 	title TEXT NOT NULL, 
 	description TEXT NOT NULL, 
-	"hasIATAClassification_id" INTEGER NOT NULL, 
+	version TEXT, 
+	"iataClassification_id" INTEGER NOT NULL, 
 	"materialSafetyDataSheet_id" INTEGER, 
 	originator_id INTEGER, 
 	category_id INTEGER NOT NULL, 
@@ -2482,8 +2516,8 @@ CREATE TABLE "Hybridoma" (
 	provider_id INTEGER NOT NULL, 
 	"contactPoint_id" INTEGER, 
 	PRIMARY KEY (id), 
-	FOREIGN KEY("hasIATAClassification_id") REFERENCES "IATAClassification" (id), 
-	FOREIGN KEY("materialSafetyDataSheet_id") REFERENCES "MSDS" (id), 
+	FOREIGN KEY("iataClassification_id") REFERENCES "IataClassification" (id), 
+	FOREIGN KEY("materialSafetyDataSheet_id") REFERENCES "ReasearchInfrastructure" (id), 
 	FOREIGN KEY(originator_id) REFERENCES "Originator" (id), 
 	FOREIGN KEY(category_id) REFERENCES "ProductCategory" (id), 
 	FOREIGN KEY("riskGroup_id") REFERENCES "RiskGroup" (id), 
@@ -2496,21 +2530,22 @@ CREATE TABLE "Protein" (
 	"storageConditions" TEXT NOT NULL, 
 	"thirdPartyDistributionConsent" BOOLEAN, 
 	"usageRestrictions" TEXT, 
-	"accessPointURL" TEXT NOT NULL, 
-	"refSKU" TEXT NOT NULL, 
+	"accessPointUrl" TEXT NOT NULL, 
+	"refSku" TEXT NOT NULL, 
 	"unitDefinition" TEXT, 
 	"unitCost" TEXT NOT NULL, 
 	"qualityGrading" TEXT, 
 	"biosafetyRestrictions" TEXT, 
-	"canItBeUsedToProduceGMO" BOOLEAN NOT NULL, 
+	"canBeUsedToProduceGmo" BOOLEAN NOT NULL, 
 	availability TEXT NOT NULL, 
 	"technicalRecommendation" TEXT, 
 	"internalReference" TEXT, 
 	note TEXT, 
 	title TEXT NOT NULL, 
 	description TEXT NOT NULL, 
+	version TEXT, 
 	"biologicalMaterialOrigin_id" INTEGER NOT NULL, 
-	"hasIATAClassification_id" INTEGER NOT NULL, 
+	"iataClassification_id" INTEGER NOT NULL, 
 	"materialSafetyDataSheet_id" INTEGER, 
 	originator_id INTEGER, 
 	category_id INTEGER NOT NULL, 
@@ -2519,8 +2554,8 @@ CREATE TABLE "Protein" (
 	"contactPoint_id" INTEGER, 
 	PRIMARY KEY (id), 
 	FOREIGN KEY("biologicalMaterialOrigin_id") REFERENCES "BiologicalMaterialOrigin" (id), 
-	FOREIGN KEY("hasIATAClassification_id") REFERENCES "IATAClassification" (id), 
-	FOREIGN KEY("materialSafetyDataSheet_id") REFERENCES "MSDS" (id), 
+	FOREIGN KEY("iataClassification_id") REFERENCES "IataClassification" (id), 
+	FOREIGN KEY("materialSafetyDataSheet_id") REFERENCES "ReasearchInfrastructure" (id), 
 	FOREIGN KEY(originator_id) REFERENCES "Originator" (id), 
 	FOREIGN KEY(category_id) REFERENCES "ProductCategory" (id), 
 	FOREIGN KEY("riskGroup_id") REFERENCES "RiskGroup" (id), 
@@ -2529,7 +2564,7 @@ CREATE TABLE "Protein" (
 );
 CREATE TABLE "NucleicAcid" (
 	id INTEGER NOT NULL, 
-	"isItAClonedNucleicAcid" BOOLEAN NOT NULL, 
+	"clonedNucleicAcid" BOOLEAN NOT NULL, 
 	"regionEncompassedInThisProduct" TEXT NOT NULL, 
 	"mutationObserved" BOOLEAN NOT NULL, 
 	"observedMutations" TEXT, 
@@ -2541,23 +2576,24 @@ CREATE TABLE "NucleicAcid" (
 	"storageConditions" TEXT NOT NULL, 
 	"thirdPartyDistributionConsent" BOOLEAN, 
 	"usageRestrictions" TEXT, 
-	"accessPointURL" TEXT NOT NULL, 
-	"refSKU" TEXT NOT NULL, 
+	"accessPointUrl" TEXT NOT NULL, 
+	"refSku" TEXT NOT NULL, 
 	"unitDefinition" TEXT, 
 	"unitCost" TEXT NOT NULL, 
 	"qualityGrading" TEXT, 
 	"biosafetyRestrictions" TEXT, 
-	"canItBeUsedToProduceGMO" BOOLEAN NOT NULL, 
+	"canBeUsedToProduceGmo" BOOLEAN NOT NULL, 
 	availability TEXT NOT NULL, 
 	"technicalRecommendation" TEXT, 
 	"internalReference" TEXT, 
 	note TEXT, 
 	title TEXT NOT NULL, 
 	description TEXT NOT NULL, 
+	version TEXT, 
 	"biologicalMaterialOrigin_id" INTEGER NOT NULL, 
 	"clonedIntoPlasmid_id" INTEGER, 
-	"hasTAG_id" INTEGER NOT NULL, 
-	"hasIATAClassification_id" INTEGER NOT NULL, 
+	"proteinTag_id" INTEGER NOT NULL, 
+	"iataClassification_id" INTEGER NOT NULL, 
 	"materialSafetyDataSheet_id" INTEGER, 
 	originator_id INTEGER, 
 	category_id INTEGER NOT NULL, 
@@ -2567,9 +2603,9 @@ CREATE TABLE "NucleicAcid" (
 	PRIMARY KEY (id), 
 	FOREIGN KEY("biologicalMaterialOrigin_id") REFERENCES "BiologicalMaterialOrigin" (id), 
 	FOREIGN KEY("clonedIntoPlasmid_id") REFERENCES "ExpressionVector" (id), 
-	FOREIGN KEY("hasTAG_id") REFERENCES "ProteinTag" (id), 
-	FOREIGN KEY("hasIATAClassification_id") REFERENCES "IATAClassification" (id), 
-	FOREIGN KEY("materialSafetyDataSheet_id") REFERENCES "MSDS" (id), 
+	FOREIGN KEY("proteinTag_id") REFERENCES "ProteinTag" (id), 
+	FOREIGN KEY("iataClassification_id") REFERENCES "IataClassification" (id), 
+	FOREIGN KEY("materialSafetyDataSheet_id") REFERENCES "ReasearchInfrastructure" (id), 
 	FOREIGN KEY(originator_id) REFERENCES "Originator" (id), 
 	FOREIGN KEY(category_id) REFERENCES "ProductCategory" (id), 
 	FOREIGN KEY("riskGroup_id") REFERENCES "RiskGroup" (id), 
@@ -2585,20 +2621,21 @@ CREATE TABLE "DetectionKit" (
 	"storageConditions" TEXT NOT NULL, 
 	"thirdPartyDistributionConsent" BOOLEAN, 
 	"usageRestrictions" TEXT, 
-	"accessPointURL" TEXT NOT NULL, 
-	"refSKU" TEXT NOT NULL, 
+	"accessPointUrl" TEXT NOT NULL, 
+	"refSku" TEXT NOT NULL, 
 	"unitDefinition" TEXT, 
 	"unitCost" TEXT NOT NULL, 
 	"qualityGrading" TEXT, 
 	"biosafetyRestrictions" TEXT, 
-	"canItBeUsedToProduceGMO" BOOLEAN NOT NULL, 
+	"canBeUsedToProduceGmo" BOOLEAN NOT NULL, 
 	availability TEXT NOT NULL, 
 	"technicalRecommendation" TEXT, 
 	"internalReference" TEXT, 
 	note TEXT, 
 	title TEXT NOT NULL, 
 	description TEXT NOT NULL, 
-	"hasIATAClassification_id" INTEGER NOT NULL, 
+	version TEXT, 
+	"iataClassification_id" INTEGER NOT NULL, 
 	"materialSafetyDataSheet_id" INTEGER, 
 	originator_id INTEGER, 
 	category_id INTEGER NOT NULL, 
@@ -2606,8 +2643,8 @@ CREATE TABLE "DetectionKit" (
 	provider_id INTEGER NOT NULL, 
 	"contactPoint_id" INTEGER, 
 	PRIMARY KEY (id), 
-	FOREIGN KEY("hasIATAClassification_id") REFERENCES "IATAClassification" (id), 
-	FOREIGN KEY("materialSafetyDataSheet_id") REFERENCES "MSDS" (id), 
+	FOREIGN KEY("iataClassification_id") REFERENCES "IataClassification" (id), 
+	FOREIGN KEY("materialSafetyDataSheet_id") REFERENCES "ReasearchInfrastructure" (id), 
 	FOREIGN KEY(originator_id) REFERENCES "Originator" (id), 
 	FOREIGN KEY(category_id) REFERENCES "ProductCategory" (id), 
 	FOREIGN KEY("riskGroup_id") REFERENCES "RiskGroup" (id), 
@@ -2620,20 +2657,21 @@ CREATE TABLE "Bundle" (
 	"storageConditions" TEXT NOT NULL, 
 	"thirdPartyDistributionConsent" BOOLEAN, 
 	"usageRestrictions" TEXT, 
-	"accessPointURL" TEXT NOT NULL, 
-	"refSKU" TEXT NOT NULL, 
+	"accessPointUrl" TEXT NOT NULL, 
+	"refSku" TEXT NOT NULL, 
 	"unitDefinition" TEXT, 
 	"unitCost" TEXT NOT NULL, 
 	"qualityGrading" TEXT, 
 	"biosafetyRestrictions" TEXT, 
-	"canItBeUsedToProduceGMO" BOOLEAN NOT NULL, 
+	"canBeUsedToProduceGmo" BOOLEAN NOT NULL, 
 	availability TEXT NOT NULL, 
 	"technicalRecommendation" TEXT, 
 	"internalReference" TEXT, 
 	note TEXT, 
 	title TEXT NOT NULL, 
 	description TEXT NOT NULL, 
-	"hasIATAClassification_id" INTEGER NOT NULL, 
+	version TEXT, 
+	"iataClassification_id" INTEGER NOT NULL, 
 	"materialSafetyDataSheet_id" INTEGER, 
 	originator_id INTEGER, 
 	category_id INTEGER NOT NULL, 
@@ -2641,8 +2679,8 @@ CREATE TABLE "Bundle" (
 	provider_id INTEGER NOT NULL, 
 	"contactPoint_id" INTEGER, 
 	PRIMARY KEY (id), 
-	FOREIGN KEY("hasIATAClassification_id") REFERENCES "IATAClassification" (id), 
-	FOREIGN KEY("materialSafetyDataSheet_id") REFERENCES "MSDS" (id), 
+	FOREIGN KEY("iataClassification_id") REFERENCES "IataClassification" (id), 
+	FOREIGN KEY("materialSafetyDataSheet_id") REFERENCES "ReasearchInfrastructure" (id), 
 	FOREIGN KEY(originator_id) REFERENCES "Originator" (id), 
 	FOREIGN KEY(category_id) REFERENCES "ProductCategory" (id), 
 	FOREIGN KEY("riskGroup_id") REFERENCES "RiskGroup" (id), 
@@ -2666,21 +2704,22 @@ CREATE TABLE "Pathogen" (
 	"storageConditions" TEXT NOT NULL, 
 	"thirdPartyDistributionConsent" BOOLEAN, 
 	"usageRestrictions" TEXT, 
-	"accessPointURL" TEXT NOT NULL, 
-	"refSKU" TEXT NOT NULL, 
+	"accessPointUrl" TEXT NOT NULL, 
+	"refSku" TEXT NOT NULL, 
 	"unitDefinition" TEXT, 
 	"unitCost" TEXT NOT NULL, 
 	"qualityGrading" TEXT, 
 	"biosafetyRestrictions" TEXT, 
-	"canItBeUsedToProduceGMO" BOOLEAN NOT NULL, 
+	"canBeUsedToProduceGmo" BOOLEAN NOT NULL, 
 	availability TEXT NOT NULL, 
 	"technicalRecommendation" TEXT, 
 	"internalReference" TEXT, 
 	note TEXT, 
 	title TEXT NOT NULL, 
 	description TEXT NOT NULL, 
+	version TEXT, 
 	"biologicalMaterialOrigin_id" INTEGER NOT NULL, 
-	"hasIATAClassification_id" INTEGER NOT NULL, 
+	"iataClassification_id" INTEGER NOT NULL, 
 	"materialSafetyDataSheet_id" INTEGER, 
 	originator_id INTEGER, 
 	category_id INTEGER NOT NULL, 
@@ -2689,8 +2728,8 @@ CREATE TABLE "Pathogen" (
 	"contactPoint_id" INTEGER, 
 	PRIMARY KEY (id), 
 	FOREIGN KEY("biologicalMaterialOrigin_id") REFERENCES "BiologicalMaterialOrigin" (id), 
-	FOREIGN KEY("hasIATAClassification_id") REFERENCES "IATAClassification" (id), 
-	FOREIGN KEY("materialSafetyDataSheet_id") REFERENCES "MSDS" (id), 
+	FOREIGN KEY("iataClassification_id") REFERENCES "IataClassification" (id), 
+	FOREIGN KEY("materialSafetyDataSheet_id") REFERENCES "ReasearchInfrastructure" (id), 
 	FOREIGN KEY(originator_id) REFERENCES "Originator" (id), 
 	FOREIGN KEY(category_id) REFERENCES "ProductCategory" (id), 
 	FOREIGN KEY("riskGroup_id") REFERENCES "RiskGroup" (id), 
@@ -2716,21 +2755,22 @@ CREATE TABLE "Virus" (
 	"storageConditions" TEXT NOT NULL, 
 	"thirdPartyDistributionConsent" BOOLEAN, 
 	"usageRestrictions" TEXT, 
-	"accessPointURL" TEXT NOT NULL, 
-	"refSKU" TEXT NOT NULL, 
+	"accessPointUrl" TEXT NOT NULL, 
+	"refSku" TEXT NOT NULL, 
 	"unitDefinition" TEXT, 
 	"unitCost" TEXT NOT NULL, 
 	"qualityGrading" TEXT, 
 	"biosafetyRestrictions" TEXT, 
-	"canItBeUsedToProduceGMO" BOOLEAN NOT NULL, 
+	"canBeUsedToProduceGmo" BOOLEAN NOT NULL, 
 	availability TEXT NOT NULL, 
 	"technicalRecommendation" TEXT, 
 	"internalReference" TEXT, 
 	note TEXT, 
 	title TEXT NOT NULL, 
 	description TEXT NOT NULL, 
+	version TEXT, 
 	"biologicalMaterialOrigin_id" INTEGER NOT NULL, 
-	"hasIATAClassification_id" INTEGER NOT NULL, 
+	"iataClassification_id" INTEGER NOT NULL, 
 	"materialSafetyDataSheet_id" INTEGER, 
 	originator_id INTEGER, 
 	category_id INTEGER NOT NULL, 
@@ -2739,8 +2779,8 @@ CREATE TABLE "Virus" (
 	"contactPoint_id" INTEGER, 
 	PRIMARY KEY (id), 
 	FOREIGN KEY("biologicalMaterialOrigin_id") REFERENCES "BiologicalMaterialOrigin" (id), 
-	FOREIGN KEY("hasIATAClassification_id") REFERENCES "IATAClassification" (id), 
-	FOREIGN KEY("materialSafetyDataSheet_id") REFERENCES "MSDS" (id), 
+	FOREIGN KEY("iataClassification_id") REFERENCES "IataClassification" (id), 
+	FOREIGN KEY("materialSafetyDataSheet_id") REFERENCES "ReasearchInfrastructure" (id), 
 	FOREIGN KEY(originator_id) REFERENCES "Originator" (id), 
 	FOREIGN KEY(category_id) REFERENCES "ProductCategory" (id), 
 	FOREIGN KEY("riskGroup_id") REFERENCES "RiskGroup" (id), 
@@ -2764,21 +2804,22 @@ CREATE TABLE "Bacterium" (
 	"storageConditions" TEXT NOT NULL, 
 	"thirdPartyDistributionConsent" BOOLEAN, 
 	"usageRestrictions" TEXT, 
-	"accessPointURL" TEXT NOT NULL, 
-	"refSKU" TEXT NOT NULL, 
+	"accessPointUrl" TEXT NOT NULL, 
+	"refSku" TEXT NOT NULL, 
 	"unitDefinition" TEXT, 
 	"unitCost" TEXT NOT NULL, 
 	"qualityGrading" TEXT, 
 	"biosafetyRestrictions" TEXT, 
-	"canItBeUsedToProduceGMO" BOOLEAN NOT NULL, 
+	"canBeUsedToProduceGmo" BOOLEAN NOT NULL, 
 	availability TEXT NOT NULL, 
 	"technicalRecommendation" TEXT, 
 	"internalReference" TEXT, 
 	note TEXT, 
 	title TEXT NOT NULL, 
 	description TEXT NOT NULL, 
+	version TEXT, 
 	"biologicalMaterialOrigin_id" INTEGER NOT NULL, 
-	"hasIATAClassification_id" INTEGER NOT NULL, 
+	"iataClassification_id" INTEGER NOT NULL, 
 	"materialSafetyDataSheet_id" INTEGER, 
 	originator_id INTEGER, 
 	category_id INTEGER NOT NULL, 
@@ -2787,8 +2828,8 @@ CREATE TABLE "Bacterium" (
 	"contactPoint_id" INTEGER, 
 	PRIMARY KEY (id), 
 	FOREIGN KEY("biologicalMaterialOrigin_id") REFERENCES "BiologicalMaterialOrigin" (id), 
-	FOREIGN KEY("hasIATAClassification_id") REFERENCES "IATAClassification" (id), 
-	FOREIGN KEY("materialSafetyDataSheet_id") REFERENCES "MSDS" (id), 
+	FOREIGN KEY("iataClassification_id") REFERENCES "IataClassification" (id), 
+	FOREIGN KEY("materialSafetyDataSheet_id") REFERENCES "ReasearchInfrastructure" (id), 
 	FOREIGN KEY(originator_id) REFERENCES "Originator" (id), 
 	FOREIGN KEY(category_id) REFERENCES "ProductCategory" (id), 
 	FOREIGN KEY("riskGroup_id") REFERENCES "RiskGroup" (id), 
@@ -2812,21 +2853,22 @@ CREATE TABLE "Fungus" (
 	"storageConditions" TEXT NOT NULL, 
 	"thirdPartyDistributionConsent" BOOLEAN, 
 	"usageRestrictions" TEXT, 
-	"accessPointURL" TEXT NOT NULL, 
-	"refSKU" TEXT NOT NULL, 
+	"accessPointUrl" TEXT NOT NULL, 
+	"refSku" TEXT NOT NULL, 
 	"unitDefinition" TEXT, 
 	"unitCost" TEXT NOT NULL, 
 	"qualityGrading" TEXT, 
 	"biosafetyRestrictions" TEXT, 
-	"canItBeUsedToProduceGMO" BOOLEAN NOT NULL, 
+	"canBeUsedToProduceGmo" BOOLEAN NOT NULL, 
 	availability TEXT NOT NULL, 
 	"technicalRecommendation" TEXT, 
 	"internalReference" TEXT, 
 	note TEXT, 
 	title TEXT NOT NULL, 
 	description TEXT NOT NULL, 
+	version TEXT, 
 	"biologicalMaterialOrigin_id" INTEGER NOT NULL, 
-	"hasIATAClassification_id" INTEGER NOT NULL, 
+	"iataClassification_id" INTEGER NOT NULL, 
 	"materialSafetyDataSheet_id" INTEGER, 
 	originator_id INTEGER, 
 	category_id INTEGER NOT NULL, 
@@ -2835,8 +2877,8 @@ CREATE TABLE "Fungus" (
 	"contactPoint_id" INTEGER, 
 	PRIMARY KEY (id), 
 	FOREIGN KEY("biologicalMaterialOrigin_id") REFERENCES "BiologicalMaterialOrigin" (id), 
-	FOREIGN KEY("hasIATAClassification_id") REFERENCES "IATAClassification" (id), 
-	FOREIGN KEY("materialSafetyDataSheet_id") REFERENCES "MSDS" (id), 
+	FOREIGN KEY("iataClassification_id") REFERENCES "IataClassification" (id), 
+	FOREIGN KEY("materialSafetyDataSheet_id") REFERENCES "ReasearchInfrastructure" (id), 
 	FOREIGN KEY(originator_id) REFERENCES "Originator" (id), 
 	FOREIGN KEY(category_id) REFERENCES "ProductCategory" (id), 
 	FOREIGN KEY("riskGroup_id") REFERENCES "RiskGroup" (id), 
@@ -2860,21 +2902,22 @@ CREATE TABLE "Protozoan" (
 	"storageConditions" TEXT NOT NULL, 
 	"thirdPartyDistributionConsent" BOOLEAN, 
 	"usageRestrictions" TEXT, 
-	"accessPointURL" TEXT NOT NULL, 
-	"refSKU" TEXT NOT NULL, 
+	"accessPointUrl" TEXT NOT NULL, 
+	"refSku" TEXT NOT NULL, 
 	"unitDefinition" TEXT, 
 	"unitCost" TEXT NOT NULL, 
 	"qualityGrading" TEXT, 
 	"biosafetyRestrictions" TEXT, 
-	"canItBeUsedToProduceGMO" BOOLEAN NOT NULL, 
+	"canBeUsedToProduceGmo" BOOLEAN NOT NULL, 
 	availability TEXT NOT NULL, 
 	"technicalRecommendation" TEXT, 
 	"internalReference" TEXT, 
 	note TEXT, 
 	title TEXT NOT NULL, 
 	description TEXT NOT NULL, 
+	version TEXT, 
 	"biologicalMaterialOrigin_id" INTEGER NOT NULL, 
-	"hasIATAClassification_id" INTEGER NOT NULL, 
+	"iataClassification_id" INTEGER NOT NULL, 
 	"materialSafetyDataSheet_id" INTEGER, 
 	originator_id INTEGER, 
 	category_id INTEGER NOT NULL, 
@@ -2883,8 +2926,8 @@ CREATE TABLE "Protozoan" (
 	"contactPoint_id" INTEGER, 
 	PRIMARY KEY (id), 
 	FOREIGN KEY("biologicalMaterialOrigin_id") REFERENCES "BiologicalMaterialOrigin" (id), 
-	FOREIGN KEY("hasIATAClassification_id") REFERENCES "IATAClassification" (id), 
-	FOREIGN KEY("materialSafetyDataSheet_id") REFERENCES "MSDS" (id), 
+	FOREIGN KEY("iataClassification_id") REFERENCES "IataClassification" (id), 
+	FOREIGN KEY("materialSafetyDataSheet_id") REFERENCES "ReasearchInfrastructure" (id), 
 	FOREIGN KEY(originator_id) REFERENCES "Originator" (id), 
 	FOREIGN KEY(category_id) REFERENCES "ProductCategory" (id), 
 	FOREIGN KEY("riskGroup_id") REFERENCES "RiskGroup" (id), 
@@ -2908,21 +2951,22 @@ CREATE TABLE "Viroid" (
 	"storageConditions" TEXT NOT NULL, 
 	"thirdPartyDistributionConsent" BOOLEAN, 
 	"usageRestrictions" TEXT, 
-	"accessPointURL" TEXT NOT NULL, 
-	"refSKU" TEXT NOT NULL, 
+	"accessPointUrl" TEXT NOT NULL, 
+	"refSku" TEXT NOT NULL, 
 	"unitDefinition" TEXT, 
 	"unitCost" TEXT NOT NULL, 
 	"qualityGrading" TEXT, 
 	"biosafetyRestrictions" TEXT, 
-	"canItBeUsedToProduceGMO" BOOLEAN NOT NULL, 
+	"canBeUsedToProduceGmo" BOOLEAN NOT NULL, 
 	availability TEXT NOT NULL, 
 	"technicalRecommendation" TEXT, 
 	"internalReference" TEXT, 
 	note TEXT, 
 	title TEXT NOT NULL, 
 	description TEXT NOT NULL, 
+	version TEXT, 
 	"biologicalMaterialOrigin_id" INTEGER NOT NULL, 
-	"hasIATAClassification_id" INTEGER NOT NULL, 
+	"iataClassification_id" INTEGER NOT NULL, 
 	"materialSafetyDataSheet_id" INTEGER, 
 	originator_id INTEGER, 
 	category_id INTEGER NOT NULL, 
@@ -2931,8 +2975,8 @@ CREATE TABLE "Viroid" (
 	"contactPoint_id" INTEGER, 
 	PRIMARY KEY (id), 
 	FOREIGN KEY("biologicalMaterialOrigin_id") REFERENCES "BiologicalMaterialOrigin" (id), 
-	FOREIGN KEY("hasIATAClassification_id") REFERENCES "IATAClassification" (id), 
-	FOREIGN KEY("materialSafetyDataSheet_id") REFERENCES "MSDS" (id), 
+	FOREIGN KEY("iataClassification_id") REFERENCES "IataClassification" (id), 
+	FOREIGN KEY("materialSafetyDataSheet_id") REFERENCES "ReasearchInfrastructure" (id), 
 	FOREIGN KEY(originator_id) REFERENCES "Originator" (id), 
 	FOREIGN KEY(category_id) REFERENCES "ProductCategory" (id), 
 	FOREIGN KEY("riskGroup_id") REFERENCES "RiskGroup" (id), 
@@ -2956,21 +3000,22 @@ CREATE TABLE "Prion" (
 	"storageConditions" TEXT NOT NULL, 
 	"thirdPartyDistributionConsent" BOOLEAN, 
 	"usageRestrictions" TEXT, 
-	"accessPointURL" TEXT NOT NULL, 
-	"refSKU" TEXT NOT NULL, 
+	"accessPointUrl" TEXT NOT NULL, 
+	"refSku" TEXT NOT NULL, 
 	"unitDefinition" TEXT, 
 	"unitCost" TEXT NOT NULL, 
 	"qualityGrading" TEXT, 
 	"biosafetyRestrictions" TEXT, 
-	"canItBeUsedToProduceGMO" BOOLEAN NOT NULL, 
+	"canBeUsedToProduceGmo" BOOLEAN NOT NULL, 
 	availability TEXT NOT NULL, 
 	"technicalRecommendation" TEXT, 
 	"internalReference" TEXT, 
 	note TEXT, 
 	title TEXT NOT NULL, 
 	description TEXT NOT NULL, 
+	version TEXT, 
 	"biologicalMaterialOrigin_id" INTEGER NOT NULL, 
-	"hasIATAClassification_id" INTEGER NOT NULL, 
+	"iataClassification_id" INTEGER NOT NULL, 
 	"materialSafetyDataSheet_id" INTEGER, 
 	originator_id INTEGER, 
 	category_id INTEGER NOT NULL, 
@@ -2979,8 +3024,8 @@ CREATE TABLE "Prion" (
 	"contactPoint_id" INTEGER, 
 	PRIMARY KEY (id), 
 	FOREIGN KEY("biologicalMaterialOrigin_id") REFERENCES "BiologicalMaterialOrigin" (id), 
-	FOREIGN KEY("hasIATAClassification_id") REFERENCES "IATAClassification" (id), 
-	FOREIGN KEY("materialSafetyDataSheet_id") REFERENCES "MSDS" (id), 
+	FOREIGN KEY("iataClassification_id") REFERENCES "IataClassification" (id), 
+	FOREIGN KEY("materialSafetyDataSheet_id") REFERENCES "ReasearchInfrastructure" (id), 
 	FOREIGN KEY(originator_id) REFERENCES "Originator" (id), 
 	FOREIGN KEY(category_id) REFERENCES "ProductCategory" (id), 
 	FOREIGN KEY("riskGroup_id") REFERENCES "RiskGroup" (id), 
@@ -3000,19 +3045,19 @@ CREATE TABLE "Organization_alternateName" (
 	FOREIGN KEY("Organization_id") REFERENCES "Organization" (id), 
 	FOREIGN KEY("alternateName_id") REFERENCES "AlternateName" (id)
 );
-CREATE TABLE "RI_alternateName" (
-	"RI_id" INTEGER, 
+CREATE TABLE "ReasearchInfrastructure_alternateName" (
+	"ReasearchInfrastructure_id" INTEGER, 
 	"alternateName_id" INTEGER, 
-	PRIMARY KEY ("RI_id", "alternateName_id"), 
-	FOREIGN KEY("RI_id") REFERENCES "RI" (id), 
+	PRIMARY KEY ("ReasearchInfrastructure_id", "alternateName_id"), 
+	FOREIGN KEY("ReasearchInfrastructure_id") REFERENCES "ReasearchInfrastructure" (id), 
 	FOREIGN KEY("alternateName_id") REFERENCES "AlternateName" (id)
 );
-CREATE TABLE "Provider_memberOfRI" (
+CREATE TABLE "Provider_memberOfRi" (
 	"Provider_id" INTEGER, 
-	"memberOfRI_id" INTEGER, 
-	PRIMARY KEY ("Provider_id", "memberOfRI_id"), 
+	"memberOfRi_id" INTEGER, 
+	PRIMARY KEY ("Provider_id", "memberOfRi_id"), 
 	FOREIGN KEY("Provider_id") REFERENCES "Provider" (id), 
-	FOREIGN KEY("memberOfRI_id") REFERENCES "RI" (id)
+	FOREIGN KEY("memberOfRi_id") REFERENCES "ReasearchInfrastructure" (id)
 );
 CREATE TABLE "Provider_alternateName" (
 	"Provider_id" INTEGER, 
@@ -3042,12 +3087,12 @@ CREATE TABLE "ProductOrService_pathogenIdentification" (
 	FOREIGN KEY("ProductOrService_id") REFERENCES "ProductOrService" (id), 
 	FOREIGN KEY("pathogenIdentification_id") REFERENCES "PathogenIdentification" (id)
 );
-CREATE TABLE "ProductOrService_relatedDOI" (
+CREATE TABLE "ProductOrService_doi" (
 	"ProductOrService_id" INTEGER, 
-	"relatedDOI_id" INTEGER, 
-	PRIMARY KEY ("ProductOrService_id", "relatedDOI_id"), 
+	doi_id INTEGER, 
+	PRIMARY KEY ("ProductOrService_id", doi_id), 
 	FOREIGN KEY("ProductOrService_id") REFERENCES "ProductOrService" (id), 
-	FOREIGN KEY("relatedDOI_id") REFERENCES "DOI" (id)
+	FOREIGN KEY(doi_id) REFERENCES "Doi" (id)
 );
 CREATE TABLE "ProductOrService_collection" (
 	"ProductOrService_id" INTEGER, 
@@ -3105,12 +3150,12 @@ CREATE TABLE "Service_pathogenIdentification" (
 	FOREIGN KEY("Service_id") REFERENCES "Service" (id), 
 	FOREIGN KEY("pathogenIdentification_id") REFERENCES "PathogenIdentification" (id)
 );
-CREATE TABLE "Service_relatedDOI" (
+CREATE TABLE "Service_doi" (
 	"Service_id" INTEGER, 
-	"relatedDOI_id" INTEGER, 
-	PRIMARY KEY ("Service_id", "relatedDOI_id"), 
+	doi_id INTEGER, 
+	PRIMARY KEY ("Service_id", doi_id), 
 	FOREIGN KEY("Service_id") REFERENCES "Service" (id), 
-	FOREIGN KEY("relatedDOI_id") REFERENCES "DOI" (id)
+	FOREIGN KEY(doi_id) REFERENCES "Doi" (id)
 );
 CREATE TABLE "Service_collection" (
 	"Service_id" INTEGER, 
@@ -3168,12 +3213,12 @@ CREATE TABLE "Product_pathogenIdentification" (
 	FOREIGN KEY("Product_id") REFERENCES "Product" (id), 
 	FOREIGN KEY("pathogenIdentification_id") REFERENCES "PathogenIdentification" (id)
 );
-CREATE TABLE "Product_relatedDOI" (
+CREATE TABLE "Product_doi" (
 	"Product_id" INTEGER, 
-	"relatedDOI_id" INTEGER, 
-	PRIMARY KEY ("Product_id", "relatedDOI_id"), 
+	doi_id INTEGER, 
+	PRIMARY KEY ("Product_id", doi_id), 
 	FOREIGN KEY("Product_id") REFERENCES "Product" (id), 
-	FOREIGN KEY("relatedDOI_id") REFERENCES "DOI" (id)
+	FOREIGN KEY(doi_id) REFERENCES "Doi" (id)
 );
 CREATE TABLE "Product_collection" (
 	"Product_id" INTEGER, 
@@ -3238,12 +3283,12 @@ CREATE TABLE "Antibody_pathogenIdentification" (
 	FOREIGN KEY("Antibody_id") REFERENCES "Antibody" (id), 
 	FOREIGN KEY("pathogenIdentification_id") REFERENCES "PathogenIdentification" (id)
 );
-CREATE TABLE "Antibody_relatedDOI" (
+CREATE TABLE "Antibody_doi" (
 	"Antibody_id" INTEGER, 
-	"relatedDOI_id" INTEGER, 
-	PRIMARY KEY ("Antibody_id", "relatedDOI_id"), 
+	doi_id INTEGER, 
+	PRIMARY KEY ("Antibody_id", doi_id), 
 	FOREIGN KEY("Antibody_id") REFERENCES "Antibody" (id), 
-	FOREIGN KEY("relatedDOI_id") REFERENCES "DOI" (id)
+	FOREIGN KEY(doi_id) REFERENCES "Doi" (id)
 );
 CREATE TABLE "Antibody_collection" (
 	"Antibody_id" INTEGER, 
@@ -3308,12 +3353,12 @@ CREATE TABLE "Hybridoma_pathogenIdentification" (
 	FOREIGN KEY("Hybridoma_id") REFERENCES "Hybridoma" (id), 
 	FOREIGN KEY("pathogenIdentification_id") REFERENCES "PathogenIdentification" (id)
 );
-CREATE TABLE "Hybridoma_relatedDOI" (
+CREATE TABLE "Hybridoma_doi" (
 	"Hybridoma_id" INTEGER, 
-	"relatedDOI_id" INTEGER, 
-	PRIMARY KEY ("Hybridoma_id", "relatedDOI_id"), 
+	doi_id INTEGER, 
+	PRIMARY KEY ("Hybridoma_id", doi_id), 
 	FOREIGN KEY("Hybridoma_id") REFERENCES "Hybridoma" (id), 
-	FOREIGN KEY("relatedDOI_id") REFERENCES "DOI" (id)
+	FOREIGN KEY(doi_id) REFERENCES "Doi" (id)
 );
 CREATE TABLE "Hybridoma_collection" (
 	"Hybridoma_id" INTEGER, 
@@ -3364,12 +3409,12 @@ CREATE TABLE "Protein_sequence" (
 	FOREIGN KEY("Protein_id") REFERENCES "Protein" (id), 
 	FOREIGN KEY(sequence_id) REFERENCES "Sequence" (id)
 );
-CREATE TABLE "Protein_relatedPDB" (
+CREATE TABLE "Protein_relatedPdb" (
 	"Protein_id" INTEGER, 
-	"relatedPDB_id" INTEGER, 
-	PRIMARY KEY ("Protein_id", "relatedPDB_id"), 
+	"relatedPdb_id" INTEGER, 
+	PRIMARY KEY ("Protein_id", "relatedPdb_id"), 
 	FOREIGN KEY("Protein_id") REFERENCES "Protein" (id), 
-	FOREIGN KEY("relatedPDB_id") REFERENCES "PDBReference" (id)
+	FOREIGN KEY("relatedPdb_id") REFERENCES "PdbReference" (id)
 );
 CREATE TABLE "Protein_specialFeature" (
 	"Protein_id" INTEGER, 
@@ -3378,12 +3423,12 @@ CREATE TABLE "Protein_specialFeature" (
 	FOREIGN KEY("Protein_id") REFERENCES "Protein" (id), 
 	FOREIGN KEY("specialFeature_id") REFERENCES "SpecialFeature" (id)
 );
-CREATE TABLE "Protein_proteinTAG" (
+CREATE TABLE "Protein_proteinTag" (
 	"Protein_id" INTEGER, 
-	"proteinTAG_id" INTEGER, 
-	PRIMARY KEY ("Protein_id", "proteinTAG_id"), 
+	"proteinTag_id" INTEGER, 
+	PRIMARY KEY ("Protein_id", "proteinTag_id"), 
 	FOREIGN KEY("Protein_id") REFERENCES "Protein" (id), 
-	FOREIGN KEY("proteinTAG_id") REFERENCES "ProteinTag" (id)
+	FOREIGN KEY("proteinTag_id") REFERENCES "ProteinTag" (id)
 );
 CREATE TABLE "Protein_domain" (
 	"Protein_id" INTEGER, 
@@ -3415,10 +3460,10 @@ CREATE TABLE "Protein_functionalCharacterization" (
 	PRIMARY KEY ("Protein_id", "functionalCharacterization"), 
 	FOREIGN KEY("Protein_id") REFERENCES "Protein" (id)
 );
-CREATE TABLE "Protein_functionalTechnicalDescription" (
+CREATE TABLE "Protein_functionalAndTechnicalDescription" (
 	"Protein_id" INTEGER, 
-	"functionalTechnicalDescription" TEXT, 
-	PRIMARY KEY ("Protein_id", "functionalTechnicalDescription"), 
+	"functionalAndTechnicalDescription" TEXT, 
+	PRIMARY KEY ("Protein_id", "functionalAndTechnicalDescription"), 
 	FOREIGN KEY("Protein_id") REFERENCES "Protein" (id)
 );
 CREATE TABLE "Protein_proteinPurification" (
@@ -3427,10 +3472,10 @@ CREATE TABLE "Protein_proteinPurification" (
 	PRIMARY KEY ("Protein_id", "proteinPurification"), 
 	FOREIGN KEY("Protein_id") REFERENCES "Protein" (id)
 );
-CREATE TABLE "Protein_theTAGStatusOfTheSolubilizedProtein" (
+CREATE TABLE "Protein_tagStatusOfTheSolubilizedProtein" (
 	"Protein_id" INTEGER, 
-	"theTAGStatusOfTheSolubilizedProtein" TEXT, 
-	PRIMARY KEY ("Protein_id", "theTAGStatusOfTheSolubilizedProtein"), 
+	"tagStatusOfTheSolubilizedProtein" TEXT, 
+	PRIMARY KEY ("Protein_id", "tagStatusOfTheSolubilizedProtein"), 
 	FOREIGN KEY("Protein_id") REFERENCES "Protein" (id)
 );
 CREATE TABLE "Protein_typeOfFunctionalCharacterization" (
@@ -3453,12 +3498,12 @@ CREATE TABLE "Protein_pathogenIdentification" (
 	FOREIGN KEY("Protein_id") REFERENCES "Protein" (id), 
 	FOREIGN KEY("pathogenIdentification_id") REFERENCES "PathogenIdentification" (id)
 );
-CREATE TABLE "Protein_relatedDOI" (
+CREATE TABLE "Protein_doi" (
 	"Protein_id" INTEGER, 
-	"relatedDOI_id" INTEGER, 
-	PRIMARY KEY ("Protein_id", "relatedDOI_id"), 
+	doi_id INTEGER, 
+	PRIMARY KEY ("Protein_id", doi_id), 
 	FOREIGN KEY("Protein_id") REFERENCES "Protein" (id), 
-	FOREIGN KEY("relatedDOI_id") REFERENCES "DOI" (id)
+	FOREIGN KEY(doi_id) REFERENCES "Doi" (id)
 );
 CREATE TABLE "Protein_collection" (
 	"Protein_id" INTEGER, 
@@ -3502,12 +3547,12 @@ CREATE TABLE "Protein_certification" (
 	FOREIGN KEY("Protein_id") REFERENCES "Protein" (id), 
 	FOREIGN KEY(certification_id) REFERENCES "Certification" (id)
 );
-CREATE TABLE "NucleicAcid_hasGbFileOfTheConstruct" (
+CREATE TABLE "NucleicAcid_genBankFileOfTheConstruct" (
 	"NucleicAcid_id" INTEGER, 
-	"hasGbFileOfTheConstruct_id" INTEGER, 
-	PRIMARY KEY ("NucleicAcid_id", "hasGbFileOfTheConstruct_id"), 
+	"genBankFileOfTheConstruct_id" INTEGER, 
+	PRIMARY KEY ("NucleicAcid_id", "genBankFileOfTheConstruct_id"), 
 	FOREIGN KEY("NucleicAcid_id") REFERENCES "NucleicAcid" (id), 
-	FOREIGN KEY("hasGbFileOfTheConstruct_id") REFERENCES "Data" (id)
+	FOREIGN KEY("genBankFileOfTheConstruct_id") REFERENCES "Data" (id)
 );
 CREATE TABLE "NucleicAcid_sequence" (
 	"NucleicAcid_id" INTEGER, 
@@ -3516,12 +3561,12 @@ CREATE TABLE "NucleicAcid_sequence" (
 	FOREIGN KEY("NucleicAcid_id") REFERENCES "NucleicAcid" (id), 
 	FOREIGN KEY(sequence_id) REFERENCES "Sequence" (id)
 );
-CREATE TABLE "NucleicAcid_pasmidSelection" (
+CREATE TABLE "NucleicAcid_plasmidSelection" (
 	"NucleicAcid_id" INTEGER, 
-	"pasmidSelection_id" INTEGER, 
-	PRIMARY KEY ("NucleicAcid_id", "pasmidSelection_id"), 
+	"plasmidSelection_id" INTEGER, 
+	PRIMARY KEY ("NucleicAcid_id", "plasmidSelection_id"), 
 	FOREIGN KEY("NucleicAcid_id") REFERENCES "NucleicAcid" (id), 
-	FOREIGN KEY("pasmidSelection_id") REFERENCES "PlasmidSelection" (id)
+	FOREIGN KEY("plasmidSelection_id") REFERENCES "PlasmidSelection" (id)
 );
 CREATE TABLE "NucleicAcid_additionalCategory" (
 	"NucleicAcid_id" INTEGER, 
@@ -3537,12 +3582,12 @@ CREATE TABLE "NucleicAcid_pathogenIdentification" (
 	FOREIGN KEY("NucleicAcid_id") REFERENCES "NucleicAcid" (id), 
 	FOREIGN KEY("pathogenIdentification_id") REFERENCES "PathogenIdentification" (id)
 );
-CREATE TABLE "NucleicAcid_relatedDOI" (
+CREATE TABLE "NucleicAcid_doi" (
 	"NucleicAcid_id" INTEGER, 
-	"relatedDOI_id" INTEGER, 
-	PRIMARY KEY ("NucleicAcid_id", "relatedDOI_id"), 
+	doi_id INTEGER, 
+	PRIMARY KEY ("NucleicAcid_id", doi_id), 
 	FOREIGN KEY("NucleicAcid_id") REFERENCES "NucleicAcid" (id), 
-	FOREIGN KEY("relatedDOI_id") REFERENCES "DOI" (id)
+	FOREIGN KEY(doi_id) REFERENCES "Doi" (id)
 );
 CREATE TABLE "NucleicAcid_collection" (
 	"NucleicAcid_id" INTEGER, 
@@ -3586,12 +3631,12 @@ CREATE TABLE "NucleicAcid_certification" (
 	FOREIGN KEY("NucleicAcid_id") REFERENCES "NucleicAcid" (id), 
 	FOREIGN KEY(certification_id) REFERENCES "Certification" (id)
 );
-CREATE TABLE "DetectionKit_hasSOPFile" (
+CREATE TABLE "DetectionKit_standardOperatingProcedureFile" (
 	"DetectionKit_id" INTEGER, 
-	"hasSOPFile_id" INTEGER, 
-	PRIMARY KEY ("DetectionKit_id", "hasSOPFile_id"), 
+	"standardOperatingProcedureFile_id" INTEGER, 
+	PRIMARY KEY ("DetectionKit_id", "standardOperatingProcedureFile_id"), 
 	FOREIGN KEY("DetectionKit_id") REFERENCES "DetectionKit" (id), 
-	FOREIGN KEY("hasSOPFile_id") REFERENCES "File" (id)
+	FOREIGN KEY("standardOperatingProcedureFile_id") REFERENCES "File" (id)
 );
 CREATE TABLE "DetectionKit_additionalCategory" (
 	"DetectionKit_id" INTEGER, 
@@ -3607,12 +3652,12 @@ CREATE TABLE "DetectionKit_pathogenIdentification" (
 	FOREIGN KEY("DetectionKit_id") REFERENCES "DetectionKit" (id), 
 	FOREIGN KEY("pathogenIdentification_id") REFERENCES "PathogenIdentification" (id)
 );
-CREATE TABLE "DetectionKit_relatedDOI" (
+CREATE TABLE "DetectionKit_doi" (
 	"DetectionKit_id" INTEGER, 
-	"relatedDOI_id" INTEGER, 
-	PRIMARY KEY ("DetectionKit_id", "relatedDOI_id"), 
+	doi_id INTEGER, 
+	PRIMARY KEY ("DetectionKit_id", doi_id), 
 	FOREIGN KEY("DetectionKit_id") REFERENCES "DetectionKit" (id), 
-	FOREIGN KEY("relatedDOI_id") REFERENCES "DOI" (id)
+	FOREIGN KEY(doi_id) REFERENCES "Doi" (id)
 );
 CREATE TABLE "DetectionKit_collection" (
 	"DetectionKit_id" INTEGER, 
@@ -3656,12 +3701,12 @@ CREATE TABLE "DetectionKit_certification" (
 	FOREIGN KEY("DetectionKit_id") REFERENCES "DetectionKit" (id), 
 	FOREIGN KEY(certification_id) REFERENCES "Certification" (id)
 );
-CREATE TABLE "Bundle_productsOfTheBundle" (
+CREATE TABLE "Bundle_itemsOfTheBundle" (
 	"Bundle_id" INTEGER, 
-	"productsOfTheBundle_id" INTEGER NOT NULL, 
-	PRIMARY KEY ("Bundle_id", "productsOfTheBundle_id"), 
+	"itemsOfTheBundle_id" INTEGER NOT NULL, 
+	PRIMARY KEY ("Bundle_id", "itemsOfTheBundle_id"), 
 	FOREIGN KEY("Bundle_id") REFERENCES "Bundle" (id), 
-	FOREIGN KEY("productsOfTheBundle_id") REFERENCES "Product" (id)
+	FOREIGN KEY("itemsOfTheBundle_id") REFERENCES "Product" (id)
 );
 CREATE TABLE "Bundle_additionalCategory" (
 	"Bundle_id" INTEGER, 
@@ -3677,12 +3722,12 @@ CREATE TABLE "Bundle_pathogenIdentification" (
 	FOREIGN KEY("Bundle_id") REFERENCES "Bundle" (id), 
 	FOREIGN KEY("pathogenIdentification_id") REFERENCES "PathogenIdentification" (id)
 );
-CREATE TABLE "Bundle_relatedDOI" (
+CREATE TABLE "Bundle_doi" (
 	"Bundle_id" INTEGER, 
-	"relatedDOI_id" INTEGER, 
-	PRIMARY KEY ("Bundle_id", "relatedDOI_id"), 
+	doi_id INTEGER, 
+	PRIMARY KEY ("Bundle_id", doi_id), 
 	FOREIGN KEY("Bundle_id") REFERENCES "Bundle" (id), 
-	FOREIGN KEY("relatedDOI_id") REFERENCES "DOI" (id)
+	FOREIGN KEY(doi_id) REFERENCES "Doi" (id)
 );
 CREATE TABLE "Bundle_collection" (
 	"Bundle_id" INTEGER, 
@@ -3782,12 +3827,12 @@ CREATE TABLE "Pathogen_pathogenIdentification" (
 	FOREIGN KEY("Pathogen_id") REFERENCES "Pathogen" (id), 
 	FOREIGN KEY("pathogenIdentification_id") REFERENCES "PathogenIdentification" (id)
 );
-CREATE TABLE "Pathogen_relatedDOI" (
+CREATE TABLE "Pathogen_doi" (
 	"Pathogen_id" INTEGER, 
-	"relatedDOI_id" INTEGER, 
-	PRIMARY KEY ("Pathogen_id", "relatedDOI_id"), 
+	doi_id INTEGER, 
+	PRIMARY KEY ("Pathogen_id", doi_id), 
 	FOREIGN KEY("Pathogen_id") REFERENCES "Pathogen" (id), 
-	FOREIGN KEY("relatedDOI_id") REFERENCES "DOI" (id)
+	FOREIGN KEY(doi_id) REFERENCES "Doi" (id)
 );
 CREATE TABLE "Pathogen_collection" (
 	"Pathogen_id" INTEGER, 
@@ -3894,12 +3939,12 @@ CREATE TABLE "Virus_pathogenIdentification" (
 	FOREIGN KEY("Virus_id") REFERENCES "Virus" (id), 
 	FOREIGN KEY("pathogenIdentification_id") REFERENCES "PathogenIdentification" (id)
 );
-CREATE TABLE "Virus_relatedDOI" (
+CREATE TABLE "Virus_doi" (
 	"Virus_id" INTEGER, 
-	"relatedDOI_id" INTEGER, 
-	PRIMARY KEY ("Virus_id", "relatedDOI_id"), 
+	doi_id INTEGER, 
+	PRIMARY KEY ("Virus_id", doi_id), 
 	FOREIGN KEY("Virus_id") REFERENCES "Virus" (id), 
-	FOREIGN KEY("relatedDOI_id") REFERENCES "DOI" (id)
+	FOREIGN KEY(doi_id) REFERENCES "Doi" (id)
 );
 CREATE TABLE "Virus_collection" (
 	"Virus_id" INTEGER, 
@@ -3999,12 +4044,12 @@ CREATE TABLE "Bacterium_pathogenIdentification" (
 	FOREIGN KEY("Bacterium_id") REFERENCES "Bacterium" (id), 
 	FOREIGN KEY("pathogenIdentification_id") REFERENCES "PathogenIdentification" (id)
 );
-CREATE TABLE "Bacterium_relatedDOI" (
+CREATE TABLE "Bacterium_doi" (
 	"Bacterium_id" INTEGER, 
-	"relatedDOI_id" INTEGER, 
-	PRIMARY KEY ("Bacterium_id", "relatedDOI_id"), 
+	doi_id INTEGER, 
+	PRIMARY KEY ("Bacterium_id", doi_id), 
 	FOREIGN KEY("Bacterium_id") REFERENCES "Bacterium" (id), 
-	FOREIGN KEY("relatedDOI_id") REFERENCES "DOI" (id)
+	FOREIGN KEY(doi_id) REFERENCES "Doi" (id)
 );
 CREATE TABLE "Bacterium_collection" (
 	"Bacterium_id" INTEGER, 
@@ -4104,12 +4149,12 @@ CREATE TABLE "Fungus_pathogenIdentification" (
 	FOREIGN KEY("Fungus_id") REFERENCES "Fungus" (id), 
 	FOREIGN KEY("pathogenIdentification_id") REFERENCES "PathogenIdentification" (id)
 );
-CREATE TABLE "Fungus_relatedDOI" (
+CREATE TABLE "Fungus_doi" (
 	"Fungus_id" INTEGER, 
-	"relatedDOI_id" INTEGER, 
-	PRIMARY KEY ("Fungus_id", "relatedDOI_id"), 
+	doi_id INTEGER, 
+	PRIMARY KEY ("Fungus_id", doi_id), 
 	FOREIGN KEY("Fungus_id") REFERENCES "Fungus" (id), 
-	FOREIGN KEY("relatedDOI_id") REFERENCES "DOI" (id)
+	FOREIGN KEY(doi_id) REFERENCES "Doi" (id)
 );
 CREATE TABLE "Fungus_collection" (
 	"Fungus_id" INTEGER, 
@@ -4209,12 +4254,12 @@ CREATE TABLE "Protozoan_pathogenIdentification" (
 	FOREIGN KEY("Protozoan_id") REFERENCES "Protozoan" (id), 
 	FOREIGN KEY("pathogenIdentification_id") REFERENCES "PathogenIdentification" (id)
 );
-CREATE TABLE "Protozoan_relatedDOI" (
+CREATE TABLE "Protozoan_doi" (
 	"Protozoan_id" INTEGER, 
-	"relatedDOI_id" INTEGER, 
-	PRIMARY KEY ("Protozoan_id", "relatedDOI_id"), 
+	doi_id INTEGER, 
+	PRIMARY KEY ("Protozoan_id", doi_id), 
 	FOREIGN KEY("Protozoan_id") REFERENCES "Protozoan" (id), 
-	FOREIGN KEY("relatedDOI_id") REFERENCES "DOI" (id)
+	FOREIGN KEY(doi_id) REFERENCES "Doi" (id)
 );
 CREATE TABLE "Protozoan_collection" (
 	"Protozoan_id" INTEGER, 
@@ -4314,12 +4359,12 @@ CREATE TABLE "Viroid_pathogenIdentification" (
 	FOREIGN KEY("Viroid_id") REFERENCES "Viroid" (id), 
 	FOREIGN KEY("pathogenIdentification_id") REFERENCES "PathogenIdentification" (id)
 );
-CREATE TABLE "Viroid_relatedDOI" (
+CREATE TABLE "Viroid_doi" (
 	"Viroid_id" INTEGER, 
-	"relatedDOI_id" INTEGER, 
-	PRIMARY KEY ("Viroid_id", "relatedDOI_id"), 
+	doi_id INTEGER, 
+	PRIMARY KEY ("Viroid_id", doi_id), 
 	FOREIGN KEY("Viroid_id") REFERENCES "Viroid" (id), 
-	FOREIGN KEY("relatedDOI_id") REFERENCES "DOI" (id)
+	FOREIGN KEY(doi_id) REFERENCES "Doi" (id)
 );
 CREATE TABLE "Viroid_collection" (
 	"Viroid_id" INTEGER, 
@@ -4419,12 +4464,12 @@ CREATE TABLE "Prion_pathogenIdentification" (
 	FOREIGN KEY("Prion_id") REFERENCES "Prion" (id), 
 	FOREIGN KEY("pathogenIdentification_id") REFERENCES "PathogenIdentification" (id)
 );
-CREATE TABLE "Prion_relatedDOI" (
+CREATE TABLE "Prion_doi" (
 	"Prion_id" INTEGER, 
-	"relatedDOI_id" INTEGER, 
-	PRIMARY KEY ("Prion_id", "relatedDOI_id"), 
+	doi_id INTEGER, 
+	PRIMARY KEY ("Prion_id", doi_id), 
 	FOREIGN KEY("Prion_id") REFERENCES "Prion" (id), 
-	FOREIGN KEY("relatedDOI_id") REFERENCES "DOI" (id)
+	FOREIGN KEY(doi_id) REFERENCES "Doi" (id)
 );
 CREATE TABLE "Prion_collection" (
 	"Prion_id" INTEGER, 

@@ -3,7 +3,7 @@
 # Class: Product or service (ProductOrService) 
 
 
-_A product or a service_
+_An offering provided by a provider, which may be tangible (a product) or intangible (a service)_
 
 
 
@@ -32,7 +32,7 @@ URI: [EVORAO:ProductOrService](https://w3id.org/evorao/ProductOrService)
         click Product href "../Product"
       
       
-      ProductOrService : accessPointURL
+      ProductOrService : accessPointUrl
         
       ProductOrService : additionalCategory
         
@@ -47,7 +47,7 @@ URI: [EVORAO:ProductOrService](https://w3id.org/evorao/ProductOrService)
         
       ProductOrService : biosafetyRestrictions
         
-      ProductOrService : canItBeUsedToProduceGMO
+      ProductOrService : canBeUsedToProduceGmo
         
       ProductOrService : category
         
@@ -95,6 +95,15 @@ URI: [EVORAO:ProductOrService](https://w3id.org/evorao/ProductOrService)
 
         
       ProductOrService : description
+        
+      ProductOrService : doi
+        
+          
+    
+    
+    ProductOrService --> "*" Doi : doi
+    click Doi href "../Doi"
+
         
       ProductOrService : externalRelatedReference
         
@@ -147,16 +156,7 @@ URI: [EVORAO:ProductOrService](https://w3id.org/evorao/ProductOrService)
         
       ProductOrService : qualityGrading
         
-      ProductOrService : refSKU
-        
-      ProductOrService : relatedDOI
-        
-          
-    
-    
-    ProductOrService --> "*" DOI : relatedDOI
-    click DOI href "../DOI"
-
+      ProductOrService : refSku
         
       ProductOrService : riskGroup
         
@@ -174,6 +174,8 @@ URI: [EVORAO:ProductOrService](https://w3id.org/evorao/ProductOrService)
       ProductOrService : unitCost
         
       ProductOrService : unitDefinition
+        
+      ProductOrService : version
         
       
 ```
@@ -195,18 +197,18 @@ URI: [EVORAO:ProductOrService](https://w3id.org/evorao/ProductOrService)
 
 | Name | Cardinality and Range | Description | Inheritance |
 | ---  | --- | --- | --- |
-| [accessPointURL](accessPointURL.md) | 1 <br/> [Uri](Uri.md) | The URL that permits to access to the product/service detailed description pa... | direct |
-| [refSKU](refSKU.md) | 1 <br/> [String](String.md) | The reference or the stock keeping unit of the service or item provided in th... | direct |
+| [accessPointUrl](accessPointUrl.md) | 1 <br/> [Uri](Uri.md) | The URL that permits to access to the product/service detailed description pa... | direct |
+| [refSku](refSku.md) | 1 <br/> [String](String.md) | The reference or the stock keeping unit of the service or item provided in th... | direct |
 | [unitDefinition](unitDefinition.md) | 0..1 _recommended_ <br/> [String](String.md) | A short description of what will be delivered by ordering one unit of this it... | direct |
 | [category](category.md) | 1 <br/> [ProductCategory](ProductCategory.md) | The main category of the service or product | direct |
 | [additionalCategory](additionalCategory.md) | * _recommended_ <br/> [ProductCategory](ProductCategory.md) | Any category apart from its main category in which this product or service ca... | direct |
 | [unitCost](unitCost.md) | 1 _recommended_ <br/> [String](String.md) | The cost per access for one unit as defined by the unit definition | direct |
 | [qualityGrading](qualityGrading.md) | 0..1 <br/> [String](String.md) | Information that permits to assess the quality level of what will be provided | direct |
 | [pathogenIdentification](pathogenIdentification.md) | 1..* <br/> [PathogenIdentification](PathogenIdentification.md) | The identification of the pathogen or group of pathogens (e | direct |
-| [relatedDOI](relatedDOI.md) | * <br/> [DOI](DOI.md) | Any Digital Object Identifier that can be related | direct |
+| [doi](doi.md) | * <br/> [Doi](Doi.md) | A Digital Object Identifier (DOI) that can be related | direct |
 | [riskGroup](riskGroup.md) | 0..1 _recommended_ <br/> [RiskGroup](RiskGroup.md) | The highest risk group related to this resource | direct |
 | [biosafetyRestrictions](biosafetyRestrictions.md) | 0..1 <br/> [String](String.md) | Information about guidelines and regulations designed to prevent the exposure... | direct |
-| [canItBeUsedToProduceGMO](canItBeUsedToProduceGMO.md) | 1 _recommended_ <br/> [Boolean](Boolean.md) | Indicates if the current service or product can be used to produce GMO | direct |
+| [canBeUsedToProduceGmo](canBeUsedToProduceGmo.md) | 1 _recommended_ <br/> [Boolean](Boolean.md) | Indicates if the current service or product can be used to produce GMO | direct |
 | [provider](provider.md) | 1 <br/> [Provider](Provider.md) | A provider of this product or service, as a specific organization | direct |
 | [collection](collection.md) | 1..* <br/> [Collection](Collection.md) | The collection(s) to which belongs this item | direct |
 | [keywords](keywords.md) | 1..* _recommended_ <br/> [Keyword](Keyword.md) | List of terms used to tag and categorize this Item | direct |
@@ -221,6 +223,7 @@ URI: [EVORAO:ProductOrService](https://w3id.org/evorao/ProductOrService)
 | [contactPoint](contactPoint.md) | 0..1 _recommended_ <br/> [ContactPoint](ContactPoint.md) | An information that allows someone to establish communication | direct |
 | [title](title.md) | 1 <br/> [String](String.md) | A name given to the resource | [Dataset](Dataset.md) |
 | [description](description.md) | 1 _recommended_ <br/> [String](String.md) | A short explanation of the characteristics, features, or nature of the curren... | [Dataset](Dataset.md) |
+| [version](version.md) | 0..1 _recommended_ <br/> [String](String.md) | The version indicator (name or identifier) of a resource | [Dataset](Dataset.md) |
 
 
 
@@ -279,7 +282,8 @@ URI: [EVORAO:ProductOrService](https://w3id.org/evorao/ProductOrService)
 <details>
 ```yaml
 name: ProductOrService
-description: A product or a service
+description: An offering provided by a provider, which may be tangible (a product)
+  or intangible (a service)
 title: Product or service
 comments:
 - part of  wd:Q2897903 (goods and services )
@@ -287,18 +291,18 @@ from_schema: https://w3id.org/evorao/
 is_a: Dataset
 abstract: true
 slots:
-- accessPointURL
-- refSKU
+- accessPointUrl
+- refSku
 - unitDefinition
 - category
 - additionalCategory
 - unitCost
 - qualityGrading
 - pathogenIdentification
-- relatedDOI
+- doi
 - riskGroup
 - biosafetyRestrictions
-- canItBeUsedToProduceGMO
+- canBeUsedToProduceGmo
 - provider
 - collection
 - keywords
@@ -312,8 +316,8 @@ slots:
 - note
 - contactPoint
 slot_usage:
-  accessPointURL:
-    name: accessPointURL
+  accessPointUrl:
+    name: accessPointUrl
     description: The URL that permits to access to the product/service detailed description
       page on the provider's website and/or allows to place an order about it or at
       least describe the process to place an order/enquiry
@@ -325,11 +329,11 @@ slot_usage:
     range: uri
     required: true
     multivalued: false
-  refSKU:
-    name: refSKU
+  refSku:
+    name: refSku
     description: The reference or the stock keeping unit of the service or item provided
       in the provider's catalogue
-    title: ref-SKU
+    title: ref SKU
     exact_mappings:
     - dct:identifier
     domain_of:
@@ -415,16 +419,16 @@ slot_usage:
     range: PathogenIdentification
     required: true
     multivalued: true
-  relatedDOI:
-    name: relatedDOI
-    description: Any Digital Object Identifier that can be related
+  doi:
+    name: doi
+    description: A Digital Object Identifier (DOI) that can be related
     title: DOI
     close_mappings:
     - wdp:P356
     domain_of:
     - ProductOrService
     - Publication
-    range: DOI
+    range: Doi
     required: false
     multivalued: true
   riskGroup:
@@ -453,11 +457,11 @@ slot_usage:
     range: string
     required: false
     multivalued: false
-  canItBeUsedToProduceGMO:
-    name: canItBeUsedToProduceGMO
+  canBeUsedToProduceGmo:
+    name: canBeUsedToProduceGmo
     description: Indicates if the current service or product can be used to produce
       GMO
-    title: can it be used to produce GMO
+    title: can be used to produce GMO
     comments:
     - Set to TRUE if it can produce GMO. It is recommended to have a value for this
       field, no value will be understood as unknown
@@ -602,7 +606,8 @@ slot_usage:
 <details>
 ```yaml
 name: ProductOrService
-description: A product or a service
+description: An offering provided by a provider, which may be tangible (a product)
+  or intangible (a service)
 title: Product or service
 comments:
 - part of  wd:Q2897903 (goods and services )
@@ -610,8 +615,8 @@ from_schema: https://w3id.org/evorao/
 is_a: Dataset
 abstract: true
 slot_usage:
-  accessPointURL:
-    name: accessPointURL
+  accessPointUrl:
+    name: accessPointUrl
     description: The URL that permits to access to the product/service detailed description
       page on the provider's website and/or allows to place an order about it or at
       least describe the process to place an order/enquiry
@@ -623,11 +628,11 @@ slot_usage:
     range: uri
     required: true
     multivalued: false
-  refSKU:
-    name: refSKU
+  refSku:
+    name: refSku
     description: The reference or the stock keeping unit of the service or item provided
       in the provider's catalogue
-    title: ref-SKU
+    title: ref SKU
     exact_mappings:
     - dct:identifier
     domain_of:
@@ -713,16 +718,16 @@ slot_usage:
     range: PathogenIdentification
     required: true
     multivalued: true
-  relatedDOI:
-    name: relatedDOI
-    description: Any Digital Object Identifier that can be related
+  doi:
+    name: doi
+    description: A Digital Object Identifier (DOI) that can be related
     title: DOI
     close_mappings:
     - wdp:P356
     domain_of:
     - ProductOrService
     - Publication
-    range: DOI
+    range: Doi
     required: false
     multivalued: true
   riskGroup:
@@ -751,11 +756,11 @@ slot_usage:
     range: string
     required: false
     multivalued: false
-  canItBeUsedToProduceGMO:
-    name: canItBeUsedToProduceGMO
+  canBeUsedToProduceGmo:
+    name: canBeUsedToProduceGmo
     description: Indicates if the current service or product can be used to produce
       GMO
-    title: can it be used to produce GMO
+    title: can be used to produce GMO
     comments:
     - Set to TRUE if it can produce GMO. It is recommended to have a value for this
       field, no value will be understood as unknown
@@ -892,8 +897,8 @@ slot_usage:
     recommended: true
     multivalued: false
 attributes:
-  accessPointURL:
-    name: accessPointURL
+  accessPointUrl:
+    name: accessPointUrl
     description: The URL that permits to access to the product/service detailed description
       page on the provider's website and/or allows to place an order about it or at
       least describe the process to place an order/enquiry
@@ -902,23 +907,23 @@ attributes:
     exact_mappings:
     - dcat:landingPage
     rank: 1000
-    alias: accessPointURL
+    alias: accessPointUrl
     owner: ProductOrService
     domain_of:
     - ProductOrService
     range: uri
     required: true
     multivalued: false
-  refSKU:
-    name: refSKU
+  refSku:
+    name: refSku
     description: The reference or the stock keeping unit of the service or item provided
       in the provider's catalogue
-    title: ref-SKU
+    title: ref SKU
     from_schema: https://w3id.org/evorao/
     exact_mappings:
     - dct:identifier
     rank: 1000
-    alias: refSKU
+    alias: refSku
     owner: ProductOrService
     domain_of:
     - ProductOrService
@@ -1027,20 +1032,20 @@ attributes:
     range: PathogenIdentification
     required: true
     multivalued: true
-  relatedDOI:
-    name: relatedDOI
-    description: Any Digital Object Identifier that can be related
+  doi:
+    name: doi
+    description: A Digital Object Identifier (DOI) that can be related
     title: DOI
     from_schema: https://w3id.org/evorao/
     close_mappings:
     - wdp:P356
     rank: 1000
-    alias: relatedDOI
+    alias: doi
     owner: ProductOrService
     domain_of:
     - ProductOrService
     - Publication
-    range: DOI
+    range: Doi
     required: false
     multivalued: true
   riskGroup:
@@ -1077,17 +1082,17 @@ attributes:
     range: string
     required: false
     multivalued: false
-  canItBeUsedToProduceGMO:
-    name: canItBeUsedToProduceGMO
+  canBeUsedToProduceGmo:
+    name: canBeUsedToProduceGmo
     description: Indicates if the current service or product can be used to produce
       GMO
-    title: can it be used to produce GMO
+    title: can be used to produce GMO
     comments:
     - Set to TRUE if it can produce GMO. It is recommended to have a value for this
       field, no value will be understood as unknown
     from_schema: https://w3id.org/evorao/
     rank: 1000
-    alias: canItBeUsedToProduceGMO
+    alias: canBeUsedToProduceGmo
     owner: ProductOrService
     domain_of:
     - ProductOrService
@@ -1328,6 +1333,25 @@ attributes:
     - Certification
     range: string
     required: true
+    recommended: true
+    multivalued: false
+  version:
+    name: version
+    description: The version indicator (name or identifier) of a resource
+    title: version
+    from_schema: https://w3id.org/evorao/
+    close_mappings:
+    - wdp:P393
+    - schema:version
+    rank: 1000
+    alias: version
+    owner: ProductOrService
+    domain_of:
+    - Dataset
+    - Version
+    - Taxonomy
+    range: string
+    required: false
     recommended: true
     multivalued: false
 

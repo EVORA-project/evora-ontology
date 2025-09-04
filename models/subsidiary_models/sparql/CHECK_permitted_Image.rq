@@ -28,7 +28,7 @@ SELECT ?g ?s ?p WHERE {
    EVORAO:altText,
    foaf:name,
    dct:description,
-   EVORAO:contentURL,
+   EVORAO:contentUrl,
    EVORAO:format,
    EVORAO:license,
    rdf:type ))

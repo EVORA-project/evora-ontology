@@ -23,7 +23,7 @@ URI: [EVORAO:Version](https://w3id.org/evorao/Version)
       Resource <|-- Version
         click Resource href "../Resource"
       
-      Version : ID
+      Version : version
         
       Version : versionOf
         
@@ -51,18 +51,11 @@ URI: [EVORAO:Version](https://w3id.org/evorao/Version)
 
 | Name | Cardinality and Range | Description | Inheritance |
 | ---  | --- | --- | --- |
-| [ID](ID.md) | 1 <br/> [String](String.md) | The version identifier | direct |
-| [versionOf](versionOf.md) | 1 <br/> [Dataset](Dataset.md) | Identifier of what the version qualifies | direct |
+| [version](version.md) | 1 _recommended_ <br/> [String](String.md) | The version indicator (name or identifier) of a resource | direct |
+| [versionOf](versionOf.md) | 1 <br/> [Dataset](Dataset.md) | Identifier of what type of entities the version qualifies | direct |
 
 
 
-
-
-## Usages
-
-| used by | used in | type | used |
-| ---  | --- | --- | --- |
-| [Taxonomy](Taxonomy.md) | [version](version.md) | range | [Version](Version.md) |
 
 
 
@@ -117,24 +110,26 @@ close_mappings:
 - wd:Q114469879
 is_a: Resource
 slots:
-- ID
+- version
 - versionOf
 slot_usage:
-  ID:
-    name: ID
-    description: The version identifier
-    title: ID
+  version:
+    name: version
+    description: The version indicator (name or identifier) of a resource
+    title: version
     close_mappings:
     - wdp:P393
     - schema:version
     domain_of:
     - Version
+    - Dataset
+    - Taxonomy
     range: string
     required: true
     multivalued: false
   versionOf:
     name: versionOf
-    description: Identifier of what the version qualifies
+    description: Identifier of what type of entities the version qualifies
     title: version Of
     domain_of:
     - Version
@@ -159,21 +154,23 @@ close_mappings:
 - wd:Q114469879
 is_a: Resource
 slot_usage:
-  ID:
-    name: ID
-    description: The version identifier
-    title: ID
+  version:
+    name: version
+    description: The version indicator (name or identifier) of a resource
+    title: version
     close_mappings:
     - wdp:P393
     - schema:version
     domain_of:
     - Version
+    - Dataset
+    - Taxonomy
     range: string
     required: true
     multivalued: false
   versionOf:
     name: versionOf
-    description: Identifier of what the version qualifies
+    description: Identifier of what type of entities the version qualifies
     title: version Of
     domain_of:
     - Version
@@ -181,25 +178,28 @@ slot_usage:
     required: true
     multivalued: false
 attributes:
-  ID:
-    name: ID
-    description: The version identifier
-    title: ID
+  version:
+    name: version
+    description: The version indicator (name or identifier) of a resource
+    title: version
     from_schema: https://w3id.org/evorao/
     close_mappings:
     - wdp:P393
     - schema:version
     rank: 1000
-    alias: ID
+    alias: version
     owner: Version
     domain_of:
     - Version
+    - Dataset
+    - Taxonomy
     range: string
     required: true
+    recommended: true
     multivalued: false
   versionOf:
     name: versionOf
-    description: Identifier of what the version qualifies
+    description: Identifier of what type of entities the version qualifies
     title: version Of
     from_schema: https://w3id.org/evorao/
     rank: 1000

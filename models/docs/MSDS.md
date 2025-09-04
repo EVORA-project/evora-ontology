@@ -1,11 +1,6 @@
 
 
-# Class: MSDS (MSDS) 
-
-
-_A Material Safety Data Sheet (MSDS) or Safety Data Sheet (SDS) is a standardized document that contains crucial occupational safety and health information related to the product_
-
-
+# Class: MSDS 
 
 
 
@@ -20,9 +15,6 @@ URI: [EVORAO:MSDS](https://w3id.org/evorao/MSDS)
  classDiagram
     class MSDS
     click MSDS href "../MSDS"
-      Resource <|-- MSDS
-        click Resource href "../Resource"
-      
       MSDS : accidentalReleaseMeasures
         
       MSDS : disposalConsiderations
@@ -41,12 +33,12 @@ URI: [EVORAO:MSDS](https://w3id.org/evorao/MSDS)
         
       MSDS : hazardsIdentification
         
-      MSDS : msdsContact
+      MSDS : materialSafetyContact
         
           
     
     
-    MSDS --> "1" ContactPoint : msdsContact
+    MSDS --> "1" ContactPoint : materialSafetyContact
     click ContactPoint href "../ContactPoint"
 
         
@@ -66,18 +58,14 @@ URI: [EVORAO:MSDS](https://w3id.org/evorao/MSDS)
 
 
 
-
-## Inheritance
-* [Resource](Resource.md)
-    * **MSDS**
-
+<!-- no inheritance hierarchy -->
 
 
 ## Slots
 
 | Name | Cardinality and Range | Description | Inheritance |
 | ---  | --- | --- | --- |
-| [msdsContact](msdsContact.md) | 1 <br/> [ContactPoint](ContactPoint.md) | The designated contact point responsible for providing information related to... | direct |
+| [materialSafetyContact](materialSafetyContact.md) | 1 <br/> [ContactPoint](ContactPoint.md) | The designated contact point responsible for providing information related to... | direct |
 | [physicalChemicalProperties](physicalChemicalProperties.md) | 0..1 _recommended_ <br/> [String](String.md) | Key characteristics of the product, such as physical state, appearance, solub... | direct |
 | [hazardsIdentification](hazardsIdentification.md) | 0..1 _recommended_ <br/> [String](String.md) | Outlines the potential risks and dangers associated with handling the product... | direct |
 | [firstAidMeasures](firstAidMeasures.md) | 0..1 _recommended_ <br/> [String](String.md) | Instructions on immediate actions to take in case of exposure to the product,... | direct |
@@ -95,26 +83,6 @@ URI: [EVORAO:MSDS](https://w3id.org/evorao/MSDS)
 
 
 
-
-
-## Usages
-
-| used by | used in | type | used |
-| ---  | --- | --- | --- |
-| [Product](Product.md) | [materialSafetyDataSheet](materialSafetyDataSheet.md) | range | [MSDS](MSDS.md) |
-| [Antibody](Antibody.md) | [materialSafetyDataSheet](materialSafetyDataSheet.md) | range | [MSDS](MSDS.md) |
-| [Hybridoma](Hybridoma.md) | [materialSafetyDataSheet](materialSafetyDataSheet.md) | range | [MSDS](MSDS.md) |
-| [Protein](Protein.md) | [materialSafetyDataSheet](materialSafetyDataSheet.md) | range | [MSDS](MSDS.md) |
-| [NucleicAcid](NucleicAcid.md) | [materialSafetyDataSheet](materialSafetyDataSheet.md) | range | [MSDS](MSDS.md) |
-| [DetectionKit](DetectionKit.md) | [materialSafetyDataSheet](materialSafetyDataSheet.md) | range | [MSDS](MSDS.md) |
-| [Bundle](Bundle.md) | [materialSafetyDataSheet](materialSafetyDataSheet.md) | range | [MSDS](MSDS.md) |
-| [Pathogen](Pathogen.md) | [materialSafetyDataSheet](materialSafetyDataSheet.md) | range | [MSDS](MSDS.md) |
-| [Virus](Virus.md) | [materialSafetyDataSheet](materialSafetyDataSheet.md) | range | [MSDS](MSDS.md) |
-| [Bacterium](Bacterium.md) | [materialSafetyDataSheet](materialSafetyDataSheet.md) | range | [MSDS](MSDS.md) |
-| [Fungus](Fungus.md) | [materialSafetyDataSheet](materialSafetyDataSheet.md) | range | [MSDS](MSDS.md) |
-| [Protozoan](Protozoan.md) | [materialSafetyDataSheet](materialSafetyDataSheet.md) | range | [MSDS](MSDS.md) |
-| [Viroid](Viroid.md) | [materialSafetyDataSheet](materialSafetyDataSheet.md) | range | [MSDS](MSDS.md) |
-| [Prion](Prion.md) | [materialSafetyDataSheet](materialSafetyDataSheet.md) | range | [MSDS](MSDS.md) |
 
 
 
@@ -143,7 +111,6 @@ URI: [EVORAO:MSDS](https://w3id.org/evorao/MSDS)
 | ---  | ---  |
 | self | EVORAO:MSDS |
 | native | EVORAO:MSDS |
-| close | wd:Q222067, wd:Q222067 |
 
 
 
@@ -160,17 +127,9 @@ URI: [EVORAO:MSDS](https://w3id.org/evorao/MSDS)
 <details>
 ```yaml
 name: MSDS
-description: A Material Safety Data Sheet (MSDS) or Safety Data Sheet (SDS) is a standardized
-  document that contains crucial occupational safety and health information related
-  to the product
-title: MSDS
 from_schema: https://w3id.org/evorao/
-close_mappings:
-- wd:Q222067
-- wd:Q222067
-is_a: Resource
 slots:
-- msdsContact
+- materialSafetyContact
 - physicalChemicalProperties
 - hazardsIdentification
 - firstAidMeasures
@@ -186,12 +145,12 @@ slots:
 - regulatoryInformation
 - furtherInformation
 slot_usage:
-  msdsContact:
-    name: msdsContact
+  materialSafetyContact:
+    name: materialSafetyContact
     description: The designated contact point responsible for providing information
       related to the safety, handling, and regulatory compliance of the biological
       product.
-    title: MSDS contact
+    title: material safety contact
     exact_mappings:
     - dcat:contactPoint
     domain_of:
@@ -379,22 +338,14 @@ slot_usage:
 <details>
 ```yaml
 name: MSDS
-description: A Material Safety Data Sheet (MSDS) or Safety Data Sheet (SDS) is a standardized
-  document that contains crucial occupational safety and health information related
-  to the product
-title: MSDS
 from_schema: https://w3id.org/evorao/
-close_mappings:
-- wd:Q222067
-- wd:Q222067
-is_a: Resource
 slot_usage:
-  msdsContact:
-    name: msdsContact
+  materialSafetyContact:
+    name: materialSafetyContact
     description: The designated contact point responsible for providing information
       related to the safety, handling, and regulatory compliance of the biological
       product.
-    title: MSDS contact
+    title: material safety contact
     exact_mappings:
     - dcat:contactPoint
     domain_of:
@@ -574,17 +525,17 @@ slot_usage:
     recommended: true
     multivalued: false
 attributes:
-  msdsContact:
-    name: msdsContact
+  materialSafetyContact:
+    name: materialSafetyContact
     description: The designated contact point responsible for providing information
       related to the safety, handling, and regulatory compliance of the biological
       product.
-    title: MSDS contact
+    title: material safety contact
     from_schema: https://w3id.org/evorao/
     exact_mappings:
     - dcat:contactPoint
     rank: 1000
-    alias: msdsContact
+    alias: materialSafetyContact
     owner: MSDS
     domain_of:
     - MSDS

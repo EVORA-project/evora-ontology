@@ -23,7 +23,7 @@ URI: [EVORAO:Data](https://w3id.org/evorao/Data)
       File <|-- Data
         click File href "../File"
       
-      Data : contentURL
+      Data : contentUrl
         
       Data : description
         
@@ -60,7 +60,7 @@ URI: [EVORAO:Data](https://w3id.org/evorao/Data)
 | ---  | --- | --- | --- |
 | [name](name.md) | 1 <br/> [String](String.md) | A word or set of words used to identify and refer to an entity | [File](File.md) |
 | [description](description.md) | 0..1 _recommended_ <br/> [String](String.md) | A short explanation of the characteristics, features, or nature of the curren... | [File](File.md) |
-| [contentURL](contentURL.md) | 1 <br/> [Uri](Uri.md) | The web address or location where the file content is stored and can be acces... | [File](File.md) |
+| [contentUrl](contentUrl.md) | 1 <br/> [Uri](Uri.md) | The web address or location where the file content is stored and can be acces... | [File](File.md) |
 | [format](format.md) | 1 <br/> [String](String.md) | The file type or format that indicates how the data within the file is struct... | [File](File.md) |
 | [license](license.md) | 0..1 <br/> [License](License.md) | Information about terms and conditions under which the subject can be used, s... | [File](File.md) |
 
@@ -72,7 +72,7 @@ URI: [EVORAO:Data](https://w3id.org/evorao/Data)
 
 | used by | used in | type | used |
 | ---  | --- | --- | --- |
-| [NucleicAcid](NucleicAcid.md) | [hasGbFileOfTheConstruct](hasGbFileOfTheConstruct.md) | range | [Data](Data.md) |
+| [NucleicAcid](NucleicAcid.md) | [genBankFileOfTheConstruct](genBankFileOfTheConstruct.md) | range | [Data](Data.md) |
 
 
 
@@ -197,14 +197,14 @@ attributes:
     required: false
     recommended: true
     multivalued: false
-  contentURL:
-    name: contentURL
+  contentUrl:
+    name: contentUrl
     description: The web address or location where the file content is stored and
       can be accessed or downloaded.
     title: content URL
     from_schema: https://w3id.org/evorao/
     rank: 1000
-    alias: contentURL
+    alias: contentUrl
     owner: Data
     domain_of:
     - File

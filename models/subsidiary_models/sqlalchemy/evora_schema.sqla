@@ -26,6 +26,39 @@ class Resource(Base):
     
 
 
+class MSDS(Base):
+    """
+    
+    """
+    __tablename__ = 'MSDS'
+
+    id = Column(Integer(), primary_key=True, autoincrement=True , nullable=False )
+    physicalChemicalProperties = Column(Text())
+    hazardsIdentification = Column(Text())
+    firstAidMeasures = Column(Text())
+    fireFightingMeasures = Column(Text())
+    accidentalReleaseMeasures = Column(Text())
+    handlingAndStorage = Column(Text())
+    exposureControlsPersonalProtection = Column(Text())
+    stabilityAndReactivity = Column(Text())
+    toxicologicalInformation = Column(Text())
+    ecologicalInformation = Column(Text())
+    disposalConsiderations = Column(Text())
+    transportInformation = Column(Text())
+    regulatoryInformation = Column(Text())
+    furtherInformation = Column(Text())
+    materialSafetyContact_id = Column(Integer(), ForeignKey('ContactPoint.id'), nullable=False )
+    materialSafetyContact = relationship("ContactPoint", uselist=False, foreign_keys=[materialSafetyContact_id])
+    
+
+    def __repr__(self):
+        return f"MSDS(id={self.id},physicalChemicalProperties={self.physicalChemicalProperties},hazardsIdentification={self.hazardsIdentification},firstAidMeasures={self.firstAidMeasures},fireFightingMeasures={self.fireFightingMeasures},accidentalReleaseMeasures={self.accidentalReleaseMeasures},handlingAndStorage={self.handlingAndStorage},exposureControlsPersonalProtection={self.exposureControlsPersonalProtection},stabilityAndReactivity={self.stabilityAndReactivity},toxicologicalInformation={self.toxicologicalInformation},ecologicalInformation={self.ecologicalInformation},disposalConsiderations={self.disposalConsiderations},transportInformation={self.transportInformation},regulatoryInformation={self.regulatoryInformation},furtherInformation={self.furtherInformation},materialSafetyContact_id={self.materialSafetyContact_id},)"
+
+
+
+    
+
+
 class TaxonomyTaxon(Base):
     """
     
@@ -350,36 +383,36 @@ class OrganizationAlternateName(Base):
     
 
 
-class RIAlternateName(Base):
+class ReasearchInfrastructureAlternateName(Base):
     """
     
     """
-    __tablename__ = 'RI_alternateName'
+    __tablename__ = 'ReasearchInfrastructure_alternateName'
 
-    RI_id = Column(Integer(), ForeignKey('RI.id'), primary_key=True)
+    ReasearchInfrastructure_id = Column(Integer(), ForeignKey('ReasearchInfrastructure.id'), primary_key=True)
     alternateName_id = Column(Integer(), ForeignKey('AlternateName.id'), primary_key=True)
     
 
     def __repr__(self):
-        return f"RI_alternateName(RI_id={self.RI_id},alternateName_id={self.alternateName_id},)"
+        return f"ReasearchInfrastructure_alternateName(ReasearchInfrastructure_id={self.ReasearchInfrastructure_id},alternateName_id={self.alternateName_id},)"
 
 
 
     
 
 
-class ProviderMemberOfRI(Base):
+class ProviderMemberOfRi(Base):
     """
     
     """
-    __tablename__ = 'Provider_memberOfRI'
+    __tablename__ = 'Provider_memberOfRi'
 
     Provider_id = Column(Integer(), ForeignKey('Provider.id'), primary_key=True)
-    memberOfRI_id = Column(Integer(), ForeignKey('RI.id'), primary_key=True)
+    memberOfRi_id = Column(Integer(), ForeignKey('ReasearchInfrastructure.id'), primary_key=True)
     
 
     def __repr__(self):
-        return f"Provider_memberOfRI(Provider_id={self.Provider_id},memberOfRI_id={self.memberOfRI_id},)"
+        return f"Provider_memberOfRi(Provider_id={self.Provider_id},memberOfRi_id={self.memberOfRi_id},)"
 
 
 
@@ -494,18 +527,18 @@ class ProductOrServicePathogenIdentification(Base):
     
 
 
-class ProductOrServiceRelatedDOI(Base):
+class ProductOrServiceDoi(Base):
     """
     
     """
-    __tablename__ = 'ProductOrService_relatedDOI'
+    __tablename__ = 'ProductOrService_doi'
 
     ProductOrService_id = Column(Integer(), ForeignKey('ProductOrService.id'), primary_key=True)
-    relatedDOI_id = Column(Integer(), ForeignKey('DOI.id'), primary_key=True)
+    doi_id = Column(Integer(), ForeignKey('Doi.id'), primary_key=True)
     
 
     def __repr__(self):
-        return f"ProductOrService_relatedDOI(ProductOrService_id={self.ProductOrService_id},relatedDOI_id={self.relatedDOI_id},)"
+        return f"ProductOrService_doi(ProductOrService_id={self.ProductOrService_id},doi_id={self.doi_id},)"
 
 
 
@@ -656,18 +689,18 @@ class ServicePathogenIdentification(Base):
     
 
 
-class ServiceRelatedDOI(Base):
+class ServiceDoi(Base):
     """
     
     """
-    __tablename__ = 'Service_relatedDOI'
+    __tablename__ = 'Service_doi'
 
     Service_id = Column(Integer(), ForeignKey('Service.id'), primary_key=True)
-    relatedDOI_id = Column(Integer(), ForeignKey('DOI.id'), primary_key=True)
+    doi_id = Column(Integer(), ForeignKey('Doi.id'), primary_key=True)
     
 
     def __repr__(self):
-        return f"Service_relatedDOI(Service_id={self.Service_id},relatedDOI_id={self.relatedDOI_id},)"
+        return f"Service_doi(Service_id={self.Service_id},doi_id={self.doi_id},)"
 
 
 
@@ -818,18 +851,18 @@ class ProductPathogenIdentification(Base):
     
 
 
-class ProductRelatedDOI(Base):
+class ProductDoi(Base):
     """
     
     """
-    __tablename__ = 'Product_relatedDOI'
+    __tablename__ = 'Product_doi'
 
     Product_id = Column(Integer(), ForeignKey('Product.id'), primary_key=True)
-    relatedDOI_id = Column(Integer(), ForeignKey('DOI.id'), primary_key=True)
+    doi_id = Column(Integer(), ForeignKey('Doi.id'), primary_key=True)
     
 
     def __repr__(self):
-        return f"Product_relatedDOI(Product_id={self.Product_id},relatedDOI_id={self.relatedDOI_id},)"
+        return f"Product_doi(Product_id={self.Product_id},doi_id={self.doi_id},)"
 
 
 
@@ -998,18 +1031,18 @@ class AntibodyPathogenIdentification(Base):
     
 
 
-class AntibodyRelatedDOI(Base):
+class AntibodyDoi(Base):
     """
     
     """
-    __tablename__ = 'Antibody_relatedDOI'
+    __tablename__ = 'Antibody_doi'
 
     Antibody_id = Column(Integer(), ForeignKey('Antibody.id'), primary_key=True)
-    relatedDOI_id = Column(Integer(), ForeignKey('DOI.id'), primary_key=True)
+    doi_id = Column(Integer(), ForeignKey('Doi.id'), primary_key=True)
     
 
     def __repr__(self):
-        return f"Antibody_relatedDOI(Antibody_id={self.Antibody_id},relatedDOI_id={self.relatedDOI_id},)"
+        return f"Antibody_doi(Antibody_id={self.Antibody_id},doi_id={self.doi_id},)"
 
 
 
@@ -1178,18 +1211,18 @@ class HybridomaPathogenIdentification(Base):
     
 
 
-class HybridomaRelatedDOI(Base):
+class HybridomaDoi(Base):
     """
     
     """
-    __tablename__ = 'Hybridoma_relatedDOI'
+    __tablename__ = 'Hybridoma_doi'
 
     Hybridoma_id = Column(Integer(), ForeignKey('Hybridoma.id'), primary_key=True)
-    relatedDOI_id = Column(Integer(), ForeignKey('DOI.id'), primary_key=True)
+    doi_id = Column(Integer(), ForeignKey('Doi.id'), primary_key=True)
     
 
     def __repr__(self):
-        return f"Hybridoma_relatedDOI(Hybridoma_id={self.Hybridoma_id},relatedDOI_id={self.relatedDOI_id},)"
+        return f"Hybridoma_doi(Hybridoma_id={self.Hybridoma_id},doi_id={self.doi_id},)"
 
 
 
@@ -1322,18 +1355,18 @@ class ProteinSequence(Base):
     
 
 
-class ProteinRelatedPDB(Base):
+class ProteinRelatedPdb(Base):
     """
     
     """
-    __tablename__ = 'Protein_relatedPDB'
+    __tablename__ = 'Protein_relatedPdb'
 
     Protein_id = Column(Integer(), ForeignKey('Protein.id'), primary_key=True)
-    relatedPDB_id = Column(Integer(), ForeignKey('PDBReference.id'), primary_key=True)
+    relatedPdb_id = Column(Integer(), ForeignKey('PdbReference.id'), primary_key=True)
     
 
     def __repr__(self):
-        return f"Protein_relatedPDB(Protein_id={self.Protein_id},relatedPDB_id={self.relatedPDB_id},)"
+        return f"Protein_relatedPdb(Protein_id={self.Protein_id},relatedPdb_id={self.relatedPdb_id},)"
 
 
 
@@ -1358,18 +1391,18 @@ class ProteinSpecialFeature(Base):
     
 
 
-class ProteinProteinTAG(Base):
+class ProteinProteinTag(Base):
     """
     
     """
-    __tablename__ = 'Protein_proteinTAG'
+    __tablename__ = 'Protein_proteinTag'
 
     Protein_id = Column(Integer(), ForeignKey('Protein.id'), primary_key=True)
-    proteinTAG_id = Column(Integer(), ForeignKey('ProteinTag.id'), primary_key=True)
+    proteinTag_id = Column(Integer(), ForeignKey('ProteinTag.id'), primary_key=True)
     
 
     def __repr__(self):
-        return f"Protein_proteinTAG(Protein_id={self.Protein_id},proteinTAG_id={self.proteinTAG_id},)"
+        return f"Protein_proteinTag(Protein_id={self.Protein_id},proteinTag_id={self.proteinTag_id},)"
 
 
 
@@ -1466,18 +1499,18 @@ class ProteinFunctionalCharacterization(Base):
     
 
 
-class ProteinFunctionalTechnicalDescription(Base):
+class ProteinFunctionalAndTechnicalDescription(Base):
     """
     
     """
-    __tablename__ = 'Protein_functionalTechnicalDescription'
+    __tablename__ = 'Protein_functionalAndTechnicalDescription'
 
     Protein_id = Column(Integer(), ForeignKey('Protein.id'), primary_key=True)
-    functionalTechnicalDescription = Column(Text(), primary_key=True)
+    functionalAndTechnicalDescription = Column(Text(), primary_key=True)
     
 
     def __repr__(self):
-        return f"Protein_functionalTechnicalDescription(Protein_id={self.Protein_id},functionalTechnicalDescription={self.functionalTechnicalDescription},)"
+        return f"Protein_functionalAndTechnicalDescription(Protein_id={self.Protein_id},functionalAndTechnicalDescription={self.functionalAndTechnicalDescription},)"
 
 
 
@@ -1502,18 +1535,18 @@ class ProteinProteinPurification(Base):
     
 
 
-class ProteinTheTAGStatusOfTheSolubilizedProtein(Base):
+class ProteinTagStatusOfTheSolubilizedProtein(Base):
     """
     
     """
-    __tablename__ = 'Protein_theTAGStatusOfTheSolubilizedProtein'
+    __tablename__ = 'Protein_tagStatusOfTheSolubilizedProtein'
 
     Protein_id = Column(Integer(), ForeignKey('Protein.id'), primary_key=True)
-    theTAGStatusOfTheSolubilizedProtein = Column(Text(), primary_key=True)
+    tagStatusOfTheSolubilizedProtein = Column(Text(), primary_key=True)
     
 
     def __repr__(self):
-        return f"Protein_theTAGStatusOfTheSolubilizedProtein(Protein_id={self.Protein_id},theTAGStatusOfTheSolubilizedProtein={self.theTAGStatusOfTheSolubilizedProtein},)"
+        return f"Protein_tagStatusOfTheSolubilizedProtein(Protein_id={self.Protein_id},tagStatusOfTheSolubilizedProtein={self.tagStatusOfTheSolubilizedProtein},)"
 
 
 
@@ -1574,18 +1607,18 @@ class ProteinPathogenIdentification(Base):
     
 
 
-class ProteinRelatedDOI(Base):
+class ProteinDoi(Base):
     """
     
     """
-    __tablename__ = 'Protein_relatedDOI'
+    __tablename__ = 'Protein_doi'
 
     Protein_id = Column(Integer(), ForeignKey('Protein.id'), primary_key=True)
-    relatedDOI_id = Column(Integer(), ForeignKey('DOI.id'), primary_key=True)
+    doi_id = Column(Integer(), ForeignKey('Doi.id'), primary_key=True)
     
 
     def __repr__(self):
-        return f"Protein_relatedDOI(Protein_id={self.Protein_id},relatedDOI_id={self.relatedDOI_id},)"
+        return f"Protein_doi(Protein_id={self.Protein_id},doi_id={self.doi_id},)"
 
 
 
@@ -1700,18 +1733,18 @@ class ProteinCertification(Base):
     
 
 
-class NucleicAcidHasGbFileOfTheConstruct(Base):
+class NucleicAcidGenBankFileOfTheConstruct(Base):
     """
     
     """
-    __tablename__ = 'NucleicAcid_hasGbFileOfTheConstruct'
+    __tablename__ = 'NucleicAcid_genBankFileOfTheConstruct'
 
     NucleicAcid_id = Column(Integer(), ForeignKey('NucleicAcid.id'), primary_key=True)
-    hasGbFileOfTheConstruct_id = Column(Integer(), ForeignKey('Data.id'), primary_key=True)
+    genBankFileOfTheConstruct_id = Column(Integer(), ForeignKey('Data.id'), primary_key=True)
     
 
     def __repr__(self):
-        return f"NucleicAcid_hasGbFileOfTheConstruct(NucleicAcid_id={self.NucleicAcid_id},hasGbFileOfTheConstruct_id={self.hasGbFileOfTheConstruct_id},)"
+        return f"NucleicAcid_genBankFileOfTheConstruct(NucleicAcid_id={self.NucleicAcid_id},genBankFileOfTheConstruct_id={self.genBankFileOfTheConstruct_id},)"
 
 
 
@@ -1736,18 +1769,18 @@ class NucleicAcidSequence(Base):
     
 
 
-class NucleicAcidPasmidSelection(Base):
+class NucleicAcidPlasmidSelection(Base):
     """
     
     """
-    __tablename__ = 'NucleicAcid_pasmidSelection'
+    __tablename__ = 'NucleicAcid_plasmidSelection'
 
     NucleicAcid_id = Column(Integer(), ForeignKey('NucleicAcid.id'), primary_key=True)
-    pasmidSelection_id = Column(Integer(), ForeignKey('PlasmidSelection.id'), primary_key=True)
+    plasmidSelection_id = Column(Integer(), ForeignKey('PlasmidSelection.id'), primary_key=True)
     
 
     def __repr__(self):
-        return f"NucleicAcid_pasmidSelection(NucleicAcid_id={self.NucleicAcid_id},pasmidSelection_id={self.pasmidSelection_id},)"
+        return f"NucleicAcid_plasmidSelection(NucleicAcid_id={self.NucleicAcid_id},plasmidSelection_id={self.plasmidSelection_id},)"
 
 
 
@@ -1790,18 +1823,18 @@ class NucleicAcidPathogenIdentification(Base):
     
 
 
-class NucleicAcidRelatedDOI(Base):
+class NucleicAcidDoi(Base):
     """
     
     """
-    __tablename__ = 'NucleicAcid_relatedDOI'
+    __tablename__ = 'NucleicAcid_doi'
 
     NucleicAcid_id = Column(Integer(), ForeignKey('NucleicAcid.id'), primary_key=True)
-    relatedDOI_id = Column(Integer(), ForeignKey('DOI.id'), primary_key=True)
+    doi_id = Column(Integer(), ForeignKey('Doi.id'), primary_key=True)
     
 
     def __repr__(self):
-        return f"NucleicAcid_relatedDOI(NucleicAcid_id={self.NucleicAcid_id},relatedDOI_id={self.relatedDOI_id},)"
+        return f"NucleicAcid_doi(NucleicAcid_id={self.NucleicAcid_id},doi_id={self.doi_id},)"
 
 
 
@@ -1916,18 +1949,18 @@ class NucleicAcidCertification(Base):
     
 
 
-class DetectionKitHasSOPFile(Base):
+class DetectionKitStandardOperatingProcedureFile(Base):
     """
     
     """
-    __tablename__ = 'DetectionKit_hasSOPFile'
+    __tablename__ = 'DetectionKit_standardOperatingProcedureFile'
 
     DetectionKit_id = Column(Integer(), ForeignKey('DetectionKit.id'), primary_key=True)
-    hasSOPFile_id = Column(Integer(), ForeignKey('File.id'), primary_key=True)
+    standardOperatingProcedureFile_id = Column(Integer(), ForeignKey('File.id'), primary_key=True)
     
 
     def __repr__(self):
-        return f"DetectionKit_hasSOPFile(DetectionKit_id={self.DetectionKit_id},hasSOPFile_id={self.hasSOPFile_id},)"
+        return f"DetectionKit_standardOperatingProcedureFile(DetectionKit_id={self.DetectionKit_id},standardOperatingProcedureFile_id={self.standardOperatingProcedureFile_id},)"
 
 
 
@@ -1970,18 +2003,18 @@ class DetectionKitPathogenIdentification(Base):
     
 
 
-class DetectionKitRelatedDOI(Base):
+class DetectionKitDoi(Base):
     """
     
     """
-    __tablename__ = 'DetectionKit_relatedDOI'
+    __tablename__ = 'DetectionKit_doi'
 
     DetectionKit_id = Column(Integer(), ForeignKey('DetectionKit.id'), primary_key=True)
-    relatedDOI_id = Column(Integer(), ForeignKey('DOI.id'), primary_key=True)
+    doi_id = Column(Integer(), ForeignKey('Doi.id'), primary_key=True)
     
 
     def __repr__(self):
-        return f"DetectionKit_relatedDOI(DetectionKit_id={self.DetectionKit_id},relatedDOI_id={self.relatedDOI_id},)"
+        return f"DetectionKit_doi(DetectionKit_id={self.DetectionKit_id},doi_id={self.doi_id},)"
 
 
 
@@ -2096,18 +2129,18 @@ class DetectionKitCertification(Base):
     
 
 
-class BundleProductsOfTheBundle(Base):
+class BundleItemsOfTheBundle(Base):
     """
     
     """
-    __tablename__ = 'Bundle_productsOfTheBundle'
+    __tablename__ = 'Bundle_itemsOfTheBundle'
 
     Bundle_id = Column(Integer(), ForeignKey('Bundle.id'), primary_key=True)
-    productsOfTheBundle_id = Column(Integer(), ForeignKey('Product.id'), primary_key=True, nullable=False )
+    itemsOfTheBundle_id = Column(Integer(), ForeignKey('Product.id'), primary_key=True, nullable=False )
     
 
     def __repr__(self):
-        return f"Bundle_productsOfTheBundle(Bundle_id={self.Bundle_id},productsOfTheBundle_id={self.productsOfTheBundle_id},)"
+        return f"Bundle_itemsOfTheBundle(Bundle_id={self.Bundle_id},itemsOfTheBundle_id={self.itemsOfTheBundle_id},)"
 
 
 
@@ -2150,18 +2183,18 @@ class BundlePathogenIdentification(Base):
     
 
 
-class BundleRelatedDOI(Base):
+class BundleDoi(Base):
     """
     
     """
-    __tablename__ = 'Bundle_relatedDOI'
+    __tablename__ = 'Bundle_doi'
 
     Bundle_id = Column(Integer(), ForeignKey('Bundle.id'), primary_key=True)
-    relatedDOI_id = Column(Integer(), ForeignKey('DOI.id'), primary_key=True)
+    doi_id = Column(Integer(), ForeignKey('Doi.id'), primary_key=True)
     
 
     def __repr__(self):
-        return f"Bundle_relatedDOI(Bundle_id={self.Bundle_id},relatedDOI_id={self.relatedDOI_id},)"
+        return f"Bundle_doi(Bundle_id={self.Bundle_id},doi_id={self.doi_id},)"
 
 
 
@@ -2420,18 +2453,18 @@ class PathogenPathogenIdentification(Base):
     
 
 
-class PathogenRelatedDOI(Base):
+class PathogenDoi(Base):
     """
     
     """
-    __tablename__ = 'Pathogen_relatedDOI'
+    __tablename__ = 'Pathogen_doi'
 
     Pathogen_id = Column(Integer(), ForeignKey('Pathogen.id'), primary_key=True)
-    relatedDOI_id = Column(Integer(), ForeignKey('DOI.id'), primary_key=True)
+    doi_id = Column(Integer(), ForeignKey('Doi.id'), primary_key=True)
     
 
     def __repr__(self):
-        return f"Pathogen_relatedDOI(Pathogen_id={self.Pathogen_id},relatedDOI_id={self.relatedDOI_id},)"
+        return f"Pathogen_doi(Pathogen_id={self.Pathogen_id},doi_id={self.doi_id},)"
 
 
 
@@ -2708,18 +2741,18 @@ class VirusPathogenIdentification(Base):
     
 
 
-class VirusRelatedDOI(Base):
+class VirusDoi(Base):
     """
     
     """
-    __tablename__ = 'Virus_relatedDOI'
+    __tablename__ = 'Virus_doi'
 
     Virus_id = Column(Integer(), ForeignKey('Virus.id'), primary_key=True)
-    relatedDOI_id = Column(Integer(), ForeignKey('DOI.id'), primary_key=True)
+    doi_id = Column(Integer(), ForeignKey('Doi.id'), primary_key=True)
     
 
     def __repr__(self):
-        return f"Virus_relatedDOI(Virus_id={self.Virus_id},relatedDOI_id={self.relatedDOI_id},)"
+        return f"Virus_doi(Virus_id={self.Virus_id},doi_id={self.doi_id},)"
 
 
 
@@ -2978,18 +3011,18 @@ class BacteriumPathogenIdentification(Base):
     
 
 
-class BacteriumRelatedDOI(Base):
+class BacteriumDoi(Base):
     """
     
     """
-    __tablename__ = 'Bacterium_relatedDOI'
+    __tablename__ = 'Bacterium_doi'
 
     Bacterium_id = Column(Integer(), ForeignKey('Bacterium.id'), primary_key=True)
-    relatedDOI_id = Column(Integer(), ForeignKey('DOI.id'), primary_key=True)
+    doi_id = Column(Integer(), ForeignKey('Doi.id'), primary_key=True)
     
 
     def __repr__(self):
-        return f"Bacterium_relatedDOI(Bacterium_id={self.Bacterium_id},relatedDOI_id={self.relatedDOI_id},)"
+        return f"Bacterium_doi(Bacterium_id={self.Bacterium_id},doi_id={self.doi_id},)"
 
 
 
@@ -3248,18 +3281,18 @@ class FungusPathogenIdentification(Base):
     
 
 
-class FungusRelatedDOI(Base):
+class FungusDoi(Base):
     """
     
     """
-    __tablename__ = 'Fungus_relatedDOI'
+    __tablename__ = 'Fungus_doi'
 
     Fungus_id = Column(Integer(), ForeignKey('Fungus.id'), primary_key=True)
-    relatedDOI_id = Column(Integer(), ForeignKey('DOI.id'), primary_key=True)
+    doi_id = Column(Integer(), ForeignKey('Doi.id'), primary_key=True)
     
 
     def __repr__(self):
-        return f"Fungus_relatedDOI(Fungus_id={self.Fungus_id},relatedDOI_id={self.relatedDOI_id},)"
+        return f"Fungus_doi(Fungus_id={self.Fungus_id},doi_id={self.doi_id},)"
 
 
 
@@ -3518,18 +3551,18 @@ class ProtozoanPathogenIdentification(Base):
     
 
 
-class ProtozoanRelatedDOI(Base):
+class ProtozoanDoi(Base):
     """
     
     """
-    __tablename__ = 'Protozoan_relatedDOI'
+    __tablename__ = 'Protozoan_doi'
 
     Protozoan_id = Column(Integer(), ForeignKey('Protozoan.id'), primary_key=True)
-    relatedDOI_id = Column(Integer(), ForeignKey('DOI.id'), primary_key=True)
+    doi_id = Column(Integer(), ForeignKey('Doi.id'), primary_key=True)
     
 
     def __repr__(self):
-        return f"Protozoan_relatedDOI(Protozoan_id={self.Protozoan_id},relatedDOI_id={self.relatedDOI_id},)"
+        return f"Protozoan_doi(Protozoan_id={self.Protozoan_id},doi_id={self.doi_id},)"
 
 
 
@@ -3788,18 +3821,18 @@ class ViroidPathogenIdentification(Base):
     
 
 
-class ViroidRelatedDOI(Base):
+class ViroidDoi(Base):
     """
     
     """
-    __tablename__ = 'Viroid_relatedDOI'
+    __tablename__ = 'Viroid_doi'
 
     Viroid_id = Column(Integer(), ForeignKey('Viroid.id'), primary_key=True)
-    relatedDOI_id = Column(Integer(), ForeignKey('DOI.id'), primary_key=True)
+    doi_id = Column(Integer(), ForeignKey('Doi.id'), primary_key=True)
     
 
     def __repr__(self):
-        return f"Viroid_relatedDOI(Viroid_id={self.Viroid_id},relatedDOI_id={self.relatedDOI_id},)"
+        return f"Viroid_doi(Viroid_id={self.Viroid_id},doi_id={self.doi_id},)"
 
 
 
@@ -4058,18 +4091,18 @@ class PrionPathogenIdentification(Base):
     
 
 
-class PrionRelatedDOI(Base):
+class PrionDoi(Base):
     """
     
     """
-    __tablename__ = 'Prion_relatedDOI'
+    __tablename__ = 'Prion_doi'
 
     Prion_id = Column(Integer(), ForeignKey('Prion.id'), primary_key=True)
-    relatedDOI_id = Column(Integer(), ForeignKey('DOI.id'), primary_key=True)
+    doi_id = Column(Integer(), ForeignKey('Doi.id'), primary_key=True)
     
 
     def __repr__(self):
-        return f"Prion_relatedDOI(Prion_id={self.Prion_id},relatedDOI_id={self.relatedDOI_id},)"
+        return f"Prion_doi(Prion_id={self.Prion_id},doi_id={self.doi_id},)"
 
 
 
@@ -4211,10 +4244,11 @@ class Dataset(Resource):
     id = Column(Integer(), primary_key=True, autoincrement=True , nullable=False )
     title = Column(Text(), nullable=False )
     description = Column(Text(), nullable=False )
+    version = Column(Text())
     
 
     def __repr__(self):
-        return f"Dataset(id={self.id},title={self.title},description={self.description},)"
+        return f"Dataset(id={self.id},title={self.title},description={self.description},version={self.version},)"
 
 
 
@@ -4235,11 +4269,11 @@ class DataService(Resource):
     id = Column(Integer(), primary_key=True, autoincrement=True , nullable=False )
     title = Column(Text(), nullable=False )
     description = Column(Text())
-    endpointURL = Column(Text(), nullable=False )
+    endpointUrl = Column(Text(), nullable=False )
     
 
     def __repr__(self):
-        return f"DataService(id={self.id},title={self.title},description={self.description},endpointURL={self.endpointURL},)"
+        return f"DataService(id={self.id},title={self.title},description={self.description},endpointUrl={self.endpointUrl},)"
 
 
 
@@ -4258,13 +4292,13 @@ class Version(Resource):
     __tablename__ = 'Version'
 
     id = Column(Integer(), primary_key=True, autoincrement=True , nullable=False )
-    ID = Column(Text(), nullable=False )
+    version = Column(Text(), nullable=False )
     versionOf_id = Column(Integer(), ForeignKey('Dataset.id'), nullable=False )
     versionOf = relationship("Dataset", uselist=False, foreign_keys=[versionOf_id])
     
 
     def __repr__(self):
-        return f"Version(id={self.id},ID={self.ID},versionOf_id={self.versionOf_id},)"
+        return f"Version(id={self.id},version={self.version},versionOf_id={self.versionOf_id},)"
 
 
 
@@ -4325,14 +4359,14 @@ class Publication(Resource):
     title = Column(Text(), nullable=False )
     authors = Column(Text(), nullable=False )
     abstract = Column(Text(), nullable=False )
-    relatedDOI_id = Column(Integer(), ForeignKey('DOI.id'), nullable=False )
-    relatedDOI = relationship("DOI", uselist=False, foreign_keys=[relatedDOI_id])
+    doi_id = Column(Integer(), ForeignKey('Doi.id'), nullable=False )
+    doi = relationship("Doi", uselist=False, foreign_keys=[doi_id])
     journal_id = Column(Integer(), ForeignKey('Journal.id'))
     journal = relationship("Journal", uselist=False, foreign_keys=[journal_id])
     
 
     def __repr__(self):
-        return f"Publication(id={self.id},title={self.title},authors={self.authors},abstract={self.abstract},relatedDOI_id={self.relatedDOI_id},journal_id={self.journal_id},)"
+        return f"Publication(id={self.id},title={self.title},authors={self.authors},abstract={self.abstract},doi_id={self.doi_id},journal_id={self.journal_id},)"
 
 
 
@@ -4404,7 +4438,7 @@ class Sequence(Resource):
     __tablename__ = 'Sequence'
 
     id = Column(Integer(), primary_key=True, autoincrement=True , nullable=False )
-    sequenceFASTA = Column(Text())
+    sequenceFasta = Column(Text())
     
     
     # ManyToMany
@@ -4412,7 +4446,7 @@ class Sequence(Resource):
     
 
     def __repr__(self):
-        return f"Sequence(id={self.id},sequenceFASTA={self.sequenceFASTA},)"
+        return f"Sequence(id={self.id},sequenceFasta={self.sequenceFasta},)"
 
 
 
@@ -4557,33 +4591,17 @@ class RecombinantPartIdentification(Resource):
     
 
 
-class MSDS(Resource):
+class MaterialSafetyDataSheet(Resource):
     """
     A Material Safety Data Sheet (MSDS) or Safety Data Sheet (SDS) is a standardized document that contains crucial occupational safety and health information related to the product
     """
-    __tablename__ = 'MSDS'
+    __tablename__ = 'MaterialSafetyDataSheet'
 
     id = Column(Integer(), primary_key=True, autoincrement=True , nullable=False )
-    physicalChemicalProperties = Column(Text())
-    hazardsIdentification = Column(Text())
-    firstAidMeasures = Column(Text())
-    fireFightingMeasures = Column(Text())
-    accidentalReleaseMeasures = Column(Text())
-    handlingAndStorage = Column(Text())
-    exposureControlsPersonalProtection = Column(Text())
-    stabilityAndReactivity = Column(Text())
-    toxicologicalInformation = Column(Text())
-    ecologicalInformation = Column(Text())
-    disposalConsiderations = Column(Text())
-    transportInformation = Column(Text())
-    regulatoryInformation = Column(Text())
-    furtherInformation = Column(Text())
-    msdsContact_id = Column(Integer(), ForeignKey('ContactPoint.id'), nullable=False )
-    msdsContact = relationship("ContactPoint", uselist=False, foreign_keys=[msdsContact_id])
     
 
     def __repr__(self):
-        return f"MSDS(id={self.id},physicalChemicalProperties={self.physicalChemicalProperties},hazardsIdentification={self.hazardsIdentification},firstAidMeasures={self.firstAidMeasures},fireFightingMeasures={self.fireFightingMeasures},accidentalReleaseMeasures={self.accidentalReleaseMeasures},handlingAndStorage={self.handlingAndStorage},exposureControlsPersonalProtection={self.exposureControlsPersonalProtection},stabilityAndReactivity={self.stabilityAndReactivity},toxicologicalInformation={self.toxicologicalInformation},ecologicalInformation={self.ecologicalInformation},disposalConsiderations={self.disposalConsiderations},transportInformation={self.transportInformation},regulatoryInformation={self.regulatoryInformation},furtherInformation={self.furtherInformation},msdsContact_id={self.msdsContact_id},)"
+        return f"MaterialSafetyDataSheet(id={self.id},)"
 
 
 
@@ -4604,14 +4622,14 @@ class File(Resource):
     id = Column(Integer(), primary_key=True, autoincrement=True , nullable=False )
     name = Column(Text(), nullable=False )
     description = Column(Text())
-    contentURL = Column(Text(), nullable=False )
+    contentUrl = Column(Text(), nullable=False )
     format = Column(Text(), nullable=False )
     license_id = Column(Integer(), ForeignKey('License.id'))
     license = relationship("License", uselist=False, foreign_keys=[license_id])
     
 
     def __repr__(self):
-        return f"File(id={self.id},name={self.name},description={self.description},contentURL={self.contentURL},format={self.format},license_id={self.license_id},)"
+        return f"File(id={self.id},name={self.name},description={self.description},contentUrl={self.contentUrl},format={self.format},license_id={self.license_id},)"
 
 
 
@@ -4638,13 +4656,13 @@ class ContactPoint(Resource):
     addressLocality = Column(Text())
     addressRegion = Column(Text())
     postalCode = Column(Text())
-    oRCIDiD = Column(Text())
+    orcidId = Column(Text())
     addressCountry_id = Column(Integer(), ForeignKey('Country.id'))
     addressCountry = relationship("Country", uselist=False, foreign_keys=[addressCountry_id])
     
 
     def __repr__(self):
-        return f"ContactPoint(id={self.id},name={self.name},description={self.description},email={self.email},telephone={self.telephone},streetAddress={self.streetAddress},addressLocality={self.addressLocality},addressRegion={self.addressRegion},postalCode={self.postalCode},oRCIDiD={self.oRCIDiD},addressCountry_id={self.addressCountry_id},)"
+        return f"ContactPoint(id={self.id},name={self.name},description={self.description},email={self.email},telephone={self.telephone},streetAddress={self.streetAddress},addressLocality={self.addressLocality},addressRegion={self.addressRegion},postalCode={self.postalCode},orcidId={self.orcidId},addressCountry_id={self.addressCountry_id},)"
 
 
 
@@ -4665,14 +4683,14 @@ class License(Resource):
     id = Column(Integer(), primary_key=True, autoincrement=True , nullable=False )
     title = Column(Text(), nullable=False )
     description = Column(Text())
-    resourceURL = Column(Text())
+    resourceUrl = Column(Text())
     licensingOrAttribution = Column(Text())
     logo_id = Column(Integer(), ForeignKey('Image.id'))
     logo = relationship("Image", uselist=False, foreign_keys=[logo_id])
     
 
     def __repr__(self):
-        return f"License(id={self.id},title={self.title},description={self.description},resourceURL={self.resourceURL},licensingOrAttribution={self.licensingOrAttribution},logo_id={self.logo_id},)"
+        return f"License(id={self.id},title={self.title},description={self.description},resourceUrl={self.resourceUrl},licensingOrAttribution={self.licensingOrAttribution},logo_id={self.logo_id},)"
 
 
 
@@ -4693,7 +4711,7 @@ class Certification(Resource):
     id = Column(Integer(), primary_key=True, autoincrement=True , nullable=False )
     title = Column(Text(), nullable=False )
     description = Column(Text())
-    resourceURL = Column(Text())
+    resourceUrl = Column(Text())
     logo_id = Column(Integer(), ForeignKey('Image.id'))
     logo = relationship("Image", uselist=False, foreign_keys=[logo_id])
     
@@ -4703,7 +4721,7 @@ class Certification(Resource):
     
 
     def __repr__(self):
-        return f"Certification(id={self.id},title={self.title},description={self.description},resourceURL={self.resourceURL},logo_id={self.logo_id},)"
+        return f"Certification(id={self.id},title={self.title},description={self.description},resourceUrl={self.resourceUrl},logo_id={self.logo_id},)"
 
 
 
@@ -4724,10 +4742,11 @@ class Catalogue(Dataset):
     id = Column(Integer(), primary_key=True, autoincrement=True , nullable=False )
     title = Column(Text(), nullable=False )
     description = Column(Text(), nullable=False )
+    version = Column(Text())
     
 
     def __repr__(self):
-        return f"Catalogue(id={self.id},title={self.title},description={self.description},)"
+        return f"Catalogue(id={self.id},title={self.title},description={self.description},version={self.version},)"
 
 
 
@@ -4747,14 +4766,14 @@ class DataProvider(DataService):
 
     id = Column(Integer(), primary_key=True, autoincrement=True , nullable=False )
     loginRequestMethod = Column(Text())
-    loginURL = Column(Text())
+    loginUrl = Column(Text())
     loginTokenName = Column(Text())
     queryMethod = Column(Text(), nullable=False )
     contentType = Column(Text(), nullable=False )
     weight = Column(Integer(), nullable=False )
     title = Column(Text(), nullable=False )
     description = Column(Text())
-    endpointURL = Column(Text(), nullable=False )
+    endpointUrl = Column(Text(), nullable=False )
     license_id = Column(Integer(), ForeignKey('License.id'))
     license = relationship("License", uselist=False, foreign_keys=[license_id])
     providedEntityType_id = Column(Integer(), ForeignKey('Dataset.id'), nullable=False )
@@ -4762,7 +4781,7 @@ class DataProvider(DataService):
     
 
     def __repr__(self):
-        return f"DataProvider(id={self.id},loginRequestMethod={self.loginRequestMethod},loginURL={self.loginURL},loginTokenName={self.loginTokenName},queryMethod={self.queryMethod},contentType={self.contentType},weight={self.weight},title={self.title},description={self.description},endpointURL={self.endpointURL},license_id={self.license_id},providedEntityType_id={self.providedEntityType_id},)"
+        return f"DataProvider(id={self.id},loginRequestMethod={self.loginRequestMethod},loginUrl={self.loginUrl},loginTokenName={self.loginTokenName},queryMethod={self.queryMethod},contentType={self.contentType},weight={self.weight},title={self.title},description={self.description},endpointUrl={self.endpointUrl},license_id={self.license_id},providedEntityType_id={self.providedEntityType_id},)"
 
 
 
@@ -4873,11 +4892,11 @@ class RiskGroup(Term):
     
 
 
-class DOI(Term):
+class Doi(Term):
     """
     A unique string identifier assigned to a digital object, providing a permanent link for reliable citation and access.  The Digital Object Identifier (DOI) is a persistent identifier that is an ISO standard
     """
-    __tablename__ = 'DOI'
+    __tablename__ = 'Doi'
 
     id = Column(Integer(), primary_key=True, autoincrement=True , nullable=False )
     title = Column(Text(), nullable=False )
@@ -4888,7 +4907,7 @@ class DOI(Term):
     
 
     def __repr__(self):
-        return f"DOI(id={self.id},title={self.title},description={self.description},weight={self.weight},inVocabulary_id={self.inVocabulary_id},)"
+        return f"Doi(id={self.id},title={self.title},description={self.description},weight={self.weight},inVocabulary_id={self.inVocabulary_id},)"
 
 
 
@@ -4927,11 +4946,11 @@ class Journal(Term):
     
 
 
-class PDBReference(Term):
+class PdbReference(Term):
     """
     Identifier for 3D structural data as per the PDB (Protein Data Bank) database
     """
-    __tablename__ = 'PDBReference'
+    __tablename__ = 'PdbReference'
 
     id = Column(Integer(), primary_key=True, autoincrement=True , nullable=False )
     title = Column(Text(), nullable=False )
@@ -4942,7 +4961,7 @@ class PDBReference(Term):
     
 
     def __repr__(self):
-        return f"PDBReference(id={self.id},title={self.title},description={self.description},weight={self.weight},inVocabulary_id={self.inVocabulary_id},)"
+        return f"PdbReference(id={self.id},title={self.title},description={self.description},weight={self.weight},inVocabulary_id={self.inVocabulary_id},)"
 
 
 
@@ -4983,7 +5002,7 @@ class Keyword(Term):
 
 class ProteinTag(Term):
     """
-    Peptide sequence genetically grafted onto a recombinant protein
+    A DNA coding sequence or corresponding peptide/protein sequence fused to a sequence of interest, used to facilitate experimental operations such as purification, detection, localization, tracking, solubility enhancement, or selection. Applicable to both proteins and nucleic acids
     """
     __tablename__ = 'ProteinTag'
 
@@ -5281,11 +5300,11 @@ class Country(Term):
     
 
 
-class IATAClassification(Term):
+class IataClassification(Term):
     """
     The corresponding International Air Transport Association (IATA)'s category for dangerous goods that are transported by air
     """
-    __tablename__ = 'IATAClassification'
+    __tablename__ = 'IataClassification'
 
     id = Column(Integer(), primary_key=True, autoincrement=True , nullable=False )
     title = Column(Text(), nullable=False )
@@ -5296,7 +5315,7 @@ class IATAClassification(Term):
     
 
     def __repr__(self):
-        return f"IATAClassification(id={self.id},title={self.title},description={self.description},weight={self.weight},inVocabulary_id={self.inVocabulary_id},)"
+        return f"IataClassification(id={self.id},title={self.title},description={self.description},weight={self.weight},inVocabulary_id={self.inVocabulary_id},)"
 
 
 
@@ -5346,8 +5365,8 @@ class Taxon(Term):
     __tablename__ = 'Taxon'
 
     id = Column(Integer(), primary_key=True, autoincrement=True , nullable=False )
-    taxonomicID = Column(Text(), nullable=False )
-    taxonomicNodeID = Column(Text())
+    taxonomicId = Column(Text(), nullable=False )
+    taxonomicNodeId = Column(Text())
     title = Column(Text(), nullable=False )
     description = Column(Text())
     weight = Column(Integer(), nullable=False )
@@ -5372,7 +5391,7 @@ class Taxon(Term):
     
 
     def __repr__(self):
-        return f"Taxon(id={self.id},taxonomicID={self.taxonomicID},taxonomicNodeID={self.taxonomicNodeID},title={self.title},description={self.description},weight={self.weight},parentTaxon_id={self.parentTaxon_id},rank_id={self.rank_id},inVocabulary_id={self.inVocabulary_id},)"
+        return f"Taxon(id={self.id},taxonomicId={self.taxonomicId},taxonomicNodeId={self.taxonomicNodeId},title={self.title},description={self.description},weight={self.weight},parentTaxon_id={self.parentTaxon_id},rank_id={self.rank_id},inVocabulary_id={self.inVocabulary_id},)"
 
 
 
@@ -5391,7 +5410,7 @@ class Person(PersonOrOrganization):
     __tablename__ = 'Person'
 
     id = Column(Integer(), primary_key=True, autoincrement=True , nullable=False )
-    oRCIDiD = Column(Text())
+    orcidId = Column(Text())
     name = Column(Text(), nullable=False )
     description = Column(Text())
     homePage = Column(Text())
@@ -5402,7 +5421,7 @@ class Person(PersonOrOrganization):
     
 
     def __repr__(self):
-        return f"Person(id={self.id},oRCIDiD={self.oRCIDiD},name={self.name},description={self.description},homePage={self.homePage},contactPoint_id={self.contactPoint_id},logo_id={self.logo_id},)"
+        return f"Person(id={self.id},orcidId={self.orcidId},name={self.name},description={self.description},homePage={self.homePage},contactPoint_id={self.contactPoint_id},logo_id={self.logo_id},)"
 
 
 
@@ -5421,7 +5440,7 @@ class Organization(PersonOrOrganization):
     __tablename__ = 'Organization'
 
     id = Column(Integer(), primary_key=True, autoincrement=True , nullable=False )
-    rORiD = Column(Text())
+    rorId = Column(Text())
     name = Column(Text(), nullable=False )
     description = Column(Text())
     homePage = Column(Text())
@@ -5438,7 +5457,7 @@ class Organization(PersonOrOrganization):
     
 
     def __repr__(self):
-        return f"Organization(id={self.id},rORiD={self.rORiD},name={self.name},description={self.description},homePage={self.homePage},country_id={self.country_id},contactPoint_id={self.contactPoint_id},logo_id={self.logo_id},)"
+        return f"Organization(id={self.id},rorId={self.rorId},name={self.name},description={self.description},homePage={self.homePage},country_id={self.country_id},contactPoint_id={self.contactPoint_id},logo_id={self.logo_id},)"
 
 
 
@@ -5488,18 +5507,18 @@ class NaturalPartOrigin(BiologicalPartOrigin):
     id = Column(Integer(), primary_key=True, autoincrement=True , nullable=False )
     collectionDate = Column(DateTime(), nullable=False )
     beforeDate = Column(Boolean(), nullable=False )
-    permitIdentifierForABS = Column(Text())
+    permitIdentifierForAbs = Column(Text())
     accessToPhysicalGeneticResource = Column(Boolean(), nullable=False )
     countryOfCollection_id = Column(Integer(), ForeignKey('Country.id'), nullable=False )
     countryOfCollection = relationship("Country", uselist=False, foreign_keys=[countryOfCollection_id])
-    indigenousPoepleAndLocalCommunityOrigin_id = Column(Integer(), ForeignKey('IPLCOrigin.id'))
-    indigenousPoepleAndLocalCommunityOrigin = relationship("IPLCOrigin", uselist=False, foreign_keys=[indigenousPoepleAndLocalCommunityOrigin_id])
+    indigenousPeopleAndLocalCommunityOrigin_id = Column(Integer(), ForeignKey('IplcOrigin.id'))
+    indigenousPeopleAndLocalCommunityOrigin = relationship("IplcOrigin", uselist=False, foreign_keys=[indigenousPeopleAndLocalCommunityOrigin_id])
     recombinantPartIdentification_id = Column(Integer(), ForeignKey('RecombinantPartIdentification.id'))
     recombinantPartIdentification = relationship("RecombinantPartIdentification", uselist=False, foreign_keys=[recombinantPartIdentification_id])
     
 
     def __repr__(self):
-        return f"NaturalPartOrigin(id={self.id},collectionDate={self.collectionDate},beforeDate={self.beforeDate},permitIdentifierForABS={self.permitIdentifierForABS},accessToPhysicalGeneticResource={self.accessToPhysicalGeneticResource},countryOfCollection_id={self.countryOfCollection_id},indigenousPoepleAndLocalCommunityOrigin_id={self.indigenousPoepleAndLocalCommunityOrigin_id},recombinantPartIdentification_id={self.recombinantPartIdentification_id},)"
+        return f"NaturalPartOrigin(id={self.id},collectionDate={self.collectionDate},beforeDate={self.beforeDate},permitIdentifierForAbs={self.permitIdentifierForAbs},accessToPhysicalGeneticResource={self.accessToPhysicalGeneticResource},countryOfCollection_id={self.countryOfCollection_id},indigenousPeopleAndLocalCommunityOrigin_id={self.indigenousPeopleAndLocalCommunityOrigin_id},recombinantPartIdentification_id={self.recombinantPartIdentification_id},)"
 
 
 
@@ -5540,24 +5559,25 @@ class SyntheticPartOrigin(BiologicalPartOrigin):
 
 class ProductOrService(Dataset):
     """
-    A product or a service
+    An offering provided by a provider, which may be tangible (a product) or intangible (a service)
     """
     __tablename__ = 'ProductOrService'
 
     id = Column(Integer(), primary_key=True, autoincrement=True , nullable=False )
-    accessPointURL = Column(Text(), nullable=False )
-    refSKU = Column(Text(), nullable=False )
+    accessPointUrl = Column(Text(), nullable=False )
+    refSku = Column(Text(), nullable=False )
     unitDefinition = Column(Text())
     unitCost = Column(Text(), nullable=False )
     qualityGrading = Column(Text())
     biosafetyRestrictions = Column(Text())
-    canItBeUsedToProduceGMO = Column(Boolean(), nullable=False )
+    canBeUsedToProduceGmo = Column(Boolean(), nullable=False )
     availability = Column(Text(), nullable=False )
     technicalRecommendation = Column(Text())
     internalReference = Column(Text())
     note = Column(Text())
     title = Column(Text(), nullable=False )
     description = Column(Text(), nullable=False )
+    version = Column(Text())
     category_id = Column(Integer(), ForeignKey('ProductCategory.id'), nullable=False )
     category = relationship("ProductCategory", uselist=False, foreign_keys=[category_id])
     riskGroup_id = Column(Integer(), ForeignKey('RiskGroup.id'))
@@ -5577,7 +5597,7 @@ class ProductOrService(Dataset):
     
     
     # ManyToMany
-    relatedDOI = relationship( "DOI", secondary="ProductOrService_relatedDOI")
+    doi = relationship( "Doi", secondary="ProductOrService_doi")
     
     
     # ManyToMany
@@ -5605,7 +5625,7 @@ class ProductOrService(Dataset):
     
 
     def __repr__(self):
-        return f"ProductOrService(id={self.id},accessPointURL={self.accessPointURL},refSKU={self.refSKU},unitDefinition={self.unitDefinition},unitCost={self.unitCost},qualityGrading={self.qualityGrading},biosafetyRestrictions={self.biosafetyRestrictions},canItBeUsedToProduceGMO={self.canItBeUsedToProduceGMO},availability={self.availability},technicalRecommendation={self.technicalRecommendation},internalReference={self.internalReference},note={self.note},title={self.title},description={self.description},category_id={self.category_id},riskGroup_id={self.riskGroup_id},provider_id={self.provider_id},contactPoint_id={self.contactPoint_id},)"
+        return f"ProductOrService(id={self.id},accessPointUrl={self.accessPointUrl},refSku={self.refSku},unitDefinition={self.unitDefinition},unitCost={self.unitCost},qualityGrading={self.qualityGrading},biosafetyRestrictions={self.biosafetyRestrictions},canBeUsedToProduceGmo={self.canBeUsedToProduceGmo},availability={self.availability},technicalRecommendation={self.technicalRecommendation},internalReference={self.internalReference},note={self.note},title={self.title},description={self.description},version={self.version},category_id={self.category_id},riskGroup_id={self.riskGroup_id},provider_id={self.provider_id},contactPoint_id={self.contactPoint_id},)"
 
 
 
@@ -5626,14 +5646,14 @@ class Data(File):
     id = Column(Integer(), primary_key=True, autoincrement=True , nullable=False )
     name = Column(Text(), nullable=False )
     description = Column(Text())
-    contentURL = Column(Text(), nullable=False )
+    contentUrl = Column(Text(), nullable=False )
     format = Column(Text(), nullable=False )
     license_id = Column(Integer(), ForeignKey('License.id'))
     license = relationship("License", uselist=False, foreign_keys=[license_id])
     
 
     def __repr__(self):
-        return f"Data(id={self.id},name={self.name},description={self.description},contentURL={self.contentURL},format={self.format},license_id={self.license_id},)"
+        return f"Data(id={self.id},name={self.name},description={self.description},contentUrl={self.contentUrl},format={self.format},license_id={self.license_id},)"
 
 
 
@@ -5654,14 +5674,14 @@ class Document(File):
     id = Column(Integer(), primary_key=True, autoincrement=True , nullable=False )
     name = Column(Text(), nullable=False )
     description = Column(Text())
-    contentURL = Column(Text(), nullable=False )
+    contentUrl = Column(Text(), nullable=False )
     format = Column(Text(), nullable=False )
     license_id = Column(Integer(), ForeignKey('License.id'))
     license = relationship("License", uselist=False, foreign_keys=[license_id])
     
 
     def __repr__(self):
-        return f"Document(id={self.id},name={self.name},description={self.description},contentURL={self.contentURL},format={self.format},license_id={self.license_id},)"
+        return f"Document(id={self.id},name={self.name},description={self.description},contentUrl={self.contentUrl},format={self.format},license_id={self.license_id},)"
 
 
 
@@ -5682,14 +5702,14 @@ class Audio(File):
     id = Column(Integer(), primary_key=True, autoincrement=True , nullable=False )
     name = Column(Text(), nullable=False )
     description = Column(Text())
-    contentURL = Column(Text(), nullable=False )
+    contentUrl = Column(Text(), nullable=False )
     format = Column(Text(), nullable=False )
     license_id = Column(Integer(), ForeignKey('License.id'))
     license = relationship("License", uselist=False, foreign_keys=[license_id])
     
 
     def __repr__(self):
-        return f"Audio(id={self.id},name={self.name},description={self.description},contentURL={self.contentURL},format={self.format},license_id={self.license_id},)"
+        return f"Audio(id={self.id},name={self.name},description={self.description},contentUrl={self.contentUrl},format={self.format},license_id={self.license_id},)"
 
 
 
@@ -5710,14 +5730,14 @@ class Video(File):
     id = Column(Integer(), primary_key=True, autoincrement=True , nullable=False )
     name = Column(Text(), nullable=False )
     description = Column(Text())
-    contentURL = Column(Text(), nullable=False )
+    contentUrl = Column(Text(), nullable=False )
     format = Column(Text(), nullable=False )
     license_id = Column(Integer(), ForeignKey('License.id'))
     license = relationship("License", uselist=False, foreign_keys=[license_id])
     
 
     def __repr__(self):
-        return f"Video(id={self.id},name={self.name},description={self.description},contentURL={self.contentURL},format={self.format},license_id={self.license_id},)"
+        return f"Video(id={self.id},name={self.name},description={self.description},contentUrl={self.contentUrl},format={self.format},license_id={self.license_id},)"
 
 
 
@@ -5739,14 +5759,14 @@ class Image(File):
     altText = Column(Text())
     name = Column(Text(), nullable=False )
     description = Column(Text())
-    contentURL = Column(Text(), nullable=False )
+    contentUrl = Column(Text(), nullable=False )
     format = Column(Text(), nullable=False )
     license_id = Column(Integer(), ForeignKey('License.id'))
     license = relationship("License", uselist=False, foreign_keys=[license_id])
     
 
     def __repr__(self):
-        return f"Image(id={self.id},altText={self.altText},name={self.name},description={self.description},contentURL={self.contentURL},format={self.format},license_id={self.license_id},)"
+        return f"Image(id={self.id},altText={self.altText},name={self.name},description={self.description},contentUrl={self.contentUrl},format={self.format},license_id={self.license_id},)"
 
 
 
@@ -5760,17 +5780,16 @@ class Image(File):
 
 class Taxonomy(Catalogue):
     """
-    Science of naming, defining and classifying organisms
+    A structured representation of data about the classification and naming of biological organisms into groups according to shared characteristics
     """
     __tablename__ = 'Taxonomy'
 
     id = Column(Integer(), primary_key=True, autoincrement=True , nullable=False )
+    version = Column(Text(), nullable=False )
     title = Column(Text(), nullable=False )
     description = Column(Text(), nullable=False )
     taxonDataProvider_id = Column(Integer(), ForeignKey('DataProvider.id'))
     taxonDataProvider = relationship("DataProvider", uselist=False, foreign_keys=[taxonDataProvider_id])
-    version_id = Column(Integer(), ForeignKey('Version.id'), nullable=False )
-    version = relationship("Version", uselist=False, foreign_keys=[version_id])
     versionDataProvider_id = Column(Integer(), ForeignKey('DataProvider.id'), nullable=False )
     versionDataProvider = relationship("DataProvider", uselist=False, foreign_keys=[versionDataProvider_id])
     rankDataProvider_id = Column(Integer(), ForeignKey('DataProvider.id'))
@@ -5786,7 +5805,7 @@ class Taxonomy(Catalogue):
     
 
     def __repr__(self):
-        return f"Taxonomy(id={self.id},title={self.title},description={self.description},taxonDataProvider_id={self.taxonDataProvider_id},version_id={self.version_id},versionDataProvider_id={self.versionDataProvider_id},rankDataProvider_id={self.rankDataProvider_id},)"
+        return f"Taxonomy(id={self.id},version={self.version},title={self.title},description={self.description},taxonDataProvider_id={self.taxonDataProvider_id},versionDataProvider_id={self.versionDataProvider_id},rankDataProvider_id={self.rankDataProvider_id},)"
 
 
 
@@ -5807,6 +5826,7 @@ class Vocabulary(Catalogue):
     id = Column(Integer(), primary_key=True, autoincrement=True , nullable=False )
     title = Column(Text(), nullable=False )
     description = Column(Text(), nullable=False )
+    version = Column(Text())
     termDataProvider_id = Column(Integer(), ForeignKey('DataProvider.id'))
     termDataProvider = relationship("DataProvider", uselist=False, foreign_keys=[termDataProvider_id])
     
@@ -5816,7 +5836,7 @@ class Vocabulary(Catalogue):
     
 
     def __repr__(self):
-        return f"Vocabulary(id={self.id},title={self.title},description={self.description},termDataProvider_id={self.termDataProvider_id},)"
+        return f"Vocabulary(id={self.id},title={self.title},description={self.description},version={self.version},termDataProvider_id={self.termDataProvider_id},)"
 
 
 
@@ -5864,11 +5884,11 @@ class VirusName(CommonName):
     
 
 
-class IPLCOrigin(GeographicalOrigin):
+class IplcOrigin(GeographicalOrigin):
     """
     The IPLC area (Indigenous People and Local Communities) from which a physical item originates
     """
-    __tablename__ = 'IPLCOrigin'
+    __tablename__ = 'IplcOrigin'
 
     id = Column(Integer(), primary_key=True, autoincrement=True , nullable=False )
     title = Column(Text(), nullable=False )
@@ -5879,7 +5899,7 @@ class IPLCOrigin(GeographicalOrigin):
     
 
     def __repr__(self):
-        return f"IPLCOrigin(id={self.id},title={self.title},description={self.description},weight={self.weight},inVocabulary_id={self.inVocabulary_id},)"
+        return f"IplcOrigin(id={self.id},title={self.title},description={self.description},weight={self.weight},inVocabulary_id={self.inVocabulary_id},)"
 
 
 
@@ -5927,14 +5947,14 @@ class Variant(CommonName):
     
 
 
-class RI(Organization):
+class ReasearchInfrastructure(Organization):
     """
-    A research infrastructure
+    A research infrastructure (RI)
     """
-    __tablename__ = 'RI'
+    __tablename__ = 'ReasearchInfrastructure'
 
     id = Column(Integer(), primary_key=True, autoincrement=True , nullable=False )
-    rORiD = Column(Text())
+    rorId = Column(Text())
     name = Column(Text(), nullable=False )
     description = Column(Text())
     homePage = Column(Text())
@@ -5947,11 +5967,11 @@ class RI(Organization):
     
     
     # ManyToMany
-    alternateName = relationship( "AlternateName", secondary="RI_alternateName")
+    alternateName = relationship( "AlternateName", secondary="ReasearchInfrastructure_alternateName")
     
 
     def __repr__(self):
-        return f"RI(id={self.id},rORiD={self.rORiD},name={self.name},description={self.description},homePage={self.homePage},country_id={self.country_id},contactPoint_id={self.contactPoint_id},logo_id={self.logo_id},)"
+        return f"ReasearchInfrastructure(id={self.id},rorId={self.rorId},name={self.name},description={self.description},homePage={self.homePage},country_id={self.country_id},contactPoint_id={self.contactPoint_id},logo_id={self.logo_id},)"
 
 
 
@@ -5970,7 +5990,7 @@ class Provider(Organization):
     __tablename__ = 'Provider'
 
     id = Column(Integer(), primary_key=True, autoincrement=True , nullable=False )
-    rORiD = Column(Text())
+    rorId = Column(Text())
     name = Column(Text(), nullable=False )
     description = Column(Text())
     homePage = Column(Text())
@@ -5983,7 +6003,7 @@ class Provider(Organization):
     
     
     # ManyToMany
-    memberOfRI = relationship( "RI", secondary="Provider_memberOfRI")
+    memberOfRi = relationship( "ReasearchInfrastructure", secondary="Provider_memberOfRi")
     
     
     # ManyToMany
@@ -5991,7 +6011,7 @@ class Provider(Organization):
     
 
     def __repr__(self):
-        return f"Provider(id={self.id},rORiD={self.rORiD},name={self.name},description={self.description},homePage={self.homePage},country_id={self.country_id},contactPoint_id={self.contactPoint_id},logo_id={self.logo_id},)"
+        return f"Provider(id={self.id},rorId={self.rorId},name={self.name},description={self.description},homePage={self.homePage},country_id={self.country_id},contactPoint_id={self.contactPoint_id},logo_id={self.logo_id},)"
 
 
 
@@ -6012,6 +6032,7 @@ class Collection(Catalogue):
     id = Column(Integer(), primary_key=True, autoincrement=True , nullable=False )
     title = Column(Text(), nullable=False )
     description = Column(Text(), nullable=False )
+    version = Column(Text())
     collectionDataProvider_id = Column(Integer(), ForeignKey('DataProvider.id'))
     collectionDataProvider = relationship("DataProvider", uselist=False, foreign_keys=[collectionDataProvider_id])
     
@@ -6021,7 +6042,7 @@ class Collection(Catalogue):
     
 
     def __repr__(self):
-        return f"Collection(id={self.id},title={self.title},description={self.description},collectionDataProvider_id={self.collectionDataProvider_id},)"
+        return f"Collection(id={self.id},title={self.title},description={self.description},version={self.version},collectionDataProvider_id={self.collectionDataProvider_id},)"
 
 
 
@@ -6035,26 +6056,27 @@ class Collection(Catalogue):
 
 class Service(ProductOrService):
     """
-    A service
+    An intangible offering characterized by an activity, performance, or facilitation carried out by a provider to fulfill a user’s need
     """
     __tablename__ = 'Service'
 
     id = Column(Integer(), primary_key=True, autoincrement=True , nullable=False )
     modelSpecies = Column(Text())
     modelType = Column(Text())
-    accessPointURL = Column(Text(), nullable=False )
-    refSKU = Column(Text(), nullable=False )
+    accessPointUrl = Column(Text(), nullable=False )
+    refSku = Column(Text(), nullable=False )
     unitDefinition = Column(Text())
     unitCost = Column(Text(), nullable=False )
     qualityGrading = Column(Text())
     biosafetyRestrictions = Column(Text())
-    canItBeUsedToProduceGMO = Column(Boolean(), nullable=False )
+    canBeUsedToProduceGmo = Column(Boolean(), nullable=False )
     availability = Column(Text(), nullable=False )
     technicalRecommendation = Column(Text())
     internalReference = Column(Text())
     note = Column(Text())
     title = Column(Text(), nullable=False )
     description = Column(Text(), nullable=False )
+    version = Column(Text())
     category_id = Column(Integer(), ForeignKey('ProductCategory.id'), nullable=False )
     category = relationship("ProductCategory", uselist=False, foreign_keys=[category_id])
     riskGroup_id = Column(Integer(), ForeignKey('RiskGroup.id'))
@@ -6074,7 +6096,7 @@ class Service(ProductOrService):
     
     
     # ManyToMany
-    relatedDOI = relationship( "DOI", secondary="Service_relatedDOI")
+    doi = relationship( "Doi", secondary="Service_doi")
     
     
     # ManyToMany
@@ -6102,7 +6124,7 @@ class Service(ProductOrService):
     
 
     def __repr__(self):
-        return f"Service(id={self.id},modelSpecies={self.modelSpecies},modelType={self.modelType},accessPointURL={self.accessPointURL},refSKU={self.refSKU},unitDefinition={self.unitDefinition},unitCost={self.unitCost},qualityGrading={self.qualityGrading},biosafetyRestrictions={self.biosafetyRestrictions},canItBeUsedToProduceGMO={self.canItBeUsedToProduceGMO},availability={self.availability},technicalRecommendation={self.technicalRecommendation},internalReference={self.internalReference},note={self.note},title={self.title},description={self.description},category_id={self.category_id},riskGroup_id={self.riskGroup_id},provider_id={self.provider_id},contactPoint_id={self.contactPoint_id},)"
+        return f"Service(id={self.id},modelSpecies={self.modelSpecies},modelType={self.modelType},accessPointUrl={self.accessPointUrl},refSku={self.refSku},unitDefinition={self.unitDefinition},unitCost={self.unitCost},qualityGrading={self.qualityGrading},biosafetyRestrictions={self.biosafetyRestrictions},canBeUsedToProduceGmo={self.canBeUsedToProduceGmo},availability={self.availability},technicalRecommendation={self.technicalRecommendation},internalReference={self.internalReference},note={self.note},title={self.title},description={self.description},version={self.version},category_id={self.category_id},riskGroup_id={self.riskGroup_id},provider_id={self.provider_id},contactPoint_id={self.contactPoint_id},)"
 
 
 
@@ -6116,7 +6138,7 @@ class Service(ProductOrService):
 
 class Product(ProductOrService):
     """
-    A product
+    A tangible, physical item made available by a provider for use, consumption, or ownership transfer
     """
     __tablename__ = 'Product'
 
@@ -6125,23 +6147,24 @@ class Product(ProductOrService):
     storageConditions = Column(Text(), nullable=False )
     thirdPartyDistributionConsent = Column(Boolean())
     usageRestrictions = Column(Text())
-    accessPointURL = Column(Text(), nullable=False )
-    refSKU = Column(Text(), nullable=False )
+    accessPointUrl = Column(Text(), nullable=False )
+    refSku = Column(Text(), nullable=False )
     unitDefinition = Column(Text())
     unitCost = Column(Text(), nullable=False )
     qualityGrading = Column(Text())
     biosafetyRestrictions = Column(Text())
-    canItBeUsedToProduceGMO = Column(Boolean(), nullable=False )
+    canBeUsedToProduceGmo = Column(Boolean(), nullable=False )
     availability = Column(Text(), nullable=False )
     technicalRecommendation = Column(Text())
     internalReference = Column(Text())
     note = Column(Text())
     title = Column(Text(), nullable=False )
     description = Column(Text(), nullable=False )
-    hasIATAClassification_id = Column(Integer(), ForeignKey('IATAClassification.id'), nullable=False )
-    hasIATAClassification = relationship("IATAClassification", uselist=False, foreign_keys=[hasIATAClassification_id])
-    materialSafetyDataSheet_id = Column(Integer(), ForeignKey('MSDS.id'))
-    materialSafetyDataSheet = relationship("MSDS", uselist=False, foreign_keys=[materialSafetyDataSheet_id])
+    version = Column(Text())
+    iataClassification_id = Column(Integer(), ForeignKey('IataClassification.id'), nullable=False )
+    iataClassification = relationship("IataClassification", uselist=False, foreign_keys=[iataClassification_id])
+    materialSafetyDataSheet_id = Column(Integer(), ForeignKey('ReasearchInfrastructure.id'))
+    materialSafetyDataSheet = relationship("ReasearchInfrastructure", uselist=False, foreign_keys=[materialSafetyDataSheet_id])
     originator_id = Column(Integer(), ForeignKey('Originator.id'))
     originator = relationship("Originator", uselist=False, foreign_keys=[originator_id])
     category_id = Column(Integer(), ForeignKey('ProductCategory.id'), nullable=False )
@@ -6163,7 +6186,7 @@ class Product(ProductOrService):
     
     
     # ManyToMany
-    relatedDOI = relationship( "DOI", secondary="Product_relatedDOI")
+    doi = relationship( "Doi", secondary="Product_doi")
     
     
     # ManyToMany
@@ -6191,7 +6214,7 @@ class Product(ProductOrService):
     
 
     def __repr__(self):
-        return f"Product(id={self.id},shippingConditions={self.shippingConditions},storageConditions={self.storageConditions},thirdPartyDistributionConsent={self.thirdPartyDistributionConsent},usageRestrictions={self.usageRestrictions},accessPointURL={self.accessPointURL},refSKU={self.refSKU},unitDefinition={self.unitDefinition},unitCost={self.unitCost},qualityGrading={self.qualityGrading},biosafetyRestrictions={self.biosafetyRestrictions},canItBeUsedToProduceGMO={self.canItBeUsedToProduceGMO},availability={self.availability},technicalRecommendation={self.technicalRecommendation},internalReference={self.internalReference},note={self.note},title={self.title},description={self.description},hasIATAClassification_id={self.hasIATAClassification_id},materialSafetyDataSheet_id={self.materialSafetyDataSheet_id},originator_id={self.originator_id},category_id={self.category_id},riskGroup_id={self.riskGroup_id},provider_id={self.provider_id},contactPoint_id={self.contactPoint_id},)"
+        return f"Product(id={self.id},shippingConditions={self.shippingConditions},storageConditions={self.storageConditions},thirdPartyDistributionConsent={self.thirdPartyDistributionConsent},usageRestrictions={self.usageRestrictions},accessPointUrl={self.accessPointUrl},refSku={self.refSku},unitDefinition={self.unitDefinition},unitCost={self.unitCost},qualityGrading={self.qualityGrading},biosafetyRestrictions={self.biosafetyRestrictions},canBeUsedToProduceGmo={self.canBeUsedToProduceGmo},availability={self.availability},technicalRecommendation={self.technicalRecommendation},internalReference={self.internalReference},note={self.note},title={self.title},description={self.description},version={self.version},iataClassification_id={self.iataClassification_id},materialSafetyDataSheet_id={self.materialSafetyDataSheet_id},originator_id={self.originator_id},category_id={self.category_id},riskGroup_id={self.riskGroup_id},provider_id={self.provider_id},contactPoint_id={self.contactPoint_id},)"
 
 
 
@@ -6218,23 +6241,24 @@ class Antibody(Product):
     storageConditions = Column(Text(), nullable=False )
     thirdPartyDistributionConsent = Column(Boolean())
     usageRestrictions = Column(Text())
-    accessPointURL = Column(Text(), nullable=False )
-    refSKU = Column(Text(), nullable=False )
+    accessPointUrl = Column(Text(), nullable=False )
+    refSku = Column(Text(), nullable=False )
     unitDefinition = Column(Text())
     unitCost = Column(Text(), nullable=False )
     qualityGrading = Column(Text())
     biosafetyRestrictions = Column(Text())
-    canItBeUsedToProduceGMO = Column(Boolean(), nullable=False )
+    canBeUsedToProduceGmo = Column(Boolean(), nullable=False )
     availability = Column(Text(), nullable=False )
     technicalRecommendation = Column(Text())
     internalReference = Column(Text())
     note = Column(Text())
     title = Column(Text(), nullable=False )
     description = Column(Text(), nullable=False )
-    hasIATAClassification_id = Column(Integer(), ForeignKey('IATAClassification.id'), nullable=False )
-    hasIATAClassification = relationship("IATAClassification", uselist=False, foreign_keys=[hasIATAClassification_id])
-    materialSafetyDataSheet_id = Column(Integer(), ForeignKey('MSDS.id'))
-    materialSafetyDataSheet = relationship("MSDS", uselist=False, foreign_keys=[materialSafetyDataSheet_id])
+    version = Column(Text())
+    iataClassification_id = Column(Integer(), ForeignKey('IataClassification.id'), nullable=False )
+    iataClassification = relationship("IataClassification", uselist=False, foreign_keys=[iataClassification_id])
+    materialSafetyDataSheet_id = Column(Integer(), ForeignKey('ReasearchInfrastructure.id'))
+    materialSafetyDataSheet = relationship("ReasearchInfrastructure", uselist=False, foreign_keys=[materialSafetyDataSheet_id])
     originator_id = Column(Integer(), ForeignKey('Originator.id'))
     originator = relationship("Originator", uselist=False, foreign_keys=[originator_id])
     category_id = Column(Integer(), ForeignKey('ProductCategory.id'), nullable=False )
@@ -6260,7 +6284,7 @@ class Antibody(Product):
     
     
     # ManyToMany
-    relatedDOI = relationship( "DOI", secondary="Antibody_relatedDOI")
+    doi = relationship( "Doi", secondary="Antibody_doi")
     
     
     # ManyToMany
@@ -6288,7 +6312,7 @@ class Antibody(Product):
     
 
     def __repr__(self):
-        return f"Antibody(id={self.id},productionSystem={self.productionSystem},antibodyPurifiedByAffinity={self.antibodyPurifiedByAffinity},specificityDocumented={self.specificityDocumented},targetedAntigen={self.targetedAntigen},shippingConditions={self.shippingConditions},storageConditions={self.storageConditions},thirdPartyDistributionConsent={self.thirdPartyDistributionConsent},usageRestrictions={self.usageRestrictions},accessPointURL={self.accessPointURL},refSKU={self.refSKU},unitDefinition={self.unitDefinition},unitCost={self.unitCost},qualityGrading={self.qualityGrading},biosafetyRestrictions={self.biosafetyRestrictions},canItBeUsedToProduceGMO={self.canItBeUsedToProduceGMO},availability={self.availability},technicalRecommendation={self.technicalRecommendation},internalReference={self.internalReference},note={self.note},title={self.title},description={self.description},hasIATAClassification_id={self.hasIATAClassification_id},materialSafetyDataSheet_id={self.materialSafetyDataSheet_id},originator_id={self.originator_id},category_id={self.category_id},riskGroup_id={self.riskGroup_id},provider_id={self.provider_id},contactPoint_id={self.contactPoint_id},)"
+        return f"Antibody(id={self.id},productionSystem={self.productionSystem},antibodyPurifiedByAffinity={self.antibodyPurifiedByAffinity},specificityDocumented={self.specificityDocumented},targetedAntigen={self.targetedAntigen},shippingConditions={self.shippingConditions},storageConditions={self.storageConditions},thirdPartyDistributionConsent={self.thirdPartyDistributionConsent},usageRestrictions={self.usageRestrictions},accessPointUrl={self.accessPointUrl},refSku={self.refSku},unitDefinition={self.unitDefinition},unitCost={self.unitCost},qualityGrading={self.qualityGrading},biosafetyRestrictions={self.biosafetyRestrictions},canBeUsedToProduceGmo={self.canBeUsedToProduceGmo},availability={self.availability},technicalRecommendation={self.technicalRecommendation},internalReference={self.internalReference},note={self.note},title={self.title},description={self.description},version={self.version},iataClassification_id={self.iataClassification_id},materialSafetyDataSheet_id={self.materialSafetyDataSheet_id},originator_id={self.originator_id},category_id={self.category_id},riskGroup_id={self.riskGroup_id},provider_id={self.provider_id},contactPoint_id={self.contactPoint_id},)"
 
 
 
@@ -6311,25 +6335,26 @@ class Protein(Product):
     storageConditions = Column(Text(), nullable=False )
     thirdPartyDistributionConsent = Column(Boolean())
     usageRestrictions = Column(Text())
-    accessPointURL = Column(Text(), nullable=False )
-    refSKU = Column(Text(), nullable=False )
+    accessPointUrl = Column(Text(), nullable=False )
+    refSku = Column(Text(), nullable=False )
     unitDefinition = Column(Text())
     unitCost = Column(Text(), nullable=False )
     qualityGrading = Column(Text())
     biosafetyRestrictions = Column(Text())
-    canItBeUsedToProduceGMO = Column(Boolean(), nullable=False )
+    canBeUsedToProduceGmo = Column(Boolean(), nullable=False )
     availability = Column(Text(), nullable=False )
     technicalRecommendation = Column(Text())
     internalReference = Column(Text())
     note = Column(Text())
     title = Column(Text(), nullable=False )
     description = Column(Text(), nullable=False )
+    version = Column(Text())
     biologicalMaterialOrigin_id = Column(Integer(), ForeignKey('BiologicalMaterialOrigin.id'), nullable=False )
     biologicalMaterialOrigin = relationship("BiologicalMaterialOrigin", uselist=False, foreign_keys=[biologicalMaterialOrigin_id])
-    hasIATAClassification_id = Column(Integer(), ForeignKey('IATAClassification.id'), nullable=False )
-    hasIATAClassification = relationship("IATAClassification", uselist=False, foreign_keys=[hasIATAClassification_id])
-    materialSafetyDataSheet_id = Column(Integer(), ForeignKey('MSDS.id'))
-    materialSafetyDataSheet = relationship("MSDS", uselist=False, foreign_keys=[materialSafetyDataSheet_id])
+    iataClassification_id = Column(Integer(), ForeignKey('IataClassification.id'), nullable=False )
+    iataClassification = relationship("IataClassification", uselist=False, foreign_keys=[iataClassification_id])
+    materialSafetyDataSheet_id = Column(Integer(), ForeignKey('ReasearchInfrastructure.id'))
+    materialSafetyDataSheet = relationship("ReasearchInfrastructure", uselist=False, foreign_keys=[materialSafetyDataSheet_id])
     originator_id = Column(Integer(), ForeignKey('Originator.id'))
     originator = relationship("Originator", uselist=False, foreign_keys=[originator_id])
     category_id = Column(Integer(), ForeignKey('ProductCategory.id'), nullable=False )
@@ -6347,7 +6372,7 @@ class Protein(Product):
     
     
     # ManyToMany
-    relatedPDB = relationship( "PDBReference", secondary="Protein_relatedPDB")
+    relatedPdb = relationship( "PdbReference", secondary="Protein_relatedPdb")
     
     
     # ManyToMany
@@ -6355,7 +6380,7 @@ class Protein(Product):
     
     
     # ManyToMany
-    proteinTAG = relationship( "ProteinTag", secondary="Protein_proteinTAG")
+    proteinTag = relationship( "ProteinTag", secondary="Protein_proteinTag")
     
     
     domain_rel = relationship( "ProteinDomain" )
@@ -6383,9 +6408,9 @@ class Protein(Product):
                                   creator=lambda x_: ProteinFunctionalCharacterization(functionalCharacterization=x_))
     
     
-    functionalTechnicalDescription_rel = relationship( "ProteinFunctionalTechnicalDescription" )
-    functionalTechnicalDescription = association_proxy("functionalTechnicalDescription_rel", "functionalTechnicalDescription",
-                                  creator=lambda x_: ProteinFunctionalTechnicalDescription(functionalTechnicalDescription=x_))
+    functionalAndTechnicalDescription_rel = relationship( "ProteinFunctionalAndTechnicalDescription" )
+    functionalAndTechnicalDescription = association_proxy("functionalAndTechnicalDescription_rel", "functionalAndTechnicalDescription",
+                                  creator=lambda x_: ProteinFunctionalAndTechnicalDescription(functionalAndTechnicalDescription=x_))
     
     
     proteinPurification_rel = relationship( "ProteinProteinPurification" )
@@ -6393,9 +6418,9 @@ class Protein(Product):
                                   creator=lambda x_: ProteinProteinPurification(proteinPurification=x_))
     
     
-    theTAGStatusOfTheSolubilizedProtein_rel = relationship( "ProteinTheTAGStatusOfTheSolubilizedProtein" )
-    theTAGStatusOfTheSolubilizedProtein = association_proxy("theTAGStatusOfTheSolubilizedProtein_rel", "theTAGStatusOfTheSolubilizedProtein",
-                                  creator=lambda x_: ProteinTheTAGStatusOfTheSolubilizedProtein(theTAGStatusOfTheSolubilizedProtein=x_))
+    tagStatusOfTheSolubilizedProtein_rel = relationship( "ProteinTagStatusOfTheSolubilizedProtein" )
+    tagStatusOfTheSolubilizedProtein = association_proxy("tagStatusOfTheSolubilizedProtein_rel", "tagStatusOfTheSolubilizedProtein",
+                                  creator=lambda x_: ProteinTagStatusOfTheSolubilizedProtein(tagStatusOfTheSolubilizedProtein=x_))
     
     
     typeOfFunctionalCharacterization_rel = relationship( "ProteinTypeOfFunctionalCharacterization" )
@@ -6412,7 +6437,7 @@ class Protein(Product):
     
     
     # ManyToMany
-    relatedDOI = relationship( "DOI", secondary="Protein_relatedDOI")
+    doi = relationship( "Doi", secondary="Protein_doi")
     
     
     # ManyToMany
@@ -6440,7 +6465,7 @@ class Protein(Product):
     
 
     def __repr__(self):
-        return f"Protein(id={self.id},shippingConditions={self.shippingConditions},storageConditions={self.storageConditions},thirdPartyDistributionConsent={self.thirdPartyDistributionConsent},usageRestrictions={self.usageRestrictions},accessPointURL={self.accessPointURL},refSKU={self.refSKU},unitDefinition={self.unitDefinition},unitCost={self.unitCost},qualityGrading={self.qualityGrading},biosafetyRestrictions={self.biosafetyRestrictions},canItBeUsedToProduceGMO={self.canItBeUsedToProduceGMO},availability={self.availability},technicalRecommendation={self.technicalRecommendation},internalReference={self.internalReference},note={self.note},title={self.title},description={self.description},biologicalMaterialOrigin_id={self.biologicalMaterialOrigin_id},hasIATAClassification_id={self.hasIATAClassification_id},materialSafetyDataSheet_id={self.materialSafetyDataSheet_id},originator_id={self.originator_id},category_id={self.category_id},riskGroup_id={self.riskGroup_id},provider_id={self.provider_id},contactPoint_id={self.contactPoint_id},)"
+        return f"Protein(id={self.id},shippingConditions={self.shippingConditions},storageConditions={self.storageConditions},thirdPartyDistributionConsent={self.thirdPartyDistributionConsent},usageRestrictions={self.usageRestrictions},accessPointUrl={self.accessPointUrl},refSku={self.refSku},unitDefinition={self.unitDefinition},unitCost={self.unitCost},qualityGrading={self.qualityGrading},biosafetyRestrictions={self.biosafetyRestrictions},canBeUsedToProduceGmo={self.canBeUsedToProduceGmo},availability={self.availability},technicalRecommendation={self.technicalRecommendation},internalReference={self.internalReference},note={self.note},title={self.title},description={self.description},version={self.version},biologicalMaterialOrigin_id={self.biologicalMaterialOrigin_id},iataClassification_id={self.iataClassification_id},materialSafetyDataSheet_id={self.materialSafetyDataSheet_id},originator_id={self.originator_id},category_id={self.category_id},riskGroup_id={self.riskGroup_id},provider_id={self.provider_id},contactPoint_id={self.contactPoint_id},)"
 
 
 
@@ -6459,7 +6484,7 @@ class NucleicAcid(Product):
     __tablename__ = 'NucleicAcid'
 
     id = Column(Integer(), primary_key=True, autoincrement=True , nullable=False )
-    isItAClonedNucleicAcid = Column(Boolean(), nullable=False )
+    clonedNucleicAcid = Column(Boolean(), nullable=False )
     regionEncompassedInThisProduct = Column(Text(), nullable=False )
     mutationObserved = Column(Boolean(), nullable=False )
     observedMutations = Column(Text())
@@ -6471,29 +6496,30 @@ class NucleicAcid(Product):
     storageConditions = Column(Text(), nullable=False )
     thirdPartyDistributionConsent = Column(Boolean())
     usageRestrictions = Column(Text())
-    accessPointURL = Column(Text(), nullable=False )
-    refSKU = Column(Text(), nullable=False )
+    accessPointUrl = Column(Text(), nullable=False )
+    refSku = Column(Text(), nullable=False )
     unitDefinition = Column(Text())
     unitCost = Column(Text(), nullable=False )
     qualityGrading = Column(Text())
     biosafetyRestrictions = Column(Text())
-    canItBeUsedToProduceGMO = Column(Boolean(), nullable=False )
+    canBeUsedToProduceGmo = Column(Boolean(), nullable=False )
     availability = Column(Text(), nullable=False )
     technicalRecommendation = Column(Text())
     internalReference = Column(Text())
     note = Column(Text())
     title = Column(Text(), nullable=False )
     description = Column(Text(), nullable=False )
+    version = Column(Text())
     biologicalMaterialOrigin_id = Column(Integer(), ForeignKey('BiologicalMaterialOrigin.id'), nullable=False )
     biologicalMaterialOrigin = relationship("BiologicalMaterialOrigin", uselist=False, foreign_keys=[biologicalMaterialOrigin_id])
     clonedIntoPlasmid_id = Column(Integer(), ForeignKey('ExpressionVector.id'))
     clonedIntoPlasmid = relationship("ExpressionVector", uselist=False, foreign_keys=[clonedIntoPlasmid_id])
-    hasTAG_id = Column(Integer(), ForeignKey('ProteinTag.id'), nullable=False )
-    hasTAG = relationship("ProteinTag", uselist=False, foreign_keys=[hasTAG_id])
-    hasIATAClassification_id = Column(Integer(), ForeignKey('IATAClassification.id'), nullable=False )
-    hasIATAClassification = relationship("IATAClassification", uselist=False, foreign_keys=[hasIATAClassification_id])
-    materialSafetyDataSheet_id = Column(Integer(), ForeignKey('MSDS.id'))
-    materialSafetyDataSheet = relationship("MSDS", uselist=False, foreign_keys=[materialSafetyDataSheet_id])
+    proteinTag_id = Column(Integer(), ForeignKey('ProteinTag.id'), nullable=False )
+    proteinTag = relationship("ProteinTag", uselist=False, foreign_keys=[proteinTag_id])
+    iataClassification_id = Column(Integer(), ForeignKey('IataClassification.id'), nullable=False )
+    iataClassification = relationship("IataClassification", uselist=False, foreign_keys=[iataClassification_id])
+    materialSafetyDataSheet_id = Column(Integer(), ForeignKey('ReasearchInfrastructure.id'))
+    materialSafetyDataSheet = relationship("ReasearchInfrastructure", uselist=False, foreign_keys=[materialSafetyDataSheet_id])
     originator_id = Column(Integer(), ForeignKey('Originator.id'))
     originator = relationship("Originator", uselist=False, foreign_keys=[originator_id])
     category_id = Column(Integer(), ForeignKey('ProductCategory.id'), nullable=False )
@@ -6507,7 +6533,7 @@ class NucleicAcid(Product):
     
     
     # ManyToMany
-    hasGbFileOfTheConstruct = relationship( "Data", secondary="NucleicAcid_hasGbFileOfTheConstruct")
+    genBankFileOfTheConstruct = relationship( "Data", secondary="NucleicAcid_genBankFileOfTheConstruct")
     
     
     # ManyToMany
@@ -6515,7 +6541,7 @@ class NucleicAcid(Product):
     
     
     # ManyToMany
-    pasmidSelection = relationship( "PlasmidSelection", secondary="NucleicAcid_pasmidSelection")
+    plasmidSelection = relationship( "PlasmidSelection", secondary="NucleicAcid_plasmidSelection")
     
     
     # ManyToMany
@@ -6527,7 +6553,7 @@ class NucleicAcid(Product):
     
     
     # ManyToMany
-    relatedDOI = relationship( "DOI", secondary="NucleicAcid_relatedDOI")
+    doi = relationship( "Doi", secondary="NucleicAcid_doi")
     
     
     # ManyToMany
@@ -6555,7 +6581,7 @@ class NucleicAcid(Product):
     
 
     def __repr__(self):
-        return f"NucleicAcid(id={self.id},isItAClonedNucleicAcid={self.isItAClonedNucleicAcid},regionEncompassedInThisProduct={self.regionEncompassedInThisProduct},mutationObserved={self.mutationObserved},observedMutations={self.observedMutations},identificationTechnique={self.identificationTechnique},sequencing={self.sequencing},titer={self.titer},sequenceChecked={self.sequenceChecked},shippingConditions={self.shippingConditions},storageConditions={self.storageConditions},thirdPartyDistributionConsent={self.thirdPartyDistributionConsent},usageRestrictions={self.usageRestrictions},accessPointURL={self.accessPointURL},refSKU={self.refSKU},unitDefinition={self.unitDefinition},unitCost={self.unitCost},qualityGrading={self.qualityGrading},biosafetyRestrictions={self.biosafetyRestrictions},canItBeUsedToProduceGMO={self.canItBeUsedToProduceGMO},availability={self.availability},technicalRecommendation={self.technicalRecommendation},internalReference={self.internalReference},note={self.note},title={self.title},description={self.description},biologicalMaterialOrigin_id={self.biologicalMaterialOrigin_id},clonedIntoPlasmid_id={self.clonedIntoPlasmid_id},hasTAG_id={self.hasTAG_id},hasIATAClassification_id={self.hasIATAClassification_id},materialSafetyDataSheet_id={self.materialSafetyDataSheet_id},originator_id={self.originator_id},category_id={self.category_id},riskGroup_id={self.riskGroup_id},provider_id={self.provider_id},contactPoint_id={self.contactPoint_id},)"
+        return f"NucleicAcid(id={self.id},clonedNucleicAcid={self.clonedNucleicAcid},regionEncompassedInThisProduct={self.regionEncompassedInThisProduct},mutationObserved={self.mutationObserved},observedMutations={self.observedMutations},identificationTechnique={self.identificationTechnique},sequencing={self.sequencing},titer={self.titer},sequenceChecked={self.sequenceChecked},shippingConditions={self.shippingConditions},storageConditions={self.storageConditions},thirdPartyDistributionConsent={self.thirdPartyDistributionConsent},usageRestrictions={self.usageRestrictions},accessPointUrl={self.accessPointUrl},refSku={self.refSku},unitDefinition={self.unitDefinition},unitCost={self.unitCost},qualityGrading={self.qualityGrading},biosafetyRestrictions={self.biosafetyRestrictions},canBeUsedToProduceGmo={self.canBeUsedToProduceGmo},availability={self.availability},technicalRecommendation={self.technicalRecommendation},internalReference={self.internalReference},note={self.note},title={self.title},description={self.description},version={self.version},biologicalMaterialOrigin_id={self.biologicalMaterialOrigin_id},clonedIntoPlasmid_id={self.clonedIntoPlasmid_id},proteinTag_id={self.proteinTag_id},iataClassification_id={self.iataClassification_id},materialSafetyDataSheet_id={self.materialSafetyDataSheet_id},originator_id={self.originator_id},category_id={self.category_id},riskGroup_id={self.riskGroup_id},provider_id={self.provider_id},contactPoint_id={self.contactPoint_id},)"
 
 
 
@@ -6581,23 +6607,24 @@ class DetectionKit(Product):
     storageConditions = Column(Text(), nullable=False )
     thirdPartyDistributionConsent = Column(Boolean())
     usageRestrictions = Column(Text())
-    accessPointURL = Column(Text(), nullable=False )
-    refSKU = Column(Text(), nullable=False )
+    accessPointUrl = Column(Text(), nullable=False )
+    refSku = Column(Text(), nullable=False )
     unitDefinition = Column(Text())
     unitCost = Column(Text(), nullable=False )
     qualityGrading = Column(Text())
     biosafetyRestrictions = Column(Text())
-    canItBeUsedToProduceGMO = Column(Boolean(), nullable=False )
+    canBeUsedToProduceGmo = Column(Boolean(), nullable=False )
     availability = Column(Text(), nullable=False )
     technicalRecommendation = Column(Text())
     internalReference = Column(Text())
     note = Column(Text())
     title = Column(Text(), nullable=False )
     description = Column(Text(), nullable=False )
-    hasIATAClassification_id = Column(Integer(), ForeignKey('IATAClassification.id'), nullable=False )
-    hasIATAClassification = relationship("IATAClassification", uselist=False, foreign_keys=[hasIATAClassification_id])
-    materialSafetyDataSheet_id = Column(Integer(), ForeignKey('MSDS.id'))
-    materialSafetyDataSheet = relationship("MSDS", uselist=False, foreign_keys=[materialSafetyDataSheet_id])
+    version = Column(Text())
+    iataClassification_id = Column(Integer(), ForeignKey('IataClassification.id'), nullable=False )
+    iataClassification = relationship("IataClassification", uselist=False, foreign_keys=[iataClassification_id])
+    materialSafetyDataSheet_id = Column(Integer(), ForeignKey('ReasearchInfrastructure.id'))
+    materialSafetyDataSheet = relationship("ReasearchInfrastructure", uselist=False, foreign_keys=[materialSafetyDataSheet_id])
     originator_id = Column(Integer(), ForeignKey('Originator.id'))
     originator = relationship("Originator", uselist=False, foreign_keys=[originator_id])
     category_id = Column(Integer(), ForeignKey('ProductCategory.id'), nullable=False )
@@ -6611,7 +6638,7 @@ class DetectionKit(Product):
     
     
     # ManyToMany
-    hasSOPFile = relationship( "File", secondary="DetectionKit_hasSOPFile")
+    standardOperatingProcedureFile = relationship( "File", secondary="DetectionKit_standardOperatingProcedureFile")
     
     
     # ManyToMany
@@ -6623,7 +6650,7 @@ class DetectionKit(Product):
     
     
     # ManyToMany
-    relatedDOI = relationship( "DOI", secondary="DetectionKit_relatedDOI")
+    doi = relationship( "Doi", secondary="DetectionKit_doi")
     
     
     # ManyToMany
@@ -6651,7 +6678,7 @@ class DetectionKit(Product):
     
 
     def __repr__(self):
-        return f"DetectionKit(id={self.id},specificityDocumented={self.specificityDocumented},specificity={self.specificity},targetedRegion={self.targetedRegion},shippingConditions={self.shippingConditions},storageConditions={self.storageConditions},thirdPartyDistributionConsent={self.thirdPartyDistributionConsent},usageRestrictions={self.usageRestrictions},accessPointURL={self.accessPointURL},refSKU={self.refSKU},unitDefinition={self.unitDefinition},unitCost={self.unitCost},qualityGrading={self.qualityGrading},biosafetyRestrictions={self.biosafetyRestrictions},canItBeUsedToProduceGMO={self.canItBeUsedToProduceGMO},availability={self.availability},technicalRecommendation={self.technicalRecommendation},internalReference={self.internalReference},note={self.note},title={self.title},description={self.description},hasIATAClassification_id={self.hasIATAClassification_id},materialSafetyDataSheet_id={self.materialSafetyDataSheet_id},originator_id={self.originator_id},category_id={self.category_id},riskGroup_id={self.riskGroup_id},provider_id={self.provider_id},contactPoint_id={self.contactPoint_id},)"
+        return f"DetectionKit(id={self.id},specificityDocumented={self.specificityDocumented},specificity={self.specificity},targetedRegion={self.targetedRegion},shippingConditions={self.shippingConditions},storageConditions={self.storageConditions},thirdPartyDistributionConsent={self.thirdPartyDistributionConsent},usageRestrictions={self.usageRestrictions},accessPointUrl={self.accessPointUrl},refSku={self.refSku},unitDefinition={self.unitDefinition},unitCost={self.unitCost},qualityGrading={self.qualityGrading},biosafetyRestrictions={self.biosafetyRestrictions},canBeUsedToProduceGmo={self.canBeUsedToProduceGmo},availability={self.availability},technicalRecommendation={self.technicalRecommendation},internalReference={self.internalReference},note={self.note},title={self.title},description={self.description},version={self.version},iataClassification_id={self.iataClassification_id},materialSafetyDataSheet_id={self.materialSafetyDataSheet_id},originator_id={self.originator_id},category_id={self.category_id},riskGroup_id={self.riskGroup_id},provider_id={self.provider_id},contactPoint_id={self.contactPoint_id},)"
 
 
 
@@ -6665,7 +6692,7 @@ class DetectionKit(Product):
 
 class Bundle(Product):
     """
-    A group of products
+    A grouping of products and/or services intentionally combined into a single offering, typically to provide added value, convenience, or specific experimental utility
     """
     __tablename__ = 'Bundle'
 
@@ -6674,23 +6701,24 @@ class Bundle(Product):
     storageConditions = Column(Text(), nullable=False )
     thirdPartyDistributionConsent = Column(Boolean())
     usageRestrictions = Column(Text())
-    accessPointURL = Column(Text(), nullable=False )
-    refSKU = Column(Text(), nullable=False )
+    accessPointUrl = Column(Text(), nullable=False )
+    refSku = Column(Text(), nullable=False )
     unitDefinition = Column(Text())
     unitCost = Column(Text(), nullable=False )
     qualityGrading = Column(Text())
     biosafetyRestrictions = Column(Text())
-    canItBeUsedToProduceGMO = Column(Boolean(), nullable=False )
+    canBeUsedToProduceGmo = Column(Boolean(), nullable=False )
     availability = Column(Text(), nullable=False )
     technicalRecommendation = Column(Text())
     internalReference = Column(Text())
     note = Column(Text())
     title = Column(Text(), nullable=False )
     description = Column(Text(), nullable=False )
-    hasIATAClassification_id = Column(Integer(), ForeignKey('IATAClassification.id'), nullable=False )
-    hasIATAClassification = relationship("IATAClassification", uselist=False, foreign_keys=[hasIATAClassification_id])
-    materialSafetyDataSheet_id = Column(Integer(), ForeignKey('MSDS.id'))
-    materialSafetyDataSheet = relationship("MSDS", uselist=False, foreign_keys=[materialSafetyDataSheet_id])
+    version = Column(Text())
+    iataClassification_id = Column(Integer(), ForeignKey('IataClassification.id'), nullable=False )
+    iataClassification = relationship("IataClassification", uselist=False, foreign_keys=[iataClassification_id])
+    materialSafetyDataSheet_id = Column(Integer(), ForeignKey('ReasearchInfrastructure.id'))
+    materialSafetyDataSheet = relationship("ReasearchInfrastructure", uselist=False, foreign_keys=[materialSafetyDataSheet_id])
     originator_id = Column(Integer(), ForeignKey('Originator.id'))
     originator = relationship("Originator", uselist=False, foreign_keys=[originator_id])
     category_id = Column(Integer(), ForeignKey('ProductCategory.id'), nullable=False )
@@ -6704,7 +6732,7 @@ class Bundle(Product):
     
     
     # ManyToMany
-    productsOfTheBundle = relationship( "Product", secondary="Bundle_productsOfTheBundle")
+    itemsOfTheBundle = relationship( "Product", secondary="Bundle_itemsOfTheBundle")
     
     
     # ManyToMany
@@ -6716,7 +6744,7 @@ class Bundle(Product):
     
     
     # ManyToMany
-    relatedDOI = relationship( "DOI", secondary="Bundle_relatedDOI")
+    doi = relationship( "Doi", secondary="Bundle_doi")
     
     
     # ManyToMany
@@ -6744,7 +6772,7 @@ class Bundle(Product):
     
 
     def __repr__(self):
-        return f"Bundle(id={self.id},shippingConditions={self.shippingConditions},storageConditions={self.storageConditions},thirdPartyDistributionConsent={self.thirdPartyDistributionConsent},usageRestrictions={self.usageRestrictions},accessPointURL={self.accessPointURL},refSKU={self.refSKU},unitDefinition={self.unitDefinition},unitCost={self.unitCost},qualityGrading={self.qualityGrading},biosafetyRestrictions={self.biosafetyRestrictions},canItBeUsedToProduceGMO={self.canItBeUsedToProduceGMO},availability={self.availability},technicalRecommendation={self.technicalRecommendation},internalReference={self.internalReference},note={self.note},title={self.title},description={self.description},hasIATAClassification_id={self.hasIATAClassification_id},materialSafetyDataSheet_id={self.materialSafetyDataSheet_id},originator_id={self.originator_id},category_id={self.category_id},riskGroup_id={self.riskGroup_id},provider_id={self.provider_id},contactPoint_id={self.contactPoint_id},)"
+        return f"Bundle(id={self.id},shippingConditions={self.shippingConditions},storageConditions={self.storageConditions},thirdPartyDistributionConsent={self.thirdPartyDistributionConsent},usageRestrictions={self.usageRestrictions},accessPointUrl={self.accessPointUrl},refSku={self.refSku},unitDefinition={self.unitDefinition},unitCost={self.unitCost},qualityGrading={self.qualityGrading},biosafetyRestrictions={self.biosafetyRestrictions},canBeUsedToProduceGmo={self.canBeUsedToProduceGmo},availability={self.availability},technicalRecommendation={self.technicalRecommendation},internalReference={self.internalReference},note={self.note},title={self.title},description={self.description},version={self.version},iataClassification_id={self.iataClassification_id},materialSafetyDataSheet_id={self.materialSafetyDataSheet_id},originator_id={self.originator_id},category_id={self.category_id},riskGroup_id={self.riskGroup_id},provider_id={self.provider_id},contactPoint_id={self.contactPoint_id},)"
 
 
 
@@ -6778,25 +6806,26 @@ class Pathogen(Product):
     storageConditions = Column(Text(), nullable=False )
     thirdPartyDistributionConsent = Column(Boolean())
     usageRestrictions = Column(Text())
-    accessPointURL = Column(Text(), nullable=False )
-    refSKU = Column(Text(), nullable=False )
+    accessPointUrl = Column(Text(), nullable=False )
+    refSku = Column(Text(), nullable=False )
     unitDefinition = Column(Text())
     unitCost = Column(Text(), nullable=False )
     qualityGrading = Column(Text())
     biosafetyRestrictions = Column(Text())
-    canItBeUsedToProduceGMO = Column(Boolean(), nullable=False )
+    canBeUsedToProduceGmo = Column(Boolean(), nullable=False )
     availability = Column(Text(), nullable=False )
     technicalRecommendation = Column(Text())
     internalReference = Column(Text())
     note = Column(Text())
     title = Column(Text(), nullable=False )
     description = Column(Text(), nullable=False )
+    version = Column(Text())
     biologicalMaterialOrigin_id = Column(Integer(), ForeignKey('BiologicalMaterialOrigin.id'), nullable=False )
     biologicalMaterialOrigin = relationship("BiologicalMaterialOrigin", uselist=False, foreign_keys=[biologicalMaterialOrigin_id])
-    hasIATAClassification_id = Column(Integer(), ForeignKey('IATAClassification.id'), nullable=False )
-    hasIATAClassification = relationship("IATAClassification", uselist=False, foreign_keys=[hasIATAClassification_id])
-    materialSafetyDataSheet_id = Column(Integer(), ForeignKey('MSDS.id'))
-    materialSafetyDataSheet = relationship("MSDS", uselist=False, foreign_keys=[materialSafetyDataSheet_id])
+    iataClassification_id = Column(Integer(), ForeignKey('IataClassification.id'), nullable=False )
+    iataClassification = relationship("IataClassification", uselist=False, foreign_keys=[iataClassification_id])
+    materialSafetyDataSheet_id = Column(Integer(), ForeignKey('ReasearchInfrastructure.id'))
+    materialSafetyDataSheet = relationship("ReasearchInfrastructure", uselist=False, foreign_keys=[materialSafetyDataSheet_id])
     originator_id = Column(Integer(), ForeignKey('Originator.id'))
     originator = relationship("Originator", uselist=False, foreign_keys=[originator_id])
     category_id = Column(Integer(), ForeignKey('ProductCategory.id'), nullable=False )
@@ -6842,7 +6871,7 @@ class Pathogen(Product):
     
     
     # ManyToMany
-    relatedDOI = relationship( "DOI", secondary="Pathogen_relatedDOI")
+    doi = relationship( "Doi", secondary="Pathogen_doi")
     
     
     # ManyToMany
@@ -6870,7 +6899,7 @@ class Pathogen(Product):
     
 
     def __repr__(self):
-        return f"Pathogen(id={self.id},cultivability={self.cultivability},clinicalInformation={self.clinicalInformation},identificationTechnique={self.identificationTechnique},infectivity={self.infectivity},infectivityTest={self.infectivityTest},isolationTechnique={self.isolationTechnique},isolationConditions={self.isolationConditions},letterOfAuthority={self.letterOfAuthority},passage={self.passage},genomeSequencing={self.genomeSequencing},titer={self.titer},shippingConditions={self.shippingConditions},storageConditions={self.storageConditions},thirdPartyDistributionConsent={self.thirdPartyDistributionConsent},usageRestrictions={self.usageRestrictions},accessPointURL={self.accessPointURL},refSKU={self.refSKU},unitDefinition={self.unitDefinition},unitCost={self.unitCost},qualityGrading={self.qualityGrading},biosafetyRestrictions={self.biosafetyRestrictions},canItBeUsedToProduceGMO={self.canItBeUsedToProduceGMO},availability={self.availability},technicalRecommendation={self.technicalRecommendation},internalReference={self.internalReference},note={self.note},title={self.title},description={self.description},biologicalMaterialOrigin_id={self.biologicalMaterialOrigin_id},hasIATAClassification_id={self.hasIATAClassification_id},materialSafetyDataSheet_id={self.materialSafetyDataSheet_id},originator_id={self.originator_id},category_id={self.category_id},riskGroup_id={self.riskGroup_id},provider_id={self.provider_id},contactPoint_id={self.contactPoint_id},)"
+        return f"Pathogen(id={self.id},cultivability={self.cultivability},clinicalInformation={self.clinicalInformation},identificationTechnique={self.identificationTechnique},infectivity={self.infectivity},infectivityTest={self.infectivityTest},isolationTechnique={self.isolationTechnique},isolationConditions={self.isolationConditions},letterOfAuthority={self.letterOfAuthority},passage={self.passage},genomeSequencing={self.genomeSequencing},titer={self.titer},shippingConditions={self.shippingConditions},storageConditions={self.storageConditions},thirdPartyDistributionConsent={self.thirdPartyDistributionConsent},usageRestrictions={self.usageRestrictions},accessPointUrl={self.accessPointUrl},refSku={self.refSku},unitDefinition={self.unitDefinition},unitCost={self.unitCost},qualityGrading={self.qualityGrading},biosafetyRestrictions={self.biosafetyRestrictions},canBeUsedToProduceGmo={self.canBeUsedToProduceGmo},availability={self.availability},technicalRecommendation={self.technicalRecommendation},internalReference={self.internalReference},note={self.note},title={self.title},description={self.description},version={self.version},biologicalMaterialOrigin_id={self.biologicalMaterialOrigin_id},iataClassification_id={self.iataClassification_id},materialSafetyDataSheet_id={self.materialSafetyDataSheet_id},originator_id={self.originator_id},category_id={self.category_id},riskGroup_id={self.riskGroup_id},provider_id={self.provider_id},contactPoint_id={self.contactPoint_id},)"
 
 
 
@@ -6898,23 +6927,24 @@ class Hybridoma(Antibody):
     storageConditions = Column(Text(), nullable=False )
     thirdPartyDistributionConsent = Column(Boolean())
     usageRestrictions = Column(Text())
-    accessPointURL = Column(Text(), nullable=False )
-    refSKU = Column(Text(), nullable=False )
+    accessPointUrl = Column(Text(), nullable=False )
+    refSku = Column(Text(), nullable=False )
     unitDefinition = Column(Text())
     unitCost = Column(Text(), nullable=False )
     qualityGrading = Column(Text())
     biosafetyRestrictions = Column(Text())
-    canItBeUsedToProduceGMO = Column(Boolean(), nullable=False )
+    canBeUsedToProduceGmo = Column(Boolean(), nullable=False )
     availability = Column(Text(), nullable=False )
     technicalRecommendation = Column(Text())
     internalReference = Column(Text())
     note = Column(Text())
     title = Column(Text(), nullable=False )
     description = Column(Text(), nullable=False )
-    hasIATAClassification_id = Column(Integer(), ForeignKey('IATAClassification.id'), nullable=False )
-    hasIATAClassification = relationship("IATAClassification", uselist=False, foreign_keys=[hasIATAClassification_id])
-    materialSafetyDataSheet_id = Column(Integer(), ForeignKey('MSDS.id'))
-    materialSafetyDataSheet = relationship("MSDS", uselist=False, foreign_keys=[materialSafetyDataSheet_id])
+    version = Column(Text())
+    iataClassification_id = Column(Integer(), ForeignKey('IataClassification.id'), nullable=False )
+    iataClassification = relationship("IataClassification", uselist=False, foreign_keys=[iataClassification_id])
+    materialSafetyDataSheet_id = Column(Integer(), ForeignKey('ReasearchInfrastructure.id'))
+    materialSafetyDataSheet = relationship("ReasearchInfrastructure", uselist=False, foreign_keys=[materialSafetyDataSheet_id])
     originator_id = Column(Integer(), ForeignKey('Originator.id'))
     originator = relationship("Originator", uselist=False, foreign_keys=[originator_id])
     category_id = Column(Integer(), ForeignKey('ProductCategory.id'), nullable=False )
@@ -6940,7 +6970,7 @@ class Hybridoma(Antibody):
     
     
     # ManyToMany
-    relatedDOI = relationship( "DOI", secondary="Hybridoma_relatedDOI")
+    doi = relationship( "Doi", secondary="Hybridoma_doi")
     
     
     # ManyToMany
@@ -6968,7 +6998,7 @@ class Hybridoma(Antibody):
     
 
     def __repr__(self):
-        return f"Hybridoma(id={self.id},hybridomaDescription={self.hybridomaDescription},productionSystem={self.productionSystem},antibodyPurifiedByAffinity={self.antibodyPurifiedByAffinity},specificityDocumented={self.specificityDocumented},targetedAntigen={self.targetedAntigen},shippingConditions={self.shippingConditions},storageConditions={self.storageConditions},thirdPartyDistributionConsent={self.thirdPartyDistributionConsent},usageRestrictions={self.usageRestrictions},accessPointURL={self.accessPointURL},refSKU={self.refSKU},unitDefinition={self.unitDefinition},unitCost={self.unitCost},qualityGrading={self.qualityGrading},biosafetyRestrictions={self.biosafetyRestrictions},canItBeUsedToProduceGMO={self.canItBeUsedToProduceGMO},availability={self.availability},technicalRecommendation={self.technicalRecommendation},internalReference={self.internalReference},note={self.note},title={self.title},description={self.description},hasIATAClassification_id={self.hasIATAClassification_id},materialSafetyDataSheet_id={self.materialSafetyDataSheet_id},originator_id={self.originator_id},category_id={self.category_id},riskGroup_id={self.riskGroup_id},provider_id={self.provider_id},contactPoint_id={self.contactPoint_id},)"
+        return f"Hybridoma(id={self.id},hybridomaDescription={self.hybridomaDescription},productionSystem={self.productionSystem},antibodyPurifiedByAffinity={self.antibodyPurifiedByAffinity},specificityDocumented={self.specificityDocumented},targetedAntigen={self.targetedAntigen},shippingConditions={self.shippingConditions},storageConditions={self.storageConditions},thirdPartyDistributionConsent={self.thirdPartyDistributionConsent},usageRestrictions={self.usageRestrictions},accessPointUrl={self.accessPointUrl},refSku={self.refSku},unitDefinition={self.unitDefinition},unitCost={self.unitCost},qualityGrading={self.qualityGrading},biosafetyRestrictions={self.biosafetyRestrictions},canBeUsedToProduceGmo={self.canBeUsedToProduceGmo},availability={self.availability},technicalRecommendation={self.technicalRecommendation},internalReference={self.internalReference},note={self.note},title={self.title},description={self.description},version={self.version},iataClassification_id={self.iataClassification_id},materialSafetyDataSheet_id={self.materialSafetyDataSheet_id},originator_id={self.originator_id},category_id={self.category_id},riskGroup_id={self.riskGroup_id},provider_id={self.provider_id},contactPoint_id={self.contactPoint_id},)"
 
 
 
@@ -7004,25 +7034,26 @@ class Virus(Pathogen):
     storageConditions = Column(Text(), nullable=False )
     thirdPartyDistributionConsent = Column(Boolean())
     usageRestrictions = Column(Text())
-    accessPointURL = Column(Text(), nullable=False )
-    refSKU = Column(Text(), nullable=False )
+    accessPointUrl = Column(Text(), nullable=False )
+    refSku = Column(Text(), nullable=False )
     unitDefinition = Column(Text())
     unitCost = Column(Text(), nullable=False )
     qualityGrading = Column(Text())
     biosafetyRestrictions = Column(Text())
-    canItBeUsedToProduceGMO = Column(Boolean(), nullable=False )
+    canBeUsedToProduceGmo = Column(Boolean(), nullable=False )
     availability = Column(Text(), nullable=False )
     technicalRecommendation = Column(Text())
     internalReference = Column(Text())
     note = Column(Text())
     title = Column(Text(), nullable=False )
     description = Column(Text(), nullable=False )
+    version = Column(Text())
     biologicalMaterialOrigin_id = Column(Integer(), ForeignKey('BiologicalMaterialOrigin.id'), nullable=False )
     biologicalMaterialOrigin = relationship("BiologicalMaterialOrigin", uselist=False, foreign_keys=[biologicalMaterialOrigin_id])
-    hasIATAClassification_id = Column(Integer(), ForeignKey('IATAClassification.id'), nullable=False )
-    hasIATAClassification = relationship("IATAClassification", uselist=False, foreign_keys=[hasIATAClassification_id])
-    materialSafetyDataSheet_id = Column(Integer(), ForeignKey('MSDS.id'))
-    materialSafetyDataSheet = relationship("MSDS", uselist=False, foreign_keys=[materialSafetyDataSheet_id])
+    iataClassification_id = Column(Integer(), ForeignKey('IataClassification.id'), nullable=False )
+    iataClassification = relationship("IataClassification", uselist=False, foreign_keys=[iataClassification_id])
+    materialSafetyDataSheet_id = Column(Integer(), ForeignKey('ReasearchInfrastructure.id'))
+    materialSafetyDataSheet = relationship("ReasearchInfrastructure", uselist=False, foreign_keys=[materialSafetyDataSheet_id])
     originator_id = Column(Integer(), ForeignKey('Originator.id'))
     originator = relationship("Originator", uselist=False, foreign_keys=[originator_id])
     category_id = Column(Integer(), ForeignKey('ProductCategory.id'), nullable=False )
@@ -7072,7 +7103,7 @@ class Virus(Pathogen):
     
     
     # ManyToMany
-    relatedDOI = relationship( "DOI", secondary="Virus_relatedDOI")
+    doi = relationship( "Doi", secondary="Virus_doi")
     
     
     # ManyToMany
@@ -7100,7 +7131,7 @@ class Virus(Pathogen):
     
 
     def __repr__(self):
-        return f"Virus(id={self.id},contaminationWithCoInfectingViruses={self.contaminationWithCoInfectingViruses},mycoplasmicContent={self.mycoplasmicContent},cultivability={self.cultivability},clinicalInformation={self.clinicalInformation},identificationTechnique={self.identificationTechnique},infectivity={self.infectivity},infectivityTest={self.infectivityTest},isolationTechnique={self.isolationTechnique},isolationConditions={self.isolationConditions},letterOfAuthority={self.letterOfAuthority},passage={self.passage},genomeSequencing={self.genomeSequencing},titer={self.titer},shippingConditions={self.shippingConditions},storageConditions={self.storageConditions},thirdPartyDistributionConsent={self.thirdPartyDistributionConsent},usageRestrictions={self.usageRestrictions},accessPointURL={self.accessPointURL},refSKU={self.refSKU},unitDefinition={self.unitDefinition},unitCost={self.unitCost},qualityGrading={self.qualityGrading},biosafetyRestrictions={self.biosafetyRestrictions},canItBeUsedToProduceGMO={self.canItBeUsedToProduceGMO},availability={self.availability},technicalRecommendation={self.technicalRecommendation},internalReference={self.internalReference},note={self.note},title={self.title},description={self.description},biologicalMaterialOrigin_id={self.biologicalMaterialOrigin_id},hasIATAClassification_id={self.hasIATAClassification_id},materialSafetyDataSheet_id={self.materialSafetyDataSheet_id},originator_id={self.originator_id},category_id={self.category_id},riskGroup_id={self.riskGroup_id},provider_id={self.provider_id},contactPoint_id={self.contactPoint_id},)"
+        return f"Virus(id={self.id},contaminationWithCoInfectingViruses={self.contaminationWithCoInfectingViruses},mycoplasmicContent={self.mycoplasmicContent},cultivability={self.cultivability},clinicalInformation={self.clinicalInformation},identificationTechnique={self.identificationTechnique},infectivity={self.infectivity},infectivityTest={self.infectivityTest},isolationTechnique={self.isolationTechnique},isolationConditions={self.isolationConditions},letterOfAuthority={self.letterOfAuthority},passage={self.passage},genomeSequencing={self.genomeSequencing},titer={self.titer},shippingConditions={self.shippingConditions},storageConditions={self.storageConditions},thirdPartyDistributionConsent={self.thirdPartyDistributionConsent},usageRestrictions={self.usageRestrictions},accessPointUrl={self.accessPointUrl},refSku={self.refSku},unitDefinition={self.unitDefinition},unitCost={self.unitCost},qualityGrading={self.qualityGrading},biosafetyRestrictions={self.biosafetyRestrictions},canBeUsedToProduceGmo={self.canBeUsedToProduceGmo},availability={self.availability},technicalRecommendation={self.technicalRecommendation},internalReference={self.internalReference},note={self.note},title={self.title},description={self.description},version={self.version},biologicalMaterialOrigin_id={self.biologicalMaterialOrigin_id},iataClassification_id={self.iataClassification_id},materialSafetyDataSheet_id={self.materialSafetyDataSheet_id},originator_id={self.originator_id},category_id={self.category_id},riskGroup_id={self.riskGroup_id},provider_id={self.provider_id},contactPoint_id={self.contactPoint_id},)"
 
 
 
@@ -7134,25 +7165,26 @@ class Bacterium(Pathogen):
     storageConditions = Column(Text(), nullable=False )
     thirdPartyDistributionConsent = Column(Boolean())
     usageRestrictions = Column(Text())
-    accessPointURL = Column(Text(), nullable=False )
-    refSKU = Column(Text(), nullable=False )
+    accessPointUrl = Column(Text(), nullable=False )
+    refSku = Column(Text(), nullable=False )
     unitDefinition = Column(Text())
     unitCost = Column(Text(), nullable=False )
     qualityGrading = Column(Text())
     biosafetyRestrictions = Column(Text())
-    canItBeUsedToProduceGMO = Column(Boolean(), nullable=False )
+    canBeUsedToProduceGmo = Column(Boolean(), nullable=False )
     availability = Column(Text(), nullable=False )
     technicalRecommendation = Column(Text())
     internalReference = Column(Text())
     note = Column(Text())
     title = Column(Text(), nullable=False )
     description = Column(Text(), nullable=False )
+    version = Column(Text())
     biologicalMaterialOrigin_id = Column(Integer(), ForeignKey('BiologicalMaterialOrigin.id'), nullable=False )
     biologicalMaterialOrigin = relationship("BiologicalMaterialOrigin", uselist=False, foreign_keys=[biologicalMaterialOrigin_id])
-    hasIATAClassification_id = Column(Integer(), ForeignKey('IATAClassification.id'), nullable=False )
-    hasIATAClassification = relationship("IATAClassification", uselist=False, foreign_keys=[hasIATAClassification_id])
-    materialSafetyDataSheet_id = Column(Integer(), ForeignKey('MSDS.id'))
-    materialSafetyDataSheet = relationship("MSDS", uselist=False, foreign_keys=[materialSafetyDataSheet_id])
+    iataClassification_id = Column(Integer(), ForeignKey('IataClassification.id'), nullable=False )
+    iataClassification = relationship("IataClassification", uselist=False, foreign_keys=[iataClassification_id])
+    materialSafetyDataSheet_id = Column(Integer(), ForeignKey('ReasearchInfrastructure.id'))
+    materialSafetyDataSheet = relationship("ReasearchInfrastructure", uselist=False, foreign_keys=[materialSafetyDataSheet_id])
     originator_id = Column(Integer(), ForeignKey('Originator.id'))
     originator = relationship("Originator", uselist=False, foreign_keys=[originator_id])
     category_id = Column(Integer(), ForeignKey('ProductCategory.id'), nullable=False )
@@ -7198,7 +7230,7 @@ class Bacterium(Pathogen):
     
     
     # ManyToMany
-    relatedDOI = relationship( "DOI", secondary="Bacterium_relatedDOI")
+    doi = relationship( "Doi", secondary="Bacterium_doi")
     
     
     # ManyToMany
@@ -7226,7 +7258,7 @@ class Bacterium(Pathogen):
     
 
     def __repr__(self):
-        return f"Bacterium(id={self.id},cultivability={self.cultivability},clinicalInformation={self.clinicalInformation},identificationTechnique={self.identificationTechnique},infectivity={self.infectivity},infectivityTest={self.infectivityTest},isolationTechnique={self.isolationTechnique},isolationConditions={self.isolationConditions},letterOfAuthority={self.letterOfAuthority},passage={self.passage},genomeSequencing={self.genomeSequencing},titer={self.titer},shippingConditions={self.shippingConditions},storageConditions={self.storageConditions},thirdPartyDistributionConsent={self.thirdPartyDistributionConsent},usageRestrictions={self.usageRestrictions},accessPointURL={self.accessPointURL},refSKU={self.refSKU},unitDefinition={self.unitDefinition},unitCost={self.unitCost},qualityGrading={self.qualityGrading},biosafetyRestrictions={self.biosafetyRestrictions},canItBeUsedToProduceGMO={self.canItBeUsedToProduceGMO},availability={self.availability},technicalRecommendation={self.technicalRecommendation},internalReference={self.internalReference},note={self.note},title={self.title},description={self.description},biologicalMaterialOrigin_id={self.biologicalMaterialOrigin_id},hasIATAClassification_id={self.hasIATAClassification_id},materialSafetyDataSheet_id={self.materialSafetyDataSheet_id},originator_id={self.originator_id},category_id={self.category_id},riskGroup_id={self.riskGroup_id},provider_id={self.provider_id},contactPoint_id={self.contactPoint_id},)"
+        return f"Bacterium(id={self.id},cultivability={self.cultivability},clinicalInformation={self.clinicalInformation},identificationTechnique={self.identificationTechnique},infectivity={self.infectivity},infectivityTest={self.infectivityTest},isolationTechnique={self.isolationTechnique},isolationConditions={self.isolationConditions},letterOfAuthority={self.letterOfAuthority},passage={self.passage},genomeSequencing={self.genomeSequencing},titer={self.titer},shippingConditions={self.shippingConditions},storageConditions={self.storageConditions},thirdPartyDistributionConsent={self.thirdPartyDistributionConsent},usageRestrictions={self.usageRestrictions},accessPointUrl={self.accessPointUrl},refSku={self.refSku},unitDefinition={self.unitDefinition},unitCost={self.unitCost},qualityGrading={self.qualityGrading},biosafetyRestrictions={self.biosafetyRestrictions},canBeUsedToProduceGmo={self.canBeUsedToProduceGmo},availability={self.availability},technicalRecommendation={self.technicalRecommendation},internalReference={self.internalReference},note={self.note},title={self.title},description={self.description},version={self.version},biologicalMaterialOrigin_id={self.biologicalMaterialOrigin_id},iataClassification_id={self.iataClassification_id},materialSafetyDataSheet_id={self.materialSafetyDataSheet_id},originator_id={self.originator_id},category_id={self.category_id},riskGroup_id={self.riskGroup_id},provider_id={self.provider_id},contactPoint_id={self.contactPoint_id},)"
 
 
 
@@ -7260,25 +7292,26 @@ class Fungus(Pathogen):
     storageConditions = Column(Text(), nullable=False )
     thirdPartyDistributionConsent = Column(Boolean())
     usageRestrictions = Column(Text())
-    accessPointURL = Column(Text(), nullable=False )
-    refSKU = Column(Text(), nullable=False )
+    accessPointUrl = Column(Text(), nullable=False )
+    refSku = Column(Text(), nullable=False )
     unitDefinition = Column(Text())
     unitCost = Column(Text(), nullable=False )
     qualityGrading = Column(Text())
     biosafetyRestrictions = Column(Text())
-    canItBeUsedToProduceGMO = Column(Boolean(), nullable=False )
+    canBeUsedToProduceGmo = Column(Boolean(), nullable=False )
     availability = Column(Text(), nullable=False )
     technicalRecommendation = Column(Text())
     internalReference = Column(Text())
     note = Column(Text())
     title = Column(Text(), nullable=False )
     description = Column(Text(), nullable=False )
+    version = Column(Text())
     biologicalMaterialOrigin_id = Column(Integer(), ForeignKey('BiologicalMaterialOrigin.id'), nullable=False )
     biologicalMaterialOrigin = relationship("BiologicalMaterialOrigin", uselist=False, foreign_keys=[biologicalMaterialOrigin_id])
-    hasIATAClassification_id = Column(Integer(), ForeignKey('IATAClassification.id'), nullable=False )
-    hasIATAClassification = relationship("IATAClassification", uselist=False, foreign_keys=[hasIATAClassification_id])
-    materialSafetyDataSheet_id = Column(Integer(), ForeignKey('MSDS.id'))
-    materialSafetyDataSheet = relationship("MSDS", uselist=False, foreign_keys=[materialSafetyDataSheet_id])
+    iataClassification_id = Column(Integer(), ForeignKey('IataClassification.id'), nullable=False )
+    iataClassification = relationship("IataClassification", uselist=False, foreign_keys=[iataClassification_id])
+    materialSafetyDataSheet_id = Column(Integer(), ForeignKey('ReasearchInfrastructure.id'))
+    materialSafetyDataSheet = relationship("ReasearchInfrastructure", uselist=False, foreign_keys=[materialSafetyDataSheet_id])
     originator_id = Column(Integer(), ForeignKey('Originator.id'))
     originator = relationship("Originator", uselist=False, foreign_keys=[originator_id])
     category_id = Column(Integer(), ForeignKey('ProductCategory.id'), nullable=False )
@@ -7324,7 +7357,7 @@ class Fungus(Pathogen):
     
     
     # ManyToMany
-    relatedDOI = relationship( "DOI", secondary="Fungus_relatedDOI")
+    doi = relationship( "Doi", secondary="Fungus_doi")
     
     
     # ManyToMany
@@ -7352,7 +7385,7 @@ class Fungus(Pathogen):
     
 
     def __repr__(self):
-        return f"Fungus(id={self.id},cultivability={self.cultivability},clinicalInformation={self.clinicalInformation},identificationTechnique={self.identificationTechnique},infectivity={self.infectivity},infectivityTest={self.infectivityTest},isolationTechnique={self.isolationTechnique},isolationConditions={self.isolationConditions},letterOfAuthority={self.letterOfAuthority},passage={self.passage},genomeSequencing={self.genomeSequencing},titer={self.titer},shippingConditions={self.shippingConditions},storageConditions={self.storageConditions},thirdPartyDistributionConsent={self.thirdPartyDistributionConsent},usageRestrictions={self.usageRestrictions},accessPointURL={self.accessPointURL},refSKU={self.refSKU},unitDefinition={self.unitDefinition},unitCost={self.unitCost},qualityGrading={self.qualityGrading},biosafetyRestrictions={self.biosafetyRestrictions},canItBeUsedToProduceGMO={self.canItBeUsedToProduceGMO},availability={self.availability},technicalRecommendation={self.technicalRecommendation},internalReference={self.internalReference},note={self.note},title={self.title},description={self.description},biologicalMaterialOrigin_id={self.biologicalMaterialOrigin_id},hasIATAClassification_id={self.hasIATAClassification_id},materialSafetyDataSheet_id={self.materialSafetyDataSheet_id},originator_id={self.originator_id},category_id={self.category_id},riskGroup_id={self.riskGroup_id},provider_id={self.provider_id},contactPoint_id={self.contactPoint_id},)"
+        return f"Fungus(id={self.id},cultivability={self.cultivability},clinicalInformation={self.clinicalInformation},identificationTechnique={self.identificationTechnique},infectivity={self.infectivity},infectivityTest={self.infectivityTest},isolationTechnique={self.isolationTechnique},isolationConditions={self.isolationConditions},letterOfAuthority={self.letterOfAuthority},passage={self.passage},genomeSequencing={self.genomeSequencing},titer={self.titer},shippingConditions={self.shippingConditions},storageConditions={self.storageConditions},thirdPartyDistributionConsent={self.thirdPartyDistributionConsent},usageRestrictions={self.usageRestrictions},accessPointUrl={self.accessPointUrl},refSku={self.refSku},unitDefinition={self.unitDefinition},unitCost={self.unitCost},qualityGrading={self.qualityGrading},biosafetyRestrictions={self.biosafetyRestrictions},canBeUsedToProduceGmo={self.canBeUsedToProduceGmo},availability={self.availability},technicalRecommendation={self.technicalRecommendation},internalReference={self.internalReference},note={self.note},title={self.title},description={self.description},version={self.version},biologicalMaterialOrigin_id={self.biologicalMaterialOrigin_id},iataClassification_id={self.iataClassification_id},materialSafetyDataSheet_id={self.materialSafetyDataSheet_id},originator_id={self.originator_id},category_id={self.category_id},riskGroup_id={self.riskGroup_id},provider_id={self.provider_id},contactPoint_id={self.contactPoint_id},)"
 
 
 
@@ -7386,25 +7419,26 @@ class Protozoan(Pathogen):
     storageConditions = Column(Text(), nullable=False )
     thirdPartyDistributionConsent = Column(Boolean())
     usageRestrictions = Column(Text())
-    accessPointURL = Column(Text(), nullable=False )
-    refSKU = Column(Text(), nullable=False )
+    accessPointUrl = Column(Text(), nullable=False )
+    refSku = Column(Text(), nullable=False )
     unitDefinition = Column(Text())
     unitCost = Column(Text(), nullable=False )
     qualityGrading = Column(Text())
     biosafetyRestrictions = Column(Text())
-    canItBeUsedToProduceGMO = Column(Boolean(), nullable=False )
+    canBeUsedToProduceGmo = Column(Boolean(), nullable=False )
     availability = Column(Text(), nullable=False )
     technicalRecommendation = Column(Text())
     internalReference = Column(Text())
     note = Column(Text())
     title = Column(Text(), nullable=False )
     description = Column(Text(), nullable=False )
+    version = Column(Text())
     biologicalMaterialOrigin_id = Column(Integer(), ForeignKey('BiologicalMaterialOrigin.id'), nullable=False )
     biologicalMaterialOrigin = relationship("BiologicalMaterialOrigin", uselist=False, foreign_keys=[biologicalMaterialOrigin_id])
-    hasIATAClassification_id = Column(Integer(), ForeignKey('IATAClassification.id'), nullable=False )
-    hasIATAClassification = relationship("IATAClassification", uselist=False, foreign_keys=[hasIATAClassification_id])
-    materialSafetyDataSheet_id = Column(Integer(), ForeignKey('MSDS.id'))
-    materialSafetyDataSheet = relationship("MSDS", uselist=False, foreign_keys=[materialSafetyDataSheet_id])
+    iataClassification_id = Column(Integer(), ForeignKey('IataClassification.id'), nullable=False )
+    iataClassification = relationship("IataClassification", uselist=False, foreign_keys=[iataClassification_id])
+    materialSafetyDataSheet_id = Column(Integer(), ForeignKey('ReasearchInfrastructure.id'))
+    materialSafetyDataSheet = relationship("ReasearchInfrastructure", uselist=False, foreign_keys=[materialSafetyDataSheet_id])
     originator_id = Column(Integer(), ForeignKey('Originator.id'))
     originator = relationship("Originator", uselist=False, foreign_keys=[originator_id])
     category_id = Column(Integer(), ForeignKey('ProductCategory.id'), nullable=False )
@@ -7450,7 +7484,7 @@ class Protozoan(Pathogen):
     
     
     # ManyToMany
-    relatedDOI = relationship( "DOI", secondary="Protozoan_relatedDOI")
+    doi = relationship( "Doi", secondary="Protozoan_doi")
     
     
     # ManyToMany
@@ -7478,7 +7512,7 @@ class Protozoan(Pathogen):
     
 
     def __repr__(self):
-        return f"Protozoan(id={self.id},cultivability={self.cultivability},clinicalInformation={self.clinicalInformation},identificationTechnique={self.identificationTechnique},infectivity={self.infectivity},infectivityTest={self.infectivityTest},isolationTechnique={self.isolationTechnique},isolationConditions={self.isolationConditions},letterOfAuthority={self.letterOfAuthority},passage={self.passage},genomeSequencing={self.genomeSequencing},titer={self.titer},shippingConditions={self.shippingConditions},storageConditions={self.storageConditions},thirdPartyDistributionConsent={self.thirdPartyDistributionConsent},usageRestrictions={self.usageRestrictions},accessPointURL={self.accessPointURL},refSKU={self.refSKU},unitDefinition={self.unitDefinition},unitCost={self.unitCost},qualityGrading={self.qualityGrading},biosafetyRestrictions={self.biosafetyRestrictions},canItBeUsedToProduceGMO={self.canItBeUsedToProduceGMO},availability={self.availability},technicalRecommendation={self.technicalRecommendation},internalReference={self.internalReference},note={self.note},title={self.title},description={self.description},biologicalMaterialOrigin_id={self.biologicalMaterialOrigin_id},hasIATAClassification_id={self.hasIATAClassification_id},materialSafetyDataSheet_id={self.materialSafetyDataSheet_id},originator_id={self.originator_id},category_id={self.category_id},riskGroup_id={self.riskGroup_id},provider_id={self.provider_id},contactPoint_id={self.contactPoint_id},)"
+        return f"Protozoan(id={self.id},cultivability={self.cultivability},clinicalInformation={self.clinicalInformation},identificationTechnique={self.identificationTechnique},infectivity={self.infectivity},infectivityTest={self.infectivityTest},isolationTechnique={self.isolationTechnique},isolationConditions={self.isolationConditions},letterOfAuthority={self.letterOfAuthority},passage={self.passage},genomeSequencing={self.genomeSequencing},titer={self.titer},shippingConditions={self.shippingConditions},storageConditions={self.storageConditions},thirdPartyDistributionConsent={self.thirdPartyDistributionConsent},usageRestrictions={self.usageRestrictions},accessPointUrl={self.accessPointUrl},refSku={self.refSku},unitDefinition={self.unitDefinition},unitCost={self.unitCost},qualityGrading={self.qualityGrading},biosafetyRestrictions={self.biosafetyRestrictions},canBeUsedToProduceGmo={self.canBeUsedToProduceGmo},availability={self.availability},technicalRecommendation={self.technicalRecommendation},internalReference={self.internalReference},note={self.note},title={self.title},description={self.description},version={self.version},biologicalMaterialOrigin_id={self.biologicalMaterialOrigin_id},iataClassification_id={self.iataClassification_id},materialSafetyDataSheet_id={self.materialSafetyDataSheet_id},originator_id={self.originator_id},category_id={self.category_id},riskGroup_id={self.riskGroup_id},provider_id={self.provider_id},contactPoint_id={self.contactPoint_id},)"
 
 
 
@@ -7512,25 +7546,26 @@ class Viroid(Pathogen):
     storageConditions = Column(Text(), nullable=False )
     thirdPartyDistributionConsent = Column(Boolean())
     usageRestrictions = Column(Text())
-    accessPointURL = Column(Text(), nullable=False )
-    refSKU = Column(Text(), nullable=False )
+    accessPointUrl = Column(Text(), nullable=False )
+    refSku = Column(Text(), nullable=False )
     unitDefinition = Column(Text())
     unitCost = Column(Text(), nullable=False )
     qualityGrading = Column(Text())
     biosafetyRestrictions = Column(Text())
-    canItBeUsedToProduceGMO = Column(Boolean(), nullable=False )
+    canBeUsedToProduceGmo = Column(Boolean(), nullable=False )
     availability = Column(Text(), nullable=False )
     technicalRecommendation = Column(Text())
     internalReference = Column(Text())
     note = Column(Text())
     title = Column(Text(), nullable=False )
     description = Column(Text(), nullable=False )
+    version = Column(Text())
     biologicalMaterialOrigin_id = Column(Integer(), ForeignKey('BiologicalMaterialOrigin.id'), nullable=False )
     biologicalMaterialOrigin = relationship("BiologicalMaterialOrigin", uselist=False, foreign_keys=[biologicalMaterialOrigin_id])
-    hasIATAClassification_id = Column(Integer(), ForeignKey('IATAClassification.id'), nullable=False )
-    hasIATAClassification = relationship("IATAClassification", uselist=False, foreign_keys=[hasIATAClassification_id])
-    materialSafetyDataSheet_id = Column(Integer(), ForeignKey('MSDS.id'))
-    materialSafetyDataSheet = relationship("MSDS", uselist=False, foreign_keys=[materialSafetyDataSheet_id])
+    iataClassification_id = Column(Integer(), ForeignKey('IataClassification.id'), nullable=False )
+    iataClassification = relationship("IataClassification", uselist=False, foreign_keys=[iataClassification_id])
+    materialSafetyDataSheet_id = Column(Integer(), ForeignKey('ReasearchInfrastructure.id'))
+    materialSafetyDataSheet = relationship("ReasearchInfrastructure", uselist=False, foreign_keys=[materialSafetyDataSheet_id])
     originator_id = Column(Integer(), ForeignKey('Originator.id'))
     originator = relationship("Originator", uselist=False, foreign_keys=[originator_id])
     category_id = Column(Integer(), ForeignKey('ProductCategory.id'), nullable=False )
@@ -7576,7 +7611,7 @@ class Viroid(Pathogen):
     
     
     # ManyToMany
-    relatedDOI = relationship( "DOI", secondary="Viroid_relatedDOI")
+    doi = relationship( "Doi", secondary="Viroid_doi")
     
     
     # ManyToMany
@@ -7604,7 +7639,7 @@ class Viroid(Pathogen):
     
 
     def __repr__(self):
-        return f"Viroid(id={self.id},cultivability={self.cultivability},clinicalInformation={self.clinicalInformation},identificationTechnique={self.identificationTechnique},infectivity={self.infectivity},infectivityTest={self.infectivityTest},isolationTechnique={self.isolationTechnique},isolationConditions={self.isolationConditions},letterOfAuthority={self.letterOfAuthority},passage={self.passage},genomeSequencing={self.genomeSequencing},titer={self.titer},shippingConditions={self.shippingConditions},storageConditions={self.storageConditions},thirdPartyDistributionConsent={self.thirdPartyDistributionConsent},usageRestrictions={self.usageRestrictions},accessPointURL={self.accessPointURL},refSKU={self.refSKU},unitDefinition={self.unitDefinition},unitCost={self.unitCost},qualityGrading={self.qualityGrading},biosafetyRestrictions={self.biosafetyRestrictions},canItBeUsedToProduceGMO={self.canItBeUsedToProduceGMO},availability={self.availability},technicalRecommendation={self.technicalRecommendation},internalReference={self.internalReference},note={self.note},title={self.title},description={self.description},biologicalMaterialOrigin_id={self.biologicalMaterialOrigin_id},hasIATAClassification_id={self.hasIATAClassification_id},materialSafetyDataSheet_id={self.materialSafetyDataSheet_id},originator_id={self.originator_id},category_id={self.category_id},riskGroup_id={self.riskGroup_id},provider_id={self.provider_id},contactPoint_id={self.contactPoint_id},)"
+        return f"Viroid(id={self.id},cultivability={self.cultivability},clinicalInformation={self.clinicalInformation},identificationTechnique={self.identificationTechnique},infectivity={self.infectivity},infectivityTest={self.infectivityTest},isolationTechnique={self.isolationTechnique},isolationConditions={self.isolationConditions},letterOfAuthority={self.letterOfAuthority},passage={self.passage},genomeSequencing={self.genomeSequencing},titer={self.titer},shippingConditions={self.shippingConditions},storageConditions={self.storageConditions},thirdPartyDistributionConsent={self.thirdPartyDistributionConsent},usageRestrictions={self.usageRestrictions},accessPointUrl={self.accessPointUrl},refSku={self.refSku},unitDefinition={self.unitDefinition},unitCost={self.unitCost},qualityGrading={self.qualityGrading},biosafetyRestrictions={self.biosafetyRestrictions},canBeUsedToProduceGmo={self.canBeUsedToProduceGmo},availability={self.availability},technicalRecommendation={self.technicalRecommendation},internalReference={self.internalReference},note={self.note},title={self.title},description={self.description},version={self.version},biologicalMaterialOrigin_id={self.biologicalMaterialOrigin_id},iataClassification_id={self.iataClassification_id},materialSafetyDataSheet_id={self.materialSafetyDataSheet_id},originator_id={self.originator_id},category_id={self.category_id},riskGroup_id={self.riskGroup_id},provider_id={self.provider_id},contactPoint_id={self.contactPoint_id},)"
 
 
 
@@ -7638,25 +7673,26 @@ class Prion(Pathogen):
     storageConditions = Column(Text(), nullable=False )
     thirdPartyDistributionConsent = Column(Boolean())
     usageRestrictions = Column(Text())
-    accessPointURL = Column(Text(), nullable=False )
-    refSKU = Column(Text(), nullable=False )
+    accessPointUrl = Column(Text(), nullable=False )
+    refSku = Column(Text(), nullable=False )
     unitDefinition = Column(Text())
     unitCost = Column(Text(), nullable=False )
     qualityGrading = Column(Text())
     biosafetyRestrictions = Column(Text())
-    canItBeUsedToProduceGMO = Column(Boolean(), nullable=False )
+    canBeUsedToProduceGmo = Column(Boolean(), nullable=False )
     availability = Column(Text(), nullable=False )
     technicalRecommendation = Column(Text())
     internalReference = Column(Text())
     note = Column(Text())
     title = Column(Text(), nullable=False )
     description = Column(Text(), nullable=False )
+    version = Column(Text())
     biologicalMaterialOrigin_id = Column(Integer(), ForeignKey('BiologicalMaterialOrigin.id'), nullable=False )
     biologicalMaterialOrigin = relationship("BiologicalMaterialOrigin", uselist=False, foreign_keys=[biologicalMaterialOrigin_id])
-    hasIATAClassification_id = Column(Integer(), ForeignKey('IATAClassification.id'), nullable=False )
-    hasIATAClassification = relationship("IATAClassification", uselist=False, foreign_keys=[hasIATAClassification_id])
-    materialSafetyDataSheet_id = Column(Integer(), ForeignKey('MSDS.id'))
-    materialSafetyDataSheet = relationship("MSDS", uselist=False, foreign_keys=[materialSafetyDataSheet_id])
+    iataClassification_id = Column(Integer(), ForeignKey('IataClassification.id'), nullable=False )
+    iataClassification = relationship("IataClassification", uselist=False, foreign_keys=[iataClassification_id])
+    materialSafetyDataSheet_id = Column(Integer(), ForeignKey('ReasearchInfrastructure.id'))
+    materialSafetyDataSheet = relationship("ReasearchInfrastructure", uselist=False, foreign_keys=[materialSafetyDataSheet_id])
     originator_id = Column(Integer(), ForeignKey('Originator.id'))
     originator = relationship("Originator", uselist=False, foreign_keys=[originator_id])
     category_id = Column(Integer(), ForeignKey('ProductCategory.id'), nullable=False )
@@ -7702,7 +7738,7 @@ class Prion(Pathogen):
     
     
     # ManyToMany
-    relatedDOI = relationship( "DOI", secondary="Prion_relatedDOI")
+    doi = relationship( "Doi", secondary="Prion_doi")
     
     
     # ManyToMany
@@ -7730,7 +7766,7 @@ class Prion(Pathogen):
     
 
     def __repr__(self):
-        return f"Prion(id={self.id},cultivability={self.cultivability},clinicalInformation={self.clinicalInformation},identificationTechnique={self.identificationTechnique},infectivity={self.infectivity},infectivityTest={self.infectivityTest},isolationTechnique={self.isolationTechnique},isolationConditions={self.isolationConditions},letterOfAuthority={self.letterOfAuthority},passage={self.passage},genomeSequencing={self.genomeSequencing},titer={self.titer},shippingConditions={self.shippingConditions},storageConditions={self.storageConditions},thirdPartyDistributionConsent={self.thirdPartyDistributionConsent},usageRestrictions={self.usageRestrictions},accessPointURL={self.accessPointURL},refSKU={self.refSKU},unitDefinition={self.unitDefinition},unitCost={self.unitCost},qualityGrading={self.qualityGrading},biosafetyRestrictions={self.biosafetyRestrictions},canItBeUsedToProduceGMO={self.canItBeUsedToProduceGMO},availability={self.availability},technicalRecommendation={self.technicalRecommendation},internalReference={self.internalReference},note={self.note},title={self.title},description={self.description},biologicalMaterialOrigin_id={self.biologicalMaterialOrigin_id},hasIATAClassification_id={self.hasIATAClassification_id},materialSafetyDataSheet_id={self.materialSafetyDataSheet_id},originator_id={self.originator_id},category_id={self.category_id},riskGroup_id={self.riskGroup_id},provider_id={self.provider_id},contactPoint_id={self.contactPoint_id},)"
+        return f"Prion(id={self.id},cultivability={self.cultivability},clinicalInformation={self.clinicalInformation},identificationTechnique={self.identificationTechnique},infectivity={self.infectivity},infectivityTest={self.infectivityTest},isolationTechnique={self.isolationTechnique},isolationConditions={self.isolationConditions},letterOfAuthority={self.letterOfAuthority},passage={self.passage},genomeSequencing={self.genomeSequencing},titer={self.titer},shippingConditions={self.shippingConditions},storageConditions={self.storageConditions},thirdPartyDistributionConsent={self.thirdPartyDistributionConsent},usageRestrictions={self.usageRestrictions},accessPointUrl={self.accessPointUrl},refSku={self.refSku},unitDefinition={self.unitDefinition},unitCost={self.unitCost},qualityGrading={self.qualityGrading},biosafetyRestrictions={self.biosafetyRestrictions},canBeUsedToProduceGmo={self.canBeUsedToProduceGmo},availability={self.availability},technicalRecommendation={self.technicalRecommendation},internalReference={self.internalReference},note={self.note},title={self.title},description={self.description},version={self.version},biologicalMaterialOrigin_id={self.biologicalMaterialOrigin_id},iataClassification_id={self.iataClassification_id},materialSafetyDataSheet_id={self.materialSafetyDataSheet_id},originator_id={self.originator_id},category_id={self.category_id},riskGroup_id={self.riskGroup_id},provider_id={self.provider_id},contactPoint_id={self.contactPoint_id},)"
 
 
 

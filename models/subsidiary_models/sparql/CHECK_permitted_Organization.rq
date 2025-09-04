@@ -27,7 +27,7 @@ SELECT ?g ?s ?p WHERE {
   FILTER ( ?p NOT IN (
    EVORAO:alternateName,
    EVORAO:country,
-   EVORAO:rORiD,
+   EVORAO:rorId,
    foaf:name,
    dct:description,
    foaf:homepage,

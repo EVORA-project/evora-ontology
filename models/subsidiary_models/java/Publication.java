@@ -5,7 +5,7 @@ import lombok.*;
 
 
 
-/* version: 1.0.8773 */
+/* version: 1.0.8940 */
 
 
 /**
@@ -18,7 +18,7 @@ public class Publication extends Resource {
   private String title;
   private String authors;
   private String abstract;
-  private DOI relatedDOI;
+  private Doi doi;
   private Journal journal;
 
 }
