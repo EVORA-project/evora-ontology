@@ -317,6 +317,7 @@ attributes:
     - wdp:P393
     - schema:version
     rank: 1000
+    slot_uri: dcat:version
     alias: version
     owner: Collection
     domain_of:

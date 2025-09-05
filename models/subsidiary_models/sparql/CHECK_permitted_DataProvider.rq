@@ -25,7 +25,7 @@ SELECT ?g ?s ?p WHERE {
   ?s rdf:type EVORAO:DataProvider ;
      ?p ?o .
   FILTER ( ?p NOT IN (
-   EVORAO:license,
+   dct:license,
    EVORAO:loginRequestMethod,
    EVORAO:loginUrl,
    EVORAO:loginTokenName,

@@ -1,8 +1,9 @@
 # metamodel_version: 1.7.0
-# version: 1.0.8940
+# version: 1.0.8951
 BASE <https://w3id.org/evorao/>
 PREFIX dcat: <http://www.w3.org/ns/dcat#>
 PREFIX foaf: <http://xmlns.com/foaf/0.1/>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 PREFIX dct: <http://purl.org/dc/terms/>
@@ -207,7 +208,7 @@ linkml:Sparqlpath xsd:string
 <DataProvider> CLOSED {
     (  $<DataProvider_tes> (  &<DataService_tes> ;
           rdf:type [ dcat:DataService ] ? ;
-          <license> @<License> ? ;
+          dct:license @<License> ? ;
           <loginRequestMethod> @linkml:String ? ;
           <loginUrl> @linkml:Uri ? ;
           <loginTokenName> @linkml:String ? ;
@@ -242,7 +243,7 @@ linkml:Sparqlpath xsd:string
           rdf:type [ dcat:Resource ] ? ;
           dct:title @linkml:String ;
           dct:description @linkml:String ;
-          <version> @linkml:String
+          dcat:version @linkml:String
        ) ;
        rdf:type [ dcat:Dataset ] ?
     )
@@ -307,7 +308,7 @@ linkml:Sparqlpath xsd:string
           dct:description @linkml:String ? ;
           <contentUrl> @linkml:Uri ;
           <format> @linkml:String ;
-          <license> @<License> ?
+          dct:license @<License> ?
        ) ;
        rdf:type [ <File> ] ?
     )
@@ -559,7 +560,7 @@ linkml:Sparqlpath xsd:string
              foaf:name @linkml:String ;
              dct:description @linkml:String ? ;
              foaf:homepage @linkml:Uri ? ;
-             <contactPoint> @<ContactPoint> ? ;
+             dcat:contactPoint @<ContactPoint> ? ;
              <logo> @<Image> ?
           ) ;
           rdf:type [ foaf:Agent ] ?
@@ -646,8 +647,8 @@ linkml:Sparqlpath xsd:string
           <externalRelatedReference> @<ExternalRelatedReference> * ;
           <certification> @<Certification> * ;
           <internalReference> @linkml:String ? ;
-          <note> @linkml:String ? ;
-          <contactPoint> @<ContactPoint> ?
+          skos:note @linkml:String ? ;
+          dcat:contactPoint @<ContactPoint> ?
        ) ;
        rdf:type [ <ProductOrService> ] ?
     )
@@ -837,7 +838,7 @@ linkml:Sparqlpath xsd:string
           rdf:type [ dcat:Catalog ] ? ;
           <taxon> @<Taxon> + ;
           <taxonDataProvider> @<DataProvider> ? ;
-          <version> @linkml:String ;
+          dcat:version @linkml:String ;
           <versionDataProvider> @<DataProvider> ;
           <rank> @<TaxonomicRank> + ;
           <rankDataProvider> @<DataProvider> ?
@@ -884,7 +885,7 @@ linkml:Sparqlpath xsd:string
 <Version> CLOSED {
     (  $<Version_tes> (  &<Resource_tes> ;
           rdf:type [ dcat:Resource ] ? ;
-          <version> @linkml:String ;
+          dcat:version @linkml:String ;
           <versionOf> @<Dataset>
        ) ;
        rdf:type [ <Version> ] ?

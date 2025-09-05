@@ -29,7 +29,7 @@ SELECT ?g ?s ?p WHERE {
    EVORAO:collectionDataProvider,
    dct:title,
    dct:description,
-   EVORAO:version,
+   dcat:version,
    rdf:type ))
  }
  

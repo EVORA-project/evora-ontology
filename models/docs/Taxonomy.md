@@ -203,6 +203,7 @@ slot_usage:
     close_mappings:
     - wdp:P393
     - schema:version
+    slot_uri: dcat:version
     domain_of:
     - Taxonomy
     - Dataset
@@ -287,6 +288,7 @@ slot_usage:
     close_mappings:
     - wdp:P393
     - schema:version
+    slot_uri: dcat:version
     domain_of:
     - Taxonomy
     - Dataset
@@ -365,6 +367,7 @@ attributes:
     - wdp:P393
     - schema:version
     rank: 1000
+    slot_uri: dcat:version
     alias: version
     owner: Taxonomy
     domain_of:

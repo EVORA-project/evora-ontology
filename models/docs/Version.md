@@ -120,6 +120,7 @@ slot_usage:
     close_mappings:
     - wdp:P393
     - schema:version
+    slot_uri: dcat:version
     domain_of:
     - Version
     - Dataset
@@ -161,6 +162,7 @@ slot_usage:
     close_mappings:
     - wdp:P393
     - schema:version
+    slot_uri: dcat:version
     domain_of:
     - Version
     - Dataset
@@ -187,6 +189,7 @@ attributes:
     - wdp:P393
     - schema:version
     rank: 1000
+    slot_uri: dcat:version
     alias: version
     owner: Version
     domain_of:

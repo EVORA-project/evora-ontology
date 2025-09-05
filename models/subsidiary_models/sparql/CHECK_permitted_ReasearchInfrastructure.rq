@@ -31,7 +31,7 @@ SELECT ?g ?s ?p WHERE {
    foaf:name,
    dct:description,
    foaf:homepage,
-   EVORAO:contactPoint,
+   dcat:contactPoint,
    EVORAO:logo,
    rdf:type ))
  }

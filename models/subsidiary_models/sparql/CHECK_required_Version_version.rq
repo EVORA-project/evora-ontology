@@ -27,10 +27,10 @@ SELECT
   ?predicate WHERE {
  GRAPH ?graph {
   ?subject rdf:type EVORAO:Version .
-  FILTER NOT EXISTS { ?subject  EVORAO:version ?o  }
+  FILTER NOT EXISTS { ?subject  dcat:version ?o  }
  }
  VALUES ?check { linkml:required }
- VALUES ?predicate { EVORAO:version }
+ VALUES ?predicate { dcat:version }
  
 }  
 

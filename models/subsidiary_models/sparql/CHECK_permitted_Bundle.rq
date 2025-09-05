@@ -55,11 +55,11 @@ SELECT ?g ?s ?p WHERE {
    EVORAO:externalRelatedReference,
    EVORAO:certification,
    EVORAO:internalReference,
-   EVORAO:note,
-   EVORAO:contactPoint,
+   skos:note,
+   dcat:contactPoint,
    dct:title,
    dct:description,
-   EVORAO:version,
+   dcat:version,
    rdf:type ))
  }
  

@@ -1195,6 +1195,7 @@ attributes:
     title: note
     from_schema: https://w3id.org/evorao/
     rank: 1000
+    slot_uri: skos:note
     alias: note
     owner: Viroid
     domain_of:
@@ -1207,9 +1208,8 @@ attributes:
     description: An information that allows someone to establish communication
     title: contact point
     from_schema: https://w3id.org/evorao/
-    exact_mappings:
-    - dcat:contactPoint
     rank: 1000
+    slot_uri: dcat:contactPoint
     alias: contactPoint
     owner: Viroid
     domain_of:
@@ -1289,6 +1289,7 @@ attributes:
     - wdp:P393
     - schema:version
     rank: 1000
+    slot_uri: dcat:version
     alias: version
     owner: Viroid
     domain_of:

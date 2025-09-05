@@ -579,6 +579,7 @@ slot_usage:
     name: note
     description: An aditional information as a textual comment
     title: note
+    slot_uri: skos:note
     domain_of:
     - ProductOrService
     range: string
@@ -588,8 +589,7 @@ slot_usage:
     name: contactPoint
     description: An information that allows someone to establish communication
     title: contact point
-    exact_mappings:
-    - dcat:contactPoint
+    slot_uri: dcat:contactPoint
     domain_of:
     - ProductOrService
     - PersonOrOrganization
@@ -878,6 +878,7 @@ slot_usage:
     name: note
     description: An aditional information as a textual comment
     title: note
+    slot_uri: skos:note
     domain_of:
     - ProductOrService
     range: string
@@ -887,8 +888,7 @@ slot_usage:
     name: contactPoint
     description: An information that allows someone to establish communication
     title: contact point
-    exact_mappings:
-    - dcat:contactPoint
+    slot_uri: dcat:contactPoint
     domain_of:
     - ProductOrService
     - PersonOrOrganization
@@ -1250,6 +1250,7 @@ attributes:
     title: note
     from_schema: https://w3id.org/evorao/
     rank: 1000
+    slot_uri: skos:note
     alias: note
     owner: ProductOrService
     domain_of:
@@ -1262,9 +1263,8 @@ attributes:
     description: An information that allows someone to establish communication
     title: contact point
     from_schema: https://w3id.org/evorao/
-    exact_mappings:
-    - dcat:contactPoint
     rank: 1000
+    slot_uri: dcat:contactPoint
     alias: contactPoint
     owner: ProductOrService
     domain_of:
@@ -1344,6 +1344,7 @@ attributes:
     - wdp:P393
     - schema:version
     rank: 1000
+    slot_uri: dcat:version
     alias: version
     owner: ProductOrService
     domain_of:

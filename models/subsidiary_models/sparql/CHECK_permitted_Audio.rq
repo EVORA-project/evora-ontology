@@ -29,7 +29,7 @@ SELECT ?g ?s ?p WHERE {
    dct:description,
    EVORAO:contentUrl,
    EVORAO:format,
-   EVORAO:license,
+   dct:license,
    rdf:type ))
  }
  

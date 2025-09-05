@@ -39,7 +39,7 @@ WHERE {
   }
  }
  VALUES ?check { linkml:range }
- VALUES ?predicate { EVORAO:contactPoint  }
+ VALUES ?predicate { dcat:contactPoint  }
  
 }  
 

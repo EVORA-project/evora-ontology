@@ -38,7 +38,7 @@
     "interoperability"
   ],
   "id": "https://w3id.org/evorao/",
-  "version": "1.0.8940",
+  "version": "1.0.8951",
   "imports": [
     "linkml:types"
   ],
@@ -517,13 +517,16 @@
       "description": "The version indicator (name or identifier) of a resource",
       "title": "version",
       "from_schema": "https://w3id.org/evorao/",
+      "mappings": [
+        "http://www.w3.org/ns/dcat#version"
+      ],
       "close_mappings": [
         "http://www.wikidata.org/prop/P393",
         "http://schema.org/version",
         "http://www.wikidata.org/prop/P393",
         "http://schema.org/version"
       ],
-      "slot_uri": "https://w3id.org/evorao/version",
+      "slot_uri": "http://www.w3.org/ns/dcat#version",
       "owner": "Taxonomy",
       "domain_of": [
         "Dataset",
@@ -668,12 +671,15 @@
       "description": "Information about terms and conditions under which the subject can be used, shared, or distributed, indicating any restrictions or permissions",
       "title": "license",
       "from_schema": "https://w3id.org/evorao/",
+      "mappings": [
+        "http://purl.org/dc/terms/license"
+      ],
       "exact_mappings": [
         "http://purl.org/dc/terms/license",
         "http://schema.org/license",
         "http://purl.org/dc/terms/license"
       ],
-      "slot_uri": "https://w3id.org/evorao/license",
+      "slot_uri": "http://purl.org/dc/terms/license",
       "owner": "File",
       "domain_of": [
         "DataProvider",
@@ -1502,10 +1508,10 @@
       "description": "An information that allows someone to establish communication",
       "title": "contact point",
       "from_schema": "https://w3id.org/evorao/",
-      "exact_mappings": [
+      "mappings": [
         "http://www.w3.org/ns/dcat#contactPoint"
       ],
-      "slot_uri": "https://w3id.org/evorao/contactPoint",
+      "slot_uri": "http://www.w3.org/ns/dcat#contactPoint",
       "owner": "ProductOrService",
       "domain_of": [
         "PersonOrOrganization",
@@ -2247,7 +2253,10 @@
       "description": "An aditional information as a textual comment",
       "title": "note",
       "from_schema": "https://w3id.org/evorao/",
-      "slot_uri": "https://w3id.org/evorao/note",
+      "mappings": [
+        "http://www.w3.org/2004/02/skos/core#note"
+      ],
+      "slot_uri": "http://www.w3.org/2004/02/skos/core#note",
       "owner": "ProductOrService",
       "domain_of": [
         "ProductOrService"
@@ -3759,13 +3768,16 @@
       "description": "The version indicator (name or identifier) of a resource",
       "title": "version",
       "from_schema": "https://w3id.org/evorao/",
+      "mappings": [
+        "http://www.w3.org/ns/dcat#version"
+      ],
       "close_mappings": [
         "http://www.wikidata.org/prop/P393",
         "http://schema.org/version"
       ],
       "is_a": "version",
       "domain": "Dataset",
-      "slot_uri": "https://w3id.org/evorao/version",
+      "slot_uri": "http://www.w3.org/ns/dcat#version",
       "alias": "version",
       "owner": "Dataset",
       "domain_of": [
@@ -3872,13 +3884,16 @@
       "description": "The version indicator (name or identifier) of a resource",
       "title": "version",
       "from_schema": "https://w3id.org/evorao/",
+      "mappings": [
+        "http://www.w3.org/ns/dcat#version"
+      ],
       "close_mappings": [
         "http://www.wikidata.org/prop/P393",
         "http://schema.org/version"
       ],
       "is_a": "version",
       "domain": "Version",
-      "slot_uri": "https://w3id.org/evorao/version",
+      "slot_uri": "http://www.w3.org/ns/dcat#version",
       "alias": "version",
       "owner": "Version",
       "domain_of": [
@@ -3966,13 +3981,16 @@
       "description": "The version indicator (name or identifier) of a resource",
       "title": "version",
       "from_schema": "https://w3id.org/evorao/",
+      "mappings": [
+        "http://www.w3.org/ns/dcat#version"
+      ],
       "close_mappings": [
         "http://www.wikidata.org/prop/P393",
         "http://schema.org/version"
       ],
       "is_a": "Dataset_version",
       "domain": "Taxonomy",
-      "slot_uri": "https://w3id.org/evorao/version",
+      "slot_uri": "http://www.w3.org/ns/dcat#version",
       "alias": "version",
       "owner": "Taxonomy",
       "domain_of": [
@@ -4058,13 +4076,16 @@
       "description": "Information about terms and conditions under which the subject can be used, shared, or distributed, indicating any restrictions or permissions",
       "title": "license",
       "from_schema": "https://w3id.org/evorao/",
+      "mappings": [
+        "http://purl.org/dc/terms/license"
+      ],
       "exact_mappings": [
         "http://purl.org/dc/terms/license",
         "http://schema.org/license"
       ],
       "is_a": "license",
       "domain": "DataProvider",
-      "slot_uri": "https://w3id.org/evorao/license",
+      "slot_uri": "http://purl.org/dc/terms/license",
       "alias": "license",
       "owner": "DataProvider",
       "domain_of": [
@@ -5371,12 +5392,12 @@
       "description": "An information that allows someone to establish communication",
       "title": "contact point",
       "from_schema": "https://w3id.org/evorao/",
-      "exact_mappings": [
+      "mappings": [
         "http://www.w3.org/ns/dcat#contactPoint"
       ],
       "is_a": "contactPoint",
       "domain": "PersonOrOrganization",
-      "slot_uri": "https://w3id.org/evorao/contactPoint",
+      "slot_uri": "http://www.w3.org/ns/dcat#contactPoint",
       "alias": "contactPoint",
       "owner": "PersonOrOrganization",
       "domain_of": [
@@ -6375,9 +6396,12 @@
       "description": "An aditional information as a textual comment",
       "title": "note",
       "from_schema": "https://w3id.org/evorao/",
+      "mappings": [
+        "http://www.w3.org/2004/02/skos/core#note"
+      ],
       "is_a": "note",
       "domain": "ProductOrService",
-      "slot_uri": "https://w3id.org/evorao/note",
+      "slot_uri": "http://www.w3.org/2004/02/skos/core#note",
       "alias": "note",
       "owner": "ProductOrService",
       "domain_of": [
@@ -6394,12 +6418,12 @@
       "description": "An information that allows someone to establish communication",
       "title": "contact point",
       "from_schema": "https://w3id.org/evorao/",
-      "exact_mappings": [
+      "mappings": [
         "http://www.w3.org/ns/dcat#contactPoint"
       ],
       "is_a": "contactPoint",
       "domain": "ProductOrService",
-      "slot_uri": "https://w3id.org/evorao/contactPoint",
+      "slot_uri": "http://www.w3.org/ns/dcat#contactPoint",
       "alias": "contactPoint",
       "owner": "ProductOrService",
       "domain_of": [
@@ -8304,12 +8328,15 @@
       "description": "Information about terms and conditions under which the subject can be used, shared, or distributed, indicating any restrictions or permissions",
       "title": "license",
       "from_schema": "https://w3id.org/evorao/",
+      "mappings": [
+        "http://purl.org/dc/terms/license"
+      ],
       "exact_mappings": [
         "http://purl.org/dc/terms/license"
       ],
       "is_a": "license",
       "domain": "File",
-      "slot_uri": "https://w3id.org/evorao/license",
+      "slot_uri": "http://purl.org/dc/terms/license",
       "alias": "license",
       "owner": "File",
       "domain_of": [
@@ -11212,9 +11239,9 @@
   ],
   "metamodel_version": "1.7.0",
   "source_file": "evora_schema.yaml",
-  "source_file_date": "2025-09-04T16:25:00",
-  "source_file_size": 190170,
-  "generation_date": "2025-09-04T16:25:15",
+  "source_file_date": "2025-09-05T07:48:56",
+  "source_file_size": 190323,
+  "generation_date": "2025-09-05T07:49:12",
   "@type": "SchemaDefinition",
   "@context": [
     "https://w3id.org/linkml/types.context.jsonld",

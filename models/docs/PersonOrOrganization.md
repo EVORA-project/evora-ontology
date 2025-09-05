@@ -203,8 +203,7 @@ slot_usage:
     name: contactPoint
     description: An information that allows someone to establish communication
     title: contact point
-    exact_mappings:
-    - dcat:contactPoint
+    slot_uri: dcat:contactPoint
     domain_of:
     - PersonOrOrganization
     - ProductOrService
@@ -300,8 +299,7 @@ slot_usage:
     name: contactPoint
     description: An information that allows someone to establish communication
     title: contact point
-    exact_mappings:
-    - dcat:contactPoint
+    slot_uri: dcat:contactPoint
     domain_of:
     - PersonOrOrganization
     - ProductOrService
@@ -392,9 +390,8 @@ attributes:
     description: An information that allows someone to establish communication
     title: contact point
     from_schema: https://w3id.org/evorao/
-    exact_mappings:
-    - dcat:contactPoint
     rank: 1000
+    slot_uri: dcat:contactPoint
     alias: contactPoint
     owner: PersonOrOrganization
     domain_of:

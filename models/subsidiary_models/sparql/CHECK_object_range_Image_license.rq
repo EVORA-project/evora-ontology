@@ -39,7 +39,7 @@ WHERE {
   }
  }
  VALUES ?check { linkml:range }
- VALUES ?predicate { EVORAO:license  }
+ VALUES ?predicate { dct:license  }
  
 }  
 

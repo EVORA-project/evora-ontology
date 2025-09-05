@@ -173,6 +173,7 @@ slot_usage:
     exact_mappings:
     - dct:license
     - schema:license
+    slot_uri: dct:license
     domain_of:
     - DataProvider
     - File
@@ -302,6 +303,7 @@ slot_usage:
     exact_mappings:
     - dct:license
     - schema:license
+    slot_uri: dct:license
     domain_of:
     - DataProvider
     - File
@@ -416,6 +418,7 @@ attributes:
     - dct:license
     - schema:license
     rank: 1000
+    slot_uri: dct:license
     alias: license
     owner: DataProvider
     domain_of:

@@ -1,5 +1,5 @@
 # Auto generated from evora_schema.yaml by pythongen.py version: 0.0.1
-# Generation date: 2025-09-04T16:25:20
+# Generation date: 2025-09-05T07:49:16
 # Schema: EVORAO
 #
 # id: https://w3id.org/evorao/
@@ -60,7 +60,7 @@ from linkml_runtime.linkml_model.types import Boolean, Datetime, Integer, String
 from linkml_runtime.utils.metamodelcore import Bool, URI, XSDDateTime
 
 metamodel_version = "1.7.0"
-version = "1.0.8940"
+version = "1.0.8951"
 
 # Namespaces
 EVORAO = CurieNamespace('EVORAO', 'https://w3id.org/evorao/')
@@ -2763,7 +2763,7 @@ slots.title = Slot(uri=DCT.title, name="title", curie=DCT.curie('title'),
 slots.description = Slot(uri=DCT.description, name="description", curie=DCT.curie('description'),
                    model_uri=EVORAO.description, domain=None, range=Optional[str])
 
-slots.version = Slot(uri=EVORAO.version, name="version", curie=EVORAO.curie('version'),
+slots.version = Slot(uri=DCAT.version, name="version", curie=DCAT.curie('version'),
                    model_uri=EVORAO.version, domain=None, range=str)
 
 slots.endpointUrl = Slot(uri=DCAT.endpointURL, name="endpointUrl", curie=DCAT.curie('endpointURL'),
@@ -2787,7 +2787,7 @@ slots.rank = Slot(uri=EVORAO.rank, name="rank", curie=EVORAO.curie('rank'),
 slots.rankDataProvider = Slot(uri=EVORAO.rankDataProvider, name="rankDataProvider", curie=EVORAO.curie('rankDataProvider'),
                    model_uri=EVORAO.rankDataProvider, domain=None, range=Optional[Union[dict, DataProvider]])
 
-slots.license = Slot(uri=EVORAO.license, name="license", curie=EVORAO.curie('license'),
+slots.license = Slot(uri=DCT.license, name="license", curie=DCT.curie('license'),
                    model_uri=EVORAO.license, domain=None, range=Optional[Union[dict, License]])
 
 slots.loginRequestMethod = Slot(uri=EVORAO.loginRequestMethod, name="loginRequestMethod", curie=EVORAO.curie('loginRequestMethod'),
@@ -2919,7 +2919,7 @@ slots.name = Slot(uri=FOAF.name, name="name", curie=FOAF.curie('name'),
 slots.homePage = Slot(uri=FOAF.homepage, name="homePage", curie=FOAF.curie('homepage'),
                    model_uri=EVORAO.homePage, domain=None, range=Optional[Union[str, URI]])
 
-slots.contactPoint = Slot(uri=EVORAO.contactPoint, name="contactPoint", curie=EVORAO.curie('contactPoint'),
+slots.contactPoint = Slot(uri=DCAT.contactPoint, name="contactPoint", curie=DCAT.curie('contactPoint'),
                    model_uri=EVORAO.contactPoint, domain=None, range=Optional[Union[dict, ContactPoint]])
 
 slots.logo = Slot(uri=EVORAO.logo, name="logo", curie=EVORAO.curie('logo'),
@@ -3048,7 +3048,7 @@ slots.certification = Slot(uri=EVORAO.certification, name="certification", curie
 slots.internalReference = Slot(uri=EVORAO.internalReference, name="internalReference", curie=EVORAO.curie('internalReference'),
                    model_uri=EVORAO.internalReference, domain=None, range=Optional[str])
 
-slots.note = Slot(uri=EVORAO.note, name="note", curie=EVORAO.curie('note'),
+slots.note = Slot(uri=SKOS.note, name="note", curie=SKOS.curie('note'),
                    model_uri=EVORAO.note, domain=None, range=Optional[str])
 
 slots.modelSpecies = Slot(uri=EVORAO.modelSpecies, name="modelSpecies", curie=EVORAO.curie('modelSpecies'),
@@ -3318,7 +3318,7 @@ slots.Dataset_title = Slot(uri=DCT.title, name="Dataset_title", curie=DCT.curie(
 slots.Dataset_description = Slot(uri=DCT.description, name="Dataset_description", curie=DCT.curie('description'),
                    model_uri=EVORAO.Dataset_description, domain=Dataset, range=str)
 
-slots.Dataset_version = Slot(uri=EVORAO.version, name="Dataset_version", curie=EVORAO.curie('version'),
+slots.Dataset_version = Slot(uri=DCAT.version, name="Dataset_version", curie=DCAT.curie('version'),
                    model_uri=EVORAO.Dataset_version, domain=Dataset, range=str)
 
 slots.DataService_title = Slot(uri=DCT.title, name="DataService_title", curie=DCT.curie('title'),
@@ -3330,7 +3330,7 @@ slots.DataService_description = Slot(uri=DCT.description, name="DataService_desc
 slots.DataService_endpointUrl = Slot(uri=DCAT.endpointURL, name="DataService_endpointUrl", curie=DCAT.curie('endpointURL'),
                    model_uri=EVORAO.DataService_endpointUrl, domain=DataService, range=Union[str, URI])
 
-slots.Version_version = Slot(uri=EVORAO.version, name="Version_version", curie=EVORAO.curie('version'),
+slots.Version_version = Slot(uri=DCAT.version, name="Version_version", curie=DCAT.curie('version'),
                    model_uri=EVORAO.Version_version, domain=Version, range=str)
 
 slots.Version_versionOf = Slot(uri=EVORAO.versionOf, name="Version_versionOf", curie=EVORAO.curie('versionOf'),
@@ -3342,7 +3342,7 @@ slots.Taxonomy_taxon = Slot(uri=EVORAO.taxon, name="Taxonomy_taxon", curie=EVORA
 slots.Taxonomy_taxonDataProvider = Slot(uri=EVORAO.taxonDataProvider, name="Taxonomy_taxonDataProvider", curie=EVORAO.curie('taxonDataProvider'),
                    model_uri=EVORAO.Taxonomy_taxonDataProvider, domain=Taxonomy, range=Optional[Union[dict, "DataProvider"]])
 
-slots.Taxonomy_version = Slot(uri=EVORAO.version, name="Taxonomy_version", curie=EVORAO.curie('version'),
+slots.Taxonomy_version = Slot(uri=DCAT.version, name="Taxonomy_version", curie=DCAT.curie('version'),
                    model_uri=EVORAO.Taxonomy_version, domain=Taxonomy, range=str)
 
 slots.Taxonomy_versionDataProvider = Slot(uri=EVORAO.versionDataProvider, name="Taxonomy_versionDataProvider", curie=EVORAO.curie('versionDataProvider'),
@@ -3354,7 +3354,7 @@ slots.Taxonomy_rank = Slot(uri=EVORAO.rank, name="Taxonomy_rank", curie=EVORAO.c
 slots.Taxonomy_rankDataProvider = Slot(uri=EVORAO.rankDataProvider, name="Taxonomy_rankDataProvider", curie=EVORAO.curie('rankDataProvider'),
                    model_uri=EVORAO.Taxonomy_rankDataProvider, domain=Taxonomy, range=Optional[Union[dict, "DataProvider"]])
 
-slots.DataProvider_license = Slot(uri=EVORAO.license, name="DataProvider_license", curie=EVORAO.curie('license'),
+slots.DataProvider_license = Slot(uri=DCT.license, name="DataProvider_license", curie=DCT.curie('license'),
                    model_uri=EVORAO.DataProvider_license, domain=DataProvider, range=Optional[Union[dict, "License"]])
 
 slots.DataProvider_loginRequestMethod = Slot(uri=EVORAO.loginRequestMethod, name="DataProvider_loginRequestMethod", curie=EVORAO.curie('loginRequestMethod'),
@@ -3516,7 +3516,7 @@ slots.PersonOrOrganization_description = Slot(uri=DCT.description, name="PersonO
 slots.PersonOrOrganization_homePage = Slot(uri=FOAF.homepage, name="PersonOrOrganization_homePage", curie=FOAF.curie('homepage'),
                    model_uri=EVORAO.PersonOrOrganization_homePage, domain=PersonOrOrganization, range=Optional[Union[str, URI]])
 
-slots.PersonOrOrganization_contactPoint = Slot(uri=EVORAO.contactPoint, name="PersonOrOrganization_contactPoint", curie=EVORAO.curie('contactPoint'),
+slots.PersonOrOrganization_contactPoint = Slot(uri=DCAT.contactPoint, name="PersonOrOrganization_contactPoint", curie=DCAT.curie('contactPoint'),
                    model_uri=EVORAO.PersonOrOrganization_contactPoint, domain=PersonOrOrganization, range=Optional[Union[dict, "ContactPoint"]])
 
 slots.PersonOrOrganization_logo = Slot(uri=EVORAO.logo, name="PersonOrOrganization_logo", curie=EVORAO.curie('logo'),
@@ -3651,10 +3651,10 @@ slots.ProductOrService_certification = Slot(uri=EVORAO.certification, name="Prod
 slots.ProductOrService_internalReference = Slot(uri=EVORAO.internalReference, name="ProductOrService_internalReference", curie=EVORAO.curie('internalReference'),
                    model_uri=EVORAO.ProductOrService_internalReference, domain=ProductOrService, range=Optional[str])
 
-slots.ProductOrService_note = Slot(uri=EVORAO.note, name="ProductOrService_note", curie=EVORAO.curie('note'),
+slots.ProductOrService_note = Slot(uri=SKOS.note, name="ProductOrService_note", curie=SKOS.curie('note'),
                    model_uri=EVORAO.ProductOrService_note, domain=ProductOrService, range=Optional[str])
 
-slots.ProductOrService_contactPoint = Slot(uri=EVORAO.contactPoint, name="ProductOrService_contactPoint", curie=EVORAO.curie('contactPoint'),
+slots.ProductOrService_contactPoint = Slot(uri=DCAT.contactPoint, name="ProductOrService_contactPoint", curie=DCAT.curie('contactPoint'),
                    model_uri=EVORAO.ProductOrService_contactPoint, domain=ProductOrService, range=Optional[Union[dict, "ContactPoint"]])
 
 slots.Service_modelSpecies = Slot(uri=EVORAO.modelSpecies, name="Service_modelSpecies", curie=EVORAO.curie('modelSpecies'),
@@ -3921,7 +3921,7 @@ slots.File_contentUrl = Slot(uri=EVORAO.contentUrl, name="File_contentUrl", curi
 slots.File_format = Slot(uri=EVORAO.format, name="File_format", curie=EVORAO.curie('format'),
                    model_uri=EVORAO.File_format, domain=File, range=str)
 
-slots.File_license = Slot(uri=EVORAO.license, name="File_license", curie=EVORAO.curie('license'),
+slots.File_license = Slot(uri=DCT.license, name="File_license", curie=DCT.curie('license'),
                    model_uri=EVORAO.File_license, domain=File, range=Optional[Union[dict, "License"]])
 
 slots.Image_altText = Slot(uri=EVORAO.altText, name="Image_altText", curie=EVORAO.curie('altText'),

@@ -27,7 +27,7 @@ from pydantic import (
 
 
 metamodel_version = "None"
-version = "1.0.8940"
+version = "1.0.8951"
 
 
 class ConfiguredBaseModel(BaseModel):
@@ -99,7 +99,7 @@ linkml_meta = LinkMLMeta({'comments': ['EVORAO is an ontology for standardized m
                     'pathogens. EVORAO is compatible with DCAT, making it '
                     'well-suited for efficiently cataloguing pathogen collections '
                     'and related resources.',
-     'generation_date': '2025-09-04T17:30:19',
+     'generation_date': '2025-09-05T09:48:52',
      'id': 'https://w3id.org/evorao/',
      'imports': ['linkml:types'],
      'in_language': 'en',
@@ -278,7 +278,8 @@ class Dataset(Resource):
     version: Optional[str] = Field(default=None, title="version", description="""The version indicator (name or identifier) of a resource""", json_schema_extra = { "linkml_meta": {'alias': 'version',
          'close_mappings': ['wdp:P393', 'schema:version'],
          'domain_of': ['Dataset', 'Version', 'Taxonomy'],
-         'recommended': True} })
+         'recommended': True,
+         'slot_uri': 'dcat:version'} })
 
 
 class DataService(Resource):
@@ -402,6 +403,7 @@ class Version(Resource):
                                     'name': 'version',
                                     'range': 'string',
                                     'required': True,
+                                    'slot_uri': 'dcat:version',
                                     'title': 'version'},
                         'versionOf': {'description': 'Identifier of what type of '
                                                      'entities the version qualifies',
@@ -416,7 +418,8 @@ class Version(Resource):
     version: str = Field(default=..., title="version", description="""The version indicator (name or identifier) of a resource""", json_schema_extra = { "linkml_meta": {'alias': 'version',
          'close_mappings': ['wdp:P393', 'schema:version'],
          'domain_of': ['Version', 'Dataset', 'Taxonomy'],
-         'recommended': True} })
+         'recommended': True,
+         'slot_uri': 'dcat:version'} })
     versionOf: Dataset = Field(default=..., title="version Of", description="""Identifier of what type of entities the version qualifies""", json_schema_extra = { "linkml_meta": {'alias': 'versionOf', 'domain_of': ['Version']} })
 
 
@@ -464,7 +467,8 @@ class Catalogue(Dataset):
     version: Optional[str] = Field(default=None, title="version", description="""The version indicator (name or identifier) of a resource""", json_schema_extra = { "linkml_meta": {'alias': 'version',
          'close_mappings': ['wdp:P393', 'schema:version'],
          'domain_of': ['Dataset', 'Version', 'Taxonomy'],
-         'recommended': True} })
+         'recommended': True,
+         'slot_uri': 'dcat:version'} })
 
 
 class Taxonomy(Catalogue):
@@ -520,6 +524,7 @@ class Taxonomy(Catalogue):
                                     'name': 'version',
                                     'range': 'string',
                                     'required': True,
+                                    'slot_uri': 'dcat:version',
                                     'title': 'version'},
                         'versionDataProvider': {'description': 'The data provider for '
                                                                'the Version ID of this '
@@ -542,7 +547,8 @@ class Taxonomy(Catalogue):
     version: str = Field(default=..., title="version", description="""The version indicator (name or identifier) of a resource""", json_schema_extra = { "linkml_meta": {'alias': 'version',
          'close_mappings': ['wdp:P393', 'schema:version'],
          'domain_of': ['Taxonomy', 'Dataset', 'Version'],
-         'recommended': True} })
+         'recommended': True,
+         'slot_uri': 'dcat:version'} })
     versionDataProvider: DataProvider = Field(default=..., title="version data provider", description="""The data provider for the Version ID of this taxonomy""", json_schema_extra = { "linkml_meta": {'alias': 'versionDataProvider', 'domain_of': ['Taxonomy']} })
     rank: Optional[list[TaxonomicRank]] = Field(default=None, title="rank", description="""Relative level or position of the identified taxon in the taxonomy""", json_schema_extra = { "linkml_meta": {'alias': 'rank',
          'domain_of': ['Taxonomy', 'Taxon'],
@@ -608,6 +614,7 @@ class DataProvider(DataService):
                                     'name': 'license',
                                     'range': 'License',
                                     'required': False,
+                                    'slot_uri': 'dct:license',
                                     'title': 'license'},
                         'loginRequestMethod': {'broad_mappings': ['schema:httpMethod'],
                                                'close_mappings': ['dcat:endpointDescription'],
@@ -690,7 +697,8 @@ class DataProvider(DataService):
 
     license: Optional[License] = Field(default=None, title="license", description="""Information about terms and conditions under which the subject can be used, shared, or distributed, indicating any restrictions or permissions""", json_schema_extra = { "linkml_meta": {'alias': 'license',
          'domain_of': ['DataProvider', 'File'],
-         'exact_mappings': ['dct:license', 'schema:license']} })
+         'exact_mappings': ['dct:license', 'schema:license'],
+         'slot_uri': 'dct:license'} })
     loginRequestMethod: Optional[Literal["GET", "POST"]] = Field(default="GET", title="login request method", description="""The http request method used to acces the login request url""", json_schema_extra = { "linkml_meta": {'alias': 'loginRequestMethod',
          'broad_mappings': ['schema:httpMethod'],
          'close_mappings': ['dcat:endpointDescription'],
@@ -1062,7 +1070,8 @@ class Vocabulary(Catalogue):
     version: Optional[str] = Field(default=None, title="version", description="""The version indicator (name or identifier) of a resource""", json_schema_extra = { "linkml_meta": {'alias': 'version',
          'close_mappings': ['wdp:P393', 'schema:version'],
          'domain_of': ['Dataset', 'Version', 'Taxonomy'],
-         'recommended': True} })
+         'recommended': True,
+         'slot_uri': 'dcat:version'} })
 
 
 class Term(Resource):
@@ -2805,12 +2814,12 @@ class PersonOrOrganization(Resource):
                                                         'communication',
                                          'domain_of': ['PersonOrOrganization',
                                                        'ProductOrService'],
-                                         'exact_mappings': ['dcat:contactPoint'],
                                          'multivalued': False,
                                          'name': 'contactPoint',
                                          'range': 'ContactPoint',
                                          'recommended': True,
                                          'required': False,
+                                         'slot_uri': 'dcat:contactPoint',
                                          'title': 'contact point'},
                         'description': {'comments': ['Describe this item in few lines. '
                                                      'This description will serve as a '
@@ -2893,8 +2902,8 @@ class PersonOrOrganization(Resource):
          'slot_uri': 'foaf:homepage'} })
     contactPoint: Optional[ContactPoint] = Field(default=None, title="contact point", description="""An information that allows someone to establish communication""", json_schema_extra = { "linkml_meta": {'alias': 'contactPoint',
          'domain_of': ['PersonOrOrganization', 'ProductOrService'],
-         'exact_mappings': ['dcat:contactPoint'],
-         'recommended': True} })
+         'recommended': True,
+         'slot_uri': 'dcat:contactPoint'} })
     logo: Optional[Image] = Field(default=None, title="logo", description="""A path or URL to the related logo""", json_schema_extra = { "linkml_meta": {'alias': 'logo',
          'domain_of': ['PersonOrOrganization', 'License', 'Certification']} })
 
@@ -2954,8 +2963,8 @@ class Person(PersonOrOrganization):
          'slot_uri': 'foaf:homepage'} })
     contactPoint: Optional[ContactPoint] = Field(default=None, title="contact point", description="""An information that allows someone to establish communication""", json_schema_extra = { "linkml_meta": {'alias': 'contactPoint',
          'domain_of': ['PersonOrOrganization', 'ProductOrService'],
-         'exact_mappings': ['dcat:contactPoint'],
-         'recommended': True} })
+         'recommended': True,
+         'slot_uri': 'dcat:contactPoint'} })
     logo: Optional[Image] = Field(default=None, title="logo", description="""A path or URL to the related logo""", json_schema_extra = { "linkml_meta": {'alias': 'logo',
          'domain_of': ['PersonOrOrganization', 'License', 'Certification']} })
 
@@ -3050,8 +3059,8 @@ class Organization(PersonOrOrganization):
          'slot_uri': 'foaf:homepage'} })
     contactPoint: Optional[ContactPoint] = Field(default=None, title="contact point", description="""An information that allows someone to establish communication""", json_schema_extra = { "linkml_meta": {'alias': 'contactPoint',
          'domain_of': ['PersonOrOrganization', 'ProductOrService'],
-         'exact_mappings': ['dcat:contactPoint'],
-         'recommended': True} })
+         'recommended': True,
+         'slot_uri': 'dcat:contactPoint'} })
     logo: Optional[Image] = Field(default=None, title="logo", description="""A path or URL to the related logo""", json_schema_extra = { "linkml_meta": {'alias': 'logo',
          'domain_of': ['PersonOrOrganization', 'License', 'Certification']} })
 
@@ -3101,8 +3110,8 @@ class ReasearchInfrastructure(Organization):
          'slot_uri': 'foaf:homepage'} })
     contactPoint: Optional[ContactPoint] = Field(default=None, title="contact point", description="""An information that allows someone to establish communication""", json_schema_extra = { "linkml_meta": {'alias': 'contactPoint',
          'domain_of': ['PersonOrOrganization', 'ProductOrService'],
-         'exact_mappings': ['dcat:contactPoint'],
-         'recommended': True} })
+         'recommended': True,
+         'slot_uri': 'dcat:contactPoint'} })
     logo: Optional[Image] = Field(default=None, title="logo", description="""A path or URL to the related logo""", json_schema_extra = { "linkml_meta": {'alias': 'logo',
          'domain_of': ['PersonOrOrganization', 'License', 'Certification']} })
 
@@ -3162,8 +3171,8 @@ class Provider(Organization):
          'slot_uri': 'foaf:homepage'} })
     contactPoint: Optional[ContactPoint] = Field(default=None, title="contact point", description="""An information that allows someone to establish communication""", json_schema_extra = { "linkml_meta": {'alias': 'contactPoint',
          'domain_of': ['PersonOrOrganization', 'ProductOrService'],
-         'exact_mappings': ['dcat:contactPoint'],
-         'recommended': True} })
+         'recommended': True,
+         'slot_uri': 'dcat:contactPoint'} })
     logo: Optional[Image] = Field(default=None, title="logo", description="""A path or URL to the related logo""", json_schema_extra = { "linkml_meta": {'alias': 'logo',
          'domain_of': ['PersonOrOrganization', 'License', 'Certification']} })
 
@@ -3201,8 +3210,8 @@ class Originator(PersonOrOrganization):
          'slot_uri': 'foaf:homepage'} })
     contactPoint: Optional[ContactPoint] = Field(default=None, title="contact point", description="""An information that allows someone to establish communication""", json_schema_extra = { "linkml_meta": {'alias': 'contactPoint',
          'domain_of': ['PersonOrOrganization', 'ProductOrService'],
-         'exact_mappings': ['dcat:contactPoint'],
-         'recommended': True} })
+         'recommended': True,
+         'slot_uri': 'dcat:contactPoint'} })
     logo: Optional[Image] = Field(default=None, title="logo", description="""A path or URL to the related logo""", json_schema_extra = { "linkml_meta": {'alias': 'logo',
          'domain_of': ['PersonOrOrganization', 'License', 'Certification']} })
 
@@ -3609,7 +3618,8 @@ class Collection(Catalogue):
     version: Optional[str] = Field(default=None, title="version", description="""The version indicator (name or identifier) of a resource""", json_schema_extra = { "linkml_meta": {'alias': 'version',
          'close_mappings': ['wdp:P393', 'schema:version'],
          'domain_of': ['Dataset', 'Version', 'Taxonomy'],
-         'recommended': True} })
+         'recommended': True,
+         'slot_uri': 'dcat:version'} })
 
 
 class ProductOrService(Dataset):
@@ -3748,12 +3758,12 @@ class ProductOrService(Dataset):
                                                         'communication',
                                          'domain_of': ['ProductOrService',
                                                        'PersonOrOrganization'],
-                                         'exact_mappings': ['dcat:contactPoint'],
                                          'multivalued': False,
                                          'name': 'contactPoint',
                                          'range': 'ContactPoint',
                                          'recommended': True,
                                          'required': False,
+                                         'slot_uri': 'dcat:contactPoint',
                                          'title': 'contact point'},
                         'doi': {'close_mappings': ['wdp:P356'],
                                 'description': 'A Digital Object Identifier (DOI) that '
@@ -3804,6 +3814,7 @@ class ProductOrService(Dataset):
                                  'name': 'note',
                                  'range': 'string',
                                  'required': False,
+                                 'slot_uri': 'skos:note',
                                  'title': 'note'},
                         'pathogenIdentification': {'comments': ['The pathogen '
                                                                 'identification '
@@ -4002,11 +4013,11 @@ class ProductOrService(Dataset):
          'close_mappings': ['dct:conformsTo'],
          'domain_of': ['ProductOrService']} })
     internalReference: Optional[str] = Field(default=None, title="internal reference", description="""Any reference or indication to be used for local retrieval purpose""", json_schema_extra = { "linkml_meta": {'alias': 'internalReference', 'domain_of': ['ProductOrService']} })
-    note: Optional[str] = Field(default=None, title="note", description="""An aditional information as a textual comment""", json_schema_extra = { "linkml_meta": {'alias': 'note', 'domain_of': ['ProductOrService']} })
+    note: Optional[str] = Field(default=None, title="note", description="""An aditional information as a textual comment""", json_schema_extra = { "linkml_meta": {'alias': 'note', 'domain_of': ['ProductOrService'], 'slot_uri': 'skos:note'} })
     contactPoint: Optional[ContactPoint] = Field(default=None, title="contact point", description="""An information that allows someone to establish communication""", json_schema_extra = { "linkml_meta": {'alias': 'contactPoint',
          'domain_of': ['ProductOrService', 'PersonOrOrganization'],
-         'exact_mappings': ['dcat:contactPoint'],
-         'recommended': True} })
+         'recommended': True,
+         'slot_uri': 'dcat:contactPoint'} })
     title: str = Field(default=..., title="title", description="""A name given to the resource""", json_schema_extra = { "linkml_meta": {'alias': 'title',
          'close_mappings': ['rdfs:label', 'schema:name'],
          'comments': ['The title of the item should be as short and descriptive as '
@@ -4040,7 +4051,8 @@ class ProductOrService(Dataset):
     version: Optional[str] = Field(default=None, title="version", description="""The version indicator (name or identifier) of a resource""", json_schema_extra = { "linkml_meta": {'alias': 'version',
          'close_mappings': ['wdp:P393', 'schema:version'],
          'domain_of': ['Dataset', 'Version', 'Taxonomy'],
-         'recommended': True} })
+         'recommended': True,
+         'slot_uri': 'dcat:version'} })
 
 
 class Service(ProductOrService):
@@ -4134,11 +4146,11 @@ class Service(ProductOrService):
          'close_mappings': ['dct:conformsTo'],
          'domain_of': ['ProductOrService']} })
     internalReference: Optional[str] = Field(default=None, title="internal reference", description="""Any reference or indication to be used for local retrieval purpose""", json_schema_extra = { "linkml_meta": {'alias': 'internalReference', 'domain_of': ['ProductOrService']} })
-    note: Optional[str] = Field(default=None, title="note", description="""An aditional information as a textual comment""", json_schema_extra = { "linkml_meta": {'alias': 'note', 'domain_of': ['ProductOrService']} })
+    note: Optional[str] = Field(default=None, title="note", description="""An aditional information as a textual comment""", json_schema_extra = { "linkml_meta": {'alias': 'note', 'domain_of': ['ProductOrService'], 'slot_uri': 'skos:note'} })
     contactPoint: Optional[ContactPoint] = Field(default=None, title="contact point", description="""An information that allows someone to establish communication""", json_schema_extra = { "linkml_meta": {'alias': 'contactPoint',
          'domain_of': ['ProductOrService', 'PersonOrOrganization'],
-         'exact_mappings': ['dcat:contactPoint'],
-         'recommended': True} })
+         'recommended': True,
+         'slot_uri': 'dcat:contactPoint'} })
     title: str = Field(default=..., title="title", description="""A name given to the resource""", json_schema_extra = { "linkml_meta": {'alias': 'title',
          'close_mappings': ['rdfs:label', 'schema:name'],
          'comments': ['The title of the item should be as short and descriptive as '
@@ -4172,7 +4184,8 @@ class Service(ProductOrService):
     version: Optional[str] = Field(default=None, title="version", description="""The version indicator (name or identifier) of a resource""", json_schema_extra = { "linkml_meta": {'alias': 'version',
          'close_mappings': ['wdp:P393', 'schema:version'],
          'domain_of': ['Dataset', 'Version', 'Taxonomy'],
-         'recommended': True} })
+         'recommended': True,
+         'slot_uri': 'dcat:version'} })
 
 
 class Product(ProductOrService):
@@ -4392,11 +4405,11 @@ class Product(ProductOrService):
          'close_mappings': ['dct:conformsTo'],
          'domain_of': ['ProductOrService']} })
     internalReference: Optional[str] = Field(default=None, title="internal reference", description="""Any reference or indication to be used for local retrieval purpose""", json_schema_extra = { "linkml_meta": {'alias': 'internalReference', 'domain_of': ['ProductOrService']} })
-    note: Optional[str] = Field(default=None, title="note", description="""An aditional information as a textual comment""", json_schema_extra = { "linkml_meta": {'alias': 'note', 'domain_of': ['ProductOrService']} })
+    note: Optional[str] = Field(default=None, title="note", description="""An aditional information as a textual comment""", json_schema_extra = { "linkml_meta": {'alias': 'note', 'domain_of': ['ProductOrService'], 'slot_uri': 'skos:note'} })
     contactPoint: Optional[ContactPoint] = Field(default=None, title="contact point", description="""An information that allows someone to establish communication""", json_schema_extra = { "linkml_meta": {'alias': 'contactPoint',
          'domain_of': ['ProductOrService', 'PersonOrOrganization'],
-         'exact_mappings': ['dcat:contactPoint'],
-         'recommended': True} })
+         'recommended': True,
+         'slot_uri': 'dcat:contactPoint'} })
     title: str = Field(default=..., title="title", description="""A name given to the resource""", json_schema_extra = { "linkml_meta": {'alias': 'title',
          'close_mappings': ['rdfs:label', 'schema:name'],
          'comments': ['The title of the item should be as short and descriptive as '
@@ -4430,7 +4443,8 @@ class Product(ProductOrService):
     version: Optional[str] = Field(default=None, title="version", description="""The version indicator (name or identifier) of a resource""", json_schema_extra = { "linkml_meta": {'alias': 'version',
          'close_mappings': ['wdp:P393', 'schema:version'],
          'domain_of': ['Dataset', 'Version', 'Taxonomy'],
-         'recommended': True} })
+         'recommended': True,
+         'slot_uri': 'dcat:version'} })
 
 
 class Antibody(Product):
@@ -4585,11 +4599,11 @@ class Antibody(Product):
          'close_mappings': ['dct:conformsTo'],
          'domain_of': ['ProductOrService']} })
     internalReference: Optional[str] = Field(default=None, title="internal reference", description="""Any reference or indication to be used for local retrieval purpose""", json_schema_extra = { "linkml_meta": {'alias': 'internalReference', 'domain_of': ['ProductOrService']} })
-    note: Optional[str] = Field(default=None, title="note", description="""An aditional information as a textual comment""", json_schema_extra = { "linkml_meta": {'alias': 'note', 'domain_of': ['ProductOrService']} })
+    note: Optional[str] = Field(default=None, title="note", description="""An aditional information as a textual comment""", json_schema_extra = { "linkml_meta": {'alias': 'note', 'domain_of': ['ProductOrService'], 'slot_uri': 'skos:note'} })
     contactPoint: Optional[ContactPoint] = Field(default=None, title="contact point", description="""An information that allows someone to establish communication""", json_schema_extra = { "linkml_meta": {'alias': 'contactPoint',
          'domain_of': ['ProductOrService', 'PersonOrOrganization'],
-         'exact_mappings': ['dcat:contactPoint'],
-         'recommended': True} })
+         'recommended': True,
+         'slot_uri': 'dcat:contactPoint'} })
     title: str = Field(default=..., title="title", description="""A name given to the resource""", json_schema_extra = { "linkml_meta": {'alias': 'title',
          'close_mappings': ['rdfs:label', 'schema:name'],
          'comments': ['The title of the item should be as short and descriptive as '
@@ -4623,7 +4637,8 @@ class Antibody(Product):
     version: Optional[str] = Field(default=None, title="version", description="""The version indicator (name or identifier) of a resource""", json_schema_extra = { "linkml_meta": {'alias': 'version',
          'close_mappings': ['wdp:P393', 'schema:version'],
          'domain_of': ['Dataset', 'Version', 'Taxonomy'],
-         'recommended': True} })
+         'recommended': True,
+         'slot_uri': 'dcat:version'} })
 
 
 class Hybridoma(Antibody):
@@ -4731,11 +4746,11 @@ class Hybridoma(Antibody):
          'close_mappings': ['dct:conformsTo'],
          'domain_of': ['ProductOrService']} })
     internalReference: Optional[str] = Field(default=None, title="internal reference", description="""Any reference or indication to be used for local retrieval purpose""", json_schema_extra = { "linkml_meta": {'alias': 'internalReference', 'domain_of': ['ProductOrService']} })
-    note: Optional[str] = Field(default=None, title="note", description="""An aditional information as a textual comment""", json_schema_extra = { "linkml_meta": {'alias': 'note', 'domain_of': ['ProductOrService']} })
+    note: Optional[str] = Field(default=None, title="note", description="""An aditional information as a textual comment""", json_schema_extra = { "linkml_meta": {'alias': 'note', 'domain_of': ['ProductOrService'], 'slot_uri': 'skos:note'} })
     contactPoint: Optional[ContactPoint] = Field(default=None, title="contact point", description="""An information that allows someone to establish communication""", json_schema_extra = { "linkml_meta": {'alias': 'contactPoint',
          'domain_of': ['ProductOrService', 'PersonOrOrganization'],
-         'exact_mappings': ['dcat:contactPoint'],
-         'recommended': True} })
+         'recommended': True,
+         'slot_uri': 'dcat:contactPoint'} })
     title: str = Field(default=..., title="title", description="""A name given to the resource""", json_schema_extra = { "linkml_meta": {'alias': 'title',
          'close_mappings': ['rdfs:label', 'schema:name'],
          'comments': ['The title of the item should be as short and descriptive as '
@@ -4769,7 +4784,8 @@ class Hybridoma(Antibody):
     version: Optional[str] = Field(default=None, title="version", description="""The version indicator (name or identifier) of a resource""", json_schema_extra = { "linkml_meta": {'alias': 'version',
          'close_mappings': ['wdp:P393', 'schema:version'],
          'domain_of': ['Dataset', 'Version', 'Taxonomy'],
-         'recommended': True} })
+         'recommended': True,
+         'slot_uri': 'dcat:version'} })
 
 
 class Protein(Product):
@@ -5223,11 +5239,11 @@ class Protein(Product):
          'close_mappings': ['dct:conformsTo'],
          'domain_of': ['ProductOrService']} })
     internalReference: Optional[str] = Field(default=None, title="internal reference", description="""Any reference or indication to be used for local retrieval purpose""", json_schema_extra = { "linkml_meta": {'alias': 'internalReference', 'domain_of': ['ProductOrService']} })
-    note: Optional[str] = Field(default=None, title="note", description="""An aditional information as a textual comment""", json_schema_extra = { "linkml_meta": {'alias': 'note', 'domain_of': ['ProductOrService']} })
+    note: Optional[str] = Field(default=None, title="note", description="""An aditional information as a textual comment""", json_schema_extra = { "linkml_meta": {'alias': 'note', 'domain_of': ['ProductOrService'], 'slot_uri': 'skos:note'} })
     contactPoint: Optional[ContactPoint] = Field(default=None, title="contact point", description="""An information that allows someone to establish communication""", json_schema_extra = { "linkml_meta": {'alias': 'contactPoint',
          'domain_of': ['ProductOrService', 'PersonOrOrganization'],
-         'exact_mappings': ['dcat:contactPoint'],
-         'recommended': True} })
+         'recommended': True,
+         'slot_uri': 'dcat:contactPoint'} })
     title: str = Field(default=..., title="title", description="""A name given to the resource""", json_schema_extra = { "linkml_meta": {'alias': 'title',
          'close_mappings': ['rdfs:label', 'schema:name'],
          'comments': ['The title of the item should be as short and descriptive as '
@@ -5261,7 +5277,8 @@ class Protein(Product):
     version: Optional[str] = Field(default=None, title="version", description="""The version indicator (name or identifier) of a resource""", json_schema_extra = { "linkml_meta": {'alias': 'version',
          'close_mappings': ['wdp:P393', 'schema:version'],
          'domain_of': ['Dataset', 'Version', 'Taxonomy'],
-         'recommended': True} })
+         'recommended': True,
+         'slot_uri': 'dcat:version'} })
 
 
 class NucleicAcid(Product):
@@ -5602,11 +5619,11 @@ class NucleicAcid(Product):
          'close_mappings': ['dct:conformsTo'],
          'domain_of': ['ProductOrService']} })
     internalReference: Optional[str] = Field(default=None, title="internal reference", description="""Any reference or indication to be used for local retrieval purpose""", json_schema_extra = { "linkml_meta": {'alias': 'internalReference', 'domain_of': ['ProductOrService']} })
-    note: Optional[str] = Field(default=None, title="note", description="""An aditional information as a textual comment""", json_schema_extra = { "linkml_meta": {'alias': 'note', 'domain_of': ['ProductOrService']} })
+    note: Optional[str] = Field(default=None, title="note", description="""An aditional information as a textual comment""", json_schema_extra = { "linkml_meta": {'alias': 'note', 'domain_of': ['ProductOrService'], 'slot_uri': 'skos:note'} })
     contactPoint: Optional[ContactPoint] = Field(default=None, title="contact point", description="""An information that allows someone to establish communication""", json_schema_extra = { "linkml_meta": {'alias': 'contactPoint',
          'domain_of': ['ProductOrService', 'PersonOrOrganization'],
-         'exact_mappings': ['dcat:contactPoint'],
-         'recommended': True} })
+         'recommended': True,
+         'slot_uri': 'dcat:contactPoint'} })
     title: str = Field(default=..., title="title", description="""A name given to the resource""", json_schema_extra = { "linkml_meta": {'alias': 'title',
          'close_mappings': ['rdfs:label', 'schema:name'],
          'comments': ['The title of the item should be as short and descriptive as '
@@ -5640,7 +5657,8 @@ class NucleicAcid(Product):
     version: Optional[str] = Field(default=None, title="version", description="""The version indicator (name or identifier) of a resource""", json_schema_extra = { "linkml_meta": {'alias': 'version',
          'close_mappings': ['wdp:P393', 'schema:version'],
          'domain_of': ['Dataset', 'Version', 'Taxonomy'],
-         'recommended': True} })
+         'recommended': True,
+         'slot_uri': 'dcat:version'} })
 
 
 class DetectionKit(Product):
@@ -5786,11 +5804,11 @@ class DetectionKit(Product):
          'close_mappings': ['dct:conformsTo'],
          'domain_of': ['ProductOrService']} })
     internalReference: Optional[str] = Field(default=None, title="internal reference", description="""Any reference or indication to be used for local retrieval purpose""", json_schema_extra = { "linkml_meta": {'alias': 'internalReference', 'domain_of': ['ProductOrService']} })
-    note: Optional[str] = Field(default=None, title="note", description="""An aditional information as a textual comment""", json_schema_extra = { "linkml_meta": {'alias': 'note', 'domain_of': ['ProductOrService']} })
+    note: Optional[str] = Field(default=None, title="note", description="""An aditional information as a textual comment""", json_schema_extra = { "linkml_meta": {'alias': 'note', 'domain_of': ['ProductOrService'], 'slot_uri': 'skos:note'} })
     contactPoint: Optional[ContactPoint] = Field(default=None, title="contact point", description="""An information that allows someone to establish communication""", json_schema_extra = { "linkml_meta": {'alias': 'contactPoint',
          'domain_of': ['ProductOrService', 'PersonOrOrganization'],
-         'exact_mappings': ['dcat:contactPoint'],
-         'recommended': True} })
+         'recommended': True,
+         'slot_uri': 'dcat:contactPoint'} })
     title: str = Field(default=..., title="title", description="""A name given to the resource""", json_schema_extra = { "linkml_meta": {'alias': 'title',
          'close_mappings': ['rdfs:label', 'schema:name'],
          'comments': ['The title of the item should be as short and descriptive as '
@@ -5824,7 +5842,8 @@ class DetectionKit(Product):
     version: Optional[str] = Field(default=None, title="version", description="""The version indicator (name or identifier) of a resource""", json_schema_extra = { "linkml_meta": {'alias': 'version',
          'close_mappings': ['wdp:P393', 'schema:version'],
          'domain_of': ['Dataset', 'Version', 'Taxonomy'],
-         'recommended': True} })
+         'recommended': True,
+         'slot_uri': 'dcat:version'} })
 
 
 class Bundle(Product):
@@ -5927,11 +5946,11 @@ class Bundle(Product):
          'close_mappings': ['dct:conformsTo'],
          'domain_of': ['ProductOrService']} })
     internalReference: Optional[str] = Field(default=None, title="internal reference", description="""Any reference or indication to be used for local retrieval purpose""", json_schema_extra = { "linkml_meta": {'alias': 'internalReference', 'domain_of': ['ProductOrService']} })
-    note: Optional[str] = Field(default=None, title="note", description="""An aditional information as a textual comment""", json_schema_extra = { "linkml_meta": {'alias': 'note', 'domain_of': ['ProductOrService']} })
+    note: Optional[str] = Field(default=None, title="note", description="""An aditional information as a textual comment""", json_schema_extra = { "linkml_meta": {'alias': 'note', 'domain_of': ['ProductOrService'], 'slot_uri': 'skos:note'} })
     contactPoint: Optional[ContactPoint] = Field(default=None, title="contact point", description="""An information that allows someone to establish communication""", json_schema_extra = { "linkml_meta": {'alias': 'contactPoint',
          'domain_of': ['ProductOrService', 'PersonOrOrganization'],
-         'exact_mappings': ['dcat:contactPoint'],
-         'recommended': True} })
+         'recommended': True,
+         'slot_uri': 'dcat:contactPoint'} })
     title: str = Field(default=..., title="title", description="""A name given to the resource""", json_schema_extra = { "linkml_meta": {'alias': 'title',
          'close_mappings': ['rdfs:label', 'schema:name'],
          'comments': ['The title of the item should be as short and descriptive as '
@@ -5965,7 +5984,8 @@ class Bundle(Product):
     version: Optional[str] = Field(default=None, title="version", description="""The version indicator (name or identifier) of a resource""", json_schema_extra = { "linkml_meta": {'alias': 'version',
          'close_mappings': ['wdp:P393', 'schema:version'],
          'domain_of': ['Dataset', 'Version', 'Taxonomy'],
-         'recommended': True} })
+         'recommended': True,
+         'slot_uri': 'dcat:version'} })
 
 
 class Pathogen(Product):
@@ -6377,11 +6397,11 @@ class Pathogen(Product):
          'close_mappings': ['dct:conformsTo'],
          'domain_of': ['ProductOrService']} })
     internalReference: Optional[str] = Field(default=None, title="internal reference", description="""Any reference or indication to be used for local retrieval purpose""", json_schema_extra = { "linkml_meta": {'alias': 'internalReference', 'domain_of': ['ProductOrService']} })
-    note: Optional[str] = Field(default=None, title="note", description="""An aditional information as a textual comment""", json_schema_extra = { "linkml_meta": {'alias': 'note', 'domain_of': ['ProductOrService']} })
+    note: Optional[str] = Field(default=None, title="note", description="""An aditional information as a textual comment""", json_schema_extra = { "linkml_meta": {'alias': 'note', 'domain_of': ['ProductOrService'], 'slot_uri': 'skos:note'} })
     contactPoint: Optional[ContactPoint] = Field(default=None, title="contact point", description="""An information that allows someone to establish communication""", json_schema_extra = { "linkml_meta": {'alias': 'contactPoint',
          'domain_of': ['ProductOrService', 'PersonOrOrganization'],
-         'exact_mappings': ['dcat:contactPoint'],
-         'recommended': True} })
+         'recommended': True,
+         'slot_uri': 'dcat:contactPoint'} })
     title: str = Field(default=..., title="title", description="""A name given to the resource""", json_schema_extra = { "linkml_meta": {'alias': 'title',
          'close_mappings': ['rdfs:label', 'schema:name'],
          'comments': ['The title of the item should be as short and descriptive as '
@@ -6415,7 +6435,8 @@ class Pathogen(Product):
     version: Optional[str] = Field(default=None, title="version", description="""The version indicator (name or identifier) of a resource""", json_schema_extra = { "linkml_meta": {'alias': 'version',
          'close_mappings': ['wdp:P393', 'schema:version'],
          'domain_of': ['Dataset', 'Version', 'Taxonomy'],
-         'recommended': True} })
+         'recommended': True,
+         'slot_uri': 'dcat:version'} })
 
 
 class Virus(Pathogen):
@@ -6605,11 +6626,11 @@ class Virus(Pathogen):
          'close_mappings': ['dct:conformsTo'],
          'domain_of': ['ProductOrService']} })
     internalReference: Optional[str] = Field(default=None, title="internal reference", description="""Any reference or indication to be used for local retrieval purpose""", json_schema_extra = { "linkml_meta": {'alias': 'internalReference', 'domain_of': ['ProductOrService']} })
-    note: Optional[str] = Field(default=None, title="note", description="""An aditional information as a textual comment""", json_schema_extra = { "linkml_meta": {'alias': 'note', 'domain_of': ['ProductOrService']} })
+    note: Optional[str] = Field(default=None, title="note", description="""An aditional information as a textual comment""", json_schema_extra = { "linkml_meta": {'alias': 'note', 'domain_of': ['ProductOrService'], 'slot_uri': 'skos:note'} })
     contactPoint: Optional[ContactPoint] = Field(default=None, title="contact point", description="""An information that allows someone to establish communication""", json_schema_extra = { "linkml_meta": {'alias': 'contactPoint',
          'domain_of': ['ProductOrService', 'PersonOrOrganization'],
-         'exact_mappings': ['dcat:contactPoint'],
-         'recommended': True} })
+         'recommended': True,
+         'slot_uri': 'dcat:contactPoint'} })
     title: str = Field(default=..., title="title", description="""A name given to the resource""", json_schema_extra = { "linkml_meta": {'alias': 'title',
          'close_mappings': ['rdfs:label', 'schema:name'],
          'comments': ['The title of the item should be as short and descriptive as '
@@ -6643,7 +6664,8 @@ class Virus(Pathogen):
     version: Optional[str] = Field(default=None, title="version", description="""The version indicator (name or identifier) of a resource""", json_schema_extra = { "linkml_meta": {'alias': 'version',
          'close_mappings': ['wdp:P393', 'schema:version'],
          'domain_of': ['Dataset', 'Version', 'Taxonomy'],
-         'recommended': True} })
+         'recommended': True,
+         'slot_uri': 'dcat:version'} })
 
 
 class Bacterium(Pathogen):
@@ -6782,11 +6804,11 @@ class Bacterium(Pathogen):
          'close_mappings': ['dct:conformsTo'],
          'domain_of': ['ProductOrService']} })
     internalReference: Optional[str] = Field(default=None, title="internal reference", description="""Any reference or indication to be used for local retrieval purpose""", json_schema_extra = { "linkml_meta": {'alias': 'internalReference', 'domain_of': ['ProductOrService']} })
-    note: Optional[str] = Field(default=None, title="note", description="""An aditional information as a textual comment""", json_schema_extra = { "linkml_meta": {'alias': 'note', 'domain_of': ['ProductOrService']} })
+    note: Optional[str] = Field(default=None, title="note", description="""An aditional information as a textual comment""", json_schema_extra = { "linkml_meta": {'alias': 'note', 'domain_of': ['ProductOrService'], 'slot_uri': 'skos:note'} })
     contactPoint: Optional[ContactPoint] = Field(default=None, title="contact point", description="""An information that allows someone to establish communication""", json_schema_extra = { "linkml_meta": {'alias': 'contactPoint',
          'domain_of': ['ProductOrService', 'PersonOrOrganization'],
-         'exact_mappings': ['dcat:contactPoint'],
-         'recommended': True} })
+         'recommended': True,
+         'slot_uri': 'dcat:contactPoint'} })
     title: str = Field(default=..., title="title", description="""A name given to the resource""", json_schema_extra = { "linkml_meta": {'alias': 'title',
          'close_mappings': ['rdfs:label', 'schema:name'],
          'comments': ['The title of the item should be as short and descriptive as '
@@ -6820,7 +6842,8 @@ class Bacterium(Pathogen):
     version: Optional[str] = Field(default=None, title="version", description="""The version indicator (name or identifier) of a resource""", json_schema_extra = { "linkml_meta": {'alias': 'version',
          'close_mappings': ['wdp:P393', 'schema:version'],
          'domain_of': ['Dataset', 'Version', 'Taxonomy'],
-         'recommended': True} })
+         'recommended': True,
+         'slot_uri': 'dcat:version'} })
 
 
 class Fungus(Pathogen):
@@ -6959,11 +6982,11 @@ class Fungus(Pathogen):
          'close_mappings': ['dct:conformsTo'],
          'domain_of': ['ProductOrService']} })
     internalReference: Optional[str] = Field(default=None, title="internal reference", description="""Any reference or indication to be used for local retrieval purpose""", json_schema_extra = { "linkml_meta": {'alias': 'internalReference', 'domain_of': ['ProductOrService']} })
-    note: Optional[str] = Field(default=None, title="note", description="""An aditional information as a textual comment""", json_schema_extra = { "linkml_meta": {'alias': 'note', 'domain_of': ['ProductOrService']} })
+    note: Optional[str] = Field(default=None, title="note", description="""An aditional information as a textual comment""", json_schema_extra = { "linkml_meta": {'alias': 'note', 'domain_of': ['ProductOrService'], 'slot_uri': 'skos:note'} })
     contactPoint: Optional[ContactPoint] = Field(default=None, title="contact point", description="""An information that allows someone to establish communication""", json_schema_extra = { "linkml_meta": {'alias': 'contactPoint',
          'domain_of': ['ProductOrService', 'PersonOrOrganization'],
-         'exact_mappings': ['dcat:contactPoint'],
-         'recommended': True} })
+         'recommended': True,
+         'slot_uri': 'dcat:contactPoint'} })
     title: str = Field(default=..., title="title", description="""A name given to the resource""", json_schema_extra = { "linkml_meta": {'alias': 'title',
          'close_mappings': ['rdfs:label', 'schema:name'],
          'comments': ['The title of the item should be as short and descriptive as '
@@ -6997,7 +7020,8 @@ class Fungus(Pathogen):
     version: Optional[str] = Field(default=None, title="version", description="""The version indicator (name or identifier) of a resource""", json_schema_extra = { "linkml_meta": {'alias': 'version',
          'close_mappings': ['wdp:P393', 'schema:version'],
          'domain_of': ['Dataset', 'Version', 'Taxonomy'],
-         'recommended': True} })
+         'recommended': True,
+         'slot_uri': 'dcat:version'} })
 
 
 class Protozoan(Pathogen):
@@ -7136,11 +7160,11 @@ class Protozoan(Pathogen):
          'close_mappings': ['dct:conformsTo'],
          'domain_of': ['ProductOrService']} })
     internalReference: Optional[str] = Field(default=None, title="internal reference", description="""Any reference or indication to be used for local retrieval purpose""", json_schema_extra = { "linkml_meta": {'alias': 'internalReference', 'domain_of': ['ProductOrService']} })
-    note: Optional[str] = Field(default=None, title="note", description="""An aditional information as a textual comment""", json_schema_extra = { "linkml_meta": {'alias': 'note', 'domain_of': ['ProductOrService']} })
+    note: Optional[str] = Field(default=None, title="note", description="""An aditional information as a textual comment""", json_schema_extra = { "linkml_meta": {'alias': 'note', 'domain_of': ['ProductOrService'], 'slot_uri': 'skos:note'} })
     contactPoint: Optional[ContactPoint] = Field(default=None, title="contact point", description="""An information that allows someone to establish communication""", json_schema_extra = { "linkml_meta": {'alias': 'contactPoint',
          'domain_of': ['ProductOrService', 'PersonOrOrganization'],
-         'exact_mappings': ['dcat:contactPoint'],
-         'recommended': True} })
+         'recommended': True,
+         'slot_uri': 'dcat:contactPoint'} })
     title: str = Field(default=..., title="title", description="""A name given to the resource""", json_schema_extra = { "linkml_meta": {'alias': 'title',
          'close_mappings': ['rdfs:label', 'schema:name'],
          'comments': ['The title of the item should be as short and descriptive as '
@@ -7174,7 +7198,8 @@ class Protozoan(Pathogen):
     version: Optional[str] = Field(default=None, title="version", description="""The version indicator (name or identifier) of a resource""", json_schema_extra = { "linkml_meta": {'alias': 'version',
          'close_mappings': ['wdp:P393', 'schema:version'],
          'domain_of': ['Dataset', 'Version', 'Taxonomy'],
-         'recommended': True} })
+         'recommended': True,
+         'slot_uri': 'dcat:version'} })
 
 
 class Viroid(Pathogen):
@@ -7313,11 +7338,11 @@ class Viroid(Pathogen):
          'close_mappings': ['dct:conformsTo'],
          'domain_of': ['ProductOrService']} })
     internalReference: Optional[str] = Field(default=None, title="internal reference", description="""Any reference or indication to be used for local retrieval purpose""", json_schema_extra = { "linkml_meta": {'alias': 'internalReference', 'domain_of': ['ProductOrService']} })
-    note: Optional[str] = Field(default=None, title="note", description="""An aditional information as a textual comment""", json_schema_extra = { "linkml_meta": {'alias': 'note', 'domain_of': ['ProductOrService']} })
+    note: Optional[str] = Field(default=None, title="note", description="""An aditional information as a textual comment""", json_schema_extra = { "linkml_meta": {'alias': 'note', 'domain_of': ['ProductOrService'], 'slot_uri': 'skos:note'} })
     contactPoint: Optional[ContactPoint] = Field(default=None, title="contact point", description="""An information that allows someone to establish communication""", json_schema_extra = { "linkml_meta": {'alias': 'contactPoint',
          'domain_of': ['ProductOrService', 'PersonOrOrganization'],
-         'exact_mappings': ['dcat:contactPoint'],
-         'recommended': True} })
+         'recommended': True,
+         'slot_uri': 'dcat:contactPoint'} })
     title: str = Field(default=..., title="title", description="""A name given to the resource""", json_schema_extra = { "linkml_meta": {'alias': 'title',
          'close_mappings': ['rdfs:label', 'schema:name'],
          'comments': ['The title of the item should be as short and descriptive as '
@@ -7351,7 +7376,8 @@ class Viroid(Pathogen):
     version: Optional[str] = Field(default=None, title="version", description="""The version indicator (name or identifier) of a resource""", json_schema_extra = { "linkml_meta": {'alias': 'version',
          'close_mappings': ['wdp:P393', 'schema:version'],
          'domain_of': ['Dataset', 'Version', 'Taxonomy'],
-         'recommended': True} })
+         'recommended': True,
+         'slot_uri': 'dcat:version'} })
 
 
 class Prion(Pathogen):
@@ -7490,11 +7516,11 @@ class Prion(Pathogen):
          'close_mappings': ['dct:conformsTo'],
          'domain_of': ['ProductOrService']} })
     internalReference: Optional[str] = Field(default=None, title="internal reference", description="""Any reference or indication to be used for local retrieval purpose""", json_schema_extra = { "linkml_meta": {'alias': 'internalReference', 'domain_of': ['ProductOrService']} })
-    note: Optional[str] = Field(default=None, title="note", description="""An aditional information as a textual comment""", json_schema_extra = { "linkml_meta": {'alias': 'note', 'domain_of': ['ProductOrService']} })
+    note: Optional[str] = Field(default=None, title="note", description="""An aditional information as a textual comment""", json_schema_extra = { "linkml_meta": {'alias': 'note', 'domain_of': ['ProductOrService'], 'slot_uri': 'skos:note'} })
     contactPoint: Optional[ContactPoint] = Field(default=None, title="contact point", description="""An information that allows someone to establish communication""", json_schema_extra = { "linkml_meta": {'alias': 'contactPoint',
          'domain_of': ['ProductOrService', 'PersonOrOrganization'],
-         'exact_mappings': ['dcat:contactPoint'],
-         'recommended': True} })
+         'recommended': True,
+         'slot_uri': 'dcat:contactPoint'} })
     title: str = Field(default=..., title="title", description="""A name given to the resource""", json_schema_extra = { "linkml_meta": {'alias': 'title',
          'close_mappings': ['rdfs:label', 'schema:name'],
          'comments': ['The title of the item should be as short and descriptive as '
@@ -7528,7 +7554,8 @@ class Prion(Pathogen):
     version: Optional[str] = Field(default=None, title="version", description="""The version indicator (name or identifier) of a resource""", json_schema_extra = { "linkml_meta": {'alias': 'version',
          'close_mappings': ['wdp:P393', 'schema:version'],
          'domain_of': ['Dataset', 'Version', 'Taxonomy'],
-         'recommended': True} })
+         'recommended': True,
+         'slot_uri': 'dcat:version'} })
 
 
 class MaterialSafetyDataSheet(Resource):
@@ -7995,7 +8022,8 @@ class File(Resource):
     format: str = Field(default=..., title="format", description="""The file type or format that indicates how the data within the file is structured""", json_schema_extra = { "linkml_meta": {'alias': 'format', 'domain_of': ['File']} })
     license: Optional[License] = Field(default=None, title="license", description="""Information about terms and conditions under which the subject can be used, shared, or distributed, indicating any restrictions or permissions""", json_schema_extra = { "linkml_meta": {'alias': 'license',
          'domain_of': ['File', 'DataProvider'],
-         'exact_mappings': ['dct:license']} })
+         'exact_mappings': ['dct:license'],
+         'slot_uri': 'dct:license'} })
 
 
 class Data(File):
@@ -8030,7 +8058,8 @@ class Data(File):
     format: str = Field(default=..., title="format", description="""The file type or format that indicates how the data within the file is structured""", json_schema_extra = { "linkml_meta": {'alias': 'format', 'domain_of': ['File']} })
     license: Optional[License] = Field(default=None, title="license", description="""Information about terms and conditions under which the subject can be used, shared, or distributed, indicating any restrictions or permissions""", json_schema_extra = { "linkml_meta": {'alias': 'license',
          'domain_of': ['File', 'DataProvider'],
-         'exact_mappings': ['dct:license']} })
+         'exact_mappings': ['dct:license'],
+         'slot_uri': 'dct:license'} })
 
 
 class Document(File):
@@ -8065,7 +8094,8 @@ class Document(File):
     format: str = Field(default=..., title="format", description="""The file type or format that indicates how the data within the file is structured""", json_schema_extra = { "linkml_meta": {'alias': 'format', 'domain_of': ['File']} })
     license: Optional[License] = Field(default=None, title="license", description="""Information about terms and conditions under which the subject can be used, shared, or distributed, indicating any restrictions or permissions""", json_schema_extra = { "linkml_meta": {'alias': 'license',
          'domain_of': ['File', 'DataProvider'],
-         'exact_mappings': ['dct:license']} })
+         'exact_mappings': ['dct:license'],
+         'slot_uri': 'dct:license'} })
 
 
 class Audio(File):
@@ -8100,7 +8130,8 @@ class Audio(File):
     format: str = Field(default=..., title="format", description="""The file type or format that indicates how the data within the file is structured""", json_schema_extra = { "linkml_meta": {'alias': 'format', 'domain_of': ['File']} })
     license: Optional[License] = Field(default=None, title="license", description="""Information about terms and conditions under which the subject can be used, shared, or distributed, indicating any restrictions or permissions""", json_schema_extra = { "linkml_meta": {'alias': 'license',
          'domain_of': ['File', 'DataProvider'],
-         'exact_mappings': ['dct:license']} })
+         'exact_mappings': ['dct:license'],
+         'slot_uri': 'dct:license'} })
 
 
 class Video(File):
@@ -8135,7 +8166,8 @@ class Video(File):
     format: str = Field(default=..., title="format", description="""The file type or format that indicates how the data within the file is structured""", json_schema_extra = { "linkml_meta": {'alias': 'format', 'domain_of': ['File']} })
     license: Optional[License] = Field(default=None, title="license", description="""Information about terms and conditions under which the subject can be used, shared, or distributed, indicating any restrictions or permissions""", json_schema_extra = { "linkml_meta": {'alias': 'license',
          'domain_of': ['File', 'DataProvider'],
-         'exact_mappings': ['dct:license']} })
+         'exact_mappings': ['dct:license'],
+         'slot_uri': 'dct:license'} })
 
 
 class Image(File):
@@ -8180,7 +8212,8 @@ class Image(File):
     format: str = Field(default=..., title="format", description="""The file type or format that indicates how the data within the file is structured""", json_schema_extra = { "linkml_meta": {'alias': 'format', 'domain_of': ['File']} })
     license: Optional[License] = Field(default=None, title="license", description="""Information about terms and conditions under which the subject can be used, shared, or distributed, indicating any restrictions or permissions""", json_schema_extra = { "linkml_meta": {'alias': 'license',
          'domain_of': ['File', 'DataProvider'],
-         'exact_mappings': ['dct:license']} })
+         'exact_mappings': ['dct:license'],
+         'slot_uri': 'dct:license'} })
 
 
 class ContactPoint(Resource):

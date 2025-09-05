@@ -22,8 +22,8 @@ Alias: country
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [ReasearchInfrastructure](ReasearchInfrastructure.md) | A research infrastructure (RI) |  no  |
 | [Organization](Organization.md) | A social entity established to meet needs or pursue specific goals |  yes  |
+| [ReasearchInfrastructure](ReasearchInfrastructure.md) | A research infrastructure (RI) |  no  |
 | [Provider](Provider.md) | A provider of products or services, as a specific organization |  no  |
 
 

@@ -27,7 +27,7 @@ SELECT ?g ?s ?p WHERE {
   FILTER ( ?p NOT IN (
    EVORAO:taxon,
    EVORAO:taxonDataProvider,
-   EVORAO:version,
+   dcat:version,
    EVORAO:versionDataProvider,
    EVORAO:rank,
    EVORAO:rankDataProvider,

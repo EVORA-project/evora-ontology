@@ -234,6 +234,7 @@ attributes:
     exact_mappings:
     - dct:license
     rank: 1000
+    slot_uri: dct:license
     alias: license
     owner: Data
     domain_of:
