@@ -38,7 +38,7 @@
     "interoperability"
   ],
   "id": "https://w3id.org/evorao/",
-  "version": "1.0.8951",
+  "version": "1.0.8966",
   "imports": [
     "linkml:types"
   ],
@@ -570,8 +570,23 @@
       "domain_of": [
         "Version"
       ],
-      "range": "Dataset",
+      "range": "string",
       "required": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "resource",
+      "definition_uri": "https://w3id.org/evorao/resource",
+      "description": "Resource published or curated by a single agent",
+      "title": "resource",
+      "from_schema": "https://w3id.org/evorao/",
+      "slot_uri": "https://w3id.org/evorao/resource",
+      "owner": "Version",
+      "domain_of": [
+        "Version"
+      ],
+      "range": "Resource",
+      "multivalued": true,
       "inlined": true,
       "@type": "SlotDefinition"
     },
@@ -3922,8 +3937,28 @@
       ],
       "is_usage_slot": true,
       "usage_slot_name": "versionOf",
-      "range": "Dataset",
+      "range": "string",
       "required": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "Version_resource",
+      "definition_uri": "https://w3id.org/evorao/resource",
+      "description": "Resource published or curated by a single agent",
+      "title": "resource",
+      "from_schema": "https://w3id.org/evorao/",
+      "is_a": "resource",
+      "domain": "Version",
+      "slot_uri": "https://w3id.org/evorao/resource",
+      "alias": "resource",
+      "owner": "Version",
+      "domain_of": [
+        "Version"
+      ],
+      "is_usage_slot": true,
+      "usage_slot_name": "resource",
+      "range": "Resource",
+      "multivalued": true,
       "inlined": true,
       "@type": "SlotDefinition"
     },
@@ -8882,7 +8917,7 @@
     {
       "name": "Resource",
       "definition_uri": "https://w3id.org/evorao/Resource",
-      "description": "Resource published or curated by a single agent.",
+      "description": "Resource published or curated by a single agent",
       "title": "Resource",
       "from_schema": "https://w3id.org/evorao/",
       "mappings": [
@@ -8952,6 +8987,9 @@
       "definition_uri": "https://w3id.org/evorao/Version",
       "description": "Numeric code assigned to identify a particular historical version of a work (e.g. software or technical standards)",
       "title": "Version",
+      "comments": [
+        "Represents a specific snapshot/release of a resource (e.g., a dataset). It enables managing multiple versions as first-class nodes and linking each version to its subject via evorao:versionOf and to the using resource via evorao:version (e.g., as nodes in a graph database).\r"
+      ],
       "from_schema": "https://w3id.org/evorao/",
       "close_mappings": [
         "wd:Q114469879",
@@ -8960,7 +8998,8 @@
       "is_a": "Resource",
       "slots": [
         "Version_version",
-        "Version_versionOf"
+        "Version_versionOf",
+        "Version_resource"
       ],
       "slot_usage": {},
       "class_uri": "https://w3id.org/evorao/Version",
@@ -11239,9 +11278,9 @@
   ],
   "metamodel_version": "1.7.0",
   "source_file": "evora_schema.yaml",
-  "source_file_date": "2025-09-05T07:48:56",
-  "source_file_size": 190323,
-  "generation_date": "2025-09-05T07:49:12",
+  "source_file_date": "2025-09-05T08:13:58",
+  "source_file_size": 191111,
+  "generation_date": "2025-09-05T08:14:16",
   "@type": "SchemaDefinition",
   "@context": [
     "https://w3id.org/linkml/types.context.jsonld",

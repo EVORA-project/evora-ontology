@@ -1,5 +1,5 @@
 # Auto generated from evora_schema.yaml by pythongen.py version: 0.0.1
-# Generation date: 2025-09-05T07:49:16
+# Generation date: 2025-09-05T08:14:21
 # Schema: EVORAO
 #
 # id: https://w3id.org/evorao/
@@ -60,7 +60,7 @@ from linkml_runtime.linkml_model.types import Boolean, Datetime, Integer, String
 from linkml_runtime.utils.metamodelcore import Bool, URI, XSDDateTime
 
 metamodel_version = "1.7.0"
-version = "1.0.8951"
+version = "1.0.8966"
 
 # Namespaces
 EVORAO = CurieNamespace('EVORAO', 'https://w3id.org/evorao/')
@@ -95,7 +95,7 @@ DEFAULT_ = EVORAO
 
 class Resource(YAMLRoot):
     """
-    Resource published or curated by a single agent.
+    Resource published or curated by a single agent
     """
     _inherited_slots: ClassVar[list[str]] = []
 
@@ -186,7 +186,8 @@ class Version(Resource):
     class_model_uri: ClassVar[URIRef] = EVORAO.Version
 
     version: str = None
-    versionOf: Union[dict, Dataset] = None
+    versionOf: str = None
+    resource: Optional[Union[Union[dict, Resource], list[Union[dict, Resource]]]] = empty_list()
 
     def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.version):
@@ -196,8 +197,12 @@ class Version(Resource):
 
         if self._is_empty(self.versionOf):
             self.MissingRequiredField("versionOf")
-        if not isinstance(self.versionOf, Dataset):
-            self.versionOf = Dataset(**as_dict(self.versionOf))
+        if not isinstance(self.versionOf, str):
+            self.versionOf = str(self.versionOf)
+
+        if not isinstance(self.resource, list):
+            self.resource = [self.resource] if self.resource is not None else []
+        self.resource = [v if isinstance(v, Resource) else Resource(**as_dict(v)) for v in self.resource]
 
         super().__post_init__(**kwargs)
 
@@ -2770,7 +2775,10 @@ slots.endpointUrl = Slot(uri=DCAT.endpointURL, name="endpointUrl", curie=DCAT.cu
                    model_uri=EVORAO.endpointUrl, domain=None, range=Union[str, URI])
 
 slots.versionOf = Slot(uri=EVORAO.versionOf, name="versionOf", curie=EVORAO.curie('versionOf'),
-                   model_uri=EVORAO.versionOf, domain=None, range=Union[dict, Dataset])
+                   model_uri=EVORAO.versionOf, domain=None, range=str)
+
+slots.resource = Slot(uri=EVORAO.resource, name="resource", curie=EVORAO.curie('resource'),
+                   model_uri=EVORAO.resource, domain=None, range=Optional[Union[Union[dict, Resource], list[Union[dict, Resource]]]])
 
 slots.taxon = Slot(uri=EVORAO.taxon, name="taxon", curie=EVORAO.curie('taxon'),
                    model_uri=EVORAO.taxon, domain=None, range=Union[dict, Taxon])
@@ -3334,7 +3342,10 @@ slots.Version_version = Slot(uri=DCAT.version, name="Version_version", curie=DCA
                    model_uri=EVORAO.Version_version, domain=Version, range=str)
 
 slots.Version_versionOf = Slot(uri=EVORAO.versionOf, name="Version_versionOf", curie=EVORAO.curie('versionOf'),
-                   model_uri=EVORAO.Version_versionOf, domain=Version, range=Union[dict, Dataset])
+                   model_uri=EVORAO.Version_versionOf, domain=Version, range=str)
+
+slots.Version_resource = Slot(uri=EVORAO.resource, name="Version_resource", curie=EVORAO.curie('resource'),
+                   model_uri=EVORAO.Version_resource, domain=Version, range=Optional[Union[Union[dict, Resource], list[Union[dict, Resource]]]])
 
 slots.Taxonomy_taxon = Slot(uri=EVORAO.taxon, name="Taxonomy_taxon", curie=EVORAO.curie('taxon'),
                    model_uri=EVORAO.Taxonomy_taxon, domain=Taxonomy, range=Union[Union[dict, "Taxon"], list[Union[dict, "Taxon"]]])

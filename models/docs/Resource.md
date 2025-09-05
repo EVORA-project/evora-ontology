@@ -3,7 +3,7 @@
 # Class: Resource (Resource) 
 
 
-_Resource published or curated by a single agent._
+_Resource published or curated by a single agent_
 
 
 
@@ -98,6 +98,13 @@ URI: [dcat:Resource](http://www.w3.org/ns/dcat#Resource)
 
 
 
+## Usages
+
+| used by | used in | type | used |
+| ---  | --- | --- | --- |
+| [Version](Version.md) | [resource](resource.md) | range | [Resource](Resource.md) |
+
+
 
 
 
@@ -140,7 +147,7 @@ URI: [dcat:Resource](http://www.w3.org/ns/dcat#Resource)
 <details>
 ```yaml
 name: Resource
-description: Resource published or curated by a single agent.
+description: Resource published or curated by a single agent
 title: Resource
 from_schema: https://w3id.org/evorao/
 abstract: true
@@ -154,7 +161,7 @@ class_uri: dcat:Resource
 <details>
 ```yaml
 name: Resource
-description: Resource published or curated by a single agent.
+description: Resource published or curated by a single agent
 title: Resource
 from_schema: https://w3id.org/evorao/
 abstract: true

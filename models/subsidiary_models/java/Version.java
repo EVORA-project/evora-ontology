@@ -5,7 +5,7 @@ import lombok.*;
 
 
 
-/* version: 1.0.8951 */
+/* version: 1.0.8966 */
 
 
 /**
@@ -16,6 +16,7 @@ import lombok.*;
 public class Version extends Resource {
 
   private String version;
-  private Dataset versionOf;
+  private String versionOf;
+  private List<Resource> resource;
 
 }

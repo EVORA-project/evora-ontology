@@ -1,7 +1,7 @@
  syntax="proto3";
  package
 // metamodel_version: 1.7.0
-// version: 1.0.8951
+// version: 1.0.8966
 // List of other names for things
 message AlternateName
  {
@@ -1036,7 +1036,8 @@ message Variant
 message Version
  {
   string version = 0
-  dataset versionOf = 0
+  string versionOf = 0
+ repeated  resource resource = 0
  }
 // Subclass of File representing moving visual media, such as recordings, presentations, or movies
 message Video

@@ -1,4 +1,4 @@
--- # Class: "Resource" Description: "Resource published or curated by a single agent."
+-- # Class: "Resource" Description: "Resource published or curated by a single agent"
 --     * Slot: id Description: 
 -- # Class: "Dataset" Description: "A collection of data, published or curated by a single agent, and available for access"
 --     * Slot: id Description: 
@@ -13,7 +13,7 @@
 -- # Class: "Version" Description: "Numeric code assigned to identify a particular historical version of a work (e.g. software or technical standards)"
 --     * Slot: id Description: 
 --     * Slot: version Description: The version indicator (name or identifier) of a resource
---     * Slot: versionOf_id Description: Identifier of what type of entities the version qualifies
+--     * Slot: versionOf Description: Identifier of what type of entities the version qualifies
 -- # Class: "Catalogue" Description: "A curated collection of metadata about resources"
 --     * Slot: id Description: 
 --     * Slot: title Description: A name given to the resource
@@ -931,6 +931,9 @@
 --     * Slot: description Description: A short explanation of the characteristics, features, or nature of the current item
 --     * Slot: resourceUrl Description: The web address or location where the details or content is stored and can be accessed or downloaded.
 --     * Slot: logo_id Description: A path or URL to the related logo
+-- # Class: "Version_resource" Description: ""
+--     * Slot: Version_id Description: Autocreated FK slot
+--     * Slot: resource_id Description: Resource published or curated by a single agent
 -- # Class: "Taxonomy_taxon" Description: ""
 --     * Slot: Taxonomy_id Description: Autocreated FK slot
 --     * Slot: taxon_id Description: Scientifically classified group or entity within the reference taxonomy
@@ -1646,6 +1649,12 @@ CREATE TABLE "DataService" (
 	"endpointUrl" TEXT NOT NULL, 
 	PRIMARY KEY (id)
 );
+CREATE TABLE "Version" (
+	id INTEGER NOT NULL, 
+	version TEXT NOT NULL, 
+	"versionOf" TEXT NOT NULL, 
+	PRIMARY KEY (id)
+);
 CREATE TABLE "Catalogue" (
 	id INTEGER NOT NULL, 
 	title TEXT NOT NULL, 
@@ -1707,13 +1716,6 @@ CREATE TABLE "License" (
 	logo_id INTEGER, 
 	PRIMARY KEY (id), 
 	FOREIGN KEY(logo_id) REFERENCES "Image" (id)
-);
-CREATE TABLE "Version" (
-	id INTEGER NOT NULL, 
-	version TEXT NOT NULL, 
-	"versionOf_id" INTEGER NOT NULL, 
-	PRIMARY KEY (id), 
-	FOREIGN KEY("versionOf_id") REFERENCES "Dataset" (id)
 );
 CREATE TABLE "DataProvider" (
 	id INTEGER NOT NULL, 
@@ -1806,6 +1808,13 @@ CREATE TABLE "Certification" (
 	logo_id INTEGER, 
 	PRIMARY KEY (id), 
 	FOREIGN KEY(logo_id) REFERENCES "Image" (id)
+);
+CREATE TABLE "Version_resource" (
+	"Version_id" INTEGER, 
+	resource_id INTEGER, 
+	PRIMARY KEY ("Version_id", resource_id), 
+	FOREIGN KEY("Version_id") REFERENCES "Version" (id), 
+	FOREIGN KEY(resource_id) REFERENCES "Resource" (id)
 );
 CREATE TABLE "Sequence_sequenceReference" (
 	"Sequence_id" INTEGER, 

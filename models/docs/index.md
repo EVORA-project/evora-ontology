@@ -13,7 +13,7 @@ Name: EVORAO
 | Class | Description |
 | --- | --- |
 | [MSDS](MSDS.md) | None |
-| [Resource](Resource.md) | Resource published or curated by a single agent. |
+| [Resource](Resource.md) | Resource published or curated by a single agent |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[BiologicalMaterialOrigin](BiologicalMaterialOrigin.md) | Information about the origin of the biological material, compulsory for access, utilization, and benefit-sharing of genetic resources in compliance with the Nagoya Protocol |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[BiologicalPartOrigin](BiologicalPartOrigin.md) | Information on the origin of a unitary, cohesive part that is part of, or constitutes the biological material. It can be multiple parts in case of a recombinant biological material |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[NaturalPartOrigin](NaturalPartOrigin.md) | Information on the origin of a natural part that composes the biological material |
@@ -232,6 +232,7 @@ Name: EVORAO
 | [regionEncompassedInThisProduct](regionEncompassedInThisProduct.md) | The specific region encompassed in the product |
 | [regulatoryInformation](regulatoryInformation.md) | Lists applicable laws, regulations, and standards governing the product, incl... |
 | [relatedPdb](relatedPdb.md) | Identifier for 3D structural data as per the PDB (Protein Data Bank) database |
+| [resource](resource.md) | Resource published or curated by a single agent |
 | [resourceUrl](resourceUrl.md) | The web address or location where the details or content is stored and can be... |
 | [riskGroup](riskGroup.md) | The highest risk group related to this resource |
 | [rorId](rorId.md) | The corresponding organization's persistent identifier from the Research Orga... |

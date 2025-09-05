@@ -1,7 +1,7 @@
 package EVORAO
 
 /*
- * Resource published or curated by a single agent.
+ * Resource published or curated by a single agent
  */
 type Resource struct {
 }
@@ -65,7 +65,11 @@ type Version struct {
 	/*
 	 * Identifier of what type of entities the version qualifies
 	 */
-	VersionOf Dataset `json:"versionOf"`
+	VersionOf string `json:"versionOf"`
+	/*
+	 * Resource published or curated by a single agent
+	 */
+	Resource []Resource `json:"resource"`
 }
 
 /*

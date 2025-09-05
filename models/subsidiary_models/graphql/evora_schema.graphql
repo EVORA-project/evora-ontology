@@ -1,5 +1,5 @@
 # metamodel_version: 1.7.0
-# version: 1.0.8951
+# version: 1.0.8966
 type AlternateName
   {
     title: String!
@@ -1173,7 +1173,8 @@ type Variant
 type Version
   {
     version: String!
-    versionOf: Dataset!
+    versionOf: String!
+    resource: [Resource]
   }
 
 type Video

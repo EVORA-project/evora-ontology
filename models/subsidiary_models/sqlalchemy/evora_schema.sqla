@@ -11,7 +11,7 @@ metadata = Base.metadata
 
 class Resource(Base):
     """
-    Resource published or curated by a single agent.
+    Resource published or curated by a single agent
     """
     __tablename__ = 'Resource'
 
@@ -53,6 +53,24 @@ class MSDS(Base):
 
     def __repr__(self):
         return f"MSDS(id={self.id},physicalChemicalProperties={self.physicalChemicalProperties},hazardsIdentification={self.hazardsIdentification},firstAidMeasures={self.firstAidMeasures},fireFightingMeasures={self.fireFightingMeasures},accidentalReleaseMeasures={self.accidentalReleaseMeasures},handlingAndStorage={self.handlingAndStorage},exposureControlsPersonalProtection={self.exposureControlsPersonalProtection},stabilityAndReactivity={self.stabilityAndReactivity},toxicologicalInformation={self.toxicologicalInformation},ecologicalInformation={self.ecologicalInformation},disposalConsiderations={self.disposalConsiderations},transportInformation={self.transportInformation},regulatoryInformation={self.regulatoryInformation},furtherInformation={self.furtherInformation},materialSafetyContact_id={self.materialSafetyContact_id},)"
+
+
+
+    
+
+
+class VersionResource(Base):
+    """
+    
+    """
+    __tablename__ = 'Version_resource'
+
+    Version_id = Column(Integer(), ForeignKey('Version.id'), primary_key=True)
+    resource_id = Column(Integer(), ForeignKey('Resource.id'), primary_key=True)
+    
+
+    def __repr__(self):
+        return f"Version_resource(Version_id={self.Version_id},resource_id={self.resource_id},)"
 
 
 
@@ -4293,12 +4311,15 @@ class Version(Resource):
 
     id = Column(Integer(), primary_key=True, autoincrement=True , nullable=False )
     version = Column(Text(), nullable=False )
-    versionOf_id = Column(Integer(), ForeignKey('Dataset.id'), nullable=False )
-    versionOf = relationship("Dataset", uselist=False, foreign_keys=[versionOf_id])
+    versionOf = Column(Text(), nullable=False )
+    
+    
+    # ManyToMany
+    resource = relationship( "Resource", secondary="Version_resource")
     
 
     def __repr__(self):
-        return f"Version(id={self.id},version={self.version},versionOf_id={self.versionOf_id},)"
+        return f"Version(id={self.id},version={self.version},versionOf={self.versionOf},)"
 
 
 

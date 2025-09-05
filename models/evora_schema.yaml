@@ -48,7 +48,7 @@ keywords:
 - pathogen collections
 - interoperability
 id: https://w3id.org/evorao/
-version: 1.0.8951
+version: 1.0.8966
 imports:
 - linkml:types
 license: https://creativecommons.org/publicdomain/zero/1.0/
@@ -182,9 +182,18 @@ slots:
     from_schema: https://w3id.org/evorao/
     domain_of:
     - Version
-    range: Dataset
+    range: string
     required: true
     multivalued: false
+  resource:
+    description: Resource published or curated by a single agent
+    title: resource
+    from_schema: https://w3id.org/evorao/
+    domain_of:
+    - Version
+    range: Resource
+    required: false
+    multivalued: true
   taxon:
     description: Scientifically classified group or entity within the reference taxonomy
     title: taxon
@@ -2360,7 +2369,7 @@ slots:
     multivalued: true
 classes:
   Resource:
-    description: Resource published or curated by a single agent.
+    description: Resource published or curated by a single agent
     title: Resource
     from_schema: https://w3id.org/evorao/
     abstract: true
@@ -2502,6 +2511,11 @@ classes:
     description: Numeric code assigned to identify a particular historical version
       of a work (e.g. software or technical standards)
     title: Version
+    comments:
+    - "Represents a specific snapshot/release of a resource (e.g., a dataset). It\
+      \ enables managing multiple versions as first-class nodes and linking each version\
+      \ to its subject via evorao:versionOf and to the using resource via evorao:version\
+      \ (e.g., as nodes in a graph database).\r"
     from_schema: https://w3id.org/evorao/
     close_mappings:
     - wd:Q114469879
@@ -2510,6 +2524,7 @@ classes:
     slots:
     - version
     - versionOf
+    - resource
     slot_usage:
       version:
         description: The version indicator (name or identifier) of a resource
@@ -2528,9 +2543,17 @@ classes:
         title: version Of
         domain_of:
         - Version
-        range: Dataset
+        range: string
         required: true
         multivalued: false
+      resource:
+        description: Resource published or curated by a single agent
+        title: resource
+        domain_of:
+        - Version
+        range: Resource
+        required: false
+        multivalued: true
   Catalogue:
     description: A curated collection of metadata about resources
     title: Catalogue
@@ -5869,4 +5892,4 @@ classes:
         required: false
         multivalued: false
 source_file: https://w3id.org/evorao/evorao.owl.ttl
-generation_date: '2025-09-05T09:48:52'
+generation_date: '2025-09-05T10:13:34'

@@ -27,7 +27,7 @@ from pydantic import (
 
 
 metamodel_version = "None"
-version = "1.0.8951"
+version = "1.0.8966"
 
 
 class ConfiguredBaseModel(BaseModel):
@@ -99,7 +99,7 @@ linkml_meta = LinkMLMeta({'comments': ['EVORAO is an ontology for standardized m
                     'pathogens. EVORAO is compatible with DCAT, making it '
                     'well-suited for efficiently cataloguing pathogen collections '
                     'and related resources.',
-     'generation_date': '2025-09-05T09:48:52',
+     'generation_date': '2025-09-05T10:13:34',
      'id': 'https://w3id.org/evorao/',
      'imports': ['linkml:types'],
      'in_language': 'en',
@@ -167,7 +167,7 @@ linkml_meta = LinkMLMeta({'comments': ['EVORAO is an ontology for standardized m
 
 class Resource(ConfiguredBaseModel):
     """
-    Resource published or curated by a single agent.
+    Resource published or curated by a single agent
     """
     linkml_meta: ClassVar[LinkMLMeta] = LinkMLMeta({'abstract': True,
          'class_uri': 'dcat:Resource',
@@ -394,8 +394,21 @@ class Version(Resource):
     Numeric code assigned to identify a particular historical version of a work (e.g. software or technical standards)
     """
     linkml_meta: ClassVar[LinkMLMeta] = LinkMLMeta({'close_mappings': ['wd:Q114469879', 'wd:Q114469879'],
+         'comments': ['Represents a specific snapshot/release of a resource (e.g., a '
+                      'dataset). It enables managing multiple versions as first-class '
+                      'nodes and linking each version to its subject via '
+                      'evorao:versionOf and to the using resource via evorao:version '
+                      '(e.g., as nodes in a graph database).\r'],
          'from_schema': 'https://w3id.org/evorao/',
-         'slot_usage': {'version': {'close_mappings': ['wdp:P393', 'schema:version'],
+         'slot_usage': {'resource': {'description': 'Resource published or curated by '
+                                                    'a single agent',
+                                     'domain_of': ['Version'],
+                                     'multivalued': True,
+                                     'name': 'resource',
+                                     'range': 'Resource',
+                                     'required': False,
+                                     'title': 'resource'},
+                        'version': {'close_mappings': ['wdp:P393', 'schema:version'],
                                     'description': 'The version indicator (name or '
                                                    'identifier) of a resource',
                                     'domain_of': ['Version', 'Dataset', 'Taxonomy'],
@@ -410,7 +423,7 @@ class Version(Resource):
                                       'domain_of': ['Version'],
                                       'multivalued': False,
                                       'name': 'versionOf',
-                                      'range': 'Dataset',
+                                      'range': 'string',
                                       'required': True,
                                       'title': 'version Of'}},
          'title': 'Version'})
@@ -420,7 +433,8 @@ class Version(Resource):
          'domain_of': ['Version', 'Dataset', 'Taxonomy'],
          'recommended': True,
          'slot_uri': 'dcat:version'} })
-    versionOf: Dataset = Field(default=..., title="version Of", description="""Identifier of what type of entities the version qualifies""", json_schema_extra = { "linkml_meta": {'alias': 'versionOf', 'domain_of': ['Version']} })
+    versionOf: str = Field(default=..., title="version Of", description="""Identifier of what type of entities the version qualifies""", json_schema_extra = { "linkml_meta": {'alias': 'versionOf', 'domain_of': ['Version']} })
+    resource: Optional[list[Resource]] = Field(default=None, title="resource", description="""Resource published or curated by a single agent""", json_schema_extra = { "linkml_meta": {'alias': 'resource', 'domain_of': ['Version']} })
 
 
 class Catalogue(Dataset):

@@ -69,7 +69,6 @@ URI: [dcat:Dataset](http://www.w3.org/ns/dcat#Dataset)
 
 | used by | used in | type | used |
 | ---  | --- | --- | --- |
-| [Version](Version.md) | [versionOf](versionOf.md) | range | [Dataset](Dataset.md) |
 | [DataProvider](DataProvider.md) | [providedEntityType](providedEntityType.md) | range | [Dataset](Dataset.md) |
 
 

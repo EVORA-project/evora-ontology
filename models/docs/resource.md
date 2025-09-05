@@ -1,16 +1,16 @@
 
 
-# Slot: version Of (versionOf) 
+# Slot: resource (resource) 
 
 
-_Identifier of what type of entities the version qualifies_
+_Resource published or curated by a single agent_
 
 
 
 
 
-URI: [EVORAO:versionOf](https://w3id.org/evorao/versionOf)
-Alias: versionOf
+URI: [EVORAO:resource](https://w3id.org/evorao/resource)
+Alias: resource
 
 <!-- no inheritance hierarchy -->
 
@@ -32,9 +32,9 @@ Alias: versionOf
 
 ## Properties
 
-* Range: [String](String.md)
+* Range: [Resource](Resource.md)
 
-* Required: True
+* Multivalued: True
 
 
 
@@ -60,8 +60,8 @@ Alias: versionOf
 
 | Mapping Type | Mapped Value |
 | ---  | ---  |
-| self | EVORAO:versionOf |
-| native | EVORAO:versionOf |
+| self | EVORAO:resource |
+| native | EVORAO:resource |
 
 
 
@@ -70,17 +70,17 @@ Alias: versionOf
 
 <details>
 ```yaml
-name: versionOf
-description: Identifier of what type of entities the version qualifies
-title: version Of
+name: resource
+description: Resource published or curated by a single agent
+title: resource
 from_schema: https://w3id.org/evorao/
 rank: 1000
-alias: versionOf
+alias: resource
 domain_of:
 - Version
-range: string
-required: true
-multivalued: false
+range: Resource
+required: false
+multivalued: true
 
 ```
 </details>
