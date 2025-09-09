@@ -1,5 +1,5 @@
 # Auto generated from evora_schema.yaml by pythongen.py version: 0.0.1
-# Generation date: 2025-09-09T13:42:10
+# Generation date: 2025-09-09T14:30:15
 # Schema: EVORAO
 #
 # id: https://w3id.org/evorao/
@@ -60,29 +60,68 @@ from linkml_runtime.linkml_model.types import Boolean, Datetime, Integer, String
 from linkml_runtime.utils.metamodelcore import Bool, URI, XSDDateTime
 
 metamodel_version = "1.7.0"
-version = "1.0.8986"
+version = "1.0.9032"
 
 # Namespaces
 EVORAO = CurieNamespace('EVORAO', 'https://w3id.org/evorao/')
 IAO = CurieNamespace('IAO', 'http://purl.obolibrary.org/obo/IAO_')
 ADMS = CurieNamespace('adms', 'http://www.w3.org/ns/adms#')
+AFOP = CurieNamespace('afop', 'http://purl.allotrope.org/ontologies/property#')
+APOLLO = CurieNamespace('apollo', 'http://purl.obolibrary.org/obo/APOLLO_SV_')
+BAO = CurieNamespace('bao', 'http://www.bioassayontology.org/bao#BAO_')
+BIOLINK = CurieNamespace('biolink', 'https://w3id.org/biolink/vocab/')
+BTO = CurieNamespace('bto', 'http://purl.obolibrary.org/obo/BTO_')
+CHEBI = CurieNamespace('chebi', 'http://purl.obolibrary.org/obo/CHEBI_')
+CIDO = CurieNamespace('cido', 'http://purl.obolibrary.org/obo/CIDO_')
+CLO = CurieNamespace('clo', 'http://purl.obolibrary.org/obo/CLO_')
 DCAT = CurieNamespace('dcat', 'http://www.w3.org/ns/dcat#')
 DCMI = CurieNamespace('dcmi', 'http://purl.org/dc/dcmitype/')
 DCT = CurieNamespace('dct', 'http://purl.org/dc/terms/')
+DOID = CurieNamespace('doid', 'http://purl.obolibrary.org/obo/DOID_')
 DWC = CurieNamespace('dwc', 'http://rs.tdwg.org/dwc/terms/')
+EDAM = CurieNamespace('edam', 'http://edamontology.org/data_')
+EFO = CurieNamespace('efo', 'http://www.ebi.ac.uk/efo/EFO_')
 FOAF = CurieNamespace('foaf', 'http://xmlns.com/foaf/0.1/')
+GENEPIO = CurieNamespace('genepio', 'http://purl.obolibrary.org/obo/GENEPIO_')
+GENO = CurieNamespace('geno', 'http://purl.obolibrary.org/obo/GENO_')
+GEO = CurieNamespace('geo', 'http://purl.obolibrary.org/obo/GEO_')
+GR = CurieNamespace('gr', 'http://purl.org/goodrelations/v1#')
+HSO = CurieNamespace('hso', 'http://purl.obolibrary.org/obo/HSO_')
+IAO = CurieNamespace('iao', 'http://purl.obolibrary.org/obo/IAO_')
+ICEO = CurieNamespace('iceo', 'http://purl.obolibrary.org/obo/ICEO_')
+IDO = CurieNamespace('ido', 'http://purl.obolibrary.org/obo/IDO_')
 LINKML = CurieNamespace('linkml', 'https://w3id.org/linkml/')
+MESH = CurieNamespace('mesh', 'http://id.nlm.nih.gov/mesh/')
+MI = CurieNamespace('mi', 'http://purl.obolibrary.org/obo/MI_')
+MONDO = CurieNamespace('mondo', 'http://purl.obolibrary.org/obo/MONDO_')
+MS = CurieNamespace('ms', 'http://purl.obolibrary.org/obo/MS_')
+NCBITAXON = CurieNamespace('ncbitaxon', 'http://purl.obolibrary.org/obo/NCBITaxon_')
+NCIT = CurieNamespace('ncit', 'http://purl.obolibrary.org/obo/NCIT_')
+OBI = CurieNamespace('obi', 'http://purl.obolibrary.org/obo/OBI_')
+OBIB = CurieNamespace('obib', 'http://purl.obolibrary.org/obo/OBIB_')
+OMO = CurieNamespace('omo', 'http://purl.obolibrary.org/obo/OMO_')
 OWL = CurieNamespace('owl', 'http://www.w3.org/2002/07/owl#')
 PAV = CurieNamespace('pav', 'http://purl.org/pav/')
 PROV = CurieNamespace('prov', 'http://www.w3.org/ns/prov#')
 RDF = CurieNamespace('rdf', 'http://www.w3.org/1999/02/22-rdf-syntax-ns#')
 RDFS = CurieNamespace('rdfs', 'http://www.w3.org/2000/01/rdf-schema#')
+REPRODUCEME = CurieNamespace('reproduceme', 'https://w3id.org/reproduceme#')
+RO = CurieNamespace('ro', 'http://purl.obolibrary.org/obo/RO_')
 ROV = CurieNamespace('rov', 'http://www.w3.org/ns/regorg#')
 SCHEMA = CurieNamespace('schema', 'http://schema.org/')
+SEPIO = CurieNamespace('sepio', 'http://purl.obolibrary.org/obo/SEPIO_')
+SIO = CurieNamespace('sio', 'http://semanticscience.org/resource/SIO_')
 SKOS = CurieNamespace('skos', 'http://www.w3.org/2004/02/skos/core#')
+SNOMED = CurieNamespace('snomed', 'http://snomed.info/id/')
+SWO = CurieNamespace('swo', 'http://www.ebi.ac.uk/swo/SWO_')
+T4FS = CurieNamespace('t4fs', 'http://purl.obolibrary.org/obo/T4FS_')
+TAXRANK = CurieNamespace('taxrank', 'http://purl.obolibrary.org/obo/TAXRANK_')
+UNIPROTRDFS = CurieNamespace('uniprotrdfs', 'http://purl.uniprot.org/core/')
 VCARD = CurieNamespace('vcard', 'http://www.w3.org/2006/vcard/ns#')
+VO = CurieNamespace('vo', 'http://purl.obolibrary.org/obo/VO_')
 WD = CurieNamespace('wd', 'http://www.wikidata.org/entity/')
 WDP = CurieNamespace('wdp', 'http://www.wikidata.org/prop/')
+XCO = CurieNamespace('xco', 'http://purl.obolibrary.org/obo/XCO_')
 XSD = CurieNamespace('xsd', 'http://www.w3.org/2001/XMLSchema#')
 DEFAULT_ = EVORAO
 

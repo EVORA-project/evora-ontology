@@ -38,7 +38,7 @@
     "interoperability"
   ],
   "id": "https://w3id.org/evorao/",
-  "version": "1.0.8986",
+  "version": "1.0.9032",
   "imports": [
     "linkml:types"
   ],
@@ -123,6 +123,162 @@
     {
       "prefix_prefix": "EVORAO",
       "prefix_reference": "https://w3id.org/evorao/"
+    },
+    {
+      "prefix_prefix": "ncit",
+      "prefix_reference": "http://purl.obolibrary.org/obo/NCIT_"
+    },
+    {
+      "prefix_prefix": "geo",
+      "prefix_reference": "http://purl.obolibrary.org/obo/GEO_"
+    },
+    {
+      "prefix_prefix": "iao",
+      "prefix_reference": "http://purl.obolibrary.org/obo/IAO_"
+    },
+    {
+      "prefix_prefix": "sio",
+      "prefix_reference": "http://semanticscience.org/resource/SIO_"
+    },
+    {
+      "prefix_prefix": "ro",
+      "prefix_reference": "http://purl.obolibrary.org/obo/RO_"
+    },
+    {
+      "prefix_prefix": "sepio",
+      "prefix_reference": "http://purl.obolibrary.org/obo/SEPIO_"
+    },
+    {
+      "prefix_prefix": "bao",
+      "prefix_reference": "http://www.bioassayontology.org/bao#BAO_"
+    },
+    {
+      "prefix_prefix": "obi",
+      "prefix_reference": "http://purl.obolibrary.org/obo/OBI_"
+    },
+    {
+      "prefix_prefix": "efo",
+      "prefix_reference": "http://www.ebi.ac.uk/efo/EFO_"
+    },
+    {
+      "prefix_prefix": "mesh",
+      "prefix_reference": "http://id.nlm.nih.gov/mesh/"
+    },
+    {
+      "prefix_prefix": "obib",
+      "prefix_reference": "http://purl.obolibrary.org/obo/OBIB_"
+    },
+    {
+      "prefix_prefix": "afop",
+      "prefix_reference": "http://purl.allotrope.org/ontologies/property#"
+    },
+    {
+      "prefix_prefix": "genepio",
+      "prefix_reference": "http://purl.obolibrary.org/obo/GENEPIO_"
+    },
+    {
+      "prefix_prefix": "hso",
+      "prefix_reference": "http://purl.obolibrary.org/obo/HSO_"
+    },
+    {
+      "prefix_prefix": "uniprotrdfs",
+      "prefix_reference": "http://purl.uniprot.org/core/"
+    },
+    {
+      "prefix_prefix": "apollo",
+      "prefix_reference": "http://purl.obolibrary.org/obo/APOLLO_SV_"
+    },
+    {
+      "prefix_prefix": "geno",
+      "prefix_reference": "http://purl.obolibrary.org/obo/GENO_"
+    },
+    {
+      "prefix_prefix": "swo",
+      "prefix_reference": "http://www.ebi.ac.uk/swo/SWO_"
+    },
+    {
+      "prefix_prefix": "cido",
+      "prefix_reference": "http://purl.obolibrary.org/obo/CIDO_"
+    },
+    {
+      "prefix_prefix": "biolink",
+      "prefix_reference": "https://w3id.org/biolink/vocab/"
+    },
+    {
+      "prefix_prefix": "reproduceme",
+      "prefix_reference": "https://w3id.org/reproduceme#"
+    },
+    {
+      "prefix_prefix": "edam",
+      "prefix_reference": "http://edamontology.org/data_"
+    },
+    {
+      "prefix_prefix": "omo",
+      "prefix_reference": "http://purl.obolibrary.org/obo/OMO_"
+    },
+    {
+      "prefix_prefix": "taxrank",
+      "prefix_reference": "http://purl.obolibrary.org/obo/TAXRANK_"
+    },
+    {
+      "prefix_prefix": "iceo",
+      "prefix_reference": "http://purl.obolibrary.org/obo/ICEO_"
+    },
+    {
+      "prefix_prefix": "mi",
+      "prefix_reference": "http://purl.obolibrary.org/obo/MI_"
+    },
+    {
+      "prefix_prefix": "snomed",
+      "prefix_reference": "http://snomed.info/id/"
+    },
+    {
+      "prefix_prefix": "t4fs",
+      "prefix_reference": "http://purl.obolibrary.org/obo/T4FS_"
+    },
+    {
+      "prefix_prefix": "ms",
+      "prefix_reference": "http://purl.obolibrary.org/obo/MS_"
+    },
+    {
+      "prefix_prefix": "ncbitaxon",
+      "prefix_reference": "http://purl.obolibrary.org/obo/NCBITaxon_"
+    },
+    {
+      "prefix_prefix": "clo",
+      "prefix_reference": "http://purl.obolibrary.org/obo/CLO_"
+    },
+    {
+      "prefix_prefix": "bto",
+      "prefix_reference": "http://purl.obolibrary.org/obo/BTO_"
+    },
+    {
+      "prefix_prefix": "chebi",
+      "prefix_reference": "http://purl.obolibrary.org/obo/CHEBI_"
+    },
+    {
+      "prefix_prefix": "ido",
+      "prefix_reference": "http://purl.obolibrary.org/obo/IDO_"
+    },
+    {
+      "prefix_prefix": "xco",
+      "prefix_reference": "http://purl.obolibrary.org/obo/XCO_"
+    },
+    {
+      "prefix_prefix": "doid",
+      "prefix_reference": "http://purl.obolibrary.org/obo/DOID_"
+    },
+    {
+      "prefix_prefix": "mondo",
+      "prefix_reference": "http://purl.obolibrary.org/obo/MONDO_"
+    },
+    {
+      "prefix_prefix": "gr",
+      "prefix_reference": "http://purl.org/goodrelations/v1#"
+    },
+    {
+      "prefix_prefix": "vo",
+      "prefix_reference": "http://purl.obolibrary.org/obo/VO_"
     },
     {
       "prefix_prefix": "linkml",
@@ -8939,10 +9095,8 @@
       ],
       "exact_mappings": [
         "schema:Dataset",
-        "schema:Dataset"
-      ],
-      "close_mappings": [
         "wd:Q1172284",
+        "schema:Dataset",
         "wd:Q1172284"
       ],
       "is_a": "Resource",
@@ -11281,9 +11435,9 @@
   ],
   "metamodel_version": "1.7.0",
   "source_file": "evora_schema.yaml",
-  "source_file_date": "2025-09-09T13:41:51",
-  "source_file_size": 191711,
-  "generation_date": "2025-09-09T13:42:05",
+  "source_file_date": "2025-09-09T14:29:54",
+  "source_file_size": 193499,
+  "generation_date": "2025-09-09T14:30:10",
   "@type": "SchemaDefinition",
   "@context": [
     "https://w3id.org/linkml/types.context.jsonld",

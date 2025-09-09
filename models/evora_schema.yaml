@@ -48,7 +48,7 @@ keywords:
 - pathogen collections
 - interoperability
 id: https://w3id.org/evorao/
-version: 1.0.8986
+version: 1.0.9032
 imports:
 - linkml:types
 license: https://creativecommons.org/publicdomain/zero/1.0/
@@ -73,6 +73,45 @@ prefixes:
   dwc: http://rs.tdwg.org/dwc/terms/
   IAO: http://purl.obolibrary.org/obo/IAO_
   EVORAO: https://w3id.org/evorao/
+  ncit: http://purl.obolibrary.org/obo/NCIT_
+  geo: http://purl.obolibrary.org/obo/GEO_
+  iao: http://purl.obolibrary.org/obo/IAO_
+  sio: http://semanticscience.org/resource/SIO_
+  ro: http://purl.obolibrary.org/obo/RO_
+  sepio: http://purl.obolibrary.org/obo/SEPIO_
+  bao: http://www.bioassayontology.org/bao#BAO_
+  obi: http://purl.obolibrary.org/obo/OBI_
+  efo: http://www.ebi.ac.uk/efo/EFO_
+  mesh: http://id.nlm.nih.gov/mesh/
+  obib: http://purl.obolibrary.org/obo/OBIB_
+  afop: http://purl.allotrope.org/ontologies/property#
+  genepio: http://purl.obolibrary.org/obo/GENEPIO_
+  hso: http://purl.obolibrary.org/obo/HSO_
+  uniprotrdfs: http://purl.uniprot.org/core/
+  apollo: http://purl.obolibrary.org/obo/APOLLO_SV_
+  geno: http://purl.obolibrary.org/obo/GENO_
+  swo: http://www.ebi.ac.uk/swo/SWO_
+  cido: http://purl.obolibrary.org/obo/CIDO_
+  biolink: https://w3id.org/biolink/vocab/
+  reproduceme: https://w3id.org/reproduceme#
+  edam: http://edamontology.org/data_
+  omo: http://purl.obolibrary.org/obo/OMO_
+  taxrank: http://purl.obolibrary.org/obo/TAXRANK_
+  iceo: http://purl.obolibrary.org/obo/ICEO_
+  mi: http://purl.obolibrary.org/obo/MI_
+  snomed: http://snomed.info/id/
+  t4fs: http://purl.obolibrary.org/obo/T4FS_
+  ms: http://purl.obolibrary.org/obo/MS_
+  ncbitaxon: http://purl.obolibrary.org/obo/NCBITaxon_
+  clo: http://purl.obolibrary.org/obo/CLO_
+  bto: http://purl.obolibrary.org/obo/BTO_
+  chebi: http://purl.obolibrary.org/obo/CHEBI_
+  ido: http://purl.obolibrary.org/obo/IDO_
+  xco: http://purl.obolibrary.org/obo/XCO_
+  doid: http://purl.obolibrary.org/obo/DOID_
+  mondo: http://purl.obolibrary.org/obo/MONDO_
+  gr: http://purl.org/goodrelations/v1#
+  vo: http://purl.obolibrary.org/obo/VO_
   linkml: https://w3id.org/linkml/
 default_prefix: EVORAO
 default_range: string
@@ -2383,9 +2422,8 @@ classes:
     from_schema: https://w3id.org/evorao/
     exact_mappings:
     - schema:Dataset
-    - schema:Dataset
-    close_mappings:
     - wd:Q1172284
+    - schema:Dataset
     - wd:Q1172284
     is_a: Resource
     abstract: true
@@ -2436,6 +2474,7 @@ classes:
         close_mappings:
         - wdp:P393
         - schema:version
+        slot_uri: dcat:version
         domain_of:
         - Dataset
         range: string
@@ -5466,6 +5505,7 @@ classes:
         close_mappings:
         - foaf:name
         - dct:title
+        slot_uri: foaf:name
         domain_of:
         - File
         range: string
@@ -5607,6 +5647,7 @@ classes:
         close_mappings:
         - foaf:name
         - dct:title
+        slot_uri: foaf:name
         domain_of:
         - ContactPoint
         range: string
@@ -5899,4 +5940,4 @@ classes:
         required: false
         multivalued: false
 source_file: https://w3id.org/evorao/evorao.owl.ttl
-generation_date: '2025-09-09T15:41:25'
+generation_date: '2025-09-09T16:29:30'

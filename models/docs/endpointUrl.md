@@ -22,8 +22,8 @@ Alias: endpointUrl
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [DataProvider](DataProvider.md) | An external API (Application Programming Interface) or Endpoint that permits ... |  no  |
 | [DataService](DataService.md) | A collection of operations that provides access to one or more datasets or da... |  yes  |
+| [DataProvider](DataProvider.md) | An external API (Application Programming Interface) or Endpoint that permits ... |  no  |
 
 
 

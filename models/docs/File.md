@@ -166,6 +166,7 @@ slot_usage:
     close_mappings:
     - foaf:name
     - dct:title
+    slot_uri: foaf:name
     domain_of:
     - File
     - PersonOrOrganization
@@ -263,6 +264,7 @@ slot_usage:
     close_mappings:
     - foaf:name
     - dct:title
+    slot_uri: foaf:name
     domain_of:
     - File
     - PersonOrOrganization

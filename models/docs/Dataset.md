@@ -98,8 +98,7 @@ URI: [dcat:Dataset](http://www.w3.org/ns/dcat#Dataset)
 | ---  | ---  |
 | self | dcat:Dataset |
 | native | EVORAO:Dataset |
-| exact | schema:Dataset, schema:Dataset |
-| close | wd:Q1172284, wd:Q1172284 |
+| exact | schema:Dataset, wd:Q1172284, schema:Dataset, wd:Q1172284 |
 
 
 
@@ -122,9 +121,8 @@ title: Dataset
 from_schema: https://w3id.org/evorao/
 exact_mappings:
 - schema:Dataset
-- schema:Dataset
-close_mappings:
 - wd:Q1172284
+- schema:Dataset
 - wd:Q1172284
 is_a: Resource
 abstract: true
@@ -190,6 +188,7 @@ slot_usage:
     close_mappings:
     - wdp:P393
     - schema:version
+    slot_uri: dcat:version
     domain_of:
     - Dataset
     - Version
@@ -214,9 +213,8 @@ title: Dataset
 from_schema: https://w3id.org/evorao/
 exact_mappings:
 - schema:Dataset
-- schema:Dataset
-close_mappings:
 - wd:Q1172284
+- schema:Dataset
 - wd:Q1172284
 is_a: Resource
 abstract: true
@@ -278,6 +276,7 @@ slot_usage:
     close_mappings:
     - wdp:P393
     - schema:version
+    slot_uri: dcat:version
     domain_of:
     - Dataset
     - Version
