@@ -145,7 +145,9 @@ slot_usage:
     description: Textual encoding of a biological sequence information in FASTA format
     title: sequence FASTA
     comments:
-    - In FASTA format the line before the nucleotide sequence, called the FASTA definition
+    - In cases where no reference sequence exists in public repositories, the corresponding
+      FASTA sequence is expected; otherwise, the reference sequence is sufficient.
+      In FASTA format the line before the nucleotide sequence, called the FASTA definition
       line, must begin with a charater ('>'), followed by a unique SeqID (sequence
       identifier). In case the sequence is made of multiple parts several fasta sequences
       can be provided
@@ -188,7 +190,9 @@ slot_usage:
     description: Textual encoding of a biological sequence information in FASTA format
     title: sequence FASTA
     comments:
-    - In FASTA format the line before the nucleotide sequence, called the FASTA definition
+    - In cases where no reference sequence exists in public repositories, the corresponding
+      FASTA sequence is expected; otherwise, the reference sequence is sufficient.
+      In FASTA format the line before the nucleotide sequence, called the FASTA definition
       line, must begin with a charater ('>'), followed by a unique SeqID (sequence
       identifier). In case the sequence is made of multiple parts several fasta sequences
       can be provided
@@ -219,7 +223,9 @@ attributes:
     description: Textual encoding of a biological sequence information in FASTA format
     title: sequence FASTA
     comments:
-    - In FASTA format the line before the nucleotide sequence, called the FASTA definition
+    - In cases where no reference sequence exists in public repositories, the corresponding
+      FASTA sequence is expected; otherwise, the reference sequence is sufficient.
+      In FASTA format the line before the nucleotide sequence, called the FASTA definition
       line, must begin with a charater ('>'), followed by a unique SeqID (sequence
       identifier). In case the sequence is made of multiple parts several fasta sequences
       can be provided

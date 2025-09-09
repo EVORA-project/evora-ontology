@@ -27,7 +27,7 @@ from pydantic import (
 
 
 metamodel_version = "None"
-version = "1.0.8979"
+version = "1.0.8986"
 
 
 class ConfiguredBaseModel(BaseModel):
@@ -99,7 +99,7 @@ linkml_meta = LinkMLMeta({'comments': ['EVORAO is an ontology for standardized m
                     'pathogens. EVORAO is compatible with DCAT, making it '
                     'well-suited for efficiently cataloguing pathogen collections '
                     'and related resources.',
-     'generation_date': '2025-09-09T11:55:40',
+     'generation_date': '2025-09-09T15:41:25',
      'id': 'https://w3id.org/evorao/',
      'imports': ['linkml:types'],
      'in_language': 'en',
@@ -1708,6 +1708,9 @@ class TagSequence(Term):
     The name of the DNA coding sequence or corresponding peptide/protein sequence fused to a sequence of interest, used to facilitate experimental operations such as purification, detection, localization, tracking, solubility enhancement, or selection. Applicable to both proteins and nucleic acids
     """
     linkml_meta: ClassVar[LinkMLMeta] = LinkMLMeta({'close_mappings': ['wd:Q645590', 'wd:Q645590'],
+         'comments': ['This class is used for controlled vocabulary terms (e.g., His '
+                      'Cterm, His Nterm, MBP, GST, Strep, FLAG-Tag, SUMO ...) and not '
+                      'the literal sequences'],
          'from_schema': 'https://w3id.org/evorao/',
          'title': 'Tag sequence'})
 
@@ -2729,8 +2732,14 @@ class Sequence(Resource):
     """
     linkml_meta: ClassVar[LinkMLMeta] = LinkMLMeta({'close_mappings': ['wd:Q3511065', 'wd:Q3511065'],
          'from_schema': 'https://w3id.org/evorao/',
-         'slot_usage': {'sequenceFasta': {'comments': ['In FASTA format the line '
-                                                       'before the nucleotide '
+         'slot_usage': {'sequenceFasta': {'comments': ['In cases where no reference '
+                                                       'sequence exists in public '
+                                                       'repositories, the '
+                                                       'corresponding FASTA sequence '
+                                                       'is expected; otherwise, the '
+                                                       'reference sequence is '
+                                                       'sufficient. In FASTA format '
+                                                       'the line before the nucleotide '
                                                        'sequence, called the FASTA '
                                                        'definition line, must begin '
                                                        "with a charater ('>'), "
@@ -2765,8 +2774,11 @@ class Sequence(Resource):
          'domain_of': ['Sequence', 'Antibody'],
          'recommended': True} })
     sequenceFasta: Optional[str] = Field(default=None, title="sequence FASTA", description="""Textual encoding of a biological sequence information in FASTA format""", json_schema_extra = { "linkml_meta": {'alias': 'sequenceFasta',
-         'comments': ['In FASTA format the line before the nucleotide sequence, called '
-                      "the FASTA definition line, must begin with a charater ('>'), "
+         'comments': ['In cases where no reference sequence exists in public '
+                      'repositories, the corresponding FASTA sequence is expected; '
+                      'otherwise, the reference sequence is sufficient. In FASTA '
+                      'format the line before the nucleotide sequence, called the '
+                      "FASTA definition line, must begin with a charater ('>'), "
                       'followed by a unique SeqID (sequence identifier). In case the '
                       'sequence is made of multiple parts several fasta sequences can '
                       'be provided'],

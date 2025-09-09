@@ -48,7 +48,7 @@ keywords:
 - pathogen collections
 - interoperability
 id: https://w3id.org/evorao/
-version: 1.0.8979
+version: 1.0.8986
 imports:
 - linkml:types
 license: https://creativecommons.org/publicdomain/zero/1.0/
@@ -747,7 +747,9 @@ slots:
     description: Textual encoding of a biological sequence information in FASTA format
     title: sequence FASTA
     comments:
-    - In FASTA format the line before the nucleotide sequence, called the FASTA definition
+    - In cases where no reference sequence exists in public repositories, the corresponding
+      FASTA sequence is expected; otherwise, the reference sequence is sufficient.
+      In FASTA format the line before the nucleotide sequence, called the FASTA definition
       line, must begin with a charater ('>'), followed by a unique SeqID (sequence
       identifier). In case the sequence is made of multiple parts several fasta sequences
       can be provided
@@ -3199,6 +3201,9 @@ classes:
       such as purification, detection, localization, tracking, solubility enhancement,
       or selection. Applicable to both proteins and nucleic acids
     title: Tag sequence
+    comments:
+    - This class is used for controlled vocabulary terms (e.g., His Cterm, His Nterm,
+      MBP, GST, Strep, FLAG-Tag, SUMO ...) and not the literal sequences
     from_schema: https://w3id.org/evorao/
     close_mappings:
     - wd:Q645590
@@ -3550,10 +3555,12 @@ classes:
           format
         title: sequence FASTA
         comments:
-        - In FASTA format the line before the nucleotide sequence, called the FASTA
-          definition line, must begin with a charater ('>'), followed by a unique
-          SeqID (sequence identifier). In case the sequence is made of multiple parts
-          several fasta sequences can be provided
+        - In cases where no reference sequence exists in public repositories, the
+          corresponding FASTA sequence is expected; otherwise, the reference sequence
+          is sufficient. In FASTA format the line before the nucleotide sequence,
+          called the FASTA definition line, must begin with a charater ('>'), followed
+          by a unique SeqID (sequence identifier). In case the sequence is made of
+          multiple parts several fasta sequences can be provided
         domain_of:
         - Sequence
         range: string
@@ -5892,4 +5899,4 @@ classes:
         required: false
         multivalued: false
 source_file: https://w3id.org/evorao/evorao.owl.ttl
-generation_date: '2025-09-09T11:55:40'
+generation_date: '2025-09-09T15:41:25'

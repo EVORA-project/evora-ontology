@@ -22,13 +22,13 @@ Alias: alternateName
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [CommonName](CommonName.md) | Vernacular name that is the name used in everyday language to refer to an org... |  yes  |
-| [Provider](Provider.md) | A provider of products or services, as a specific organization |  no  |
-| [Variant](Variant.md) | An organism with one or more new mutations is referred to as a “variant” of t... |  no  |
-| [VirusName](VirusName.md) | A virus vernacular name or a name that describes a group of viruses |  no  |
 | [AlternateName](AlternateName.md) | List of other names for things |  yes  |
+| [VirusName](VirusName.md) | A virus vernacular name or a name that describes a group of viruses |  no  |
+| [CommonName](CommonName.md) | Vernacular name that is the name used in everyday language to refer to an org... |  yes  |
 | [Organization](Organization.md) | A social entity established to meet needs or pursue specific goals |  yes  |
+| [Variant](Variant.md) | An organism with one or more new mutations is referred to as a “variant” of t... |  no  |
 | [ReasearchInfrastructure](ReasearchInfrastructure.md) | A research infrastructure (RI) |  no  |
+| [Provider](Provider.md) | A provider of products or services, as a specific organization |  no  |
 
 
 

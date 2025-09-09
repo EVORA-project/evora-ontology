@@ -38,7 +38,7 @@
     "interoperability"
   ],
   "id": "https://w3id.org/evorao/",
-  "version": "1.0.8979",
+  "version": "1.0.8986",
   "imports": [
     "linkml:types"
   ],
@@ -1420,7 +1420,7 @@
       "description": "Textual encoding of a biological sequence information in FASTA format",
       "title": "sequence FASTA",
       "comments": [
-        "In FASTA format the line before the nucleotide sequence, called the FASTA definition line, must begin with a charater ('>'), followed by a unique SeqID (sequence identifier). In case the sequence is made of multiple parts several fasta sequences can be provided"
+        "In cases where no reference sequence exists in public repositories, the corresponding FASTA sequence is expected; otherwise, the reference sequence is sufficient. In FASTA format the line before the nucleotide sequence, called the FASTA definition line, must begin with a charater ('>'), followed by a unique SeqID (sequence identifier). In case the sequence is made of multiple parts several fasta sequences can be provided"
       ],
       "from_schema": "https://w3id.org/evorao/",
       "slot_uri": "https://w3id.org/evorao/sequenceFasta",
@@ -5272,7 +5272,7 @@
       "description": "Textual encoding of a biological sequence information in FASTA format",
       "title": "sequence FASTA",
       "comments": [
-        "In FASTA format the line before the nucleotide sequence, called the FASTA definition line, must begin with a charater ('>'), followed by a unique SeqID (sequence identifier). In case the sequence is made of multiple parts several fasta sequences can be provided"
+        "In cases where no reference sequence exists in public repositories, the corresponding FASTA sequence is expected; otherwise, the reference sequence is sufficient. In FASTA format the line before the nucleotide sequence, called the FASTA definition line, must begin with a charater ('>'), followed by a unique SeqID (sequence identifier). In case the sequence is made of multiple parts several fasta sequences can be provided"
       ],
       "from_schema": "https://w3id.org/evorao/",
       "is_a": "sequenceFasta",
@@ -9366,6 +9366,9 @@
       "definition_uri": "https://w3id.org/evorao/TagSequence",
       "description": "The name of the DNA coding sequence or corresponding peptide/protein sequence fused to a sequence of interest, used to facilitate experimental operations such as purification, detection, localization, tracking, solubility enhancement, or selection. Applicable to both proteins and nucleic acids",
       "title": "Tag sequence",
+      "comments": [
+        "This class is used for controlled vocabulary terms (e.g., His Cterm, His Nterm, MBP, GST, Strep, FLAG-Tag, SUMO ...) and not the literal sequences"
+      ],
       "from_schema": "https://w3id.org/evorao/",
       "close_mappings": [
         "wd:Q645590",
@@ -11278,9 +11281,9 @@
   ],
   "metamodel_version": "1.7.0",
   "source_file": "evora_schema.yaml",
-  "source_file_date": "2025-09-09T10:12:49",
-  "source_file_size": 191180,
-  "generation_date": "2025-09-09T10:13:05",
+  "source_file_date": "2025-09-09T13:41:51",
+  "source_file_size": 191711,
+  "generation_date": "2025-09-09T13:42:05",
   "@type": "SchemaDefinition",
   "@context": [
     "https://w3id.org/linkml/types.context.jsonld",

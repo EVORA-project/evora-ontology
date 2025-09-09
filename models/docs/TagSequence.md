@@ -77,6 +77,10 @@ URI: [EVORAO:TagSequence](https://w3id.org/evorao/TagSequence)
 
 
 
+## Comments
+
+* This class is used for controlled vocabulary terms (e.g., His Cterm, His Nterm, MBP, GST, Strep, FLAG-Tag, SUMO ...) and not the literal sequences
+
 ## Identifier and Mapping Information
 
 
@@ -121,6 +125,9 @@ description: The name of the DNA coding sequence or corresponding peptide/protei
   such as purification, detection, localization, tracking, solubility enhancement,
   or selection. Applicable to both proteins and nucleic acids
 title: Tag sequence
+comments:
+- This class is used for controlled vocabulary terms (e.g., His Cterm, His Nterm,
+  MBP, GST, Strep, FLAG-Tag, SUMO ...) and not the literal sequences
 from_schema: https://w3id.org/evorao/
 close_mappings:
 - wd:Q645590
@@ -140,6 +147,9 @@ description: The name of the DNA coding sequence or corresponding peptide/protei
   such as purification, detection, localization, tracking, solubility enhancement,
   or selection. Applicable to both proteins and nucleic acids
 title: Tag sequence
+comments:
+- This class is used for controlled vocabulary terms (e.g., His Cterm, His Nterm,
+  MBP, GST, Strep, FLAG-Tag, SUMO ...) and not the literal sequences
 from_schema: https://w3id.org/evorao/
 close_mappings:
 - wd:Q645590

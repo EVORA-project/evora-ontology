@@ -1,7 +1,7 @@
  syntax="proto3";
  package
 // metamodel_version: 1.7.0
-// version: 1.0.8979
+// version: 1.0.8986
 // List of other names for things
 message AlternateName
  {
