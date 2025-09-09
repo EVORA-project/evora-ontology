@@ -28,18 +28,36 @@ SELECT
   ?object
 WHERE {
  GRAPH ?graph {
-  ?subject rdf:type EVORAO:NucleicAcid ;
+  ?subject rdf:type EVORAO:Protein ;
      ?predicate ?object .
   FILTER NOT EXISTS {
     ?object rdf:type ?otype .
     FILTER ( ?otype IN (
-      EVORAO:ProteinTag
+      EVORAO:TagSequence
       
       ))
   }
  }
  VALUES ?check { linkml:range }
- VALUES ?predicate { EVORAO:proteinTag  }
+ VALUES ?predicate { EVORAO:tagSequence  }
  
 }  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 

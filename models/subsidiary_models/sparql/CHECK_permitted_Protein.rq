@@ -29,7 +29,7 @@ SELECT ?g ?s ?p WHERE {
    EVORAO:sequence,
    EVORAO:relatedPdb,
    EVORAO:specialFeature,
-   EVORAO:proteinTag,
+   EVORAO:tagSequence,
    EVORAO:domain,
    EVORAO:expressedAs,
    EVORAO:inclusionBodiesType,

@@ -559,9 +559,9 @@ type Keyword struct {
 }
 
 /*
- * A DNA coding sequence or corresponding peptide/protein sequence fused to a sequence of interest, used to facilitate experimental operations such as purification, detection, localization, tracking, solubility enhancement, or selection. Applicable to both proteins and nucleic acids
+ * The name of the DNA coding sequence or corresponding peptide/protein sequence fused to a sequence of interest, used to facilitate experimental operations such as purification, detection, localization, tracking, solubility enhancement, or selection. Applicable to both proteins and nucleic acids
  */
-type ProteinTag struct {
+type TagSequence struct {
 	/*
 	 * parent types
 	 */
@@ -2214,9 +2214,9 @@ type Protein struct {
 	 */
 	SpecialFeature []SpecialFeature `json:"specialFeature"`
 	/*
-	 * A DNA coding sequence or corresponding peptide/protein sequence fused to a sequence of interest, used to facilitate experimental operations such as purification, detection, localization, tracking, solubility enhancement, or selection. Applicable to both proteins and nucleic acids
+	 * The name of the DNA coding sequence or corresponding peptide/protein sequence fused to a sequence of interest, used to facilitate experimental operations such as purification, detection, localization, tracking, solubility enhancement, or selection. Applicable to both proteins and nucleic acids
 	 */
-	ProteinTag []ProteinTag `json:"proteinTag"`
+	TagSequence []TagSequence `json:"tagSequence"`
 	/*
 	 * A distinct structural and functional unit within the protein, often capable of independent folding and stability, which contributes to the protein's overall function
 	 */
@@ -2426,9 +2426,9 @@ type NucleicAcid struct {
 	 */
 	PlasmidSelection []PlasmidSelection `json:"plasmidSelection"`
 	/*
-	 * A DNA coding sequence or corresponding peptide/protein sequence fused to a sequence of interest, used to facilitate experimental operations such as purification, detection, localization, tracking, solubility enhancement, or selection. Applicable to both proteins and nucleic acids
+	 * The name of the DNA coding sequence or corresponding peptide/protein sequence fused to a sequence of interest, used to facilitate experimental operations such as purification, detection, localization, tracking, solubility enhancement, or selection. Applicable to both proteins and nucleic acids
 	 */
-	ProteinTag ProteinTag `json:"proteinTag"`
+	TagSequence TagSequence `json:"tagSequence"`
 	/*
 	 * The specific region encompassed in the product
 	 */

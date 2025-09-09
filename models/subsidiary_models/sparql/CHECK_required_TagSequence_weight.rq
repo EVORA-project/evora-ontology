@@ -26,11 +26,11 @@ SELECT
   ?subject
   ?predicate WHERE {
  GRAPH ?graph {
-  ?subject rdf:type EVORAO:ProteinTag .
-  FILTER NOT EXISTS { ?subject  EVORAO:inVocabulary ?o  }
+  ?subject rdf:type EVORAO:TagSequence .
+  FILTER NOT EXISTS { ?subject  EVORAO:weight ?o  }
  }
  VALUES ?check { linkml:required }
- VALUES ?predicate { EVORAO:inVocabulary }
+ VALUES ?predicate { EVORAO:weight }
  
 }  
 

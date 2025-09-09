@@ -1,7 +1,7 @@
  syntax="proto3";
  package
 // metamodel_version: 1.7.0
-// version: 1.0.8966
+// version: 1.0.8979
 // List of other names for things
 message AlternateName
  {
@@ -555,7 +555,7 @@ message NucleicAcid
   boolean clonedNucleicAcid = 0
   expressionVector clonedIntoPlasmid = 0
  repeated  plasmidSelection plasmidSelection = 0
-  proteinTag proteinTag = 0
+  tagSequence tagSequence = 0
   string regionEncompassedInThisProduct = 0
   boolean mutationObserved = 0
   string observedMutations = 0
@@ -794,7 +794,7 @@ message Protein
  repeated  sequence sequence = 0
  repeated  pdbReference relatedPdb = 0
  repeated  specialFeature specialFeature = 0
- repeated  proteinTag proteinTag = 0
+ repeated  tagSequence tagSequence = 0
  repeated  string domain = 0
  repeated  string expressedAs = 0
  repeated  string inclusionBodiesType = 0
@@ -804,14 +804,6 @@ message Protein
  repeated  string proteinPurification = 0
  repeated  string tagStatusOfTheSolubilizedProtein = 0
  repeated  string typeOfFunctionalCharacterization = 0
- }
-// A DNA coding sequence or corresponding peptide/protein sequence fused to a sequence of interest, used to facilitate experimental operations such as purification, detection, localization, tracking, solubility enhancement, or selection. Applicable to both proteins and nucleic acids
-message ProteinTag
- {
-  string title = 0
-  string description = 0
-  integer weight = 0
-  vocabulary inVocabulary = 0
  }
 // The protozoan as a biological material
 message Protozoan
@@ -977,6 +969,14 @@ message SyntheticPartOrigin
   boolean accessToPhysicalGeneticResource = 0
   boolean modificationsFromTheReferenceSequences = 0
   string descriptionOfModificationsMadeFromTheReferenceSequences = 0
+ }
+// The name of the DNA coding sequence or corresponding peptide/protein sequence fused to a sequence of interest, used to facilitate experimental operations such as purification, detection, localization, tracking, solubility enhancement, or selection. Applicable to both proteins and nucleic acids
+message TagSequence
+ {
+  string title = 0
+  string description = 0
+  integer weight = 0
+  vocabulary inVocabulary = 0
  }
 // Conceptual entity that groups one or more populations of an organism or organisms, as seen by taxonomists, to form a unit
 message Taxon

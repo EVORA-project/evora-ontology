@@ -31,7 +31,7 @@ SELECT ?g ?s ?p WHERE {
    EVORAO:clonedNucleicAcid,
    EVORAO:clonedIntoPlasmid,
    EVORAO:plasmidSelection,
-   EVORAO:proteinTag,
+   EVORAO:tagSequence,
    EVORAO:regionEncompassedInThisProduct,
    EVORAO:mutationObserved,
    EVORAO:observedMutations,

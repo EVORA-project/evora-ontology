@@ -20,19 +20,19 @@ PREFIX IAO: <http://purl.obolibrary.org/obo/IAO_>
 PREFIX EVORAO: <https://w3id.org/evorao/>
 PREFIX linkml: <https://w3id.org/linkml/>
 
-SELECT ?g ?s ?p WHERE {
- GRAPH ?g {
-  ?s rdf:type EVORAO:ProteinTag ;
-     ?p ?o .
-  FILTER ( ?p NOT IN (
-   dct:title,
-   dct:description,
-   EVORAO:weight,
-   EVORAO:inVocabulary,
-   rdf:type ))
+SELECT
+  ?check
+  ?graph
+  ?subject
+  ?predicate WHERE {
+ GRAPH ?graph {
+  ?subject rdf:type EVORAO:NucleicAcid .
+  FILTER NOT EXISTS { ?subject  EVORAO:tagSequence ?o  }
  }
+ VALUES ?check { linkml:required }
+ VALUES ?predicate { EVORAO:tagSequence }
  
-} 
+}  
 
 
 

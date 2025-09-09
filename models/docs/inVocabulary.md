@@ -22,31 +22,31 @@ Alias: inVocabulary
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [CommonName](CommonName.md) | Vernacular name that is the name used in everyday language to refer to an org... |  no  |
-| [Journal](Journal.md) | Periodical journal publishing scientific research |  no  |
-| [GeographicalOrigin](GeographicalOrigin.md) | The specific location or region where a physical item, originates or is natur... |  no  |
-| [Taxon](Taxon.md) | Conceptual entity that groups one or more populations of an organism or organ... |  no  |
-| [Keyword](Keyword.md) | A term or phrase used to tag and categorize content |  no  |
-| [PlasmidSelection](PlasmidSelection.md) | The process of identifying cells that have successfully incorporated a plasmi... |  no  |
-| [SpecialFeature](SpecialFeature.md) | Distinctive attributes of a product that set it apart from other similar item... |  no  |
-| [RiskGroup](RiskGroup.md) | Risk group classification guides initial handling of biological agents in lab... |  no  |
-| [Country](Country.md) | The country as of ISO3166 |  no  |
-| [ProteinTag](ProteinTag.md) | A DNA coding sequence or corresponding peptide/protein sequence fused to a se... |  no  |
-| [AlternateName](AlternateName.md) | List of other names for things |  no  |
-| [TransmissionMethod](TransmissionMethod.md) | The process by which the pathogen spreads between hosts |  no  |
-| [IsolationHost](IsolationHost.md) | Host organism from which the pathogen was isolated |  no  |
 | [Term](Term.md) | Word or phrase from a specialized area of knowledge |  yes  |
-| [PdbReference](PdbReference.md) | Identifier for 3D structural data as per the PDB (Protein Data Bank) database |  no  |
-| [IataClassification](IataClassification.md) | The corresponding International Air Transport Association (IATA)'s category f... |  no  |
-| [Doi](Doi.md) | A unique string identifier assigned to a digital object, providing a permanen... |  no  |
-| [IplcOrigin](IplcOrigin.md) | The IPLC area (Indigenous People and Local Communities) from which a physical... |  no  |
 | [Variant](Variant.md) | An organism with one or more new mutations is referred to as a “variant” of t... |  no  |
-| [VirusName](VirusName.md) | A virus vernacular name or a name that describes a group of viruses |  no  |
+| [Journal](Journal.md) | Periodical journal publishing scientific research |  no  |
+| [AlternateName](AlternateName.md) | List of other names for things |  no  |
+| [IplcOrigin](IplcOrigin.md) | The IPLC area (Indigenous People and Local Communities) from which a physical... |  no  |
+| [TransmissionMethod](TransmissionMethod.md) | The process by which the pathogen spreads between hosts |  no  |
+| [PdbReference](PdbReference.md) | Identifier for 3D structural data as per the PDB (Protein Data Bank) database |  no  |
+| [ExpressionVector](ExpressionVector.md) | A reference to an expression vector plasmid, typically embedding a resistance... |  no  |
+| [ProductCategory](ProductCategory.md) | A term used to classify a group of products that share common characteristics... |  no  |
+| [GeographicalOrigin](GeographicalOrigin.md) | The specific location or region where a physical item, originates or is natur... |  no  |
+| [CommonName](CommonName.md) | Vernacular name that is the name used in everyday language to refer to an org... |  no  |
+| [PlasmidSelection](PlasmidSelection.md) | The process of identifying cells that have successfully incorporated a plasmi... |  no  |
 | [TaxonomicRank](TaxonomicRank.md) | The possible taxonomic ranks and their description |  no  |
+| [VirusName](VirusName.md) | A virus vernacular name or a name that describes a group of viruses |  no  |
+| [Country](Country.md) | The country as of ISO3166 |  no  |
+| [Taxon](Taxon.md) | Conceptual entity that groups one or more populations of an organism or organ... |  no  |
+| [Doi](Doi.md) | A unique string identifier assigned to a digital object, providing a permanen... |  no  |
+| [IsolationHost](IsolationHost.md) | Host organism from which the pathogen was isolated |  no  |
+| [RiskGroup](RiskGroup.md) | Risk group classification guides initial handling of biological agents in lab... |  no  |
+| [SpecialFeature](SpecialFeature.md) | Distinctive attributes of a product that set it apart from other similar item... |  no  |
 | [PropagationHost](PropagationHost.md) | The organism used to grow and multiply the pathogen under controlled conditio... |  no  |
 | [ProductionCellLine](ProductionCellLine.md) | A population of cells that originates from a primary culture, adapted to grow... |  no  |
-| [ProductCategory](ProductCategory.md) | A term used to classify a group of products that share common characteristics... |  no  |
-| [ExpressionVector](ExpressionVector.md) | A reference to an expression vector plasmid, typically embedding a resistance... |  no  |
+| [Keyword](Keyword.md) | A term or phrase used to tag and categorize content |  no  |
+| [IataClassification](IataClassification.md) | The corresponding International Air Transport Association (IATA)'s category f... |  no  |
+| [TagSequence](TagSequence.md) | The name of the DNA coding sequence or corresponding peptide/protein sequence... |  no  |
 
 
 

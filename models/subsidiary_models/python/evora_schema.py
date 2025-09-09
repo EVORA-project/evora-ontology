@@ -1,5 +1,5 @@
 # Auto generated from evora_schema.yaml by pythongen.py version: 0.0.1
-# Generation date: 2025-09-05T08:14:21
+# Generation date: 2025-09-09T10:13:10
 # Schema: EVORAO
 #
 # id: https://w3id.org/evorao/
@@ -60,7 +60,7 @@ from linkml_runtime.linkml_model.types import Boolean, Datetime, Integer, String
 from linkml_runtime.utils.metamodelcore import Bool, URI, XSDDateTime
 
 metamodel_version = "1.7.0"
-version = "1.0.8966"
+version = "1.0.8979"
 
 # Namespaces
 EVORAO = CurieNamespace('EVORAO', 'https://w3id.org/evorao/')
@@ -667,18 +667,18 @@ class Keyword(Term):
     weight: int = 0
 
 @dataclass(repr=False)
-class ProteinTag(Term):
+class TagSequence(Term):
     """
-    A DNA coding sequence or corresponding peptide/protein sequence fused to a sequence of interest, used to
-    facilitate experimental operations such as purification, detection, localization, tracking, solubility
+    The name of the DNA coding sequence or corresponding peptide/protein sequence fused to a sequence of interest,
+    used to facilitate experimental operations such as purification, detection, localization, tracking, solubility
     enhancement, or selection. Applicable to both proteins and nucleic acids
     """
     _inherited_slots: ClassVar[list[str]] = []
 
-    class_class_uri: ClassVar[URIRef] = EVORAO["ProteinTag"]
-    class_class_curie: ClassVar[str] = "EVORAO:ProteinTag"
-    class_name: ClassVar[str] = "ProteinTag"
-    class_model_uri: ClassVar[URIRef] = EVORAO.ProteinTag
+    class_class_uri: ClassVar[URIRef] = EVORAO["TagSequence"]
+    class_class_curie: ClassVar[str] = "EVORAO:TagSequence"
+    class_name: ClassVar[str] = "TagSequence"
+    class_model_uri: ClassVar[URIRef] = EVORAO.TagSequence
 
     title: str = None
     inVocabulary: Union[dict, Vocabulary] = None
@@ -1776,7 +1776,7 @@ class Protein(Product):
     storageConditions: str = None
     biologicalMaterialOrigin: Union[dict, BiologicalMaterialOrigin] = None
     sequence: Union[Union[dict, Sequence], list[Union[dict, Sequence]]] = None
-    proteinTag: Union[Union[dict, ProteinTag], list[Union[dict, ProteinTag]]] = None
+    tagSequence: Union[Union[dict, TagSequence], list[Union[dict, TagSequence]]] = None
     unitCost: str = "on request"
     availability: str = "on request"
     relatedPdb: Optional[Union[Union[dict, PdbReference], list[Union[dict, PdbReference]]]] = empty_list()
@@ -1803,9 +1803,9 @@ class Protein(Product):
             self.sequence = [self.sequence] if self.sequence is not None else []
         self.sequence = [v if isinstance(v, Sequence) else Sequence(**as_dict(v)) for v in self.sequence]
 
-        if self._is_empty(self.proteinTag):
-            self.MissingRequiredField("proteinTag")
-        self._normalize_inlined_as_dict(slot_name="proteinTag", slot_type=ProteinTag, key_name="title", keyed=False)
+        if self._is_empty(self.tagSequence):
+            self.MissingRequiredField("tagSequence")
+        self._normalize_inlined_as_dict(slot_name="tagSequence", slot_type=TagSequence, key_name="title", keyed=False)
 
         self._normalize_inlined_as_dict(slot_name="relatedPdb", slot_type=PdbReference, key_name="title", keyed=False)
 
@@ -1879,7 +1879,7 @@ class NucleicAcid(Product):
     biologicalMaterialOrigin: Union[dict, BiologicalMaterialOrigin] = None
     sequence: Union[Union[dict, Sequence], list[Union[dict, Sequence]]] = None
     clonedNucleicAcid: Union[bool, Bool] = None
-    proteinTag: Union[dict, ProteinTag] = None
+    tagSequence: Union[dict, TagSequence] = None
     regionEncompassedInThisProduct: str = None
     mutationObserved: Union[bool, Bool] = None
     sequencing: str = None
@@ -1910,10 +1910,10 @@ class NucleicAcid(Product):
         if not isinstance(self.clonedNucleicAcid, Bool):
             self.clonedNucleicAcid = Bool(self.clonedNucleicAcid)
 
-        if self._is_empty(self.proteinTag):
-            self.MissingRequiredField("proteinTag")
-        if not isinstance(self.proteinTag, ProteinTag):
-            self.proteinTag = ProteinTag(**as_dict(self.proteinTag))
+        if self._is_empty(self.tagSequence):
+            self.MissingRequiredField("tagSequence")
+        if not isinstance(self.tagSequence, TagSequence):
+            self.tagSequence = TagSequence(**as_dict(self.tagSequence))
 
         if self._is_empty(self.regionEncompassedInThisProduct):
             self.MissingRequiredField("regionEncompassedInThisProduct")
@@ -3110,8 +3110,8 @@ slots.relatedPdb = Slot(uri=EVORAO.relatedPdb, name="relatedPdb", curie=EVORAO.c
 slots.specialFeature = Slot(uri=EVORAO.specialFeature, name="specialFeature", curie=EVORAO.curie('specialFeature'),
                    model_uri=EVORAO.specialFeature, domain=None, range=Optional[Union[Union[dict, SpecialFeature], list[Union[dict, SpecialFeature]]]])
 
-slots.proteinTag = Slot(uri=EVORAO.proteinTag, name="proteinTag", curie=EVORAO.curie('proteinTag'),
-                   model_uri=EVORAO.proteinTag, domain=None, range=Union[dict, ProteinTag])
+slots.tagSequence = Slot(uri=EVORAO.tagSequence, name="tagSequence", curie=EVORAO.curie('tagSequence'),
+                   model_uri=EVORAO.tagSequence, domain=None, range=Union[dict, TagSequence])
 
 slots.domain = Slot(uri=EVORAO.domain, name="domain", curie=EVORAO.curie('domain'),
                    model_uri=EVORAO.domain, domain=None, range=Optional[Union[str, list[str]]])
@@ -3725,8 +3725,8 @@ slots.Protein_relatedPdb = Slot(uri=EVORAO.relatedPdb, name="Protein_relatedPdb"
 slots.Protein_specialFeature = Slot(uri=EVORAO.specialFeature, name="Protein_specialFeature", curie=EVORAO.curie('specialFeature'),
                    model_uri=EVORAO.Protein_specialFeature, domain=Protein, range=Optional[Union[Union[dict, SpecialFeature], list[Union[dict, SpecialFeature]]]])
 
-slots.Protein_proteinTag = Slot(uri=EVORAO.proteinTag, name="Protein_proteinTag", curie=EVORAO.curie('proteinTag'),
-                   model_uri=EVORAO.Protein_proteinTag, domain=Protein, range=Union[Union[dict, ProteinTag], list[Union[dict, ProteinTag]]])
+slots.Protein_tagSequence = Slot(uri=EVORAO.tagSequence, name="Protein_tagSequence", curie=EVORAO.curie('tagSequence'),
+                   model_uri=EVORAO.Protein_tagSequence, domain=Protein, range=Union[Union[dict, TagSequence], list[Union[dict, TagSequence]]])
 
 slots.Protein_domain = Slot(uri=EVORAO.domain, name="Protein_domain", curie=EVORAO.curie('domain'),
                    model_uri=EVORAO.Protein_domain, domain=Protein, range=Optional[Union[str, list[str]]])
@@ -3773,8 +3773,8 @@ slots.NucleicAcid_clonedIntoPlasmid = Slot(uri=EVORAO.clonedIntoPlasmid, name="N
 slots.NucleicAcid_plasmidSelection = Slot(uri=EVORAO.plasmidSelection, name="NucleicAcid_plasmidSelection", curie=EVORAO.curie('plasmidSelection'),
                    model_uri=EVORAO.NucleicAcid_plasmidSelection, domain=NucleicAcid, range=Optional[Union[Union[dict, PlasmidSelection], list[Union[dict, PlasmidSelection]]]])
 
-slots.NucleicAcid_proteinTag = Slot(uri=EVORAO.proteinTag, name="NucleicAcid_proteinTag", curie=EVORAO.curie('proteinTag'),
-                   model_uri=EVORAO.NucleicAcid_proteinTag, domain=NucleicAcid, range=Union[dict, ProteinTag])
+slots.NucleicAcid_tagSequence = Slot(uri=EVORAO.tagSequence, name="NucleicAcid_tagSequence", curie=EVORAO.curie('tagSequence'),
+                   model_uri=EVORAO.NucleicAcid_tagSequence, domain=NucleicAcid, range=Union[dict, TagSequence])
 
 slots.NucleicAcid_regionEncompassedInThisProduct = Slot(uri=EVORAO.regionEncompassedInThisProduct, name="NucleicAcid_regionEncompassedInThisProduct", curie=EVORAO.curie('regionEncompassedInThisProduct'),
                    model_uri=EVORAO.NucleicAcid_regionEncompassedInThisProduct, domain=NucleicAcid, range=str)

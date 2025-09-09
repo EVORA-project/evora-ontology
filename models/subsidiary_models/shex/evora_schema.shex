@@ -1,5 +1,5 @@
 # metamodel_version: 1.7.0
-# version: 1.0.8966
+# version: 1.0.8979
 BASE <https://w3id.org/evorao/>
 PREFIX dcat: <http://www.w3.org/ns/dcat#>
 PREFIX foaf: <http://xmlns.com/foaf/0.1/>
@@ -454,7 +454,7 @@ linkml:Sparqlpath xsd:string
           <clonedNucleicAcid> @linkml:Boolean ;
           <clonedIntoPlasmid> @<ExpressionVector> ? ;
           <plasmidSelection> @<PlasmidSelection> * ;
-          <proteinTag> @<ProteinTag> ;
+          <tagSequence> @<TagSequence> ;
           <regionEncompassedInThisProduct> @linkml:String ;
           <mutationObserved> @linkml:Boolean ;
           <observedMutations> @linkml:String ? ;
@@ -669,7 +669,7 @@ linkml:Sparqlpath xsd:string
           <sequence> @<Sequence> + ;
           <relatedPdb> @<PdbReference> * ;
           <specialFeature> @<SpecialFeature> * ;
-          <proteinTag> @<ProteinTag> + ;
+          <tagSequence> @<TagSequence> + ;
           <domain> @linkml:String * ;
           <expressedAs> @linkml:String * ;
           <inclusionBodiesType> @linkml:String * ;
@@ -681,14 +681,6 @@ linkml:Sparqlpath xsd:string
           <typeOfFunctionalCharacterization> @linkml:String *
        ) ;
        rdf:type [ <Protein> ] ?
-    )
-}
-
-<ProteinTag> CLOSED {
-    (  $<ProteinTag_tes> (  &<Term_tes> ;
-          rdf:type [ <Term> ] ?
-       ) ;
-       rdf:type [ <ProteinTag> ] ?
     )
 }
 
@@ -809,6 +801,14 @@ linkml:Sparqlpath xsd:string
     )
 }
 
+<TagSequence> CLOSED {
+    (  $<TagSequence_tes> (  &<Term_tes> ;
+          rdf:type [ <Term> ] ?
+       ) ;
+       rdf:type [ <TagSequence> ] ?
+    )
+}
+
 <Taxon> CLOSED {
     (  $<Taxon_tes> (  &<Term_tes> ;
           rdf:type [ <Term> ] ? ;
@@ -850,7 +850,7 @@ linkml:Sparqlpath xsd:string
 <Term>  (
     @<AlternateName> OR @<CommonName> OR @<Country> OR @<Doi> OR @<ExpressionVector> OR @<GeographicalOrigin> OR
     @<IataClassification> OR @<IsolationHost> OR @<Journal> OR @<Keyword> OR @<PdbReference> OR @<PlasmidSelection> OR
-    @<ProductCategory> OR @<ProductionCellLine> OR @<PropagationHost> OR @<ProteinTag> OR @<RiskGroup> OR @<SpecialFeature> OR
+    @<ProductCategory> OR @<ProductionCellLine> OR @<PropagationHost> OR @<RiskGroup> OR @<SpecialFeature> OR @<TagSequence> OR
     @<Taxon> OR @<TaxonomicRank> OR @<TransmissionMethod>
 )
 

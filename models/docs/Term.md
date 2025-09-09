@@ -40,8 +40,8 @@ URI: [EVORAO:Term](https://w3id.org/evorao/Term)
         click PdbReference href "../PdbReference"
       Term <|-- Keyword
         click Keyword href "../Keyword"
-      Term <|-- ProteinTag
-        click ProteinTag href "../ProteinTag"
+      Term <|-- TagSequence
+        click TagSequence href "../TagSequence"
       Term <|-- SpecialFeature
         click SpecialFeature href "../SpecialFeature"
       Term <|-- ExpressionVector
@@ -102,7 +102,7 @@ URI: [EVORAO:Term](https://w3id.org/evorao/Term)
         * [Journal](Journal.md)
         * [PdbReference](PdbReference.md)
         * [Keyword](Keyword.md)
-        * [ProteinTag](ProteinTag.md)
+        * [TagSequence](TagSequence.md)
         * [SpecialFeature](SpecialFeature.md)
         * [ExpressionVector](ExpressionVector.md)
         * [PlasmidSelection](PlasmidSelection.md)

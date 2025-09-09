@@ -1,15 +1,15 @@
 
 
-# Class: Protein tag (ProteinTag) 
+# Class: Tag sequence (TagSequence) 
 
 
-_A DNA coding sequence or corresponding peptide/protein sequence fused to a sequence of interest, used to facilitate experimental operations such as purification, detection, localization, tracking, solubility enhancement, or selection. Applicable to both proteins and nucleic acids_
+_The name of the DNA coding sequence or corresponding peptide/protein sequence fused to a sequence of interest, used to facilitate experimental operations such as purification, detection, localization, tracking, solubility enhancement, or selection. Applicable to both proteins and nucleic acids_
 
 
 
 
 
-URI: [EVORAO:ProteinTag](https://w3id.org/evorao/ProteinTag)
+URI: [EVORAO:TagSequence](https://w3id.org/evorao/TagSequence)
 
 
 
@@ -18,25 +18,25 @@ URI: [EVORAO:ProteinTag](https://w3id.org/evorao/ProteinTag)
 
 ```mermaid
  classDiagram
-    class ProteinTag
-    click ProteinTag href "../ProteinTag"
-      Term <|-- ProteinTag
+    class TagSequence
+    click TagSequence href "../TagSequence"
+      Term <|-- TagSequence
         click Term href "../Term"
       
-      ProteinTag : description
+      TagSequence : description
         
-      ProteinTag : inVocabulary
+      TagSequence : inVocabulary
         
           
     
     
-    ProteinTag --> "1" Vocabulary : inVocabulary
+    TagSequence --> "1" Vocabulary : inVocabulary
     click Vocabulary href "../Vocabulary"
 
         
-      ProteinTag : title
+      TagSequence : title
         
-      ProteinTag : weight
+      TagSequence : weight
         
       
 ```
@@ -48,7 +48,7 @@ URI: [EVORAO:ProteinTag](https://w3id.org/evorao/ProteinTag)
 ## Inheritance
 * [Resource](Resource.md)
     * [Term](Term.md)
-        * **ProteinTag**
+        * **TagSequence**
 
 
 
@@ -69,8 +69,8 @@ URI: [EVORAO:ProteinTag](https://w3id.org/evorao/ProteinTag)
 
 | used by | used in | type | used |
 | ---  | --- | --- | --- |
-| [Protein](Protein.md) | [proteinTag](proteinTag.md) | range | [ProteinTag](ProteinTag.md) |
-| [NucleicAcid](NucleicAcid.md) | [proteinTag](proteinTag.md) | range | [ProteinTag](ProteinTag.md) |
+| [Protein](Protein.md) | [tagSequence](tagSequence.md) | range | [TagSequence](TagSequence.md) |
+| [NucleicAcid](NucleicAcid.md) | [tagSequence](tagSequence.md) | range | [TagSequence](TagSequence.md) |
 
 
 
@@ -97,8 +97,8 @@ URI: [EVORAO:ProteinTag](https://w3id.org/evorao/ProteinTag)
 
 | Mapping Type | Mapped Value |
 | ---  | ---  |
-| self | EVORAO:ProteinTag |
-| native | EVORAO:ProteinTag |
+| self | EVORAO:TagSequence |
+| native | EVORAO:TagSequence |
 | close | wd:Q645590, wd:Q645590 |
 
 
@@ -115,12 +115,12 @@ URI: [EVORAO:ProteinTag](https://w3id.org/evorao/ProteinTag)
 
 <details>
 ```yaml
-name: ProteinTag
-description: A DNA coding sequence or corresponding peptide/protein sequence fused
-  to a sequence of interest, used to facilitate experimental operations such as purification,
-  detection, localization, tracking, solubility enhancement, or selection. Applicable
-  to both proteins and nucleic acids
-title: Protein tag
+name: TagSequence
+description: The name of the DNA coding sequence or corresponding peptide/protein
+  sequence fused to a sequence of interest, used to facilitate experimental operations
+  such as purification, detection, localization, tracking, solubility enhancement,
+  or selection. Applicable to both proteins and nucleic acids
+title: Tag sequence
 from_schema: https://w3id.org/evorao/
 close_mappings:
 - wd:Q645590
@@ -134,12 +134,12 @@ is_a: Term
 
 <details>
 ```yaml
-name: ProteinTag
-description: A DNA coding sequence or corresponding peptide/protein sequence fused
-  to a sequence of interest, used to facilitate experimental operations such as purification,
-  detection, localization, tracking, solubility enhancement, or selection. Applicable
-  to both proteins and nucleic acids
-title: Protein tag
+name: TagSequence
+description: The name of the DNA coding sequence or corresponding peptide/protein
+  sequence fused to a sequence of interest, used to facilitate experimental operations
+  such as purification, detection, localization, tracking, solubility enhancement,
+  or selection. Applicable to both proteins and nucleic acids
+title: Tag sequence
 from_schema: https://w3id.org/evorao/
 close_mappings:
 - wd:Q645590
@@ -164,7 +164,7 @@ attributes:
     rank: 1000
     slot_uri: dct:title
     alias: title
-    owner: ProteinTag
+    owner: TagSequence
     domain_of:
     - Term
     - Dataset
@@ -193,7 +193,7 @@ attributes:
     rank: 1000
     slot_uri: dct:description
     alias: description
-    owner: ProteinTag
+    owner: TagSequence
     domain_of:
     - Term
     - Dataset
@@ -223,7 +223,7 @@ attributes:
     rank: 1000
     ifabsent: int(0)
     alias: weight
-    owner: ProteinTag
+    owner: TagSequence
     domain_of:
     - Term
     - DataProvider
@@ -239,7 +239,7 @@ attributes:
     - wdp:P972
     rank: 1000
     alias: inVocabulary
-    owner: ProteinTag
+    owner: TagSequence
     domain_of:
     - Term
     range: Vocabulary

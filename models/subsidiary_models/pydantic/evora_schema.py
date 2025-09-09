@@ -27,7 +27,7 @@ from pydantic import (
 
 
 metamodel_version = "None"
-version = "1.0.8966"
+version = "1.0.8979"
 
 
 class ConfiguredBaseModel(BaseModel):
@@ -99,7 +99,7 @@ linkml_meta = LinkMLMeta({'comments': ['EVORAO is an ontology for standardized m
                     'pathogens. EVORAO is compatible with DCAT, making it '
                     'well-suited for efficiently cataloguing pathogen collections '
                     'and related resources.',
-     'generation_date': '2025-09-05T10:13:34',
+     'generation_date': '2025-09-09T11:55:40',
      'id': 'https://w3id.org/evorao/',
      'imports': ['linkml:types'],
      'in_language': 'en',
@@ -1703,13 +1703,13 @@ class Keyword(Term):
     inVocabulary: Vocabulary = Field(default=..., title="in Vocabulary", description="""Terms belong to a specific vocabulary""", json_schema_extra = { "linkml_meta": {'alias': 'inVocabulary', 'close_mappings': ['wdp:P972'], 'domain_of': ['Term']} })
 
 
-class ProteinTag(Term):
+class TagSequence(Term):
     """
-    A DNA coding sequence or corresponding peptide/protein sequence fused to a sequence of interest, used to facilitate experimental operations such as purification, detection, localization, tracking, solubility enhancement, or selection. Applicable to both proteins and nucleic acids
+    The name of the DNA coding sequence or corresponding peptide/protein sequence fused to a sequence of interest, used to facilitate experimental operations such as purification, detection, localization, tracking, solubility enhancement, or selection. Applicable to both proteins and nucleic acids
     """
     linkml_meta: ClassVar[LinkMLMeta] = LinkMLMeta({'close_mappings': ['wd:Q645590', 'wd:Q645590'],
          'from_schema': 'https://w3id.org/evorao/',
-         'title': 'Protein tag'})
+         'title': 'Tag sequence'})
 
     title: str = Field(default=..., title="title", description="""A name given to the resource""", json_schema_extra = { "linkml_meta": {'alias': 'title',
          'close_mappings': ['rdfs:label', 'schema:name'],
@@ -4993,22 +4993,6 @@ class Protein(Product):
                                                 'range': 'string',
                                                 'required': False,
                                                 'title': 'protein purification'},
-                        'proteinTag': {'description': 'A DNA coding sequence or '
-                                                      'corresponding peptide/protein '
-                                                      'sequence fused to a sequence of '
-                                                      'interest, used to facilitate '
-                                                      'experimental operations such as '
-                                                      'purification, detection, '
-                                                      'localization, tracking, '
-                                                      'solubility enhancement, or '
-                                                      'selection. Applicable to both '
-                                                      'proteins and nucleic acids',
-                                       'domain_of': ['Protein', 'NucleicAcid'],
-                                       'multivalued': True,
-                                       'name': 'proteinTag',
-                                       'range': 'ProteinTag',
-                                       'required': False,
-                                       'title': 'protein tag'},
                         'relatedPdb': {'close_mappings': ['wdp:P638'],
                                        'description': 'Identifier for 3D structural '
                                                       'data as per the PDB (Protein '
@@ -5043,6 +5027,23 @@ class Protein(Product):
                                            'range': 'SpecialFeature',
                                            'required': False,
                                            'title': 'special feature'},
+                        'tagSequence': {'description': 'The name of the DNA coding '
+                                                       'sequence or corresponding '
+                                                       'peptide/protein sequence fused '
+                                                       'to a sequence of interest, '
+                                                       'used to facilitate '
+                                                       'experimental operations such '
+                                                       'as purification, detection, '
+                                                       'localization, tracking, '
+                                                       'solubility enhancement, or '
+                                                       'selection. Applicable to both '
+                                                       'proteins and nucleic acids',
+                                        'domain_of': ['Protein', 'NucleicAcid'],
+                                        'multivalued': True,
+                                        'name': 'tagSequence',
+                                        'range': 'TagSequence',
+                                        'required': False,
+                                        'title': 'tag sequence'},
                         'tagStatusOfTheSolubilizedProtein': {'description': 'Indicates '
                                                                             'the '
                                                                             'presence '
@@ -5147,7 +5148,7 @@ class Protein(Product):
          'close_mappings': ['wdp:P638'],
          'domain_of': ['Protein']} })
     specialFeature: Optional[list[SpecialFeature]] = Field(default=None, title="special feature", description="""Distinctive attributes of a product that set it apart from other similar items e.g., Reference strain, Vaccinal strain, Antiviral resistant strain ...""", json_schema_extra = { "linkml_meta": {'alias': 'specialFeature', 'domain_of': ['Protein']} })
-    proteinTag: Optional[list[ProteinTag]] = Field(default=None, title="protein tag", description="""A DNA coding sequence or corresponding peptide/protein sequence fused to a sequence of interest, used to facilitate experimental operations such as purification, detection, localization, tracking, solubility enhancement, or selection. Applicable to both proteins and nucleic acids""", json_schema_extra = { "linkml_meta": {'alias': 'proteinTag', 'domain_of': ['Protein', 'NucleicAcid']} })
+    tagSequence: Optional[list[TagSequence]] = Field(default=None, title="tag sequence", description="""The name of the DNA coding sequence or corresponding peptide/protein sequence fused to a sequence of interest, used to facilitate experimental operations such as purification, detection, localization, tracking, solubility enhancement, or selection. Applicable to both proteins and nucleic acids""", json_schema_extra = { "linkml_meta": {'alias': 'tagSequence', 'domain_of': ['Protein', 'NucleicAcid']} })
     domain: Optional[list[str]] = Field(default=None, title="domain", description="""A distinct structural and functional unit within the protein, often capable of independent folding and stability, which contributes to the protein's overall function""", json_schema_extra = { "linkml_meta": {'alias': 'domain', 'domain_of': ['Protein']} })
     expressedAs: Optional[list[Literal["Soluble", "Inclusion bodies"]]] = Field(default=None, title="expressed as", description="""Refers to the form in which the protein is produced and manifested in a biological system. Possible values include 'Soluble' (proteins that are dissolved in the cellular or extracellular fluid) and 'Inclusion bodies' (aggregated proteins that are insoluble and form within the cell)""", json_schema_extra = { "linkml_meta": {'alias': 'expressedAs',
          'domain_of': ['Protein'],
@@ -5431,22 +5432,6 @@ class NucleicAcid(Product):
                                              'recommended': True,
                                              'required': False,
                                              'title': 'plasmid selection'},
-                        'proteinTag': {'description': 'A DNA coding sequence or '
-                                                      'corresponding peptide/protein '
-                                                      'sequence fused to a sequence of '
-                                                      'interest, used to facilitate '
-                                                      'experimental operations such as '
-                                                      'purification, detection, '
-                                                      'localization, tracking, '
-                                                      'solubility enhancement, or '
-                                                      'selection. Applicable to both '
-                                                      'proteins and nucleic acids',
-                                       'domain_of': ['NucleicAcid', 'Protein'],
-                                       'multivalued': False,
-                                       'name': 'proteinTag',
-                                       'range': 'ProteinTag',
-                                       'required': True,
-                                       'title': 'protein tag'},
                         'regionEncompassedInThisProduct': {'description': 'The '
                                                                           'specific '
                                                                           'region '
@@ -5504,6 +5489,23 @@ class NucleicAcid(Product):
                                        'range': 'string',
                                        'required': True,
                                        'title': 'sequencing'},
+                        'tagSequence': {'description': 'The name of the DNA coding '
+                                                       'sequence or corresponding '
+                                                       'peptide/protein sequence fused '
+                                                       'to a sequence of interest, '
+                                                       'used to facilitate '
+                                                       'experimental operations such '
+                                                       'as purification, detection, '
+                                                       'localization, tracking, '
+                                                       'solubility enhancement, or '
+                                                       'selection. Applicable to both '
+                                                       'proteins and nucleic acids',
+                                        'domain_of': ['NucleicAcid', 'Protein'],
+                                        'multivalued': False,
+                                        'name': 'tagSequence',
+                                        'range': 'TagSequence',
+                                        'required': True,
+                                        'title': 'tag sequence'},
                         'titer': {'description': 'The titer value, its corresponding '
                                                  'unit, and the method of '
                                                  'quantification (e.g., RT-qPCR, '
@@ -5536,7 +5538,7 @@ class NucleicAcid(Product):
          'domain_of': ['NucleicAcid'],
          'recommended': True} })
     plasmidSelection: Optional[list[PlasmidSelection]] = Field(default=None, title="plasmid selection", description="""Specific selectable markers in the plasmid, such as antibiotic resistance genes, used to identify and maintain cells that contain the plasmid""", json_schema_extra = { "linkml_meta": {'alias': 'plasmidSelection', 'domain_of': ['NucleicAcid'], 'recommended': True} })
-    proteinTag: ProteinTag = Field(default=..., title="protein tag", description="""A DNA coding sequence or corresponding peptide/protein sequence fused to a sequence of interest, used to facilitate experimental operations such as purification, detection, localization, tracking, solubility enhancement, or selection. Applicable to both proteins and nucleic acids""", json_schema_extra = { "linkml_meta": {'alias': 'proteinTag', 'domain_of': ['NucleicAcid', 'Protein']} })
+    tagSequence: TagSequence = Field(default=..., title="tag sequence", description="""The name of the DNA coding sequence or corresponding peptide/protein sequence fused to a sequence of interest, used to facilitate experimental operations such as purification, detection, localization, tracking, solubility enhancement, or selection. Applicable to both proteins and nucleic acids""", json_schema_extra = { "linkml_meta": {'alias': 'tagSequence', 'domain_of': ['NucleicAcid', 'Protein']} })
     regionEncompassedInThisProduct: str = Field(default=..., title="region encompassed in this Product", description="""The specific region encompassed in the product""", json_schema_extra = { "linkml_meta": {'alias': 'regionEncompassedInThisProduct', 'domain_of': ['NucleicAcid']} })
     mutationObserved: bool = Field(default=..., title="mutation observed", description="""Indicates if the current nucleic acid has No mutation compared to the reference sequence if the value is set to false or if it
  contains mutations (no frameshift, no unexpected STOP codon) if set to true""", json_schema_extra = { "linkml_meta": {'alias': 'mutationObserved', 'domain_of': ['NucleicAcid']} })
@@ -8705,7 +8707,7 @@ Doi.model_rebuild()
 Journal.model_rebuild()
 PdbReference.model_rebuild()
 Keyword.model_rebuild()
-ProteinTag.model_rebuild()
+TagSequence.model_rebuild()
 SpecialFeature.model_rebuild()
 ExpressionVector.model_rebuild()
 PlasmidSelection.model_rebuild()

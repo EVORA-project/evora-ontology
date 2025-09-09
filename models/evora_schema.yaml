@@ -48,7 +48,7 @@ keywords:
 - pathogen collections
 - interoperability
 id: https://w3id.org/evorao/
-version: 1.0.8966
+version: 1.0.8979
 imports:
 - linkml:types
 license: https://creativecommons.org/publicdomain/zero/1.0/
@@ -1510,17 +1510,17 @@ slots:
     range: SpecialFeature
     required: false
     multivalued: true
-  proteinTag:
-    description: A DNA coding sequence or corresponding peptide/protein sequence fused
-      to a sequence of interest, used to facilitate experimental operations such as
-      purification, detection, localization, tracking, solubility enhancement, or
-      selection. Applicable to both proteins and nucleic acids
-    title: protein tag
+  tagSequence:
+    description: The name of the DNA coding sequence or corresponding peptide/protein
+      sequence fused to a sequence of interest, used to facilitate experimental operations
+      such as purification, detection, localization, tracking, solubility enhancement,
+      or selection. Applicable to both proteins and nucleic acids
+    title: tag sequence
     from_schema: https://w3id.org/evorao/
     domain_of:
     - Protein
     - NucleicAcid
-    range: ProteinTag
+    range: TagSequence
     required: true
     multivalued: false
   domain:
@@ -3193,12 +3193,12 @@ classes:
     - wd:Q1128340
     - wd:Q1128340
     is_a: Term
-  ProteinTag:
-    description: A DNA coding sequence or corresponding peptide/protein sequence fused
-      to a sequence of interest, used to facilitate experimental operations such as
-      purification, detection, localization, tracking, solubility enhancement, or
-      selection. Applicable to both proteins and nucleic acids
-    title: Protein tag
+  TagSequence:
+    description: The name of the DNA coding sequence or corresponding peptide/protein
+      sequence fused to a sequence of interest, used to facilitate experimental operations
+      such as purification, detection, localization, tracking, solubility enhancement,
+      or selection. Applicable to both proteins and nucleic acids
+    title: Tag sequence
     from_schema: https://w3id.org/evorao/
     close_mappings:
     - wd:Q645590
@@ -4533,7 +4533,7 @@ classes:
     - sequence
     - relatedPdb
     - specialFeature
-    - proteinTag
+    - tagSequence
     - domain
     - expressedAs
     - inclusionBodiesType
@@ -4584,15 +4584,15 @@ classes:
         range: SpecialFeature
         required: false
         multivalued: true
-      proteinTag:
-        description: A DNA coding sequence or corresponding peptide/protein sequence
-          fused to a sequence of interest, used to facilitate experimental operations
-          such as purification, detection, localization, tracking, solubility enhancement,
-          or selection. Applicable to both proteins and nucleic acids
-        title: protein tag
+      tagSequence:
+        description: The name of the DNA coding sequence or corresponding peptide/protein
+          sequence fused to a sequence of interest, used to facilitate experimental
+          operations such as purification, detection, localization, tracking, solubility
+          enhancement, or selection. Applicable to both proteins and nucleic acids
+        title: tag sequence
         domain_of:
         - Protein
-        range: ProteinTag
+        range: TagSequence
         required: false
         multivalued: true
       domain:
@@ -4712,7 +4712,7 @@ classes:
     - clonedNucleicAcid
     - clonedIntoPlasmid
     - plasmidSelection
-    - proteinTag
+    - tagSequence
     - regionEncompassedInThisProduct
     - mutationObserved
     - observedMutations
@@ -4779,15 +4779,15 @@ classes:
         required: false
         recommended: true
         multivalued: true
-      proteinTag:
-        description: A DNA coding sequence or corresponding peptide/protein sequence
-          fused to a sequence of interest, used to facilitate experimental operations
-          such as purification, detection, localization, tracking, solubility enhancement,
-          or selection. Applicable to both proteins and nucleic acids
-        title: protein tag
+      tagSequence:
+        description: The name of the DNA coding sequence or corresponding peptide/protein
+          sequence fused to a sequence of interest, used to facilitate experimental
+          operations such as purification, detection, localization, tracking, solubility
+          enhancement, or selection. Applicable to both proteins and nucleic acids
+        title: tag sequence
         domain_of:
         - NucleicAcid
-        range: ProteinTag
+        range: TagSequence
         required: true
         multivalued: false
       regionEncompassedInThisProduct:
@@ -5892,4 +5892,4 @@ classes:
         required: false
         multivalued: false
 source_file: https://w3id.org/evorao/evorao.owl.ttl
-generation_date: '2025-09-05T10:13:34'
+generation_date: '2025-09-09T11:55:40'

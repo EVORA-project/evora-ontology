@@ -118,7 +118,7 @@
 --     * Slot: description Description: A short explanation of the characteristics, features, or nature of the current item
 --     * Slot: weight Description: A numerical value indicating relative importance or priority, generally processed in ascending order. This weight helps prioritize content when organizing or processing data. Its value can be negative, with a default set to 0
 --     * Slot: inVocabulary_id Description: Terms belong to a specific vocabulary
--- # Class: "ProteinTag" Description: "A DNA coding sequence or corresponding peptide/protein sequence fused to a sequence of interest, used to facilitate experimental operations such as purification, detection, localization, tracking, solubility enhancement, or selection. Applicable to both proteins and nucleic acids"
+-- # Class: "TagSequence" Description: "The name of the DNA coding sequence or corresponding peptide/protein sequence fused to a sequence of interest, used to facilitate experimental operations such as purification, detection, localization, tracking, solubility enhancement, or selection. Applicable to both proteins and nucleic acids"
 --     * Slot: id Description: 
 --     * Slot: title Description: A name given to the resource
 --     * Slot: description Description: A short explanation of the characteristics, features, or nature of the current item
@@ -504,7 +504,7 @@
 --     * Slot: version Description: The version indicator (name or identifier) of a resource
 --     * Slot: biologicalMaterialOrigin_id Description: Information about the origin of the biological material, essential for access, utilization, and benefit-sharing of genetic resources in compliance with the Nagoya Protocol
 --     * Slot: clonedIntoPlasmid_id Description: The plasmid into which the nucleic acid has been cloned
---     * Slot: proteinTag_id Description: A DNA coding sequence or corresponding peptide/protein sequence fused to a sequence of interest, used to facilitate experimental operations such as purification, detection, localization, tracking, solubility enhancement, or selection. Applicable to both proteins and nucleic acids
+--     * Slot: tagSequence_id Description: The name of the DNA coding sequence or corresponding peptide/protein sequence fused to a sequence of interest, used to facilitate experimental operations such as purification, detection, localization, tracking, solubility enhancement, or selection. Applicable to both proteins and nucleic acids
 --     * Slot: iataClassification_id Description: The corresponding International Air Transport Association (IATA)'s category for this Product
 --     * Slot: materialSafetyDataSheet_id Description: A Material Safety Data Sheet (MSDS) or Safety Data Sheet (SDS) is a standardized document that contains crucial occupational safety and health information related to the product
 --     * Slot: originator_id Description: The individual or organization responsible for the original discovery, isolation, or creation of an item, providing information about the source or origin of the sample
@@ -1156,9 +1156,9 @@
 -- # Class: "Protein_specialFeature" Description: ""
 --     * Slot: Protein_id Description: Autocreated FK slot
 --     * Slot: specialFeature_id Description: Distinctive attributes of a product that set it apart from other similar items e.g., Reference strain, Vaccinal strain, Antiviral resistant strain ...
--- # Class: "Protein_proteinTag" Description: ""
+-- # Class: "Protein_tagSequence" Description: ""
 --     * Slot: Protein_id Description: Autocreated FK slot
---     * Slot: proteinTag_id Description: A DNA coding sequence or corresponding peptide/protein sequence fused to a sequence of interest, used to facilitate experimental operations such as purification, detection, localization, tracking, solubility enhancement, or selection. Applicable to both proteins and nucleic acids
+--     * Slot: tagSequence_id Description: The name of the DNA coding sequence or corresponding peptide/protein sequence fused to a sequence of interest, used to facilitate experimental operations such as purification, detection, localization, tracking, solubility enhancement, or selection. Applicable to both proteins and nucleic acids
 -- # Class: "Protein_domain" Description: ""
 --     * Slot: Protein_id Description: Autocreated FK slot
 --     * Slot: domain Description: A distinct structural and functional unit within the protein, often capable of independent folding and stability, which contributes to the protein's overall function
@@ -1956,7 +1956,7 @@ CREATE TABLE "Keyword" (
 	PRIMARY KEY (id), 
 	FOREIGN KEY("inVocabulary_id") REFERENCES "Vocabulary" (id)
 );
-CREATE TABLE "ProteinTag" (
+CREATE TABLE "TagSequence" (
 	id INTEGER NOT NULL, 
 	title TEXT NOT NULL, 
 	description TEXT, 
@@ -2601,7 +2601,7 @@ CREATE TABLE "NucleicAcid" (
 	version TEXT, 
 	"biologicalMaterialOrigin_id" INTEGER NOT NULL, 
 	"clonedIntoPlasmid_id" INTEGER, 
-	"proteinTag_id" INTEGER NOT NULL, 
+	"tagSequence_id" INTEGER NOT NULL, 
 	"iataClassification_id" INTEGER NOT NULL, 
 	"materialSafetyDataSheet_id" INTEGER, 
 	originator_id INTEGER, 
@@ -2612,7 +2612,7 @@ CREATE TABLE "NucleicAcid" (
 	PRIMARY KEY (id), 
 	FOREIGN KEY("biologicalMaterialOrigin_id") REFERENCES "BiologicalMaterialOrigin" (id), 
 	FOREIGN KEY("clonedIntoPlasmid_id") REFERENCES "ExpressionVector" (id), 
-	FOREIGN KEY("proteinTag_id") REFERENCES "ProteinTag" (id), 
+	FOREIGN KEY("tagSequence_id") REFERENCES "TagSequence" (id), 
 	FOREIGN KEY("iataClassification_id") REFERENCES "IataClassification" (id), 
 	FOREIGN KEY("materialSafetyDataSheet_id") REFERENCES "ReasearchInfrastructure" (id), 
 	FOREIGN KEY(originator_id) REFERENCES "Originator" (id), 
@@ -3432,12 +3432,12 @@ CREATE TABLE "Protein_specialFeature" (
 	FOREIGN KEY("Protein_id") REFERENCES "Protein" (id), 
 	FOREIGN KEY("specialFeature_id") REFERENCES "SpecialFeature" (id)
 );
-CREATE TABLE "Protein_proteinTag" (
+CREATE TABLE "Protein_tagSequence" (
 	"Protein_id" INTEGER, 
-	"proteinTag_id" INTEGER, 
-	PRIMARY KEY ("Protein_id", "proteinTag_id"), 
+	"tagSequence_id" INTEGER, 
+	PRIMARY KEY ("Protein_id", "tagSequence_id"), 
 	FOREIGN KEY("Protein_id") REFERENCES "Protein" (id), 
-	FOREIGN KEY("proteinTag_id") REFERENCES "ProteinTag" (id)
+	FOREIGN KEY("tagSequence_id") REFERENCES "TagSequence" (id)
 );
 CREATE TABLE "Protein_domain" (
 	"Protein_id" INTEGER, 

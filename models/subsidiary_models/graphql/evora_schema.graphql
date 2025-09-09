@@ -1,5 +1,5 @@
 # metamodel_version: 1.7.0
-# version: 1.0.8966
+# version: 1.0.8979
 type AlternateName
   {
     title: String!
@@ -593,7 +593,7 @@ type NucleicAcid
     clonedNucleicAcid: Boolean!
     clonedIntoPlasmid: ExpressionVector
     plasmidSelection: [PlasmidSelection]
-    proteinTag: ProteinTag!
+    tagSequence: TagSequence!
     regionEncompassedInThisProduct: String!
     mutationObserved: Boolean!
     observedMutations: String
@@ -919,7 +919,7 @@ type Protein
     sequence: [Sequence]!
     relatedPdb: [PdbReference]
     specialFeature: [SpecialFeature]
-    proteinTag: [ProteinTag]!
+    tagSequence: [TagSequence]!
     domain: [String]
     expressedAs: [String]
     inclusionBodiesType: [String]
@@ -929,14 +929,6 @@ type Protein
     proteinPurification: [String]
     tagStatusOfTheSolubilizedProtein: [String]
     typeOfFunctionalCharacterization: [String]
-  }
-
-type ProteinTag
-  {
-    title: String!
-    description: String
-    weight: Integer!
-    inVocabulary: Vocabulary!
   }
 
 type Protozoan
@@ -1106,6 +1098,14 @@ type SyntheticPartOrigin
     accessToPhysicalGeneticResource: Boolean!
     modificationsFromTheReferenceSequences: Boolean!
     descriptionOfModificationsMadeFromTheReferenceSequences: String
+  }
+
+type TagSequence
+  {
+    title: String!
+    description: String
+    weight: Integer!
+    inVocabulary: Vocabulary!
   }
 
 type Taxon

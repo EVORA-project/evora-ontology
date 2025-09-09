@@ -24,31 +24,15 @@ SELECT
   ?check
   ?graph
   ?subject
-  ?predicate
-  ?object
-WHERE {
+  ?predicate WHERE {
  GRAPH ?graph {
-  ?subject rdf:type EVORAO:ProteinTag ;
-     ?predicate ?object .
-  FILTER NOT EXISTS {
-    ?object rdf:type ?otype .
-    FILTER ( ?otype IN (
-      EVORAO:Vocabulary
-      
-      ))
-  }
+  ?subject rdf:type EVORAO:TagSequence .
+  FILTER NOT EXISTS { ?subject  EVORAO:inVocabulary ?o  }
  }
- VALUES ?check { linkml:range }
- VALUES ?predicate { EVORAO:inVocabulary  }
+ VALUES ?check { linkml:required }
+ VALUES ?predicate { EVORAO:inVocabulary }
  
 }  
 
 
-
-## -- End of checks for ProteinTag
-
-
-## --
-## Checks for SpecialFeature
-## --
 

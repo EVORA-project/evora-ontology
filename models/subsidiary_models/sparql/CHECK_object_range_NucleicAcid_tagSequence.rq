@@ -24,17 +24,22 @@ SELECT
   ?check
   ?graph
   ?subject
-  ?predicate WHERE {
+  ?predicate
+  ?object
+WHERE {
  GRAPH ?graph {
-  ?subject rdf:type EVORAO:ProteinTag .
-  FILTER NOT EXISTS { ?subject  dct:title ?o  }
+  ?subject rdf:type EVORAO:NucleicAcid ;
+     ?predicate ?object .
+  FILTER NOT EXISTS {
+    ?object rdf:type ?otype .
+    FILTER ( ?otype IN (
+      EVORAO:TagSequence
+      
+      ))
+  }
  }
- VALUES ?check { linkml:required }
- VALUES ?predicate { dct:title }
+ VALUES ?check { linkml:range }
+ VALUES ?predicate { EVORAO:tagSequence  }
  
 }  
-
-
-
-
 

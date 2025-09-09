@@ -38,7 +38,7 @@
     "interoperability"
   ],
   "id": "https://w3id.org/evorao/",
-  "version": "1.0.8966",
+  "version": "1.0.8979",
   "imports": [
     "linkml:types"
   ],
@@ -2547,18 +2547,18 @@
       "@type": "SlotDefinition"
     },
     {
-      "name": "proteinTag",
-      "definition_uri": "https://w3id.org/evorao/proteinTag",
-      "description": "A DNA coding sequence or corresponding peptide/protein sequence fused to a sequence of interest, used to facilitate experimental operations such as purification, detection, localization, tracking, solubility enhancement, or selection. Applicable to both proteins and nucleic acids",
-      "title": "protein tag",
+      "name": "tagSequence",
+      "definition_uri": "https://w3id.org/evorao/tagSequence",
+      "description": "The name of the DNA coding sequence or corresponding peptide/protein sequence fused to a sequence of interest, used to facilitate experimental operations such as purification, detection, localization, tracking, solubility enhancement, or selection. Applicable to both proteins and nucleic acids",
+      "title": "tag sequence",
       "from_schema": "https://w3id.org/evorao/",
-      "slot_uri": "https://w3id.org/evorao/proteinTag",
+      "slot_uri": "https://w3id.org/evorao/tagSequence",
       "owner": "NucleicAcid",
       "domain_of": [
         "Protein",
         "NucleicAcid"
       ],
-      "range": "ProteinTag",
+      "range": "TagSequence",
       "required": true,
       "inlined": true,
       "@type": "SlotDefinition"
@@ -6866,22 +6866,22 @@
       "@type": "SlotDefinition"
     },
     {
-      "name": "Protein_proteinTag",
-      "definition_uri": "https://w3id.org/evorao/proteinTag",
-      "description": "A DNA coding sequence or corresponding peptide/protein sequence fused to a sequence of interest, used to facilitate experimental operations such as purification, detection, localization, tracking, solubility enhancement, or selection. Applicable to both proteins and nucleic acids",
-      "title": "protein tag",
+      "name": "Protein_tagSequence",
+      "definition_uri": "https://w3id.org/evorao/tagSequence",
+      "description": "The name of the DNA coding sequence or corresponding peptide/protein sequence fused to a sequence of interest, used to facilitate experimental operations such as purification, detection, localization, tracking, solubility enhancement, or selection. Applicable to both proteins and nucleic acids",
+      "title": "tag sequence",
       "from_schema": "https://w3id.org/evorao/",
-      "is_a": "proteinTag",
+      "is_a": "tagSequence",
       "domain": "Protein",
-      "slot_uri": "https://w3id.org/evorao/proteinTag",
-      "alias": "proteinTag",
+      "slot_uri": "https://w3id.org/evorao/tagSequence",
+      "alias": "tagSequence",
       "owner": "Protein",
       "domain_of": [
         "Protein"
       ],
       "is_usage_slot": true,
-      "usage_slot_name": "proteinTag",
-      "range": "ProteinTag",
+      "usage_slot_name": "tagSequence",
+      "range": "TagSequence",
       "required": true,
       "multivalued": true,
       "inlined": true,
@@ -7221,22 +7221,22 @@
       "@type": "SlotDefinition"
     },
     {
-      "name": "NucleicAcid_proteinTag",
-      "definition_uri": "https://w3id.org/evorao/proteinTag",
-      "description": "A DNA coding sequence or corresponding peptide/protein sequence fused to a sequence of interest, used to facilitate experimental operations such as purification, detection, localization, tracking, solubility enhancement, or selection. Applicable to both proteins and nucleic acids",
-      "title": "protein tag",
+      "name": "NucleicAcid_tagSequence",
+      "definition_uri": "https://w3id.org/evorao/tagSequence",
+      "description": "The name of the DNA coding sequence or corresponding peptide/protein sequence fused to a sequence of interest, used to facilitate experimental operations such as purification, detection, localization, tracking, solubility enhancement, or selection. Applicable to both proteins and nucleic acids",
+      "title": "tag sequence",
       "from_schema": "https://w3id.org/evorao/",
-      "is_a": "proteinTag",
+      "is_a": "tagSequence",
       "domain": "NucleicAcid",
-      "slot_uri": "https://w3id.org/evorao/proteinTag",
-      "alias": "proteinTag",
+      "slot_uri": "https://w3id.org/evorao/tagSequence",
+      "alias": "tagSequence",
       "owner": "NucleicAcid",
       "domain_of": [
         "NucleicAcid"
       ],
       "is_usage_slot": true,
-      "usage_slot_name": "proteinTag",
-      "range": "ProteinTag",
+      "usage_slot_name": "tagSequence",
+      "range": "TagSequence",
       "required": true,
       "inlined": true,
       "@type": "SlotDefinition"
@@ -9362,10 +9362,10 @@
       "@type": "ClassDefinition"
     },
     {
-      "name": "ProteinTag",
-      "definition_uri": "https://w3id.org/evorao/ProteinTag",
-      "description": "A DNA coding sequence or corresponding peptide/protein sequence fused to a sequence of interest, used to facilitate experimental operations such as purification, detection, localization, tracking, solubility enhancement, or selection. Applicable to both proteins and nucleic acids",
-      "title": "Protein tag",
+      "name": "TagSequence",
+      "definition_uri": "https://w3id.org/evorao/TagSequence",
+      "description": "The name of the DNA coding sequence or corresponding peptide/protein sequence fused to a sequence of interest, used to facilitate experimental operations such as purification, detection, localization, tracking, solubility enhancement, or selection. Applicable to both proteins and nucleic acids",
+      "title": "Tag sequence",
       "from_schema": "https://w3id.org/evorao/",
       "close_mappings": [
         "wd:Q645590",
@@ -9379,7 +9379,7 @@
         "Term_inVocabulary"
       ],
       "slot_usage": {},
-      "class_uri": "https://w3id.org/evorao/ProteinTag",
+      "class_uri": "https://w3id.org/evorao/TagSequence",
       "@type": "ClassDefinition"
     },
     {
@@ -10342,7 +10342,7 @@
         "Protein_sequence",
         "Protein_relatedPdb",
         "Protein_specialFeature",
-        "Protein_proteinTag",
+        "Protein_tagSequence",
         "Protein_domain",
         "Protein_expressedAs",
         "Protein_inclusionBodiesType",
@@ -10409,7 +10409,7 @@
         "NucleicAcid_clonedNucleicAcid",
         "NucleicAcid_clonedIntoPlasmid",
         "NucleicAcid_plasmidSelection",
-        "NucleicAcid_proteinTag",
+        "NucleicAcid_tagSequence",
         "NucleicAcid_regionEncompassedInThisProduct",
         "NucleicAcid_mutationObserved",
         "NucleicAcid_observedMutations",
@@ -11278,9 +11278,9 @@
   ],
   "metamodel_version": "1.7.0",
   "source_file": "evora_schema.yaml",
-  "source_file_date": "2025-09-05T08:13:58",
-  "source_file_size": 191111,
-  "generation_date": "2025-09-05T08:14:16",
+  "source_file_date": "2025-09-09T10:12:49",
+  "source_file_size": 191180,
+  "generation_date": "2025-09-09T10:13:05",
   "@type": "SchemaDefinition",
   "@context": [
     "https://w3id.org/linkml/types.context.jsonld",

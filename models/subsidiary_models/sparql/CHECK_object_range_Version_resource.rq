@@ -109,7 +109,7 @@ WHERE {
       , 
       EVORAO:Keyword
       , 
-      EVORAO:ProteinTag
+      EVORAO:TagSequence
       , 
       EVORAO:SpecialFeature
       , 

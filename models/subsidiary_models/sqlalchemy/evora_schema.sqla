@@ -1409,18 +1409,18 @@ class ProteinSpecialFeature(Base):
     
 
 
-class ProteinProteinTag(Base):
+class ProteinTagSequence(Base):
     """
     
     """
-    __tablename__ = 'Protein_proteinTag'
+    __tablename__ = 'Protein_tagSequence'
 
     Protein_id = Column(Integer(), ForeignKey('Protein.id'), primary_key=True)
-    proteinTag_id = Column(Integer(), ForeignKey('ProteinTag.id'), primary_key=True)
+    tagSequence_id = Column(Integer(), ForeignKey('TagSequence.id'), primary_key=True)
     
 
     def __repr__(self):
-        return f"Protein_proteinTag(Protein_id={self.Protein_id},proteinTag_id={self.proteinTag_id},)"
+        return f"Protein_tagSequence(Protein_id={self.Protein_id},tagSequence_id={self.tagSequence_id},)"
 
 
 
@@ -5021,11 +5021,11 @@ class Keyword(Term):
     
 
 
-class ProteinTag(Term):
+class TagSequence(Term):
     """
-    A DNA coding sequence or corresponding peptide/protein sequence fused to a sequence of interest, used to facilitate experimental operations such as purification, detection, localization, tracking, solubility enhancement, or selection. Applicable to both proteins and nucleic acids
+    The name of the DNA coding sequence or corresponding peptide/protein sequence fused to a sequence of interest, used to facilitate experimental operations such as purification, detection, localization, tracking, solubility enhancement, or selection. Applicable to both proteins and nucleic acids
     """
-    __tablename__ = 'ProteinTag'
+    __tablename__ = 'TagSequence'
 
     id = Column(Integer(), primary_key=True, autoincrement=True , nullable=False )
     title = Column(Text(), nullable=False )
@@ -5036,7 +5036,7 @@ class ProteinTag(Term):
     
 
     def __repr__(self):
-        return f"ProteinTag(id={self.id},title={self.title},description={self.description},weight={self.weight},inVocabulary_id={self.inVocabulary_id},)"
+        return f"TagSequence(id={self.id},title={self.title},description={self.description},weight={self.weight},inVocabulary_id={self.inVocabulary_id},)"
 
 
 
@@ -6401,7 +6401,7 @@ class Protein(Product):
     
     
     # ManyToMany
-    proteinTag = relationship( "ProteinTag", secondary="Protein_proteinTag")
+    tagSequence = relationship( "TagSequence", secondary="Protein_tagSequence")
     
     
     domain_rel = relationship( "ProteinDomain" )
@@ -6535,8 +6535,8 @@ class NucleicAcid(Product):
     biologicalMaterialOrigin = relationship("BiologicalMaterialOrigin", uselist=False, foreign_keys=[biologicalMaterialOrigin_id])
     clonedIntoPlasmid_id = Column(Integer(), ForeignKey('ExpressionVector.id'))
     clonedIntoPlasmid = relationship("ExpressionVector", uselist=False, foreign_keys=[clonedIntoPlasmid_id])
-    proteinTag_id = Column(Integer(), ForeignKey('ProteinTag.id'), nullable=False )
-    proteinTag = relationship("ProteinTag", uselist=False, foreign_keys=[proteinTag_id])
+    tagSequence_id = Column(Integer(), ForeignKey('TagSequence.id'), nullable=False )
+    tagSequence = relationship("TagSequence", uselist=False, foreign_keys=[tagSequence_id])
     iataClassification_id = Column(Integer(), ForeignKey('IataClassification.id'), nullable=False )
     iataClassification = relationship("IataClassification", uselist=False, foreign_keys=[iataClassification_id])
     materialSafetyDataSheet_id = Column(Integer(), ForeignKey('ReasearchInfrastructure.id'))
@@ -6602,7 +6602,7 @@ class NucleicAcid(Product):
     
 
     def __repr__(self):
-        return f"NucleicAcid(id={self.id},clonedNucleicAcid={self.clonedNucleicAcid},regionEncompassedInThisProduct={self.regionEncompassedInThisProduct},mutationObserved={self.mutationObserved},observedMutations={self.observedMutations},identificationTechnique={self.identificationTechnique},sequencing={self.sequencing},titer={self.titer},sequenceChecked={self.sequenceChecked},shippingConditions={self.shippingConditions},storageConditions={self.storageConditions},thirdPartyDistributionConsent={self.thirdPartyDistributionConsent},usageRestrictions={self.usageRestrictions},accessPointUrl={self.accessPointUrl},refSku={self.refSku},unitDefinition={self.unitDefinition},unitCost={self.unitCost},qualityGrading={self.qualityGrading},biosafetyRestrictions={self.biosafetyRestrictions},canBeUsedToProduceGmo={self.canBeUsedToProduceGmo},availability={self.availability},technicalRecommendation={self.technicalRecommendation},internalReference={self.internalReference},note={self.note},title={self.title},description={self.description},version={self.version},biologicalMaterialOrigin_id={self.biologicalMaterialOrigin_id},clonedIntoPlasmid_id={self.clonedIntoPlasmid_id},proteinTag_id={self.proteinTag_id},iataClassification_id={self.iataClassification_id},materialSafetyDataSheet_id={self.materialSafetyDataSheet_id},originator_id={self.originator_id},category_id={self.category_id},riskGroup_id={self.riskGroup_id},provider_id={self.provider_id},contactPoint_id={self.contactPoint_id},)"
+        return f"NucleicAcid(id={self.id},clonedNucleicAcid={self.clonedNucleicAcid},regionEncompassedInThisProduct={self.regionEncompassedInThisProduct},mutationObserved={self.mutationObserved},observedMutations={self.observedMutations},identificationTechnique={self.identificationTechnique},sequencing={self.sequencing},titer={self.titer},sequenceChecked={self.sequenceChecked},shippingConditions={self.shippingConditions},storageConditions={self.storageConditions},thirdPartyDistributionConsent={self.thirdPartyDistributionConsent},usageRestrictions={self.usageRestrictions},accessPointUrl={self.accessPointUrl},refSku={self.refSku},unitDefinition={self.unitDefinition},unitCost={self.unitCost},qualityGrading={self.qualityGrading},biosafetyRestrictions={self.biosafetyRestrictions},canBeUsedToProduceGmo={self.canBeUsedToProduceGmo},availability={self.availability},technicalRecommendation={self.technicalRecommendation},internalReference={self.internalReference},note={self.note},title={self.title},description={self.description},version={self.version},biologicalMaterialOrigin_id={self.biologicalMaterialOrigin_id},clonedIntoPlasmid_id={self.clonedIntoPlasmid_id},tagSequence_id={self.tagSequence_id},iataClassification_id={self.iataClassification_id},materialSafetyDataSheet_id={self.materialSafetyDataSheet_id},originator_id={self.originator_id},category_id={self.category_id},riskGroup_id={self.riskGroup_id},provider_id={self.provider_id},contactPoint_id={self.contactPoint_id},)"
 
 
 

@@ -89,7 +89,7 @@ URI: [EVORAO:Vocabulary](https://w3id.org/evorao/Vocabulary)
 | [Journal](Journal.md) | [inVocabulary](inVocabulary.md) | range | [Vocabulary](Vocabulary.md) |
 | [PdbReference](PdbReference.md) | [inVocabulary](inVocabulary.md) | range | [Vocabulary](Vocabulary.md) |
 | [Keyword](Keyword.md) | [inVocabulary](inVocabulary.md) | range | [Vocabulary](Vocabulary.md) |
-| [ProteinTag](ProteinTag.md) | [inVocabulary](inVocabulary.md) | range | [Vocabulary](Vocabulary.md) |
+| [TagSequence](TagSequence.md) | [inVocabulary](inVocabulary.md) | range | [Vocabulary](Vocabulary.md) |
 | [SpecialFeature](SpecialFeature.md) | [inVocabulary](inVocabulary.md) | range | [Vocabulary](Vocabulary.md) |
 | [ExpressionVector](ExpressionVector.md) | [inVocabulary](inVocabulary.md) | range | [Vocabulary](Vocabulary.md) |
 | [PlasmidSelection](PlasmidSelection.md) | [inVocabulary](inVocabulary.md) | range | [Vocabulary](Vocabulary.md) |

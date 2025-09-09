@@ -186,15 +186,6 @@ URI: [EVORAO:Protein](https://w3id.org/evorao/Protein)
         
       Protein : proteinPurification
         
-      Protein : proteinTag
-        
-          
-    
-    
-    Protein --> "*" ProteinTag : proteinTag
-    click ProteinTag href "../ProteinTag"
-
-        
       Protein : provider
         
           
@@ -248,6 +239,15 @@ URI: [EVORAO:Protein](https://w3id.org/evorao/Protein)
         
       Protein : storageConditions
         
+      Protein : tagSequence
+        
+          
+    
+    
+    Protein --> "*" TagSequence : tagSequence
+    click TagSequence href "../TagSequence"
+
+        
       Protein : tagStatusOfTheSolubilizedProtein
         
       Protein : technicalRecommendation
@@ -290,7 +290,7 @@ URI: [EVORAO:Protein](https://w3id.org/evorao/Protein)
 | [sequence](sequence.md) | 1..* _recommended_ <br/> [Sequence](Sequence.md) | The related sequence information from a sequence provider or in fasta format | direct |
 | [relatedPdb](relatedPdb.md) | * <br/> [PdbReference](PdbReference.md) | Identifier for 3D structural data as per the PDB (Protein Data Bank) database | direct |
 | [specialFeature](specialFeature.md) | * <br/> [SpecialFeature](SpecialFeature.md) | Distinctive attributes of a product that set it apart from other similar item... | direct |
-| [proteinTag](proteinTag.md) | * <br/> [ProteinTag](ProteinTag.md) | A DNA coding sequence or corresponding peptide/protein sequence fused to a se... | direct |
+| [tagSequence](tagSequence.md) | * <br/> [TagSequence](TagSequence.md) | The name of the DNA coding sequence or corresponding peptide/protein sequence... | direct |
 | [domain](domain.md) | * <br/> [String](String.md) | A distinct structural and functional unit within the protein, often capable o... | direct |
 | [expressedAs](expressedAs.md) | * <br/> [String](String.md) | Refers to the form in which the protein is produced and manifested in a biolo... | direct |
 | [inclusionBodiesType](inclusionBodiesType.md) | * <br/> [String](String.md) | Refers to the state of aggregated proteins within a cell | direct |
@@ -394,7 +394,7 @@ slots:
 - sequence
 - relatedPdb
 - specialFeature
-- proteinTag
+- tagSequence
 - domain
 - expressedAs
 - inclusionBodiesType
@@ -454,17 +454,17 @@ slot_usage:
     range: SpecialFeature
     required: false
     multivalued: true
-  proteinTag:
-    name: proteinTag
-    description: A DNA coding sequence or corresponding peptide/protein sequence fused
-      to a sequence of interest, used to facilitate experimental operations such as
-      purification, detection, localization, tracking, solubility enhancement, or
-      selection. Applicable to both proteins and nucleic acids
-    title: protein tag
+  tagSequence:
+    name: tagSequence
+    description: The name of the DNA coding sequence or corresponding peptide/protein
+      sequence fused to a sequence of interest, used to facilitate experimental operations
+      such as purification, detection, localization, tracking, solubility enhancement,
+      or selection. Applicable to both proteins and nucleic acids
+    title: tag sequence
     domain_of:
     - Protein
     - NucleicAcid
-    range: ProteinTag
+    range: TagSequence
     required: false
     multivalued: true
   domain:
@@ -642,17 +642,17 @@ slot_usage:
     range: SpecialFeature
     required: false
     multivalued: true
-  proteinTag:
-    name: proteinTag
-    description: A DNA coding sequence or corresponding peptide/protein sequence fused
-      to a sequence of interest, used to facilitate experimental operations such as
-      purification, detection, localization, tracking, solubility enhancement, or
-      selection. Applicable to both proteins and nucleic acids
-    title: protein tag
+  tagSequence:
+    name: tagSequence
+    description: The name of the DNA coding sequence or corresponding peptide/protein
+      sequence fused to a sequence of interest, used to facilitate experimental operations
+      such as purification, detection, localization, tracking, solubility enhancement,
+      or selection. Applicable to both proteins and nucleic acids
+    title: tag sequence
     domain_of:
     - Protein
     - NucleicAcid
-    range: ProteinTag
+    range: TagSequence
     required: false
     multivalued: true
   domain:
@@ -831,21 +831,21 @@ attributes:
     range: SpecialFeature
     required: false
     multivalued: true
-  proteinTag:
-    name: proteinTag
-    description: A DNA coding sequence or corresponding peptide/protein sequence fused
-      to a sequence of interest, used to facilitate experimental operations such as
-      purification, detection, localization, tracking, solubility enhancement, or
-      selection. Applicable to both proteins and nucleic acids
-    title: protein tag
+  tagSequence:
+    name: tagSequence
+    description: The name of the DNA coding sequence or corresponding peptide/protein
+      sequence fused to a sequence of interest, used to facilitate experimental operations
+      such as purification, detection, localization, tracking, solubility enhancement,
+      or selection. Applicable to both proteins and nucleic acids
+    title: tag sequence
     from_schema: https://w3id.org/evorao/
     rank: 1000
-    alias: proteinTag
+    alias: tagSequence
     owner: Protein
     domain_of:
     - Protein
     - NucleicAcid
-    range: ProteinTag
+    range: TagSequence
     required: false
     multivalued: true
   domain:

@@ -207,15 +207,6 @@ URI: [EVORAO:NucleicAcid](https://w3id.org/evorao/NucleicAcid)
     click Image href "../Image"
 
         
-      NucleicAcid : proteinTag
-        
-          
-    
-    
-    NucleicAcid --> "1" ProteinTag : proteinTag
-    click ProteinTag href "../ProteinTag"
-
-        
       NucleicAcid : provider
         
           
@@ -256,6 +247,15 @@ URI: [EVORAO:NucleicAcid](https://w3id.org/evorao/NucleicAcid)
       NucleicAcid : shippingConditions
         
       NucleicAcid : storageConditions
+        
+      NucleicAcid : tagSequence
+        
+          
+    
+    
+    NucleicAcid --> "1" TagSequence : tagSequence
+    click TagSequence href "../TagSequence"
+
         
       NucleicAcid : technicalRecommendation
         
@@ -299,7 +299,7 @@ URI: [EVORAO:NucleicAcid](https://w3id.org/evorao/NucleicAcid)
 | [clonedNucleicAcid](clonedNucleicAcid.md) | 1 <br/> [Boolean](Boolean.md) | Indicates if the nucleic acid sequence has been inserted into a plasmid vecto... | direct |
 | [clonedIntoPlasmid](clonedIntoPlasmid.md) | 0..1 _recommended_ <br/> [ExpressionVector](ExpressionVector.md) | The plasmid into which the nucleic acid has been cloned | direct |
 | [plasmidSelection](plasmidSelection.md) | * _recommended_ <br/> [PlasmidSelection](PlasmidSelection.md) | Specific selectable markers in the plasmid, such as antibiotic resistance gen... | direct |
-| [proteinTag](proteinTag.md) | 1 <br/> [ProteinTag](ProteinTag.md) | A DNA coding sequence or corresponding peptide/protein sequence fused to a se... | direct |
+| [tagSequence](tagSequence.md) | 1 <br/> [TagSequence](TagSequence.md) | The name of the DNA coding sequence or corresponding peptide/protein sequence... | direct |
 | [regionEncompassedInThisProduct](regionEncompassedInThisProduct.md) | 1 <br/> [String](String.md) | The specific region encompassed in the product | direct |
 | [mutationObserved](mutationObserved.md) | 1 <br/> [Boolean](Boolean.md) | Indicates if the current nucleic acid has No mutation compared to the referen... | direct |
 | [observedMutations](observedMutations.md) | 0..1 <br/> [String](String.md) | The specific mutations that have been identified and documented in the nuclei... | direct |
@@ -403,7 +403,7 @@ slots:
 - clonedNucleicAcid
 - clonedIntoPlasmid
 - plasmidSelection
-- proteinTag
+- tagSequence
 - regionEncompassedInThisProduct
 - mutationObserved
 - observedMutations
@@ -481,17 +481,17 @@ slot_usage:
     required: false
     recommended: true
     multivalued: true
-  proteinTag:
-    name: proteinTag
-    description: A DNA coding sequence or corresponding peptide/protein sequence fused
-      to a sequence of interest, used to facilitate experimental operations such as
-      purification, detection, localization, tracking, solubility enhancement, or
-      selection. Applicable to both proteins and nucleic acids
-    title: protein tag
+  tagSequence:
+    name: tagSequence
+    description: The name of the DNA coding sequence or corresponding peptide/protein
+      sequence fused to a sequence of interest, used to facilitate experimental operations
+      such as purification, detection, localization, tracking, solubility enhancement,
+      or selection. Applicable to both proteins and nucleic acids
+    title: tag sequence
     domain_of:
     - NucleicAcid
     - Protein
-    range: ProteinTag
+    range: TagSequence
     required: true
     multivalued: false
   regionEncompassedInThisProduct:
@@ -663,17 +663,17 @@ slot_usage:
     required: false
     recommended: true
     multivalued: true
-  proteinTag:
-    name: proteinTag
-    description: A DNA coding sequence or corresponding peptide/protein sequence fused
-      to a sequence of interest, used to facilitate experimental operations such as
-      purification, detection, localization, tracking, solubility enhancement, or
-      selection. Applicable to both proteins and nucleic acids
-    title: protein tag
+  tagSequence:
+    name: tagSequence
+    description: The name of the DNA coding sequence or corresponding peptide/protein
+      sequence fused to a sequence of interest, used to facilitate experimental operations
+      such as purification, detection, localization, tracking, solubility enhancement,
+      or selection. Applicable to both proteins and nucleic acids
+    title: tag sequence
     domain_of:
     - NucleicAcid
     - Protein
-    range: ProteinTag
+    range: TagSequence
     required: true
     multivalued: false
   regionEncompassedInThisProduct:
@@ -854,21 +854,21 @@ attributes:
     required: false
     recommended: true
     multivalued: true
-  proteinTag:
-    name: proteinTag
-    description: A DNA coding sequence or corresponding peptide/protein sequence fused
-      to a sequence of interest, used to facilitate experimental operations such as
-      purification, detection, localization, tracking, solubility enhancement, or
-      selection. Applicable to both proteins and nucleic acids
-    title: protein tag
+  tagSequence:
+    name: tagSequence
+    description: The name of the DNA coding sequence or corresponding peptide/protein
+      sequence fused to a sequence of interest, used to facilitate experimental operations
+      such as purification, detection, localization, tracking, solubility enhancement,
+      or selection. Applicable to both proteins and nucleic acids
+    title: tag sequence
     from_schema: https://w3id.org/evorao/
     rank: 1000
-    alias: proteinTag
+    alias: tagSequence
     owner: NucleicAcid
     domain_of:
     - NucleicAcid
     - Protein
-    range: ProteinTag
+    range: TagSequence
     required: true
     multivalued: false
   regionEncompassedInThisProduct:

@@ -82,9 +82,9 @@ Name: EVORAO
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[ProductCategory](ProductCategory.md) | A term used to classify a group of products that share common characteristics or functions, which helps in their organization |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[ProductionCellLine](ProductionCellLine.md) | A population of cells that originates from a primary culture, adapted to grow and divide under laboratory conditions. Used in biotechnology to consistently produce biological substances |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[PropagationHost](PropagationHost.md) | The organism used to grow and multiply the pathogen under controlled conditions |
-| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[ProteinTag](ProteinTag.md) | A DNA coding sequence or corresponding peptide/protein sequence fused to a sequence of interest, used to facilitate experimental operations such as purification, detection, localization, tracking, solubility enhancement, or selection. Applicable to both proteins and nucleic acids |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[RiskGroup](RiskGroup.md) | Risk group classification guides initial handling of biological agents in labs but doesn't systematically equate to biosafety levels. Actual risk varies with the agent, procedures, and personnel competence |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[SpecialFeature](SpecialFeature.md) | Distinctive attributes of a product that set it apart from other similar items e.g., Reference strain, Vaccinal strain, Antiviral resistant strain ... |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[TagSequence](TagSequence.md) | The name of the DNA coding sequence or corresponding peptide/protein sequence fused to a sequence of interest, used to facilitate experimental operations such as purification, detection, localization, tracking, solubility enhancement, or selection. Applicable to both proteins and nucleic acids |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Taxon](Taxon.md) | Conceptual entity that groups one or more populations of an organism or organisms, as seen by taxonomists, to form a unit |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[TaxonomicRank](TaxonomicRank.md) | The possible taxonomic ranks and their description |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[TransmissionMethod](TransmissionMethod.md) | The process by which the pathogen spreads between hosts |
@@ -215,7 +215,6 @@ Name: EVORAO
 | [productPicture](productPicture.md) | A picture that can represent the item |
 | [propagationHost](propagationHost.md) | The host organism that propagates the pathogen |
 | [proteinPurification](proteinPurification.md) | Refers to the degree of purity achieved for a protein sample |
-| [proteinTag](proteinTag.md) | A DNA coding sequence or corresponding peptide/protein sequence fused to a se... |
 | [providedEntityType](providedEntityType.md) | The identification of the entity type (Class) described by the response to th... |
 | [provider](provider.md) | A provider of this product or service, as a specific organization |
 | [qualityGrading](qualityGrading.md) | Information that permits to assess the quality level of what will be provided |
@@ -255,6 +254,7 @@ Name: EVORAO
 | [streetAddress](streetAddress.md) | The building/apartment number and the street name |
 | [subspecies](subspecies.md) | The subspecies information differentiates closely related pathogens within a ... |
 | [suspectedEpidemiologicalOrigin](suspectedEpidemiologicalOrigin.md) | The potential geographical or environmental source from which the pathogen is... |
+| [tagSequence](tagSequence.md) | The name of the DNA coding sequence or corresponding peptide/protein sequence... |
 | [tagStatusOfTheSolubilizedProtein](tagStatusOfTheSolubilizedProtein.md) | Indicates the presence and condition of a tag on the protein after solubiliza... |
 | [targetedAntigen](targetedAntigen.md) | Specific molecular structure or epitope recognized and bound by an antibody |
 | [targetedRegion](targetedRegion.md) | The specific area or sequence within the target analyte that the detection ki... |
