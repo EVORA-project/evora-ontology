@@ -169,7 +169,7 @@ type DataProvider struct {
 	 */
 	QueryMethod string `json:"queryMethod"`
 	/*
-	 * The content type of the response to the queries
+	 * The content type of the response to queries. It specifies the serialization, file type, or media type used to convey the resource, typically expressed as a MIME type following IANA media type registrations
 	 */
 	ContentType string `json:"contentType"`
 	/*

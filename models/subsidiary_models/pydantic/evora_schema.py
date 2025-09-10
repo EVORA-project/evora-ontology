@@ -27,7 +27,7 @@ from pydantic import (
 
 
 metamodel_version = "None"
-version = "1.0.9137"
+version = "1.0.9149"
 
 
 class ConfiguredBaseModel(BaseModel):
@@ -99,7 +99,7 @@ linkml_meta = LinkMLMeta({'comments': ['EVORAO is an ontology for standardized m
                     'pathogens. EVORAO is compatible with DCAT, making it '
                     'well-suited for efficiently cataloguing pathogen collections '
                     'and related resources.',
-     'generation_date': '2025-09-10T13:46:21',
+     'generation_date': '2025-09-10T15:59:51',
      'id': 'https://w3id.org/evorao/',
      'imports': ['linkml:types'],
      'in_language': 'en',
@@ -747,12 +747,24 @@ class DataProvider(DataService):
                             'wd:Q122625839',
                             'ncit:C205367'],
          'from_schema': 'https://w3id.org/evorao/',
-         'slot_usage': {'contentType': {'broad_mappings': ['schema:contentType'],
-                                        'close_mappings': ['dct:format'],
+         'slot_usage': {'contentType': {'comments': ['This property characterizes how '
+                                                     'the content is structured or '
+                                                     'encoded, independent of the '
+                                                     'entity type it represents. '
+                                                     'Examples include "JSON","CSV", '
+                                                     '"TSV", "FASTA", "GenBank",'],
                                         'description': 'The content type of the '
-                                                       'response to the queries',
+                                                       'response to queries. It '
+                                                       'specifies the serialization, '
+                                                       'file type, or media type used '
+                                                       'to convey the resource, '
+                                                       'typically expressed as a MIME '
+                                                       'type following IANA media type '
+                                                       'registrations',
                                         'domain_of': ['DataProvider'],
-                                        'ifabsent': 'string(JSON)',
+                                        'exact_mappings': ['schema:contentType',
+                                                           'dct:format'],
+                                        'ifabsent': 'string(application/json)',
                                         'multivalued': False,
                                         'name': 'contentType',
                                         'range': 'string',
@@ -807,7 +819,15 @@ class DataProvider(DataService):
                                      'range': 'uri',
                                      'required': False,
                                      'title': 'login URL'},
-                        'providedEntityType': {'description': 'The identification of '
+                        'providedEntityType': {'comments': ['This property defines '
+                                                            'what the response is '
+                                                            'about, independent of its '
+                                                            'serialization. It should '
+                                                            'reference an ontology '
+                                                            'class such as '
+                                                            'EVORAO:Virus, '
+                                                            'EVORAO:Protein, etc'],
+                                               'description': 'The identification of '
                                                               'the entity type (Class) '
                                                               'described by the '
                                                               'response to the query',
@@ -874,12 +894,17 @@ class DataProvider(DataService):
          'close_mappings': ['dcat:endpointDescription'],
          'domain_of': ['DataProvider'],
          'equals_string_in': ['GET', 'POST']} })
-    contentType: str = Field(default="JSON", title="content type", description="""The content type of the response to the queries""", json_schema_extra = { "linkml_meta": {'alias': 'contentType',
-         'broad_mappings': ['schema:contentType'],
-         'close_mappings': ['dct:format'],
+    contentType: str = Field(default="application/json", title="content type", description="""The content type of the response to queries. It specifies the serialization, file type, or media type used to convey the resource, typically expressed as a MIME type following IANA media type registrations""", json_schema_extra = { "linkml_meta": {'alias': 'contentType',
+         'comments': ['This property characterizes how the content is structured or '
+                      'encoded, independent of the entity type it represents. Examples '
+                      'include "JSON","CSV", "TSV", "FASTA", "GenBank",'],
          'domain_of': ['DataProvider'],
-         'ifabsent': 'string(JSON)'} })
+         'exact_mappings': ['schema:contentType', 'dct:format'],
+         'ifabsent': 'string(application/json)'} })
     providedEntityType: list[str] = Field(default=..., title="provided entity type", description="""The identification of the entity type (Class) described by the response to the query""", json_schema_extra = { "linkml_meta": {'alias': 'providedEntityType',
+         'comments': ['This property defines what the response is about, independent '
+                      'of its serialization. It should reference an ontology class '
+                      'such as EVORAO:Virus, EVORAO:Protein, etc'],
          'domain_of': ['DataProvider'],
          'related_mappings': ['dcat:servesDataset']} })
     weight: int = Field(default=0, title="weight", description="""A numerical value indicating relative importance or priority, generally processed in ascending order. This weight helps prioritize content when organizing or processing data. Its value can be negative, with a default set to 0""", json_schema_extra = { "linkml_meta": {'alias': 'weight',

@@ -38,7 +38,7 @@
     "interoperability"
   ],
   "id": "https://w3id.org/evorao/",
-  "version": "1.0.9137",
+  "version": "1.0.9149",
   "imports": [
     "linkml:types"
   ],
@@ -1000,17 +1000,18 @@
     {
       "name": "contentType",
       "definition_uri": "https://w3id.org/evorao/contentType",
-      "description": "The content type of the response to the queries",
+      "description": "The content type of the response to queries. It specifies the serialization, file type, or media type used to convey the resource, typically expressed as a MIME type following IANA media type registrations",
       "title": "content type",
+      "comments": [
+        "This property characterizes how the content is structured or encoded, independent of the entity type it represents. Examples include \"JSON\",\"CSV\", \"TSV\", \"FASTA\", \"GenBank\","
+      ],
       "from_schema": "https://w3id.org/evorao/",
-      "close_mappings": [
+      "exact_mappings": [
+        "http://schema.org/contentType",
         "http://purl.org/dc/terms/format"
       ],
-      "broad_mappings": [
-        "http://schema.org/contentType"
-      ],
       "slot_uri": "https://w3id.org/evorao/contentType",
-      "ifabsent": "string(JSON)",
+      "ifabsent": "string(application/json)",
       "owner": "DataProvider",
       "domain_of": [
         "DataProvider"
@@ -1024,6 +1025,9 @@
       "definition_uri": "https://w3id.org/evorao/providedEntityType",
       "description": "The identification of the entity type (Class) described by the response to the query",
       "title": "provided entity type",
+      "comments": [
+        "This property defines what the response is about, independent of its serialization. It should reference an ontology class such as EVORAO:Virus, EVORAO:Protein, etc"
+      ],
       "from_schema": "https://w3id.org/evorao/",
       "related_mappings": [
         "http://www.w3.org/ns/dcat#servesDataset"
@@ -4513,19 +4517,20 @@
     {
       "name": "DataProvider_contentType",
       "definition_uri": "https://w3id.org/evorao/contentType",
-      "description": "The content type of the response to the queries",
+      "description": "The content type of the response to queries. It specifies the serialization, file type, or media type used to convey the resource, typically expressed as a MIME type following IANA media type registrations",
       "title": "content type",
-      "from_schema": "https://w3id.org/evorao/",
-      "close_mappings": [
-        "http://purl.org/dc/terms/format"
+      "comments": [
+        "This property characterizes how the content is structured or encoded, independent of the entity type it represents. Examples include \"JSON\",\"CSV\", \"TSV\", \"FASTA\", \"GenBank\","
       ],
-      "broad_mappings": [
-        "http://schema.org/contentType"
+      "from_schema": "https://w3id.org/evorao/",
+      "exact_mappings": [
+        "http://schema.org/contentType",
+        "http://purl.org/dc/terms/format"
       ],
       "is_a": "contentType",
       "domain": "DataProvider",
       "slot_uri": "https://w3id.org/evorao/contentType",
-      "ifabsent": "string(JSON)",
+      "ifabsent": "string(application/json)",
       "alias": "contentType",
       "owner": "DataProvider",
       "domain_of": [
@@ -4542,6 +4547,9 @@
       "definition_uri": "https://w3id.org/evorao/providedEntityType",
       "description": "The identification of the entity type (Class) described by the response to the query",
       "title": "provided entity type",
+      "comments": [
+        "This property defines what the response is about, independent of its serialization. It should reference an ontology class such as EVORAO:Virus, EVORAO:Protein, etc"
+      ],
       "from_schema": "https://w3id.org/evorao/",
       "related_mappings": [
         "http://www.w3.org/ns/dcat#servesDataset"
@@ -11592,9 +11600,9 @@
   ],
   "metamodel_version": "1.7.0",
   "source_file": "evora_schema.yaml",
-  "source_file_date": "2025-09-10T11:46:48",
-  "source_file_size": 195601,
-  "generation_date": "2025-09-10T11:47:04",
+  "source_file_date": "2025-09-10T14:00:15",
+  "source_file_size": 196765,
+  "generation_date": "2025-09-10T14:00:30",
   "@type": "SchemaDefinition",
   "@context": [
     "https://w3id.org/linkml/types.context.jsonld",

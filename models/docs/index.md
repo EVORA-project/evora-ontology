@@ -131,7 +131,7 @@ Name: EVORAO
 | [complementaryDocument](complementaryDocument.md) | Any additional documents that provide supplementary information, instructions... |
 | [contactPoint](contactPoint.md) | An information that allows someone to establish communication |
 | [contaminationWithCoInfectingViruses](contaminationWithCoInfectingViruses.md) | A boolean value indicating whether there is contamination with co-infecting v... |
-| [contentType](contentType.md) | The content type of the response to the queries |
+| [contentType](contentType.md) | The content type of the response to queries |
 | [contentUrl](contentUrl.md) | The web address or location where the file content is stored and can be acces... |
 | [country](country.md) | The country of the organization |
 | [countryOfCollection](countryOfCollection.md) | The geographical location where the sample was collected in situ |

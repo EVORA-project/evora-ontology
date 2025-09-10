@@ -42,6 +42,10 @@ Alias: providedEntityType
 
 
 
+## Comments
+
+* This property defines what the response is about, independent of its serialization. It should reference an ontology class such as EVORAO:Virus, EVORAO:Protein, etc
+
 ## Identifier and Mapping Information
 
 
@@ -77,6 +81,9 @@ name: providedEntityType
 description: The identification of the entity type (Class) described by the response
   to the query
 title: provided entity type
+comments:
+- This property defines what the response is about, independent of its serialization.
+  It should reference an ontology class such as EVORAO:Virus, EVORAO:Protein, etc
 from_schema: https://w3id.org/evorao/
 related_mappings:
 - dcat:servesDataset

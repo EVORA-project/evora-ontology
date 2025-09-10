@@ -3,7 +3,7 @@
 # Slot: content type (contentType) 
 
 
-_The content type of the response to the queries_
+_The content type of the response to queries. It specifies the serialization, file type, or media type used to convey the resource, typically expressed as a MIME type following IANA media type registrations_
 
 
 
@@ -40,6 +40,10 @@ Alias: contentType
 
 
 
+## Comments
+
+* This property characterizes how the content is structured or encoded, independent of the entity type it represents. Examples include "JSON","CSV", "TSV", "FASTA", "GenBank",
+
 ## Identifier and Mapping Information
 
 
@@ -62,8 +66,7 @@ Alias: contentType
 | ---  | ---  |
 | self | EVORAO:contentType |
 | native | EVORAO:contentType |
-| broad | schema:contentType |
-| close | dct:format |
+| exact | schema:contentType, dct:format |
 
 
 
@@ -73,15 +76,20 @@ Alias: contentType
 <details>
 ```yaml
 name: contentType
-description: The content type of the response to the queries
+description: The content type of the response to queries. It specifies the serialization,
+  file type, or media type used to convey the resource, typically expressed as a MIME
+  type following IANA media type registrations
 title: content type
+comments:
+- This property characterizes how the content is structured or encoded, independent
+  of the entity type it represents. Examples include "JSON","CSV", "TSV", "FASTA",
+  "GenBank",
 from_schema: https://w3id.org/evorao/
-close_mappings:
-- dct:format
-broad_mappings:
+exact_mappings:
 - schema:contentType
+- dct:format
 rank: 1000
-ifabsent: string(JSON)
+ifabsent: string(application/json)
 alias: contentType
 domain_of:
 - DataProvider

@@ -84,7 +84,7 @@ URI: [EVORAO:DataProvider](https://w3id.org/evorao/DataProvider)
 | [loginUrl](loginUrl.md) | 0..1 <br/> [Uri](Uri.md) | The URL template that allows to log in if required | direct |
 | [loginTokenName](loginTokenName.md) | 0..1 <br/> [String](String.md) | The name of the token, unique identifier of an interaction session, that will... | direct |
 | [queryMethod](queryMethod.md) | 1 <br/> [String](String.md) | The http request method used to access the requested query url | direct |
-| [contentType](contentType.md) | 1 <br/> [String](String.md) | The content type of the response to the queries | direct |
+| [contentType](contentType.md) | 1 <br/> [String](String.md) | The content type of the response to queries | direct |
 | [providedEntityType](providedEntityType.md) | 1..* <br/> [String](String.md) | The identification of the entity type (Class) described by the response to th... | direct |
 | [weight](weight.md) | 1 <br/> [Integer](Integer.md) | A numerical value indicating relative importance or priority, generally proce... | direct |
 | [title](title.md) | 1 <br/> [String](String.md) | A name given to the resource | [DataService](DataService.md) |
@@ -245,13 +245,18 @@ slot_usage:
     multivalued: false
   contentType:
     name: contentType
-    description: The content type of the response to the queries
+    description: The content type of the response to queries. It specifies the serialization,
+      file type, or media type used to convey the resource, typically expressed as
+      a MIME type following IANA media type registrations
     title: content type
-    close_mappings:
-    - dct:format
-    broad_mappings:
+    comments:
+    - This property characterizes how the content is structured or encoded, independent
+      of the entity type it represents. Examples include "JSON","CSV", "TSV", "FASTA",
+      "GenBank",
+    exact_mappings:
     - schema:contentType
-    ifabsent: string(JSON)
+    - dct:format
+    ifabsent: string(application/json)
     domain_of:
     - DataProvider
     range: string
@@ -262,6 +267,10 @@ slot_usage:
     description: The identification of the entity type (Class) described by the response
       to the query
     title: provided entity type
+    comments:
+    - This property defines what the response is about, independent of its serialization.
+      It should reference an ontology class such as EVORAO:Virus, EVORAO:Protein,
+      etc
     related_mappings:
     - dcat:servesDataset
     domain_of:
@@ -381,13 +390,18 @@ slot_usage:
     multivalued: false
   contentType:
     name: contentType
-    description: The content type of the response to the queries
+    description: The content type of the response to queries. It specifies the serialization,
+      file type, or media type used to convey the resource, typically expressed as
+      a MIME type following IANA media type registrations
     title: content type
-    close_mappings:
-    - dct:format
-    broad_mappings:
+    comments:
+    - This property characterizes how the content is structured or encoded, independent
+      of the entity type it represents. Examples include "JSON","CSV", "TSV", "FASTA",
+      "GenBank",
+    exact_mappings:
     - schema:contentType
-    ifabsent: string(JSON)
+    - dct:format
+    ifabsent: string(application/json)
     domain_of:
     - DataProvider
     range: string
@@ -398,6 +412,10 @@ slot_usage:
     description: The identification of the entity type (Class) described by the response
       to the query
     title: provided entity type
+    comments:
+    - This property defines what the response is about, independent of its serialization.
+      It should reference an ontology class such as EVORAO:Virus, EVORAO:Protein,
+      etc
     related_mappings:
     - dcat:servesDataset
     domain_of:
@@ -521,15 +539,20 @@ attributes:
     - POST
   contentType:
     name: contentType
-    description: The content type of the response to the queries
+    description: The content type of the response to queries. It specifies the serialization,
+      file type, or media type used to convey the resource, typically expressed as
+      a MIME type following IANA media type registrations
     title: content type
+    comments:
+    - This property characterizes how the content is structured or encoded, independent
+      of the entity type it represents. Examples include "JSON","CSV", "TSV", "FASTA",
+      "GenBank",
     from_schema: https://w3id.org/evorao/
-    close_mappings:
-    - dct:format
-    broad_mappings:
+    exact_mappings:
     - schema:contentType
+    - dct:format
     rank: 1000
-    ifabsent: string(JSON)
+    ifabsent: string(application/json)
     alias: contentType
     owner: DataProvider
     domain_of:
@@ -542,6 +565,10 @@ attributes:
     description: The identification of the entity type (Class) described by the response
       to the query
     title: provided entity type
+    comments:
+    - This property defines what the response is about, independent of its serialization.
+      It should reference an ontology class such as EVORAO:Virus, EVORAO:Protein,
+      etc
     from_schema: https://w3id.org/evorao/
     related_mappings:
     - dcat:servesDataset

@@ -48,7 +48,7 @@ keywords:
 - pathogen collections
 - interoperability
 id: https://w3id.org/evorao/
-version: 1.0.9137
+version: 1.0.9149
 imports:
 - linkml:types
 license: https://creativecommons.org/publicdomain/zero/1.0/
@@ -394,14 +394,19 @@ slots:
     - GET
     - POST
   contentType:
-    description: The content type of the response to the queries
+    description: The content type of the response to queries. It specifies the serialization,
+      file type, or media type used to convey the resource, typically expressed as
+      a MIME type following IANA media type registrations
     title: content type
+    comments:
+    - This property characterizes how the content is structured or encoded, independent
+      of the entity type it represents. Examples include "JSON","CSV", "TSV", "FASTA",
+      "GenBank",
     from_schema: https://w3id.org/evorao/
-    close_mappings:
-    - dct:format
-    broad_mappings:
+    exact_mappings:
     - schema:contentType
-    ifabsent: string(JSON)
+    - dct:format
+    ifabsent: string(application/json)
     domain_of:
     - DataProvider
     range: string
@@ -411,6 +416,10 @@ slots:
     description: The identification of the entity type (Class) described by the response
       to the query
     title: provided entity type
+    comments:
+    - This property defines what the response is about, independent of its serialization.
+      It should reference an ontology class such as EVORAO:Virus, EVORAO:Protein,
+      etc
     from_schema: https://w3id.org/evorao/
     related_mappings:
     - dcat:servesDataset
@@ -2855,13 +2864,18 @@ classes:
         required: true
         multivalued: false
       contentType:
-        description: The content type of the response to the queries
+        description: The content type of the response to queries. It specifies the
+          serialization, file type, or media type used to convey the resource, typically
+          expressed as a MIME type following IANA media type registrations
         title: content type
-        close_mappings:
-        - dct:format
-        broad_mappings:
+        comments:
+        - This property characterizes how the content is structured or encoded, independent
+          of the entity type it represents. Examples include "JSON","CSV", "TSV",
+          "FASTA", "GenBank",
+        exact_mappings:
         - schema:contentType
-        ifabsent: string(JSON)
+        - dct:format
+        ifabsent: string(application/json)
         domain_of:
         - DataProvider
         range: string
@@ -2871,6 +2885,10 @@ classes:
         description: The identification of the entity type (Class) described by the
           response to the query
         title: provided entity type
+        comments:
+        - This property defines what the response is about, independent of its serialization.
+          It should reference an ontology class such as EVORAO:Virus, EVORAO:Protein,
+          etc
         related_mappings:
         - dcat:servesDataset
         domain_of:
@@ -6030,4 +6048,4 @@ classes:
         required: false
         multivalued: false
 source_file: https://w3id.org/evorao/evorao.owl.ttl
-generation_date: '2025-09-10T13:46:21'
+generation_date: '2025-09-10T15:59:51'

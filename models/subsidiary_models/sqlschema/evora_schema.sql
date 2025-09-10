@@ -33,7 +33,7 @@
 --     * Slot: loginUrl Description: The URL template that allows to log in if required
 --     * Slot: loginTokenName Description: The name of the token, unique identifier of an interaction session, that will have to be reused as credential in the query
 --     * Slot: queryMethod Description: The http request method used to access the requested query url
---     * Slot: contentType Description: The content type of the response to the queries
+--     * Slot: contentType Description: The content type of the response to queries. It specifies the serialization, file type, or media type used to convey the resource, typically expressed as a MIME type following IANA media type registrations
 --     * Slot: weight Description: A numerical value indicating relative importance or priority, generally processed in ascending order. This weight helps prioritize content when organizing or processing data. Its value can be negative, with a default set to 0
 --     * Slot: title Description: A name given to the resource
 --     * Slot: description Description: A short explanation of the characteristics, features, or nature of the current item
