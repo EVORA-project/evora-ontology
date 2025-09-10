@@ -38,7 +38,7 @@
     "interoperability"
   ],
   "id": "https://w3id.org/evorao/",
-  "version": "1.0.9131",
+  "version": "1.0.9137",
   "imports": [
     "linkml:types"
   ],
@@ -115,10 +115,6 @@
     {
       "prefix_prefix": "dwc",
       "prefix_reference": "http://rs.tdwg.org/dwc/terms/"
-    },
-    {
-      "prefix_prefix": "IAO",
-      "prefix_reference": "http://purl.obolibrary.org/obo/IAO_"
     },
     {
       "prefix_prefix": "EVORAO",
@@ -11596,9 +11592,9 @@
   ],
   "metamodel_version": "1.7.0",
   "source_file": "evora_schema.yaml",
-  "source_file_date": "2025-09-10T11:35:35",
-  "source_file_size": 195644,
-  "generation_date": "2025-09-10T11:35:52",
+  "source_file_date": "2025-09-10T11:46:48",
+  "source_file_size": 195601,
+  "generation_date": "2025-09-10T11:47:04",
   "@type": "SchemaDefinition",
   "@context": [
     "https://w3id.org/linkml/types.context.jsonld",

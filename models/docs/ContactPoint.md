@@ -315,7 +315,7 @@ slot_usage:
       and Contributor ID (ORCID) organisation
     title: ORCID id
     exact_mappings:
-    - IAO:0000708
+    - iao:0000708
     domain_of:
     - ContactPoint
     - Person
@@ -481,7 +481,7 @@ slot_usage:
       and Contributor ID (ORCID) organisation
     title: ORCID id
     exact_mappings:
-    - IAO:0000708
+    - iao:0000708
     domain_of:
     - ContactPoint
     - Person
@@ -665,7 +665,7 @@ attributes:
     title: ORCID id
     from_schema: https://w3id.org/evorao/
     exact_mappings:
-    - IAO:0000708
+    - iao:0000708
     rank: 1000
     alias: orcidId
     owner: ContactPoint

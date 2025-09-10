@@ -27,7 +27,7 @@ from pydantic import (
 
 
 metamodel_version = "None"
-version = "1.0.9131"
+version = "1.0.9137"
 
 
 class ConfiguredBaseModel(BaseModel):
@@ -99,7 +99,7 @@ linkml_meta = LinkMLMeta({'comments': ['EVORAO is an ontology for standardized m
                     'pathogens. EVORAO is compatible with DCAT, making it '
                     'well-suited for efficiently cataloguing pathogen collections '
                     'and related resources.',
-     'generation_date': '2025-09-10T13:35:10',
+     'generation_date': '2025-09-10T13:46:21',
      'id': 'https://w3id.org/evorao/',
      'imports': ['linkml:types'],
      'in_language': 'en',
@@ -121,8 +121,6 @@ linkml_meta = LinkMLMeta({'comments': ['EVORAO is an ontology for standardized m
      'name': 'EVORAO',
      'prefixes': {'EVORAO': {'prefix_prefix': 'EVORAO',
                              'prefix_reference': 'https://w3id.org/evorao/'},
-                  'IAO': {'prefix_prefix': 'IAO',
-                          'prefix_reference': 'http://purl.obolibrary.org/obo/IAO_'},
                   'adms': {'prefix_prefix': 'adms',
                            'prefix_reference': 'http://www.w3.org/ns/adms#'},
                   'afop': {'prefix_prefix': 'afop',
@@ -8539,7 +8537,7 @@ class ContactPoint(Resource):
                                                    'Researcher and Contributor ID '
                                                    '(ORCID) organisation',
                                     'domain_of': ['ContactPoint', 'Person'],
-                                    'exact_mappings': ['IAO:0000708'],
+                                    'exact_mappings': ['iao:0000708'],
                                     'multivalued': False,
                                     'name': 'orcidId',
                                     'range': 'string',
@@ -8622,7 +8620,7 @@ class ContactPoint(Resource):
          'domain_of': ['ContactPoint']} })
     orcidId: Optional[str] = Field(default=None, title="ORCID id", description="""Unique persistent identifier for a person, provided by the Open Researcher and Contributor ID (ORCID) organisation""", json_schema_extra = { "linkml_meta": {'alias': 'orcidId',
          'domain_of': ['ContactPoint', 'Person'],
-         'exact_mappings': ['IAO:0000708'],
+         'exact_mappings': ['iao:0000708'],
          'recommended': True} })
 
 

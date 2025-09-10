@@ -16,7 +16,6 @@ PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX adms: <http://www.w3.org/ns/adms#>
 PREFIX pav: <http://purl.org/pav/>
 PREFIX dwc: <http://rs.tdwg.org/dwc/terms/>
-PREFIX IAO: <http://purl.obolibrary.org/obo/IAO_>
 PREFIX EVORAO: <https://w3id.org/evorao/>
 PREFIX ncit: <http://purl.obolibrary.org/obo/NCIT_>
 PREFIX geo: <http://purl.obolibrary.org/obo/GEO_>

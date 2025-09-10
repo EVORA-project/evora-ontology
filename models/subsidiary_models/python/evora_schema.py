@@ -1,5 +1,5 @@
 # Auto generated from evora_schema.yaml by pythongen.py version: 0.0.1
-# Generation date: 2025-09-10T11:35:57
+# Generation date: 2025-09-10T11:47:08
 # Schema: EVORAO
 #
 # id: https://w3id.org/evorao/
@@ -60,11 +60,10 @@ from linkml_runtime.linkml_model.types import Boolean, Datetime, Integer, String
 from linkml_runtime.utils.metamodelcore import Bool, URI, XSDDateTime
 
 metamodel_version = "1.7.0"
-version = "1.0.9131"
+version = "1.0.9137"
 
 # Namespaces
 EVORAO = CurieNamespace('EVORAO', 'https://w3id.org/evorao/')
-IAO = CurieNamespace('IAO', 'http://purl.obolibrary.org/obo/IAO_')
 ADMS = CurieNamespace('adms', 'http://www.w3.org/ns/adms#')
 AFOP = CurieNamespace('afop', 'http://purl.allotrope.org/ontologies/property#')
 APOLLO = CurieNamespace('apollo', 'http://purl.obolibrary.org/obo/APOLLO_SV_')
