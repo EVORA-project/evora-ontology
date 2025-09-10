@@ -48,6 +48,10 @@ type DataService struct {
 	 * The URL template that allows to get the content
 	 */
 	EndpointUrl string `json:"endpointUrl"`
+	/*
+	 * A collection of data that this data service can distribute
+	 */
+	ServesDataset []Dataset `json:"servesDataset"`
 }
 
 /*
@@ -171,7 +175,7 @@ type DataProvider struct {
 	/*
 	 * The identification of the entity type (Class) described by the response to the query
 	 */
-	ProvidedEntityType Dataset `json:"providedEntityType"`
+	ProvidedEntityType string `json:"providedEntityType"`
 	/*
 	 * A numerical value indicating relative importance or priority, generally processed in ascending order. This weight helps prioritize content when organizing or processing data. Its value can be negative, with a default set to 0
 	 */
@@ -188,6 +192,10 @@ type DataProvider struct {
 	 * The URL template that allows to get the content
 	 */
 	EndpointUrl string `json:"endpointUrl"`
+	/*
+	 * A collection of data that this data service can distribute
+	 */
+	ServesDataset []Dataset `json:"servesDataset"`
 }
 
 /*

@@ -1,5 +1,5 @@
 # metamodel_version: 1.7.0
-# version: 1.0.9032
+# version: 1.0.9131
 type AlternateName
   {
     title: String!
@@ -242,13 +242,14 @@ type DataProvider
     title: String!
     description: String
     endpointUrl: Uri!
+    servesDataset: [Dataset]
     license: License
     loginRequestMethod: String
     loginUrl: Uri
     loginTokenName: String
     queryMethod: String!
     contentType: String!
-    providedEntityType: Dataset!
+    providedEntityType: [String]!
     weight: Integer!
   }
 
@@ -257,6 +258,7 @@ interface DataService
     title: String!
     description: String
     endpointUrl: Uri!
+    servesDataset: [Dataset]
   }
 
 interface Dataset

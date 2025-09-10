@@ -34,6 +34,15 @@ URI: [dcat:DataService](http://www.w3.org/ns/dcat#DataService)
         
       DataService : endpointUrl
         
+      DataService : servesDataset
+        
+          
+    
+    
+    DataService --> "* _recommended_" Dataset : servesDataset
+    click Dataset href "../Dataset"
+
+        
       DataService : title
         
       
@@ -57,6 +66,7 @@ URI: [dcat:DataService](http://www.w3.org/ns/dcat#DataService)
 | [title](title.md) | 1 <br/> [String](String.md) | A name given to the resource | direct |
 | [description](description.md) | 0..1 _recommended_ <br/> [String](String.md) | A short explanation of the characteristics, features, or nature of the curren... | direct |
 | [endpointUrl](endpointUrl.md) | 1 <br/> [Uri](Uri.md) | The URL template that allows to get the content | direct |
+| [servesDataset](servesDataset.md) | * _recommended_ <br/> [Dataset](Dataset.md) | A collection of data that this data service can distribute | direct |
 
 
 
@@ -88,6 +98,7 @@ URI: [dcat:DataService](http://www.w3.org/ns/dcat#DataService)
 | ---  | ---  |
 | self | dcat:DataService |
 | native | EVORAO:DataService |
+| exact | schema:EntryPoint, schema:EntryPoint |
 | close | wd:Q193424, schema:WebAPI, wd:Q193424, schema:WebAPI |
 
 
@@ -109,6 +120,9 @@ description: A collection of operations that provides access to one or more data
   or data processing functions
 title: Data Service
 from_schema: https://w3id.org/evorao/
+exact_mappings:
+- schema:EntryPoint
+- schema:EntryPoint
 close_mappings:
 - wd:Q193424
 - schema:WebAPI
@@ -120,6 +134,7 @@ slots:
 - title
 - description
 - endpointUrl
+- servesDataset
 slot_usage:
   title:
     name: title
@@ -132,9 +147,9 @@ slot_usage:
       ''Virus name'', ''virus host type'', ''collection year'', ''country of collection''
       ex ''suspected epidemiological origin'', ''genotype'', ''strain'', ''variant
       name or specific feature'
-    close_mappings:
-    - rdfs:label
+    exact_mappings:
     - schema:name
+    - rdfs:label
     slot_uri: dct:title
     domain_of:
     - DataService
@@ -176,6 +191,8 @@ slot_usage:
     name: endpointUrl
     description: The URL template that allows to get the content
     title: endpoint URL
+    exact_mappings:
+    - schema:urlTemplate
     close_mappings:
     - wdp:P1630
     slot_uri: dcat:endpointURL
@@ -184,6 +201,19 @@ slot_usage:
     range: uri
     required: true
     multivalued: false
+  servesDataset:
+    name: servesDataset
+    description: A collection of data that this data service can distribute
+    title: serves dataset
+    comments:
+    - This property rather intends to point towards Catalogues as collections of Datasets
+    slot_uri: dcat:servesDataset
+    domain_of:
+    - DataService
+    range: Dataset
+    required: false
+    recommended: true
+    multivalued: true
 class_uri: dcat:DataService
 
 ```
@@ -198,6 +228,9 @@ description: A collection of operations that provides access to one or more data
   or data processing functions
 title: Data Service
 from_schema: https://w3id.org/evorao/
+exact_mappings:
+- schema:EntryPoint
+- schema:EntryPoint
 close_mappings:
 - wd:Q193424
 - schema:WebAPI
@@ -217,9 +250,9 @@ slot_usage:
       ''Virus name'', ''virus host type'', ''collection year'', ''country of collection''
       ex ''suspected epidemiological origin'', ''genotype'', ''strain'', ''variant
       name or specific feature'
-    close_mappings:
-    - rdfs:label
+    exact_mappings:
     - schema:name
+    - rdfs:label
     slot_uri: dct:title
     domain_of:
     - DataService
@@ -261,6 +294,8 @@ slot_usage:
     name: endpointUrl
     description: The URL template that allows to get the content
     title: endpoint URL
+    exact_mappings:
+    - schema:urlTemplate
     close_mappings:
     - wdp:P1630
     slot_uri: dcat:endpointURL
@@ -269,6 +304,19 @@ slot_usage:
     range: uri
     required: true
     multivalued: false
+  servesDataset:
+    name: servesDataset
+    description: A collection of data that this data service can distribute
+    title: serves dataset
+    comments:
+    - This property rather intends to point towards Catalogues as collections of Datasets
+    slot_uri: dcat:servesDataset
+    domain_of:
+    - DataService
+    range: Dataset
+    required: false
+    recommended: true
+    multivalued: true
 attributes:
   title:
     name: title
@@ -282,9 +330,9 @@ attributes:
       ex ''suspected epidemiological origin'', ''genotype'', ''strain'', ''variant
       name or specific feature'
     from_schema: https://w3id.org/evorao/
-    close_mappings:
-    - rdfs:label
+    exact_mappings:
     - schema:name
+    - rdfs:label
     rank: 1000
     slot_uri: dct:title
     alias: title
@@ -336,6 +384,8 @@ attributes:
     description: The URL template that allows to get the content
     title: endpoint URL
     from_schema: https://w3id.org/evorao/
+    exact_mappings:
+    - schema:urlTemplate
     close_mappings:
     - wdp:P1630
     rank: 1000
@@ -347,6 +397,23 @@ attributes:
     range: uri
     required: true
     multivalued: false
+  servesDataset:
+    name: servesDataset
+    description: A collection of data that this data service can distribute
+    title: serves dataset
+    comments:
+    - This property rather intends to point towards Catalogues as collections of Datasets
+    from_schema: https://w3id.org/evorao/
+    rank: 1000
+    slot_uri: dcat:servesDataset
+    alias: servesDataset
+    owner: DataService
+    domain_of:
+    - DataService
+    range: Dataset
+    required: false
+    recommended: true
+    multivalued: true
 class_uri: dcat:DataService
 
 ```

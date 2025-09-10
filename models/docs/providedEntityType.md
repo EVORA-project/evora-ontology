@@ -32,7 +32,9 @@ Alias: providedEntityType
 
 ## Properties
 
-* Range: [Dataset](Dataset.md)
+* Range: [String](String.md)
+
+* Multivalued: True
 
 * Required: True
 
@@ -62,7 +64,7 @@ Alias: providedEntityType
 | ---  | ---  |
 | self | EVORAO:providedEntityType |
 | native | EVORAO:providedEntityType |
-| exact | dcat:servesDataset |
+| related | dcat:servesDataset |
 
 
 
@@ -76,15 +78,15 @@ description: The identification of the entity type (Class) described by the resp
   to the query
 title: provided entity type
 from_schema: https://w3id.org/evorao/
-exact_mappings:
+related_mappings:
 - dcat:servesDataset
 rank: 1000
 alias: providedEntityType
 domain_of:
 - DataProvider
-range: Dataset
+range: string
 required: true
-multivalued: false
+multivalued: true
 
 ```
 </details>

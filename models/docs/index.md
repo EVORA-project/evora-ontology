@@ -242,6 +242,7 @@ Name: EVORAO
 | [sequenceReference](sequenceReference.md) | A reference that permits to retrieve the sequence information from a sequence... |
 | [sequencing](sequencing.md) | Refers to the level of sequencing performed on the nucleic acid |
 | [serotype](serotype.md) | Genetically related pathogens that group together based on serological relati... |
+| [servesDataset](servesDataset.md) | A collection of data that this data service can distribute |
 | [shippingConditions](shippingConditions.md) | Specification of the terms and parameters for transporting |
 | [sourceOfInformation](sourceOfInformation.md) | The name of the origin from which knowledge is obtained |
 | [specialFeature](specialFeature.md) | Distinctive attributes of a product that set it apart from other similar item... |

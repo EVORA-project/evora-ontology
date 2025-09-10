@@ -67,7 +67,8 @@ Alias: taxon
 | ---  | ---  |
 | self | EVORAO:taxon |
 | native | EVORAO:taxon |
-| close | dwc:Taxon |
+| related | dwc:Taxon |
+| close | schema:taxonomicRange, dwc:taxonID, dwc:toTaxon |
 
 
 
@@ -84,6 +85,10 @@ comments:
   of pathogens (e.g viruses) in the reference taxonomy
 from_schema: https://w3id.org/evorao/
 close_mappings:
+- schema:taxonomicRange
+- dwc:taxonID
+- dwc:toTaxon
+related_mappings:
 - dwc:Taxon
 rank: 1000
 alias: taxon

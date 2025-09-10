@@ -28,7 +28,7 @@ URI: [EVORAO:Version](https://w3id.org/evorao/Version)
           
     
     
-    Version --> "*" Resource : resource
+    Version --> "* _recommended_" Resource : resource
     click Resource href "../Resource"
 
         
@@ -55,7 +55,7 @@ URI: [EVORAO:Version](https://w3id.org/evorao/Version)
 | ---  | --- | --- | --- |
 | [version](version.md) | 1 _recommended_ <br/> [String](String.md) | The version indicator (name or identifier) of a resource | direct |
 | [versionOf](versionOf.md) | 1 <br/> [String](String.md) | Identifier of what type of entities the version qualifies | direct |
-| [resource](resource.md) | * <br/> [Resource](Resource.md) | Resource published or curated by a single agent | direct |
+| [resource](resource.md) | * _recommended_ <br/> [Resource](Resource.md) | Resource published or curated by a single agent | direct |
 
 
 
@@ -91,7 +91,8 @@ URI: [EVORAO:Version](https://w3id.org/evorao/Version)
 | ---  | ---  |
 | self | EVORAO:Version |
 | native | EVORAO:Version |
-| close | wd:Q114469879, wd:Q114469879 |
+| related | wd:Q114469879, wd:Q114469879 |
+| close | reproduceme:Version, reproduceme:Version |
 
 
 
@@ -118,6 +119,9 @@ comments:
   \ as nodes in a graph database).\r"
 from_schema: https://w3id.org/evorao/
 close_mappings:
+- reproduceme:Version
+- reproduceme:Version
+related_mappings:
 - wd:Q114469879
 - wd:Q114469879
 is_a: Resource
@@ -130,9 +134,13 @@ slot_usage:
     name: version
     description: The version indicator (name or identifier) of a resource
     title: version
+    exact_mappings:
+    - pav:version
     close_mappings:
     - wdp:P393
     - schema:version
+    related_mappings:
+    - schema:identifier
     slot_uri: dcat:version
     domain_of:
     - Version
@@ -145,6 +153,8 @@ slot_usage:
     name: versionOf
     description: Identifier of what type of entities the version qualifies
     title: version Of
+    related_mappings:
+    - dct:isVersionOf
     domain_of:
     - Version
     range: string
@@ -158,6 +168,7 @@ slot_usage:
     - Version
     range: Resource
     required: false
+    recommended: true
     multivalued: true
 
 ```
@@ -178,6 +189,9 @@ comments:
   \ as nodes in a graph database).\r"
 from_schema: https://w3id.org/evorao/
 close_mappings:
+- reproduceme:Version
+- reproduceme:Version
+related_mappings:
 - wd:Q114469879
 - wd:Q114469879
 is_a: Resource
@@ -186,9 +200,13 @@ slot_usage:
     name: version
     description: The version indicator (name or identifier) of a resource
     title: version
+    exact_mappings:
+    - pav:version
     close_mappings:
     - wdp:P393
     - schema:version
+    related_mappings:
+    - schema:identifier
     slot_uri: dcat:version
     domain_of:
     - Version
@@ -201,6 +219,8 @@ slot_usage:
     name: versionOf
     description: Identifier of what type of entities the version qualifies
     title: version Of
+    related_mappings:
+    - dct:isVersionOf
     domain_of:
     - Version
     range: string
@@ -214,6 +234,7 @@ slot_usage:
     - Version
     range: Resource
     required: false
+    recommended: true
     multivalued: true
 attributes:
   version:
@@ -221,9 +242,13 @@ attributes:
     description: The version indicator (name or identifier) of a resource
     title: version
     from_schema: https://w3id.org/evorao/
+    exact_mappings:
+    - pav:version
     close_mappings:
     - wdp:P393
     - schema:version
+    related_mappings:
+    - schema:identifier
     rank: 1000
     slot_uri: dcat:version
     alias: version
@@ -241,6 +266,8 @@ attributes:
     description: Identifier of what type of entities the version qualifies
     title: version Of
     from_schema: https://w3id.org/evorao/
+    related_mappings:
+    - dct:isVersionOf
     rank: 1000
     alias: versionOf
     owner: Version
@@ -261,6 +288,7 @@ attributes:
     - Version
     range: Resource
     required: false
+    recommended: true
     multivalued: true
 
 ```

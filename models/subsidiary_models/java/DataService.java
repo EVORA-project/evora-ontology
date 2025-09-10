@@ -5,7 +5,7 @@ import lombok.*;
 
 
 
-/* version: 1.0.9032 */
+/* version: 1.0.9131 */
 
 
 /**
@@ -18,5 +18,6 @@ public abstract class DataService extends Resource {
   private String title;
   private String description;
   private String endpointUrl;
+  private List<Dataset> servesDataset;
 
 }

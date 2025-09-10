@@ -36,6 +36,8 @@ Alias: resource
 
 * Multivalued: True
 
+* Recommended: True
+
 
 
 
@@ -80,6 +82,7 @@ domain_of:
 - Version
 range: Resource
 required: false
+recommended: true
 multivalued: true
 
 ```

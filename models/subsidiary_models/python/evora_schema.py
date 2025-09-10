@@ -1,5 +1,5 @@
 # Auto generated from evora_schema.yaml by pythongen.py version: 0.0.1
-# Generation date: 2025-09-09T14:30:15
+# Generation date: 2025-09-10T11:35:57
 # Schema: EVORAO
 #
 # id: https://w3id.org/evorao/
@@ -60,7 +60,7 @@ from linkml_runtime.linkml_model.types import Boolean, Datetime, Integer, String
 from linkml_runtime.utils.metamodelcore import Bool, URI, XSDDateTime
 
 metamodel_version = "1.7.0"
-version = "1.0.9032"
+version = "1.0.9131"
 
 # Namespaces
 EVORAO = CurieNamespace('EVORAO', 'https://w3id.org/evorao/')
@@ -194,6 +194,7 @@ class DataService(Resource):
     title: str = None
     endpointUrl: Union[str, URI] = None
     description: Optional[str] = None
+    servesDataset: Optional[Union[Union[dict, Dataset], list[Union[dict, Dataset]]]] = empty_list()
 
     def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.title):
@@ -208,6 +209,8 @@ class DataService(Resource):
 
         if self.description is not None and not isinstance(self.description, str):
             self.description = str(self.description)
+
+        self._normalize_inlined_as_dict(slot_name="servesDataset", slot_type=Dataset, key_name="title", keyed=False)
 
         super().__post_init__(**kwargs)
 
@@ -332,7 +335,7 @@ class DataProvider(DataService):
     title: str = None
     endpointUrl: Union[str, URI] = None
     queryMethod: str = None
-    providedEntityType: Union[dict, Dataset] = None
+    providedEntityType: Union[str, list[str]] = None
     contentType: str = "JSON"
     weight: int = 0
     license: Optional[Union[dict, "License"]] = None
@@ -353,8 +356,9 @@ class DataProvider(DataService):
 
         if self._is_empty(self.providedEntityType):
             self.MissingRequiredField("providedEntityType")
-        if not isinstance(self.providedEntityType, Dataset):
-            self.providedEntityType = Dataset(**as_dict(self.providedEntityType))
+        if not isinstance(self.providedEntityType, list):
+            self.providedEntityType = [self.providedEntityType] if self.providedEntityType is not None else []
+        self.providedEntityType = [v if isinstance(v, str) else str(v) for v in self.providedEntityType]
 
         if self._is_empty(self.weight):
             self.MissingRequiredField("weight")
@@ -2813,6 +2817,9 @@ slots.version = Slot(uri=DCAT.version, name="version", curie=DCAT.curie('version
 slots.endpointUrl = Slot(uri=DCAT.endpointURL, name="endpointUrl", curie=DCAT.curie('endpointURL'),
                    model_uri=EVORAO.endpointUrl, domain=None, range=Union[str, URI])
 
+slots.servesDataset = Slot(uri=DCAT.servesDataset, name="servesDataset", curie=DCAT.curie('servesDataset'),
+                   model_uri=EVORAO.servesDataset, domain=None, range=Optional[Union[Union[dict, Dataset], list[Union[dict, Dataset]]]])
+
 slots.versionOf = Slot(uri=EVORAO.versionOf, name="versionOf", curie=EVORAO.curie('versionOf'),
                    model_uri=EVORAO.versionOf, domain=None, range=str)
 
@@ -2853,7 +2860,7 @@ slots.contentType = Slot(uri=EVORAO.contentType, name="contentType", curie=EVORA
                    model_uri=EVORAO.contentType, domain=None, range=str)
 
 slots.providedEntityType = Slot(uri=EVORAO.providedEntityType, name="providedEntityType", curie=EVORAO.curie('providedEntityType'),
-                   model_uri=EVORAO.providedEntityType, domain=None, range=Union[dict, Dataset])
+                   model_uri=EVORAO.providedEntityType, domain=None, range=Union[str, list[str]])
 
 slots.weight = Slot(uri=EVORAO.weight, name="weight", curie=EVORAO.curie('weight'),
                    model_uri=EVORAO.weight, domain=None, range=int)
@@ -3377,6 +3384,9 @@ slots.DataService_description = Slot(uri=DCT.description, name="DataService_desc
 slots.DataService_endpointUrl = Slot(uri=DCAT.endpointURL, name="DataService_endpointUrl", curie=DCAT.curie('endpointURL'),
                    model_uri=EVORAO.DataService_endpointUrl, domain=DataService, range=Union[str, URI])
 
+slots.DataService_servesDataset = Slot(uri=DCAT.servesDataset, name="DataService_servesDataset", curie=DCAT.curie('servesDataset'),
+                   model_uri=EVORAO.DataService_servesDataset, domain=DataService, range=Optional[Union[Union[dict, Dataset], list[Union[dict, Dataset]]]])
+
 slots.Version_version = Slot(uri=DCAT.version, name="Version_version", curie=DCAT.curie('version'),
                    model_uri=EVORAO.Version_version, domain=Version, range=str)
 
@@ -3423,7 +3433,7 @@ slots.DataProvider_contentType = Slot(uri=EVORAO.contentType, name="DataProvider
                    model_uri=EVORAO.DataProvider_contentType, domain=DataProvider, range=str)
 
 slots.DataProvider_providedEntityType = Slot(uri=EVORAO.providedEntityType, name="DataProvider_providedEntityType", curie=EVORAO.curie('providedEntityType'),
-                   model_uri=EVORAO.DataProvider_providedEntityType, domain=DataProvider, range=Union[dict, Dataset])
+                   model_uri=EVORAO.DataProvider_providedEntityType, domain=DataProvider, range=Union[str, list[str]])
 
 slots.DataProvider_weight = Slot(uri=EVORAO.weight, name="DataProvider_weight", curie=EVORAO.curie('weight'),
                    model_uri=EVORAO.DataProvider_weight, domain=DataProvider, range=int)

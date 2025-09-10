@@ -882,9 +882,9 @@ attributes:
       ex ''suspected epidemiological origin'', ''genotype'', ''strain'', ''variant
       name or specific feature'
     from_schema: https://w3id.org/evorao/
-    close_mappings:
-    - rdfs:label
+    exact_mappings:
     - schema:name
+    - rdfs:label
     rank: 1000
     slot_uri: dct:title
     alias: title
@@ -936,9 +936,13 @@ attributes:
     description: The version indicator (name or identifier) of a resource
     title: version
     from_schema: https://w3id.org/evorao/
+    exact_mappings:
+    - pav:version
     close_mappings:
     - wdp:P393
     - schema:version
+    related_mappings:
+    - schema:identifier
     rank: 1000
     slot_uri: dcat:version
     alias: version

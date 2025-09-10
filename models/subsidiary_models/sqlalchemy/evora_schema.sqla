@@ -59,6 +59,24 @@ class MSDS(Base):
     
 
 
+class DataServiceServesDataset(Base):
+    """
+    
+    """
+    __tablename__ = 'DataService_servesDataset'
+
+    DataService_id = Column(Integer(), ForeignKey('DataService.id'), primary_key=True)
+    servesDataset_id = Column(Integer(), ForeignKey('Dataset.id'), primary_key=True)
+    
+
+    def __repr__(self):
+        return f"DataService_servesDataset(DataService_id={self.DataService_id},servesDataset_id={self.servesDataset_id},)"
+
+
+
+    
+
+
 class VersionResource(Base):
     """
     
@@ -107,6 +125,42 @@ class TaxonomyRank(Base):
 
     def __repr__(self):
         return f"Taxonomy_rank(Taxonomy_id={self.Taxonomy_id},rank_id={self.rank_id},)"
+
+
+
+    
+
+
+class DataProviderProvidedEntityType(Base):
+    """
+    
+    """
+    __tablename__ = 'DataProvider_providedEntityType'
+
+    DataProvider_id = Column(Integer(), ForeignKey('DataProvider.id'), primary_key=True)
+    providedEntityType = Column(Text(), primary_key=True, nullable=False )
+    
+
+    def __repr__(self):
+        return f"DataProvider_providedEntityType(DataProvider_id={self.DataProvider_id},providedEntityType={self.providedEntityType},)"
+
+
+
+    
+
+
+class DataProviderServesDataset(Base):
+    """
+    
+    """
+    __tablename__ = 'DataProvider_servesDataset'
+
+    DataProvider_id = Column(Integer(), ForeignKey('DataProvider.id'), primary_key=True)
+    servesDataset_id = Column(Integer(), ForeignKey('Dataset.id'), primary_key=True)
+    
+
+    def __repr__(self):
+        return f"DataProvider_servesDataset(DataProvider_id={self.DataProvider_id},servesDataset_id={self.servesDataset_id},)"
 
 
 
@@ -4289,6 +4343,10 @@ class DataService(Resource):
     description = Column(Text())
     endpointUrl = Column(Text(), nullable=False )
     
+    
+    # ManyToMany
+    servesDataset = relationship( "Dataset", secondary="DataService_servesDataset")
+    
 
     def __repr__(self):
         return f"DataService(id={self.id},title={self.title},description={self.description},endpointUrl={self.endpointUrl},)"
@@ -4797,12 +4855,19 @@ class DataProvider(DataService):
     endpointUrl = Column(Text(), nullable=False )
     license_id = Column(Integer(), ForeignKey('License.id'))
     license = relationship("License", uselist=False, foreign_keys=[license_id])
-    providedEntityType_id = Column(Integer(), ForeignKey('Dataset.id'), nullable=False )
-    providedEntityType = relationship("Dataset", uselist=False, foreign_keys=[providedEntityType_id])
+    
+    
+    providedEntityType_rel = relationship( "DataProviderProvidedEntityType" )
+    providedEntityType = association_proxy("providedEntityType_rel", "providedEntityType",
+                                  creator=lambda x_: DataProviderProvidedEntityType(providedEntityType=x_))
+    
+    
+    # ManyToMany
+    servesDataset = relationship( "Dataset", secondary="DataProvider_servesDataset")
     
 
     def __repr__(self):
-        return f"DataProvider(id={self.id},loginRequestMethod={self.loginRequestMethod},loginUrl={self.loginUrl},loginTokenName={self.loginTokenName},queryMethod={self.queryMethod},contentType={self.contentType},weight={self.weight},title={self.title},description={self.description},endpointUrl={self.endpointUrl},license_id={self.license_id},providedEntityType_id={self.providedEntityType_id},)"
+        return f"DataProvider(id={self.id},loginRequestMethod={self.loginRequestMethod},loginUrl={self.loginUrl},loginTokenName={self.loginTokenName},queryMethod={self.queryMethod},contentType={self.contentType},weight={self.weight},title={self.title},description={self.description},endpointUrl={self.endpointUrl},license_id={self.license_id},)"
 
 
 

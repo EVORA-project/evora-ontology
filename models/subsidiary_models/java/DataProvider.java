@@ -5,7 +5,7 @@ import lombok.*;
 
 
 
-/* version: 1.0.9032 */
+/* version: 1.0.9131 */
 
 
 /**
@@ -21,7 +21,7 @@ public class DataProvider extends DataService {
   private String loginTokenName;
   private String queryMethod;
   private String contentType;
-  private Dataset providedEntityType;
+  private List<String> providedEntityType;
   private int weight;
 
 }

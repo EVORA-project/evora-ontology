@@ -118,7 +118,16 @@ WHERE {
   }
  }
  VALUES ?check { linkml:range }
- VALUES ?predicate { EVORAO:providedEntityType  }
+ VALUES ?predicate { dcat:servesDataset  }
  
 }  
+
+
+
+## -- End of checks for DataProvider
+
+
+## --
+## Checks for PathogenIdentification
+## --
 

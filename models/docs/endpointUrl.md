@@ -22,8 +22,8 @@ Alias: endpointUrl
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [DataService](DataService.md) | A collection of operations that provides access to one or more datasets or da... |  yes  |
 | [DataProvider](DataProvider.md) | An external API (Application Programming Interface) or Endpoint that permits ... |  no  |
+| [DataService](DataService.md) | A collection of operations that provides access to one or more datasets or da... |  yes  |
 
 
 
@@ -63,6 +63,7 @@ Alias: endpointUrl
 | ---  | ---  |
 | self | dcat:endpointURL |
 | native | EVORAO:endpointUrl |
+| exact | schema:urlTemplate |
 | close | wdp:P1630 |
 
 
@@ -76,6 +77,8 @@ name: endpointUrl
 description: The URL template that allows to get the content
 title: endpoint URL
 from_schema: https://w3id.org/evorao/
+exact_mappings:
+- schema:urlTemplate
 close_mappings:
 - wdp:P1630
 rank: 1000

@@ -1,7 +1,7 @@
  syntax="proto3";
  package
 // metamodel_version: 1.7.0
-// version: 1.0.9032
+// version: 1.0.9131
 // List of other names for things
 message AlternateName
  {
@@ -232,13 +232,14 @@ message DataProvider
   string title = 0
   string description = 0
   uri endpointUrl = 0
+ repeated  dataset servesDataset = 0
   license license = 0
   string loginRequestMethod = 0
   uri loginUrl = 0
   string loginTokenName = 0
   string queryMethod = 0
   string contentType = 0
-  dataset providedEntityType = 0
+ repeated  string providedEntityType = 0
   integer weight = 0
  }
 // A detection kit for specific pathogens

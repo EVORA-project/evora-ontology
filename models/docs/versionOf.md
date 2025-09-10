@@ -62,6 +62,7 @@ Alias: versionOf
 | ---  | ---  |
 | self | EVORAO:versionOf |
 | native | EVORAO:versionOf |
+| related | dct:isVersionOf |
 
 
 
@@ -74,6 +75,8 @@ name: versionOf
 description: Identifier of what type of entities the version qualifies
 title: version Of
 from_schema: https://w3id.org/evorao/
+related_mappings:
+- dct:isVersionOf
 rank: 1000
 alias: versionOf
 domain_of:

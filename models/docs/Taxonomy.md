@@ -140,7 +140,9 @@ URI: [EVORAO:Taxonomy](https://w3id.org/evorao/Taxonomy)
 | ---  | ---  |
 | self | EVORAO:Taxonomy |
 | native | EVORAO:Taxonomy |
-| close | wd:Q8269924, skos:Collection, wd:Q8269924, skos:Collection |
+| broad | skos:Collection, skos:Collection |
+| related | wd:Q8269924, wd:Q8269924 |
+| close | edam:3028, ncit:C17469, edam:3028, ncit:C17469 |
 
 
 
@@ -162,9 +164,15 @@ description: A structured representation of data about the classification and na
 title: Taxonomy
 from_schema: https://w3id.org/evorao/
 close_mappings:
+- edam:3028
+- ncit:C17469
+- edam:3028
+- ncit:C17469
+related_mappings:
 - wd:Q8269924
+- wd:Q8269924
+broad_mappings:
 - skos:Collection
-- wd:Q8269924
 - skos:Collection
 is_a: Catalogue
 slots:
@@ -180,6 +188,10 @@ slot_usage:
     description: Scientifically classified group or entity within the reference taxonomy
     title: taxon
     close_mappings:
+    - schema:taxonomicRange
+    - dwc:taxonID
+    - dwc:toTaxon
+    related_mappings:
     - dwc:Taxon
     domain_of:
     - Taxonomy
@@ -200,9 +212,13 @@ slot_usage:
     name: version
     description: The version indicator (name or identifier) of a resource
     title: version
+    exact_mappings:
+    - pav:version
     close_mappings:
     - wdp:P393
     - schema:version
+    related_mappings:
+    - schema:identifier
     slot_uri: dcat:version
     domain_of:
     - Taxonomy
@@ -224,6 +240,15 @@ slot_usage:
     name: rank
     description: Relative level or position of the identified taxon in the taxonomy
     title: rank
+    exact_mappings:
+    - wdp:P105
+    close_mappings:
+    - dwc:taxonRank
+    - schema:taxonRank
+    - biolink:has_taxonomic_rank
+    related_mappings:
+    - taxrank:1000000
+    - ncbitaxon:has_rank
     domain_of:
     - Taxonomy
     - Taxon
@@ -254,9 +279,15 @@ description: A structured representation of data about the classification and na
 title: Taxonomy
 from_schema: https://w3id.org/evorao/
 close_mappings:
+- edam:3028
+- ncit:C17469
+- edam:3028
+- ncit:C17469
+related_mappings:
 - wd:Q8269924
+- wd:Q8269924
+broad_mappings:
 - skos:Collection
-- wd:Q8269924
 - skos:Collection
 is_a: Catalogue
 slot_usage:
@@ -265,6 +296,10 @@ slot_usage:
     description: Scientifically classified group or entity within the reference taxonomy
     title: taxon
     close_mappings:
+    - schema:taxonomicRange
+    - dwc:taxonID
+    - dwc:toTaxon
+    related_mappings:
     - dwc:Taxon
     domain_of:
     - Taxonomy
@@ -285,9 +320,13 @@ slot_usage:
     name: version
     description: The version indicator (name or identifier) of a resource
     title: version
+    exact_mappings:
+    - pav:version
     close_mappings:
     - wdp:P393
     - schema:version
+    related_mappings:
+    - schema:identifier
     slot_uri: dcat:version
     domain_of:
     - Taxonomy
@@ -309,6 +348,15 @@ slot_usage:
     name: rank
     description: Relative level or position of the identified taxon in the taxonomy
     title: rank
+    exact_mappings:
+    - wdp:P105
+    close_mappings:
+    - dwc:taxonRank
+    - schema:taxonRank
+    - biolink:has_taxonomic_rank
+    related_mappings:
+    - taxrank:1000000
+    - ncbitaxon:has_rank
     domain_of:
     - Taxonomy
     - Taxon
@@ -335,6 +383,10 @@ attributes:
       or group of pathogens (e.g viruses) in the reference taxonomy
     from_schema: https://w3id.org/evorao/
     close_mappings:
+    - schema:taxonomicRange
+    - dwc:taxonID
+    - dwc:toTaxon
+    related_mappings:
     - dwc:Taxon
     rank: 1000
     alias: taxon
@@ -363,9 +415,13 @@ attributes:
     description: The version indicator (name or identifier) of a resource
     title: version
     from_schema: https://w3id.org/evorao/
+    exact_mappings:
+    - pav:version
     close_mappings:
     - wdp:P393
     - schema:version
+    related_mappings:
+    - schema:identifier
     rank: 1000
     slot_uri: dcat:version
     alias: version
@@ -397,8 +453,14 @@ attributes:
     title: rank
     from_schema: https://w3id.org/evorao/
     exact_mappings:
+    - wdp:P105
+    close_mappings:
     - dwc:taxonRank
     - schema:taxonRank
+    - biolink:has_taxonomic_rank
+    related_mappings:
+    - taxrank:1000000
+    - ncbitaxon:has_rank
     rank: 1000
     alias: rank
     owner: Taxonomy
@@ -434,9 +496,9 @@ attributes:
       ex ''suspected epidemiological origin'', ''genotype'', ''strain'', ''variant
       name or specific feature'
     from_schema: https://w3id.org/evorao/
-    close_mappings:
-    - rdfs:label
+    exact_mappings:
     - schema:name
+    - rdfs:label
     rank: 1000
     slot_uri: dct:title
     alias: title

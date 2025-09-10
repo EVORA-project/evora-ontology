@@ -216,7 +216,6 @@ attributes:
     exact_mappings:
     - schema:name
     close_mappings:
-    - foaf:name
     - dct:title
     rank: 1000
     slot_uri: foaf:name
@@ -297,6 +296,8 @@ attributes:
     from_schema: https://w3id.org/evorao/
     exact_mappings:
     - dct:license
+    close_mappings:
+    - wdp:P275
     rank: 1000
     slot_uri: dct:license
     alias: license

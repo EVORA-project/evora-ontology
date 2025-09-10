@@ -155,7 +155,8 @@ slot_usage:
       ''Virus name'', ''virus host type'', ''collection year'', ''country of collection''
       ex ''suspected epidemiological origin'', ''genotype'', ''strain'', ''variant
       name or specific feature'
-    close_mappings:
+    exact_mappings:
+    - schema:name
     - rdfs:label
     slot_uri: dct:title
     domain_of:
@@ -268,7 +269,8 @@ slot_usage:
       ''Virus name'', ''virus host type'', ''collection year'', ''country of collection''
       ex ''suspected epidemiological origin'', ''genotype'', ''strain'', ''variant
       name or specific feature'
-    close_mappings:
+    exact_mappings:
+    - schema:name
     - rdfs:label
     slot_uri: dct:title
     domain_of:
@@ -360,7 +362,8 @@ attributes:
       ex ''suspected epidemiological origin'', ''genotype'', ''strain'', ''variant
       name or specific feature'
     from_schema: https://w3id.org/evorao/
-    close_mappings:
+    exact_mappings:
+    - schema:name
     - rdfs:label
     rank: 1000
     slot_uri: dct:title

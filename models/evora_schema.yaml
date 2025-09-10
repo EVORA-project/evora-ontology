@@ -48,7 +48,7 @@ keywords:
 - pathogen collections
 - interoperability
 id: https://w3id.org/evorao/
-version: 1.0.9032
+version: 1.0.9131
 imports:
 - linkml:types
 license: https://creativecommons.org/publicdomain/zero/1.0/
@@ -126,15 +126,8 @@ slots:
       ''Virus name'', ''virus host type'', ''collection year'', ''country of collection''
       ex ''suspected epidemiological origin'', ''genotype'', ''strain'', ''variant
       name or specific feature'
-    - 'The title of the item should be as short and descriptive as possible. E.g.
-      for virus products it should basically be based on the following Pattern:
-
-      ''Virus name'', ''virus host type'', ''collection year'', ''country of collection''
-      ex ''suspected epidemiological origin'', ''genotype'', ''strain'', ''variant
-      name or specific feature'
     from_schema: https://w3id.org/evorao/
-    close_mappings:
-    - rdfs:label
+    exact_mappings:
     - schema:name
     - rdfs:label
     slot_uri: dct:title
@@ -189,11 +182,17 @@ slots:
     description: The version indicator (name or identifier) of a resource
     title: version
     from_schema: https://w3id.org/evorao/
+    exact_mappings:
+    - pav:version
+    - pav:version
     close_mappings:
     - wdp:P393
     - schema:version
     - wdp:P393
     - schema:version
+    related_mappings:
+    - schema:identifier
+    - schema:identifier
     slot_uri: dcat:version
     domain_of:
     - Dataset
@@ -207,6 +206,8 @@ slots:
     description: The URL template that allows to get the content
     title: endpoint URL
     from_schema: https://w3id.org/evorao/
+    exact_mappings:
+    - schema:urlTemplate
     close_mappings:
     - wdp:P1630
     slot_uri: dcat:endpointURL
@@ -215,10 +216,25 @@ slots:
     range: uri
     required: true
     multivalued: false
+  servesDataset:
+    description: A collection of data that this data service can distribute
+    title: serves dataset
+    comments:
+    - This property rather intends to point towards Catalogues as collections of Datasets
+    from_schema: https://w3id.org/evorao/
+    slot_uri: dcat:servesDataset
+    domain_of:
+    - DataService
+    range: Dataset
+    required: false
+    recommended: true
+    multivalued: true
   versionOf:
     description: Identifier of what type of entities the version qualifies
     title: version Of
     from_schema: https://w3id.org/evorao/
+    related_mappings:
+    - dct:isVersionOf
     domain_of:
     - Version
     range: string
@@ -232,6 +248,7 @@ slots:
     - Version
     range: Resource
     required: false
+    recommended: true
     multivalued: true
   taxon:
     description: Scientifically classified group or entity within the reference taxonomy
@@ -241,6 +258,10 @@ slots:
       or group of pathogens (e.g viruses) in the reference taxonomy
     from_schema: https://w3id.org/evorao/
     close_mappings:
+    - schema:taxonomicRange
+    - dwc:taxonID
+    - dwc:toTaxon
+    related_mappings:
     - dwc:Taxon
     domain_of:
     - Taxonomy
@@ -271,8 +292,16 @@ slots:
     title: rank
     from_schema: https://w3id.org/evorao/
     exact_mappings:
+    - wdp:P105
     - dwc:taxonRank
     - schema:taxonRank
+    close_mappings:
+    - dwc:taxonRank
+    - schema:taxonRank
+    - biolink:has_taxonomic_rank
+    related_mappings:
+    - taxrank:1000000
+    - ncbitaxon:has_rank
     domain_of:
     - Taxonomy
     - Taxon
@@ -295,9 +324,10 @@ slots:
     title: license
     from_schema: https://w3id.org/evorao/
     exact_mappings:
-    - dct:license
     - schema:license
     - dct:license
+    close_mappings:
+    - wdp:P275
     slot_uri: dct:license
     domain_of:
     - DataProvider
@@ -383,13 +413,13 @@ slots:
       to the query
     title: provided entity type
     from_schema: https://w3id.org/evorao/
-    exact_mappings:
+    related_mappings:
     - dcat:servesDataset
     domain_of:
     - DataProvider
-    range: Dataset
+    range: string
     required: true
-    multivalued: false
+    multivalued: true
   weight:
     description: A numerical value indicating relative importance or priority, generally
       processed in ascending order. This weight helps prioritize content when organizing
@@ -831,10 +861,7 @@ slots:
     from_schema: https://w3id.org/evorao/
     exact_mappings:
     - schema:name
-    - schema:name
     close_mappings:
-    - dct:title
-    - foaf:name
     - dct:title
     slot_uri: foaf:name
     domain_of:
@@ -2442,9 +2469,9 @@ classes:
           ''Virus name'', ''virus host type'', ''collection year'', ''country of collection''
           ex ''suspected epidemiological origin'', ''genotype'', ''strain'', ''variant
           name or specific feature'
-        close_mappings:
-        - rdfs:label
+        exact_mappings:
         - schema:name
+        - rdfs:label
         slot_uri: dct:title
         domain_of:
         - Dataset
@@ -2471,9 +2498,13 @@ classes:
       version:
         description: The version indicator (name or identifier) of a resource
         title: version
+        exact_mappings:
+        - pav:version
         close_mappings:
         - wdp:P393
         - schema:version
+        related_mappings:
+        - schema:identifier
         slot_uri: dcat:version
         domain_of:
         - Dataset
@@ -2487,6 +2518,9 @@ classes:
       or data processing functions
     title: Data Service
     from_schema: https://w3id.org/evorao/
+    exact_mappings:
+    - schema:EntryPoint
+    - schema:EntryPoint
     close_mappings:
     - wd:Q193424
     - schema:WebAPI
@@ -2498,6 +2532,7 @@ classes:
     - title
     - description
     - endpointUrl
+    - servesDataset
     slot_usage:
       title:
         description: A name given to the resource
@@ -2509,9 +2544,9 @@ classes:
           ''Virus name'', ''virus host type'', ''collection year'', ''country of collection''
           ex ''suspected epidemiological origin'', ''genotype'', ''strain'', ''variant
           name or specific feature'
-        close_mappings:
-        - rdfs:label
+        exact_mappings:
         - schema:name
+        - rdfs:label
         slot_uri: dct:title
         domain_of:
         - DataService
@@ -2539,6 +2574,8 @@ classes:
       endpointUrl:
         description: The URL template that allows to get the content
         title: endpoint URL
+        exact_mappings:
+        - schema:urlTemplate
         close_mappings:
         - wdp:P1630
         slot_uri: dcat:endpointURL
@@ -2547,6 +2584,19 @@ classes:
         range: uri
         required: true
         multivalued: false
+      servesDataset:
+        description: A collection of data that this data service can distribute
+        title: serves dataset
+        comments:
+        - This property rather intends to point towards Catalogues as collections
+          of Datasets
+        slot_uri: dcat:servesDataset
+        domain_of:
+        - DataService
+        range: Dataset
+        required: false
+        recommended: true
+        multivalued: true
     class_uri: dcat:DataService
   Version:
     description: Numeric code assigned to identify a particular historical version
@@ -2559,6 +2609,9 @@ classes:
       \ (e.g., as nodes in a graph database).\r"
     from_schema: https://w3id.org/evorao/
     close_mappings:
+    - reproduceme:Version
+    - reproduceme:Version
+    related_mappings:
     - wd:Q114469879
     - wd:Q114469879
     is_a: Resource
@@ -2570,9 +2623,13 @@ classes:
       version:
         description: The version indicator (name or identifier) of a resource
         title: version
+        exact_mappings:
+        - pav:version
         close_mappings:
         - wdp:P393
         - schema:version
+        related_mappings:
+        - schema:identifier
         slot_uri: dcat:version
         domain_of:
         - Version
@@ -2582,6 +2639,8 @@ classes:
       versionOf:
         description: Identifier of what type of entities the version qualifies
         title: version Of
+        related_mappings:
+        - dct:isVersionOf
         domain_of:
         - Version
         range: string
@@ -2594,6 +2653,7 @@ classes:
         - Version
         range: Resource
         required: false
+        recommended: true
         multivalued: true
   Catalogue:
     description: A curated collection of metadata about resources
@@ -2604,7 +2664,9 @@ classes:
     - schema:DataCatalog
     close_mappings:
     - wd:Q2352616
+    - skos:Collection
     - wd:Q2352616
+    - skos:Collection
     is_a: Dataset
     abstract: true
     class_uri: dcat:Catalog
@@ -2614,9 +2676,15 @@ classes:
     title: Taxonomy
     from_schema: https://w3id.org/evorao/
     close_mappings:
+    - edam:3028
+    - ncit:C17469
+    - edam:3028
+    - ncit:C17469
+    related_mappings:
     - wd:Q8269924
+    - wd:Q8269924
+    broad_mappings:
     - skos:Collection
-    - wd:Q8269924
     - skos:Collection
     is_a: Catalogue
     slots:
@@ -2632,6 +2700,10 @@ classes:
           taxonomy
         title: taxon
         close_mappings:
+        - schema:taxonomicRange
+        - dwc:taxonID
+        - dwc:toTaxon
+        related_mappings:
         - dwc:Taxon
         domain_of:
         - Taxonomy
@@ -2649,9 +2721,13 @@ classes:
       version:
         description: The version indicator (name or identifier) of a resource
         title: version
+        exact_mappings:
+        - pav:version
         close_mappings:
         - wdp:P393
         - schema:version
+        related_mappings:
+        - schema:identifier
         slot_uri: dcat:version
         domain_of:
         - Taxonomy
@@ -2669,6 +2745,15 @@ classes:
       rank:
         description: Relative level or position of the identified taxon in the taxonomy
         title: rank
+        exact_mappings:
+        - wdp:P105
+        close_mappings:
+        - dwc:taxonRank
+        - schema:taxonRank
+        - biolink:has_taxonomic_rank
+        related_mappings:
+        - taxrank:1000000
+        - ncbitaxon:has_rank
         domain_of:
         - Taxonomy
         range: TaxonomicRank
@@ -2690,7 +2775,12 @@ classes:
     from_schema: https://w3id.org/evorao/
     close_mappings:
     - wd:Q122625839
+    - ncit:C205367
     - wd:Q122625839
+    - ncit:C205367
+    broad_mappings:
+    - schema:EntryPoint
+    - schema:EntryPoint
     is_a: DataService
     slots:
     - license
@@ -2707,8 +2797,9 @@ classes:
           can be used, shared, or distributed, indicating any restrictions or permissions
         title: license
         exact_mappings:
-        - dct:license
         - schema:license
+        close_mappings:
+        - wdp:P275
         slot_uri: dct:license
         domain_of:
         - DataProvider
@@ -2781,13 +2872,13 @@ classes:
         description: The identification of the entity type (Class) described by the
           response to the query
         title: provided entity type
-        exact_mappings:
+        related_mappings:
         - dcat:servesDataset
         domain_of:
         - DataProvider
-        range: Dataset
+        range: string
         required: true
-        multivalued: false
+        multivalued: true
       weight:
         description: A numerical value indicating relative importance or priority,
           generally processed in ascending order. This weight helps prioritize content
@@ -2946,9 +3037,9 @@ classes:
           ''Virus name'', ''virus host type'', ''collection year'', ''country of collection''
           ex ''suspected epidemiological origin'', ''genotype'', ''strain'', ''variant
           name or specific feature'
-        close_mappings:
-        - rdfs:label
+        exact_mappings:
         - schema:name
+        - rdfs:label
         slot_uri: dct:title
         domain_of:
         - Publication
@@ -3047,9 +3138,9 @@ classes:
           ''Virus name'', ''virus host type'', ''collection year'', ''country of collection''
           ex ''suspected epidemiological origin'', ''genotype'', ''strain'', ''variant
           name or specific feature'
-        close_mappings:
-        - rdfs:label
+        exact_mappings:
         - schema:name
+        - rdfs:label
         slot_uri: dct:title
         domain_of:
         - Term
@@ -5503,7 +5594,6 @@ classes:
         exact_mappings:
         - schema:name
         close_mappings:
-        - foaf:name
         - dct:title
         slot_uri: foaf:name
         domain_of:
@@ -5645,7 +5735,6 @@ classes:
         exact_mappings:
         - schema:name
         close_mappings:
-        - foaf:name
         - dct:title
         slot_uri: foaf:name
         domain_of:
@@ -5796,7 +5885,8 @@ classes:
           ''Virus name'', ''virus host type'', ''collection year'', ''country of collection''
           ex ''suspected epidemiological origin'', ''genotype'', ''strain'', ''variant
           name or specific feature'
-        close_mappings:
+        exact_mappings:
+        - schema:name
         - rdfs:label
         slot_uri: dct:title
         domain_of:
@@ -5884,7 +5974,8 @@ classes:
           ''Virus name'', ''virus host type'', ''collection year'', ''country of collection''
           ex ''suspected epidemiological origin'', ''genotype'', ''strain'', ''variant
           name or specific feature'
-        close_mappings:
+        exact_mappings:
+        - schema:name
         - rdfs:label
         slot_uri: dct:title
         domain_of:
@@ -5940,4 +6031,4 @@ classes:
         required: false
         multivalued: false
 source_file: https://w3id.org/evorao/evorao.owl.ttl
-generation_date: '2025-09-09T16:29:30'
+generation_date: '2025-09-10T13:35:10'

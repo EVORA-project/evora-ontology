@@ -23,12 +23,12 @@ Alias: license
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
 | [DataProvider](DataProvider.md) | An external API (Application Programming Interface) or Endpoint that permits ... |  yes  |
-| [Image](Image.md) | Subclass of File representing visual content such as pictures, diagrams, or i... |  no  |
-| [Document](Document.md) | Subclass of File representing textual or written files such as reports, manua... |  no  |
-| [File](File.md) | Digital document or record stored in a specific format that contains data or ... |  yes  |
 | [Video](Video.md) | Subclass of File representing moving visual media, such as recordings, presen... |  no  |
-| [Audio](Audio.md) | Subclass of File representing sound recordings or audio tracks |  no  |
 | [Data](Data.md) | Subclass of File representing structured or unstructured datasets, often used... |  no  |
+| [File](File.md) | Digital document or record stored in a specific format that contains data or ... |  yes  |
+| [Document](Document.md) | Subclass of File representing textual or written files such as reports, manua... |  no  |
+| [Image](Image.md) | Subclass of File representing visual content such as pictures, diagrams, or i... |  no  |
+| [Audio](Audio.md) | Subclass of File representing sound recordings or audio tracks |  no  |
 
 
 
@@ -66,7 +66,8 @@ Alias: license
 | ---  | ---  |
 | self | dct:license |
 | native | EVORAO:license |
-| exact | dct:license, schema:license, dct:license |
+| exact | schema:license, dct:license |
+| close | wdp:P275 |
 
 
 
@@ -81,9 +82,10 @@ description: Information about terms and conditions under which the subject can 
 title: license
 from_schema: https://w3id.org/evorao/
 exact_mappings:
-- dct:license
 - schema:license
 - dct:license
+close_mappings:
+- wdp:P275
 rank: 1000
 slot_uri: dct:license
 alias: license

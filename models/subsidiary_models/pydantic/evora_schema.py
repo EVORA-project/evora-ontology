@@ -27,7 +27,7 @@ from pydantic import (
 
 
 metamodel_version = "None"
-version = "1.0.9032"
+version = "1.0.9131"
 
 
 class ConfiguredBaseModel(BaseModel):
@@ -99,7 +99,7 @@ linkml_meta = LinkMLMeta({'comments': ['EVORAO is an ontology for standardized m
                     'pathogens. EVORAO is compatible with DCAT, making it '
                     'well-suited for efficiently cataloguing pathogen collections '
                     'and related resources.',
-     'generation_date': '2025-09-09T16:29:30',
+     'generation_date': '2025-09-10T13:35:10',
      'id': 'https://w3id.org/evorao/',
      'imports': ['linkml:types'],
      'in_language': 'en',
@@ -288,8 +288,7 @@ class Dataset(Resource):
                                         'required': True,
                                         'slot_uri': 'dct:description',
                                         'title': 'description'},
-                        'title': {'close_mappings': ['rdfs:label', 'schema:name'],
-                                  'comments': ['The title of the item should be as '
+                        'title': {'comments': ['The title of the item should be as '
                                                'short and descriptive as possible. '
                                                'E.g. for virus products it should '
                                                'basically be based on the following '
@@ -307,6 +306,7 @@ class Dataset(Resource):
                                                 'Term',
                                                 'License',
                                                 'Certification'],
+                                  'exact_mappings': ['schema:name', 'rdfs:label'],
                                   'multivalued': False,
                                   'name': 'title',
                                   'range': 'string',
@@ -317,17 +317,18 @@ class Dataset(Resource):
                                     'description': 'The version indicator (name or '
                                                    'identifier) of a resource',
                                     'domain_of': ['Dataset', 'Version', 'Taxonomy'],
+                                    'exact_mappings': ['pav:version'],
                                     'multivalued': False,
                                     'name': 'version',
                                     'range': 'string',
                                     'recommended': True,
+                                    'related_mappings': ['schema:identifier'],
                                     'required': False,
                                     'slot_uri': 'dcat:version',
                                     'title': 'version'}},
          'title': 'Dataset'})
 
     title: str = Field(default=..., title="title", description="""A name given to the resource""", json_schema_extra = { "linkml_meta": {'alias': 'title',
-         'close_mappings': ['rdfs:label', 'schema:name'],
          'comments': ['The title of the item should be as short and descriptive as '
                       'possible. E.g. for virus products it should basically be based '
                       'on the following Pattern:\n'
@@ -340,6 +341,7 @@ class Dataset(Resource):
                        'Term',
                        'License',
                        'Certification'],
+         'exact_mappings': ['schema:name', 'rdfs:label'],
          'slot_uri': 'dct:title'} })
     description: str = Field(default=..., title="description", description="""A short explanation of the characteristics, features, or nature of the current item""", json_schema_extra = { "linkml_meta": {'alias': 'description',
          'close_mappings': ['schema:description'],
@@ -359,7 +361,9 @@ class Dataset(Resource):
     version: Optional[str] = Field(default=None, title="version", description="""The version indicator (name or identifier) of a resource""", json_schema_extra = { "linkml_meta": {'alias': 'version',
          'close_mappings': ['wdp:P393', 'schema:version'],
          'domain_of': ['Dataset', 'Version', 'Taxonomy'],
+         'exact_mappings': ['pav:version'],
          'recommended': True,
+         'related_mappings': ['schema:identifier'],
          'slot_uri': 'dcat:version'} })
 
 
@@ -373,6 +377,7 @@ class DataService(Resource):
                             'schema:WebAPI',
                             'wd:Q193424',
                             'schema:WebAPI'],
+         'exact_mappings': ['schema:EntryPoint', 'schema:EntryPoint'],
          'from_schema': 'https://w3id.org/evorao/',
          'slot_usage': {'description': {'comments': ['Describe this item in few lines. '
                                                      'This description will serve as a '
@@ -401,14 +406,28 @@ class DataService(Resource):
                                         'description': 'The URL template that allows '
                                                        'to get the content',
                                         'domain_of': ['DataService'],
+                                        'exact_mappings': ['schema:urlTemplate'],
                                         'multivalued': False,
                                         'name': 'endpointUrl',
                                         'range': 'uri',
                                         'required': True,
                                         'slot_uri': 'dcat:endpointURL',
                                         'title': 'endpoint URL'},
-                        'title': {'close_mappings': ['rdfs:label', 'schema:name'],
-                                  'comments': ['The title of the item should be as '
+                        'servesDataset': {'comments': ['This property rather intends '
+                                                       'to point towards Catalogues as '
+                                                       'collections of Datasets'],
+                                          'description': 'A collection of data that '
+                                                         'this data service can '
+                                                         'distribute',
+                                          'domain_of': ['DataService'],
+                                          'multivalued': True,
+                                          'name': 'servesDataset',
+                                          'range': 'Dataset',
+                                          'recommended': True,
+                                          'required': False,
+                                          'slot_uri': 'dcat:servesDataset',
+                                          'title': 'serves dataset'},
+                        'title': {'comments': ['The title of the item should be as '
                                                'short and descriptive as possible. '
                                                'E.g. for virus products it should '
                                                'basically be based on the following '
@@ -426,6 +445,7 @@ class DataService(Resource):
                                                 'Term',
                                                 'License',
                                                 'Certification'],
+                                  'exact_mappings': ['schema:name', 'rdfs:label'],
                                   'multivalued': False,
                                   'name': 'title',
                                   'range': 'string',
@@ -435,7 +455,6 @@ class DataService(Resource):
          'title': 'Data Service'})
 
     title: str = Field(default=..., title="title", description="""A name given to the resource""", json_schema_extra = { "linkml_meta": {'alias': 'title',
-         'close_mappings': ['rdfs:label', 'schema:name'],
          'comments': ['The title of the item should be as short and descriptive as '
                       'possible. E.g. for virus products it should basically be based '
                       'on the following Pattern:\n'
@@ -448,6 +467,7 @@ class DataService(Resource):
                        'Term',
                        'License',
                        'Certification'],
+         'exact_mappings': ['schema:name', 'rdfs:label'],
          'slot_uri': 'dct:title'} })
     description: Optional[str] = Field(default=None, title="description", description="""A short explanation of the characteristics, features, or nature of the current item""", json_schema_extra = { "linkml_meta": {'alias': 'description',
          'close_mappings': ['schema:description'],
@@ -467,35 +487,46 @@ class DataService(Resource):
     endpointUrl: str = Field(default=..., title="endpoint URL", description="""The URL template that allows to get the content""", json_schema_extra = { "linkml_meta": {'alias': 'endpointUrl',
          'close_mappings': ['wdp:P1630'],
          'domain_of': ['DataService'],
+         'exact_mappings': ['schema:urlTemplate'],
          'slot_uri': 'dcat:endpointURL'} })
+    servesDataset: Optional[list[Dataset]] = Field(default=None, title="serves dataset", description="""A collection of data that this data service can distribute""", json_schema_extra = { "linkml_meta": {'alias': 'servesDataset',
+         'comments': ['This property rather intends to point towards Catalogues as '
+                      'collections of Datasets'],
+         'domain_of': ['DataService'],
+         'recommended': True,
+         'slot_uri': 'dcat:servesDataset'} })
 
 
 class Version(Resource):
     """
     Numeric code assigned to identify a particular historical version of a work (e.g. software or technical standards)
     """
-    linkml_meta: ClassVar[LinkMLMeta] = LinkMLMeta({'close_mappings': ['wd:Q114469879', 'wd:Q114469879'],
+    linkml_meta: ClassVar[LinkMLMeta] = LinkMLMeta({'close_mappings': ['reproduceme:Version', 'reproduceme:Version'],
          'comments': ['Represents a specific snapshot/release of a resource (e.g., a '
                       'dataset). It enables managing multiple versions as first-class '
                       'nodes and linking each version to its subject via '
                       'evorao:versionOf and to the using resource via evorao:version '
                       '(e.g., as nodes in a graph database).\r'],
          'from_schema': 'https://w3id.org/evorao/',
+         'related_mappings': ['wd:Q114469879', 'wd:Q114469879'],
          'slot_usage': {'resource': {'description': 'Resource published or curated by '
                                                     'a single agent',
                                      'domain_of': ['Version'],
                                      'multivalued': True,
                                      'name': 'resource',
                                      'range': 'Resource',
+                                     'recommended': True,
                                      'required': False,
                                      'title': 'resource'},
                         'version': {'close_mappings': ['wdp:P393', 'schema:version'],
                                     'description': 'The version indicator (name or '
                                                    'identifier) of a resource',
                                     'domain_of': ['Version', 'Dataset', 'Taxonomy'],
+                                    'exact_mappings': ['pav:version'],
                                     'multivalued': False,
                                     'name': 'version',
                                     'range': 'string',
+                                    'related_mappings': ['schema:identifier'],
                                     'required': True,
                                     'slot_uri': 'dcat:version',
                                     'title': 'version'},
@@ -505,6 +536,7 @@ class Version(Resource):
                                       'multivalued': False,
                                       'name': 'versionOf',
                                       'range': 'string',
+                                      'related_mappings': ['dct:isVersionOf'],
                                       'required': True,
                                       'title': 'version Of'}},
          'title': 'Version'})
@@ -512,10 +544,14 @@ class Version(Resource):
     version: str = Field(default=..., title="version", description="""The version indicator (name or identifier) of a resource""", json_schema_extra = { "linkml_meta": {'alias': 'version',
          'close_mappings': ['wdp:P393', 'schema:version'],
          'domain_of': ['Version', 'Dataset', 'Taxonomy'],
+         'exact_mappings': ['pav:version'],
          'recommended': True,
+         'related_mappings': ['schema:identifier'],
          'slot_uri': 'dcat:version'} })
-    versionOf: str = Field(default=..., title="version Of", description="""Identifier of what type of entities the version qualifies""", json_schema_extra = { "linkml_meta": {'alias': 'versionOf', 'domain_of': ['Version']} })
-    resource: Optional[list[Resource]] = Field(default=None, title="resource", description="""Resource published or curated by a single agent""", json_schema_extra = { "linkml_meta": {'alias': 'resource', 'domain_of': ['Version']} })
+    versionOf: str = Field(default=..., title="version Of", description="""Identifier of what type of entities the version qualifies""", json_schema_extra = { "linkml_meta": {'alias': 'versionOf',
+         'domain_of': ['Version'],
+         'related_mappings': ['dct:isVersionOf']} })
+    resource: Optional[list[Resource]] = Field(default=None, title="resource", description="""Resource published or curated by a single agent""", json_schema_extra = { "linkml_meta": {'alias': 'resource', 'domain_of': ['Version'], 'recommended': True} })
 
 
 class Catalogue(Dataset):
@@ -524,13 +560,15 @@ class Catalogue(Dataset):
     """
     linkml_meta: ClassVar[LinkMLMeta] = LinkMLMeta({'abstract': True,
          'class_uri': 'dcat:Catalog',
-         'close_mappings': ['wd:Q2352616', 'wd:Q2352616'],
+         'close_mappings': ['wd:Q2352616',
+                            'skos:Collection',
+                            'wd:Q2352616',
+                            'skos:Collection'],
          'exact_mappings': ['schema:DataCatalog', 'schema:DataCatalog'],
          'from_schema': 'https://w3id.org/evorao/',
          'title': 'Catalogue'})
 
     title: str = Field(default=..., title="title", description="""A name given to the resource""", json_schema_extra = { "linkml_meta": {'alias': 'title',
-         'close_mappings': ['rdfs:label', 'schema:name'],
          'comments': ['The title of the item should be as short and descriptive as '
                       'possible. E.g. for virus products it should basically be based '
                       'on the following Pattern:\n'
@@ -543,6 +581,7 @@ class Catalogue(Dataset):
                        'Term',
                        'License',
                        'Certification'],
+         'exact_mappings': ['schema:name', 'rdfs:label'],
          'slot_uri': 'dct:title'} })
     description: str = Field(default=..., title="description", description="""A short explanation of the characteristics, features, or nature of the current item""", json_schema_extra = { "linkml_meta": {'alias': 'description',
          'close_mappings': ['schema:description'],
@@ -562,7 +601,9 @@ class Catalogue(Dataset):
     version: Optional[str] = Field(default=None, title="version", description="""The version indicator (name or identifier) of a resource""", json_schema_extra = { "linkml_meta": {'alias': 'version',
          'close_mappings': ['wdp:P393', 'schema:version'],
          'domain_of': ['Dataset', 'Version', 'Taxonomy'],
+         'exact_mappings': ['pav:version'],
          'recommended': True,
+         'related_mappings': ['schema:identifier'],
          'slot_uri': 'dcat:version'} })
 
 
@@ -570,17 +611,22 @@ class Taxonomy(Catalogue):
     """
     A structured representation of data about the classification and naming of biological organisms into groups according to shared characteristics
     """
-    linkml_meta: ClassVar[LinkMLMeta] = LinkMLMeta({'close_mappings': ['wd:Q8269924',
-                            'skos:Collection',
-                            'wd:Q8269924',
-                            'skos:Collection'],
+    linkml_meta: ClassVar[LinkMLMeta] = LinkMLMeta({'broad_mappings': ['skos:Collection', 'skos:Collection'],
+         'close_mappings': ['edam:3028', 'ncit:C17469', 'edam:3028', 'ncit:C17469'],
          'from_schema': 'https://w3id.org/evorao/',
-         'slot_usage': {'rank': {'description': 'Relative level or position of the '
+         'related_mappings': ['wd:Q8269924', 'wd:Q8269924'],
+         'slot_usage': {'rank': {'close_mappings': ['dwc:taxonRank',
+                                                    'schema:taxonRank',
+                                                    'biolink:has_taxonomic_rank'],
+                                 'description': 'Relative level or position of the '
                                                 'identified taxon in the taxonomy',
                                  'domain_of': ['Taxonomy', 'Taxon'],
+                                 'exact_mappings': ['wdp:P105'],
                                  'multivalued': True,
                                  'name': 'rank',
                                  'range': 'TaxonomicRank',
+                                 'related_mappings': ['taxrank:1000000',
+                                                      'ncbitaxon:has_rank'],
                                  'required': False,
                                  'title': 'rank'},
                         'rankDataProvider': {'description': 'The data provider for the '
@@ -593,13 +639,16 @@ class Taxonomy(Catalogue):
                                              'range': 'DataProvider',
                                              'required': False,
                                              'title': 'rank data provider'},
-                        'taxon': {'close_mappings': ['dwc:Taxon'],
+                        'taxon': {'close_mappings': ['schema:taxonomicRange',
+                                                     'dwc:taxonID',
+                                                     'dwc:toTaxon'],
                                   'description': 'Scientifically classified group or '
                                                  'entity within the reference taxonomy',
                                   'domain_of': ['Taxonomy', 'PathogenIdentification'],
                                   'multivalued': True,
                                   'name': 'taxon',
                                   'range': 'Taxon',
+                                  'related_mappings': ['dwc:Taxon'],
                                   'required': False,
                                   'title': 'taxon'},
                         'taxonDataProvider': {'description': 'The data provider for '
@@ -615,9 +664,11 @@ class Taxonomy(Catalogue):
                                     'description': 'The version indicator (name or '
                                                    'identifier) of a resource',
                                     'domain_of': ['Taxonomy', 'Dataset', 'Version'],
+                                    'exact_mappings': ['pav:version'],
                                     'multivalued': False,
                                     'name': 'version',
                                     'range': 'string',
+                                    'related_mappings': ['schema:identifier'],
                                     'required': True,
                                     'slot_uri': 'dcat:version',
                                     'title': 'version'},
@@ -633,24 +684,30 @@ class Taxonomy(Catalogue):
          'title': 'Taxonomy'})
 
     taxon: Optional[list[Taxon]] = Field(default=None, title="taxon", description="""Scientifically classified group or entity within the reference taxonomy""", json_schema_extra = { "linkml_meta": {'alias': 'taxon',
-         'close_mappings': ['dwc:Taxon'],
+         'close_mappings': ['schema:taxonomicRange', 'dwc:taxonID', 'dwc:toTaxon'],
          'comments': ['The taxon of the highest rank known that can be used to '
                       'classify a pathogen or group of pathogens (e.g viruses) in the '
                       'reference taxonomy'],
-         'domain_of': ['Taxonomy', 'PathogenIdentification']} })
+         'domain_of': ['Taxonomy', 'PathogenIdentification'],
+         'related_mappings': ['dwc:Taxon']} })
     taxonDataProvider: Optional[DataProvider] = Field(default=None, title="taxon data provider", description="""The data provider for the taxons of the taxonomy""", json_schema_extra = { "linkml_meta": {'alias': 'taxonDataProvider', 'domain_of': ['Taxonomy']} })
     version: str = Field(default=..., title="version", description="""The version indicator (name or identifier) of a resource""", json_schema_extra = { "linkml_meta": {'alias': 'version',
          'close_mappings': ['wdp:P393', 'schema:version'],
          'domain_of': ['Taxonomy', 'Dataset', 'Version'],
+         'exact_mappings': ['pav:version'],
          'recommended': True,
+         'related_mappings': ['schema:identifier'],
          'slot_uri': 'dcat:version'} })
     versionDataProvider: DataProvider = Field(default=..., title="version data provider", description="""The data provider for the Version ID of this taxonomy""", json_schema_extra = { "linkml_meta": {'alias': 'versionDataProvider', 'domain_of': ['Taxonomy']} })
     rank: Optional[list[TaxonomicRank]] = Field(default=None, title="rank", description="""Relative level or position of the identified taxon in the taxonomy""", json_schema_extra = { "linkml_meta": {'alias': 'rank',
+         'close_mappings': ['dwc:taxonRank',
+                            'schema:taxonRank',
+                            'biolink:has_taxonomic_rank'],
          'domain_of': ['Taxonomy', 'Taxon'],
-         'exact_mappings': ['dwc:taxonRank', 'schema:taxonRank']} })
+         'exact_mappings': ['wdp:P105'],
+         'related_mappings': ['taxrank:1000000', 'ncbitaxon:has_rank']} })
     rankDataProvider: Optional[DataProvider] = Field(default=None, title="rank data provider", description="""The data provider for the description of the taxonomic ranks used in this taxonomy""", json_schema_extra = { "linkml_meta": {'alias': 'rankDataProvider', 'domain_of': ['Taxonomy']} })
     title: str = Field(default=..., title="title", description="""A name given to the resource""", json_schema_extra = { "linkml_meta": {'alias': 'title',
-         'close_mappings': ['rdfs:label', 'schema:name'],
          'comments': ['The title of the item should be as short and descriptive as '
                       'possible. E.g. for virus products it should basically be based '
                       'on the following Pattern:\n'
@@ -663,6 +720,7 @@ class Taxonomy(Catalogue):
                        'Term',
                        'License',
                        'Certification'],
+         'exact_mappings': ['schema:name', 'rdfs:label'],
          'slot_uri': 'dct:title'} })
     description: str = Field(default=..., title="description", description="""A short explanation of the characteristics, features, or nature of the current item""", json_schema_extra = { "linkml_meta": {'alias': 'description',
          'close_mappings': ['schema:description'],
@@ -685,7 +743,11 @@ class DataProvider(DataService):
     """
     An external API (Application Programming Interface) or Endpoint that permits to retrieve data from other sources
     """
-    linkml_meta: ClassVar[LinkMLMeta] = LinkMLMeta({'close_mappings': ['wd:Q122625839', 'wd:Q122625839'],
+    linkml_meta: ClassVar[LinkMLMeta] = LinkMLMeta({'broad_mappings': ['schema:EntryPoint', 'schema:EntryPoint'],
+         'close_mappings': ['wd:Q122625839',
+                            'ncit:C205367',
+                            'wd:Q122625839',
+                            'ncit:C205367'],
          'from_schema': 'https://w3id.org/evorao/',
          'slot_usage': {'contentType': {'broad_mappings': ['schema:contentType'],
                                         'close_mappings': ['dct:format'],
@@ -698,13 +760,14 @@ class DataProvider(DataService):
                                         'range': 'string',
                                         'required': True,
                                         'title': 'content type'},
-                        'license': {'description': 'Information about terms and '
+                        'license': {'close_mappings': ['wdp:P275'],
+                                    'description': 'Information about terms and '
                                                    'conditions under which the subject '
                                                    'can be used, shared, or '
                                                    'distributed, indicating any '
                                                    'restrictions or permissions',
                                     'domain_of': ['DataProvider', 'File'],
-                                    'exact_mappings': ['dct:license', 'schema:license'],
+                                    'exact_mappings': ['schema:license'],
                                     'multivalued': False,
                                     'name': 'license',
                                     'range': 'License',
@@ -751,10 +814,10 @@ class DataProvider(DataService):
                                                               'described by the '
                                                               'response to the query',
                                                'domain_of': ['DataProvider'],
-                                               'exact_mappings': ['dcat:servesDataset'],
-                                               'multivalued': False,
+                                               'multivalued': True,
                                                'name': 'providedEntityType',
-                                               'range': 'Dataset',
+                                               'range': 'string',
+                                               'related_mappings': ['dcat:servesDataset'],
                                                'required': True,
                                                'title': 'provided entity type'},
                         'queryMethod': {'broad_mappings': ['schema:httpMethod'],
@@ -791,8 +854,9 @@ class DataProvider(DataService):
          'title': 'Data provider'})
 
     license: Optional[License] = Field(default=None, title="license", description="""Information about terms and conditions under which the subject can be used, shared, or distributed, indicating any restrictions or permissions""", json_schema_extra = { "linkml_meta": {'alias': 'license',
+         'close_mappings': ['wdp:P275'],
          'domain_of': ['DataProvider', 'File'],
-         'exact_mappings': ['dct:license', 'schema:license'],
+         'exact_mappings': ['schema:license'],
          'slot_uri': 'dct:license'} })
     loginRequestMethod: Optional[Literal["GET", "POST"]] = Field(default="GET", title="login request method", description="""The http request method used to acces the login request url""", json_schema_extra = { "linkml_meta": {'alias': 'loginRequestMethod',
          'broad_mappings': ['schema:httpMethod'],
@@ -817,9 +881,9 @@ class DataProvider(DataService):
          'close_mappings': ['dct:format'],
          'domain_of': ['DataProvider'],
          'ifabsent': 'string(JSON)'} })
-    providedEntityType: Dataset = Field(default=..., title="provided entity type", description="""The identification of the entity type (Class) described by the response to the query""", json_schema_extra = { "linkml_meta": {'alias': 'providedEntityType',
+    providedEntityType: list[str] = Field(default=..., title="provided entity type", description="""The identification of the entity type (Class) described by the response to the query""", json_schema_extra = { "linkml_meta": {'alias': 'providedEntityType',
          'domain_of': ['DataProvider'],
-         'exact_mappings': ['dcat:servesDataset']} })
+         'related_mappings': ['dcat:servesDataset']} })
     weight: int = Field(default=0, title="weight", description="""A numerical value indicating relative importance or priority, generally processed in ascending order. This weight helps prioritize content when organizing or processing data. Its value can be negative, with a default set to 0""", json_schema_extra = { "linkml_meta": {'alias': 'weight',
          'close_mappings': ['adms:status'],
          'comments': ['The lowest weighted Data providers are triggered first, this '
@@ -829,7 +893,6 @@ class DataProvider(DataService):
          'domain_of': ['DataProvider', 'Term'],
          'ifabsent': 'int(0)'} })
     title: str = Field(default=..., title="title", description="""A name given to the resource""", json_schema_extra = { "linkml_meta": {'alias': 'title',
-         'close_mappings': ['rdfs:label', 'schema:name'],
          'comments': ['The title of the item should be as short and descriptive as '
                       'possible. E.g. for virus products it should basically be based '
                       'on the following Pattern:\n'
@@ -842,6 +905,7 @@ class DataProvider(DataService):
                        'Term',
                        'License',
                        'Certification'],
+         'exact_mappings': ['schema:name', 'rdfs:label'],
          'slot_uri': 'dct:title'} })
     description: Optional[str] = Field(default=None, title="description", description="""A short explanation of the characteristics, features, or nature of the current item""", json_schema_extra = { "linkml_meta": {'alias': 'description',
          'close_mappings': ['schema:description'],
@@ -861,7 +925,14 @@ class DataProvider(DataService):
     endpointUrl: str = Field(default=..., title="endpoint URL", description="""The URL template that allows to get the content""", json_schema_extra = { "linkml_meta": {'alias': 'endpointUrl',
          'close_mappings': ['wdp:P1630'],
          'domain_of': ['DataService'],
+         'exact_mappings': ['schema:urlTemplate'],
          'slot_uri': 'dcat:endpointURL'} })
+    servesDataset: Optional[list[Dataset]] = Field(default=None, title="serves dataset", description="""A collection of data that this data service can distribute""", json_schema_extra = { "linkml_meta": {'alias': 'servesDataset',
+         'comments': ['This property rather intends to point towards Catalogues as '
+                      'collections of Datasets'],
+         'domain_of': ['DataService'],
+         'recommended': True,
+         'slot_uri': 'dcat:servesDataset'} })
 
 
 class PathogenIdentification(Resource):
@@ -983,11 +1054,12 @@ class PathogenIdentification(Resource):
          'title': 'Pathogen identification'})
 
     taxon: Taxon = Field(default=..., title="taxon", description="""Scientifically classified group or entity within the reference taxonomy""", json_schema_extra = { "linkml_meta": {'alias': 'taxon',
-         'close_mappings': ['dwc:Taxon'],
+         'close_mappings': ['schema:taxonomicRange', 'dwc:taxonID', 'dwc:toTaxon'],
          'comments': ['The taxon of the highest rank known that can be used to '
                       'classify a pathogen or group of pathogens (e.g viruses) in the '
                       'reference taxonomy'],
-         'domain_of': ['PathogenIdentification', 'Taxonomy']} })
+         'domain_of': ['PathogenIdentification', 'Taxonomy'],
+         'related_mappings': ['dwc:Taxon']} })
     pathogenName: CommonName = Field(default=..., title="pathogen name", description="""A pathogen common name or a name that describes a group of pathogens""", json_schema_extra = { "linkml_meta": {'alias': 'pathogenName', 'domain_of': ['PathogenIdentification']} })
     pathogenType: Literal["Virus", "Bacterium", "Fungus", "Protozoan", "Viroid", "Prion"] = Field(default=..., title="pathogen type", description="""Identification of the specific type of pathogen among the listed categories e.g. 'Virus','Viroid','Bacterium'...""", json_schema_extra = { "linkml_meta": {'alias': 'pathogenType',
          'domain_of': ['PathogenIdentification'],
@@ -1049,8 +1121,7 @@ class Publication(Resource):
                                     'range': 'Journal',
                                     'required': False,
                                     'title': 'journal'},
-                        'title': {'close_mappings': ['rdfs:label', 'schema:name'],
-                                  'comments': ['The title of the item should be as '
+                        'title': {'comments': ['The title of the item should be as '
                                                'short and descriptive as possible. '
                                                'E.g. for virus products it should '
                                                'basically be based on the following '
@@ -1068,6 +1139,7 @@ class Publication(Resource):
                                                 'Term',
                                                 'License',
                                                 'Certification'],
+                                  'exact_mappings': ['schema:name', 'rdfs:label'],
                                   'multivalued': False,
                                   'name': 'title',
                                   'range': 'string',
@@ -1077,7 +1149,6 @@ class Publication(Resource):
          'title': 'Publication'})
 
     title: str = Field(default=..., title="title", description="""A name given to the resource""", json_schema_extra = { "linkml_meta": {'alias': 'title',
-         'close_mappings': ['rdfs:label', 'schema:name'],
          'comments': ['The title of the item should be as short and descriptive as '
                       'possible. E.g. for virus products it should basically be based '
                       'on the following Pattern:\n'
@@ -1090,6 +1161,7 @@ class Publication(Resource):
                        'Term',
                        'License',
                        'Certification'],
+         'exact_mappings': ['schema:name', 'rdfs:label'],
          'slot_uri': 'dct:title'} })
     authors: str = Field(default=..., title="authors", description="""The list of authors""", json_schema_extra = { "linkml_meta": {'alias': 'authors', 'domain_of': ['Publication']} })
     abstract: str = Field(default=..., title="abstract", description="""Concise summary of the publication""", json_schema_extra = { "linkml_meta": {'alias': 'abstract',
@@ -1133,7 +1205,6 @@ class Vocabulary(Catalogue):
     termDataProvider: Optional[DataProvider] = Field(default=None, title="term data provider", description="""An external API or Endpoint that permits to retrieve the terms of this vocabulary""", json_schema_extra = { "linkml_meta": {'alias': 'termDataProvider', 'domain_of': ['Vocabulary']} })
     term: Optional[list[Term]] = Field(default=None, title="term", description="""The terms related to this vocabulary""", json_schema_extra = { "linkml_meta": {'alias': 'term', 'domain_of': ['Vocabulary'], 'recommended': True} })
     title: str = Field(default=..., title="title", description="""A name given to the resource""", json_schema_extra = { "linkml_meta": {'alias': 'title',
-         'close_mappings': ['rdfs:label', 'schema:name'],
          'comments': ['The title of the item should be as short and descriptive as '
                       'possible. E.g. for virus products it should basically be based '
                       'on the following Pattern:\n'
@@ -1146,6 +1217,7 @@ class Vocabulary(Catalogue):
                        'Term',
                        'License',
                        'Certification'],
+         'exact_mappings': ['schema:name', 'rdfs:label'],
          'slot_uri': 'dct:title'} })
     description: str = Field(default=..., title="description", description="""A short explanation of the characteristics, features, or nature of the current item""", json_schema_extra = { "linkml_meta": {'alias': 'description',
          'close_mappings': ['schema:description'],
@@ -1165,7 +1237,9 @@ class Vocabulary(Catalogue):
     version: Optional[str] = Field(default=None, title="version", description="""The version indicator (name or identifier) of a resource""", json_schema_extra = { "linkml_meta": {'alias': 'version',
          'close_mappings': ['wdp:P393', 'schema:version'],
          'domain_of': ['Dataset', 'Version', 'Taxonomy'],
+         'exact_mappings': ['pav:version'],
          'recommended': True,
+         'related_mappings': ['schema:identifier'],
          'slot_uri': 'dcat:version'} })
 
 
@@ -1208,8 +1282,7 @@ class Term(Resource):
                                          'range': 'Vocabulary',
                                          'required': True,
                                          'title': 'in Vocabulary'},
-                        'title': {'close_mappings': ['rdfs:label', 'schema:name'],
-                                  'comments': ['The title of the item should be as '
+                        'title': {'comments': ['The title of the item should be as '
                                                'short and descriptive as possible. '
                                                'E.g. for virus products it should '
                                                'basically be based on the following '
@@ -1227,6 +1300,7 @@ class Term(Resource):
                                                 'Publication',
                                                 'License',
                                                 'Certification'],
+                                  'exact_mappings': ['schema:name', 'rdfs:label'],
                                   'multivalued': False,
                                   'name': 'title',
                                   'range': 'string',
@@ -1251,7 +1325,6 @@ class Term(Resource):
          'title': 'Term'})
 
     title: str = Field(default=..., title="title", description="""A name given to the resource""", json_schema_extra = { "linkml_meta": {'alias': 'title',
-         'close_mappings': ['rdfs:label', 'schema:name'],
          'comments': ['The title of the item should be as short and descriptive as '
                       'possible. E.g. for virus products it should basically be based '
                       'on the following Pattern:\n'
@@ -1264,6 +1337,7 @@ class Term(Resource):
                        'Publication',
                        'License',
                        'Certification'],
+         'exact_mappings': ['schema:name', 'rdfs:label'],
          'slot_uri': 'dct:title'} })
     description: Optional[str] = Field(default=None, title="description", description="""A short explanation of the characteristics, features, or nature of the current item""", json_schema_extra = { "linkml_meta": {'alias': 'description',
          'close_mappings': ['schema:description'],
@@ -1344,7 +1418,6 @@ class CommonName(Term):
          'close_mappings': ['wdp:P248'],
          'domain_of': ['CommonName', 'AlternateName']} })
     title: str = Field(default=..., title="title", description="""A name given to the resource""", json_schema_extra = { "linkml_meta": {'alias': 'title',
-         'close_mappings': ['rdfs:label', 'schema:name'],
          'comments': ['The title of the item should be as short and descriptive as '
                       'possible. E.g. for virus products it should basically be based '
                       'on the following Pattern:\n'
@@ -1357,6 +1430,7 @@ class CommonName(Term):
                        'Publication',
                        'License',
                        'Certification'],
+         'exact_mappings': ['schema:name', 'rdfs:label'],
          'slot_uri': 'dct:title'} })
     description: Optional[str] = Field(default=None, title="description", description="""A short explanation of the characteristics, features, or nature of the current item""", json_schema_extra = { "linkml_meta": {'alias': 'description',
          'close_mappings': ['schema:description'],
@@ -1403,7 +1477,6 @@ class VirusName(CommonName):
          'close_mappings': ['wdp:P248'],
          'domain_of': ['CommonName', 'AlternateName']} })
     title: str = Field(default=..., title="title", description="""A name given to the resource""", json_schema_extra = { "linkml_meta": {'alias': 'title',
-         'close_mappings': ['rdfs:label', 'schema:name'],
          'comments': ['The title of the item should be as short and descriptive as '
                       'possible. E.g. for virus products it should basically be based '
                       'on the following Pattern:\n'
@@ -1416,6 +1489,7 @@ class VirusName(CommonName):
                        'Publication',
                        'License',
                        'Certification'],
+         'exact_mappings': ['schema:name', 'rdfs:label'],
          'slot_uri': 'dct:title'} })
     description: Optional[str] = Field(default=None, title="description", description="""A short explanation of the characteristics, features, or nature of the current item""", json_schema_extra = { "linkml_meta": {'alias': 'description',
          'close_mappings': ['schema:description'],
@@ -1496,7 +1570,6 @@ class AlternateName(Term):
          'close_mappings': ['wdp:P248'],
          'domain_of': ['AlternateName', 'CommonName']} })
     title: str = Field(default=..., title="title", description="""A name given to the resource""", json_schema_extra = { "linkml_meta": {'alias': 'title',
-         'close_mappings': ['rdfs:label', 'schema:name'],
          'comments': ['The title of the item should be as short and descriptive as '
                       'possible. E.g. for virus products it should basically be based '
                       'on the following Pattern:\n'
@@ -1509,6 +1582,7 @@ class AlternateName(Term):
                        'Publication',
                        'License',
                        'Certification'],
+         'exact_mappings': ['schema:name', 'rdfs:label'],
          'slot_uri': 'dct:title'} })
     description: Optional[str] = Field(default=None, title="description", description="""A short explanation of the characteristics, features, or nature of the current item""", json_schema_extra = { "linkml_meta": {'alias': 'description',
          'close_mappings': ['schema:description'],
@@ -1548,7 +1622,6 @@ class RiskGroup(Term):
          'title': 'Risk group'})
 
     title: str = Field(default=..., title="title", description="""A name given to the resource""", json_schema_extra = { "linkml_meta": {'alias': 'title',
-         'close_mappings': ['rdfs:label', 'schema:name'],
          'comments': ['The title of the item should be as short and descriptive as '
                       'possible. E.g. for virus products it should basically be based '
                       'on the following Pattern:\n'
@@ -1561,6 +1634,7 @@ class RiskGroup(Term):
                        'Publication',
                        'License',
                        'Certification'],
+         'exact_mappings': ['schema:name', 'rdfs:label'],
          'slot_uri': 'dct:title'} })
     description: Optional[str] = Field(default=None, title="description", description="""A short explanation of the characteristics, features, or nature of the current item""", json_schema_extra = { "linkml_meta": {'alias': 'description',
          'close_mappings': ['schema:description'],
@@ -1597,7 +1671,6 @@ class Doi(Term):
          'title': 'DOI'})
 
     title: str = Field(default=..., title="title", description="""A name given to the resource""", json_schema_extra = { "linkml_meta": {'alias': 'title',
-         'close_mappings': ['rdfs:label', 'schema:name'],
          'comments': ['The title of the item should be as short and descriptive as '
                       'possible. E.g. for virus products it should basically be based '
                       'on the following Pattern:\n'
@@ -1610,6 +1683,7 @@ class Doi(Term):
                        'Publication',
                        'License',
                        'Certification'],
+         'exact_mappings': ['schema:name', 'rdfs:label'],
          'slot_uri': 'dct:title'} })
     description: Optional[str] = Field(default=None, title="description", description="""A short explanation of the characteristics, features, or nature of the current item""", json_schema_extra = { "linkml_meta": {'alias': 'description',
          'close_mappings': ['schema:description'],
@@ -1646,7 +1720,6 @@ class Journal(Term):
          'title': 'Journal'})
 
     title: str = Field(default=..., title="title", description="""A name given to the resource""", json_schema_extra = { "linkml_meta": {'alias': 'title',
-         'close_mappings': ['rdfs:label', 'schema:name'],
          'comments': ['The title of the item should be as short and descriptive as '
                       'possible. E.g. for virus products it should basically be based '
                       'on the following Pattern:\n'
@@ -1659,6 +1732,7 @@ class Journal(Term):
                        'Publication',
                        'License',
                        'Certification'],
+         'exact_mappings': ['schema:name', 'rdfs:label'],
          'slot_uri': 'dct:title'} })
     description: Optional[str] = Field(default=None, title="description", description="""A short explanation of the characteristics, features, or nature of the current item""", json_schema_extra = { "linkml_meta": {'alias': 'description',
          'close_mappings': ['schema:description'],
@@ -1695,7 +1769,6 @@ class PdbReference(Term):
          'title': 'PDB reference'})
 
     title: str = Field(default=..., title="title", description="""A name given to the resource""", json_schema_extra = { "linkml_meta": {'alias': 'title',
-         'close_mappings': ['rdfs:label', 'schema:name'],
          'comments': ['The title of the item should be as short and descriptive as '
                       'possible. E.g. for virus products it should basically be based '
                       'on the following Pattern:\n'
@@ -1708,6 +1781,7 @@ class PdbReference(Term):
                        'Publication',
                        'License',
                        'Certification'],
+         'exact_mappings': ['schema:name', 'rdfs:label'],
          'slot_uri': 'dct:title'} })
     description: Optional[str] = Field(default=None, title="description", description="""A short explanation of the characteristics, features, or nature of the current item""", json_schema_extra = { "linkml_meta": {'alias': 'description',
          'close_mappings': ['schema:description'],
@@ -1744,7 +1818,6 @@ class Keyword(Term):
          'title': 'Keyword'})
 
     title: str = Field(default=..., title="title", description="""A name given to the resource""", json_schema_extra = { "linkml_meta": {'alias': 'title',
-         'close_mappings': ['rdfs:label', 'schema:name'],
          'comments': ['The title of the item should be as short and descriptive as '
                       'possible. E.g. for virus products it should basically be based '
                       'on the following Pattern:\n'
@@ -1757,6 +1830,7 @@ class Keyword(Term):
                        'Publication',
                        'License',
                        'Certification'],
+         'exact_mappings': ['schema:name', 'rdfs:label'],
          'slot_uri': 'dct:title'} })
     description: Optional[str] = Field(default=None, title="description", description="""A short explanation of the characteristics, features, or nature of the current item""", json_schema_extra = { "linkml_meta": {'alias': 'description',
          'close_mappings': ['schema:description'],
@@ -1796,7 +1870,6 @@ class TagSequence(Term):
          'title': 'Tag sequence'})
 
     title: str = Field(default=..., title="title", description="""A name given to the resource""", json_schema_extra = { "linkml_meta": {'alias': 'title',
-         'close_mappings': ['rdfs:label', 'schema:name'],
          'comments': ['The title of the item should be as short and descriptive as '
                       'possible. E.g. for virus products it should basically be based '
                       'on the following Pattern:\n'
@@ -1809,6 +1882,7 @@ class TagSequence(Term):
                        'Publication',
                        'License',
                        'Certification'],
+         'exact_mappings': ['schema:name', 'rdfs:label'],
          'slot_uri': 'dct:title'} })
     description: Optional[str] = Field(default=None, title="description", description="""A short explanation of the characteristics, features, or nature of the current item""", json_schema_extra = { "linkml_meta": {'alias': 'description',
          'close_mappings': ['schema:description'],
@@ -1847,7 +1921,6 @@ class SpecialFeature(Term):
          'title': 'Special feature'})
 
     title: str = Field(default=..., title="title", description="""A name given to the resource""", json_schema_extra = { "linkml_meta": {'alias': 'title',
-         'close_mappings': ['rdfs:label', 'schema:name'],
          'comments': ['The title of the item should be as short and descriptive as '
                       'possible. E.g. for virus products it should basically be based '
                       'on the following Pattern:\n'
@@ -1860,6 +1933,7 @@ class SpecialFeature(Term):
                        'Publication',
                        'License',
                        'Certification'],
+         'exact_mappings': ['schema:name', 'rdfs:label'],
          'slot_uri': 'dct:title'} })
     description: Optional[str] = Field(default=None, title="description", description="""A short explanation of the characteristics, features, or nature of the current item""", json_schema_extra = { "linkml_meta": {'alias': 'description',
          'close_mappings': ['schema:description'],
@@ -1896,7 +1970,6 @@ class ExpressionVector(Term):
          'title': 'Expression vector'})
 
     title: str = Field(default=..., title="title", description="""A name given to the resource""", json_schema_extra = { "linkml_meta": {'alias': 'title',
-         'close_mappings': ['rdfs:label', 'schema:name'],
          'comments': ['The title of the item should be as short and descriptive as '
                       'possible. E.g. for virus products it should basically be based '
                       'on the following Pattern:\n'
@@ -1909,6 +1982,7 @@ class ExpressionVector(Term):
                        'Publication',
                        'License',
                        'Certification'],
+         'exact_mappings': ['schema:name', 'rdfs:label'],
          'slot_uri': 'dct:title'} })
     description: Optional[str] = Field(default=None, title="description", description="""A short explanation of the characteristics, features, or nature of the current item""", json_schema_extra = { "linkml_meta": {'alias': 'description',
          'close_mappings': ['schema:description'],
@@ -1943,7 +2017,6 @@ class PlasmidSelection(Term):
     linkml_meta: ClassVar[LinkMLMeta] = LinkMLMeta({'from_schema': 'https://w3id.org/evorao/', 'title': 'Plasmid selection'})
 
     title: str = Field(default=..., title="title", description="""A name given to the resource""", json_schema_extra = { "linkml_meta": {'alias': 'title',
-         'close_mappings': ['rdfs:label', 'schema:name'],
          'comments': ['The title of the item should be as short and descriptive as '
                       'possible. E.g. for virus products it should basically be based '
                       'on the following Pattern:\n'
@@ -1956,6 +2029,7 @@ class PlasmidSelection(Term):
                        'Publication',
                        'License',
                        'Certification'],
+         'exact_mappings': ['schema:name', 'rdfs:label'],
          'slot_uri': 'dct:title'} })
     description: Optional[str] = Field(default=None, title="description", description="""A short explanation of the characteristics, features, or nature of the current item""", json_schema_extra = { "linkml_meta": {'alias': 'description',
          'close_mappings': ['schema:description'],
@@ -1990,7 +2064,6 @@ class PropagationHost(Term):
     linkml_meta: ClassVar[LinkMLMeta] = LinkMLMeta({'from_schema': 'https://w3id.org/evorao/', 'title': 'Propagation host'})
 
     title: str = Field(default=..., title="title", description="""A name given to the resource""", json_schema_extra = { "linkml_meta": {'alias': 'title',
-         'close_mappings': ['rdfs:label', 'schema:name'],
          'comments': ['The title of the item should be as short and descriptive as '
                       'possible. E.g. for virus products it should basically be based '
                       'on the following Pattern:\n'
@@ -2003,6 +2076,7 @@ class PropagationHost(Term):
                        'Publication',
                        'License',
                        'Certification'],
+         'exact_mappings': ['schema:name', 'rdfs:label'],
          'slot_uri': 'dct:title'} })
     description: Optional[str] = Field(default=None, title="description", description="""A short explanation of the characteristics, features, or nature of the current item""", json_schema_extra = { "linkml_meta": {'alias': 'description',
          'close_mappings': ['schema:description'],
@@ -2037,7 +2111,6 @@ class TransmissionMethod(Term):
     linkml_meta: ClassVar[LinkMLMeta] = LinkMLMeta({'from_schema': 'https://w3id.org/evorao/', 'title': 'Transmission method'})
 
     title: str = Field(default=..., title="title", description="""A name given to the resource""", json_schema_extra = { "linkml_meta": {'alias': 'title',
-         'close_mappings': ['rdfs:label', 'schema:name'],
          'comments': ['The title of the item should be as short and descriptive as '
                       'possible. E.g. for virus products it should basically be based '
                       'on the following Pattern:\n'
@@ -2050,6 +2123,7 @@ class TransmissionMethod(Term):
                        'Publication',
                        'License',
                        'Certification'],
+         'exact_mappings': ['schema:name', 'rdfs:label'],
          'slot_uri': 'dct:title'} })
     description: Optional[str] = Field(default=None, title="description", description="""A short explanation of the characteristics, features, or nature of the current item""", json_schema_extra = { "linkml_meta": {'alias': 'description',
          'close_mappings': ['schema:description'],
@@ -2086,7 +2160,6 @@ class ProductionCellLine(Term):
          'title': 'Production cell line'})
 
     title: str = Field(default=..., title="title", description="""A name given to the resource""", json_schema_extra = { "linkml_meta": {'alias': 'title',
-         'close_mappings': ['rdfs:label', 'schema:name'],
          'comments': ['The title of the item should be as short and descriptive as '
                       'possible. E.g. for virus products it should basically be based '
                       'on the following Pattern:\n'
@@ -2099,6 +2172,7 @@ class ProductionCellLine(Term):
                        'Publication',
                        'License',
                        'Certification'],
+         'exact_mappings': ['schema:name', 'rdfs:label'],
          'slot_uri': 'dct:title'} })
     description: Optional[str] = Field(default=None, title="description", description="""A short explanation of the characteristics, features, or nature of the current item""", json_schema_extra = { "linkml_meta": {'alias': 'description',
          'close_mappings': ['schema:description'],
@@ -2153,7 +2227,6 @@ class ProductCategory(Term):
 
     parentCategory: Optional[ProductCategory] = Field(default=None, title="parent category", description="""An overarching category that encompasses the current category within a hierarchical classification system. It serves as the top-level classification, organizing related subcategories under its umbrella to create a structured and logical order.""", json_schema_extra = { "linkml_meta": {'alias': 'parentCategory', 'domain_of': ['ProductCategory']} })
     title: str = Field(default=..., title="title", description="""A name given to the resource""", json_schema_extra = { "linkml_meta": {'alias': 'title',
-         'close_mappings': ['rdfs:label', 'schema:name'],
          'comments': ['The title of the item should be as short and descriptive as '
                       'possible. E.g. for virus products it should basically be based '
                       'on the following Pattern:\n'
@@ -2166,6 +2239,7 @@ class ProductCategory(Term):
                        'Publication',
                        'License',
                        'Certification'],
+         'exact_mappings': ['schema:name', 'rdfs:label'],
          'slot_uri': 'dct:title'} })
     description: Optional[str] = Field(default=None, title="description", description="""A short explanation of the characteristics, features, or nature of the current item""", json_schema_extra = { "linkml_meta": {'alias': 'description',
          'close_mappings': ['schema:description'],
@@ -2200,7 +2274,6 @@ class IsolationHost(Term):
     linkml_meta: ClassVar[LinkMLMeta] = LinkMLMeta({'from_schema': 'https://w3id.org/evorao/', 'title': 'Isolation host'})
 
     title: str = Field(default=..., title="title", description="""A name given to the resource""", json_schema_extra = { "linkml_meta": {'alias': 'title',
-         'close_mappings': ['rdfs:label', 'schema:name'],
          'comments': ['The title of the item should be as short and descriptive as '
                       'possible. E.g. for virus products it should basically be based '
                       'on the following Pattern:\n'
@@ -2213,6 +2286,7 @@ class IsolationHost(Term):
                        'Publication',
                        'License',
                        'Certification'],
+         'exact_mappings': ['schema:name', 'rdfs:label'],
          'slot_uri': 'dct:title'} })
     description: Optional[str] = Field(default=None, title="description", description="""A short explanation of the characteristics, features, or nature of the current item""", json_schema_extra = { "linkml_meta": {'alias': 'description',
          'close_mappings': ['schema:description'],
@@ -2252,7 +2326,6 @@ class GeographicalOrigin(Term):
          'title': 'Geographical origin'})
 
     title: str = Field(default=..., title="title", description="""A name given to the resource""", json_schema_extra = { "linkml_meta": {'alias': 'title',
-         'close_mappings': ['rdfs:label', 'schema:name'],
          'comments': ['The title of the item should be as short and descriptive as '
                       'possible. E.g. for virus products it should basically be based '
                       'on the following Pattern:\n'
@@ -2265,6 +2338,7 @@ class GeographicalOrigin(Term):
                        'Publication',
                        'License',
                        'Certification'],
+         'exact_mappings': ['schema:name', 'rdfs:label'],
          'slot_uri': 'dct:title'} })
     description: Optional[str] = Field(default=None, title="description", description="""A short explanation of the characteristics, features, or nature of the current item""", json_schema_extra = { "linkml_meta": {'alias': 'description',
          'close_mappings': ['schema:description'],
@@ -2299,7 +2373,6 @@ class IplcOrigin(GeographicalOrigin):
     linkml_meta: ClassVar[LinkMLMeta] = LinkMLMeta({'from_schema': 'https://w3id.org/evorao/', 'title': 'IPLC origin'})
 
     title: str = Field(default=..., title="title", description="""A name given to the resource""", json_schema_extra = { "linkml_meta": {'alias': 'title',
-         'close_mappings': ['rdfs:label', 'schema:name'],
          'comments': ['The title of the item should be as short and descriptive as '
                       'possible. E.g. for virus products it should basically be based '
                       'on the following Pattern:\n'
@@ -2312,6 +2385,7 @@ class IplcOrigin(GeographicalOrigin):
                        'Publication',
                        'License',
                        'Certification'],
+         'exact_mappings': ['schema:name', 'rdfs:label'],
          'slot_uri': 'dct:title'} })
     description: Optional[str] = Field(default=None, title="description", description="""A short explanation of the characteristics, features, or nature of the current item""", json_schema_extra = { "linkml_meta": {'alias': 'description',
          'close_mappings': ['schema:description'],
@@ -2360,7 +2434,6 @@ class Country(Term):
 
     alpha2Code: str = Field(default=..., title="alpha 2 code", description="""Two-letter country codes from ISO 3166-1 alpha-2""", json_schema_extra = { "linkml_meta": {'alias': 'alpha2Code', 'domain_of': ['Country']} })
     title: str = Field(default=..., title="title", description="""A name given to the resource""", json_schema_extra = { "linkml_meta": {'alias': 'title',
-         'close_mappings': ['rdfs:label', 'schema:name'],
          'comments': ['The title of the item should be as short and descriptive as '
                       'possible. E.g. for virus products it should basically be based '
                       'on the following Pattern:\n'
@@ -2373,6 +2446,7 @@ class Country(Term):
                        'Publication',
                        'License',
                        'Certification'],
+         'exact_mappings': ['schema:name', 'rdfs:label'],
          'slot_uri': 'dct:title'} })
     description: Optional[str] = Field(default=None, title="description", description="""A short explanation of the characteristics, features, or nature of the current item""", json_schema_extra = { "linkml_meta": {'alias': 'description',
          'close_mappings': ['schema:description'],
@@ -2407,7 +2481,6 @@ class IataClassification(Term):
     linkml_meta: ClassVar[LinkMLMeta] = LinkMLMeta({'from_schema': 'https://w3id.org/evorao/', 'title': 'IATA classification'})
 
     title: str = Field(default=..., title="title", description="""A name given to the resource""", json_schema_extra = { "linkml_meta": {'alias': 'title',
-         'close_mappings': ['rdfs:label', 'schema:name'],
          'comments': ['The title of the item should be as short and descriptive as '
                       'possible. E.g. for virus products it should basically be based '
                       'on the following Pattern:\n'
@@ -2420,6 +2493,7 @@ class IataClassification(Term):
                        'Publication',
                        'License',
                        'Certification'],
+         'exact_mappings': ['schema:name', 'rdfs:label'],
          'slot_uri': 'dct:title'} })
     description: Optional[str] = Field(default=None, title="description", description="""A short explanation of the characteristics, features, or nature of the current item""", json_schema_extra = { "linkml_meta": {'alias': 'description',
          'close_mappings': ['schema:description'],
@@ -2466,7 +2540,6 @@ class Variant(CommonName):
          'close_mappings': ['wdp:P248'],
          'domain_of': ['CommonName', 'AlternateName']} })
     title: str = Field(default=..., title="title", description="""A name given to the resource""", json_schema_extra = { "linkml_meta": {'alias': 'title',
-         'close_mappings': ['rdfs:label', 'schema:name'],
          'comments': ['The title of the item should be as short and descriptive as '
                       'possible. E.g. for virus products it should basically be based '
                       'on the following Pattern:\n'
@@ -2479,6 +2552,7 @@ class Variant(CommonName):
                        'Publication',
                        'License',
                        'Certification'],
+         'exact_mappings': ['schema:name', 'rdfs:label'],
          'slot_uri': 'dct:title'} })
     description: Optional[str] = Field(default=None, title="description", description="""A short explanation of the characteristics, features, or nature of the current item""", json_schema_extra = { "linkml_meta": {'alias': 'description',
          'close_mappings': ['schema:description'],
@@ -2527,7 +2601,6 @@ class TaxonomicRank(Term):
          'domain_of': ['TaxonomicRank', 'Taxon'],
          'recommended': True} })
     title: str = Field(default=..., title="title", description="""A name given to the resource""", json_schema_extra = { "linkml_meta": {'alias': 'title',
-         'close_mappings': ['rdfs:label', 'schema:name'],
          'comments': ['The title of the item should be as short and descriptive as '
                       'possible. E.g. for virus products it should basically be based '
                       'on the following Pattern:\n'
@@ -2540,6 +2613,7 @@ class TaxonomicRank(Term):
                        'Publication',
                        'License',
                        'Certification'],
+         'exact_mappings': ['schema:name', 'rdfs:label'],
          'slot_uri': 'dct:title'} })
     description: Optional[str] = Field(default=None, title="description", description="""A short explanation of the characteristics, features, or nature of the current item""", json_schema_extra = { "linkml_meta": {'alias': 'description',
          'close_mappings': ['schema:description'],
@@ -2679,8 +2753,12 @@ class Taxon(Term):
          'domain_of': ['Taxon'],
          'exact_mappings': ['schema:parentTaxon']} })
     rank: TaxonomicRank = Field(default=..., title="rank", description="""Relative level or position of the identified taxon in the taxonomy""", json_schema_extra = { "linkml_meta": {'alias': 'rank',
+         'close_mappings': ['dwc:taxonRank',
+                            'schema:taxonRank',
+                            'biolink:has_taxonomic_rank'],
          'domain_of': ['Taxon', 'Taxonomy'],
-         'exact_mappings': ['dwc:taxonRank', 'schema:taxonRank']} })
+         'exact_mappings': ['dwc:taxonRank', 'schema:taxonRank'],
+         'related_mappings': ['taxrank:1000000', 'ncbitaxon:has_rank']} })
     previouslyKnownAs: Optional[list[Taxon]] = Field(default=None, title="previously known as", description="""Any historic version of this taxon having a different name""", json_schema_extra = { "linkml_meta": {'alias': 'previouslyKnownAs',
          'broad_mappings': ['dwc:Taxon'],
          'domain_of': ['Taxon']} })
@@ -2702,7 +2780,6 @@ class Taxon(Term):
          'domain_of': ['Taxon'],
          'recommended': True} })
     title: str = Field(default=..., title="title", description="""A name given to the resource""", json_schema_extra = { "linkml_meta": {'alias': 'title',
-         'close_mappings': ['rdfs:label', 'schema:name'],
          'comments': ['The title of the item should be as short and descriptive as '
                       'possible. E.g. for virus products it should basically be based '
                       'on the following Pattern:\n'
@@ -2715,6 +2792,7 @@ class Taxon(Term):
                        'Publication',
                        'License',
                        'Certification'],
+         'exact_mappings': ['schema:name', 'rdfs:label'],
          'slot_uri': 'dct:title'} })
     description: Optional[str] = Field(default=None, title="description", description="""A short explanation of the characteristics, features, or nature of the current item""", json_schema_extra = { "linkml_meta": {'alias': 'description',
          'close_mappings': ['schema:description'],
@@ -3693,7 +3771,6 @@ class Collection(Catalogue):
          'close_mappings': ['dct:isReferencedBy'],
          'domain_of': ['Collection']} })
     title: str = Field(default=..., title="title", description="""A name given to the resource""", json_schema_extra = { "linkml_meta": {'alias': 'title',
-         'close_mappings': ['rdfs:label', 'schema:name'],
          'comments': ['The title of the item should be as short and descriptive as '
                       'possible. E.g. for virus products it should basically be based '
                       'on the following Pattern:\n'
@@ -3706,6 +3783,7 @@ class Collection(Catalogue):
                        'Term',
                        'License',
                        'Certification'],
+         'exact_mappings': ['schema:name', 'rdfs:label'],
          'slot_uri': 'dct:title'} })
     description: str = Field(default=..., title="description", description="""A short explanation of the characteristics, features, or nature of the current item""", json_schema_extra = { "linkml_meta": {'alias': 'description',
          'close_mappings': ['schema:description'],
@@ -3725,7 +3803,9 @@ class Collection(Catalogue):
     version: Optional[str] = Field(default=None, title="version", description="""The version indicator (name or identifier) of a resource""", json_schema_extra = { "linkml_meta": {'alias': 'version',
          'close_mappings': ['wdp:P393', 'schema:version'],
          'domain_of': ['Dataset', 'Version', 'Taxonomy'],
+         'exact_mappings': ['pav:version'],
          'recommended': True,
+         'related_mappings': ['schema:identifier'],
          'slot_uri': 'dcat:version'} })
 
 
@@ -4126,7 +4206,6 @@ class ProductOrService(Dataset):
          'recommended': True,
          'slot_uri': 'dcat:contactPoint'} })
     title: str = Field(default=..., title="title", description="""A name given to the resource""", json_schema_extra = { "linkml_meta": {'alias': 'title',
-         'close_mappings': ['rdfs:label', 'schema:name'],
          'comments': ['The title of the item should be as short and descriptive as '
                       'possible. E.g. for virus products it should basically be based '
                       'on the following Pattern:\n'
@@ -4139,6 +4218,7 @@ class ProductOrService(Dataset):
                        'Term',
                        'License',
                        'Certification'],
+         'exact_mappings': ['schema:name', 'rdfs:label'],
          'slot_uri': 'dct:title'} })
     description: str = Field(default=..., title="description", description="""A short explanation of the characteristics, features, or nature of the current item""", json_schema_extra = { "linkml_meta": {'alias': 'description',
          'close_mappings': ['schema:description'],
@@ -4158,7 +4238,9 @@ class ProductOrService(Dataset):
     version: Optional[str] = Field(default=None, title="version", description="""The version indicator (name or identifier) of a resource""", json_schema_extra = { "linkml_meta": {'alias': 'version',
          'close_mappings': ['wdp:P393', 'schema:version'],
          'domain_of': ['Dataset', 'Version', 'Taxonomy'],
+         'exact_mappings': ['pav:version'],
          'recommended': True,
+         'related_mappings': ['schema:identifier'],
          'slot_uri': 'dcat:version'} })
 
 
@@ -4259,7 +4341,6 @@ class Service(ProductOrService):
          'recommended': True,
          'slot_uri': 'dcat:contactPoint'} })
     title: str = Field(default=..., title="title", description="""A name given to the resource""", json_schema_extra = { "linkml_meta": {'alias': 'title',
-         'close_mappings': ['rdfs:label', 'schema:name'],
          'comments': ['The title of the item should be as short and descriptive as '
                       'possible. E.g. for virus products it should basically be based '
                       'on the following Pattern:\n'
@@ -4272,6 +4353,7 @@ class Service(ProductOrService):
                        'Term',
                        'License',
                        'Certification'],
+         'exact_mappings': ['schema:name', 'rdfs:label'],
          'slot_uri': 'dct:title'} })
     description: str = Field(default=..., title="description", description="""A short explanation of the characteristics, features, or nature of the current item""", json_schema_extra = { "linkml_meta": {'alias': 'description',
          'close_mappings': ['schema:description'],
@@ -4291,7 +4373,9 @@ class Service(ProductOrService):
     version: Optional[str] = Field(default=None, title="version", description="""The version indicator (name or identifier) of a resource""", json_schema_extra = { "linkml_meta": {'alias': 'version',
          'close_mappings': ['wdp:P393', 'schema:version'],
          'domain_of': ['Dataset', 'Version', 'Taxonomy'],
+         'exact_mappings': ['pav:version'],
          'recommended': True,
+         'related_mappings': ['schema:identifier'],
          'slot_uri': 'dcat:version'} })
 
 
@@ -4518,7 +4602,6 @@ class Product(ProductOrService):
          'recommended': True,
          'slot_uri': 'dcat:contactPoint'} })
     title: str = Field(default=..., title="title", description="""A name given to the resource""", json_schema_extra = { "linkml_meta": {'alias': 'title',
-         'close_mappings': ['rdfs:label', 'schema:name'],
          'comments': ['The title of the item should be as short and descriptive as '
                       'possible. E.g. for virus products it should basically be based '
                       'on the following Pattern:\n'
@@ -4531,6 +4614,7 @@ class Product(ProductOrService):
                        'Term',
                        'License',
                        'Certification'],
+         'exact_mappings': ['schema:name', 'rdfs:label'],
          'slot_uri': 'dct:title'} })
     description: str = Field(default=..., title="description", description="""A short explanation of the characteristics, features, or nature of the current item""", json_schema_extra = { "linkml_meta": {'alias': 'description',
          'close_mappings': ['schema:description'],
@@ -4550,7 +4634,9 @@ class Product(ProductOrService):
     version: Optional[str] = Field(default=None, title="version", description="""The version indicator (name or identifier) of a resource""", json_schema_extra = { "linkml_meta": {'alias': 'version',
          'close_mappings': ['wdp:P393', 'schema:version'],
          'domain_of': ['Dataset', 'Version', 'Taxonomy'],
+         'exact_mappings': ['pav:version'],
          'recommended': True,
+         'related_mappings': ['schema:identifier'],
          'slot_uri': 'dcat:version'} })
 
 
@@ -4712,7 +4798,6 @@ class Antibody(Product):
          'recommended': True,
          'slot_uri': 'dcat:contactPoint'} })
     title: str = Field(default=..., title="title", description="""A name given to the resource""", json_schema_extra = { "linkml_meta": {'alias': 'title',
-         'close_mappings': ['rdfs:label', 'schema:name'],
          'comments': ['The title of the item should be as short and descriptive as '
                       'possible. E.g. for virus products it should basically be based '
                       'on the following Pattern:\n'
@@ -4725,6 +4810,7 @@ class Antibody(Product):
                        'Term',
                        'License',
                        'Certification'],
+         'exact_mappings': ['schema:name', 'rdfs:label'],
          'slot_uri': 'dct:title'} })
     description: str = Field(default=..., title="description", description="""A short explanation of the characteristics, features, or nature of the current item""", json_schema_extra = { "linkml_meta": {'alias': 'description',
          'close_mappings': ['schema:description'],
@@ -4744,7 +4830,9 @@ class Antibody(Product):
     version: Optional[str] = Field(default=None, title="version", description="""The version indicator (name or identifier) of a resource""", json_schema_extra = { "linkml_meta": {'alias': 'version',
          'close_mappings': ['wdp:P393', 'schema:version'],
          'domain_of': ['Dataset', 'Version', 'Taxonomy'],
+         'exact_mappings': ['pav:version'],
          'recommended': True,
+         'related_mappings': ['schema:identifier'],
          'slot_uri': 'dcat:version'} })
 
 
@@ -4859,7 +4947,6 @@ class Hybridoma(Antibody):
          'recommended': True,
          'slot_uri': 'dcat:contactPoint'} })
     title: str = Field(default=..., title="title", description="""A name given to the resource""", json_schema_extra = { "linkml_meta": {'alias': 'title',
-         'close_mappings': ['rdfs:label', 'schema:name'],
          'comments': ['The title of the item should be as short and descriptive as '
                       'possible. E.g. for virus products it should basically be based '
                       'on the following Pattern:\n'
@@ -4872,6 +4959,7 @@ class Hybridoma(Antibody):
                        'Term',
                        'License',
                        'Certification'],
+         'exact_mappings': ['schema:name', 'rdfs:label'],
          'slot_uri': 'dct:title'} })
     description: str = Field(default=..., title="description", description="""A short explanation of the characteristics, features, or nature of the current item""", json_schema_extra = { "linkml_meta": {'alias': 'description',
          'close_mappings': ['schema:description'],
@@ -4891,7 +4979,9 @@ class Hybridoma(Antibody):
     version: Optional[str] = Field(default=None, title="version", description="""The version indicator (name or identifier) of a resource""", json_schema_extra = { "linkml_meta": {'alias': 'version',
          'close_mappings': ['wdp:P393', 'schema:version'],
          'domain_of': ['Dataset', 'Version', 'Taxonomy'],
+         'exact_mappings': ['pav:version'],
          'recommended': True,
+         'related_mappings': ['schema:identifier'],
          'slot_uri': 'dcat:version'} })
 
 
@@ -5353,7 +5443,6 @@ class Protein(Product):
          'recommended': True,
          'slot_uri': 'dcat:contactPoint'} })
     title: str = Field(default=..., title="title", description="""A name given to the resource""", json_schema_extra = { "linkml_meta": {'alias': 'title',
-         'close_mappings': ['rdfs:label', 'schema:name'],
          'comments': ['The title of the item should be as short and descriptive as '
                       'possible. E.g. for virus products it should basically be based '
                       'on the following Pattern:\n'
@@ -5366,6 +5455,7 @@ class Protein(Product):
                        'Term',
                        'License',
                        'Certification'],
+         'exact_mappings': ['schema:name', 'rdfs:label'],
          'slot_uri': 'dct:title'} })
     description: str = Field(default=..., title="description", description="""A short explanation of the characteristics, features, or nature of the current item""", json_schema_extra = { "linkml_meta": {'alias': 'description',
          'close_mappings': ['schema:description'],
@@ -5385,7 +5475,9 @@ class Protein(Product):
     version: Optional[str] = Field(default=None, title="version", description="""The version indicator (name or identifier) of a resource""", json_schema_extra = { "linkml_meta": {'alias': 'version',
          'close_mappings': ['wdp:P393', 'schema:version'],
          'domain_of': ['Dataset', 'Version', 'Taxonomy'],
+         'exact_mappings': ['pav:version'],
          'recommended': True,
+         'related_mappings': ['schema:identifier'],
          'slot_uri': 'dcat:version'} })
 
 
@@ -5734,7 +5826,6 @@ class NucleicAcid(Product):
          'recommended': True,
          'slot_uri': 'dcat:contactPoint'} })
     title: str = Field(default=..., title="title", description="""A name given to the resource""", json_schema_extra = { "linkml_meta": {'alias': 'title',
-         'close_mappings': ['rdfs:label', 'schema:name'],
          'comments': ['The title of the item should be as short and descriptive as '
                       'possible. E.g. for virus products it should basically be based '
                       'on the following Pattern:\n'
@@ -5747,6 +5838,7 @@ class NucleicAcid(Product):
                        'Term',
                        'License',
                        'Certification'],
+         'exact_mappings': ['schema:name', 'rdfs:label'],
          'slot_uri': 'dct:title'} })
     description: str = Field(default=..., title="description", description="""A short explanation of the characteristics, features, or nature of the current item""", json_schema_extra = { "linkml_meta": {'alias': 'description',
          'close_mappings': ['schema:description'],
@@ -5766,7 +5858,9 @@ class NucleicAcid(Product):
     version: Optional[str] = Field(default=None, title="version", description="""The version indicator (name or identifier) of a resource""", json_schema_extra = { "linkml_meta": {'alias': 'version',
          'close_mappings': ['wdp:P393', 'schema:version'],
          'domain_of': ['Dataset', 'Version', 'Taxonomy'],
+         'exact_mappings': ['pav:version'],
          'recommended': True,
+         'related_mappings': ['schema:identifier'],
          'slot_uri': 'dcat:version'} })
 
 
@@ -5919,7 +6013,6 @@ class DetectionKit(Product):
          'recommended': True,
          'slot_uri': 'dcat:contactPoint'} })
     title: str = Field(default=..., title="title", description="""A name given to the resource""", json_schema_extra = { "linkml_meta": {'alias': 'title',
-         'close_mappings': ['rdfs:label', 'schema:name'],
          'comments': ['The title of the item should be as short and descriptive as '
                       'possible. E.g. for virus products it should basically be based '
                       'on the following Pattern:\n'
@@ -5932,6 +6025,7 @@ class DetectionKit(Product):
                        'Term',
                        'License',
                        'Certification'],
+         'exact_mappings': ['schema:name', 'rdfs:label'],
          'slot_uri': 'dct:title'} })
     description: str = Field(default=..., title="description", description="""A short explanation of the characteristics, features, or nature of the current item""", json_schema_extra = { "linkml_meta": {'alias': 'description',
          'close_mappings': ['schema:description'],
@@ -5951,7 +6045,9 @@ class DetectionKit(Product):
     version: Optional[str] = Field(default=None, title="version", description="""The version indicator (name or identifier) of a resource""", json_schema_extra = { "linkml_meta": {'alias': 'version',
          'close_mappings': ['wdp:P393', 'schema:version'],
          'domain_of': ['Dataset', 'Version', 'Taxonomy'],
+         'exact_mappings': ['pav:version'],
          'recommended': True,
+         'related_mappings': ['schema:identifier'],
          'slot_uri': 'dcat:version'} })
 
 
@@ -6061,7 +6157,6 @@ class Bundle(Product):
          'recommended': True,
          'slot_uri': 'dcat:contactPoint'} })
     title: str = Field(default=..., title="title", description="""A name given to the resource""", json_schema_extra = { "linkml_meta": {'alias': 'title',
-         'close_mappings': ['rdfs:label', 'schema:name'],
          'comments': ['The title of the item should be as short and descriptive as '
                       'possible. E.g. for virus products it should basically be based '
                       'on the following Pattern:\n'
@@ -6074,6 +6169,7 @@ class Bundle(Product):
                        'Term',
                        'License',
                        'Certification'],
+         'exact_mappings': ['schema:name', 'rdfs:label'],
          'slot_uri': 'dct:title'} })
     description: str = Field(default=..., title="description", description="""A short explanation of the characteristics, features, or nature of the current item""", json_schema_extra = { "linkml_meta": {'alias': 'description',
          'close_mappings': ['schema:description'],
@@ -6093,7 +6189,9 @@ class Bundle(Product):
     version: Optional[str] = Field(default=None, title="version", description="""The version indicator (name or identifier) of a resource""", json_schema_extra = { "linkml_meta": {'alias': 'version',
          'close_mappings': ['wdp:P393', 'schema:version'],
          'domain_of': ['Dataset', 'Version', 'Taxonomy'],
+         'exact_mappings': ['pav:version'],
          'recommended': True,
+         'related_mappings': ['schema:identifier'],
          'slot_uri': 'dcat:version'} })
 
 
@@ -6512,7 +6610,6 @@ class Pathogen(Product):
          'recommended': True,
          'slot_uri': 'dcat:contactPoint'} })
     title: str = Field(default=..., title="title", description="""A name given to the resource""", json_schema_extra = { "linkml_meta": {'alias': 'title',
-         'close_mappings': ['rdfs:label', 'schema:name'],
          'comments': ['The title of the item should be as short and descriptive as '
                       'possible. E.g. for virus products it should basically be based '
                       'on the following Pattern:\n'
@@ -6525,6 +6622,7 @@ class Pathogen(Product):
                        'Term',
                        'License',
                        'Certification'],
+         'exact_mappings': ['schema:name', 'rdfs:label'],
          'slot_uri': 'dct:title'} })
     description: str = Field(default=..., title="description", description="""A short explanation of the characteristics, features, or nature of the current item""", json_schema_extra = { "linkml_meta": {'alias': 'description',
          'close_mappings': ['schema:description'],
@@ -6544,7 +6642,9 @@ class Pathogen(Product):
     version: Optional[str] = Field(default=None, title="version", description="""The version indicator (name or identifier) of a resource""", json_schema_extra = { "linkml_meta": {'alias': 'version',
          'close_mappings': ['wdp:P393', 'schema:version'],
          'domain_of': ['Dataset', 'Version', 'Taxonomy'],
+         'exact_mappings': ['pav:version'],
          'recommended': True,
+         'related_mappings': ['schema:identifier'],
          'slot_uri': 'dcat:version'} })
 
 
@@ -6741,7 +6841,6 @@ class Virus(Pathogen):
          'recommended': True,
          'slot_uri': 'dcat:contactPoint'} })
     title: str = Field(default=..., title="title", description="""A name given to the resource""", json_schema_extra = { "linkml_meta": {'alias': 'title',
-         'close_mappings': ['rdfs:label', 'schema:name'],
          'comments': ['The title of the item should be as short and descriptive as '
                       'possible. E.g. for virus products it should basically be based '
                       'on the following Pattern:\n'
@@ -6754,6 +6853,7 @@ class Virus(Pathogen):
                        'Term',
                        'License',
                        'Certification'],
+         'exact_mappings': ['schema:name', 'rdfs:label'],
          'slot_uri': 'dct:title'} })
     description: str = Field(default=..., title="description", description="""A short explanation of the characteristics, features, or nature of the current item""", json_schema_extra = { "linkml_meta": {'alias': 'description',
          'close_mappings': ['schema:description'],
@@ -6773,7 +6873,9 @@ class Virus(Pathogen):
     version: Optional[str] = Field(default=None, title="version", description="""The version indicator (name or identifier) of a resource""", json_schema_extra = { "linkml_meta": {'alias': 'version',
          'close_mappings': ['wdp:P393', 'schema:version'],
          'domain_of': ['Dataset', 'Version', 'Taxonomy'],
+         'exact_mappings': ['pav:version'],
          'recommended': True,
+         'related_mappings': ['schema:identifier'],
          'slot_uri': 'dcat:version'} })
 
 
@@ -6919,7 +7021,6 @@ class Bacterium(Pathogen):
          'recommended': True,
          'slot_uri': 'dcat:contactPoint'} })
     title: str = Field(default=..., title="title", description="""A name given to the resource""", json_schema_extra = { "linkml_meta": {'alias': 'title',
-         'close_mappings': ['rdfs:label', 'schema:name'],
          'comments': ['The title of the item should be as short and descriptive as '
                       'possible. E.g. for virus products it should basically be based '
                       'on the following Pattern:\n'
@@ -6932,6 +7033,7 @@ class Bacterium(Pathogen):
                        'Term',
                        'License',
                        'Certification'],
+         'exact_mappings': ['schema:name', 'rdfs:label'],
          'slot_uri': 'dct:title'} })
     description: str = Field(default=..., title="description", description="""A short explanation of the characteristics, features, or nature of the current item""", json_schema_extra = { "linkml_meta": {'alias': 'description',
          'close_mappings': ['schema:description'],
@@ -6951,7 +7053,9 @@ class Bacterium(Pathogen):
     version: Optional[str] = Field(default=None, title="version", description="""The version indicator (name or identifier) of a resource""", json_schema_extra = { "linkml_meta": {'alias': 'version',
          'close_mappings': ['wdp:P393', 'schema:version'],
          'domain_of': ['Dataset', 'Version', 'Taxonomy'],
+         'exact_mappings': ['pav:version'],
          'recommended': True,
+         'related_mappings': ['schema:identifier'],
          'slot_uri': 'dcat:version'} })
 
 
@@ -7097,7 +7201,6 @@ class Fungus(Pathogen):
          'recommended': True,
          'slot_uri': 'dcat:contactPoint'} })
     title: str = Field(default=..., title="title", description="""A name given to the resource""", json_schema_extra = { "linkml_meta": {'alias': 'title',
-         'close_mappings': ['rdfs:label', 'schema:name'],
          'comments': ['The title of the item should be as short and descriptive as '
                       'possible. E.g. for virus products it should basically be based '
                       'on the following Pattern:\n'
@@ -7110,6 +7213,7 @@ class Fungus(Pathogen):
                        'Term',
                        'License',
                        'Certification'],
+         'exact_mappings': ['schema:name', 'rdfs:label'],
          'slot_uri': 'dct:title'} })
     description: str = Field(default=..., title="description", description="""A short explanation of the characteristics, features, or nature of the current item""", json_schema_extra = { "linkml_meta": {'alias': 'description',
          'close_mappings': ['schema:description'],
@@ -7129,7 +7233,9 @@ class Fungus(Pathogen):
     version: Optional[str] = Field(default=None, title="version", description="""The version indicator (name or identifier) of a resource""", json_schema_extra = { "linkml_meta": {'alias': 'version',
          'close_mappings': ['wdp:P393', 'schema:version'],
          'domain_of': ['Dataset', 'Version', 'Taxonomy'],
+         'exact_mappings': ['pav:version'],
          'recommended': True,
+         'related_mappings': ['schema:identifier'],
          'slot_uri': 'dcat:version'} })
 
 
@@ -7275,7 +7381,6 @@ class Protozoan(Pathogen):
          'recommended': True,
          'slot_uri': 'dcat:contactPoint'} })
     title: str = Field(default=..., title="title", description="""A name given to the resource""", json_schema_extra = { "linkml_meta": {'alias': 'title',
-         'close_mappings': ['rdfs:label', 'schema:name'],
          'comments': ['The title of the item should be as short and descriptive as '
                       'possible. E.g. for virus products it should basically be based '
                       'on the following Pattern:\n'
@@ -7288,6 +7393,7 @@ class Protozoan(Pathogen):
                        'Term',
                        'License',
                        'Certification'],
+         'exact_mappings': ['schema:name', 'rdfs:label'],
          'slot_uri': 'dct:title'} })
     description: str = Field(default=..., title="description", description="""A short explanation of the characteristics, features, or nature of the current item""", json_schema_extra = { "linkml_meta": {'alias': 'description',
          'close_mappings': ['schema:description'],
@@ -7307,7 +7413,9 @@ class Protozoan(Pathogen):
     version: Optional[str] = Field(default=None, title="version", description="""The version indicator (name or identifier) of a resource""", json_schema_extra = { "linkml_meta": {'alias': 'version',
          'close_mappings': ['wdp:P393', 'schema:version'],
          'domain_of': ['Dataset', 'Version', 'Taxonomy'],
+         'exact_mappings': ['pav:version'],
          'recommended': True,
+         'related_mappings': ['schema:identifier'],
          'slot_uri': 'dcat:version'} })
 
 
@@ -7453,7 +7561,6 @@ class Viroid(Pathogen):
          'recommended': True,
          'slot_uri': 'dcat:contactPoint'} })
     title: str = Field(default=..., title="title", description="""A name given to the resource""", json_schema_extra = { "linkml_meta": {'alias': 'title',
-         'close_mappings': ['rdfs:label', 'schema:name'],
          'comments': ['The title of the item should be as short and descriptive as '
                       'possible. E.g. for virus products it should basically be based '
                       'on the following Pattern:\n'
@@ -7466,6 +7573,7 @@ class Viroid(Pathogen):
                        'Term',
                        'License',
                        'Certification'],
+         'exact_mappings': ['schema:name', 'rdfs:label'],
          'slot_uri': 'dct:title'} })
     description: str = Field(default=..., title="description", description="""A short explanation of the characteristics, features, or nature of the current item""", json_schema_extra = { "linkml_meta": {'alias': 'description',
          'close_mappings': ['schema:description'],
@@ -7485,7 +7593,9 @@ class Viroid(Pathogen):
     version: Optional[str] = Field(default=None, title="version", description="""The version indicator (name or identifier) of a resource""", json_schema_extra = { "linkml_meta": {'alias': 'version',
          'close_mappings': ['wdp:P393', 'schema:version'],
          'domain_of': ['Dataset', 'Version', 'Taxonomy'],
+         'exact_mappings': ['pav:version'],
          'recommended': True,
+         'related_mappings': ['schema:identifier'],
          'slot_uri': 'dcat:version'} })
 
 
@@ -7631,7 +7741,6 @@ class Prion(Pathogen):
          'recommended': True,
          'slot_uri': 'dcat:contactPoint'} })
     title: str = Field(default=..., title="title", description="""A name given to the resource""", json_schema_extra = { "linkml_meta": {'alias': 'title',
-         'close_mappings': ['rdfs:label', 'schema:name'],
          'comments': ['The title of the item should be as short and descriptive as '
                       'possible. E.g. for virus products it should basically be based '
                       'on the following Pattern:\n'
@@ -7644,6 +7753,7 @@ class Prion(Pathogen):
                        'Term',
                        'License',
                        'Certification'],
+         'exact_mappings': ['schema:name', 'rdfs:label'],
          'slot_uri': 'dct:title'} })
     description: str = Field(default=..., title="description", description="""A short explanation of the characteristics, features, or nature of the current item""", json_schema_extra = { "linkml_meta": {'alias': 'description',
          'close_mappings': ['schema:description'],
@@ -7663,7 +7773,9 @@ class Prion(Pathogen):
     version: Optional[str] = Field(default=None, title="version", description="""The version indicator (name or identifier) of a resource""", json_schema_extra = { "linkml_meta": {'alias': 'version',
          'close_mappings': ['wdp:P393', 'schema:version'],
          'domain_of': ['Dataset', 'Version', 'Taxonomy'],
+         'exact_mappings': ['pav:version'],
          'recommended': True,
+         'related_mappings': ['schema:identifier'],
          'slot_uri': 'dcat:version'} })
 
 
@@ -8093,7 +8205,7 @@ class File(Resource):
                                     'range': 'License',
                                     'required': False,
                                     'title': 'license'},
-                        'name': {'close_mappings': ['foaf:name', 'dct:title'],
+                        'name': {'close_mappings': ['dct:title'],
                                  'description': 'A word or set of words used to '
                                                 'identify and refer to an entity',
                                  'domain_of': ['File',
@@ -8109,7 +8221,7 @@ class File(Resource):
          'title': 'File'})
 
     name: str = Field(default=..., title="name", description="""A word or set of words used to identify and refer to an entity""", json_schema_extra = { "linkml_meta": {'alias': 'name',
-         'close_mappings': ['foaf:name', 'dct:title'],
+         'close_mappings': ['dct:title'],
          'domain_of': ['File', 'PersonOrOrganization', 'ContactPoint'],
          'exact_mappings': ['schema:name'],
          'slot_uri': 'foaf:name'} })
@@ -8131,6 +8243,7 @@ class File(Resource):
     contentUrl: str = Field(default=..., title="content URL", description="""The web address or location where the file content is stored and can be accessed or downloaded.""", json_schema_extra = { "linkml_meta": {'alias': 'contentUrl', 'domain_of': ['File']} })
     format: str = Field(default=..., title="format", description="""The file type or format that indicates how the data within the file is structured""", json_schema_extra = { "linkml_meta": {'alias': 'format', 'domain_of': ['File']} })
     license: Optional[License] = Field(default=None, title="license", description="""Information about terms and conditions under which the subject can be used, shared, or distributed, indicating any restrictions or permissions""", json_schema_extra = { "linkml_meta": {'alias': 'license',
+         'close_mappings': ['wdp:P275'],
          'domain_of': ['File', 'DataProvider'],
          'exact_mappings': ['dct:license'],
          'slot_uri': 'dct:license'} })
@@ -8145,7 +8258,7 @@ class Data(File):
          'title': 'Data'})
 
     name: str = Field(default=..., title="name", description="""A word or set of words used to identify and refer to an entity""", json_schema_extra = { "linkml_meta": {'alias': 'name',
-         'close_mappings': ['foaf:name', 'dct:title'],
+         'close_mappings': ['dct:title'],
          'domain_of': ['File', 'PersonOrOrganization', 'ContactPoint'],
          'exact_mappings': ['schema:name'],
          'slot_uri': 'foaf:name'} })
@@ -8167,6 +8280,7 @@ class Data(File):
     contentUrl: str = Field(default=..., title="content URL", description="""The web address or location where the file content is stored and can be accessed or downloaded.""", json_schema_extra = { "linkml_meta": {'alias': 'contentUrl', 'domain_of': ['File']} })
     format: str = Field(default=..., title="format", description="""The file type or format that indicates how the data within the file is structured""", json_schema_extra = { "linkml_meta": {'alias': 'format', 'domain_of': ['File']} })
     license: Optional[License] = Field(default=None, title="license", description="""Information about terms and conditions under which the subject can be used, shared, or distributed, indicating any restrictions or permissions""", json_schema_extra = { "linkml_meta": {'alias': 'license',
+         'close_mappings': ['wdp:P275'],
          'domain_of': ['File', 'DataProvider'],
          'exact_mappings': ['dct:license'],
          'slot_uri': 'dct:license'} })
@@ -8181,7 +8295,7 @@ class Document(File):
          'title': 'Document'})
 
     name: str = Field(default=..., title="name", description="""A word or set of words used to identify and refer to an entity""", json_schema_extra = { "linkml_meta": {'alias': 'name',
-         'close_mappings': ['foaf:name', 'dct:title'],
+         'close_mappings': ['dct:title'],
          'domain_of': ['File', 'PersonOrOrganization', 'ContactPoint'],
          'exact_mappings': ['schema:name'],
          'slot_uri': 'foaf:name'} })
@@ -8203,6 +8317,7 @@ class Document(File):
     contentUrl: str = Field(default=..., title="content URL", description="""The web address or location where the file content is stored and can be accessed or downloaded.""", json_schema_extra = { "linkml_meta": {'alias': 'contentUrl', 'domain_of': ['File']} })
     format: str = Field(default=..., title="format", description="""The file type or format that indicates how the data within the file is structured""", json_schema_extra = { "linkml_meta": {'alias': 'format', 'domain_of': ['File']} })
     license: Optional[License] = Field(default=None, title="license", description="""Information about terms and conditions under which the subject can be used, shared, or distributed, indicating any restrictions or permissions""", json_schema_extra = { "linkml_meta": {'alias': 'license',
+         'close_mappings': ['wdp:P275'],
          'domain_of': ['File', 'DataProvider'],
          'exact_mappings': ['dct:license'],
          'slot_uri': 'dct:license'} })
@@ -8217,7 +8332,7 @@ class Audio(File):
          'title': 'Audio'})
 
     name: str = Field(default=..., title="name", description="""A word or set of words used to identify and refer to an entity""", json_schema_extra = { "linkml_meta": {'alias': 'name',
-         'close_mappings': ['foaf:name', 'dct:title'],
+         'close_mappings': ['dct:title'],
          'domain_of': ['File', 'PersonOrOrganization', 'ContactPoint'],
          'exact_mappings': ['schema:name'],
          'slot_uri': 'foaf:name'} })
@@ -8239,6 +8354,7 @@ class Audio(File):
     contentUrl: str = Field(default=..., title="content URL", description="""The web address or location where the file content is stored and can be accessed or downloaded.""", json_schema_extra = { "linkml_meta": {'alias': 'contentUrl', 'domain_of': ['File']} })
     format: str = Field(default=..., title="format", description="""The file type or format that indicates how the data within the file is structured""", json_schema_extra = { "linkml_meta": {'alias': 'format', 'domain_of': ['File']} })
     license: Optional[License] = Field(default=None, title="license", description="""Information about terms and conditions under which the subject can be used, shared, or distributed, indicating any restrictions or permissions""", json_schema_extra = { "linkml_meta": {'alias': 'license',
+         'close_mappings': ['wdp:P275'],
          'domain_of': ['File', 'DataProvider'],
          'exact_mappings': ['dct:license'],
          'slot_uri': 'dct:license'} })
@@ -8253,7 +8369,7 @@ class Video(File):
          'title': 'Video'})
 
     name: str = Field(default=..., title="name", description="""A word or set of words used to identify and refer to an entity""", json_schema_extra = { "linkml_meta": {'alias': 'name',
-         'close_mappings': ['foaf:name', 'dct:title'],
+         'close_mappings': ['dct:title'],
          'domain_of': ['File', 'PersonOrOrganization', 'ContactPoint'],
          'exact_mappings': ['schema:name'],
          'slot_uri': 'foaf:name'} })
@@ -8275,6 +8391,7 @@ class Video(File):
     contentUrl: str = Field(default=..., title="content URL", description="""The web address or location where the file content is stored and can be accessed or downloaded.""", json_schema_extra = { "linkml_meta": {'alias': 'contentUrl', 'domain_of': ['File']} })
     format: str = Field(default=..., title="format", description="""The file type or format that indicates how the data within the file is structured""", json_schema_extra = { "linkml_meta": {'alias': 'format', 'domain_of': ['File']} })
     license: Optional[License] = Field(default=None, title="license", description="""Information about terms and conditions under which the subject can be used, shared, or distributed, indicating any restrictions or permissions""", json_schema_extra = { "linkml_meta": {'alias': 'license',
+         'close_mappings': ['wdp:P275'],
          'domain_of': ['File', 'DataProvider'],
          'exact_mappings': ['dct:license'],
          'slot_uri': 'dct:license'} })
@@ -8299,7 +8416,7 @@ class Image(File):
 
     altText: Optional[str] = Field(default=None, title="alt text", description="""An alternate text for the image, if the image cannot be displayed""", json_schema_extra = { "linkml_meta": {'alias': 'altText', 'domain_of': ['Image'], 'recommended': True} })
     name: str = Field(default=..., title="name", description="""A word or set of words used to identify and refer to an entity""", json_schema_extra = { "linkml_meta": {'alias': 'name',
-         'close_mappings': ['foaf:name', 'dct:title'],
+         'close_mappings': ['dct:title'],
          'domain_of': ['File', 'PersonOrOrganization', 'ContactPoint'],
          'exact_mappings': ['schema:name'],
          'slot_uri': 'foaf:name'} })
@@ -8321,6 +8438,7 @@ class Image(File):
     contentUrl: str = Field(default=..., title="content URL", description="""The web address or location where the file content is stored and can be accessed or downloaded.""", json_schema_extra = { "linkml_meta": {'alias': 'contentUrl', 'domain_of': ['File']} })
     format: str = Field(default=..., title="format", description="""The file type or format that indicates how the data within the file is structured""", json_schema_extra = { "linkml_meta": {'alias': 'format', 'domain_of': ['File']} })
     license: Optional[License] = Field(default=None, title="license", description="""Information about terms and conditions under which the subject can be used, shared, or distributed, indicating any restrictions or permissions""", json_schema_extra = { "linkml_meta": {'alias': 'license',
+         'close_mappings': ['wdp:P275'],
          'domain_of': ['File', 'DataProvider'],
          'exact_mappings': ['dct:license'],
          'slot_uri': 'dct:license'} })
@@ -8403,7 +8521,7 @@ class ContactPoint(Resource):
                                   'recommended': True,
                                   'required': False,
                                   'title': 'email'},
-                        'name': {'close_mappings': ['foaf:name', 'dct:title'],
+                        'name': {'close_mappings': ['dct:title'],
                                  'description': 'A word or set of words used to '
                                                 'identify and refer to an entity',
                                  'domain_of': ['ContactPoint',
@@ -8460,7 +8578,7 @@ class ContactPoint(Resource):
          'title': 'Contact Point'})
 
     name: str = Field(default=..., title="name", description="""A word or set of words used to identify and refer to an entity""", json_schema_extra = { "linkml_meta": {'alias': 'name',
-         'close_mappings': ['foaf:name', 'dct:title'],
+         'close_mappings': ['dct:title'],
          'domain_of': ['ContactPoint', 'PersonOrOrganization', 'File'],
          'exact_mappings': ['schema:name'],
          'slot_uri': 'foaf:name'} })
@@ -8575,8 +8693,7 @@ class License(Resource):
                                         'range': 'uri',
                                         'required': False,
                                         'title': 'resource URL'},
-                        'title': {'close_mappings': ['rdfs:label'],
-                                  'comments': ['The title of the item should be as '
+                        'title': {'comments': ['The title of the item should be as '
                                                'short and descriptive as possible. '
                                                'E.g. for virus products it should '
                                                'basically be based on the following '
@@ -8594,6 +8711,7 @@ class License(Resource):
                                                 'Publication',
                                                 'Term',
                                                 'Certification'],
+                                  'exact_mappings': ['schema:name', 'rdfs:label'],
                                   'multivalued': False,
                                   'name': 'title',
                                   'range': 'string',
@@ -8603,7 +8721,6 @@ class License(Resource):
          'title': 'License'})
 
     title: str = Field(default=..., title="title", description="""A name given to the resource""", json_schema_extra = { "linkml_meta": {'alias': 'title',
-         'close_mappings': ['rdfs:label'],
          'comments': ['The title of the item should be as short and descriptive as '
                       'possible. E.g. for virus products it should basically be based '
                       'on the following Pattern:\n'
@@ -8616,6 +8733,7 @@ class License(Resource):
                        'Publication',
                        'Term',
                        'Certification'],
+         'exact_mappings': ['schema:name', 'rdfs:label'],
          'slot_uri': 'dct:title'} })
     description: Optional[str] = Field(default=None, title="description", description="""A short explanation of the characteristics, features, or nature of the current item""", json_schema_extra = { "linkml_meta": {'alias': 'description',
          'close_mappings': ['schema:description'],
@@ -8715,8 +8833,7 @@ class Certification(Resource):
                                         'range': 'uri',
                                         'required': False,
                                         'title': 'resource URL'},
-                        'title': {'close_mappings': ['rdfs:label'],
-                                  'comments': ['The title of the item should be as '
+                        'title': {'comments': ['The title of the item should be as '
                                                'short and descriptive as possible. '
                                                'E.g. for virus products it should '
                                                'basically be based on the following '
@@ -8734,6 +8851,7 @@ class Certification(Resource):
                                                 'Publication',
                                                 'Term',
                                                 'License'],
+                                  'exact_mappings': ['schema:name', 'rdfs:label'],
                                   'multivalued': False,
                                   'name': 'title',
                                   'range': 'string',
@@ -8743,7 +8861,6 @@ class Certification(Resource):
          'title': 'Certification'})
 
     title: str = Field(default=..., title="title", description="""A name given to the resource""", json_schema_extra = { "linkml_meta": {'alias': 'title',
-         'close_mappings': ['rdfs:label'],
          'comments': ['The title of the item should be as short and descriptive as '
                       'possible. E.g. for virus products it should basically be based '
                       'on the following Pattern:\n'
@@ -8756,6 +8873,7 @@ class Certification(Resource):
                        'Publication',
                        'Term',
                        'License'],
+         'exact_mappings': ['schema:name', 'rdfs:label'],
          'slot_uri': 'dct:title'} })
     description: Optional[str] = Field(default=None, title="description", description="""A short explanation of the characteristics, features, or nature of the current item""", json_schema_extra = { "linkml_meta": {'alias': 'description',
          'close_mappings': ['schema:description'],

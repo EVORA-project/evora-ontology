@@ -458,6 +458,13 @@ attributes:
     exact_mappings:
     - dwc:taxonRank
     - schema:taxonRank
+    close_mappings:
+    - dwc:taxonRank
+    - schema:taxonRank
+    - biolink:has_taxonomic_rank
+    related_mappings:
+    - taxrank:1000000
+    - ncbitaxon:has_rank
     rank: 1000
     alias: rank
     owner: Taxon
@@ -551,9 +558,9 @@ attributes:
       ex ''suspected epidemiological origin'', ''genotype'', ''strain'', ''variant
       name or specific feature'
     from_schema: https://w3id.org/evorao/
-    close_mappings:
-    - rdfs:label
+    exact_mappings:
     - schema:name
+    - rdfs:label
     rank: 1000
     slot_uri: dct:title
     alias: title

@@ -39,7 +39,6 @@
 --     * Slot: description Description: A short explanation of the characteristics, features, or nature of the current item
 --     * Slot: endpointUrl Description: The URL template that allows to get the content
 --     * Slot: license_id Description: Information about terms and conditions under which the subject can be used, shared, or distributed, indicating any restrictions or permissions
---     * Slot: providedEntityType_id Description: The identification of the entity type (Class) described by the response to the query
 -- # Class: "PathogenIdentification" Description: "A collection of distinguishing information that enables the differentiation of a pathogen from another"
 --     * Slot: id Description: 
 --     * Slot: pathogenType Description: Identification of the specific type of pathogen among the listed categories e.g. 'Virus','Viroid','Bacterium'...
@@ -931,6 +930,9 @@
 --     * Slot: description Description: A short explanation of the characteristics, features, or nature of the current item
 --     * Slot: resourceUrl Description: The web address or location where the details or content is stored and can be accessed or downloaded.
 --     * Slot: logo_id Description: A path or URL to the related logo
+-- # Class: "DataService_servesDataset" Description: ""
+--     * Slot: DataService_id Description: Autocreated FK slot
+--     * Slot: servesDataset_id Description: A collection of data that this data service can distribute
 -- # Class: "Version_resource" Description: ""
 --     * Slot: Version_id Description: Autocreated FK slot
 --     * Slot: resource_id Description: Resource published or curated by a single agent
@@ -940,6 +942,12 @@
 -- # Class: "Taxonomy_rank" Description: ""
 --     * Slot: Taxonomy_id Description: Autocreated FK slot
 --     * Slot: rank_id Description: Relative level or position of the identified taxon in the taxonomy
+-- # Class: "DataProvider_providedEntityType" Description: ""
+--     * Slot: DataProvider_id Description: Autocreated FK slot
+--     * Slot: providedEntityType Description: The identification of the entity type (Class) described by the response to the query
+-- # Class: "DataProvider_servesDataset" Description: ""
+--     * Slot: DataProvider_id Description: Autocreated FK slot
+--     * Slot: servesDataset_id Description: A collection of data that this data service can distribute
 -- # Class: "PathogenIdentification_hostType" Description: ""
 --     * Slot: PathogenIdentification_id Description: Autocreated FK slot
 --     * Slot: hostType Description: Indication of the possible host(s) for the identified pathogens among the listed main categories
@@ -1729,10 +1737,8 @@ CREATE TABLE "DataProvider" (
 	description TEXT, 
 	"endpointUrl" TEXT NOT NULL, 
 	license_id INTEGER, 
-	"providedEntityType_id" INTEGER NOT NULL, 
 	PRIMARY KEY (id), 
-	FOREIGN KEY(license_id) REFERENCES "License" (id), 
-	FOREIGN KEY("providedEntityType_id") REFERENCES "Dataset" (id)
+	FOREIGN KEY(license_id) REFERENCES "License" (id)
 );
 CREATE TABLE "BiologicalPartOrigin" (
 	id INTEGER NOT NULL, 
@@ -1809,6 +1815,13 @@ CREATE TABLE "Certification" (
 	PRIMARY KEY (id), 
 	FOREIGN KEY(logo_id) REFERENCES "Image" (id)
 );
+CREATE TABLE "DataService_servesDataset" (
+	"DataService_id" INTEGER, 
+	"servesDataset_id" INTEGER, 
+	PRIMARY KEY ("DataService_id", "servesDataset_id"), 
+	FOREIGN KEY("DataService_id") REFERENCES "DataService" (id), 
+	FOREIGN KEY("servesDataset_id") REFERENCES "Dataset" (id)
+);
 CREATE TABLE "Version_resource" (
 	"Version_id" INTEGER, 
 	resource_id INTEGER, 
@@ -1860,6 +1873,19 @@ CREATE TABLE "Collection" (
 	"collectionDataProvider_id" INTEGER, 
 	PRIMARY KEY (id), 
 	FOREIGN KEY("collectionDataProvider_id") REFERENCES "DataProvider" (id)
+);
+CREATE TABLE "DataProvider_providedEntityType" (
+	"DataProvider_id" INTEGER, 
+	"providedEntityType" TEXT NOT NULL, 
+	PRIMARY KEY ("DataProvider_id", "providedEntityType"), 
+	FOREIGN KEY("DataProvider_id") REFERENCES "DataProvider" (id)
+);
+CREATE TABLE "DataProvider_servesDataset" (
+	"DataProvider_id" INTEGER, 
+	"servesDataset_id" INTEGER, 
+	PRIMARY KEY ("DataProvider_id", "servesDataset_id"), 
+	FOREIGN KEY("DataProvider_id") REFERENCES "DataProvider" (id), 
+	FOREIGN KEY("servesDataset_id") REFERENCES "Dataset" (id)
 );
 CREATE TABLE "BiologicalMaterialOrigin_biologicalPartOrigin" (
 	"BiologicalMaterialOrigin_id" INTEGER, 

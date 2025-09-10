@@ -416,6 +416,10 @@ attributes:
       or group of pathogens (e.g viruses) in the reference taxonomy
     from_schema: https://w3id.org/evorao/
     close_mappings:
+    - schema:taxonomicRange
+    - dwc:taxonID
+    - dwc:toTaxon
+    related_mappings:
     - dwc:Taxon
     rank: 1000
     alias: taxon

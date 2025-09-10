@@ -69,7 +69,8 @@ URI: [dcat:Dataset](http://www.w3.org/ns/dcat#Dataset)
 
 | used by | used in | type | used |
 | ---  | --- | --- | --- |
-| [DataProvider](DataProvider.md) | [providedEntityType](providedEntityType.md) | range | [Dataset](Dataset.md) |
+| [DataService](DataService.md) | [servesDataset](servesDataset.md) | range | [Dataset](Dataset.md) |
+| [DataProvider](DataProvider.md) | [servesDataset](servesDataset.md) | range | [Dataset](Dataset.md) |
 
 
 
@@ -142,9 +143,9 @@ slot_usage:
       ''Virus name'', ''virus host type'', ''collection year'', ''country of collection''
       ex ''suspected epidemiological origin'', ''genotype'', ''strain'', ''variant
       name or specific feature'
-    close_mappings:
-    - rdfs:label
+    exact_mappings:
     - schema:name
+    - rdfs:label
     slot_uri: dct:title
     domain_of:
     - Dataset
@@ -185,9 +186,13 @@ slot_usage:
     name: version
     description: The version indicator (name or identifier) of a resource
     title: version
+    exact_mappings:
+    - pav:version
     close_mappings:
     - wdp:P393
     - schema:version
+    related_mappings:
+    - schema:identifier
     slot_uri: dcat:version
     domain_of:
     - Dataset
@@ -230,9 +235,9 @@ slot_usage:
       ''Virus name'', ''virus host type'', ''collection year'', ''country of collection''
       ex ''suspected epidemiological origin'', ''genotype'', ''strain'', ''variant
       name or specific feature'
-    close_mappings:
-    - rdfs:label
+    exact_mappings:
     - schema:name
+    - rdfs:label
     slot_uri: dct:title
     domain_of:
     - Dataset
@@ -273,9 +278,13 @@ slot_usage:
     name: version
     description: The version indicator (name or identifier) of a resource
     title: version
+    exact_mappings:
+    - pav:version
     close_mappings:
     - wdp:P393
     - schema:version
+    related_mappings:
+    - schema:identifier
     slot_uri: dcat:version
     domain_of:
     - Dataset
@@ -298,9 +307,9 @@ attributes:
       ex ''suspected epidemiological origin'', ''genotype'', ''strain'', ''variant
       name or specific feature'
     from_schema: https://w3id.org/evorao/
-    close_mappings:
-    - rdfs:label
+    exact_mappings:
     - schema:name
+    - rdfs:label
     rank: 1000
     slot_uri: dct:title
     alias: title
@@ -352,9 +361,13 @@ attributes:
     description: The version indicator (name or identifier) of a resource
     title: version
     from_schema: https://w3id.org/evorao/
+    exact_mappings:
+    - pav:version
     close_mappings:
     - wdp:P393
     - schema:version
+    related_mappings:
+    - schema:identifier
     rank: 1000
     slot_uri: dcat:version
     alias: version

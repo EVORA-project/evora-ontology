@@ -46,14 +46,16 @@ URI: [EVORAO:DataProvider](https://w3id.org/evorao/DataProvider)
         
       DataProvider : providedEntityType
         
+      DataProvider : queryMethod
+        
+      DataProvider : servesDataset
+        
           
     
     
-    DataProvider --> "1" Dataset : providedEntityType
+    DataProvider --> "* _recommended_" Dataset : servesDataset
     click Dataset href "../Dataset"
 
-        
-      DataProvider : queryMethod
         
       DataProvider : title
         
@@ -83,11 +85,12 @@ URI: [EVORAO:DataProvider](https://w3id.org/evorao/DataProvider)
 | [loginTokenName](loginTokenName.md) | 0..1 <br/> [String](String.md) | The name of the token, unique identifier of an interaction session, that will... | direct |
 | [queryMethod](queryMethod.md) | 1 <br/> [String](String.md) | The http request method used to access the requested query url | direct |
 | [contentType](contentType.md) | 1 <br/> [String](String.md) | The content type of the response to the queries | direct |
-| [providedEntityType](providedEntityType.md) | 1 <br/> [Dataset](Dataset.md) | The identification of the entity type (Class) described by the response to th... | direct |
+| [providedEntityType](providedEntityType.md) | 1..* <br/> [String](String.md) | The identification of the entity type (Class) described by the response to th... | direct |
 | [weight](weight.md) | 1 <br/> [Integer](Integer.md) | A numerical value indicating relative importance or priority, generally proce... | direct |
 | [title](title.md) | 1 <br/> [String](String.md) | A name given to the resource | [DataService](DataService.md) |
 | [description](description.md) | 0..1 _recommended_ <br/> [String](String.md) | A short explanation of the characteristics, features, or nature of the curren... | [DataService](DataService.md) |
 | [endpointUrl](endpointUrl.md) | 1 <br/> [Uri](Uri.md) | The URL template that allows to get the content | [DataService](DataService.md) |
+| [servesDataset](servesDataset.md) | * _recommended_ <br/> [Dataset](Dataset.md) | A collection of data that this data service can distribute | [DataService](DataService.md) |
 
 
 
@@ -130,7 +133,8 @@ URI: [EVORAO:DataProvider](https://w3id.org/evorao/DataProvider)
 | ---  | ---  |
 | self | EVORAO:DataProvider |
 | native | EVORAO:DataProvider |
-| close | wd:Q122625839, wd:Q122625839 |
+| broad | schema:EntryPoint, schema:EntryPoint |
+| close | wd:Q122625839, ncit:C205367, wd:Q122625839, ncit:C205367 |
 
 
 
@@ -153,7 +157,12 @@ title: Data provider
 from_schema: https://w3id.org/evorao/
 close_mappings:
 - wd:Q122625839
+- ncit:C205367
 - wd:Q122625839
+- ncit:C205367
+broad_mappings:
+- schema:EntryPoint
+- schema:EntryPoint
 is_a: DataService
 slots:
 - license
@@ -171,8 +180,9 @@ slot_usage:
       be used, shared, or distributed, indicating any restrictions or permissions
     title: license
     exact_mappings:
-    - dct:license
     - schema:license
+    close_mappings:
+    - wdp:P275
     slot_uri: dct:license
     domain_of:
     - DataProvider
@@ -252,13 +262,13 @@ slot_usage:
     description: The identification of the entity type (Class) described by the response
       to the query
     title: provided entity type
-    exact_mappings:
+    related_mappings:
     - dcat:servesDataset
     domain_of:
     - DataProvider
-    range: Dataset
+    range: string
     required: true
-    multivalued: false
+    multivalued: true
   weight:
     name: weight
     description: A numerical value indicating relative importance or priority, generally
@@ -292,7 +302,12 @@ title: Data provider
 from_schema: https://w3id.org/evorao/
 close_mappings:
 - wd:Q122625839
+- ncit:C205367
 - wd:Q122625839
+- ncit:C205367
+broad_mappings:
+- schema:EntryPoint
+- schema:EntryPoint
 is_a: DataService
 slot_usage:
   license:
@@ -301,8 +316,9 @@ slot_usage:
       be used, shared, or distributed, indicating any restrictions or permissions
     title: license
     exact_mappings:
-    - dct:license
     - schema:license
+    close_mappings:
+    - wdp:P275
     slot_uri: dct:license
     domain_of:
     - DataProvider
@@ -382,13 +398,13 @@ slot_usage:
     description: The identification of the entity type (Class) described by the response
       to the query
     title: provided entity type
-    exact_mappings:
+    related_mappings:
     - dcat:servesDataset
     domain_of:
     - DataProvider
-    range: Dataset
+    range: string
     required: true
-    multivalued: false
+    multivalued: true
   weight:
     name: weight
     description: A numerical value indicating relative importance or priority, generally
@@ -415,8 +431,9 @@ attributes:
     title: license
     from_schema: https://w3id.org/evorao/
     exact_mappings:
-    - dct:license
     - schema:license
+    close_mappings:
+    - wdp:P275
     rank: 1000
     slot_uri: dct:license
     alias: license
@@ -526,16 +543,16 @@ attributes:
       to the query
     title: provided entity type
     from_schema: https://w3id.org/evorao/
-    exact_mappings:
+    related_mappings:
     - dcat:servesDataset
     rank: 1000
     alias: providedEntityType
     owner: DataProvider
     domain_of:
     - DataProvider
-    range: Dataset
+    range: string
     required: true
-    multivalued: false
+    multivalued: true
   weight:
     name: weight
     description: A numerical value indicating relative importance or priority, generally
@@ -571,9 +588,9 @@ attributes:
       ex ''suspected epidemiological origin'', ''genotype'', ''strain'', ''variant
       name or specific feature'
     from_schema: https://w3id.org/evorao/
-    close_mappings:
-    - rdfs:label
+    exact_mappings:
     - schema:name
+    - rdfs:label
     rank: 1000
     slot_uri: dct:title
     alias: title
@@ -625,6 +642,8 @@ attributes:
     description: The URL template that allows to get the content
     title: endpoint URL
     from_schema: https://w3id.org/evorao/
+    exact_mappings:
+    - schema:urlTemplate
     close_mappings:
     - wdp:P1630
     rank: 1000
@@ -636,6 +655,23 @@ attributes:
     range: uri
     required: true
     multivalued: false
+  servesDataset:
+    name: servesDataset
+    description: A collection of data that this data service can distribute
+    title: serves dataset
+    comments:
+    - This property rather intends to point towards Catalogues as collections of Datasets
+    from_schema: https://w3id.org/evorao/
+    rank: 1000
+    slot_uri: dcat:servesDataset
+    alias: servesDataset
+    owner: DataProvider
+    domain_of:
+    - DataService
+    range: Dataset
+    required: false
+    recommended: true
+    multivalued: true
 
 ```
 </details>
