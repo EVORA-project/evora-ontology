@@ -62,6 +62,7 @@ Alias: pathogenName
 | ---  | ---  |
 | self | EVORAO:pathogenName |
 | native | EVORAO:pathogenName |
+| exact | dwc:organismName |
 
 
 
@@ -74,6 +75,8 @@ name: pathogenName
 description: A pathogen common name or a name that describes a group of pathogens
 title: pathogen name
 from_schema: https://w3id.org/evorao/
+exact_mappings:
+- dwc:organismName
 rank: 1000
 alias: pathogenName
 domain_of:

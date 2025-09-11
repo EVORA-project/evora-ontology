@@ -133,7 +133,10 @@ URI: [EVORAO:Vocabulary](https://w3id.org/evorao/Vocabulary)
 | ---  | ---  |
 | self | EVORAO:Vocabulary |
 | native | EVORAO:Vocabulary |
-| close | wd:Q6499736, skos:Collection, wd:Q6499736, skos:Collection |
+| exact | sio:001080, sio:001080 |
+| broad | skos:Collection, skos:Collection |
+| related | t4fs:0000335, wd:Q6499736, t4fs:0000335, wd:Q6499736 |
+| close | wd:Q1391494, wd:Q6537693, wd:Q8380731, wd:Q1391494, wd:Q6537693, wd:Q8380731 |
 
 
 
@@ -153,10 +156,23 @@ name: Vocabulary
 description: A subset of words or phrases specific to a particular subject or field
 title: Vocabulary
 from_schema: https://w3id.org/evorao/
+exact_mappings:
+- sio:001080
+- sio:001080
 close_mappings:
+- wd:Q1391494
+- wd:Q6537693
+- wd:Q8380731
+- wd:Q1391494
+- wd:Q6537693
+- wd:Q8380731
+related_mappings:
+- t4fs:0000335
 - wd:Q6499736
+- t4fs:0000335
+- wd:Q6499736
+broad_mappings:
 - skos:Collection
-- wd:Q6499736
 - skos:Collection
 is_a: Catalogue
 slots:
@@ -177,6 +193,8 @@ slot_usage:
     name: term
     description: The terms related to this vocabulary
     title: term
+    related_mappings:
+    - dct:hasPart
     domain_of:
     - Vocabulary
     range: Term
@@ -195,10 +213,23 @@ name: Vocabulary
 description: A subset of words or phrases specific to a particular subject or field
 title: Vocabulary
 from_schema: https://w3id.org/evorao/
+exact_mappings:
+- sio:001080
+- sio:001080
 close_mappings:
+- wd:Q1391494
+- wd:Q6537693
+- wd:Q8380731
+- wd:Q1391494
+- wd:Q6537693
+- wd:Q8380731
+related_mappings:
+- t4fs:0000335
 - wd:Q6499736
+- t4fs:0000335
+- wd:Q6499736
+broad_mappings:
 - skos:Collection
-- wd:Q6499736
 - skos:Collection
 is_a: Catalogue
 slot_usage:
@@ -216,6 +247,8 @@ slot_usage:
     name: term
     description: The terms related to this vocabulary
     title: term
+    related_mappings:
+    - dct:hasPart
     domain_of:
     - Vocabulary
     range: Term
@@ -242,6 +275,8 @@ attributes:
     description: The terms related to this vocabulary
     title: term
     from_schema: https://w3id.org/evorao/
+    related_mappings:
+    - dct:hasPart
     rank: 1000
     alias: term
     owner: Vocabulary
@@ -257,9 +292,8 @@ attributes:
     title: title
     comments:
     - 'The title of the item should be as short and descriptive as possible. E.g.
-      for virus products it should basically be based on the following Pattern:
-
-      ''Virus name'', ''virus host type'', ''collection year'', ''country of collection''
+      for virus products it should basically be based on the following Pattern: ''Virus
+      name'', ''virus host type'', ''collection year'', ''country of collection''
       ex ''suspected epidemiological origin'', ''genotype'', ''strain'', ''variant
       name or specific feature'
     from_schema: https://w3id.org/evorao/
@@ -286,14 +320,13 @@ attributes:
       the current item
     title: description
     comments:
-    - 'Describe this item in few lines. This description will serve as a summary to
+    - Describe this item in few lines. This description will serve as a summary to
       present the resource.
-
-      '
     from_schema: https://w3id.org/evorao/
     exact_mappings:
     - schema:description
     close_mappings:
+    - schema:description
     - schema:description
     rank: 1000
     slot_uri: dct:description

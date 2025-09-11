@@ -60,6 +60,7 @@ Alias: genotype
 | ---  | ---  |
 | self | EVORAO:genotype |
 | native | EVORAO:genotype |
+| close | geno:0000222 |
 
 
 
@@ -73,6 +74,8 @@ description: Genotype information that identifies organisms that cluster in phyl
   trees, thus different clusters are distinct genotypes
 title: genotype
 from_schema: https://w3id.org/evorao/
+close_mappings:
+- geno:0000222
 rank: 1000
 alias: genotype
 domain_of:

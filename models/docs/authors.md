@@ -62,6 +62,8 @@ Alias: authors
 | ---  | ---  |
 | self | EVORAO:authors |
 | native | EVORAO:authors |
+| related | sio:001315, iao:0000321 |
+| close | wdp:P2093, schema:author |
 
 
 
@@ -74,6 +76,12 @@ name: authors
 description: The list of authors
 title: authors
 from_schema: https://w3id.org/evorao/
+close_mappings:
+- wdp:P2093
+- schema:author
+related_mappings:
+- sio:001315
+- iao:0000321
 rank: 1000
 alias: authors
 domain_of:

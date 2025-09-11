@@ -22,14 +22,14 @@ Alias: logo
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [Originator](Originator.md) | The individual or organization responsible for the original discovery, isolat... |  no  |
 | [License](License.md) | The legal terms and conditions under which the subject can be used, shared, o... |  yes  |
+| [Certification](Certification.md) | Assurance given by an independent certification body that a product, service ... |  yes  |
+| [Originator](Originator.md) | The individual or organization responsible for the original discovery, isolat... |  no  |
 | [Organization](Organization.md) | A social entity established to meet needs or pursue specific goals |  no  |
 | [ReasearchInfrastructure](ReasearchInfrastructure.md) | A research infrastructure (RI) |  no  |
-| [Certification](Certification.md) | Assurance given by an independent certification body that a product, service ... |  yes  |
-| [Provider](Provider.md) | A provider of products or services, as a specific organization |  no  |
 | [Person](Person.md) | An individual |  no  |
 | [PersonOrOrganization](PersonOrOrganization.md) | A person or an organization |  yes  |
+| [Provider](Provider.md) | A provider of products or services, as a specific organization |  no  |
 
 
 
@@ -67,6 +67,7 @@ Alias: logo
 | ---  | ---  |
 | self | EVORAO:logo |
 | native | EVORAO:logo |
+| exact | schema:logo |
 
 
 
@@ -79,6 +80,8 @@ name: logo
 description: A path or URL to the related logo
 title: logo
 from_schema: https://w3id.org/evorao/
+exact_mappings:
+- schema:logo
 rank: 1000
 alias: logo
 domain_of:

@@ -104,7 +104,8 @@ URI: [foaf:Person](http://xmlns.com/foaf/0.1/Person)
 | ---  | ---  |
 | self | foaf:Person |
 | native | EVORAO:Person |
-| close | wd:Q215627, vcard:Individual, schema:Person, wd:Q215627, vcard:Individual, schema:Person |
+| exact | schema:Person, schema:Person |
+| close | wd:Q215627, vcard:Individual, wd:Q215627, vcard:Individual |
 
 
 
@@ -124,13 +125,14 @@ name: Person
 description: An individual
 title: Person
 from_schema: https://w3id.org/evorao/
+exact_mappings:
+- schema:Person
+- schema:Person
 close_mappings:
 - wd:Q215627
 - vcard:Individual
-- schema:Person
 - wd:Q215627
 - vcard:Individual
-- schema:Person
 is_a: PersonOrOrganization
 slots:
 - orcidId
@@ -142,6 +144,10 @@ slot_usage:
     title: ORCID id
     exact_mappings:
     - wdp:P496
+    - reproduceme:ORCID
+    related_mappings:
+    - iao:0000708
+    - edam:4022
     domain_of:
     - Person
     - ContactPoint
@@ -162,13 +168,14 @@ name: Person
 description: An individual
 title: Person
 from_schema: https://w3id.org/evorao/
+exact_mappings:
+- schema:Person
+- schema:Person
 close_mappings:
 - wd:Q215627
 - vcard:Individual
-- schema:Person
 - wd:Q215627
 - vcard:Individual
-- schema:Person
 is_a: PersonOrOrganization
 slot_usage:
   orcidId:
@@ -178,6 +185,10 @@ slot_usage:
     title: ORCID id
     exact_mappings:
     - wdp:P496
+    - reproduceme:ORCID
+    related_mappings:
+    - iao:0000708
+    - edam:4022
     domain_of:
     - Person
     - ContactPoint
@@ -194,6 +205,10 @@ attributes:
     from_schema: https://w3id.org/evorao/
     exact_mappings:
     - wdp:P496
+    - reproduceme:ORCID
+    related_mappings:
+    - iao:0000708
+    - edam:4022
     rank: 1000
     alias: orcidId
     owner: Person
@@ -211,7 +226,9 @@ attributes:
     from_schema: https://w3id.org/evorao/
     exact_mappings:
     - schema:name
+    - vcard:fn
     close_mappings:
+    - rdfs:label
     - dct:title
     rank: 1000
     slot_uri: foaf:name
@@ -230,14 +247,13 @@ attributes:
       the current item
     title: description
     comments:
-    - 'Describe this item in few lines. This description will serve as a summary to
+    - Describe this item in few lines. This description will serve as a summary to
       present the resource.
-
-      '
     from_schema: https://w3id.org/evorao/
     exact_mappings:
     - schema:description
     close_mappings:
+    - schema:description
     - schema:description
     rank: 1000
     slot_uri: dct:description
@@ -261,6 +277,8 @@ attributes:
     description: A web page that serves as the main or introductory page
     title: home page
     from_schema: https://w3id.org/evorao/
+    close_mappings:
+    - swo:0004006
     rank: 1000
     slot_uri: foaf:homepage
     alias: homePage
@@ -275,6 +293,8 @@ attributes:
     description: An information that allows someone to establish communication
     title: contact point
     from_schema: https://w3id.org/evorao/
+    exact_mappings:
+    - schema:contactPoint
     rank: 1000
     slot_uri: dcat:contactPoint
     alias: contactPoint
@@ -291,6 +311,8 @@ attributes:
     description: A path or URL to the related logo
     title: logo
     from_schema: https://w3id.org/evorao/
+    exact_mappings:
+    - schema:logo
     rank: 1000
     alias: logo
     owner: Person

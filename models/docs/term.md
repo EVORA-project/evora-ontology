@@ -64,6 +64,7 @@ Alias: term
 | ---  | ---  |
 | self | EVORAO:term |
 | native | EVORAO:term |
+| related | dct:hasPart |
 
 
 
@@ -76,6 +77,8 @@ name: term
 description: The terms related to this vocabulary
 title: term
 from_schema: https://w3id.org/evorao/
+related_mappings:
+- dct:hasPart
 rank: 1000
 alias: term
 domain_of:

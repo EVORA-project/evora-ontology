@@ -66,6 +66,7 @@ Alias: taxonomicNodeId
 | ---  | ---  |
 | self | EVORAO:taxonomicNodeId |
 | native | EVORAO:taxonomicNodeId |
+| broad | dct:identifier |
 | close | dwc:taxonID |
 
 
@@ -86,6 +87,8 @@ comments:
 from_schema: https://w3id.org/evorao/
 close_mappings:
 - dwc:taxonID
+broad_mappings:
+- dct:identifier
 rank: 1000
 alias: taxonomicNodeId
 domain_of:

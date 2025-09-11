@@ -140,7 +140,9 @@ URI: [EVORAO:ProductCategory](https://w3id.org/evorao/ProductCategory)
 | ---  | ---  |
 | self | EVORAO:ProductCategory |
 | native | EVORAO:ProductCategory |
-| close | wd:Q63981612, wd:Q63981612 |
+| exact | wd:Q63981612, wd:Q63981612 |
+| related | schema:CategoryCode, schema:CategoryCode |
+| close | ncit:C25372, ncit:C25372 |
 
 
 
@@ -161,9 +163,15 @@ description: A term used to classify a group of products that share common chara
   or functions, which helps in their organization
 title: Product category
 from_schema: https://w3id.org/evorao/
+exact_mappings:
+- wd:Q63981612
+- wd:Q63981612
 close_mappings:
-- wd:Q63981612
-- wd:Q63981612
+- ncit:C25372
+- ncit:C25372
+related_mappings:
+- schema:CategoryCode
+- schema:CategoryCode
 is_a: Term
 slots:
 - parentCategory
@@ -175,6 +183,8 @@ slot_usage:
       organizing related subcategories under its umbrella to create a structured and
       logical order.
     title: parent category
+    broad_mappings:
+    - dct:isPartOf
     domain_of:
     - ProductCategory
     range: ProductCategory
@@ -193,9 +203,15 @@ description: A term used to classify a group of products that share common chara
   or functions, which helps in their organization
 title: Product category
 from_schema: https://w3id.org/evorao/
+exact_mappings:
+- wd:Q63981612
+- wd:Q63981612
 close_mappings:
-- wd:Q63981612
-- wd:Q63981612
+- ncit:C25372
+- ncit:C25372
+related_mappings:
+- schema:CategoryCode
+- schema:CategoryCode
 is_a: Term
 slot_usage:
   parentCategory:
@@ -205,6 +221,8 @@ slot_usage:
       organizing related subcategories under its umbrella to create a structured and
       logical order.
     title: parent category
+    broad_mappings:
+    - dct:isPartOf
     domain_of:
     - ProductCategory
     range: ProductCategory
@@ -219,6 +237,8 @@ attributes:
       logical order.
     title: parent category
     from_schema: https://w3id.org/evorao/
+    broad_mappings:
+    - dct:isPartOf
     rank: 1000
     alias: parentCategory
     owner: ProductCategory
@@ -233,9 +253,8 @@ attributes:
     title: title
     comments:
     - 'The title of the item should be as short and descriptive as possible. E.g.
-      for virus products it should basically be based on the following Pattern:
-
-      ''Virus name'', ''virus host type'', ''collection year'', ''country of collection''
+      for virus products it should basically be based on the following Pattern: ''Virus
+      name'', ''virus host type'', ''collection year'', ''country of collection''
       ex ''suspected epidemiological origin'', ''genotype'', ''strain'', ''variant
       name or specific feature'
     from_schema: https://w3id.org/evorao/
@@ -262,14 +281,13 @@ attributes:
       the current item
     title: description
     comments:
-    - 'Describe this item in few lines. This description will serve as a summary to
+    - Describe this item in few lines. This description will serve as a summary to
       present the resource.
-
-      '
     from_schema: https://w3id.org/evorao/
     exact_mappings:
     - schema:description
     close_mappings:
+    - schema:description
     - schema:description
     rank: 1000
     slot_uri: dct:description
@@ -318,6 +336,10 @@ attributes:
     from_schema: https://w3id.org/evorao/
     close_mappings:
     - wdp:P972
+    related_mappings:
+    - dct:isReferencedBy
+    broad_mappings:
+    - dct:isPartOf
     rank: 1000
     alias: inVocabulary
     owner: ProductCategory

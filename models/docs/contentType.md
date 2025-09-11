@@ -42,7 +42,7 @@ Alias: contentType
 
 ## Comments
 
-* This property characterizes how the content is structured or encoded, independent of the entity type it represents. Examples include "JSON","CSV", "TSV", "FASTA", "GenBank",
+* This property characterizes how the content is structured or encoded, independent of the entity type it represents. Values should use MIME types (e.g. application/json, text/csv, text/tab-separated-values, text/x-fasta, application/vnd.genbank)
 
 ## Identifier and Mapping Information
 
@@ -82,8 +82,8 @@ description: The content type of the response to queries. It specifies the seria
 title: content type
 comments:
 - This property characterizes how the content is structured or encoded, independent
-  of the entity type it represents. Examples include "JSON","CSV", "TSV", "FASTA",
-  "GenBank",
+  of the entity type it represents. Values should use MIME types (e.g. application/json,
+  text/csv, text/tab-separated-values, text/x-fasta, application/vnd.genbank)
 from_schema: https://w3id.org/evorao/
 exact_mappings:
 - schema:contentType

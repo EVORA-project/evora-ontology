@@ -122,7 +122,7 @@ Name: EVORAO
 | [certificationDocument](certificationDocument.md) | The document(s) issued by an authority certifying the conformity of the subje... |
 | [clinicalInformation](clinicalInformation.md) | Details about the clinical aspects of the pathogen, including symptoms, sever... |
 | [clonedIntoPlasmid](clonedIntoPlasmid.md) | The plasmid into which the nucleic acid has been cloned |
-| [clonedNucleicAcid](clonedNucleicAcid.md) | Indicates if the nucleic acid sequence has been inserted into a plasmid vecto... |
+| [clonedNucleicAcid](clonedNucleicAcid.md) | Specification of the terms and parameters for transporting |
 | [coInfectingViruses](coInfectingViruses.md) | Identifies other viruses that may co-infect the host organism along with the ... |
 | [collection](collection.md) | The collection(s) to which belongs this item |
 | [collectionDataProvider](collectionDataProvider.md) | The provider of the data of the collection |
@@ -215,7 +215,7 @@ Name: EVORAO
 | [productPicture](productPicture.md) | A picture that can represent the item |
 | [propagationHost](propagationHost.md) | The host organism that propagates the pathogen |
 | [proteinPurification](proteinPurification.md) | Refers to the degree of purity achieved for a protein sample |
-| [providedEntityType](providedEntityType.md) | The identification of the entity type (Class) described by the response to th... |
+| [providedEntityType](providedEntityType.md) | Identifies the type of entity (ontology class) described by the response to a... |
 | [provider](provider.md) | A provider of this product or service, as a specific organization |
 | [qualityGrading](qualityGrading.md) | Information that permits to assess the quality level of what will be provided |
 | [queryMethod](queryMethod.md) | The http request method used to access the requested query url |

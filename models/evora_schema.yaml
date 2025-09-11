@@ -48,7 +48,7 @@ keywords:
 - pathogen collections
 - interoperability
 id: https://w3id.org/evorao/
-version: 1.0.9149
+version: 1.0.9485
 imports:
 - linkml:types
 license: https://creativecommons.org/publicdomain/zero/1.0/
@@ -120,9 +120,8 @@ slots:
     title: title
     comments:
     - 'The title of the item should be as short and descriptive as possible. E.g.
-      for virus products it should basically be based on the following Pattern:
-
-      ''Virus name'', ''virus host type'', ''collection year'', ''country of collection''
+      for virus products it should basically be based on the following Pattern: ''Virus
+      name'', ''virus host type'', ''collection year'', ''country of collection''
       ex ''suspected epidemiological origin'', ''genotype'', ''strain'', ''variant
       name or specific feature'
     from_schema: https://w3id.org/evorao/
@@ -145,23 +144,26 @@ slots:
       the current item
     title: description
     comments:
-    - 'Describe this item in few lines. This description will serve as a summary to
+    - Describe this item in few lines. This description will serve as a summary to
       present the resource.
-
-      '
-    - 'Describe this item in few lines. This description will serve as a summary to
+    - Describe this item in few lines. This description will serve as a summary to
       present the resource.
-
-      '
-    - 'Describe this item in few lines. This description will serve as a summary to
+    - Describe this item in few lines. This description will serve as a summary to
+      present the resource
+    - 'The title of the item should be as short and descriptive as possible. E.g.
+      for virus products it should basically be based on the following Pattern: ''Virus
+      name'', ''virus host type'', ''collection year'', ''country of collection''
+      ex ''suspected epidemiological origin'', ''genotype'', ''strain'', ''variant
+      name or specific feature'
+    - Describe this item in few lines. This description will serve as a summary to
       present the resource.
-
-      '
     from_schema: https://w3id.org/evorao/
     exact_mappings:
     - schema:description
     - schema:description
+    - schema:description
     close_mappings:
+    - schema:description
     - schema:description
     slot_uri: dct:description
     domain_of:
@@ -260,7 +262,11 @@ slots:
     - schema:taxonomicRange
     - dwc:taxonID
     - dwc:toTaxon
+    - schema:taxonomicRange
+    - dwc:taxonID
+    - dwc:toTaxon
     related_mappings:
+    - dwc:Taxon
     - dwc:Taxon
     domain_of:
     - Taxonomy
@@ -292,13 +298,17 @@ slots:
     from_schema: https://w3id.org/evorao/
     exact_mappings:
     - wdp:P105
-    - dwc:taxonRank
-    - schema:taxonRank
+    - wdp:P105
     close_mappings:
     - dwc:taxonRank
     - schema:taxonRank
     - biolink:has_taxonomic_rank
+    - dwc:taxonRank
+    - schema:taxonRank
+    - biolink:has_taxonomic_rank
     related_mappings:
+    - taxrank:1000000
+    - ncbitaxon:has_rank
     - taxrank:1000000
     - ncbitaxon:has_rank
     domain_of:
@@ -400,8 +410,8 @@ slots:
     title: content type
     comments:
     - This property characterizes how the content is structured or encoded, independent
-      of the entity type it represents. Examples include "JSON","CSV", "TSV", "FASTA",
-      "GenBank",
+      of the entity type it represents. Values should use MIME types (e.g. application/json,
+      text/csv, text/tab-separated-values, text/x-fasta, application/vnd.genbank)
     from_schema: https://w3id.org/evorao/
     exact_mappings:
     - schema:contentType
@@ -413,19 +423,21 @@ slots:
     required: true
     multivalued: false
   providedEntityType:
-    description: The identification of the entity type (Class) described by the response
-      to the query
+    description: Identifies the type of entity (ontology class) described by the response
+      to a query. Values should be expressed as IRIs (e.g., from an ontology)
     title: provided entity type
     comments:
     - This property defines what the response is about, independent of its serialization.
-      It should reference an ontology class such as EVORAO:Virus, EVORAO:Protein,
-      etc
+      Values should be ontology class IRIs (e.g. https://w3id.org/evorao/Virus)
     from_schema: https://w3id.org/evorao/
+    close_mappings:
+    - dct:type
+    - schema:additionalType
     related_mappings:
     - dcat:servesDataset
     domain_of:
     - DataProvider
-    range: string
+    range: uri
     required: true
     multivalued: true
   weight:
@@ -452,6 +464,8 @@ slots:
     description: A pathogen common name or a name that describes a group of pathogens
     title: pathogen name
     from_schema: https://w3id.org/evorao/
+    exact_mappings:
+    - dwc:organismName
     domain_of:
     - PathogenIdentification
     range: CommonName
@@ -462,6 +476,10 @@ slots:
       categories e.g. 'Virus','Viroid','Bacterium'...
     title: pathogen type
     from_schema: https://w3id.org/evorao/
+    exact_mappings:
+    - schema:infectiousAgentClass
+    close_mappings:
+    - dwc:organismScope
     domain_of:
     - PathogenIdentification
     range: string
@@ -527,6 +545,8 @@ slots:
       trees, thus different clusters are distinct genotypes
     title: genotype
     from_schema: https://w3id.org/evorao/
+    close_mappings:
+    - geno:0000222
     domain_of:
     - PathogenIdentification
     range: string
@@ -557,6 +577,12 @@ slots:
     description: The list of authors
     title: authors
     from_schema: https://w3id.org/evorao/
+    close_mappings:
+    - wdp:P2093
+    - schema:author
+    related_mappings:
+    - sio:001315
+    - iao:0000321
     domain_of:
     - Publication
     range: string
@@ -566,7 +592,8 @@ slots:
     description: Concise summary of the publication
     title: abstract
     from_schema: https://w3id.org/evorao/
-    exact_mappings:
+    close_mappings:
+    - dct:abstract
     - schema:abstract
     domain_of:
     - Publication
@@ -577,8 +604,13 @@ slots:
     description: A Digital Object Identifier (DOI) that can be related
     title: DOI
     from_schema: https://w3id.org/evorao/
-    close_mappings:
+    exact_mappings:
     - wdp:P356
+    close_mappings:
+    - reproduceme:doi
+    - wdp:P356
+    broad_mappings:
+    - dct:bibliographicCitation
     domain_of:
     - Publication
     - ProductOrService
@@ -589,6 +621,10 @@ slots:
     description: The scientific journal in which the publication was published
     title: journal
     from_schema: https://w3id.org/evorao/
+    close_mappings:
+    - wdp:P1433
+    - biolink:published_in
+    - uniprotrdfs:publishedIn
     domain_of:
     - Publication
     range: Journal
@@ -608,6 +644,8 @@ slots:
     description: The terms related to this vocabulary
     title: term
     from_schema: https://w3id.org/evorao/
+    related_mappings:
+    - dct:hasPart
     domain_of:
     - Vocabulary
     range: Term
@@ -620,6 +658,10 @@ slots:
     from_schema: https://w3id.org/evorao/
     close_mappings:
     - wdp:P972
+    related_mappings:
+    - dct:isReferencedBy
+    broad_mappings:
+    - dct:isPartOf
     domain_of:
     - Term
     range: Vocabulary
@@ -632,14 +674,13 @@ slots:
     - This includes previous names, acronyms, former taxonomic terms, and other variations.
       This information can serve as keywords for search purposes and as a bridge with
       other projects that use different naming systems or taxonomies
-    - This includes previous names, acronyms, former taxonomic terms, and other variations.
-      This information can serve as keywords for search purposes and as a bridge with
-      other projects that use different naming systems or taxonomies
     from_schema: https://w3id.org/evorao/
+    exact_mappings:
+    - schema:alternateName
+    - dct:alternative
+    - iao:0000118
     close_mappings:
     - wdp:P4970
-    - wdp:P4970
-    - schema:alternateName
     domain_of:
     - CommonName
     - AlternateName
@@ -654,6 +695,9 @@ slots:
     from_schema: https://w3id.org/evorao/
     close_mappings:
     - wdp:P248
+    - wdp:P248
+    related_mappings:
+    - sio:000253
     domain_of:
     - CommonName
     - AlternateName
@@ -667,6 +711,8 @@ slots:
       logical order.
     title: parent category
     from_schema: https://w3id.org/evorao/
+    broad_mappings:
+    - dct:isPartOf
     domain_of:
     - ProductCategory
     range: ProductCategory
@@ -676,6 +722,13 @@ slots:
     description: Two-letter country codes from ISO 3166-1 alpha-2
     title: alpha 2 code
     from_schema: https://w3id.org/evorao/
+    exact_mappings:
+    - geo:000000023
+    close_mappings:
+    - schema:addressCountry
+    related_mappings:
+    - obib:0000620
+    - ncit:C54641
     domain_of:
     - Country
     range: string
@@ -685,6 +738,9 @@ slots:
     description: The taxonomy release(s) in which this entity exists
     title: taxonomy
     from_schema: https://w3id.org/evorao/
+    broad_mappings:
+    - dct:isPartOf
+    - dct:isPartOf
     domain_of:
     - TaxonomicRank
     - Taxon
@@ -698,6 +754,8 @@ slots:
     from_schema: https://w3id.org/evorao/
     exact_mappings:
     - schema:parentTaxon
+    close_mappings:
+    - wdp:P171
     broad_mappings:
     - dwc:Taxon
     domain_of:
@@ -709,6 +767,8 @@ slots:
     description: Any historic version of this taxon having a different name
     title: previously known as
     from_schema: https://w3id.org/evorao/
+    related_mappings:
+    - schema:alternateName
     broad_mappings:
     - dwc:Taxon
     domain_of:
@@ -726,6 +786,8 @@ slots:
     from_schema: https://w3id.org/evorao/
     close_mappings:
     - dwc:taxonID
+    related_mappings:
+    - dct:references
     domain_of:
     - Taxon
     range: Taxon
@@ -737,8 +799,11 @@ slots:
     from_schema: https://w3id.org/evorao/
     exact_mappings:
     - dwc:taxonID
+    narrow_mappings:
+    - ncit:P331
     broad_mappings:
     - schema:identifier
+    - dct:identifier
     domain_of:
     - Taxon
     range: string
@@ -755,6 +820,8 @@ slots:
     from_schema: https://w3id.org/evorao/
     close_mappings:
     - dwc:taxonID
+    broad_mappings:
+    - dct:identifier
     domain_of:
     - Taxon
     range: string
@@ -767,6 +834,7 @@ slots:
     from_schema: https://w3id.org/evorao/
     close_mappings:
     - dct:identifier
+    - dct:references
     domain_of:
     - ExternalRelatedReference
     range: string
@@ -790,8 +858,9 @@ slots:
       the linked external resource
     title: reference provider prefix
     from_schema: https://w3id.org/evorao/
-    close_mappings:
+    related_mappings:
     - dcat:landingPage
+    - iao:0000599
     domain_of:
     - ExternalRelatedReference
     range: string
@@ -841,8 +910,12 @@ slots:
       from the sequence provider
     title: accession number
     from_schema: https://w3id.org/evorao/
-    close_mappings:
+    related_mappings:
     - dct:identifier
+    narrow_mappings:
+    - ncit:P102
+    broad_mappings:
+    - schema:identifier
     domain_of:
     - SequenceReference
     range: string
@@ -869,7 +942,11 @@ slots:
     from_schema: https://w3id.org/evorao/
     exact_mappings:
     - schema:name
+    - vcard:fn
+    - schema:name
     close_mappings:
+    - rdfs:label
+    - dct:title
     - dct:title
     slot_uri: foaf:name
     domain_of:
@@ -883,6 +960,8 @@ slots:
     description: A web page that serves as the main or introductory page
     title: home page
     from_schema: https://w3id.org/evorao/
+    close_mappings:
+    - swo:0004006
     slot_uri: foaf:homepage
     domain_of:
     - PersonOrOrganization
@@ -893,6 +972,8 @@ slots:
     description: An information that allows someone to establish communication
     title: contact point
     from_schema: https://w3id.org/evorao/
+    exact_mappings:
+    - schema:contactPoint
     slot_uri: dcat:contactPoint
     domain_of:
     - PersonOrOrganization
@@ -905,6 +986,8 @@ slots:
     description: A path or URL to the related logo
     title: logo
     from_schema: https://w3id.org/evorao/
+    exact_mappings:
+    - schema:logo
     domain_of:
     - PersonOrOrganization
     - License
@@ -919,7 +1002,11 @@ slots:
     from_schema: https://w3id.org/evorao/
     exact_mappings:
     - wdp:P496
+    - reproduceme:ORCID
     - iao:0000708
+    related_mappings:
+    - iao:0000708
+    - edam:4022
     domain_of:
     - Person
     - ContactPoint
@@ -944,6 +1031,8 @@ slots:
     from_schema: https://w3id.org/evorao/
     exact_mappings:
     - wdp:P6782
+    related_mappings:
+    - dwc:institutionCode
     domain_of:
     - Organization
     range: string
@@ -1427,9 +1516,7 @@ slots:
     required: true
     multivalued: false
   shippingConditions:
-    description: 'Specification of the terms and parameters for transporting
-
-      '
+    description: Specification of the terms and parameters for transporting
     title: shipping conditions
     from_schema: https://w3id.org/evorao/
     domain_of:
@@ -1738,10 +1825,7 @@ slots:
     required: false
     multivalued: true
   clonedNucleicAcid:
-    description: 'Indicates if the nucleic acid sequence has been inserted into a
-      plasmid vector for propagation or expression in a host organism
-
-      '
+    description: Specification of the terms and parameters for transporting
     title: cloned nucleic acid
     from_schema: https://w3id.org/evorao/
     domain_of:
@@ -1780,9 +1864,9 @@ slots:
     required: true
     multivalued: false
   mutationObserved:
-    description: "Indicates if the current nucleic acid has No mutation compared to\
-      \ the reference sequence if the value is set to false or if it\n contains mutations\
-      \ (no frameshift, no unexpected STOP codon) if set to true"
+    description: Indicates if the current nucleic acid has No mutation compared to
+      the reference sequence if the value is set to false or if it contains mutations
+      (no frameshift, no unexpected STOP codon) if set to true
     title: mutation observed
     from_schema: https://w3id.org/evorao/
     domain_of:
@@ -2473,7 +2557,6 @@ classes:
         comments:
         - 'The title of the item should be as short and descriptive as possible. E.g.
           for virus products it should basically be based on the following Pattern:
-
           ''Virus name'', ''virus host type'', ''collection year'', ''country of collection''
           ex ''suspected epidemiological origin'', ''genotype'', ''strain'', ''variant
           name or specific feature'
@@ -2491,10 +2574,8 @@ classes:
           of the current item
         title: description
         comments:
-        - 'Describe this item in few lines. This description will serve as a summary
+        - Describe this item in few lines. This description will serve as a summary
           to present the resource.
-
-          '
         exact_mappings:
         - schema:description
         slot_uri: dct:description
@@ -2548,7 +2629,6 @@ classes:
         comments:
         - 'The title of the item should be as short and descriptive as possible. E.g.
           for virus products it should basically be based on the following Pattern:
-
           ''Virus name'', ''virus host type'', ''collection year'', ''country of collection''
           ex ''suspected epidemiological origin'', ''genotype'', ''strain'', ''variant
           name or specific feature'
@@ -2566,10 +2646,8 @@ classes:
           of the current item
         title: description
         comments:
-        - 'Describe this item in few lines. This description will serve as a summary
+        - Describe this item in few lines. This description will serve as a summary
           to present the resource.
-
-          '
         exact_mappings:
         - schema:description
         slot_uri: dct:description
@@ -2611,10 +2689,10 @@ classes:
       of a work (e.g. software or technical standards)
     title: Version
     comments:
-    - "Represents a specific snapshot/release of a resource (e.g., a dataset). It\
-      \ enables managing multiple versions as first-class nodes and linking each version\
-      \ to its subject via evorao:versionOf and to the using resource via evorao:version\
-      \ (e.g., as nodes in a graph database).\r"
+    - Represents a specific snapshot/release of a resource (e.g., a dataset). It enables
+      managing multiple versions as first-class nodes and linking each version to
+      its subject via evorao:versionOf and to the using resource via evorao:version
+      (e.g., as nodes in a graph database).
     from_schema: https://w3id.org/evorao/
     close_mappings:
     - reproduceme:Version
@@ -2870,8 +2948,8 @@ classes:
         title: content type
         comments:
         - This property characterizes how the content is structured or encoded, independent
-          of the entity type it represents. Examples include "JSON","CSV", "TSV",
-          "FASTA", "GenBank",
+          of the entity type it represents. Values should use MIME types (e.g. application/json,
+          text/csv, text/tab-separated-values, text/x-fasta, application/vnd.genbank)
         exact_mappings:
         - schema:contentType
         - dct:format
@@ -2882,18 +2960,20 @@ classes:
         required: true
         multivalued: false
       providedEntityType:
-        description: The identification of the entity type (Class) described by the
-          response to the query
+        description: Identifies the type of entity (ontology class) described by the
+          response to a query. Values should be expressed as IRIs (e.g., from an ontology)
         title: provided entity type
         comments:
         - This property defines what the response is about, independent of its serialization.
-          It should reference an ontology class such as EVORAO:Virus, EVORAO:Protein,
-          etc
+          Values should be ontology class IRIs (e.g. https://w3id.org/evorao/Virus)
+        close_mappings:
+        - dct:type
+        - schema:additionalType
         related_mappings:
         - dcat:servesDataset
         domain_of:
         - DataProvider
-        range: string
+        range: uri
         required: true
         multivalued: true
       weight:
@@ -2918,6 +2998,9 @@ classes:
       of a pathogen from another
     title: Pathogen identification
     from_schema: https://w3id.org/evorao/
+    broad_mappings:
+    - dwc:Identification
+    - dwc:Identification
     is_a: Resource
     slots:
     - taxon
@@ -2938,6 +3021,12 @@ classes:
         comments:
         - The taxon of the highest rank known that can be used to classify a pathogen
           or group of pathogens (e.g viruses) in the reference taxonomy
+        close_mappings:
+        - schema:taxonomicRange
+        - dwc:taxonID
+        - dwc:toTaxon
+        related_mappings:
+        - dwc:Taxon
         domain_of:
         - PathogenIdentification
         range: Taxon
@@ -2946,6 +3035,8 @@ classes:
       pathogenName:
         description: A pathogen common name or a name that describes a group of pathogens
         title: pathogen name
+        exact_mappings:
+        - dwc:organismName
         domain_of:
         - PathogenIdentification
         range: CommonName
@@ -2955,6 +3046,10 @@ classes:
         description: Identification of the specific type of pathogen among the listed
           categories e.g. 'Virus','Viroid','Bacterium'...
         title: pathogen type
+        exact_mappings:
+        - schema:infectiousAgentClass
+        close_mappings:
+        - dwc:organismScope
         domain_of:
         - PathogenIdentification
         range: string
@@ -3005,6 +3100,8 @@ classes:
         description: Genotype information that identifies organisms that cluster in
           phylogenetic trees, thus different clusters are distinct genotypes
         title: genotype
+        close_mappings:
+        - geno:0000222
         domain_of:
         - PathogenIdentification
         range: string
@@ -3033,9 +3130,14 @@ classes:
     description: A scientific publication
     title: Publication
     from_schema: https://w3id.org/evorao/
+    exact_mappings:
+    - dct:BibliographicResource
+    - dct:BibliographicResource
     close_mappings:
     - wd:Q591041
+    - reproduceme:Publication
     - wd:Q591041
+    - reproduceme:Publication
     is_a: Resource
     slots:
     - title
@@ -3050,7 +3152,6 @@ classes:
         comments:
         - 'The title of the item should be as short and descriptive as possible. E.g.
           for virus products it should basically be based on the following Pattern:
-
           ''Virus name'', ''virus host type'', ''collection year'', ''country of collection''
           ex ''suspected epidemiological origin'', ''genotype'', ''strain'', ''variant
           name or specific feature'
@@ -3066,6 +3167,12 @@ classes:
       authors:
         description: The list of authors
         title: authors
+        close_mappings:
+        - wdp:P2093
+        - schema:author
+        related_mappings:
+        - sio:001315
+        - iao:0000321
         domain_of:
         - Publication
         range: string
@@ -3074,7 +3181,8 @@ classes:
       abstract:
         description: Concise summary of the publication
         title: abstract
-        exact_mappings:
+        close_mappings:
+        - dct:abstract
         - schema:abstract
         domain_of:
         - Publication
@@ -3084,6 +3192,12 @@ classes:
       doi:
         description: A Digital Object Identifier (DOI) that can be related
         title: DOI
+        exact_mappings:
+        - wdp:P356
+        close_mappings:
+        - reproduceme:doi
+        broad_mappings:
+        - dct:bibliographicCitation
         domain_of:
         - Publication
         range: Doi
@@ -3092,6 +3206,10 @@ classes:
       journal:
         description: The scientific journal in which the publication was published
         title: journal
+        close_mappings:
+        - wdp:P1433
+        - biolink:published_in
+        - uniprotrdfs:publishedIn
         domain_of:
         - Publication
         range: Journal
@@ -3102,10 +3220,23 @@ classes:
       field
     title: Vocabulary
     from_schema: https://w3id.org/evorao/
+    exact_mappings:
+    - sio:001080
+    - sio:001080
     close_mappings:
+    - wd:Q1391494
+    - wd:Q6537693
+    - wd:Q8380731
+    - wd:Q1391494
+    - wd:Q6537693
+    - wd:Q8380731
+    related_mappings:
+    - t4fs:0000335
     - wd:Q6499736
+    - t4fs:0000335
+    - wd:Q6499736
+    broad_mappings:
     - skos:Collection
-    - wd:Q6499736
     - skos:Collection
     is_a: Catalogue
     slots:
@@ -3124,6 +3255,8 @@ classes:
       term:
         description: The terms related to this vocabulary
         title: term
+        related_mappings:
+        - dct:hasPart
         domain_of:
         - Vocabulary
         range: Term
@@ -3134,9 +3267,16 @@ classes:
     description: Word or phrase from a specialized area of knowledge
     title: Term
     from_schema: https://w3id.org/evorao/
-    close_mappings:
+    exact_mappings:
+    - sio:000275
+    - ncit:C45559
     - wd:Q1969448
+    - sio:000275
+    - ncit:C45559
     - wd:Q1969448
+    narrow_mappings:
+    - wd:Q12812139
+    - wd:Q12812139
     is_a: Resource
     abstract: true
     slots:
@@ -3151,7 +3291,6 @@ classes:
         comments:
         - 'The title of the item should be as short and descriptive as possible. E.g.
           for virus products it should basically be based on the following Pattern:
-
           ''Virus name'', ''virus host type'', ''collection year'', ''country of collection''
           ex ''suspected epidemiological origin'', ''genotype'', ''strain'', ''variant
           name or specific feature'
@@ -3169,10 +3308,8 @@ classes:
           of the current item
         title: description
         comments:
-        - 'Describe this item in few lines. This description will serve as a summary
+        - Describe this item in few lines. This description will serve as a summary
           to present the resource.
-
-          '
         exact_mappings:
         - schema:description
         slot_uri: dct:description
@@ -3201,6 +3338,10 @@ classes:
         title: in Vocabulary
         close_mappings:
         - wdp:P972
+        related_mappings:
+        - dct:isReferencedBy
+        broad_mappings:
+        - dct:isPartOf
         domain_of:
         - Term
         range: Vocabulary
@@ -3214,10 +3355,12 @@ classes:
     from_schema: https://w3id.org/evorao/
     exact_mappings:
     - dwc:vernacularName
+    - wd:Q502895
     - dwc:vernacularName
-    close_mappings:
     - wd:Q502895
-    - wd:Q502895
+    broad_mappings:
+    - sio:000118
+    - sio:000118
     is_a: Term
     slots:
     - alternateName
@@ -3230,6 +3373,10 @@ classes:
         - This includes previous names, acronyms, former taxonomic terms, and other
           variations. This information can serve as keywords for search purposes and
           as a bridge with other projects that use different naming systems or taxonomies
+        exact_mappings:
+        - schema:alternateName
+        - dct:alternative
+        - iao:0000118
         close_mappings:
         - wdp:P4970
         domain_of:
@@ -3252,17 +3399,27 @@ classes:
     description: A virus vernacular name or a name that describes a group of viruses
     title: Virus name
     from_schema: https://w3id.org/evorao/
-    close_mappings:
+    exact_mappings:
     - wd:Q125481078
     - wd:Q125481078
+    broad_mappings:
+    - dwc:vernacularName
+    - dwc:vernacularName
     is_a: CommonName
   AlternateName:
     description: List of other names for things
     title: Alternate name
     from_schema: https://w3id.org/evorao/
+    exact_mappings:
+    - ncit:C52469
+    - sio:000122
+    - ncit:C52469
+    - sio:000122
     close_mappings:
     - wd:Q7662595
+    - mi:1041
     - wd:Q7662595
+    - mi:1041
     is_a: Term
     slots:
     - alternateName
@@ -3275,9 +3432,12 @@ classes:
         - This includes previous names, acronyms, former taxonomic terms, and other
           variations. This information can serve as keywords for search purposes and
           as a bridge with other projects that use different naming systems or taxonomies
+        exact_mappings:
+        - schema:alternateName
+        - dct:alternative
+        - iao:0000118
         close_mappings:
         - wdp:P4970
-        - schema:alternateName
         domain_of:
         - AlternateName
         range: AlternateName
@@ -3289,6 +3449,8 @@ classes:
         title: source of information
         close_mappings:
         - wdp:P248
+        related_mappings:
+        - sio:000253
         domain_of:
         - AlternateName
         range: string
@@ -3303,9 +3465,12 @@ classes:
     - Use of Data provider if any or manual import of information from wd:Q125449389,
       wd:Q125449412, wd:Q125449429, wd:Q125449439
     from_schema: https://w3id.org/evorao/
-    close_mappings:
+    exact_mappings:
     - wd:Q125449255
     - wd:Q125449255
+    broad_mappings:
+    - ncit:C95347
+    - ncit:C95347
     is_a: Term
   Doi:
     description: A unique string identifier assigned to a digital object, providing
@@ -3313,34 +3478,55 @@ classes:
       (DOI) is a persistent identifier that is an ISO standard
     title: DOI
     from_schema: https://w3id.org/evorao/
-    close_mappings:
+    exact_mappings:
     - wd:Q25670
+    - ncit:C71462
+    - t4fs:0000434
+    - obi:0002110
     - wd:Q25670
+    - ncit:C71462
+    - t4fs:0000434
+    - obi:0002110
     is_a: Term
   Journal:
     description: Periodical journal publishing scientific research
     title: Journal
     from_schema: https://w3id.org/evorao/
-    close_mappings:
+    exact_mappings:
     - wd:Q5633421
+    - sio:000160
+    - mi:0885
+    - ncit:C40976
     - wd:Q5633421
+    - sio:000160
+    - mi:0885
+    - ncit:C40976
     is_a: Term
   PdbReference:
     description: Identifier for 3D structural data as per the PDB (Protein Data Bank)
       database
     title: PDB reference
     from_schema: https://w3id.org/evorao/
-    close_mappings:
+    exact_mappings:
+    - sio:010032
+    - sio:010032
+    related_mappings:
+    - wdp:P638
     - wd:Q42415644
+    - wdp:P638
     - wd:Q42415644
     is_a: Term
   Keyword:
     description: A term or phrase used to tag and categorize content
     title: Keyword
     from_schema: https://w3id.org/evorao/
-    close_mappings:
+    exact_mappings:
     - wd:Q1128340
+    - sio:000147
+    - edam:0968
     - wd:Q1128340
+    - sio:000147
+    - edam:0968
     is_a: Term
   TagSequence:
     description: The name of the DNA coding sequence or corresponding peptide/protein
@@ -3365,32 +3551,54 @@ classes:
     - These special features help researchers and professionals in the field to select
       appropriate virus strains for their specific research needs and applications.
     from_schema: https://w3id.org/evorao/
+    related_mappings:
+    - ncit:C73619
+    - ncit:C73619
     is_a: Term
   ExpressionVector:
     description: A reference to an expression vector plasmid, typically embedding
       a resistance marker for inducible protein expression
     title: Expression vector
     from_schema: https://w3id.org/evorao/
-    close_mappings:
+    exact_mappings:
     - wd:Q5421712
+    - obi:0000729
     - wd:Q5421712
+    - obi:0000729
+    related_mappings:
+    - obi:0600063
+    - reproduceme:ExpressionSystem
+    - obi:0600063
+    - reproduceme:ExpressionSystem
     is_a: Term
   PlasmidSelection:
     description: The process of identifying cells that have successfully incorporated
       a plasmid, typically using antibiotic resistance markers
     title: Plasmid selection
     from_schema: https://w3id.org/evorao/
+    related_mappings:
+    - obi:0000729
+    - obi:0000729
     is_a: Term
   PropagationHost:
     description: The organism used to grow and multiply the pathogen under controlled
       conditions
     title: Propagation host
     from_schema: https://w3id.org/evorao/
+    related_mappings:
+    - sio:010415
+    - sio:010415
     is_a: Term
   TransmissionMethod:
     description: The process by which the pathogen spreads between hosts
     title: Transmission method
     from_schema: https://w3id.org/evorao/
+    close_mappings:
+    - ncit:C128376
+    - ncit:C128376
+    related_mappings:
+    - ncit:C17214
+    - ncit:C17214
     is_a: Term
   ProductionCellLine:
     description: A population of cells that originates from a primary culture, adapted
@@ -3401,15 +3609,26 @@ classes:
     close_mappings:
     - wd:Q21014462
     - wd:Q21014462
+    related_mappings:
+    - ncit:C16403
+    - clo:0000031
+    - ncit:C16403
+    - clo:0000031
     is_a: Term
   ProductCategory:
     description: A term used to classify a group of products that share common characteristics
       or functions, which helps in their organization
     title: Product category
     from_schema: https://w3id.org/evorao/
+    exact_mappings:
+    - wd:Q63981612
+    - wd:Q63981612
     close_mappings:
-    - wd:Q63981612
-    - wd:Q63981612
+    - ncit:C25372
+    - ncit:C25372
+    related_mappings:
+    - schema:CategoryCode
+    - schema:CategoryCode
     is_a: Term
     slots:
     - parentCategory
@@ -3420,6 +3639,8 @@ classes:
           classification, organizing related subcategories under its umbrella to create
           a structured and logical order.
         title: parent category
+        broad_mappings:
+        - dct:isPartOf
         domain_of:
         - ProductCategory
         range: ProductCategory
@@ -3437,18 +3658,35 @@ classes:
     comments:
     - geonames.org API could be a good service data provider as suggested by DCAT-AP
     from_schema: https://w3id.org/evorao/
-    exact_mappings:
-    - dct:Location
-    - dct:Location
     close_mappings:
     - wd:Q3885844
     - wd:Q3885844
+    related_mappings:
+    - schema:countryOfOrigin
+    - schema:countryOfOrigin
+    broad_mappings:
+    - prov:Location
+    - dct:Location
+    - vcard:Location
+    - prov:Location
+    - dct:Location
+    - vcard:Location
     is_a: Term
   IplcOrigin:
     description: The IPLC area (Indigenous People and Local Communities) from which
       a physical item originates
     title: IPLC origin
     from_schema: https://w3id.org/evorao/
+    close_mappings:
+    - ncit:C41152
+    - mesh:D000081034
+    - ncit:C41152
+    - mesh:D000081034
+    related_mappings:
+    - dct:Location
+    - vcard:Location
+    - dct:Location
+    - vcard:Location
     is_a: GeographicalOrigin
   Country:
     description: The country as of ISO3166
@@ -3458,10 +3696,21 @@ classes:
     from_schema: https://w3id.org/evorao/
     exact_mappings:
     - schema:Country
+    - ncit:C25464
+    - sio:000664
     - schema:Country
+    - ncit:C25464
+    - sio:000664
     close_mappings:
     - wd:Q6256
     - wd:Q6256
+    broad_mappings:
+    - prov:Location
+    - dct:Location
+    - vcard:Location
+    - prov:Location
+    - dct:Location
+    - vcard:Location
     is_a: Term
     slots:
     - alpha2Code
@@ -3469,6 +3718,13 @@ classes:
       alpha2Code:
         description: Two-letter country codes from ISO 3166-1 alpha-2
         title: alpha 2 code
+        exact_mappings:
+        - geo:000000023
+        close_mappings:
+        - schema:addressCountry
+        related_mappings:
+        - obib:0000620
+        - ncit:C54641
         domain_of:
         - Country
         range: string
@@ -3479,6 +3735,9 @@ classes:
       category for dangerous goods that are transported by air
     title: IATA classification
     from_schema: https://w3id.org/evorao/
+    related_mappings:
+    - wd:Q19755
+    - wd:Q19755
     is_a: Term
   Variant:
     description: "An organism with one or more new mutations is referred to as a \u201C\
@@ -3496,9 +3755,19 @@ classes:
     comments:
     - Use of Data provider recommended
     from_schema: https://w3id.org/evorao/
+    exact_mappings:
+    - taxrank:0000000
+    - uniprotrdfs:Rank
+    - wd:Q427626
+    - taxrank:0000000
+    - uniprotrdfs:Rank
+    - wd:Q427626
     close_mappings:
-    - wd:Q427626
-    - wd:Q427626
+    - biolink:TaxonomicRank
+    - biolink:TaxonomicRank
+    related_mappings:
+    - dwc:taxonRank
+    - dwc:taxonRank
     is_a: Term
     slots:
     - taxonomy
@@ -3506,6 +3775,8 @@ classes:
       taxonomy:
         description: The taxonomy release(s) in which this entity exists
         title: taxonomy
+        broad_mappings:
+        - dct:isPartOf
         domain_of:
         - TaxonomicRank
         range: Taxonomy
@@ -3520,13 +3791,15 @@ classes:
       rebuild. Use of Data provider recommended
     from_schema: https://w3id.org/evorao/
     exact_mappings:
-    - dwc:Taxon
     - schema:Taxon
-    - dwc:Taxon
     - schema:Taxon
     close_mappings:
     - wd:Q16521
+    - dwc:Taxon
+    - uniprotrdfs:Taxon
     - wd:Q16521
+    - dwc:Taxon
+    - uniprotrdfs:Taxon
     is_a: Term
     slots:
     - taxonomy
@@ -3540,6 +3813,8 @@ classes:
       taxonomy:
         description: The taxonomy release(s) in which this entity exists
         title: taxonomy
+        broad_mappings:
+        - dct:isPartOf
         domain_of:
         - Taxon
         range: Taxonomy
@@ -3551,6 +3826,8 @@ classes:
         title: parent taxon
         exact_mappings:
         - schema:parentTaxon
+        close_mappings:
+        - wdp:P171
         broad_mappings:
         - dwc:Taxon
         domain_of:
@@ -3562,8 +3839,14 @@ classes:
         description: Relative level or position of the identified taxon in the taxonomy
         title: rank
         exact_mappings:
+        - wdp:P105
+        close_mappings:
         - dwc:taxonRank
         - schema:taxonRank
+        - biolink:has_taxonomic_rank
+        related_mappings:
+        - taxrank:1000000
+        - ncbitaxon:has_rank
         domain_of:
         - Taxon
         range: TaxonomicRank
@@ -3572,6 +3855,8 @@ classes:
       previouslyKnownAs:
         description: Any historic version of this taxon having a different name
         title: previously known as
+        related_mappings:
+        - schema:alternateName
         broad_mappings:
         - dwc:Taxon
         domain_of:
@@ -3588,6 +3873,8 @@ classes:
           uses NCBI Taxonomy
         close_mappings:
         - dwc:taxonID
+        related_mappings:
+        - dct:references
         domain_of:
         - Taxon
         range: Taxon
@@ -3598,8 +3885,11 @@ classes:
         title: taxonomic ID
         exact_mappings:
         - dwc:taxonID
+        narrow_mappings:
+        - ncit:P331
         broad_mappings:
         - schema:identifier
+        - dct:identifier
         domain_of:
         - Taxon
         range: string
@@ -3615,6 +3905,8 @@ classes:
           key made of 'taxonomic ID' + 'has version'
         close_mappings:
         - dwc:taxonID
+        broad_mappings:
+        - dct:identifier
         domain_of:
         - Taxon
         range: string
@@ -3625,6 +3917,11 @@ classes:
     description: A reference that permits to retrieve an item from an external provider
     title: External related reference
     from_schema: https://w3id.org/evorao/
+    close_mappings:
+    - ms:1000878
+    - ncit:C43621
+    - ms:1000878
+    - ncit:C43621
     is_a: Resource
     slots:
     - reference
@@ -3637,6 +3934,7 @@ classes:
         title: reference
         close_mappings:
         - dct:identifier
+        - dct:references
         domain_of:
         - ExternalRelatedReference
         range: string
@@ -3658,8 +3956,9 @@ classes:
         description: The url prefix that once completed with the reference will lead
           to the linked external resource
         title: reference provider prefix
-        close_mappings:
+        related_mappings:
         - dcat:landingPage
+        - iao:0000599
         domain_of:
         - ExternalRelatedReference
         range: string
@@ -3682,6 +3981,9 @@ classes:
     close_mappings:
     - wd:Q3511065
     - wd:Q3511065
+    related_mappings:
+    - uniprotrdfs:Sequence
+    - uniprotrdfs:Sequence
     is_a: Resource
     slots:
     - sequenceReference
@@ -3731,8 +4033,12 @@ classes:
         description: The sequence ID that permits to retrieve the sequence information
           from the sequence provider
         title: accession number
-        close_mappings:
+        related_mappings:
         - dct:identifier
+        narrow_mappings:
+        - ncit:P102
+        broad_mappings:
+        - schema:identifier
         domain_of:
         - SequenceReference
         range: string
@@ -3755,7 +4061,9 @@ classes:
     from_schema: https://w3id.org/evorao/
     exact_mappings:
     - dct:Agent
+    - prov:Agent
     - dct:Agent
+    - prov:Agent
     close_mappings:
     - vcard:Agent
     - vcard:Agent
@@ -3772,7 +4080,9 @@ classes:
         title: name
         exact_mappings:
         - schema:name
+        - vcard:fn
         close_mappings:
+        - rdfs:label
         - dct:title
         slot_uri: foaf:name
         domain_of:
@@ -3785,10 +4095,8 @@ classes:
           of the current item
         title: description
         comments:
-        - 'Describe this item in few lines. This description will serve as a summary
+        - Describe this item in few lines. This description will serve as a summary
           to present the resource.
-
-          '
         exact_mappings:
         - schema:description
         slot_uri: dct:description
@@ -3801,6 +4109,8 @@ classes:
       homePage:
         description: A web page that serves as the main or introductory page
         title: home page
+        close_mappings:
+        - swo:0004006
         slot_uri: foaf:homepage
         domain_of:
         - PersonOrOrganization
@@ -3810,6 +4120,8 @@ classes:
       contactPoint:
         description: An information that allows someone to establish communication
         title: contact point
+        exact_mappings:
+        - schema:contactPoint
         slot_uri: dcat:contactPoint
         domain_of:
         - PersonOrOrganization
@@ -3820,6 +4132,8 @@ classes:
       logo:
         description: A path or URL to the related logo
         title: logo
+        exact_mappings:
+        - schema:logo
         domain_of:
         - PersonOrOrganization
         range: Image
@@ -3830,13 +4144,14 @@ classes:
     description: An individual
     title: Person
     from_schema: https://w3id.org/evorao/
+    exact_mappings:
+    - schema:Person
+    - schema:Person
     close_mappings:
     - wd:Q215627
     - vcard:Individual
-    - schema:Person
     - wd:Q215627
     - vcard:Individual
-    - schema:Person
     is_a: PersonOrOrganization
     slots:
     - orcidId
@@ -3847,6 +4162,10 @@ classes:
         title: ORCID id
         exact_mappings:
         - wdp:P496
+        - reproduceme:ORCID
+        related_mappings:
+        - iao:0000708
+        - edam:4022
         domain_of:
         - Person
         range: string
@@ -3858,13 +4177,14 @@ classes:
     description: A social entity established to meet needs or pursue specific goals
     title: Organization
     from_schema: https://w3id.org/evorao/
+    exact_mappings:
+    - schema:Organization
+    - vcard:Organization
+    - schema:Organization
+    - vcard:Organization
     close_mappings:
     - wd:Q43229
-    - vcard:Organization
-    - schema:Organization
     - wd:Q43229
-    - vcard:Organization
-    - schema:Organization
     is_a: PersonOrOrganization
     slots:
     - alternateName
@@ -3878,9 +4198,12 @@ classes:
         - This includes previous names, acronyms, former taxonomic terms, and other
           variations. This information can serve as keywords for search purposes and
           as a bridge with other projects that use different naming systems or taxonomies
+        exact_mappings:
+        - schema:alternateName
+        - dct:alternative
+        - iao:0000118
         close_mappings:
         - wdp:P4970
-        - schema:alternateName
         domain_of:
         - Organization
         range: AlternateName
@@ -3901,6 +4224,8 @@ classes:
         title: ROR iD
         exact_mappings:
         - wdp:P6782
+        related_mappings:
+        - dwc:institutionCode
         domain_of:
         - Organization
         range: string
@@ -3915,6 +4240,11 @@ classes:
     close_mappings:
     - wd:Q1438053
     - wd:Q1438053
+    related_mappings:
+    - foaf:Organization
+    - ncit:C19158
+    - foaf:Organization
+    - ncit:C19158
     is_a: Organization
   Provider:
     description: A provider of products or services, as a specific organization
@@ -3923,6 +4253,9 @@ classes:
     close_mappings:
     - dct:ProvenanceStatement
     - dct:ProvenanceStatement
+    related_mappings:
+    - foaf:Organization
+    - foaf:Organization
     is_a: Organization
     slots:
     - memberOfRi
@@ -4526,9 +4859,7 @@ classes:
         required: true
         multivalued: false
       shippingConditions:
-        description: 'Specification of the terms and parameters for transporting
-
-          '
+        description: Specification of the terms and parameters for transporting
         title: shipping conditions
         domain_of:
         - Product
@@ -4904,10 +5235,7 @@ classes:
         required: true
         multivalued: true
       clonedNucleicAcid:
-        description: 'Indicates if the nucleic acid sequence has been inserted into
-          a plasmid vector for propagation or expression in a host organism
-
-          '
+        description: Specification of the terms and parameters for transporting
         title: cloned nucleic acid
         domain_of:
         - NucleicAcid
@@ -4953,9 +5281,9 @@ classes:
         required: true
         multivalued: false
       mutationObserved:
-        description: "Indicates if the current nucleic acid has No mutation compared\
-          \ to the reference sequence if the value is set to false or if it\n contains\
-          \ mutations (no frameshift, no unexpected STOP codon) if set to true"
+        description: Indicates if the current nucleic acid has No mutation compared
+          to the reference sequence if the value is set to false or if it contains
+          mutations (no frameshift, no unexpected STOP codon) if set to true
         title: mutation observed
         domain_of:
         - NucleicAcid
@@ -5623,10 +5951,8 @@ classes:
           of the current item
         title: description
         comments:
-        - 'Describe this item in few lines. This description will serve as a summary
-          to present the resource.
-
-          '
+        - Describe this item in few lines. This description will serve as a summary
+          to present the resource
         exact_mappings:
         - schema:description
         slot_uri: dct:description
@@ -5764,10 +6090,8 @@ classes:
           of the current item
         title: description
         comments:
-        - 'Describe this item in few lines. This description will serve as a summary
+        - Describe this item in few lines. This description will serve as a summary
           to present the resource.
-
-          '
         exact_mappings:
         - schema:description
         slot_uri: dct:description
@@ -5898,7 +6222,6 @@ classes:
         comments:
         - 'The title of the item should be as short and descriptive as possible. E.g.
           for virus products it should basically be based on the following Pattern:
-
           ''Virus name'', ''virus host type'', ''collection year'', ''country of collection''
           ex ''suspected epidemiological origin'', ''genotype'', ''strain'', ''variant
           name or specific feature'
@@ -5916,10 +6239,11 @@ classes:
           of the current item
         title: description
         comments:
-        - 'Describe this item in few lines. This description will serve as a summary
-          to present the resource.
-
-          '
+        - 'The title of the item should be as short and descriptive as possible. E.g.
+          for virus products it should basically be based on the following Pattern:
+          ''Virus name'', ''virus host type'', ''collection year'', ''country of collection''
+          ex ''suspected epidemiological origin'', ''genotype'', ''strain'', ''variant
+          name or specific feature'
         close_mappings:
         - schema:description
         slot_uri: dct:description
@@ -5987,7 +6311,6 @@ classes:
         comments:
         - 'The title of the item should be as short and descriptive as possible. E.g.
           for virus products it should basically be based on the following Pattern:
-
           ''Virus name'', ''virus host type'', ''collection year'', ''country of collection''
           ex ''suspected epidemiological origin'', ''genotype'', ''strain'', ''variant
           name or specific feature'
@@ -6005,10 +6328,8 @@ classes:
           of the current item
         title: description
         comments:
-        - 'Describe this item in few lines. This description will serve as a summary
+        - Describe this item in few lines. This description will serve as a summary
           to present the resource.
-
-          '
         close_mappings:
         - schema:description
         slot_uri: dct:description
@@ -6048,4 +6369,4 @@ classes:
         required: false
         multivalued: false
 source_file: https://w3id.org/evorao/evorao.owl.ttl
-generation_date: '2025-09-10T15:59:51'
+generation_date: '2025-09-11T09:42:44'

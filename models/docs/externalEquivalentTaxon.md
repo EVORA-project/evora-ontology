@@ -66,6 +66,7 @@ Alias: externalEquivalentTaxon
 | ---  | ---  |
 | self | EVORAO:externalEquivalentTaxon |
 | native | EVORAO:externalEquivalentTaxon |
+| related | dct:references |
 | close | dwc:taxonID |
 
 
@@ -85,6 +86,8 @@ comments:
 from_schema: https://w3id.org/evorao/
 close_mappings:
 - dwc:taxonID
+related_mappings:
+- dct:references
 rank: 1000
 alias: externalEquivalentTaxon
 domain_of:

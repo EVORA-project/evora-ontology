@@ -65,6 +65,7 @@ Alias: taxonomy
 | ---  | ---  |
 | self | EVORAO:taxonomy |
 | native | EVORAO:taxonomy |
+| broad | dct:isPartOf, dct:isPartOf |
 
 
 
@@ -77,6 +78,9 @@ name: taxonomy
 description: The taxonomy release(s) in which this entity exists
 title: taxonomy
 from_schema: https://w3id.org/evorao/
+broad_mappings:
+- dct:isPartOf
+- dct:isPartOf
 rank: 1000
 alias: taxonomy
 domain_of:

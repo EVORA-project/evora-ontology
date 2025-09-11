@@ -99,6 +99,8 @@ URI: [EVORAO:IplcOrigin](https://w3id.org/evorao/IplcOrigin)
 | ---  | ---  |
 | self | EVORAO:IplcOrigin |
 | native | EVORAO:IplcOrigin |
+| related | dct:Location, vcard:Location, dct:Location, vcard:Location |
+| close | ncit:C41152, mesh:D000081034, ncit:C41152, mesh:D000081034 |
 
 
 
@@ -119,6 +121,16 @@ description: The IPLC area (Indigenous People and Local Communities) from which 
   physical item originates
 title: IPLC origin
 from_schema: https://w3id.org/evorao/
+close_mappings:
+- ncit:C41152
+- mesh:D000081034
+- ncit:C41152
+- mesh:D000081034
+related_mappings:
+- dct:Location
+- vcard:Location
+- dct:Location
+- vcard:Location
 is_a: GeographicalOrigin
 
 ```
@@ -133,6 +145,16 @@ description: The IPLC area (Indigenous People and Local Communities) from which 
   physical item originates
 title: IPLC origin
 from_schema: https://w3id.org/evorao/
+close_mappings:
+- ncit:C41152
+- mesh:D000081034
+- ncit:C41152
+- mesh:D000081034
+related_mappings:
+- dct:Location
+- vcard:Location
+- dct:Location
+- vcard:Location
 is_a: GeographicalOrigin
 attributes:
   title:
@@ -141,9 +163,8 @@ attributes:
     title: title
     comments:
     - 'The title of the item should be as short and descriptive as possible. E.g.
-      for virus products it should basically be based on the following Pattern:
-
-      ''Virus name'', ''virus host type'', ''collection year'', ''country of collection''
+      for virus products it should basically be based on the following Pattern: ''Virus
+      name'', ''virus host type'', ''collection year'', ''country of collection''
       ex ''suspected epidemiological origin'', ''genotype'', ''strain'', ''variant
       name or specific feature'
     from_schema: https://w3id.org/evorao/
@@ -170,14 +191,13 @@ attributes:
       the current item
     title: description
     comments:
-    - 'Describe this item in few lines. This description will serve as a summary to
+    - Describe this item in few lines. This description will serve as a summary to
       present the resource.
-
-      '
     from_schema: https://w3id.org/evorao/
     exact_mappings:
     - schema:description
     close_mappings:
+    - schema:description
     - schema:description
     rank: 1000
     slot_uri: dct:description
@@ -226,6 +246,10 @@ attributes:
     from_schema: https://w3id.org/evorao/
     close_mappings:
     - wdp:P972
+    related_mappings:
+    - dct:isReferencedBy
+    broad_mappings:
+    - dct:isPartOf
     rank: 1000
     alias: inVocabulary
     owner: IplcOrigin

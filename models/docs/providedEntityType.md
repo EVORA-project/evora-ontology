@@ -3,7 +3,7 @@
 # Slot: provided entity type (providedEntityType) 
 
 
-_The identification of the entity type (Class) described by the response to the query_
+_Identifies the type of entity (ontology class) described by the response to a query. Values should be expressed as IRIs (e.g., from an ontology)_
 
 
 
@@ -32,7 +32,7 @@ Alias: providedEntityType
 
 ## Properties
 
-* Range: [String](String.md)
+* Range: [Uri](Uri.md)
 
 * Multivalued: True
 
@@ -44,7 +44,7 @@ Alias: providedEntityType
 
 ## Comments
 
-* This property defines what the response is about, independent of its serialization. It should reference an ontology class such as EVORAO:Virus, EVORAO:Protein, etc
+* This property defines what the response is about, independent of its serialization. Values should be ontology class IRIs (e.g. https://w3id.org/evorao/Virus)
 
 ## Identifier and Mapping Information
 
@@ -69,6 +69,7 @@ Alias: providedEntityType
 | self | EVORAO:providedEntityType |
 | native | EVORAO:providedEntityType |
 | related | dcat:servesDataset |
+| close | dct:type, schema:additionalType |
 
 
 
@@ -78,20 +79,23 @@ Alias: providedEntityType
 <details>
 ```yaml
 name: providedEntityType
-description: The identification of the entity type (Class) described by the response
-  to the query
+description: Identifies the type of entity (ontology class) described by the response
+  to a query. Values should be expressed as IRIs (e.g., from an ontology)
 title: provided entity type
 comments:
 - This property defines what the response is about, independent of its serialization.
-  It should reference an ontology class such as EVORAO:Virus, EVORAO:Protein, etc
+  Values should be ontology class IRIs (e.g. https://w3id.org/evorao/Virus)
 from_schema: https://w3id.org/evorao/
+close_mappings:
+- dct:type
+- schema:additionalType
 related_mappings:
 - dcat:servesDataset
 rank: 1000
 alias: providedEntityType
 domain_of:
 - DataProvider
-range: string
+range: uri
 required: true
 multivalued: true
 

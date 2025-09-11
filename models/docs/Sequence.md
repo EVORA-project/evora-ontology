@@ -100,6 +100,7 @@ URI: [EVORAO:Sequence](https://w3id.org/evorao/Sequence)
 | ---  | ---  |
 | self | EVORAO:Sequence |
 | native | EVORAO:Sequence |
+| related | uniprotrdfs:Sequence, uniprotrdfs:Sequence |
 | close | wd:Q3511065, wd:Q3511065 |
 
 
@@ -123,6 +124,9 @@ from_schema: https://w3id.org/evorao/
 close_mappings:
 - wd:Q3511065
 - wd:Q3511065
+related_mappings:
+- uniprotrdfs:Sequence
+- uniprotrdfs:Sequence
 is_a: Resource
 slots:
 - sequenceReference
@@ -171,6 +175,9 @@ from_schema: https://w3id.org/evorao/
 close_mappings:
 - wd:Q3511065
 - wd:Q3511065
+related_mappings:
+- uniprotrdfs:Sequence
+- uniprotrdfs:Sequence
 is_a: Resource
 slot_usage:
   sequenceReference:

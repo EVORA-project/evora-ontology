@@ -113,10 +113,10 @@ description: Numeric code assigned to identify a particular historical version o
   a work (e.g. software or technical standards)
 title: Version
 comments:
-- "Represents a specific snapshot/release of a resource (e.g., a dataset). It enables\
-  \ managing multiple versions as first-class nodes and linking each version to its\
-  \ subject via evorao:versionOf and to the using resource via evorao:version (e.g.,\
-  \ as nodes in a graph database).\r"
+- Represents a specific snapshot/release of a resource (e.g., a dataset). It enables
+  managing multiple versions as first-class nodes and linking each version to its
+  subject via evorao:versionOf and to the using resource via evorao:version (e.g.,
+  as nodes in a graph database).
 from_schema: https://w3id.org/evorao/
 close_mappings:
 - reproduceme:Version
@@ -183,10 +183,10 @@ description: Numeric code assigned to identify a particular historical version o
   a work (e.g. software or technical standards)
 title: Version
 comments:
-- "Represents a specific snapshot/release of a resource (e.g., a dataset). It enables\
-  \ managing multiple versions as first-class nodes and linking each version to its\
-  \ subject via evorao:versionOf and to the using resource via evorao:version (e.g.,\
-  \ as nodes in a graph database).\r"
+- Represents a specific snapshot/release of a resource (e.g., a dataset). It enables
+  managing multiple versions as first-class nodes and linking each version to its
+  subject via evorao:versionOf and to the using resource via evorao:version (e.g.,
+  as nodes in a graph database).
 from_schema: https://w3id.org/evorao/
 close_mappings:
 - reproduceme:Version

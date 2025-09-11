@@ -475,7 +475,7 @@
 --     * Slot: contactPoint_id Description: An information that allows someone to establish communication
 -- # Class: "NucleicAcid" Description: "Nucleic acid related to a pathogen. It can be extracted or synthetic"
 --     * Slot: id Description: 
---     * Slot: clonedNucleicAcid Description: Indicates if the nucleic acid sequence has been inserted into a plasmid vector for propagation or expression in a host organism
+--     * Slot: clonedNucleicAcid Description: Specification of the terms and parameters for transporting
 --     * Slot: regionEncompassedInThisProduct Description: The specific region encompassed in the product
 --     * Slot: mutationObserved Description: Indicates if the current nucleic acid has No mutation compared to the reference sequence if the value is set to false or if it contains mutations (no frameshift, no unexpected STOP codon) if set to true
 --     * Slot: observedMutations Description: The specific mutations that have been identified and documented in the nucleic acid sequence
@@ -944,7 +944,7 @@
 --     * Slot: rank_id Description: Relative level or position of the identified taxon in the taxonomy
 -- # Class: "DataProvider_providedEntityType" Description: ""
 --     * Slot: DataProvider_id Description: Autocreated FK slot
---     * Slot: providedEntityType Description: The identification of the entity type (Class) described by the response to the query
+--     * Slot: providedEntityType Description: Identifies the type of entity (ontology class) described by the response to a query. Values should be expressed as IRIs (e.g., from an ontology)
 -- # Class: "DataProvider_servesDataset" Description: ""
 --     * Slot: DataProvider_id Description: Autocreated FK slot
 --     * Slot: servesDataset_id Description: A collection of data that this data service can distribute

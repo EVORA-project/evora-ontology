@@ -98,7 +98,8 @@ URI: [EVORAO:PdbReference](https://w3id.org/evorao/PdbReference)
 | ---  | ---  |
 | self | EVORAO:PdbReference |
 | native | EVORAO:PdbReference |
-| close | wd:Q42415644, wd:Q42415644 |
+| exact | sio:010032, sio:010032 |
+| related | wdp:P638, wd:Q42415644, wdp:P638, wd:Q42415644 |
 
 
 
@@ -119,8 +120,13 @@ description: Identifier for 3D structural data as per the PDB (Protein Data Bank
   database
 title: PDB reference
 from_schema: https://w3id.org/evorao/
-close_mappings:
+exact_mappings:
+- sio:010032
+- sio:010032
+related_mappings:
+- wdp:P638
 - wd:Q42415644
+- wdp:P638
 - wd:Q42415644
 is_a: Term
 
@@ -136,8 +142,13 @@ description: Identifier for 3D structural data as per the PDB (Protein Data Bank
   database
 title: PDB reference
 from_schema: https://w3id.org/evorao/
-close_mappings:
+exact_mappings:
+- sio:010032
+- sio:010032
+related_mappings:
+- wdp:P638
 - wd:Q42415644
+- wdp:P638
 - wd:Q42415644
 is_a: Term
 attributes:
@@ -147,9 +158,8 @@ attributes:
     title: title
     comments:
     - 'The title of the item should be as short and descriptive as possible. E.g.
-      for virus products it should basically be based on the following Pattern:
-
-      ''Virus name'', ''virus host type'', ''collection year'', ''country of collection''
+      for virus products it should basically be based on the following Pattern: ''Virus
+      name'', ''virus host type'', ''collection year'', ''country of collection''
       ex ''suspected epidemiological origin'', ''genotype'', ''strain'', ''variant
       name or specific feature'
     from_schema: https://w3id.org/evorao/
@@ -176,14 +186,13 @@ attributes:
       the current item
     title: description
     comments:
-    - 'Describe this item in few lines. This description will serve as a summary to
+    - Describe this item in few lines. This description will serve as a summary to
       present the resource.
-
-      '
     from_schema: https://w3id.org/evorao/
     exact_mappings:
     - schema:description
     close_mappings:
+    - schema:description
     - schema:description
     rank: 1000
     slot_uri: dct:description
@@ -232,6 +241,10 @@ attributes:
     from_schema: https://w3id.org/evorao/
     close_mappings:
     - wdp:P972
+    related_mappings:
+    - dct:isReferencedBy
+    broad_mappings:
+    - dct:isPartOf
     rank: 1000
     alias: inVocabulary
     owner: PdbReference

@@ -479,9 +479,7 @@ attributes:
     multivalued: false
   shippingConditions:
     name: shippingConditions
-    description: 'Specification of the terms and parameters for transporting
-
-      '
+    description: Specification of the terms and parameters for transporting
     title: shipping conditions
     from_schema: https://w3id.org/evorao/
     rank: 1000
@@ -715,8 +713,12 @@ attributes:
     description: A Digital Object Identifier (DOI) that can be related
     title: DOI
     from_schema: https://w3id.org/evorao/
+    exact_mappings:
+    - wdp:P356
     close_mappings:
     - wdp:P356
+    broad_mappings:
+    - dct:bibliographicCitation
     rank: 1000
     alias: doi
     owner: Hybridoma
@@ -941,6 +943,8 @@ attributes:
     description: An information that allows someone to establish communication
     title: contact point
     from_schema: https://w3id.org/evorao/
+    exact_mappings:
+    - schema:contactPoint
     rank: 1000
     slot_uri: dcat:contactPoint
     alias: contactPoint
@@ -958,9 +962,8 @@ attributes:
     title: title
     comments:
     - 'The title of the item should be as short and descriptive as possible. E.g.
-      for virus products it should basically be based on the following Pattern:
-
-      ''Virus name'', ''virus host type'', ''collection year'', ''country of collection''
+      for virus products it should basically be based on the following Pattern: ''Virus
+      name'', ''virus host type'', ''collection year'', ''country of collection''
       ex ''suspected epidemiological origin'', ''genotype'', ''strain'', ''variant
       name or specific feature'
     from_schema: https://w3id.org/evorao/
@@ -987,14 +990,13 @@ attributes:
       the current item
     title: description
     comments:
-    - 'Describe this item in few lines. This description will serve as a summary to
+    - Describe this item in few lines. This description will serve as a summary to
       present the resource.
-
-      '
     from_schema: https://w3id.org/evorao/
     exact_mappings:
     - schema:description
     close_mappings:
+    - schema:description
     - schema:description
     rank: 1000
     slot_uri: dct:description

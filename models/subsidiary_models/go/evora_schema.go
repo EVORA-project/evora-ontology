@@ -173,7 +173,7 @@ type DataProvider struct {
 	 */
 	ContentType string `json:"contentType"`
 	/*
-	 * The identification of the entity type (Class) described by the response to the query
+	 * Identifies the type of entity (ontology class) described by the response to a query. Values should be expressed as IRIs (e.g., from an ontology)
 	 */
 	ProvidedEntityType string `json:"providedEntityType"`
 	/*
@@ -1726,7 +1726,6 @@ type Product struct {
 	IataClassification IataClassification `json:"iataClassification"`
 	/*
 	 * Specification of the terms and parameters for transporting
-
 	 */
 	ShippingConditions string `json:"shippingConditions"`
 	/*
@@ -1893,7 +1892,6 @@ type Antibody struct {
 	IataClassification IataClassification `json:"iataClassification"`
 	/*
 	 * Specification of the terms and parameters for transporting
-
 	 */
 	ShippingConditions string `json:"shippingConditions"`
 	/*
@@ -2064,7 +2062,6 @@ type Hybridoma struct {
 	IataClassification IataClassification `json:"iataClassification"`
 	/*
 	 * Specification of the terms and parameters for transporting
-
 	 */
 	ShippingConditions string `json:"shippingConditions"`
 	/*
@@ -2267,7 +2264,6 @@ type Protein struct {
 	IataClassification IataClassification `json:"iataClassification"`
 	/*
 	 * Specification of the terms and parameters for transporting
-
 	 */
 	ShippingConditions string `json:"shippingConditions"`
 	/*
@@ -2421,8 +2417,7 @@ type NucleicAcid struct {
 	 */
 	Sequence []Sequence `json:"sequence"`
 	/*
-	 * Indicates if the nucleic acid sequence has been inserted into a plasmid vector for propagation or expression in a host organism
-
+	 * Specification of the terms and parameters for transporting
 	 */
 	ClonedNucleicAcid bool `json:"clonedNucleicAcid"`
 	/*
@@ -2442,8 +2437,7 @@ type NucleicAcid struct {
 	 */
 	RegionEncompassedInThisProduct string `json:"regionEncompassedInThisProduct"`
 	/*
-	 * Indicates if the current nucleic acid has No mutation compared to the reference sequence if the value is set to false or if it
- contains mutations (no frameshift, no unexpected STOP codon) if set to true
+	 * Indicates if the current nucleic acid has No mutation compared to the reference sequence if the value is set to false or if it contains mutations (no frameshift, no unexpected STOP codon) if set to true
 	 */
 	MutationObserved bool `json:"mutationObserved"`
 	/*
@@ -2472,7 +2466,6 @@ type NucleicAcid struct {
 	IataClassification IataClassification `json:"iataClassification"`
 	/*
 	 * Specification of the terms and parameters for transporting
-
 	 */
 	ShippingConditions string `json:"shippingConditions"`
 	/*
@@ -2635,7 +2628,6 @@ type DetectionKit struct {
 	IataClassification IataClassification `json:"iataClassification"`
 	/*
 	 * Specification of the terms and parameters for transporting
-
 	 */
 	ShippingConditions string `json:"shippingConditions"`
 	/*
@@ -2786,7 +2778,6 @@ type Bundle struct {
 	IataClassification IataClassification `json:"iataClassification"`
 	/*
 	 * Specification of the terms and parameters for transporting
-
 	 */
 	ShippingConditions string `json:"shippingConditions"`
 	/*
@@ -3005,7 +2996,6 @@ type Pathogen struct {
 	IataClassification IataClassification `json:"iataClassification"`
 	/*
 	 * Specification of the terms and parameters for transporting
-
 	 */
 	ShippingConditions string `json:"shippingConditions"`
 	/*
@@ -3236,7 +3226,6 @@ type Virus struct {
 	IataClassification IataClassification `json:"iataClassification"`
 	/*
 	 * Specification of the terms and parameters for transporting
-
 	 */
 	ShippingConditions string `json:"shippingConditions"`
 	/*
@@ -3455,7 +3444,6 @@ type Bacterium struct {
 	IataClassification IataClassification `json:"iataClassification"`
 	/*
 	 * Specification of the terms and parameters for transporting
-
 	 */
 	ShippingConditions string `json:"shippingConditions"`
 	/*
@@ -3674,7 +3662,6 @@ type Fungus struct {
 	IataClassification IataClassification `json:"iataClassification"`
 	/*
 	 * Specification of the terms and parameters for transporting
-
 	 */
 	ShippingConditions string `json:"shippingConditions"`
 	/*
@@ -3893,7 +3880,6 @@ type Protozoan struct {
 	IataClassification IataClassification `json:"iataClassification"`
 	/*
 	 * Specification of the terms and parameters for transporting
-
 	 */
 	ShippingConditions string `json:"shippingConditions"`
 	/*
@@ -4112,7 +4098,6 @@ type Viroid struct {
 	IataClassification IataClassification `json:"iataClassification"`
 	/*
 	 * Specification of the terms and parameters for transporting
-
 	 */
 	ShippingConditions string `json:"shippingConditions"`
 	/*
@@ -4331,7 +4316,6 @@ type Prion struct {
 	IataClassification IataClassification `json:"iataClassification"`
 	/*
 	 * Specification of the terms and parameters for transporting
-
 	 */
 	ShippingConditions string `json:"shippingConditions"`
 	/*

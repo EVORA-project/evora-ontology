@@ -22,10 +22,10 @@ Alias: sourceOfInformation
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [Variant](Variant.md) | An organism with one or more new mutations is referred to as a “variant” of t... |  no  |
-| [CommonName](CommonName.md) | Vernacular name that is the name used in everyday language to refer to an org... |  yes  |
-| [VirusName](VirusName.md) | A virus vernacular name or a name that describes a group of viruses |  no  |
 | [AlternateName](AlternateName.md) | List of other names for things |  yes  |
+| [CommonName](CommonName.md) | Vernacular name that is the name used in everyday language to refer to an org... |  yes  |
+| [Variant](Variant.md) | An organism with one or more new mutations is referred to as a “variant” of t... |  no  |
+| [VirusName](VirusName.md) | A virus vernacular name or a name that describes a group of viruses |  no  |
 
 
 
@@ -65,7 +65,8 @@ Alias: sourceOfInformation
 | ---  | ---  |
 | self | EVORAO:sourceOfInformation |
 | native | EVORAO:sourceOfInformation |
-| close | wdp:P248 |
+| related | sio:000253 |
+| close | wdp:P248, wdp:P248 |
 
 
 
@@ -81,6 +82,9 @@ title: source of information
 from_schema: https://w3id.org/evorao/
 close_mappings:
 - wdp:P248
+- wdp:P248
+related_mappings:
+- sio:000253
 rank: 1000
 alias: sourceOfInformation
 domain_of:

@@ -100,7 +100,8 @@ URI: [EVORAO:Publication](https://w3id.org/evorao/Publication)
 | ---  | ---  |
 | self | EVORAO:Publication |
 | native | EVORAO:Publication |
-| close | wd:Q591041, wd:Q591041 |
+| exact | dct:BibliographicResource, dct:BibliographicResource |
+| close | wd:Q591041, reproduceme:Publication, wd:Q591041, reproduceme:Publication |
 
 
 
@@ -120,9 +121,14 @@ name: Publication
 description: A scientific publication
 title: Publication
 from_schema: https://w3id.org/evorao/
+exact_mappings:
+- dct:BibliographicResource
+- dct:BibliographicResource
 close_mappings:
 - wd:Q591041
+- reproduceme:Publication
 - wd:Q591041
+- reproduceme:Publication
 is_a: Resource
 slots:
 - title
@@ -137,9 +143,8 @@ slot_usage:
     title: title
     comments:
     - 'The title of the item should be as short and descriptive as possible. E.g.
-      for virus products it should basically be based on the following Pattern:
-
-      ''Virus name'', ''virus host type'', ''collection year'', ''country of collection''
+      for virus products it should basically be based on the following Pattern: ''Virus
+      name'', ''virus host type'', ''collection year'', ''country of collection''
       ex ''suspected epidemiological origin'', ''genotype'', ''strain'', ''variant
       name or specific feature'
     exact_mappings:
@@ -160,6 +165,12 @@ slot_usage:
     name: authors
     description: The list of authors
     title: authors
+    close_mappings:
+    - wdp:P2093
+    - schema:author
+    related_mappings:
+    - sio:001315
+    - iao:0000321
     domain_of:
     - Publication
     range: string
@@ -169,7 +180,8 @@ slot_usage:
     name: abstract
     description: Concise summary of the publication
     title: abstract
-    exact_mappings:
+    close_mappings:
+    - dct:abstract
     - schema:abstract
     domain_of:
     - Publication
@@ -180,6 +192,12 @@ slot_usage:
     name: doi
     description: A Digital Object Identifier (DOI) that can be related
     title: DOI
+    exact_mappings:
+    - wdp:P356
+    close_mappings:
+    - reproduceme:doi
+    broad_mappings:
+    - dct:bibliographicCitation
     domain_of:
     - Publication
     - ProductOrService
@@ -190,6 +208,10 @@ slot_usage:
     name: journal
     description: The scientific journal in which the publication was published
     title: journal
+    close_mappings:
+    - wdp:P1433
+    - biolink:published_in
+    - uniprotrdfs:publishedIn
     domain_of:
     - Publication
     range: Journal
@@ -207,9 +229,14 @@ name: Publication
 description: A scientific publication
 title: Publication
 from_schema: https://w3id.org/evorao/
+exact_mappings:
+- dct:BibliographicResource
+- dct:BibliographicResource
 close_mappings:
 - wd:Q591041
+- reproduceme:Publication
 - wd:Q591041
+- reproduceme:Publication
 is_a: Resource
 slot_usage:
   title:
@@ -218,9 +245,8 @@ slot_usage:
     title: title
     comments:
     - 'The title of the item should be as short and descriptive as possible. E.g.
-      for virus products it should basically be based on the following Pattern:
-
-      ''Virus name'', ''virus host type'', ''collection year'', ''country of collection''
+      for virus products it should basically be based on the following Pattern: ''Virus
+      name'', ''virus host type'', ''collection year'', ''country of collection''
       ex ''suspected epidemiological origin'', ''genotype'', ''strain'', ''variant
       name or specific feature'
     exact_mappings:
@@ -241,6 +267,12 @@ slot_usage:
     name: authors
     description: The list of authors
     title: authors
+    close_mappings:
+    - wdp:P2093
+    - schema:author
+    related_mappings:
+    - sio:001315
+    - iao:0000321
     domain_of:
     - Publication
     range: string
@@ -250,7 +282,8 @@ slot_usage:
     name: abstract
     description: Concise summary of the publication
     title: abstract
-    exact_mappings:
+    close_mappings:
+    - dct:abstract
     - schema:abstract
     domain_of:
     - Publication
@@ -261,6 +294,12 @@ slot_usage:
     name: doi
     description: A Digital Object Identifier (DOI) that can be related
     title: DOI
+    exact_mappings:
+    - wdp:P356
+    close_mappings:
+    - reproduceme:doi
+    broad_mappings:
+    - dct:bibliographicCitation
     domain_of:
     - Publication
     - ProductOrService
@@ -271,6 +310,10 @@ slot_usage:
     name: journal
     description: The scientific journal in which the publication was published
     title: journal
+    close_mappings:
+    - wdp:P1433
+    - biolink:published_in
+    - uniprotrdfs:publishedIn
     domain_of:
     - Publication
     range: Journal
@@ -283,9 +326,8 @@ attributes:
     title: title
     comments:
     - 'The title of the item should be as short and descriptive as possible. E.g.
-      for virus products it should basically be based on the following Pattern:
-
-      ''Virus name'', ''virus host type'', ''collection year'', ''country of collection''
+      for virus products it should basically be based on the following Pattern: ''Virus
+      name'', ''virus host type'', ''collection year'', ''country of collection''
       ex ''suspected epidemiological origin'', ''genotype'', ''strain'', ''variant
       name or specific feature'
     from_schema: https://w3id.org/evorao/
@@ -311,6 +353,12 @@ attributes:
     description: The list of authors
     title: authors
     from_schema: https://w3id.org/evorao/
+    close_mappings:
+    - wdp:P2093
+    - schema:author
+    related_mappings:
+    - sio:001315
+    - iao:0000321
     rank: 1000
     alias: authors
     owner: Publication
@@ -324,7 +372,8 @@ attributes:
     description: Concise summary of the publication
     title: abstract
     from_schema: https://w3id.org/evorao/
-    exact_mappings:
+    close_mappings:
+    - dct:abstract
     - schema:abstract
     rank: 1000
     alias: abstract
@@ -339,8 +388,12 @@ attributes:
     description: A Digital Object Identifier (DOI) that can be related
     title: DOI
     from_schema: https://w3id.org/evorao/
-    close_mappings:
+    exact_mappings:
     - wdp:P356
+    close_mappings:
+    - reproduceme:doi
+    broad_mappings:
+    - dct:bibliographicCitation
     rank: 1000
     alias: doi
     owner: Publication
@@ -355,6 +408,10 @@ attributes:
     description: The scientific journal in which the publication was published
     title: journal
     from_schema: https://w3id.org/evorao/
+    close_mappings:
+    - wdp:P1433
+    - biolink:published_in
+    - uniprotrdfs:publishedIn
     rank: 1000
     alias: journal
     owner: Publication

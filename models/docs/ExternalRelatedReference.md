@@ -105,6 +105,7 @@ URI: [EVORAO:ExternalRelatedReference](https://w3id.org/evorao/ExternalRelatedRe
 | ---  | ---  |
 | self | EVORAO:ExternalRelatedReference |
 | native | EVORAO:ExternalRelatedReference |
+| close | ms:1000878, ncit:C43621, ms:1000878, ncit:C43621 |
 
 
 
@@ -124,6 +125,11 @@ name: ExternalRelatedReference
 description: A reference that permits to retrieve an item from an external provider
 title: External related reference
 from_schema: https://w3id.org/evorao/
+close_mappings:
+- ms:1000878
+- ncit:C43621
+- ms:1000878
+- ncit:C43621
 is_a: Resource
 slots:
 - reference
@@ -137,6 +143,7 @@ slot_usage:
     title: reference
     close_mappings:
     - dct:identifier
+    - dct:references
     domain_of:
     - ExternalRelatedReference
     range: string
@@ -160,8 +167,9 @@ slot_usage:
     description: The url prefix that once completed with the reference will lead to
       the linked external resource
     title: reference provider prefix
-    close_mappings:
+    related_mappings:
     - dcat:landingPage
+    - iao:0000599
     domain_of:
     - ExternalRelatedReference
     range: string
@@ -190,6 +198,11 @@ name: ExternalRelatedReference
 description: A reference that permits to retrieve an item from an external provider
 title: External related reference
 from_schema: https://w3id.org/evorao/
+close_mappings:
+- ms:1000878
+- ncit:C43621
+- ms:1000878
+- ncit:C43621
 is_a: Resource
 slot_usage:
   reference:
@@ -198,6 +211,7 @@ slot_usage:
     title: reference
     close_mappings:
     - dct:identifier
+    - dct:references
     domain_of:
     - ExternalRelatedReference
     range: string
@@ -221,8 +235,9 @@ slot_usage:
     description: The url prefix that once completed with the reference will lead to
       the linked external resource
     title: reference provider prefix
-    close_mappings:
+    related_mappings:
     - dcat:landingPage
+    - iao:0000599
     domain_of:
     - ExternalRelatedReference
     range: string
@@ -247,6 +262,7 @@ attributes:
     from_schema: https://w3id.org/evorao/
     close_mappings:
     - dct:identifier
+    - dct:references
     rank: 1000
     alias: reference
     owner: ExternalRelatedReference
@@ -278,8 +294,9 @@ attributes:
       the linked external resource
     title: reference provider prefix
     from_schema: https://w3id.org/evorao/
-    close_mappings:
+    related_mappings:
     - dcat:landingPage
+    - iao:0000599
     rank: 1000
     alias: referenceProviderPrefix
     owner: ExternalRelatedReference

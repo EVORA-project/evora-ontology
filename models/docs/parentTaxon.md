@@ -64,6 +64,7 @@ Alias: parentTaxon
 | native | EVORAO:parentTaxon |
 | exact | schema:parentTaxon |
 | broad | dwc:Taxon |
+| close | wdp:P171 |
 
 
 
@@ -78,6 +79,8 @@ title: parent taxon
 from_schema: https://w3id.org/evorao/
 exact_mappings:
 - schema:parentTaxon
+close_mappings:
+- wdp:P171
 broad_mappings:
 - dwc:Taxon
 rank: 1000

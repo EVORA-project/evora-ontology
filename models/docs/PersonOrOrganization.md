@@ -112,7 +112,7 @@ URI: [foaf:Agent](http://xmlns.com/foaf/0.1/Agent)
 | ---  | ---  |
 | self | foaf:Agent |
 | native | EVORAO:PersonOrOrganization |
-| exact | dct:Agent, dct:Agent |
+| exact | dct:Agent, prov:Agent, dct:Agent, prov:Agent |
 | close | vcard:Agent, vcard:Agent |
 
 
@@ -135,7 +135,9 @@ title: Person or organization
 from_schema: https://w3id.org/evorao/
 exact_mappings:
 - dct:Agent
+- prov:Agent
 - dct:Agent
+- prov:Agent
 close_mappings:
 - vcard:Agent
 - vcard:Agent
@@ -153,7 +155,9 @@ slot_usage:
     title: name
     exact_mappings:
     - schema:name
+    - vcard:fn
     close_mappings:
+    - rdfs:label
     - dct:title
     slot_uri: foaf:name
     domain_of:
@@ -169,10 +173,8 @@ slot_usage:
       the current item
     title: description
     comments:
-    - 'Describe this item in few lines. This description will serve as a summary to
+    - Describe this item in few lines. This description will serve as a summary to
       present the resource.
-
-      '
     exact_mappings:
     - schema:description
     slot_uri: dct:description
@@ -193,6 +195,8 @@ slot_usage:
     name: homePage
     description: A web page that serves as the main or introductory page
     title: home page
+    close_mappings:
+    - swo:0004006
     slot_uri: foaf:homepage
     domain_of:
     - PersonOrOrganization
@@ -203,6 +207,8 @@ slot_usage:
     name: contactPoint
     description: An information that allows someone to establish communication
     title: contact point
+    exact_mappings:
+    - schema:contactPoint
     slot_uri: dcat:contactPoint
     domain_of:
     - PersonOrOrganization
@@ -215,6 +221,8 @@ slot_usage:
     name: logo
     description: A path or URL to the related logo
     title: logo
+    exact_mappings:
+    - schema:logo
     domain_of:
     - PersonOrOrganization
     - License
@@ -237,7 +245,9 @@ title: Person or organization
 from_schema: https://w3id.org/evorao/
 exact_mappings:
 - dct:Agent
+- prov:Agent
 - dct:Agent
+- prov:Agent
 close_mappings:
 - vcard:Agent
 - vcard:Agent
@@ -249,7 +259,9 @@ slot_usage:
     title: name
     exact_mappings:
     - schema:name
+    - vcard:fn
     close_mappings:
+    - rdfs:label
     - dct:title
     slot_uri: foaf:name
     domain_of:
@@ -265,10 +277,8 @@ slot_usage:
       the current item
     title: description
     comments:
-    - 'Describe this item in few lines. This description will serve as a summary to
+    - Describe this item in few lines. This description will serve as a summary to
       present the resource.
-
-      '
     exact_mappings:
     - schema:description
     slot_uri: dct:description
@@ -289,6 +299,8 @@ slot_usage:
     name: homePage
     description: A web page that serves as the main or introductory page
     title: home page
+    close_mappings:
+    - swo:0004006
     slot_uri: foaf:homepage
     domain_of:
     - PersonOrOrganization
@@ -299,6 +311,8 @@ slot_usage:
     name: contactPoint
     description: An information that allows someone to establish communication
     title: contact point
+    exact_mappings:
+    - schema:contactPoint
     slot_uri: dcat:contactPoint
     domain_of:
     - PersonOrOrganization
@@ -311,6 +325,8 @@ slot_usage:
     name: logo
     description: A path or URL to the related logo
     title: logo
+    exact_mappings:
+    - schema:logo
     domain_of:
     - PersonOrOrganization
     - License
@@ -326,7 +342,9 @@ attributes:
     from_schema: https://w3id.org/evorao/
     exact_mappings:
     - schema:name
+    - vcard:fn
     close_mappings:
+    - rdfs:label
     - dct:title
     rank: 1000
     slot_uri: foaf:name
@@ -345,14 +363,13 @@ attributes:
       the current item
     title: description
     comments:
-    - 'Describe this item in few lines. This description will serve as a summary to
+    - Describe this item in few lines. This description will serve as a summary to
       present the resource.
-
-      '
     from_schema: https://w3id.org/evorao/
     exact_mappings:
     - schema:description
     close_mappings:
+    - schema:description
     - schema:description
     rank: 1000
     slot_uri: dct:description
@@ -376,6 +393,8 @@ attributes:
     description: A web page that serves as the main or introductory page
     title: home page
     from_schema: https://w3id.org/evorao/
+    close_mappings:
+    - swo:0004006
     rank: 1000
     slot_uri: foaf:homepage
     alias: homePage
@@ -390,6 +409,8 @@ attributes:
     description: An information that allows someone to establish communication
     title: contact point
     from_schema: https://w3id.org/evorao/
+    exact_mappings:
+    - schema:contactPoint
     rank: 1000
     slot_uri: dcat:contactPoint
     alias: contactPoint
@@ -406,6 +427,8 @@ attributes:
     description: A path or URL to the related logo
     title: logo
     from_schema: https://w3id.org/evorao/
+    exact_mappings:
+    - schema:logo
     rank: 1000
     alias: logo
     owner: PersonOrOrganization

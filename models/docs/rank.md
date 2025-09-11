@@ -63,9 +63,9 @@ Alias: rank
 | ---  | ---  |
 | self | EVORAO:rank |
 | native | EVORAO:rank |
-| exact | wdp:P105, dwc:taxonRank, schema:taxonRank |
-| related | taxrank:1000000, ncbitaxon:has_rank |
-| close | dwc:taxonRank, schema:taxonRank, biolink:has_taxonomic_rank |
+| exact | wdp:P105, wdp:P105 |
+| related | taxrank:1000000, ncbitaxon:has_rank, taxrank:1000000, ncbitaxon:has_rank |
+| close | dwc:taxonRank, schema:taxonRank, biolink:has_taxonomic_rank, dwc:taxonRank, schema:taxonRank, biolink:has_taxonomic_rank |
 
 
 
@@ -80,13 +80,17 @@ title: rank
 from_schema: https://w3id.org/evorao/
 exact_mappings:
 - wdp:P105
-- dwc:taxonRank
-- schema:taxonRank
+- wdp:P105
 close_mappings:
 - dwc:taxonRank
 - schema:taxonRank
 - biolink:has_taxonomic_rank
+- dwc:taxonRank
+- schema:taxonRank
+- biolink:has_taxonomic_rank
 related_mappings:
+- taxrank:1000000
+- ncbitaxon:has_rank
 - taxrank:1000000
 - ncbitaxon:has_rank
 rank: 1000

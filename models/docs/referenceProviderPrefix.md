@@ -62,7 +62,7 @@ Alias: referenceProviderPrefix
 | ---  | ---  |
 | self | EVORAO:referenceProviderPrefix |
 | native | EVORAO:referenceProviderPrefix |
-| close | dcat:landingPage |
+| related | dcat:landingPage, iao:0000599 |
 
 
 
@@ -76,8 +76,9 @@ description: The url prefix that once completed with the reference will lead to 
   linked external resource
 title: reference provider prefix
 from_schema: https://w3id.org/evorao/
-close_mappings:
+related_mappings:
 - dcat:landingPage
+- iao:0000599
 rank: 1000
 alias: referenceProviderPrefix
 domain_of:

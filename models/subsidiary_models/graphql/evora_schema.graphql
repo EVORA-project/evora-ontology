@@ -1,5 +1,5 @@
 # metamodel_version: 1.7.0
-# version: 1.0.9149
+# version: 1.0.9485
 type AlternateName
   {
     title: String!
@@ -249,7 +249,7 @@ type DataProvider
     loginTokenName: String
     queryMethod: String!
     contentType: String!
-    providedEntityType: [String]!
+    providedEntityType: [Uri]!
     weight: Integer!
   }
 

@@ -85,7 +85,7 @@ URI: [EVORAO:DataProvider](https://w3id.org/evorao/DataProvider)
 | [loginTokenName](loginTokenName.md) | 0..1 <br/> [String](String.md) | The name of the token, unique identifier of an interaction session, that will... | direct |
 | [queryMethod](queryMethod.md) | 1 <br/> [String](String.md) | The http request method used to access the requested query url | direct |
 | [contentType](contentType.md) | 1 <br/> [String](String.md) | The content type of the response to queries | direct |
-| [providedEntityType](providedEntityType.md) | 1..* <br/> [String](String.md) | The identification of the entity type (Class) described by the response to th... | direct |
+| [providedEntityType](providedEntityType.md) | 1..* <br/> [Uri](Uri.md) | Identifies the type of entity (ontology class) described by the response to a... | direct |
 | [weight](weight.md) | 1 <br/> [Integer](Integer.md) | A numerical value indicating relative importance or priority, generally proce... | direct |
 | [title](title.md) | 1 <br/> [String](String.md) | A name given to the resource | [DataService](DataService.md) |
 | [description](description.md) | 0..1 _recommended_ <br/> [String](String.md) | A short explanation of the characteristics, features, or nature of the curren... | [DataService](DataService.md) |
@@ -251,8 +251,8 @@ slot_usage:
     title: content type
     comments:
     - This property characterizes how the content is structured or encoded, independent
-      of the entity type it represents. Examples include "JSON","CSV", "TSV", "FASTA",
-      "GenBank",
+      of the entity type it represents. Values should use MIME types (e.g. application/json,
+      text/csv, text/tab-separated-values, text/x-fasta, application/vnd.genbank)
     exact_mappings:
     - schema:contentType
     - dct:format
@@ -264,18 +264,20 @@ slot_usage:
     multivalued: false
   providedEntityType:
     name: providedEntityType
-    description: The identification of the entity type (Class) described by the response
-      to the query
+    description: Identifies the type of entity (ontology class) described by the response
+      to a query. Values should be expressed as IRIs (e.g., from an ontology)
     title: provided entity type
     comments:
     - This property defines what the response is about, independent of its serialization.
-      It should reference an ontology class such as EVORAO:Virus, EVORAO:Protein,
-      etc
+      Values should be ontology class IRIs (e.g. https://w3id.org/evorao/Virus)
+    close_mappings:
+    - dct:type
+    - schema:additionalType
     related_mappings:
     - dcat:servesDataset
     domain_of:
     - DataProvider
-    range: string
+    range: uri
     required: true
     multivalued: true
   weight:
@@ -396,8 +398,8 @@ slot_usage:
     title: content type
     comments:
     - This property characterizes how the content is structured or encoded, independent
-      of the entity type it represents. Examples include "JSON","CSV", "TSV", "FASTA",
-      "GenBank",
+      of the entity type it represents. Values should use MIME types (e.g. application/json,
+      text/csv, text/tab-separated-values, text/x-fasta, application/vnd.genbank)
     exact_mappings:
     - schema:contentType
     - dct:format
@@ -409,18 +411,20 @@ slot_usage:
     multivalued: false
   providedEntityType:
     name: providedEntityType
-    description: The identification of the entity type (Class) described by the response
-      to the query
+    description: Identifies the type of entity (ontology class) described by the response
+      to a query. Values should be expressed as IRIs (e.g., from an ontology)
     title: provided entity type
     comments:
     - This property defines what the response is about, independent of its serialization.
-      It should reference an ontology class such as EVORAO:Virus, EVORAO:Protein,
-      etc
+      Values should be ontology class IRIs (e.g. https://w3id.org/evorao/Virus)
+    close_mappings:
+    - dct:type
+    - schema:additionalType
     related_mappings:
     - dcat:servesDataset
     domain_of:
     - DataProvider
-    range: string
+    range: uri
     required: true
     multivalued: true
   weight:
@@ -545,8 +549,8 @@ attributes:
     title: content type
     comments:
     - This property characterizes how the content is structured or encoded, independent
-      of the entity type it represents. Examples include "JSON","CSV", "TSV", "FASTA",
-      "GenBank",
+      of the entity type it represents. Values should use MIME types (e.g. application/json,
+      text/csv, text/tab-separated-values, text/x-fasta, application/vnd.genbank)
     from_schema: https://w3id.org/evorao/
     exact_mappings:
     - schema:contentType
@@ -562,14 +566,16 @@ attributes:
     multivalued: false
   providedEntityType:
     name: providedEntityType
-    description: The identification of the entity type (Class) described by the response
-      to the query
+    description: Identifies the type of entity (ontology class) described by the response
+      to a query. Values should be expressed as IRIs (e.g., from an ontology)
     title: provided entity type
     comments:
     - This property defines what the response is about, independent of its serialization.
-      It should reference an ontology class such as EVORAO:Virus, EVORAO:Protein,
-      etc
+      Values should be ontology class IRIs (e.g. https://w3id.org/evorao/Virus)
     from_schema: https://w3id.org/evorao/
+    close_mappings:
+    - dct:type
+    - schema:additionalType
     related_mappings:
     - dcat:servesDataset
     rank: 1000
@@ -577,7 +583,7 @@ attributes:
     owner: DataProvider
     domain_of:
     - DataProvider
-    range: string
+    range: uri
     required: true
     multivalued: true
   weight:
@@ -609,9 +615,8 @@ attributes:
     title: title
     comments:
     - 'The title of the item should be as short and descriptive as possible. E.g.
-      for virus products it should basically be based on the following Pattern:
-
-      ''Virus name'', ''virus host type'', ''collection year'', ''country of collection''
+      for virus products it should basically be based on the following Pattern: ''Virus
+      name'', ''virus host type'', ''collection year'', ''country of collection''
       ex ''suspected epidemiological origin'', ''genotype'', ''strain'', ''variant
       name or specific feature'
     from_schema: https://w3id.org/evorao/
@@ -638,14 +643,13 @@ attributes:
       the current item
     title: description
     comments:
-    - 'Describe this item in few lines. This description will serve as a summary to
+    - Describe this item in few lines. This description will serve as a summary to
       present the resource.
-
-      '
     from_schema: https://w3id.org/evorao/
     exact_mappings:
     - schema:description
     close_mappings:
+    - schema:description
     - schema:description
     rank: 1000
     slot_uri: dct:description

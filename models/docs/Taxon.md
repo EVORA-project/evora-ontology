@@ -162,8 +162,8 @@ URI: [EVORAO:Taxon](https://w3id.org/evorao/Taxon)
 | ---  | ---  |
 | self | EVORAO:Taxon |
 | native | EVORAO:Taxon |
-| exact | dwc:Taxon, schema:Taxon, dwc:Taxon, schema:Taxon |
-| close | wd:Q16521, wd:Q16521 |
+| exact | schema:Taxon, schema:Taxon |
+| close | wd:Q16521, dwc:Taxon, uniprotrdfs:Taxon, wd:Q16521, dwc:Taxon, uniprotrdfs:Taxon |
 
 
 
@@ -188,13 +188,15 @@ comments:
   Use of Data provider recommended
 from_schema: https://w3id.org/evorao/
 exact_mappings:
-- dwc:Taxon
 - schema:Taxon
-- dwc:Taxon
 - schema:Taxon
 close_mappings:
 - wd:Q16521
+- dwc:Taxon
+- uniprotrdfs:Taxon
 - wd:Q16521
+- dwc:Taxon
+- uniprotrdfs:Taxon
 is_a: Term
 slots:
 - taxonomy
@@ -209,6 +211,8 @@ slot_usage:
     name: taxonomy
     description: The taxonomy release(s) in which this entity exists
     title: taxonomy
+    broad_mappings:
+    - dct:isPartOf
     domain_of:
     - Taxon
     - TaxonomicRank
@@ -222,6 +226,8 @@ slot_usage:
     title: parent taxon
     exact_mappings:
     - schema:parentTaxon
+    close_mappings:
+    - wdp:P171
     broad_mappings:
     - dwc:Taxon
     domain_of:
@@ -234,8 +240,14 @@ slot_usage:
     description: Relative level or position of the identified taxon in the taxonomy
     title: rank
     exact_mappings:
+    - wdp:P105
+    close_mappings:
     - dwc:taxonRank
     - schema:taxonRank
+    - biolink:has_taxonomic_rank
+    related_mappings:
+    - taxrank:1000000
+    - ncbitaxon:has_rank
     domain_of:
     - Taxon
     - Taxonomy
@@ -246,6 +258,8 @@ slot_usage:
     name: previouslyKnownAs
     description: Any historic version of this taxon having a different name
     title: previously known as
+    related_mappings:
+    - schema:alternateName
     broad_mappings:
     - dwc:Taxon
     domain_of:
@@ -263,6 +277,8 @@ slot_usage:
       uses NCBI Taxonomy
     close_mappings:
     - dwc:taxonID
+    related_mappings:
+    - dct:references
     domain_of:
     - Taxon
     range: Taxon
@@ -274,8 +290,11 @@ slot_usage:
     title: taxonomic ID
     exact_mappings:
     - dwc:taxonID
+    narrow_mappings:
+    - ncit:P331
     broad_mappings:
     - schema:identifier
+    - dct:identifier
     domain_of:
     - Taxon
     range: string
@@ -292,6 +311,8 @@ slot_usage:
       'taxonomic ID' + 'has version'
     close_mappings:
     - dwc:taxonID
+    broad_mappings:
+    - dct:identifier
     domain_of:
     - Taxon
     range: string
@@ -315,19 +336,23 @@ comments:
   Use of Data provider recommended
 from_schema: https://w3id.org/evorao/
 exact_mappings:
-- dwc:Taxon
 - schema:Taxon
-- dwc:Taxon
 - schema:Taxon
 close_mappings:
 - wd:Q16521
+- dwc:Taxon
+- uniprotrdfs:Taxon
 - wd:Q16521
+- dwc:Taxon
+- uniprotrdfs:Taxon
 is_a: Term
 slot_usage:
   taxonomy:
     name: taxonomy
     description: The taxonomy release(s) in which this entity exists
     title: taxonomy
+    broad_mappings:
+    - dct:isPartOf
     domain_of:
     - Taxon
     - TaxonomicRank
@@ -341,6 +366,8 @@ slot_usage:
     title: parent taxon
     exact_mappings:
     - schema:parentTaxon
+    close_mappings:
+    - wdp:P171
     broad_mappings:
     - dwc:Taxon
     domain_of:
@@ -353,8 +380,14 @@ slot_usage:
     description: Relative level or position of the identified taxon in the taxonomy
     title: rank
     exact_mappings:
+    - wdp:P105
+    close_mappings:
     - dwc:taxonRank
     - schema:taxonRank
+    - biolink:has_taxonomic_rank
+    related_mappings:
+    - taxrank:1000000
+    - ncbitaxon:has_rank
     domain_of:
     - Taxon
     - Taxonomy
@@ -365,6 +398,8 @@ slot_usage:
     name: previouslyKnownAs
     description: Any historic version of this taxon having a different name
     title: previously known as
+    related_mappings:
+    - schema:alternateName
     broad_mappings:
     - dwc:Taxon
     domain_of:
@@ -382,6 +417,8 @@ slot_usage:
       uses NCBI Taxonomy
     close_mappings:
     - dwc:taxonID
+    related_mappings:
+    - dct:references
     domain_of:
     - Taxon
     range: Taxon
@@ -393,8 +430,11 @@ slot_usage:
     title: taxonomic ID
     exact_mappings:
     - dwc:taxonID
+    narrow_mappings:
+    - ncit:P331
     broad_mappings:
     - schema:identifier
+    - dct:identifier
     domain_of:
     - Taxon
     range: string
@@ -411,6 +451,8 @@ slot_usage:
       'taxonomic ID' + 'has version'
     close_mappings:
     - dwc:taxonID
+    broad_mappings:
+    - dct:identifier
     domain_of:
     - Taxon
     range: string
@@ -423,6 +465,8 @@ attributes:
     description: The taxonomy release(s) in which this entity exists
     title: taxonomy
     from_schema: https://w3id.org/evorao/
+    broad_mappings:
+    - dct:isPartOf
     rank: 1000
     alias: taxonomy
     owner: Taxon
@@ -440,6 +484,8 @@ attributes:
     from_schema: https://w3id.org/evorao/
     exact_mappings:
     - schema:parentTaxon
+    close_mappings:
+    - wdp:P171
     broad_mappings:
     - dwc:Taxon
     rank: 1000
@@ -456,8 +502,7 @@ attributes:
     title: rank
     from_schema: https://w3id.org/evorao/
     exact_mappings:
-    - dwc:taxonRank
-    - schema:taxonRank
+    - wdp:P105
     close_mappings:
     - dwc:taxonRank
     - schema:taxonRank
@@ -479,6 +524,8 @@ attributes:
     description: Any historic version of this taxon having a different name
     title: previously known as
     from_schema: https://w3id.org/evorao/
+    related_mappings:
+    - schema:alternateName
     broad_mappings:
     - dwc:Taxon
     rank: 1000
@@ -500,6 +547,8 @@ attributes:
     from_schema: https://w3id.org/evorao/
     close_mappings:
     - dwc:taxonID
+    related_mappings:
+    - dct:references
     rank: 1000
     alias: externalEquivalentTaxon
     owner: Taxon
@@ -515,8 +564,11 @@ attributes:
     from_schema: https://w3id.org/evorao/
     exact_mappings:
     - dwc:taxonID
+    narrow_mappings:
+    - ncit:P331
     broad_mappings:
     - schema:identifier
+    - dct:identifier
     rank: 1000
     alias: taxonomicId
     owner: Taxon
@@ -537,6 +589,8 @@ attributes:
     from_schema: https://w3id.org/evorao/
     close_mappings:
     - dwc:taxonID
+    broad_mappings:
+    - dct:identifier
     rank: 1000
     alias: taxonomicNodeId
     owner: Taxon
@@ -552,9 +606,8 @@ attributes:
     title: title
     comments:
     - 'The title of the item should be as short and descriptive as possible. E.g.
-      for virus products it should basically be based on the following Pattern:
-
-      ''Virus name'', ''virus host type'', ''collection year'', ''country of collection''
+      for virus products it should basically be based on the following Pattern: ''Virus
+      name'', ''virus host type'', ''collection year'', ''country of collection''
       ex ''suspected epidemiological origin'', ''genotype'', ''strain'', ''variant
       name or specific feature'
     from_schema: https://w3id.org/evorao/
@@ -581,14 +634,13 @@ attributes:
       the current item
     title: description
     comments:
-    - 'Describe this item in few lines. This description will serve as a summary to
+    - Describe this item in few lines. This description will serve as a summary to
       present the resource.
-
-      '
     from_schema: https://w3id.org/evorao/
     exact_mappings:
     - schema:description
     close_mappings:
+    - schema:description
     - schema:description
     rank: 1000
     slot_uri: dct:description
@@ -637,6 +689,10 @@ attributes:
     from_schema: https://w3id.org/evorao/
     close_mappings:
     - wdp:P972
+    related_mappings:
+    - dct:isReferencedBy
+    broad_mappings:
+    - dct:isPartOf
     rank: 1000
     alias: inVocabulary
     owner: Taxon

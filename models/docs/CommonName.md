@@ -120,8 +120,8 @@ URI: [EVORAO:CommonName](https://w3id.org/evorao/CommonName)
 | ---  | ---  |
 | self | EVORAO:CommonName |
 | native | EVORAO:CommonName |
-| exact | dwc:vernacularName, dwc:vernacularName |
-| close | wd:Q502895, wd:Q502895 |
+| exact | dwc:vernacularName, wd:Q502895, dwc:vernacularName, wd:Q502895 |
+| broad | sio:000118, sio:000118 |
 
 
 
@@ -145,10 +145,12 @@ title: Common name
 from_schema: https://w3id.org/evorao/
 exact_mappings:
 - dwc:vernacularName
+- wd:Q502895
 - dwc:vernacularName
-close_mappings:
 - wd:Q502895
-- wd:Q502895
+broad_mappings:
+- sio:000118
+- sio:000118
 is_a: Term
 slots:
 - alternateName
@@ -162,6 +164,10 @@ slot_usage:
     - This includes previous names, acronyms, former taxonomic terms, and other variations.
       This information can serve as keywords for search purposes and as a bridge with
       other projects that use different naming systems or taxonomies
+    exact_mappings:
+    - schema:alternateName
+    - dct:alternative
+    - iao:0000118
     close_mappings:
     - wdp:P4970
     domain_of:
@@ -200,10 +206,12 @@ title: Common name
 from_schema: https://w3id.org/evorao/
 exact_mappings:
 - dwc:vernacularName
+- wd:Q502895
 - dwc:vernacularName
-close_mappings:
 - wd:Q502895
-- wd:Q502895
+broad_mappings:
+- sio:000118
+- sio:000118
 is_a: Term
 slot_usage:
   alternateName:
@@ -214,6 +222,10 @@ slot_usage:
     - This includes previous names, acronyms, former taxonomic terms, and other variations.
       This information can serve as keywords for search purposes and as a bridge with
       other projects that use different naming systems or taxonomies
+    exact_mappings:
+    - schema:alternateName
+    - dct:alternative
+    - iao:0000118
     close_mappings:
     - wdp:P4970
     domain_of:
@@ -246,6 +258,10 @@ attributes:
       This information can serve as keywords for search purposes and as a bridge with
       other projects that use different naming systems or taxonomies
     from_schema: https://w3id.org/evorao/
+    exact_mappings:
+    - schema:alternateName
+    - dct:alternative
+    - iao:0000118
     close_mappings:
     - wdp:P4970
     rank: 1000
@@ -266,6 +282,8 @@ attributes:
     from_schema: https://w3id.org/evorao/
     close_mappings:
     - wdp:P248
+    related_mappings:
+    - sio:000253
     rank: 1000
     alias: sourceOfInformation
     owner: CommonName
@@ -281,9 +299,8 @@ attributes:
     title: title
     comments:
     - 'The title of the item should be as short and descriptive as possible. E.g.
-      for virus products it should basically be based on the following Pattern:
-
-      ''Virus name'', ''virus host type'', ''collection year'', ''country of collection''
+      for virus products it should basically be based on the following Pattern: ''Virus
+      name'', ''virus host type'', ''collection year'', ''country of collection''
       ex ''suspected epidemiological origin'', ''genotype'', ''strain'', ''variant
       name or specific feature'
     from_schema: https://w3id.org/evorao/
@@ -310,14 +327,13 @@ attributes:
       the current item
     title: description
     comments:
-    - 'Describe this item in few lines. This description will serve as a summary to
+    - Describe this item in few lines. This description will serve as a summary to
       present the resource.
-
-      '
     from_schema: https://w3id.org/evorao/
     exact_mappings:
     - schema:description
     close_mappings:
+    - schema:description
     - schema:description
     rank: 1000
     slot_uri: dct:description
@@ -366,6 +382,10 @@ attributes:
     from_schema: https://w3id.org/evorao/
     close_mappings:
     - wdp:P972
+    related_mappings:
+    - dct:isReferencedBy
+    broad_mappings:
+    - dct:isPartOf
     rank: 1000
     alias: inVocabulary
     owner: CommonName

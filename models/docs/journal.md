@@ -60,6 +60,7 @@ Alias: journal
 | ---  | ---  |
 | self | EVORAO:journal |
 | native | EVORAO:journal |
+| close | wdp:P1433, biolink:published_in, uniprotrdfs:publishedIn |
 
 
 
@@ -72,6 +73,10 @@ name: journal
 description: The scientific journal in which the publication was published
 title: journal
 from_schema: https://w3id.org/evorao/
+close_mappings:
+- wdp:P1433
+- biolink:published_in
+- uniprotrdfs:publishedIn
 rank: 1000
 alias: journal
 domain_of:

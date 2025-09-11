@@ -165,7 +165,8 @@ URI: [EVORAO:Term](https://w3id.org/evorao/Term)
 | ---  | ---  |
 | self | EVORAO:Term |
 | native | EVORAO:Term |
-| close | wd:Q1969448, wd:Q1969448 |
+| exact | sio:000275, ncit:C45559, wd:Q1969448, sio:000275, ncit:C45559, wd:Q1969448 |
+| narrow | wd:Q12812139, wd:Q12812139 |
 
 
 
@@ -185,9 +186,16 @@ name: Term
 description: Word or phrase from a specialized area of knowledge
 title: Term
 from_schema: https://w3id.org/evorao/
-close_mappings:
+exact_mappings:
+- sio:000275
+- ncit:C45559
 - wd:Q1969448
+- sio:000275
+- ncit:C45559
 - wd:Q1969448
+narrow_mappings:
+- wd:Q12812139
+- wd:Q12812139
 is_a: Resource
 abstract: true
 slots:
@@ -202,9 +210,8 @@ slot_usage:
     title: title
     comments:
     - 'The title of the item should be as short and descriptive as possible. E.g.
-      for virus products it should basically be based on the following Pattern:
-
-      ''Virus name'', ''virus host type'', ''collection year'', ''country of collection''
+      for virus products it should basically be based on the following Pattern: ''Virus
+      name'', ''virus host type'', ''collection year'', ''country of collection''
       ex ''suspected epidemiological origin'', ''genotype'', ''strain'', ''variant
       name or specific feature'
     exact_mappings:
@@ -227,10 +234,8 @@ slot_usage:
       the current item
     title: description
     comments:
-    - 'Describe this item in few lines. This description will serve as a summary to
+    - Describe this item in few lines. This description will serve as a summary to
       present the resource.
-
-      '
     exact_mappings:
     - schema:description
     slot_uri: dct:description
@@ -268,6 +273,10 @@ slot_usage:
     title: in Vocabulary
     close_mappings:
     - wdp:P972
+    related_mappings:
+    - dct:isReferencedBy
+    broad_mappings:
+    - dct:isPartOf
     domain_of:
     - Term
     range: Vocabulary
@@ -285,9 +294,16 @@ name: Term
 description: Word or phrase from a specialized area of knowledge
 title: Term
 from_schema: https://w3id.org/evorao/
-close_mappings:
+exact_mappings:
+- sio:000275
+- ncit:C45559
 - wd:Q1969448
+- sio:000275
+- ncit:C45559
 - wd:Q1969448
+narrow_mappings:
+- wd:Q12812139
+- wd:Q12812139
 is_a: Resource
 abstract: true
 slot_usage:
@@ -297,9 +313,8 @@ slot_usage:
     title: title
     comments:
     - 'The title of the item should be as short and descriptive as possible. E.g.
-      for virus products it should basically be based on the following Pattern:
-
-      ''Virus name'', ''virus host type'', ''collection year'', ''country of collection''
+      for virus products it should basically be based on the following Pattern: ''Virus
+      name'', ''virus host type'', ''collection year'', ''country of collection''
       ex ''suspected epidemiological origin'', ''genotype'', ''strain'', ''variant
       name or specific feature'
     exact_mappings:
@@ -322,10 +337,8 @@ slot_usage:
       the current item
     title: description
     comments:
-    - 'Describe this item in few lines. This description will serve as a summary to
+    - Describe this item in few lines. This description will serve as a summary to
       present the resource.
-
-      '
     exact_mappings:
     - schema:description
     slot_uri: dct:description
@@ -363,6 +376,10 @@ slot_usage:
     title: in Vocabulary
     close_mappings:
     - wdp:P972
+    related_mappings:
+    - dct:isReferencedBy
+    broad_mappings:
+    - dct:isPartOf
     domain_of:
     - Term
     range: Vocabulary
@@ -375,9 +392,8 @@ attributes:
     title: title
     comments:
     - 'The title of the item should be as short and descriptive as possible. E.g.
-      for virus products it should basically be based on the following Pattern:
-
-      ''Virus name'', ''virus host type'', ''collection year'', ''country of collection''
+      for virus products it should basically be based on the following Pattern: ''Virus
+      name'', ''virus host type'', ''collection year'', ''country of collection''
       ex ''suspected epidemiological origin'', ''genotype'', ''strain'', ''variant
       name or specific feature'
     from_schema: https://w3id.org/evorao/
@@ -404,14 +420,13 @@ attributes:
       the current item
     title: description
     comments:
-    - 'Describe this item in few lines. This description will serve as a summary to
+    - Describe this item in few lines. This description will serve as a summary to
       present the resource.
-
-      '
     from_schema: https://w3id.org/evorao/
     exact_mappings:
     - schema:description
     close_mappings:
+    - schema:description
     - schema:description
     rank: 1000
     slot_uri: dct:description
@@ -460,6 +475,10 @@ attributes:
     from_schema: https://w3id.org/evorao/
     close_mappings:
     - wdp:P972
+    related_mappings:
+    - dct:isReferencedBy
+    broad_mappings:
+    - dct:isPartOf
     rank: 1000
     alias: inVocabulary
     owner: Term

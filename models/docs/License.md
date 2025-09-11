@@ -150,9 +150,8 @@ slot_usage:
     title: title
     comments:
     - 'The title of the item should be as short and descriptive as possible. E.g.
-      for virus products it should basically be based on the following Pattern:
-
-      ''Virus name'', ''virus host type'', ''collection year'', ''country of collection''
+      for virus products it should basically be based on the following Pattern: ''Virus
+      name'', ''virus host type'', ''collection year'', ''country of collection''
       ex ''suspected epidemiological origin'', ''genotype'', ''strain'', ''variant
       name or specific feature'
     exact_mappings:
@@ -175,10 +174,11 @@ slot_usage:
       the current item
     title: description
     comments:
-    - 'Describe this item in few lines. This description will serve as a summary to
-      present the resource.
-
-      '
+    - 'The title of the item should be as short and descriptive as possible. E.g.
+      for virus products it should basically be based on the following Pattern: ''Virus
+      name'', ''virus host type'', ''collection year'', ''country of collection''
+      ex ''suspected epidemiological origin'', ''genotype'', ''strain'', ''variant
+      name or specific feature'
     close_mappings:
     - schema:description
     slot_uri: dct:description
@@ -264,9 +264,8 @@ slot_usage:
     title: title
     comments:
     - 'The title of the item should be as short and descriptive as possible. E.g.
-      for virus products it should basically be based on the following Pattern:
-
-      ''Virus name'', ''virus host type'', ''collection year'', ''country of collection''
+      for virus products it should basically be based on the following Pattern: ''Virus
+      name'', ''virus host type'', ''collection year'', ''country of collection''
       ex ''suspected epidemiological origin'', ''genotype'', ''strain'', ''variant
       name or specific feature'
     exact_mappings:
@@ -289,10 +288,11 @@ slot_usage:
       the current item
     title: description
     comments:
-    - 'Describe this item in few lines. This description will serve as a summary to
-      present the resource.
-
-      '
+    - 'The title of the item should be as short and descriptive as possible. E.g.
+      for virus products it should basically be based on the following Pattern: ''Virus
+      name'', ''virus host type'', ''collection year'', ''country of collection''
+      ex ''suspected epidemiological origin'', ''genotype'', ''strain'', ''variant
+      name or specific feature'
     close_mappings:
     - schema:description
     slot_uri: dct:description
@@ -356,9 +356,8 @@ attributes:
     title: title
     comments:
     - 'The title of the item should be as short and descriptive as possible. E.g.
-      for virus products it should basically be based on the following Pattern:
-
-      ''Virus name'', ''virus host type'', ''collection year'', ''country of collection''
+      for virus products it should basically be based on the following Pattern: ''Virus
+      name'', ''virus host type'', ''collection year'', ''country of collection''
       ex ''suspected epidemiological origin'', ''genotype'', ''strain'', ''variant
       name or specific feature'
     from_schema: https://w3id.org/evorao/
@@ -385,12 +384,14 @@ attributes:
       the current item
     title: description
     comments:
-    - 'Describe this item in few lines. This description will serve as a summary to
-      present the resource.
-
-      '
+    - 'The title of the item should be as short and descriptive as possible. E.g.
+      for virus products it should basically be based on the following Pattern: ''Virus
+      name'', ''virus host type'', ''collection year'', ''country of collection''
+      ex ''suspected epidemiological origin'', ''genotype'', ''strain'', ''variant
+      name or specific feature'
     from_schema: https://w3id.org/evorao/
     exact_mappings:
+    - schema:description
     - schema:description
     - schema:description
     close_mappings:
@@ -454,6 +455,8 @@ attributes:
     description: A path or URL to the related logo
     title: logo
     from_schema: https://w3id.org/evorao/
+    exact_mappings:
+    - schema:logo
     rank: 1000
     alias: logo
     owner: License

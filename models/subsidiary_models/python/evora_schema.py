@@ -1,5 +1,5 @@
 # Auto generated from evora_schema.yaml by pythongen.py version: 0.0.1
-# Generation date: 2025-09-10T14:00:35
+# Generation date: 2025-09-11T07:43:27
 # Schema: EVORAO
 #
 # id: https://w3id.org/evorao/
@@ -60,7 +60,7 @@ from linkml_runtime.linkml_model.types import Boolean, Datetime, Integer, String
 from linkml_runtime.utils.metamodelcore import Bool, URI, XSDDateTime
 
 metamodel_version = "1.7.0"
-version = "1.0.9149"
+version = "1.0.9485"
 
 # Namespaces
 EVORAO = CurieNamespace('EVORAO', 'https://w3id.org/evorao/')
@@ -334,7 +334,7 @@ class DataProvider(DataService):
     title: str = None
     endpointUrl: Union[str, URI] = None
     queryMethod: str = None
-    providedEntityType: Union[str, list[str]] = None
+    providedEntityType: Union[Union[str, URI], list[Union[str, URI]]] = None
     contentType: str = "application/json"
     weight: int = 0
     license: Optional[Union[dict, "License"]] = None
@@ -357,7 +357,7 @@ class DataProvider(DataService):
             self.MissingRequiredField("providedEntityType")
         if not isinstance(self.providedEntityType, list):
             self.providedEntityType = [self.providedEntityType] if self.providedEntityType is not None else []
-        self.providedEntityType = [v if isinstance(v, str) else str(v) for v in self.providedEntityType]
+        self.providedEntityType = [v if isinstance(v, URI) else URI(v) for v in self.providedEntityType]
 
         if self._is_empty(self.weight):
             self.MissingRequiredField("weight")
@@ -2859,7 +2859,7 @@ slots.contentType = Slot(uri=EVORAO.contentType, name="contentType", curie=EVORA
                    model_uri=EVORAO.contentType, domain=None, range=str)
 
 slots.providedEntityType = Slot(uri=EVORAO.providedEntityType, name="providedEntityType", curie=EVORAO.curie('providedEntityType'),
-                   model_uri=EVORAO.providedEntityType, domain=None, range=Union[str, list[str]])
+                   model_uri=EVORAO.providedEntityType, domain=None, range=Union[Union[str, URI], list[Union[str, URI]]])
 
 slots.weight = Slot(uri=EVORAO.weight, name="weight", curie=EVORAO.curie('weight'),
                    model_uri=EVORAO.weight, domain=None, range=int)
@@ -3432,7 +3432,7 @@ slots.DataProvider_contentType = Slot(uri=EVORAO.contentType, name="DataProvider
                    model_uri=EVORAO.DataProvider_contentType, domain=DataProvider, range=str)
 
 slots.DataProvider_providedEntityType = Slot(uri=EVORAO.providedEntityType, name="DataProvider_providedEntityType", curie=EVORAO.curie('providedEntityType'),
-                   model_uri=EVORAO.DataProvider_providedEntityType, domain=DataProvider, range=Union[str, list[str]])
+                   model_uri=EVORAO.DataProvider_providedEntityType, domain=DataProvider, range=Union[Union[str, URI], list[Union[str, URI]]])
 
 slots.DataProvider_weight = Slot(uri=EVORAO.weight, name="DataProvider_weight", curie=EVORAO.curie('weight'),
                    model_uri=EVORAO.DataProvider_weight, domain=DataProvider, range=int)

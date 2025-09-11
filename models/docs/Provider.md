@@ -157,6 +157,7 @@ URI: [EVORAO:Provider](https://w3id.org/evorao/Provider)
 | ---  | ---  |
 | self | EVORAO:Provider |
 | native | EVORAO:Provider |
+| related | foaf:Organization, foaf:Organization |
 | close | dct:ProvenanceStatement, dct:ProvenanceStatement |
 
 
@@ -180,6 +181,9 @@ from_schema: https://w3id.org/evorao/
 close_mappings:
 - dct:ProvenanceStatement
 - dct:ProvenanceStatement
+related_mappings:
+- foaf:Organization
+- foaf:Organization
 is_a: Organization
 slots:
 - memberOfRi
@@ -208,6 +212,9 @@ from_schema: https://w3id.org/evorao/
 close_mappings:
 - dct:ProvenanceStatement
 - dct:ProvenanceStatement
+related_mappings:
+- foaf:Organization
+- foaf:Organization
 is_a: Organization
 slot_usage:
   memberOfRi:
@@ -242,9 +249,12 @@ attributes:
       This information can serve as keywords for search purposes and as a bridge with
       other projects that use different naming systems or taxonomies
     from_schema: https://w3id.org/evorao/
+    exact_mappings:
+    - schema:alternateName
+    - dct:alternative
+    - iao:0000118
     close_mappings:
     - wdp:P4970
-    - schema:alternateName
     rank: 1000
     alias: alternateName
     owner: Provider
@@ -277,6 +287,8 @@ attributes:
     from_schema: https://w3id.org/evorao/
     exact_mappings:
     - wdp:P6782
+    related_mappings:
+    - dwc:institutionCode
     rank: 1000
     alias: rorId
     owner: Provider
@@ -293,7 +305,9 @@ attributes:
     from_schema: https://w3id.org/evorao/
     exact_mappings:
     - schema:name
+    - vcard:fn
     close_mappings:
+    - rdfs:label
     - dct:title
     rank: 1000
     slot_uri: foaf:name
@@ -312,14 +326,13 @@ attributes:
       the current item
     title: description
     comments:
-    - 'Describe this item in few lines. This description will serve as a summary to
+    - Describe this item in few lines. This description will serve as a summary to
       present the resource.
-
-      '
     from_schema: https://w3id.org/evorao/
     exact_mappings:
     - schema:description
     close_mappings:
+    - schema:description
     - schema:description
     rank: 1000
     slot_uri: dct:description
@@ -343,6 +356,8 @@ attributes:
     description: A web page that serves as the main or introductory page
     title: home page
     from_schema: https://w3id.org/evorao/
+    close_mappings:
+    - swo:0004006
     rank: 1000
     slot_uri: foaf:homepage
     alias: homePage
@@ -357,6 +372,8 @@ attributes:
     description: An information that allows someone to establish communication
     title: contact point
     from_schema: https://w3id.org/evorao/
+    exact_mappings:
+    - schema:contactPoint
     rank: 1000
     slot_uri: dcat:contactPoint
     alias: contactPoint
@@ -373,6 +390,8 @@ attributes:
     description: A path or URL to the related logo
     title: logo
     from_schema: https://w3id.org/evorao/
+    exact_mappings:
+    - schema:logo
     rank: 1000
     alias: logo
     owner: Provider

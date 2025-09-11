@@ -63,6 +63,7 @@ Alias: previouslyKnownAs
 | self | EVORAO:previouslyKnownAs |
 | native | EVORAO:previouslyKnownAs |
 | broad | dwc:Taxon |
+| related | schema:alternateName |
 
 
 
@@ -75,6 +76,8 @@ name: previouslyKnownAs
 description: Any historic version of this taxon having a different name
 title: previously known as
 from_schema: https://w3id.org/evorao/
+related_mappings:
+- schema:alternateName
 broad_mappings:
 - dwc:Taxon
 rank: 1000

@@ -67,8 +67,8 @@ Alias: taxon
 | ---  | ---  |
 | self | EVORAO:taxon |
 | native | EVORAO:taxon |
-| related | dwc:Taxon |
-| close | schema:taxonomicRange, dwc:taxonID, dwc:toTaxon |
+| related | dwc:Taxon, dwc:Taxon |
+| close | schema:taxonomicRange, dwc:taxonID, dwc:toTaxon, schema:taxonomicRange, dwc:taxonID, dwc:toTaxon |
 
 
 
@@ -88,7 +88,11 @@ close_mappings:
 - schema:taxonomicRange
 - dwc:taxonID
 - dwc:toTaxon
+- schema:taxonomicRange
+- dwc:taxonID
+- dwc:toTaxon
 related_mappings:
+- dwc:Taxon
 - dwc:Taxon
 rank: 1000
 alias: taxon

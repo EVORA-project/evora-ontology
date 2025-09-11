@@ -117,7 +117,8 @@ URI: [EVORAO:RiskGroup](https://w3id.org/evorao/RiskGroup)
 | ---  | ---  |
 | self | EVORAO:RiskGroup |
 | native | EVORAO:RiskGroup |
-| close | wd:Q125449255, wd:Q125449255 |
+| exact | wd:Q125449255, wd:Q125449255 |
+| broad | ncit:C95347, ncit:C95347 |
 
 
 
@@ -142,9 +143,12 @@ comments:
 - Use of Data provider if any or manual import of information from wd:Q125449389,
   wd:Q125449412, wd:Q125449429, wd:Q125449439
 from_schema: https://w3id.org/evorao/
-close_mappings:
+exact_mappings:
 - wd:Q125449255
 - wd:Q125449255
+broad_mappings:
+- ncit:C95347
+- ncit:C95347
 is_a: Term
 
 ```
@@ -163,9 +167,12 @@ comments:
 - Use of Data provider if any or manual import of information from wd:Q125449389,
   wd:Q125449412, wd:Q125449429, wd:Q125449439
 from_schema: https://w3id.org/evorao/
-close_mappings:
+exact_mappings:
 - wd:Q125449255
 - wd:Q125449255
+broad_mappings:
+- ncit:C95347
+- ncit:C95347
 is_a: Term
 attributes:
   title:
@@ -174,9 +181,8 @@ attributes:
     title: title
     comments:
     - 'The title of the item should be as short and descriptive as possible. E.g.
-      for virus products it should basically be based on the following Pattern:
-
-      ''Virus name'', ''virus host type'', ''collection year'', ''country of collection''
+      for virus products it should basically be based on the following Pattern: ''Virus
+      name'', ''virus host type'', ''collection year'', ''country of collection''
       ex ''suspected epidemiological origin'', ''genotype'', ''strain'', ''variant
       name or specific feature'
     from_schema: https://w3id.org/evorao/
@@ -203,14 +209,13 @@ attributes:
       the current item
     title: description
     comments:
-    - 'Describe this item in few lines. This description will serve as a summary to
+    - Describe this item in few lines. This description will serve as a summary to
       present the resource.
-
-      '
     from_schema: https://w3id.org/evorao/
     exact_mappings:
     - schema:description
     close_mappings:
+    - schema:description
     - schema:description
     rank: 1000
     slot_uri: dct:description
@@ -259,6 +264,10 @@ attributes:
     from_schema: https://w3id.org/evorao/
     close_mappings:
     - wdp:P972
+    related_mappings:
+    - dct:isReferencedBy
+    broad_mappings:
+    - dct:isPartOf
     rank: 1000
     alias: inVocabulary
     owner: RiskGroup

@@ -1,5 +1,5 @@
 # metamodel_version: 1.7.0
-# version: 1.0.9149
+# version: 1.0.9485
 BASE <https://w3id.org/evorao/>
 PREFIX dcat: <http://www.w3.org/ns/dcat#>
 PREFIX foaf: <http://xmlns.com/foaf/0.1/>
@@ -214,7 +214,7 @@ linkml:Sparqlpath xsd:string
           <loginTokenName> @linkml:String ? ;
           <queryMethod> @linkml:String ;
           <contentType> @linkml:String ;
-          <providedEntityType> @linkml:String + ;
+          <providedEntityType> @linkml:Uri + ;
           <weight> @linkml:Integer
        ) ;
        rdf:type [ <DataProvider> ] ?

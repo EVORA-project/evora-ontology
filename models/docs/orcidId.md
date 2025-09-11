@@ -63,7 +63,8 @@ Alias: orcidId
 | ---  | ---  |
 | self | EVORAO:orcidId |
 | native | EVORAO:orcidId |
-| exact | wdp:P496, iao:0000708 |
+| exact | wdp:P496, reproduceme:ORCID, iao:0000708 |
+| related | iao:0000708, edam:4022 |
 
 
 
@@ -79,7 +80,11 @@ title: ORCID id
 from_schema: https://w3id.org/evorao/
 exact_mappings:
 - wdp:P496
+- reproduceme:ORCID
 - iao:0000708
+related_mappings:
+- iao:0000708
+- edam:4022
 rank: 1000
 alias: orcidId
 domain_of:

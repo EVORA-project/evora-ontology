@@ -62,6 +62,8 @@ Alias: pathogenType
 | ---  | ---  |
 | self | EVORAO:pathogenType |
 | native | EVORAO:pathogenType |
+| exact | schema:infectiousAgentClass |
+| close | dwc:organismScope |
 
 
 
@@ -75,6 +77,10 @@ description: Identification of the specific type of pathogen among the listed ca
   e.g. 'Virus','Viroid','Bacterium'...
 title: pathogen type
 from_schema: https://w3id.org/evorao/
+exact_mappings:
+- schema:infectiousAgentClass
+close_mappings:
+- dwc:organismScope
 rank: 1000
 alias: pathogenType
 domain_of:

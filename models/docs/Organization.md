@@ -133,7 +133,8 @@ URI: [foaf:Organization](http://xmlns.com/foaf/0.1/Organization)
 | ---  | ---  |
 | self | foaf:Organization |
 | native | EVORAO:Organization |
-| close | wd:Q43229, vcard:Organization, schema:Organization, wd:Q43229, vcard:Organization, schema:Organization |
+| exact | schema:Organization, vcard:Organization, schema:Organization, vcard:Organization |
+| close | wd:Q43229, wd:Q43229 |
 
 
 
@@ -153,13 +154,14 @@ name: Organization
 description: A social entity established to meet needs or pursue specific goals
 title: Organization
 from_schema: https://w3id.org/evorao/
+exact_mappings:
+- schema:Organization
+- vcard:Organization
+- schema:Organization
+- vcard:Organization
 close_mappings:
 - wd:Q43229
-- vcard:Organization
-- schema:Organization
 - wd:Q43229
-- vcard:Organization
-- schema:Organization
 is_a: PersonOrOrganization
 slots:
 - alternateName
@@ -174,9 +176,12 @@ slot_usage:
     - This includes previous names, acronyms, former taxonomic terms, and other variations.
       This information can serve as keywords for search purposes and as a bridge with
       other projects that use different naming systems or taxonomies
+    exact_mappings:
+    - schema:alternateName
+    - dct:alternative
+    - iao:0000118
     close_mappings:
     - wdp:P4970
-    - schema:alternateName
     domain_of:
     - Organization
     - CommonName
@@ -201,6 +206,8 @@ slot_usage:
     title: ROR iD
     exact_mappings:
     - wdp:P6782
+    related_mappings:
+    - dwc:institutionCode
     domain_of:
     - Organization
     range: string
@@ -220,13 +227,14 @@ name: Organization
 description: A social entity established to meet needs or pursue specific goals
 title: Organization
 from_schema: https://w3id.org/evorao/
+exact_mappings:
+- schema:Organization
+- vcard:Organization
+- schema:Organization
+- vcard:Organization
 close_mappings:
 - wd:Q43229
-- vcard:Organization
-- schema:Organization
 - wd:Q43229
-- vcard:Organization
-- schema:Organization
 is_a: PersonOrOrganization
 slot_usage:
   alternateName:
@@ -237,9 +245,12 @@ slot_usage:
     - This includes previous names, acronyms, former taxonomic terms, and other variations.
       This information can serve as keywords for search purposes and as a bridge with
       other projects that use different naming systems or taxonomies
+    exact_mappings:
+    - schema:alternateName
+    - dct:alternative
+    - iao:0000118
     close_mappings:
     - wdp:P4970
-    - schema:alternateName
     domain_of:
     - Organization
     - CommonName
@@ -264,6 +275,8 @@ slot_usage:
     title: ROR iD
     exact_mappings:
     - wdp:P6782
+    related_mappings:
+    - dwc:institutionCode
     domain_of:
     - Organization
     range: string
@@ -280,9 +293,12 @@ attributes:
       This information can serve as keywords for search purposes and as a bridge with
       other projects that use different naming systems or taxonomies
     from_schema: https://w3id.org/evorao/
+    exact_mappings:
+    - schema:alternateName
+    - dct:alternative
+    - iao:0000118
     close_mappings:
     - wdp:P4970
-    - schema:alternateName
     rank: 1000
     alias: alternateName
     owner: Organization
@@ -315,6 +331,8 @@ attributes:
     from_schema: https://w3id.org/evorao/
     exact_mappings:
     - wdp:P6782
+    related_mappings:
+    - dwc:institutionCode
     rank: 1000
     alias: rorId
     owner: Organization
@@ -331,7 +349,9 @@ attributes:
     from_schema: https://w3id.org/evorao/
     exact_mappings:
     - schema:name
+    - vcard:fn
     close_mappings:
+    - rdfs:label
     - dct:title
     rank: 1000
     slot_uri: foaf:name
@@ -350,14 +370,13 @@ attributes:
       the current item
     title: description
     comments:
-    - 'Describe this item in few lines. This description will serve as a summary to
+    - Describe this item in few lines. This description will serve as a summary to
       present the resource.
-
-      '
     from_schema: https://w3id.org/evorao/
     exact_mappings:
     - schema:description
     close_mappings:
+    - schema:description
     - schema:description
     rank: 1000
     slot_uri: dct:description
@@ -381,6 +400,8 @@ attributes:
     description: A web page that serves as the main or introductory page
     title: home page
     from_schema: https://w3id.org/evorao/
+    close_mappings:
+    - swo:0004006
     rank: 1000
     slot_uri: foaf:homepage
     alias: homePage
@@ -395,6 +416,8 @@ attributes:
     description: An information that allows someone to establish communication
     title: contact point
     from_schema: https://w3id.org/evorao/
+    exact_mappings:
+    - schema:contactPoint
     rank: 1000
     slot_uri: dcat:contactPoint
     alias: contactPoint
@@ -411,6 +434,8 @@ attributes:
     description: A path or URL to the related logo
     title: logo
     from_schema: https://w3id.org/evorao/
+    exact_mappings:
+    - schema:logo
     rank: 1000
     alias: logo
     owner: Organization

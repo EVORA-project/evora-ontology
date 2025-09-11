@@ -179,10 +179,8 @@ slot_usage:
       the current item
     title: description
     comments:
-    - 'Describe this item in few lines. This description will serve as a summary to
-      present the resource.
-
-      '
+    - Describe this item in few lines. This description will serve as a summary to
+      present the resource
     exact_mappings:
     - schema:description
     slot_uri: dct:description
@@ -276,10 +274,8 @@ slot_usage:
       the current item
     title: description
     comments:
-    - 'Describe this item in few lines. This description will serve as a summary to
-      present the resource.
-
-      '
+    - Describe this item in few lines. This description will serve as a summary to
+      present the resource
     exact_mappings:
     - schema:description
     slot_uri: dct:description
@@ -356,14 +352,13 @@ attributes:
       the current item
     title: description
     comments:
-    - 'Describe this item in few lines. This description will serve as a summary to
-      present the resource.
-
-      '
+    - Describe this item in few lines. This description will serve as a summary to
+      present the resource
     from_schema: https://w3id.org/evorao/
     exact_mappings:
     - schema:description
     close_mappings:
+    - schema:description
     - schema:description
     rank: 1000
     slot_uri: dct:description

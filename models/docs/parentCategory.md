@@ -60,6 +60,7 @@ Alias: parentCategory
 | ---  | ---  |
 | self | EVORAO:parentCategory |
 | native | EVORAO:parentCategory |
+| broad | dct:isPartOf |
 
 
 
@@ -75,6 +76,8 @@ description: An overarching category that encompasses the current category withi
   order.
 title: parent category
 from_schema: https://w3id.org/evorao/
+broad_mappings:
+- dct:isPartOf
 rank: 1000
 alias: parentCategory
 domain_of:

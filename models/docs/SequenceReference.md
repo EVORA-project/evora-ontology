@@ -124,8 +124,12 @@ slot_usage:
     description: The sequence ID that permits to retrieve the sequence information
       from the sequence provider
     title: accession number
-    close_mappings:
+    related_mappings:
     - dct:identifier
+    narrow_mappings:
+    - ncit:P102
+    broad_mappings:
+    - schema:identifier
     domain_of:
     - SequenceReference
     range: string
@@ -167,8 +171,12 @@ slot_usage:
     description: The sequence ID that permits to retrieve the sequence information
       from the sequence provider
     title: accession number
-    close_mappings:
+    related_mappings:
     - dct:identifier
+    narrow_mappings:
+    - ncit:P102
+    broad_mappings:
+    - schema:identifier
     domain_of:
     - SequenceReference
     range: string
@@ -193,8 +201,12 @@ attributes:
       from the sequence provider
     title: accession number
     from_schema: https://w3id.org/evorao/
-    close_mappings:
+    related_mappings:
     - dct:identifier
+    narrow_mappings:
+    - ncit:P102
+    broad_mappings:
+    - schema:identifier
     rank: 1000
     alias: accessionNumber
     owner: SequenceReference

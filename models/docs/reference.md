@@ -62,7 +62,7 @@ Alias: reference
 | ---  | ---  |
 | self | EVORAO:reference |
 | native | EVORAO:reference |
-| close | dct:identifier |
+| close | dct:identifier, dct:references |
 
 
 
@@ -77,6 +77,7 @@ title: reference
 from_schema: https://w3id.org/evorao/
 close_mappings:
 - dct:identifier
+- dct:references
 rank: 1000
 alias: reference
 domain_of:

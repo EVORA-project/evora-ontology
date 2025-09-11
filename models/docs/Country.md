@@ -109,7 +109,8 @@ URI: [EVORAO:Country](https://w3id.org/evorao/Country)
 | ---  | ---  |
 | self | EVORAO:Country |
 | native | EVORAO:Country |
-| exact | schema:Country, schema:Country |
+| exact | schema:Country, ncit:C25464, sio:000664, schema:Country, ncit:C25464, sio:000664 |
+| broad | prov:Location, dct:Location, vcard:Location, prov:Location, dct:Location, vcard:Location |
 | close | wd:Q6256, wd:Q6256 |
 
 
@@ -134,10 +135,21 @@ comments:
 from_schema: https://w3id.org/evorao/
 exact_mappings:
 - schema:Country
+- ncit:C25464
+- sio:000664
 - schema:Country
+- ncit:C25464
+- sio:000664
 close_mappings:
 - wd:Q6256
 - wd:Q6256
+broad_mappings:
+- prov:Location
+- dct:Location
+- vcard:Location
+- prov:Location
+- dct:Location
+- vcard:Location
 is_a: Term
 slots:
 - alpha2Code
@@ -146,6 +158,13 @@ slot_usage:
     name: alpha2Code
     description: Two-letter country codes from ISO 3166-1 alpha-2
     title: alpha 2 code
+    exact_mappings:
+    - geo:000000023
+    close_mappings:
+    - schema:addressCountry
+    related_mappings:
+    - obib:0000620
+    - ncit:C54641
     domain_of:
     - Country
     range: string
@@ -167,16 +186,34 @@ comments:
 from_schema: https://w3id.org/evorao/
 exact_mappings:
 - schema:Country
+- ncit:C25464
+- sio:000664
 - schema:Country
+- ncit:C25464
+- sio:000664
 close_mappings:
 - wd:Q6256
 - wd:Q6256
+broad_mappings:
+- prov:Location
+- dct:Location
+- vcard:Location
+- prov:Location
+- dct:Location
+- vcard:Location
 is_a: Term
 slot_usage:
   alpha2Code:
     name: alpha2Code
     description: Two-letter country codes from ISO 3166-1 alpha-2
     title: alpha 2 code
+    exact_mappings:
+    - geo:000000023
+    close_mappings:
+    - schema:addressCountry
+    related_mappings:
+    - obib:0000620
+    - ncit:C54641
     domain_of:
     - Country
     range: string
@@ -188,6 +225,13 @@ attributes:
     description: Two-letter country codes from ISO 3166-1 alpha-2
     title: alpha 2 code
     from_schema: https://w3id.org/evorao/
+    exact_mappings:
+    - geo:000000023
+    close_mappings:
+    - schema:addressCountry
+    related_mappings:
+    - obib:0000620
+    - ncit:C54641
     rank: 1000
     alias: alpha2Code
     owner: Country
@@ -202,9 +246,8 @@ attributes:
     title: title
     comments:
     - 'The title of the item should be as short and descriptive as possible. E.g.
-      for virus products it should basically be based on the following Pattern:
-
-      ''Virus name'', ''virus host type'', ''collection year'', ''country of collection''
+      for virus products it should basically be based on the following Pattern: ''Virus
+      name'', ''virus host type'', ''collection year'', ''country of collection''
       ex ''suspected epidemiological origin'', ''genotype'', ''strain'', ''variant
       name or specific feature'
     from_schema: https://w3id.org/evorao/
@@ -231,14 +274,13 @@ attributes:
       the current item
     title: description
     comments:
-    - 'Describe this item in few lines. This description will serve as a summary to
+    - Describe this item in few lines. This description will serve as a summary to
       present the resource.
-
-      '
     from_schema: https://w3id.org/evorao/
     exact_mappings:
     - schema:description
     close_mappings:
+    - schema:description
     - schema:description
     rank: 1000
     slot_uri: dct:description
@@ -287,6 +329,10 @@ attributes:
     from_schema: https://w3id.org/evorao/
     close_mappings:
     - wdp:P972
+    related_mappings:
+    - dct:isReferencedBy
+    broad_mappings:
+    - dct:isPartOf
     rank: 1000
     alias: inVocabulary
     owner: Country

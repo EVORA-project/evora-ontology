@@ -113,7 +113,9 @@ URI: [EVORAO:TaxonomicRank](https://w3id.org/evorao/TaxonomicRank)
 | ---  | ---  |
 | self | EVORAO:TaxonomicRank |
 | native | EVORAO:TaxonomicRank |
-| close | wd:Q427626, wd:Q427626 |
+| exact | taxrank:0000000, uniprotrdfs:Rank, wd:Q427626, taxrank:0000000, uniprotrdfs:Rank, wd:Q427626 |
+| related | dwc:taxonRank, dwc:taxonRank |
+| close | biolink:TaxonomicRank, biolink:TaxonomicRank |
 
 
 
@@ -135,9 +137,19 @@ title: Taxonomic rank
 comments:
 - Use of Data provider recommended
 from_schema: https://w3id.org/evorao/
+exact_mappings:
+- taxrank:0000000
+- uniprotrdfs:Rank
+- wd:Q427626
+- taxrank:0000000
+- uniprotrdfs:Rank
+- wd:Q427626
 close_mappings:
-- wd:Q427626
-- wd:Q427626
+- biolink:TaxonomicRank
+- biolink:TaxonomicRank
+related_mappings:
+- dwc:taxonRank
+- dwc:taxonRank
 is_a: Term
 slots:
 - taxonomy
@@ -146,6 +158,8 @@ slot_usage:
     name: taxonomy
     description: The taxonomy release(s) in which this entity exists
     title: taxonomy
+    broad_mappings:
+    - dct:isPartOf
     domain_of:
     - TaxonomicRank
     - Taxon
@@ -166,15 +180,27 @@ title: Taxonomic rank
 comments:
 - Use of Data provider recommended
 from_schema: https://w3id.org/evorao/
+exact_mappings:
+- taxrank:0000000
+- uniprotrdfs:Rank
+- wd:Q427626
+- taxrank:0000000
+- uniprotrdfs:Rank
+- wd:Q427626
 close_mappings:
-- wd:Q427626
-- wd:Q427626
+- biolink:TaxonomicRank
+- biolink:TaxonomicRank
+related_mappings:
+- dwc:taxonRank
+- dwc:taxonRank
 is_a: Term
 slot_usage:
   taxonomy:
     name: taxonomy
     description: The taxonomy release(s) in which this entity exists
     title: taxonomy
+    broad_mappings:
+    - dct:isPartOf
     domain_of:
     - TaxonomicRank
     - Taxon
@@ -187,6 +213,8 @@ attributes:
     description: The taxonomy release(s) in which this entity exists
     title: taxonomy
     from_schema: https://w3id.org/evorao/
+    broad_mappings:
+    - dct:isPartOf
     rank: 1000
     alias: taxonomy
     owner: TaxonomicRank
@@ -203,9 +231,8 @@ attributes:
     title: title
     comments:
     - 'The title of the item should be as short and descriptive as possible. E.g.
-      for virus products it should basically be based on the following Pattern:
-
-      ''Virus name'', ''virus host type'', ''collection year'', ''country of collection''
+      for virus products it should basically be based on the following Pattern: ''Virus
+      name'', ''virus host type'', ''collection year'', ''country of collection''
       ex ''suspected epidemiological origin'', ''genotype'', ''strain'', ''variant
       name or specific feature'
     from_schema: https://w3id.org/evorao/
@@ -232,14 +259,13 @@ attributes:
       the current item
     title: description
     comments:
-    - 'Describe this item in few lines. This description will serve as a summary to
+    - Describe this item in few lines. This description will serve as a summary to
       present the resource.
-
-      '
     from_schema: https://w3id.org/evorao/
     exact_mappings:
     - schema:description
     close_mappings:
+    - schema:description
     - schema:description
     rank: 1000
     slot_uri: dct:description
@@ -288,6 +314,10 @@ attributes:
     from_schema: https://w3id.org/evorao/
     close_mappings:
     - wdp:P972
+    related_mappings:
+    - dct:isReferencedBy
+    broad_mappings:
+    - dct:isPartOf
     rank: 1000
     alias: inVocabulary
     owner: TaxonomicRank

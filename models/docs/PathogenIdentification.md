@@ -144,6 +144,7 @@ URI: [EVORAO:PathogenIdentification](https://w3id.org/evorao/PathogenIdentificat
 | ---  | ---  |
 | self | EVORAO:PathogenIdentification |
 | native | EVORAO:PathogenIdentification |
+| broad | dwc:Identification, dwc:Identification |
 
 
 
@@ -164,6 +165,9 @@ description: A collection of distinguishing information that enables the differe
   of a pathogen from another
 title: Pathogen identification
 from_schema: https://w3id.org/evorao/
+broad_mappings:
+- dwc:Identification
+- dwc:Identification
 is_a: Resource
 slots:
 - taxon
@@ -184,6 +188,12 @@ slot_usage:
     comments:
     - The taxon of the highest rank known that can be used to classify a pathogen
       or group of pathogens (e.g viruses) in the reference taxonomy
+    close_mappings:
+    - schema:taxonomicRange
+    - dwc:taxonID
+    - dwc:toTaxon
+    related_mappings:
+    - dwc:Taxon
     domain_of:
     - PathogenIdentification
     - Taxonomy
@@ -194,6 +204,8 @@ slot_usage:
     name: pathogenName
     description: A pathogen common name or a name that describes a group of pathogens
     title: pathogen name
+    exact_mappings:
+    - dwc:organismName
     domain_of:
     - PathogenIdentification
     range: CommonName
@@ -204,6 +216,10 @@ slot_usage:
     description: Identification of the specific type of pathogen among the listed
       categories e.g. 'Virus','Viroid','Bacterium'...
     title: pathogen type
+    exact_mappings:
+    - schema:infectiousAgentClass
+    close_mappings:
+    - dwc:organismScope
     domain_of:
     - PathogenIdentification
     range: string
@@ -258,6 +274,8 @@ slot_usage:
     description: Genotype information that identifies organisms that cluster in phylogenetic
       trees, thus different clusters are distinct genotypes
     title: genotype
+    close_mappings:
+    - geno:0000222
     domain_of:
     - PathogenIdentification
     range: string
@@ -297,6 +315,9 @@ description: A collection of distinguishing information that enables the differe
   of a pathogen from another
 title: Pathogen identification
 from_schema: https://w3id.org/evorao/
+broad_mappings:
+- dwc:Identification
+- dwc:Identification
 is_a: Resource
 slot_usage:
   taxon:
@@ -306,6 +327,12 @@ slot_usage:
     comments:
     - The taxon of the highest rank known that can be used to classify a pathogen
       or group of pathogens (e.g viruses) in the reference taxonomy
+    close_mappings:
+    - schema:taxonomicRange
+    - dwc:taxonID
+    - dwc:toTaxon
+    related_mappings:
+    - dwc:Taxon
     domain_of:
     - PathogenIdentification
     - Taxonomy
@@ -316,6 +343,8 @@ slot_usage:
     name: pathogenName
     description: A pathogen common name or a name that describes a group of pathogens
     title: pathogen name
+    exact_mappings:
+    - dwc:organismName
     domain_of:
     - PathogenIdentification
     range: CommonName
@@ -326,6 +355,10 @@ slot_usage:
     description: Identification of the specific type of pathogen among the listed
       categories e.g. 'Virus','Viroid','Bacterium'...
     title: pathogen type
+    exact_mappings:
+    - schema:infectiousAgentClass
+    close_mappings:
+    - dwc:organismScope
     domain_of:
     - PathogenIdentification
     range: string
@@ -380,6 +413,8 @@ slot_usage:
     description: Genotype information that identifies organisms that cluster in phylogenetic
       trees, thus different clusters are distinct genotypes
     title: genotype
+    close_mappings:
+    - geno:0000222
     domain_of:
     - PathogenIdentification
     range: string
@@ -435,6 +470,8 @@ attributes:
     description: A pathogen common name or a name that describes a group of pathogens
     title: pathogen name
     from_schema: https://w3id.org/evorao/
+    exact_mappings:
+    - dwc:organismName
     rank: 1000
     alias: pathogenName
     owner: PathogenIdentification
@@ -449,6 +486,10 @@ attributes:
       categories e.g. 'Virus','Viroid','Bacterium'...
     title: pathogen type
     from_schema: https://w3id.org/evorao/
+    exact_mappings:
+    - schema:infectiousAgentClass
+    close_mappings:
+    - dwc:organismScope
     rank: 1000
     alias: pathogenType
     owner: PathogenIdentification
@@ -534,6 +575,8 @@ attributes:
       trees, thus different clusters are distinct genotypes
     title: genotype
     from_schema: https://w3id.org/evorao/
+    close_mappings:
+    - geno:0000222
     rank: 1000
     alias: genotype
     owner: PathogenIdentification

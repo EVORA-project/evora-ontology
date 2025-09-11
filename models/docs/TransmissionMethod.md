@@ -104,6 +104,8 @@ URI: [EVORAO:TransmissionMethod](https://w3id.org/evorao/TransmissionMethod)
 | ---  | ---  |
 | self | EVORAO:TransmissionMethod |
 | native | EVORAO:TransmissionMethod |
+| related | ncit:C17214, ncit:C17214 |
+| close | ncit:C128376, ncit:C128376 |
 
 
 
@@ -123,6 +125,12 @@ name: TransmissionMethod
 description: The process by which the pathogen spreads between hosts
 title: Transmission method
 from_schema: https://w3id.org/evorao/
+close_mappings:
+- ncit:C128376
+- ncit:C128376
+related_mappings:
+- ncit:C17214
+- ncit:C17214
 is_a: Term
 
 ```
@@ -136,6 +144,12 @@ name: TransmissionMethod
 description: The process by which the pathogen spreads between hosts
 title: Transmission method
 from_schema: https://w3id.org/evorao/
+close_mappings:
+- ncit:C128376
+- ncit:C128376
+related_mappings:
+- ncit:C17214
+- ncit:C17214
 is_a: Term
 attributes:
   title:
@@ -144,9 +158,8 @@ attributes:
     title: title
     comments:
     - 'The title of the item should be as short and descriptive as possible. E.g.
-      for virus products it should basically be based on the following Pattern:
-
-      ''Virus name'', ''virus host type'', ''collection year'', ''country of collection''
+      for virus products it should basically be based on the following Pattern: ''Virus
+      name'', ''virus host type'', ''collection year'', ''country of collection''
       ex ''suspected epidemiological origin'', ''genotype'', ''strain'', ''variant
       name or specific feature'
     from_schema: https://w3id.org/evorao/
@@ -173,14 +186,13 @@ attributes:
       the current item
     title: description
     comments:
-    - 'Describe this item in few lines. This description will serve as a summary to
+    - Describe this item in few lines. This description will serve as a summary to
       present the resource.
-
-      '
     from_schema: https://w3id.org/evorao/
     exact_mappings:
     - schema:description
     close_mappings:
+    - schema:description
     - schema:description
     rank: 1000
     slot_uri: dct:description
@@ -229,6 +241,10 @@ attributes:
     from_schema: https://w3id.org/evorao/
     close_mappings:
     - wdp:P972
+    related_mappings:
+    - dct:isReferencedBy
+    broad_mappings:
+    - dct:isPartOf
     rank: 1000
     alias: inVocabulary
     owner: TransmissionMethod

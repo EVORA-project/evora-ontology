@@ -62,7 +62,7 @@ Alias: abstract
 | ---  | ---  |
 | self | EVORAO:abstract |
 | native | EVORAO:abstract |
-| exact | schema:abstract |
+| close | dct:abstract, schema:abstract |
 
 
 
@@ -75,7 +75,8 @@ name: abstract
 description: Concise summary of the publication
 title: abstract
 from_schema: https://w3id.org/evorao/
-exact_mappings:
+close_mappings:
+- dct:abstract
 - schema:abstract
 rank: 1000
 alias: abstract

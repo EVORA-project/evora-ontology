@@ -22,8 +22,8 @@ Alias: resourceUrl
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [Certification](Certification.md) | Assurance given by an independent certification body that a product, service ... |  yes  |
 | [License](License.md) | The legal terms and conditions under which the subject can be used, shared, o... |  yes  |
+| [Certification](Certification.md) | Assurance given by an independent certification body that a product, service ... |  yes  |
 
 
 

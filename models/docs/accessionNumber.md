@@ -62,7 +62,9 @@ Alias: accessionNumber
 | ---  | ---  |
 | self | EVORAO:accessionNumber |
 | native | EVORAO:accessionNumber |
-| close | dct:identifier |
+| narrow | ncit:P102 |
+| broad | schema:identifier |
+| related | dct:identifier |
 
 
 
@@ -76,8 +78,12 @@ description: The sequence ID that permits to retrieve the sequence information f
   the sequence provider
 title: accession number
 from_schema: https://w3id.org/evorao/
-close_mappings:
+related_mappings:
 - dct:identifier
+narrow_mappings:
+- ncit:P102
+broad_mappings:
+- schema:identifier
 rank: 1000
 alias: accessionNumber
 domain_of:

@@ -3,9 +3,7 @@
 # Slot: cloned nucleic acid (clonedNucleicAcid) 
 
 
-_Indicates if the nucleic acid sequence has been inserted into a plasmid vector for propagation or expression in a host organism_
-
-__
+_Specification of the terms and parameters for transporting_
 
 
 
@@ -73,10 +71,7 @@ Alias: clonedNucleicAcid
 <details>
 ```yaml
 name: clonedNucleicAcid
-description: 'Indicates if the nucleic acid sequence has been inserted into a plasmid
-  vector for propagation or expression in a host organism
-
-  '
+description: Specification of the terms and parameters for transporting
 title: cloned nucleic acid
 from_schema: https://w3id.org/evorao/
 rank: 1000

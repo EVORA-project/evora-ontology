@@ -63,7 +63,8 @@ Alias: taxonomicId
 | self | EVORAO:taxonomicId |
 | native | EVORAO:taxonomicId |
 | exact | dwc:taxonID |
-| broad | schema:identifier |
+| narrow | ncit:P331 |
+| broad | schema:identifier, dct:identifier |
 
 
 
@@ -78,8 +79,11 @@ title: taxonomic ID
 from_schema: https://w3id.org/evorao/
 exact_mappings:
 - dwc:taxonID
+narrow_mappings:
+- ncit:P331
 broad_mappings:
 - schema:identifier
+- dct:identifier
 rank: 1000
 alias: taxonomicId
 domain_of:

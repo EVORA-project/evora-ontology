@@ -98,7 +98,8 @@ URI: [EVORAO:ExpressionVector](https://w3id.org/evorao/ExpressionVector)
 | ---  | ---  |
 | self | EVORAO:ExpressionVector |
 | native | EVORAO:ExpressionVector |
-| close | wd:Q5421712, wd:Q5421712 |
+| exact | wd:Q5421712, obi:0000729, wd:Q5421712, obi:0000729 |
+| related | obi:0600063, reproduceme:ExpressionSystem, obi:0600063, reproduceme:ExpressionSystem |
 
 
 
@@ -119,9 +120,16 @@ description: A reference to an expression vector plasmid, typically embedding a 
   marker for inducible protein expression
 title: Expression vector
 from_schema: https://w3id.org/evorao/
-close_mappings:
+exact_mappings:
 - wd:Q5421712
+- obi:0000729
 - wd:Q5421712
+- obi:0000729
+related_mappings:
+- obi:0600063
+- reproduceme:ExpressionSystem
+- obi:0600063
+- reproduceme:ExpressionSystem
 is_a: Term
 
 ```
@@ -136,9 +144,16 @@ description: A reference to an expression vector plasmid, typically embedding a 
   marker for inducible protein expression
 title: Expression vector
 from_schema: https://w3id.org/evorao/
-close_mappings:
+exact_mappings:
 - wd:Q5421712
+- obi:0000729
 - wd:Q5421712
+- obi:0000729
+related_mappings:
+- obi:0600063
+- reproduceme:ExpressionSystem
+- obi:0600063
+- reproduceme:ExpressionSystem
 is_a: Term
 attributes:
   title:
@@ -147,9 +162,8 @@ attributes:
     title: title
     comments:
     - 'The title of the item should be as short and descriptive as possible. E.g.
-      for virus products it should basically be based on the following Pattern:
-
-      ''Virus name'', ''virus host type'', ''collection year'', ''country of collection''
+      for virus products it should basically be based on the following Pattern: ''Virus
+      name'', ''virus host type'', ''collection year'', ''country of collection''
       ex ''suspected epidemiological origin'', ''genotype'', ''strain'', ''variant
       name or specific feature'
     from_schema: https://w3id.org/evorao/
@@ -176,14 +190,13 @@ attributes:
       the current item
     title: description
     comments:
-    - 'Describe this item in few lines. This description will serve as a summary to
+    - Describe this item in few lines. This description will serve as a summary to
       present the resource.
-
-      '
     from_schema: https://w3id.org/evorao/
     exact_mappings:
     - schema:description
     close_mappings:
+    - schema:description
     - schema:description
     rank: 1000
     slot_uri: dct:description
@@ -232,6 +245,10 @@ attributes:
     from_schema: https://w3id.org/evorao/
     close_mappings:
     - wdp:P972
+    related_mappings:
+    - dct:isReferencedBy
+    broad_mappings:
+    - dct:isPartOf
     rank: 1000
     alias: inVocabulary
     owner: ExpressionVector
