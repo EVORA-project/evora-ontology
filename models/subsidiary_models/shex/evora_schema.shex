@@ -1,5 +1,5 @@
 # metamodel_version: 1.7.0
-# version: 1.0.9485
+# version: 1.0.9489
 BASE <https://w3id.org/evorao/>
 PREFIX dcat: <http://www.w3.org/ns/dcat#>
 PREFIX foaf: <http://xmlns.com/foaf/0.1/>
@@ -406,14 +406,8 @@ linkml:Sparqlpath xsd:string
 
 <MaterialSafetyDataSheet> CLOSED {
     (  $<MaterialSafetyDataSheet_tes> (  &<Resource_tes> ;
-          rdf:type [ dcat:Resource ] ?
-       ) ;
-       rdf:type [ <MaterialSafetyDataSheet> ] ?
-    )
-}
-
-<MSDS> CLOSED {
-    (  $<MSDS_tes> (  <materialSafetyContact> @<ContactPoint> ;
+          rdf:type [ dcat:Resource ] ? ;
+          <materialSafetyContact> @<ContactPoint> ;
           <physicalChemicalProperties> @linkml:String ? ;
           <hazardsIdentification> @linkml:String ? ;
           <firstAidMeasures> @linkml:String ? ;
@@ -429,7 +423,7 @@ linkml:Sparqlpath xsd:string
           <regulatoryInformation> @linkml:String ? ;
           <furtherInformation> @linkml:String ?
        ) ;
-       rdf:type [ <MSDS> ] ?
+       rdf:type [ <MaterialSafetyDataSheet> ] ?
     )
 }
 

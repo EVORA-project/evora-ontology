@@ -48,7 +48,7 @@ keywords:
 - pathogen collections
 - interoperability
 id: https://w3id.org/evorao/
-version: 1.0.9485
+version: 1.0.9489
 imports:
 - linkml:types
 license: https://creativecommons.org/publicdomain/zero/1.0/
@@ -2193,7 +2193,7 @@ slots:
     exact_mappings:
     - dcat:contactPoint
     domain_of:
-    - MSDS
+    - MaterialSafetyDataSheet
     range: ContactPoint
     required: true
     multivalued: false
@@ -2204,7 +2204,7 @@ slots:
     title: physical and chemical properties and information on ingredients
     from_schema: https://w3id.org/evorao/
     domain_of:
-    - MSDS
+    - MaterialSafetyDataSheet
     range: string
     required: false
     recommended: true
@@ -2217,7 +2217,7 @@ slots:
     title: hazards identification
     from_schema: https://w3id.org/evorao/
     domain_of:
-    - MSDS
+    - MaterialSafetyDataSheet
     range: string
     required: false
     recommended: true
@@ -2229,7 +2229,7 @@ slots:
     title: first aid measures
     from_schema: https://w3id.org/evorao/
     domain_of:
-    - MSDS
+    - MaterialSafetyDataSheet
     range: string
     required: false
     recommended: true
@@ -2241,7 +2241,7 @@ slots:
     title: fire fighting measures
     from_schema: https://w3id.org/evorao/
     domain_of:
-    - MSDS
+    - MaterialSafetyDataSheet
     range: string
     required: false
     recommended: true
@@ -2253,7 +2253,7 @@ slots:
     title: accidental release measures
     from_schema: https://w3id.org/evorao/
     domain_of:
-    - MSDS
+    - MaterialSafetyDataSheet
     range: string
     required: false
     recommended: true
@@ -2265,7 +2265,7 @@ slots:
     title: handling and storage
     from_schema: https://w3id.org/evorao/
     domain_of:
-    - MSDS
+    - MaterialSafetyDataSheet
     range: string
     required: false
     recommended: true
@@ -2277,7 +2277,7 @@ slots:
     title: exposure controls/personal protection
     from_schema: https://w3id.org/evorao/
     domain_of:
-    - MSDS
+    - MaterialSafetyDataSheet
     range: string
     required: false
     recommended: true
@@ -2290,7 +2290,7 @@ slots:
     title: stability and reactivity
     from_schema: https://w3id.org/evorao/
     domain_of:
-    - MSDS
+    - MaterialSafetyDataSheet
     range: string
     required: false
     recommended: true
@@ -2302,7 +2302,7 @@ slots:
     title: toxicological information
     from_schema: https://w3id.org/evorao/
     domain_of:
-    - MSDS
+    - MaterialSafetyDataSheet
     range: string
     required: false
     recommended: true
@@ -2314,7 +2314,7 @@ slots:
     title: ecological information
     from_schema: https://w3id.org/evorao/
     domain_of:
-    - MSDS
+    - MaterialSafetyDataSheet
     range: string
     required: false
     recommended: true
@@ -2326,7 +2326,7 @@ slots:
     title: disposal considerations
     from_schema: https://w3id.org/evorao/
     domain_of:
-    - MSDS
+    - MaterialSafetyDataSheet
     range: string
     required: false
     recommended: true
@@ -2339,7 +2339,7 @@ slots:
     title: transport information
     from_schema: https://w3id.org/evorao/
     domain_of:
-    - MSDS
+    - MaterialSafetyDataSheet
     range: string
     required: false
     recommended: true
@@ -2351,7 +2351,7 @@ slots:
     title: regulatory information
     from_schema: https://w3id.org/evorao/
     domain_of:
-    - MSDS
+    - MaterialSafetyDataSheet
     range: string
     required: false
     recommended: true
@@ -2363,7 +2363,7 @@ slots:
     title: further information
     from_schema: https://w3id.org/evorao/
     domain_of:
-    - MSDS
+    - MaterialSafetyDataSheet
     range: string
     required: false
     recommended: true
@@ -5722,8 +5722,6 @@ classes:
     - wd:Q222067
     - wd:Q222067
     is_a: Resource
-  MSDS:
-    from_schema: https://w3id.org/evorao/
     slots:
     - materialSafetyContact
     - physicalChemicalProperties
@@ -5749,7 +5747,7 @@ classes:
         exact_mappings:
         - dcat:contactPoint
         domain_of:
-        - MSDS
+        - MaterialSafetyDataSheet
         range: ContactPoint
         required: true
         multivalued: false
@@ -5759,7 +5757,7 @@ classes:
           safe handling and storage
         title: physical and chemical properties and information on ingredients
         domain_of:
-        - MSDS
+        - MaterialSafetyDataSheet
         range: string
         required: false
         recommended: true
@@ -5771,7 +5769,7 @@ classes:
           other relevant risks for safe use.
         title: hazards identification
         domain_of:
-        - MSDS
+        - MaterialSafetyDataSheet
         range: string
         required: false
         recommended: true
@@ -5782,7 +5780,7 @@ classes:
           section outlines steps to minimize harm before medical help is available.
         title: first aid measures
         domain_of:
-        - MSDS
+        - MaterialSafetyDataSheet
         range: string
         required: false
         recommended: true
@@ -5793,7 +5791,7 @@ classes:
           firefighters, and any specific hazards from combustion.
         title: fire fighting measures
         domain_of:
-        - MSDS
+        - MaterialSafetyDataSheet
         range: string
         required: false
         recommended: true
@@ -5804,7 +5802,7 @@ classes:
           to people, property, and the environment.
         title: accidental release measures
         domain_of:
-        - MSDS
+        - MaterialSafetyDataSheet
         range: string
         required: false
         recommended: true
@@ -5816,7 +5814,7 @@ classes:
           requirements.
         title: handling and storage
         domain_of:
-        - MSDS
+        - MaterialSafetyDataSheet
         range: string
         required: false
         recommended: true
@@ -5828,7 +5826,7 @@ classes:
           handling.
         title: exposure controls/personal protection
         domain_of:
-        - MSDS
+        - MaterialSafetyDataSheet
         range: string
         required: false
         recommended: true
@@ -5840,7 +5838,7 @@ classes:
           \ materials that could cause degradation or dangerous reactions."
         title: stability and reactivity
         domain_of:
-        - MSDS
+        - MaterialSafetyDataSheet
         range: string
         required: false
         recommended: true
@@ -5851,7 +5849,7 @@ classes:
           chronic toxicity and symptoms of exposure
         title: toxicological information
         domain_of:
-        - MSDS
+        - MaterialSafetyDataSheet
         range: string
         required: false
         recommended: true
@@ -5862,7 +5860,7 @@ classes:
           and toxicity to aquatic and terrestrial organisms.
         title: ecological information
         domain_of:
-        - MSDS
+        - MaterialSafetyDataSheet
         range: string
         required: false
         recommended: true
@@ -5873,7 +5871,7 @@ classes:
           and precautions to avoid harm to people and the environment during disposal.
         title: disposal considerations
         domain_of:
-        - MSDS
+        - MaterialSafetyDataSheet
         range: string
         required: false
         recommended: true
@@ -5885,7 +5883,7 @@ classes:
           safe transit.
         title: transport information
         domain_of:
-        - MSDS
+        - MaterialSafetyDataSheet
         range: string
         required: false
         recommended: true
@@ -5897,7 +5895,7 @@ classes:
           obligations.
         title: regulatory information
         domain_of:
-        - MSDS
+        - MaterialSafetyDataSheet
         range: string
         required: false
         recommended: true
@@ -5908,7 +5906,7 @@ classes:
           or specific instructions for safe handling and use of the product.
         title: further information
         domain_of:
-        - MSDS
+        - MaterialSafetyDataSheet
         range: string
         required: false
         recommended: true
@@ -6369,4 +6367,4 @@ classes:
         required: false
         multivalued: false
 source_file: https://w3id.org/evorao/evorao.owl.ttl
-generation_date: '2025-09-11T09:42:44'
+generation_date: '2025-09-11T10:24:34'

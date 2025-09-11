@@ -1,5 +1,5 @@
 # metamodel_version: 1.7.0
-# version: 1.0.9485
+# version: 1.0.9489
 type AlternateName
   {
     title: String!
@@ -520,10 +520,6 @@ type License
   }
 
 type MaterialSafetyDataSheet
-  {
-  }
-
-type MSDS
   {
     materialSafetyContact: ContactPoint!
     physicalChemicalProperties: String

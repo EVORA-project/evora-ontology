@@ -63,19 +63,25 @@ SELECT ?g ?s ?p WHERE {
   ?s rdf:type EVORAO:MaterialSafetyDataSheet ;
      ?p ?o .
   FILTER ( ?p NOT IN (
+   EVORAO:materialSafetyContact,
+   EVORAO:physicalChemicalProperties,
+   EVORAO:hazardsIdentification,
+   EVORAO:firstAidMeasures,
+   EVORAO:fireFightingMeasures,
+   EVORAO:accidentalReleaseMeasures,
+   EVORAO:handlingAndStorage,
+   EVORAO:exposureControlsPersonalProtection,
+   EVORAO:stabilityAndReactivity,
+   EVORAO:toxicologicalInformation,
+   EVORAO:ecologicalInformation,
+   EVORAO:disposalConsiderations,
+   EVORAO:transportInformation,
+   EVORAO:regulatoryInformation,
+   EVORAO:furtherInformation,
    rdf:type ))
  }
  
 } 
 
 
-
-
-
-## -- End of checks for MaterialSafetyDataSheet
-
-
-## --
-## Checks for MSDS
-## --
 

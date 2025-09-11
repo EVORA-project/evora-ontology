@@ -27,7 +27,7 @@ from pydantic import (
 
 
 metamodel_version = "None"
-version = "1.0.9485"
+version = "1.0.9489"
 
 
 class ConfiguredBaseModel(BaseModel):
@@ -99,7 +99,7 @@ linkml_meta = LinkMLMeta({'comments': ['EVORAO is an ontology for standardized m
                     'pathogens. EVORAO is compatible with DCAT, making it '
                     'well-suited for efficiently cataloguing pathogen collections '
                     'and related resources.',
-     'generation_date': '2025-09-11T09:42:44',
+     'generation_date': '2025-09-11T10:24:34',
      'id': 'https://w3id.org/evorao/',
      'imports': ['linkml:types'],
      'in_language': 'en',
@@ -8172,13 +8172,6 @@ class MaterialSafetyDataSheet(Resource):
     """
     linkml_meta: ClassVar[LinkMLMeta] = LinkMLMeta({'close_mappings': ['wd:Q222067', 'wd:Q222067'],
          'from_schema': 'https://w3id.org/evorao/',
-         'title': 'Material safety data sheet'})
-
-    pass
-
-
-class MSDS(ConfiguredBaseModel):
-    linkml_meta: ClassVar[LinkMLMeta] = LinkMLMeta({'from_schema': 'https://w3id.org/evorao/',
          'slot_usage': {'accidentalReleaseMeasures': {'description': 'Guidelines for '
                                                                      'safely managing '
                                                                      'spills or leaks '
@@ -8192,7 +8185,7 @@ class MSDS(ConfiguredBaseModel):
                                                                      'people, '
                                                                      'property, and '
                                                                      'the environment.',
-                                                      'domain_of': ['MSDS'],
+                                                      'domain_of': ['MaterialSafetyDataSheet'],
                                                       'multivalued': False,
                                                       'name': 'accidentalReleaseMeasures',
                                                       'range': 'string',
@@ -8215,7 +8208,7 @@ class MSDS(ConfiguredBaseModel):
                                                                   'people and the '
                                                                   'environment during '
                                                                   'disposal.',
-                                                   'domain_of': ['MSDS'],
+                                                   'domain_of': ['MaterialSafetyDataSheet'],
                                                    'multivalued': False,
                                                    'name': 'disposalConsiderations',
                                                    'range': 'string',
@@ -8236,7 +8229,7 @@ class MSDS(ConfiguredBaseModel):
                                                                  'toxicity to aquatic '
                                                                  'and terrestrial '
                                                                  'organisms.',
-                                                  'domain_of': ['MSDS'],
+                                                  'domain_of': ['MaterialSafetyDataSheet'],
                                                   'multivalued': False,
                                                   'name': 'ecologicalInformation',
                                                   'range': 'string',
@@ -8271,7 +8264,7 @@ class MSDS(ConfiguredBaseModel):
                                                                               'ensure '
                                                                               'safe '
                                                                               'handling.',
-                                                               'domain_of': ['MSDS'],
+                                                               'domain_of': ['MaterialSafetyDataSheet'],
                                                                'multivalued': False,
                                                                'name': 'exposureControlsPersonalProtection',
                                                                'range': 'string',
@@ -8291,7 +8284,7 @@ class MSDS(ConfiguredBaseModel):
                                                                 'firefighters, and any '
                                                                 'specific hazards from '
                                                                 'combustion.',
-                                                 'domain_of': ['MSDS'],
+                                                 'domain_of': ['MaterialSafetyDataSheet'],
                                                  'multivalued': False,
                                                  'name': 'fireFightingMeasures',
                                                  'range': 'string',
@@ -8308,7 +8301,7 @@ class MSDS(ConfiguredBaseModel):
                                                             'steps to minimize harm '
                                                             'before medical help is '
                                                             'available.',
-                                             'domain_of': ['MSDS'],
+                                             'domain_of': ['MaterialSafetyDataSheet'],
                                              'multivalued': False,
                                              'name': 'firstAidMeasures',
                                              'range': 'string',
@@ -8326,7 +8319,7 @@ class MSDS(ConfiguredBaseModel):
                                                               'instructions for safe '
                                                               'handling and use of the '
                                                               'product.',
-                                               'domain_of': ['MSDS'],
+                                               'domain_of': ['MaterialSafetyDataSheet'],
                                                'multivalued': False,
                                                'name': 'furtherInformation',
                                                'range': 'string',
@@ -8345,7 +8338,7 @@ class MSDS(ConfiguredBaseModel):
                                                               'temperature, humidity, '
                                                               'and container '
                                                               'requirements.',
-                                               'domain_of': ['MSDS'],
+                                               'domain_of': ['MaterialSafetyDataSheet'],
                                                'multivalued': False,
                                                'name': 'handlingAndStorage',
                                                'range': 'string',
@@ -8367,7 +8360,7 @@ class MSDS(ConfiguredBaseModel):
                                                                  'reactivity, and '
                                                                  'other relevant risks '
                                                                  'for safe use.',
-                                                  'domain_of': ['MSDS'],
+                                                  'domain_of': ['MaterialSafetyDataSheet'],
                                                   'multivalued': False,
                                                   'name': 'hazardsIdentification',
                                                   'range': 'string',
@@ -8384,7 +8377,7 @@ class MSDS(ConfiguredBaseModel):
                                                                  'regulatory '
                                                                  'compliance of the '
                                                                  'biological product.',
-                                                  'domain_of': ['MSDS'],
+                                                  'domain_of': ['MaterialSafetyDataSheet'],
                                                   'exact_mappings': ['dcat:contactPoint'],
                                                   'multivalued': False,
                                                   'name': 'materialSafetyContact',
@@ -8405,7 +8398,7 @@ class MSDS(ConfiguredBaseModel):
                                                                       'essential for '
                                                                       'safe handling '
                                                                       'and storage',
-                                                       'domain_of': ['MSDS'],
+                                                       'domain_of': ['MaterialSafetyDataSheet'],
                                                        'multivalued': False,
                                                        'name': 'physicalChemicalProperties',
                                                        'range': 'string',
@@ -8428,7 +8421,7 @@ class MSDS(ConfiguredBaseModel):
                                                                  'disposal, ensuring '
                                                                  'compliance with '
                                                                  'legal obligations.',
-                                                  'domain_of': ['MSDS'],
+                                                  'domain_of': ['MaterialSafetyDataSheet'],
                                                   'multivalued': False,
                                                   'name': 'regulatoryInformation',
                                                   'range': 'string',
@@ -8454,7 +8447,7 @@ class MSDS(ConfiguredBaseModel):
                                                                   'degradation or '
                                                                   'dangerous '
                                                                   'reactions.',
-                                                   'domain_of': ['MSDS'],
+                                                   'domain_of': ['MaterialSafetyDataSheet'],
                                                    'multivalued': False,
                                                    'name': 'stabilityAndReactivity',
                                                    'range': 'string',
@@ -8474,7 +8467,7 @@ class MSDS(ConfiguredBaseModel):
                                                                     'toxicity and '
                                                                     'symptoms of '
                                                                     'exposure',
-                                                     'domain_of': ['MSDS'],
+                                                     'domain_of': ['MaterialSafetyDataSheet'],
                                                      'multivalued': False,
                                                      'name': 'toxicologicalInformation',
                                                      'range': 'string',
@@ -8495,39 +8488,60 @@ class MSDS(ConfiguredBaseModel):
                                                                 'special precautions '
                                                                 'to ensure safe '
                                                                 'transit.',
-                                                 'domain_of': ['MSDS'],
+                                                 'domain_of': ['MaterialSafetyDataSheet'],
                                                  'multivalued': False,
                                                  'name': 'transportInformation',
                                                  'range': 'string',
                                                  'recommended': True,
                                                  'required': False,
-                                                 'title': 'transport information'}}})
+                                                 'title': 'transport information'}},
+         'title': 'Material safety data sheet'})
 
     materialSafetyContact: ContactPoint = Field(default=..., title="material safety contact", description="""The designated contact point responsible for providing information related to the safety, handling, and regulatory compliance of the biological product.""", json_schema_extra = { "linkml_meta": {'alias': 'materialSafetyContact',
-         'domain_of': ['MSDS'],
+         'domain_of': ['MaterialSafetyDataSheet'],
          'exact_mappings': ['dcat:contactPoint']} })
     physicalChemicalProperties: Optional[str] = Field(default=None, title="physical and chemical properties and information on ingredients", description="""Key characteristics of the product, such as physical state, appearance, solubility, pH, chemical composition, and molecular weight, essential for safe handling and storage""", json_schema_extra = { "linkml_meta": {'alias': 'physicalChemicalProperties',
-         'domain_of': ['MSDS'],
+         'domain_of': ['MaterialSafetyDataSheet'],
          'recommended': True} })
-    hazardsIdentification: Optional[str] = Field(default=None, title="hazards identification", description="""Outlines the potential risks and dangers associated with handling the product, including its physical, chemical, and health hazards. This section provides information on toxicity, flammability, reactivity, and other relevant risks for safe use.""", json_schema_extra = { "linkml_meta": {'alias': 'hazardsIdentification', 'domain_of': ['MSDS'], 'recommended': True} })
-    firstAidMeasures: Optional[str] = Field(default=None, title="first aid measures", description="""Instructions on immediate actions to take in case of exposure to the product, including inhalation, ingestion, skin, or eye contact. This section outlines steps to minimize harm before medical help is available.""", json_schema_extra = { "linkml_meta": {'alias': 'firstAidMeasures', 'domain_of': ['MSDS'], 'recommended': True} })
-    fireFightingMeasures: Optional[str] = Field(default=None, title="fire fighting measures", description="""Guidance on how to safely extinguish a fire involving the product, including suitable extinguishing agents, special protective equipment for firefighters, and any specific hazards from combustion.""", json_schema_extra = { "linkml_meta": {'alias': 'fireFightingMeasures', 'domain_of': ['MSDS'], 'recommended': True} })
+    hazardsIdentification: Optional[str] = Field(default=None, title="hazards identification", description="""Outlines the potential risks and dangers associated with handling the product, including its physical, chemical, and health hazards. This section provides information on toxicity, flammability, reactivity, and other relevant risks for safe use.""", json_schema_extra = { "linkml_meta": {'alias': 'hazardsIdentification',
+         'domain_of': ['MaterialSafetyDataSheet'],
+         'recommended': True} })
+    firstAidMeasures: Optional[str] = Field(default=None, title="first aid measures", description="""Instructions on immediate actions to take in case of exposure to the product, including inhalation, ingestion, skin, or eye contact. This section outlines steps to minimize harm before medical help is available.""", json_schema_extra = { "linkml_meta": {'alias': 'firstAidMeasures',
+         'domain_of': ['MaterialSafetyDataSheet'],
+         'recommended': True} })
+    fireFightingMeasures: Optional[str] = Field(default=None, title="fire fighting measures", description="""Guidance on how to safely extinguish a fire involving the product, including suitable extinguishing agents, special protective equipment for firefighters, and any specific hazards from combustion.""", json_schema_extra = { "linkml_meta": {'alias': 'fireFightingMeasures',
+         'domain_of': ['MaterialSafetyDataSheet'],
+         'recommended': True} })
     accidentalReleaseMeasures: Optional[str] = Field(default=None, title="accidental release measures", description="""Guidelines for safely managing spills or leaks of the product, including containment, cleanup procedures, and precautions to prevent harm to people, property, and the environment.""", json_schema_extra = { "linkml_meta": {'alias': 'accidentalReleaseMeasures',
-         'domain_of': ['MSDS'],
+         'domain_of': ['MaterialSafetyDataSheet'],
          'recommended': True} })
-    handlingAndStorage: Optional[str] = Field(default=None, title="handling and storage", description="""Instructions on the safe handling practices and storage conditions for the product, including precautions to prevent accidents, degradation, or contamination, as well as recommended temperature, humidity, and container requirements.""", json_schema_extra = { "linkml_meta": {'alias': 'handlingAndStorage', 'domain_of': ['MSDS'], 'recommended': True} })
+    handlingAndStorage: Optional[str] = Field(default=None, title="handling and storage", description="""Instructions on the safe handling practices and storage conditions for the product, including precautions to prevent accidents, degradation, or contamination, as well as recommended temperature, humidity, and container requirements.""", json_schema_extra = { "linkml_meta": {'alias': 'handlingAndStorage',
+         'domain_of': ['MaterialSafetyDataSheet'],
+         'recommended': True} })
     exposureControlsPersonalProtection: Optional[str] = Field(default=None, title="exposure controls/personal protection", description="""Specifies measures to limit exposure to the product, including recommended engineering controls (e.g., ventilation) and personal protective equipment (PPE) such as gloves, masks, goggles, and clothing to ensure safe handling.""", json_schema_extra = { "linkml_meta": {'alias': 'exposureControlsPersonalProtection',
-         'domain_of': ['MSDS'],
+         'domain_of': ['MaterialSafetyDataSheet'],
          'recommended': True} })
-    stabilityAndReactivity: Optional[str] = Field(default=None, title="stability and reactivity", description="""Describes the product’s stability under normal conditions and its potential to react with other substances. This section includes information on hazardous reactions, conditions to avoid, and incompatible materials that could cause degradation or dangerous reactions.""", json_schema_extra = { "linkml_meta": {'alias': 'stabilityAndReactivity', 'domain_of': ['MSDS'], 'recommended': True} })
+    stabilityAndReactivity: Optional[str] = Field(default=None, title="stability and reactivity", description="""Describes the product’s stability under normal conditions and its potential to react with other substances. This section includes information on hazardous reactions, conditions to avoid, and incompatible materials that could cause degradation or dangerous reactions.""", json_schema_extra = { "linkml_meta": {'alias': 'stabilityAndReactivity',
+         'domain_of': ['MaterialSafetyDataSheet'],
+         'recommended': True} })
     toxicologicalInformation: Optional[str] = Field(default=None, title="toxicological information", description="""Details on the potential health effects of the product, including routes of exposure (inhalation, ingestion, skin, eye contact), acute and chronic toxicity and symptoms of exposure""", json_schema_extra = { "linkml_meta": {'alias': 'toxicologicalInformation',
-         'domain_of': ['MSDS'],
+         'domain_of': ['MaterialSafetyDataSheet'],
          'recommended': True} })
-    ecologicalInformation: Optional[str] = Field(default=None, title="ecological information", description="""Details the potential environmental impact of the product, including its effects on ecosystems, persistence, degradability, bioaccumulation potential, and toxicity to aquatic and terrestrial organisms.""", json_schema_extra = { "linkml_meta": {'alias': 'ecologicalInformation', 'domain_of': ['MSDS'], 'recommended': True} })
-    disposalConsiderations: Optional[str] = Field(default=None, title="disposal considerations", description="""Guidance on the safe and environmentally responsible disposal of the product, including recommended disposal methods, regulatory requirements, and precautions to avoid harm to people and the environment during disposal.""", json_schema_extra = { "linkml_meta": {'alias': 'disposalConsiderations', 'domain_of': ['MSDS'], 'recommended': True} })
-    transportInformation: Optional[str] = Field(default=None, title="transport information", description="""Details the regulations and guidelines for safely transporting the product, including classifications for road, air, sea, or rail transport, UN numbers, packaging requirements, and any special precautions to ensure safe transit.""", json_schema_extra = { "linkml_meta": {'alias': 'transportInformation', 'domain_of': ['MSDS'], 'recommended': True} })
-    regulatoryInformation: Optional[str] = Field(default=None, title="regulatory information", description="""Lists applicable laws, regulations, and standards governing the product, including local, national, or international requirements for its handling, use, transportation, and disposal, ensuring compliance with legal obligations.""", json_schema_extra = { "linkml_meta": {'alias': 'regulatoryInformation', 'domain_of': ['MSDS'], 'recommended': True} })
-    furtherInformation: Optional[str] = Field(default=None, title="further information", description="""Provides any additional details or clarifications not covered in other sections of the MSDS, such as references, supporting documents, or specific instructions for safe handling and use of the product.""", json_schema_extra = { "linkml_meta": {'alias': 'furtherInformation', 'domain_of': ['MSDS'], 'recommended': True} })
+    ecologicalInformation: Optional[str] = Field(default=None, title="ecological information", description="""Details the potential environmental impact of the product, including its effects on ecosystems, persistence, degradability, bioaccumulation potential, and toxicity to aquatic and terrestrial organisms.""", json_schema_extra = { "linkml_meta": {'alias': 'ecologicalInformation',
+         'domain_of': ['MaterialSafetyDataSheet'],
+         'recommended': True} })
+    disposalConsiderations: Optional[str] = Field(default=None, title="disposal considerations", description="""Guidance on the safe and environmentally responsible disposal of the product, including recommended disposal methods, regulatory requirements, and precautions to avoid harm to people and the environment during disposal.""", json_schema_extra = { "linkml_meta": {'alias': 'disposalConsiderations',
+         'domain_of': ['MaterialSafetyDataSheet'],
+         'recommended': True} })
+    transportInformation: Optional[str] = Field(default=None, title="transport information", description="""Details the regulations and guidelines for safely transporting the product, including classifications for road, air, sea, or rail transport, UN numbers, packaging requirements, and any special precautions to ensure safe transit.""", json_schema_extra = { "linkml_meta": {'alias': 'transportInformation',
+         'domain_of': ['MaterialSafetyDataSheet'],
+         'recommended': True} })
+    regulatoryInformation: Optional[str] = Field(default=None, title="regulatory information", description="""Lists applicable laws, regulations, and standards governing the product, including local, national, or international requirements for its handling, use, transportation, and disposal, ensuring compliance with legal obligations.""", json_schema_extra = { "linkml_meta": {'alias': 'regulatoryInformation',
+         'domain_of': ['MaterialSafetyDataSheet'],
+         'recommended': True} })
+    furtherInformation: Optional[str] = Field(default=None, title="further information", description="""Provides any additional details or clarifications not covered in other sections of the MSDS, such as references, supporting documents, or specific instructions for safe handling and use of the product.""", json_schema_extra = { "linkml_meta": {'alias': 'furtherInformation',
+         'domain_of': ['MaterialSafetyDataSheet'],
+         'recommended': True} })
 
 
 class File(Resource):
@@ -9370,7 +9384,6 @@ Protozoan.model_rebuild()
 Viroid.model_rebuild()
 Prion.model_rebuild()
 MaterialSafetyDataSheet.model_rebuild()
-MSDS.model_rebuild()
 File.model_rebuild()
 Data.model_rebuild()
 Document.model_rebuild()

@@ -845,8 +845,6 @@
 --     * Slot: contactPoint_id Description: An information that allows someone to establish communication
 -- # Class: "MaterialSafetyDataSheet" Description: "A Material Safety Data Sheet (MSDS) or Safety Data Sheet (SDS) is a standardized document that contains crucial occupational safety and health information related to the product"
 --     * Slot: id Description: 
--- # Class: "MSDS" Description: ""
---     * Slot: id Description: 
 --     * Slot: physicalChemicalProperties Description: Key characteristics of the product, such as physical state, appearance, solubility, pH, chemical composition, and molecular weight, essential for safe handling and storage
 --     * Slot: hazardsIdentification Description: Outlines the potential risks and dangers associated with handling the product, including its physical, chemical, and health hazards. This section provides information on toxicity, flammability, reactivity, and other relevant risks for safe use.
 --     * Slot: firstAidMeasures Description: Instructions on immediate actions to take in case of exposure to the product, including inhalation, ingestion, skin, or eye contact. This section outlines steps to minimize harm before medical help is available.
@@ -1700,10 +1698,6 @@ CREATE TABLE "RecombinantPartIdentification" (
 	"partIdentification" TEXT NOT NULL, 
 	PRIMARY KEY (id)
 );
-CREATE TABLE "MaterialSafetyDataSheet" (
-	id INTEGER NOT NULL, 
-	PRIMARY KEY (id)
-);
 CREATE TABLE "Image" (
 	id INTEGER NOT NULL, 
 	"altText" TEXT, 
@@ -2340,7 +2334,7 @@ CREATE TABLE "Originator" (
 	FOREIGN KEY("contactPoint_id") REFERENCES "ContactPoint" (id), 
 	FOREIGN KEY(logo_id) REFERENCES "Image" (id)
 );
-CREATE TABLE "MSDS" (
+CREATE TABLE "MaterialSafetyDataSheet" (
 	id INTEGER NOT NULL, 
 	"physicalChemicalProperties" TEXT, 
 	"hazardsIdentification" TEXT, 

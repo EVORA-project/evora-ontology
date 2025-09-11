@@ -22,7 +22,7 @@ Alias: transportInformation
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [MSDS](MSDS.md) |  |  yes  |
+| [MaterialSafetyDataSheet](MaterialSafetyDataSheet.md) | A Material Safety Data Sheet (MSDS) or Safety Data Sheet (SDS) is a standardi... |  yes  |
 
 
 
@@ -79,7 +79,7 @@ from_schema: https://w3id.org/evorao/
 rank: 1000
 alias: transportInformation
 domain_of:
-- MSDS
+- MaterialSafetyDataSheet
 range: string
 required: false
 recommended: true

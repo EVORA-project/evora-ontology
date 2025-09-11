@@ -108,7 +108,7 @@ URI: [EVORAO:ContactPoint](https://w3id.org/evorao/ContactPoint)
 | [Protozoan](Protozoan.md) | [contactPoint](contactPoint.md) | range | [ContactPoint](ContactPoint.md) |
 | [Viroid](Viroid.md) | [contactPoint](contactPoint.md) | range | [ContactPoint](ContactPoint.md) |
 | [Prion](Prion.md) | [contactPoint](contactPoint.md) | range | [ContactPoint](ContactPoint.md) |
-| [MSDS](MSDS.md) | [materialSafetyContact](materialSafetyContact.md) | range | [ContactPoint](ContactPoint.md) |
+| [MaterialSafetyDataSheet](MaterialSafetyDataSheet.md) | [materialSafetyContact](materialSafetyContact.md) | range | [ContactPoint](ContactPoint.md) |
 
 
 

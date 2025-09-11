@@ -5,7 +5,7 @@ import lombok.*;
 
 
 
-/* version: 1.0.9485 */
+/* version: 1.0.9489 */
 
 
 /**
@@ -15,5 +15,20 @@ import lombok.*;
 @EqualsAndHashCode(callSuper=false)
 public class MaterialSafetyDataSheet extends Resource {
 
+  private ContactPoint materialSafetyContact;
+  private String physicalChemicalProperties;
+  private String hazardsIdentification;
+  private String firstAidMeasures;
+  private String fireFightingMeasures;
+  private String accidentalReleaseMeasures;
+  private String handlingAndStorage;
+  private String exposureControlsPersonalProtection;
+  private String stabilityAndReactivity;
+  private String toxicologicalInformation;
+  private String ecologicalInformation;
+  private String disposalConsiderations;
+  private String transportInformation;
+  private String regulatoryInformation;
+  private String furtherInformation;
 
 }

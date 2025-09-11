@@ -1,5 +1,5 @@
 # Auto generated from evora_schema.yaml by pythongen.py version: 0.0.1
-# Generation date: 2025-09-11T07:43:27
+# Generation date: 2025-09-11T08:25:12
 # Schema: EVORAO
 #
 # id: https://w3id.org/evorao/
@@ -60,7 +60,7 @@ from linkml_runtime.linkml_model.types import Boolean, Datetime, Integer, String
 from linkml_runtime.utils.metamodelcore import Bool, URI, XSDDateTime
 
 metamodel_version = "1.7.0"
-version = "1.0.9485"
+version = "1.0.9489"
 
 # Namespaces
 EVORAO = CurieNamespace('EVORAO', 'https://w3id.org/evorao/')
@@ -2438,6 +2438,7 @@ class Prion(Pathogen):
     cultivability: str = "Cultivable"
     letterOfAuthority: str = "Not applicable"
 
+@dataclass(repr=False)
 class MaterialSafetyDataSheet(Resource):
     """
     A Material Safety Data Sheet (MSDS) or Safety Data Sheet (SDS) is a standardized document that contains crucial
@@ -2449,16 +2450,6 @@ class MaterialSafetyDataSheet(Resource):
     class_class_curie: ClassVar[str] = "EVORAO:MaterialSafetyDataSheet"
     class_name: ClassVar[str] = "MaterialSafetyDataSheet"
     class_model_uri: ClassVar[URIRef] = EVORAO.MaterialSafetyDataSheet
-
-
-@dataclass(repr=False)
-class MSDS(YAMLRoot):
-    _inherited_slots: ClassVar[list[str]] = []
-
-    class_class_uri: ClassVar[URIRef] = EVORAO["MSDS"]
-    class_class_curie: ClassVar[str] = "EVORAO:MSDS"
-    class_name: ClassVar[str] = "MSDS"
-    class_model_uri: ClassVar[URIRef] = EVORAO.MSDS
 
     materialSafetyContact: Union[dict, "ContactPoint"] = None
     physicalChemicalProperties: Optional[str] = None
@@ -3923,50 +3914,50 @@ slots.Virus_contaminationWithCoInfectingViruses = Slot(uri=EVORAO.contaminationW
 slots.Virus_mycoplasmicContent = Slot(uri=EVORAO.mycoplasmicContent, name="Virus_mycoplasmicContent", curie=EVORAO.curie('mycoplasmicContent'),
                    model_uri=EVORAO.Virus_mycoplasmicContent, domain=Virus, range=Union[bool, Bool])
 
-slots.MSDS_materialSafetyContact = Slot(uri=EVORAO.materialSafetyContact, name="MSDS_materialSafetyContact", curie=EVORAO.curie('materialSafetyContact'),
-                   model_uri=EVORAO.MSDS_materialSafetyContact, domain=MSDS, range=Union[dict, "ContactPoint"])
+slots.MaterialSafetyDataSheet_materialSafetyContact = Slot(uri=EVORAO.materialSafetyContact, name="MaterialSafetyDataSheet_materialSafetyContact", curie=EVORAO.curie('materialSafetyContact'),
+                   model_uri=EVORAO.MaterialSafetyDataSheet_materialSafetyContact, domain=MaterialSafetyDataSheet, range=Union[dict, "ContactPoint"])
 
-slots.MSDS_physicalChemicalProperties = Slot(uri=EVORAO.physicalChemicalProperties, name="MSDS_physicalChemicalProperties", curie=EVORAO.curie('physicalChemicalProperties'),
-                   model_uri=EVORAO.MSDS_physicalChemicalProperties, domain=MSDS, range=Optional[str])
+slots.MaterialSafetyDataSheet_physicalChemicalProperties = Slot(uri=EVORAO.physicalChemicalProperties, name="MaterialSafetyDataSheet_physicalChemicalProperties", curie=EVORAO.curie('physicalChemicalProperties'),
+                   model_uri=EVORAO.MaterialSafetyDataSheet_physicalChemicalProperties, domain=MaterialSafetyDataSheet, range=Optional[str])
 
-slots.MSDS_hazardsIdentification = Slot(uri=EVORAO.hazardsIdentification, name="MSDS_hazardsIdentification", curie=EVORAO.curie('hazardsIdentification'),
-                   model_uri=EVORAO.MSDS_hazardsIdentification, domain=MSDS, range=Optional[str])
+slots.MaterialSafetyDataSheet_hazardsIdentification = Slot(uri=EVORAO.hazardsIdentification, name="MaterialSafetyDataSheet_hazardsIdentification", curie=EVORAO.curie('hazardsIdentification'),
+                   model_uri=EVORAO.MaterialSafetyDataSheet_hazardsIdentification, domain=MaterialSafetyDataSheet, range=Optional[str])
 
-slots.MSDS_firstAidMeasures = Slot(uri=EVORAO.firstAidMeasures, name="MSDS_firstAidMeasures", curie=EVORAO.curie('firstAidMeasures'),
-                   model_uri=EVORAO.MSDS_firstAidMeasures, domain=MSDS, range=Optional[str])
+slots.MaterialSafetyDataSheet_firstAidMeasures = Slot(uri=EVORAO.firstAidMeasures, name="MaterialSafetyDataSheet_firstAidMeasures", curie=EVORAO.curie('firstAidMeasures'),
+                   model_uri=EVORAO.MaterialSafetyDataSheet_firstAidMeasures, domain=MaterialSafetyDataSheet, range=Optional[str])
 
-slots.MSDS_fireFightingMeasures = Slot(uri=EVORAO.fireFightingMeasures, name="MSDS_fireFightingMeasures", curie=EVORAO.curie('fireFightingMeasures'),
-                   model_uri=EVORAO.MSDS_fireFightingMeasures, domain=MSDS, range=Optional[str])
+slots.MaterialSafetyDataSheet_fireFightingMeasures = Slot(uri=EVORAO.fireFightingMeasures, name="MaterialSafetyDataSheet_fireFightingMeasures", curie=EVORAO.curie('fireFightingMeasures'),
+                   model_uri=EVORAO.MaterialSafetyDataSheet_fireFightingMeasures, domain=MaterialSafetyDataSheet, range=Optional[str])
 
-slots.MSDS_accidentalReleaseMeasures = Slot(uri=EVORAO.accidentalReleaseMeasures, name="MSDS_accidentalReleaseMeasures", curie=EVORAO.curie('accidentalReleaseMeasures'),
-                   model_uri=EVORAO.MSDS_accidentalReleaseMeasures, domain=MSDS, range=Optional[str])
+slots.MaterialSafetyDataSheet_accidentalReleaseMeasures = Slot(uri=EVORAO.accidentalReleaseMeasures, name="MaterialSafetyDataSheet_accidentalReleaseMeasures", curie=EVORAO.curie('accidentalReleaseMeasures'),
+                   model_uri=EVORAO.MaterialSafetyDataSheet_accidentalReleaseMeasures, domain=MaterialSafetyDataSheet, range=Optional[str])
 
-slots.MSDS_handlingAndStorage = Slot(uri=EVORAO.handlingAndStorage, name="MSDS_handlingAndStorage", curie=EVORAO.curie('handlingAndStorage'),
-                   model_uri=EVORAO.MSDS_handlingAndStorage, domain=MSDS, range=Optional[str])
+slots.MaterialSafetyDataSheet_handlingAndStorage = Slot(uri=EVORAO.handlingAndStorage, name="MaterialSafetyDataSheet_handlingAndStorage", curie=EVORAO.curie('handlingAndStorage'),
+                   model_uri=EVORAO.MaterialSafetyDataSheet_handlingAndStorage, domain=MaterialSafetyDataSheet, range=Optional[str])
 
-slots.MSDS_exposureControlsPersonalProtection = Slot(uri=EVORAO.exposureControlsPersonalProtection, name="MSDS_exposureControlsPersonalProtection", curie=EVORAO.curie('exposureControlsPersonalProtection'),
-                   model_uri=EVORAO.MSDS_exposureControlsPersonalProtection, domain=MSDS, range=Optional[str])
+slots.MaterialSafetyDataSheet_exposureControlsPersonalProtection = Slot(uri=EVORAO.exposureControlsPersonalProtection, name="MaterialSafetyDataSheet_exposureControlsPersonalProtection", curie=EVORAO.curie('exposureControlsPersonalProtection'),
+                   model_uri=EVORAO.MaterialSafetyDataSheet_exposureControlsPersonalProtection, domain=MaterialSafetyDataSheet, range=Optional[str])
 
-slots.MSDS_stabilityAndReactivity = Slot(uri=EVORAO.stabilityAndReactivity, name="MSDS_stabilityAndReactivity", curie=EVORAO.curie('stabilityAndReactivity'),
-                   model_uri=EVORAO.MSDS_stabilityAndReactivity, domain=MSDS, range=Optional[str])
+slots.MaterialSafetyDataSheet_stabilityAndReactivity = Slot(uri=EVORAO.stabilityAndReactivity, name="MaterialSafetyDataSheet_stabilityAndReactivity", curie=EVORAO.curie('stabilityAndReactivity'),
+                   model_uri=EVORAO.MaterialSafetyDataSheet_stabilityAndReactivity, domain=MaterialSafetyDataSheet, range=Optional[str])
 
-slots.MSDS_toxicologicalInformation = Slot(uri=EVORAO.toxicologicalInformation, name="MSDS_toxicologicalInformation", curie=EVORAO.curie('toxicologicalInformation'),
-                   model_uri=EVORAO.MSDS_toxicologicalInformation, domain=MSDS, range=Optional[str])
+slots.MaterialSafetyDataSheet_toxicologicalInformation = Slot(uri=EVORAO.toxicologicalInformation, name="MaterialSafetyDataSheet_toxicologicalInformation", curie=EVORAO.curie('toxicologicalInformation'),
+                   model_uri=EVORAO.MaterialSafetyDataSheet_toxicologicalInformation, domain=MaterialSafetyDataSheet, range=Optional[str])
 
-slots.MSDS_ecologicalInformation = Slot(uri=EVORAO.ecologicalInformation, name="MSDS_ecologicalInformation", curie=EVORAO.curie('ecologicalInformation'),
-                   model_uri=EVORAO.MSDS_ecologicalInformation, domain=MSDS, range=Optional[str])
+slots.MaterialSafetyDataSheet_ecologicalInformation = Slot(uri=EVORAO.ecologicalInformation, name="MaterialSafetyDataSheet_ecologicalInformation", curie=EVORAO.curie('ecologicalInformation'),
+                   model_uri=EVORAO.MaterialSafetyDataSheet_ecologicalInformation, domain=MaterialSafetyDataSheet, range=Optional[str])
 
-slots.MSDS_disposalConsiderations = Slot(uri=EVORAO.disposalConsiderations, name="MSDS_disposalConsiderations", curie=EVORAO.curie('disposalConsiderations'),
-                   model_uri=EVORAO.MSDS_disposalConsiderations, domain=MSDS, range=Optional[str])
+slots.MaterialSafetyDataSheet_disposalConsiderations = Slot(uri=EVORAO.disposalConsiderations, name="MaterialSafetyDataSheet_disposalConsiderations", curie=EVORAO.curie('disposalConsiderations'),
+                   model_uri=EVORAO.MaterialSafetyDataSheet_disposalConsiderations, domain=MaterialSafetyDataSheet, range=Optional[str])
 
-slots.MSDS_transportInformation = Slot(uri=EVORAO.transportInformation, name="MSDS_transportInformation", curie=EVORAO.curie('transportInformation'),
-                   model_uri=EVORAO.MSDS_transportInformation, domain=MSDS, range=Optional[str])
+slots.MaterialSafetyDataSheet_transportInformation = Slot(uri=EVORAO.transportInformation, name="MaterialSafetyDataSheet_transportInformation", curie=EVORAO.curie('transportInformation'),
+                   model_uri=EVORAO.MaterialSafetyDataSheet_transportInformation, domain=MaterialSafetyDataSheet, range=Optional[str])
 
-slots.MSDS_regulatoryInformation = Slot(uri=EVORAO.regulatoryInformation, name="MSDS_regulatoryInformation", curie=EVORAO.curie('regulatoryInformation'),
-                   model_uri=EVORAO.MSDS_regulatoryInformation, domain=MSDS, range=Optional[str])
+slots.MaterialSafetyDataSheet_regulatoryInformation = Slot(uri=EVORAO.regulatoryInformation, name="MaterialSafetyDataSheet_regulatoryInformation", curie=EVORAO.curie('regulatoryInformation'),
+                   model_uri=EVORAO.MaterialSafetyDataSheet_regulatoryInformation, domain=MaterialSafetyDataSheet, range=Optional[str])
 
-slots.MSDS_furtherInformation = Slot(uri=EVORAO.furtherInformation, name="MSDS_furtherInformation", curie=EVORAO.curie('furtherInformation'),
-                   model_uri=EVORAO.MSDS_furtherInformation, domain=MSDS, range=Optional[str])
+slots.MaterialSafetyDataSheet_furtherInformation = Slot(uri=EVORAO.furtherInformation, name="MaterialSafetyDataSheet_furtherInformation", curie=EVORAO.curie('furtherInformation'),
+                   model_uri=EVORAO.MaterialSafetyDataSheet_furtherInformation, domain=MaterialSafetyDataSheet, range=Optional[str])
 
 slots.File_name = Slot(uri=FOAF.name, name="File_name", curie=FOAF.curie('name'),
                    model_uri=EVORAO.File_name, domain=File, range=str)

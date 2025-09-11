@@ -4456,10 +4456,6 @@ type MaterialSafetyDataSheet struct {
 	 * parent types
 	 */
 	Resource
-}
-
-
-type MSDS struct {
 	/*
 	 * The designated contact point responsible for providing information related to the safety, handling, and regulatory compliance of the biological product.
 	 */

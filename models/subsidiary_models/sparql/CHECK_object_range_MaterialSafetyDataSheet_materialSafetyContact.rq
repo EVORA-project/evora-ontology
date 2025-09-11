@@ -62,15 +62,59 @@ SELECT
   ?check
   ?graph
   ?subject
-  ?predicate WHERE {
+  ?predicate
+  ?object
+WHERE {
  GRAPH ?graph {
-  ?subject rdf:type EVORAO:MSDS .
-  FILTER NOT EXISTS { ?subject  EVORAO:materialSafetyContact ?o  }
+  ?subject rdf:type EVORAO:MaterialSafetyDataSheet ;
+     ?predicate ?object .
+  FILTER NOT EXISTS {
+    ?object rdf:type ?otype .
+    FILTER ( ?otype IN (
+      EVORAO:ContactPoint
+      
+      ))
+  }
  }
- VALUES ?check { linkml:required }
- VALUES ?predicate { EVORAO:materialSafetyContact }
+ VALUES ?check { linkml:range }
+ VALUES ?predicate { EVORAO:materialSafetyContact  }
  
 }  
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+## -- End of checks for MaterialSafetyDataSheet
+
+
+## --
+## Checks for Data
+## --
 

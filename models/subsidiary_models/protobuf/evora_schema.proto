@@ -1,7 +1,7 @@
  syntax="proto3";
  package
 // metamodel_version: 1.7.0
-// version: 1.0.9485
+// version: 1.0.9489
 // List of other names for things
 message AlternateName
  {
@@ -484,7 +484,8 @@ message License
   string licensingOrAttribution = 0
   image logo = 0
  }
-message MSDS
+// A Material Safety Data Sheet (MSDS) or Safety Data Sheet (SDS) is a standardized document that contains crucial occupational safety and health information related to the product
+message MaterialSafetyDataSheet
  {
   contactPoint materialSafetyContact = 0
   string physicalChemicalProperties = 0

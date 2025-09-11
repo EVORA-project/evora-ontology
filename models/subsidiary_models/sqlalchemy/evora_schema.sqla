@@ -26,39 +26,6 @@ class Resource(Base):
     
 
 
-class MSDS(Base):
-    """
-    
-    """
-    __tablename__ = 'MSDS'
-
-    id = Column(Integer(), primary_key=True, autoincrement=True , nullable=False )
-    physicalChemicalProperties = Column(Text())
-    hazardsIdentification = Column(Text())
-    firstAidMeasures = Column(Text())
-    fireFightingMeasures = Column(Text())
-    accidentalReleaseMeasures = Column(Text())
-    handlingAndStorage = Column(Text())
-    exposureControlsPersonalProtection = Column(Text())
-    stabilityAndReactivity = Column(Text())
-    toxicologicalInformation = Column(Text())
-    ecologicalInformation = Column(Text())
-    disposalConsiderations = Column(Text())
-    transportInformation = Column(Text())
-    regulatoryInformation = Column(Text())
-    furtherInformation = Column(Text())
-    materialSafetyContact_id = Column(Integer(), ForeignKey('ContactPoint.id'), nullable=False )
-    materialSafetyContact = relationship("ContactPoint", uselist=False, foreign_keys=[materialSafetyContact_id])
-    
-
-    def __repr__(self):
-        return f"MSDS(id={self.id},physicalChemicalProperties={self.physicalChemicalProperties},hazardsIdentification={self.hazardsIdentification},firstAidMeasures={self.firstAidMeasures},fireFightingMeasures={self.fireFightingMeasures},accidentalReleaseMeasures={self.accidentalReleaseMeasures},handlingAndStorage={self.handlingAndStorage},exposureControlsPersonalProtection={self.exposureControlsPersonalProtection},stabilityAndReactivity={self.stabilityAndReactivity},toxicologicalInformation={self.toxicologicalInformation},ecologicalInformation={self.ecologicalInformation},disposalConsiderations={self.disposalConsiderations},transportInformation={self.transportInformation},regulatoryInformation={self.regulatoryInformation},furtherInformation={self.furtherInformation},materialSafetyContact_id={self.materialSafetyContact_id},)"
-
-
-
-    
-
-
 class DataServiceServesDataset(Base):
     """
     
@@ -4677,10 +4644,26 @@ class MaterialSafetyDataSheet(Resource):
     __tablename__ = 'MaterialSafetyDataSheet'
 
     id = Column(Integer(), primary_key=True, autoincrement=True , nullable=False )
+    physicalChemicalProperties = Column(Text())
+    hazardsIdentification = Column(Text())
+    firstAidMeasures = Column(Text())
+    fireFightingMeasures = Column(Text())
+    accidentalReleaseMeasures = Column(Text())
+    handlingAndStorage = Column(Text())
+    exposureControlsPersonalProtection = Column(Text())
+    stabilityAndReactivity = Column(Text())
+    toxicologicalInformation = Column(Text())
+    ecologicalInformation = Column(Text())
+    disposalConsiderations = Column(Text())
+    transportInformation = Column(Text())
+    regulatoryInformation = Column(Text())
+    furtherInformation = Column(Text())
+    materialSafetyContact_id = Column(Integer(), ForeignKey('ContactPoint.id'), nullable=False )
+    materialSafetyContact = relationship("ContactPoint", uselist=False, foreign_keys=[materialSafetyContact_id])
     
 
     def __repr__(self):
-        return f"MaterialSafetyDataSheet(id={self.id},)"
+        return f"MaterialSafetyDataSheet(id={self.id},physicalChemicalProperties={self.physicalChemicalProperties},hazardsIdentification={self.hazardsIdentification},firstAidMeasures={self.firstAidMeasures},fireFightingMeasures={self.fireFightingMeasures},accidentalReleaseMeasures={self.accidentalReleaseMeasures},handlingAndStorage={self.handlingAndStorage},exposureControlsPersonalProtection={self.exposureControlsPersonalProtection},stabilityAndReactivity={self.stabilityAndReactivity},toxicologicalInformation={self.toxicologicalInformation},ecologicalInformation={self.ecologicalInformation},disposalConsiderations={self.disposalConsiderations},transportInformation={self.transportInformation},regulatoryInformation={self.regulatoryInformation},furtherInformation={self.furtherInformation},materialSafetyContact_id={self.materialSafetyContact_id},)"
 
 
 
