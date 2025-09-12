@@ -650,7 +650,6 @@ attributes:
     - schema:description
     close_mappings:
     - schema:description
-    - schema:description
     rank: 1000
     slot_uri: dct:description
     alias: description

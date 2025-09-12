@@ -62,7 +62,8 @@ Alias: telephone
 | ---  | ---  |
 | self | EVORAO:telephone |
 | native | EVORAO:telephone |
-| exact | schema:telephone, vcard:telephone |
+| exact | schema:telephone |
+| close | vcard:telephone |
 
 
 
@@ -77,6 +78,7 @@ title: telephone
 from_schema: https://w3id.org/evorao/
 exact_mappings:
 - schema:telephone
+close_mappings:
 - vcard:telephone
 rank: 1000
 alias: telephone

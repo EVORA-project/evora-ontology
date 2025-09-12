@@ -102,6 +102,8 @@ URI: [EVORAO:BiologicalMaterialOrigin](https://w3id.org/evorao/BiologicalMateria
 | ---  | ---  |
 | self | EVORAO:BiologicalMaterialOrigin |
 | native | EVORAO:BiologicalMaterialOrigin |
+| related | snomed:115668003, snomed:115668003 |
+| close | sepio:0000058, sepio:0000058 |
 
 
 
@@ -123,6 +125,12 @@ description: Information about the origin of the biological material, compulsory
   the Nagoya Protocol
 title: Biological material origin
 from_schema: https://w3id.org/evorao/
+close_mappings:
+- sepio:0000058
+- sepio:0000058
+related_mappings:
+- snomed:115668003
+- snomed:115668003
 is_a: Resource
 slots:
 - recombinantMaterial
@@ -162,6 +170,8 @@ slot_usage:
     title: biological part origin
     comments:
     - It can be multiple parts in case of a recombinant biological material.
+    related_mappings:
+    - schema:hasBioChemEntityPart
     domain_of:
     - BiologicalMaterialOrigin
     range: BiologicalPartOrigin
@@ -181,6 +191,12 @@ description: Information about the origin of the biological material, compulsory
   the Nagoya Protocol
 title: Biological material origin
 from_schema: https://w3id.org/evorao/
+close_mappings:
+- sepio:0000058
+- sepio:0000058
+related_mappings:
+- snomed:115668003
+- snomed:115668003
 is_a: Resource
 slot_usage:
   recombinantMaterial:
@@ -216,6 +232,8 @@ slot_usage:
     title: biological part origin
     comments:
     - It can be multiple parts in case of a recombinant biological material.
+    related_mappings:
+    - schema:hasBioChemEntityPart
     domain_of:
     - BiologicalMaterialOrigin
     range: BiologicalPartOrigin
@@ -264,6 +282,8 @@ attributes:
     comments:
     - It can be multiple parts in case of a recombinant biological material.
     from_schema: https://w3id.org/evorao/
+    related_mappings:
+    - schema:hasBioChemEntityPart
     rank: 1000
     alias: biologicalPartOrigin
     owner: BiologicalMaterialOrigin

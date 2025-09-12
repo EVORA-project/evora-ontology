@@ -61,8 +61,8 @@ Alias: resourceUrl
 | ---  | ---  |
 | self | EVORAO:resourceUrl |
 | native | EVORAO:resourceUrl |
-| exact | dct:license |
-| close | schema:url, schema:url |
+| exact | dct:license, schema:archivedAt |
+| broad | schema:url, schema:url |
 
 
 
@@ -78,7 +78,8 @@ title: resource URL
 from_schema: https://w3id.org/evorao/
 exact_mappings:
 - dct:license
-close_mappings:
+- schema:archivedAt
+broad_mappings:
 - schema:url
 - schema:url
 rank: 1000

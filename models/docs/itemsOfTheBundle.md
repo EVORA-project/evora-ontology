@@ -64,6 +64,7 @@ Alias: itemsOfTheBundle
 | ---  | ---  |
 | self | EVORAO:itemsOfTheBundle |
 | native | EVORAO:itemsOfTheBundle |
+| close | schema:includesObject |
 
 
 
@@ -77,6 +78,8 @@ description: Specifies the constituent products and/or services that are part of
   bundle
 title: items of the bundle
 from_schema: https://w3id.org/evorao/
+close_mappings:
+- schema:includesObject
 rank: 1000
 alias: itemsOfTheBundle
 domain_of:

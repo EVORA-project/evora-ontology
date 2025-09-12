@@ -22,12 +22,12 @@ Alias: contentUrl
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [Document](Document.md) | Subclass of File representing textual or written files such as reports, manua... |  no  |
-| [Video](Video.md) | Subclass of File representing moving visual media, such as recordings, presen... |  no  |
 | [File](File.md) | Digital document or record stored in a specific format that contains data or ... |  yes  |
-| [Data](Data.md) | Subclass of File representing structured or unstructured datasets, often used... |  no  |
 | [Image](Image.md) | Subclass of File representing visual content such as pictures, diagrams, or i... |  no  |
 | [Audio](Audio.md) | Subclass of File representing sound recordings or audio tracks |  no  |
+| [Document](Document.md) | Subclass of File representing textual or written files such as reports, manua... |  no  |
+| [Data](Data.md) | Subclass of File representing structured or unstructured datasets, often used... |  no  |
+| [Video](Video.md) | Subclass of File representing moving visual media, such as recordings, presen... |  no  |
 
 
 
@@ -67,6 +67,7 @@ Alias: contentUrl
 | ---  | ---  |
 | self | EVORAO:contentUrl |
 | native | EVORAO:contentUrl |
+| exact | schema:contentUrl |
 
 
 
@@ -80,6 +81,8 @@ description: The web address or location where the file content is stored and ca
   be accessed or downloaded.
 title: content URL
 from_schema: https://w3id.org/evorao/
+exact_mappings:
+- schema:contentUrl
 rank: 1000
 alias: contentUrl
 domain_of:

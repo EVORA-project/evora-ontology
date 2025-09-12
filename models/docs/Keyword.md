@@ -113,7 +113,7 @@ URI: [EVORAO:Keyword](https://w3id.org/evorao/Keyword)
 | ---  | ---  |
 | self | EVORAO:Keyword |
 | native | EVORAO:Keyword |
-| exact | wd:Q1128340, sio:000147, edam:0968, wd:Q1128340, sio:000147, edam:0968 |
+| exact | wd:Q1128340, sio:000147, edam:0968, schema:DefinedTerm, wd:Q1128340, sio:000147, edam:0968, schema:DefinedTerm |
 
 
 
@@ -137,9 +137,11 @@ exact_mappings:
 - wd:Q1128340
 - sio:000147
 - edam:0968
+- schema:DefinedTerm
 - wd:Q1128340
 - sio:000147
 - edam:0968
+- schema:DefinedTerm
 is_a: Term
 
 ```
@@ -157,9 +159,11 @@ exact_mappings:
 - wd:Q1128340
 - sio:000147
 - edam:0968
+- schema:DefinedTerm
 - wd:Q1128340
 - sio:000147
 - edam:0968
+- schema:DefinedTerm
 is_a: Term
 attributes:
   title:
@@ -202,7 +206,6 @@ attributes:
     exact_mappings:
     - schema:description
     close_mappings:
-    - schema:description
     - schema:description
     rank: 1000
     slot_uri: dct:description

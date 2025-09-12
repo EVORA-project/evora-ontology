@@ -60,7 +60,8 @@ Alias: addressLocality
 | ---  | ---  |
 | self | EVORAO:addressLocality |
 | native | EVORAO:addressLocality |
-| close | schema:addressLocality, vcard:hasLocality |
+| exact | schema:addressLocality, vcard:locality |
+| close | vcard:hasLocality |
 
 
 
@@ -74,8 +75,10 @@ description: The locality in which the street address is, and which is in the re
   e.g, the city
 title: locality/city
 from_schema: https://w3id.org/evorao/
-close_mappings:
+exact_mappings:
 - schema:addressLocality
+- vcard:locality
+close_mappings:
 - vcard:hasLocality
 rank: 1000
 alias: addressLocality

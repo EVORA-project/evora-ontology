@@ -62,6 +62,7 @@ Alias: domain
 | ---  | ---  |
 | self | EVORAO:domain |
 | native | EVORAO:domain |
+| close | uniprotrdfs:domain |
 
 
 
@@ -76,6 +77,8 @@ description: A distinct structural and functional unit within the protein, often
   function
 title: domain
 from_schema: https://w3id.org/evorao/
+close_mappings:
+- uniprotrdfs:domain
 rank: 1000
 alias: domain
 domain_of:

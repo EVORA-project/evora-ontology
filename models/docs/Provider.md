@@ -157,8 +157,8 @@ URI: [EVORAO:Provider](https://w3id.org/evorao/Provider)
 | ---  | ---  |
 | self | EVORAO:Provider |
 | native | EVORAO:Provider |
-| related | foaf:Organization, foaf:Organization |
-| close | dct:ProvenanceStatement, dct:ProvenanceStatement |
+| related | foaf:Organization, dct:ProvenanceStatement, foaf:Organization, dct:ProvenanceStatement |
+| close | ncit:C37900, ncit:C37900 |
 
 
 
@@ -179,11 +179,13 @@ description: A provider of products or services, as a specific organization
 title: Provider
 from_schema: https://w3id.org/evorao/
 close_mappings:
-- dct:ProvenanceStatement
-- dct:ProvenanceStatement
+- ncit:C37900
+- ncit:C37900
 related_mappings:
 - foaf:Organization
+- dct:ProvenanceStatement
 - foaf:Organization
+- dct:ProvenanceStatement
 is_a: Organization
 slots:
 - memberOfRi
@@ -192,6 +194,8 @@ slot_usage:
     name: memberOfRi
     description: The research infrastructure of which this organization is a member
     title: member of RI
+    broad_mappings:
+    - schema:memberOf
     domain_of:
     - Provider
     range: ReasearchInfrastructure
@@ -210,17 +214,21 @@ description: A provider of products or services, as a specific organization
 title: Provider
 from_schema: https://w3id.org/evorao/
 close_mappings:
-- dct:ProvenanceStatement
-- dct:ProvenanceStatement
+- ncit:C37900
+- ncit:C37900
 related_mappings:
 - foaf:Organization
+- dct:ProvenanceStatement
 - foaf:Organization
+- dct:ProvenanceStatement
 is_a: Organization
 slot_usage:
   memberOfRi:
     name: memberOfRi
     description: The research infrastructure of which this organization is a member
     title: member of RI
+    broad_mappings:
+    - schema:memberOf
     domain_of:
     - Provider
     range: ReasearchInfrastructure
@@ -232,6 +240,8 @@ attributes:
     description: The research infrastructure of which this organization is a member
     title: member of RI
     from_schema: https://w3id.org/evorao/
+    broad_mappings:
+    - schema:memberOf
     rank: 1000
     alias: memberOfRi
     owner: Provider
@@ -332,7 +342,6 @@ attributes:
     exact_mappings:
     - schema:description
     close_mappings:
-    - schema:description
     - schema:description
     rank: 1000
     slot_uri: dct:description

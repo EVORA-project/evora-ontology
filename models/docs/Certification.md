@@ -122,7 +122,9 @@ URI: [EVORAO:Certification](https://w3id.org/evorao/Certification)
 | ---  | ---  |
 | self | EVORAO:Certification |
 | native | EVORAO:Certification |
-| close | wd:Q374814, schema:Certification, wd:Q374814, schema:Certification |
+| exact | schema:Certification, schema:Certification |
+| related | ncit:C43610, ncit:C43610 |
+| close | wd:Q374814, wd:Q374814 |
 
 
 
@@ -143,11 +145,15 @@ description: Assurance given by an independent certification body that a product
   service or system meets the requirements of a standard
 title: Certification
 from_schema: https://w3id.org/evorao/
+exact_mappings:
+- schema:Certification
+- schema:Certification
 close_mappings:
 - wd:Q374814
-- schema:Certification
 - wd:Q374814
-- schema:Certification
+related_mappings:
+- ncit:C43610
+- ncit:C43610
 is_a: Resource
 slots:
 - title
@@ -188,7 +194,7 @@ slot_usage:
     comments:
     - Describe this item in few lines. This description will serve as a summary to
       present the resource.
-    close_mappings:
+    exact_mappings:
     - schema:description
     slot_uri: dct:description
     domain_of:
@@ -208,6 +214,8 @@ slot_usage:
     name: logo
     description: A path or URL to the related logo
     title: logo
+    exact_mappings:
+    - schema:logo
     domain_of:
     - Certification
     - PersonOrOrganization
@@ -221,6 +229,8 @@ slot_usage:
       of the subject to the applicable scheme, including, as the case may be, the
       documents attesting the equivalence to another certification scheme.
     title: certification document
+    exact_mappings:
+    - schema:associatedMedia
     domain_of:
     - Certification
     range: Document
@@ -231,7 +241,9 @@ slot_usage:
     description: The web address or location where the details or content is stored
       and can be accessed or downloaded.
     title: resource URL
-    close_mappings:
+    exact_mappings:
+    - schema:archivedAt
+    broad_mappings:
     - schema:url
     domain_of:
     - Certification
@@ -252,11 +264,15 @@ description: Assurance given by an independent certification body that a product
   service or system meets the requirements of a standard
 title: Certification
 from_schema: https://w3id.org/evorao/
+exact_mappings:
+- schema:Certification
+- schema:Certification
 close_mappings:
 - wd:Q374814
-- schema:Certification
 - wd:Q374814
-- schema:Certification
+related_mappings:
+- ncit:C43610
+- ncit:C43610
 is_a: Resource
 slot_usage:
   title:
@@ -291,7 +307,7 @@ slot_usage:
     comments:
     - Describe this item in few lines. This description will serve as a summary to
       present the resource.
-    close_mappings:
+    exact_mappings:
     - schema:description
     slot_uri: dct:description
     domain_of:
@@ -311,6 +327,8 @@ slot_usage:
     name: logo
     description: A path or URL to the related logo
     title: logo
+    exact_mappings:
+    - schema:logo
     domain_of:
     - Certification
     - PersonOrOrganization
@@ -324,6 +342,8 @@ slot_usage:
       of the subject to the applicable scheme, including, as the case may be, the
       documents attesting the equivalence to another certification scheme.
     title: certification document
+    exact_mappings:
+    - schema:associatedMedia
     domain_of:
     - Certification
     range: Document
@@ -334,7 +354,9 @@ slot_usage:
     description: The web address or location where the details or content is stored
       and can be accessed or downloaded.
     title: resource URL
-    close_mappings:
+    exact_mappings:
+    - schema:archivedAt
+    broad_mappings:
     - schema:url
     domain_of:
     - Certification
@@ -382,8 +404,6 @@ attributes:
     from_schema: https://w3id.org/evorao/
     exact_mappings:
     - schema:description
-    - schema:description
-    - schema:description
     close_mappings:
     - schema:description
     rank: 1000
@@ -427,6 +447,8 @@ attributes:
       documents attesting the equivalence to another certification scheme.
     title: certification document
     from_schema: https://w3id.org/evorao/
+    exact_mappings:
+    - schema:associatedMedia
     rank: 1000
     alias: certificationDocument
     owner: Certification
@@ -442,8 +464,8 @@ attributes:
     title: resource URL
     from_schema: https://w3id.org/evorao/
     exact_mappings:
-    - dct:license
-    close_mappings:
+    - schema:archivedAt
+    broad_mappings:
     - schema:url
     rank: 1000
     alias: resourceUrl

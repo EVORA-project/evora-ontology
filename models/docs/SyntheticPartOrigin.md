@@ -121,6 +121,8 @@ slot_usage:
     description: Set to TRUE if there was is any modification made from the reference
       sequence
     title: modifications from the reference sequence(s)
+    related_mappings:
+    - geno:0000967
     domain_of:
     - SyntheticPartOrigin
     range: boolean
@@ -130,6 +132,8 @@ slot_usage:
     name: descriptionOfModificationsMadeFromTheReferenceSequences
     description: List the modifications mades from the reference sequence if any
     title: description of modification(s) made from the reference sequence(s)
+    related_mappings:
+    - uniprotrdfs:modification
     domain_of:
     - SyntheticPartOrigin
     range: string
@@ -156,6 +160,8 @@ slot_usage:
     description: Set to TRUE if there was is any modification made from the reference
       sequence
     title: modifications from the reference sequence(s)
+    related_mappings:
+    - geno:0000967
     domain_of:
     - SyntheticPartOrigin
     range: boolean
@@ -165,6 +171,8 @@ slot_usage:
     name: descriptionOfModificationsMadeFromTheReferenceSequences
     description: List the modifications mades from the reference sequence if any
     title: description of modification(s) made from the reference sequence(s)
+    related_mappings:
+    - uniprotrdfs:modification
     domain_of:
     - SyntheticPartOrigin
     range: string
@@ -178,6 +186,8 @@ attributes:
       sequence
     title: modifications from the reference sequence(s)
     from_schema: https://w3id.org/evorao/
+    related_mappings:
+    - geno:0000967
     rank: 1000
     alias: modificationsFromTheReferenceSequences
     owner: SyntheticPartOrigin
@@ -191,6 +201,8 @@ attributes:
     description: List the modifications mades from the reference sequence if any
     title: description of modification(s) made from the reference sequence(s)
     from_schema: https://w3id.org/evorao/
+    related_mappings:
+    - uniprotrdfs:modification
     rank: 1000
     alias: descriptionOfModificationsMadeFromTheReferenceSequences
     owner: SyntheticPartOrigin

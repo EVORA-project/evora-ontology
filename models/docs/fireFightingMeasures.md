@@ -62,6 +62,7 @@ Alias: fireFightingMeasures
 | ---  | ---  |
 | self | EVORAO:fireFightingMeasures |
 | native | EVORAO:fireFightingMeasures |
+| related | schema:Recommendation |
 
 
 
@@ -76,6 +77,8 @@ description: Guidance on how to safely extinguish a fire involving the product, 
   any specific hazards from combustion.
 title: fire fighting measures
 from_schema: https://w3id.org/evorao/
+related_mappings:
+- schema:Recommendation
 rank: 1000
 alias: fireFightingMeasures
 domain_of:

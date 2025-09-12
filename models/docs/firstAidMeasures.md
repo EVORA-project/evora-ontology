@@ -62,6 +62,7 @@ Alias: firstAidMeasures
 | ---  | ---  |
 | self | EVORAO:firstAidMeasures |
 | native | EVORAO:firstAidMeasures |
+| related | schema:Recommendation |
 
 
 
@@ -76,6 +77,8 @@ description: Instructions on immediate actions to take in case of exposure to th
   steps to minimize harm before medical help is available.
 title: first aid measures
 from_schema: https://w3id.org/evorao/
+related_mappings:
+- schema:Recommendation
 rank: 1000
 alias: firstAidMeasures
 domain_of:

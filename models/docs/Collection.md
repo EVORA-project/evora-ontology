@@ -156,8 +156,12 @@ slot_usage:
     name: collectionItem
     description: An item of the collection
     title: collection item
-    close_mappings:
+    related_mappings:
     - dcat:resource
+    - dcat:servesDataset
+    broad_mappings:
+    - schema:includesObject
+    - dcat:dataset
     domain_of:
     - Collection
     range: ProductOrService
@@ -168,7 +172,7 @@ slot_usage:
     name: collectionDataProvider
     description: The provider of the data of the collection
     title: collection data provider
-    close_mappings:
+    broad_mappings:
     - dct:isReferencedBy
     domain_of:
     - Collection
@@ -196,8 +200,12 @@ slot_usage:
     name: collectionItem
     description: An item of the collection
     title: collection item
-    close_mappings:
+    related_mappings:
     - dcat:resource
+    - dcat:servesDataset
+    broad_mappings:
+    - schema:includesObject
+    - dcat:dataset
     domain_of:
     - Collection
     range: ProductOrService
@@ -208,7 +216,7 @@ slot_usage:
     name: collectionDataProvider
     description: The provider of the data of the collection
     title: collection data provider
-    close_mappings:
+    broad_mappings:
     - dct:isReferencedBy
     domain_of:
     - Collection
@@ -221,8 +229,12 @@ attributes:
     description: An item of the collection
     title: collection item
     from_schema: https://w3id.org/evorao/
-    close_mappings:
+    related_mappings:
     - dcat:resource
+    - dcat:servesDataset
+    broad_mappings:
+    - schema:includesObject
+    - dcat:dataset
     rank: 1000
     alias: collectionItem
     owner: Collection
@@ -237,7 +249,7 @@ attributes:
     description: The provider of the data of the collection
     title: collection data provider
     from_schema: https://w3id.org/evorao/
-    close_mappings:
+    broad_mappings:
     - dct:isReferencedBy
     rank: 1000
     alias: collectionDataProvider
@@ -287,7 +299,6 @@ attributes:
     exact_mappings:
     - schema:description
     close_mappings:
-    - schema:description
     - schema:description
     rank: 1000
     slot_uri: dct:description

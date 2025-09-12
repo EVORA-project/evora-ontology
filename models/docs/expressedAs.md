@@ -62,6 +62,7 @@ Alias: expressedAs
 | ---  | ---  |
 | self | EVORAO:expressedAs |
 | native | EVORAO:expressedAs |
+| close | apollo:00000102 |
 
 
 
@@ -77,6 +78,8 @@ description: Refers to the form in which the protein is produced and manifested 
   that are insoluble and form within the cell)
 title: expressed as
 from_schema: https://w3id.org/evorao/
+close_mappings:
+- apollo:00000102
 rank: 1000
 alias: expressedAs
 domain_of:

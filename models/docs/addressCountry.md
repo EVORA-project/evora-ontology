@@ -60,7 +60,7 @@ Alias: addressCountry
 | ---  | ---  |
 | self | EVORAO:addressCountry |
 | native | EVORAO:addressCountry |
-| close | schema:addressCountry, vcard:hasCountryName |
+| exact | schema:addressCountry, vcard:hasCountryName |
 
 
 
@@ -73,7 +73,7 @@ name: addressCountry
 description: The country as of  ISO 3166
 title: address Country
 from_schema: https://w3id.org/evorao/
-close_mappings:
+exact_mappings:
 - schema:addressCountry
 - vcard:hasCountryName
 rank: 1000

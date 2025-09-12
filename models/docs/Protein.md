@@ -365,7 +365,7 @@ URI: [EVORAO:Protein](https://w3id.org/evorao/Protein)
 | ---  | ---  |
 | self | EVORAO:Protein |
 | native | EVORAO:Protein |
-| close | wd:Q8054, wd:Q8054 |
+| close | wd:Q8054, snomed:88878007, sio:010043, schema:Protein, wd:Q8054, snomed:88878007, sio:010043, schema:Protein |
 
 
 
@@ -387,7 +387,13 @@ title: Protein
 from_schema: https://w3id.org/evorao/
 close_mappings:
 - wd:Q8054
+- snomed:88878007
+- sio:010043
+- schema:Protein
 - wd:Q8054
+- snomed:88878007
+- sio:010043
+- schema:Protein
 is_a: Product
 slots:
 - biologicalMaterialOrigin
@@ -411,6 +417,8 @@ slot_usage:
       for access, utilization, and benefit-sharing of genetic resources in compliance
       with the Nagoya Protocol
     title: biological material origin
+    related_mappings:
+    - sepio:0000058
     domain_of:
     - Protein
     - NucleicAcid
@@ -423,6 +431,11 @@ slot_usage:
     description: The related sequence information from a sequence provider or in fasta
       format
     title: sequence
+    close_mappings:
+    - geno:0000239
+    - bao:0002817
+    related_mappings:
+    - uniprotrdfs:sequence
     domain_of:
     - Protein
     - RecombinantPartIdentification
@@ -461,6 +474,8 @@ slot_usage:
       such as purification, detection, localization, tracking, solubility enhancement,
       or selection. Applicable to both proteins and nucleic acids
     title: tag sequence
+    exact_mappings:
+    - bao:0002796
     domain_of:
     - Protein
     - NucleicAcid
@@ -473,6 +488,8 @@ slot_usage:
       capable of independent folding and stability, which contributes to the protein's
       overall function
     title: domain
+    close_mappings:
+    - uniprotrdfs:domain
     domain_of:
     - Protein
     range: string
@@ -485,6 +502,8 @@ slot_usage:
       dissolved in the cellular or extracellular fluid) and 'Inclusion bodies' (aggregated
       proteins that are insoluble and form within the cell)
     title: expressed as
+    close_mappings:
+    - apollo:00000102
     domain_of:
     - Protein
     range: string
@@ -509,6 +528,8 @@ slot_usage:
       'Insect cells' (using baculovirus vectors), and 'Mammalian cells' (mammalian
       cell lines).
     title: expression system
+    close_mappings:
+    - ro:0002206
     domain_of:
     - Protein
     range: string
@@ -590,7 +611,13 @@ title: Protein
 from_schema: https://w3id.org/evorao/
 close_mappings:
 - wd:Q8054
+- snomed:88878007
+- sio:010043
+- schema:Protein
 - wd:Q8054
+- snomed:88878007
+- sio:010043
+- schema:Protein
 is_a: Product
 slot_usage:
   biologicalMaterialOrigin:
@@ -599,6 +626,8 @@ slot_usage:
       for access, utilization, and benefit-sharing of genetic resources in compliance
       with the Nagoya Protocol
     title: biological material origin
+    related_mappings:
+    - sepio:0000058
     domain_of:
     - Protein
     - NucleicAcid
@@ -611,6 +640,11 @@ slot_usage:
     description: The related sequence information from a sequence provider or in fasta
       format
     title: sequence
+    close_mappings:
+    - geno:0000239
+    - bao:0002817
+    related_mappings:
+    - uniprotrdfs:sequence
     domain_of:
     - Protein
     - RecombinantPartIdentification
@@ -649,6 +683,8 @@ slot_usage:
       such as purification, detection, localization, tracking, solubility enhancement,
       or selection. Applicable to both proteins and nucleic acids
     title: tag sequence
+    exact_mappings:
+    - bao:0002796
     domain_of:
     - Protein
     - NucleicAcid
@@ -661,6 +697,8 @@ slot_usage:
       capable of independent folding and stability, which contributes to the protein's
       overall function
     title: domain
+    close_mappings:
+    - uniprotrdfs:domain
     domain_of:
     - Protein
     range: string
@@ -673,6 +711,8 @@ slot_usage:
       dissolved in the cellular or extracellular fluid) and 'Inclusion bodies' (aggregated
       proteins that are insoluble and form within the cell)
     title: expressed as
+    close_mappings:
+    - apollo:00000102
     domain_of:
     - Protein
     range: string
@@ -697,6 +737,8 @@ slot_usage:
       'Insect cells' (using baculovirus vectors), and 'Mammalian cells' (mammalian
       cell lines).
     title: expression system
+    close_mappings:
+    - ro:0002206
     domain_of:
     - Protein
     range: string
@@ -772,6 +814,8 @@ attributes:
       with the Nagoya Protocol
     title: biological material origin
     from_schema: https://w3id.org/evorao/
+    related_mappings:
+    - sepio:0000058
     rank: 1000
     alias: biologicalMaterialOrigin
     owner: Protein
@@ -788,6 +832,11 @@ attributes:
       format
     title: sequence
     from_schema: https://w3id.org/evorao/
+    close_mappings:
+    - geno:0000239
+    - bao:0002817
+    related_mappings:
+    - uniprotrdfs:sequence
     rank: 1000
     alias: sequence
     owner: Protein
@@ -839,6 +888,8 @@ attributes:
       or selection. Applicable to both proteins and nucleic acids
     title: tag sequence
     from_schema: https://w3id.org/evorao/
+    exact_mappings:
+    - bao:0002796
     rank: 1000
     alias: tagSequence
     owner: Protein
@@ -855,6 +906,8 @@ attributes:
       overall function
     title: domain
     from_schema: https://w3id.org/evorao/
+    close_mappings:
+    - uniprotrdfs:domain
     rank: 1000
     alias: domain
     owner: Protein
@@ -871,6 +924,8 @@ attributes:
       proteins that are insoluble and form within the cell)
     title: expressed as
     from_schema: https://w3id.org/evorao/
+    close_mappings:
+    - apollo:00000102
     rank: 1000
     alias: expressedAs
     owner: Protein
@@ -909,6 +964,8 @@ attributes:
       cell lines).
     title: expression system
     from_schema: https://w3id.org/evorao/
+    close_mappings:
+    - ro:0002206
     rank: 1000
     alias: expressionSystem
     owner: Protein
@@ -1018,6 +1075,9 @@ attributes:
       category for this Product
     title: IATA classification
     from_schema: https://w3id.org/evorao/
+    close_mappings:
+    - wdp:P238
+    - schema:iataCode
     rank: 1000
     alias: iataClassification
     owner: Protein
@@ -1031,6 +1091,8 @@ attributes:
     description: Specification of the terms and parameters for transporting
     title: shipping conditions
     from_schema: https://w3id.org/evorao/
+    close_mappings:
+    - schema:shippingConditions
     rank: 1000
     alias: shippingConditions
     owner: Protein
@@ -1065,6 +1127,8 @@ attributes:
       origin of the sample
     title: originator
     from_schema: https://w3id.org/evorao/
+    close_mappings:
+    - dct:provenance
     rank: 1000
     alias: originator
     owner: Protein
@@ -1130,7 +1194,11 @@ attributes:
     title: access point URL
     from_schema: https://w3id.org/evorao/
     exact_mappings:
+    - schema:serviceURL
+    related_mappings:
     - dcat:landingPage
+    broad_mappings:
+    - schema:url
     rank: 1000
     alias: accessPointUrl
     owner: Protein
@@ -1146,7 +1214,12 @@ attributes:
     title: ref SKU
     from_schema: https://w3id.org/evorao/
     exact_mappings:
+    - schema:sku
+    close_mappings:
+    - dwc:catalogNumber
+    broad_mappings:
     - dct:identifier
+    - schema:identifier
     rank: 1000
     alias: refSku
     owner: Protein
@@ -1164,6 +1237,8 @@ attributes:
     - 'The description of what will be delivered to the end-user (e.g.: packaging,
       quantity...)'
     from_schema: https://w3id.org/evorao/
+    related_mappings:
+    - dct:format
     rank: 1000
     alias: unitDefinition
     owner: Protein
@@ -1180,6 +1255,9 @@ attributes:
     from_schema: https://w3id.org/evorao/
     exact_mappings:
     - dcat:theme
+    close_mappings:
+    - schema:category
+    - gr:category
     rank: 1000
     alias: category
     owner: Protein
@@ -1196,6 +1274,7 @@ attributes:
     from_schema: https://w3id.org/evorao/
     close_mappings:
     - dcat:theme
+    - schema:additionalType
     rank: 1000
     alias: additionalCategory
     owner: Protein
@@ -1214,6 +1293,8 @@ attributes:
       to be a xsd:string instead of an xsd:float as initialy suggested to permit description
       of cost as conditional to what is requested
     from_schema: https://w3id.org/evorao/
+    close_mappings:
+    - schema:price
     rank: 1000
     ifabsent: string(on request)
     alias: unitCost
@@ -1230,6 +1311,9 @@ attributes:
       be provided
     title: quality grading
     from_schema: https://w3id.org/evorao/
+    close_mappings:
+    - bao:0002662
+    - sio:000217
     rank: 1000
     alias: qualityGrading
     owner: Protein
@@ -1266,6 +1350,7 @@ attributes:
     - wdp:P356
     close_mappings:
     - wdp:P356
+    - reproduceme:doi
     broad_mappings:
     - dct:bibliographicCitation
     rank: 1000
@@ -1284,8 +1369,10 @@ attributes:
       group classification defined by the WHO laboratory biosafety manual
     title: risk group
     from_schema: https://w3id.org/evorao/
-    close_mappings:
+    exact_mappings:
     - wdp:P12663
+    related_mappings:
+    - bao:0002826
     rank: 1000
     alias: riskGroup
     owner: Protein
@@ -1303,6 +1390,8 @@ attributes:
       this product or service
     title: biosafety restrictions
     from_schema: https://w3id.org/evorao/
+    related_mappings:
+    - bao:0002826
     rank: 1000
     alias: biosafetyRestrictions
     owner: Protein
@@ -1320,6 +1409,8 @@ attributes:
     - Set to TRUE if it can produce GMO. It is recommended to have a value for this
       field, no value will be understood as unknown
     from_schema: https://w3id.org/evorao/
+    broad_mappings:
+    - schema:potentialUse
     rank: 1000
     alias: canBeUsedToProduceGmo
     owner: Protein
@@ -1334,6 +1425,11 @@ attributes:
     description: A provider of this product or service, as a specific organization
     title: provider
     from_schema: https://w3id.org/evorao/
+    exact_mappings:
+    - sio:000066
+    close_mappings:
+    - schema:provider
+    - dct:publisher
     rank: 1000
     alias: provider
     owner: Protein
@@ -1347,6 +1443,10 @@ attributes:
     description: The collection(s) to which belongs this item
     title: collection
     from_schema: https://w3id.org/evorao/
+    related_mappings:
+    - afop:AFX_0002720
+    broad_mappings:
+    - dct:isPartOf
     rank: 1000
     alias: collection
     owner: Protein
@@ -1361,6 +1461,8 @@ attributes:
     title: keywords
     from_schema: https://w3id.org/evorao/
     exact_mappings:
+    - schema:keywords
+    close_mappings:
     - dcat:keyword
     rank: 1000
     alias: keywords
@@ -1379,6 +1481,9 @@ attributes:
     comments:
     - Possible availabilities may differ from a project to another
     from_schema: https://w3id.org/evorao/
+    close_mappings:
+    - schema:availability
+    - dct:available
     rank: 1000
     ifabsent: string(on request)
     alias: availability
@@ -1394,6 +1499,8 @@ attributes:
       instructions, or guidelines relevant to the use of this item
     title: complementary document
     from_schema: https://w3id.org/evorao/
+    close_mappings:
+    - sepio:0000442
     rank: 1000
     alias: complementaryDocument
     owner: Protein
@@ -1436,6 +1543,8 @@ attributes:
       external provider
     title: external related reference
     from_schema: https://w3id.org/evorao/
+    broad_mappings:
+    - dct:references
     rank: 1000
     alias: externalRelatedReference
     owner: Protein
@@ -1450,6 +1559,8 @@ attributes:
       ISO certification
     title: certification
     from_schema: https://w3id.org/evorao/
+    exact_mappings:
+    - schema:hasCertification
     close_mappings:
     - dct:conformsTo
     rank: 1000
@@ -1465,6 +1576,8 @@ attributes:
     description: Any reference or indication to be used for local retrieval purpose
     title: internal reference
     from_schema: https://w3id.org/evorao/
+    broad_mappings:
+    - dct:references
     rank: 1000
     alias: internalReference
     owner: Protein
@@ -1545,7 +1658,6 @@ attributes:
     exact_mappings:
     - schema:description
     close_mappings:
-    - schema:description
     - schema:description
     rank: 1000
     slot_uri: dct:description

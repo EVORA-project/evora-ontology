@@ -62,6 +62,7 @@ Alias: modificationsFromTheReferenceSequences
 | ---  | ---  |
 | self | EVORAO:modificationsFromTheReferenceSequences |
 | native | EVORAO:modificationsFromTheReferenceSequences |
+| related | geno:0000967 |
 
 
 
@@ -75,6 +76,8 @@ description: Set to TRUE if there was is any modification made from the referenc
   sequence
 title: modifications from the reference sequence(s)
 from_schema: https://w3id.org/evorao/
+related_mappings:
+- geno:0000967
 rank: 1000
 alias: modificationsFromTheReferenceSequences
 domain_of:

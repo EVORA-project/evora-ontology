@@ -107,7 +107,7 @@ URI: [EVORAO:License](https://w3id.org/evorao/License)
 | self | EVORAO:License |
 | native | EVORAO:License |
 | exact | dct:RightsStatement, dct:RightsStatement |
-| close | wd:Q79719, dct:LicenseDocument, wd:Q79719, dct:LicenseDocument |
+| close | wd:Q79719, dct:LicenseDocument, reproduceme:LicenseDocument, wd:Q79719, dct:LicenseDocument, reproduceme:LicenseDocument |
 
 
 
@@ -134,8 +134,10 @@ exact_mappings:
 close_mappings:
 - wd:Q79719
 - dct:LicenseDocument
+- reproduceme:LicenseDocument
 - wd:Q79719
 - dct:LicenseDocument
+- reproduceme:LicenseDocument
 is_a: Resource
 slots:
 - title
@@ -202,7 +204,7 @@ slot_usage:
     title: resource URL
     exact_mappings:
     - dct:license
-    close_mappings:
+    broad_mappings:
     - schema:url
     domain_of:
     - License
@@ -254,8 +256,10 @@ exact_mappings:
 close_mappings:
 - wd:Q79719
 - dct:LicenseDocument
+- reproduceme:LicenseDocument
 - wd:Q79719
 - dct:LicenseDocument
+- reproduceme:LicenseDocument
 is_a: Resource
 slot_usage:
   title:
@@ -316,7 +320,7 @@ slot_usage:
     title: resource URL
     exact_mappings:
     - dct:license
-    close_mappings:
+    broad_mappings:
     - schema:url
     domain_of:
     - License
@@ -421,7 +425,7 @@ attributes:
     from_schema: https://w3id.org/evorao/
     exact_mappings:
     - dct:license
-    close_mappings:
+    broad_mappings:
     - schema:url
     rank: 1000
     alias: resourceUrl

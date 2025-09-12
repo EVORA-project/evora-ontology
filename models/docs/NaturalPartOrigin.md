@@ -114,6 +114,8 @@ URI: [EVORAO:NaturalPartOrigin](https://w3id.org/evorao/NaturalPartOrigin)
 | ---  | ---  |
 | self | EVORAO:NaturalPartOrigin |
 | native | EVORAO:NaturalPartOrigin |
+| broad | sepio:0000058, sepio:0000058 |
+| related | ncit:C87913, ncit:C43581, ncit:C87913, ncit:C43581 |
 
 
 
@@ -134,6 +136,14 @@ description: Information on the origin of a natural part that composes the biolo
   material
 title: Natural part origin
 from_schema: https://w3id.org/evorao/
+related_mappings:
+- ncit:C87913
+- ncit:C43581
+- ncit:C87913
+- ncit:C43581
+broad_mappings:
+- sepio:0000058
+- sepio:0000058
 is_a: BiologicalPartOrigin
 slots:
 - countryOfCollection
@@ -148,8 +158,14 @@ slot_usage:
       Used for Nagoya/CBD; equivalent to 'country of origin'.
     title: country of collection
     close_mappings:
-    - dct:spatial
+    - wdp:P495
+    - hso:0000360
+    - schema:countryOfOrigin
+    related_mappings:
     - dwc:country
+    - genepio:0000118
+    broad_mappings:
+    - dct:spatial
     domain_of:
     - NaturalPartOrigin
     range: Country
@@ -160,6 +176,9 @@ slot_usage:
     description: The specific IPLC area (Indigenous People and Local Communities)
       from which this sample/element was sampled, if relevant
     title: indigenous people and local community origin
+    related_mappings:
+    - mesh:D000081034
+    - ncit:C41152
     domain_of:
     - NaturalPartOrigin
     range: IplcOrigin
@@ -171,6 +190,10 @@ slot_usage:
       use a proxy date such as 'date received' and indicate this by setting to true
       the before date property
     title: collection date
+    related_mappings:
+    - obib:0000714
+    broad_mappings:
+    - dct:date
     domain_of:
     - NaturalPartOrigin
     range: datetime
@@ -180,6 +203,9 @@ slot_usage:
     name: beforeDate
     description: Set to TRUE if a proxy date for the collection date is used
     title: before date
+    related_mappings:
+    - sepio:0000105
+    - ro:0002089
     ifabsent: 'false'
     domain_of:
     - NaturalPartOrigin
@@ -209,6 +235,14 @@ description: Information on the origin of a natural part that composes the biolo
   material
 title: Natural part origin
 from_schema: https://w3id.org/evorao/
+related_mappings:
+- ncit:C87913
+- ncit:C43581
+- ncit:C87913
+- ncit:C43581
+broad_mappings:
+- sepio:0000058
+- sepio:0000058
 is_a: BiologicalPartOrigin
 slot_usage:
   countryOfCollection:
@@ -217,8 +251,14 @@ slot_usage:
       Used for Nagoya/CBD; equivalent to 'country of origin'.
     title: country of collection
     close_mappings:
-    - dct:spatial
+    - wdp:P495
+    - hso:0000360
+    - schema:countryOfOrigin
+    related_mappings:
     - dwc:country
+    - genepio:0000118
+    broad_mappings:
+    - dct:spatial
     domain_of:
     - NaturalPartOrigin
     range: Country
@@ -229,6 +269,9 @@ slot_usage:
     description: The specific IPLC area (Indigenous People and Local Communities)
       from which this sample/element was sampled, if relevant
     title: indigenous people and local community origin
+    related_mappings:
+    - mesh:D000081034
+    - ncit:C41152
     domain_of:
     - NaturalPartOrigin
     range: IplcOrigin
@@ -240,6 +283,10 @@ slot_usage:
       use a proxy date such as 'date received' and indicate this by setting to true
       the before date property
     title: collection date
+    related_mappings:
+    - obib:0000714
+    broad_mappings:
+    - dct:date
     domain_of:
     - NaturalPartOrigin
     range: datetime
@@ -249,6 +296,9 @@ slot_usage:
     name: beforeDate
     description: Set to TRUE if a proxy date for the collection date is used
     title: before date
+    related_mappings:
+    - sepio:0000105
+    - ro:0002089
     ifabsent: 'false'
     domain_of:
     - NaturalPartOrigin
@@ -273,8 +323,14 @@ attributes:
     title: country of collection
     from_schema: https://w3id.org/evorao/
     close_mappings:
-    - dct:spatial
+    - wdp:P495
+    - hso:0000360
+    - schema:countryOfOrigin
+    related_mappings:
     - dwc:country
+    - genepio:0000118
+    broad_mappings:
+    - dct:spatial
     rank: 1000
     alias: countryOfCollection
     owner: NaturalPartOrigin
@@ -289,6 +345,9 @@ attributes:
       from which this sample/element was sampled, if relevant
     title: indigenous people and local community origin
     from_schema: https://w3id.org/evorao/
+    related_mappings:
+    - mesh:D000081034
+    - ncit:C41152
     rank: 1000
     alias: indigenousPeopleAndLocalCommunityOrigin
     owner: NaturalPartOrigin
@@ -304,6 +363,10 @@ attributes:
       the before date property
     title: collection date
     from_schema: https://w3id.org/evorao/
+    related_mappings:
+    - obib:0000714
+    broad_mappings:
+    - dct:date
     rank: 1000
     alias: collectionDate
     owner: NaturalPartOrigin
@@ -317,6 +380,9 @@ attributes:
     description: Set to TRUE if a proxy date for the collection date is used
     title: before date
     from_schema: https://w3id.org/evorao/
+    related_mappings:
+    - sepio:0000105
+    - ro:0002089
     rank: 1000
     ifabsent: 'false'
     alias: beforeDate

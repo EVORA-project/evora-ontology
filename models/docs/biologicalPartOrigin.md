@@ -68,6 +68,7 @@ Alias: biologicalPartOrigin
 | ---  | ---  |
 | self | EVORAO:biologicalPartOrigin |
 | native | EVORAO:biologicalPartOrigin |
+| related | schema:hasBioChemEntityPart |
 
 
 
@@ -84,6 +85,8 @@ title: biological part origin
 comments:
 - It can be multiple parts in case of a recombinant biological material.
 from_schema: https://w3id.org/evorao/
+related_mappings:
+- schema:hasBioChemEntityPart
 rank: 1000
 alias: biologicalPartOrigin
 domain_of:

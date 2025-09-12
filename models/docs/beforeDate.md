@@ -62,6 +62,7 @@ Alias: beforeDate
 | ---  | ---  |
 | self | EVORAO:beforeDate |
 | native | EVORAO:beforeDate |
+| related | sepio:0000105, ro:0002089 |
 
 
 
@@ -74,6 +75,9 @@ name: beforeDate
 description: Set to TRUE if a proxy date for the collection date is used
 title: before date
 from_schema: https://w3id.org/evorao/
+related_mappings:
+- sepio:0000105
+- ro:0002089
 rank: 1000
 ifabsent: 'false'
 alias: beforeDate

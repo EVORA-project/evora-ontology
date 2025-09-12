@@ -60,7 +60,8 @@ Alias: postalCode
 | ---  | ---  |
 | self | EVORAO:postalCode |
 | native | EVORAO:postalCode |
-| close | schema:postalCode, vcard:hasPostalCode |
+| exact | schema:postalCode, vcard:postal-code |
+| close | vcard:hasPostalCode |
 
 
 
@@ -73,8 +74,10 @@ name: postalCode
 description: The postal code
 title: postal code
 from_schema: https://w3id.org/evorao/
-close_mappings:
+exact_mappings:
 - schema:postalCode
+- vcard:postal-code
+close_mappings:
 - vcard:hasPostalCode
 rank: 1000
 alias: postalCode

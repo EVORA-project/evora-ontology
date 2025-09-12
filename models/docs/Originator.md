@@ -121,6 +121,7 @@ URI: [EVORAO:Originator](https://w3id.org/evorao/Originator)
 | ---  | ---  |
 | self | EVORAO:Originator |
 | native | EVORAO:Originator |
+| related | foaf:Organization, foaf:Agent, foaf:Organization, foaf:Agent |
 | close | dct:ProvenanceStatement, dct:ProvenanceStatement |
 
 
@@ -146,6 +147,11 @@ from_schema: https://w3id.org/evorao/
 close_mappings:
 - dct:ProvenanceStatement
 - dct:ProvenanceStatement
+related_mappings:
+- foaf:Organization
+- foaf:Agent
+- foaf:Organization
+- foaf:Agent
 is_a: PersonOrOrganization
 
 ```
@@ -164,6 +170,11 @@ from_schema: https://w3id.org/evorao/
 close_mappings:
 - dct:ProvenanceStatement
 - dct:ProvenanceStatement
+related_mappings:
+- foaf:Organization
+- foaf:Agent
+- foaf:Organization
+- foaf:Agent
 is_a: PersonOrOrganization
 attributes:
   name:
@@ -200,7 +211,6 @@ attributes:
     exact_mappings:
     - schema:description
     close_mappings:
-    - schema:description
     - schema:description
     rank: 1000
     slot_uri: dct:description

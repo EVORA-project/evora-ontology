@@ -62,7 +62,8 @@ Alias: email
 | ---  | ---  |
 | self | EVORAO:email |
 | native | EVORAO:email |
-| exact | schema:email, vcard:email |
+| exact | schema:email, foaf:mbox |
+| close | vcard:email |
 
 
 
@@ -77,6 +78,8 @@ title: email
 from_schema: https://w3id.org/evorao/
 exact_mappings:
 - schema:email
+- foaf:mbox
+close_mappings:
 - vcard:email
 rank: 1000
 alias: email

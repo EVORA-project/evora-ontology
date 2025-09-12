@@ -62,6 +62,7 @@ Alias: certificationDocument
 | ---  | ---  |
 | self | EVORAO:certificationDocument |
 | native | EVORAO:certificationDocument |
+| exact | schema:associatedMedia |
 
 
 
@@ -76,6 +77,8 @@ description: The document(s) issued by an authority certifying the conformity of
   the equivalence to another certification scheme.
 title: certification document
 from_schema: https://w3id.org/evorao/
+exact_mappings:
+- schema:associatedMedia
 rank: 1000
 alias: certificationDocument
 domain_of:

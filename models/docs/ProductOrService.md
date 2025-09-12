@@ -266,6 +266,7 @@ URI: [EVORAO:ProductOrService](https://w3id.org/evorao/ProductOrService)
 | ---  | ---  |
 | self | EVORAO:ProductOrService |
 | native | EVORAO:ProductOrService |
+| close | schema:Product, gr:ProductOrService, schema:Product, gr:ProductOrService |
 
 
 
@@ -288,6 +289,11 @@ title: Product or service
 comments:
 - part of  wd:Q2897903 (goods and services )
 from_schema: https://w3id.org/evorao/
+close_mappings:
+- schema:Product
+- gr:ProductOrService
+- schema:Product
+- gr:ProductOrService
 is_a: Dataset
 abstract: true
 slots:
@@ -323,7 +329,11 @@ slot_usage:
       least describe the process to place an order/enquiry
     title: access point URL
     exact_mappings:
+    - schema:serviceURL
+    related_mappings:
     - dcat:landingPage
+    broad_mappings:
+    - schema:url
     domain_of:
     - ProductOrService
     range: uri
@@ -335,7 +345,12 @@ slot_usage:
       in the provider's catalogue
     title: ref SKU
     exact_mappings:
+    - schema:sku
+    close_mappings:
+    - dwc:catalogNumber
+    broad_mappings:
     - dct:identifier
+    - schema:identifier
     domain_of:
     - ProductOrService
     range: string
@@ -349,6 +364,8 @@ slot_usage:
     comments:
     - 'The description of what will be delivered to the end-user (e.g.: packaging,
       quantity...)'
+    related_mappings:
+    - dct:format
     domain_of:
     - ProductOrService
     range: string
@@ -361,6 +378,9 @@ slot_usage:
     title: category
     exact_mappings:
     - dcat:theme
+    close_mappings:
+    - schema:category
+    - gr:category
     domain_of:
     - ProductOrService
     range: ProductCategory
@@ -373,6 +393,7 @@ slot_usage:
     title: additional category
     close_mappings:
     - dcat:theme
+    - schema:additionalType
     domain_of:
     - ProductOrService
     range: ProductCategory
@@ -387,6 +408,8 @@ slot_usage:
     - The cost per access may not be defined or be specific to a request, so it has
       to be a xsd:string instead of an xsd:float as initialy suggested to permit description
       of cost as conditional to what is requested
+    close_mappings:
+    - schema:price
     ifabsent: string(on request)
     domain_of:
     - ProductOrService
@@ -399,6 +422,9 @@ slot_usage:
     description: Information that permits to assess the quality level of what will
       be provided
     title: quality grading
+    close_mappings:
+    - bao:0002662
+    - sio:000217
     domain_of:
     - ProductOrService
     range: string
@@ -425,6 +451,9 @@ slot_usage:
     title: DOI
     close_mappings:
     - wdp:P356
+    - reproduceme:doi
+    broad_mappings:
+    - dct:bibliographicCitation
     domain_of:
     - ProductOrService
     - Publication
@@ -437,8 +466,10 @@ slot_usage:
       a biological agent guiding its initial handling in labs according to the risk
       group classification defined by the WHO laboratory biosafety manual
     title: risk group
-    close_mappings:
+    exact_mappings:
     - wdp:P12663
+    related_mappings:
+    - bao:0002826
     domain_of:
     - ProductOrService
     range: RiskGroup
@@ -452,6 +483,8 @@ slot_usage:
       contributes to protecting people and the environment from biohazards while accessing
       this product or service
     title: biosafety restrictions
+    related_mappings:
+    - bao:0002826
     domain_of:
     - ProductOrService
     range: string
@@ -465,6 +498,8 @@ slot_usage:
     comments:
     - Set to TRUE if it can produce GMO. It is recommended to have a value for this
       field, no value will be understood as unknown
+    broad_mappings:
+    - schema:potentialUse
     domain_of:
     - ProductOrService
     range: boolean
@@ -475,6 +510,11 @@ slot_usage:
     name: provider
     description: A provider of this product or service, as a specific organization
     title: provider
+    exact_mappings:
+    - sio:000066
+    close_mappings:
+    - schema:provider
+    - dct:publisher
     domain_of:
     - ProductOrService
     range: Provider
@@ -484,6 +524,10 @@ slot_usage:
     name: collection
     description: The collection(s) to which belongs this item
     title: collection
+    related_mappings:
+    - afop:AFX_0002720
+    broad_mappings:
+    - dct:isPartOf
     domain_of:
     - ProductOrService
     range: Collection
@@ -494,6 +538,8 @@ slot_usage:
     description: List of terms used to tag and categorize this Item
     title: keywords
     exact_mappings:
+    - schema:keywords
+    close_mappings:
     - dcat:keyword
     domain_of:
     - ProductOrService
@@ -508,6 +554,9 @@ slot_usage:
     title: availability
     comments:
     - Possible availabilities may differ from a project to another
+    close_mappings:
+    - schema:availability
+    - dct:available
     ifabsent: string(on request)
     domain_of:
     - ProductOrService
@@ -519,6 +568,8 @@ slot_usage:
     description: Any additional documents that provide supplementary information,
       instructions, or guidelines relevant to the use of this item
     title: complementary document
+    close_mappings:
+    - sepio:0000442
     domain_of:
     - ProductOrService
     range: Document
@@ -549,6 +600,8 @@ slot_usage:
     description: A reference that permits to retrieve another related item from an
       external provider
     title: external related reference
+    broad_mappings:
+    - dct:references
     domain_of:
     - ProductOrService
     range: ExternalRelatedReference
@@ -559,6 +612,8 @@ slot_usage:
     description: Any certification related to the current product or service; e.g.,
       ISO certification
     title: certification
+    exact_mappings:
+    - schema:hasCertification
     close_mappings:
     - dct:conformsTo
     domain_of:
@@ -570,6 +625,8 @@ slot_usage:
     name: internalReference
     description: Any reference or indication to be used for local retrieval purpose
     title: internal reference
+    broad_mappings:
+    - dct:references
     domain_of:
     - ProductOrService
     range: string
@@ -589,6 +646,8 @@ slot_usage:
     name: contactPoint
     description: An information that allows someone to establish communication
     title: contact point
+    exact_mappings:
+    - schema:contactPoint
     slot_uri: dcat:contactPoint
     domain_of:
     - ProductOrService
@@ -612,6 +671,11 @@ title: Product or service
 comments:
 - part of  wd:Q2897903 (goods and services )
 from_schema: https://w3id.org/evorao/
+close_mappings:
+- schema:Product
+- gr:ProductOrService
+- schema:Product
+- gr:ProductOrService
 is_a: Dataset
 abstract: true
 slot_usage:
@@ -622,7 +686,11 @@ slot_usage:
       least describe the process to place an order/enquiry
     title: access point URL
     exact_mappings:
+    - schema:serviceURL
+    related_mappings:
     - dcat:landingPage
+    broad_mappings:
+    - schema:url
     domain_of:
     - ProductOrService
     range: uri
@@ -634,7 +702,12 @@ slot_usage:
       in the provider's catalogue
     title: ref SKU
     exact_mappings:
+    - schema:sku
+    close_mappings:
+    - dwc:catalogNumber
+    broad_mappings:
     - dct:identifier
+    - schema:identifier
     domain_of:
     - ProductOrService
     range: string
@@ -648,6 +721,8 @@ slot_usage:
     comments:
     - 'The description of what will be delivered to the end-user (e.g.: packaging,
       quantity...)'
+    related_mappings:
+    - dct:format
     domain_of:
     - ProductOrService
     range: string
@@ -660,6 +735,9 @@ slot_usage:
     title: category
     exact_mappings:
     - dcat:theme
+    close_mappings:
+    - schema:category
+    - gr:category
     domain_of:
     - ProductOrService
     range: ProductCategory
@@ -672,6 +750,7 @@ slot_usage:
     title: additional category
     close_mappings:
     - dcat:theme
+    - schema:additionalType
     domain_of:
     - ProductOrService
     range: ProductCategory
@@ -686,6 +765,8 @@ slot_usage:
     - The cost per access may not be defined or be specific to a request, so it has
       to be a xsd:string instead of an xsd:float as initialy suggested to permit description
       of cost as conditional to what is requested
+    close_mappings:
+    - schema:price
     ifabsent: string(on request)
     domain_of:
     - ProductOrService
@@ -698,6 +779,9 @@ slot_usage:
     description: Information that permits to assess the quality level of what will
       be provided
     title: quality grading
+    close_mappings:
+    - bao:0002662
+    - sio:000217
     domain_of:
     - ProductOrService
     range: string
@@ -724,6 +808,9 @@ slot_usage:
     title: DOI
     close_mappings:
     - wdp:P356
+    - reproduceme:doi
+    broad_mappings:
+    - dct:bibliographicCitation
     domain_of:
     - ProductOrService
     - Publication
@@ -736,8 +823,10 @@ slot_usage:
       a biological agent guiding its initial handling in labs according to the risk
       group classification defined by the WHO laboratory biosafety manual
     title: risk group
-    close_mappings:
+    exact_mappings:
     - wdp:P12663
+    related_mappings:
+    - bao:0002826
     domain_of:
     - ProductOrService
     range: RiskGroup
@@ -751,6 +840,8 @@ slot_usage:
       contributes to protecting people and the environment from biohazards while accessing
       this product or service
     title: biosafety restrictions
+    related_mappings:
+    - bao:0002826
     domain_of:
     - ProductOrService
     range: string
@@ -764,6 +855,8 @@ slot_usage:
     comments:
     - Set to TRUE if it can produce GMO. It is recommended to have a value for this
       field, no value will be understood as unknown
+    broad_mappings:
+    - schema:potentialUse
     domain_of:
     - ProductOrService
     range: boolean
@@ -774,6 +867,11 @@ slot_usage:
     name: provider
     description: A provider of this product or service, as a specific organization
     title: provider
+    exact_mappings:
+    - sio:000066
+    close_mappings:
+    - schema:provider
+    - dct:publisher
     domain_of:
     - ProductOrService
     range: Provider
@@ -783,6 +881,10 @@ slot_usage:
     name: collection
     description: The collection(s) to which belongs this item
     title: collection
+    related_mappings:
+    - afop:AFX_0002720
+    broad_mappings:
+    - dct:isPartOf
     domain_of:
     - ProductOrService
     range: Collection
@@ -793,6 +895,8 @@ slot_usage:
     description: List of terms used to tag and categorize this Item
     title: keywords
     exact_mappings:
+    - schema:keywords
+    close_mappings:
     - dcat:keyword
     domain_of:
     - ProductOrService
@@ -807,6 +911,9 @@ slot_usage:
     title: availability
     comments:
     - Possible availabilities may differ from a project to another
+    close_mappings:
+    - schema:availability
+    - dct:available
     ifabsent: string(on request)
     domain_of:
     - ProductOrService
@@ -818,6 +925,8 @@ slot_usage:
     description: Any additional documents that provide supplementary information,
       instructions, or guidelines relevant to the use of this item
     title: complementary document
+    close_mappings:
+    - sepio:0000442
     domain_of:
     - ProductOrService
     range: Document
@@ -848,6 +957,8 @@ slot_usage:
     description: A reference that permits to retrieve another related item from an
       external provider
     title: external related reference
+    broad_mappings:
+    - dct:references
     domain_of:
     - ProductOrService
     range: ExternalRelatedReference
@@ -858,6 +969,8 @@ slot_usage:
     description: Any certification related to the current product or service; e.g.,
       ISO certification
     title: certification
+    exact_mappings:
+    - schema:hasCertification
     close_mappings:
     - dct:conformsTo
     domain_of:
@@ -869,6 +982,8 @@ slot_usage:
     name: internalReference
     description: Any reference or indication to be used for local retrieval purpose
     title: internal reference
+    broad_mappings:
+    - dct:references
     domain_of:
     - ProductOrService
     range: string
@@ -888,6 +1003,8 @@ slot_usage:
     name: contactPoint
     description: An information that allows someone to establish communication
     title: contact point
+    exact_mappings:
+    - schema:contactPoint
     slot_uri: dcat:contactPoint
     domain_of:
     - ProductOrService
@@ -905,7 +1022,11 @@ attributes:
     title: access point URL
     from_schema: https://w3id.org/evorao/
     exact_mappings:
+    - schema:serviceURL
+    related_mappings:
     - dcat:landingPage
+    broad_mappings:
+    - schema:url
     rank: 1000
     alias: accessPointUrl
     owner: ProductOrService
@@ -921,7 +1042,12 @@ attributes:
     title: ref SKU
     from_schema: https://w3id.org/evorao/
     exact_mappings:
+    - schema:sku
+    close_mappings:
+    - dwc:catalogNumber
+    broad_mappings:
     - dct:identifier
+    - schema:identifier
     rank: 1000
     alias: refSku
     owner: ProductOrService
@@ -939,6 +1065,8 @@ attributes:
     - 'The description of what will be delivered to the end-user (e.g.: packaging,
       quantity...)'
     from_schema: https://w3id.org/evorao/
+    related_mappings:
+    - dct:format
     rank: 1000
     alias: unitDefinition
     owner: ProductOrService
@@ -955,6 +1083,9 @@ attributes:
     from_schema: https://w3id.org/evorao/
     exact_mappings:
     - dcat:theme
+    close_mappings:
+    - schema:category
+    - gr:category
     rank: 1000
     alias: category
     owner: ProductOrService
@@ -971,6 +1102,7 @@ attributes:
     from_schema: https://w3id.org/evorao/
     close_mappings:
     - dcat:theme
+    - schema:additionalType
     rank: 1000
     alias: additionalCategory
     owner: ProductOrService
@@ -989,6 +1121,8 @@ attributes:
       to be a xsd:string instead of an xsd:float as initialy suggested to permit description
       of cost as conditional to what is requested
     from_schema: https://w3id.org/evorao/
+    close_mappings:
+    - schema:price
     rank: 1000
     ifabsent: string(on request)
     alias: unitCost
@@ -1005,6 +1139,9 @@ attributes:
       be provided
     title: quality grading
     from_schema: https://w3id.org/evorao/
+    close_mappings:
+    - bao:0002662
+    - sio:000217
     rank: 1000
     alias: qualityGrading
     owner: ProductOrService
@@ -1041,6 +1178,7 @@ attributes:
     - wdp:P356
     close_mappings:
     - wdp:P356
+    - reproduceme:doi
     broad_mappings:
     - dct:bibliographicCitation
     rank: 1000
@@ -1059,8 +1197,10 @@ attributes:
       group classification defined by the WHO laboratory biosafety manual
     title: risk group
     from_schema: https://w3id.org/evorao/
-    close_mappings:
+    exact_mappings:
     - wdp:P12663
+    related_mappings:
+    - bao:0002826
     rank: 1000
     alias: riskGroup
     owner: ProductOrService
@@ -1078,6 +1218,8 @@ attributes:
       this product or service
     title: biosafety restrictions
     from_schema: https://w3id.org/evorao/
+    related_mappings:
+    - bao:0002826
     rank: 1000
     alias: biosafetyRestrictions
     owner: ProductOrService
@@ -1095,6 +1237,8 @@ attributes:
     - Set to TRUE if it can produce GMO. It is recommended to have a value for this
       field, no value will be understood as unknown
     from_schema: https://w3id.org/evorao/
+    broad_mappings:
+    - schema:potentialUse
     rank: 1000
     alias: canBeUsedToProduceGmo
     owner: ProductOrService
@@ -1109,6 +1253,11 @@ attributes:
     description: A provider of this product or service, as a specific organization
     title: provider
     from_schema: https://w3id.org/evorao/
+    exact_mappings:
+    - sio:000066
+    close_mappings:
+    - schema:provider
+    - dct:publisher
     rank: 1000
     alias: provider
     owner: ProductOrService
@@ -1122,6 +1271,10 @@ attributes:
     description: The collection(s) to which belongs this item
     title: collection
     from_schema: https://w3id.org/evorao/
+    related_mappings:
+    - afop:AFX_0002720
+    broad_mappings:
+    - dct:isPartOf
     rank: 1000
     alias: collection
     owner: ProductOrService
@@ -1136,6 +1289,8 @@ attributes:
     title: keywords
     from_schema: https://w3id.org/evorao/
     exact_mappings:
+    - schema:keywords
+    close_mappings:
     - dcat:keyword
     rank: 1000
     alias: keywords
@@ -1154,6 +1309,9 @@ attributes:
     comments:
     - Possible availabilities may differ from a project to another
     from_schema: https://w3id.org/evorao/
+    close_mappings:
+    - schema:availability
+    - dct:available
     rank: 1000
     ifabsent: string(on request)
     alias: availability
@@ -1169,6 +1327,8 @@ attributes:
       instructions, or guidelines relevant to the use of this item
     title: complementary document
     from_schema: https://w3id.org/evorao/
+    close_mappings:
+    - sepio:0000442
     rank: 1000
     alias: complementaryDocument
     owner: ProductOrService
@@ -1211,6 +1371,8 @@ attributes:
       external provider
     title: external related reference
     from_schema: https://w3id.org/evorao/
+    broad_mappings:
+    - dct:references
     rank: 1000
     alias: externalRelatedReference
     owner: ProductOrService
@@ -1225,6 +1387,8 @@ attributes:
       ISO certification
     title: certification
     from_schema: https://w3id.org/evorao/
+    exact_mappings:
+    - schema:hasCertification
     close_mappings:
     - dct:conformsTo
     rank: 1000
@@ -1240,6 +1404,8 @@ attributes:
     description: Any reference or indication to be used for local retrieval purpose
     title: internal reference
     from_schema: https://w3id.org/evorao/
+    broad_mappings:
+    - dct:references
     rank: 1000
     alias: internalReference
     owner: ProductOrService
@@ -1320,7 +1486,6 @@ attributes:
     exact_mappings:
     - schema:description
     close_mappings:
-    - schema:description
     - schema:description
     rank: 1000
     slot_uri: dct:description

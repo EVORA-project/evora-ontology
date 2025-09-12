@@ -62,6 +62,8 @@ Alias: collectionDate
 | ---  | ---  |
 | self | EVORAO:collectionDate |
 | native | EVORAO:collectionDate |
+| broad | dct:date |
+| related | obib:0000714 |
 
 
 
@@ -76,6 +78,10 @@ description: The date when the sample was collected in situ. If unknown/private,
   date property
 title: collection date
 from_schema: https://w3id.org/evorao/
+related_mappings:
+- obib:0000714
+broad_mappings:
+- dct:date
 rank: 1000
 alias: collectionDate
 domain_of:

@@ -60,7 +60,7 @@ Alias: collectionDataProvider
 | ---  | ---  |
 | self | EVORAO:collectionDataProvider |
 | native | EVORAO:collectionDataProvider |
-| close | dct:isReferencedBy |
+| broad | dct:isReferencedBy |
 
 
 
@@ -73,7 +73,7 @@ name: collectionDataProvider
 description: The provider of the data of the collection
 title: collection data provider
 from_schema: https://w3id.org/evorao/
-close_mappings:
+broad_mappings:
 - dct:isReferencedBy
 rank: 1000
 alias: collectionDataProvider

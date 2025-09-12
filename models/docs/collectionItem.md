@@ -64,7 +64,8 @@ Alias: collectionItem
 | ---  | ---  |
 | self | EVORAO:collectionItem |
 | native | EVORAO:collectionItem |
-| close | dcat:resource |
+| broad | schema:includesObject, dcat:dataset |
+| related | dcat:resource, dcat:servesDataset |
 
 
 
@@ -77,8 +78,12 @@ name: collectionItem
 description: An item of the collection
 title: collection item
 from_schema: https://w3id.org/evorao/
-close_mappings:
+related_mappings:
 - dcat:resource
+- dcat:servesDataset
+broad_mappings:
+- schema:includesObject
+- dcat:dataset
 rank: 1000
 alias: collectionItem
 domain_of:

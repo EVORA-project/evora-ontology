@@ -174,6 +174,7 @@ slot_usage:
     title: material safety contact
     exact_mappings:
     - dcat:contactPoint
+    - schema:contactPoint
     domain_of:
     - MaterialSafetyDataSheet
     range: ContactPoint
@@ -210,6 +211,8 @@ slot_usage:
       the product, including inhalation, ingestion, skin, or eye contact. This section
       outlines steps to minimize harm before medical help is available.
     title: first aid measures
+    related_mappings:
+    - schema:Recommendation
     domain_of:
     - MaterialSafetyDataSheet
     range: string
@@ -222,6 +225,8 @@ slot_usage:
       including suitable extinguishing agents, special protective equipment for firefighters,
       and any specific hazards from combustion.
     title: fire fighting measures
+    related_mappings:
+    - schema:Recommendation
     domain_of:
     - MaterialSafetyDataSheet
     range: string
@@ -234,6 +239,8 @@ slot_usage:
       containment, cleanup procedures, and precautions to prevent harm to people,
       property, and the environment.
     title: accidental release measures
+    related_mappings:
+    - schema:Recommendation
     domain_of:
     - MaterialSafetyDataSheet
     range: string
@@ -332,6 +339,8 @@ slot_usage:
       including local, national, or international requirements for its handling, use,
       transportation, and disposal, ensuring compliance with legal obligations.
     title: regulatory information
+    related_mappings:
+    - rdfs:seeAlso
     domain_of:
     - MaterialSafetyDataSheet
     range: string
@@ -377,6 +386,7 @@ slot_usage:
     title: material safety contact
     exact_mappings:
     - dcat:contactPoint
+    - schema:contactPoint
     domain_of:
     - MaterialSafetyDataSheet
     range: ContactPoint
@@ -413,6 +423,8 @@ slot_usage:
       the product, including inhalation, ingestion, skin, or eye contact. This section
       outlines steps to minimize harm before medical help is available.
     title: first aid measures
+    related_mappings:
+    - schema:Recommendation
     domain_of:
     - MaterialSafetyDataSheet
     range: string
@@ -425,6 +437,8 @@ slot_usage:
       including suitable extinguishing agents, special protective equipment for firefighters,
       and any specific hazards from combustion.
     title: fire fighting measures
+    related_mappings:
+    - schema:Recommendation
     domain_of:
     - MaterialSafetyDataSheet
     range: string
@@ -437,6 +451,8 @@ slot_usage:
       containment, cleanup procedures, and precautions to prevent harm to people,
       property, and the environment.
     title: accidental release measures
+    related_mappings:
+    - schema:Recommendation
     domain_of:
     - MaterialSafetyDataSheet
     range: string
@@ -535,6 +551,8 @@ slot_usage:
       including local, national, or international requirements for its handling, use,
       transportation, and disposal, ensuring compliance with legal obligations.
     title: regulatory information
+    related_mappings:
+    - rdfs:seeAlso
     domain_of:
     - MaterialSafetyDataSheet
     range: string
@@ -563,6 +581,7 @@ attributes:
     from_schema: https://w3id.org/evorao/
     exact_mappings:
     - dcat:contactPoint
+    - schema:contactPoint
     rank: 1000
     alias: materialSafetyContact
     owner: MaterialSafetyDataSheet
@@ -611,6 +630,8 @@ attributes:
       outlines steps to minimize harm before medical help is available.
     title: first aid measures
     from_schema: https://w3id.org/evorao/
+    related_mappings:
+    - schema:Recommendation
     rank: 1000
     alias: firstAidMeasures
     owner: MaterialSafetyDataSheet
@@ -627,6 +648,8 @@ attributes:
       and any specific hazards from combustion.
     title: fire fighting measures
     from_schema: https://w3id.org/evorao/
+    related_mappings:
+    - schema:Recommendation
     rank: 1000
     alias: fireFightingMeasures
     owner: MaterialSafetyDataSheet
@@ -643,6 +666,8 @@ attributes:
       property, and the environment.
     title: accidental release measures
     from_schema: https://w3id.org/evorao/
+    related_mappings:
+    - schema:Recommendation
     rank: 1000
     alias: accidentalReleaseMeasures
     owner: MaterialSafetyDataSheet
@@ -773,6 +798,8 @@ attributes:
       transportation, and disposal, ensuring compliance with legal obligations.
     title: regulatory information
     from_schema: https://w3id.org/evorao/
+    related_mappings:
+    - rdfs:seeAlso
     rank: 1000
     alias: regulatoryInformation
     owner: MaterialSafetyDataSheet

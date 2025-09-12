@@ -38,7 +38,7 @@
     "interoperability"
   ],
   "id": "https://w3id.org/evorao/",
-  "version": "1.0.9489",
+  "version": "1.0.9734",
   "imports": [
     "linkml:types"
   ],
@@ -633,8 +633,7 @@
         "Describe this item in few lines. This description will serve as a summary to present the resource.",
         "Describe this item in few lines. This description will serve as a summary to present the resource.",
         "Describe this item in few lines. This description will serve as a summary to present the resource",
-        "The title of the item should be as short and descriptive as possible. E.g. for virus products it should basically be based on the following Pattern: 'Virus name', 'virus host type', 'collection year', 'country of collection' ex 'suspected epidemiological origin', 'genotype', 'strain', 'variant name or specific feature",
-        "Describe this item in few lines. This description will serve as a summary to present the resource."
+        "The title of the item should be as short and descriptive as possible. E.g. for virus products it should basically be based on the following Pattern: 'Virus name', 'virus host type', 'collection year', 'country of collection' ex 'suspected epidemiological origin', 'genotype', 'strain', 'variant name or specific feature"
       ],
       "from_schema": "https://w3id.org/evorao/",
       "mappings": [
@@ -646,7 +645,6 @@
         "http://schema.org/description"
       ],
       "close_mappings": [
-        "http://schema.org/description",
         "http://schema.org/description"
       ],
       "slot_uri": "http://purl.org/dc/terms/description",
@@ -906,9 +904,11 @@
       ],
       "exact_mappings": [
         "http://schema.org/license",
-        "http://purl.org/dc/terms/license"
+        "http://purl.org/dc/terms/license",
+        "http://schema.org/license"
       ],
       "close_mappings": [
+        "http://www.wikidata.org/prop/P275",
         "http://www.wikidata.org/prop/P275"
       ],
       "slot_uri": "http://purl.org/dc/terms/license",
@@ -1293,9 +1293,11 @@
       ],
       "close_mappings": [
         "https://w3id.org/reproduceme#doi",
-        "http://www.wikidata.org/prop/P356"
+        "http://www.wikidata.org/prop/P356",
+        "https://w3id.org/reproduceme#doi"
       ],
       "broad_mappings": [
+        "http://purl.org/dc/terms/bibliographicCitation",
         "http://purl.org/dc/terms/bibliographicCitation"
       ],
       "slot_uri": "https://w3id.org/evorao/doi",
@@ -1796,12 +1798,10 @@
       ],
       "exact_mappings": [
         "http://schema.org/name",
-        "http://www.w3.org/2006/vcard/ns#fn",
-        "http://schema.org/name"
+        "http://www.w3.org/2006/vcard/ns#fn"
       ],
       "close_mappings": [
         "http://www.w3.org/2000/01/rdf-schema#label",
-        "http://purl.org/dc/terms/title",
         "http://purl.org/dc/terms/title"
       ],
       "slot_uri": "http://xmlns.com/foaf/0.1/name",
@@ -1887,9 +1887,12 @@
       "exact_mappings": [
         "http://www.wikidata.org/prop/P496",
         "https://w3id.org/reproduceme#ORCID",
-        "http://purl.obolibrary.org/obo/IAO_0000708"
+        "http://www.wikidata.org/prop/P496",
+        "https://w3id.org/reproduceme#ORCID"
       ],
       "related_mappings": [
+        "http://purl.obolibrary.org/obo/IAO_0000708",
+        "http://edamontology.org/data_4022",
         "http://purl.obolibrary.org/obo/IAO_0000708",
         "http://edamontology.org/data_4022"
       ],
@@ -1946,6 +1949,9 @@
       "description": "The research infrastructure of which this organization is a member",
       "title": "member of RI",
       "from_schema": "https://w3id.org/evorao/",
+      "broad_mappings": [
+        "http://schema.org/memberOf"
+      ],
       "slot_uri": "https://w3id.org/evorao/memberOfRi",
       "owner": "Provider",
       "domain_of": [
@@ -1999,6 +2005,9 @@
         "It can be multiple parts in case of a recombinant biological material."
       ],
       "from_schema": "https://w3id.org/evorao/",
+      "related_mappings": [
+        "http://schema.org/hasBioChemEntityPart"
+      ],
       "slot_uri": "https://w3id.org/evorao/biologicalPartOrigin",
       "owner": "BiologicalMaterialOrigin",
       "domain_of": [
@@ -2050,8 +2059,16 @@
       "title": "country of collection",
       "from_schema": "https://w3id.org/evorao/",
       "close_mappings": [
-        "http://purl.org/dc/terms/spatial",
-        "http://rs.tdwg.org/dwc/terms/country"
+        "http://www.wikidata.org/prop/P495",
+        "http://purl.obolibrary.org/obo/HSO_0000360",
+        "http://schema.org/countryOfOrigin"
+      ],
+      "related_mappings": [
+        "http://rs.tdwg.org/dwc/terms/country",
+        "http://purl.obolibrary.org/obo/GENEPIO_0000118"
+      ],
+      "broad_mappings": [
+        "http://purl.org/dc/terms/spatial"
       ],
       "slot_uri": "https://w3id.org/evorao/countryOfCollection",
       "owner": "NaturalPartOrigin",
@@ -2069,6 +2086,10 @@
       "description": "The specific IPLC area (Indigenous People and Local Communities) from which this sample/element was sampled, if relevant",
       "title": "indigenous people and local community origin",
       "from_schema": "https://w3id.org/evorao/",
+      "related_mappings": [
+        "http://id.nlm.nih.gov/mesh/D000081034",
+        "http://purl.obolibrary.org/obo/NCIT_C41152"
+      ],
       "slot_uri": "https://w3id.org/evorao/indigenousPeopleAndLocalCommunityOrigin",
       "owner": "NaturalPartOrigin",
       "domain_of": [
@@ -2084,6 +2105,12 @@
       "description": "The date when the sample was collected in situ. If unknown/private, use a proxy date such as 'date received' and indicate this by setting to true the before date property",
       "title": "collection date",
       "from_schema": "https://w3id.org/evorao/",
+      "related_mappings": [
+        "http://purl.obolibrary.org/obo/OBIB_0000714"
+      ],
+      "broad_mappings": [
+        "http://purl.org/dc/terms/date"
+      ],
       "slot_uri": "https://w3id.org/evorao/collectionDate",
       "owner": "NaturalPartOrigin",
       "domain_of": [
@@ -2099,6 +2126,10 @@
       "description": "Set to TRUE if a proxy date for the collection date is used",
       "title": "before date",
       "from_schema": "https://w3id.org/evorao/",
+      "related_mappings": [
+        "http://purl.obolibrary.org/obo/SEPIO_0000105",
+        "http://purl.obolibrary.org/obo/RO_0002089"
+      ],
       "slot_uri": "https://w3id.org/evorao/beforeDate",
       "ifabsent": "false",
       "owner": "NaturalPartOrigin",
@@ -2129,6 +2160,9 @@
       "description": "Set to TRUE if there was is any modification made from the reference sequence",
       "title": "modifications from the reference sequence(s)",
       "from_schema": "https://w3id.org/evorao/",
+      "related_mappings": [
+        "http://purl.obolibrary.org/obo/GENO_0000967"
+      ],
       "slot_uri": "https://w3id.org/evorao/modificationsFromTheReferenceSequences",
       "owner": "SyntheticPartOrigin",
       "domain_of": [
@@ -2144,6 +2178,9 @@
       "description": "List the modifications mades from the reference sequence if any",
       "title": "description of modification(s) made from the reference sequence(s)",
       "from_schema": "https://w3id.org/evorao/",
+      "related_mappings": [
+        "http://purl.uniprot.org/core/modification"
+      ],
       "slot_uri": "https://w3id.org/evorao/descriptionOfModificationsMadeFromTheReferenceSequences",
       "owner": "SyntheticPartOrigin",
       "domain_of": [
@@ -2174,6 +2211,18 @@
       "description": "The related sequence information from a sequence provider or in fasta format",
       "title": "sequence",
       "from_schema": "https://w3id.org/evorao/",
+      "close_mappings": [
+        "http://purl.obolibrary.org/obo/GENO_0000239",
+        "http://www.bioassayontology.org/bao#BAO_0002817",
+        "http://purl.obolibrary.org/obo/GENO_0000239",
+        "http://www.bioassayontology.org/bao#BAO_0002817",
+        "http://purl.obolibrary.org/obo/GENO_0000239",
+        "http://www.bioassayontology.org/bao#BAO_0002817"
+      ],
+      "related_mappings": [
+        "http://purl.uniprot.org/core/sequence",
+        "http://purl.uniprot.org/core/sequence"
+      ],
       "slot_uri": "https://w3id.org/evorao/sequence",
       "owner": "Pathogen",
       "domain_of": [
@@ -2195,8 +2244,13 @@
       "description": "An item of the collection",
       "title": "collection item",
       "from_schema": "https://w3id.org/evorao/",
-      "close_mappings": [
-        "http://www.w3.org/ns/dcat#resource"
+      "related_mappings": [
+        "http://www.w3.org/ns/dcat#resource",
+        "http://www.w3.org/ns/dcat#servesDataset"
+      ],
+      "broad_mappings": [
+        "http://schema.org/includesObject",
+        "http://www.w3.org/ns/dcat#dataset"
       ],
       "slot_uri": "https://w3id.org/evorao/collectionItem",
       "owner": "Collection",
@@ -2215,7 +2269,7 @@
       "description": "The provider of the data of the collection",
       "title": "collection data provider",
       "from_schema": "https://w3id.org/evorao/",
-      "close_mappings": [
+      "broad_mappings": [
         "http://purl.org/dc/terms/isReferencedBy"
       ],
       "slot_uri": "https://w3id.org/evorao/collectionDataProvider",
@@ -2234,7 +2288,13 @@
       "title": "access point URL",
       "from_schema": "https://w3id.org/evorao/",
       "exact_mappings": [
+        "http://schema.org/serviceURL"
+      ],
+      "related_mappings": [
         "http://www.w3.org/ns/dcat#landingPage"
+      ],
+      "broad_mappings": [
+        "http://schema.org/url"
       ],
       "slot_uri": "https://w3id.org/evorao/accessPointUrl",
       "owner": "ProductOrService",
@@ -2252,7 +2312,14 @@
       "title": "ref SKU",
       "from_schema": "https://w3id.org/evorao/",
       "exact_mappings": [
-        "http://purl.org/dc/terms/identifier"
+        "http://schema.org/sku"
+      ],
+      "close_mappings": [
+        "http://rs.tdwg.org/dwc/terms/catalogNumber"
+      ],
+      "broad_mappings": [
+        "http://purl.org/dc/terms/identifier",
+        "http://schema.org/identifier"
       ],
       "slot_uri": "https://w3id.org/evorao/refSku",
       "owner": "ProductOrService",
@@ -2272,6 +2339,9 @@
         "The description of what will be delivered to the end-user (e.g.: packaging, quantity...)"
       ],
       "from_schema": "https://w3id.org/evorao/",
+      "related_mappings": [
+        "http://purl.org/dc/terms/format"
+      ],
       "slot_uri": "https://w3id.org/evorao/unitDefinition",
       "owner": "ProductOrService",
       "domain_of": [
@@ -2290,6 +2360,10 @@
       "exact_mappings": [
         "http://www.w3.org/ns/dcat#theme"
       ],
+      "close_mappings": [
+        "http://schema.org/category",
+        "http://purl.org/goodrelations/v1#category"
+      ],
       "slot_uri": "https://w3id.org/evorao/category",
       "owner": "ProductOrService",
       "domain_of": [
@@ -2307,7 +2381,8 @@
       "title": "additional category",
       "from_schema": "https://w3id.org/evorao/",
       "close_mappings": [
-        "http://www.w3.org/ns/dcat#theme"
+        "http://www.w3.org/ns/dcat#theme",
+        "http://schema.org/additionalType"
       ],
       "slot_uri": "https://w3id.org/evorao/additionalCategory",
       "owner": "ProductOrService",
@@ -2329,6 +2404,9 @@
         "The cost per access may not be defined or be specific to a request, so it has to be a xsd:string instead of an xsd:float as initialy suggested to permit description of cost as conditional to what is requested"
       ],
       "from_schema": "https://w3id.org/evorao/",
+      "close_mappings": [
+        "http://schema.org/price"
+      ],
       "slot_uri": "https://w3id.org/evorao/unitCost",
       "ifabsent": "string(on request)",
       "owner": "ProductOrService",
@@ -2346,6 +2424,10 @@
       "description": "Information that permits to assess the quality level of what will be provided",
       "title": "quality grading",
       "from_schema": "https://w3id.org/evorao/",
+      "close_mappings": [
+        "http://www.bioassayontology.org/bao#BAO_0002662",
+        "http://semanticscience.org/resource/SIO_000217"
+      ],
       "slot_uri": "https://w3id.org/evorao/qualityGrading",
       "owner": "ProductOrService",
       "domain_of": [
@@ -2380,8 +2462,11 @@
       "description": "The highest risk group related to this resource. The risk group of a biological agent guiding its initial handling in labs according to the risk group classification defined by the WHO laboratory biosafety manual",
       "title": "risk group",
       "from_schema": "https://w3id.org/evorao/",
-      "close_mappings": [
+      "exact_mappings": [
         "http://www.wikidata.org/prop/P12663"
+      ],
+      "related_mappings": [
+        "http://www.bioassayontology.org/bao#BAO_0002826"
       ],
       "slot_uri": "https://w3id.org/evorao/riskGroup",
       "owner": "ProductOrService",
@@ -2399,6 +2484,9 @@
       "description": "Information about guidelines and regulations designed to prevent the exposure to or release of potentially harmful biological agents. It thereby contributes to protecting people and the environment from biohazards while accessing this product or service",
       "title": "biosafety restrictions",
       "from_schema": "https://w3id.org/evorao/",
+      "related_mappings": [
+        "http://www.bioassayontology.org/bao#BAO_0002826"
+      ],
       "slot_uri": "https://w3id.org/evorao/biosafetyRestrictions",
       "owner": "ProductOrService",
       "domain_of": [
@@ -2416,6 +2504,9 @@
         "Set to TRUE if it can produce GMO. It is recommended to have a value for this field, no value will be understood as unknown"
       ],
       "from_schema": "https://w3id.org/evorao/",
+      "broad_mappings": [
+        "http://schema.org/potentialUse"
+      ],
       "slot_uri": "https://w3id.org/evorao/canBeUsedToProduceGmo",
       "owner": "ProductOrService",
       "domain_of": [
@@ -2432,6 +2523,13 @@
       "description": "A provider of this product or service, as a specific organization",
       "title": "provider",
       "from_schema": "https://w3id.org/evorao/",
+      "exact_mappings": [
+        "http://semanticscience.org/resource/SIO_000066"
+      ],
+      "close_mappings": [
+        "http://schema.org/provider",
+        "http://purl.org/dc/terms/publisher"
+      ],
       "slot_uri": "https://w3id.org/evorao/provider",
       "owner": "ProductOrService",
       "domain_of": [
@@ -2448,6 +2546,12 @@
       "description": "The collection(s) to which belongs this item",
       "title": "collection",
       "from_schema": "https://w3id.org/evorao/",
+      "related_mappings": [
+        "http://purl.allotrope.org/ontologies/property#AFX_0002720"
+      ],
+      "broad_mappings": [
+        "http://purl.org/dc/terms/isPartOf"
+      ],
       "slot_uri": "https://w3id.org/evorao/collection",
       "owner": "ProductOrService",
       "domain_of": [
@@ -2466,6 +2570,9 @@
       "title": "keywords",
       "from_schema": "https://w3id.org/evorao/",
       "exact_mappings": [
+        "http://schema.org/keywords"
+      ],
+      "close_mappings": [
         "http://www.w3.org/ns/dcat#keyword"
       ],
       "slot_uri": "https://w3id.org/evorao/keywords",
@@ -2489,6 +2596,10 @@
         "Possible availabilities may differ from a project to another"
       ],
       "from_schema": "https://w3id.org/evorao/",
+      "close_mappings": [
+        "http://schema.org/availability",
+        "http://purl.org/dc/terms/available"
+      ],
       "slot_uri": "https://w3id.org/evorao/availability",
       "ifabsent": "string(on request)",
       "owner": "ProductOrService",
@@ -2505,6 +2616,9 @@
       "description": "Any additional documents that provide supplementary information, instructions, or guidelines relevant to the use of this item",
       "title": "complementary document",
       "from_schema": "https://w3id.org/evorao/",
+      "close_mappings": [
+        "http://purl.obolibrary.org/obo/SEPIO_0000442"
+      ],
       "slot_uri": "https://w3id.org/evorao/complementaryDocument",
       "owner": "ProductOrService",
       "domain_of": [
@@ -2551,6 +2665,9 @@
       "description": "A reference that permits to retrieve another related item from an external provider",
       "title": "external related reference",
       "from_schema": "https://w3id.org/evorao/",
+      "broad_mappings": [
+        "http://purl.org/dc/terms/references"
+      ],
       "slot_uri": "https://w3id.org/evorao/externalRelatedReference",
       "owner": "ProductOrService",
       "domain_of": [
@@ -2567,6 +2684,9 @@
       "description": "Any certification related to the current product or service; e.g., ISO certification",
       "title": "certification",
       "from_schema": "https://w3id.org/evorao/",
+      "exact_mappings": [
+        "http://schema.org/hasCertification"
+      ],
       "close_mappings": [
         "http://purl.org/dc/terms/conformsTo"
       ],
@@ -2586,6 +2706,9 @@
       "description": "Any reference or indication to be used for local retrieval purpose",
       "title": "internal reference",
       "from_schema": "https://w3id.org/evorao/",
+      "broad_mappings": [
+        "http://purl.org/dc/terms/references"
+      ],
       "slot_uri": "https://w3id.org/evorao/internalReference",
       "owner": "ProductOrService",
       "domain_of": [
@@ -2645,6 +2768,10 @@
       "description": "The corresponding International Air Transport Association (IATA)'s category for this Product",
       "title": "IATA classification",
       "from_schema": "https://w3id.org/evorao/",
+      "close_mappings": [
+        "http://www.wikidata.org/prop/P238",
+        "http://schema.org/iataCode"
+      ],
       "slot_uri": "https://w3id.org/evorao/iataClassification",
       "owner": "Product",
       "domain_of": [
@@ -2661,6 +2788,9 @@
       "description": "Specification of the terms and parameters for transporting",
       "title": "shipping conditions",
       "from_schema": "https://w3id.org/evorao/",
+      "close_mappings": [
+        "http://schema.org/shippingConditions"
+      ],
       "slot_uri": "https://w3id.org/evorao/shippingConditions",
       "owner": "Product",
       "domain_of": [
@@ -2694,6 +2824,9 @@
       "description": "The individual or organization responsible for the original discovery, isolation, or creation of an item, providing information about the source or origin of the sample",
       "title": "originator",
       "from_schema": "https://w3id.org/evorao/",
+      "close_mappings": [
+        "http://purl.org/dc/terms/provenance"
+      ],
       "slot_uri": "https://w3id.org/evorao/originator",
       "owner": "Product",
       "domain_of": [
@@ -2831,6 +2964,9 @@
       "description": "Information about the origin of the biological material, essential for access, utilization, and benefit-sharing of genetic resources in compliance with the Nagoya Protocol",
       "title": "biological material origin",
       "from_schema": "https://w3id.org/evorao/",
+      "related_mappings": [
+        "http://purl.obolibrary.org/obo/SEPIO_0000058"
+      ],
       "slot_uri": "https://w3id.org/evorao/biologicalMaterialOrigin",
       "owner": "Pathogen",
       "domain_of": [
@@ -2884,6 +3020,10 @@
       "description": "The name of the DNA coding sequence or corresponding peptide/protein sequence fused to a sequence of interest, used to facilitate experimental operations such as purification, detection, localization, tracking, solubility enhancement, or selection. Applicable to both proteins and nucleic acids",
       "title": "tag sequence",
       "from_schema": "https://w3id.org/evorao/",
+      "exact_mappings": [
+        "http://www.bioassayontology.org/bao#BAO_0002796",
+        "http://www.bioassayontology.org/bao#BAO_0002796"
+      ],
       "slot_uri": "https://w3id.org/evorao/tagSequence",
       "owner": "NucleicAcid",
       "domain_of": [
@@ -2901,6 +3041,9 @@
       "description": "A distinct structural and functional unit within the protein, often capable of independent folding and stability, which contributes to the protein's overall function",
       "title": "domain",
       "from_schema": "https://w3id.org/evorao/",
+      "close_mappings": [
+        "http://purl.uniprot.org/core/domain"
+      ],
       "slot_uri": "https://w3id.org/evorao/domain",
       "owner": "Protein",
       "domain_of": [
@@ -2916,6 +3059,9 @@
       "description": "Refers to the form in which the protein is produced and manifested in a biological system. Possible values include 'Soluble' (proteins that are dissolved in the cellular or extracellular fluid) and 'Inclusion bodies' (aggregated proteins that are insoluble and form within the cell)",
       "title": "expressed as",
       "from_schema": "https://w3id.org/evorao/",
+      "close_mappings": [
+        "http://purl.obolibrary.org/obo/APOLLO_SV_00000102"
+      ],
       "slot_uri": "https://w3id.org/evorao/expressedAs",
       "owner": "Protein",
       "domain_of": [
@@ -2954,6 +3100,9 @@
       "description": "The host organism or cellular environment used to produce a protein from a specific gene. Possible values include 'E. coli' (bacterial system), 'Insect cells' (using baculovirus vectors), and 'Mammalian cells' (mammalian cell lines).",
       "title": "expression system",
       "from_schema": "https://w3id.org/evorao/",
+      "close_mappings": [
+        "http://purl.obolibrary.org/obo/RO_0002206"
+      ],
       "slot_uri": "https://w3id.org/evorao/expressionSystem",
       "owner": "Protein",
       "domain_of": [
@@ -3207,7 +3356,7 @@
       "description": "The titer value, its corresponding unit, and the method of quantification (e.g., RT-qPCR, TCID50), representing the concentration or amount of unit present in the sample. The titer corresponds to the highest dilution factor that still yields a positive reading",
       "title": "titer",
       "from_schema": "https://w3id.org/evorao/",
-      "close_mappings": [
+      "related_mappings": [
         "http://www.wikidata.org/entity/Q2166189"
       ],
       "slot_uri": "https://w3id.org/evorao/titer",
@@ -3229,6 +3378,9 @@
         "Sequence check is mandatory for cloned products"
       ],
       "from_schema": "https://w3id.org/evorao/",
+      "related_mappings": [
+        "http://purl.obolibrary.org/obo/ICEO_0000336"
+      ],
       "slot_uri": "https://w3id.org/evorao/sequenceChecked",
       "owner": "NucleicAcid",
       "domain_of": [
@@ -3288,6 +3440,9 @@
       "description": "Specifies the constituent products and/or services that are part of the bundle",
       "title": "items of the bundle",
       "from_schema": "https://w3id.org/evorao/",
+      "close_mappings": [
+        "http://schema.org/includesObject"
+      ],
       "slot_uri": "https://w3id.org/evorao/itemsOfTheBundle",
       "owner": "Bundle",
       "domain_of": [
@@ -3305,7 +3460,8 @@
       "description": "The potential geographical or environmental source from which the pathogen is believed to have originated or been transmitted",
       "title": "suspected epidemiological origin",
       "from_schema": "https://w3id.org/evorao/",
-      "close_mappings": [
+      "related_mappings": [
+        "http://schema.org/countryOfOrigin",
         "http://purl.org/dc/terms/spatial"
       ],
       "slot_uri": "https://w3id.org/evorao/suspectedEpidemiologicalOrigin",
@@ -3372,6 +3528,9 @@
       "description": "The method or route through which the pathogen is transmitted from one host to another, detailing the mechanisms of infection spread.",
       "title": "transmission method",
       "from_schema": "https://w3id.org/evorao/",
+      "close_mappings": [
+        "http://schema.org/transmissionMethod"
+      ],
       "slot_uri": "https://w3id.org/evorao/transmissionMethod",
       "owner": "Pathogen",
       "domain_of": [
@@ -3412,6 +3571,9 @@
       "description": "Details about the clinical aspects of the pathogen, including symptoms, severity, treatment protocols, and patient outcomes",
       "title": "clinical information",
       "from_schema": "https://w3id.org/evorao/",
+      "related_mappings": [
+        "http://purl.obolibrary.org/obo/NCIT_C25398"
+      ],
       "slot_uri": "https://w3id.org/evorao/clinicalInformation",
       "owner": "Pathogen",
       "domain_of": [
@@ -3446,6 +3608,9 @@
       "description": "The description of the completed infectivity test, providing details on the methods, conditions, and results of the test used to assess the pathogen's ability to infect a host organism",
       "title": "infectivity Test",
       "from_schema": "https://w3id.org/evorao/",
+      "related_mappings": [
+        "http://purl.obolibrary.org/obo/CIDO_0001195"
+      ],
       "slot_uri": "https://w3id.org/evorao/infectivityTest",
       "owner": "Pathogen",
       "domain_of": [
@@ -3510,6 +3675,9 @@
       "description": "The number of times the pathogen was cultured through serial passage, a process used to increase the stock but which can also lead to the evolution of the original pathogen.",
       "title": "passage",
       "from_schema": "https://w3id.org/evorao/",
+      "related_mappings": [
+        "http://purl.obolibrary.org/obo/NCIT_C164572"
+      ],
       "slot_uri": "https://w3id.org/evorao/passage",
       "owner": "Pathogen",
       "domain_of": [
@@ -3524,6 +3692,9 @@
       "description": "The extent of the pathogen's genetic material that has been sequenced, with possible values including 'Complete genome' for the entire genome, 'Complete coding sequence' for all coding regions, and 'Partial sequence' for only a portion of the genetic material",
       "title": "genome sequencing",
       "from_schema": "https://w3id.org/evorao/",
+      "close_mappings": [
+        "http://www.bioassayontology.org/bao#BAO_0002788"
+      ],
       "slot_uri": "https://w3id.org/evorao/genomeSequencing",
       "owner": "Pathogen",
       "domain_of": [
@@ -3544,6 +3715,13 @@
       "description": "Identifies other viruses that may co-infect the host organism along with the primary virus, indicating the presence of multiple viral infections within the same host.",
       "title": "co-infecting viruses",
       "from_schema": "https://w3id.org/evorao/",
+      "close_mappings": [
+        "http://rs.tdwg.org/dwc/terms/associatedTaxa"
+      ],
+      "related_mappings": [
+        "http://www.ebi.ac.uk/efo/EFO_0010716",
+        "http://id.nlm.nih.gov/mesh/D060085"
+      ],
       "slot_uri": "https://w3id.org/evorao/coInfectingViruses",
       "owner": "Virus",
       "domain_of": [
@@ -3592,7 +3770,8 @@
       "title": "material safety contact",
       "from_schema": "https://w3id.org/evorao/",
       "exact_mappings": [
-        "http://www.w3.org/ns/dcat#contactPoint"
+        "http://www.w3.org/ns/dcat#contactPoint",
+        "http://schema.org/contactPoint"
       ],
       "slot_uri": "https://w3id.org/evorao/materialSafetyContact",
       "owner": "MaterialSafetyDataSheet",
@@ -3640,6 +3819,9 @@
       "description": "Instructions on immediate actions to take in case of exposure to the product, including inhalation, ingestion, skin, or eye contact. This section outlines steps to minimize harm before medical help is available.",
       "title": "first aid measures",
       "from_schema": "https://w3id.org/evorao/",
+      "related_mappings": [
+        "http://schema.org/Recommendation"
+      ],
       "slot_uri": "https://w3id.org/evorao/firstAidMeasures",
       "owner": "MaterialSafetyDataSheet",
       "domain_of": [
@@ -3655,6 +3837,9 @@
       "description": "Guidance on how to safely extinguish a fire involving the product, including suitable extinguishing agents, special protective equipment for firefighters, and any specific hazards from combustion.",
       "title": "fire fighting measures",
       "from_schema": "https://w3id.org/evorao/",
+      "related_mappings": [
+        "http://schema.org/Recommendation"
+      ],
       "slot_uri": "https://w3id.org/evorao/fireFightingMeasures",
       "owner": "MaterialSafetyDataSheet",
       "domain_of": [
@@ -3670,6 +3855,9 @@
       "description": "Guidelines for safely managing spills or leaks of the product, including containment, cleanup procedures, and precautions to prevent harm to people, property, and the environment.",
       "title": "accidental release measures",
       "from_schema": "https://w3id.org/evorao/",
+      "related_mappings": [
+        "http://schema.org/Recommendation"
+      ],
       "slot_uri": "https://w3id.org/evorao/accidentalReleaseMeasures",
       "owner": "MaterialSafetyDataSheet",
       "domain_of": [
@@ -3790,6 +3978,9 @@
       "description": "Lists applicable laws, regulations, and standards governing the product, including local, national, or international requirements for its handling, use, transportation, and disposal, ensuring compliance with legal obligations.",
       "title": "regulatory information",
       "from_schema": "https://w3id.org/evorao/",
+      "related_mappings": [
+        "http://www.w3.org/2000/01/rdf-schema#seeAlso"
+      ],
       "slot_uri": "https://w3id.org/evorao/regulatoryInformation",
       "owner": "MaterialSafetyDataSheet",
       "domain_of": [
@@ -3820,6 +4011,9 @@
       "description": "The web address or location where the file content is stored and can be accessed or downloaded.",
       "title": "content URL",
       "from_schema": "https://w3id.org/evorao/",
+      "exact_mappings": [
+        "http://schema.org/contentUrl"
+      ],
       "slot_uri": "https://w3id.org/evorao/contentUrl",
       "owner": "File",
       "domain_of": [
@@ -3835,6 +4029,13 @@
       "description": "The file type or format that indicates how the data within the file is structured",
       "title": "format",
       "from_schema": "https://w3id.org/evorao/",
+      "exact_mappings": [
+        "http://schema.org/fileFormat",
+        "http://purl.org/dc/terms/format"
+      ],
+      "close_mappings": [
+        "http://schema.org/encodingFormat"
+      ],
       "slot_uri": "https://w3id.org/evorao/format",
       "owner": "File",
       "domain_of": [
@@ -3850,6 +4051,9 @@
       "description": "An alternate text for the image, if the image cannot be displayed",
       "title": "alt text",
       "from_schema": "https://w3id.org/evorao/",
+      "exact_mappings": [
+        "http://schema.org/caption"
+      ],
       "slot_uri": "https://w3id.org/evorao/altText",
       "owner": "Image",
       "domain_of": [
@@ -3867,6 +4071,9 @@
       "from_schema": "https://w3id.org/evorao/",
       "exact_mappings": [
         "http://schema.org/email",
+        "http://xmlns.com/foaf/0.1/mbox"
+      ],
+      "close_mappings": [
         "http://www.w3.org/2006/vcard/ns#email"
       ],
       "slot_uri": "https://w3id.org/evorao/email",
@@ -3885,7 +4092,9 @@
       "title": "telephone",
       "from_schema": "https://w3id.org/evorao/",
       "exact_mappings": [
-        "http://schema.org/telephone",
+        "http://schema.org/telephone"
+      ],
+      "close_mappings": [
         "http://www.w3.org/2006/vcard/ns#telephone"
       ],
       "slot_uri": "https://w3id.org/evorao/telephone",
@@ -3903,8 +4112,11 @@
       "description": "The building/apartment number and the street name",
       "title": "street address",
       "from_schema": "https://w3id.org/evorao/",
-      "close_mappings": [
+      "exact_mappings": [
         "http://schema.org/streetAddress",
+        "http://www.w3.org/2006/vcard/ns#street-address"
+      ],
+      "close_mappings": [
         "http://www.w3.org/2006/vcard/ns#hasStreetAddress"
       ],
       "slot_uri": "https://w3id.org/evorao/streetAddress",
@@ -3921,8 +4133,11 @@
       "description": "The locality in which the street address is, and which is in the region. e.g, the city",
       "title": "locality/city",
       "from_schema": "https://w3id.org/evorao/",
-      "close_mappings": [
+      "exact_mappings": [
         "http://schema.org/addressLocality",
+        "http://www.w3.org/2006/vcard/ns#locality"
+      ],
+      "close_mappings": [
         "http://www.w3.org/2006/vcard/ns#hasLocality"
       ],
       "slot_uri": "https://w3id.org/evorao/addressLocality",
@@ -3939,8 +4154,11 @@
       "description": "The region in which the locality is, and which is in the country. For example, California or another appropriate first-level Administrative division",
       "title": "region",
       "from_schema": "https://w3id.org/evorao/",
-      "close_mappings": [
+      "exact_mappings": [
         "http://schema.org/addressRegion",
+        "http://www.w3.org/2006/vcard/ns#region"
+      ],
+      "close_mappings": [
         "http://www.w3.org/2006/vcard/ns#hasRegion"
       ],
       "slot_uri": "https://w3id.org/evorao/addressRegion",
@@ -3957,8 +4175,11 @@
       "description": "The postal code",
       "title": "postal code",
       "from_schema": "https://w3id.org/evorao/",
-      "close_mappings": [
+      "exact_mappings": [
         "http://schema.org/postalCode",
+        "http://www.w3.org/2006/vcard/ns#postal-code"
+      ],
+      "close_mappings": [
         "http://www.w3.org/2006/vcard/ns#hasPostalCode"
       ],
       "slot_uri": "https://w3id.org/evorao/postalCode",
@@ -3975,7 +4196,7 @@
       "description": "The country as of  ISO 3166",
       "title": "address Country",
       "from_schema": "https://w3id.org/evorao/",
-      "close_mappings": [
+      "exact_mappings": [
         "http://schema.org/addressCountry",
         "http://www.w3.org/2006/vcard/ns#hasCountryName"
       ],
@@ -3995,9 +4216,10 @@
       "title": "resource URL",
       "from_schema": "https://w3id.org/evorao/",
       "exact_mappings": [
-        "http://purl.org/dc/terms/license"
+        "http://purl.org/dc/terms/license",
+        "http://schema.org/archivedAt"
       ],
-      "close_mappings": [
+      "broad_mappings": [
         "http://schema.org/url",
         "http://schema.org/url"
       ],
@@ -4036,6 +4258,9 @@
       "description": "The document(s) issued by an authority certifying the conformity of the subject to the applicable scheme, including, as the case may be, the documents attesting the equivalence to another certification scheme.",
       "title": "certification document",
       "from_schema": "https://w3id.org/evorao/",
+      "exact_mappings": [
+        "http://schema.org/associatedMedia"
+      ],
       "slot_uri": "https://w3id.org/evorao/certificationDocument",
       "owner": "Certification",
       "domain_of": [
@@ -4092,7 +4317,6 @@
         "http://schema.org/description"
       ],
       "close_mappings": [
-        "http://schema.org/description",
         "http://schema.org/description"
       ],
       "is_a": "description",
@@ -4190,7 +4414,6 @@
         "http://schema.org/description"
       ],
       "close_mappings": [
-        "http://schema.org/description",
         "http://schema.org/description"
       ],
       "is_a": "description",
@@ -5192,7 +5415,6 @@
         "http://schema.org/description"
       ],
       "close_mappings": [
-        "http://schema.org/description",
         "http://schema.org/description"
       ],
       "is_a": "description",
@@ -5908,7 +6130,6 @@
         "http://schema.org/description"
       ],
       "close_mappings": [
-        "http://schema.org/description",
         "http://schema.org/description"
       ],
       "is_a": "description",
@@ -6113,6 +6334,9 @@
       "description": "The research infrastructure of which this organization is a member",
       "title": "member of RI",
       "from_schema": "https://w3id.org/evorao/",
+      "broad_mappings": [
+        "http://schema.org/memberOf"
+      ],
       "is_a": "memberOfRi",
       "domain": "Provider",
       "slot_uri": "https://w3id.org/evorao/memberOfRi",
@@ -6181,6 +6405,9 @@
         "It can be multiple parts in case of a recombinant biological material."
       ],
       "from_schema": "https://w3id.org/evorao/",
+      "related_mappings": [
+        "http://schema.org/hasBioChemEntityPart"
+      ],
       "is_a": "biologicalPartOrigin",
       "domain": "BiologicalMaterialOrigin",
       "slot_uri": "https://w3id.org/evorao/biologicalPartOrigin",
@@ -6247,8 +6474,16 @@
       "title": "country of collection",
       "from_schema": "https://w3id.org/evorao/",
       "close_mappings": [
-        "http://purl.org/dc/terms/spatial",
-        "http://rs.tdwg.org/dwc/terms/country"
+        "http://www.wikidata.org/prop/P495",
+        "http://purl.obolibrary.org/obo/HSO_0000360",
+        "http://schema.org/countryOfOrigin"
+      ],
+      "related_mappings": [
+        "http://rs.tdwg.org/dwc/terms/country",
+        "http://purl.obolibrary.org/obo/GENEPIO_0000118"
+      ],
+      "broad_mappings": [
+        "http://purl.org/dc/terms/spatial"
       ],
       "is_a": "countryOfCollection",
       "domain": "NaturalPartOrigin",
@@ -6271,6 +6506,10 @@
       "description": "The specific IPLC area (Indigenous People and Local Communities) from which this sample/element was sampled, if relevant",
       "title": "indigenous people and local community origin",
       "from_schema": "https://w3id.org/evorao/",
+      "related_mappings": [
+        "http://id.nlm.nih.gov/mesh/D000081034",
+        "http://purl.obolibrary.org/obo/NCIT_C41152"
+      ],
       "is_a": "indigenousPeopleAndLocalCommunityOrigin",
       "domain": "NaturalPartOrigin",
       "slot_uri": "https://w3id.org/evorao/indigenousPeopleAndLocalCommunityOrigin",
@@ -6291,6 +6530,12 @@
       "description": "The date when the sample was collected in situ. If unknown/private, use a proxy date such as 'date received' and indicate this by setting to true the before date property",
       "title": "collection date",
       "from_schema": "https://w3id.org/evorao/",
+      "related_mappings": [
+        "http://purl.obolibrary.org/obo/OBIB_0000714"
+      ],
+      "broad_mappings": [
+        "http://purl.org/dc/terms/date"
+      ],
       "is_a": "collectionDate",
       "domain": "NaturalPartOrigin",
       "slot_uri": "https://w3id.org/evorao/collectionDate",
@@ -6311,6 +6556,10 @@
       "description": "Set to TRUE if a proxy date for the collection date is used",
       "title": "before date",
       "from_schema": "https://w3id.org/evorao/",
+      "related_mappings": [
+        "http://purl.obolibrary.org/obo/SEPIO_0000105",
+        "http://purl.obolibrary.org/obo/RO_0002089"
+      ],
       "is_a": "beforeDate",
       "domain": "NaturalPartOrigin",
       "slot_uri": "https://w3id.org/evorao/beforeDate",
@@ -6351,6 +6600,9 @@
       "description": "Set to TRUE if there was is any modification made from the reference sequence",
       "title": "modifications from the reference sequence(s)",
       "from_schema": "https://w3id.org/evorao/",
+      "related_mappings": [
+        "http://purl.obolibrary.org/obo/GENO_0000967"
+      ],
       "is_a": "modificationsFromTheReferenceSequences",
       "domain": "SyntheticPartOrigin",
       "slot_uri": "https://w3id.org/evorao/modificationsFromTheReferenceSequences",
@@ -6371,6 +6623,9 @@
       "description": "List the modifications mades from the reference sequence if any",
       "title": "description of modification(s) made from the reference sequence(s)",
       "from_schema": "https://w3id.org/evorao/",
+      "related_mappings": [
+        "http://purl.uniprot.org/core/modification"
+      ],
       "is_a": "descriptionOfModificationsMadeFromTheReferenceSequences",
       "domain": "SyntheticPartOrigin",
       "slot_uri": "https://w3id.org/evorao/descriptionOfModificationsMadeFromTheReferenceSequences",
@@ -6411,6 +6666,13 @@
       "description": "The related sequence information from a sequence provider or in fasta format",
       "title": "sequence",
       "from_schema": "https://w3id.org/evorao/",
+      "close_mappings": [
+        "http://purl.obolibrary.org/obo/GENO_0000239",
+        "http://www.bioassayontology.org/bao#BAO_0002817"
+      ],
+      "related_mappings": [
+        "http://purl.uniprot.org/core/sequence"
+      ],
       "is_a": "sequence",
       "domain": "RecombinantPartIdentification",
       "slot_uri": "https://w3id.org/evorao/sequence",
@@ -6434,8 +6696,13 @@
       "description": "An item of the collection",
       "title": "collection item",
       "from_schema": "https://w3id.org/evorao/",
-      "close_mappings": [
-        "http://www.w3.org/ns/dcat#resource"
+      "related_mappings": [
+        "http://www.w3.org/ns/dcat#resource",
+        "http://www.w3.org/ns/dcat#servesDataset"
+      ],
+      "broad_mappings": [
+        "http://schema.org/includesObject",
+        "http://www.w3.org/ns/dcat#dataset"
       ],
       "is_a": "collectionItem",
       "domain": "Collection",
@@ -6459,7 +6726,7 @@
       "description": "The provider of the data of the collection",
       "title": "collection data provider",
       "from_schema": "https://w3id.org/evorao/",
-      "close_mappings": [
+      "broad_mappings": [
         "http://purl.org/dc/terms/isReferencedBy"
       ],
       "is_a": "collectionDataProvider",
@@ -6483,7 +6750,13 @@
       "title": "access point URL",
       "from_schema": "https://w3id.org/evorao/",
       "exact_mappings": [
+        "http://schema.org/serviceURL"
+      ],
+      "related_mappings": [
         "http://www.w3.org/ns/dcat#landingPage"
+      ],
+      "broad_mappings": [
+        "http://schema.org/url"
       ],
       "is_a": "accessPointUrl",
       "domain": "ProductOrService",
@@ -6506,7 +6779,14 @@
       "title": "ref SKU",
       "from_schema": "https://w3id.org/evorao/",
       "exact_mappings": [
-        "http://purl.org/dc/terms/identifier"
+        "http://schema.org/sku"
+      ],
+      "close_mappings": [
+        "http://rs.tdwg.org/dwc/terms/catalogNumber"
+      ],
+      "broad_mappings": [
+        "http://purl.org/dc/terms/identifier",
+        "http://schema.org/identifier"
       ],
       "is_a": "refSku",
       "domain": "ProductOrService",
@@ -6531,6 +6811,9 @@
         "The description of what will be delivered to the end-user (e.g.: packaging, quantity...)"
       ],
       "from_schema": "https://w3id.org/evorao/",
+      "related_mappings": [
+        "http://purl.org/dc/terms/format"
+      ],
       "is_a": "unitDefinition",
       "domain": "ProductOrService",
       "slot_uri": "https://w3id.org/evorao/unitDefinition",
@@ -6554,6 +6837,10 @@
       "exact_mappings": [
         "http://www.w3.org/ns/dcat#theme"
       ],
+      "close_mappings": [
+        "http://schema.org/category",
+        "http://purl.org/goodrelations/v1#category"
+      ],
       "is_a": "category",
       "domain": "ProductOrService",
       "slot_uri": "https://w3id.org/evorao/category",
@@ -6576,7 +6863,8 @@
       "title": "additional category",
       "from_schema": "https://w3id.org/evorao/",
       "close_mappings": [
-        "http://www.w3.org/ns/dcat#theme"
+        "http://www.w3.org/ns/dcat#theme",
+        "http://schema.org/additionalType"
       ],
       "is_a": "additionalCategory",
       "domain": "ProductOrService",
@@ -6603,6 +6891,9 @@
         "The cost per access may not be defined or be specific to a request, so it has to be a xsd:string instead of an xsd:float as initialy suggested to permit description of cost as conditional to what is requested"
       ],
       "from_schema": "https://w3id.org/evorao/",
+      "close_mappings": [
+        "http://schema.org/price"
+      ],
       "is_a": "unitCost",
       "domain": "ProductOrService",
       "slot_uri": "https://w3id.org/evorao/unitCost",
@@ -6625,6 +6916,10 @@
       "description": "Information that permits to assess the quality level of what will be provided",
       "title": "quality grading",
       "from_schema": "https://w3id.org/evorao/",
+      "close_mappings": [
+        "http://www.bioassayontology.org/bao#BAO_0002662",
+        "http://semanticscience.org/resource/SIO_000217"
+      ],
       "is_a": "qualityGrading",
       "domain": "ProductOrService",
       "slot_uri": "https://w3id.org/evorao/qualityGrading",
@@ -6673,7 +6968,8 @@
         "http://www.wikidata.org/prop/P356"
       ],
       "close_mappings": [
-        "http://www.wikidata.org/prop/P356"
+        "http://www.wikidata.org/prop/P356",
+        "https://w3id.org/reproduceme#doi"
       ],
       "broad_mappings": [
         "http://purl.org/dc/terms/bibliographicCitation"
@@ -6699,8 +6995,11 @@
       "description": "The highest risk group related to this resource. The risk group of a biological agent guiding its initial handling in labs according to the risk group classification defined by the WHO laboratory biosafety manual",
       "title": "risk group",
       "from_schema": "https://w3id.org/evorao/",
-      "close_mappings": [
+      "exact_mappings": [
         "http://www.wikidata.org/prop/P12663"
+      ],
+      "related_mappings": [
+        "http://www.bioassayontology.org/bao#BAO_0002826"
       ],
       "is_a": "riskGroup",
       "domain": "ProductOrService",
@@ -6723,6 +7022,9 @@
       "description": "Information about guidelines and regulations designed to prevent the exposure to or release of potentially harmful biological agents. It thereby contributes to protecting people and the environment from biohazards while accessing this product or service",
       "title": "biosafety restrictions",
       "from_schema": "https://w3id.org/evorao/",
+      "related_mappings": [
+        "http://www.bioassayontology.org/bao#BAO_0002826"
+      ],
       "is_a": "biosafetyRestrictions",
       "domain": "ProductOrService",
       "slot_uri": "https://w3id.org/evorao/biosafetyRestrictions",
@@ -6745,6 +7047,9 @@
         "Set to TRUE if it can produce GMO. It is recommended to have a value for this field, no value will be understood as unknown"
       ],
       "from_schema": "https://w3id.org/evorao/",
+      "broad_mappings": [
+        "http://schema.org/potentialUse"
+      ],
       "is_a": "canBeUsedToProduceGmo",
       "domain": "ProductOrService",
       "slot_uri": "https://w3id.org/evorao/canBeUsedToProduceGmo",
@@ -6766,6 +7071,13 @@
       "description": "A provider of this product or service, as a specific organization",
       "title": "provider",
       "from_schema": "https://w3id.org/evorao/",
+      "exact_mappings": [
+        "http://semanticscience.org/resource/SIO_000066"
+      ],
+      "close_mappings": [
+        "http://schema.org/provider",
+        "http://purl.org/dc/terms/publisher"
+      ],
       "is_a": "provider",
       "domain": "ProductOrService",
       "slot_uri": "https://w3id.org/evorao/provider",
@@ -6787,6 +7099,12 @@
       "description": "The collection(s) to which belongs this item",
       "title": "collection",
       "from_schema": "https://w3id.org/evorao/",
+      "related_mappings": [
+        "http://purl.allotrope.org/ontologies/property#AFX_0002720"
+      ],
+      "broad_mappings": [
+        "http://purl.org/dc/terms/isPartOf"
+      ],
       "is_a": "collection",
       "domain": "ProductOrService",
       "slot_uri": "https://w3id.org/evorao/collection",
@@ -6810,6 +7128,9 @@
       "title": "keywords",
       "from_schema": "https://w3id.org/evorao/",
       "exact_mappings": [
+        "http://schema.org/keywords"
+      ],
+      "close_mappings": [
         "http://www.w3.org/ns/dcat#keyword"
       ],
       "is_a": "keywords",
@@ -6838,6 +7159,10 @@
         "Possible availabilities may differ from a project to another"
       ],
       "from_schema": "https://w3id.org/evorao/",
+      "close_mappings": [
+        "http://schema.org/availability",
+        "http://purl.org/dc/terms/available"
+      ],
       "is_a": "availability",
       "domain": "ProductOrService",
       "slot_uri": "https://w3id.org/evorao/availability",
@@ -6859,6 +7184,9 @@
       "description": "Any additional documents that provide supplementary information, instructions, or guidelines relevant to the use of this item",
       "title": "complementary document",
       "from_schema": "https://w3id.org/evorao/",
+      "close_mappings": [
+        "http://purl.obolibrary.org/obo/SEPIO_0000442"
+      ],
       "is_a": "complementaryDocument",
       "domain": "ProductOrService",
       "slot_uri": "https://w3id.org/evorao/complementaryDocument",
@@ -6920,6 +7248,9 @@
       "description": "A reference that permits to retrieve another related item from an external provider",
       "title": "external related reference",
       "from_schema": "https://w3id.org/evorao/",
+      "broad_mappings": [
+        "http://purl.org/dc/terms/references"
+      ],
       "is_a": "externalRelatedReference",
       "domain": "ProductOrService",
       "slot_uri": "https://w3id.org/evorao/externalRelatedReference",
@@ -6941,6 +7272,9 @@
       "description": "Any certification related to the current product or service; e.g., ISO certification",
       "title": "certification",
       "from_schema": "https://w3id.org/evorao/",
+      "exact_mappings": [
+        "http://schema.org/hasCertification"
+      ],
       "close_mappings": [
         "http://purl.org/dc/terms/conformsTo"
       ],
@@ -6965,6 +7299,9 @@
       "description": "Any reference or indication to be used for local retrieval purpose",
       "title": "internal reference",
       "from_schema": "https://w3id.org/evorao/",
+      "broad_mappings": [
+        "http://purl.org/dc/terms/references"
+      ],
       "is_a": "internalReference",
       "domain": "ProductOrService",
       "slot_uri": "https://w3id.org/evorao/internalReference",
@@ -7071,6 +7408,10 @@
       "description": "The corresponding International Air Transport Association (IATA)'s category for this Product",
       "title": "IATA classification",
       "from_schema": "https://w3id.org/evorao/",
+      "close_mappings": [
+        "http://www.wikidata.org/prop/P238",
+        "http://schema.org/iataCode"
+      ],
       "is_a": "iataClassification",
       "domain": "Product",
       "slot_uri": "https://w3id.org/evorao/iataClassification",
@@ -7092,6 +7433,9 @@
       "description": "Specification of the terms and parameters for transporting",
       "title": "shipping conditions",
       "from_schema": "https://w3id.org/evorao/",
+      "close_mappings": [
+        "http://schema.org/shippingConditions"
+      ],
       "is_a": "shippingConditions",
       "domain": "Product",
       "slot_uri": "https://w3id.org/evorao/shippingConditions",
@@ -7135,6 +7479,9 @@
       "description": "The individual or organization responsible for the original discovery, isolation, or creation of an item, providing information about the source or origin of the sample",
       "title": "originator",
       "from_schema": "https://w3id.org/evorao/",
+      "close_mappings": [
+        "http://purl.org/dc/terms/provenance"
+      ],
       "is_a": "originator",
       "domain": "Product",
       "slot_uri": "https://w3id.org/evorao/originator",
@@ -7338,6 +7685,9 @@
       "description": "Information about the origin of the biological material, essential for access, utilization, and benefit-sharing of genetic resources in compliance with the Nagoya Protocol",
       "title": "biological material origin",
       "from_schema": "https://w3id.org/evorao/",
+      "related_mappings": [
+        "http://purl.obolibrary.org/obo/SEPIO_0000058"
+      ],
       "is_a": "biologicalMaterialOrigin",
       "domain": "Protein",
       "slot_uri": "https://w3id.org/evorao/biologicalMaterialOrigin",
@@ -7359,6 +7709,13 @@
       "description": "The related sequence information from a sequence provider or in fasta format",
       "title": "sequence",
       "from_schema": "https://w3id.org/evorao/",
+      "close_mappings": [
+        "http://purl.obolibrary.org/obo/GENO_0000239",
+        "http://www.bioassayontology.org/bao#BAO_0002817"
+      ],
+      "related_mappings": [
+        "http://purl.uniprot.org/core/sequence"
+      ],
       "is_a": "sequence",
       "domain": "Protein",
       "slot_uri": "https://w3id.org/evorao/sequence",
@@ -7427,6 +7784,9 @@
       "description": "The name of the DNA coding sequence or corresponding peptide/protein sequence fused to a sequence of interest, used to facilitate experimental operations such as purification, detection, localization, tracking, solubility enhancement, or selection. Applicable to both proteins and nucleic acids",
       "title": "tag sequence",
       "from_schema": "https://w3id.org/evorao/",
+      "exact_mappings": [
+        "http://www.bioassayontology.org/bao#BAO_0002796"
+      ],
       "is_a": "tagSequence",
       "domain": "Protein",
       "slot_uri": "https://w3id.org/evorao/tagSequence",
@@ -7449,6 +7809,9 @@
       "description": "A distinct structural and functional unit within the protein, often capable of independent folding and stability, which contributes to the protein's overall function",
       "title": "domain",
       "from_schema": "https://w3id.org/evorao/",
+      "close_mappings": [
+        "http://purl.uniprot.org/core/domain"
+      ],
       "is_a": "domain",
       "domain": "Protein",
       "slot_uri": "https://w3id.org/evorao/domain",
@@ -7469,6 +7832,9 @@
       "description": "Refers to the form in which the protein is produced and manifested in a biological system. Possible values include 'Soluble' (proteins that are dissolved in the cellular or extracellular fluid) and 'Inclusion bodies' (aggregated proteins that are insoluble and form within the cell)",
       "title": "expressed as",
       "from_schema": "https://w3id.org/evorao/",
+      "close_mappings": [
+        "http://purl.obolibrary.org/obo/APOLLO_SV_00000102"
+      ],
       "is_a": "expressedAs",
       "domain": "Protein",
       "slot_uri": "https://w3id.org/evorao/expressedAs",
@@ -7517,6 +7883,9 @@
       "description": "The host organism or cellular environment used to produce a protein from a specific gene. Possible values include 'E. coli' (bacterial system), 'Insect cells' (using baculovirus vectors), and 'Mammalian cells' (mammalian cell lines).",
       "title": "expression system",
       "from_schema": "https://w3id.org/evorao/",
+      "close_mappings": [
+        "http://purl.obolibrary.org/obo/RO_0002206"
+      ],
       "is_a": "expressionSystem",
       "domain": "Protein",
       "slot_uri": "https://w3id.org/evorao/expressionSystem",
@@ -7654,6 +8023,9 @@
       "description": "Information about the origin of the biological material, essential for access, utilization, and benefit-sharing of genetic resources in compliance with the Nagoya Protocol",
       "title": "biological material origin",
       "from_schema": "https://w3id.org/evorao/",
+      "related_mappings": [
+        "http://purl.obolibrary.org/obo/SEPIO_0000058"
+      ],
       "is_a": "biologicalMaterialOrigin",
       "domain": "NucleicAcid",
       "slot_uri": "https://w3id.org/evorao/biologicalMaterialOrigin",
@@ -7696,6 +8068,13 @@
       "description": "The related sequence information from a sequence provider or in fasta format",
       "title": "sequence",
       "from_schema": "https://w3id.org/evorao/",
+      "close_mappings": [
+        "http://purl.obolibrary.org/obo/GENO_0000239",
+        "http://www.bioassayontology.org/bao#BAO_0002817"
+      ],
+      "related_mappings": [
+        "http://purl.uniprot.org/core/sequence"
+      ],
       "is_a": "sequence",
       "domain": "NucleicAcid",
       "slot_uri": "https://w3id.org/evorao/sequence",
@@ -7782,6 +8161,9 @@
       "description": "The name of the DNA coding sequence or corresponding peptide/protein sequence fused to a sequence of interest, used to facilitate experimental operations such as purification, detection, localization, tracking, solubility enhancement, or selection. Applicable to both proteins and nucleic acids",
       "title": "tag sequence",
       "from_schema": "https://w3id.org/evorao/",
+      "exact_mappings": [
+        "http://www.bioassayontology.org/bao#BAO_0002796"
+      ],
       "is_a": "tagSequence",
       "domain": "NucleicAcid",
       "slot_uri": "https://w3id.org/evorao/tagSequence",
@@ -7909,7 +8291,7 @@
       "description": "The titer value, its corresponding unit, and the method of quantification (e.g., RT-qPCR, TCID50), representing the concentration or amount of unit present in the sample. The titer corresponds to the highest dilution factor that still yields a positive reading",
       "title": "titer",
       "from_schema": "https://w3id.org/evorao/",
-      "close_mappings": [
+      "related_mappings": [
         "http://www.wikidata.org/entity/Q2166189"
       ],
       "is_a": "titer",
@@ -7935,6 +8317,9 @@
         "Sequence check is mandatory for cloned products"
       ],
       "from_schema": "https://w3id.org/evorao/",
+      "related_mappings": [
+        "http://purl.obolibrary.org/obo/ICEO_0000336"
+      ],
       "is_a": "sequenceChecked",
       "domain": "NucleicAcid",
       "slot_uri": "https://w3id.org/evorao/sequenceChecked",
@@ -8034,6 +8419,9 @@
       "description": "Specifies the constituent products and/or services that are part of the bundle",
       "title": "items of the bundle",
       "from_schema": "https://w3id.org/evorao/",
+      "close_mappings": [
+        "http://schema.org/includesObject"
+      ],
       "is_a": "itemsOfTheBundle",
       "domain": "Bundle",
       "slot_uri": "https://w3id.org/evorao/itemsOfTheBundle",
@@ -8056,6 +8444,9 @@
       "description": "Information about the origin of the biological material, essential for access, utilization, and benefit-sharing of genetic resources in compliance with the Nagoya Protocol",
       "title": "biological material origin",
       "from_schema": "https://w3id.org/evorao/",
+      "related_mappings": [
+        "http://purl.obolibrary.org/obo/SEPIO_0000058"
+      ],
       "is_a": "biologicalMaterialOrigin",
       "domain": "Pathogen",
       "slot_uri": "https://w3id.org/evorao/biologicalMaterialOrigin",
@@ -8077,7 +8468,8 @@
       "description": "The potential geographical or environmental source from which the pathogen is believed to have originated or been transmitted",
       "title": "suspected epidemiological origin",
       "from_schema": "https://w3id.org/evorao/",
-      "close_mappings": [
+      "related_mappings": [
+        "http://schema.org/countryOfOrigin",
         "http://purl.org/dc/terms/spatial"
       ],
       "is_a": "suspectedEpidemiologicalOrigin",
@@ -8164,6 +8556,9 @@
       "description": "The method or route through which the pathogen is transmitted from one host to another, detailing the mechanisms of infection spread.",
       "title": "transmission method",
       "from_schema": "https://w3id.org/evorao/",
+      "close_mappings": [
+        "http://schema.org/transmissionMethod"
+      ],
       "is_a": "transmissionMethod",
       "domain": "Pathogen",
       "slot_uri": "https://w3id.org/evorao/transmissionMethod",
@@ -8185,6 +8580,14 @@
       "description": "The related sequence information from a sequence provider or in fasta format",
       "title": "sequence",
       "from_schema": "https://w3id.org/evorao/",
+      "close_mappings": [
+        "http://purl.obolibrary.org/obo/GENO_0000239",
+        "http://www.bioassayontology.org/bao#BAO_0002817"
+      ],
+      "related_mappings": [
+        "http://purl.uniprot.org/core/sequence",
+        "http://purl.uniprot.org/core/sequence"
+      ],
       "is_a": "sequence",
       "domain": "Pathogen",
       "slot_uri": "https://w3id.org/evorao/sequence",
@@ -8237,6 +8640,9 @@
       "description": "Details about the clinical aspects of the pathogen, including symptoms, severity, treatment protocols, and patient outcomes",
       "title": "clinical information",
       "from_schema": "https://w3id.org/evorao/",
+      "related_mappings": [
+        "http://purl.obolibrary.org/obo/NCIT_C25398"
+      ],
       "is_a": "clinicalInformation",
       "domain": "Pathogen",
       "slot_uri": "https://w3id.org/evorao/clinicalInformation",
@@ -8300,6 +8706,9 @@
       "description": "The description of the completed infectivity test, providing details on the methods, conditions, and results of the test used to assess the pathogen's ability to infect a host organism",
       "title": "infectivity Test",
       "from_schema": "https://w3id.org/evorao/",
+      "related_mappings": [
+        "http://purl.obolibrary.org/obo/CIDO_0001195"
+      ],
       "is_a": "infectivityTest",
       "domain": "Pathogen",
       "slot_uri": "https://w3id.org/evorao/infectivityTest",
@@ -8384,6 +8793,9 @@
       "description": "The number of times the pathogen was cultured through serial passage, a process used to increase the stock but which can also lead to the evolution of the original pathogen.",
       "title": "passage",
       "from_schema": "https://w3id.org/evorao/",
+      "related_mappings": [
+        "http://purl.obolibrary.org/obo/NCIT_C164572"
+      ],
       "is_a": "passage",
       "domain": "Pathogen",
       "slot_uri": "https://w3id.org/evorao/passage",
@@ -8403,6 +8815,9 @@
       "description": "The extent of the pathogen's genetic material that has been sequenced, with possible values including 'Complete genome' for the entire genome, 'Complete coding sequence' for all coding regions, and 'Partial sequence' for only a portion of the genetic material",
       "title": "genome sequencing",
       "from_schema": "https://w3id.org/evorao/",
+      "close_mappings": [
+        "http://www.bioassayontology.org/bao#BAO_0002788"
+      ],
       "is_a": "genomeSequencing",
       "domain": "Pathogen",
       "slot_uri": "https://w3id.org/evorao/genomeSequencing",
@@ -8428,7 +8843,7 @@
       "description": "The titer value, its corresponding unit, and the method of quantification (e.g., RT-qPCR, TCID50), representing the concentration or amount of unit present in the sample. The titer corresponds to the highest dilution factor that still yields a positive reading",
       "title": "titer",
       "from_schema": "https://w3id.org/evorao/",
-      "close_mappings": [
+      "related_mappings": [
         "http://www.wikidata.org/entity/Q2166189"
       ],
       "is_a": "titer",
@@ -8451,6 +8866,13 @@
       "description": "Identifies other viruses that may co-infect the host organism along with the primary virus, indicating the presence of multiple viral infections within the same host.",
       "title": "co-infecting viruses",
       "from_schema": "https://w3id.org/evorao/",
+      "close_mappings": [
+        "http://rs.tdwg.org/dwc/terms/associatedTaxa"
+      ],
+      "related_mappings": [
+        "http://www.ebi.ac.uk/efo/EFO_0010716",
+        "http://id.nlm.nih.gov/mesh/D060085"
+      ],
       "is_a": "coInfectingViruses",
       "domain": "Virus",
       "slot_uri": "https://w3id.org/evorao/coInfectingViruses",
@@ -8514,7 +8936,8 @@
       "title": "material safety contact",
       "from_schema": "https://w3id.org/evorao/",
       "exact_mappings": [
-        "http://www.w3.org/ns/dcat#contactPoint"
+        "http://www.w3.org/ns/dcat#contactPoint",
+        "http://schema.org/contactPoint"
       ],
       "is_a": "materialSafetyContact",
       "domain": "MaterialSafetyDataSheet",
@@ -8577,6 +9000,9 @@
       "description": "Instructions on immediate actions to take in case of exposure to the product, including inhalation, ingestion, skin, or eye contact. This section outlines steps to minimize harm before medical help is available.",
       "title": "first aid measures",
       "from_schema": "https://w3id.org/evorao/",
+      "related_mappings": [
+        "http://schema.org/Recommendation"
+      ],
       "is_a": "firstAidMeasures",
       "domain": "MaterialSafetyDataSheet",
       "slot_uri": "https://w3id.org/evorao/firstAidMeasures",
@@ -8597,6 +9023,9 @@
       "description": "Guidance on how to safely extinguish a fire involving the product, including suitable extinguishing agents, special protective equipment for firefighters, and any specific hazards from combustion.",
       "title": "fire fighting measures",
       "from_schema": "https://w3id.org/evorao/",
+      "related_mappings": [
+        "http://schema.org/Recommendation"
+      ],
       "is_a": "fireFightingMeasures",
       "domain": "MaterialSafetyDataSheet",
       "slot_uri": "https://w3id.org/evorao/fireFightingMeasures",
@@ -8617,6 +9046,9 @@
       "description": "Guidelines for safely managing spills or leaks of the product, including containment, cleanup procedures, and precautions to prevent harm to people, property, and the environment.",
       "title": "accidental release measures",
       "from_schema": "https://w3id.org/evorao/",
+      "related_mappings": [
+        "http://schema.org/Recommendation"
+      ],
       "is_a": "accidentalReleaseMeasures",
       "domain": "MaterialSafetyDataSheet",
       "slot_uri": "https://w3id.org/evorao/accidentalReleaseMeasures",
@@ -8777,6 +9209,9 @@
       "description": "Lists applicable laws, regulations, and standards governing the product, including local, national, or international requirements for its handling, use, transportation, and disposal, ensuring compliance with legal obligations.",
       "title": "regulatory information",
       "from_schema": "https://w3id.org/evorao/",
+      "related_mappings": [
+        "http://www.w3.org/2000/01/rdf-schema#seeAlso"
+      ],
       "is_a": "regulatoryInformation",
       "domain": "MaterialSafetyDataSheet",
       "slot_uri": "https://w3id.org/evorao/regulatoryInformation",
@@ -8821,9 +9256,11 @@
         "http://xmlns.com/foaf/0.1/name"
       ],
       "exact_mappings": [
-        "http://schema.org/name"
+        "http://schema.org/name",
+        "http://www.w3.org/2006/vcard/ns#fn"
       ],
       "close_mappings": [
+        "http://www.w3.org/2000/01/rdf-schema#label",
         "http://purl.org/dc/terms/title"
       ],
       "is_a": "name",
@@ -8856,7 +9293,6 @@
         "http://schema.org/description"
       ],
       "close_mappings": [
-        "http://schema.org/description",
         "http://schema.org/description"
       ],
       "is_a": "description",
@@ -8879,6 +9315,9 @@
       "description": "The web address or location where the file content is stored and can be accessed or downloaded.",
       "title": "content URL",
       "from_schema": "https://w3id.org/evorao/",
+      "exact_mappings": [
+        "http://schema.org/contentUrl"
+      ],
       "is_a": "contentUrl",
       "domain": "File",
       "slot_uri": "https://w3id.org/evorao/contentUrl",
@@ -8899,6 +9338,13 @@
       "description": "The file type or format that indicates how the data within the file is structured",
       "title": "format",
       "from_schema": "https://w3id.org/evorao/",
+      "exact_mappings": [
+        "http://schema.org/fileFormat",
+        "http://purl.org/dc/terms/format"
+      ],
+      "close_mappings": [
+        "http://schema.org/encodingFormat"
+      ],
       "is_a": "format",
       "domain": "File",
       "slot_uri": "https://w3id.org/evorao/format",
@@ -8923,7 +9369,8 @@
         "http://purl.org/dc/terms/license"
       ],
       "exact_mappings": [
-        "http://purl.org/dc/terms/license"
+        "http://purl.org/dc/terms/license",
+        "http://schema.org/license"
       ],
       "close_mappings": [
         "http://www.wikidata.org/prop/P275"
@@ -8948,6 +9395,9 @@
       "description": "An alternate text for the image, if the image cannot be displayed",
       "title": "alt text",
       "from_schema": "https://w3id.org/evorao/",
+      "exact_mappings": [
+        "http://schema.org/caption"
+      ],
       "is_a": "altText",
       "domain": "Image",
       "slot_uri": "https://w3id.org/evorao/altText",
@@ -8972,9 +9422,11 @@
         "http://xmlns.com/foaf/0.1/name"
       ],
       "exact_mappings": [
-        "http://schema.org/name"
+        "http://schema.org/name",
+        "http://www.w3.org/2006/vcard/ns#fn"
       ],
       "close_mappings": [
+        "http://www.w3.org/2000/01/rdf-schema#label",
         "http://purl.org/dc/terms/title"
       ],
       "is_a": "name",
@@ -9007,7 +9459,6 @@
         "http://schema.org/description"
       ],
       "close_mappings": [
-        "http://schema.org/description",
         "http://schema.org/description"
       ],
       "is_a": "description",
@@ -9032,6 +9483,9 @@
       "from_schema": "https://w3id.org/evorao/",
       "exact_mappings": [
         "http://schema.org/email",
+        "http://xmlns.com/foaf/0.1/mbox"
+      ],
+      "close_mappings": [
         "http://www.w3.org/2006/vcard/ns#email"
       ],
       "is_a": "email",
@@ -9055,7 +9509,9 @@
       "title": "telephone",
       "from_schema": "https://w3id.org/evorao/",
       "exact_mappings": [
-        "http://schema.org/telephone",
+        "http://schema.org/telephone"
+      ],
+      "close_mappings": [
         "http://www.w3.org/2006/vcard/ns#telephone"
       ],
       "is_a": "telephone",
@@ -9078,8 +9534,11 @@
       "description": "The building/apartment number and the street name",
       "title": "street address",
       "from_schema": "https://w3id.org/evorao/",
-      "close_mappings": [
+      "exact_mappings": [
         "http://schema.org/streetAddress",
+        "http://www.w3.org/2006/vcard/ns#street-address"
+      ],
+      "close_mappings": [
         "http://www.w3.org/2006/vcard/ns#hasStreetAddress"
       ],
       "is_a": "streetAddress",
@@ -9101,8 +9560,11 @@
       "description": "The locality in which the street address is, and which is in the region. e.g, the city",
       "title": "locality/city",
       "from_schema": "https://w3id.org/evorao/",
-      "close_mappings": [
+      "exact_mappings": [
         "http://schema.org/addressLocality",
+        "http://www.w3.org/2006/vcard/ns#locality"
+      ],
+      "close_mappings": [
         "http://www.w3.org/2006/vcard/ns#hasLocality"
       ],
       "is_a": "addressLocality",
@@ -9124,8 +9586,11 @@
       "description": "The region in which the locality is, and which is in the country. For example, California or another appropriate first-level Administrative division",
       "title": "region",
       "from_schema": "https://w3id.org/evorao/",
-      "close_mappings": [
+      "exact_mappings": [
         "http://schema.org/addressRegion",
+        "http://www.w3.org/2006/vcard/ns#region"
+      ],
+      "close_mappings": [
         "http://www.w3.org/2006/vcard/ns#hasRegion"
       ],
       "is_a": "addressRegion",
@@ -9147,8 +9612,11 @@
       "description": "The postal code",
       "title": "postal code",
       "from_schema": "https://w3id.org/evorao/",
-      "close_mappings": [
+      "exact_mappings": [
         "http://schema.org/postalCode",
+        "http://www.w3.org/2006/vcard/ns#postal-code"
+      ],
+      "close_mappings": [
         "http://www.w3.org/2006/vcard/ns#hasPostalCode"
       ],
       "is_a": "postalCode",
@@ -9170,7 +9638,7 @@
       "description": "The country as of  ISO 3166",
       "title": "address Country",
       "from_schema": "https://w3id.org/evorao/",
-      "close_mappings": [
+      "exact_mappings": [
         "http://schema.org/addressCountry",
         "http://www.w3.org/2006/vcard/ns#hasCountryName"
       ],
@@ -9195,7 +9663,8 @@
       "title": "ORCID id",
       "from_schema": "https://w3id.org/evorao/",
       "exact_mappings": [
-        "http://purl.obolibrary.org/obo/IAO_0000708"
+        "http://www.wikidata.org/prop/P496",
+        "https://w3id.org/reproduceme#ORCID"
       ],
       "related_mappings": [
         "http://purl.obolibrary.org/obo/IAO_0000708",
@@ -9288,7 +9757,7 @@
       "exact_mappings": [
         "http://purl.org/dc/terms/license"
       ],
-      "close_mappings": [
+      "broad_mappings": [
         "http://schema.org/url"
       ],
       "is_a": "resourceUrl",
@@ -9395,8 +9864,6 @@
         "http://purl.org/dc/terms/description"
       ],
       "exact_mappings": [
-        "http://schema.org/description",
-        "http://schema.org/description",
         "http://schema.org/description"
       ],
       "close_mappings": [
@@ -9445,6 +9912,9 @@
       "description": "The document(s) issued by an authority certifying the conformity of the subject to the applicable scheme, including, as the case may be, the documents attesting the equivalence to another certification scheme.",
       "title": "certification document",
       "from_schema": "https://w3id.org/evorao/",
+      "exact_mappings": [
+        "http://schema.org/associatedMedia"
+      ],
       "is_a": "certificationDocument",
       "domain": "Certification",
       "slot_uri": "https://w3id.org/evorao/certificationDocument",
@@ -9467,9 +9937,9 @@
       "title": "resource URL",
       "from_schema": "https://w3id.org/evorao/",
       "exact_mappings": [
-        "http://purl.org/dc/terms/license"
+        "http://schema.org/archivedAt"
       ],
-      "close_mappings": [
+      "broad_mappings": [
         "http://schema.org/url"
       ],
       "is_a": "resourceUrl",
@@ -10017,9 +10487,11 @@
         "wd:Q1128340",
         "sio:000147",
         "edam:0968",
+        "schema:DefinedTerm",
         "wd:Q1128340",
         "sio:000147",
-        "edam:0968"
+        "edam:0968",
+        "schema:DefinedTerm"
       ],
       "is_a": "Term",
       "slots": [
@@ -10675,12 +11147,14 @@
       "title": "Provider",
       "from_schema": "https://w3id.org/evorao/",
       "close_mappings": [
-        "dct:ProvenanceStatement",
-        "dct:ProvenanceStatement"
+        "ncit:C37900",
+        "ncit:C37900"
       ],
       "related_mappings": [
         "foaf:Organization",
-        "foaf:Organization"
+        "dct:ProvenanceStatement",
+        "foaf:Organization",
+        "dct:ProvenanceStatement"
       ],
       "is_a": "Organization",
       "slots": [
@@ -10708,6 +11182,12 @@
         "dct:ProvenanceStatement",
         "dct:ProvenanceStatement"
       ],
+      "related_mappings": [
+        "foaf:Organization",
+        "foaf:Agent",
+        "foaf:Organization",
+        "foaf:Agent"
+      ],
       "is_a": "PersonOrOrganization",
       "slots": [
         "PersonOrOrganization_name",
@@ -10726,6 +11206,14 @@
       "description": "Information about the origin of the biological material, compulsory for access, utilization, and benefit-sharing of genetic resources in compliance with the Nagoya Protocol",
       "title": "Biological material origin",
       "from_schema": "https://w3id.org/evorao/",
+      "close_mappings": [
+        "sepio:0000058",
+        "sepio:0000058"
+      ],
+      "related_mappings": [
+        "snomed:115668003",
+        "snomed:115668003"
+      ],
       "is_a": "Resource",
       "slots": [
         "BiologicalMaterialOrigin_recombinantMaterial",
@@ -10742,6 +11230,10 @@
       "description": "Information on the origin of a unitary, cohesive part that is part of, or constitutes the biological material. It can be multiple parts in case of a recombinant biological material",
       "title": "Biological part origin",
       "from_schema": "https://w3id.org/evorao/",
+      "broad_mappings": [
+        "sepio:0000058",
+        "sepio:0000058"
+      ],
       "is_a": "Resource",
       "abstract": true,
       "slots": [
@@ -10758,6 +11250,16 @@
       "description": "Information on the origin of a natural part that composes the biological material",
       "title": "Natural part origin",
       "from_schema": "https://w3id.org/evorao/",
+      "related_mappings": [
+        "ncit:C87913",
+        "ncit:C43581",
+        "ncit:C87913",
+        "ncit:C43581"
+      ],
+      "broad_mappings": [
+        "sepio:0000058",
+        "sepio:0000058"
+      ],
       "is_a": "BiologicalPartOrigin",
       "slots": [
         "BiologicalPartOrigin_recombinantPartIdentification",
@@ -10835,6 +11337,12 @@
         "part of  wd:Q2897903 (goods and services )"
       ],
       "from_schema": "https://w3id.org/evorao/",
+      "close_mappings": [
+        "schema:Product",
+        "gr:ProductOrService",
+        "schema:Product",
+        "gr:ProductOrService"
+      ],
       "is_a": "Dataset",
       "abstract": true,
       "slots": [
@@ -10878,7 +11386,21 @@
       "from_schema": "https://w3id.org/evorao/",
       "close_mappings": [
         "wd:Q7406919",
-        "wd:Q7406919"
+        "dcmi:Service",
+        "schema:Service",
+        "ncit:C88187",
+        "obi:0001173",
+        "wd:Q7406919",
+        "dcmi:Service",
+        "schema:Service",
+        "ncit:C88187",
+        "obi:0001173"
+      ],
+      "related_mappings": [
+        "schema:Product",
+        "ncit:C47920",
+        "schema:Product",
+        "ncit:C47920"
       ],
       "is_a": "ProductOrService",
       "slots": [
@@ -10925,6 +11447,10 @@
       "close_mappings": [
         "wd:Q2424752",
         "wd:Q2424752"
+      ],
+      "related_mappings": [
+        "schema:Product",
+        "schema:Product"
       ],
       "broad_mappings": [
         "dct:PhysicalResource",
@@ -10979,7 +11505,9 @@
       "from_schema": "https://w3id.org/evorao/",
       "close_mappings": [
         "wd:Q79460",
-        "wd:Q79460"
+        "snomed:68498002",
+        "wd:Q79460",
+        "snomed:68498002"
       ],
       "is_a": "Product",
       "slots": [
@@ -11035,7 +11563,15 @@
       "from_schema": "https://w3id.org/evorao/",
       "close_mappings": [
         "wd:Q27554370",
-        "wd:Q27554370"
+        "snomed:25326005",
+        "clo:0036932",
+        "bto:0000610",
+        "ncit:C16700",
+        "wd:Q27554370",
+        "snomed:25326005",
+        "clo:0036932",
+        "bto:0000610",
+        "ncit:C16700"
       ],
       "is_a": "Antibody",
       "slots": [
@@ -11092,7 +11628,13 @@
       "from_schema": "https://w3id.org/evorao/",
       "close_mappings": [
         "wd:Q8054",
-        "wd:Q8054"
+        "snomed:88878007",
+        "sio:010043",
+        "schema:Protein",
+        "wd:Q8054",
+        "snomed:88878007",
+        "sio:010043",
+        "schema:Protein"
       ],
       "is_a": "Product",
       "slots": [
@@ -11157,7 +11699,19 @@
       "from_schema": "https://w3id.org/evorao/",
       "close_mappings": [
         "wd:Q123619",
-        "wd:Q123619"
+        "ncit:C706",
+        "snomed:27380003",
+        "sio:010008",
+        "chebi:33696",
+        "wd:Q123619",
+        "ncit:C706",
+        "snomed:27380003",
+        "sio:010008",
+        "chebi:33696"
+      ],
+      "related_mappings": [
+        "mi:0318",
+        "mi:0318"
       ],
       "is_a": "Product",
       "slots": [
@@ -11220,6 +11774,10 @@
       "description": "A detection kit for specific pathogens",
       "title": "Detection Kit",
       "from_schema": "https://w3id.org/evorao/",
+      "close_mappings": [
+        "mesh:D011933",
+        "mesh:D011933"
+      ],
       "is_a": "Product",
       "slots": [
         "Dataset_title",
@@ -11271,9 +11829,17 @@
       "description": "A grouping of products and/or services intentionally combined into a single offering, typically to provide added value, convenience, or specific experimental utility",
       "title": "Bundle",
       "from_schema": "https://w3id.org/evorao/",
+      "exact_mappings": [
+        "schema:ProductCollection",
+        "schema:ProductCollection"
+      ],
       "close_mappings": [
         "wd:Q1020767",
         "wd:Q1020767"
+      ],
+      "related_mappings": [
+        "ncit:C54696",
+        "ncit:C54696"
       ],
       "is_a": "Product",
       "slots": [
@@ -11325,7 +11891,25 @@
       "from_schema": "https://w3id.org/evorao/",
       "close_mappings": [
         "wd:Q170065",
-        "wd:Q170065"
+        "ncit:C80324",
+        "sio:010414",
+        "ido:0000528",
+        "apollo:00000237",
+        "wd:Q170065",
+        "ncit:C80324",
+        "sio:010414",
+        "ido:0000528",
+        "apollo:00000237"
+      ],
+      "related_mappings": [
+        "schema:infectiousAgent",
+        "schema:InfectiousAgentClass",
+        "doid:0050117",
+        "mondo:0005550",
+        "schema:infectiousAgent",
+        "schema:InfectiousAgentClass",
+        "doid:0050117",
+        "mondo:0005550"
       ],
       "is_a": "Product",
       "abstract": true,
@@ -11395,7 +11979,25 @@
       "from_schema": "https://w3id.org/evorao/",
       "close_mappings": [
         "wd:Q808",
-        "wd:Q808"
+        "schema:Virus",
+        "biolink:virus",
+        "xco:0000237",
+        "ncit:C14283",
+        "wd:Q808",
+        "schema:Virus",
+        "biolink:virus",
+        "xco:0000237",
+        "ncit:C14283"
+      ],
+      "related_mappings": [
+        "ncbitaxon:10239",
+        "snomed:49872002",
+        "doid:934",
+        "mondo:0005108",
+        "ncbitaxon:10239",
+        "snomed:49872002",
+        "doid:934",
+        "mondo:0005108"
       ],
       "is_a": "Pathogen",
       "slots": [
@@ -11467,7 +12069,23 @@
       "from_schema": "https://w3id.org/evorao/",
       "close_mappings": [
         "wd:Q10876",
-        "wd:Q10876"
+        "schema:Bacteria",
+        "ncit:C14187",
+        "xco:0000475",
+        "wd:Q10876",
+        "schema:Bacteria",
+        "ncit:C14187",
+        "xco:0000475"
+      ],
+      "related_mappings": [
+        "snomed:41146007",
+        "ncbitaxon:2",
+        "doid:104",
+        "mondo:0005113",
+        "snomed:41146007",
+        "ncbitaxon:2",
+        "doid:104",
+        "mondo:0005113"
       ],
       "is_a": "Pathogen",
       "slots": [
@@ -11536,7 +12154,21 @@
       "from_schema": "https://w3id.org/evorao/",
       "close_mappings": [
         "wd:Q764",
-        "wd:Q764"
+        "schema:Fungus",
+        "ncit:C14209",
+        "wd:Q764",
+        "schema:Fungus",
+        "ncit:C14209"
+      ],
+      "related_mappings": [
+        "snomed:414561005",
+        "ncbitaxon:4751",
+        "doid:1564",
+        "mondo:0002041",
+        "snomed:414561005",
+        "ncbitaxon:4751",
+        "doid:1564",
+        "mondo:0002041"
       ],
       "is_a": "Pathogen",
       "slots": [
@@ -11605,7 +12237,17 @@
       "from_schema": "https://w3id.org/evorao/",
       "close_mappings": [
         "wd:Q101274",
-        "wd:Q101274"
+        "schema:Protozoa",
+        "vo:0000333",
+        "wd:Q101274",
+        "schema:Protozoa",
+        "vo:0000333"
+      ],
+      "related_mappings": [
+        "snomed:95896000",
+        "snomed:417396000",
+        "snomed:95896000",
+        "snomed:417396000"
       ],
       "is_a": "Pathogen",
       "slots": [
@@ -11674,7 +12316,13 @@
       "from_schema": "https://w3id.org/evorao/",
       "close_mappings": [
         "wd:Q209917",
-        "wd:Q209917"
+        "ncit:C95945",
+        "wd:Q209917",
+        "ncit:C95945"
+      ],
+      "related_mappings": [
+        "snomed:88117008",
+        "snomed:88117008"
       ],
       "is_a": "Pathogen",
       "slots": [
@@ -11743,7 +12391,17 @@
       "from_schema": "https://w3id.org/evorao/",
       "close_mappings": [
         "wd:Q47051",
-        "wd:Q47051"
+        "schema:Prion",
+        "xco:0000655",
+        "wd:Q47051",
+        "schema:Prion",
+        "xco:0000655"
+      ],
+      "related_mappings": [
+        "snomed:84676004",
+        "doid:649",
+        "snomed:84676004",
+        "doid:649"
       ],
       "is_a": "Pathogen",
       "slots": [
@@ -11843,12 +12501,20 @@
       "title": "File",
       "from_schema": "https://w3id.org/evorao/",
       "exact_mappings": [
-        "dcat:mediaType",
-        "dcat:mediaType"
+        "schema:MediaObject",
+        "schema:MediaObject"
       ],
       "close_mappings": [
         "wd:Q82753",
-        "wd:Q82753"
+        "dcat:mediaType",
+        "ncit:C42883",
+        "wd:Q82753",
+        "dcat:mediaType",
+        "ncit:C42883"
+      ],
+      "broad_mappings": [
+        "dct:MediaType",
+        "dct:MediaType"
       ],
       "is_a": "Resource",
       "abstract": true,
@@ -11869,9 +12535,21 @@
       "description": "Subclass of File representing structured or unstructured datasets, often used for analysis, storage, or transfer of information",
       "title": "Data",
       "from_schema": "https://w3id.org/evorao/",
+      "exact_mappings": [
+        "schema:DataDownload",
+        "schema:DataDownload"
+      ],
       "close_mappings": [
         "wd:Q42848",
-        "wd:Q42848"
+        "ncit:C25474",
+        "t4fs:0000430",
+        "wd:Q42848",
+        "ncit:C25474",
+        "t4fs:0000430"
+      ],
+      "broad_mappings": [
+        "dct:MediaType",
+        "dct:MediaType"
       ],
       "is_a": "File",
       "slots": [
@@ -11891,9 +12569,23 @@
       "description": "Subclass of File representing textual or written files such as reports, manuals, or forms",
       "title": "Document",
       "from_schema": "https://w3id.org/evorao/",
+      "exact_mappings": [
+        "schema:DigitalDocument",
+        "schema:DigitalDocument"
+      ],
       "close_mappings": [
         "wd:Q49848",
-        "wd:Q49848"
+        "ncit:C19498",
+        "sio:000148",
+        "iao:0000310",
+        "wd:Q49848",
+        "ncit:C19498",
+        "sio:000148",
+        "iao:0000310"
+      ],
+      "broad_mappings": [
+        "dct:MediaType",
+        "dct:MediaType"
       ],
       "is_a": "File",
       "slots": [
@@ -11913,9 +12605,21 @@
       "description": "Subclass of File representing sound recordings or audio tracks",
       "title": "Audio",
       "from_schema": "https://w3id.org/evorao/",
+      "exact_mappings": [
+        "schema:AudioObject",
+        "schema:AudioObject"
+      ],
       "close_mappings": [
         "wd:Q26987229",
-        "wd:Q26987229"
+        "dcmi:Sound",
+        "ncit:C96977",
+        "wd:Q26987229",
+        "dcmi:Sound",
+        "ncit:C96977"
+      ],
+      "broad_mappings": [
+        "dct:MediaType",
+        "dct:MediaType"
       ],
       "is_a": "File",
       "slots": [
@@ -11935,9 +12639,19 @@
       "description": "Subclass of File representing moving visual media, such as recordings, presentations, or movies",
       "title": "Video",
       "from_schema": "https://w3id.org/evorao/",
+      "exact_mappings": [
+        "schema:VideoObject",
+        "schema:VideoObject"
+      ],
       "close_mappings": [
         "wd:Q98405806",
-        "wd:Q98405806"
+        "ncit:C96985",
+        "wd:Q98405806",
+        "ncit:C96985"
+      ],
+      "broad_mappings": [
+        "dct:MediaType",
+        "dct:MediaType"
       ],
       "is_a": "File",
       "slots": [
@@ -11957,9 +12671,25 @@
       "description": "Subclass of File representing visual content such as pictures, diagrams, or illustrations",
       "title": "Image",
       "from_schema": "https://w3id.org/evorao/",
+      "exact_mappings": [
+        "schema:ImageObject",
+        "schema:ImageObject"
+      ],
       "close_mappings": [
         "wd:Q860625",
-        "wd:Q860625"
+        "dcmi:Image",
+        "edam:2968",
+        "reproduceme:Image",
+        "sio:000081",
+        "wd:Q860625",
+        "dcmi:Image",
+        "edam:2968",
+        "reproduceme:Image",
+        "sio:000081"
+      ],
+      "broad_mappings": [
+        "dct:MediaType",
+        "dct:MediaType"
       ],
       "is_a": "File",
       "slots": [
@@ -11982,13 +12712,21 @@
       "from_schema": "https://w3id.org/evorao/",
       "exact_mappings": [
         "schema:ContactPoint",
-        "vcard:Contact",
+        "vcard:Kind",
         "schema:ContactPoint",
-        "vcard:Contact"
+        "vcard:Kind"
       ],
       "close_mappings": [
         "wd:Q30322502",
         "wd:Q30322502"
+      ],
+      "related_mappings": [
+        "vcard:Contact",
+        "vcard:Contact"
+      ],
+      "narrow_mappings": [
+        "schema:PostalAddress",
+        "schema:PostalAddress"
       ],
       "is_a": "Resource",
       "slots": [
@@ -12020,8 +12758,10 @@
       "close_mappings": [
         "wd:Q79719",
         "dct:LicenseDocument",
+        "reproduceme:LicenseDocument",
         "wd:Q79719",
-        "dct:LicenseDocument"
+        "dct:LicenseDocument",
+        "reproduceme:LicenseDocument"
       ],
       "is_a": "Resource",
       "slots": [
@@ -12041,11 +12781,17 @@
       "description": "Assurance given by an independent certification body that a product, service or system meets the requirements of a standard",
       "title": "Certification",
       "from_schema": "https://w3id.org/evorao/",
+      "exact_mappings": [
+        "schema:Certification",
+        "schema:Certification"
+      ],
       "close_mappings": [
         "wd:Q374814",
-        "schema:Certification",
-        "wd:Q374814",
-        "schema:Certification"
+        "wd:Q374814"
+      ],
+      "related_mappings": [
+        "ncit:C43610",
+        "ncit:C43610"
       ],
       "is_a": "Resource",
       "slots": [
@@ -12062,9 +12808,9 @@
   ],
   "metamodel_version": "1.7.0",
   "source_file": "evora_schema.yaml",
-  "source_file_date": "2025-09-11T08:24:54",
-  "source_file_size": 205313,
-  "generation_date": "2025-09-11T08:25:07",
+  "source_file_date": "2025-09-12T15:41:17",
+  "source_file_size": 218260,
+  "generation_date": "2025-09-12T15:41:34",
   "@type": "SchemaDefinition",
   "@context": [
     "https://w3id.org/linkml/types.context.jsonld",

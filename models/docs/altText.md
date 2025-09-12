@@ -62,6 +62,7 @@ Alias: altText
 | ---  | ---  |
 | self | EVORAO:altText |
 | native | EVORAO:altText |
+| exact | schema:caption |
 
 
 
@@ -74,6 +75,8 @@ name: altText
 description: An alternate text for the image, if the image cannot be displayed
 title: alt text
 from_schema: https://w3id.org/evorao/
+exact_mappings:
+- schema:caption
 rank: 1000
 alias: altText
 domain_of:

@@ -62,6 +62,7 @@ Alias: accidentalReleaseMeasures
 | ---  | ---  |
 | self | EVORAO:accidentalReleaseMeasures |
 | native | EVORAO:accidentalReleaseMeasures |
+| related | schema:Recommendation |
 
 
 
@@ -76,6 +77,8 @@ description: Guidelines for safely managing spills or leaks of the product, incl
   and the environment.
 title: accidental release measures
 from_schema: https://w3id.org/evorao/
+related_mappings:
+- schema:Recommendation
 rank: 1000
 alias: accidentalReleaseMeasures
 domain_of:

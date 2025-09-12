@@ -101,7 +101,9 @@ URI: [EVORAO:Data](https://w3id.org/evorao/Data)
 | ---  | ---  |
 | self | EVORAO:Data |
 | native | EVORAO:Data |
-| close | wd:Q42848, wd:Q42848 |
+| exact | schema:DataDownload, schema:DataDownload |
+| broad | dct:MediaType, dct:MediaType |
+| close | wd:Q42848, ncit:C25474, t4fs:0000430, wd:Q42848, ncit:C25474, t4fs:0000430 |
 
 
 
@@ -122,9 +124,19 @@ description: Subclass of File representing structured or unstructured datasets, 
   used for analysis, storage, or transfer of information
 title: Data
 from_schema: https://w3id.org/evorao/
+exact_mappings:
+- schema:DataDownload
+- schema:DataDownload
 close_mappings:
 - wd:Q42848
+- ncit:C25474
+- t4fs:0000430
 - wd:Q42848
+- ncit:C25474
+- t4fs:0000430
+broad_mappings:
+- dct:MediaType
+- dct:MediaType
 is_a: File
 
 ```
@@ -139,9 +151,19 @@ description: Subclass of File representing structured or unstructured datasets, 
   used for analysis, storage, or transfer of information
 title: Data
 from_schema: https://w3id.org/evorao/
+exact_mappings:
+- schema:DataDownload
+- schema:DataDownload
 close_mappings:
 - wd:Q42848
+- ncit:C25474
+- t4fs:0000430
 - wd:Q42848
+- ncit:C25474
+- t4fs:0000430
+broad_mappings:
+- dct:MediaType
+- dct:MediaType
 is_a: File
 attributes:
   name:
@@ -151,7 +173,9 @@ attributes:
     from_schema: https://w3id.org/evorao/
     exact_mappings:
     - schema:name
+    - vcard:fn
     close_mappings:
+    - rdfs:label
     - dct:title
     rank: 1000
     slot_uri: foaf:name
@@ -177,7 +201,6 @@ attributes:
     - schema:description
     close_mappings:
     - schema:description
-    - schema:description
     rank: 1000
     slot_uri: dct:description
     alias: description
@@ -201,6 +224,8 @@ attributes:
       can be accessed or downloaded.
     title: content URL
     from_schema: https://w3id.org/evorao/
+    exact_mappings:
+    - schema:contentUrl
     rank: 1000
     alias: contentUrl
     owner: Data
@@ -215,6 +240,11 @@ attributes:
       is structured
     title: format
     from_schema: https://w3id.org/evorao/
+    exact_mappings:
+    - schema:fileFormat
+    - dct:format
+    close_mappings:
+    - schema:encodingFormat
     rank: 1000
     alias: format
     owner: Data
@@ -231,6 +261,7 @@ attributes:
     from_schema: https://w3id.org/evorao/
     exact_mappings:
     - dct:license
+    - schema:license
     close_mappings:
     - wdp:P275
     rank: 1000

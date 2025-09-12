@@ -48,7 +48,7 @@ keywords:
 - pathogen collections
 - interoperability
 id: https://w3id.org/evorao/
-version: 1.0.9489
+version: 1.0.9734
 imports:
 - linkml:types
 license: https://creativecommons.org/publicdomain/zero/1.0/
@@ -155,15 +155,12 @@ slots:
       name'', ''virus host type'', ''collection year'', ''country of collection''
       ex ''suspected epidemiological origin'', ''genotype'', ''strain'', ''variant
       name or specific feature'
-    - Describe this item in few lines. This description will serve as a summary to
-      present the resource.
     from_schema: https://w3id.org/evorao/
     exact_mappings:
     - schema:description
     - schema:description
     - schema:description
     close_mappings:
-    - schema:description
     - schema:description
     slot_uri: dct:description
     domain_of:
@@ -335,7 +332,9 @@ slots:
     exact_mappings:
     - schema:license
     - dct:license
+    - schema:license
     close_mappings:
+    - wdp:P275
     - wdp:P275
     slot_uri: dct:license
     domain_of:
@@ -609,7 +608,9 @@ slots:
     close_mappings:
     - reproduceme:doi
     - wdp:P356
+    - reproduceme:doi
     broad_mappings:
+    - dct:bibliographicCitation
     - dct:bibliographicCitation
     domain_of:
     - Publication
@@ -943,10 +944,8 @@ slots:
     exact_mappings:
     - schema:name
     - vcard:fn
-    - schema:name
     close_mappings:
     - rdfs:label
-    - dct:title
     - dct:title
     slot_uri: foaf:name
     domain_of:
@@ -1003,9 +1002,12 @@ slots:
     exact_mappings:
     - wdp:P496
     - reproduceme:ORCID
-    - iao:0000708
+    - wdp:P496
+    - reproduceme:ORCID
     related_mappings:
     - iao:0000708
+    - edam:4022
+    - IAO:0000708
     - edam:4022
     domain_of:
     - Person
@@ -1043,6 +1045,8 @@ slots:
     description: The research infrastructure of which this organization is a member
     title: member of RI
     from_schema: https://w3id.org/evorao/
+    broad_mappings:
+    - schema:memberOf
     domain_of:
     - Provider
     range: ReasearchInfrastructure
@@ -1081,6 +1085,8 @@ slots:
     comments:
     - It can be multiple parts in case of a recombinant biological material.
     from_schema: https://w3id.org/evorao/
+    related_mappings:
+    - schema:hasBioChemEntityPart
     domain_of:
     - BiologicalMaterialOrigin
     range: BiologicalPartOrigin
@@ -1114,8 +1120,14 @@ slots:
     title: country of collection
     from_schema: https://w3id.org/evorao/
     close_mappings:
-    - dct:spatial
+    - wdp:P495
+    - hso:0000360
+    - schema:countryOfOrigin
+    related_mappings:
     - dwc:country
+    - genepio:0000118
+    broad_mappings:
+    - dct:spatial
     domain_of:
     - NaturalPartOrigin
     range: Country
@@ -1126,6 +1138,9 @@ slots:
       from which this sample/element was sampled, if relevant
     title: indigenous people and local community origin
     from_schema: https://w3id.org/evorao/
+    related_mappings:
+    - mesh:D000081034
+    - ncit:C41152
     domain_of:
     - NaturalPartOrigin
     range: IplcOrigin
@@ -1137,6 +1152,10 @@ slots:
       the before date property
     title: collection date
     from_schema: https://w3id.org/evorao/
+    related_mappings:
+    - obib:0000714
+    broad_mappings:
+    - dct:date
     domain_of:
     - NaturalPartOrigin
     range: datetime
@@ -1146,6 +1165,9 @@ slots:
     description: Set to TRUE if a proxy date for the collection date is used
     title: before date
     from_schema: https://w3id.org/evorao/
+    related_mappings:
+    - sepio:0000105
+    - ro:0002089
     ifabsent: 'false'
     domain_of:
     - NaturalPartOrigin
@@ -1167,6 +1189,8 @@ slots:
       sequence
     title: modifications from the reference sequence(s)
     from_schema: https://w3id.org/evorao/
+    related_mappings:
+    - geno:0000967
     domain_of:
     - SyntheticPartOrigin
     range: boolean
@@ -1176,6 +1200,8 @@ slots:
     description: List the modifications mades from the reference sequence if any
     title: description of modification(s) made from the reference sequence(s)
     from_schema: https://w3id.org/evorao/
+    related_mappings:
+    - uniprotrdfs:modification
     domain_of:
     - SyntheticPartOrigin
     range: string
@@ -1197,6 +1223,16 @@ slots:
       format
     title: sequence
     from_schema: https://w3id.org/evorao/
+    close_mappings:
+    - geno:0000239
+    - bao:0002817
+    - geno:0000239
+    - bao:0002817
+    - geno:0000239
+    - bao:0002817
+    related_mappings:
+    - uniprotrdfs:sequence
+    - uniprotrdfs:sequence
     domain_of:
     - RecombinantPartIdentification
     - Protein
@@ -1210,8 +1246,12 @@ slots:
     description: An item of the collection
     title: collection item
     from_schema: https://w3id.org/evorao/
-    close_mappings:
+    related_mappings:
     - dcat:resource
+    - dcat:servesDataset
+    broad_mappings:
+    - schema:includesObject
+    - dcat:dataset
     domain_of:
     - Collection
     range: ProductOrService
@@ -1222,7 +1262,7 @@ slots:
     description: The provider of the data of the collection
     title: collection data provider
     from_schema: https://w3id.org/evorao/
-    close_mappings:
+    broad_mappings:
     - dct:isReferencedBy
     domain_of:
     - Collection
@@ -1236,7 +1276,11 @@ slots:
     title: access point URL
     from_schema: https://w3id.org/evorao/
     exact_mappings:
+    - schema:serviceURL
+    related_mappings:
     - dcat:landingPage
+    broad_mappings:
+    - schema:url
     domain_of:
     - ProductOrService
     range: uri
@@ -1248,7 +1292,12 @@ slots:
     title: ref SKU
     from_schema: https://w3id.org/evorao/
     exact_mappings:
+    - schema:sku
+    close_mappings:
+    - dwc:catalogNumber
+    broad_mappings:
     - dct:identifier
+    - schema:identifier
     domain_of:
     - ProductOrService
     range: string
@@ -1262,6 +1311,8 @@ slots:
     - 'The description of what will be delivered to the end-user (e.g.: packaging,
       quantity...)'
     from_schema: https://w3id.org/evorao/
+    related_mappings:
+    - dct:format
     domain_of:
     - ProductOrService
     range: string
@@ -1274,6 +1325,9 @@ slots:
     from_schema: https://w3id.org/evorao/
     exact_mappings:
     - dcat:theme
+    close_mappings:
+    - schema:category
+    - gr:category
     domain_of:
     - ProductOrService
     range: ProductCategory
@@ -1286,6 +1340,7 @@ slots:
     from_schema: https://w3id.org/evorao/
     close_mappings:
     - dcat:theme
+    - schema:additionalType
     domain_of:
     - ProductOrService
     range: ProductCategory
@@ -1300,6 +1355,8 @@ slots:
       to be a xsd:string instead of an xsd:float as initialy suggested to permit description
       of cost as conditional to what is requested
     from_schema: https://w3id.org/evorao/
+    close_mappings:
+    - schema:price
     ifabsent: string(on request)
     domain_of:
     - ProductOrService
@@ -1312,6 +1369,9 @@ slots:
       be provided
     title: quality grading
     from_schema: https://w3id.org/evorao/
+    close_mappings:
+    - bao:0002662
+    - sio:000217
     domain_of:
     - ProductOrService
     range: string
@@ -1338,8 +1398,10 @@ slots:
       group classification defined by the WHO laboratory biosafety manual
     title: risk group
     from_schema: https://w3id.org/evorao/
-    close_mappings:
+    exact_mappings:
     - wdp:P12663
+    related_mappings:
+    - bao:0002826
     domain_of:
     - ProductOrService
     range: RiskGroup
@@ -1353,6 +1415,8 @@ slots:
       this product or service
     title: biosafety restrictions
     from_schema: https://w3id.org/evorao/
+    related_mappings:
+    - bao:0002826
     domain_of:
     - ProductOrService
     range: string
@@ -1366,6 +1430,8 @@ slots:
     - Set to TRUE if it can produce GMO. It is recommended to have a value for this
       field, no value will be understood as unknown
     from_schema: https://w3id.org/evorao/
+    broad_mappings:
+    - schema:potentialUse
     domain_of:
     - ProductOrService
     range: boolean
@@ -1376,6 +1442,11 @@ slots:
     description: A provider of this product or service, as a specific organization
     title: provider
     from_schema: https://w3id.org/evorao/
+    exact_mappings:
+    - sio:000066
+    close_mappings:
+    - schema:provider
+    - dct:publisher
     domain_of:
     - ProductOrService
     range: Provider
@@ -1385,6 +1456,10 @@ slots:
     description: The collection(s) to which belongs this item
     title: collection
     from_schema: https://w3id.org/evorao/
+    related_mappings:
+    - afop:AFX_0002720
+    broad_mappings:
+    - dct:isPartOf
     domain_of:
     - ProductOrService
     range: Collection
@@ -1395,6 +1470,8 @@ slots:
     title: keywords
     from_schema: https://w3id.org/evorao/
     exact_mappings:
+    - schema:keywords
+    close_mappings:
     - dcat:keyword
     domain_of:
     - ProductOrService
@@ -1409,6 +1486,9 @@ slots:
     comments:
     - Possible availabilities may differ from a project to another
     from_schema: https://w3id.org/evorao/
+    close_mappings:
+    - schema:availability
+    - dct:available
     ifabsent: string(on request)
     domain_of:
     - ProductOrService
@@ -1420,6 +1500,8 @@ slots:
       instructions, or guidelines relevant to the use of this item
     title: complementary document
     from_schema: https://w3id.org/evorao/
+    close_mappings:
+    - sepio:0000442
     domain_of:
     - ProductOrService
     range: Document
@@ -1450,6 +1532,8 @@ slots:
       external provider
     title: external related reference
     from_schema: https://w3id.org/evorao/
+    broad_mappings:
+    - dct:references
     domain_of:
     - ProductOrService
     range: ExternalRelatedReference
@@ -1460,6 +1544,8 @@ slots:
       ISO certification
     title: certification
     from_schema: https://w3id.org/evorao/
+    exact_mappings:
+    - schema:hasCertification
     close_mappings:
     - dct:conformsTo
     domain_of:
@@ -1471,6 +1557,8 @@ slots:
     description: Any reference or indication to be used for local retrieval purpose
     title: internal reference
     from_schema: https://w3id.org/evorao/
+    broad_mappings:
+    - dct:references
     domain_of:
     - ProductOrService
     range: string
@@ -1510,6 +1598,9 @@ slots:
       category for this Product
     title: IATA classification
     from_schema: https://w3id.org/evorao/
+    close_mappings:
+    - wdp:P238
+    - schema:iataCode
     domain_of:
     - Product
     range: IataClassification
@@ -1519,6 +1610,8 @@ slots:
     description: Specification of the terms and parameters for transporting
     title: shipping conditions
     from_schema: https://w3id.org/evorao/
+    close_mappings:
+    - schema:shippingConditions
     domain_of:
     - Product
     range: string
@@ -1545,6 +1638,8 @@ slots:
       origin of the sample
     title: originator
     from_schema: https://w3id.org/evorao/
+    close_mappings:
+    - dct:provenance
     domain_of:
     - Product
     range: Originator
@@ -1643,6 +1738,8 @@ slots:
       with the Nagoya Protocol
     title: biological material origin
     from_schema: https://w3id.org/evorao/
+    related_mappings:
+    - sepio:0000058
     domain_of:
     - Protein
     - NucleicAcid
@@ -1680,6 +1777,9 @@ slots:
       or selection. Applicable to both proteins and nucleic acids
     title: tag sequence
     from_schema: https://w3id.org/evorao/
+    exact_mappings:
+    - bao:0002796
+    - bao:0002796
     domain_of:
     - Protein
     - NucleicAcid
@@ -1692,6 +1792,8 @@ slots:
       overall function
     title: domain
     from_schema: https://w3id.org/evorao/
+    close_mappings:
+    - uniprotrdfs:domain
     domain_of:
     - Protein
     range: string
@@ -1704,6 +1806,8 @@ slots:
       proteins that are insoluble and form within the cell)
     title: expressed as
     from_schema: https://w3id.org/evorao/
+    close_mappings:
+    - apollo:00000102
     domain_of:
     - Protein
     range: string
@@ -1734,6 +1838,8 @@ slots:
       cell lines).
     title: expression system
     from_schema: https://w3id.org/evorao/
+    close_mappings:
+    - ro:0002206
     domain_of:
     - Protein
     range: string
@@ -1923,7 +2029,7 @@ slots:
       yields a positive reading
     title: titer
     from_schema: https://w3id.org/evorao/
-    close_mappings:
+    related_mappings:
     - wd:Q2166189
     domain_of:
     - NucleicAcid
@@ -1938,6 +2044,8 @@ slots:
     comments:
     - Sequence check is mandatory for cloned products
     from_schema: https://w3id.org/evorao/
+    related_mappings:
+    - iceo:0000336
     domain_of:
     - NucleicAcid
     range: boolean
@@ -1979,6 +2087,8 @@ slots:
       of the bundle
     title: items of the bundle
     from_schema: https://w3id.org/evorao/
+    close_mappings:
+    - schema:includesObject
     domain_of:
     - Bundle
     range: Product
@@ -1989,7 +2099,8 @@ slots:
       pathogen is believed to have originated or been transmitted
     title: suspected epidemiological origin
     from_schema: https://w3id.org/evorao/
-    close_mappings:
+    related_mappings:
+    - schema:countryOfOrigin
     - dct:spatial
     domain_of:
     - Pathogen
@@ -2029,6 +2140,8 @@ slots:
       one host to another, detailing the mechanisms of infection spread.
     title: transmission method
     from_schema: https://w3id.org/evorao/
+    close_mappings:
+    - schema:transmissionMethod
     domain_of:
     - Pathogen
     range: TransmissionMethod
@@ -2057,6 +2170,8 @@ slots:
       severity, treatment protocols, and patient outcomes
     title: clinical information
     from_schema: https://w3id.org/evorao/
+    related_mappings:
+    - ncit:C25398
     domain_of:
     - Pathogen
     range: string
@@ -2083,6 +2198,8 @@ slots:
       ability to infect a host organism
     title: infectivity Test
     from_schema: https://w3id.org/evorao/
+    related_mappings:
+    - cido:0001195
     domain_of:
     - Pathogen
     range: string
@@ -2132,6 +2249,8 @@ slots:
       of the original pathogen.
     title: passage
     from_schema: https://w3id.org/evorao/
+    related_mappings:
+    - ncit:C164572
     domain_of:
     - Pathogen
     range: string
@@ -2144,6 +2263,8 @@ slots:
       of the genetic material
     title: genome sequencing
     from_schema: https://w3id.org/evorao/
+    close_mappings:
+    - bao:0002788
     domain_of:
     - Pathogen
     range: string
@@ -2159,6 +2280,11 @@ slots:
       within the same host.
     title: co-infecting viruses
     from_schema: https://w3id.org/evorao/
+    close_mappings:
+    - dwc:associatedTaxa
+    related_mappings:
+    - efo:0010716
+    - mesh:D060085
     domain_of:
     - Virus
     range: VirusName
@@ -2192,6 +2318,7 @@ slots:
     from_schema: https://w3id.org/evorao/
     exact_mappings:
     - dcat:contactPoint
+    - schema:contactPoint
     domain_of:
     - MaterialSafetyDataSheet
     range: ContactPoint
@@ -2228,6 +2355,8 @@ slots:
       outlines steps to minimize harm before medical help is available.
     title: first aid measures
     from_schema: https://w3id.org/evorao/
+    related_mappings:
+    - schema:Recommendation
     domain_of:
     - MaterialSafetyDataSheet
     range: string
@@ -2240,6 +2369,8 @@ slots:
       and any specific hazards from combustion.
     title: fire fighting measures
     from_schema: https://w3id.org/evorao/
+    related_mappings:
+    - schema:Recommendation
     domain_of:
     - MaterialSafetyDataSheet
     range: string
@@ -2252,6 +2383,8 @@ slots:
       property, and the environment.
     title: accidental release measures
     from_schema: https://w3id.org/evorao/
+    related_mappings:
+    - schema:Recommendation
     domain_of:
     - MaterialSafetyDataSheet
     range: string
@@ -2350,6 +2483,8 @@ slots:
       transportation, and disposal, ensuring compliance with legal obligations.
     title: regulatory information
     from_schema: https://w3id.org/evorao/
+    related_mappings:
+    - rdfs:seeAlso
     domain_of:
     - MaterialSafetyDataSheet
     range: string
@@ -2373,6 +2508,8 @@ slots:
       can be accessed or downloaded.
     title: content URL
     from_schema: https://w3id.org/evorao/
+    exact_mappings:
+    - schema:contentUrl
     domain_of:
     - File
     range: uri
@@ -2383,6 +2520,11 @@ slots:
       is structured
     title: format
     from_schema: https://w3id.org/evorao/
+    exact_mappings:
+    - schema:fileFormat
+    - dct:format
+    close_mappings:
+    - schema:encodingFormat
     domain_of:
     - File
     range: string
@@ -2392,6 +2534,8 @@ slots:
     description: An alternate text for the image, if the image cannot be displayed
     title: alt text
     from_schema: https://w3id.org/evorao/
+    exact_mappings:
+    - schema:caption
     domain_of:
     - Image
     range: string
@@ -2404,6 +2548,8 @@ slots:
     from_schema: https://w3id.org/evorao/
     exact_mappings:
     - schema:email
+    - foaf:mbox
+    close_mappings:
     - vcard:email
     domain_of:
     - ContactPoint
@@ -2417,6 +2563,7 @@ slots:
     from_schema: https://w3id.org/evorao/
     exact_mappings:
     - schema:telephone
+    close_mappings:
     - vcard:telephone
     domain_of:
     - ContactPoint
@@ -2428,8 +2575,10 @@ slots:
     description: The building/apartment number and the street name
     title: street address
     from_schema: https://w3id.org/evorao/
-    close_mappings:
+    exact_mappings:
     - schema:streetAddress
+    - vcard:street-address
+    close_mappings:
     - vcard:hasStreetAddress
     domain_of:
     - ContactPoint
@@ -2441,8 +2590,10 @@ slots:
       region. e.g, the city
     title: locality/city
     from_schema: https://w3id.org/evorao/
-    close_mappings:
+    exact_mappings:
     - schema:addressLocality
+    - vcard:locality
+    close_mappings:
     - vcard:hasLocality
     domain_of:
     - ContactPoint
@@ -2454,8 +2605,10 @@ slots:
       For example, California or another appropriate first-level Administrative division
     title: region
     from_schema: https://w3id.org/evorao/
-    close_mappings:
+    exact_mappings:
     - schema:addressRegion
+    - vcard:region
+    close_mappings:
     - vcard:hasRegion
     domain_of:
     - ContactPoint
@@ -2466,8 +2619,10 @@ slots:
     description: The postal code
     title: postal code
     from_schema: https://w3id.org/evorao/
-    close_mappings:
+    exact_mappings:
     - schema:postalCode
+    - vcard:postal-code
+    close_mappings:
     - vcard:hasPostalCode
     domain_of:
     - ContactPoint
@@ -2478,7 +2633,7 @@ slots:
     description: The country as of  ISO 3166
     title: address Country
     from_schema: https://w3id.org/evorao/
-    close_mappings:
+    exact_mappings:
     - schema:addressCountry
     - vcard:hasCountryName
     domain_of:
@@ -2493,7 +2648,8 @@ slots:
     from_schema: https://w3id.org/evorao/
     exact_mappings:
     - dct:license
-    close_mappings:
+    - schema:archivedAt
+    broad_mappings:
     - schema:url
     - schema:url
     domain_of:
@@ -2522,6 +2678,8 @@ slots:
       documents attesting the equivalence to another certification scheme.
     title: certification document
     from_schema: https://w3id.org/evorao/
+    exact_mappings:
+    - schema:associatedMedia
     domain_of:
     - Certification
     range: Document
@@ -3524,9 +3682,11 @@ classes:
     - wd:Q1128340
     - sio:000147
     - edam:0968
+    - schema:DefinedTerm
     - wd:Q1128340
     - sio:000147
     - edam:0968
+    - schema:DefinedTerm
     is_a: Term
   TagSequence:
     description: The name of the DNA coding sequence or corresponding peptide/protein
@@ -4251,11 +4411,13 @@ classes:
     title: Provider
     from_schema: https://w3id.org/evorao/
     close_mappings:
-    - dct:ProvenanceStatement
-    - dct:ProvenanceStatement
+    - ncit:C37900
+    - ncit:C37900
     related_mappings:
     - foaf:Organization
+    - dct:ProvenanceStatement
     - foaf:Organization
+    - dct:ProvenanceStatement
     is_a: Organization
     slots:
     - memberOfRi
@@ -4263,6 +4425,8 @@ classes:
       memberOfRi:
         description: The research infrastructure of which this organization is a member
         title: member of RI
+        broad_mappings:
+        - schema:memberOf
         domain_of:
         - Provider
         range: ReasearchInfrastructure
@@ -4277,6 +4441,11 @@ classes:
     close_mappings:
     - dct:ProvenanceStatement
     - dct:ProvenanceStatement
+    related_mappings:
+    - foaf:Organization
+    - foaf:Agent
+    - foaf:Organization
+    - foaf:Agent
     is_a: PersonOrOrganization
   BiologicalMaterialOrigin:
     description: Information about the origin of the biological material, compulsory
@@ -4284,6 +4453,12 @@ classes:
       with the Nagoya Protocol
     title: Biological material origin
     from_schema: https://w3id.org/evorao/
+    close_mappings:
+    - sepio:0000058
+    - sepio:0000058
+    related_mappings:
+    - snomed:115668003
+    - snomed:115668003
     is_a: Resource
     slots:
     - recombinantMaterial
@@ -4320,6 +4495,8 @@ classes:
         title: biological part origin
         comments:
         - It can be multiple parts in case of a recombinant biological material.
+        related_mappings:
+        - schema:hasBioChemEntityPart
         domain_of:
         - BiologicalMaterialOrigin
         range: BiologicalPartOrigin
@@ -4331,6 +4508,9 @@ classes:
       of a recombinant biological material
     title: Biological part origin
     from_schema: https://w3id.org/evorao/
+    broad_mappings:
+    - sepio:0000058
+    - sepio:0000058
     is_a: Resource
     abstract: true
     slots:
@@ -4362,6 +4542,14 @@ classes:
       material
     title: Natural part origin
     from_schema: https://w3id.org/evorao/
+    related_mappings:
+    - ncit:C87913
+    - ncit:C43581
+    - ncit:C87913
+    - ncit:C43581
+    broad_mappings:
+    - sepio:0000058
+    - sepio:0000058
     is_a: BiologicalPartOrigin
     slots:
     - countryOfCollection
@@ -4375,8 +4563,14 @@ classes:
           Used for Nagoya/CBD; equivalent to 'country of origin'.
         title: country of collection
         close_mappings:
-        - dct:spatial
+        - wdp:P495
+        - hso:0000360
+        - schema:countryOfOrigin
+        related_mappings:
         - dwc:country
+        - genepio:0000118
+        broad_mappings:
+        - dct:spatial
         domain_of:
         - NaturalPartOrigin
         range: Country
@@ -4386,6 +4580,9 @@ classes:
         description: The specific IPLC area (Indigenous People and Local Communities)
           from which this sample/element was sampled, if relevant
         title: indigenous people and local community origin
+        related_mappings:
+        - mesh:D000081034
+        - ncit:C41152
         domain_of:
         - NaturalPartOrigin
         range: IplcOrigin
@@ -4396,6 +4593,10 @@ classes:
           use a proxy date such as 'date received' and indicate this by setting to
           true the before date property
         title: collection date
+        related_mappings:
+        - obib:0000714
+        broad_mappings:
+        - dct:date
         domain_of:
         - NaturalPartOrigin
         range: datetime
@@ -4404,6 +4605,9 @@ classes:
       beforeDate:
         description: Set to TRUE if a proxy date for the collection date is used
         title: before date
+        related_mappings:
+        - sepio:0000105
+        - ro:0002089
         ifabsent: 'false'
         domain_of:
         - NaturalPartOrigin
@@ -4433,6 +4637,8 @@ classes:
         description: Set to TRUE if there was is any modification made from the reference
           sequence
         title: modifications from the reference sequence(s)
+        related_mappings:
+        - geno:0000967
         domain_of:
         - SyntheticPartOrigin
         range: boolean
@@ -4441,6 +4647,8 @@ classes:
       descriptionOfModificationsMadeFromTheReferenceSequences:
         description: List the modifications mades from the reference sequence if any
         title: description of modification(s) made from the reference sequence(s)
+        related_mappings:
+        - uniprotrdfs:modification
         domain_of:
         - SyntheticPartOrigin
         range: string
@@ -4469,6 +4677,11 @@ classes:
         description: The related sequence information from a sequence provider or
           in fasta format
         title: sequence
+        close_mappings:
+        - geno:0000239
+        - bao:0002817
+        related_mappings:
+        - uniprotrdfs:sequence
         domain_of:
         - RecombinantPartIdentification
         range: Sequence
@@ -4490,8 +4703,12 @@ classes:
       collectionItem:
         description: An item of the collection
         title: collection item
-        close_mappings:
+        related_mappings:
         - dcat:resource
+        - dcat:servesDataset
+        broad_mappings:
+        - schema:includesObject
+        - dcat:dataset
         domain_of:
         - Collection
         range: ProductOrService
@@ -4501,7 +4718,7 @@ classes:
       collectionDataProvider:
         description: The provider of the data of the collection
         title: collection data provider
-        close_mappings:
+        broad_mappings:
         - dct:isReferencedBy
         domain_of:
         - Collection
@@ -4515,6 +4732,11 @@ classes:
     comments:
     - part of  wd:Q2897903 (goods and services )
     from_schema: https://w3id.org/evorao/
+    close_mappings:
+    - schema:Product
+    - gr:ProductOrService
+    - schema:Product
+    - gr:ProductOrService
     is_a: Dataset
     abstract: true
     slots:
@@ -4549,7 +4771,11 @@ classes:
           about it or at least describe the process to place an order/enquiry
         title: access point URL
         exact_mappings:
+        - schema:serviceURL
+        related_mappings:
         - dcat:landingPage
+        broad_mappings:
+        - schema:url
         domain_of:
         - ProductOrService
         range: uri
@@ -4560,7 +4786,12 @@ classes:
           provided in the provider's catalogue
         title: ref SKU
         exact_mappings:
+        - schema:sku
+        close_mappings:
+        - dwc:catalogNumber
+        broad_mappings:
         - dct:identifier
+        - schema:identifier
         domain_of:
         - ProductOrService
         range: string
@@ -4573,6 +4804,8 @@ classes:
         comments:
         - 'The description of what will be delivered to the end-user (e.g.: packaging,
           quantity...)'
+        related_mappings:
+        - dct:format
         domain_of:
         - ProductOrService
         range: string
@@ -4584,6 +4817,9 @@ classes:
         title: category
         exact_mappings:
         - dcat:theme
+        close_mappings:
+        - schema:category
+        - gr:category
         domain_of:
         - ProductOrService
         range: ProductCategory
@@ -4595,6 +4831,7 @@ classes:
         title: additional category
         close_mappings:
         - dcat:theme
+        - schema:additionalType
         domain_of:
         - ProductOrService
         range: ProductCategory
@@ -4608,6 +4845,8 @@ classes:
         - The cost per access may not be defined or be specific to a request, so it
           has to be a xsd:string instead of an xsd:float as initialy suggested to
           permit description of cost as conditional to what is requested
+        close_mappings:
+        - schema:price
         ifabsent: string(on request)
         domain_of:
         - ProductOrService
@@ -4619,6 +4858,9 @@ classes:
         description: Information that permits to assess the quality level of what
           will be provided
         title: quality grading
+        close_mappings:
+        - bao:0002662
+        - sio:000217
         domain_of:
         - ProductOrService
         range: string
@@ -4643,6 +4885,9 @@ classes:
         title: DOI
         close_mappings:
         - wdp:P356
+        - reproduceme:doi
+        broad_mappings:
+        - dct:bibliographicCitation
         domain_of:
         - ProductOrService
         range: Doi
@@ -4653,8 +4898,10 @@ classes:
           of a biological agent guiding its initial handling in labs according to
           the risk group classification defined by the WHO laboratory biosafety manual
         title: risk group
-        close_mappings:
+        exact_mappings:
         - wdp:P12663
+        related_mappings:
+        - bao:0002826
         domain_of:
         - ProductOrService
         range: RiskGroup
@@ -4667,6 +4914,8 @@ classes:
           thereby contributes to protecting people and the environment from biohazards
           while accessing this product or service
         title: biosafety restrictions
+        related_mappings:
+        - bao:0002826
         domain_of:
         - ProductOrService
         range: string
@@ -4679,6 +4928,8 @@ classes:
         comments:
         - Set to TRUE if it can produce GMO. It is recommended to have a value for
           this field, no value will be understood as unknown
+        broad_mappings:
+        - schema:potentialUse
         domain_of:
         - ProductOrService
         range: boolean
@@ -4688,6 +4939,11 @@ classes:
       provider:
         description: A provider of this product or service, as a specific organization
         title: provider
+        exact_mappings:
+        - sio:000066
+        close_mappings:
+        - schema:provider
+        - dct:publisher
         domain_of:
         - ProductOrService
         range: Provider
@@ -4696,6 +4952,10 @@ classes:
       collection:
         description: The collection(s) to which belongs this item
         title: collection
+        related_mappings:
+        - afop:AFX_0002720
+        broad_mappings:
+        - dct:isPartOf
         domain_of:
         - ProductOrService
         range: Collection
@@ -4705,6 +4965,8 @@ classes:
         description: List of terms used to tag and categorize this Item
         title: keywords
         exact_mappings:
+        - schema:keywords
+        close_mappings:
         - dcat:keyword
         domain_of:
         - ProductOrService
@@ -4718,6 +4980,9 @@ classes:
         title: availability
         comments:
         - Possible availabilities may differ from a project to another
+        close_mappings:
+        - schema:availability
+        - dct:available
         ifabsent: string(on request)
         domain_of:
         - ProductOrService
@@ -4728,6 +4993,8 @@ classes:
         description: Any additional documents that provide supplementary information,
           instructions, or guidelines relevant to the use of this item
         title: complementary document
+        close_mappings:
+        - sepio:0000442
         domain_of:
         - ProductOrService
         range: Document
@@ -4755,6 +5022,8 @@ classes:
         description: A reference that permits to retrieve another related item from
           an external provider
         title: external related reference
+        broad_mappings:
+        - dct:references
         domain_of:
         - ProductOrService
         range: ExternalRelatedReference
@@ -4764,6 +5033,8 @@ classes:
         description: Any certification related to the current product or service;
           e.g., ISO certification
         title: certification
+        exact_mappings:
+        - schema:hasCertification
         close_mappings:
         - dct:conformsTo
         domain_of:
@@ -4774,6 +5045,8 @@ classes:
       internalReference:
         description: Any reference or indication to be used for local retrieval purpose
         title: internal reference
+        broad_mappings:
+        - dct:references
         domain_of:
         - ProductOrService
         range: string
@@ -4791,6 +5064,8 @@ classes:
       contactPoint:
         description: An information that allows someone to establish communication
         title: contact point
+        exact_mappings:
+        - schema:contactPoint
         slot_uri: dcat:contactPoint
         domain_of:
         - ProductOrService
@@ -4805,7 +5080,20 @@ classes:
     from_schema: https://w3id.org/evorao/
     close_mappings:
     - wd:Q7406919
+    - dcmi:Service
+    - schema:Service
+    - ncit:C88187
+    - obi:0001173
     - wd:Q7406919
+    - dcmi:Service
+    - schema:Service
+    - ncit:C88187
+    - obi:0001173
+    related_mappings:
+    - schema:Product
+    - ncit:C47920
+    - schema:Product
+    - ncit:C47920
     is_a: ProductOrService
     slots:
     - modelSpecies
@@ -4836,6 +5124,9 @@ classes:
     close_mappings:
     - wd:Q2424752
     - wd:Q2424752
+    related_mappings:
+    - schema:Product
+    - schema:Product
     broad_mappings:
     - dct:PhysicalResource
     - dct:PhysicalResource
@@ -4853,6 +5144,9 @@ classes:
         description: The corresponding International Air Transport Association (IATA)'s
           category for this Product
         title: IATA classification
+        close_mappings:
+        - wdp:P238
+        - schema:iataCode
         domain_of:
         - Product
         range: IataClassification
@@ -4861,6 +5155,8 @@ classes:
       shippingConditions:
         description: Specification of the terms and parameters for transporting
         title: shipping conditions
+        close_mappings:
+        - schema:shippingConditions
         domain_of:
         - Product
         range: string
@@ -4885,6 +5181,8 @@ classes:
           isolation, or creation of an item, providing information about the source
           or origin of the sample
         title: originator
+        close_mappings:
+        - dct:provenance
         domain_of:
         - Product
         range: Originator
@@ -4931,7 +5229,9 @@ classes:
     from_schema: https://w3id.org/evorao/
     close_mappings:
     - wd:Q79460
+    - snomed:68498002
     - wd:Q79460
+    - snomed:68498002
     is_a: Product
     slots:
     - productionSystem
@@ -4992,7 +5292,15 @@ classes:
     from_schema: https://w3id.org/evorao/
     close_mappings:
     - wd:Q27554370
+    - snomed:25326005
+    - clo:0036932
+    - bto:0000610
+    - ncit:C16700
     - wd:Q27554370
+    - snomed:25326005
+    - clo:0036932
+    - bto:0000610
+    - ncit:C16700
     is_a: Antibody
     slots:
     - hybridomaDescription
@@ -5011,7 +5319,13 @@ classes:
     from_schema: https://w3id.org/evorao/
     close_mappings:
     - wd:Q8054
+    - snomed:88878007
+    - sio:010043
+    - schema:Protein
     - wd:Q8054
+    - snomed:88878007
+    - sio:010043
+    - schema:Protein
     is_a: Product
     slots:
     - biologicalMaterialOrigin
@@ -5034,6 +5348,8 @@ classes:
           for access, utilization, and benefit-sharing of genetic resources in compliance
           with the Nagoya Protocol
         title: biological material origin
+        related_mappings:
+        - sepio:0000058
         domain_of:
         - Protein
         range: BiologicalMaterialOrigin
@@ -5043,6 +5359,11 @@ classes:
         description: The related sequence information from a sequence provider or
           in fasta format
         title: sequence
+        close_mappings:
+        - geno:0000239
+        - bao:0002817
+        related_mappings:
+        - uniprotrdfs:sequence
         domain_of:
         - Protein
         range: Sequence
@@ -5075,6 +5396,8 @@ classes:
           operations such as purification, detection, localization, tracking, solubility
           enhancement, or selection. Applicable to both proteins and nucleic acids
         title: tag sequence
+        exact_mappings:
+        - bao:0002796
         domain_of:
         - Protein
         range: TagSequence
@@ -5085,6 +5408,8 @@ classes:
           often capable of independent folding and stability, which contributes to
           the protein's overall function
         title: domain
+        close_mappings:
+        - uniprotrdfs:domain
         domain_of:
         - Protein
         range: string
@@ -5096,6 +5421,8 @@ classes:
           are dissolved in the cellular or extracellular fluid) and 'Inclusion bodies'
           (aggregated proteins that are insoluble and form within the cell)
         title: expressed as
+        close_mappings:
+        - apollo:00000102
         domain_of:
         - Protein
         range: string
@@ -5118,6 +5445,8 @@ classes:
           'Insect cells' (using baculovirus vectors), and 'Mammalian cells' (mammalian
           cell lines).
         title: expression system
+        close_mappings:
+        - ro:0002206
         domain_of:
         - Protein
         range: string
@@ -5188,7 +5517,18 @@ classes:
     from_schema: https://w3id.org/evorao/
     close_mappings:
     - wd:Q123619
+    - ncit:C706
+    - snomed:27380003
+    - sio:010008
+    - chebi:33696
     - wd:Q123619
+    - ncit:C706
+    - snomed:27380003
+    - sio:010008
+    - chebi:33696
+    related_mappings:
+    - mi:0318
+    - mi:0318
     is_a: Product
     slots:
     - biologicalMaterialOrigin
@@ -5211,6 +5551,8 @@ classes:
           for access, utilization, and benefit-sharing of genetic resources in compliance
           with the Nagoya Protocol
         title: biological material origin
+        related_mappings:
+        - sepio:0000058
         domain_of:
         - NucleicAcid
         range: BiologicalMaterialOrigin
@@ -5229,6 +5571,11 @@ classes:
         description: The related sequence information from a sequence provider or
           in fasta format
         title: sequence
+        close_mappings:
+        - geno:0000239
+        - bao:0002817
+        related_mappings:
+        - uniprotrdfs:sequence
         domain_of:
         - NucleicAcid
         range: Sequence
@@ -5267,6 +5614,8 @@ classes:
           operations such as purification, detection, localization, tracking, solubility
           enhancement, or selection. Applicable to both proteins and nucleic acids
         title: tag sequence
+        exact_mappings:
+        - bao:0002796
         domain_of:
         - NucleicAcid
         range: TagSequence
@@ -5342,6 +5691,8 @@ classes:
         title: sequence checked
         comments:
         - Sequence check is mandatory for cloned products
+        related_mappings:
+        - iceo:0000336
         domain_of:
         - NucleicAcid
         range: boolean
@@ -5351,6 +5702,9 @@ classes:
     description: A detection kit for specific pathogens
     title: Detection Kit
     from_schema: https://w3id.org/evorao/
+    close_mappings:
+    - mesh:D011933
+    - mesh:D011933
     is_a: Product
     slots:
     - standardOperatingProcedureFile
@@ -5401,9 +5755,15 @@ classes:
       experimental utility
     title: Bundle
     from_schema: https://w3id.org/evorao/
+    exact_mappings:
+    - schema:ProductCollection
+    - schema:ProductCollection
     close_mappings:
     - wd:Q1020767
     - wd:Q1020767
+    related_mappings:
+    - ncit:C54696
+    - ncit:C54696
     is_a: Product
     slots:
     - itemsOfTheBundle
@@ -5412,6 +5772,8 @@ classes:
         description: Specifies the constituent products and/or services that are part
           of the bundle
         title: items of the bundle
+        close_mappings:
+        - schema:includesObject
         domain_of:
         - Bundle
         range: Product
@@ -5425,7 +5787,24 @@ classes:
     from_schema: https://w3id.org/evorao/
     close_mappings:
     - wd:Q170065
+    - ncit:C80324
+    - sio:010414
+    - ido:0000528
+    - apollo:00000237
     - wd:Q170065
+    - ncit:C80324
+    - sio:010414
+    - ido:0000528
+    - apollo:00000237
+    related_mappings:
+    - schema:infectiousAgent
+    - schema:InfectiousAgentClass
+    - doid:0050117
+    - mondo:0005550
+    - schema:infectiousAgent
+    - schema:InfectiousAgentClass
+    - doid:0050117
+    - mondo:0005550
     is_a: Product
     abstract: true
     slots:
@@ -5453,6 +5832,8 @@ classes:
           for access, utilization, and benefit-sharing of genetic resources in compliance
           with the Nagoya Protocol
         title: biological material origin
+        related_mappings:
+        - sepio:0000058
         domain_of:
         - Pathogen
         range: BiologicalMaterialOrigin
@@ -5462,7 +5843,8 @@ classes:
         description: The potential geographical or environmental source from which
           the pathogen is believed to have originated or been transmitted
         title: suspected epidemiological origin
-        close_mappings:
+        related_mappings:
+        - schema:countryOfOrigin
         - dct:spatial
         domain_of:
         - Pathogen
@@ -5498,6 +5880,8 @@ classes:
         description: The method or route through which the pathogen is transmitted
           from one host to another, detailing the mechanisms of infection spread.
         title: transmission method
+        close_mappings:
+        - schema:transmissionMethod
         domain_of:
         - Pathogen
         range: TransmissionMethod
@@ -5507,6 +5891,9 @@ classes:
         description: The related sequence information from a sequence provider or
           in fasta format
         title: sequence
+        close_mappings:
+        - geno:0000239
+        - bao:0002817
         domain_of:
         - Pathogen
         range: Sequence
@@ -5529,6 +5916,8 @@ classes:
         description: Details about the clinical aspects of the pathogen, including
           symptoms, severity, treatment protocols, and patient outcomes
         title: clinical information
+        related_mappings:
+        - ncit:C25398
         domain_of:
         - Pathogen
         range: string
@@ -5561,6 +5950,8 @@ classes:
           details on the methods, conditions, and results of the test used to assess
           the pathogen's ability to infect a host organism
         title: infectivity Test
+        related_mappings:
+        - cido:0001195
         domain_of:
         - Pathogen
         range: string
@@ -5601,6 +5992,8 @@ classes:
           passage, a process used to increase the stock but which can also lead to
           the evolution of the original pathogen.
         title: passage
+        related_mappings:
+        - ncit:C164572
         domain_of:
         - Pathogen
         range: string
@@ -5612,6 +6005,8 @@ classes:
           'Complete coding sequence' for all coding regions, and 'Partial sequence'
           for only a portion of the genetic material
         title: genome sequencing
+        close_mappings:
+        - bao:0002788
         domain_of:
         - Pathogen
         range: string
@@ -5623,7 +6018,7 @@ classes:
           present in the sample. The titer corresponds to the highest dilution factor
           that still yields a positive reading
         title: titer
-        close_mappings:
+        related_mappings:
         - wd:Q2166189
         domain_of:
         - Pathogen
@@ -5636,7 +6031,24 @@ classes:
     from_schema: https://w3id.org/evorao/
     close_mappings:
     - wd:Q808
+    - schema:Virus
+    - biolink:virus
+    - xco:0000237
+    - ncit:C14283
     - wd:Q808
+    - schema:Virus
+    - biolink:virus
+    - xco:0000237
+    - ncit:C14283
+    related_mappings:
+    - ncbitaxon:10239
+    - snomed:49872002
+    - doid:934
+    - mondo:0005108
+    - ncbitaxon:10239
+    - snomed:49872002
+    - doid:934
+    - mondo:0005108
     is_a: Pathogen
     slots:
     - coInfectingViruses
@@ -5648,6 +6060,11 @@ classes:
           along with the primary virus, indicating the presence of multiple viral
           infections within the same host.
         title: co-infecting viruses
+        close_mappings:
+        - dwc:associatedTaxa
+        related_mappings:
+        - efo:0010716
+        - mesh:D060085
         domain_of:
         - Virus
         range: VirusName
@@ -5678,7 +6095,22 @@ classes:
     from_schema: https://w3id.org/evorao/
     close_mappings:
     - wd:Q10876
+    - schema:Bacteria
+    - ncit:C14187
+    - xco:0000475
     - wd:Q10876
+    - schema:Bacteria
+    - ncit:C14187
+    - xco:0000475
+    related_mappings:
+    - snomed:41146007
+    - ncbitaxon:2
+    - doid:104
+    - mondo:0005113
+    - snomed:41146007
+    - ncbitaxon:2
+    - doid:104
+    - mondo:0005113
     is_a: Pathogen
   Fungus:
     description: The fungus as a biological material
@@ -5686,7 +6118,20 @@ classes:
     from_schema: https://w3id.org/evorao/
     close_mappings:
     - wd:Q764
+    - schema:Fungus
+    - ncit:C14209
     - wd:Q764
+    - schema:Fungus
+    - ncit:C14209
+    related_mappings:
+    - snomed:414561005
+    - ncbitaxon:4751
+    - doid:1564
+    - mondo:0002041
+    - snomed:414561005
+    - ncbitaxon:4751
+    - doid:1564
+    - mondo:0002041
     is_a: Pathogen
   Protozoan:
     description: The protozoan as a biological material
@@ -5694,7 +6139,16 @@ classes:
     from_schema: https://w3id.org/evorao/
     close_mappings:
     - wd:Q101274
+    - schema:Protozoa
+    - vo:0000333
     - wd:Q101274
+    - schema:Protozoa
+    - vo:0000333
+    related_mappings:
+    - snomed:95896000
+    - snomed:417396000
+    - snomed:95896000
+    - snomed:417396000
     is_a: Pathogen
   Viroid:
     description: The viroid as a biological material
@@ -5702,7 +6156,12 @@ classes:
     from_schema: https://w3id.org/evorao/
     close_mappings:
     - wd:Q209917
+    - ncit:C95945
     - wd:Q209917
+    - ncit:C95945
+    related_mappings:
+    - snomed:88117008
+    - snomed:88117008
     is_a: Pathogen
   Prion:
     description: The prion as a biological material
@@ -5710,7 +6169,16 @@ classes:
     from_schema: https://w3id.org/evorao/
     close_mappings:
     - wd:Q47051
+    - schema:Prion
+    - xco:0000655
     - wd:Q47051
+    - schema:Prion
+    - xco:0000655
+    related_mappings:
+    - snomed:84676004
+    - doid:649
+    - snomed:84676004
+    - doid:649
     is_a: Pathogen
   MaterialSafetyDataSheet:
     description: A Material Safety Data Sheet (MSDS) or Safety Data Sheet (SDS) is
@@ -5746,6 +6214,7 @@ classes:
         title: material safety contact
         exact_mappings:
         - dcat:contactPoint
+        - schema:contactPoint
         domain_of:
         - MaterialSafetyDataSheet
         range: ContactPoint
@@ -5779,6 +6248,8 @@ classes:
           to the product, including inhalation, ingestion, skin, or eye contact. This
           section outlines steps to minimize harm before medical help is available.
         title: first aid measures
+        related_mappings:
+        - schema:Recommendation
         domain_of:
         - MaterialSafetyDataSheet
         range: string
@@ -5790,6 +6261,8 @@ classes:
           including suitable extinguishing agents, special protective equipment for
           firefighters, and any specific hazards from combustion.
         title: fire fighting measures
+        related_mappings:
+        - schema:Recommendation
         domain_of:
         - MaterialSafetyDataSheet
         range: string
@@ -5801,6 +6274,8 @@ classes:
           including containment, cleanup procedures, and precautions to prevent harm
           to people, property, and the environment.
         title: accidental release measures
+        related_mappings:
+        - schema:Recommendation
         domain_of:
         - MaterialSafetyDataSheet
         range: string
@@ -5894,6 +6369,8 @@ classes:
           handling, use, transportation, and disposal, ensuring compliance with legal
           obligations.
         title: regulatory information
+        related_mappings:
+        - rdfs:seeAlso
         domain_of:
         - MaterialSafetyDataSheet
         range: string
@@ -5917,11 +6394,18 @@ classes:
     title: File
     from_schema: https://w3id.org/evorao/
     exact_mappings:
-    - dcat:mediaType
-    - dcat:mediaType
+    - schema:MediaObject
+    - schema:MediaObject
     close_mappings:
     - wd:Q82753
+    - dcat:mediaType
+    - ncit:C42883
     - wd:Q82753
+    - dcat:mediaType
+    - ncit:C42883
+    broad_mappings:
+    - dct:MediaType
+    - dct:MediaType
     is_a: Resource
     abstract: true
     slots:
@@ -5936,7 +6420,9 @@ classes:
         title: name
         exact_mappings:
         - schema:name
+        - vcard:fn
         close_mappings:
+        - rdfs:label
         - dct:title
         slot_uri: foaf:name
         domain_of:
@@ -5964,6 +6450,8 @@ classes:
         description: The web address or location where the file content is stored
           and can be accessed or downloaded.
         title: content URL
+        exact_mappings:
+        - schema:contentUrl
         domain_of:
         - File
         range: uri
@@ -5973,6 +6461,11 @@ classes:
         description: The file type or format that indicates how the data within the
           file is structured
         title: format
+        exact_mappings:
+        - schema:fileFormat
+        - dct:format
+        close_mappings:
+        - schema:encodingFormat
         domain_of:
         - File
         range: string
@@ -5984,6 +6477,9 @@ classes:
         title: license
         exact_mappings:
         - dct:license
+        - schema:license
+        close_mappings:
+        - wdp:P275
         domain_of:
         - File
         range: License
@@ -5994,44 +6490,98 @@ classes:
       often used for analysis, storage, or transfer of information
     title: Data
     from_schema: https://w3id.org/evorao/
+    exact_mappings:
+    - schema:DataDownload
+    - schema:DataDownload
     close_mappings:
     - wd:Q42848
+    - ncit:C25474
+    - t4fs:0000430
     - wd:Q42848
+    - ncit:C25474
+    - t4fs:0000430
+    broad_mappings:
+    - dct:MediaType
+    - dct:MediaType
     is_a: File
   Document:
     description: Subclass of File representing textual or written files such as reports,
       manuals, or forms
     title: Document
     from_schema: https://w3id.org/evorao/
+    exact_mappings:
+    - schema:DigitalDocument
+    - schema:DigitalDocument
     close_mappings:
     - wd:Q49848
+    - ncit:C19498
+    - sio:000148
+    - iao:0000310
     - wd:Q49848
+    - ncit:C19498
+    - sio:000148
+    - iao:0000310
+    broad_mappings:
+    - dct:MediaType
+    - dct:MediaType
     is_a: File
   Audio:
     description: Subclass of File representing sound recordings or audio tracks
     title: Audio
     from_schema: https://w3id.org/evorao/
+    exact_mappings:
+    - schema:AudioObject
+    - schema:AudioObject
     close_mappings:
     - wd:Q26987229
+    - dcmi:Sound
+    - ncit:C96977
     - wd:Q26987229
+    - dcmi:Sound
+    - ncit:C96977
+    broad_mappings:
+    - dct:MediaType
+    - dct:MediaType
     is_a: File
   Video:
     description: Subclass of File representing moving visual media, such as recordings,
       presentations, or movies
     title: Video
     from_schema: https://w3id.org/evorao/
+    exact_mappings:
+    - schema:VideoObject
+    - schema:VideoObject
     close_mappings:
     - wd:Q98405806
+    - ncit:C96985
     - wd:Q98405806
+    - ncit:C96985
+    broad_mappings:
+    - dct:MediaType
+    - dct:MediaType
     is_a: File
   Image:
     description: Subclass of File representing visual content such as pictures, diagrams,
       or illustrations
     title: Image
     from_schema: https://w3id.org/evorao/
+    exact_mappings:
+    - schema:ImageObject
+    - schema:ImageObject
     close_mappings:
     - wd:Q860625
+    - dcmi:Image
+    - edam:2968
+    - reproduceme:Image
+    - sio:000081
     - wd:Q860625
+    - dcmi:Image
+    - edam:2968
+    - reproduceme:Image
+    - sio:000081
+    broad_mappings:
+    - dct:MediaType
+    - dct:MediaType
     is_a: File
     slots:
     - altText
@@ -6039,6 +6589,8 @@ classes:
       altText:
         description: An alternate text for the image, if the image cannot be displayed
         title: alt text
+        exact_mappings:
+        - schema:caption
         domain_of:
         - Image
         range: string
@@ -6051,12 +6603,18 @@ classes:
     from_schema: https://w3id.org/evorao/
     exact_mappings:
     - schema:ContactPoint
-    - vcard:Contact
+    - vcard:Kind
     - schema:ContactPoint
-    - vcard:Contact
+    - vcard:Kind
     close_mappings:
     - wd:Q30322502
     - wd:Q30322502
+    related_mappings:
+    - vcard:Contact
+    - vcard:Contact
+    narrow_mappings:
+    - schema:PostalAddress
+    - schema:PostalAddress
     is_a: Resource
     slots:
     - name
@@ -6075,7 +6633,9 @@ classes:
         title: name
         exact_mappings:
         - schema:name
+        - vcard:fn
         close_mappings:
+        - rdfs:label
         - dct:title
         slot_uri: foaf:name
         domain_of:
@@ -6104,6 +6664,8 @@ classes:
         title: email
         exact_mappings:
         - schema:email
+        - foaf:mbox
+        close_mappings:
         - vcard:email
         domain_of:
         - ContactPoint
@@ -6116,6 +6678,7 @@ classes:
         title: telephone
         exact_mappings:
         - schema:telephone
+        close_mappings:
         - vcard:telephone
         domain_of:
         - ContactPoint
@@ -6126,8 +6689,10 @@ classes:
       streetAddress:
         description: The building/apartment number and the street name
         title: street address
-        close_mappings:
+        exact_mappings:
         - schema:streetAddress
+        - vcard:street-address
+        close_mappings:
         - vcard:hasStreetAddress
         domain_of:
         - ContactPoint
@@ -6138,8 +6703,10 @@ classes:
         description: The locality in which the street address is, and which is in
           the region. e.g, the city
         title: locality/city
-        close_mappings:
+        exact_mappings:
         - schema:addressLocality
+        - vcard:locality
+        close_mappings:
         - vcard:hasLocality
         domain_of:
         - ContactPoint
@@ -6151,8 +6718,10 @@ classes:
           For example, California or another appropriate first-level Administrative
           division
         title: region
-        close_mappings:
+        exact_mappings:
         - schema:addressRegion
+        - vcard:region
+        close_mappings:
         - vcard:hasRegion
         domain_of:
         - ContactPoint
@@ -6162,8 +6731,10 @@ classes:
       postalCode:
         description: The postal code
         title: postal code
-        close_mappings:
+        exact_mappings:
         - schema:postalCode
+        - vcard:postal-code
+        close_mappings:
         - vcard:hasPostalCode
         domain_of:
         - ContactPoint
@@ -6173,7 +6744,7 @@ classes:
       addressCountry:
         description: The country as of  ISO 3166
         title: address Country
-        close_mappings:
+        exact_mappings:
         - schema:addressCountry
         - vcard:hasCountryName
         domain_of:
@@ -6186,7 +6757,11 @@ classes:
           Researcher and Contributor ID (ORCID) organisation
         title: ORCID id
         exact_mappings:
-        - iao:0000708
+        - wdp:P496
+        - reproduceme:ORCID
+        related_mappings:
+        - IAO:0000708
+        - edam:4022
         domain_of:
         - ContactPoint
         range: string
@@ -6204,8 +6779,10 @@ classes:
     close_mappings:
     - wd:Q79719
     - dct:LicenseDocument
+    - reproduceme:LicenseDocument
     - wd:Q79719
     - dct:LicenseDocument
+    - reproduceme:LicenseDocument
     is_a: Resource
     slots:
     - title
@@ -6257,7 +6834,7 @@ classes:
         title: resource URL
         exact_mappings:
         - dct:license
-        close_mappings:
+        broad_mappings:
         - schema:url
         domain_of:
         - License
@@ -6290,11 +6867,15 @@ classes:
       service or system meets the requirements of a standard
     title: Certification
     from_schema: https://w3id.org/evorao/
+    exact_mappings:
+    - schema:Certification
+    - schema:Certification
     close_mappings:
     - wd:Q374814
-    - schema:Certification
     - wd:Q374814
-    - schema:Certification
+    related_mappings:
+    - ncit:C43610
+    - ncit:C43610
     is_a: Resource
     slots:
     - title
@@ -6328,7 +6909,7 @@ classes:
         comments:
         - Describe this item in few lines. This description will serve as a summary
           to present the resource.
-        close_mappings:
+        exact_mappings:
         - schema:description
         slot_uri: dct:description
         domain_of:
@@ -6340,6 +6921,8 @@ classes:
       logo:
         description: A path or URL to the related logo
         title: logo
+        exact_mappings:
+        - schema:logo
         domain_of:
         - Certification
         range: Image
@@ -6350,6 +6933,8 @@ classes:
           of the subject to the applicable scheme, including, as the case may be,
           the documents attesting the equivalence to another certification scheme.
         title: certification document
+        exact_mappings:
+        - schema:associatedMedia
         domain_of:
         - Certification
         range: Document
@@ -6359,7 +6944,9 @@ classes:
         description: The web address or location where the details or content is stored
           and can be accessed or downloaded.
         title: resource URL
-        close_mappings:
+        exact_mappings:
+        - schema:archivedAt
+        broad_mappings:
         - schema:url
         domain_of:
         - Certification
@@ -6367,4 +6954,4 @@ classes:
         required: false
         multivalued: false
 source_file: https://w3id.org/evorao/evorao.owl.ttl
-generation_date: '2025-09-11T10:24:34'
+generation_date: '2025-09-12T17:40:52'

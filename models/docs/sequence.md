@@ -22,16 +22,16 @@ Alias: sequence
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [Viroid](Viroid.md) | The viroid as a biological material |  no  |
-| [Virus](Virus.md) | The virus as a biological material |  no  |
 | [Protozoan](Protozoan.md) | The protozoan as a biological material |  no  |
-| [Fungus](Fungus.md) | The fungus as a biological material |  no  |
-| [Protein](Protein.md) | A protein as a derived product from a pathogen |  yes  |
-| [NucleicAcid](NucleicAcid.md) | Nucleic acid related to a pathogen |  yes  |
 | [RecombinantPartIdentification](RecombinantPartIdentification.md) | Identification of a recombinant part |  yes  |
-| [Pathogen](Pathogen.md) | Biological entity that causes disease in its host, which is typically an infe... |  yes  |
-| [Bacterium](Bacterium.md) | The bacterium as a biological material |  no  |
+| [Viroid](Viroid.md) | The viroid as a biological material |  no  |
+| [NucleicAcid](NucleicAcid.md) | Nucleic acid related to a pathogen |  yes  |
+| [Fungus](Fungus.md) | The fungus as a biological material |  no  |
 | [Prion](Prion.md) | The prion as a biological material |  no  |
+| [Bacterium](Bacterium.md) | The bacterium as a biological material |  no  |
+| [Protein](Protein.md) | A protein as a derived product from a pathogen |  yes  |
+| [Virus](Virus.md) | The virus as a biological material |  no  |
+| [Pathogen](Pathogen.md) | Biological entity that causes disease in its host, which is typically an infe... |  yes  |
 
 
 
@@ -73,6 +73,8 @@ Alias: sequence
 | ---  | ---  |
 | self | EVORAO:sequence |
 | native | EVORAO:sequence |
+| related | uniprotrdfs:sequence, uniprotrdfs:sequence |
+| close | geno:0000239, bao:0002817, geno:0000239, bao:0002817, geno:0000239, bao:0002817 |
 
 
 
@@ -86,6 +88,16 @@ description: The related sequence information from a sequence provider or in fas
   format
 title: sequence
 from_schema: https://w3id.org/evorao/
+close_mappings:
+- geno:0000239
+- bao:0002817
+- geno:0000239
+- bao:0002817
+- geno:0000239
+- bao:0002817
+related_mappings:
+- uniprotrdfs:sequence
+- uniprotrdfs:sequence
 rank: 1000
 alias: sequence
 domain_of:

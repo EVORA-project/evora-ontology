@@ -22,13 +22,13 @@ Alias: suspectedEpidemiologicalOrigin
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [Viroid](Viroid.md) | The viroid as a biological material |  no  |
-| [Virus](Virus.md) | The virus as a biological material |  no  |
 | [Protozoan](Protozoan.md) | The protozoan as a biological material |  no  |
+| [Viroid](Viroid.md) | The viroid as a biological material |  no  |
 | [Fungus](Fungus.md) | The fungus as a biological material |  no  |
-| [Pathogen](Pathogen.md) | Biological entity that causes disease in its host, which is typically an infe... |  yes  |
-| [Bacterium](Bacterium.md) | The bacterium as a biological material |  no  |
 | [Prion](Prion.md) | The prion as a biological material |  no  |
+| [Bacterium](Bacterium.md) | The bacterium as a biological material |  no  |
+| [Virus](Virus.md) | The virus as a biological material |  no  |
+| [Pathogen](Pathogen.md) | Biological entity that causes disease in its host, which is typically an infe... |  yes  |
 
 
 
@@ -68,7 +68,7 @@ Alias: suspectedEpidemiologicalOrigin
 | ---  | ---  |
 | self | EVORAO:suspectedEpidemiologicalOrigin |
 | native | EVORAO:suspectedEpidemiologicalOrigin |
-| close | dct:spatial |
+| related | schema:countryOfOrigin, dct:spatial |
 
 
 
@@ -82,7 +82,8 @@ description: The potential geographical or environmental source from which the p
   is believed to have originated or been transmitted
 title: suspected epidemiological origin
 from_schema: https://w3id.org/evorao/
-close_mappings:
+related_mappings:
+- schema:countryOfOrigin
 - dct:spatial
 rank: 1000
 alias: suspectedEpidemiologicalOrigin

@@ -132,6 +132,11 @@ slot_usage:
     description: The related sequence information from a sequence provider or in fasta
       format
     title: sequence
+    close_mappings:
+    - geno:0000239
+    - bao:0002817
+    related_mappings:
+    - uniprotrdfs:sequence
     domain_of:
     - RecombinantPartIdentification
     - Protein
@@ -170,6 +175,11 @@ slot_usage:
     description: The related sequence information from a sequence provider or in fasta
       format
     title: sequence
+    close_mappings:
+    - geno:0000239
+    - bao:0002817
+    related_mappings:
+    - uniprotrdfs:sequence
     domain_of:
     - RecombinantPartIdentification
     - Protein
@@ -200,6 +210,11 @@ attributes:
       format
     title: sequence
     from_schema: https://w3id.org/evorao/
+    close_mappings:
+    - geno:0000239
+    - bao:0002817
+    related_mappings:
+    - uniprotrdfs:sequence
     rank: 1000
     alias: sequence
     owner: RecombinantPartIdentification

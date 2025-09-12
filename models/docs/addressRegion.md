@@ -60,7 +60,8 @@ Alias: addressRegion
 | ---  | ---  |
 | self | EVORAO:addressRegion |
 | native | EVORAO:addressRegion |
-| close | schema:addressRegion, vcard:hasRegion |
+| exact | schema:addressRegion, vcard:region |
+| close | vcard:hasRegion |
 
 
 
@@ -74,8 +75,10 @@ description: The region in which the locality is, and which is in the country. F
   example, California or another appropriate first-level Administrative division
 title: region
 from_schema: https://w3id.org/evorao/
-close_mappings:
+exact_mappings:
 - schema:addressRegion
+- vcard:region
+close_mappings:
 - vcard:hasRegion
 rank: 1000
 alias: addressRegion

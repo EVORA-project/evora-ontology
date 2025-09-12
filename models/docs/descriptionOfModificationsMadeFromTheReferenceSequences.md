@@ -62,6 +62,7 @@ Alias: descriptionOfModificationsMadeFromTheReferenceSequences
 | ---  | ---  |
 | self | EVORAO:descriptionOfModificationsMadeFromTheReferenceSequences |
 | native | EVORAO:descriptionOfModificationsMadeFromTheReferenceSequences |
+| related | uniprotrdfs:modification |
 
 
 
@@ -74,6 +75,8 @@ name: descriptionOfModificationsMadeFromTheReferenceSequences
 description: List the modifications mades from the reference sequence if any
 title: description of modification(s) made from the reference sequence(s)
 from_schema: https://w3id.org/evorao/
+related_mappings:
+- uniprotrdfs:modification
 rank: 1000
 alias: descriptionOfModificationsMadeFromTheReferenceSequences
 domain_of:

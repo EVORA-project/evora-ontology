@@ -62,6 +62,7 @@ Alias: expressionSystem
 | ---  | ---  |
 | self | EVORAO:expressionSystem |
 | native | EVORAO:expressionSystem |
+| close | ro:0002206 |
 
 
 
@@ -76,6 +77,8 @@ description: The host organism or cellular environment used to produce a protein
   (using baculovirus vectors), and 'Mammalian cells' (mammalian cell lines).
 title: expression system
 from_schema: https://w3id.org/evorao/
+close_mappings:
+- ro:0002206
 rank: 1000
 alias: expressionSystem
 domain_of:

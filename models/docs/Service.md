@@ -251,7 +251,8 @@ URI: [EVORAO:Service](https://w3id.org/evorao/Service)
 | ---  | ---  |
 | self | EVORAO:Service |
 | native | EVORAO:Service |
-| close | wd:Q7406919, wd:Q7406919 |
+| related | schema:Product, ncit:C47920, schema:Product, ncit:C47920 |
+| close | wd:Q7406919, dcmi:Service, schema:Service, ncit:C88187, obi:0001173, wd:Q7406919, dcmi:Service, schema:Service, ncit:C88187, obi:0001173 |
 
 
 
@@ -274,7 +275,20 @@ title: Service
 from_schema: https://w3id.org/evorao/
 close_mappings:
 - wd:Q7406919
+- dcmi:Service
+- schema:Service
+- ncit:C88187
+- obi:0001173
 - wd:Q7406919
+- dcmi:Service
+- schema:Service
+- ncit:C88187
+- obi:0001173
+related_mappings:
+- schema:Product
+- ncit:C47920
+- schema:Product
+- ncit:C47920
 is_a: ProductOrService
 slots:
 - modelSpecies
@@ -314,7 +328,20 @@ title: Service
 from_schema: https://w3id.org/evorao/
 close_mappings:
 - wd:Q7406919
+- dcmi:Service
+- schema:Service
+- ncit:C88187
+- obi:0001173
 - wd:Q7406919
+- dcmi:Service
+- schema:Service
+- ncit:C88187
+- obi:0001173
+related_mappings:
+- schema:Product
+- ncit:C47920
+- schema:Product
+- ncit:C47920
 is_a: ProductOrService
 slot_usage:
   modelSpecies:
@@ -372,7 +399,11 @@ attributes:
     title: access point URL
     from_schema: https://w3id.org/evorao/
     exact_mappings:
+    - schema:serviceURL
+    related_mappings:
     - dcat:landingPage
+    broad_mappings:
+    - schema:url
     rank: 1000
     alias: accessPointUrl
     owner: Service
@@ -388,7 +419,12 @@ attributes:
     title: ref SKU
     from_schema: https://w3id.org/evorao/
     exact_mappings:
+    - schema:sku
+    close_mappings:
+    - dwc:catalogNumber
+    broad_mappings:
     - dct:identifier
+    - schema:identifier
     rank: 1000
     alias: refSku
     owner: Service
@@ -406,6 +442,8 @@ attributes:
     - 'The description of what will be delivered to the end-user (e.g.: packaging,
       quantity...)'
     from_schema: https://w3id.org/evorao/
+    related_mappings:
+    - dct:format
     rank: 1000
     alias: unitDefinition
     owner: Service
@@ -422,6 +460,9 @@ attributes:
     from_schema: https://w3id.org/evorao/
     exact_mappings:
     - dcat:theme
+    close_mappings:
+    - schema:category
+    - gr:category
     rank: 1000
     alias: category
     owner: Service
@@ -438,6 +479,7 @@ attributes:
     from_schema: https://w3id.org/evorao/
     close_mappings:
     - dcat:theme
+    - schema:additionalType
     rank: 1000
     alias: additionalCategory
     owner: Service
@@ -456,6 +498,8 @@ attributes:
       to be a xsd:string instead of an xsd:float as initialy suggested to permit description
       of cost as conditional to what is requested
     from_schema: https://w3id.org/evorao/
+    close_mappings:
+    - schema:price
     rank: 1000
     ifabsent: string(on request)
     alias: unitCost
@@ -472,6 +516,9 @@ attributes:
       be provided
     title: quality grading
     from_schema: https://w3id.org/evorao/
+    close_mappings:
+    - bao:0002662
+    - sio:000217
     rank: 1000
     alias: qualityGrading
     owner: Service
@@ -508,6 +555,7 @@ attributes:
     - wdp:P356
     close_mappings:
     - wdp:P356
+    - reproduceme:doi
     broad_mappings:
     - dct:bibliographicCitation
     rank: 1000
@@ -526,8 +574,10 @@ attributes:
       group classification defined by the WHO laboratory biosafety manual
     title: risk group
     from_schema: https://w3id.org/evorao/
-    close_mappings:
+    exact_mappings:
     - wdp:P12663
+    related_mappings:
+    - bao:0002826
     rank: 1000
     alias: riskGroup
     owner: Service
@@ -545,6 +595,8 @@ attributes:
       this product or service
     title: biosafety restrictions
     from_schema: https://w3id.org/evorao/
+    related_mappings:
+    - bao:0002826
     rank: 1000
     alias: biosafetyRestrictions
     owner: Service
@@ -562,6 +614,8 @@ attributes:
     - Set to TRUE if it can produce GMO. It is recommended to have a value for this
       field, no value will be understood as unknown
     from_schema: https://w3id.org/evorao/
+    broad_mappings:
+    - schema:potentialUse
     rank: 1000
     alias: canBeUsedToProduceGmo
     owner: Service
@@ -576,6 +630,11 @@ attributes:
     description: A provider of this product or service, as a specific organization
     title: provider
     from_schema: https://w3id.org/evorao/
+    exact_mappings:
+    - sio:000066
+    close_mappings:
+    - schema:provider
+    - dct:publisher
     rank: 1000
     alias: provider
     owner: Service
@@ -589,6 +648,10 @@ attributes:
     description: The collection(s) to which belongs this item
     title: collection
     from_schema: https://w3id.org/evorao/
+    related_mappings:
+    - afop:AFX_0002720
+    broad_mappings:
+    - dct:isPartOf
     rank: 1000
     alias: collection
     owner: Service
@@ -603,6 +666,8 @@ attributes:
     title: keywords
     from_schema: https://w3id.org/evorao/
     exact_mappings:
+    - schema:keywords
+    close_mappings:
     - dcat:keyword
     rank: 1000
     alias: keywords
@@ -621,6 +686,9 @@ attributes:
     comments:
     - Possible availabilities may differ from a project to another
     from_schema: https://w3id.org/evorao/
+    close_mappings:
+    - schema:availability
+    - dct:available
     rank: 1000
     ifabsent: string(on request)
     alias: availability
@@ -636,6 +704,8 @@ attributes:
       instructions, or guidelines relevant to the use of this item
     title: complementary document
     from_schema: https://w3id.org/evorao/
+    close_mappings:
+    - sepio:0000442
     rank: 1000
     alias: complementaryDocument
     owner: Service
@@ -678,6 +748,8 @@ attributes:
       external provider
     title: external related reference
     from_schema: https://w3id.org/evorao/
+    broad_mappings:
+    - dct:references
     rank: 1000
     alias: externalRelatedReference
     owner: Service
@@ -692,6 +764,8 @@ attributes:
       ISO certification
     title: certification
     from_schema: https://w3id.org/evorao/
+    exact_mappings:
+    - schema:hasCertification
     close_mappings:
     - dct:conformsTo
     rank: 1000
@@ -707,6 +781,8 @@ attributes:
     description: Any reference or indication to be used for local retrieval purpose
     title: internal reference
     from_schema: https://w3id.org/evorao/
+    broad_mappings:
+    - dct:references
     rank: 1000
     alias: internalReference
     owner: Service
@@ -787,7 +863,6 @@ attributes:
     exact_mappings:
     - schema:description
     close_mappings:
-    - schema:description
     - schema:description
     rank: 1000
     slot_uri: dct:description

@@ -63,6 +63,7 @@ Alias: tagSequence
 | ---  | ---  |
 | self | EVORAO:tagSequence |
 | native | EVORAO:tagSequence |
+| exact | bao:0002796, bao:0002796 |
 
 
 
@@ -78,6 +79,9 @@ description: The name of the DNA coding sequence or corresponding peptide/protei
   or selection. Applicable to both proteins and nucleic acids
 title: tag sequence
 from_schema: https://w3id.org/evorao/
+exact_mappings:
+- bao:0002796
+- bao:0002796
 rank: 1000
 alias: tagSequence
 domain_of:

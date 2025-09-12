@@ -62,7 +62,9 @@ Alias: countryOfCollection
 | ---  | ---  |
 | self | EVORAO:countryOfCollection |
 | native | EVORAO:countryOfCollection |
-| close | dct:spatial, dwc:country |
+| broad | dct:spatial |
+| related | dwc:country, genepio:0000118 |
+| close | wdp:P495, hso:0000360, schema:countryOfOrigin |
 
 
 
@@ -77,8 +79,14 @@ description: The geographical location where the sample was collected in situ. U
 title: country of collection
 from_schema: https://w3id.org/evorao/
 close_mappings:
-- dct:spatial
+- wdp:P495
+- hso:0000360
+- schema:countryOfOrigin
+related_mappings:
 - dwc:country
+- genepio:0000118
+broad_mappings:
+- dct:spatial
 rank: 1000
 alias: countryOfCollection
 domain_of:

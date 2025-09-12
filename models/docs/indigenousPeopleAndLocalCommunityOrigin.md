@@ -60,6 +60,7 @@ Alias: indigenousPeopleAndLocalCommunityOrigin
 | ---  | ---  |
 | self | EVORAO:indigenousPeopleAndLocalCommunityOrigin |
 | native | EVORAO:indigenousPeopleAndLocalCommunityOrigin |
+| related | mesh:D000081034, ncit:C41152 |
 
 
 
@@ -73,6 +74,9 @@ description: The specific IPLC area (Indigenous People and Local Communities) fr
   which this sample/element was sampled, if relevant
 title: indigenous people and local community origin
 from_schema: https://w3id.org/evorao/
+related_mappings:
+- mesh:D000081034
+- ncit:C41152
 rank: 1000
 alias: indigenousPeopleAndLocalCommunityOrigin
 domain_of:

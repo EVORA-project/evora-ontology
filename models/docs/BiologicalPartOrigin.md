@@ -102,6 +102,7 @@ URI: [EVORAO:BiologicalPartOrigin](https://w3id.org/evorao/BiologicalPartOrigin)
 | ---  | ---  |
 | self | EVORAO:BiologicalPartOrigin |
 | native | EVORAO:BiologicalPartOrigin |
+| broad | sepio:0000058, sepio:0000058 |
 
 
 
@@ -123,6 +124,9 @@ description: Information on the origin of a unitary, cohesive part that is part 
   biological material
 title: Biological part origin
 from_schema: https://w3id.org/evorao/
+broad_mappings:
+- sepio:0000058
+- sepio:0000058
 is_a: Resource
 abstract: true
 slots:
@@ -165,6 +169,9 @@ description: Information on the origin of a unitary, cohesive part that is part 
   biological material
 title: Biological part origin
 from_schema: https://w3id.org/evorao/
+broad_mappings:
+- sepio:0000058
+- sepio:0000058
 is_a: Resource
 abstract: true
 slot_usage:

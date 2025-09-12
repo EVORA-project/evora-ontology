@@ -62,6 +62,7 @@ Alias: memberOfRi
 | ---  | ---  |
 | self | EVORAO:memberOfRi |
 | native | EVORAO:memberOfRi |
+| broad | schema:memberOf |
 
 
 
@@ -74,6 +75,8 @@ name: memberOfRi
 description: The research infrastructure of which this organization is a member
 title: member of RI
 from_schema: https://w3id.org/evorao/
+broad_mappings:
+- schema:memberOf
 rank: 1000
 alias: memberOfRi
 domain_of:

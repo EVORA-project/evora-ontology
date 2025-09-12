@@ -94,7 +94,9 @@ URI: [EVORAO:Audio](https://w3id.org/evorao/Audio)
 | ---  | ---  |
 | self | EVORAO:Audio |
 | native | EVORAO:Audio |
-| close | wd:Q26987229, wd:Q26987229 |
+| exact | schema:AudioObject, schema:AudioObject |
+| broad | dct:MediaType, dct:MediaType |
+| close | wd:Q26987229, dcmi:Sound, ncit:C96977, wd:Q26987229, dcmi:Sound, ncit:C96977 |
 
 
 
@@ -114,9 +116,19 @@ name: Audio
 description: Subclass of File representing sound recordings or audio tracks
 title: Audio
 from_schema: https://w3id.org/evorao/
+exact_mappings:
+- schema:AudioObject
+- schema:AudioObject
 close_mappings:
 - wd:Q26987229
+- dcmi:Sound
+- ncit:C96977
 - wd:Q26987229
+- dcmi:Sound
+- ncit:C96977
+broad_mappings:
+- dct:MediaType
+- dct:MediaType
 is_a: File
 
 ```
@@ -130,9 +142,19 @@ name: Audio
 description: Subclass of File representing sound recordings or audio tracks
 title: Audio
 from_schema: https://w3id.org/evorao/
+exact_mappings:
+- schema:AudioObject
+- schema:AudioObject
 close_mappings:
 - wd:Q26987229
+- dcmi:Sound
+- ncit:C96977
 - wd:Q26987229
+- dcmi:Sound
+- ncit:C96977
+broad_mappings:
+- dct:MediaType
+- dct:MediaType
 is_a: File
 attributes:
   name:
@@ -142,7 +164,9 @@ attributes:
     from_schema: https://w3id.org/evorao/
     exact_mappings:
     - schema:name
+    - vcard:fn
     close_mappings:
+    - rdfs:label
     - dct:title
     rank: 1000
     slot_uri: foaf:name
@@ -168,7 +192,6 @@ attributes:
     - schema:description
     close_mappings:
     - schema:description
-    - schema:description
     rank: 1000
     slot_uri: dct:description
     alias: description
@@ -192,6 +215,8 @@ attributes:
       can be accessed or downloaded.
     title: content URL
     from_schema: https://w3id.org/evorao/
+    exact_mappings:
+    - schema:contentUrl
     rank: 1000
     alias: contentUrl
     owner: Audio
@@ -206,6 +231,11 @@ attributes:
       is structured
     title: format
     from_schema: https://w3id.org/evorao/
+    exact_mappings:
+    - schema:fileFormat
+    - dct:format
+    close_mappings:
+    - schema:encodingFormat
     rank: 1000
     alias: format
     owner: Audio
@@ -222,6 +252,7 @@ attributes:
     from_schema: https://w3id.org/evorao/
     exact_mappings:
     - dct:license
+    - schema:license
     close_mappings:
     - wdp:P275
     rank: 1000

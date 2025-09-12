@@ -137,7 +137,9 @@ URI: [EVORAO:ContactPoint](https://w3id.org/evorao/ContactPoint)
 | ---  | ---  |
 | self | EVORAO:ContactPoint |
 | native | EVORAO:ContactPoint |
-| exact | schema:ContactPoint, vcard:Contact, schema:ContactPoint, vcard:Contact |
+| exact | schema:ContactPoint, vcard:Kind, schema:ContactPoint, vcard:Kind |
+| narrow | schema:PostalAddress, schema:PostalAddress |
+| related | vcard:Contact, vcard:Contact |
 | close | wd:Q30322502, wd:Q30322502 |
 
 
@@ -160,12 +162,18 @@ title: Contact Point
 from_schema: https://w3id.org/evorao/
 exact_mappings:
 - schema:ContactPoint
-- vcard:Contact
+- vcard:Kind
 - schema:ContactPoint
-- vcard:Contact
+- vcard:Kind
 close_mappings:
 - wd:Q30322502
 - wd:Q30322502
+related_mappings:
+- vcard:Contact
+- vcard:Contact
+narrow_mappings:
+- schema:PostalAddress
+- schema:PostalAddress
 is_a: Resource
 slots:
 - name
@@ -185,7 +193,9 @@ slot_usage:
     title: name
     exact_mappings:
     - schema:name
+    - vcard:fn
     close_mappings:
+    - rdfs:label
     - dct:title
     slot_uri: foaf:name
     domain_of:
@@ -225,6 +235,8 @@ slot_usage:
     title: email
     exact_mappings:
     - schema:email
+    - foaf:mbox
+    close_mappings:
     - vcard:email
     domain_of:
     - ContactPoint
@@ -238,6 +250,7 @@ slot_usage:
     title: telephone
     exact_mappings:
     - schema:telephone
+    close_mappings:
     - vcard:telephone
     domain_of:
     - ContactPoint
@@ -249,8 +262,10 @@ slot_usage:
     name: streetAddress
     description: The building/apartment number and the street name
     title: street address
-    close_mappings:
+    exact_mappings:
     - schema:streetAddress
+    - vcard:street-address
+    close_mappings:
     - vcard:hasStreetAddress
     domain_of:
     - ContactPoint
@@ -262,8 +277,10 @@ slot_usage:
     description: The locality in which the street address is, and which is in the
       region. e.g, the city
     title: locality/city
-    close_mappings:
+    exact_mappings:
     - schema:addressLocality
+    - vcard:locality
+    close_mappings:
     - vcard:hasLocality
     domain_of:
     - ContactPoint
@@ -275,8 +292,10 @@ slot_usage:
     description: The region in which the locality is, and which is in the country.
       For example, California or another appropriate first-level Administrative division
     title: region
-    close_mappings:
+    exact_mappings:
     - schema:addressRegion
+    - vcard:region
+    close_mappings:
     - vcard:hasRegion
     domain_of:
     - ContactPoint
@@ -287,8 +306,10 @@ slot_usage:
     name: postalCode
     description: The postal code
     title: postal code
-    close_mappings:
+    exact_mappings:
     - schema:postalCode
+    - vcard:postal-code
+    close_mappings:
     - vcard:hasPostalCode
     domain_of:
     - ContactPoint
@@ -299,7 +320,7 @@ slot_usage:
     name: addressCountry
     description: The country as of  ISO 3166
     title: address Country
-    close_mappings:
+    exact_mappings:
     - schema:addressCountry
     - vcard:hasCountryName
     domain_of:
@@ -313,7 +334,11 @@ slot_usage:
       and Contributor ID (ORCID) organisation
     title: ORCID id
     exact_mappings:
-    - iao:0000708
+    - wdp:P496
+    - reproduceme:ORCID
+    related_mappings:
+    - IAO:0000708
+    - edam:4022
     domain_of:
     - ContactPoint
     - Person
@@ -335,12 +360,18 @@ title: Contact Point
 from_schema: https://w3id.org/evorao/
 exact_mappings:
 - schema:ContactPoint
-- vcard:Contact
+- vcard:Kind
 - schema:ContactPoint
-- vcard:Contact
+- vcard:Kind
 close_mappings:
 - wd:Q30322502
 - wd:Q30322502
+related_mappings:
+- vcard:Contact
+- vcard:Contact
+narrow_mappings:
+- schema:PostalAddress
+- schema:PostalAddress
 is_a: Resource
 slot_usage:
   name:
@@ -349,7 +380,9 @@ slot_usage:
     title: name
     exact_mappings:
     - schema:name
+    - vcard:fn
     close_mappings:
+    - rdfs:label
     - dct:title
     slot_uri: foaf:name
     domain_of:
@@ -389,6 +422,8 @@ slot_usage:
     title: email
     exact_mappings:
     - schema:email
+    - foaf:mbox
+    close_mappings:
     - vcard:email
     domain_of:
     - ContactPoint
@@ -402,6 +437,7 @@ slot_usage:
     title: telephone
     exact_mappings:
     - schema:telephone
+    close_mappings:
     - vcard:telephone
     domain_of:
     - ContactPoint
@@ -413,8 +449,10 @@ slot_usage:
     name: streetAddress
     description: The building/apartment number and the street name
     title: street address
-    close_mappings:
+    exact_mappings:
     - schema:streetAddress
+    - vcard:street-address
+    close_mappings:
     - vcard:hasStreetAddress
     domain_of:
     - ContactPoint
@@ -426,8 +464,10 @@ slot_usage:
     description: The locality in which the street address is, and which is in the
       region. e.g, the city
     title: locality/city
-    close_mappings:
+    exact_mappings:
     - schema:addressLocality
+    - vcard:locality
+    close_mappings:
     - vcard:hasLocality
     domain_of:
     - ContactPoint
@@ -439,8 +479,10 @@ slot_usage:
     description: The region in which the locality is, and which is in the country.
       For example, California or another appropriate first-level Administrative division
     title: region
-    close_mappings:
+    exact_mappings:
     - schema:addressRegion
+    - vcard:region
+    close_mappings:
     - vcard:hasRegion
     domain_of:
     - ContactPoint
@@ -451,8 +493,10 @@ slot_usage:
     name: postalCode
     description: The postal code
     title: postal code
-    close_mappings:
+    exact_mappings:
     - schema:postalCode
+    - vcard:postal-code
+    close_mappings:
     - vcard:hasPostalCode
     domain_of:
     - ContactPoint
@@ -463,7 +507,7 @@ slot_usage:
     name: addressCountry
     description: The country as of  ISO 3166
     title: address Country
-    close_mappings:
+    exact_mappings:
     - schema:addressCountry
     - vcard:hasCountryName
     domain_of:
@@ -477,7 +521,11 @@ slot_usage:
       and Contributor ID (ORCID) organisation
     title: ORCID id
     exact_mappings:
-    - iao:0000708
+    - wdp:P496
+    - reproduceme:ORCID
+    related_mappings:
+    - IAO:0000708
+    - edam:4022
     domain_of:
     - ContactPoint
     - Person
@@ -493,7 +541,9 @@ attributes:
     from_schema: https://w3id.org/evorao/
     exact_mappings:
     - schema:name
+    - vcard:fn
     close_mappings:
+    - rdfs:label
     - dct:title
     rank: 1000
     slot_uri: foaf:name
@@ -519,7 +569,6 @@ attributes:
     - schema:description
     close_mappings:
     - schema:description
-    - schema:description
     rank: 1000
     slot_uri: dct:description
     alias: description
@@ -544,6 +593,8 @@ attributes:
     from_schema: https://w3id.org/evorao/
     exact_mappings:
     - schema:email
+    - foaf:mbox
+    close_mappings:
     - vcard:email
     rank: 1000
     alias: email
@@ -561,6 +612,7 @@ attributes:
     from_schema: https://w3id.org/evorao/
     exact_mappings:
     - schema:telephone
+    close_mappings:
     - vcard:telephone
     rank: 1000
     alias: telephone
@@ -576,8 +628,10 @@ attributes:
     description: The building/apartment number and the street name
     title: street address
     from_schema: https://w3id.org/evorao/
-    close_mappings:
+    exact_mappings:
     - schema:streetAddress
+    - vcard:street-address
+    close_mappings:
     - vcard:hasStreetAddress
     rank: 1000
     alias: streetAddress
@@ -593,8 +647,10 @@ attributes:
       region. e.g, the city
     title: locality/city
     from_schema: https://w3id.org/evorao/
-    close_mappings:
+    exact_mappings:
     - schema:addressLocality
+    - vcard:locality
+    close_mappings:
     - vcard:hasLocality
     rank: 1000
     alias: addressLocality
@@ -610,8 +666,10 @@ attributes:
       For example, California or another appropriate first-level Administrative division
     title: region
     from_schema: https://w3id.org/evorao/
-    close_mappings:
+    exact_mappings:
     - schema:addressRegion
+    - vcard:region
+    close_mappings:
     - vcard:hasRegion
     rank: 1000
     alias: addressRegion
@@ -626,8 +684,10 @@ attributes:
     description: The postal code
     title: postal code
     from_schema: https://w3id.org/evorao/
-    close_mappings:
+    exact_mappings:
     - schema:postalCode
+    - vcard:postal-code
+    close_mappings:
     - vcard:hasPostalCode
     rank: 1000
     alias: postalCode
@@ -642,7 +702,7 @@ attributes:
     description: The country as of  ISO 3166
     title: address Country
     from_schema: https://w3id.org/evorao/
-    close_mappings:
+    exact_mappings:
     - schema:addressCountry
     - vcard:hasCountryName
     rank: 1000
@@ -660,9 +720,10 @@ attributes:
     title: ORCID id
     from_schema: https://w3id.org/evorao/
     exact_mappings:
-    - iao:0000708
+    - wdp:P496
+    - reproduceme:ORCID
     related_mappings:
-    - iao:0000708
+    - IAO:0000708
     - edam:4022
     rank: 1000
     alias: orcidId

@@ -314,7 +314,7 @@ URI: [EVORAO:Hybridoma](https://w3id.org/evorao/Hybridoma)
 | ---  | ---  |
 | self | EVORAO:Hybridoma |
 | native | EVORAO:Hybridoma |
-| close | wd:Q27554370, wd:Q27554370 |
+| close | wd:Q27554370, snomed:25326005, clo:0036932, bto:0000610, ncit:C16700, wd:Q27554370, snomed:25326005, clo:0036932, bto:0000610, ncit:C16700 |
 
 
 
@@ -336,7 +336,15 @@ title: Hybridoma
 from_schema: https://w3id.org/evorao/
 close_mappings:
 - wd:Q27554370
+- snomed:25326005
+- clo:0036932
+- bto:0000610
+- ncit:C16700
 - wd:Q27554370
+- snomed:25326005
+- clo:0036932
+- bto:0000610
+- ncit:C16700
 is_a: Antibody
 slots:
 - hybridomaDescription
@@ -364,7 +372,15 @@ title: Hybridoma
 from_schema: https://w3id.org/evorao/
 close_mappings:
 - wd:Q27554370
+- snomed:25326005
+- clo:0036932
+- bto:0000610
+- ncit:C16700
 - wd:Q27554370
+- snomed:25326005
+- clo:0036932
+- bto:0000610
+- ncit:C16700
 is_a: Antibody
 slot_usage:
   hybridomaDescription:
@@ -469,6 +485,9 @@ attributes:
       category for this Product
     title: IATA classification
     from_schema: https://w3id.org/evorao/
+    close_mappings:
+    - wdp:P238
+    - schema:iataCode
     rank: 1000
     alias: iataClassification
     owner: Hybridoma
@@ -482,6 +501,8 @@ attributes:
     description: Specification of the terms and parameters for transporting
     title: shipping conditions
     from_schema: https://w3id.org/evorao/
+    close_mappings:
+    - schema:shippingConditions
     rank: 1000
     alias: shippingConditions
     owner: Hybridoma
@@ -516,6 +537,8 @@ attributes:
       origin of the sample
     title: originator
     from_schema: https://w3id.org/evorao/
+    close_mappings:
+    - dct:provenance
     rank: 1000
     alias: originator
     owner: Hybridoma
@@ -581,7 +604,11 @@ attributes:
     title: access point URL
     from_schema: https://w3id.org/evorao/
     exact_mappings:
+    - schema:serviceURL
+    related_mappings:
     - dcat:landingPage
+    broad_mappings:
+    - schema:url
     rank: 1000
     alias: accessPointUrl
     owner: Hybridoma
@@ -597,7 +624,12 @@ attributes:
     title: ref SKU
     from_schema: https://w3id.org/evorao/
     exact_mappings:
+    - schema:sku
+    close_mappings:
+    - dwc:catalogNumber
+    broad_mappings:
     - dct:identifier
+    - schema:identifier
     rank: 1000
     alias: refSku
     owner: Hybridoma
@@ -615,6 +647,8 @@ attributes:
     - 'The description of what will be delivered to the end-user (e.g.: packaging,
       quantity...)'
     from_schema: https://w3id.org/evorao/
+    related_mappings:
+    - dct:format
     rank: 1000
     alias: unitDefinition
     owner: Hybridoma
@@ -631,6 +665,9 @@ attributes:
     from_schema: https://w3id.org/evorao/
     exact_mappings:
     - dcat:theme
+    close_mappings:
+    - schema:category
+    - gr:category
     rank: 1000
     alias: category
     owner: Hybridoma
@@ -647,6 +684,7 @@ attributes:
     from_schema: https://w3id.org/evorao/
     close_mappings:
     - dcat:theme
+    - schema:additionalType
     rank: 1000
     alias: additionalCategory
     owner: Hybridoma
@@ -665,6 +703,8 @@ attributes:
       to be a xsd:string instead of an xsd:float as initialy suggested to permit description
       of cost as conditional to what is requested
     from_schema: https://w3id.org/evorao/
+    close_mappings:
+    - schema:price
     rank: 1000
     ifabsent: string(on request)
     alias: unitCost
@@ -681,6 +721,9 @@ attributes:
       be provided
     title: quality grading
     from_schema: https://w3id.org/evorao/
+    close_mappings:
+    - bao:0002662
+    - sio:000217
     rank: 1000
     alias: qualityGrading
     owner: Hybridoma
@@ -717,6 +760,7 @@ attributes:
     - wdp:P356
     close_mappings:
     - wdp:P356
+    - reproduceme:doi
     broad_mappings:
     - dct:bibliographicCitation
     rank: 1000
@@ -735,8 +779,10 @@ attributes:
       group classification defined by the WHO laboratory biosafety manual
     title: risk group
     from_schema: https://w3id.org/evorao/
-    close_mappings:
+    exact_mappings:
     - wdp:P12663
+    related_mappings:
+    - bao:0002826
     rank: 1000
     alias: riskGroup
     owner: Hybridoma
@@ -754,6 +800,8 @@ attributes:
       this product or service
     title: biosafety restrictions
     from_schema: https://w3id.org/evorao/
+    related_mappings:
+    - bao:0002826
     rank: 1000
     alias: biosafetyRestrictions
     owner: Hybridoma
@@ -771,6 +819,8 @@ attributes:
     - Set to TRUE if it can produce GMO. It is recommended to have a value for this
       field, no value will be understood as unknown
     from_schema: https://w3id.org/evorao/
+    broad_mappings:
+    - schema:potentialUse
     rank: 1000
     alias: canBeUsedToProduceGmo
     owner: Hybridoma
@@ -785,6 +835,11 @@ attributes:
     description: A provider of this product or service, as a specific organization
     title: provider
     from_schema: https://w3id.org/evorao/
+    exact_mappings:
+    - sio:000066
+    close_mappings:
+    - schema:provider
+    - dct:publisher
     rank: 1000
     alias: provider
     owner: Hybridoma
@@ -798,6 +853,10 @@ attributes:
     description: The collection(s) to which belongs this item
     title: collection
     from_schema: https://w3id.org/evorao/
+    related_mappings:
+    - afop:AFX_0002720
+    broad_mappings:
+    - dct:isPartOf
     rank: 1000
     alias: collection
     owner: Hybridoma
@@ -812,6 +871,8 @@ attributes:
     title: keywords
     from_schema: https://w3id.org/evorao/
     exact_mappings:
+    - schema:keywords
+    close_mappings:
     - dcat:keyword
     rank: 1000
     alias: keywords
@@ -830,6 +891,9 @@ attributes:
     comments:
     - Possible availabilities may differ from a project to another
     from_schema: https://w3id.org/evorao/
+    close_mappings:
+    - schema:availability
+    - dct:available
     rank: 1000
     ifabsent: string(on request)
     alias: availability
@@ -845,6 +909,8 @@ attributes:
       instructions, or guidelines relevant to the use of this item
     title: complementary document
     from_schema: https://w3id.org/evorao/
+    close_mappings:
+    - sepio:0000442
     rank: 1000
     alias: complementaryDocument
     owner: Hybridoma
@@ -887,6 +953,8 @@ attributes:
       external provider
     title: external related reference
     from_schema: https://w3id.org/evorao/
+    broad_mappings:
+    - dct:references
     rank: 1000
     alias: externalRelatedReference
     owner: Hybridoma
@@ -901,6 +969,8 @@ attributes:
       ISO certification
     title: certification
     from_schema: https://w3id.org/evorao/
+    exact_mappings:
+    - schema:hasCertification
     close_mappings:
     - dct:conformsTo
     rank: 1000
@@ -916,6 +986,8 @@ attributes:
     description: Any reference or indication to be used for local retrieval purpose
     title: internal reference
     from_schema: https://w3id.org/evorao/
+    broad_mappings:
+    - dct:references
     rank: 1000
     alias: internalReference
     owner: Hybridoma
@@ -996,7 +1068,6 @@ attributes:
     exact_mappings:
     - schema:description
     close_mappings:
-    - schema:description
     - schema:description
     rank: 1000
     slot_uri: dct:description

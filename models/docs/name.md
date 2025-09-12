@@ -22,19 +22,19 @@ Alias: name
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [ReasearchInfrastructure](ReasearchInfrastructure.md) | A research infrastructure (RI) |  no  |
-| [Person](Person.md) | An individual |  no  |
-| [Document](Document.md) | Subclass of File representing textual or written files such as reports, manua... |  no  |
-| [Video](Video.md) | Subclass of File representing moving visual media, such as recordings, presen... |  no  |
-| [File](File.md) | Digital document or record stored in a specific format that contains data or ... |  yes  |
-| [ContactPoint](ContactPoint.md) | Entity serving as focal point of information |  yes  |
-| [Data](Data.md) | Subclass of File representing structured or unstructured datasets, often used... |  no  |
-| [Image](Image.md) | Subclass of File representing visual content such as pictures, diagrams, or i... |  no  |
-| [Provider](Provider.md) | A provider of products or services, as a specific organization |  no  |
-| [Originator](Originator.md) | The individual or organization responsible for the original discovery, isolat... |  no  |
-| [Audio](Audio.md) | Subclass of File representing sound recordings or audio tracks |  no  |
-| [Organization](Organization.md) | A social entity established to meet needs or pursue specific goals |  no  |
 | [PersonOrOrganization](PersonOrOrganization.md) | A person or an organization |  yes  |
+| [File](File.md) | Digital document or record stored in a specific format that contains data or ... |  yes  |
+| [Provider](Provider.md) | A provider of products or services, as a specific organization |  no  |
+| [Audio](Audio.md) | Subclass of File representing sound recordings or audio tracks |  no  |
+| [Image](Image.md) | Subclass of File representing visual content such as pictures, diagrams, or i... |  no  |
+| [Originator](Originator.md) | The individual or organization responsible for the original discovery, isolat... |  no  |
+| [Person](Person.md) | An individual |  no  |
+| [ReasearchInfrastructure](ReasearchInfrastructure.md) | A research infrastructure (RI) |  no  |
+| [Organization](Organization.md) | A social entity established to meet needs or pursue specific goals |  no  |
+| [Data](Data.md) | Subclass of File representing structured or unstructured datasets, often used... |  no  |
+| [Document](Document.md) | Subclass of File representing textual or written files such as reports, manua... |  no  |
+| [ContactPoint](ContactPoint.md) | Entity serving as focal point of information |  yes  |
+| [Video](Video.md) | Subclass of File representing moving visual media, such as recordings, presen... |  no  |
 
 
 
@@ -74,8 +74,8 @@ Alias: name
 | ---  | ---  |
 | self | foaf:name |
 | native | EVORAO:name |
-| exact | schema:name, vcard:fn, schema:name |
-| close | rdfs:label, dct:title, dct:title |
+| exact | schema:name, vcard:fn |
+| close | rdfs:label, dct:title |
 
 
 
@@ -91,10 +91,8 @@ from_schema: https://w3id.org/evorao/
 exact_mappings:
 - schema:name
 - vcard:fn
-- schema:name
 close_mappings:
 - rdfs:label
-- dct:title
 - dct:title
 rank: 1000
 slot_uri: foaf:name

@@ -117,7 +117,9 @@ URI: [EVORAO:Document](https://w3id.org/evorao/Document)
 | ---  | ---  |
 | self | EVORAO:Document |
 | native | EVORAO:Document |
-| close | wd:Q49848, wd:Q49848 |
+| exact | schema:DigitalDocument, schema:DigitalDocument |
+| broad | dct:MediaType, dct:MediaType |
+| close | wd:Q49848, ncit:C19498, sio:000148, iao:0000310, wd:Q49848, ncit:C19498, sio:000148, iao:0000310 |
 
 
 
@@ -138,9 +140,21 @@ description: Subclass of File representing textual or written files such as repo
   manuals, or forms
 title: Document
 from_schema: https://w3id.org/evorao/
+exact_mappings:
+- schema:DigitalDocument
+- schema:DigitalDocument
 close_mappings:
 - wd:Q49848
+- ncit:C19498
+- sio:000148
+- iao:0000310
 - wd:Q49848
+- ncit:C19498
+- sio:000148
+- iao:0000310
+broad_mappings:
+- dct:MediaType
+- dct:MediaType
 is_a: File
 
 ```
@@ -155,9 +169,21 @@ description: Subclass of File representing textual or written files such as repo
   manuals, or forms
 title: Document
 from_schema: https://w3id.org/evorao/
+exact_mappings:
+- schema:DigitalDocument
+- schema:DigitalDocument
 close_mappings:
 - wd:Q49848
+- ncit:C19498
+- sio:000148
+- iao:0000310
 - wd:Q49848
+- ncit:C19498
+- sio:000148
+- iao:0000310
+broad_mappings:
+- dct:MediaType
+- dct:MediaType
 is_a: File
 attributes:
   name:
@@ -167,7 +193,9 @@ attributes:
     from_schema: https://w3id.org/evorao/
     exact_mappings:
     - schema:name
+    - vcard:fn
     close_mappings:
+    - rdfs:label
     - dct:title
     rank: 1000
     slot_uri: foaf:name
@@ -193,7 +221,6 @@ attributes:
     - schema:description
     close_mappings:
     - schema:description
-    - schema:description
     rank: 1000
     slot_uri: dct:description
     alias: description
@@ -217,6 +244,8 @@ attributes:
       can be accessed or downloaded.
     title: content URL
     from_schema: https://w3id.org/evorao/
+    exact_mappings:
+    - schema:contentUrl
     rank: 1000
     alias: contentUrl
     owner: Document
@@ -231,6 +260,11 @@ attributes:
       is structured
     title: format
     from_schema: https://w3id.org/evorao/
+    exact_mappings:
+    - schema:fileFormat
+    - dct:format
+    close_mappings:
+    - schema:encodingFormat
     rank: 1000
     alias: format
     owner: Document
@@ -247,6 +281,7 @@ attributes:
     from_schema: https://w3id.org/evorao/
     exact_mappings:
     - dct:license
+    - schema:license
     close_mappings:
     - wdp:P275
     rank: 1000

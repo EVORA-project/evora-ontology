@@ -120,8 +120,9 @@ URI: [EVORAO:File](https://w3id.org/evorao/File)
 | ---  | ---  |
 | self | EVORAO:File |
 | native | EVORAO:File |
-| exact | dcat:mediaType, dcat:mediaType |
-| close | wd:Q82753, wd:Q82753 |
+| exact | schema:MediaObject, schema:MediaObject |
+| broad | dct:MediaType, dct:MediaType |
+| close | wd:Q82753, dcat:mediaType, ncit:C42883, wd:Q82753, dcat:mediaType, ncit:C42883 |
 
 
 
@@ -143,11 +144,18 @@ description: Digital document or record stored in a specific format that contain
 title: File
 from_schema: https://w3id.org/evorao/
 exact_mappings:
-- dcat:mediaType
-- dcat:mediaType
+- schema:MediaObject
+- schema:MediaObject
 close_mappings:
 - wd:Q82753
+- dcat:mediaType
+- ncit:C42883
 - wd:Q82753
+- dcat:mediaType
+- ncit:C42883
+broad_mappings:
+- dct:MediaType
+- dct:MediaType
 is_a: Resource
 abstract: true
 slots:
@@ -163,7 +171,9 @@ slot_usage:
     title: name
     exact_mappings:
     - schema:name
+    - vcard:fn
     close_mappings:
+    - rdfs:label
     - dct:title
     slot_uri: foaf:name
     domain_of:
@@ -202,6 +212,8 @@ slot_usage:
     description: The web address or location where the file content is stored and
       can be accessed or downloaded.
     title: content URL
+    exact_mappings:
+    - schema:contentUrl
     domain_of:
     - File
     range: uri
@@ -212,6 +224,11 @@ slot_usage:
     description: The file type or format that indicates how the data within the file
       is structured
     title: format
+    exact_mappings:
+    - schema:fileFormat
+    - dct:format
+    close_mappings:
+    - schema:encodingFormat
     domain_of:
     - File
     range: string
@@ -224,6 +241,9 @@ slot_usage:
     title: license
     exact_mappings:
     - dct:license
+    - schema:license
+    close_mappings:
+    - wdp:P275
     domain_of:
     - File
     - DataProvider
@@ -244,11 +264,18 @@ description: Digital document or record stored in a specific format that contain
 title: File
 from_schema: https://w3id.org/evorao/
 exact_mappings:
-- dcat:mediaType
-- dcat:mediaType
+- schema:MediaObject
+- schema:MediaObject
 close_mappings:
 - wd:Q82753
+- dcat:mediaType
+- ncit:C42883
 - wd:Q82753
+- dcat:mediaType
+- ncit:C42883
+broad_mappings:
+- dct:MediaType
+- dct:MediaType
 is_a: Resource
 abstract: true
 slot_usage:
@@ -258,7 +285,9 @@ slot_usage:
     title: name
     exact_mappings:
     - schema:name
+    - vcard:fn
     close_mappings:
+    - rdfs:label
     - dct:title
     slot_uri: foaf:name
     domain_of:
@@ -297,6 +326,8 @@ slot_usage:
     description: The web address or location where the file content is stored and
       can be accessed or downloaded.
     title: content URL
+    exact_mappings:
+    - schema:contentUrl
     domain_of:
     - File
     range: uri
@@ -307,6 +338,11 @@ slot_usage:
     description: The file type or format that indicates how the data within the file
       is structured
     title: format
+    exact_mappings:
+    - schema:fileFormat
+    - dct:format
+    close_mappings:
+    - schema:encodingFormat
     domain_of:
     - File
     range: string
@@ -319,6 +355,9 @@ slot_usage:
     title: license
     exact_mappings:
     - dct:license
+    - schema:license
+    close_mappings:
+    - wdp:P275
     domain_of:
     - File
     - DataProvider
@@ -333,7 +372,9 @@ attributes:
     from_schema: https://w3id.org/evorao/
     exact_mappings:
     - schema:name
+    - vcard:fn
     close_mappings:
+    - rdfs:label
     - dct:title
     rank: 1000
     slot_uri: foaf:name
@@ -359,7 +400,6 @@ attributes:
     - schema:description
     close_mappings:
     - schema:description
-    - schema:description
     rank: 1000
     slot_uri: dct:description
     alias: description
@@ -383,6 +423,8 @@ attributes:
       can be accessed or downloaded.
     title: content URL
     from_schema: https://w3id.org/evorao/
+    exact_mappings:
+    - schema:contentUrl
     rank: 1000
     alias: contentUrl
     owner: File
@@ -397,6 +439,11 @@ attributes:
       is structured
     title: format
     from_schema: https://w3id.org/evorao/
+    exact_mappings:
+    - schema:fileFormat
+    - dct:format
+    close_mappings:
+    - schema:encodingFormat
     rank: 1000
     alias: format
     owner: File
@@ -413,6 +460,7 @@ attributes:
     from_schema: https://w3id.org/evorao/
     exact_mappings:
     - dct:license
+    - schema:license
     close_mappings:
     - wdp:P275
     rank: 1000

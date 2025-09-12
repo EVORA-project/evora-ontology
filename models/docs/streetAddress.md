@@ -60,7 +60,8 @@ Alias: streetAddress
 | ---  | ---  |
 | self | EVORAO:streetAddress |
 | native | EVORAO:streetAddress |
-| close | schema:streetAddress, vcard:hasStreetAddress |
+| exact | schema:streetAddress, vcard:street-address |
+| close | vcard:hasStreetAddress |
 
 
 
@@ -73,8 +74,10 @@ name: streetAddress
 description: The building/apartment number and the street name
 title: street address
 from_schema: https://w3id.org/evorao/
-close_mappings:
+exact_mappings:
 - schema:streetAddress
+- vcard:street-address
+close_mappings:
 - vcard:hasStreetAddress
 rank: 1000
 alias: streetAddress

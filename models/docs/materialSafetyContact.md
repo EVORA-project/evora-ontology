@@ -62,7 +62,7 @@ Alias: materialSafetyContact
 | ---  | ---  |
 | self | EVORAO:materialSafetyContact |
 | native | EVORAO:materialSafetyContact |
-| exact | dcat:contactPoint |
+| exact | dcat:contactPoint, schema:contactPoint |
 
 
 
@@ -78,6 +78,7 @@ title: material safety contact
 from_schema: https://w3id.org/evorao/
 exact_mappings:
 - dcat:contactPoint
+- schema:contactPoint
 rank: 1000
 alias: materialSafetyContact
 domain_of:

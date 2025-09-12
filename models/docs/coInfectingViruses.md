@@ -62,6 +62,8 @@ Alias: coInfectingViruses
 | ---  | ---  |
 | self | EVORAO:coInfectingViruses |
 | native | EVORAO:coInfectingViruses |
+| related | efo:0010716, mesh:D060085 |
+| close | dwc:associatedTaxa |
 
 
 
@@ -76,6 +78,11 @@ description: Identifies other viruses that may co-infect the host organism along
   same host.
 title: co-infecting viruses
 from_schema: https://w3id.org/evorao/
+close_mappings:
+- dwc:associatedTaxa
+related_mappings:
+- efo:0010716
+- mesh:D060085
 rank: 1000
 alias: coInfectingViruses
 domain_of:

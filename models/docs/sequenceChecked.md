@@ -66,6 +66,7 @@ Alias: sequenceChecked
 | ---  | ---  |
 | self | EVORAO:sequenceChecked |
 | native | EVORAO:sequenceChecked |
+| related | iceo:0000336 |
 
 
 
@@ -81,6 +82,8 @@ title: sequence checked
 comments:
 - Sequence check is mandatory for cloned products
 from_schema: https://w3id.org/evorao/
+related_mappings:
+- iceo:0000336
 rank: 1000
 alias: sequenceChecked
 domain_of:

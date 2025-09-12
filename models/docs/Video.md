@@ -94,7 +94,9 @@ URI: [EVORAO:Video](https://w3id.org/evorao/Video)
 | ---  | ---  |
 | self | EVORAO:Video |
 | native | EVORAO:Video |
-| close | wd:Q98405806, wd:Q98405806 |
+| exact | schema:VideoObject, schema:VideoObject |
+| broad | dct:MediaType, dct:MediaType |
+| close | wd:Q98405806, ncit:C96985, wd:Q98405806, ncit:C96985 |
 
 
 
@@ -115,9 +117,17 @@ description: Subclass of File representing moving visual media, such as recordin
   presentations, or movies
 title: Video
 from_schema: https://w3id.org/evorao/
+exact_mappings:
+- schema:VideoObject
+- schema:VideoObject
 close_mappings:
 - wd:Q98405806
+- ncit:C96985
 - wd:Q98405806
+- ncit:C96985
+broad_mappings:
+- dct:MediaType
+- dct:MediaType
 is_a: File
 
 ```
@@ -132,9 +142,17 @@ description: Subclass of File representing moving visual media, such as recordin
   presentations, or movies
 title: Video
 from_schema: https://w3id.org/evorao/
+exact_mappings:
+- schema:VideoObject
+- schema:VideoObject
 close_mappings:
 - wd:Q98405806
+- ncit:C96985
 - wd:Q98405806
+- ncit:C96985
+broad_mappings:
+- dct:MediaType
+- dct:MediaType
 is_a: File
 attributes:
   name:
@@ -144,7 +162,9 @@ attributes:
     from_schema: https://w3id.org/evorao/
     exact_mappings:
     - schema:name
+    - vcard:fn
     close_mappings:
+    - rdfs:label
     - dct:title
     rank: 1000
     slot_uri: foaf:name
@@ -170,7 +190,6 @@ attributes:
     - schema:description
     close_mappings:
     - schema:description
-    - schema:description
     rank: 1000
     slot_uri: dct:description
     alias: description
@@ -194,6 +213,8 @@ attributes:
       can be accessed or downloaded.
     title: content URL
     from_schema: https://w3id.org/evorao/
+    exact_mappings:
+    - schema:contentUrl
     rank: 1000
     alias: contentUrl
     owner: Video
@@ -208,6 +229,11 @@ attributes:
       is structured
     title: format
     from_schema: https://w3id.org/evorao/
+    exact_mappings:
+    - schema:fileFormat
+    - dct:format
+    close_mappings:
+    - schema:encodingFormat
     rank: 1000
     alias: format
     owner: Video
@@ -224,6 +250,7 @@ attributes:
     from_schema: https://w3id.org/evorao/
     exact_mappings:
     - dct:license
+    - schema:license
     close_mappings:
     - wdp:P275
     rank: 1000

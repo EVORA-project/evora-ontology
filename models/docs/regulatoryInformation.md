@@ -62,6 +62,7 @@ Alias: regulatoryInformation
 | ---  | ---  |
 | self | EVORAO:regulatoryInformation |
 | native | EVORAO:regulatoryInformation |
+| related | rdfs:seeAlso |
 
 
 
@@ -76,6 +77,8 @@ description: Lists applicable laws, regulations, and standards governing the pro
   transportation, and disposal, ensuring compliance with legal obligations.
 title: regulatory information
 from_schema: https://w3id.org/evorao/
+related_mappings:
+- rdfs:seeAlso
 rank: 1000
 alias: regulatoryInformation
 domain_of:

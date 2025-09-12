@@ -127,7 +127,9 @@ URI: [EVORAO:Image](https://w3id.org/evorao/Image)
 | ---  | ---  |
 | self | EVORAO:Image |
 | native | EVORAO:Image |
-| close | wd:Q860625, wd:Q860625 |
+| exact | schema:ImageObject, schema:ImageObject |
+| broad | dct:MediaType, dct:MediaType |
+| close | wd:Q860625, dcmi:Image, edam:2968, reproduceme:Image, sio:000081, wd:Q860625, dcmi:Image, edam:2968, reproduceme:Image, sio:000081 |
 
 
 
@@ -148,9 +150,23 @@ description: Subclass of File representing visual content such as pictures, diag
   or illustrations
 title: Image
 from_schema: https://w3id.org/evorao/
+exact_mappings:
+- schema:ImageObject
+- schema:ImageObject
 close_mappings:
 - wd:Q860625
+- dcmi:Image
+- edam:2968
+- reproduceme:Image
+- sio:000081
 - wd:Q860625
+- dcmi:Image
+- edam:2968
+- reproduceme:Image
+- sio:000081
+broad_mappings:
+- dct:MediaType
+- dct:MediaType
 is_a: File
 slots:
 - altText
@@ -159,6 +175,8 @@ slot_usage:
     name: altText
     description: An alternate text for the image, if the image cannot be displayed
     title: alt text
+    exact_mappings:
+    - schema:caption
     domain_of:
     - Image
     range: string
@@ -178,15 +196,31 @@ description: Subclass of File representing visual content such as pictures, diag
   or illustrations
 title: Image
 from_schema: https://w3id.org/evorao/
+exact_mappings:
+- schema:ImageObject
+- schema:ImageObject
 close_mappings:
 - wd:Q860625
+- dcmi:Image
+- edam:2968
+- reproduceme:Image
+- sio:000081
 - wd:Q860625
+- dcmi:Image
+- edam:2968
+- reproduceme:Image
+- sio:000081
+broad_mappings:
+- dct:MediaType
+- dct:MediaType
 is_a: File
 slot_usage:
   altText:
     name: altText
     description: An alternate text for the image, if the image cannot be displayed
     title: alt text
+    exact_mappings:
+    - schema:caption
     domain_of:
     - Image
     range: string
@@ -199,6 +233,8 @@ attributes:
     description: An alternate text for the image, if the image cannot be displayed
     title: alt text
     from_schema: https://w3id.org/evorao/
+    exact_mappings:
+    - schema:caption
     rank: 1000
     alias: altText
     owner: Image
@@ -215,7 +251,9 @@ attributes:
     from_schema: https://w3id.org/evorao/
     exact_mappings:
     - schema:name
+    - vcard:fn
     close_mappings:
+    - rdfs:label
     - dct:title
     rank: 1000
     slot_uri: foaf:name
@@ -241,7 +279,6 @@ attributes:
     - schema:description
     close_mappings:
     - schema:description
-    - schema:description
     rank: 1000
     slot_uri: dct:description
     alias: description
@@ -265,6 +302,8 @@ attributes:
       can be accessed or downloaded.
     title: content URL
     from_schema: https://w3id.org/evorao/
+    exact_mappings:
+    - schema:contentUrl
     rank: 1000
     alias: contentUrl
     owner: Image
@@ -279,6 +318,11 @@ attributes:
       is structured
     title: format
     from_schema: https://w3id.org/evorao/
+    exact_mappings:
+    - schema:fileFormat
+    - dct:format
+    close_mappings:
+    - schema:encodingFormat
     rank: 1000
     alias: format
     owner: Image
@@ -295,6 +339,7 @@ attributes:
     from_schema: https://w3id.org/evorao/
     exact_mappings:
     - dct:license
+    - schema:license
     close_mappings:
     - wdp:P275
     rank: 1000
