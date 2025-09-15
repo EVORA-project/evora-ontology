@@ -1,7 +1,8 @@
 # metamodel_version: 1.7.0
-# version: 1.0.9734
+# version: 1.0.9808
 type AlternateName
   {
+    keyword: [String]
     title: String!
     description: String
     weight: Integer!
@@ -12,6 +13,7 @@ type AlternateName
 
 type Antibody
   {
+    keyword: [String]
     title: String!
     description: String!
     version: String!
@@ -19,7 +21,6 @@ type Antibody
     refSku: String!
     unitDefinition: String
     category: ProductCategory!
-    additionalCategory: [ProductCategory]
     unitCost: String!
     qualityGrading: String
     pathogenIdentification: [PathogenIdentification]!
@@ -39,6 +40,7 @@ type Antibody
     internalReference: String
     note: String
     contactPoint: ContactPoint
+    additionalCategory: [ProductCategory]
     iataClassification: IataClassification!
     shippingConditions: String!
     materialSafetyDataSheet: ReasearchInfrastructure
@@ -55,6 +57,7 @@ type Antibody
 
 type Audio
   {
+    keyword: [String]
     name: String!
     description: String
     contentUrl: Uri!
@@ -64,6 +67,7 @@ type Audio
 
 type Bacterium
   {
+    keyword: [String]
     title: String!
     description: String!
     version: String!
@@ -71,7 +75,6 @@ type Bacterium
     refSku: String!
     unitDefinition: String
     category: ProductCategory!
-    additionalCategory: [ProductCategory]
     unitCost: String!
     qualityGrading: String
     pathogenIdentification: [PathogenIdentification]!
@@ -91,6 +94,7 @@ type Bacterium
     internalReference: String
     note: String
     contactPoint: ContactPoint
+    additionalCategory: [ProductCategory]
     iataClassification: IataClassification!
     shippingConditions: String!
     materialSafetyDataSheet: ReasearchInfrastructure
@@ -120,6 +124,7 @@ type Bacterium
 
 type BiologicalMaterialOrigin
   {
+    keyword: [String]
     recombinantMaterial: Boolean!
     biologicalSourceType: Boolean!
     biologicalPartOrigin: [BiologicalPartOrigin]!
@@ -127,12 +132,14 @@ type BiologicalMaterialOrigin
 
 interface BiologicalPartOrigin
   {
+    keyword: [String]
     recombinantPartIdentification: RecombinantPartIdentification
     accessToPhysicalGeneticResource: Boolean!
   }
 
 type Bundle
   {
+    keyword: [String]
     title: String!
     description: String!
     version: String!
@@ -140,7 +147,6 @@ type Bundle
     refSku: String!
     unitDefinition: String
     category: ProductCategory!
-    additionalCategory: [ProductCategory]
     unitCost: String!
     qualityGrading: String
     pathogenIdentification: [PathogenIdentification]!
@@ -160,6 +166,7 @@ type Bundle
     internalReference: String
     note: String
     contactPoint: ContactPoint
+    additionalCategory: [ProductCategory]
     iataClassification: IataClassification!
     shippingConditions: String!
     materialSafetyDataSheet: ReasearchInfrastructure
@@ -172,6 +179,7 @@ type Bundle
 
 interface Catalogue
   {
+    keyword: [String]
     title: String!
     description: String!
     version: String!
@@ -179,6 +187,7 @@ interface Catalogue
 
 type Certification
   {
+    keyword: [String]
     title: String!
     description: String
     logo: Image
@@ -188,6 +197,7 @@ type Certification
 
 type Collection
   {
+    keyword: [String]
     title: String!
     description: String!
     version: String!
@@ -197,6 +207,7 @@ type Collection
 
 type CommonName
   {
+    keyword: [String]
     title: String!
     description: String
     weight: Integer!
@@ -207,6 +218,7 @@ type CommonName
 
 type ContactPoint
   {
+    keyword: [String]
     name: String!
     description: String
     email: String
@@ -221,6 +233,7 @@ type ContactPoint
 
 type Country
   {
+    keyword: [String]
     title: String!
     description: String
     weight: Integer!
@@ -230,6 +243,7 @@ type Country
 
 type Data
   {
+    keyword: [String]
     name: String!
     description: String
     contentUrl: Uri!
@@ -239,6 +253,7 @@ type Data
 
 type DataProvider
   {
+    keyword: [String]
     title: String!
     description: String
     endpointUrl: Uri!
@@ -255,6 +270,7 @@ type DataProvider
 
 interface DataService
   {
+    keyword: [String]
     title: String!
     description: String
     endpointUrl: Uri!
@@ -263,6 +279,7 @@ interface DataService
 
 interface Dataset
   {
+    keyword: [String]
     title: String!
     description: String!
     version: String!
@@ -270,6 +287,7 @@ interface Dataset
 
 type DetectionKit
   {
+    keyword: [String]
     title: String!
     description: String!
     version: String!
@@ -277,7 +295,6 @@ type DetectionKit
     refSku: String!
     unitDefinition: String
     category: ProductCategory!
-    additionalCategory: [ProductCategory]
     unitCost: String!
     qualityGrading: String
     pathogenIdentification: [PathogenIdentification]!
@@ -297,6 +314,7 @@ type DetectionKit
     internalReference: String
     note: String
     contactPoint: ContactPoint
+    additionalCategory: [ProductCategory]
     iataClassification: IataClassification!
     shippingConditions: String!
     materialSafetyDataSheet: ReasearchInfrastructure
@@ -312,6 +330,7 @@ type DetectionKit
 
 type Document
   {
+    keyword: [String]
     name: String!
     description: String
     contentUrl: Uri!
@@ -321,6 +340,7 @@ type Document
 
 type Doi
   {
+    keyword: [String]
     title: String!
     description: String
     weight: Integer!
@@ -329,6 +349,7 @@ type Doi
 
 type ExpressionVector
   {
+    keyword: [String]
     title: String!
     description: String
     weight: Integer!
@@ -337,6 +358,7 @@ type ExpressionVector
 
 type ExternalRelatedReference
   {
+    keyword: [String]
     reference: String!
     referenceLabel: String!
     referenceProviderPrefix: String!
@@ -345,6 +367,7 @@ type ExternalRelatedReference
 
 interface File
   {
+    keyword: [String]
     name: String!
     description: String
     contentUrl: Uri!
@@ -354,6 +377,7 @@ interface File
 
 type Fungus
   {
+    keyword: [String]
     title: String!
     description: String!
     version: String!
@@ -361,7 +385,6 @@ type Fungus
     refSku: String!
     unitDefinition: String
     category: ProductCategory!
-    additionalCategory: [ProductCategory]
     unitCost: String!
     qualityGrading: String
     pathogenIdentification: [PathogenIdentification]!
@@ -381,6 +404,7 @@ type Fungus
     internalReference: String
     note: String
     contactPoint: ContactPoint
+    additionalCategory: [ProductCategory]
     iataClassification: IataClassification!
     shippingConditions: String!
     materialSafetyDataSheet: ReasearchInfrastructure
@@ -410,6 +434,7 @@ type Fungus
 
 type GeographicalOrigin
   {
+    keyword: [String]
     title: String!
     description: String
     weight: Integer!
@@ -418,6 +443,7 @@ type GeographicalOrigin
 
 type Hybridoma
   {
+    keyword: [String]
     title: String!
     description: String!
     version: String!
@@ -425,7 +451,6 @@ type Hybridoma
     refSku: String!
     unitDefinition: String
     category: ProductCategory!
-    additionalCategory: [ProductCategory]
     unitCost: String!
     qualityGrading: String
     pathogenIdentification: [PathogenIdentification]!
@@ -445,6 +470,7 @@ type Hybridoma
     internalReference: String
     note: String
     contactPoint: ContactPoint
+    additionalCategory: [ProductCategory]
     iataClassification: IataClassification!
     shippingConditions: String!
     materialSafetyDataSheet: ReasearchInfrastructure
@@ -462,6 +488,7 @@ type Hybridoma
 
 type IataClassification
   {
+    keyword: [String]
     title: String!
     description: String
     weight: Integer!
@@ -470,6 +497,7 @@ type IataClassification
 
 type Image
   {
+    keyword: [String]
     name: String!
     description: String
     contentUrl: Uri!
@@ -480,6 +508,7 @@ type Image
 
 type IplcOrigin
   {
+    keyword: [String]
     title: String!
     description: String
     weight: Integer!
@@ -488,6 +517,7 @@ type IplcOrigin
 
 type IsolationHost
   {
+    keyword: [String]
     title: String!
     description: String
     weight: Integer!
@@ -496,6 +526,7 @@ type IsolationHost
 
 type Journal
   {
+    keyword: [String]
     title: String!
     description: String
     weight: Integer!
@@ -504,6 +535,7 @@ type Journal
 
 type Keyword
   {
+    keyword: [String]
     title: String!
     description: String
     weight: Integer!
@@ -512,6 +544,7 @@ type Keyword
 
 type License
   {
+    keyword: [String]
     title: String!
     description: String
     resourceUrl: Uri
@@ -521,6 +554,7 @@ type License
 
 type MaterialSafetyDataSheet
   {
+    keyword: [String]
     materialSafetyContact: ContactPoint!
     physicalChemicalProperties: String
     hazardsIdentification: String
@@ -540,6 +574,7 @@ type MaterialSafetyDataSheet
 
 type NaturalPartOrigin
   {
+    keyword: [String]
     recombinantPartIdentification: RecombinantPartIdentification
     accessToPhysicalGeneticResource: Boolean!
     countryOfCollection: Country!
@@ -551,6 +586,7 @@ type NaturalPartOrigin
 
 type NucleicAcid
   {
+    keyword: [String]
     title: String!
     description: String!
     version: String!
@@ -558,7 +594,6 @@ type NucleicAcid
     refSku: String!
     unitDefinition: String
     category: ProductCategory!
-    additionalCategory: [ProductCategory]
     unitCost: String!
     qualityGrading: String
     pathogenIdentification: [PathogenIdentification]!
@@ -578,6 +613,7 @@ type NucleicAcid
     internalReference: String
     note: String
     contactPoint: ContactPoint
+    additionalCategory: [ProductCategory]
     iataClassification: IataClassification!
     shippingConditions: String!
     materialSafetyDataSheet: ReasearchInfrastructure
@@ -603,6 +639,7 @@ type NucleicAcid
 
 type Organization
   {
+    keyword: [String]
     name: String!
     description: String
     homePage: Uri
@@ -615,6 +652,7 @@ type Organization
 
 type Originator
   {
+    keyword: [String]
     name: String!
     description: String
     homePage: Uri
@@ -624,6 +662,7 @@ type Originator
 
 interface Pathogen
   {
+    keyword: [String]
     title: String!
     description: String!
     version: String!
@@ -631,7 +670,6 @@ interface Pathogen
     refSku: String!
     unitDefinition: String
     category: ProductCategory!
-    additionalCategory: [ProductCategory]
     unitCost: String!
     qualityGrading: String
     pathogenIdentification: [PathogenIdentification]!
@@ -651,6 +689,7 @@ interface Pathogen
     internalReference: String
     note: String
     contactPoint: ContactPoint
+    additionalCategory: [ProductCategory]
     iataClassification: IataClassification!
     shippingConditions: String!
     materialSafetyDataSheet: ReasearchInfrastructure
@@ -680,6 +719,7 @@ interface Pathogen
 
 type PathogenIdentification
   {
+    keyword: [String]
     taxon: Taxon!
     pathogenName: CommonName!
     pathogenType: String!
@@ -694,6 +734,7 @@ type PathogenIdentification
 
 type PdbReference
   {
+    keyword: [String]
     title: String!
     description: String
     weight: Integer!
@@ -702,6 +743,7 @@ type PdbReference
 
 type Person
   {
+    keyword: [String]
     name: String!
     description: String
     homePage: Uri
@@ -712,6 +754,7 @@ type Person
 
 type PersonOrOrganization
   {
+    keyword: [String]
     name: String!
     description: String
     homePage: Uri
@@ -721,6 +764,7 @@ type PersonOrOrganization
 
 type PlasmidSelection
   {
+    keyword: [String]
     title: String!
     description: String
     weight: Integer!
@@ -729,6 +773,7 @@ type PlasmidSelection
 
 type Prion
   {
+    keyword: [String]
     title: String!
     description: String!
     version: String!
@@ -736,7 +781,6 @@ type Prion
     refSku: String!
     unitDefinition: String
     category: ProductCategory!
-    additionalCategory: [ProductCategory]
     unitCost: String!
     qualityGrading: String
     pathogenIdentification: [PathogenIdentification]!
@@ -756,6 +800,7 @@ type Prion
     internalReference: String
     note: String
     contactPoint: ContactPoint
+    additionalCategory: [ProductCategory]
     iataClassification: IataClassification!
     shippingConditions: String!
     materialSafetyDataSheet: ReasearchInfrastructure
@@ -785,6 +830,7 @@ type Prion
 
 type Product
   {
+    keyword: [String]
     title: String!
     description: String!
     version: String!
@@ -792,7 +838,6 @@ type Product
     refSku: String!
     unitDefinition: String
     category: ProductCategory!
-    additionalCategory: [ProductCategory]
     unitCost: String!
     qualityGrading: String
     pathogenIdentification: [PathogenIdentification]!
@@ -812,6 +857,7 @@ type Product
     internalReference: String
     note: String
     contactPoint: ContactPoint
+    additionalCategory: [ProductCategory]
     iataClassification: IataClassification!
     shippingConditions: String!
     materialSafetyDataSheet: ReasearchInfrastructure
@@ -823,6 +869,7 @@ type Product
 
 type ProductCategory
   {
+    keyword: [String]
     title: String!
     description: String
     weight: Integer!
@@ -832,6 +879,7 @@ type ProductCategory
 
 type ProductionCellLine
   {
+    keyword: [String]
     title: String!
     description: String
     weight: Integer!
@@ -840,6 +888,7 @@ type ProductionCellLine
 
 interface ProductOrService
   {
+    keyword: [String]
     title: String!
     description: String!
     version: String!
@@ -871,6 +920,7 @@ interface ProductOrService
 
 type PropagationHost
   {
+    keyword: [String]
     title: String!
     description: String
     weight: Integer!
@@ -879,6 +929,7 @@ type PropagationHost
 
 type Protein
   {
+    keyword: [String]
     title: String!
     description: String!
     version: String!
@@ -886,7 +937,6 @@ type Protein
     refSku: String!
     unitDefinition: String
     category: ProductCategory!
-    additionalCategory: [ProductCategory]
     unitCost: String!
     qualityGrading: String
     pathogenIdentification: [PathogenIdentification]!
@@ -906,6 +956,7 @@ type Protein
     internalReference: String
     note: String
     contactPoint: ContactPoint
+    additionalCategory: [ProductCategory]
     iataClassification: IataClassification!
     shippingConditions: String!
     materialSafetyDataSheet: ReasearchInfrastructure
@@ -931,6 +982,7 @@ type Protein
 
 type Protozoan
   {
+    keyword: [String]
     title: String!
     description: String!
     version: String!
@@ -938,7 +990,6 @@ type Protozoan
     refSku: String!
     unitDefinition: String
     category: ProductCategory!
-    additionalCategory: [ProductCategory]
     unitCost: String!
     qualityGrading: String
     pathogenIdentification: [PathogenIdentification]!
@@ -958,6 +1009,7 @@ type Protozoan
     internalReference: String
     note: String
     contactPoint: ContactPoint
+    additionalCategory: [ProductCategory]
     iataClassification: IataClassification!
     shippingConditions: String!
     materialSafetyDataSheet: ReasearchInfrastructure
@@ -987,6 +1039,7 @@ type Protozoan
 
 type Provider
   {
+    keyword: [String]
     name: String!
     description: String
     homePage: Uri
@@ -1000,6 +1053,7 @@ type Provider
 
 type Publication
   {
+    keyword: [String]
     title: String!
     authors: String!
     abstract: String!
@@ -1009,6 +1063,7 @@ type Publication
 
 type ReasearchInfrastructure
   {
+    keyword: [String]
     name: String!
     description: String
     homePage: Uri
@@ -1021,16 +1076,19 @@ type ReasearchInfrastructure
 
 type RecombinantPartIdentification
   {
+    keyword: [String]
     partIdentification: String!
     sequence: [Sequence]!
   }
 
 interface Resource
   {
+    keyword: [String]
   }
 
 type RiskGroup
   {
+    keyword: [String]
     title: String!
     description: String
     weight: Integer!
@@ -1039,18 +1097,21 @@ type RiskGroup
 
 type Sequence
   {
+    keyword: [String]
     sequenceReference: [SequenceReference]
     sequenceFasta: String
   }
 
 type SequenceReference
   {
+    keyword: [String]
     accessionNumber: String!
     sequenceProvider: String!
   }
 
 type Service
   {
+    keyword: [String]
     title: String!
     description: String!
     version: String!
@@ -1058,7 +1119,6 @@ type Service
     refSku: String!
     unitDefinition: String
     category: ProductCategory!
-    additionalCategory: [ProductCategory]
     unitCost: String!
     qualityGrading: String
     pathogenIdentification: [PathogenIdentification]!
@@ -1078,12 +1138,14 @@ type Service
     internalReference: String
     note: String
     contactPoint: ContactPoint
+    additionalCategory: [ProductCategory]
     modelSpecies: String
     modelType: String
   }
 
 type SpecialFeature
   {
+    keyword: [String]
     title: String!
     description: String
     weight: Integer!
@@ -1092,6 +1154,7 @@ type SpecialFeature
 
 type SyntheticPartOrigin
   {
+    keyword: [String]
     recombinantPartIdentification: RecombinantPartIdentification
     accessToPhysicalGeneticResource: Boolean!
     modificationsFromTheReferenceSequences: Boolean!
@@ -1100,6 +1163,7 @@ type SyntheticPartOrigin
 
 type TagSequence
   {
+    keyword: [String]
     title: String!
     description: String
     weight: Integer!
@@ -1108,6 +1172,7 @@ type TagSequence
 
 type Taxon
   {
+    keyword: [String]
     title: String!
     description: String
     weight: Integer!
@@ -1123,6 +1188,7 @@ type Taxon
 
 type TaxonomicRank
   {
+    keyword: [String]
     title: String!
     description: String
     weight: Integer!
@@ -1132,6 +1198,7 @@ type TaxonomicRank
 
 type Taxonomy
   {
+    keyword: [String]
     title: String!
     description: String!
     taxon: [Taxon]!
@@ -1144,6 +1211,7 @@ type Taxonomy
 
 interface Term
   {
+    keyword: [String]
     title: String!
     description: String
     weight: Integer!
@@ -1152,6 +1220,7 @@ interface Term
 
 type TransmissionMethod
   {
+    keyword: [String]
     title: String!
     description: String
     weight: Integer!
@@ -1160,6 +1229,7 @@ type TransmissionMethod
 
 type Variant
   {
+    keyword: [String]
     title: String!
     description: String
     weight: Integer!
@@ -1170,6 +1240,7 @@ type Variant
 
 type Version
   {
+    keyword: [String]
     version: String!
     versionOf: String!
     resource: [Resource]
@@ -1177,6 +1248,7 @@ type Version
 
 type Video
   {
+    keyword: [String]
     name: String!
     description: String
     contentUrl: Uri!
@@ -1186,6 +1258,7 @@ type Video
 
 type Viroid
   {
+    keyword: [String]
     title: String!
     description: String!
     version: String!
@@ -1193,7 +1266,6 @@ type Viroid
     refSku: String!
     unitDefinition: String
     category: ProductCategory!
-    additionalCategory: [ProductCategory]
     unitCost: String!
     qualityGrading: String
     pathogenIdentification: [PathogenIdentification]!
@@ -1213,6 +1285,7 @@ type Viroid
     internalReference: String
     note: String
     contactPoint: ContactPoint
+    additionalCategory: [ProductCategory]
     iataClassification: IataClassification!
     shippingConditions: String!
     materialSafetyDataSheet: ReasearchInfrastructure
@@ -1242,6 +1315,7 @@ type Viroid
 
 type Virus
   {
+    keyword: [String]
     title: String!
     description: String!
     version: String!
@@ -1249,7 +1323,6 @@ type Virus
     refSku: String!
     unitDefinition: String
     category: ProductCategory!
-    additionalCategory: [ProductCategory]
     unitCost: String!
     qualityGrading: String
     pathogenIdentification: [PathogenIdentification]!
@@ -1269,6 +1342,7 @@ type Virus
     internalReference: String
     note: String
     contactPoint: ContactPoint
+    additionalCategory: [ProductCategory]
     iataClassification: IataClassification!
     shippingConditions: String!
     materialSafetyDataSheet: ReasearchInfrastructure
@@ -1301,6 +1375,7 @@ type Virus
 
 type VirusName
   {
+    keyword: [String]
     title: String!
     description: String
     weight: Integer!
@@ -1311,6 +1386,7 @@ type VirusName
 
 type Vocabulary
   {
+    keyword: [String]
     title: String!
     description: String!
     version: String!

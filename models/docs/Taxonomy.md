@@ -25,6 +25,8 @@ URI: [EVORAO:Taxonomy](https://w3id.org/evorao/Taxonomy)
       
       Taxonomy : description
         
+      Taxonomy : keyword
+        
       Taxonomy : rank
         
           
@@ -101,6 +103,7 @@ URI: [EVORAO:Taxonomy](https://w3id.org/evorao/Taxonomy)
 | [rankDataProvider](rankDataProvider.md) | 0..1 <br/> [DataProvider](DataProvider.md) | The data provider for the description of the taxonomic ranks used in this tax... | direct |
 | [title](title.md) | 1 <br/> [String](String.md) | A name given to the resource | [Dataset](Dataset.md) |
 | [description](description.md) | 1 _recommended_ <br/> [String](String.md) | A short explanation of the characteristics, features, or nature of the curren... | [Dataset](Dataset.md) |
+| [keyword](keyword.md) | * <br/> [String](String.md) | A keyword or tag describing the resource | [Resource](Resource.md) |
 
 
 
@@ -542,6 +545,20 @@ attributes:
     required: true
     recommended: true
     multivalued: false
+  keyword:
+    name: keyword
+    description: A keyword or tag describing the resource
+    title: keyword
+    from_schema: https://w3id.org/evorao/
+    rank: 1000
+    slot_uri: dcat:keyword
+    alias: keyword
+    owner: Taxonomy
+    domain_of:
+    - Resource
+    range: string
+    required: false
+    multivalued: true
 
 ```
 </details>

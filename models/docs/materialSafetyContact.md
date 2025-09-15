@@ -12,7 +12,12 @@ _The designated contact point responsible for providing information related to t
 URI: [EVORAO:materialSafetyContact](https://w3id.org/evorao/materialSafetyContact)
 Alias: materialSafetyContact
 
-<!-- no inheritance hierarchy -->
+
+## Inheritance
+
+* [contactPoint](contactPoint.md)
+    * **materialSafetyContact**
+
 
 
 
@@ -62,7 +67,7 @@ Alias: materialSafetyContact
 | ---  | ---  |
 | self | EVORAO:materialSafetyContact |
 | native | EVORAO:materialSafetyContact |
-| exact | dcat:contactPoint, schema:contactPoint |
+| broad | schema:contactPoint |
 
 
 
@@ -76,15 +81,16 @@ description: The designated contact point responsible for providing information 
   to the safety, handling, and regulatory compliance of the biological product.
 title: material safety contact
 from_schema: https://w3id.org/evorao/
-exact_mappings:
-- dcat:contactPoint
+broad_mappings:
 - schema:contactPoint
 rank: 1000
+is_a: contactPoint
 alias: materialSafetyContact
 domain_of:
 - MaterialSafetyDataSheet
 range: ContactPoint
 required: true
+recommended: true
 multivalued: false
 
 ```

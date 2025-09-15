@@ -36,6 +36,8 @@ URI: [dcat:Catalog](http://www.w3.org/ns/dcat#Catalog)
       
       Catalogue : description
         
+      Catalogue : keyword
+        
       Catalogue : title
         
       Catalogue : version
@@ -64,6 +66,7 @@ URI: [dcat:Catalog](http://www.w3.org/ns/dcat#Catalog)
 | [title](title.md) | 1 <br/> [String](String.md) | A name given to the resource | [Dataset](Dataset.md) |
 | [description](description.md) | 1 _recommended_ <br/> [String](String.md) | A short explanation of the characteristics, features, or nature of the curren... | [Dataset](Dataset.md) |
 | [version](version.md) | 0..1 _recommended_ <br/> [String](String.md) | The version indicator (name or identifier) of a resource | [Dataset](Dataset.md) |
+| [keyword](keyword.md) | * <br/> [String](String.md) | A keyword or tag describing the resource | [Resource](Resource.md) |
 
 
 
@@ -232,6 +235,20 @@ attributes:
     required: false
     recommended: true
     multivalued: false
+  keyword:
+    name: keyword
+    description: A keyword or tag describing the resource
+    title: keyword
+    from_schema: https://w3id.org/evorao/
+    rank: 1000
+    slot_uri: dcat:keyword
+    alias: keyword
+    owner: Catalogue
+    domain_of:
+    - Resource
+    range: string
+    required: false
+    multivalued: true
 class_uri: dcat:Catalog
 
 ```

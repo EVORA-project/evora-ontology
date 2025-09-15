@@ -34,6 +34,8 @@ URI: [EVORAO:BiologicalMaterialOrigin](https://w3id.org/evorao/BiologicalMateria
         
       BiologicalMaterialOrigin : biologicalSourceType
         
+      BiologicalMaterialOrigin : keyword
+        
       BiologicalMaterialOrigin : recombinantMaterial
         
       
@@ -56,6 +58,7 @@ URI: [EVORAO:BiologicalMaterialOrigin](https://w3id.org/evorao/BiologicalMateria
 | [recombinantMaterial](recombinantMaterial.md) | 1 <br/> [Boolean](Boolean.md) | Indicates if this biological material is a recombinant biological material | direct |
 | [biologicalSourceType](biologicalSourceType.md) | 1 <br/> [Boolean](Boolean.md) | Defines if the current biological material is natural and was collected or if... | direct |
 | [biologicalPartOrigin](biologicalPartOrigin.md) | 1..* <br/> [BiologicalPartOrigin](BiologicalPartOrigin.md) | Details the origin of one or more unitary parts that make up the biological m... | direct |
+| [keyword](keyword.md) | * <br/> [String](String.md) | A keyword or tag describing the resource | [Resource](Resource.md) |
 
 
 
@@ -291,6 +294,20 @@ attributes:
     - BiologicalMaterialOrigin
     range: BiologicalPartOrigin
     required: true
+    multivalued: true
+  keyword:
+    name: keyword
+    description: A keyword or tag describing the resource
+    title: keyword
+    from_schema: https://w3id.org/evorao/
+    rank: 1000
+    slot_uri: dcat:keyword
+    alias: keyword
+    owner: BiologicalMaterialOrigin
+    domain_of:
+    - Resource
+    range: string
+    required: false
     multivalued: true
 
 ```

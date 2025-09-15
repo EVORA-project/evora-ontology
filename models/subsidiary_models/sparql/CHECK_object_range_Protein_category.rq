@@ -77,7 +77,7 @@ WHERE {
   }
  }
  VALUES ?check { linkml:range }
- VALUES ?predicate { EVORAO:category  }
+ VALUES ?predicate { dcat:theme  }
  
 }  
 

@@ -23,6 +23,8 @@ URI: [EVORAO:Sequence](https://w3id.org/evorao/Sequence)
       Resource <|-- Sequence
         click Resource href "../Resource"
       
+      Sequence : keyword
+        
       Sequence : sequenceFasta
         
       Sequence : sequenceReference
@@ -53,6 +55,7 @@ URI: [EVORAO:Sequence](https://w3id.org/evorao/Sequence)
 | ---  | --- | --- | --- |
 | [sequenceReference](sequenceReference.md) | * _recommended_ <br/> [SequenceReference](SequenceReference.md) | A reference that permits to retrieve the sequence information from a sequence... | direct |
 | [sequenceFasta](sequenceFasta.md) | 0..1 <br/> [String](String.md) | Textual encoding of a biological sequence information in FASTA format | direct |
+| [keyword](keyword.md) | * <br/> [String](String.md) | A keyword or tag describing the resource | [Resource](Resource.md) |
 
 
 
@@ -245,6 +248,20 @@ attributes:
     range: string
     required: false
     multivalued: false
+  keyword:
+    name: keyword
+    description: A keyword or tag describing the resource
+    title: keyword
+    from_schema: https://w3id.org/evorao/
+    rank: 1000
+    slot_uri: dcat:keyword
+    alias: keyword
+    owner: Sequence
+    domain_of:
+    - Resource
+    range: string
+    required: false
+    multivalued: true
 
 ```
 </details>

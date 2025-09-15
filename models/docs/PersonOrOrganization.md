@@ -45,6 +45,8 @@ URI: [foaf:Agent](http://xmlns.com/foaf/0.1/Agent)
         
       PersonOrOrganization : homePage
         
+      PersonOrOrganization : keyword
+        
       PersonOrOrganization : logo
         
           
@@ -81,6 +83,7 @@ URI: [foaf:Agent](http://xmlns.com/foaf/0.1/Agent)
 | [homePage](homePage.md) | 0..1 <br/> [Uri](Uri.md) | A web page that serves as the main or introductory page | direct |
 | [contactPoint](contactPoint.md) | 0..1 _recommended_ <br/> [ContactPoint](ContactPoint.md) | An information that allows someone to establish communication | direct |
 | [logo](logo.md) | 0..1 <br/> [Image](Image.md) | A path or URL to the related logo | direct |
+| [keyword](keyword.md) | * <br/> [String](String.md) | A keyword or tag describing the resource | [Resource](Resource.md) |
 
 
 
@@ -438,6 +441,20 @@ attributes:
     range: Image
     required: false
     multivalued: false
+  keyword:
+    name: keyword
+    description: A keyword or tag describing the resource
+    title: keyword
+    from_schema: https://w3id.org/evorao/
+    rank: 1000
+    slot_uri: dcat:keyword
+    alias: keyword
+    owner: PersonOrOrganization
+    domain_of:
+    - Resource
+    range: string
+    required: false
+    multivalued: true
 class_uri: foaf:Agent
 
 ```

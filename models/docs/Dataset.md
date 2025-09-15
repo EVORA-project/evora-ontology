@@ -34,6 +34,8 @@ URI: [dcat:Dataset](http://www.w3.org/ns/dcat#Dataset)
       
       Dataset : description
         
+      Dataset : keyword
+        
       Dataset : title
         
       Dataset : version
@@ -60,6 +62,7 @@ URI: [dcat:Dataset](http://www.w3.org/ns/dcat#Dataset)
 | [title](title.md) | 1 <br/> [String](String.md) | A name given to the resource | direct |
 | [description](description.md) | 1 _recommended_ <br/> [String](String.md) | A short explanation of the characteristics, features, or nature of the curren... | direct |
 | [version](version.md) | 0..1 _recommended_ <br/> [String](String.md) | The version indicator (name or identifier) of a resource | direct |
+| [keyword](keyword.md) | * <br/> [String](String.md) | A keyword or tag describing the resource | [Resource](Resource.md) |
 
 
 
@@ -371,6 +374,20 @@ attributes:
     required: false
     recommended: true
     multivalued: false
+  keyword:
+    name: keyword
+    description: A keyword or tag describing the resource
+    title: keyword
+    from_schema: https://w3id.org/evorao/
+    rank: 1000
+    slot_uri: dcat:keyword
+    alias: keyword
+    owner: Dataset
+    domain_of:
+    - Resource
+    range: string
+    required: false
+    multivalued: true
 class_uri: dcat:Dataset
 
 ```

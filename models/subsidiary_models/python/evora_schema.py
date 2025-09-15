@@ -1,5 +1,5 @@
 # Auto generated from evora_schema.yaml by pythongen.py version: 0.0.1
-# Generation date: 2025-09-12T15:41:39
+# Generation date: 2025-09-15T14:40:41
 # Schema: EVORAO
 #
 # id: https://w3id.org/evorao/
@@ -60,11 +60,10 @@ from linkml_runtime.linkml_model.types import Boolean, Datetime, Integer, String
 from linkml_runtime.utils.metamodelcore import Bool, URI, XSDDateTime
 
 metamodel_version = "1.7.0"
-version = "1.0.9734"
+version = "1.0.9808"
 
 # Namespaces
 EVORAO = CurieNamespace('EVORAO', 'https://w3id.org/evorao/')
-IAO = CurieNamespace('IAO', 'http://purl.obolibrary.org/obo/IAO_')
 ADMS = CurieNamespace('adms', 'http://www.w3.org/ns/adms#')
 AFOP = CurieNamespace('afop', 'http://purl.allotrope.org/ontologies/property#')
 APOLLO = CurieNamespace('apollo', 'http://purl.obolibrary.org/obo/APOLLO_SV_')
@@ -132,6 +131,7 @@ DEFAULT_ = EVORAO
 
 
 
+@dataclass(repr=False)
 class Resource(YAMLRoot):
     """
     Resource published or curated by a single agent
@@ -142,6 +142,15 @@ class Resource(YAMLRoot):
     class_class_curie: ClassVar[str] = "dcat:Resource"
     class_name: ClassVar[str] = "Resource"
     class_model_uri: ClassVar[URIRef] = EVORAO.Resource
+
+    keyword: Optional[Union[str, list[str]]] = empty_list()
+
+    def __post_init__(self, *_: str, **kwargs: Any):
+        if not isinstance(self.keyword, list):
+            self.keyword = [self.keyword] if self.keyword is not None else []
+        self.keyword = [v if isinstance(v, str) else str(v) for v in self.keyword]
+
+        super().__post_init__(**kwargs)
 
 
 @dataclass(repr=False)
@@ -1585,6 +1594,8 @@ class ProductOrService(Dataset):
         if self.contactPoint is not None and not isinstance(self.contactPoint, ContactPoint):
             self.contactPoint = ContactPoint(**as_dict(self.contactPoint))
 
+        self._normalize_inlined_as_dict(slot_name="additionalCategory", slot_type=ProductCategory, key_name="title", keyed=False)
+
         super().__post_init__(**kwargs)
 
 
@@ -2474,6 +2485,11 @@ class MaterialSafetyDataSheet(Resource):
         if not isinstance(self.materialSafetyContact, ContactPoint):
             self.materialSafetyContact = ContactPoint(**as_dict(self.materialSafetyContact))
 
+        if self._is_empty(self.materialSafetyContact):
+            self.MissingRequiredField("materialSafetyContact")
+        if not isinstance(self.materialSafetyContact, ContactPoint):
+            self.materialSafetyContact = ContactPoint(**as_dict(self.materialSafetyContact))
+
         if self.physicalChemicalProperties is not None and not isinstance(self.physicalChemicalProperties, str):
             self.physicalChemicalProperties = str(self.physicalChemicalProperties)
 
@@ -2796,6 +2812,9 @@ class Certification(Resource):
 class slots:
     pass
 
+slots.keyword = Slot(uri=DCAT.keyword, name="keyword", curie=DCAT.curie('keyword'),
+                   model_uri=EVORAO.keyword, domain=None, range=Optional[Union[str, list[str]]])
+
 slots.title = Slot(uri=DCT.title, name="title", curie=DCT.curie('title'),
                    model_uri=EVORAO.title, domain=None, range=str)
 
@@ -3039,7 +3058,7 @@ slots.refSku = Slot(uri=EVORAO.refSku, name="refSku", curie=EVORAO.curie('refSku
 slots.unitDefinition = Slot(uri=EVORAO.unitDefinition, name="unitDefinition", curie=EVORAO.curie('unitDefinition'),
                    model_uri=EVORAO.unitDefinition, domain=None, range=Optional[str])
 
-slots.category = Slot(uri=EVORAO.category, name="category", curie=EVORAO.curie('category'),
+slots.category = Slot(uri=DCAT.theme, name="category", curie=DCAT.curie('theme'),
                    model_uri=EVORAO.category, domain=None, range=Union[dict, ProductCategory])
 
 slots.additionalCategory = Slot(uri=EVORAO.additionalCategory, name="additionalCategory", curie=EVORAO.curie('additionalCategory'),
@@ -3357,6 +3376,9 @@ slots.licensingOrAttribution = Slot(uri=EVORAO.licensingOrAttribution, name="lic
 slots.certificationDocument = Slot(uri=EVORAO.certificationDocument, name="certificationDocument", curie=EVORAO.curie('certificationDocument'),
                    model_uri=EVORAO.certificationDocument, domain=None, range=Optional[Union[Union[dict, Document], list[Union[dict, Document]]]])
 
+slots.Resource_keyword = Slot(uri=DCAT.keyword, name="Resource_keyword", curie=DCAT.curie('keyword'),
+                   model_uri=EVORAO.Resource_keyword, domain=Resource, range=Optional[Union[str, list[str]]])
+
 slots.Dataset_title = Slot(uri=DCT.title, name="Dataset_title", curie=DCT.curie('title'),
                    model_uri=EVORAO.Dataset_title, domain=Dataset, range=str)
 
@@ -3645,7 +3667,7 @@ slots.ProductOrService_refSku = Slot(uri=EVORAO.refSku, name="ProductOrService_r
 slots.ProductOrService_unitDefinition = Slot(uri=EVORAO.unitDefinition, name="ProductOrService_unitDefinition", curie=EVORAO.curie('unitDefinition'),
                    model_uri=EVORAO.ProductOrService_unitDefinition, domain=ProductOrService, range=Optional[str])
 
-slots.ProductOrService_category = Slot(uri=EVORAO.category, name="ProductOrService_category", curie=EVORAO.curie('category'),
+slots.ProductOrService_category = Slot(uri=DCAT.theme, name="ProductOrService_category", curie=DCAT.curie('theme'),
                    model_uri=EVORAO.ProductOrService_category, domain=ProductOrService, range=Union[dict, ProductCategory])
 
 slots.ProductOrService_additionalCategory = Slot(uri=EVORAO.additionalCategory, name="ProductOrService_additionalCategory", curie=EVORAO.curie('additionalCategory'),

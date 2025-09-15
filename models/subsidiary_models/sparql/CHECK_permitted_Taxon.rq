@@ -74,6 +74,7 @@ SELECT ?g ?s ?p WHERE {
    dct:description,
    EVORAO:weight,
    EVORAO:inVocabulary,
+   dcat:keyword,
    rdf:type ))
  }
  

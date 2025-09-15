@@ -70,6 +70,7 @@ SELECT ?g ?s ?p WHERE {
    EVORAO:permitIdentifierForAbs,
    EVORAO:recombinantPartIdentification,
    EVORAO:accessToPhysicalGeneticResource,
+   dcat:keyword,
    rdf:type ))
  }
  

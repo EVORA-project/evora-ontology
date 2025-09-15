@@ -67,6 +67,7 @@ SELECT ?g ?s ?p WHERE {
    EVORAO:descriptionOfModificationsMadeFromTheReferenceSequences,
    EVORAO:recombinantPartIdentification,
    EVORAO:accessToPhysicalGeneticResource,
+   dcat:keyword,
    rdf:type ))
  }
  

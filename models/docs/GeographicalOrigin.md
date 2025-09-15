@@ -39,6 +39,8 @@ URI: [EVORAO:GeographicalOrigin](https://w3id.org/evorao/GeographicalOrigin)
     click Vocabulary href "../Vocabulary"
 
         
+      GeographicalOrigin : keyword
+        
       GeographicalOrigin : title
         
       GeographicalOrigin : weight
@@ -66,6 +68,7 @@ URI: [EVORAO:GeographicalOrigin](https://w3id.org/evorao/GeographicalOrigin)
 | [description](description.md) | 0..1 _recommended_ <br/> [String](String.md) | A short explanation of the characteristics, features, or nature of the curren... | [Term](Term.md) |
 | [weight](weight.md) | 1 <br/> [Integer](Integer.md) | A numerical value indicating relative importance or priority, generally proce... | [Term](Term.md) |
 | [inVocabulary](inVocabulary.md) | 1 <br/> [Vocabulary](Vocabulary.md) | Terms belong to a specific vocabulary | [Term](Term.md) |
+| [keyword](keyword.md) | * <br/> [String](String.md) | A keyword or tag describing the resource | [Resource](Resource.md) |
 
 
 
@@ -283,6 +286,20 @@ attributes:
     range: Vocabulary
     required: true
     multivalued: false
+  keyword:
+    name: keyword
+    description: A keyword or tag describing the resource
+    title: keyword
+    from_schema: https://w3id.org/evorao/
+    rank: 1000
+    slot_uri: dcat:keyword
+    alias: keyword
+    owner: GeographicalOrigin
+    domain_of:
+    - Resource
+    range: string
+    required: false
+    multivalued: true
 
 ```
 </details>

@@ -17,9 +17,50 @@ class Resource(Base):
 
     id = Column(Integer(), primary_key=True, autoincrement=True , nullable=False )
     
+    
+    keyword_rel = relationship( "ResourceKeyword" )
+    keyword = association_proxy("keyword_rel", "keyword",
+                                  creator=lambda x_: ResourceKeyword(keyword=x_))
+    
 
     def __repr__(self):
         return f"Resource(id={self.id},)"
+
+
+
+    
+
+
+class ResourceKeyword(Base):
+    """
+    
+    """
+    __tablename__ = 'Resource_keyword'
+
+    Resource_id = Column(Integer(), ForeignKey('Resource.id'), primary_key=True)
+    keyword = Column(Text(), primary_key=True)
+    
+
+    def __repr__(self):
+        return f"Resource_keyword(Resource_id={self.Resource_id},keyword={self.keyword},)"
+
+
+
+    
+
+
+class DatasetKeyword(Base):
+    """
+    
+    """
+    __tablename__ = 'Dataset_keyword'
+
+    Dataset_id = Column(Integer(), ForeignKey('Dataset.id'), primary_key=True)
+    keyword = Column(Text(), primary_key=True)
+    
+
+    def __repr__(self):
+        return f"Dataset_keyword(Dataset_id={self.Dataset_id},keyword={self.keyword},)"
 
 
 
@@ -44,6 +85,24 @@ class DataServiceServesDataset(Base):
     
 
 
+class DataServiceKeyword(Base):
+    """
+    
+    """
+    __tablename__ = 'DataService_keyword'
+
+    DataService_id = Column(Integer(), ForeignKey('DataService.id'), primary_key=True)
+    keyword = Column(Text(), primary_key=True)
+    
+
+    def __repr__(self):
+        return f"DataService_keyword(DataService_id={self.DataService_id},keyword={self.keyword},)"
+
+
+
+    
+
+
 class VersionResource(Base):
     """
     
@@ -56,6 +115,42 @@ class VersionResource(Base):
 
     def __repr__(self):
         return f"Version_resource(Version_id={self.Version_id},resource_id={self.resource_id},)"
+
+
+
+    
+
+
+class VersionKeyword(Base):
+    """
+    
+    """
+    __tablename__ = 'Version_keyword'
+
+    Version_id = Column(Integer(), ForeignKey('Version.id'), primary_key=True)
+    keyword = Column(Text(), primary_key=True)
+    
+
+    def __repr__(self):
+        return f"Version_keyword(Version_id={self.Version_id},keyword={self.keyword},)"
+
+
+
+    
+
+
+class CatalogueKeyword(Base):
+    """
+    
+    """
+    __tablename__ = 'Catalogue_keyword'
+
+    Catalogue_id = Column(Integer(), ForeignKey('Catalogue.id'), primary_key=True)
+    keyword = Column(Text(), primary_key=True)
+    
+
+    def __repr__(self):
+        return f"Catalogue_keyword(Catalogue_id={self.Catalogue_id},keyword={self.keyword},)"
 
 
 
@@ -98,6 +193,24 @@ class TaxonomyRank(Base):
     
 
 
+class TaxonomyKeyword(Base):
+    """
+    
+    """
+    __tablename__ = 'Taxonomy_keyword'
+
+    Taxonomy_id = Column(Integer(), ForeignKey('Taxonomy.id'), primary_key=True)
+    keyword = Column(Text(), primary_key=True)
+    
+
+    def __repr__(self):
+        return f"Taxonomy_keyword(Taxonomy_id={self.Taxonomy_id},keyword={self.keyword},)"
+
+
+
+    
+
+
 class DataProviderProvidedEntityType(Base):
     """
     
@@ -134,6 +247,24 @@ class DataProviderServesDataset(Base):
     
 
 
+class DataProviderKeyword(Base):
+    """
+    
+    """
+    __tablename__ = 'DataProvider_keyword'
+
+    DataProvider_id = Column(Integer(), ForeignKey('DataProvider.id'), primary_key=True)
+    keyword = Column(Text(), primary_key=True)
+    
+
+    def __repr__(self):
+        return f"DataProvider_keyword(DataProvider_id={self.DataProvider_id},keyword={self.keyword},)"
+
+
+
+    
+
+
 class PathogenIdentificationHostType(Base):
     """
     
@@ -152,6 +283,42 @@ class PathogenIdentificationHostType(Base):
     
 
 
+class PathogenIdentificationKeyword(Base):
+    """
+    
+    """
+    __tablename__ = 'PathogenIdentification_keyword'
+
+    PathogenIdentification_id = Column(Integer(), ForeignKey('PathogenIdentification.id'), primary_key=True)
+    keyword = Column(Text(), primary_key=True)
+    
+
+    def __repr__(self):
+        return f"PathogenIdentification_keyword(PathogenIdentification_id={self.PathogenIdentification_id},keyword={self.keyword},)"
+
+
+
+    
+
+
+class PublicationKeyword(Base):
+    """
+    
+    """
+    __tablename__ = 'Publication_keyword'
+
+    Publication_id = Column(Integer(), ForeignKey('Publication.id'), primary_key=True)
+    keyword = Column(Text(), primary_key=True)
+    
+
+    def __repr__(self):
+        return f"Publication_keyword(Publication_id={self.Publication_id},keyword={self.keyword},)"
+
+
+
+    
+
+
 class VocabularyTerm(Base):
     """
     
@@ -164,6 +331,42 @@ class VocabularyTerm(Base):
 
     def __repr__(self):
         return f"Vocabulary_term(Vocabulary_id={self.Vocabulary_id},term_id={self.term_id},)"
+
+
+
+    
+
+
+class VocabularyKeyword(Base):
+    """
+    
+    """
+    __tablename__ = 'Vocabulary_keyword'
+
+    Vocabulary_id = Column(Integer(), ForeignKey('Vocabulary.id'), primary_key=True)
+    keyword = Column(Text(), primary_key=True)
+    
+
+    def __repr__(self):
+        return f"Vocabulary_keyword(Vocabulary_id={self.Vocabulary_id},keyword={self.keyword},)"
+
+
+
+    
+
+
+class TermKeyword(Base):
+    """
+    
+    """
+    __tablename__ = 'Term_keyword'
+
+    Term_id = Column(Integer(), ForeignKey('Term.id'), primary_key=True)
+    keyword = Column(Text(), primary_key=True)
+    
+
+    def __repr__(self):
+        return f"Term_keyword(Term_id={self.Term_id},keyword={self.keyword},)"
 
 
 
@@ -206,6 +409,24 @@ class CommonNameSourceOfInformation(Base):
     
 
 
+class CommonNameKeyword(Base):
+    """
+    
+    """
+    __tablename__ = 'CommonName_keyword'
+
+    CommonName_id = Column(Integer(), ForeignKey('CommonName.id'), primary_key=True)
+    keyword = Column(Text(), primary_key=True)
+    
+
+    def __repr__(self):
+        return f"CommonName_keyword(CommonName_id={self.CommonName_id},keyword={self.keyword},)"
+
+
+
+    
+
+
 class VirusNameAlternateName(Base):
     """
     
@@ -236,6 +457,24 @@ class VirusNameSourceOfInformation(Base):
 
     def __repr__(self):
         return f"VirusName_sourceOfInformation(VirusName_id={self.VirusName_id},sourceOfInformation={self.sourceOfInformation},)"
+
+
+
+    
+
+
+class VirusNameKeyword(Base):
+    """
+    
+    """
+    __tablename__ = 'VirusName_keyword'
+
+    VirusName_id = Column(Integer(), ForeignKey('VirusName.id'), primary_key=True)
+    keyword = Column(Text(), primary_key=True)
+    
+
+    def __repr__(self):
+        return f"VirusName_keyword(VirusName_id={self.VirusName_id},keyword={self.keyword},)"
 
 
 
@@ -278,6 +517,348 @@ class AlternateNameSourceOfInformation(Base):
     
 
 
+class AlternateNameKeyword(Base):
+    """
+    
+    """
+    __tablename__ = 'AlternateName_keyword'
+
+    AlternateName_id = Column(Integer(), ForeignKey('AlternateName.id'), primary_key=True)
+    keyword = Column(Text(), primary_key=True)
+    
+
+    def __repr__(self):
+        return f"AlternateName_keyword(AlternateName_id={self.AlternateName_id},keyword={self.keyword},)"
+
+
+
+    
+
+
+class RiskGroupKeyword(Base):
+    """
+    
+    """
+    __tablename__ = 'RiskGroup_keyword'
+
+    RiskGroup_id = Column(Integer(), ForeignKey('RiskGroup.id'), primary_key=True)
+    keyword = Column(Text(), primary_key=True)
+    
+
+    def __repr__(self):
+        return f"RiskGroup_keyword(RiskGroup_id={self.RiskGroup_id},keyword={self.keyword},)"
+
+
+
+    
+
+
+class DoiKeyword(Base):
+    """
+    
+    """
+    __tablename__ = 'Doi_keyword'
+
+    Doi_id = Column(Integer(), ForeignKey('Doi.id'), primary_key=True)
+    keyword = Column(Text(), primary_key=True)
+    
+
+    def __repr__(self):
+        return f"Doi_keyword(Doi_id={self.Doi_id},keyword={self.keyword},)"
+
+
+
+    
+
+
+class JournalKeyword(Base):
+    """
+    
+    """
+    __tablename__ = 'Journal_keyword'
+
+    Journal_id = Column(Integer(), ForeignKey('Journal.id'), primary_key=True)
+    keyword = Column(Text(), primary_key=True)
+    
+
+    def __repr__(self):
+        return f"Journal_keyword(Journal_id={self.Journal_id},keyword={self.keyword},)"
+
+
+
+    
+
+
+class PdbReferenceKeyword(Base):
+    """
+    
+    """
+    __tablename__ = 'PdbReference_keyword'
+
+    PdbReference_id = Column(Integer(), ForeignKey('PdbReference.id'), primary_key=True)
+    keyword = Column(Text(), primary_key=True)
+    
+
+    def __repr__(self):
+        return f"PdbReference_keyword(PdbReference_id={self.PdbReference_id},keyword={self.keyword},)"
+
+
+
+    
+
+
+class KeywordKeyword(Base):
+    """
+    
+    """
+    __tablename__ = 'Keyword_keyword'
+
+    Keyword_id = Column(Integer(), ForeignKey('Keyword.id'), primary_key=True)
+    keyword = Column(Text(), primary_key=True)
+    
+
+    def __repr__(self):
+        return f"Keyword_keyword(Keyword_id={self.Keyword_id},keyword={self.keyword},)"
+
+
+
+    
+
+
+class TagSequenceKeyword(Base):
+    """
+    
+    """
+    __tablename__ = 'TagSequence_keyword'
+
+    TagSequence_id = Column(Integer(), ForeignKey('TagSequence.id'), primary_key=True)
+    keyword = Column(Text(), primary_key=True)
+    
+
+    def __repr__(self):
+        return f"TagSequence_keyword(TagSequence_id={self.TagSequence_id},keyword={self.keyword},)"
+
+
+
+    
+
+
+class SpecialFeatureKeyword(Base):
+    """
+    
+    """
+    __tablename__ = 'SpecialFeature_keyword'
+
+    SpecialFeature_id = Column(Integer(), ForeignKey('SpecialFeature.id'), primary_key=True)
+    keyword = Column(Text(), primary_key=True)
+    
+
+    def __repr__(self):
+        return f"SpecialFeature_keyword(SpecialFeature_id={self.SpecialFeature_id},keyword={self.keyword},)"
+
+
+
+    
+
+
+class ExpressionVectorKeyword(Base):
+    """
+    
+    """
+    __tablename__ = 'ExpressionVector_keyword'
+
+    ExpressionVector_id = Column(Integer(), ForeignKey('ExpressionVector.id'), primary_key=True)
+    keyword = Column(Text(), primary_key=True)
+    
+
+    def __repr__(self):
+        return f"ExpressionVector_keyword(ExpressionVector_id={self.ExpressionVector_id},keyword={self.keyword},)"
+
+
+
+    
+
+
+class PlasmidSelectionKeyword(Base):
+    """
+    
+    """
+    __tablename__ = 'PlasmidSelection_keyword'
+
+    PlasmidSelection_id = Column(Integer(), ForeignKey('PlasmidSelection.id'), primary_key=True)
+    keyword = Column(Text(), primary_key=True)
+    
+
+    def __repr__(self):
+        return f"PlasmidSelection_keyword(PlasmidSelection_id={self.PlasmidSelection_id},keyword={self.keyword},)"
+
+
+
+    
+
+
+class PropagationHostKeyword(Base):
+    """
+    
+    """
+    __tablename__ = 'PropagationHost_keyword'
+
+    PropagationHost_id = Column(Integer(), ForeignKey('PropagationHost.id'), primary_key=True)
+    keyword = Column(Text(), primary_key=True)
+    
+
+    def __repr__(self):
+        return f"PropagationHost_keyword(PropagationHost_id={self.PropagationHost_id},keyword={self.keyword},)"
+
+
+
+    
+
+
+class TransmissionMethodKeyword(Base):
+    """
+    
+    """
+    __tablename__ = 'TransmissionMethod_keyword'
+
+    TransmissionMethod_id = Column(Integer(), ForeignKey('TransmissionMethod.id'), primary_key=True)
+    keyword = Column(Text(), primary_key=True)
+    
+
+    def __repr__(self):
+        return f"TransmissionMethod_keyword(TransmissionMethod_id={self.TransmissionMethod_id},keyword={self.keyword},)"
+
+
+
+    
+
+
+class ProductionCellLineKeyword(Base):
+    """
+    
+    """
+    __tablename__ = 'ProductionCellLine_keyword'
+
+    ProductionCellLine_id = Column(Integer(), ForeignKey('ProductionCellLine.id'), primary_key=True)
+    keyword = Column(Text(), primary_key=True)
+    
+
+    def __repr__(self):
+        return f"ProductionCellLine_keyword(ProductionCellLine_id={self.ProductionCellLine_id},keyword={self.keyword},)"
+
+
+
+    
+
+
+class ProductCategoryKeyword(Base):
+    """
+    
+    """
+    __tablename__ = 'ProductCategory_keyword'
+
+    ProductCategory_id = Column(Integer(), ForeignKey('ProductCategory.id'), primary_key=True)
+    keyword = Column(Text(), primary_key=True)
+    
+
+    def __repr__(self):
+        return f"ProductCategory_keyword(ProductCategory_id={self.ProductCategory_id},keyword={self.keyword},)"
+
+
+
+    
+
+
+class IsolationHostKeyword(Base):
+    """
+    
+    """
+    __tablename__ = 'IsolationHost_keyword'
+
+    IsolationHost_id = Column(Integer(), ForeignKey('IsolationHost.id'), primary_key=True)
+    keyword = Column(Text(), primary_key=True)
+    
+
+    def __repr__(self):
+        return f"IsolationHost_keyword(IsolationHost_id={self.IsolationHost_id},keyword={self.keyword},)"
+
+
+
+    
+
+
+class GeographicalOriginKeyword(Base):
+    """
+    
+    """
+    __tablename__ = 'GeographicalOrigin_keyword'
+
+    GeographicalOrigin_id = Column(Integer(), ForeignKey('GeographicalOrigin.id'), primary_key=True)
+    keyword = Column(Text(), primary_key=True)
+    
+
+    def __repr__(self):
+        return f"GeographicalOrigin_keyword(GeographicalOrigin_id={self.GeographicalOrigin_id},keyword={self.keyword},)"
+
+
+
+    
+
+
+class IplcOriginKeyword(Base):
+    """
+    
+    """
+    __tablename__ = 'IplcOrigin_keyword'
+
+    IplcOrigin_id = Column(Integer(), ForeignKey('IplcOrigin.id'), primary_key=True)
+    keyword = Column(Text(), primary_key=True)
+    
+
+    def __repr__(self):
+        return f"IplcOrigin_keyword(IplcOrigin_id={self.IplcOrigin_id},keyword={self.keyword},)"
+
+
+
+    
+
+
+class CountryKeyword(Base):
+    """
+    
+    """
+    __tablename__ = 'Country_keyword'
+
+    Country_id = Column(Integer(), ForeignKey('Country.id'), primary_key=True)
+    keyword = Column(Text(), primary_key=True)
+    
+
+    def __repr__(self):
+        return f"Country_keyword(Country_id={self.Country_id},keyword={self.keyword},)"
+
+
+
+    
+
+
+class IataClassificationKeyword(Base):
+    """
+    
+    """
+    __tablename__ = 'IataClassification_keyword'
+
+    IataClassification_id = Column(Integer(), ForeignKey('IataClassification.id'), primary_key=True)
+    keyword = Column(Text(), primary_key=True)
+    
+
+    def __repr__(self):
+        return f"IataClassification_keyword(IataClassification_id={self.IataClassification_id},keyword={self.keyword},)"
+
+
+
+    
+
+
 class VariantAlternateName(Base):
     """
     
@@ -314,6 +895,24 @@ class VariantSourceOfInformation(Base):
     
 
 
+class VariantKeyword(Base):
+    """
+    
+    """
+    __tablename__ = 'Variant_keyword'
+
+    Variant_id = Column(Integer(), ForeignKey('Variant.id'), primary_key=True)
+    keyword = Column(Text(), primary_key=True)
+    
+
+    def __repr__(self):
+        return f"Variant_keyword(Variant_id={self.Variant_id},keyword={self.keyword},)"
+
+
+
+    
+
+
 class TaxonomicRankTaxonomy(Base):
     """
     
@@ -326,6 +925,24 @@ class TaxonomicRankTaxonomy(Base):
 
     def __repr__(self):
         return f"TaxonomicRank_taxonomy(TaxonomicRank_id={self.TaxonomicRank_id},taxonomy_id={self.taxonomy_id},)"
+
+
+
+    
+
+
+class TaxonomicRankKeyword(Base):
+    """
+    
+    """
+    __tablename__ = 'TaxonomicRank_keyword'
+
+    TaxonomicRank_id = Column(Integer(), ForeignKey('TaxonomicRank.id'), primary_key=True)
+    keyword = Column(Text(), primary_key=True)
+    
+
+    def __repr__(self):
+        return f"TaxonomicRank_keyword(TaxonomicRank_id={self.TaxonomicRank_id},keyword={self.keyword},)"
 
 
 
@@ -386,6 +1003,42 @@ class TaxonExternalEquivalentTaxon(Base):
     
 
 
+class TaxonKeyword(Base):
+    """
+    
+    """
+    __tablename__ = 'Taxon_keyword'
+
+    Taxon_id = Column(Integer(), ForeignKey('Taxon.id'), primary_key=True)
+    keyword = Column(Text(), primary_key=True)
+    
+
+    def __repr__(self):
+        return f"Taxon_keyword(Taxon_id={self.Taxon_id},keyword={self.keyword},)"
+
+
+
+    
+
+
+class ExternalRelatedReferenceKeyword(Base):
+    """
+    
+    """
+    __tablename__ = 'ExternalRelatedReference_keyword'
+
+    ExternalRelatedReference_id = Column(Integer(), ForeignKey('ExternalRelatedReference.id'), primary_key=True)
+    keyword = Column(Text(), primary_key=True)
+    
+
+    def __repr__(self):
+        return f"ExternalRelatedReference_keyword(ExternalRelatedReference_id={self.ExternalRelatedReference_id},keyword={self.keyword},)"
+
+
+
+    
+
+
 class SequenceSequenceReference(Base):
     """
     
@@ -398,6 +1051,78 @@ class SequenceSequenceReference(Base):
 
     def __repr__(self):
         return f"Sequence_sequenceReference(Sequence_id={self.Sequence_id},sequenceReference_id={self.sequenceReference_id},)"
+
+
+
+    
+
+
+class SequenceKeyword(Base):
+    """
+    
+    """
+    __tablename__ = 'Sequence_keyword'
+
+    Sequence_id = Column(Integer(), ForeignKey('Sequence.id'), primary_key=True)
+    keyword = Column(Text(), primary_key=True)
+    
+
+    def __repr__(self):
+        return f"Sequence_keyword(Sequence_id={self.Sequence_id},keyword={self.keyword},)"
+
+
+
+    
+
+
+class SequenceReferenceKeyword(Base):
+    """
+    
+    """
+    __tablename__ = 'SequenceReference_keyword'
+
+    SequenceReference_id = Column(Integer(), ForeignKey('SequenceReference.id'), primary_key=True)
+    keyword = Column(Text(), primary_key=True)
+    
+
+    def __repr__(self):
+        return f"SequenceReference_keyword(SequenceReference_id={self.SequenceReference_id},keyword={self.keyword},)"
+
+
+
+    
+
+
+class PersonOrOrganizationKeyword(Base):
+    """
+    
+    """
+    __tablename__ = 'PersonOrOrganization_keyword'
+
+    PersonOrOrganization_id = Column(Integer(), ForeignKey('PersonOrOrganization.id'), primary_key=True)
+    keyword = Column(Text(), primary_key=True)
+    
+
+    def __repr__(self):
+        return f"PersonOrOrganization_keyword(PersonOrOrganization_id={self.PersonOrOrganization_id},keyword={self.keyword},)"
+
+
+
+    
+
+
+class PersonKeyword(Base):
+    """
+    
+    """
+    __tablename__ = 'Person_keyword'
+
+    Person_id = Column(Integer(), ForeignKey('Person.id'), primary_key=True)
+    keyword = Column(Text(), primary_key=True)
+    
+
+    def __repr__(self):
+        return f"Person_keyword(Person_id={self.Person_id},keyword={self.keyword},)"
 
 
 
@@ -422,6 +1147,24 @@ class OrganizationAlternateName(Base):
     
 
 
+class OrganizationKeyword(Base):
+    """
+    
+    """
+    __tablename__ = 'Organization_keyword'
+
+    Organization_id = Column(Integer(), ForeignKey('Organization.id'), primary_key=True)
+    keyword = Column(Text(), primary_key=True)
+    
+
+    def __repr__(self):
+        return f"Organization_keyword(Organization_id={self.Organization_id},keyword={self.keyword},)"
+
+
+
+    
+
+
 class ReasearchInfrastructureAlternateName(Base):
     """
     
@@ -434,6 +1177,24 @@ class ReasearchInfrastructureAlternateName(Base):
 
     def __repr__(self):
         return f"ReasearchInfrastructure_alternateName(ReasearchInfrastructure_id={self.ReasearchInfrastructure_id},alternateName_id={self.alternateName_id},)"
+
+
+
+    
+
+
+class ReasearchInfrastructureKeyword(Base):
+    """
+    
+    """
+    __tablename__ = 'ReasearchInfrastructure_keyword'
+
+    ReasearchInfrastructure_id = Column(Integer(), ForeignKey('ReasearchInfrastructure.id'), primary_key=True)
+    keyword = Column(Text(), primary_key=True)
+    
+
+    def __repr__(self):
+        return f"ReasearchInfrastructure_keyword(ReasearchInfrastructure_id={self.ReasearchInfrastructure_id},keyword={self.keyword},)"
 
 
 
@@ -476,6 +1237,42 @@ class ProviderAlternateName(Base):
     
 
 
+class ProviderKeyword(Base):
+    """
+    
+    """
+    __tablename__ = 'Provider_keyword'
+
+    Provider_id = Column(Integer(), ForeignKey('Provider.id'), primary_key=True)
+    keyword = Column(Text(), primary_key=True)
+    
+
+    def __repr__(self):
+        return f"Provider_keyword(Provider_id={self.Provider_id},keyword={self.keyword},)"
+
+
+
+    
+
+
+class OriginatorKeyword(Base):
+    """
+    
+    """
+    __tablename__ = 'Originator_keyword'
+
+    Originator_id = Column(Integer(), ForeignKey('Originator.id'), primary_key=True)
+    keyword = Column(Text(), primary_key=True)
+    
+
+    def __repr__(self):
+        return f"Originator_keyword(Originator_id={self.Originator_id},keyword={self.keyword},)"
+
+
+
+    
+
+
 class BiologicalMaterialOriginBiologicalPartOrigin(Base):
     """
     
@@ -488,6 +1285,78 @@ class BiologicalMaterialOriginBiologicalPartOrigin(Base):
 
     def __repr__(self):
         return f"BiologicalMaterialOrigin_biologicalPartOrigin(BiologicalMaterialOrigin_id={self.BiologicalMaterialOrigin_id},biologicalPartOrigin_id={self.biologicalPartOrigin_id},)"
+
+
+
+    
+
+
+class BiologicalMaterialOriginKeyword(Base):
+    """
+    
+    """
+    __tablename__ = 'BiologicalMaterialOrigin_keyword'
+
+    BiologicalMaterialOrigin_id = Column(Integer(), ForeignKey('BiologicalMaterialOrigin.id'), primary_key=True)
+    keyword = Column(Text(), primary_key=True)
+    
+
+    def __repr__(self):
+        return f"BiologicalMaterialOrigin_keyword(BiologicalMaterialOrigin_id={self.BiologicalMaterialOrigin_id},keyword={self.keyword},)"
+
+
+
+    
+
+
+class BiologicalPartOriginKeyword(Base):
+    """
+    
+    """
+    __tablename__ = 'BiologicalPartOrigin_keyword'
+
+    BiologicalPartOrigin_id = Column(Integer(), ForeignKey('BiologicalPartOrigin.id'), primary_key=True)
+    keyword = Column(Text(), primary_key=True)
+    
+
+    def __repr__(self):
+        return f"BiologicalPartOrigin_keyword(BiologicalPartOrigin_id={self.BiologicalPartOrigin_id},keyword={self.keyword},)"
+
+
+
+    
+
+
+class NaturalPartOriginKeyword(Base):
+    """
+    
+    """
+    __tablename__ = 'NaturalPartOrigin_keyword'
+
+    NaturalPartOrigin_id = Column(Integer(), ForeignKey('NaturalPartOrigin.id'), primary_key=True)
+    keyword = Column(Text(), primary_key=True)
+    
+
+    def __repr__(self):
+        return f"NaturalPartOrigin_keyword(NaturalPartOrigin_id={self.NaturalPartOrigin_id},keyword={self.keyword},)"
+
+
+
+    
+
+
+class SyntheticPartOriginKeyword(Base):
+    """
+    
+    """
+    __tablename__ = 'SyntheticPartOrigin_keyword'
+
+    SyntheticPartOrigin_id = Column(Integer(), ForeignKey('SyntheticPartOrigin.id'), primary_key=True)
+    keyword = Column(Text(), primary_key=True)
+    
+
+    def __repr__(self):
+        return f"SyntheticPartOrigin_keyword(SyntheticPartOrigin_id={self.SyntheticPartOrigin_id},keyword={self.keyword},)"
 
 
 
@@ -512,6 +1381,24 @@ class RecombinantPartIdentificationSequence(Base):
     
 
 
+class RecombinantPartIdentificationKeyword(Base):
+    """
+    
+    """
+    __tablename__ = 'RecombinantPartIdentification_keyword'
+
+    RecombinantPartIdentification_id = Column(Integer(), ForeignKey('RecombinantPartIdentification.id'), primary_key=True)
+    keyword = Column(Text(), primary_key=True)
+    
+
+    def __repr__(self):
+        return f"RecombinantPartIdentification_keyword(RecombinantPartIdentification_id={self.RecombinantPartIdentification_id},keyword={self.keyword},)"
+
+
+
+    
+
+
 class CollectionCollectionItem(Base):
     """
     
@@ -524,6 +1411,24 @@ class CollectionCollectionItem(Base):
 
     def __repr__(self):
         return f"Collection_collectionItem(Collection_id={self.Collection_id},collectionItem_id={self.collectionItem_id},)"
+
+
+
+    
+
+
+class CollectionKeyword(Base):
+    """
+    
+    """
+    __tablename__ = 'Collection_keyword'
+
+    Collection_id = Column(Integer(), ForeignKey('Collection.id'), primary_key=True)
+    keyword = Column(Text(), primary_key=True)
+    
+
+    def __repr__(self):
+        return f"Collection_keyword(Collection_id={self.Collection_id},keyword={self.keyword},)"
 
 
 
@@ -692,6 +1597,24 @@ class ProductOrServiceCertification(Base):
     
 
 
+class ProductOrServiceKeyword(Base):
+    """
+    
+    """
+    __tablename__ = 'ProductOrService_keyword'
+
+    ProductOrService_id = Column(Integer(), ForeignKey('ProductOrService.id'), primary_key=True)
+    keyword = Column(Text(), primary_key=True)
+    
+
+    def __repr__(self):
+        return f"ProductOrService_keyword(ProductOrService_id={self.ProductOrService_id},keyword={self.keyword},)"
+
+
+
+    
+
+
 class ServiceAdditionalCategory(Base):
     """
     
@@ -854,6 +1777,24 @@ class ServiceCertification(Base):
     
 
 
+class ServiceKeyword(Base):
+    """
+    
+    """
+    __tablename__ = 'Service_keyword'
+
+    Service_id = Column(Integer(), ForeignKey('Service.id'), primary_key=True)
+    keyword = Column(Text(), primary_key=True)
+    
+
+    def __repr__(self):
+        return f"Service_keyword(Service_id={self.Service_id},keyword={self.keyword},)"
+
+
+
+    
+
+
 class ProductAdditionalCategory(Base):
     """
     
@@ -1010,6 +1951,24 @@ class ProductCertification(Base):
 
     def __repr__(self):
         return f"Product_certification(Product_id={self.Product_id},certification_id={self.certification_id},)"
+
+
+
+    
+
+
+class ProductKeyword(Base):
+    """
+    
+    """
+    __tablename__ = 'Product_keyword'
+
+    Product_id = Column(Integer(), ForeignKey('Product.id'), primary_key=True)
+    keyword = Column(Text(), primary_key=True)
+    
+
+    def __repr__(self):
+        return f"Product_keyword(Product_id={self.Product_id},keyword={self.keyword},)"
 
 
 
@@ -1196,6 +2155,24 @@ class AntibodyCertification(Base):
     
 
 
+class AntibodyKeyword(Base):
+    """
+    
+    """
+    __tablename__ = 'Antibody_keyword'
+
+    Antibody_id = Column(Integer(), ForeignKey('Antibody.id'), primary_key=True)
+    keyword = Column(Text(), primary_key=True)
+    
+
+    def __repr__(self):
+        return f"Antibody_keyword(Antibody_id={self.Antibody_id},keyword={self.keyword},)"
+
+
+
+    
+
+
 class HybridomaSequenceReference(Base):
     """
     
@@ -1370,6 +2347,24 @@ class HybridomaCertification(Base):
 
     def __repr__(self):
         return f"Hybridoma_certification(Hybridoma_id={self.Hybridoma_id},certification_id={self.certification_id},)"
+
+
+
+    
+
+
+class HybridomaKeyword(Base):
+    """
+    
+    """
+    __tablename__ = 'Hybridoma_keyword'
+
+    Hybridoma_id = Column(Integer(), ForeignKey('Hybridoma.id'), primary_key=True)
+    keyword = Column(Text(), primary_key=True)
+    
+
+    def __repr__(self):
+        return f"Hybridoma_keyword(Hybridoma_id={self.Hybridoma_id},keyword={self.keyword},)"
 
 
 
@@ -1772,6 +2767,24 @@ class ProteinCertification(Base):
     
 
 
+class ProteinKeyword(Base):
+    """
+    
+    """
+    __tablename__ = 'Protein_keyword'
+
+    Protein_id = Column(Integer(), ForeignKey('Protein.id'), primary_key=True)
+    keyword = Column(Text(), primary_key=True)
+    
+
+    def __repr__(self):
+        return f"Protein_keyword(Protein_id={self.Protein_id},keyword={self.keyword},)"
+
+
+
+    
+
+
 class NucleicAcidGenBankFileOfTheConstruct(Base):
     """
     
@@ -1988,6 +3001,24 @@ class NucleicAcidCertification(Base):
     
 
 
+class NucleicAcidKeyword(Base):
+    """
+    
+    """
+    __tablename__ = 'NucleicAcid_keyword'
+
+    NucleicAcid_id = Column(Integer(), ForeignKey('NucleicAcid.id'), primary_key=True)
+    keyword = Column(Text(), primary_key=True)
+    
+
+    def __repr__(self):
+        return f"NucleicAcid_keyword(NucleicAcid_id={self.NucleicAcid_id},keyword={self.keyword},)"
+
+
+
+    
+
+
 class DetectionKitStandardOperatingProcedureFile(Base):
     """
     
@@ -2168,6 +3199,24 @@ class DetectionKitCertification(Base):
     
 
 
+class DetectionKitKeyword(Base):
+    """
+    
+    """
+    __tablename__ = 'DetectionKit_keyword'
+
+    DetectionKit_id = Column(Integer(), ForeignKey('DetectionKit.id'), primary_key=True)
+    keyword = Column(Text(), primary_key=True)
+    
+
+    def __repr__(self):
+        return f"DetectionKit_keyword(DetectionKit_id={self.DetectionKit_id},keyword={self.keyword},)"
+
+
+
+    
+
+
 class BundleItemsOfTheBundle(Base):
     """
     
@@ -2342,6 +3391,24 @@ class BundleCertification(Base):
 
     def __repr__(self):
         return f"Bundle_certification(Bundle_id={self.Bundle_id},certification_id={self.certification_id},)"
+
+
+
+    
+
+
+class BundleKeyword(Base):
+    """
+    
+    """
+    __tablename__ = 'Bundle_keyword'
+
+    Bundle_id = Column(Integer(), ForeignKey('Bundle.id'), primary_key=True)
+    keyword = Column(Text(), primary_key=True)
+    
+
+    def __repr__(self):
+        return f"Bundle_keyword(Bundle_id={self.Bundle_id},keyword={self.keyword},)"
 
 
 
@@ -2612,6 +3679,24 @@ class PathogenCertification(Base):
 
     def __repr__(self):
         return f"Pathogen_certification(Pathogen_id={self.Pathogen_id},certification_id={self.certification_id},)"
+
+
+
+    
+
+
+class PathogenKeyword(Base):
+    """
+    
+    """
+    __tablename__ = 'Pathogen_keyword'
+
+    Pathogen_id = Column(Integer(), ForeignKey('Pathogen.id'), primary_key=True)
+    keyword = Column(Text(), primary_key=True)
+    
+
+    def __repr__(self):
+        return f"Pathogen_keyword(Pathogen_id={self.Pathogen_id},keyword={self.keyword},)"
 
 
 
@@ -2906,6 +3991,24 @@ class VirusCertification(Base):
     
 
 
+class VirusKeyword(Base):
+    """
+    
+    """
+    __tablename__ = 'Virus_keyword'
+
+    Virus_id = Column(Integer(), ForeignKey('Virus.id'), primary_key=True)
+    keyword = Column(Text(), primary_key=True)
+    
+
+    def __repr__(self):
+        return f"Virus_keyword(Virus_id={self.Virus_id},keyword={self.keyword},)"
+
+
+
+    
+
+
 class BacteriumSuspectedEpidemiologicalOrigin(Base):
     """
     
@@ -3170,6 +4273,24 @@ class BacteriumCertification(Base):
 
     def __repr__(self):
         return f"Bacterium_certification(Bacterium_id={self.Bacterium_id},certification_id={self.certification_id},)"
+
+
+
+    
+
+
+class BacteriumKeyword(Base):
+    """
+    
+    """
+    __tablename__ = 'Bacterium_keyword'
+
+    Bacterium_id = Column(Integer(), ForeignKey('Bacterium.id'), primary_key=True)
+    keyword = Column(Text(), primary_key=True)
+    
+
+    def __repr__(self):
+        return f"Bacterium_keyword(Bacterium_id={self.Bacterium_id},keyword={self.keyword},)"
 
 
 
@@ -3446,6 +4567,24 @@ class FungusCertification(Base):
     
 
 
+class FungusKeyword(Base):
+    """
+    
+    """
+    __tablename__ = 'Fungus_keyword'
+
+    Fungus_id = Column(Integer(), ForeignKey('Fungus.id'), primary_key=True)
+    keyword = Column(Text(), primary_key=True)
+    
+
+    def __repr__(self):
+        return f"Fungus_keyword(Fungus_id={self.Fungus_id},keyword={self.keyword},)"
+
+
+
+    
+
+
 class ProtozoanSuspectedEpidemiologicalOrigin(Base):
     """
     
@@ -3710,6 +4849,24 @@ class ProtozoanCertification(Base):
 
     def __repr__(self):
         return f"Protozoan_certification(Protozoan_id={self.Protozoan_id},certification_id={self.certification_id},)"
+
+
+
+    
+
+
+class ProtozoanKeyword(Base):
+    """
+    
+    """
+    __tablename__ = 'Protozoan_keyword'
+
+    Protozoan_id = Column(Integer(), ForeignKey('Protozoan.id'), primary_key=True)
+    keyword = Column(Text(), primary_key=True)
+    
+
+    def __repr__(self):
+        return f"Protozoan_keyword(Protozoan_id={self.Protozoan_id},keyword={self.keyword},)"
 
 
 
@@ -3986,6 +5143,24 @@ class ViroidCertification(Base):
     
 
 
+class ViroidKeyword(Base):
+    """
+    
+    """
+    __tablename__ = 'Viroid_keyword'
+
+    Viroid_id = Column(Integer(), ForeignKey('Viroid.id'), primary_key=True)
+    keyword = Column(Text(), primary_key=True)
+    
+
+    def __repr__(self):
+        return f"Viroid_keyword(Viroid_id={self.Viroid_id},keyword={self.keyword},)"
+
+
+
+    
+
+
 class PrionSuspectedEpidemiologicalOrigin(Base):
     """
     
@@ -4256,6 +5431,186 @@ class PrionCertification(Base):
     
 
 
+class PrionKeyword(Base):
+    """
+    
+    """
+    __tablename__ = 'Prion_keyword'
+
+    Prion_id = Column(Integer(), ForeignKey('Prion.id'), primary_key=True)
+    keyword = Column(Text(), primary_key=True)
+    
+
+    def __repr__(self):
+        return f"Prion_keyword(Prion_id={self.Prion_id},keyword={self.keyword},)"
+
+
+
+    
+
+
+class MaterialSafetyDataSheetKeyword(Base):
+    """
+    
+    """
+    __tablename__ = 'MaterialSafetyDataSheet_keyword'
+
+    MaterialSafetyDataSheet_id = Column(Integer(), ForeignKey('MaterialSafetyDataSheet.id'), primary_key=True)
+    keyword = Column(Text(), primary_key=True)
+    
+
+    def __repr__(self):
+        return f"MaterialSafetyDataSheet_keyword(MaterialSafetyDataSheet_id={self.MaterialSafetyDataSheet_id},keyword={self.keyword},)"
+
+
+
+    
+
+
+class FileKeyword(Base):
+    """
+    
+    """
+    __tablename__ = 'File_keyword'
+
+    File_id = Column(Integer(), ForeignKey('File.id'), primary_key=True)
+    keyword = Column(Text(), primary_key=True)
+    
+
+    def __repr__(self):
+        return f"File_keyword(File_id={self.File_id},keyword={self.keyword},)"
+
+
+
+    
+
+
+class DataKeyword(Base):
+    """
+    
+    """
+    __tablename__ = 'Data_keyword'
+
+    Data_id = Column(Integer(), ForeignKey('Data.id'), primary_key=True)
+    keyword = Column(Text(), primary_key=True)
+    
+
+    def __repr__(self):
+        return f"Data_keyword(Data_id={self.Data_id},keyword={self.keyword},)"
+
+
+
+    
+
+
+class DocumentKeyword(Base):
+    """
+    
+    """
+    __tablename__ = 'Document_keyword'
+
+    Document_id = Column(Integer(), ForeignKey('Document.id'), primary_key=True)
+    keyword = Column(Text(), primary_key=True)
+    
+
+    def __repr__(self):
+        return f"Document_keyword(Document_id={self.Document_id},keyword={self.keyword},)"
+
+
+
+    
+
+
+class AudioKeyword(Base):
+    """
+    
+    """
+    __tablename__ = 'Audio_keyword'
+
+    Audio_id = Column(Integer(), ForeignKey('Audio.id'), primary_key=True)
+    keyword = Column(Text(), primary_key=True)
+    
+
+    def __repr__(self):
+        return f"Audio_keyword(Audio_id={self.Audio_id},keyword={self.keyword},)"
+
+
+
+    
+
+
+class VideoKeyword(Base):
+    """
+    
+    """
+    __tablename__ = 'Video_keyword'
+
+    Video_id = Column(Integer(), ForeignKey('Video.id'), primary_key=True)
+    keyword = Column(Text(), primary_key=True)
+    
+
+    def __repr__(self):
+        return f"Video_keyword(Video_id={self.Video_id},keyword={self.keyword},)"
+
+
+
+    
+
+
+class ImageKeyword(Base):
+    """
+    
+    """
+    __tablename__ = 'Image_keyword'
+
+    Image_id = Column(Integer(), ForeignKey('Image.id'), primary_key=True)
+    keyword = Column(Text(), primary_key=True)
+    
+
+    def __repr__(self):
+        return f"Image_keyword(Image_id={self.Image_id},keyword={self.keyword},)"
+
+
+
+    
+
+
+class ContactPointKeyword(Base):
+    """
+    
+    """
+    __tablename__ = 'ContactPoint_keyword'
+
+    ContactPoint_id = Column(Integer(), ForeignKey('ContactPoint.id'), primary_key=True)
+    keyword = Column(Text(), primary_key=True)
+    
+
+    def __repr__(self):
+        return f"ContactPoint_keyword(ContactPoint_id={self.ContactPoint_id},keyword={self.keyword},)"
+
+
+
+    
+
+
+class LicenseKeyword(Base):
+    """
+    
+    """
+    __tablename__ = 'License_keyword'
+
+    License_id = Column(Integer(), ForeignKey('License.id'), primary_key=True)
+    keyword = Column(Text(), primary_key=True)
+    
+
+    def __repr__(self):
+        return f"License_keyword(License_id={self.License_id},keyword={self.keyword},)"
+
+
+
+    
+
+
 class CertificationCertificationDocument(Base):
     """
     
@@ -4274,6 +5629,24 @@ class CertificationCertificationDocument(Base):
     
 
 
+class CertificationKeyword(Base):
+    """
+    
+    """
+    __tablename__ = 'Certification_keyword'
+
+    Certification_id = Column(Integer(), ForeignKey('Certification.id'), primary_key=True)
+    keyword = Column(Text(), primary_key=True)
+    
+
+    def __repr__(self):
+        return f"Certification_keyword(Certification_id={self.Certification_id},keyword={self.keyword},)"
+
+
+
+    
+
+
 class Dataset(Resource):
     """
     A collection of data, published or curated by a single agent, and available for access
@@ -4284,6 +5657,11 @@ class Dataset(Resource):
     title = Column(Text(), nullable=False )
     description = Column(Text(), nullable=False )
     version = Column(Text())
+    
+    
+    keyword_rel = relationship( "DatasetKeyword" )
+    keyword = association_proxy("keyword_rel", "keyword",
+                                  creator=lambda x_: DatasetKeyword(keyword=x_))
     
 
     def __repr__(self):
@@ -4314,6 +5692,11 @@ class DataService(Resource):
     # ManyToMany
     servesDataset = relationship( "Dataset", secondary="DataService_servesDataset")
     
+    
+    keyword_rel = relationship( "DataServiceKeyword" )
+    keyword = association_proxy("keyword_rel", "keyword",
+                                  creator=lambda x_: DataServiceKeyword(keyword=x_))
+    
 
     def __repr__(self):
         return f"DataService(id={self.id},title={self.title},description={self.description},endpointUrl={self.endpointUrl},)"
@@ -4341,6 +5724,11 @@ class Version(Resource):
     
     # ManyToMany
     resource = relationship( "Resource", secondary="Version_resource")
+    
+    
+    keyword_rel = relationship( "VersionKeyword" )
+    keyword = association_proxy("keyword_rel", "keyword",
+                                  creator=lambda x_: VersionKeyword(keyword=x_))
     
 
     def __repr__(self):
@@ -4381,6 +5769,11 @@ class PathogenIdentification(Resource):
     hostType = association_proxy("hostType_rel", "hostType",
                                   creator=lambda x_: PathogenIdentificationHostType(hostType=x_))
     
+    
+    keyword_rel = relationship( "PathogenIdentificationKeyword" )
+    keyword = association_proxy("keyword_rel", "keyword",
+                                  creator=lambda x_: PathogenIdentificationKeyword(keyword=x_))
+    
 
     def __repr__(self):
         return f"PathogenIdentification(id={self.id},pathogenType={self.pathogenType},subspecies={self.subspecies},strain={self.strain},isolate={self.isolate},genotype={self.genotype},serotype={self.serotype},taxon_id={self.taxon_id},pathogenName_id={self.pathogenName_id},variant_id={self.variant_id},)"
@@ -4410,6 +5803,11 @@ class Publication(Resource):
     journal_id = Column(Integer(), ForeignKey('Journal.id'))
     journal = relationship("Journal", uselist=False, foreign_keys=[journal_id])
     
+    
+    keyword_rel = relationship( "PublicationKeyword" )
+    keyword = association_proxy("keyword_rel", "keyword",
+                                  creator=lambda x_: PublicationKeyword(keyword=x_))
+    
 
     def __repr__(self):
         return f"Publication(id={self.id},title={self.title},authors={self.authors},abstract={self.abstract},doi_id={self.doi_id},journal_id={self.journal_id},)"
@@ -4437,6 +5835,11 @@ class Term(Resource):
     inVocabulary_id = Column(Integer(), ForeignKey('Vocabulary.id'), nullable=False )
     inVocabulary = relationship("Vocabulary", uselist=False, foreign_keys=[inVocabulary_id])
     
+    
+    keyword_rel = relationship( "TermKeyword" )
+    keyword = association_proxy("keyword_rel", "keyword",
+                                  creator=lambda x_: TermKeyword(keyword=x_))
+    
 
     def __repr__(self):
         return f"Term(id={self.id},title={self.title},description={self.description},weight={self.weight},inVocabulary_id={self.inVocabulary_id},)"
@@ -4462,6 +5865,11 @@ class ExternalRelatedReference(Resource):
     referenceLabel = Column(Text(), nullable=False )
     referenceProviderPrefix = Column(Text(), nullable=False )
     referenceProviderName = Column(Text(), nullable=False )
+    
+    
+    keyword_rel = relationship( "ExternalRelatedReferenceKeyword" )
+    keyword = association_proxy("keyword_rel", "keyword",
+                                  creator=lambda x_: ExternalRelatedReferenceKeyword(keyword=x_))
     
 
     def __repr__(self):
@@ -4490,6 +5898,11 @@ class Sequence(Resource):
     # ManyToMany
     sequenceReference = relationship( "SequenceReference", secondary="Sequence_sequenceReference")
     
+    
+    keyword_rel = relationship( "SequenceKeyword" )
+    keyword = association_proxy("keyword_rel", "keyword",
+                                  creator=lambda x_: SequenceKeyword(keyword=x_))
+    
 
     def __repr__(self):
         return f"Sequence(id={self.id},sequenceFasta={self.sequenceFasta},)"
@@ -4513,6 +5926,11 @@ class SequenceReference(Resource):
     id = Column(Integer(), primary_key=True, autoincrement=True , nullable=False )
     accessionNumber = Column(Text(), nullable=False )
     sequenceProvider = Column(Text(), nullable=False )
+    
+    
+    keyword_rel = relationship( "SequenceReferenceKeyword" )
+    keyword = association_proxy("keyword_rel", "keyword",
+                                  creator=lambda x_: SequenceReferenceKeyword(keyword=x_))
     
 
     def __repr__(self):
@@ -4543,6 +5961,11 @@ class PersonOrOrganization(Resource):
     logo_id = Column(Integer(), ForeignKey('Image.id'))
     logo = relationship("Image", uselist=False, foreign_keys=[logo_id])
     
+    
+    keyword_rel = relationship( "PersonOrOrganizationKeyword" )
+    keyword = association_proxy("keyword_rel", "keyword",
+                                  creator=lambda x_: PersonOrOrganizationKeyword(keyword=x_))
+    
 
     def __repr__(self):
         return f"PersonOrOrganization(id={self.id},name={self.name},description={self.description},homePage={self.homePage},contactPoint_id={self.contactPoint_id},logo_id={self.logo_id},)"
@@ -4571,6 +5994,11 @@ class BiologicalMaterialOrigin(Resource):
     # ManyToMany
     biologicalPartOrigin = relationship( "BiologicalPartOrigin", secondary="BiologicalMaterialOrigin_biologicalPartOrigin")
     
+    
+    keyword_rel = relationship( "BiologicalMaterialOriginKeyword" )
+    keyword = association_proxy("keyword_rel", "keyword",
+                                  creator=lambda x_: BiologicalMaterialOriginKeyword(keyword=x_))
+    
 
     def __repr__(self):
         return f"BiologicalMaterialOrigin(id={self.id},recombinantMaterial={self.recombinantMaterial},biologicalSourceType={self.biologicalSourceType},)"
@@ -4595,6 +6023,11 @@ class BiologicalPartOrigin(Resource):
     accessToPhysicalGeneticResource = Column(Boolean(), nullable=False )
     recombinantPartIdentification_id = Column(Integer(), ForeignKey('RecombinantPartIdentification.id'))
     recombinantPartIdentification = relationship("RecombinantPartIdentification", uselist=False, foreign_keys=[recombinantPartIdentification_id])
+    
+    
+    keyword_rel = relationship( "BiologicalPartOriginKeyword" )
+    keyword = association_proxy("keyword_rel", "keyword",
+                                  creator=lambda x_: BiologicalPartOriginKeyword(keyword=x_))
     
 
     def __repr__(self):
@@ -4622,6 +6055,11 @@ class RecombinantPartIdentification(Resource):
     
     # ManyToMany
     sequence = relationship( "Sequence", secondary="RecombinantPartIdentification_sequence")
+    
+    
+    keyword_rel = relationship( "RecombinantPartIdentificationKeyword" )
+    keyword = association_proxy("keyword_rel", "keyword",
+                                  creator=lambda x_: RecombinantPartIdentificationKeyword(keyword=x_))
     
 
     def __repr__(self):
@@ -4661,6 +6099,11 @@ class MaterialSafetyDataSheet(Resource):
     materialSafetyContact_id = Column(Integer(), ForeignKey('ContactPoint.id'), nullable=False )
     materialSafetyContact = relationship("ContactPoint", uselist=False, foreign_keys=[materialSafetyContact_id])
     
+    
+    keyword_rel = relationship( "MaterialSafetyDataSheetKeyword" )
+    keyword = association_proxy("keyword_rel", "keyword",
+                                  creator=lambda x_: MaterialSafetyDataSheetKeyword(keyword=x_))
+    
 
     def __repr__(self):
         return f"MaterialSafetyDataSheet(id={self.id},physicalChemicalProperties={self.physicalChemicalProperties},hazardsIdentification={self.hazardsIdentification},firstAidMeasures={self.firstAidMeasures},fireFightingMeasures={self.fireFightingMeasures},accidentalReleaseMeasures={self.accidentalReleaseMeasures},handlingAndStorage={self.handlingAndStorage},exposureControlsPersonalProtection={self.exposureControlsPersonalProtection},stabilityAndReactivity={self.stabilityAndReactivity},toxicologicalInformation={self.toxicologicalInformation},ecologicalInformation={self.ecologicalInformation},disposalConsiderations={self.disposalConsiderations},transportInformation={self.transportInformation},regulatoryInformation={self.regulatoryInformation},furtherInformation={self.furtherInformation},materialSafetyContact_id={self.materialSafetyContact_id},)"
@@ -4688,6 +6131,11 @@ class File(Resource):
     format = Column(Text(), nullable=False )
     license_id = Column(Integer(), ForeignKey('License.id'))
     license = relationship("License", uselist=False, foreign_keys=[license_id])
+    
+    
+    keyword_rel = relationship( "FileKeyword" )
+    keyword = association_proxy("keyword_rel", "keyword",
+                                  creator=lambda x_: FileKeyword(keyword=x_))
     
 
     def __repr__(self):
@@ -4722,6 +6170,11 @@ class ContactPoint(Resource):
     addressCountry_id = Column(Integer(), ForeignKey('Country.id'))
     addressCountry = relationship("Country", uselist=False, foreign_keys=[addressCountry_id])
     
+    
+    keyword_rel = relationship( "ContactPointKeyword" )
+    keyword = association_proxy("keyword_rel", "keyword",
+                                  creator=lambda x_: ContactPointKeyword(keyword=x_))
+    
 
     def __repr__(self):
         return f"ContactPoint(id={self.id},name={self.name},description={self.description},email={self.email},telephone={self.telephone},streetAddress={self.streetAddress},addressLocality={self.addressLocality},addressRegion={self.addressRegion},postalCode={self.postalCode},orcidId={self.orcidId},addressCountry_id={self.addressCountry_id},)"
@@ -4749,6 +6202,11 @@ class License(Resource):
     licensingOrAttribution = Column(Text())
     logo_id = Column(Integer(), ForeignKey('Image.id'))
     logo = relationship("Image", uselist=False, foreign_keys=[logo_id])
+    
+    
+    keyword_rel = relationship( "LicenseKeyword" )
+    keyword = association_proxy("keyword_rel", "keyword",
+                                  creator=lambda x_: LicenseKeyword(keyword=x_))
     
 
     def __repr__(self):
@@ -4781,6 +6239,11 @@ class Certification(Resource):
     # ManyToMany
     certificationDocument = relationship( "Document", secondary="Certification_certificationDocument")
     
+    
+    keyword_rel = relationship( "CertificationKeyword" )
+    keyword = association_proxy("keyword_rel", "keyword",
+                                  creator=lambda x_: CertificationKeyword(keyword=x_))
+    
 
     def __repr__(self):
         return f"Certification(id={self.id},title={self.title},description={self.description},resourceUrl={self.resourceUrl},logo_id={self.logo_id},)"
@@ -4805,6 +6268,11 @@ class Catalogue(Dataset):
     title = Column(Text(), nullable=False )
     description = Column(Text(), nullable=False )
     version = Column(Text())
+    
+    
+    keyword_rel = relationship( "CatalogueKeyword" )
+    keyword = association_proxy("keyword_rel", "keyword",
+                                  creator=lambda x_: CatalogueKeyword(keyword=x_))
     
 
     def __repr__(self):
@@ -4848,6 +6316,11 @@ class DataProvider(DataService):
     # ManyToMany
     servesDataset = relationship( "Dataset", secondary="DataProvider_servesDataset")
     
+    
+    keyword_rel = relationship( "DataProviderKeyword" )
+    keyword = association_proxy("keyword_rel", "keyword",
+                                  creator=lambda x_: DataProviderKeyword(keyword=x_))
+    
 
     def __repr__(self):
         return f"DataProvider(id={self.id},loginRequestMethod={self.loginRequestMethod},loginUrl={self.loginUrl},loginTokenName={self.loginTokenName},queryMethod={self.queryMethod},contentType={self.contentType},weight={self.weight},title={self.title},description={self.description},endpointUrl={self.endpointUrl},license_id={self.license_id},)"
@@ -4883,6 +6356,11 @@ class CommonName(Term):
     sourceOfInformation_rel = relationship( "CommonNameSourceOfInformation" )
     sourceOfInformation = association_proxy("sourceOfInformation_rel", "sourceOfInformation",
                                   creator=lambda x_: CommonNameSourceOfInformation(sourceOfInformation=x_))
+    
+    
+    keyword_rel = relationship( "CommonNameKeyword" )
+    keyword = association_proxy("keyword_rel", "keyword",
+                                  creator=lambda x_: CommonNameKeyword(keyword=x_))
     
 
     def __repr__(self):
@@ -4920,6 +6398,11 @@ class AlternateName(Term):
     sourceOfInformation = association_proxy("sourceOfInformation_rel", "sourceOfInformation",
                                   creator=lambda x_: AlternateNameSourceOfInformation(sourceOfInformation=x_))
     
+    
+    keyword_rel = relationship( "AlternateNameKeyword" )
+    keyword = association_proxy("keyword_rel", "keyword",
+                                  creator=lambda x_: AlternateNameKeyword(keyword=x_))
+    
 
     def __repr__(self):
         return f"AlternateName(id={self.id},title={self.title},description={self.description},weight={self.weight},inVocabulary_id={self.inVocabulary_id},)"
@@ -4946,6 +6429,11 @@ class RiskGroup(Term):
     weight = Column(Integer(), nullable=False )
     inVocabulary_id = Column(Integer(), ForeignKey('Vocabulary.id'), nullable=False )
     inVocabulary = relationship("Vocabulary", uselist=False, foreign_keys=[inVocabulary_id])
+    
+    
+    keyword_rel = relationship( "RiskGroupKeyword" )
+    keyword = association_proxy("keyword_rel", "keyword",
+                                  creator=lambda x_: RiskGroupKeyword(keyword=x_))
     
 
     def __repr__(self):
@@ -4974,6 +6462,11 @@ class Doi(Term):
     inVocabulary_id = Column(Integer(), ForeignKey('Vocabulary.id'), nullable=False )
     inVocabulary = relationship("Vocabulary", uselist=False, foreign_keys=[inVocabulary_id])
     
+    
+    keyword_rel = relationship( "DoiKeyword" )
+    keyword = association_proxy("keyword_rel", "keyword",
+                                  creator=lambda x_: DoiKeyword(keyword=x_))
+    
 
     def __repr__(self):
         return f"Doi(id={self.id},title={self.title},description={self.description},weight={self.weight},inVocabulary_id={self.inVocabulary_id},)"
@@ -5000,6 +6493,11 @@ class Journal(Term):
     weight = Column(Integer(), nullable=False )
     inVocabulary_id = Column(Integer(), ForeignKey('Vocabulary.id'), nullable=False )
     inVocabulary = relationship("Vocabulary", uselist=False, foreign_keys=[inVocabulary_id])
+    
+    
+    keyword_rel = relationship( "JournalKeyword" )
+    keyword = association_proxy("keyword_rel", "keyword",
+                                  creator=lambda x_: JournalKeyword(keyword=x_))
     
 
     def __repr__(self):
@@ -5028,6 +6526,11 @@ class PdbReference(Term):
     inVocabulary_id = Column(Integer(), ForeignKey('Vocabulary.id'), nullable=False )
     inVocabulary = relationship("Vocabulary", uselist=False, foreign_keys=[inVocabulary_id])
     
+    
+    keyword_rel = relationship( "PdbReferenceKeyword" )
+    keyword = association_proxy("keyword_rel", "keyword",
+                                  creator=lambda x_: PdbReferenceKeyword(keyword=x_))
+    
 
     def __repr__(self):
         return f"PdbReference(id={self.id},title={self.title},description={self.description},weight={self.weight},inVocabulary_id={self.inVocabulary_id},)"
@@ -5054,6 +6557,11 @@ class Keyword(Term):
     weight = Column(Integer(), nullable=False )
     inVocabulary_id = Column(Integer(), ForeignKey('Vocabulary.id'), nullable=False )
     inVocabulary = relationship("Vocabulary", uselist=False, foreign_keys=[inVocabulary_id])
+    
+    
+    keyword_rel = relationship( "KeywordKeyword" )
+    keyword = association_proxy("keyword_rel", "keyword",
+                                  creator=lambda x_: KeywordKeyword(keyword=x_))
     
 
     def __repr__(self):
@@ -5082,6 +6590,11 @@ class TagSequence(Term):
     inVocabulary_id = Column(Integer(), ForeignKey('Vocabulary.id'), nullable=False )
     inVocabulary = relationship("Vocabulary", uselist=False, foreign_keys=[inVocabulary_id])
     
+    
+    keyword_rel = relationship( "TagSequenceKeyword" )
+    keyword = association_proxy("keyword_rel", "keyword",
+                                  creator=lambda x_: TagSequenceKeyword(keyword=x_))
+    
 
     def __repr__(self):
         return f"TagSequence(id={self.id},title={self.title},description={self.description},weight={self.weight},inVocabulary_id={self.inVocabulary_id},)"
@@ -5108,6 +6621,11 @@ class SpecialFeature(Term):
     weight = Column(Integer(), nullable=False )
     inVocabulary_id = Column(Integer(), ForeignKey('Vocabulary.id'), nullable=False )
     inVocabulary = relationship("Vocabulary", uselist=False, foreign_keys=[inVocabulary_id])
+    
+    
+    keyword_rel = relationship( "SpecialFeatureKeyword" )
+    keyword = association_proxy("keyword_rel", "keyword",
+                                  creator=lambda x_: SpecialFeatureKeyword(keyword=x_))
     
 
     def __repr__(self):
@@ -5136,6 +6654,11 @@ class ExpressionVector(Term):
     inVocabulary_id = Column(Integer(), ForeignKey('Vocabulary.id'), nullable=False )
     inVocabulary = relationship("Vocabulary", uselist=False, foreign_keys=[inVocabulary_id])
     
+    
+    keyword_rel = relationship( "ExpressionVectorKeyword" )
+    keyword = association_proxy("keyword_rel", "keyword",
+                                  creator=lambda x_: ExpressionVectorKeyword(keyword=x_))
+    
 
     def __repr__(self):
         return f"ExpressionVector(id={self.id},title={self.title},description={self.description},weight={self.weight},inVocabulary_id={self.inVocabulary_id},)"
@@ -5162,6 +6685,11 @@ class PlasmidSelection(Term):
     weight = Column(Integer(), nullable=False )
     inVocabulary_id = Column(Integer(), ForeignKey('Vocabulary.id'), nullable=False )
     inVocabulary = relationship("Vocabulary", uselist=False, foreign_keys=[inVocabulary_id])
+    
+    
+    keyword_rel = relationship( "PlasmidSelectionKeyword" )
+    keyword = association_proxy("keyword_rel", "keyword",
+                                  creator=lambda x_: PlasmidSelectionKeyword(keyword=x_))
     
 
     def __repr__(self):
@@ -5190,6 +6718,11 @@ class PropagationHost(Term):
     inVocabulary_id = Column(Integer(), ForeignKey('Vocabulary.id'), nullable=False )
     inVocabulary = relationship("Vocabulary", uselist=False, foreign_keys=[inVocabulary_id])
     
+    
+    keyword_rel = relationship( "PropagationHostKeyword" )
+    keyword = association_proxy("keyword_rel", "keyword",
+                                  creator=lambda x_: PropagationHostKeyword(keyword=x_))
+    
 
     def __repr__(self):
         return f"PropagationHost(id={self.id},title={self.title},description={self.description},weight={self.weight},inVocabulary_id={self.inVocabulary_id},)"
@@ -5217,6 +6750,11 @@ class TransmissionMethod(Term):
     inVocabulary_id = Column(Integer(), ForeignKey('Vocabulary.id'), nullable=False )
     inVocabulary = relationship("Vocabulary", uselist=False, foreign_keys=[inVocabulary_id])
     
+    
+    keyword_rel = relationship( "TransmissionMethodKeyword" )
+    keyword = association_proxy("keyword_rel", "keyword",
+                                  creator=lambda x_: TransmissionMethodKeyword(keyword=x_))
+    
 
     def __repr__(self):
         return f"TransmissionMethod(id={self.id},title={self.title},description={self.description},weight={self.weight},inVocabulary_id={self.inVocabulary_id},)"
@@ -5243,6 +6781,11 @@ class ProductionCellLine(Term):
     weight = Column(Integer(), nullable=False )
     inVocabulary_id = Column(Integer(), ForeignKey('Vocabulary.id'), nullable=False )
     inVocabulary = relationship("Vocabulary", uselist=False, foreign_keys=[inVocabulary_id])
+    
+    
+    keyword_rel = relationship( "ProductionCellLineKeyword" )
+    keyword = association_proxy("keyword_rel", "keyword",
+                                  creator=lambda x_: ProductionCellLineKeyword(keyword=x_))
     
 
     def __repr__(self):
@@ -5273,6 +6816,11 @@ class ProductCategory(Term):
     inVocabulary_id = Column(Integer(), ForeignKey('Vocabulary.id'), nullable=False )
     inVocabulary = relationship("Vocabulary", uselist=False, foreign_keys=[inVocabulary_id])
     
+    
+    keyword_rel = relationship( "ProductCategoryKeyword" )
+    keyword = association_proxy("keyword_rel", "keyword",
+                                  creator=lambda x_: ProductCategoryKeyword(keyword=x_))
+    
 
     def __repr__(self):
         return f"ProductCategory(id={self.id},title={self.title},description={self.description},weight={self.weight},parentCategory_id={self.parentCategory_id},inVocabulary_id={self.inVocabulary_id},)"
@@ -5300,6 +6848,11 @@ class IsolationHost(Term):
     inVocabulary_id = Column(Integer(), ForeignKey('Vocabulary.id'), nullable=False )
     inVocabulary = relationship("Vocabulary", uselist=False, foreign_keys=[inVocabulary_id])
     
+    
+    keyword_rel = relationship( "IsolationHostKeyword" )
+    keyword = association_proxy("keyword_rel", "keyword",
+                                  creator=lambda x_: IsolationHostKeyword(keyword=x_))
+    
 
     def __repr__(self):
         return f"IsolationHost(id={self.id},title={self.title},description={self.description},weight={self.weight},inVocabulary_id={self.inVocabulary_id},)"
@@ -5326,6 +6879,11 @@ class GeographicalOrigin(Term):
     weight = Column(Integer(), nullable=False )
     inVocabulary_id = Column(Integer(), ForeignKey('Vocabulary.id'), nullable=False )
     inVocabulary = relationship("Vocabulary", uselist=False, foreign_keys=[inVocabulary_id])
+    
+    
+    keyword_rel = relationship( "GeographicalOriginKeyword" )
+    keyword = association_proxy("keyword_rel", "keyword",
+                                  creator=lambda x_: GeographicalOriginKeyword(keyword=x_))
     
 
     def __repr__(self):
@@ -5355,6 +6913,11 @@ class Country(Term):
     inVocabulary_id = Column(Integer(), ForeignKey('Vocabulary.id'), nullable=False )
     inVocabulary = relationship("Vocabulary", uselist=False, foreign_keys=[inVocabulary_id])
     
+    
+    keyword_rel = relationship( "CountryKeyword" )
+    keyword = association_proxy("keyword_rel", "keyword",
+                                  creator=lambda x_: CountryKeyword(keyword=x_))
+    
 
     def __repr__(self):
         return f"Country(id={self.id},alpha2Code={self.alpha2Code},title={self.title},description={self.description},weight={self.weight},inVocabulary_id={self.inVocabulary_id},)"
@@ -5381,6 +6944,11 @@ class IataClassification(Term):
     weight = Column(Integer(), nullable=False )
     inVocabulary_id = Column(Integer(), ForeignKey('Vocabulary.id'), nullable=False )
     inVocabulary = relationship("Vocabulary", uselist=False, foreign_keys=[inVocabulary_id])
+    
+    
+    keyword_rel = relationship( "IataClassificationKeyword" )
+    keyword = association_proxy("keyword_rel", "keyword",
+                                  creator=lambda x_: IataClassificationKeyword(keyword=x_))
     
 
     def __repr__(self):
@@ -5412,6 +6980,11 @@ class TaxonomicRank(Term):
     
     # ManyToMany
     taxonomy = relationship( "Taxonomy", secondary="TaxonomicRank_taxonomy")
+    
+    
+    keyword_rel = relationship( "TaxonomicRankKeyword" )
+    keyword = association_proxy("keyword_rel", "keyword",
+                                  creator=lambda x_: TaxonomicRankKeyword(keyword=x_))
     
 
     def __repr__(self):
@@ -5458,6 +7031,11 @@ class Taxon(Term):
     # ManyToMany
     externalEquivalentTaxon = relationship( "Taxon", secondary="Taxon_externalEquivalentTaxon")
     
+    
+    keyword_rel = relationship( "TaxonKeyword" )
+    keyword = association_proxy("keyword_rel", "keyword",
+                                  creator=lambda x_: TaxonKeyword(keyword=x_))
+    
 
     def __repr__(self):
         return f"Taxon(id={self.id},taxonomicId={self.taxonomicId},taxonomicNodeId={self.taxonomicNodeId},title={self.title},description={self.description},weight={self.weight},parentTaxon_id={self.parentTaxon_id},rank_id={self.rank_id},inVocabulary_id={self.inVocabulary_id},)"
@@ -5487,6 +7065,11 @@ class Person(PersonOrOrganization):
     contactPoint = relationship("ContactPoint", uselist=False, foreign_keys=[contactPoint_id])
     logo_id = Column(Integer(), ForeignKey('Image.id'))
     logo = relationship("Image", uselist=False, foreign_keys=[logo_id])
+    
+    
+    keyword_rel = relationship( "PersonKeyword" )
+    keyword = association_proxy("keyword_rel", "keyword",
+                                  creator=lambda x_: PersonKeyword(keyword=x_))
     
 
     def __repr__(self):
@@ -5524,6 +7107,11 @@ class Organization(PersonOrOrganization):
     # ManyToMany
     alternateName = relationship( "AlternateName", secondary="Organization_alternateName")
     
+    
+    keyword_rel = relationship( "OrganizationKeyword" )
+    keyword = association_proxy("keyword_rel", "keyword",
+                                  creator=lambda x_: OrganizationKeyword(keyword=x_))
+    
 
     def __repr__(self):
         return f"Organization(id={self.id},rorId={self.rorId},name={self.name},description={self.description},homePage={self.homePage},country_id={self.country_id},contactPoint_id={self.contactPoint_id},logo_id={self.logo_id},)"
@@ -5552,6 +7140,11 @@ class Originator(PersonOrOrganization):
     contactPoint = relationship("ContactPoint", uselist=False, foreign_keys=[contactPoint_id])
     logo_id = Column(Integer(), ForeignKey('Image.id'))
     logo = relationship("Image", uselist=False, foreign_keys=[logo_id])
+    
+    
+    keyword_rel = relationship( "OriginatorKeyword" )
+    keyword = association_proxy("keyword_rel", "keyword",
+                                  creator=lambda x_: OriginatorKeyword(keyword=x_))
     
 
     def __repr__(self):
@@ -5585,6 +7178,11 @@ class NaturalPartOrigin(BiologicalPartOrigin):
     recombinantPartIdentification_id = Column(Integer(), ForeignKey('RecombinantPartIdentification.id'))
     recombinantPartIdentification = relationship("RecombinantPartIdentification", uselist=False, foreign_keys=[recombinantPartIdentification_id])
     
+    
+    keyword_rel = relationship( "NaturalPartOriginKeyword" )
+    keyword = association_proxy("keyword_rel", "keyword",
+                                  creator=lambda x_: NaturalPartOriginKeyword(keyword=x_))
+    
 
     def __repr__(self):
         return f"NaturalPartOrigin(id={self.id},collectionDate={self.collectionDate},beforeDate={self.beforeDate},permitIdentifierForAbs={self.permitIdentifierForAbs},accessToPhysicalGeneticResource={self.accessToPhysicalGeneticResource},countryOfCollection_id={self.countryOfCollection_id},indigenousPeopleAndLocalCommunityOrigin_id={self.indigenousPeopleAndLocalCommunityOrigin_id},recombinantPartIdentification_id={self.recombinantPartIdentification_id},)"
@@ -5611,6 +7209,11 @@ class SyntheticPartOrigin(BiologicalPartOrigin):
     accessToPhysicalGeneticResource = Column(Boolean(), nullable=False )
     recombinantPartIdentification_id = Column(Integer(), ForeignKey('RecombinantPartIdentification.id'))
     recombinantPartIdentification = relationship("RecombinantPartIdentification", uselist=False, foreign_keys=[recombinantPartIdentification_id])
+    
+    
+    keyword_rel = relationship( "SyntheticPartOriginKeyword" )
+    keyword = association_proxy("keyword_rel", "keyword",
+                                  creator=lambda x_: SyntheticPartOriginKeyword(keyword=x_))
     
 
     def __repr__(self):
@@ -5692,6 +7295,11 @@ class ProductOrService(Dataset):
     # ManyToMany
     certification = relationship( "Certification", secondary="ProductOrService_certification")
     
+    
+    keyword_rel = relationship( "ProductOrServiceKeyword" )
+    keyword = association_proxy("keyword_rel", "keyword",
+                                  creator=lambda x_: ProductOrServiceKeyword(keyword=x_))
+    
 
     def __repr__(self):
         return f"ProductOrService(id={self.id},accessPointUrl={self.accessPointUrl},refSku={self.refSku},unitDefinition={self.unitDefinition},unitCost={self.unitCost},qualityGrading={self.qualityGrading},biosafetyRestrictions={self.biosafetyRestrictions},canBeUsedToProduceGmo={self.canBeUsedToProduceGmo},availability={self.availability},technicalRecommendation={self.technicalRecommendation},internalReference={self.internalReference},note={self.note},title={self.title},description={self.description},version={self.version},category_id={self.category_id},riskGroup_id={self.riskGroup_id},provider_id={self.provider_id},contactPoint_id={self.contactPoint_id},)"
@@ -5719,6 +7327,11 @@ class Data(File):
     format = Column(Text(), nullable=False )
     license_id = Column(Integer(), ForeignKey('License.id'))
     license = relationship("License", uselist=False, foreign_keys=[license_id])
+    
+    
+    keyword_rel = relationship( "DataKeyword" )
+    keyword = association_proxy("keyword_rel", "keyword",
+                                  creator=lambda x_: DataKeyword(keyword=x_))
     
 
     def __repr__(self):
@@ -5748,6 +7361,11 @@ class Document(File):
     license_id = Column(Integer(), ForeignKey('License.id'))
     license = relationship("License", uselist=False, foreign_keys=[license_id])
     
+    
+    keyword_rel = relationship( "DocumentKeyword" )
+    keyword = association_proxy("keyword_rel", "keyword",
+                                  creator=lambda x_: DocumentKeyword(keyword=x_))
+    
 
     def __repr__(self):
         return f"Document(id={self.id},name={self.name},description={self.description},contentUrl={self.contentUrl},format={self.format},license_id={self.license_id},)"
@@ -5775,6 +7393,11 @@ class Audio(File):
     format = Column(Text(), nullable=False )
     license_id = Column(Integer(), ForeignKey('License.id'))
     license = relationship("License", uselist=False, foreign_keys=[license_id])
+    
+    
+    keyword_rel = relationship( "AudioKeyword" )
+    keyword = association_proxy("keyword_rel", "keyword",
+                                  creator=lambda x_: AudioKeyword(keyword=x_))
     
 
     def __repr__(self):
@@ -5804,6 +7427,11 @@ class Video(File):
     license_id = Column(Integer(), ForeignKey('License.id'))
     license = relationship("License", uselist=False, foreign_keys=[license_id])
     
+    
+    keyword_rel = relationship( "VideoKeyword" )
+    keyword = association_proxy("keyword_rel", "keyword",
+                                  creator=lambda x_: VideoKeyword(keyword=x_))
+    
 
     def __repr__(self):
         return f"Video(id={self.id},name={self.name},description={self.description},contentUrl={self.contentUrl},format={self.format},license_id={self.license_id},)"
@@ -5832,6 +7460,11 @@ class Image(File):
     format = Column(Text(), nullable=False )
     license_id = Column(Integer(), ForeignKey('License.id'))
     license = relationship("License", uselist=False, foreign_keys=[license_id])
+    
+    
+    keyword_rel = relationship( "ImageKeyword" )
+    keyword = association_proxy("keyword_rel", "keyword",
+                                  creator=lambda x_: ImageKeyword(keyword=x_))
     
 
     def __repr__(self):
@@ -5872,6 +7505,11 @@ class Taxonomy(Catalogue):
     # ManyToMany
     rank = relationship( "TaxonomicRank", secondary="Taxonomy_rank")
     
+    
+    keyword_rel = relationship( "TaxonomyKeyword" )
+    keyword = association_proxy("keyword_rel", "keyword",
+                                  creator=lambda x_: TaxonomyKeyword(keyword=x_))
+    
 
     def __repr__(self):
         return f"Taxonomy(id={self.id},version={self.version},title={self.title},description={self.description},taxonDataProvider_id={self.taxonDataProvider_id},versionDataProvider_id={self.versionDataProvider_id},rankDataProvider_id={self.rankDataProvider_id},)"
@@ -5902,6 +7540,11 @@ class Vocabulary(Catalogue):
     
     # ManyToMany
     term = relationship( "Term", secondary="Vocabulary_term")
+    
+    
+    keyword_rel = relationship( "VocabularyKeyword" )
+    keyword = association_proxy("keyword_rel", "keyword",
+                                  creator=lambda x_: VocabularyKeyword(keyword=x_))
     
 
     def __repr__(self):
@@ -5939,6 +7582,11 @@ class VirusName(CommonName):
     sourceOfInformation = association_proxy("sourceOfInformation_rel", "sourceOfInformation",
                                   creator=lambda x_: VirusNameSourceOfInformation(sourceOfInformation=x_))
     
+    
+    keyword_rel = relationship( "VirusNameKeyword" )
+    keyword = association_proxy("keyword_rel", "keyword",
+                                  creator=lambda x_: VirusNameKeyword(keyword=x_))
+    
 
     def __repr__(self):
         return f"VirusName(id={self.id},title={self.title},description={self.description},weight={self.weight},inVocabulary_id={self.inVocabulary_id},)"
@@ -5965,6 +7613,11 @@ class IplcOrigin(GeographicalOrigin):
     weight = Column(Integer(), nullable=False )
     inVocabulary_id = Column(Integer(), ForeignKey('Vocabulary.id'), nullable=False )
     inVocabulary = relationship("Vocabulary", uselist=False, foreign_keys=[inVocabulary_id])
+    
+    
+    keyword_rel = relationship( "IplcOriginKeyword" )
+    keyword = association_proxy("keyword_rel", "keyword",
+                                  creator=lambda x_: IplcOriginKeyword(keyword=x_))
     
 
     def __repr__(self):
@@ -6002,6 +7655,11 @@ class Variant(CommonName):
     sourceOfInformation = association_proxy("sourceOfInformation_rel", "sourceOfInformation",
                                   creator=lambda x_: VariantSourceOfInformation(sourceOfInformation=x_))
     
+    
+    keyword_rel = relationship( "VariantKeyword" )
+    keyword = association_proxy("keyword_rel", "keyword",
+                                  creator=lambda x_: VariantKeyword(keyword=x_))
+    
 
     def __repr__(self):
         return f"Variant(id={self.id},title={self.title},description={self.description},weight={self.weight},inVocabulary_id={self.inVocabulary_id},)"
@@ -6037,6 +7695,11 @@ class ReasearchInfrastructure(Organization):
     
     # ManyToMany
     alternateName = relationship( "AlternateName", secondary="ReasearchInfrastructure_alternateName")
+    
+    
+    keyword_rel = relationship( "ReasearchInfrastructureKeyword" )
+    keyword = association_proxy("keyword_rel", "keyword",
+                                  creator=lambda x_: ReasearchInfrastructureKeyword(keyword=x_))
     
 
     def __repr__(self):
@@ -6078,6 +7741,11 @@ class Provider(Organization):
     # ManyToMany
     alternateName = relationship( "AlternateName", secondary="Provider_alternateName")
     
+    
+    keyword_rel = relationship( "ProviderKeyword" )
+    keyword = association_proxy("keyword_rel", "keyword",
+                                  creator=lambda x_: ProviderKeyword(keyword=x_))
+    
 
     def __repr__(self):
         return f"Provider(id={self.id},rorId={self.rorId},name={self.name},description={self.description},homePage={self.homePage},country_id={self.country_id},contactPoint_id={self.contactPoint_id},logo_id={self.logo_id},)"
@@ -6108,6 +7776,11 @@ class Collection(Catalogue):
     
     # ManyToMany
     collectionItem = relationship( "ProductOrService", secondary="Collection_collectionItem")
+    
+    
+    keyword_rel = relationship( "CollectionKeyword" )
+    keyword = association_proxy("keyword_rel", "keyword",
+                                  creator=lambda x_: CollectionKeyword(keyword=x_))
     
 
     def __repr__(self):
@@ -6190,6 +7863,11 @@ class Service(ProductOrService):
     
     # ManyToMany
     certification = relationship( "Certification", secondary="Service_certification")
+    
+    
+    keyword_rel = relationship( "ServiceKeyword" )
+    keyword = association_proxy("keyword_rel", "keyword",
+                                  creator=lambda x_: ServiceKeyword(keyword=x_))
     
 
     def __repr__(self):
@@ -6280,6 +7958,11 @@ class Product(ProductOrService):
     
     # ManyToMany
     certification = relationship( "Certification", secondary="Product_certification")
+    
+    
+    keyword_rel = relationship( "ProductKeyword" )
+    keyword = association_proxy("keyword_rel", "keyword",
+                                  creator=lambda x_: ProductKeyword(keyword=x_))
     
 
     def __repr__(self):
@@ -6378,6 +8061,11 @@ class Antibody(Product):
     
     # ManyToMany
     certification = relationship( "Certification", secondary="Antibody_certification")
+    
+    
+    keyword_rel = relationship( "AntibodyKeyword" )
+    keyword = association_proxy("keyword_rel", "keyword",
+                                  creator=lambda x_: AntibodyKeyword(keyword=x_))
     
 
     def __repr__(self):
@@ -6532,6 +8220,11 @@ class Protein(Product):
     # ManyToMany
     certification = relationship( "Certification", secondary="Protein_certification")
     
+    
+    keyword_rel = relationship( "ProteinKeyword" )
+    keyword = association_proxy("keyword_rel", "keyword",
+                                  creator=lambda x_: ProteinKeyword(keyword=x_))
+    
 
     def __repr__(self):
         return f"Protein(id={self.id},shippingConditions={self.shippingConditions},storageConditions={self.storageConditions},thirdPartyDistributionConsent={self.thirdPartyDistributionConsent},usageRestrictions={self.usageRestrictions},accessPointUrl={self.accessPointUrl},refSku={self.refSku},unitDefinition={self.unitDefinition},unitCost={self.unitCost},qualityGrading={self.qualityGrading},biosafetyRestrictions={self.biosafetyRestrictions},canBeUsedToProduceGmo={self.canBeUsedToProduceGmo},availability={self.availability},technicalRecommendation={self.technicalRecommendation},internalReference={self.internalReference},note={self.note},title={self.title},description={self.description},version={self.version},biologicalMaterialOrigin_id={self.biologicalMaterialOrigin_id},iataClassification_id={self.iataClassification_id},materialSafetyDataSheet_id={self.materialSafetyDataSheet_id},originator_id={self.originator_id},category_id={self.category_id},riskGroup_id={self.riskGroup_id},provider_id={self.provider_id},contactPoint_id={self.contactPoint_id},)"
@@ -6648,6 +8341,11 @@ class NucleicAcid(Product):
     # ManyToMany
     certification = relationship( "Certification", secondary="NucleicAcid_certification")
     
+    
+    keyword_rel = relationship( "NucleicAcidKeyword" )
+    keyword = association_proxy("keyword_rel", "keyword",
+                                  creator=lambda x_: NucleicAcidKeyword(keyword=x_))
+    
 
     def __repr__(self):
         return f"NucleicAcid(id={self.id},clonedNucleicAcid={self.clonedNucleicAcid},regionEncompassedInThisProduct={self.regionEncompassedInThisProduct},mutationObserved={self.mutationObserved},observedMutations={self.observedMutations},identificationTechnique={self.identificationTechnique},sequencing={self.sequencing},titer={self.titer},sequenceChecked={self.sequenceChecked},shippingConditions={self.shippingConditions},storageConditions={self.storageConditions},thirdPartyDistributionConsent={self.thirdPartyDistributionConsent},usageRestrictions={self.usageRestrictions},accessPointUrl={self.accessPointUrl},refSku={self.refSku},unitDefinition={self.unitDefinition},unitCost={self.unitCost},qualityGrading={self.qualityGrading},biosafetyRestrictions={self.biosafetyRestrictions},canBeUsedToProduceGmo={self.canBeUsedToProduceGmo},availability={self.availability},technicalRecommendation={self.technicalRecommendation},internalReference={self.internalReference},note={self.note},title={self.title},description={self.description},version={self.version},biologicalMaterialOrigin_id={self.biologicalMaterialOrigin_id},clonedIntoPlasmid_id={self.clonedIntoPlasmid_id},tagSequence_id={self.tagSequence_id},iataClassification_id={self.iataClassification_id},materialSafetyDataSheet_id={self.materialSafetyDataSheet_id},originator_id={self.originator_id},category_id={self.category_id},riskGroup_id={self.riskGroup_id},provider_id={self.provider_id},contactPoint_id={self.contactPoint_id},)"
@@ -6745,6 +8443,11 @@ class DetectionKit(Product):
     # ManyToMany
     certification = relationship( "Certification", secondary="DetectionKit_certification")
     
+    
+    keyword_rel = relationship( "DetectionKitKeyword" )
+    keyword = association_proxy("keyword_rel", "keyword",
+                                  creator=lambda x_: DetectionKitKeyword(keyword=x_))
+    
 
     def __repr__(self):
         return f"DetectionKit(id={self.id},specificityDocumented={self.specificityDocumented},specificity={self.specificity},targetedRegion={self.targetedRegion},shippingConditions={self.shippingConditions},storageConditions={self.storageConditions},thirdPartyDistributionConsent={self.thirdPartyDistributionConsent},usageRestrictions={self.usageRestrictions},accessPointUrl={self.accessPointUrl},refSku={self.refSku},unitDefinition={self.unitDefinition},unitCost={self.unitCost},qualityGrading={self.qualityGrading},biosafetyRestrictions={self.biosafetyRestrictions},canBeUsedToProduceGmo={self.canBeUsedToProduceGmo},availability={self.availability},technicalRecommendation={self.technicalRecommendation},internalReference={self.internalReference},note={self.note},title={self.title},description={self.description},version={self.version},iataClassification_id={self.iataClassification_id},materialSafetyDataSheet_id={self.materialSafetyDataSheet_id},originator_id={self.originator_id},category_id={self.category_id},riskGroup_id={self.riskGroup_id},provider_id={self.provider_id},contactPoint_id={self.contactPoint_id},)"
@@ -6838,6 +8541,11 @@ class Bundle(Product):
     
     # ManyToMany
     certification = relationship( "Certification", secondary="Bundle_certification")
+    
+    
+    keyword_rel = relationship( "BundleKeyword" )
+    keyword = association_proxy("keyword_rel", "keyword",
+                                  creator=lambda x_: BundleKeyword(keyword=x_))
     
 
     def __repr__(self):
@@ -6966,6 +8674,11 @@ class Pathogen(Product):
     # ManyToMany
     certification = relationship( "Certification", secondary="Pathogen_certification")
     
+    
+    keyword_rel = relationship( "PathogenKeyword" )
+    keyword = association_proxy("keyword_rel", "keyword",
+                                  creator=lambda x_: PathogenKeyword(keyword=x_))
+    
 
     def __repr__(self):
         return f"Pathogen(id={self.id},cultivability={self.cultivability},clinicalInformation={self.clinicalInformation},identificationTechnique={self.identificationTechnique},infectivity={self.infectivity},infectivityTest={self.infectivityTest},isolationTechnique={self.isolationTechnique},isolationConditions={self.isolationConditions},letterOfAuthority={self.letterOfAuthority},passage={self.passage},genomeSequencing={self.genomeSequencing},titer={self.titer},shippingConditions={self.shippingConditions},storageConditions={self.storageConditions},thirdPartyDistributionConsent={self.thirdPartyDistributionConsent},usageRestrictions={self.usageRestrictions},accessPointUrl={self.accessPointUrl},refSku={self.refSku},unitDefinition={self.unitDefinition},unitCost={self.unitCost},qualityGrading={self.qualityGrading},biosafetyRestrictions={self.biosafetyRestrictions},canBeUsedToProduceGmo={self.canBeUsedToProduceGmo},availability={self.availability},technicalRecommendation={self.technicalRecommendation},internalReference={self.internalReference},note={self.note},title={self.title},description={self.description},version={self.version},biologicalMaterialOrigin_id={self.biologicalMaterialOrigin_id},iataClassification_id={self.iataClassification_id},materialSafetyDataSheet_id={self.materialSafetyDataSheet_id},originator_id={self.originator_id},category_id={self.category_id},riskGroup_id={self.riskGroup_id},provider_id={self.provider_id},contactPoint_id={self.contactPoint_id},)"
@@ -7064,6 +8777,11 @@ class Hybridoma(Antibody):
     
     # ManyToMany
     certification = relationship( "Certification", secondary="Hybridoma_certification")
+    
+    
+    keyword_rel = relationship( "HybridomaKeyword" )
+    keyword = association_proxy("keyword_rel", "keyword",
+                                  creator=lambda x_: HybridomaKeyword(keyword=x_))
     
 
     def __repr__(self):
@@ -7198,6 +8916,11 @@ class Virus(Pathogen):
     # ManyToMany
     certification = relationship( "Certification", secondary="Virus_certification")
     
+    
+    keyword_rel = relationship( "VirusKeyword" )
+    keyword = association_proxy("keyword_rel", "keyword",
+                                  creator=lambda x_: VirusKeyword(keyword=x_))
+    
 
     def __repr__(self):
         return f"Virus(id={self.id},contaminationWithCoInfectingViruses={self.contaminationWithCoInfectingViruses},mycoplasmicContent={self.mycoplasmicContent},cultivability={self.cultivability},clinicalInformation={self.clinicalInformation},identificationTechnique={self.identificationTechnique},infectivity={self.infectivity},infectivityTest={self.infectivityTest},isolationTechnique={self.isolationTechnique},isolationConditions={self.isolationConditions},letterOfAuthority={self.letterOfAuthority},passage={self.passage},genomeSequencing={self.genomeSequencing},titer={self.titer},shippingConditions={self.shippingConditions},storageConditions={self.storageConditions},thirdPartyDistributionConsent={self.thirdPartyDistributionConsent},usageRestrictions={self.usageRestrictions},accessPointUrl={self.accessPointUrl},refSku={self.refSku},unitDefinition={self.unitDefinition},unitCost={self.unitCost},qualityGrading={self.qualityGrading},biosafetyRestrictions={self.biosafetyRestrictions},canBeUsedToProduceGmo={self.canBeUsedToProduceGmo},availability={self.availability},technicalRecommendation={self.technicalRecommendation},internalReference={self.internalReference},note={self.note},title={self.title},description={self.description},version={self.version},biologicalMaterialOrigin_id={self.biologicalMaterialOrigin_id},iataClassification_id={self.iataClassification_id},materialSafetyDataSheet_id={self.materialSafetyDataSheet_id},originator_id={self.originator_id},category_id={self.category_id},riskGroup_id={self.riskGroup_id},provider_id={self.provider_id},contactPoint_id={self.contactPoint_id},)"
@@ -7324,6 +9047,11 @@ class Bacterium(Pathogen):
     
     # ManyToMany
     certification = relationship( "Certification", secondary="Bacterium_certification")
+    
+    
+    keyword_rel = relationship( "BacteriumKeyword" )
+    keyword = association_proxy("keyword_rel", "keyword",
+                                  creator=lambda x_: BacteriumKeyword(keyword=x_))
     
 
     def __repr__(self):
@@ -7452,6 +9180,11 @@ class Fungus(Pathogen):
     # ManyToMany
     certification = relationship( "Certification", secondary="Fungus_certification")
     
+    
+    keyword_rel = relationship( "FungusKeyword" )
+    keyword = association_proxy("keyword_rel", "keyword",
+                                  creator=lambda x_: FungusKeyword(keyword=x_))
+    
 
     def __repr__(self):
         return f"Fungus(id={self.id},cultivability={self.cultivability},clinicalInformation={self.clinicalInformation},identificationTechnique={self.identificationTechnique},infectivity={self.infectivity},infectivityTest={self.infectivityTest},isolationTechnique={self.isolationTechnique},isolationConditions={self.isolationConditions},letterOfAuthority={self.letterOfAuthority},passage={self.passage},genomeSequencing={self.genomeSequencing},titer={self.titer},shippingConditions={self.shippingConditions},storageConditions={self.storageConditions},thirdPartyDistributionConsent={self.thirdPartyDistributionConsent},usageRestrictions={self.usageRestrictions},accessPointUrl={self.accessPointUrl},refSku={self.refSku},unitDefinition={self.unitDefinition},unitCost={self.unitCost},qualityGrading={self.qualityGrading},biosafetyRestrictions={self.biosafetyRestrictions},canBeUsedToProduceGmo={self.canBeUsedToProduceGmo},availability={self.availability},technicalRecommendation={self.technicalRecommendation},internalReference={self.internalReference},note={self.note},title={self.title},description={self.description},version={self.version},biologicalMaterialOrigin_id={self.biologicalMaterialOrigin_id},iataClassification_id={self.iataClassification_id},materialSafetyDataSheet_id={self.materialSafetyDataSheet_id},originator_id={self.originator_id},category_id={self.category_id},riskGroup_id={self.riskGroup_id},provider_id={self.provider_id},contactPoint_id={self.contactPoint_id},)"
@@ -7578,6 +9311,11 @@ class Protozoan(Pathogen):
     
     # ManyToMany
     certification = relationship( "Certification", secondary="Protozoan_certification")
+    
+    
+    keyword_rel = relationship( "ProtozoanKeyword" )
+    keyword = association_proxy("keyword_rel", "keyword",
+                                  creator=lambda x_: ProtozoanKeyword(keyword=x_))
     
 
     def __repr__(self):
@@ -7706,6 +9444,11 @@ class Viroid(Pathogen):
     # ManyToMany
     certification = relationship( "Certification", secondary="Viroid_certification")
     
+    
+    keyword_rel = relationship( "ViroidKeyword" )
+    keyword = association_proxy("keyword_rel", "keyword",
+                                  creator=lambda x_: ViroidKeyword(keyword=x_))
+    
 
     def __repr__(self):
         return f"Viroid(id={self.id},cultivability={self.cultivability},clinicalInformation={self.clinicalInformation},identificationTechnique={self.identificationTechnique},infectivity={self.infectivity},infectivityTest={self.infectivityTest},isolationTechnique={self.isolationTechnique},isolationConditions={self.isolationConditions},letterOfAuthority={self.letterOfAuthority},passage={self.passage},genomeSequencing={self.genomeSequencing},titer={self.titer},shippingConditions={self.shippingConditions},storageConditions={self.storageConditions},thirdPartyDistributionConsent={self.thirdPartyDistributionConsent},usageRestrictions={self.usageRestrictions},accessPointUrl={self.accessPointUrl},refSku={self.refSku},unitDefinition={self.unitDefinition},unitCost={self.unitCost},qualityGrading={self.qualityGrading},biosafetyRestrictions={self.biosafetyRestrictions},canBeUsedToProduceGmo={self.canBeUsedToProduceGmo},availability={self.availability},technicalRecommendation={self.technicalRecommendation},internalReference={self.internalReference},note={self.note},title={self.title},description={self.description},version={self.version},biologicalMaterialOrigin_id={self.biologicalMaterialOrigin_id},iataClassification_id={self.iataClassification_id},materialSafetyDataSheet_id={self.materialSafetyDataSheet_id},originator_id={self.originator_id},category_id={self.category_id},riskGroup_id={self.riskGroup_id},provider_id={self.provider_id},contactPoint_id={self.contactPoint_id},)"
@@ -7832,6 +9575,11 @@ class Prion(Pathogen):
     
     # ManyToMany
     certification = relationship( "Certification", secondary="Prion_certification")
+    
+    
+    keyword_rel = relationship( "PrionKeyword" )
+    keyword = association_proxy("keyword_rel", "keyword",
+                                  creator=lambda x_: PrionKeyword(keyword=x_))
     
 
     def __repr__(self):

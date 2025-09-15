@@ -65,6 +65,7 @@ SELECT ?g ?s ?p WHERE {
   FILTER ( ?p NOT IN (
    EVORAO:accessionNumber,
    EVORAO:sequenceProvider,
+   dcat:keyword,
    rdf:type ))
  }
  

@@ -23,6 +23,8 @@ URI: [EVORAO:RecombinantPartIdentification](https://w3id.org/evorao/RecombinantP
       Resource <|-- RecombinantPartIdentification
         click Resource href "../Resource"
       
+      RecombinantPartIdentification : keyword
+        
       RecombinantPartIdentification : partIdentification
         
       RecombinantPartIdentification : sequence
@@ -53,6 +55,7 @@ URI: [EVORAO:RecombinantPartIdentification](https://w3id.org/evorao/RecombinantP
 | ---  | --- | --- | --- |
 | [partIdentification](partIdentification.md) | 1 <br/> [String](String.md) | A short designation of this recombinant part of the related biological materi... | direct |
 | [sequence](sequence.md) | 1..* _recommended_ <br/> [Sequence](Sequence.md) | The related sequence information from a sequence provider or in fasta format | direct |
+| [keyword](keyword.md) | * <br/> [String](String.md) | A keyword or tag describing the resource | [Resource](Resource.md) |
 
 
 
@@ -226,6 +229,20 @@ attributes:
     range: Sequence
     required: true
     recommended: true
+    multivalued: true
+  keyword:
+    name: keyword
+    description: A keyword or tag describing the resource
+    title: keyword
+    from_schema: https://w3id.org/evorao/
+    rank: 1000
+    slot_uri: dcat:keyword
+    alias: keyword
+    owner: RecombinantPartIdentification
+    domain_of:
+    - Resource
+    range: string
+    required: false
     multivalued: true
 
 ```

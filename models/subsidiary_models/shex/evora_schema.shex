@@ -1,5 +1,5 @@
 # metamodel_version: 1.7.0
-# version: 1.0.9734
+# version: 1.0.9808
 BASE <https://w3id.org/evorao/>
 PREFIX dcat: <http://www.w3.org/ns/dcat#>
 PREFIX foaf: <http://xmlns.com/foaf/0.1/>
@@ -623,7 +623,7 @@ linkml:Sparqlpath xsd:string
           <accessPointUrl> @linkml:Uri ;
           <refSku> @linkml:String ;
           <unitDefinition> @linkml:String ? ;
-          <category> @<ProductCategory> ;
+          dcat:theme @<ProductCategory> ;
           <additionalCategory> @<ProductCategory> * ;
           <unitCost> @linkml:String ;
           <qualityGrading> @linkml:String ? ;
@@ -735,7 +735,7 @@ linkml:Sparqlpath xsd:string
 )
 
 <Resource_struct> {
-    (  $<Resource_tes> rdf:type . * ;
+    (  $<Resource_tes> dcat:keyword @linkml:String * ;
        rdf:type [ dcat:Resource ] ?
     )
 }

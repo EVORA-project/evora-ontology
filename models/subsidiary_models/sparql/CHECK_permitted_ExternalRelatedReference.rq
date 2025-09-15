@@ -67,6 +67,7 @@ SELECT ?g ?s ?p WHERE {
    EVORAO:referenceLabel,
    EVORAO:referenceProviderPrefix,
    EVORAO:referenceProviderName,
+   dcat:keyword,
    rdf:type ))
  }
  

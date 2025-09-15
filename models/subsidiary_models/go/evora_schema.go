@@ -4,6 +4,10 @@ package EVORAO
  * Resource published or curated by a single agent
  */
 type Resource struct {
+	/*
+	 * A keyword or tag describing the resource
+	 */
+	Keyword string `json:"keyword"`
 }
 
 /*
@@ -26,6 +30,10 @@ type Dataset struct {
 	 * The version indicator (name or identifier) of a resource
 	 */
 	Version string `json:"version"`
+	/*
+	 * A keyword or tag describing the resource
+	 */
+	Keyword string `json:"keyword"`
 }
 
 /*
@@ -52,6 +60,10 @@ type DataService struct {
 	 * A collection of data that this data service can distribute
 	 */
 	ServesDataset []Dataset `json:"servesDataset"`
+	/*
+	 * A keyword or tag describing the resource
+	 */
+	Keyword string `json:"keyword"`
 }
 
 /*
@@ -74,6 +86,10 @@ type Version struct {
 	 * Resource published or curated by a single agent
 	 */
 	Resource []Resource `json:"resource"`
+	/*
+	 * A keyword or tag describing the resource
+	 */
+	Keyword string `json:"keyword"`
 }
 
 /*
@@ -96,6 +112,10 @@ type Catalogue struct {
 	 * The version indicator (name or identifier) of a resource
 	 */
 	Version string `json:"version"`
+	/*
+	 * A keyword or tag describing the resource
+	 */
+	Keyword string `json:"keyword"`
 }
 
 /*
@@ -138,6 +158,10 @@ type Taxonomy struct {
 	 * A short explanation of the characteristics, features, or nature of the current item
 	 */
 	Description string `json:"description"`
+	/*
+	 * A keyword or tag describing the resource
+	 */
+	Keyword string `json:"keyword"`
 }
 
 /*
@@ -196,6 +220,10 @@ type DataProvider struct {
 	 * A collection of data that this data service can distribute
 	 */
 	ServesDataset []Dataset `json:"servesDataset"`
+	/*
+	 * A keyword or tag describing the resource
+	 */
+	Keyword string `json:"keyword"`
 }
 
 /*
@@ -246,6 +274,10 @@ type PathogenIdentification struct {
 	 * An organism with one or more new mutations is referred to as a “variant” of the original organism if not sufficiently different to be termed a distinct strain
 	 */
 	Variant Variant `json:"variant"`
+	/*
+	 * A keyword or tag describing the resource
+	 */
+	Keyword string `json:"keyword"`
 }
 
 /*
@@ -276,6 +308,10 @@ type Publication struct {
 	 * The scientific journal in which the publication was published
 	 */
 	Journal Journal `json:"journal"`
+	/*
+	 * A keyword or tag describing the resource
+	 */
+	Keyword string `json:"keyword"`
 }
 
 /*
@@ -306,6 +342,10 @@ type Vocabulary struct {
 	 * The version indicator (name or identifier) of a resource
 	 */
 	Version string `json:"version"`
+	/*
+	 * A keyword or tag describing the resource
+	 */
+	Keyword string `json:"keyword"`
 }
 
 /*
@@ -332,6 +372,10 @@ type Term struct {
 	 * Terms belong to a specific vocabulary
 	 */
 	InVocabulary Vocabulary `json:"inVocabulary"`
+	/*
+	 * A keyword or tag describing the resource
+	 */
+	Keyword string `json:"keyword"`
 }
 
 /*
@@ -366,6 +410,10 @@ type CommonName struct {
 	 * Terms belong to a specific vocabulary
 	 */
 	InVocabulary Vocabulary `json:"inVocabulary"`
+	/*
+	 * A keyword or tag describing the resource
+	 */
+	Keyword string `json:"keyword"`
 }
 
 /*
@@ -400,6 +448,10 @@ type VirusName struct {
 	 * Terms belong to a specific vocabulary
 	 */
 	InVocabulary Vocabulary `json:"inVocabulary"`
+	/*
+	 * A keyword or tag describing the resource
+	 */
+	Keyword string `json:"keyword"`
 }
 
 /*
@@ -434,6 +486,10 @@ type AlternateName struct {
 	 * Terms belong to a specific vocabulary
 	 */
 	InVocabulary Vocabulary `json:"inVocabulary"`
+	/*
+	 * A keyword or tag describing the resource
+	 */
+	Keyword string `json:"keyword"`
 }
 
 /*
@@ -460,6 +516,10 @@ type RiskGroup struct {
 	 * Terms belong to a specific vocabulary
 	 */
 	InVocabulary Vocabulary `json:"inVocabulary"`
+	/*
+	 * A keyword or tag describing the resource
+	 */
+	Keyword string `json:"keyword"`
 }
 
 /*
@@ -486,6 +546,10 @@ type Doi struct {
 	 * Terms belong to a specific vocabulary
 	 */
 	InVocabulary Vocabulary `json:"inVocabulary"`
+	/*
+	 * A keyword or tag describing the resource
+	 */
+	Keyword string `json:"keyword"`
 }
 
 /*
@@ -512,6 +576,10 @@ type Journal struct {
 	 * Terms belong to a specific vocabulary
 	 */
 	InVocabulary Vocabulary `json:"inVocabulary"`
+	/*
+	 * A keyword or tag describing the resource
+	 */
+	Keyword string `json:"keyword"`
 }
 
 /*
@@ -538,6 +606,10 @@ type PdbReference struct {
 	 * Terms belong to a specific vocabulary
 	 */
 	InVocabulary Vocabulary `json:"inVocabulary"`
+	/*
+	 * A keyword or tag describing the resource
+	 */
+	Keyword string `json:"keyword"`
 }
 
 /*
@@ -564,6 +636,10 @@ type Keyword struct {
 	 * Terms belong to a specific vocabulary
 	 */
 	InVocabulary Vocabulary `json:"inVocabulary"`
+	/*
+	 * A keyword or tag describing the resource
+	 */
+	Keyword string `json:"keyword"`
 }
 
 /*
@@ -590,6 +666,10 @@ type TagSequence struct {
 	 * Terms belong to a specific vocabulary
 	 */
 	InVocabulary Vocabulary `json:"inVocabulary"`
+	/*
+	 * A keyword or tag describing the resource
+	 */
+	Keyword string `json:"keyword"`
 }
 
 /*
@@ -616,6 +696,10 @@ type SpecialFeature struct {
 	 * Terms belong to a specific vocabulary
 	 */
 	InVocabulary Vocabulary `json:"inVocabulary"`
+	/*
+	 * A keyword or tag describing the resource
+	 */
+	Keyword string `json:"keyword"`
 }
 
 /*
@@ -642,6 +726,10 @@ type ExpressionVector struct {
 	 * Terms belong to a specific vocabulary
 	 */
 	InVocabulary Vocabulary `json:"inVocabulary"`
+	/*
+	 * A keyword or tag describing the resource
+	 */
+	Keyword string `json:"keyword"`
 }
 
 /*
@@ -668,6 +756,10 @@ type PlasmidSelection struct {
 	 * Terms belong to a specific vocabulary
 	 */
 	InVocabulary Vocabulary `json:"inVocabulary"`
+	/*
+	 * A keyword or tag describing the resource
+	 */
+	Keyword string `json:"keyword"`
 }
 
 /*
@@ -694,6 +786,10 @@ type PropagationHost struct {
 	 * Terms belong to a specific vocabulary
 	 */
 	InVocabulary Vocabulary `json:"inVocabulary"`
+	/*
+	 * A keyword or tag describing the resource
+	 */
+	Keyword string `json:"keyword"`
 }
 
 /*
@@ -720,6 +816,10 @@ type TransmissionMethod struct {
 	 * Terms belong to a specific vocabulary
 	 */
 	InVocabulary Vocabulary `json:"inVocabulary"`
+	/*
+	 * A keyword or tag describing the resource
+	 */
+	Keyword string `json:"keyword"`
 }
 
 /*
@@ -746,6 +846,10 @@ type ProductionCellLine struct {
 	 * Terms belong to a specific vocabulary
 	 */
 	InVocabulary Vocabulary `json:"inVocabulary"`
+	/*
+	 * A keyword or tag describing the resource
+	 */
+	Keyword string `json:"keyword"`
 }
 
 /*
@@ -776,6 +880,10 @@ type ProductCategory struct {
 	 * Terms belong to a specific vocabulary
 	 */
 	InVocabulary Vocabulary `json:"inVocabulary"`
+	/*
+	 * A keyword or tag describing the resource
+	 */
+	Keyword string `json:"keyword"`
 }
 
 /*
@@ -802,6 +910,10 @@ type IsolationHost struct {
 	 * Terms belong to a specific vocabulary
 	 */
 	InVocabulary Vocabulary `json:"inVocabulary"`
+	/*
+	 * A keyword or tag describing the resource
+	 */
+	Keyword string `json:"keyword"`
 }
 
 /*
@@ -828,6 +940,10 @@ type GeographicalOrigin struct {
 	 * Terms belong to a specific vocabulary
 	 */
 	InVocabulary Vocabulary `json:"inVocabulary"`
+	/*
+	 * A keyword or tag describing the resource
+	 */
+	Keyword string `json:"keyword"`
 }
 
 /*
@@ -854,6 +970,10 @@ type IplcOrigin struct {
 	 * Terms belong to a specific vocabulary
 	 */
 	InVocabulary Vocabulary `json:"inVocabulary"`
+	/*
+	 * A keyword or tag describing the resource
+	 */
+	Keyword string `json:"keyword"`
 }
 
 /*
@@ -884,6 +1004,10 @@ type Country struct {
 	 * Terms belong to a specific vocabulary
 	 */
 	InVocabulary Vocabulary `json:"inVocabulary"`
+	/*
+	 * A keyword or tag describing the resource
+	 */
+	Keyword string `json:"keyword"`
 }
 
 /*
@@ -910,6 +1034,10 @@ type IataClassification struct {
 	 * Terms belong to a specific vocabulary
 	 */
 	InVocabulary Vocabulary `json:"inVocabulary"`
+	/*
+	 * A keyword or tag describing the resource
+	 */
+	Keyword string `json:"keyword"`
 }
 
 /*
@@ -944,6 +1072,10 @@ type Variant struct {
 	 * Terms belong to a specific vocabulary
 	 */
 	InVocabulary Vocabulary `json:"inVocabulary"`
+	/*
+	 * A keyword or tag describing the resource
+	 */
+	Keyword string `json:"keyword"`
 }
 
 /*
@@ -974,6 +1106,10 @@ type TaxonomicRank struct {
 	 * Terms belong to a specific vocabulary
 	 */
 	InVocabulary Vocabulary `json:"inVocabulary"`
+	/*
+	 * A keyword or tag describing the resource
+	 */
+	Keyword string `json:"keyword"`
 }
 
 /*
@@ -1028,6 +1164,10 @@ type Taxon struct {
 	 * Terms belong to a specific vocabulary
 	 */
 	InVocabulary Vocabulary `json:"inVocabulary"`
+	/*
+	 * A keyword or tag describing the resource
+	 */
+	Keyword string `json:"keyword"`
 }
 
 /*
@@ -1054,6 +1194,10 @@ type ExternalRelatedReference struct {
 	 * The name for the reference provider
 	 */
 	ReferenceProviderName string `json:"referenceProviderName"`
+	/*
+	 * A keyword or tag describing the resource
+	 */
+	Keyword string `json:"keyword"`
 }
 
 /*
@@ -1072,6 +1216,10 @@ type Sequence struct {
 	 * Textual encoding of a biological sequence information in FASTA format
 	 */
 	SequenceFasta string `json:"sequenceFasta"`
+	/*
+	 * A keyword or tag describing the resource
+	 */
+	Keyword string `json:"keyword"`
 }
 
 /*
@@ -1090,6 +1238,10 @@ type SequenceReference struct {
 	 * The name of the sequence provider within the list of accepted sequence providers
 	 */
 	SequenceProvider string `json:"sequenceProvider"`
+	/*
+	 * A keyword or tag describing the resource
+	 */
+	Keyword string `json:"keyword"`
 }
 
 /*
@@ -1120,6 +1272,10 @@ type PersonOrOrganization struct {
 	 * A path or URL to the related logo
 	 */
 	Logo Image `json:"logo"`
+	/*
+	 * A keyword or tag describing the resource
+	 */
+	Keyword string `json:"keyword"`
 }
 
 /*
@@ -1154,6 +1310,10 @@ type Person struct {
 	 * A path or URL to the related logo
 	 */
 	Logo Image `json:"logo"`
+	/*
+	 * A keyword or tag describing the resource
+	 */
+	Keyword string `json:"keyword"`
 }
 
 /*
@@ -1196,6 +1356,10 @@ type Organization struct {
 	 * A path or URL to the related logo
 	 */
 	Logo Image `json:"logo"`
+	/*
+	 * A keyword or tag describing the resource
+	 */
+	Keyword string `json:"keyword"`
 }
 
 /*
@@ -1238,6 +1402,10 @@ type ReasearchInfrastructure struct {
 	 * A path or URL to the related logo
 	 */
 	Logo Image `json:"logo"`
+	/*
+	 * A keyword or tag describing the resource
+	 */
+	Keyword string `json:"keyword"`
 }
 
 /*
@@ -1284,6 +1452,10 @@ type Provider struct {
 	 * A path or URL to the related logo
 	 */
 	Logo Image `json:"logo"`
+	/*
+	 * A keyword or tag describing the resource
+	 */
+	Keyword string `json:"keyword"`
 }
 
 /*
@@ -1314,6 +1486,10 @@ type Originator struct {
 	 * A path or URL to the related logo
 	 */
 	Logo Image `json:"logo"`
+	/*
+	 * A keyword or tag describing the resource
+	 */
+	Keyword string `json:"keyword"`
 }
 
 /*
@@ -1336,6 +1512,10 @@ type BiologicalMaterialOrigin struct {
 	 * Details the origin of one or more unitary parts that make up the biological material. In the case of recombinant biological material, multiple parts may be involved.
 	 */
 	BiologicalPartOrigin []BiologicalPartOrigin `json:"biologicalPartOrigin"`
+	/*
+	 * A keyword or tag describing the resource
+	 */
+	Keyword string `json:"keyword"`
 }
 
 /*
@@ -1354,6 +1534,10 @@ type BiologicalPartOrigin struct {
 	 * Indicate if the biological part was produced with access to a physical genetic resource
 	 */
 	AccessToPhysicalGeneticResource bool `json:"accessToPhysicalGeneticResource"`
+	/*
+	 * A keyword or tag describing the resource
+	 */
+	Keyword string `json:"keyword"`
 }
 
 /*
@@ -1392,6 +1576,10 @@ type NaturalPartOrigin struct {
 	 * Indicate if the biological part was produced with access to a physical genetic resource
 	 */
 	AccessToPhysicalGeneticResource bool `json:"accessToPhysicalGeneticResource"`
+	/*
+	 * A keyword or tag describing the resource
+	 */
+	Keyword string `json:"keyword"`
 }
 
 /*
@@ -1418,6 +1606,10 @@ type SyntheticPartOrigin struct {
 	 * Indicate if the biological part was produced with access to a physical genetic resource
 	 */
 	AccessToPhysicalGeneticResource bool `json:"accessToPhysicalGeneticResource"`
+	/*
+	 * A keyword or tag describing the resource
+	 */
+	Keyword string `json:"keyword"`
 }
 
 /*
@@ -1436,6 +1628,10 @@ type RecombinantPartIdentification struct {
 	 * The related sequence information from a sequence provider or in fasta format
 	 */
 	Sequence []Sequence `json:"sequence"`
+	/*
+	 * A keyword or tag describing the resource
+	 */
+	Keyword string `json:"keyword"`
 }
 
 /*
@@ -1466,6 +1662,10 @@ type Collection struct {
 	 * The version indicator (name or identifier) of a resource
 	 */
 	Version string `json:"version"`
+	/*
+	 * A keyword or tag describing the resource
+	 */
+	Keyword string `json:"keyword"`
 }
 
 /*
@@ -1584,6 +1784,10 @@ type ProductOrService struct {
 	 * The version indicator (name or identifier) of a resource
 	 */
 	Version string `json:"version"`
+	/*
+	 * A keyword or tag describing the resource
+	 */
+	Keyword string `json:"keyword"`
 }
 
 /*
@@ -1710,6 +1914,10 @@ type Service struct {
 	 * The version indicator (name or identifier) of a resource
 	 */
 	Version string `json:"version"`
+	/*
+	 * A keyword or tag describing the resource
+	 */
+	Keyword string `json:"keyword"`
 }
 
 /*
@@ -1856,6 +2064,10 @@ type Product struct {
 	 * The version indicator (name or identifier) of a resource
 	 */
 	Version string `json:"version"`
+	/*
+	 * A keyword or tag describing the resource
+	 */
+	Keyword string `json:"keyword"`
 }
 
 /*
@@ -2022,6 +2234,10 @@ type Antibody struct {
 	 * The version indicator (name or identifier) of a resource
 	 */
 	Version string `json:"version"`
+	/*
+	 * A keyword or tag describing the resource
+	 */
+	Keyword string `json:"keyword"`
 }
 
 /*
@@ -2192,6 +2408,10 @@ type Hybridoma struct {
 	 * The version indicator (name or identifier) of a resource
 	 */
 	Version string `json:"version"`
+	/*
+	 * A keyword or tag describing the resource
+	 */
+	Keyword string `json:"keyword"`
 }
 
 /*
@@ -2394,6 +2614,10 @@ type Protein struct {
 	 * The version indicator (name or identifier) of a resource
 	 */
 	Version string `json:"version"`
+	/*
+	 * A keyword or tag describing the resource
+	 */
+	Keyword string `json:"keyword"`
 }
 
 /*
@@ -2596,6 +2820,10 @@ type NucleicAcid struct {
 	 * The version indicator (name or identifier) of a resource
 	 */
 	Version string `json:"version"`
+	/*
+	 * A keyword or tag describing the resource
+	 */
+	Keyword string `json:"keyword"`
 }
 
 /*
@@ -2758,6 +2986,10 @@ type DetectionKit struct {
 	 * The version indicator (name or identifier) of a resource
 	 */
 	Version string `json:"version"`
+	/*
+	 * A keyword or tag describing the resource
+	 */
+	Keyword string `json:"keyword"`
 }
 
 /*
@@ -2908,6 +3140,10 @@ type Bundle struct {
 	 * The version indicator (name or identifier) of a resource
 	 */
 	Version string `json:"version"`
+	/*
+	 * A keyword or tag describing the resource
+	 */
+	Keyword string `json:"keyword"`
 }
 
 /*
@@ -3126,6 +3362,10 @@ type Pathogen struct {
 	 * The version indicator (name or identifier) of a resource
 	 */
 	Version string `json:"version"`
+	/*
+	 * A keyword or tag describing the resource
+	 */
+	Keyword string `json:"keyword"`
 }
 
 /*
@@ -3356,6 +3596,10 @@ type Virus struct {
 	 * The version indicator (name or identifier) of a resource
 	 */
 	Version string `json:"version"`
+	/*
+	 * A keyword or tag describing the resource
+	 */
+	Keyword string `json:"keyword"`
 }
 
 /*
@@ -3574,6 +3818,10 @@ type Bacterium struct {
 	 * The version indicator (name or identifier) of a resource
 	 */
 	Version string `json:"version"`
+	/*
+	 * A keyword or tag describing the resource
+	 */
+	Keyword string `json:"keyword"`
 }
 
 /*
@@ -3792,6 +4040,10 @@ type Fungus struct {
 	 * The version indicator (name or identifier) of a resource
 	 */
 	Version string `json:"version"`
+	/*
+	 * A keyword or tag describing the resource
+	 */
+	Keyword string `json:"keyword"`
 }
 
 /*
@@ -4010,6 +4262,10 @@ type Protozoan struct {
 	 * The version indicator (name or identifier) of a resource
 	 */
 	Version string `json:"version"`
+	/*
+	 * A keyword or tag describing the resource
+	 */
+	Keyword string `json:"keyword"`
 }
 
 /*
@@ -4228,6 +4484,10 @@ type Viroid struct {
 	 * The version indicator (name or identifier) of a resource
 	 */
 	Version string `json:"version"`
+	/*
+	 * A keyword or tag describing the resource
+	 */
+	Keyword string `json:"keyword"`
 }
 
 /*
@@ -4446,6 +4706,10 @@ type Prion struct {
 	 * The version indicator (name or identifier) of a resource
 	 */
 	Version string `json:"version"`
+	/*
+	 * A keyword or tag describing the resource
+	 */
+	Keyword string `json:"keyword"`
 }
 
 /*
@@ -4516,6 +4780,10 @@ type MaterialSafetyDataSheet struct {
 	 * Provides any additional details or clarifications not covered in other sections of the MSDS, such as references, supporting documents, or specific instructions for safe handling and use of the product.
 	 */
 	FurtherInformation string `json:"furtherInformation"`
+	/*
+	 * A keyword or tag describing the resource
+	 */
+	Keyword string `json:"keyword"`
 }
 
 /*
@@ -4546,6 +4814,10 @@ type File struct {
 	 * Information about terms and conditions under which the subject can be used, shared, or distributed, indicating any restrictions or permissions
 	 */
 	License License `json:"license"`
+	/*
+	 * A keyword or tag describing the resource
+	 */
+	Keyword string `json:"keyword"`
 }
 
 /*
@@ -4576,6 +4848,10 @@ type Data struct {
 	 * Information about terms and conditions under which the subject can be used, shared, or distributed, indicating any restrictions or permissions
 	 */
 	License License `json:"license"`
+	/*
+	 * A keyword or tag describing the resource
+	 */
+	Keyword string `json:"keyword"`
 }
 
 /*
@@ -4606,6 +4882,10 @@ type Document struct {
 	 * Information about terms and conditions under which the subject can be used, shared, or distributed, indicating any restrictions or permissions
 	 */
 	License License `json:"license"`
+	/*
+	 * A keyword or tag describing the resource
+	 */
+	Keyword string `json:"keyword"`
 }
 
 /*
@@ -4636,6 +4916,10 @@ type Audio struct {
 	 * Information about terms and conditions under which the subject can be used, shared, or distributed, indicating any restrictions or permissions
 	 */
 	License License `json:"license"`
+	/*
+	 * A keyword or tag describing the resource
+	 */
+	Keyword string `json:"keyword"`
 }
 
 /*
@@ -4666,6 +4950,10 @@ type Video struct {
 	 * Information about terms and conditions under which the subject can be used, shared, or distributed, indicating any restrictions or permissions
 	 */
 	License License `json:"license"`
+	/*
+	 * A keyword or tag describing the resource
+	 */
+	Keyword string `json:"keyword"`
 }
 
 /*
@@ -4700,6 +4988,10 @@ type Image struct {
 	 * Information about terms and conditions under which the subject can be used, shared, or distributed, indicating any restrictions or permissions
 	 */
 	License License `json:"license"`
+	/*
+	 * A keyword or tag describing the resource
+	 */
+	Keyword string `json:"keyword"`
 }
 
 /*
@@ -4750,6 +5042,10 @@ type ContactPoint struct {
 	 * Unique persistent identifier for a person, provided by the Open Researcher and Contributor ID (ORCID) organisation
 	 */
 	OrcidId string `json:"orcidId"`
+	/*
+	 * A keyword or tag describing the resource
+	 */
+	Keyword string `json:"keyword"`
 }
 
 /*
@@ -4780,6 +5076,10 @@ type License struct {
 	 * A path or URL to the related logo
 	 */
 	Logo Image `json:"logo"`
+	/*
+	 * A keyword or tag describing the resource
+	 */
+	Keyword string `json:"keyword"`
 }
 
 /*
@@ -4810,6 +5110,10 @@ type Certification struct {
 	 * The web address or location where the details or content is stored and can be accessed or downloaded.
 	 */
 	ResourceUrl string `json:"resourceUrl"`
+	/*
+	 * A keyword or tag describing the resource
+	 */
+	Keyword string `json:"keyword"`
 }
 
 

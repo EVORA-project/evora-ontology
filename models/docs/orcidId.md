@@ -22,8 +22,8 @@ Alias: orcidId
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [ContactPoint](ContactPoint.md) | Entity serving as focal point of information |  yes  |
 | [Person](Person.md) | An individual |  yes  |
+| [ContactPoint](ContactPoint.md) | Entity serving as focal point of information |  yes  |
 
 
 
@@ -63,8 +63,8 @@ Alias: orcidId
 | ---  | ---  |
 | self | EVORAO:orcidId |
 | native | EVORAO:orcidId |
-| exact | wdp:P496, reproduceme:ORCID, wdp:P496, reproduceme:ORCID |
-| related | iao:0000708, edam:4022, IAO:0000708, edam:4022 |
+| exact | wdp:P496, reproduceme:ORCID |
+| related | iao:0000708, edam:4022 |
 
 
 
@@ -81,12 +81,8 @@ from_schema: https://w3id.org/evorao/
 exact_mappings:
 - wdp:P496
 - reproduceme:ORCID
-- wdp:P496
-- reproduceme:ORCID
 related_mappings:
 - iao:0000708
-- edam:4022
-- IAO:0000708
 - edam:4022
 rank: 1000
 alias: orcidId

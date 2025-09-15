@@ -23,6 +23,8 @@ URI: [EVORAO:ExternalRelatedReference](https://w3id.org/evorao/ExternalRelatedRe
       Resource <|-- ExternalRelatedReference
         click Resource href "../Resource"
       
+      ExternalRelatedReference : keyword
+        
       ExternalRelatedReference : reference
         
       ExternalRelatedReference : referenceLabel
@@ -52,6 +54,7 @@ URI: [EVORAO:ExternalRelatedReference](https://w3id.org/evorao/ExternalRelatedRe
 | [referenceLabel](referenceLabel.md) | 1 <br/> [String](String.md) | The label informing what this reference is about | direct |
 | [referenceProviderPrefix](referenceProviderPrefix.md) | 1 <br/> [String](String.md) | The url prefix that once completed with the reference will lead to the linked... | direct |
 | [referenceProviderName](referenceProviderName.md) | 1 <br/> [String](String.md) | The name for the reference provider | direct |
+| [keyword](keyword.md) | * <br/> [String](String.md) | A keyword or tag describing the resource | [Resource](Resource.md) |
 
 
 
@@ -320,6 +323,20 @@ attributes:
     range: string
     required: true
     multivalued: false
+  keyword:
+    name: keyword
+    description: A keyword or tag describing the resource
+    title: keyword
+    from_schema: https://w3id.org/evorao/
+    rank: 1000
+    slot_uri: dcat:keyword
+    alias: keyword
+    owner: ExternalRelatedReference
+    domain_of:
+    - Resource
+    range: string
+    required: false
+    multivalued: true
 
 ```
 </details>

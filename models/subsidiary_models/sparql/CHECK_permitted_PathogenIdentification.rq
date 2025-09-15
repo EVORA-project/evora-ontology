@@ -73,6 +73,7 @@ SELECT ?g ?s ?p WHERE {
    EVORAO:genotype,
    EVORAO:serotype,
    EVORAO:variant,
+   dcat:keyword,
    rdf:type ))
  }
  

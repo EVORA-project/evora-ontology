@@ -29,6 +29,8 @@ URI: [EVORAO:DataProvider](https://w3id.org/evorao/DataProvider)
         
       DataProvider : endpointUrl
         
+      DataProvider : keyword
+        
       DataProvider : license
         
           
@@ -91,6 +93,7 @@ URI: [EVORAO:DataProvider](https://w3id.org/evorao/DataProvider)
 | [description](description.md) | 0..1 _recommended_ <br/> [String](String.md) | A short explanation of the characteristics, features, or nature of the curren... | [DataService](DataService.md) |
 | [endpointUrl](endpointUrl.md) | 1 <br/> [Uri](Uri.md) | The URL template that allows to get the content | [DataService](DataService.md) |
 | [servesDataset](servesDataset.md) | * _recommended_ <br/> [Dataset](Dataset.md) | A collection of data that this data service can distribute | [DataService](DataService.md) |
+| [keyword](keyword.md) | * <br/> [String](String.md) | A keyword or tag describing the resource | [Resource](Resource.md) |
 
 
 
@@ -701,6 +704,20 @@ attributes:
     range: Dataset
     required: false
     recommended: true
+    multivalued: true
+  keyword:
+    name: keyword
+    description: A keyword or tag describing the resource
+    title: keyword
+    from_schema: https://w3id.org/evorao/
+    rank: 1000
+    slot_uri: dcat:keyword
+    alias: keyword
+    owner: DataProvider
+    domain_of:
+    - Resource
+    range: string
+    required: false
     multivalued: true
 
 ```

@@ -45,6 +45,8 @@ URI: [EVORAO:Publication](https://w3id.org/evorao/Publication)
     click Journal href "../Journal"
 
         
+      Publication : keyword
+        
       Publication : title
         
       
@@ -69,6 +71,7 @@ URI: [EVORAO:Publication](https://w3id.org/evorao/Publication)
 | [abstract](abstract.md) | 1 <br/> [String](String.md) | Concise summary of the publication | direct |
 | [doi](doi.md) | 1 <br/> [Doi](Doi.md) | A Digital Object Identifier (DOI) that can be related | direct |
 | [journal](journal.md) | 0..1 <br/> [Journal](Journal.md) | The scientific journal in which the publication was published | direct |
+| [keyword](keyword.md) | * <br/> [String](String.md) | A keyword or tag describing the resource | [Resource](Resource.md) |
 
 
 
@@ -420,6 +423,20 @@ attributes:
     range: Journal
     required: false
     multivalued: false
+  keyword:
+    name: keyword
+    description: A keyword or tag describing the resource
+    title: keyword
+    from_schema: https://w3id.org/evorao/
+    rank: 1000
+    slot_uri: dcat:keyword
+    alias: keyword
+    owner: Publication
+    domain_of:
+    - Resource
+    range: string
+    required: false
+    multivalued: true
 
 ```
 </details>

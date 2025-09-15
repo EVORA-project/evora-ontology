@@ -928,57 +928,159 @@
 --     * Slot: description Description: A short explanation of the characteristics, features, or nature of the current item
 --     * Slot: resourceUrl Description: The web address or location where the details or content is stored and can be accessed or downloaded.
 --     * Slot: logo_id Description: A path or URL to the related logo
+-- # Class: "Resource_keyword" Description: ""
+--     * Slot: Resource_id Description: Autocreated FK slot
+--     * Slot: keyword Description: A keyword or tag describing the resource
+-- # Class: "Dataset_keyword" Description: ""
+--     * Slot: Dataset_id Description: Autocreated FK slot
+--     * Slot: keyword Description: A keyword or tag describing the resource
 -- # Class: "DataService_servesDataset" Description: ""
 --     * Slot: DataService_id Description: Autocreated FK slot
 --     * Slot: servesDataset_id Description: A collection of data that this data service can distribute
+-- # Class: "DataService_keyword" Description: ""
+--     * Slot: DataService_id Description: Autocreated FK slot
+--     * Slot: keyword Description: A keyword or tag describing the resource
 -- # Class: "Version_resource" Description: ""
 --     * Slot: Version_id Description: Autocreated FK slot
 --     * Slot: resource_id Description: Resource published or curated by a single agent
+-- # Class: "Version_keyword" Description: ""
+--     * Slot: Version_id Description: Autocreated FK slot
+--     * Slot: keyword Description: A keyword or tag describing the resource
+-- # Class: "Catalogue_keyword" Description: ""
+--     * Slot: Catalogue_id Description: Autocreated FK slot
+--     * Slot: keyword Description: A keyword or tag describing the resource
 -- # Class: "Taxonomy_taxon" Description: ""
 --     * Slot: Taxonomy_id Description: Autocreated FK slot
 --     * Slot: taxon_id Description: Scientifically classified group or entity within the reference taxonomy
 -- # Class: "Taxonomy_rank" Description: ""
 --     * Slot: Taxonomy_id Description: Autocreated FK slot
 --     * Slot: rank_id Description: Relative level or position of the identified taxon in the taxonomy
+-- # Class: "Taxonomy_keyword" Description: ""
+--     * Slot: Taxonomy_id Description: Autocreated FK slot
+--     * Slot: keyword Description: A keyword or tag describing the resource
 -- # Class: "DataProvider_providedEntityType" Description: ""
 --     * Slot: DataProvider_id Description: Autocreated FK slot
 --     * Slot: providedEntityType Description: Identifies the type of entity (ontology class) described by the response to a query. Values should be expressed as IRIs (e.g., from an ontology)
 -- # Class: "DataProvider_servesDataset" Description: ""
 --     * Slot: DataProvider_id Description: Autocreated FK slot
 --     * Slot: servesDataset_id Description: A collection of data that this data service can distribute
+-- # Class: "DataProvider_keyword" Description: ""
+--     * Slot: DataProvider_id Description: Autocreated FK slot
+--     * Slot: keyword Description: A keyword or tag describing the resource
 -- # Class: "PathogenIdentification_hostType" Description: ""
 --     * Slot: PathogenIdentification_id Description: Autocreated FK slot
 --     * Slot: hostType Description: Indication of the possible host(s) for the identified pathogens among the listed main categories
+-- # Class: "PathogenIdentification_keyword" Description: ""
+--     * Slot: PathogenIdentification_id Description: Autocreated FK slot
+--     * Slot: keyword Description: A keyword or tag describing the resource
+-- # Class: "Publication_keyword" Description: ""
+--     * Slot: Publication_id Description: Autocreated FK slot
+--     * Slot: keyword Description: A keyword or tag describing the resource
 -- # Class: "Vocabulary_term" Description: ""
 --     * Slot: Vocabulary_id Description: Autocreated FK slot
 --     * Slot: term_id Description: The terms related to this vocabulary
+-- # Class: "Vocabulary_keyword" Description: ""
+--     * Slot: Vocabulary_id Description: Autocreated FK slot
+--     * Slot: keyword Description: A keyword or tag describing the resource
+-- # Class: "Term_keyword" Description: ""
+--     * Slot: Term_id Description: Autocreated FK slot
+--     * Slot: keyword Description: A keyword or tag describing the resource
 -- # Class: "CommonName_alternateName" Description: ""
 --     * Slot: CommonName_id Description: Autocreated FK slot
 --     * Slot: alternateName_id Description: Any other name under which the entity can be known
 -- # Class: "CommonName_sourceOfInformation" Description: ""
 --     * Slot: CommonName_id Description: Autocreated FK slot
 --     * Slot: sourceOfInformation Description: The name of the origin from which knowledge is obtained. This can include any entity that provides information
+-- # Class: "CommonName_keyword" Description: ""
+--     * Slot: CommonName_id Description: Autocreated FK slot
+--     * Slot: keyword Description: A keyword or tag describing the resource
 -- # Class: "VirusName_alternateName" Description: ""
 --     * Slot: VirusName_id Description: Autocreated FK slot
 --     * Slot: alternateName_id Description: Any other name under which the entity can be known
 -- # Class: "VirusName_sourceOfInformation" Description: ""
 --     * Slot: VirusName_id Description: Autocreated FK slot
 --     * Slot: sourceOfInformation Description: The name of the origin from which knowledge is obtained. This can include any entity that provides information
+-- # Class: "VirusName_keyword" Description: ""
+--     * Slot: VirusName_id Description: Autocreated FK slot
+--     * Slot: keyword Description: A keyword or tag describing the resource
 -- # Class: "AlternateName_alternateName" Description: ""
 --     * Slot: AlternateName_id Description: Autocreated FK slot
 --     * Slot: alternateName_id Description: Any other name under which the entity can be known
 -- # Class: "AlternateName_sourceOfInformation" Description: ""
 --     * Slot: AlternateName_id Description: Autocreated FK slot
 --     * Slot: sourceOfInformation Description: The name of the origin from which knowledge is obtained. This can include any entity that provides information
+-- # Class: "AlternateName_keyword" Description: ""
+--     * Slot: AlternateName_id Description: Autocreated FK slot
+--     * Slot: keyword Description: A keyword or tag describing the resource
+-- # Class: "RiskGroup_keyword" Description: ""
+--     * Slot: RiskGroup_id Description: Autocreated FK slot
+--     * Slot: keyword Description: A keyword or tag describing the resource
+-- # Class: "Doi_keyword" Description: ""
+--     * Slot: Doi_id Description: Autocreated FK slot
+--     * Slot: keyword Description: A keyword or tag describing the resource
+-- # Class: "Journal_keyword" Description: ""
+--     * Slot: Journal_id Description: Autocreated FK slot
+--     * Slot: keyword Description: A keyword or tag describing the resource
+-- # Class: "PdbReference_keyword" Description: ""
+--     * Slot: PdbReference_id Description: Autocreated FK slot
+--     * Slot: keyword Description: A keyword or tag describing the resource
+-- # Class: "Keyword_keyword" Description: ""
+--     * Slot: Keyword_id Description: Autocreated FK slot
+--     * Slot: keyword Description: A keyword or tag describing the resource
+-- # Class: "TagSequence_keyword" Description: ""
+--     * Slot: TagSequence_id Description: Autocreated FK slot
+--     * Slot: keyword Description: A keyword or tag describing the resource
+-- # Class: "SpecialFeature_keyword" Description: ""
+--     * Slot: SpecialFeature_id Description: Autocreated FK slot
+--     * Slot: keyword Description: A keyword or tag describing the resource
+-- # Class: "ExpressionVector_keyword" Description: ""
+--     * Slot: ExpressionVector_id Description: Autocreated FK slot
+--     * Slot: keyword Description: A keyword or tag describing the resource
+-- # Class: "PlasmidSelection_keyword" Description: ""
+--     * Slot: PlasmidSelection_id Description: Autocreated FK slot
+--     * Slot: keyword Description: A keyword or tag describing the resource
+-- # Class: "PropagationHost_keyword" Description: ""
+--     * Slot: PropagationHost_id Description: Autocreated FK slot
+--     * Slot: keyword Description: A keyword or tag describing the resource
+-- # Class: "TransmissionMethod_keyword" Description: ""
+--     * Slot: TransmissionMethod_id Description: Autocreated FK slot
+--     * Slot: keyword Description: A keyword or tag describing the resource
+-- # Class: "ProductionCellLine_keyword" Description: ""
+--     * Slot: ProductionCellLine_id Description: Autocreated FK slot
+--     * Slot: keyword Description: A keyword or tag describing the resource
+-- # Class: "ProductCategory_keyword" Description: ""
+--     * Slot: ProductCategory_id Description: Autocreated FK slot
+--     * Slot: keyword Description: A keyword or tag describing the resource
+-- # Class: "IsolationHost_keyword" Description: ""
+--     * Slot: IsolationHost_id Description: Autocreated FK slot
+--     * Slot: keyword Description: A keyword or tag describing the resource
+-- # Class: "GeographicalOrigin_keyword" Description: ""
+--     * Slot: GeographicalOrigin_id Description: Autocreated FK slot
+--     * Slot: keyword Description: A keyword or tag describing the resource
+-- # Class: "IplcOrigin_keyword" Description: ""
+--     * Slot: IplcOrigin_id Description: Autocreated FK slot
+--     * Slot: keyword Description: A keyword or tag describing the resource
+-- # Class: "Country_keyword" Description: ""
+--     * Slot: Country_id Description: Autocreated FK slot
+--     * Slot: keyword Description: A keyword or tag describing the resource
+-- # Class: "IataClassification_keyword" Description: ""
+--     * Slot: IataClassification_id Description: Autocreated FK slot
+--     * Slot: keyword Description: A keyword or tag describing the resource
 -- # Class: "Variant_alternateName" Description: ""
 --     * Slot: Variant_id Description: Autocreated FK slot
 --     * Slot: alternateName_id Description: Any other name under which the entity can be known
 -- # Class: "Variant_sourceOfInformation" Description: ""
 --     * Slot: Variant_id Description: Autocreated FK slot
 --     * Slot: sourceOfInformation Description: The name of the origin from which knowledge is obtained. This can include any entity that provides information
+-- # Class: "Variant_keyword" Description: ""
+--     * Slot: Variant_id Description: Autocreated FK slot
+--     * Slot: keyword Description: A keyword or tag describing the resource
 -- # Class: "TaxonomicRank_taxonomy" Description: ""
 --     * Slot: TaxonomicRank_id Description: Autocreated FK slot
 --     * Slot: taxonomy_id Description: The taxonomy release(s) in which this entity exists
+-- # Class: "TaxonomicRank_keyword" Description: ""
+--     * Slot: TaxonomicRank_id Description: Autocreated FK slot
+--     * Slot: keyword Description: A keyword or tag describing the resource
 -- # Class: "Taxon_taxonomy" Description: ""
 --     * Slot: Taxon_id Description: Autocreated FK slot
 --     * Slot: taxonomy_id Description: The taxonomy release(s) in which this entity exists
@@ -988,30 +1090,78 @@
 -- # Class: "Taxon_externalEquivalentTaxon" Description: ""
 --     * Slot: Taxon_id Description: Autocreated FK slot
 --     * Slot: externalEquivalentTaxon_id Description: Any equivalent taxon in a different taxonomy if exists/known to serve as a bridge (e.g, ICTV towards NCBI)
+-- # Class: "Taxon_keyword" Description: ""
+--     * Slot: Taxon_id Description: Autocreated FK slot
+--     * Slot: keyword Description: A keyword or tag describing the resource
+-- # Class: "ExternalRelatedReference_keyword" Description: ""
+--     * Slot: ExternalRelatedReference_id Description: Autocreated FK slot
+--     * Slot: keyword Description: A keyword or tag describing the resource
 -- # Class: "Sequence_sequenceReference" Description: ""
 --     * Slot: Sequence_id Description: Autocreated FK slot
 --     * Slot: sequenceReference_id Description: A reference that permits to retrieve the sequence information from a sequence provider
+-- # Class: "Sequence_keyword" Description: ""
+--     * Slot: Sequence_id Description: Autocreated FK slot
+--     * Slot: keyword Description: A keyword or tag describing the resource
+-- # Class: "SequenceReference_keyword" Description: ""
+--     * Slot: SequenceReference_id Description: Autocreated FK slot
+--     * Slot: keyword Description: A keyword or tag describing the resource
+-- # Class: "PersonOrOrganization_keyword" Description: ""
+--     * Slot: PersonOrOrganization_id Description: Autocreated FK slot
+--     * Slot: keyword Description: A keyword or tag describing the resource
+-- # Class: "Person_keyword" Description: ""
+--     * Slot: Person_id Description: Autocreated FK slot
+--     * Slot: keyword Description: A keyword or tag describing the resource
 -- # Class: "Organization_alternateName" Description: ""
 --     * Slot: Organization_id Description: Autocreated FK slot
 --     * Slot: alternateName_id Description: Any other name under which the entity can be known
+-- # Class: "Organization_keyword" Description: ""
+--     * Slot: Organization_id Description: Autocreated FK slot
+--     * Slot: keyword Description: A keyword or tag describing the resource
 -- # Class: "ReasearchInfrastructure_alternateName" Description: ""
 --     * Slot: ReasearchInfrastructure_id Description: Autocreated FK slot
 --     * Slot: alternateName_id Description: Any other name under which the entity can be known
+-- # Class: "ReasearchInfrastructure_keyword" Description: ""
+--     * Slot: ReasearchInfrastructure_id Description: Autocreated FK slot
+--     * Slot: keyword Description: A keyword or tag describing the resource
 -- # Class: "Provider_memberOfRi" Description: ""
 --     * Slot: Provider_id Description: Autocreated FK slot
 --     * Slot: memberOfRi_id Description: The research infrastructure of which this organization is a member
 -- # Class: "Provider_alternateName" Description: ""
 --     * Slot: Provider_id Description: Autocreated FK slot
 --     * Slot: alternateName_id Description: Any other name under which the entity can be known
+-- # Class: "Provider_keyword" Description: ""
+--     * Slot: Provider_id Description: Autocreated FK slot
+--     * Slot: keyword Description: A keyword or tag describing the resource
+-- # Class: "Originator_keyword" Description: ""
+--     * Slot: Originator_id Description: Autocreated FK slot
+--     * Slot: keyword Description: A keyword or tag describing the resource
 -- # Class: "BiologicalMaterialOrigin_biologicalPartOrigin" Description: ""
 --     * Slot: BiologicalMaterialOrigin_id Description: Autocreated FK slot
 --     * Slot: biologicalPartOrigin_id Description: Details the origin of one or more unitary parts that make up the biological material. In the case of recombinant biological material, multiple parts may be involved.
+-- # Class: "BiologicalMaterialOrigin_keyword" Description: ""
+--     * Slot: BiologicalMaterialOrigin_id Description: Autocreated FK slot
+--     * Slot: keyword Description: A keyword or tag describing the resource
+-- # Class: "BiologicalPartOrigin_keyword" Description: ""
+--     * Slot: BiologicalPartOrigin_id Description: Autocreated FK slot
+--     * Slot: keyword Description: A keyword or tag describing the resource
+-- # Class: "NaturalPartOrigin_keyword" Description: ""
+--     * Slot: NaturalPartOrigin_id Description: Autocreated FK slot
+--     * Slot: keyword Description: A keyword or tag describing the resource
+-- # Class: "SyntheticPartOrigin_keyword" Description: ""
+--     * Slot: SyntheticPartOrigin_id Description: Autocreated FK slot
+--     * Slot: keyword Description: A keyword or tag describing the resource
 -- # Class: "RecombinantPartIdentification_sequence" Description: ""
 --     * Slot: RecombinantPartIdentification_id Description: Autocreated FK slot
 --     * Slot: sequence_id Description: The related sequence information from a sequence provider or in fasta format
+-- # Class: "RecombinantPartIdentification_keyword" Description: ""
+--     * Slot: RecombinantPartIdentification_id Description: Autocreated FK slot
+--     * Slot: keyword Description: A keyword or tag describing the resource
 -- # Class: "Collection_collectionItem" Description: ""
 --     * Slot: Collection_id Description: Autocreated FK slot
 --     * Slot: collectionItem_id Description: An item of the collection
+-- # Class: "Collection_keyword" Description: ""
+--     * Slot: Collection_id Description: Autocreated FK slot
+--     * Slot: keyword Description: A keyword or tag describing the resource
 -- # Class: "ProductOrService_additionalCategory" Description: ""
 --     * Slot: ProductOrService_id Description: Autocreated FK slot
 --     * Slot: additionalCategory_id Description: Any category apart from its main category in which this product or service can fit
@@ -1039,6 +1189,9 @@
 -- # Class: "ProductOrService_certification" Description: ""
 --     * Slot: ProductOrService_id Description: Autocreated FK slot
 --     * Slot: certification_id Description: Any certification related to the current product or service; e.g., ISO certification
+-- # Class: "ProductOrService_keyword" Description: ""
+--     * Slot: ProductOrService_id Description: Autocreated FK slot
+--     * Slot: keyword Description: A keyword or tag describing the resource
 -- # Class: "Service_additionalCategory" Description: ""
 --     * Slot: Service_id Description: Autocreated FK slot
 --     * Slot: additionalCategory_id Description: Any category apart from its main category in which this product or service can fit
@@ -1066,6 +1219,9 @@
 -- # Class: "Service_certification" Description: ""
 --     * Slot: Service_id Description: Autocreated FK slot
 --     * Slot: certification_id Description: Any certification related to the current product or service; e.g., ISO certification
+-- # Class: "Service_keyword" Description: ""
+--     * Slot: Service_id Description: Autocreated FK slot
+--     * Slot: keyword Description: A keyword or tag describing the resource
 -- # Class: "Product_additionalCategory" Description: ""
 --     * Slot: Product_id Description: Autocreated FK slot
 --     * Slot: additionalCategory_id Description: Any category apart from its main category in which this product or service can fit
@@ -1093,6 +1249,9 @@
 -- # Class: "Product_certification" Description: ""
 --     * Slot: Product_id Description: Autocreated FK slot
 --     * Slot: certification_id Description: Any certification related to the current product or service; e.g., ISO certification
+-- # Class: "Product_keyword" Description: ""
+--     * Slot: Product_id Description: Autocreated FK slot
+--     * Slot: keyword Description: A keyword or tag describing the resource
 -- # Class: "Antibody_sequenceReference" Description: ""
 --     * Slot: Antibody_id Description: Autocreated FK slot
 --     * Slot: sequenceReference_id Description: A reference that permits to retrieve the sequence information from a sequence provider
@@ -1123,6 +1282,9 @@
 -- # Class: "Antibody_certification" Description: ""
 --     * Slot: Antibody_id Description: Autocreated FK slot
 --     * Slot: certification_id Description: Any certification related to the current product or service; e.g., ISO certification
+-- # Class: "Antibody_keyword" Description: ""
+--     * Slot: Antibody_id Description: Autocreated FK slot
+--     * Slot: keyword Description: A keyword or tag describing the resource
 -- # Class: "Hybridoma_sequenceReference" Description: ""
 --     * Slot: Hybridoma_id Description: Autocreated FK slot
 --     * Slot: sequenceReference_id Description: A reference that permits to retrieve the sequence information from a sequence provider
@@ -1153,6 +1315,9 @@
 -- # Class: "Hybridoma_certification" Description: ""
 --     * Slot: Hybridoma_id Description: Autocreated FK slot
 --     * Slot: certification_id Description: Any certification related to the current product or service; e.g., ISO certification
+-- # Class: "Hybridoma_keyword" Description: ""
+--     * Slot: Hybridoma_id Description: Autocreated FK slot
+--     * Slot: keyword Description: A keyword or tag describing the resource
 -- # Class: "Protein_sequence" Description: ""
 --     * Slot: Protein_id Description: Autocreated FK slot
 --     * Slot: sequence_id Description: The related sequence information from a sequence provider or in fasta format
@@ -1219,6 +1384,9 @@
 -- # Class: "Protein_certification" Description: ""
 --     * Slot: Protein_id Description: Autocreated FK slot
 --     * Slot: certification_id Description: Any certification related to the current product or service; e.g., ISO certification
+-- # Class: "Protein_keyword" Description: ""
+--     * Slot: Protein_id Description: Autocreated FK slot
+--     * Slot: keyword Description: A keyword or tag describing the resource
 -- # Class: "NucleicAcid_genBankFileOfTheConstruct" Description: ""
 --     * Slot: NucleicAcid_id Description: Autocreated FK slot
 --     * Slot: genBankFileOfTheConstruct_id Description: A GenBank formatted file that contains detailed sequence and annotation information of a nucleic acid construct
@@ -1255,6 +1423,9 @@
 -- # Class: "NucleicAcid_certification" Description: ""
 --     * Slot: NucleicAcid_id Description: Autocreated FK slot
 --     * Slot: certification_id Description: Any certification related to the current product or service; e.g., ISO certification
+-- # Class: "NucleicAcid_keyword" Description: ""
+--     * Slot: NucleicAcid_id Description: Autocreated FK slot
+--     * Slot: keyword Description: A keyword or tag describing the resource
 -- # Class: "DetectionKit_standardOperatingProcedureFile" Description: ""
 --     * Slot: DetectionKit_id Description: Autocreated FK slot
 --     * Slot: standardOperatingProcedureFile_id Description: The related standard operating procedure file (SOP)
@@ -1285,6 +1456,9 @@
 -- # Class: "DetectionKit_certification" Description: ""
 --     * Slot: DetectionKit_id Description: Autocreated FK slot
 --     * Slot: certification_id Description: Any certification related to the current product or service; e.g., ISO certification
+-- # Class: "DetectionKit_keyword" Description: ""
+--     * Slot: DetectionKit_id Description: Autocreated FK slot
+--     * Slot: keyword Description: A keyword or tag describing the resource
 -- # Class: "Bundle_itemsOfTheBundle" Description: ""
 --     * Slot: Bundle_id Description: Autocreated FK slot
 --     * Slot: itemsOfTheBundle_id Description: Specifies the constituent products and/or services that are part of the bundle
@@ -1315,6 +1489,9 @@
 -- # Class: "Bundle_certification" Description: ""
 --     * Slot: Bundle_id Description: Autocreated FK slot
 --     * Slot: certification_id Description: Any certification related to the current product or service; e.g., ISO certification
+-- # Class: "Bundle_keyword" Description: ""
+--     * Slot: Bundle_id Description: Autocreated FK slot
+--     * Slot: keyword Description: A keyword or tag describing the resource
 -- # Class: "Pathogen_suspectedEpidemiologicalOrigin" Description: ""
 --     * Slot: Pathogen_id Description: Autocreated FK slot
 --     * Slot: suspectedEpidemiologicalOrigin_id Description: The potential geographical or environmental source from which the pathogen is believed to have originated or been transmitted
@@ -1360,6 +1537,9 @@
 -- # Class: "Pathogen_certification" Description: ""
 --     * Slot: Pathogen_id Description: Autocreated FK slot
 --     * Slot: certification_id Description: Any certification related to the current product or service; e.g., ISO certification
+-- # Class: "Pathogen_keyword" Description: ""
+--     * Slot: Pathogen_id Description: Autocreated FK slot
+--     * Slot: keyword Description: A keyword or tag describing the resource
 -- # Class: "Virus_coInfectingViruses" Description: ""
 --     * Slot: Virus_id Description: Autocreated FK slot
 --     * Slot: coInfectingViruses_id Description: Identifies other viruses that may co-infect the host organism along with the primary virus, indicating the presence of multiple viral infections within the same host.
@@ -1408,6 +1588,9 @@
 -- # Class: "Virus_certification" Description: ""
 --     * Slot: Virus_id Description: Autocreated FK slot
 --     * Slot: certification_id Description: Any certification related to the current product or service; e.g., ISO certification
+-- # Class: "Virus_keyword" Description: ""
+--     * Slot: Virus_id Description: Autocreated FK slot
+--     * Slot: keyword Description: A keyword or tag describing the resource
 -- # Class: "Bacterium_suspectedEpidemiologicalOrigin" Description: ""
 --     * Slot: Bacterium_id Description: Autocreated FK slot
 --     * Slot: suspectedEpidemiologicalOrigin_id Description: The potential geographical or environmental source from which the pathogen is believed to have originated or been transmitted
@@ -1453,6 +1636,9 @@
 -- # Class: "Bacterium_certification" Description: ""
 --     * Slot: Bacterium_id Description: Autocreated FK slot
 --     * Slot: certification_id Description: Any certification related to the current product or service; e.g., ISO certification
+-- # Class: "Bacterium_keyword" Description: ""
+--     * Slot: Bacterium_id Description: Autocreated FK slot
+--     * Slot: keyword Description: A keyword or tag describing the resource
 -- # Class: "Fungus_suspectedEpidemiologicalOrigin" Description: ""
 --     * Slot: Fungus_id Description: Autocreated FK slot
 --     * Slot: suspectedEpidemiologicalOrigin_id Description: The potential geographical or environmental source from which the pathogen is believed to have originated or been transmitted
@@ -1498,6 +1684,9 @@
 -- # Class: "Fungus_certification" Description: ""
 --     * Slot: Fungus_id Description: Autocreated FK slot
 --     * Slot: certification_id Description: Any certification related to the current product or service; e.g., ISO certification
+-- # Class: "Fungus_keyword" Description: ""
+--     * Slot: Fungus_id Description: Autocreated FK slot
+--     * Slot: keyword Description: A keyword or tag describing the resource
 -- # Class: "Protozoan_suspectedEpidemiologicalOrigin" Description: ""
 --     * Slot: Protozoan_id Description: Autocreated FK slot
 --     * Slot: suspectedEpidemiologicalOrigin_id Description: The potential geographical or environmental source from which the pathogen is believed to have originated or been transmitted
@@ -1543,6 +1732,9 @@
 -- # Class: "Protozoan_certification" Description: ""
 --     * Slot: Protozoan_id Description: Autocreated FK slot
 --     * Slot: certification_id Description: Any certification related to the current product or service; e.g., ISO certification
+-- # Class: "Protozoan_keyword" Description: ""
+--     * Slot: Protozoan_id Description: Autocreated FK slot
+--     * Slot: keyword Description: A keyword or tag describing the resource
 -- # Class: "Viroid_suspectedEpidemiologicalOrigin" Description: ""
 --     * Slot: Viroid_id Description: Autocreated FK slot
 --     * Slot: suspectedEpidemiologicalOrigin_id Description: The potential geographical or environmental source from which the pathogen is believed to have originated or been transmitted
@@ -1588,6 +1780,9 @@
 -- # Class: "Viroid_certification" Description: ""
 --     * Slot: Viroid_id Description: Autocreated FK slot
 --     * Slot: certification_id Description: Any certification related to the current product or service; e.g., ISO certification
+-- # Class: "Viroid_keyword" Description: ""
+--     * Slot: Viroid_id Description: Autocreated FK slot
+--     * Slot: keyword Description: A keyword or tag describing the resource
 -- # Class: "Prion_suspectedEpidemiologicalOrigin" Description: ""
 --     * Slot: Prion_id Description: Autocreated FK slot
 --     * Slot: suspectedEpidemiologicalOrigin_id Description: The potential geographical or environmental source from which the pathogen is believed to have originated or been transmitted
@@ -1633,9 +1828,42 @@
 -- # Class: "Prion_certification" Description: ""
 --     * Slot: Prion_id Description: Autocreated FK slot
 --     * Slot: certification_id Description: Any certification related to the current product or service; e.g., ISO certification
+-- # Class: "Prion_keyword" Description: ""
+--     * Slot: Prion_id Description: Autocreated FK slot
+--     * Slot: keyword Description: A keyword or tag describing the resource
+-- # Class: "MaterialSafetyDataSheet_keyword" Description: ""
+--     * Slot: MaterialSafetyDataSheet_id Description: Autocreated FK slot
+--     * Slot: keyword Description: A keyword or tag describing the resource
+-- # Class: "File_keyword" Description: ""
+--     * Slot: File_id Description: Autocreated FK slot
+--     * Slot: keyword Description: A keyword or tag describing the resource
+-- # Class: "Data_keyword" Description: ""
+--     * Slot: Data_id Description: Autocreated FK slot
+--     * Slot: keyword Description: A keyword or tag describing the resource
+-- # Class: "Document_keyword" Description: ""
+--     * Slot: Document_id Description: Autocreated FK slot
+--     * Slot: keyword Description: A keyword or tag describing the resource
+-- # Class: "Audio_keyword" Description: ""
+--     * Slot: Audio_id Description: Autocreated FK slot
+--     * Slot: keyword Description: A keyword or tag describing the resource
+-- # Class: "Video_keyword" Description: ""
+--     * Slot: Video_id Description: Autocreated FK slot
+--     * Slot: keyword Description: A keyword or tag describing the resource
+-- # Class: "Image_keyword" Description: ""
+--     * Slot: Image_id Description: Autocreated FK slot
+--     * Slot: keyword Description: A keyword or tag describing the resource
+-- # Class: "ContactPoint_keyword" Description: ""
+--     * Slot: ContactPoint_id Description: Autocreated FK slot
+--     * Slot: keyword Description: A keyword or tag describing the resource
+-- # Class: "License_keyword" Description: ""
+--     * Slot: License_id Description: Autocreated FK slot
+--     * Slot: keyword Description: A keyword or tag describing the resource
 -- # Class: "Certification_certificationDocument" Description: ""
 --     * Slot: Certification_id Description: Autocreated FK slot
 --     * Slot: certificationDocument_id Description: The document(s) issued by an authority certifying the conformity of the subject to the applicable scheme, including, as the case may be, the documents attesting the equivalence to another certification scheme.
+-- # Class: "Certification_keyword" Description: ""
+--     * Slot: Certification_id Description: Autocreated FK slot
+--     * Slot: keyword Description: A keyword or tag describing the resource
 
 CREATE TABLE "Resource" (
 	id INTEGER NOT NULL, 
@@ -1809,12 +2037,30 @@ CREATE TABLE "Certification" (
 	PRIMARY KEY (id), 
 	FOREIGN KEY(logo_id) REFERENCES "Image" (id)
 );
+CREATE TABLE "Resource_keyword" (
+	"Resource_id" INTEGER, 
+	keyword TEXT, 
+	PRIMARY KEY ("Resource_id", keyword), 
+	FOREIGN KEY("Resource_id") REFERENCES "Resource" (id)
+);
+CREATE TABLE "Dataset_keyword" (
+	"Dataset_id" INTEGER, 
+	keyword TEXT, 
+	PRIMARY KEY ("Dataset_id", keyword), 
+	FOREIGN KEY("Dataset_id") REFERENCES "Dataset" (id)
+);
 CREATE TABLE "DataService_servesDataset" (
 	"DataService_id" INTEGER, 
 	"servesDataset_id" INTEGER, 
 	PRIMARY KEY ("DataService_id", "servesDataset_id"), 
 	FOREIGN KEY("DataService_id") REFERENCES "DataService" (id), 
 	FOREIGN KEY("servesDataset_id") REFERENCES "Dataset" (id)
+);
+CREATE TABLE "DataService_keyword" (
+	"DataService_id" INTEGER, 
+	keyword TEXT, 
+	PRIMARY KEY ("DataService_id", keyword), 
+	FOREIGN KEY("DataService_id") REFERENCES "DataService" (id)
 );
 CREATE TABLE "Version_resource" (
 	"Version_id" INTEGER, 
@@ -1823,6 +2069,24 @@ CREATE TABLE "Version_resource" (
 	FOREIGN KEY("Version_id") REFERENCES "Version" (id), 
 	FOREIGN KEY(resource_id) REFERENCES "Resource" (id)
 );
+CREATE TABLE "Version_keyword" (
+	"Version_id" INTEGER, 
+	keyword TEXT, 
+	PRIMARY KEY ("Version_id", keyword), 
+	FOREIGN KEY("Version_id") REFERENCES "Version" (id)
+);
+CREATE TABLE "Catalogue_keyword" (
+	"Catalogue_id" INTEGER, 
+	keyword TEXT, 
+	PRIMARY KEY ("Catalogue_id", keyword), 
+	FOREIGN KEY("Catalogue_id") REFERENCES "Catalogue" (id)
+);
+CREATE TABLE "ExternalRelatedReference_keyword" (
+	"ExternalRelatedReference_id" INTEGER, 
+	keyword TEXT, 
+	PRIMARY KEY ("ExternalRelatedReference_id", keyword), 
+	FOREIGN KEY("ExternalRelatedReference_id") REFERENCES "ExternalRelatedReference" (id)
+);
 CREATE TABLE "Sequence_sequenceReference" (
 	"Sequence_id" INTEGER, 
 	"sequenceReference_id" INTEGER, 
@@ -1830,12 +2094,48 @@ CREATE TABLE "Sequence_sequenceReference" (
 	FOREIGN KEY("Sequence_id") REFERENCES "Sequence" (id), 
 	FOREIGN KEY("sequenceReference_id") REFERENCES "SequenceReference" (id)
 );
+CREATE TABLE "Sequence_keyword" (
+	"Sequence_id" INTEGER, 
+	keyword TEXT, 
+	PRIMARY KEY ("Sequence_id", keyword), 
+	FOREIGN KEY("Sequence_id") REFERENCES "Sequence" (id)
+);
+CREATE TABLE "SequenceReference_keyword" (
+	"SequenceReference_id" INTEGER, 
+	keyword TEXT, 
+	PRIMARY KEY ("SequenceReference_id", keyword), 
+	FOREIGN KEY("SequenceReference_id") REFERENCES "SequenceReference" (id)
+);
+CREATE TABLE "BiologicalMaterialOrigin_keyword" (
+	"BiologicalMaterialOrigin_id" INTEGER, 
+	keyword TEXT, 
+	PRIMARY KEY ("BiologicalMaterialOrigin_id", keyword), 
+	FOREIGN KEY("BiologicalMaterialOrigin_id") REFERENCES "BiologicalMaterialOrigin" (id)
+);
 CREATE TABLE "RecombinantPartIdentification_sequence" (
 	"RecombinantPartIdentification_id" INTEGER, 
 	sequence_id INTEGER NOT NULL, 
 	PRIMARY KEY ("RecombinantPartIdentification_id", sequence_id), 
 	FOREIGN KEY("RecombinantPartIdentification_id") REFERENCES "RecombinantPartIdentification" (id), 
 	FOREIGN KEY(sequence_id) REFERENCES "Sequence" (id)
+);
+CREATE TABLE "RecombinantPartIdentification_keyword" (
+	"RecombinantPartIdentification_id" INTEGER, 
+	keyword TEXT, 
+	PRIMARY KEY ("RecombinantPartIdentification_id", keyword), 
+	FOREIGN KEY("RecombinantPartIdentification_id") REFERENCES "RecombinantPartIdentification" (id)
+);
+CREATE TABLE "Image_keyword" (
+	"Image_id" INTEGER, 
+	keyword TEXT, 
+	PRIMARY KEY ("Image_id", keyword), 
+	FOREIGN KEY("Image_id") REFERENCES "Image" (id)
+);
+CREATE TABLE "License_keyword" (
+	"License_id" INTEGER, 
+	keyword TEXT, 
+	PRIMARY KEY ("License_id", keyword), 
+	FOREIGN KEY("License_id") REFERENCES "License" (id)
 );
 CREATE TABLE "Taxonomy" (
 	id INTEGER NOT NULL, 
@@ -1881,6 +2181,12 @@ CREATE TABLE "DataProvider_servesDataset" (
 	FOREIGN KEY("DataProvider_id") REFERENCES "DataProvider" (id), 
 	FOREIGN KEY("servesDataset_id") REFERENCES "Dataset" (id)
 );
+CREATE TABLE "DataProvider_keyword" (
+	"DataProvider_id" INTEGER, 
+	keyword TEXT, 
+	PRIMARY KEY ("DataProvider_id", keyword), 
+	FOREIGN KEY("DataProvider_id") REFERENCES "DataProvider" (id)
+);
 CREATE TABLE "BiologicalMaterialOrigin_biologicalPartOrigin" (
 	"BiologicalMaterialOrigin_id" INTEGER, 
 	"biologicalPartOrigin_id" INTEGER NOT NULL, 
@@ -1888,12 +2194,60 @@ CREATE TABLE "BiologicalMaterialOrigin_biologicalPartOrigin" (
 	FOREIGN KEY("BiologicalMaterialOrigin_id") REFERENCES "BiologicalMaterialOrigin" (id), 
 	FOREIGN KEY("biologicalPartOrigin_id") REFERENCES "BiologicalPartOrigin" (id)
 );
+CREATE TABLE "BiologicalPartOrigin_keyword" (
+	"BiologicalPartOrigin_id" INTEGER, 
+	keyword TEXT, 
+	PRIMARY KEY ("BiologicalPartOrigin_id", keyword), 
+	FOREIGN KEY("BiologicalPartOrigin_id") REFERENCES "BiologicalPartOrigin" (id)
+);
+CREATE TABLE "SyntheticPartOrigin_keyword" (
+	"SyntheticPartOrigin_id" INTEGER, 
+	keyword TEXT, 
+	PRIMARY KEY ("SyntheticPartOrigin_id", keyword), 
+	FOREIGN KEY("SyntheticPartOrigin_id") REFERENCES "SyntheticPartOrigin" (id)
+);
+CREATE TABLE "File_keyword" (
+	"File_id" INTEGER, 
+	keyword TEXT, 
+	PRIMARY KEY ("File_id", keyword), 
+	FOREIGN KEY("File_id") REFERENCES "File" (id)
+);
+CREATE TABLE "Data_keyword" (
+	"Data_id" INTEGER, 
+	keyword TEXT, 
+	PRIMARY KEY ("Data_id", keyword), 
+	FOREIGN KEY("Data_id") REFERENCES "Data" (id)
+);
+CREATE TABLE "Document_keyword" (
+	"Document_id" INTEGER, 
+	keyword TEXT, 
+	PRIMARY KEY ("Document_id", keyword), 
+	FOREIGN KEY("Document_id") REFERENCES "Document" (id)
+);
+CREATE TABLE "Audio_keyword" (
+	"Audio_id" INTEGER, 
+	keyword TEXT, 
+	PRIMARY KEY ("Audio_id", keyword), 
+	FOREIGN KEY("Audio_id") REFERENCES "Audio" (id)
+);
+CREATE TABLE "Video_keyword" (
+	"Video_id" INTEGER, 
+	keyword TEXT, 
+	PRIMARY KEY ("Video_id", keyword), 
+	FOREIGN KEY("Video_id") REFERENCES "Video" (id)
+);
 CREATE TABLE "Certification_certificationDocument" (
 	"Certification_id" INTEGER, 
 	"certificationDocument_id" INTEGER, 
 	PRIMARY KEY ("Certification_id", "certificationDocument_id"), 
 	FOREIGN KEY("Certification_id") REFERENCES "Certification" (id), 
 	FOREIGN KEY("certificationDocument_id") REFERENCES "Document" (id)
+);
+CREATE TABLE "Certification_keyword" (
+	"Certification_id" INTEGER, 
+	keyword TEXT, 
+	PRIMARY KEY ("Certification_id", keyword), 
+	FOREIGN KEY("Certification_id") REFERENCES "Certification" (id)
 );
 CREATE TABLE "Term" (
 	id INTEGER NOT NULL, 
@@ -2114,6 +2468,24 @@ CREATE TABLE "TaxonomicRank" (
 	PRIMARY KEY (id), 
 	FOREIGN KEY("inVocabulary_id") REFERENCES "Vocabulary" (id)
 );
+CREATE TABLE "Taxonomy_keyword" (
+	"Taxonomy_id" INTEGER, 
+	keyword TEXT, 
+	PRIMARY KEY ("Taxonomy_id", keyword), 
+	FOREIGN KEY("Taxonomy_id") REFERENCES "Taxonomy" (id)
+);
+CREATE TABLE "Vocabulary_keyword" (
+	"Vocabulary_id" INTEGER, 
+	keyword TEXT, 
+	PRIMARY KEY ("Vocabulary_id", keyword), 
+	FOREIGN KEY("Vocabulary_id") REFERENCES "Vocabulary" (id)
+);
+CREATE TABLE "Collection_keyword" (
+	"Collection_id" INTEGER, 
+	keyword TEXT, 
+	PRIMARY KEY ("Collection_id", keyword), 
+	FOREIGN KEY("Collection_id") REFERENCES "Collection" (id)
+);
 CREATE TABLE "Publication" (
 	id INTEGER NOT NULL, 
 	title TEXT NOT NULL, 
@@ -2183,6 +2555,12 @@ CREATE TABLE "Vocabulary_term" (
 	FOREIGN KEY("Vocabulary_id") REFERENCES "Vocabulary" (id), 
 	FOREIGN KEY(term_id) REFERENCES "Term" (id)
 );
+CREATE TABLE "Term_keyword" (
+	"Term_id" INTEGER, 
+	keyword TEXT, 
+	PRIMARY KEY ("Term_id", keyword), 
+	FOREIGN KEY("Term_id") REFERENCES "Term" (id)
+);
 CREATE TABLE "CommonName_alternateName" (
 	"CommonName_id" INTEGER, 
 	"alternateName_id" INTEGER, 
@@ -2194,6 +2572,12 @@ CREATE TABLE "CommonName_sourceOfInformation" (
 	"CommonName_id" INTEGER, 
 	"sourceOfInformation" TEXT, 
 	PRIMARY KEY ("CommonName_id", "sourceOfInformation"), 
+	FOREIGN KEY("CommonName_id") REFERENCES "CommonName" (id)
+);
+CREATE TABLE "CommonName_keyword" (
+	"CommonName_id" INTEGER, 
+	keyword TEXT, 
+	PRIMARY KEY ("CommonName_id", keyword), 
 	FOREIGN KEY("CommonName_id") REFERENCES "CommonName" (id)
 );
 CREATE TABLE "VirusName_alternateName" (
@@ -2209,6 +2593,12 @@ CREATE TABLE "VirusName_sourceOfInformation" (
 	PRIMARY KEY ("VirusName_id", "sourceOfInformation"), 
 	FOREIGN KEY("VirusName_id") REFERENCES "VirusName" (id)
 );
+CREATE TABLE "VirusName_keyword" (
+	"VirusName_id" INTEGER, 
+	keyword TEXT, 
+	PRIMARY KEY ("VirusName_id", keyword), 
+	FOREIGN KEY("VirusName_id") REFERENCES "VirusName" (id)
+);
 CREATE TABLE "AlternateName_alternateName" (
 	"AlternateName_id" INTEGER, 
 	"alternateName_id" INTEGER, 
@@ -2221,6 +2611,120 @@ CREATE TABLE "AlternateName_sourceOfInformation" (
 	"sourceOfInformation" TEXT, 
 	PRIMARY KEY ("AlternateName_id", "sourceOfInformation"), 
 	FOREIGN KEY("AlternateName_id") REFERENCES "AlternateName" (id)
+);
+CREATE TABLE "AlternateName_keyword" (
+	"AlternateName_id" INTEGER, 
+	keyword TEXT, 
+	PRIMARY KEY ("AlternateName_id", keyword), 
+	FOREIGN KEY("AlternateName_id") REFERENCES "AlternateName" (id)
+);
+CREATE TABLE "RiskGroup_keyword" (
+	"RiskGroup_id" INTEGER, 
+	keyword TEXT, 
+	PRIMARY KEY ("RiskGroup_id", keyword), 
+	FOREIGN KEY("RiskGroup_id") REFERENCES "RiskGroup" (id)
+);
+CREATE TABLE "Doi_keyword" (
+	"Doi_id" INTEGER, 
+	keyword TEXT, 
+	PRIMARY KEY ("Doi_id", keyword), 
+	FOREIGN KEY("Doi_id") REFERENCES "Doi" (id)
+);
+CREATE TABLE "Journal_keyword" (
+	"Journal_id" INTEGER, 
+	keyword TEXT, 
+	PRIMARY KEY ("Journal_id", keyword), 
+	FOREIGN KEY("Journal_id") REFERENCES "Journal" (id)
+);
+CREATE TABLE "PdbReference_keyword" (
+	"PdbReference_id" INTEGER, 
+	keyword TEXT, 
+	PRIMARY KEY ("PdbReference_id", keyword), 
+	FOREIGN KEY("PdbReference_id") REFERENCES "PdbReference" (id)
+);
+CREATE TABLE "Keyword_keyword" (
+	"Keyword_id" INTEGER, 
+	keyword TEXT, 
+	PRIMARY KEY ("Keyword_id", keyword), 
+	FOREIGN KEY("Keyword_id") REFERENCES "Keyword" (id)
+);
+CREATE TABLE "TagSequence_keyword" (
+	"TagSequence_id" INTEGER, 
+	keyword TEXT, 
+	PRIMARY KEY ("TagSequence_id", keyword), 
+	FOREIGN KEY("TagSequence_id") REFERENCES "TagSequence" (id)
+);
+CREATE TABLE "SpecialFeature_keyword" (
+	"SpecialFeature_id" INTEGER, 
+	keyword TEXT, 
+	PRIMARY KEY ("SpecialFeature_id", keyword), 
+	FOREIGN KEY("SpecialFeature_id") REFERENCES "SpecialFeature" (id)
+);
+CREATE TABLE "ExpressionVector_keyword" (
+	"ExpressionVector_id" INTEGER, 
+	keyword TEXT, 
+	PRIMARY KEY ("ExpressionVector_id", keyword), 
+	FOREIGN KEY("ExpressionVector_id") REFERENCES "ExpressionVector" (id)
+);
+CREATE TABLE "PlasmidSelection_keyword" (
+	"PlasmidSelection_id" INTEGER, 
+	keyword TEXT, 
+	PRIMARY KEY ("PlasmidSelection_id", keyword), 
+	FOREIGN KEY("PlasmidSelection_id") REFERENCES "PlasmidSelection" (id)
+);
+CREATE TABLE "PropagationHost_keyword" (
+	"PropagationHost_id" INTEGER, 
+	keyword TEXT, 
+	PRIMARY KEY ("PropagationHost_id", keyword), 
+	FOREIGN KEY("PropagationHost_id") REFERENCES "PropagationHost" (id)
+);
+CREATE TABLE "TransmissionMethod_keyword" (
+	"TransmissionMethod_id" INTEGER, 
+	keyword TEXT, 
+	PRIMARY KEY ("TransmissionMethod_id", keyword), 
+	FOREIGN KEY("TransmissionMethod_id") REFERENCES "TransmissionMethod" (id)
+);
+CREATE TABLE "ProductionCellLine_keyword" (
+	"ProductionCellLine_id" INTEGER, 
+	keyword TEXT, 
+	PRIMARY KEY ("ProductionCellLine_id", keyword), 
+	FOREIGN KEY("ProductionCellLine_id") REFERENCES "ProductionCellLine" (id)
+);
+CREATE TABLE "ProductCategory_keyword" (
+	"ProductCategory_id" INTEGER, 
+	keyword TEXT, 
+	PRIMARY KEY ("ProductCategory_id", keyword), 
+	FOREIGN KEY("ProductCategory_id") REFERENCES "ProductCategory" (id)
+);
+CREATE TABLE "IsolationHost_keyword" (
+	"IsolationHost_id" INTEGER, 
+	keyword TEXT, 
+	PRIMARY KEY ("IsolationHost_id", keyword), 
+	FOREIGN KEY("IsolationHost_id") REFERENCES "IsolationHost" (id)
+);
+CREATE TABLE "GeographicalOrigin_keyword" (
+	"GeographicalOrigin_id" INTEGER, 
+	keyword TEXT, 
+	PRIMARY KEY ("GeographicalOrigin_id", keyword), 
+	FOREIGN KEY("GeographicalOrigin_id") REFERENCES "GeographicalOrigin" (id)
+);
+CREATE TABLE "IplcOrigin_keyword" (
+	"IplcOrigin_id" INTEGER, 
+	keyword TEXT, 
+	PRIMARY KEY ("IplcOrigin_id", keyword), 
+	FOREIGN KEY("IplcOrigin_id") REFERENCES "IplcOrigin" (id)
+);
+CREATE TABLE "Country_keyword" (
+	"Country_id" INTEGER, 
+	keyword TEXT, 
+	PRIMARY KEY ("Country_id", keyword), 
+	FOREIGN KEY("Country_id") REFERENCES "Country" (id)
+);
+CREATE TABLE "IataClassification_keyword" (
+	"IataClassification_id" INTEGER, 
+	keyword TEXT, 
+	PRIMARY KEY ("IataClassification_id", keyword), 
+	FOREIGN KEY("IataClassification_id") REFERENCES "IataClassification" (id)
 );
 CREATE TABLE "Variant_alternateName" (
 	"Variant_id" INTEGER, 
@@ -2235,12 +2739,24 @@ CREATE TABLE "Variant_sourceOfInformation" (
 	PRIMARY KEY ("Variant_id", "sourceOfInformation"), 
 	FOREIGN KEY("Variant_id") REFERENCES "Variant" (id)
 );
+CREATE TABLE "Variant_keyword" (
+	"Variant_id" INTEGER, 
+	keyword TEXT, 
+	PRIMARY KEY ("Variant_id", keyword), 
+	FOREIGN KEY("Variant_id") REFERENCES "Variant" (id)
+);
 CREATE TABLE "TaxonomicRank_taxonomy" (
 	"TaxonomicRank_id" INTEGER, 
 	taxonomy_id INTEGER, 
 	PRIMARY KEY ("TaxonomicRank_id", taxonomy_id), 
 	FOREIGN KEY("TaxonomicRank_id") REFERENCES "TaxonomicRank" (id), 
 	FOREIGN KEY(taxonomy_id) REFERENCES "Taxonomy" (id)
+);
+CREATE TABLE "TaxonomicRank_keyword" (
+	"TaxonomicRank_id" INTEGER, 
+	keyword TEXT, 
+	PRIMARY KEY ("TaxonomicRank_id", keyword), 
+	FOREIGN KEY("TaxonomicRank_id") REFERENCES "TaxonomicRank" (id)
 );
 CREATE TABLE "PathogenIdentification" (
 	id INTEGER NOT NULL, 
@@ -2361,6 +2877,12 @@ CREATE TABLE "Taxonomy_taxon" (
 	FOREIGN KEY("Taxonomy_id") REFERENCES "Taxonomy" (id), 
 	FOREIGN KEY(taxon_id) REFERENCES "Taxon" (id)
 );
+CREATE TABLE "Publication_keyword" (
+	"Publication_id" INTEGER, 
+	keyword TEXT, 
+	PRIMARY KEY ("Publication_id", keyword), 
+	FOREIGN KEY("Publication_id") REFERENCES "Publication" (id)
+);
 CREATE TABLE "Taxon_taxonomy" (
 	"Taxon_id" INTEGER, 
 	taxonomy_id INTEGER, 
@@ -2381,6 +2903,24 @@ CREATE TABLE "Taxon_externalEquivalentTaxon" (
 	PRIMARY KEY ("Taxon_id", "externalEquivalentTaxon_id"), 
 	FOREIGN KEY("Taxon_id") REFERENCES "Taxon" (id), 
 	FOREIGN KEY("externalEquivalentTaxon_id") REFERENCES "Taxon" (id)
+);
+CREATE TABLE "Taxon_keyword" (
+	"Taxon_id" INTEGER, 
+	keyword TEXT, 
+	PRIMARY KEY ("Taxon_id", keyword), 
+	FOREIGN KEY("Taxon_id") REFERENCES "Taxon" (id)
+);
+CREATE TABLE "NaturalPartOrigin_keyword" (
+	"NaturalPartOrigin_id" INTEGER, 
+	keyword TEXT, 
+	PRIMARY KEY ("NaturalPartOrigin_id", keyword), 
+	FOREIGN KEY("NaturalPartOrigin_id") REFERENCES "NaturalPartOrigin" (id)
+);
+CREATE TABLE "ContactPoint_keyword" (
+	"ContactPoint_id" INTEGER, 
+	keyword TEXT, 
+	PRIMARY KEY ("ContactPoint_id", keyword), 
+	FOREIGN KEY("ContactPoint_id") REFERENCES "ContactPoint" (id)
 );
 CREATE TABLE "ProductOrService" (
 	id INTEGER NOT NULL, 
@@ -3067,6 +3607,24 @@ CREATE TABLE "PathogenIdentification_hostType" (
 	PRIMARY KEY ("PathogenIdentification_id", "hostType"), 
 	FOREIGN KEY("PathogenIdentification_id") REFERENCES "PathogenIdentification" (id)
 );
+CREATE TABLE "PathogenIdentification_keyword" (
+	"PathogenIdentification_id" INTEGER, 
+	keyword TEXT, 
+	PRIMARY KEY ("PathogenIdentification_id", keyword), 
+	FOREIGN KEY("PathogenIdentification_id") REFERENCES "PathogenIdentification" (id)
+);
+CREATE TABLE "PersonOrOrganization_keyword" (
+	"PersonOrOrganization_id" INTEGER, 
+	keyword TEXT, 
+	PRIMARY KEY ("PersonOrOrganization_id", keyword), 
+	FOREIGN KEY("PersonOrOrganization_id") REFERENCES "PersonOrOrganization" (id)
+);
+CREATE TABLE "Person_keyword" (
+	"Person_id" INTEGER, 
+	keyword TEXT, 
+	PRIMARY KEY ("Person_id", keyword), 
+	FOREIGN KEY("Person_id") REFERENCES "Person" (id)
+);
 CREATE TABLE "Organization_alternateName" (
 	"Organization_id" INTEGER, 
 	"alternateName_id" INTEGER, 
@@ -3074,12 +3632,24 @@ CREATE TABLE "Organization_alternateName" (
 	FOREIGN KEY("Organization_id") REFERENCES "Organization" (id), 
 	FOREIGN KEY("alternateName_id") REFERENCES "AlternateName" (id)
 );
+CREATE TABLE "Organization_keyword" (
+	"Organization_id" INTEGER, 
+	keyword TEXT, 
+	PRIMARY KEY ("Organization_id", keyword), 
+	FOREIGN KEY("Organization_id") REFERENCES "Organization" (id)
+);
 CREATE TABLE "ReasearchInfrastructure_alternateName" (
 	"ReasearchInfrastructure_id" INTEGER, 
 	"alternateName_id" INTEGER, 
 	PRIMARY KEY ("ReasearchInfrastructure_id", "alternateName_id"), 
 	FOREIGN KEY("ReasearchInfrastructure_id") REFERENCES "ReasearchInfrastructure" (id), 
 	FOREIGN KEY("alternateName_id") REFERENCES "AlternateName" (id)
+);
+CREATE TABLE "ReasearchInfrastructure_keyword" (
+	"ReasearchInfrastructure_id" INTEGER, 
+	keyword TEXT, 
+	PRIMARY KEY ("ReasearchInfrastructure_id", keyword), 
+	FOREIGN KEY("ReasearchInfrastructure_id") REFERENCES "ReasearchInfrastructure" (id)
 );
 CREATE TABLE "Provider_memberOfRi" (
 	"Provider_id" INTEGER, 
@@ -3094,6 +3664,24 @@ CREATE TABLE "Provider_alternateName" (
 	PRIMARY KEY ("Provider_id", "alternateName_id"), 
 	FOREIGN KEY("Provider_id") REFERENCES "Provider" (id), 
 	FOREIGN KEY("alternateName_id") REFERENCES "AlternateName" (id)
+);
+CREATE TABLE "Provider_keyword" (
+	"Provider_id" INTEGER, 
+	keyword TEXT, 
+	PRIMARY KEY ("Provider_id", keyword), 
+	FOREIGN KEY("Provider_id") REFERENCES "Provider" (id)
+);
+CREATE TABLE "Originator_keyword" (
+	"Originator_id" INTEGER, 
+	keyword TEXT, 
+	PRIMARY KEY ("Originator_id", keyword), 
+	FOREIGN KEY("Originator_id") REFERENCES "Originator" (id)
+);
+CREATE TABLE "MaterialSafetyDataSheet_keyword" (
+	"MaterialSafetyDataSheet_id" INTEGER, 
+	keyword TEXT, 
+	PRIMARY KEY ("MaterialSafetyDataSheet_id", keyword), 
+	FOREIGN KEY("MaterialSafetyDataSheet_id") REFERENCES "MaterialSafetyDataSheet" (id)
 );
 CREATE TABLE "Collection_collectionItem" (
 	"Collection_id" INTEGER, 
@@ -3165,6 +3753,12 @@ CREATE TABLE "ProductOrService_certification" (
 	FOREIGN KEY("ProductOrService_id") REFERENCES "ProductOrService" (id), 
 	FOREIGN KEY(certification_id) REFERENCES "Certification" (id)
 );
+CREATE TABLE "ProductOrService_keyword" (
+	"ProductOrService_id" INTEGER, 
+	keyword TEXT, 
+	PRIMARY KEY ("ProductOrService_id", keyword), 
+	FOREIGN KEY("ProductOrService_id") REFERENCES "ProductOrService" (id)
+);
 CREATE TABLE "Service_additionalCategory" (
 	"Service_id" INTEGER, 
 	"additionalCategory_id" INTEGER, 
@@ -3228,6 +3822,12 @@ CREATE TABLE "Service_certification" (
 	FOREIGN KEY("Service_id") REFERENCES "Service" (id), 
 	FOREIGN KEY(certification_id) REFERENCES "Certification" (id)
 );
+CREATE TABLE "Service_keyword" (
+	"Service_id" INTEGER, 
+	keyword TEXT, 
+	PRIMARY KEY ("Service_id", keyword), 
+	FOREIGN KEY("Service_id") REFERENCES "Service" (id)
+);
 CREATE TABLE "Product_additionalCategory" (
 	"Product_id" INTEGER, 
 	"additionalCategory_id" INTEGER, 
@@ -3290,6 +3890,12 @@ CREATE TABLE "Product_certification" (
 	PRIMARY KEY ("Product_id", certification_id), 
 	FOREIGN KEY("Product_id") REFERENCES "Product" (id), 
 	FOREIGN KEY(certification_id) REFERENCES "Certification" (id)
+);
+CREATE TABLE "Product_keyword" (
+	"Product_id" INTEGER, 
+	keyword TEXT, 
+	PRIMARY KEY ("Product_id", keyword), 
+	FOREIGN KEY("Product_id") REFERENCES "Product" (id)
 );
 CREATE TABLE "Antibody_sequenceReference" (
 	"Antibody_id" INTEGER, 
@@ -3361,6 +3967,12 @@ CREATE TABLE "Antibody_certification" (
 	FOREIGN KEY("Antibody_id") REFERENCES "Antibody" (id), 
 	FOREIGN KEY(certification_id) REFERENCES "Certification" (id)
 );
+CREATE TABLE "Antibody_keyword" (
+	"Antibody_id" INTEGER, 
+	keyword TEXT, 
+	PRIMARY KEY ("Antibody_id", keyword), 
+	FOREIGN KEY("Antibody_id") REFERENCES "Antibody" (id)
+);
 CREATE TABLE "Hybridoma_sequenceReference" (
 	"Hybridoma_id" INTEGER, 
 	"sequenceReference_id" INTEGER, 
@@ -3430,6 +4042,12 @@ CREATE TABLE "Hybridoma_certification" (
 	PRIMARY KEY ("Hybridoma_id", certification_id), 
 	FOREIGN KEY("Hybridoma_id") REFERENCES "Hybridoma" (id), 
 	FOREIGN KEY(certification_id) REFERENCES "Certification" (id)
+);
+CREATE TABLE "Hybridoma_keyword" (
+	"Hybridoma_id" INTEGER, 
+	keyword TEXT, 
+	PRIMARY KEY ("Hybridoma_id", keyword), 
+	FOREIGN KEY("Hybridoma_id") REFERENCES "Hybridoma" (id)
 );
 CREATE TABLE "Protein_sequence" (
 	"Protein_id" INTEGER, 
@@ -3576,6 +4194,12 @@ CREATE TABLE "Protein_certification" (
 	FOREIGN KEY("Protein_id") REFERENCES "Protein" (id), 
 	FOREIGN KEY(certification_id) REFERENCES "Certification" (id)
 );
+CREATE TABLE "Protein_keyword" (
+	"Protein_id" INTEGER, 
+	keyword TEXT, 
+	PRIMARY KEY ("Protein_id", keyword), 
+	FOREIGN KEY("Protein_id") REFERENCES "Protein" (id)
+);
 CREATE TABLE "NucleicAcid_genBankFileOfTheConstruct" (
 	"NucleicAcid_id" INTEGER, 
 	"genBankFileOfTheConstruct_id" INTEGER, 
@@ -3660,6 +4284,12 @@ CREATE TABLE "NucleicAcid_certification" (
 	FOREIGN KEY("NucleicAcid_id") REFERENCES "NucleicAcid" (id), 
 	FOREIGN KEY(certification_id) REFERENCES "Certification" (id)
 );
+CREATE TABLE "NucleicAcid_keyword" (
+	"NucleicAcid_id" INTEGER, 
+	keyword TEXT, 
+	PRIMARY KEY ("NucleicAcid_id", keyword), 
+	FOREIGN KEY("NucleicAcid_id") REFERENCES "NucleicAcid" (id)
+);
 CREATE TABLE "DetectionKit_standardOperatingProcedureFile" (
 	"DetectionKit_id" INTEGER, 
 	"standardOperatingProcedureFile_id" INTEGER, 
@@ -3730,6 +4360,12 @@ CREATE TABLE "DetectionKit_certification" (
 	FOREIGN KEY("DetectionKit_id") REFERENCES "DetectionKit" (id), 
 	FOREIGN KEY(certification_id) REFERENCES "Certification" (id)
 );
+CREATE TABLE "DetectionKit_keyword" (
+	"DetectionKit_id" INTEGER, 
+	keyword TEXT, 
+	PRIMARY KEY ("DetectionKit_id", keyword), 
+	FOREIGN KEY("DetectionKit_id") REFERENCES "DetectionKit" (id)
+);
 CREATE TABLE "Bundle_itemsOfTheBundle" (
 	"Bundle_id" INTEGER, 
 	"itemsOfTheBundle_id" INTEGER NOT NULL, 
@@ -3799,6 +4435,12 @@ CREATE TABLE "Bundle_certification" (
 	PRIMARY KEY ("Bundle_id", certification_id), 
 	FOREIGN KEY("Bundle_id") REFERENCES "Bundle" (id), 
 	FOREIGN KEY(certification_id) REFERENCES "Certification" (id)
+);
+CREATE TABLE "Bundle_keyword" (
+	"Bundle_id" INTEGER, 
+	keyword TEXT, 
+	PRIMARY KEY ("Bundle_id", keyword), 
+	FOREIGN KEY("Bundle_id") REFERENCES "Bundle" (id)
 );
 CREATE TABLE "Pathogen_suspectedEpidemiologicalOrigin" (
 	"Pathogen_id" INTEGER, 
@@ -3904,6 +4546,12 @@ CREATE TABLE "Pathogen_certification" (
 	PRIMARY KEY ("Pathogen_id", certification_id), 
 	FOREIGN KEY("Pathogen_id") REFERENCES "Pathogen" (id), 
 	FOREIGN KEY(certification_id) REFERENCES "Certification" (id)
+);
+CREATE TABLE "Pathogen_keyword" (
+	"Pathogen_id" INTEGER, 
+	keyword TEXT, 
+	PRIMARY KEY ("Pathogen_id", keyword), 
+	FOREIGN KEY("Pathogen_id") REFERENCES "Pathogen" (id)
 );
 CREATE TABLE "Virus_coInfectingViruses" (
 	"Virus_id" INTEGER, 
@@ -4017,6 +4665,12 @@ CREATE TABLE "Virus_certification" (
 	FOREIGN KEY("Virus_id") REFERENCES "Virus" (id), 
 	FOREIGN KEY(certification_id) REFERENCES "Certification" (id)
 );
+CREATE TABLE "Virus_keyword" (
+	"Virus_id" INTEGER, 
+	keyword TEXT, 
+	PRIMARY KEY ("Virus_id", keyword), 
+	FOREIGN KEY("Virus_id") REFERENCES "Virus" (id)
+);
 CREATE TABLE "Bacterium_suspectedEpidemiologicalOrigin" (
 	"Bacterium_id" INTEGER, 
 	"suspectedEpidemiologicalOrigin_id" INTEGER, 
@@ -4121,6 +4775,12 @@ CREATE TABLE "Bacterium_certification" (
 	PRIMARY KEY ("Bacterium_id", certification_id), 
 	FOREIGN KEY("Bacterium_id") REFERENCES "Bacterium" (id), 
 	FOREIGN KEY(certification_id) REFERENCES "Certification" (id)
+);
+CREATE TABLE "Bacterium_keyword" (
+	"Bacterium_id" INTEGER, 
+	keyword TEXT, 
+	PRIMARY KEY ("Bacterium_id", keyword), 
+	FOREIGN KEY("Bacterium_id") REFERENCES "Bacterium" (id)
 );
 CREATE TABLE "Fungus_suspectedEpidemiologicalOrigin" (
 	"Fungus_id" INTEGER, 
@@ -4227,6 +4887,12 @@ CREATE TABLE "Fungus_certification" (
 	FOREIGN KEY("Fungus_id") REFERENCES "Fungus" (id), 
 	FOREIGN KEY(certification_id) REFERENCES "Certification" (id)
 );
+CREATE TABLE "Fungus_keyword" (
+	"Fungus_id" INTEGER, 
+	keyword TEXT, 
+	PRIMARY KEY ("Fungus_id", keyword), 
+	FOREIGN KEY("Fungus_id") REFERENCES "Fungus" (id)
+);
 CREATE TABLE "Protozoan_suspectedEpidemiologicalOrigin" (
 	"Protozoan_id" INTEGER, 
 	"suspectedEpidemiologicalOrigin_id" INTEGER, 
@@ -4331,6 +4997,12 @@ CREATE TABLE "Protozoan_certification" (
 	PRIMARY KEY ("Protozoan_id", certification_id), 
 	FOREIGN KEY("Protozoan_id") REFERENCES "Protozoan" (id), 
 	FOREIGN KEY(certification_id) REFERENCES "Certification" (id)
+);
+CREATE TABLE "Protozoan_keyword" (
+	"Protozoan_id" INTEGER, 
+	keyword TEXT, 
+	PRIMARY KEY ("Protozoan_id", keyword), 
+	FOREIGN KEY("Protozoan_id") REFERENCES "Protozoan" (id)
 );
 CREATE TABLE "Viroid_suspectedEpidemiologicalOrigin" (
 	"Viroid_id" INTEGER, 
@@ -4437,6 +5109,12 @@ CREATE TABLE "Viroid_certification" (
 	FOREIGN KEY("Viroid_id") REFERENCES "Viroid" (id), 
 	FOREIGN KEY(certification_id) REFERENCES "Certification" (id)
 );
+CREATE TABLE "Viroid_keyword" (
+	"Viroid_id" INTEGER, 
+	keyword TEXT, 
+	PRIMARY KEY ("Viroid_id", keyword), 
+	FOREIGN KEY("Viroid_id") REFERENCES "Viroid" (id)
+);
 CREATE TABLE "Prion_suspectedEpidemiologicalOrigin" (
 	"Prion_id" INTEGER, 
 	"suspectedEpidemiologicalOrigin_id" INTEGER, 
@@ -4541,4 +5219,10 @@ CREATE TABLE "Prion_certification" (
 	PRIMARY KEY ("Prion_id", certification_id), 
 	FOREIGN KEY("Prion_id") REFERENCES "Prion" (id), 
 	FOREIGN KEY(certification_id) REFERENCES "Certification" (id)
+);
+CREATE TABLE "Prion_keyword" (
+	"Prion_id" INTEGER, 
+	keyword TEXT, 
+	PRIMARY KEY ("Prion_id", keyword), 
+	FOREIGN KEY("Prion_id") REFERENCES "Prion" (id)
 );

@@ -71,6 +71,7 @@ SELECT ?g ?s ?p WHERE {
    foaf:homepage,
    dcat:contactPoint,
    EVORAO:logo,
+   dcat:keyword,
    rdf:type ))
  }
  

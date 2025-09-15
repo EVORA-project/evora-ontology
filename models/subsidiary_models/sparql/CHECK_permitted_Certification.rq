@@ -68,6 +68,7 @@ SELECT ?g ?s ?p WHERE {
    EVORAO:logo,
    EVORAO:certificationDocument,
    EVORAO:resourceUrl,
+   dcat:keyword,
    rdf:type ))
  }
  

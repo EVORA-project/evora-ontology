@@ -137,6 +137,8 @@ URI: [EVORAO:Protein](https://w3id.org/evorao/Protein)
         
       Protein : internalReference
         
+      Protein : keyword
+        
       Protein : keywords
         
           
@@ -334,6 +336,7 @@ URI: [EVORAO:Protein](https://w3id.org/evorao/Protein)
 | [title](title.md) | 1 <br/> [String](String.md) | A name given to the resource | [Dataset](Dataset.md) |
 | [description](description.md) | 1 _recommended_ <br/> [String](String.md) | A short explanation of the characteristics, features, or nature of the curren... | [Dataset](Dataset.md) |
 | [version](version.md) | 0..1 _recommended_ <br/> [String](String.md) | The version indicator (name or identifier) of a resource | [Dataset](Dataset.md) |
+| [keyword](keyword.md) | * <br/> [String](String.md) | A keyword or tag describing the resource | [Resource](Resource.md) |
 
 
 
@@ -1253,12 +1256,11 @@ attributes:
     description: The main category of the service or product
     title: category
     from_schema: https://w3id.org/evorao/
-    exact_mappings:
-    - dcat:theme
     close_mappings:
     - schema:category
     - gr:category
     rank: 1000
+    slot_uri: dcat:theme
     alias: category
     owner: Protein
     domain_of:
@@ -1273,9 +1275,9 @@ attributes:
     title: additional category
     from_schema: https://w3id.org/evorao/
     close_mappings:
-    - dcat:theme
     - schema:additionalType
     rank: 1000
+    is_a: category
     alias: additionalCategory
     owner: Protein
     domain_of:
@@ -1700,6 +1702,20 @@ attributes:
     required: false
     recommended: true
     multivalued: false
+  keyword:
+    name: keyword
+    description: A keyword or tag describing the resource
+    title: keyword
+    from_schema: https://w3id.org/evorao/
+    rank: 1000
+    slot_uri: dcat:keyword
+    alias: keyword
+    owner: Protein
+    domain_of:
+    - Resource
+    range: string
+    required: false
+    multivalued: true
 
 ```
 </details>

@@ -34,6 +34,8 @@ URI: [EVORAO:ProductCategory](https://w3id.org/evorao/ProductCategory)
     click Vocabulary href "../Vocabulary"
 
         
+      ProductCategory : keyword
+        
       ProductCategory : parentCategory
         
           
@@ -70,6 +72,7 @@ URI: [EVORAO:ProductCategory](https://w3id.org/evorao/ProductCategory)
 | [description](description.md) | 0..1 _recommended_ <br/> [String](String.md) | A short explanation of the characteristics, features, or nature of the curren... | [Term](Term.md) |
 | [weight](weight.md) | 1 <br/> [Integer](Integer.md) | A numerical value indicating relative importance or priority, generally proce... | [Term](Term.md) |
 | [inVocabulary](inVocabulary.md) | 1 <br/> [Vocabulary](Vocabulary.md) | Terms belong to a specific vocabulary | [Term](Term.md) |
+| [keyword](keyword.md) | * <br/> [String](String.md) | A keyword or tag describing the resource | [Resource](Resource.md) |
 
 
 
@@ -141,6 +144,7 @@ URI: [EVORAO:ProductCategory](https://w3id.org/evorao/ProductCategory)
 | self | EVORAO:ProductCategory |
 | native | EVORAO:ProductCategory |
 | exact | wd:Q63981612, wd:Q63981612 |
+| broad | skos:ConceptScheme, skos:ConceptScheme |
 | related | schema:CategoryCode, schema:CategoryCode |
 | close | ncit:C25372, ncit:C25372 |
 
@@ -172,6 +176,9 @@ close_mappings:
 related_mappings:
 - schema:CategoryCode
 - schema:CategoryCode
+broad_mappings:
+- skos:ConceptScheme
+- skos:ConceptScheme
 is_a: Term
 slots:
 - parentCategory
@@ -212,6 +219,9 @@ close_mappings:
 related_mappings:
 - schema:CategoryCode
 - schema:CategoryCode
+broad_mappings:
+- skos:ConceptScheme
+- skos:ConceptScheme
 is_a: Term
 slot_usage:
   parentCategory:
@@ -347,6 +357,20 @@ attributes:
     range: Vocabulary
     required: true
     multivalued: false
+  keyword:
+    name: keyword
+    description: A keyword or tag describing the resource
+    title: keyword
+    from_schema: https://w3id.org/evorao/
+    rank: 1000
+    slot_uri: dcat:keyword
+    alias: keyword
+    owner: ProductCategory
+    domain_of:
+    - Resource
+    range: string
+    required: false
+    multivalued: true
 
 ```
 </details>

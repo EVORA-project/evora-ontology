@@ -116,6 +116,8 @@ URI: [EVORAO:ProductOrService](https://w3id.org/evorao/ProductOrService)
         
       ProductOrService : internalReference
         
+      ProductOrService : keyword
+        
       ProductOrService : keywords
         
           
@@ -224,6 +226,7 @@ URI: [EVORAO:ProductOrService](https://w3id.org/evorao/ProductOrService)
 | [title](title.md) | 1 <br/> [String](String.md) | A name given to the resource | [Dataset](Dataset.md) |
 | [description](description.md) | 1 _recommended_ <br/> [String](String.md) | A short explanation of the characteristics, features, or nature of the curren... | [Dataset](Dataset.md) |
 | [version](version.md) | 0..1 _recommended_ <br/> [String](String.md) | The version indicator (name or identifier) of a resource | [Dataset](Dataset.md) |
+| [keyword](keyword.md) | * <br/> [String](String.md) | A keyword or tag describing the resource | [Resource](Resource.md) |
 
 
 
@@ -376,11 +379,10 @@ slot_usage:
     name: category
     description: The main category of the service or product
     title: category
-    exact_mappings:
-    - dcat:theme
     close_mappings:
     - schema:category
     - gr:category
+    slot_uri: dcat:theme
     domain_of:
     - ProductOrService
     range: ProductCategory
@@ -392,8 +394,8 @@ slot_usage:
       service can fit
     title: additional category
     close_mappings:
-    - dcat:theme
     - schema:additionalType
+    is_a: category
     domain_of:
     - ProductOrService
     range: ProductCategory
@@ -733,11 +735,10 @@ slot_usage:
     name: category
     description: The main category of the service or product
     title: category
-    exact_mappings:
-    - dcat:theme
     close_mappings:
     - schema:category
     - gr:category
+    slot_uri: dcat:theme
     domain_of:
     - ProductOrService
     range: ProductCategory
@@ -749,8 +750,8 @@ slot_usage:
       service can fit
     title: additional category
     close_mappings:
-    - dcat:theme
     - schema:additionalType
+    is_a: category
     domain_of:
     - ProductOrService
     range: ProductCategory
@@ -1081,12 +1082,11 @@ attributes:
     description: The main category of the service or product
     title: category
     from_schema: https://w3id.org/evorao/
-    exact_mappings:
-    - dcat:theme
     close_mappings:
     - schema:category
     - gr:category
     rank: 1000
+    slot_uri: dcat:theme
     alias: category
     owner: ProductOrService
     domain_of:
@@ -1101,9 +1101,9 @@ attributes:
     title: additional category
     from_schema: https://w3id.org/evorao/
     close_mappings:
-    - dcat:theme
     - schema:additionalType
     rank: 1000
+    is_a: category
     alias: additionalCategory
     owner: ProductOrService
     domain_of:
@@ -1528,6 +1528,20 @@ attributes:
     required: false
     recommended: true
     multivalued: false
+  keyword:
+    name: keyword
+    description: A keyword or tag describing the resource
+    title: keyword
+    from_schema: https://w3id.org/evorao/
+    rank: 1000
+    slot_uri: dcat:keyword
+    alias: keyword
+    owner: ProductOrService
+    domain_of:
+    - Resource
+    range: string
+    required: false
+    multivalued: true
 
 ```
 </details>

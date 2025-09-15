@@ -48,7 +48,7 @@ keywords:
 - pathogen collections
 - interoperability
 id: https://w3id.org/evorao/
-version: 1.0.9734
+version: 1.0.9808
 imports:
 - linkml:types
 license: https://creativecommons.org/publicdomain/zero/1.0/
@@ -115,6 +115,16 @@ prefixes:
 default_prefix: EVORAO
 default_range: string
 slots:
+  keyword:
+    description: A keyword or tag describing the resource
+    title: keyword
+    from_schema: https://w3id.org/evorao/
+    slot_uri: dcat:keyword
+    domain_of:
+    - Resource
+    range: string
+    required: false
+    multivalued: true
   title:
     description: A name given to the resource
     title: title
@@ -1002,12 +1012,8 @@ slots:
     exact_mappings:
     - wdp:P496
     - reproduceme:ORCID
-    - wdp:P496
-    - reproduceme:ORCID
     related_mappings:
     - iao:0000708
-    - edam:4022
-    - IAO:0000708
     - edam:4022
     domain_of:
     - Person
@@ -1323,11 +1329,10 @@ slots:
     description: The main category of the service or product
     title: category
     from_schema: https://w3id.org/evorao/
-    exact_mappings:
-    - dcat:theme
     close_mappings:
     - schema:category
     - gr:category
+    slot_uri: dcat:theme
     domain_of:
     - ProductOrService
     range: ProductCategory
@@ -1339,8 +1344,8 @@ slots:
     title: additional category
     from_schema: https://w3id.org/evorao/
     close_mappings:
-    - dcat:theme
     - schema:additionalType
+    is_a: category
     domain_of:
     - ProductOrService
     range: ProductCategory
@@ -2316,9 +2321,9 @@ slots:
       product.
     title: material safety contact
     from_schema: https://w3id.org/evorao/
-    exact_mappings:
-    - dcat:contactPoint
+    broad_mappings:
     - schema:contactPoint
+    is_a: contactPoint
     domain_of:
     - MaterialSafetyDataSheet
     range: ContactPoint
@@ -2691,6 +2696,18 @@ classes:
     title: Resource
     from_schema: https://w3id.org/evorao/
     abstract: true
+    slots:
+    - keyword
+    slot_usage:
+      keyword:
+        description: A keyword or tag describing the resource
+        title: keyword
+        slot_uri: dcat:keyword
+        domain_of:
+        - Resource
+        range: string
+        required: false
+        multivalued: true
     class_uri: dcat:Resource
   Dataset:
     description: A collection of data, published or curated by a single agent, and
@@ -3789,6 +3806,9 @@ classes:
     related_mappings:
     - schema:CategoryCode
     - schema:CategoryCode
+    broad_mappings:
+    - skos:ConceptScheme
+    - skos:ConceptScheme
     is_a: Term
     slots:
     - parentCategory
@@ -4815,11 +4835,10 @@ classes:
       category:
         description: The main category of the service or product
         title: category
-        exact_mappings:
-        - dcat:theme
         close_mappings:
         - schema:category
         - gr:category
+        slot_uri: dcat:theme
         domain_of:
         - ProductOrService
         range: ProductCategory
@@ -4830,8 +4849,8 @@ classes:
           or service can fit
         title: additional category
         close_mappings:
-        - dcat:theme
         - schema:additionalType
+        is_a: category
         domain_of:
         - ProductOrService
         range: ProductCategory
@@ -6212,9 +6231,9 @@ classes:
           related to the safety, handling, and regulatory compliance of the biological
           product.
         title: material safety contact
-        exact_mappings:
-        - dcat:contactPoint
+        broad_mappings:
         - schema:contactPoint
+        is_a: contactPoint
         domain_of:
         - MaterialSafetyDataSheet
         range: ContactPoint
@@ -6760,7 +6779,7 @@ classes:
         - wdp:P496
         - reproduceme:ORCID
         related_mappings:
-        - IAO:0000708
+        - iao:0000708
         - edam:4022
         domain_of:
         - ContactPoint
@@ -6954,4 +6973,4 @@ classes:
         required: false
         multivalued: false
 source_file: https://w3id.org/evorao/evorao.owl.ttl
-generation_date: '2025-09-12T17:40:52'
+generation_date: '2025-09-15T16:39:57'

@@ -29,6 +29,8 @@ URI: [EVORAO:PathogenIdentification](https://w3id.org/evorao/PathogenIdentificat
         
       PathogenIdentification : isolate
         
+      PathogenIdentification : keyword
+        
       PathogenIdentification : pathogenName
         
           
@@ -91,6 +93,7 @@ URI: [EVORAO:PathogenIdentification](https://w3id.org/evorao/PathogenIdentificat
 | [genotype](genotype.md) | 0..1 <br/> [String](String.md) | Genotype information that identifies organisms that cluster in phylogenetic t... | direct |
 | [serotype](serotype.md) | 0..1 <br/> [String](String.md) | Genetically related pathogens that group together based on serological relati... | direct |
 | [variant](variant.md) | 0..1 <br/> [Variant](Variant.md) | An organism with one or more new mutations is referred to as a “variant” of t... | direct |
+| [keyword](keyword.md) | * <br/> [String](String.md) | A keyword or tag describing the resource | [Resource](Resource.md) |
 
 
 
@@ -614,6 +617,20 @@ attributes:
     range: Variant
     required: false
     multivalued: false
+  keyword:
+    name: keyword
+    description: A keyword or tag describing the resource
+    title: keyword
+    from_schema: https://w3id.org/evorao/
+    rank: 1000
+    slot_uri: dcat:keyword
+    alias: keyword
+    owner: PathogenIdentification
+    domain_of:
+    - Resource
+    range: string
+    required: false
+    multivalued: true
 
 ```
 </details>

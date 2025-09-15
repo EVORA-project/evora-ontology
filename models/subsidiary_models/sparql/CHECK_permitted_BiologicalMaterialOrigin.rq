@@ -66,6 +66,7 @@ SELECT ?g ?s ?p WHERE {
    EVORAO:recombinantMaterial,
    EVORAO:biologicalSourceType,
    EVORAO:biologicalPartOrigin,
+   dcat:keyword,
    rdf:type ))
  }
  

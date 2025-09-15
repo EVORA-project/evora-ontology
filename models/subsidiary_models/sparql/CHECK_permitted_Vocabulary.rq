@@ -68,6 +68,7 @@ SELECT ?g ?s ?p WHERE {
    dct:title,
    dct:description,
    dcat:version,
+   dcat:keyword,
    rdf:type ))
  }
  

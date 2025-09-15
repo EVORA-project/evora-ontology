@@ -36,6 +36,8 @@ URI: [foaf:Person](http://xmlns.com/foaf/0.1/Person)
         
       Person : homePage
         
+      Person : keyword
+        
       Person : logo
         
           
@@ -73,6 +75,7 @@ URI: [foaf:Person](http://xmlns.com/foaf/0.1/Person)
 | [homePage](homePage.md) | 0..1 <br/> [Uri](Uri.md) | A web page that serves as the main or introductory page | [PersonOrOrganization](PersonOrOrganization.md) |
 | [contactPoint](contactPoint.md) | 0..1 _recommended_ <br/> [ContactPoint](ContactPoint.md) | An information that allows someone to establish communication | [PersonOrOrganization](PersonOrOrganization.md) |
 | [logo](logo.md) | 0..1 <br/> [Image](Image.md) | A path or URL to the related logo | [PersonOrOrganization](PersonOrOrganization.md) |
+| [keyword](keyword.md) | * <br/> [String](String.md) | A keyword or tag describing the resource | [Resource](Resource.md) |
 
 
 
@@ -322,6 +325,20 @@ attributes:
     range: Image
     required: false
     multivalued: false
+  keyword:
+    name: keyword
+    description: A keyword or tag describing the resource
+    title: keyword
+    from_schema: https://w3id.org/evorao/
+    rank: 1000
+    slot_uri: dcat:keyword
+    alias: keyword
+    owner: Person
+    domain_of:
+    - Resource
+    range: string
+    required: false
+    multivalued: true
 class_uri: foaf:Person
 
 ```

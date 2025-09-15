@@ -34,6 +34,8 @@ URI: [EVORAO:Certification](https://w3id.org/evorao/Certification)
         
       Certification : description
         
+      Certification : keyword
+        
       Certification : logo
         
           
@@ -69,6 +71,7 @@ URI: [EVORAO:Certification](https://w3id.org/evorao/Certification)
 | [logo](logo.md) | 0..1 <br/> [Image](Image.md) | A path or URL to the related logo | direct |
 | [certificationDocument](certificationDocument.md) | * <br/> [Document](Document.md) | The document(s) issued by an authority certifying the conformity of the subje... | direct |
 | [resourceUrl](resourceUrl.md) | 0..1 <br/> [Uri](Uri.md) | The web address or location where the details or content is stored and can be... | direct |
+| [keyword](keyword.md) | * <br/> [String](String.md) | A keyword or tag describing the resource | [Resource](Resource.md) |
 
 
 
@@ -476,6 +479,20 @@ attributes:
     range: uri
     required: false
     multivalued: false
+  keyword:
+    name: keyword
+    description: A keyword or tag describing the resource
+    title: keyword
+    from_schema: https://w3id.org/evorao/
+    rank: 1000
+    slot_uri: dcat:keyword
+    alias: keyword
+    owner: Certification
+    domain_of:
+    - Resource
+    range: string
+    required: false
+    multivalued: true
 
 ```
 </details>

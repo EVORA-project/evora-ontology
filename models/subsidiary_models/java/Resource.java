@@ -5,7 +5,7 @@ import lombok.*;
 
 
 
-/* version: 1.0.9734 */
+/* version: 1.0.9808 */
 
 
 /**
@@ -15,5 +15,6 @@ import lombok.*;
 @EqualsAndHashCode(callSuper=false)
 public abstract class Resource  {
 
+  private List<String> keyword;
 
 }

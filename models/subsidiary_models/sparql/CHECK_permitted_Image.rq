@@ -69,6 +69,7 @@ SELECT ?g ?s ?p WHERE {
    EVORAO:contentUrl,
    EVORAO:format,
    dct:license,
+   dcat:keyword,
    rdf:type ))
  }
  

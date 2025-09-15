@@ -25,6 +25,8 @@ URI: [EVORAO:SequenceReference](https://w3id.org/evorao/SequenceReference)
       
       SequenceReference : accessionNumber
         
+      SequenceReference : keyword
+        
       SequenceReference : sequenceProvider
         
       
@@ -46,6 +48,7 @@ URI: [EVORAO:SequenceReference](https://w3id.org/evorao/SequenceReference)
 | ---  | --- | --- | --- |
 | [accessionNumber](accessionNumber.md) | 1 <br/> [String](String.md) | The sequence ID that permits to retrieve the sequence information from the se... | direct |
 | [sequenceProvider](sequenceProvider.md) | 1 <br/> [String](String.md) | The name of the sequence provider within the list of accepted sequence provid... | direct |
+| [keyword](keyword.md) | * <br/> [String](String.md) | A keyword or tag describing the resource | [Resource](Resource.md) |
 
 
 
@@ -234,6 +237,20 @@ attributes:
     equals_string_in:
     - ENA
     - GenBank
+  keyword:
+    name: keyword
+    description: A keyword or tag describing the resource
+    title: keyword
+    from_schema: https://w3id.org/evorao/
+    rank: 1000
+    slot_uri: dcat:keyword
+    alias: keyword
+    owner: SequenceReference
+    domain_of:
+    - Resource
+    range: string
+    required: false
+    multivalued: true
 
 ```
 </details>

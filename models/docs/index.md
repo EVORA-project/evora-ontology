@@ -176,6 +176,7 @@ Name: EVORAO
 | [isolationTechnique](isolationTechnique.md) | The specific method or procedure used to isolate the pathogen from a host org... |
 | [itemsOfTheBundle](itemsOfTheBundle.md) | Specifies the constituent products and/or services that are part of the bundl... |
 | [journal](journal.md) | The scientific journal in which the publication was published |
+| [keyword](keyword.md) | A keyword or tag describing the resource |
 | [keywords](keywords.md) | List of terms used to tag and categorize this Item |
 | [letterOfAuthority](letterOfAuthority.md) | Indicate whether a Letter of Authority is required, confirming the necessity ... |
 | [license](license.md) | Information about terms and conditions under which the subject can be used, s... |

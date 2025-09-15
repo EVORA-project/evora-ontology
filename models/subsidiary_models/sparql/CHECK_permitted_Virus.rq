@@ -94,7 +94,7 @@ SELECT ?g ?s ?p WHERE {
    EVORAO:accessPointUrl,
    EVORAO:refSku,
    EVORAO:unitDefinition,
-   EVORAO:category,
+   dcat:theme,
    EVORAO:additionalCategory,
    EVORAO:unitCost,
    EVORAO:qualityGrading,
@@ -118,6 +118,7 @@ SELECT ?g ?s ?p WHERE {
    dct:title,
    dct:description,
    dcat:version,
+   dcat:keyword,
    rdf:type ))
  }
  

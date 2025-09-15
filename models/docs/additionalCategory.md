@@ -12,7 +12,12 @@ _Any category apart from its main category in which this product or service can 
 URI: [EVORAO:additionalCategory](https://w3id.org/evorao/additionalCategory)
 Alias: additionalCategory
 
-<!-- no inheritance hierarchy -->
+
+## Inheritance
+
+* [category](category.md)
+    * **additionalCategory**
+
 
 
 
@@ -22,22 +27,22 @@ Alias: additionalCategory
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [Protozoan](Protozoan.md) | The protozoan as a biological material |  no  |
 | [Service](Service.md) | An intangible offering characterized by an activity, performance, or facilita... |  no  |
-| [Antibody](Antibody.md) | Protein that can bind to certain types of foreign bodies, such as pathogens |  no  |
-| [NucleicAcid](NucleicAcid.md) | Nucleic acid related to a pathogen |  no  |
 | [DetectionKit](DetectionKit.md) | A detection kit for specific pathogens |  no  |
-| [Hybridoma](Hybridoma.md) | An hybridoma that provides antibodies that can be related to a pathogen |  no  |
-| [Fungus](Fungus.md) | The fungus as a biological material |  no  |
-| [Bundle](Bundle.md) | A grouping of products and/or services intentionally combined into a single o... |  no  |
-| [Viroid](Viroid.md) | The viroid as a biological material |  no  |
-| [Prion](Prion.md) | The prion as a biological material |  no  |
+| [NucleicAcid](NucleicAcid.md) | Nucleic acid related to a pathogen |  no  |
 | [Bacterium](Bacterium.md) | The bacterium as a biological material |  no  |
+| [Hybridoma](Hybridoma.md) | An hybridoma that provides antibodies that can be related to a pathogen |  no  |
+| [Prion](Prion.md) | The prion as a biological material |  no  |
+| [ProductOrService](ProductOrService.md) | An offering provided by a provider, which may be tangible (a product) or inta... |  yes  |
+| [Fungus](Fungus.md) | The fungus as a biological material |  no  |
+| [Antibody](Antibody.md) | Protein that can bind to certain types of foreign bodies, such as pathogens |  no  |
+| [Pathogen](Pathogen.md) | Biological entity that causes disease in its host, which is typically an infe... |  no  |
+| [Protozoan](Protozoan.md) | The protozoan as a biological material |  no  |
 | [Protein](Protein.md) | A protein as a derived product from a pathogen |  no  |
+| [Bundle](Bundle.md) | A grouping of products and/or services intentionally combined into a single o... |  no  |
 | [Virus](Virus.md) | The virus as a biological material |  no  |
 | [Product](Product.md) | A tangible, physical item made available by a provider for use, consumption, ... |  no  |
-| [ProductOrService](ProductOrService.md) | An offering provided by a provider, which may be tangible (a product) or inta... |  yes  |
-| [Pathogen](Pathogen.md) | Biological entity that causes disease in its host, which is typically an infe... |  no  |
+| [Viroid](Viroid.md) | The viroid as a biological material |  no  |
 
 
 
@@ -51,7 +56,7 @@ Alias: additionalCategory
 
 * Multivalued: True
 
-* Recommended: True
+* Required: True
 
 
 
@@ -79,7 +84,7 @@ Alias: additionalCategory
 | ---  | ---  |
 | self | EVORAO:additionalCategory |
 | native | EVORAO:additionalCategory |
-| close | dcat:theme, schema:additionalType |
+| close | schema:additionalType |
 
 
 
@@ -94,14 +99,14 @@ description: Any category apart from its main category in which this product or 
 title: additional category
 from_schema: https://w3id.org/evorao/
 close_mappings:
-- dcat:theme
 - schema:additionalType
 rank: 1000
+is_a: category
 alias: additionalCategory
 domain_of:
 - ProductOrService
 range: ProductCategory
-required: false
+required: true
 recommended: true
 multivalued: true
 

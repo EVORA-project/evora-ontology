@@ -78,6 +78,7 @@ SELECT ?g ?s ?p WHERE {
    EVORAO:transportInformation,
    EVORAO:regulatoryInformation,
    EVORAO:furtherInformation,
+   dcat:keyword,
    rdf:type ))
  }
  

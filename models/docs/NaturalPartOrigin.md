@@ -47,6 +47,8 @@ URI: [EVORAO:NaturalPartOrigin](https://w3id.org/evorao/NaturalPartOrigin)
     click IplcOrigin href "../IplcOrigin"
 
         
+      NaturalPartOrigin : keyword
+        
       NaturalPartOrigin : permitIdentifierForAbs
         
       NaturalPartOrigin : recombinantPartIdentification
@@ -83,6 +85,7 @@ URI: [EVORAO:NaturalPartOrigin](https://w3id.org/evorao/NaturalPartOrigin)
 | [permitIdentifierForAbs](permitIdentifierForAbs.md) | 0..1 <br/> [String](String.md) | Reference of the permit identifiers for access to the genetic resource, appli... | direct |
 | [recombinantPartIdentification](recombinantPartIdentification.md) | 0..1 <br/> [RecombinantPartIdentification](RecombinantPartIdentification.md) | Identification of a recombinant part | [BiologicalPartOrigin](BiologicalPartOrigin.md) |
 | [accessToPhysicalGeneticResource](accessToPhysicalGeneticResource.md) | 1 <br/> [Boolean](Boolean.md) | Indicate if the biological part was produced with access to a physical geneti... | [BiologicalPartOrigin](BiologicalPartOrigin.md) |
+| [keyword](keyword.md) | * <br/> [String](String.md) | A keyword or tag describing the resource | [Resource](Resource.md) |
 
 
 
@@ -437,6 +440,20 @@ attributes:
     range: boolean
     required: true
     multivalued: false
+  keyword:
+    name: keyword
+    description: A keyword or tag describing the resource
+    title: keyword
+    from_schema: https://w3id.org/evorao/
+    rank: 1000
+    slot_uri: dcat:keyword
+    alias: keyword
+    owner: NaturalPartOrigin
+    domain_of:
+    - Resource
+    range: string
+    required: false
+    multivalued: true
 
 ```
 </details>

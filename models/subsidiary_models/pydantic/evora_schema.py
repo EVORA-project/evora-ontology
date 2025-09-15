@@ -27,7 +27,7 @@ from pydantic import (
 
 
 metamodel_version = "None"
-version = "1.0.9734"
+version = "1.0.9808"
 
 
 class ConfiguredBaseModel(BaseModel):
@@ -99,7 +99,7 @@ linkml_meta = LinkMLMeta({'comments': ['EVORAO is an ontology for standardized m
                     'pathogens. EVORAO is compatible with DCAT, making it '
                     'well-suited for efficiently cataloguing pathogen collections '
                     'and related resources.',
-     'generation_date': '2025-09-12T17:40:52',
+     'generation_date': '2025-09-15T16:39:57',
      'id': 'https://w3id.org/evorao/',
      'imports': ['linkml:types'],
      'in_language': 'en',
@@ -248,9 +248,18 @@ class Resource(ConfiguredBaseModel):
     linkml_meta: ClassVar[LinkMLMeta] = LinkMLMeta({'abstract': True,
          'class_uri': 'dcat:Resource',
          'from_schema': 'https://w3id.org/evorao/',
+         'slot_usage': {'keyword': {'description': 'A keyword or tag describing the '
+                                                   'resource',
+                                    'domain_of': ['Resource'],
+                                    'multivalued': True,
+                                    'name': 'keyword',
+                                    'range': 'string',
+                                    'required': False,
+                                    'slot_uri': 'dcat:keyword',
+                                    'title': 'keyword'}},
          'title': 'Resource'})
 
-    pass
+    keyword: Optional[list[str]] = Field(default=None, title="keyword", description="""A keyword or tag describing the resource""", json_schema_extra = { "linkml_meta": {'alias': 'keyword', 'domain_of': ['Resource'], 'slot_uri': 'dcat:keyword'} })
 
 
 class Dataset(Resource):
@@ -362,6 +371,7 @@ class Dataset(Resource):
          'recommended': True,
          'related_mappings': ['schema:identifier'],
          'slot_uri': 'dcat:version'} })
+    keyword: Optional[list[str]] = Field(default=None, title="keyword", description="""A keyword or tag describing the resource""", json_schema_extra = { "linkml_meta": {'alias': 'keyword', 'domain_of': ['Resource'], 'slot_uri': 'dcat:keyword'} })
 
 
 class DataService(Resource):
@@ -491,6 +501,7 @@ class DataService(Resource):
          'domain_of': ['DataService'],
          'recommended': True,
          'slot_uri': 'dcat:servesDataset'} })
+    keyword: Optional[list[str]] = Field(default=None, title="keyword", description="""A keyword or tag describing the resource""", json_schema_extra = { "linkml_meta": {'alias': 'keyword', 'domain_of': ['Resource'], 'slot_uri': 'dcat:keyword'} })
 
 
 class Version(Resource):
@@ -548,6 +559,7 @@ class Version(Resource):
          'domain_of': ['Version'],
          'related_mappings': ['dct:isVersionOf']} })
     resource: Optional[list[Resource]] = Field(default=None, title="resource", description="""Resource published or curated by a single agent""", json_schema_extra = { "linkml_meta": {'alias': 'resource', 'domain_of': ['Version'], 'recommended': True} })
+    keyword: Optional[list[str]] = Field(default=None, title="keyword", description="""A keyword or tag describing the resource""", json_schema_extra = { "linkml_meta": {'alias': 'keyword', 'domain_of': ['Resource'], 'slot_uri': 'dcat:keyword'} })
 
 
 class Catalogue(Dataset):
@@ -601,6 +613,7 @@ class Catalogue(Dataset):
          'recommended': True,
          'related_mappings': ['schema:identifier'],
          'slot_uri': 'dcat:version'} })
+    keyword: Optional[list[str]] = Field(default=None, title="keyword", description="""A keyword or tag describing the resource""", json_schema_extra = { "linkml_meta": {'alias': 'keyword', 'domain_of': ['Resource'], 'slot_uri': 'dcat:keyword'} })
 
 
 class Taxonomy(Catalogue):
@@ -733,6 +746,7 @@ class Taxonomy(Catalogue):
          'exact_mappings': ['schema:description'],
          'recommended': True,
          'slot_uri': 'dct:description'} })
+    keyword: Optional[list[str]] = Field(default=None, title="keyword", description="""A keyword or tag describing the resource""", json_schema_extra = { "linkml_meta": {'alias': 'keyword', 'domain_of': ['Resource'], 'slot_uri': 'dcat:keyword'} })
 
 
 class DataProvider(DataService):
@@ -966,6 +980,7 @@ class DataProvider(DataService):
          'domain_of': ['DataService'],
          'recommended': True,
          'slot_uri': 'dcat:servesDataset'} })
+    keyword: Optional[list[str]] = Field(default=None, title="keyword", description="""A keyword or tag describing the resource""", json_schema_extra = { "linkml_meta": {'alias': 'keyword', 'domain_of': ['Resource'], 'slot_uri': 'dcat:keyword'} })
 
 
 class PathogenIdentification(Resource):
@@ -1129,6 +1144,7 @@ class PathogenIdentification(Resource):
          'domain_of': ['PathogenIdentification']} })
     serotype: Optional[str] = Field(default=None, title="serotype", description="""Genetically related pathogens that group together based on serological relationships""", json_schema_extra = { "linkml_meta": {'alias': 'serotype', 'domain_of': ['PathogenIdentification']} })
     variant: Optional[Variant] = Field(default=None, title="variant", description="""An organism with one or more new mutations is referred to as a “variant” of the original organism if not sufficiently different to be termed a distinct strain""", json_schema_extra = { "linkml_meta": {'alias': 'variant', 'domain_of': ['PathogenIdentification']} })
+    keyword: Optional[list[str]] = Field(default=None, title="keyword", description="""A keyword or tag describing the resource""", json_schema_extra = { "linkml_meta": {'alias': 'keyword', 'domain_of': ['Resource'], 'slot_uri': 'dcat:keyword'} })
 
 
 class Publication(Resource):
@@ -1240,6 +1256,7 @@ class Publication(Resource):
                             'biolink:published_in',
                             'uniprotrdfs:publishedIn'],
          'domain_of': ['Publication']} })
+    keyword: Optional[list[str]] = Field(default=None, title="keyword", description="""A keyword or tag describing the resource""", json_schema_extra = { "linkml_meta": {'alias': 'keyword', 'domain_of': ['Resource'], 'slot_uri': 'dcat:keyword'} })
 
 
 class Vocabulary(Catalogue):
@@ -1322,6 +1339,7 @@ class Vocabulary(Catalogue):
          'recommended': True,
          'related_mappings': ['schema:identifier'],
          'slot_uri': 'dcat:version'} })
+    keyword: Optional[list[str]] = Field(default=None, title="keyword", description="""A keyword or tag describing the resource""", json_schema_extra = { "linkml_meta": {'alias': 'keyword', 'domain_of': ['Resource'], 'slot_uri': 'dcat:keyword'} })
 
 
 class Term(Resource):
@@ -1455,6 +1473,7 @@ class Term(Resource):
          'close_mappings': ['wdp:P972'],
          'domain_of': ['Term'],
          'related_mappings': ['dct:isReferencedBy']} })
+    keyword: Optional[list[str]] = Field(default=None, title="keyword", description="""A keyword or tag describing the resource""", json_schema_extra = { "linkml_meta": {'alias': 'keyword', 'domain_of': ['Resource'], 'slot_uri': 'dcat:keyword'} })
 
 
 class CommonName(Term):
@@ -1560,6 +1579,7 @@ class CommonName(Term):
          'close_mappings': ['wdp:P972'],
          'domain_of': ['Term'],
          'related_mappings': ['dct:isReferencedBy']} })
+    keyword: Optional[list[str]] = Field(default=None, title="keyword", description="""A keyword or tag describing the resource""", json_schema_extra = { "linkml_meta": {'alias': 'keyword', 'domain_of': ['Resource'], 'slot_uri': 'dcat:keyword'} })
 
 
 class VirusName(CommonName):
@@ -1626,6 +1646,7 @@ class VirusName(CommonName):
          'close_mappings': ['wdp:P972'],
          'domain_of': ['Term'],
          'related_mappings': ['dct:isReferencedBy']} })
+    keyword: Optional[list[str]] = Field(default=None, title="keyword", description="""A keyword or tag describing the resource""", json_schema_extra = { "linkml_meta": {'alias': 'keyword', 'domain_of': ['Resource'], 'slot_uri': 'dcat:keyword'} })
 
 
 class AlternateName(Term):
@@ -1729,6 +1750,7 @@ class AlternateName(Term):
          'close_mappings': ['wdp:P972'],
          'domain_of': ['Term'],
          'related_mappings': ['dct:isReferencedBy']} })
+    keyword: Optional[list[str]] = Field(default=None, title="keyword", description="""A keyword or tag describing the resource""", json_schema_extra = { "linkml_meta": {'alias': 'keyword', 'domain_of': ['Resource'], 'slot_uri': 'dcat:keyword'} })
 
 
 class RiskGroup(Term):
@@ -1786,6 +1808,7 @@ class RiskGroup(Term):
          'close_mappings': ['wdp:P972'],
          'domain_of': ['Term'],
          'related_mappings': ['dct:isReferencedBy']} })
+    keyword: Optional[list[str]] = Field(default=None, title="keyword", description="""A keyword or tag describing the resource""", json_schema_extra = { "linkml_meta": {'alias': 'keyword', 'domain_of': ['Resource'], 'slot_uri': 'dcat:keyword'} })
 
 
 class Doi(Term):
@@ -1846,6 +1869,7 @@ class Doi(Term):
          'close_mappings': ['wdp:P972'],
          'domain_of': ['Term'],
          'related_mappings': ['dct:isReferencedBy']} })
+    keyword: Optional[list[str]] = Field(default=None, title="keyword", description="""A keyword or tag describing the resource""", json_schema_extra = { "linkml_meta": {'alias': 'keyword', 'domain_of': ['Resource'], 'slot_uri': 'dcat:keyword'} })
 
 
 class Journal(Term):
@@ -1906,6 +1930,7 @@ class Journal(Term):
          'close_mappings': ['wdp:P972'],
          'domain_of': ['Term'],
          'related_mappings': ['dct:isReferencedBy']} })
+    keyword: Optional[list[str]] = Field(default=None, title="keyword", description="""A keyword or tag describing the resource""", json_schema_extra = { "linkml_meta": {'alias': 'keyword', 'domain_of': ['Resource'], 'slot_uri': 'dcat:keyword'} })
 
 
 class PdbReference(Term):
@@ -1960,6 +1985,7 @@ class PdbReference(Term):
          'close_mappings': ['wdp:P972'],
          'domain_of': ['Term'],
          'related_mappings': ['dct:isReferencedBy']} })
+    keyword: Optional[list[str]] = Field(default=None, title="keyword", description="""A keyword or tag describing the resource""", json_schema_extra = { "linkml_meta": {'alias': 'keyword', 'domain_of': ['Resource'], 'slot_uri': 'dcat:keyword'} })
 
 
 class Keyword(Term):
@@ -2020,6 +2046,7 @@ class Keyword(Term):
          'close_mappings': ['wdp:P972'],
          'domain_of': ['Term'],
          'related_mappings': ['dct:isReferencedBy']} })
+    keyword: Optional[list[str]] = Field(default=None, title="keyword", description="""A keyword or tag describing the resource""", json_schema_extra = { "linkml_meta": {'alias': 'keyword', 'domain_of': ['Resource'], 'slot_uri': 'dcat:keyword'} })
 
 
 class TagSequence(Term):
@@ -2076,6 +2103,7 @@ class TagSequence(Term):
          'close_mappings': ['wdp:P972'],
          'domain_of': ['Term'],
          'related_mappings': ['dct:isReferencedBy']} })
+    keyword: Optional[list[str]] = Field(default=None, title="keyword", description="""A keyword or tag describing the resource""", json_schema_extra = { "linkml_meta": {'alias': 'keyword', 'domain_of': ['Resource'], 'slot_uri': 'dcat:keyword'} })
 
 
 class SpecialFeature(Term):
@@ -2132,6 +2160,7 @@ class SpecialFeature(Term):
          'close_mappings': ['wdp:P972'],
          'domain_of': ['Term'],
          'related_mappings': ['dct:isReferencedBy']} })
+    keyword: Optional[list[str]] = Field(default=None, title="keyword", description="""A keyword or tag describing the resource""", json_schema_extra = { "linkml_meta": {'alias': 'keyword', 'domain_of': ['Resource'], 'slot_uri': 'dcat:keyword'} })
 
 
 class ExpressionVector(Term):
@@ -2189,6 +2218,7 @@ class ExpressionVector(Term):
          'close_mappings': ['wdp:P972'],
          'domain_of': ['Term'],
          'related_mappings': ['dct:isReferencedBy']} })
+    keyword: Optional[list[str]] = Field(default=None, title="keyword", description="""A keyword or tag describing the resource""", json_schema_extra = { "linkml_meta": {'alias': 'keyword', 'domain_of': ['Resource'], 'slot_uri': 'dcat:keyword'} })
 
 
 class PlasmidSelection(Term):
@@ -2242,6 +2272,7 @@ class PlasmidSelection(Term):
          'close_mappings': ['wdp:P972'],
          'domain_of': ['Term'],
          'related_mappings': ['dct:isReferencedBy']} })
+    keyword: Optional[list[str]] = Field(default=None, title="keyword", description="""A keyword or tag describing the resource""", json_schema_extra = { "linkml_meta": {'alias': 'keyword', 'domain_of': ['Resource'], 'slot_uri': 'dcat:keyword'} })
 
 
 class PropagationHost(Term):
@@ -2295,6 +2326,7 @@ class PropagationHost(Term):
          'close_mappings': ['wdp:P972'],
          'domain_of': ['Term'],
          'related_mappings': ['dct:isReferencedBy']} })
+    keyword: Optional[list[str]] = Field(default=None, title="keyword", description="""A keyword or tag describing the resource""", json_schema_extra = { "linkml_meta": {'alias': 'keyword', 'domain_of': ['Resource'], 'slot_uri': 'dcat:keyword'} })
 
 
 class TransmissionMethod(Term):
@@ -2349,6 +2381,7 @@ class TransmissionMethod(Term):
          'close_mappings': ['wdp:P972'],
          'domain_of': ['Term'],
          'related_mappings': ['dct:isReferencedBy']} })
+    keyword: Optional[list[str]] = Field(default=None, title="keyword", description="""A keyword or tag describing the resource""", json_schema_extra = { "linkml_meta": {'alias': 'keyword', 'domain_of': ['Resource'], 'slot_uri': 'dcat:keyword'} })
 
 
 class ProductionCellLine(Term):
@@ -2406,13 +2439,15 @@ class ProductionCellLine(Term):
          'close_mappings': ['wdp:P972'],
          'domain_of': ['Term'],
          'related_mappings': ['dct:isReferencedBy']} })
+    keyword: Optional[list[str]] = Field(default=None, title="keyword", description="""A keyword or tag describing the resource""", json_schema_extra = { "linkml_meta": {'alias': 'keyword', 'domain_of': ['Resource'], 'slot_uri': 'dcat:keyword'} })
 
 
 class ProductCategory(Term):
     """
     A term used to classify a group of products that share common characteristics or functions, which helps in their organization
     """
-    linkml_meta: ClassVar[LinkMLMeta] = LinkMLMeta({'close_mappings': ['ncit:C25372', 'ncit:C25372'],
+    linkml_meta: ClassVar[LinkMLMeta] = LinkMLMeta({'broad_mappings': ['skos:ConceptScheme', 'skos:ConceptScheme'],
+         'close_mappings': ['ncit:C25372', 'ncit:C25372'],
          'exact_mappings': ['wd:Q63981612', 'wd:Q63981612'],
          'from_schema': 'https://w3id.org/evorao/',
          'related_mappings': ['schema:CategoryCode', 'schema:CategoryCode'],
@@ -2482,6 +2517,7 @@ class ProductCategory(Term):
          'close_mappings': ['wdp:P972'],
          'domain_of': ['Term'],
          'related_mappings': ['dct:isReferencedBy']} })
+    keyword: Optional[list[str]] = Field(default=None, title="keyword", description="""A keyword or tag describing the resource""", json_schema_extra = { "linkml_meta": {'alias': 'keyword', 'domain_of': ['Resource'], 'slot_uri': 'dcat:keyword'} })
 
 
 class IsolationHost(Term):
@@ -2533,6 +2569,7 @@ class IsolationHost(Term):
          'close_mappings': ['wdp:P972'],
          'domain_of': ['Term'],
          'related_mappings': ['dct:isReferencedBy']} })
+    keyword: Optional[list[str]] = Field(default=None, title="keyword", description="""A keyword or tag describing the resource""", json_schema_extra = { "linkml_meta": {'alias': 'keyword', 'domain_of': ['Resource'], 'slot_uri': 'dcat:keyword'} })
 
 
 class GeographicalOrigin(Term):
@@ -2595,6 +2632,7 @@ class GeographicalOrigin(Term):
          'close_mappings': ['wdp:P972'],
          'domain_of': ['Term'],
          'related_mappings': ['dct:isReferencedBy']} })
+    keyword: Optional[list[str]] = Field(default=None, title="keyword", description="""A keyword or tag describing the resource""", json_schema_extra = { "linkml_meta": {'alias': 'keyword', 'domain_of': ['Resource'], 'slot_uri': 'dcat:keyword'} })
 
 
 class IplcOrigin(GeographicalOrigin):
@@ -2655,6 +2693,7 @@ class IplcOrigin(GeographicalOrigin):
          'close_mappings': ['wdp:P972'],
          'domain_of': ['Term'],
          'related_mappings': ['dct:isReferencedBy']} })
+    keyword: Optional[list[str]] = Field(default=None, title="keyword", description="""A keyword or tag describing the resource""", json_schema_extra = { "linkml_meta": {'alias': 'keyword', 'domain_of': ['Resource'], 'slot_uri': 'dcat:keyword'} })
 
 
 class Country(Term):
@@ -2739,6 +2778,7 @@ class Country(Term):
          'close_mappings': ['wdp:P972'],
          'domain_of': ['Term'],
          'related_mappings': ['dct:isReferencedBy']} })
+    keyword: Optional[list[str]] = Field(default=None, title="keyword", description="""A keyword or tag describing the resource""", json_schema_extra = { "linkml_meta": {'alias': 'keyword', 'domain_of': ['Resource'], 'slot_uri': 'dcat:keyword'} })
 
 
 class IataClassification(Term):
@@ -2792,6 +2832,7 @@ class IataClassification(Term):
          'close_mappings': ['wdp:P972'],
          'domain_of': ['Term'],
          'related_mappings': ['dct:isReferencedBy']} })
+    keyword: Optional[list[str]] = Field(default=None, title="keyword", description="""A keyword or tag describing the resource""", json_schema_extra = { "linkml_meta": {'alias': 'keyword', 'domain_of': ['Resource'], 'slot_uri': 'dcat:keyword'} })
 
 
 class Variant(CommonName):
@@ -2857,6 +2898,7 @@ class Variant(CommonName):
          'close_mappings': ['wdp:P972'],
          'domain_of': ['Term'],
          'related_mappings': ['dct:isReferencedBy']} })
+    keyword: Optional[list[str]] = Field(default=None, title="keyword", description="""A keyword or tag describing the resource""", json_schema_extra = { "linkml_meta": {'alias': 'keyword', 'domain_of': ['Resource'], 'slot_uri': 'dcat:keyword'} })
 
 
 class TaxonomicRank(Term):
@@ -2931,6 +2973,7 @@ class TaxonomicRank(Term):
          'close_mappings': ['wdp:P972'],
          'domain_of': ['Term'],
          'related_mappings': ['dct:isReferencedBy']} })
+    keyword: Optional[list[str]] = Field(default=None, title="keyword", description="""A keyword or tag describing the resource""", json_schema_extra = { "linkml_meta": {'alias': 'keyword', 'domain_of': ['Resource'], 'slot_uri': 'dcat:keyword'} })
 
 
 class Taxon(Term):
@@ -3136,6 +3179,7 @@ class Taxon(Term):
          'close_mappings': ['wdp:P972'],
          'domain_of': ['Term'],
          'related_mappings': ['dct:isReferencedBy']} })
+    keyword: Optional[list[str]] = Field(default=None, title="keyword", description="""A keyword or tag describing the resource""", json_schema_extra = { "linkml_meta": {'alias': 'keyword', 'domain_of': ['Resource'], 'slot_uri': 'dcat:keyword'} })
 
 
 class ExternalRelatedReference(Resource):
@@ -3204,6 +3248,7 @@ class ExternalRelatedReference(Resource):
     referenceProviderName: str = Field(default=..., title="reference provider name", description="""The name for the reference provider""", json_schema_extra = { "linkml_meta": {'alias': 'referenceProviderName',
          'close_mappings': ['dct:publisher'],
          'domain_of': ['ExternalRelatedReference']} })
+    keyword: Optional[list[str]] = Field(default=None, title="keyword", description="""A keyword or tag describing the resource""", json_schema_extra = { "linkml_meta": {'alias': 'keyword', 'domain_of': ['Resource'], 'slot_uri': 'dcat:keyword'} })
 
 
 class Sequence(Resource):
@@ -3264,6 +3309,7 @@ class Sequence(Resource):
                       'sequence is made of multiple parts several fasta sequences can '
                       'be provided'],
          'domain_of': ['Sequence']} })
+    keyword: Optional[list[str]] = Field(default=None, title="keyword", description="""A keyword or tag describing the resource""", json_schema_extra = { "linkml_meta": {'alias': 'keyword', 'domain_of': ['Resource'], 'slot_uri': 'dcat:keyword'} })
 
 
 class SequenceReference(Resource):
@@ -3310,6 +3356,7 @@ class SequenceReference(Resource):
          'close_mappings': ['dct:publisher'],
          'domain_of': ['SequenceReference'],
          'equals_string_in': ['ENA', 'GenBank']} })
+    keyword: Optional[list[str]] = Field(default=None, title="keyword", description="""A keyword or tag describing the resource""", json_schema_extra = { "linkml_meta": {'alias': 'keyword', 'domain_of': ['Resource'], 'slot_uri': 'dcat:keyword'} })
 
 
 class PersonOrOrganization(Resource):
@@ -3423,6 +3470,7 @@ class PersonOrOrganization(Resource):
     logo: Optional[Image] = Field(default=None, title="logo", description="""A path or URL to the related logo""", json_schema_extra = { "linkml_meta": {'alias': 'logo',
          'domain_of': ['PersonOrOrganization', 'License', 'Certification'],
          'exact_mappings': ['schema:logo']} })
+    keyword: Optional[list[str]] = Field(default=None, title="keyword", description="""A keyword or tag describing the resource""", json_schema_extra = { "linkml_meta": {'alias': 'keyword', 'domain_of': ['Resource'], 'slot_uri': 'dcat:keyword'} })
 
 
 class Person(PersonOrOrganization):
@@ -3488,6 +3536,7 @@ class Person(PersonOrOrganization):
     logo: Optional[Image] = Field(default=None, title="logo", description="""A path or URL to the related logo""", json_schema_extra = { "linkml_meta": {'alias': 'logo',
          'domain_of': ['PersonOrOrganization', 'License', 'Certification'],
          'exact_mappings': ['schema:logo']} })
+    keyword: Optional[list[str]] = Field(default=None, title="keyword", description="""A keyword or tag describing the resource""", json_schema_extra = { "linkml_meta": {'alias': 'keyword', 'domain_of': ['Resource'], 'slot_uri': 'dcat:keyword'} })
 
 
 class Organization(PersonOrOrganization):
@@ -3591,6 +3640,7 @@ class Organization(PersonOrOrganization):
     logo: Optional[Image] = Field(default=None, title="logo", description="""A path or URL to the related logo""", json_schema_extra = { "linkml_meta": {'alias': 'logo',
          'domain_of': ['PersonOrOrganization', 'License', 'Certification'],
          'exact_mappings': ['schema:logo']} })
+    keyword: Optional[list[str]] = Field(default=None, title="keyword", description="""A keyword or tag describing the resource""", json_schema_extra = { "linkml_meta": {'alias': 'keyword', 'domain_of': ['Resource'], 'slot_uri': 'dcat:keyword'} })
 
 
 class ReasearchInfrastructure(Organization):
@@ -3651,6 +3701,7 @@ class ReasearchInfrastructure(Organization):
     logo: Optional[Image] = Field(default=None, title="logo", description="""A path or URL to the related logo""", json_schema_extra = { "linkml_meta": {'alias': 'logo',
          'domain_of': ['PersonOrOrganization', 'License', 'Certification'],
          'exact_mappings': ['schema:logo']} })
+    keyword: Optional[list[str]] = Field(default=None, title="keyword", description="""A keyword or tag describing the resource""", json_schema_extra = { "linkml_meta": {'alias': 'keyword', 'domain_of': ['Resource'], 'slot_uri': 'dcat:keyword'} })
 
 
 class Provider(Organization):
@@ -3724,6 +3775,7 @@ class Provider(Organization):
     logo: Optional[Image] = Field(default=None, title="logo", description="""A path or URL to the related logo""", json_schema_extra = { "linkml_meta": {'alias': 'logo',
          'domain_of': ['PersonOrOrganization', 'License', 'Certification'],
          'exact_mappings': ['schema:logo']} })
+    keyword: Optional[list[str]] = Field(default=None, title="keyword", description="""A keyword or tag describing the resource""", json_schema_extra = { "linkml_meta": {'alias': 'keyword', 'domain_of': ['Resource'], 'slot_uri': 'dcat:keyword'} })
 
 
 class Originator(PersonOrOrganization):
@@ -3770,6 +3822,7 @@ class Originator(PersonOrOrganization):
     logo: Optional[Image] = Field(default=None, title="logo", description="""A path or URL to the related logo""", json_schema_extra = { "linkml_meta": {'alias': 'logo',
          'domain_of': ['PersonOrOrganization', 'License', 'Certification'],
          'exact_mappings': ['schema:logo']} })
+    keyword: Optional[list[str]] = Field(default=None, title="keyword", description="""A keyword or tag describing the resource""", json_schema_extra = { "linkml_meta": {'alias': 'keyword', 'domain_of': ['Resource'], 'slot_uri': 'dcat:keyword'} })
 
 
 class BiologicalMaterialOrigin(Resource):
@@ -3846,6 +3899,7 @@ class BiologicalMaterialOrigin(Resource):
                       'material.'],
          'domain_of': ['BiologicalMaterialOrigin'],
          'related_mappings': ['schema:hasBioChemEntityPart']} })
+    keyword: Optional[list[str]] = Field(default=None, title="keyword", description="""A keyword or tag describing the resource""", json_schema_extra = { "linkml_meta": {'alias': 'keyword', 'domain_of': ['Resource'], 'slot_uri': 'dcat:keyword'} })
 
 
 class BiologicalPartOrigin(Resource):
@@ -3901,6 +3955,7 @@ class BiologicalPartOrigin(Resource):
          'domain_of': ['BiologicalPartOrigin']} })
     accessToPhysicalGeneticResource: bool = Field(default=..., title="access to physical genetic resource", description="""Indicate if the biological part was produced with access to a physical genetic resource""", json_schema_extra = { "linkml_meta": {'alias': 'accessToPhysicalGeneticResource',
          'domain_of': ['BiologicalPartOrigin']} })
+    keyword: Optional[list[str]] = Field(default=None, title="keyword", description="""A keyword or tag describing the resource""", json_schema_extra = { "linkml_meta": {'alias': 'keyword', 'domain_of': ['Resource'], 'slot_uri': 'dcat:keyword'} })
 
 
 class NaturalPartOrigin(BiologicalPartOrigin):
@@ -4028,6 +4083,7 @@ class NaturalPartOrigin(BiologicalPartOrigin):
          'domain_of': ['BiologicalPartOrigin']} })
     accessToPhysicalGeneticResource: bool = Field(default=..., title="access to physical genetic resource", description="""Indicate if the biological part was produced with access to a physical genetic resource""", json_schema_extra = { "linkml_meta": {'alias': 'accessToPhysicalGeneticResource',
          'domain_of': ['BiologicalPartOrigin']} })
+    keyword: Optional[list[str]] = Field(default=None, title="keyword", description="""A keyword or tag describing the resource""", json_schema_extra = { "linkml_meta": {'alias': 'keyword', 'domain_of': ['Resource'], 'slot_uri': 'dcat:keyword'} })
 
 
 class SyntheticPartOrigin(BiologicalPartOrigin):
@@ -4099,6 +4155,7 @@ class SyntheticPartOrigin(BiologicalPartOrigin):
          'domain_of': ['BiologicalPartOrigin']} })
     accessToPhysicalGeneticResource: bool = Field(default=..., title="access to physical genetic resource", description="""Indicate if the biological part was produced with access to a physical genetic resource""", json_schema_extra = { "linkml_meta": {'alias': 'accessToPhysicalGeneticResource',
          'domain_of': ['BiologicalPartOrigin']} })
+    keyword: Optional[list[str]] = Field(default=None, title="keyword", description="""A keyword or tag describing the resource""", json_schema_extra = { "linkml_meta": {'alias': 'keyword', 'domain_of': ['Resource'], 'slot_uri': 'dcat:keyword'} })
 
 
 class RecombinantPartIdentification(Resource):
@@ -4142,6 +4199,7 @@ class RecombinantPartIdentification(Resource):
                        'Pathogen'],
          'recommended': True,
          'related_mappings': ['uniprotrdfs:sequence']} })
+    keyword: Optional[list[str]] = Field(default=None, title="keyword", description="""A keyword or tag describing the resource""", json_schema_extra = { "linkml_meta": {'alias': 'keyword', 'domain_of': ['Resource'], 'slot_uri': 'dcat:keyword'} })
 
 
 class Collection(Catalogue):
@@ -4219,6 +4277,7 @@ class Collection(Catalogue):
          'recommended': True,
          'related_mappings': ['schema:identifier'],
          'slot_uri': 'dcat:version'} })
+    keyword: Optional[list[str]] = Field(default=None, title="keyword", description="""A keyword or tag describing the resource""", json_schema_extra = { "linkml_meta": {'alias': 'keyword', 'domain_of': ['Resource'], 'slot_uri': 'dcat:keyword'} })
 
 
 class ProductOrService(Dataset):
@@ -4250,13 +4309,13 @@ class ProductOrService(Dataset):
                                            'related_mappings': ['dcat:landingPage'],
                                            'required': True,
                                            'title': 'access point URL'},
-                        'additionalCategory': {'close_mappings': ['dcat:theme',
-                                                                  'schema:additionalType'],
+                        'additionalCategory': {'close_mappings': ['schema:additionalType'],
                                                'description': 'Any category apart from '
                                                               'its main category in '
                                                               'which this product or '
                                                               'service can fit',
                                                'domain_of': ['ProductOrService'],
+                                               'is_a': 'category',
                                                'multivalued': True,
                                                'name': 'additionalCategory',
                                                'range': 'ProductCategory',
@@ -4325,11 +4384,11 @@ class ProductOrService(Dataset):
                                      'description': 'The main category of the service '
                                                     'or product',
                                      'domain_of': ['ProductOrService'],
-                                     'exact_mappings': ['dcat:theme'],
                                      'multivalued': False,
                                      'name': 'category',
                                      'range': 'ProductCategory',
                                      'required': True,
+                                     'slot_uri': 'dcat:theme',
                                      'title': 'category'},
                         'certification': {'close_mappings': ['dct:conformsTo'],
                                           'description': 'Any certification related to '
@@ -4600,10 +4659,11 @@ class ProductOrService(Dataset):
     category: ProductCategory = Field(default=..., title="category", description="""The main category of the service or product""", json_schema_extra = { "linkml_meta": {'alias': 'category',
          'close_mappings': ['schema:category', 'gr:category'],
          'domain_of': ['ProductOrService'],
-         'exact_mappings': ['dcat:theme']} })
+         'slot_uri': 'dcat:theme'} })
     additionalCategory: Optional[list[ProductCategory]] = Field(default=None, title="additional category", description="""Any category apart from its main category in which this product or service can fit""", json_schema_extra = { "linkml_meta": {'alias': 'additionalCategory',
-         'close_mappings': ['dcat:theme', 'schema:additionalType'],
+         'close_mappings': ['schema:additionalType'],
          'domain_of': ['ProductOrService'],
+         'is_a': 'category',
          'recommended': True} })
     unitCost: str = Field(default="on request", title="unit cost", description="""The cost per access for one unit as defined by the unit definition""", json_schema_extra = { "linkml_meta": {'alias': 'unitCost',
          'close_mappings': ['schema:price'],
@@ -4718,6 +4778,7 @@ class ProductOrService(Dataset):
          'recommended': True,
          'related_mappings': ['schema:identifier'],
          'slot_uri': 'dcat:version'} })
+    keyword: Optional[list[str]] = Field(default=None, title="keyword", description="""A keyword or tag describing the resource""", json_schema_extra = { "linkml_meta": {'alias': 'keyword', 'domain_of': ['Resource'], 'slot_uri': 'dcat:keyword'} })
 
 
 class Service(ProductOrService):
@@ -4779,10 +4840,11 @@ class Service(ProductOrService):
     category: ProductCategory = Field(default=..., title="category", description="""The main category of the service or product""", json_schema_extra = { "linkml_meta": {'alias': 'category',
          'close_mappings': ['schema:category', 'gr:category'],
          'domain_of': ['ProductOrService'],
-         'exact_mappings': ['dcat:theme']} })
+         'slot_uri': 'dcat:theme'} })
     additionalCategory: Optional[list[ProductCategory]] = Field(default=None, title="additional category", description="""Any category apart from its main category in which this product or service can fit""", json_schema_extra = { "linkml_meta": {'alias': 'additionalCategory',
-         'close_mappings': ['dcat:theme', 'schema:additionalType'],
+         'close_mappings': ['schema:additionalType'],
          'domain_of': ['ProductOrService'],
+         'is_a': 'category',
          'recommended': True} })
     unitCost: str = Field(default="on request", title="unit cost", description="""The cost per access for one unit as defined by the unit definition""", json_schema_extra = { "linkml_meta": {'alias': 'unitCost',
          'close_mappings': ['schema:price'],
@@ -4897,6 +4959,7 @@ class Service(ProductOrService):
          'recommended': True,
          'related_mappings': ['schema:identifier'],
          'slot_uri': 'dcat:version'} })
+    keyword: Optional[list[str]] = Field(default=None, title="keyword", description="""A keyword or tag describing the resource""", json_schema_extra = { "linkml_meta": {'alias': 'keyword', 'domain_of': ['Resource'], 'slot_uri': 'dcat:keyword'} })
 
 
 class Product(ProductOrService):
@@ -5081,10 +5144,11 @@ class Product(ProductOrService):
     category: ProductCategory = Field(default=..., title="category", description="""The main category of the service or product""", json_schema_extra = { "linkml_meta": {'alias': 'category',
          'close_mappings': ['schema:category', 'gr:category'],
          'domain_of': ['ProductOrService'],
-         'exact_mappings': ['dcat:theme']} })
+         'slot_uri': 'dcat:theme'} })
     additionalCategory: Optional[list[ProductCategory]] = Field(default=None, title="additional category", description="""Any category apart from its main category in which this product or service can fit""", json_schema_extra = { "linkml_meta": {'alias': 'additionalCategory',
-         'close_mappings': ['dcat:theme', 'schema:additionalType'],
+         'close_mappings': ['schema:additionalType'],
          'domain_of': ['ProductOrService'],
+         'is_a': 'category',
          'recommended': True} })
     unitCost: str = Field(default="on request", title="unit cost", description="""The cost per access for one unit as defined by the unit definition""", json_schema_extra = { "linkml_meta": {'alias': 'unitCost',
          'close_mappings': ['schema:price'],
@@ -5199,6 +5263,7 @@ class Product(ProductOrService):
          'recommended': True,
          'related_mappings': ['schema:identifier'],
          'slot_uri': 'dcat:version'} })
+    keyword: Optional[list[str]] = Field(default=None, title="keyword", description="""A keyword or tag describing the resource""", json_schema_extra = { "linkml_meta": {'alias': 'keyword', 'domain_of': ['Resource'], 'slot_uri': 'dcat:keyword'} })
 
 
 class Antibody(Product):
@@ -5316,10 +5381,11 @@ class Antibody(Product):
     category: ProductCategory = Field(default=..., title="category", description="""The main category of the service or product""", json_schema_extra = { "linkml_meta": {'alias': 'category',
          'close_mappings': ['schema:category', 'gr:category'],
          'domain_of': ['ProductOrService'],
-         'exact_mappings': ['dcat:theme']} })
+         'slot_uri': 'dcat:theme'} })
     additionalCategory: Optional[list[ProductCategory]] = Field(default=None, title="additional category", description="""Any category apart from its main category in which this product or service can fit""", json_schema_extra = { "linkml_meta": {'alias': 'additionalCategory',
-         'close_mappings': ['dcat:theme', 'schema:additionalType'],
+         'close_mappings': ['schema:additionalType'],
          'domain_of': ['ProductOrService'],
+         'is_a': 'category',
          'recommended': True} })
     unitCost: str = Field(default="on request", title="unit cost", description="""The cost per access for one unit as defined by the unit definition""", json_schema_extra = { "linkml_meta": {'alias': 'unitCost',
          'close_mappings': ['schema:price'],
@@ -5434,6 +5500,7 @@ class Antibody(Product):
          'recommended': True,
          'related_mappings': ['schema:identifier'],
          'slot_uri': 'dcat:version'} })
+    keyword: Optional[list[str]] = Field(default=None, title="keyword", description="""A keyword or tag describing the resource""", json_schema_extra = { "linkml_meta": {'alias': 'keyword', 'domain_of': ['Resource'], 'slot_uri': 'dcat:keyword'} })
 
 
 class Hybridoma(Antibody):
@@ -5510,10 +5577,11 @@ class Hybridoma(Antibody):
     category: ProductCategory = Field(default=..., title="category", description="""The main category of the service or product""", json_schema_extra = { "linkml_meta": {'alias': 'category',
          'close_mappings': ['schema:category', 'gr:category'],
          'domain_of': ['ProductOrService'],
-         'exact_mappings': ['dcat:theme']} })
+         'slot_uri': 'dcat:theme'} })
     additionalCategory: Optional[list[ProductCategory]] = Field(default=None, title="additional category", description="""Any category apart from its main category in which this product or service can fit""", json_schema_extra = { "linkml_meta": {'alias': 'additionalCategory',
-         'close_mappings': ['dcat:theme', 'schema:additionalType'],
+         'close_mappings': ['schema:additionalType'],
          'domain_of': ['ProductOrService'],
+         'is_a': 'category',
          'recommended': True} })
     unitCost: str = Field(default="on request", title="unit cost", description="""The cost per access for one unit as defined by the unit definition""", json_schema_extra = { "linkml_meta": {'alias': 'unitCost',
          'close_mappings': ['schema:price'],
@@ -5628,6 +5696,7 @@ class Hybridoma(Antibody):
          'recommended': True,
          'related_mappings': ['schema:identifier'],
          'slot_uri': 'dcat:version'} })
+    keyword: Optional[list[str]] = Field(default=None, title="keyword", description="""A keyword or tag describing the resource""", json_schema_extra = { "linkml_meta": {'alias': 'keyword', 'domain_of': ['Resource'], 'slot_uri': 'dcat:keyword'} })
 
 
 class Protein(Product):
@@ -6065,10 +6134,11 @@ class Protein(Product):
     category: ProductCategory = Field(default=..., title="category", description="""The main category of the service or product""", json_schema_extra = { "linkml_meta": {'alias': 'category',
          'close_mappings': ['schema:category', 'gr:category'],
          'domain_of': ['ProductOrService'],
-         'exact_mappings': ['dcat:theme']} })
+         'slot_uri': 'dcat:theme'} })
     additionalCategory: Optional[list[ProductCategory]] = Field(default=None, title="additional category", description="""Any category apart from its main category in which this product or service can fit""", json_schema_extra = { "linkml_meta": {'alias': 'additionalCategory',
-         'close_mappings': ['dcat:theme', 'schema:additionalType'],
+         'close_mappings': ['schema:additionalType'],
          'domain_of': ['ProductOrService'],
+         'is_a': 'category',
          'recommended': True} })
     unitCost: str = Field(default="on request", title="unit cost", description="""The cost per access for one unit as defined by the unit definition""", json_schema_extra = { "linkml_meta": {'alias': 'unitCost',
          'close_mappings': ['schema:price'],
@@ -6183,6 +6253,7 @@ class Protein(Product):
          'recommended': True,
          'related_mappings': ['schema:identifier'],
          'slot_uri': 'dcat:version'} })
+    keyword: Optional[list[str]] = Field(default=None, title="keyword", description="""A keyword or tag describing the resource""", json_schema_extra = { "linkml_meta": {'alias': 'keyword', 'domain_of': ['Resource'], 'slot_uri': 'dcat:keyword'} })
 
 
 class NucleicAcid(Product):
@@ -6499,10 +6570,11 @@ class NucleicAcid(Product):
     category: ProductCategory = Field(default=..., title="category", description="""The main category of the service or product""", json_schema_extra = { "linkml_meta": {'alias': 'category',
          'close_mappings': ['schema:category', 'gr:category'],
          'domain_of': ['ProductOrService'],
-         'exact_mappings': ['dcat:theme']} })
+         'slot_uri': 'dcat:theme'} })
     additionalCategory: Optional[list[ProductCategory]] = Field(default=None, title="additional category", description="""Any category apart from its main category in which this product or service can fit""", json_schema_extra = { "linkml_meta": {'alias': 'additionalCategory',
-         'close_mappings': ['dcat:theme', 'schema:additionalType'],
+         'close_mappings': ['schema:additionalType'],
          'domain_of': ['ProductOrService'],
+         'is_a': 'category',
          'recommended': True} })
     unitCost: str = Field(default="on request", title="unit cost", description="""The cost per access for one unit as defined by the unit definition""", json_schema_extra = { "linkml_meta": {'alias': 'unitCost',
          'close_mappings': ['schema:price'],
@@ -6617,6 +6689,7 @@ class NucleicAcid(Product):
          'recommended': True,
          'related_mappings': ['schema:identifier'],
          'slot_uri': 'dcat:version'} })
+    keyword: Optional[list[str]] = Field(default=None, title="keyword", description="""A keyword or tag describing the resource""", json_schema_extra = { "linkml_meta": {'alias': 'keyword', 'domain_of': ['Resource'], 'slot_uri': 'dcat:keyword'} })
 
 
 class DetectionKit(Product):
@@ -6723,10 +6796,11 @@ class DetectionKit(Product):
     category: ProductCategory = Field(default=..., title="category", description="""The main category of the service or product""", json_schema_extra = { "linkml_meta": {'alias': 'category',
          'close_mappings': ['schema:category', 'gr:category'],
          'domain_of': ['ProductOrService'],
-         'exact_mappings': ['dcat:theme']} })
+         'slot_uri': 'dcat:theme'} })
     additionalCategory: Optional[list[ProductCategory]] = Field(default=None, title="additional category", description="""Any category apart from its main category in which this product or service can fit""", json_schema_extra = { "linkml_meta": {'alias': 'additionalCategory',
-         'close_mappings': ['dcat:theme', 'schema:additionalType'],
+         'close_mappings': ['schema:additionalType'],
          'domain_of': ['ProductOrService'],
+         'is_a': 'category',
          'recommended': True} })
     unitCost: str = Field(default="on request", title="unit cost", description="""The cost per access for one unit as defined by the unit definition""", json_schema_extra = { "linkml_meta": {'alias': 'unitCost',
          'close_mappings': ['schema:price'],
@@ -6841,6 +6915,7 @@ class DetectionKit(Product):
          'recommended': True,
          'related_mappings': ['schema:identifier'],
          'slot_uri': 'dcat:version'} })
+    keyword: Optional[list[str]] = Field(default=None, title="keyword", description="""A keyword or tag describing the resource""", json_schema_extra = { "linkml_meta": {'alias': 'keyword', 'domain_of': ['Resource'], 'slot_uri': 'dcat:keyword'} })
 
 
 class Bundle(Product):
@@ -6908,10 +6983,11 @@ class Bundle(Product):
     category: ProductCategory = Field(default=..., title="category", description="""The main category of the service or product""", json_schema_extra = { "linkml_meta": {'alias': 'category',
          'close_mappings': ['schema:category', 'gr:category'],
          'domain_of': ['ProductOrService'],
-         'exact_mappings': ['dcat:theme']} })
+         'slot_uri': 'dcat:theme'} })
     additionalCategory: Optional[list[ProductCategory]] = Field(default=None, title="additional category", description="""Any category apart from its main category in which this product or service can fit""", json_schema_extra = { "linkml_meta": {'alias': 'additionalCategory',
-         'close_mappings': ['dcat:theme', 'schema:additionalType'],
+         'close_mappings': ['schema:additionalType'],
          'domain_of': ['ProductOrService'],
+         'is_a': 'category',
          'recommended': True} })
     unitCost: str = Field(default="on request", title="unit cost", description="""The cost per access for one unit as defined by the unit definition""", json_schema_extra = { "linkml_meta": {'alias': 'unitCost',
          'close_mappings': ['schema:price'],
@@ -7026,6 +7102,7 @@ class Bundle(Product):
          'recommended': True,
          'related_mappings': ['schema:identifier'],
          'slot_uri': 'dcat:version'} })
+    keyword: Optional[list[str]] = Field(default=None, title="keyword", description="""A keyword or tag describing the resource""", json_schema_extra = { "linkml_meta": {'alias': 'keyword', 'domain_of': ['Resource'], 'slot_uri': 'dcat:keyword'} })
 
 
 class Pathogen(Product):
@@ -7434,10 +7511,11 @@ class Pathogen(Product):
     category: ProductCategory = Field(default=..., title="category", description="""The main category of the service or product""", json_schema_extra = { "linkml_meta": {'alias': 'category',
          'close_mappings': ['schema:category', 'gr:category'],
          'domain_of': ['ProductOrService'],
-         'exact_mappings': ['dcat:theme']} })
+         'slot_uri': 'dcat:theme'} })
     additionalCategory: Optional[list[ProductCategory]] = Field(default=None, title="additional category", description="""Any category apart from its main category in which this product or service can fit""", json_schema_extra = { "linkml_meta": {'alias': 'additionalCategory',
-         'close_mappings': ['dcat:theme', 'schema:additionalType'],
+         'close_mappings': ['schema:additionalType'],
          'domain_of': ['ProductOrService'],
+         'is_a': 'category',
          'recommended': True} })
     unitCost: str = Field(default="on request", title="unit cost", description="""The cost per access for one unit as defined by the unit definition""", json_schema_extra = { "linkml_meta": {'alias': 'unitCost',
          'close_mappings': ['schema:price'],
@@ -7552,6 +7630,7 @@ class Pathogen(Product):
          'recommended': True,
          'related_mappings': ['schema:identifier'],
          'slot_uri': 'dcat:version'} })
+    keyword: Optional[list[str]] = Field(default=None, title="keyword", description="""A keyword or tag describing the resource""", json_schema_extra = { "linkml_meta": {'alias': 'keyword', 'domain_of': ['Resource'], 'slot_uri': 'dcat:keyword'} })
 
 
 class Virus(Pathogen):
@@ -7736,10 +7815,11 @@ class Virus(Pathogen):
     category: ProductCategory = Field(default=..., title="category", description="""The main category of the service or product""", json_schema_extra = { "linkml_meta": {'alias': 'category',
          'close_mappings': ['schema:category', 'gr:category'],
          'domain_of': ['ProductOrService'],
-         'exact_mappings': ['dcat:theme']} })
+         'slot_uri': 'dcat:theme'} })
     additionalCategory: Optional[list[ProductCategory]] = Field(default=None, title="additional category", description="""Any category apart from its main category in which this product or service can fit""", json_schema_extra = { "linkml_meta": {'alias': 'additionalCategory',
-         'close_mappings': ['dcat:theme', 'schema:additionalType'],
+         'close_mappings': ['schema:additionalType'],
          'domain_of': ['ProductOrService'],
+         'is_a': 'category',
          'recommended': True} })
     unitCost: str = Field(default="on request", title="unit cost", description="""The cost per access for one unit as defined by the unit definition""", json_schema_extra = { "linkml_meta": {'alias': 'unitCost',
          'close_mappings': ['schema:price'],
@@ -7854,6 +7934,7 @@ class Virus(Pathogen):
          'recommended': True,
          'related_mappings': ['schema:identifier'],
          'slot_uri': 'dcat:version'} })
+    keyword: Optional[list[str]] = Field(default=None, title="keyword", description="""A keyword or tag describing the resource""", json_schema_extra = { "linkml_meta": {'alias': 'keyword', 'domain_of': ['Resource'], 'slot_uri': 'dcat:keyword'} })
 
 
 class Bacterium(Pathogen):
@@ -7979,10 +8060,11 @@ class Bacterium(Pathogen):
     category: ProductCategory = Field(default=..., title="category", description="""The main category of the service or product""", json_schema_extra = { "linkml_meta": {'alias': 'category',
          'close_mappings': ['schema:category', 'gr:category'],
          'domain_of': ['ProductOrService'],
-         'exact_mappings': ['dcat:theme']} })
+         'slot_uri': 'dcat:theme'} })
     additionalCategory: Optional[list[ProductCategory]] = Field(default=None, title="additional category", description="""Any category apart from its main category in which this product or service can fit""", json_schema_extra = { "linkml_meta": {'alias': 'additionalCategory',
-         'close_mappings': ['dcat:theme', 'schema:additionalType'],
+         'close_mappings': ['schema:additionalType'],
          'domain_of': ['ProductOrService'],
+         'is_a': 'category',
          'recommended': True} })
     unitCost: str = Field(default="on request", title="unit cost", description="""The cost per access for one unit as defined by the unit definition""", json_schema_extra = { "linkml_meta": {'alias': 'unitCost',
          'close_mappings': ['schema:price'],
@@ -8097,6 +8179,7 @@ class Bacterium(Pathogen):
          'recommended': True,
          'related_mappings': ['schema:identifier'],
          'slot_uri': 'dcat:version'} })
+    keyword: Optional[list[str]] = Field(default=None, title="keyword", description="""A keyword or tag describing the resource""", json_schema_extra = { "linkml_meta": {'alias': 'keyword', 'domain_of': ['Resource'], 'slot_uri': 'dcat:keyword'} })
 
 
 class Fungus(Pathogen):
@@ -8220,10 +8303,11 @@ class Fungus(Pathogen):
     category: ProductCategory = Field(default=..., title="category", description="""The main category of the service or product""", json_schema_extra = { "linkml_meta": {'alias': 'category',
          'close_mappings': ['schema:category', 'gr:category'],
          'domain_of': ['ProductOrService'],
-         'exact_mappings': ['dcat:theme']} })
+         'slot_uri': 'dcat:theme'} })
     additionalCategory: Optional[list[ProductCategory]] = Field(default=None, title="additional category", description="""Any category apart from its main category in which this product or service can fit""", json_schema_extra = { "linkml_meta": {'alias': 'additionalCategory',
-         'close_mappings': ['dcat:theme', 'schema:additionalType'],
+         'close_mappings': ['schema:additionalType'],
          'domain_of': ['ProductOrService'],
+         'is_a': 'category',
          'recommended': True} })
     unitCost: str = Field(default="on request", title="unit cost", description="""The cost per access for one unit as defined by the unit definition""", json_schema_extra = { "linkml_meta": {'alias': 'unitCost',
          'close_mappings': ['schema:price'],
@@ -8338,6 +8422,7 @@ class Fungus(Pathogen):
          'recommended': True,
          'related_mappings': ['schema:identifier'],
          'slot_uri': 'dcat:version'} })
+    keyword: Optional[list[str]] = Field(default=None, title="keyword", description="""A keyword or tag describing the resource""", json_schema_extra = { "linkml_meta": {'alias': 'keyword', 'domain_of': ['Resource'], 'slot_uri': 'dcat:keyword'} })
 
 
 class Protozoan(Pathogen):
@@ -8457,10 +8542,11 @@ class Protozoan(Pathogen):
     category: ProductCategory = Field(default=..., title="category", description="""The main category of the service or product""", json_schema_extra = { "linkml_meta": {'alias': 'category',
          'close_mappings': ['schema:category', 'gr:category'],
          'domain_of': ['ProductOrService'],
-         'exact_mappings': ['dcat:theme']} })
+         'slot_uri': 'dcat:theme'} })
     additionalCategory: Optional[list[ProductCategory]] = Field(default=None, title="additional category", description="""Any category apart from its main category in which this product or service can fit""", json_schema_extra = { "linkml_meta": {'alias': 'additionalCategory',
-         'close_mappings': ['dcat:theme', 'schema:additionalType'],
+         'close_mappings': ['schema:additionalType'],
          'domain_of': ['ProductOrService'],
+         'is_a': 'category',
          'recommended': True} })
     unitCost: str = Field(default="on request", title="unit cost", description="""The cost per access for one unit as defined by the unit definition""", json_schema_extra = { "linkml_meta": {'alias': 'unitCost',
          'close_mappings': ['schema:price'],
@@ -8575,6 +8661,7 @@ class Protozoan(Pathogen):
          'recommended': True,
          'related_mappings': ['schema:identifier'],
          'slot_uri': 'dcat:version'} })
+    keyword: Optional[list[str]] = Field(default=None, title="keyword", description="""A keyword or tag describing the resource""", json_schema_extra = { "linkml_meta": {'alias': 'keyword', 'domain_of': ['Resource'], 'slot_uri': 'dcat:keyword'} })
 
 
 class Viroid(Pathogen):
@@ -8686,10 +8773,11 @@ class Viroid(Pathogen):
     category: ProductCategory = Field(default=..., title="category", description="""The main category of the service or product""", json_schema_extra = { "linkml_meta": {'alias': 'category',
          'close_mappings': ['schema:category', 'gr:category'],
          'domain_of': ['ProductOrService'],
-         'exact_mappings': ['dcat:theme']} })
+         'slot_uri': 'dcat:theme'} })
     additionalCategory: Optional[list[ProductCategory]] = Field(default=None, title="additional category", description="""Any category apart from its main category in which this product or service can fit""", json_schema_extra = { "linkml_meta": {'alias': 'additionalCategory',
-         'close_mappings': ['dcat:theme', 'schema:additionalType'],
+         'close_mappings': ['schema:additionalType'],
          'domain_of': ['ProductOrService'],
+         'is_a': 'category',
          'recommended': True} })
     unitCost: str = Field(default="on request", title="unit cost", description="""The cost per access for one unit as defined by the unit definition""", json_schema_extra = { "linkml_meta": {'alias': 'unitCost',
          'close_mappings': ['schema:price'],
@@ -8804,6 +8892,7 @@ class Viroid(Pathogen):
          'recommended': True,
          'related_mappings': ['schema:identifier'],
          'slot_uri': 'dcat:version'} })
+    keyword: Optional[list[str]] = Field(default=None, title="keyword", description="""A keyword or tag describing the resource""", json_schema_extra = { "linkml_meta": {'alias': 'keyword', 'domain_of': ['Resource'], 'slot_uri': 'dcat:keyword'} })
 
 
 class Prion(Pathogen):
@@ -8923,10 +9012,11 @@ class Prion(Pathogen):
     category: ProductCategory = Field(default=..., title="category", description="""The main category of the service or product""", json_schema_extra = { "linkml_meta": {'alias': 'category',
          'close_mappings': ['schema:category', 'gr:category'],
          'domain_of': ['ProductOrService'],
-         'exact_mappings': ['dcat:theme']} })
+         'slot_uri': 'dcat:theme'} })
     additionalCategory: Optional[list[ProductCategory]] = Field(default=None, title="additional category", description="""Any category apart from its main category in which this product or service can fit""", json_schema_extra = { "linkml_meta": {'alias': 'additionalCategory',
-         'close_mappings': ['dcat:theme', 'schema:additionalType'],
+         'close_mappings': ['schema:additionalType'],
          'domain_of': ['ProductOrService'],
+         'is_a': 'category',
          'recommended': True} })
     unitCost: str = Field(default="on request", title="unit cost", description="""The cost per access for one unit as defined by the unit definition""", json_schema_extra = { "linkml_meta": {'alias': 'unitCost',
          'close_mappings': ['schema:price'],
@@ -9041,6 +9131,7 @@ class Prion(Pathogen):
          'recommended': True,
          'related_mappings': ['schema:identifier'],
          'slot_uri': 'dcat:version'} })
+    keyword: Optional[list[str]] = Field(default=None, title="keyword", description="""A keyword or tag describing the resource""", json_schema_extra = { "linkml_meta": {'alias': 'keyword', 'domain_of': ['Resource'], 'slot_uri': 'dcat:keyword'} })
 
 
 class MaterialSafetyDataSheet(Resource):
@@ -9247,7 +9338,8 @@ class MaterialSafetyDataSheet(Resource):
                                                   'recommended': True,
                                                   'required': False,
                                                   'title': 'hazards identification'},
-                        'materialSafetyContact': {'description': 'The designated '
+                        'materialSafetyContact': {'broad_mappings': ['schema:contactPoint'],
+                                                  'description': 'The designated '
                                                                  'contact point '
                                                                  'responsible for '
                                                                  'providing '
@@ -9258,8 +9350,7 @@ class MaterialSafetyDataSheet(Resource):
                                                                  'compliance of the '
                                                                  'biological product.',
                                                   'domain_of': ['MaterialSafetyDataSheet'],
-                                                  'exact_mappings': ['dcat:contactPoint',
-                                                                     'schema:contactPoint'],
+                                                  'is_a': 'contactPoint',
                                                   'multivalued': False,
                                                   'name': 'materialSafetyContact',
                                                   'range': 'ContactPoint',
@@ -9380,8 +9471,10 @@ class MaterialSafetyDataSheet(Resource):
          'title': 'Material safety data sheet'})
 
     materialSafetyContact: ContactPoint = Field(default=..., title="material safety contact", description="""The designated contact point responsible for providing information related to the safety, handling, and regulatory compliance of the biological product.""", json_schema_extra = { "linkml_meta": {'alias': 'materialSafetyContact',
+         'broad_mappings': ['schema:contactPoint'],
          'domain_of': ['MaterialSafetyDataSheet'],
-         'exact_mappings': ['dcat:contactPoint', 'schema:contactPoint']} })
+         'is_a': 'contactPoint',
+         'recommended': True} })
     physicalChemicalProperties: Optional[str] = Field(default=None, title="physical and chemical properties and information on ingredients", description="""Key characteristics of the product, such as physical state, appearance, solubility, pH, chemical composition, and molecular weight, essential for safe handling and storage""", json_schema_extra = { "linkml_meta": {'alias': 'physicalChemicalProperties',
          'domain_of': ['MaterialSafetyDataSheet'],
          'recommended': True} })
@@ -9428,6 +9521,7 @@ class MaterialSafetyDataSheet(Resource):
     furtherInformation: Optional[str] = Field(default=None, title="further information", description="""Provides any additional details or clarifications not covered in other sections of the MSDS, such as references, supporting documents, or specific instructions for safe handling and use of the product.""", json_schema_extra = { "linkml_meta": {'alias': 'furtherInformation',
          'domain_of': ['MaterialSafetyDataSheet'],
          'recommended': True} })
+    keyword: Optional[list[str]] = Field(default=None, title="keyword", description="""A keyword or tag describing the resource""", json_schema_extra = { "linkml_meta": {'alias': 'keyword', 'domain_of': ['Resource'], 'slot_uri': 'dcat:keyword'} })
 
 
 class File(Resource):
@@ -9549,6 +9643,7 @@ class File(Resource):
          'domain_of': ['File', 'DataProvider'],
          'exact_mappings': ['dct:license', 'schema:license'],
          'slot_uri': 'dct:license'} })
+    keyword: Optional[list[str]] = Field(default=None, title="keyword", description="""A keyword or tag describing the resource""", json_schema_extra = { "linkml_meta": {'alias': 'keyword', 'domain_of': ['Resource'], 'slot_uri': 'dcat:keyword'} })
 
 
 class Data(File):
@@ -9598,6 +9693,7 @@ class Data(File):
          'domain_of': ['File', 'DataProvider'],
          'exact_mappings': ['dct:license', 'schema:license'],
          'slot_uri': 'dct:license'} })
+    keyword: Optional[list[str]] = Field(default=None, title="keyword", description="""A keyword or tag describing the resource""", json_schema_extra = { "linkml_meta": {'alias': 'keyword', 'domain_of': ['Resource'], 'slot_uri': 'dcat:keyword'} })
 
 
 class Document(File):
@@ -9649,6 +9745,7 @@ class Document(File):
          'domain_of': ['File', 'DataProvider'],
          'exact_mappings': ['dct:license', 'schema:license'],
          'slot_uri': 'dct:license'} })
+    keyword: Optional[list[str]] = Field(default=None, title="keyword", description="""A keyword or tag describing the resource""", json_schema_extra = { "linkml_meta": {'alias': 'keyword', 'domain_of': ['Resource'], 'slot_uri': 'dcat:keyword'} })
 
 
 class Audio(File):
@@ -9698,6 +9795,7 @@ class Audio(File):
          'domain_of': ['File', 'DataProvider'],
          'exact_mappings': ['dct:license', 'schema:license'],
          'slot_uri': 'dct:license'} })
+    keyword: Optional[list[str]] = Field(default=None, title="keyword", description="""A keyword or tag describing the resource""", json_schema_extra = { "linkml_meta": {'alias': 'keyword', 'domain_of': ['Resource'], 'slot_uri': 'dcat:keyword'} })
 
 
 class Video(File):
@@ -9745,6 +9843,7 @@ class Video(File):
          'domain_of': ['File', 'DataProvider'],
          'exact_mappings': ['dct:license', 'schema:license'],
          'slot_uri': 'dct:license'} })
+    keyword: Optional[list[str]] = Field(default=None, title="keyword", description="""A keyword or tag describing the resource""", json_schema_extra = { "linkml_meta": {'alias': 'keyword', 'domain_of': ['Resource'], 'slot_uri': 'dcat:keyword'} })
 
 
 class Image(File):
@@ -9812,6 +9911,7 @@ class Image(File):
          'domain_of': ['File', 'DataProvider'],
          'exact_mappings': ['dct:license', 'schema:license'],
          'slot_uri': 'dct:license'} })
+    keyword: Optional[list[str]] = Field(default=None, title="keyword", description="""A keyword or tag describing the resource""", json_schema_extra = { "linkml_meta": {'alias': 'keyword', 'domain_of': ['Resource'], 'slot_uri': 'dcat:keyword'} })
 
 
 class ContactPoint(Resource):
@@ -9919,7 +10019,7 @@ class ContactPoint(Resource):
                                     'name': 'orcidId',
                                     'range': 'string',
                                     'recommended': True,
-                                    'related_mappings': ['IAO:0000708', 'edam:4022'],
+                                    'related_mappings': ['iao:0000708', 'edam:4022'],
                                     'required': False,
                                     'title': 'ORCID id'},
                         'postalCode': {'close_mappings': ['vcard:hasPostalCode'],
@@ -10008,7 +10108,8 @@ class ContactPoint(Resource):
          'domain_of': ['ContactPoint', 'Person'],
          'exact_mappings': ['wdp:P496', 'reproduceme:ORCID'],
          'recommended': True,
-         'related_mappings': ['IAO:0000708', 'edam:4022']} })
+         'related_mappings': ['iao:0000708', 'edam:4022']} })
+    keyword: Optional[list[str]] = Field(default=None, title="keyword", description="""A keyword or tag describing the resource""", json_schema_extra = { "linkml_meta": {'alias': 'keyword', 'domain_of': ['Resource'], 'slot_uri': 'dcat:keyword'} })
 
 
 class License(Resource):
@@ -10160,6 +10261,7 @@ class License(Resource):
     logo: Optional[Image] = Field(default=None, title="logo", description="""A path or URL to the related logo""", json_schema_extra = { "linkml_meta": {'alias': 'logo',
          'domain_of': ['License', 'PersonOrOrganization', 'Certification'],
          'exact_mappings': ['schema:logo']} })
+    keyword: Optional[list[str]] = Field(default=None, title="keyword", description="""A keyword or tag describing the resource""", json_schema_extra = { "linkml_meta": {'alias': 'keyword', 'domain_of': ['Resource'], 'slot_uri': 'dcat:keyword'} })
 
 
 class Certification(Resource):
@@ -10301,6 +10403,7 @@ class Certification(Resource):
          'broad_mappings': ['schema:url'],
          'domain_of': ['Certification', 'License'],
          'exact_mappings': ['schema:archivedAt']} })
+    keyword: Optional[list[str]] = Field(default=None, title="keyword", description="""A keyword or tag describing the resource""", json_schema_extra = { "linkml_meta": {'alias': 'keyword', 'domain_of': ['Resource'], 'slot_uri': 'dcat:keyword'} })
 
 
 # Model rebuild

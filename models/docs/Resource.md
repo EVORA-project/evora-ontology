@@ -59,6 +59,8 @@ URI: [dcat:Resource](http://www.w3.org/ns/dcat#Resource)
       Resource <|-- Certification
         click Certification href "../Certification"
       
+      Resource : keyword
+        
       
 ```
 
@@ -93,6 +95,7 @@ URI: [dcat:Resource](http://www.w3.org/ns/dcat#Resource)
 
 | Name | Cardinality and Range | Description | Inheritance |
 | ---  | --- | --- | --- |
+| [keyword](keyword.md) | * <br/> [String](String.md) | A keyword or tag describing the resource | direct |
 
 
 
@@ -151,6 +154,19 @@ description: Resource published or curated by a single agent
 title: Resource
 from_schema: https://w3id.org/evorao/
 abstract: true
+slots:
+- keyword
+slot_usage:
+  keyword:
+    name: keyword
+    description: A keyword or tag describing the resource
+    title: keyword
+    slot_uri: dcat:keyword
+    domain_of:
+    - Resource
+    range: string
+    required: false
+    multivalued: true
 class_uri: dcat:Resource
 
 ```
@@ -165,6 +181,32 @@ description: Resource published or curated by a single agent
 title: Resource
 from_schema: https://w3id.org/evorao/
 abstract: true
+slot_usage:
+  keyword:
+    name: keyword
+    description: A keyword or tag describing the resource
+    title: keyword
+    slot_uri: dcat:keyword
+    domain_of:
+    - Resource
+    range: string
+    required: false
+    multivalued: true
+attributes:
+  keyword:
+    name: keyword
+    description: A keyword or tag describing the resource
+    title: keyword
+    from_schema: https://w3id.org/evorao/
+    rank: 1000
+    slot_uri: dcat:keyword
+    alias: keyword
+    owner: Resource
+    domain_of:
+    - Resource
+    range: string
+    required: false
+    multivalued: true
 class_uri: dcat:Resource
 
 ```

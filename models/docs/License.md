@@ -25,6 +25,8 @@ URI: [EVORAO:License](https://w3id.org/evorao/License)
       
       License : description
         
+      License : keyword
+        
       License : licensingOrAttribution
         
       License : logo
@@ -62,6 +64,7 @@ URI: [EVORAO:License](https://w3id.org/evorao/License)
 | [resourceUrl](resourceUrl.md) | 0..1 <br/> [Uri](Uri.md) | The web address or location where the details or content is stored and can be... | direct |
 | [licensingOrAttribution](licensingOrAttribution.md) | 0..1 <br/> [String](String.md) | A text or html code that provides any related data sharing licence and/or att... | direct |
 | [logo](logo.md) | 0..1 <br/> [Image](Image.md) | A path or URL to the related logo | direct |
+| [keyword](keyword.md) | * <br/> [String](String.md) | A keyword or tag describing the resource | [Resource](Resource.md) |
 
 
 
@@ -471,6 +474,20 @@ attributes:
     range: Image
     required: false
     multivalued: false
+  keyword:
+    name: keyword
+    description: A keyword or tag describing the resource
+    title: keyword
+    from_schema: https://w3id.org/evorao/
+    rank: 1000
+    slot_uri: dcat:keyword
+    alias: keyword
+    owner: License
+    domain_of:
+    - Resource
+    range: string
+    required: false
+    multivalued: true
 
 ```
 </details>

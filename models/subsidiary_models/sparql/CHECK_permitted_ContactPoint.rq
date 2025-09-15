@@ -73,6 +73,7 @@ SELECT ?g ?s ?p WHERE {
    EVORAO:postalCode,
    EVORAO:addressCountry,
    EVORAO:orcidId,
+   dcat:keyword,
    rdf:type ))
  }
  

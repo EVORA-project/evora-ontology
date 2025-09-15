@@ -34,6 +34,8 @@ URI: [EVORAO:BiologicalPartOrigin](https://w3id.org/evorao/BiologicalPartOrigin)
       
       BiologicalPartOrigin : accessToPhysicalGeneticResource
         
+      BiologicalPartOrigin : keyword
+        
       BiologicalPartOrigin : recombinantPartIdentification
         
           
@@ -64,6 +66,7 @@ URI: [EVORAO:BiologicalPartOrigin](https://w3id.org/evorao/BiologicalPartOrigin)
 | ---  | --- | --- | --- |
 | [recombinantPartIdentification](recombinantPartIdentification.md) | 0..1 <br/> [RecombinantPartIdentification](RecombinantPartIdentification.md) | Identification of a recombinant part | direct |
 | [accessToPhysicalGeneticResource](accessToPhysicalGeneticResource.md) | 1 <br/> [Boolean](Boolean.md) | Indicate if the biological part was produced with access to a physical geneti... | direct |
+| [keyword](keyword.md) | * <br/> [String](String.md) | A keyword or tag describing the resource | [Resource](Resource.md) |
 
 
 
@@ -228,6 +231,20 @@ attributes:
     range: boolean
     required: true
     multivalued: false
+  keyword:
+    name: keyword
+    description: A keyword or tag describing the resource
+    title: keyword
+    from_schema: https://w3id.org/evorao/
+    rank: 1000
+    slot_uri: dcat:keyword
+    alias: keyword
+    owner: BiologicalPartOrigin
+    domain_of:
+    - Resource
+    range: string
+    required: false
+    multivalued: true
 
 ```
 </details>

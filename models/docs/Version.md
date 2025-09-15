@@ -23,6 +23,8 @@ URI: [EVORAO:Version](https://w3id.org/evorao/Version)
       Resource <|-- Version
         click Resource href "../Resource"
       
+      Version : keyword
+        
       Version : resource
         
           
@@ -56,6 +58,7 @@ URI: [EVORAO:Version](https://w3id.org/evorao/Version)
 | [version](version.md) | 1 _recommended_ <br/> [String](String.md) | The version indicator (name or identifier) of a resource | direct |
 | [versionOf](versionOf.md) | 1 <br/> [String](String.md) | Identifier of what type of entities the version qualifies | direct |
 | [resource](resource.md) | * _recommended_ <br/> [Resource](Resource.md) | Resource published or curated by a single agent | direct |
+| [keyword](keyword.md) | * <br/> [String](String.md) | A keyword or tag describing the resource | [Resource](Resource.md) |
 
 
 
@@ -289,6 +292,20 @@ attributes:
     range: Resource
     required: false
     recommended: true
+    multivalued: true
+  keyword:
+    name: keyword
+    description: A keyword or tag describing the resource
+    title: keyword
+    from_schema: https://w3id.org/evorao/
+    rank: 1000
+    slot_uri: dcat:keyword
+    alias: keyword
+    owner: Version
+    domain_of:
+    - Resource
+    range: string
+    required: false
     multivalued: true
 
 ```

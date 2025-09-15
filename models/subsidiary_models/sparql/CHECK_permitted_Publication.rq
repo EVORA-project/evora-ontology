@@ -68,6 +68,7 @@ SELECT ?g ?s ?p WHERE {
    EVORAO:abstract,
    EVORAO:doi,
    EVORAO:journal,
+   dcat:keyword,
    rdf:type ))
  }
  

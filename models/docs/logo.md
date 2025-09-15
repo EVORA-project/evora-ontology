@@ -23,13 +23,13 @@ Alias: logo
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
 | [PersonOrOrganization](PersonOrOrganization.md) | A person or an organization |  yes  |
-| [Provider](Provider.md) | A provider of products or services, as a specific organization |  no  |
 | [Originator](Originator.md) | The individual or organization responsible for the original discovery, isolat... |  no  |
-| [Person](Person.md) | An individual |  no  |
-| [ReasearchInfrastructure](ReasearchInfrastructure.md) | A research infrastructure (RI) |  no  |
-| [License](License.md) | The legal terms and conditions under which the subject can be used, shared, o... |  yes  |
-| [Organization](Organization.md) | A social entity established to meet needs or pursue specific goals |  no  |
 | [Certification](Certification.md) | Assurance given by an independent certification body that a product, service ... |  yes  |
+| [Person](Person.md) | An individual |  no  |
+| [Provider](Provider.md) | A provider of products or services, as a specific organization |  no  |
+| [Organization](Organization.md) | A social entity established to meet needs or pursue specific goals |  no  |
+| [License](License.md) | The legal terms and conditions under which the subject can be used, shared, o... |  yes  |
+| [ReasearchInfrastructure](ReasearchInfrastructure.md) | A research infrastructure (RI) |  no  |
 
 
 

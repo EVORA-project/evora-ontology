@@ -40,6 +40,8 @@ URI: [EVORAO:ContactPoint](https://w3id.org/evorao/ContactPoint)
         
       ContactPoint : email
         
+      ContactPoint : keyword
+        
       ContactPoint : name
         
       ContactPoint : orcidId
@@ -77,6 +79,7 @@ URI: [EVORAO:ContactPoint](https://w3id.org/evorao/ContactPoint)
 | [postalCode](postalCode.md) | 0..1 <br/> [String](String.md) | The postal code | direct |
 | [addressCountry](addressCountry.md) | 0..1 <br/> [Country](Country.md) | The country as of  ISO 3166 | direct |
 | [orcidId](orcidId.md) | 0..1 _recommended_ <br/> [String](String.md) | Unique persistent identifier for a person, provided by the Open Researcher an... | direct |
+| [keyword](keyword.md) | * <br/> [String](String.md) | A keyword or tag describing the resource | [Resource](Resource.md) |
 
 
 
@@ -337,7 +340,7 @@ slot_usage:
     - wdp:P496
     - reproduceme:ORCID
     related_mappings:
-    - IAO:0000708
+    - iao:0000708
     - edam:4022
     domain_of:
     - ContactPoint
@@ -524,7 +527,7 @@ slot_usage:
     - wdp:P496
     - reproduceme:ORCID
     related_mappings:
-    - IAO:0000708
+    - iao:0000708
     - edam:4022
     domain_of:
     - ContactPoint
@@ -723,7 +726,7 @@ attributes:
     - wdp:P496
     - reproduceme:ORCID
     related_mappings:
-    - IAO:0000708
+    - iao:0000708
     - edam:4022
     rank: 1000
     alias: orcidId
@@ -735,6 +738,20 @@ attributes:
     required: false
     recommended: true
     multivalued: false
+  keyword:
+    name: keyword
+    description: A keyword or tag describing the resource
+    title: keyword
+    from_schema: https://w3id.org/evorao/
+    rank: 1000
+    slot_uri: dcat:keyword
+    alias: keyword
+    owner: ContactPoint
+    domain_of:
+    - Resource
+    range: string
+    required: false
+    multivalued: true
 
 ```
 </details>

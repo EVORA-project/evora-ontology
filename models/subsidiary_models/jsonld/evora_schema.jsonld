@@ -38,7 +38,7 @@
     "interoperability"
   ],
   "id": "https://w3id.org/evorao/",
-  "version": "1.0.9734",
+  "version": "1.0.9808",
   "imports": [
     "linkml:types"
   ],
@@ -594,6 +594,24 @@
     }
   ],
   "slots": [
+    {
+      "name": "keyword",
+      "definition_uri": "https://w3id.org/evorao/keyword",
+      "description": "A keyword or tag describing the resource",
+      "title": "keyword",
+      "from_schema": "https://w3id.org/evorao/",
+      "mappings": [
+        "http://www.w3.org/ns/dcat#keyword"
+      ],
+      "slot_uri": "http://www.w3.org/ns/dcat#keyword",
+      "owner": "Resource",
+      "domain_of": [
+        "Resource"
+      ],
+      "range": "string",
+      "multivalued": true,
+      "@type": "SlotDefinition"
+    },
     {
       "name": "title",
       "definition_uri": "https://w3id.org/evorao/title",
@@ -1886,13 +1904,9 @@
       "from_schema": "https://w3id.org/evorao/",
       "exact_mappings": [
         "http://www.wikidata.org/prop/P496",
-        "https://w3id.org/reproduceme#ORCID",
-        "http://www.wikidata.org/prop/P496",
         "https://w3id.org/reproduceme#ORCID"
       ],
       "related_mappings": [
-        "http://purl.obolibrary.org/obo/IAO_0000708",
-        "http://edamontology.org/data_4022",
         "http://purl.obolibrary.org/obo/IAO_0000708",
         "http://edamontology.org/data_4022"
       ],
@@ -2357,14 +2371,14 @@
       "description": "The main category of the service or product",
       "title": "category",
       "from_schema": "https://w3id.org/evorao/",
-      "exact_mappings": [
+      "mappings": [
         "http://www.w3.org/ns/dcat#theme"
       ],
       "close_mappings": [
         "http://schema.org/category",
         "http://purl.org/goodrelations/v1#category"
       ],
-      "slot_uri": "https://w3id.org/evorao/category",
+      "slot_uri": "http://www.w3.org/ns/dcat#theme",
       "owner": "ProductOrService",
       "domain_of": [
         "ProductOrService"
@@ -2381,9 +2395,9 @@
       "title": "additional category",
       "from_schema": "https://w3id.org/evorao/",
       "close_mappings": [
-        "http://www.w3.org/ns/dcat#theme",
         "http://schema.org/additionalType"
       ],
+      "is_a": "category",
       "slot_uri": "https://w3id.org/evorao/additionalCategory",
       "owner": "ProductOrService",
       "domain_of": [
@@ -3769,10 +3783,10 @@
       "description": "The designated contact point responsible for providing information related to the safety, handling, and regulatory compliance of the biological product.",
       "title": "material safety contact",
       "from_schema": "https://w3id.org/evorao/",
-      "exact_mappings": [
-        "http://www.w3.org/ns/dcat#contactPoint",
+      "broad_mappings": [
         "http://schema.org/contactPoint"
       ],
+      "is_a": "contactPoint",
       "slot_uri": "https://w3id.org/evorao/materialSafetyContact",
       "owner": "MaterialSafetyDataSheet",
       "domain_of": [
@@ -3780,6 +3794,7 @@
       ],
       "range": "ContactPoint",
       "required": true,
+      "recommended": true,
       "inlined": true,
       "@type": "SlotDefinition"
     },
@@ -4269,6 +4284,29 @@
       "range": "Document",
       "multivalued": true,
       "inlined": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "Resource_keyword",
+      "definition_uri": "https://w3id.org/evorao/keyword",
+      "description": "A keyword or tag describing the resource",
+      "title": "keyword",
+      "from_schema": "https://w3id.org/evorao/",
+      "mappings": [
+        "http://www.w3.org/ns/dcat#keyword"
+      ],
+      "is_a": "keyword",
+      "domain": "Resource",
+      "slot_uri": "http://www.w3.org/ns/dcat#keyword",
+      "alias": "keyword",
+      "owner": "Resource",
+      "domain_of": [
+        "Resource"
+      ],
+      "is_usage_slot": true,
+      "usage_slot_name": "keyword",
+      "range": "string",
+      "multivalued": true,
       "@type": "SlotDefinition"
     },
     {
@@ -6834,7 +6872,7 @@
       "description": "The main category of the service or product",
       "title": "category",
       "from_schema": "https://w3id.org/evorao/",
-      "exact_mappings": [
+      "mappings": [
         "http://www.w3.org/ns/dcat#theme"
       ],
       "close_mappings": [
@@ -6843,7 +6881,7 @@
       ],
       "is_a": "category",
       "domain": "ProductOrService",
-      "slot_uri": "https://w3id.org/evorao/category",
+      "slot_uri": "http://www.w3.org/ns/dcat#theme",
       "alias": "category",
       "owner": "ProductOrService",
       "domain_of": [
@@ -6863,10 +6901,9 @@
       "title": "additional category",
       "from_schema": "https://w3id.org/evorao/",
       "close_mappings": [
-        "http://www.w3.org/ns/dcat#theme",
         "http://schema.org/additionalType"
       ],
-      "is_a": "additionalCategory",
+      "is_a": "category",
       "domain": "ProductOrService",
       "slot_uri": "https://w3id.org/evorao/additionalCategory",
       "alias": "additionalCategory",
@@ -8935,11 +8972,10 @@
       "description": "The designated contact point responsible for providing information related to the safety, handling, and regulatory compliance of the biological product.",
       "title": "material safety contact",
       "from_schema": "https://w3id.org/evorao/",
-      "exact_mappings": [
-        "http://www.w3.org/ns/dcat#contactPoint",
+      "broad_mappings": [
         "http://schema.org/contactPoint"
       ],
-      "is_a": "materialSafetyContact",
+      "is_a": "contactPoint",
       "domain": "MaterialSafetyDataSheet",
       "slot_uri": "https://w3id.org/evorao/materialSafetyContact",
       "alias": "materialSafetyContact",
@@ -8951,6 +8987,7 @@
       "usage_slot_name": "materialSafetyContact",
       "range": "ContactPoint",
       "required": true,
+      "recommended": true,
       "inlined": true,
       "@type": "SlotDefinition"
     },
@@ -9967,6 +10004,9 @@
         "dcat:Resource"
       ],
       "abstract": true,
+      "slots": [
+        "Resource_keyword"
+      ],
       "slot_usage": {},
       "class_uri": "http://www.w3.org/ns/dcat#Resource",
       "@type": "ClassDefinition"
@@ -9989,6 +10029,7 @@
       "is_a": "Resource",
       "abstract": true,
       "slots": [
+        "Resource_keyword",
         "Dataset_title",
         "Dataset_description",
         "Dataset_version"
@@ -10019,6 +10060,7 @@
       "is_a": "Resource",
       "abstract": true,
       "slots": [
+        "Resource_keyword",
         "DataService_title",
         "DataService_description",
         "DataService_endpointUrl",
@@ -10047,6 +10089,7 @@
       ],
       "is_a": "Resource",
       "slots": [
+        "Resource_keyword",
         "Version_version",
         "Version_versionOf",
         "Version_resource"
@@ -10077,6 +10120,7 @@
       "is_a": "Dataset",
       "abstract": true,
       "slots": [
+        "Resource_keyword",
         "Dataset_title",
         "Dataset_description",
         "Dataset_version"
@@ -10107,6 +10151,7 @@
       ],
       "is_a": "Catalogue",
       "slots": [
+        "Resource_keyword",
         "Dataset_title",
         "Dataset_description",
         "Taxonomy_taxon",
@@ -10139,6 +10184,7 @@
       ],
       "is_a": "DataService",
       "slots": [
+        "Resource_keyword",
         "DataService_title",
         "DataService_description",
         "DataService_endpointUrl",
@@ -10168,6 +10214,7 @@
       ],
       "is_a": "Resource",
       "slots": [
+        "Resource_keyword",
         "PathogenIdentification_taxon",
         "PathogenIdentification_pathogenName",
         "PathogenIdentification_pathogenType",
@@ -10201,6 +10248,7 @@
       ],
       "is_a": "Resource",
       "slots": [
+        "Resource_keyword",
         "Publication_title",
         "Publication_authors",
         "Publication_abstract",
@@ -10241,6 +10289,7 @@
       ],
       "is_a": "Catalogue",
       "slots": [
+        "Resource_keyword",
         "Dataset_title",
         "Dataset_description",
         "Dataset_version",
@@ -10272,6 +10321,7 @@
       "is_a": "Resource",
       "abstract": true,
       "slots": [
+        "Resource_keyword",
         "Term_title",
         "Term_description",
         "Term_weight",
@@ -10299,6 +10349,7 @@
       ],
       "is_a": "Term",
       "slots": [
+        "Resource_keyword",
         "Term_title",
         "Term_description",
         "Term_weight",
@@ -10326,6 +10377,7 @@
       ],
       "is_a": "CommonName",
       "slots": [
+        "Resource_keyword",
         "Term_title",
         "Term_description",
         "Term_weight",
@@ -10357,6 +10409,7 @@
       ],
       "is_a": "Term",
       "slots": [
+        "Resource_keyword",
         "Term_title",
         "Term_description",
         "Term_weight",
@@ -10387,6 +10440,7 @@
       ],
       "is_a": "Term",
       "slots": [
+        "Resource_keyword",
         "Term_title",
         "Term_description",
         "Term_weight",
@@ -10414,6 +10468,7 @@
       ],
       "is_a": "Term",
       "slots": [
+        "Resource_keyword",
         "Term_title",
         "Term_description",
         "Term_weight",
@@ -10441,6 +10496,7 @@
       ],
       "is_a": "Term",
       "slots": [
+        "Resource_keyword",
         "Term_title",
         "Term_description",
         "Term_weight",
@@ -10468,6 +10524,7 @@
       ],
       "is_a": "Term",
       "slots": [
+        "Resource_keyword",
         "Term_title",
         "Term_description",
         "Term_weight",
@@ -10495,6 +10552,7 @@
       ],
       "is_a": "Term",
       "slots": [
+        "Resource_keyword",
         "Term_title",
         "Term_description",
         "Term_weight",
@@ -10519,6 +10577,7 @@
       ],
       "is_a": "Term",
       "slots": [
+        "Resource_keyword",
         "Term_title",
         "Term_description",
         "Term_weight",
@@ -10543,6 +10602,7 @@
       ],
       "is_a": "Term",
       "slots": [
+        "Resource_keyword",
         "Term_title",
         "Term_description",
         "Term_weight",
@@ -10572,6 +10632,7 @@
       ],
       "is_a": "Term",
       "slots": [
+        "Resource_keyword",
         "Term_title",
         "Term_description",
         "Term_weight",
@@ -10593,6 +10654,7 @@
       ],
       "is_a": "Term",
       "slots": [
+        "Resource_keyword",
         "Term_title",
         "Term_description",
         "Term_weight",
@@ -10614,6 +10676,7 @@
       ],
       "is_a": "Term",
       "slots": [
+        "Resource_keyword",
         "Term_title",
         "Term_description",
         "Term_weight",
@@ -10639,6 +10702,7 @@
       ],
       "is_a": "Term",
       "slots": [
+        "Resource_keyword",
         "Term_title",
         "Term_description",
         "Term_weight",
@@ -10666,6 +10730,7 @@
       ],
       "is_a": "Term",
       "slots": [
+        "Resource_keyword",
         "Term_title",
         "Term_description",
         "Term_weight",
@@ -10693,8 +10758,13 @@
         "schema:CategoryCode",
         "schema:CategoryCode"
       ],
+      "broad_mappings": [
+        "skos:ConceptScheme",
+        "skos:ConceptScheme"
+      ],
       "is_a": "Term",
       "slots": [
+        "Resource_keyword",
         "Term_title",
         "Term_description",
         "Term_weight",
@@ -10713,6 +10783,7 @@
       "from_schema": "https://w3id.org/evorao/",
       "is_a": "Term",
       "slots": [
+        "Resource_keyword",
         "Term_title",
         "Term_description",
         "Term_weight",
@@ -10749,6 +10820,7 @@
       ],
       "is_a": "Term",
       "slots": [
+        "Resource_keyword",
         "Term_title",
         "Term_description",
         "Term_weight",
@@ -10778,6 +10850,7 @@
       ],
       "is_a": "GeographicalOrigin",
       "slots": [
+        "Resource_keyword",
         "Term_title",
         "Term_description",
         "Term_weight",
@@ -10818,6 +10891,7 @@
       ],
       "is_a": "Term",
       "slots": [
+        "Resource_keyword",
         "Term_title",
         "Term_description",
         "Term_weight",
@@ -10840,6 +10914,7 @@
       ],
       "is_a": "Term",
       "slots": [
+        "Resource_keyword",
         "Term_title",
         "Term_description",
         "Term_weight",
@@ -10861,6 +10936,7 @@
       ],
       "is_a": "CommonName",
       "slots": [
+        "Resource_keyword",
         "Term_title",
         "Term_description",
         "Term_weight",
@@ -10899,6 +10975,7 @@
       ],
       "is_a": "Term",
       "slots": [
+        "Resource_keyword",
         "Term_title",
         "Term_description",
         "Term_weight",
@@ -10932,6 +11009,7 @@
       ],
       "is_a": "Term",
       "slots": [
+        "Resource_keyword",
         "Term_title",
         "Term_description",
         "Term_weight",
@@ -10962,6 +11040,7 @@
       ],
       "is_a": "Resource",
       "slots": [
+        "Resource_keyword",
         "ExternalRelatedReference_reference",
         "ExternalRelatedReference_referenceLabel",
         "ExternalRelatedReference_referenceProviderPrefix",
@@ -10987,6 +11066,7 @@
       ],
       "is_a": "Resource",
       "slots": [
+        "Resource_keyword",
         "Sequence_sequenceReference",
         "Sequence_sequenceFasta"
       ],
@@ -11005,6 +11085,7 @@
       "from_schema": "https://w3id.org/evorao/",
       "is_a": "Resource",
       "slots": [
+        "Resource_keyword",
         "SequenceReference_accessionNumber",
         "SequenceReference_sequenceProvider"
       ],
@@ -11033,6 +11114,7 @@
       ],
       "is_a": "Resource",
       "slots": [
+        "Resource_keyword",
         "PersonOrOrganization_name",
         "PersonOrOrganization_description",
         "PersonOrOrganization_homePage",
@@ -11064,6 +11146,7 @@
       ],
       "is_a": "PersonOrOrganization",
       "slots": [
+        "Resource_keyword",
         "PersonOrOrganization_name",
         "PersonOrOrganization_description",
         "PersonOrOrganization_homePage",
@@ -11096,6 +11179,7 @@
       ],
       "is_a": "PersonOrOrganization",
       "slots": [
+        "Resource_keyword",
         "PersonOrOrganization_name",
         "PersonOrOrganization_description",
         "PersonOrOrganization_homePage",
@@ -11127,6 +11211,7 @@
       ],
       "is_a": "Organization",
       "slots": [
+        "Resource_keyword",
         "PersonOrOrganization_name",
         "PersonOrOrganization_description",
         "PersonOrOrganization_homePage",
@@ -11158,6 +11243,7 @@
       ],
       "is_a": "Organization",
       "slots": [
+        "Resource_keyword",
         "PersonOrOrganization_name",
         "PersonOrOrganization_description",
         "PersonOrOrganization_homePage",
@@ -11190,6 +11276,7 @@
       ],
       "is_a": "PersonOrOrganization",
       "slots": [
+        "Resource_keyword",
         "PersonOrOrganization_name",
         "PersonOrOrganization_description",
         "PersonOrOrganization_homePage",
@@ -11216,6 +11303,7 @@
       ],
       "is_a": "Resource",
       "slots": [
+        "Resource_keyword",
         "BiologicalMaterialOrigin_recombinantMaterial",
         "BiologicalMaterialOrigin_biologicalSourceType",
         "BiologicalMaterialOrigin_biologicalPartOrigin"
@@ -11237,6 +11325,7 @@
       "is_a": "Resource",
       "abstract": true,
       "slots": [
+        "Resource_keyword",
         "BiologicalPartOrigin_recombinantPartIdentification",
         "BiologicalPartOrigin_accessToPhysicalGeneticResource"
       ],
@@ -11262,6 +11351,7 @@
       ],
       "is_a": "BiologicalPartOrigin",
       "slots": [
+        "Resource_keyword",
         "BiologicalPartOrigin_recombinantPartIdentification",
         "BiologicalPartOrigin_accessToPhysicalGeneticResource",
         "NaturalPartOrigin_countryOfCollection",
@@ -11282,6 +11372,7 @@
       "from_schema": "https://w3id.org/evorao/",
       "is_a": "BiologicalPartOrigin",
       "slots": [
+        "Resource_keyword",
         "BiologicalPartOrigin_recombinantPartIdentification",
         "BiologicalPartOrigin_accessToPhysicalGeneticResource",
         "SyntheticPartOrigin_modificationsFromTheReferenceSequences",
@@ -11299,6 +11390,7 @@
       "from_schema": "https://w3id.org/evorao/",
       "is_a": "Resource",
       "slots": [
+        "Resource_keyword",
         "RecombinantPartIdentification_partIdentification",
         "RecombinantPartIdentification_sequence"
       ],
@@ -11318,6 +11410,7 @@
       ],
       "is_a": "Catalogue",
       "slots": [
+        "Resource_keyword",
         "Dataset_title",
         "Dataset_description",
         "Dataset_version",
@@ -11346,6 +11439,7 @@
       "is_a": "Dataset",
       "abstract": true,
       "slots": [
+        "Resource_keyword",
         "Dataset_title",
         "Dataset_description",
         "Dataset_version",
@@ -11353,7 +11447,7 @@
         "ProductOrService_refSku",
         "ProductOrService_unitDefinition",
         "ProductOrService_category",
-        "ProductOrService_additionalCategory",
+        "additionalCategory",
         "ProductOrService_unitCost",
         "ProductOrService_qualityGrading",
         "ProductOrService_pathogenIdentification",
@@ -11372,7 +11466,8 @@
         "ProductOrService_certification",
         "ProductOrService_internalReference",
         "ProductOrService_note",
-        "ProductOrService_contactPoint"
+        "ProductOrService_contactPoint",
+        "ProductOrService_additionalCategory"
       ],
       "slot_usage": {},
       "class_uri": "https://w3id.org/evorao/ProductOrService",
@@ -11404,6 +11499,7 @@
       ],
       "is_a": "ProductOrService",
       "slots": [
+        "Resource_keyword",
         "Dataset_title",
         "Dataset_description",
         "Dataset_version",
@@ -11411,7 +11507,6 @@
         "ProductOrService_refSku",
         "ProductOrService_unitDefinition",
         "ProductOrService_category",
-        "ProductOrService_additionalCategory",
         "ProductOrService_unitCost",
         "ProductOrService_qualityGrading",
         "ProductOrService_pathogenIdentification",
@@ -11431,6 +11526,7 @@
         "ProductOrService_internalReference",
         "ProductOrService_note",
         "ProductOrService_contactPoint",
+        "ProductOrService_additionalCategory",
         "Service_modelSpecies",
         "Service_modelType"
       ],
@@ -11458,6 +11554,7 @@
       ],
       "is_a": "ProductOrService",
       "slots": [
+        "Resource_keyword",
         "Dataset_title",
         "Dataset_description",
         "Dataset_version",
@@ -11465,7 +11562,6 @@
         "ProductOrService_refSku",
         "ProductOrService_unitDefinition",
         "ProductOrService_category",
-        "ProductOrService_additionalCategory",
         "ProductOrService_unitCost",
         "ProductOrService_qualityGrading",
         "ProductOrService_pathogenIdentification",
@@ -11485,6 +11581,7 @@
         "ProductOrService_internalReference",
         "ProductOrService_note",
         "ProductOrService_contactPoint",
+        "ProductOrService_additionalCategory",
         "Product_iataClassification",
         "Product_shippingConditions",
         "Product_materialSafetyDataSheet",
@@ -11511,6 +11608,7 @@
       ],
       "is_a": "Product",
       "slots": [
+        "Resource_keyword",
         "Dataset_title",
         "Dataset_description",
         "Dataset_version",
@@ -11518,7 +11616,6 @@
         "ProductOrService_refSku",
         "ProductOrService_unitDefinition",
         "ProductOrService_category",
-        "ProductOrService_additionalCategory",
         "ProductOrService_unitCost",
         "ProductOrService_qualityGrading",
         "ProductOrService_pathogenIdentification",
@@ -11538,6 +11635,7 @@
         "ProductOrService_internalReference",
         "ProductOrService_note",
         "ProductOrService_contactPoint",
+        "ProductOrService_additionalCategory",
         "Product_iataClassification",
         "Product_shippingConditions",
         "Product_materialSafetyDataSheet",
@@ -11575,6 +11673,7 @@
       ],
       "is_a": "Antibody",
       "slots": [
+        "Resource_keyword",
         "Dataset_title",
         "Dataset_description",
         "Dataset_version",
@@ -11582,7 +11681,6 @@
         "ProductOrService_refSku",
         "ProductOrService_unitDefinition",
         "ProductOrService_category",
-        "ProductOrService_additionalCategory",
         "ProductOrService_unitCost",
         "ProductOrService_qualityGrading",
         "ProductOrService_pathogenIdentification",
@@ -11602,6 +11700,7 @@
         "ProductOrService_internalReference",
         "ProductOrService_note",
         "ProductOrService_contactPoint",
+        "ProductOrService_additionalCategory",
         "Product_iataClassification",
         "Product_shippingConditions",
         "Product_materialSafetyDataSheet",
@@ -11638,6 +11737,7 @@
       ],
       "is_a": "Product",
       "slots": [
+        "Resource_keyword",
         "Dataset_title",
         "Dataset_description",
         "Dataset_version",
@@ -11645,7 +11745,6 @@
         "ProductOrService_refSku",
         "ProductOrService_unitDefinition",
         "ProductOrService_category",
-        "ProductOrService_additionalCategory",
         "ProductOrService_unitCost",
         "ProductOrService_qualityGrading",
         "ProductOrService_pathogenIdentification",
@@ -11665,6 +11764,7 @@
         "ProductOrService_internalReference",
         "ProductOrService_note",
         "ProductOrService_contactPoint",
+        "ProductOrService_additionalCategory",
         "Product_iataClassification",
         "Product_shippingConditions",
         "Product_materialSafetyDataSheet",
@@ -11715,6 +11815,7 @@
       ],
       "is_a": "Product",
       "slots": [
+        "Resource_keyword",
         "Dataset_title",
         "Dataset_description",
         "Dataset_version",
@@ -11722,7 +11823,6 @@
         "ProductOrService_refSku",
         "ProductOrService_unitDefinition",
         "ProductOrService_category",
-        "ProductOrService_additionalCategory",
         "ProductOrService_unitCost",
         "ProductOrService_qualityGrading",
         "ProductOrService_pathogenIdentification",
@@ -11742,6 +11842,7 @@
         "ProductOrService_internalReference",
         "ProductOrService_note",
         "ProductOrService_contactPoint",
+        "ProductOrService_additionalCategory",
         "Product_iataClassification",
         "Product_shippingConditions",
         "Product_materialSafetyDataSheet",
@@ -11780,6 +11881,7 @@
       ],
       "is_a": "Product",
       "slots": [
+        "Resource_keyword",
         "Dataset_title",
         "Dataset_description",
         "Dataset_version",
@@ -11787,7 +11889,6 @@
         "ProductOrService_refSku",
         "ProductOrService_unitDefinition",
         "ProductOrService_category",
-        "ProductOrService_additionalCategory",
         "ProductOrService_unitCost",
         "ProductOrService_qualityGrading",
         "ProductOrService_pathogenIdentification",
@@ -11807,6 +11908,7 @@
         "ProductOrService_internalReference",
         "ProductOrService_note",
         "ProductOrService_contactPoint",
+        "ProductOrService_additionalCategory",
         "Product_iataClassification",
         "Product_shippingConditions",
         "Product_materialSafetyDataSheet",
@@ -11843,6 +11945,7 @@
       ],
       "is_a": "Product",
       "slots": [
+        "Resource_keyword",
         "Dataset_title",
         "Dataset_description",
         "Dataset_version",
@@ -11850,7 +11953,6 @@
         "ProductOrService_refSku",
         "ProductOrService_unitDefinition",
         "ProductOrService_category",
-        "ProductOrService_additionalCategory",
         "ProductOrService_unitCost",
         "ProductOrService_qualityGrading",
         "ProductOrService_pathogenIdentification",
@@ -11870,6 +11972,7 @@
         "ProductOrService_internalReference",
         "ProductOrService_note",
         "ProductOrService_contactPoint",
+        "ProductOrService_additionalCategory",
         "Product_iataClassification",
         "Product_shippingConditions",
         "Product_materialSafetyDataSheet",
@@ -11914,6 +12017,7 @@
       "is_a": "Product",
       "abstract": true,
       "slots": [
+        "Resource_keyword",
         "Dataset_title",
         "Dataset_description",
         "Dataset_version",
@@ -11921,7 +12025,6 @@
         "ProductOrService_refSku",
         "ProductOrService_unitDefinition",
         "ProductOrService_category",
-        "ProductOrService_additionalCategory",
         "ProductOrService_unitCost",
         "ProductOrService_qualityGrading",
         "ProductOrService_pathogenIdentification",
@@ -11941,6 +12044,7 @@
         "ProductOrService_internalReference",
         "ProductOrService_note",
         "ProductOrService_contactPoint",
+        "ProductOrService_additionalCategory",
         "Product_iataClassification",
         "Product_shippingConditions",
         "Product_materialSafetyDataSheet",
@@ -12001,6 +12105,7 @@
       ],
       "is_a": "Pathogen",
       "slots": [
+        "Resource_keyword",
         "Dataset_title",
         "Dataset_description",
         "Dataset_version",
@@ -12008,7 +12113,6 @@
         "ProductOrService_refSku",
         "ProductOrService_unitDefinition",
         "ProductOrService_category",
-        "ProductOrService_additionalCategory",
         "ProductOrService_unitCost",
         "ProductOrService_qualityGrading",
         "ProductOrService_pathogenIdentification",
@@ -12028,6 +12132,7 @@
         "ProductOrService_internalReference",
         "ProductOrService_note",
         "ProductOrService_contactPoint",
+        "ProductOrService_additionalCategory",
         "Product_iataClassification",
         "Product_shippingConditions",
         "Product_materialSafetyDataSheet",
@@ -12089,6 +12194,7 @@
       ],
       "is_a": "Pathogen",
       "slots": [
+        "Resource_keyword",
         "Dataset_title",
         "Dataset_description",
         "Dataset_version",
@@ -12096,7 +12202,6 @@
         "ProductOrService_refSku",
         "ProductOrService_unitDefinition",
         "ProductOrService_category",
-        "ProductOrService_additionalCategory",
         "ProductOrService_unitCost",
         "ProductOrService_qualityGrading",
         "ProductOrService_pathogenIdentification",
@@ -12116,6 +12221,7 @@
         "ProductOrService_internalReference",
         "ProductOrService_note",
         "ProductOrService_contactPoint",
+        "ProductOrService_additionalCategory",
         "Product_iataClassification",
         "Product_shippingConditions",
         "Product_materialSafetyDataSheet",
@@ -12172,6 +12278,7 @@
       ],
       "is_a": "Pathogen",
       "slots": [
+        "Resource_keyword",
         "Dataset_title",
         "Dataset_description",
         "Dataset_version",
@@ -12179,7 +12286,6 @@
         "ProductOrService_refSku",
         "ProductOrService_unitDefinition",
         "ProductOrService_category",
-        "ProductOrService_additionalCategory",
         "ProductOrService_unitCost",
         "ProductOrService_qualityGrading",
         "ProductOrService_pathogenIdentification",
@@ -12199,6 +12305,7 @@
         "ProductOrService_internalReference",
         "ProductOrService_note",
         "ProductOrService_contactPoint",
+        "ProductOrService_additionalCategory",
         "Product_iataClassification",
         "Product_shippingConditions",
         "Product_materialSafetyDataSheet",
@@ -12251,6 +12358,7 @@
       ],
       "is_a": "Pathogen",
       "slots": [
+        "Resource_keyword",
         "Dataset_title",
         "Dataset_description",
         "Dataset_version",
@@ -12258,7 +12366,6 @@
         "ProductOrService_refSku",
         "ProductOrService_unitDefinition",
         "ProductOrService_category",
-        "ProductOrService_additionalCategory",
         "ProductOrService_unitCost",
         "ProductOrService_qualityGrading",
         "ProductOrService_pathogenIdentification",
@@ -12278,6 +12385,7 @@
         "ProductOrService_internalReference",
         "ProductOrService_note",
         "ProductOrService_contactPoint",
+        "ProductOrService_additionalCategory",
         "Product_iataClassification",
         "Product_shippingConditions",
         "Product_materialSafetyDataSheet",
@@ -12326,6 +12434,7 @@
       ],
       "is_a": "Pathogen",
       "slots": [
+        "Resource_keyword",
         "Dataset_title",
         "Dataset_description",
         "Dataset_version",
@@ -12333,7 +12442,6 @@
         "ProductOrService_refSku",
         "ProductOrService_unitDefinition",
         "ProductOrService_category",
-        "ProductOrService_additionalCategory",
         "ProductOrService_unitCost",
         "ProductOrService_qualityGrading",
         "ProductOrService_pathogenIdentification",
@@ -12353,6 +12461,7 @@
         "ProductOrService_internalReference",
         "ProductOrService_note",
         "ProductOrService_contactPoint",
+        "ProductOrService_additionalCategory",
         "Product_iataClassification",
         "Product_shippingConditions",
         "Product_materialSafetyDataSheet",
@@ -12405,6 +12514,7 @@
       ],
       "is_a": "Pathogen",
       "slots": [
+        "Resource_keyword",
         "Dataset_title",
         "Dataset_description",
         "Dataset_version",
@@ -12412,7 +12522,6 @@
         "ProductOrService_refSku",
         "ProductOrService_unitDefinition",
         "ProductOrService_category",
-        "ProductOrService_additionalCategory",
         "ProductOrService_unitCost",
         "ProductOrService_qualityGrading",
         "ProductOrService_pathogenIdentification",
@@ -12432,6 +12541,7 @@
         "ProductOrService_internalReference",
         "ProductOrService_note",
         "ProductOrService_contactPoint",
+        "ProductOrService_additionalCategory",
         "Product_iataClassification",
         "Product_shippingConditions",
         "Product_materialSafetyDataSheet",
@@ -12474,7 +12584,8 @@
       ],
       "is_a": "Resource",
       "slots": [
-        "MaterialSafetyDataSheet_materialSafetyContact",
+        "Resource_keyword",
+        "materialSafetyContact",
         "MaterialSafetyDataSheet_physicalChemicalProperties",
         "MaterialSafetyDataSheet_hazardsIdentification",
         "MaterialSafetyDataSheet_firstAidMeasures",
@@ -12488,7 +12599,8 @@
         "MaterialSafetyDataSheet_disposalConsiderations",
         "MaterialSafetyDataSheet_transportInformation",
         "MaterialSafetyDataSheet_regulatoryInformation",
-        "MaterialSafetyDataSheet_furtherInformation"
+        "MaterialSafetyDataSheet_furtherInformation",
+        "MaterialSafetyDataSheet_materialSafetyContact"
       ],
       "slot_usage": {},
       "class_uri": "https://w3id.org/evorao/MaterialSafetyDataSheet",
@@ -12519,6 +12631,7 @@
       "is_a": "Resource",
       "abstract": true,
       "slots": [
+        "Resource_keyword",
         "File_name",
         "File_description",
         "File_contentUrl",
@@ -12553,6 +12666,7 @@
       ],
       "is_a": "File",
       "slots": [
+        "Resource_keyword",
         "File_name",
         "File_description",
         "File_contentUrl",
@@ -12589,6 +12703,7 @@
       ],
       "is_a": "File",
       "slots": [
+        "Resource_keyword",
         "File_name",
         "File_description",
         "File_contentUrl",
@@ -12623,6 +12738,7 @@
       ],
       "is_a": "File",
       "slots": [
+        "Resource_keyword",
         "File_name",
         "File_description",
         "File_contentUrl",
@@ -12655,6 +12771,7 @@
       ],
       "is_a": "File",
       "slots": [
+        "Resource_keyword",
         "File_name",
         "File_description",
         "File_contentUrl",
@@ -12693,6 +12810,7 @@
       ],
       "is_a": "File",
       "slots": [
+        "Resource_keyword",
         "File_name",
         "File_description",
         "File_contentUrl",
@@ -12730,6 +12848,7 @@
       ],
       "is_a": "Resource",
       "slots": [
+        "Resource_keyword",
         "ContactPoint_name",
         "ContactPoint_description",
         "ContactPoint_email",
@@ -12765,6 +12884,7 @@
       ],
       "is_a": "Resource",
       "slots": [
+        "Resource_keyword",
         "License_title",
         "License_description",
         "License_resourceUrl",
@@ -12795,6 +12915,7 @@
       ],
       "is_a": "Resource",
       "slots": [
+        "Resource_keyword",
         "Certification_title",
         "Certification_description",
         "Certification_logo",
@@ -12808,9 +12929,9 @@
   ],
   "metamodel_version": "1.7.0",
   "source_file": "evora_schema.yaml",
-  "source_file_date": "2025-09-12T15:41:17",
-  "source_file_size": 218260,
-  "generation_date": "2025-09-12T15:41:34",
+  "source_file_date": "2025-09-15T14:40:21",
+  "source_file_size": 218760,
+  "generation_date": "2025-09-15T14:40:36",
   "@type": "SchemaDefinition",
   "@context": [
     "https://w3id.org/linkml/types.context.jsonld",

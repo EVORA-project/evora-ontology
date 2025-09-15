@@ -41,12 +41,14 @@ URI: [EVORAO:MaterialSafetyDataSheet](https://w3id.org/evorao/MaterialSafetyData
         
       MaterialSafetyDataSheet : hazardsIdentification
         
+      MaterialSafetyDataSheet : keyword
+        
       MaterialSafetyDataSheet : materialSafetyContact
         
           
     
     
-    MaterialSafetyDataSheet --> "1" ContactPoint : materialSafetyContact
+    MaterialSafetyDataSheet --> "1 _recommended_" ContactPoint : materialSafetyContact
     click ContactPoint href "../ContactPoint"
 
         
@@ -77,7 +79,7 @@ URI: [EVORAO:MaterialSafetyDataSheet](https://w3id.org/evorao/MaterialSafetyData
 
 | Name | Cardinality and Range | Description | Inheritance |
 | ---  | --- | --- | --- |
-| [materialSafetyContact](materialSafetyContact.md) | 1 <br/> [ContactPoint](ContactPoint.md) | The designated contact point responsible for providing information related to... | direct |
+| [materialSafetyContact](materialSafetyContact.md) | 1 _recommended_ <br/> [ContactPoint](ContactPoint.md) | The designated contact point responsible for providing information related to... | direct |
 | [physicalChemicalProperties](physicalChemicalProperties.md) | 0..1 _recommended_ <br/> [String](String.md) | Key characteristics of the product, such as physical state, appearance, solub... | direct |
 | [hazardsIdentification](hazardsIdentification.md) | 0..1 _recommended_ <br/> [String](String.md) | Outlines the potential risks and dangers associated with handling the product... | direct |
 | [firstAidMeasures](firstAidMeasures.md) | 0..1 _recommended_ <br/> [String](String.md) | Instructions on immediate actions to take in case of exposure to the product,... | direct |
@@ -92,6 +94,7 @@ URI: [EVORAO:MaterialSafetyDataSheet](https://w3id.org/evorao/MaterialSafetyData
 | [transportInformation](transportInformation.md) | 0..1 _recommended_ <br/> [String](String.md) | Details the regulations and guidelines for safely transporting the product, i... | direct |
 | [regulatoryInformation](regulatoryInformation.md) | 0..1 _recommended_ <br/> [String](String.md) | Lists applicable laws, regulations, and standards governing the product, incl... | direct |
 | [furtherInformation](furtherInformation.md) | 0..1 _recommended_ <br/> [String](String.md) | Provides any additional details or clarifications not covered in other sectio... | direct |
+| [keyword](keyword.md) | * <br/> [String](String.md) | A keyword or tag describing the resource | [Resource](Resource.md) |
 
 
 
@@ -172,9 +175,9 @@ slot_usage:
       related to the safety, handling, and regulatory compliance of the biological
       product.
     title: material safety contact
-    exact_mappings:
-    - dcat:contactPoint
+    broad_mappings:
     - schema:contactPoint
+    is_a: contactPoint
     domain_of:
     - MaterialSafetyDataSheet
     range: ContactPoint
@@ -384,9 +387,9 @@ slot_usage:
       related to the safety, handling, and regulatory compliance of the biological
       product.
     title: material safety contact
-    exact_mappings:
-    - dcat:contactPoint
+    broad_mappings:
     - schema:contactPoint
+    is_a: contactPoint
     domain_of:
     - MaterialSafetyDataSheet
     range: ContactPoint
@@ -579,16 +582,17 @@ attributes:
       product.
     title: material safety contact
     from_schema: https://w3id.org/evorao/
-    exact_mappings:
-    - dcat:contactPoint
+    broad_mappings:
     - schema:contactPoint
     rank: 1000
+    is_a: contactPoint
     alias: materialSafetyContact
     owner: MaterialSafetyDataSheet
     domain_of:
     - MaterialSafetyDataSheet
     range: ContactPoint
     required: true
+    recommended: true
     multivalued: false
   physicalChemicalProperties:
     name: physicalChemicalProperties
@@ -825,6 +829,20 @@ attributes:
     required: false
     recommended: true
     multivalued: false
+  keyword:
+    name: keyword
+    description: A keyword or tag describing the resource
+    title: keyword
+    from_schema: https://w3id.org/evorao/
+    rank: 1000
+    slot_uri: dcat:keyword
+    alias: keyword
+    owner: MaterialSafetyDataSheet
+    domain_of:
+    - Resource
+    range: string
+    required: false
+    multivalued: true
 
 ```
 </details>
