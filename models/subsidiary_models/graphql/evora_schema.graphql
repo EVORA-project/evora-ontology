@@ -1,5 +1,5 @@
 # metamodel_version: 1.7.0
-# version: 1.0.9808
+# version: 1.0.9841
 type AlternateName
   {
     keyword: [String]
@@ -21,7 +21,9 @@ type Antibody
     refSku: String!
     unitDefinition: String
     category: ProductCategory!
-    unitCost: String!
+    unitCost: Decimal
+    unitCostCurrency: String
+    unitCostNote: String
     qualityGrading: String
     pathogenIdentification: [PathogenIdentification]!
     doi: [Doi]
@@ -75,7 +77,9 @@ type Bacterium
     refSku: String!
     unitDefinition: String
     category: ProductCategory!
-    unitCost: String!
+    unitCost: Decimal
+    unitCostCurrency: String
+    unitCostNote: String
     qualityGrading: String
     pathogenIdentification: [PathogenIdentification]!
     doi: [Doi]
@@ -147,7 +151,9 @@ type Bundle
     refSku: String!
     unitDefinition: String
     category: ProductCategory!
-    unitCost: String!
+    unitCost: Decimal
+    unitCostCurrency: String
+    unitCostNote: String
     qualityGrading: String
     pathogenIdentification: [PathogenIdentification]!
     doi: [Doi]
@@ -295,7 +301,9 @@ type DetectionKit
     refSku: String!
     unitDefinition: String
     category: ProductCategory!
-    unitCost: String!
+    unitCost: Decimal
+    unitCostCurrency: String
+    unitCostNote: String
     qualityGrading: String
     pathogenIdentification: [PathogenIdentification]!
     doi: [Doi]
@@ -385,7 +393,9 @@ type Fungus
     refSku: String!
     unitDefinition: String
     category: ProductCategory!
-    unitCost: String!
+    unitCost: Decimal
+    unitCostCurrency: String
+    unitCostNote: String
     qualityGrading: String
     pathogenIdentification: [PathogenIdentification]!
     doi: [Doi]
@@ -451,7 +461,9 @@ type Hybridoma
     refSku: String!
     unitDefinition: String
     category: ProductCategory!
-    unitCost: String!
+    unitCost: Decimal
+    unitCostCurrency: String
+    unitCostNote: String
     qualityGrading: String
     pathogenIdentification: [PathogenIdentification]!
     doi: [Doi]
@@ -594,7 +606,9 @@ type NucleicAcid
     refSku: String!
     unitDefinition: String
     category: ProductCategory!
-    unitCost: String!
+    unitCost: Decimal
+    unitCostCurrency: String
+    unitCostNote: String
     qualityGrading: String
     pathogenIdentification: [PathogenIdentification]!
     doi: [Doi]
@@ -670,7 +684,9 @@ interface Pathogen
     refSku: String!
     unitDefinition: String
     category: ProductCategory!
-    unitCost: String!
+    unitCost: Decimal
+    unitCostCurrency: String
+    unitCostNote: String
     qualityGrading: String
     pathogenIdentification: [PathogenIdentification]!
     doi: [Doi]
@@ -781,7 +797,9 @@ type Prion
     refSku: String!
     unitDefinition: String
     category: ProductCategory!
-    unitCost: String!
+    unitCost: Decimal
+    unitCostCurrency: String
+    unitCostNote: String
     qualityGrading: String
     pathogenIdentification: [PathogenIdentification]!
     doi: [Doi]
@@ -838,7 +856,9 @@ type Product
     refSku: String!
     unitDefinition: String
     category: ProductCategory!
-    unitCost: String!
+    unitCost: Decimal
+    unitCostCurrency: String
+    unitCostNote: String
     qualityGrading: String
     pathogenIdentification: [PathogenIdentification]!
     doi: [Doi]
@@ -897,7 +917,9 @@ interface ProductOrService
     unitDefinition: String
     category: ProductCategory!
     additionalCategory: [ProductCategory]
-    unitCost: String!
+    unitCost: Decimal
+    unitCostCurrency: String
+    unitCostNote: String
     qualityGrading: String
     pathogenIdentification: [PathogenIdentification]!
     doi: [Doi]
@@ -937,7 +959,9 @@ type Protein
     refSku: String!
     unitDefinition: String
     category: ProductCategory!
-    unitCost: String!
+    unitCost: Decimal
+    unitCostCurrency: String
+    unitCostNote: String
     qualityGrading: String
     pathogenIdentification: [PathogenIdentification]!
     doi: [Doi]
@@ -990,7 +1014,9 @@ type Protozoan
     refSku: String!
     unitDefinition: String
     category: ProductCategory!
-    unitCost: String!
+    unitCost: Decimal
+    unitCostCurrency: String
+    unitCostNote: String
     qualityGrading: String
     pathogenIdentification: [PathogenIdentification]!
     doi: [Doi]
@@ -1119,7 +1145,9 @@ type Service
     refSku: String!
     unitDefinition: String
     category: ProductCategory!
-    unitCost: String!
+    unitCost: Decimal
+    unitCostCurrency: String
+    unitCostNote: String
     qualityGrading: String
     pathogenIdentification: [PathogenIdentification]!
     doi: [Doi]
@@ -1266,7 +1294,9 @@ type Viroid
     refSku: String!
     unitDefinition: String
     category: ProductCategory!
-    unitCost: String!
+    unitCost: Decimal
+    unitCostCurrency: String
+    unitCostNote: String
     qualityGrading: String
     pathogenIdentification: [PathogenIdentification]!
     doi: [Doi]
@@ -1323,7 +1353,9 @@ type Virus
     refSku: String!
     unitDefinition: String
     category: ProductCategory!
-    unitCost: String!
+    unitCost: Decimal
+    unitCostCurrency: String
+    unitCostNote: String
     qualityGrading: String
     pathogenIdentification: [PathogenIdentification]!
     doi: [Doi]

@@ -38,7 +38,7 @@
     "interoperability"
   ],
   "id": "https://w3id.org/evorao/",
-  "version": "1.0.9808",
+  "version": "1.0.9841",
   "imports": [
     "linkml:types"
   ],
@@ -2415,21 +2415,49 @@
       "description": "The cost per access for one unit as defined by the unit definition",
       "title": "unit cost",
       "comments": [
-        "The cost per access may not be defined or be specific to a request, so it has to be a xsd:string instead of an xsd:float as initialy suggested to permit description of cost as conditional to what is requested"
+        "The cost per access may not always be defined as a fixed numerical value. In some cases, the price is conditional or available only upon request. To accommodate such cases, descriptive information should be provided through the property EVORAO:unitCostNote (xsd:string). This allows handling of cost statements such as \u201con request,\u201d \u201cdepends on volume,\u201d or \u201cfree access for academics,\u201d which cannot be captured by a simple numeric value."
       ],
       "from_schema": "https://w3id.org/evorao/",
       "close_mappings": [
         "http://schema.org/price"
       ],
       "slot_uri": "https://w3id.org/evorao/unitCost",
-      "ifabsent": "string(on request)",
+      "owner": "ProductOrService",
+      "domain_of": [
+        "ProductOrService"
+      ],
+      "range": "decimal",
+      "recommended": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "unitCostCurrency",
+      "definition_uri": "https://w3id.org/evorao/unitCostCurrency",
+      "description": "The currency in which the unit cost is expressed, following ISO 4217 three-letter codes (e.g., EUR, USD)",
+      "title": "unit cost currency",
+      "from_schema": "https://w3id.org/evorao/",
+      "slot_uri": "https://w3id.org/evorao/unitCostCurrency",
+      "ifabsent": "string(EUR)",
       "owner": "ProductOrService",
       "domain_of": [
         "ProductOrService"
       ],
       "range": "string",
-      "required": true,
       "recommended": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "unitCostNote",
+      "definition_uri": "https://w3id.org/evorao/unitCostNote",
+      "description": "A free-text note describing special conditions or cases where the cost cannot be represented by a numerical value (e.g., on request, free for academics, depends on volume)",
+      "title": "unit cost note",
+      "from_schema": "https://w3id.org/evorao/",
+      "slot_uri": "https://w3id.org/evorao/unitCostNote",
+      "owner": "ProductOrService",
+      "domain_of": [
+        "ProductOrService"
+      ],
+      "range": "string",
       "@type": "SlotDefinition"
     },
     {
@@ -6925,7 +6953,7 @@
       "description": "The cost per access for one unit as defined by the unit definition",
       "title": "unit cost",
       "comments": [
-        "The cost per access may not be defined or be specific to a request, so it has to be a xsd:string instead of an xsd:float as initialy suggested to permit description of cost as conditional to what is requested"
+        "The cost per access may not always be defined as a fixed numerical value. In some cases, the price is conditional or available only upon request. To accommodate such cases, descriptive information should be provided through the property EVORAO:unitCostNote (xsd:string). This allows handling of cost statements such as \u201con request,\u201d \u201cdepends on volume,\u201d or \u201cfree access for academics,\u201d which cannot be captured by a simple numeric value."
       ],
       "from_schema": "https://w3id.org/evorao/",
       "close_mappings": [
@@ -6934,7 +6962,6 @@
       "is_a": "unitCost",
       "domain": "ProductOrService",
       "slot_uri": "https://w3id.org/evorao/unitCost",
-      "ifabsent": "string(on request)",
       "alias": "unitCost",
       "owner": "ProductOrService",
       "domain_of": [
@@ -6942,9 +6969,48 @@
       ],
       "is_usage_slot": true,
       "usage_slot_name": "unitCost",
-      "range": "string",
-      "required": true,
+      "range": "decimal",
       "recommended": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "ProductOrService_unitCostCurrency",
+      "definition_uri": "https://w3id.org/evorao/unitCostCurrency",
+      "description": "The currency in which the unit cost is expressed, following ISO 4217 three-letter codes (e.g., EUR, USD)",
+      "title": "unit cost currency",
+      "from_schema": "https://w3id.org/evorao/",
+      "is_a": "unitCostCurrency",
+      "domain": "ProductOrService",
+      "slot_uri": "https://w3id.org/evorao/unitCostCurrency",
+      "ifabsent": "string(EUR)",
+      "alias": "unitCostCurrency",
+      "owner": "ProductOrService",
+      "domain_of": [
+        "ProductOrService"
+      ],
+      "is_usage_slot": true,
+      "usage_slot_name": "unitCostCurrency",
+      "range": "string",
+      "recommended": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "ProductOrService_unitCostNote",
+      "definition_uri": "https://w3id.org/evorao/unitCostNote",
+      "description": "A free-text note describing special conditions or cases where the cost cannot be represented by a numerical value (e.g., on request, free for academics, depends on volume)",
+      "title": "unit cost note",
+      "from_schema": "https://w3id.org/evorao/",
+      "is_a": "unitCostNote",
+      "domain": "ProductOrService",
+      "slot_uri": "https://w3id.org/evorao/unitCostNote",
+      "alias": "unitCostNote",
+      "owner": "ProductOrService",
+      "domain_of": [
+        "ProductOrService"
+      ],
+      "is_usage_slot": true,
+      "usage_slot_name": "unitCostNote",
+      "range": "string",
       "@type": "SlotDefinition"
     },
     {
@@ -11449,6 +11515,8 @@
         "ProductOrService_category",
         "additionalCategory",
         "ProductOrService_unitCost",
+        "ProductOrService_unitCostCurrency",
+        "ProductOrService_unitCostNote",
         "ProductOrService_qualityGrading",
         "ProductOrService_pathogenIdentification",
         "ProductOrService_doi",
@@ -11508,6 +11576,8 @@
         "ProductOrService_unitDefinition",
         "ProductOrService_category",
         "ProductOrService_unitCost",
+        "ProductOrService_unitCostCurrency",
+        "ProductOrService_unitCostNote",
         "ProductOrService_qualityGrading",
         "ProductOrService_pathogenIdentification",
         "ProductOrService_doi",
@@ -11563,6 +11633,8 @@
         "ProductOrService_unitDefinition",
         "ProductOrService_category",
         "ProductOrService_unitCost",
+        "ProductOrService_unitCostCurrency",
+        "ProductOrService_unitCostNote",
         "ProductOrService_qualityGrading",
         "ProductOrService_pathogenIdentification",
         "ProductOrService_doi",
@@ -11617,6 +11689,8 @@
         "ProductOrService_unitDefinition",
         "ProductOrService_category",
         "ProductOrService_unitCost",
+        "ProductOrService_unitCostCurrency",
+        "ProductOrService_unitCostNote",
         "ProductOrService_qualityGrading",
         "ProductOrService_pathogenIdentification",
         "ProductOrService_doi",
@@ -11682,6 +11756,8 @@
         "ProductOrService_unitDefinition",
         "ProductOrService_category",
         "ProductOrService_unitCost",
+        "ProductOrService_unitCostCurrency",
+        "ProductOrService_unitCostNote",
         "ProductOrService_qualityGrading",
         "ProductOrService_pathogenIdentification",
         "ProductOrService_doi",
@@ -11746,6 +11822,8 @@
         "ProductOrService_unitDefinition",
         "ProductOrService_category",
         "ProductOrService_unitCost",
+        "ProductOrService_unitCostCurrency",
+        "ProductOrService_unitCostNote",
         "ProductOrService_qualityGrading",
         "ProductOrService_pathogenIdentification",
         "ProductOrService_doi",
@@ -11824,6 +11902,8 @@
         "ProductOrService_unitDefinition",
         "ProductOrService_category",
         "ProductOrService_unitCost",
+        "ProductOrService_unitCostCurrency",
+        "ProductOrService_unitCostNote",
         "ProductOrService_qualityGrading",
         "ProductOrService_pathogenIdentification",
         "ProductOrService_doi",
@@ -11890,6 +11970,8 @@
         "ProductOrService_unitDefinition",
         "ProductOrService_category",
         "ProductOrService_unitCost",
+        "ProductOrService_unitCostCurrency",
+        "ProductOrService_unitCostNote",
         "ProductOrService_qualityGrading",
         "ProductOrService_pathogenIdentification",
         "ProductOrService_doi",
@@ -11954,6 +12036,8 @@
         "ProductOrService_unitDefinition",
         "ProductOrService_category",
         "ProductOrService_unitCost",
+        "ProductOrService_unitCostCurrency",
+        "ProductOrService_unitCostNote",
         "ProductOrService_qualityGrading",
         "ProductOrService_pathogenIdentification",
         "ProductOrService_doi",
@@ -12026,6 +12110,8 @@
         "ProductOrService_unitDefinition",
         "ProductOrService_category",
         "ProductOrService_unitCost",
+        "ProductOrService_unitCostCurrency",
+        "ProductOrService_unitCostNote",
         "ProductOrService_qualityGrading",
         "ProductOrService_pathogenIdentification",
         "ProductOrService_doi",
@@ -12114,6 +12200,8 @@
         "ProductOrService_unitDefinition",
         "ProductOrService_category",
         "ProductOrService_unitCost",
+        "ProductOrService_unitCostCurrency",
+        "ProductOrService_unitCostNote",
         "ProductOrService_qualityGrading",
         "ProductOrService_pathogenIdentification",
         "ProductOrService_doi",
@@ -12203,6 +12291,8 @@
         "ProductOrService_unitDefinition",
         "ProductOrService_category",
         "ProductOrService_unitCost",
+        "ProductOrService_unitCostCurrency",
+        "ProductOrService_unitCostNote",
         "ProductOrService_qualityGrading",
         "ProductOrService_pathogenIdentification",
         "ProductOrService_doi",
@@ -12287,6 +12377,8 @@
         "ProductOrService_unitDefinition",
         "ProductOrService_category",
         "ProductOrService_unitCost",
+        "ProductOrService_unitCostCurrency",
+        "ProductOrService_unitCostNote",
         "ProductOrService_qualityGrading",
         "ProductOrService_pathogenIdentification",
         "ProductOrService_doi",
@@ -12367,6 +12459,8 @@
         "ProductOrService_unitDefinition",
         "ProductOrService_category",
         "ProductOrService_unitCost",
+        "ProductOrService_unitCostCurrency",
+        "ProductOrService_unitCostNote",
         "ProductOrService_qualityGrading",
         "ProductOrService_pathogenIdentification",
         "ProductOrService_doi",
@@ -12443,6 +12537,8 @@
         "ProductOrService_unitDefinition",
         "ProductOrService_category",
         "ProductOrService_unitCost",
+        "ProductOrService_unitCostCurrency",
+        "ProductOrService_unitCostNote",
         "ProductOrService_qualityGrading",
         "ProductOrService_pathogenIdentification",
         "ProductOrService_doi",
@@ -12523,6 +12619,8 @@
         "ProductOrService_unitDefinition",
         "ProductOrService_category",
         "ProductOrService_unitCost",
+        "ProductOrService_unitCostCurrency",
+        "ProductOrService_unitCostNote",
         "ProductOrService_qualityGrading",
         "ProductOrService_pathogenIdentification",
         "ProductOrService_doi",
@@ -12929,9 +13027,9 @@
   ],
   "metamodel_version": "1.7.0",
   "source_file": "evora_schema.yaml",
-  "source_file_date": "2025-09-15T14:40:21",
-  "source_file_size": 218760,
-  "generation_date": "2025-09-15T14:40:36",
+  "source_file_date": "2025-09-19T16:32:47",
+  "source_file_size": 220683,
+  "generation_date": "2025-09-19T16:33:02",
   "@type": "SchemaDefinition",
   "@context": [
     "https://w3id.org/linkml/types.context.jsonld",

@@ -48,7 +48,7 @@ keywords:
 - pathogen collections
 - interoperability
 id: https://w3id.org/evorao/
-version: 1.0.9808
+version: 1.0.9841
 imports:
 - linkml:types
 license: https://creativecommons.org/publicdomain/zero/1.0/
@@ -1356,18 +1356,39 @@ slots:
     description: The cost per access for one unit as defined by the unit definition
     title: unit cost
     comments:
-    - The cost per access may not be defined or be specific to a request, so it has
-      to be a xsd:string instead of an xsd:float as initialy suggested to permit description
-      of cost as conditional to what is requested
+    - "The cost per access may not always be defined as a fixed numerical value. In\
+      \ some cases, the price is conditional or available only upon request. To accommodate\
+      \ such cases, descriptive information should be provided through the property\
+      \ EVORAO:unitCostNote (xsd:string). This allows handling of cost statements\
+      \ such as \u201Con request,\u201D \u201Cdepends on volume,\u201D or \u201Cfree\
+      \ access for academics,\u201D which cannot be captured by a simple numeric value."
     from_schema: https://w3id.org/evorao/
     close_mappings:
     - schema:price
-    ifabsent: string(on request)
     domain_of:
     - ProductOrService
-    range: string
-    required: true
+    range: decimal
+    required: false
     recommended: true
+    multivalued: false
+  unitCostCurrency:
+    description: The currency in which the unit cost is expressed, following ISO 4217
+      three-letter codes (e.g., EUR, USD)
+    title: unit cost currency
+    from_schema: https://w3id.org/evorao/
+    ifabsent: string(EUR)
+    range: string
+    required: false
+    recommended: true
+    multivalued: false
+  unitCostNote:
+    description: A free-text note describing special conditions or cases where the
+      cost cannot be represented by a numerical value (e.g., on request, free for
+      academics, depends on volume)
+    title: unit cost note
+    from_schema: https://w3id.org/evorao/
+    range: string
+    required: false
     multivalued: false
   qualityGrading:
     description: Information that permits to assess the quality level of what will
@@ -4766,6 +4787,8 @@ classes:
     - category
     - additionalCategory
     - unitCost
+    - unitCostCurrency
+    - unitCostNote
     - qualityGrading
     - pathogenIdentification
     - doi
@@ -4861,17 +4884,37 @@ classes:
         description: The cost per access for one unit as defined by the unit definition
         title: unit cost
         comments:
-        - The cost per access may not be defined or be specific to a request, so it
-          has to be a xsd:string instead of an xsd:float as initialy suggested to
-          permit description of cost as conditional to what is requested
+        - "The cost per access may not always be defined as a fixed numerical value.\
+          \ In some cases, the price is conditional or available only upon request.\
+          \ To accommodate such cases, descriptive information should be provided\
+          \ through the property EVORAO:unitCostNote (xsd:string). This allows handling\
+          \ of cost statements such as \u201Con request,\u201D \u201Cdepends on volume,\u201D\
+          \ or \u201Cfree access for academics,\u201D which cannot be captured by\
+          \ a simple numeric value."
         close_mappings:
         - schema:price
-        ifabsent: string(on request)
         domain_of:
         - ProductOrService
-        range: string
-        required: true
+        range: decimal
+        required: false
         recommended: true
+        multivalued: false
+      unitCostCurrency:
+        description: The currency in which the unit cost is expressed, following ISO
+          4217 three-letter codes (e.g., EUR, USD)
+        title: unit cost currency
+        ifabsent: string(EUR)
+        range: string
+        required: false
+        recommended: true
+        multivalued: false
+      unitCostNote:
+        description: A free-text note describing special conditions or cases where
+          the cost cannot be represented by a numerical value (e.g., on request, free
+          for academics, depends on volume)
+        title: unit cost note
+        range: string
+        required: false
         multivalued: false
       qualityGrading:
         description: Information that permits to assess the quality level of what
@@ -6973,4 +7016,4 @@ classes:
         required: false
         multivalued: false
 source_file: https://w3id.org/evorao/evorao.owl.ttl
-generation_date: '2025-09-15T16:39:57'
+generation_date: '2025-09-19T18:32:21'

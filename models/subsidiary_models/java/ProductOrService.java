@@ -5,7 +5,7 @@ import lombok.*;
 
 
 
-/* version: 1.0.9808 */
+/* version: 1.0.9841 */
 
 
 /**
@@ -20,7 +20,9 @@ public abstract class ProductOrService extends Dataset {
   private String unitDefinition;
   private ProductCategory category;
   private List<ProductCategory> additionalCategory;
-  private String unitCost;
+  private BigDecimal unitCost;
+  private String unitCostCurrency;
+  private String unitCostNote;
   private String qualityGrading;
   private List<PathogenIdentification> pathogenIdentification;
   private List<Doi> doi;

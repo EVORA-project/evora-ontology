@@ -1,16 +1,16 @@
 
 
-# Slot: access point URL (accessPointUrl) 
+# Slot: unit cost note (unitCostNote) 
 
 
-_The URL that permits to access to the product/service detailed description page on the provider's website and/or allows to place an order about it or at least describe the process to place an order/enquiry_
+_A free-text note describing special conditions or cases where the cost cannot be represented by a numerical value (e.g., on request, free for academics, depends on volume)_
 
 
 
 
 
-URI: [EVORAO:accessPointUrl](https://w3id.org/evorao/accessPointUrl)
-Alias: accessPointUrl
+URI: [EVORAO:unitCostNote](https://w3id.org/evorao/unitCostNote)
+Alias: unitCostNote
 
 <!-- no inheritance hierarchy -->
 
@@ -47,9 +47,7 @@ Alias: accessPointUrl
 
 ## Properties
 
-* Range: [Uri](Uri.md)
-
-* Required: True
+* Range: [String](String.md)
 
 
 
@@ -75,11 +73,8 @@ Alias: accessPointUrl
 
 | Mapping Type | Mapped Value |
 | ---  | ---  |
-| self | EVORAO:accessPointUrl |
-| native | EVORAO:accessPointUrl |
-| exact | schema:serviceURL |
-| broad | schema:url |
-| related | dcat:landingPage |
+| self | EVORAO:unitCostNote |
+| native | EVORAO:unitCostNote |
 
 
 
@@ -88,24 +83,18 @@ Alias: accessPointUrl
 
 <details>
 ```yaml
-name: accessPointUrl
-description: The URL that permits to access to the product/service detailed description
-  page on the provider's website and/or allows to place an order about it or at least
-  describe the process to place an order/enquiry
-title: access point URL
+name: unitCostNote
+description: A free-text note describing special conditions or cases where the cost
+  cannot be represented by a numerical value (e.g., on request, free for academics,
+  depends on volume)
+title: unit cost note
 from_schema: https://w3id.org/evorao/
-exact_mappings:
-- schema:serviceURL
-related_mappings:
-- dcat:landingPage
-broad_mappings:
-- schema:url
 rank: 1000
-alias: accessPointUrl
+alias: unitCostNote
 domain_of:
 - ProductOrService
-range: uri
-required: true
+range: string
+required: false
 multivalued: false
 
 ```

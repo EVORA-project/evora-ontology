@@ -175,6 +175,10 @@ URI: [EVORAO:ProductOrService](https://w3id.org/evorao/ProductOrService)
         
       ProductOrService : unitCost
         
+      ProductOrService : unitCostCurrency
+        
+      ProductOrService : unitCostNote
+        
       ProductOrService : unitDefinition
         
       ProductOrService : version
@@ -204,7 +208,9 @@ URI: [EVORAO:ProductOrService](https://w3id.org/evorao/ProductOrService)
 | [unitDefinition](unitDefinition.md) | 0..1 _recommended_ <br/> [String](String.md) | A short description of what will be delivered by ordering one unit of this it... | direct |
 | [category](category.md) | 1 <br/> [ProductCategory](ProductCategory.md) | The main category of the service or product | direct |
 | [additionalCategory](additionalCategory.md) | * _recommended_ <br/> [ProductCategory](ProductCategory.md) | Any category apart from its main category in which this product or service ca... | direct |
-| [unitCost](unitCost.md) | 1 _recommended_ <br/> [String](String.md) | The cost per access for one unit as defined by the unit definition | direct |
+| [unitCost](unitCost.md) | 0..1 _recommended_ <br/> [Decimal](Decimal.md) | The cost per access for one unit as defined by the unit definition | direct |
+| [unitCostCurrency](unitCostCurrency.md) | 0..1 _recommended_ <br/> [String](String.md) | The currency in which the unit cost is expressed, following ISO 4217 three-le... | direct |
+| [unitCostNote](unitCostNote.md) | 0..1 <br/> [String](String.md) | A free-text note describing special conditions or cases where the cost cannot... | direct |
 | [qualityGrading](qualityGrading.md) | 0..1 <br/> [String](String.md) | Information that permits to assess the quality level of what will be provided | direct |
 | [pathogenIdentification](pathogenIdentification.md) | 1..* <br/> [PathogenIdentification](PathogenIdentification.md) | The identification of the pathogen or group of pathogens (e | direct |
 | [doi](doi.md) | * <br/> [Doi](Doi.md) | A Digital Object Identifier (DOI) that can be related | direct |
@@ -306,6 +312,8 @@ slots:
 - category
 - additionalCategory
 - unitCost
+- unitCostCurrency
+- unitCostNote
 - qualityGrading
 - pathogenIdentification
 - doi
@@ -407,17 +415,38 @@ slot_usage:
     description: The cost per access for one unit as defined by the unit definition
     title: unit cost
     comments:
-    - The cost per access may not be defined or be specific to a request, so it has
-      to be a xsd:string instead of an xsd:float as initialy suggested to permit description
-      of cost as conditional to what is requested
+    - The cost per access may not always be defined as a fixed numerical value. In
+      some cases, the price is conditional or available only upon request. To accommodate
+      such cases, descriptive information should be provided through the property
+      EVORAO:unitCostNote (xsd:string). This allows handling of cost statements such
+      as “on request,” “depends on volume,” or “free access for academics,” which
+      cannot be captured by a simple numeric value.
     close_mappings:
     - schema:price
-    ifabsent: string(on request)
     domain_of:
     - ProductOrService
-    range: string
-    required: true
+    range: decimal
+    required: false
     recommended: true
+    multivalued: false
+  unitCostCurrency:
+    name: unitCostCurrency
+    description: The currency in which the unit cost is expressed, following ISO 4217
+      three-letter codes (e.g., EUR, USD)
+    title: unit cost currency
+    ifabsent: string(EUR)
+    range: string
+    required: false
+    recommended: true
+    multivalued: false
+  unitCostNote:
+    name: unitCostNote
+    description: A free-text note describing special conditions or cases where the
+      cost cannot be represented by a numerical value (e.g., on request, free for
+      academics, depends on volume)
+    title: unit cost note
+    range: string
+    required: false
     multivalued: false
   qualityGrading:
     name: qualityGrading
@@ -763,17 +792,38 @@ slot_usage:
     description: The cost per access for one unit as defined by the unit definition
     title: unit cost
     comments:
-    - The cost per access may not be defined or be specific to a request, so it has
-      to be a xsd:string instead of an xsd:float as initialy suggested to permit description
-      of cost as conditional to what is requested
+    - The cost per access may not always be defined as a fixed numerical value. In
+      some cases, the price is conditional or available only upon request. To accommodate
+      such cases, descriptive information should be provided through the property
+      EVORAO:unitCostNote (xsd:string). This allows handling of cost statements such
+      as “on request,” “depends on volume,” or “free access for academics,” which
+      cannot be captured by a simple numeric value.
     close_mappings:
     - schema:price
-    ifabsent: string(on request)
     domain_of:
     - ProductOrService
-    range: string
-    required: true
+    range: decimal
+    required: false
     recommended: true
+    multivalued: false
+  unitCostCurrency:
+    name: unitCostCurrency
+    description: The currency in which the unit cost is expressed, following ISO 4217
+      three-letter codes (e.g., EUR, USD)
+    title: unit cost currency
+    ifabsent: string(EUR)
+    range: string
+    required: false
+    recommended: true
+    multivalued: false
+  unitCostNote:
+    name: unitCostNote
+    description: A free-text note describing special conditions or cases where the
+      cost cannot be represented by a numerical value (e.g., on request, free for
+      academics, depends on volume)
+    title: unit cost note
+    range: string
+    required: false
     multivalued: false
   qualityGrading:
     name: qualityGrading
@@ -1117,21 +1167,54 @@ attributes:
     description: The cost per access for one unit as defined by the unit definition
     title: unit cost
     comments:
-    - The cost per access may not be defined or be specific to a request, so it has
-      to be a xsd:string instead of an xsd:float as initialy suggested to permit description
-      of cost as conditional to what is requested
+    - The cost per access may not always be defined as a fixed numerical value. In
+      some cases, the price is conditional or available only upon request. To accommodate
+      such cases, descriptive information should be provided through the property
+      EVORAO:unitCostNote (xsd:string). This allows handling of cost statements such
+      as “on request,” “depends on volume,” or “free access for academics,” which
+      cannot be captured by a simple numeric value.
     from_schema: https://w3id.org/evorao/
     close_mappings:
     - schema:price
     rank: 1000
-    ifabsent: string(on request)
     alias: unitCost
     owner: ProductOrService
     domain_of:
     - ProductOrService
-    range: string
-    required: true
+    range: decimal
+    required: false
     recommended: true
+    multivalued: false
+  unitCostCurrency:
+    name: unitCostCurrency
+    description: The currency in which the unit cost is expressed, following ISO 4217
+      three-letter codes (e.g., EUR, USD)
+    title: unit cost currency
+    from_schema: https://w3id.org/evorao/
+    rank: 1000
+    ifabsent: string(EUR)
+    alias: unitCostCurrency
+    owner: ProductOrService
+    domain_of:
+    - ProductOrService
+    range: string
+    required: false
+    recommended: true
+    multivalued: false
+  unitCostNote:
+    name: unitCostNote
+    description: A free-text note describing special conditions or cases where the
+      cost cannot be represented by a numerical value (e.g., on request, free for
+      academics, depends on volume)
+    title: unit cost note
+    from_schema: https://w3id.org/evorao/
+    rank: 1000
+    alias: unitCostNote
+    owner: ProductOrService
+    domain_of:
+    - ProductOrService
+    range: string
+    required: false
     multivalued: false
   qualityGrading:
     name: qualityGrading

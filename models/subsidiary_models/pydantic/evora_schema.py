@@ -27,7 +27,7 @@ from pydantic import (
 
 
 metamodel_version = "None"
-version = "1.0.9808"
+version = "1.0.9841"
 
 
 class ConfiguredBaseModel(BaseModel):
@@ -99,7 +99,7 @@ linkml_meta = LinkMLMeta({'comments': ['EVORAO is an ontology for standardized m
                     'pathogens. EVORAO is compatible with DCAT, making it '
                     'well-suited for efficiently cataloguing pathogen collections '
                     'and related resources.',
-     'generation_date': '2025-09-15T16:39:57',
+     'generation_date': '2025-09-19T18:32:21',
      'id': 'https://w3id.org/evorao/',
      'imports': ['linkml:types'],
      'in_language': 'en',
@@ -4605,23 +4605,53 @@ class ProductOrService(Dataset):
                                                     'title': 'technical '
                                                              'recommendation'},
                         'unitCost': {'close_mappings': ['schema:price'],
-                                     'comments': ['The cost per access may not be '
-                                                  'defined or be specific to a '
-                                                  'request, so it has to be a '
-                                                  'xsd:string instead of an xsd:float '
-                                                  'as initialy suggested to permit '
-                                                  'description of cost as conditional '
-                                                  'to what is requested'],
+                                     'comments': ['The cost per access may not always '
+                                                  'be defined as a fixed numerical '
+                                                  'value. In some cases, the price is '
+                                                  'conditional or available only upon '
+                                                  'request. To accommodate such cases, '
+                                                  'descriptive information should be '
+                                                  'provided through the property '
+                                                  'EVORAO:unitCostNote (xsd:string). '
+                                                  'This allows handling of cost '
+                                                  'statements such as “on request,” '
+                                                  '“depends on volume,” or “free '
+                                                  'access for academics,” which cannot '
+                                                  'be captured by a simple numeric '
+                                                  'value.'],
                                      'description': 'The cost per access for one unit '
                                                     'as defined by the unit definition',
                                      'domain_of': ['ProductOrService'],
-                                     'ifabsent': 'string(on request)',
                                      'multivalued': False,
                                      'name': 'unitCost',
-                                     'range': 'string',
+                                     'range': 'decimal',
                                      'recommended': True,
-                                     'required': True,
+                                     'required': False,
                                      'title': 'unit cost'},
+                        'unitCostCurrency': {'description': 'The currency in which the '
+                                                            'unit cost is expressed, '
+                                                            'following ISO 4217 '
+                                                            'three-letter codes (e.g., '
+                                                            'EUR, USD)',
+                                             'ifabsent': 'string(EUR)',
+                                             'multivalued': False,
+                                             'name': 'unitCostCurrency',
+                                             'range': 'string',
+                                             'recommended': True,
+                                             'required': False,
+                                             'title': 'unit cost currency'},
+                        'unitCostNote': {'description': 'A free-text note describing '
+                                                        'special conditions or cases '
+                                                        'where the cost cannot be '
+                                                        'represented by a numerical '
+                                                        'value (e.g., on request, free '
+                                                        'for academics, depends on '
+                                                        'volume)',
+                                         'multivalued': False,
+                                         'name': 'unitCostNote',
+                                         'range': 'string',
+                                         'required': False,
+                                         'title': 'unit cost note'},
                         'unitDefinition': {'comments': ['The description of what will '
                                                         'be delivered to the end-user '
                                                         '(e.g.: packaging, '
@@ -4665,15 +4695,23 @@ class ProductOrService(Dataset):
          'domain_of': ['ProductOrService'],
          'is_a': 'category',
          'recommended': True} })
-    unitCost: str = Field(default="on request", title="unit cost", description="""The cost per access for one unit as defined by the unit definition""", json_schema_extra = { "linkml_meta": {'alias': 'unitCost',
+    unitCost: Optional[Decimal] = Field(default=None, title="unit cost", description="""The cost per access for one unit as defined by the unit definition""", json_schema_extra = { "linkml_meta": {'alias': 'unitCost',
          'close_mappings': ['schema:price'],
-         'comments': ['The cost per access may not be defined or be specific to a '
-                      'request, so it has to be a xsd:string instead of an xsd:float '
-                      'as initialy suggested to permit description of cost as '
-                      'conditional to what is requested'],
+         'comments': ['The cost per access may not always be defined as a fixed '
+                      'numerical value. In some cases, the price is conditional or '
+                      'available only upon request. To accommodate such cases, '
+                      'descriptive information should be provided through the property '
+                      'EVORAO:unitCostNote (xsd:string). This allows handling of cost '
+                      'statements such as “on request,” “depends on volume,” or “free '
+                      'access for academics,” which cannot be captured by a simple '
+                      'numeric value.'],
          'domain_of': ['ProductOrService'],
-         'ifabsent': 'string(on request)',
          'recommended': True} })
+    unitCostCurrency: Optional[str] = Field(default="EUR", title="unit cost currency", description="""The currency in which the unit cost is expressed, following ISO 4217 three-letter codes (e.g., EUR, USD)""", json_schema_extra = { "linkml_meta": {'alias': 'unitCostCurrency',
+         'domain_of': ['ProductOrService'],
+         'ifabsent': 'string(EUR)',
+         'recommended': True} })
+    unitCostNote: Optional[str] = Field(default=None, title="unit cost note", description="""A free-text note describing special conditions or cases where the cost cannot be represented by a numerical value (e.g., on request, free for academics, depends on volume)""", json_schema_extra = { "linkml_meta": {'alias': 'unitCostNote', 'domain_of': ['ProductOrService']} })
     qualityGrading: Optional[str] = Field(default=None, title="quality grading", description="""Information that permits to assess the quality level of what will be provided""", json_schema_extra = { "linkml_meta": {'alias': 'qualityGrading',
          'close_mappings': ['bao:0002662', 'sio:000217'],
          'domain_of': ['ProductOrService']} })
@@ -4846,15 +4884,23 @@ class Service(ProductOrService):
          'domain_of': ['ProductOrService'],
          'is_a': 'category',
          'recommended': True} })
-    unitCost: str = Field(default="on request", title="unit cost", description="""The cost per access for one unit as defined by the unit definition""", json_schema_extra = { "linkml_meta": {'alias': 'unitCost',
+    unitCost: Optional[Decimal] = Field(default=None, title="unit cost", description="""The cost per access for one unit as defined by the unit definition""", json_schema_extra = { "linkml_meta": {'alias': 'unitCost',
          'close_mappings': ['schema:price'],
-         'comments': ['The cost per access may not be defined or be specific to a '
-                      'request, so it has to be a xsd:string instead of an xsd:float '
-                      'as initialy suggested to permit description of cost as '
-                      'conditional to what is requested'],
+         'comments': ['The cost per access may not always be defined as a fixed '
+                      'numerical value. In some cases, the price is conditional or '
+                      'available only upon request. To accommodate such cases, '
+                      'descriptive information should be provided through the property '
+                      'EVORAO:unitCostNote (xsd:string). This allows handling of cost '
+                      'statements such as “on request,” “depends on volume,” or “free '
+                      'access for academics,” which cannot be captured by a simple '
+                      'numeric value.'],
          'domain_of': ['ProductOrService'],
-         'ifabsent': 'string(on request)',
          'recommended': True} })
+    unitCostCurrency: Optional[str] = Field(default="EUR", title="unit cost currency", description="""The currency in which the unit cost is expressed, following ISO 4217 three-letter codes (e.g., EUR, USD)""", json_schema_extra = { "linkml_meta": {'alias': 'unitCostCurrency',
+         'domain_of': ['ProductOrService'],
+         'ifabsent': 'string(EUR)',
+         'recommended': True} })
+    unitCostNote: Optional[str] = Field(default=None, title="unit cost note", description="""A free-text note describing special conditions or cases where the cost cannot be represented by a numerical value (e.g., on request, free for academics, depends on volume)""", json_schema_extra = { "linkml_meta": {'alias': 'unitCostNote', 'domain_of': ['ProductOrService']} })
     qualityGrading: Optional[str] = Field(default=None, title="quality grading", description="""Information that permits to assess the quality level of what will be provided""", json_schema_extra = { "linkml_meta": {'alias': 'qualityGrading',
          'close_mappings': ['bao:0002662', 'sio:000217'],
          'domain_of': ['ProductOrService']} })
@@ -5150,15 +5196,23 @@ class Product(ProductOrService):
          'domain_of': ['ProductOrService'],
          'is_a': 'category',
          'recommended': True} })
-    unitCost: str = Field(default="on request", title="unit cost", description="""The cost per access for one unit as defined by the unit definition""", json_schema_extra = { "linkml_meta": {'alias': 'unitCost',
+    unitCost: Optional[Decimal] = Field(default=None, title="unit cost", description="""The cost per access for one unit as defined by the unit definition""", json_schema_extra = { "linkml_meta": {'alias': 'unitCost',
          'close_mappings': ['schema:price'],
-         'comments': ['The cost per access may not be defined or be specific to a '
-                      'request, so it has to be a xsd:string instead of an xsd:float '
-                      'as initialy suggested to permit description of cost as '
-                      'conditional to what is requested'],
+         'comments': ['The cost per access may not always be defined as a fixed '
+                      'numerical value. In some cases, the price is conditional or '
+                      'available only upon request. To accommodate such cases, '
+                      'descriptive information should be provided through the property '
+                      'EVORAO:unitCostNote (xsd:string). This allows handling of cost '
+                      'statements such as “on request,” “depends on volume,” or “free '
+                      'access for academics,” which cannot be captured by a simple '
+                      'numeric value.'],
          'domain_of': ['ProductOrService'],
-         'ifabsent': 'string(on request)',
          'recommended': True} })
+    unitCostCurrency: Optional[str] = Field(default="EUR", title="unit cost currency", description="""The currency in which the unit cost is expressed, following ISO 4217 three-letter codes (e.g., EUR, USD)""", json_schema_extra = { "linkml_meta": {'alias': 'unitCostCurrency',
+         'domain_of': ['ProductOrService'],
+         'ifabsent': 'string(EUR)',
+         'recommended': True} })
+    unitCostNote: Optional[str] = Field(default=None, title="unit cost note", description="""A free-text note describing special conditions or cases where the cost cannot be represented by a numerical value (e.g., on request, free for academics, depends on volume)""", json_schema_extra = { "linkml_meta": {'alias': 'unitCostNote', 'domain_of': ['ProductOrService']} })
     qualityGrading: Optional[str] = Field(default=None, title="quality grading", description="""Information that permits to assess the quality level of what will be provided""", json_schema_extra = { "linkml_meta": {'alias': 'qualityGrading',
          'close_mappings': ['bao:0002662', 'sio:000217'],
          'domain_of': ['ProductOrService']} })
@@ -5387,15 +5441,23 @@ class Antibody(Product):
          'domain_of': ['ProductOrService'],
          'is_a': 'category',
          'recommended': True} })
-    unitCost: str = Field(default="on request", title="unit cost", description="""The cost per access for one unit as defined by the unit definition""", json_schema_extra = { "linkml_meta": {'alias': 'unitCost',
+    unitCost: Optional[Decimal] = Field(default=None, title="unit cost", description="""The cost per access for one unit as defined by the unit definition""", json_schema_extra = { "linkml_meta": {'alias': 'unitCost',
          'close_mappings': ['schema:price'],
-         'comments': ['The cost per access may not be defined or be specific to a '
-                      'request, so it has to be a xsd:string instead of an xsd:float '
-                      'as initialy suggested to permit description of cost as '
-                      'conditional to what is requested'],
+         'comments': ['The cost per access may not always be defined as a fixed '
+                      'numerical value. In some cases, the price is conditional or '
+                      'available only upon request. To accommodate such cases, '
+                      'descriptive information should be provided through the property '
+                      'EVORAO:unitCostNote (xsd:string). This allows handling of cost '
+                      'statements such as “on request,” “depends on volume,” or “free '
+                      'access for academics,” which cannot be captured by a simple '
+                      'numeric value.'],
          'domain_of': ['ProductOrService'],
-         'ifabsent': 'string(on request)',
          'recommended': True} })
+    unitCostCurrency: Optional[str] = Field(default="EUR", title="unit cost currency", description="""The currency in which the unit cost is expressed, following ISO 4217 three-letter codes (e.g., EUR, USD)""", json_schema_extra = { "linkml_meta": {'alias': 'unitCostCurrency',
+         'domain_of': ['ProductOrService'],
+         'ifabsent': 'string(EUR)',
+         'recommended': True} })
+    unitCostNote: Optional[str] = Field(default=None, title="unit cost note", description="""A free-text note describing special conditions or cases where the cost cannot be represented by a numerical value (e.g., on request, free for academics, depends on volume)""", json_schema_extra = { "linkml_meta": {'alias': 'unitCostNote', 'domain_of': ['ProductOrService']} })
     qualityGrading: Optional[str] = Field(default=None, title="quality grading", description="""Information that permits to assess the quality level of what will be provided""", json_schema_extra = { "linkml_meta": {'alias': 'qualityGrading',
          'close_mappings': ['bao:0002662', 'sio:000217'],
          'domain_of': ['ProductOrService']} })
@@ -5583,15 +5645,23 @@ class Hybridoma(Antibody):
          'domain_of': ['ProductOrService'],
          'is_a': 'category',
          'recommended': True} })
-    unitCost: str = Field(default="on request", title="unit cost", description="""The cost per access for one unit as defined by the unit definition""", json_schema_extra = { "linkml_meta": {'alias': 'unitCost',
+    unitCost: Optional[Decimal] = Field(default=None, title="unit cost", description="""The cost per access for one unit as defined by the unit definition""", json_schema_extra = { "linkml_meta": {'alias': 'unitCost',
          'close_mappings': ['schema:price'],
-         'comments': ['The cost per access may not be defined or be specific to a '
-                      'request, so it has to be a xsd:string instead of an xsd:float '
-                      'as initialy suggested to permit description of cost as '
-                      'conditional to what is requested'],
+         'comments': ['The cost per access may not always be defined as a fixed '
+                      'numerical value. In some cases, the price is conditional or '
+                      'available only upon request. To accommodate such cases, '
+                      'descriptive information should be provided through the property '
+                      'EVORAO:unitCostNote (xsd:string). This allows handling of cost '
+                      'statements such as “on request,” “depends on volume,” or “free '
+                      'access for academics,” which cannot be captured by a simple '
+                      'numeric value.'],
          'domain_of': ['ProductOrService'],
-         'ifabsent': 'string(on request)',
          'recommended': True} })
+    unitCostCurrency: Optional[str] = Field(default="EUR", title="unit cost currency", description="""The currency in which the unit cost is expressed, following ISO 4217 three-letter codes (e.g., EUR, USD)""", json_schema_extra = { "linkml_meta": {'alias': 'unitCostCurrency',
+         'domain_of': ['ProductOrService'],
+         'ifabsent': 'string(EUR)',
+         'recommended': True} })
+    unitCostNote: Optional[str] = Field(default=None, title="unit cost note", description="""A free-text note describing special conditions or cases where the cost cannot be represented by a numerical value (e.g., on request, free for academics, depends on volume)""", json_schema_extra = { "linkml_meta": {'alias': 'unitCostNote', 'domain_of': ['ProductOrService']} })
     qualityGrading: Optional[str] = Field(default=None, title="quality grading", description="""Information that permits to assess the quality level of what will be provided""", json_schema_extra = { "linkml_meta": {'alias': 'qualityGrading',
          'close_mappings': ['bao:0002662', 'sio:000217'],
          'domain_of': ['ProductOrService']} })
@@ -6140,15 +6210,23 @@ class Protein(Product):
          'domain_of': ['ProductOrService'],
          'is_a': 'category',
          'recommended': True} })
-    unitCost: str = Field(default="on request", title="unit cost", description="""The cost per access for one unit as defined by the unit definition""", json_schema_extra = { "linkml_meta": {'alias': 'unitCost',
+    unitCost: Optional[Decimal] = Field(default=None, title="unit cost", description="""The cost per access for one unit as defined by the unit definition""", json_schema_extra = { "linkml_meta": {'alias': 'unitCost',
          'close_mappings': ['schema:price'],
-         'comments': ['The cost per access may not be defined or be specific to a '
-                      'request, so it has to be a xsd:string instead of an xsd:float '
-                      'as initialy suggested to permit description of cost as '
-                      'conditional to what is requested'],
+         'comments': ['The cost per access may not always be defined as a fixed '
+                      'numerical value. In some cases, the price is conditional or '
+                      'available only upon request. To accommodate such cases, '
+                      'descriptive information should be provided through the property '
+                      'EVORAO:unitCostNote (xsd:string). This allows handling of cost '
+                      'statements such as “on request,” “depends on volume,” or “free '
+                      'access for academics,” which cannot be captured by a simple '
+                      'numeric value.'],
          'domain_of': ['ProductOrService'],
-         'ifabsent': 'string(on request)',
          'recommended': True} })
+    unitCostCurrency: Optional[str] = Field(default="EUR", title="unit cost currency", description="""The currency in which the unit cost is expressed, following ISO 4217 three-letter codes (e.g., EUR, USD)""", json_schema_extra = { "linkml_meta": {'alias': 'unitCostCurrency',
+         'domain_of': ['ProductOrService'],
+         'ifabsent': 'string(EUR)',
+         'recommended': True} })
+    unitCostNote: Optional[str] = Field(default=None, title="unit cost note", description="""A free-text note describing special conditions or cases where the cost cannot be represented by a numerical value (e.g., on request, free for academics, depends on volume)""", json_schema_extra = { "linkml_meta": {'alias': 'unitCostNote', 'domain_of': ['ProductOrService']} })
     qualityGrading: Optional[str] = Field(default=None, title="quality grading", description="""Information that permits to assess the quality level of what will be provided""", json_schema_extra = { "linkml_meta": {'alias': 'qualityGrading',
          'close_mappings': ['bao:0002662', 'sio:000217'],
          'domain_of': ['ProductOrService']} })
@@ -6576,15 +6654,23 @@ class NucleicAcid(Product):
          'domain_of': ['ProductOrService'],
          'is_a': 'category',
          'recommended': True} })
-    unitCost: str = Field(default="on request", title="unit cost", description="""The cost per access for one unit as defined by the unit definition""", json_schema_extra = { "linkml_meta": {'alias': 'unitCost',
+    unitCost: Optional[Decimal] = Field(default=None, title="unit cost", description="""The cost per access for one unit as defined by the unit definition""", json_schema_extra = { "linkml_meta": {'alias': 'unitCost',
          'close_mappings': ['schema:price'],
-         'comments': ['The cost per access may not be defined or be specific to a '
-                      'request, so it has to be a xsd:string instead of an xsd:float '
-                      'as initialy suggested to permit description of cost as '
-                      'conditional to what is requested'],
+         'comments': ['The cost per access may not always be defined as a fixed '
+                      'numerical value. In some cases, the price is conditional or '
+                      'available only upon request. To accommodate such cases, '
+                      'descriptive information should be provided through the property '
+                      'EVORAO:unitCostNote (xsd:string). This allows handling of cost '
+                      'statements such as “on request,” “depends on volume,” or “free '
+                      'access for academics,” which cannot be captured by a simple '
+                      'numeric value.'],
          'domain_of': ['ProductOrService'],
-         'ifabsent': 'string(on request)',
          'recommended': True} })
+    unitCostCurrency: Optional[str] = Field(default="EUR", title="unit cost currency", description="""The currency in which the unit cost is expressed, following ISO 4217 three-letter codes (e.g., EUR, USD)""", json_schema_extra = { "linkml_meta": {'alias': 'unitCostCurrency',
+         'domain_of': ['ProductOrService'],
+         'ifabsent': 'string(EUR)',
+         'recommended': True} })
+    unitCostNote: Optional[str] = Field(default=None, title="unit cost note", description="""A free-text note describing special conditions or cases where the cost cannot be represented by a numerical value (e.g., on request, free for academics, depends on volume)""", json_schema_extra = { "linkml_meta": {'alias': 'unitCostNote', 'domain_of': ['ProductOrService']} })
     qualityGrading: Optional[str] = Field(default=None, title="quality grading", description="""Information that permits to assess the quality level of what will be provided""", json_schema_extra = { "linkml_meta": {'alias': 'qualityGrading',
          'close_mappings': ['bao:0002662', 'sio:000217'],
          'domain_of': ['ProductOrService']} })
@@ -6802,15 +6888,23 @@ class DetectionKit(Product):
          'domain_of': ['ProductOrService'],
          'is_a': 'category',
          'recommended': True} })
-    unitCost: str = Field(default="on request", title="unit cost", description="""The cost per access for one unit as defined by the unit definition""", json_schema_extra = { "linkml_meta": {'alias': 'unitCost',
+    unitCost: Optional[Decimal] = Field(default=None, title="unit cost", description="""The cost per access for one unit as defined by the unit definition""", json_schema_extra = { "linkml_meta": {'alias': 'unitCost',
          'close_mappings': ['schema:price'],
-         'comments': ['The cost per access may not be defined or be specific to a '
-                      'request, so it has to be a xsd:string instead of an xsd:float '
-                      'as initialy suggested to permit description of cost as '
-                      'conditional to what is requested'],
+         'comments': ['The cost per access may not always be defined as a fixed '
+                      'numerical value. In some cases, the price is conditional or '
+                      'available only upon request. To accommodate such cases, '
+                      'descriptive information should be provided through the property '
+                      'EVORAO:unitCostNote (xsd:string). This allows handling of cost '
+                      'statements such as “on request,” “depends on volume,” or “free '
+                      'access for academics,” which cannot be captured by a simple '
+                      'numeric value.'],
          'domain_of': ['ProductOrService'],
-         'ifabsent': 'string(on request)',
          'recommended': True} })
+    unitCostCurrency: Optional[str] = Field(default="EUR", title="unit cost currency", description="""The currency in which the unit cost is expressed, following ISO 4217 three-letter codes (e.g., EUR, USD)""", json_schema_extra = { "linkml_meta": {'alias': 'unitCostCurrency',
+         'domain_of': ['ProductOrService'],
+         'ifabsent': 'string(EUR)',
+         'recommended': True} })
+    unitCostNote: Optional[str] = Field(default=None, title="unit cost note", description="""A free-text note describing special conditions or cases where the cost cannot be represented by a numerical value (e.g., on request, free for academics, depends on volume)""", json_schema_extra = { "linkml_meta": {'alias': 'unitCostNote', 'domain_of': ['ProductOrService']} })
     qualityGrading: Optional[str] = Field(default=None, title="quality grading", description="""Information that permits to assess the quality level of what will be provided""", json_schema_extra = { "linkml_meta": {'alias': 'qualityGrading',
          'close_mappings': ['bao:0002662', 'sio:000217'],
          'domain_of': ['ProductOrService']} })
@@ -6989,15 +7083,23 @@ class Bundle(Product):
          'domain_of': ['ProductOrService'],
          'is_a': 'category',
          'recommended': True} })
-    unitCost: str = Field(default="on request", title="unit cost", description="""The cost per access for one unit as defined by the unit definition""", json_schema_extra = { "linkml_meta": {'alias': 'unitCost',
+    unitCost: Optional[Decimal] = Field(default=None, title="unit cost", description="""The cost per access for one unit as defined by the unit definition""", json_schema_extra = { "linkml_meta": {'alias': 'unitCost',
          'close_mappings': ['schema:price'],
-         'comments': ['The cost per access may not be defined or be specific to a '
-                      'request, so it has to be a xsd:string instead of an xsd:float '
-                      'as initialy suggested to permit description of cost as '
-                      'conditional to what is requested'],
+         'comments': ['The cost per access may not always be defined as a fixed '
+                      'numerical value. In some cases, the price is conditional or '
+                      'available only upon request. To accommodate such cases, '
+                      'descriptive information should be provided through the property '
+                      'EVORAO:unitCostNote (xsd:string). This allows handling of cost '
+                      'statements such as “on request,” “depends on volume,” or “free '
+                      'access for academics,” which cannot be captured by a simple '
+                      'numeric value.'],
          'domain_of': ['ProductOrService'],
-         'ifabsent': 'string(on request)',
          'recommended': True} })
+    unitCostCurrency: Optional[str] = Field(default="EUR", title="unit cost currency", description="""The currency in which the unit cost is expressed, following ISO 4217 three-letter codes (e.g., EUR, USD)""", json_schema_extra = { "linkml_meta": {'alias': 'unitCostCurrency',
+         'domain_of': ['ProductOrService'],
+         'ifabsent': 'string(EUR)',
+         'recommended': True} })
+    unitCostNote: Optional[str] = Field(default=None, title="unit cost note", description="""A free-text note describing special conditions or cases where the cost cannot be represented by a numerical value (e.g., on request, free for academics, depends on volume)""", json_schema_extra = { "linkml_meta": {'alias': 'unitCostNote', 'domain_of': ['ProductOrService']} })
     qualityGrading: Optional[str] = Field(default=None, title="quality grading", description="""Information that permits to assess the quality level of what will be provided""", json_schema_extra = { "linkml_meta": {'alias': 'qualityGrading',
          'close_mappings': ['bao:0002662', 'sio:000217'],
          'domain_of': ['ProductOrService']} })
@@ -7517,15 +7619,23 @@ class Pathogen(Product):
          'domain_of': ['ProductOrService'],
          'is_a': 'category',
          'recommended': True} })
-    unitCost: str = Field(default="on request", title="unit cost", description="""The cost per access for one unit as defined by the unit definition""", json_schema_extra = { "linkml_meta": {'alias': 'unitCost',
+    unitCost: Optional[Decimal] = Field(default=None, title="unit cost", description="""The cost per access for one unit as defined by the unit definition""", json_schema_extra = { "linkml_meta": {'alias': 'unitCost',
          'close_mappings': ['schema:price'],
-         'comments': ['The cost per access may not be defined or be specific to a '
-                      'request, so it has to be a xsd:string instead of an xsd:float '
-                      'as initialy suggested to permit description of cost as '
-                      'conditional to what is requested'],
+         'comments': ['The cost per access may not always be defined as a fixed '
+                      'numerical value. In some cases, the price is conditional or '
+                      'available only upon request. To accommodate such cases, '
+                      'descriptive information should be provided through the property '
+                      'EVORAO:unitCostNote (xsd:string). This allows handling of cost '
+                      'statements such as “on request,” “depends on volume,” or “free '
+                      'access for academics,” which cannot be captured by a simple '
+                      'numeric value.'],
          'domain_of': ['ProductOrService'],
-         'ifabsent': 'string(on request)',
          'recommended': True} })
+    unitCostCurrency: Optional[str] = Field(default="EUR", title="unit cost currency", description="""The currency in which the unit cost is expressed, following ISO 4217 three-letter codes (e.g., EUR, USD)""", json_schema_extra = { "linkml_meta": {'alias': 'unitCostCurrency',
+         'domain_of': ['ProductOrService'],
+         'ifabsent': 'string(EUR)',
+         'recommended': True} })
+    unitCostNote: Optional[str] = Field(default=None, title="unit cost note", description="""A free-text note describing special conditions or cases where the cost cannot be represented by a numerical value (e.g., on request, free for academics, depends on volume)""", json_schema_extra = { "linkml_meta": {'alias': 'unitCostNote', 'domain_of': ['ProductOrService']} })
     qualityGrading: Optional[str] = Field(default=None, title="quality grading", description="""Information that permits to assess the quality level of what will be provided""", json_schema_extra = { "linkml_meta": {'alias': 'qualityGrading',
          'close_mappings': ['bao:0002662', 'sio:000217'],
          'domain_of': ['ProductOrService']} })
@@ -7821,15 +7931,23 @@ class Virus(Pathogen):
          'domain_of': ['ProductOrService'],
          'is_a': 'category',
          'recommended': True} })
-    unitCost: str = Field(default="on request", title="unit cost", description="""The cost per access for one unit as defined by the unit definition""", json_schema_extra = { "linkml_meta": {'alias': 'unitCost',
+    unitCost: Optional[Decimal] = Field(default=None, title="unit cost", description="""The cost per access for one unit as defined by the unit definition""", json_schema_extra = { "linkml_meta": {'alias': 'unitCost',
          'close_mappings': ['schema:price'],
-         'comments': ['The cost per access may not be defined or be specific to a '
-                      'request, so it has to be a xsd:string instead of an xsd:float '
-                      'as initialy suggested to permit description of cost as '
-                      'conditional to what is requested'],
+         'comments': ['The cost per access may not always be defined as a fixed '
+                      'numerical value. In some cases, the price is conditional or '
+                      'available only upon request. To accommodate such cases, '
+                      'descriptive information should be provided through the property '
+                      'EVORAO:unitCostNote (xsd:string). This allows handling of cost '
+                      'statements such as “on request,” “depends on volume,” or “free '
+                      'access for academics,” which cannot be captured by a simple '
+                      'numeric value.'],
          'domain_of': ['ProductOrService'],
-         'ifabsent': 'string(on request)',
          'recommended': True} })
+    unitCostCurrency: Optional[str] = Field(default="EUR", title="unit cost currency", description="""The currency in which the unit cost is expressed, following ISO 4217 three-letter codes (e.g., EUR, USD)""", json_schema_extra = { "linkml_meta": {'alias': 'unitCostCurrency',
+         'domain_of': ['ProductOrService'],
+         'ifabsent': 'string(EUR)',
+         'recommended': True} })
+    unitCostNote: Optional[str] = Field(default=None, title="unit cost note", description="""A free-text note describing special conditions or cases where the cost cannot be represented by a numerical value (e.g., on request, free for academics, depends on volume)""", json_schema_extra = { "linkml_meta": {'alias': 'unitCostNote', 'domain_of': ['ProductOrService']} })
     qualityGrading: Optional[str] = Field(default=None, title="quality grading", description="""Information that permits to assess the quality level of what will be provided""", json_schema_extra = { "linkml_meta": {'alias': 'qualityGrading',
          'close_mappings': ['bao:0002662', 'sio:000217'],
          'domain_of': ['ProductOrService']} })
@@ -8066,15 +8184,23 @@ class Bacterium(Pathogen):
          'domain_of': ['ProductOrService'],
          'is_a': 'category',
          'recommended': True} })
-    unitCost: str = Field(default="on request", title="unit cost", description="""The cost per access for one unit as defined by the unit definition""", json_schema_extra = { "linkml_meta": {'alias': 'unitCost',
+    unitCost: Optional[Decimal] = Field(default=None, title="unit cost", description="""The cost per access for one unit as defined by the unit definition""", json_schema_extra = { "linkml_meta": {'alias': 'unitCost',
          'close_mappings': ['schema:price'],
-         'comments': ['The cost per access may not be defined or be specific to a '
-                      'request, so it has to be a xsd:string instead of an xsd:float '
-                      'as initialy suggested to permit description of cost as '
-                      'conditional to what is requested'],
+         'comments': ['The cost per access may not always be defined as a fixed '
+                      'numerical value. In some cases, the price is conditional or '
+                      'available only upon request. To accommodate such cases, '
+                      'descriptive information should be provided through the property '
+                      'EVORAO:unitCostNote (xsd:string). This allows handling of cost '
+                      'statements such as “on request,” “depends on volume,” or “free '
+                      'access for academics,” which cannot be captured by a simple '
+                      'numeric value.'],
          'domain_of': ['ProductOrService'],
-         'ifabsent': 'string(on request)',
          'recommended': True} })
+    unitCostCurrency: Optional[str] = Field(default="EUR", title="unit cost currency", description="""The currency in which the unit cost is expressed, following ISO 4217 three-letter codes (e.g., EUR, USD)""", json_schema_extra = { "linkml_meta": {'alias': 'unitCostCurrency',
+         'domain_of': ['ProductOrService'],
+         'ifabsent': 'string(EUR)',
+         'recommended': True} })
+    unitCostNote: Optional[str] = Field(default=None, title="unit cost note", description="""A free-text note describing special conditions or cases where the cost cannot be represented by a numerical value (e.g., on request, free for academics, depends on volume)""", json_schema_extra = { "linkml_meta": {'alias': 'unitCostNote', 'domain_of': ['ProductOrService']} })
     qualityGrading: Optional[str] = Field(default=None, title="quality grading", description="""Information that permits to assess the quality level of what will be provided""", json_schema_extra = { "linkml_meta": {'alias': 'qualityGrading',
          'close_mappings': ['bao:0002662', 'sio:000217'],
          'domain_of': ['ProductOrService']} })
@@ -8309,15 +8435,23 @@ class Fungus(Pathogen):
          'domain_of': ['ProductOrService'],
          'is_a': 'category',
          'recommended': True} })
-    unitCost: str = Field(default="on request", title="unit cost", description="""The cost per access for one unit as defined by the unit definition""", json_schema_extra = { "linkml_meta": {'alias': 'unitCost',
+    unitCost: Optional[Decimal] = Field(default=None, title="unit cost", description="""The cost per access for one unit as defined by the unit definition""", json_schema_extra = { "linkml_meta": {'alias': 'unitCost',
          'close_mappings': ['schema:price'],
-         'comments': ['The cost per access may not be defined or be specific to a '
-                      'request, so it has to be a xsd:string instead of an xsd:float '
-                      'as initialy suggested to permit description of cost as '
-                      'conditional to what is requested'],
+         'comments': ['The cost per access may not always be defined as a fixed '
+                      'numerical value. In some cases, the price is conditional or '
+                      'available only upon request. To accommodate such cases, '
+                      'descriptive information should be provided through the property '
+                      'EVORAO:unitCostNote (xsd:string). This allows handling of cost '
+                      'statements such as “on request,” “depends on volume,” or “free '
+                      'access for academics,” which cannot be captured by a simple '
+                      'numeric value.'],
          'domain_of': ['ProductOrService'],
-         'ifabsent': 'string(on request)',
          'recommended': True} })
+    unitCostCurrency: Optional[str] = Field(default="EUR", title="unit cost currency", description="""The currency in which the unit cost is expressed, following ISO 4217 three-letter codes (e.g., EUR, USD)""", json_schema_extra = { "linkml_meta": {'alias': 'unitCostCurrency',
+         'domain_of': ['ProductOrService'],
+         'ifabsent': 'string(EUR)',
+         'recommended': True} })
+    unitCostNote: Optional[str] = Field(default=None, title="unit cost note", description="""A free-text note describing special conditions or cases where the cost cannot be represented by a numerical value (e.g., on request, free for academics, depends on volume)""", json_schema_extra = { "linkml_meta": {'alias': 'unitCostNote', 'domain_of': ['ProductOrService']} })
     qualityGrading: Optional[str] = Field(default=None, title="quality grading", description="""Information that permits to assess the quality level of what will be provided""", json_schema_extra = { "linkml_meta": {'alias': 'qualityGrading',
          'close_mappings': ['bao:0002662', 'sio:000217'],
          'domain_of': ['ProductOrService']} })
@@ -8548,15 +8682,23 @@ class Protozoan(Pathogen):
          'domain_of': ['ProductOrService'],
          'is_a': 'category',
          'recommended': True} })
-    unitCost: str = Field(default="on request", title="unit cost", description="""The cost per access for one unit as defined by the unit definition""", json_schema_extra = { "linkml_meta": {'alias': 'unitCost',
+    unitCost: Optional[Decimal] = Field(default=None, title="unit cost", description="""The cost per access for one unit as defined by the unit definition""", json_schema_extra = { "linkml_meta": {'alias': 'unitCost',
          'close_mappings': ['schema:price'],
-         'comments': ['The cost per access may not be defined or be specific to a '
-                      'request, so it has to be a xsd:string instead of an xsd:float '
-                      'as initialy suggested to permit description of cost as '
-                      'conditional to what is requested'],
+         'comments': ['The cost per access may not always be defined as a fixed '
+                      'numerical value. In some cases, the price is conditional or '
+                      'available only upon request. To accommodate such cases, '
+                      'descriptive information should be provided through the property '
+                      'EVORAO:unitCostNote (xsd:string). This allows handling of cost '
+                      'statements such as “on request,” “depends on volume,” or “free '
+                      'access for academics,” which cannot be captured by a simple '
+                      'numeric value.'],
          'domain_of': ['ProductOrService'],
-         'ifabsent': 'string(on request)',
          'recommended': True} })
+    unitCostCurrency: Optional[str] = Field(default="EUR", title="unit cost currency", description="""The currency in which the unit cost is expressed, following ISO 4217 three-letter codes (e.g., EUR, USD)""", json_schema_extra = { "linkml_meta": {'alias': 'unitCostCurrency',
+         'domain_of': ['ProductOrService'],
+         'ifabsent': 'string(EUR)',
+         'recommended': True} })
+    unitCostNote: Optional[str] = Field(default=None, title="unit cost note", description="""A free-text note describing special conditions or cases where the cost cannot be represented by a numerical value (e.g., on request, free for academics, depends on volume)""", json_schema_extra = { "linkml_meta": {'alias': 'unitCostNote', 'domain_of': ['ProductOrService']} })
     qualityGrading: Optional[str] = Field(default=None, title="quality grading", description="""Information that permits to assess the quality level of what will be provided""", json_schema_extra = { "linkml_meta": {'alias': 'qualityGrading',
          'close_mappings': ['bao:0002662', 'sio:000217'],
          'domain_of': ['ProductOrService']} })
@@ -8779,15 +8921,23 @@ class Viroid(Pathogen):
          'domain_of': ['ProductOrService'],
          'is_a': 'category',
          'recommended': True} })
-    unitCost: str = Field(default="on request", title="unit cost", description="""The cost per access for one unit as defined by the unit definition""", json_schema_extra = { "linkml_meta": {'alias': 'unitCost',
+    unitCost: Optional[Decimal] = Field(default=None, title="unit cost", description="""The cost per access for one unit as defined by the unit definition""", json_schema_extra = { "linkml_meta": {'alias': 'unitCost',
          'close_mappings': ['schema:price'],
-         'comments': ['The cost per access may not be defined or be specific to a '
-                      'request, so it has to be a xsd:string instead of an xsd:float '
-                      'as initialy suggested to permit description of cost as '
-                      'conditional to what is requested'],
+         'comments': ['The cost per access may not always be defined as a fixed '
+                      'numerical value. In some cases, the price is conditional or '
+                      'available only upon request. To accommodate such cases, '
+                      'descriptive information should be provided through the property '
+                      'EVORAO:unitCostNote (xsd:string). This allows handling of cost '
+                      'statements such as “on request,” “depends on volume,” or “free '
+                      'access for academics,” which cannot be captured by a simple '
+                      'numeric value.'],
          'domain_of': ['ProductOrService'],
-         'ifabsent': 'string(on request)',
          'recommended': True} })
+    unitCostCurrency: Optional[str] = Field(default="EUR", title="unit cost currency", description="""The currency in which the unit cost is expressed, following ISO 4217 three-letter codes (e.g., EUR, USD)""", json_schema_extra = { "linkml_meta": {'alias': 'unitCostCurrency',
+         'domain_of': ['ProductOrService'],
+         'ifabsent': 'string(EUR)',
+         'recommended': True} })
+    unitCostNote: Optional[str] = Field(default=None, title="unit cost note", description="""A free-text note describing special conditions or cases where the cost cannot be represented by a numerical value (e.g., on request, free for academics, depends on volume)""", json_schema_extra = { "linkml_meta": {'alias': 'unitCostNote', 'domain_of': ['ProductOrService']} })
     qualityGrading: Optional[str] = Field(default=None, title="quality grading", description="""Information that permits to assess the quality level of what will be provided""", json_schema_extra = { "linkml_meta": {'alias': 'qualityGrading',
          'close_mappings': ['bao:0002662', 'sio:000217'],
          'domain_of': ['ProductOrService']} })
@@ -9018,15 +9168,23 @@ class Prion(Pathogen):
          'domain_of': ['ProductOrService'],
          'is_a': 'category',
          'recommended': True} })
-    unitCost: str = Field(default="on request", title="unit cost", description="""The cost per access for one unit as defined by the unit definition""", json_schema_extra = { "linkml_meta": {'alias': 'unitCost',
+    unitCost: Optional[Decimal] = Field(default=None, title="unit cost", description="""The cost per access for one unit as defined by the unit definition""", json_schema_extra = { "linkml_meta": {'alias': 'unitCost',
          'close_mappings': ['schema:price'],
-         'comments': ['The cost per access may not be defined or be specific to a '
-                      'request, so it has to be a xsd:string instead of an xsd:float '
-                      'as initialy suggested to permit description of cost as '
-                      'conditional to what is requested'],
+         'comments': ['The cost per access may not always be defined as a fixed '
+                      'numerical value. In some cases, the price is conditional or '
+                      'available only upon request. To accommodate such cases, '
+                      'descriptive information should be provided through the property '
+                      'EVORAO:unitCostNote (xsd:string). This allows handling of cost '
+                      'statements such as “on request,” “depends on volume,” or “free '
+                      'access for academics,” which cannot be captured by a simple '
+                      'numeric value.'],
          'domain_of': ['ProductOrService'],
-         'ifabsent': 'string(on request)',
          'recommended': True} })
+    unitCostCurrency: Optional[str] = Field(default="EUR", title="unit cost currency", description="""The currency in which the unit cost is expressed, following ISO 4217 three-letter codes (e.g., EUR, USD)""", json_schema_extra = { "linkml_meta": {'alias': 'unitCostCurrency',
+         'domain_of': ['ProductOrService'],
+         'ifabsent': 'string(EUR)',
+         'recommended': True} })
+    unitCostNote: Optional[str] = Field(default=None, title="unit cost note", description="""A free-text note describing special conditions or cases where the cost cannot be represented by a numerical value (e.g., on request, free for academics, depends on volume)""", json_schema_extra = { "linkml_meta": {'alias': 'unitCostNote', 'domain_of': ['ProductOrService']} })
     qualityGrading: Optional[str] = Field(default=None, title="quality grading", description="""Information that permits to assess the quality level of what will be provided""", json_schema_extra = { "linkml_meta": {'alias': 'qualityGrading',
          'close_mappings': ['bao:0002662', 'sio:000217'],
          'domain_of': ['ProductOrService']} })

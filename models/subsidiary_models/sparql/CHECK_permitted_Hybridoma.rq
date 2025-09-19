@@ -82,6 +82,8 @@ SELECT ?g ?s ?p WHERE {
    dcat:theme,
    EVORAO:additionalCategory,
    EVORAO:unitCost,
+   EVORAO:unitCostCurrency,
+   EVORAO:unitCostNote,
    EVORAO:qualityGrading,
    EVORAO:pathogenIdentification,
    EVORAO:doi,

@@ -276,6 +276,8 @@ Name: EVORAO
 | [transportInformation](transportInformation.md) | Details the regulations and guidelines for safely transporting the product, i... |
 | [typeOfFunctionalCharacterization](typeOfFunctionalCharacterization.md) | Refers to the classification of a protein based on the specific type of funct... |
 | [unitCost](unitCost.md) | The cost per access for one unit as defined by the unit definition |
+| [unitCostCurrency](unitCostCurrency.md) | The currency in which the unit cost is expressed, following ISO 4217 three-le... |
+| [unitCostNote](unitCostNote.md) | A free-text note describing special conditions or cases where the cost cannot... |
 | [unitDefinition](unitDefinition.md) | A short description of what will be delivered by ordering one unit of this it... |
 | [usageRestrictions](usageRestrictions.md) | Specifies any limitations or conditions on the use of the biological material... |
 | [variant](variant.md) | An organism with one or more new mutations is referred to as a “variant” of t... |

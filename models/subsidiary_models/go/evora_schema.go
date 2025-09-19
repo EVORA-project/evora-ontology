@@ -1701,6 +1701,14 @@ type ProductOrService struct {
 	 */
 	UnitCost string `json:"unitCost"`
 	/*
+	 * The currency in which the unit cost is expressed, following ISO 4217 three-letter codes (e.g., EUR, USD)
+	 */
+	UnitCostCurrency string `json:"unitCostCurrency"`
+	/*
+	 * A free-text note describing special conditions or cases where the cost cannot be represented by a numerical value (e.g., on request, free for academics, depends on volume)
+	 */
+	UnitCostNote string `json:"unitCostNote"`
+	/*
 	 * Information that permits to assess the quality level of what will be provided
 	 */
 	QualityGrading string `json:"qualityGrading"`
@@ -1830,6 +1838,14 @@ type Service struct {
 	 * The cost per access for one unit as defined by the unit definition
 	 */
 	UnitCost string `json:"unitCost"`
+	/*
+	 * The currency in which the unit cost is expressed, following ISO 4217 three-letter codes (e.g., EUR, USD)
+	 */
+	UnitCostCurrency string `json:"unitCostCurrency"`
+	/*
+	 * A free-text note describing special conditions or cases where the cost cannot be represented by a numerical value (e.g., on request, free for academics, depends on volume)
+	 */
+	UnitCostNote string `json:"unitCostNote"`
 	/*
 	 * Information that permits to assess the quality level of what will be provided
 	 */
@@ -1980,6 +1996,14 @@ type Product struct {
 	 * The cost per access for one unit as defined by the unit definition
 	 */
 	UnitCost string `json:"unitCost"`
+	/*
+	 * The currency in which the unit cost is expressed, following ISO 4217 three-letter codes (e.g., EUR, USD)
+	 */
+	UnitCostCurrency string `json:"unitCostCurrency"`
+	/*
+	 * A free-text note describing special conditions or cases where the cost cannot be represented by a numerical value (e.g., on request, free for academics, depends on volume)
+	 */
+	UnitCostNote string `json:"unitCostNote"`
 	/*
 	 * Information that permits to assess the quality level of what will be provided
 	 */
@@ -2150,6 +2174,14 @@ type Antibody struct {
 	 * The cost per access for one unit as defined by the unit definition
 	 */
 	UnitCost string `json:"unitCost"`
+	/*
+	 * The currency in which the unit cost is expressed, following ISO 4217 three-letter codes (e.g., EUR, USD)
+	 */
+	UnitCostCurrency string `json:"unitCostCurrency"`
+	/*
+	 * A free-text note describing special conditions or cases where the cost cannot be represented by a numerical value (e.g., on request, free for academics, depends on volume)
+	 */
+	UnitCostNote string `json:"unitCostNote"`
 	/*
 	 * Information that permits to assess the quality level of what will be provided
 	 */
@@ -2324,6 +2356,14 @@ type Hybridoma struct {
 	 * The cost per access for one unit as defined by the unit definition
 	 */
 	UnitCost string `json:"unitCost"`
+	/*
+	 * The currency in which the unit cost is expressed, following ISO 4217 three-letter codes (e.g., EUR, USD)
+	 */
+	UnitCostCurrency string `json:"unitCostCurrency"`
+	/*
+	 * A free-text note describing special conditions or cases where the cost cannot be represented by a numerical value (e.g., on request, free for academics, depends on volume)
+	 */
+	UnitCostNote string `json:"unitCostNote"`
 	/*
 	 * Information that permits to assess the quality level of what will be provided
 	 */
@@ -2531,6 +2571,14 @@ type Protein struct {
 	 */
 	UnitCost string `json:"unitCost"`
 	/*
+	 * The currency in which the unit cost is expressed, following ISO 4217 three-letter codes (e.g., EUR, USD)
+	 */
+	UnitCostCurrency string `json:"unitCostCurrency"`
+	/*
+	 * A free-text note describing special conditions or cases where the cost cannot be represented by a numerical value (e.g., on request, free for academics, depends on volume)
+	 */
+	UnitCostNote string `json:"unitCostNote"`
+	/*
 	 * Information that permits to assess the quality level of what will be provided
 	 */
 	QualityGrading string `json:"qualityGrading"`
@@ -2737,6 +2785,14 @@ type NucleicAcid struct {
 	 */
 	UnitCost string `json:"unitCost"`
 	/*
+	 * The currency in which the unit cost is expressed, following ISO 4217 three-letter codes (e.g., EUR, USD)
+	 */
+	UnitCostCurrency string `json:"unitCostCurrency"`
+	/*
+	 * A free-text note describing special conditions or cases where the cost cannot be represented by a numerical value (e.g., on request, free for academics, depends on volume)
+	 */
+	UnitCostNote string `json:"unitCostNote"`
+	/*
 	 * Information that permits to assess the quality level of what will be provided
 	 */
 	QualityGrading string `json:"qualityGrading"`
@@ -2903,6 +2959,14 @@ type DetectionKit struct {
 	 */
 	UnitCost string `json:"unitCost"`
 	/*
+	 * The currency in which the unit cost is expressed, following ISO 4217 three-letter codes (e.g., EUR, USD)
+	 */
+	UnitCostCurrency string `json:"unitCostCurrency"`
+	/*
+	 * A free-text note describing special conditions or cases where the cost cannot be represented by a numerical value (e.g., on request, free for academics, depends on volume)
+	 */
+	UnitCostNote string `json:"unitCostNote"`
+	/*
 	 * Information that permits to assess the quality level of what will be provided
 	 */
 	QualityGrading string `json:"qualityGrading"`
@@ -3056,6 +3120,14 @@ type Bundle struct {
 	 * The cost per access for one unit as defined by the unit definition
 	 */
 	UnitCost string `json:"unitCost"`
+	/*
+	 * The currency in which the unit cost is expressed, following ISO 4217 three-letter codes (e.g., EUR, USD)
+	 */
+	UnitCostCurrency string `json:"unitCostCurrency"`
+	/*
+	 * A free-text note describing special conditions or cases where the cost cannot be represented by a numerical value (e.g., on request, free for academics, depends on volume)
+	 */
+	UnitCostNote string `json:"unitCostNote"`
 	/*
 	 * Information that permits to assess the quality level of what will be provided
 	 */
@@ -3278,6 +3350,14 @@ type Pathogen struct {
 	 * The cost per access for one unit as defined by the unit definition
 	 */
 	UnitCost string `json:"unitCost"`
+	/*
+	 * The currency in which the unit cost is expressed, following ISO 4217 three-letter codes (e.g., EUR, USD)
+	 */
+	UnitCostCurrency string `json:"unitCostCurrency"`
+	/*
+	 * A free-text note describing special conditions or cases where the cost cannot be represented by a numerical value (e.g., on request, free for academics, depends on volume)
+	 */
+	UnitCostNote string `json:"unitCostNote"`
 	/*
 	 * Information that permits to assess the quality level of what will be provided
 	 */
@@ -3513,6 +3593,14 @@ type Virus struct {
 	 */
 	UnitCost string `json:"unitCost"`
 	/*
+	 * The currency in which the unit cost is expressed, following ISO 4217 three-letter codes (e.g., EUR, USD)
+	 */
+	UnitCostCurrency string `json:"unitCostCurrency"`
+	/*
+	 * A free-text note describing special conditions or cases where the cost cannot be represented by a numerical value (e.g., on request, free for academics, depends on volume)
+	 */
+	UnitCostNote string `json:"unitCostNote"`
+	/*
 	 * Information that permits to assess the quality level of what will be provided
 	 */
 	QualityGrading string `json:"qualityGrading"`
@@ -3734,6 +3822,14 @@ type Bacterium struct {
 	 * The cost per access for one unit as defined by the unit definition
 	 */
 	UnitCost string `json:"unitCost"`
+	/*
+	 * The currency in which the unit cost is expressed, following ISO 4217 three-letter codes (e.g., EUR, USD)
+	 */
+	UnitCostCurrency string `json:"unitCostCurrency"`
+	/*
+	 * A free-text note describing special conditions or cases where the cost cannot be represented by a numerical value (e.g., on request, free for academics, depends on volume)
+	 */
+	UnitCostNote string `json:"unitCostNote"`
 	/*
 	 * Information that permits to assess the quality level of what will be provided
 	 */
@@ -3957,6 +4053,14 @@ type Fungus struct {
 	 */
 	UnitCost string `json:"unitCost"`
 	/*
+	 * The currency in which the unit cost is expressed, following ISO 4217 three-letter codes (e.g., EUR, USD)
+	 */
+	UnitCostCurrency string `json:"unitCostCurrency"`
+	/*
+	 * A free-text note describing special conditions or cases where the cost cannot be represented by a numerical value (e.g., on request, free for academics, depends on volume)
+	 */
+	UnitCostNote string `json:"unitCostNote"`
+	/*
 	 * Information that permits to assess the quality level of what will be provided
 	 */
 	QualityGrading string `json:"qualityGrading"`
@@ -4178,6 +4282,14 @@ type Protozoan struct {
 	 * The cost per access for one unit as defined by the unit definition
 	 */
 	UnitCost string `json:"unitCost"`
+	/*
+	 * The currency in which the unit cost is expressed, following ISO 4217 three-letter codes (e.g., EUR, USD)
+	 */
+	UnitCostCurrency string `json:"unitCostCurrency"`
+	/*
+	 * A free-text note describing special conditions or cases where the cost cannot be represented by a numerical value (e.g., on request, free for academics, depends on volume)
+	 */
+	UnitCostNote string `json:"unitCostNote"`
 	/*
 	 * Information that permits to assess the quality level of what will be provided
 	 */
@@ -4401,6 +4513,14 @@ type Viroid struct {
 	 */
 	UnitCost string `json:"unitCost"`
 	/*
+	 * The currency in which the unit cost is expressed, following ISO 4217 three-letter codes (e.g., EUR, USD)
+	 */
+	UnitCostCurrency string `json:"unitCostCurrency"`
+	/*
+	 * A free-text note describing special conditions or cases where the cost cannot be represented by a numerical value (e.g., on request, free for academics, depends on volume)
+	 */
+	UnitCostNote string `json:"unitCostNote"`
+	/*
 	 * Information that permits to assess the quality level of what will be provided
 	 */
 	QualityGrading string `json:"qualityGrading"`
@@ -4622,6 +4742,14 @@ type Prion struct {
 	 * The cost per access for one unit as defined by the unit definition
 	 */
 	UnitCost string `json:"unitCost"`
+	/*
+	 * The currency in which the unit cost is expressed, following ISO 4217 three-letter codes (e.g., EUR, USD)
+	 */
+	UnitCostCurrency string `json:"unitCostCurrency"`
+	/*
+	 * A free-text note describing special conditions or cases where the cost cannot be represented by a numerical value (e.g., on request, free for academics, depends on volume)
+	 */
+	UnitCostNote string `json:"unitCostNote"`
 	/*
 	 * Information that permits to assess the quality level of what will be provided
 	 */

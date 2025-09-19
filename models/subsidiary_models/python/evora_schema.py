@@ -1,5 +1,5 @@
 # Auto generated from evora_schema.yaml by pythongen.py version: 0.0.1
-# Generation date: 2025-09-15T14:40:41
+# Generation date: 2025-09-19T16:33:07
 # Schema: EVORAO
 #
 # id: https://w3id.org/evorao/
@@ -56,11 +56,11 @@ from rdflib import (
     URIRef
 )
 
-from linkml_runtime.linkml_model.types import Boolean, Datetime, Integer, String, Uri
-from linkml_runtime.utils.metamodelcore import Bool, URI, XSDDateTime
+from linkml_runtime.linkml_model.types import Boolean, Datetime, Decimal, Integer, String, Uri
+from linkml_runtime.utils.metamodelcore import Bool, Decimal, URI, XSDDateTime
 
 metamodel_version = "1.7.0"
-version = "1.0.9808"
+version = "1.0.9841"
 
 # Namespaces
 EVORAO = CurieNamespace('EVORAO', 'https://w3id.org/evorao/')
@@ -1493,10 +1493,12 @@ class ProductOrService(Dataset):
     provider: Union[dict, Provider] = None
     collection: Union[Union[dict, Collection], list[Union[dict, Collection]]] = None
     keywords: Union[Union[dict, Keyword], list[Union[dict, Keyword]]] = None
-    unitCost: str = "on request"
     availability: str = "on request"
     unitDefinition: Optional[str] = None
     additionalCategory: Optional[Union[Union[dict, ProductCategory], list[Union[dict, ProductCategory]]]] = empty_list()
+    unitCost: Optional[Decimal] = None
+    unitCostCurrency: Optional[str] = "EUR"
+    unitCostNote: Optional[str] = None
     qualityGrading: Optional[str] = None
     doi: Optional[Union[Union[dict, Doi], list[Union[dict, Doi]]]] = empty_list()
     riskGroup: Optional[Union[dict, RiskGroup]] = None
@@ -1525,11 +1527,6 @@ class ProductOrService(Dataset):
             self.MissingRequiredField("category")
         if not isinstance(self.category, ProductCategory):
             self.category = ProductCategory(**as_dict(self.category))
-
-        if self._is_empty(self.unitCost):
-            self.MissingRequiredField("unitCost")
-        if not isinstance(self.unitCost, str):
-            self.unitCost = str(self.unitCost)
 
         if self._is_empty(self.pathogenIdentification):
             self.MissingRequiredField("pathogenIdentification")
@@ -1562,6 +1559,15 @@ class ProductOrService(Dataset):
             self.unitDefinition = str(self.unitDefinition)
 
         self._normalize_inlined_as_dict(slot_name="additionalCategory", slot_type=ProductCategory, key_name="title", keyed=False)
+
+        if self.unitCost is not None and not isinstance(self.unitCost, Decimal):
+            self.unitCost = Decimal(self.unitCost)
+
+        if self.unitCostCurrency is not None and not isinstance(self.unitCostCurrency, str):
+            self.unitCostCurrency = str(self.unitCostCurrency)
+
+        if self.unitCostNote is not None and not isinstance(self.unitCostNote, str):
+            self.unitCostNote = str(self.unitCostNote)
 
         if self.qualityGrading is not None and not isinstance(self.qualityGrading, str):
             self.qualityGrading = str(self.qualityGrading)
@@ -1623,7 +1629,6 @@ class Service(ProductOrService):
     provider: Union[dict, Provider] = None
     collection: Union[Union[dict, Collection], list[Union[dict, Collection]]] = None
     keywords: Union[Union[dict, Keyword], list[Union[dict, Keyword]]] = None
-    unitCost: str = "on request"
     availability: str = "on request"
     modelSpecies: Optional[str] = None
     modelType: Optional[str] = None
@@ -1664,7 +1669,6 @@ class Product(ProductOrService):
     iataClassification: Union[dict, IataClassification] = None
     shippingConditions: str = None
     storageConditions: str = None
-    unitCost: str = "on request"
     availability: str = "on request"
     materialSafetyDataSheet: Optional[Union[dict, ReasearchInfrastructure]] = None
     originator: Optional[Union[dict, Originator]] = None
@@ -1731,7 +1735,6 @@ class Antibody(Product):
     antibodyPurifiedByAffinity: Union[bool, Bool] = None
     specificityDocumented: Union[bool, Bool] = None
     targetedAntigen: str = None
-    unitCost: str = "on request"
     availability: str = "on request"
     productionSystem: Optional[str] = None
     sequenceReference: Optional[Union[Union[dict, SequenceReference], list[Union[dict, SequenceReference]]]] = empty_list()
@@ -1790,7 +1793,6 @@ class Hybridoma(Antibody):
     specificityDocumented: Union[bool, Bool] = None
     targetedAntigen: str = None
     hybridomaDescription: str = None
-    unitCost: str = "on request"
     availability: str = "on request"
 
     def __post_init__(self, *_: str, **kwargs: Any):
@@ -1831,7 +1833,6 @@ class Protein(Product):
     biologicalMaterialOrigin: Union[dict, BiologicalMaterialOrigin] = None
     sequence: Union[Union[dict, Sequence], list[Union[dict, Sequence]]] = None
     tagSequence: Union[Union[dict, TagSequence], list[Union[dict, TagSequence]]] = None
-    unitCost: str = "on request"
     availability: str = "on request"
     relatedPdb: Optional[Union[Union[dict, PdbReference], list[Union[dict, PdbReference]]]] = empty_list()
     specialFeature: Optional[Union[Union[dict, SpecialFeature], list[Union[dict, SpecialFeature]]]] = empty_list()
@@ -1939,7 +1940,6 @@ class NucleicAcid(Product):
     sequencing: str = None
     titer: str = None
     sequenceChecked: Union[bool, Bool] = None
-    unitCost: str = "on request"
     availability: str = "on request"
     genBankFileOfTheConstruct: Optional[Union[Union[dict, "Data"], list[Union[dict, "Data"]]]] = empty_list()
     clonedIntoPlasmid: Optional[Union[dict, ExpressionVector]] = None
@@ -2037,7 +2037,6 @@ class DetectionKit(Product):
     shippingConditions: str = None
     storageConditions: str = None
     specificityDocumented: Union[bool, Bool] = None
-    unitCost: str = "on request"
     availability: str = "on request"
     standardOperatingProcedureFile: Optional[Union[Union[dict, "File"], list[Union[dict, "File"]]]] = empty_list()
     specificity: Optional[str] = None
@@ -2088,7 +2087,6 @@ class Bundle(Product):
     shippingConditions: str = None
     storageConditions: str = None
     itemsOfTheBundle: Union[Union[dict, Product], list[Union[dict, Product]]] = None
-    unitCost: str = "on request"
     availability: str = "on request"
 
     def __post_init__(self, *_: str, **kwargs: Any):
@@ -2131,7 +2129,6 @@ class Pathogen(Product):
     infectivity: str = None
     genomeSequencing: str = None
     titer: str = None
-    unitCost: str = "on request"
     availability: str = "on request"
     cultivability: str = "Cultivable"
     letterOfAuthority: str = "Not applicable"
@@ -2247,7 +2244,6 @@ class Virus(Pathogen):
     genomeSequencing: str = None
     titer: str = None
     mycoplasmicContent: Union[bool, Bool] = None
-    unitCost: str = "on request"
     availability: str = "on request"
     cultivability: str = "Cultivable"
     letterOfAuthority: str = "Not applicable"
@@ -2301,7 +2297,6 @@ class Bacterium(Pathogen):
     infectivity: str = None
     genomeSequencing: str = None
     titer: str = None
-    unitCost: str = "on request"
     availability: str = "on request"
     cultivability: str = "Cultivable"
     letterOfAuthority: str = "Not applicable"
@@ -2337,7 +2332,6 @@ class Fungus(Pathogen):
     infectivity: str = None
     genomeSequencing: str = None
     titer: str = None
-    unitCost: str = "on request"
     availability: str = "on request"
     cultivability: str = "Cultivable"
     letterOfAuthority: str = "Not applicable"
@@ -2373,7 +2367,6 @@ class Protozoan(Pathogen):
     infectivity: str = None
     genomeSequencing: str = None
     titer: str = None
-    unitCost: str = "on request"
     availability: str = "on request"
     cultivability: str = "Cultivable"
     letterOfAuthority: str = "Not applicable"
@@ -2409,7 +2402,6 @@ class Viroid(Pathogen):
     infectivity: str = None
     genomeSequencing: str = None
     titer: str = None
-    unitCost: str = "on request"
     availability: str = "on request"
     cultivability: str = "Cultivable"
     letterOfAuthority: str = "Not applicable"
@@ -2445,7 +2437,6 @@ class Prion(Pathogen):
     infectivity: str = None
     genomeSequencing: str = None
     titer: str = None
-    unitCost: str = "on request"
     availability: str = "on request"
     cultivability: str = "Cultivable"
     letterOfAuthority: str = "Not applicable"
@@ -3065,7 +3056,13 @@ slots.additionalCategory = Slot(uri=EVORAO.additionalCategory, name="additionalC
                    model_uri=EVORAO.additionalCategory, domain=None, range=Optional[Union[Union[dict, ProductCategory], list[Union[dict, ProductCategory]]]])
 
 slots.unitCost = Slot(uri=EVORAO.unitCost, name="unitCost", curie=EVORAO.curie('unitCost'),
-                   model_uri=EVORAO.unitCost, domain=None, range=str)
+                   model_uri=EVORAO.unitCost, domain=None, range=Optional[Decimal])
+
+slots.unitCostCurrency = Slot(uri=EVORAO.unitCostCurrency, name="unitCostCurrency", curie=EVORAO.curie('unitCostCurrency'),
+                   model_uri=EVORAO.unitCostCurrency, domain=None, range=Optional[str])
+
+slots.unitCostNote = Slot(uri=EVORAO.unitCostNote, name="unitCostNote", curie=EVORAO.curie('unitCostNote'),
+                   model_uri=EVORAO.unitCostNote, domain=None, range=Optional[str])
 
 slots.qualityGrading = Slot(uri=EVORAO.qualityGrading, name="qualityGrading", curie=EVORAO.curie('qualityGrading'),
                    model_uri=EVORAO.qualityGrading, domain=None, range=Optional[str])
@@ -3674,7 +3671,13 @@ slots.ProductOrService_additionalCategory = Slot(uri=EVORAO.additionalCategory, 
                    model_uri=EVORAO.ProductOrService_additionalCategory, domain=ProductOrService, range=Optional[Union[Union[dict, ProductCategory], list[Union[dict, ProductCategory]]]])
 
 slots.ProductOrService_unitCost = Slot(uri=EVORAO.unitCost, name="ProductOrService_unitCost", curie=EVORAO.curie('unitCost'),
-                   model_uri=EVORAO.ProductOrService_unitCost, domain=ProductOrService, range=str)
+                   model_uri=EVORAO.ProductOrService_unitCost, domain=ProductOrService, range=Optional[Decimal])
+
+slots.ProductOrService_unitCostCurrency = Slot(uri=EVORAO.unitCostCurrency, name="ProductOrService_unitCostCurrency", curie=EVORAO.curie('unitCostCurrency'),
+                   model_uri=EVORAO.ProductOrService_unitCostCurrency, domain=ProductOrService, range=Optional[str])
+
+slots.ProductOrService_unitCostNote = Slot(uri=EVORAO.unitCostNote, name="ProductOrService_unitCostNote", curie=EVORAO.curie('unitCostNote'),
+                   model_uri=EVORAO.ProductOrService_unitCostNote, domain=ProductOrService, range=Optional[str])
 
 slots.ProductOrService_qualityGrading = Slot(uri=EVORAO.qualityGrading, name="ProductOrService_qualityGrading", curie=EVORAO.curie('qualityGrading'),
                    model_uri=EVORAO.ProductOrService_qualityGrading, domain=ProductOrService, range=Optional[str])

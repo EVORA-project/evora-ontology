@@ -1,16 +1,16 @@
 
 
-# Slot: access point URL (accessPointUrl) 
+# Slot: unit cost currency (unitCostCurrency) 
 
 
-_The URL that permits to access to the product/service detailed description page on the provider's website and/or allows to place an order about it or at least describe the process to place an order/enquiry_
+_The currency in which the unit cost is expressed, following ISO 4217 three-letter codes (e.g., EUR, USD)_
 
 
 
 
 
-URI: [EVORAO:accessPointUrl](https://w3id.org/evorao/accessPointUrl)
-Alias: accessPointUrl
+URI: [EVORAO:unitCostCurrency](https://w3id.org/evorao/unitCostCurrency)
+Alias: unitCostCurrency
 
 <!-- no inheritance hierarchy -->
 
@@ -47,9 +47,9 @@ Alias: accessPointUrl
 
 ## Properties
 
-* Range: [Uri](Uri.md)
+* Range: [String](String.md)
 
-* Required: True
+* Recommended: True
 
 
 
@@ -75,11 +75,8 @@ Alias: accessPointUrl
 
 | Mapping Type | Mapped Value |
 | ---  | ---  |
-| self | EVORAO:accessPointUrl |
-| native | EVORAO:accessPointUrl |
-| exact | schema:serviceURL |
-| broad | schema:url |
-| related | dcat:landingPage |
+| self | EVORAO:unitCostCurrency |
+| native | EVORAO:unitCostCurrency |
 
 
 
@@ -88,24 +85,19 @@ Alias: accessPointUrl
 
 <details>
 ```yaml
-name: accessPointUrl
-description: The URL that permits to access to the product/service detailed description
-  page on the provider's website and/or allows to place an order about it or at least
-  describe the process to place an order/enquiry
-title: access point URL
+name: unitCostCurrency
+description: The currency in which the unit cost is expressed, following ISO 4217
+  three-letter codes (e.g., EUR, USD)
+title: unit cost currency
 from_schema: https://w3id.org/evorao/
-exact_mappings:
-- schema:serviceURL
-related_mappings:
-- dcat:landingPage
-broad_mappings:
-- schema:url
 rank: 1000
-alias: accessPointUrl
+ifabsent: string(EUR)
+alias: unitCostCurrency
 domain_of:
 - ProductOrService
-range: uri
-required: true
+range: string
+required: false
+recommended: true
 multivalued: false
 
 ```

@@ -1,5 +1,5 @@
 # metamodel_version: 1.7.0
-# version: 1.0.9808
+# version: 1.0.9841
 BASE <https://w3id.org/evorao/>
 PREFIX dcat: <http://www.w3.org/ns/dcat#>
 PREFIX foaf: <http://xmlns.com/foaf/0.1/>
@@ -625,7 +625,9 @@ linkml:Sparqlpath xsd:string
           <unitDefinition> @linkml:String ? ;
           dcat:theme @<ProductCategory> ;
           <additionalCategory> @<ProductCategory> * ;
-          <unitCost> @linkml:String ;
+          <unitCost> @linkml:Decimal ? ;
+          <unitCostCurrency> @linkml:String ? ;
+          <unitCostNote> @linkml:String ? ;
           <qualityGrading> @linkml:String ? ;
           <pathogenIdentification> @<PathogenIdentification> + ;
           <doi> @<Doi> * ;

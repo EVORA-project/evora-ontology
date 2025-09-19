@@ -319,6 +319,8 @@
 --     * Slot: refSku Description: The reference or the stock keeping unit of the service or item provided in the provider's catalogue
 --     * Slot: unitDefinition Description: A short description of what will be delivered by ordering one unit of this item
 --     * Slot: unitCost Description: The cost per access for one unit as defined by the unit definition
+--     * Slot: unitCostCurrency Description: The currency in which the unit cost is expressed, following ISO 4217 three-letter codes (e.g., EUR, USD)
+--     * Slot: unitCostNote Description: A free-text note describing special conditions or cases where the cost cannot be represented by a numerical value (e.g., on request, free for academics, depends on volume)
 --     * Slot: qualityGrading Description: Information that permits to assess the quality level of what will be provided
 --     * Slot: biosafetyRestrictions Description: Information about guidelines and regulations designed to prevent the exposure to or release of potentially harmful biological agents. It thereby contributes to protecting people and the environment from biohazards while accessing this product or service
 --     * Slot: canBeUsedToProduceGmo Description: Indicates if the current service or product can be used to produce GMO
@@ -341,6 +343,8 @@
 --     * Slot: refSku Description: The reference or the stock keeping unit of the service or item provided in the provider's catalogue
 --     * Slot: unitDefinition Description: A short description of what will be delivered by ordering one unit of this item
 --     * Slot: unitCost Description: The cost per access for one unit as defined by the unit definition
+--     * Slot: unitCostCurrency Description: The currency in which the unit cost is expressed, following ISO 4217 three-letter codes (e.g., EUR, USD)
+--     * Slot: unitCostNote Description: A free-text note describing special conditions or cases where the cost cannot be represented by a numerical value (e.g., on request, free for academics, depends on volume)
 --     * Slot: qualityGrading Description: Information that permits to assess the quality level of what will be provided
 --     * Slot: biosafetyRestrictions Description: Information about guidelines and regulations designed to prevent the exposure to or release of potentially harmful biological agents. It thereby contributes to protecting people and the environment from biohazards while accessing this product or service
 --     * Slot: canBeUsedToProduceGmo Description: Indicates if the current service or product can be used to produce GMO
@@ -365,6 +369,8 @@
 --     * Slot: refSku Description: The reference or the stock keeping unit of the service or item provided in the provider's catalogue
 --     * Slot: unitDefinition Description: A short description of what will be delivered by ordering one unit of this item
 --     * Slot: unitCost Description: The cost per access for one unit as defined by the unit definition
+--     * Slot: unitCostCurrency Description: The currency in which the unit cost is expressed, following ISO 4217 three-letter codes (e.g., EUR, USD)
+--     * Slot: unitCostNote Description: A free-text note describing special conditions or cases where the cost cannot be represented by a numerical value (e.g., on request, free for academics, depends on volume)
 --     * Slot: qualityGrading Description: Information that permits to assess the quality level of what will be provided
 --     * Slot: biosafetyRestrictions Description: Information about guidelines and regulations designed to prevent the exposure to or release of potentially harmful biological agents. It thereby contributes to protecting people and the environment from biohazards while accessing this product or service
 --     * Slot: canBeUsedToProduceGmo Description: Indicates if the current service or product can be used to produce GMO
@@ -396,6 +402,8 @@
 --     * Slot: refSku Description: The reference or the stock keeping unit of the service or item provided in the provider's catalogue
 --     * Slot: unitDefinition Description: A short description of what will be delivered by ordering one unit of this item
 --     * Slot: unitCost Description: The cost per access for one unit as defined by the unit definition
+--     * Slot: unitCostCurrency Description: The currency in which the unit cost is expressed, following ISO 4217 three-letter codes (e.g., EUR, USD)
+--     * Slot: unitCostNote Description: A free-text note describing special conditions or cases where the cost cannot be represented by a numerical value (e.g., on request, free for academics, depends on volume)
 --     * Slot: qualityGrading Description: Information that permits to assess the quality level of what will be provided
 --     * Slot: biosafetyRestrictions Description: Information about guidelines and regulations designed to prevent the exposure to or release of potentially harmful biological agents. It thereby contributes to protecting people and the environment from biohazards while accessing this product or service
 --     * Slot: canBeUsedToProduceGmo Description: Indicates if the current service or product can be used to produce GMO
@@ -428,6 +436,8 @@
 --     * Slot: refSku Description: The reference or the stock keeping unit of the service or item provided in the provider's catalogue
 --     * Slot: unitDefinition Description: A short description of what will be delivered by ordering one unit of this item
 --     * Slot: unitCost Description: The cost per access for one unit as defined by the unit definition
+--     * Slot: unitCostCurrency Description: The currency in which the unit cost is expressed, following ISO 4217 three-letter codes (e.g., EUR, USD)
+--     * Slot: unitCostNote Description: A free-text note describing special conditions or cases where the cost cannot be represented by a numerical value (e.g., on request, free for academics, depends on volume)
 --     * Slot: qualityGrading Description: Information that permits to assess the quality level of what will be provided
 --     * Slot: biosafetyRestrictions Description: Information about guidelines and regulations designed to prevent the exposure to or release of potentially harmful biological agents. It thereby contributes to protecting people and the environment from biohazards while accessing this product or service
 --     * Slot: canBeUsedToProduceGmo Description: Indicates if the current service or product can be used to produce GMO
@@ -455,6 +465,8 @@
 --     * Slot: refSku Description: The reference or the stock keeping unit of the service or item provided in the provider's catalogue
 --     * Slot: unitDefinition Description: A short description of what will be delivered by ordering one unit of this item
 --     * Slot: unitCost Description: The cost per access for one unit as defined by the unit definition
+--     * Slot: unitCostCurrency Description: The currency in which the unit cost is expressed, following ISO 4217 three-letter codes (e.g., EUR, USD)
+--     * Slot: unitCostNote Description: A free-text note describing special conditions or cases where the cost cannot be represented by a numerical value (e.g., on request, free for academics, depends on volume)
 --     * Slot: qualityGrading Description: Information that permits to assess the quality level of what will be provided
 --     * Slot: biosafetyRestrictions Description: Information about guidelines and regulations designed to prevent the exposure to or release of potentially harmful biological agents. It thereby contributes to protecting people and the environment from biohazards while accessing this product or service
 --     * Slot: canBeUsedToProduceGmo Description: Indicates if the current service or product can be used to produce GMO
@@ -491,6 +503,8 @@
 --     * Slot: refSku Description: The reference or the stock keeping unit of the service or item provided in the provider's catalogue
 --     * Slot: unitDefinition Description: A short description of what will be delivered by ordering one unit of this item
 --     * Slot: unitCost Description: The cost per access for one unit as defined by the unit definition
+--     * Slot: unitCostCurrency Description: The currency in which the unit cost is expressed, following ISO 4217 three-letter codes (e.g., EUR, USD)
+--     * Slot: unitCostNote Description: A free-text note describing special conditions or cases where the cost cannot be represented by a numerical value (e.g., on request, free for academics, depends on volume)
 --     * Slot: qualityGrading Description: Information that permits to assess the quality level of what will be provided
 --     * Slot: biosafetyRestrictions Description: Information about guidelines and regulations designed to prevent the exposure to or release of potentially harmful biological agents. It thereby contributes to protecting people and the environment from biohazards while accessing this product or service
 --     * Slot: canBeUsedToProduceGmo Description: Indicates if the current service or product can be used to produce GMO
@@ -524,6 +538,8 @@
 --     * Slot: refSku Description: The reference or the stock keeping unit of the service or item provided in the provider's catalogue
 --     * Slot: unitDefinition Description: A short description of what will be delivered by ordering one unit of this item
 --     * Slot: unitCost Description: The cost per access for one unit as defined by the unit definition
+--     * Slot: unitCostCurrency Description: The currency in which the unit cost is expressed, following ISO 4217 three-letter codes (e.g., EUR, USD)
+--     * Slot: unitCostNote Description: A free-text note describing special conditions or cases where the cost cannot be represented by a numerical value (e.g., on request, free for academics, depends on volume)
 --     * Slot: qualityGrading Description: Information that permits to assess the quality level of what will be provided
 --     * Slot: biosafetyRestrictions Description: Information about guidelines and regulations designed to prevent the exposure to or release of potentially harmful biological agents. It thereby contributes to protecting people and the environment from biohazards while accessing this product or service
 --     * Slot: canBeUsedToProduceGmo Description: Indicates if the current service or product can be used to produce GMO
@@ -551,6 +567,8 @@
 --     * Slot: refSku Description: The reference or the stock keeping unit of the service or item provided in the provider's catalogue
 --     * Slot: unitDefinition Description: A short description of what will be delivered by ordering one unit of this item
 --     * Slot: unitCost Description: The cost per access for one unit as defined by the unit definition
+--     * Slot: unitCostCurrency Description: The currency in which the unit cost is expressed, following ISO 4217 three-letter codes (e.g., EUR, USD)
+--     * Slot: unitCostNote Description: A free-text note describing special conditions or cases where the cost cannot be represented by a numerical value (e.g., on request, free for academics, depends on volume)
 --     * Slot: qualityGrading Description: Information that permits to assess the quality level of what will be provided
 --     * Slot: biosafetyRestrictions Description: Information about guidelines and regulations designed to prevent the exposure to or release of potentially harmful biological agents. It thereby contributes to protecting people and the environment from biohazards while accessing this product or service
 --     * Slot: canBeUsedToProduceGmo Description: Indicates if the current service or product can be used to produce GMO
@@ -589,6 +607,8 @@
 --     * Slot: refSku Description: The reference or the stock keeping unit of the service or item provided in the provider's catalogue
 --     * Slot: unitDefinition Description: A short description of what will be delivered by ordering one unit of this item
 --     * Slot: unitCost Description: The cost per access for one unit as defined by the unit definition
+--     * Slot: unitCostCurrency Description: The currency in which the unit cost is expressed, following ISO 4217 three-letter codes (e.g., EUR, USD)
+--     * Slot: unitCostNote Description: A free-text note describing special conditions or cases where the cost cannot be represented by a numerical value (e.g., on request, free for academics, depends on volume)
 --     * Slot: qualityGrading Description: Information that permits to assess the quality level of what will be provided
 --     * Slot: biosafetyRestrictions Description: Information about guidelines and regulations designed to prevent the exposure to or release of potentially harmful biological agents. It thereby contributes to protecting people and the environment from biohazards while accessing this product or service
 --     * Slot: canBeUsedToProduceGmo Description: Indicates if the current service or product can be used to produce GMO
@@ -630,6 +650,8 @@
 --     * Slot: refSku Description: The reference or the stock keeping unit of the service or item provided in the provider's catalogue
 --     * Slot: unitDefinition Description: A short description of what will be delivered by ordering one unit of this item
 --     * Slot: unitCost Description: The cost per access for one unit as defined by the unit definition
+--     * Slot: unitCostCurrency Description: The currency in which the unit cost is expressed, following ISO 4217 three-letter codes (e.g., EUR, USD)
+--     * Slot: unitCostNote Description: A free-text note describing special conditions or cases where the cost cannot be represented by a numerical value (e.g., on request, free for academics, depends on volume)
 --     * Slot: qualityGrading Description: Information that permits to assess the quality level of what will be provided
 --     * Slot: biosafetyRestrictions Description: Information about guidelines and regulations designed to prevent the exposure to or release of potentially harmful biological agents. It thereby contributes to protecting people and the environment from biohazards while accessing this product or service
 --     * Slot: canBeUsedToProduceGmo Description: Indicates if the current service or product can be used to produce GMO
@@ -669,6 +691,8 @@
 --     * Slot: refSku Description: The reference or the stock keeping unit of the service or item provided in the provider's catalogue
 --     * Slot: unitDefinition Description: A short description of what will be delivered by ordering one unit of this item
 --     * Slot: unitCost Description: The cost per access for one unit as defined by the unit definition
+--     * Slot: unitCostCurrency Description: The currency in which the unit cost is expressed, following ISO 4217 three-letter codes (e.g., EUR, USD)
+--     * Slot: unitCostNote Description: A free-text note describing special conditions or cases where the cost cannot be represented by a numerical value (e.g., on request, free for academics, depends on volume)
 --     * Slot: qualityGrading Description: Information that permits to assess the quality level of what will be provided
 --     * Slot: biosafetyRestrictions Description: Information about guidelines and regulations designed to prevent the exposure to or release of potentially harmful biological agents. It thereby contributes to protecting people and the environment from biohazards while accessing this product or service
 --     * Slot: canBeUsedToProduceGmo Description: Indicates if the current service or product can be used to produce GMO
@@ -708,6 +732,8 @@
 --     * Slot: refSku Description: The reference or the stock keeping unit of the service or item provided in the provider's catalogue
 --     * Slot: unitDefinition Description: A short description of what will be delivered by ordering one unit of this item
 --     * Slot: unitCost Description: The cost per access for one unit as defined by the unit definition
+--     * Slot: unitCostCurrency Description: The currency in which the unit cost is expressed, following ISO 4217 three-letter codes (e.g., EUR, USD)
+--     * Slot: unitCostNote Description: A free-text note describing special conditions or cases where the cost cannot be represented by a numerical value (e.g., on request, free for academics, depends on volume)
 --     * Slot: qualityGrading Description: Information that permits to assess the quality level of what will be provided
 --     * Slot: biosafetyRestrictions Description: Information about guidelines and regulations designed to prevent the exposure to or release of potentially harmful biological agents. It thereby contributes to protecting people and the environment from biohazards while accessing this product or service
 --     * Slot: canBeUsedToProduceGmo Description: Indicates if the current service or product can be used to produce GMO
@@ -747,6 +773,8 @@
 --     * Slot: refSku Description: The reference or the stock keeping unit of the service or item provided in the provider's catalogue
 --     * Slot: unitDefinition Description: A short description of what will be delivered by ordering one unit of this item
 --     * Slot: unitCost Description: The cost per access for one unit as defined by the unit definition
+--     * Slot: unitCostCurrency Description: The currency in which the unit cost is expressed, following ISO 4217 three-letter codes (e.g., EUR, USD)
+--     * Slot: unitCostNote Description: A free-text note describing special conditions or cases where the cost cannot be represented by a numerical value (e.g., on request, free for academics, depends on volume)
 --     * Slot: qualityGrading Description: Information that permits to assess the quality level of what will be provided
 --     * Slot: biosafetyRestrictions Description: Information about guidelines and regulations designed to prevent the exposure to or release of potentially harmful biological agents. It thereby contributes to protecting people and the environment from biohazards while accessing this product or service
 --     * Slot: canBeUsedToProduceGmo Description: Indicates if the current service or product can be used to produce GMO
@@ -786,6 +814,8 @@
 --     * Slot: refSku Description: The reference or the stock keeping unit of the service or item provided in the provider's catalogue
 --     * Slot: unitDefinition Description: A short description of what will be delivered by ordering one unit of this item
 --     * Slot: unitCost Description: The cost per access for one unit as defined by the unit definition
+--     * Slot: unitCostCurrency Description: The currency in which the unit cost is expressed, following ISO 4217 three-letter codes (e.g., EUR, USD)
+--     * Slot: unitCostNote Description: A free-text note describing special conditions or cases where the cost cannot be represented by a numerical value (e.g., on request, free for academics, depends on volume)
 --     * Slot: qualityGrading Description: Information that permits to assess the quality level of what will be provided
 --     * Slot: biosafetyRestrictions Description: Information about guidelines and regulations designed to prevent the exposure to or release of potentially harmful biological agents. It thereby contributes to protecting people and the environment from biohazards while accessing this product or service
 --     * Slot: canBeUsedToProduceGmo Description: Indicates if the current service or product can be used to produce GMO
@@ -825,6 +855,8 @@
 --     * Slot: refSku Description: The reference or the stock keeping unit of the service or item provided in the provider's catalogue
 --     * Slot: unitDefinition Description: A short description of what will be delivered by ordering one unit of this item
 --     * Slot: unitCost Description: The cost per access for one unit as defined by the unit definition
+--     * Slot: unitCostCurrency Description: The currency in which the unit cost is expressed, following ISO 4217 three-letter codes (e.g., EUR, USD)
+--     * Slot: unitCostNote Description: A free-text note describing special conditions or cases where the cost cannot be represented by a numerical value (e.g., on request, free for academics, depends on volume)
 --     * Slot: qualityGrading Description: Information that permits to assess the quality level of what will be provided
 --     * Slot: biosafetyRestrictions Description: Information about guidelines and regulations designed to prevent the exposure to or release of potentially harmful biological agents. It thereby contributes to protecting people and the environment from biohazards while accessing this product or service
 --     * Slot: canBeUsedToProduceGmo Description: Indicates if the current service or product can be used to produce GMO
@@ -2927,7 +2959,9 @@ CREATE TABLE "ProductOrService" (
 	"accessPointUrl" TEXT NOT NULL, 
 	"refSku" TEXT NOT NULL, 
 	"unitDefinition" TEXT, 
-	"unitCost" TEXT NOT NULL, 
+	"unitCost" INTEGER, 
+	"unitCostCurrency" TEXT, 
+	"unitCostNote" TEXT, 
 	"qualityGrading" TEXT, 
 	"biosafetyRestrictions" TEXT, 
 	"canBeUsedToProduceGmo" BOOLEAN NOT NULL, 
@@ -2955,7 +2989,9 @@ CREATE TABLE "Service" (
 	"accessPointUrl" TEXT NOT NULL, 
 	"refSku" TEXT NOT NULL, 
 	"unitDefinition" TEXT, 
-	"unitCost" TEXT NOT NULL, 
+	"unitCost" INTEGER, 
+	"unitCostCurrency" TEXT, 
+	"unitCostNote" TEXT, 
 	"qualityGrading" TEXT, 
 	"biosafetyRestrictions" TEXT, 
 	"canBeUsedToProduceGmo" BOOLEAN NOT NULL, 
@@ -2985,7 +3021,9 @@ CREATE TABLE "Product" (
 	"accessPointUrl" TEXT NOT NULL, 
 	"refSku" TEXT NOT NULL, 
 	"unitDefinition" TEXT, 
-	"unitCost" TEXT NOT NULL, 
+	"unitCost" INTEGER, 
+	"unitCostCurrency" TEXT, 
+	"unitCostNote" TEXT, 
 	"qualityGrading" TEXT, 
 	"biosafetyRestrictions" TEXT, 
 	"canBeUsedToProduceGmo" BOOLEAN NOT NULL, 
@@ -3025,7 +3063,9 @@ CREATE TABLE "Antibody" (
 	"accessPointUrl" TEXT NOT NULL, 
 	"refSku" TEXT NOT NULL, 
 	"unitDefinition" TEXT, 
-	"unitCost" TEXT NOT NULL, 
+	"unitCost" INTEGER, 
+	"unitCostCurrency" TEXT, 
+	"unitCostNote" TEXT, 
 	"qualityGrading" TEXT, 
 	"biosafetyRestrictions" TEXT, 
 	"canBeUsedToProduceGmo" BOOLEAN NOT NULL, 
@@ -3066,7 +3106,9 @@ CREATE TABLE "Hybridoma" (
 	"accessPointUrl" TEXT NOT NULL, 
 	"refSku" TEXT NOT NULL, 
 	"unitDefinition" TEXT, 
-	"unitCost" TEXT NOT NULL, 
+	"unitCost" INTEGER, 
+	"unitCostCurrency" TEXT, 
+	"unitCostNote" TEXT, 
 	"qualityGrading" TEXT, 
 	"biosafetyRestrictions" TEXT, 
 	"canBeUsedToProduceGmo" BOOLEAN NOT NULL, 
@@ -3102,7 +3144,9 @@ CREATE TABLE "Protein" (
 	"accessPointUrl" TEXT NOT NULL, 
 	"refSku" TEXT NOT NULL, 
 	"unitDefinition" TEXT, 
-	"unitCost" TEXT NOT NULL, 
+	"unitCost" INTEGER, 
+	"unitCostCurrency" TEXT, 
+	"unitCostNote" TEXT, 
 	"qualityGrading" TEXT, 
 	"biosafetyRestrictions" TEXT, 
 	"canBeUsedToProduceGmo" BOOLEAN NOT NULL, 
@@ -3148,7 +3192,9 @@ CREATE TABLE "NucleicAcid" (
 	"accessPointUrl" TEXT NOT NULL, 
 	"refSku" TEXT NOT NULL, 
 	"unitDefinition" TEXT, 
-	"unitCost" TEXT NOT NULL, 
+	"unitCost" INTEGER, 
+	"unitCostCurrency" TEXT, 
+	"unitCostNote" TEXT, 
 	"qualityGrading" TEXT, 
 	"biosafetyRestrictions" TEXT, 
 	"canBeUsedToProduceGmo" BOOLEAN NOT NULL, 
@@ -3193,7 +3239,9 @@ CREATE TABLE "DetectionKit" (
 	"accessPointUrl" TEXT NOT NULL, 
 	"refSku" TEXT NOT NULL, 
 	"unitDefinition" TEXT, 
-	"unitCost" TEXT NOT NULL, 
+	"unitCost" INTEGER, 
+	"unitCostCurrency" TEXT, 
+	"unitCostNote" TEXT, 
 	"qualityGrading" TEXT, 
 	"biosafetyRestrictions" TEXT, 
 	"canBeUsedToProduceGmo" BOOLEAN NOT NULL, 
@@ -3229,7 +3277,9 @@ CREATE TABLE "Bundle" (
 	"accessPointUrl" TEXT NOT NULL, 
 	"refSku" TEXT NOT NULL, 
 	"unitDefinition" TEXT, 
-	"unitCost" TEXT NOT NULL, 
+	"unitCost" INTEGER, 
+	"unitCostCurrency" TEXT, 
+	"unitCostNote" TEXT, 
 	"qualityGrading" TEXT, 
 	"biosafetyRestrictions" TEXT, 
 	"canBeUsedToProduceGmo" BOOLEAN NOT NULL, 
@@ -3276,7 +3326,9 @@ CREATE TABLE "Pathogen" (
 	"accessPointUrl" TEXT NOT NULL, 
 	"refSku" TEXT NOT NULL, 
 	"unitDefinition" TEXT, 
-	"unitCost" TEXT NOT NULL, 
+	"unitCost" INTEGER, 
+	"unitCostCurrency" TEXT, 
+	"unitCostNote" TEXT, 
 	"qualityGrading" TEXT, 
 	"biosafetyRestrictions" TEXT, 
 	"canBeUsedToProduceGmo" BOOLEAN NOT NULL, 
@@ -3327,7 +3379,9 @@ CREATE TABLE "Virus" (
 	"accessPointUrl" TEXT NOT NULL, 
 	"refSku" TEXT NOT NULL, 
 	"unitDefinition" TEXT, 
-	"unitCost" TEXT NOT NULL, 
+	"unitCost" INTEGER, 
+	"unitCostCurrency" TEXT, 
+	"unitCostNote" TEXT, 
 	"qualityGrading" TEXT, 
 	"biosafetyRestrictions" TEXT, 
 	"canBeUsedToProduceGmo" BOOLEAN NOT NULL, 
@@ -3376,7 +3430,9 @@ CREATE TABLE "Bacterium" (
 	"accessPointUrl" TEXT NOT NULL, 
 	"refSku" TEXT NOT NULL, 
 	"unitDefinition" TEXT, 
-	"unitCost" TEXT NOT NULL, 
+	"unitCost" INTEGER, 
+	"unitCostCurrency" TEXT, 
+	"unitCostNote" TEXT, 
 	"qualityGrading" TEXT, 
 	"biosafetyRestrictions" TEXT, 
 	"canBeUsedToProduceGmo" BOOLEAN NOT NULL, 
@@ -3425,7 +3481,9 @@ CREATE TABLE "Fungus" (
 	"accessPointUrl" TEXT NOT NULL, 
 	"refSku" TEXT NOT NULL, 
 	"unitDefinition" TEXT, 
-	"unitCost" TEXT NOT NULL, 
+	"unitCost" INTEGER, 
+	"unitCostCurrency" TEXT, 
+	"unitCostNote" TEXT, 
 	"qualityGrading" TEXT, 
 	"biosafetyRestrictions" TEXT, 
 	"canBeUsedToProduceGmo" BOOLEAN NOT NULL, 
@@ -3474,7 +3532,9 @@ CREATE TABLE "Protozoan" (
 	"accessPointUrl" TEXT NOT NULL, 
 	"refSku" TEXT NOT NULL, 
 	"unitDefinition" TEXT, 
-	"unitCost" TEXT NOT NULL, 
+	"unitCost" INTEGER, 
+	"unitCostCurrency" TEXT, 
+	"unitCostNote" TEXT, 
 	"qualityGrading" TEXT, 
 	"biosafetyRestrictions" TEXT, 
 	"canBeUsedToProduceGmo" BOOLEAN NOT NULL, 
@@ -3523,7 +3583,9 @@ CREATE TABLE "Viroid" (
 	"accessPointUrl" TEXT NOT NULL, 
 	"refSku" TEXT NOT NULL, 
 	"unitDefinition" TEXT, 
-	"unitCost" TEXT NOT NULL, 
+	"unitCost" INTEGER, 
+	"unitCostCurrency" TEXT, 
+	"unitCostNote" TEXT, 
 	"qualityGrading" TEXT, 
 	"biosafetyRestrictions" TEXT, 
 	"canBeUsedToProduceGmo" BOOLEAN NOT NULL, 
@@ -3572,7 +3634,9 @@ CREATE TABLE "Prion" (
 	"accessPointUrl" TEXT NOT NULL, 
 	"refSku" TEXT NOT NULL, 
 	"unitDefinition" TEXT, 
-	"unitCost" TEXT NOT NULL, 
+	"unitCost" INTEGER, 
+	"unitCostCurrency" TEXT, 
+	"unitCostNote" TEXT, 
 	"qualityGrading" TEXT, 
 	"biosafetyRestrictions" TEXT, 
 	"canBeUsedToProduceGmo" BOOLEAN NOT NULL, 
