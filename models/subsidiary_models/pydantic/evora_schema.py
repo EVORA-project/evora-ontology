@@ -27,7 +27,7 @@ from pydantic import (
 
 
 metamodel_version = "None"
-version = "1.0.9877"
+version = "1.0.9888"
 
 
 class ConfiguredBaseModel(BaseModel):
@@ -99,7 +99,7 @@ linkml_meta = LinkMLMeta({'comments': ['EVORAO is an ontology for standardized m
                     'pathogens. EVORAO is compatible with DCAT, making it '
                     'well-suited for efficiently cataloguing pathogen collections '
                     'and related resources.',
-     'generation_date': '2025-09-22T14:42:28',
+     'generation_date': '2025-09-22T15:39:20',
      'id': 'https://w3id.org/evorao/',
      'imports': ['linkml:types'],
      'in_language': 'en',
@@ -5358,11 +5358,13 @@ class ProductOrService(Dataset):
                                      'recommended': True,
                                      'required': False,
                                      'title': 'unit cost'},
-                        'unitCostCurrency': {'description': 'The currency in which the '
+                        'unitCostCurrency': {'close_mappings': ['schema:priceCurrency'],
+                                             'description': 'The currency in which the '
                                                             'unit cost is expressed, '
                                                             'following ISO 4217 '
                                                             'three-letter codes (e.g., '
                                                             'EUR, USD)',
+                                             'domain_of': ['ProductOrService'],
                                              'ifabsent': 'string(EUR)',
                                              'multivalued': False,
                                              'name': 'unitCostCurrency',
@@ -5377,6 +5379,7 @@ class ProductOrService(Dataset):
                                                         'value (e.g., on request, free '
                                                         'for academics, depends on '
                                                         'volume)',
+                                         'domain_of': ['ProductOrService'],
                                          'multivalued': False,
                                          'name': 'unitCostNote',
                                          'range': 'string',
@@ -5438,6 +5441,7 @@ class ProductOrService(Dataset):
          'domain_of': ['ProductOrService'],
          'recommended': True} })
     unitCostCurrency: Optional[str] = Field(default="EUR", title="unit cost currency", description="""The currency in which the unit cost is expressed, following ISO 4217 three-letter codes (e.g., EUR, USD)""", json_schema_extra = { "linkml_meta": {'alias': 'unitCostCurrency',
+         'close_mappings': ['schema:priceCurrency'],
          'domain_of': ['ProductOrService'],
          'ifabsent': 'string(EUR)',
          'recommended': True} })
@@ -5641,6 +5645,7 @@ class Service(ProductOrService):
          'domain_of': ['ProductOrService'],
          'recommended': True} })
     unitCostCurrency: Optional[str] = Field(default="EUR", title="unit cost currency", description="""The currency in which the unit cost is expressed, following ISO 4217 three-letter codes (e.g., EUR, USD)""", json_schema_extra = { "linkml_meta": {'alias': 'unitCostCurrency',
+         'close_mappings': ['schema:priceCurrency'],
          'domain_of': ['ProductOrService'],
          'ifabsent': 'string(EUR)',
          'recommended': True} })
@@ -5967,6 +5972,7 @@ class Product(ProductOrService):
          'domain_of': ['ProductOrService'],
          'recommended': True} })
     unitCostCurrency: Optional[str] = Field(default="EUR", title="unit cost currency", description="""The currency in which the unit cost is expressed, following ISO 4217 three-letter codes (e.g., EUR, USD)""", json_schema_extra = { "linkml_meta": {'alias': 'unitCostCurrency',
+         'close_mappings': ['schema:priceCurrency'],
          'domain_of': ['ProductOrService'],
          'ifabsent': 'string(EUR)',
          'recommended': True} })
@@ -6226,6 +6232,7 @@ class Antibody(Product):
          'domain_of': ['ProductOrService'],
          'recommended': True} })
     unitCostCurrency: Optional[str] = Field(default="EUR", title="unit cost currency", description="""The currency in which the unit cost is expressed, following ISO 4217 three-letter codes (e.g., EUR, USD)""", json_schema_extra = { "linkml_meta": {'alias': 'unitCostCurrency',
+         'close_mappings': ['schema:priceCurrency'],
          'domain_of': ['ProductOrService'],
          'ifabsent': 'string(EUR)',
          'recommended': True} })
@@ -6444,6 +6451,7 @@ class Hybridoma(Antibody):
          'domain_of': ['ProductOrService'],
          'recommended': True} })
     unitCostCurrency: Optional[str] = Field(default="EUR", title="unit cost currency", description="""The currency in which the unit cost is expressed, following ISO 4217 three-letter codes (e.g., EUR, USD)""", json_schema_extra = { "linkml_meta": {'alias': 'unitCostCurrency',
+         'close_mappings': ['schema:priceCurrency'],
          'domain_of': ['ProductOrService'],
          'ifabsent': 'string(EUR)',
          'recommended': True} })
@@ -7023,6 +7031,7 @@ class Protein(Product):
          'domain_of': ['ProductOrService'],
          'recommended': True} })
     unitCostCurrency: Optional[str] = Field(default="EUR", title="unit cost currency", description="""The currency in which the unit cost is expressed, following ISO 4217 three-letter codes (e.g., EUR, USD)""", json_schema_extra = { "linkml_meta": {'alias': 'unitCostCurrency',
+         'close_mappings': ['schema:priceCurrency'],
          'domain_of': ['ProductOrService'],
          'ifabsent': 'string(EUR)',
          'recommended': True} })
@@ -7481,6 +7490,7 @@ class NucleicAcid(Product):
          'domain_of': ['ProductOrService'],
          'recommended': True} })
     unitCostCurrency: Optional[str] = Field(default="EUR", title="unit cost currency", description="""The currency in which the unit cost is expressed, following ISO 4217 three-letter codes (e.g., EUR, USD)""", json_schema_extra = { "linkml_meta": {'alias': 'unitCostCurrency',
+         'close_mappings': ['schema:priceCurrency'],
          'domain_of': ['ProductOrService'],
          'ifabsent': 'string(EUR)',
          'recommended': True} })
@@ -7729,6 +7739,7 @@ class DetectionKit(Product):
          'domain_of': ['ProductOrService'],
          'recommended': True} })
     unitCostCurrency: Optional[str] = Field(default="EUR", title="unit cost currency", description="""The currency in which the unit cost is expressed, following ISO 4217 three-letter codes (e.g., EUR, USD)""", json_schema_extra = { "linkml_meta": {'alias': 'unitCostCurrency',
+         'close_mappings': ['schema:priceCurrency'],
          'domain_of': ['ProductOrService'],
          'ifabsent': 'string(EUR)',
          'recommended': True} })
@@ -7938,6 +7949,7 @@ class Bundle(Product):
          'domain_of': ['ProductOrService'],
          'recommended': True} })
     unitCostCurrency: Optional[str] = Field(default="EUR", title="unit cost currency", description="""The currency in which the unit cost is expressed, following ISO 4217 three-letter codes (e.g., EUR, USD)""", json_schema_extra = { "linkml_meta": {'alias': 'unitCostCurrency',
+         'close_mappings': ['schema:priceCurrency'],
          'domain_of': ['ProductOrService'],
          'ifabsent': 'string(EUR)',
          'recommended': True} })
@@ -8488,6 +8500,7 @@ class Pathogen(Product):
          'domain_of': ['ProductOrService'],
          'recommended': True} })
     unitCostCurrency: Optional[str] = Field(default="EUR", title="unit cost currency", description="""The currency in which the unit cost is expressed, following ISO 4217 three-letter codes (e.g., EUR, USD)""", json_schema_extra = { "linkml_meta": {'alias': 'unitCostCurrency',
+         'close_mappings': ['schema:priceCurrency'],
          'domain_of': ['ProductOrService'],
          'ifabsent': 'string(EUR)',
          'recommended': True} })
@@ -8814,6 +8827,7 @@ class Virus(Pathogen):
          'domain_of': ['ProductOrService'],
          'recommended': True} })
     unitCostCurrency: Optional[str] = Field(default="EUR", title="unit cost currency", description="""The currency in which the unit cost is expressed, following ISO 4217 three-letter codes (e.g., EUR, USD)""", json_schema_extra = { "linkml_meta": {'alias': 'unitCostCurrency',
+         'close_mappings': ['schema:priceCurrency'],
          'domain_of': ['ProductOrService'],
          'ifabsent': 'string(EUR)',
          'recommended': True} })
@@ -9081,6 +9095,7 @@ class Bacterium(Pathogen):
          'domain_of': ['ProductOrService'],
          'recommended': True} })
     unitCostCurrency: Optional[str] = Field(default="EUR", title="unit cost currency", description="""The currency in which the unit cost is expressed, following ISO 4217 three-letter codes (e.g., EUR, USD)""", json_schema_extra = { "linkml_meta": {'alias': 'unitCostCurrency',
+         'close_mappings': ['schema:priceCurrency'],
          'domain_of': ['ProductOrService'],
          'ifabsent': 'string(EUR)',
          'recommended': True} })
@@ -9346,6 +9361,7 @@ class Fungus(Pathogen):
          'domain_of': ['ProductOrService'],
          'recommended': True} })
     unitCostCurrency: Optional[str] = Field(default="EUR", title="unit cost currency", description="""The currency in which the unit cost is expressed, following ISO 4217 three-letter codes (e.g., EUR, USD)""", json_schema_extra = { "linkml_meta": {'alias': 'unitCostCurrency',
+         'close_mappings': ['schema:priceCurrency'],
          'domain_of': ['ProductOrService'],
          'ifabsent': 'string(EUR)',
          'recommended': True} })
@@ -9607,6 +9623,7 @@ class Protozoan(Pathogen):
          'domain_of': ['ProductOrService'],
          'recommended': True} })
     unitCostCurrency: Optional[str] = Field(default="EUR", title="unit cost currency", description="""The currency in which the unit cost is expressed, following ISO 4217 three-letter codes (e.g., EUR, USD)""", json_schema_extra = { "linkml_meta": {'alias': 'unitCostCurrency',
+         'close_mappings': ['schema:priceCurrency'],
          'domain_of': ['ProductOrService'],
          'ifabsent': 'string(EUR)',
          'recommended': True} })
@@ -9860,6 +9877,7 @@ class Viroid(Pathogen):
          'domain_of': ['ProductOrService'],
          'recommended': True} })
     unitCostCurrency: Optional[str] = Field(default="EUR", title="unit cost currency", description="""The currency in which the unit cost is expressed, following ISO 4217 three-letter codes (e.g., EUR, USD)""", json_schema_extra = { "linkml_meta": {'alias': 'unitCostCurrency',
+         'close_mappings': ['schema:priceCurrency'],
          'domain_of': ['ProductOrService'],
          'ifabsent': 'string(EUR)',
          'recommended': True} })
@@ -10121,6 +10139,7 @@ class Prion(Pathogen):
          'domain_of': ['ProductOrService'],
          'recommended': True} })
     unitCostCurrency: Optional[str] = Field(default="EUR", title="unit cost currency", description="""The currency in which the unit cost is expressed, following ISO 4217 three-letter codes (e.g., EUR, USD)""", json_schema_extra = { "linkml_meta": {'alias': 'unitCostCurrency',
+         'close_mappings': ['schema:priceCurrency'],
          'domain_of': ['ProductOrService'],
          'ifabsent': 'string(EUR)',
          'recommended': True} })

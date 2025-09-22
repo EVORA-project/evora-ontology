@@ -48,7 +48,7 @@ keywords:
 - pathogen collections
 - interoperability
 id: https://w3id.org/evorao/
-version: 1.0.9877
+version: 1.0.9888
 imports:
 - linkml:types
 license: https://creativecommons.org/publicdomain/zero/1.0/
@@ -1409,7 +1409,11 @@ slots:
       three-letter codes (e.g., EUR, USD)
     title: unit cost currency
     from_schema: https://w3id.org/evorao/
+    close_mappings:
+    - schema:priceCurrency
     ifabsent: string(EUR)
+    domain_of:
+    - ProductOrService
     range: string
     required: false
     recommended: true
@@ -1420,6 +1424,8 @@ slots:
       academics, depends on volume)
     title: unit cost note
     from_schema: https://w3id.org/evorao/
+    domain_of:
+    - ProductOrService
     range: string
     required: false
     multivalued: false
@@ -4970,7 +4976,11 @@ classes:
         description: The currency in which the unit cost is expressed, following ISO
           4217 three-letter codes (e.g., EUR, USD)
         title: unit cost currency
+        close_mappings:
+        - schema:priceCurrency
         ifabsent: string(EUR)
+        domain_of:
+        - ProductOrService
         range: string
         required: false
         recommended: true
@@ -4980,6 +4990,8 @@ classes:
           the cost cannot be represented by a numerical value (e.g., on request, free
           for academics, depends on volume)
         title: unit cost note
+        domain_of:
+        - ProductOrService
         range: string
         required: false
         multivalued: false
@@ -7083,4 +7095,4 @@ classes:
         required: false
         multivalued: false
 source_file: https://w3id.org/evorao/evorao.owl.ttl
-generation_date: '2025-09-22T14:42:28'
+generation_date: '2025-09-22T15:39:20'

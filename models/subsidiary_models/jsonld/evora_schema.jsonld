@@ -38,7 +38,7 @@
     "interoperability"
   ],
   "id": "https://w3id.org/evorao/",
-  "version": "1.0.9877",
+  "version": "1.0.9888",
   "imports": [
     "linkml:types"
   ],
@@ -2489,6 +2489,9 @@
       "description": "The currency in which the unit cost is expressed, following ISO 4217 three-letter codes (e.g., EUR, USD)",
       "title": "unit cost currency",
       "from_schema": "https://w3id.org/evorao/",
+      "close_mappings": [
+        "http://schema.org/priceCurrency"
+      ],
       "slot_uri": "https://w3id.org/evorao/unitCostCurrency",
       "ifabsent": "string(EUR)",
       "owner": "ProductOrService",
@@ -7095,6 +7098,9 @@
       "description": "The currency in which the unit cost is expressed, following ISO 4217 three-letter codes (e.g., EUR, USD)",
       "title": "unit cost currency",
       "from_schema": "https://w3id.org/evorao/",
+      "close_mappings": [
+        "http://schema.org/priceCurrency"
+      ],
       "is_a": "unitCostCurrency",
       "domain": "ProductOrService",
       "slot_uri": "https://w3id.org/evorao/unitCostCurrency",
@@ -13295,9 +13301,9 @@
   ],
   "metamodel_version": "1.7.0",
   "source_file": "evora_schema.yaml",
-  "source_file_date": "2025-09-22T12:42:59",
-  "source_file_size": 222689,
-  "generation_date": "2025-09-22T12:43:16",
+  "source_file_date": "2025-09-22T13:40:01",
+  "source_file_size": 222959,
+  "generation_date": "2025-09-22T13:40:18",
   "@type": "SchemaDefinition",
   "@context": [
     "https://w3id.org/linkml/types.context.jsonld",

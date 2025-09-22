@@ -440,7 +440,11 @@ slot_usage:
     description: The currency in which the unit cost is expressed, following ISO 4217
       three-letter codes (e.g., EUR, USD)
     title: unit cost currency
+    close_mappings:
+    - schema:priceCurrency
     ifabsent: string(EUR)
+    domain_of:
+    - ProductOrService
     range: string
     required: false
     recommended: true
@@ -451,6 +455,8 @@ slot_usage:
       cost cannot be represented by a numerical value (e.g., on request, free for
       academics, depends on volume)
     title: unit cost note
+    domain_of:
+    - ProductOrService
     range: string
     required: false
     multivalued: false
@@ -817,7 +823,11 @@ slot_usage:
     description: The currency in which the unit cost is expressed, following ISO 4217
       three-letter codes (e.g., EUR, USD)
     title: unit cost currency
+    close_mappings:
+    - schema:priceCurrency
     ifabsent: string(EUR)
+    domain_of:
+    - ProductOrService
     range: string
     required: false
     recommended: true
@@ -828,6 +838,8 @@ slot_usage:
       cost cannot be represented by a numerical value (e.g., on request, free for
       academics, depends on volume)
     title: unit cost note
+    domain_of:
+    - ProductOrService
     range: string
     required: false
     multivalued: false
@@ -1197,6 +1209,8 @@ attributes:
       three-letter codes (e.g., EUR, USD)
     title: unit cost currency
     from_schema: https://w3id.org/evorao/
+    close_mappings:
+    - schema:priceCurrency
     rank: 1000
     ifabsent: string(EUR)
     alias: unitCostCurrency

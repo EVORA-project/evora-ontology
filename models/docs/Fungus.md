@@ -1034,6 +1034,8 @@ attributes:
       three-letter codes (e.g., EUR, USD)
     title: unit cost currency
     from_schema: https://w3id.org/evorao/
+    close_mappings:
+    - schema:priceCurrency
     rank: 1000
     ifabsent: string(EUR)
     alias: unitCostCurrency
