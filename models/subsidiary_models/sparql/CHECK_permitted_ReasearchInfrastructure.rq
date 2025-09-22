@@ -72,6 +72,8 @@ SELECT ?g ?s ?p WHERE {
    dcat:contactPoint,
    EVORAO:logo,
    dcat:keyword,
+   dct:issued,
+   dct:modified,
    rdf:type ))
  }
  

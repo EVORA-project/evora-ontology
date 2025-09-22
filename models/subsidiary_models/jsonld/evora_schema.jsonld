@@ -38,7 +38,7 @@
     "interoperability"
   ],
   "id": "https://w3id.org/evorao/",
-  "version": "1.0.9841",
+  "version": "1.0.9877",
   "imports": [
     "linkml:types"
   ],
@@ -610,6 +610,59 @@
       ],
       "range": "string",
       "multivalued": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "dateIssued",
+      "definition_uri": "https://w3id.org/evorao/dateIssued",
+      "description": "Date of formal issuance (e.g., publication) of the resource",
+      "title": "date issued",
+      "comments": [
+        "encoded using the relevant ISO 8601 Date and Time compliant string [DATETIME]"
+      ],
+      "from_schema": "https://w3id.org/evorao/",
+      "mappings": [
+        "http://purl.org/dc/terms/issued"
+      ],
+      "exact_mappings": [
+        "http://purl.obolibrary.org/obo/SEPIO_0000051"
+      ],
+      "close_mappings": [
+        "http://schema.org/datePublished",
+        "http://schema.org/dateCreated"
+      ],
+      "slot_uri": "http://purl.org/dc/terms/issued",
+      "owner": "Resource",
+      "domain_of": [
+        "Resource"
+      ],
+      "range": "datetime",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "dateModified",
+      "definition_uri": "https://w3id.org/evorao/dateModified",
+      "description": "Most recent date on which the resource was changed, updated or modified",
+      "title": "date modified",
+      "comments": [
+        "encoded using the relevant ISO 8601 Date and Time compliant string [DATETIME]"
+      ],
+      "from_schema": "https://w3id.org/evorao/",
+      "mappings": [
+        "http://purl.org/dc/terms/modified"
+      ],
+      "exact_mappings": [
+        "http://purl.obolibrary.org/obo/SEPIO_0000036"
+      ],
+      "close_mappings": [
+        "http://schema.org/dateModified"
+      ],
+      "slot_uri": "http://purl.org/dc/terms/modified",
+      "owner": "Resource",
+      "domain_of": [
+        "Resource"
+      ],
+      "range": "datetime",
       "@type": "SlotDefinition"
     },
     {
@@ -4335,6 +4388,69 @@
       "usage_slot_name": "keyword",
       "range": "string",
       "multivalued": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "Resource_dateIssued",
+      "definition_uri": "https://w3id.org/evorao/dateIssued",
+      "description": "Date of formal issuance (e.g., publication) of the resource",
+      "title": "date issued",
+      "comments": [
+        "encoded using the relevant ISO 8601 Date and Time compliant string [DATETIME]"
+      ],
+      "from_schema": "https://w3id.org/evorao/",
+      "mappings": [
+        "http://purl.org/dc/terms/issued"
+      ],
+      "exact_mappings": [
+        "http://purl.obolibrary.org/obo/SEPIO_0000051"
+      ],
+      "close_mappings": [
+        "http://schema.org/datePublished",
+        "http://schema.org/dateCreated"
+      ],
+      "is_a": "dateIssued",
+      "domain": "Resource",
+      "slot_uri": "http://purl.org/dc/terms/issued",
+      "alias": "dateIssued",
+      "owner": "Resource",
+      "domain_of": [
+        "Resource"
+      ],
+      "is_usage_slot": true,
+      "usage_slot_name": "dateIssued",
+      "range": "datetime",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "Resource_dateModified",
+      "definition_uri": "https://w3id.org/evorao/dateModified",
+      "description": "Most recent date on which the resource was changed, updated or modified",
+      "title": "date modified",
+      "comments": [
+        "encoded using the relevant ISO 8601 Date and Time compliant string [DATETIME]"
+      ],
+      "from_schema": "https://w3id.org/evorao/",
+      "mappings": [
+        "http://purl.org/dc/terms/modified"
+      ],
+      "exact_mappings": [
+        "http://purl.obolibrary.org/obo/SEPIO_0000036"
+      ],
+      "close_mappings": [
+        "http://schema.org/dateModified"
+      ],
+      "is_a": "dateModified",
+      "domain": "Resource",
+      "slot_uri": "http://purl.org/dc/terms/modified",
+      "alias": "dateModified",
+      "owner": "Resource",
+      "domain_of": [
+        "Resource"
+      ],
+      "is_usage_slot": true,
+      "usage_slot_name": "dateModified",
+      "range": "datetime",
       "@type": "SlotDefinition"
     },
     {
@@ -10071,7 +10187,9 @@
       ],
       "abstract": true,
       "slots": [
-        "Resource_keyword"
+        "Resource_keyword",
+        "Resource_dateIssued",
+        "Resource_dateModified"
       ],
       "slot_usage": {},
       "class_uri": "http://www.w3.org/ns/dcat#Resource",
@@ -10096,6 +10214,8 @@
       "abstract": true,
       "slots": [
         "Resource_keyword",
+        "Resource_dateIssued",
+        "Resource_dateModified",
         "Dataset_title",
         "Dataset_description",
         "Dataset_version"
@@ -10127,6 +10247,8 @@
       "abstract": true,
       "slots": [
         "Resource_keyword",
+        "Resource_dateIssued",
+        "Resource_dateModified",
         "DataService_title",
         "DataService_description",
         "DataService_endpointUrl",
@@ -10156,6 +10278,8 @@
       "is_a": "Resource",
       "slots": [
         "Resource_keyword",
+        "Resource_dateIssued",
+        "Resource_dateModified",
         "Version_version",
         "Version_versionOf",
         "Version_resource"
@@ -10187,6 +10311,8 @@
       "abstract": true,
       "slots": [
         "Resource_keyword",
+        "Resource_dateIssued",
+        "Resource_dateModified",
         "Dataset_title",
         "Dataset_description",
         "Dataset_version"
@@ -10218,6 +10344,8 @@
       "is_a": "Catalogue",
       "slots": [
         "Resource_keyword",
+        "Resource_dateIssued",
+        "Resource_dateModified",
         "Dataset_title",
         "Dataset_description",
         "Taxonomy_taxon",
@@ -10251,6 +10379,8 @@
       "is_a": "DataService",
       "slots": [
         "Resource_keyword",
+        "Resource_dateIssued",
+        "Resource_dateModified",
         "DataService_title",
         "DataService_description",
         "DataService_endpointUrl",
@@ -10281,6 +10411,8 @@
       "is_a": "Resource",
       "slots": [
         "Resource_keyword",
+        "Resource_dateIssued",
+        "Resource_dateModified",
         "PathogenIdentification_taxon",
         "PathogenIdentification_pathogenName",
         "PathogenIdentification_pathogenType",
@@ -10315,6 +10447,8 @@
       "is_a": "Resource",
       "slots": [
         "Resource_keyword",
+        "Resource_dateIssued",
+        "Resource_dateModified",
         "Publication_title",
         "Publication_authors",
         "Publication_abstract",
@@ -10356,6 +10490,8 @@
       "is_a": "Catalogue",
       "slots": [
         "Resource_keyword",
+        "Resource_dateIssued",
+        "Resource_dateModified",
         "Dataset_title",
         "Dataset_description",
         "Dataset_version",
@@ -10388,6 +10524,8 @@
       "abstract": true,
       "slots": [
         "Resource_keyword",
+        "Resource_dateIssued",
+        "Resource_dateModified",
         "Term_title",
         "Term_description",
         "Term_weight",
@@ -10416,6 +10554,8 @@
       "is_a": "Term",
       "slots": [
         "Resource_keyword",
+        "Resource_dateIssued",
+        "Resource_dateModified",
         "Term_title",
         "Term_description",
         "Term_weight",
@@ -10444,6 +10584,8 @@
       "is_a": "CommonName",
       "slots": [
         "Resource_keyword",
+        "Resource_dateIssued",
+        "Resource_dateModified",
         "Term_title",
         "Term_description",
         "Term_weight",
@@ -10476,6 +10618,8 @@
       "is_a": "Term",
       "slots": [
         "Resource_keyword",
+        "Resource_dateIssued",
+        "Resource_dateModified",
         "Term_title",
         "Term_description",
         "Term_weight",
@@ -10507,6 +10651,8 @@
       "is_a": "Term",
       "slots": [
         "Resource_keyword",
+        "Resource_dateIssued",
+        "Resource_dateModified",
         "Term_title",
         "Term_description",
         "Term_weight",
@@ -10535,6 +10681,8 @@
       "is_a": "Term",
       "slots": [
         "Resource_keyword",
+        "Resource_dateIssued",
+        "Resource_dateModified",
         "Term_title",
         "Term_description",
         "Term_weight",
@@ -10563,6 +10711,8 @@
       "is_a": "Term",
       "slots": [
         "Resource_keyword",
+        "Resource_dateIssued",
+        "Resource_dateModified",
         "Term_title",
         "Term_description",
         "Term_weight",
@@ -10591,6 +10741,8 @@
       "is_a": "Term",
       "slots": [
         "Resource_keyword",
+        "Resource_dateIssued",
+        "Resource_dateModified",
         "Term_title",
         "Term_description",
         "Term_weight",
@@ -10619,6 +10771,8 @@
       "is_a": "Term",
       "slots": [
         "Resource_keyword",
+        "Resource_dateIssued",
+        "Resource_dateModified",
         "Term_title",
         "Term_description",
         "Term_weight",
@@ -10644,6 +10798,8 @@
       "is_a": "Term",
       "slots": [
         "Resource_keyword",
+        "Resource_dateIssued",
+        "Resource_dateModified",
         "Term_title",
         "Term_description",
         "Term_weight",
@@ -10669,6 +10825,8 @@
       "is_a": "Term",
       "slots": [
         "Resource_keyword",
+        "Resource_dateIssued",
+        "Resource_dateModified",
         "Term_title",
         "Term_description",
         "Term_weight",
@@ -10699,6 +10857,8 @@
       "is_a": "Term",
       "slots": [
         "Resource_keyword",
+        "Resource_dateIssued",
+        "Resource_dateModified",
         "Term_title",
         "Term_description",
         "Term_weight",
@@ -10721,6 +10881,8 @@
       "is_a": "Term",
       "slots": [
         "Resource_keyword",
+        "Resource_dateIssued",
+        "Resource_dateModified",
         "Term_title",
         "Term_description",
         "Term_weight",
@@ -10743,6 +10905,8 @@
       "is_a": "Term",
       "slots": [
         "Resource_keyword",
+        "Resource_dateIssued",
+        "Resource_dateModified",
         "Term_title",
         "Term_description",
         "Term_weight",
@@ -10769,6 +10933,8 @@
       "is_a": "Term",
       "slots": [
         "Resource_keyword",
+        "Resource_dateIssued",
+        "Resource_dateModified",
         "Term_title",
         "Term_description",
         "Term_weight",
@@ -10797,6 +10963,8 @@
       "is_a": "Term",
       "slots": [
         "Resource_keyword",
+        "Resource_dateIssued",
+        "Resource_dateModified",
         "Term_title",
         "Term_description",
         "Term_weight",
@@ -10831,6 +10999,8 @@
       "is_a": "Term",
       "slots": [
         "Resource_keyword",
+        "Resource_dateIssued",
+        "Resource_dateModified",
         "Term_title",
         "Term_description",
         "Term_weight",
@@ -10850,6 +11020,8 @@
       "is_a": "Term",
       "slots": [
         "Resource_keyword",
+        "Resource_dateIssued",
+        "Resource_dateModified",
         "Term_title",
         "Term_description",
         "Term_weight",
@@ -10887,6 +11059,8 @@
       "is_a": "Term",
       "slots": [
         "Resource_keyword",
+        "Resource_dateIssued",
+        "Resource_dateModified",
         "Term_title",
         "Term_description",
         "Term_weight",
@@ -10917,6 +11091,8 @@
       "is_a": "GeographicalOrigin",
       "slots": [
         "Resource_keyword",
+        "Resource_dateIssued",
+        "Resource_dateModified",
         "Term_title",
         "Term_description",
         "Term_weight",
@@ -10958,6 +11134,8 @@
       "is_a": "Term",
       "slots": [
         "Resource_keyword",
+        "Resource_dateIssued",
+        "Resource_dateModified",
         "Term_title",
         "Term_description",
         "Term_weight",
@@ -10981,6 +11159,8 @@
       "is_a": "Term",
       "slots": [
         "Resource_keyword",
+        "Resource_dateIssued",
+        "Resource_dateModified",
         "Term_title",
         "Term_description",
         "Term_weight",
@@ -11003,6 +11183,8 @@
       "is_a": "CommonName",
       "slots": [
         "Resource_keyword",
+        "Resource_dateIssued",
+        "Resource_dateModified",
         "Term_title",
         "Term_description",
         "Term_weight",
@@ -11042,6 +11224,8 @@
       "is_a": "Term",
       "slots": [
         "Resource_keyword",
+        "Resource_dateIssued",
+        "Resource_dateModified",
         "Term_title",
         "Term_description",
         "Term_weight",
@@ -11076,6 +11260,8 @@
       "is_a": "Term",
       "slots": [
         "Resource_keyword",
+        "Resource_dateIssued",
+        "Resource_dateModified",
         "Term_title",
         "Term_description",
         "Term_weight",
@@ -11107,6 +11293,8 @@
       "is_a": "Resource",
       "slots": [
         "Resource_keyword",
+        "Resource_dateIssued",
+        "Resource_dateModified",
         "ExternalRelatedReference_reference",
         "ExternalRelatedReference_referenceLabel",
         "ExternalRelatedReference_referenceProviderPrefix",
@@ -11133,6 +11321,8 @@
       "is_a": "Resource",
       "slots": [
         "Resource_keyword",
+        "Resource_dateIssued",
+        "Resource_dateModified",
         "Sequence_sequenceReference",
         "Sequence_sequenceFasta"
       ],
@@ -11152,6 +11342,8 @@
       "is_a": "Resource",
       "slots": [
         "Resource_keyword",
+        "Resource_dateIssued",
+        "Resource_dateModified",
         "SequenceReference_accessionNumber",
         "SequenceReference_sequenceProvider"
       ],
@@ -11181,6 +11373,8 @@
       "is_a": "Resource",
       "slots": [
         "Resource_keyword",
+        "Resource_dateIssued",
+        "Resource_dateModified",
         "PersonOrOrganization_name",
         "PersonOrOrganization_description",
         "PersonOrOrganization_homePage",
@@ -11213,6 +11407,8 @@
       "is_a": "PersonOrOrganization",
       "slots": [
         "Resource_keyword",
+        "Resource_dateIssued",
+        "Resource_dateModified",
         "PersonOrOrganization_name",
         "PersonOrOrganization_description",
         "PersonOrOrganization_homePage",
@@ -11246,6 +11442,8 @@
       "is_a": "PersonOrOrganization",
       "slots": [
         "Resource_keyword",
+        "Resource_dateIssued",
+        "Resource_dateModified",
         "PersonOrOrganization_name",
         "PersonOrOrganization_description",
         "PersonOrOrganization_homePage",
@@ -11278,6 +11476,8 @@
       "is_a": "Organization",
       "slots": [
         "Resource_keyword",
+        "Resource_dateIssued",
+        "Resource_dateModified",
         "PersonOrOrganization_name",
         "PersonOrOrganization_description",
         "PersonOrOrganization_homePage",
@@ -11310,6 +11510,8 @@
       "is_a": "Organization",
       "slots": [
         "Resource_keyword",
+        "Resource_dateIssued",
+        "Resource_dateModified",
         "PersonOrOrganization_name",
         "PersonOrOrganization_description",
         "PersonOrOrganization_homePage",
@@ -11343,6 +11545,8 @@
       "is_a": "PersonOrOrganization",
       "slots": [
         "Resource_keyword",
+        "Resource_dateIssued",
+        "Resource_dateModified",
         "PersonOrOrganization_name",
         "PersonOrOrganization_description",
         "PersonOrOrganization_homePage",
@@ -11370,6 +11574,8 @@
       "is_a": "Resource",
       "slots": [
         "Resource_keyword",
+        "Resource_dateIssued",
+        "Resource_dateModified",
         "BiologicalMaterialOrigin_recombinantMaterial",
         "BiologicalMaterialOrigin_biologicalSourceType",
         "BiologicalMaterialOrigin_biologicalPartOrigin"
@@ -11392,6 +11598,8 @@
       "abstract": true,
       "slots": [
         "Resource_keyword",
+        "Resource_dateIssued",
+        "Resource_dateModified",
         "BiologicalPartOrigin_recombinantPartIdentification",
         "BiologicalPartOrigin_accessToPhysicalGeneticResource"
       ],
@@ -11418,6 +11626,8 @@
       "is_a": "BiologicalPartOrigin",
       "slots": [
         "Resource_keyword",
+        "Resource_dateIssued",
+        "Resource_dateModified",
         "BiologicalPartOrigin_recombinantPartIdentification",
         "BiologicalPartOrigin_accessToPhysicalGeneticResource",
         "NaturalPartOrigin_countryOfCollection",
@@ -11439,6 +11649,8 @@
       "is_a": "BiologicalPartOrigin",
       "slots": [
         "Resource_keyword",
+        "Resource_dateIssued",
+        "Resource_dateModified",
         "BiologicalPartOrigin_recombinantPartIdentification",
         "BiologicalPartOrigin_accessToPhysicalGeneticResource",
         "SyntheticPartOrigin_modificationsFromTheReferenceSequences",
@@ -11457,6 +11669,8 @@
       "is_a": "Resource",
       "slots": [
         "Resource_keyword",
+        "Resource_dateIssued",
+        "Resource_dateModified",
         "RecombinantPartIdentification_partIdentification",
         "RecombinantPartIdentification_sequence"
       ],
@@ -11477,6 +11691,8 @@
       "is_a": "Catalogue",
       "slots": [
         "Resource_keyword",
+        "Resource_dateIssued",
+        "Resource_dateModified",
         "Dataset_title",
         "Dataset_description",
         "Dataset_version",
@@ -11506,6 +11722,8 @@
       "abstract": true,
       "slots": [
         "Resource_keyword",
+        "Resource_dateIssued",
+        "Resource_dateModified",
         "Dataset_title",
         "Dataset_description",
         "Dataset_version",
@@ -11568,6 +11786,8 @@
       "is_a": "ProductOrService",
       "slots": [
         "Resource_keyword",
+        "Resource_dateIssued",
+        "Resource_dateModified",
         "Dataset_title",
         "Dataset_description",
         "Dataset_version",
@@ -11625,6 +11845,8 @@
       "is_a": "ProductOrService",
       "slots": [
         "Resource_keyword",
+        "Resource_dateIssued",
+        "Resource_dateModified",
         "Dataset_title",
         "Dataset_description",
         "Dataset_version",
@@ -11681,6 +11903,8 @@
       "is_a": "Product",
       "slots": [
         "Resource_keyword",
+        "Resource_dateIssued",
+        "Resource_dateModified",
         "Dataset_title",
         "Dataset_description",
         "Dataset_version",
@@ -11748,6 +11972,8 @@
       "is_a": "Antibody",
       "slots": [
         "Resource_keyword",
+        "Resource_dateIssued",
+        "Resource_dateModified",
         "Dataset_title",
         "Dataset_description",
         "Dataset_version",
@@ -11814,6 +12040,8 @@
       "is_a": "Product",
       "slots": [
         "Resource_keyword",
+        "Resource_dateIssued",
+        "Resource_dateModified",
         "Dataset_title",
         "Dataset_description",
         "Dataset_version",
@@ -11894,6 +12122,8 @@
       "is_a": "Product",
       "slots": [
         "Resource_keyword",
+        "Resource_dateIssued",
+        "Resource_dateModified",
         "Dataset_title",
         "Dataset_description",
         "Dataset_version",
@@ -11962,6 +12192,8 @@
       "is_a": "Product",
       "slots": [
         "Resource_keyword",
+        "Resource_dateIssued",
+        "Resource_dateModified",
         "Dataset_title",
         "Dataset_description",
         "Dataset_version",
@@ -12028,6 +12260,8 @@
       "is_a": "Product",
       "slots": [
         "Resource_keyword",
+        "Resource_dateIssued",
+        "Resource_dateModified",
         "Dataset_title",
         "Dataset_description",
         "Dataset_version",
@@ -12102,6 +12336,8 @@
       "abstract": true,
       "slots": [
         "Resource_keyword",
+        "Resource_dateIssued",
+        "Resource_dateModified",
         "Dataset_title",
         "Dataset_description",
         "Dataset_version",
@@ -12192,6 +12428,8 @@
       "is_a": "Pathogen",
       "slots": [
         "Resource_keyword",
+        "Resource_dateIssued",
+        "Resource_dateModified",
         "Dataset_title",
         "Dataset_description",
         "Dataset_version",
@@ -12283,6 +12521,8 @@
       "is_a": "Pathogen",
       "slots": [
         "Resource_keyword",
+        "Resource_dateIssued",
+        "Resource_dateModified",
         "Dataset_title",
         "Dataset_description",
         "Dataset_version",
@@ -12369,6 +12609,8 @@
       "is_a": "Pathogen",
       "slots": [
         "Resource_keyword",
+        "Resource_dateIssued",
+        "Resource_dateModified",
         "Dataset_title",
         "Dataset_description",
         "Dataset_version",
@@ -12451,6 +12693,8 @@
       "is_a": "Pathogen",
       "slots": [
         "Resource_keyword",
+        "Resource_dateIssued",
+        "Resource_dateModified",
         "Dataset_title",
         "Dataset_description",
         "Dataset_version",
@@ -12529,6 +12773,8 @@
       "is_a": "Pathogen",
       "slots": [
         "Resource_keyword",
+        "Resource_dateIssued",
+        "Resource_dateModified",
         "Dataset_title",
         "Dataset_description",
         "Dataset_version",
@@ -12611,6 +12857,8 @@
       "is_a": "Pathogen",
       "slots": [
         "Resource_keyword",
+        "Resource_dateIssued",
+        "Resource_dateModified",
         "Dataset_title",
         "Dataset_description",
         "Dataset_version",
@@ -12683,6 +12931,8 @@
       "is_a": "Resource",
       "slots": [
         "Resource_keyword",
+        "Resource_dateIssued",
+        "Resource_dateModified",
         "materialSafetyContact",
         "MaterialSafetyDataSheet_physicalChemicalProperties",
         "MaterialSafetyDataSheet_hazardsIdentification",
@@ -12730,6 +12980,8 @@
       "abstract": true,
       "slots": [
         "Resource_keyword",
+        "Resource_dateIssued",
+        "Resource_dateModified",
         "File_name",
         "File_description",
         "File_contentUrl",
@@ -12765,6 +13017,8 @@
       "is_a": "File",
       "slots": [
         "Resource_keyword",
+        "Resource_dateIssued",
+        "Resource_dateModified",
         "File_name",
         "File_description",
         "File_contentUrl",
@@ -12802,6 +13056,8 @@
       "is_a": "File",
       "slots": [
         "Resource_keyword",
+        "Resource_dateIssued",
+        "Resource_dateModified",
         "File_name",
         "File_description",
         "File_contentUrl",
@@ -12837,6 +13093,8 @@
       "is_a": "File",
       "slots": [
         "Resource_keyword",
+        "Resource_dateIssued",
+        "Resource_dateModified",
         "File_name",
         "File_description",
         "File_contentUrl",
@@ -12870,6 +13128,8 @@
       "is_a": "File",
       "slots": [
         "Resource_keyword",
+        "Resource_dateIssued",
+        "Resource_dateModified",
         "File_name",
         "File_description",
         "File_contentUrl",
@@ -12909,6 +13169,8 @@
       "is_a": "File",
       "slots": [
         "Resource_keyword",
+        "Resource_dateIssued",
+        "Resource_dateModified",
         "File_name",
         "File_description",
         "File_contentUrl",
@@ -12947,6 +13209,8 @@
       "is_a": "Resource",
       "slots": [
         "Resource_keyword",
+        "Resource_dateIssued",
+        "Resource_dateModified",
         "ContactPoint_name",
         "ContactPoint_description",
         "ContactPoint_email",
@@ -12983,6 +13247,8 @@
       "is_a": "Resource",
       "slots": [
         "Resource_keyword",
+        "Resource_dateIssued",
+        "Resource_dateModified",
         "License_title",
         "License_description",
         "License_resourceUrl",
@@ -13014,6 +13280,8 @@
       "is_a": "Resource",
       "slots": [
         "Resource_keyword",
+        "Resource_dateIssued",
+        "Resource_dateModified",
         "Certification_title",
         "Certification_description",
         "Certification_logo",
@@ -13027,9 +13295,9 @@
   ],
   "metamodel_version": "1.7.0",
   "source_file": "evora_schema.yaml",
-  "source_file_date": "2025-09-19T16:32:47",
-  "source_file_size": 220683,
-  "generation_date": "2025-09-19T16:33:02",
+  "source_file_date": "2025-09-22T12:42:59",
+  "source_file_size": 222689,
+  "generation_date": "2025-09-22T12:43:16",
   "@type": "SchemaDefinition",
   "@context": [
     "https://w3id.org/linkml/types.context.jsonld",

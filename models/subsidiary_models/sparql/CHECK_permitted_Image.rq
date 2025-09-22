@@ -70,6 +70,8 @@ SELECT ?g ?s ?p WHERE {
    EVORAO:format,
    dct:license,
    dcat:keyword,
+   dct:issued,
+   dct:modified,
    rdf:type ))
  }
  

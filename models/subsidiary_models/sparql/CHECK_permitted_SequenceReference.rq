@@ -66,6 +66,8 @@ SELECT ?g ?s ?p WHERE {
    EVORAO:accessionNumber,
    EVORAO:sequenceProvider,
    dcat:keyword,
+   dct:issued,
+   dct:modified,
    rdf:type ))
  }
  

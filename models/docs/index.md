@@ -135,6 +135,8 @@ Name: EVORAO
 | [country](country.md) | The country of the organization |
 | [countryOfCollection](countryOfCollection.md) | The geographical location where the sample was collected in situ |
 | [cultivability](cultivability.md) | The ability of the pathogen to be cultivated or grown in laboratory condition... |
+| [dateIssued](dateIssued.md) | Date of formal issuance (e |
+| [dateModified](dateModified.md) | Most recent date on which the resource was changed, updated or modified |
 | [description](description.md) | A short explanation of the characteristics, features, or nature of the curren... |
 | [descriptionOfModificationsMadeFromTheReferenceSequences](descriptionOfModificationsMadeFromTheReferenceSequences.md) | List the modifications mades from the reference sequence if any |
 | [disposalConsiderations](disposalConsiderations.md) | Guidance on the safe and environmentally responsible disposal of the product,... |

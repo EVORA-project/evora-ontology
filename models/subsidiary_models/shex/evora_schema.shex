@@ -1,5 +1,5 @@
 # metamodel_version: 1.7.0
-# version: 1.0.9841
+# version: 1.0.9877
 BASE <https://w3id.org/evorao/>
 PREFIX dcat: <http://www.w3.org/ns/dcat#>
 PREFIX foaf: <http://xmlns.com/foaf/0.1/>
@@ -737,7 +737,10 @@ linkml:Sparqlpath xsd:string
 )
 
 <Resource_struct> {
-    (  $<Resource_tes> dcat:keyword @linkml:String * ;
+    (  $<Resource_tes> (  dcat:keyword @linkml:String * ;
+          dct:issued @linkml:Datetime ? ;
+          dct:modified @linkml:Datetime ?
+       ) ;
        rdf:type [ dcat:Resource ] ?
     )
 }

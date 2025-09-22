@@ -23,6 +23,10 @@ URI: [EVORAO:Taxonomy](https://w3id.org/evorao/Taxonomy)
       Catalogue <|-- Taxonomy
         click Catalogue href "../Catalogue"
       
+      Taxonomy : dateIssued
+        
+      Taxonomy : dateModified
+        
       Taxonomy : description
         
       Taxonomy : keyword
@@ -104,6 +108,8 @@ URI: [EVORAO:Taxonomy](https://w3id.org/evorao/Taxonomy)
 | [title](title.md) | 1 <br/> [String](String.md) | A name given to the resource | [Dataset](Dataset.md) |
 | [description](description.md) | 1 _recommended_ <br/> [String](String.md) | A short explanation of the characteristics, features, or nature of the curren... | [Dataset](Dataset.md) |
 | [keyword](keyword.md) | * <br/> [String](String.md) | A keyword or tag describing the resource | [Resource](Resource.md) |
+| [dateIssued](dateIssued.md) | 0..1 <br/> [Datetime](Datetime.md) | Date of formal issuance (e | [Resource](Resource.md) |
+| [dateModified](dateModified.md) | 0..1 <br/> [Datetime](Datetime.md) | Most recent date on which the resource was changed, updated or modified | [Resource](Resource.md) |
 
 
 
@@ -559,6 +565,47 @@ attributes:
     range: string
     required: false
     multivalued: true
+  dateIssued:
+    name: dateIssued
+    description: Date of formal issuance (e.g., publication) of the resource
+    title: date issued
+    comments:
+    - encoded using the relevant ISO 8601 Date and Time compliant string [DATETIME]
+    from_schema: https://w3id.org/evorao/
+    exact_mappings:
+    - sepio:0000051
+    close_mappings:
+    - schema:datePublished
+    - schema:dateCreated
+    rank: 1000
+    slot_uri: dct:issued
+    alias: dateIssued
+    owner: Taxonomy
+    domain_of:
+    - Resource
+    range: datetime
+    required: false
+    multivalued: false
+  dateModified:
+    name: dateModified
+    description: Most recent date on which the resource was changed, updated or modified
+    title: date modified
+    comments:
+    - encoded using the relevant ISO 8601 Date and Time compliant string [DATETIME]
+    from_schema: https://w3id.org/evorao/
+    exact_mappings:
+    - sepio:0000036
+    close_mappings:
+    - schema:dateModified
+    rank: 1000
+    slot_uri: dct:modified
+    alias: dateModified
+    owner: Taxonomy
+    domain_of:
+    - Resource
+    range: datetime
+    required: false
+    multivalued: false
 
 ```
 </details>

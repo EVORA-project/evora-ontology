@@ -72,6 +72,8 @@ SELECT ?g ?s ?p WHERE {
    dct:title,
    dct:description,
    dcat:keyword,
+   dct:issued,
+   dct:modified,
    rdf:type ))
  }
  

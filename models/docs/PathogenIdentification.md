@@ -23,6 +23,10 @@ URI: [EVORAO:PathogenIdentification](https://w3id.org/evorao/PathogenIdentificat
       Resource <|-- PathogenIdentification
         click Resource href "../Resource"
       
+      PathogenIdentification : dateIssued
+        
+      PathogenIdentification : dateModified
+        
       PathogenIdentification : genotype
         
       PathogenIdentification : hostType
@@ -94,6 +98,8 @@ URI: [EVORAO:PathogenIdentification](https://w3id.org/evorao/PathogenIdentificat
 | [serotype](serotype.md) | 0..1 <br/> [String](String.md) | Genetically related pathogens that group together based on serological relati... | direct |
 | [variant](variant.md) | 0..1 <br/> [Variant](Variant.md) | An organism with one or more new mutations is referred to as a “variant” of t... | direct |
 | [keyword](keyword.md) | * <br/> [String](String.md) | A keyword or tag describing the resource | [Resource](Resource.md) |
+| [dateIssued](dateIssued.md) | 0..1 <br/> [Datetime](Datetime.md) | Date of formal issuance (e | [Resource](Resource.md) |
+| [dateModified](dateModified.md) | 0..1 <br/> [Datetime](Datetime.md) | Most recent date on which the resource was changed, updated or modified | [Resource](Resource.md) |
 
 
 
@@ -631,6 +637,47 @@ attributes:
     range: string
     required: false
     multivalued: true
+  dateIssued:
+    name: dateIssued
+    description: Date of formal issuance (e.g., publication) of the resource
+    title: date issued
+    comments:
+    - encoded using the relevant ISO 8601 Date and Time compliant string [DATETIME]
+    from_schema: https://w3id.org/evorao/
+    exact_mappings:
+    - sepio:0000051
+    close_mappings:
+    - schema:datePublished
+    - schema:dateCreated
+    rank: 1000
+    slot_uri: dct:issued
+    alias: dateIssued
+    owner: PathogenIdentification
+    domain_of:
+    - Resource
+    range: datetime
+    required: false
+    multivalued: false
+  dateModified:
+    name: dateModified
+    description: Most recent date on which the resource was changed, updated or modified
+    title: date modified
+    comments:
+    - encoded using the relevant ISO 8601 Date and Time compliant string [DATETIME]
+    from_schema: https://w3id.org/evorao/
+    exact_mappings:
+    - sepio:0000036
+    close_mappings:
+    - schema:dateModified
+    rank: 1000
+    slot_uri: dct:modified
+    alias: dateModified
+    owner: PathogenIdentification
+    domain_of:
+    - Resource
+    range: datetime
+    required: false
+    multivalued: false
 
 ```
 </details>

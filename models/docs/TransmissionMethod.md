@@ -23,6 +23,10 @@ URI: [EVORAO:TransmissionMethod](https://w3id.org/evorao/TransmissionMethod)
       Term <|-- TransmissionMethod
         click Term href "../Term"
       
+      TransmissionMethod : dateIssued
+        
+      TransmissionMethod : dateModified
+        
       TransmissionMethod : description
         
       TransmissionMethod : inVocabulary
@@ -63,6 +67,8 @@ URI: [EVORAO:TransmissionMethod](https://w3id.org/evorao/TransmissionMethod)
 | [weight](weight.md) | 1 <br/> [Integer](Integer.md) | A numerical value indicating relative importance or priority, generally proce... | [Term](Term.md) |
 | [inVocabulary](inVocabulary.md) | 1 <br/> [Vocabulary](Vocabulary.md) | Terms belong to a specific vocabulary | [Term](Term.md) |
 | [keyword](keyword.md) | * <br/> [String](String.md) | A keyword or tag describing the resource | [Resource](Resource.md) |
+| [dateIssued](dateIssued.md) | 0..1 <br/> [Datetime](Datetime.md) | Date of formal issuance (e | [Resource](Resource.md) |
+| [dateModified](dateModified.md) | 0..1 <br/> [Datetime](Datetime.md) | Most recent date on which the resource was changed, updated or modified | [Resource](Resource.md) |
 
 
 
@@ -269,6 +275,47 @@ attributes:
     range: string
     required: false
     multivalued: true
+  dateIssued:
+    name: dateIssued
+    description: Date of formal issuance (e.g., publication) of the resource
+    title: date issued
+    comments:
+    - encoded using the relevant ISO 8601 Date and Time compliant string [DATETIME]
+    from_schema: https://w3id.org/evorao/
+    exact_mappings:
+    - sepio:0000051
+    close_mappings:
+    - schema:datePublished
+    - schema:dateCreated
+    rank: 1000
+    slot_uri: dct:issued
+    alias: dateIssued
+    owner: TransmissionMethod
+    domain_of:
+    - Resource
+    range: datetime
+    required: false
+    multivalued: false
+  dateModified:
+    name: dateModified
+    description: Most recent date on which the resource was changed, updated or modified
+    title: date modified
+    comments:
+    - encoded using the relevant ISO 8601 Date and Time compliant string [DATETIME]
+    from_schema: https://w3id.org/evorao/
+    exact_mappings:
+    - sepio:0000036
+    close_mappings:
+    - schema:dateModified
+    rank: 1000
+    slot_uri: dct:modified
+    alias: dateModified
+    owner: TransmissionMethod
+    domain_of:
+    - Resource
+    range: datetime
+    required: false
+    multivalued: false
 
 ```
 </details>

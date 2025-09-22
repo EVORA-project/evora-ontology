@@ -27,7 +27,7 @@ from pydantic import (
 
 
 metamodel_version = "None"
-version = "1.0.9841"
+version = "1.0.9877"
 
 
 class ConfiguredBaseModel(BaseModel):
@@ -99,7 +99,7 @@ linkml_meta = LinkMLMeta({'comments': ['EVORAO is an ontology for standardized m
                     'pathogens. EVORAO is compatible with DCAT, making it '
                     'well-suited for efficiently cataloguing pathogen collections '
                     'and related resources.',
-     'generation_date': '2025-09-19T18:32:21',
+     'generation_date': '2025-09-22T14:42:28',
      'id': 'https://w3id.org/evorao/',
      'imports': ['linkml:types'],
      'in_language': 'en',
@@ -248,7 +248,37 @@ class Resource(ConfiguredBaseModel):
     linkml_meta: ClassVar[LinkMLMeta] = LinkMLMeta({'abstract': True,
          'class_uri': 'dcat:Resource',
          'from_schema': 'https://w3id.org/evorao/',
-         'slot_usage': {'keyword': {'description': 'A keyword or tag describing the '
+         'slot_usage': {'dateIssued': {'close_mappings': ['schema:datePublished',
+                                                          'schema:dateCreated'],
+                                       'comments': ['encoded using the relevant ISO '
+                                                    '8601 Date and Time compliant '
+                                                    'string [DATETIME]'],
+                                       'description': 'Date of formal issuance (e.g., '
+                                                      'publication) of the resource',
+                                       'domain_of': ['Resource'],
+                                       'exact_mappings': ['sepio:0000051'],
+                                       'multivalued': False,
+                                       'name': 'dateIssued',
+                                       'range': 'datetime',
+                                       'required': False,
+                                       'slot_uri': 'dct:issued',
+                                       'title': 'date issued'},
+                        'dateModified': {'close_mappings': ['schema:dateModified'],
+                                         'comments': ['encoded using the relevant ISO '
+                                                      '8601 Date and Time compliant '
+                                                      'string [DATETIME]'],
+                                         'description': 'Most recent date on which the '
+                                                        'resource was changed, updated '
+                                                        'or modified',
+                                         'domain_of': ['Resource'],
+                                         'exact_mappings': ['sepio:0000036'],
+                                         'multivalued': False,
+                                         'name': 'dateModified',
+                                         'range': 'datetime',
+                                         'required': False,
+                                         'slot_uri': 'dct:modified',
+                                         'title': 'date modified'},
+                        'keyword': {'description': 'A keyword or tag describing the '
                                                    'resource',
                                     'domain_of': ['Resource'],
                                     'multivalued': True,
@@ -260,6 +290,20 @@ class Resource(ConfiguredBaseModel):
          'title': 'Resource'})
 
     keyword: Optional[list[str]] = Field(default=None, title="keyword", description="""A keyword or tag describing the resource""", json_schema_extra = { "linkml_meta": {'alias': 'keyword', 'domain_of': ['Resource'], 'slot_uri': 'dcat:keyword'} })
+    dateIssued: Optional[datetime ] = Field(default=None, title="date issued", description="""Date of formal issuance (e.g., publication) of the resource""", json_schema_extra = { "linkml_meta": {'alias': 'dateIssued',
+         'close_mappings': ['schema:datePublished', 'schema:dateCreated'],
+         'comments': ['encoded using the relevant ISO 8601 Date and Time compliant '
+                      'string [DATETIME]'],
+         'domain_of': ['Resource'],
+         'exact_mappings': ['sepio:0000051'],
+         'slot_uri': 'dct:issued'} })
+    dateModified: Optional[datetime ] = Field(default=None, title="date modified", description="""Most recent date on which the resource was changed, updated or modified""", json_schema_extra = { "linkml_meta": {'alias': 'dateModified',
+         'close_mappings': ['schema:dateModified'],
+         'comments': ['encoded using the relevant ISO 8601 Date and Time compliant '
+                      'string [DATETIME]'],
+         'domain_of': ['Resource'],
+         'exact_mappings': ['sepio:0000036'],
+         'slot_uri': 'dct:modified'} })
 
 
 class Dataset(Resource):
@@ -372,6 +416,20 @@ class Dataset(Resource):
          'related_mappings': ['schema:identifier'],
          'slot_uri': 'dcat:version'} })
     keyword: Optional[list[str]] = Field(default=None, title="keyword", description="""A keyword or tag describing the resource""", json_schema_extra = { "linkml_meta": {'alias': 'keyword', 'domain_of': ['Resource'], 'slot_uri': 'dcat:keyword'} })
+    dateIssued: Optional[datetime ] = Field(default=None, title="date issued", description="""Date of formal issuance (e.g., publication) of the resource""", json_schema_extra = { "linkml_meta": {'alias': 'dateIssued',
+         'close_mappings': ['schema:datePublished', 'schema:dateCreated'],
+         'comments': ['encoded using the relevant ISO 8601 Date and Time compliant '
+                      'string [DATETIME]'],
+         'domain_of': ['Resource'],
+         'exact_mappings': ['sepio:0000051'],
+         'slot_uri': 'dct:issued'} })
+    dateModified: Optional[datetime ] = Field(default=None, title="date modified", description="""Most recent date on which the resource was changed, updated or modified""", json_schema_extra = { "linkml_meta": {'alias': 'dateModified',
+         'close_mappings': ['schema:dateModified'],
+         'comments': ['encoded using the relevant ISO 8601 Date and Time compliant '
+                      'string [DATETIME]'],
+         'domain_of': ['Resource'],
+         'exact_mappings': ['sepio:0000036'],
+         'slot_uri': 'dct:modified'} })
 
 
 class DataService(Resource):
@@ -502,6 +560,20 @@ class DataService(Resource):
          'recommended': True,
          'slot_uri': 'dcat:servesDataset'} })
     keyword: Optional[list[str]] = Field(default=None, title="keyword", description="""A keyword or tag describing the resource""", json_schema_extra = { "linkml_meta": {'alias': 'keyword', 'domain_of': ['Resource'], 'slot_uri': 'dcat:keyword'} })
+    dateIssued: Optional[datetime ] = Field(default=None, title="date issued", description="""Date of formal issuance (e.g., publication) of the resource""", json_schema_extra = { "linkml_meta": {'alias': 'dateIssued',
+         'close_mappings': ['schema:datePublished', 'schema:dateCreated'],
+         'comments': ['encoded using the relevant ISO 8601 Date and Time compliant '
+                      'string [DATETIME]'],
+         'domain_of': ['Resource'],
+         'exact_mappings': ['sepio:0000051'],
+         'slot_uri': 'dct:issued'} })
+    dateModified: Optional[datetime ] = Field(default=None, title="date modified", description="""Most recent date on which the resource was changed, updated or modified""", json_schema_extra = { "linkml_meta": {'alias': 'dateModified',
+         'close_mappings': ['schema:dateModified'],
+         'comments': ['encoded using the relevant ISO 8601 Date and Time compliant '
+                      'string [DATETIME]'],
+         'domain_of': ['Resource'],
+         'exact_mappings': ['sepio:0000036'],
+         'slot_uri': 'dct:modified'} })
 
 
 class Version(Resource):
@@ -560,6 +632,20 @@ class Version(Resource):
          'related_mappings': ['dct:isVersionOf']} })
     resource: Optional[list[Resource]] = Field(default=None, title="resource", description="""Resource published or curated by a single agent""", json_schema_extra = { "linkml_meta": {'alias': 'resource', 'domain_of': ['Version'], 'recommended': True} })
     keyword: Optional[list[str]] = Field(default=None, title="keyword", description="""A keyword or tag describing the resource""", json_schema_extra = { "linkml_meta": {'alias': 'keyword', 'domain_of': ['Resource'], 'slot_uri': 'dcat:keyword'} })
+    dateIssued: Optional[datetime ] = Field(default=None, title="date issued", description="""Date of formal issuance (e.g., publication) of the resource""", json_schema_extra = { "linkml_meta": {'alias': 'dateIssued',
+         'close_mappings': ['schema:datePublished', 'schema:dateCreated'],
+         'comments': ['encoded using the relevant ISO 8601 Date and Time compliant '
+                      'string [DATETIME]'],
+         'domain_of': ['Resource'],
+         'exact_mappings': ['sepio:0000051'],
+         'slot_uri': 'dct:issued'} })
+    dateModified: Optional[datetime ] = Field(default=None, title="date modified", description="""Most recent date on which the resource was changed, updated or modified""", json_schema_extra = { "linkml_meta": {'alias': 'dateModified',
+         'close_mappings': ['schema:dateModified'],
+         'comments': ['encoded using the relevant ISO 8601 Date and Time compliant '
+                      'string [DATETIME]'],
+         'domain_of': ['Resource'],
+         'exact_mappings': ['sepio:0000036'],
+         'slot_uri': 'dct:modified'} })
 
 
 class Catalogue(Dataset):
@@ -614,6 +700,20 @@ class Catalogue(Dataset):
          'related_mappings': ['schema:identifier'],
          'slot_uri': 'dcat:version'} })
     keyword: Optional[list[str]] = Field(default=None, title="keyword", description="""A keyword or tag describing the resource""", json_schema_extra = { "linkml_meta": {'alias': 'keyword', 'domain_of': ['Resource'], 'slot_uri': 'dcat:keyword'} })
+    dateIssued: Optional[datetime ] = Field(default=None, title="date issued", description="""Date of formal issuance (e.g., publication) of the resource""", json_schema_extra = { "linkml_meta": {'alias': 'dateIssued',
+         'close_mappings': ['schema:datePublished', 'schema:dateCreated'],
+         'comments': ['encoded using the relevant ISO 8601 Date and Time compliant '
+                      'string [DATETIME]'],
+         'domain_of': ['Resource'],
+         'exact_mappings': ['sepio:0000051'],
+         'slot_uri': 'dct:issued'} })
+    dateModified: Optional[datetime ] = Field(default=None, title="date modified", description="""Most recent date on which the resource was changed, updated or modified""", json_schema_extra = { "linkml_meta": {'alias': 'dateModified',
+         'close_mappings': ['schema:dateModified'],
+         'comments': ['encoded using the relevant ISO 8601 Date and Time compliant '
+                      'string [DATETIME]'],
+         'domain_of': ['Resource'],
+         'exact_mappings': ['sepio:0000036'],
+         'slot_uri': 'dct:modified'} })
 
 
 class Taxonomy(Catalogue):
@@ -747,6 +847,20 @@ class Taxonomy(Catalogue):
          'recommended': True,
          'slot_uri': 'dct:description'} })
     keyword: Optional[list[str]] = Field(default=None, title="keyword", description="""A keyword or tag describing the resource""", json_schema_extra = { "linkml_meta": {'alias': 'keyword', 'domain_of': ['Resource'], 'slot_uri': 'dcat:keyword'} })
+    dateIssued: Optional[datetime ] = Field(default=None, title="date issued", description="""Date of formal issuance (e.g., publication) of the resource""", json_schema_extra = { "linkml_meta": {'alias': 'dateIssued',
+         'close_mappings': ['schema:datePublished', 'schema:dateCreated'],
+         'comments': ['encoded using the relevant ISO 8601 Date and Time compliant '
+                      'string [DATETIME]'],
+         'domain_of': ['Resource'],
+         'exact_mappings': ['sepio:0000051'],
+         'slot_uri': 'dct:issued'} })
+    dateModified: Optional[datetime ] = Field(default=None, title="date modified", description="""Most recent date on which the resource was changed, updated or modified""", json_schema_extra = { "linkml_meta": {'alias': 'dateModified',
+         'close_mappings': ['schema:dateModified'],
+         'comments': ['encoded using the relevant ISO 8601 Date and Time compliant '
+                      'string [DATETIME]'],
+         'domain_of': ['Resource'],
+         'exact_mappings': ['sepio:0000036'],
+         'slot_uri': 'dct:modified'} })
 
 
 class DataProvider(DataService):
@@ -981,6 +1095,20 @@ class DataProvider(DataService):
          'recommended': True,
          'slot_uri': 'dcat:servesDataset'} })
     keyword: Optional[list[str]] = Field(default=None, title="keyword", description="""A keyword or tag describing the resource""", json_schema_extra = { "linkml_meta": {'alias': 'keyword', 'domain_of': ['Resource'], 'slot_uri': 'dcat:keyword'} })
+    dateIssued: Optional[datetime ] = Field(default=None, title="date issued", description="""Date of formal issuance (e.g., publication) of the resource""", json_schema_extra = { "linkml_meta": {'alias': 'dateIssued',
+         'close_mappings': ['schema:datePublished', 'schema:dateCreated'],
+         'comments': ['encoded using the relevant ISO 8601 Date and Time compliant '
+                      'string [DATETIME]'],
+         'domain_of': ['Resource'],
+         'exact_mappings': ['sepio:0000051'],
+         'slot_uri': 'dct:issued'} })
+    dateModified: Optional[datetime ] = Field(default=None, title="date modified", description="""Most recent date on which the resource was changed, updated or modified""", json_schema_extra = { "linkml_meta": {'alias': 'dateModified',
+         'close_mappings': ['schema:dateModified'],
+         'comments': ['encoded using the relevant ISO 8601 Date and Time compliant '
+                      'string [DATETIME]'],
+         'domain_of': ['Resource'],
+         'exact_mappings': ['sepio:0000036'],
+         'slot_uri': 'dct:modified'} })
 
 
 class PathogenIdentification(Resource):
@@ -1145,6 +1273,20 @@ class PathogenIdentification(Resource):
     serotype: Optional[str] = Field(default=None, title="serotype", description="""Genetically related pathogens that group together based on serological relationships""", json_schema_extra = { "linkml_meta": {'alias': 'serotype', 'domain_of': ['PathogenIdentification']} })
     variant: Optional[Variant] = Field(default=None, title="variant", description="""An organism with one or more new mutations is referred to as a “variant” of the original organism if not sufficiently different to be termed a distinct strain""", json_schema_extra = { "linkml_meta": {'alias': 'variant', 'domain_of': ['PathogenIdentification']} })
     keyword: Optional[list[str]] = Field(default=None, title="keyword", description="""A keyword or tag describing the resource""", json_schema_extra = { "linkml_meta": {'alias': 'keyword', 'domain_of': ['Resource'], 'slot_uri': 'dcat:keyword'} })
+    dateIssued: Optional[datetime ] = Field(default=None, title="date issued", description="""Date of formal issuance (e.g., publication) of the resource""", json_schema_extra = { "linkml_meta": {'alias': 'dateIssued',
+         'close_mappings': ['schema:datePublished', 'schema:dateCreated'],
+         'comments': ['encoded using the relevant ISO 8601 Date and Time compliant '
+                      'string [DATETIME]'],
+         'domain_of': ['Resource'],
+         'exact_mappings': ['sepio:0000051'],
+         'slot_uri': 'dct:issued'} })
+    dateModified: Optional[datetime ] = Field(default=None, title="date modified", description="""Most recent date on which the resource was changed, updated or modified""", json_schema_extra = { "linkml_meta": {'alias': 'dateModified',
+         'close_mappings': ['schema:dateModified'],
+         'comments': ['encoded using the relevant ISO 8601 Date and Time compliant '
+                      'string [DATETIME]'],
+         'domain_of': ['Resource'],
+         'exact_mappings': ['sepio:0000036'],
+         'slot_uri': 'dct:modified'} })
 
 
 class Publication(Resource):
@@ -1257,6 +1399,20 @@ class Publication(Resource):
                             'uniprotrdfs:publishedIn'],
          'domain_of': ['Publication']} })
     keyword: Optional[list[str]] = Field(default=None, title="keyword", description="""A keyword or tag describing the resource""", json_schema_extra = { "linkml_meta": {'alias': 'keyword', 'domain_of': ['Resource'], 'slot_uri': 'dcat:keyword'} })
+    dateIssued: Optional[datetime ] = Field(default=None, title="date issued", description="""Date of formal issuance (e.g., publication) of the resource""", json_schema_extra = { "linkml_meta": {'alias': 'dateIssued',
+         'close_mappings': ['schema:datePublished', 'schema:dateCreated'],
+         'comments': ['encoded using the relevant ISO 8601 Date and Time compliant '
+                      'string [DATETIME]'],
+         'domain_of': ['Resource'],
+         'exact_mappings': ['sepio:0000051'],
+         'slot_uri': 'dct:issued'} })
+    dateModified: Optional[datetime ] = Field(default=None, title="date modified", description="""Most recent date on which the resource was changed, updated or modified""", json_schema_extra = { "linkml_meta": {'alias': 'dateModified',
+         'close_mappings': ['schema:dateModified'],
+         'comments': ['encoded using the relevant ISO 8601 Date and Time compliant '
+                      'string [DATETIME]'],
+         'domain_of': ['Resource'],
+         'exact_mappings': ['sepio:0000036'],
+         'slot_uri': 'dct:modified'} })
 
 
 class Vocabulary(Catalogue):
@@ -1340,6 +1496,20 @@ class Vocabulary(Catalogue):
          'related_mappings': ['schema:identifier'],
          'slot_uri': 'dcat:version'} })
     keyword: Optional[list[str]] = Field(default=None, title="keyword", description="""A keyword or tag describing the resource""", json_schema_extra = { "linkml_meta": {'alias': 'keyword', 'domain_of': ['Resource'], 'slot_uri': 'dcat:keyword'} })
+    dateIssued: Optional[datetime ] = Field(default=None, title="date issued", description="""Date of formal issuance (e.g., publication) of the resource""", json_schema_extra = { "linkml_meta": {'alias': 'dateIssued',
+         'close_mappings': ['schema:datePublished', 'schema:dateCreated'],
+         'comments': ['encoded using the relevant ISO 8601 Date and Time compliant '
+                      'string [DATETIME]'],
+         'domain_of': ['Resource'],
+         'exact_mappings': ['sepio:0000051'],
+         'slot_uri': 'dct:issued'} })
+    dateModified: Optional[datetime ] = Field(default=None, title="date modified", description="""Most recent date on which the resource was changed, updated or modified""", json_schema_extra = { "linkml_meta": {'alias': 'dateModified',
+         'close_mappings': ['schema:dateModified'],
+         'comments': ['encoded using the relevant ISO 8601 Date and Time compliant '
+                      'string [DATETIME]'],
+         'domain_of': ['Resource'],
+         'exact_mappings': ['sepio:0000036'],
+         'slot_uri': 'dct:modified'} })
 
 
 class Term(Resource):
@@ -1474,6 +1644,20 @@ class Term(Resource):
          'domain_of': ['Term'],
          'related_mappings': ['dct:isReferencedBy']} })
     keyword: Optional[list[str]] = Field(default=None, title="keyword", description="""A keyword or tag describing the resource""", json_schema_extra = { "linkml_meta": {'alias': 'keyword', 'domain_of': ['Resource'], 'slot_uri': 'dcat:keyword'} })
+    dateIssued: Optional[datetime ] = Field(default=None, title="date issued", description="""Date of formal issuance (e.g., publication) of the resource""", json_schema_extra = { "linkml_meta": {'alias': 'dateIssued',
+         'close_mappings': ['schema:datePublished', 'schema:dateCreated'],
+         'comments': ['encoded using the relevant ISO 8601 Date and Time compliant '
+                      'string [DATETIME]'],
+         'domain_of': ['Resource'],
+         'exact_mappings': ['sepio:0000051'],
+         'slot_uri': 'dct:issued'} })
+    dateModified: Optional[datetime ] = Field(default=None, title="date modified", description="""Most recent date on which the resource was changed, updated or modified""", json_schema_extra = { "linkml_meta": {'alias': 'dateModified',
+         'close_mappings': ['schema:dateModified'],
+         'comments': ['encoded using the relevant ISO 8601 Date and Time compliant '
+                      'string [DATETIME]'],
+         'domain_of': ['Resource'],
+         'exact_mappings': ['sepio:0000036'],
+         'slot_uri': 'dct:modified'} })
 
 
 class CommonName(Term):
@@ -1580,6 +1764,20 @@ class CommonName(Term):
          'domain_of': ['Term'],
          'related_mappings': ['dct:isReferencedBy']} })
     keyword: Optional[list[str]] = Field(default=None, title="keyword", description="""A keyword or tag describing the resource""", json_schema_extra = { "linkml_meta": {'alias': 'keyword', 'domain_of': ['Resource'], 'slot_uri': 'dcat:keyword'} })
+    dateIssued: Optional[datetime ] = Field(default=None, title="date issued", description="""Date of formal issuance (e.g., publication) of the resource""", json_schema_extra = { "linkml_meta": {'alias': 'dateIssued',
+         'close_mappings': ['schema:datePublished', 'schema:dateCreated'],
+         'comments': ['encoded using the relevant ISO 8601 Date and Time compliant '
+                      'string [DATETIME]'],
+         'domain_of': ['Resource'],
+         'exact_mappings': ['sepio:0000051'],
+         'slot_uri': 'dct:issued'} })
+    dateModified: Optional[datetime ] = Field(default=None, title="date modified", description="""Most recent date on which the resource was changed, updated or modified""", json_schema_extra = { "linkml_meta": {'alias': 'dateModified',
+         'close_mappings': ['schema:dateModified'],
+         'comments': ['encoded using the relevant ISO 8601 Date and Time compliant '
+                      'string [DATETIME]'],
+         'domain_of': ['Resource'],
+         'exact_mappings': ['sepio:0000036'],
+         'slot_uri': 'dct:modified'} })
 
 
 class VirusName(CommonName):
@@ -1647,6 +1845,20 @@ class VirusName(CommonName):
          'domain_of': ['Term'],
          'related_mappings': ['dct:isReferencedBy']} })
     keyword: Optional[list[str]] = Field(default=None, title="keyword", description="""A keyword or tag describing the resource""", json_schema_extra = { "linkml_meta": {'alias': 'keyword', 'domain_of': ['Resource'], 'slot_uri': 'dcat:keyword'} })
+    dateIssued: Optional[datetime ] = Field(default=None, title="date issued", description="""Date of formal issuance (e.g., publication) of the resource""", json_schema_extra = { "linkml_meta": {'alias': 'dateIssued',
+         'close_mappings': ['schema:datePublished', 'schema:dateCreated'],
+         'comments': ['encoded using the relevant ISO 8601 Date and Time compliant '
+                      'string [DATETIME]'],
+         'domain_of': ['Resource'],
+         'exact_mappings': ['sepio:0000051'],
+         'slot_uri': 'dct:issued'} })
+    dateModified: Optional[datetime ] = Field(default=None, title="date modified", description="""Most recent date on which the resource was changed, updated or modified""", json_schema_extra = { "linkml_meta": {'alias': 'dateModified',
+         'close_mappings': ['schema:dateModified'],
+         'comments': ['encoded using the relevant ISO 8601 Date and Time compliant '
+                      'string [DATETIME]'],
+         'domain_of': ['Resource'],
+         'exact_mappings': ['sepio:0000036'],
+         'slot_uri': 'dct:modified'} })
 
 
 class AlternateName(Term):
@@ -1751,6 +1963,20 @@ class AlternateName(Term):
          'domain_of': ['Term'],
          'related_mappings': ['dct:isReferencedBy']} })
     keyword: Optional[list[str]] = Field(default=None, title="keyword", description="""A keyword or tag describing the resource""", json_schema_extra = { "linkml_meta": {'alias': 'keyword', 'domain_of': ['Resource'], 'slot_uri': 'dcat:keyword'} })
+    dateIssued: Optional[datetime ] = Field(default=None, title="date issued", description="""Date of formal issuance (e.g., publication) of the resource""", json_schema_extra = { "linkml_meta": {'alias': 'dateIssued',
+         'close_mappings': ['schema:datePublished', 'schema:dateCreated'],
+         'comments': ['encoded using the relevant ISO 8601 Date and Time compliant '
+                      'string [DATETIME]'],
+         'domain_of': ['Resource'],
+         'exact_mappings': ['sepio:0000051'],
+         'slot_uri': 'dct:issued'} })
+    dateModified: Optional[datetime ] = Field(default=None, title="date modified", description="""Most recent date on which the resource was changed, updated or modified""", json_schema_extra = { "linkml_meta": {'alias': 'dateModified',
+         'close_mappings': ['schema:dateModified'],
+         'comments': ['encoded using the relevant ISO 8601 Date and Time compliant '
+                      'string [DATETIME]'],
+         'domain_of': ['Resource'],
+         'exact_mappings': ['sepio:0000036'],
+         'slot_uri': 'dct:modified'} })
 
 
 class RiskGroup(Term):
@@ -1809,6 +2035,20 @@ class RiskGroup(Term):
          'domain_of': ['Term'],
          'related_mappings': ['dct:isReferencedBy']} })
     keyword: Optional[list[str]] = Field(default=None, title="keyword", description="""A keyword or tag describing the resource""", json_schema_extra = { "linkml_meta": {'alias': 'keyword', 'domain_of': ['Resource'], 'slot_uri': 'dcat:keyword'} })
+    dateIssued: Optional[datetime ] = Field(default=None, title="date issued", description="""Date of formal issuance (e.g., publication) of the resource""", json_schema_extra = { "linkml_meta": {'alias': 'dateIssued',
+         'close_mappings': ['schema:datePublished', 'schema:dateCreated'],
+         'comments': ['encoded using the relevant ISO 8601 Date and Time compliant '
+                      'string [DATETIME]'],
+         'domain_of': ['Resource'],
+         'exact_mappings': ['sepio:0000051'],
+         'slot_uri': 'dct:issued'} })
+    dateModified: Optional[datetime ] = Field(default=None, title="date modified", description="""Most recent date on which the resource was changed, updated or modified""", json_schema_extra = { "linkml_meta": {'alias': 'dateModified',
+         'close_mappings': ['schema:dateModified'],
+         'comments': ['encoded using the relevant ISO 8601 Date and Time compliant '
+                      'string [DATETIME]'],
+         'domain_of': ['Resource'],
+         'exact_mappings': ['sepio:0000036'],
+         'slot_uri': 'dct:modified'} })
 
 
 class Doi(Term):
@@ -1870,6 +2110,20 @@ class Doi(Term):
          'domain_of': ['Term'],
          'related_mappings': ['dct:isReferencedBy']} })
     keyword: Optional[list[str]] = Field(default=None, title="keyword", description="""A keyword or tag describing the resource""", json_schema_extra = { "linkml_meta": {'alias': 'keyword', 'domain_of': ['Resource'], 'slot_uri': 'dcat:keyword'} })
+    dateIssued: Optional[datetime ] = Field(default=None, title="date issued", description="""Date of formal issuance (e.g., publication) of the resource""", json_schema_extra = { "linkml_meta": {'alias': 'dateIssued',
+         'close_mappings': ['schema:datePublished', 'schema:dateCreated'],
+         'comments': ['encoded using the relevant ISO 8601 Date and Time compliant '
+                      'string [DATETIME]'],
+         'domain_of': ['Resource'],
+         'exact_mappings': ['sepio:0000051'],
+         'slot_uri': 'dct:issued'} })
+    dateModified: Optional[datetime ] = Field(default=None, title="date modified", description="""Most recent date on which the resource was changed, updated or modified""", json_schema_extra = { "linkml_meta": {'alias': 'dateModified',
+         'close_mappings': ['schema:dateModified'],
+         'comments': ['encoded using the relevant ISO 8601 Date and Time compliant '
+                      'string [DATETIME]'],
+         'domain_of': ['Resource'],
+         'exact_mappings': ['sepio:0000036'],
+         'slot_uri': 'dct:modified'} })
 
 
 class Journal(Term):
@@ -1931,6 +2185,20 @@ class Journal(Term):
          'domain_of': ['Term'],
          'related_mappings': ['dct:isReferencedBy']} })
     keyword: Optional[list[str]] = Field(default=None, title="keyword", description="""A keyword or tag describing the resource""", json_schema_extra = { "linkml_meta": {'alias': 'keyword', 'domain_of': ['Resource'], 'slot_uri': 'dcat:keyword'} })
+    dateIssued: Optional[datetime ] = Field(default=None, title="date issued", description="""Date of formal issuance (e.g., publication) of the resource""", json_schema_extra = { "linkml_meta": {'alias': 'dateIssued',
+         'close_mappings': ['schema:datePublished', 'schema:dateCreated'],
+         'comments': ['encoded using the relevant ISO 8601 Date and Time compliant '
+                      'string [DATETIME]'],
+         'domain_of': ['Resource'],
+         'exact_mappings': ['sepio:0000051'],
+         'slot_uri': 'dct:issued'} })
+    dateModified: Optional[datetime ] = Field(default=None, title="date modified", description="""Most recent date on which the resource was changed, updated or modified""", json_schema_extra = { "linkml_meta": {'alias': 'dateModified',
+         'close_mappings': ['schema:dateModified'],
+         'comments': ['encoded using the relevant ISO 8601 Date and Time compliant '
+                      'string [DATETIME]'],
+         'domain_of': ['Resource'],
+         'exact_mappings': ['sepio:0000036'],
+         'slot_uri': 'dct:modified'} })
 
 
 class PdbReference(Term):
@@ -1986,6 +2254,20 @@ class PdbReference(Term):
          'domain_of': ['Term'],
          'related_mappings': ['dct:isReferencedBy']} })
     keyword: Optional[list[str]] = Field(default=None, title="keyword", description="""A keyword or tag describing the resource""", json_schema_extra = { "linkml_meta": {'alias': 'keyword', 'domain_of': ['Resource'], 'slot_uri': 'dcat:keyword'} })
+    dateIssued: Optional[datetime ] = Field(default=None, title="date issued", description="""Date of formal issuance (e.g., publication) of the resource""", json_schema_extra = { "linkml_meta": {'alias': 'dateIssued',
+         'close_mappings': ['schema:datePublished', 'schema:dateCreated'],
+         'comments': ['encoded using the relevant ISO 8601 Date and Time compliant '
+                      'string [DATETIME]'],
+         'domain_of': ['Resource'],
+         'exact_mappings': ['sepio:0000051'],
+         'slot_uri': 'dct:issued'} })
+    dateModified: Optional[datetime ] = Field(default=None, title="date modified", description="""Most recent date on which the resource was changed, updated or modified""", json_schema_extra = { "linkml_meta": {'alias': 'dateModified',
+         'close_mappings': ['schema:dateModified'],
+         'comments': ['encoded using the relevant ISO 8601 Date and Time compliant '
+                      'string [DATETIME]'],
+         'domain_of': ['Resource'],
+         'exact_mappings': ['sepio:0000036'],
+         'slot_uri': 'dct:modified'} })
 
 
 class Keyword(Term):
@@ -2047,6 +2329,20 @@ class Keyword(Term):
          'domain_of': ['Term'],
          'related_mappings': ['dct:isReferencedBy']} })
     keyword: Optional[list[str]] = Field(default=None, title="keyword", description="""A keyword or tag describing the resource""", json_schema_extra = { "linkml_meta": {'alias': 'keyword', 'domain_of': ['Resource'], 'slot_uri': 'dcat:keyword'} })
+    dateIssued: Optional[datetime ] = Field(default=None, title="date issued", description="""Date of formal issuance (e.g., publication) of the resource""", json_schema_extra = { "linkml_meta": {'alias': 'dateIssued',
+         'close_mappings': ['schema:datePublished', 'schema:dateCreated'],
+         'comments': ['encoded using the relevant ISO 8601 Date and Time compliant '
+                      'string [DATETIME]'],
+         'domain_of': ['Resource'],
+         'exact_mappings': ['sepio:0000051'],
+         'slot_uri': 'dct:issued'} })
+    dateModified: Optional[datetime ] = Field(default=None, title="date modified", description="""Most recent date on which the resource was changed, updated or modified""", json_schema_extra = { "linkml_meta": {'alias': 'dateModified',
+         'close_mappings': ['schema:dateModified'],
+         'comments': ['encoded using the relevant ISO 8601 Date and Time compliant '
+                      'string [DATETIME]'],
+         'domain_of': ['Resource'],
+         'exact_mappings': ['sepio:0000036'],
+         'slot_uri': 'dct:modified'} })
 
 
 class TagSequence(Term):
@@ -2104,6 +2400,20 @@ class TagSequence(Term):
          'domain_of': ['Term'],
          'related_mappings': ['dct:isReferencedBy']} })
     keyword: Optional[list[str]] = Field(default=None, title="keyword", description="""A keyword or tag describing the resource""", json_schema_extra = { "linkml_meta": {'alias': 'keyword', 'domain_of': ['Resource'], 'slot_uri': 'dcat:keyword'} })
+    dateIssued: Optional[datetime ] = Field(default=None, title="date issued", description="""Date of formal issuance (e.g., publication) of the resource""", json_schema_extra = { "linkml_meta": {'alias': 'dateIssued',
+         'close_mappings': ['schema:datePublished', 'schema:dateCreated'],
+         'comments': ['encoded using the relevant ISO 8601 Date and Time compliant '
+                      'string [DATETIME]'],
+         'domain_of': ['Resource'],
+         'exact_mappings': ['sepio:0000051'],
+         'slot_uri': 'dct:issued'} })
+    dateModified: Optional[datetime ] = Field(default=None, title="date modified", description="""Most recent date on which the resource was changed, updated or modified""", json_schema_extra = { "linkml_meta": {'alias': 'dateModified',
+         'close_mappings': ['schema:dateModified'],
+         'comments': ['encoded using the relevant ISO 8601 Date and Time compliant '
+                      'string [DATETIME]'],
+         'domain_of': ['Resource'],
+         'exact_mappings': ['sepio:0000036'],
+         'slot_uri': 'dct:modified'} })
 
 
 class SpecialFeature(Term):
@@ -2161,6 +2471,20 @@ class SpecialFeature(Term):
          'domain_of': ['Term'],
          'related_mappings': ['dct:isReferencedBy']} })
     keyword: Optional[list[str]] = Field(default=None, title="keyword", description="""A keyword or tag describing the resource""", json_schema_extra = { "linkml_meta": {'alias': 'keyword', 'domain_of': ['Resource'], 'slot_uri': 'dcat:keyword'} })
+    dateIssued: Optional[datetime ] = Field(default=None, title="date issued", description="""Date of formal issuance (e.g., publication) of the resource""", json_schema_extra = { "linkml_meta": {'alias': 'dateIssued',
+         'close_mappings': ['schema:datePublished', 'schema:dateCreated'],
+         'comments': ['encoded using the relevant ISO 8601 Date and Time compliant '
+                      'string [DATETIME]'],
+         'domain_of': ['Resource'],
+         'exact_mappings': ['sepio:0000051'],
+         'slot_uri': 'dct:issued'} })
+    dateModified: Optional[datetime ] = Field(default=None, title="date modified", description="""Most recent date on which the resource was changed, updated or modified""", json_schema_extra = { "linkml_meta": {'alias': 'dateModified',
+         'close_mappings': ['schema:dateModified'],
+         'comments': ['encoded using the relevant ISO 8601 Date and Time compliant '
+                      'string [DATETIME]'],
+         'domain_of': ['Resource'],
+         'exact_mappings': ['sepio:0000036'],
+         'slot_uri': 'dct:modified'} })
 
 
 class ExpressionVector(Term):
@@ -2219,6 +2543,20 @@ class ExpressionVector(Term):
          'domain_of': ['Term'],
          'related_mappings': ['dct:isReferencedBy']} })
     keyword: Optional[list[str]] = Field(default=None, title="keyword", description="""A keyword or tag describing the resource""", json_schema_extra = { "linkml_meta": {'alias': 'keyword', 'domain_of': ['Resource'], 'slot_uri': 'dcat:keyword'} })
+    dateIssued: Optional[datetime ] = Field(default=None, title="date issued", description="""Date of formal issuance (e.g., publication) of the resource""", json_schema_extra = { "linkml_meta": {'alias': 'dateIssued',
+         'close_mappings': ['schema:datePublished', 'schema:dateCreated'],
+         'comments': ['encoded using the relevant ISO 8601 Date and Time compliant '
+                      'string [DATETIME]'],
+         'domain_of': ['Resource'],
+         'exact_mappings': ['sepio:0000051'],
+         'slot_uri': 'dct:issued'} })
+    dateModified: Optional[datetime ] = Field(default=None, title="date modified", description="""Most recent date on which the resource was changed, updated or modified""", json_schema_extra = { "linkml_meta": {'alias': 'dateModified',
+         'close_mappings': ['schema:dateModified'],
+         'comments': ['encoded using the relevant ISO 8601 Date and Time compliant '
+                      'string [DATETIME]'],
+         'domain_of': ['Resource'],
+         'exact_mappings': ['sepio:0000036'],
+         'slot_uri': 'dct:modified'} })
 
 
 class PlasmidSelection(Term):
@@ -2273,6 +2611,20 @@ class PlasmidSelection(Term):
          'domain_of': ['Term'],
          'related_mappings': ['dct:isReferencedBy']} })
     keyword: Optional[list[str]] = Field(default=None, title="keyword", description="""A keyword or tag describing the resource""", json_schema_extra = { "linkml_meta": {'alias': 'keyword', 'domain_of': ['Resource'], 'slot_uri': 'dcat:keyword'} })
+    dateIssued: Optional[datetime ] = Field(default=None, title="date issued", description="""Date of formal issuance (e.g., publication) of the resource""", json_schema_extra = { "linkml_meta": {'alias': 'dateIssued',
+         'close_mappings': ['schema:datePublished', 'schema:dateCreated'],
+         'comments': ['encoded using the relevant ISO 8601 Date and Time compliant '
+                      'string [DATETIME]'],
+         'domain_of': ['Resource'],
+         'exact_mappings': ['sepio:0000051'],
+         'slot_uri': 'dct:issued'} })
+    dateModified: Optional[datetime ] = Field(default=None, title="date modified", description="""Most recent date on which the resource was changed, updated or modified""", json_schema_extra = { "linkml_meta": {'alias': 'dateModified',
+         'close_mappings': ['schema:dateModified'],
+         'comments': ['encoded using the relevant ISO 8601 Date and Time compliant '
+                      'string [DATETIME]'],
+         'domain_of': ['Resource'],
+         'exact_mappings': ['sepio:0000036'],
+         'slot_uri': 'dct:modified'} })
 
 
 class PropagationHost(Term):
@@ -2327,6 +2679,20 @@ class PropagationHost(Term):
          'domain_of': ['Term'],
          'related_mappings': ['dct:isReferencedBy']} })
     keyword: Optional[list[str]] = Field(default=None, title="keyword", description="""A keyword or tag describing the resource""", json_schema_extra = { "linkml_meta": {'alias': 'keyword', 'domain_of': ['Resource'], 'slot_uri': 'dcat:keyword'} })
+    dateIssued: Optional[datetime ] = Field(default=None, title="date issued", description="""Date of formal issuance (e.g., publication) of the resource""", json_schema_extra = { "linkml_meta": {'alias': 'dateIssued',
+         'close_mappings': ['schema:datePublished', 'schema:dateCreated'],
+         'comments': ['encoded using the relevant ISO 8601 Date and Time compliant '
+                      'string [DATETIME]'],
+         'domain_of': ['Resource'],
+         'exact_mappings': ['sepio:0000051'],
+         'slot_uri': 'dct:issued'} })
+    dateModified: Optional[datetime ] = Field(default=None, title="date modified", description="""Most recent date on which the resource was changed, updated or modified""", json_schema_extra = { "linkml_meta": {'alias': 'dateModified',
+         'close_mappings': ['schema:dateModified'],
+         'comments': ['encoded using the relevant ISO 8601 Date and Time compliant '
+                      'string [DATETIME]'],
+         'domain_of': ['Resource'],
+         'exact_mappings': ['sepio:0000036'],
+         'slot_uri': 'dct:modified'} })
 
 
 class TransmissionMethod(Term):
@@ -2382,6 +2748,20 @@ class TransmissionMethod(Term):
          'domain_of': ['Term'],
          'related_mappings': ['dct:isReferencedBy']} })
     keyword: Optional[list[str]] = Field(default=None, title="keyword", description="""A keyword or tag describing the resource""", json_schema_extra = { "linkml_meta": {'alias': 'keyword', 'domain_of': ['Resource'], 'slot_uri': 'dcat:keyword'} })
+    dateIssued: Optional[datetime ] = Field(default=None, title="date issued", description="""Date of formal issuance (e.g., publication) of the resource""", json_schema_extra = { "linkml_meta": {'alias': 'dateIssued',
+         'close_mappings': ['schema:datePublished', 'schema:dateCreated'],
+         'comments': ['encoded using the relevant ISO 8601 Date and Time compliant '
+                      'string [DATETIME]'],
+         'domain_of': ['Resource'],
+         'exact_mappings': ['sepio:0000051'],
+         'slot_uri': 'dct:issued'} })
+    dateModified: Optional[datetime ] = Field(default=None, title="date modified", description="""Most recent date on which the resource was changed, updated or modified""", json_schema_extra = { "linkml_meta": {'alias': 'dateModified',
+         'close_mappings': ['schema:dateModified'],
+         'comments': ['encoded using the relevant ISO 8601 Date and Time compliant '
+                      'string [DATETIME]'],
+         'domain_of': ['Resource'],
+         'exact_mappings': ['sepio:0000036'],
+         'slot_uri': 'dct:modified'} })
 
 
 class ProductionCellLine(Term):
@@ -2440,6 +2820,20 @@ class ProductionCellLine(Term):
          'domain_of': ['Term'],
          'related_mappings': ['dct:isReferencedBy']} })
     keyword: Optional[list[str]] = Field(default=None, title="keyword", description="""A keyword or tag describing the resource""", json_schema_extra = { "linkml_meta": {'alias': 'keyword', 'domain_of': ['Resource'], 'slot_uri': 'dcat:keyword'} })
+    dateIssued: Optional[datetime ] = Field(default=None, title="date issued", description="""Date of formal issuance (e.g., publication) of the resource""", json_schema_extra = { "linkml_meta": {'alias': 'dateIssued',
+         'close_mappings': ['schema:datePublished', 'schema:dateCreated'],
+         'comments': ['encoded using the relevant ISO 8601 Date and Time compliant '
+                      'string [DATETIME]'],
+         'domain_of': ['Resource'],
+         'exact_mappings': ['sepio:0000051'],
+         'slot_uri': 'dct:issued'} })
+    dateModified: Optional[datetime ] = Field(default=None, title="date modified", description="""Most recent date on which the resource was changed, updated or modified""", json_schema_extra = { "linkml_meta": {'alias': 'dateModified',
+         'close_mappings': ['schema:dateModified'],
+         'comments': ['encoded using the relevant ISO 8601 Date and Time compliant '
+                      'string [DATETIME]'],
+         'domain_of': ['Resource'],
+         'exact_mappings': ['sepio:0000036'],
+         'slot_uri': 'dct:modified'} })
 
 
 class ProductCategory(Term):
@@ -2518,6 +2912,20 @@ class ProductCategory(Term):
          'domain_of': ['Term'],
          'related_mappings': ['dct:isReferencedBy']} })
     keyword: Optional[list[str]] = Field(default=None, title="keyword", description="""A keyword or tag describing the resource""", json_schema_extra = { "linkml_meta": {'alias': 'keyword', 'domain_of': ['Resource'], 'slot_uri': 'dcat:keyword'} })
+    dateIssued: Optional[datetime ] = Field(default=None, title="date issued", description="""Date of formal issuance (e.g., publication) of the resource""", json_schema_extra = { "linkml_meta": {'alias': 'dateIssued',
+         'close_mappings': ['schema:datePublished', 'schema:dateCreated'],
+         'comments': ['encoded using the relevant ISO 8601 Date and Time compliant '
+                      'string [DATETIME]'],
+         'domain_of': ['Resource'],
+         'exact_mappings': ['sepio:0000051'],
+         'slot_uri': 'dct:issued'} })
+    dateModified: Optional[datetime ] = Field(default=None, title="date modified", description="""Most recent date on which the resource was changed, updated or modified""", json_schema_extra = { "linkml_meta": {'alias': 'dateModified',
+         'close_mappings': ['schema:dateModified'],
+         'comments': ['encoded using the relevant ISO 8601 Date and Time compliant '
+                      'string [DATETIME]'],
+         'domain_of': ['Resource'],
+         'exact_mappings': ['sepio:0000036'],
+         'slot_uri': 'dct:modified'} })
 
 
 class IsolationHost(Term):
@@ -2570,6 +2978,20 @@ class IsolationHost(Term):
          'domain_of': ['Term'],
          'related_mappings': ['dct:isReferencedBy']} })
     keyword: Optional[list[str]] = Field(default=None, title="keyword", description="""A keyword or tag describing the resource""", json_schema_extra = { "linkml_meta": {'alias': 'keyword', 'domain_of': ['Resource'], 'slot_uri': 'dcat:keyword'} })
+    dateIssued: Optional[datetime ] = Field(default=None, title="date issued", description="""Date of formal issuance (e.g., publication) of the resource""", json_schema_extra = { "linkml_meta": {'alias': 'dateIssued',
+         'close_mappings': ['schema:datePublished', 'schema:dateCreated'],
+         'comments': ['encoded using the relevant ISO 8601 Date and Time compliant '
+                      'string [DATETIME]'],
+         'domain_of': ['Resource'],
+         'exact_mappings': ['sepio:0000051'],
+         'slot_uri': 'dct:issued'} })
+    dateModified: Optional[datetime ] = Field(default=None, title="date modified", description="""Most recent date on which the resource was changed, updated or modified""", json_schema_extra = { "linkml_meta": {'alias': 'dateModified',
+         'close_mappings': ['schema:dateModified'],
+         'comments': ['encoded using the relevant ISO 8601 Date and Time compliant '
+                      'string [DATETIME]'],
+         'domain_of': ['Resource'],
+         'exact_mappings': ['sepio:0000036'],
+         'slot_uri': 'dct:modified'} })
 
 
 class GeographicalOrigin(Term):
@@ -2633,6 +3055,20 @@ class GeographicalOrigin(Term):
          'domain_of': ['Term'],
          'related_mappings': ['dct:isReferencedBy']} })
     keyword: Optional[list[str]] = Field(default=None, title="keyword", description="""A keyword or tag describing the resource""", json_schema_extra = { "linkml_meta": {'alias': 'keyword', 'domain_of': ['Resource'], 'slot_uri': 'dcat:keyword'} })
+    dateIssued: Optional[datetime ] = Field(default=None, title="date issued", description="""Date of formal issuance (e.g., publication) of the resource""", json_schema_extra = { "linkml_meta": {'alias': 'dateIssued',
+         'close_mappings': ['schema:datePublished', 'schema:dateCreated'],
+         'comments': ['encoded using the relevant ISO 8601 Date and Time compliant '
+                      'string [DATETIME]'],
+         'domain_of': ['Resource'],
+         'exact_mappings': ['sepio:0000051'],
+         'slot_uri': 'dct:issued'} })
+    dateModified: Optional[datetime ] = Field(default=None, title="date modified", description="""Most recent date on which the resource was changed, updated or modified""", json_schema_extra = { "linkml_meta": {'alias': 'dateModified',
+         'close_mappings': ['schema:dateModified'],
+         'comments': ['encoded using the relevant ISO 8601 Date and Time compliant '
+                      'string [DATETIME]'],
+         'domain_of': ['Resource'],
+         'exact_mappings': ['sepio:0000036'],
+         'slot_uri': 'dct:modified'} })
 
 
 class IplcOrigin(GeographicalOrigin):
@@ -2694,6 +3130,20 @@ class IplcOrigin(GeographicalOrigin):
          'domain_of': ['Term'],
          'related_mappings': ['dct:isReferencedBy']} })
     keyword: Optional[list[str]] = Field(default=None, title="keyword", description="""A keyword or tag describing the resource""", json_schema_extra = { "linkml_meta": {'alias': 'keyword', 'domain_of': ['Resource'], 'slot_uri': 'dcat:keyword'} })
+    dateIssued: Optional[datetime ] = Field(default=None, title="date issued", description="""Date of formal issuance (e.g., publication) of the resource""", json_schema_extra = { "linkml_meta": {'alias': 'dateIssued',
+         'close_mappings': ['schema:datePublished', 'schema:dateCreated'],
+         'comments': ['encoded using the relevant ISO 8601 Date and Time compliant '
+                      'string [DATETIME]'],
+         'domain_of': ['Resource'],
+         'exact_mappings': ['sepio:0000051'],
+         'slot_uri': 'dct:issued'} })
+    dateModified: Optional[datetime ] = Field(default=None, title="date modified", description="""Most recent date on which the resource was changed, updated or modified""", json_schema_extra = { "linkml_meta": {'alias': 'dateModified',
+         'close_mappings': ['schema:dateModified'],
+         'comments': ['encoded using the relevant ISO 8601 Date and Time compliant '
+                      'string [DATETIME]'],
+         'domain_of': ['Resource'],
+         'exact_mappings': ['sepio:0000036'],
+         'slot_uri': 'dct:modified'} })
 
 
 class Country(Term):
@@ -2779,6 +3229,20 @@ class Country(Term):
          'domain_of': ['Term'],
          'related_mappings': ['dct:isReferencedBy']} })
     keyword: Optional[list[str]] = Field(default=None, title="keyword", description="""A keyword or tag describing the resource""", json_schema_extra = { "linkml_meta": {'alias': 'keyword', 'domain_of': ['Resource'], 'slot_uri': 'dcat:keyword'} })
+    dateIssued: Optional[datetime ] = Field(default=None, title="date issued", description="""Date of formal issuance (e.g., publication) of the resource""", json_schema_extra = { "linkml_meta": {'alias': 'dateIssued',
+         'close_mappings': ['schema:datePublished', 'schema:dateCreated'],
+         'comments': ['encoded using the relevant ISO 8601 Date and Time compliant '
+                      'string [DATETIME]'],
+         'domain_of': ['Resource'],
+         'exact_mappings': ['sepio:0000051'],
+         'slot_uri': 'dct:issued'} })
+    dateModified: Optional[datetime ] = Field(default=None, title="date modified", description="""Most recent date on which the resource was changed, updated or modified""", json_schema_extra = { "linkml_meta": {'alias': 'dateModified',
+         'close_mappings': ['schema:dateModified'],
+         'comments': ['encoded using the relevant ISO 8601 Date and Time compliant '
+                      'string [DATETIME]'],
+         'domain_of': ['Resource'],
+         'exact_mappings': ['sepio:0000036'],
+         'slot_uri': 'dct:modified'} })
 
 
 class IataClassification(Term):
@@ -2833,6 +3297,20 @@ class IataClassification(Term):
          'domain_of': ['Term'],
          'related_mappings': ['dct:isReferencedBy']} })
     keyword: Optional[list[str]] = Field(default=None, title="keyword", description="""A keyword or tag describing the resource""", json_schema_extra = { "linkml_meta": {'alias': 'keyword', 'domain_of': ['Resource'], 'slot_uri': 'dcat:keyword'} })
+    dateIssued: Optional[datetime ] = Field(default=None, title="date issued", description="""Date of formal issuance (e.g., publication) of the resource""", json_schema_extra = { "linkml_meta": {'alias': 'dateIssued',
+         'close_mappings': ['schema:datePublished', 'schema:dateCreated'],
+         'comments': ['encoded using the relevant ISO 8601 Date and Time compliant '
+                      'string [DATETIME]'],
+         'domain_of': ['Resource'],
+         'exact_mappings': ['sepio:0000051'],
+         'slot_uri': 'dct:issued'} })
+    dateModified: Optional[datetime ] = Field(default=None, title="date modified", description="""Most recent date on which the resource was changed, updated or modified""", json_schema_extra = { "linkml_meta": {'alias': 'dateModified',
+         'close_mappings': ['schema:dateModified'],
+         'comments': ['encoded using the relevant ISO 8601 Date and Time compliant '
+                      'string [DATETIME]'],
+         'domain_of': ['Resource'],
+         'exact_mappings': ['sepio:0000036'],
+         'slot_uri': 'dct:modified'} })
 
 
 class Variant(CommonName):
@@ -2899,6 +3377,20 @@ class Variant(CommonName):
          'domain_of': ['Term'],
          'related_mappings': ['dct:isReferencedBy']} })
     keyword: Optional[list[str]] = Field(default=None, title="keyword", description="""A keyword or tag describing the resource""", json_schema_extra = { "linkml_meta": {'alias': 'keyword', 'domain_of': ['Resource'], 'slot_uri': 'dcat:keyword'} })
+    dateIssued: Optional[datetime ] = Field(default=None, title="date issued", description="""Date of formal issuance (e.g., publication) of the resource""", json_schema_extra = { "linkml_meta": {'alias': 'dateIssued',
+         'close_mappings': ['schema:datePublished', 'schema:dateCreated'],
+         'comments': ['encoded using the relevant ISO 8601 Date and Time compliant '
+                      'string [DATETIME]'],
+         'domain_of': ['Resource'],
+         'exact_mappings': ['sepio:0000051'],
+         'slot_uri': 'dct:issued'} })
+    dateModified: Optional[datetime ] = Field(default=None, title="date modified", description="""Most recent date on which the resource was changed, updated or modified""", json_schema_extra = { "linkml_meta": {'alias': 'dateModified',
+         'close_mappings': ['schema:dateModified'],
+         'comments': ['encoded using the relevant ISO 8601 Date and Time compliant '
+                      'string [DATETIME]'],
+         'domain_of': ['Resource'],
+         'exact_mappings': ['sepio:0000036'],
+         'slot_uri': 'dct:modified'} })
 
 
 class TaxonomicRank(Term):
@@ -2974,6 +3466,20 @@ class TaxonomicRank(Term):
          'domain_of': ['Term'],
          'related_mappings': ['dct:isReferencedBy']} })
     keyword: Optional[list[str]] = Field(default=None, title="keyword", description="""A keyword or tag describing the resource""", json_schema_extra = { "linkml_meta": {'alias': 'keyword', 'domain_of': ['Resource'], 'slot_uri': 'dcat:keyword'} })
+    dateIssued: Optional[datetime ] = Field(default=None, title="date issued", description="""Date of formal issuance (e.g., publication) of the resource""", json_schema_extra = { "linkml_meta": {'alias': 'dateIssued',
+         'close_mappings': ['schema:datePublished', 'schema:dateCreated'],
+         'comments': ['encoded using the relevant ISO 8601 Date and Time compliant '
+                      'string [DATETIME]'],
+         'domain_of': ['Resource'],
+         'exact_mappings': ['sepio:0000051'],
+         'slot_uri': 'dct:issued'} })
+    dateModified: Optional[datetime ] = Field(default=None, title="date modified", description="""Most recent date on which the resource was changed, updated or modified""", json_schema_extra = { "linkml_meta": {'alias': 'dateModified',
+         'close_mappings': ['schema:dateModified'],
+         'comments': ['encoded using the relevant ISO 8601 Date and Time compliant '
+                      'string [DATETIME]'],
+         'domain_of': ['Resource'],
+         'exact_mappings': ['sepio:0000036'],
+         'slot_uri': 'dct:modified'} })
 
 
 class Taxon(Term):
@@ -3180,6 +3686,20 @@ class Taxon(Term):
          'domain_of': ['Term'],
          'related_mappings': ['dct:isReferencedBy']} })
     keyword: Optional[list[str]] = Field(default=None, title="keyword", description="""A keyword or tag describing the resource""", json_schema_extra = { "linkml_meta": {'alias': 'keyword', 'domain_of': ['Resource'], 'slot_uri': 'dcat:keyword'} })
+    dateIssued: Optional[datetime ] = Field(default=None, title="date issued", description="""Date of formal issuance (e.g., publication) of the resource""", json_schema_extra = { "linkml_meta": {'alias': 'dateIssued',
+         'close_mappings': ['schema:datePublished', 'schema:dateCreated'],
+         'comments': ['encoded using the relevant ISO 8601 Date and Time compliant '
+                      'string [DATETIME]'],
+         'domain_of': ['Resource'],
+         'exact_mappings': ['sepio:0000051'],
+         'slot_uri': 'dct:issued'} })
+    dateModified: Optional[datetime ] = Field(default=None, title="date modified", description="""Most recent date on which the resource was changed, updated or modified""", json_schema_extra = { "linkml_meta": {'alias': 'dateModified',
+         'close_mappings': ['schema:dateModified'],
+         'comments': ['encoded using the relevant ISO 8601 Date and Time compliant '
+                      'string [DATETIME]'],
+         'domain_of': ['Resource'],
+         'exact_mappings': ['sepio:0000036'],
+         'slot_uri': 'dct:modified'} })
 
 
 class ExternalRelatedReference(Resource):
@@ -3249,6 +3769,20 @@ class ExternalRelatedReference(Resource):
          'close_mappings': ['dct:publisher'],
          'domain_of': ['ExternalRelatedReference']} })
     keyword: Optional[list[str]] = Field(default=None, title="keyword", description="""A keyword or tag describing the resource""", json_schema_extra = { "linkml_meta": {'alias': 'keyword', 'domain_of': ['Resource'], 'slot_uri': 'dcat:keyword'} })
+    dateIssued: Optional[datetime ] = Field(default=None, title="date issued", description="""Date of formal issuance (e.g., publication) of the resource""", json_schema_extra = { "linkml_meta": {'alias': 'dateIssued',
+         'close_mappings': ['schema:datePublished', 'schema:dateCreated'],
+         'comments': ['encoded using the relevant ISO 8601 Date and Time compliant '
+                      'string [DATETIME]'],
+         'domain_of': ['Resource'],
+         'exact_mappings': ['sepio:0000051'],
+         'slot_uri': 'dct:issued'} })
+    dateModified: Optional[datetime ] = Field(default=None, title="date modified", description="""Most recent date on which the resource was changed, updated or modified""", json_schema_extra = { "linkml_meta": {'alias': 'dateModified',
+         'close_mappings': ['schema:dateModified'],
+         'comments': ['encoded using the relevant ISO 8601 Date and Time compliant '
+                      'string [DATETIME]'],
+         'domain_of': ['Resource'],
+         'exact_mappings': ['sepio:0000036'],
+         'slot_uri': 'dct:modified'} })
 
 
 class Sequence(Resource):
@@ -3310,6 +3844,20 @@ class Sequence(Resource):
                       'be provided'],
          'domain_of': ['Sequence']} })
     keyword: Optional[list[str]] = Field(default=None, title="keyword", description="""A keyword or tag describing the resource""", json_schema_extra = { "linkml_meta": {'alias': 'keyword', 'domain_of': ['Resource'], 'slot_uri': 'dcat:keyword'} })
+    dateIssued: Optional[datetime ] = Field(default=None, title="date issued", description="""Date of formal issuance (e.g., publication) of the resource""", json_schema_extra = { "linkml_meta": {'alias': 'dateIssued',
+         'close_mappings': ['schema:datePublished', 'schema:dateCreated'],
+         'comments': ['encoded using the relevant ISO 8601 Date and Time compliant '
+                      'string [DATETIME]'],
+         'domain_of': ['Resource'],
+         'exact_mappings': ['sepio:0000051'],
+         'slot_uri': 'dct:issued'} })
+    dateModified: Optional[datetime ] = Field(default=None, title="date modified", description="""Most recent date on which the resource was changed, updated or modified""", json_schema_extra = { "linkml_meta": {'alias': 'dateModified',
+         'close_mappings': ['schema:dateModified'],
+         'comments': ['encoded using the relevant ISO 8601 Date and Time compliant '
+                      'string [DATETIME]'],
+         'domain_of': ['Resource'],
+         'exact_mappings': ['sepio:0000036'],
+         'slot_uri': 'dct:modified'} })
 
 
 class SequenceReference(Resource):
@@ -3357,6 +3905,20 @@ class SequenceReference(Resource):
          'domain_of': ['SequenceReference'],
          'equals_string_in': ['ENA', 'GenBank']} })
     keyword: Optional[list[str]] = Field(default=None, title="keyword", description="""A keyword or tag describing the resource""", json_schema_extra = { "linkml_meta": {'alias': 'keyword', 'domain_of': ['Resource'], 'slot_uri': 'dcat:keyword'} })
+    dateIssued: Optional[datetime ] = Field(default=None, title="date issued", description="""Date of formal issuance (e.g., publication) of the resource""", json_schema_extra = { "linkml_meta": {'alias': 'dateIssued',
+         'close_mappings': ['schema:datePublished', 'schema:dateCreated'],
+         'comments': ['encoded using the relevant ISO 8601 Date and Time compliant '
+                      'string [DATETIME]'],
+         'domain_of': ['Resource'],
+         'exact_mappings': ['sepio:0000051'],
+         'slot_uri': 'dct:issued'} })
+    dateModified: Optional[datetime ] = Field(default=None, title="date modified", description="""Most recent date on which the resource was changed, updated or modified""", json_schema_extra = { "linkml_meta": {'alias': 'dateModified',
+         'close_mappings': ['schema:dateModified'],
+         'comments': ['encoded using the relevant ISO 8601 Date and Time compliant '
+                      'string [DATETIME]'],
+         'domain_of': ['Resource'],
+         'exact_mappings': ['sepio:0000036'],
+         'slot_uri': 'dct:modified'} })
 
 
 class PersonOrOrganization(Resource):
@@ -3471,6 +4033,20 @@ class PersonOrOrganization(Resource):
          'domain_of': ['PersonOrOrganization', 'License', 'Certification'],
          'exact_mappings': ['schema:logo']} })
     keyword: Optional[list[str]] = Field(default=None, title="keyword", description="""A keyword or tag describing the resource""", json_schema_extra = { "linkml_meta": {'alias': 'keyword', 'domain_of': ['Resource'], 'slot_uri': 'dcat:keyword'} })
+    dateIssued: Optional[datetime ] = Field(default=None, title="date issued", description="""Date of formal issuance (e.g., publication) of the resource""", json_schema_extra = { "linkml_meta": {'alias': 'dateIssued',
+         'close_mappings': ['schema:datePublished', 'schema:dateCreated'],
+         'comments': ['encoded using the relevant ISO 8601 Date and Time compliant '
+                      'string [DATETIME]'],
+         'domain_of': ['Resource'],
+         'exact_mappings': ['sepio:0000051'],
+         'slot_uri': 'dct:issued'} })
+    dateModified: Optional[datetime ] = Field(default=None, title="date modified", description="""Most recent date on which the resource was changed, updated or modified""", json_schema_extra = { "linkml_meta": {'alias': 'dateModified',
+         'close_mappings': ['schema:dateModified'],
+         'comments': ['encoded using the relevant ISO 8601 Date and Time compliant '
+                      'string [DATETIME]'],
+         'domain_of': ['Resource'],
+         'exact_mappings': ['sepio:0000036'],
+         'slot_uri': 'dct:modified'} })
 
 
 class Person(PersonOrOrganization):
@@ -3537,6 +4113,20 @@ class Person(PersonOrOrganization):
          'domain_of': ['PersonOrOrganization', 'License', 'Certification'],
          'exact_mappings': ['schema:logo']} })
     keyword: Optional[list[str]] = Field(default=None, title="keyword", description="""A keyword or tag describing the resource""", json_schema_extra = { "linkml_meta": {'alias': 'keyword', 'domain_of': ['Resource'], 'slot_uri': 'dcat:keyword'} })
+    dateIssued: Optional[datetime ] = Field(default=None, title="date issued", description="""Date of formal issuance (e.g., publication) of the resource""", json_schema_extra = { "linkml_meta": {'alias': 'dateIssued',
+         'close_mappings': ['schema:datePublished', 'schema:dateCreated'],
+         'comments': ['encoded using the relevant ISO 8601 Date and Time compliant '
+                      'string [DATETIME]'],
+         'domain_of': ['Resource'],
+         'exact_mappings': ['sepio:0000051'],
+         'slot_uri': 'dct:issued'} })
+    dateModified: Optional[datetime ] = Field(default=None, title="date modified", description="""Most recent date on which the resource was changed, updated or modified""", json_schema_extra = { "linkml_meta": {'alias': 'dateModified',
+         'close_mappings': ['schema:dateModified'],
+         'comments': ['encoded using the relevant ISO 8601 Date and Time compliant '
+                      'string [DATETIME]'],
+         'domain_of': ['Resource'],
+         'exact_mappings': ['sepio:0000036'],
+         'slot_uri': 'dct:modified'} })
 
 
 class Organization(PersonOrOrganization):
@@ -3641,6 +4231,20 @@ class Organization(PersonOrOrganization):
          'domain_of': ['PersonOrOrganization', 'License', 'Certification'],
          'exact_mappings': ['schema:logo']} })
     keyword: Optional[list[str]] = Field(default=None, title="keyword", description="""A keyword or tag describing the resource""", json_schema_extra = { "linkml_meta": {'alias': 'keyword', 'domain_of': ['Resource'], 'slot_uri': 'dcat:keyword'} })
+    dateIssued: Optional[datetime ] = Field(default=None, title="date issued", description="""Date of formal issuance (e.g., publication) of the resource""", json_schema_extra = { "linkml_meta": {'alias': 'dateIssued',
+         'close_mappings': ['schema:datePublished', 'schema:dateCreated'],
+         'comments': ['encoded using the relevant ISO 8601 Date and Time compliant '
+                      'string [DATETIME]'],
+         'domain_of': ['Resource'],
+         'exact_mappings': ['sepio:0000051'],
+         'slot_uri': 'dct:issued'} })
+    dateModified: Optional[datetime ] = Field(default=None, title="date modified", description="""Most recent date on which the resource was changed, updated or modified""", json_schema_extra = { "linkml_meta": {'alias': 'dateModified',
+         'close_mappings': ['schema:dateModified'],
+         'comments': ['encoded using the relevant ISO 8601 Date and Time compliant '
+                      'string [DATETIME]'],
+         'domain_of': ['Resource'],
+         'exact_mappings': ['sepio:0000036'],
+         'slot_uri': 'dct:modified'} })
 
 
 class ReasearchInfrastructure(Organization):
@@ -3702,6 +4306,20 @@ class ReasearchInfrastructure(Organization):
          'domain_of': ['PersonOrOrganization', 'License', 'Certification'],
          'exact_mappings': ['schema:logo']} })
     keyword: Optional[list[str]] = Field(default=None, title="keyword", description="""A keyword or tag describing the resource""", json_schema_extra = { "linkml_meta": {'alias': 'keyword', 'domain_of': ['Resource'], 'slot_uri': 'dcat:keyword'} })
+    dateIssued: Optional[datetime ] = Field(default=None, title="date issued", description="""Date of formal issuance (e.g., publication) of the resource""", json_schema_extra = { "linkml_meta": {'alias': 'dateIssued',
+         'close_mappings': ['schema:datePublished', 'schema:dateCreated'],
+         'comments': ['encoded using the relevant ISO 8601 Date and Time compliant '
+                      'string [DATETIME]'],
+         'domain_of': ['Resource'],
+         'exact_mappings': ['sepio:0000051'],
+         'slot_uri': 'dct:issued'} })
+    dateModified: Optional[datetime ] = Field(default=None, title="date modified", description="""Most recent date on which the resource was changed, updated or modified""", json_schema_extra = { "linkml_meta": {'alias': 'dateModified',
+         'close_mappings': ['schema:dateModified'],
+         'comments': ['encoded using the relevant ISO 8601 Date and Time compliant '
+                      'string [DATETIME]'],
+         'domain_of': ['Resource'],
+         'exact_mappings': ['sepio:0000036'],
+         'slot_uri': 'dct:modified'} })
 
 
 class Provider(Organization):
@@ -3776,6 +4394,20 @@ class Provider(Organization):
          'domain_of': ['PersonOrOrganization', 'License', 'Certification'],
          'exact_mappings': ['schema:logo']} })
     keyword: Optional[list[str]] = Field(default=None, title="keyword", description="""A keyword or tag describing the resource""", json_schema_extra = { "linkml_meta": {'alias': 'keyword', 'domain_of': ['Resource'], 'slot_uri': 'dcat:keyword'} })
+    dateIssued: Optional[datetime ] = Field(default=None, title="date issued", description="""Date of formal issuance (e.g., publication) of the resource""", json_schema_extra = { "linkml_meta": {'alias': 'dateIssued',
+         'close_mappings': ['schema:datePublished', 'schema:dateCreated'],
+         'comments': ['encoded using the relevant ISO 8601 Date and Time compliant '
+                      'string [DATETIME]'],
+         'domain_of': ['Resource'],
+         'exact_mappings': ['sepio:0000051'],
+         'slot_uri': 'dct:issued'} })
+    dateModified: Optional[datetime ] = Field(default=None, title="date modified", description="""Most recent date on which the resource was changed, updated or modified""", json_schema_extra = { "linkml_meta": {'alias': 'dateModified',
+         'close_mappings': ['schema:dateModified'],
+         'comments': ['encoded using the relevant ISO 8601 Date and Time compliant '
+                      'string [DATETIME]'],
+         'domain_of': ['Resource'],
+         'exact_mappings': ['sepio:0000036'],
+         'slot_uri': 'dct:modified'} })
 
 
 class Originator(PersonOrOrganization):
@@ -3823,6 +4455,20 @@ class Originator(PersonOrOrganization):
          'domain_of': ['PersonOrOrganization', 'License', 'Certification'],
          'exact_mappings': ['schema:logo']} })
     keyword: Optional[list[str]] = Field(default=None, title="keyword", description="""A keyword or tag describing the resource""", json_schema_extra = { "linkml_meta": {'alias': 'keyword', 'domain_of': ['Resource'], 'slot_uri': 'dcat:keyword'} })
+    dateIssued: Optional[datetime ] = Field(default=None, title="date issued", description="""Date of formal issuance (e.g., publication) of the resource""", json_schema_extra = { "linkml_meta": {'alias': 'dateIssued',
+         'close_mappings': ['schema:datePublished', 'schema:dateCreated'],
+         'comments': ['encoded using the relevant ISO 8601 Date and Time compliant '
+                      'string [DATETIME]'],
+         'domain_of': ['Resource'],
+         'exact_mappings': ['sepio:0000051'],
+         'slot_uri': 'dct:issued'} })
+    dateModified: Optional[datetime ] = Field(default=None, title="date modified", description="""Most recent date on which the resource was changed, updated or modified""", json_schema_extra = { "linkml_meta": {'alias': 'dateModified',
+         'close_mappings': ['schema:dateModified'],
+         'comments': ['encoded using the relevant ISO 8601 Date and Time compliant '
+                      'string [DATETIME]'],
+         'domain_of': ['Resource'],
+         'exact_mappings': ['sepio:0000036'],
+         'slot_uri': 'dct:modified'} })
 
 
 class BiologicalMaterialOrigin(Resource):
@@ -3900,6 +4546,20 @@ class BiologicalMaterialOrigin(Resource):
          'domain_of': ['BiologicalMaterialOrigin'],
          'related_mappings': ['schema:hasBioChemEntityPart']} })
     keyword: Optional[list[str]] = Field(default=None, title="keyword", description="""A keyword or tag describing the resource""", json_schema_extra = { "linkml_meta": {'alias': 'keyword', 'domain_of': ['Resource'], 'slot_uri': 'dcat:keyword'} })
+    dateIssued: Optional[datetime ] = Field(default=None, title="date issued", description="""Date of formal issuance (e.g., publication) of the resource""", json_schema_extra = { "linkml_meta": {'alias': 'dateIssued',
+         'close_mappings': ['schema:datePublished', 'schema:dateCreated'],
+         'comments': ['encoded using the relevant ISO 8601 Date and Time compliant '
+                      'string [DATETIME]'],
+         'domain_of': ['Resource'],
+         'exact_mappings': ['sepio:0000051'],
+         'slot_uri': 'dct:issued'} })
+    dateModified: Optional[datetime ] = Field(default=None, title="date modified", description="""Most recent date on which the resource was changed, updated or modified""", json_schema_extra = { "linkml_meta": {'alias': 'dateModified',
+         'close_mappings': ['schema:dateModified'],
+         'comments': ['encoded using the relevant ISO 8601 Date and Time compliant '
+                      'string [DATETIME]'],
+         'domain_of': ['Resource'],
+         'exact_mappings': ['sepio:0000036'],
+         'slot_uri': 'dct:modified'} })
 
 
 class BiologicalPartOrigin(Resource):
@@ -3956,6 +4616,20 @@ class BiologicalPartOrigin(Resource):
     accessToPhysicalGeneticResource: bool = Field(default=..., title="access to physical genetic resource", description="""Indicate if the biological part was produced with access to a physical genetic resource""", json_schema_extra = { "linkml_meta": {'alias': 'accessToPhysicalGeneticResource',
          'domain_of': ['BiologicalPartOrigin']} })
     keyword: Optional[list[str]] = Field(default=None, title="keyword", description="""A keyword or tag describing the resource""", json_schema_extra = { "linkml_meta": {'alias': 'keyword', 'domain_of': ['Resource'], 'slot_uri': 'dcat:keyword'} })
+    dateIssued: Optional[datetime ] = Field(default=None, title="date issued", description="""Date of formal issuance (e.g., publication) of the resource""", json_schema_extra = { "linkml_meta": {'alias': 'dateIssued',
+         'close_mappings': ['schema:datePublished', 'schema:dateCreated'],
+         'comments': ['encoded using the relevant ISO 8601 Date and Time compliant '
+                      'string [DATETIME]'],
+         'domain_of': ['Resource'],
+         'exact_mappings': ['sepio:0000051'],
+         'slot_uri': 'dct:issued'} })
+    dateModified: Optional[datetime ] = Field(default=None, title="date modified", description="""Most recent date on which the resource was changed, updated or modified""", json_schema_extra = { "linkml_meta": {'alias': 'dateModified',
+         'close_mappings': ['schema:dateModified'],
+         'comments': ['encoded using the relevant ISO 8601 Date and Time compliant '
+                      'string [DATETIME]'],
+         'domain_of': ['Resource'],
+         'exact_mappings': ['sepio:0000036'],
+         'slot_uri': 'dct:modified'} })
 
 
 class NaturalPartOrigin(BiologicalPartOrigin):
@@ -4084,6 +4758,20 @@ class NaturalPartOrigin(BiologicalPartOrigin):
     accessToPhysicalGeneticResource: bool = Field(default=..., title="access to physical genetic resource", description="""Indicate if the biological part was produced with access to a physical genetic resource""", json_schema_extra = { "linkml_meta": {'alias': 'accessToPhysicalGeneticResource',
          'domain_of': ['BiologicalPartOrigin']} })
     keyword: Optional[list[str]] = Field(default=None, title="keyword", description="""A keyword or tag describing the resource""", json_schema_extra = { "linkml_meta": {'alias': 'keyword', 'domain_of': ['Resource'], 'slot_uri': 'dcat:keyword'} })
+    dateIssued: Optional[datetime ] = Field(default=None, title="date issued", description="""Date of formal issuance (e.g., publication) of the resource""", json_schema_extra = { "linkml_meta": {'alias': 'dateIssued',
+         'close_mappings': ['schema:datePublished', 'schema:dateCreated'],
+         'comments': ['encoded using the relevant ISO 8601 Date and Time compliant '
+                      'string [DATETIME]'],
+         'domain_of': ['Resource'],
+         'exact_mappings': ['sepio:0000051'],
+         'slot_uri': 'dct:issued'} })
+    dateModified: Optional[datetime ] = Field(default=None, title="date modified", description="""Most recent date on which the resource was changed, updated or modified""", json_schema_extra = { "linkml_meta": {'alias': 'dateModified',
+         'close_mappings': ['schema:dateModified'],
+         'comments': ['encoded using the relevant ISO 8601 Date and Time compliant '
+                      'string [DATETIME]'],
+         'domain_of': ['Resource'],
+         'exact_mappings': ['sepio:0000036'],
+         'slot_uri': 'dct:modified'} })
 
 
 class SyntheticPartOrigin(BiologicalPartOrigin):
@@ -4156,6 +4844,20 @@ class SyntheticPartOrigin(BiologicalPartOrigin):
     accessToPhysicalGeneticResource: bool = Field(default=..., title="access to physical genetic resource", description="""Indicate if the biological part was produced with access to a physical genetic resource""", json_schema_extra = { "linkml_meta": {'alias': 'accessToPhysicalGeneticResource',
          'domain_of': ['BiologicalPartOrigin']} })
     keyword: Optional[list[str]] = Field(default=None, title="keyword", description="""A keyword or tag describing the resource""", json_schema_extra = { "linkml_meta": {'alias': 'keyword', 'domain_of': ['Resource'], 'slot_uri': 'dcat:keyword'} })
+    dateIssued: Optional[datetime ] = Field(default=None, title="date issued", description="""Date of formal issuance (e.g., publication) of the resource""", json_schema_extra = { "linkml_meta": {'alias': 'dateIssued',
+         'close_mappings': ['schema:datePublished', 'schema:dateCreated'],
+         'comments': ['encoded using the relevant ISO 8601 Date and Time compliant '
+                      'string [DATETIME]'],
+         'domain_of': ['Resource'],
+         'exact_mappings': ['sepio:0000051'],
+         'slot_uri': 'dct:issued'} })
+    dateModified: Optional[datetime ] = Field(default=None, title="date modified", description="""Most recent date on which the resource was changed, updated or modified""", json_schema_extra = { "linkml_meta": {'alias': 'dateModified',
+         'close_mappings': ['schema:dateModified'],
+         'comments': ['encoded using the relevant ISO 8601 Date and Time compliant '
+                      'string [DATETIME]'],
+         'domain_of': ['Resource'],
+         'exact_mappings': ['sepio:0000036'],
+         'slot_uri': 'dct:modified'} })
 
 
 class RecombinantPartIdentification(Resource):
@@ -4200,6 +4902,20 @@ class RecombinantPartIdentification(Resource):
          'recommended': True,
          'related_mappings': ['uniprotrdfs:sequence']} })
     keyword: Optional[list[str]] = Field(default=None, title="keyword", description="""A keyword or tag describing the resource""", json_schema_extra = { "linkml_meta": {'alias': 'keyword', 'domain_of': ['Resource'], 'slot_uri': 'dcat:keyword'} })
+    dateIssued: Optional[datetime ] = Field(default=None, title="date issued", description="""Date of formal issuance (e.g., publication) of the resource""", json_schema_extra = { "linkml_meta": {'alias': 'dateIssued',
+         'close_mappings': ['schema:datePublished', 'schema:dateCreated'],
+         'comments': ['encoded using the relevant ISO 8601 Date and Time compliant '
+                      'string [DATETIME]'],
+         'domain_of': ['Resource'],
+         'exact_mappings': ['sepio:0000051'],
+         'slot_uri': 'dct:issued'} })
+    dateModified: Optional[datetime ] = Field(default=None, title="date modified", description="""Most recent date on which the resource was changed, updated or modified""", json_schema_extra = { "linkml_meta": {'alias': 'dateModified',
+         'close_mappings': ['schema:dateModified'],
+         'comments': ['encoded using the relevant ISO 8601 Date and Time compliant '
+                      'string [DATETIME]'],
+         'domain_of': ['Resource'],
+         'exact_mappings': ['sepio:0000036'],
+         'slot_uri': 'dct:modified'} })
 
 
 class Collection(Catalogue):
@@ -4278,6 +4994,20 @@ class Collection(Catalogue):
          'related_mappings': ['schema:identifier'],
          'slot_uri': 'dcat:version'} })
     keyword: Optional[list[str]] = Field(default=None, title="keyword", description="""A keyword or tag describing the resource""", json_schema_extra = { "linkml_meta": {'alias': 'keyword', 'domain_of': ['Resource'], 'slot_uri': 'dcat:keyword'} })
+    dateIssued: Optional[datetime ] = Field(default=None, title="date issued", description="""Date of formal issuance (e.g., publication) of the resource""", json_schema_extra = { "linkml_meta": {'alias': 'dateIssued',
+         'close_mappings': ['schema:datePublished', 'schema:dateCreated'],
+         'comments': ['encoded using the relevant ISO 8601 Date and Time compliant '
+                      'string [DATETIME]'],
+         'domain_of': ['Resource'],
+         'exact_mappings': ['sepio:0000051'],
+         'slot_uri': 'dct:issued'} })
+    dateModified: Optional[datetime ] = Field(default=None, title="date modified", description="""Most recent date on which the resource was changed, updated or modified""", json_schema_extra = { "linkml_meta": {'alias': 'dateModified',
+         'close_mappings': ['schema:dateModified'],
+         'comments': ['encoded using the relevant ISO 8601 Date and Time compliant '
+                      'string [DATETIME]'],
+         'domain_of': ['Resource'],
+         'exact_mappings': ['sepio:0000036'],
+         'slot_uri': 'dct:modified'} })
 
 
 class ProductOrService(Dataset):
@@ -4817,6 +5547,20 @@ class ProductOrService(Dataset):
          'related_mappings': ['schema:identifier'],
          'slot_uri': 'dcat:version'} })
     keyword: Optional[list[str]] = Field(default=None, title="keyword", description="""A keyword or tag describing the resource""", json_schema_extra = { "linkml_meta": {'alias': 'keyword', 'domain_of': ['Resource'], 'slot_uri': 'dcat:keyword'} })
+    dateIssued: Optional[datetime ] = Field(default=None, title="date issued", description="""Date of formal issuance (e.g., publication) of the resource""", json_schema_extra = { "linkml_meta": {'alias': 'dateIssued',
+         'close_mappings': ['schema:datePublished', 'schema:dateCreated'],
+         'comments': ['encoded using the relevant ISO 8601 Date and Time compliant '
+                      'string [DATETIME]'],
+         'domain_of': ['Resource'],
+         'exact_mappings': ['sepio:0000051'],
+         'slot_uri': 'dct:issued'} })
+    dateModified: Optional[datetime ] = Field(default=None, title="date modified", description="""Most recent date on which the resource was changed, updated or modified""", json_schema_extra = { "linkml_meta": {'alias': 'dateModified',
+         'close_mappings': ['schema:dateModified'],
+         'comments': ['encoded using the relevant ISO 8601 Date and Time compliant '
+                      'string [DATETIME]'],
+         'domain_of': ['Resource'],
+         'exact_mappings': ['sepio:0000036'],
+         'slot_uri': 'dct:modified'} })
 
 
 class Service(ProductOrService):
@@ -5006,6 +5750,20 @@ class Service(ProductOrService):
          'related_mappings': ['schema:identifier'],
          'slot_uri': 'dcat:version'} })
     keyword: Optional[list[str]] = Field(default=None, title="keyword", description="""A keyword or tag describing the resource""", json_schema_extra = { "linkml_meta": {'alias': 'keyword', 'domain_of': ['Resource'], 'slot_uri': 'dcat:keyword'} })
+    dateIssued: Optional[datetime ] = Field(default=None, title="date issued", description="""Date of formal issuance (e.g., publication) of the resource""", json_schema_extra = { "linkml_meta": {'alias': 'dateIssued',
+         'close_mappings': ['schema:datePublished', 'schema:dateCreated'],
+         'comments': ['encoded using the relevant ISO 8601 Date and Time compliant '
+                      'string [DATETIME]'],
+         'domain_of': ['Resource'],
+         'exact_mappings': ['sepio:0000051'],
+         'slot_uri': 'dct:issued'} })
+    dateModified: Optional[datetime ] = Field(default=None, title="date modified", description="""Most recent date on which the resource was changed, updated or modified""", json_schema_extra = { "linkml_meta": {'alias': 'dateModified',
+         'close_mappings': ['schema:dateModified'],
+         'comments': ['encoded using the relevant ISO 8601 Date and Time compliant '
+                      'string [DATETIME]'],
+         'domain_of': ['Resource'],
+         'exact_mappings': ['sepio:0000036'],
+         'slot_uri': 'dct:modified'} })
 
 
 class Product(ProductOrService):
@@ -5318,6 +6076,20 @@ class Product(ProductOrService):
          'related_mappings': ['schema:identifier'],
          'slot_uri': 'dcat:version'} })
     keyword: Optional[list[str]] = Field(default=None, title="keyword", description="""A keyword or tag describing the resource""", json_schema_extra = { "linkml_meta": {'alias': 'keyword', 'domain_of': ['Resource'], 'slot_uri': 'dcat:keyword'} })
+    dateIssued: Optional[datetime ] = Field(default=None, title="date issued", description="""Date of formal issuance (e.g., publication) of the resource""", json_schema_extra = { "linkml_meta": {'alias': 'dateIssued',
+         'close_mappings': ['schema:datePublished', 'schema:dateCreated'],
+         'comments': ['encoded using the relevant ISO 8601 Date and Time compliant '
+                      'string [DATETIME]'],
+         'domain_of': ['Resource'],
+         'exact_mappings': ['sepio:0000051'],
+         'slot_uri': 'dct:issued'} })
+    dateModified: Optional[datetime ] = Field(default=None, title="date modified", description="""Most recent date on which the resource was changed, updated or modified""", json_schema_extra = { "linkml_meta": {'alias': 'dateModified',
+         'close_mappings': ['schema:dateModified'],
+         'comments': ['encoded using the relevant ISO 8601 Date and Time compliant '
+                      'string [DATETIME]'],
+         'domain_of': ['Resource'],
+         'exact_mappings': ['sepio:0000036'],
+         'slot_uri': 'dct:modified'} })
 
 
 class Antibody(Product):
@@ -5563,6 +6335,20 @@ class Antibody(Product):
          'related_mappings': ['schema:identifier'],
          'slot_uri': 'dcat:version'} })
     keyword: Optional[list[str]] = Field(default=None, title="keyword", description="""A keyword or tag describing the resource""", json_schema_extra = { "linkml_meta": {'alias': 'keyword', 'domain_of': ['Resource'], 'slot_uri': 'dcat:keyword'} })
+    dateIssued: Optional[datetime ] = Field(default=None, title="date issued", description="""Date of formal issuance (e.g., publication) of the resource""", json_schema_extra = { "linkml_meta": {'alias': 'dateIssued',
+         'close_mappings': ['schema:datePublished', 'schema:dateCreated'],
+         'comments': ['encoded using the relevant ISO 8601 Date and Time compliant '
+                      'string [DATETIME]'],
+         'domain_of': ['Resource'],
+         'exact_mappings': ['sepio:0000051'],
+         'slot_uri': 'dct:issued'} })
+    dateModified: Optional[datetime ] = Field(default=None, title="date modified", description="""Most recent date on which the resource was changed, updated or modified""", json_schema_extra = { "linkml_meta": {'alias': 'dateModified',
+         'close_mappings': ['schema:dateModified'],
+         'comments': ['encoded using the relevant ISO 8601 Date and Time compliant '
+                      'string [DATETIME]'],
+         'domain_of': ['Resource'],
+         'exact_mappings': ['sepio:0000036'],
+         'slot_uri': 'dct:modified'} })
 
 
 class Hybridoma(Antibody):
@@ -5767,6 +6553,20 @@ class Hybridoma(Antibody):
          'related_mappings': ['schema:identifier'],
          'slot_uri': 'dcat:version'} })
     keyword: Optional[list[str]] = Field(default=None, title="keyword", description="""A keyword or tag describing the resource""", json_schema_extra = { "linkml_meta": {'alias': 'keyword', 'domain_of': ['Resource'], 'slot_uri': 'dcat:keyword'} })
+    dateIssued: Optional[datetime ] = Field(default=None, title="date issued", description="""Date of formal issuance (e.g., publication) of the resource""", json_schema_extra = { "linkml_meta": {'alias': 'dateIssued',
+         'close_mappings': ['schema:datePublished', 'schema:dateCreated'],
+         'comments': ['encoded using the relevant ISO 8601 Date and Time compliant '
+                      'string [DATETIME]'],
+         'domain_of': ['Resource'],
+         'exact_mappings': ['sepio:0000051'],
+         'slot_uri': 'dct:issued'} })
+    dateModified: Optional[datetime ] = Field(default=None, title="date modified", description="""Most recent date on which the resource was changed, updated or modified""", json_schema_extra = { "linkml_meta": {'alias': 'dateModified',
+         'close_mappings': ['schema:dateModified'],
+         'comments': ['encoded using the relevant ISO 8601 Date and Time compliant '
+                      'string [DATETIME]'],
+         'domain_of': ['Resource'],
+         'exact_mappings': ['sepio:0000036'],
+         'slot_uri': 'dct:modified'} })
 
 
 class Protein(Product):
@@ -6332,6 +7132,20 @@ class Protein(Product):
          'related_mappings': ['schema:identifier'],
          'slot_uri': 'dcat:version'} })
     keyword: Optional[list[str]] = Field(default=None, title="keyword", description="""A keyword or tag describing the resource""", json_schema_extra = { "linkml_meta": {'alias': 'keyword', 'domain_of': ['Resource'], 'slot_uri': 'dcat:keyword'} })
+    dateIssued: Optional[datetime ] = Field(default=None, title="date issued", description="""Date of formal issuance (e.g., publication) of the resource""", json_schema_extra = { "linkml_meta": {'alias': 'dateIssued',
+         'close_mappings': ['schema:datePublished', 'schema:dateCreated'],
+         'comments': ['encoded using the relevant ISO 8601 Date and Time compliant '
+                      'string [DATETIME]'],
+         'domain_of': ['Resource'],
+         'exact_mappings': ['sepio:0000051'],
+         'slot_uri': 'dct:issued'} })
+    dateModified: Optional[datetime ] = Field(default=None, title="date modified", description="""Most recent date on which the resource was changed, updated or modified""", json_schema_extra = { "linkml_meta": {'alias': 'dateModified',
+         'close_mappings': ['schema:dateModified'],
+         'comments': ['encoded using the relevant ISO 8601 Date and Time compliant '
+                      'string [DATETIME]'],
+         'domain_of': ['Resource'],
+         'exact_mappings': ['sepio:0000036'],
+         'slot_uri': 'dct:modified'} })
 
 
 class NucleicAcid(Product):
@@ -6776,6 +7590,20 @@ class NucleicAcid(Product):
          'related_mappings': ['schema:identifier'],
          'slot_uri': 'dcat:version'} })
     keyword: Optional[list[str]] = Field(default=None, title="keyword", description="""A keyword or tag describing the resource""", json_schema_extra = { "linkml_meta": {'alias': 'keyword', 'domain_of': ['Resource'], 'slot_uri': 'dcat:keyword'} })
+    dateIssued: Optional[datetime ] = Field(default=None, title="date issued", description="""Date of formal issuance (e.g., publication) of the resource""", json_schema_extra = { "linkml_meta": {'alias': 'dateIssued',
+         'close_mappings': ['schema:datePublished', 'schema:dateCreated'],
+         'comments': ['encoded using the relevant ISO 8601 Date and Time compliant '
+                      'string [DATETIME]'],
+         'domain_of': ['Resource'],
+         'exact_mappings': ['sepio:0000051'],
+         'slot_uri': 'dct:issued'} })
+    dateModified: Optional[datetime ] = Field(default=None, title="date modified", description="""Most recent date on which the resource was changed, updated or modified""", json_schema_extra = { "linkml_meta": {'alias': 'dateModified',
+         'close_mappings': ['schema:dateModified'],
+         'comments': ['encoded using the relevant ISO 8601 Date and Time compliant '
+                      'string [DATETIME]'],
+         'domain_of': ['Resource'],
+         'exact_mappings': ['sepio:0000036'],
+         'slot_uri': 'dct:modified'} })
 
 
 class DetectionKit(Product):
@@ -7010,6 +7838,20 @@ class DetectionKit(Product):
          'related_mappings': ['schema:identifier'],
          'slot_uri': 'dcat:version'} })
     keyword: Optional[list[str]] = Field(default=None, title="keyword", description="""A keyword or tag describing the resource""", json_schema_extra = { "linkml_meta": {'alias': 'keyword', 'domain_of': ['Resource'], 'slot_uri': 'dcat:keyword'} })
+    dateIssued: Optional[datetime ] = Field(default=None, title="date issued", description="""Date of formal issuance (e.g., publication) of the resource""", json_schema_extra = { "linkml_meta": {'alias': 'dateIssued',
+         'close_mappings': ['schema:datePublished', 'schema:dateCreated'],
+         'comments': ['encoded using the relevant ISO 8601 Date and Time compliant '
+                      'string [DATETIME]'],
+         'domain_of': ['Resource'],
+         'exact_mappings': ['sepio:0000051'],
+         'slot_uri': 'dct:issued'} })
+    dateModified: Optional[datetime ] = Field(default=None, title="date modified", description="""Most recent date on which the resource was changed, updated or modified""", json_schema_extra = { "linkml_meta": {'alias': 'dateModified',
+         'close_mappings': ['schema:dateModified'],
+         'comments': ['encoded using the relevant ISO 8601 Date and Time compliant '
+                      'string [DATETIME]'],
+         'domain_of': ['Resource'],
+         'exact_mappings': ['sepio:0000036'],
+         'slot_uri': 'dct:modified'} })
 
 
 class Bundle(Product):
@@ -7205,6 +8047,20 @@ class Bundle(Product):
          'related_mappings': ['schema:identifier'],
          'slot_uri': 'dcat:version'} })
     keyword: Optional[list[str]] = Field(default=None, title="keyword", description="""A keyword or tag describing the resource""", json_schema_extra = { "linkml_meta": {'alias': 'keyword', 'domain_of': ['Resource'], 'slot_uri': 'dcat:keyword'} })
+    dateIssued: Optional[datetime ] = Field(default=None, title="date issued", description="""Date of formal issuance (e.g., publication) of the resource""", json_schema_extra = { "linkml_meta": {'alias': 'dateIssued',
+         'close_mappings': ['schema:datePublished', 'schema:dateCreated'],
+         'comments': ['encoded using the relevant ISO 8601 Date and Time compliant '
+                      'string [DATETIME]'],
+         'domain_of': ['Resource'],
+         'exact_mappings': ['sepio:0000051'],
+         'slot_uri': 'dct:issued'} })
+    dateModified: Optional[datetime ] = Field(default=None, title="date modified", description="""Most recent date on which the resource was changed, updated or modified""", json_schema_extra = { "linkml_meta": {'alias': 'dateModified',
+         'close_mappings': ['schema:dateModified'],
+         'comments': ['encoded using the relevant ISO 8601 Date and Time compliant '
+                      'string [DATETIME]'],
+         'domain_of': ['Resource'],
+         'exact_mappings': ['sepio:0000036'],
+         'slot_uri': 'dct:modified'} })
 
 
 class Pathogen(Product):
@@ -7741,6 +8597,20 @@ class Pathogen(Product):
          'related_mappings': ['schema:identifier'],
          'slot_uri': 'dcat:version'} })
     keyword: Optional[list[str]] = Field(default=None, title="keyword", description="""A keyword or tag describing the resource""", json_schema_extra = { "linkml_meta": {'alias': 'keyword', 'domain_of': ['Resource'], 'slot_uri': 'dcat:keyword'} })
+    dateIssued: Optional[datetime ] = Field(default=None, title="date issued", description="""Date of formal issuance (e.g., publication) of the resource""", json_schema_extra = { "linkml_meta": {'alias': 'dateIssued',
+         'close_mappings': ['schema:datePublished', 'schema:dateCreated'],
+         'comments': ['encoded using the relevant ISO 8601 Date and Time compliant '
+                      'string [DATETIME]'],
+         'domain_of': ['Resource'],
+         'exact_mappings': ['sepio:0000051'],
+         'slot_uri': 'dct:issued'} })
+    dateModified: Optional[datetime ] = Field(default=None, title="date modified", description="""Most recent date on which the resource was changed, updated or modified""", json_schema_extra = { "linkml_meta": {'alias': 'dateModified',
+         'close_mappings': ['schema:dateModified'],
+         'comments': ['encoded using the relevant ISO 8601 Date and Time compliant '
+                      'string [DATETIME]'],
+         'domain_of': ['Resource'],
+         'exact_mappings': ['sepio:0000036'],
+         'slot_uri': 'dct:modified'} })
 
 
 class Virus(Pathogen):
@@ -8053,6 +8923,20 @@ class Virus(Pathogen):
          'related_mappings': ['schema:identifier'],
          'slot_uri': 'dcat:version'} })
     keyword: Optional[list[str]] = Field(default=None, title="keyword", description="""A keyword or tag describing the resource""", json_schema_extra = { "linkml_meta": {'alias': 'keyword', 'domain_of': ['Resource'], 'slot_uri': 'dcat:keyword'} })
+    dateIssued: Optional[datetime ] = Field(default=None, title="date issued", description="""Date of formal issuance (e.g., publication) of the resource""", json_schema_extra = { "linkml_meta": {'alias': 'dateIssued',
+         'close_mappings': ['schema:datePublished', 'schema:dateCreated'],
+         'comments': ['encoded using the relevant ISO 8601 Date and Time compliant '
+                      'string [DATETIME]'],
+         'domain_of': ['Resource'],
+         'exact_mappings': ['sepio:0000051'],
+         'slot_uri': 'dct:issued'} })
+    dateModified: Optional[datetime ] = Field(default=None, title="date modified", description="""Most recent date on which the resource was changed, updated or modified""", json_schema_extra = { "linkml_meta": {'alias': 'dateModified',
+         'close_mappings': ['schema:dateModified'],
+         'comments': ['encoded using the relevant ISO 8601 Date and Time compliant '
+                      'string [DATETIME]'],
+         'domain_of': ['Resource'],
+         'exact_mappings': ['sepio:0000036'],
+         'slot_uri': 'dct:modified'} })
 
 
 class Bacterium(Pathogen):
@@ -8306,6 +9190,20 @@ class Bacterium(Pathogen):
          'related_mappings': ['schema:identifier'],
          'slot_uri': 'dcat:version'} })
     keyword: Optional[list[str]] = Field(default=None, title="keyword", description="""A keyword or tag describing the resource""", json_schema_extra = { "linkml_meta": {'alias': 'keyword', 'domain_of': ['Resource'], 'slot_uri': 'dcat:keyword'} })
+    dateIssued: Optional[datetime ] = Field(default=None, title="date issued", description="""Date of formal issuance (e.g., publication) of the resource""", json_schema_extra = { "linkml_meta": {'alias': 'dateIssued',
+         'close_mappings': ['schema:datePublished', 'schema:dateCreated'],
+         'comments': ['encoded using the relevant ISO 8601 Date and Time compliant '
+                      'string [DATETIME]'],
+         'domain_of': ['Resource'],
+         'exact_mappings': ['sepio:0000051'],
+         'slot_uri': 'dct:issued'} })
+    dateModified: Optional[datetime ] = Field(default=None, title="date modified", description="""Most recent date on which the resource was changed, updated or modified""", json_schema_extra = { "linkml_meta": {'alias': 'dateModified',
+         'close_mappings': ['schema:dateModified'],
+         'comments': ['encoded using the relevant ISO 8601 Date and Time compliant '
+                      'string [DATETIME]'],
+         'domain_of': ['Resource'],
+         'exact_mappings': ['sepio:0000036'],
+         'slot_uri': 'dct:modified'} })
 
 
 class Fungus(Pathogen):
@@ -8557,6 +9455,20 @@ class Fungus(Pathogen):
          'related_mappings': ['schema:identifier'],
          'slot_uri': 'dcat:version'} })
     keyword: Optional[list[str]] = Field(default=None, title="keyword", description="""A keyword or tag describing the resource""", json_schema_extra = { "linkml_meta": {'alias': 'keyword', 'domain_of': ['Resource'], 'slot_uri': 'dcat:keyword'} })
+    dateIssued: Optional[datetime ] = Field(default=None, title="date issued", description="""Date of formal issuance (e.g., publication) of the resource""", json_schema_extra = { "linkml_meta": {'alias': 'dateIssued',
+         'close_mappings': ['schema:datePublished', 'schema:dateCreated'],
+         'comments': ['encoded using the relevant ISO 8601 Date and Time compliant '
+                      'string [DATETIME]'],
+         'domain_of': ['Resource'],
+         'exact_mappings': ['sepio:0000051'],
+         'slot_uri': 'dct:issued'} })
+    dateModified: Optional[datetime ] = Field(default=None, title="date modified", description="""Most recent date on which the resource was changed, updated or modified""", json_schema_extra = { "linkml_meta": {'alias': 'dateModified',
+         'close_mappings': ['schema:dateModified'],
+         'comments': ['encoded using the relevant ISO 8601 Date and Time compliant '
+                      'string [DATETIME]'],
+         'domain_of': ['Resource'],
+         'exact_mappings': ['sepio:0000036'],
+         'slot_uri': 'dct:modified'} })
 
 
 class Protozoan(Pathogen):
@@ -8804,6 +9716,20 @@ class Protozoan(Pathogen):
          'related_mappings': ['schema:identifier'],
          'slot_uri': 'dcat:version'} })
     keyword: Optional[list[str]] = Field(default=None, title="keyword", description="""A keyword or tag describing the resource""", json_schema_extra = { "linkml_meta": {'alias': 'keyword', 'domain_of': ['Resource'], 'slot_uri': 'dcat:keyword'} })
+    dateIssued: Optional[datetime ] = Field(default=None, title="date issued", description="""Date of formal issuance (e.g., publication) of the resource""", json_schema_extra = { "linkml_meta": {'alias': 'dateIssued',
+         'close_mappings': ['schema:datePublished', 'schema:dateCreated'],
+         'comments': ['encoded using the relevant ISO 8601 Date and Time compliant '
+                      'string [DATETIME]'],
+         'domain_of': ['Resource'],
+         'exact_mappings': ['sepio:0000051'],
+         'slot_uri': 'dct:issued'} })
+    dateModified: Optional[datetime ] = Field(default=None, title="date modified", description="""Most recent date on which the resource was changed, updated or modified""", json_schema_extra = { "linkml_meta": {'alias': 'dateModified',
+         'close_mappings': ['schema:dateModified'],
+         'comments': ['encoded using the relevant ISO 8601 Date and Time compliant '
+                      'string [DATETIME]'],
+         'domain_of': ['Resource'],
+         'exact_mappings': ['sepio:0000036'],
+         'slot_uri': 'dct:modified'} })
 
 
 class Viroid(Pathogen):
@@ -9043,6 +9969,20 @@ class Viroid(Pathogen):
          'related_mappings': ['schema:identifier'],
          'slot_uri': 'dcat:version'} })
     keyword: Optional[list[str]] = Field(default=None, title="keyword", description="""A keyword or tag describing the resource""", json_schema_extra = { "linkml_meta": {'alias': 'keyword', 'domain_of': ['Resource'], 'slot_uri': 'dcat:keyword'} })
+    dateIssued: Optional[datetime ] = Field(default=None, title="date issued", description="""Date of formal issuance (e.g., publication) of the resource""", json_schema_extra = { "linkml_meta": {'alias': 'dateIssued',
+         'close_mappings': ['schema:datePublished', 'schema:dateCreated'],
+         'comments': ['encoded using the relevant ISO 8601 Date and Time compliant '
+                      'string [DATETIME]'],
+         'domain_of': ['Resource'],
+         'exact_mappings': ['sepio:0000051'],
+         'slot_uri': 'dct:issued'} })
+    dateModified: Optional[datetime ] = Field(default=None, title="date modified", description="""Most recent date on which the resource was changed, updated or modified""", json_schema_extra = { "linkml_meta": {'alias': 'dateModified',
+         'close_mappings': ['schema:dateModified'],
+         'comments': ['encoded using the relevant ISO 8601 Date and Time compliant '
+                      'string [DATETIME]'],
+         'domain_of': ['Resource'],
+         'exact_mappings': ['sepio:0000036'],
+         'slot_uri': 'dct:modified'} })
 
 
 class Prion(Pathogen):
@@ -9290,6 +10230,20 @@ class Prion(Pathogen):
          'related_mappings': ['schema:identifier'],
          'slot_uri': 'dcat:version'} })
     keyword: Optional[list[str]] = Field(default=None, title="keyword", description="""A keyword or tag describing the resource""", json_schema_extra = { "linkml_meta": {'alias': 'keyword', 'domain_of': ['Resource'], 'slot_uri': 'dcat:keyword'} })
+    dateIssued: Optional[datetime ] = Field(default=None, title="date issued", description="""Date of formal issuance (e.g., publication) of the resource""", json_schema_extra = { "linkml_meta": {'alias': 'dateIssued',
+         'close_mappings': ['schema:datePublished', 'schema:dateCreated'],
+         'comments': ['encoded using the relevant ISO 8601 Date and Time compliant '
+                      'string [DATETIME]'],
+         'domain_of': ['Resource'],
+         'exact_mappings': ['sepio:0000051'],
+         'slot_uri': 'dct:issued'} })
+    dateModified: Optional[datetime ] = Field(default=None, title="date modified", description="""Most recent date on which the resource was changed, updated or modified""", json_schema_extra = { "linkml_meta": {'alias': 'dateModified',
+         'close_mappings': ['schema:dateModified'],
+         'comments': ['encoded using the relevant ISO 8601 Date and Time compliant '
+                      'string [DATETIME]'],
+         'domain_of': ['Resource'],
+         'exact_mappings': ['sepio:0000036'],
+         'slot_uri': 'dct:modified'} })
 
 
 class MaterialSafetyDataSheet(Resource):
@@ -9680,6 +10634,20 @@ class MaterialSafetyDataSheet(Resource):
          'domain_of': ['MaterialSafetyDataSheet'],
          'recommended': True} })
     keyword: Optional[list[str]] = Field(default=None, title="keyword", description="""A keyword or tag describing the resource""", json_schema_extra = { "linkml_meta": {'alias': 'keyword', 'domain_of': ['Resource'], 'slot_uri': 'dcat:keyword'} })
+    dateIssued: Optional[datetime ] = Field(default=None, title="date issued", description="""Date of formal issuance (e.g., publication) of the resource""", json_schema_extra = { "linkml_meta": {'alias': 'dateIssued',
+         'close_mappings': ['schema:datePublished', 'schema:dateCreated'],
+         'comments': ['encoded using the relevant ISO 8601 Date and Time compliant '
+                      'string [DATETIME]'],
+         'domain_of': ['Resource'],
+         'exact_mappings': ['sepio:0000051'],
+         'slot_uri': 'dct:issued'} })
+    dateModified: Optional[datetime ] = Field(default=None, title="date modified", description="""Most recent date on which the resource was changed, updated or modified""", json_schema_extra = { "linkml_meta": {'alias': 'dateModified',
+         'close_mappings': ['schema:dateModified'],
+         'comments': ['encoded using the relevant ISO 8601 Date and Time compliant '
+                      'string [DATETIME]'],
+         'domain_of': ['Resource'],
+         'exact_mappings': ['sepio:0000036'],
+         'slot_uri': 'dct:modified'} })
 
 
 class File(Resource):
@@ -9802,6 +10770,20 @@ class File(Resource):
          'exact_mappings': ['dct:license', 'schema:license'],
          'slot_uri': 'dct:license'} })
     keyword: Optional[list[str]] = Field(default=None, title="keyword", description="""A keyword or tag describing the resource""", json_schema_extra = { "linkml_meta": {'alias': 'keyword', 'domain_of': ['Resource'], 'slot_uri': 'dcat:keyword'} })
+    dateIssued: Optional[datetime ] = Field(default=None, title="date issued", description="""Date of formal issuance (e.g., publication) of the resource""", json_schema_extra = { "linkml_meta": {'alias': 'dateIssued',
+         'close_mappings': ['schema:datePublished', 'schema:dateCreated'],
+         'comments': ['encoded using the relevant ISO 8601 Date and Time compliant '
+                      'string [DATETIME]'],
+         'domain_of': ['Resource'],
+         'exact_mappings': ['sepio:0000051'],
+         'slot_uri': 'dct:issued'} })
+    dateModified: Optional[datetime ] = Field(default=None, title="date modified", description="""Most recent date on which the resource was changed, updated or modified""", json_schema_extra = { "linkml_meta": {'alias': 'dateModified',
+         'close_mappings': ['schema:dateModified'],
+         'comments': ['encoded using the relevant ISO 8601 Date and Time compliant '
+                      'string [DATETIME]'],
+         'domain_of': ['Resource'],
+         'exact_mappings': ['sepio:0000036'],
+         'slot_uri': 'dct:modified'} })
 
 
 class Data(File):
@@ -9852,6 +10834,20 @@ class Data(File):
          'exact_mappings': ['dct:license', 'schema:license'],
          'slot_uri': 'dct:license'} })
     keyword: Optional[list[str]] = Field(default=None, title="keyword", description="""A keyword or tag describing the resource""", json_schema_extra = { "linkml_meta": {'alias': 'keyword', 'domain_of': ['Resource'], 'slot_uri': 'dcat:keyword'} })
+    dateIssued: Optional[datetime ] = Field(default=None, title="date issued", description="""Date of formal issuance (e.g., publication) of the resource""", json_schema_extra = { "linkml_meta": {'alias': 'dateIssued',
+         'close_mappings': ['schema:datePublished', 'schema:dateCreated'],
+         'comments': ['encoded using the relevant ISO 8601 Date and Time compliant '
+                      'string [DATETIME]'],
+         'domain_of': ['Resource'],
+         'exact_mappings': ['sepio:0000051'],
+         'slot_uri': 'dct:issued'} })
+    dateModified: Optional[datetime ] = Field(default=None, title="date modified", description="""Most recent date on which the resource was changed, updated or modified""", json_schema_extra = { "linkml_meta": {'alias': 'dateModified',
+         'close_mappings': ['schema:dateModified'],
+         'comments': ['encoded using the relevant ISO 8601 Date and Time compliant '
+                      'string [DATETIME]'],
+         'domain_of': ['Resource'],
+         'exact_mappings': ['sepio:0000036'],
+         'slot_uri': 'dct:modified'} })
 
 
 class Document(File):
@@ -9904,6 +10900,20 @@ class Document(File):
          'exact_mappings': ['dct:license', 'schema:license'],
          'slot_uri': 'dct:license'} })
     keyword: Optional[list[str]] = Field(default=None, title="keyword", description="""A keyword or tag describing the resource""", json_schema_extra = { "linkml_meta": {'alias': 'keyword', 'domain_of': ['Resource'], 'slot_uri': 'dcat:keyword'} })
+    dateIssued: Optional[datetime ] = Field(default=None, title="date issued", description="""Date of formal issuance (e.g., publication) of the resource""", json_schema_extra = { "linkml_meta": {'alias': 'dateIssued',
+         'close_mappings': ['schema:datePublished', 'schema:dateCreated'],
+         'comments': ['encoded using the relevant ISO 8601 Date and Time compliant '
+                      'string [DATETIME]'],
+         'domain_of': ['Resource'],
+         'exact_mappings': ['sepio:0000051'],
+         'slot_uri': 'dct:issued'} })
+    dateModified: Optional[datetime ] = Field(default=None, title="date modified", description="""Most recent date on which the resource was changed, updated or modified""", json_schema_extra = { "linkml_meta": {'alias': 'dateModified',
+         'close_mappings': ['schema:dateModified'],
+         'comments': ['encoded using the relevant ISO 8601 Date and Time compliant '
+                      'string [DATETIME]'],
+         'domain_of': ['Resource'],
+         'exact_mappings': ['sepio:0000036'],
+         'slot_uri': 'dct:modified'} })
 
 
 class Audio(File):
@@ -9954,6 +10964,20 @@ class Audio(File):
          'exact_mappings': ['dct:license', 'schema:license'],
          'slot_uri': 'dct:license'} })
     keyword: Optional[list[str]] = Field(default=None, title="keyword", description="""A keyword or tag describing the resource""", json_schema_extra = { "linkml_meta": {'alias': 'keyword', 'domain_of': ['Resource'], 'slot_uri': 'dcat:keyword'} })
+    dateIssued: Optional[datetime ] = Field(default=None, title="date issued", description="""Date of formal issuance (e.g., publication) of the resource""", json_schema_extra = { "linkml_meta": {'alias': 'dateIssued',
+         'close_mappings': ['schema:datePublished', 'schema:dateCreated'],
+         'comments': ['encoded using the relevant ISO 8601 Date and Time compliant '
+                      'string [DATETIME]'],
+         'domain_of': ['Resource'],
+         'exact_mappings': ['sepio:0000051'],
+         'slot_uri': 'dct:issued'} })
+    dateModified: Optional[datetime ] = Field(default=None, title="date modified", description="""Most recent date on which the resource was changed, updated or modified""", json_schema_extra = { "linkml_meta": {'alias': 'dateModified',
+         'close_mappings': ['schema:dateModified'],
+         'comments': ['encoded using the relevant ISO 8601 Date and Time compliant '
+                      'string [DATETIME]'],
+         'domain_of': ['Resource'],
+         'exact_mappings': ['sepio:0000036'],
+         'slot_uri': 'dct:modified'} })
 
 
 class Video(File):
@@ -10002,6 +11026,20 @@ class Video(File):
          'exact_mappings': ['dct:license', 'schema:license'],
          'slot_uri': 'dct:license'} })
     keyword: Optional[list[str]] = Field(default=None, title="keyword", description="""A keyword or tag describing the resource""", json_schema_extra = { "linkml_meta": {'alias': 'keyword', 'domain_of': ['Resource'], 'slot_uri': 'dcat:keyword'} })
+    dateIssued: Optional[datetime ] = Field(default=None, title="date issued", description="""Date of formal issuance (e.g., publication) of the resource""", json_schema_extra = { "linkml_meta": {'alias': 'dateIssued',
+         'close_mappings': ['schema:datePublished', 'schema:dateCreated'],
+         'comments': ['encoded using the relevant ISO 8601 Date and Time compliant '
+                      'string [DATETIME]'],
+         'domain_of': ['Resource'],
+         'exact_mappings': ['sepio:0000051'],
+         'slot_uri': 'dct:issued'} })
+    dateModified: Optional[datetime ] = Field(default=None, title="date modified", description="""Most recent date on which the resource was changed, updated or modified""", json_schema_extra = { "linkml_meta": {'alias': 'dateModified',
+         'close_mappings': ['schema:dateModified'],
+         'comments': ['encoded using the relevant ISO 8601 Date and Time compliant '
+                      'string [DATETIME]'],
+         'domain_of': ['Resource'],
+         'exact_mappings': ['sepio:0000036'],
+         'slot_uri': 'dct:modified'} })
 
 
 class Image(File):
@@ -10070,6 +11108,20 @@ class Image(File):
          'exact_mappings': ['dct:license', 'schema:license'],
          'slot_uri': 'dct:license'} })
     keyword: Optional[list[str]] = Field(default=None, title="keyword", description="""A keyword or tag describing the resource""", json_schema_extra = { "linkml_meta": {'alias': 'keyword', 'domain_of': ['Resource'], 'slot_uri': 'dcat:keyword'} })
+    dateIssued: Optional[datetime ] = Field(default=None, title="date issued", description="""Date of formal issuance (e.g., publication) of the resource""", json_schema_extra = { "linkml_meta": {'alias': 'dateIssued',
+         'close_mappings': ['schema:datePublished', 'schema:dateCreated'],
+         'comments': ['encoded using the relevant ISO 8601 Date and Time compliant '
+                      'string [DATETIME]'],
+         'domain_of': ['Resource'],
+         'exact_mappings': ['sepio:0000051'],
+         'slot_uri': 'dct:issued'} })
+    dateModified: Optional[datetime ] = Field(default=None, title="date modified", description="""Most recent date on which the resource was changed, updated or modified""", json_schema_extra = { "linkml_meta": {'alias': 'dateModified',
+         'close_mappings': ['schema:dateModified'],
+         'comments': ['encoded using the relevant ISO 8601 Date and Time compliant '
+                      'string [DATETIME]'],
+         'domain_of': ['Resource'],
+         'exact_mappings': ['sepio:0000036'],
+         'slot_uri': 'dct:modified'} })
 
 
 class ContactPoint(Resource):
@@ -10268,6 +11320,20 @@ class ContactPoint(Resource):
          'recommended': True,
          'related_mappings': ['iao:0000708', 'edam:4022']} })
     keyword: Optional[list[str]] = Field(default=None, title="keyword", description="""A keyword or tag describing the resource""", json_schema_extra = { "linkml_meta": {'alias': 'keyword', 'domain_of': ['Resource'], 'slot_uri': 'dcat:keyword'} })
+    dateIssued: Optional[datetime ] = Field(default=None, title="date issued", description="""Date of formal issuance (e.g., publication) of the resource""", json_schema_extra = { "linkml_meta": {'alias': 'dateIssued',
+         'close_mappings': ['schema:datePublished', 'schema:dateCreated'],
+         'comments': ['encoded using the relevant ISO 8601 Date and Time compliant '
+                      'string [DATETIME]'],
+         'domain_of': ['Resource'],
+         'exact_mappings': ['sepio:0000051'],
+         'slot_uri': 'dct:issued'} })
+    dateModified: Optional[datetime ] = Field(default=None, title="date modified", description="""Most recent date on which the resource was changed, updated or modified""", json_schema_extra = { "linkml_meta": {'alias': 'dateModified',
+         'close_mappings': ['schema:dateModified'],
+         'comments': ['encoded using the relevant ISO 8601 Date and Time compliant '
+                      'string [DATETIME]'],
+         'domain_of': ['Resource'],
+         'exact_mappings': ['sepio:0000036'],
+         'slot_uri': 'dct:modified'} })
 
 
 class License(Resource):
@@ -10420,6 +11486,20 @@ class License(Resource):
          'domain_of': ['License', 'PersonOrOrganization', 'Certification'],
          'exact_mappings': ['schema:logo']} })
     keyword: Optional[list[str]] = Field(default=None, title="keyword", description="""A keyword or tag describing the resource""", json_schema_extra = { "linkml_meta": {'alias': 'keyword', 'domain_of': ['Resource'], 'slot_uri': 'dcat:keyword'} })
+    dateIssued: Optional[datetime ] = Field(default=None, title="date issued", description="""Date of formal issuance (e.g., publication) of the resource""", json_schema_extra = { "linkml_meta": {'alias': 'dateIssued',
+         'close_mappings': ['schema:datePublished', 'schema:dateCreated'],
+         'comments': ['encoded using the relevant ISO 8601 Date and Time compliant '
+                      'string [DATETIME]'],
+         'domain_of': ['Resource'],
+         'exact_mappings': ['sepio:0000051'],
+         'slot_uri': 'dct:issued'} })
+    dateModified: Optional[datetime ] = Field(default=None, title="date modified", description="""Most recent date on which the resource was changed, updated or modified""", json_schema_extra = { "linkml_meta": {'alias': 'dateModified',
+         'close_mappings': ['schema:dateModified'],
+         'comments': ['encoded using the relevant ISO 8601 Date and Time compliant '
+                      'string [DATETIME]'],
+         'domain_of': ['Resource'],
+         'exact_mappings': ['sepio:0000036'],
+         'slot_uri': 'dct:modified'} })
 
 
 class Certification(Resource):
@@ -10562,6 +11642,20 @@ class Certification(Resource):
          'domain_of': ['Certification', 'License'],
          'exact_mappings': ['schema:archivedAt']} })
     keyword: Optional[list[str]] = Field(default=None, title="keyword", description="""A keyword or tag describing the resource""", json_schema_extra = { "linkml_meta": {'alias': 'keyword', 'domain_of': ['Resource'], 'slot_uri': 'dcat:keyword'} })
+    dateIssued: Optional[datetime ] = Field(default=None, title="date issued", description="""Date of formal issuance (e.g., publication) of the resource""", json_schema_extra = { "linkml_meta": {'alias': 'dateIssued',
+         'close_mappings': ['schema:datePublished', 'schema:dateCreated'],
+         'comments': ['encoded using the relevant ISO 8601 Date and Time compliant '
+                      'string [DATETIME]'],
+         'domain_of': ['Resource'],
+         'exact_mappings': ['sepio:0000051'],
+         'slot_uri': 'dct:issued'} })
+    dateModified: Optional[datetime ] = Field(default=None, title="date modified", description="""Most recent date on which the resource was changed, updated or modified""", json_schema_extra = { "linkml_meta": {'alias': 'dateModified',
+         'close_mappings': ['schema:dateModified'],
+         'comments': ['encoded using the relevant ISO 8601 Date and Time compliant '
+                      'string [DATETIME]'],
+         'domain_of': ['Resource'],
+         'exact_mappings': ['sepio:0000036'],
+         'slot_uri': 'dct:modified'} })
 
 
 # Model rebuild

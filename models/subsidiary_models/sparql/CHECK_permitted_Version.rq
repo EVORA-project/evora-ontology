@@ -67,6 +67,8 @@ SELECT ?g ?s ?p WHERE {
    EVORAO:versionOf,
    EVORAO:resource,
    dcat:keyword,
+   dct:issued,
+   dct:modified,
    rdf:type ))
  }
  

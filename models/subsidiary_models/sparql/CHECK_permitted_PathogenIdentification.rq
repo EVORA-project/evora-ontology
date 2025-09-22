@@ -74,6 +74,8 @@ SELECT ?g ?s ?p WHERE {
    EVORAO:serotype,
    EVORAO:variant,
    dcat:keyword,
+   dct:issued,
+   dct:modified,
    rdf:type ))
  }
  

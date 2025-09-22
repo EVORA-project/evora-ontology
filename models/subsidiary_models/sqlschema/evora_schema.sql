@@ -1,29 +1,41 @@
 -- # Class: "Resource" Description: "Resource published or curated by a single agent"
 --     * Slot: id Description: 
+--     * Slot: dateIssued Description: Date of formal issuance (e.g., publication) of the resource
+--     * Slot: dateModified Description: Most recent date on which the resource was changed, updated or modified
 -- # Class: "Dataset" Description: "A collection of data, published or curated by a single agent, and available for access"
 --     * Slot: id Description: 
 --     * Slot: title Description: A name given to the resource
 --     * Slot: description Description: A short explanation of the characteristics, features, or nature of the current item
 --     * Slot: version Description: The version indicator (name or identifier) of a resource
+--     * Slot: dateIssued Description: Date of formal issuance (e.g., publication) of the resource
+--     * Slot: dateModified Description: Most recent date on which the resource was changed, updated or modified
 -- # Class: "DataService" Description: "A collection of operations that provides access to one or more datasets or data processing functions"
 --     * Slot: id Description: 
 --     * Slot: title Description: A name given to the resource
 --     * Slot: description Description: A short explanation of the characteristics, features, or nature of the current item
 --     * Slot: endpointUrl Description: The URL template that allows to get the content
+--     * Slot: dateIssued Description: Date of formal issuance (e.g., publication) of the resource
+--     * Slot: dateModified Description: Most recent date on which the resource was changed, updated or modified
 -- # Class: "Version" Description: "Numeric code assigned to identify a particular historical version of a work (e.g. software or technical standards)"
 --     * Slot: id Description: 
 --     * Slot: version Description: The version indicator (name or identifier) of a resource
 --     * Slot: versionOf Description: Identifier of what type of entities the version qualifies
+--     * Slot: dateIssued Description: Date of formal issuance (e.g., publication) of the resource
+--     * Slot: dateModified Description: Most recent date on which the resource was changed, updated or modified
 -- # Class: "Catalogue" Description: "A curated collection of metadata about resources"
 --     * Slot: id Description: 
 --     * Slot: title Description: A name given to the resource
 --     * Slot: description Description: A short explanation of the characteristics, features, or nature of the current item
 --     * Slot: version Description: The version indicator (name or identifier) of a resource
+--     * Slot: dateIssued Description: Date of formal issuance (e.g., publication) of the resource
+--     * Slot: dateModified Description: Most recent date on which the resource was changed, updated or modified
 -- # Class: "Taxonomy" Description: "A structured representation of data about the classification and naming of biological organisms into groups according to shared characteristics"
 --     * Slot: id Description: 
 --     * Slot: version Description: The version indicator (name or identifier) of a resource
 --     * Slot: title Description: A name given to the resource
 --     * Slot: description Description: A short explanation of the characteristics, features, or nature of the current item
+--     * Slot: dateIssued Description: Date of formal issuance (e.g., publication) of the resource
+--     * Slot: dateModified Description: Most recent date on which the resource was changed, updated or modified
 --     * Slot: taxonDataProvider_id Description: The data provider for the taxons of the taxonomy
 --     * Slot: versionDataProvider_id Description: The data provider for the Version ID of this taxonomy
 --     * Slot: rankDataProvider_id Description: The data provider for the description of the taxonomic ranks used in this taxonomy
@@ -38,6 +50,8 @@
 --     * Slot: title Description: A name given to the resource
 --     * Slot: description Description: A short explanation of the characteristics, features, or nature of the current item
 --     * Slot: endpointUrl Description: The URL template that allows to get the content
+--     * Slot: dateIssued Description: Date of formal issuance (e.g., publication) of the resource
+--     * Slot: dateModified Description: Most recent date on which the resource was changed, updated or modified
 --     * Slot: license_id Description: Information about terms and conditions under which the subject can be used, shared, or distributed, indicating any restrictions or permissions
 -- # Class: "PathogenIdentification" Description: "A collection of distinguishing information that enables the differentiation of a pathogen from another"
 --     * Slot: id Description: 
@@ -47,6 +61,8 @@
 --     * Slot: isolate Description: Identifier given to a pathogen that has been isolated from an infected host and propagated in a laboratory culture. The isolate information may include an internal reference code from the laboratory that took the sample or performed the isolation, as well as details about the specific conditions of isolation, such as the name of the town, hospital, and type of host
 --     * Slot: genotype Description: Genotype information that identifies organisms that cluster in phylogenetic trees, thus different clusters are distinct genotypes
 --     * Slot: serotype Description: Genetically related pathogens that group together based on serological relationships
+--     * Slot: dateIssued Description: Date of formal issuance (e.g., publication) of the resource
+--     * Slot: dateModified Description: Most recent date on which the resource was changed, updated or modified
 --     * Slot: taxon_id Description: Scientifically classified group or entity within the reference taxonomy
 --     * Slot: pathogenName_id Description: A pathogen common name or a name that describes a group of pathogens
 --     * Slot: variant_id Description: An organism with one or more new mutations is referred to as a “variant” of the original organism if not sufficiently different to be termed a distinct strain
@@ -55,6 +71,8 @@
 --     * Slot: title Description: A name given to the resource
 --     * Slot: authors Description: The list of authors
 --     * Slot: abstract Description: Concise summary of the publication
+--     * Slot: dateIssued Description: Date of formal issuance (e.g., publication) of the resource
+--     * Slot: dateModified Description: Most recent date on which the resource was changed, updated or modified
 --     * Slot: doi_id Description: A Digital Object Identifier (DOI) that can be related
 --     * Slot: journal_id Description: The scientific journal in which the publication was published
 -- # Class: "Vocabulary" Description: "A subset of words or phrases specific to a particular subject or field"
@@ -62,108 +80,144 @@
 --     * Slot: title Description: A name given to the resource
 --     * Slot: description Description: A short explanation of the characteristics, features, or nature of the current item
 --     * Slot: version Description: The version indicator (name or identifier) of a resource
+--     * Slot: dateIssued Description: Date of formal issuance (e.g., publication) of the resource
+--     * Slot: dateModified Description: Most recent date on which the resource was changed, updated or modified
 --     * Slot: termDataProvider_id Description: An external API or Endpoint that permits to retrieve the terms of this vocabulary
 -- # Class: "Term" Description: "Word or phrase from a specialized area of knowledge"
 --     * Slot: id Description: 
 --     * Slot: title Description: A name given to the resource
 --     * Slot: description Description: A short explanation of the characteristics, features, or nature of the current item
 --     * Slot: weight Description: A numerical value indicating relative importance or priority, generally processed in ascending order. This weight helps prioritize content when organizing or processing data. Its value can be negative, with a default set to 0
+--     * Slot: dateIssued Description: Date of formal issuance (e.g., publication) of the resource
+--     * Slot: dateModified Description: Most recent date on which the resource was changed, updated or modified
 --     * Slot: inVocabulary_id Description: Terms belong to a specific vocabulary
 -- # Class: "CommonName" Description: "Vernacular name that is the name used in everyday language to refer to an organism or group of organisms. This name is typically easier to remember and pronounce compared to the scientific name"
 --     * Slot: id Description: 
 --     * Slot: title Description: A name given to the resource
 --     * Slot: description Description: A short explanation of the characteristics, features, or nature of the current item
 --     * Slot: weight Description: A numerical value indicating relative importance or priority, generally processed in ascending order. This weight helps prioritize content when organizing or processing data. Its value can be negative, with a default set to 0
+--     * Slot: dateIssued Description: Date of formal issuance (e.g., publication) of the resource
+--     * Slot: dateModified Description: Most recent date on which the resource was changed, updated or modified
 --     * Slot: inVocabulary_id Description: Terms belong to a specific vocabulary
 -- # Class: "VirusName" Description: "A virus vernacular name or a name that describes a group of viruses"
 --     * Slot: id Description: 
 --     * Slot: title Description: A name given to the resource
 --     * Slot: description Description: A short explanation of the characteristics, features, or nature of the current item
 --     * Slot: weight Description: A numerical value indicating relative importance or priority, generally processed in ascending order. This weight helps prioritize content when organizing or processing data. Its value can be negative, with a default set to 0
+--     * Slot: dateIssued Description: Date of formal issuance (e.g., publication) of the resource
+--     * Slot: dateModified Description: Most recent date on which the resource was changed, updated or modified
 --     * Slot: inVocabulary_id Description: Terms belong to a specific vocabulary
 -- # Class: "AlternateName" Description: "List of other names for things"
 --     * Slot: id Description: 
 --     * Slot: title Description: A name given to the resource
 --     * Slot: description Description: A short explanation of the characteristics, features, or nature of the current item
 --     * Slot: weight Description: A numerical value indicating relative importance or priority, generally processed in ascending order. This weight helps prioritize content when organizing or processing data. Its value can be negative, with a default set to 0
+--     * Slot: dateIssued Description: Date of formal issuance (e.g., publication) of the resource
+--     * Slot: dateModified Description: Most recent date on which the resource was changed, updated or modified
 --     * Slot: inVocabulary_id Description: Terms belong to a specific vocabulary
 -- # Class: "RiskGroup" Description: "Risk group classification guides initial handling of biological agents in labs but doesn't systematically equate to biosafety levels. Actual risk varies with the agent, procedures, and personnel competence"
 --     * Slot: id Description: 
 --     * Slot: title Description: A name given to the resource
 --     * Slot: description Description: A short explanation of the characteristics, features, or nature of the current item
 --     * Slot: weight Description: A numerical value indicating relative importance or priority, generally processed in ascending order. This weight helps prioritize content when organizing or processing data. Its value can be negative, with a default set to 0
+--     * Slot: dateIssued Description: Date of formal issuance (e.g., publication) of the resource
+--     * Slot: dateModified Description: Most recent date on which the resource was changed, updated or modified
 --     * Slot: inVocabulary_id Description: Terms belong to a specific vocabulary
 -- # Class: "Doi" Description: "A unique string identifier assigned to a digital object, providing a permanent link for reliable citation and access.  The Digital Object Identifier (DOI) is a persistent identifier that is an ISO standard"
 --     * Slot: id Description: 
 --     * Slot: title Description: A name given to the resource
 --     * Slot: description Description: A short explanation of the characteristics, features, or nature of the current item
 --     * Slot: weight Description: A numerical value indicating relative importance or priority, generally processed in ascending order. This weight helps prioritize content when organizing or processing data. Its value can be negative, with a default set to 0
+--     * Slot: dateIssued Description: Date of formal issuance (e.g., publication) of the resource
+--     * Slot: dateModified Description: Most recent date on which the resource was changed, updated or modified
 --     * Slot: inVocabulary_id Description: Terms belong to a specific vocabulary
 -- # Class: "Journal" Description: "Periodical journal publishing scientific research"
 --     * Slot: id Description: 
 --     * Slot: title Description: A name given to the resource
 --     * Slot: description Description: A short explanation of the characteristics, features, or nature of the current item
 --     * Slot: weight Description: A numerical value indicating relative importance or priority, generally processed in ascending order. This weight helps prioritize content when organizing or processing data. Its value can be negative, with a default set to 0
+--     * Slot: dateIssued Description: Date of formal issuance (e.g., publication) of the resource
+--     * Slot: dateModified Description: Most recent date on which the resource was changed, updated or modified
 --     * Slot: inVocabulary_id Description: Terms belong to a specific vocabulary
 -- # Class: "PdbReference" Description: "Identifier for 3D structural data as per the PDB (Protein Data Bank) database"
 --     * Slot: id Description: 
 --     * Slot: title Description: A name given to the resource
 --     * Slot: description Description: A short explanation of the characteristics, features, or nature of the current item
 --     * Slot: weight Description: A numerical value indicating relative importance or priority, generally processed in ascending order. This weight helps prioritize content when organizing or processing data. Its value can be negative, with a default set to 0
+--     * Slot: dateIssued Description: Date of formal issuance (e.g., publication) of the resource
+--     * Slot: dateModified Description: Most recent date on which the resource was changed, updated or modified
 --     * Slot: inVocabulary_id Description: Terms belong to a specific vocabulary
 -- # Class: "Keyword" Description: "A term or phrase used to tag and categorize content"
 --     * Slot: id Description: 
 --     * Slot: title Description: A name given to the resource
 --     * Slot: description Description: A short explanation of the characteristics, features, or nature of the current item
 --     * Slot: weight Description: A numerical value indicating relative importance or priority, generally processed in ascending order. This weight helps prioritize content when organizing or processing data. Its value can be negative, with a default set to 0
+--     * Slot: dateIssued Description: Date of formal issuance (e.g., publication) of the resource
+--     * Slot: dateModified Description: Most recent date on which the resource was changed, updated or modified
 --     * Slot: inVocabulary_id Description: Terms belong to a specific vocabulary
 -- # Class: "TagSequence" Description: "The name of the DNA coding sequence or corresponding peptide/protein sequence fused to a sequence of interest, used to facilitate experimental operations such as purification, detection, localization, tracking, solubility enhancement, or selection. Applicable to both proteins and nucleic acids"
 --     * Slot: id Description: 
 --     * Slot: title Description: A name given to the resource
 --     * Slot: description Description: A short explanation of the characteristics, features, or nature of the current item
 --     * Slot: weight Description: A numerical value indicating relative importance or priority, generally processed in ascending order. This weight helps prioritize content when organizing or processing data. Its value can be negative, with a default set to 0
+--     * Slot: dateIssued Description: Date of formal issuance (e.g., publication) of the resource
+--     * Slot: dateModified Description: Most recent date on which the resource was changed, updated or modified
 --     * Slot: inVocabulary_id Description: Terms belong to a specific vocabulary
 -- # Class: "SpecialFeature" Description: "Distinctive attributes of a product that set it apart from other similar items e.g., Reference strain, Vaccinal strain, Antiviral resistant strain ..."
 --     * Slot: id Description: 
 --     * Slot: title Description: A name given to the resource
 --     * Slot: description Description: A short explanation of the characteristics, features, or nature of the current item
 --     * Slot: weight Description: A numerical value indicating relative importance or priority, generally processed in ascending order. This weight helps prioritize content when organizing or processing data. Its value can be negative, with a default set to 0
+--     * Slot: dateIssued Description: Date of formal issuance (e.g., publication) of the resource
+--     * Slot: dateModified Description: Most recent date on which the resource was changed, updated or modified
 --     * Slot: inVocabulary_id Description: Terms belong to a specific vocabulary
 -- # Class: "ExpressionVector" Description: "A reference to an expression vector plasmid, typically embedding a resistance marker for inducible protein expression"
 --     * Slot: id Description: 
 --     * Slot: title Description: A name given to the resource
 --     * Slot: description Description: A short explanation of the characteristics, features, or nature of the current item
 --     * Slot: weight Description: A numerical value indicating relative importance or priority, generally processed in ascending order. This weight helps prioritize content when organizing or processing data. Its value can be negative, with a default set to 0
+--     * Slot: dateIssued Description: Date of formal issuance (e.g., publication) of the resource
+--     * Slot: dateModified Description: Most recent date on which the resource was changed, updated or modified
 --     * Slot: inVocabulary_id Description: Terms belong to a specific vocabulary
 -- # Class: "PlasmidSelection" Description: "The process of identifying cells that have successfully incorporated a plasmid, typically using antibiotic resistance markers"
 --     * Slot: id Description: 
 --     * Slot: title Description: A name given to the resource
 --     * Slot: description Description: A short explanation of the characteristics, features, or nature of the current item
 --     * Slot: weight Description: A numerical value indicating relative importance or priority, generally processed in ascending order. This weight helps prioritize content when organizing or processing data. Its value can be negative, with a default set to 0
+--     * Slot: dateIssued Description: Date of formal issuance (e.g., publication) of the resource
+--     * Slot: dateModified Description: Most recent date on which the resource was changed, updated or modified
 --     * Slot: inVocabulary_id Description: Terms belong to a specific vocabulary
 -- # Class: "PropagationHost" Description: "The organism used to grow and multiply the pathogen under controlled conditions"
 --     * Slot: id Description: 
 --     * Slot: title Description: A name given to the resource
 --     * Slot: description Description: A short explanation of the characteristics, features, or nature of the current item
 --     * Slot: weight Description: A numerical value indicating relative importance or priority, generally processed in ascending order. This weight helps prioritize content when organizing or processing data. Its value can be negative, with a default set to 0
+--     * Slot: dateIssued Description: Date of formal issuance (e.g., publication) of the resource
+--     * Slot: dateModified Description: Most recent date on which the resource was changed, updated or modified
 --     * Slot: inVocabulary_id Description: Terms belong to a specific vocabulary
 -- # Class: "TransmissionMethod" Description: "The process by which the pathogen spreads between hosts"
 --     * Slot: id Description: 
 --     * Slot: title Description: A name given to the resource
 --     * Slot: description Description: A short explanation of the characteristics, features, or nature of the current item
 --     * Slot: weight Description: A numerical value indicating relative importance or priority, generally processed in ascending order. This weight helps prioritize content when organizing or processing data. Its value can be negative, with a default set to 0
+--     * Slot: dateIssued Description: Date of formal issuance (e.g., publication) of the resource
+--     * Slot: dateModified Description: Most recent date on which the resource was changed, updated or modified
 --     * Slot: inVocabulary_id Description: Terms belong to a specific vocabulary
 -- # Class: "ProductionCellLine" Description: "A population of cells that originates from a primary culture, adapted to grow and divide under laboratory conditions. Used in biotechnology to consistently produce biological substances"
 --     * Slot: id Description: 
 --     * Slot: title Description: A name given to the resource
 --     * Slot: description Description: A short explanation of the characteristics, features, or nature of the current item
 --     * Slot: weight Description: A numerical value indicating relative importance or priority, generally processed in ascending order. This weight helps prioritize content when organizing or processing data. Its value can be negative, with a default set to 0
+--     * Slot: dateIssued Description: Date of formal issuance (e.g., publication) of the resource
+--     * Slot: dateModified Description: Most recent date on which the resource was changed, updated or modified
 --     * Slot: inVocabulary_id Description: Terms belong to a specific vocabulary
 -- # Class: "ProductCategory" Description: "A term used to classify a group of products that share common characteristics or functions, which helps in their organization"
 --     * Slot: id Description: 
 --     * Slot: title Description: A name given to the resource
 --     * Slot: description Description: A short explanation of the characteristics, features, or nature of the current item
 --     * Slot: weight Description: A numerical value indicating relative importance or priority, generally processed in ascending order. This weight helps prioritize content when organizing or processing data. Its value can be negative, with a default set to 0
+--     * Slot: dateIssued Description: Date of formal issuance (e.g., publication) of the resource
+--     * Slot: dateModified Description: Most recent date on which the resource was changed, updated or modified
 --     * Slot: parentCategory_id Description: An overarching category that encompasses the current category within a hierarchical classification system. It serves as the top-level classification, organizing related subcategories under its umbrella to create a structured and logical order.
 --     * Slot: inVocabulary_id Description: Terms belong to a specific vocabulary
 -- # Class: "IsolationHost" Description: "Host organism from which the pathogen was isolated"
@@ -171,18 +225,24 @@
 --     * Slot: title Description: A name given to the resource
 --     * Slot: description Description: A short explanation of the characteristics, features, or nature of the current item
 --     * Slot: weight Description: A numerical value indicating relative importance or priority, generally processed in ascending order. This weight helps prioritize content when organizing or processing data. Its value can be negative, with a default set to 0
+--     * Slot: dateIssued Description: Date of formal issuance (e.g., publication) of the resource
+--     * Slot: dateModified Description: Most recent date on which the resource was changed, updated or modified
 --     * Slot: inVocabulary_id Description: Terms belong to a specific vocabulary
 -- # Class: "GeographicalOrigin" Description: "The specific location or region where a physical item, originates or is naturally found"
 --     * Slot: id Description: 
 --     * Slot: title Description: A name given to the resource
 --     * Slot: description Description: A short explanation of the characteristics, features, or nature of the current item
 --     * Slot: weight Description: A numerical value indicating relative importance or priority, generally processed in ascending order. This weight helps prioritize content when organizing or processing data. Its value can be negative, with a default set to 0
+--     * Slot: dateIssued Description: Date of formal issuance (e.g., publication) of the resource
+--     * Slot: dateModified Description: Most recent date on which the resource was changed, updated or modified
 --     * Slot: inVocabulary_id Description: Terms belong to a specific vocabulary
 -- # Class: "IplcOrigin" Description: "The IPLC area (Indigenous People and Local Communities) from which a physical item originates"
 --     * Slot: id Description: 
 --     * Slot: title Description: A name given to the resource
 --     * Slot: description Description: A short explanation of the characteristics, features, or nature of the current item
 --     * Slot: weight Description: A numerical value indicating relative importance or priority, generally processed in ascending order. This weight helps prioritize content when organizing or processing data. Its value can be negative, with a default set to 0
+--     * Slot: dateIssued Description: Date of formal issuance (e.g., publication) of the resource
+--     * Slot: dateModified Description: Most recent date on which the resource was changed, updated or modified
 --     * Slot: inVocabulary_id Description: Terms belong to a specific vocabulary
 -- # Class: "Country" Description: "The country as of ISO3166"
 --     * Slot: id Description: 
@@ -190,24 +250,32 @@
 --     * Slot: title Description: A name given to the resource
 --     * Slot: description Description: A short explanation of the characteristics, features, or nature of the current item
 --     * Slot: weight Description: A numerical value indicating relative importance or priority, generally processed in ascending order. This weight helps prioritize content when organizing or processing data. Its value can be negative, with a default set to 0
+--     * Slot: dateIssued Description: Date of formal issuance (e.g., publication) of the resource
+--     * Slot: dateModified Description: Most recent date on which the resource was changed, updated or modified
 --     * Slot: inVocabulary_id Description: Terms belong to a specific vocabulary
 -- # Class: "IataClassification" Description: "The corresponding International Air Transport Association (IATA)'s category for dangerous goods that are transported by air"
 --     * Slot: id Description: 
 --     * Slot: title Description: A name given to the resource
 --     * Slot: description Description: A short explanation of the characteristics, features, or nature of the current item
 --     * Slot: weight Description: A numerical value indicating relative importance or priority, generally processed in ascending order. This weight helps prioritize content when organizing or processing data. Its value can be negative, with a default set to 0
+--     * Slot: dateIssued Description: Date of formal issuance (e.g., publication) of the resource
+--     * Slot: dateModified Description: Most recent date on which the resource was changed, updated or modified
 --     * Slot: inVocabulary_id Description: Terms belong to a specific vocabulary
 -- # Class: "Variant" Description: "An organism with one or more new mutations is referred to as a “variant” of the original organism if not sufficiently different to be termed a distinct strain"
 --     * Slot: id Description: 
 --     * Slot: title Description: A name given to the resource
 --     * Slot: description Description: A short explanation of the characteristics, features, or nature of the current item
 --     * Slot: weight Description: A numerical value indicating relative importance or priority, generally processed in ascending order. This weight helps prioritize content when organizing or processing data. Its value can be negative, with a default set to 0
+--     * Slot: dateIssued Description: Date of formal issuance (e.g., publication) of the resource
+--     * Slot: dateModified Description: Most recent date on which the resource was changed, updated or modified
 --     * Slot: inVocabulary_id Description: Terms belong to a specific vocabulary
 -- # Class: "TaxonomicRank" Description: "The possible taxonomic ranks and their description"
 --     * Slot: id Description: 
 --     * Slot: title Description: A name given to the resource
 --     * Slot: description Description: A short explanation of the characteristics, features, or nature of the current item
 --     * Slot: weight Description: A numerical value indicating relative importance or priority, generally processed in ascending order. This weight helps prioritize content when organizing or processing data. Its value can be negative, with a default set to 0
+--     * Slot: dateIssued Description: Date of formal issuance (e.g., publication) of the resource
+--     * Slot: dateModified Description: Most recent date on which the resource was changed, updated or modified
 --     * Slot: inVocabulary_id Description: Terms belong to a specific vocabulary
 -- # Class: "Taxon" Description: "Conceptual entity that groups one or more populations of an organism or organisms, as seen by taxonomists, to form a unit"
 --     * Slot: id Description: 
@@ -216,6 +284,8 @@
 --     * Slot: title Description: A name given to the resource
 --     * Slot: description Description: A short explanation of the characteristics, features, or nature of the current item
 --     * Slot: weight Description: A numerical value indicating relative importance or priority, generally processed in ascending order. This weight helps prioritize content when organizing or processing data. Its value can be negative, with a default set to 0
+--     * Slot: dateIssued Description: Date of formal issuance (e.g., publication) of the resource
+--     * Slot: dateModified Description: Most recent date on which the resource was changed, updated or modified
 --     * Slot: parentTaxon_id Description: The parent taxon of the current taxon
 --     * Slot: rank_id Description: Relative level or position of the identified taxon in the taxonomy
 --     * Slot: inVocabulary_id Description: Terms belong to a specific vocabulary
@@ -225,18 +295,26 @@
 --     * Slot: referenceLabel Description: The label informing what this reference is about
 --     * Slot: referenceProviderPrefix Description: The url prefix that once completed with the reference will lead to the linked external resource
 --     * Slot: referenceProviderName Description: The name for the reference provider
+--     * Slot: dateIssued Description: Date of formal issuance (e.g., publication) of the resource
+--     * Slot: dateModified Description: Most recent date on which the resource was changed, updated or modified
 -- # Class: "Sequence" Description: "A nucleic acid or protein sequence information"
 --     * Slot: id Description: 
 --     * Slot: sequenceFasta Description: Textual encoding of a biological sequence information in FASTA format
+--     * Slot: dateIssued Description: Date of formal issuance (e.g., publication) of the resource
+--     * Slot: dateModified Description: Most recent date on which the resource was changed, updated or modified
 -- # Class: "SequenceReference" Description: "A reference that permits to retrieve the sequence information from a sequence provider"
 --     * Slot: id Description: 
 --     * Slot: accessionNumber Description: The sequence ID that permits to retrieve the sequence information from the sequence provider
 --     * Slot: sequenceProvider Description: The name of the sequence provider within the list of accepted sequence providers
+--     * Slot: dateIssued Description: Date of formal issuance (e.g., publication) of the resource
+--     * Slot: dateModified Description: Most recent date on which the resource was changed, updated or modified
 -- # Class: "PersonOrOrganization" Description: "A person or an organization"
 --     * Slot: id Description: 
 --     * Slot: name Description: A word or set of words used to identify and refer to an entity
 --     * Slot: description Description: A short explanation of the characteristics, features, or nature of the current item
 --     * Slot: homePage Description: A web page that serves as the main or introductory page
+--     * Slot: dateIssued Description: Date of formal issuance (e.g., publication) of the resource
+--     * Slot: dateModified Description: Most recent date on which the resource was changed, updated or modified
 --     * Slot: contactPoint_id Description: An information that allows someone to establish communication
 --     * Slot: logo_id Description: A path or URL to the related logo
 -- # Class: "Person" Description: "An individual"
@@ -245,6 +323,8 @@
 --     * Slot: name Description: A word or set of words used to identify and refer to an entity
 --     * Slot: description Description: A short explanation of the characteristics, features, or nature of the current item
 --     * Slot: homePage Description: A web page that serves as the main or introductory page
+--     * Slot: dateIssued Description: Date of formal issuance (e.g., publication) of the resource
+--     * Slot: dateModified Description: Most recent date on which the resource was changed, updated or modified
 --     * Slot: contactPoint_id Description: An information that allows someone to establish communication
 --     * Slot: logo_id Description: A path or URL to the related logo
 -- # Class: "Organization" Description: "A social entity established to meet needs or pursue specific goals"
@@ -253,6 +333,8 @@
 --     * Slot: name Description: A word or set of words used to identify and refer to an entity
 --     * Slot: description Description: A short explanation of the characteristics, features, or nature of the current item
 --     * Slot: homePage Description: A web page that serves as the main or introductory page
+--     * Slot: dateIssued Description: Date of formal issuance (e.g., publication) of the resource
+--     * Slot: dateModified Description: Most recent date on which the resource was changed, updated or modified
 --     * Slot: country_id Description: The country of the organization
 --     * Slot: contactPoint_id Description: An information that allows someone to establish communication
 --     * Slot: logo_id Description: A path or URL to the related logo
@@ -262,6 +344,8 @@
 --     * Slot: name Description: A word or set of words used to identify and refer to an entity
 --     * Slot: description Description: A short explanation of the characteristics, features, or nature of the current item
 --     * Slot: homePage Description: A web page that serves as the main or introductory page
+--     * Slot: dateIssued Description: Date of formal issuance (e.g., publication) of the resource
+--     * Slot: dateModified Description: Most recent date on which the resource was changed, updated or modified
 --     * Slot: country_id Description: The country of the organization
 --     * Slot: contactPoint_id Description: An information that allows someone to establish communication
 --     * Slot: logo_id Description: A path or URL to the related logo
@@ -271,6 +355,8 @@
 --     * Slot: name Description: A word or set of words used to identify and refer to an entity
 --     * Slot: description Description: A short explanation of the characteristics, features, or nature of the current item
 --     * Slot: homePage Description: A web page that serves as the main or introductory page
+--     * Slot: dateIssued Description: Date of formal issuance (e.g., publication) of the resource
+--     * Slot: dateModified Description: Most recent date on which the resource was changed, updated or modified
 --     * Slot: country_id Description: The country of the organization
 --     * Slot: contactPoint_id Description: An information that allows someone to establish communication
 --     * Slot: logo_id Description: A path or URL to the related logo
@@ -279,15 +365,21 @@
 --     * Slot: name Description: A word or set of words used to identify and refer to an entity
 --     * Slot: description Description: A short explanation of the characteristics, features, or nature of the current item
 --     * Slot: homePage Description: A web page that serves as the main or introductory page
+--     * Slot: dateIssued Description: Date of formal issuance (e.g., publication) of the resource
+--     * Slot: dateModified Description: Most recent date on which the resource was changed, updated or modified
 --     * Slot: contactPoint_id Description: An information that allows someone to establish communication
 --     * Slot: logo_id Description: A path or URL to the related logo
 -- # Class: "BiologicalMaterialOrigin" Description: "Information about the origin of the biological material, compulsory for access, utilization, and benefit-sharing of genetic resources in compliance with the Nagoya Protocol"
 --     * Slot: id Description: 
 --     * Slot: recombinantMaterial Description: Indicates if this biological material is a recombinant biological material.
 --     * Slot: biologicalSourceType Description: Defines if the current biological material is natural and was collected or if it is a synthetic biological material. It makes sense that only recombinant biological materials can have a mixed material origin!
+--     * Slot: dateIssued Description: Date of formal issuance (e.g., publication) of the resource
+--     * Slot: dateModified Description: Most recent date on which the resource was changed, updated or modified
 -- # Class: "BiologicalPartOrigin" Description: "Information on the origin of a unitary, cohesive part that is part of, or constitutes the biological material. It can be multiple parts in case of a recombinant biological material"
 --     * Slot: id Description: 
 --     * Slot: accessToPhysicalGeneticResource Description: Indicate if the biological part was produced with access to a physical genetic resource
+--     * Slot: dateIssued Description: Date of formal issuance (e.g., publication) of the resource
+--     * Slot: dateModified Description: Most recent date on which the resource was changed, updated or modified
 --     * Slot: recombinantPartIdentification_id Description: Identification of a recombinant part
 -- # Class: "NaturalPartOrigin" Description: "Information on the origin of a natural part that composes the biological material"
 --     * Slot: id Description: 
@@ -295,6 +387,8 @@
 --     * Slot: beforeDate Description: Set to TRUE if a proxy date for the collection date is used
 --     * Slot: permitIdentifierForAbs Description: Reference of the permit identifiers for access to the genetic resource, applicable if the genetic resource falls under Access and Benefit-Sharing (ABS) regulations
 --     * Slot: accessToPhysicalGeneticResource Description: Indicate if the biological part was produced with access to a physical genetic resource
+--     * Slot: dateIssued Description: Date of formal issuance (e.g., publication) of the resource
+--     * Slot: dateModified Description: Most recent date on which the resource was changed, updated or modified
 --     * Slot: countryOfCollection_id Description: The geographical location where the sample was collected in situ. Used for Nagoya/CBD; equivalent to 'country of origin'.
 --     * Slot: indigenousPeopleAndLocalCommunityOrigin_id Description: The specific IPLC area (Indigenous People and Local Communities) from which this sample/element was sampled, if relevant
 --     * Slot: recombinantPartIdentification_id Description: Identification of a recombinant part
@@ -303,15 +397,21 @@
 --     * Slot: modificationsFromTheReferenceSequences Description: Set to TRUE if there was is any modification made from the reference sequence
 --     * Slot: descriptionOfModificationsMadeFromTheReferenceSequences Description: List the modifications mades from the reference sequence if any
 --     * Slot: accessToPhysicalGeneticResource Description: Indicate if the biological part was produced with access to a physical genetic resource
+--     * Slot: dateIssued Description: Date of formal issuance (e.g., publication) of the resource
+--     * Slot: dateModified Description: Most recent date on which the resource was changed, updated or modified
 --     * Slot: recombinantPartIdentification_id Description: Identification of a recombinant part
 -- # Class: "RecombinantPartIdentification" Description: "Identification of a recombinant part"
 --     * Slot: id Description: 
 --     * Slot: partIdentification Description: A short designation of this recombinant part of the related biological material
+--     * Slot: dateIssued Description: Date of formal issuance (e.g., publication) of the resource
+--     * Slot: dateModified Description: Most recent date on which the resource was changed, updated or modified
 -- # Class: "Collection" Description: "Set of products and services with some common characteristics"
 --     * Slot: id Description: 
 --     * Slot: title Description: A name given to the resource
 --     * Slot: description Description: A short explanation of the characteristics, features, or nature of the current item
 --     * Slot: version Description: The version indicator (name or identifier) of a resource
+--     * Slot: dateIssued Description: Date of formal issuance (e.g., publication) of the resource
+--     * Slot: dateModified Description: Most recent date on which the resource was changed, updated or modified
 --     * Slot: collectionDataProvider_id Description: The provider of the data of the collection
 -- # Class: "ProductOrService" Description: "An offering provided by a provider, which may be tangible (a product) or intangible (a service)"
 --     * Slot: id Description: 
@@ -331,6 +431,8 @@
 --     * Slot: title Description: A name given to the resource
 --     * Slot: description Description: A short explanation of the characteristics, features, or nature of the current item
 --     * Slot: version Description: The version indicator (name or identifier) of a resource
+--     * Slot: dateIssued Description: Date of formal issuance (e.g., publication) of the resource
+--     * Slot: dateModified Description: Most recent date on which the resource was changed, updated or modified
 --     * Slot: category_id Description: The main category of the service or product
 --     * Slot: riskGroup_id Description: The highest risk group related to this resource. The risk group of a biological agent guiding its initial handling in labs according to the risk group classification defined by the WHO laboratory biosafety manual
 --     * Slot: provider_id Description: A provider of this product or service, as a specific organization
@@ -355,6 +457,8 @@
 --     * Slot: title Description: A name given to the resource
 --     * Slot: description Description: A short explanation of the characteristics, features, or nature of the current item
 --     * Slot: version Description: The version indicator (name or identifier) of a resource
+--     * Slot: dateIssued Description: Date of formal issuance (e.g., publication) of the resource
+--     * Slot: dateModified Description: Most recent date on which the resource was changed, updated or modified
 --     * Slot: category_id Description: The main category of the service or product
 --     * Slot: riskGroup_id Description: The highest risk group related to this resource. The risk group of a biological agent guiding its initial handling in labs according to the risk group classification defined by the WHO laboratory biosafety manual
 --     * Slot: provider_id Description: A provider of this product or service, as a specific organization
@@ -381,6 +485,8 @@
 --     * Slot: title Description: A name given to the resource
 --     * Slot: description Description: A short explanation of the characteristics, features, or nature of the current item
 --     * Slot: version Description: The version indicator (name or identifier) of a resource
+--     * Slot: dateIssued Description: Date of formal issuance (e.g., publication) of the resource
+--     * Slot: dateModified Description: Most recent date on which the resource was changed, updated or modified
 --     * Slot: iataClassification_id Description: The corresponding International Air Transport Association (IATA)'s category for this Product
 --     * Slot: materialSafetyDataSheet_id Description: A Material Safety Data Sheet (MSDS) or Safety Data Sheet (SDS) is a standardized document that contains crucial occupational safety and health information related to the product
 --     * Slot: originator_id Description: The individual or organization responsible for the original discovery, isolation, or creation of an item, providing information about the source or origin of the sample
@@ -414,6 +520,8 @@
 --     * Slot: title Description: A name given to the resource
 --     * Slot: description Description: A short explanation of the characteristics, features, or nature of the current item
 --     * Slot: version Description: The version indicator (name or identifier) of a resource
+--     * Slot: dateIssued Description: Date of formal issuance (e.g., publication) of the resource
+--     * Slot: dateModified Description: Most recent date on which the resource was changed, updated or modified
 --     * Slot: iataClassification_id Description: The corresponding International Air Transport Association (IATA)'s category for this Product
 --     * Slot: materialSafetyDataSheet_id Description: A Material Safety Data Sheet (MSDS) or Safety Data Sheet (SDS) is a standardized document that contains crucial occupational safety and health information related to the product
 --     * Slot: originator_id Description: The individual or organization responsible for the original discovery, isolation, or creation of an item, providing information about the source or origin of the sample
@@ -448,6 +556,8 @@
 --     * Slot: title Description: A name given to the resource
 --     * Slot: description Description: A short explanation of the characteristics, features, or nature of the current item
 --     * Slot: version Description: The version indicator (name or identifier) of a resource
+--     * Slot: dateIssued Description: Date of formal issuance (e.g., publication) of the resource
+--     * Slot: dateModified Description: Most recent date on which the resource was changed, updated or modified
 --     * Slot: iataClassification_id Description: The corresponding International Air Transport Association (IATA)'s category for this Product
 --     * Slot: materialSafetyDataSheet_id Description: A Material Safety Data Sheet (MSDS) or Safety Data Sheet (SDS) is a standardized document that contains crucial occupational safety and health information related to the product
 --     * Slot: originator_id Description: The individual or organization responsible for the original discovery, isolation, or creation of an item, providing information about the source or origin of the sample
@@ -477,6 +587,8 @@
 --     * Slot: title Description: A name given to the resource
 --     * Slot: description Description: A short explanation of the characteristics, features, or nature of the current item
 --     * Slot: version Description: The version indicator (name or identifier) of a resource
+--     * Slot: dateIssued Description: Date of formal issuance (e.g., publication) of the resource
+--     * Slot: dateModified Description: Most recent date on which the resource was changed, updated or modified
 --     * Slot: biologicalMaterialOrigin_id Description: Information about the origin of the biological material, essential for access, utilization, and benefit-sharing of genetic resources in compliance with the Nagoya Protocol
 --     * Slot: iataClassification_id Description: The corresponding International Air Transport Association (IATA)'s category for this Product
 --     * Slot: materialSafetyDataSheet_id Description: A Material Safety Data Sheet (MSDS) or Safety Data Sheet (SDS) is a standardized document that contains crucial occupational safety and health information related to the product
@@ -515,6 +627,8 @@
 --     * Slot: title Description: A name given to the resource
 --     * Slot: description Description: A short explanation of the characteristics, features, or nature of the current item
 --     * Slot: version Description: The version indicator (name or identifier) of a resource
+--     * Slot: dateIssued Description: Date of formal issuance (e.g., publication) of the resource
+--     * Slot: dateModified Description: Most recent date on which the resource was changed, updated or modified
 --     * Slot: biologicalMaterialOrigin_id Description: Information about the origin of the biological material, essential for access, utilization, and benefit-sharing of genetic resources in compliance with the Nagoya Protocol
 --     * Slot: clonedIntoPlasmid_id Description: The plasmid into which the nucleic acid has been cloned
 --     * Slot: tagSequence_id Description: The name of the DNA coding sequence or corresponding peptide/protein sequence fused to a sequence of interest, used to facilitate experimental operations such as purification, detection, localization, tracking, solubility enhancement, or selection. Applicable to both proteins and nucleic acids
@@ -550,6 +664,8 @@
 --     * Slot: title Description: A name given to the resource
 --     * Slot: description Description: A short explanation of the characteristics, features, or nature of the current item
 --     * Slot: version Description: The version indicator (name or identifier) of a resource
+--     * Slot: dateIssued Description: Date of formal issuance (e.g., publication) of the resource
+--     * Slot: dateModified Description: Most recent date on which the resource was changed, updated or modified
 --     * Slot: iataClassification_id Description: The corresponding International Air Transport Association (IATA)'s category for this Product
 --     * Slot: materialSafetyDataSheet_id Description: A Material Safety Data Sheet (MSDS) or Safety Data Sheet (SDS) is a standardized document that contains crucial occupational safety and health information related to the product
 --     * Slot: originator_id Description: The individual or organization responsible for the original discovery, isolation, or creation of an item, providing information about the source or origin of the sample
@@ -579,6 +695,8 @@
 --     * Slot: title Description: A name given to the resource
 --     * Slot: description Description: A short explanation of the characteristics, features, or nature of the current item
 --     * Slot: version Description: The version indicator (name or identifier) of a resource
+--     * Slot: dateIssued Description: Date of formal issuance (e.g., publication) of the resource
+--     * Slot: dateModified Description: Most recent date on which the resource was changed, updated or modified
 --     * Slot: iataClassification_id Description: The corresponding International Air Transport Association (IATA)'s category for this Product
 --     * Slot: materialSafetyDataSheet_id Description: A Material Safety Data Sheet (MSDS) or Safety Data Sheet (SDS) is a standardized document that contains crucial occupational safety and health information related to the product
 --     * Slot: originator_id Description: The individual or organization responsible for the original discovery, isolation, or creation of an item, providing information about the source or origin of the sample
@@ -619,6 +737,8 @@
 --     * Slot: title Description: A name given to the resource
 --     * Slot: description Description: A short explanation of the characteristics, features, or nature of the current item
 --     * Slot: version Description: The version indicator (name or identifier) of a resource
+--     * Slot: dateIssued Description: Date of formal issuance (e.g., publication) of the resource
+--     * Slot: dateModified Description: Most recent date on which the resource was changed, updated or modified
 --     * Slot: biologicalMaterialOrigin_id Description: Information about the origin of the biological material, essential for access, utilization, and benefit-sharing of genetic resources in compliance with the Nagoya Protocol
 --     * Slot: iataClassification_id Description: The corresponding International Air Transport Association (IATA)'s category for this Product
 --     * Slot: materialSafetyDataSheet_id Description: A Material Safety Data Sheet (MSDS) or Safety Data Sheet (SDS) is a standardized document that contains crucial occupational safety and health information related to the product
@@ -662,6 +782,8 @@
 --     * Slot: title Description: A name given to the resource
 --     * Slot: description Description: A short explanation of the characteristics, features, or nature of the current item
 --     * Slot: version Description: The version indicator (name or identifier) of a resource
+--     * Slot: dateIssued Description: Date of formal issuance (e.g., publication) of the resource
+--     * Slot: dateModified Description: Most recent date on which the resource was changed, updated or modified
 --     * Slot: biologicalMaterialOrigin_id Description: Information about the origin of the biological material, essential for access, utilization, and benefit-sharing of genetic resources in compliance with the Nagoya Protocol
 --     * Slot: iataClassification_id Description: The corresponding International Air Transport Association (IATA)'s category for this Product
 --     * Slot: materialSafetyDataSheet_id Description: A Material Safety Data Sheet (MSDS) or Safety Data Sheet (SDS) is a standardized document that contains crucial occupational safety and health information related to the product
@@ -703,6 +825,8 @@
 --     * Slot: title Description: A name given to the resource
 --     * Slot: description Description: A short explanation of the characteristics, features, or nature of the current item
 --     * Slot: version Description: The version indicator (name or identifier) of a resource
+--     * Slot: dateIssued Description: Date of formal issuance (e.g., publication) of the resource
+--     * Slot: dateModified Description: Most recent date on which the resource was changed, updated or modified
 --     * Slot: biologicalMaterialOrigin_id Description: Information about the origin of the biological material, essential for access, utilization, and benefit-sharing of genetic resources in compliance with the Nagoya Protocol
 --     * Slot: iataClassification_id Description: The corresponding International Air Transport Association (IATA)'s category for this Product
 --     * Slot: materialSafetyDataSheet_id Description: A Material Safety Data Sheet (MSDS) or Safety Data Sheet (SDS) is a standardized document that contains crucial occupational safety and health information related to the product
@@ -744,6 +868,8 @@
 --     * Slot: title Description: A name given to the resource
 --     * Slot: description Description: A short explanation of the characteristics, features, or nature of the current item
 --     * Slot: version Description: The version indicator (name or identifier) of a resource
+--     * Slot: dateIssued Description: Date of formal issuance (e.g., publication) of the resource
+--     * Slot: dateModified Description: Most recent date on which the resource was changed, updated or modified
 --     * Slot: biologicalMaterialOrigin_id Description: Information about the origin of the biological material, essential for access, utilization, and benefit-sharing of genetic resources in compliance with the Nagoya Protocol
 --     * Slot: iataClassification_id Description: The corresponding International Air Transport Association (IATA)'s category for this Product
 --     * Slot: materialSafetyDataSheet_id Description: A Material Safety Data Sheet (MSDS) or Safety Data Sheet (SDS) is a standardized document that contains crucial occupational safety and health information related to the product
@@ -785,6 +911,8 @@
 --     * Slot: title Description: A name given to the resource
 --     * Slot: description Description: A short explanation of the characteristics, features, or nature of the current item
 --     * Slot: version Description: The version indicator (name or identifier) of a resource
+--     * Slot: dateIssued Description: Date of formal issuance (e.g., publication) of the resource
+--     * Slot: dateModified Description: Most recent date on which the resource was changed, updated or modified
 --     * Slot: biologicalMaterialOrigin_id Description: Information about the origin of the biological material, essential for access, utilization, and benefit-sharing of genetic resources in compliance with the Nagoya Protocol
 --     * Slot: iataClassification_id Description: The corresponding International Air Transport Association (IATA)'s category for this Product
 --     * Slot: materialSafetyDataSheet_id Description: A Material Safety Data Sheet (MSDS) or Safety Data Sheet (SDS) is a standardized document that contains crucial occupational safety and health information related to the product
@@ -826,6 +954,8 @@
 --     * Slot: title Description: A name given to the resource
 --     * Slot: description Description: A short explanation of the characteristics, features, or nature of the current item
 --     * Slot: version Description: The version indicator (name or identifier) of a resource
+--     * Slot: dateIssued Description: Date of formal issuance (e.g., publication) of the resource
+--     * Slot: dateModified Description: Most recent date on which the resource was changed, updated or modified
 --     * Slot: biologicalMaterialOrigin_id Description: Information about the origin of the biological material, essential for access, utilization, and benefit-sharing of genetic resources in compliance with the Nagoya Protocol
 --     * Slot: iataClassification_id Description: The corresponding International Air Transport Association (IATA)'s category for this Product
 --     * Slot: materialSafetyDataSheet_id Description: A Material Safety Data Sheet (MSDS) or Safety Data Sheet (SDS) is a standardized document that contains crucial occupational safety and health information related to the product
@@ -867,6 +997,8 @@
 --     * Slot: title Description: A name given to the resource
 --     * Slot: description Description: A short explanation of the characteristics, features, or nature of the current item
 --     * Slot: version Description: The version indicator (name or identifier) of a resource
+--     * Slot: dateIssued Description: Date of formal issuance (e.g., publication) of the resource
+--     * Slot: dateModified Description: Most recent date on which the resource was changed, updated or modified
 --     * Slot: biologicalMaterialOrigin_id Description: Information about the origin of the biological material, essential for access, utilization, and benefit-sharing of genetic resources in compliance with the Nagoya Protocol
 --     * Slot: iataClassification_id Description: The corresponding International Air Transport Association (IATA)'s category for this Product
 --     * Slot: materialSafetyDataSheet_id Description: A Material Safety Data Sheet (MSDS) or Safety Data Sheet (SDS) is a standardized document that contains crucial occupational safety and health information related to the product
@@ -891,6 +1023,8 @@
 --     * Slot: transportInformation Description: Details the regulations and guidelines for safely transporting the product, including classifications for road, air, sea, or rail transport, UN numbers, packaging requirements, and any special precautions to ensure safe transit.
 --     * Slot: regulatoryInformation Description: Lists applicable laws, regulations, and standards governing the product, including local, national, or international requirements for its handling, use, transportation, and disposal, ensuring compliance with legal obligations.
 --     * Slot: furtherInformation Description: Provides any additional details or clarifications not covered in other sections of the MSDS, such as references, supporting documents, or specific instructions for safe handling and use of the product.
+--     * Slot: dateIssued Description: Date of formal issuance (e.g., publication) of the resource
+--     * Slot: dateModified Description: Most recent date on which the resource was changed, updated or modified
 --     * Slot: materialSafetyContact_id Description: The designated contact point responsible for providing information related to the safety, handling, and regulatory compliance of the biological product.
 -- # Class: "File" Description: "Digital document or record stored in a specific format that contains data or information"
 --     * Slot: id Description: 
@@ -898,6 +1032,8 @@
 --     * Slot: description Description: A short explanation of the characteristics, features, or nature of the current item
 --     * Slot: contentUrl Description: The web address or location where the file content is stored and can be accessed or downloaded.
 --     * Slot: format Description: The file type or format that indicates how the data within the file is structured
+--     * Slot: dateIssued Description: Date of formal issuance (e.g., publication) of the resource
+--     * Slot: dateModified Description: Most recent date on which the resource was changed, updated or modified
 --     * Slot: license_id Description: Information about terms and conditions under which the subject can be used, shared, or distributed, indicating any restrictions or permissions
 -- # Class: "Data" Description: "Subclass of File representing structured or unstructured datasets, often used for analysis, storage, or transfer of information"
 --     * Slot: id Description: 
@@ -905,6 +1041,8 @@
 --     * Slot: description Description: A short explanation of the characteristics, features, or nature of the current item
 --     * Slot: contentUrl Description: The web address or location where the file content is stored and can be accessed or downloaded.
 --     * Slot: format Description: The file type or format that indicates how the data within the file is structured
+--     * Slot: dateIssued Description: Date of formal issuance (e.g., publication) of the resource
+--     * Slot: dateModified Description: Most recent date on which the resource was changed, updated or modified
 --     * Slot: license_id Description: Information about terms and conditions under which the subject can be used, shared, or distributed, indicating any restrictions or permissions
 -- # Class: "Document" Description: "Subclass of File representing textual or written files such as reports, manuals, or forms"
 --     * Slot: id Description: 
@@ -912,6 +1050,8 @@
 --     * Slot: description Description: A short explanation of the characteristics, features, or nature of the current item
 --     * Slot: contentUrl Description: The web address or location where the file content is stored and can be accessed or downloaded.
 --     * Slot: format Description: The file type or format that indicates how the data within the file is structured
+--     * Slot: dateIssued Description: Date of formal issuance (e.g., publication) of the resource
+--     * Slot: dateModified Description: Most recent date on which the resource was changed, updated or modified
 --     * Slot: license_id Description: Information about terms and conditions under which the subject can be used, shared, or distributed, indicating any restrictions or permissions
 -- # Class: "Audio" Description: "Subclass of File representing sound recordings or audio tracks"
 --     * Slot: id Description: 
@@ -919,6 +1059,8 @@
 --     * Slot: description Description: A short explanation of the characteristics, features, or nature of the current item
 --     * Slot: contentUrl Description: The web address or location where the file content is stored and can be accessed or downloaded.
 --     * Slot: format Description: The file type or format that indicates how the data within the file is structured
+--     * Slot: dateIssued Description: Date of formal issuance (e.g., publication) of the resource
+--     * Slot: dateModified Description: Most recent date on which the resource was changed, updated or modified
 --     * Slot: license_id Description: Information about terms and conditions under which the subject can be used, shared, or distributed, indicating any restrictions or permissions
 -- # Class: "Video" Description: "Subclass of File representing moving visual media, such as recordings, presentations, or movies"
 --     * Slot: id Description: 
@@ -926,6 +1068,8 @@
 --     * Slot: description Description: A short explanation of the characteristics, features, or nature of the current item
 --     * Slot: contentUrl Description: The web address or location where the file content is stored and can be accessed or downloaded.
 --     * Slot: format Description: The file type or format that indicates how the data within the file is structured
+--     * Slot: dateIssued Description: Date of formal issuance (e.g., publication) of the resource
+--     * Slot: dateModified Description: Most recent date on which the resource was changed, updated or modified
 --     * Slot: license_id Description: Information about terms and conditions under which the subject can be used, shared, or distributed, indicating any restrictions or permissions
 -- # Class: "Image" Description: "Subclass of File representing visual content such as pictures, diagrams, or illustrations"
 --     * Slot: id Description: 
@@ -934,6 +1078,8 @@
 --     * Slot: description Description: A short explanation of the characteristics, features, or nature of the current item
 --     * Slot: contentUrl Description: The web address or location where the file content is stored and can be accessed or downloaded.
 --     * Slot: format Description: The file type or format that indicates how the data within the file is structured
+--     * Slot: dateIssued Description: Date of formal issuance (e.g., publication) of the resource
+--     * Slot: dateModified Description: Most recent date on which the resource was changed, updated or modified
 --     * Slot: license_id Description: Information about terms and conditions under which the subject can be used, shared, or distributed, indicating any restrictions or permissions
 -- # Class: "ContactPoint" Description: "Entity serving as focal point of information"
 --     * Slot: id Description: 
@@ -946,6 +1092,8 @@
 --     * Slot: addressRegion Description: The region in which the locality is, and which is in the country. For example, California or another appropriate first-level Administrative division
 --     * Slot: postalCode Description: The postal code
 --     * Slot: orcidId Description: Unique persistent identifier for a person, provided by the Open Researcher and Contributor ID (ORCID) organisation
+--     * Slot: dateIssued Description: Date of formal issuance (e.g., publication) of the resource
+--     * Slot: dateModified Description: Most recent date on which the resource was changed, updated or modified
 --     * Slot: addressCountry_id Description: The country as of  ISO 3166
 -- # Class: "License" Description: "The legal terms and conditions under which the subject can be used, shared, or distributed, indicating any restrictions or permissions"
 --     * Slot: id Description: 
@@ -953,12 +1101,16 @@
 --     * Slot: description Description: A short explanation of the characteristics, features, or nature of the current item
 --     * Slot: resourceUrl Description: The web address or location where the details or content is stored and can be accessed or downloaded.
 --     * Slot: licensingOrAttribution Description: A text or html code that provides any related data sharing licence and/or attribution
+--     * Slot: dateIssued Description: Date of formal issuance (e.g., publication) of the resource
+--     * Slot: dateModified Description: Most recent date on which the resource was changed, updated or modified
 --     * Slot: logo_id Description: A path or URL to the related logo
 -- # Class: "Certification" Description: "Assurance given by an independent certification body that a product, service or system meets the requirements of a standard"
 --     * Slot: id Description: 
 --     * Slot: title Description: A name given to the resource
 --     * Slot: description Description: A short explanation of the characteristics, features, or nature of the current item
 --     * Slot: resourceUrl Description: The web address or location where the details or content is stored and can be accessed or downloaded.
+--     * Slot: dateIssued Description: Date of formal issuance (e.g., publication) of the resource
+--     * Slot: dateModified Description: Most recent date on which the resource was changed, updated or modified
 --     * Slot: logo_id Description: A path or URL to the related logo
 -- # Class: "Resource_keyword" Description: ""
 --     * Slot: Resource_id Description: Autocreated FK slot
@@ -1899,6 +2051,8 @@
 
 CREATE TABLE "Resource" (
 	id INTEGER NOT NULL, 
+	"dateIssued" DATETIME, 
+	"dateModified" DATETIME, 
 	PRIMARY KEY (id)
 );
 CREATE TABLE "Dataset" (
@@ -1906,6 +2060,8 @@ CREATE TABLE "Dataset" (
 	title TEXT NOT NULL, 
 	description TEXT NOT NULL, 
 	version TEXT, 
+	"dateIssued" DATETIME, 
+	"dateModified" DATETIME, 
 	PRIMARY KEY (id)
 );
 CREATE TABLE "DataService" (
@@ -1913,12 +2069,16 @@ CREATE TABLE "DataService" (
 	title TEXT NOT NULL, 
 	description TEXT, 
 	"endpointUrl" TEXT NOT NULL, 
+	"dateIssued" DATETIME, 
+	"dateModified" DATETIME, 
 	PRIMARY KEY (id)
 );
 CREATE TABLE "Version" (
 	id INTEGER NOT NULL, 
 	version TEXT NOT NULL, 
 	"versionOf" TEXT NOT NULL, 
+	"dateIssued" DATETIME, 
+	"dateModified" DATETIME, 
 	PRIMARY KEY (id)
 );
 CREATE TABLE "Catalogue" (
@@ -1926,6 +2086,8 @@ CREATE TABLE "Catalogue" (
 	title TEXT NOT NULL, 
 	description TEXT NOT NULL, 
 	version TEXT, 
+	"dateIssued" DATETIME, 
+	"dateModified" DATETIME, 
 	PRIMARY KEY (id)
 );
 CREATE TABLE "ExternalRelatedReference" (
@@ -1934,28 +2096,38 @@ CREATE TABLE "ExternalRelatedReference" (
 	"referenceLabel" TEXT NOT NULL, 
 	"referenceProviderPrefix" TEXT NOT NULL, 
 	"referenceProviderName" TEXT NOT NULL, 
+	"dateIssued" DATETIME, 
+	"dateModified" DATETIME, 
 	PRIMARY KEY (id)
 );
 CREATE TABLE "Sequence" (
 	id INTEGER NOT NULL, 
 	"sequenceFasta" TEXT, 
+	"dateIssued" DATETIME, 
+	"dateModified" DATETIME, 
 	PRIMARY KEY (id)
 );
 CREATE TABLE "SequenceReference" (
 	id INTEGER NOT NULL, 
 	"accessionNumber" TEXT NOT NULL, 
 	"sequenceProvider" TEXT NOT NULL, 
+	"dateIssued" DATETIME, 
+	"dateModified" DATETIME, 
 	PRIMARY KEY (id)
 );
 CREATE TABLE "BiologicalMaterialOrigin" (
 	id INTEGER NOT NULL, 
 	"recombinantMaterial" BOOLEAN NOT NULL, 
 	"biologicalSourceType" BOOLEAN NOT NULL, 
+	"dateIssued" DATETIME, 
+	"dateModified" DATETIME, 
 	PRIMARY KEY (id)
 );
 CREATE TABLE "RecombinantPartIdentification" (
 	id INTEGER NOT NULL, 
 	"partIdentification" TEXT NOT NULL, 
+	"dateIssued" DATETIME, 
+	"dateModified" DATETIME, 
 	PRIMARY KEY (id)
 );
 CREATE TABLE "Image" (
@@ -1965,6 +2137,8 @@ CREATE TABLE "Image" (
 	description TEXT, 
 	"contentUrl" TEXT NOT NULL, 
 	format TEXT NOT NULL, 
+	"dateIssued" DATETIME, 
+	"dateModified" DATETIME, 
 	license_id INTEGER, 
 	PRIMARY KEY (id), 
 	FOREIGN KEY(license_id) REFERENCES "License" (id)
@@ -1975,6 +2149,8 @@ CREATE TABLE "License" (
 	description TEXT, 
 	"resourceUrl" TEXT, 
 	"licensingOrAttribution" TEXT, 
+	"dateIssued" DATETIME, 
+	"dateModified" DATETIME, 
 	logo_id INTEGER, 
 	PRIMARY KEY (id), 
 	FOREIGN KEY(logo_id) REFERENCES "Image" (id)
@@ -1990,6 +2166,8 @@ CREATE TABLE "DataProvider" (
 	title TEXT NOT NULL, 
 	description TEXT, 
 	"endpointUrl" TEXT NOT NULL, 
+	"dateIssued" DATETIME, 
+	"dateModified" DATETIME, 
 	license_id INTEGER, 
 	PRIMARY KEY (id), 
 	FOREIGN KEY(license_id) REFERENCES "License" (id)
@@ -1997,6 +2175,8 @@ CREATE TABLE "DataProvider" (
 CREATE TABLE "BiologicalPartOrigin" (
 	id INTEGER NOT NULL, 
 	"accessToPhysicalGeneticResource" BOOLEAN NOT NULL, 
+	"dateIssued" DATETIME, 
+	"dateModified" DATETIME, 
 	"recombinantPartIdentification_id" INTEGER, 
 	PRIMARY KEY (id), 
 	FOREIGN KEY("recombinantPartIdentification_id") REFERENCES "RecombinantPartIdentification" (id)
@@ -2006,6 +2186,8 @@ CREATE TABLE "SyntheticPartOrigin" (
 	"modificationsFromTheReferenceSequences" BOOLEAN NOT NULL, 
 	"descriptionOfModificationsMadeFromTheReferenceSequences" TEXT, 
 	"accessToPhysicalGeneticResource" BOOLEAN NOT NULL, 
+	"dateIssued" DATETIME, 
+	"dateModified" DATETIME, 
 	"recombinantPartIdentification_id" INTEGER, 
 	PRIMARY KEY (id), 
 	FOREIGN KEY("recombinantPartIdentification_id") REFERENCES "RecombinantPartIdentification" (id)
@@ -2016,6 +2198,8 @@ CREATE TABLE "File" (
 	description TEXT, 
 	"contentUrl" TEXT NOT NULL, 
 	format TEXT NOT NULL, 
+	"dateIssued" DATETIME, 
+	"dateModified" DATETIME, 
 	license_id INTEGER, 
 	PRIMARY KEY (id), 
 	FOREIGN KEY(license_id) REFERENCES "License" (id)
@@ -2026,6 +2210,8 @@ CREATE TABLE "Data" (
 	description TEXT, 
 	"contentUrl" TEXT NOT NULL, 
 	format TEXT NOT NULL, 
+	"dateIssued" DATETIME, 
+	"dateModified" DATETIME, 
 	license_id INTEGER, 
 	PRIMARY KEY (id), 
 	FOREIGN KEY(license_id) REFERENCES "License" (id)
@@ -2036,6 +2222,8 @@ CREATE TABLE "Document" (
 	description TEXT, 
 	"contentUrl" TEXT NOT NULL, 
 	format TEXT NOT NULL, 
+	"dateIssued" DATETIME, 
+	"dateModified" DATETIME, 
 	license_id INTEGER, 
 	PRIMARY KEY (id), 
 	FOREIGN KEY(license_id) REFERENCES "License" (id)
@@ -2046,6 +2234,8 @@ CREATE TABLE "Audio" (
 	description TEXT, 
 	"contentUrl" TEXT NOT NULL, 
 	format TEXT NOT NULL, 
+	"dateIssued" DATETIME, 
+	"dateModified" DATETIME, 
 	license_id INTEGER, 
 	PRIMARY KEY (id), 
 	FOREIGN KEY(license_id) REFERENCES "License" (id)
@@ -2056,6 +2246,8 @@ CREATE TABLE "Video" (
 	description TEXT, 
 	"contentUrl" TEXT NOT NULL, 
 	format TEXT NOT NULL, 
+	"dateIssued" DATETIME, 
+	"dateModified" DATETIME, 
 	license_id INTEGER, 
 	PRIMARY KEY (id), 
 	FOREIGN KEY(license_id) REFERENCES "License" (id)
@@ -2065,6 +2257,8 @@ CREATE TABLE "Certification" (
 	title TEXT NOT NULL, 
 	description TEXT, 
 	"resourceUrl" TEXT, 
+	"dateIssued" DATETIME, 
+	"dateModified" DATETIME, 
 	logo_id INTEGER, 
 	PRIMARY KEY (id), 
 	FOREIGN KEY(logo_id) REFERENCES "Image" (id)
@@ -2174,6 +2368,8 @@ CREATE TABLE "Taxonomy" (
 	version TEXT NOT NULL, 
 	title TEXT NOT NULL, 
 	description TEXT NOT NULL, 
+	"dateIssued" DATETIME, 
+	"dateModified" DATETIME, 
 	"taxonDataProvider_id" INTEGER, 
 	"versionDataProvider_id" INTEGER NOT NULL, 
 	"rankDataProvider_id" INTEGER, 
@@ -2187,6 +2383,8 @@ CREATE TABLE "Vocabulary" (
 	title TEXT NOT NULL, 
 	description TEXT NOT NULL, 
 	version TEXT, 
+	"dateIssued" DATETIME, 
+	"dateModified" DATETIME, 
 	"termDataProvider_id" INTEGER, 
 	PRIMARY KEY (id), 
 	FOREIGN KEY("termDataProvider_id") REFERENCES "DataProvider" (id)
@@ -2196,6 +2394,8 @@ CREATE TABLE "Collection" (
 	title TEXT NOT NULL, 
 	description TEXT NOT NULL, 
 	version TEXT, 
+	"dateIssued" DATETIME, 
+	"dateModified" DATETIME, 
 	"collectionDataProvider_id" INTEGER, 
 	PRIMARY KEY (id), 
 	FOREIGN KEY("collectionDataProvider_id") REFERENCES "DataProvider" (id)
@@ -2286,6 +2486,8 @@ CREATE TABLE "Term" (
 	title TEXT NOT NULL, 
 	description TEXT, 
 	weight INTEGER NOT NULL, 
+	"dateIssued" DATETIME, 
+	"dateModified" DATETIME, 
 	"inVocabulary_id" INTEGER NOT NULL, 
 	PRIMARY KEY (id), 
 	FOREIGN KEY("inVocabulary_id") REFERENCES "Vocabulary" (id)
@@ -2295,6 +2497,8 @@ CREATE TABLE "CommonName" (
 	title TEXT NOT NULL, 
 	description TEXT, 
 	weight INTEGER NOT NULL, 
+	"dateIssued" DATETIME, 
+	"dateModified" DATETIME, 
 	"inVocabulary_id" INTEGER NOT NULL, 
 	PRIMARY KEY (id), 
 	FOREIGN KEY("inVocabulary_id") REFERENCES "Vocabulary" (id)
@@ -2304,6 +2508,8 @@ CREATE TABLE "VirusName" (
 	title TEXT NOT NULL, 
 	description TEXT, 
 	weight INTEGER NOT NULL, 
+	"dateIssued" DATETIME, 
+	"dateModified" DATETIME, 
 	"inVocabulary_id" INTEGER NOT NULL, 
 	PRIMARY KEY (id), 
 	FOREIGN KEY("inVocabulary_id") REFERENCES "Vocabulary" (id)
@@ -2313,6 +2519,8 @@ CREATE TABLE "AlternateName" (
 	title TEXT NOT NULL, 
 	description TEXT, 
 	weight INTEGER NOT NULL, 
+	"dateIssued" DATETIME, 
+	"dateModified" DATETIME, 
 	"inVocabulary_id" INTEGER NOT NULL, 
 	PRIMARY KEY (id), 
 	FOREIGN KEY("inVocabulary_id") REFERENCES "Vocabulary" (id)
@@ -2322,6 +2530,8 @@ CREATE TABLE "RiskGroup" (
 	title TEXT NOT NULL, 
 	description TEXT, 
 	weight INTEGER NOT NULL, 
+	"dateIssued" DATETIME, 
+	"dateModified" DATETIME, 
 	"inVocabulary_id" INTEGER NOT NULL, 
 	PRIMARY KEY (id), 
 	FOREIGN KEY("inVocabulary_id") REFERENCES "Vocabulary" (id)
@@ -2331,6 +2541,8 @@ CREATE TABLE "Doi" (
 	title TEXT NOT NULL, 
 	description TEXT, 
 	weight INTEGER NOT NULL, 
+	"dateIssued" DATETIME, 
+	"dateModified" DATETIME, 
 	"inVocabulary_id" INTEGER NOT NULL, 
 	PRIMARY KEY (id), 
 	FOREIGN KEY("inVocabulary_id") REFERENCES "Vocabulary" (id)
@@ -2340,6 +2552,8 @@ CREATE TABLE "Journal" (
 	title TEXT NOT NULL, 
 	description TEXT, 
 	weight INTEGER NOT NULL, 
+	"dateIssued" DATETIME, 
+	"dateModified" DATETIME, 
 	"inVocabulary_id" INTEGER NOT NULL, 
 	PRIMARY KEY (id), 
 	FOREIGN KEY("inVocabulary_id") REFERENCES "Vocabulary" (id)
@@ -2349,6 +2563,8 @@ CREATE TABLE "PdbReference" (
 	title TEXT NOT NULL, 
 	description TEXT, 
 	weight INTEGER NOT NULL, 
+	"dateIssued" DATETIME, 
+	"dateModified" DATETIME, 
 	"inVocabulary_id" INTEGER NOT NULL, 
 	PRIMARY KEY (id), 
 	FOREIGN KEY("inVocabulary_id") REFERENCES "Vocabulary" (id)
@@ -2358,6 +2574,8 @@ CREATE TABLE "Keyword" (
 	title TEXT NOT NULL, 
 	description TEXT, 
 	weight INTEGER NOT NULL, 
+	"dateIssued" DATETIME, 
+	"dateModified" DATETIME, 
 	"inVocabulary_id" INTEGER NOT NULL, 
 	PRIMARY KEY (id), 
 	FOREIGN KEY("inVocabulary_id") REFERENCES "Vocabulary" (id)
@@ -2367,6 +2585,8 @@ CREATE TABLE "TagSequence" (
 	title TEXT NOT NULL, 
 	description TEXT, 
 	weight INTEGER NOT NULL, 
+	"dateIssued" DATETIME, 
+	"dateModified" DATETIME, 
 	"inVocabulary_id" INTEGER NOT NULL, 
 	PRIMARY KEY (id), 
 	FOREIGN KEY("inVocabulary_id") REFERENCES "Vocabulary" (id)
@@ -2376,6 +2596,8 @@ CREATE TABLE "SpecialFeature" (
 	title TEXT NOT NULL, 
 	description TEXT, 
 	weight INTEGER NOT NULL, 
+	"dateIssued" DATETIME, 
+	"dateModified" DATETIME, 
 	"inVocabulary_id" INTEGER NOT NULL, 
 	PRIMARY KEY (id), 
 	FOREIGN KEY("inVocabulary_id") REFERENCES "Vocabulary" (id)
@@ -2385,6 +2607,8 @@ CREATE TABLE "ExpressionVector" (
 	title TEXT NOT NULL, 
 	description TEXT, 
 	weight INTEGER NOT NULL, 
+	"dateIssued" DATETIME, 
+	"dateModified" DATETIME, 
 	"inVocabulary_id" INTEGER NOT NULL, 
 	PRIMARY KEY (id), 
 	FOREIGN KEY("inVocabulary_id") REFERENCES "Vocabulary" (id)
@@ -2394,6 +2618,8 @@ CREATE TABLE "PlasmidSelection" (
 	title TEXT NOT NULL, 
 	description TEXT, 
 	weight INTEGER NOT NULL, 
+	"dateIssued" DATETIME, 
+	"dateModified" DATETIME, 
 	"inVocabulary_id" INTEGER NOT NULL, 
 	PRIMARY KEY (id), 
 	FOREIGN KEY("inVocabulary_id") REFERENCES "Vocabulary" (id)
@@ -2403,6 +2629,8 @@ CREATE TABLE "PropagationHost" (
 	title TEXT NOT NULL, 
 	description TEXT, 
 	weight INTEGER NOT NULL, 
+	"dateIssued" DATETIME, 
+	"dateModified" DATETIME, 
 	"inVocabulary_id" INTEGER NOT NULL, 
 	PRIMARY KEY (id), 
 	FOREIGN KEY("inVocabulary_id") REFERENCES "Vocabulary" (id)
@@ -2412,6 +2640,8 @@ CREATE TABLE "TransmissionMethod" (
 	title TEXT NOT NULL, 
 	description TEXT, 
 	weight INTEGER NOT NULL, 
+	"dateIssued" DATETIME, 
+	"dateModified" DATETIME, 
 	"inVocabulary_id" INTEGER NOT NULL, 
 	PRIMARY KEY (id), 
 	FOREIGN KEY("inVocabulary_id") REFERENCES "Vocabulary" (id)
@@ -2421,6 +2651,8 @@ CREATE TABLE "ProductionCellLine" (
 	title TEXT NOT NULL, 
 	description TEXT, 
 	weight INTEGER NOT NULL, 
+	"dateIssued" DATETIME, 
+	"dateModified" DATETIME, 
 	"inVocabulary_id" INTEGER NOT NULL, 
 	PRIMARY KEY (id), 
 	FOREIGN KEY("inVocabulary_id") REFERENCES "Vocabulary" (id)
@@ -2430,6 +2662,8 @@ CREATE TABLE "ProductCategory" (
 	title TEXT NOT NULL, 
 	description TEXT, 
 	weight INTEGER NOT NULL, 
+	"dateIssued" DATETIME, 
+	"dateModified" DATETIME, 
 	"parentCategory_id" INTEGER, 
 	"inVocabulary_id" INTEGER NOT NULL, 
 	PRIMARY KEY (id), 
@@ -2441,6 +2675,8 @@ CREATE TABLE "IsolationHost" (
 	title TEXT NOT NULL, 
 	description TEXT, 
 	weight INTEGER NOT NULL, 
+	"dateIssued" DATETIME, 
+	"dateModified" DATETIME, 
 	"inVocabulary_id" INTEGER NOT NULL, 
 	PRIMARY KEY (id), 
 	FOREIGN KEY("inVocabulary_id") REFERENCES "Vocabulary" (id)
@@ -2450,6 +2686,8 @@ CREATE TABLE "GeographicalOrigin" (
 	title TEXT NOT NULL, 
 	description TEXT, 
 	weight INTEGER NOT NULL, 
+	"dateIssued" DATETIME, 
+	"dateModified" DATETIME, 
 	"inVocabulary_id" INTEGER NOT NULL, 
 	PRIMARY KEY (id), 
 	FOREIGN KEY("inVocabulary_id") REFERENCES "Vocabulary" (id)
@@ -2459,6 +2697,8 @@ CREATE TABLE "IplcOrigin" (
 	title TEXT NOT NULL, 
 	description TEXT, 
 	weight INTEGER NOT NULL, 
+	"dateIssued" DATETIME, 
+	"dateModified" DATETIME, 
 	"inVocabulary_id" INTEGER NOT NULL, 
 	PRIMARY KEY (id), 
 	FOREIGN KEY("inVocabulary_id") REFERENCES "Vocabulary" (id)
@@ -2469,6 +2709,8 @@ CREATE TABLE "Country" (
 	title TEXT NOT NULL, 
 	description TEXT, 
 	weight INTEGER NOT NULL, 
+	"dateIssued" DATETIME, 
+	"dateModified" DATETIME, 
 	"inVocabulary_id" INTEGER NOT NULL, 
 	PRIMARY KEY (id), 
 	FOREIGN KEY("inVocabulary_id") REFERENCES "Vocabulary" (id)
@@ -2478,6 +2720,8 @@ CREATE TABLE "IataClassification" (
 	title TEXT NOT NULL, 
 	description TEXT, 
 	weight INTEGER NOT NULL, 
+	"dateIssued" DATETIME, 
+	"dateModified" DATETIME, 
 	"inVocabulary_id" INTEGER NOT NULL, 
 	PRIMARY KEY (id), 
 	FOREIGN KEY("inVocabulary_id") REFERENCES "Vocabulary" (id)
@@ -2487,6 +2731,8 @@ CREATE TABLE "Variant" (
 	title TEXT NOT NULL, 
 	description TEXT, 
 	weight INTEGER NOT NULL, 
+	"dateIssued" DATETIME, 
+	"dateModified" DATETIME, 
 	"inVocabulary_id" INTEGER NOT NULL, 
 	PRIMARY KEY (id), 
 	FOREIGN KEY("inVocabulary_id") REFERENCES "Vocabulary" (id)
@@ -2496,6 +2742,8 @@ CREATE TABLE "TaxonomicRank" (
 	title TEXT NOT NULL, 
 	description TEXT, 
 	weight INTEGER NOT NULL, 
+	"dateIssued" DATETIME, 
+	"dateModified" DATETIME, 
 	"inVocabulary_id" INTEGER NOT NULL, 
 	PRIMARY KEY (id), 
 	FOREIGN KEY("inVocabulary_id") REFERENCES "Vocabulary" (id)
@@ -2523,6 +2771,8 @@ CREATE TABLE "Publication" (
 	title TEXT NOT NULL, 
 	authors TEXT NOT NULL, 
 	abstract TEXT NOT NULL, 
+	"dateIssued" DATETIME, 
+	"dateModified" DATETIME, 
 	doi_id INTEGER NOT NULL, 
 	journal_id INTEGER, 
 	PRIMARY KEY (id), 
@@ -2536,6 +2786,8 @@ CREATE TABLE "Taxon" (
 	title TEXT NOT NULL, 
 	description TEXT, 
 	weight INTEGER NOT NULL, 
+	"dateIssued" DATETIME, 
+	"dateModified" DATETIME, 
 	"parentTaxon_id" INTEGER NOT NULL, 
 	rank_id INTEGER NOT NULL, 
 	"inVocabulary_id" INTEGER NOT NULL, 
@@ -2550,6 +2802,8 @@ CREATE TABLE "NaturalPartOrigin" (
 	"beforeDate" BOOLEAN NOT NULL, 
 	"permitIdentifierForAbs" TEXT, 
 	"accessToPhysicalGeneticResource" BOOLEAN NOT NULL, 
+	"dateIssued" DATETIME, 
+	"dateModified" DATETIME, 
 	"countryOfCollection_id" INTEGER NOT NULL, 
 	"indigenousPeopleAndLocalCommunityOrigin_id" INTEGER, 
 	"recombinantPartIdentification_id" INTEGER, 
@@ -2569,6 +2823,8 @@ CREATE TABLE "ContactPoint" (
 	"addressRegion" TEXT, 
 	"postalCode" TEXT, 
 	"orcidId" TEXT, 
+	"dateIssued" DATETIME, 
+	"dateModified" DATETIME, 
 	"addressCountry_id" INTEGER, 
 	PRIMARY KEY (id), 
 	FOREIGN KEY("addressCountry_id") REFERENCES "Country" (id)
@@ -2798,6 +3054,8 @@ CREATE TABLE "PathogenIdentification" (
 	isolate TEXT, 
 	genotype TEXT, 
 	serotype TEXT, 
+	"dateIssued" DATETIME, 
+	"dateModified" DATETIME, 
 	taxon_id INTEGER NOT NULL, 
 	"pathogenName_id" INTEGER NOT NULL, 
 	variant_id INTEGER, 
@@ -2811,6 +3069,8 @@ CREATE TABLE "PersonOrOrganization" (
 	name TEXT NOT NULL, 
 	description TEXT, 
 	"homePage" TEXT, 
+	"dateIssued" DATETIME, 
+	"dateModified" DATETIME, 
 	"contactPoint_id" INTEGER, 
 	logo_id INTEGER, 
 	PRIMARY KEY (id), 
@@ -2823,6 +3083,8 @@ CREATE TABLE "Person" (
 	name TEXT NOT NULL, 
 	description TEXT, 
 	"homePage" TEXT, 
+	"dateIssued" DATETIME, 
+	"dateModified" DATETIME, 
 	"contactPoint_id" INTEGER, 
 	logo_id INTEGER, 
 	PRIMARY KEY (id), 
@@ -2835,6 +3097,8 @@ CREATE TABLE "Organization" (
 	name TEXT NOT NULL, 
 	description TEXT, 
 	"homePage" TEXT, 
+	"dateIssued" DATETIME, 
+	"dateModified" DATETIME, 
 	country_id INTEGER, 
 	"contactPoint_id" INTEGER, 
 	logo_id INTEGER, 
@@ -2849,6 +3113,8 @@ CREATE TABLE "ReasearchInfrastructure" (
 	name TEXT NOT NULL, 
 	description TEXT, 
 	"homePage" TEXT, 
+	"dateIssued" DATETIME, 
+	"dateModified" DATETIME, 
 	country_id INTEGER, 
 	"contactPoint_id" INTEGER, 
 	logo_id INTEGER, 
@@ -2863,6 +3129,8 @@ CREATE TABLE "Provider" (
 	name TEXT NOT NULL, 
 	description TEXT, 
 	"homePage" TEXT, 
+	"dateIssued" DATETIME, 
+	"dateModified" DATETIME, 
 	country_id INTEGER, 
 	"contactPoint_id" INTEGER, 
 	logo_id INTEGER, 
@@ -2876,6 +3144,8 @@ CREATE TABLE "Originator" (
 	name TEXT NOT NULL, 
 	description TEXT, 
 	"homePage" TEXT, 
+	"dateIssued" DATETIME, 
+	"dateModified" DATETIME, 
 	"contactPoint_id" INTEGER, 
 	logo_id INTEGER, 
 	PRIMARY KEY (id), 
@@ -2898,6 +3168,8 @@ CREATE TABLE "MaterialSafetyDataSheet" (
 	"transportInformation" TEXT, 
 	"regulatoryInformation" TEXT, 
 	"furtherInformation" TEXT, 
+	"dateIssued" DATETIME, 
+	"dateModified" DATETIME, 
 	"materialSafetyContact_id" INTEGER NOT NULL, 
 	PRIMARY KEY (id), 
 	FOREIGN KEY("materialSafetyContact_id") REFERENCES "ContactPoint" (id)
@@ -2972,6 +3244,8 @@ CREATE TABLE "ProductOrService" (
 	title TEXT NOT NULL, 
 	description TEXT NOT NULL, 
 	version TEXT, 
+	"dateIssued" DATETIME, 
+	"dateModified" DATETIME, 
 	category_id INTEGER NOT NULL, 
 	"riskGroup_id" INTEGER, 
 	provider_id INTEGER NOT NULL, 
@@ -3002,6 +3276,8 @@ CREATE TABLE "Service" (
 	title TEXT NOT NULL, 
 	description TEXT NOT NULL, 
 	version TEXT, 
+	"dateIssued" DATETIME, 
+	"dateModified" DATETIME, 
 	category_id INTEGER NOT NULL, 
 	"riskGroup_id" INTEGER, 
 	provider_id INTEGER NOT NULL, 
@@ -3034,6 +3310,8 @@ CREATE TABLE "Product" (
 	title TEXT NOT NULL, 
 	description TEXT NOT NULL, 
 	version TEXT, 
+	"dateIssued" DATETIME, 
+	"dateModified" DATETIME, 
 	"iataClassification_id" INTEGER NOT NULL, 
 	"materialSafetyDataSheet_id" INTEGER, 
 	originator_id INTEGER, 
@@ -3076,6 +3354,8 @@ CREATE TABLE "Antibody" (
 	title TEXT NOT NULL, 
 	description TEXT NOT NULL, 
 	version TEXT, 
+	"dateIssued" DATETIME, 
+	"dateModified" DATETIME, 
 	"iataClassification_id" INTEGER NOT NULL, 
 	"materialSafetyDataSheet_id" INTEGER, 
 	originator_id INTEGER, 
@@ -3119,6 +3399,8 @@ CREATE TABLE "Hybridoma" (
 	title TEXT NOT NULL, 
 	description TEXT NOT NULL, 
 	version TEXT, 
+	"dateIssued" DATETIME, 
+	"dateModified" DATETIME, 
 	"iataClassification_id" INTEGER NOT NULL, 
 	"materialSafetyDataSheet_id" INTEGER, 
 	originator_id INTEGER, 
@@ -3157,6 +3439,8 @@ CREATE TABLE "Protein" (
 	title TEXT NOT NULL, 
 	description TEXT NOT NULL, 
 	version TEXT, 
+	"dateIssued" DATETIME, 
+	"dateModified" DATETIME, 
 	"biologicalMaterialOrigin_id" INTEGER NOT NULL, 
 	"iataClassification_id" INTEGER NOT NULL, 
 	"materialSafetyDataSheet_id" INTEGER, 
@@ -3205,6 +3489,8 @@ CREATE TABLE "NucleicAcid" (
 	title TEXT NOT NULL, 
 	description TEXT NOT NULL, 
 	version TEXT, 
+	"dateIssued" DATETIME, 
+	"dateModified" DATETIME, 
 	"biologicalMaterialOrigin_id" INTEGER NOT NULL, 
 	"clonedIntoPlasmid_id" INTEGER, 
 	"tagSequence_id" INTEGER NOT NULL, 
@@ -3252,6 +3538,8 @@ CREATE TABLE "DetectionKit" (
 	title TEXT NOT NULL, 
 	description TEXT NOT NULL, 
 	version TEXT, 
+	"dateIssued" DATETIME, 
+	"dateModified" DATETIME, 
 	"iataClassification_id" INTEGER NOT NULL, 
 	"materialSafetyDataSheet_id" INTEGER, 
 	originator_id INTEGER, 
@@ -3290,6 +3578,8 @@ CREATE TABLE "Bundle" (
 	title TEXT NOT NULL, 
 	description TEXT NOT NULL, 
 	version TEXT, 
+	"dateIssued" DATETIME, 
+	"dateModified" DATETIME, 
 	"iataClassification_id" INTEGER NOT NULL, 
 	"materialSafetyDataSheet_id" INTEGER, 
 	originator_id INTEGER, 
@@ -3339,6 +3629,8 @@ CREATE TABLE "Pathogen" (
 	title TEXT NOT NULL, 
 	description TEXT NOT NULL, 
 	version TEXT, 
+	"dateIssued" DATETIME, 
+	"dateModified" DATETIME, 
 	"biologicalMaterialOrigin_id" INTEGER NOT NULL, 
 	"iataClassification_id" INTEGER NOT NULL, 
 	"materialSafetyDataSheet_id" INTEGER, 
@@ -3392,6 +3684,8 @@ CREATE TABLE "Virus" (
 	title TEXT NOT NULL, 
 	description TEXT NOT NULL, 
 	version TEXT, 
+	"dateIssued" DATETIME, 
+	"dateModified" DATETIME, 
 	"biologicalMaterialOrigin_id" INTEGER NOT NULL, 
 	"iataClassification_id" INTEGER NOT NULL, 
 	"materialSafetyDataSheet_id" INTEGER, 
@@ -3443,6 +3737,8 @@ CREATE TABLE "Bacterium" (
 	title TEXT NOT NULL, 
 	description TEXT NOT NULL, 
 	version TEXT, 
+	"dateIssued" DATETIME, 
+	"dateModified" DATETIME, 
 	"biologicalMaterialOrigin_id" INTEGER NOT NULL, 
 	"iataClassification_id" INTEGER NOT NULL, 
 	"materialSafetyDataSheet_id" INTEGER, 
@@ -3494,6 +3790,8 @@ CREATE TABLE "Fungus" (
 	title TEXT NOT NULL, 
 	description TEXT NOT NULL, 
 	version TEXT, 
+	"dateIssued" DATETIME, 
+	"dateModified" DATETIME, 
 	"biologicalMaterialOrigin_id" INTEGER NOT NULL, 
 	"iataClassification_id" INTEGER NOT NULL, 
 	"materialSafetyDataSheet_id" INTEGER, 
@@ -3545,6 +3843,8 @@ CREATE TABLE "Protozoan" (
 	title TEXT NOT NULL, 
 	description TEXT NOT NULL, 
 	version TEXT, 
+	"dateIssued" DATETIME, 
+	"dateModified" DATETIME, 
 	"biologicalMaterialOrigin_id" INTEGER NOT NULL, 
 	"iataClassification_id" INTEGER NOT NULL, 
 	"materialSafetyDataSheet_id" INTEGER, 
@@ -3596,6 +3896,8 @@ CREATE TABLE "Viroid" (
 	title TEXT NOT NULL, 
 	description TEXT NOT NULL, 
 	version TEXT, 
+	"dateIssued" DATETIME, 
+	"dateModified" DATETIME, 
 	"biologicalMaterialOrigin_id" INTEGER NOT NULL, 
 	"iataClassification_id" INTEGER NOT NULL, 
 	"materialSafetyDataSheet_id" INTEGER, 
@@ -3647,6 +3949,8 @@ CREATE TABLE "Prion" (
 	title TEXT NOT NULL, 
 	description TEXT NOT NULL, 
 	version TEXT, 
+	"dateIssued" DATETIME, 
+	"dateModified" DATETIME, 
 	"biologicalMaterialOrigin_id" INTEGER NOT NULL, 
 	"iataClassification_id" INTEGER NOT NULL, 
 	"materialSafetyDataSheet_id" INTEGER, 

@@ -69,6 +69,8 @@ SELECT ?g ?s ?p WHERE {
    EVORAO:certificationDocument,
    EVORAO:resourceUrl,
    dcat:keyword,
+   dct:issued,
+   dct:modified,
    rdf:type ))
  }
  

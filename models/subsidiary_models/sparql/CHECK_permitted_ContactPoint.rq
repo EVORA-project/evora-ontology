@@ -74,6 +74,8 @@ SELECT ?g ?s ?p WHERE {
    EVORAO:addressCountry,
    EVORAO:orcidId,
    dcat:keyword,
+   dct:issued,
+   dct:modified,
    rdf:type ))
  }
  

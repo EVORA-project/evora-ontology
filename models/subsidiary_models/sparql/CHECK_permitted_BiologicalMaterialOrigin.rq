@@ -67,6 +67,8 @@ SELECT ?g ?s ?p WHERE {
    EVORAO:biologicalSourceType,
    EVORAO:biologicalPartOrigin,
    dcat:keyword,
+   dct:issued,
+   dct:modified,
    rdf:type ))
  }
  

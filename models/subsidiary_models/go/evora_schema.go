@@ -8,6 +8,14 @@ type Resource struct {
 	 * A keyword or tag describing the resource
 	 */
 	Keyword string `json:"keyword"`
+	/*
+	 * Date of formal issuance (e.g., publication) of the resource
+	 */
+	DateIssued string `json:"dateIssued"`
+	/*
+	 * Most recent date on which the resource was changed, updated or modified
+	 */
+	DateModified string `json:"dateModified"`
 }
 
 /*
@@ -34,6 +42,14 @@ type Dataset struct {
 	 * A keyword or tag describing the resource
 	 */
 	Keyword string `json:"keyword"`
+	/*
+	 * Date of formal issuance (e.g., publication) of the resource
+	 */
+	DateIssued string `json:"dateIssued"`
+	/*
+	 * Most recent date on which the resource was changed, updated or modified
+	 */
+	DateModified string `json:"dateModified"`
 }
 
 /*
@@ -64,6 +80,14 @@ type DataService struct {
 	 * A keyword or tag describing the resource
 	 */
 	Keyword string `json:"keyword"`
+	/*
+	 * Date of formal issuance (e.g., publication) of the resource
+	 */
+	DateIssued string `json:"dateIssued"`
+	/*
+	 * Most recent date on which the resource was changed, updated or modified
+	 */
+	DateModified string `json:"dateModified"`
 }
 
 /*
@@ -90,6 +114,14 @@ type Version struct {
 	 * A keyword or tag describing the resource
 	 */
 	Keyword string `json:"keyword"`
+	/*
+	 * Date of formal issuance (e.g., publication) of the resource
+	 */
+	DateIssued string `json:"dateIssued"`
+	/*
+	 * Most recent date on which the resource was changed, updated or modified
+	 */
+	DateModified string `json:"dateModified"`
 }
 
 /*
@@ -116,6 +148,14 @@ type Catalogue struct {
 	 * A keyword or tag describing the resource
 	 */
 	Keyword string `json:"keyword"`
+	/*
+	 * Date of formal issuance (e.g., publication) of the resource
+	 */
+	DateIssued string `json:"dateIssued"`
+	/*
+	 * Most recent date on which the resource was changed, updated or modified
+	 */
+	DateModified string `json:"dateModified"`
 }
 
 /*
@@ -162,6 +202,14 @@ type Taxonomy struct {
 	 * A keyword or tag describing the resource
 	 */
 	Keyword string `json:"keyword"`
+	/*
+	 * Date of formal issuance (e.g., publication) of the resource
+	 */
+	DateIssued string `json:"dateIssued"`
+	/*
+	 * Most recent date on which the resource was changed, updated or modified
+	 */
+	DateModified string `json:"dateModified"`
 }
 
 /*
@@ -224,6 +272,14 @@ type DataProvider struct {
 	 * A keyword or tag describing the resource
 	 */
 	Keyword string `json:"keyword"`
+	/*
+	 * Date of formal issuance (e.g., publication) of the resource
+	 */
+	DateIssued string `json:"dateIssued"`
+	/*
+	 * Most recent date on which the resource was changed, updated or modified
+	 */
+	DateModified string `json:"dateModified"`
 }
 
 /*
@@ -278,6 +334,14 @@ type PathogenIdentification struct {
 	 * A keyword or tag describing the resource
 	 */
 	Keyword string `json:"keyword"`
+	/*
+	 * Date of formal issuance (e.g., publication) of the resource
+	 */
+	DateIssued string `json:"dateIssued"`
+	/*
+	 * Most recent date on which the resource was changed, updated or modified
+	 */
+	DateModified string `json:"dateModified"`
 }
 
 /*
@@ -312,6 +376,14 @@ type Publication struct {
 	 * A keyword or tag describing the resource
 	 */
 	Keyword string `json:"keyword"`
+	/*
+	 * Date of formal issuance (e.g., publication) of the resource
+	 */
+	DateIssued string `json:"dateIssued"`
+	/*
+	 * Most recent date on which the resource was changed, updated or modified
+	 */
+	DateModified string `json:"dateModified"`
 }
 
 /*
@@ -346,6 +418,14 @@ type Vocabulary struct {
 	 * A keyword or tag describing the resource
 	 */
 	Keyword string `json:"keyword"`
+	/*
+	 * Date of formal issuance (e.g., publication) of the resource
+	 */
+	DateIssued string `json:"dateIssued"`
+	/*
+	 * Most recent date on which the resource was changed, updated or modified
+	 */
+	DateModified string `json:"dateModified"`
 }
 
 /*
@@ -376,6 +456,14 @@ type Term struct {
 	 * A keyword or tag describing the resource
 	 */
 	Keyword string `json:"keyword"`
+	/*
+	 * Date of formal issuance (e.g., publication) of the resource
+	 */
+	DateIssued string `json:"dateIssued"`
+	/*
+	 * Most recent date on which the resource was changed, updated or modified
+	 */
+	DateModified string `json:"dateModified"`
 }
 
 /*
@@ -414,6 +502,14 @@ type CommonName struct {
 	 * A keyword or tag describing the resource
 	 */
 	Keyword string `json:"keyword"`
+	/*
+	 * Date of formal issuance (e.g., publication) of the resource
+	 */
+	DateIssued string `json:"dateIssued"`
+	/*
+	 * Most recent date on which the resource was changed, updated or modified
+	 */
+	DateModified string `json:"dateModified"`
 }
 
 /*
@@ -452,6 +548,14 @@ type VirusName struct {
 	 * A keyword or tag describing the resource
 	 */
 	Keyword string `json:"keyword"`
+	/*
+	 * Date of formal issuance (e.g., publication) of the resource
+	 */
+	DateIssued string `json:"dateIssued"`
+	/*
+	 * Most recent date on which the resource was changed, updated or modified
+	 */
+	DateModified string `json:"dateModified"`
 }
 
 /*
@@ -490,6 +594,14 @@ type AlternateName struct {
 	 * A keyword or tag describing the resource
 	 */
 	Keyword string `json:"keyword"`
+	/*
+	 * Date of formal issuance (e.g., publication) of the resource
+	 */
+	DateIssued string `json:"dateIssued"`
+	/*
+	 * Most recent date on which the resource was changed, updated or modified
+	 */
+	DateModified string `json:"dateModified"`
 }
 
 /*
@@ -520,6 +632,14 @@ type RiskGroup struct {
 	 * A keyword or tag describing the resource
 	 */
 	Keyword string `json:"keyword"`
+	/*
+	 * Date of formal issuance (e.g., publication) of the resource
+	 */
+	DateIssued string `json:"dateIssued"`
+	/*
+	 * Most recent date on which the resource was changed, updated or modified
+	 */
+	DateModified string `json:"dateModified"`
 }
 
 /*
@@ -550,6 +670,14 @@ type Doi struct {
 	 * A keyword or tag describing the resource
 	 */
 	Keyword string `json:"keyword"`
+	/*
+	 * Date of formal issuance (e.g., publication) of the resource
+	 */
+	DateIssued string `json:"dateIssued"`
+	/*
+	 * Most recent date on which the resource was changed, updated or modified
+	 */
+	DateModified string `json:"dateModified"`
 }
 
 /*
@@ -580,6 +708,14 @@ type Journal struct {
 	 * A keyword or tag describing the resource
 	 */
 	Keyword string `json:"keyword"`
+	/*
+	 * Date of formal issuance (e.g., publication) of the resource
+	 */
+	DateIssued string `json:"dateIssued"`
+	/*
+	 * Most recent date on which the resource was changed, updated or modified
+	 */
+	DateModified string `json:"dateModified"`
 }
 
 /*
@@ -610,6 +746,14 @@ type PdbReference struct {
 	 * A keyword or tag describing the resource
 	 */
 	Keyword string `json:"keyword"`
+	/*
+	 * Date of formal issuance (e.g., publication) of the resource
+	 */
+	DateIssued string `json:"dateIssued"`
+	/*
+	 * Most recent date on which the resource was changed, updated or modified
+	 */
+	DateModified string `json:"dateModified"`
 }
 
 /*
@@ -640,6 +784,14 @@ type Keyword struct {
 	 * A keyword or tag describing the resource
 	 */
 	Keyword string `json:"keyword"`
+	/*
+	 * Date of formal issuance (e.g., publication) of the resource
+	 */
+	DateIssued string `json:"dateIssued"`
+	/*
+	 * Most recent date on which the resource was changed, updated or modified
+	 */
+	DateModified string `json:"dateModified"`
 }
 
 /*
@@ -670,6 +822,14 @@ type TagSequence struct {
 	 * A keyword or tag describing the resource
 	 */
 	Keyword string `json:"keyword"`
+	/*
+	 * Date of formal issuance (e.g., publication) of the resource
+	 */
+	DateIssued string `json:"dateIssued"`
+	/*
+	 * Most recent date on which the resource was changed, updated or modified
+	 */
+	DateModified string `json:"dateModified"`
 }
 
 /*
@@ -700,6 +860,14 @@ type SpecialFeature struct {
 	 * A keyword or tag describing the resource
 	 */
 	Keyword string `json:"keyword"`
+	/*
+	 * Date of formal issuance (e.g., publication) of the resource
+	 */
+	DateIssued string `json:"dateIssued"`
+	/*
+	 * Most recent date on which the resource was changed, updated or modified
+	 */
+	DateModified string `json:"dateModified"`
 }
 
 /*
@@ -730,6 +898,14 @@ type ExpressionVector struct {
 	 * A keyword or tag describing the resource
 	 */
 	Keyword string `json:"keyword"`
+	/*
+	 * Date of formal issuance (e.g., publication) of the resource
+	 */
+	DateIssued string `json:"dateIssued"`
+	/*
+	 * Most recent date on which the resource was changed, updated or modified
+	 */
+	DateModified string `json:"dateModified"`
 }
 
 /*
@@ -760,6 +936,14 @@ type PlasmidSelection struct {
 	 * A keyword or tag describing the resource
 	 */
 	Keyword string `json:"keyword"`
+	/*
+	 * Date of formal issuance (e.g., publication) of the resource
+	 */
+	DateIssued string `json:"dateIssued"`
+	/*
+	 * Most recent date on which the resource was changed, updated or modified
+	 */
+	DateModified string `json:"dateModified"`
 }
 
 /*
@@ -790,6 +974,14 @@ type PropagationHost struct {
 	 * A keyword or tag describing the resource
 	 */
 	Keyword string `json:"keyword"`
+	/*
+	 * Date of formal issuance (e.g., publication) of the resource
+	 */
+	DateIssued string `json:"dateIssued"`
+	/*
+	 * Most recent date on which the resource was changed, updated or modified
+	 */
+	DateModified string `json:"dateModified"`
 }
 
 /*
@@ -820,6 +1012,14 @@ type TransmissionMethod struct {
 	 * A keyword or tag describing the resource
 	 */
 	Keyword string `json:"keyword"`
+	/*
+	 * Date of formal issuance (e.g., publication) of the resource
+	 */
+	DateIssued string `json:"dateIssued"`
+	/*
+	 * Most recent date on which the resource was changed, updated or modified
+	 */
+	DateModified string `json:"dateModified"`
 }
 
 /*
@@ -850,6 +1050,14 @@ type ProductionCellLine struct {
 	 * A keyword or tag describing the resource
 	 */
 	Keyword string `json:"keyword"`
+	/*
+	 * Date of formal issuance (e.g., publication) of the resource
+	 */
+	DateIssued string `json:"dateIssued"`
+	/*
+	 * Most recent date on which the resource was changed, updated or modified
+	 */
+	DateModified string `json:"dateModified"`
 }
 
 /*
@@ -884,6 +1092,14 @@ type ProductCategory struct {
 	 * A keyword or tag describing the resource
 	 */
 	Keyword string `json:"keyword"`
+	/*
+	 * Date of formal issuance (e.g., publication) of the resource
+	 */
+	DateIssued string `json:"dateIssued"`
+	/*
+	 * Most recent date on which the resource was changed, updated or modified
+	 */
+	DateModified string `json:"dateModified"`
 }
 
 /*
@@ -914,6 +1130,14 @@ type IsolationHost struct {
 	 * A keyword or tag describing the resource
 	 */
 	Keyword string `json:"keyword"`
+	/*
+	 * Date of formal issuance (e.g., publication) of the resource
+	 */
+	DateIssued string `json:"dateIssued"`
+	/*
+	 * Most recent date on which the resource was changed, updated or modified
+	 */
+	DateModified string `json:"dateModified"`
 }
 
 /*
@@ -944,6 +1168,14 @@ type GeographicalOrigin struct {
 	 * A keyword or tag describing the resource
 	 */
 	Keyword string `json:"keyword"`
+	/*
+	 * Date of formal issuance (e.g., publication) of the resource
+	 */
+	DateIssued string `json:"dateIssued"`
+	/*
+	 * Most recent date on which the resource was changed, updated or modified
+	 */
+	DateModified string `json:"dateModified"`
 }
 
 /*
@@ -974,6 +1206,14 @@ type IplcOrigin struct {
 	 * A keyword or tag describing the resource
 	 */
 	Keyword string `json:"keyword"`
+	/*
+	 * Date of formal issuance (e.g., publication) of the resource
+	 */
+	DateIssued string `json:"dateIssued"`
+	/*
+	 * Most recent date on which the resource was changed, updated or modified
+	 */
+	DateModified string `json:"dateModified"`
 }
 
 /*
@@ -1008,6 +1248,14 @@ type Country struct {
 	 * A keyword or tag describing the resource
 	 */
 	Keyword string `json:"keyword"`
+	/*
+	 * Date of formal issuance (e.g., publication) of the resource
+	 */
+	DateIssued string `json:"dateIssued"`
+	/*
+	 * Most recent date on which the resource was changed, updated or modified
+	 */
+	DateModified string `json:"dateModified"`
 }
 
 /*
@@ -1038,6 +1286,14 @@ type IataClassification struct {
 	 * A keyword or tag describing the resource
 	 */
 	Keyword string `json:"keyword"`
+	/*
+	 * Date of formal issuance (e.g., publication) of the resource
+	 */
+	DateIssued string `json:"dateIssued"`
+	/*
+	 * Most recent date on which the resource was changed, updated or modified
+	 */
+	DateModified string `json:"dateModified"`
 }
 
 /*
@@ -1076,6 +1332,14 @@ type Variant struct {
 	 * A keyword or tag describing the resource
 	 */
 	Keyword string `json:"keyword"`
+	/*
+	 * Date of formal issuance (e.g., publication) of the resource
+	 */
+	DateIssued string `json:"dateIssued"`
+	/*
+	 * Most recent date on which the resource was changed, updated or modified
+	 */
+	DateModified string `json:"dateModified"`
 }
 
 /*
@@ -1110,6 +1374,14 @@ type TaxonomicRank struct {
 	 * A keyword or tag describing the resource
 	 */
 	Keyword string `json:"keyword"`
+	/*
+	 * Date of formal issuance (e.g., publication) of the resource
+	 */
+	DateIssued string `json:"dateIssued"`
+	/*
+	 * Most recent date on which the resource was changed, updated or modified
+	 */
+	DateModified string `json:"dateModified"`
 }
 
 /*
@@ -1168,6 +1440,14 @@ type Taxon struct {
 	 * A keyword or tag describing the resource
 	 */
 	Keyword string `json:"keyword"`
+	/*
+	 * Date of formal issuance (e.g., publication) of the resource
+	 */
+	DateIssued string `json:"dateIssued"`
+	/*
+	 * Most recent date on which the resource was changed, updated or modified
+	 */
+	DateModified string `json:"dateModified"`
 }
 
 /*
@@ -1198,6 +1478,14 @@ type ExternalRelatedReference struct {
 	 * A keyword or tag describing the resource
 	 */
 	Keyword string `json:"keyword"`
+	/*
+	 * Date of formal issuance (e.g., publication) of the resource
+	 */
+	DateIssued string `json:"dateIssued"`
+	/*
+	 * Most recent date on which the resource was changed, updated or modified
+	 */
+	DateModified string `json:"dateModified"`
 }
 
 /*
@@ -1220,6 +1508,14 @@ type Sequence struct {
 	 * A keyword or tag describing the resource
 	 */
 	Keyword string `json:"keyword"`
+	/*
+	 * Date of formal issuance (e.g., publication) of the resource
+	 */
+	DateIssued string `json:"dateIssued"`
+	/*
+	 * Most recent date on which the resource was changed, updated or modified
+	 */
+	DateModified string `json:"dateModified"`
 }
 
 /*
@@ -1242,6 +1538,14 @@ type SequenceReference struct {
 	 * A keyword or tag describing the resource
 	 */
 	Keyword string `json:"keyword"`
+	/*
+	 * Date of formal issuance (e.g., publication) of the resource
+	 */
+	DateIssued string `json:"dateIssued"`
+	/*
+	 * Most recent date on which the resource was changed, updated or modified
+	 */
+	DateModified string `json:"dateModified"`
 }
 
 /*
@@ -1276,6 +1580,14 @@ type PersonOrOrganization struct {
 	 * A keyword or tag describing the resource
 	 */
 	Keyword string `json:"keyword"`
+	/*
+	 * Date of formal issuance (e.g., publication) of the resource
+	 */
+	DateIssued string `json:"dateIssued"`
+	/*
+	 * Most recent date on which the resource was changed, updated or modified
+	 */
+	DateModified string `json:"dateModified"`
 }
 
 /*
@@ -1314,6 +1626,14 @@ type Person struct {
 	 * A keyword or tag describing the resource
 	 */
 	Keyword string `json:"keyword"`
+	/*
+	 * Date of formal issuance (e.g., publication) of the resource
+	 */
+	DateIssued string `json:"dateIssued"`
+	/*
+	 * Most recent date on which the resource was changed, updated or modified
+	 */
+	DateModified string `json:"dateModified"`
 }
 
 /*
@@ -1360,6 +1680,14 @@ type Organization struct {
 	 * A keyword or tag describing the resource
 	 */
 	Keyword string `json:"keyword"`
+	/*
+	 * Date of formal issuance (e.g., publication) of the resource
+	 */
+	DateIssued string `json:"dateIssued"`
+	/*
+	 * Most recent date on which the resource was changed, updated or modified
+	 */
+	DateModified string `json:"dateModified"`
 }
 
 /*
@@ -1406,6 +1734,14 @@ type ReasearchInfrastructure struct {
 	 * A keyword or tag describing the resource
 	 */
 	Keyword string `json:"keyword"`
+	/*
+	 * Date of formal issuance (e.g., publication) of the resource
+	 */
+	DateIssued string `json:"dateIssued"`
+	/*
+	 * Most recent date on which the resource was changed, updated or modified
+	 */
+	DateModified string `json:"dateModified"`
 }
 
 /*
@@ -1456,6 +1792,14 @@ type Provider struct {
 	 * A keyword or tag describing the resource
 	 */
 	Keyword string `json:"keyword"`
+	/*
+	 * Date of formal issuance (e.g., publication) of the resource
+	 */
+	DateIssued string `json:"dateIssued"`
+	/*
+	 * Most recent date on which the resource was changed, updated or modified
+	 */
+	DateModified string `json:"dateModified"`
 }
 
 /*
@@ -1490,6 +1834,14 @@ type Originator struct {
 	 * A keyword or tag describing the resource
 	 */
 	Keyword string `json:"keyword"`
+	/*
+	 * Date of formal issuance (e.g., publication) of the resource
+	 */
+	DateIssued string `json:"dateIssued"`
+	/*
+	 * Most recent date on which the resource was changed, updated or modified
+	 */
+	DateModified string `json:"dateModified"`
 }
 
 /*
@@ -1516,6 +1868,14 @@ type BiologicalMaterialOrigin struct {
 	 * A keyword or tag describing the resource
 	 */
 	Keyword string `json:"keyword"`
+	/*
+	 * Date of formal issuance (e.g., publication) of the resource
+	 */
+	DateIssued string `json:"dateIssued"`
+	/*
+	 * Most recent date on which the resource was changed, updated or modified
+	 */
+	DateModified string `json:"dateModified"`
 }
 
 /*
@@ -1538,6 +1898,14 @@ type BiologicalPartOrigin struct {
 	 * A keyword or tag describing the resource
 	 */
 	Keyword string `json:"keyword"`
+	/*
+	 * Date of formal issuance (e.g., publication) of the resource
+	 */
+	DateIssued string `json:"dateIssued"`
+	/*
+	 * Most recent date on which the resource was changed, updated or modified
+	 */
+	DateModified string `json:"dateModified"`
 }
 
 /*
@@ -1580,6 +1948,14 @@ type NaturalPartOrigin struct {
 	 * A keyword or tag describing the resource
 	 */
 	Keyword string `json:"keyword"`
+	/*
+	 * Date of formal issuance (e.g., publication) of the resource
+	 */
+	DateIssued string `json:"dateIssued"`
+	/*
+	 * Most recent date on which the resource was changed, updated or modified
+	 */
+	DateModified string `json:"dateModified"`
 }
 
 /*
@@ -1610,6 +1986,14 @@ type SyntheticPartOrigin struct {
 	 * A keyword or tag describing the resource
 	 */
 	Keyword string `json:"keyword"`
+	/*
+	 * Date of formal issuance (e.g., publication) of the resource
+	 */
+	DateIssued string `json:"dateIssued"`
+	/*
+	 * Most recent date on which the resource was changed, updated or modified
+	 */
+	DateModified string `json:"dateModified"`
 }
 
 /*
@@ -1632,6 +2016,14 @@ type RecombinantPartIdentification struct {
 	 * A keyword or tag describing the resource
 	 */
 	Keyword string `json:"keyword"`
+	/*
+	 * Date of formal issuance (e.g., publication) of the resource
+	 */
+	DateIssued string `json:"dateIssued"`
+	/*
+	 * Most recent date on which the resource was changed, updated or modified
+	 */
+	DateModified string `json:"dateModified"`
 }
 
 /*
@@ -1666,6 +2058,14 @@ type Collection struct {
 	 * A keyword or tag describing the resource
 	 */
 	Keyword string `json:"keyword"`
+	/*
+	 * Date of formal issuance (e.g., publication) of the resource
+	 */
+	DateIssued string `json:"dateIssued"`
+	/*
+	 * Most recent date on which the resource was changed, updated or modified
+	 */
+	DateModified string `json:"dateModified"`
 }
 
 /*
@@ -1796,6 +2196,14 @@ type ProductOrService struct {
 	 * A keyword or tag describing the resource
 	 */
 	Keyword string `json:"keyword"`
+	/*
+	 * Date of formal issuance (e.g., publication) of the resource
+	 */
+	DateIssued string `json:"dateIssued"`
+	/*
+	 * Most recent date on which the resource was changed, updated or modified
+	 */
+	DateModified string `json:"dateModified"`
 }
 
 /*
@@ -1934,6 +2342,14 @@ type Service struct {
 	 * A keyword or tag describing the resource
 	 */
 	Keyword string `json:"keyword"`
+	/*
+	 * Date of formal issuance (e.g., publication) of the resource
+	 */
+	DateIssued string `json:"dateIssued"`
+	/*
+	 * Most recent date on which the resource was changed, updated or modified
+	 */
+	DateModified string `json:"dateModified"`
 }
 
 /*
@@ -2092,6 +2508,14 @@ type Product struct {
 	 * A keyword or tag describing the resource
 	 */
 	Keyword string `json:"keyword"`
+	/*
+	 * Date of formal issuance (e.g., publication) of the resource
+	 */
+	DateIssued string `json:"dateIssued"`
+	/*
+	 * Most recent date on which the resource was changed, updated or modified
+	 */
+	DateModified string `json:"dateModified"`
 }
 
 /*
@@ -2270,6 +2694,14 @@ type Antibody struct {
 	 * A keyword or tag describing the resource
 	 */
 	Keyword string `json:"keyword"`
+	/*
+	 * Date of formal issuance (e.g., publication) of the resource
+	 */
+	DateIssued string `json:"dateIssued"`
+	/*
+	 * Most recent date on which the resource was changed, updated or modified
+	 */
+	DateModified string `json:"dateModified"`
 }
 
 /*
@@ -2452,6 +2884,14 @@ type Hybridoma struct {
 	 * A keyword or tag describing the resource
 	 */
 	Keyword string `json:"keyword"`
+	/*
+	 * Date of formal issuance (e.g., publication) of the resource
+	 */
+	DateIssued string `json:"dateIssued"`
+	/*
+	 * Most recent date on which the resource was changed, updated or modified
+	 */
+	DateModified string `json:"dateModified"`
 }
 
 /*
@@ -2666,6 +3106,14 @@ type Protein struct {
 	 * A keyword or tag describing the resource
 	 */
 	Keyword string `json:"keyword"`
+	/*
+	 * Date of formal issuance (e.g., publication) of the resource
+	 */
+	DateIssued string `json:"dateIssued"`
+	/*
+	 * Most recent date on which the resource was changed, updated or modified
+	 */
+	DateModified string `json:"dateModified"`
 }
 
 /*
@@ -2880,6 +3328,14 @@ type NucleicAcid struct {
 	 * A keyword or tag describing the resource
 	 */
 	Keyword string `json:"keyword"`
+	/*
+	 * Date of formal issuance (e.g., publication) of the resource
+	 */
+	DateIssued string `json:"dateIssued"`
+	/*
+	 * Most recent date on which the resource was changed, updated or modified
+	 */
+	DateModified string `json:"dateModified"`
 }
 
 /*
@@ -3054,6 +3510,14 @@ type DetectionKit struct {
 	 * A keyword or tag describing the resource
 	 */
 	Keyword string `json:"keyword"`
+	/*
+	 * Date of formal issuance (e.g., publication) of the resource
+	 */
+	DateIssued string `json:"dateIssued"`
+	/*
+	 * Most recent date on which the resource was changed, updated or modified
+	 */
+	DateModified string `json:"dateModified"`
 }
 
 /*
@@ -3216,6 +3680,14 @@ type Bundle struct {
 	 * A keyword or tag describing the resource
 	 */
 	Keyword string `json:"keyword"`
+	/*
+	 * Date of formal issuance (e.g., publication) of the resource
+	 */
+	DateIssued string `json:"dateIssued"`
+	/*
+	 * Most recent date on which the resource was changed, updated or modified
+	 */
+	DateModified string `json:"dateModified"`
 }
 
 /*
@@ -3446,6 +3918,14 @@ type Pathogen struct {
 	 * A keyword or tag describing the resource
 	 */
 	Keyword string `json:"keyword"`
+	/*
+	 * Date of formal issuance (e.g., publication) of the resource
+	 */
+	DateIssued string `json:"dateIssued"`
+	/*
+	 * Most recent date on which the resource was changed, updated or modified
+	 */
+	DateModified string `json:"dateModified"`
 }
 
 /*
@@ -3688,6 +4168,14 @@ type Virus struct {
 	 * A keyword or tag describing the resource
 	 */
 	Keyword string `json:"keyword"`
+	/*
+	 * Date of formal issuance (e.g., publication) of the resource
+	 */
+	DateIssued string `json:"dateIssued"`
+	/*
+	 * Most recent date on which the resource was changed, updated or modified
+	 */
+	DateModified string `json:"dateModified"`
 }
 
 /*
@@ -3918,6 +4406,14 @@ type Bacterium struct {
 	 * A keyword or tag describing the resource
 	 */
 	Keyword string `json:"keyword"`
+	/*
+	 * Date of formal issuance (e.g., publication) of the resource
+	 */
+	DateIssued string `json:"dateIssued"`
+	/*
+	 * Most recent date on which the resource was changed, updated or modified
+	 */
+	DateModified string `json:"dateModified"`
 }
 
 /*
@@ -4148,6 +4644,14 @@ type Fungus struct {
 	 * A keyword or tag describing the resource
 	 */
 	Keyword string `json:"keyword"`
+	/*
+	 * Date of formal issuance (e.g., publication) of the resource
+	 */
+	DateIssued string `json:"dateIssued"`
+	/*
+	 * Most recent date on which the resource was changed, updated or modified
+	 */
+	DateModified string `json:"dateModified"`
 }
 
 /*
@@ -4378,6 +4882,14 @@ type Protozoan struct {
 	 * A keyword or tag describing the resource
 	 */
 	Keyword string `json:"keyword"`
+	/*
+	 * Date of formal issuance (e.g., publication) of the resource
+	 */
+	DateIssued string `json:"dateIssued"`
+	/*
+	 * Most recent date on which the resource was changed, updated or modified
+	 */
+	DateModified string `json:"dateModified"`
 }
 
 /*
@@ -4608,6 +5120,14 @@ type Viroid struct {
 	 * A keyword or tag describing the resource
 	 */
 	Keyword string `json:"keyword"`
+	/*
+	 * Date of formal issuance (e.g., publication) of the resource
+	 */
+	DateIssued string `json:"dateIssued"`
+	/*
+	 * Most recent date on which the resource was changed, updated or modified
+	 */
+	DateModified string `json:"dateModified"`
 }
 
 /*
@@ -4838,6 +5358,14 @@ type Prion struct {
 	 * A keyword or tag describing the resource
 	 */
 	Keyword string `json:"keyword"`
+	/*
+	 * Date of formal issuance (e.g., publication) of the resource
+	 */
+	DateIssued string `json:"dateIssued"`
+	/*
+	 * Most recent date on which the resource was changed, updated or modified
+	 */
+	DateModified string `json:"dateModified"`
 }
 
 /*
@@ -4912,6 +5440,14 @@ type MaterialSafetyDataSheet struct {
 	 * A keyword or tag describing the resource
 	 */
 	Keyword string `json:"keyword"`
+	/*
+	 * Date of formal issuance (e.g., publication) of the resource
+	 */
+	DateIssued string `json:"dateIssued"`
+	/*
+	 * Most recent date on which the resource was changed, updated or modified
+	 */
+	DateModified string `json:"dateModified"`
 }
 
 /*
@@ -4946,6 +5482,14 @@ type File struct {
 	 * A keyword or tag describing the resource
 	 */
 	Keyword string `json:"keyword"`
+	/*
+	 * Date of formal issuance (e.g., publication) of the resource
+	 */
+	DateIssued string `json:"dateIssued"`
+	/*
+	 * Most recent date on which the resource was changed, updated or modified
+	 */
+	DateModified string `json:"dateModified"`
 }
 
 /*
@@ -4980,6 +5524,14 @@ type Data struct {
 	 * A keyword or tag describing the resource
 	 */
 	Keyword string `json:"keyword"`
+	/*
+	 * Date of formal issuance (e.g., publication) of the resource
+	 */
+	DateIssued string `json:"dateIssued"`
+	/*
+	 * Most recent date on which the resource was changed, updated or modified
+	 */
+	DateModified string `json:"dateModified"`
 }
 
 /*
@@ -5014,6 +5566,14 @@ type Document struct {
 	 * A keyword or tag describing the resource
 	 */
 	Keyword string `json:"keyword"`
+	/*
+	 * Date of formal issuance (e.g., publication) of the resource
+	 */
+	DateIssued string `json:"dateIssued"`
+	/*
+	 * Most recent date on which the resource was changed, updated or modified
+	 */
+	DateModified string `json:"dateModified"`
 }
 
 /*
@@ -5048,6 +5608,14 @@ type Audio struct {
 	 * A keyword or tag describing the resource
 	 */
 	Keyword string `json:"keyword"`
+	/*
+	 * Date of formal issuance (e.g., publication) of the resource
+	 */
+	DateIssued string `json:"dateIssued"`
+	/*
+	 * Most recent date on which the resource was changed, updated or modified
+	 */
+	DateModified string `json:"dateModified"`
 }
 
 /*
@@ -5082,6 +5650,14 @@ type Video struct {
 	 * A keyword or tag describing the resource
 	 */
 	Keyword string `json:"keyword"`
+	/*
+	 * Date of formal issuance (e.g., publication) of the resource
+	 */
+	DateIssued string `json:"dateIssued"`
+	/*
+	 * Most recent date on which the resource was changed, updated or modified
+	 */
+	DateModified string `json:"dateModified"`
 }
 
 /*
@@ -5120,6 +5696,14 @@ type Image struct {
 	 * A keyword or tag describing the resource
 	 */
 	Keyword string `json:"keyword"`
+	/*
+	 * Date of formal issuance (e.g., publication) of the resource
+	 */
+	DateIssued string `json:"dateIssued"`
+	/*
+	 * Most recent date on which the resource was changed, updated or modified
+	 */
+	DateModified string `json:"dateModified"`
 }
 
 /*
@@ -5174,6 +5758,14 @@ type ContactPoint struct {
 	 * A keyword or tag describing the resource
 	 */
 	Keyword string `json:"keyword"`
+	/*
+	 * Date of formal issuance (e.g., publication) of the resource
+	 */
+	DateIssued string `json:"dateIssued"`
+	/*
+	 * Most recent date on which the resource was changed, updated or modified
+	 */
+	DateModified string `json:"dateModified"`
 }
 
 /*
@@ -5208,6 +5800,14 @@ type License struct {
 	 * A keyword or tag describing the resource
 	 */
 	Keyword string `json:"keyword"`
+	/*
+	 * Date of formal issuance (e.g., publication) of the resource
+	 */
+	DateIssued string `json:"dateIssued"`
+	/*
+	 * Most recent date on which the resource was changed, updated or modified
+	 */
+	DateModified string `json:"dateModified"`
 }
 
 /*
@@ -5242,6 +5842,14 @@ type Certification struct {
 	 * A keyword or tag describing the resource
 	 */
 	Keyword string `json:"keyword"`
+	/*
+	 * Date of formal issuance (e.g., publication) of the resource
+	 */
+	DateIssued string `json:"dateIssued"`
+	/*
+	 * Most recent date on which the resource was changed, updated or modified
+	 */
+	DateModified string `json:"dateModified"`
 }
 
 

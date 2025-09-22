@@ -79,6 +79,8 @@ SELECT ?g ?s ?p WHERE {
    EVORAO:regulatoryInformation,
    EVORAO:furtherInformation,
    dcat:keyword,
+   dct:issued,
+   dct:modified,
    rdf:type ))
  }
  

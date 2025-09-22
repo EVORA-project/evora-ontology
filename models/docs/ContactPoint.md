@@ -36,6 +36,10 @@ URI: [EVORAO:ContactPoint](https://w3id.org/evorao/ContactPoint)
         
       ContactPoint : addressRegion
         
+      ContactPoint : dateIssued
+        
+      ContactPoint : dateModified
+        
       ContactPoint : description
         
       ContactPoint : email
@@ -80,6 +84,8 @@ URI: [EVORAO:ContactPoint](https://w3id.org/evorao/ContactPoint)
 | [addressCountry](addressCountry.md) | 0..1 <br/> [Country](Country.md) | The country as of  ISO 3166 | direct |
 | [orcidId](orcidId.md) | 0..1 _recommended_ <br/> [String](String.md) | Unique persistent identifier for a person, provided by the Open Researcher an... | direct |
 | [keyword](keyword.md) | * <br/> [String](String.md) | A keyword or tag describing the resource | [Resource](Resource.md) |
+| [dateIssued](dateIssued.md) | 0..1 <br/> [Datetime](Datetime.md) | Date of formal issuance (e | [Resource](Resource.md) |
+| [dateModified](dateModified.md) | 0..1 <br/> [Datetime](Datetime.md) | Most recent date on which the resource was changed, updated or modified | [Resource](Resource.md) |
 
 
 
@@ -752,6 +758,47 @@ attributes:
     range: string
     required: false
     multivalued: true
+  dateIssued:
+    name: dateIssued
+    description: Date of formal issuance (e.g., publication) of the resource
+    title: date issued
+    comments:
+    - encoded using the relevant ISO 8601 Date and Time compliant string [DATETIME]
+    from_schema: https://w3id.org/evorao/
+    exact_mappings:
+    - sepio:0000051
+    close_mappings:
+    - schema:datePublished
+    - schema:dateCreated
+    rank: 1000
+    slot_uri: dct:issued
+    alias: dateIssued
+    owner: ContactPoint
+    domain_of:
+    - Resource
+    range: datetime
+    required: false
+    multivalued: false
+  dateModified:
+    name: dateModified
+    description: Most recent date on which the resource was changed, updated or modified
+    title: date modified
+    comments:
+    - encoded using the relevant ISO 8601 Date and Time compliant string [DATETIME]
+    from_schema: https://w3id.org/evorao/
+    exact_mappings:
+    - sepio:0000036
+    close_mappings:
+    - schema:dateModified
+    rank: 1000
+    slot_uri: dct:modified
+    alias: dateModified
+    owner: ContactPoint
+    domain_of:
+    - Resource
+    range: datetime
+    required: false
+    multivalued: false
 
 ```
 </details>

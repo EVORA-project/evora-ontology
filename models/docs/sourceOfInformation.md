@@ -23,8 +23,8 @@ Alias: sourceOfInformation
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
 | [Variant](Variant.md) | An organism with one or more new mutations is referred to as a “variant” of t... |  no  |
-| [VirusName](VirusName.md) | A virus vernacular name or a name that describes a group of viruses |  no  |
 | [CommonName](CommonName.md) | Vernacular name that is the name used in everyday language to refer to an org... |  yes  |
+| [VirusName](VirusName.md) | A virus vernacular name or a name that describes a group of viruses |  no  |
 | [AlternateName](AlternateName.md) | List of other names for things |  yes  |
 
 

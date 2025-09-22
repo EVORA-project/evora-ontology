@@ -1,5 +1,5 @@
 # Auto generated from evora_schema.yaml by pythongen.py version: 0.0.1
-# Generation date: 2025-09-19T16:33:07
+# Generation date: 2025-09-22T12:43:21
 # Schema: EVORAO
 #
 # id: https://w3id.org/evorao/
@@ -60,7 +60,7 @@ from linkml_runtime.linkml_model.types import Boolean, Datetime, Decimal, Intege
 from linkml_runtime.utils.metamodelcore import Bool, Decimal, URI, XSDDateTime
 
 metamodel_version = "1.7.0"
-version = "1.0.9841"
+version = "1.0.9877"
 
 # Namespaces
 EVORAO = CurieNamespace('EVORAO', 'https://w3id.org/evorao/')
@@ -144,11 +144,19 @@ class Resource(YAMLRoot):
     class_model_uri: ClassVar[URIRef] = EVORAO.Resource
 
     keyword: Optional[Union[str, list[str]]] = empty_list()
+    dateIssued: Optional[Union[str, XSDDateTime]] = None
+    dateModified: Optional[Union[str, XSDDateTime]] = None
 
     def __post_init__(self, *_: str, **kwargs: Any):
         if not isinstance(self.keyword, list):
             self.keyword = [self.keyword] if self.keyword is not None else []
         self.keyword = [v if isinstance(v, str) else str(v) for v in self.keyword]
+
+        if self.dateIssued is not None and not isinstance(self.dateIssued, XSDDateTime):
+            self.dateIssued = XSDDateTime(self.dateIssued)
+
+        if self.dateModified is not None and not isinstance(self.dateModified, XSDDateTime):
+            self.dateModified = XSDDateTime(self.dateModified)
 
         super().__post_init__(**kwargs)
 
@@ -2806,6 +2814,12 @@ class slots:
 slots.keyword = Slot(uri=DCAT.keyword, name="keyword", curie=DCAT.curie('keyword'),
                    model_uri=EVORAO.keyword, domain=None, range=Optional[Union[str, list[str]]])
 
+slots.dateIssued = Slot(uri=DCT.issued, name="dateIssued", curie=DCT.curie('issued'),
+                   model_uri=EVORAO.dateIssued, domain=None, range=Optional[Union[str, XSDDateTime]])
+
+slots.dateModified = Slot(uri=DCT.modified, name="dateModified", curie=DCT.curie('modified'),
+                   model_uri=EVORAO.dateModified, domain=None, range=Optional[Union[str, XSDDateTime]])
+
 slots.title = Slot(uri=DCT.title, name="title", curie=DCT.curie('title'),
                    model_uri=EVORAO.title, domain=None, range=str)
 
@@ -3375,6 +3389,12 @@ slots.certificationDocument = Slot(uri=EVORAO.certificationDocument, name="certi
 
 slots.Resource_keyword = Slot(uri=DCAT.keyword, name="Resource_keyword", curie=DCAT.curie('keyword'),
                    model_uri=EVORAO.Resource_keyword, domain=Resource, range=Optional[Union[str, list[str]]])
+
+slots.Resource_dateIssued = Slot(uri=DCT.issued, name="Resource_dateIssued", curie=DCT.curie('issued'),
+                   model_uri=EVORAO.Resource_dateIssued, domain=Resource, range=Optional[Union[str, XSDDateTime]])
+
+slots.Resource_dateModified = Slot(uri=DCT.modified, name="Resource_dateModified", curie=DCT.curie('modified'),
+                   model_uri=EVORAO.Resource_dateModified, domain=Resource, range=Optional[Union[str, XSDDateTime]])
 
 slots.Dataset_title = Slot(uri=DCT.title, name="Dataset_title", curie=DCT.curie('title'),
                    model_uri=EVORAO.Dataset_title, domain=Dataset, range=str)

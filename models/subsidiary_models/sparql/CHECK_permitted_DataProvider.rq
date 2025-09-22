@@ -76,6 +76,8 @@ SELECT ?g ?s ?p WHERE {
    dcat:endpointURL,
    dcat:servesDataset,
    dcat:keyword,
+   dct:issued,
+   dct:modified,
    rdf:type ))
  }
  

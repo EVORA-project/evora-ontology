@@ -68,6 +68,8 @@ SELECT ?g ?s ?p WHERE {
    EVORAO:recombinantPartIdentification,
    EVORAO:accessToPhysicalGeneticResource,
    dcat:keyword,
+   dct:issued,
+   dct:modified,
    rdf:type ))
  }
  

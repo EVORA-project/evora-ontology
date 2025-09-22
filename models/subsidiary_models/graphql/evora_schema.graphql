@@ -1,8 +1,10 @@
 # metamodel_version: 1.7.0
-# version: 1.0.9841
+# version: 1.0.9877
 type AlternateName
   {
     keyword: [String]
+    dateIssued: Datetime
+    dateModified: Datetime
     title: String!
     description: String
     weight: Integer!
@@ -14,6 +16,8 @@ type AlternateName
 type Antibody
   {
     keyword: [String]
+    dateIssued: Datetime
+    dateModified: Datetime
     title: String!
     description: String!
     version: String!
@@ -60,6 +64,8 @@ type Antibody
 type Audio
   {
     keyword: [String]
+    dateIssued: Datetime
+    dateModified: Datetime
     name: String!
     description: String
     contentUrl: Uri!
@@ -70,6 +76,8 @@ type Audio
 type Bacterium
   {
     keyword: [String]
+    dateIssued: Datetime
+    dateModified: Datetime
     title: String!
     description: String!
     version: String!
@@ -129,6 +137,8 @@ type Bacterium
 type BiologicalMaterialOrigin
   {
     keyword: [String]
+    dateIssued: Datetime
+    dateModified: Datetime
     recombinantMaterial: Boolean!
     biologicalSourceType: Boolean!
     biologicalPartOrigin: [BiologicalPartOrigin]!
@@ -137,6 +147,8 @@ type BiologicalMaterialOrigin
 interface BiologicalPartOrigin
   {
     keyword: [String]
+    dateIssued: Datetime
+    dateModified: Datetime
     recombinantPartIdentification: RecombinantPartIdentification
     accessToPhysicalGeneticResource: Boolean!
   }
@@ -144,6 +156,8 @@ interface BiologicalPartOrigin
 type Bundle
   {
     keyword: [String]
+    dateIssued: Datetime
+    dateModified: Datetime
     title: String!
     description: String!
     version: String!
@@ -186,6 +200,8 @@ type Bundle
 interface Catalogue
   {
     keyword: [String]
+    dateIssued: Datetime
+    dateModified: Datetime
     title: String!
     description: String!
     version: String!
@@ -194,6 +210,8 @@ interface Catalogue
 type Certification
   {
     keyword: [String]
+    dateIssued: Datetime
+    dateModified: Datetime
     title: String!
     description: String
     logo: Image
@@ -204,6 +222,8 @@ type Certification
 type Collection
   {
     keyword: [String]
+    dateIssued: Datetime
+    dateModified: Datetime
     title: String!
     description: String!
     version: String!
@@ -214,6 +234,8 @@ type Collection
 type CommonName
   {
     keyword: [String]
+    dateIssued: Datetime
+    dateModified: Datetime
     title: String!
     description: String
     weight: Integer!
@@ -225,6 +247,8 @@ type CommonName
 type ContactPoint
   {
     keyword: [String]
+    dateIssued: Datetime
+    dateModified: Datetime
     name: String!
     description: String
     email: String
@@ -240,6 +264,8 @@ type ContactPoint
 type Country
   {
     keyword: [String]
+    dateIssued: Datetime
+    dateModified: Datetime
     title: String!
     description: String
     weight: Integer!
@@ -250,6 +276,8 @@ type Country
 type Data
   {
     keyword: [String]
+    dateIssued: Datetime
+    dateModified: Datetime
     name: String!
     description: String
     contentUrl: Uri!
@@ -260,6 +288,8 @@ type Data
 type DataProvider
   {
     keyword: [String]
+    dateIssued: Datetime
+    dateModified: Datetime
     title: String!
     description: String
     endpointUrl: Uri!
@@ -277,6 +307,8 @@ type DataProvider
 interface DataService
   {
     keyword: [String]
+    dateIssued: Datetime
+    dateModified: Datetime
     title: String!
     description: String
     endpointUrl: Uri!
@@ -286,6 +318,8 @@ interface DataService
 interface Dataset
   {
     keyword: [String]
+    dateIssued: Datetime
+    dateModified: Datetime
     title: String!
     description: String!
     version: String!
@@ -294,6 +328,8 @@ interface Dataset
 type DetectionKit
   {
     keyword: [String]
+    dateIssued: Datetime
+    dateModified: Datetime
     title: String!
     description: String!
     version: String!
@@ -339,6 +375,8 @@ type DetectionKit
 type Document
   {
     keyword: [String]
+    dateIssued: Datetime
+    dateModified: Datetime
     name: String!
     description: String
     contentUrl: Uri!
@@ -349,6 +387,8 @@ type Document
 type Doi
   {
     keyword: [String]
+    dateIssued: Datetime
+    dateModified: Datetime
     title: String!
     description: String
     weight: Integer!
@@ -358,6 +398,8 @@ type Doi
 type ExpressionVector
   {
     keyword: [String]
+    dateIssued: Datetime
+    dateModified: Datetime
     title: String!
     description: String
     weight: Integer!
@@ -367,6 +409,8 @@ type ExpressionVector
 type ExternalRelatedReference
   {
     keyword: [String]
+    dateIssued: Datetime
+    dateModified: Datetime
     reference: String!
     referenceLabel: String!
     referenceProviderPrefix: String!
@@ -376,6 +420,8 @@ type ExternalRelatedReference
 interface File
   {
     keyword: [String]
+    dateIssued: Datetime
+    dateModified: Datetime
     name: String!
     description: String
     contentUrl: Uri!
@@ -386,6 +432,8 @@ interface File
 type Fungus
   {
     keyword: [String]
+    dateIssued: Datetime
+    dateModified: Datetime
     title: String!
     description: String!
     version: String!
@@ -445,6 +493,8 @@ type Fungus
 type GeographicalOrigin
   {
     keyword: [String]
+    dateIssued: Datetime
+    dateModified: Datetime
     title: String!
     description: String
     weight: Integer!
@@ -454,6 +504,8 @@ type GeographicalOrigin
 type Hybridoma
   {
     keyword: [String]
+    dateIssued: Datetime
+    dateModified: Datetime
     title: String!
     description: String!
     version: String!
@@ -501,6 +553,8 @@ type Hybridoma
 type IataClassification
   {
     keyword: [String]
+    dateIssued: Datetime
+    dateModified: Datetime
     title: String!
     description: String
     weight: Integer!
@@ -510,6 +564,8 @@ type IataClassification
 type Image
   {
     keyword: [String]
+    dateIssued: Datetime
+    dateModified: Datetime
     name: String!
     description: String
     contentUrl: Uri!
@@ -521,6 +577,8 @@ type Image
 type IplcOrigin
   {
     keyword: [String]
+    dateIssued: Datetime
+    dateModified: Datetime
     title: String!
     description: String
     weight: Integer!
@@ -530,6 +588,8 @@ type IplcOrigin
 type IsolationHost
   {
     keyword: [String]
+    dateIssued: Datetime
+    dateModified: Datetime
     title: String!
     description: String
     weight: Integer!
@@ -539,6 +599,8 @@ type IsolationHost
 type Journal
   {
     keyword: [String]
+    dateIssued: Datetime
+    dateModified: Datetime
     title: String!
     description: String
     weight: Integer!
@@ -548,6 +610,8 @@ type Journal
 type Keyword
   {
     keyword: [String]
+    dateIssued: Datetime
+    dateModified: Datetime
     title: String!
     description: String
     weight: Integer!
@@ -557,6 +621,8 @@ type Keyword
 type License
   {
     keyword: [String]
+    dateIssued: Datetime
+    dateModified: Datetime
     title: String!
     description: String
     resourceUrl: Uri
@@ -567,6 +633,8 @@ type License
 type MaterialSafetyDataSheet
   {
     keyword: [String]
+    dateIssued: Datetime
+    dateModified: Datetime
     materialSafetyContact: ContactPoint!
     physicalChemicalProperties: String
     hazardsIdentification: String
@@ -587,6 +655,8 @@ type MaterialSafetyDataSheet
 type NaturalPartOrigin
   {
     keyword: [String]
+    dateIssued: Datetime
+    dateModified: Datetime
     recombinantPartIdentification: RecombinantPartIdentification
     accessToPhysicalGeneticResource: Boolean!
     countryOfCollection: Country!
@@ -599,6 +669,8 @@ type NaturalPartOrigin
 type NucleicAcid
   {
     keyword: [String]
+    dateIssued: Datetime
+    dateModified: Datetime
     title: String!
     description: String!
     version: String!
@@ -654,6 +726,8 @@ type NucleicAcid
 type Organization
   {
     keyword: [String]
+    dateIssued: Datetime
+    dateModified: Datetime
     name: String!
     description: String
     homePage: Uri
@@ -667,6 +741,8 @@ type Organization
 type Originator
   {
     keyword: [String]
+    dateIssued: Datetime
+    dateModified: Datetime
     name: String!
     description: String
     homePage: Uri
@@ -677,6 +753,8 @@ type Originator
 interface Pathogen
   {
     keyword: [String]
+    dateIssued: Datetime
+    dateModified: Datetime
     title: String!
     description: String!
     version: String!
@@ -736,6 +814,8 @@ interface Pathogen
 type PathogenIdentification
   {
     keyword: [String]
+    dateIssued: Datetime
+    dateModified: Datetime
     taxon: Taxon!
     pathogenName: CommonName!
     pathogenType: String!
@@ -751,6 +831,8 @@ type PathogenIdentification
 type PdbReference
   {
     keyword: [String]
+    dateIssued: Datetime
+    dateModified: Datetime
     title: String!
     description: String
     weight: Integer!
@@ -760,6 +842,8 @@ type PdbReference
 type Person
   {
     keyword: [String]
+    dateIssued: Datetime
+    dateModified: Datetime
     name: String!
     description: String
     homePage: Uri
@@ -771,6 +855,8 @@ type Person
 type PersonOrOrganization
   {
     keyword: [String]
+    dateIssued: Datetime
+    dateModified: Datetime
     name: String!
     description: String
     homePage: Uri
@@ -781,6 +867,8 @@ type PersonOrOrganization
 type PlasmidSelection
   {
     keyword: [String]
+    dateIssued: Datetime
+    dateModified: Datetime
     title: String!
     description: String
     weight: Integer!
@@ -790,6 +878,8 @@ type PlasmidSelection
 type Prion
   {
     keyword: [String]
+    dateIssued: Datetime
+    dateModified: Datetime
     title: String!
     description: String!
     version: String!
@@ -849,6 +939,8 @@ type Prion
 type Product
   {
     keyword: [String]
+    dateIssued: Datetime
+    dateModified: Datetime
     title: String!
     description: String!
     version: String!
@@ -890,6 +982,8 @@ type Product
 type ProductCategory
   {
     keyword: [String]
+    dateIssued: Datetime
+    dateModified: Datetime
     title: String!
     description: String
     weight: Integer!
@@ -900,6 +994,8 @@ type ProductCategory
 type ProductionCellLine
   {
     keyword: [String]
+    dateIssued: Datetime
+    dateModified: Datetime
     title: String!
     description: String
     weight: Integer!
@@ -909,6 +1005,8 @@ type ProductionCellLine
 interface ProductOrService
   {
     keyword: [String]
+    dateIssued: Datetime
+    dateModified: Datetime
     title: String!
     description: String!
     version: String!
@@ -943,6 +1041,8 @@ interface ProductOrService
 type PropagationHost
   {
     keyword: [String]
+    dateIssued: Datetime
+    dateModified: Datetime
     title: String!
     description: String
     weight: Integer!
@@ -952,6 +1052,8 @@ type PropagationHost
 type Protein
   {
     keyword: [String]
+    dateIssued: Datetime
+    dateModified: Datetime
     title: String!
     description: String!
     version: String!
@@ -1007,6 +1109,8 @@ type Protein
 type Protozoan
   {
     keyword: [String]
+    dateIssued: Datetime
+    dateModified: Datetime
     title: String!
     description: String!
     version: String!
@@ -1066,6 +1170,8 @@ type Protozoan
 type Provider
   {
     keyword: [String]
+    dateIssued: Datetime
+    dateModified: Datetime
     name: String!
     description: String
     homePage: Uri
@@ -1080,6 +1186,8 @@ type Provider
 type Publication
   {
     keyword: [String]
+    dateIssued: Datetime
+    dateModified: Datetime
     title: String!
     authors: String!
     abstract: String!
@@ -1090,6 +1198,8 @@ type Publication
 type ReasearchInfrastructure
   {
     keyword: [String]
+    dateIssued: Datetime
+    dateModified: Datetime
     name: String!
     description: String
     homePage: Uri
@@ -1103,6 +1213,8 @@ type ReasearchInfrastructure
 type RecombinantPartIdentification
   {
     keyword: [String]
+    dateIssued: Datetime
+    dateModified: Datetime
     partIdentification: String!
     sequence: [Sequence]!
   }
@@ -1110,11 +1222,15 @@ type RecombinantPartIdentification
 interface Resource
   {
     keyword: [String]
+    dateIssued: Datetime
+    dateModified: Datetime
   }
 
 type RiskGroup
   {
     keyword: [String]
+    dateIssued: Datetime
+    dateModified: Datetime
     title: String!
     description: String
     weight: Integer!
@@ -1124,6 +1240,8 @@ type RiskGroup
 type Sequence
   {
     keyword: [String]
+    dateIssued: Datetime
+    dateModified: Datetime
     sequenceReference: [SequenceReference]
     sequenceFasta: String
   }
@@ -1131,6 +1249,8 @@ type Sequence
 type SequenceReference
   {
     keyword: [String]
+    dateIssued: Datetime
+    dateModified: Datetime
     accessionNumber: String!
     sequenceProvider: String!
   }
@@ -1138,6 +1258,8 @@ type SequenceReference
 type Service
   {
     keyword: [String]
+    dateIssued: Datetime
+    dateModified: Datetime
     title: String!
     description: String!
     version: String!
@@ -1174,6 +1296,8 @@ type Service
 type SpecialFeature
   {
     keyword: [String]
+    dateIssued: Datetime
+    dateModified: Datetime
     title: String!
     description: String
     weight: Integer!
@@ -1183,6 +1307,8 @@ type SpecialFeature
 type SyntheticPartOrigin
   {
     keyword: [String]
+    dateIssued: Datetime
+    dateModified: Datetime
     recombinantPartIdentification: RecombinantPartIdentification
     accessToPhysicalGeneticResource: Boolean!
     modificationsFromTheReferenceSequences: Boolean!
@@ -1192,6 +1318,8 @@ type SyntheticPartOrigin
 type TagSequence
   {
     keyword: [String]
+    dateIssued: Datetime
+    dateModified: Datetime
     title: String!
     description: String
     weight: Integer!
@@ -1201,6 +1329,8 @@ type TagSequence
 type Taxon
   {
     keyword: [String]
+    dateIssued: Datetime
+    dateModified: Datetime
     title: String!
     description: String
     weight: Integer!
@@ -1217,6 +1347,8 @@ type Taxon
 type TaxonomicRank
   {
     keyword: [String]
+    dateIssued: Datetime
+    dateModified: Datetime
     title: String!
     description: String
     weight: Integer!
@@ -1227,6 +1359,8 @@ type TaxonomicRank
 type Taxonomy
   {
     keyword: [String]
+    dateIssued: Datetime
+    dateModified: Datetime
     title: String!
     description: String!
     taxon: [Taxon]!
@@ -1240,6 +1374,8 @@ type Taxonomy
 interface Term
   {
     keyword: [String]
+    dateIssued: Datetime
+    dateModified: Datetime
     title: String!
     description: String
     weight: Integer!
@@ -1249,6 +1385,8 @@ interface Term
 type TransmissionMethod
   {
     keyword: [String]
+    dateIssued: Datetime
+    dateModified: Datetime
     title: String!
     description: String
     weight: Integer!
@@ -1258,6 +1396,8 @@ type TransmissionMethod
 type Variant
   {
     keyword: [String]
+    dateIssued: Datetime
+    dateModified: Datetime
     title: String!
     description: String
     weight: Integer!
@@ -1269,6 +1409,8 @@ type Variant
 type Version
   {
     keyword: [String]
+    dateIssued: Datetime
+    dateModified: Datetime
     version: String!
     versionOf: String!
     resource: [Resource]
@@ -1277,6 +1419,8 @@ type Version
 type Video
   {
     keyword: [String]
+    dateIssued: Datetime
+    dateModified: Datetime
     name: String!
     description: String
     contentUrl: Uri!
@@ -1287,6 +1431,8 @@ type Video
 type Viroid
   {
     keyword: [String]
+    dateIssued: Datetime
+    dateModified: Datetime
     title: String!
     description: String!
     version: String!
@@ -1346,6 +1492,8 @@ type Viroid
 type Virus
   {
     keyword: [String]
+    dateIssued: Datetime
+    dateModified: Datetime
     title: String!
     description: String!
     version: String!
@@ -1408,6 +1556,8 @@ type Virus
 type VirusName
   {
     keyword: [String]
+    dateIssued: Datetime
+    dateModified: Datetime
     title: String!
     description: String
     weight: Integer!
@@ -1419,6 +1569,8 @@ type VirusName
 type Vocabulary
   {
     keyword: [String]
+    dateIssued: Datetime
+    dateModified: Datetime
     title: String!
     description: String!
     version: String!

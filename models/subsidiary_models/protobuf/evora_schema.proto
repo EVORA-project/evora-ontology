@@ -1,11 +1,13 @@
  syntax="proto3";
  package
 // metamodel_version: 1.7.0
-// version: 1.0.9841
+// version: 1.0.9877
 // List of other names for things
 message AlternateName
  {
  repeated  string keyword = 0
+  datetime dateIssued = 0
+  datetime dateModified = 0
   string title = 0
   string description = 0
   integer weight = 0
@@ -17,6 +19,8 @@ message AlternateName
 message Antibody
  {
  repeated  string keyword = 0
+  datetime dateIssued = 0
+  datetime dateModified = 0
   string title = 0
   string description = 0
   string version = 0
@@ -63,6 +67,8 @@ message Antibody
 message Audio
  {
  repeated  string keyword = 0
+  datetime dateIssued = 0
+  datetime dateModified = 0
   string name = 0
   string description = 0
   uri contentUrl = 0
@@ -73,6 +79,8 @@ message Audio
 message Bacterium
  {
  repeated  string keyword = 0
+  datetime dateIssued = 0
+  datetime dateModified = 0
   string title = 0
   string description = 0
   string version = 0
@@ -132,6 +140,8 @@ message Bacterium
 message BiologicalMaterialOrigin
  {
  repeated  string keyword = 0
+  datetime dateIssued = 0
+  datetime dateModified = 0
   boolean recombinantMaterial = 0
   boolean biologicalSourceType = 0
  repeated  biologicalPartOrigin biologicalPartOrigin = 0
@@ -140,6 +150,8 @@ message BiologicalMaterialOrigin
 message Bundle
  {
  repeated  string keyword = 0
+  datetime dateIssued = 0
+  datetime dateModified = 0
   string title = 0
   string description = 0
   string version = 0
@@ -182,6 +194,8 @@ message Bundle
 message Certification
  {
  repeated  string keyword = 0
+  datetime dateIssued = 0
+  datetime dateModified = 0
   string title = 0
   string description = 0
   image logo = 0
@@ -192,6 +206,8 @@ message Certification
 message Collection
  {
  repeated  string keyword = 0
+  datetime dateIssued = 0
+  datetime dateModified = 0
   string title = 0
   string description = 0
   string version = 0
@@ -202,6 +218,8 @@ message Collection
 message CommonName
  {
  repeated  string keyword = 0
+  datetime dateIssued = 0
+  datetime dateModified = 0
   string title = 0
   string description = 0
   integer weight = 0
@@ -213,6 +231,8 @@ message CommonName
 message ContactPoint
  {
  repeated  string keyword = 0
+  datetime dateIssued = 0
+  datetime dateModified = 0
   string name = 0
   string description = 0
   string email = 0
@@ -228,6 +248,8 @@ message ContactPoint
 message Country
  {
  repeated  string keyword = 0
+  datetime dateIssued = 0
+  datetime dateModified = 0
   string title = 0
   string description = 0
   integer weight = 0
@@ -238,6 +260,8 @@ message Country
 message Data
  {
  repeated  string keyword = 0
+  datetime dateIssued = 0
+  datetime dateModified = 0
   string name = 0
   string description = 0
   uri contentUrl = 0
@@ -248,6 +272,8 @@ message Data
 message DataProvider
  {
  repeated  string keyword = 0
+  datetime dateIssued = 0
+  datetime dateModified = 0
   string title = 0
   string description = 0
   uri endpointUrl = 0
@@ -265,6 +291,8 @@ message DataProvider
 message DetectionKit
  {
  repeated  string keyword = 0
+  datetime dateIssued = 0
+  datetime dateModified = 0
   string title = 0
   string description = 0
   string version = 0
@@ -310,6 +338,8 @@ message DetectionKit
 message Document
  {
  repeated  string keyword = 0
+  datetime dateIssued = 0
+  datetime dateModified = 0
   string name = 0
   string description = 0
   uri contentUrl = 0
@@ -320,6 +350,8 @@ message Document
 message Doi
  {
  repeated  string keyword = 0
+  datetime dateIssued = 0
+  datetime dateModified = 0
   string title = 0
   string description = 0
   integer weight = 0
@@ -329,6 +361,8 @@ message Doi
 message ExpressionVector
  {
  repeated  string keyword = 0
+  datetime dateIssued = 0
+  datetime dateModified = 0
   string title = 0
   string description = 0
   integer weight = 0
@@ -338,6 +372,8 @@ message ExpressionVector
 message ExternalRelatedReference
  {
  repeated  string keyword = 0
+  datetime dateIssued = 0
+  datetime dateModified = 0
   string reference = 0
   string referenceLabel = 0
   string referenceProviderPrefix = 0
@@ -347,6 +383,8 @@ message ExternalRelatedReference
 message Fungus
  {
  repeated  string keyword = 0
+  datetime dateIssued = 0
+  datetime dateModified = 0
   string title = 0
   string description = 0
   string version = 0
@@ -406,6 +444,8 @@ message Fungus
 message GeographicalOrigin
  {
  repeated  string keyword = 0
+  datetime dateIssued = 0
+  datetime dateModified = 0
   string title = 0
   string description = 0
   integer weight = 0
@@ -415,6 +455,8 @@ message GeographicalOrigin
 message Hybridoma
  {
  repeated  string keyword = 0
+  datetime dateIssued = 0
+  datetime dateModified = 0
   string title = 0
   string description = 0
   string version = 0
@@ -462,6 +504,8 @@ message Hybridoma
 message IataClassification
  {
  repeated  string keyword = 0
+  datetime dateIssued = 0
+  datetime dateModified = 0
   string title = 0
   string description = 0
   integer weight = 0
@@ -471,6 +515,8 @@ message IataClassification
 message Image
  {
  repeated  string keyword = 0
+  datetime dateIssued = 0
+  datetime dateModified = 0
   string name = 0
   string description = 0
   uri contentUrl = 0
@@ -482,6 +528,8 @@ message Image
 message IplcOrigin
  {
  repeated  string keyword = 0
+  datetime dateIssued = 0
+  datetime dateModified = 0
   string title = 0
   string description = 0
   integer weight = 0
@@ -491,6 +539,8 @@ message IplcOrigin
 message IsolationHost
  {
  repeated  string keyword = 0
+  datetime dateIssued = 0
+  datetime dateModified = 0
   string title = 0
   string description = 0
   integer weight = 0
@@ -500,6 +550,8 @@ message IsolationHost
 message Journal
  {
  repeated  string keyword = 0
+  datetime dateIssued = 0
+  datetime dateModified = 0
   string title = 0
   string description = 0
   integer weight = 0
@@ -509,6 +561,8 @@ message Journal
 message Keyword
  {
  repeated  string keyword = 0
+  datetime dateIssued = 0
+  datetime dateModified = 0
   string title = 0
   string description = 0
   integer weight = 0
@@ -518,6 +572,8 @@ message Keyword
 message License
  {
  repeated  string keyword = 0
+  datetime dateIssued = 0
+  datetime dateModified = 0
   string title = 0
   string description = 0
   uri resourceUrl = 0
@@ -528,6 +584,8 @@ message License
 message MaterialSafetyDataSheet
  {
  repeated  string keyword = 0
+  datetime dateIssued = 0
+  datetime dateModified = 0
   contactPoint materialSafetyContact = 0
   string physicalChemicalProperties = 0
   string hazardsIdentification = 0
@@ -548,6 +606,8 @@ message MaterialSafetyDataSheet
 message NaturalPartOrigin
  {
  repeated  string keyword = 0
+  datetime dateIssued = 0
+  datetime dateModified = 0
   recombinantPartIdentification recombinantPartIdentification = 0
   boolean accessToPhysicalGeneticResource = 0
   country countryOfCollection = 0
@@ -560,6 +620,8 @@ message NaturalPartOrigin
 message NucleicAcid
  {
  repeated  string keyword = 0
+  datetime dateIssued = 0
+  datetime dateModified = 0
   string title = 0
   string description = 0
   string version = 0
@@ -615,6 +677,8 @@ message NucleicAcid
 message Organization
  {
  repeated  string keyword = 0
+  datetime dateIssued = 0
+  datetime dateModified = 0
   string name = 0
   string description = 0
   uri homePage = 0
@@ -628,6 +692,8 @@ message Organization
 message Originator
  {
  repeated  string keyword = 0
+  datetime dateIssued = 0
+  datetime dateModified = 0
   string name = 0
   string description = 0
   uri homePage = 0
@@ -638,6 +704,8 @@ message Originator
 message PathogenIdentification
  {
  repeated  string keyword = 0
+  datetime dateIssued = 0
+  datetime dateModified = 0
   taxon taxon = 0
   commonName pathogenName = 0
   string pathogenType = 0
@@ -653,6 +721,8 @@ message PathogenIdentification
 message PdbReference
  {
  repeated  string keyword = 0
+  datetime dateIssued = 0
+  datetime dateModified = 0
   string title = 0
   string description = 0
   integer weight = 0
@@ -662,6 +732,8 @@ message PdbReference
 message Person
  {
  repeated  string keyword = 0
+  datetime dateIssued = 0
+  datetime dateModified = 0
   string name = 0
   string description = 0
   uri homePage = 0
@@ -673,6 +745,8 @@ message Person
 message PersonOrOrganization
  {
  repeated  string keyword = 0
+  datetime dateIssued = 0
+  datetime dateModified = 0
   string name = 0
   string description = 0
   uri homePage = 0
@@ -683,6 +757,8 @@ message PersonOrOrganization
 message PlasmidSelection
  {
  repeated  string keyword = 0
+  datetime dateIssued = 0
+  datetime dateModified = 0
   string title = 0
   string description = 0
   integer weight = 0
@@ -692,6 +768,8 @@ message PlasmidSelection
 message Prion
  {
  repeated  string keyword = 0
+  datetime dateIssued = 0
+  datetime dateModified = 0
   string title = 0
   string description = 0
   string version = 0
@@ -751,6 +829,8 @@ message Prion
 message Product
  {
  repeated  string keyword = 0
+  datetime dateIssued = 0
+  datetime dateModified = 0
   string title = 0
   string description = 0
   string version = 0
@@ -792,6 +872,8 @@ message Product
 message ProductCategory
  {
  repeated  string keyword = 0
+  datetime dateIssued = 0
+  datetime dateModified = 0
   string title = 0
   string description = 0
   integer weight = 0
@@ -802,6 +884,8 @@ message ProductCategory
 message ProductionCellLine
  {
  repeated  string keyword = 0
+  datetime dateIssued = 0
+  datetime dateModified = 0
   string title = 0
   string description = 0
   integer weight = 0
@@ -811,6 +895,8 @@ message ProductionCellLine
 message PropagationHost
  {
  repeated  string keyword = 0
+  datetime dateIssued = 0
+  datetime dateModified = 0
   string title = 0
   string description = 0
   integer weight = 0
@@ -820,6 +906,8 @@ message PropagationHost
 message Protein
  {
  repeated  string keyword = 0
+  datetime dateIssued = 0
+  datetime dateModified = 0
   string title = 0
   string description = 0
   string version = 0
@@ -875,6 +963,8 @@ message Protein
 message Protozoan
  {
  repeated  string keyword = 0
+  datetime dateIssued = 0
+  datetime dateModified = 0
   string title = 0
   string description = 0
   string version = 0
@@ -934,6 +1024,8 @@ message Protozoan
 message Provider
  {
  repeated  string keyword = 0
+  datetime dateIssued = 0
+  datetime dateModified = 0
   string name = 0
   string description = 0
   uri homePage = 0
@@ -948,6 +1040,8 @@ message Provider
 message Publication
  {
  repeated  string keyword = 0
+  datetime dateIssued = 0
+  datetime dateModified = 0
   string title = 0
   string authors = 0
   string abstract = 0
@@ -958,6 +1052,8 @@ message Publication
 message ReasearchInfrastructure
  {
  repeated  string keyword = 0
+  datetime dateIssued = 0
+  datetime dateModified = 0
   string name = 0
   string description = 0
   uri homePage = 0
@@ -971,6 +1067,8 @@ message ReasearchInfrastructure
 message RecombinantPartIdentification
  {
  repeated  string keyword = 0
+  datetime dateIssued = 0
+  datetime dateModified = 0
   string partIdentification = 0
  repeated  sequence sequence = 0
  }
@@ -978,6 +1076,8 @@ message RecombinantPartIdentification
 message RiskGroup
  {
  repeated  string keyword = 0
+  datetime dateIssued = 0
+  datetime dateModified = 0
   string title = 0
   string description = 0
   integer weight = 0
@@ -987,6 +1087,8 @@ message RiskGroup
 message Sequence
  {
  repeated  string keyword = 0
+  datetime dateIssued = 0
+  datetime dateModified = 0
  repeated  sequenceReference sequenceReference = 0
   string sequenceFasta = 0
  }
@@ -994,6 +1096,8 @@ message Sequence
 message SequenceReference
  {
  repeated  string keyword = 0
+  datetime dateIssued = 0
+  datetime dateModified = 0
   string accessionNumber = 0
   string sequenceProvider = 0
  }
@@ -1001,6 +1105,8 @@ message SequenceReference
 message Service
  {
  repeated  string keyword = 0
+  datetime dateIssued = 0
+  datetime dateModified = 0
   string title = 0
   string description = 0
   string version = 0
@@ -1037,6 +1143,8 @@ message Service
 message SpecialFeature
  {
  repeated  string keyword = 0
+  datetime dateIssued = 0
+  datetime dateModified = 0
   string title = 0
   string description = 0
   integer weight = 0
@@ -1046,6 +1154,8 @@ message SpecialFeature
 message SyntheticPartOrigin
  {
  repeated  string keyword = 0
+  datetime dateIssued = 0
+  datetime dateModified = 0
   recombinantPartIdentification recombinantPartIdentification = 0
   boolean accessToPhysicalGeneticResource = 0
   boolean modificationsFromTheReferenceSequences = 0
@@ -1055,6 +1165,8 @@ message SyntheticPartOrigin
 message TagSequence
  {
  repeated  string keyword = 0
+  datetime dateIssued = 0
+  datetime dateModified = 0
   string title = 0
   string description = 0
   integer weight = 0
@@ -1064,6 +1176,8 @@ message TagSequence
 message Taxon
  {
  repeated  string keyword = 0
+  datetime dateIssued = 0
+  datetime dateModified = 0
   string title = 0
   string description = 0
   integer weight = 0
@@ -1080,6 +1194,8 @@ message Taxon
 message TaxonomicRank
  {
  repeated  string keyword = 0
+  datetime dateIssued = 0
+  datetime dateModified = 0
   string title = 0
   string description = 0
   integer weight = 0
@@ -1090,6 +1206,8 @@ message TaxonomicRank
 message Taxonomy
  {
  repeated  string keyword = 0
+  datetime dateIssued = 0
+  datetime dateModified = 0
   string title = 0
   string description = 0
  repeated  taxon taxon = 0
@@ -1103,6 +1221,8 @@ message Taxonomy
 message TransmissionMethod
  {
  repeated  string keyword = 0
+  datetime dateIssued = 0
+  datetime dateModified = 0
   string title = 0
   string description = 0
   integer weight = 0
@@ -1112,6 +1232,8 @@ message TransmissionMethod
 message Variant
  {
  repeated  string keyword = 0
+  datetime dateIssued = 0
+  datetime dateModified = 0
   string title = 0
   string description = 0
   integer weight = 0
@@ -1123,6 +1245,8 @@ message Variant
 message Version
  {
  repeated  string keyword = 0
+  datetime dateIssued = 0
+  datetime dateModified = 0
   string version = 0
   string versionOf = 0
  repeated  resource resource = 0
@@ -1131,6 +1255,8 @@ message Version
 message Video
  {
  repeated  string keyword = 0
+  datetime dateIssued = 0
+  datetime dateModified = 0
   string name = 0
   string description = 0
   uri contentUrl = 0
@@ -1141,6 +1267,8 @@ message Video
 message Viroid
  {
  repeated  string keyword = 0
+  datetime dateIssued = 0
+  datetime dateModified = 0
   string title = 0
   string description = 0
   string version = 0
@@ -1200,6 +1328,8 @@ message Viroid
 message Virus
  {
  repeated  string keyword = 0
+  datetime dateIssued = 0
+  datetime dateModified = 0
   string title = 0
   string description = 0
   string version = 0
@@ -1262,6 +1392,8 @@ message Virus
 message VirusName
  {
  repeated  string keyword = 0
+  datetime dateIssued = 0
+  datetime dateModified = 0
   string title = 0
   string description = 0
   integer weight = 0
@@ -1273,6 +1405,8 @@ message VirusName
 message Vocabulary
  {
  repeated  string keyword = 0
+  datetime dateIssued = 0
+  datetime dateModified = 0
   string title = 0
   string description = 0
   string version = 0

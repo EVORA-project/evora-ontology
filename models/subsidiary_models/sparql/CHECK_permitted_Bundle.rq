@@ -101,6 +101,8 @@ SELECT ?g ?s ?p WHERE {
    dct:description,
    dcat:version,
    dcat:keyword,
+   dct:issued,
+   dct:modified,
    rdf:type ))
  }
  

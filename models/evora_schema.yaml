@@ -48,7 +48,7 @@ keywords:
 - pathogen collections
 - interoperability
 id: https://w3id.org/evorao/
-version: 1.0.9841
+version: 1.0.9877
 imports:
 - linkml:types
 license: https://creativecommons.org/publicdomain/zero/1.0/
@@ -125,6 +125,39 @@ slots:
     range: string
     required: false
     multivalued: true
+  dateIssued:
+    description: Date of formal issuance (e.g., publication) of the resource
+    title: date issued
+    comments:
+    - encoded using the relevant ISO 8601 Date and Time compliant string [DATETIME]
+    from_schema: https://w3id.org/evorao/
+    exact_mappings:
+    - sepio:0000051
+    close_mappings:
+    - schema:datePublished
+    - schema:dateCreated
+    slot_uri: dct:issued
+    domain_of:
+    - Resource
+    range: datetime
+    required: false
+    multivalued: false
+  dateModified:
+    description: Most recent date on which the resource was changed, updated or modified
+    title: date modified
+    comments:
+    - encoded using the relevant ISO 8601 Date and Time compliant string [DATETIME]
+    from_schema: https://w3id.org/evorao/
+    exact_mappings:
+    - sepio:0000036
+    close_mappings:
+    - schema:dateModified
+    slot_uri: dct:modified
+    domain_of:
+    - Resource
+    range: datetime
+    required: false
+    multivalued: false
   title:
     description: A name given to the resource
     title: title
@@ -2719,6 +2752,8 @@ classes:
     abstract: true
     slots:
     - keyword
+    - dateIssued
+    - dateModified
     slot_usage:
       keyword:
         description: A keyword or tag describing the resource
@@ -2729,6 +2764,38 @@ classes:
         range: string
         required: false
         multivalued: true
+      dateIssued:
+        description: Date of formal issuance (e.g., publication) of the resource
+        title: date issued
+        comments:
+        - encoded using the relevant ISO 8601 Date and Time compliant string [DATETIME]
+        exact_mappings:
+        - sepio:0000051
+        close_mappings:
+        - schema:datePublished
+        - schema:dateCreated
+        slot_uri: dct:issued
+        domain_of:
+        - Resource
+        range: datetime
+        required: false
+        multivalued: false
+      dateModified:
+        description: Most recent date on which the resource was changed, updated or
+          modified
+        title: date modified
+        comments:
+        - encoded using the relevant ISO 8601 Date and Time compliant string [DATETIME]
+        exact_mappings:
+        - sepio:0000036
+        close_mappings:
+        - schema:dateModified
+        slot_uri: dct:modified
+        domain_of:
+        - Resource
+        range: datetime
+        required: false
+        multivalued: false
     class_uri: dcat:Resource
   Dataset:
     description: A collection of data, published or curated by a single agent, and
@@ -7016,4 +7083,4 @@ classes:
         required: false
         multivalued: false
 source_file: https://w3id.org/evorao/evorao.owl.ttl
-generation_date: '2025-09-19T18:32:21'
+generation_date: '2025-09-22T14:42:28'

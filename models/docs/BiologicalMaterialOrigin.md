@@ -34,6 +34,10 @@ URI: [EVORAO:BiologicalMaterialOrigin](https://w3id.org/evorao/BiologicalMateria
         
       BiologicalMaterialOrigin : biologicalSourceType
         
+      BiologicalMaterialOrigin : dateIssued
+        
+      BiologicalMaterialOrigin : dateModified
+        
       BiologicalMaterialOrigin : keyword
         
       BiologicalMaterialOrigin : recombinantMaterial
@@ -59,6 +63,8 @@ URI: [EVORAO:BiologicalMaterialOrigin](https://w3id.org/evorao/BiologicalMateria
 | [biologicalSourceType](biologicalSourceType.md) | 1 <br/> [Boolean](Boolean.md) | Defines if the current biological material is natural and was collected or if... | direct |
 | [biologicalPartOrigin](biologicalPartOrigin.md) | 1..* <br/> [BiologicalPartOrigin](BiologicalPartOrigin.md) | Details the origin of one or more unitary parts that make up the biological m... | direct |
 | [keyword](keyword.md) | * <br/> [String](String.md) | A keyword or tag describing the resource | [Resource](Resource.md) |
+| [dateIssued](dateIssued.md) | 0..1 <br/> [Datetime](Datetime.md) | Date of formal issuance (e | [Resource](Resource.md) |
+| [dateModified](dateModified.md) | 0..1 <br/> [Datetime](Datetime.md) | Most recent date on which the resource was changed, updated or modified | [Resource](Resource.md) |
 
 
 
@@ -309,6 +315,47 @@ attributes:
     range: string
     required: false
     multivalued: true
+  dateIssued:
+    name: dateIssued
+    description: Date of formal issuance (e.g., publication) of the resource
+    title: date issued
+    comments:
+    - encoded using the relevant ISO 8601 Date and Time compliant string [DATETIME]
+    from_schema: https://w3id.org/evorao/
+    exact_mappings:
+    - sepio:0000051
+    close_mappings:
+    - schema:datePublished
+    - schema:dateCreated
+    rank: 1000
+    slot_uri: dct:issued
+    alias: dateIssued
+    owner: BiologicalMaterialOrigin
+    domain_of:
+    - Resource
+    range: datetime
+    required: false
+    multivalued: false
+  dateModified:
+    name: dateModified
+    description: Most recent date on which the resource was changed, updated or modified
+    title: date modified
+    comments:
+    - encoded using the relevant ISO 8601 Date and Time compliant string [DATETIME]
+    from_schema: https://w3id.org/evorao/
+    exact_mappings:
+    - sepio:0000036
+    close_mappings:
+    - schema:dateModified
+    rank: 1000
+    slot_uri: dct:modified
+    alias: dateModified
+    owner: BiologicalMaterialOrigin
+    domain_of:
+    - Resource
+    range: datetime
+    required: false
+    multivalued: false
 
 ```
 </details>
