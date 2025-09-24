@@ -22,9 +22,9 @@ Alias: sequenceReference
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [Sequence](Sequence.md) | A nucleic acid or protein sequence information |  yes  |
-| [Antibody](Antibody.md) | Protein that can bind to certain types of foreign bodies, such as pathogens |  yes  |
 | [Hybridoma](Hybridoma.md) | An hybridoma that provides antibodies that can be related to a pathogen |  no  |
+| [Antibody](Antibody.md) | Protein that can bind to certain types of foreign bodies, such as pathogens |  yes  |
+| [Sequence](Sequence.md) | A nucleic acid or protein sequence information |  yes  |
 
 
 

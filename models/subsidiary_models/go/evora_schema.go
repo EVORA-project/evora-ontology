@@ -467,7 +467,7 @@ type Term struct {
 }
 
 /*
- * Vernacular name that is the name used in everyday language to refer to an organism or group of organisms. This name is typically easier to remember and pronounce compared to the scientific name
+ * Vernacular name that is the name used in everyday language to refer to something like an organism or group of organisms. This name is typically easier to remember and pronounce compared to the scientific or technical name
  */
 type CommonName struct {
 	/*

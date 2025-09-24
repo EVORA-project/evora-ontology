@@ -1,7 +1,7 @@
  syntax="proto3";
  package
 // metamodel_version: 1.7.0
-// version: 1.0.9888
+// version: 1.0.9891
 // List of other names for things
 message AlternateName
  {
@@ -214,7 +214,7 @@ message Collection
  repeated  productOrService collectionItem = 0
   dataProvider collectionDataProvider = 0
  }
-// Vernacular name that is the name used in everyday language to refer to an organism or group of organisms. This name is typically easier to remember and pronounce compared to the scientific name
+// Vernacular name that is the name used in everyday language to refer to something like an organism or group of organisms. This name is typically easier to remember and pronounce compared to the scientific or technical name
 message CommonName
  {
  repeated  string keyword = 0

@@ -48,7 +48,7 @@ keywords:
 - pathogen collections
 - interoperability
 id: https://w3id.org/evorao/
-version: 1.0.9888
+version: 1.0.9891
 imports:
 - linkml:types
 license: https://creativecommons.org/publicdomain/zero/1.0/
@@ -3618,8 +3618,8 @@ classes:
         multivalued: false
   CommonName:
     description: Vernacular name that is the name used in everyday language to refer
-      to an organism or group of organisms. This name is typically easier to remember
-      and pronounce compared to the scientific name
+      to something like an organism or group of organisms. This name is typically
+      easier to remember and pronounce compared to the scientific or technical name
     title: Common name
     from_schema: https://w3id.org/evorao/
     exact_mappings:
@@ -7095,4 +7095,4 @@ classes:
         required: false
         multivalued: false
 source_file: https://w3id.org/evorao/evorao.owl.ttl
-generation_date: '2025-09-22T15:39:20'
+generation_date: '2025-09-24T11:11:28'

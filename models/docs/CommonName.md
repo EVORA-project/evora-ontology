@@ -3,7 +3,7 @@
 # Class: Common name (CommonName) 
 
 
-_Vernacular name that is the name used in everyday language to refer to an organism or group of organisms. This name is typically easier to remember and pronounce compared to the scientific name_
+_Vernacular name that is the name used in everyday language to refer to something like an organism or group of organisms. This name is typically easier to remember and pronounce compared to the scientific or technical name_
 
 
 
@@ -148,8 +148,8 @@ URI: [EVORAO:CommonName](https://w3id.org/evorao/CommonName)
 ```yaml
 name: CommonName
 description: Vernacular name that is the name used in everyday language to refer to
-  an organism or group of organisms. This name is typically easier to remember and
-  pronounce compared to the scientific name
+  something like an organism or group of organisms. This name is typically easier
+  to remember and pronounce compared to the scientific or technical name
 title: Common name
 from_schema: https://w3id.org/evorao/
 exact_mappings:
@@ -209,8 +209,8 @@ slot_usage:
 ```yaml
 name: CommonName
 description: Vernacular name that is the name used in everyday language to refer to
-  an organism or group of organisms. This name is typically easier to remember and
-  pronounce compared to the scientific name
+  something like an organism or group of organisms. This name is typically easier
+  to remember and pronounce compared to the scientific or technical name
 title: Common name
 from_schema: https://w3id.org/evorao/
 exact_mappings:

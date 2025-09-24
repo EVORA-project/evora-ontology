@@ -91,7 +91,7 @@
 --     * Slot: dateIssued Description: Date of formal issuance (e.g., publication) of the resource
 --     * Slot: dateModified Description: Most recent date on which the resource was changed, updated or modified
 --     * Slot: inVocabulary_id Description: Terms belong to a specific vocabulary
--- # Class: "CommonName" Description: "Vernacular name that is the name used in everyday language to refer to an organism or group of organisms. This name is typically easier to remember and pronounce compared to the scientific name"
+-- # Class: "CommonName" Description: "Vernacular name that is the name used in everyday language to refer to something like an organism or group of organisms. This name is typically easier to remember and pronounce compared to the scientific or technical name"
 --     * Slot: id Description: 
 --     * Slot: title Description: A name given to the resource
 --     * Slot: description Description: A short explanation of the characteristics, features, or nature of the current item

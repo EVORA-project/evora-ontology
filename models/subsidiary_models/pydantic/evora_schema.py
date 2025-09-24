@@ -27,7 +27,7 @@ from pydantic import (
 
 
 metamodel_version = "None"
-version = "1.0.9888"
+version = "1.0.9891"
 
 
 class ConfiguredBaseModel(BaseModel):
@@ -99,7 +99,7 @@ linkml_meta = LinkMLMeta({'comments': ['EVORAO is an ontology for standardized m
                     'pathogens. EVORAO is compatible with DCAT, making it '
                     'well-suited for efficiently cataloguing pathogen collections '
                     'and related resources.',
-     'generation_date': '2025-09-22T15:39:20',
+     'generation_date': '2025-09-24T11:11:28',
      'id': 'https://w3id.org/evorao/',
      'imports': ['linkml:types'],
      'in_language': 'en',
@@ -1662,7 +1662,7 @@ class Term(Resource):
 
 class CommonName(Term):
     """
-    Vernacular name that is the name used in everyday language to refer to an organism or group of organisms. This name is typically easier to remember and pronounce compared to the scientific name
+    Vernacular name that is the name used in everyday language to refer to something like an organism or group of organisms. This name is typically easier to remember and pronounce compared to the scientific or technical name
     """
     linkml_meta: ClassVar[LinkMLMeta] = LinkMLMeta({'broad_mappings': ['sio:000118', 'sio:000118'],
          'exact_mappings': ['dwc:vernacularName',

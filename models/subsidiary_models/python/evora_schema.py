@@ -1,5 +1,5 @@
 # Auto generated from evora_schema.yaml by pythongen.py version: 0.0.1
-# Generation date: 2025-09-22T13:40:23
+# Generation date: 2025-09-24T09:12:15
 # Schema: EVORAO
 #
 # id: https://w3id.org/evorao/
@@ -60,7 +60,7 @@ from linkml_runtime.linkml_model.types import Boolean, Datetime, Decimal, Intege
 from linkml_runtime.utils.metamodelcore import Bool, Decimal, URI, XSDDateTime
 
 metamodel_version = "1.7.0"
-version = "1.0.9888"
+version = "1.0.9891"
 
 # Namespaces
 EVORAO = CurieNamespace('EVORAO', 'https://w3id.org/evorao/')
@@ -574,8 +574,8 @@ class Term(Resource):
 @dataclass(repr=False)
 class CommonName(Term):
     """
-    Vernacular name that is the name used in everyday language to refer to an organism or group of organisms. This
-    name is typically easier to remember and pronounce compared to the scientific name
+    Vernacular name that is the name used in everyday language to refer to something like an organism or group of
+    organisms. This name is typically easier to remember and pronounce compared to the scientific or technical name
     """
     _inherited_slots: ClassVar[list[str]] = []
 
