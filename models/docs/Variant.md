@@ -185,6 +185,7 @@ attributes:
     domain_of:
     - CommonName
     - AlternateName
+    - ClinicalGroup
     - Organization
     range: AlternateName
     required: false

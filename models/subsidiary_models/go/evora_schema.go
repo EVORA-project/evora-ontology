@@ -1451,6 +1451,52 @@ type Taxon struct {
 }
 
 /*
+ * A syndromic grouping of pathogens, based on typical disease manifestation, clinical syndrome, or primary system affected. Examples include Respiratory viruses, Hemorrhagic viruses, and Gastroenteritis viruses. Clinical groups are not taxonomic categories but practical classifications used in medicine, epidemiology, and public health
+ */
+type ClinicalGroup struct {
+	/*
+	 * parent types
+	 */
+	Term
+	/*
+	 * Any other name under which the entity can be known
+	 */
+	AlternateName []AlternateName `json:"alternateName"`
+	/*
+	 * Scientifically classified group or entity within the reference taxonomy
+	 */
+	Taxon []Taxon `json:"taxon"`
+	/*
+	 * A name given to the resource
+	 */
+	Title string `json:"title"`
+	/*
+	 * A short explanation of the characteristics, features, or nature of the current item
+	 */
+	Description string `json:"description"`
+	/*
+	 * A numerical value indicating relative importance or priority, generally processed in ascending order. This weight helps prioritize content when organizing or processing data. Its value can be negative, with a default set to 0
+	 */
+	Weight int `json:"weight"`
+	/*
+	 * Terms belong to a specific vocabulary
+	 */
+	InVocabulary Vocabulary `json:"inVocabulary"`
+	/*
+	 * A keyword or tag describing the resource
+	 */
+	Keyword string `json:"keyword"`
+	/*
+	 * Date of formal issuance (e.g., publication) of the resource
+	 */
+	DateIssued string `json:"dateIssued"`
+	/*
+	 * Most recent date on which the resource was changed, updated or modified
+	 */
+	DateModified string `json:"dateModified"`
+}
+
+/*
  * A reference that permits to retrieve an item from an external provider
  */
 type ExternalRelatedReference struct {

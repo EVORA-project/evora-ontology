@@ -48,7 +48,7 @@ keywords:
 - pathogen collections
 - interoperability
 id: https://w3id.org/evorao/
-version: 1.0.9891
+version: 1.0.9907
 imports:
 - linkml:types
 license: https://creativecommons.org/publicdomain/zero/1.0/
@@ -311,6 +311,7 @@ slots:
     domain_of:
     - Taxonomy
     - PathogenIdentification
+    - ClinicalGroup
     range: Taxon
     required: true
     multivalued: false
@@ -728,6 +729,7 @@ slots:
     domain_of:
     - CommonName
     - AlternateName
+    - ClinicalGroup
     - Organization
     range: AlternateName
     required: false
@@ -4187,6 +4189,52 @@ classes:
         required: false
         recommended: true
         multivalued: false
+  ClinicalGroup:
+    description: A syndromic grouping of pathogens, based on typical disease manifestation,
+      clinical syndrome, or primary system affected. Examples include Respiratory
+      viruses, Hemorrhagic viruses, and Gastroenteritis viruses. Clinical groups are
+      not taxonomic categories but practical classifications used in medicine, epidemiology,
+      and public health
+    title: Clinical group
+    from_schema: https://w3id.org/evorao/
+    is_a: Term
+    slots:
+    - alternateName
+    - taxon
+    slot_usage:
+      alternateName:
+        description: Any other name under which the entity can be known
+        title: alternate name
+        comments:
+        - This includes previous names, acronyms, former taxonomic terms, and other
+          variations. This information can serve as keywords for search purposes and
+          as a bridge with other projects that use different naming systems or taxonomies
+        exact_mappings:
+        - schema:alternateName
+        - dct:alternative
+        - iao:0000118
+        close_mappings:
+        - wdp:P4970
+        domain_of:
+        - ClinicalGroup
+        range: AlternateName
+        required: false
+        multivalued: true
+      taxon:
+        description: Scientifically classified group or entity within the reference
+          taxonomy
+        title: taxon
+        close_mappings:
+        - schema:taxonomicRange
+        - dwc:taxonID
+        - dwc:toTaxon
+        related_mappings:
+        - dwc:Taxon
+        domain_of:
+        - ClinicalGroup
+        range: Taxon
+        required: false
+        multivalued: true
   ExternalRelatedReference:
     description: A reference that permits to retrieve an item from an external provider
     title: External related reference
@@ -7095,4 +7143,4 @@ classes:
         required: false
         multivalued: false
 source_file: https://w3id.org/evorao/evorao.owl.ttl
-generation_date: '2025-09-24T11:11:28'
+generation_date: '2025-09-24T11:32:06'

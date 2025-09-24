@@ -206,6 +206,7 @@ slot_usage:
     domain_of:
     - PathogenIdentification
     - Taxonomy
+    - ClinicalGroup
     range: Taxon
     required: true
     multivalued: false
@@ -345,6 +346,7 @@ slot_usage:
     domain_of:
     - PathogenIdentification
     - Taxonomy
+    - ClinicalGroup
     range: Taxon
     required: true
     multivalued: false
@@ -471,6 +473,7 @@ attributes:
     domain_of:
     - PathogenIdentification
     - Taxonomy
+    - ClinicalGroup
     range: Taxon
     required: true
     multivalued: false

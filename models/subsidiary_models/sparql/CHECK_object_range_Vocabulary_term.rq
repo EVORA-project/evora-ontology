@@ -115,6 +115,8 @@ WHERE {
       , 
       EVORAO:Taxon
       , 
+      EVORAO:ClinicalGroup
+      , 
       EVORAO:IplcOrigin
       , 
       EVORAO:VirusName

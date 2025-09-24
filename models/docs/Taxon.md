@@ -139,6 +139,7 @@ URI: [EVORAO:Taxon](https://w3id.org/evorao/Taxon)
 | [Taxon](Taxon.md) | [parentTaxon](parentTaxon.md) | range | [Taxon](Taxon.md) |
 | [Taxon](Taxon.md) | [previouslyKnownAs](previouslyKnownAs.md) | range | [Taxon](Taxon.md) |
 | [Taxon](Taxon.md) | [externalEquivalentTaxon](externalEquivalentTaxon.md) | range | [Taxon](Taxon.md) |
+| [ClinicalGroup](ClinicalGroup.md) | [taxon](taxon.md) | range | [Taxon](Taxon.md) |
 
 
 

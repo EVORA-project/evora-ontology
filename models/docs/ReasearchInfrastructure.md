@@ -229,6 +229,7 @@ attributes:
     - Organization
     - CommonName
     - AlternateName
+    - ClinicalGroup
     range: AlternateName
     required: false
     multivalued: true

@@ -289,6 +289,14 @@
 --     * Slot: parentTaxon_id Description: The parent taxon of the current taxon
 --     * Slot: rank_id Description: Relative level or position of the identified taxon in the taxonomy
 --     * Slot: inVocabulary_id Description: Terms belong to a specific vocabulary
+-- # Class: "ClinicalGroup" Description: "A syndromic grouping of pathogens, based on typical disease manifestation, clinical syndrome, or primary system affected. Examples include Respiratory viruses, Hemorrhagic viruses, and Gastroenteritis viruses. Clinical groups are not taxonomic categories but practical classifications used in medicine, epidemiology, and public health"
+--     * Slot: id Description: 
+--     * Slot: title Description: A name given to the resource
+--     * Slot: description Description: A short explanation of the characteristics, features, or nature of the current item
+--     * Slot: weight Description: A numerical value indicating relative importance or priority, generally processed in ascending order. This weight helps prioritize content when organizing or processing data. Its value can be negative, with a default set to 0
+--     * Slot: dateIssued Description: Date of formal issuance (e.g., publication) of the resource
+--     * Slot: dateModified Description: Most recent date on which the resource was changed, updated or modified
+--     * Slot: inVocabulary_id Description: Terms belong to a specific vocabulary
 -- # Class: "ExternalRelatedReference" Description: "A reference that permits to retrieve an item from an external provider"
 --     * Slot: id Description: 
 --     * Slot: reference Description: The identifier reference of the connected external item
@@ -1276,6 +1284,15 @@
 --     * Slot: externalEquivalentTaxon_id Description: Any equivalent taxon in a different taxonomy if exists/known to serve as a bridge (e.g, ICTV towards NCBI)
 -- # Class: "Taxon_keyword" Description: ""
 --     * Slot: Taxon_id Description: Autocreated FK slot
+--     * Slot: keyword Description: A keyword or tag describing the resource
+-- # Class: "ClinicalGroup_alternateName" Description: ""
+--     * Slot: ClinicalGroup_id Description: Autocreated FK slot
+--     * Slot: alternateName_id Description: Any other name under which the entity can be known
+-- # Class: "ClinicalGroup_taxon" Description: ""
+--     * Slot: ClinicalGroup_id Description: Autocreated FK slot
+--     * Slot: taxon_id Description: Scientifically classified group or entity within the reference taxonomy
+-- # Class: "ClinicalGroup_keyword" Description: ""
+--     * Slot: ClinicalGroup_id Description: Autocreated FK slot
 --     * Slot: keyword Description: A keyword or tag describing the resource
 -- # Class: "ExternalRelatedReference_keyword" Description: ""
 --     * Slot: ExternalRelatedReference_id Description: Autocreated FK slot
@@ -2748,6 +2765,17 @@ CREATE TABLE "TaxonomicRank" (
 	PRIMARY KEY (id), 
 	FOREIGN KEY("inVocabulary_id") REFERENCES "Vocabulary" (id)
 );
+CREATE TABLE "ClinicalGroup" (
+	id INTEGER NOT NULL, 
+	title TEXT NOT NULL, 
+	description TEXT, 
+	weight INTEGER NOT NULL, 
+	"dateIssued" DATETIME, 
+	"dateModified" DATETIME, 
+	"inVocabulary_id" INTEGER NOT NULL, 
+	PRIMARY KEY (id), 
+	FOREIGN KEY("inVocabulary_id") REFERENCES "Vocabulary" (id)
+);
 CREATE TABLE "Taxonomy_keyword" (
 	"Taxonomy_id" INTEGER, 
 	keyword TEXT, 
@@ -3046,6 +3074,19 @@ CREATE TABLE "TaxonomicRank_keyword" (
 	PRIMARY KEY ("TaxonomicRank_id", keyword), 
 	FOREIGN KEY("TaxonomicRank_id") REFERENCES "TaxonomicRank" (id)
 );
+CREATE TABLE "ClinicalGroup_alternateName" (
+	"ClinicalGroup_id" INTEGER, 
+	"alternateName_id" INTEGER, 
+	PRIMARY KEY ("ClinicalGroup_id", "alternateName_id"), 
+	FOREIGN KEY("ClinicalGroup_id") REFERENCES "ClinicalGroup" (id), 
+	FOREIGN KEY("alternateName_id") REFERENCES "AlternateName" (id)
+);
+CREATE TABLE "ClinicalGroup_keyword" (
+	"ClinicalGroup_id" INTEGER, 
+	keyword TEXT, 
+	PRIMARY KEY ("ClinicalGroup_id", keyword), 
+	FOREIGN KEY("ClinicalGroup_id") REFERENCES "ClinicalGroup" (id)
+);
 CREATE TABLE "PathogenIdentification" (
 	id INTEGER NOT NULL, 
 	"pathogenType" TEXT NOT NULL, 
@@ -3213,6 +3254,13 @@ CREATE TABLE "Taxon_keyword" (
 	keyword TEXT, 
 	PRIMARY KEY ("Taxon_id", keyword), 
 	FOREIGN KEY("Taxon_id") REFERENCES "Taxon" (id)
+);
+CREATE TABLE "ClinicalGroup_taxon" (
+	"ClinicalGroup_id" INTEGER, 
+	taxon_id INTEGER, 
+	PRIMARY KEY ("ClinicalGroup_id", taxon_id), 
+	FOREIGN KEY("ClinicalGroup_id") REFERENCES "ClinicalGroup" (id), 
+	FOREIGN KEY(taxon_id) REFERENCES "Taxon" (id)
 );
 CREATE TABLE "NaturalPartOrigin_keyword" (
 	"NaturalPartOrigin_id" INTEGER, 

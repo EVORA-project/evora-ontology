@@ -1,5 +1,5 @@
 # Auto generated from evora_schema.yaml by pythongen.py version: 0.0.1
-# Generation date: 2025-09-24T09:12:15
+# Generation date: 2025-09-24T09:32:54
 # Schema: EVORAO
 #
 # id: https://w3id.org/evorao/
@@ -60,7 +60,7 @@ from linkml_runtime.linkml_model.types import Boolean, Datetime, Decimal, Intege
 from linkml_runtime.utils.metamodelcore import Bool, Decimal, URI, XSDDateTime
 
 metamodel_version = "1.7.0"
-version = "1.0.9891"
+version = "1.0.9907"
 
 # Namespaces
 EVORAO = CurieNamespace('EVORAO', 'https://w3id.org/evorao/')
@@ -1048,6 +1048,36 @@ class Taxon(Term):
 
         if self.taxonomicNodeId is not None and not isinstance(self.taxonomicNodeId, str):
             self.taxonomicNodeId = str(self.taxonomicNodeId)
+
+        super().__post_init__(**kwargs)
+
+
+@dataclass(repr=False)
+class ClinicalGroup(Term):
+    """
+    A syndromic grouping of pathogens, based on typical disease manifestation, clinical syndrome, or primary system
+    affected. Examples include Respiratory viruses, Hemorrhagic viruses, and Gastroenteritis viruses. Clinical groups
+    are not taxonomic categories but practical classifications used in medicine, epidemiology, and public health
+    """
+    _inherited_slots: ClassVar[list[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = EVORAO["ClinicalGroup"]
+    class_class_curie: ClassVar[str] = "EVORAO:ClinicalGroup"
+    class_name: ClassVar[str] = "ClinicalGroup"
+    class_model_uri: ClassVar[URIRef] = EVORAO.ClinicalGroup
+
+    title: str = None
+    inVocabulary: Union[dict, Vocabulary] = None
+    taxon: Union[Union[dict, Taxon], list[Union[dict, Taxon]]] = None
+    weight: int = 0
+    alternateName: Optional[Union[Union[dict, AlternateName], list[Union[dict, AlternateName]]]] = empty_list()
+
+    def __post_init__(self, *_: str, **kwargs: Any):
+        if self._is_empty(self.taxon):
+            self.MissingRequiredField("taxon")
+        self._normalize_inlined_as_dict(slot_name="taxon", slot_type=Taxon, key_name="title", keyed=False)
+
+        self._normalize_inlined_as_dict(slot_name="alternateName", slot_type=AlternateName, key_name="title", keyed=False)
 
         super().__post_init__(**kwargs)
 
@@ -3572,6 +3602,12 @@ slots.Taxon_taxonomicId = Slot(uri=EVORAO.taxonomicId, name="Taxon_taxonomicId",
 
 slots.Taxon_taxonomicNodeId = Slot(uri=EVORAO.taxonomicNodeId, name="Taxon_taxonomicNodeId", curie=EVORAO.curie('taxonomicNodeId'),
                    model_uri=EVORAO.Taxon_taxonomicNodeId, domain=Taxon, range=Optional[str])
+
+slots.ClinicalGroup_alternateName = Slot(uri=EVORAO.alternateName, name="ClinicalGroup_alternateName", curie=EVORAO.curie('alternateName'),
+                   model_uri=EVORAO.ClinicalGroup_alternateName, domain=ClinicalGroup, range=Optional[Union[Union[dict, AlternateName], list[Union[dict, AlternateName]]]])
+
+slots.ClinicalGroup_taxon = Slot(uri=EVORAO.taxon, name="ClinicalGroup_taxon", curie=EVORAO.curie('taxon'),
+                   model_uri=EVORAO.ClinicalGroup_taxon, domain=ClinicalGroup, range=Union[Union[dict, Taxon], list[Union[dict, Taxon]]])
 
 slots.ExternalRelatedReference_reference = Slot(uri=EVORAO.reference, name="ExternalRelatedReference_reference", curie=EVORAO.curie('reference'),
                    model_uri=EVORAO.ExternalRelatedReference_reference, domain=ExternalRelatedReference, range=str)

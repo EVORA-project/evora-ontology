@@ -95,6 +95,7 @@ URI: [EVORAO:AlternateName](https://w3id.org/evorao/AlternateName)
 | [VirusName](VirusName.md) | [alternateName](alternateName.md) | range | [AlternateName](AlternateName.md) |
 | [AlternateName](AlternateName.md) | [alternateName](alternateName.md) | range | [AlternateName](AlternateName.md) |
 | [Variant](Variant.md) | [alternateName](alternateName.md) | range | [AlternateName](AlternateName.md) |
+| [ClinicalGroup](ClinicalGroup.md) | [alternateName](alternateName.md) | range | [AlternateName](AlternateName.md) |
 | [Organization](Organization.md) | [alternateName](alternateName.md) | range | [AlternateName](AlternateName.md) |
 | [ReasearchInfrastructure](ReasearchInfrastructure.md) | [alternateName](alternateName.md) | range | [AlternateName](AlternateName.md) |
 | [Provider](Provider.md) | [alternateName](alternateName.md) | range | [AlternateName](AlternateName.md) |
@@ -179,6 +180,7 @@ slot_usage:
     domain_of:
     - AlternateName
     - CommonName
+    - ClinicalGroup
     - Organization
     range: AlternateName
     required: false
@@ -239,6 +241,7 @@ slot_usage:
     domain_of:
     - AlternateName
     - CommonName
+    - ClinicalGroup
     - Organization
     range: AlternateName
     required: false
@@ -280,6 +283,7 @@ attributes:
     domain_of:
     - AlternateName
     - CommonName
+    - ClinicalGroup
     - Organization
     range: AlternateName
     required: false

@@ -68,6 +68,8 @@ URI: [EVORAO:Term](https://w3id.org/evorao/Term)
         click TaxonomicRank href "../TaxonomicRank"
       Term <|-- Taxon
         click Taxon href "../Taxon"
+      Term <|-- ClinicalGroup
+        click ClinicalGroup href "../ClinicalGroup"
       
       
       Term : dateIssued
@@ -122,6 +124,7 @@ URI: [EVORAO:Term](https://w3id.org/evorao/Term)
         * [IataClassification](IataClassification.md)
         * [TaxonomicRank](TaxonomicRank.md)
         * [Taxon](Taxon.md)
+        * [ClinicalGroup](ClinicalGroup.md)
 
 
 

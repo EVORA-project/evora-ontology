@@ -182,6 +182,7 @@ slot_usage:
     domain_of:
     - CommonName
     - AlternateName
+    - ClinicalGroup
     - Organization
     range: AlternateName
     required: false
@@ -240,6 +241,7 @@ slot_usage:
     domain_of:
     - CommonName
     - AlternateName
+    - ClinicalGroup
     - Organization
     range: AlternateName
     required: false
@@ -279,6 +281,7 @@ attributes:
     domain_of:
     - CommonName
     - AlternateName
+    - ClinicalGroup
     - Organization
     range: AlternateName
     required: false

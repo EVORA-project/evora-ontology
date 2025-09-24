@@ -1023,6 +1023,60 @@ class TaxonKeyword(Base):
     
 
 
+class ClinicalGroupAlternateName(Base):
+    """
+    
+    """
+    __tablename__ = 'ClinicalGroup_alternateName'
+
+    ClinicalGroup_id = Column(Integer(), ForeignKey('ClinicalGroup.id'), primary_key=True)
+    alternateName_id = Column(Integer(), ForeignKey('AlternateName.id'), primary_key=True)
+    
+
+    def __repr__(self):
+        return f"ClinicalGroup_alternateName(ClinicalGroup_id={self.ClinicalGroup_id},alternateName_id={self.alternateName_id},)"
+
+
+
+    
+
+
+class ClinicalGroupTaxon(Base):
+    """
+    
+    """
+    __tablename__ = 'ClinicalGroup_taxon'
+
+    ClinicalGroup_id = Column(Integer(), ForeignKey('ClinicalGroup.id'), primary_key=True)
+    taxon_id = Column(Integer(), ForeignKey('Taxon.id'), primary_key=True)
+    
+
+    def __repr__(self):
+        return f"ClinicalGroup_taxon(ClinicalGroup_id={self.ClinicalGroup_id},taxon_id={self.taxon_id},)"
+
+
+
+    
+
+
+class ClinicalGroupKeyword(Base):
+    """
+    
+    """
+    __tablename__ = 'ClinicalGroup_keyword'
+
+    ClinicalGroup_id = Column(Integer(), ForeignKey('ClinicalGroup.id'), primary_key=True)
+    keyword = Column(Text(), primary_key=True)
+    
+
+    def __repr__(self):
+        return f"ClinicalGroup_keyword(ClinicalGroup_id={self.ClinicalGroup_id},keyword={self.keyword},)"
+
+
+
+    
+
+
 class ExternalRelatedReferenceKeyword(Base):
     """
     
@@ -7123,6 +7177,48 @@ class Taxon(Term):
 
     def __repr__(self):
         return f"Taxon(id={self.id},taxonomicId={self.taxonomicId},taxonomicNodeId={self.taxonomicNodeId},title={self.title},description={self.description},weight={self.weight},dateIssued={self.dateIssued},dateModified={self.dateModified},parentTaxon_id={self.parentTaxon_id},rank_id={self.rank_id},inVocabulary_id={self.inVocabulary_id},)"
+
+
+
+    
+    # Using concrete inheritance: see https://docs.sqlalchemy.org/en/14/orm/inheritance.html
+    __mapper_args__ = {
+        'concrete': True
+    }
+    
+
+
+class ClinicalGroup(Term):
+    """
+    A syndromic grouping of pathogens, based on typical disease manifestation, clinical syndrome, or primary system affected. Examples include Respiratory viruses, Hemorrhagic viruses, and Gastroenteritis viruses. Clinical groups are not taxonomic categories but practical classifications used in medicine, epidemiology, and public health
+    """
+    __tablename__ = 'ClinicalGroup'
+
+    id = Column(Integer(), primary_key=True, autoincrement=True , nullable=False )
+    title = Column(Text(), nullable=False )
+    description = Column(Text())
+    weight = Column(Integer(), nullable=False )
+    dateIssued = Column(DateTime())
+    dateModified = Column(DateTime())
+    inVocabulary_id = Column(Integer(), ForeignKey('Vocabulary.id'), nullable=False )
+    inVocabulary = relationship("Vocabulary", uselist=False, foreign_keys=[inVocabulary_id])
+    
+    
+    # ManyToMany
+    alternateName = relationship( "AlternateName", secondary="ClinicalGroup_alternateName")
+    
+    
+    # ManyToMany
+    taxon = relationship( "Taxon", secondary="ClinicalGroup_taxon")
+    
+    
+    keyword_rel = relationship( "ClinicalGroupKeyword" )
+    keyword = association_proxy("keyword_rel", "keyword",
+                                  creator=lambda x_: ClinicalGroupKeyword(keyword=x_))
+    
+
+    def __repr__(self):
+        return f"ClinicalGroup(id={self.id},title={self.title},description={self.description},weight={self.weight},dateIssued={self.dateIssued},dateModified={self.dateModified},inVocabulary_id={self.inVocabulary_id},)"
 
 
 

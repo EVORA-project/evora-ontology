@@ -195,6 +195,7 @@ slot_usage:
     - Organization
     - CommonName
     - AlternateName
+    - ClinicalGroup
     range: AlternateName
     required: false
     multivalued: true
@@ -264,6 +265,7 @@ slot_usage:
     - Organization
     - CommonName
     - AlternateName
+    - ClinicalGroup
     range: AlternateName
     required: false
     multivalued: true
@@ -315,6 +317,7 @@ attributes:
     - Organization
     - CommonName
     - AlternateName
+    - ClinicalGroup
     range: AlternateName
     required: false
     multivalued: true

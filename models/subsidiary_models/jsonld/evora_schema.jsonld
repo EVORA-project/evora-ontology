@@ -38,7 +38,7 @@
     "interoperability"
   ],
   "id": "https://w3id.org/evorao/",
-  "version": "1.0.9891",
+  "version": "1.0.9907",
   "imports": [
     "linkml:types"
   ],
@@ -873,10 +873,11 @@
         "http://rs.tdwg.org/dwc/terms/Taxon"
       ],
       "slot_uri": "https://w3id.org/evorao/taxon",
-      "owner": "PathogenIdentification",
+      "owner": "ClinicalGroup",
       "domain_of": [
         "Taxonomy",
-        "PathogenIdentification"
+        "PathogenIdentification",
+        "ClinicalGroup"
       ],
       "range": "Taxon",
       "required": true,
@@ -1484,6 +1485,7 @@
       "domain_of": [
         "CommonName",
         "AlternateName",
+        "ClinicalGroup",
         "Organization"
       ],
       "range": "AlternateName",
@@ -6069,6 +6071,71 @@
       "usage_slot_name": "taxonomicNodeId",
       "range": "string",
       "recommended": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "ClinicalGroup_alternateName",
+      "definition_uri": "https://w3id.org/evorao/alternateName",
+      "description": "Any other name under which the entity can be known",
+      "title": "alternate name",
+      "comments": [
+        "This includes previous names, acronyms, former taxonomic terms, and other variations. This information can serve as keywords for search purposes and as a bridge with other projects that use different naming systems or taxonomies"
+      ],
+      "from_schema": "https://w3id.org/evorao/",
+      "exact_mappings": [
+        "http://schema.org/alternateName",
+        "http://purl.org/dc/terms/alternative",
+        "http://purl.obolibrary.org/obo/IAO_0000118"
+      ],
+      "close_mappings": [
+        "http://www.wikidata.org/prop/P4970"
+      ],
+      "is_a": "alternateName",
+      "domain": "ClinicalGroup",
+      "slot_uri": "https://w3id.org/evorao/alternateName",
+      "alias": "alternateName",
+      "owner": "ClinicalGroup",
+      "domain_of": [
+        "ClinicalGroup"
+      ],
+      "is_usage_slot": true,
+      "usage_slot_name": "alternateName",
+      "range": "AlternateName",
+      "multivalued": true,
+      "inlined": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "ClinicalGroup_taxon",
+      "definition_uri": "https://w3id.org/evorao/taxon",
+      "description": "Scientifically classified group or entity within the reference taxonomy",
+      "title": "taxon",
+      "comments": [
+        "The taxon of the highest rank known that can be used to classify a pathogen or group of pathogens (e.g viruses) in the reference taxonomy"
+      ],
+      "from_schema": "https://w3id.org/evorao/",
+      "close_mappings": [
+        "http://schema.org/taxonomicRange",
+        "http://rs.tdwg.org/dwc/terms/taxonID",
+        "http://rs.tdwg.org/dwc/terms/toTaxon"
+      ],
+      "related_mappings": [
+        "http://rs.tdwg.org/dwc/terms/Taxon"
+      ],
+      "is_a": "taxon",
+      "domain": "ClinicalGroup",
+      "slot_uri": "https://w3id.org/evorao/taxon",
+      "alias": "taxon",
+      "owner": "ClinicalGroup",
+      "domain_of": [
+        "ClinicalGroup"
+      ],
+      "is_usage_slot": true,
+      "usage_slot_name": "taxon",
+      "range": "Taxon",
+      "required": true,
+      "multivalued": true,
+      "inlined": true,
       "@type": "SlotDefinition"
     },
     {
@@ -11285,6 +11352,28 @@
       "@type": "ClassDefinition"
     },
     {
+      "name": "ClinicalGroup",
+      "definition_uri": "https://w3id.org/evorao/ClinicalGroup",
+      "description": "A syndromic grouping of pathogens, based on typical disease manifestation, clinical syndrome, or primary system affected. Examples include Respiratory viruses, Hemorrhagic viruses, and Gastroenteritis viruses. Clinical groups are not taxonomic categories but practical classifications used in medicine, epidemiology, and public health",
+      "title": "Clinical group",
+      "from_schema": "https://w3id.org/evorao/",
+      "is_a": "Term",
+      "slots": [
+        "Resource_keyword",
+        "Resource_dateIssued",
+        "Resource_dateModified",
+        "Term_title",
+        "Term_description",
+        "Term_weight",
+        "Term_inVocabulary",
+        "ClinicalGroup_alternateName",
+        "ClinicalGroup_taxon"
+      ],
+      "slot_usage": {},
+      "class_uri": "https://w3id.org/evorao/ClinicalGroup",
+      "@type": "ClassDefinition"
+    },
+    {
       "name": "ExternalRelatedReference",
       "definition_uri": "https://w3id.org/evorao/ExternalRelatedReference",
       "description": "A reference that permits to retrieve an item from an external provider",
@@ -13301,9 +13390,9 @@
   ],
   "metamodel_version": "1.7.0",
   "source_file": "evora_schema.yaml",
-  "source_file_date": "2025-09-24T09:11:55",
-  "source_file_size": 222987,
-  "generation_date": "2025-09-24T09:12:10",
+  "source_file_date": "2025-09-24T09:32:31",
+  "source_file_size": 224628,
+  "generation_date": "2025-09-24T09:32:49",
   "@type": "SchemaDefinition",
   "@context": [
     "https://w3id.org/linkml/types.context.jsonld",
