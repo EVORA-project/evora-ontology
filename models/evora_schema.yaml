@@ -48,7 +48,7 @@ keywords:
 - pathogen collections
 - interoperability
 id: https://w3id.org/evorao/
-version: 1.0.9968
+version: 1.0.9975
 imports:
 - linkml:types
 license: https://creativecommons.org/publicdomain/zero/1.0/
@@ -182,6 +182,12 @@ slots:
     - An IRI is a global identifier standardized by IETF RFC 3987. It may or may not
       be resolvable on the web. IRIs include URIs, and URIs include URLs
     from_schema: https://w3id.org/evorao/
+    close_mappings:
+    - biolink:iri
+    related_mappings:
+    - mi:url
+    narrow_mappings:
+    - schema:url
     is_a: identifier
     domain_of:
     - Resource
@@ -2869,6 +2875,12 @@ classes:
         comments:
         - An IRI is a global identifier standardized by IETF RFC 3987. It may or may
           not be resolvable on the web. IRIs include URIs, and URIs include URLs
+        close_mappings:
+        - biolink:iri
+        related_mappings:
+        - mi:url
+        narrow_mappings:
+        - schema:url
         is_a: identifier
         domain_of:
         - Resource
@@ -7221,4 +7233,4 @@ classes:
         required: false
         multivalued: false
 source_file: https://w3id.org/evorao/evorao.owl.ttl
-generation_date: '2025-09-26T17:26:12'
+generation_date: '2025-09-26T17:37:15'

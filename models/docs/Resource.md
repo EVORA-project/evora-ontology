@@ -240,6 +240,12 @@ slot_usage:
     comments:
     - An IRI is a global identifier standardized by IETF RFC 3987. It may or may not
       be resolvable on the web. IRIs include URIs, and URIs include URLs
+    close_mappings:
+    - biolink:iri
+    related_mappings:
+    - mi:url
+    narrow_mappings:
+    - schema:url
     is_a: identifier
     domain_of:
     - Resource
@@ -328,6 +334,12 @@ slot_usage:
     comments:
     - An IRI is a global identifier standardized by IETF RFC 3987. It may or may not
       be resolvable on the web. IRIs include URIs, and URIs include URLs
+    close_mappings:
+    - biolink:iri
+    related_mappings:
+    - mi:url
+    narrow_mappings:
+    - schema:url
     is_a: identifier
     domain_of:
     - Resource
@@ -419,6 +431,12 @@ attributes:
     - An IRI is a global identifier standardized by IETF RFC 3987. It may or may not
       be resolvable on the web. IRIs include URIs, and URIs include URLs
     from_schema: https://w3id.org/evorao/
+    close_mappings:
+    - biolink:iri
+    related_mappings:
+    - mi:url
+    narrow_mappings:
+    - schema:url
     rank: 1000
     is_a: identifier
     alias: iri

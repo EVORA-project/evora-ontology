@@ -38,7 +38,7 @@
     "interoperability"
   ],
   "id": "https://w3id.org/evorao/",
-  "version": "1.0.9968",
+  "version": "1.0.9975",
   "imports": [
     "linkml:types"
   ],
@@ -698,6 +698,15 @@
         "An IRI is a global identifier standardized by IETF RFC 3987. It may or may not be resolvable on the web. IRIs include URIs, and URIs include URLs"
       ],
       "from_schema": "https://w3id.org/evorao/",
+      "close_mappings": [
+        "https://w3id.org/biolink/vocab/iri"
+      ],
+      "related_mappings": [
+        "http://purl.obolibrary.org/obo/MI_url"
+      ],
+      "narrow_mappings": [
+        "http://schema.org/url"
+      ],
       "is_a": "identifier",
       "slot_uri": "https://w3id.org/evorao/iri",
       "owner": "Resource",
@@ -4550,6 +4559,15 @@
         "An IRI is a global identifier standardized by IETF RFC 3987. It may or may not be resolvable on the web. IRIs include URIs, and URIs include URLs"
       ],
       "from_schema": "https://w3id.org/evorao/",
+      "close_mappings": [
+        "https://w3id.org/biolink/vocab/iri"
+      ],
+      "related_mappings": [
+        "http://purl.obolibrary.org/obo/MI_url"
+      ],
+      "narrow_mappings": [
+        "http://schema.org/url"
+      ],
       "is_a": "identifier",
       "domain": "Resource",
       "slot_uri": "https://w3id.org/evorao/iri",
@@ -13658,9 +13676,9 @@
   ],
   "metamodel_version": "1.7.0",
   "source_file": "evora_schema.yaml",
-  "source_file_date": "2025-09-26T15:26:39",
-  "source_file_size": 227160,
-  "generation_date": "2025-09-26T15:26:55",
+  "source_file_date": "2025-09-26T15:37:36",
+  "source_file_size": 227406,
+  "generation_date": "2025-09-26T15:37:52",
   "@type": "SchemaDefinition",
   "@context": [
     "https://w3id.org/linkml/types.context.jsonld",

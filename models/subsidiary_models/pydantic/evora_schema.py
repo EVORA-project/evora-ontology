@@ -27,7 +27,7 @@ from pydantic import (
 
 
 metamodel_version = "None"
-version = "1.0.9968"
+version = "1.0.9975"
 
 
 class ConfiguredBaseModel(BaseModel):
@@ -99,7 +99,7 @@ linkml_meta = LinkMLMeta({'comments': ['EVORAO is an ontology for standardized m
                     'pathogens. EVORAO is compatible with DCAT, making it '
                     'well-suited for efficiently cataloguing pathogen collections '
                     'and related resources.',
-     'generation_date': '2025-09-26T17:26:12',
+     'generation_date': '2025-09-26T17:37:15',
      'id': 'https://w3id.org/evorao/',
      'imports': ['linkml:types'],
      'in_language': 'en',
@@ -295,7 +295,8 @@ class Resource(ConfiguredBaseModel):
                                        'required': False,
                                        'slot_uri': 'dct:identifier',
                                        'title': 'identifier'},
-                        'iri': {'comments': ['An IRI is a global identifier '
+                        'iri': {'close_mappings': ['biolink:iri'],
+                                'comments': ['An IRI is a global identifier '
                                              'standardized by IETF RFC 3987. It may or '
                                              'may not be resolvable on the web. IRIs '
                                              'include URIs, and URIs include URLs'],
@@ -307,7 +308,9 @@ class Resource(ConfiguredBaseModel):
                                 'is_a': 'identifier',
                                 'multivalued': True,
                                 'name': 'iri',
+                                'narrow_mappings': ['schema:url'],
                                 'range': 'uri',
+                                'related_mappings': ['mi:url'],
                                 'required': False,
                                 'title': 'IRI'},
                         'keyword': {'description': 'A keyword or tag describing the '
@@ -345,11 +348,14 @@ class Resource(ConfiguredBaseModel):
          'exact_mappings': ['schema:identifier'],
          'slot_uri': 'dct:identifier'} })
     iri: Optional[list[str]] = Field(default=None, title="IRI", description="""International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs""", json_schema_extra = { "linkml_meta": {'alias': 'iri',
+         'close_mappings': ['biolink:iri'],
          'comments': ['An IRI is a global identifier standardized by IETF RFC 3987. It '
                       'may or may not be resolvable on the web. IRIs include URIs, and '
                       'URIs include URLs'],
          'domain_of': ['Resource'],
-         'is_a': 'identifier'} })
+         'is_a': 'identifier',
+         'narrow_mappings': ['schema:url'],
+         'related_mappings': ['mi:url']} })
 
 
 class Dataset(Resource):
@@ -485,11 +491,14 @@ class Dataset(Resource):
          'exact_mappings': ['schema:identifier'],
          'slot_uri': 'dct:identifier'} })
     iri: Optional[list[str]] = Field(default=None, title="IRI", description="""International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs""", json_schema_extra = { "linkml_meta": {'alias': 'iri',
+         'close_mappings': ['biolink:iri'],
          'comments': ['An IRI is a global identifier standardized by IETF RFC 3987. It '
                       'may or may not be resolvable on the web. IRIs include URIs, and '
                       'URIs include URLs'],
          'domain_of': ['Resource'],
-         'is_a': 'identifier'} })
+         'is_a': 'identifier',
+         'narrow_mappings': ['schema:url'],
+         'related_mappings': ['mi:url']} })
 
 
 class DataService(Resource):
@@ -643,11 +652,14 @@ class DataService(Resource):
          'exact_mappings': ['schema:identifier'],
          'slot_uri': 'dct:identifier'} })
     iri: Optional[list[str]] = Field(default=None, title="IRI", description="""International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs""", json_schema_extra = { "linkml_meta": {'alias': 'iri',
+         'close_mappings': ['biolink:iri'],
          'comments': ['An IRI is a global identifier standardized by IETF RFC 3987. It '
                       'may or may not be resolvable on the web. IRIs include URIs, and '
                       'URIs include URLs'],
          'domain_of': ['Resource'],
-         'is_a': 'identifier'} })
+         'is_a': 'identifier',
+         'narrow_mappings': ['schema:url'],
+         'related_mappings': ['mi:url']} })
 
 
 class Version(Resource):
@@ -729,11 +741,14 @@ class Version(Resource):
          'exact_mappings': ['schema:identifier'],
          'slot_uri': 'dct:identifier'} })
     iri: Optional[list[str]] = Field(default=None, title="IRI", description="""International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs""", json_schema_extra = { "linkml_meta": {'alias': 'iri',
+         'close_mappings': ['biolink:iri'],
          'comments': ['An IRI is a global identifier standardized by IETF RFC 3987. It '
                       'may or may not be resolvable on the web. IRIs include URIs, and '
                       'URIs include URLs'],
          'domain_of': ['Resource'],
-         'is_a': 'identifier'} })
+         'is_a': 'identifier',
+         'narrow_mappings': ['schema:url'],
+         'related_mappings': ['mi:url']} })
 
 
 class Catalogue(Dataset):
@@ -811,11 +826,14 @@ class Catalogue(Dataset):
          'exact_mappings': ['schema:identifier'],
          'slot_uri': 'dct:identifier'} })
     iri: Optional[list[str]] = Field(default=None, title="IRI", description="""International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs""", json_schema_extra = { "linkml_meta": {'alias': 'iri',
+         'close_mappings': ['biolink:iri'],
          'comments': ['An IRI is a global identifier standardized by IETF RFC 3987. It '
                       'may or may not be resolvable on the web. IRIs include URIs, and '
                       'URIs include URLs'],
          'domain_of': ['Resource'],
-         'is_a': 'identifier'} })
+         'is_a': 'identifier',
+         'narrow_mappings': ['schema:url'],
+         'related_mappings': ['mi:url']} })
 
 
 class Taxonomy(Catalogue):
@@ -974,11 +992,14 @@ class Taxonomy(Catalogue):
          'exact_mappings': ['schema:identifier'],
          'slot_uri': 'dct:identifier'} })
     iri: Optional[list[str]] = Field(default=None, title="IRI", description="""International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs""", json_schema_extra = { "linkml_meta": {'alias': 'iri',
+         'close_mappings': ['biolink:iri'],
          'comments': ['An IRI is a global identifier standardized by IETF RFC 3987. It '
                       'may or may not be resolvable on the web. IRIs include URIs, and '
                       'URIs include URLs'],
          'domain_of': ['Resource'],
-         'is_a': 'identifier'} })
+         'is_a': 'identifier',
+         'narrow_mappings': ['schema:url'],
+         'related_mappings': ['mi:url']} })
 
 
 class DataProvider(DataService):
@@ -1236,11 +1257,14 @@ class DataProvider(DataService):
          'exact_mappings': ['schema:identifier'],
          'slot_uri': 'dct:identifier'} })
     iri: Optional[list[str]] = Field(default=None, title="IRI", description="""International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs""", json_schema_extra = { "linkml_meta": {'alias': 'iri',
+         'close_mappings': ['biolink:iri'],
          'comments': ['An IRI is a global identifier standardized by IETF RFC 3987. It '
                       'may or may not be resolvable on the web. IRIs include URIs, and '
                       'URIs include URLs'],
          'domain_of': ['Resource'],
-         'is_a': 'identifier'} })
+         'is_a': 'identifier',
+         'narrow_mappings': ['schema:url'],
+         'related_mappings': ['mi:url']} })
 
 
 class PathogenIdentification(Resource):
@@ -1430,11 +1454,14 @@ class PathogenIdentification(Resource):
          'exact_mappings': ['schema:identifier'],
          'slot_uri': 'dct:identifier'} })
     iri: Optional[list[str]] = Field(default=None, title="IRI", description="""International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs""", json_schema_extra = { "linkml_meta": {'alias': 'iri',
+         'close_mappings': ['biolink:iri'],
          'comments': ['An IRI is a global identifier standardized by IETF RFC 3987. It '
                       'may or may not be resolvable on the web. IRIs include URIs, and '
                       'URIs include URLs'],
          'domain_of': ['Resource'],
-         'is_a': 'identifier'} })
+         'is_a': 'identifier',
+         'narrow_mappings': ['schema:url'],
+         'related_mappings': ['mi:url']} })
 
 
 class Publication(Resource):
@@ -1570,11 +1597,14 @@ class Publication(Resource):
          'exact_mappings': ['schema:identifier'],
          'slot_uri': 'dct:identifier'} })
     iri: Optional[list[str]] = Field(default=None, title="IRI", description="""International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs""", json_schema_extra = { "linkml_meta": {'alias': 'iri',
+         'close_mappings': ['biolink:iri'],
          'comments': ['An IRI is a global identifier standardized by IETF RFC 3987. It '
                       'may or may not be resolvable on the web. IRIs include URIs, and '
                       'URIs include URLs'],
          'domain_of': ['Resource'],
-         'is_a': 'identifier'} })
+         'is_a': 'identifier',
+         'narrow_mappings': ['schema:url'],
+         'related_mappings': ['mi:url']} })
 
 
 class Vocabulary(Catalogue):
@@ -1681,11 +1711,14 @@ class Vocabulary(Catalogue):
          'exact_mappings': ['schema:identifier'],
          'slot_uri': 'dct:identifier'} })
     iri: Optional[list[str]] = Field(default=None, title="IRI", description="""International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs""", json_schema_extra = { "linkml_meta": {'alias': 'iri',
+         'close_mappings': ['biolink:iri'],
          'comments': ['An IRI is a global identifier standardized by IETF RFC 3987. It '
                       'may or may not be resolvable on the web. IRIs include URIs, and '
                       'URIs include URLs'],
          'domain_of': ['Resource'],
-         'is_a': 'identifier'} })
+         'is_a': 'identifier',
+         'narrow_mappings': ['schema:url'],
+         'related_mappings': ['mi:url']} })
 
 
 class Term(Resource):
@@ -1843,11 +1876,14 @@ class Term(Resource):
          'exact_mappings': ['schema:identifier'],
          'slot_uri': 'dct:identifier'} })
     iri: Optional[list[str]] = Field(default=None, title="IRI", description="""International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs""", json_schema_extra = { "linkml_meta": {'alias': 'iri',
+         'close_mappings': ['biolink:iri'],
          'comments': ['An IRI is a global identifier standardized by IETF RFC 3987. It '
                       'may or may not be resolvable on the web. IRIs include URIs, and '
                       'URIs include URLs'],
          'domain_of': ['Resource'],
-         'is_a': 'identifier'} })
+         'is_a': 'identifier',
+         'narrow_mappings': ['schema:url'],
+         'related_mappings': ['mi:url']} })
 
 
 class CommonName(Term):
@@ -1978,11 +2014,14 @@ class CommonName(Term):
          'exact_mappings': ['schema:identifier'],
          'slot_uri': 'dct:identifier'} })
     iri: Optional[list[str]] = Field(default=None, title="IRI", description="""International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs""", json_schema_extra = { "linkml_meta": {'alias': 'iri',
+         'close_mappings': ['biolink:iri'],
          'comments': ['An IRI is a global identifier standardized by IETF RFC 3987. It '
                       'may or may not be resolvable on the web. IRIs include URIs, and '
                       'URIs include URLs'],
          'domain_of': ['Resource'],
-         'is_a': 'identifier'} })
+         'is_a': 'identifier',
+         'narrow_mappings': ['schema:url'],
+         'related_mappings': ['mi:url']} })
 
 
 class VirusName(CommonName):
@@ -2073,11 +2112,14 @@ class VirusName(CommonName):
          'exact_mappings': ['schema:identifier'],
          'slot_uri': 'dct:identifier'} })
     iri: Optional[list[str]] = Field(default=None, title="IRI", description="""International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs""", json_schema_extra = { "linkml_meta": {'alias': 'iri',
+         'close_mappings': ['biolink:iri'],
          'comments': ['An IRI is a global identifier standardized by IETF RFC 3987. It '
                       'may or may not be resolvable on the web. IRIs include URIs, and '
                       'URIs include URLs'],
          'domain_of': ['Resource'],
-         'is_a': 'identifier'} })
+         'is_a': 'identifier',
+         'narrow_mappings': ['schema:url'],
+         'related_mappings': ['mi:url']} })
 
 
 class AlternateName(Term):
@@ -2206,11 +2248,14 @@ class AlternateName(Term):
          'exact_mappings': ['schema:identifier'],
          'slot_uri': 'dct:identifier'} })
     iri: Optional[list[str]] = Field(default=None, title="IRI", description="""International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs""", json_schema_extra = { "linkml_meta": {'alias': 'iri',
+         'close_mappings': ['biolink:iri'],
          'comments': ['An IRI is a global identifier standardized by IETF RFC 3987. It '
                       'may or may not be resolvable on the web. IRIs include URIs, and '
                       'URIs include URLs'],
          'domain_of': ['Resource'],
-         'is_a': 'identifier'} })
+         'is_a': 'identifier',
+         'narrow_mappings': ['schema:url'],
+         'related_mappings': ['mi:url']} })
 
 
 class RiskGroup(Term):
@@ -2292,11 +2337,14 @@ class RiskGroup(Term):
          'exact_mappings': ['schema:identifier'],
          'slot_uri': 'dct:identifier'} })
     iri: Optional[list[str]] = Field(default=None, title="IRI", description="""International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs""", json_schema_extra = { "linkml_meta": {'alias': 'iri',
+         'close_mappings': ['biolink:iri'],
          'comments': ['An IRI is a global identifier standardized by IETF RFC 3987. It '
                       'may or may not be resolvable on the web. IRIs include URIs, and '
                       'URIs include URLs'],
          'domain_of': ['Resource'],
-         'is_a': 'identifier'} })
+         'is_a': 'identifier',
+         'narrow_mappings': ['schema:url'],
+         'related_mappings': ['mi:url']} })
 
 
 class Doi(Term):
@@ -2381,11 +2429,14 @@ class Doi(Term):
          'exact_mappings': ['schema:identifier'],
          'slot_uri': 'dct:identifier'} })
     iri: Optional[list[str]] = Field(default=None, title="IRI", description="""International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs""", json_schema_extra = { "linkml_meta": {'alias': 'iri',
+         'close_mappings': ['biolink:iri'],
          'comments': ['An IRI is a global identifier standardized by IETF RFC 3987. It '
                       'may or may not be resolvable on the web. IRIs include URIs, and '
                       'URIs include URLs'],
          'domain_of': ['Resource'],
-         'is_a': 'identifier'} })
+         'is_a': 'identifier',
+         'narrow_mappings': ['schema:url'],
+         'related_mappings': ['mi:url']} })
 
 
 class Journal(Term):
@@ -2470,11 +2521,14 @@ class Journal(Term):
          'exact_mappings': ['schema:identifier'],
          'slot_uri': 'dct:identifier'} })
     iri: Optional[list[str]] = Field(default=None, title="IRI", description="""International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs""", json_schema_extra = { "linkml_meta": {'alias': 'iri',
+         'close_mappings': ['biolink:iri'],
          'comments': ['An IRI is a global identifier standardized by IETF RFC 3987. It '
                       'may or may not be resolvable on the web. IRIs include URIs, and '
                       'URIs include URLs'],
          'domain_of': ['Resource'],
-         'is_a': 'identifier'} })
+         'is_a': 'identifier',
+         'narrow_mappings': ['schema:url'],
+         'related_mappings': ['mi:url']} })
 
 
 class PdbReference(Term):
@@ -2553,11 +2607,14 @@ class PdbReference(Term):
          'exact_mappings': ['schema:identifier'],
          'slot_uri': 'dct:identifier'} })
     iri: Optional[list[str]] = Field(default=None, title="IRI", description="""International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs""", json_schema_extra = { "linkml_meta": {'alias': 'iri',
+         'close_mappings': ['biolink:iri'],
          'comments': ['An IRI is a global identifier standardized by IETF RFC 3987. It '
                       'may or may not be resolvable on the web. IRIs include URIs, and '
                       'URIs include URLs'],
          'domain_of': ['Resource'],
-         'is_a': 'identifier'} })
+         'is_a': 'identifier',
+         'narrow_mappings': ['schema:url'],
+         'related_mappings': ['mi:url']} })
 
 
 class Keyword(Term):
@@ -2642,11 +2699,14 @@ class Keyword(Term):
          'exact_mappings': ['schema:identifier'],
          'slot_uri': 'dct:identifier'} })
     iri: Optional[list[str]] = Field(default=None, title="IRI", description="""International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs""", json_schema_extra = { "linkml_meta": {'alias': 'iri',
+         'close_mappings': ['biolink:iri'],
          'comments': ['An IRI is a global identifier standardized by IETF RFC 3987. It '
                       'may or may not be resolvable on the web. IRIs include URIs, and '
                       'URIs include URLs'],
          'domain_of': ['Resource'],
-         'is_a': 'identifier'} })
+         'is_a': 'identifier',
+         'narrow_mappings': ['schema:url'],
+         'related_mappings': ['mi:url']} })
 
 
 class TagSequence(Term):
@@ -2727,11 +2787,14 @@ class TagSequence(Term):
          'exact_mappings': ['schema:identifier'],
          'slot_uri': 'dct:identifier'} })
     iri: Optional[list[str]] = Field(default=None, title="IRI", description="""International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs""", json_schema_extra = { "linkml_meta": {'alias': 'iri',
+         'close_mappings': ['biolink:iri'],
          'comments': ['An IRI is a global identifier standardized by IETF RFC 3987. It '
                       'may or may not be resolvable on the web. IRIs include URIs, and '
                       'URIs include URLs'],
          'domain_of': ['Resource'],
-         'is_a': 'identifier'} })
+         'is_a': 'identifier',
+         'narrow_mappings': ['schema:url'],
+         'related_mappings': ['mi:url']} })
 
 
 class SpecialFeature(Term):
@@ -2812,11 +2875,14 @@ class SpecialFeature(Term):
          'exact_mappings': ['schema:identifier'],
          'slot_uri': 'dct:identifier'} })
     iri: Optional[list[str]] = Field(default=None, title="IRI", description="""International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs""", json_schema_extra = { "linkml_meta": {'alias': 'iri',
+         'close_mappings': ['biolink:iri'],
          'comments': ['An IRI is a global identifier standardized by IETF RFC 3987. It '
                       'may or may not be resolvable on the web. IRIs include URIs, and '
                       'URIs include URLs'],
          'domain_of': ['Resource'],
-         'is_a': 'identifier'} })
+         'is_a': 'identifier',
+         'narrow_mappings': ['schema:url'],
+         'related_mappings': ['mi:url']} })
 
 
 class ExpressionVector(Term):
@@ -2898,11 +2964,14 @@ class ExpressionVector(Term):
          'exact_mappings': ['schema:identifier'],
          'slot_uri': 'dct:identifier'} })
     iri: Optional[list[str]] = Field(default=None, title="IRI", description="""International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs""", json_schema_extra = { "linkml_meta": {'alias': 'iri',
+         'close_mappings': ['biolink:iri'],
          'comments': ['An IRI is a global identifier standardized by IETF RFC 3987. It '
                       'may or may not be resolvable on the web. IRIs include URIs, and '
                       'URIs include URLs'],
          'domain_of': ['Resource'],
-         'is_a': 'identifier'} })
+         'is_a': 'identifier',
+         'narrow_mappings': ['schema:url'],
+         'related_mappings': ['mi:url']} })
 
 
 class PlasmidSelection(Term):
@@ -2980,11 +3049,14 @@ class PlasmidSelection(Term):
          'exact_mappings': ['schema:identifier'],
          'slot_uri': 'dct:identifier'} })
     iri: Optional[list[str]] = Field(default=None, title="IRI", description="""International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs""", json_schema_extra = { "linkml_meta": {'alias': 'iri',
+         'close_mappings': ['biolink:iri'],
          'comments': ['An IRI is a global identifier standardized by IETF RFC 3987. It '
                       'may or may not be resolvable on the web. IRIs include URIs, and '
                       'URIs include URLs'],
          'domain_of': ['Resource'],
-         'is_a': 'identifier'} })
+         'is_a': 'identifier',
+         'narrow_mappings': ['schema:url'],
+         'related_mappings': ['mi:url']} })
 
 
 class PropagationHost(Term):
@@ -3062,11 +3134,14 @@ class PropagationHost(Term):
          'exact_mappings': ['schema:identifier'],
          'slot_uri': 'dct:identifier'} })
     iri: Optional[list[str]] = Field(default=None, title="IRI", description="""International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs""", json_schema_extra = { "linkml_meta": {'alias': 'iri',
+         'close_mappings': ['biolink:iri'],
          'comments': ['An IRI is a global identifier standardized by IETF RFC 3987. It '
                       'may or may not be resolvable on the web. IRIs include URIs, and '
                       'URIs include URLs'],
          'domain_of': ['Resource'],
-         'is_a': 'identifier'} })
+         'is_a': 'identifier',
+         'narrow_mappings': ['schema:url'],
+         'related_mappings': ['mi:url']} })
 
 
 class TransmissionMethod(Term):
@@ -3145,11 +3220,14 @@ class TransmissionMethod(Term):
          'exact_mappings': ['schema:identifier'],
          'slot_uri': 'dct:identifier'} })
     iri: Optional[list[str]] = Field(default=None, title="IRI", description="""International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs""", json_schema_extra = { "linkml_meta": {'alias': 'iri',
+         'close_mappings': ['biolink:iri'],
          'comments': ['An IRI is a global identifier standardized by IETF RFC 3987. It '
                       'may or may not be resolvable on the web. IRIs include URIs, and '
                       'URIs include URLs'],
          'domain_of': ['Resource'],
-         'is_a': 'identifier'} })
+         'is_a': 'identifier',
+         'narrow_mappings': ['schema:url'],
+         'related_mappings': ['mi:url']} })
 
 
 class ProductionCellLine(Term):
@@ -3231,11 +3309,14 @@ class ProductionCellLine(Term):
          'exact_mappings': ['schema:identifier'],
          'slot_uri': 'dct:identifier'} })
     iri: Optional[list[str]] = Field(default=None, title="IRI", description="""International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs""", json_schema_extra = { "linkml_meta": {'alias': 'iri',
+         'close_mappings': ['biolink:iri'],
          'comments': ['An IRI is a global identifier standardized by IETF RFC 3987. It '
                       'may or may not be resolvable on the web. IRIs include URIs, and '
                       'URIs include URLs'],
          'domain_of': ['Resource'],
-         'is_a': 'identifier'} })
+         'is_a': 'identifier',
+         'narrow_mappings': ['schema:url'],
+         'related_mappings': ['mi:url']} })
 
 
 class ProductCategory(Term):
@@ -3337,11 +3418,14 @@ class ProductCategory(Term):
          'exact_mappings': ['schema:identifier'],
          'slot_uri': 'dct:identifier'} })
     iri: Optional[list[str]] = Field(default=None, title="IRI", description="""International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs""", json_schema_extra = { "linkml_meta": {'alias': 'iri',
+         'close_mappings': ['biolink:iri'],
          'comments': ['An IRI is a global identifier standardized by IETF RFC 3987. It '
                       'may or may not be resolvable on the web. IRIs include URIs, and '
                       'URIs include URLs'],
          'domain_of': ['Resource'],
-         'is_a': 'identifier'} })
+         'is_a': 'identifier',
+         'narrow_mappings': ['schema:url'],
+         'related_mappings': ['mi:url']} })
 
 
 class IsolationHost(Term):
@@ -3417,11 +3501,14 @@ class IsolationHost(Term):
          'exact_mappings': ['schema:identifier'],
          'slot_uri': 'dct:identifier'} })
     iri: Optional[list[str]] = Field(default=None, title="IRI", description="""International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs""", json_schema_extra = { "linkml_meta": {'alias': 'iri',
+         'close_mappings': ['biolink:iri'],
          'comments': ['An IRI is a global identifier standardized by IETF RFC 3987. It '
                       'may or may not be resolvable on the web. IRIs include URIs, and '
                       'URIs include URLs'],
          'domain_of': ['Resource'],
-         'is_a': 'identifier'} })
+         'is_a': 'identifier',
+         'narrow_mappings': ['schema:url'],
+         'related_mappings': ['mi:url']} })
 
 
 class GeographicalOrigin(Term):
@@ -3508,11 +3595,14 @@ class GeographicalOrigin(Term):
          'exact_mappings': ['schema:identifier'],
          'slot_uri': 'dct:identifier'} })
     iri: Optional[list[str]] = Field(default=None, title="IRI", description="""International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs""", json_schema_extra = { "linkml_meta": {'alias': 'iri',
+         'close_mappings': ['biolink:iri'],
          'comments': ['An IRI is a global identifier standardized by IETF RFC 3987. It '
                       'may or may not be resolvable on the web. IRIs include URIs, and '
                       'URIs include URLs'],
          'domain_of': ['Resource'],
-         'is_a': 'identifier'} })
+         'is_a': 'identifier',
+         'narrow_mappings': ['schema:url'],
+         'related_mappings': ['mi:url']} })
 
 
 class IplcOrigin(GeographicalOrigin):
@@ -3597,11 +3687,14 @@ class IplcOrigin(GeographicalOrigin):
          'exact_mappings': ['schema:identifier'],
          'slot_uri': 'dct:identifier'} })
     iri: Optional[list[str]] = Field(default=None, title="IRI", description="""International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs""", json_schema_extra = { "linkml_meta": {'alias': 'iri',
+         'close_mappings': ['biolink:iri'],
          'comments': ['An IRI is a global identifier standardized by IETF RFC 3987. It '
                       'may or may not be resolvable on the web. IRIs include URIs, and '
                       'URIs include URLs'],
          'domain_of': ['Resource'],
-         'is_a': 'identifier'} })
+         'is_a': 'identifier',
+         'narrow_mappings': ['schema:url'],
+         'related_mappings': ['mi:url']} })
 
 
 class Country(Term):
@@ -3710,11 +3803,14 @@ class Country(Term):
          'exact_mappings': ['schema:identifier'],
          'slot_uri': 'dct:identifier'} })
     iri: Optional[list[str]] = Field(default=None, title="IRI", description="""International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs""", json_schema_extra = { "linkml_meta": {'alias': 'iri',
+         'close_mappings': ['biolink:iri'],
          'comments': ['An IRI is a global identifier standardized by IETF RFC 3987. It '
                       'may or may not be resolvable on the web. IRIs include URIs, and '
                       'URIs include URLs'],
          'domain_of': ['Resource'],
-         'is_a': 'identifier'} })
+         'is_a': 'identifier',
+         'narrow_mappings': ['schema:url'],
+         'related_mappings': ['mi:url']} })
 
 
 class IataClassification(Term):
@@ -3792,11 +3888,14 @@ class IataClassification(Term):
          'exact_mappings': ['schema:identifier'],
          'slot_uri': 'dct:identifier'} })
     iri: Optional[list[str]] = Field(default=None, title="IRI", description="""International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs""", json_schema_extra = { "linkml_meta": {'alias': 'iri',
+         'close_mappings': ['biolink:iri'],
          'comments': ['An IRI is a global identifier standardized by IETF RFC 3987. It '
                       'may or may not be resolvable on the web. IRIs include URIs, and '
                       'URIs include URLs'],
          'domain_of': ['Resource'],
-         'is_a': 'identifier'} })
+         'is_a': 'identifier',
+         'narrow_mappings': ['schema:url'],
+         'related_mappings': ['mi:url']} })
 
 
 class Variant(CommonName):
@@ -3886,11 +3985,14 @@ class Variant(CommonName):
          'exact_mappings': ['schema:identifier'],
          'slot_uri': 'dct:identifier'} })
     iri: Optional[list[str]] = Field(default=None, title="IRI", description="""International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs""", json_schema_extra = { "linkml_meta": {'alias': 'iri',
+         'close_mappings': ['biolink:iri'],
          'comments': ['An IRI is a global identifier standardized by IETF RFC 3987. It '
                       'may or may not be resolvable on the web. IRIs include URIs, and '
                       'URIs include URLs'],
          'domain_of': ['Resource'],
-         'is_a': 'identifier'} })
+         'is_a': 'identifier',
+         'narrow_mappings': ['schema:url'],
+         'related_mappings': ['mi:url']} })
 
 
 class TaxonomicRank(Term):
@@ -3989,11 +4091,14 @@ class TaxonomicRank(Term):
          'exact_mappings': ['schema:identifier'],
          'slot_uri': 'dct:identifier'} })
     iri: Optional[list[str]] = Field(default=None, title="IRI", description="""International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs""", json_schema_extra = { "linkml_meta": {'alias': 'iri',
+         'close_mappings': ['biolink:iri'],
          'comments': ['An IRI is a global identifier standardized by IETF RFC 3987. It '
                       'may or may not be resolvable on the web. IRIs include URIs, and '
                       'URIs include URLs'],
          'domain_of': ['Resource'],
-         'is_a': 'identifier'} })
+         'is_a': 'identifier',
+         'narrow_mappings': ['schema:url'],
+         'related_mappings': ['mi:url']} })
 
 
 class Taxon(Term):
@@ -4227,11 +4332,14 @@ class Taxon(Term):
          'exact_mappings': ['schema:identifier'],
          'slot_uri': 'dct:identifier'} })
     iri: Optional[list[str]] = Field(default=None, title="IRI", description="""International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs""", json_schema_extra = { "linkml_meta": {'alias': 'iri',
+         'close_mappings': ['biolink:iri'],
          'comments': ['An IRI is a global identifier standardized by IETF RFC 3987. It '
                       'may or may not be resolvable on the web. IRIs include URIs, and '
                       'URIs include URLs'],
          'domain_of': ['Resource'],
-         'is_a': 'identifier'} })
+         'is_a': 'identifier',
+         'narrow_mappings': ['schema:url'],
+         'related_mappings': ['mi:url']} })
 
 
 class ClinicalGroup(Term):
@@ -4360,11 +4468,14 @@ class ClinicalGroup(Term):
          'exact_mappings': ['schema:identifier'],
          'slot_uri': 'dct:identifier'} })
     iri: Optional[list[str]] = Field(default=None, title="IRI", description="""International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs""", json_schema_extra = { "linkml_meta": {'alias': 'iri',
+         'close_mappings': ['biolink:iri'],
          'comments': ['An IRI is a global identifier standardized by IETF RFC 3987. It '
                       'may or may not be resolvable on the web. IRIs include URIs, and '
                       'URIs include URLs'],
          'domain_of': ['Resource'],
-         'is_a': 'identifier'} })
+         'is_a': 'identifier',
+         'narrow_mappings': ['schema:url'],
+         'related_mappings': ['mi:url']} })
 
 
 class ExternalRelatedReference(Resource):
@@ -4459,11 +4570,14 @@ class ExternalRelatedReference(Resource):
          'exact_mappings': ['schema:identifier'],
          'slot_uri': 'dct:identifier'} })
     iri: Optional[list[str]] = Field(default=None, title="IRI", description="""International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs""", json_schema_extra = { "linkml_meta": {'alias': 'iri',
+         'close_mappings': ['biolink:iri'],
          'comments': ['An IRI is a global identifier standardized by IETF RFC 3987. It '
                       'may or may not be resolvable on the web. IRIs include URIs, and '
                       'URIs include URLs'],
          'domain_of': ['Resource'],
-         'is_a': 'identifier'} })
+         'is_a': 'identifier',
+         'narrow_mappings': ['schema:url'],
+         'related_mappings': ['mi:url']} })
 
 
 class Sequence(Resource):
@@ -4548,11 +4662,14 @@ class Sequence(Resource):
          'exact_mappings': ['schema:identifier'],
          'slot_uri': 'dct:identifier'} })
     iri: Optional[list[str]] = Field(default=None, title="IRI", description="""International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs""", json_schema_extra = { "linkml_meta": {'alias': 'iri',
+         'close_mappings': ['biolink:iri'],
          'comments': ['An IRI is a global identifier standardized by IETF RFC 3987. It '
                       'may or may not be resolvable on the web. IRIs include URIs, and '
                       'URIs include URLs'],
          'domain_of': ['Resource'],
-         'is_a': 'identifier'} })
+         'is_a': 'identifier',
+         'narrow_mappings': ['schema:url'],
+         'related_mappings': ['mi:url']} })
 
 
 class SequenceReference(Resource):
@@ -4625,11 +4742,14 @@ class SequenceReference(Resource):
          'exact_mappings': ['schema:identifier'],
          'slot_uri': 'dct:identifier'} })
     iri: Optional[list[str]] = Field(default=None, title="IRI", description="""International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs""", json_schema_extra = { "linkml_meta": {'alias': 'iri',
+         'close_mappings': ['biolink:iri'],
          'comments': ['An IRI is a global identifier standardized by IETF RFC 3987. It '
                       'may or may not be resolvable on the web. IRIs include URIs, and '
                       'URIs include URLs'],
          'domain_of': ['Resource'],
-         'is_a': 'identifier'} })
+         'is_a': 'identifier',
+         'narrow_mappings': ['schema:url'],
+         'related_mappings': ['mi:url']} })
 
 
 class PersonOrOrganization(Resource):
@@ -4767,11 +4887,14 @@ class PersonOrOrganization(Resource):
          'exact_mappings': ['schema:identifier'],
          'slot_uri': 'dct:identifier'} })
     iri: Optional[list[str]] = Field(default=None, title="IRI", description="""International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs""", json_schema_extra = { "linkml_meta": {'alias': 'iri',
+         'close_mappings': ['biolink:iri'],
          'comments': ['An IRI is a global identifier standardized by IETF RFC 3987. It '
                       'may or may not be resolvable on the web. IRIs include URIs, and '
                       'URIs include URLs'],
          'domain_of': ['Resource'],
-         'is_a': 'identifier'} })
+         'is_a': 'identifier',
+         'narrow_mappings': ['schema:url'],
+         'related_mappings': ['mi:url']} })
 
 
 class Person(PersonOrOrganization):
@@ -4863,11 +4986,14 @@ class Person(PersonOrOrganization):
          'exact_mappings': ['schema:identifier'],
          'slot_uri': 'dct:identifier'} })
     iri: Optional[list[str]] = Field(default=None, title="IRI", description="""International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs""", json_schema_extra = { "linkml_meta": {'alias': 'iri',
+         'close_mappings': ['biolink:iri'],
          'comments': ['An IRI is a global identifier standardized by IETF RFC 3987. It '
                       'may or may not be resolvable on the web. IRIs include URIs, and '
                       'URIs include URLs'],
          'domain_of': ['Resource'],
-         'is_a': 'identifier'} })
+         'is_a': 'identifier',
+         'narrow_mappings': ['schema:url'],
+         'related_mappings': ['mi:url']} })
 
 
 class Organization(PersonOrOrganization):
@@ -4998,11 +5124,14 @@ class Organization(PersonOrOrganization):
          'exact_mappings': ['schema:identifier'],
          'slot_uri': 'dct:identifier'} })
     iri: Optional[list[str]] = Field(default=None, title="IRI", description="""International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs""", json_schema_extra = { "linkml_meta": {'alias': 'iri',
+         'close_mappings': ['biolink:iri'],
          'comments': ['An IRI is a global identifier standardized by IETF RFC 3987. It '
                       'may or may not be resolvable on the web. IRIs include URIs, and '
                       'URIs include URLs'],
          'domain_of': ['Resource'],
-         'is_a': 'identifier'} })
+         'is_a': 'identifier',
+         'narrow_mappings': ['schema:url'],
+         'related_mappings': ['mi:url']} })
 
 
 class ReasearchInfrastructure(Organization):
@@ -5088,11 +5217,14 @@ class ReasearchInfrastructure(Organization):
          'exact_mappings': ['schema:identifier'],
          'slot_uri': 'dct:identifier'} })
     iri: Optional[list[str]] = Field(default=None, title="IRI", description="""International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs""", json_schema_extra = { "linkml_meta": {'alias': 'iri',
+         'close_mappings': ['biolink:iri'],
          'comments': ['An IRI is a global identifier standardized by IETF RFC 3987. It '
                       'may or may not be resolvable on the web. IRIs include URIs, and '
                       'URIs include URLs'],
          'domain_of': ['Resource'],
-         'is_a': 'identifier'} })
+         'is_a': 'identifier',
+         'narrow_mappings': ['schema:url'],
+         'related_mappings': ['mi:url']} })
 
 
 class Provider(Organization):
@@ -5191,11 +5323,14 @@ class Provider(Organization):
          'exact_mappings': ['schema:identifier'],
          'slot_uri': 'dct:identifier'} })
     iri: Optional[list[str]] = Field(default=None, title="IRI", description="""International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs""", json_schema_extra = { "linkml_meta": {'alias': 'iri',
+         'close_mappings': ['biolink:iri'],
          'comments': ['An IRI is a global identifier standardized by IETF RFC 3987. It '
                       'may or may not be resolvable on the web. IRIs include URIs, and '
                       'URIs include URLs'],
          'domain_of': ['Resource'],
-         'is_a': 'identifier'} })
+         'is_a': 'identifier',
+         'narrow_mappings': ['schema:url'],
+         'related_mappings': ['mi:url']} })
 
 
 class Originator(PersonOrOrganization):
@@ -5266,11 +5401,14 @@ class Originator(PersonOrOrganization):
          'exact_mappings': ['schema:identifier'],
          'slot_uri': 'dct:identifier'} })
     iri: Optional[list[str]] = Field(default=None, title="IRI", description="""International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs""", json_schema_extra = { "linkml_meta": {'alias': 'iri',
+         'close_mappings': ['biolink:iri'],
          'comments': ['An IRI is a global identifier standardized by IETF RFC 3987. It '
                       'may or may not be resolvable on the web. IRIs include URIs, and '
                       'URIs include URLs'],
          'domain_of': ['Resource'],
-         'is_a': 'identifier'} })
+         'is_a': 'identifier',
+         'narrow_mappings': ['schema:url'],
+         'related_mappings': ['mi:url']} })
 
 
 class BiologicalMaterialOrigin(Resource):
@@ -5371,11 +5509,14 @@ class BiologicalMaterialOrigin(Resource):
          'exact_mappings': ['schema:identifier'],
          'slot_uri': 'dct:identifier'} })
     iri: Optional[list[str]] = Field(default=None, title="IRI", description="""International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs""", json_schema_extra = { "linkml_meta": {'alias': 'iri',
+         'close_mappings': ['biolink:iri'],
          'comments': ['An IRI is a global identifier standardized by IETF RFC 3987. It '
                       'may or may not be resolvable on the web. IRIs include URIs, and '
                       'URIs include URLs'],
          'domain_of': ['Resource'],
-         'is_a': 'identifier'} })
+         'is_a': 'identifier',
+         'narrow_mappings': ['schema:url'],
+         'related_mappings': ['mi:url']} })
 
 
 class BiologicalPartOrigin(Resource):
@@ -5455,11 +5596,14 @@ class BiologicalPartOrigin(Resource):
          'exact_mappings': ['schema:identifier'],
          'slot_uri': 'dct:identifier'} })
     iri: Optional[list[str]] = Field(default=None, title="IRI", description="""International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs""", json_schema_extra = { "linkml_meta": {'alias': 'iri',
+         'close_mappings': ['biolink:iri'],
          'comments': ['An IRI is a global identifier standardized by IETF RFC 3987. It '
                       'may or may not be resolvable on the web. IRIs include URIs, and '
                       'URIs include URLs'],
          'domain_of': ['Resource'],
-         'is_a': 'identifier'} })
+         'is_a': 'identifier',
+         'narrow_mappings': ['schema:url'],
+         'related_mappings': ['mi:url']} })
 
 
 class NaturalPartOrigin(BiologicalPartOrigin):
@@ -5611,11 +5755,14 @@ class NaturalPartOrigin(BiologicalPartOrigin):
          'exact_mappings': ['schema:identifier'],
          'slot_uri': 'dct:identifier'} })
     iri: Optional[list[str]] = Field(default=None, title="IRI", description="""International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs""", json_schema_extra = { "linkml_meta": {'alias': 'iri',
+         'close_mappings': ['biolink:iri'],
          'comments': ['An IRI is a global identifier standardized by IETF RFC 3987. It '
                       'may or may not be resolvable on the web. IRIs include URIs, and '
                       'URIs include URLs'],
          'domain_of': ['Resource'],
-         'is_a': 'identifier'} })
+         'is_a': 'identifier',
+         'narrow_mappings': ['schema:url'],
+         'related_mappings': ['mi:url']} })
 
 
 class SyntheticPartOrigin(BiologicalPartOrigin):
@@ -5711,11 +5858,14 @@ class SyntheticPartOrigin(BiologicalPartOrigin):
          'exact_mappings': ['schema:identifier'],
          'slot_uri': 'dct:identifier'} })
     iri: Optional[list[str]] = Field(default=None, title="IRI", description="""International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs""", json_schema_extra = { "linkml_meta": {'alias': 'iri',
+         'close_mappings': ['biolink:iri'],
          'comments': ['An IRI is a global identifier standardized by IETF RFC 3987. It '
                       'may or may not be resolvable on the web. IRIs include URIs, and '
                       'URIs include URLs'],
          'domain_of': ['Resource'],
-         'is_a': 'identifier'} })
+         'is_a': 'identifier',
+         'narrow_mappings': ['schema:url'],
+         'related_mappings': ['mi:url']} })
 
 
 class RecombinantPartIdentification(Resource):
@@ -5783,11 +5933,14 @@ class RecombinantPartIdentification(Resource):
          'exact_mappings': ['schema:identifier'],
          'slot_uri': 'dct:identifier'} })
     iri: Optional[list[str]] = Field(default=None, title="IRI", description="""International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs""", json_schema_extra = { "linkml_meta": {'alias': 'iri',
+         'close_mappings': ['biolink:iri'],
          'comments': ['An IRI is a global identifier standardized by IETF RFC 3987. It '
                       'may or may not be resolvable on the web. IRIs include URIs, and '
                       'URIs include URLs'],
          'domain_of': ['Resource'],
-         'is_a': 'identifier'} })
+         'is_a': 'identifier',
+         'narrow_mappings': ['schema:url'],
+         'related_mappings': ['mi:url']} })
 
 
 class Collection(Catalogue):
@@ -5889,11 +6042,14 @@ class Collection(Catalogue):
          'exact_mappings': ['schema:identifier'],
          'slot_uri': 'dct:identifier'} })
     iri: Optional[list[str]] = Field(default=None, title="IRI", description="""International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs""", json_schema_extra = { "linkml_meta": {'alias': 'iri',
+         'close_mappings': ['biolink:iri'],
          'comments': ['An IRI is a global identifier standardized by IETF RFC 3987. It '
                       'may or may not be resolvable on the web. IRIs include URIs, and '
                       'URIs include URLs'],
          'domain_of': ['Resource'],
-         'is_a': 'identifier'} })
+         'is_a': 'identifier',
+         'narrow_mappings': ['schema:url'],
+         'related_mappings': ['mi:url']} })
 
 
 class ProductOrService(Dataset):
@@ -6462,11 +6618,14 @@ class ProductOrService(Dataset):
          'exact_mappings': ['schema:identifier'],
          'slot_uri': 'dct:identifier'} })
     iri: Optional[list[str]] = Field(default=None, title="IRI", description="""International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs""", json_schema_extra = { "linkml_meta": {'alias': 'iri',
+         'close_mappings': ['biolink:iri'],
          'comments': ['An IRI is a global identifier standardized by IETF RFC 3987. It '
                       'may or may not be resolvable on the web. IRIs include URIs, and '
                       'URIs include URLs'],
          'domain_of': ['Resource'],
-         'is_a': 'identifier'} })
+         'is_a': 'identifier',
+         'narrow_mappings': ['schema:url'],
+         'related_mappings': ['mi:url']} })
 
 
 class Service(ProductOrService):
@@ -6681,11 +6840,14 @@ class Service(ProductOrService):
          'exact_mappings': ['schema:identifier'],
          'slot_uri': 'dct:identifier'} })
     iri: Optional[list[str]] = Field(default=None, title="IRI", description="""International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs""", json_schema_extra = { "linkml_meta": {'alias': 'iri',
+         'close_mappings': ['biolink:iri'],
          'comments': ['An IRI is a global identifier standardized by IETF RFC 3987. It '
                       'may or may not be resolvable on the web. IRIs include URIs, and '
                       'URIs include URLs'],
          'domain_of': ['Resource'],
-         'is_a': 'identifier'} })
+         'is_a': 'identifier',
+         'narrow_mappings': ['schema:url'],
+         'related_mappings': ['mi:url']} })
 
 
 class Product(ProductOrService):
@@ -7023,11 +7185,14 @@ class Product(ProductOrService):
          'exact_mappings': ['schema:identifier'],
          'slot_uri': 'dct:identifier'} })
     iri: Optional[list[str]] = Field(default=None, title="IRI", description="""International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs""", json_schema_extra = { "linkml_meta": {'alias': 'iri',
+         'close_mappings': ['biolink:iri'],
          'comments': ['An IRI is a global identifier standardized by IETF RFC 3987. It '
                       'may or may not be resolvable on the web. IRIs include URIs, and '
                       'URIs include URLs'],
          'domain_of': ['Resource'],
-         'is_a': 'identifier'} })
+         'is_a': 'identifier',
+         'narrow_mappings': ['schema:url'],
+         'related_mappings': ['mi:url']} })
 
 
 class Antibody(Product):
@@ -7298,11 +7463,14 @@ class Antibody(Product):
          'exact_mappings': ['schema:identifier'],
          'slot_uri': 'dct:identifier'} })
     iri: Optional[list[str]] = Field(default=None, title="IRI", description="""International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs""", json_schema_extra = { "linkml_meta": {'alias': 'iri',
+         'close_mappings': ['biolink:iri'],
          'comments': ['An IRI is a global identifier standardized by IETF RFC 3987. It '
                       'may or may not be resolvable on the web. IRIs include URIs, and '
                       'URIs include URLs'],
          'domain_of': ['Resource'],
-         'is_a': 'identifier'} })
+         'is_a': 'identifier',
+         'narrow_mappings': ['schema:url'],
+         'related_mappings': ['mi:url']} })
 
 
 class Hybridoma(Antibody):
@@ -7532,11 +7700,14 @@ class Hybridoma(Antibody):
          'exact_mappings': ['schema:identifier'],
          'slot_uri': 'dct:identifier'} })
     iri: Optional[list[str]] = Field(default=None, title="IRI", description="""International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs""", json_schema_extra = { "linkml_meta": {'alias': 'iri',
+         'close_mappings': ['biolink:iri'],
          'comments': ['An IRI is a global identifier standardized by IETF RFC 3987. It '
                       'may or may not be resolvable on the web. IRIs include URIs, and '
                       'URIs include URLs'],
          'domain_of': ['Resource'],
-         'is_a': 'identifier'} })
+         'is_a': 'identifier',
+         'narrow_mappings': ['schema:url'],
+         'related_mappings': ['mi:url']} })
 
 
 class Protein(Product):
@@ -8127,11 +8298,14 @@ class Protein(Product):
          'exact_mappings': ['schema:identifier'],
          'slot_uri': 'dct:identifier'} })
     iri: Optional[list[str]] = Field(default=None, title="IRI", description="""International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs""", json_schema_extra = { "linkml_meta": {'alias': 'iri',
+         'close_mappings': ['biolink:iri'],
          'comments': ['An IRI is a global identifier standardized by IETF RFC 3987. It '
                       'may or may not be resolvable on the web. IRIs include URIs, and '
                       'URIs include URLs'],
          'domain_of': ['Resource'],
-         'is_a': 'identifier'} })
+         'is_a': 'identifier',
+         'narrow_mappings': ['schema:url'],
+         'related_mappings': ['mi:url']} })
 
 
 class NucleicAcid(Product):
@@ -8601,11 +8775,14 @@ class NucleicAcid(Product):
          'exact_mappings': ['schema:identifier'],
          'slot_uri': 'dct:identifier'} })
     iri: Optional[list[str]] = Field(default=None, title="IRI", description="""International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs""", json_schema_extra = { "linkml_meta": {'alias': 'iri',
+         'close_mappings': ['biolink:iri'],
          'comments': ['An IRI is a global identifier standardized by IETF RFC 3987. It '
                       'may or may not be resolvable on the web. IRIs include URIs, and '
                       'URIs include URLs'],
          'domain_of': ['Resource'],
-         'is_a': 'identifier'} })
+         'is_a': 'identifier',
+         'narrow_mappings': ['schema:url'],
+         'related_mappings': ['mi:url']} })
 
 
 class DetectionKit(Product):
@@ -8865,11 +9042,14 @@ class DetectionKit(Product):
          'exact_mappings': ['schema:identifier'],
          'slot_uri': 'dct:identifier'} })
     iri: Optional[list[str]] = Field(default=None, title="IRI", description="""International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs""", json_schema_extra = { "linkml_meta": {'alias': 'iri',
+         'close_mappings': ['biolink:iri'],
          'comments': ['An IRI is a global identifier standardized by IETF RFC 3987. It '
                       'may or may not be resolvable on the web. IRIs include URIs, and '
                       'URIs include URLs'],
          'domain_of': ['Resource'],
-         'is_a': 'identifier'} })
+         'is_a': 'identifier',
+         'narrow_mappings': ['schema:url'],
+         'related_mappings': ['mi:url']} })
 
 
 class Bundle(Product):
@@ -9090,11 +9270,14 @@ class Bundle(Product):
          'exact_mappings': ['schema:identifier'],
          'slot_uri': 'dct:identifier'} })
     iri: Optional[list[str]] = Field(default=None, title="IRI", description="""International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs""", json_schema_extra = { "linkml_meta": {'alias': 'iri',
+         'close_mappings': ['biolink:iri'],
          'comments': ['An IRI is a global identifier standardized by IETF RFC 3987. It '
                       'may or may not be resolvable on the web. IRIs include URIs, and '
                       'URIs include URLs'],
          'domain_of': ['Resource'],
-         'is_a': 'identifier'} })
+         'is_a': 'identifier',
+         'narrow_mappings': ['schema:url'],
+         'related_mappings': ['mi:url']} })
 
 
 class Pathogen(Product):
@@ -9656,11 +9839,14 @@ class Pathogen(Product):
          'exact_mappings': ['schema:identifier'],
          'slot_uri': 'dct:identifier'} })
     iri: Optional[list[str]] = Field(default=None, title="IRI", description="""International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs""", json_schema_extra = { "linkml_meta": {'alias': 'iri',
+         'close_mappings': ['biolink:iri'],
          'comments': ['An IRI is a global identifier standardized by IETF RFC 3987. It '
                       'may or may not be resolvable on the web. IRIs include URIs, and '
                       'URIs include URLs'],
          'domain_of': ['Resource'],
-         'is_a': 'identifier'} })
+         'is_a': 'identifier',
+         'narrow_mappings': ['schema:url'],
+         'related_mappings': ['mi:url']} })
 
 
 class Virus(Pathogen):
@@ -9998,11 +10184,14 @@ class Virus(Pathogen):
          'exact_mappings': ['schema:identifier'],
          'slot_uri': 'dct:identifier'} })
     iri: Optional[list[str]] = Field(default=None, title="IRI", description="""International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs""", json_schema_extra = { "linkml_meta": {'alias': 'iri',
+         'close_mappings': ['biolink:iri'],
          'comments': ['An IRI is a global identifier standardized by IETF RFC 3987. It '
                       'may or may not be resolvable on the web. IRIs include URIs, and '
                       'URIs include URLs'],
          'domain_of': ['Resource'],
-         'is_a': 'identifier'} })
+         'is_a': 'identifier',
+         'narrow_mappings': ['schema:url'],
+         'related_mappings': ['mi:url']} })
 
 
 class Bacterium(Pathogen):
@@ -10281,11 +10470,14 @@ class Bacterium(Pathogen):
          'exact_mappings': ['schema:identifier'],
          'slot_uri': 'dct:identifier'} })
     iri: Optional[list[str]] = Field(default=None, title="IRI", description="""International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs""", json_schema_extra = { "linkml_meta": {'alias': 'iri',
+         'close_mappings': ['biolink:iri'],
          'comments': ['An IRI is a global identifier standardized by IETF RFC 3987. It '
                       'may or may not be resolvable on the web. IRIs include URIs, and '
                       'URIs include URLs'],
          'domain_of': ['Resource'],
-         'is_a': 'identifier'} })
+         'is_a': 'identifier',
+         'narrow_mappings': ['schema:url'],
+         'related_mappings': ['mi:url']} })
 
 
 class Fungus(Pathogen):
@@ -10562,11 +10754,14 @@ class Fungus(Pathogen):
          'exact_mappings': ['schema:identifier'],
          'slot_uri': 'dct:identifier'} })
     iri: Optional[list[str]] = Field(default=None, title="IRI", description="""International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs""", json_schema_extra = { "linkml_meta": {'alias': 'iri',
+         'close_mappings': ['biolink:iri'],
          'comments': ['An IRI is a global identifier standardized by IETF RFC 3987. It '
                       'may or may not be resolvable on the web. IRIs include URIs, and '
                       'URIs include URLs'],
          'domain_of': ['Resource'],
-         'is_a': 'identifier'} })
+         'is_a': 'identifier',
+         'narrow_mappings': ['schema:url'],
+         'related_mappings': ['mi:url']} })
 
 
 class Protozoan(Pathogen):
@@ -10839,11 +11034,14 @@ class Protozoan(Pathogen):
          'exact_mappings': ['schema:identifier'],
          'slot_uri': 'dct:identifier'} })
     iri: Optional[list[str]] = Field(default=None, title="IRI", description="""International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs""", json_schema_extra = { "linkml_meta": {'alias': 'iri',
+         'close_mappings': ['biolink:iri'],
          'comments': ['An IRI is a global identifier standardized by IETF RFC 3987. It '
                       'may or may not be resolvable on the web. IRIs include URIs, and '
                       'URIs include URLs'],
          'domain_of': ['Resource'],
-         'is_a': 'identifier'} })
+         'is_a': 'identifier',
+         'narrow_mappings': ['schema:url'],
+         'related_mappings': ['mi:url']} })
 
 
 class Viroid(Pathogen):
@@ -11108,11 +11306,14 @@ class Viroid(Pathogen):
          'exact_mappings': ['schema:identifier'],
          'slot_uri': 'dct:identifier'} })
     iri: Optional[list[str]] = Field(default=None, title="IRI", description="""International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs""", json_schema_extra = { "linkml_meta": {'alias': 'iri',
+         'close_mappings': ['biolink:iri'],
          'comments': ['An IRI is a global identifier standardized by IETF RFC 3987. It '
                       'may or may not be resolvable on the web. IRIs include URIs, and '
                       'URIs include URLs'],
          'domain_of': ['Resource'],
-         'is_a': 'identifier'} })
+         'is_a': 'identifier',
+         'narrow_mappings': ['schema:url'],
+         'related_mappings': ['mi:url']} })
 
 
 class Prion(Pathogen):
@@ -11385,11 +11586,14 @@ class Prion(Pathogen):
          'exact_mappings': ['schema:identifier'],
          'slot_uri': 'dct:identifier'} })
     iri: Optional[list[str]] = Field(default=None, title="IRI", description="""International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs""", json_schema_extra = { "linkml_meta": {'alias': 'iri',
+         'close_mappings': ['biolink:iri'],
          'comments': ['An IRI is a global identifier standardized by IETF RFC 3987. It '
                       'may or may not be resolvable on the web. IRIs include URIs, and '
                       'URIs include URLs'],
          'domain_of': ['Resource'],
-         'is_a': 'identifier'} })
+         'is_a': 'identifier',
+         'narrow_mappings': ['schema:url'],
+         'related_mappings': ['mi:url']} })
 
 
 class MaterialSafetyDataSheet(Resource):
@@ -11803,11 +12007,14 @@ class MaterialSafetyDataSheet(Resource):
          'exact_mappings': ['schema:identifier'],
          'slot_uri': 'dct:identifier'} })
     iri: Optional[list[str]] = Field(default=None, title="IRI", description="""International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs""", json_schema_extra = { "linkml_meta": {'alias': 'iri',
+         'close_mappings': ['biolink:iri'],
          'comments': ['An IRI is a global identifier standardized by IETF RFC 3987. It '
                       'may or may not be resolvable on the web. IRIs include URIs, and '
                       'URIs include URLs'],
          'domain_of': ['Resource'],
-         'is_a': 'identifier'} })
+         'is_a': 'identifier',
+         'narrow_mappings': ['schema:url'],
+         'related_mappings': ['mi:url']} })
 
 
 class File(Resource):
@@ -11953,11 +12160,14 @@ class File(Resource):
          'exact_mappings': ['schema:identifier'],
          'slot_uri': 'dct:identifier'} })
     iri: Optional[list[str]] = Field(default=None, title="IRI", description="""International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs""", json_schema_extra = { "linkml_meta": {'alias': 'iri',
+         'close_mappings': ['biolink:iri'],
          'comments': ['An IRI is a global identifier standardized by IETF RFC 3987. It '
                       'may or may not be resolvable on the web. IRIs include URIs, and '
                       'URIs include URLs'],
          'domain_of': ['Resource'],
-         'is_a': 'identifier'} })
+         'is_a': 'identifier',
+         'narrow_mappings': ['schema:url'],
+         'related_mappings': ['mi:url']} })
 
 
 class Data(File):
@@ -12031,11 +12241,14 @@ class Data(File):
          'exact_mappings': ['schema:identifier'],
          'slot_uri': 'dct:identifier'} })
     iri: Optional[list[str]] = Field(default=None, title="IRI", description="""International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs""", json_schema_extra = { "linkml_meta": {'alias': 'iri',
+         'close_mappings': ['biolink:iri'],
          'comments': ['An IRI is a global identifier standardized by IETF RFC 3987. It '
                       'may or may not be resolvable on the web. IRIs include URIs, and '
                       'URIs include URLs'],
          'domain_of': ['Resource'],
-         'is_a': 'identifier'} })
+         'is_a': 'identifier',
+         'narrow_mappings': ['schema:url'],
+         'related_mappings': ['mi:url']} })
 
 
 class Document(File):
@@ -12111,11 +12324,14 @@ class Document(File):
          'exact_mappings': ['schema:identifier'],
          'slot_uri': 'dct:identifier'} })
     iri: Optional[list[str]] = Field(default=None, title="IRI", description="""International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs""", json_schema_extra = { "linkml_meta": {'alias': 'iri',
+         'close_mappings': ['biolink:iri'],
          'comments': ['An IRI is a global identifier standardized by IETF RFC 3987. It '
                       'may or may not be resolvable on the web. IRIs include URIs, and '
                       'URIs include URLs'],
          'domain_of': ['Resource'],
-         'is_a': 'identifier'} })
+         'is_a': 'identifier',
+         'narrow_mappings': ['schema:url'],
+         'related_mappings': ['mi:url']} })
 
 
 class Audio(File):
@@ -12189,11 +12405,14 @@ class Audio(File):
          'exact_mappings': ['schema:identifier'],
          'slot_uri': 'dct:identifier'} })
     iri: Optional[list[str]] = Field(default=None, title="IRI", description="""International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs""", json_schema_extra = { "linkml_meta": {'alias': 'iri',
+         'close_mappings': ['biolink:iri'],
          'comments': ['An IRI is a global identifier standardized by IETF RFC 3987. It '
                       'may or may not be resolvable on the web. IRIs include URIs, and '
                       'URIs include URLs'],
          'domain_of': ['Resource'],
-         'is_a': 'identifier'} })
+         'is_a': 'identifier',
+         'narrow_mappings': ['schema:url'],
+         'related_mappings': ['mi:url']} })
 
 
 class Video(File):
@@ -12265,11 +12484,14 @@ class Video(File):
          'exact_mappings': ['schema:identifier'],
          'slot_uri': 'dct:identifier'} })
     iri: Optional[list[str]] = Field(default=None, title="IRI", description="""International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs""", json_schema_extra = { "linkml_meta": {'alias': 'iri',
+         'close_mappings': ['biolink:iri'],
          'comments': ['An IRI is a global identifier standardized by IETF RFC 3987. It '
                       'may or may not be resolvable on the web. IRIs include URIs, and '
                       'URIs include URLs'],
          'domain_of': ['Resource'],
-         'is_a': 'identifier'} })
+         'is_a': 'identifier',
+         'narrow_mappings': ['schema:url'],
+         'related_mappings': ['mi:url']} })
 
 
 class Image(File):
@@ -12361,11 +12583,14 @@ class Image(File):
          'exact_mappings': ['schema:identifier'],
          'slot_uri': 'dct:identifier'} })
     iri: Optional[list[str]] = Field(default=None, title="IRI", description="""International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs""", json_schema_extra = { "linkml_meta": {'alias': 'iri',
+         'close_mappings': ['biolink:iri'],
          'comments': ['An IRI is a global identifier standardized by IETF RFC 3987. It '
                       'may or may not be resolvable on the web. IRIs include URIs, and '
                       'URIs include URLs'],
          'domain_of': ['Resource'],
-         'is_a': 'identifier'} })
+         'is_a': 'identifier',
+         'narrow_mappings': ['schema:url'],
+         'related_mappings': ['mi:url']} })
 
 
 class ContactPoint(Resource):
@@ -12588,11 +12813,14 @@ class ContactPoint(Resource):
          'exact_mappings': ['schema:identifier'],
          'slot_uri': 'dct:identifier'} })
     iri: Optional[list[str]] = Field(default=None, title="IRI", description="""International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs""", json_schema_extra = { "linkml_meta": {'alias': 'iri',
+         'close_mappings': ['biolink:iri'],
          'comments': ['An IRI is a global identifier standardized by IETF RFC 3987. It '
                       'may or may not be resolvable on the web. IRIs include URIs, and '
                       'URIs include URLs'],
          'domain_of': ['Resource'],
-         'is_a': 'identifier'} })
+         'is_a': 'identifier',
+         'narrow_mappings': ['schema:url'],
+         'related_mappings': ['mi:url']} })
 
 
 class License(Resource):
@@ -12768,11 +12996,14 @@ class License(Resource):
          'exact_mappings': ['schema:identifier'],
          'slot_uri': 'dct:identifier'} })
     iri: Optional[list[str]] = Field(default=None, title="IRI", description="""International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs""", json_schema_extra = { "linkml_meta": {'alias': 'iri',
+         'close_mappings': ['biolink:iri'],
          'comments': ['An IRI is a global identifier standardized by IETF RFC 3987. It '
                       'may or may not be resolvable on the web. IRIs include URIs, and '
                       'URIs include URLs'],
          'domain_of': ['Resource'],
-         'is_a': 'identifier'} })
+         'is_a': 'identifier',
+         'narrow_mappings': ['schema:url'],
+         'related_mappings': ['mi:url']} })
 
 
 class Certification(Resource):
@@ -12938,11 +13169,14 @@ class Certification(Resource):
          'exact_mappings': ['schema:identifier'],
          'slot_uri': 'dct:identifier'} })
     iri: Optional[list[str]] = Field(default=None, title="IRI", description="""International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs""", json_schema_extra = { "linkml_meta": {'alias': 'iri',
+         'close_mappings': ['biolink:iri'],
          'comments': ['An IRI is a global identifier standardized by IETF RFC 3987. It '
                       'may or may not be resolvable on the web. IRIs include URIs, and '
                       'URIs include URLs'],
          'domain_of': ['Resource'],
-         'is_a': 'identifier'} })
+         'is_a': 'identifier',
+         'narrow_mappings': ['schema:url'],
+         'related_mappings': ['mi:url']} })
 
 
 # Model rebuild
