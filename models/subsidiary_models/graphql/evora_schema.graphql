@@ -1,10 +1,12 @@
 # metamodel_version: 1.7.0
-# version: 1.0.9907
+# version: 1.0.9968
 type AlternateName
   {
     keyword: [String]
     dateIssued: Datetime
     dateModified: Datetime
+    identifier: [String]
+    iri: [Uri]
     title: String!
     description: String
     weight: Integer!
@@ -18,11 +20,12 @@ type Antibody
     keyword: [String]
     dateIssued: Datetime
     dateModified: Datetime
+    identifier: [String]
+    iri: [Uri]
     title: String!
     description: String!
     version: String!
     accessPointUrl: Uri!
-    refSku: String!
     unitDefinition: String
     category: ProductCategory!
     unitCost: Decimal
@@ -46,6 +49,7 @@ type Antibody
     internalReference: String
     note: String
     contactPoint: ContactPoint
+    refSku: String!
     additionalCategory: [ProductCategory]
     iataClassification: IataClassification!
     shippingConditions: String!
@@ -66,6 +70,8 @@ type Audio
     keyword: [String]
     dateIssued: Datetime
     dateModified: Datetime
+    identifier: [String]
+    iri: [Uri]
     name: String!
     description: String
     contentUrl: Uri!
@@ -78,11 +84,12 @@ type Bacterium
     keyword: [String]
     dateIssued: Datetime
     dateModified: Datetime
+    identifier: [String]
+    iri: [Uri]
     title: String!
     description: String!
     version: String!
     accessPointUrl: Uri!
-    refSku: String!
     unitDefinition: String
     category: ProductCategory!
     unitCost: Decimal
@@ -106,6 +113,7 @@ type Bacterium
     internalReference: String
     note: String
     contactPoint: ContactPoint
+    refSku: String!
     additionalCategory: [ProductCategory]
     iataClassification: IataClassification!
     shippingConditions: String!
@@ -139,6 +147,8 @@ type BiologicalMaterialOrigin
     keyword: [String]
     dateIssued: Datetime
     dateModified: Datetime
+    identifier: [String]
+    iri: [Uri]
     recombinantMaterial: Boolean!
     biologicalSourceType: Boolean!
     biologicalPartOrigin: [BiologicalPartOrigin]!
@@ -149,6 +159,8 @@ interface BiologicalPartOrigin
     keyword: [String]
     dateIssued: Datetime
     dateModified: Datetime
+    identifier: [String]
+    iri: [Uri]
     recombinantPartIdentification: RecombinantPartIdentification
     accessToPhysicalGeneticResource: Boolean!
   }
@@ -158,11 +170,12 @@ type Bundle
     keyword: [String]
     dateIssued: Datetime
     dateModified: Datetime
+    identifier: [String]
+    iri: [Uri]
     title: String!
     description: String!
     version: String!
     accessPointUrl: Uri!
-    refSku: String!
     unitDefinition: String
     category: ProductCategory!
     unitCost: Decimal
@@ -186,6 +199,7 @@ type Bundle
     internalReference: String
     note: String
     contactPoint: ContactPoint
+    refSku: String!
     additionalCategory: [ProductCategory]
     iataClassification: IataClassification!
     shippingConditions: String!
@@ -202,6 +216,8 @@ interface Catalogue
     keyword: [String]
     dateIssued: Datetime
     dateModified: Datetime
+    identifier: [String]
+    iri: [Uri]
     title: String!
     description: String!
     version: String!
@@ -212,6 +228,8 @@ type Certification
     keyword: [String]
     dateIssued: Datetime
     dateModified: Datetime
+    identifier: [String]
+    iri: [Uri]
     title: String!
     description: String
     logo: Image
@@ -224,6 +242,8 @@ type ClinicalGroup
     keyword: [String]
     dateIssued: Datetime
     dateModified: Datetime
+    identifier: [String]
+    iri: [Uri]
     title: String!
     description: String
     weight: Integer!
@@ -237,6 +257,8 @@ type Collection
     keyword: [String]
     dateIssued: Datetime
     dateModified: Datetime
+    identifier: [String]
+    iri: [Uri]
     title: String!
     description: String!
     version: String!
@@ -249,6 +271,8 @@ type CommonName
     keyword: [String]
     dateIssued: Datetime
     dateModified: Datetime
+    identifier: [String]
+    iri: [Uri]
     title: String!
     description: String
     weight: Integer!
@@ -262,6 +286,8 @@ type ContactPoint
     keyword: [String]
     dateIssued: Datetime
     dateModified: Datetime
+    identifier: [String]
+    iri: [Uri]
     name: String!
     description: String
     email: String
@@ -279,6 +305,8 @@ type Country
     keyword: [String]
     dateIssued: Datetime
     dateModified: Datetime
+    identifier: [String]
+    iri: [Uri]
     title: String!
     description: String
     weight: Integer!
@@ -291,6 +319,8 @@ type Data
     keyword: [String]
     dateIssued: Datetime
     dateModified: Datetime
+    identifier: [String]
+    iri: [Uri]
     name: String!
     description: String
     contentUrl: Uri!
@@ -303,6 +333,8 @@ type DataProvider
     keyword: [String]
     dateIssued: Datetime
     dateModified: Datetime
+    identifier: [String]
+    iri: [Uri]
     title: String!
     description: String
     endpointUrl: Uri!
@@ -322,6 +354,8 @@ interface DataService
     keyword: [String]
     dateIssued: Datetime
     dateModified: Datetime
+    identifier: [String]
+    iri: [Uri]
     title: String!
     description: String
     endpointUrl: Uri!
@@ -333,6 +367,8 @@ interface Dataset
     keyword: [String]
     dateIssued: Datetime
     dateModified: Datetime
+    identifier: [String]
+    iri: [Uri]
     title: String!
     description: String!
     version: String!
@@ -343,11 +379,12 @@ type DetectionKit
     keyword: [String]
     dateIssued: Datetime
     dateModified: Datetime
+    identifier: [String]
+    iri: [Uri]
     title: String!
     description: String!
     version: String!
     accessPointUrl: Uri!
-    refSku: String!
     unitDefinition: String
     category: ProductCategory!
     unitCost: Decimal
@@ -371,6 +408,7 @@ type DetectionKit
     internalReference: String
     note: String
     contactPoint: ContactPoint
+    refSku: String!
     additionalCategory: [ProductCategory]
     iataClassification: IataClassification!
     shippingConditions: String!
@@ -390,6 +428,8 @@ type Document
     keyword: [String]
     dateIssued: Datetime
     dateModified: Datetime
+    identifier: [String]
+    iri: [Uri]
     name: String!
     description: String
     contentUrl: Uri!
@@ -402,6 +442,8 @@ type Doi
     keyword: [String]
     dateIssued: Datetime
     dateModified: Datetime
+    identifier: [String]
+    iri: [Uri]
     title: String!
     description: String
     weight: Integer!
@@ -413,6 +455,8 @@ type ExpressionVector
     keyword: [String]
     dateIssued: Datetime
     dateModified: Datetime
+    identifier: [String]
+    iri: [Uri]
     title: String!
     description: String
     weight: Integer!
@@ -424,6 +468,8 @@ type ExternalRelatedReference
     keyword: [String]
     dateIssued: Datetime
     dateModified: Datetime
+    identifier: [String]
+    iri: [Uri]
     reference: String!
     referenceLabel: String!
     referenceProviderPrefix: String!
@@ -435,6 +481,8 @@ interface File
     keyword: [String]
     dateIssued: Datetime
     dateModified: Datetime
+    identifier: [String]
+    iri: [Uri]
     name: String!
     description: String
     contentUrl: Uri!
@@ -447,11 +495,12 @@ type Fungus
     keyword: [String]
     dateIssued: Datetime
     dateModified: Datetime
+    identifier: [String]
+    iri: [Uri]
     title: String!
     description: String!
     version: String!
     accessPointUrl: Uri!
-    refSku: String!
     unitDefinition: String
     category: ProductCategory!
     unitCost: Decimal
@@ -475,6 +524,7 @@ type Fungus
     internalReference: String
     note: String
     contactPoint: ContactPoint
+    refSku: String!
     additionalCategory: [ProductCategory]
     iataClassification: IataClassification!
     shippingConditions: String!
@@ -508,6 +558,8 @@ type GeographicalOrigin
     keyword: [String]
     dateIssued: Datetime
     dateModified: Datetime
+    identifier: [String]
+    iri: [Uri]
     title: String!
     description: String
     weight: Integer!
@@ -519,11 +571,12 @@ type Hybridoma
     keyword: [String]
     dateIssued: Datetime
     dateModified: Datetime
+    identifier: [String]
+    iri: [Uri]
     title: String!
     description: String!
     version: String!
     accessPointUrl: Uri!
-    refSku: String!
     unitDefinition: String
     category: ProductCategory!
     unitCost: Decimal
@@ -547,6 +600,7 @@ type Hybridoma
     internalReference: String
     note: String
     contactPoint: ContactPoint
+    refSku: String!
     additionalCategory: [ProductCategory]
     iataClassification: IataClassification!
     shippingConditions: String!
@@ -568,6 +622,8 @@ type IataClassification
     keyword: [String]
     dateIssued: Datetime
     dateModified: Datetime
+    identifier: [String]
+    iri: [Uri]
     title: String!
     description: String
     weight: Integer!
@@ -579,6 +635,8 @@ type Image
     keyword: [String]
     dateIssued: Datetime
     dateModified: Datetime
+    identifier: [String]
+    iri: [Uri]
     name: String!
     description: String
     contentUrl: Uri!
@@ -592,6 +650,8 @@ type IplcOrigin
     keyword: [String]
     dateIssued: Datetime
     dateModified: Datetime
+    identifier: [String]
+    iri: [Uri]
     title: String!
     description: String
     weight: Integer!
@@ -603,6 +663,8 @@ type IsolationHost
     keyword: [String]
     dateIssued: Datetime
     dateModified: Datetime
+    identifier: [String]
+    iri: [Uri]
     title: String!
     description: String
     weight: Integer!
@@ -614,6 +676,8 @@ type Journal
     keyword: [String]
     dateIssued: Datetime
     dateModified: Datetime
+    identifier: [String]
+    iri: [Uri]
     title: String!
     description: String
     weight: Integer!
@@ -625,6 +689,8 @@ type Keyword
     keyword: [String]
     dateIssued: Datetime
     dateModified: Datetime
+    identifier: [String]
+    iri: [Uri]
     title: String!
     description: String
     weight: Integer!
@@ -636,6 +702,8 @@ type License
     keyword: [String]
     dateIssued: Datetime
     dateModified: Datetime
+    identifier: [String]
+    iri: [Uri]
     title: String!
     description: String
     resourceUrl: Uri
@@ -648,6 +716,8 @@ type MaterialSafetyDataSheet
     keyword: [String]
     dateIssued: Datetime
     dateModified: Datetime
+    identifier: [String]
+    iri: [Uri]
     materialSafetyContact: ContactPoint!
     physicalChemicalProperties: String
     hazardsIdentification: String
@@ -670,6 +740,8 @@ type NaturalPartOrigin
     keyword: [String]
     dateIssued: Datetime
     dateModified: Datetime
+    identifier: [String]
+    iri: [Uri]
     recombinantPartIdentification: RecombinantPartIdentification
     accessToPhysicalGeneticResource: Boolean!
     countryOfCollection: Country!
@@ -684,11 +756,12 @@ type NucleicAcid
     keyword: [String]
     dateIssued: Datetime
     dateModified: Datetime
+    identifier: [String]
+    iri: [Uri]
     title: String!
     description: String!
     version: String!
     accessPointUrl: Uri!
-    refSku: String!
     unitDefinition: String
     category: ProductCategory!
     unitCost: Decimal
@@ -712,6 +785,7 @@ type NucleicAcid
     internalReference: String
     note: String
     contactPoint: ContactPoint
+    refSku: String!
     additionalCategory: [ProductCategory]
     iataClassification: IataClassification!
     shippingConditions: String!
@@ -741,6 +815,8 @@ type Organization
     keyword: [String]
     dateIssued: Datetime
     dateModified: Datetime
+    identifier: [String]
+    iri: [Uri]
     name: String!
     description: String
     homePage: Uri
@@ -756,6 +832,8 @@ type Originator
     keyword: [String]
     dateIssued: Datetime
     dateModified: Datetime
+    identifier: [String]
+    iri: [Uri]
     name: String!
     description: String
     homePage: Uri
@@ -768,11 +846,12 @@ interface Pathogen
     keyword: [String]
     dateIssued: Datetime
     dateModified: Datetime
+    identifier: [String]
+    iri: [Uri]
     title: String!
     description: String!
     version: String!
     accessPointUrl: Uri!
-    refSku: String!
     unitDefinition: String
     category: ProductCategory!
     unitCost: Decimal
@@ -796,6 +875,7 @@ interface Pathogen
     internalReference: String
     note: String
     contactPoint: ContactPoint
+    refSku: String!
     additionalCategory: [ProductCategory]
     iataClassification: IataClassification!
     shippingConditions: String!
@@ -829,6 +909,8 @@ type PathogenIdentification
     keyword: [String]
     dateIssued: Datetime
     dateModified: Datetime
+    identifier: [String]
+    iri: [Uri]
     taxon: Taxon!
     pathogenName: CommonName!
     pathogenType: String!
@@ -846,6 +928,8 @@ type PdbReference
     keyword: [String]
     dateIssued: Datetime
     dateModified: Datetime
+    identifier: [String]
+    iri: [Uri]
     title: String!
     description: String
     weight: Integer!
@@ -857,6 +941,8 @@ type Person
     keyword: [String]
     dateIssued: Datetime
     dateModified: Datetime
+    identifier: [String]
+    iri: [Uri]
     name: String!
     description: String
     homePage: Uri
@@ -870,6 +956,8 @@ type PersonOrOrganization
     keyword: [String]
     dateIssued: Datetime
     dateModified: Datetime
+    identifier: [String]
+    iri: [Uri]
     name: String!
     description: String
     homePage: Uri
@@ -882,6 +970,8 @@ type PlasmidSelection
     keyword: [String]
     dateIssued: Datetime
     dateModified: Datetime
+    identifier: [String]
+    iri: [Uri]
     title: String!
     description: String
     weight: Integer!
@@ -893,11 +983,12 @@ type Prion
     keyword: [String]
     dateIssued: Datetime
     dateModified: Datetime
+    identifier: [String]
+    iri: [Uri]
     title: String!
     description: String!
     version: String!
     accessPointUrl: Uri!
-    refSku: String!
     unitDefinition: String
     category: ProductCategory!
     unitCost: Decimal
@@ -921,6 +1012,7 @@ type Prion
     internalReference: String
     note: String
     contactPoint: ContactPoint
+    refSku: String!
     additionalCategory: [ProductCategory]
     iataClassification: IataClassification!
     shippingConditions: String!
@@ -954,11 +1046,12 @@ type Product
     keyword: [String]
     dateIssued: Datetime
     dateModified: Datetime
+    identifier: [String]
+    iri: [Uri]
     title: String!
     description: String!
     version: String!
     accessPointUrl: Uri!
-    refSku: String!
     unitDefinition: String
     category: ProductCategory!
     unitCost: Decimal
@@ -982,6 +1075,7 @@ type Product
     internalReference: String
     note: String
     contactPoint: ContactPoint
+    refSku: String!
     additionalCategory: [ProductCategory]
     iataClassification: IataClassification!
     shippingConditions: String!
@@ -997,6 +1091,8 @@ type ProductCategory
     keyword: [String]
     dateIssued: Datetime
     dateModified: Datetime
+    identifier: [String]
+    iri: [Uri]
     title: String!
     description: String
     weight: Integer!
@@ -1009,6 +1105,8 @@ type ProductionCellLine
     keyword: [String]
     dateIssued: Datetime
     dateModified: Datetime
+    identifier: [String]
+    iri: [Uri]
     title: String!
     description: String
     weight: Integer!
@@ -1020,6 +1118,8 @@ interface ProductOrService
     keyword: [String]
     dateIssued: Datetime
     dateModified: Datetime
+    identifier: [String]
+    iri: [Uri]
     title: String!
     description: String!
     version: String!
@@ -1056,6 +1156,8 @@ type PropagationHost
     keyword: [String]
     dateIssued: Datetime
     dateModified: Datetime
+    identifier: [String]
+    iri: [Uri]
     title: String!
     description: String
     weight: Integer!
@@ -1067,11 +1169,12 @@ type Protein
     keyword: [String]
     dateIssued: Datetime
     dateModified: Datetime
+    identifier: [String]
+    iri: [Uri]
     title: String!
     description: String!
     version: String!
     accessPointUrl: Uri!
-    refSku: String!
     unitDefinition: String
     category: ProductCategory!
     unitCost: Decimal
@@ -1095,6 +1198,7 @@ type Protein
     internalReference: String
     note: String
     contactPoint: ContactPoint
+    refSku: String!
     additionalCategory: [ProductCategory]
     iataClassification: IataClassification!
     shippingConditions: String!
@@ -1124,11 +1228,12 @@ type Protozoan
     keyword: [String]
     dateIssued: Datetime
     dateModified: Datetime
+    identifier: [String]
+    iri: [Uri]
     title: String!
     description: String!
     version: String!
     accessPointUrl: Uri!
-    refSku: String!
     unitDefinition: String
     category: ProductCategory!
     unitCost: Decimal
@@ -1152,6 +1257,7 @@ type Protozoan
     internalReference: String
     note: String
     contactPoint: ContactPoint
+    refSku: String!
     additionalCategory: [ProductCategory]
     iataClassification: IataClassification!
     shippingConditions: String!
@@ -1185,6 +1291,8 @@ type Provider
     keyword: [String]
     dateIssued: Datetime
     dateModified: Datetime
+    identifier: [String]
+    iri: [Uri]
     name: String!
     description: String
     homePage: Uri
@@ -1201,6 +1309,8 @@ type Publication
     keyword: [String]
     dateIssued: Datetime
     dateModified: Datetime
+    identifier: [String]
+    iri: [Uri]
     title: String!
     authors: String!
     abstract: String!
@@ -1213,6 +1323,8 @@ type ReasearchInfrastructure
     keyword: [String]
     dateIssued: Datetime
     dateModified: Datetime
+    identifier: [String]
+    iri: [Uri]
     name: String!
     description: String
     homePage: Uri
@@ -1228,6 +1340,8 @@ type RecombinantPartIdentification
     keyword: [String]
     dateIssued: Datetime
     dateModified: Datetime
+    identifier: [String]
+    iri: [Uri]
     partIdentification: String!
     sequence: [Sequence]!
   }
@@ -1237,6 +1351,8 @@ interface Resource
     keyword: [String]
     dateIssued: Datetime
     dateModified: Datetime
+    identifier: [String]
+    iri: [Uri]
   }
 
 type RiskGroup
@@ -1244,6 +1360,8 @@ type RiskGroup
     keyword: [String]
     dateIssued: Datetime
     dateModified: Datetime
+    identifier: [String]
+    iri: [Uri]
     title: String!
     description: String
     weight: Integer!
@@ -1255,6 +1373,8 @@ type Sequence
     keyword: [String]
     dateIssued: Datetime
     dateModified: Datetime
+    identifier: [String]
+    iri: [Uri]
     sequenceReference: [SequenceReference]
     sequenceFasta: String
   }
@@ -1264,6 +1384,8 @@ type SequenceReference
     keyword: [String]
     dateIssued: Datetime
     dateModified: Datetime
+    identifier: [String]
+    iri: [Uri]
     accessionNumber: String!
     sequenceProvider: String!
   }
@@ -1273,11 +1395,12 @@ type Service
     keyword: [String]
     dateIssued: Datetime
     dateModified: Datetime
+    identifier: [String]
+    iri: [Uri]
     title: String!
     description: String!
     version: String!
     accessPointUrl: Uri!
-    refSku: String!
     unitDefinition: String
     category: ProductCategory!
     unitCost: Decimal
@@ -1301,6 +1424,7 @@ type Service
     internalReference: String
     note: String
     contactPoint: ContactPoint
+    refSku: String!
     additionalCategory: [ProductCategory]
     modelSpecies: String
     modelType: String
@@ -1311,6 +1435,8 @@ type SpecialFeature
     keyword: [String]
     dateIssued: Datetime
     dateModified: Datetime
+    identifier: [String]
+    iri: [Uri]
     title: String!
     description: String
     weight: Integer!
@@ -1322,6 +1448,8 @@ type SyntheticPartOrigin
     keyword: [String]
     dateIssued: Datetime
     dateModified: Datetime
+    identifier: [String]
+    iri: [Uri]
     recombinantPartIdentification: RecombinantPartIdentification
     accessToPhysicalGeneticResource: Boolean!
     modificationsFromTheReferenceSequences: Boolean!
@@ -1333,6 +1461,8 @@ type TagSequence
     keyword: [String]
     dateIssued: Datetime
     dateModified: Datetime
+    identifier: [String]
+    iri: [Uri]
     title: String!
     description: String
     weight: Integer!
@@ -1344,6 +1474,8 @@ type Taxon
     keyword: [String]
     dateIssued: Datetime
     dateModified: Datetime
+    identifier: [String]
+    iri: [Uri]
     title: String!
     description: String
     weight: Integer!
@@ -1362,6 +1494,8 @@ type TaxonomicRank
     keyword: [String]
     dateIssued: Datetime
     dateModified: Datetime
+    identifier: [String]
+    iri: [Uri]
     title: String!
     description: String
     weight: Integer!
@@ -1374,6 +1508,8 @@ type Taxonomy
     keyword: [String]
     dateIssued: Datetime
     dateModified: Datetime
+    identifier: [String]
+    iri: [Uri]
     title: String!
     description: String!
     taxon: [Taxon]!
@@ -1389,6 +1525,8 @@ interface Term
     keyword: [String]
     dateIssued: Datetime
     dateModified: Datetime
+    identifier: [String]
+    iri: [Uri]
     title: String!
     description: String
     weight: Integer!
@@ -1400,6 +1538,8 @@ type TransmissionMethod
     keyword: [String]
     dateIssued: Datetime
     dateModified: Datetime
+    identifier: [String]
+    iri: [Uri]
     title: String!
     description: String
     weight: Integer!
@@ -1411,6 +1551,8 @@ type Variant
     keyword: [String]
     dateIssued: Datetime
     dateModified: Datetime
+    identifier: [String]
+    iri: [Uri]
     title: String!
     description: String
     weight: Integer!
@@ -1424,6 +1566,8 @@ type Version
     keyword: [String]
     dateIssued: Datetime
     dateModified: Datetime
+    identifier: [String]
+    iri: [Uri]
     version: String!
     versionOf: String!
     resource: [Resource]
@@ -1434,6 +1578,8 @@ type Video
     keyword: [String]
     dateIssued: Datetime
     dateModified: Datetime
+    identifier: [String]
+    iri: [Uri]
     name: String!
     description: String
     contentUrl: Uri!
@@ -1446,11 +1592,12 @@ type Viroid
     keyword: [String]
     dateIssued: Datetime
     dateModified: Datetime
+    identifier: [String]
+    iri: [Uri]
     title: String!
     description: String!
     version: String!
     accessPointUrl: Uri!
-    refSku: String!
     unitDefinition: String
     category: ProductCategory!
     unitCost: Decimal
@@ -1474,6 +1621,7 @@ type Viroid
     internalReference: String
     note: String
     contactPoint: ContactPoint
+    refSku: String!
     additionalCategory: [ProductCategory]
     iataClassification: IataClassification!
     shippingConditions: String!
@@ -1507,11 +1655,12 @@ type Virus
     keyword: [String]
     dateIssued: Datetime
     dateModified: Datetime
+    identifier: [String]
+    iri: [Uri]
     title: String!
     description: String!
     version: String!
     accessPointUrl: Uri!
-    refSku: String!
     unitDefinition: String
     category: ProductCategory!
     unitCost: Decimal
@@ -1535,6 +1684,7 @@ type Virus
     internalReference: String
     note: String
     contactPoint: ContactPoint
+    refSku: String!
     additionalCategory: [ProductCategory]
     iataClassification: IataClassification!
     shippingConditions: String!
@@ -1571,6 +1721,8 @@ type VirusName
     keyword: [String]
     dateIssued: Datetime
     dateModified: Datetime
+    identifier: [String]
+    iri: [Uri]
     title: String!
     description: String
     weight: Integer!
@@ -1584,6 +1736,8 @@ type Vocabulary
     keyword: [String]
     dateIssued: Datetime
     dateModified: Datetime
+    identifier: [String]
+    iri: [Uri]
     title: String!
     description: String!
     version: String!

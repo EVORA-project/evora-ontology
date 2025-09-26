@@ -70,6 +70,8 @@ SELECT ?g ?s ?p WHERE {
    dcat:keyword,
    dct:issued,
    dct:modified,
+   dct:identifier,
+   EVORAO:iri,
    rdf:type ))
  }
  

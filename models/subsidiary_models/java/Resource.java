@@ -5,7 +5,7 @@ import lombok.*;
 
 
 
-/* version: 1.0.9907 */
+/* version: 1.0.9968 */
 
 
 /**
@@ -18,5 +18,7 @@ public abstract class Resource  {
   private List<String> keyword;
   private ZonedDateTime dateIssued;
   private ZonedDateTime dateModified;
+  private List<String> identifier;
+  private List<String> iri;
 
 }

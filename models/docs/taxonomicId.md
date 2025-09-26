@@ -12,7 +12,12 @@ _The taxonomic identifier as a persistent identifier accross releases_
 URI: [EVORAO:taxonomicId](https://w3id.org/evorao/taxonomicId)
 Alias: taxonomicId
 
-<!-- no inheritance hierarchy -->
+
+## Inheritance
+
+* [identifier](identifier.md)
+    * **taxonomicId**
+
 
 
 
@@ -33,6 +38,8 @@ Alias: taxonomicId
 ## Properties
 
 * Range: [String](String.md)
+
+* Multivalued: True
 
 * Required: True
 
@@ -85,12 +92,13 @@ broad_mappings:
 - schema:identifier
 - dct:identifier
 rank: 1000
+is_a: identifier
 alias: taxonomicId
 domain_of:
 - Taxon
 range: string
 required: true
-multivalued: false
+multivalued: true
 
 ```
 </details>

@@ -12,7 +12,12 @@ _The taxonomic_Node Identifier as an identifier specific the current taxon in th
 URI: [EVORAO:taxonomicNodeId](https://w3id.org/evorao/taxonomicNodeId)
 Alias: taxonomicNodeId
 
-<!-- no inheritance hierarchy -->
+
+## Inheritance
+
+* [identifier](identifier.md)
+    * **taxonomicNodeId**
+
 
 
 
@@ -33,6 +38,8 @@ Alias: taxonomicNodeId
 ## Properties
 
 * Range: [String](String.md)
+
+* Multivalued: True
 
 * Recommended: True
 
@@ -90,13 +97,14 @@ close_mappings:
 broad_mappings:
 - dct:identifier
 rank: 1000
+is_a: identifier
 alias: taxonomicNodeId
 domain_of:
 - Taxon
 range: string
 required: false
 recommended: true
-multivalued: false
+multivalued: true
 
 ```
 </details>

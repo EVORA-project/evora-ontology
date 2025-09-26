@@ -1,18 +1,23 @@
 
 
-# Slot: date issued (dateIssued) 
+# Slot: IRI (iri) 
 
 
-_Date of formal issuance (e.g., publication) of the resource_
+_International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs_
 
 
 
 
 
-URI: [dct:issued](http://purl.org/dc/terms/issued)
-Alias: dateIssued
+URI: [EVORAO:iri](https://w3id.org/evorao/iri)
+Alias: iri
 
-<!-- no inheritance hierarchy -->
+
+## Inheritance
+
+* [identifier](identifier.md)
+    * **iri**
+
 
 
 
@@ -108,7 +113,9 @@ Alias: dateIssued
 
 ## Properties
 
-* Range: [Datetime](Datetime.md)
+* Range: [Uri](Uri.md)
+
+* Multivalued: True
 
 
 
@@ -116,7 +123,7 @@ Alias: dateIssued
 
 ## Comments
 
-* encoded using the relevant ISO 8601 Date and Time compliant string [DATETIME]
+* An IRI is a global identifier standardized by IETF RFC 3987. It may or may not be resolvable on the web. IRIs include URIs, and URIs include URLs
 
 ## Identifier and Mapping Information
 
@@ -138,10 +145,8 @@ Alias: dateIssued
 
 | Mapping Type | Mapped Value |
 | ---  | ---  |
-| self | dct:issued |
-| native | EVORAO:dateIssued |
-| exact | sepio:0000051 |
-| close | schema:datePublished, schema:dateCreated |
+| self | EVORAO:iri |
+| native | EVORAO:iri |
 
 
 
@@ -150,25 +155,22 @@ Alias: dateIssued
 
 <details>
 ```yaml
-name: dateIssued
-description: Date of formal issuance (e.g., publication) of the resource
-title: date issued
+name: iri
+description: International Resource Identifier (IRI) that uniquely identifies or refers
+  to the resource. IRIs include URIs, and URIs include URLs
+title: IRI
 comments:
-- encoded using the relevant ISO 8601 Date and Time compliant string [DATETIME]
+- An IRI is a global identifier standardized by IETF RFC 3987. It may or may not be
+  resolvable on the web. IRIs include URIs, and URIs include URLs
 from_schema: https://w3id.org/evorao/
-exact_mappings:
-- sepio:0000051
-close_mappings:
-- schema:datePublished
-- schema:dateCreated
 rank: 1000
-slot_uri: dct:issued
-alias: dateIssued
+is_a: identifier
+alias: iri
 domain_of:
 - Resource
-range: datetime
+range: uri
 required: false
-multivalued: false
+multivalued: true
 
 ```
 </details>

@@ -137,9 +137,13 @@ URI: [EVORAO:Protein](https://w3id.org/evorao/Protein)
     click IataClassification href "../IataClassification"
 
         
+      Protein : identifier
+        
       Protein : inclusionBodiesType
         
       Protein : internalReference
+        
+      Protein : iri
         
       Protein : keyword
         
@@ -349,6 +353,8 @@ URI: [EVORAO:Protein](https://w3id.org/evorao/Protein)
 | [keyword](keyword.md) | * <br/> [String](String.md) | A keyword or tag describing the resource | [Resource](Resource.md) |
 | [dateIssued](dateIssued.md) | 0..1 <br/> [Datetime](Datetime.md) | Date of formal issuance (e | [Resource](Resource.md) |
 | [dateModified](dateModified.md) | 0..1 <br/> [Datetime](Datetime.md) | Most recent date on which the resource was changed, updated or modified | [Resource](Resource.md) |
+| [identifier](identifier.md) | * <br/> [String](String.md) | A unique identifier of the resource being described or cataloged | [Resource](Resource.md) |
+| [iri](iri.md) | * <br/> [Uri](Uri.md) | International Resource Identifier (IRI) that uniquely identifies or refers to... | [Resource](Resource.md) |
 
 
 
@@ -1236,6 +1242,7 @@ attributes:
     - dct:identifier
     - schema:identifier
     rank: 1000
+    is_a: identifier
     alias: refSku
     owner: Protein
     domain_of:
@@ -1804,6 +1811,44 @@ attributes:
     range: datetime
     required: false
     multivalued: false
+  identifier:
+    name: identifier
+    description: A unique identifier of the resource being described or cataloged
+    title: identifier
+    comments:
+    - The identifier is a text string which is assigned to the resource to provide
+      an unambiguous reference within a particular context. Persistent identifiers
+      should be provided as HTTP URIs
+    from_schema: https://w3id.org/evorao/
+    exact_mappings:
+    - schema:identifier
+    rank: 1000
+    slot_uri: dct:identifier
+    alias: identifier
+    owner: Protein
+    domain_of:
+    - Resource
+    range: string
+    required: false
+    multivalued: true
+  iri:
+    name: iri
+    description: International Resource Identifier (IRI) that uniquely identifies
+      or refers to the resource. IRIs include URIs, and URIs include URLs
+    title: IRI
+    comments:
+    - An IRI is a global identifier standardized by IETF RFC 3987. It may or may not
+      be resolvable on the web. IRIs include URIs, and URIs include URLs
+    from_schema: https://w3id.org/evorao/
+    rank: 1000
+    is_a: identifier
+    alias: iri
+    owner: Protein
+    domain_of:
+    - Resource
+    range: uri
+    required: false
+    multivalued: true
 
 ```
 </details>

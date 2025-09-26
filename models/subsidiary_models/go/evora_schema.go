@@ -16,6 +16,14 @@ type Resource struct {
 	 * Most recent date on which the resource was changed, updated or modified
 	 */
 	DateModified string `json:"dateModified"`
+	/*
+	 * A unique identifier of the resource being described or cataloged
+	 */
+	Identifier string `json:"identifier"`
+	/*
+	 * International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs
+	 */
+	Iri string `json:"iri"`
 }
 
 /*
@@ -50,6 +58,14 @@ type Dataset struct {
 	 * Most recent date on which the resource was changed, updated or modified
 	 */
 	DateModified string `json:"dateModified"`
+	/*
+	 * A unique identifier of the resource being described or cataloged
+	 */
+	Identifier string `json:"identifier"`
+	/*
+	 * International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs
+	 */
+	Iri string `json:"iri"`
 }
 
 /*
@@ -88,6 +104,14 @@ type DataService struct {
 	 * Most recent date on which the resource was changed, updated or modified
 	 */
 	DateModified string `json:"dateModified"`
+	/*
+	 * A unique identifier of the resource being described or cataloged
+	 */
+	Identifier string `json:"identifier"`
+	/*
+	 * International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs
+	 */
+	Iri string `json:"iri"`
 }
 
 /*
@@ -122,6 +146,14 @@ type Version struct {
 	 * Most recent date on which the resource was changed, updated or modified
 	 */
 	DateModified string `json:"dateModified"`
+	/*
+	 * A unique identifier of the resource being described or cataloged
+	 */
+	Identifier string `json:"identifier"`
+	/*
+	 * International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs
+	 */
+	Iri string `json:"iri"`
 }
 
 /*
@@ -156,6 +188,14 @@ type Catalogue struct {
 	 * Most recent date on which the resource was changed, updated or modified
 	 */
 	DateModified string `json:"dateModified"`
+	/*
+	 * A unique identifier of the resource being described or cataloged
+	 */
+	Identifier string `json:"identifier"`
+	/*
+	 * International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs
+	 */
+	Iri string `json:"iri"`
 }
 
 /*
@@ -210,6 +250,14 @@ type Taxonomy struct {
 	 * Most recent date on which the resource was changed, updated or modified
 	 */
 	DateModified string `json:"dateModified"`
+	/*
+	 * A unique identifier of the resource being described or cataloged
+	 */
+	Identifier string `json:"identifier"`
+	/*
+	 * International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs
+	 */
+	Iri string `json:"iri"`
 }
 
 /*
@@ -280,6 +328,14 @@ type DataProvider struct {
 	 * Most recent date on which the resource was changed, updated or modified
 	 */
 	DateModified string `json:"dateModified"`
+	/*
+	 * A unique identifier of the resource being described or cataloged
+	 */
+	Identifier string `json:"identifier"`
+	/*
+	 * International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs
+	 */
+	Iri string `json:"iri"`
 }
 
 /*
@@ -342,6 +398,14 @@ type PathogenIdentification struct {
 	 * Most recent date on which the resource was changed, updated or modified
 	 */
 	DateModified string `json:"dateModified"`
+	/*
+	 * A unique identifier of the resource being described or cataloged
+	 */
+	Identifier string `json:"identifier"`
+	/*
+	 * International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs
+	 */
+	Iri string `json:"iri"`
 }
 
 /*
@@ -384,6 +448,14 @@ type Publication struct {
 	 * Most recent date on which the resource was changed, updated or modified
 	 */
 	DateModified string `json:"dateModified"`
+	/*
+	 * A unique identifier of the resource being described or cataloged
+	 */
+	Identifier string `json:"identifier"`
+	/*
+	 * International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs
+	 */
+	Iri string `json:"iri"`
 }
 
 /*
@@ -426,6 +498,14 @@ type Vocabulary struct {
 	 * Most recent date on which the resource was changed, updated or modified
 	 */
 	DateModified string `json:"dateModified"`
+	/*
+	 * A unique identifier of the resource being described or cataloged
+	 */
+	Identifier string `json:"identifier"`
+	/*
+	 * International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs
+	 */
+	Iri string `json:"iri"`
 }
 
 /*
@@ -464,6 +544,14 @@ type Term struct {
 	 * Most recent date on which the resource was changed, updated or modified
 	 */
 	DateModified string `json:"dateModified"`
+	/*
+	 * A unique identifier of the resource being described or cataloged
+	 */
+	Identifier string `json:"identifier"`
+	/*
+	 * International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs
+	 */
+	Iri string `json:"iri"`
 }
 
 /*
@@ -510,6 +598,14 @@ type CommonName struct {
 	 * Most recent date on which the resource was changed, updated or modified
 	 */
 	DateModified string `json:"dateModified"`
+	/*
+	 * A unique identifier of the resource being described or cataloged
+	 */
+	Identifier string `json:"identifier"`
+	/*
+	 * International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs
+	 */
+	Iri string `json:"iri"`
 }
 
 /*
@@ -556,6 +652,14 @@ type VirusName struct {
 	 * Most recent date on which the resource was changed, updated or modified
 	 */
 	DateModified string `json:"dateModified"`
+	/*
+	 * A unique identifier of the resource being described or cataloged
+	 */
+	Identifier string `json:"identifier"`
+	/*
+	 * International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs
+	 */
+	Iri string `json:"iri"`
 }
 
 /*
@@ -602,6 +706,14 @@ type AlternateName struct {
 	 * Most recent date on which the resource was changed, updated or modified
 	 */
 	DateModified string `json:"dateModified"`
+	/*
+	 * A unique identifier of the resource being described or cataloged
+	 */
+	Identifier string `json:"identifier"`
+	/*
+	 * International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs
+	 */
+	Iri string `json:"iri"`
 }
 
 /*
@@ -640,6 +752,14 @@ type RiskGroup struct {
 	 * Most recent date on which the resource was changed, updated or modified
 	 */
 	DateModified string `json:"dateModified"`
+	/*
+	 * A unique identifier of the resource being described or cataloged
+	 */
+	Identifier string `json:"identifier"`
+	/*
+	 * International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs
+	 */
+	Iri string `json:"iri"`
 }
 
 /*
@@ -678,6 +798,14 @@ type Doi struct {
 	 * Most recent date on which the resource was changed, updated or modified
 	 */
 	DateModified string `json:"dateModified"`
+	/*
+	 * A unique identifier of the resource being described or cataloged
+	 */
+	Identifier string `json:"identifier"`
+	/*
+	 * International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs
+	 */
+	Iri string `json:"iri"`
 }
 
 /*
@@ -716,6 +844,14 @@ type Journal struct {
 	 * Most recent date on which the resource was changed, updated or modified
 	 */
 	DateModified string `json:"dateModified"`
+	/*
+	 * A unique identifier of the resource being described or cataloged
+	 */
+	Identifier string `json:"identifier"`
+	/*
+	 * International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs
+	 */
+	Iri string `json:"iri"`
 }
 
 /*
@@ -754,6 +890,14 @@ type PdbReference struct {
 	 * Most recent date on which the resource was changed, updated or modified
 	 */
 	DateModified string `json:"dateModified"`
+	/*
+	 * A unique identifier of the resource being described or cataloged
+	 */
+	Identifier string `json:"identifier"`
+	/*
+	 * International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs
+	 */
+	Iri string `json:"iri"`
 }
 
 /*
@@ -792,6 +936,14 @@ type Keyword struct {
 	 * Most recent date on which the resource was changed, updated or modified
 	 */
 	DateModified string `json:"dateModified"`
+	/*
+	 * A unique identifier of the resource being described or cataloged
+	 */
+	Identifier string `json:"identifier"`
+	/*
+	 * International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs
+	 */
+	Iri string `json:"iri"`
 }
 
 /*
@@ -830,6 +982,14 @@ type TagSequence struct {
 	 * Most recent date on which the resource was changed, updated or modified
 	 */
 	DateModified string `json:"dateModified"`
+	/*
+	 * A unique identifier of the resource being described or cataloged
+	 */
+	Identifier string `json:"identifier"`
+	/*
+	 * International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs
+	 */
+	Iri string `json:"iri"`
 }
 
 /*
@@ -868,6 +1028,14 @@ type SpecialFeature struct {
 	 * Most recent date on which the resource was changed, updated or modified
 	 */
 	DateModified string `json:"dateModified"`
+	/*
+	 * A unique identifier of the resource being described or cataloged
+	 */
+	Identifier string `json:"identifier"`
+	/*
+	 * International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs
+	 */
+	Iri string `json:"iri"`
 }
 
 /*
@@ -906,6 +1074,14 @@ type ExpressionVector struct {
 	 * Most recent date on which the resource was changed, updated or modified
 	 */
 	DateModified string `json:"dateModified"`
+	/*
+	 * A unique identifier of the resource being described or cataloged
+	 */
+	Identifier string `json:"identifier"`
+	/*
+	 * International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs
+	 */
+	Iri string `json:"iri"`
 }
 
 /*
@@ -944,6 +1120,14 @@ type PlasmidSelection struct {
 	 * Most recent date on which the resource was changed, updated or modified
 	 */
 	DateModified string `json:"dateModified"`
+	/*
+	 * A unique identifier of the resource being described or cataloged
+	 */
+	Identifier string `json:"identifier"`
+	/*
+	 * International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs
+	 */
+	Iri string `json:"iri"`
 }
 
 /*
@@ -982,6 +1166,14 @@ type PropagationHost struct {
 	 * Most recent date on which the resource was changed, updated or modified
 	 */
 	DateModified string `json:"dateModified"`
+	/*
+	 * A unique identifier of the resource being described or cataloged
+	 */
+	Identifier string `json:"identifier"`
+	/*
+	 * International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs
+	 */
+	Iri string `json:"iri"`
 }
 
 /*
@@ -1020,6 +1212,14 @@ type TransmissionMethod struct {
 	 * Most recent date on which the resource was changed, updated or modified
 	 */
 	DateModified string `json:"dateModified"`
+	/*
+	 * A unique identifier of the resource being described or cataloged
+	 */
+	Identifier string `json:"identifier"`
+	/*
+	 * International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs
+	 */
+	Iri string `json:"iri"`
 }
 
 /*
@@ -1058,6 +1258,14 @@ type ProductionCellLine struct {
 	 * Most recent date on which the resource was changed, updated or modified
 	 */
 	DateModified string `json:"dateModified"`
+	/*
+	 * A unique identifier of the resource being described or cataloged
+	 */
+	Identifier string `json:"identifier"`
+	/*
+	 * International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs
+	 */
+	Iri string `json:"iri"`
 }
 
 /*
@@ -1100,6 +1308,14 @@ type ProductCategory struct {
 	 * Most recent date on which the resource was changed, updated or modified
 	 */
 	DateModified string `json:"dateModified"`
+	/*
+	 * A unique identifier of the resource being described or cataloged
+	 */
+	Identifier string `json:"identifier"`
+	/*
+	 * International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs
+	 */
+	Iri string `json:"iri"`
 }
 
 /*
@@ -1138,6 +1354,14 @@ type IsolationHost struct {
 	 * Most recent date on which the resource was changed, updated or modified
 	 */
 	DateModified string `json:"dateModified"`
+	/*
+	 * A unique identifier of the resource being described or cataloged
+	 */
+	Identifier string `json:"identifier"`
+	/*
+	 * International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs
+	 */
+	Iri string `json:"iri"`
 }
 
 /*
@@ -1176,6 +1400,14 @@ type GeographicalOrigin struct {
 	 * Most recent date on which the resource was changed, updated or modified
 	 */
 	DateModified string `json:"dateModified"`
+	/*
+	 * A unique identifier of the resource being described or cataloged
+	 */
+	Identifier string `json:"identifier"`
+	/*
+	 * International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs
+	 */
+	Iri string `json:"iri"`
 }
 
 /*
@@ -1214,6 +1446,14 @@ type IplcOrigin struct {
 	 * Most recent date on which the resource was changed, updated or modified
 	 */
 	DateModified string `json:"dateModified"`
+	/*
+	 * A unique identifier of the resource being described or cataloged
+	 */
+	Identifier string `json:"identifier"`
+	/*
+	 * International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs
+	 */
+	Iri string `json:"iri"`
 }
 
 /*
@@ -1256,6 +1496,14 @@ type Country struct {
 	 * Most recent date on which the resource was changed, updated or modified
 	 */
 	DateModified string `json:"dateModified"`
+	/*
+	 * A unique identifier of the resource being described or cataloged
+	 */
+	Identifier string `json:"identifier"`
+	/*
+	 * International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs
+	 */
+	Iri string `json:"iri"`
 }
 
 /*
@@ -1294,6 +1542,14 @@ type IataClassification struct {
 	 * Most recent date on which the resource was changed, updated or modified
 	 */
 	DateModified string `json:"dateModified"`
+	/*
+	 * A unique identifier of the resource being described or cataloged
+	 */
+	Identifier string `json:"identifier"`
+	/*
+	 * International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs
+	 */
+	Iri string `json:"iri"`
 }
 
 /*
@@ -1340,6 +1596,14 @@ type Variant struct {
 	 * Most recent date on which the resource was changed, updated or modified
 	 */
 	DateModified string `json:"dateModified"`
+	/*
+	 * A unique identifier of the resource being described or cataloged
+	 */
+	Identifier string `json:"identifier"`
+	/*
+	 * International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs
+	 */
+	Iri string `json:"iri"`
 }
 
 /*
@@ -1382,6 +1646,14 @@ type TaxonomicRank struct {
 	 * Most recent date on which the resource was changed, updated or modified
 	 */
 	DateModified string `json:"dateModified"`
+	/*
+	 * A unique identifier of the resource being described or cataloged
+	 */
+	Identifier string `json:"identifier"`
+	/*
+	 * International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs
+	 */
+	Iri string `json:"iri"`
 }
 
 /*
@@ -1448,6 +1720,14 @@ type Taxon struct {
 	 * Most recent date on which the resource was changed, updated or modified
 	 */
 	DateModified string `json:"dateModified"`
+	/*
+	 * A unique identifier of the resource being described or cataloged
+	 */
+	Identifier string `json:"identifier"`
+	/*
+	 * International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs
+	 */
+	Iri string `json:"iri"`
 }
 
 /*
@@ -1494,6 +1774,14 @@ type ClinicalGroup struct {
 	 * Most recent date on which the resource was changed, updated or modified
 	 */
 	DateModified string `json:"dateModified"`
+	/*
+	 * A unique identifier of the resource being described or cataloged
+	 */
+	Identifier string `json:"identifier"`
+	/*
+	 * International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs
+	 */
+	Iri string `json:"iri"`
 }
 
 /*
@@ -1532,6 +1820,14 @@ type ExternalRelatedReference struct {
 	 * Most recent date on which the resource was changed, updated or modified
 	 */
 	DateModified string `json:"dateModified"`
+	/*
+	 * A unique identifier of the resource being described or cataloged
+	 */
+	Identifier string `json:"identifier"`
+	/*
+	 * International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs
+	 */
+	Iri string `json:"iri"`
 }
 
 /*
@@ -1562,6 +1858,14 @@ type Sequence struct {
 	 * Most recent date on which the resource was changed, updated or modified
 	 */
 	DateModified string `json:"dateModified"`
+	/*
+	 * A unique identifier of the resource being described or cataloged
+	 */
+	Identifier string `json:"identifier"`
+	/*
+	 * International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs
+	 */
+	Iri string `json:"iri"`
 }
 
 /*
@@ -1592,6 +1896,14 @@ type SequenceReference struct {
 	 * Most recent date on which the resource was changed, updated or modified
 	 */
 	DateModified string `json:"dateModified"`
+	/*
+	 * A unique identifier of the resource being described or cataloged
+	 */
+	Identifier string `json:"identifier"`
+	/*
+	 * International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs
+	 */
+	Iri string `json:"iri"`
 }
 
 /*
@@ -1634,6 +1946,14 @@ type PersonOrOrganization struct {
 	 * Most recent date on which the resource was changed, updated or modified
 	 */
 	DateModified string `json:"dateModified"`
+	/*
+	 * A unique identifier of the resource being described or cataloged
+	 */
+	Identifier string `json:"identifier"`
+	/*
+	 * International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs
+	 */
+	Iri string `json:"iri"`
 }
 
 /*
@@ -1680,6 +2000,14 @@ type Person struct {
 	 * Most recent date on which the resource was changed, updated or modified
 	 */
 	DateModified string `json:"dateModified"`
+	/*
+	 * A unique identifier of the resource being described or cataloged
+	 */
+	Identifier string `json:"identifier"`
+	/*
+	 * International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs
+	 */
+	Iri string `json:"iri"`
 }
 
 /*
@@ -1734,6 +2062,14 @@ type Organization struct {
 	 * Most recent date on which the resource was changed, updated or modified
 	 */
 	DateModified string `json:"dateModified"`
+	/*
+	 * A unique identifier of the resource being described or cataloged
+	 */
+	Identifier string `json:"identifier"`
+	/*
+	 * International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs
+	 */
+	Iri string `json:"iri"`
 }
 
 /*
@@ -1788,6 +2124,14 @@ type ReasearchInfrastructure struct {
 	 * Most recent date on which the resource was changed, updated or modified
 	 */
 	DateModified string `json:"dateModified"`
+	/*
+	 * A unique identifier of the resource being described or cataloged
+	 */
+	Identifier string `json:"identifier"`
+	/*
+	 * International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs
+	 */
+	Iri string `json:"iri"`
 }
 
 /*
@@ -1846,6 +2190,14 @@ type Provider struct {
 	 * Most recent date on which the resource was changed, updated or modified
 	 */
 	DateModified string `json:"dateModified"`
+	/*
+	 * A unique identifier of the resource being described or cataloged
+	 */
+	Identifier string `json:"identifier"`
+	/*
+	 * International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs
+	 */
+	Iri string `json:"iri"`
 }
 
 /*
@@ -1888,6 +2240,14 @@ type Originator struct {
 	 * Most recent date on which the resource was changed, updated or modified
 	 */
 	DateModified string `json:"dateModified"`
+	/*
+	 * A unique identifier of the resource being described or cataloged
+	 */
+	Identifier string `json:"identifier"`
+	/*
+	 * International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs
+	 */
+	Iri string `json:"iri"`
 }
 
 /*
@@ -1922,6 +2282,14 @@ type BiologicalMaterialOrigin struct {
 	 * Most recent date on which the resource was changed, updated or modified
 	 */
 	DateModified string `json:"dateModified"`
+	/*
+	 * A unique identifier of the resource being described or cataloged
+	 */
+	Identifier string `json:"identifier"`
+	/*
+	 * International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs
+	 */
+	Iri string `json:"iri"`
 }
 
 /*
@@ -1952,6 +2320,14 @@ type BiologicalPartOrigin struct {
 	 * Most recent date on which the resource was changed, updated or modified
 	 */
 	DateModified string `json:"dateModified"`
+	/*
+	 * A unique identifier of the resource being described or cataloged
+	 */
+	Identifier string `json:"identifier"`
+	/*
+	 * International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs
+	 */
+	Iri string `json:"iri"`
 }
 
 /*
@@ -2002,6 +2378,14 @@ type NaturalPartOrigin struct {
 	 * Most recent date on which the resource was changed, updated or modified
 	 */
 	DateModified string `json:"dateModified"`
+	/*
+	 * A unique identifier of the resource being described or cataloged
+	 */
+	Identifier string `json:"identifier"`
+	/*
+	 * International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs
+	 */
+	Iri string `json:"iri"`
 }
 
 /*
@@ -2040,6 +2424,14 @@ type SyntheticPartOrigin struct {
 	 * Most recent date on which the resource was changed, updated or modified
 	 */
 	DateModified string `json:"dateModified"`
+	/*
+	 * A unique identifier of the resource being described or cataloged
+	 */
+	Identifier string `json:"identifier"`
+	/*
+	 * International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs
+	 */
+	Iri string `json:"iri"`
 }
 
 /*
@@ -2070,6 +2462,14 @@ type RecombinantPartIdentification struct {
 	 * Most recent date on which the resource was changed, updated or modified
 	 */
 	DateModified string `json:"dateModified"`
+	/*
+	 * A unique identifier of the resource being described or cataloged
+	 */
+	Identifier string `json:"identifier"`
+	/*
+	 * International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs
+	 */
+	Iri string `json:"iri"`
 }
 
 /*
@@ -2112,6 +2512,14 @@ type Collection struct {
 	 * Most recent date on which the resource was changed, updated or modified
 	 */
 	DateModified string `json:"dateModified"`
+	/*
+	 * A unique identifier of the resource being described or cataloged
+	 */
+	Identifier string `json:"identifier"`
+	/*
+	 * International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs
+	 */
+	Iri string `json:"iri"`
 }
 
 /*
@@ -2250,6 +2658,14 @@ type ProductOrService struct {
 	 * Most recent date on which the resource was changed, updated or modified
 	 */
 	DateModified string `json:"dateModified"`
+	/*
+	 * A unique identifier of the resource being described or cataloged
+	 */
+	Identifier string `json:"identifier"`
+	/*
+	 * International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs
+	 */
+	Iri string `json:"iri"`
 }
 
 /*
@@ -2396,6 +2812,14 @@ type Service struct {
 	 * Most recent date on which the resource was changed, updated or modified
 	 */
 	DateModified string `json:"dateModified"`
+	/*
+	 * A unique identifier of the resource being described or cataloged
+	 */
+	Identifier string `json:"identifier"`
+	/*
+	 * International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs
+	 */
+	Iri string `json:"iri"`
 }
 
 /*
@@ -2562,6 +2986,14 @@ type Product struct {
 	 * Most recent date on which the resource was changed, updated or modified
 	 */
 	DateModified string `json:"dateModified"`
+	/*
+	 * A unique identifier of the resource being described or cataloged
+	 */
+	Identifier string `json:"identifier"`
+	/*
+	 * International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs
+	 */
+	Iri string `json:"iri"`
 }
 
 /*
@@ -2748,6 +3180,14 @@ type Antibody struct {
 	 * Most recent date on which the resource was changed, updated or modified
 	 */
 	DateModified string `json:"dateModified"`
+	/*
+	 * A unique identifier of the resource being described or cataloged
+	 */
+	Identifier string `json:"identifier"`
+	/*
+	 * International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs
+	 */
+	Iri string `json:"iri"`
 }
 
 /*
@@ -2938,6 +3378,14 @@ type Hybridoma struct {
 	 * Most recent date on which the resource was changed, updated or modified
 	 */
 	DateModified string `json:"dateModified"`
+	/*
+	 * A unique identifier of the resource being described or cataloged
+	 */
+	Identifier string `json:"identifier"`
+	/*
+	 * International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs
+	 */
+	Iri string `json:"iri"`
 }
 
 /*
@@ -3160,6 +3608,14 @@ type Protein struct {
 	 * Most recent date on which the resource was changed, updated or modified
 	 */
 	DateModified string `json:"dateModified"`
+	/*
+	 * A unique identifier of the resource being described or cataloged
+	 */
+	Identifier string `json:"identifier"`
+	/*
+	 * International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs
+	 */
+	Iri string `json:"iri"`
 }
 
 /*
@@ -3382,6 +3838,14 @@ type NucleicAcid struct {
 	 * Most recent date on which the resource was changed, updated or modified
 	 */
 	DateModified string `json:"dateModified"`
+	/*
+	 * A unique identifier of the resource being described or cataloged
+	 */
+	Identifier string `json:"identifier"`
+	/*
+	 * International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs
+	 */
+	Iri string `json:"iri"`
 }
 
 /*
@@ -3564,6 +4028,14 @@ type DetectionKit struct {
 	 * Most recent date on which the resource was changed, updated or modified
 	 */
 	DateModified string `json:"dateModified"`
+	/*
+	 * A unique identifier of the resource being described or cataloged
+	 */
+	Identifier string `json:"identifier"`
+	/*
+	 * International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs
+	 */
+	Iri string `json:"iri"`
 }
 
 /*
@@ -3734,6 +4206,14 @@ type Bundle struct {
 	 * Most recent date on which the resource was changed, updated or modified
 	 */
 	DateModified string `json:"dateModified"`
+	/*
+	 * A unique identifier of the resource being described or cataloged
+	 */
+	Identifier string `json:"identifier"`
+	/*
+	 * International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs
+	 */
+	Iri string `json:"iri"`
 }
 
 /*
@@ -3972,6 +4452,14 @@ type Pathogen struct {
 	 * Most recent date on which the resource was changed, updated or modified
 	 */
 	DateModified string `json:"dateModified"`
+	/*
+	 * A unique identifier of the resource being described or cataloged
+	 */
+	Identifier string `json:"identifier"`
+	/*
+	 * International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs
+	 */
+	Iri string `json:"iri"`
 }
 
 /*
@@ -4222,6 +4710,14 @@ type Virus struct {
 	 * Most recent date on which the resource was changed, updated or modified
 	 */
 	DateModified string `json:"dateModified"`
+	/*
+	 * A unique identifier of the resource being described or cataloged
+	 */
+	Identifier string `json:"identifier"`
+	/*
+	 * International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs
+	 */
+	Iri string `json:"iri"`
 }
 
 /*
@@ -4460,6 +4956,14 @@ type Bacterium struct {
 	 * Most recent date on which the resource was changed, updated or modified
 	 */
 	DateModified string `json:"dateModified"`
+	/*
+	 * A unique identifier of the resource being described or cataloged
+	 */
+	Identifier string `json:"identifier"`
+	/*
+	 * International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs
+	 */
+	Iri string `json:"iri"`
 }
 
 /*
@@ -4698,6 +5202,14 @@ type Fungus struct {
 	 * Most recent date on which the resource was changed, updated or modified
 	 */
 	DateModified string `json:"dateModified"`
+	/*
+	 * A unique identifier of the resource being described or cataloged
+	 */
+	Identifier string `json:"identifier"`
+	/*
+	 * International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs
+	 */
+	Iri string `json:"iri"`
 }
 
 /*
@@ -4936,6 +5448,14 @@ type Protozoan struct {
 	 * Most recent date on which the resource was changed, updated or modified
 	 */
 	DateModified string `json:"dateModified"`
+	/*
+	 * A unique identifier of the resource being described or cataloged
+	 */
+	Identifier string `json:"identifier"`
+	/*
+	 * International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs
+	 */
+	Iri string `json:"iri"`
 }
 
 /*
@@ -5174,6 +5694,14 @@ type Viroid struct {
 	 * Most recent date on which the resource was changed, updated or modified
 	 */
 	DateModified string `json:"dateModified"`
+	/*
+	 * A unique identifier of the resource being described or cataloged
+	 */
+	Identifier string `json:"identifier"`
+	/*
+	 * International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs
+	 */
+	Iri string `json:"iri"`
 }
 
 /*
@@ -5412,6 +5940,14 @@ type Prion struct {
 	 * Most recent date on which the resource was changed, updated or modified
 	 */
 	DateModified string `json:"dateModified"`
+	/*
+	 * A unique identifier of the resource being described or cataloged
+	 */
+	Identifier string `json:"identifier"`
+	/*
+	 * International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs
+	 */
+	Iri string `json:"iri"`
 }
 
 /*
@@ -5494,6 +6030,14 @@ type MaterialSafetyDataSheet struct {
 	 * Most recent date on which the resource was changed, updated or modified
 	 */
 	DateModified string `json:"dateModified"`
+	/*
+	 * A unique identifier of the resource being described or cataloged
+	 */
+	Identifier string `json:"identifier"`
+	/*
+	 * International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs
+	 */
+	Iri string `json:"iri"`
 }
 
 /*
@@ -5536,6 +6080,14 @@ type File struct {
 	 * Most recent date on which the resource was changed, updated or modified
 	 */
 	DateModified string `json:"dateModified"`
+	/*
+	 * A unique identifier of the resource being described or cataloged
+	 */
+	Identifier string `json:"identifier"`
+	/*
+	 * International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs
+	 */
+	Iri string `json:"iri"`
 }
 
 /*
@@ -5578,6 +6130,14 @@ type Data struct {
 	 * Most recent date on which the resource was changed, updated or modified
 	 */
 	DateModified string `json:"dateModified"`
+	/*
+	 * A unique identifier of the resource being described or cataloged
+	 */
+	Identifier string `json:"identifier"`
+	/*
+	 * International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs
+	 */
+	Iri string `json:"iri"`
 }
 
 /*
@@ -5620,6 +6180,14 @@ type Document struct {
 	 * Most recent date on which the resource was changed, updated or modified
 	 */
 	DateModified string `json:"dateModified"`
+	/*
+	 * A unique identifier of the resource being described or cataloged
+	 */
+	Identifier string `json:"identifier"`
+	/*
+	 * International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs
+	 */
+	Iri string `json:"iri"`
 }
 
 /*
@@ -5662,6 +6230,14 @@ type Audio struct {
 	 * Most recent date on which the resource was changed, updated or modified
 	 */
 	DateModified string `json:"dateModified"`
+	/*
+	 * A unique identifier of the resource being described or cataloged
+	 */
+	Identifier string `json:"identifier"`
+	/*
+	 * International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs
+	 */
+	Iri string `json:"iri"`
 }
 
 /*
@@ -5704,6 +6280,14 @@ type Video struct {
 	 * Most recent date on which the resource was changed, updated or modified
 	 */
 	DateModified string `json:"dateModified"`
+	/*
+	 * A unique identifier of the resource being described or cataloged
+	 */
+	Identifier string `json:"identifier"`
+	/*
+	 * International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs
+	 */
+	Iri string `json:"iri"`
 }
 
 /*
@@ -5750,6 +6334,14 @@ type Image struct {
 	 * Most recent date on which the resource was changed, updated or modified
 	 */
 	DateModified string `json:"dateModified"`
+	/*
+	 * A unique identifier of the resource being described or cataloged
+	 */
+	Identifier string `json:"identifier"`
+	/*
+	 * International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs
+	 */
+	Iri string `json:"iri"`
 }
 
 /*
@@ -5812,6 +6404,14 @@ type ContactPoint struct {
 	 * Most recent date on which the resource was changed, updated or modified
 	 */
 	DateModified string `json:"dateModified"`
+	/*
+	 * A unique identifier of the resource being described or cataloged
+	 */
+	Identifier string `json:"identifier"`
+	/*
+	 * International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs
+	 */
+	Iri string `json:"iri"`
 }
 
 /*
@@ -5854,6 +6454,14 @@ type License struct {
 	 * Most recent date on which the resource was changed, updated or modified
 	 */
 	DateModified string `json:"dateModified"`
+	/*
+	 * A unique identifier of the resource being described or cataloged
+	 */
+	Identifier string `json:"identifier"`
+	/*
+	 * International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs
+	 */
+	Iri string `json:"iri"`
 }
 
 /*
@@ -5896,6 +6504,14 @@ type Certification struct {
 	 * Most recent date on which the resource was changed, updated or modified
 	 */
 	DateModified string `json:"dateModified"`
+	/*
+	 * A unique identifier of the resource being described or cataloged
+	 */
+	Identifier string `json:"identifier"`
+	/*
+	 * International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs
+	 */
+	Iri string `json:"iri"`
 }
 
 

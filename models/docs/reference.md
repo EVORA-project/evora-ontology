@@ -12,7 +12,12 @@ _The identifier reference of the connected external item_
 URI: [EVORAO:reference](https://w3id.org/evorao/reference)
 Alias: reference
 
-<!-- no inheritance hierarchy -->
+
+## Inheritance
+
+* [identifier](identifier.md)
+    * **reference**
+
 
 
 
@@ -33,6 +38,8 @@ Alias: reference
 ## Properties
 
 * Range: [String](String.md)
+
+* Multivalued: True
 
 * Required: True
 
@@ -79,12 +86,13 @@ close_mappings:
 - dct:identifier
 - dct:references
 rank: 1000
+is_a: identifier
 alias: reference
 domain_of:
 - ExternalRelatedReference
 range: string
 required: true
-multivalued: false
+multivalued: true
 
 ```
 </details>

@@ -1,18 +1,30 @@
 
 
-# Slot: date issued (dateIssued) 
+# Slot: identifier (identifier) 
 
 
-_Date of formal issuance (e.g., publication) of the resource_
+_A unique identifier of the resource being described or cataloged_
 
 
 
 
 
-URI: [dct:issued](http://purl.org/dc/terms/issued)
-Alias: dateIssued
+URI: [dct:identifier](http://purl.org/dc/terms/identifier)
+Alias: identifier
 
-<!-- no inheritance hierarchy -->
+
+## Inheritance
+
+* **identifier**
+    * [iri](iri.md)
+    * [taxonomicId](taxonomicId.md)
+    * [taxonomicNodeId](taxonomicNodeId.md)
+    * [reference](reference.md)
+    * [accessionNumber](accessionNumber.md)
+    * [orcidId](orcidId.md)
+    * [rorId](rorId.md)
+    * [refSku](refSku.md)
+
 
 
 
@@ -108,7 +120,9 @@ Alias: dateIssued
 
 ## Properties
 
-* Range: [Datetime](Datetime.md)
+* Range: [String](String.md)
+
+* Multivalued: True
 
 
 
@@ -116,7 +130,7 @@ Alias: dateIssued
 
 ## Comments
 
-* encoded using the relevant ISO 8601 Date and Time compliant string [DATETIME]
+* The identifier is a text string which is assigned to the resource to provide an unambiguous reference within a particular context. Persistent identifiers should be provided as HTTP URIs
 
 ## Identifier and Mapping Information
 
@@ -138,10 +152,9 @@ Alias: dateIssued
 
 | Mapping Type | Mapped Value |
 | ---  | ---  |
-| self | dct:issued |
-| native | EVORAO:dateIssued |
-| exact | sepio:0000051 |
-| close | schema:datePublished, schema:dateCreated |
+| self | dct:identifier |
+| native | EVORAO:identifier |
+| exact | schema:identifier |
 
 
 
@@ -150,25 +163,24 @@ Alias: dateIssued
 
 <details>
 ```yaml
-name: dateIssued
-description: Date of formal issuance (e.g., publication) of the resource
-title: date issued
+name: identifier
+description: A unique identifier of the resource being described or cataloged
+title: identifier
 comments:
-- encoded using the relevant ISO 8601 Date and Time compliant string [DATETIME]
+- The identifier is a text string which is assigned to the resource to provide an
+  unambiguous reference within a particular context. Persistent identifiers should
+  be provided as HTTP URIs
 from_schema: https://w3id.org/evorao/
 exact_mappings:
-- sepio:0000051
-close_mappings:
-- schema:datePublished
-- schema:dateCreated
+- schema:identifier
 rank: 1000
-slot_uri: dct:issued
-alias: dateIssued
+slot_uri: dct:identifier
+alias: identifier
 domain_of:
 - Resource
-range: datetime
+range: string
 required: false
-multivalued: false
+multivalued: true
 
 ```
 </details>

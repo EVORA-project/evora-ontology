@@ -12,7 +12,12 @@ _The corresponding organization's persistent identifier from the Research Organi
 URI: [EVORAO:rorId](https://w3id.org/evorao/rorId)
 Alias: rorId
 
-<!-- no inheritance hierarchy -->
+
+## Inheritance
+
+* [identifier](identifier.md)
+    * **rorId**
+
 
 
 
@@ -22,9 +27,9 @@ Alias: rorId
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
+| [ReasearchInfrastructure](ReasearchInfrastructure.md) | A research infrastructure (RI) |  no  |
 | [Organization](Organization.md) | A social entity established to meet needs or pursue specific goals |  yes  |
 | [Provider](Provider.md) | A provider of products or services, as a specific organization |  no  |
-| [ReasearchInfrastructure](ReasearchInfrastructure.md) | A research infrastructure (RI) |  no  |
 
 
 
@@ -35,6 +40,8 @@ Alias: rorId
 ## Properties
 
 * Range: [String](String.md)
+
+* Multivalued: True
 
 * Recommended: True
 
@@ -84,13 +91,14 @@ exact_mappings:
 related_mappings:
 - dwc:institutionCode
 rank: 1000
+is_a: identifier
 alias: rorId
 domain_of:
 - Organization
 range: string
 required: false
 recommended: true
-multivalued: false
+multivalued: true
 
 ```
 </details>

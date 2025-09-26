@@ -167,12 +167,14 @@ Name: EVORAO
 | [hybridomaDescription](hybridomaDescription.md) | The description of the hybridoma |
 | [iataClassification](iataClassification.md) | The corresponding International Air Transport Association (IATA)'s category f... |
 | [identificationTechnique](identificationTechnique.md) | A method or procedure used to detect, identify, and confirm the presence of a... |
+| [identifier](identifier.md) | A unique identifier of the resource being described or cataloged |
 | [inclusionBodiesType](inclusionBodiesType.md) | Refers to the state of aggregated proteins within a cell |
 | [indigenousPeopleAndLocalCommunityOrigin](indigenousPeopleAndLocalCommunityOrigin.md) | The specific IPLC area (Indigenous People and Local Communities) from which t... |
 | [infectivity](infectivity.md) | Indicates the ability of the pathogen to establish an infection in a host org... |
 | [infectivityTest](infectivityTest.md) | The description of the completed infectivity test, providing details on the m... |
 | [internalReference](internalReference.md) | Any reference or indication to be used for local retrieval purpose |
 | [inVocabulary](inVocabulary.md) | Terms belong to a specific vocabulary |
+| [iri](iri.md) | International Resource Identifier (IRI) that uniquely identifies or refers to... |
 | [isolate](isolate.md) | Identifier given to a pathogen that has been isolated from an infected host a... |
 | [isolationConditions](isolationConditions.md) | The environmental and procedural conditions under which the pathogen was isol... |
 | [isolationHost](isolationHost.md) | The host organism from which the pathogen was originally isolated |

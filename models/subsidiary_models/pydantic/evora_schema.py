@@ -27,7 +27,7 @@ from pydantic import (
 
 
 metamodel_version = "None"
-version = "1.0.9907"
+version = "1.0.9968"
 
 
 class ConfiguredBaseModel(BaseModel):
@@ -99,7 +99,7 @@ linkml_meta = LinkMLMeta({'comments': ['EVORAO is an ontology for standardized m
                     'pathogens. EVORAO is compatible with DCAT, making it '
                     'well-suited for efficiently cataloguing pathogen collections '
                     'and related resources.',
-     'generation_date': '2025-09-24T11:32:06',
+     'generation_date': '2025-09-26T17:26:12',
      'id': 'https://w3id.org/evorao/',
      'imports': ['linkml:types'],
      'in_language': 'en',
@@ -278,6 +278,38 @@ class Resource(ConfiguredBaseModel):
                                          'required': False,
                                          'slot_uri': 'dct:modified',
                                          'title': 'date modified'},
+                        'identifier': {'comments': ['The identifier is a text string '
+                                                    'which is assigned to the resource '
+                                                    'to provide an unambiguous '
+                                                    'reference within a particular '
+                                                    'context. Persistent identifiers '
+                                                    'should be provided as HTTP URIs'],
+                                       'description': 'A unique identifier of the '
+                                                      'resource being described or '
+                                                      'cataloged',
+                                       'domain_of': ['Resource'],
+                                       'exact_mappings': ['schema:identifier'],
+                                       'multivalued': True,
+                                       'name': 'identifier',
+                                       'range': 'string',
+                                       'required': False,
+                                       'slot_uri': 'dct:identifier',
+                                       'title': 'identifier'},
+                        'iri': {'comments': ['An IRI is a global identifier '
+                                             'standardized by IETF RFC 3987. It may or '
+                                             'may not be resolvable on the web. IRIs '
+                                             'include URIs, and URIs include URLs'],
+                                'description': 'International Resource Identifier '
+                                               '(IRI) that uniquely identifies or '
+                                               'refers to the resource. IRIs include '
+                                               'URIs, and URIs include URLs',
+                                'domain_of': ['Resource'],
+                                'is_a': 'identifier',
+                                'multivalued': True,
+                                'name': 'iri',
+                                'range': 'uri',
+                                'required': False,
+                                'title': 'IRI'},
                         'keyword': {'description': 'A keyword or tag describing the '
                                                    'resource',
                                     'domain_of': ['Resource'],
@@ -304,6 +336,20 @@ class Resource(ConfiguredBaseModel):
          'domain_of': ['Resource'],
          'exact_mappings': ['sepio:0000036'],
          'slot_uri': 'dct:modified'} })
+    identifier: Optional[list[str]] = Field(default=None, title="identifier", description="""A unique identifier of the resource being described or cataloged""", json_schema_extra = { "linkml_meta": {'alias': 'identifier',
+         'comments': ['The identifier is a text string which is assigned to the '
+                      'resource to provide an unambiguous reference within a '
+                      'particular context. Persistent identifiers should be provided '
+                      'as HTTP URIs'],
+         'domain_of': ['Resource'],
+         'exact_mappings': ['schema:identifier'],
+         'slot_uri': 'dct:identifier'} })
+    iri: Optional[list[str]] = Field(default=None, title="IRI", description="""International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs""", json_schema_extra = { "linkml_meta": {'alias': 'iri',
+         'comments': ['An IRI is a global identifier standardized by IETF RFC 3987. It '
+                      'may or may not be resolvable on the web. IRIs include URIs, and '
+                      'URIs include URLs'],
+         'domain_of': ['Resource'],
+         'is_a': 'identifier'} })
 
 
 class Dataset(Resource):
@@ -430,6 +476,20 @@ class Dataset(Resource):
          'domain_of': ['Resource'],
          'exact_mappings': ['sepio:0000036'],
          'slot_uri': 'dct:modified'} })
+    identifier: Optional[list[str]] = Field(default=None, title="identifier", description="""A unique identifier of the resource being described or cataloged""", json_schema_extra = { "linkml_meta": {'alias': 'identifier',
+         'comments': ['The identifier is a text string which is assigned to the '
+                      'resource to provide an unambiguous reference within a '
+                      'particular context. Persistent identifiers should be provided '
+                      'as HTTP URIs'],
+         'domain_of': ['Resource'],
+         'exact_mappings': ['schema:identifier'],
+         'slot_uri': 'dct:identifier'} })
+    iri: Optional[list[str]] = Field(default=None, title="IRI", description="""International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs""", json_schema_extra = { "linkml_meta": {'alias': 'iri',
+         'comments': ['An IRI is a global identifier standardized by IETF RFC 3987. It '
+                      'may or may not be resolvable on the web. IRIs include URIs, and '
+                      'URIs include URLs'],
+         'domain_of': ['Resource'],
+         'is_a': 'identifier'} })
 
 
 class DataService(Resource):
@@ -574,6 +634,20 @@ class DataService(Resource):
          'domain_of': ['Resource'],
          'exact_mappings': ['sepio:0000036'],
          'slot_uri': 'dct:modified'} })
+    identifier: Optional[list[str]] = Field(default=None, title="identifier", description="""A unique identifier of the resource being described or cataloged""", json_schema_extra = { "linkml_meta": {'alias': 'identifier',
+         'comments': ['The identifier is a text string which is assigned to the '
+                      'resource to provide an unambiguous reference within a '
+                      'particular context. Persistent identifiers should be provided '
+                      'as HTTP URIs'],
+         'domain_of': ['Resource'],
+         'exact_mappings': ['schema:identifier'],
+         'slot_uri': 'dct:identifier'} })
+    iri: Optional[list[str]] = Field(default=None, title="IRI", description="""International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs""", json_schema_extra = { "linkml_meta": {'alias': 'iri',
+         'comments': ['An IRI is a global identifier standardized by IETF RFC 3987. It '
+                      'may or may not be resolvable on the web. IRIs include URIs, and '
+                      'URIs include URLs'],
+         'domain_of': ['Resource'],
+         'is_a': 'identifier'} })
 
 
 class Version(Resource):
@@ -646,6 +720,20 @@ class Version(Resource):
          'domain_of': ['Resource'],
          'exact_mappings': ['sepio:0000036'],
          'slot_uri': 'dct:modified'} })
+    identifier: Optional[list[str]] = Field(default=None, title="identifier", description="""A unique identifier of the resource being described or cataloged""", json_schema_extra = { "linkml_meta": {'alias': 'identifier',
+         'comments': ['The identifier is a text string which is assigned to the '
+                      'resource to provide an unambiguous reference within a '
+                      'particular context. Persistent identifiers should be provided '
+                      'as HTTP URIs'],
+         'domain_of': ['Resource'],
+         'exact_mappings': ['schema:identifier'],
+         'slot_uri': 'dct:identifier'} })
+    iri: Optional[list[str]] = Field(default=None, title="IRI", description="""International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs""", json_schema_extra = { "linkml_meta": {'alias': 'iri',
+         'comments': ['An IRI is a global identifier standardized by IETF RFC 3987. It '
+                      'may or may not be resolvable on the web. IRIs include URIs, and '
+                      'URIs include URLs'],
+         'domain_of': ['Resource'],
+         'is_a': 'identifier'} })
 
 
 class Catalogue(Dataset):
@@ -714,6 +802,20 @@ class Catalogue(Dataset):
          'domain_of': ['Resource'],
          'exact_mappings': ['sepio:0000036'],
          'slot_uri': 'dct:modified'} })
+    identifier: Optional[list[str]] = Field(default=None, title="identifier", description="""A unique identifier of the resource being described or cataloged""", json_schema_extra = { "linkml_meta": {'alias': 'identifier',
+         'comments': ['The identifier is a text string which is assigned to the '
+                      'resource to provide an unambiguous reference within a '
+                      'particular context. Persistent identifiers should be provided '
+                      'as HTTP URIs'],
+         'domain_of': ['Resource'],
+         'exact_mappings': ['schema:identifier'],
+         'slot_uri': 'dct:identifier'} })
+    iri: Optional[list[str]] = Field(default=None, title="IRI", description="""International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs""", json_schema_extra = { "linkml_meta": {'alias': 'iri',
+         'comments': ['An IRI is a global identifier standardized by IETF RFC 3987. It '
+                      'may or may not be resolvable on the web. IRIs include URIs, and '
+                      'URIs include URLs'],
+         'domain_of': ['Resource'],
+         'is_a': 'identifier'} })
 
 
 class Taxonomy(Catalogue):
@@ -863,6 +965,20 @@ class Taxonomy(Catalogue):
          'domain_of': ['Resource'],
          'exact_mappings': ['sepio:0000036'],
          'slot_uri': 'dct:modified'} })
+    identifier: Optional[list[str]] = Field(default=None, title="identifier", description="""A unique identifier of the resource being described or cataloged""", json_schema_extra = { "linkml_meta": {'alias': 'identifier',
+         'comments': ['The identifier is a text string which is assigned to the '
+                      'resource to provide an unambiguous reference within a '
+                      'particular context. Persistent identifiers should be provided '
+                      'as HTTP URIs'],
+         'domain_of': ['Resource'],
+         'exact_mappings': ['schema:identifier'],
+         'slot_uri': 'dct:identifier'} })
+    iri: Optional[list[str]] = Field(default=None, title="IRI", description="""International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs""", json_schema_extra = { "linkml_meta": {'alias': 'iri',
+         'comments': ['An IRI is a global identifier standardized by IETF RFC 3987. It '
+                      'may or may not be resolvable on the web. IRIs include URIs, and '
+                      'URIs include URLs'],
+         'domain_of': ['Resource'],
+         'is_a': 'identifier'} })
 
 
 class DataProvider(DataService):
@@ -1111,6 +1227,20 @@ class DataProvider(DataService):
          'domain_of': ['Resource'],
          'exact_mappings': ['sepio:0000036'],
          'slot_uri': 'dct:modified'} })
+    identifier: Optional[list[str]] = Field(default=None, title="identifier", description="""A unique identifier of the resource being described or cataloged""", json_schema_extra = { "linkml_meta": {'alias': 'identifier',
+         'comments': ['The identifier is a text string which is assigned to the '
+                      'resource to provide an unambiguous reference within a '
+                      'particular context. Persistent identifiers should be provided '
+                      'as HTTP URIs'],
+         'domain_of': ['Resource'],
+         'exact_mappings': ['schema:identifier'],
+         'slot_uri': 'dct:identifier'} })
+    iri: Optional[list[str]] = Field(default=None, title="IRI", description="""International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs""", json_schema_extra = { "linkml_meta": {'alias': 'iri',
+         'comments': ['An IRI is a global identifier standardized by IETF RFC 3987. It '
+                      'may or may not be resolvable on the web. IRIs include URIs, and '
+                      'URIs include URLs'],
+         'domain_of': ['Resource'],
+         'is_a': 'identifier'} })
 
 
 class PathogenIdentification(Resource):
@@ -1291,6 +1421,20 @@ class PathogenIdentification(Resource):
          'domain_of': ['Resource'],
          'exact_mappings': ['sepio:0000036'],
          'slot_uri': 'dct:modified'} })
+    identifier: Optional[list[str]] = Field(default=None, title="identifier", description="""A unique identifier of the resource being described or cataloged""", json_schema_extra = { "linkml_meta": {'alias': 'identifier',
+         'comments': ['The identifier is a text string which is assigned to the '
+                      'resource to provide an unambiguous reference within a '
+                      'particular context. Persistent identifiers should be provided '
+                      'as HTTP URIs'],
+         'domain_of': ['Resource'],
+         'exact_mappings': ['schema:identifier'],
+         'slot_uri': 'dct:identifier'} })
+    iri: Optional[list[str]] = Field(default=None, title="IRI", description="""International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs""", json_schema_extra = { "linkml_meta": {'alias': 'iri',
+         'comments': ['An IRI is a global identifier standardized by IETF RFC 3987. It '
+                      'may or may not be resolvable on the web. IRIs include URIs, and '
+                      'URIs include URLs'],
+         'domain_of': ['Resource'],
+         'is_a': 'identifier'} })
 
 
 class Publication(Resource):
@@ -1417,6 +1561,20 @@ class Publication(Resource):
          'domain_of': ['Resource'],
          'exact_mappings': ['sepio:0000036'],
          'slot_uri': 'dct:modified'} })
+    identifier: Optional[list[str]] = Field(default=None, title="identifier", description="""A unique identifier of the resource being described or cataloged""", json_schema_extra = { "linkml_meta": {'alias': 'identifier',
+         'comments': ['The identifier is a text string which is assigned to the '
+                      'resource to provide an unambiguous reference within a '
+                      'particular context. Persistent identifiers should be provided '
+                      'as HTTP URIs'],
+         'domain_of': ['Resource'],
+         'exact_mappings': ['schema:identifier'],
+         'slot_uri': 'dct:identifier'} })
+    iri: Optional[list[str]] = Field(default=None, title="IRI", description="""International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs""", json_schema_extra = { "linkml_meta": {'alias': 'iri',
+         'comments': ['An IRI is a global identifier standardized by IETF RFC 3987. It '
+                      'may or may not be resolvable on the web. IRIs include URIs, and '
+                      'URIs include URLs'],
+         'domain_of': ['Resource'],
+         'is_a': 'identifier'} })
 
 
 class Vocabulary(Catalogue):
@@ -1514,6 +1672,20 @@ class Vocabulary(Catalogue):
          'domain_of': ['Resource'],
          'exact_mappings': ['sepio:0000036'],
          'slot_uri': 'dct:modified'} })
+    identifier: Optional[list[str]] = Field(default=None, title="identifier", description="""A unique identifier of the resource being described or cataloged""", json_schema_extra = { "linkml_meta": {'alias': 'identifier',
+         'comments': ['The identifier is a text string which is assigned to the '
+                      'resource to provide an unambiguous reference within a '
+                      'particular context. Persistent identifiers should be provided '
+                      'as HTTP URIs'],
+         'domain_of': ['Resource'],
+         'exact_mappings': ['schema:identifier'],
+         'slot_uri': 'dct:identifier'} })
+    iri: Optional[list[str]] = Field(default=None, title="IRI", description="""International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs""", json_schema_extra = { "linkml_meta": {'alias': 'iri',
+         'comments': ['An IRI is a global identifier standardized by IETF RFC 3987. It '
+                      'may or may not be resolvable on the web. IRIs include URIs, and '
+                      'URIs include URLs'],
+         'domain_of': ['Resource'],
+         'is_a': 'identifier'} })
 
 
 class Term(Resource):
@@ -1662,6 +1834,20 @@ class Term(Resource):
          'domain_of': ['Resource'],
          'exact_mappings': ['sepio:0000036'],
          'slot_uri': 'dct:modified'} })
+    identifier: Optional[list[str]] = Field(default=None, title="identifier", description="""A unique identifier of the resource being described or cataloged""", json_schema_extra = { "linkml_meta": {'alias': 'identifier',
+         'comments': ['The identifier is a text string which is assigned to the '
+                      'resource to provide an unambiguous reference within a '
+                      'particular context. Persistent identifiers should be provided '
+                      'as HTTP URIs'],
+         'domain_of': ['Resource'],
+         'exact_mappings': ['schema:identifier'],
+         'slot_uri': 'dct:identifier'} })
+    iri: Optional[list[str]] = Field(default=None, title="IRI", description="""International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs""", json_schema_extra = { "linkml_meta": {'alias': 'iri',
+         'comments': ['An IRI is a global identifier standardized by IETF RFC 3987. It '
+                      'may or may not be resolvable on the web. IRIs include URIs, and '
+                      'URIs include URLs'],
+         'domain_of': ['Resource'],
+         'is_a': 'identifier'} })
 
 
 class CommonName(Term):
@@ -1783,6 +1969,20 @@ class CommonName(Term):
          'domain_of': ['Resource'],
          'exact_mappings': ['sepio:0000036'],
          'slot_uri': 'dct:modified'} })
+    identifier: Optional[list[str]] = Field(default=None, title="identifier", description="""A unique identifier of the resource being described or cataloged""", json_schema_extra = { "linkml_meta": {'alias': 'identifier',
+         'comments': ['The identifier is a text string which is assigned to the '
+                      'resource to provide an unambiguous reference within a '
+                      'particular context. Persistent identifiers should be provided '
+                      'as HTTP URIs'],
+         'domain_of': ['Resource'],
+         'exact_mappings': ['schema:identifier'],
+         'slot_uri': 'dct:identifier'} })
+    iri: Optional[list[str]] = Field(default=None, title="IRI", description="""International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs""", json_schema_extra = { "linkml_meta": {'alias': 'iri',
+         'comments': ['An IRI is a global identifier standardized by IETF RFC 3987. It '
+                      'may or may not be resolvable on the web. IRIs include URIs, and '
+                      'URIs include URLs'],
+         'domain_of': ['Resource'],
+         'is_a': 'identifier'} })
 
 
 class VirusName(CommonName):
@@ -1864,6 +2064,20 @@ class VirusName(CommonName):
          'domain_of': ['Resource'],
          'exact_mappings': ['sepio:0000036'],
          'slot_uri': 'dct:modified'} })
+    identifier: Optional[list[str]] = Field(default=None, title="identifier", description="""A unique identifier of the resource being described or cataloged""", json_schema_extra = { "linkml_meta": {'alias': 'identifier',
+         'comments': ['The identifier is a text string which is assigned to the '
+                      'resource to provide an unambiguous reference within a '
+                      'particular context. Persistent identifiers should be provided '
+                      'as HTTP URIs'],
+         'domain_of': ['Resource'],
+         'exact_mappings': ['schema:identifier'],
+         'slot_uri': 'dct:identifier'} })
+    iri: Optional[list[str]] = Field(default=None, title="IRI", description="""International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs""", json_schema_extra = { "linkml_meta": {'alias': 'iri',
+         'comments': ['An IRI is a global identifier standardized by IETF RFC 3987. It '
+                      'may or may not be resolvable on the web. IRIs include URIs, and '
+                      'URIs include URLs'],
+         'domain_of': ['Resource'],
+         'is_a': 'identifier'} })
 
 
 class AlternateName(Term):
@@ -1983,6 +2197,20 @@ class AlternateName(Term):
          'domain_of': ['Resource'],
          'exact_mappings': ['sepio:0000036'],
          'slot_uri': 'dct:modified'} })
+    identifier: Optional[list[str]] = Field(default=None, title="identifier", description="""A unique identifier of the resource being described or cataloged""", json_schema_extra = { "linkml_meta": {'alias': 'identifier',
+         'comments': ['The identifier is a text string which is assigned to the '
+                      'resource to provide an unambiguous reference within a '
+                      'particular context. Persistent identifiers should be provided '
+                      'as HTTP URIs'],
+         'domain_of': ['Resource'],
+         'exact_mappings': ['schema:identifier'],
+         'slot_uri': 'dct:identifier'} })
+    iri: Optional[list[str]] = Field(default=None, title="IRI", description="""International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs""", json_schema_extra = { "linkml_meta": {'alias': 'iri',
+         'comments': ['An IRI is a global identifier standardized by IETF RFC 3987. It '
+                      'may or may not be resolvable on the web. IRIs include URIs, and '
+                      'URIs include URLs'],
+         'domain_of': ['Resource'],
+         'is_a': 'identifier'} })
 
 
 class RiskGroup(Term):
@@ -2055,6 +2283,20 @@ class RiskGroup(Term):
          'domain_of': ['Resource'],
          'exact_mappings': ['sepio:0000036'],
          'slot_uri': 'dct:modified'} })
+    identifier: Optional[list[str]] = Field(default=None, title="identifier", description="""A unique identifier of the resource being described or cataloged""", json_schema_extra = { "linkml_meta": {'alias': 'identifier',
+         'comments': ['The identifier is a text string which is assigned to the '
+                      'resource to provide an unambiguous reference within a '
+                      'particular context. Persistent identifiers should be provided '
+                      'as HTTP URIs'],
+         'domain_of': ['Resource'],
+         'exact_mappings': ['schema:identifier'],
+         'slot_uri': 'dct:identifier'} })
+    iri: Optional[list[str]] = Field(default=None, title="IRI", description="""International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs""", json_schema_extra = { "linkml_meta": {'alias': 'iri',
+         'comments': ['An IRI is a global identifier standardized by IETF RFC 3987. It '
+                      'may or may not be resolvable on the web. IRIs include URIs, and '
+                      'URIs include URLs'],
+         'domain_of': ['Resource'],
+         'is_a': 'identifier'} })
 
 
 class Doi(Term):
@@ -2130,6 +2372,20 @@ class Doi(Term):
          'domain_of': ['Resource'],
          'exact_mappings': ['sepio:0000036'],
          'slot_uri': 'dct:modified'} })
+    identifier: Optional[list[str]] = Field(default=None, title="identifier", description="""A unique identifier of the resource being described or cataloged""", json_schema_extra = { "linkml_meta": {'alias': 'identifier',
+         'comments': ['The identifier is a text string which is assigned to the '
+                      'resource to provide an unambiguous reference within a '
+                      'particular context. Persistent identifiers should be provided '
+                      'as HTTP URIs'],
+         'domain_of': ['Resource'],
+         'exact_mappings': ['schema:identifier'],
+         'slot_uri': 'dct:identifier'} })
+    iri: Optional[list[str]] = Field(default=None, title="IRI", description="""International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs""", json_schema_extra = { "linkml_meta": {'alias': 'iri',
+         'comments': ['An IRI is a global identifier standardized by IETF RFC 3987. It '
+                      'may or may not be resolvable on the web. IRIs include URIs, and '
+                      'URIs include URLs'],
+         'domain_of': ['Resource'],
+         'is_a': 'identifier'} })
 
 
 class Journal(Term):
@@ -2205,6 +2461,20 @@ class Journal(Term):
          'domain_of': ['Resource'],
          'exact_mappings': ['sepio:0000036'],
          'slot_uri': 'dct:modified'} })
+    identifier: Optional[list[str]] = Field(default=None, title="identifier", description="""A unique identifier of the resource being described or cataloged""", json_schema_extra = { "linkml_meta": {'alias': 'identifier',
+         'comments': ['The identifier is a text string which is assigned to the '
+                      'resource to provide an unambiguous reference within a '
+                      'particular context. Persistent identifiers should be provided '
+                      'as HTTP URIs'],
+         'domain_of': ['Resource'],
+         'exact_mappings': ['schema:identifier'],
+         'slot_uri': 'dct:identifier'} })
+    iri: Optional[list[str]] = Field(default=None, title="IRI", description="""International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs""", json_schema_extra = { "linkml_meta": {'alias': 'iri',
+         'comments': ['An IRI is a global identifier standardized by IETF RFC 3987. It '
+                      'may or may not be resolvable on the web. IRIs include URIs, and '
+                      'URIs include URLs'],
+         'domain_of': ['Resource'],
+         'is_a': 'identifier'} })
 
 
 class PdbReference(Term):
@@ -2274,6 +2544,20 @@ class PdbReference(Term):
          'domain_of': ['Resource'],
          'exact_mappings': ['sepio:0000036'],
          'slot_uri': 'dct:modified'} })
+    identifier: Optional[list[str]] = Field(default=None, title="identifier", description="""A unique identifier of the resource being described or cataloged""", json_schema_extra = { "linkml_meta": {'alias': 'identifier',
+         'comments': ['The identifier is a text string which is assigned to the '
+                      'resource to provide an unambiguous reference within a '
+                      'particular context. Persistent identifiers should be provided '
+                      'as HTTP URIs'],
+         'domain_of': ['Resource'],
+         'exact_mappings': ['schema:identifier'],
+         'slot_uri': 'dct:identifier'} })
+    iri: Optional[list[str]] = Field(default=None, title="IRI", description="""International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs""", json_schema_extra = { "linkml_meta": {'alias': 'iri',
+         'comments': ['An IRI is a global identifier standardized by IETF RFC 3987. It '
+                      'may or may not be resolvable on the web. IRIs include URIs, and '
+                      'URIs include URLs'],
+         'domain_of': ['Resource'],
+         'is_a': 'identifier'} })
 
 
 class Keyword(Term):
@@ -2349,6 +2633,20 @@ class Keyword(Term):
          'domain_of': ['Resource'],
          'exact_mappings': ['sepio:0000036'],
          'slot_uri': 'dct:modified'} })
+    identifier: Optional[list[str]] = Field(default=None, title="identifier", description="""A unique identifier of the resource being described or cataloged""", json_schema_extra = { "linkml_meta": {'alias': 'identifier',
+         'comments': ['The identifier is a text string which is assigned to the '
+                      'resource to provide an unambiguous reference within a '
+                      'particular context. Persistent identifiers should be provided '
+                      'as HTTP URIs'],
+         'domain_of': ['Resource'],
+         'exact_mappings': ['schema:identifier'],
+         'slot_uri': 'dct:identifier'} })
+    iri: Optional[list[str]] = Field(default=None, title="IRI", description="""International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs""", json_schema_extra = { "linkml_meta": {'alias': 'iri',
+         'comments': ['An IRI is a global identifier standardized by IETF RFC 3987. It '
+                      'may or may not be resolvable on the web. IRIs include URIs, and '
+                      'URIs include URLs'],
+         'domain_of': ['Resource'],
+         'is_a': 'identifier'} })
 
 
 class TagSequence(Term):
@@ -2420,6 +2718,20 @@ class TagSequence(Term):
          'domain_of': ['Resource'],
          'exact_mappings': ['sepio:0000036'],
          'slot_uri': 'dct:modified'} })
+    identifier: Optional[list[str]] = Field(default=None, title="identifier", description="""A unique identifier of the resource being described or cataloged""", json_schema_extra = { "linkml_meta": {'alias': 'identifier',
+         'comments': ['The identifier is a text string which is assigned to the '
+                      'resource to provide an unambiguous reference within a '
+                      'particular context. Persistent identifiers should be provided '
+                      'as HTTP URIs'],
+         'domain_of': ['Resource'],
+         'exact_mappings': ['schema:identifier'],
+         'slot_uri': 'dct:identifier'} })
+    iri: Optional[list[str]] = Field(default=None, title="IRI", description="""International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs""", json_schema_extra = { "linkml_meta": {'alias': 'iri',
+         'comments': ['An IRI is a global identifier standardized by IETF RFC 3987. It '
+                      'may or may not be resolvable on the web. IRIs include URIs, and '
+                      'URIs include URLs'],
+         'domain_of': ['Resource'],
+         'is_a': 'identifier'} })
 
 
 class SpecialFeature(Term):
@@ -2491,6 +2803,20 @@ class SpecialFeature(Term):
          'domain_of': ['Resource'],
          'exact_mappings': ['sepio:0000036'],
          'slot_uri': 'dct:modified'} })
+    identifier: Optional[list[str]] = Field(default=None, title="identifier", description="""A unique identifier of the resource being described or cataloged""", json_schema_extra = { "linkml_meta": {'alias': 'identifier',
+         'comments': ['The identifier is a text string which is assigned to the '
+                      'resource to provide an unambiguous reference within a '
+                      'particular context. Persistent identifiers should be provided '
+                      'as HTTP URIs'],
+         'domain_of': ['Resource'],
+         'exact_mappings': ['schema:identifier'],
+         'slot_uri': 'dct:identifier'} })
+    iri: Optional[list[str]] = Field(default=None, title="IRI", description="""International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs""", json_schema_extra = { "linkml_meta": {'alias': 'iri',
+         'comments': ['An IRI is a global identifier standardized by IETF RFC 3987. It '
+                      'may or may not be resolvable on the web. IRIs include URIs, and '
+                      'URIs include URLs'],
+         'domain_of': ['Resource'],
+         'is_a': 'identifier'} })
 
 
 class ExpressionVector(Term):
@@ -2563,6 +2889,20 @@ class ExpressionVector(Term):
          'domain_of': ['Resource'],
          'exact_mappings': ['sepio:0000036'],
          'slot_uri': 'dct:modified'} })
+    identifier: Optional[list[str]] = Field(default=None, title="identifier", description="""A unique identifier of the resource being described or cataloged""", json_schema_extra = { "linkml_meta": {'alias': 'identifier',
+         'comments': ['The identifier is a text string which is assigned to the '
+                      'resource to provide an unambiguous reference within a '
+                      'particular context. Persistent identifiers should be provided '
+                      'as HTTP URIs'],
+         'domain_of': ['Resource'],
+         'exact_mappings': ['schema:identifier'],
+         'slot_uri': 'dct:identifier'} })
+    iri: Optional[list[str]] = Field(default=None, title="IRI", description="""International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs""", json_schema_extra = { "linkml_meta": {'alias': 'iri',
+         'comments': ['An IRI is a global identifier standardized by IETF RFC 3987. It '
+                      'may or may not be resolvable on the web. IRIs include URIs, and '
+                      'URIs include URLs'],
+         'domain_of': ['Resource'],
+         'is_a': 'identifier'} })
 
 
 class PlasmidSelection(Term):
@@ -2631,6 +2971,20 @@ class PlasmidSelection(Term):
          'domain_of': ['Resource'],
          'exact_mappings': ['sepio:0000036'],
          'slot_uri': 'dct:modified'} })
+    identifier: Optional[list[str]] = Field(default=None, title="identifier", description="""A unique identifier of the resource being described or cataloged""", json_schema_extra = { "linkml_meta": {'alias': 'identifier',
+         'comments': ['The identifier is a text string which is assigned to the '
+                      'resource to provide an unambiguous reference within a '
+                      'particular context. Persistent identifiers should be provided '
+                      'as HTTP URIs'],
+         'domain_of': ['Resource'],
+         'exact_mappings': ['schema:identifier'],
+         'slot_uri': 'dct:identifier'} })
+    iri: Optional[list[str]] = Field(default=None, title="IRI", description="""International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs""", json_schema_extra = { "linkml_meta": {'alias': 'iri',
+         'comments': ['An IRI is a global identifier standardized by IETF RFC 3987. It '
+                      'may or may not be resolvable on the web. IRIs include URIs, and '
+                      'URIs include URLs'],
+         'domain_of': ['Resource'],
+         'is_a': 'identifier'} })
 
 
 class PropagationHost(Term):
@@ -2699,6 +3053,20 @@ class PropagationHost(Term):
          'domain_of': ['Resource'],
          'exact_mappings': ['sepio:0000036'],
          'slot_uri': 'dct:modified'} })
+    identifier: Optional[list[str]] = Field(default=None, title="identifier", description="""A unique identifier of the resource being described or cataloged""", json_schema_extra = { "linkml_meta": {'alias': 'identifier',
+         'comments': ['The identifier is a text string which is assigned to the '
+                      'resource to provide an unambiguous reference within a '
+                      'particular context. Persistent identifiers should be provided '
+                      'as HTTP URIs'],
+         'domain_of': ['Resource'],
+         'exact_mappings': ['schema:identifier'],
+         'slot_uri': 'dct:identifier'} })
+    iri: Optional[list[str]] = Field(default=None, title="IRI", description="""International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs""", json_schema_extra = { "linkml_meta": {'alias': 'iri',
+         'comments': ['An IRI is a global identifier standardized by IETF RFC 3987. It '
+                      'may or may not be resolvable on the web. IRIs include URIs, and '
+                      'URIs include URLs'],
+         'domain_of': ['Resource'],
+         'is_a': 'identifier'} })
 
 
 class TransmissionMethod(Term):
@@ -2768,6 +3136,20 @@ class TransmissionMethod(Term):
          'domain_of': ['Resource'],
          'exact_mappings': ['sepio:0000036'],
          'slot_uri': 'dct:modified'} })
+    identifier: Optional[list[str]] = Field(default=None, title="identifier", description="""A unique identifier of the resource being described or cataloged""", json_schema_extra = { "linkml_meta": {'alias': 'identifier',
+         'comments': ['The identifier is a text string which is assigned to the '
+                      'resource to provide an unambiguous reference within a '
+                      'particular context. Persistent identifiers should be provided '
+                      'as HTTP URIs'],
+         'domain_of': ['Resource'],
+         'exact_mappings': ['schema:identifier'],
+         'slot_uri': 'dct:identifier'} })
+    iri: Optional[list[str]] = Field(default=None, title="IRI", description="""International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs""", json_schema_extra = { "linkml_meta": {'alias': 'iri',
+         'comments': ['An IRI is a global identifier standardized by IETF RFC 3987. It '
+                      'may or may not be resolvable on the web. IRIs include URIs, and '
+                      'URIs include URLs'],
+         'domain_of': ['Resource'],
+         'is_a': 'identifier'} })
 
 
 class ProductionCellLine(Term):
@@ -2840,6 +3222,20 @@ class ProductionCellLine(Term):
          'domain_of': ['Resource'],
          'exact_mappings': ['sepio:0000036'],
          'slot_uri': 'dct:modified'} })
+    identifier: Optional[list[str]] = Field(default=None, title="identifier", description="""A unique identifier of the resource being described or cataloged""", json_schema_extra = { "linkml_meta": {'alias': 'identifier',
+         'comments': ['The identifier is a text string which is assigned to the '
+                      'resource to provide an unambiguous reference within a '
+                      'particular context. Persistent identifiers should be provided '
+                      'as HTTP URIs'],
+         'domain_of': ['Resource'],
+         'exact_mappings': ['schema:identifier'],
+         'slot_uri': 'dct:identifier'} })
+    iri: Optional[list[str]] = Field(default=None, title="IRI", description="""International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs""", json_schema_extra = { "linkml_meta": {'alias': 'iri',
+         'comments': ['An IRI is a global identifier standardized by IETF RFC 3987. It '
+                      'may or may not be resolvable on the web. IRIs include URIs, and '
+                      'URIs include URLs'],
+         'domain_of': ['Resource'],
+         'is_a': 'identifier'} })
 
 
 class ProductCategory(Term):
@@ -2932,6 +3328,20 @@ class ProductCategory(Term):
          'domain_of': ['Resource'],
          'exact_mappings': ['sepio:0000036'],
          'slot_uri': 'dct:modified'} })
+    identifier: Optional[list[str]] = Field(default=None, title="identifier", description="""A unique identifier of the resource being described or cataloged""", json_schema_extra = { "linkml_meta": {'alias': 'identifier',
+         'comments': ['The identifier is a text string which is assigned to the '
+                      'resource to provide an unambiguous reference within a '
+                      'particular context. Persistent identifiers should be provided '
+                      'as HTTP URIs'],
+         'domain_of': ['Resource'],
+         'exact_mappings': ['schema:identifier'],
+         'slot_uri': 'dct:identifier'} })
+    iri: Optional[list[str]] = Field(default=None, title="IRI", description="""International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs""", json_schema_extra = { "linkml_meta": {'alias': 'iri',
+         'comments': ['An IRI is a global identifier standardized by IETF RFC 3987. It '
+                      'may or may not be resolvable on the web. IRIs include URIs, and '
+                      'URIs include URLs'],
+         'domain_of': ['Resource'],
+         'is_a': 'identifier'} })
 
 
 class IsolationHost(Term):
@@ -2998,6 +3408,20 @@ class IsolationHost(Term):
          'domain_of': ['Resource'],
          'exact_mappings': ['sepio:0000036'],
          'slot_uri': 'dct:modified'} })
+    identifier: Optional[list[str]] = Field(default=None, title="identifier", description="""A unique identifier of the resource being described or cataloged""", json_schema_extra = { "linkml_meta": {'alias': 'identifier',
+         'comments': ['The identifier is a text string which is assigned to the '
+                      'resource to provide an unambiguous reference within a '
+                      'particular context. Persistent identifiers should be provided '
+                      'as HTTP URIs'],
+         'domain_of': ['Resource'],
+         'exact_mappings': ['schema:identifier'],
+         'slot_uri': 'dct:identifier'} })
+    iri: Optional[list[str]] = Field(default=None, title="IRI", description="""International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs""", json_schema_extra = { "linkml_meta": {'alias': 'iri',
+         'comments': ['An IRI is a global identifier standardized by IETF RFC 3987. It '
+                      'may or may not be resolvable on the web. IRIs include URIs, and '
+                      'URIs include URLs'],
+         'domain_of': ['Resource'],
+         'is_a': 'identifier'} })
 
 
 class GeographicalOrigin(Term):
@@ -3075,6 +3499,20 @@ class GeographicalOrigin(Term):
          'domain_of': ['Resource'],
          'exact_mappings': ['sepio:0000036'],
          'slot_uri': 'dct:modified'} })
+    identifier: Optional[list[str]] = Field(default=None, title="identifier", description="""A unique identifier of the resource being described or cataloged""", json_schema_extra = { "linkml_meta": {'alias': 'identifier',
+         'comments': ['The identifier is a text string which is assigned to the '
+                      'resource to provide an unambiguous reference within a '
+                      'particular context. Persistent identifiers should be provided '
+                      'as HTTP URIs'],
+         'domain_of': ['Resource'],
+         'exact_mappings': ['schema:identifier'],
+         'slot_uri': 'dct:identifier'} })
+    iri: Optional[list[str]] = Field(default=None, title="IRI", description="""International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs""", json_schema_extra = { "linkml_meta": {'alias': 'iri',
+         'comments': ['An IRI is a global identifier standardized by IETF RFC 3987. It '
+                      'may or may not be resolvable on the web. IRIs include URIs, and '
+                      'URIs include URLs'],
+         'domain_of': ['Resource'],
+         'is_a': 'identifier'} })
 
 
 class IplcOrigin(GeographicalOrigin):
@@ -3150,6 +3588,20 @@ class IplcOrigin(GeographicalOrigin):
          'domain_of': ['Resource'],
          'exact_mappings': ['sepio:0000036'],
          'slot_uri': 'dct:modified'} })
+    identifier: Optional[list[str]] = Field(default=None, title="identifier", description="""A unique identifier of the resource being described or cataloged""", json_schema_extra = { "linkml_meta": {'alias': 'identifier',
+         'comments': ['The identifier is a text string which is assigned to the '
+                      'resource to provide an unambiguous reference within a '
+                      'particular context. Persistent identifiers should be provided '
+                      'as HTTP URIs'],
+         'domain_of': ['Resource'],
+         'exact_mappings': ['schema:identifier'],
+         'slot_uri': 'dct:identifier'} })
+    iri: Optional[list[str]] = Field(default=None, title="IRI", description="""International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs""", json_schema_extra = { "linkml_meta": {'alias': 'iri',
+         'comments': ['An IRI is a global identifier standardized by IETF RFC 3987. It '
+                      'may or may not be resolvable on the web. IRIs include URIs, and '
+                      'URIs include URLs'],
+         'domain_of': ['Resource'],
+         'is_a': 'identifier'} })
 
 
 class Country(Term):
@@ -3249,6 +3701,20 @@ class Country(Term):
          'domain_of': ['Resource'],
          'exact_mappings': ['sepio:0000036'],
          'slot_uri': 'dct:modified'} })
+    identifier: Optional[list[str]] = Field(default=None, title="identifier", description="""A unique identifier of the resource being described or cataloged""", json_schema_extra = { "linkml_meta": {'alias': 'identifier',
+         'comments': ['The identifier is a text string which is assigned to the '
+                      'resource to provide an unambiguous reference within a '
+                      'particular context. Persistent identifiers should be provided '
+                      'as HTTP URIs'],
+         'domain_of': ['Resource'],
+         'exact_mappings': ['schema:identifier'],
+         'slot_uri': 'dct:identifier'} })
+    iri: Optional[list[str]] = Field(default=None, title="IRI", description="""International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs""", json_schema_extra = { "linkml_meta": {'alias': 'iri',
+         'comments': ['An IRI is a global identifier standardized by IETF RFC 3987. It '
+                      'may or may not be resolvable on the web. IRIs include URIs, and '
+                      'URIs include URLs'],
+         'domain_of': ['Resource'],
+         'is_a': 'identifier'} })
 
 
 class IataClassification(Term):
@@ -3317,6 +3783,20 @@ class IataClassification(Term):
          'domain_of': ['Resource'],
          'exact_mappings': ['sepio:0000036'],
          'slot_uri': 'dct:modified'} })
+    identifier: Optional[list[str]] = Field(default=None, title="identifier", description="""A unique identifier of the resource being described or cataloged""", json_schema_extra = { "linkml_meta": {'alias': 'identifier',
+         'comments': ['The identifier is a text string which is assigned to the '
+                      'resource to provide an unambiguous reference within a '
+                      'particular context. Persistent identifiers should be provided '
+                      'as HTTP URIs'],
+         'domain_of': ['Resource'],
+         'exact_mappings': ['schema:identifier'],
+         'slot_uri': 'dct:identifier'} })
+    iri: Optional[list[str]] = Field(default=None, title="IRI", description="""International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs""", json_schema_extra = { "linkml_meta": {'alias': 'iri',
+         'comments': ['An IRI is a global identifier standardized by IETF RFC 3987. It '
+                      'may or may not be resolvable on the web. IRIs include URIs, and '
+                      'URIs include URLs'],
+         'domain_of': ['Resource'],
+         'is_a': 'identifier'} })
 
 
 class Variant(CommonName):
@@ -3397,6 +3877,20 @@ class Variant(CommonName):
          'domain_of': ['Resource'],
          'exact_mappings': ['sepio:0000036'],
          'slot_uri': 'dct:modified'} })
+    identifier: Optional[list[str]] = Field(default=None, title="identifier", description="""A unique identifier of the resource being described or cataloged""", json_schema_extra = { "linkml_meta": {'alias': 'identifier',
+         'comments': ['The identifier is a text string which is assigned to the '
+                      'resource to provide an unambiguous reference within a '
+                      'particular context. Persistent identifiers should be provided '
+                      'as HTTP URIs'],
+         'domain_of': ['Resource'],
+         'exact_mappings': ['schema:identifier'],
+         'slot_uri': 'dct:identifier'} })
+    iri: Optional[list[str]] = Field(default=None, title="IRI", description="""International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs""", json_schema_extra = { "linkml_meta": {'alias': 'iri',
+         'comments': ['An IRI is a global identifier standardized by IETF RFC 3987. It '
+                      'may or may not be resolvable on the web. IRIs include URIs, and '
+                      'URIs include URLs'],
+         'domain_of': ['Resource'],
+         'is_a': 'identifier'} })
 
 
 class TaxonomicRank(Term):
@@ -3486,6 +3980,20 @@ class TaxonomicRank(Term):
          'domain_of': ['Resource'],
          'exact_mappings': ['sepio:0000036'],
          'slot_uri': 'dct:modified'} })
+    identifier: Optional[list[str]] = Field(default=None, title="identifier", description="""A unique identifier of the resource being described or cataloged""", json_schema_extra = { "linkml_meta": {'alias': 'identifier',
+         'comments': ['The identifier is a text string which is assigned to the '
+                      'resource to provide an unambiguous reference within a '
+                      'particular context. Persistent identifiers should be provided '
+                      'as HTTP URIs'],
+         'domain_of': ['Resource'],
+         'exact_mappings': ['schema:identifier'],
+         'slot_uri': 'dct:identifier'} })
+    iri: Optional[list[str]] = Field(default=None, title="IRI", description="""International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs""", json_schema_extra = { "linkml_meta": {'alias': 'iri',
+         'comments': ['An IRI is a global identifier standardized by IETF RFC 3987. It '
+                      'may or may not be resolvable on the web. IRIs include URIs, and '
+                      'URIs include URLs'],
+         'domain_of': ['Resource'],
+         'is_a': 'identifier'} })
 
 
 class Taxon(Term):
@@ -3566,6 +4074,7 @@ class Taxon(Term):
                                                        'releases',
                                         'domain_of': ['Taxon'],
                                         'exact_mappings': ['dwc:taxonID'],
+                                        'is_a': 'identifier',
                                         'multivalued': False,
                                         'name': 'taxonomicId',
                                         'narrow_mappings': ['ncit:P331'],
@@ -3590,6 +4099,7 @@ class Taxon(Term):
                                                            'release/version of the '
                                                            'taxonomy',
                                             'domain_of': ['Taxon'],
+                                            'is_a': 'identifier',
                                             'multivalued': False,
                                             'name': 'taxonomicNodeId',
                                             'range': 'string',
@@ -3638,6 +4148,7 @@ class Taxon(Term):
          'broad_mappings': ['schema:identifier', 'dct:identifier'],
          'domain_of': ['Taxon'],
          'exact_mappings': ['dwc:taxonID'],
+         'is_a': 'identifier',
          'narrow_mappings': ['ncit:P331']} })
     taxonomicNodeId: Optional[str] = Field(default=None, title="taxonomic node ID", description="""The taxonomic_Node Identifier as an identifier specific the current taxon in the corresponding release/version of the taxonomy""", json_schema_extra = { "linkml_meta": {'alias': 'taxonomicNodeId',
          'broad_mappings': ['dct:identifier'],
@@ -3647,6 +4158,7 @@ class Taxon(Term):
                       "Could be replaced by a composite key made of 'taxonomic ID' + "
                       "'has version'"],
          'domain_of': ['Taxon'],
+         'is_a': 'identifier',
          'recommended': True} })
     title: str = Field(default=..., title="title", description="""A name given to the resource""", json_schema_extra = { "linkml_meta": {'alias': 'title',
          'comments': ['The title of the item should be as short and descriptive as '
@@ -3706,6 +4218,20 @@ class Taxon(Term):
          'domain_of': ['Resource'],
          'exact_mappings': ['sepio:0000036'],
          'slot_uri': 'dct:modified'} })
+    identifier: Optional[list[str]] = Field(default=None, title="identifier", description="""A unique identifier of the resource being described or cataloged""", json_schema_extra = { "linkml_meta": {'alias': 'identifier',
+         'comments': ['The identifier is a text string which is assigned to the '
+                      'resource to provide an unambiguous reference within a '
+                      'particular context. Persistent identifiers should be provided '
+                      'as HTTP URIs'],
+         'domain_of': ['Resource'],
+         'exact_mappings': ['schema:identifier'],
+         'slot_uri': 'dct:identifier'} })
+    iri: Optional[list[str]] = Field(default=None, title="IRI", description="""International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs""", json_schema_extra = { "linkml_meta": {'alias': 'iri',
+         'comments': ['An IRI is a global identifier standardized by IETF RFC 3987. It '
+                      'may or may not be resolvable on the web. IRIs include URIs, and '
+                      'URIs include URLs'],
+         'domain_of': ['Resource'],
+         'is_a': 'identifier'} })
 
 
 class ClinicalGroup(Term):
@@ -3825,6 +4351,20 @@ class ClinicalGroup(Term):
          'domain_of': ['Resource'],
          'exact_mappings': ['sepio:0000036'],
          'slot_uri': 'dct:modified'} })
+    identifier: Optional[list[str]] = Field(default=None, title="identifier", description="""A unique identifier of the resource being described or cataloged""", json_schema_extra = { "linkml_meta": {'alias': 'identifier',
+         'comments': ['The identifier is a text string which is assigned to the '
+                      'resource to provide an unambiguous reference within a '
+                      'particular context. Persistent identifiers should be provided '
+                      'as HTTP URIs'],
+         'domain_of': ['Resource'],
+         'exact_mappings': ['schema:identifier'],
+         'slot_uri': 'dct:identifier'} })
+    iri: Optional[list[str]] = Field(default=None, title="IRI", description="""International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs""", json_schema_extra = { "linkml_meta": {'alias': 'iri',
+         'comments': ['An IRI is a global identifier standardized by IETF RFC 3987. It '
+                      'may or may not be resolvable on the web. IRIs include URIs, and '
+                      'URIs include URLs'],
+         'domain_of': ['Resource'],
+         'is_a': 'identifier'} })
 
 
 class ExternalRelatedReference(Resource):
@@ -3838,6 +4378,7 @@ class ExternalRelatedReference(Resource):
                                       'description': 'The identifier reference of the '
                                                      'connected external item',
                                       'domain_of': ['ExternalRelatedReference'],
+                                      'is_a': 'identifier',
                                       'multivalued': False,
                                       'name': 'reference',
                                       'range': 'string',
@@ -3882,7 +4423,8 @@ class ExternalRelatedReference(Resource):
 
     reference: str = Field(default=..., title="reference", description="""The identifier reference of the connected external item""", json_schema_extra = { "linkml_meta": {'alias': 'reference',
          'close_mappings': ['dct:identifier', 'dct:references'],
-         'domain_of': ['ExternalRelatedReference']} })
+         'domain_of': ['ExternalRelatedReference'],
+         'is_a': 'identifier'} })
     referenceLabel: str = Field(default=..., title="reference label", description="""The label informing what this reference is about""", json_schema_extra = { "linkml_meta": {'alias': 'referenceLabel',
          'close_mappings': ['dct:title'],
          'comments': ["e.g., 'Infravec2 related product'"],
@@ -3908,6 +4450,20 @@ class ExternalRelatedReference(Resource):
          'domain_of': ['Resource'],
          'exact_mappings': ['sepio:0000036'],
          'slot_uri': 'dct:modified'} })
+    identifier: Optional[list[str]] = Field(default=None, title="identifier", description="""A unique identifier of the resource being described or cataloged""", json_schema_extra = { "linkml_meta": {'alias': 'identifier',
+         'comments': ['The identifier is a text string which is assigned to the '
+                      'resource to provide an unambiguous reference within a '
+                      'particular context. Persistent identifiers should be provided '
+                      'as HTTP URIs'],
+         'domain_of': ['Resource'],
+         'exact_mappings': ['schema:identifier'],
+         'slot_uri': 'dct:identifier'} })
+    iri: Optional[list[str]] = Field(default=None, title="IRI", description="""International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs""", json_schema_extra = { "linkml_meta": {'alias': 'iri',
+         'comments': ['An IRI is a global identifier standardized by IETF RFC 3987. It '
+                      'may or may not be resolvable on the web. IRIs include URIs, and '
+                      'URIs include URLs'],
+         'domain_of': ['Resource'],
+         'is_a': 'identifier'} })
 
 
 class Sequence(Resource):
@@ -3983,6 +4539,20 @@ class Sequence(Resource):
          'domain_of': ['Resource'],
          'exact_mappings': ['sepio:0000036'],
          'slot_uri': 'dct:modified'} })
+    identifier: Optional[list[str]] = Field(default=None, title="identifier", description="""A unique identifier of the resource being described or cataloged""", json_schema_extra = { "linkml_meta": {'alias': 'identifier',
+         'comments': ['The identifier is a text string which is assigned to the '
+                      'resource to provide an unambiguous reference within a '
+                      'particular context. Persistent identifiers should be provided '
+                      'as HTTP URIs'],
+         'domain_of': ['Resource'],
+         'exact_mappings': ['schema:identifier'],
+         'slot_uri': 'dct:identifier'} })
+    iri: Optional[list[str]] = Field(default=None, title="IRI", description="""International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs""", json_schema_extra = { "linkml_meta": {'alias': 'iri',
+         'comments': ['An IRI is a global identifier standardized by IETF RFC 3987. It '
+                      'may or may not be resolvable on the web. IRIs include URIs, and '
+                      'URIs include URLs'],
+         'domain_of': ['Resource'],
+         'is_a': 'identifier'} })
 
 
 class SequenceReference(Resource):
@@ -4000,6 +4570,7 @@ class SequenceReference(Resource):
                                                            'sequence information from '
                                                            'the sequence provider',
                                             'domain_of': ['SequenceReference'],
+                                            'is_a': 'identifier',
                                             'multivalued': False,
                                             'name': 'accessionNumber',
                                             'narrow_mappings': ['ncit:P102'],
@@ -4023,6 +4594,7 @@ class SequenceReference(Resource):
     accessionNumber: str = Field(default=..., title="accession number", description="""The sequence ID that permits to retrieve the sequence information from the sequence provider""", json_schema_extra = { "linkml_meta": {'alias': 'accessionNumber',
          'broad_mappings': ['schema:identifier'],
          'domain_of': ['SequenceReference'],
+         'is_a': 'identifier',
          'narrow_mappings': ['ncit:P102'],
          'related_mappings': ['dct:identifier']} })
     sequenceProvider: Literal["ENA", "GenBank"] = Field(default=..., title="sequence provider", description="""The name of the sequence provider within the list of accepted sequence providers""", json_schema_extra = { "linkml_meta": {'alias': 'sequenceProvider',
@@ -4044,6 +4616,20 @@ class SequenceReference(Resource):
          'domain_of': ['Resource'],
          'exact_mappings': ['sepio:0000036'],
          'slot_uri': 'dct:modified'} })
+    identifier: Optional[list[str]] = Field(default=None, title="identifier", description="""A unique identifier of the resource being described or cataloged""", json_schema_extra = { "linkml_meta": {'alias': 'identifier',
+         'comments': ['The identifier is a text string which is assigned to the '
+                      'resource to provide an unambiguous reference within a '
+                      'particular context. Persistent identifiers should be provided '
+                      'as HTTP URIs'],
+         'domain_of': ['Resource'],
+         'exact_mappings': ['schema:identifier'],
+         'slot_uri': 'dct:identifier'} })
+    iri: Optional[list[str]] = Field(default=None, title="IRI", description="""International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs""", json_schema_extra = { "linkml_meta": {'alias': 'iri',
+         'comments': ['An IRI is a global identifier standardized by IETF RFC 3987. It '
+                      'may or may not be resolvable on the web. IRIs include URIs, and '
+                      'URIs include URLs'],
+         'domain_of': ['Resource'],
+         'is_a': 'identifier'} })
 
 
 class PersonOrOrganization(Resource):
@@ -4172,6 +4758,20 @@ class PersonOrOrganization(Resource):
          'domain_of': ['Resource'],
          'exact_mappings': ['sepio:0000036'],
          'slot_uri': 'dct:modified'} })
+    identifier: Optional[list[str]] = Field(default=None, title="identifier", description="""A unique identifier of the resource being described or cataloged""", json_schema_extra = { "linkml_meta": {'alias': 'identifier',
+         'comments': ['The identifier is a text string which is assigned to the '
+                      'resource to provide an unambiguous reference within a '
+                      'particular context. Persistent identifiers should be provided '
+                      'as HTTP URIs'],
+         'domain_of': ['Resource'],
+         'exact_mappings': ['schema:identifier'],
+         'slot_uri': 'dct:identifier'} })
+    iri: Optional[list[str]] = Field(default=None, title="IRI", description="""International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs""", json_schema_extra = { "linkml_meta": {'alias': 'iri',
+         'comments': ['An IRI is a global identifier standardized by IETF RFC 3987. It '
+                      'may or may not be resolvable on the web. IRIs include URIs, and '
+                      'URIs include URLs'],
+         'domain_of': ['Resource'],
+         'is_a': 'identifier'} })
 
 
 class Person(PersonOrOrganization):
@@ -4191,6 +4791,7 @@ class Person(PersonOrOrganization):
                                                    '(ORCID) organisation',
                                     'domain_of': ['Person', 'ContactPoint'],
                                     'exact_mappings': ['wdp:P496', 'reproduceme:ORCID'],
+                                    'is_a': 'identifier',
                                     'multivalued': False,
                                     'name': 'orcidId',
                                     'range': 'string',
@@ -4203,6 +4804,7 @@ class Person(PersonOrOrganization):
     orcidId: Optional[str] = Field(default=None, title="ORCID id", description="""Unique persistent identifier for a person, provided by the Open Researcher and Contributor ID (ORCID) organisation""", json_schema_extra = { "linkml_meta": {'alias': 'orcidId',
          'domain_of': ['Person', 'ContactPoint'],
          'exact_mappings': ['wdp:P496', 'reproduceme:ORCID'],
+         'is_a': 'identifier',
          'recommended': True,
          'related_mappings': ['iao:0000708', 'edam:4022']} })
     name: str = Field(default=..., title="name", description="""A word or set of words used to identify and refer to an entity""", json_schema_extra = { "linkml_meta": {'alias': 'name',
@@ -4252,6 +4854,20 @@ class Person(PersonOrOrganization):
          'domain_of': ['Resource'],
          'exact_mappings': ['sepio:0000036'],
          'slot_uri': 'dct:modified'} })
+    identifier: Optional[list[str]] = Field(default=None, title="identifier", description="""A unique identifier of the resource being described or cataloged""", json_schema_extra = { "linkml_meta": {'alias': 'identifier',
+         'comments': ['The identifier is a text string which is assigned to the '
+                      'resource to provide an unambiguous reference within a '
+                      'particular context. Persistent identifiers should be provided '
+                      'as HTTP URIs'],
+         'domain_of': ['Resource'],
+         'exact_mappings': ['schema:identifier'],
+         'slot_uri': 'dct:identifier'} })
+    iri: Optional[list[str]] = Field(default=None, title="IRI", description="""International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs""", json_schema_extra = { "linkml_meta": {'alias': 'iri',
+         'comments': ['An IRI is a global identifier standardized by IETF RFC 3987. It '
+                      'may or may not be resolvable on the web. IRIs include URIs, and '
+                      'URIs include URLs'],
+         'domain_of': ['Resource'],
+         'is_a': 'identifier'} })
 
 
 class Organization(PersonOrOrganization):
@@ -4301,6 +4917,7 @@ class Organization(PersonOrOrganization):
                                                  'Research Organization Registry (ROR)',
                                   'domain_of': ['Organization'],
                                   'exact_mappings': ['wdp:P6782'],
+                                  'is_a': 'identifier',
                                   'multivalued': False,
                                   'name': 'rorId',
                                   'range': 'string',
@@ -4322,6 +4939,7 @@ class Organization(PersonOrOrganization):
     rorId: Optional[str] = Field(default=None, title="ROR iD", description="""The corresponding organization's persistent identifier from the Research Organization Registry (ROR)""", json_schema_extra = { "linkml_meta": {'alias': 'rorId',
          'domain_of': ['Organization'],
          'exact_mappings': ['wdp:P6782'],
+         'is_a': 'identifier',
          'recommended': True,
          'related_mappings': ['dwc:institutionCode']} })
     name: str = Field(default=..., title="name", description="""A word or set of words used to identify and refer to an entity""", json_schema_extra = { "linkml_meta": {'alias': 'name',
@@ -4371,6 +4989,20 @@ class Organization(PersonOrOrganization):
          'domain_of': ['Resource'],
          'exact_mappings': ['sepio:0000036'],
          'slot_uri': 'dct:modified'} })
+    identifier: Optional[list[str]] = Field(default=None, title="identifier", description="""A unique identifier of the resource being described or cataloged""", json_schema_extra = { "linkml_meta": {'alias': 'identifier',
+         'comments': ['The identifier is a text string which is assigned to the '
+                      'resource to provide an unambiguous reference within a '
+                      'particular context. Persistent identifiers should be provided '
+                      'as HTTP URIs'],
+         'domain_of': ['Resource'],
+         'exact_mappings': ['schema:identifier'],
+         'slot_uri': 'dct:identifier'} })
+    iri: Optional[list[str]] = Field(default=None, title="IRI", description="""International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs""", json_schema_extra = { "linkml_meta": {'alias': 'iri',
+         'comments': ['An IRI is a global identifier standardized by IETF RFC 3987. It '
+                      'may or may not be resolvable on the web. IRIs include URIs, and '
+                      'URIs include URLs'],
+         'domain_of': ['Resource'],
+         'is_a': 'identifier'} })
 
 
 class ReasearchInfrastructure(Organization):
@@ -4397,6 +5029,7 @@ class ReasearchInfrastructure(Organization):
     rorId: Optional[str] = Field(default=None, title="ROR iD", description="""The corresponding organization's persistent identifier from the Research Organization Registry (ROR)""", json_schema_extra = { "linkml_meta": {'alias': 'rorId',
          'domain_of': ['Organization'],
          'exact_mappings': ['wdp:P6782'],
+         'is_a': 'identifier',
          'recommended': True,
          'related_mappings': ['dwc:institutionCode']} })
     name: str = Field(default=..., title="name", description="""A word or set of words used to identify and refer to an entity""", json_schema_extra = { "linkml_meta": {'alias': 'name',
@@ -4446,6 +5079,20 @@ class ReasearchInfrastructure(Organization):
          'domain_of': ['Resource'],
          'exact_mappings': ['sepio:0000036'],
          'slot_uri': 'dct:modified'} })
+    identifier: Optional[list[str]] = Field(default=None, title="identifier", description="""A unique identifier of the resource being described or cataloged""", json_schema_extra = { "linkml_meta": {'alias': 'identifier',
+         'comments': ['The identifier is a text string which is assigned to the '
+                      'resource to provide an unambiguous reference within a '
+                      'particular context. Persistent identifiers should be provided '
+                      'as HTTP URIs'],
+         'domain_of': ['Resource'],
+         'exact_mappings': ['schema:identifier'],
+         'slot_uri': 'dct:identifier'} })
+    iri: Optional[list[str]] = Field(default=None, title="IRI", description="""International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs""", json_schema_extra = { "linkml_meta": {'alias': 'iri',
+         'comments': ['An IRI is a global identifier standardized by IETF RFC 3987. It '
+                      'may or may not be resolvable on the web. IRIs include URIs, and '
+                      'URIs include URLs'],
+         'domain_of': ['Resource'],
+         'is_a': 'identifier'} })
 
 
 class Provider(Organization):
@@ -4485,6 +5132,7 @@ class Provider(Organization):
     rorId: Optional[str] = Field(default=None, title="ROR iD", description="""The corresponding organization's persistent identifier from the Research Organization Registry (ROR)""", json_schema_extra = { "linkml_meta": {'alias': 'rorId',
          'domain_of': ['Organization'],
          'exact_mappings': ['wdp:P6782'],
+         'is_a': 'identifier',
          'recommended': True,
          'related_mappings': ['dwc:institutionCode']} })
     name: str = Field(default=..., title="name", description="""A word or set of words used to identify and refer to an entity""", json_schema_extra = { "linkml_meta": {'alias': 'name',
@@ -4534,6 +5182,20 @@ class Provider(Organization):
          'domain_of': ['Resource'],
          'exact_mappings': ['sepio:0000036'],
          'slot_uri': 'dct:modified'} })
+    identifier: Optional[list[str]] = Field(default=None, title="identifier", description="""A unique identifier of the resource being described or cataloged""", json_schema_extra = { "linkml_meta": {'alias': 'identifier',
+         'comments': ['The identifier is a text string which is assigned to the '
+                      'resource to provide an unambiguous reference within a '
+                      'particular context. Persistent identifiers should be provided '
+                      'as HTTP URIs'],
+         'domain_of': ['Resource'],
+         'exact_mappings': ['schema:identifier'],
+         'slot_uri': 'dct:identifier'} })
+    iri: Optional[list[str]] = Field(default=None, title="IRI", description="""International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs""", json_schema_extra = { "linkml_meta": {'alias': 'iri',
+         'comments': ['An IRI is a global identifier standardized by IETF RFC 3987. It '
+                      'may or may not be resolvable on the web. IRIs include URIs, and '
+                      'URIs include URLs'],
+         'domain_of': ['Resource'],
+         'is_a': 'identifier'} })
 
 
 class Originator(PersonOrOrganization):
@@ -4595,6 +5257,20 @@ class Originator(PersonOrOrganization):
          'domain_of': ['Resource'],
          'exact_mappings': ['sepio:0000036'],
          'slot_uri': 'dct:modified'} })
+    identifier: Optional[list[str]] = Field(default=None, title="identifier", description="""A unique identifier of the resource being described or cataloged""", json_schema_extra = { "linkml_meta": {'alias': 'identifier',
+         'comments': ['The identifier is a text string which is assigned to the '
+                      'resource to provide an unambiguous reference within a '
+                      'particular context. Persistent identifiers should be provided '
+                      'as HTTP URIs'],
+         'domain_of': ['Resource'],
+         'exact_mappings': ['schema:identifier'],
+         'slot_uri': 'dct:identifier'} })
+    iri: Optional[list[str]] = Field(default=None, title="IRI", description="""International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs""", json_schema_extra = { "linkml_meta": {'alias': 'iri',
+         'comments': ['An IRI is a global identifier standardized by IETF RFC 3987. It '
+                      'may or may not be resolvable on the web. IRIs include URIs, and '
+                      'URIs include URLs'],
+         'domain_of': ['Resource'],
+         'is_a': 'identifier'} })
 
 
 class BiologicalMaterialOrigin(Resource):
@@ -4686,6 +5362,20 @@ class BiologicalMaterialOrigin(Resource):
          'domain_of': ['Resource'],
          'exact_mappings': ['sepio:0000036'],
          'slot_uri': 'dct:modified'} })
+    identifier: Optional[list[str]] = Field(default=None, title="identifier", description="""A unique identifier of the resource being described or cataloged""", json_schema_extra = { "linkml_meta": {'alias': 'identifier',
+         'comments': ['The identifier is a text string which is assigned to the '
+                      'resource to provide an unambiguous reference within a '
+                      'particular context. Persistent identifiers should be provided '
+                      'as HTTP URIs'],
+         'domain_of': ['Resource'],
+         'exact_mappings': ['schema:identifier'],
+         'slot_uri': 'dct:identifier'} })
+    iri: Optional[list[str]] = Field(default=None, title="IRI", description="""International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs""", json_schema_extra = { "linkml_meta": {'alias': 'iri',
+         'comments': ['An IRI is a global identifier standardized by IETF RFC 3987. It '
+                      'may or may not be resolvable on the web. IRIs include URIs, and '
+                      'URIs include URLs'],
+         'domain_of': ['Resource'],
+         'is_a': 'identifier'} })
 
 
 class BiologicalPartOrigin(Resource):
@@ -4756,6 +5446,20 @@ class BiologicalPartOrigin(Resource):
          'domain_of': ['Resource'],
          'exact_mappings': ['sepio:0000036'],
          'slot_uri': 'dct:modified'} })
+    identifier: Optional[list[str]] = Field(default=None, title="identifier", description="""A unique identifier of the resource being described or cataloged""", json_schema_extra = { "linkml_meta": {'alias': 'identifier',
+         'comments': ['The identifier is a text string which is assigned to the '
+                      'resource to provide an unambiguous reference within a '
+                      'particular context. Persistent identifiers should be provided '
+                      'as HTTP URIs'],
+         'domain_of': ['Resource'],
+         'exact_mappings': ['schema:identifier'],
+         'slot_uri': 'dct:identifier'} })
+    iri: Optional[list[str]] = Field(default=None, title="IRI", description="""International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs""", json_schema_extra = { "linkml_meta": {'alias': 'iri',
+         'comments': ['An IRI is a global identifier standardized by IETF RFC 3987. It '
+                      'may or may not be resolvable on the web. IRIs include URIs, and '
+                      'URIs include URLs'],
+         'domain_of': ['Resource'],
+         'is_a': 'identifier'} })
 
 
 class NaturalPartOrigin(BiologicalPartOrigin):
@@ -4898,6 +5602,20 @@ class NaturalPartOrigin(BiologicalPartOrigin):
          'domain_of': ['Resource'],
          'exact_mappings': ['sepio:0000036'],
          'slot_uri': 'dct:modified'} })
+    identifier: Optional[list[str]] = Field(default=None, title="identifier", description="""A unique identifier of the resource being described or cataloged""", json_schema_extra = { "linkml_meta": {'alias': 'identifier',
+         'comments': ['The identifier is a text string which is assigned to the '
+                      'resource to provide an unambiguous reference within a '
+                      'particular context. Persistent identifiers should be provided '
+                      'as HTTP URIs'],
+         'domain_of': ['Resource'],
+         'exact_mappings': ['schema:identifier'],
+         'slot_uri': 'dct:identifier'} })
+    iri: Optional[list[str]] = Field(default=None, title="IRI", description="""International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs""", json_schema_extra = { "linkml_meta": {'alias': 'iri',
+         'comments': ['An IRI is a global identifier standardized by IETF RFC 3987. It '
+                      'may or may not be resolvable on the web. IRIs include URIs, and '
+                      'URIs include URLs'],
+         'domain_of': ['Resource'],
+         'is_a': 'identifier'} })
 
 
 class SyntheticPartOrigin(BiologicalPartOrigin):
@@ -4984,6 +5702,20 @@ class SyntheticPartOrigin(BiologicalPartOrigin):
          'domain_of': ['Resource'],
          'exact_mappings': ['sepio:0000036'],
          'slot_uri': 'dct:modified'} })
+    identifier: Optional[list[str]] = Field(default=None, title="identifier", description="""A unique identifier of the resource being described or cataloged""", json_schema_extra = { "linkml_meta": {'alias': 'identifier',
+         'comments': ['The identifier is a text string which is assigned to the '
+                      'resource to provide an unambiguous reference within a '
+                      'particular context. Persistent identifiers should be provided '
+                      'as HTTP URIs'],
+         'domain_of': ['Resource'],
+         'exact_mappings': ['schema:identifier'],
+         'slot_uri': 'dct:identifier'} })
+    iri: Optional[list[str]] = Field(default=None, title="IRI", description="""International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs""", json_schema_extra = { "linkml_meta": {'alias': 'iri',
+         'comments': ['An IRI is a global identifier standardized by IETF RFC 3987. It '
+                      'may or may not be resolvable on the web. IRIs include URIs, and '
+                      'URIs include URLs'],
+         'domain_of': ['Resource'],
+         'is_a': 'identifier'} })
 
 
 class RecombinantPartIdentification(Resource):
@@ -5042,6 +5774,20 @@ class RecombinantPartIdentification(Resource):
          'domain_of': ['Resource'],
          'exact_mappings': ['sepio:0000036'],
          'slot_uri': 'dct:modified'} })
+    identifier: Optional[list[str]] = Field(default=None, title="identifier", description="""A unique identifier of the resource being described or cataloged""", json_schema_extra = { "linkml_meta": {'alias': 'identifier',
+         'comments': ['The identifier is a text string which is assigned to the '
+                      'resource to provide an unambiguous reference within a '
+                      'particular context. Persistent identifiers should be provided '
+                      'as HTTP URIs'],
+         'domain_of': ['Resource'],
+         'exact_mappings': ['schema:identifier'],
+         'slot_uri': 'dct:identifier'} })
+    iri: Optional[list[str]] = Field(default=None, title="IRI", description="""International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs""", json_schema_extra = { "linkml_meta": {'alias': 'iri',
+         'comments': ['An IRI is a global identifier standardized by IETF RFC 3987. It '
+                      'may or may not be resolvable on the web. IRIs include URIs, and '
+                      'URIs include URLs'],
+         'domain_of': ['Resource'],
+         'is_a': 'identifier'} })
 
 
 class Collection(Catalogue):
@@ -5134,6 +5880,20 @@ class Collection(Catalogue):
          'domain_of': ['Resource'],
          'exact_mappings': ['sepio:0000036'],
          'slot_uri': 'dct:modified'} })
+    identifier: Optional[list[str]] = Field(default=None, title="identifier", description="""A unique identifier of the resource being described or cataloged""", json_schema_extra = { "linkml_meta": {'alias': 'identifier',
+         'comments': ['The identifier is a text string which is assigned to the '
+                      'resource to provide an unambiguous reference within a '
+                      'particular context. Persistent identifiers should be provided '
+                      'as HTTP URIs'],
+         'domain_of': ['Resource'],
+         'exact_mappings': ['schema:identifier'],
+         'slot_uri': 'dct:identifier'} })
+    iri: Optional[list[str]] = Field(default=None, title="IRI", description="""International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs""", json_schema_extra = { "linkml_meta": {'alias': 'iri',
+         'comments': ['An IRI is a global identifier standardized by IETF RFC 3987. It '
+                      'may or may not be resolvable on the web. IRIs include URIs, and '
+                      'URIs include URLs'],
+         'domain_of': ['Resource'],
+         'is_a': 'identifier'} })
 
 
 class ProductOrService(Dataset):
@@ -5419,6 +6179,7 @@ class ProductOrService(Dataset):
                                                   'catalogue',
                                    'domain_of': ['ProductOrService'],
                                    'exact_mappings': ['schema:sku'],
+                                   'is_a': 'identifier',
                                    'multivalued': False,
                                    'name': 'refSku',
                                    'range': 'string',
@@ -5538,7 +6299,8 @@ class ProductOrService(Dataset):
          'broad_mappings': ['dct:identifier', 'schema:identifier'],
          'close_mappings': ['dwc:catalogNumber'],
          'domain_of': ['ProductOrService'],
-         'exact_mappings': ['schema:sku']} })
+         'exact_mappings': ['schema:sku'],
+         'is_a': 'identifier'} })
     unitDefinition: Optional[str] = Field(default=None, title="unit definition", description="""A short description of what will be delivered by ordering one unit of this item""", json_schema_extra = { "linkml_meta": {'alias': 'unitDefinition',
          'comments': ['The description of what will be delivered to the end-user '
                       '(e.g.: packaging, quantity...)'],
@@ -5691,6 +6453,20 @@ class ProductOrService(Dataset):
          'domain_of': ['Resource'],
          'exact_mappings': ['sepio:0000036'],
          'slot_uri': 'dct:modified'} })
+    identifier: Optional[list[str]] = Field(default=None, title="identifier", description="""A unique identifier of the resource being described or cataloged""", json_schema_extra = { "linkml_meta": {'alias': 'identifier',
+         'comments': ['The identifier is a text string which is assigned to the '
+                      'resource to provide an unambiguous reference within a '
+                      'particular context. Persistent identifiers should be provided '
+                      'as HTTP URIs'],
+         'domain_of': ['Resource'],
+         'exact_mappings': ['schema:identifier'],
+         'slot_uri': 'dct:identifier'} })
+    iri: Optional[list[str]] = Field(default=None, title="IRI", description="""International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs""", json_schema_extra = { "linkml_meta": {'alias': 'iri',
+         'comments': ['An IRI is a global identifier standardized by IETF RFC 3987. It '
+                      'may or may not be resolvable on the web. IRIs include URIs, and '
+                      'URIs include URLs'],
+         'domain_of': ['Resource'],
+         'is_a': 'identifier'} })
 
 
 class Service(ProductOrService):
@@ -5742,7 +6518,8 @@ class Service(ProductOrService):
          'broad_mappings': ['dct:identifier', 'schema:identifier'],
          'close_mappings': ['dwc:catalogNumber'],
          'domain_of': ['ProductOrService'],
-         'exact_mappings': ['schema:sku']} })
+         'exact_mappings': ['schema:sku'],
+         'is_a': 'identifier'} })
     unitDefinition: Optional[str] = Field(default=None, title="unit definition", description="""A short description of what will be delivered by ordering one unit of this item""", json_schema_extra = { "linkml_meta": {'alias': 'unitDefinition',
          'comments': ['The description of what will be delivered to the end-user '
                       '(e.g.: packaging, quantity...)'],
@@ -5895,6 +6672,20 @@ class Service(ProductOrService):
          'domain_of': ['Resource'],
          'exact_mappings': ['sepio:0000036'],
          'slot_uri': 'dct:modified'} })
+    identifier: Optional[list[str]] = Field(default=None, title="identifier", description="""A unique identifier of the resource being described or cataloged""", json_schema_extra = { "linkml_meta": {'alias': 'identifier',
+         'comments': ['The identifier is a text string which is assigned to the '
+                      'resource to provide an unambiguous reference within a '
+                      'particular context. Persistent identifiers should be provided '
+                      'as HTTP URIs'],
+         'domain_of': ['Resource'],
+         'exact_mappings': ['schema:identifier'],
+         'slot_uri': 'dct:identifier'} })
+    iri: Optional[list[str]] = Field(default=None, title="IRI", description="""International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs""", json_schema_extra = { "linkml_meta": {'alias': 'iri',
+         'comments': ['An IRI is a global identifier standardized by IETF RFC 3987. It '
+                      'may or may not be resolvable on the web. IRIs include URIs, and '
+                      'URIs include URLs'],
+         'domain_of': ['Resource'],
+         'is_a': 'identifier'} })
 
 
 class Product(ProductOrService):
@@ -6069,7 +6860,8 @@ class Product(ProductOrService):
          'broad_mappings': ['dct:identifier', 'schema:identifier'],
          'close_mappings': ['dwc:catalogNumber'],
          'domain_of': ['ProductOrService'],
-         'exact_mappings': ['schema:sku']} })
+         'exact_mappings': ['schema:sku'],
+         'is_a': 'identifier'} })
     unitDefinition: Optional[str] = Field(default=None, title="unit definition", description="""A short description of what will be delivered by ordering one unit of this item""", json_schema_extra = { "linkml_meta": {'alias': 'unitDefinition',
          'comments': ['The description of what will be delivered to the end-user '
                       '(e.g.: packaging, quantity...)'],
@@ -6222,6 +7014,20 @@ class Product(ProductOrService):
          'domain_of': ['Resource'],
          'exact_mappings': ['sepio:0000036'],
          'slot_uri': 'dct:modified'} })
+    identifier: Optional[list[str]] = Field(default=None, title="identifier", description="""A unique identifier of the resource being described or cataloged""", json_schema_extra = { "linkml_meta": {'alias': 'identifier',
+         'comments': ['The identifier is a text string which is assigned to the '
+                      'resource to provide an unambiguous reference within a '
+                      'particular context. Persistent identifiers should be provided '
+                      'as HTTP URIs'],
+         'domain_of': ['Resource'],
+         'exact_mappings': ['schema:identifier'],
+         'slot_uri': 'dct:identifier'} })
+    iri: Optional[list[str]] = Field(default=None, title="IRI", description="""International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs""", json_schema_extra = { "linkml_meta": {'alias': 'iri',
+         'comments': ['An IRI is a global identifier standardized by IETF RFC 3987. It '
+                      'may or may not be resolvable on the web. IRIs include URIs, and '
+                      'URIs include URLs'],
+         'domain_of': ['Resource'],
+         'is_a': 'identifier'} })
 
 
 class Antibody(Product):
@@ -6329,7 +7135,8 @@ class Antibody(Product):
          'broad_mappings': ['dct:identifier', 'schema:identifier'],
          'close_mappings': ['dwc:catalogNumber'],
          'domain_of': ['ProductOrService'],
-         'exact_mappings': ['schema:sku']} })
+         'exact_mappings': ['schema:sku'],
+         'is_a': 'identifier'} })
     unitDefinition: Optional[str] = Field(default=None, title="unit definition", description="""A short description of what will be delivered by ordering one unit of this item""", json_schema_extra = { "linkml_meta": {'alias': 'unitDefinition',
          'comments': ['The description of what will be delivered to the end-user '
                       '(e.g.: packaging, quantity...)'],
@@ -6482,6 +7289,20 @@ class Antibody(Product):
          'domain_of': ['Resource'],
          'exact_mappings': ['sepio:0000036'],
          'slot_uri': 'dct:modified'} })
+    identifier: Optional[list[str]] = Field(default=None, title="identifier", description="""A unique identifier of the resource being described or cataloged""", json_schema_extra = { "linkml_meta": {'alias': 'identifier',
+         'comments': ['The identifier is a text string which is assigned to the '
+                      'resource to provide an unambiguous reference within a '
+                      'particular context. Persistent identifiers should be provided '
+                      'as HTTP URIs'],
+         'domain_of': ['Resource'],
+         'exact_mappings': ['schema:identifier'],
+         'slot_uri': 'dct:identifier'} })
+    iri: Optional[list[str]] = Field(default=None, title="IRI", description="""International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs""", json_schema_extra = { "linkml_meta": {'alias': 'iri',
+         'comments': ['An IRI is a global identifier standardized by IETF RFC 3987. It '
+                      'may or may not be resolvable on the web. IRIs include URIs, and '
+                      'URIs include URLs'],
+         'domain_of': ['Resource'],
+         'is_a': 'identifier'} })
 
 
 class Hybridoma(Antibody):
@@ -6548,7 +7369,8 @@ class Hybridoma(Antibody):
          'broad_mappings': ['dct:identifier', 'schema:identifier'],
          'close_mappings': ['dwc:catalogNumber'],
          'domain_of': ['ProductOrService'],
-         'exact_mappings': ['schema:sku']} })
+         'exact_mappings': ['schema:sku'],
+         'is_a': 'identifier'} })
     unitDefinition: Optional[str] = Field(default=None, title="unit definition", description="""A short description of what will be delivered by ordering one unit of this item""", json_schema_extra = { "linkml_meta": {'alias': 'unitDefinition',
          'comments': ['The description of what will be delivered to the end-user '
                       '(e.g.: packaging, quantity...)'],
@@ -6701,6 +7523,20 @@ class Hybridoma(Antibody):
          'domain_of': ['Resource'],
          'exact_mappings': ['sepio:0000036'],
          'slot_uri': 'dct:modified'} })
+    identifier: Optional[list[str]] = Field(default=None, title="identifier", description="""A unique identifier of the resource being described or cataloged""", json_schema_extra = { "linkml_meta": {'alias': 'identifier',
+         'comments': ['The identifier is a text string which is assigned to the '
+                      'resource to provide an unambiguous reference within a '
+                      'particular context. Persistent identifiers should be provided '
+                      'as HTTP URIs'],
+         'domain_of': ['Resource'],
+         'exact_mappings': ['schema:identifier'],
+         'slot_uri': 'dct:identifier'} })
+    iri: Optional[list[str]] = Field(default=None, title="IRI", description="""International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs""", json_schema_extra = { "linkml_meta": {'alias': 'iri',
+         'comments': ['An IRI is a global identifier standardized by IETF RFC 3987. It '
+                      'may or may not be resolvable on the web. IRIs include URIs, and '
+                      'URIs include URLs'],
+         'domain_of': ['Resource'],
+         'is_a': 'identifier'} })
 
 
 class Protein(Product):
@@ -7128,7 +7964,8 @@ class Protein(Product):
          'broad_mappings': ['dct:identifier', 'schema:identifier'],
          'close_mappings': ['dwc:catalogNumber'],
          'domain_of': ['ProductOrService'],
-         'exact_mappings': ['schema:sku']} })
+         'exact_mappings': ['schema:sku'],
+         'is_a': 'identifier'} })
     unitDefinition: Optional[str] = Field(default=None, title="unit definition", description="""A short description of what will be delivered by ordering one unit of this item""", json_schema_extra = { "linkml_meta": {'alias': 'unitDefinition',
          'comments': ['The description of what will be delivered to the end-user '
                       '(e.g.: packaging, quantity...)'],
@@ -7281,6 +8118,20 @@ class Protein(Product):
          'domain_of': ['Resource'],
          'exact_mappings': ['sepio:0000036'],
          'slot_uri': 'dct:modified'} })
+    identifier: Optional[list[str]] = Field(default=None, title="identifier", description="""A unique identifier of the resource being described or cataloged""", json_schema_extra = { "linkml_meta": {'alias': 'identifier',
+         'comments': ['The identifier is a text string which is assigned to the '
+                      'resource to provide an unambiguous reference within a '
+                      'particular context. Persistent identifiers should be provided '
+                      'as HTTP URIs'],
+         'domain_of': ['Resource'],
+         'exact_mappings': ['schema:identifier'],
+         'slot_uri': 'dct:identifier'} })
+    iri: Optional[list[str]] = Field(default=None, title="IRI", description="""International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs""", json_schema_extra = { "linkml_meta": {'alias': 'iri',
+         'comments': ['An IRI is a global identifier standardized by IETF RFC 3987. It '
+                      'may or may not be resolvable on the web. IRIs include URIs, and '
+                      'URIs include URLs'],
+         'domain_of': ['Resource'],
+         'is_a': 'identifier'} })
 
 
 class NucleicAcid(Product):
@@ -7587,7 +8438,8 @@ class NucleicAcid(Product):
          'broad_mappings': ['dct:identifier', 'schema:identifier'],
          'close_mappings': ['dwc:catalogNumber'],
          'domain_of': ['ProductOrService'],
-         'exact_mappings': ['schema:sku']} })
+         'exact_mappings': ['schema:sku'],
+         'is_a': 'identifier'} })
     unitDefinition: Optional[str] = Field(default=None, title="unit definition", description="""A short description of what will be delivered by ordering one unit of this item""", json_schema_extra = { "linkml_meta": {'alias': 'unitDefinition',
          'comments': ['The description of what will be delivered to the end-user '
                       '(e.g.: packaging, quantity...)'],
@@ -7740,6 +8592,20 @@ class NucleicAcid(Product):
          'domain_of': ['Resource'],
          'exact_mappings': ['sepio:0000036'],
          'slot_uri': 'dct:modified'} })
+    identifier: Optional[list[str]] = Field(default=None, title="identifier", description="""A unique identifier of the resource being described or cataloged""", json_schema_extra = { "linkml_meta": {'alias': 'identifier',
+         'comments': ['The identifier is a text string which is assigned to the '
+                      'resource to provide an unambiguous reference within a '
+                      'particular context. Persistent identifiers should be provided '
+                      'as HTTP URIs'],
+         'domain_of': ['Resource'],
+         'exact_mappings': ['schema:identifier'],
+         'slot_uri': 'dct:identifier'} })
+    iri: Optional[list[str]] = Field(default=None, title="IRI", description="""International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs""", json_schema_extra = { "linkml_meta": {'alias': 'iri',
+         'comments': ['An IRI is a global identifier standardized by IETF RFC 3987. It '
+                      'may or may not be resolvable on the web. IRIs include URIs, and '
+                      'URIs include URLs'],
+         'domain_of': ['Resource'],
+         'is_a': 'identifier'} })
 
 
 class DetectionKit(Product):
@@ -7836,7 +8702,8 @@ class DetectionKit(Product):
          'broad_mappings': ['dct:identifier', 'schema:identifier'],
          'close_mappings': ['dwc:catalogNumber'],
          'domain_of': ['ProductOrService'],
-         'exact_mappings': ['schema:sku']} })
+         'exact_mappings': ['schema:sku'],
+         'is_a': 'identifier'} })
     unitDefinition: Optional[str] = Field(default=None, title="unit definition", description="""A short description of what will be delivered by ordering one unit of this item""", json_schema_extra = { "linkml_meta": {'alias': 'unitDefinition',
          'comments': ['The description of what will be delivered to the end-user '
                       '(e.g.: packaging, quantity...)'],
@@ -7989,6 +8856,20 @@ class DetectionKit(Product):
          'domain_of': ['Resource'],
          'exact_mappings': ['sepio:0000036'],
          'slot_uri': 'dct:modified'} })
+    identifier: Optional[list[str]] = Field(default=None, title="identifier", description="""A unique identifier of the resource being described or cataloged""", json_schema_extra = { "linkml_meta": {'alias': 'identifier',
+         'comments': ['The identifier is a text string which is assigned to the '
+                      'resource to provide an unambiguous reference within a '
+                      'particular context. Persistent identifiers should be provided '
+                      'as HTTP URIs'],
+         'domain_of': ['Resource'],
+         'exact_mappings': ['schema:identifier'],
+         'slot_uri': 'dct:identifier'} })
+    iri: Optional[list[str]] = Field(default=None, title="IRI", description="""International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs""", json_schema_extra = { "linkml_meta": {'alias': 'iri',
+         'comments': ['An IRI is a global identifier standardized by IETF RFC 3987. It '
+                      'may or may not be resolvable on the web. IRIs include URIs, and '
+                      'URIs include URLs'],
+         'domain_of': ['Resource'],
+         'is_a': 'identifier'} })
 
 
 class Bundle(Product):
@@ -8046,7 +8927,8 @@ class Bundle(Product):
          'broad_mappings': ['dct:identifier', 'schema:identifier'],
          'close_mappings': ['dwc:catalogNumber'],
          'domain_of': ['ProductOrService'],
-         'exact_mappings': ['schema:sku']} })
+         'exact_mappings': ['schema:sku'],
+         'is_a': 'identifier'} })
     unitDefinition: Optional[str] = Field(default=None, title="unit definition", description="""A short description of what will be delivered by ordering one unit of this item""", json_schema_extra = { "linkml_meta": {'alias': 'unitDefinition',
          'comments': ['The description of what will be delivered to the end-user '
                       '(e.g.: packaging, quantity...)'],
@@ -8199,6 +9081,20 @@ class Bundle(Product):
          'domain_of': ['Resource'],
          'exact_mappings': ['sepio:0000036'],
          'slot_uri': 'dct:modified'} })
+    identifier: Optional[list[str]] = Field(default=None, title="identifier", description="""A unique identifier of the resource being described or cataloged""", json_schema_extra = { "linkml_meta": {'alias': 'identifier',
+         'comments': ['The identifier is a text string which is assigned to the '
+                      'resource to provide an unambiguous reference within a '
+                      'particular context. Persistent identifiers should be provided '
+                      'as HTTP URIs'],
+         'domain_of': ['Resource'],
+         'exact_mappings': ['schema:identifier'],
+         'slot_uri': 'dct:identifier'} })
+    iri: Optional[list[str]] = Field(default=None, title="IRI", description="""International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs""", json_schema_extra = { "linkml_meta": {'alias': 'iri',
+         'comments': ['An IRI is a global identifier standardized by IETF RFC 3987. It '
+                      'may or may not be resolvable on the web. IRIs include URIs, and '
+                      'URIs include URLs'],
+         'domain_of': ['Resource'],
+         'is_a': 'identifier'} })
 
 
 class Pathogen(Product):
@@ -8597,7 +9493,8 @@ class Pathogen(Product):
          'broad_mappings': ['dct:identifier', 'schema:identifier'],
          'close_mappings': ['dwc:catalogNumber'],
          'domain_of': ['ProductOrService'],
-         'exact_mappings': ['schema:sku']} })
+         'exact_mappings': ['schema:sku'],
+         'is_a': 'identifier'} })
     unitDefinition: Optional[str] = Field(default=None, title="unit definition", description="""A short description of what will be delivered by ordering one unit of this item""", json_schema_extra = { "linkml_meta": {'alias': 'unitDefinition',
          'comments': ['The description of what will be delivered to the end-user '
                       '(e.g.: packaging, quantity...)'],
@@ -8750,6 +9647,20 @@ class Pathogen(Product):
          'domain_of': ['Resource'],
          'exact_mappings': ['sepio:0000036'],
          'slot_uri': 'dct:modified'} })
+    identifier: Optional[list[str]] = Field(default=None, title="identifier", description="""A unique identifier of the resource being described or cataloged""", json_schema_extra = { "linkml_meta": {'alias': 'identifier',
+         'comments': ['The identifier is a text string which is assigned to the '
+                      'resource to provide an unambiguous reference within a '
+                      'particular context. Persistent identifiers should be provided '
+                      'as HTTP URIs'],
+         'domain_of': ['Resource'],
+         'exact_mappings': ['schema:identifier'],
+         'slot_uri': 'dct:identifier'} })
+    iri: Optional[list[str]] = Field(default=None, title="IRI", description="""International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs""", json_schema_extra = { "linkml_meta": {'alias': 'iri',
+         'comments': ['An IRI is a global identifier standardized by IETF RFC 3987. It '
+                      'may or may not be resolvable on the web. IRIs include URIs, and '
+                      'URIs include URLs'],
+         'domain_of': ['Resource'],
+         'is_a': 'identifier'} })
 
 
 class Virus(Pathogen):
@@ -8924,7 +9835,8 @@ class Virus(Pathogen):
          'broad_mappings': ['dct:identifier', 'schema:identifier'],
          'close_mappings': ['dwc:catalogNumber'],
          'domain_of': ['ProductOrService'],
-         'exact_mappings': ['schema:sku']} })
+         'exact_mappings': ['schema:sku'],
+         'is_a': 'identifier'} })
     unitDefinition: Optional[str] = Field(default=None, title="unit definition", description="""A short description of what will be delivered by ordering one unit of this item""", json_schema_extra = { "linkml_meta": {'alias': 'unitDefinition',
          'comments': ['The description of what will be delivered to the end-user '
                       '(e.g.: packaging, quantity...)'],
@@ -9077,6 +9989,20 @@ class Virus(Pathogen):
          'domain_of': ['Resource'],
          'exact_mappings': ['sepio:0000036'],
          'slot_uri': 'dct:modified'} })
+    identifier: Optional[list[str]] = Field(default=None, title="identifier", description="""A unique identifier of the resource being described or cataloged""", json_schema_extra = { "linkml_meta": {'alias': 'identifier',
+         'comments': ['The identifier is a text string which is assigned to the '
+                      'resource to provide an unambiguous reference within a '
+                      'particular context. Persistent identifiers should be provided '
+                      'as HTTP URIs'],
+         'domain_of': ['Resource'],
+         'exact_mappings': ['schema:identifier'],
+         'slot_uri': 'dct:identifier'} })
+    iri: Optional[list[str]] = Field(default=None, title="IRI", description="""International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs""", json_schema_extra = { "linkml_meta": {'alias': 'iri',
+         'comments': ['An IRI is a global identifier standardized by IETF RFC 3987. It '
+                      'may or may not be resolvable on the web. IRIs include URIs, and '
+                      'URIs include URLs'],
+         'domain_of': ['Resource'],
+         'is_a': 'identifier'} })
 
 
 class Bacterium(Pathogen):
@@ -9192,7 +10118,8 @@ class Bacterium(Pathogen):
          'broad_mappings': ['dct:identifier', 'schema:identifier'],
          'close_mappings': ['dwc:catalogNumber'],
          'domain_of': ['ProductOrService'],
-         'exact_mappings': ['schema:sku']} })
+         'exact_mappings': ['schema:sku'],
+         'is_a': 'identifier'} })
     unitDefinition: Optional[str] = Field(default=None, title="unit definition", description="""A short description of what will be delivered by ordering one unit of this item""", json_schema_extra = { "linkml_meta": {'alias': 'unitDefinition',
          'comments': ['The description of what will be delivered to the end-user '
                       '(e.g.: packaging, quantity...)'],
@@ -9345,6 +10272,20 @@ class Bacterium(Pathogen):
          'domain_of': ['Resource'],
          'exact_mappings': ['sepio:0000036'],
          'slot_uri': 'dct:modified'} })
+    identifier: Optional[list[str]] = Field(default=None, title="identifier", description="""A unique identifier of the resource being described or cataloged""", json_schema_extra = { "linkml_meta": {'alias': 'identifier',
+         'comments': ['The identifier is a text string which is assigned to the '
+                      'resource to provide an unambiguous reference within a '
+                      'particular context. Persistent identifiers should be provided '
+                      'as HTTP URIs'],
+         'domain_of': ['Resource'],
+         'exact_mappings': ['schema:identifier'],
+         'slot_uri': 'dct:identifier'} })
+    iri: Optional[list[str]] = Field(default=None, title="IRI", description="""International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs""", json_schema_extra = { "linkml_meta": {'alias': 'iri',
+         'comments': ['An IRI is a global identifier standardized by IETF RFC 3987. It '
+                      'may or may not be resolvable on the web. IRIs include URIs, and '
+                      'URIs include URLs'],
+         'domain_of': ['Resource'],
+         'is_a': 'identifier'} })
 
 
 class Fungus(Pathogen):
@@ -9458,7 +10399,8 @@ class Fungus(Pathogen):
          'broad_mappings': ['dct:identifier', 'schema:identifier'],
          'close_mappings': ['dwc:catalogNumber'],
          'domain_of': ['ProductOrService'],
-         'exact_mappings': ['schema:sku']} })
+         'exact_mappings': ['schema:sku'],
+         'is_a': 'identifier'} })
     unitDefinition: Optional[str] = Field(default=None, title="unit definition", description="""A short description of what will be delivered by ordering one unit of this item""", json_schema_extra = { "linkml_meta": {'alias': 'unitDefinition',
          'comments': ['The description of what will be delivered to the end-user '
                       '(e.g.: packaging, quantity...)'],
@@ -9611,6 +10553,20 @@ class Fungus(Pathogen):
          'domain_of': ['Resource'],
          'exact_mappings': ['sepio:0000036'],
          'slot_uri': 'dct:modified'} })
+    identifier: Optional[list[str]] = Field(default=None, title="identifier", description="""A unique identifier of the resource being described or cataloged""", json_schema_extra = { "linkml_meta": {'alias': 'identifier',
+         'comments': ['The identifier is a text string which is assigned to the '
+                      'resource to provide an unambiguous reference within a '
+                      'particular context. Persistent identifiers should be provided '
+                      'as HTTP URIs'],
+         'domain_of': ['Resource'],
+         'exact_mappings': ['schema:identifier'],
+         'slot_uri': 'dct:identifier'} })
+    iri: Optional[list[str]] = Field(default=None, title="IRI", description="""International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs""", json_schema_extra = { "linkml_meta": {'alias': 'iri',
+         'comments': ['An IRI is a global identifier standardized by IETF RFC 3987. It '
+                      'may or may not be resolvable on the web. IRIs include URIs, and '
+                      'URIs include URLs'],
+         'domain_of': ['Resource'],
+         'is_a': 'identifier'} })
 
 
 class Protozoan(Pathogen):
@@ -9720,7 +10676,8 @@ class Protozoan(Pathogen):
          'broad_mappings': ['dct:identifier', 'schema:identifier'],
          'close_mappings': ['dwc:catalogNumber'],
          'domain_of': ['ProductOrService'],
-         'exact_mappings': ['schema:sku']} })
+         'exact_mappings': ['schema:sku'],
+         'is_a': 'identifier'} })
     unitDefinition: Optional[str] = Field(default=None, title="unit definition", description="""A short description of what will be delivered by ordering one unit of this item""", json_schema_extra = { "linkml_meta": {'alias': 'unitDefinition',
          'comments': ['The description of what will be delivered to the end-user '
                       '(e.g.: packaging, quantity...)'],
@@ -9873,6 +10830,20 @@ class Protozoan(Pathogen):
          'domain_of': ['Resource'],
          'exact_mappings': ['sepio:0000036'],
          'slot_uri': 'dct:modified'} })
+    identifier: Optional[list[str]] = Field(default=None, title="identifier", description="""A unique identifier of the resource being described or cataloged""", json_schema_extra = { "linkml_meta": {'alias': 'identifier',
+         'comments': ['The identifier is a text string which is assigned to the '
+                      'resource to provide an unambiguous reference within a '
+                      'particular context. Persistent identifiers should be provided '
+                      'as HTTP URIs'],
+         'domain_of': ['Resource'],
+         'exact_mappings': ['schema:identifier'],
+         'slot_uri': 'dct:identifier'} })
+    iri: Optional[list[str]] = Field(default=None, title="IRI", description="""International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs""", json_schema_extra = { "linkml_meta": {'alias': 'iri',
+         'comments': ['An IRI is a global identifier standardized by IETF RFC 3987. It '
+                      'may or may not be resolvable on the web. IRIs include URIs, and '
+                      'URIs include URLs'],
+         'domain_of': ['Resource'],
+         'is_a': 'identifier'} })
 
 
 class Viroid(Pathogen):
@@ -9974,7 +10945,8 @@ class Viroid(Pathogen):
          'broad_mappings': ['dct:identifier', 'schema:identifier'],
          'close_mappings': ['dwc:catalogNumber'],
          'domain_of': ['ProductOrService'],
-         'exact_mappings': ['schema:sku']} })
+         'exact_mappings': ['schema:sku'],
+         'is_a': 'identifier'} })
     unitDefinition: Optional[str] = Field(default=None, title="unit definition", description="""A short description of what will be delivered by ordering one unit of this item""", json_schema_extra = { "linkml_meta": {'alias': 'unitDefinition',
          'comments': ['The description of what will be delivered to the end-user '
                       '(e.g.: packaging, quantity...)'],
@@ -10127,6 +11099,20 @@ class Viroid(Pathogen):
          'domain_of': ['Resource'],
          'exact_mappings': ['sepio:0000036'],
          'slot_uri': 'dct:modified'} })
+    identifier: Optional[list[str]] = Field(default=None, title="identifier", description="""A unique identifier of the resource being described or cataloged""", json_schema_extra = { "linkml_meta": {'alias': 'identifier',
+         'comments': ['The identifier is a text string which is assigned to the '
+                      'resource to provide an unambiguous reference within a '
+                      'particular context. Persistent identifiers should be provided '
+                      'as HTTP URIs'],
+         'domain_of': ['Resource'],
+         'exact_mappings': ['schema:identifier'],
+         'slot_uri': 'dct:identifier'} })
+    iri: Optional[list[str]] = Field(default=None, title="IRI", description="""International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs""", json_schema_extra = { "linkml_meta": {'alias': 'iri',
+         'comments': ['An IRI is a global identifier standardized by IETF RFC 3987. It '
+                      'may or may not be resolvable on the web. IRIs include URIs, and '
+                      'URIs include URLs'],
+         'domain_of': ['Resource'],
+         'is_a': 'identifier'} })
 
 
 class Prion(Pathogen):
@@ -10236,7 +11222,8 @@ class Prion(Pathogen):
          'broad_mappings': ['dct:identifier', 'schema:identifier'],
          'close_mappings': ['dwc:catalogNumber'],
          'domain_of': ['ProductOrService'],
-         'exact_mappings': ['schema:sku']} })
+         'exact_mappings': ['schema:sku'],
+         'is_a': 'identifier'} })
     unitDefinition: Optional[str] = Field(default=None, title="unit definition", description="""A short description of what will be delivered by ordering one unit of this item""", json_schema_extra = { "linkml_meta": {'alias': 'unitDefinition',
          'comments': ['The description of what will be delivered to the end-user '
                       '(e.g.: packaging, quantity...)'],
@@ -10389,6 +11376,20 @@ class Prion(Pathogen):
          'domain_of': ['Resource'],
          'exact_mappings': ['sepio:0000036'],
          'slot_uri': 'dct:modified'} })
+    identifier: Optional[list[str]] = Field(default=None, title="identifier", description="""A unique identifier of the resource being described or cataloged""", json_schema_extra = { "linkml_meta": {'alias': 'identifier',
+         'comments': ['The identifier is a text string which is assigned to the '
+                      'resource to provide an unambiguous reference within a '
+                      'particular context. Persistent identifiers should be provided '
+                      'as HTTP URIs'],
+         'domain_of': ['Resource'],
+         'exact_mappings': ['schema:identifier'],
+         'slot_uri': 'dct:identifier'} })
+    iri: Optional[list[str]] = Field(default=None, title="IRI", description="""International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs""", json_schema_extra = { "linkml_meta": {'alias': 'iri',
+         'comments': ['An IRI is a global identifier standardized by IETF RFC 3987. It '
+                      'may or may not be resolvable on the web. IRIs include URIs, and '
+                      'URIs include URLs'],
+         'domain_of': ['Resource'],
+         'is_a': 'identifier'} })
 
 
 class MaterialSafetyDataSheet(Resource):
@@ -10793,6 +11794,20 @@ class MaterialSafetyDataSheet(Resource):
          'domain_of': ['Resource'],
          'exact_mappings': ['sepio:0000036'],
          'slot_uri': 'dct:modified'} })
+    identifier: Optional[list[str]] = Field(default=None, title="identifier", description="""A unique identifier of the resource being described or cataloged""", json_schema_extra = { "linkml_meta": {'alias': 'identifier',
+         'comments': ['The identifier is a text string which is assigned to the '
+                      'resource to provide an unambiguous reference within a '
+                      'particular context. Persistent identifiers should be provided '
+                      'as HTTP URIs'],
+         'domain_of': ['Resource'],
+         'exact_mappings': ['schema:identifier'],
+         'slot_uri': 'dct:identifier'} })
+    iri: Optional[list[str]] = Field(default=None, title="IRI", description="""International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs""", json_schema_extra = { "linkml_meta": {'alias': 'iri',
+         'comments': ['An IRI is a global identifier standardized by IETF RFC 3987. It '
+                      'may or may not be resolvable on the web. IRIs include URIs, and '
+                      'URIs include URLs'],
+         'domain_of': ['Resource'],
+         'is_a': 'identifier'} })
 
 
 class File(Resource):
@@ -10929,6 +11944,20 @@ class File(Resource):
          'domain_of': ['Resource'],
          'exact_mappings': ['sepio:0000036'],
          'slot_uri': 'dct:modified'} })
+    identifier: Optional[list[str]] = Field(default=None, title="identifier", description="""A unique identifier of the resource being described or cataloged""", json_schema_extra = { "linkml_meta": {'alias': 'identifier',
+         'comments': ['The identifier is a text string which is assigned to the '
+                      'resource to provide an unambiguous reference within a '
+                      'particular context. Persistent identifiers should be provided '
+                      'as HTTP URIs'],
+         'domain_of': ['Resource'],
+         'exact_mappings': ['schema:identifier'],
+         'slot_uri': 'dct:identifier'} })
+    iri: Optional[list[str]] = Field(default=None, title="IRI", description="""International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs""", json_schema_extra = { "linkml_meta": {'alias': 'iri',
+         'comments': ['An IRI is a global identifier standardized by IETF RFC 3987. It '
+                      'may or may not be resolvable on the web. IRIs include URIs, and '
+                      'URIs include URLs'],
+         'domain_of': ['Resource'],
+         'is_a': 'identifier'} })
 
 
 class Data(File):
@@ -10993,6 +12022,20 @@ class Data(File):
          'domain_of': ['Resource'],
          'exact_mappings': ['sepio:0000036'],
          'slot_uri': 'dct:modified'} })
+    identifier: Optional[list[str]] = Field(default=None, title="identifier", description="""A unique identifier of the resource being described or cataloged""", json_schema_extra = { "linkml_meta": {'alias': 'identifier',
+         'comments': ['The identifier is a text string which is assigned to the '
+                      'resource to provide an unambiguous reference within a '
+                      'particular context. Persistent identifiers should be provided '
+                      'as HTTP URIs'],
+         'domain_of': ['Resource'],
+         'exact_mappings': ['schema:identifier'],
+         'slot_uri': 'dct:identifier'} })
+    iri: Optional[list[str]] = Field(default=None, title="IRI", description="""International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs""", json_schema_extra = { "linkml_meta": {'alias': 'iri',
+         'comments': ['An IRI is a global identifier standardized by IETF RFC 3987. It '
+                      'may or may not be resolvable on the web. IRIs include URIs, and '
+                      'URIs include URLs'],
+         'domain_of': ['Resource'],
+         'is_a': 'identifier'} })
 
 
 class Document(File):
@@ -11059,6 +12102,20 @@ class Document(File):
          'domain_of': ['Resource'],
          'exact_mappings': ['sepio:0000036'],
          'slot_uri': 'dct:modified'} })
+    identifier: Optional[list[str]] = Field(default=None, title="identifier", description="""A unique identifier of the resource being described or cataloged""", json_schema_extra = { "linkml_meta": {'alias': 'identifier',
+         'comments': ['The identifier is a text string which is assigned to the '
+                      'resource to provide an unambiguous reference within a '
+                      'particular context. Persistent identifiers should be provided '
+                      'as HTTP URIs'],
+         'domain_of': ['Resource'],
+         'exact_mappings': ['schema:identifier'],
+         'slot_uri': 'dct:identifier'} })
+    iri: Optional[list[str]] = Field(default=None, title="IRI", description="""International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs""", json_schema_extra = { "linkml_meta": {'alias': 'iri',
+         'comments': ['An IRI is a global identifier standardized by IETF RFC 3987. It '
+                      'may or may not be resolvable on the web. IRIs include URIs, and '
+                      'URIs include URLs'],
+         'domain_of': ['Resource'],
+         'is_a': 'identifier'} })
 
 
 class Audio(File):
@@ -11123,6 +12180,20 @@ class Audio(File):
          'domain_of': ['Resource'],
          'exact_mappings': ['sepio:0000036'],
          'slot_uri': 'dct:modified'} })
+    identifier: Optional[list[str]] = Field(default=None, title="identifier", description="""A unique identifier of the resource being described or cataloged""", json_schema_extra = { "linkml_meta": {'alias': 'identifier',
+         'comments': ['The identifier is a text string which is assigned to the '
+                      'resource to provide an unambiguous reference within a '
+                      'particular context. Persistent identifiers should be provided '
+                      'as HTTP URIs'],
+         'domain_of': ['Resource'],
+         'exact_mappings': ['schema:identifier'],
+         'slot_uri': 'dct:identifier'} })
+    iri: Optional[list[str]] = Field(default=None, title="IRI", description="""International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs""", json_schema_extra = { "linkml_meta": {'alias': 'iri',
+         'comments': ['An IRI is a global identifier standardized by IETF RFC 3987. It '
+                      'may or may not be resolvable on the web. IRIs include URIs, and '
+                      'URIs include URLs'],
+         'domain_of': ['Resource'],
+         'is_a': 'identifier'} })
 
 
 class Video(File):
@@ -11185,6 +12256,20 @@ class Video(File):
          'domain_of': ['Resource'],
          'exact_mappings': ['sepio:0000036'],
          'slot_uri': 'dct:modified'} })
+    identifier: Optional[list[str]] = Field(default=None, title="identifier", description="""A unique identifier of the resource being described or cataloged""", json_schema_extra = { "linkml_meta": {'alias': 'identifier',
+         'comments': ['The identifier is a text string which is assigned to the '
+                      'resource to provide an unambiguous reference within a '
+                      'particular context. Persistent identifiers should be provided '
+                      'as HTTP URIs'],
+         'domain_of': ['Resource'],
+         'exact_mappings': ['schema:identifier'],
+         'slot_uri': 'dct:identifier'} })
+    iri: Optional[list[str]] = Field(default=None, title="IRI", description="""International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs""", json_schema_extra = { "linkml_meta": {'alias': 'iri',
+         'comments': ['An IRI is a global identifier standardized by IETF RFC 3987. It '
+                      'may or may not be resolvable on the web. IRIs include URIs, and '
+                      'URIs include URLs'],
+         'domain_of': ['Resource'],
+         'is_a': 'identifier'} })
 
 
 class Image(File):
@@ -11267,6 +12352,20 @@ class Image(File):
          'domain_of': ['Resource'],
          'exact_mappings': ['sepio:0000036'],
          'slot_uri': 'dct:modified'} })
+    identifier: Optional[list[str]] = Field(default=None, title="identifier", description="""A unique identifier of the resource being described or cataloged""", json_schema_extra = { "linkml_meta": {'alias': 'identifier',
+         'comments': ['The identifier is a text string which is assigned to the '
+                      'resource to provide an unambiguous reference within a '
+                      'particular context. Persistent identifiers should be provided '
+                      'as HTTP URIs'],
+         'domain_of': ['Resource'],
+         'exact_mappings': ['schema:identifier'],
+         'slot_uri': 'dct:identifier'} })
+    iri: Optional[list[str]] = Field(default=None, title="IRI", description="""International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs""", json_schema_extra = { "linkml_meta": {'alias': 'iri',
+         'comments': ['An IRI is a global identifier standardized by IETF RFC 3987. It '
+                      'may or may not be resolvable on the web. IRIs include URIs, and '
+                      'URIs include URLs'],
+         'domain_of': ['Resource'],
+         'is_a': 'identifier'} })
 
 
 class ContactPoint(Resource):
@@ -11462,6 +12561,7 @@ class ContactPoint(Resource):
     orcidId: Optional[str] = Field(default=None, title="ORCID id", description="""Unique persistent identifier for a person, provided by the Open Researcher and Contributor ID (ORCID) organisation""", json_schema_extra = { "linkml_meta": {'alias': 'orcidId',
          'domain_of': ['ContactPoint', 'Person'],
          'exact_mappings': ['wdp:P496', 'reproduceme:ORCID'],
+         'is_a': 'identifier',
          'recommended': True,
          'related_mappings': ['iao:0000708', 'edam:4022']} })
     keyword: Optional[list[str]] = Field(default=None, title="keyword", description="""A keyword or tag describing the resource""", json_schema_extra = { "linkml_meta": {'alias': 'keyword', 'domain_of': ['Resource'], 'slot_uri': 'dcat:keyword'} })
@@ -11479,6 +12579,20 @@ class ContactPoint(Resource):
          'domain_of': ['Resource'],
          'exact_mappings': ['sepio:0000036'],
          'slot_uri': 'dct:modified'} })
+    identifier: Optional[list[str]] = Field(default=None, title="identifier", description="""A unique identifier of the resource being described or cataloged""", json_schema_extra = { "linkml_meta": {'alias': 'identifier',
+         'comments': ['The identifier is a text string which is assigned to the '
+                      'resource to provide an unambiguous reference within a '
+                      'particular context. Persistent identifiers should be provided '
+                      'as HTTP URIs'],
+         'domain_of': ['Resource'],
+         'exact_mappings': ['schema:identifier'],
+         'slot_uri': 'dct:identifier'} })
+    iri: Optional[list[str]] = Field(default=None, title="IRI", description="""International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs""", json_schema_extra = { "linkml_meta": {'alias': 'iri',
+         'comments': ['An IRI is a global identifier standardized by IETF RFC 3987. It '
+                      'may or may not be resolvable on the web. IRIs include URIs, and '
+                      'URIs include URLs'],
+         'domain_of': ['Resource'],
+         'is_a': 'identifier'} })
 
 
 class License(Resource):
@@ -11645,6 +12759,20 @@ class License(Resource):
          'domain_of': ['Resource'],
          'exact_mappings': ['sepio:0000036'],
          'slot_uri': 'dct:modified'} })
+    identifier: Optional[list[str]] = Field(default=None, title="identifier", description="""A unique identifier of the resource being described or cataloged""", json_schema_extra = { "linkml_meta": {'alias': 'identifier',
+         'comments': ['The identifier is a text string which is assigned to the '
+                      'resource to provide an unambiguous reference within a '
+                      'particular context. Persistent identifiers should be provided '
+                      'as HTTP URIs'],
+         'domain_of': ['Resource'],
+         'exact_mappings': ['schema:identifier'],
+         'slot_uri': 'dct:identifier'} })
+    iri: Optional[list[str]] = Field(default=None, title="IRI", description="""International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs""", json_schema_extra = { "linkml_meta": {'alias': 'iri',
+         'comments': ['An IRI is a global identifier standardized by IETF RFC 3987. It '
+                      'may or may not be resolvable on the web. IRIs include URIs, and '
+                      'URIs include URLs'],
+         'domain_of': ['Resource'],
+         'is_a': 'identifier'} })
 
 
 class Certification(Resource):
@@ -11801,6 +12929,20 @@ class Certification(Resource):
          'domain_of': ['Resource'],
          'exact_mappings': ['sepio:0000036'],
          'slot_uri': 'dct:modified'} })
+    identifier: Optional[list[str]] = Field(default=None, title="identifier", description="""A unique identifier of the resource being described or cataloged""", json_schema_extra = { "linkml_meta": {'alias': 'identifier',
+         'comments': ['The identifier is a text string which is assigned to the '
+                      'resource to provide an unambiguous reference within a '
+                      'particular context. Persistent identifiers should be provided '
+                      'as HTTP URIs'],
+         'domain_of': ['Resource'],
+         'exact_mappings': ['schema:identifier'],
+         'slot_uri': 'dct:identifier'} })
+    iri: Optional[list[str]] = Field(default=None, title="IRI", description="""International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs""", json_schema_extra = { "linkml_meta": {'alias': 'iri',
+         'comments': ['An IRI is a global identifier standardized by IETF RFC 3987. It '
+                      'may or may not be resolvable on the web. IRIs include URIs, and '
+                      'URIs include URLs'],
+         'domain_of': ['Resource'],
+         'is_a': 'identifier'} })
 
 
 # Model rebuild

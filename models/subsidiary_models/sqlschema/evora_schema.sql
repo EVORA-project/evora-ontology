@@ -1123,24 +1123,54 @@
 -- # Class: "Resource_keyword" Description: ""
 --     * Slot: Resource_id Description: Autocreated FK slot
 --     * Slot: keyword Description: A keyword or tag describing the resource
+-- # Class: "Resource_identifier" Description: ""
+--     * Slot: Resource_id Description: Autocreated FK slot
+--     * Slot: identifier Description: A unique identifier of the resource being described or cataloged
+-- # Class: "Resource_iri" Description: ""
+--     * Slot: Resource_id Description: Autocreated FK slot
+--     * Slot: iri Description: International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs
 -- # Class: "Dataset_keyword" Description: ""
 --     * Slot: Dataset_id Description: Autocreated FK slot
 --     * Slot: keyword Description: A keyword or tag describing the resource
+-- # Class: "Dataset_identifier" Description: ""
+--     * Slot: Dataset_id Description: Autocreated FK slot
+--     * Slot: identifier Description: A unique identifier of the resource being described or cataloged
+-- # Class: "Dataset_iri" Description: ""
+--     * Slot: Dataset_id Description: Autocreated FK slot
+--     * Slot: iri Description: International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs
 -- # Class: "DataService_servesDataset" Description: ""
 --     * Slot: DataService_id Description: Autocreated FK slot
 --     * Slot: servesDataset_id Description: A collection of data that this data service can distribute
 -- # Class: "DataService_keyword" Description: ""
 --     * Slot: DataService_id Description: Autocreated FK slot
 --     * Slot: keyword Description: A keyword or tag describing the resource
+-- # Class: "DataService_identifier" Description: ""
+--     * Slot: DataService_id Description: Autocreated FK slot
+--     * Slot: identifier Description: A unique identifier of the resource being described or cataloged
+-- # Class: "DataService_iri" Description: ""
+--     * Slot: DataService_id Description: Autocreated FK slot
+--     * Slot: iri Description: International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs
 -- # Class: "Version_resource" Description: ""
 --     * Slot: Version_id Description: Autocreated FK slot
 --     * Slot: resource_id Description: Resource published or curated by a single agent
 -- # Class: "Version_keyword" Description: ""
 --     * Slot: Version_id Description: Autocreated FK slot
 --     * Slot: keyword Description: A keyword or tag describing the resource
+-- # Class: "Version_identifier" Description: ""
+--     * Slot: Version_id Description: Autocreated FK slot
+--     * Slot: identifier Description: A unique identifier of the resource being described or cataloged
+-- # Class: "Version_iri" Description: ""
+--     * Slot: Version_id Description: Autocreated FK slot
+--     * Slot: iri Description: International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs
 -- # Class: "Catalogue_keyword" Description: ""
 --     * Slot: Catalogue_id Description: Autocreated FK slot
 --     * Slot: keyword Description: A keyword or tag describing the resource
+-- # Class: "Catalogue_identifier" Description: ""
+--     * Slot: Catalogue_id Description: Autocreated FK slot
+--     * Slot: identifier Description: A unique identifier of the resource being described or cataloged
+-- # Class: "Catalogue_iri" Description: ""
+--     * Slot: Catalogue_id Description: Autocreated FK slot
+--     * Slot: iri Description: International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs
 -- # Class: "Taxonomy_taxon" Description: ""
 --     * Slot: Taxonomy_id Description: Autocreated FK slot
 --     * Slot: taxon_id Description: Scientifically classified group or entity within the reference taxonomy
@@ -1150,6 +1180,12 @@
 -- # Class: "Taxonomy_keyword" Description: ""
 --     * Slot: Taxonomy_id Description: Autocreated FK slot
 --     * Slot: keyword Description: A keyword or tag describing the resource
+-- # Class: "Taxonomy_identifier" Description: ""
+--     * Slot: Taxonomy_id Description: Autocreated FK slot
+--     * Slot: identifier Description: A unique identifier of the resource being described or cataloged
+-- # Class: "Taxonomy_iri" Description: ""
+--     * Slot: Taxonomy_id Description: Autocreated FK slot
+--     * Slot: iri Description: International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs
 -- # Class: "DataProvider_providedEntityType" Description: ""
 --     * Slot: DataProvider_id Description: Autocreated FK slot
 --     * Slot: providedEntityType Description: Identifies the type of entity (ontology class) described by the response to a query. Values should be expressed as IRIs (e.g., from an ontology)
@@ -1159,24 +1195,54 @@
 -- # Class: "DataProvider_keyword" Description: ""
 --     * Slot: DataProvider_id Description: Autocreated FK slot
 --     * Slot: keyword Description: A keyword or tag describing the resource
+-- # Class: "DataProvider_identifier" Description: ""
+--     * Slot: DataProvider_id Description: Autocreated FK slot
+--     * Slot: identifier Description: A unique identifier of the resource being described or cataloged
+-- # Class: "DataProvider_iri" Description: ""
+--     * Slot: DataProvider_id Description: Autocreated FK slot
+--     * Slot: iri Description: International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs
 -- # Class: "PathogenIdentification_hostType" Description: ""
 --     * Slot: PathogenIdentification_id Description: Autocreated FK slot
 --     * Slot: hostType Description: Indication of the possible host(s) for the identified pathogens among the listed main categories
 -- # Class: "PathogenIdentification_keyword" Description: ""
 --     * Slot: PathogenIdentification_id Description: Autocreated FK slot
 --     * Slot: keyword Description: A keyword or tag describing the resource
+-- # Class: "PathogenIdentification_identifier" Description: ""
+--     * Slot: PathogenIdentification_id Description: Autocreated FK slot
+--     * Slot: identifier Description: A unique identifier of the resource being described or cataloged
+-- # Class: "PathogenIdentification_iri" Description: ""
+--     * Slot: PathogenIdentification_id Description: Autocreated FK slot
+--     * Slot: iri Description: International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs
 -- # Class: "Publication_keyword" Description: ""
 --     * Slot: Publication_id Description: Autocreated FK slot
 --     * Slot: keyword Description: A keyword or tag describing the resource
+-- # Class: "Publication_identifier" Description: ""
+--     * Slot: Publication_id Description: Autocreated FK slot
+--     * Slot: identifier Description: A unique identifier of the resource being described or cataloged
+-- # Class: "Publication_iri" Description: ""
+--     * Slot: Publication_id Description: Autocreated FK slot
+--     * Slot: iri Description: International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs
 -- # Class: "Vocabulary_term" Description: ""
 --     * Slot: Vocabulary_id Description: Autocreated FK slot
 --     * Slot: term_id Description: The terms related to this vocabulary
 -- # Class: "Vocabulary_keyword" Description: ""
 --     * Slot: Vocabulary_id Description: Autocreated FK slot
 --     * Slot: keyword Description: A keyword or tag describing the resource
+-- # Class: "Vocabulary_identifier" Description: ""
+--     * Slot: Vocabulary_id Description: Autocreated FK slot
+--     * Slot: identifier Description: A unique identifier of the resource being described or cataloged
+-- # Class: "Vocabulary_iri" Description: ""
+--     * Slot: Vocabulary_id Description: Autocreated FK slot
+--     * Slot: iri Description: International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs
 -- # Class: "Term_keyword" Description: ""
 --     * Slot: Term_id Description: Autocreated FK slot
 --     * Slot: keyword Description: A keyword or tag describing the resource
+-- # Class: "Term_identifier" Description: ""
+--     * Slot: Term_id Description: Autocreated FK slot
+--     * Slot: identifier Description: A unique identifier of the resource being described or cataloged
+-- # Class: "Term_iri" Description: ""
+--     * Slot: Term_id Description: Autocreated FK slot
+--     * Slot: iri Description: International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs
 -- # Class: "CommonName_alternateName" Description: ""
 --     * Slot: CommonName_id Description: Autocreated FK slot
 --     * Slot: alternateName_id Description: Any other name under which the entity can be known
@@ -1186,6 +1252,12 @@
 -- # Class: "CommonName_keyword" Description: ""
 --     * Slot: CommonName_id Description: Autocreated FK slot
 --     * Slot: keyword Description: A keyword or tag describing the resource
+-- # Class: "CommonName_identifier" Description: ""
+--     * Slot: CommonName_id Description: Autocreated FK slot
+--     * Slot: identifier Description: A unique identifier of the resource being described or cataloged
+-- # Class: "CommonName_iri" Description: ""
+--     * Slot: CommonName_id Description: Autocreated FK slot
+--     * Slot: iri Description: International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs
 -- # Class: "VirusName_alternateName" Description: ""
 --     * Slot: VirusName_id Description: Autocreated FK slot
 --     * Slot: alternateName_id Description: Any other name under which the entity can be known
@@ -1195,6 +1267,12 @@
 -- # Class: "VirusName_keyword" Description: ""
 --     * Slot: VirusName_id Description: Autocreated FK slot
 --     * Slot: keyword Description: A keyword or tag describing the resource
+-- # Class: "VirusName_identifier" Description: ""
+--     * Slot: VirusName_id Description: Autocreated FK slot
+--     * Slot: identifier Description: A unique identifier of the resource being described or cataloged
+-- # Class: "VirusName_iri" Description: ""
+--     * Slot: VirusName_id Description: Autocreated FK slot
+--     * Slot: iri Description: International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs
 -- # Class: "AlternateName_alternateName" Description: ""
 --     * Slot: AlternateName_id Description: Autocreated FK slot
 --     * Slot: alternateName_id Description: Any other name under which the entity can be known
@@ -1204,60 +1282,174 @@
 -- # Class: "AlternateName_keyword" Description: ""
 --     * Slot: AlternateName_id Description: Autocreated FK slot
 --     * Slot: keyword Description: A keyword or tag describing the resource
+-- # Class: "AlternateName_identifier" Description: ""
+--     * Slot: AlternateName_id Description: Autocreated FK slot
+--     * Slot: identifier Description: A unique identifier of the resource being described or cataloged
+-- # Class: "AlternateName_iri" Description: ""
+--     * Slot: AlternateName_id Description: Autocreated FK slot
+--     * Slot: iri Description: International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs
 -- # Class: "RiskGroup_keyword" Description: ""
 --     * Slot: RiskGroup_id Description: Autocreated FK slot
 --     * Slot: keyword Description: A keyword or tag describing the resource
+-- # Class: "RiskGroup_identifier" Description: ""
+--     * Slot: RiskGroup_id Description: Autocreated FK slot
+--     * Slot: identifier Description: A unique identifier of the resource being described or cataloged
+-- # Class: "RiskGroup_iri" Description: ""
+--     * Slot: RiskGroup_id Description: Autocreated FK slot
+--     * Slot: iri Description: International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs
 -- # Class: "Doi_keyword" Description: ""
 --     * Slot: Doi_id Description: Autocreated FK slot
 --     * Slot: keyword Description: A keyword or tag describing the resource
+-- # Class: "Doi_identifier" Description: ""
+--     * Slot: Doi_id Description: Autocreated FK slot
+--     * Slot: identifier Description: A unique identifier of the resource being described or cataloged
+-- # Class: "Doi_iri" Description: ""
+--     * Slot: Doi_id Description: Autocreated FK slot
+--     * Slot: iri Description: International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs
 -- # Class: "Journal_keyword" Description: ""
 --     * Slot: Journal_id Description: Autocreated FK slot
 --     * Slot: keyword Description: A keyword or tag describing the resource
+-- # Class: "Journal_identifier" Description: ""
+--     * Slot: Journal_id Description: Autocreated FK slot
+--     * Slot: identifier Description: A unique identifier of the resource being described or cataloged
+-- # Class: "Journal_iri" Description: ""
+--     * Slot: Journal_id Description: Autocreated FK slot
+--     * Slot: iri Description: International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs
 -- # Class: "PdbReference_keyword" Description: ""
 --     * Slot: PdbReference_id Description: Autocreated FK slot
 --     * Slot: keyword Description: A keyword or tag describing the resource
+-- # Class: "PdbReference_identifier" Description: ""
+--     * Slot: PdbReference_id Description: Autocreated FK slot
+--     * Slot: identifier Description: A unique identifier of the resource being described or cataloged
+-- # Class: "PdbReference_iri" Description: ""
+--     * Slot: PdbReference_id Description: Autocreated FK slot
+--     * Slot: iri Description: International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs
 -- # Class: "Keyword_keyword" Description: ""
 --     * Slot: Keyword_id Description: Autocreated FK slot
 --     * Slot: keyword Description: A keyword or tag describing the resource
+-- # Class: "Keyword_identifier" Description: ""
+--     * Slot: Keyword_id Description: Autocreated FK slot
+--     * Slot: identifier Description: A unique identifier of the resource being described or cataloged
+-- # Class: "Keyword_iri" Description: ""
+--     * Slot: Keyword_id Description: Autocreated FK slot
+--     * Slot: iri Description: International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs
 -- # Class: "TagSequence_keyword" Description: ""
 --     * Slot: TagSequence_id Description: Autocreated FK slot
 --     * Slot: keyword Description: A keyword or tag describing the resource
+-- # Class: "TagSequence_identifier" Description: ""
+--     * Slot: TagSequence_id Description: Autocreated FK slot
+--     * Slot: identifier Description: A unique identifier of the resource being described or cataloged
+-- # Class: "TagSequence_iri" Description: ""
+--     * Slot: TagSequence_id Description: Autocreated FK slot
+--     * Slot: iri Description: International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs
 -- # Class: "SpecialFeature_keyword" Description: ""
 --     * Slot: SpecialFeature_id Description: Autocreated FK slot
 --     * Slot: keyword Description: A keyword or tag describing the resource
+-- # Class: "SpecialFeature_identifier" Description: ""
+--     * Slot: SpecialFeature_id Description: Autocreated FK slot
+--     * Slot: identifier Description: A unique identifier of the resource being described or cataloged
+-- # Class: "SpecialFeature_iri" Description: ""
+--     * Slot: SpecialFeature_id Description: Autocreated FK slot
+--     * Slot: iri Description: International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs
 -- # Class: "ExpressionVector_keyword" Description: ""
 --     * Slot: ExpressionVector_id Description: Autocreated FK slot
 --     * Slot: keyword Description: A keyword or tag describing the resource
+-- # Class: "ExpressionVector_identifier" Description: ""
+--     * Slot: ExpressionVector_id Description: Autocreated FK slot
+--     * Slot: identifier Description: A unique identifier of the resource being described or cataloged
+-- # Class: "ExpressionVector_iri" Description: ""
+--     * Slot: ExpressionVector_id Description: Autocreated FK slot
+--     * Slot: iri Description: International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs
 -- # Class: "PlasmidSelection_keyword" Description: ""
 --     * Slot: PlasmidSelection_id Description: Autocreated FK slot
 --     * Slot: keyword Description: A keyword or tag describing the resource
+-- # Class: "PlasmidSelection_identifier" Description: ""
+--     * Slot: PlasmidSelection_id Description: Autocreated FK slot
+--     * Slot: identifier Description: A unique identifier of the resource being described or cataloged
+-- # Class: "PlasmidSelection_iri" Description: ""
+--     * Slot: PlasmidSelection_id Description: Autocreated FK slot
+--     * Slot: iri Description: International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs
 -- # Class: "PropagationHost_keyword" Description: ""
 --     * Slot: PropagationHost_id Description: Autocreated FK slot
 --     * Slot: keyword Description: A keyword or tag describing the resource
+-- # Class: "PropagationHost_identifier" Description: ""
+--     * Slot: PropagationHost_id Description: Autocreated FK slot
+--     * Slot: identifier Description: A unique identifier of the resource being described or cataloged
+-- # Class: "PropagationHost_iri" Description: ""
+--     * Slot: PropagationHost_id Description: Autocreated FK slot
+--     * Slot: iri Description: International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs
 -- # Class: "TransmissionMethod_keyword" Description: ""
 --     * Slot: TransmissionMethod_id Description: Autocreated FK slot
 --     * Slot: keyword Description: A keyword or tag describing the resource
+-- # Class: "TransmissionMethod_identifier" Description: ""
+--     * Slot: TransmissionMethod_id Description: Autocreated FK slot
+--     * Slot: identifier Description: A unique identifier of the resource being described or cataloged
+-- # Class: "TransmissionMethod_iri" Description: ""
+--     * Slot: TransmissionMethod_id Description: Autocreated FK slot
+--     * Slot: iri Description: International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs
 -- # Class: "ProductionCellLine_keyword" Description: ""
 --     * Slot: ProductionCellLine_id Description: Autocreated FK slot
 --     * Slot: keyword Description: A keyword or tag describing the resource
+-- # Class: "ProductionCellLine_identifier" Description: ""
+--     * Slot: ProductionCellLine_id Description: Autocreated FK slot
+--     * Slot: identifier Description: A unique identifier of the resource being described or cataloged
+-- # Class: "ProductionCellLine_iri" Description: ""
+--     * Slot: ProductionCellLine_id Description: Autocreated FK slot
+--     * Slot: iri Description: International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs
 -- # Class: "ProductCategory_keyword" Description: ""
 --     * Slot: ProductCategory_id Description: Autocreated FK slot
 --     * Slot: keyword Description: A keyword or tag describing the resource
+-- # Class: "ProductCategory_identifier" Description: ""
+--     * Slot: ProductCategory_id Description: Autocreated FK slot
+--     * Slot: identifier Description: A unique identifier of the resource being described or cataloged
+-- # Class: "ProductCategory_iri" Description: ""
+--     * Slot: ProductCategory_id Description: Autocreated FK slot
+--     * Slot: iri Description: International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs
 -- # Class: "IsolationHost_keyword" Description: ""
 --     * Slot: IsolationHost_id Description: Autocreated FK slot
 --     * Slot: keyword Description: A keyword or tag describing the resource
+-- # Class: "IsolationHost_identifier" Description: ""
+--     * Slot: IsolationHost_id Description: Autocreated FK slot
+--     * Slot: identifier Description: A unique identifier of the resource being described or cataloged
+-- # Class: "IsolationHost_iri" Description: ""
+--     * Slot: IsolationHost_id Description: Autocreated FK slot
+--     * Slot: iri Description: International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs
 -- # Class: "GeographicalOrigin_keyword" Description: ""
 --     * Slot: GeographicalOrigin_id Description: Autocreated FK slot
 --     * Slot: keyword Description: A keyword or tag describing the resource
+-- # Class: "GeographicalOrigin_identifier" Description: ""
+--     * Slot: GeographicalOrigin_id Description: Autocreated FK slot
+--     * Slot: identifier Description: A unique identifier of the resource being described or cataloged
+-- # Class: "GeographicalOrigin_iri" Description: ""
+--     * Slot: GeographicalOrigin_id Description: Autocreated FK slot
+--     * Slot: iri Description: International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs
 -- # Class: "IplcOrigin_keyword" Description: ""
 --     * Slot: IplcOrigin_id Description: Autocreated FK slot
 --     * Slot: keyword Description: A keyword or tag describing the resource
+-- # Class: "IplcOrigin_identifier" Description: ""
+--     * Slot: IplcOrigin_id Description: Autocreated FK slot
+--     * Slot: identifier Description: A unique identifier of the resource being described or cataloged
+-- # Class: "IplcOrigin_iri" Description: ""
+--     * Slot: IplcOrigin_id Description: Autocreated FK slot
+--     * Slot: iri Description: International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs
 -- # Class: "Country_keyword" Description: ""
 --     * Slot: Country_id Description: Autocreated FK slot
 --     * Slot: keyword Description: A keyword or tag describing the resource
+-- # Class: "Country_identifier" Description: ""
+--     * Slot: Country_id Description: Autocreated FK slot
+--     * Slot: identifier Description: A unique identifier of the resource being described or cataloged
+-- # Class: "Country_iri" Description: ""
+--     * Slot: Country_id Description: Autocreated FK slot
+--     * Slot: iri Description: International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs
 -- # Class: "IataClassification_keyword" Description: ""
 --     * Slot: IataClassification_id Description: Autocreated FK slot
 --     * Slot: keyword Description: A keyword or tag describing the resource
+-- # Class: "IataClassification_identifier" Description: ""
+--     * Slot: IataClassification_id Description: Autocreated FK slot
+--     * Slot: identifier Description: A unique identifier of the resource being described or cataloged
+-- # Class: "IataClassification_iri" Description: ""
+--     * Slot: IataClassification_id Description: Autocreated FK slot
+--     * Slot: iri Description: International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs
 -- # Class: "Variant_alternateName" Description: ""
 --     * Slot: Variant_id Description: Autocreated FK slot
 --     * Slot: alternateName_id Description: Any other name under which the entity can be known
@@ -1267,12 +1459,24 @@
 -- # Class: "Variant_keyword" Description: ""
 --     * Slot: Variant_id Description: Autocreated FK slot
 --     * Slot: keyword Description: A keyword or tag describing the resource
+-- # Class: "Variant_identifier" Description: ""
+--     * Slot: Variant_id Description: Autocreated FK slot
+--     * Slot: identifier Description: A unique identifier of the resource being described or cataloged
+-- # Class: "Variant_iri" Description: ""
+--     * Slot: Variant_id Description: Autocreated FK slot
+--     * Slot: iri Description: International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs
 -- # Class: "TaxonomicRank_taxonomy" Description: ""
 --     * Slot: TaxonomicRank_id Description: Autocreated FK slot
 --     * Slot: taxonomy_id Description: The taxonomy release(s) in which this entity exists
 -- # Class: "TaxonomicRank_keyword" Description: ""
 --     * Slot: TaxonomicRank_id Description: Autocreated FK slot
 --     * Slot: keyword Description: A keyword or tag describing the resource
+-- # Class: "TaxonomicRank_identifier" Description: ""
+--     * Slot: TaxonomicRank_id Description: Autocreated FK slot
+--     * Slot: identifier Description: A unique identifier of the resource being described or cataloged
+-- # Class: "TaxonomicRank_iri" Description: ""
+--     * Slot: TaxonomicRank_id Description: Autocreated FK slot
+--     * Slot: iri Description: International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs
 -- # Class: "Taxon_taxonomy" Description: ""
 --     * Slot: Taxon_id Description: Autocreated FK slot
 --     * Slot: taxonomy_id Description: The taxonomy release(s) in which this entity exists
@@ -1285,6 +1489,12 @@
 -- # Class: "Taxon_keyword" Description: ""
 --     * Slot: Taxon_id Description: Autocreated FK slot
 --     * Slot: keyword Description: A keyword or tag describing the resource
+-- # Class: "Taxon_identifier" Description: ""
+--     * Slot: Taxon_id Description: Autocreated FK slot
+--     * Slot: identifier Description: A unique identifier of the resource being described or cataloged
+-- # Class: "Taxon_iri" Description: ""
+--     * Slot: Taxon_id Description: Autocreated FK slot
+--     * Slot: iri Description: International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs
 -- # Class: "ClinicalGroup_alternateName" Description: ""
 --     * Slot: ClinicalGroup_id Description: Autocreated FK slot
 --     * Slot: alternateName_id Description: Any other name under which the entity can be known
@@ -1294,36 +1504,84 @@
 -- # Class: "ClinicalGroup_keyword" Description: ""
 --     * Slot: ClinicalGroup_id Description: Autocreated FK slot
 --     * Slot: keyword Description: A keyword or tag describing the resource
+-- # Class: "ClinicalGroup_identifier" Description: ""
+--     * Slot: ClinicalGroup_id Description: Autocreated FK slot
+--     * Slot: identifier Description: A unique identifier of the resource being described or cataloged
+-- # Class: "ClinicalGroup_iri" Description: ""
+--     * Slot: ClinicalGroup_id Description: Autocreated FK slot
+--     * Slot: iri Description: International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs
 -- # Class: "ExternalRelatedReference_keyword" Description: ""
 --     * Slot: ExternalRelatedReference_id Description: Autocreated FK slot
 --     * Slot: keyword Description: A keyword or tag describing the resource
+-- # Class: "ExternalRelatedReference_identifier" Description: ""
+--     * Slot: ExternalRelatedReference_id Description: Autocreated FK slot
+--     * Slot: identifier Description: A unique identifier of the resource being described or cataloged
+-- # Class: "ExternalRelatedReference_iri" Description: ""
+--     * Slot: ExternalRelatedReference_id Description: Autocreated FK slot
+--     * Slot: iri Description: International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs
 -- # Class: "Sequence_sequenceReference" Description: ""
 --     * Slot: Sequence_id Description: Autocreated FK slot
 --     * Slot: sequenceReference_id Description: A reference that permits to retrieve the sequence information from a sequence provider
 -- # Class: "Sequence_keyword" Description: ""
 --     * Slot: Sequence_id Description: Autocreated FK slot
 --     * Slot: keyword Description: A keyword or tag describing the resource
+-- # Class: "Sequence_identifier" Description: ""
+--     * Slot: Sequence_id Description: Autocreated FK slot
+--     * Slot: identifier Description: A unique identifier of the resource being described or cataloged
+-- # Class: "Sequence_iri" Description: ""
+--     * Slot: Sequence_id Description: Autocreated FK slot
+--     * Slot: iri Description: International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs
 -- # Class: "SequenceReference_keyword" Description: ""
 --     * Slot: SequenceReference_id Description: Autocreated FK slot
 --     * Slot: keyword Description: A keyword or tag describing the resource
+-- # Class: "SequenceReference_identifier" Description: ""
+--     * Slot: SequenceReference_id Description: Autocreated FK slot
+--     * Slot: identifier Description: A unique identifier of the resource being described or cataloged
+-- # Class: "SequenceReference_iri" Description: ""
+--     * Slot: SequenceReference_id Description: Autocreated FK slot
+--     * Slot: iri Description: International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs
 -- # Class: "PersonOrOrganization_keyword" Description: ""
 --     * Slot: PersonOrOrganization_id Description: Autocreated FK slot
 --     * Slot: keyword Description: A keyword or tag describing the resource
+-- # Class: "PersonOrOrganization_identifier" Description: ""
+--     * Slot: PersonOrOrganization_id Description: Autocreated FK slot
+--     * Slot: identifier Description: A unique identifier of the resource being described or cataloged
+-- # Class: "PersonOrOrganization_iri" Description: ""
+--     * Slot: PersonOrOrganization_id Description: Autocreated FK slot
+--     * Slot: iri Description: International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs
 -- # Class: "Person_keyword" Description: ""
 --     * Slot: Person_id Description: Autocreated FK slot
 --     * Slot: keyword Description: A keyword or tag describing the resource
+-- # Class: "Person_identifier" Description: ""
+--     * Slot: Person_id Description: Autocreated FK slot
+--     * Slot: identifier Description: A unique identifier of the resource being described or cataloged
+-- # Class: "Person_iri" Description: ""
+--     * Slot: Person_id Description: Autocreated FK slot
+--     * Slot: iri Description: International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs
 -- # Class: "Organization_alternateName" Description: ""
 --     * Slot: Organization_id Description: Autocreated FK slot
 --     * Slot: alternateName_id Description: Any other name under which the entity can be known
 -- # Class: "Organization_keyword" Description: ""
 --     * Slot: Organization_id Description: Autocreated FK slot
 --     * Slot: keyword Description: A keyword or tag describing the resource
+-- # Class: "Organization_identifier" Description: ""
+--     * Slot: Organization_id Description: Autocreated FK slot
+--     * Slot: identifier Description: A unique identifier of the resource being described or cataloged
+-- # Class: "Organization_iri" Description: ""
+--     * Slot: Organization_id Description: Autocreated FK slot
+--     * Slot: iri Description: International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs
 -- # Class: "ReasearchInfrastructure_alternateName" Description: ""
 --     * Slot: ReasearchInfrastructure_id Description: Autocreated FK slot
 --     * Slot: alternateName_id Description: Any other name under which the entity can be known
 -- # Class: "ReasearchInfrastructure_keyword" Description: ""
 --     * Slot: ReasearchInfrastructure_id Description: Autocreated FK slot
 --     * Slot: keyword Description: A keyword or tag describing the resource
+-- # Class: "ReasearchInfrastructure_identifier" Description: ""
+--     * Slot: ReasearchInfrastructure_id Description: Autocreated FK slot
+--     * Slot: identifier Description: A unique identifier of the resource being described or cataloged
+-- # Class: "ReasearchInfrastructure_iri" Description: ""
+--     * Slot: ReasearchInfrastructure_id Description: Autocreated FK slot
+--     * Slot: iri Description: International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs
 -- # Class: "Provider_memberOfRi" Description: ""
 --     * Slot: Provider_id Description: Autocreated FK slot
 --     * Slot: memberOfRi_id Description: The research infrastructure of which this organization is a member
@@ -1333,36 +1591,84 @@
 -- # Class: "Provider_keyword" Description: ""
 --     * Slot: Provider_id Description: Autocreated FK slot
 --     * Slot: keyword Description: A keyword or tag describing the resource
+-- # Class: "Provider_identifier" Description: ""
+--     * Slot: Provider_id Description: Autocreated FK slot
+--     * Slot: identifier Description: A unique identifier of the resource being described or cataloged
+-- # Class: "Provider_iri" Description: ""
+--     * Slot: Provider_id Description: Autocreated FK slot
+--     * Slot: iri Description: International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs
 -- # Class: "Originator_keyword" Description: ""
 --     * Slot: Originator_id Description: Autocreated FK slot
 --     * Slot: keyword Description: A keyword or tag describing the resource
+-- # Class: "Originator_identifier" Description: ""
+--     * Slot: Originator_id Description: Autocreated FK slot
+--     * Slot: identifier Description: A unique identifier of the resource being described or cataloged
+-- # Class: "Originator_iri" Description: ""
+--     * Slot: Originator_id Description: Autocreated FK slot
+--     * Slot: iri Description: International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs
 -- # Class: "BiologicalMaterialOrigin_biologicalPartOrigin" Description: ""
 --     * Slot: BiologicalMaterialOrigin_id Description: Autocreated FK slot
 --     * Slot: biologicalPartOrigin_id Description: Details the origin of one or more unitary parts that make up the biological material. In the case of recombinant biological material, multiple parts may be involved.
 -- # Class: "BiologicalMaterialOrigin_keyword" Description: ""
 --     * Slot: BiologicalMaterialOrigin_id Description: Autocreated FK slot
 --     * Slot: keyword Description: A keyword or tag describing the resource
+-- # Class: "BiologicalMaterialOrigin_identifier" Description: ""
+--     * Slot: BiologicalMaterialOrigin_id Description: Autocreated FK slot
+--     * Slot: identifier Description: A unique identifier of the resource being described or cataloged
+-- # Class: "BiologicalMaterialOrigin_iri" Description: ""
+--     * Slot: BiologicalMaterialOrigin_id Description: Autocreated FK slot
+--     * Slot: iri Description: International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs
 -- # Class: "BiologicalPartOrigin_keyword" Description: ""
 --     * Slot: BiologicalPartOrigin_id Description: Autocreated FK slot
 --     * Slot: keyword Description: A keyword or tag describing the resource
+-- # Class: "BiologicalPartOrigin_identifier" Description: ""
+--     * Slot: BiologicalPartOrigin_id Description: Autocreated FK slot
+--     * Slot: identifier Description: A unique identifier of the resource being described or cataloged
+-- # Class: "BiologicalPartOrigin_iri" Description: ""
+--     * Slot: BiologicalPartOrigin_id Description: Autocreated FK slot
+--     * Slot: iri Description: International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs
 -- # Class: "NaturalPartOrigin_keyword" Description: ""
 --     * Slot: NaturalPartOrigin_id Description: Autocreated FK slot
 --     * Slot: keyword Description: A keyword or tag describing the resource
+-- # Class: "NaturalPartOrigin_identifier" Description: ""
+--     * Slot: NaturalPartOrigin_id Description: Autocreated FK slot
+--     * Slot: identifier Description: A unique identifier of the resource being described or cataloged
+-- # Class: "NaturalPartOrigin_iri" Description: ""
+--     * Slot: NaturalPartOrigin_id Description: Autocreated FK slot
+--     * Slot: iri Description: International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs
 -- # Class: "SyntheticPartOrigin_keyword" Description: ""
 --     * Slot: SyntheticPartOrigin_id Description: Autocreated FK slot
 --     * Slot: keyword Description: A keyword or tag describing the resource
+-- # Class: "SyntheticPartOrigin_identifier" Description: ""
+--     * Slot: SyntheticPartOrigin_id Description: Autocreated FK slot
+--     * Slot: identifier Description: A unique identifier of the resource being described or cataloged
+-- # Class: "SyntheticPartOrigin_iri" Description: ""
+--     * Slot: SyntheticPartOrigin_id Description: Autocreated FK slot
+--     * Slot: iri Description: International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs
 -- # Class: "RecombinantPartIdentification_sequence" Description: ""
 --     * Slot: RecombinantPartIdentification_id Description: Autocreated FK slot
 --     * Slot: sequence_id Description: The related sequence information from a sequence provider or in fasta format
 -- # Class: "RecombinantPartIdentification_keyword" Description: ""
 --     * Slot: RecombinantPartIdentification_id Description: Autocreated FK slot
 --     * Slot: keyword Description: A keyword or tag describing the resource
+-- # Class: "RecombinantPartIdentification_identifier" Description: ""
+--     * Slot: RecombinantPartIdentification_id Description: Autocreated FK slot
+--     * Slot: identifier Description: A unique identifier of the resource being described or cataloged
+-- # Class: "RecombinantPartIdentification_iri" Description: ""
+--     * Slot: RecombinantPartIdentification_id Description: Autocreated FK slot
+--     * Slot: iri Description: International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs
 -- # Class: "Collection_collectionItem" Description: ""
 --     * Slot: Collection_id Description: Autocreated FK slot
 --     * Slot: collectionItem_id Description: An item of the collection
 -- # Class: "Collection_keyword" Description: ""
 --     * Slot: Collection_id Description: Autocreated FK slot
 --     * Slot: keyword Description: A keyword or tag describing the resource
+-- # Class: "Collection_identifier" Description: ""
+--     * Slot: Collection_id Description: Autocreated FK slot
+--     * Slot: identifier Description: A unique identifier of the resource being described or cataloged
+-- # Class: "Collection_iri" Description: ""
+--     * Slot: Collection_id Description: Autocreated FK slot
+--     * Slot: iri Description: International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs
 -- # Class: "ProductOrService_additionalCategory" Description: ""
 --     * Slot: ProductOrService_id Description: Autocreated FK slot
 --     * Slot: additionalCategory_id Description: Any category apart from its main category in which this product or service can fit
@@ -1393,6 +1699,12 @@
 -- # Class: "ProductOrService_keyword" Description: ""
 --     * Slot: ProductOrService_id Description: Autocreated FK slot
 --     * Slot: keyword Description: A keyword or tag describing the resource
+-- # Class: "ProductOrService_identifier" Description: ""
+--     * Slot: ProductOrService_id Description: Autocreated FK slot
+--     * Slot: identifier Description: A unique identifier of the resource being described or cataloged
+-- # Class: "ProductOrService_iri" Description: ""
+--     * Slot: ProductOrService_id Description: Autocreated FK slot
+--     * Slot: iri Description: International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs
 -- # Class: "Service_additionalCategory" Description: ""
 --     * Slot: Service_id Description: Autocreated FK slot
 --     * Slot: additionalCategory_id Description: Any category apart from its main category in which this product or service can fit
@@ -1423,6 +1735,12 @@
 -- # Class: "Service_keyword" Description: ""
 --     * Slot: Service_id Description: Autocreated FK slot
 --     * Slot: keyword Description: A keyword or tag describing the resource
+-- # Class: "Service_identifier" Description: ""
+--     * Slot: Service_id Description: Autocreated FK slot
+--     * Slot: identifier Description: A unique identifier of the resource being described or cataloged
+-- # Class: "Service_iri" Description: ""
+--     * Slot: Service_id Description: Autocreated FK slot
+--     * Slot: iri Description: International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs
 -- # Class: "Product_additionalCategory" Description: ""
 --     * Slot: Product_id Description: Autocreated FK slot
 --     * Slot: additionalCategory_id Description: Any category apart from its main category in which this product or service can fit
@@ -1453,6 +1771,12 @@
 -- # Class: "Product_keyword" Description: ""
 --     * Slot: Product_id Description: Autocreated FK slot
 --     * Slot: keyword Description: A keyword or tag describing the resource
+-- # Class: "Product_identifier" Description: ""
+--     * Slot: Product_id Description: Autocreated FK slot
+--     * Slot: identifier Description: A unique identifier of the resource being described or cataloged
+-- # Class: "Product_iri" Description: ""
+--     * Slot: Product_id Description: Autocreated FK slot
+--     * Slot: iri Description: International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs
 -- # Class: "Antibody_sequenceReference" Description: ""
 --     * Slot: Antibody_id Description: Autocreated FK slot
 --     * Slot: sequenceReference_id Description: A reference that permits to retrieve the sequence information from a sequence provider
@@ -1486,6 +1810,12 @@
 -- # Class: "Antibody_keyword" Description: ""
 --     * Slot: Antibody_id Description: Autocreated FK slot
 --     * Slot: keyword Description: A keyword or tag describing the resource
+-- # Class: "Antibody_identifier" Description: ""
+--     * Slot: Antibody_id Description: Autocreated FK slot
+--     * Slot: identifier Description: A unique identifier of the resource being described or cataloged
+-- # Class: "Antibody_iri" Description: ""
+--     * Slot: Antibody_id Description: Autocreated FK slot
+--     * Slot: iri Description: International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs
 -- # Class: "Hybridoma_sequenceReference" Description: ""
 --     * Slot: Hybridoma_id Description: Autocreated FK slot
 --     * Slot: sequenceReference_id Description: A reference that permits to retrieve the sequence information from a sequence provider
@@ -1519,6 +1849,12 @@
 -- # Class: "Hybridoma_keyword" Description: ""
 --     * Slot: Hybridoma_id Description: Autocreated FK slot
 --     * Slot: keyword Description: A keyword or tag describing the resource
+-- # Class: "Hybridoma_identifier" Description: ""
+--     * Slot: Hybridoma_id Description: Autocreated FK slot
+--     * Slot: identifier Description: A unique identifier of the resource being described or cataloged
+-- # Class: "Hybridoma_iri" Description: ""
+--     * Slot: Hybridoma_id Description: Autocreated FK slot
+--     * Slot: iri Description: International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs
 -- # Class: "Protein_sequence" Description: ""
 --     * Slot: Protein_id Description: Autocreated FK slot
 --     * Slot: sequence_id Description: The related sequence information from a sequence provider or in fasta format
@@ -1588,6 +1924,12 @@
 -- # Class: "Protein_keyword" Description: ""
 --     * Slot: Protein_id Description: Autocreated FK slot
 --     * Slot: keyword Description: A keyword or tag describing the resource
+-- # Class: "Protein_identifier" Description: ""
+--     * Slot: Protein_id Description: Autocreated FK slot
+--     * Slot: identifier Description: A unique identifier of the resource being described or cataloged
+-- # Class: "Protein_iri" Description: ""
+--     * Slot: Protein_id Description: Autocreated FK slot
+--     * Slot: iri Description: International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs
 -- # Class: "NucleicAcid_genBankFileOfTheConstruct" Description: ""
 --     * Slot: NucleicAcid_id Description: Autocreated FK slot
 --     * Slot: genBankFileOfTheConstruct_id Description: A GenBank formatted file that contains detailed sequence and annotation information of a nucleic acid construct
@@ -1627,6 +1969,12 @@
 -- # Class: "NucleicAcid_keyword" Description: ""
 --     * Slot: NucleicAcid_id Description: Autocreated FK slot
 --     * Slot: keyword Description: A keyword or tag describing the resource
+-- # Class: "NucleicAcid_identifier" Description: ""
+--     * Slot: NucleicAcid_id Description: Autocreated FK slot
+--     * Slot: identifier Description: A unique identifier of the resource being described or cataloged
+-- # Class: "NucleicAcid_iri" Description: ""
+--     * Slot: NucleicAcid_id Description: Autocreated FK slot
+--     * Slot: iri Description: International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs
 -- # Class: "DetectionKit_standardOperatingProcedureFile" Description: ""
 --     * Slot: DetectionKit_id Description: Autocreated FK slot
 --     * Slot: standardOperatingProcedureFile_id Description: The related standard operating procedure file (SOP)
@@ -1660,6 +2008,12 @@
 -- # Class: "DetectionKit_keyword" Description: ""
 --     * Slot: DetectionKit_id Description: Autocreated FK slot
 --     * Slot: keyword Description: A keyword or tag describing the resource
+-- # Class: "DetectionKit_identifier" Description: ""
+--     * Slot: DetectionKit_id Description: Autocreated FK slot
+--     * Slot: identifier Description: A unique identifier of the resource being described or cataloged
+-- # Class: "DetectionKit_iri" Description: ""
+--     * Slot: DetectionKit_id Description: Autocreated FK slot
+--     * Slot: iri Description: International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs
 -- # Class: "Bundle_itemsOfTheBundle" Description: ""
 --     * Slot: Bundle_id Description: Autocreated FK slot
 --     * Slot: itemsOfTheBundle_id Description: Specifies the constituent products and/or services that are part of the bundle
@@ -1693,6 +2047,12 @@
 -- # Class: "Bundle_keyword" Description: ""
 --     * Slot: Bundle_id Description: Autocreated FK slot
 --     * Slot: keyword Description: A keyword or tag describing the resource
+-- # Class: "Bundle_identifier" Description: ""
+--     * Slot: Bundle_id Description: Autocreated FK slot
+--     * Slot: identifier Description: A unique identifier of the resource being described or cataloged
+-- # Class: "Bundle_iri" Description: ""
+--     * Slot: Bundle_id Description: Autocreated FK slot
+--     * Slot: iri Description: International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs
 -- # Class: "Pathogen_suspectedEpidemiologicalOrigin" Description: ""
 --     * Slot: Pathogen_id Description: Autocreated FK slot
 --     * Slot: suspectedEpidemiologicalOrigin_id Description: The potential geographical or environmental source from which the pathogen is believed to have originated or been transmitted
@@ -1741,6 +2101,12 @@
 -- # Class: "Pathogen_keyword" Description: ""
 --     * Slot: Pathogen_id Description: Autocreated FK slot
 --     * Slot: keyword Description: A keyword or tag describing the resource
+-- # Class: "Pathogen_identifier" Description: ""
+--     * Slot: Pathogen_id Description: Autocreated FK slot
+--     * Slot: identifier Description: A unique identifier of the resource being described or cataloged
+-- # Class: "Pathogen_iri" Description: ""
+--     * Slot: Pathogen_id Description: Autocreated FK slot
+--     * Slot: iri Description: International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs
 -- # Class: "Virus_coInfectingViruses" Description: ""
 --     * Slot: Virus_id Description: Autocreated FK slot
 --     * Slot: coInfectingViruses_id Description: Identifies other viruses that may co-infect the host organism along with the primary virus, indicating the presence of multiple viral infections within the same host.
@@ -1792,6 +2158,12 @@
 -- # Class: "Virus_keyword" Description: ""
 --     * Slot: Virus_id Description: Autocreated FK slot
 --     * Slot: keyword Description: A keyword or tag describing the resource
+-- # Class: "Virus_identifier" Description: ""
+--     * Slot: Virus_id Description: Autocreated FK slot
+--     * Slot: identifier Description: A unique identifier of the resource being described or cataloged
+-- # Class: "Virus_iri" Description: ""
+--     * Slot: Virus_id Description: Autocreated FK slot
+--     * Slot: iri Description: International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs
 -- # Class: "Bacterium_suspectedEpidemiologicalOrigin" Description: ""
 --     * Slot: Bacterium_id Description: Autocreated FK slot
 --     * Slot: suspectedEpidemiologicalOrigin_id Description: The potential geographical or environmental source from which the pathogen is believed to have originated or been transmitted
@@ -1840,6 +2212,12 @@
 -- # Class: "Bacterium_keyword" Description: ""
 --     * Slot: Bacterium_id Description: Autocreated FK slot
 --     * Slot: keyword Description: A keyword or tag describing the resource
+-- # Class: "Bacterium_identifier" Description: ""
+--     * Slot: Bacterium_id Description: Autocreated FK slot
+--     * Slot: identifier Description: A unique identifier of the resource being described or cataloged
+-- # Class: "Bacterium_iri" Description: ""
+--     * Slot: Bacterium_id Description: Autocreated FK slot
+--     * Slot: iri Description: International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs
 -- # Class: "Fungus_suspectedEpidemiologicalOrigin" Description: ""
 --     * Slot: Fungus_id Description: Autocreated FK slot
 --     * Slot: suspectedEpidemiologicalOrigin_id Description: The potential geographical or environmental source from which the pathogen is believed to have originated or been transmitted
@@ -1888,6 +2266,12 @@
 -- # Class: "Fungus_keyword" Description: ""
 --     * Slot: Fungus_id Description: Autocreated FK slot
 --     * Slot: keyword Description: A keyword or tag describing the resource
+-- # Class: "Fungus_identifier" Description: ""
+--     * Slot: Fungus_id Description: Autocreated FK slot
+--     * Slot: identifier Description: A unique identifier of the resource being described or cataloged
+-- # Class: "Fungus_iri" Description: ""
+--     * Slot: Fungus_id Description: Autocreated FK slot
+--     * Slot: iri Description: International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs
 -- # Class: "Protozoan_suspectedEpidemiologicalOrigin" Description: ""
 --     * Slot: Protozoan_id Description: Autocreated FK slot
 --     * Slot: suspectedEpidemiologicalOrigin_id Description: The potential geographical or environmental source from which the pathogen is believed to have originated or been transmitted
@@ -1936,6 +2320,12 @@
 -- # Class: "Protozoan_keyword" Description: ""
 --     * Slot: Protozoan_id Description: Autocreated FK slot
 --     * Slot: keyword Description: A keyword or tag describing the resource
+-- # Class: "Protozoan_identifier" Description: ""
+--     * Slot: Protozoan_id Description: Autocreated FK slot
+--     * Slot: identifier Description: A unique identifier of the resource being described or cataloged
+-- # Class: "Protozoan_iri" Description: ""
+--     * Slot: Protozoan_id Description: Autocreated FK slot
+--     * Slot: iri Description: International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs
 -- # Class: "Viroid_suspectedEpidemiologicalOrigin" Description: ""
 --     * Slot: Viroid_id Description: Autocreated FK slot
 --     * Slot: suspectedEpidemiologicalOrigin_id Description: The potential geographical or environmental source from which the pathogen is believed to have originated or been transmitted
@@ -1984,6 +2374,12 @@
 -- # Class: "Viroid_keyword" Description: ""
 --     * Slot: Viroid_id Description: Autocreated FK slot
 --     * Slot: keyword Description: A keyword or tag describing the resource
+-- # Class: "Viroid_identifier" Description: ""
+--     * Slot: Viroid_id Description: Autocreated FK slot
+--     * Slot: identifier Description: A unique identifier of the resource being described or cataloged
+-- # Class: "Viroid_iri" Description: ""
+--     * Slot: Viroid_id Description: Autocreated FK slot
+--     * Slot: iri Description: International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs
 -- # Class: "Prion_suspectedEpidemiologicalOrigin" Description: ""
 --     * Slot: Prion_id Description: Autocreated FK slot
 --     * Slot: suspectedEpidemiologicalOrigin_id Description: The potential geographical or environmental source from which the pathogen is believed to have originated or been transmitted
@@ -2032,39 +2428,105 @@
 -- # Class: "Prion_keyword" Description: ""
 --     * Slot: Prion_id Description: Autocreated FK slot
 --     * Slot: keyword Description: A keyword or tag describing the resource
+-- # Class: "Prion_identifier" Description: ""
+--     * Slot: Prion_id Description: Autocreated FK slot
+--     * Slot: identifier Description: A unique identifier of the resource being described or cataloged
+-- # Class: "Prion_iri" Description: ""
+--     * Slot: Prion_id Description: Autocreated FK slot
+--     * Slot: iri Description: International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs
 -- # Class: "MaterialSafetyDataSheet_keyword" Description: ""
 --     * Slot: MaterialSafetyDataSheet_id Description: Autocreated FK slot
 --     * Slot: keyword Description: A keyword or tag describing the resource
+-- # Class: "MaterialSafetyDataSheet_identifier" Description: ""
+--     * Slot: MaterialSafetyDataSheet_id Description: Autocreated FK slot
+--     * Slot: identifier Description: A unique identifier of the resource being described or cataloged
+-- # Class: "MaterialSafetyDataSheet_iri" Description: ""
+--     * Slot: MaterialSafetyDataSheet_id Description: Autocreated FK slot
+--     * Slot: iri Description: International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs
 -- # Class: "File_keyword" Description: ""
 --     * Slot: File_id Description: Autocreated FK slot
 --     * Slot: keyword Description: A keyword or tag describing the resource
+-- # Class: "File_identifier" Description: ""
+--     * Slot: File_id Description: Autocreated FK slot
+--     * Slot: identifier Description: A unique identifier of the resource being described or cataloged
+-- # Class: "File_iri" Description: ""
+--     * Slot: File_id Description: Autocreated FK slot
+--     * Slot: iri Description: International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs
 -- # Class: "Data_keyword" Description: ""
 --     * Slot: Data_id Description: Autocreated FK slot
 --     * Slot: keyword Description: A keyword or tag describing the resource
+-- # Class: "Data_identifier" Description: ""
+--     * Slot: Data_id Description: Autocreated FK slot
+--     * Slot: identifier Description: A unique identifier of the resource being described or cataloged
+-- # Class: "Data_iri" Description: ""
+--     * Slot: Data_id Description: Autocreated FK slot
+--     * Slot: iri Description: International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs
 -- # Class: "Document_keyword" Description: ""
 --     * Slot: Document_id Description: Autocreated FK slot
 --     * Slot: keyword Description: A keyword or tag describing the resource
+-- # Class: "Document_identifier" Description: ""
+--     * Slot: Document_id Description: Autocreated FK slot
+--     * Slot: identifier Description: A unique identifier of the resource being described or cataloged
+-- # Class: "Document_iri" Description: ""
+--     * Slot: Document_id Description: Autocreated FK slot
+--     * Slot: iri Description: International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs
 -- # Class: "Audio_keyword" Description: ""
 --     * Slot: Audio_id Description: Autocreated FK slot
 --     * Slot: keyword Description: A keyword or tag describing the resource
+-- # Class: "Audio_identifier" Description: ""
+--     * Slot: Audio_id Description: Autocreated FK slot
+--     * Slot: identifier Description: A unique identifier of the resource being described or cataloged
+-- # Class: "Audio_iri" Description: ""
+--     * Slot: Audio_id Description: Autocreated FK slot
+--     * Slot: iri Description: International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs
 -- # Class: "Video_keyword" Description: ""
 --     * Slot: Video_id Description: Autocreated FK slot
 --     * Slot: keyword Description: A keyword or tag describing the resource
+-- # Class: "Video_identifier" Description: ""
+--     * Slot: Video_id Description: Autocreated FK slot
+--     * Slot: identifier Description: A unique identifier of the resource being described or cataloged
+-- # Class: "Video_iri" Description: ""
+--     * Slot: Video_id Description: Autocreated FK slot
+--     * Slot: iri Description: International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs
 -- # Class: "Image_keyword" Description: ""
 --     * Slot: Image_id Description: Autocreated FK slot
 --     * Slot: keyword Description: A keyword or tag describing the resource
+-- # Class: "Image_identifier" Description: ""
+--     * Slot: Image_id Description: Autocreated FK slot
+--     * Slot: identifier Description: A unique identifier of the resource being described or cataloged
+-- # Class: "Image_iri" Description: ""
+--     * Slot: Image_id Description: Autocreated FK slot
+--     * Slot: iri Description: International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs
 -- # Class: "ContactPoint_keyword" Description: ""
 --     * Slot: ContactPoint_id Description: Autocreated FK slot
 --     * Slot: keyword Description: A keyword or tag describing the resource
+-- # Class: "ContactPoint_identifier" Description: ""
+--     * Slot: ContactPoint_id Description: Autocreated FK slot
+--     * Slot: identifier Description: A unique identifier of the resource being described or cataloged
+-- # Class: "ContactPoint_iri" Description: ""
+--     * Slot: ContactPoint_id Description: Autocreated FK slot
+--     * Slot: iri Description: International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs
 -- # Class: "License_keyword" Description: ""
 --     * Slot: License_id Description: Autocreated FK slot
 --     * Slot: keyword Description: A keyword or tag describing the resource
+-- # Class: "License_identifier" Description: ""
+--     * Slot: License_id Description: Autocreated FK slot
+--     * Slot: identifier Description: A unique identifier of the resource being described or cataloged
+-- # Class: "License_iri" Description: ""
+--     * Slot: License_id Description: Autocreated FK slot
+--     * Slot: iri Description: International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs
 -- # Class: "Certification_certificationDocument" Description: ""
 --     * Slot: Certification_id Description: Autocreated FK slot
 --     * Slot: certificationDocument_id Description: The document(s) issued by an authority certifying the conformity of the subject to the applicable scheme, including, as the case may be, the documents attesting the equivalence to another certification scheme.
 -- # Class: "Certification_keyword" Description: ""
 --     * Slot: Certification_id Description: Autocreated FK slot
 --     * Slot: keyword Description: A keyword or tag describing the resource
+-- # Class: "Certification_identifier" Description: ""
+--     * Slot: Certification_id Description: Autocreated FK slot
+--     * Slot: identifier Description: A unique identifier of the resource being described or cataloged
+-- # Class: "Certification_iri" Description: ""
+--     * Slot: Certification_id Description: Autocreated FK slot
+--     * Slot: iri Description: International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs
 
 CREATE TABLE "Resource" (
 	id INTEGER NOT NULL, 
@@ -2286,10 +2748,34 @@ CREATE TABLE "Resource_keyword" (
 	PRIMARY KEY ("Resource_id", keyword), 
 	FOREIGN KEY("Resource_id") REFERENCES "Resource" (id)
 );
+CREATE TABLE "Resource_identifier" (
+	"Resource_id" INTEGER, 
+	identifier TEXT, 
+	PRIMARY KEY ("Resource_id", identifier), 
+	FOREIGN KEY("Resource_id") REFERENCES "Resource" (id)
+);
+CREATE TABLE "Resource_iri" (
+	"Resource_id" INTEGER, 
+	iri TEXT, 
+	PRIMARY KEY ("Resource_id", iri), 
+	FOREIGN KEY("Resource_id") REFERENCES "Resource" (id)
+);
 CREATE TABLE "Dataset_keyword" (
 	"Dataset_id" INTEGER, 
 	keyword TEXT, 
 	PRIMARY KEY ("Dataset_id", keyword), 
+	FOREIGN KEY("Dataset_id") REFERENCES "Dataset" (id)
+);
+CREATE TABLE "Dataset_identifier" (
+	"Dataset_id" INTEGER, 
+	identifier TEXT, 
+	PRIMARY KEY ("Dataset_id", identifier), 
+	FOREIGN KEY("Dataset_id") REFERENCES "Dataset" (id)
+);
+CREATE TABLE "Dataset_iri" (
+	"Dataset_id" INTEGER, 
+	iri TEXT, 
+	PRIMARY KEY ("Dataset_id", iri), 
 	FOREIGN KEY("Dataset_id") REFERENCES "Dataset" (id)
 );
 CREATE TABLE "DataService_servesDataset" (
@@ -2305,6 +2791,18 @@ CREATE TABLE "DataService_keyword" (
 	PRIMARY KEY ("DataService_id", keyword), 
 	FOREIGN KEY("DataService_id") REFERENCES "DataService" (id)
 );
+CREATE TABLE "DataService_identifier" (
+	"DataService_id" INTEGER, 
+	identifier TEXT, 
+	PRIMARY KEY ("DataService_id", identifier), 
+	FOREIGN KEY("DataService_id") REFERENCES "DataService" (id)
+);
+CREATE TABLE "DataService_iri" (
+	"DataService_id" INTEGER, 
+	iri TEXT, 
+	PRIMARY KEY ("DataService_id", iri), 
+	FOREIGN KEY("DataService_id") REFERENCES "DataService" (id)
+);
 CREATE TABLE "Version_resource" (
 	"Version_id" INTEGER, 
 	resource_id INTEGER, 
@@ -2318,16 +2816,52 @@ CREATE TABLE "Version_keyword" (
 	PRIMARY KEY ("Version_id", keyword), 
 	FOREIGN KEY("Version_id") REFERENCES "Version" (id)
 );
+CREATE TABLE "Version_identifier" (
+	"Version_id" INTEGER, 
+	identifier TEXT, 
+	PRIMARY KEY ("Version_id", identifier), 
+	FOREIGN KEY("Version_id") REFERENCES "Version" (id)
+);
+CREATE TABLE "Version_iri" (
+	"Version_id" INTEGER, 
+	iri TEXT, 
+	PRIMARY KEY ("Version_id", iri), 
+	FOREIGN KEY("Version_id") REFERENCES "Version" (id)
+);
 CREATE TABLE "Catalogue_keyword" (
 	"Catalogue_id" INTEGER, 
 	keyword TEXT, 
 	PRIMARY KEY ("Catalogue_id", keyword), 
 	FOREIGN KEY("Catalogue_id") REFERENCES "Catalogue" (id)
 );
+CREATE TABLE "Catalogue_identifier" (
+	"Catalogue_id" INTEGER, 
+	identifier TEXT, 
+	PRIMARY KEY ("Catalogue_id", identifier), 
+	FOREIGN KEY("Catalogue_id") REFERENCES "Catalogue" (id)
+);
+CREATE TABLE "Catalogue_iri" (
+	"Catalogue_id" INTEGER, 
+	iri TEXT, 
+	PRIMARY KEY ("Catalogue_id", iri), 
+	FOREIGN KEY("Catalogue_id") REFERENCES "Catalogue" (id)
+);
 CREATE TABLE "ExternalRelatedReference_keyword" (
 	"ExternalRelatedReference_id" INTEGER, 
 	keyword TEXT, 
 	PRIMARY KEY ("ExternalRelatedReference_id", keyword), 
+	FOREIGN KEY("ExternalRelatedReference_id") REFERENCES "ExternalRelatedReference" (id)
+);
+CREATE TABLE "ExternalRelatedReference_identifier" (
+	"ExternalRelatedReference_id" INTEGER, 
+	identifier TEXT, 
+	PRIMARY KEY ("ExternalRelatedReference_id", identifier), 
+	FOREIGN KEY("ExternalRelatedReference_id") REFERENCES "ExternalRelatedReference" (id)
+);
+CREATE TABLE "ExternalRelatedReference_iri" (
+	"ExternalRelatedReference_id" INTEGER, 
+	iri TEXT, 
+	PRIMARY KEY ("ExternalRelatedReference_id", iri), 
 	FOREIGN KEY("ExternalRelatedReference_id") REFERENCES "ExternalRelatedReference" (id)
 );
 CREATE TABLE "Sequence_sequenceReference" (
@@ -2343,16 +2877,52 @@ CREATE TABLE "Sequence_keyword" (
 	PRIMARY KEY ("Sequence_id", keyword), 
 	FOREIGN KEY("Sequence_id") REFERENCES "Sequence" (id)
 );
+CREATE TABLE "Sequence_identifier" (
+	"Sequence_id" INTEGER, 
+	identifier TEXT, 
+	PRIMARY KEY ("Sequence_id", identifier), 
+	FOREIGN KEY("Sequence_id") REFERENCES "Sequence" (id)
+);
+CREATE TABLE "Sequence_iri" (
+	"Sequence_id" INTEGER, 
+	iri TEXT, 
+	PRIMARY KEY ("Sequence_id", iri), 
+	FOREIGN KEY("Sequence_id") REFERENCES "Sequence" (id)
+);
 CREATE TABLE "SequenceReference_keyword" (
 	"SequenceReference_id" INTEGER, 
 	keyword TEXT, 
 	PRIMARY KEY ("SequenceReference_id", keyword), 
 	FOREIGN KEY("SequenceReference_id") REFERENCES "SequenceReference" (id)
 );
+CREATE TABLE "SequenceReference_identifier" (
+	"SequenceReference_id" INTEGER, 
+	identifier TEXT, 
+	PRIMARY KEY ("SequenceReference_id", identifier), 
+	FOREIGN KEY("SequenceReference_id") REFERENCES "SequenceReference" (id)
+);
+CREATE TABLE "SequenceReference_iri" (
+	"SequenceReference_id" INTEGER, 
+	iri TEXT, 
+	PRIMARY KEY ("SequenceReference_id", iri), 
+	FOREIGN KEY("SequenceReference_id") REFERENCES "SequenceReference" (id)
+);
 CREATE TABLE "BiologicalMaterialOrigin_keyword" (
 	"BiologicalMaterialOrigin_id" INTEGER, 
 	keyword TEXT, 
 	PRIMARY KEY ("BiologicalMaterialOrigin_id", keyword), 
+	FOREIGN KEY("BiologicalMaterialOrigin_id") REFERENCES "BiologicalMaterialOrigin" (id)
+);
+CREATE TABLE "BiologicalMaterialOrigin_identifier" (
+	"BiologicalMaterialOrigin_id" INTEGER, 
+	identifier TEXT, 
+	PRIMARY KEY ("BiologicalMaterialOrigin_id", identifier), 
+	FOREIGN KEY("BiologicalMaterialOrigin_id") REFERENCES "BiologicalMaterialOrigin" (id)
+);
+CREATE TABLE "BiologicalMaterialOrigin_iri" (
+	"BiologicalMaterialOrigin_id" INTEGER, 
+	iri TEXT, 
+	PRIMARY KEY ("BiologicalMaterialOrigin_id", iri), 
 	FOREIGN KEY("BiologicalMaterialOrigin_id") REFERENCES "BiologicalMaterialOrigin" (id)
 );
 CREATE TABLE "RecombinantPartIdentification_sequence" (
@@ -2368,16 +2938,52 @@ CREATE TABLE "RecombinantPartIdentification_keyword" (
 	PRIMARY KEY ("RecombinantPartIdentification_id", keyword), 
 	FOREIGN KEY("RecombinantPartIdentification_id") REFERENCES "RecombinantPartIdentification" (id)
 );
+CREATE TABLE "RecombinantPartIdentification_identifier" (
+	"RecombinantPartIdentification_id" INTEGER, 
+	identifier TEXT, 
+	PRIMARY KEY ("RecombinantPartIdentification_id", identifier), 
+	FOREIGN KEY("RecombinantPartIdentification_id") REFERENCES "RecombinantPartIdentification" (id)
+);
+CREATE TABLE "RecombinantPartIdentification_iri" (
+	"RecombinantPartIdentification_id" INTEGER, 
+	iri TEXT, 
+	PRIMARY KEY ("RecombinantPartIdentification_id", iri), 
+	FOREIGN KEY("RecombinantPartIdentification_id") REFERENCES "RecombinantPartIdentification" (id)
+);
 CREATE TABLE "Image_keyword" (
 	"Image_id" INTEGER, 
 	keyword TEXT, 
 	PRIMARY KEY ("Image_id", keyword), 
 	FOREIGN KEY("Image_id") REFERENCES "Image" (id)
 );
+CREATE TABLE "Image_identifier" (
+	"Image_id" INTEGER, 
+	identifier TEXT, 
+	PRIMARY KEY ("Image_id", identifier), 
+	FOREIGN KEY("Image_id") REFERENCES "Image" (id)
+);
+CREATE TABLE "Image_iri" (
+	"Image_id" INTEGER, 
+	iri TEXT, 
+	PRIMARY KEY ("Image_id", iri), 
+	FOREIGN KEY("Image_id") REFERENCES "Image" (id)
+);
 CREATE TABLE "License_keyword" (
 	"License_id" INTEGER, 
 	keyword TEXT, 
 	PRIMARY KEY ("License_id", keyword), 
+	FOREIGN KEY("License_id") REFERENCES "License" (id)
+);
+CREATE TABLE "License_identifier" (
+	"License_id" INTEGER, 
+	identifier TEXT, 
+	PRIMARY KEY ("License_id", identifier), 
+	FOREIGN KEY("License_id") REFERENCES "License" (id)
+);
+CREATE TABLE "License_iri" (
+	"License_id" INTEGER, 
+	iri TEXT, 
+	PRIMARY KEY ("License_id", iri), 
 	FOREIGN KEY("License_id") REFERENCES "License" (id)
 );
 CREATE TABLE "Taxonomy" (
@@ -2436,6 +3042,18 @@ CREATE TABLE "DataProvider_keyword" (
 	PRIMARY KEY ("DataProvider_id", keyword), 
 	FOREIGN KEY("DataProvider_id") REFERENCES "DataProvider" (id)
 );
+CREATE TABLE "DataProvider_identifier" (
+	"DataProvider_id" INTEGER, 
+	identifier TEXT, 
+	PRIMARY KEY ("DataProvider_id", identifier), 
+	FOREIGN KEY("DataProvider_id") REFERENCES "DataProvider" (id)
+);
+CREATE TABLE "DataProvider_iri" (
+	"DataProvider_id" INTEGER, 
+	iri TEXT, 
+	PRIMARY KEY ("DataProvider_id", iri), 
+	FOREIGN KEY("DataProvider_id") REFERENCES "DataProvider" (id)
+);
 CREATE TABLE "BiologicalMaterialOrigin_biologicalPartOrigin" (
 	"BiologicalMaterialOrigin_id" INTEGER, 
 	"biologicalPartOrigin_id" INTEGER NOT NULL, 
@@ -2449,10 +3067,34 @@ CREATE TABLE "BiologicalPartOrigin_keyword" (
 	PRIMARY KEY ("BiologicalPartOrigin_id", keyword), 
 	FOREIGN KEY("BiologicalPartOrigin_id") REFERENCES "BiologicalPartOrigin" (id)
 );
+CREATE TABLE "BiologicalPartOrigin_identifier" (
+	"BiologicalPartOrigin_id" INTEGER, 
+	identifier TEXT, 
+	PRIMARY KEY ("BiologicalPartOrigin_id", identifier), 
+	FOREIGN KEY("BiologicalPartOrigin_id") REFERENCES "BiologicalPartOrigin" (id)
+);
+CREATE TABLE "BiologicalPartOrigin_iri" (
+	"BiologicalPartOrigin_id" INTEGER, 
+	iri TEXT, 
+	PRIMARY KEY ("BiologicalPartOrigin_id", iri), 
+	FOREIGN KEY("BiologicalPartOrigin_id") REFERENCES "BiologicalPartOrigin" (id)
+);
 CREATE TABLE "SyntheticPartOrigin_keyword" (
 	"SyntheticPartOrigin_id" INTEGER, 
 	keyword TEXT, 
 	PRIMARY KEY ("SyntheticPartOrigin_id", keyword), 
+	FOREIGN KEY("SyntheticPartOrigin_id") REFERENCES "SyntheticPartOrigin" (id)
+);
+CREATE TABLE "SyntheticPartOrigin_identifier" (
+	"SyntheticPartOrigin_id" INTEGER, 
+	identifier TEXT, 
+	PRIMARY KEY ("SyntheticPartOrigin_id", identifier), 
+	FOREIGN KEY("SyntheticPartOrigin_id") REFERENCES "SyntheticPartOrigin" (id)
+);
+CREATE TABLE "SyntheticPartOrigin_iri" (
+	"SyntheticPartOrigin_id" INTEGER, 
+	iri TEXT, 
+	PRIMARY KEY ("SyntheticPartOrigin_id", iri), 
 	FOREIGN KEY("SyntheticPartOrigin_id") REFERENCES "SyntheticPartOrigin" (id)
 );
 CREATE TABLE "File_keyword" (
@@ -2461,10 +3103,34 @@ CREATE TABLE "File_keyword" (
 	PRIMARY KEY ("File_id", keyword), 
 	FOREIGN KEY("File_id") REFERENCES "File" (id)
 );
+CREATE TABLE "File_identifier" (
+	"File_id" INTEGER, 
+	identifier TEXT, 
+	PRIMARY KEY ("File_id", identifier), 
+	FOREIGN KEY("File_id") REFERENCES "File" (id)
+);
+CREATE TABLE "File_iri" (
+	"File_id" INTEGER, 
+	iri TEXT, 
+	PRIMARY KEY ("File_id", iri), 
+	FOREIGN KEY("File_id") REFERENCES "File" (id)
+);
 CREATE TABLE "Data_keyword" (
 	"Data_id" INTEGER, 
 	keyword TEXT, 
 	PRIMARY KEY ("Data_id", keyword), 
+	FOREIGN KEY("Data_id") REFERENCES "Data" (id)
+);
+CREATE TABLE "Data_identifier" (
+	"Data_id" INTEGER, 
+	identifier TEXT, 
+	PRIMARY KEY ("Data_id", identifier), 
+	FOREIGN KEY("Data_id") REFERENCES "Data" (id)
+);
+CREATE TABLE "Data_iri" (
+	"Data_id" INTEGER, 
+	iri TEXT, 
+	PRIMARY KEY ("Data_id", iri), 
 	FOREIGN KEY("Data_id") REFERENCES "Data" (id)
 );
 CREATE TABLE "Document_keyword" (
@@ -2473,16 +3139,52 @@ CREATE TABLE "Document_keyword" (
 	PRIMARY KEY ("Document_id", keyword), 
 	FOREIGN KEY("Document_id") REFERENCES "Document" (id)
 );
+CREATE TABLE "Document_identifier" (
+	"Document_id" INTEGER, 
+	identifier TEXT, 
+	PRIMARY KEY ("Document_id", identifier), 
+	FOREIGN KEY("Document_id") REFERENCES "Document" (id)
+);
+CREATE TABLE "Document_iri" (
+	"Document_id" INTEGER, 
+	iri TEXT, 
+	PRIMARY KEY ("Document_id", iri), 
+	FOREIGN KEY("Document_id") REFERENCES "Document" (id)
+);
 CREATE TABLE "Audio_keyword" (
 	"Audio_id" INTEGER, 
 	keyword TEXT, 
 	PRIMARY KEY ("Audio_id", keyword), 
 	FOREIGN KEY("Audio_id") REFERENCES "Audio" (id)
 );
+CREATE TABLE "Audio_identifier" (
+	"Audio_id" INTEGER, 
+	identifier TEXT, 
+	PRIMARY KEY ("Audio_id", identifier), 
+	FOREIGN KEY("Audio_id") REFERENCES "Audio" (id)
+);
+CREATE TABLE "Audio_iri" (
+	"Audio_id" INTEGER, 
+	iri TEXT, 
+	PRIMARY KEY ("Audio_id", iri), 
+	FOREIGN KEY("Audio_id") REFERENCES "Audio" (id)
+);
 CREATE TABLE "Video_keyword" (
 	"Video_id" INTEGER, 
 	keyword TEXT, 
 	PRIMARY KEY ("Video_id", keyword), 
+	FOREIGN KEY("Video_id") REFERENCES "Video" (id)
+);
+CREATE TABLE "Video_identifier" (
+	"Video_id" INTEGER, 
+	identifier TEXT, 
+	PRIMARY KEY ("Video_id", identifier), 
+	FOREIGN KEY("Video_id") REFERENCES "Video" (id)
+);
+CREATE TABLE "Video_iri" (
+	"Video_id" INTEGER, 
+	iri TEXT, 
+	PRIMARY KEY ("Video_id", iri), 
 	FOREIGN KEY("Video_id") REFERENCES "Video" (id)
 );
 CREATE TABLE "Certification_certificationDocument" (
@@ -2496,6 +3198,18 @@ CREATE TABLE "Certification_keyword" (
 	"Certification_id" INTEGER, 
 	keyword TEXT, 
 	PRIMARY KEY ("Certification_id", keyword), 
+	FOREIGN KEY("Certification_id") REFERENCES "Certification" (id)
+);
+CREATE TABLE "Certification_identifier" (
+	"Certification_id" INTEGER, 
+	identifier TEXT, 
+	PRIMARY KEY ("Certification_id", identifier), 
+	FOREIGN KEY("Certification_id") REFERENCES "Certification" (id)
+);
+CREATE TABLE "Certification_iri" (
+	"Certification_id" INTEGER, 
+	iri TEXT, 
+	PRIMARY KEY ("Certification_id", iri), 
 	FOREIGN KEY("Certification_id") REFERENCES "Certification" (id)
 );
 CREATE TABLE "Term" (
@@ -2782,16 +3496,52 @@ CREATE TABLE "Taxonomy_keyword" (
 	PRIMARY KEY ("Taxonomy_id", keyword), 
 	FOREIGN KEY("Taxonomy_id") REFERENCES "Taxonomy" (id)
 );
+CREATE TABLE "Taxonomy_identifier" (
+	"Taxonomy_id" INTEGER, 
+	identifier TEXT, 
+	PRIMARY KEY ("Taxonomy_id", identifier), 
+	FOREIGN KEY("Taxonomy_id") REFERENCES "Taxonomy" (id)
+);
+CREATE TABLE "Taxonomy_iri" (
+	"Taxonomy_id" INTEGER, 
+	iri TEXT, 
+	PRIMARY KEY ("Taxonomy_id", iri), 
+	FOREIGN KEY("Taxonomy_id") REFERENCES "Taxonomy" (id)
+);
 CREATE TABLE "Vocabulary_keyword" (
 	"Vocabulary_id" INTEGER, 
 	keyword TEXT, 
 	PRIMARY KEY ("Vocabulary_id", keyword), 
 	FOREIGN KEY("Vocabulary_id") REFERENCES "Vocabulary" (id)
 );
+CREATE TABLE "Vocabulary_identifier" (
+	"Vocabulary_id" INTEGER, 
+	identifier TEXT, 
+	PRIMARY KEY ("Vocabulary_id", identifier), 
+	FOREIGN KEY("Vocabulary_id") REFERENCES "Vocabulary" (id)
+);
+CREATE TABLE "Vocabulary_iri" (
+	"Vocabulary_id" INTEGER, 
+	iri TEXT, 
+	PRIMARY KEY ("Vocabulary_id", iri), 
+	FOREIGN KEY("Vocabulary_id") REFERENCES "Vocabulary" (id)
+);
 CREATE TABLE "Collection_keyword" (
 	"Collection_id" INTEGER, 
 	keyword TEXT, 
 	PRIMARY KEY ("Collection_id", keyword), 
+	FOREIGN KEY("Collection_id") REFERENCES "Collection" (id)
+);
+CREATE TABLE "Collection_identifier" (
+	"Collection_id" INTEGER, 
+	identifier TEXT, 
+	PRIMARY KEY ("Collection_id", identifier), 
+	FOREIGN KEY("Collection_id") REFERENCES "Collection" (id)
+);
+CREATE TABLE "Collection_iri" (
+	"Collection_id" INTEGER, 
+	iri TEXT, 
+	PRIMARY KEY ("Collection_id", iri), 
 	FOREIGN KEY("Collection_id") REFERENCES "Collection" (id)
 );
 CREATE TABLE "Publication" (
@@ -2877,6 +3627,18 @@ CREATE TABLE "Term_keyword" (
 	PRIMARY KEY ("Term_id", keyword), 
 	FOREIGN KEY("Term_id") REFERENCES "Term" (id)
 );
+CREATE TABLE "Term_identifier" (
+	"Term_id" INTEGER, 
+	identifier TEXT, 
+	PRIMARY KEY ("Term_id", identifier), 
+	FOREIGN KEY("Term_id") REFERENCES "Term" (id)
+);
+CREATE TABLE "Term_iri" (
+	"Term_id" INTEGER, 
+	iri TEXT, 
+	PRIMARY KEY ("Term_id", iri), 
+	FOREIGN KEY("Term_id") REFERENCES "Term" (id)
+);
 CREATE TABLE "CommonName_alternateName" (
 	"CommonName_id" INTEGER, 
 	"alternateName_id" INTEGER, 
@@ -2894,6 +3656,18 @@ CREATE TABLE "CommonName_keyword" (
 	"CommonName_id" INTEGER, 
 	keyword TEXT, 
 	PRIMARY KEY ("CommonName_id", keyword), 
+	FOREIGN KEY("CommonName_id") REFERENCES "CommonName" (id)
+);
+CREATE TABLE "CommonName_identifier" (
+	"CommonName_id" INTEGER, 
+	identifier TEXT, 
+	PRIMARY KEY ("CommonName_id", identifier), 
+	FOREIGN KEY("CommonName_id") REFERENCES "CommonName" (id)
+);
+CREATE TABLE "CommonName_iri" (
+	"CommonName_id" INTEGER, 
+	iri TEXT, 
+	PRIMARY KEY ("CommonName_id", iri), 
 	FOREIGN KEY("CommonName_id") REFERENCES "CommonName" (id)
 );
 CREATE TABLE "VirusName_alternateName" (
@@ -2915,6 +3689,18 @@ CREATE TABLE "VirusName_keyword" (
 	PRIMARY KEY ("VirusName_id", keyword), 
 	FOREIGN KEY("VirusName_id") REFERENCES "VirusName" (id)
 );
+CREATE TABLE "VirusName_identifier" (
+	"VirusName_id" INTEGER, 
+	identifier TEXT, 
+	PRIMARY KEY ("VirusName_id", identifier), 
+	FOREIGN KEY("VirusName_id") REFERENCES "VirusName" (id)
+);
+CREATE TABLE "VirusName_iri" (
+	"VirusName_id" INTEGER, 
+	iri TEXT, 
+	PRIMARY KEY ("VirusName_id", iri), 
+	FOREIGN KEY("VirusName_id") REFERENCES "VirusName" (id)
+);
 CREATE TABLE "AlternateName_alternateName" (
 	"AlternateName_id" INTEGER, 
 	"alternateName_id" INTEGER, 
@@ -2934,10 +3720,34 @@ CREATE TABLE "AlternateName_keyword" (
 	PRIMARY KEY ("AlternateName_id", keyword), 
 	FOREIGN KEY("AlternateName_id") REFERENCES "AlternateName" (id)
 );
+CREATE TABLE "AlternateName_identifier" (
+	"AlternateName_id" INTEGER, 
+	identifier TEXT, 
+	PRIMARY KEY ("AlternateName_id", identifier), 
+	FOREIGN KEY("AlternateName_id") REFERENCES "AlternateName" (id)
+);
+CREATE TABLE "AlternateName_iri" (
+	"AlternateName_id" INTEGER, 
+	iri TEXT, 
+	PRIMARY KEY ("AlternateName_id", iri), 
+	FOREIGN KEY("AlternateName_id") REFERENCES "AlternateName" (id)
+);
 CREATE TABLE "RiskGroup_keyword" (
 	"RiskGroup_id" INTEGER, 
 	keyword TEXT, 
 	PRIMARY KEY ("RiskGroup_id", keyword), 
+	FOREIGN KEY("RiskGroup_id") REFERENCES "RiskGroup" (id)
+);
+CREATE TABLE "RiskGroup_identifier" (
+	"RiskGroup_id" INTEGER, 
+	identifier TEXT, 
+	PRIMARY KEY ("RiskGroup_id", identifier), 
+	FOREIGN KEY("RiskGroup_id") REFERENCES "RiskGroup" (id)
+);
+CREATE TABLE "RiskGroup_iri" (
+	"RiskGroup_id" INTEGER, 
+	iri TEXT, 
+	PRIMARY KEY ("RiskGroup_id", iri), 
 	FOREIGN KEY("RiskGroup_id") REFERENCES "RiskGroup" (id)
 );
 CREATE TABLE "Doi_keyword" (
@@ -2946,10 +3756,34 @@ CREATE TABLE "Doi_keyword" (
 	PRIMARY KEY ("Doi_id", keyword), 
 	FOREIGN KEY("Doi_id") REFERENCES "Doi" (id)
 );
+CREATE TABLE "Doi_identifier" (
+	"Doi_id" INTEGER, 
+	identifier TEXT, 
+	PRIMARY KEY ("Doi_id", identifier), 
+	FOREIGN KEY("Doi_id") REFERENCES "Doi" (id)
+);
+CREATE TABLE "Doi_iri" (
+	"Doi_id" INTEGER, 
+	iri TEXT, 
+	PRIMARY KEY ("Doi_id", iri), 
+	FOREIGN KEY("Doi_id") REFERENCES "Doi" (id)
+);
 CREATE TABLE "Journal_keyword" (
 	"Journal_id" INTEGER, 
 	keyword TEXT, 
 	PRIMARY KEY ("Journal_id", keyword), 
+	FOREIGN KEY("Journal_id") REFERENCES "Journal" (id)
+);
+CREATE TABLE "Journal_identifier" (
+	"Journal_id" INTEGER, 
+	identifier TEXT, 
+	PRIMARY KEY ("Journal_id", identifier), 
+	FOREIGN KEY("Journal_id") REFERENCES "Journal" (id)
+);
+CREATE TABLE "Journal_iri" (
+	"Journal_id" INTEGER, 
+	iri TEXT, 
+	PRIMARY KEY ("Journal_id", iri), 
 	FOREIGN KEY("Journal_id") REFERENCES "Journal" (id)
 );
 CREATE TABLE "PdbReference_keyword" (
@@ -2958,10 +3792,34 @@ CREATE TABLE "PdbReference_keyword" (
 	PRIMARY KEY ("PdbReference_id", keyword), 
 	FOREIGN KEY("PdbReference_id") REFERENCES "PdbReference" (id)
 );
+CREATE TABLE "PdbReference_identifier" (
+	"PdbReference_id" INTEGER, 
+	identifier TEXT, 
+	PRIMARY KEY ("PdbReference_id", identifier), 
+	FOREIGN KEY("PdbReference_id") REFERENCES "PdbReference" (id)
+);
+CREATE TABLE "PdbReference_iri" (
+	"PdbReference_id" INTEGER, 
+	iri TEXT, 
+	PRIMARY KEY ("PdbReference_id", iri), 
+	FOREIGN KEY("PdbReference_id") REFERENCES "PdbReference" (id)
+);
 CREATE TABLE "Keyword_keyword" (
 	"Keyword_id" INTEGER, 
 	keyword TEXT, 
 	PRIMARY KEY ("Keyword_id", keyword), 
+	FOREIGN KEY("Keyword_id") REFERENCES "Keyword" (id)
+);
+CREATE TABLE "Keyword_identifier" (
+	"Keyword_id" INTEGER, 
+	identifier TEXT, 
+	PRIMARY KEY ("Keyword_id", identifier), 
+	FOREIGN KEY("Keyword_id") REFERENCES "Keyword" (id)
+);
+CREATE TABLE "Keyword_iri" (
+	"Keyword_id" INTEGER, 
+	iri TEXT, 
+	PRIMARY KEY ("Keyword_id", iri), 
 	FOREIGN KEY("Keyword_id") REFERENCES "Keyword" (id)
 );
 CREATE TABLE "TagSequence_keyword" (
@@ -2970,10 +3828,34 @@ CREATE TABLE "TagSequence_keyword" (
 	PRIMARY KEY ("TagSequence_id", keyword), 
 	FOREIGN KEY("TagSequence_id") REFERENCES "TagSequence" (id)
 );
+CREATE TABLE "TagSequence_identifier" (
+	"TagSequence_id" INTEGER, 
+	identifier TEXT, 
+	PRIMARY KEY ("TagSequence_id", identifier), 
+	FOREIGN KEY("TagSequence_id") REFERENCES "TagSequence" (id)
+);
+CREATE TABLE "TagSequence_iri" (
+	"TagSequence_id" INTEGER, 
+	iri TEXT, 
+	PRIMARY KEY ("TagSequence_id", iri), 
+	FOREIGN KEY("TagSequence_id") REFERENCES "TagSequence" (id)
+);
 CREATE TABLE "SpecialFeature_keyword" (
 	"SpecialFeature_id" INTEGER, 
 	keyword TEXT, 
 	PRIMARY KEY ("SpecialFeature_id", keyword), 
+	FOREIGN KEY("SpecialFeature_id") REFERENCES "SpecialFeature" (id)
+);
+CREATE TABLE "SpecialFeature_identifier" (
+	"SpecialFeature_id" INTEGER, 
+	identifier TEXT, 
+	PRIMARY KEY ("SpecialFeature_id", identifier), 
+	FOREIGN KEY("SpecialFeature_id") REFERENCES "SpecialFeature" (id)
+);
+CREATE TABLE "SpecialFeature_iri" (
+	"SpecialFeature_id" INTEGER, 
+	iri TEXT, 
+	PRIMARY KEY ("SpecialFeature_id", iri), 
 	FOREIGN KEY("SpecialFeature_id") REFERENCES "SpecialFeature" (id)
 );
 CREATE TABLE "ExpressionVector_keyword" (
@@ -2982,10 +3864,34 @@ CREATE TABLE "ExpressionVector_keyword" (
 	PRIMARY KEY ("ExpressionVector_id", keyword), 
 	FOREIGN KEY("ExpressionVector_id") REFERENCES "ExpressionVector" (id)
 );
+CREATE TABLE "ExpressionVector_identifier" (
+	"ExpressionVector_id" INTEGER, 
+	identifier TEXT, 
+	PRIMARY KEY ("ExpressionVector_id", identifier), 
+	FOREIGN KEY("ExpressionVector_id") REFERENCES "ExpressionVector" (id)
+);
+CREATE TABLE "ExpressionVector_iri" (
+	"ExpressionVector_id" INTEGER, 
+	iri TEXT, 
+	PRIMARY KEY ("ExpressionVector_id", iri), 
+	FOREIGN KEY("ExpressionVector_id") REFERENCES "ExpressionVector" (id)
+);
 CREATE TABLE "PlasmidSelection_keyword" (
 	"PlasmidSelection_id" INTEGER, 
 	keyword TEXT, 
 	PRIMARY KEY ("PlasmidSelection_id", keyword), 
+	FOREIGN KEY("PlasmidSelection_id") REFERENCES "PlasmidSelection" (id)
+);
+CREATE TABLE "PlasmidSelection_identifier" (
+	"PlasmidSelection_id" INTEGER, 
+	identifier TEXT, 
+	PRIMARY KEY ("PlasmidSelection_id", identifier), 
+	FOREIGN KEY("PlasmidSelection_id") REFERENCES "PlasmidSelection" (id)
+);
+CREATE TABLE "PlasmidSelection_iri" (
+	"PlasmidSelection_id" INTEGER, 
+	iri TEXT, 
+	PRIMARY KEY ("PlasmidSelection_id", iri), 
 	FOREIGN KEY("PlasmidSelection_id") REFERENCES "PlasmidSelection" (id)
 );
 CREATE TABLE "PropagationHost_keyword" (
@@ -2994,10 +3900,34 @@ CREATE TABLE "PropagationHost_keyword" (
 	PRIMARY KEY ("PropagationHost_id", keyword), 
 	FOREIGN KEY("PropagationHost_id") REFERENCES "PropagationHost" (id)
 );
+CREATE TABLE "PropagationHost_identifier" (
+	"PropagationHost_id" INTEGER, 
+	identifier TEXT, 
+	PRIMARY KEY ("PropagationHost_id", identifier), 
+	FOREIGN KEY("PropagationHost_id") REFERENCES "PropagationHost" (id)
+);
+CREATE TABLE "PropagationHost_iri" (
+	"PropagationHost_id" INTEGER, 
+	iri TEXT, 
+	PRIMARY KEY ("PropagationHost_id", iri), 
+	FOREIGN KEY("PropagationHost_id") REFERENCES "PropagationHost" (id)
+);
 CREATE TABLE "TransmissionMethod_keyword" (
 	"TransmissionMethod_id" INTEGER, 
 	keyword TEXT, 
 	PRIMARY KEY ("TransmissionMethod_id", keyword), 
+	FOREIGN KEY("TransmissionMethod_id") REFERENCES "TransmissionMethod" (id)
+);
+CREATE TABLE "TransmissionMethod_identifier" (
+	"TransmissionMethod_id" INTEGER, 
+	identifier TEXT, 
+	PRIMARY KEY ("TransmissionMethod_id", identifier), 
+	FOREIGN KEY("TransmissionMethod_id") REFERENCES "TransmissionMethod" (id)
+);
+CREATE TABLE "TransmissionMethod_iri" (
+	"TransmissionMethod_id" INTEGER, 
+	iri TEXT, 
+	PRIMARY KEY ("TransmissionMethod_id", iri), 
 	FOREIGN KEY("TransmissionMethod_id") REFERENCES "TransmissionMethod" (id)
 );
 CREATE TABLE "ProductionCellLine_keyword" (
@@ -3006,10 +3936,34 @@ CREATE TABLE "ProductionCellLine_keyword" (
 	PRIMARY KEY ("ProductionCellLine_id", keyword), 
 	FOREIGN KEY("ProductionCellLine_id") REFERENCES "ProductionCellLine" (id)
 );
+CREATE TABLE "ProductionCellLine_identifier" (
+	"ProductionCellLine_id" INTEGER, 
+	identifier TEXT, 
+	PRIMARY KEY ("ProductionCellLine_id", identifier), 
+	FOREIGN KEY("ProductionCellLine_id") REFERENCES "ProductionCellLine" (id)
+);
+CREATE TABLE "ProductionCellLine_iri" (
+	"ProductionCellLine_id" INTEGER, 
+	iri TEXT, 
+	PRIMARY KEY ("ProductionCellLine_id", iri), 
+	FOREIGN KEY("ProductionCellLine_id") REFERENCES "ProductionCellLine" (id)
+);
 CREATE TABLE "ProductCategory_keyword" (
 	"ProductCategory_id" INTEGER, 
 	keyword TEXT, 
 	PRIMARY KEY ("ProductCategory_id", keyword), 
+	FOREIGN KEY("ProductCategory_id") REFERENCES "ProductCategory" (id)
+);
+CREATE TABLE "ProductCategory_identifier" (
+	"ProductCategory_id" INTEGER, 
+	identifier TEXT, 
+	PRIMARY KEY ("ProductCategory_id", identifier), 
+	FOREIGN KEY("ProductCategory_id") REFERENCES "ProductCategory" (id)
+);
+CREATE TABLE "ProductCategory_iri" (
+	"ProductCategory_id" INTEGER, 
+	iri TEXT, 
+	PRIMARY KEY ("ProductCategory_id", iri), 
 	FOREIGN KEY("ProductCategory_id") REFERENCES "ProductCategory" (id)
 );
 CREATE TABLE "IsolationHost_keyword" (
@@ -3018,10 +3972,34 @@ CREATE TABLE "IsolationHost_keyword" (
 	PRIMARY KEY ("IsolationHost_id", keyword), 
 	FOREIGN KEY("IsolationHost_id") REFERENCES "IsolationHost" (id)
 );
+CREATE TABLE "IsolationHost_identifier" (
+	"IsolationHost_id" INTEGER, 
+	identifier TEXT, 
+	PRIMARY KEY ("IsolationHost_id", identifier), 
+	FOREIGN KEY("IsolationHost_id") REFERENCES "IsolationHost" (id)
+);
+CREATE TABLE "IsolationHost_iri" (
+	"IsolationHost_id" INTEGER, 
+	iri TEXT, 
+	PRIMARY KEY ("IsolationHost_id", iri), 
+	FOREIGN KEY("IsolationHost_id") REFERENCES "IsolationHost" (id)
+);
 CREATE TABLE "GeographicalOrigin_keyword" (
 	"GeographicalOrigin_id" INTEGER, 
 	keyword TEXT, 
 	PRIMARY KEY ("GeographicalOrigin_id", keyword), 
+	FOREIGN KEY("GeographicalOrigin_id") REFERENCES "GeographicalOrigin" (id)
+);
+CREATE TABLE "GeographicalOrigin_identifier" (
+	"GeographicalOrigin_id" INTEGER, 
+	identifier TEXT, 
+	PRIMARY KEY ("GeographicalOrigin_id", identifier), 
+	FOREIGN KEY("GeographicalOrigin_id") REFERENCES "GeographicalOrigin" (id)
+);
+CREATE TABLE "GeographicalOrigin_iri" (
+	"GeographicalOrigin_id" INTEGER, 
+	iri TEXT, 
+	PRIMARY KEY ("GeographicalOrigin_id", iri), 
 	FOREIGN KEY("GeographicalOrigin_id") REFERENCES "GeographicalOrigin" (id)
 );
 CREATE TABLE "IplcOrigin_keyword" (
@@ -3030,16 +4008,52 @@ CREATE TABLE "IplcOrigin_keyword" (
 	PRIMARY KEY ("IplcOrigin_id", keyword), 
 	FOREIGN KEY("IplcOrigin_id") REFERENCES "IplcOrigin" (id)
 );
+CREATE TABLE "IplcOrigin_identifier" (
+	"IplcOrigin_id" INTEGER, 
+	identifier TEXT, 
+	PRIMARY KEY ("IplcOrigin_id", identifier), 
+	FOREIGN KEY("IplcOrigin_id") REFERENCES "IplcOrigin" (id)
+);
+CREATE TABLE "IplcOrigin_iri" (
+	"IplcOrigin_id" INTEGER, 
+	iri TEXT, 
+	PRIMARY KEY ("IplcOrigin_id", iri), 
+	FOREIGN KEY("IplcOrigin_id") REFERENCES "IplcOrigin" (id)
+);
 CREATE TABLE "Country_keyword" (
 	"Country_id" INTEGER, 
 	keyword TEXT, 
 	PRIMARY KEY ("Country_id", keyword), 
 	FOREIGN KEY("Country_id") REFERENCES "Country" (id)
 );
+CREATE TABLE "Country_identifier" (
+	"Country_id" INTEGER, 
+	identifier TEXT, 
+	PRIMARY KEY ("Country_id", identifier), 
+	FOREIGN KEY("Country_id") REFERENCES "Country" (id)
+);
+CREATE TABLE "Country_iri" (
+	"Country_id" INTEGER, 
+	iri TEXT, 
+	PRIMARY KEY ("Country_id", iri), 
+	FOREIGN KEY("Country_id") REFERENCES "Country" (id)
+);
 CREATE TABLE "IataClassification_keyword" (
 	"IataClassification_id" INTEGER, 
 	keyword TEXT, 
 	PRIMARY KEY ("IataClassification_id", keyword), 
+	FOREIGN KEY("IataClassification_id") REFERENCES "IataClassification" (id)
+);
+CREATE TABLE "IataClassification_identifier" (
+	"IataClassification_id" INTEGER, 
+	identifier TEXT, 
+	PRIMARY KEY ("IataClassification_id", identifier), 
+	FOREIGN KEY("IataClassification_id") REFERENCES "IataClassification" (id)
+);
+CREATE TABLE "IataClassification_iri" (
+	"IataClassification_id" INTEGER, 
+	iri TEXT, 
+	PRIMARY KEY ("IataClassification_id", iri), 
 	FOREIGN KEY("IataClassification_id") REFERENCES "IataClassification" (id)
 );
 CREATE TABLE "Variant_alternateName" (
@@ -3061,6 +4075,18 @@ CREATE TABLE "Variant_keyword" (
 	PRIMARY KEY ("Variant_id", keyword), 
 	FOREIGN KEY("Variant_id") REFERENCES "Variant" (id)
 );
+CREATE TABLE "Variant_identifier" (
+	"Variant_id" INTEGER, 
+	identifier TEXT, 
+	PRIMARY KEY ("Variant_id", identifier), 
+	FOREIGN KEY("Variant_id") REFERENCES "Variant" (id)
+);
+CREATE TABLE "Variant_iri" (
+	"Variant_id" INTEGER, 
+	iri TEXT, 
+	PRIMARY KEY ("Variant_id", iri), 
+	FOREIGN KEY("Variant_id") REFERENCES "Variant" (id)
+);
 CREATE TABLE "TaxonomicRank_taxonomy" (
 	"TaxonomicRank_id" INTEGER, 
 	taxonomy_id INTEGER, 
@@ -3074,6 +4100,18 @@ CREATE TABLE "TaxonomicRank_keyword" (
 	PRIMARY KEY ("TaxonomicRank_id", keyword), 
 	FOREIGN KEY("TaxonomicRank_id") REFERENCES "TaxonomicRank" (id)
 );
+CREATE TABLE "TaxonomicRank_identifier" (
+	"TaxonomicRank_id" INTEGER, 
+	identifier TEXT, 
+	PRIMARY KEY ("TaxonomicRank_id", identifier), 
+	FOREIGN KEY("TaxonomicRank_id") REFERENCES "TaxonomicRank" (id)
+);
+CREATE TABLE "TaxonomicRank_iri" (
+	"TaxonomicRank_id" INTEGER, 
+	iri TEXT, 
+	PRIMARY KEY ("TaxonomicRank_id", iri), 
+	FOREIGN KEY("TaxonomicRank_id") REFERENCES "TaxonomicRank" (id)
+);
 CREATE TABLE "ClinicalGroup_alternateName" (
 	"ClinicalGroup_id" INTEGER, 
 	"alternateName_id" INTEGER, 
@@ -3085,6 +4123,18 @@ CREATE TABLE "ClinicalGroup_keyword" (
 	"ClinicalGroup_id" INTEGER, 
 	keyword TEXT, 
 	PRIMARY KEY ("ClinicalGroup_id", keyword), 
+	FOREIGN KEY("ClinicalGroup_id") REFERENCES "ClinicalGroup" (id)
+);
+CREATE TABLE "ClinicalGroup_identifier" (
+	"ClinicalGroup_id" INTEGER, 
+	identifier TEXT, 
+	PRIMARY KEY ("ClinicalGroup_id", identifier), 
+	FOREIGN KEY("ClinicalGroup_id") REFERENCES "ClinicalGroup" (id)
+);
+CREATE TABLE "ClinicalGroup_iri" (
+	"ClinicalGroup_id" INTEGER, 
+	iri TEXT, 
+	PRIMARY KEY ("ClinicalGroup_id", iri), 
 	FOREIGN KEY("ClinicalGroup_id") REFERENCES "ClinicalGroup" (id)
 );
 CREATE TABLE "PathogenIdentification" (
@@ -3228,6 +4278,18 @@ CREATE TABLE "Publication_keyword" (
 	PRIMARY KEY ("Publication_id", keyword), 
 	FOREIGN KEY("Publication_id") REFERENCES "Publication" (id)
 );
+CREATE TABLE "Publication_identifier" (
+	"Publication_id" INTEGER, 
+	identifier TEXT, 
+	PRIMARY KEY ("Publication_id", identifier), 
+	FOREIGN KEY("Publication_id") REFERENCES "Publication" (id)
+);
+CREATE TABLE "Publication_iri" (
+	"Publication_id" INTEGER, 
+	iri TEXT, 
+	PRIMARY KEY ("Publication_id", iri), 
+	FOREIGN KEY("Publication_id") REFERENCES "Publication" (id)
+);
 CREATE TABLE "Taxon_taxonomy" (
 	"Taxon_id" INTEGER, 
 	taxonomy_id INTEGER, 
@@ -3255,6 +4317,18 @@ CREATE TABLE "Taxon_keyword" (
 	PRIMARY KEY ("Taxon_id", keyword), 
 	FOREIGN KEY("Taxon_id") REFERENCES "Taxon" (id)
 );
+CREATE TABLE "Taxon_identifier" (
+	"Taxon_id" INTEGER, 
+	identifier TEXT, 
+	PRIMARY KEY ("Taxon_id", identifier), 
+	FOREIGN KEY("Taxon_id") REFERENCES "Taxon" (id)
+);
+CREATE TABLE "Taxon_iri" (
+	"Taxon_id" INTEGER, 
+	iri TEXT, 
+	PRIMARY KEY ("Taxon_id", iri), 
+	FOREIGN KEY("Taxon_id") REFERENCES "Taxon" (id)
+);
 CREATE TABLE "ClinicalGroup_taxon" (
 	"ClinicalGroup_id" INTEGER, 
 	taxon_id INTEGER, 
@@ -3268,10 +4342,34 @@ CREATE TABLE "NaturalPartOrigin_keyword" (
 	PRIMARY KEY ("NaturalPartOrigin_id", keyword), 
 	FOREIGN KEY("NaturalPartOrigin_id") REFERENCES "NaturalPartOrigin" (id)
 );
+CREATE TABLE "NaturalPartOrigin_identifier" (
+	"NaturalPartOrigin_id" INTEGER, 
+	identifier TEXT, 
+	PRIMARY KEY ("NaturalPartOrigin_id", identifier), 
+	FOREIGN KEY("NaturalPartOrigin_id") REFERENCES "NaturalPartOrigin" (id)
+);
+CREATE TABLE "NaturalPartOrigin_iri" (
+	"NaturalPartOrigin_id" INTEGER, 
+	iri TEXT, 
+	PRIMARY KEY ("NaturalPartOrigin_id", iri), 
+	FOREIGN KEY("NaturalPartOrigin_id") REFERENCES "NaturalPartOrigin" (id)
+);
 CREATE TABLE "ContactPoint_keyword" (
 	"ContactPoint_id" INTEGER, 
 	keyword TEXT, 
 	PRIMARY KEY ("ContactPoint_id", keyword), 
+	FOREIGN KEY("ContactPoint_id") REFERENCES "ContactPoint" (id)
+);
+CREATE TABLE "ContactPoint_identifier" (
+	"ContactPoint_id" INTEGER, 
+	identifier TEXT, 
+	PRIMARY KEY ("ContactPoint_id", identifier), 
+	FOREIGN KEY("ContactPoint_id") REFERENCES "ContactPoint" (id)
+);
+CREATE TABLE "ContactPoint_iri" (
+	"ContactPoint_id" INTEGER, 
+	iri TEXT, 
+	PRIMARY KEY ("ContactPoint_id", iri), 
 	FOREIGN KEY("ContactPoint_id") REFERENCES "ContactPoint" (id)
 );
 CREATE TABLE "ProductOrService" (
@@ -4029,16 +5127,52 @@ CREATE TABLE "PathogenIdentification_keyword" (
 	PRIMARY KEY ("PathogenIdentification_id", keyword), 
 	FOREIGN KEY("PathogenIdentification_id") REFERENCES "PathogenIdentification" (id)
 );
+CREATE TABLE "PathogenIdentification_identifier" (
+	"PathogenIdentification_id" INTEGER, 
+	identifier TEXT, 
+	PRIMARY KEY ("PathogenIdentification_id", identifier), 
+	FOREIGN KEY("PathogenIdentification_id") REFERENCES "PathogenIdentification" (id)
+);
+CREATE TABLE "PathogenIdentification_iri" (
+	"PathogenIdentification_id" INTEGER, 
+	iri TEXT, 
+	PRIMARY KEY ("PathogenIdentification_id", iri), 
+	FOREIGN KEY("PathogenIdentification_id") REFERENCES "PathogenIdentification" (id)
+);
 CREATE TABLE "PersonOrOrganization_keyword" (
 	"PersonOrOrganization_id" INTEGER, 
 	keyword TEXT, 
 	PRIMARY KEY ("PersonOrOrganization_id", keyword), 
 	FOREIGN KEY("PersonOrOrganization_id") REFERENCES "PersonOrOrganization" (id)
 );
+CREATE TABLE "PersonOrOrganization_identifier" (
+	"PersonOrOrganization_id" INTEGER, 
+	identifier TEXT, 
+	PRIMARY KEY ("PersonOrOrganization_id", identifier), 
+	FOREIGN KEY("PersonOrOrganization_id") REFERENCES "PersonOrOrganization" (id)
+);
+CREATE TABLE "PersonOrOrganization_iri" (
+	"PersonOrOrganization_id" INTEGER, 
+	iri TEXT, 
+	PRIMARY KEY ("PersonOrOrganization_id", iri), 
+	FOREIGN KEY("PersonOrOrganization_id") REFERENCES "PersonOrOrganization" (id)
+);
 CREATE TABLE "Person_keyword" (
 	"Person_id" INTEGER, 
 	keyword TEXT, 
 	PRIMARY KEY ("Person_id", keyword), 
+	FOREIGN KEY("Person_id") REFERENCES "Person" (id)
+);
+CREATE TABLE "Person_identifier" (
+	"Person_id" INTEGER, 
+	identifier TEXT, 
+	PRIMARY KEY ("Person_id", identifier), 
+	FOREIGN KEY("Person_id") REFERENCES "Person" (id)
+);
+CREATE TABLE "Person_iri" (
+	"Person_id" INTEGER, 
+	iri TEXT, 
+	PRIMARY KEY ("Person_id", iri), 
 	FOREIGN KEY("Person_id") REFERENCES "Person" (id)
 );
 CREATE TABLE "Organization_alternateName" (
@@ -4054,6 +5188,18 @@ CREATE TABLE "Organization_keyword" (
 	PRIMARY KEY ("Organization_id", keyword), 
 	FOREIGN KEY("Organization_id") REFERENCES "Organization" (id)
 );
+CREATE TABLE "Organization_identifier" (
+	"Organization_id" INTEGER, 
+	identifier TEXT, 
+	PRIMARY KEY ("Organization_id", identifier), 
+	FOREIGN KEY("Organization_id") REFERENCES "Organization" (id)
+);
+CREATE TABLE "Organization_iri" (
+	"Organization_id" INTEGER, 
+	iri TEXT, 
+	PRIMARY KEY ("Organization_id", iri), 
+	FOREIGN KEY("Organization_id") REFERENCES "Organization" (id)
+);
 CREATE TABLE "ReasearchInfrastructure_alternateName" (
 	"ReasearchInfrastructure_id" INTEGER, 
 	"alternateName_id" INTEGER, 
@@ -4065,6 +5211,18 @@ CREATE TABLE "ReasearchInfrastructure_keyword" (
 	"ReasearchInfrastructure_id" INTEGER, 
 	keyword TEXT, 
 	PRIMARY KEY ("ReasearchInfrastructure_id", keyword), 
+	FOREIGN KEY("ReasearchInfrastructure_id") REFERENCES "ReasearchInfrastructure" (id)
+);
+CREATE TABLE "ReasearchInfrastructure_identifier" (
+	"ReasearchInfrastructure_id" INTEGER, 
+	identifier TEXT, 
+	PRIMARY KEY ("ReasearchInfrastructure_id", identifier), 
+	FOREIGN KEY("ReasearchInfrastructure_id") REFERENCES "ReasearchInfrastructure" (id)
+);
+CREATE TABLE "ReasearchInfrastructure_iri" (
+	"ReasearchInfrastructure_id" INTEGER, 
+	iri TEXT, 
+	PRIMARY KEY ("ReasearchInfrastructure_id", iri), 
 	FOREIGN KEY("ReasearchInfrastructure_id") REFERENCES "ReasearchInfrastructure" (id)
 );
 CREATE TABLE "Provider_memberOfRi" (
@@ -4087,16 +5245,52 @@ CREATE TABLE "Provider_keyword" (
 	PRIMARY KEY ("Provider_id", keyword), 
 	FOREIGN KEY("Provider_id") REFERENCES "Provider" (id)
 );
+CREATE TABLE "Provider_identifier" (
+	"Provider_id" INTEGER, 
+	identifier TEXT, 
+	PRIMARY KEY ("Provider_id", identifier), 
+	FOREIGN KEY("Provider_id") REFERENCES "Provider" (id)
+);
+CREATE TABLE "Provider_iri" (
+	"Provider_id" INTEGER, 
+	iri TEXT, 
+	PRIMARY KEY ("Provider_id", iri), 
+	FOREIGN KEY("Provider_id") REFERENCES "Provider" (id)
+);
 CREATE TABLE "Originator_keyword" (
 	"Originator_id" INTEGER, 
 	keyword TEXT, 
 	PRIMARY KEY ("Originator_id", keyword), 
 	FOREIGN KEY("Originator_id") REFERENCES "Originator" (id)
 );
+CREATE TABLE "Originator_identifier" (
+	"Originator_id" INTEGER, 
+	identifier TEXT, 
+	PRIMARY KEY ("Originator_id", identifier), 
+	FOREIGN KEY("Originator_id") REFERENCES "Originator" (id)
+);
+CREATE TABLE "Originator_iri" (
+	"Originator_id" INTEGER, 
+	iri TEXT, 
+	PRIMARY KEY ("Originator_id", iri), 
+	FOREIGN KEY("Originator_id") REFERENCES "Originator" (id)
+);
 CREATE TABLE "MaterialSafetyDataSheet_keyword" (
 	"MaterialSafetyDataSheet_id" INTEGER, 
 	keyword TEXT, 
 	PRIMARY KEY ("MaterialSafetyDataSheet_id", keyword), 
+	FOREIGN KEY("MaterialSafetyDataSheet_id") REFERENCES "MaterialSafetyDataSheet" (id)
+);
+CREATE TABLE "MaterialSafetyDataSheet_identifier" (
+	"MaterialSafetyDataSheet_id" INTEGER, 
+	identifier TEXT, 
+	PRIMARY KEY ("MaterialSafetyDataSheet_id", identifier), 
+	FOREIGN KEY("MaterialSafetyDataSheet_id") REFERENCES "MaterialSafetyDataSheet" (id)
+);
+CREATE TABLE "MaterialSafetyDataSheet_iri" (
+	"MaterialSafetyDataSheet_id" INTEGER, 
+	iri TEXT, 
+	PRIMARY KEY ("MaterialSafetyDataSheet_id", iri), 
 	FOREIGN KEY("MaterialSafetyDataSheet_id") REFERENCES "MaterialSafetyDataSheet" (id)
 );
 CREATE TABLE "Collection_collectionItem" (
@@ -4175,6 +5369,18 @@ CREATE TABLE "ProductOrService_keyword" (
 	PRIMARY KEY ("ProductOrService_id", keyword), 
 	FOREIGN KEY("ProductOrService_id") REFERENCES "ProductOrService" (id)
 );
+CREATE TABLE "ProductOrService_identifier" (
+	"ProductOrService_id" INTEGER, 
+	identifier TEXT, 
+	PRIMARY KEY ("ProductOrService_id", identifier), 
+	FOREIGN KEY("ProductOrService_id") REFERENCES "ProductOrService" (id)
+);
+CREATE TABLE "ProductOrService_iri" (
+	"ProductOrService_id" INTEGER, 
+	iri TEXT, 
+	PRIMARY KEY ("ProductOrService_id", iri), 
+	FOREIGN KEY("ProductOrService_id") REFERENCES "ProductOrService" (id)
+);
 CREATE TABLE "Service_additionalCategory" (
 	"Service_id" INTEGER, 
 	"additionalCategory_id" INTEGER, 
@@ -4244,6 +5450,18 @@ CREATE TABLE "Service_keyword" (
 	PRIMARY KEY ("Service_id", keyword), 
 	FOREIGN KEY("Service_id") REFERENCES "Service" (id)
 );
+CREATE TABLE "Service_identifier" (
+	"Service_id" INTEGER, 
+	identifier TEXT, 
+	PRIMARY KEY ("Service_id", identifier), 
+	FOREIGN KEY("Service_id") REFERENCES "Service" (id)
+);
+CREATE TABLE "Service_iri" (
+	"Service_id" INTEGER, 
+	iri TEXT, 
+	PRIMARY KEY ("Service_id", iri), 
+	FOREIGN KEY("Service_id") REFERENCES "Service" (id)
+);
 CREATE TABLE "Product_additionalCategory" (
 	"Product_id" INTEGER, 
 	"additionalCategory_id" INTEGER, 
@@ -4311,6 +5529,18 @@ CREATE TABLE "Product_keyword" (
 	"Product_id" INTEGER, 
 	keyword TEXT, 
 	PRIMARY KEY ("Product_id", keyword), 
+	FOREIGN KEY("Product_id") REFERENCES "Product" (id)
+);
+CREATE TABLE "Product_identifier" (
+	"Product_id" INTEGER, 
+	identifier TEXT, 
+	PRIMARY KEY ("Product_id", identifier), 
+	FOREIGN KEY("Product_id") REFERENCES "Product" (id)
+);
+CREATE TABLE "Product_iri" (
+	"Product_id" INTEGER, 
+	iri TEXT, 
+	PRIMARY KEY ("Product_id", iri), 
 	FOREIGN KEY("Product_id") REFERENCES "Product" (id)
 );
 CREATE TABLE "Antibody_sequenceReference" (
@@ -4389,6 +5619,18 @@ CREATE TABLE "Antibody_keyword" (
 	PRIMARY KEY ("Antibody_id", keyword), 
 	FOREIGN KEY("Antibody_id") REFERENCES "Antibody" (id)
 );
+CREATE TABLE "Antibody_identifier" (
+	"Antibody_id" INTEGER, 
+	identifier TEXT, 
+	PRIMARY KEY ("Antibody_id", identifier), 
+	FOREIGN KEY("Antibody_id") REFERENCES "Antibody" (id)
+);
+CREATE TABLE "Antibody_iri" (
+	"Antibody_id" INTEGER, 
+	iri TEXT, 
+	PRIMARY KEY ("Antibody_id", iri), 
+	FOREIGN KEY("Antibody_id") REFERENCES "Antibody" (id)
+);
 CREATE TABLE "Hybridoma_sequenceReference" (
 	"Hybridoma_id" INTEGER, 
 	"sequenceReference_id" INTEGER, 
@@ -4463,6 +5705,18 @@ CREATE TABLE "Hybridoma_keyword" (
 	"Hybridoma_id" INTEGER, 
 	keyword TEXT, 
 	PRIMARY KEY ("Hybridoma_id", keyword), 
+	FOREIGN KEY("Hybridoma_id") REFERENCES "Hybridoma" (id)
+);
+CREATE TABLE "Hybridoma_identifier" (
+	"Hybridoma_id" INTEGER, 
+	identifier TEXT, 
+	PRIMARY KEY ("Hybridoma_id", identifier), 
+	FOREIGN KEY("Hybridoma_id") REFERENCES "Hybridoma" (id)
+);
+CREATE TABLE "Hybridoma_iri" (
+	"Hybridoma_id" INTEGER, 
+	iri TEXT, 
+	PRIMARY KEY ("Hybridoma_id", iri), 
 	FOREIGN KEY("Hybridoma_id") REFERENCES "Hybridoma" (id)
 );
 CREATE TABLE "Protein_sequence" (
@@ -4616,6 +5870,18 @@ CREATE TABLE "Protein_keyword" (
 	PRIMARY KEY ("Protein_id", keyword), 
 	FOREIGN KEY("Protein_id") REFERENCES "Protein" (id)
 );
+CREATE TABLE "Protein_identifier" (
+	"Protein_id" INTEGER, 
+	identifier TEXT, 
+	PRIMARY KEY ("Protein_id", identifier), 
+	FOREIGN KEY("Protein_id") REFERENCES "Protein" (id)
+);
+CREATE TABLE "Protein_iri" (
+	"Protein_id" INTEGER, 
+	iri TEXT, 
+	PRIMARY KEY ("Protein_id", iri), 
+	FOREIGN KEY("Protein_id") REFERENCES "Protein" (id)
+);
 CREATE TABLE "NucleicAcid_genBankFileOfTheConstruct" (
 	"NucleicAcid_id" INTEGER, 
 	"genBankFileOfTheConstruct_id" INTEGER, 
@@ -4706,6 +5972,18 @@ CREATE TABLE "NucleicAcid_keyword" (
 	PRIMARY KEY ("NucleicAcid_id", keyword), 
 	FOREIGN KEY("NucleicAcid_id") REFERENCES "NucleicAcid" (id)
 );
+CREATE TABLE "NucleicAcid_identifier" (
+	"NucleicAcid_id" INTEGER, 
+	identifier TEXT, 
+	PRIMARY KEY ("NucleicAcid_id", identifier), 
+	FOREIGN KEY("NucleicAcid_id") REFERENCES "NucleicAcid" (id)
+);
+CREATE TABLE "NucleicAcid_iri" (
+	"NucleicAcid_id" INTEGER, 
+	iri TEXT, 
+	PRIMARY KEY ("NucleicAcid_id", iri), 
+	FOREIGN KEY("NucleicAcid_id") REFERENCES "NucleicAcid" (id)
+);
 CREATE TABLE "DetectionKit_standardOperatingProcedureFile" (
 	"DetectionKit_id" INTEGER, 
 	"standardOperatingProcedureFile_id" INTEGER, 
@@ -4782,6 +6060,18 @@ CREATE TABLE "DetectionKit_keyword" (
 	PRIMARY KEY ("DetectionKit_id", keyword), 
 	FOREIGN KEY("DetectionKit_id") REFERENCES "DetectionKit" (id)
 );
+CREATE TABLE "DetectionKit_identifier" (
+	"DetectionKit_id" INTEGER, 
+	identifier TEXT, 
+	PRIMARY KEY ("DetectionKit_id", identifier), 
+	FOREIGN KEY("DetectionKit_id") REFERENCES "DetectionKit" (id)
+);
+CREATE TABLE "DetectionKit_iri" (
+	"DetectionKit_id" INTEGER, 
+	iri TEXT, 
+	PRIMARY KEY ("DetectionKit_id", iri), 
+	FOREIGN KEY("DetectionKit_id") REFERENCES "DetectionKit" (id)
+);
 CREATE TABLE "Bundle_itemsOfTheBundle" (
 	"Bundle_id" INTEGER, 
 	"itemsOfTheBundle_id" INTEGER NOT NULL, 
@@ -4856,6 +6146,18 @@ CREATE TABLE "Bundle_keyword" (
 	"Bundle_id" INTEGER, 
 	keyword TEXT, 
 	PRIMARY KEY ("Bundle_id", keyword), 
+	FOREIGN KEY("Bundle_id") REFERENCES "Bundle" (id)
+);
+CREATE TABLE "Bundle_identifier" (
+	"Bundle_id" INTEGER, 
+	identifier TEXT, 
+	PRIMARY KEY ("Bundle_id", identifier), 
+	FOREIGN KEY("Bundle_id") REFERENCES "Bundle" (id)
+);
+CREATE TABLE "Bundle_iri" (
+	"Bundle_id" INTEGER, 
+	iri TEXT, 
+	PRIMARY KEY ("Bundle_id", iri), 
 	FOREIGN KEY("Bundle_id") REFERENCES "Bundle" (id)
 );
 CREATE TABLE "Pathogen_suspectedEpidemiologicalOrigin" (
@@ -4967,6 +6269,18 @@ CREATE TABLE "Pathogen_keyword" (
 	"Pathogen_id" INTEGER, 
 	keyword TEXT, 
 	PRIMARY KEY ("Pathogen_id", keyword), 
+	FOREIGN KEY("Pathogen_id") REFERENCES "Pathogen" (id)
+);
+CREATE TABLE "Pathogen_identifier" (
+	"Pathogen_id" INTEGER, 
+	identifier TEXT, 
+	PRIMARY KEY ("Pathogen_id", identifier), 
+	FOREIGN KEY("Pathogen_id") REFERENCES "Pathogen" (id)
+);
+CREATE TABLE "Pathogen_iri" (
+	"Pathogen_id" INTEGER, 
+	iri TEXT, 
+	PRIMARY KEY ("Pathogen_id", iri), 
 	FOREIGN KEY("Pathogen_id") REFERENCES "Pathogen" (id)
 );
 CREATE TABLE "Virus_coInfectingViruses" (
@@ -5087,6 +6401,18 @@ CREATE TABLE "Virus_keyword" (
 	PRIMARY KEY ("Virus_id", keyword), 
 	FOREIGN KEY("Virus_id") REFERENCES "Virus" (id)
 );
+CREATE TABLE "Virus_identifier" (
+	"Virus_id" INTEGER, 
+	identifier TEXT, 
+	PRIMARY KEY ("Virus_id", identifier), 
+	FOREIGN KEY("Virus_id") REFERENCES "Virus" (id)
+);
+CREATE TABLE "Virus_iri" (
+	"Virus_id" INTEGER, 
+	iri TEXT, 
+	PRIMARY KEY ("Virus_id", iri), 
+	FOREIGN KEY("Virus_id") REFERENCES "Virus" (id)
+);
 CREATE TABLE "Bacterium_suspectedEpidemiologicalOrigin" (
 	"Bacterium_id" INTEGER, 
 	"suspectedEpidemiologicalOrigin_id" INTEGER, 
@@ -5196,6 +6522,18 @@ CREATE TABLE "Bacterium_keyword" (
 	"Bacterium_id" INTEGER, 
 	keyword TEXT, 
 	PRIMARY KEY ("Bacterium_id", keyword), 
+	FOREIGN KEY("Bacterium_id") REFERENCES "Bacterium" (id)
+);
+CREATE TABLE "Bacterium_identifier" (
+	"Bacterium_id" INTEGER, 
+	identifier TEXT, 
+	PRIMARY KEY ("Bacterium_id", identifier), 
+	FOREIGN KEY("Bacterium_id") REFERENCES "Bacterium" (id)
+);
+CREATE TABLE "Bacterium_iri" (
+	"Bacterium_id" INTEGER, 
+	iri TEXT, 
+	PRIMARY KEY ("Bacterium_id", iri), 
 	FOREIGN KEY("Bacterium_id") REFERENCES "Bacterium" (id)
 );
 CREATE TABLE "Fungus_suspectedEpidemiologicalOrigin" (
@@ -5309,6 +6647,18 @@ CREATE TABLE "Fungus_keyword" (
 	PRIMARY KEY ("Fungus_id", keyword), 
 	FOREIGN KEY("Fungus_id") REFERENCES "Fungus" (id)
 );
+CREATE TABLE "Fungus_identifier" (
+	"Fungus_id" INTEGER, 
+	identifier TEXT, 
+	PRIMARY KEY ("Fungus_id", identifier), 
+	FOREIGN KEY("Fungus_id") REFERENCES "Fungus" (id)
+);
+CREATE TABLE "Fungus_iri" (
+	"Fungus_id" INTEGER, 
+	iri TEXT, 
+	PRIMARY KEY ("Fungus_id", iri), 
+	FOREIGN KEY("Fungus_id") REFERENCES "Fungus" (id)
+);
 CREATE TABLE "Protozoan_suspectedEpidemiologicalOrigin" (
 	"Protozoan_id" INTEGER, 
 	"suspectedEpidemiologicalOrigin_id" INTEGER, 
@@ -5418,6 +6768,18 @@ CREATE TABLE "Protozoan_keyword" (
 	"Protozoan_id" INTEGER, 
 	keyword TEXT, 
 	PRIMARY KEY ("Protozoan_id", keyword), 
+	FOREIGN KEY("Protozoan_id") REFERENCES "Protozoan" (id)
+);
+CREATE TABLE "Protozoan_identifier" (
+	"Protozoan_id" INTEGER, 
+	identifier TEXT, 
+	PRIMARY KEY ("Protozoan_id", identifier), 
+	FOREIGN KEY("Protozoan_id") REFERENCES "Protozoan" (id)
+);
+CREATE TABLE "Protozoan_iri" (
+	"Protozoan_id" INTEGER, 
+	iri TEXT, 
+	PRIMARY KEY ("Protozoan_id", iri), 
 	FOREIGN KEY("Protozoan_id") REFERENCES "Protozoan" (id)
 );
 CREATE TABLE "Viroid_suspectedEpidemiologicalOrigin" (
@@ -5531,6 +6893,18 @@ CREATE TABLE "Viroid_keyword" (
 	PRIMARY KEY ("Viroid_id", keyword), 
 	FOREIGN KEY("Viroid_id") REFERENCES "Viroid" (id)
 );
+CREATE TABLE "Viroid_identifier" (
+	"Viroid_id" INTEGER, 
+	identifier TEXT, 
+	PRIMARY KEY ("Viroid_id", identifier), 
+	FOREIGN KEY("Viroid_id") REFERENCES "Viroid" (id)
+);
+CREATE TABLE "Viroid_iri" (
+	"Viroid_id" INTEGER, 
+	iri TEXT, 
+	PRIMARY KEY ("Viroid_id", iri), 
+	FOREIGN KEY("Viroid_id") REFERENCES "Viroid" (id)
+);
 CREATE TABLE "Prion_suspectedEpidemiologicalOrigin" (
 	"Prion_id" INTEGER, 
 	"suspectedEpidemiologicalOrigin_id" INTEGER, 
@@ -5640,5 +7014,17 @@ CREATE TABLE "Prion_keyword" (
 	"Prion_id" INTEGER, 
 	keyword TEXT, 
 	PRIMARY KEY ("Prion_id", keyword), 
+	FOREIGN KEY("Prion_id") REFERENCES "Prion" (id)
+);
+CREATE TABLE "Prion_identifier" (
+	"Prion_id" INTEGER, 
+	identifier TEXT, 
+	PRIMARY KEY ("Prion_id", identifier), 
+	FOREIGN KEY("Prion_id") REFERENCES "Prion" (id)
+);
+CREATE TABLE "Prion_iri" (
+	"Prion_id" INTEGER, 
+	iri TEXT, 
+	PRIMARY KEY ("Prion_id", iri), 
 	FOREIGN KEY("Prion_id") REFERENCES "Prion" (id)
 );

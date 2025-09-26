@@ -48,7 +48,7 @@ keywords:
 - pathogen collections
 - interoperability
 id: https://w3id.org/evorao/
-version: 1.0.9907
+version: 1.0.9968
 imports:
 - linkml:types
 license: https://creativecommons.org/publicdomain/zero/1.0/
@@ -158,6 +158,36 @@ slots:
     range: datetime
     required: false
     multivalued: false
+  identifier:
+    description: A unique identifier of the resource being described or cataloged
+    title: identifier
+    comments:
+    - The identifier is a text string which is assigned to the resource to provide
+      an unambiguous reference within a particular context. Persistent identifiers
+      should be provided as HTTP URIs
+    from_schema: https://w3id.org/evorao/
+    exact_mappings:
+    - schema:identifier
+    slot_uri: dct:identifier
+    domain_of:
+    - Resource
+    range: string
+    required: false
+    multivalued: true
+  iri:
+    description: International Resource Identifier (IRI) that uniquely identifies
+      or refers to the resource. IRIs include URIs, and URIs include URLs
+    title: IRI
+    comments:
+    - An IRI is a global identifier standardized by IETF RFC 3987. It may or may not
+      be resolvable on the web. IRIs include URIs, and URIs include URLs
+    from_schema: https://w3id.org/evorao/
+    is_a: identifier
+    domain_of:
+    - Resource
+    range: uri
+    required: false
+    multivalued: true
   title:
     description: A name given to the resource
     title: title
@@ -850,6 +880,7 @@ slots:
     broad_mappings:
     - schema:identifier
     - dct:identifier
+    is_a: identifier
     domain_of:
     - Taxon
     range: string
@@ -868,6 +899,7 @@ slots:
     - dwc:taxonID
     broad_mappings:
     - dct:identifier
+    is_a: identifier
     domain_of:
     - Taxon
     range: string
@@ -881,6 +913,7 @@ slots:
     close_mappings:
     - dct:identifier
     - dct:references
+    is_a: identifier
     domain_of:
     - ExternalRelatedReference
     range: string
@@ -962,6 +995,7 @@ slots:
     - ncit:P102
     broad_mappings:
     - schema:identifier
+    is_a: identifier
     domain_of:
     - SequenceReference
     range: string
@@ -1047,9 +1081,14 @@ slots:
     exact_mappings:
     - wdp:P496
     - reproduceme:ORCID
+    - wdp:P496
+    - reproduceme:ORCID
     related_mappings:
     - iao:0000708
     - edam:4022
+    - iao:0000708
+    - edam:4022
+    is_a: identifier
     domain_of:
     - Person
     - ContactPoint
@@ -1076,6 +1115,7 @@ slots:
     - wdp:P6782
     related_mappings:
     - dwc:institutionCode
+    is_a: identifier
     domain_of:
     - Organization
     range: string
@@ -1339,6 +1379,7 @@ slots:
     broad_mappings:
     - dct:identifier
     - schema:identifier
+    is_a: identifier
     domain_of:
     - ProductOrService
     range: string
@@ -2762,6 +2803,8 @@ classes:
     - keyword
     - dateIssued
     - dateModified
+    - identifier
+    - iri
     slot_usage:
       keyword:
         description: A keyword or tag describing the resource
@@ -2804,6 +2847,34 @@ classes:
         range: datetime
         required: false
         multivalued: false
+      identifier:
+        description: A unique identifier of the resource being described or cataloged
+        title: identifier
+        comments:
+        - The identifier is a text string which is assigned to the resource to provide
+          an unambiguous reference within a particular context. Persistent identifiers
+          should be provided as HTTP URIs
+        exact_mappings:
+        - schema:identifier
+        slot_uri: dct:identifier
+        domain_of:
+        - Resource
+        range: string
+        required: false
+        multivalued: true
+      iri:
+        description: International Resource Identifier (IRI) that uniquely identifies
+          or refers to the resource. IRIs include URIs, and URIs include URLs
+        title: IRI
+        comments:
+        - An IRI is a global identifier standardized by IETF RFC 3987. It may or may
+          not be resolvable on the web. IRIs include URIs, and URIs include URLs
+        is_a: identifier
+        domain_of:
+        - Resource
+        range: uri
+        required: false
+        multivalued: true
     class_uri: dcat:Resource
   Dataset:
     description: A collection of data, published or curated by a single agent, and
@@ -4166,6 +4237,7 @@ classes:
         broad_mappings:
         - schema:identifier
         - dct:identifier
+        is_a: identifier
         domain_of:
         - Taxon
         range: string
@@ -4183,6 +4255,7 @@ classes:
         - dwc:taxonID
         broad_mappings:
         - dct:identifier
+        is_a: identifier
         domain_of:
         - Taxon
         range: string
@@ -4257,6 +4330,7 @@ classes:
         close_mappings:
         - dct:identifier
         - dct:references
+        is_a: identifier
         domain_of:
         - ExternalRelatedReference
         range: string
@@ -4361,6 +4435,7 @@ classes:
         - ncit:P102
         broad_mappings:
         - schema:identifier
+        is_a: identifier
         domain_of:
         - SequenceReference
         range: string
@@ -4488,6 +4563,7 @@ classes:
         related_mappings:
         - iao:0000708
         - edam:4022
+        is_a: identifier
         domain_of:
         - Person
         range: string
@@ -4548,6 +4624,7 @@ classes:
         - wdp:P6782
         related_mappings:
         - dwc:institutionCode
+        is_a: identifier
         domain_of:
         - Organization
         range: string
@@ -4956,6 +5033,7 @@ classes:
         broad_mappings:
         - dct:identifier
         - schema:identifier
+        is_a: identifier
         domain_of:
         - ProductOrService
         range: string
@@ -7143,4 +7221,4 @@ classes:
         required: false
         multivalued: false
 source_file: https://w3id.org/evorao/evorao.owl.ttl
-generation_date: '2025-09-24T11:32:06'
+generation_date: '2025-09-26T17:26:12'

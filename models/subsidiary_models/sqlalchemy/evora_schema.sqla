@@ -24,6 +24,16 @@ class Resource(Base):
     keyword = association_proxy("keyword_rel", "keyword",
                                   creator=lambda x_: ResourceKeyword(keyword=x_))
     
+    
+    identifier_rel = relationship( "ResourceIdentifier" )
+    identifier = association_proxy("identifier_rel", "identifier",
+                                  creator=lambda x_: ResourceIdentifier(identifier=x_))
+    
+    
+    iri_rel = relationship( "ResourceIri" )
+    iri = association_proxy("iri_rel", "iri",
+                                  creator=lambda x_: ResourceIri(iri=x_))
+    
 
     def __repr__(self):
         return f"Resource(id={self.id},dateIssued={self.dateIssued},dateModified={self.dateModified},)"
@@ -51,6 +61,42 @@ class ResourceKeyword(Base):
     
 
 
+class ResourceIdentifier(Base):
+    """
+    
+    """
+    __tablename__ = 'Resource_identifier'
+
+    Resource_id = Column(Integer(), ForeignKey('Resource.id'), primary_key=True)
+    identifier = Column(Text(), primary_key=True)
+    
+
+    def __repr__(self):
+        return f"Resource_identifier(Resource_id={self.Resource_id},identifier={self.identifier},)"
+
+
+
+    
+
+
+class ResourceIri(Base):
+    """
+    
+    """
+    __tablename__ = 'Resource_iri'
+
+    Resource_id = Column(Integer(), ForeignKey('Resource.id'), primary_key=True)
+    iri = Column(Text(), primary_key=True)
+    
+
+    def __repr__(self):
+        return f"Resource_iri(Resource_id={self.Resource_id},iri={self.iri},)"
+
+
+
+    
+
+
 class DatasetKeyword(Base):
     """
     
@@ -63,6 +109,42 @@ class DatasetKeyword(Base):
 
     def __repr__(self):
         return f"Dataset_keyword(Dataset_id={self.Dataset_id},keyword={self.keyword},)"
+
+
+
+    
+
+
+class DatasetIdentifier(Base):
+    """
+    
+    """
+    __tablename__ = 'Dataset_identifier'
+
+    Dataset_id = Column(Integer(), ForeignKey('Dataset.id'), primary_key=True)
+    identifier = Column(Text(), primary_key=True)
+    
+
+    def __repr__(self):
+        return f"Dataset_identifier(Dataset_id={self.Dataset_id},identifier={self.identifier},)"
+
+
+
+    
+
+
+class DatasetIri(Base):
+    """
+    
+    """
+    __tablename__ = 'Dataset_iri'
+
+    Dataset_id = Column(Integer(), ForeignKey('Dataset.id'), primary_key=True)
+    iri = Column(Text(), primary_key=True)
+    
+
+    def __repr__(self):
+        return f"Dataset_iri(Dataset_id={self.Dataset_id},iri={self.iri},)"
 
 
 
@@ -105,6 +187,42 @@ class DataServiceKeyword(Base):
     
 
 
+class DataServiceIdentifier(Base):
+    """
+    
+    """
+    __tablename__ = 'DataService_identifier'
+
+    DataService_id = Column(Integer(), ForeignKey('DataService.id'), primary_key=True)
+    identifier = Column(Text(), primary_key=True)
+    
+
+    def __repr__(self):
+        return f"DataService_identifier(DataService_id={self.DataService_id},identifier={self.identifier},)"
+
+
+
+    
+
+
+class DataServiceIri(Base):
+    """
+    
+    """
+    __tablename__ = 'DataService_iri'
+
+    DataService_id = Column(Integer(), ForeignKey('DataService.id'), primary_key=True)
+    iri = Column(Text(), primary_key=True)
+    
+
+    def __repr__(self):
+        return f"DataService_iri(DataService_id={self.DataService_id},iri={self.iri},)"
+
+
+
+    
+
+
 class VersionResource(Base):
     """
     
@@ -141,6 +259,42 @@ class VersionKeyword(Base):
     
 
 
+class VersionIdentifier(Base):
+    """
+    
+    """
+    __tablename__ = 'Version_identifier'
+
+    Version_id = Column(Integer(), ForeignKey('Version.id'), primary_key=True)
+    identifier = Column(Text(), primary_key=True)
+    
+
+    def __repr__(self):
+        return f"Version_identifier(Version_id={self.Version_id},identifier={self.identifier},)"
+
+
+
+    
+
+
+class VersionIri(Base):
+    """
+    
+    """
+    __tablename__ = 'Version_iri'
+
+    Version_id = Column(Integer(), ForeignKey('Version.id'), primary_key=True)
+    iri = Column(Text(), primary_key=True)
+    
+
+    def __repr__(self):
+        return f"Version_iri(Version_id={self.Version_id},iri={self.iri},)"
+
+
+
+    
+
+
 class CatalogueKeyword(Base):
     """
     
@@ -153,6 +307,42 @@ class CatalogueKeyword(Base):
 
     def __repr__(self):
         return f"Catalogue_keyword(Catalogue_id={self.Catalogue_id},keyword={self.keyword},)"
+
+
+
+    
+
+
+class CatalogueIdentifier(Base):
+    """
+    
+    """
+    __tablename__ = 'Catalogue_identifier'
+
+    Catalogue_id = Column(Integer(), ForeignKey('Catalogue.id'), primary_key=True)
+    identifier = Column(Text(), primary_key=True)
+    
+
+    def __repr__(self):
+        return f"Catalogue_identifier(Catalogue_id={self.Catalogue_id},identifier={self.identifier},)"
+
+
+
+    
+
+
+class CatalogueIri(Base):
+    """
+    
+    """
+    __tablename__ = 'Catalogue_iri'
+
+    Catalogue_id = Column(Integer(), ForeignKey('Catalogue.id'), primary_key=True)
+    iri = Column(Text(), primary_key=True)
+    
+
+    def __repr__(self):
+        return f"Catalogue_iri(Catalogue_id={self.Catalogue_id},iri={self.iri},)"
 
 
 
@@ -213,6 +403,42 @@ class TaxonomyKeyword(Base):
     
 
 
+class TaxonomyIdentifier(Base):
+    """
+    
+    """
+    __tablename__ = 'Taxonomy_identifier'
+
+    Taxonomy_id = Column(Integer(), ForeignKey('Taxonomy.id'), primary_key=True)
+    identifier = Column(Text(), primary_key=True)
+    
+
+    def __repr__(self):
+        return f"Taxonomy_identifier(Taxonomy_id={self.Taxonomy_id},identifier={self.identifier},)"
+
+
+
+    
+
+
+class TaxonomyIri(Base):
+    """
+    
+    """
+    __tablename__ = 'Taxonomy_iri'
+
+    Taxonomy_id = Column(Integer(), ForeignKey('Taxonomy.id'), primary_key=True)
+    iri = Column(Text(), primary_key=True)
+    
+
+    def __repr__(self):
+        return f"Taxonomy_iri(Taxonomy_id={self.Taxonomy_id},iri={self.iri},)"
+
+
+
+    
+
+
 class DataProviderProvidedEntityType(Base):
     """
     
@@ -267,6 +493,42 @@ class DataProviderKeyword(Base):
     
 
 
+class DataProviderIdentifier(Base):
+    """
+    
+    """
+    __tablename__ = 'DataProvider_identifier'
+
+    DataProvider_id = Column(Integer(), ForeignKey('DataProvider.id'), primary_key=True)
+    identifier = Column(Text(), primary_key=True)
+    
+
+    def __repr__(self):
+        return f"DataProvider_identifier(DataProvider_id={self.DataProvider_id},identifier={self.identifier},)"
+
+
+
+    
+
+
+class DataProviderIri(Base):
+    """
+    
+    """
+    __tablename__ = 'DataProvider_iri'
+
+    DataProvider_id = Column(Integer(), ForeignKey('DataProvider.id'), primary_key=True)
+    iri = Column(Text(), primary_key=True)
+    
+
+    def __repr__(self):
+        return f"DataProvider_iri(DataProvider_id={self.DataProvider_id},iri={self.iri},)"
+
+
+
+    
+
+
 class PathogenIdentificationHostType(Base):
     """
     
@@ -303,6 +565,42 @@ class PathogenIdentificationKeyword(Base):
     
 
 
+class PathogenIdentificationIdentifier(Base):
+    """
+    
+    """
+    __tablename__ = 'PathogenIdentification_identifier'
+
+    PathogenIdentification_id = Column(Integer(), ForeignKey('PathogenIdentification.id'), primary_key=True)
+    identifier = Column(Text(), primary_key=True)
+    
+
+    def __repr__(self):
+        return f"PathogenIdentification_identifier(PathogenIdentification_id={self.PathogenIdentification_id},identifier={self.identifier},)"
+
+
+
+    
+
+
+class PathogenIdentificationIri(Base):
+    """
+    
+    """
+    __tablename__ = 'PathogenIdentification_iri'
+
+    PathogenIdentification_id = Column(Integer(), ForeignKey('PathogenIdentification.id'), primary_key=True)
+    iri = Column(Text(), primary_key=True)
+    
+
+    def __repr__(self):
+        return f"PathogenIdentification_iri(PathogenIdentification_id={self.PathogenIdentification_id},iri={self.iri},)"
+
+
+
+    
+
+
 class PublicationKeyword(Base):
     """
     
@@ -315,6 +613,42 @@ class PublicationKeyword(Base):
 
     def __repr__(self):
         return f"Publication_keyword(Publication_id={self.Publication_id},keyword={self.keyword},)"
+
+
+
+    
+
+
+class PublicationIdentifier(Base):
+    """
+    
+    """
+    __tablename__ = 'Publication_identifier'
+
+    Publication_id = Column(Integer(), ForeignKey('Publication.id'), primary_key=True)
+    identifier = Column(Text(), primary_key=True)
+    
+
+    def __repr__(self):
+        return f"Publication_identifier(Publication_id={self.Publication_id},identifier={self.identifier},)"
+
+
+
+    
+
+
+class PublicationIri(Base):
+    """
+    
+    """
+    __tablename__ = 'Publication_iri'
+
+    Publication_id = Column(Integer(), ForeignKey('Publication.id'), primary_key=True)
+    iri = Column(Text(), primary_key=True)
+    
+
+    def __repr__(self):
+        return f"Publication_iri(Publication_id={self.Publication_id},iri={self.iri},)"
 
 
 
@@ -357,6 +691,42 @@ class VocabularyKeyword(Base):
     
 
 
+class VocabularyIdentifier(Base):
+    """
+    
+    """
+    __tablename__ = 'Vocabulary_identifier'
+
+    Vocabulary_id = Column(Integer(), ForeignKey('Vocabulary.id'), primary_key=True)
+    identifier = Column(Text(), primary_key=True)
+    
+
+    def __repr__(self):
+        return f"Vocabulary_identifier(Vocabulary_id={self.Vocabulary_id},identifier={self.identifier},)"
+
+
+
+    
+
+
+class VocabularyIri(Base):
+    """
+    
+    """
+    __tablename__ = 'Vocabulary_iri'
+
+    Vocabulary_id = Column(Integer(), ForeignKey('Vocabulary.id'), primary_key=True)
+    iri = Column(Text(), primary_key=True)
+    
+
+    def __repr__(self):
+        return f"Vocabulary_iri(Vocabulary_id={self.Vocabulary_id},iri={self.iri},)"
+
+
+
+    
+
+
 class TermKeyword(Base):
     """
     
@@ -369,6 +739,42 @@ class TermKeyword(Base):
 
     def __repr__(self):
         return f"Term_keyword(Term_id={self.Term_id},keyword={self.keyword},)"
+
+
+
+    
+
+
+class TermIdentifier(Base):
+    """
+    
+    """
+    __tablename__ = 'Term_identifier'
+
+    Term_id = Column(Integer(), ForeignKey('Term.id'), primary_key=True)
+    identifier = Column(Text(), primary_key=True)
+    
+
+    def __repr__(self):
+        return f"Term_identifier(Term_id={self.Term_id},identifier={self.identifier},)"
+
+
+
+    
+
+
+class TermIri(Base):
+    """
+    
+    """
+    __tablename__ = 'Term_iri'
+
+    Term_id = Column(Integer(), ForeignKey('Term.id'), primary_key=True)
+    iri = Column(Text(), primary_key=True)
+    
+
+    def __repr__(self):
+        return f"Term_iri(Term_id={self.Term_id},iri={self.iri},)"
 
 
 
@@ -429,6 +835,42 @@ class CommonNameKeyword(Base):
     
 
 
+class CommonNameIdentifier(Base):
+    """
+    
+    """
+    __tablename__ = 'CommonName_identifier'
+
+    CommonName_id = Column(Integer(), ForeignKey('CommonName.id'), primary_key=True)
+    identifier = Column(Text(), primary_key=True)
+    
+
+    def __repr__(self):
+        return f"CommonName_identifier(CommonName_id={self.CommonName_id},identifier={self.identifier},)"
+
+
+
+    
+
+
+class CommonNameIri(Base):
+    """
+    
+    """
+    __tablename__ = 'CommonName_iri'
+
+    CommonName_id = Column(Integer(), ForeignKey('CommonName.id'), primary_key=True)
+    iri = Column(Text(), primary_key=True)
+    
+
+    def __repr__(self):
+        return f"CommonName_iri(CommonName_id={self.CommonName_id},iri={self.iri},)"
+
+
+
+    
+
+
 class VirusNameAlternateName(Base):
     """
     
@@ -477,6 +919,42 @@ class VirusNameKeyword(Base):
 
     def __repr__(self):
         return f"VirusName_keyword(VirusName_id={self.VirusName_id},keyword={self.keyword},)"
+
+
+
+    
+
+
+class VirusNameIdentifier(Base):
+    """
+    
+    """
+    __tablename__ = 'VirusName_identifier'
+
+    VirusName_id = Column(Integer(), ForeignKey('VirusName.id'), primary_key=True)
+    identifier = Column(Text(), primary_key=True)
+    
+
+    def __repr__(self):
+        return f"VirusName_identifier(VirusName_id={self.VirusName_id},identifier={self.identifier},)"
+
+
+
+    
+
+
+class VirusNameIri(Base):
+    """
+    
+    """
+    __tablename__ = 'VirusName_iri'
+
+    VirusName_id = Column(Integer(), ForeignKey('VirusName.id'), primary_key=True)
+    iri = Column(Text(), primary_key=True)
+    
+
+    def __repr__(self):
+        return f"VirusName_iri(VirusName_id={self.VirusName_id},iri={self.iri},)"
 
 
 
@@ -537,6 +1015,42 @@ class AlternateNameKeyword(Base):
     
 
 
+class AlternateNameIdentifier(Base):
+    """
+    
+    """
+    __tablename__ = 'AlternateName_identifier'
+
+    AlternateName_id = Column(Integer(), ForeignKey('AlternateName.id'), primary_key=True)
+    identifier = Column(Text(), primary_key=True)
+    
+
+    def __repr__(self):
+        return f"AlternateName_identifier(AlternateName_id={self.AlternateName_id},identifier={self.identifier},)"
+
+
+
+    
+
+
+class AlternateNameIri(Base):
+    """
+    
+    """
+    __tablename__ = 'AlternateName_iri'
+
+    AlternateName_id = Column(Integer(), ForeignKey('AlternateName.id'), primary_key=True)
+    iri = Column(Text(), primary_key=True)
+    
+
+    def __repr__(self):
+        return f"AlternateName_iri(AlternateName_id={self.AlternateName_id},iri={self.iri},)"
+
+
+
+    
+
+
 class RiskGroupKeyword(Base):
     """
     
@@ -549,6 +1063,42 @@ class RiskGroupKeyword(Base):
 
     def __repr__(self):
         return f"RiskGroup_keyword(RiskGroup_id={self.RiskGroup_id},keyword={self.keyword},)"
+
+
+
+    
+
+
+class RiskGroupIdentifier(Base):
+    """
+    
+    """
+    __tablename__ = 'RiskGroup_identifier'
+
+    RiskGroup_id = Column(Integer(), ForeignKey('RiskGroup.id'), primary_key=True)
+    identifier = Column(Text(), primary_key=True)
+    
+
+    def __repr__(self):
+        return f"RiskGroup_identifier(RiskGroup_id={self.RiskGroup_id},identifier={self.identifier},)"
+
+
+
+    
+
+
+class RiskGroupIri(Base):
+    """
+    
+    """
+    __tablename__ = 'RiskGroup_iri'
+
+    RiskGroup_id = Column(Integer(), ForeignKey('RiskGroup.id'), primary_key=True)
+    iri = Column(Text(), primary_key=True)
+    
+
+    def __repr__(self):
+        return f"RiskGroup_iri(RiskGroup_id={self.RiskGroup_id},iri={self.iri},)"
 
 
 
@@ -573,6 +1123,42 @@ class DoiKeyword(Base):
     
 
 
+class DoiIdentifier(Base):
+    """
+    
+    """
+    __tablename__ = 'Doi_identifier'
+
+    Doi_id = Column(Integer(), ForeignKey('Doi.id'), primary_key=True)
+    identifier = Column(Text(), primary_key=True)
+    
+
+    def __repr__(self):
+        return f"Doi_identifier(Doi_id={self.Doi_id},identifier={self.identifier},)"
+
+
+
+    
+
+
+class DoiIri(Base):
+    """
+    
+    """
+    __tablename__ = 'Doi_iri'
+
+    Doi_id = Column(Integer(), ForeignKey('Doi.id'), primary_key=True)
+    iri = Column(Text(), primary_key=True)
+    
+
+    def __repr__(self):
+        return f"Doi_iri(Doi_id={self.Doi_id},iri={self.iri},)"
+
+
+
+    
+
+
 class JournalKeyword(Base):
     """
     
@@ -585,6 +1171,42 @@ class JournalKeyword(Base):
 
     def __repr__(self):
         return f"Journal_keyword(Journal_id={self.Journal_id},keyword={self.keyword},)"
+
+
+
+    
+
+
+class JournalIdentifier(Base):
+    """
+    
+    """
+    __tablename__ = 'Journal_identifier'
+
+    Journal_id = Column(Integer(), ForeignKey('Journal.id'), primary_key=True)
+    identifier = Column(Text(), primary_key=True)
+    
+
+    def __repr__(self):
+        return f"Journal_identifier(Journal_id={self.Journal_id},identifier={self.identifier},)"
+
+
+
+    
+
+
+class JournalIri(Base):
+    """
+    
+    """
+    __tablename__ = 'Journal_iri'
+
+    Journal_id = Column(Integer(), ForeignKey('Journal.id'), primary_key=True)
+    iri = Column(Text(), primary_key=True)
+    
+
+    def __repr__(self):
+        return f"Journal_iri(Journal_id={self.Journal_id},iri={self.iri},)"
 
 
 
@@ -609,6 +1231,42 @@ class PdbReferenceKeyword(Base):
     
 
 
+class PdbReferenceIdentifier(Base):
+    """
+    
+    """
+    __tablename__ = 'PdbReference_identifier'
+
+    PdbReference_id = Column(Integer(), ForeignKey('PdbReference.id'), primary_key=True)
+    identifier = Column(Text(), primary_key=True)
+    
+
+    def __repr__(self):
+        return f"PdbReference_identifier(PdbReference_id={self.PdbReference_id},identifier={self.identifier},)"
+
+
+
+    
+
+
+class PdbReferenceIri(Base):
+    """
+    
+    """
+    __tablename__ = 'PdbReference_iri'
+
+    PdbReference_id = Column(Integer(), ForeignKey('PdbReference.id'), primary_key=True)
+    iri = Column(Text(), primary_key=True)
+    
+
+    def __repr__(self):
+        return f"PdbReference_iri(PdbReference_id={self.PdbReference_id},iri={self.iri},)"
+
+
+
+    
+
+
 class KeywordKeyword(Base):
     """
     
@@ -621,6 +1279,42 @@ class KeywordKeyword(Base):
 
     def __repr__(self):
         return f"Keyword_keyword(Keyword_id={self.Keyword_id},keyword={self.keyword},)"
+
+
+
+    
+
+
+class KeywordIdentifier(Base):
+    """
+    
+    """
+    __tablename__ = 'Keyword_identifier'
+
+    Keyword_id = Column(Integer(), ForeignKey('Keyword.id'), primary_key=True)
+    identifier = Column(Text(), primary_key=True)
+    
+
+    def __repr__(self):
+        return f"Keyword_identifier(Keyword_id={self.Keyword_id},identifier={self.identifier},)"
+
+
+
+    
+
+
+class KeywordIri(Base):
+    """
+    
+    """
+    __tablename__ = 'Keyword_iri'
+
+    Keyword_id = Column(Integer(), ForeignKey('Keyword.id'), primary_key=True)
+    iri = Column(Text(), primary_key=True)
+    
+
+    def __repr__(self):
+        return f"Keyword_iri(Keyword_id={self.Keyword_id},iri={self.iri},)"
 
 
 
@@ -645,6 +1339,42 @@ class TagSequenceKeyword(Base):
     
 
 
+class TagSequenceIdentifier(Base):
+    """
+    
+    """
+    __tablename__ = 'TagSequence_identifier'
+
+    TagSequence_id = Column(Integer(), ForeignKey('TagSequence.id'), primary_key=True)
+    identifier = Column(Text(), primary_key=True)
+    
+
+    def __repr__(self):
+        return f"TagSequence_identifier(TagSequence_id={self.TagSequence_id},identifier={self.identifier},)"
+
+
+
+    
+
+
+class TagSequenceIri(Base):
+    """
+    
+    """
+    __tablename__ = 'TagSequence_iri'
+
+    TagSequence_id = Column(Integer(), ForeignKey('TagSequence.id'), primary_key=True)
+    iri = Column(Text(), primary_key=True)
+    
+
+    def __repr__(self):
+        return f"TagSequence_iri(TagSequence_id={self.TagSequence_id},iri={self.iri},)"
+
+
+
+    
+
+
 class SpecialFeatureKeyword(Base):
     """
     
@@ -657,6 +1387,42 @@ class SpecialFeatureKeyword(Base):
 
     def __repr__(self):
         return f"SpecialFeature_keyword(SpecialFeature_id={self.SpecialFeature_id},keyword={self.keyword},)"
+
+
+
+    
+
+
+class SpecialFeatureIdentifier(Base):
+    """
+    
+    """
+    __tablename__ = 'SpecialFeature_identifier'
+
+    SpecialFeature_id = Column(Integer(), ForeignKey('SpecialFeature.id'), primary_key=True)
+    identifier = Column(Text(), primary_key=True)
+    
+
+    def __repr__(self):
+        return f"SpecialFeature_identifier(SpecialFeature_id={self.SpecialFeature_id},identifier={self.identifier},)"
+
+
+
+    
+
+
+class SpecialFeatureIri(Base):
+    """
+    
+    """
+    __tablename__ = 'SpecialFeature_iri'
+
+    SpecialFeature_id = Column(Integer(), ForeignKey('SpecialFeature.id'), primary_key=True)
+    iri = Column(Text(), primary_key=True)
+    
+
+    def __repr__(self):
+        return f"SpecialFeature_iri(SpecialFeature_id={self.SpecialFeature_id},iri={self.iri},)"
 
 
 
@@ -681,6 +1447,42 @@ class ExpressionVectorKeyword(Base):
     
 
 
+class ExpressionVectorIdentifier(Base):
+    """
+    
+    """
+    __tablename__ = 'ExpressionVector_identifier'
+
+    ExpressionVector_id = Column(Integer(), ForeignKey('ExpressionVector.id'), primary_key=True)
+    identifier = Column(Text(), primary_key=True)
+    
+
+    def __repr__(self):
+        return f"ExpressionVector_identifier(ExpressionVector_id={self.ExpressionVector_id},identifier={self.identifier},)"
+
+
+
+    
+
+
+class ExpressionVectorIri(Base):
+    """
+    
+    """
+    __tablename__ = 'ExpressionVector_iri'
+
+    ExpressionVector_id = Column(Integer(), ForeignKey('ExpressionVector.id'), primary_key=True)
+    iri = Column(Text(), primary_key=True)
+    
+
+    def __repr__(self):
+        return f"ExpressionVector_iri(ExpressionVector_id={self.ExpressionVector_id},iri={self.iri},)"
+
+
+
+    
+
+
 class PlasmidSelectionKeyword(Base):
     """
     
@@ -693,6 +1495,42 @@ class PlasmidSelectionKeyword(Base):
 
     def __repr__(self):
         return f"PlasmidSelection_keyword(PlasmidSelection_id={self.PlasmidSelection_id},keyword={self.keyword},)"
+
+
+
+    
+
+
+class PlasmidSelectionIdentifier(Base):
+    """
+    
+    """
+    __tablename__ = 'PlasmidSelection_identifier'
+
+    PlasmidSelection_id = Column(Integer(), ForeignKey('PlasmidSelection.id'), primary_key=True)
+    identifier = Column(Text(), primary_key=True)
+    
+
+    def __repr__(self):
+        return f"PlasmidSelection_identifier(PlasmidSelection_id={self.PlasmidSelection_id},identifier={self.identifier},)"
+
+
+
+    
+
+
+class PlasmidSelectionIri(Base):
+    """
+    
+    """
+    __tablename__ = 'PlasmidSelection_iri'
+
+    PlasmidSelection_id = Column(Integer(), ForeignKey('PlasmidSelection.id'), primary_key=True)
+    iri = Column(Text(), primary_key=True)
+    
+
+    def __repr__(self):
+        return f"PlasmidSelection_iri(PlasmidSelection_id={self.PlasmidSelection_id},iri={self.iri},)"
 
 
 
@@ -717,6 +1555,42 @@ class PropagationHostKeyword(Base):
     
 
 
+class PropagationHostIdentifier(Base):
+    """
+    
+    """
+    __tablename__ = 'PropagationHost_identifier'
+
+    PropagationHost_id = Column(Integer(), ForeignKey('PropagationHost.id'), primary_key=True)
+    identifier = Column(Text(), primary_key=True)
+    
+
+    def __repr__(self):
+        return f"PropagationHost_identifier(PropagationHost_id={self.PropagationHost_id},identifier={self.identifier},)"
+
+
+
+    
+
+
+class PropagationHostIri(Base):
+    """
+    
+    """
+    __tablename__ = 'PropagationHost_iri'
+
+    PropagationHost_id = Column(Integer(), ForeignKey('PropagationHost.id'), primary_key=True)
+    iri = Column(Text(), primary_key=True)
+    
+
+    def __repr__(self):
+        return f"PropagationHost_iri(PropagationHost_id={self.PropagationHost_id},iri={self.iri},)"
+
+
+
+    
+
+
 class TransmissionMethodKeyword(Base):
     """
     
@@ -729,6 +1603,42 @@ class TransmissionMethodKeyword(Base):
 
     def __repr__(self):
         return f"TransmissionMethod_keyword(TransmissionMethod_id={self.TransmissionMethod_id},keyword={self.keyword},)"
+
+
+
+    
+
+
+class TransmissionMethodIdentifier(Base):
+    """
+    
+    """
+    __tablename__ = 'TransmissionMethod_identifier'
+
+    TransmissionMethod_id = Column(Integer(), ForeignKey('TransmissionMethod.id'), primary_key=True)
+    identifier = Column(Text(), primary_key=True)
+    
+
+    def __repr__(self):
+        return f"TransmissionMethod_identifier(TransmissionMethod_id={self.TransmissionMethod_id},identifier={self.identifier},)"
+
+
+
+    
+
+
+class TransmissionMethodIri(Base):
+    """
+    
+    """
+    __tablename__ = 'TransmissionMethod_iri'
+
+    TransmissionMethod_id = Column(Integer(), ForeignKey('TransmissionMethod.id'), primary_key=True)
+    iri = Column(Text(), primary_key=True)
+    
+
+    def __repr__(self):
+        return f"TransmissionMethod_iri(TransmissionMethod_id={self.TransmissionMethod_id},iri={self.iri},)"
 
 
 
@@ -753,6 +1663,42 @@ class ProductionCellLineKeyword(Base):
     
 
 
+class ProductionCellLineIdentifier(Base):
+    """
+    
+    """
+    __tablename__ = 'ProductionCellLine_identifier'
+
+    ProductionCellLine_id = Column(Integer(), ForeignKey('ProductionCellLine.id'), primary_key=True)
+    identifier = Column(Text(), primary_key=True)
+    
+
+    def __repr__(self):
+        return f"ProductionCellLine_identifier(ProductionCellLine_id={self.ProductionCellLine_id},identifier={self.identifier},)"
+
+
+
+    
+
+
+class ProductionCellLineIri(Base):
+    """
+    
+    """
+    __tablename__ = 'ProductionCellLine_iri'
+
+    ProductionCellLine_id = Column(Integer(), ForeignKey('ProductionCellLine.id'), primary_key=True)
+    iri = Column(Text(), primary_key=True)
+    
+
+    def __repr__(self):
+        return f"ProductionCellLine_iri(ProductionCellLine_id={self.ProductionCellLine_id},iri={self.iri},)"
+
+
+
+    
+
+
 class ProductCategoryKeyword(Base):
     """
     
@@ -765,6 +1711,42 @@ class ProductCategoryKeyword(Base):
 
     def __repr__(self):
         return f"ProductCategory_keyword(ProductCategory_id={self.ProductCategory_id},keyword={self.keyword},)"
+
+
+
+    
+
+
+class ProductCategoryIdentifier(Base):
+    """
+    
+    """
+    __tablename__ = 'ProductCategory_identifier'
+
+    ProductCategory_id = Column(Integer(), ForeignKey('ProductCategory.id'), primary_key=True)
+    identifier = Column(Text(), primary_key=True)
+    
+
+    def __repr__(self):
+        return f"ProductCategory_identifier(ProductCategory_id={self.ProductCategory_id},identifier={self.identifier},)"
+
+
+
+    
+
+
+class ProductCategoryIri(Base):
+    """
+    
+    """
+    __tablename__ = 'ProductCategory_iri'
+
+    ProductCategory_id = Column(Integer(), ForeignKey('ProductCategory.id'), primary_key=True)
+    iri = Column(Text(), primary_key=True)
+    
+
+    def __repr__(self):
+        return f"ProductCategory_iri(ProductCategory_id={self.ProductCategory_id},iri={self.iri},)"
 
 
 
@@ -789,6 +1771,42 @@ class IsolationHostKeyword(Base):
     
 
 
+class IsolationHostIdentifier(Base):
+    """
+    
+    """
+    __tablename__ = 'IsolationHost_identifier'
+
+    IsolationHost_id = Column(Integer(), ForeignKey('IsolationHost.id'), primary_key=True)
+    identifier = Column(Text(), primary_key=True)
+    
+
+    def __repr__(self):
+        return f"IsolationHost_identifier(IsolationHost_id={self.IsolationHost_id},identifier={self.identifier},)"
+
+
+
+    
+
+
+class IsolationHostIri(Base):
+    """
+    
+    """
+    __tablename__ = 'IsolationHost_iri'
+
+    IsolationHost_id = Column(Integer(), ForeignKey('IsolationHost.id'), primary_key=True)
+    iri = Column(Text(), primary_key=True)
+    
+
+    def __repr__(self):
+        return f"IsolationHost_iri(IsolationHost_id={self.IsolationHost_id},iri={self.iri},)"
+
+
+
+    
+
+
 class GeographicalOriginKeyword(Base):
     """
     
@@ -801,6 +1819,42 @@ class GeographicalOriginKeyword(Base):
 
     def __repr__(self):
         return f"GeographicalOrigin_keyword(GeographicalOrigin_id={self.GeographicalOrigin_id},keyword={self.keyword},)"
+
+
+
+    
+
+
+class GeographicalOriginIdentifier(Base):
+    """
+    
+    """
+    __tablename__ = 'GeographicalOrigin_identifier'
+
+    GeographicalOrigin_id = Column(Integer(), ForeignKey('GeographicalOrigin.id'), primary_key=True)
+    identifier = Column(Text(), primary_key=True)
+    
+
+    def __repr__(self):
+        return f"GeographicalOrigin_identifier(GeographicalOrigin_id={self.GeographicalOrigin_id},identifier={self.identifier},)"
+
+
+
+    
+
+
+class GeographicalOriginIri(Base):
+    """
+    
+    """
+    __tablename__ = 'GeographicalOrigin_iri'
+
+    GeographicalOrigin_id = Column(Integer(), ForeignKey('GeographicalOrigin.id'), primary_key=True)
+    iri = Column(Text(), primary_key=True)
+    
+
+    def __repr__(self):
+        return f"GeographicalOrigin_iri(GeographicalOrigin_id={self.GeographicalOrigin_id},iri={self.iri},)"
 
 
 
@@ -825,6 +1879,42 @@ class IplcOriginKeyword(Base):
     
 
 
+class IplcOriginIdentifier(Base):
+    """
+    
+    """
+    __tablename__ = 'IplcOrigin_identifier'
+
+    IplcOrigin_id = Column(Integer(), ForeignKey('IplcOrigin.id'), primary_key=True)
+    identifier = Column(Text(), primary_key=True)
+    
+
+    def __repr__(self):
+        return f"IplcOrigin_identifier(IplcOrigin_id={self.IplcOrigin_id},identifier={self.identifier},)"
+
+
+
+    
+
+
+class IplcOriginIri(Base):
+    """
+    
+    """
+    __tablename__ = 'IplcOrigin_iri'
+
+    IplcOrigin_id = Column(Integer(), ForeignKey('IplcOrigin.id'), primary_key=True)
+    iri = Column(Text(), primary_key=True)
+    
+
+    def __repr__(self):
+        return f"IplcOrigin_iri(IplcOrigin_id={self.IplcOrigin_id},iri={self.iri},)"
+
+
+
+    
+
+
 class CountryKeyword(Base):
     """
     
@@ -843,6 +1933,42 @@ class CountryKeyword(Base):
     
 
 
+class CountryIdentifier(Base):
+    """
+    
+    """
+    __tablename__ = 'Country_identifier'
+
+    Country_id = Column(Integer(), ForeignKey('Country.id'), primary_key=True)
+    identifier = Column(Text(), primary_key=True)
+    
+
+    def __repr__(self):
+        return f"Country_identifier(Country_id={self.Country_id},identifier={self.identifier},)"
+
+
+
+    
+
+
+class CountryIri(Base):
+    """
+    
+    """
+    __tablename__ = 'Country_iri'
+
+    Country_id = Column(Integer(), ForeignKey('Country.id'), primary_key=True)
+    iri = Column(Text(), primary_key=True)
+    
+
+    def __repr__(self):
+        return f"Country_iri(Country_id={self.Country_id},iri={self.iri},)"
+
+
+
+    
+
+
 class IataClassificationKeyword(Base):
     """
     
@@ -855,6 +1981,42 @@ class IataClassificationKeyword(Base):
 
     def __repr__(self):
         return f"IataClassification_keyword(IataClassification_id={self.IataClassification_id},keyword={self.keyword},)"
+
+
+
+    
+
+
+class IataClassificationIdentifier(Base):
+    """
+    
+    """
+    __tablename__ = 'IataClassification_identifier'
+
+    IataClassification_id = Column(Integer(), ForeignKey('IataClassification.id'), primary_key=True)
+    identifier = Column(Text(), primary_key=True)
+    
+
+    def __repr__(self):
+        return f"IataClassification_identifier(IataClassification_id={self.IataClassification_id},identifier={self.identifier},)"
+
+
+
+    
+
+
+class IataClassificationIri(Base):
+    """
+    
+    """
+    __tablename__ = 'IataClassification_iri'
+
+    IataClassification_id = Column(Integer(), ForeignKey('IataClassification.id'), primary_key=True)
+    iri = Column(Text(), primary_key=True)
+    
+
+    def __repr__(self):
+        return f"IataClassification_iri(IataClassification_id={self.IataClassification_id},iri={self.iri},)"
 
 
 
@@ -915,6 +2077,42 @@ class VariantKeyword(Base):
     
 
 
+class VariantIdentifier(Base):
+    """
+    
+    """
+    __tablename__ = 'Variant_identifier'
+
+    Variant_id = Column(Integer(), ForeignKey('Variant.id'), primary_key=True)
+    identifier = Column(Text(), primary_key=True)
+    
+
+    def __repr__(self):
+        return f"Variant_identifier(Variant_id={self.Variant_id},identifier={self.identifier},)"
+
+
+
+    
+
+
+class VariantIri(Base):
+    """
+    
+    """
+    __tablename__ = 'Variant_iri'
+
+    Variant_id = Column(Integer(), ForeignKey('Variant.id'), primary_key=True)
+    iri = Column(Text(), primary_key=True)
+    
+
+    def __repr__(self):
+        return f"Variant_iri(Variant_id={self.Variant_id},iri={self.iri},)"
+
+
+
+    
+
+
 class TaxonomicRankTaxonomy(Base):
     """
     
@@ -945,6 +2143,42 @@ class TaxonomicRankKeyword(Base):
 
     def __repr__(self):
         return f"TaxonomicRank_keyword(TaxonomicRank_id={self.TaxonomicRank_id},keyword={self.keyword},)"
+
+
+
+    
+
+
+class TaxonomicRankIdentifier(Base):
+    """
+    
+    """
+    __tablename__ = 'TaxonomicRank_identifier'
+
+    TaxonomicRank_id = Column(Integer(), ForeignKey('TaxonomicRank.id'), primary_key=True)
+    identifier = Column(Text(), primary_key=True)
+    
+
+    def __repr__(self):
+        return f"TaxonomicRank_identifier(TaxonomicRank_id={self.TaxonomicRank_id},identifier={self.identifier},)"
+
+
+
+    
+
+
+class TaxonomicRankIri(Base):
+    """
+    
+    """
+    __tablename__ = 'TaxonomicRank_iri'
+
+    TaxonomicRank_id = Column(Integer(), ForeignKey('TaxonomicRank.id'), primary_key=True)
+    iri = Column(Text(), primary_key=True)
+    
+
+    def __repr__(self):
+        return f"TaxonomicRank_iri(TaxonomicRank_id={self.TaxonomicRank_id},iri={self.iri},)"
 
 
 
@@ -1023,6 +2257,42 @@ class TaxonKeyword(Base):
     
 
 
+class TaxonIdentifier(Base):
+    """
+    
+    """
+    __tablename__ = 'Taxon_identifier'
+
+    Taxon_id = Column(Integer(), ForeignKey('Taxon.id'), primary_key=True)
+    identifier = Column(Text(), primary_key=True)
+    
+
+    def __repr__(self):
+        return f"Taxon_identifier(Taxon_id={self.Taxon_id},identifier={self.identifier},)"
+
+
+
+    
+
+
+class TaxonIri(Base):
+    """
+    
+    """
+    __tablename__ = 'Taxon_iri'
+
+    Taxon_id = Column(Integer(), ForeignKey('Taxon.id'), primary_key=True)
+    iri = Column(Text(), primary_key=True)
+    
+
+    def __repr__(self):
+        return f"Taxon_iri(Taxon_id={self.Taxon_id},iri={self.iri},)"
+
+
+
+    
+
+
 class ClinicalGroupAlternateName(Base):
     """
     
@@ -1077,6 +2347,42 @@ class ClinicalGroupKeyword(Base):
     
 
 
+class ClinicalGroupIdentifier(Base):
+    """
+    
+    """
+    __tablename__ = 'ClinicalGroup_identifier'
+
+    ClinicalGroup_id = Column(Integer(), ForeignKey('ClinicalGroup.id'), primary_key=True)
+    identifier = Column(Text(), primary_key=True)
+    
+
+    def __repr__(self):
+        return f"ClinicalGroup_identifier(ClinicalGroup_id={self.ClinicalGroup_id},identifier={self.identifier},)"
+
+
+
+    
+
+
+class ClinicalGroupIri(Base):
+    """
+    
+    """
+    __tablename__ = 'ClinicalGroup_iri'
+
+    ClinicalGroup_id = Column(Integer(), ForeignKey('ClinicalGroup.id'), primary_key=True)
+    iri = Column(Text(), primary_key=True)
+    
+
+    def __repr__(self):
+        return f"ClinicalGroup_iri(ClinicalGroup_id={self.ClinicalGroup_id},iri={self.iri},)"
+
+
+
+    
+
+
 class ExternalRelatedReferenceKeyword(Base):
     """
     
@@ -1089,6 +2395,42 @@ class ExternalRelatedReferenceKeyword(Base):
 
     def __repr__(self):
         return f"ExternalRelatedReference_keyword(ExternalRelatedReference_id={self.ExternalRelatedReference_id},keyword={self.keyword},)"
+
+
+
+    
+
+
+class ExternalRelatedReferenceIdentifier(Base):
+    """
+    
+    """
+    __tablename__ = 'ExternalRelatedReference_identifier'
+
+    ExternalRelatedReference_id = Column(Integer(), ForeignKey('ExternalRelatedReference.id'), primary_key=True)
+    identifier = Column(Text(), primary_key=True)
+    
+
+    def __repr__(self):
+        return f"ExternalRelatedReference_identifier(ExternalRelatedReference_id={self.ExternalRelatedReference_id},identifier={self.identifier},)"
+
+
+
+    
+
+
+class ExternalRelatedReferenceIri(Base):
+    """
+    
+    """
+    __tablename__ = 'ExternalRelatedReference_iri'
+
+    ExternalRelatedReference_id = Column(Integer(), ForeignKey('ExternalRelatedReference.id'), primary_key=True)
+    iri = Column(Text(), primary_key=True)
+    
+
+    def __repr__(self):
+        return f"ExternalRelatedReference_iri(ExternalRelatedReference_id={self.ExternalRelatedReference_id},iri={self.iri},)"
 
 
 
@@ -1131,6 +2473,42 @@ class SequenceKeyword(Base):
     
 
 
+class SequenceIdentifier(Base):
+    """
+    
+    """
+    __tablename__ = 'Sequence_identifier'
+
+    Sequence_id = Column(Integer(), ForeignKey('Sequence.id'), primary_key=True)
+    identifier = Column(Text(), primary_key=True)
+    
+
+    def __repr__(self):
+        return f"Sequence_identifier(Sequence_id={self.Sequence_id},identifier={self.identifier},)"
+
+
+
+    
+
+
+class SequenceIri(Base):
+    """
+    
+    """
+    __tablename__ = 'Sequence_iri'
+
+    Sequence_id = Column(Integer(), ForeignKey('Sequence.id'), primary_key=True)
+    iri = Column(Text(), primary_key=True)
+    
+
+    def __repr__(self):
+        return f"Sequence_iri(Sequence_id={self.Sequence_id},iri={self.iri},)"
+
+
+
+    
+
+
 class SequenceReferenceKeyword(Base):
     """
     
@@ -1143,6 +2521,42 @@ class SequenceReferenceKeyword(Base):
 
     def __repr__(self):
         return f"SequenceReference_keyword(SequenceReference_id={self.SequenceReference_id},keyword={self.keyword},)"
+
+
+
+    
+
+
+class SequenceReferenceIdentifier(Base):
+    """
+    
+    """
+    __tablename__ = 'SequenceReference_identifier'
+
+    SequenceReference_id = Column(Integer(), ForeignKey('SequenceReference.id'), primary_key=True)
+    identifier = Column(Text(), primary_key=True)
+    
+
+    def __repr__(self):
+        return f"SequenceReference_identifier(SequenceReference_id={self.SequenceReference_id},identifier={self.identifier},)"
+
+
+
+    
+
+
+class SequenceReferenceIri(Base):
+    """
+    
+    """
+    __tablename__ = 'SequenceReference_iri'
+
+    SequenceReference_id = Column(Integer(), ForeignKey('SequenceReference.id'), primary_key=True)
+    iri = Column(Text(), primary_key=True)
+    
+
+    def __repr__(self):
+        return f"SequenceReference_iri(SequenceReference_id={self.SequenceReference_id},iri={self.iri},)"
 
 
 
@@ -1167,6 +2581,42 @@ class PersonOrOrganizationKeyword(Base):
     
 
 
+class PersonOrOrganizationIdentifier(Base):
+    """
+    
+    """
+    __tablename__ = 'PersonOrOrganization_identifier'
+
+    PersonOrOrganization_id = Column(Integer(), ForeignKey('PersonOrOrganization.id'), primary_key=True)
+    identifier = Column(Text(), primary_key=True)
+    
+
+    def __repr__(self):
+        return f"PersonOrOrganization_identifier(PersonOrOrganization_id={self.PersonOrOrganization_id},identifier={self.identifier},)"
+
+
+
+    
+
+
+class PersonOrOrganizationIri(Base):
+    """
+    
+    """
+    __tablename__ = 'PersonOrOrganization_iri'
+
+    PersonOrOrganization_id = Column(Integer(), ForeignKey('PersonOrOrganization.id'), primary_key=True)
+    iri = Column(Text(), primary_key=True)
+    
+
+    def __repr__(self):
+        return f"PersonOrOrganization_iri(PersonOrOrganization_id={self.PersonOrOrganization_id},iri={self.iri},)"
+
+
+
+    
+
+
 class PersonKeyword(Base):
     """
     
@@ -1179,6 +2629,42 @@ class PersonKeyword(Base):
 
     def __repr__(self):
         return f"Person_keyword(Person_id={self.Person_id},keyword={self.keyword},)"
+
+
+
+    
+
+
+class PersonIdentifier(Base):
+    """
+    
+    """
+    __tablename__ = 'Person_identifier'
+
+    Person_id = Column(Integer(), ForeignKey('Person.id'), primary_key=True)
+    identifier = Column(Text(), primary_key=True)
+    
+
+    def __repr__(self):
+        return f"Person_identifier(Person_id={self.Person_id},identifier={self.identifier},)"
+
+
+
+    
+
+
+class PersonIri(Base):
+    """
+    
+    """
+    __tablename__ = 'Person_iri'
+
+    Person_id = Column(Integer(), ForeignKey('Person.id'), primary_key=True)
+    iri = Column(Text(), primary_key=True)
+    
+
+    def __repr__(self):
+        return f"Person_iri(Person_id={self.Person_id},iri={self.iri},)"
 
 
 
@@ -1221,6 +2707,42 @@ class OrganizationKeyword(Base):
     
 
 
+class OrganizationIdentifier(Base):
+    """
+    
+    """
+    __tablename__ = 'Organization_identifier'
+
+    Organization_id = Column(Integer(), ForeignKey('Organization.id'), primary_key=True)
+    identifier = Column(Text(), primary_key=True)
+    
+
+    def __repr__(self):
+        return f"Organization_identifier(Organization_id={self.Organization_id},identifier={self.identifier},)"
+
+
+
+    
+
+
+class OrganizationIri(Base):
+    """
+    
+    """
+    __tablename__ = 'Organization_iri'
+
+    Organization_id = Column(Integer(), ForeignKey('Organization.id'), primary_key=True)
+    iri = Column(Text(), primary_key=True)
+    
+
+    def __repr__(self):
+        return f"Organization_iri(Organization_id={self.Organization_id},iri={self.iri},)"
+
+
+
+    
+
+
 class ReasearchInfrastructureAlternateName(Base):
     """
     
@@ -1251,6 +2773,42 @@ class ReasearchInfrastructureKeyword(Base):
 
     def __repr__(self):
         return f"ReasearchInfrastructure_keyword(ReasearchInfrastructure_id={self.ReasearchInfrastructure_id},keyword={self.keyword},)"
+
+
+
+    
+
+
+class ReasearchInfrastructureIdentifier(Base):
+    """
+    
+    """
+    __tablename__ = 'ReasearchInfrastructure_identifier'
+
+    ReasearchInfrastructure_id = Column(Integer(), ForeignKey('ReasearchInfrastructure.id'), primary_key=True)
+    identifier = Column(Text(), primary_key=True)
+    
+
+    def __repr__(self):
+        return f"ReasearchInfrastructure_identifier(ReasearchInfrastructure_id={self.ReasearchInfrastructure_id},identifier={self.identifier},)"
+
+
+
+    
+
+
+class ReasearchInfrastructureIri(Base):
+    """
+    
+    """
+    __tablename__ = 'ReasearchInfrastructure_iri'
+
+    ReasearchInfrastructure_id = Column(Integer(), ForeignKey('ReasearchInfrastructure.id'), primary_key=True)
+    iri = Column(Text(), primary_key=True)
+    
+
+    def __repr__(self):
+        return f"ReasearchInfrastructure_iri(ReasearchInfrastructure_id={self.ReasearchInfrastructure_id},iri={self.iri},)"
 
 
 
@@ -1311,6 +2869,42 @@ class ProviderKeyword(Base):
     
 
 
+class ProviderIdentifier(Base):
+    """
+    
+    """
+    __tablename__ = 'Provider_identifier'
+
+    Provider_id = Column(Integer(), ForeignKey('Provider.id'), primary_key=True)
+    identifier = Column(Text(), primary_key=True)
+    
+
+    def __repr__(self):
+        return f"Provider_identifier(Provider_id={self.Provider_id},identifier={self.identifier},)"
+
+
+
+    
+
+
+class ProviderIri(Base):
+    """
+    
+    """
+    __tablename__ = 'Provider_iri'
+
+    Provider_id = Column(Integer(), ForeignKey('Provider.id'), primary_key=True)
+    iri = Column(Text(), primary_key=True)
+    
+
+    def __repr__(self):
+        return f"Provider_iri(Provider_id={self.Provider_id},iri={self.iri},)"
+
+
+
+    
+
+
 class OriginatorKeyword(Base):
     """
     
@@ -1323,6 +2917,42 @@ class OriginatorKeyword(Base):
 
     def __repr__(self):
         return f"Originator_keyword(Originator_id={self.Originator_id},keyword={self.keyword},)"
+
+
+
+    
+
+
+class OriginatorIdentifier(Base):
+    """
+    
+    """
+    __tablename__ = 'Originator_identifier'
+
+    Originator_id = Column(Integer(), ForeignKey('Originator.id'), primary_key=True)
+    identifier = Column(Text(), primary_key=True)
+    
+
+    def __repr__(self):
+        return f"Originator_identifier(Originator_id={self.Originator_id},identifier={self.identifier},)"
+
+
+
+    
+
+
+class OriginatorIri(Base):
+    """
+    
+    """
+    __tablename__ = 'Originator_iri'
+
+    Originator_id = Column(Integer(), ForeignKey('Originator.id'), primary_key=True)
+    iri = Column(Text(), primary_key=True)
+    
+
+    def __repr__(self):
+        return f"Originator_iri(Originator_id={self.Originator_id},iri={self.iri},)"
 
 
 
@@ -1365,6 +2995,42 @@ class BiologicalMaterialOriginKeyword(Base):
     
 
 
+class BiologicalMaterialOriginIdentifier(Base):
+    """
+    
+    """
+    __tablename__ = 'BiologicalMaterialOrigin_identifier'
+
+    BiologicalMaterialOrigin_id = Column(Integer(), ForeignKey('BiologicalMaterialOrigin.id'), primary_key=True)
+    identifier = Column(Text(), primary_key=True)
+    
+
+    def __repr__(self):
+        return f"BiologicalMaterialOrigin_identifier(BiologicalMaterialOrigin_id={self.BiologicalMaterialOrigin_id},identifier={self.identifier},)"
+
+
+
+    
+
+
+class BiologicalMaterialOriginIri(Base):
+    """
+    
+    """
+    __tablename__ = 'BiologicalMaterialOrigin_iri'
+
+    BiologicalMaterialOrigin_id = Column(Integer(), ForeignKey('BiologicalMaterialOrigin.id'), primary_key=True)
+    iri = Column(Text(), primary_key=True)
+    
+
+    def __repr__(self):
+        return f"BiologicalMaterialOrigin_iri(BiologicalMaterialOrigin_id={self.BiologicalMaterialOrigin_id},iri={self.iri},)"
+
+
+
+    
+
+
 class BiologicalPartOriginKeyword(Base):
     """
     
@@ -1377,6 +3043,42 @@ class BiologicalPartOriginKeyword(Base):
 
     def __repr__(self):
         return f"BiologicalPartOrigin_keyword(BiologicalPartOrigin_id={self.BiologicalPartOrigin_id},keyword={self.keyword},)"
+
+
+
+    
+
+
+class BiologicalPartOriginIdentifier(Base):
+    """
+    
+    """
+    __tablename__ = 'BiologicalPartOrigin_identifier'
+
+    BiologicalPartOrigin_id = Column(Integer(), ForeignKey('BiologicalPartOrigin.id'), primary_key=True)
+    identifier = Column(Text(), primary_key=True)
+    
+
+    def __repr__(self):
+        return f"BiologicalPartOrigin_identifier(BiologicalPartOrigin_id={self.BiologicalPartOrigin_id},identifier={self.identifier},)"
+
+
+
+    
+
+
+class BiologicalPartOriginIri(Base):
+    """
+    
+    """
+    __tablename__ = 'BiologicalPartOrigin_iri'
+
+    BiologicalPartOrigin_id = Column(Integer(), ForeignKey('BiologicalPartOrigin.id'), primary_key=True)
+    iri = Column(Text(), primary_key=True)
+    
+
+    def __repr__(self):
+        return f"BiologicalPartOrigin_iri(BiologicalPartOrigin_id={self.BiologicalPartOrigin_id},iri={self.iri},)"
 
 
 
@@ -1401,6 +3103,42 @@ class NaturalPartOriginKeyword(Base):
     
 
 
+class NaturalPartOriginIdentifier(Base):
+    """
+    
+    """
+    __tablename__ = 'NaturalPartOrigin_identifier'
+
+    NaturalPartOrigin_id = Column(Integer(), ForeignKey('NaturalPartOrigin.id'), primary_key=True)
+    identifier = Column(Text(), primary_key=True)
+    
+
+    def __repr__(self):
+        return f"NaturalPartOrigin_identifier(NaturalPartOrigin_id={self.NaturalPartOrigin_id},identifier={self.identifier},)"
+
+
+
+    
+
+
+class NaturalPartOriginIri(Base):
+    """
+    
+    """
+    __tablename__ = 'NaturalPartOrigin_iri'
+
+    NaturalPartOrigin_id = Column(Integer(), ForeignKey('NaturalPartOrigin.id'), primary_key=True)
+    iri = Column(Text(), primary_key=True)
+    
+
+    def __repr__(self):
+        return f"NaturalPartOrigin_iri(NaturalPartOrigin_id={self.NaturalPartOrigin_id},iri={self.iri},)"
+
+
+
+    
+
+
 class SyntheticPartOriginKeyword(Base):
     """
     
@@ -1413,6 +3151,42 @@ class SyntheticPartOriginKeyword(Base):
 
     def __repr__(self):
         return f"SyntheticPartOrigin_keyword(SyntheticPartOrigin_id={self.SyntheticPartOrigin_id},keyword={self.keyword},)"
+
+
+
+    
+
+
+class SyntheticPartOriginIdentifier(Base):
+    """
+    
+    """
+    __tablename__ = 'SyntheticPartOrigin_identifier'
+
+    SyntheticPartOrigin_id = Column(Integer(), ForeignKey('SyntheticPartOrigin.id'), primary_key=True)
+    identifier = Column(Text(), primary_key=True)
+    
+
+    def __repr__(self):
+        return f"SyntheticPartOrigin_identifier(SyntheticPartOrigin_id={self.SyntheticPartOrigin_id},identifier={self.identifier},)"
+
+
+
+    
+
+
+class SyntheticPartOriginIri(Base):
+    """
+    
+    """
+    __tablename__ = 'SyntheticPartOrigin_iri'
+
+    SyntheticPartOrigin_id = Column(Integer(), ForeignKey('SyntheticPartOrigin.id'), primary_key=True)
+    iri = Column(Text(), primary_key=True)
+    
+
+    def __repr__(self):
+        return f"SyntheticPartOrigin_iri(SyntheticPartOrigin_id={self.SyntheticPartOrigin_id},iri={self.iri},)"
 
 
 
@@ -1455,6 +3229,42 @@ class RecombinantPartIdentificationKeyword(Base):
     
 
 
+class RecombinantPartIdentificationIdentifier(Base):
+    """
+    
+    """
+    __tablename__ = 'RecombinantPartIdentification_identifier'
+
+    RecombinantPartIdentification_id = Column(Integer(), ForeignKey('RecombinantPartIdentification.id'), primary_key=True)
+    identifier = Column(Text(), primary_key=True)
+    
+
+    def __repr__(self):
+        return f"RecombinantPartIdentification_identifier(RecombinantPartIdentification_id={self.RecombinantPartIdentification_id},identifier={self.identifier},)"
+
+
+
+    
+
+
+class RecombinantPartIdentificationIri(Base):
+    """
+    
+    """
+    __tablename__ = 'RecombinantPartIdentification_iri'
+
+    RecombinantPartIdentification_id = Column(Integer(), ForeignKey('RecombinantPartIdentification.id'), primary_key=True)
+    iri = Column(Text(), primary_key=True)
+    
+
+    def __repr__(self):
+        return f"RecombinantPartIdentification_iri(RecombinantPartIdentification_id={self.RecombinantPartIdentification_id},iri={self.iri},)"
+
+
+
+    
+
+
 class CollectionCollectionItem(Base):
     """
     
@@ -1485,6 +3295,42 @@ class CollectionKeyword(Base):
 
     def __repr__(self):
         return f"Collection_keyword(Collection_id={self.Collection_id},keyword={self.keyword},)"
+
+
+
+    
+
+
+class CollectionIdentifier(Base):
+    """
+    
+    """
+    __tablename__ = 'Collection_identifier'
+
+    Collection_id = Column(Integer(), ForeignKey('Collection.id'), primary_key=True)
+    identifier = Column(Text(), primary_key=True)
+    
+
+    def __repr__(self):
+        return f"Collection_identifier(Collection_id={self.Collection_id},identifier={self.identifier},)"
+
+
+
+    
+
+
+class CollectionIri(Base):
+    """
+    
+    """
+    __tablename__ = 'Collection_iri'
+
+    Collection_id = Column(Integer(), ForeignKey('Collection.id'), primary_key=True)
+    iri = Column(Text(), primary_key=True)
+    
+
+    def __repr__(self):
+        return f"Collection_iri(Collection_id={self.Collection_id},iri={self.iri},)"
 
 
 
@@ -1671,6 +3517,42 @@ class ProductOrServiceKeyword(Base):
     
 
 
+class ProductOrServiceIdentifier(Base):
+    """
+    
+    """
+    __tablename__ = 'ProductOrService_identifier'
+
+    ProductOrService_id = Column(Integer(), ForeignKey('ProductOrService.id'), primary_key=True)
+    identifier = Column(Text(), primary_key=True)
+    
+
+    def __repr__(self):
+        return f"ProductOrService_identifier(ProductOrService_id={self.ProductOrService_id},identifier={self.identifier},)"
+
+
+
+    
+
+
+class ProductOrServiceIri(Base):
+    """
+    
+    """
+    __tablename__ = 'ProductOrService_iri'
+
+    ProductOrService_id = Column(Integer(), ForeignKey('ProductOrService.id'), primary_key=True)
+    iri = Column(Text(), primary_key=True)
+    
+
+    def __repr__(self):
+        return f"ProductOrService_iri(ProductOrService_id={self.ProductOrService_id},iri={self.iri},)"
+
+
+
+    
+
+
 class ServiceAdditionalCategory(Base):
     """
     
@@ -1851,6 +3733,42 @@ class ServiceKeyword(Base):
     
 
 
+class ServiceIdentifier(Base):
+    """
+    
+    """
+    __tablename__ = 'Service_identifier'
+
+    Service_id = Column(Integer(), ForeignKey('Service.id'), primary_key=True)
+    identifier = Column(Text(), primary_key=True)
+    
+
+    def __repr__(self):
+        return f"Service_identifier(Service_id={self.Service_id},identifier={self.identifier},)"
+
+
+
+    
+
+
+class ServiceIri(Base):
+    """
+    
+    """
+    __tablename__ = 'Service_iri'
+
+    Service_id = Column(Integer(), ForeignKey('Service.id'), primary_key=True)
+    iri = Column(Text(), primary_key=True)
+    
+
+    def __repr__(self):
+        return f"Service_iri(Service_id={self.Service_id},iri={self.iri},)"
+
+
+
+    
+
+
 class ProductAdditionalCategory(Base):
     """
     
@@ -2025,6 +3943,42 @@ class ProductKeyword(Base):
 
     def __repr__(self):
         return f"Product_keyword(Product_id={self.Product_id},keyword={self.keyword},)"
+
+
+
+    
+
+
+class ProductIdentifier(Base):
+    """
+    
+    """
+    __tablename__ = 'Product_identifier'
+
+    Product_id = Column(Integer(), ForeignKey('Product.id'), primary_key=True)
+    identifier = Column(Text(), primary_key=True)
+    
+
+    def __repr__(self):
+        return f"Product_identifier(Product_id={self.Product_id},identifier={self.identifier},)"
+
+
+
+    
+
+
+class ProductIri(Base):
+    """
+    
+    """
+    __tablename__ = 'Product_iri'
+
+    Product_id = Column(Integer(), ForeignKey('Product.id'), primary_key=True)
+    iri = Column(Text(), primary_key=True)
+    
+
+    def __repr__(self):
+        return f"Product_iri(Product_id={self.Product_id},iri={self.iri},)"
 
 
 
@@ -2229,6 +4183,42 @@ class AntibodyKeyword(Base):
     
 
 
+class AntibodyIdentifier(Base):
+    """
+    
+    """
+    __tablename__ = 'Antibody_identifier'
+
+    Antibody_id = Column(Integer(), ForeignKey('Antibody.id'), primary_key=True)
+    identifier = Column(Text(), primary_key=True)
+    
+
+    def __repr__(self):
+        return f"Antibody_identifier(Antibody_id={self.Antibody_id},identifier={self.identifier},)"
+
+
+
+    
+
+
+class AntibodyIri(Base):
+    """
+    
+    """
+    __tablename__ = 'Antibody_iri'
+
+    Antibody_id = Column(Integer(), ForeignKey('Antibody.id'), primary_key=True)
+    iri = Column(Text(), primary_key=True)
+    
+
+    def __repr__(self):
+        return f"Antibody_iri(Antibody_id={self.Antibody_id},iri={self.iri},)"
+
+
+
+    
+
+
 class HybridomaSequenceReference(Base):
     """
     
@@ -2421,6 +4411,42 @@ class HybridomaKeyword(Base):
 
     def __repr__(self):
         return f"Hybridoma_keyword(Hybridoma_id={self.Hybridoma_id},keyword={self.keyword},)"
+
+
+
+    
+
+
+class HybridomaIdentifier(Base):
+    """
+    
+    """
+    __tablename__ = 'Hybridoma_identifier'
+
+    Hybridoma_id = Column(Integer(), ForeignKey('Hybridoma.id'), primary_key=True)
+    identifier = Column(Text(), primary_key=True)
+    
+
+    def __repr__(self):
+        return f"Hybridoma_identifier(Hybridoma_id={self.Hybridoma_id},identifier={self.identifier},)"
+
+
+
+    
+
+
+class HybridomaIri(Base):
+    """
+    
+    """
+    __tablename__ = 'Hybridoma_iri'
+
+    Hybridoma_id = Column(Integer(), ForeignKey('Hybridoma.id'), primary_key=True)
+    iri = Column(Text(), primary_key=True)
+    
+
+    def __repr__(self):
+        return f"Hybridoma_iri(Hybridoma_id={self.Hybridoma_id},iri={self.iri},)"
 
 
 
@@ -2841,6 +4867,42 @@ class ProteinKeyword(Base):
     
 
 
+class ProteinIdentifier(Base):
+    """
+    
+    """
+    __tablename__ = 'Protein_identifier'
+
+    Protein_id = Column(Integer(), ForeignKey('Protein.id'), primary_key=True)
+    identifier = Column(Text(), primary_key=True)
+    
+
+    def __repr__(self):
+        return f"Protein_identifier(Protein_id={self.Protein_id},identifier={self.identifier},)"
+
+
+
+    
+
+
+class ProteinIri(Base):
+    """
+    
+    """
+    __tablename__ = 'Protein_iri'
+
+    Protein_id = Column(Integer(), ForeignKey('Protein.id'), primary_key=True)
+    iri = Column(Text(), primary_key=True)
+    
+
+    def __repr__(self):
+        return f"Protein_iri(Protein_id={self.Protein_id},iri={self.iri},)"
+
+
+
+    
+
+
 class NucleicAcidGenBankFileOfTheConstruct(Base):
     """
     
@@ -3075,6 +5137,42 @@ class NucleicAcidKeyword(Base):
     
 
 
+class NucleicAcidIdentifier(Base):
+    """
+    
+    """
+    __tablename__ = 'NucleicAcid_identifier'
+
+    NucleicAcid_id = Column(Integer(), ForeignKey('NucleicAcid.id'), primary_key=True)
+    identifier = Column(Text(), primary_key=True)
+    
+
+    def __repr__(self):
+        return f"NucleicAcid_identifier(NucleicAcid_id={self.NucleicAcid_id},identifier={self.identifier},)"
+
+
+
+    
+
+
+class NucleicAcidIri(Base):
+    """
+    
+    """
+    __tablename__ = 'NucleicAcid_iri'
+
+    NucleicAcid_id = Column(Integer(), ForeignKey('NucleicAcid.id'), primary_key=True)
+    iri = Column(Text(), primary_key=True)
+    
+
+    def __repr__(self):
+        return f"NucleicAcid_iri(NucleicAcid_id={self.NucleicAcid_id},iri={self.iri},)"
+
+
+
+    
+
+
 class DetectionKitStandardOperatingProcedureFile(Base):
     """
     
@@ -3273,6 +5371,42 @@ class DetectionKitKeyword(Base):
     
 
 
+class DetectionKitIdentifier(Base):
+    """
+    
+    """
+    __tablename__ = 'DetectionKit_identifier'
+
+    DetectionKit_id = Column(Integer(), ForeignKey('DetectionKit.id'), primary_key=True)
+    identifier = Column(Text(), primary_key=True)
+    
+
+    def __repr__(self):
+        return f"DetectionKit_identifier(DetectionKit_id={self.DetectionKit_id},identifier={self.identifier},)"
+
+
+
+    
+
+
+class DetectionKitIri(Base):
+    """
+    
+    """
+    __tablename__ = 'DetectionKit_iri'
+
+    DetectionKit_id = Column(Integer(), ForeignKey('DetectionKit.id'), primary_key=True)
+    iri = Column(Text(), primary_key=True)
+    
+
+    def __repr__(self):
+        return f"DetectionKit_iri(DetectionKit_id={self.DetectionKit_id},iri={self.iri},)"
+
+
+
+    
+
+
 class BundleItemsOfTheBundle(Base):
     """
     
@@ -3465,6 +5599,42 @@ class BundleKeyword(Base):
 
     def __repr__(self):
         return f"Bundle_keyword(Bundle_id={self.Bundle_id},keyword={self.keyword},)"
+
+
+
+    
+
+
+class BundleIdentifier(Base):
+    """
+    
+    """
+    __tablename__ = 'Bundle_identifier'
+
+    Bundle_id = Column(Integer(), ForeignKey('Bundle.id'), primary_key=True)
+    identifier = Column(Text(), primary_key=True)
+    
+
+    def __repr__(self):
+        return f"Bundle_identifier(Bundle_id={self.Bundle_id},identifier={self.identifier},)"
+
+
+
+    
+
+
+class BundleIri(Base):
+    """
+    
+    """
+    __tablename__ = 'Bundle_iri'
+
+    Bundle_id = Column(Integer(), ForeignKey('Bundle.id'), primary_key=True)
+    iri = Column(Text(), primary_key=True)
+    
+
+    def __repr__(self):
+        return f"Bundle_iri(Bundle_id={self.Bundle_id},iri={self.iri},)"
 
 
 
@@ -3753,6 +5923,42 @@ class PathogenKeyword(Base):
 
     def __repr__(self):
         return f"Pathogen_keyword(Pathogen_id={self.Pathogen_id},keyword={self.keyword},)"
+
+
+
+    
+
+
+class PathogenIdentifier(Base):
+    """
+    
+    """
+    __tablename__ = 'Pathogen_identifier'
+
+    Pathogen_id = Column(Integer(), ForeignKey('Pathogen.id'), primary_key=True)
+    identifier = Column(Text(), primary_key=True)
+    
+
+    def __repr__(self):
+        return f"Pathogen_identifier(Pathogen_id={self.Pathogen_id},identifier={self.identifier},)"
+
+
+
+    
+
+
+class PathogenIri(Base):
+    """
+    
+    """
+    __tablename__ = 'Pathogen_iri'
+
+    Pathogen_id = Column(Integer(), ForeignKey('Pathogen.id'), primary_key=True)
+    iri = Column(Text(), primary_key=True)
+    
+
+    def __repr__(self):
+        return f"Pathogen_iri(Pathogen_id={self.Pathogen_id},iri={self.iri},)"
 
 
 
@@ -4065,6 +6271,42 @@ class VirusKeyword(Base):
     
 
 
+class VirusIdentifier(Base):
+    """
+    
+    """
+    __tablename__ = 'Virus_identifier'
+
+    Virus_id = Column(Integer(), ForeignKey('Virus.id'), primary_key=True)
+    identifier = Column(Text(), primary_key=True)
+    
+
+    def __repr__(self):
+        return f"Virus_identifier(Virus_id={self.Virus_id},identifier={self.identifier},)"
+
+
+
+    
+
+
+class VirusIri(Base):
+    """
+    
+    """
+    __tablename__ = 'Virus_iri'
+
+    Virus_id = Column(Integer(), ForeignKey('Virus.id'), primary_key=True)
+    iri = Column(Text(), primary_key=True)
+    
+
+    def __repr__(self):
+        return f"Virus_iri(Virus_id={self.Virus_id},iri={self.iri},)"
+
+
+
+    
+
+
 class BacteriumSuspectedEpidemiologicalOrigin(Base):
     """
     
@@ -4347,6 +6589,42 @@ class BacteriumKeyword(Base):
 
     def __repr__(self):
         return f"Bacterium_keyword(Bacterium_id={self.Bacterium_id},keyword={self.keyword},)"
+
+
+
+    
+
+
+class BacteriumIdentifier(Base):
+    """
+    
+    """
+    __tablename__ = 'Bacterium_identifier'
+
+    Bacterium_id = Column(Integer(), ForeignKey('Bacterium.id'), primary_key=True)
+    identifier = Column(Text(), primary_key=True)
+    
+
+    def __repr__(self):
+        return f"Bacterium_identifier(Bacterium_id={self.Bacterium_id},identifier={self.identifier},)"
+
+
+
+    
+
+
+class BacteriumIri(Base):
+    """
+    
+    """
+    __tablename__ = 'Bacterium_iri'
+
+    Bacterium_id = Column(Integer(), ForeignKey('Bacterium.id'), primary_key=True)
+    iri = Column(Text(), primary_key=True)
+    
+
+    def __repr__(self):
+        return f"Bacterium_iri(Bacterium_id={self.Bacterium_id},iri={self.iri},)"
 
 
 
@@ -4641,6 +6919,42 @@ class FungusKeyword(Base):
     
 
 
+class FungusIdentifier(Base):
+    """
+    
+    """
+    __tablename__ = 'Fungus_identifier'
+
+    Fungus_id = Column(Integer(), ForeignKey('Fungus.id'), primary_key=True)
+    identifier = Column(Text(), primary_key=True)
+    
+
+    def __repr__(self):
+        return f"Fungus_identifier(Fungus_id={self.Fungus_id},identifier={self.identifier},)"
+
+
+
+    
+
+
+class FungusIri(Base):
+    """
+    
+    """
+    __tablename__ = 'Fungus_iri'
+
+    Fungus_id = Column(Integer(), ForeignKey('Fungus.id'), primary_key=True)
+    iri = Column(Text(), primary_key=True)
+    
+
+    def __repr__(self):
+        return f"Fungus_iri(Fungus_id={self.Fungus_id},iri={self.iri},)"
+
+
+
+    
+
+
 class ProtozoanSuspectedEpidemiologicalOrigin(Base):
     """
     
@@ -4923,6 +7237,42 @@ class ProtozoanKeyword(Base):
 
     def __repr__(self):
         return f"Protozoan_keyword(Protozoan_id={self.Protozoan_id},keyword={self.keyword},)"
+
+
+
+    
+
+
+class ProtozoanIdentifier(Base):
+    """
+    
+    """
+    __tablename__ = 'Protozoan_identifier'
+
+    Protozoan_id = Column(Integer(), ForeignKey('Protozoan.id'), primary_key=True)
+    identifier = Column(Text(), primary_key=True)
+    
+
+    def __repr__(self):
+        return f"Protozoan_identifier(Protozoan_id={self.Protozoan_id},identifier={self.identifier},)"
+
+
+
+    
+
+
+class ProtozoanIri(Base):
+    """
+    
+    """
+    __tablename__ = 'Protozoan_iri'
+
+    Protozoan_id = Column(Integer(), ForeignKey('Protozoan.id'), primary_key=True)
+    iri = Column(Text(), primary_key=True)
+    
+
+    def __repr__(self):
+        return f"Protozoan_iri(Protozoan_id={self.Protozoan_id},iri={self.iri},)"
 
 
 
@@ -5217,6 +7567,42 @@ class ViroidKeyword(Base):
     
 
 
+class ViroidIdentifier(Base):
+    """
+    
+    """
+    __tablename__ = 'Viroid_identifier'
+
+    Viroid_id = Column(Integer(), ForeignKey('Viroid.id'), primary_key=True)
+    identifier = Column(Text(), primary_key=True)
+    
+
+    def __repr__(self):
+        return f"Viroid_identifier(Viroid_id={self.Viroid_id},identifier={self.identifier},)"
+
+
+
+    
+
+
+class ViroidIri(Base):
+    """
+    
+    """
+    __tablename__ = 'Viroid_iri'
+
+    Viroid_id = Column(Integer(), ForeignKey('Viroid.id'), primary_key=True)
+    iri = Column(Text(), primary_key=True)
+    
+
+    def __repr__(self):
+        return f"Viroid_iri(Viroid_id={self.Viroid_id},iri={self.iri},)"
+
+
+
+    
+
+
 class PrionSuspectedEpidemiologicalOrigin(Base):
     """
     
@@ -5505,6 +7891,42 @@ class PrionKeyword(Base):
     
 
 
+class PrionIdentifier(Base):
+    """
+    
+    """
+    __tablename__ = 'Prion_identifier'
+
+    Prion_id = Column(Integer(), ForeignKey('Prion.id'), primary_key=True)
+    identifier = Column(Text(), primary_key=True)
+    
+
+    def __repr__(self):
+        return f"Prion_identifier(Prion_id={self.Prion_id},identifier={self.identifier},)"
+
+
+
+    
+
+
+class PrionIri(Base):
+    """
+    
+    """
+    __tablename__ = 'Prion_iri'
+
+    Prion_id = Column(Integer(), ForeignKey('Prion.id'), primary_key=True)
+    iri = Column(Text(), primary_key=True)
+    
+
+    def __repr__(self):
+        return f"Prion_iri(Prion_id={self.Prion_id},iri={self.iri},)"
+
+
+
+    
+
+
 class MaterialSafetyDataSheetKeyword(Base):
     """
     
@@ -5517,6 +7939,42 @@ class MaterialSafetyDataSheetKeyword(Base):
 
     def __repr__(self):
         return f"MaterialSafetyDataSheet_keyword(MaterialSafetyDataSheet_id={self.MaterialSafetyDataSheet_id},keyword={self.keyword},)"
+
+
+
+    
+
+
+class MaterialSafetyDataSheetIdentifier(Base):
+    """
+    
+    """
+    __tablename__ = 'MaterialSafetyDataSheet_identifier'
+
+    MaterialSafetyDataSheet_id = Column(Integer(), ForeignKey('MaterialSafetyDataSheet.id'), primary_key=True)
+    identifier = Column(Text(), primary_key=True)
+    
+
+    def __repr__(self):
+        return f"MaterialSafetyDataSheet_identifier(MaterialSafetyDataSheet_id={self.MaterialSafetyDataSheet_id},identifier={self.identifier},)"
+
+
+
+    
+
+
+class MaterialSafetyDataSheetIri(Base):
+    """
+    
+    """
+    __tablename__ = 'MaterialSafetyDataSheet_iri'
+
+    MaterialSafetyDataSheet_id = Column(Integer(), ForeignKey('MaterialSafetyDataSheet.id'), primary_key=True)
+    iri = Column(Text(), primary_key=True)
+    
+
+    def __repr__(self):
+        return f"MaterialSafetyDataSheet_iri(MaterialSafetyDataSheet_id={self.MaterialSafetyDataSheet_id},iri={self.iri},)"
 
 
 
@@ -5541,6 +7999,42 @@ class FileKeyword(Base):
     
 
 
+class FileIdentifier(Base):
+    """
+    
+    """
+    __tablename__ = 'File_identifier'
+
+    File_id = Column(Integer(), ForeignKey('File.id'), primary_key=True)
+    identifier = Column(Text(), primary_key=True)
+    
+
+    def __repr__(self):
+        return f"File_identifier(File_id={self.File_id},identifier={self.identifier},)"
+
+
+
+    
+
+
+class FileIri(Base):
+    """
+    
+    """
+    __tablename__ = 'File_iri'
+
+    File_id = Column(Integer(), ForeignKey('File.id'), primary_key=True)
+    iri = Column(Text(), primary_key=True)
+    
+
+    def __repr__(self):
+        return f"File_iri(File_id={self.File_id},iri={self.iri},)"
+
+
+
+    
+
+
 class DataKeyword(Base):
     """
     
@@ -5553,6 +8047,42 @@ class DataKeyword(Base):
 
     def __repr__(self):
         return f"Data_keyword(Data_id={self.Data_id},keyword={self.keyword},)"
+
+
+
+    
+
+
+class DataIdentifier(Base):
+    """
+    
+    """
+    __tablename__ = 'Data_identifier'
+
+    Data_id = Column(Integer(), ForeignKey('Data.id'), primary_key=True)
+    identifier = Column(Text(), primary_key=True)
+    
+
+    def __repr__(self):
+        return f"Data_identifier(Data_id={self.Data_id},identifier={self.identifier},)"
+
+
+
+    
+
+
+class DataIri(Base):
+    """
+    
+    """
+    __tablename__ = 'Data_iri'
+
+    Data_id = Column(Integer(), ForeignKey('Data.id'), primary_key=True)
+    iri = Column(Text(), primary_key=True)
+    
+
+    def __repr__(self):
+        return f"Data_iri(Data_id={self.Data_id},iri={self.iri},)"
 
 
 
@@ -5577,6 +8107,42 @@ class DocumentKeyword(Base):
     
 
 
+class DocumentIdentifier(Base):
+    """
+    
+    """
+    __tablename__ = 'Document_identifier'
+
+    Document_id = Column(Integer(), ForeignKey('Document.id'), primary_key=True)
+    identifier = Column(Text(), primary_key=True)
+    
+
+    def __repr__(self):
+        return f"Document_identifier(Document_id={self.Document_id},identifier={self.identifier},)"
+
+
+
+    
+
+
+class DocumentIri(Base):
+    """
+    
+    """
+    __tablename__ = 'Document_iri'
+
+    Document_id = Column(Integer(), ForeignKey('Document.id'), primary_key=True)
+    iri = Column(Text(), primary_key=True)
+    
+
+    def __repr__(self):
+        return f"Document_iri(Document_id={self.Document_id},iri={self.iri},)"
+
+
+
+    
+
+
 class AudioKeyword(Base):
     """
     
@@ -5589,6 +8155,42 @@ class AudioKeyword(Base):
 
     def __repr__(self):
         return f"Audio_keyword(Audio_id={self.Audio_id},keyword={self.keyword},)"
+
+
+
+    
+
+
+class AudioIdentifier(Base):
+    """
+    
+    """
+    __tablename__ = 'Audio_identifier'
+
+    Audio_id = Column(Integer(), ForeignKey('Audio.id'), primary_key=True)
+    identifier = Column(Text(), primary_key=True)
+    
+
+    def __repr__(self):
+        return f"Audio_identifier(Audio_id={self.Audio_id},identifier={self.identifier},)"
+
+
+
+    
+
+
+class AudioIri(Base):
+    """
+    
+    """
+    __tablename__ = 'Audio_iri'
+
+    Audio_id = Column(Integer(), ForeignKey('Audio.id'), primary_key=True)
+    iri = Column(Text(), primary_key=True)
+    
+
+    def __repr__(self):
+        return f"Audio_iri(Audio_id={self.Audio_id},iri={self.iri},)"
 
 
 
@@ -5613,6 +8215,42 @@ class VideoKeyword(Base):
     
 
 
+class VideoIdentifier(Base):
+    """
+    
+    """
+    __tablename__ = 'Video_identifier'
+
+    Video_id = Column(Integer(), ForeignKey('Video.id'), primary_key=True)
+    identifier = Column(Text(), primary_key=True)
+    
+
+    def __repr__(self):
+        return f"Video_identifier(Video_id={self.Video_id},identifier={self.identifier},)"
+
+
+
+    
+
+
+class VideoIri(Base):
+    """
+    
+    """
+    __tablename__ = 'Video_iri'
+
+    Video_id = Column(Integer(), ForeignKey('Video.id'), primary_key=True)
+    iri = Column(Text(), primary_key=True)
+    
+
+    def __repr__(self):
+        return f"Video_iri(Video_id={self.Video_id},iri={self.iri},)"
+
+
+
+    
+
+
 class ImageKeyword(Base):
     """
     
@@ -5625,6 +8263,42 @@ class ImageKeyword(Base):
 
     def __repr__(self):
         return f"Image_keyword(Image_id={self.Image_id},keyword={self.keyword},)"
+
+
+
+    
+
+
+class ImageIdentifier(Base):
+    """
+    
+    """
+    __tablename__ = 'Image_identifier'
+
+    Image_id = Column(Integer(), ForeignKey('Image.id'), primary_key=True)
+    identifier = Column(Text(), primary_key=True)
+    
+
+    def __repr__(self):
+        return f"Image_identifier(Image_id={self.Image_id},identifier={self.identifier},)"
+
+
+
+    
+
+
+class ImageIri(Base):
+    """
+    
+    """
+    __tablename__ = 'Image_iri'
+
+    Image_id = Column(Integer(), ForeignKey('Image.id'), primary_key=True)
+    iri = Column(Text(), primary_key=True)
+    
+
+    def __repr__(self):
+        return f"Image_iri(Image_id={self.Image_id},iri={self.iri},)"
 
 
 
@@ -5649,6 +8323,42 @@ class ContactPointKeyword(Base):
     
 
 
+class ContactPointIdentifier(Base):
+    """
+    
+    """
+    __tablename__ = 'ContactPoint_identifier'
+
+    ContactPoint_id = Column(Integer(), ForeignKey('ContactPoint.id'), primary_key=True)
+    identifier = Column(Text(), primary_key=True)
+    
+
+    def __repr__(self):
+        return f"ContactPoint_identifier(ContactPoint_id={self.ContactPoint_id},identifier={self.identifier},)"
+
+
+
+    
+
+
+class ContactPointIri(Base):
+    """
+    
+    """
+    __tablename__ = 'ContactPoint_iri'
+
+    ContactPoint_id = Column(Integer(), ForeignKey('ContactPoint.id'), primary_key=True)
+    iri = Column(Text(), primary_key=True)
+    
+
+    def __repr__(self):
+        return f"ContactPoint_iri(ContactPoint_id={self.ContactPoint_id},iri={self.iri},)"
+
+
+
+    
+
+
 class LicenseKeyword(Base):
     """
     
@@ -5661,6 +8371,42 @@ class LicenseKeyword(Base):
 
     def __repr__(self):
         return f"License_keyword(License_id={self.License_id},keyword={self.keyword},)"
+
+
+
+    
+
+
+class LicenseIdentifier(Base):
+    """
+    
+    """
+    __tablename__ = 'License_identifier'
+
+    License_id = Column(Integer(), ForeignKey('License.id'), primary_key=True)
+    identifier = Column(Text(), primary_key=True)
+    
+
+    def __repr__(self):
+        return f"License_identifier(License_id={self.License_id},identifier={self.identifier},)"
+
+
+
+    
+
+
+class LicenseIri(Base):
+    """
+    
+    """
+    __tablename__ = 'License_iri'
+
+    License_id = Column(Integer(), ForeignKey('License.id'), primary_key=True)
+    iri = Column(Text(), primary_key=True)
+    
+
+    def __repr__(self):
+        return f"License_iri(License_id={self.License_id},iri={self.iri},)"
 
 
 
@@ -5703,6 +8449,42 @@ class CertificationKeyword(Base):
     
 
 
+class CertificationIdentifier(Base):
+    """
+    
+    """
+    __tablename__ = 'Certification_identifier'
+
+    Certification_id = Column(Integer(), ForeignKey('Certification.id'), primary_key=True)
+    identifier = Column(Text(), primary_key=True)
+    
+
+    def __repr__(self):
+        return f"Certification_identifier(Certification_id={self.Certification_id},identifier={self.identifier},)"
+
+
+
+    
+
+
+class CertificationIri(Base):
+    """
+    
+    """
+    __tablename__ = 'Certification_iri'
+
+    Certification_id = Column(Integer(), ForeignKey('Certification.id'), primary_key=True)
+    iri = Column(Text(), primary_key=True)
+    
+
+    def __repr__(self):
+        return f"Certification_iri(Certification_id={self.Certification_id},iri={self.iri},)"
+
+
+
+    
+
+
 class Dataset(Resource):
     """
     A collection of data, published or curated by a single agent, and available for access
@@ -5720,6 +8502,16 @@ class Dataset(Resource):
     keyword_rel = relationship( "DatasetKeyword" )
     keyword = association_proxy("keyword_rel", "keyword",
                                   creator=lambda x_: DatasetKeyword(keyword=x_))
+    
+    
+    identifier_rel = relationship( "DatasetIdentifier" )
+    identifier = association_proxy("identifier_rel", "identifier",
+                                  creator=lambda x_: DatasetIdentifier(identifier=x_))
+    
+    
+    iri_rel = relationship( "DatasetIri" )
+    iri = association_proxy("iri_rel", "iri",
+                                  creator=lambda x_: DatasetIri(iri=x_))
     
 
     def __repr__(self):
@@ -5757,6 +8549,16 @@ class DataService(Resource):
     keyword = association_proxy("keyword_rel", "keyword",
                                   creator=lambda x_: DataServiceKeyword(keyword=x_))
     
+    
+    identifier_rel = relationship( "DataServiceIdentifier" )
+    identifier = association_proxy("identifier_rel", "identifier",
+                                  creator=lambda x_: DataServiceIdentifier(identifier=x_))
+    
+    
+    iri_rel = relationship( "DataServiceIri" )
+    iri = association_proxy("iri_rel", "iri",
+                                  creator=lambda x_: DataServiceIri(iri=x_))
+    
 
     def __repr__(self):
         return f"DataService(id={self.id},title={self.title},description={self.description},endpointUrl={self.endpointUrl},dateIssued={self.dateIssued},dateModified={self.dateModified},)"
@@ -5791,6 +8593,16 @@ class Version(Resource):
     keyword_rel = relationship( "VersionKeyword" )
     keyword = association_proxy("keyword_rel", "keyword",
                                   creator=lambda x_: VersionKeyword(keyword=x_))
+    
+    
+    identifier_rel = relationship( "VersionIdentifier" )
+    identifier = association_proxy("identifier_rel", "identifier",
+                                  creator=lambda x_: VersionIdentifier(identifier=x_))
+    
+    
+    iri_rel = relationship( "VersionIri" )
+    iri = association_proxy("iri_rel", "iri",
+                                  creator=lambda x_: VersionIri(iri=x_))
     
 
     def __repr__(self):
@@ -5838,6 +8650,16 @@ class PathogenIdentification(Resource):
     keyword = association_proxy("keyword_rel", "keyword",
                                   creator=lambda x_: PathogenIdentificationKeyword(keyword=x_))
     
+    
+    identifier_rel = relationship( "PathogenIdentificationIdentifier" )
+    identifier = association_proxy("identifier_rel", "identifier",
+                                  creator=lambda x_: PathogenIdentificationIdentifier(identifier=x_))
+    
+    
+    iri_rel = relationship( "PathogenIdentificationIri" )
+    iri = association_proxy("iri_rel", "iri",
+                                  creator=lambda x_: PathogenIdentificationIri(iri=x_))
+    
 
     def __repr__(self):
         return f"PathogenIdentification(id={self.id},pathogenType={self.pathogenType},subspecies={self.subspecies},strain={self.strain},isolate={self.isolate},genotype={self.genotype},serotype={self.serotype},dateIssued={self.dateIssued},dateModified={self.dateModified},taxon_id={self.taxon_id},pathogenName_id={self.pathogenName_id},variant_id={self.variant_id},)"
@@ -5874,6 +8696,16 @@ class Publication(Resource):
     keyword = association_proxy("keyword_rel", "keyword",
                                   creator=lambda x_: PublicationKeyword(keyword=x_))
     
+    
+    identifier_rel = relationship( "PublicationIdentifier" )
+    identifier = association_proxy("identifier_rel", "identifier",
+                                  creator=lambda x_: PublicationIdentifier(identifier=x_))
+    
+    
+    iri_rel = relationship( "PublicationIri" )
+    iri = association_proxy("iri_rel", "iri",
+                                  creator=lambda x_: PublicationIri(iri=x_))
+    
 
     def __repr__(self):
         return f"Publication(id={self.id},title={self.title},authors={self.authors},abstract={self.abstract},dateIssued={self.dateIssued},dateModified={self.dateModified},doi_id={self.doi_id},journal_id={self.journal_id},)"
@@ -5908,6 +8740,16 @@ class Term(Resource):
     keyword = association_proxy("keyword_rel", "keyword",
                                   creator=lambda x_: TermKeyword(keyword=x_))
     
+    
+    identifier_rel = relationship( "TermIdentifier" )
+    identifier = association_proxy("identifier_rel", "identifier",
+                                  creator=lambda x_: TermIdentifier(identifier=x_))
+    
+    
+    iri_rel = relationship( "TermIri" )
+    iri = association_proxy("iri_rel", "iri",
+                                  creator=lambda x_: TermIri(iri=x_))
+    
 
     def __repr__(self):
         return f"Term(id={self.id},title={self.title},description={self.description},weight={self.weight},dateIssued={self.dateIssued},dateModified={self.dateModified},inVocabulary_id={self.inVocabulary_id},)"
@@ -5940,6 +8782,16 @@ class ExternalRelatedReference(Resource):
     keyword_rel = relationship( "ExternalRelatedReferenceKeyword" )
     keyword = association_proxy("keyword_rel", "keyword",
                                   creator=lambda x_: ExternalRelatedReferenceKeyword(keyword=x_))
+    
+    
+    identifier_rel = relationship( "ExternalRelatedReferenceIdentifier" )
+    identifier = association_proxy("identifier_rel", "identifier",
+                                  creator=lambda x_: ExternalRelatedReferenceIdentifier(identifier=x_))
+    
+    
+    iri_rel = relationship( "ExternalRelatedReferenceIri" )
+    iri = association_proxy("iri_rel", "iri",
+                                  creator=lambda x_: ExternalRelatedReferenceIri(iri=x_))
     
 
     def __repr__(self):
@@ -5975,6 +8827,16 @@ class Sequence(Resource):
     keyword = association_proxy("keyword_rel", "keyword",
                                   creator=lambda x_: SequenceKeyword(keyword=x_))
     
+    
+    identifier_rel = relationship( "SequenceIdentifier" )
+    identifier = association_proxy("identifier_rel", "identifier",
+                                  creator=lambda x_: SequenceIdentifier(identifier=x_))
+    
+    
+    iri_rel = relationship( "SequenceIri" )
+    iri = association_proxy("iri_rel", "iri",
+                                  creator=lambda x_: SequenceIri(iri=x_))
+    
 
     def __repr__(self):
         return f"Sequence(id={self.id},sequenceFasta={self.sequenceFasta},dateIssued={self.dateIssued},dateModified={self.dateModified},)"
@@ -6005,6 +8867,16 @@ class SequenceReference(Resource):
     keyword_rel = relationship( "SequenceReferenceKeyword" )
     keyword = association_proxy("keyword_rel", "keyword",
                                   creator=lambda x_: SequenceReferenceKeyword(keyword=x_))
+    
+    
+    identifier_rel = relationship( "SequenceReferenceIdentifier" )
+    identifier = association_proxy("identifier_rel", "identifier",
+                                  creator=lambda x_: SequenceReferenceIdentifier(identifier=x_))
+    
+    
+    iri_rel = relationship( "SequenceReferenceIri" )
+    iri = association_proxy("iri_rel", "iri",
+                                  creator=lambda x_: SequenceReferenceIri(iri=x_))
     
 
     def __repr__(self):
@@ -6042,6 +8914,16 @@ class PersonOrOrganization(Resource):
     keyword = association_proxy("keyword_rel", "keyword",
                                   creator=lambda x_: PersonOrOrganizationKeyword(keyword=x_))
     
+    
+    identifier_rel = relationship( "PersonOrOrganizationIdentifier" )
+    identifier = association_proxy("identifier_rel", "identifier",
+                                  creator=lambda x_: PersonOrOrganizationIdentifier(identifier=x_))
+    
+    
+    iri_rel = relationship( "PersonOrOrganizationIri" )
+    iri = association_proxy("iri_rel", "iri",
+                                  creator=lambda x_: PersonOrOrganizationIri(iri=x_))
+    
 
     def __repr__(self):
         return f"PersonOrOrganization(id={self.id},name={self.name},description={self.description},homePage={self.homePage},dateIssued={self.dateIssued},dateModified={self.dateModified},contactPoint_id={self.contactPoint_id},logo_id={self.logo_id},)"
@@ -6077,6 +8959,16 @@ class BiologicalMaterialOrigin(Resource):
     keyword = association_proxy("keyword_rel", "keyword",
                                   creator=lambda x_: BiologicalMaterialOriginKeyword(keyword=x_))
     
+    
+    identifier_rel = relationship( "BiologicalMaterialOriginIdentifier" )
+    identifier = association_proxy("identifier_rel", "identifier",
+                                  creator=lambda x_: BiologicalMaterialOriginIdentifier(identifier=x_))
+    
+    
+    iri_rel = relationship( "BiologicalMaterialOriginIri" )
+    iri = association_proxy("iri_rel", "iri",
+                                  creator=lambda x_: BiologicalMaterialOriginIri(iri=x_))
+    
 
     def __repr__(self):
         return f"BiologicalMaterialOrigin(id={self.id},recombinantMaterial={self.recombinantMaterial},biologicalSourceType={self.biologicalSourceType},dateIssued={self.dateIssued},dateModified={self.dateModified},)"
@@ -6108,6 +9000,16 @@ class BiologicalPartOrigin(Resource):
     keyword_rel = relationship( "BiologicalPartOriginKeyword" )
     keyword = association_proxy("keyword_rel", "keyword",
                                   creator=lambda x_: BiologicalPartOriginKeyword(keyword=x_))
+    
+    
+    identifier_rel = relationship( "BiologicalPartOriginIdentifier" )
+    identifier = association_proxy("identifier_rel", "identifier",
+                                  creator=lambda x_: BiologicalPartOriginIdentifier(identifier=x_))
+    
+    
+    iri_rel = relationship( "BiologicalPartOriginIri" )
+    iri = association_proxy("iri_rel", "iri",
+                                  creator=lambda x_: BiologicalPartOriginIri(iri=x_))
     
 
     def __repr__(self):
@@ -6142,6 +9044,16 @@ class RecombinantPartIdentification(Resource):
     keyword_rel = relationship( "RecombinantPartIdentificationKeyword" )
     keyword = association_proxy("keyword_rel", "keyword",
                                   creator=lambda x_: RecombinantPartIdentificationKeyword(keyword=x_))
+    
+    
+    identifier_rel = relationship( "RecombinantPartIdentificationIdentifier" )
+    identifier = association_proxy("identifier_rel", "identifier",
+                                  creator=lambda x_: RecombinantPartIdentificationIdentifier(identifier=x_))
+    
+    
+    iri_rel = relationship( "RecombinantPartIdentificationIri" )
+    iri = association_proxy("iri_rel", "iri",
+                                  creator=lambda x_: RecombinantPartIdentificationIri(iri=x_))
     
 
     def __repr__(self):
@@ -6188,6 +9100,16 @@ class MaterialSafetyDataSheet(Resource):
     keyword = association_proxy("keyword_rel", "keyword",
                                   creator=lambda x_: MaterialSafetyDataSheetKeyword(keyword=x_))
     
+    
+    identifier_rel = relationship( "MaterialSafetyDataSheetIdentifier" )
+    identifier = association_proxy("identifier_rel", "identifier",
+                                  creator=lambda x_: MaterialSafetyDataSheetIdentifier(identifier=x_))
+    
+    
+    iri_rel = relationship( "MaterialSafetyDataSheetIri" )
+    iri = association_proxy("iri_rel", "iri",
+                                  creator=lambda x_: MaterialSafetyDataSheetIri(iri=x_))
+    
 
     def __repr__(self):
         return f"MaterialSafetyDataSheet(id={self.id},physicalChemicalProperties={self.physicalChemicalProperties},hazardsIdentification={self.hazardsIdentification},firstAidMeasures={self.firstAidMeasures},fireFightingMeasures={self.fireFightingMeasures},accidentalReleaseMeasures={self.accidentalReleaseMeasures},handlingAndStorage={self.handlingAndStorage},exposureControlsPersonalProtection={self.exposureControlsPersonalProtection},stabilityAndReactivity={self.stabilityAndReactivity},toxicologicalInformation={self.toxicologicalInformation},ecologicalInformation={self.ecologicalInformation},disposalConsiderations={self.disposalConsiderations},transportInformation={self.transportInformation},regulatoryInformation={self.regulatoryInformation},furtherInformation={self.furtherInformation},dateIssued={self.dateIssued},dateModified={self.dateModified},materialSafetyContact_id={self.materialSafetyContact_id},)"
@@ -6222,6 +9144,16 @@ class File(Resource):
     keyword_rel = relationship( "FileKeyword" )
     keyword = association_proxy("keyword_rel", "keyword",
                                   creator=lambda x_: FileKeyword(keyword=x_))
+    
+    
+    identifier_rel = relationship( "FileIdentifier" )
+    identifier = association_proxy("identifier_rel", "identifier",
+                                  creator=lambda x_: FileIdentifier(identifier=x_))
+    
+    
+    iri_rel = relationship( "FileIri" )
+    iri = association_proxy("iri_rel", "iri",
+                                  creator=lambda x_: FileIri(iri=x_))
     
 
     def __repr__(self):
@@ -6263,6 +9195,16 @@ class ContactPoint(Resource):
     keyword = association_proxy("keyword_rel", "keyword",
                                   creator=lambda x_: ContactPointKeyword(keyword=x_))
     
+    
+    identifier_rel = relationship( "ContactPointIdentifier" )
+    identifier = association_proxy("identifier_rel", "identifier",
+                                  creator=lambda x_: ContactPointIdentifier(identifier=x_))
+    
+    
+    iri_rel = relationship( "ContactPointIri" )
+    iri = association_proxy("iri_rel", "iri",
+                                  creator=lambda x_: ContactPointIri(iri=x_))
+    
 
     def __repr__(self):
         return f"ContactPoint(id={self.id},name={self.name},description={self.description},email={self.email},telephone={self.telephone},streetAddress={self.streetAddress},addressLocality={self.addressLocality},addressRegion={self.addressRegion},postalCode={self.postalCode},orcidId={self.orcidId},dateIssued={self.dateIssued},dateModified={self.dateModified},addressCountry_id={self.addressCountry_id},)"
@@ -6297,6 +9239,16 @@ class License(Resource):
     keyword_rel = relationship( "LicenseKeyword" )
     keyword = association_proxy("keyword_rel", "keyword",
                                   creator=lambda x_: LicenseKeyword(keyword=x_))
+    
+    
+    identifier_rel = relationship( "LicenseIdentifier" )
+    identifier = association_proxy("identifier_rel", "identifier",
+                                  creator=lambda x_: LicenseIdentifier(identifier=x_))
+    
+    
+    iri_rel = relationship( "LicenseIri" )
+    iri = association_proxy("iri_rel", "iri",
+                                  creator=lambda x_: LicenseIri(iri=x_))
     
 
     def __repr__(self):
@@ -6336,6 +9288,16 @@ class Certification(Resource):
     keyword = association_proxy("keyword_rel", "keyword",
                                   creator=lambda x_: CertificationKeyword(keyword=x_))
     
+    
+    identifier_rel = relationship( "CertificationIdentifier" )
+    identifier = association_proxy("identifier_rel", "identifier",
+                                  creator=lambda x_: CertificationIdentifier(identifier=x_))
+    
+    
+    iri_rel = relationship( "CertificationIri" )
+    iri = association_proxy("iri_rel", "iri",
+                                  creator=lambda x_: CertificationIri(iri=x_))
+    
 
     def __repr__(self):
         return f"Certification(id={self.id},title={self.title},description={self.description},resourceUrl={self.resourceUrl},dateIssued={self.dateIssued},dateModified={self.dateModified},logo_id={self.logo_id},)"
@@ -6367,6 +9329,16 @@ class Catalogue(Dataset):
     keyword_rel = relationship( "CatalogueKeyword" )
     keyword = association_proxy("keyword_rel", "keyword",
                                   creator=lambda x_: CatalogueKeyword(keyword=x_))
+    
+    
+    identifier_rel = relationship( "CatalogueIdentifier" )
+    identifier = association_proxy("identifier_rel", "identifier",
+                                  creator=lambda x_: CatalogueIdentifier(identifier=x_))
+    
+    
+    iri_rel = relationship( "CatalogueIri" )
+    iri = association_proxy("iri_rel", "iri",
+                                  creator=lambda x_: CatalogueIri(iri=x_))
     
 
     def __repr__(self):
@@ -6417,6 +9389,16 @@ class DataProvider(DataService):
     keyword = association_proxy("keyword_rel", "keyword",
                                   creator=lambda x_: DataProviderKeyword(keyword=x_))
     
+    
+    identifier_rel = relationship( "DataProviderIdentifier" )
+    identifier = association_proxy("identifier_rel", "identifier",
+                                  creator=lambda x_: DataProviderIdentifier(identifier=x_))
+    
+    
+    iri_rel = relationship( "DataProviderIri" )
+    iri = association_proxy("iri_rel", "iri",
+                                  creator=lambda x_: DataProviderIri(iri=x_))
+    
 
     def __repr__(self):
         return f"DataProvider(id={self.id},loginRequestMethod={self.loginRequestMethod},loginUrl={self.loginUrl},loginTokenName={self.loginTokenName},queryMethod={self.queryMethod},contentType={self.contentType},weight={self.weight},title={self.title},description={self.description},endpointUrl={self.endpointUrl},dateIssued={self.dateIssued},dateModified={self.dateModified},license_id={self.license_id},)"
@@ -6459,6 +9441,16 @@ class CommonName(Term):
     keyword_rel = relationship( "CommonNameKeyword" )
     keyword = association_proxy("keyword_rel", "keyword",
                                   creator=lambda x_: CommonNameKeyword(keyword=x_))
+    
+    
+    identifier_rel = relationship( "CommonNameIdentifier" )
+    identifier = association_proxy("identifier_rel", "identifier",
+                                  creator=lambda x_: CommonNameIdentifier(identifier=x_))
+    
+    
+    iri_rel = relationship( "CommonNameIri" )
+    iri = association_proxy("iri_rel", "iri",
+                                  creator=lambda x_: CommonNameIri(iri=x_))
     
 
     def __repr__(self):
@@ -6503,6 +9495,16 @@ class AlternateName(Term):
     keyword = association_proxy("keyword_rel", "keyword",
                                   creator=lambda x_: AlternateNameKeyword(keyword=x_))
     
+    
+    identifier_rel = relationship( "AlternateNameIdentifier" )
+    identifier = association_proxy("identifier_rel", "identifier",
+                                  creator=lambda x_: AlternateNameIdentifier(identifier=x_))
+    
+    
+    iri_rel = relationship( "AlternateNameIri" )
+    iri = association_proxy("iri_rel", "iri",
+                                  creator=lambda x_: AlternateNameIri(iri=x_))
+    
 
     def __repr__(self):
         return f"AlternateName(id={self.id},title={self.title},description={self.description},weight={self.weight},dateIssued={self.dateIssued},dateModified={self.dateModified},inVocabulary_id={self.inVocabulary_id},)"
@@ -6536,6 +9538,16 @@ class RiskGroup(Term):
     keyword_rel = relationship( "RiskGroupKeyword" )
     keyword = association_proxy("keyword_rel", "keyword",
                                   creator=lambda x_: RiskGroupKeyword(keyword=x_))
+    
+    
+    identifier_rel = relationship( "RiskGroupIdentifier" )
+    identifier = association_proxy("identifier_rel", "identifier",
+                                  creator=lambda x_: RiskGroupIdentifier(identifier=x_))
+    
+    
+    iri_rel = relationship( "RiskGroupIri" )
+    iri = association_proxy("iri_rel", "iri",
+                                  creator=lambda x_: RiskGroupIri(iri=x_))
     
 
     def __repr__(self):
@@ -6571,6 +9583,16 @@ class Doi(Term):
     keyword = association_proxy("keyword_rel", "keyword",
                                   creator=lambda x_: DoiKeyword(keyword=x_))
     
+    
+    identifier_rel = relationship( "DoiIdentifier" )
+    identifier = association_proxy("identifier_rel", "identifier",
+                                  creator=lambda x_: DoiIdentifier(identifier=x_))
+    
+    
+    iri_rel = relationship( "DoiIri" )
+    iri = association_proxy("iri_rel", "iri",
+                                  creator=lambda x_: DoiIri(iri=x_))
+    
 
     def __repr__(self):
         return f"Doi(id={self.id},title={self.title},description={self.description},weight={self.weight},dateIssued={self.dateIssued},dateModified={self.dateModified},inVocabulary_id={self.inVocabulary_id},)"
@@ -6604,6 +9626,16 @@ class Journal(Term):
     keyword_rel = relationship( "JournalKeyword" )
     keyword = association_proxy("keyword_rel", "keyword",
                                   creator=lambda x_: JournalKeyword(keyword=x_))
+    
+    
+    identifier_rel = relationship( "JournalIdentifier" )
+    identifier = association_proxy("identifier_rel", "identifier",
+                                  creator=lambda x_: JournalIdentifier(identifier=x_))
+    
+    
+    iri_rel = relationship( "JournalIri" )
+    iri = association_proxy("iri_rel", "iri",
+                                  creator=lambda x_: JournalIri(iri=x_))
     
 
     def __repr__(self):
@@ -6639,6 +9671,16 @@ class PdbReference(Term):
     keyword = association_proxy("keyword_rel", "keyword",
                                   creator=lambda x_: PdbReferenceKeyword(keyword=x_))
     
+    
+    identifier_rel = relationship( "PdbReferenceIdentifier" )
+    identifier = association_proxy("identifier_rel", "identifier",
+                                  creator=lambda x_: PdbReferenceIdentifier(identifier=x_))
+    
+    
+    iri_rel = relationship( "PdbReferenceIri" )
+    iri = association_proxy("iri_rel", "iri",
+                                  creator=lambda x_: PdbReferenceIri(iri=x_))
+    
 
     def __repr__(self):
         return f"PdbReference(id={self.id},title={self.title},description={self.description},weight={self.weight},dateIssued={self.dateIssued},dateModified={self.dateModified},inVocabulary_id={self.inVocabulary_id},)"
@@ -6672,6 +9714,16 @@ class Keyword(Term):
     keyword_rel = relationship( "KeywordKeyword" )
     keyword = association_proxy("keyword_rel", "keyword",
                                   creator=lambda x_: KeywordKeyword(keyword=x_))
+    
+    
+    identifier_rel = relationship( "KeywordIdentifier" )
+    identifier = association_proxy("identifier_rel", "identifier",
+                                  creator=lambda x_: KeywordIdentifier(identifier=x_))
+    
+    
+    iri_rel = relationship( "KeywordIri" )
+    iri = association_proxy("iri_rel", "iri",
+                                  creator=lambda x_: KeywordIri(iri=x_))
     
 
     def __repr__(self):
@@ -6707,6 +9759,16 @@ class TagSequence(Term):
     keyword = association_proxy("keyword_rel", "keyword",
                                   creator=lambda x_: TagSequenceKeyword(keyword=x_))
     
+    
+    identifier_rel = relationship( "TagSequenceIdentifier" )
+    identifier = association_proxy("identifier_rel", "identifier",
+                                  creator=lambda x_: TagSequenceIdentifier(identifier=x_))
+    
+    
+    iri_rel = relationship( "TagSequenceIri" )
+    iri = association_proxy("iri_rel", "iri",
+                                  creator=lambda x_: TagSequenceIri(iri=x_))
+    
 
     def __repr__(self):
         return f"TagSequence(id={self.id},title={self.title},description={self.description},weight={self.weight},dateIssued={self.dateIssued},dateModified={self.dateModified},inVocabulary_id={self.inVocabulary_id},)"
@@ -6740,6 +9802,16 @@ class SpecialFeature(Term):
     keyword_rel = relationship( "SpecialFeatureKeyword" )
     keyword = association_proxy("keyword_rel", "keyword",
                                   creator=lambda x_: SpecialFeatureKeyword(keyword=x_))
+    
+    
+    identifier_rel = relationship( "SpecialFeatureIdentifier" )
+    identifier = association_proxy("identifier_rel", "identifier",
+                                  creator=lambda x_: SpecialFeatureIdentifier(identifier=x_))
+    
+    
+    iri_rel = relationship( "SpecialFeatureIri" )
+    iri = association_proxy("iri_rel", "iri",
+                                  creator=lambda x_: SpecialFeatureIri(iri=x_))
     
 
     def __repr__(self):
@@ -6775,6 +9847,16 @@ class ExpressionVector(Term):
     keyword = association_proxy("keyword_rel", "keyword",
                                   creator=lambda x_: ExpressionVectorKeyword(keyword=x_))
     
+    
+    identifier_rel = relationship( "ExpressionVectorIdentifier" )
+    identifier = association_proxy("identifier_rel", "identifier",
+                                  creator=lambda x_: ExpressionVectorIdentifier(identifier=x_))
+    
+    
+    iri_rel = relationship( "ExpressionVectorIri" )
+    iri = association_proxy("iri_rel", "iri",
+                                  creator=lambda x_: ExpressionVectorIri(iri=x_))
+    
 
     def __repr__(self):
         return f"ExpressionVector(id={self.id},title={self.title},description={self.description},weight={self.weight},dateIssued={self.dateIssued},dateModified={self.dateModified},inVocabulary_id={self.inVocabulary_id},)"
@@ -6808,6 +9890,16 @@ class PlasmidSelection(Term):
     keyword_rel = relationship( "PlasmidSelectionKeyword" )
     keyword = association_proxy("keyword_rel", "keyword",
                                   creator=lambda x_: PlasmidSelectionKeyword(keyword=x_))
+    
+    
+    identifier_rel = relationship( "PlasmidSelectionIdentifier" )
+    identifier = association_proxy("identifier_rel", "identifier",
+                                  creator=lambda x_: PlasmidSelectionIdentifier(identifier=x_))
+    
+    
+    iri_rel = relationship( "PlasmidSelectionIri" )
+    iri = association_proxy("iri_rel", "iri",
+                                  creator=lambda x_: PlasmidSelectionIri(iri=x_))
     
 
     def __repr__(self):
@@ -6843,6 +9935,16 @@ class PropagationHost(Term):
     keyword = association_proxy("keyword_rel", "keyword",
                                   creator=lambda x_: PropagationHostKeyword(keyword=x_))
     
+    
+    identifier_rel = relationship( "PropagationHostIdentifier" )
+    identifier = association_proxy("identifier_rel", "identifier",
+                                  creator=lambda x_: PropagationHostIdentifier(identifier=x_))
+    
+    
+    iri_rel = relationship( "PropagationHostIri" )
+    iri = association_proxy("iri_rel", "iri",
+                                  creator=lambda x_: PropagationHostIri(iri=x_))
+    
 
     def __repr__(self):
         return f"PropagationHost(id={self.id},title={self.title},description={self.description},weight={self.weight},dateIssued={self.dateIssued},dateModified={self.dateModified},inVocabulary_id={self.inVocabulary_id},)"
@@ -6877,6 +9979,16 @@ class TransmissionMethod(Term):
     keyword = association_proxy("keyword_rel", "keyword",
                                   creator=lambda x_: TransmissionMethodKeyword(keyword=x_))
     
+    
+    identifier_rel = relationship( "TransmissionMethodIdentifier" )
+    identifier = association_proxy("identifier_rel", "identifier",
+                                  creator=lambda x_: TransmissionMethodIdentifier(identifier=x_))
+    
+    
+    iri_rel = relationship( "TransmissionMethodIri" )
+    iri = association_proxy("iri_rel", "iri",
+                                  creator=lambda x_: TransmissionMethodIri(iri=x_))
+    
 
     def __repr__(self):
         return f"TransmissionMethod(id={self.id},title={self.title},description={self.description},weight={self.weight},dateIssued={self.dateIssued},dateModified={self.dateModified},inVocabulary_id={self.inVocabulary_id},)"
@@ -6910,6 +10022,16 @@ class ProductionCellLine(Term):
     keyword_rel = relationship( "ProductionCellLineKeyword" )
     keyword = association_proxy("keyword_rel", "keyword",
                                   creator=lambda x_: ProductionCellLineKeyword(keyword=x_))
+    
+    
+    identifier_rel = relationship( "ProductionCellLineIdentifier" )
+    identifier = association_proxy("identifier_rel", "identifier",
+                                  creator=lambda x_: ProductionCellLineIdentifier(identifier=x_))
+    
+    
+    iri_rel = relationship( "ProductionCellLineIri" )
+    iri = association_proxy("iri_rel", "iri",
+                                  creator=lambda x_: ProductionCellLineIri(iri=x_))
     
 
     def __repr__(self):
@@ -6947,6 +10069,16 @@ class ProductCategory(Term):
     keyword = association_proxy("keyword_rel", "keyword",
                                   creator=lambda x_: ProductCategoryKeyword(keyword=x_))
     
+    
+    identifier_rel = relationship( "ProductCategoryIdentifier" )
+    identifier = association_proxy("identifier_rel", "identifier",
+                                  creator=lambda x_: ProductCategoryIdentifier(identifier=x_))
+    
+    
+    iri_rel = relationship( "ProductCategoryIri" )
+    iri = association_proxy("iri_rel", "iri",
+                                  creator=lambda x_: ProductCategoryIri(iri=x_))
+    
 
     def __repr__(self):
         return f"ProductCategory(id={self.id},title={self.title},description={self.description},weight={self.weight},dateIssued={self.dateIssued},dateModified={self.dateModified},parentCategory_id={self.parentCategory_id},inVocabulary_id={self.inVocabulary_id},)"
@@ -6981,6 +10113,16 @@ class IsolationHost(Term):
     keyword = association_proxy("keyword_rel", "keyword",
                                   creator=lambda x_: IsolationHostKeyword(keyword=x_))
     
+    
+    identifier_rel = relationship( "IsolationHostIdentifier" )
+    identifier = association_proxy("identifier_rel", "identifier",
+                                  creator=lambda x_: IsolationHostIdentifier(identifier=x_))
+    
+    
+    iri_rel = relationship( "IsolationHostIri" )
+    iri = association_proxy("iri_rel", "iri",
+                                  creator=lambda x_: IsolationHostIri(iri=x_))
+    
 
     def __repr__(self):
         return f"IsolationHost(id={self.id},title={self.title},description={self.description},weight={self.weight},dateIssued={self.dateIssued},dateModified={self.dateModified},inVocabulary_id={self.inVocabulary_id},)"
@@ -7014,6 +10156,16 @@ class GeographicalOrigin(Term):
     keyword_rel = relationship( "GeographicalOriginKeyword" )
     keyword = association_proxy("keyword_rel", "keyword",
                                   creator=lambda x_: GeographicalOriginKeyword(keyword=x_))
+    
+    
+    identifier_rel = relationship( "GeographicalOriginIdentifier" )
+    identifier = association_proxy("identifier_rel", "identifier",
+                                  creator=lambda x_: GeographicalOriginIdentifier(identifier=x_))
+    
+    
+    iri_rel = relationship( "GeographicalOriginIri" )
+    iri = association_proxy("iri_rel", "iri",
+                                  creator=lambda x_: GeographicalOriginIri(iri=x_))
     
 
     def __repr__(self):
@@ -7050,6 +10202,16 @@ class Country(Term):
     keyword = association_proxy("keyword_rel", "keyword",
                                   creator=lambda x_: CountryKeyword(keyword=x_))
     
+    
+    identifier_rel = relationship( "CountryIdentifier" )
+    identifier = association_proxy("identifier_rel", "identifier",
+                                  creator=lambda x_: CountryIdentifier(identifier=x_))
+    
+    
+    iri_rel = relationship( "CountryIri" )
+    iri = association_proxy("iri_rel", "iri",
+                                  creator=lambda x_: CountryIri(iri=x_))
+    
 
     def __repr__(self):
         return f"Country(id={self.id},alpha2Code={self.alpha2Code},title={self.title},description={self.description},weight={self.weight},dateIssued={self.dateIssued},dateModified={self.dateModified},inVocabulary_id={self.inVocabulary_id},)"
@@ -7083,6 +10245,16 @@ class IataClassification(Term):
     keyword_rel = relationship( "IataClassificationKeyword" )
     keyword = association_proxy("keyword_rel", "keyword",
                                   creator=lambda x_: IataClassificationKeyword(keyword=x_))
+    
+    
+    identifier_rel = relationship( "IataClassificationIdentifier" )
+    identifier = association_proxy("identifier_rel", "identifier",
+                                  creator=lambda x_: IataClassificationIdentifier(identifier=x_))
+    
+    
+    iri_rel = relationship( "IataClassificationIri" )
+    iri = association_proxy("iri_rel", "iri",
+                                  creator=lambda x_: IataClassificationIri(iri=x_))
     
 
     def __repr__(self):
@@ -7121,6 +10293,16 @@ class TaxonomicRank(Term):
     keyword_rel = relationship( "TaxonomicRankKeyword" )
     keyword = association_proxy("keyword_rel", "keyword",
                                   creator=lambda x_: TaxonomicRankKeyword(keyword=x_))
+    
+    
+    identifier_rel = relationship( "TaxonomicRankIdentifier" )
+    identifier = association_proxy("identifier_rel", "identifier",
+                                  creator=lambda x_: TaxonomicRankIdentifier(identifier=x_))
+    
+    
+    iri_rel = relationship( "TaxonomicRankIri" )
+    iri = association_proxy("iri_rel", "iri",
+                                  creator=lambda x_: TaxonomicRankIri(iri=x_))
     
 
     def __repr__(self):
@@ -7174,6 +10356,16 @@ class Taxon(Term):
     keyword = association_proxy("keyword_rel", "keyword",
                                   creator=lambda x_: TaxonKeyword(keyword=x_))
     
+    
+    identifier_rel = relationship( "TaxonIdentifier" )
+    identifier = association_proxy("identifier_rel", "identifier",
+                                  creator=lambda x_: TaxonIdentifier(identifier=x_))
+    
+    
+    iri_rel = relationship( "TaxonIri" )
+    iri = association_proxy("iri_rel", "iri",
+                                  creator=lambda x_: TaxonIri(iri=x_))
+    
 
     def __repr__(self):
         return f"Taxon(id={self.id},taxonomicId={self.taxonomicId},taxonomicNodeId={self.taxonomicNodeId},title={self.title},description={self.description},weight={self.weight},dateIssued={self.dateIssued},dateModified={self.dateModified},parentTaxon_id={self.parentTaxon_id},rank_id={self.rank_id},inVocabulary_id={self.inVocabulary_id},)"
@@ -7216,6 +10408,16 @@ class ClinicalGroup(Term):
     keyword = association_proxy("keyword_rel", "keyword",
                                   creator=lambda x_: ClinicalGroupKeyword(keyword=x_))
     
+    
+    identifier_rel = relationship( "ClinicalGroupIdentifier" )
+    identifier = association_proxy("identifier_rel", "identifier",
+                                  creator=lambda x_: ClinicalGroupIdentifier(identifier=x_))
+    
+    
+    iri_rel = relationship( "ClinicalGroupIri" )
+    iri = association_proxy("iri_rel", "iri",
+                                  creator=lambda x_: ClinicalGroupIri(iri=x_))
+    
 
     def __repr__(self):
         return f"ClinicalGroup(id={self.id},title={self.title},description={self.description},weight={self.weight},dateIssued={self.dateIssued},dateModified={self.dateModified},inVocabulary_id={self.inVocabulary_id},)"
@@ -7252,6 +10454,16 @@ class Person(PersonOrOrganization):
     keyword_rel = relationship( "PersonKeyword" )
     keyword = association_proxy("keyword_rel", "keyword",
                                   creator=lambda x_: PersonKeyword(keyword=x_))
+    
+    
+    identifier_rel = relationship( "PersonIdentifier" )
+    identifier = association_proxy("identifier_rel", "identifier",
+                                  creator=lambda x_: PersonIdentifier(identifier=x_))
+    
+    
+    iri_rel = relationship( "PersonIri" )
+    iri = association_proxy("iri_rel", "iri",
+                                  creator=lambda x_: PersonIri(iri=x_))
     
 
     def __repr__(self):
@@ -7296,6 +10508,16 @@ class Organization(PersonOrOrganization):
     keyword = association_proxy("keyword_rel", "keyword",
                                   creator=lambda x_: OrganizationKeyword(keyword=x_))
     
+    
+    identifier_rel = relationship( "OrganizationIdentifier" )
+    identifier = association_proxy("identifier_rel", "identifier",
+                                  creator=lambda x_: OrganizationIdentifier(identifier=x_))
+    
+    
+    iri_rel = relationship( "OrganizationIri" )
+    iri = association_proxy("iri_rel", "iri",
+                                  creator=lambda x_: OrganizationIri(iri=x_))
+    
 
     def __repr__(self):
         return f"Organization(id={self.id},rorId={self.rorId},name={self.name},description={self.description},homePage={self.homePage},dateIssued={self.dateIssued},dateModified={self.dateModified},country_id={self.country_id},contactPoint_id={self.contactPoint_id},logo_id={self.logo_id},)"
@@ -7331,6 +10553,16 @@ class Originator(PersonOrOrganization):
     keyword_rel = relationship( "OriginatorKeyword" )
     keyword = association_proxy("keyword_rel", "keyword",
                                   creator=lambda x_: OriginatorKeyword(keyword=x_))
+    
+    
+    identifier_rel = relationship( "OriginatorIdentifier" )
+    identifier = association_proxy("identifier_rel", "identifier",
+                                  creator=lambda x_: OriginatorIdentifier(identifier=x_))
+    
+    
+    iri_rel = relationship( "OriginatorIri" )
+    iri = association_proxy("iri_rel", "iri",
+                                  creator=lambda x_: OriginatorIri(iri=x_))
     
 
     def __repr__(self):
@@ -7371,6 +10603,16 @@ class NaturalPartOrigin(BiologicalPartOrigin):
     keyword = association_proxy("keyword_rel", "keyword",
                                   creator=lambda x_: NaturalPartOriginKeyword(keyword=x_))
     
+    
+    identifier_rel = relationship( "NaturalPartOriginIdentifier" )
+    identifier = association_proxy("identifier_rel", "identifier",
+                                  creator=lambda x_: NaturalPartOriginIdentifier(identifier=x_))
+    
+    
+    iri_rel = relationship( "NaturalPartOriginIri" )
+    iri = association_proxy("iri_rel", "iri",
+                                  creator=lambda x_: NaturalPartOriginIri(iri=x_))
+    
 
     def __repr__(self):
         return f"NaturalPartOrigin(id={self.id},collectionDate={self.collectionDate},beforeDate={self.beforeDate},permitIdentifierForAbs={self.permitIdentifierForAbs},accessToPhysicalGeneticResource={self.accessToPhysicalGeneticResource},dateIssued={self.dateIssued},dateModified={self.dateModified},countryOfCollection_id={self.countryOfCollection_id},indigenousPeopleAndLocalCommunityOrigin_id={self.indigenousPeopleAndLocalCommunityOrigin_id},recombinantPartIdentification_id={self.recombinantPartIdentification_id},)"
@@ -7404,6 +10646,16 @@ class SyntheticPartOrigin(BiologicalPartOrigin):
     keyword_rel = relationship( "SyntheticPartOriginKeyword" )
     keyword = association_proxy("keyword_rel", "keyword",
                                   creator=lambda x_: SyntheticPartOriginKeyword(keyword=x_))
+    
+    
+    identifier_rel = relationship( "SyntheticPartOriginIdentifier" )
+    identifier = association_proxy("identifier_rel", "identifier",
+                                  creator=lambda x_: SyntheticPartOriginIdentifier(identifier=x_))
+    
+    
+    iri_rel = relationship( "SyntheticPartOriginIri" )
+    iri = association_proxy("iri_rel", "iri",
+                                  creator=lambda x_: SyntheticPartOriginIri(iri=x_))
     
 
     def __repr__(self):
@@ -7494,6 +10746,16 @@ class ProductOrService(Dataset):
     keyword = association_proxy("keyword_rel", "keyword",
                                   creator=lambda x_: ProductOrServiceKeyword(keyword=x_))
     
+    
+    identifier_rel = relationship( "ProductOrServiceIdentifier" )
+    identifier = association_proxy("identifier_rel", "identifier",
+                                  creator=lambda x_: ProductOrServiceIdentifier(identifier=x_))
+    
+    
+    iri_rel = relationship( "ProductOrServiceIri" )
+    iri = association_proxy("iri_rel", "iri",
+                                  creator=lambda x_: ProductOrServiceIri(iri=x_))
+    
 
     def __repr__(self):
         return f"ProductOrService(id={self.id},accessPointUrl={self.accessPointUrl},refSku={self.refSku},unitDefinition={self.unitDefinition},unitCost={self.unitCost},unitCostCurrency={self.unitCostCurrency},unitCostNote={self.unitCostNote},qualityGrading={self.qualityGrading},biosafetyRestrictions={self.biosafetyRestrictions},canBeUsedToProduceGmo={self.canBeUsedToProduceGmo},availability={self.availability},technicalRecommendation={self.technicalRecommendation},internalReference={self.internalReference},note={self.note},title={self.title},description={self.description},version={self.version},dateIssued={self.dateIssued},dateModified={self.dateModified},category_id={self.category_id},riskGroup_id={self.riskGroup_id},provider_id={self.provider_id},contactPoint_id={self.contactPoint_id},)"
@@ -7528,6 +10790,16 @@ class Data(File):
     keyword_rel = relationship( "DataKeyword" )
     keyword = association_proxy("keyword_rel", "keyword",
                                   creator=lambda x_: DataKeyword(keyword=x_))
+    
+    
+    identifier_rel = relationship( "DataIdentifier" )
+    identifier = association_proxy("identifier_rel", "identifier",
+                                  creator=lambda x_: DataIdentifier(identifier=x_))
+    
+    
+    iri_rel = relationship( "DataIri" )
+    iri = association_proxy("iri_rel", "iri",
+                                  creator=lambda x_: DataIri(iri=x_))
     
 
     def __repr__(self):
@@ -7564,6 +10836,16 @@ class Document(File):
     keyword = association_proxy("keyword_rel", "keyword",
                                   creator=lambda x_: DocumentKeyword(keyword=x_))
     
+    
+    identifier_rel = relationship( "DocumentIdentifier" )
+    identifier = association_proxy("identifier_rel", "identifier",
+                                  creator=lambda x_: DocumentIdentifier(identifier=x_))
+    
+    
+    iri_rel = relationship( "DocumentIri" )
+    iri = association_proxy("iri_rel", "iri",
+                                  creator=lambda x_: DocumentIri(iri=x_))
+    
 
     def __repr__(self):
         return f"Document(id={self.id},name={self.name},description={self.description},contentUrl={self.contentUrl},format={self.format},dateIssued={self.dateIssued},dateModified={self.dateModified},license_id={self.license_id},)"
@@ -7598,6 +10880,16 @@ class Audio(File):
     keyword_rel = relationship( "AudioKeyword" )
     keyword = association_proxy("keyword_rel", "keyword",
                                   creator=lambda x_: AudioKeyword(keyword=x_))
+    
+    
+    identifier_rel = relationship( "AudioIdentifier" )
+    identifier = association_proxy("identifier_rel", "identifier",
+                                  creator=lambda x_: AudioIdentifier(identifier=x_))
+    
+    
+    iri_rel = relationship( "AudioIri" )
+    iri = association_proxy("iri_rel", "iri",
+                                  creator=lambda x_: AudioIri(iri=x_))
     
 
     def __repr__(self):
@@ -7634,6 +10926,16 @@ class Video(File):
     keyword = association_proxy("keyword_rel", "keyword",
                                   creator=lambda x_: VideoKeyword(keyword=x_))
     
+    
+    identifier_rel = relationship( "VideoIdentifier" )
+    identifier = association_proxy("identifier_rel", "identifier",
+                                  creator=lambda x_: VideoIdentifier(identifier=x_))
+    
+    
+    iri_rel = relationship( "VideoIri" )
+    iri = association_proxy("iri_rel", "iri",
+                                  creator=lambda x_: VideoIri(iri=x_))
+    
 
     def __repr__(self):
         return f"Video(id={self.id},name={self.name},description={self.description},contentUrl={self.contentUrl},format={self.format},dateIssued={self.dateIssued},dateModified={self.dateModified},license_id={self.license_id},)"
@@ -7669,6 +10971,16 @@ class Image(File):
     keyword_rel = relationship( "ImageKeyword" )
     keyword = association_proxy("keyword_rel", "keyword",
                                   creator=lambda x_: ImageKeyword(keyword=x_))
+    
+    
+    identifier_rel = relationship( "ImageIdentifier" )
+    identifier = association_proxy("identifier_rel", "identifier",
+                                  creator=lambda x_: ImageIdentifier(identifier=x_))
+    
+    
+    iri_rel = relationship( "ImageIri" )
+    iri = association_proxy("iri_rel", "iri",
+                                  creator=lambda x_: ImageIri(iri=x_))
     
 
     def __repr__(self):
@@ -7716,6 +11028,16 @@ class Taxonomy(Catalogue):
     keyword = association_proxy("keyword_rel", "keyword",
                                   creator=lambda x_: TaxonomyKeyword(keyword=x_))
     
+    
+    identifier_rel = relationship( "TaxonomyIdentifier" )
+    identifier = association_proxy("identifier_rel", "identifier",
+                                  creator=lambda x_: TaxonomyIdentifier(identifier=x_))
+    
+    
+    iri_rel = relationship( "TaxonomyIri" )
+    iri = association_proxy("iri_rel", "iri",
+                                  creator=lambda x_: TaxonomyIri(iri=x_))
+    
 
     def __repr__(self):
         return f"Taxonomy(id={self.id},version={self.version},title={self.title},description={self.description},dateIssued={self.dateIssued},dateModified={self.dateModified},taxonDataProvider_id={self.taxonDataProvider_id},versionDataProvider_id={self.versionDataProvider_id},rankDataProvider_id={self.rankDataProvider_id},)"
@@ -7753,6 +11075,16 @@ class Vocabulary(Catalogue):
     keyword_rel = relationship( "VocabularyKeyword" )
     keyword = association_proxy("keyword_rel", "keyword",
                                   creator=lambda x_: VocabularyKeyword(keyword=x_))
+    
+    
+    identifier_rel = relationship( "VocabularyIdentifier" )
+    identifier = association_proxy("identifier_rel", "identifier",
+                                  creator=lambda x_: VocabularyIdentifier(identifier=x_))
+    
+    
+    iri_rel = relationship( "VocabularyIri" )
+    iri = association_proxy("iri_rel", "iri",
+                                  creator=lambda x_: VocabularyIri(iri=x_))
     
 
     def __repr__(self):
@@ -7797,6 +11129,16 @@ class VirusName(CommonName):
     keyword = association_proxy("keyword_rel", "keyword",
                                   creator=lambda x_: VirusNameKeyword(keyword=x_))
     
+    
+    identifier_rel = relationship( "VirusNameIdentifier" )
+    identifier = association_proxy("identifier_rel", "identifier",
+                                  creator=lambda x_: VirusNameIdentifier(identifier=x_))
+    
+    
+    iri_rel = relationship( "VirusNameIri" )
+    iri = association_proxy("iri_rel", "iri",
+                                  creator=lambda x_: VirusNameIri(iri=x_))
+    
 
     def __repr__(self):
         return f"VirusName(id={self.id},title={self.title},description={self.description},weight={self.weight},dateIssued={self.dateIssued},dateModified={self.dateModified},inVocabulary_id={self.inVocabulary_id},)"
@@ -7830,6 +11172,16 @@ class IplcOrigin(GeographicalOrigin):
     keyword_rel = relationship( "IplcOriginKeyword" )
     keyword = association_proxy("keyword_rel", "keyword",
                                   creator=lambda x_: IplcOriginKeyword(keyword=x_))
+    
+    
+    identifier_rel = relationship( "IplcOriginIdentifier" )
+    identifier = association_proxy("identifier_rel", "identifier",
+                                  creator=lambda x_: IplcOriginIdentifier(identifier=x_))
+    
+    
+    iri_rel = relationship( "IplcOriginIri" )
+    iri = association_proxy("iri_rel", "iri",
+                                  creator=lambda x_: IplcOriginIri(iri=x_))
     
 
     def __repr__(self):
@@ -7874,6 +11226,16 @@ class Variant(CommonName):
     keyword = association_proxy("keyword_rel", "keyword",
                                   creator=lambda x_: VariantKeyword(keyword=x_))
     
+    
+    identifier_rel = relationship( "VariantIdentifier" )
+    identifier = association_proxy("identifier_rel", "identifier",
+                                  creator=lambda x_: VariantIdentifier(identifier=x_))
+    
+    
+    iri_rel = relationship( "VariantIri" )
+    iri = association_proxy("iri_rel", "iri",
+                                  creator=lambda x_: VariantIri(iri=x_))
+    
 
     def __repr__(self):
         return f"Variant(id={self.id},title={self.title},description={self.description},weight={self.weight},dateIssued={self.dateIssued},dateModified={self.dateModified},inVocabulary_id={self.inVocabulary_id},)"
@@ -7916,6 +11278,16 @@ class ReasearchInfrastructure(Organization):
     keyword_rel = relationship( "ReasearchInfrastructureKeyword" )
     keyword = association_proxy("keyword_rel", "keyword",
                                   creator=lambda x_: ReasearchInfrastructureKeyword(keyword=x_))
+    
+    
+    identifier_rel = relationship( "ReasearchInfrastructureIdentifier" )
+    identifier = association_proxy("identifier_rel", "identifier",
+                                  creator=lambda x_: ReasearchInfrastructureIdentifier(identifier=x_))
+    
+    
+    iri_rel = relationship( "ReasearchInfrastructureIri" )
+    iri = association_proxy("iri_rel", "iri",
+                                  creator=lambda x_: ReasearchInfrastructureIri(iri=x_))
     
 
     def __repr__(self):
@@ -7964,6 +11336,16 @@ class Provider(Organization):
     keyword = association_proxy("keyword_rel", "keyword",
                                   creator=lambda x_: ProviderKeyword(keyword=x_))
     
+    
+    identifier_rel = relationship( "ProviderIdentifier" )
+    identifier = association_proxy("identifier_rel", "identifier",
+                                  creator=lambda x_: ProviderIdentifier(identifier=x_))
+    
+    
+    iri_rel = relationship( "ProviderIri" )
+    iri = association_proxy("iri_rel", "iri",
+                                  creator=lambda x_: ProviderIri(iri=x_))
+    
 
     def __repr__(self):
         return f"Provider(id={self.id},rorId={self.rorId},name={self.name},description={self.description},homePage={self.homePage},dateIssued={self.dateIssued},dateModified={self.dateModified},country_id={self.country_id},contactPoint_id={self.contactPoint_id},logo_id={self.logo_id},)"
@@ -8001,6 +11383,16 @@ class Collection(Catalogue):
     keyword_rel = relationship( "CollectionKeyword" )
     keyword = association_proxy("keyword_rel", "keyword",
                                   creator=lambda x_: CollectionKeyword(keyword=x_))
+    
+    
+    identifier_rel = relationship( "CollectionIdentifier" )
+    identifier = association_proxy("identifier_rel", "identifier",
+                                  creator=lambda x_: CollectionIdentifier(identifier=x_))
+    
+    
+    iri_rel = relationship( "CollectionIri" )
+    iri = association_proxy("iri_rel", "iri",
+                                  creator=lambda x_: CollectionIri(iri=x_))
     
 
     def __repr__(self):
@@ -8092,6 +11484,16 @@ class Service(ProductOrService):
     keyword_rel = relationship( "ServiceKeyword" )
     keyword = association_proxy("keyword_rel", "keyword",
                                   creator=lambda x_: ServiceKeyword(keyword=x_))
+    
+    
+    identifier_rel = relationship( "ServiceIdentifier" )
+    identifier = association_proxy("identifier_rel", "identifier",
+                                  creator=lambda x_: ServiceIdentifier(identifier=x_))
+    
+    
+    iri_rel = relationship( "ServiceIri" )
+    iri = association_proxy("iri_rel", "iri",
+                                  creator=lambda x_: ServiceIri(iri=x_))
     
 
     def __repr__(self):
@@ -8191,6 +11593,16 @@ class Product(ProductOrService):
     keyword_rel = relationship( "ProductKeyword" )
     keyword = association_proxy("keyword_rel", "keyword",
                                   creator=lambda x_: ProductKeyword(keyword=x_))
+    
+    
+    identifier_rel = relationship( "ProductIdentifier" )
+    identifier = association_proxy("identifier_rel", "identifier",
+                                  creator=lambda x_: ProductIdentifier(identifier=x_))
+    
+    
+    iri_rel = relationship( "ProductIri" )
+    iri = association_proxy("iri_rel", "iri",
+                                  creator=lambda x_: ProductIri(iri=x_))
     
 
     def __repr__(self):
@@ -8298,6 +11710,16 @@ class Antibody(Product):
     keyword_rel = relationship( "AntibodyKeyword" )
     keyword = association_proxy("keyword_rel", "keyword",
                                   creator=lambda x_: AntibodyKeyword(keyword=x_))
+    
+    
+    identifier_rel = relationship( "AntibodyIdentifier" )
+    identifier = association_proxy("identifier_rel", "identifier",
+                                  creator=lambda x_: AntibodyIdentifier(identifier=x_))
+    
+    
+    iri_rel = relationship( "AntibodyIri" )
+    iri = association_proxy("iri_rel", "iri",
+                                  creator=lambda x_: AntibodyIri(iri=x_))
     
 
     def __repr__(self):
@@ -8461,6 +11883,16 @@ class Protein(Product):
     keyword = association_proxy("keyword_rel", "keyword",
                                   creator=lambda x_: ProteinKeyword(keyword=x_))
     
+    
+    identifier_rel = relationship( "ProteinIdentifier" )
+    identifier = association_proxy("identifier_rel", "identifier",
+                                  creator=lambda x_: ProteinIdentifier(identifier=x_))
+    
+    
+    iri_rel = relationship( "ProteinIri" )
+    iri = association_proxy("iri_rel", "iri",
+                                  creator=lambda x_: ProteinIri(iri=x_))
+    
 
     def __repr__(self):
         return f"Protein(id={self.id},shippingConditions={self.shippingConditions},storageConditions={self.storageConditions},thirdPartyDistributionConsent={self.thirdPartyDistributionConsent},usageRestrictions={self.usageRestrictions},accessPointUrl={self.accessPointUrl},refSku={self.refSku},unitDefinition={self.unitDefinition},unitCost={self.unitCost},unitCostCurrency={self.unitCostCurrency},unitCostNote={self.unitCostNote},qualityGrading={self.qualityGrading},biosafetyRestrictions={self.biosafetyRestrictions},canBeUsedToProduceGmo={self.canBeUsedToProduceGmo},availability={self.availability},technicalRecommendation={self.technicalRecommendation},internalReference={self.internalReference},note={self.note},title={self.title},description={self.description},version={self.version},dateIssued={self.dateIssued},dateModified={self.dateModified},biologicalMaterialOrigin_id={self.biologicalMaterialOrigin_id},iataClassification_id={self.iataClassification_id},materialSafetyDataSheet_id={self.materialSafetyDataSheet_id},originator_id={self.originator_id},category_id={self.category_id},riskGroup_id={self.riskGroup_id},provider_id={self.provider_id},contactPoint_id={self.contactPoint_id},)"
@@ -8586,6 +12018,16 @@ class NucleicAcid(Product):
     keyword = association_proxy("keyword_rel", "keyword",
                                   creator=lambda x_: NucleicAcidKeyword(keyword=x_))
     
+    
+    identifier_rel = relationship( "NucleicAcidIdentifier" )
+    identifier = association_proxy("identifier_rel", "identifier",
+                                  creator=lambda x_: NucleicAcidIdentifier(identifier=x_))
+    
+    
+    iri_rel = relationship( "NucleicAcidIri" )
+    iri = association_proxy("iri_rel", "iri",
+                                  creator=lambda x_: NucleicAcidIri(iri=x_))
+    
 
     def __repr__(self):
         return f"NucleicAcid(id={self.id},clonedNucleicAcid={self.clonedNucleicAcid},regionEncompassedInThisProduct={self.regionEncompassedInThisProduct},mutationObserved={self.mutationObserved},observedMutations={self.observedMutations},identificationTechnique={self.identificationTechnique},sequencing={self.sequencing},titer={self.titer},sequenceChecked={self.sequenceChecked},shippingConditions={self.shippingConditions},storageConditions={self.storageConditions},thirdPartyDistributionConsent={self.thirdPartyDistributionConsent},usageRestrictions={self.usageRestrictions},accessPointUrl={self.accessPointUrl},refSku={self.refSku},unitDefinition={self.unitDefinition},unitCost={self.unitCost},unitCostCurrency={self.unitCostCurrency},unitCostNote={self.unitCostNote},qualityGrading={self.qualityGrading},biosafetyRestrictions={self.biosafetyRestrictions},canBeUsedToProduceGmo={self.canBeUsedToProduceGmo},availability={self.availability},technicalRecommendation={self.technicalRecommendation},internalReference={self.internalReference},note={self.note},title={self.title},description={self.description},version={self.version},dateIssued={self.dateIssued},dateModified={self.dateModified},biologicalMaterialOrigin_id={self.biologicalMaterialOrigin_id},clonedIntoPlasmid_id={self.clonedIntoPlasmid_id},tagSequence_id={self.tagSequence_id},iataClassification_id={self.iataClassification_id},materialSafetyDataSheet_id={self.materialSafetyDataSheet_id},originator_id={self.originator_id},category_id={self.category_id},riskGroup_id={self.riskGroup_id},provider_id={self.provider_id},contactPoint_id={self.contactPoint_id},)"
@@ -8692,6 +12134,16 @@ class DetectionKit(Product):
     keyword = association_proxy("keyword_rel", "keyword",
                                   creator=lambda x_: DetectionKitKeyword(keyword=x_))
     
+    
+    identifier_rel = relationship( "DetectionKitIdentifier" )
+    identifier = association_proxy("identifier_rel", "identifier",
+                                  creator=lambda x_: DetectionKitIdentifier(identifier=x_))
+    
+    
+    iri_rel = relationship( "DetectionKitIri" )
+    iri = association_proxy("iri_rel", "iri",
+                                  creator=lambda x_: DetectionKitIri(iri=x_))
+    
 
     def __repr__(self):
         return f"DetectionKit(id={self.id},specificityDocumented={self.specificityDocumented},specificity={self.specificity},targetedRegion={self.targetedRegion},shippingConditions={self.shippingConditions},storageConditions={self.storageConditions},thirdPartyDistributionConsent={self.thirdPartyDistributionConsent},usageRestrictions={self.usageRestrictions},accessPointUrl={self.accessPointUrl},refSku={self.refSku},unitDefinition={self.unitDefinition},unitCost={self.unitCost},unitCostCurrency={self.unitCostCurrency},unitCostNote={self.unitCostNote},qualityGrading={self.qualityGrading},biosafetyRestrictions={self.biosafetyRestrictions},canBeUsedToProduceGmo={self.canBeUsedToProduceGmo},availability={self.availability},technicalRecommendation={self.technicalRecommendation},internalReference={self.internalReference},note={self.note},title={self.title},description={self.description},version={self.version},dateIssued={self.dateIssued},dateModified={self.dateModified},iataClassification_id={self.iataClassification_id},materialSafetyDataSheet_id={self.materialSafetyDataSheet_id},originator_id={self.originator_id},category_id={self.category_id},riskGroup_id={self.riskGroup_id},provider_id={self.provider_id},contactPoint_id={self.contactPoint_id},)"
@@ -8794,6 +12246,16 @@ class Bundle(Product):
     keyword_rel = relationship( "BundleKeyword" )
     keyword = association_proxy("keyword_rel", "keyword",
                                   creator=lambda x_: BundleKeyword(keyword=x_))
+    
+    
+    identifier_rel = relationship( "BundleIdentifier" )
+    identifier = association_proxy("identifier_rel", "identifier",
+                                  creator=lambda x_: BundleIdentifier(identifier=x_))
+    
+    
+    iri_rel = relationship( "BundleIri" )
+    iri = association_proxy("iri_rel", "iri",
+                                  creator=lambda x_: BundleIri(iri=x_))
     
 
     def __repr__(self):
@@ -8931,6 +12393,16 @@ class Pathogen(Product):
     keyword = association_proxy("keyword_rel", "keyword",
                                   creator=lambda x_: PathogenKeyword(keyword=x_))
     
+    
+    identifier_rel = relationship( "PathogenIdentifier" )
+    identifier = association_proxy("identifier_rel", "identifier",
+                                  creator=lambda x_: PathogenIdentifier(identifier=x_))
+    
+    
+    iri_rel = relationship( "PathogenIri" )
+    iri = association_proxy("iri_rel", "iri",
+                                  creator=lambda x_: PathogenIri(iri=x_))
+    
 
     def __repr__(self):
         return f"Pathogen(id={self.id},cultivability={self.cultivability},clinicalInformation={self.clinicalInformation},identificationTechnique={self.identificationTechnique},infectivity={self.infectivity},infectivityTest={self.infectivityTest},isolationTechnique={self.isolationTechnique},isolationConditions={self.isolationConditions},letterOfAuthority={self.letterOfAuthority},passage={self.passage},genomeSequencing={self.genomeSequencing},titer={self.titer},shippingConditions={self.shippingConditions},storageConditions={self.storageConditions},thirdPartyDistributionConsent={self.thirdPartyDistributionConsent},usageRestrictions={self.usageRestrictions},accessPointUrl={self.accessPointUrl},refSku={self.refSku},unitDefinition={self.unitDefinition},unitCost={self.unitCost},unitCostCurrency={self.unitCostCurrency},unitCostNote={self.unitCostNote},qualityGrading={self.qualityGrading},biosafetyRestrictions={self.biosafetyRestrictions},canBeUsedToProduceGmo={self.canBeUsedToProduceGmo},availability={self.availability},technicalRecommendation={self.technicalRecommendation},internalReference={self.internalReference},note={self.note},title={self.title},description={self.description},version={self.version},dateIssued={self.dateIssued},dateModified={self.dateModified},biologicalMaterialOrigin_id={self.biologicalMaterialOrigin_id},iataClassification_id={self.iataClassification_id},materialSafetyDataSheet_id={self.materialSafetyDataSheet_id},originator_id={self.originator_id},category_id={self.category_id},riskGroup_id={self.riskGroup_id},provider_id={self.provider_id},contactPoint_id={self.contactPoint_id},)"
@@ -9038,6 +12510,16 @@ class Hybridoma(Antibody):
     keyword_rel = relationship( "HybridomaKeyword" )
     keyword = association_proxy("keyword_rel", "keyword",
                                   creator=lambda x_: HybridomaKeyword(keyword=x_))
+    
+    
+    identifier_rel = relationship( "HybridomaIdentifier" )
+    identifier = association_proxy("identifier_rel", "identifier",
+                                  creator=lambda x_: HybridomaIdentifier(identifier=x_))
+    
+    
+    iri_rel = relationship( "HybridomaIri" )
+    iri = association_proxy("iri_rel", "iri",
+                                  creator=lambda x_: HybridomaIri(iri=x_))
     
 
     def __repr__(self):
@@ -9181,6 +12663,16 @@ class Virus(Pathogen):
     keyword = association_proxy("keyword_rel", "keyword",
                                   creator=lambda x_: VirusKeyword(keyword=x_))
     
+    
+    identifier_rel = relationship( "VirusIdentifier" )
+    identifier = association_proxy("identifier_rel", "identifier",
+                                  creator=lambda x_: VirusIdentifier(identifier=x_))
+    
+    
+    iri_rel = relationship( "VirusIri" )
+    iri = association_proxy("iri_rel", "iri",
+                                  creator=lambda x_: VirusIri(iri=x_))
+    
 
     def __repr__(self):
         return f"Virus(id={self.id},contaminationWithCoInfectingViruses={self.contaminationWithCoInfectingViruses},mycoplasmicContent={self.mycoplasmicContent},cultivability={self.cultivability},clinicalInformation={self.clinicalInformation},identificationTechnique={self.identificationTechnique},infectivity={self.infectivity},infectivityTest={self.infectivityTest},isolationTechnique={self.isolationTechnique},isolationConditions={self.isolationConditions},letterOfAuthority={self.letterOfAuthority},passage={self.passage},genomeSequencing={self.genomeSequencing},titer={self.titer},shippingConditions={self.shippingConditions},storageConditions={self.storageConditions},thirdPartyDistributionConsent={self.thirdPartyDistributionConsent},usageRestrictions={self.usageRestrictions},accessPointUrl={self.accessPointUrl},refSku={self.refSku},unitDefinition={self.unitDefinition},unitCost={self.unitCost},unitCostCurrency={self.unitCostCurrency},unitCostNote={self.unitCostNote},qualityGrading={self.qualityGrading},biosafetyRestrictions={self.biosafetyRestrictions},canBeUsedToProduceGmo={self.canBeUsedToProduceGmo},availability={self.availability},technicalRecommendation={self.technicalRecommendation},internalReference={self.internalReference},note={self.note},title={self.title},description={self.description},version={self.version},dateIssued={self.dateIssued},dateModified={self.dateModified},biologicalMaterialOrigin_id={self.biologicalMaterialOrigin_id},iataClassification_id={self.iataClassification_id},materialSafetyDataSheet_id={self.materialSafetyDataSheet_id},originator_id={self.originator_id},category_id={self.category_id},riskGroup_id={self.riskGroup_id},provider_id={self.provider_id},contactPoint_id={self.contactPoint_id},)"
@@ -9316,6 +12808,16 @@ class Bacterium(Pathogen):
     keyword_rel = relationship( "BacteriumKeyword" )
     keyword = association_proxy("keyword_rel", "keyword",
                                   creator=lambda x_: BacteriumKeyword(keyword=x_))
+    
+    
+    identifier_rel = relationship( "BacteriumIdentifier" )
+    identifier = association_proxy("identifier_rel", "identifier",
+                                  creator=lambda x_: BacteriumIdentifier(identifier=x_))
+    
+    
+    iri_rel = relationship( "BacteriumIri" )
+    iri = association_proxy("iri_rel", "iri",
+                                  creator=lambda x_: BacteriumIri(iri=x_))
     
 
     def __repr__(self):
@@ -9453,6 +12955,16 @@ class Fungus(Pathogen):
     keyword = association_proxy("keyword_rel", "keyword",
                                   creator=lambda x_: FungusKeyword(keyword=x_))
     
+    
+    identifier_rel = relationship( "FungusIdentifier" )
+    identifier = association_proxy("identifier_rel", "identifier",
+                                  creator=lambda x_: FungusIdentifier(identifier=x_))
+    
+    
+    iri_rel = relationship( "FungusIri" )
+    iri = association_proxy("iri_rel", "iri",
+                                  creator=lambda x_: FungusIri(iri=x_))
+    
 
     def __repr__(self):
         return f"Fungus(id={self.id},cultivability={self.cultivability},clinicalInformation={self.clinicalInformation},identificationTechnique={self.identificationTechnique},infectivity={self.infectivity},infectivityTest={self.infectivityTest},isolationTechnique={self.isolationTechnique},isolationConditions={self.isolationConditions},letterOfAuthority={self.letterOfAuthority},passage={self.passage},genomeSequencing={self.genomeSequencing},titer={self.titer},shippingConditions={self.shippingConditions},storageConditions={self.storageConditions},thirdPartyDistributionConsent={self.thirdPartyDistributionConsent},usageRestrictions={self.usageRestrictions},accessPointUrl={self.accessPointUrl},refSku={self.refSku},unitDefinition={self.unitDefinition},unitCost={self.unitCost},unitCostCurrency={self.unitCostCurrency},unitCostNote={self.unitCostNote},qualityGrading={self.qualityGrading},biosafetyRestrictions={self.biosafetyRestrictions},canBeUsedToProduceGmo={self.canBeUsedToProduceGmo},availability={self.availability},technicalRecommendation={self.technicalRecommendation},internalReference={self.internalReference},note={self.note},title={self.title},description={self.description},version={self.version},dateIssued={self.dateIssued},dateModified={self.dateModified},biologicalMaterialOrigin_id={self.biologicalMaterialOrigin_id},iataClassification_id={self.iataClassification_id},materialSafetyDataSheet_id={self.materialSafetyDataSheet_id},originator_id={self.originator_id},category_id={self.category_id},riskGroup_id={self.riskGroup_id},provider_id={self.provider_id},contactPoint_id={self.contactPoint_id},)"
@@ -9588,6 +13100,16 @@ class Protozoan(Pathogen):
     keyword_rel = relationship( "ProtozoanKeyword" )
     keyword = association_proxy("keyword_rel", "keyword",
                                   creator=lambda x_: ProtozoanKeyword(keyword=x_))
+    
+    
+    identifier_rel = relationship( "ProtozoanIdentifier" )
+    identifier = association_proxy("identifier_rel", "identifier",
+                                  creator=lambda x_: ProtozoanIdentifier(identifier=x_))
+    
+    
+    iri_rel = relationship( "ProtozoanIri" )
+    iri = association_proxy("iri_rel", "iri",
+                                  creator=lambda x_: ProtozoanIri(iri=x_))
     
 
     def __repr__(self):
@@ -9725,6 +13247,16 @@ class Viroid(Pathogen):
     keyword = association_proxy("keyword_rel", "keyword",
                                   creator=lambda x_: ViroidKeyword(keyword=x_))
     
+    
+    identifier_rel = relationship( "ViroidIdentifier" )
+    identifier = association_proxy("identifier_rel", "identifier",
+                                  creator=lambda x_: ViroidIdentifier(identifier=x_))
+    
+    
+    iri_rel = relationship( "ViroidIri" )
+    iri = association_proxy("iri_rel", "iri",
+                                  creator=lambda x_: ViroidIri(iri=x_))
+    
 
     def __repr__(self):
         return f"Viroid(id={self.id},cultivability={self.cultivability},clinicalInformation={self.clinicalInformation},identificationTechnique={self.identificationTechnique},infectivity={self.infectivity},infectivityTest={self.infectivityTest},isolationTechnique={self.isolationTechnique},isolationConditions={self.isolationConditions},letterOfAuthority={self.letterOfAuthority},passage={self.passage},genomeSequencing={self.genomeSequencing},titer={self.titer},shippingConditions={self.shippingConditions},storageConditions={self.storageConditions},thirdPartyDistributionConsent={self.thirdPartyDistributionConsent},usageRestrictions={self.usageRestrictions},accessPointUrl={self.accessPointUrl},refSku={self.refSku},unitDefinition={self.unitDefinition},unitCost={self.unitCost},unitCostCurrency={self.unitCostCurrency},unitCostNote={self.unitCostNote},qualityGrading={self.qualityGrading},biosafetyRestrictions={self.biosafetyRestrictions},canBeUsedToProduceGmo={self.canBeUsedToProduceGmo},availability={self.availability},technicalRecommendation={self.technicalRecommendation},internalReference={self.internalReference},note={self.note},title={self.title},description={self.description},version={self.version},dateIssued={self.dateIssued},dateModified={self.dateModified},biologicalMaterialOrigin_id={self.biologicalMaterialOrigin_id},iataClassification_id={self.iataClassification_id},materialSafetyDataSheet_id={self.materialSafetyDataSheet_id},originator_id={self.originator_id},category_id={self.category_id},riskGroup_id={self.riskGroup_id},provider_id={self.provider_id},contactPoint_id={self.contactPoint_id},)"
@@ -9860,6 +13392,16 @@ class Prion(Pathogen):
     keyword_rel = relationship( "PrionKeyword" )
     keyword = association_proxy("keyword_rel", "keyword",
                                   creator=lambda x_: PrionKeyword(keyword=x_))
+    
+    
+    identifier_rel = relationship( "PrionIdentifier" )
+    identifier = association_proxy("identifier_rel", "identifier",
+                                  creator=lambda x_: PrionIdentifier(identifier=x_))
+    
+    
+    iri_rel = relationship( "PrionIri" )
+    iri = association_proxy("iri_rel", "iri",
+                                  creator=lambda x_: PrionIri(iri=x_))
     
 
     def __repr__(self):

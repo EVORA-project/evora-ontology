@@ -1,5 +1,5 @@
 # Auto generated from evora_schema.yaml by pythongen.py version: 0.0.1
-# Generation date: 2025-09-24T09:32:54
+# Generation date: 2025-09-26T15:27:00
 # Schema: EVORAO
 #
 # id: https://w3id.org/evorao/
@@ -60,7 +60,7 @@ from linkml_runtime.linkml_model.types import Boolean, Datetime, Decimal, Intege
 from linkml_runtime.utils.metamodelcore import Bool, Decimal, URI, XSDDateTime
 
 metamodel_version = "1.7.0"
-version = "1.0.9907"
+version = "1.0.9968"
 
 # Namespaces
 EVORAO = CurieNamespace('EVORAO', 'https://w3id.org/evorao/')
@@ -146,6 +146,8 @@ class Resource(YAMLRoot):
     keyword: Optional[Union[str, list[str]]] = empty_list()
     dateIssued: Optional[Union[str, XSDDateTime]] = None
     dateModified: Optional[Union[str, XSDDateTime]] = None
+    identifier: Optional[Union[str, list[str]]] = empty_list()
+    iri: Optional[Union[Union[str, URI], list[Union[str, URI]]]] = empty_list()
 
     def __post_init__(self, *_: str, **kwargs: Any):
         if not isinstance(self.keyword, list):
@@ -157,6 +159,18 @@ class Resource(YAMLRoot):
 
         if self.dateModified is not None and not isinstance(self.dateModified, XSDDateTime):
             self.dateModified = XSDDateTime(self.dateModified)
+
+        if not isinstance(self.identifier, list):
+            self.identifier = [self.identifier] if self.identifier is not None else []
+        self.identifier = [v if isinstance(v, str) else str(v) for v in self.identifier]
+
+        if not isinstance(self.iri, list):
+            self.iri = [self.iri] if self.iri is not None else []
+        self.iri = [v if isinstance(v, URI) else URI(v) for v in self.iri]
+
+        if not isinstance(self.iri, list):
+            self.iri = [self.iri] if self.iri is not None else []
+        self.iri = [v if isinstance(v, URI) else URI(v) for v in self.iri]
 
         super().__post_init__(**kwargs)
 
@@ -1040,11 +1054,19 @@ class Taxon(Term):
         if not isinstance(self.taxonomicId, str):
             self.taxonomicId = str(self.taxonomicId)
 
+        if self._is_empty(self.taxonomicId):
+            self.MissingRequiredField("taxonomicId")
+        if not isinstance(self.taxonomicId, str):
+            self.taxonomicId = str(self.taxonomicId)
+
         self._normalize_inlined_as_dict(slot_name="taxonomy", slot_type=Taxonomy, key_name="title", keyed=False)
 
         self._normalize_inlined_as_dict(slot_name="previouslyKnownAs", slot_type=Taxon, key_name="title", keyed=False)
 
         self._normalize_inlined_as_dict(slot_name="externalEquivalentTaxon", slot_type=Taxon, key_name="title", keyed=False)
+
+        if self.taxonomicNodeId is not None and not isinstance(self.taxonomicNodeId, str):
+            self.taxonomicNodeId = str(self.taxonomicNodeId)
 
         if self.taxonomicNodeId is not None and not isinstance(self.taxonomicNodeId, str):
             self.taxonomicNodeId = str(self.taxonomicNodeId)
@@ -1120,6 +1142,11 @@ class ExternalRelatedReference(Resource):
         if not isinstance(self.referenceProviderName, str):
             self.referenceProviderName = str(self.referenceProviderName)
 
+        if self._is_empty(self.reference):
+            self.MissingRequiredField("reference")
+        if not isinstance(self.reference, str):
+            self.reference = str(self.reference)
+
         super().__post_init__(**kwargs)
 
 
@@ -1172,6 +1199,11 @@ class SequenceReference(Resource):
             self.MissingRequiredField("sequenceProvider")
         if not isinstance(self.sequenceProvider, str):
             self.sequenceProvider = str(self.sequenceProvider)
+
+        if self._is_empty(self.accessionNumber):
+            self.MissingRequiredField("accessionNumber")
+        if not isinstance(self.accessionNumber, str):
+            self.accessionNumber = str(self.accessionNumber)
 
         super().__post_init__(**kwargs)
 
@@ -1234,6 +1266,9 @@ class Person(PersonOrOrganization):
         if self.orcidId is not None and not isinstance(self.orcidId, str):
             self.orcidId = str(self.orcidId)
 
+        if self.orcidId is not None and not isinstance(self.orcidId, str):
+            self.orcidId = str(self.orcidId)
+
         super().__post_init__(**kwargs)
 
 
@@ -1259,6 +1294,9 @@ class Organization(PersonOrOrganization):
 
         if self.country is not None and not isinstance(self.country, Country):
             self.country = Country(**as_dict(self.country))
+
+        if self.rorId is not None and not isinstance(self.rorId, str):
+            self.rorId = str(self.rorId)
 
         if self.rorId is not None and not isinstance(self.rorId, str):
             self.rorId = str(self.rorId)
@@ -1593,6 +1631,11 @@ class ProductOrService(Dataset):
         if not isinstance(self.availability, str):
             self.availability = str(self.availability)
 
+        if self._is_empty(self.refSku):
+            self.MissingRequiredField("refSku")
+        if not isinstance(self.refSku, str):
+            self.refSku = str(self.refSku)
+
         if self.unitDefinition is not None and not isinstance(self.unitDefinition, str):
             self.unitDefinition = str(self.unitDefinition)
 
@@ -1660,13 +1703,13 @@ class Service(ProductOrService):
     description: str = None
     version: str = None
     accessPointUrl: Union[str, URI] = None
-    refSku: str = None
     category: Union[dict, ProductCategory] = None
     pathogenIdentification: Union[Union[dict, PathogenIdentification], list[Union[dict, PathogenIdentification]]] = None
     canBeUsedToProduceGmo: Union[bool, Bool] = None
     provider: Union[dict, Provider] = None
     collection: Union[Union[dict, Collection], list[Union[dict, Collection]]] = None
     keywords: Union[Union[dict, Keyword], list[Union[dict, Keyword]]] = None
+    refSku: str = None
     availability: str = "on request"
     modelSpecies: Optional[str] = None
     modelType: Optional[str] = None
@@ -1697,13 +1740,13 @@ class Product(ProductOrService):
     description: str = None
     version: str = None
     accessPointUrl: Union[str, URI] = None
-    refSku: str = None
     category: Union[dict, ProductCategory] = None
     pathogenIdentification: Union[Union[dict, PathogenIdentification], list[Union[dict, PathogenIdentification]]] = None
     canBeUsedToProduceGmo: Union[bool, Bool] = None
     provider: Union[dict, Provider] = None
     collection: Union[Union[dict, Collection], list[Union[dict, Collection]]] = None
     keywords: Union[Union[dict, Keyword], list[Union[dict, Keyword]]] = None
+    refSku: str = None
     iataClassification: Union[dict, IataClassification] = None
     shippingConditions: str = None
     storageConditions: str = None
@@ -1760,13 +1803,13 @@ class Antibody(Product):
     description: str = None
     version: str = None
     accessPointUrl: Union[str, URI] = None
-    refSku: str = None
     category: Union[dict, ProductCategory] = None
     pathogenIdentification: Union[Union[dict, PathogenIdentification], list[Union[dict, PathogenIdentification]]] = None
     canBeUsedToProduceGmo: Union[bool, Bool] = None
     provider: Union[dict, Provider] = None
     collection: Union[Union[dict, Collection], list[Union[dict, Collection]]] = None
     keywords: Union[Union[dict, Keyword], list[Union[dict, Keyword]]] = None
+    refSku: str = None
     iataClassification: Union[dict, IataClassification] = None
     shippingConditions: str = None
     storageConditions: str = None
@@ -1817,13 +1860,13 @@ class Hybridoma(Antibody):
     description: str = None
     version: str = None
     accessPointUrl: Union[str, URI] = None
-    refSku: str = None
     category: Union[dict, ProductCategory] = None
     pathogenIdentification: Union[Union[dict, PathogenIdentification], list[Union[dict, PathogenIdentification]]] = None
     canBeUsedToProduceGmo: Union[bool, Bool] = None
     provider: Union[dict, Provider] = None
     collection: Union[Union[dict, Collection], list[Union[dict, Collection]]] = None
     keywords: Union[Union[dict, Keyword], list[Union[dict, Keyword]]] = None
+    refSku: str = None
     iataClassification: Union[dict, IataClassification] = None
     shippingConditions: str = None
     storageConditions: str = None
@@ -1858,13 +1901,13 @@ class Protein(Product):
     description: str = None
     version: str = None
     accessPointUrl: Union[str, URI] = None
-    refSku: str = None
     category: Union[dict, ProductCategory] = None
     pathogenIdentification: Union[Union[dict, PathogenIdentification], list[Union[dict, PathogenIdentification]]] = None
     canBeUsedToProduceGmo: Union[bool, Bool] = None
     provider: Union[dict, Provider] = None
     collection: Union[Union[dict, Collection], list[Union[dict, Collection]]] = None
     keywords: Union[Union[dict, Keyword], list[Union[dict, Keyword]]] = None
+    refSku: str = None
     iataClassification: Union[dict, IataClassification] = None
     shippingConditions: str = None
     storageConditions: str = None
@@ -1959,13 +2002,13 @@ class NucleicAcid(Product):
     description: str = None
     version: str = None
     accessPointUrl: Union[str, URI] = None
-    refSku: str = None
     category: Union[dict, ProductCategory] = None
     pathogenIdentification: Union[Union[dict, PathogenIdentification], list[Union[dict, PathogenIdentification]]] = None
     canBeUsedToProduceGmo: Union[bool, Bool] = None
     provider: Union[dict, Provider] = None
     collection: Union[Union[dict, Collection], list[Union[dict, Collection]]] = None
     keywords: Union[Union[dict, Keyword], list[Union[dict, Keyword]]] = None
+    refSku: str = None
     iataClassification: Union[dict, IataClassification] = None
     shippingConditions: str = None
     storageConditions: str = None
@@ -2064,13 +2107,13 @@ class DetectionKit(Product):
     description: str = None
     version: str = None
     accessPointUrl: Union[str, URI] = None
-    refSku: str = None
     category: Union[dict, ProductCategory] = None
     pathogenIdentification: Union[Union[dict, PathogenIdentification], list[Union[dict, PathogenIdentification]]] = None
     canBeUsedToProduceGmo: Union[bool, Bool] = None
     provider: Union[dict, Provider] = None
     collection: Union[Union[dict, Collection], list[Union[dict, Collection]]] = None
     keywords: Union[Union[dict, Keyword], list[Union[dict, Keyword]]] = None
+    refSku: str = None
     iataClassification: Union[dict, IataClassification] = None
     shippingConditions: str = None
     storageConditions: str = None
@@ -2114,13 +2157,13 @@ class Bundle(Product):
     description: str = None
     version: str = None
     accessPointUrl: Union[str, URI] = None
-    refSku: str = None
     category: Union[dict, ProductCategory] = None
     pathogenIdentification: Union[Union[dict, PathogenIdentification], list[Union[dict, PathogenIdentification]]] = None
     canBeUsedToProduceGmo: Union[bool, Bool] = None
     provider: Union[dict, Provider] = None
     collection: Union[Union[dict, Collection], list[Union[dict, Collection]]] = None
     keywords: Union[Union[dict, Keyword], list[Union[dict, Keyword]]] = None
+    refSku: str = None
     iataClassification: Union[dict, IataClassification] = None
     shippingConditions: str = None
     storageConditions: str = None
@@ -2152,13 +2195,13 @@ class Pathogen(Product):
     description: str = None
     version: str = None
     accessPointUrl: Union[str, URI] = None
-    refSku: str = None
     category: Union[dict, ProductCategory] = None
     pathogenIdentification: Union[Union[dict, PathogenIdentification], list[Union[dict, PathogenIdentification]]] = None
     canBeUsedToProduceGmo: Union[bool, Bool] = None
     provider: Union[dict, Provider] = None
     collection: Union[Union[dict, Collection], list[Union[dict, Collection]]] = None
     keywords: Union[Union[dict, Keyword], list[Union[dict, Keyword]]] = None
+    refSku: str = None
     iataClassification: Union[dict, IataClassification] = None
     shippingConditions: str = None
     storageConditions: str = None
@@ -2266,13 +2309,13 @@ class Virus(Pathogen):
     description: str = None
     version: str = None
     accessPointUrl: Union[str, URI] = None
-    refSku: str = None
     category: Union[dict, ProductCategory] = None
     pathogenIdentification: Union[Union[dict, PathogenIdentification], list[Union[dict, PathogenIdentification]]] = None
     canBeUsedToProduceGmo: Union[bool, Bool] = None
     provider: Union[dict, Provider] = None
     collection: Union[Union[dict, Collection], list[Union[dict, Collection]]] = None
     keywords: Union[Union[dict, Keyword], list[Union[dict, Keyword]]] = None
+    refSku: str = None
     iataClassification: Union[dict, IataClassification] = None
     shippingConditions: str = None
     storageConditions: str = None
@@ -2320,13 +2363,13 @@ class Bacterium(Pathogen):
     description: str = None
     version: str = None
     accessPointUrl: Union[str, URI] = None
-    refSku: str = None
     category: Union[dict, ProductCategory] = None
     pathogenIdentification: Union[Union[dict, PathogenIdentification], list[Union[dict, PathogenIdentification]]] = None
     canBeUsedToProduceGmo: Union[bool, Bool] = None
     provider: Union[dict, Provider] = None
     collection: Union[Union[dict, Collection], list[Union[dict, Collection]]] = None
     keywords: Union[Union[dict, Keyword], list[Union[dict, Keyword]]] = None
+    refSku: str = None
     iataClassification: Union[dict, IataClassification] = None
     shippingConditions: str = None
     storageConditions: str = None
@@ -2355,13 +2398,13 @@ class Fungus(Pathogen):
     description: str = None
     version: str = None
     accessPointUrl: Union[str, URI] = None
-    refSku: str = None
     category: Union[dict, ProductCategory] = None
     pathogenIdentification: Union[Union[dict, PathogenIdentification], list[Union[dict, PathogenIdentification]]] = None
     canBeUsedToProduceGmo: Union[bool, Bool] = None
     provider: Union[dict, Provider] = None
     collection: Union[Union[dict, Collection], list[Union[dict, Collection]]] = None
     keywords: Union[Union[dict, Keyword], list[Union[dict, Keyword]]] = None
+    refSku: str = None
     iataClassification: Union[dict, IataClassification] = None
     shippingConditions: str = None
     storageConditions: str = None
@@ -2390,13 +2433,13 @@ class Protozoan(Pathogen):
     description: str = None
     version: str = None
     accessPointUrl: Union[str, URI] = None
-    refSku: str = None
     category: Union[dict, ProductCategory] = None
     pathogenIdentification: Union[Union[dict, PathogenIdentification], list[Union[dict, PathogenIdentification]]] = None
     canBeUsedToProduceGmo: Union[bool, Bool] = None
     provider: Union[dict, Provider] = None
     collection: Union[Union[dict, Collection], list[Union[dict, Collection]]] = None
     keywords: Union[Union[dict, Keyword], list[Union[dict, Keyword]]] = None
+    refSku: str = None
     iataClassification: Union[dict, IataClassification] = None
     shippingConditions: str = None
     storageConditions: str = None
@@ -2425,13 +2468,13 @@ class Viroid(Pathogen):
     description: str = None
     version: str = None
     accessPointUrl: Union[str, URI] = None
-    refSku: str = None
     category: Union[dict, ProductCategory] = None
     pathogenIdentification: Union[Union[dict, PathogenIdentification], list[Union[dict, PathogenIdentification]]] = None
     canBeUsedToProduceGmo: Union[bool, Bool] = None
     provider: Union[dict, Provider] = None
     collection: Union[Union[dict, Collection], list[Union[dict, Collection]]] = None
     keywords: Union[Union[dict, Keyword], list[Union[dict, Keyword]]] = None
+    refSku: str = None
     iataClassification: Union[dict, IataClassification] = None
     shippingConditions: str = None
     storageConditions: str = None
@@ -2460,13 +2503,13 @@ class Prion(Pathogen):
     description: str = None
     version: str = None
     accessPointUrl: Union[str, URI] = None
-    refSku: str = None
     category: Union[dict, ProductCategory] = None
     pathogenIdentification: Union[Union[dict, PathogenIdentification], list[Union[dict, PathogenIdentification]]] = None
     canBeUsedToProduceGmo: Union[bool, Bool] = None
     provider: Union[dict, Provider] = None
     collection: Union[Union[dict, Collection], list[Union[dict, Collection]]] = None
     keywords: Union[Union[dict, Keyword], list[Union[dict, Keyword]]] = None
+    refSku: str = None
     iataClassification: Union[dict, IataClassification] = None
     shippingConditions: str = None
     storageConditions: str = None
@@ -2849,6 +2892,12 @@ slots.dateIssued = Slot(uri=DCT.issued, name="dateIssued", curie=DCT.curie('issu
 
 slots.dateModified = Slot(uri=DCT.modified, name="dateModified", curie=DCT.curie('modified'),
                    model_uri=EVORAO.dateModified, domain=None, range=Optional[Union[str, XSDDateTime]])
+
+slots.identifier = Slot(uri=DCT.identifier, name="identifier", curie=DCT.curie('identifier'),
+                   model_uri=EVORAO.identifier, domain=None, range=Optional[Union[str, list[str]]])
+
+slots.iri = Slot(uri=EVORAO.iri, name="iri", curie=EVORAO.curie('iri'),
+                   model_uri=EVORAO.iri, domain=None, range=Optional[Union[Union[str, URI], list[Union[str, URI]]]])
 
 slots.title = Slot(uri=DCT.title, name="title", curie=DCT.curie('title'),
                    model_uri=EVORAO.title, domain=None, range=str)
@@ -3425,6 +3474,12 @@ slots.Resource_dateIssued = Slot(uri=DCT.issued, name="Resource_dateIssued", cur
 
 slots.Resource_dateModified = Slot(uri=DCT.modified, name="Resource_dateModified", curie=DCT.curie('modified'),
                    model_uri=EVORAO.Resource_dateModified, domain=Resource, range=Optional[Union[str, XSDDateTime]])
+
+slots.Resource_identifier = Slot(uri=DCT.identifier, name="Resource_identifier", curie=DCT.curie('identifier'),
+                   model_uri=EVORAO.Resource_identifier, domain=Resource, range=Optional[Union[str, list[str]]])
+
+slots.Resource_iri = Slot(uri=EVORAO.iri, name="Resource_iri", curie=EVORAO.curie('iri'),
+                   model_uri=EVORAO.Resource_iri, domain=Resource, range=Optional[Union[Union[str, URI], list[Union[str, URI]]]])
 
 slots.Dataset_title = Slot(uri=DCT.title, name="Dataset_title", curie=DCT.curie('title'),
                    model_uri=EVORAO.Dataset_title, domain=Dataset, range=str)

@@ -63,6 +63,10 @@ URI: [dcat:Resource](http://www.w3.org/ns/dcat#Resource)
         
       Resource : dateModified
         
+      Resource : identifier
+        
+      Resource : iri
+        
       Resource : keyword
         
       
@@ -102,6 +106,8 @@ URI: [dcat:Resource](http://www.w3.org/ns/dcat#Resource)
 | [keyword](keyword.md) | * <br/> [String](String.md) | A keyword or tag describing the resource | direct |
 | [dateIssued](dateIssued.md) | 0..1 <br/> [Datetime](Datetime.md) | Date of formal issuance (e | direct |
 | [dateModified](dateModified.md) | 0..1 <br/> [Datetime](Datetime.md) | Most recent date on which the resource was changed, updated or modified | direct |
+| [identifier](identifier.md) | * <br/> [String](String.md) | A unique identifier of the resource being described or cataloged | direct |
+| [iri](iri.md) | * <br/> [Uri](Uri.md) | International Resource Identifier (IRI) that uniquely identifies or refers to... | direct |
 
 
 
@@ -164,6 +170,8 @@ slots:
 - keyword
 - dateIssued
 - dateModified
+- identifier
+- iri
 slot_usage:
   keyword:
     name: keyword
@@ -208,6 +216,36 @@ slot_usage:
     range: datetime
     required: false
     multivalued: false
+  identifier:
+    name: identifier
+    description: A unique identifier of the resource being described or cataloged
+    title: identifier
+    comments:
+    - The identifier is a text string which is assigned to the resource to provide
+      an unambiguous reference within a particular context. Persistent identifiers
+      should be provided as HTTP URIs
+    exact_mappings:
+    - schema:identifier
+    slot_uri: dct:identifier
+    domain_of:
+    - Resource
+    range: string
+    required: false
+    multivalued: true
+  iri:
+    name: iri
+    description: International Resource Identifier (IRI) that uniquely identifies
+      or refers to the resource. IRIs include URIs, and URIs include URLs
+    title: IRI
+    comments:
+    - An IRI is a global identifier standardized by IETF RFC 3987. It may or may not
+      be resolvable on the web. IRIs include URIs, and URIs include URLs
+    is_a: identifier
+    domain_of:
+    - Resource
+    range: uri
+    required: false
+    multivalued: true
 class_uri: dcat:Resource
 
 ```
@@ -266,6 +304,36 @@ slot_usage:
     range: datetime
     required: false
     multivalued: false
+  identifier:
+    name: identifier
+    description: A unique identifier of the resource being described or cataloged
+    title: identifier
+    comments:
+    - The identifier is a text string which is assigned to the resource to provide
+      an unambiguous reference within a particular context. Persistent identifiers
+      should be provided as HTTP URIs
+    exact_mappings:
+    - schema:identifier
+    slot_uri: dct:identifier
+    domain_of:
+    - Resource
+    range: string
+    required: false
+    multivalued: true
+  iri:
+    name: iri
+    description: International Resource Identifier (IRI) that uniquely identifies
+      or refers to the resource. IRIs include URIs, and URIs include URLs
+    title: IRI
+    comments:
+    - An IRI is a global identifier standardized by IETF RFC 3987. It may or may not
+      be resolvable on the web. IRIs include URIs, and URIs include URLs
+    is_a: identifier
+    domain_of:
+    - Resource
+    range: uri
+    required: false
+    multivalued: true
 attributes:
   keyword:
     name: keyword
@@ -322,6 +390,44 @@ attributes:
     range: datetime
     required: false
     multivalued: false
+  identifier:
+    name: identifier
+    description: A unique identifier of the resource being described or cataloged
+    title: identifier
+    comments:
+    - The identifier is a text string which is assigned to the resource to provide
+      an unambiguous reference within a particular context. Persistent identifiers
+      should be provided as HTTP URIs
+    from_schema: https://w3id.org/evorao/
+    exact_mappings:
+    - schema:identifier
+    rank: 1000
+    slot_uri: dct:identifier
+    alias: identifier
+    owner: Resource
+    domain_of:
+    - Resource
+    range: string
+    required: false
+    multivalued: true
+  iri:
+    name: iri
+    description: International Resource Identifier (IRI) that uniquely identifies
+      or refers to the resource. IRIs include URIs, and URIs include URLs
+    title: IRI
+    comments:
+    - An IRI is a global identifier standardized by IETF RFC 3987. It may or may not
+      be resolvable on the web. IRIs include URIs, and URIs include URLs
+    from_schema: https://w3id.org/evorao/
+    rank: 1000
+    is_a: identifier
+    alias: iri
+    owner: Resource
+    domain_of:
+    - Resource
+    range: uri
+    required: false
+    multivalued: true
 class_uri: dcat:Resource
 
 ```

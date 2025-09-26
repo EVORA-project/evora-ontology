@@ -12,7 +12,12 @@ _The sequence ID that permits to retrieve the sequence information from the sequ
 URI: [EVORAO:accessionNumber](https://w3id.org/evorao/accessionNumber)
 Alias: accessionNumber
 
-<!-- no inheritance hierarchy -->
+
+## Inheritance
+
+* [identifier](identifier.md)
+    * **accessionNumber**
+
 
 
 
@@ -33,6 +38,8 @@ Alias: accessionNumber
 ## Properties
 
 * Range: [String](String.md)
+
+* Multivalued: True
 
 * Required: True
 
@@ -85,12 +92,13 @@ narrow_mappings:
 broad_mappings:
 - schema:identifier
 rank: 1000
+is_a: identifier
 alias: accessionNumber
 domain_of:
 - SequenceReference
 range: string
 required: true
-multivalued: false
+multivalued: true
 
 ```
 </details>
