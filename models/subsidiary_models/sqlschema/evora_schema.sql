@@ -1480,12 +1480,15 @@
 -- # Class: "Taxon_taxonomy" Description: ""
 --     * Slot: Taxon_id Description: Autocreated FK slot
 --     * Slot: taxonomy_id Description: The taxonomy release(s) in which this entity exists
--- # Class: "Taxon_previouslyKnownAs" Description: ""
---     * Slot: Taxon_id Description: Autocreated FK slot
---     * Slot: previouslyKnownAs_id Description: Any historic version of this taxon having a different name
 -- # Class: "Taxon_externalEquivalentTaxon" Description: ""
 --     * Slot: Taxon_id Description: Autocreated FK slot
 --     * Slot: externalEquivalentTaxon_id Description: Any equivalent taxon in a different taxonomy if exists/known to serve as a bridge (e.g, ICTV towards NCBI)
+-- # Class: "Taxon_alternateName" Description: ""
+--     * Slot: Taxon_id Description: Autocreated FK slot
+--     * Slot: alternateName_id Description: Any other name under which the entity can be known
+-- # Class: "Taxon_previouslyKnownAs" Description: ""
+--     * Slot: Taxon_id Description: Autocreated FK slot
+--     * Slot: previouslyKnownAs_id Description: Any historic version of this taxon having a different name
 -- # Class: "Taxon_keyword" Description: ""
 --     * Slot: Taxon_id Description: Autocreated FK slot
 --     * Slot: keyword Description: A keyword or tag describing the resource
@@ -3566,8 +3569,8 @@ CREATE TABLE "Taxon" (
 	weight INTEGER NOT NULL, 
 	"dateIssued" DATETIME, 
 	"dateModified" DATETIME, 
-	"parentTaxon_id" INTEGER NOT NULL, 
-	rank_id INTEGER NOT NULL, 
+	"parentTaxon_id" INTEGER, 
+	rank_id INTEGER, 
 	"inVocabulary_id" INTEGER NOT NULL, 
 	PRIMARY KEY (id), 
 	FOREIGN KEY("parentTaxon_id") REFERENCES "Taxon" (id), 
@@ -4297,19 +4300,26 @@ CREATE TABLE "Taxon_taxonomy" (
 	FOREIGN KEY("Taxon_id") REFERENCES "Taxon" (id), 
 	FOREIGN KEY(taxonomy_id) REFERENCES "Taxonomy" (id)
 );
-CREATE TABLE "Taxon_previouslyKnownAs" (
-	"Taxon_id" INTEGER, 
-	"previouslyKnownAs_id" INTEGER, 
-	PRIMARY KEY ("Taxon_id", "previouslyKnownAs_id"), 
-	FOREIGN KEY("Taxon_id") REFERENCES "Taxon" (id), 
-	FOREIGN KEY("previouslyKnownAs_id") REFERENCES "Taxon" (id)
-);
 CREATE TABLE "Taxon_externalEquivalentTaxon" (
 	"Taxon_id" INTEGER, 
 	"externalEquivalentTaxon_id" INTEGER, 
 	PRIMARY KEY ("Taxon_id", "externalEquivalentTaxon_id"), 
 	FOREIGN KEY("Taxon_id") REFERENCES "Taxon" (id), 
 	FOREIGN KEY("externalEquivalentTaxon_id") REFERENCES "Taxon" (id)
+);
+CREATE TABLE "Taxon_alternateName" (
+	"Taxon_id" INTEGER, 
+	"alternateName_id" INTEGER, 
+	PRIMARY KEY ("Taxon_id", "alternateName_id"), 
+	FOREIGN KEY("Taxon_id") REFERENCES "Taxon" (id), 
+	FOREIGN KEY("alternateName_id") REFERENCES "AlternateName" (id)
+);
+CREATE TABLE "Taxon_previouslyKnownAs" (
+	"Taxon_id" INTEGER, 
+	"previouslyKnownAs_id" INTEGER, 
+	PRIMARY KEY ("Taxon_id", "previouslyKnownAs_id"), 
+	FOREIGN KEY("Taxon_id") REFERENCES "Taxon" (id), 
+	FOREIGN KEY("previouslyKnownAs_id") REFERENCES "Taxon" (id)
 );
 CREATE TABLE "Taxon_keyword" (
 	"Taxon_id" INTEGER, 

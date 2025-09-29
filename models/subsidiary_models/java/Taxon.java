@@ -5,7 +5,7 @@ import lombok.*;
 
 
 
-/* version: 1.0.9975 */
+/* version: 1.0.10013 */
 
 
 /**
@@ -18,9 +18,10 @@ public class Taxon extends Term {
   private List<Taxonomy> taxonomy;
   private Taxon parentTaxon;
   private TaxonomicRank rank;
-  private List<Taxon> previouslyKnownAs;
   private List<Taxon> externalEquivalentTaxon;
   private String taxonomicId;
   private String taxonomicNodeId;
+  private List<AlternateName> alternateName;
+  private List<Taxon> previouslyKnownAs;
 
 }

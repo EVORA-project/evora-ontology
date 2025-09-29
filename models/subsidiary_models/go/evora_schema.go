@@ -1677,10 +1677,6 @@ type Taxon struct {
 	 */
 	Rank TaxonomicRank `json:"rank"`
 	/*
-	 * Any historic version of this taxon having a different name
-	 */
-	PreviouslyKnownAs []Taxon `json:"previouslyKnownAs"`
-	/*
 	 * Any equivalent taxon in a different taxonomy if exists/known to serve as a bridge (e.g, ICTV towards NCBI)
 	 */
 	ExternalEquivalentTaxon []Taxon `json:"externalEquivalentTaxon"`
@@ -1692,6 +1688,14 @@ type Taxon struct {
 	 * The taxonomic_Node Identifier as an identifier specific the current taxon in the corresponding release/version of the taxonomy
 	 */
 	TaxonomicNodeId string `json:"taxonomicNodeId"`
+	/*
+	 * Any other name under which the entity can be known
+	 */
+	AlternateName []AlternateName `json:"alternateName"`
+	/*
+	 * Any historic version of this taxon having a different name
+	 */
+	PreviouslyKnownAs []Taxon `json:"previouslyKnownAs"`
 	/*
 	 * A name given to the resource
 	 */

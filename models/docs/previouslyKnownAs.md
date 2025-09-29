@@ -1,6 +1,6 @@
 
 
-# Slot: previously known as (previouslyKnownAs) 
+# Slot: previously known as (previouslyKnownAs)  <span style="color: red;"><strong> (DEPRECATED) </strong> 
 
 
 _Any historic version of this taxon having a different name_
@@ -75,6 +75,10 @@ Alias: previouslyKnownAs
 name: previouslyKnownAs
 description: Any historic version of this taxon having a different name
 title: previously known as
+deprecated: EVORAO:previouslyKnownAs is deprecated in favor of alternateName. The
+  property required complementary information linked to a Taxon, which limited its
+  applicability. alternateName provides broader support for historical and non-historical
+  alternative names without requiring taxonomic context
 from_schema: https://w3id.org/evorao/
 related_mappings:
 - schema:alternateName

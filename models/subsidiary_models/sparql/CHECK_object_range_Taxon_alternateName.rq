@@ -62,13 +62,22 @@ SELECT
   ?check
   ?graph
   ?subject
-  ?predicate WHERE {
+  ?predicate
+  ?object
+WHERE {
  GRAPH ?graph {
-  ?subject rdf:type EVORAO:Taxon .
-  FILTER NOT EXISTS { ?subject  EVORAO:rank ?o  }
+  ?subject rdf:type EVORAO:Taxon ;
+     ?predicate ?object .
+  FILTER NOT EXISTS {
+    ?object rdf:type ?otype .
+    FILTER ( ?otype IN (
+      EVORAO:AlternateName
+      
+      ))
+  }
  }
- VALUES ?check { linkml:required }
- VALUES ?predicate { EVORAO:rank }
+ VALUES ?check { linkml:range }
+ VALUES ?predicate { EVORAO:alternateName  }
  
 }  
 

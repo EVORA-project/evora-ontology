@@ -1,5 +1,5 @@
 # metamodel_version: 1.7.0
-# version: 1.0.9975
+# version: 1.0.10013
 type AlternateName
   {
     keyword: [String]
@@ -1481,12 +1481,13 @@ type Taxon
     weight: Integer!
     inVocabulary: Vocabulary!
     taxonomy: [Taxonomy]
-    parentTaxon: Taxon!
-    rank: TaxonomicRank!
-    previouslyKnownAs: [Taxon]
+    parentTaxon: Taxon
+    rank: TaxonomicRank
     externalEquivalentTaxon: [Taxon]
     taxonomicId: String!
     taxonomicNodeId: String
+    alternateName: [AlternateName]
+    previouslyKnownAs: [Taxon]
   }
 
 type TaxonomicRank
@@ -1516,7 +1517,7 @@ type Taxonomy
     taxonDataProvider: DataProvider
     version: String!
     versionDataProvider: DataProvider!
-    rank: [TaxonomicRank]!
+    rank: [TaxonomicRank]
     rankDataProvider: DataProvider
   }
 

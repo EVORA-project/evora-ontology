@@ -23,6 +23,15 @@ URI: [EVORAO:Taxon](https://w3id.org/evorao/Taxon)
       Term <|-- Taxon
         click Term href "../Term"
       
+      Taxon : alternateName
+        
+          
+    
+    
+    Taxon --> "*" AlternateName : alternateName
+    click AlternateName href "../AlternateName"
+
+        
       Taxon : dateIssued
         
       Taxon : dateModified
@@ -58,7 +67,7 @@ URI: [EVORAO:Taxon](https://w3id.org/evorao/Taxon)
           
     
     
-    Taxon --> "1" Taxon : parentTaxon
+    Taxon --> "0..1 _recommended_" Taxon : parentTaxon
     click Taxon href "../Taxon"
 
         
@@ -76,7 +85,7 @@ URI: [EVORAO:Taxon](https://w3id.org/evorao/Taxon)
           
     
     
-    Taxon --> "1" TaxonomicRank : rank
+    Taxon --> "0..1 _recommended_" TaxonomicRank : rank
     click TaxonomicRank href "../TaxonomicRank"
 
         
@@ -116,12 +125,13 @@ URI: [EVORAO:Taxon](https://w3id.org/evorao/Taxon)
 | Name | Cardinality and Range | Description | Inheritance |
 | ---  | --- | --- | --- |
 | [taxonomy](taxonomy.md) | * _recommended_ <br/> [Taxonomy](Taxonomy.md) | The taxonomy release(s) in which this entity exists | direct |
-| [parentTaxon](parentTaxon.md) | 1 <br/> [Taxon](Taxon.md) | The parent taxon of the current taxon | direct |
-| [rank](rank.md) | 1 <br/> [TaxonomicRank](TaxonomicRank.md) | Relative level or position of the identified taxon in the taxonomy | direct |
-| [previouslyKnownAs](previouslyKnownAs.md) | * <br/> [Taxon](Taxon.md) | Any historic version of this taxon having a different name | direct |
+| [parentTaxon](parentTaxon.md) | 0..1 _recommended_ <br/> [Taxon](Taxon.md) | The parent taxon of the current taxon | direct |
+| [rank](rank.md) | 0..1 _recommended_ <br/> [TaxonomicRank](TaxonomicRank.md) | Relative level or position of the identified taxon in the taxonomy | direct |
 | [externalEquivalentTaxon](externalEquivalentTaxon.md) | * <br/> [Taxon](Taxon.md) | Any equivalent taxon in a different taxonomy if exists/known to serve as a br... | direct |
 | [taxonomicId](taxonomicId.md) | 1 <br/> [String](String.md) | The taxonomic identifier as a persistent identifier accross releases | direct |
 | [taxonomicNodeId](taxonomicNodeId.md) | 0..1 _recommended_ <br/> [String](String.md) | The taxonomic_Node Identifier as an identifier specific the current taxon in ... | direct |
+| [alternateName](alternateName.md) | * <br/> [AlternateName](AlternateName.md) | Any other name under which the entity can be known | direct |
+| [previouslyKnownAs](previouslyKnownAs.md) | * <br/> [Taxon](Taxon.md) | Any historic version of this taxon having a different name | direct |
 | [title](title.md) | 1 <br/> [String](String.md) | A name given to the resource | [Term](Term.md) |
 | [description](description.md) | 0..1 _recommended_ <br/> [String](String.md) | A short explanation of the characteristics, features, or nature of the curren... | [Term](Term.md) |
 | [weight](weight.md) | 1 <br/> [Integer](Integer.md) | A numerical value indicating relative importance or priority, generally proce... | [Term](Term.md) |
@@ -143,8 +153,8 @@ URI: [EVORAO:Taxon](https://w3id.org/evorao/Taxon)
 | [Taxonomy](Taxonomy.md) | [taxon](taxon.md) | range | [Taxon](Taxon.md) |
 | [PathogenIdentification](PathogenIdentification.md) | [taxon](taxon.md) | range | [Taxon](Taxon.md) |
 | [Taxon](Taxon.md) | [parentTaxon](parentTaxon.md) | range | [Taxon](Taxon.md) |
-| [Taxon](Taxon.md) | [previouslyKnownAs](previouslyKnownAs.md) | range | [Taxon](Taxon.md) |
 | [Taxon](Taxon.md) | [externalEquivalentTaxon](externalEquivalentTaxon.md) | range | [Taxon](Taxon.md) |
+| [Taxon](Taxon.md) | [previouslyKnownAs](previouslyKnownAs.md) | range | [Taxon](Taxon.md) |
 | [ClinicalGroup](ClinicalGroup.md) | [taxon](taxon.md) | range | [Taxon](Taxon.md) |
 
 
@@ -218,10 +228,11 @@ slots:
 - taxonomy
 - parentTaxon
 - rank
-- previouslyKnownAs
 - externalEquivalentTaxon
 - taxonomicId
 - taxonomicNodeId
+- alternateName
+- previouslyKnownAs
 slot_usage:
   taxonomy:
     name: taxonomy
@@ -249,7 +260,8 @@ slot_usage:
     domain_of:
     - Taxon
     range: Taxon
-    required: true
+    required: false
+    recommended: true
     multivalued: false
   rank:
     name: rank
@@ -268,21 +280,9 @@ slot_usage:
     - Taxon
     - Taxonomy
     range: TaxonomicRank
-    required: true
-    multivalued: false
-  previouslyKnownAs:
-    name: previouslyKnownAs
-    description: Any historic version of this taxon having a different name
-    title: previously known as
-    related_mappings:
-    - schema:alternateName
-    broad_mappings:
-    - dwc:Taxon
-    domain_of:
-    - Taxon
-    range: Taxon
     required: false
-    multivalued: true
+    recommended: true
+    multivalued: false
   externalEquivalentTaxon:
     name: externalEquivalentTaxon
     description: Any equivalent taxon in a different taxonomy if exists/known to serve
@@ -337,6 +337,46 @@ slot_usage:
     required: false
     recommended: true
     multivalued: false
+  alternateName:
+    name: alternateName
+    description: Any other name under which the entity can be known
+    title: alternate name
+    comments:
+    - This includes previous names, acronyms, former taxonomic terms, and other variations.
+      This information can serve as keywords for search purposes and as a bridge with
+      other projects that use different naming systems or taxonomies
+    exact_mappings:
+    - schema:alternateName
+    - dct:alternative
+    - iao:0000118
+    close_mappings:
+    - wdp:P4970
+    domain_of:
+    - Taxon
+    - CommonName
+    - AlternateName
+    - ClinicalGroup
+    - Organization
+    range: AlternateName
+    required: false
+    multivalued: true
+  previouslyKnownAs:
+    name: previouslyKnownAs
+    description: Any historic version of this taxon having a different name
+    title: previously known as
+    deprecated: EVORAO:previouslyKnownAs is deprecated in favor of alternateName.
+      The property required complementary information linked to a Taxon, which limited
+      its applicability. alternateName provides broader support for historical and
+      non-historical alternative names without requiring taxonomic context
+    related_mappings:
+    - schema:alternateName
+    broad_mappings:
+    - dwc:Taxon
+    domain_of:
+    - Taxon
+    range: Taxon
+    required: false
+    multivalued: true
 
 ```
 </details>
@@ -391,7 +431,8 @@ slot_usage:
     domain_of:
     - Taxon
     range: Taxon
-    required: true
+    required: false
+    recommended: true
     multivalued: false
   rank:
     name: rank
@@ -410,21 +451,9 @@ slot_usage:
     - Taxon
     - Taxonomy
     range: TaxonomicRank
-    required: true
-    multivalued: false
-  previouslyKnownAs:
-    name: previouslyKnownAs
-    description: Any historic version of this taxon having a different name
-    title: previously known as
-    related_mappings:
-    - schema:alternateName
-    broad_mappings:
-    - dwc:Taxon
-    domain_of:
-    - Taxon
-    range: Taxon
     required: false
-    multivalued: true
+    recommended: true
+    multivalued: false
   externalEquivalentTaxon:
     name: externalEquivalentTaxon
     description: Any equivalent taxon in a different taxonomy if exists/known to serve
@@ -479,6 +508,46 @@ slot_usage:
     required: false
     recommended: true
     multivalued: false
+  alternateName:
+    name: alternateName
+    description: Any other name under which the entity can be known
+    title: alternate name
+    comments:
+    - This includes previous names, acronyms, former taxonomic terms, and other variations.
+      This information can serve as keywords for search purposes and as a bridge with
+      other projects that use different naming systems or taxonomies
+    exact_mappings:
+    - schema:alternateName
+    - dct:alternative
+    - iao:0000118
+    close_mappings:
+    - wdp:P4970
+    domain_of:
+    - Taxon
+    - CommonName
+    - AlternateName
+    - ClinicalGroup
+    - Organization
+    range: AlternateName
+    required: false
+    multivalued: true
+  previouslyKnownAs:
+    name: previouslyKnownAs
+    description: Any historic version of this taxon having a different name
+    title: previously known as
+    deprecated: EVORAO:previouslyKnownAs is deprecated in favor of alternateName.
+      The property required complementary information linked to a Taxon, which limited
+      its applicability. alternateName provides broader support for historical and
+      non-historical alternative names without requiring taxonomic context
+    related_mappings:
+    - schema:alternateName
+    broad_mappings:
+    - dwc:Taxon
+    domain_of:
+    - Taxon
+    range: Taxon
+    required: false
+    multivalued: true
 attributes:
   taxonomy:
     name: taxonomy
@@ -514,7 +583,8 @@ attributes:
     domain_of:
     - Taxon
     range: Taxon
-    required: true
+    required: false
+    recommended: true
     multivalued: false
   rank:
     name: rank
@@ -537,25 +607,9 @@ attributes:
     - Taxon
     - Taxonomy
     range: TaxonomicRank
-    required: true
-    multivalued: false
-  previouslyKnownAs:
-    name: previouslyKnownAs
-    description: Any historic version of this taxon having a different name
-    title: previously known as
-    from_schema: https://w3id.org/evorao/
-    related_mappings:
-    - schema:alternateName
-    broad_mappings:
-    - dwc:Taxon
-    rank: 1000
-    alias: previouslyKnownAs
-    owner: Taxon
-    domain_of:
-    - Taxon
-    range: Taxon
     required: false
-    multivalued: true
+    recommended: true
+    multivalued: false
   externalEquivalentTaxon:
     name: externalEquivalentTaxon
     description: Any equivalent taxon in a different taxonomy if exists/known to serve
@@ -622,6 +676,54 @@ attributes:
     required: false
     recommended: true
     multivalued: false
+  alternateName:
+    name: alternateName
+    description: Any other name under which the entity can be known
+    title: alternate name
+    comments:
+    - This includes previous names, acronyms, former taxonomic terms, and other variations.
+      This information can serve as keywords for search purposes and as a bridge with
+      other projects that use different naming systems or taxonomies
+    from_schema: https://w3id.org/evorao/
+    exact_mappings:
+    - schema:alternateName
+    - dct:alternative
+    - iao:0000118
+    close_mappings:
+    - wdp:P4970
+    rank: 1000
+    alias: alternateName
+    owner: Taxon
+    domain_of:
+    - Taxon
+    - CommonName
+    - AlternateName
+    - ClinicalGroup
+    - Organization
+    range: AlternateName
+    required: false
+    multivalued: true
+  previouslyKnownAs:
+    name: previouslyKnownAs
+    description: Any historic version of this taxon having a different name
+    title: previously known as
+    deprecated: EVORAO:previouslyKnownAs is deprecated in favor of alternateName.
+      The property required complementary information linked to a Taxon, which limited
+      its applicability. alternateName provides broader support for historical and
+      non-historical alternative names without requiring taxonomic context
+    from_schema: https://w3id.org/evorao/
+    related_mappings:
+    - schema:alternateName
+    broad_mappings:
+    - dwc:Taxon
+    rank: 1000
+    alias: previouslyKnownAs
+    owner: Taxon
+    domain_of:
+    - Taxon
+    range: Taxon
+    required: false
+    multivalued: true
   title:
     name: title
     description: A name given to the resource

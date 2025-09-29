@@ -22,8 +22,8 @@ Alias: rank
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [Taxon](Taxon.md) | Conceptual entity that groups one or more populations of an organism or organ... |  yes  |
 | [Taxonomy](Taxonomy.md) | A structured representation of data about the classification and naming of bi... |  yes  |
+| [Taxon](Taxon.md) | Conceptual entity that groups one or more populations of an organism or organ... |  yes  |
 
 
 
@@ -35,7 +35,7 @@ Alias: rank
 
 * Range: [TaxonomicRank](TaxonomicRank.md)
 
-* Required: True
+* Recommended: True
 
 
 
@@ -99,7 +99,8 @@ domain_of:
 - Taxonomy
 - Taxon
 range: TaxonomicRank
-required: true
+required: false
+recommended: true
 multivalued: false
 
 ```

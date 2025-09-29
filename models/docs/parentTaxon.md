@@ -34,7 +34,7 @@ Alias: parentTaxon
 
 * Range: [Taxon](Taxon.md)
 
-* Required: True
+* Recommended: True
 
 
 
@@ -88,7 +88,8 @@ alias: parentTaxon
 domain_of:
 - Taxon
 range: Taxon
-required: true
+required: false
+recommended: true
 multivalued: false
 
 ```

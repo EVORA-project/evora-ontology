@@ -48,7 +48,7 @@ keywords:
 - pathogen collections
 - interoperability
 id: https://w3id.org/evorao/
-version: 1.0.9975
+version: 1.0.10013
 imports:
 - linkml:types
 license: https://creativecommons.org/publicdomain/zero/1.0/
@@ -392,7 +392,8 @@ slots:
     - Taxonomy
     - Taxon
     range: TaxonomicRank
-    required: true
+    required: false
+    recommended: true
     multivalued: false
   rankDataProvider:
     description: The data provider for the description of the taxonomic ranks used
@@ -765,6 +766,7 @@ slots:
     domain_of:
     - CommonName
     - AlternateName
+    - Taxon
     - ClinicalGroup
     - Organization
     range: AlternateName
@@ -843,21 +845,9 @@ slots:
     domain_of:
     - Taxon
     range: Taxon
-    required: true
-    multivalued: false
-  previouslyKnownAs:
-    description: Any historic version of this taxon having a different name
-    title: previously known as
-    from_schema: https://w3id.org/evorao/
-    related_mappings:
-    - schema:alternateName
-    broad_mappings:
-    - dwc:Taxon
-    domain_of:
-    - Taxon
-    range: Taxon
     required: false
-    multivalued: true
+    recommended: true
+    multivalued: false
   externalEquivalentTaxon:
     description: Any equivalent taxon in a different taxonomy if exists/known to serve
       as a bridge (e.g, ICTV towards NCBI)
@@ -912,6 +902,23 @@ slots:
     required: false
     recommended: true
     multivalued: false
+  previouslyKnownAs:
+    description: Any historic version of this taxon having a different name
+    title: previously known as
+    deprecated: EVORAO:previouslyKnownAs is deprecated in favor of alternateName.
+      The property required complementary information linked to a Taxon, which limited
+      its applicability. alternateName provides broader support for historical and
+      non-historical alternative names without requiring taxonomic context
+    from_schema: https://w3id.org/evorao/
+    related_mappings:
+    - schema:alternateName
+    broad_mappings:
+    - dwc:Taxon
+    domain_of:
+    - Taxon
+    range: Taxon
+    required: false
+    multivalued: true
   reference:
     description: The identifier reference of the connected external item
     title: reference
@@ -4164,10 +4171,11 @@ classes:
     - taxonomy
     - parentTaxon
     - rank
-    - previouslyKnownAs
     - externalEquivalentTaxon
     - taxonomicId
     - taxonomicNodeId
+    - alternateName
+    - previouslyKnownAs
     slot_usage:
       taxonomy:
         description: The taxonomy release(s) in which this entity exists
@@ -4192,7 +4200,8 @@ classes:
         domain_of:
         - Taxon
         range: Taxon
-        required: true
+        required: false
+        recommended: true
         multivalued: false
       rank:
         description: Relative level or position of the identified taxon in the taxonomy
@@ -4209,20 +4218,9 @@ classes:
         domain_of:
         - Taxon
         range: TaxonomicRank
-        required: true
-        multivalued: false
-      previouslyKnownAs:
-        description: Any historic version of this taxon having a different name
-        title: previously known as
-        related_mappings:
-        - schema:alternateName
-        broad_mappings:
-        - dwc:Taxon
-        domain_of:
-        - Taxon
-        range: Taxon
         required: false
-        multivalued: true
+        recommended: true
+        multivalued: false
       externalEquivalentTaxon:
         description: Any equivalent taxon in a different taxonomy if exists/known
           to serve as a bridge (e.g, ICTV towards NCBI)
@@ -4274,6 +4272,40 @@ classes:
         required: false
         recommended: true
         multivalued: false
+      alternateName:
+        description: Any other name under which the entity can be known
+        title: alternate name
+        comments:
+        - This includes previous names, acronyms, former taxonomic terms, and other
+          variations. This information can serve as keywords for search purposes and
+          as a bridge with other projects that use different naming systems or taxonomies
+        exact_mappings:
+        - schema:alternateName
+        - dct:alternative
+        - iao:0000118
+        close_mappings:
+        - wdp:P4970
+        domain_of:
+        - Taxon
+        range: AlternateName
+        required: false
+        multivalued: true
+      previouslyKnownAs:
+        description: Any historic version of this taxon having a different name
+        title: previously known as
+        deprecated: EVORAO:previouslyKnownAs is deprecated in favor of alternateName.
+          The property required complementary information linked to a Taxon, which
+          limited its applicability. alternateName provides broader support for historical
+          and non-historical alternative names without requiring taxonomic context
+        related_mappings:
+        - schema:alternateName
+        broad_mappings:
+        - dwc:Taxon
+        domain_of:
+        - Taxon
+        range: Taxon
+        required: false
+        multivalued: true
   ClinicalGroup:
     description: A syndromic grouping of pathogens, based on typical disease manifestation,
       clinical syndrome, or primary system affected. Examples include Respiratory
@@ -7233,4 +7265,4 @@ classes:
         required: false
         multivalued: false
 source_file: https://w3id.org/evorao/evorao.owl.ttl
-generation_date: '2025-09-26T17:37:15'
+generation_date: '2025-09-29T15:03:00'

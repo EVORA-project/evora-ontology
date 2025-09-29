@@ -287,6 +287,7 @@ attributes:
     - Organization
     - CommonName
     - AlternateName
+    - Taxon
     - ClinicalGroup
     range: AlternateName
     required: false

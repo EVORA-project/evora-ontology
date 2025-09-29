@@ -196,6 +196,7 @@ attributes:
     domain_of:
     - CommonName
     - AlternateName
+    - Taxon
     - ClinicalGroup
     - Organization
     range: AlternateName

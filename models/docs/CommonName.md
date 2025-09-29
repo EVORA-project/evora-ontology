@@ -188,6 +188,7 @@ slot_usage:
     domain_of:
     - CommonName
     - AlternateName
+    - Taxon
     - ClinicalGroup
     - Organization
     range: AlternateName
@@ -247,6 +248,7 @@ slot_usage:
     domain_of:
     - CommonName
     - AlternateName
+    - Taxon
     - ClinicalGroup
     - Organization
     range: AlternateName
@@ -287,6 +289,7 @@ attributes:
     domain_of:
     - CommonName
     - AlternateName
+    - Taxon
     - ClinicalGroup
     - Organization
     range: AlternateName

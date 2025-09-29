@@ -201,6 +201,7 @@ slot_usage:
     - Organization
     - CommonName
     - AlternateName
+    - Taxon
     - ClinicalGroup
     range: AlternateName
     required: false
@@ -272,6 +273,7 @@ slot_usage:
     - Organization
     - CommonName
     - AlternateName
+    - Taxon
     - ClinicalGroup
     range: AlternateName
     required: false
@@ -325,6 +327,7 @@ attributes:
     - Organization
     - CommonName
     - AlternateName
+    - Taxon
     - ClinicalGroup
     range: AlternateName
     required: false

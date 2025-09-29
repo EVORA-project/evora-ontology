@@ -2203,24 +2203,6 @@ class TaxonTaxonomy(Base):
     
 
 
-class TaxonPreviouslyKnownAs(Base):
-    """
-    
-    """
-    __tablename__ = 'Taxon_previouslyKnownAs'
-
-    Taxon_id = Column(Integer(), ForeignKey('Taxon.id'), primary_key=True)
-    previouslyKnownAs_id = Column(Integer(), ForeignKey('Taxon.id'), primary_key=True)
-    
-
-    def __repr__(self):
-        return f"Taxon_previouslyKnownAs(Taxon_id={self.Taxon_id},previouslyKnownAs_id={self.previouslyKnownAs_id},)"
-
-
-
-    
-
-
 class TaxonExternalEquivalentTaxon(Base):
     """
     
@@ -2233,6 +2215,42 @@ class TaxonExternalEquivalentTaxon(Base):
 
     def __repr__(self):
         return f"Taxon_externalEquivalentTaxon(Taxon_id={self.Taxon_id},externalEquivalentTaxon_id={self.externalEquivalentTaxon_id},)"
+
+
+
+    
+
+
+class TaxonAlternateName(Base):
+    """
+    
+    """
+    __tablename__ = 'Taxon_alternateName'
+
+    Taxon_id = Column(Integer(), ForeignKey('Taxon.id'), primary_key=True)
+    alternateName_id = Column(Integer(), ForeignKey('AlternateName.id'), primary_key=True)
+    
+
+    def __repr__(self):
+        return f"Taxon_alternateName(Taxon_id={self.Taxon_id},alternateName_id={self.alternateName_id},)"
+
+
+
+    
+
+
+class TaxonPreviouslyKnownAs(Base):
+    """
+    
+    """
+    __tablename__ = 'Taxon_previouslyKnownAs'
+
+    Taxon_id = Column(Integer(), ForeignKey('Taxon.id'), primary_key=True)
+    previouslyKnownAs_id = Column(Integer(), ForeignKey('Taxon.id'), primary_key=True)
+    
+
+    def __repr__(self):
+        return f"Taxon_previouslyKnownAs(Taxon_id={self.Taxon_id},previouslyKnownAs_id={self.previouslyKnownAs_id},)"
 
 
 
@@ -10332,9 +10350,9 @@ class Taxon(Term):
     weight = Column(Integer(), nullable=False )
     dateIssued = Column(DateTime())
     dateModified = Column(DateTime())
-    parentTaxon_id = Column(Integer(), ForeignKey('Taxon.id'), nullable=False )
+    parentTaxon_id = Column(Integer(), ForeignKey('Taxon.id'))
     parentTaxon = relationship("Taxon", uselist=False, foreign_keys=[parentTaxon_id])
-    rank_id = Column(Integer(), ForeignKey('TaxonomicRank.id'), nullable=False )
+    rank_id = Column(Integer(), ForeignKey('TaxonomicRank.id'))
     rank = relationship("TaxonomicRank", uselist=False, foreign_keys=[rank_id])
     inVocabulary_id = Column(Integer(), ForeignKey('Vocabulary.id'), nullable=False )
     inVocabulary = relationship("Vocabulary", uselist=False, foreign_keys=[inVocabulary_id])
@@ -10345,11 +10363,15 @@ class Taxon(Term):
     
     
     # ManyToMany
-    previouslyKnownAs = relationship( "Taxon", secondary="Taxon_previouslyKnownAs")
+    externalEquivalentTaxon = relationship( "Taxon", secondary="Taxon_externalEquivalentTaxon")
     
     
     # ManyToMany
-    externalEquivalentTaxon = relationship( "Taxon", secondary="Taxon_externalEquivalentTaxon")
+    alternateName = relationship( "AlternateName", secondary="Taxon_alternateName")
+    
+    
+    # ManyToMany
+    previouslyKnownAs = relationship( "Taxon", secondary="Taxon_previouslyKnownAs")
     
     
     keyword_rel = relationship( "TaxonKeyword" )

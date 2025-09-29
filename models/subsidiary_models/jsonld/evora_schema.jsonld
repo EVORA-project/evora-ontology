@@ -38,7 +38,7 @@
     "interoperability"
   ],
   "id": "https://w3id.org/evorao/",
-  "version": "1.0.9975",
+  "version": "1.0.10013",
   "imports": [
     "linkml:types"
   ],
@@ -998,7 +998,7 @@
         "Taxon"
       ],
       "range": "TaxonomicRank",
-      "required": true,
+      "recommended": true,
       "inlined": true,
       "@type": "SlotDefinition"
     },
@@ -1537,6 +1537,7 @@
       "domain_of": [
         "CommonName",
         "AlternateName",
+        "Taxon",
         "ClinicalGroup",
         "Organization"
       ],
@@ -1654,29 +1655,7 @@
         "Taxon"
       ],
       "range": "Taxon",
-      "required": true,
-      "inlined": true,
-      "@type": "SlotDefinition"
-    },
-    {
-      "name": "previouslyKnownAs",
-      "definition_uri": "https://w3id.org/evorao/previouslyKnownAs",
-      "description": "Any historic version of this taxon having a different name",
-      "title": "previously known as",
-      "from_schema": "https://w3id.org/evorao/",
-      "related_mappings": [
-        "http://schema.org/alternateName"
-      ],
-      "broad_mappings": [
-        "http://rs.tdwg.org/dwc/terms/Taxon"
-      ],
-      "slot_uri": "https://w3id.org/evorao/previouslyKnownAs",
-      "owner": "Taxon",
-      "domain_of": [
-        "Taxon"
-      ],
-      "range": "Taxon",
-      "multivalued": true,
+      "recommended": true,
       "inlined": true,
       "@type": "SlotDefinition"
     },
@@ -1754,6 +1733,29 @@
       ],
       "range": "string",
       "recommended": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "previouslyKnownAs",
+      "definition_uri": "https://w3id.org/evorao/previouslyKnownAs",
+      "description": "Any historic version of this taxon having a different name",
+      "title": "previously known as",
+      "deprecated": "EVORAO:previouslyKnownAs is deprecated in favor of alternateName. The property required complementary information linked to a Taxon, which limited its applicability. alternateName provides broader support for historical and non-historical alternative names without requiring taxonomic context",
+      "from_schema": "https://w3id.org/evorao/",
+      "related_mappings": [
+        "http://schema.org/alternateName"
+      ],
+      "broad_mappings": [
+        "http://rs.tdwg.org/dwc/terms/Taxon"
+      ],
+      "slot_uri": "https://w3id.org/evorao/previouslyKnownAs",
+      "owner": "Taxon",
+      "domain_of": [
+        "Taxon"
+      ],
+      "range": "Taxon",
+      "multivalued": true,
+      "inlined": true,
       "@type": "SlotDefinition"
     },
     {
@@ -5014,7 +5016,7 @@
       "is_usage_slot": true,
       "usage_slot_name": "rank",
       "range": "TaxonomicRank",
-      "required": true,
+      "recommended": true,
       "multivalued": true,
       "inlined": true,
       "@type": "SlotDefinition"
@@ -6044,7 +6046,7 @@
       "is_usage_slot": true,
       "usage_slot_name": "parentTaxon",
       "range": "Taxon",
-      "required": true,
+      "recommended": true,
       "inlined": true,
       "@type": "SlotDefinition"
     },
@@ -6077,34 +6079,7 @@
       "is_usage_slot": true,
       "usage_slot_name": "rank",
       "range": "TaxonomicRank",
-      "required": true,
-      "inlined": true,
-      "@type": "SlotDefinition"
-    },
-    {
-      "name": "Taxon_previouslyKnownAs",
-      "definition_uri": "https://w3id.org/evorao/previouslyKnownAs",
-      "description": "Any historic version of this taxon having a different name",
-      "title": "previously known as",
-      "from_schema": "https://w3id.org/evorao/",
-      "related_mappings": [
-        "http://schema.org/alternateName"
-      ],
-      "broad_mappings": [
-        "http://rs.tdwg.org/dwc/terms/Taxon"
-      ],
-      "is_a": "previouslyKnownAs",
-      "domain": "Taxon",
-      "slot_uri": "https://w3id.org/evorao/previouslyKnownAs",
-      "alias": "previouslyKnownAs",
-      "owner": "Taxon",
-      "domain_of": [
-        "Taxon"
-      ],
-      "is_usage_slot": true,
-      "usage_slot_name": "previouslyKnownAs",
-      "range": "Taxon",
-      "multivalued": true,
+      "recommended": true,
       "inlined": true,
       "@type": "SlotDefinition"
     },
@@ -6195,6 +6170,66 @@
       "usage_slot_name": "taxonomicNodeId",
       "range": "string",
       "recommended": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "Taxon_alternateName",
+      "definition_uri": "https://w3id.org/evorao/alternateName",
+      "description": "Any other name under which the entity can be known",
+      "title": "alternate name",
+      "comments": [
+        "This includes previous names, acronyms, former taxonomic terms, and other variations. This information can serve as keywords for search purposes and as a bridge with other projects that use different naming systems or taxonomies"
+      ],
+      "from_schema": "https://w3id.org/evorao/",
+      "exact_mappings": [
+        "http://schema.org/alternateName",
+        "http://purl.org/dc/terms/alternative",
+        "http://purl.obolibrary.org/obo/IAO_0000118"
+      ],
+      "close_mappings": [
+        "http://www.wikidata.org/prop/P4970"
+      ],
+      "is_a": "alternateName",
+      "domain": "Taxon",
+      "slot_uri": "https://w3id.org/evorao/alternateName",
+      "alias": "alternateName",
+      "owner": "Taxon",
+      "domain_of": [
+        "Taxon"
+      ],
+      "is_usage_slot": true,
+      "usage_slot_name": "alternateName",
+      "range": "AlternateName",
+      "multivalued": true,
+      "inlined": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "Taxon_previouslyKnownAs",
+      "definition_uri": "https://w3id.org/evorao/previouslyKnownAs",
+      "description": "Any historic version of this taxon having a different name",
+      "title": "previously known as",
+      "deprecated": "EVORAO:previouslyKnownAs is deprecated in favor of alternateName. The property required complementary information linked to a Taxon, which limited its applicability. alternateName provides broader support for historical and non-historical alternative names without requiring taxonomic context",
+      "from_schema": "https://w3id.org/evorao/",
+      "related_mappings": [
+        "http://schema.org/alternateName"
+      ],
+      "broad_mappings": [
+        "http://rs.tdwg.org/dwc/terms/Taxon"
+      ],
+      "is_a": "previouslyKnownAs",
+      "domain": "Taxon",
+      "slot_uri": "https://w3id.org/evorao/previouslyKnownAs",
+      "alias": "previouslyKnownAs",
+      "owner": "Taxon",
+      "domain_of": [
+        "Taxon"
+      ],
+      "is_usage_slot": true,
+      "usage_slot_name": "previouslyKnownAs",
+      "range": "Taxon",
+      "multivalued": true,
+      "inlined": true,
       "@type": "SlotDefinition"
     },
     {
@@ -11537,10 +11572,11 @@
         "Taxon_taxonomy",
         "Taxon_parentTaxon",
         "Taxon_rank",
-        "Taxon_previouslyKnownAs",
         "Taxon_externalEquivalentTaxon",
         "taxonomicId",
         "taxonomicNodeId",
+        "Taxon_alternateName",
+        "Taxon_previouslyKnownAs",
         "Taxon_taxonomicId",
         "Taxon_taxonomicNodeId"
       ],
@@ -13676,9 +13712,9 @@
   ],
   "metamodel_version": "1.7.0",
   "source_file": "evora_schema.yaml",
-  "source_file_date": "2025-09-26T15:37:36",
-  "source_file_size": 227406,
-  "generation_date": "2025-09-26T15:37:52",
+  "source_file_date": "2025-09-29T13:03:22",
+  "source_file_size": 228870,
+  "generation_date": "2025-09-29T13:03:38",
   "@type": "SchemaDefinition",
   "@context": [
     "https://w3id.org/linkml/types.context.jsonld",

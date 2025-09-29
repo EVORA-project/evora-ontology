@@ -27,7 +27,7 @@ from pydantic import (
 
 
 metamodel_version = "None"
-version = "1.0.9975"
+version = "1.0.10013"
 
 
 class ConfiguredBaseModel(BaseModel):
@@ -99,7 +99,7 @@ linkml_meta = LinkMLMeta({'comments': ['EVORAO is an ontology for standardized m
                     'pathogens. EVORAO is compatible with DCAT, making it '
                     'well-suited for efficiently cataloguing pathogen collections '
                     'and related resources.',
-     'generation_date': '2025-09-26T17:37:15',
+     'generation_date': '2025-09-29T15:03:00',
      'id': 'https://w3id.org/evorao/',
      'imports': ['linkml:types'],
      'in_language': 'en',
@@ -936,6 +936,7 @@ class Taxonomy(Catalogue):
                             'biolink:has_taxonomic_rank'],
          'domain_of': ['Taxonomy', 'Taxon'],
          'exact_mappings': ['wdp:P105'],
+         'recommended': True,
          'related_mappings': ['taxrank:1000000', 'ncbitaxon:has_rank']} })
     rankDataProvider: Optional[DataProvider] = Field(default=None, title="rank data provider", description="""The data provider for the description of the taxonomic ranks used in this taxonomy""", json_schema_extra = { "linkml_meta": {'alias': 'rankDataProvider', 'domain_of': ['Taxonomy']} })
     title: str = Field(default=..., title="title", description="""A name given to the resource""", json_schema_extra = { "linkml_meta": {'alias': 'title',
@@ -1909,6 +1910,7 @@ class CommonName(Term):
                                                          'the entity can be known',
                                           'domain_of': ['CommonName',
                                                         'AlternateName',
+                                                        'Taxon',
                                                         'ClinicalGroup',
                                                         'Organization'],
                                           'exact_mappings': ['schema:alternateName',
@@ -1941,7 +1943,11 @@ class CommonName(Term):
                       'and other variations. This information can serve as keywords '
                       'for search purposes and as a bridge with other projects that '
                       'use different naming systems or taxonomies'],
-         'domain_of': ['CommonName', 'AlternateName', 'ClinicalGroup', 'Organization'],
+         'domain_of': ['CommonName',
+                       'AlternateName',
+                       'Taxon',
+                       'ClinicalGroup',
+                       'Organization'],
          'exact_mappings': ['schema:alternateName', 'dct:alternative', 'iao:0000118']} })
     sourceOfInformation: Optional[list[str]] = Field(default=None, title="source of information", description="""The name of the origin from which knowledge is obtained. This can include any entity that provides information""", json_schema_extra = { "linkml_meta": {'alias': 'sourceOfInformation',
          'close_mappings': ['wdp:P248'],
@@ -2039,7 +2045,11 @@ class VirusName(CommonName):
                       'and other variations. This information can serve as keywords '
                       'for search purposes and as a bridge with other projects that '
                       'use different naming systems or taxonomies'],
-         'domain_of': ['CommonName', 'AlternateName', 'ClinicalGroup', 'Organization'],
+         'domain_of': ['CommonName',
+                       'AlternateName',
+                       'Taxon',
+                       'ClinicalGroup',
+                       'Organization'],
          'exact_mappings': ['schema:alternateName', 'dct:alternative', 'iao:0000118']} })
     sourceOfInformation: Optional[list[str]] = Field(default=None, title="source of information", description="""The name of the origin from which knowledge is obtained. This can include any entity that provides information""", json_schema_extra = { "linkml_meta": {'alias': 'sourceOfInformation',
          'close_mappings': ['wdp:P248'],
@@ -2142,6 +2152,7 @@ class AlternateName(Term):
                                                          'the entity can be known',
                                           'domain_of': ['AlternateName',
                                                         'CommonName',
+                                                        'Taxon',
                                                         'ClinicalGroup',
                                                         'Organization'],
                                           'exact_mappings': ['schema:alternateName',
@@ -2175,7 +2186,11 @@ class AlternateName(Term):
                       'and other variations. This information can serve as keywords '
                       'for search purposes and as a bridge with other projects that '
                       'use different naming systems or taxonomies'],
-         'domain_of': ['AlternateName', 'CommonName', 'ClinicalGroup', 'Organization'],
+         'domain_of': ['AlternateName',
+                       'CommonName',
+                       'Taxon',
+                       'ClinicalGroup',
+                       'Organization'],
          'exact_mappings': ['schema:alternateName', 'dct:alternative', 'iao:0000118']} })
     sourceOfInformation: Optional[list[str]] = Field(default=None, title="source of information", description="""The name of the origin from which knowledge is obtained. This can include any entity that provides information""", json_schema_extra = { "linkml_meta": {'alias': 'sourceOfInformation',
          'close_mappings': ['wdp:P248'],
@@ -3912,7 +3927,11 @@ class Variant(CommonName):
                       'and other variations. This information can serve as keywords '
                       'for search purposes and as a bridge with other projects that '
                       'use different naming systems or taxonomies'],
-         'domain_of': ['CommonName', 'AlternateName', 'ClinicalGroup', 'Organization'],
+         'domain_of': ['CommonName',
+                       'AlternateName',
+                       'Taxon',
+                       'ClinicalGroup',
+                       'Organization'],
          'exact_mappings': ['schema:alternateName', 'dct:alternative', 'iao:0000118']} })
     sourceOfInformation: Optional[list[str]] = Field(default=None, title="source of information", description="""The name of the origin from which knowledge is obtained. This can include any entity that provides information""", json_schema_extra = { "linkml_meta": {'alias': 'sourceOfInformation',
          'close_mappings': ['wdp:P248'],
@@ -4115,7 +4134,31 @@ class Taxon(Term):
                       'lienage can be rebuild. Use of Data provider recommended'],
          'exact_mappings': ['schema:Taxon', 'schema:Taxon'],
          'from_schema': 'https://w3id.org/evorao/',
-         'slot_usage': {'externalEquivalentTaxon': {'close_mappings': ['dwc:taxonID'],
+         'slot_usage': {'alternateName': {'close_mappings': ['wdp:P4970'],
+                                          'comments': ['This includes previous names, '
+                                                       'acronyms, former taxonomic '
+                                                       'terms, and other variations. '
+                                                       'This information can serve as '
+                                                       'keywords for search purposes '
+                                                       'and as a bridge with other '
+                                                       'projects that use different '
+                                                       'naming systems or taxonomies'],
+                                          'description': 'Any other name under which '
+                                                         'the entity can be known',
+                                          'domain_of': ['Taxon',
+                                                        'CommonName',
+                                                        'AlternateName',
+                                                        'ClinicalGroup',
+                                                        'Organization'],
+                                          'exact_mappings': ['schema:alternateName',
+                                                             'dct:alternative',
+                                                             'iao:0000118'],
+                                          'multivalued': True,
+                                          'name': 'alternateName',
+                                          'range': 'AlternateName',
+                                          'required': False,
+                                          'title': 'alternate name'},
+                        'externalEquivalentTaxon': {'close_mappings': ['dwc:taxonID'],
                                                     'comments': ['Could serve as a '
                                                                  'bridge between ICTV '
                                                                  'and NCBI as several '
@@ -4145,9 +4188,25 @@ class Taxon(Term):
                                         'multivalued': False,
                                         'name': 'parentTaxon',
                                         'range': 'Taxon',
-                                        'required': True,
+                                        'recommended': True,
+                                        'required': False,
                                         'title': 'parent taxon'},
                         'previouslyKnownAs': {'broad_mappings': ['dwc:Taxon'],
+                                              'deprecated': 'EVORAO:previouslyKnownAs '
+                                                            'is deprecated in favor of '
+                                                            'alternateName. The '
+                                                            'property required '
+                                                            'complementary information '
+                                                            'linked to a Taxon, which '
+                                                            'limited its '
+                                                            'applicability. '
+                                                            'alternateName provides '
+                                                            'broader support for '
+                                                            'historical and '
+                                                            'non-historical '
+                                                            'alternative names without '
+                                                            'requiring taxonomic '
+                                                            'context',
                                               'description': 'Any historic version of '
                                                              'this taxon having a '
                                                              'different name',
@@ -4168,9 +4227,10 @@ class Taxon(Term):
                                  'multivalued': False,
                                  'name': 'rank',
                                  'range': 'TaxonomicRank',
+                                 'recommended': True,
                                  'related_mappings': ['taxrank:1000000',
                                                       'ncbitaxon:has_rank'],
-                                 'required': True,
+                                 'required': False,
                                  'title': 'rank'},
                         'taxonomicId': {'broad_mappings': ['schema:identifier',
                                                            'dct:identifier'],
@@ -4227,22 +4287,20 @@ class Taxon(Term):
          'broad_mappings': ['dct:isPartOf'],
          'domain_of': ['Taxon', 'TaxonomicRank'],
          'recommended': True} })
-    parentTaxon: Taxon = Field(default=..., title="parent taxon", description="""The parent taxon of the current taxon""", json_schema_extra = { "linkml_meta": {'alias': 'parentTaxon',
+    parentTaxon: Optional[Taxon] = Field(default=None, title="parent taxon", description="""The parent taxon of the current taxon""", json_schema_extra = { "linkml_meta": {'alias': 'parentTaxon',
          'broad_mappings': ['dwc:Taxon'],
          'close_mappings': ['wdp:P171'],
          'domain_of': ['Taxon'],
-         'exact_mappings': ['schema:parentTaxon']} })
-    rank: TaxonomicRank = Field(default=..., title="rank", description="""Relative level or position of the identified taxon in the taxonomy""", json_schema_extra = { "linkml_meta": {'alias': 'rank',
+         'exact_mappings': ['schema:parentTaxon'],
+         'recommended': True} })
+    rank: Optional[TaxonomicRank] = Field(default=None, title="rank", description="""Relative level or position of the identified taxon in the taxonomy""", json_schema_extra = { "linkml_meta": {'alias': 'rank',
          'close_mappings': ['dwc:taxonRank',
                             'schema:taxonRank',
                             'biolink:has_taxonomic_rank'],
          'domain_of': ['Taxon', 'Taxonomy'],
          'exact_mappings': ['wdp:P105'],
+         'recommended': True,
          'related_mappings': ['taxrank:1000000', 'ncbitaxon:has_rank']} })
-    previouslyKnownAs: Optional[list[Taxon]] = Field(default=None, title="previously known as", description="""Any historic version of this taxon having a different name""", json_schema_extra = { "linkml_meta": {'alias': 'previouslyKnownAs',
-         'broad_mappings': ['dwc:Taxon'],
-         'domain_of': ['Taxon'],
-         'related_mappings': ['schema:alternateName']} })
     externalEquivalentTaxon: Optional[list[Taxon]] = Field(default=None, title="external equivalent taxon", description="""Any equivalent taxon in a different taxonomy if exists/known to serve as a bridge (e.g, ICTV towards NCBI)""", json_schema_extra = { "linkml_meta": {'alias': 'externalEquivalentTaxon',
          'close_mappings': ['dwc:taxonID'],
          'comments': ['Could serve as a bridge between ICTV and NCBI as several '
@@ -4265,6 +4323,28 @@ class Taxon(Term):
          'domain_of': ['Taxon'],
          'is_a': 'identifier',
          'recommended': True} })
+    alternateName: Optional[list[AlternateName]] = Field(default=None, title="alternate name", description="""Any other name under which the entity can be known""", json_schema_extra = { "linkml_meta": {'alias': 'alternateName',
+         'close_mappings': ['wdp:P4970'],
+         'comments': ['This includes previous names, acronyms, former taxonomic terms, '
+                      'and other variations. This information can serve as keywords '
+                      'for search purposes and as a bridge with other projects that '
+                      'use different naming systems or taxonomies'],
+         'domain_of': ['Taxon',
+                       'CommonName',
+                       'AlternateName',
+                       'ClinicalGroup',
+                       'Organization'],
+         'exact_mappings': ['schema:alternateName', 'dct:alternative', 'iao:0000118']} })
+    previouslyKnownAs: Optional[list[Taxon]] = Field(default=None, title="previously known as", description="""Any historic version of this taxon having a different name""", json_schema_extra = { "linkml_meta": {'alias': 'previouslyKnownAs',
+         'broad_mappings': ['dwc:Taxon'],
+         'deprecated': 'EVORAO:previouslyKnownAs is deprecated in favor of '
+                       'alternateName. The property required complementary information '
+                       'linked to a Taxon, which limited its applicability. '
+                       'alternateName provides broader support for historical and '
+                       'non-historical alternative names without requiring taxonomic '
+                       'context',
+         'domain_of': ['Taxon'],
+         'related_mappings': ['schema:alternateName']} })
     title: str = Field(default=..., title="title", description="""A name given to the resource""", json_schema_extra = { "linkml_meta": {'alias': 'title',
          'comments': ['The title of the item should be as short and descriptive as '
                       'possible. E.g. for virus products it should basically be based '
@@ -4361,6 +4441,7 @@ class ClinicalGroup(Term):
                                           'domain_of': ['ClinicalGroup',
                                                         'CommonName',
                                                         'AlternateName',
+                                                        'Taxon',
                                                         'Organization'],
                                           'exact_mappings': ['schema:alternateName',
                                                              'dct:alternative',
@@ -4392,7 +4473,11 @@ class ClinicalGroup(Term):
                       'and other variations. This information can serve as keywords '
                       'for search purposes and as a bridge with other projects that '
                       'use different naming systems or taxonomies'],
-         'domain_of': ['ClinicalGroup', 'CommonName', 'AlternateName', 'Organization'],
+         'domain_of': ['ClinicalGroup',
+                       'CommonName',
+                       'AlternateName',
+                       'Taxon',
+                       'Organization'],
          'exact_mappings': ['schema:alternateName', 'dct:alternative', 'iao:0000118']} })
     taxon: Optional[list[Taxon]] = Field(default=None, title="taxon", description="""Scientifically classified group or entity within the reference taxonomy""", json_schema_extra = { "linkml_meta": {'alias': 'taxon',
          'close_mappings': ['schema:taxonomicRange', 'dwc:taxonID', 'dwc:toTaxon'],
@@ -5021,6 +5106,7 @@ class Organization(PersonOrOrganization):
                                           'domain_of': ['Organization',
                                                         'CommonName',
                                                         'AlternateName',
+                                                        'Taxon',
                                                         'ClinicalGroup'],
                                           'exact_mappings': ['schema:alternateName',
                                                              'dct:alternative',
@@ -5059,7 +5145,11 @@ class Organization(PersonOrOrganization):
                       'and other variations. This information can serve as keywords '
                       'for search purposes and as a bridge with other projects that '
                       'use different naming systems or taxonomies'],
-         'domain_of': ['Organization', 'CommonName', 'AlternateName', 'ClinicalGroup'],
+         'domain_of': ['Organization',
+                       'CommonName',
+                       'AlternateName',
+                       'Taxon',
+                       'ClinicalGroup'],
          'exact_mappings': ['schema:alternateName', 'dct:alternative', 'iao:0000118']} })
     country: Optional[Country] = Field(default=None, title="country", description="""The country of the organization""", json_schema_extra = { "linkml_meta": {'alias': 'country', 'domain_of': ['Organization'], 'recommended': True} })
     rorId: Optional[str] = Field(default=None, title="ROR iD", description="""The corresponding organization's persistent identifier from the Research Organization Registry (ROR)""", json_schema_extra = { "linkml_meta": {'alias': 'rorId',
@@ -5152,7 +5242,11 @@ class ReasearchInfrastructure(Organization):
                       'and other variations. This information can serve as keywords '
                       'for search purposes and as a bridge with other projects that '
                       'use different naming systems or taxonomies'],
-         'domain_of': ['Organization', 'CommonName', 'AlternateName', 'ClinicalGroup'],
+         'domain_of': ['Organization',
+                       'CommonName',
+                       'AlternateName',
+                       'Taxon',
+                       'ClinicalGroup'],
          'exact_mappings': ['schema:alternateName', 'dct:alternative', 'iao:0000118']} })
     country: Optional[Country] = Field(default=None, title="country", description="""The country of the organization""", json_schema_extra = { "linkml_meta": {'alias': 'country', 'domain_of': ['Organization'], 'recommended': True} })
     rorId: Optional[str] = Field(default=None, title="ROR iD", description="""The corresponding organization's persistent identifier from the Research Organization Registry (ROR)""", json_schema_extra = { "linkml_meta": {'alias': 'rorId',
@@ -5258,7 +5352,11 @@ class Provider(Organization):
                       'and other variations. This information can serve as keywords '
                       'for search purposes and as a bridge with other projects that '
                       'use different naming systems or taxonomies'],
-         'domain_of': ['Organization', 'CommonName', 'AlternateName', 'ClinicalGroup'],
+         'domain_of': ['Organization',
+                       'CommonName',
+                       'AlternateName',
+                       'Taxon',
+                       'ClinicalGroup'],
          'exact_mappings': ['schema:alternateName', 'dct:alternative', 'iao:0000118']} })
     country: Optional[Country] = Field(default=None, title="country", description="""The country of the organization""", json_schema_extra = { "linkml_meta": {'alias': 'country', 'domain_of': ['Organization'], 'recommended': True} })
     rorId: Optional[str] = Field(default=None, title="ROR iD", description="""The corresponding organization's persistent identifier from the Research Organization Registry (ROR)""", json_schema_extra = { "linkml_meta": {'alias': 'rorId',

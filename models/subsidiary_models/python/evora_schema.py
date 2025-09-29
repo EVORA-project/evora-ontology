@@ -1,5 +1,5 @@
 # Auto generated from evora_schema.yaml by pythongen.py version: 0.0.1
-# Generation date: 2025-09-26T15:37:57
+# Generation date: 2025-09-29T13:03:44
 # Schema: EVORAO
 #
 # id: https://w3id.org/evorao/
@@ -60,7 +60,7 @@ from linkml_runtime.linkml_model.types import Boolean, Datetime, Decimal, Intege
 from linkml_runtime.utils.metamodelcore import Bool, Decimal, URI, XSDDateTime
 
 metamodel_version = "1.7.0"
-version = "1.0.9975"
+version = "1.0.10013"
 
 # Namespaces
 EVORAO = CurieNamespace('EVORAO', 'https://w3id.org/evorao/')
@@ -314,8 +314,8 @@ class Taxonomy(Catalogue):
     taxon: Union[Union[dict, "Taxon"], list[Union[dict, "Taxon"]]] = None
     version: str = None
     versionDataProvider: Union[dict, "DataProvider"] = None
-    rank: Union[Union[dict, "TaxonomicRank"], list[Union[dict, "TaxonomicRank"]]] = None
     taxonDataProvider: Optional[Union[dict, "DataProvider"]] = None
+    rank: Optional[Union[Union[dict, "TaxonomicRank"], list[Union[dict, "TaxonomicRank"]]]] = empty_list()
     rankDataProvider: Optional[Union[dict, "DataProvider"]] = None
 
     def __post_init__(self, *_: str, **kwargs: Any):
@@ -333,10 +333,6 @@ class Taxonomy(Catalogue):
         if not isinstance(self.versionDataProvider, DataProvider):
             self.versionDataProvider = DataProvider(**as_dict(self.versionDataProvider))
 
-        if self._is_empty(self.rank):
-            self.MissingRequiredField("rank")
-        self._normalize_inlined_as_dict(slot_name="rank", slot_type=TaxonomicRank, key_name="title", keyed=False)
-
         if self._is_empty(self.version):
             self.MissingRequiredField("version")
         if not isinstance(self.version, str):
@@ -344,6 +340,8 @@ class Taxonomy(Catalogue):
 
         if self.taxonDataProvider is not None and not isinstance(self.taxonDataProvider, DataProvider):
             self.taxonDataProvider = DataProvider(**as_dict(self.taxonDataProvider))
+
+        self._normalize_inlined_as_dict(slot_name="rank", slot_type=TaxonomicRank, key_name="title", keyed=False)
 
         if self.rankDataProvider is not None and not isinstance(self.rankDataProvider, DataProvider):
             self.rankDataProvider = DataProvider(**as_dict(self.rankDataProvider))
@@ -1029,26 +1027,17 @@ class Taxon(Term):
 
     title: str = None
     inVocabulary: Union[dict, Vocabulary] = None
-    parentTaxon: Union[dict, "Taxon"] = None
-    rank: Union[dict, TaxonomicRank] = None
     taxonomicId: str = None
     weight: int = 0
     taxonomy: Optional[Union[Union[dict, Taxonomy], list[Union[dict, Taxonomy]]]] = empty_list()
-    previouslyKnownAs: Optional[Union[Union[dict, "Taxon"], list[Union[dict, "Taxon"]]]] = empty_list()
+    parentTaxon: Optional[Union[dict, "Taxon"]] = None
+    rank: Optional[Union[dict, TaxonomicRank]] = None
     externalEquivalentTaxon: Optional[Union[Union[dict, "Taxon"], list[Union[dict, "Taxon"]]]] = empty_list()
     taxonomicNodeId: Optional[str] = None
+    alternateName: Optional[Union[Union[dict, AlternateName], list[Union[dict, AlternateName]]]] = empty_list()
+    previouslyKnownAs: Optional[Union[Union[dict, "Taxon"], list[Union[dict, "Taxon"]]]] = empty_list()
 
     def __post_init__(self, *_: str, **kwargs: Any):
-        if self._is_empty(self.parentTaxon):
-            self.MissingRequiredField("parentTaxon")
-        if not isinstance(self.parentTaxon, Taxon):
-            self.parentTaxon = Taxon(**as_dict(self.parentTaxon))
-
-        if self._is_empty(self.rank):
-            self.MissingRequiredField("rank")
-        if not isinstance(self.rank, TaxonomicRank):
-            self.rank = TaxonomicRank(**as_dict(self.rank))
-
         if self._is_empty(self.taxonomicId):
             self.MissingRequiredField("taxonomicId")
         if not isinstance(self.taxonomicId, str):
@@ -1061,12 +1050,20 @@ class Taxon(Term):
 
         self._normalize_inlined_as_dict(slot_name="taxonomy", slot_type=Taxonomy, key_name="title", keyed=False)
 
-        self._normalize_inlined_as_dict(slot_name="previouslyKnownAs", slot_type=Taxon, key_name="title", keyed=False)
+        if self.parentTaxon is not None and not isinstance(self.parentTaxon, Taxon):
+            self.parentTaxon = Taxon(**as_dict(self.parentTaxon))
+
+        if self.rank is not None and not isinstance(self.rank, TaxonomicRank):
+            self.rank = TaxonomicRank(**as_dict(self.rank))
 
         self._normalize_inlined_as_dict(slot_name="externalEquivalentTaxon", slot_type=Taxon, key_name="title", keyed=False)
 
         if self.taxonomicNodeId is not None and not isinstance(self.taxonomicNodeId, str):
             self.taxonomicNodeId = str(self.taxonomicNodeId)
+
+        self._normalize_inlined_as_dict(slot_name="alternateName", slot_type=AlternateName, key_name="title", keyed=False)
+
+        self._normalize_inlined_as_dict(slot_name="previouslyKnownAs", slot_type=Taxon, key_name="title", keyed=False)
 
         if self.taxonomicNodeId is not None and not isinstance(self.taxonomicNodeId, str):
             self.taxonomicNodeId = str(self.taxonomicNodeId)
@@ -2930,7 +2927,7 @@ slots.versionDataProvider = Slot(uri=EVORAO.versionDataProvider, name="versionDa
                    model_uri=EVORAO.versionDataProvider, domain=None, range=Union[dict, DataProvider])
 
 slots.rank = Slot(uri=EVORAO.rank, name="rank", curie=EVORAO.curie('rank'),
-                   model_uri=EVORAO.rank, domain=None, range=Union[dict, TaxonomicRank])
+                   model_uri=EVORAO.rank, domain=None, range=Optional[Union[dict, TaxonomicRank]])
 
 slots.rankDataProvider = Slot(uri=EVORAO.rankDataProvider, name="rankDataProvider", curie=EVORAO.curie('rankDataProvider'),
                    model_uri=EVORAO.rankDataProvider, domain=None, range=Optional[Union[dict, DataProvider]])
@@ -3023,10 +3020,7 @@ slots.taxonomy = Slot(uri=EVORAO.taxonomy, name="taxonomy", curie=EVORAO.curie('
                    model_uri=EVORAO.taxonomy, domain=None, range=Optional[Union[Union[dict, Taxonomy], list[Union[dict, Taxonomy]]]])
 
 slots.parentTaxon = Slot(uri=EVORAO.parentTaxon, name="parentTaxon", curie=EVORAO.curie('parentTaxon'),
-                   model_uri=EVORAO.parentTaxon, domain=None, range=Union[dict, Taxon])
-
-slots.previouslyKnownAs = Slot(uri=EVORAO.previouslyKnownAs, name="previouslyKnownAs", curie=EVORAO.curie('previouslyKnownAs'),
-                   model_uri=EVORAO.previouslyKnownAs, domain=None, range=Optional[Union[Union[dict, Taxon], list[Union[dict, Taxon]]]])
+                   model_uri=EVORAO.parentTaxon, domain=None, range=Optional[Union[dict, Taxon]])
 
 slots.externalEquivalentTaxon = Slot(uri=EVORAO.externalEquivalentTaxon, name="externalEquivalentTaxon", curie=EVORAO.curie('externalEquivalentTaxon'),
                    model_uri=EVORAO.externalEquivalentTaxon, domain=None, range=Optional[Union[Union[dict, Taxon], list[Union[dict, Taxon]]]])
@@ -3036,6 +3030,9 @@ slots.taxonomicId = Slot(uri=EVORAO.taxonomicId, name="taxonomicId", curie=EVORA
 
 slots.taxonomicNodeId = Slot(uri=EVORAO.taxonomicNodeId, name="taxonomicNodeId", curie=EVORAO.curie('taxonomicNodeId'),
                    model_uri=EVORAO.taxonomicNodeId, domain=None, range=Optional[str])
+
+slots.previouslyKnownAs = Slot(uri=EVORAO.previouslyKnownAs, name="previouslyKnownAs", curie=EVORAO.curie('previouslyKnownAs'),
+                   model_uri=EVORAO.previouslyKnownAs, domain=None, range=Optional[Union[Union[dict, Taxon], list[Union[dict, Taxon]]]])
 
 slots.reference = Slot(uri=EVORAO.reference, name="reference", curie=EVORAO.curie('reference'),
                    model_uri=EVORAO.reference, domain=None, range=str)
@@ -3524,7 +3521,7 @@ slots.Taxonomy_versionDataProvider = Slot(uri=EVORAO.versionDataProvider, name="
                    model_uri=EVORAO.Taxonomy_versionDataProvider, domain=Taxonomy, range=Union[dict, "DataProvider"])
 
 slots.Taxonomy_rank = Slot(uri=EVORAO.rank, name="Taxonomy_rank", curie=EVORAO.curie('rank'),
-                   model_uri=EVORAO.Taxonomy_rank, domain=Taxonomy, range=Union[Union[dict, "TaxonomicRank"], list[Union[dict, "TaxonomicRank"]]])
+                   model_uri=EVORAO.Taxonomy_rank, domain=Taxonomy, range=Optional[Union[Union[dict, "TaxonomicRank"], list[Union[dict, "TaxonomicRank"]]]])
 
 slots.Taxonomy_rankDataProvider = Slot(uri=EVORAO.rankDataProvider, name="Taxonomy_rankDataProvider", curie=EVORAO.curie('rankDataProvider'),
                    model_uri=EVORAO.Taxonomy_rankDataProvider, domain=Taxonomy, range=Optional[Union[dict, "DataProvider"]])
@@ -3641,13 +3638,10 @@ slots.Taxon_taxonomy = Slot(uri=EVORAO.taxonomy, name="Taxon_taxonomy", curie=EV
                    model_uri=EVORAO.Taxon_taxonomy, domain=Taxon, range=Optional[Union[Union[dict, Taxonomy], list[Union[dict, Taxonomy]]]])
 
 slots.Taxon_parentTaxon = Slot(uri=EVORAO.parentTaxon, name="Taxon_parentTaxon", curie=EVORAO.curie('parentTaxon'),
-                   model_uri=EVORAO.Taxon_parentTaxon, domain=Taxon, range=Union[dict, "Taxon"])
+                   model_uri=EVORAO.Taxon_parentTaxon, domain=Taxon, range=Optional[Union[dict, "Taxon"]])
 
 slots.Taxon_rank = Slot(uri=EVORAO.rank, name="Taxon_rank", curie=EVORAO.curie('rank'),
-                   model_uri=EVORAO.Taxon_rank, domain=Taxon, range=Union[dict, TaxonomicRank])
-
-slots.Taxon_previouslyKnownAs = Slot(uri=EVORAO.previouslyKnownAs, name="Taxon_previouslyKnownAs", curie=EVORAO.curie('previouslyKnownAs'),
-                   model_uri=EVORAO.Taxon_previouslyKnownAs, domain=Taxon, range=Optional[Union[Union[dict, "Taxon"], list[Union[dict, "Taxon"]]]])
+                   model_uri=EVORAO.Taxon_rank, domain=Taxon, range=Optional[Union[dict, TaxonomicRank]])
 
 slots.Taxon_externalEquivalentTaxon = Slot(uri=EVORAO.externalEquivalentTaxon, name="Taxon_externalEquivalentTaxon", curie=EVORAO.curie('externalEquivalentTaxon'),
                    model_uri=EVORAO.Taxon_externalEquivalentTaxon, domain=Taxon, range=Optional[Union[Union[dict, "Taxon"], list[Union[dict, "Taxon"]]]])
@@ -3657,6 +3651,12 @@ slots.Taxon_taxonomicId = Slot(uri=EVORAO.taxonomicId, name="Taxon_taxonomicId",
 
 slots.Taxon_taxonomicNodeId = Slot(uri=EVORAO.taxonomicNodeId, name="Taxon_taxonomicNodeId", curie=EVORAO.curie('taxonomicNodeId'),
                    model_uri=EVORAO.Taxon_taxonomicNodeId, domain=Taxon, range=Optional[str])
+
+slots.Taxon_alternateName = Slot(uri=EVORAO.alternateName, name="Taxon_alternateName", curie=EVORAO.curie('alternateName'),
+                   model_uri=EVORAO.Taxon_alternateName, domain=Taxon, range=Optional[Union[Union[dict, AlternateName], list[Union[dict, AlternateName]]]])
+
+slots.Taxon_previouslyKnownAs = Slot(uri=EVORAO.previouslyKnownAs, name="Taxon_previouslyKnownAs", curie=EVORAO.curie('previouslyKnownAs'),
+                   model_uri=EVORAO.Taxon_previouslyKnownAs, domain=Taxon, range=Optional[Union[Union[dict, "Taxon"], list[Union[dict, "Taxon"]]]])
 
 slots.ClinicalGroup_alternateName = Slot(uri=EVORAO.alternateName, name="ClinicalGroup_alternateName", curie=EVORAO.curie('alternateName'),
                    model_uri=EVORAO.ClinicalGroup_alternateName, domain=ClinicalGroup, range=Optional[Union[Union[dict, AlternateName], list[Union[dict, AlternateName]]]])

@@ -40,7 +40,7 @@ URI: [EVORAO:Taxonomy](https://w3id.org/evorao/Taxonomy)
           
     
     
-    Taxonomy --> "*" TaxonomicRank : rank
+    Taxonomy --> "* _recommended_" TaxonomicRank : rank
     click TaxonomicRank href "../TaxonomicRank"
 
         
@@ -107,7 +107,7 @@ URI: [EVORAO:Taxonomy](https://w3id.org/evorao/Taxonomy)
 | [taxonDataProvider](taxonDataProvider.md) | 0..1 <br/> [DataProvider](DataProvider.md) | The data provider for the taxons of the taxonomy | direct |
 | [version](version.md) | 1 _recommended_ <br/> [String](String.md) | The version indicator (name or identifier) of a resource | direct |
 | [versionDataProvider](versionDataProvider.md) | 1 <br/> [DataProvider](DataProvider.md) | The data provider for the Version ID of this taxonomy | direct |
-| [rank](rank.md) | * <br/> [TaxonomicRank](TaxonomicRank.md) | Relative level or position of the identified taxon in the taxonomy | direct |
+| [rank](rank.md) | * _recommended_ <br/> [TaxonomicRank](TaxonomicRank.md) | Relative level or position of the identified taxon in the taxonomy | direct |
 | [rankDataProvider](rankDataProvider.md) | 0..1 <br/> [DataProvider](DataProvider.md) | The data provider for the description of the taxonomic ranks used in this tax... | direct |
 | [title](title.md) | 1 <br/> [String](String.md) | A name given to the resource | [Dataset](Dataset.md) |
 | [description](description.md) | 1 _recommended_ <br/> [String](String.md) | A short explanation of the characteristics, features, or nature of the curren... | [Dataset](Dataset.md) |
@@ -487,6 +487,7 @@ attributes:
     - Taxon
     range: TaxonomicRank
     required: false
+    recommended: true
     multivalued: true
   rankDataProvider:
     name: rankDataProvider
