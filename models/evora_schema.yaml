@@ -48,7 +48,7 @@ keywords:
 - pathogen collections
 - interoperability
 id: https://w3id.org/evorao/
-version: 1.0.10013
+version: 1.0.10016
 imports:
 - linkml:types
 license: https://creativecommons.org/publicdomain/zero/1.0/
@@ -1518,6 +1518,12 @@ slots:
       a biological agent guiding its initial handling in labs according to the risk
       group classification defined by the WHO laboratory biosafety manual
     title: risk group
+    comments:
+    - The Risk Group (RG) assignments to an item are jurisdiction-dependent and may
+      differ between countries/regions and by material form (e.g., live isolate, inactivated
+      preparation, nucleic acid). Assignments can also change over time. We store
+      here a single reference assignment; users must verify the current, locally applicable
+      assignment with their competent authority
     from_schema: https://w3id.org/evorao/
     exact_mappings:
     - wdp:P12663
@@ -5209,6 +5215,12 @@ classes:
           of a biological agent guiding its initial handling in labs according to
           the risk group classification defined by the WHO laboratory biosafety manual
         title: risk group
+        comments:
+        - The Risk Group (RG) assignments to an item are jurisdiction-dependent and
+          may differ between countries/regions and by material form (e.g., live isolate,
+          inactivated preparation, nucleic acid). Assignments can also change over
+          time. We store here a single reference assignment; users must verify the
+          current, locally applicable assignment with their competent authority
         exact_mappings:
         - wdp:P12663
         related_mappings:
@@ -7265,4 +7277,4 @@ classes:
         required: false
         multivalued: false
 source_file: https://w3id.org/evorao/evorao.owl.ttl
-generation_date: '2025-09-29T15:03:00'
+generation_date: '2025-10-01T10:56:28'

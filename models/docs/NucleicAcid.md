@@ -1390,6 +1390,12 @@ attributes:
       a biological agent guiding its initial handling in labs according to the risk
       group classification defined by the WHO laboratory biosafety manual
     title: risk group
+    comments:
+    - The Risk Group (RG) assignments to an item are jurisdiction-dependent and may
+      differ between countries/regions and by material form (e.g., live isolate, inactivated
+      preparation, nucleic acid). Assignments can also change over time. We store
+      here a single reference assignment; users must verify the current, locally applicable
+      assignment with their competent authority
     from_schema: https://w3id.org/evorao/
     exact_mappings:
     - wdp:P12663

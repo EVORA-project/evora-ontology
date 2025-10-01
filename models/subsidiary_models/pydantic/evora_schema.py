@@ -27,7 +27,7 @@ from pydantic import (
 
 
 metamodel_version = "None"
-version = "1.0.10013"
+version = "1.0.10016"
 
 
 class ConfiguredBaseModel(BaseModel):
@@ -99,7 +99,7 @@ linkml_meta = LinkMLMeta({'comments': ['EVORAO is an ontology for standardized m
                     'pathogens. EVORAO is compatible with DCAT, making it '
                     'well-suited for efficiently cataloguing pathogen collections '
                     'and related resources.',
-     'generation_date': '2025-09-29T15:03:00',
+     'generation_date': '2025-10-01T10:56:28',
      'id': 'https://w3id.org/evorao/',
      'imports': ['linkml:types'],
      'in_language': 'en',
@@ -6439,7 +6439,19 @@ class ProductOrService(Dataset):
                                    'range': 'string',
                                    'required': True,
                                    'title': 'ref SKU'},
-                        'riskGroup': {'description': 'The highest risk group related '
+                        'riskGroup': {'comments': ['The Risk Group (RG) assignments to '
+                                                   'an item are jurisdiction-dependent '
+                                                   'and may differ between '
+                                                   'countries/regions and by material '
+                                                   'form (e.g., live isolate, '
+                                                   'inactivated preparation, nucleic '
+                                                   'acid). Assignments can also change '
+                                                   'over time. We store here a single '
+                                                   'reference assignment; users must '
+                                                   'verify the current, locally '
+                                                   'applicable assignment with their '
+                                                   'competent authority'],
+                                      'description': 'The highest risk group related '
                                                      'to this resource. The risk group '
                                                      'of a biological agent guiding '
                                                      'its initial handling in labs '
@@ -6603,6 +6615,13 @@ class ProductOrService(Dataset):
          'domain_of': ['ProductOrService', 'Publication'],
          'exact_mappings': ['wdp:P356']} })
     riskGroup: Optional[RiskGroup] = Field(default=None, title="risk group", description="""The highest risk group related to this resource. The risk group of a biological agent guiding its initial handling in labs according to the risk group classification defined by the WHO laboratory biosafety manual""", json_schema_extra = { "linkml_meta": {'alias': 'riskGroup',
+         'comments': ['The Risk Group (RG) assignments to an item are '
+                      'jurisdiction-dependent and may differ between countries/regions '
+                      'and by material form (e.g., live isolate, inactivated '
+                      'preparation, nucleic acid). Assignments can also change over '
+                      'time. We store here a single reference assignment; users must '
+                      'verify the current, locally applicable assignment with their '
+                      'competent authority'],
          'domain_of': ['ProductOrService'],
          'exact_mappings': ['wdp:P12663'],
          'recommended': True,
@@ -6825,6 +6844,13 @@ class Service(ProductOrService):
          'domain_of': ['ProductOrService', 'Publication'],
          'exact_mappings': ['wdp:P356']} })
     riskGroup: Optional[RiskGroup] = Field(default=None, title="risk group", description="""The highest risk group related to this resource. The risk group of a biological agent guiding its initial handling in labs according to the risk group classification defined by the WHO laboratory biosafety manual""", json_schema_extra = { "linkml_meta": {'alias': 'riskGroup',
+         'comments': ['The Risk Group (RG) assignments to an item are '
+                      'jurisdiction-dependent and may differ between countries/regions '
+                      'and by material form (e.g., live isolate, inactivated '
+                      'preparation, nucleic acid). Assignments can also change over '
+                      'time. We store here a single reference assignment; users must '
+                      'verify the current, locally applicable assignment with their '
+                      'competent authority'],
          'domain_of': ['ProductOrService'],
          'exact_mappings': ['wdp:P12663'],
          'recommended': True,
@@ -7170,6 +7196,13 @@ class Product(ProductOrService):
          'domain_of': ['ProductOrService', 'Publication'],
          'exact_mappings': ['wdp:P356']} })
     riskGroup: Optional[RiskGroup] = Field(default=None, title="risk group", description="""The highest risk group related to this resource. The risk group of a biological agent guiding its initial handling in labs according to the risk group classification defined by the WHO laboratory biosafety manual""", json_schema_extra = { "linkml_meta": {'alias': 'riskGroup',
+         'comments': ['The Risk Group (RG) assignments to an item are '
+                      'jurisdiction-dependent and may differ between countries/regions '
+                      'and by material form (e.g., live isolate, inactivated '
+                      'preparation, nucleic acid). Assignments can also change over '
+                      'time. We store here a single reference assignment; users must '
+                      'verify the current, locally applicable assignment with their '
+                      'competent authority'],
          'domain_of': ['ProductOrService'],
          'exact_mappings': ['wdp:P12663'],
          'recommended': True,
@@ -7448,6 +7481,13 @@ class Antibody(Product):
          'domain_of': ['ProductOrService', 'Publication'],
          'exact_mappings': ['wdp:P356']} })
     riskGroup: Optional[RiskGroup] = Field(default=None, title="risk group", description="""The highest risk group related to this resource. The risk group of a biological agent guiding its initial handling in labs according to the risk group classification defined by the WHO laboratory biosafety manual""", json_schema_extra = { "linkml_meta": {'alias': 'riskGroup',
+         'comments': ['The Risk Group (RG) assignments to an item are '
+                      'jurisdiction-dependent and may differ between countries/regions '
+                      'and by material form (e.g., live isolate, inactivated '
+                      'preparation, nucleic acid). Assignments can also change over '
+                      'time. We store here a single reference assignment; users must '
+                      'verify the current, locally applicable assignment with their '
+                      'competent authority'],
          'domain_of': ['ProductOrService'],
          'exact_mappings': ['wdp:P12663'],
          'recommended': True,
@@ -7685,6 +7725,13 @@ class Hybridoma(Antibody):
          'domain_of': ['ProductOrService', 'Publication'],
          'exact_mappings': ['wdp:P356']} })
     riskGroup: Optional[RiskGroup] = Field(default=None, title="risk group", description="""The highest risk group related to this resource. The risk group of a biological agent guiding its initial handling in labs according to the risk group classification defined by the WHO laboratory biosafety manual""", json_schema_extra = { "linkml_meta": {'alias': 'riskGroup',
+         'comments': ['The Risk Group (RG) assignments to an item are '
+                      'jurisdiction-dependent and may differ between countries/regions '
+                      'and by material form (e.g., live isolate, inactivated '
+                      'preparation, nucleic acid). Assignments can also change over '
+                      'time. We store here a single reference assignment; users must '
+                      'verify the current, locally applicable assignment with their '
+                      'competent authority'],
          'domain_of': ['ProductOrService'],
          'exact_mappings': ['wdp:P12663'],
          'recommended': True,
@@ -8283,6 +8330,13 @@ class Protein(Product):
          'domain_of': ['ProductOrService', 'Publication'],
          'exact_mappings': ['wdp:P356']} })
     riskGroup: Optional[RiskGroup] = Field(default=None, title="risk group", description="""The highest risk group related to this resource. The risk group of a biological agent guiding its initial handling in labs according to the risk group classification defined by the WHO laboratory biosafety manual""", json_schema_extra = { "linkml_meta": {'alias': 'riskGroup',
+         'comments': ['The Risk Group (RG) assignments to an item are '
+                      'jurisdiction-dependent and may differ between countries/regions '
+                      'and by material form (e.g., live isolate, inactivated '
+                      'preparation, nucleic acid). Assignments can also change over '
+                      'time. We store here a single reference assignment; users must '
+                      'verify the current, locally applicable assignment with their '
+                      'competent authority'],
          'domain_of': ['ProductOrService'],
          'exact_mappings': ['wdp:P12663'],
          'recommended': True,
@@ -8760,6 +8814,13 @@ class NucleicAcid(Product):
          'domain_of': ['ProductOrService', 'Publication'],
          'exact_mappings': ['wdp:P356']} })
     riskGroup: Optional[RiskGroup] = Field(default=None, title="risk group", description="""The highest risk group related to this resource. The risk group of a biological agent guiding its initial handling in labs according to the risk group classification defined by the WHO laboratory biosafety manual""", json_schema_extra = { "linkml_meta": {'alias': 'riskGroup',
+         'comments': ['The Risk Group (RG) assignments to an item are '
+                      'jurisdiction-dependent and may differ between countries/regions '
+                      'and by material form (e.g., live isolate, inactivated '
+                      'preparation, nucleic acid). Assignments can also change over '
+                      'time. We store here a single reference assignment; users must '
+                      'verify the current, locally applicable assignment with their '
+                      'competent authority'],
          'domain_of': ['ProductOrService'],
          'exact_mappings': ['wdp:P12663'],
          'recommended': True,
@@ -9027,6 +9088,13 @@ class DetectionKit(Product):
          'domain_of': ['ProductOrService', 'Publication'],
          'exact_mappings': ['wdp:P356']} })
     riskGroup: Optional[RiskGroup] = Field(default=None, title="risk group", description="""The highest risk group related to this resource. The risk group of a biological agent guiding its initial handling in labs according to the risk group classification defined by the WHO laboratory biosafety manual""", json_schema_extra = { "linkml_meta": {'alias': 'riskGroup',
+         'comments': ['The Risk Group (RG) assignments to an item are '
+                      'jurisdiction-dependent and may differ between countries/regions '
+                      'and by material form (e.g., live isolate, inactivated '
+                      'preparation, nucleic acid). Assignments can also change over '
+                      'time. We store here a single reference assignment; users must '
+                      'verify the current, locally applicable assignment with their '
+                      'competent authority'],
          'domain_of': ['ProductOrService'],
          'exact_mappings': ['wdp:P12663'],
          'recommended': True,
@@ -9255,6 +9323,13 @@ class Bundle(Product):
          'domain_of': ['ProductOrService', 'Publication'],
          'exact_mappings': ['wdp:P356']} })
     riskGroup: Optional[RiskGroup] = Field(default=None, title="risk group", description="""The highest risk group related to this resource. The risk group of a biological agent guiding its initial handling in labs according to the risk group classification defined by the WHO laboratory biosafety manual""", json_schema_extra = { "linkml_meta": {'alias': 'riskGroup',
+         'comments': ['The Risk Group (RG) assignments to an item are '
+                      'jurisdiction-dependent and may differ between countries/regions '
+                      'and by material form (e.g., live isolate, inactivated '
+                      'preparation, nucleic acid). Assignments can also change over '
+                      'time. We store here a single reference assignment; users must '
+                      'verify the current, locally applicable assignment with their '
+                      'competent authority'],
          'domain_of': ['ProductOrService'],
          'exact_mappings': ['wdp:P12663'],
          'recommended': True,
@@ -9824,6 +9899,13 @@ class Pathogen(Product):
          'domain_of': ['ProductOrService', 'Publication'],
          'exact_mappings': ['wdp:P356']} })
     riskGroup: Optional[RiskGroup] = Field(default=None, title="risk group", description="""The highest risk group related to this resource. The risk group of a biological agent guiding its initial handling in labs according to the risk group classification defined by the WHO laboratory biosafety manual""", json_schema_extra = { "linkml_meta": {'alias': 'riskGroup',
+         'comments': ['The Risk Group (RG) assignments to an item are '
+                      'jurisdiction-dependent and may differ between countries/regions '
+                      'and by material form (e.g., live isolate, inactivated '
+                      'preparation, nucleic acid). Assignments can also change over '
+                      'time. We store here a single reference assignment; users must '
+                      'verify the current, locally applicable assignment with their '
+                      'competent authority'],
          'domain_of': ['ProductOrService'],
          'exact_mappings': ['wdp:P12663'],
          'recommended': True,
@@ -10169,6 +10251,13 @@ class Virus(Pathogen):
          'domain_of': ['ProductOrService', 'Publication'],
          'exact_mappings': ['wdp:P356']} })
     riskGroup: Optional[RiskGroup] = Field(default=None, title="risk group", description="""The highest risk group related to this resource. The risk group of a biological agent guiding its initial handling in labs according to the risk group classification defined by the WHO laboratory biosafety manual""", json_schema_extra = { "linkml_meta": {'alias': 'riskGroup',
+         'comments': ['The Risk Group (RG) assignments to an item are '
+                      'jurisdiction-dependent and may differ between countries/regions '
+                      'and by material form (e.g., live isolate, inactivated '
+                      'preparation, nucleic acid). Assignments can also change over '
+                      'time. We store here a single reference assignment; users must '
+                      'verify the current, locally applicable assignment with their '
+                      'competent authority'],
          'domain_of': ['ProductOrService'],
          'exact_mappings': ['wdp:P12663'],
          'recommended': True,
@@ -10455,6 +10544,13 @@ class Bacterium(Pathogen):
          'domain_of': ['ProductOrService', 'Publication'],
          'exact_mappings': ['wdp:P356']} })
     riskGroup: Optional[RiskGroup] = Field(default=None, title="risk group", description="""The highest risk group related to this resource. The risk group of a biological agent guiding its initial handling in labs according to the risk group classification defined by the WHO laboratory biosafety manual""", json_schema_extra = { "linkml_meta": {'alias': 'riskGroup',
+         'comments': ['The Risk Group (RG) assignments to an item are '
+                      'jurisdiction-dependent and may differ between countries/regions '
+                      'and by material form (e.g., live isolate, inactivated '
+                      'preparation, nucleic acid). Assignments can also change over '
+                      'time. We store here a single reference assignment; users must '
+                      'verify the current, locally applicable assignment with their '
+                      'competent authority'],
          'domain_of': ['ProductOrService'],
          'exact_mappings': ['wdp:P12663'],
          'recommended': True,
@@ -10739,6 +10835,13 @@ class Fungus(Pathogen):
          'domain_of': ['ProductOrService', 'Publication'],
          'exact_mappings': ['wdp:P356']} })
     riskGroup: Optional[RiskGroup] = Field(default=None, title="risk group", description="""The highest risk group related to this resource. The risk group of a biological agent guiding its initial handling in labs according to the risk group classification defined by the WHO laboratory biosafety manual""", json_schema_extra = { "linkml_meta": {'alias': 'riskGroup',
+         'comments': ['The Risk Group (RG) assignments to an item are '
+                      'jurisdiction-dependent and may differ between countries/regions '
+                      'and by material form (e.g., live isolate, inactivated '
+                      'preparation, nucleic acid). Assignments can also change over '
+                      'time. We store here a single reference assignment; users must '
+                      'verify the current, locally applicable assignment with their '
+                      'competent authority'],
          'domain_of': ['ProductOrService'],
          'exact_mappings': ['wdp:P12663'],
          'recommended': True,
@@ -11019,6 +11122,13 @@ class Protozoan(Pathogen):
          'domain_of': ['ProductOrService', 'Publication'],
          'exact_mappings': ['wdp:P356']} })
     riskGroup: Optional[RiskGroup] = Field(default=None, title="risk group", description="""The highest risk group related to this resource. The risk group of a biological agent guiding its initial handling in labs according to the risk group classification defined by the WHO laboratory biosafety manual""", json_schema_extra = { "linkml_meta": {'alias': 'riskGroup',
+         'comments': ['The Risk Group (RG) assignments to an item are '
+                      'jurisdiction-dependent and may differ between countries/regions '
+                      'and by material form (e.g., live isolate, inactivated '
+                      'preparation, nucleic acid). Assignments can also change over '
+                      'time. We store here a single reference assignment; users must '
+                      'verify the current, locally applicable assignment with their '
+                      'competent authority'],
          'domain_of': ['ProductOrService'],
          'exact_mappings': ['wdp:P12663'],
          'recommended': True,
@@ -11291,6 +11401,13 @@ class Viroid(Pathogen):
          'domain_of': ['ProductOrService', 'Publication'],
          'exact_mappings': ['wdp:P356']} })
     riskGroup: Optional[RiskGroup] = Field(default=None, title="risk group", description="""The highest risk group related to this resource. The risk group of a biological agent guiding its initial handling in labs according to the risk group classification defined by the WHO laboratory biosafety manual""", json_schema_extra = { "linkml_meta": {'alias': 'riskGroup',
+         'comments': ['The Risk Group (RG) assignments to an item are '
+                      'jurisdiction-dependent and may differ between countries/regions '
+                      'and by material form (e.g., live isolate, inactivated '
+                      'preparation, nucleic acid). Assignments can also change over '
+                      'time. We store here a single reference assignment; users must '
+                      'verify the current, locally applicable assignment with their '
+                      'competent authority'],
          'domain_of': ['ProductOrService'],
          'exact_mappings': ['wdp:P12663'],
          'recommended': True,
@@ -11571,6 +11688,13 @@ class Prion(Pathogen):
          'domain_of': ['ProductOrService', 'Publication'],
          'exact_mappings': ['wdp:P356']} })
     riskGroup: Optional[RiskGroup] = Field(default=None, title="risk group", description="""The highest risk group related to this resource. The risk group of a biological agent guiding its initial handling in labs according to the risk group classification defined by the WHO laboratory biosafety manual""", json_schema_extra = { "linkml_meta": {'alias': 'riskGroup',
+         'comments': ['The Risk Group (RG) assignments to an item are '
+                      'jurisdiction-dependent and may differ between countries/regions '
+                      'and by material form (e.g., live isolate, inactivated '
+                      'preparation, nucleic acid). Assignments can also change over '
+                      'time. We store here a single reference assignment; users must '
+                      'verify the current, locally applicable assignment with their '
+                      'competent authority'],
          'domain_of': ['ProductOrService'],
          'exact_mappings': ['wdp:P12663'],
          'recommended': True,

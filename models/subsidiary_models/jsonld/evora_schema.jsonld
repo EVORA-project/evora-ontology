@@ -38,7 +38,7 @@
     "interoperability"
   ],
   "id": "https://w3id.org/evorao/",
-  "version": "1.0.10013",
+  "version": "1.0.10016",
   "imports": [
     "linkml:types"
   ],
@@ -2626,6 +2626,9 @@
       "definition_uri": "https://w3id.org/evorao/riskGroup",
       "description": "The highest risk group related to this resource. The risk group of a biological agent guiding its initial handling in labs according to the risk group classification defined by the WHO laboratory biosafety manual",
       "title": "risk group",
+      "comments": [
+        "The Risk Group (RG) assignments to an item are jurisdiction-dependent and may differ between countries/regions and by material form (e.g., live isolate, inactivated preparation, nucleic acid). Assignments can also change over time. We store here a single reference assignment; users must verify the current, locally applicable assignment with their competent authority"
+      ],
       "from_schema": "https://w3id.org/evorao/",
       "exact_mappings": [
         "http://www.wikidata.org/prop/P12663"
@@ -7445,6 +7448,9 @@
       "definition_uri": "https://w3id.org/evorao/riskGroup",
       "description": "The highest risk group related to this resource. The risk group of a biological agent guiding its initial handling in labs according to the risk group classification defined by the WHO laboratory biosafety manual",
       "title": "risk group",
+      "comments": [
+        "The Risk Group (RG) assignments to an item are jurisdiction-dependent and may differ between countries/regions and by material form (e.g., live isolate, inactivated preparation, nucleic acid). Assignments can also change over time. We store here a single reference assignment; users must verify the current, locally applicable assignment with their competent authority"
+      ],
       "from_schema": "https://w3id.org/evorao/",
       "exact_mappings": [
         "http://www.wikidata.org/prop/P12663"
@@ -13712,9 +13718,9 @@
   ],
   "metamodel_version": "1.7.0",
   "source_file": "evora_schema.yaml",
-  "source_file_date": "2025-09-29T13:03:22",
-  "source_file_size": 228870,
-  "generation_date": "2025-09-29T13:03:38",
+  "source_file_date": "2025-10-01T08:56:49",
+  "source_file_size": 229720,
+  "generation_date": "2025-10-01T08:57:05",
   "@type": "SchemaDefinition",
   "@context": [
     "https://w3id.org/linkml/types.context.jsonld",
