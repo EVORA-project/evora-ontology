@@ -2639,6 +2639,10 @@ type ProductOrService struct {
 	 */
 	ContactPoint ContactPoint `json:"contactPoint"`
 	/*
+	 * A program, grant, or project providing financial support for the access or use of the product or service, either fully or partially
+	 */
+	FundingSource []FundingSource `json:"fundingSource"`
+	/*
 	 * A name given to the resource
 	 */
 	Title string `json:"title"`
@@ -2792,6 +2796,10 @@ type Service struct {
 	 * An information that allows someone to establish communication
 	 */
 	ContactPoint ContactPoint `json:"contactPoint"`
+	/*
+	 * A program, grant, or project providing financial support for the access or use of the product or service, either fully or partially
+	 */
+	FundingSource []FundingSource `json:"fundingSource"`
 	/*
 	 * A name given to the resource
 	 */
@@ -2966,6 +2974,10 @@ type Product struct {
 	 * An information that allows someone to establish communication
 	 */
 	ContactPoint ContactPoint `json:"contactPoint"`
+	/*
+	 * A program, grant, or project providing financial support for the access or use of the product or service, either fully or partially
+	 */
+	FundingSource []FundingSource `json:"fundingSource"`
 	/*
 	 * A name given to the resource
 	 */
@@ -3160,6 +3172,10 @@ type Antibody struct {
 	 * An information that allows someone to establish communication
 	 */
 	ContactPoint ContactPoint `json:"contactPoint"`
+	/*
+	 * A program, grant, or project providing financial support for the access or use of the product or service, either fully or partially
+	 */
+	FundingSource []FundingSource `json:"fundingSource"`
 	/*
 	 * A name given to the resource
 	 */
@@ -3358,6 +3374,10 @@ type Hybridoma struct {
 	 * An information that allows someone to establish communication
 	 */
 	ContactPoint ContactPoint `json:"contactPoint"`
+	/*
+	 * A program, grant, or project providing financial support for the access or use of the product or service, either fully or partially
+	 */
+	FundingSource []FundingSource `json:"fundingSource"`
 	/*
 	 * A name given to the resource
 	 */
@@ -3589,6 +3609,10 @@ type Protein struct {
 	 */
 	ContactPoint ContactPoint `json:"contactPoint"`
 	/*
+	 * A program, grant, or project providing financial support for the access or use of the product or service, either fully or partially
+	 */
+	FundingSource []FundingSource `json:"fundingSource"`
+	/*
 	 * A name given to the resource
 	 */
 	Title string `json:"title"`
@@ -3819,6 +3843,10 @@ type NucleicAcid struct {
 	 */
 	ContactPoint ContactPoint `json:"contactPoint"`
 	/*
+	 * A program, grant, or project providing financial support for the access or use of the product or service, either fully or partially
+	 */
+	FundingSource []FundingSource `json:"fundingSource"`
+	/*
 	 * A name given to the resource
 	 */
 	Title string `json:"title"`
@@ -4009,6 +4037,10 @@ type DetectionKit struct {
 	 */
 	ContactPoint ContactPoint `json:"contactPoint"`
 	/*
+	 * A program, grant, or project providing financial support for the access or use of the product or service, either fully or partially
+	 */
+	FundingSource []FundingSource `json:"fundingSource"`
+	/*
 	 * A name given to the resource
 	 */
 	Title string `json:"title"`
@@ -4186,6 +4218,10 @@ type Bundle struct {
 	 * An information that allows someone to establish communication
 	 */
 	ContactPoint ContactPoint `json:"contactPoint"`
+	/*
+	 * A program, grant, or project providing financial support for the access or use of the product or service, either fully or partially
+	 */
+	FundingSource []FundingSource `json:"fundingSource"`
 	/*
 	 * A name given to the resource
 	 */
@@ -4432,6 +4468,10 @@ type Pathogen struct {
 	 * An information that allows someone to establish communication
 	 */
 	ContactPoint ContactPoint `json:"contactPoint"`
+	/*
+	 * A program, grant, or project providing financial support for the access or use of the product or service, either fully or partially
+	 */
+	FundingSource []FundingSource `json:"fundingSource"`
 	/*
 	 * A name given to the resource
 	 */
@@ -4691,6 +4731,10 @@ type Virus struct {
 	 */
 	ContactPoint ContactPoint `json:"contactPoint"`
 	/*
+	 * A program, grant, or project providing financial support for the access or use of the product or service, either fully or partially
+	 */
+	FundingSource []FundingSource `json:"fundingSource"`
+	/*
 	 * A name given to the resource
 	 */
 	Title string `json:"title"`
@@ -4936,6 +4980,10 @@ type Bacterium struct {
 	 * An information that allows someone to establish communication
 	 */
 	ContactPoint ContactPoint `json:"contactPoint"`
+	/*
+	 * A program, grant, or project providing financial support for the access or use of the product or service, either fully or partially
+	 */
+	FundingSource []FundingSource `json:"fundingSource"`
 	/*
 	 * A name given to the resource
 	 */
@@ -5183,6 +5231,10 @@ type Fungus struct {
 	 */
 	ContactPoint ContactPoint `json:"contactPoint"`
 	/*
+	 * A program, grant, or project providing financial support for the access or use of the product or service, either fully or partially
+	 */
+	FundingSource []FundingSource `json:"fundingSource"`
+	/*
 	 * A name given to the resource
 	 */
 	Title string `json:"title"`
@@ -5428,6 +5480,10 @@ type Protozoan struct {
 	 * An information that allows someone to establish communication
 	 */
 	ContactPoint ContactPoint `json:"contactPoint"`
+	/*
+	 * A program, grant, or project providing financial support for the access or use of the product or service, either fully or partially
+	 */
+	FundingSource []FundingSource `json:"fundingSource"`
 	/*
 	 * A name given to the resource
 	 */
@@ -5675,6 +5731,10 @@ type Viroid struct {
 	 */
 	ContactPoint ContactPoint `json:"contactPoint"`
 	/*
+	 * A program, grant, or project providing financial support for the access or use of the product or service, either fully or partially
+	 */
+	FundingSource []FundingSource `json:"fundingSource"`
+	/*
 	 * A name given to the resource
 	 */
 	Title string `json:"title"`
@@ -5920,6 +5980,10 @@ type Prion struct {
 	 * An information that allows someone to establish communication
 	 */
 	ContactPoint ContactPoint `json:"contactPoint"`
+	/*
+	 * A program, grant, or project providing financial support for the access or use of the product or service, either fully or partially
+	 */
+	FundingSource []FundingSource `json:"fundingSource"`
 	/*
 	 * A name given to the resource
 	 */
@@ -6496,6 +6560,68 @@ type Certification struct {
 	 * The web address or location where the details or content is stored and can be accessed or downloaded.
 	 */
 	ResourceUrl string `json:"resourceUrl"`
+	/*
+	 * A keyword or tag describing the resource
+	 */
+	Keyword string `json:"keyword"`
+	/*
+	 * Date of formal issuance (e.g., publication) of the resource
+	 */
+	DateIssued string `json:"dateIssued"`
+	/*
+	 * Most recent date on which the resource was changed, updated or modified
+	 */
+	DateModified string `json:"dateModified"`
+	/*
+	 * A unique identifier of the resource being described or cataloged
+	 */
+	Identifier string `json:"identifier"`
+	/*
+	 * International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs
+	 */
+	Iri string `json:"iri"`
+}
+
+/*
+ * A program, grant, or project providing financial support for the access or use of a product or service, either fully or partially
+ */
+type FundingSource struct {
+	/*
+	 * parent types
+	 */
+	Resource
+	/*
+	 * A name given to the resource
+	 */
+	Title string `json:"title"`
+	/*
+	 * A short explanation of the characteristics, features, or nature of the current item
+	 */
+	Description string `json:"description"`
+	/*
+	 * Identifies the overarching financial framework, research initiative, or support mechanism that enables or contributes to the provision of a product or service. The value may correspond to a European funding framework (e.g. Horizon Europe), a specific research initiative (e.g. an EU project), or another public or private funding mechanism
+	 */
+	FundingProgram string `json:"fundingProgram"`
+	/*
+	 * A formal reference or agreement number assigned by the funding body
+	 */
+	GrantNumber string `json:"grantNumber"`
+	/*
+	 * The organization providing the financial support
+	 */
+	Funder Organization `json:"funder"`
+	/*
+	 * The date from which the financial mechanism is active or applicable to the supported product or service
+	 */
+	FundingPeriodStart time.Date `json:"fundingPeriodStart"`
+	/*
+	 * The date on which the financial mechanism ceases to apply to the supported product or service
+	 */
+	FundingPeriodEnd time.Date `json:"fundingPeriodEnd"`
+	/*
+	 * Conditions under which individuals or organisations may benefit from the financial mechanism, including access rules, eligibility requirements, or geographical/institutional restrictions. May be expressed as text or as a link to a formal eligibility statement
+	 */
+	EligibilityCriteria string `json:"eligibilityCriteria"`
 	/*
 	 * A keyword or tag describing the resource
 	 */

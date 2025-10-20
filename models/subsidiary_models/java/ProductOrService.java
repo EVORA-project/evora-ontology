@@ -5,7 +5,7 @@ import lombok.*;
 
 
 
-/* version: 1.0.10016 */
+/* version: 1.0.10123 */
 
 
 /**
@@ -41,5 +41,6 @@ public abstract class ProductOrService extends Dataset {
   private String internalReference;
   private String note;
   private ContactPoint contactPoint;
+  private List<FundingSource> fundingSource;
 
 }

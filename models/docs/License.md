@@ -182,6 +182,7 @@ slot_usage:
     - Publication
     - Term
     - Certification
+    - FundingSource
     range: string
     required: true
     multivalued: false
@@ -208,6 +209,7 @@ slot_usage:
     - File
     - ContactPoint
     - Certification
+    - FundingSource
     range: string
     required: false
     recommended: true
@@ -298,6 +300,7 @@ slot_usage:
     - Publication
     - Term
     - Certification
+    - FundingSource
     range: string
     required: true
     multivalued: false
@@ -324,6 +327,7 @@ slot_usage:
     - File
     - ContactPoint
     - Certification
+    - FundingSource
     range: string
     required: false
     recommended: true
@@ -394,6 +398,7 @@ attributes:
     - Publication
     - Term
     - Certification
+    - FundingSource
     range: string
     required: true
     multivalued: false
@@ -428,6 +433,7 @@ attributes:
     - File
     - ContactPoint
     - Certification
+    - FundingSource
     range: string
     required: false
     recommended: true

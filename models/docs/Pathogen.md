@@ -139,6 +139,15 @@ URI: [EVORAO:Pathogen](https://w3id.org/evorao/Pathogen)
     click ExternalRelatedReference href "../ExternalRelatedReference"
 
         
+      Pathogen : fundingSource
+        
+          
+    
+    
+    Pathogen --> "*" FundingSource : fundingSource
+    click FundingSource href "../FundingSource"
+
+        
       Pathogen : genomeSequencing
         
       Pathogen : iataClassification
@@ -396,6 +405,7 @@ URI: [EVORAO:Pathogen](https://w3id.org/evorao/Pathogen)
 | [internalReference](internalReference.md) | 0..1 <br/> [String](String.md) | Any reference or indication to be used for local retrieval purpose | [ProductOrService](ProductOrService.md) |
 | [note](note.md) | 0..1 <br/> [String](String.md) | An aditional information as a textual comment | [ProductOrService](ProductOrService.md) |
 | [contactPoint](contactPoint.md) | 0..1 _recommended_ <br/> [ContactPoint](ContactPoint.md) | An information that allows someone to establish communication | [ProductOrService](ProductOrService.md) |
+| [fundingSource](fundingSource.md) | * <br/> [FundingSource](FundingSource.md) | A program, grant, or project providing financial support for the access or us... | [ProductOrService](ProductOrService.md) |
 | [title](title.md) | 1 <br/> [String](String.md) | A name given to the resource | [Dataset](Dataset.md) |
 | [description](description.md) | 1 _recommended_ <br/> [String](String.md) | A short explanation of the characteristics, features, or nature of the curren... | [Dataset](Dataset.md) |
 | [version](version.md) | 0..1 _recommended_ <br/> [String](String.md) | The version indicator (name or identifier) of a resource | [Dataset](Dataset.md) |
@@ -1890,6 +1900,25 @@ attributes:
     required: false
     recommended: true
     multivalued: false
+  fundingSource:
+    name: fundingSource
+    description: A program, grant, or project providing financial support for the
+      access or use of the product or service, either fully or partially
+    title: funding source
+    comments:
+    - Links a product or service to one or more financial mechanisms, initiatives,
+      or grants that enable or support its provision or access
+    from_schema: https://w3id.org/evorao/
+    exact_mappings:
+    - schema:funding
+    rank: 1000
+    alias: fundingSource
+    owner: Pathogen
+    domain_of:
+    - ProductOrService
+    range: FundingSource
+    required: false
+    multivalued: true
   title:
     name: title
     description: A name given to the resource
@@ -1915,6 +1944,7 @@ attributes:
     - Term
     - License
     - Certification
+    - FundingSource
     range: string
     required: true
     multivalued: false
@@ -1944,6 +1974,7 @@ attributes:
     - ContactPoint
     - License
     - Certification
+    - FundingSource
     range: string
     required: true
     recommended: true

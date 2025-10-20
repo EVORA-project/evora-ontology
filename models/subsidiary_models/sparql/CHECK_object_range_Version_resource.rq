@@ -109,6 +109,8 @@ WHERE {
       , 
       EVORAO:Certification
       , 
+      EVORAO:FundingSource
+      , 
       EVORAO:Data
       , 
       EVORAO:Document

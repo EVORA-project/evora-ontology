@@ -59,13 +59,13 @@ foaf:Person a owl:Class ;
     rdfs:label "Person" ;
     dct:title "Person" ;
     rdfs:subClassOf [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty EVORAO:orcidId ],
+        [ a owl:Restriction ;
             owl:allValuesFrom xsd:string ;
             owl:onProperty EVORAO:orcidId ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
-            owl:onProperty EVORAO:orcidId ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
             owl:onProperty EVORAO:orcidId ],
         foaf:Agent ;
     skos:closeMatch vcard:Individual,
@@ -122,17 +122,17 @@ EVORAO:ClinicalGroup a owl:Class ;
     rdfs:label "ClinicalGroup" ;
     dct:title "Clinical group" ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:allValuesFrom EVORAO:AlternateName ;
-            owl:onProperty EVORAO:alternateName ],
+            owl:allValuesFrom EVORAO:Taxon ;
+            owl:onProperty EVORAO:taxon ],
         [ a owl:Restriction ;
-            owl:minCardinality 0 ;
+            owl:allValuesFrom EVORAO:AlternateName ;
             owl:onProperty EVORAO:alternateName ],
         [ a owl:Restriction ;
             owl:minCardinality 1 ;
             owl:onProperty EVORAO:taxon ],
         [ a owl:Restriction ;
-            owl:allValuesFrom EVORAO:Taxon ;
-            owl:onProperty EVORAO:taxon ],
+            owl:minCardinality 0 ;
+            owl:onProperty EVORAO:alternateName ],
         EVORAO:Term ;
     skos:definition "A syndromic grouping of pathogens, based on typical disease manifestation, clinical syndrome, or primary system affected. Examples include Respiratory viruses, Hemorrhagic viruses, and Gastroenteritis viruses. Clinical groups are not taxonomic categories but practical classifications used in medicine, epidemiology, and public health" ;
     skos:inScheme EVORAO: .
@@ -141,35 +141,35 @@ EVORAO:DetectionKit a owl:Class ;
     rdfs:label "DetectionKit" ;
     dct:title "Detection Kit" ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty EVORAO:specificityDocumented ],
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty EVORAO:targetedRegion ],
         [ a owl:Restriction ;
             owl:allValuesFrom xsd:string ;
             owl:onProperty EVORAO:specificity ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty EVORAO:targetedRegion ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty EVORAO:specificityDocumented ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom EVORAO:File ;
+            owl:onProperty EVORAO:standardOperatingProcedureFile ],
         [ a owl:Restriction ;
             owl:minCardinality 1 ;
             owl:onProperty EVORAO:specificityDocumented ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
+            owl:onProperty EVORAO:specificity ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
             owl:onProperty EVORAO:standardOperatingProcedureFile ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty EVORAO:specificity ],
         [ a owl:Restriction ;
             owl:allValuesFrom xsd:boolean ;
             owl:onProperty EVORAO:specificityDocumented ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty EVORAO:targetedRegion ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty EVORAO:specificity ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom EVORAO:File ;
-            owl:onProperty EVORAO:standardOperatingProcedureFile ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty EVORAO:specificity ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom xsd:string ;
-            owl:onProperty EVORAO:targetedRegion ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
             owl:onProperty EVORAO:targetedRegion ],
@@ -196,13 +196,13 @@ EVORAO:Hybridoma a owl:Class ;
     rdfs:label "Hybridoma" ;
     dct:title "Hybridoma" ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
+            owl:minCardinality 1 ;
             owl:onProperty EVORAO:hybridomaDescription ],
         [ a owl:Restriction ;
             owl:allValuesFrom xsd:string ;
             owl:onProperty EVORAO:hybridomaDescription ],
         [ a owl:Restriction ;
-            owl:minCardinality 1 ;
+            owl:maxCardinality 1 ;
             owl:onProperty EVORAO:hybridomaDescription ],
         EVORAO:Antibody ;
     skos:closeMatch bto:0000610,
@@ -217,140 +217,140 @@ EVORAO:MaterialSafetyDataSheet a owl:Class ;
     rdfs:label "MaterialSafetyDataSheet" ;
     dct:title "Material safety data sheet" ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty EVORAO:firstAidMeasures ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty EVORAO:toxicologicalInformation ],
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty EVORAO:hazardsIdentification ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
-            owl:onProperty EVORAO:regulatoryInformation ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty EVORAO:transportInformation ],
+            owl:onProperty EVORAO:fireFightingMeasures ],
         [ a owl:Restriction ;
             owl:allValuesFrom xsd:string ;
             owl:onProperty EVORAO:fireFightingMeasures ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
+            owl:onProperty EVORAO:firstAidMeasures ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty EVORAO:stabilityAndReactivity ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty EVORAO:firstAidMeasures ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty EVORAO:physicalChemicalProperties ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
             owl:onProperty EVORAO:exposureControlsPersonalProtection ],
         [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty EVORAO:toxicologicalInformation ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty EVORAO:handlingAndStorage ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom xsd:string ;
-            owl:onProperty EVORAO:ecologicalInformation ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty EVORAO:furtherInformation ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom EVORAO:ContactPoint ;
-            owl:onProperty EVORAO:materialSafetyContact ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom xsd:string ;
-            owl:onProperty EVORAO:accidentalReleaseMeasures ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom xsd:string ;
-            owl:onProperty EVORAO:stabilityAndReactivity ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty EVORAO:ecologicalInformation ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom xsd:string ;
-            owl:onProperty EVORAO:physicalChemicalProperties ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom xsd:string ;
-            owl:onProperty EVORAO:hazardsIdentification ],
-        [ a owl:Restriction ;
             owl:maxCardinality 1 ;
-            owl:onProperty EVORAO:regulatoryInformation ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty EVORAO:disposalConsiderations ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom xsd:string ;
-            owl:onProperty EVORAO:handlingAndStorage ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom xsd:string ;
-            owl:onProperty EVORAO:regulatoryInformation ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
             owl:onProperty EVORAO:fireFightingMeasures ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom xsd:string ;
-            owl:onProperty EVORAO:toxicologicalInformation ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty EVORAO:accidentalReleaseMeasures ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty EVORAO:stabilityAndReactivity ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty EVORAO:firstAidMeasures ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty EVORAO:hazardsIdentification ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom xsd:string ;
-            owl:onProperty EVORAO:disposalConsiderations ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty EVORAO:hazardsIdentification ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty EVORAO:stabilityAndReactivity ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty EVORAO:physicalChemicalProperties ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom xsd:string ;
-            owl:onProperty EVORAO:transportInformation ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty EVORAO:physicalChemicalProperties ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty EVORAO:accidentalReleaseMeasures ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom xsd:string ;
-            owl:onProperty EVORAO:firstAidMeasures ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty EVORAO:furtherInformation ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty EVORAO:ecologicalInformation ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty EVORAO:materialSafetyContact ],
         [ a owl:Restriction ;
             owl:minCardinality 1 ;
             owl:onProperty EVORAO:materialSafetyContact ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
+            owl:onProperty EVORAO:toxicologicalInformation ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty EVORAO:handlingAndStorage ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty EVORAO:physicalChemicalProperties ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty EVORAO:firstAidMeasures ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty EVORAO:accidentalReleaseMeasures ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty EVORAO:stabilityAndReactivity ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
             owl:onProperty EVORAO:exposureControlsPersonalProtection ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty EVORAO:regulatoryInformation ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty EVORAO:regulatoryInformation ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty EVORAO:furtherInformation ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty EVORAO:transportInformation ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty EVORAO:ecologicalInformation ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty EVORAO:furtherInformation ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty EVORAO:ecologicalInformation ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty EVORAO:hazardsIdentification ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty EVORAO:disposalConsiderations ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty EVORAO:regulatoryInformation ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
             owl:onProperty EVORAO:transportInformation ],
         [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty EVORAO:toxicologicalInformation ],
+        [ a owl:Restriction ;
             owl:maxCardinality 1 ;
-            owl:onProperty EVORAO:fireFightingMeasures ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom xsd:string ;
-            owl:onProperty EVORAO:exposureControlsPersonalProtection ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom xsd:string ;
-            owl:onProperty EVORAO:furtherInformation ],
+            owl:onProperty EVORAO:handlingAndStorage ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
             owl:onProperty EVORAO:disposalConsiderations ],
         [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty EVORAO:exposureControlsPersonalProtection ],
+        [ a owl:Restriction ;
             owl:maxCardinality 1 ;
+            owl:onProperty EVORAO:accidentalReleaseMeasures ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty EVORAO:disposalConsiderations ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty EVORAO:hazardsIdentification ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty EVORAO:stabilityAndReactivity ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty EVORAO:transportInformation ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty EVORAO:furtherInformation ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
             owl:onProperty EVORAO:handlingAndStorage ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty EVORAO:materialSafetyContact ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty EVORAO:ecologicalInformation ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom EVORAO:ContactPoint ;
+            owl:onProperty EVORAO:materialSafetyContact ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty EVORAO:toxicologicalInformation ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty EVORAO:physicalChemicalProperties ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty EVORAO:accidentalReleaseMeasures ],
         dcat:Resource ;
     skos:closeMatch wd:Q222067 ;
     skos:definition "A Material Safety Data Sheet (MSDS) or Safety Data Sheet (SDS) is a standardized document that contains crucial occupational safety and health information related to the product" ;
@@ -360,49 +360,49 @@ EVORAO:NaturalPartOrigin a owl:Class ;
     rdfs:label "NaturalPartOrigin" ;
     dct:title "Natural part origin" ;
     rdfs:subClassOf [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty EVORAO:indigenousPeopleAndLocalCommunityOrigin ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty EVORAO:permitIdentifierForAbs ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:boolean ;
+            owl:onProperty EVORAO:beforeDate ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty EVORAO:permitIdentifierForAbs ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty EVORAO:countryOfCollection ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty EVORAO:indigenousPeopleAndLocalCommunityOrigin ],
+        [ a owl:Restriction ;
+            owl:minCardinality 1 ;
+            owl:onProperty EVORAO:countryOfCollection ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty EVORAO:collectionDate ],
+        [ a owl:Restriction ;
             owl:allValuesFrom xsd:dateTime ;
             owl:onProperty EVORAO:collectionDate ],
+        [ a owl:Restriction ;
+            owl:minCardinality 1 ;
+            owl:onProperty EVORAO:beforeDate ],
         [ a owl:Restriction ;
             owl:allValuesFrom EVORAO:IplcOrigin ;
             owl:onProperty EVORAO:indigenousPeopleAndLocalCommunityOrigin ],
         [ a owl:Restriction ;
-            owl:minCardinality 0 ;
+            owl:minCardinality 1 ;
+            owl:onProperty EVORAO:collectionDate ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
             owl:onProperty EVORAO:permitIdentifierForAbs ],
         [ a owl:Restriction ;
             owl:allValuesFrom EVORAO:Country ;
             owl:onProperty EVORAO:countryOfCollection ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
-            owl:onProperty EVORAO:countryOfCollection ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty EVORAO:collectionDate ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty EVORAO:indigenousPeopleAndLocalCommunityOrigin ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty EVORAO:indigenousPeopleAndLocalCommunityOrigin ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty EVORAO:beforeDate ],
-        [ a owl:Restriction ;
-            owl:minCardinality 1 ;
-            owl:onProperty EVORAO:beforeDate ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty EVORAO:permitIdentifierForAbs ],
-        [ a owl:Restriction ;
-            owl:minCardinality 1 ;
-            owl:onProperty EVORAO:countryOfCollection ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom xsd:string ;
-            owl:onProperty EVORAO:permitIdentifierForAbs ],
-        [ a owl:Restriction ;
-            owl:minCardinality 1 ;
-            owl:onProperty EVORAO:collectionDate ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom xsd:boolean ;
             owl:onProperty EVORAO:beforeDate ],
         EVORAO:BiologicalPartOrigin ;
     skos:broadMatch sepio:0000058 ;
@@ -415,124 +415,124 @@ EVORAO:NucleicAcid a owl:Class ;
     rdfs:label "NucleicAcid" ;
     dct:title "Nucleic acid" ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty EVORAO:observedMutations ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty EVORAO:tagSequence ],
-        [ a owl:Restriction ;
             owl:minCardinality 1 ;
-            owl:onProperty EVORAO:sequenceChecked ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom xsd:boolean ;
-            owl:onProperty EVORAO:sequenceChecked ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom xsd:string ;
-            owl:onProperty EVORAO:identificationTechnique ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty EVORAO:identificationTechnique ],
-        [ a owl:Restriction ;
-            owl:minCardinality 1 ;
-            owl:onProperty EVORAO:sequencing ],
+            owl:onProperty EVORAO:mutationObserved ],
         [ a owl:Restriction ;
             owl:allValuesFrom EVORAO:TagSequence ;
             owl:onProperty EVORAO:tagSequence ],
         [ a owl:Restriction ;
-            owl:allValuesFrom EVORAO:Data ;
-            owl:onProperty EVORAO:genBankFileOfTheConstruct ],
+            owl:minCardinality 0 ;
+            owl:onProperty EVORAO:identificationTechnique ],
         [ a owl:Restriction ;
-            owl:minCardinality 1 ;
-            owl:onProperty EVORAO:sequence ],
+            owl:minCardinality 0 ;
+            owl:onProperty EVORAO:observedMutations ],
         [ a owl:Restriction ;
-            owl:allValuesFrom EVORAO:PlasmidSelection ;
-            owl:onProperty EVORAO:plasmidSelection ],
+            owl:maxCardinality 1 ;
+            owl:onProperty EVORAO:mutationObserved ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty EVORAO:clonedIntoPlasmid ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty EVORAO:sequenceChecked ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:boolean ;
+            owl:onProperty EVORAO:clonedNucleicAcid ],
         [ a owl:Restriction ;
             owl:allValuesFrom [ a rdfs:Datatype ;
                     owl:intersectionOf ( xsd:string [ a rdfs:Datatype ;
                                 owl:oneOf ( "Not sequenced" "Partly sequenced" "Fully sequenced" ) ] ) ] ;
             owl:onProperty EVORAO:sequencing ],
         [ a owl:Restriction ;
+            owl:allValuesFrom EVORAO:BiologicalMaterialOrigin ;
+            owl:onProperty EVORAO:biologicalMaterialOrigin ],
+        [ a owl:Restriction ;
             owl:minCardinality 0 ;
-            owl:onProperty EVORAO:clonedIntoPlasmid ],
+            owl:onProperty EVORAO:genBankFileOfTheConstruct ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
-            owl:onProperty EVORAO:sequenceChecked ],
+            owl:onProperty EVORAO:observedMutations ],
         [ a owl:Restriction ;
-            owl:minCardinality 0 ;
+            owl:maxCardinality 1 ;
+            owl:onProperty EVORAO:titer ],
+        [ a owl:Restriction ;
+            owl:minCardinality 1 ;
+            owl:onProperty EVORAO:sequencing ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom EVORAO:PlasmidSelection ;
+            owl:onProperty EVORAO:plasmidSelection ],
+        [ a owl:Restriction ;
+            owl:minCardinality 1 ;
+            owl:onProperty EVORAO:tagSequence ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty EVORAO:biologicalMaterialOrigin ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
             owl:onProperty EVORAO:observedMutations ],
         [ a owl:Restriction ;
             owl:allValuesFrom xsd:string ;
             owl:onProperty EVORAO:titer ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
-            owl:onProperty EVORAO:clonedIntoPlasmid ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty EVORAO:plasmidSelection ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty EVORAO:titer ],
+            owl:onProperty EVORAO:identificationTechnique ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
             owl:onProperty EVORAO:sequencing ],
         [ a owl:Restriction ;
             owl:minCardinality 1 ;
-            owl:onProperty EVORAO:regionEncompassedInThisProduct ],
+            owl:onProperty EVORAO:clonedNucleicAcid ],
         [ a owl:Restriction ;
-            owl:allValuesFrom xsd:string ;
-            owl:onProperty EVORAO:regionEncompassedInThisProduct ],
+            owl:allValuesFrom EVORAO:Data ;
+            owl:onProperty EVORAO:genBankFileOfTheConstruct ],
         [ a owl:Restriction ;
-            owl:allValuesFrom EVORAO:BiologicalMaterialOrigin ;
-            owl:onProperty EVORAO:biologicalMaterialOrigin ],
+            owl:allValuesFrom xsd:boolean ;
+            owl:onProperty EVORAO:mutationObserved ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom EVORAO:ExpressionVector ;
+            owl:onProperty EVORAO:clonedIntoPlasmid ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty EVORAO:clonedIntoPlasmid ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
             owl:onProperty EVORAO:clonedNucleicAcid ],
         [ a owl:Restriction ;
-            owl:minCardinality 1 ;
-            owl:onProperty EVORAO:mutationObserved ],
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty EVORAO:regionEncompassedInThisProduct ],
         [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
+            owl:minCardinality 1 ;
+            owl:onProperty EVORAO:titer ],
+        [ a owl:Restriction ;
+            owl:minCardinality 1 ;
+            owl:onProperty EVORAO:sequenceChecked ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:boolean ;
+            owl:onProperty EVORAO:sequenceChecked ],
+        [ a owl:Restriction ;
+            owl:minCardinality 1 ;
+            owl:onProperty EVORAO:biologicalMaterialOrigin ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
             owl:onProperty EVORAO:identificationTechnique ],
         [ a owl:Restriction ;
             owl:allValuesFrom EVORAO:Sequence ;
             owl:onProperty EVORAO:sequence ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
-            owl:onProperty EVORAO:mutationObserved ],
-        [ a owl:Restriction ;
-            owl:minCardinality 1 ;
-            owl:onProperty EVORAO:clonedNucleicAcid ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom EVORAO:ExpressionVector ;
-            owl:onProperty EVORAO:clonedIntoPlasmid ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
             owl:onProperty EVORAO:regionEncompassedInThisProduct ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
-            owl:onProperty EVORAO:genBankFileOfTheConstruct ],
+            owl:onProperty EVORAO:plasmidSelection ],
+        [ a owl:Restriction ;
+            owl:minCardinality 1 ;
+            owl:onProperty EVORAO:regionEncompassedInThisProduct ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
-            owl:onProperty EVORAO:biologicalMaterialOrigin ],
-        [ a owl:Restriction ;
-            owl:minCardinality 1 ;
-            owl:onProperty EVORAO:titer ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom xsd:boolean ;
-            owl:onProperty EVORAO:mutationObserved ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom xsd:boolean ;
-            owl:onProperty EVORAO:clonedNucleicAcid ],
-        [ a owl:Restriction ;
-            owl:minCardinality 1 ;
-            owl:onProperty EVORAO:biologicalMaterialOrigin ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom xsd:string ;
-            owl:onProperty EVORAO:observedMutations ],
-        [ a owl:Restriction ;
-            owl:minCardinality 1 ;
             owl:onProperty EVORAO:tagSequence ],
+        [ a owl:Restriction ;
+            owl:minCardinality 1 ;
+            owl:onProperty EVORAO:sequence ],
         EVORAO:Product ;
     skos:closeMatch chebi:33696,
         ncit:C706,
@@ -559,59 +559,13 @@ EVORAO:Protein a owl:Class ;
     rdfs:label "Protein" ;
     dct:title "Protein" ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty EVORAO:biologicalMaterialOrigin ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom xsd:string ;
-            owl:onProperty EVORAO:functionalAndTechnicalDescription ],
-        [ a owl:Restriction ;
             owl:minCardinality 0 ;
-            owl:onProperty EVORAO:specialFeature ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom [ a rdfs:Datatype ;
-                    owl:intersectionOf ( xsd:string [ a rdfs:Datatype ;
-                                owl:oneOf ( "Soluble" "Inclusion bodies" ) ] ) ] ;
-            owl:onProperty EVORAO:expressedAs ],
+            owl:onProperty EVORAO:functionalAndTechnicalDescription ],
         [ a owl:Restriction ;
             owl:allValuesFrom [ a rdfs:Datatype ;
                     owl:intersectionOf ( xsd:string [ a rdfs:Datatype ;
                                 owl:oneOf ( "Denatured" "Refolded" ) ] ) ] ;
             owl:onProperty EVORAO:inclusionBodiesType ],
-        [ a owl:Restriction ;
-            owl:minCardinality 1 ;
-            owl:onProperty EVORAO:sequence ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom EVORAO:SpecialFeature ;
-            owl:onProperty EVORAO:specialFeature ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty EVORAO:proteinPurification ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom EVORAO:PdbReference ;
-            owl:onProperty EVORAO:relatedPdb ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty EVORAO:tagStatusOfTheSolubilizedProtein ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom [ a rdfs:Datatype ;
-                    owl:intersectionOf ( xsd:string [ a rdfs:Datatype ;
-                                owl:oneOf ( "E. coli" "Insect cells" "Mammalian cells" ) ] ) ] ;
-            owl:onProperty EVORAO:expressionSystem ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty EVORAO:expressionSystem ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty EVORAO:relatedPdb ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty EVORAO:functionalAndTechnicalDescription ],
-        [ a owl:Restriction ;
-            owl:minCardinality 1 ;
-            owl:onProperty EVORAO:tagSequence ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom EVORAO:TagSequence ;
-            owl:onProperty EVORAO:tagSequence ],
         [ a owl:Restriction ;
             owl:allValuesFrom EVORAO:Sequence ;
             owl:onProperty EVORAO:sequence ],
@@ -619,44 +573,90 @@ EVORAO:Protein a owl:Class ;
             owl:minCardinality 0 ;
             owl:onProperty EVORAO:typeOfFunctionalCharacterization ],
         [ a owl:Restriction ;
-            owl:allValuesFrom xsd:string ;
-            owl:onProperty EVORAO:domain ],
+            owl:allValuesFrom EVORAO:SpecialFeature ;
+            owl:onProperty EVORAO:specialFeature ],
         [ a owl:Restriction ;
             owl:allValuesFrom xsd:string ;
             owl:onProperty EVORAO:tagStatusOfTheSolubilizedProtein ],
         [ a owl:Restriction ;
-            owl:allValuesFrom [ a rdfs:Datatype ;
-                    owl:intersectionOf ( xsd:string [ a rdfs:Datatype ;
-                                owl:oneOf ( "Functionally characterized" "No functional characterization" ) ] ) ] ;
-            owl:onProperty EVORAO:functionalCharacterization ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom EVORAO:BiologicalMaterialOrigin ;
+            owl:maxCardinality 1 ;
             owl:onProperty EVORAO:biologicalMaterialOrigin ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
-            owl:onProperty EVORAO:functionalCharacterization ],
+            owl:onProperty EVORAO:domain ],
         [ a owl:Restriction ;
-            owl:minCardinality 1 ;
-            owl:onProperty EVORAO:biologicalMaterialOrigin ],
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty EVORAO:functionalAndTechnicalDescription ],
         [ a owl:Restriction ;
             owl:allValuesFrom [ a rdfs:Datatype ;
                     owl:intersectionOf ( xsd:string [ a rdfs:Datatype ;
-                                owl:oneOf ( "Greater than 95 percent" "Unpurified expression host lysate or partly purified protein" ) ] ) ] ;
-            owl:onProperty EVORAO:proteinPurification ],
+                                owl:oneOf ( "Soluble" "Inclusion bodies" ) ] ) ] ;
+            owl:onProperty EVORAO:expressedAs ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty EVORAO:specialFeature ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty EVORAO:functionalCharacterization ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
             owl:onProperty EVORAO:inclusionBodiesType ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty EVORAO:relatedPdb ],
         [ a owl:Restriction ;
             owl:allValuesFrom [ a rdfs:Datatype ;
                     owl:intersectionOf ( xsd:string [ a rdfs:Datatype ;
                                 owl:oneOf ( "Enzymatic" "Antigenic" ) ] ) ] ;
             owl:onProperty EVORAO:typeOfFunctionalCharacterization ],
         [ a owl:Restriction ;
-            owl:minCardinality 0 ;
+            owl:minCardinality 1 ;
+            owl:onProperty EVORAO:sequence ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
             owl:onProperty EVORAO:domain ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom [ a rdfs:Datatype ;
+                    owl:intersectionOf ( xsd:string [ a rdfs:Datatype ;
+                                owl:oneOf ( "Greater than 95 percent" "Unpurified expression host lysate or partly purified protein" ) ] ) ] ;
+            owl:onProperty EVORAO:proteinPurification ],
+        [ a owl:Restriction ;
+            owl:minCardinality 1 ;
+            owl:onProperty EVORAO:tagSequence ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom [ a rdfs:Datatype ;
+                    owl:intersectionOf ( xsd:string [ a rdfs:Datatype ;
+                                owl:oneOf ( "Functionally characterized" "No functional characterization" ) ] ) ] ;
+            owl:onProperty EVORAO:functionalCharacterization ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom EVORAO:PdbReference ;
+            owl:onProperty EVORAO:relatedPdb ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty EVORAO:tagStatusOfTheSolubilizedProtein ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty EVORAO:proteinPurification ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty EVORAO:expressionSystem ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom [ a rdfs:Datatype ;
+                    owl:intersectionOf ( xsd:string [ a rdfs:Datatype ;
+                                owl:oneOf ( "E. coli" "Insect cells" "Mammalian cells" ) ] ) ] ;
+            owl:onProperty EVORAO:expressionSystem ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom EVORAO:BiologicalMaterialOrigin ;
+            owl:onProperty EVORAO:biologicalMaterialOrigin ],
+        [ a owl:Restriction ;
+            owl:minCardinality 1 ;
+            owl:onProperty EVORAO:biologicalMaterialOrigin ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
             owl:onProperty EVORAO:expressedAs ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom EVORAO:TagSequence ;
+            owl:onProperty EVORAO:tagSequence ],
         EVORAO:Product ;
     skos:closeMatch schema1:Protein,
         sio:010043,
@@ -681,29 +681,17 @@ EVORAO:Publication a owl:Class ;
     rdfs:label "Publication" ;
     dct:title "Publication" ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:allValuesFrom xsd:string ;
-            owl:onProperty dct:title ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty EVORAO:authors ],
-        [ a owl:Restriction ;
             owl:minCardinality 1 ;
             owl:onProperty dct:title ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
-            owl:onProperty dct:title ],
+            owl:onProperty EVORAO:abstract ],
         [ a owl:Restriction ;
             owl:minCardinality 1 ;
-            owl:onProperty EVORAO:abstract ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty EVORAO:abstract ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom EVORAO:Doi ;
             owl:onProperty EVORAO:doi ],
         [ a owl:Restriction ;
-            owl:minCardinality 1 ;
-            owl:onProperty EVORAO:authors ],
+            owl:minCardinality 0 ;
+            owl:onProperty EVORAO:journal ],
         [ a owl:Restriction ;
             owl:allValuesFrom xsd:string ;
             owl:onProperty EVORAO:abstract ],
@@ -711,17 +699,29 @@ EVORAO:Publication a owl:Class ;
             owl:allValuesFrom EVORAO:Journal ;
             owl:onProperty EVORAO:journal ],
         [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty dct:title ],
+        [ a owl:Restriction ;
             owl:allValuesFrom xsd:string ;
             owl:onProperty EVORAO:authors ],
         [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty EVORAO:journal ],
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty dct:title ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty EVORAO:authors ],
         [ a owl:Restriction ;
             owl:minCardinality 1 ;
-            owl:onProperty EVORAO:doi ],
+            owl:onProperty EVORAO:abstract ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
             owl:onProperty EVORAO:journal ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom EVORAO:Doi ;
+            owl:onProperty EVORAO:doi ],
+        [ a owl:Restriction ;
+            owl:minCardinality 1 ;
+            owl:onProperty EVORAO:authors ],
         dcat:Resource ;
     skos:closeMatch wd:Q591041,
         reproduceme:Publication ;
@@ -734,22 +734,22 @@ EVORAO:Service a owl:Class ;
     dct:title "Service" ;
     rdfs:subClassOf [ a owl:Restriction ;
             owl:minCardinality 0 ;
+            owl:onProperty EVORAO:modelType ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
             owl:onProperty EVORAO:modelSpecies ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty EVORAO:modelType ],
         [ a owl:Restriction ;
             owl:allValuesFrom xsd:string ;
             owl:onProperty EVORAO:modelType ],
         [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
+            owl:allValuesFrom xsd:string ;
             owl:onProperty EVORAO:modelSpecies ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
-            owl:onProperty EVORAO:modelType ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom xsd:string ;
             owl:onProperty EVORAO:modelSpecies ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty EVORAO:modelType ],
         EVORAO:ProductOrService ;
     skos:closeMatch ncit:C88187,
         obi:0001173,
@@ -765,22 +765,22 @@ EVORAO:SyntheticPartOrigin a owl:Class ;
     rdfs:label "SyntheticPartOrigin" ;
     dct:title "Synthetic part origin" ;
     rdfs:subClassOf [ a owl:Restriction ;
+            owl:allValuesFrom xsd:boolean ;
+            owl:onProperty EVORAO:modificationsFromTheReferenceSequences ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty EVORAO:descriptionOfModificationsMadeFromTheReferenceSequences ],
+        [ a owl:Restriction ;
             owl:maxCardinality 1 ;
             owl:onProperty EVORAO:modificationsFromTheReferenceSequences ],
         [ a owl:Restriction ;
             owl:minCardinality 1 ;
             owl:onProperty EVORAO:modificationsFromTheReferenceSequences ],
         [ a owl:Restriction ;
-            owl:allValuesFrom xsd:boolean ;
-            owl:onProperty EVORAO:modificationsFromTheReferenceSequences ],
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty EVORAO:descriptionOfModificationsMadeFromTheReferenceSequences ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
-            owl:onProperty EVORAO:descriptionOfModificationsMadeFromTheReferenceSequences ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty EVORAO:descriptionOfModificationsMadeFromTheReferenceSequences ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom xsd:string ;
             owl:onProperty EVORAO:descriptionOfModificationsMadeFromTheReferenceSequences ],
         EVORAO:BiologicalPartOrigin ;
     skos:definition "Information on the origin of a synthetic part that composes the biological material" ;
@@ -790,19 +790,22 @@ EVORAO:Version a owl:Class ;
     rdfs:label "Version" ;
     dct:title "Version" ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty dcat:version ],
-        [ a owl:Restriction ;
             owl:minCardinality 1 ;
             owl:onProperty EVORAO:versionOf ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
             owl:onProperty EVORAO:versionOf ],
         [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty dcat:version ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty dcat:version ],
+        [ a owl:Restriction ;
             owl:minCardinality 0 ;
             owl:onProperty EVORAO:resource ],
         [ a owl:Restriction ;
-            owl:allValuesFrom xsd:string ;
+            owl:minCardinality 1 ;
             owl:onProperty dcat:version ],
         [ a owl:Restriction ;
             owl:allValuesFrom xsd:string ;
@@ -810,9 +813,6 @@ EVORAO:Version a owl:Class ;
         [ a owl:Restriction ;
             owl:allValuesFrom dcat:Resource ;
             owl:onProperty EVORAO:resource ],
-        [ a owl:Restriction ;
-            owl:minCardinality 1 ;
-            owl:onProperty dcat:version ],
         dcat:Resource ;
     skos:closeMatch reproduceme:Version ;
     skos:definition "Numeric code assigned to identify a particular historical version of a work (e.g. software or technical standards)" ;
@@ -845,29 +845,29 @@ EVORAO:Virus a owl:Class ;
     rdfs:label "Virus" ;
     dct:title "Virus" ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:allValuesFrom xsd:boolean ;
-            owl:onProperty EVORAO:mycoplasmicContent ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom xsd:boolean ;
-            owl:onProperty EVORAO:contaminationWithCoInfectingViruses ],
-        [ a owl:Restriction ;
-            owl:minCardinality 1 ;
-            owl:onProperty EVORAO:contaminationWithCoInfectingViruses ],
-        [ a owl:Restriction ;
             owl:maxCardinality 1 ;
-            owl:onProperty EVORAO:contaminationWithCoInfectingViruses ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom EVORAO:VirusName ;
-            owl:onProperty EVORAO:coInfectingViruses ],
+            owl:onProperty EVORAO:mycoplasmicContent ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
             owl:onProperty EVORAO:coInfectingViruses ],
         [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
+            owl:allValuesFrom xsd:boolean ;
             owl:onProperty EVORAO:mycoplasmicContent ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom EVORAO:VirusName ;
+            owl:onProperty EVORAO:coInfectingViruses ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:boolean ;
+            owl:onProperty EVORAO:contaminationWithCoInfectingViruses ],
         [ a owl:Restriction ;
             owl:minCardinality 1 ;
             owl:onProperty EVORAO:mycoplasmicContent ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty EVORAO:contaminationWithCoInfectingViruses ],
+        [ a owl:Restriction ;
+            owl:minCardinality 1 ;
+            owl:onProperty EVORAO:contaminationWithCoInfectingViruses ],
         EVORAO:Pathogen ;
     skos:closeMatch ncit:C14283,
         xco:0000237,
@@ -898,7 +898,7 @@ EVORAO:evorao.owl.ttl a owl:Ontology ;
     dct:license "https://creativecommons.org/publicdomain/zero/1.0/" ;
     dct:title "European Viral Outbreak Response Alliance Ontology" ;
     pav:createdBy <https://github.com/Angatar> ;
-    pav:version "1.0.10016" ;
+    pav:version "1.0.10123" ;
     schema1:inLanguage "en" ;
     schema1:keywords "biobank",
         "biological collections",
@@ -924,35 +924,35 @@ dcat:DataService a owl:Class ;
             owl:maxCardinality 1 ;
             owl:onProperty dcat:endpointURL ],
         [ a owl:Restriction ;
-            owl:allValuesFrom dcat:Dataset ;
-            owl:onProperty dcat:servesDataset ],
-        [ a owl:Restriction ;
             owl:minCardinality 1 ;
             owl:onProperty dcat:endpointURL ],
         [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty dct:description ],
-        [ a owl:Restriction ;
-            owl:minCardinality 1 ;
-            owl:onProperty dct:title ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty dct:description ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom xsd:string ;
-            owl:onProperty dct:description ],
-        [ a owl:Restriction ;
             owl:minCardinality 0 ;
             owl:onProperty dcat:servesDataset ],
         [ a owl:Restriction ;
-            owl:allValuesFrom xsd:string ;
-            owl:onProperty dct:title ],
+            owl:minCardinality 0 ;
+            owl:onProperty dct:description ],
         [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
+            owl:minCardinality 1 ;
             owl:onProperty dct:title ],
         [ a owl:Restriction ;
             owl:allValuesFrom xsd:anyURI ;
             owl:onProperty dcat:endpointURL ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty dct:title ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty dct:description ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty dct:title ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom dcat:Dataset ;
+            owl:onProperty dcat:servesDataset ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty dct:description ],
         dcat:Resource ;
     skos:closeMatch schema1:WebAPI,
         wd:Q193424 ;
@@ -965,47 +965,47 @@ EVORAO:Antibody a owl:Class ;
     rdfs:label "Antibody" ;
     dct:title "Antibody" ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:allValuesFrom xsd:boolean ;
+            owl:maxCardinality 1 ;
             owl:onProperty EVORAO:specificityDocumented ],
         [ a owl:Restriction ;
             owl:minCardinality 1 ;
-            owl:onProperty EVORAO:specificityDocumented ],
+            owl:onProperty EVORAO:targetedAntigen ],
         [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty EVORAO:productionSystem ],
+            owl:allValuesFrom xsd:boolean ;
+            owl:onProperty EVORAO:antibodyPurifiedByAffinity ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
             owl:onProperty EVORAO:targetedAntigen ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
-            owl:onProperty EVORAO:productionSystem ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom xsd:string ;
-            owl:onProperty EVORAO:targetedAntigen ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom xsd:boolean ;
-            owl:onProperty EVORAO:antibodyPurifiedByAffinity ],
+            owl:onProperty EVORAO:sequenceReference ],
         [ a owl:Restriction ;
             owl:allValuesFrom EVORAO:SequenceReference ;
             owl:onProperty EVORAO:sequenceReference ],
         [ a owl:Restriction ;
-            owl:allValuesFrom xsd:string ;
-            owl:onProperty EVORAO:productionSystem ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty EVORAO:specificityDocumented ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty EVORAO:sequenceReference ],
-        [ a owl:Restriction ;
             owl:maxCardinality 1 ;
             owl:onProperty EVORAO:antibodyPurifiedByAffinity ],
         [ a owl:Restriction ;
-            owl:minCardinality 1 ;
+            owl:allValuesFrom xsd:string ;
             owl:onProperty EVORAO:targetedAntigen ],
         [ a owl:Restriction ;
             owl:minCardinality 1 ;
             owl:onProperty EVORAO:antibodyPurifiedByAffinity ],
+        [ a owl:Restriction ;
+            owl:minCardinality 1 ;
+            owl:onProperty EVORAO:specificityDocumented ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:boolean ;
+            owl:onProperty EVORAO:specificityDocumented ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty EVORAO:productionSystem ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty EVORAO:productionSystem ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty EVORAO:productionSystem ],
         EVORAO:Product ;
     skos:closeMatch snomed:68498002,
         wd:Q79460 ;
@@ -1016,11 +1016,29 @@ EVORAO:Certification a owl:Class ;
     rdfs:label "Certification" ;
     dct:title "Certification" ;
     rdfs:subClassOf [ a owl:Restriction ;
+            owl:allValuesFrom EVORAO:Image ;
+            owl:onProperty EVORAO:logo ],
+        [ a owl:Restriction ;
             owl:minCardinality 0 ;
+            owl:onProperty EVORAO:logo ],
+        [ a owl:Restriction ;
+            owl:minCardinality 1 ;
+            owl:onProperty dct:title ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty dct:description ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty EVORAO:logo ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
             owl:onProperty EVORAO:resourceUrl ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
             owl:onProperty EVORAO:certificationDocument ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty dct:title ],
         [ a owl:Restriction ;
             owl:allValuesFrom EVORAO:Document ;
             owl:onProperty EVORAO:certificationDocument ],
@@ -1028,35 +1046,17 @@ EVORAO:Certification a owl:Class ;
             owl:minCardinality 0 ;
             owl:onProperty dct:description ],
         [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty dct:description ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom xsd:string ;
-            owl:onProperty dct:description ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty dct:title ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty EVORAO:logo ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty EVORAO:logo ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom xsd:string ;
-            owl:onProperty dct:title ],
-        [ a owl:Restriction ;
-            owl:minCardinality 1 ;
-            owl:onProperty dct:title ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty EVORAO:resourceUrl ],
-        [ a owl:Restriction ;
             owl:allValuesFrom xsd:anyURI ;
             owl:onProperty EVORAO:resourceUrl ],
         [ a owl:Restriction ;
-            owl:allValuesFrom EVORAO:Image ;
-            owl:onProperty EVORAO:logo ],
+            owl:minCardinality 0 ;
+            owl:onProperty EVORAO:resourceUrl ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty dct:title ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty dct:description ],
         dcat:Resource ;
     skos:closeMatch wd:Q374814 ;
     skos:definition "Assurance given by an independent certification body that a product, service or system meets the requirements of a standard" ;
@@ -1068,6 +1068,12 @@ EVORAO:Collection a owl:Class ;
     rdfs:label "Collection" ;
     dct:title "Collection" ;
     rdfs:subClassOf [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty EVORAO:collectionDataProvider ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom EVORAO:DataProvider ;
+            owl:onProperty EVORAO:collectionDataProvider ],
+        [ a owl:Restriction ;
             owl:maxCardinality 1 ;
             owl:onProperty EVORAO:collectionDataProvider ],
         [ a owl:Restriction ;
@@ -1076,12 +1082,6 @@ EVORAO:Collection a owl:Class ;
         [ a owl:Restriction ;
             owl:allValuesFrom EVORAO:ProductOrService ;
             owl:onProperty EVORAO:collectionItem ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom EVORAO:DataProvider ;
-            owl:onProperty EVORAO:collectionDataProvider ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty EVORAO:collectionDataProvider ],
         dcat:Catalog ;
     skos:closeMatch wd:Q2668072 ;
     skos:definition "Set of products and services with some common characteristics" ;
@@ -1114,8 +1114,11 @@ EVORAO:ExternalRelatedReference a owl:Class ;
     rdfs:label "ExternalRelatedReference" ;
     dct:title "External related reference" ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty EVORAO:referenceProviderPrefix ],
+            owl:minCardinality 1 ;
+            owl:onProperty EVORAO:referenceLabel ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty EVORAO:reference ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
             owl:onProperty EVORAO:referenceLabel ],
@@ -1123,36 +1126,114 @@ EVORAO:ExternalRelatedReference a owl:Class ;
             owl:allValuesFrom xsd:string ;
             owl:onProperty EVORAO:referenceLabel ],
         [ a owl:Restriction ;
-            owl:minCardinality 1 ;
-            owl:onProperty EVORAO:reference ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty EVORAO:referenceProviderName ],
-        [ a owl:Restriction ;
-            owl:minCardinality 1 ;
-            owl:onProperty EVORAO:referenceProviderName ],
-        [ a owl:Restriction ;
-            owl:minCardinality 1 ;
-            owl:onProperty EVORAO:referenceLabel ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom xsd:string ;
-            owl:onProperty EVORAO:referenceProviderName ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty EVORAO:reference ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom xsd:string ;
-            owl:onProperty EVORAO:reference ],
-        [ a owl:Restriction ;
             owl:allValuesFrom xsd:string ;
             owl:onProperty EVORAO:referenceProviderPrefix ],
         [ a owl:Restriction ;
             owl:minCardinality 1 ;
             owl:onProperty EVORAO:referenceProviderPrefix ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty EVORAO:referenceProviderName ],
+        [ a owl:Restriction ;
+            owl:minCardinality 1 ;
+            owl:onProperty EVORAO:reference ],
+        [ a owl:Restriction ;
+            owl:minCardinality 1 ;
+            owl:onProperty EVORAO:referenceProviderName ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty EVORAO:referenceProviderName ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty EVORAO:referenceProviderPrefix ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty EVORAO:reference ],
         dcat:Resource ;
     skos:closeMatch ms:1000878,
         ncit:C43621 ;
     skos:definition "A reference that permits to retrieve an item from an external provider" ;
+    skos:inScheme EVORAO: .
+
+EVORAO:FundingSource a owl:Class ;
+    rdfs:label "FundingSource" ;
+    dct:title "Funding source" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty EVORAO:grantNumber ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty EVORAO:fundingProgram ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty EVORAO:eligibilityCriteria ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:date ;
+            owl:onProperty EVORAO:fundingPeriodStart ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty dct:title ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty EVORAO:eligibilityCriteria ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:date ;
+            owl:onProperty EVORAO:fundingPeriodEnd ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty EVORAO:fundingPeriodEnd ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty dct:description ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty EVORAO:funder ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty EVORAO:fundingPeriodStart ],
+        [ a owl:Restriction ;
+            owl:minCardinality 1 ;
+            owl:onProperty dct:title ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty EVORAO:fundingProgram ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty EVORAO:funder ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom foaf:Organization ;
+            owl:onProperty EVORAO:funder ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty EVORAO:fundingPeriodEnd ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty EVORAO:fundingProgram ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty dct:description ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty dct:title ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty EVORAO:grantNumber ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty EVORAO:grantNumber ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty EVORAO:fundingPeriodStart ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty dct:description ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty EVORAO:eligibilityCriteria ],
+        dcat:Resource ;
+    skos:closeMatch ncit:C17769 ;
+    skos:definition "A program, grant, or project providing financial support for the access or use of a product or service, either fully or partially" ;
+    skos:exactMatch schema1:Grant ;
     skos:inScheme EVORAO: .
 
 EVORAO:IataClassification a owl:Class ;
@@ -1217,52 +1298,59 @@ EVORAO:PathogenIdentification a owl:Class ;
     rdfs:label "PathogenIdentification" ;
     dct:title "Pathogen identification" ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty EVORAO:subspecies ],
-        [ a owl:Restriction ;
             owl:maxCardinality 1 ;
-            owl:onProperty EVORAO:strain ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom [ a rdfs:Datatype ;
-                    owl:intersectionOf ( xsd:string [ a rdfs:Datatype ;
-                                owl:oneOf ( "Virus" "Bacterium" "Fungus" "Protozoan" "Viroid" "Prion" ) ] ) ] ;
-            owl:onProperty EVORAO:pathogenType ],
+            owl:onProperty EVORAO:variant ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
             owl:onProperty EVORAO:variant ],
         [ a owl:Restriction ;
-            owl:allValuesFrom EVORAO:Variant ;
-            owl:onProperty EVORAO:variant ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty EVORAO:genotype ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
+            owl:allValuesFrom xsd:string ;
             owl:onProperty EVORAO:serotype ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom EVORAO:CommonName ;
+            owl:onProperty EVORAO:pathogenName ],
         [ a owl:Restriction ;
             owl:minCardinality 1 ;
             owl:onProperty EVORAO:pathogenName ],
         [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty EVORAO:isolate ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
+            owl:minCardinality 1 ;
             owl:onProperty EVORAO:pathogenType ],
         [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
+            owl:minCardinality 1 ;
+            owl:onProperty EVORAO:taxon ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
             owl:onProperty EVORAO:subspecies ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
             owl:onProperty EVORAO:taxon ],
         [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty EVORAO:genotype ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty EVORAO:serotype ],
+        [ a owl:Restriction ;
             owl:maxCardinality 1 ;
+            owl:onProperty EVORAO:pathogenName ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty EVORAO:strain ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty EVORAO:strain ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom EVORAO:Variant ;
             owl:onProperty EVORAO:variant ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
-            owl:onProperty EVORAO:serotype ],
+            owl:onProperty EVORAO:subspecies ],
         [ a owl:Restriction ;
             owl:allValuesFrom xsd:string ;
-            owl:onProperty EVORAO:genotype ],
+            owl:onProperty EVORAO:isolate ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty EVORAO:strain ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
             owl:onProperty EVORAO:isolate ],
@@ -1270,11 +1358,13 @@ EVORAO:PathogenIdentification a owl:Class ;
             owl:allValuesFrom EVORAO:Taxon ;
             owl:onProperty EVORAO:taxon ],
         [ a owl:Restriction ;
-            owl:minCardinality 1 ;
-            owl:onProperty EVORAO:pathogenType ],
+            owl:allValuesFrom [ a rdfs:Datatype ;
+                    owl:intersectionOf ( xsd:string [ a rdfs:Datatype ;
+                                owl:oneOf ( "Animal" "Human" "Plant" ) ] ) ] ;
+            owl:onProperty EVORAO:hostType ],
         [ a owl:Restriction ;
-            owl:allValuesFrom xsd:string ;
-            owl:onProperty EVORAO:serotype ],
+            owl:minCardinality 0 ;
+            owl:onProperty EVORAO:subspecies ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
             owl:onProperty EVORAO:genotype ],
@@ -1282,31 +1372,22 @@ EVORAO:PathogenIdentification a owl:Class ;
             owl:minCardinality 0 ;
             owl:onProperty EVORAO:hostType ],
         [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty EVORAO:pathogenType ],
+        [ a owl:Restriction ;
             owl:minCardinality 0 ;
-            owl:onProperty EVORAO:strain ],
+            owl:onProperty EVORAO:genotype ],
         [ a owl:Restriction ;
-            owl:allValuesFrom xsd:string ;
+            owl:maxCardinality 1 ;
             owl:onProperty EVORAO:isolate ],
-        [ a owl:Restriction ;
-            owl:minCardinality 1 ;
-            owl:onProperty EVORAO:taxon ],
         [ a owl:Restriction ;
             owl:allValuesFrom [ a rdfs:Datatype ;
                     owl:intersectionOf ( xsd:string [ a rdfs:Datatype ;
-                                owl:oneOf ( "Animal" "Human" "Plant" ) ] ) ] ;
-            owl:onProperty EVORAO:hostType ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom EVORAO:CommonName ;
-            owl:onProperty EVORAO:pathogenName ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom xsd:string ;
-            owl:onProperty EVORAO:subspecies ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom xsd:string ;
-            owl:onProperty EVORAO:strain ],
+                                owl:oneOf ( "Virus" "Bacterium" "Fungus" "Protozoan" "Viroid" "Prion" ) ] ) ] ;
+            owl:onProperty EVORAO:pathogenType ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
-            owl:onProperty EVORAO:pathogenName ],
+            owl:onProperty EVORAO:serotype ],
         dcat:Resource ;
     skos:broadMatch dwc:Identification ;
     skos:definition "A collection of distinguishing information that enables the differentiation of a pathogen from another" ;
@@ -1352,10 +1433,10 @@ EVORAO:Provider a owl:Class ;
     rdfs:label "Provider" ;
     dct:title "Provider" ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:minCardinality 0 ;
+            owl:allValuesFrom EVORAO:ReasearchInfrastructure ;
             owl:onProperty EVORAO:memberOfRi ],
         [ a owl:Restriction ;
-            owl:allValuesFrom EVORAO:ReasearchInfrastructure ;
+            owl:minCardinality 0 ;
             owl:onProperty EVORAO:memberOfRi ],
         foaf:Organization ;
     skos:closeMatch ncit:C37900 ;
@@ -1368,20 +1449,20 @@ EVORAO:RecombinantPartIdentification a owl:Class ;
     rdfs:label "RecombinantPartIdentification" ;
     dct:title "Recombinant part identification" ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:allValuesFrom EVORAO:Sequence ;
-            owl:onProperty EVORAO:sequence ],
-        [ a owl:Restriction ;
             owl:allValuesFrom xsd:string ;
             owl:onProperty EVORAO:partIdentification ],
         [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty EVORAO:partIdentification ],
+            owl:allValuesFrom EVORAO:Sequence ;
+            owl:onProperty EVORAO:sequence ],
         [ a owl:Restriction ;
             owl:minCardinality 1 ;
             owl:onProperty EVORAO:partIdentification ],
         [ a owl:Restriction ;
             owl:minCardinality 1 ;
             owl:onProperty EVORAO:sequence ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty EVORAO:partIdentification ],
         dcat:Resource ;
     skos:definition "Identification of a recombinant part" ;
     skos:inScheme EVORAO: .
@@ -1435,20 +1516,20 @@ EVORAO:Vocabulary a owl:Class ;
     rdfs:label "Vocabulary" ;
     dct:title "Vocabulary" ;
     rdfs:subClassOf [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty EVORAO:term ],
+        [ a owl:Restriction ;
             owl:allValuesFrom EVORAO:DataProvider ;
             owl:onProperty EVORAO:termDataProvider ],
         [ a owl:Restriction ;
             owl:allValuesFrom EVORAO:Term ;
             owl:onProperty EVORAO:term ],
         [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty EVORAO:termDataProvider ],
-        [ a owl:Restriction ;
             owl:maxCardinality 1 ;
             owl:onProperty EVORAO:termDataProvider ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
-            owl:onProperty EVORAO:term ],
+            owl:onProperty EVORAO:termDataProvider ],
         dcat:Catalog ;
     skos:broadMatch skos:Collection ;
     skos:closeMatch wd:Q1391494,
@@ -1594,6 +1675,15 @@ EVORAO:functionalCharacterization a owl:DatatypeProperty ;
                         owl:oneOf ( "Functionally characterized" "No functional characterization" ) ] ) ] ;
     skos:definition "The process of determining and describing the specific biological activities and roles of a protein. Possible values include 'Functionally characterized' (the protein's functions have been identified and described) and 'No functional characterization' (the protein's functions have not been identified or described)." ;
     skos:inScheme EVORAO: .
+
+EVORAO:fundingSource a owl:ObjectProperty ;
+    rdfs:label "fundingSource" ;
+    dct:title "funding source" ;
+    rdfs:range EVORAO:FundingSource ;
+    skos:definition "A program, grant, or project providing financial support for the access or use of the product or service, either fully or partially" ;
+    skos:exactMatch schema1:funding ;
+    skos:inScheme EVORAO: ;
+    skos:note "Links a product or service to one or more financial mechanisms, initiatives, or grants that enable or support its provision or access" .
 
 EVORAO:genBankFileOfTheConstruct a owl:ObjectProperty ;
     rdfs:label "genBankFileOfTheConstruct" ;
@@ -1890,50 +1980,50 @@ EVORAO:License a owl:Class ;
     rdfs:label "License" ;
     dct:title "License" ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty EVORAO:logo ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom xsd:string ;
-            owl:onProperty EVORAO:licensingOrAttribution ],
-        [ a owl:Restriction ;
             owl:maxCardinality 1 ;
             owl:onProperty dct:title ],
         [ a owl:Restriction ;
-            owl:allValuesFrom xsd:anyURI ;
-            owl:onProperty EVORAO:resourceUrl ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty dct:description ],
-        [ a owl:Restriction ;
             owl:minCardinality 0 ;
-            owl:onProperty dct:description ],
+            owl:onProperty EVORAO:licensingOrAttribution ],
         [ a owl:Restriction ;
             owl:minCardinality 1 ;
             owl:onProperty dct:title ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
-            owl:onProperty EVORAO:licensingOrAttribution ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty EVORAO:logo ],
+            owl:onProperty dct:description ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
-            owl:onProperty EVORAO:resourceUrl ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
             owl:onProperty EVORAO:resourceUrl ],
         [ a owl:Restriction ;
             owl:allValuesFrom xsd:string ;
             owl:onProperty dct:title ],
         [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty dct:description ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty EVORAO:resourceUrl ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty EVORAO:licensingOrAttribution ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty EVORAO:logo ],
+        [ a owl:Restriction ;
             owl:allValuesFrom xsd:string ;
             owl:onProperty dct:description ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty EVORAO:licensingOrAttribution ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:anyURI ;
+            owl:onProperty EVORAO:resourceUrl ],
         [ a owl:Restriction ;
             owl:allValuesFrom EVORAO:Image ;
             owl:onProperty EVORAO:logo ],
         [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty EVORAO:licensingOrAttribution ],
+            owl:maxCardinality 1 ;
+            owl:onProperty EVORAO:logo ],
         dcat:Resource ;
     skos:closeMatch dct:LicenseDocument,
         wd:Q79719,
@@ -1946,24 +2036,24 @@ EVORAO:SequenceReference a owl:Class ;
     rdfs:label "SequenceReference" ;
     dct:title "Sequence reference" ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:minCardinality 1 ;
-            owl:onProperty EVORAO:accessionNumber ],
-        [ a owl:Restriction ;
-            owl:minCardinality 1 ;
-            owl:onProperty EVORAO:sequenceProvider ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty EVORAO:sequenceProvider ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty EVORAO:accessionNumber ],
-        [ a owl:Restriction ;
             owl:allValuesFrom xsd:string ;
+            owl:onProperty EVORAO:accessionNumber ],
+        [ a owl:Restriction ;
+            owl:minCardinality 1 ;
+            owl:onProperty EVORAO:accessionNumber ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty EVORAO:sequenceProvider ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
             owl:onProperty EVORAO:accessionNumber ],
         [ a owl:Restriction ;
             owl:allValuesFrom [ a rdfs:Datatype ;
                     owl:intersectionOf ( xsd:string [ a rdfs:Datatype ;
                                 owl:oneOf ( "ENA" "GenBank" ) ] ) ] ;
+            owl:onProperty EVORAO:sequenceProvider ],
+        [ a owl:Restriction ;
+            owl:minCardinality 1 ;
             owl:onProperty EVORAO:sequenceProvider ],
         dcat:Resource ;
     skos:definition "A reference that permits to retrieve the sequence information from a sequence provider" ;
@@ -2002,53 +2092,53 @@ EVORAO:Taxonomy a owl:Class ;
     rdfs:label "Taxonomy" ;
     dct:title "Taxonomy" ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty dcat:version ],
+            owl:minCardinality 0 ;
+            owl:onProperty EVORAO:rank ],
         [ a owl:Restriction ;
-            owl:minCardinality 1 ;
+            owl:allValuesFrom xsd:string ;
             owl:onProperty dcat:version ],
         [ a owl:Restriction ;
             owl:allValuesFrom EVORAO:Taxon ;
             owl:onProperty EVORAO:taxon ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
-            owl:onProperty EVORAO:rankDataProvider ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom EVORAO:DataProvider ;
-            owl:onProperty EVORAO:taxonDataProvider ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom xsd:string ;
-            owl:onProperty dcat:version ],
-        [ a owl:Restriction ;
-            owl:minCardinality 1 ;
-            owl:onProperty EVORAO:taxon ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
             owl:onProperty EVORAO:taxonDataProvider ],
         [ a owl:Restriction ;
             owl:allValuesFrom EVORAO:DataProvider ;
             owl:onProperty EVORAO:versionDataProvider ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty EVORAO:versionDataProvider ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty EVORAO:rankDataProvider ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty EVORAO:taxonDataProvider ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty EVORAO:rank ],
         [ a owl:Restriction ;
             owl:allValuesFrom EVORAO:TaxonomicRank ;
             owl:onProperty EVORAO:rank ],
         [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty EVORAO:versionDataProvider ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty dcat:version ],
+        [ a owl:Restriction ;
+            owl:minCardinality 1 ;
+            owl:onProperty dcat:version ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom EVORAO:DataProvider ;
+            owl:onProperty EVORAO:taxonDataProvider ],
+        [ a owl:Restriction ;
+            owl:minCardinality 1 ;
+            owl:onProperty EVORAO:taxon ],
+        [ a owl:Restriction ;
             owl:minCardinality 1 ;
             owl:onProperty EVORAO:versionDataProvider ],
         [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty EVORAO:rankDataProvider ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty EVORAO:rankDataProvider ],
+        [ a owl:Restriction ;
             owl:allValuesFrom EVORAO:DataProvider ;
             owl:onProperty EVORAO:rankDataProvider ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty EVORAO:taxonDataProvider ],
         dcat:Catalog ;
     skos:broadMatch skos:Collection ;
     skos:closeMatch edam:3028,
@@ -2328,6 +2418,14 @@ EVORAO:ecologicalInformation a owl:DatatypeProperty ;
     skos:definition "Details the potential environmental impact of the product, including its effects on ecosystems, persistence, degradability, bioaccumulation potential, and toxicity to aquatic and terrestrial organisms." ;
     skos:inScheme EVORAO: .
 
+EVORAO:eligibilityCriteria a owl:DatatypeProperty ;
+    rdfs:label "eligibilityCriteria" ;
+    dct:title "eligibility criteria" ;
+    rdfs:range xsd:string ;
+    skos:definition "Conditions under which individuals or organisations may benefit from the financial mechanism, including access rules, eligibility requirements, or geographical/institutional restrictions. May be expressed as text or as a link to a formal eligibility statement" ;
+    skos:inScheme EVORAO: ;
+    skos:note "Keep clear and user-friendly; provide a link if criteria are complex" .
+
 EVORAO:email a owl:DatatypeProperty ;
     rdfs:label "email" ;
     dct:title "email" ;
@@ -2371,6 +2469,35 @@ EVORAO:format a owl:DatatypeProperty ;
         schema1:fileFormat ;
     skos:inScheme EVORAO: .
 
+EVORAO:funder a owl:ObjectProperty ;
+    rdfs:label "funder" ;
+    dct:title "funder" ;
+    rdfs:range foaf:Organization ;
+    skos:closeMatch schema1:funder ;
+    skos:definition "The organization providing the financial support" ;
+    skos:inScheme EVORAO: .
+
+EVORAO:fundingPeriodEnd a owl:DatatypeProperty ;
+    rdfs:label "fundingPeriodEnd" ;
+    dct:title "funding period end" ;
+    rdfs:range xsd:date ;
+    skos:definition "The date on which the financial mechanism ceases to apply to the supported product or service" ;
+    skos:inScheme EVORAO: .
+
+EVORAO:fundingPeriodStart a owl:DatatypeProperty ;
+    rdfs:label "fundingPeriodStart" ;
+    dct:title "funding period start" ;
+    rdfs:range xsd:date ;
+    skos:definition "The date from which the financial mechanism is active or applicable to the supported product or service" ;
+    skos:inScheme EVORAO: .
+
+EVORAO:fundingProgram a owl:DatatypeProperty ;
+    rdfs:label "fundingProgram" ;
+    dct:title "funding program" ;
+    rdfs:range xsd:string ;
+    skos:definition "Identifies the overarching financial framework, research initiative, or support mechanism that enables or contributes to the provision of a product or service. The value may correspond to a European funding framework (e.g. Horizon Europe), a specific research initiative (e.g. an EU project), or another public or private funding mechanism" ;
+    skos:inScheme EVORAO: .
+
 EVORAO:furtherInformation a owl:DatatypeProperty ;
     rdfs:label "furtherInformation" ;
     dct:title "further information" ;
@@ -2394,6 +2521,14 @@ EVORAO:genotype a owl:DatatypeProperty ;
     rdfs:range xsd:string ;
     skos:closeMatch geno:0000222 ;
     skos:definition "Genotype information that identifies organisms that cluster in phylogenetic trees, thus different clusters are distinct genotypes" ;
+    skos:inScheme EVORAO: .
+
+EVORAO:grantNumber a owl:DatatypeProperty ;
+    rdfs:label "grantNumber" ;
+    dct:title "grant number" ;
+    rdfs:range xsd:string ;
+    rdfs:subPropertyOf dct:identifier ;
+    skos:definition "A formal reference or agreement number assigned by the funding body" ;
     skos:inScheme EVORAO: .
 
 EVORAO:handlingAndStorage a owl:DatatypeProperty ;
@@ -3085,32 +3220,32 @@ dcat:Dataset a owl:Class ;
     rdfs:label "Dataset" ;
     dct:title "Dataset" ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty dct:description ],
+        [ a owl:Restriction ;
+            owl:minCardinality 1 ;
             owl:onProperty dct:title ],
         [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty dct:title ],
+        [ a owl:Restriction ;
+            owl:minCardinality 1 ;
             owl:onProperty dct:description ],
         [ a owl:Restriction ;
             owl:allValuesFrom xsd:string ;
             owl:onProperty dcat:version ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
-            owl:onProperty dcat:version ],
-        [ a owl:Restriction ;
-            owl:minCardinality 1 ;
             owl:onProperty dct:title ],
         [ a owl:Restriction ;
-            owl:minCardinality 1 ;
+            owl:maxCardinality 1 ;
             owl:onProperty dcat:version ],
         [ a owl:Restriction ;
-            owl:allValuesFrom xsd:string ;
-            owl:onProperty dct:title ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom xsd:string ;
+            owl:maxCardinality 1 ;
             owl:onProperty dct:description ],
         [ a owl:Restriction ;
             owl:minCardinality 1 ;
-            owl:onProperty dct:description ],
+            owl:onProperty dcat:version ],
         dcat:Resource ;
     skos:definition "A collection of data, published or curated by a single agent, and available for access" ;
     skos:exactMatch schema1:Dataset,
@@ -3139,41 +3274,11 @@ foaf:Agent a owl:Class ;
     rdfs:label "PersonOrOrganization" ;
     dct:title "Person or organization" ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:allValuesFrom xsd:string ;
-            owl:onProperty foaf:name ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom EVORAO:Image ;
-            owl:onProperty EVORAO:logo ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty foaf:name ],
-        [ a owl:Restriction ;
             owl:minCardinality 0 ;
-            owl:onProperty EVORAO:logo ],
-        [ a owl:Restriction ;
-            owl:minCardinality 1 ;
-            owl:onProperty foaf:name ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty foaf:homepage ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty foaf:homepage ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom EVORAO:ContactPoint ;
             owl:onProperty dcat:contactPoint ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom xsd:string ;
-            owl:onProperty dct:description ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
             owl:onProperty dct:description ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty dcat:contactPoint ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty dcat:contactPoint ],
         [ a owl:Restriction ;
             owl:allValuesFrom xsd:anyURI ;
             owl:onProperty foaf:homepage ],
@@ -3182,7 +3287,37 @@ foaf:Agent a owl:Class ;
             owl:onProperty EVORAO:logo ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
+            owl:onProperty EVORAO:logo ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom EVORAO:ContactPoint ;
+            owl:onProperty dcat:contactPoint ],
+        [ a owl:Restriction ;
+            owl:minCardinality 1 ;
+            owl:onProperty foaf:name ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty dcat:contactPoint ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
             owl:onProperty dct:description ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty foaf:name ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty dct:description ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty foaf:homepage ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom EVORAO:Image ;
+            owl:onProperty EVORAO:logo ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty foaf:name ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty foaf:homepage ],
         dcat:Resource ;
     skos:closeMatch vcard:Agent ;
     skos:definition "A person or an organization" ;
@@ -3195,29 +3330,29 @@ EVORAO:BiologicalMaterialOrigin a owl:Class ;
     rdfs:label "BiologicalMaterialOrigin" ;
     dct:title "Biological material origin" ;
     rdfs:subClassOf [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty EVORAO:biologicalSourceType ],
+        [ a owl:Restriction ;
+            owl:minCardinality 1 ;
+            owl:onProperty EVORAO:biologicalSourceType ],
+        [ a owl:Restriction ;
             owl:allValuesFrom xsd:boolean ;
             owl:onProperty EVORAO:biologicalSourceType ],
         [ a owl:Restriction ;
             owl:minCardinality 1 ;
             owl:onProperty EVORAO:biologicalPartOrigin ],
         [ a owl:Restriction ;
+            owl:allValuesFrom xsd:boolean ;
+            owl:onProperty EVORAO:recombinantMaterial ],
+        [ a owl:Restriction ;
             owl:minCardinality 1 ;
-            owl:onProperty EVORAO:biologicalSourceType ],
+            owl:onProperty EVORAO:recombinantMaterial ],
         [ a owl:Restriction ;
             owl:allValuesFrom EVORAO:BiologicalPartOrigin ;
             owl:onProperty EVORAO:biologicalPartOrigin ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
             owl:onProperty EVORAO:recombinantMaterial ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom xsd:boolean ;
-            owl:onProperty EVORAO:recombinantMaterial ],
-        [ a owl:Restriction ;
-            owl:minCardinality 1 ;
-            owl:onProperty EVORAO:recombinantMaterial ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty EVORAO:biologicalSourceType ],
         dcat:Resource ;
     skos:closeMatch sepio:0000058 ;
     skos:definition "Information about the origin of the biological material, compulsory for access, utilization, and benefit-sharing of genetic resources in compliance with the Nagoya Protocol" ;
@@ -3228,23 +3363,23 @@ EVORAO:BiologicalPartOrigin a owl:Class ;
     rdfs:label "BiologicalPartOrigin" ;
     dct:title "Biological part origin" ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty EVORAO:recombinantPartIdentification ],
+            owl:minCardinality 1 ;
+            owl:onProperty EVORAO:accessToPhysicalGeneticResource ],
         [ a owl:Restriction ;
             owl:allValuesFrom xsd:boolean ;
             owl:onProperty EVORAO:accessToPhysicalGeneticResource ],
         [ a owl:Restriction ;
-            owl:allValuesFrom EVORAO:RecombinantPartIdentification ;
+            owl:maxCardinality 1 ;
             owl:onProperty EVORAO:recombinantPartIdentification ],
-        [ a owl:Restriction ;
-            owl:minCardinality 1 ;
-            owl:onProperty EVORAO:accessToPhysicalGeneticResource ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
             owl:onProperty EVORAO:recombinantPartIdentification ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
             owl:onProperty EVORAO:accessToPhysicalGeneticResource ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom EVORAO:RecombinantPartIdentification ;
+            owl:onProperty EVORAO:recombinantPartIdentification ],
         dcat:Resource ;
     skos:broadMatch sepio:0000058 ;
     skos:definition "Information on the origin of a unitary, cohesive part that is part of, or constitutes the biological material. It can be multiple parts in case of a recombinant biological material" ;
@@ -3254,16 +3389,16 @@ EVORAO:CommonName a owl:Class ;
     rdfs:label "CommonName" ;
     dct:title "Common name" ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty EVORAO:alternateName ],
-        [ a owl:Restriction ;
             owl:allValuesFrom EVORAO:AlternateName ;
             owl:onProperty EVORAO:alternateName ],
         [ a owl:Restriction ;
-            owl:allValuesFrom xsd:string ;
+            owl:minCardinality 0 ;
             owl:onProperty EVORAO:sourceOfInformation ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
+            owl:onProperty EVORAO:alternateName ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
             owl:onProperty EVORAO:sourceOfInformation ],
         EVORAO:Term ;
     skos:broadMatch sio:000118 ;
@@ -3289,80 +3424,86 @@ EVORAO:ProductOrService a owl:Class ;
     rdfs:label "ProductOrService" ;
     dct:title "Product or service" ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:allValuesFrom xsd:string ;
-            owl:onProperty EVORAO:technicalRecommendation ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom EVORAO:Keyword ;
-            owl:onProperty EVORAO:keywords ],
+            owl:minCardinality 0 ;
+            owl:onProperty EVORAO:fundingSource ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
-            owl:onProperty EVORAO:qualityGrading ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty EVORAO:internalReference ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty EVORAO:unitCost ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty EVORAO:biosafetyRestrictions ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty EVORAO:externalRelatedReference ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty EVORAO:provider ],
+            owl:onProperty EVORAO:additionalCategory ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
             owl:onProperty EVORAO:canBeUsedToProduceGmo ],
         [ a owl:Restriction ;
-            owl:minCardinality 1 ;
-            owl:onProperty EVORAO:refSku ],
+            owl:minCardinality 0 ;
+            owl:onProperty EVORAO:unitCost ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
+            owl:onProperty EVORAO:provider ],
+        [ a owl:Restriction ;
+            owl:minCardinality 1 ;
+            owl:onProperty EVORAO:pathogenIdentification ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty EVORAO:technicalRecommendation ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
             owl:onProperty EVORAO:refSku ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
-            owl:onProperty dcat:contactPoint ],
+            owl:onProperty EVORAO:unitCostCurrency ],
         [ a owl:Restriction ;
-            owl:minCardinality 1 ;
-            owl:onProperty EVORAO:accessPointUrl ],
+            owl:allValuesFrom EVORAO:ProductCategory ;
+            owl:onProperty EVORAO:additionalCategory ],
         [ a owl:Restriction ;
-            owl:allValuesFrom EVORAO:PathogenIdentification ;
-            owl:onProperty EVORAO:pathogenIdentification ],
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty EVORAO:qualityGrading ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty EVORAO:availability ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty EVORAO:riskGroup ],
         [ a owl:Restriction ;
             owl:allValuesFrom EVORAO:Document ;
             owl:onProperty EVORAO:complementaryDocument ],
         [ a owl:Restriction ;
             owl:allValuesFrom xsd:string ;
+            owl:onProperty skos:note ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty EVORAO:availability ],
+        [ a owl:Restriction ;
+            owl:minCardinality 1 ;
+            owl:onProperty EVORAO:provider ],
+        [ a owl:Restriction ;
+            owl:minCardinality 1 ;
             owl:onProperty EVORAO:refSku ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
-            owl:onProperty EVORAO:unitCost ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom xsd:string ;
-            owl:onProperty skos:note ],
+            owl:onProperty dcat:theme ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
-            owl:onProperty skos:note ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom EVORAO:Doi ;
-            owl:onProperty EVORAO:doi ],
+            owl:onProperty EVORAO:unitCostCurrency ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
-            owl:onProperty EVORAO:productPicture ],
+            owl:onProperty EVORAO:unitCostNote ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty dcat:contactPoint ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:anyURI ;
+            owl:onProperty EVORAO:accessPointUrl ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
-            owl:onProperty EVORAO:riskGroup ],
+            owl:onProperty skos:note ],
+        [ a owl:Restriction ;
+            owl:minCardinality 1 ;
+            owl:onProperty EVORAO:accessPointUrl ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty EVORAO:certification ],
         [ a owl:Restriction ;
             owl:allValuesFrom EVORAO:ContactPoint ;
             owl:onProperty dcat:contactPoint ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom xsd:boolean ;
-            owl:onProperty EVORAO:canBeUsedToProduceGmo ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty EVORAO:internalReference ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
             owl:onProperty EVORAO:unitDefinition ],
@@ -3371,130 +3512,130 @@ EVORAO:ProductOrService a owl:Class ;
             owl:onProperty EVORAO:provider ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
-            owl:onProperty EVORAO:qualityGrading ],
+            owl:onProperty EVORAO:accessPointUrl ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
-            owl:onProperty EVORAO:additionalCategory ],
+            owl:onProperty EVORAO:productPicture ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom EVORAO:Doi ;
+            owl:onProperty EVORAO:doi ],
         [ a owl:Restriction ;
             owl:allValuesFrom EVORAO:RiskGroup ;
             owl:onProperty EVORAO:riskGroup ],
         [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty EVORAO:unitCostCurrency ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom xsd:string ;
-            owl:onProperty EVORAO:biosafetyRestrictions ],
-        [ a owl:Restriction ;
-            owl:minCardinality 1 ;
-            owl:onProperty EVORAO:canBeUsedToProduceGmo ],
-        [ a owl:Restriction ;
-            owl:minCardinality 1 ;
-            owl:onProperty EVORAO:pathogenIdentification ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty EVORAO:availability ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty EVORAO:unitCostNote ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom EVORAO:Collection ;
-            owl:onProperty EVORAO:collection ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty EVORAO:unitCostCurrency ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom xsd:decimal ;
-            owl:onProperty EVORAO:unitCost ],
-        [ a owl:Restriction ;
-            owl:minCardinality 1 ;
-            owl:onProperty EVORAO:collection ],
-        [ a owl:Restriction ;
-            owl:minCardinality 1 ;
-            owl:onProperty EVORAO:provider ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty EVORAO:biosafetyRestrictions ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom EVORAO:ProductCategory ;
-            owl:onProperty EVORAO:additionalCategory ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty EVORAO:technicalRecommendation ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom EVORAO:Image ;
-            owl:onProperty EVORAO:productPicture ],
-        [ a owl:Restriction ;
-            owl:minCardinality 1 ;
-            owl:onProperty EVORAO:availability ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty skos:note ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom EVORAO:Certification ;
-            owl:onProperty EVORAO:certification ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom xsd:string ;
-            owl:onProperty EVORAO:unitCostNote ],
-        [ a owl:Restriction ;
             owl:minCardinality 1 ;
             owl:onProperty dcat:theme ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty EVORAO:unitDefinition ],
-        [ a owl:Restriction ;
-            owl:minCardinality 1 ;
-            owl:onProperty EVORAO:keywords ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom EVORAO:ProductCategory ;
-            owl:onProperty dcat:theme ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty EVORAO:doi ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty EVORAO:accessPointUrl ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty EVORAO:riskGroup ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty EVORAO:technicalRecommendation ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty dcat:theme ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom xsd:anyURI ;
-            owl:onProperty EVORAO:accessPointUrl ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom xsd:string ;
-            owl:onProperty EVORAO:unitDefinition ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom xsd:string ;
-            owl:onProperty EVORAO:unitCostCurrency ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty EVORAO:certification ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom xsd:string ;
-            owl:onProperty EVORAO:qualityGrading ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty EVORAO:complementaryDocument ],
         [ a owl:Restriction ;
             owl:allValuesFrom EVORAO:ExternalRelatedReference ;
             owl:onProperty EVORAO:externalRelatedReference ],
         [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty EVORAO:biosafetyRestrictions ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty EVORAO:biosafetyRestrictions ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty EVORAO:unitCost ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom EVORAO:FundingSource ;
+            owl:onProperty EVORAO:fundingSource ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom EVORAO:PathogenIdentification ;
+            owl:onProperty EVORAO:pathogenIdentification ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty EVORAO:externalRelatedReference ],
+        [ a owl:Restriction ;
+            owl:minCardinality 1 ;
+            owl:onProperty EVORAO:collection ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom EVORAO:Image ;
+            owl:onProperty EVORAO:productPicture ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty EVORAO:internalReference ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:boolean ;
+            owl:onProperty EVORAO:canBeUsedToProduceGmo ],
+        [ a owl:Restriction ;
+            owl:minCardinality 1 ;
+            owl:onProperty EVORAO:keywords ],
+        [ a owl:Restriction ;
             owl:allValuesFrom xsd:string ;
-            owl:onProperty EVORAO:availability ],
+            owl:onProperty EVORAO:unitCostNote ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty EVORAO:doi ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty EVORAO:unitCostCurrency ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
             owl:onProperty dcat:contactPoint ],
         [ a owl:Restriction ;
-            owl:minCardinality 0 ;
+            owl:allValuesFrom xsd:decimal ;
+            owl:onProperty EVORAO:unitCost ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
             owl:onProperty EVORAO:unitCostNote ],
         [ a owl:Restriction ;
             owl:allValuesFrom xsd:string ;
+            owl:onProperty EVORAO:unitDefinition ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom EVORAO:Keyword ;
+            owl:onProperty EVORAO:keywords ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
             owl:onProperty EVORAO:internalReference ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom EVORAO:Collection ;
+            owl:onProperty EVORAO:collection ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty skos:note ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty EVORAO:biosafetyRestrictions ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty EVORAO:unitDefinition ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty EVORAO:refSku ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty EVORAO:riskGroup ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty EVORAO:internalReference ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom EVORAO:ProductCategory ;
+            owl:onProperty dcat:theme ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty EVORAO:qualityGrading ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty EVORAO:qualityGrading ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom EVORAO:Certification ;
+            owl:onProperty EVORAO:certification ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty EVORAO:complementaryDocument ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty EVORAO:technicalRecommendation ],
+        [ a owl:Restriction ;
+            owl:minCardinality 1 ;
+            owl:onProperty EVORAO:canBeUsedToProduceGmo ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty EVORAO:technicalRecommendation ],
+        [ a owl:Restriction ;
+            owl:minCardinality 1 ;
+            owl:onProperty EVORAO:availability ],
         dcat:Dataset ;
     skos:closeMatch gr:ProductOrService,
         schema1:Product ;
@@ -3547,134 +3688,99 @@ EVORAO:taxonomy a owl:ObjectProperty ;
     skos:definition "The taxonomy release(s) in which this entity exists" ;
     skos:inScheme EVORAO: .
 
-foaf:Organization a owl:Class ;
-    rdfs:label "Organization" ;
-    dct:title "Organization" ;
-    rdfs:subClassOf [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty EVORAO:rorId ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty EVORAO:country ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty EVORAO:alternateName ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom EVORAO:Country ;
-            owl:onProperty EVORAO:country ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty EVORAO:rorId ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom EVORAO:AlternateName ;
-            owl:onProperty EVORAO:alternateName ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty EVORAO:country ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom xsd:string ;
-            owl:onProperty EVORAO:rorId ],
-        foaf:Agent ;
-    skos:closeMatch wd:Q43229 ;
-    skos:definition "A social entity established to meet needs or pursue specific goals" ;
-    skos:exactMatch schema1:Organization,
-        vcard:Organization,
-        EVORAO:Organization ;
-    skos:inScheme EVORAO: .
-
 EVORAO:ContactPoint a owl:Class ;
     rdfs:label "ContactPoint" ;
     dct:title "Contact Point" ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:allValuesFrom xsd:string ;
-            owl:onProperty EVORAO:addressLocality ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty foaf:name ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom xsd:string ;
-            owl:onProperty EVORAO:postalCode ],
-        [ a owl:Restriction ;
             owl:minCardinality 0 ;
-            owl:onProperty EVORAO:email ],
+            owl:onProperty EVORAO:streetAddress ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
             owl:onProperty EVORAO:orcidId ],
         [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty EVORAO:email ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty EVORAO:postalCode ],
+        [ a owl:Restriction ;
             owl:allValuesFrom xsd:string ;
+            owl:onProperty dct:description ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty EVORAO:addressLocality ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty EVORAO:streetAddress ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty foaf:name ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
             owl:onProperty EVORAO:addressRegion ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty EVORAO:orcidId ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty EVORAO:postalCode ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
             owl:onProperty EVORAO:telephone ],
         [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty EVORAO:orcidId ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty EVORAO:addressLocality ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty EVORAO:addressRegion ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom xsd:string ;
-            owl:onProperty EVORAO:streetAddress ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty EVORAO:streetAddress ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom xsd:string ;
-            owl:onProperty EVORAO:orcidId ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty EVORAO:addressRegion ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty EVORAO:postalCode ],
-        [ a owl:Restriction ;
             owl:maxCardinality 1 ;
             owl:onProperty dct:description ],
         [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty EVORAO:email ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom xsd:string ;
-            owl:onProperty foaf:name ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty EVORAO:addressCountry ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty EVORAO:addressLocality ],
-        [ a owl:Restriction ;
             owl:minCardinality 0 ;
-            owl:onProperty EVORAO:addressCountry ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty dct:description ],
+            owl:onProperty EVORAO:orcidId ],
         [ a owl:Restriction ;
             owl:allValuesFrom EVORAO:Country ;
             owl:onProperty EVORAO:addressCountry ],
         [ a owl:Restriction ;
             owl:allValuesFrom xsd:string ;
-            owl:onProperty EVORAO:telephone ],
+            owl:onProperty EVORAO:email ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty EVORAO:addressCountry ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
-            owl:onProperty EVORAO:telephone ],
+            owl:onProperty EVORAO:email ],
         [ a owl:Restriction ;
-            owl:minCardinality 0 ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty EVORAO:postalCode ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
             owl:onProperty EVORAO:streetAddress ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty foaf:name ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty EVORAO:addressRegion ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty EVORAO:addressLocality ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty EVORAO:addressLocality ],
         [ a owl:Restriction ;
             owl:minCardinality 1 ;
             owl:onProperty foaf:name ],
         [ a owl:Restriction ;
-            owl:allValuesFrom xsd:string ;
+            owl:minCardinality 0 ;
+            owl:onProperty EVORAO:telephone ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty EVORAO:addressCountry ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
             owl:onProperty dct:description ],
         [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty EVORAO:postalCode ],
-        [ a owl:Restriction ;
             owl:allValuesFrom xsd:string ;
-            owl:onProperty EVORAO:email ],
+            owl:onProperty EVORAO:telephone ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty EVORAO:addressRegion ],
         dcat:Resource ;
     skos:closeMatch wd:Q30322502 ;
     skos:definition "Entity serving as focal point of information" ;
@@ -3688,20 +3794,20 @@ EVORAO:Sequence a owl:Class ;
     rdfs:label "Sequence" ;
     dct:title "Sequence" ;
     rdfs:subClassOf [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty EVORAO:sequenceFasta ],
+        [ a owl:Restriction ;
             owl:maxCardinality 1 ;
+            owl:onProperty EVORAO:sequenceFasta ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty EVORAO:sequenceReference ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
             owl:onProperty EVORAO:sequenceFasta ],
         [ a owl:Restriction ;
             owl:allValuesFrom EVORAO:SequenceReference ;
             owl:onProperty EVORAO:sequenceReference ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty EVORAO:sequenceReference ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty EVORAO:sequenceFasta ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom xsd:string ;
-            owl:onProperty EVORAO:sequenceFasta ],
         dcat:Resource ;
     skos:closeMatch wd:Q3511065 ;
     skos:definition "A nucleic acid or protein sequence information" ;
@@ -3733,17 +3839,17 @@ EVORAO:AlternateName a owl:Class ;
     rdfs:label "AlternateName" ;
     dct:title "Alternate name" ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty EVORAO:alternateName ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty EVORAO:sourceOfInformation ],
-        [ a owl:Restriction ;
             owl:allValuesFrom EVORAO:AlternateName ;
             owl:onProperty EVORAO:alternateName ],
         [ a owl:Restriction ;
             owl:allValuesFrom xsd:string ;
             owl:onProperty EVORAO:sourceOfInformation ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty EVORAO:sourceOfInformation ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty EVORAO:alternateName ],
         EVORAO:Term ;
     skos:closeMatch mi:1041,
         wd:Q7662595 ;
@@ -3783,10 +3889,10 @@ EVORAO:Image a owl:Class ;
             owl:maxCardinality 1 ;
             owl:onProperty EVORAO:altText ],
         [ a owl:Restriction ;
-            owl:minCardinality 0 ;
+            owl:allValuesFrom xsd:string ;
             owl:onProperty EVORAO:altText ],
         [ a owl:Restriction ;
-            owl:allValuesFrom xsd:string ;
+            owl:minCardinality 0 ;
             owl:onProperty EVORAO:altText ],
         EVORAO:File ;
     skos:broadMatch dct:MediaType ;
@@ -3803,30 +3909,13 @@ EVORAO:Pathogen a owl:Class ;
     rdfs:label "Pathogen" ;
     dct:title "Pathogen" ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:allValuesFrom EVORAO:TransmissionMethod ;
-            owl:onProperty EVORAO:transmissionMethod ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty EVORAO:passage ],
-        [ a owl:Restriction ;
-            owl:minCardinality 1 ;
-            owl:onProperty EVORAO:biologicalMaterialOrigin ],
+            owl:minCardinality 0 ;
+            owl:onProperty EVORAO:isolationHost ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
-            owl:onProperty EVORAO:productionCellLine ],
+            owl:onProperty EVORAO:transmissionMethod ],
         [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty EVORAO:letterOfAuthority ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty EVORAO:genomeSequencing ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom [ a rdfs:Datatype ;
-                    owl:intersectionOf ( xsd:string [ a rdfs:Datatype ;
-                                owl:oneOf ( "Not applicable" "Not required" "Required for customers in the EU" "Required" ) ] ) ] ;
-            owl:onProperty EVORAO:letterOfAuthority ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom xsd:string ;
+            owl:minCardinality 0 ;
             owl:onProperty EVORAO:infectivityTest ],
         [ a owl:Restriction ;
             owl:allValuesFrom [ a rdfs:Datatype ;
@@ -3834,126 +3923,143 @@ EVORAO:Pathogen a owl:Class ;
                                 owl:oneOf ( "Cultivable" "Uncultivable" "Inactivated" ) ] ) ] ;
             owl:onProperty EVORAO:cultivability ],
         [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty EVORAO:infectivityTest ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom EVORAO:GeographicalOrigin ;
+            owl:onProperty EVORAO:suspectedEpidemiologicalOrigin ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty EVORAO:titer ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom EVORAO:TransmissionMethod ;
+            owl:onProperty EVORAO:transmissionMethod ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty EVORAO:isolationConditions ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom [ a rdfs:Datatype ;
+                    owl:intersectionOf ( xsd:string [ a rdfs:Datatype ;
+                                owl:oneOf ( "Not applicable" "Not required" "Required for customers in the EU" "Required" ) ] ) ] ;
+            owl:onProperty EVORAO:letterOfAuthority ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty EVORAO:clinicalInformation ],
+        [ a owl:Restriction ;
+            owl:minCardinality 1 ;
+            owl:onProperty EVORAO:sequence ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty EVORAO:identificationTechnique ],
+        [ a owl:Restriction ;
             owl:allValuesFrom [ a rdfs:Datatype ;
                     owl:intersectionOf ( xsd:string [ a rdfs:Datatype ;
                                 owl:oneOf ( "Infectivity tested" "Infectivity tested and quantified" "Non cultivable sample, infectivity cannot be tested" ) ] ) ] ;
             owl:onProperty EVORAO:infectivity ],
         [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty EVORAO:isolationConditions ],
+        [ a owl:Restriction ;
             owl:allValuesFrom EVORAO:IsolationHost ;
             owl:onProperty EVORAO:isolationHost ],
         [ a owl:Restriction ;
-            owl:allValuesFrom xsd:string ;
-            owl:onProperty EVORAO:isolationConditions ],
-        [ a owl:Restriction ;
             owl:maxCardinality 1 ;
-            owl:onProperty EVORAO:infectivity ],
-        [ a owl:Restriction ;
-            owl:minCardinality 1 ;
             owl:onProperty EVORAO:genomeSequencing ],
         [ a owl:Restriction ;
-            owl:allValuesFrom EVORAO:Sequence ;
-            owl:onProperty EVORAO:sequence ],
+            owl:minCardinality 0 ;
+            owl:onProperty EVORAO:productionCellLine ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
-            owl:onProperty EVORAO:clinicalInformation ],
+            owl:onProperty EVORAO:passage ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom EVORAO:ProductionCellLine ;
+            owl:onProperty EVORAO:productionCellLine ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty EVORAO:passage ],
+        [ a owl:Restriction ;
+            owl:minCardinality 1 ;
+            owl:onProperty EVORAO:biologicalMaterialOrigin ],
+        [ a owl:Restriction ;
+            owl:minCardinality 1 ;
+            owl:onProperty EVORAO:letterOfAuthority ],
+        [ a owl:Restriction ;
+            owl:minCardinality 1 ;
+            owl:onProperty EVORAO:cultivability ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty EVORAO:isolationTechnique ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty EVORAO:propagationHost ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty EVORAO:passage ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty EVORAO:letterOfAuthority ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
             owl:onProperty EVORAO:isolationTechnique ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
-            owl:onProperty EVORAO:isolationConditions ],
+            owl:onProperty EVORAO:identificationTechnique ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty EVORAO:identificationTechnique ],
         [ a owl:Restriction ;
             owl:minCardinality 1 ;
+            owl:onProperty EVORAO:titer ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty EVORAO:suspectedEpidemiologicalOrigin ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty EVORAO:cultivability ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty EVORAO:isolationConditions ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty EVORAO:infectivityTest ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty EVORAO:isolationTechnique ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty EVORAO:clinicalInformation ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom EVORAO:Sequence ;
             owl:onProperty EVORAO:sequence ],
         [ a owl:Restriction ;
             owl:minCardinality 1 ;
-            owl:onProperty EVORAO:infectivity ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty EVORAO:biologicalMaterialOrigin ],
-        [ a owl:Restriction ;
-            owl:minCardinality 1 ;
-            owl:onProperty EVORAO:letterOfAuthority ],
+            owl:onProperty EVORAO:genomeSequencing ],
         [ a owl:Restriction ;
             owl:allValuesFrom [ a rdfs:Datatype ;
                     owl:intersectionOf ( xsd:string [ a rdfs:Datatype ;
                                 owl:oneOf ( "Complete genome" "Complete coding sequence" "Partial sequence" ) ] ) ] ;
             owl:onProperty EVORAO:genomeSequencing ],
         [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty EVORAO:transmissionMethod ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom EVORAO:GeographicalOrigin ;
-            owl:onProperty EVORAO:suspectedEpidemiologicalOrigin ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty EVORAO:propagationHost ],
-        [ a owl:Restriction ;
-            owl:minCardinality 1 ;
-            owl:onProperty EVORAO:cultivability ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty EVORAO:passage ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty EVORAO:titer ],
-        [ a owl:Restriction ;
             owl:allValuesFrom xsd:string ;
             owl:onProperty EVORAO:titer ],
         [ a owl:Restriction ;
-            owl:allValuesFrom xsd:string ;
-            owl:onProperty EVORAO:passage ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty EVORAO:suspectedEpidemiologicalOrigin ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty EVORAO:isolationHost ],
+            owl:maxCardinality 1 ;
+            owl:onProperty EVORAO:biologicalMaterialOrigin ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
-            owl:onProperty EVORAO:isolationConditions ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty EVORAO:clinicalInformation ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom EVORAO:ProductionCellLine ;
-            owl:onProperty EVORAO:productionCellLine ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom xsd:string ;
-            owl:onProperty EVORAO:clinicalInformation ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty EVORAO:isolationTechnique ],
+            owl:onProperty EVORAO:infectivity ],
         [ a owl:Restriction ;
             owl:allValuesFrom EVORAO:BiologicalMaterialOrigin ;
             owl:onProperty EVORAO:biologicalMaterialOrigin ],
         [ a owl:Restriction ;
-            owl:minCardinality 1 ;
-            owl:onProperty EVORAO:titer ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty EVORAO:identificationTechnique ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom xsd:string ;
-            owl:onProperty EVORAO:identificationTechnique ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom xsd:string ;
-            owl:onProperty EVORAO:isolationTechnique ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty EVORAO:identificationTechnique ],
-        [ a owl:Restriction ;
             owl:allValuesFrom EVORAO:PropagationHost ;
             owl:onProperty EVORAO:propagationHost ],
         [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty EVORAO:cultivability ],
+            owl:minCardinality 1 ;
+            owl:onProperty EVORAO:infectivity ],
         [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty EVORAO:infectivityTest ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty EVORAO:infectivityTest ],
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty EVORAO:clinicalInformation ],
         EVORAO:Product ;
     skos:closeMatch apollo:00000237,
         ido:0000528,
@@ -4048,39 +4154,62 @@ dcat:contactPoint a owl:ObjectProperty ;
     skos:exactMatch schema1:contactPoint ;
     skos:inScheme EVORAO: .
 
+foaf:Organization a owl:Class ;
+    rdfs:label "Organization" ;
+    dct:title "Organization" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty EVORAO:alternateName ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty EVORAO:rorId ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty EVORAO:rorId ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty EVORAO:rorId ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom EVORAO:AlternateName ;
+            owl:onProperty EVORAO:alternateName ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty EVORAO:country ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom EVORAO:Country ;
+            owl:onProperty EVORAO:country ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty EVORAO:country ],
+        foaf:Agent ;
+    skos:closeMatch wd:Q43229 ;
+    skos:definition "A social entity established to meet needs or pursue specific goals" ;
+    skos:exactMatch schema1:Organization,
+        vcard:Organization,
+        EVORAO:Organization ;
+    skos:inScheme EVORAO: .
+
 EVORAO:File a owl:Class ;
     rdfs:label "File" ;
     dct:title "File" ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:minCardinality 1 ;
-            owl:onProperty EVORAO:format ],
-        [ a owl:Restriction ;
             owl:maxCardinality 1 ;
-            owl:onProperty EVORAO:format ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
             owl:onProperty dct:license ],
         [ a owl:Restriction ;
             owl:allValuesFrom xsd:string ;
-            owl:onProperty dct:description ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom xsd:string ;
-            owl:onProperty foaf:name ],
-        [ a owl:Restriction ;
-            owl:minCardinality 1 ;
-            owl:onProperty foaf:name ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom xsd:string ;
             owl:onProperty EVORAO:format ],
         [ a owl:Restriction ;
-            owl:allValuesFrom xsd:anyURI ;
+            owl:maxCardinality 1 ;
+            owl:onProperty foaf:name ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty dct:description ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty dct:description ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
             owl:onProperty EVORAO:contentUrl ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty dct:license ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty dct:description ],
         [ a owl:Restriction ;
             owl:minCardinality 1 ;
             owl:onProperty EVORAO:contentUrl ],
@@ -4088,14 +4217,26 @@ EVORAO:File a owl:Class ;
             owl:allValuesFrom EVORAO:License ;
             owl:onProperty dct:license ],
         [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
+            owl:allValuesFrom xsd:anyURI ;
             owl:onProperty EVORAO:contentUrl ],
         [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
+            owl:allValuesFrom xsd:string ;
             owl:onProperty foaf:name ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
+            owl:onProperty EVORAO:format ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty dct:license ],
+        [ a owl:Restriction ;
+            owl:minCardinality 1 ;
+            owl:onProperty foaf:name ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
             owl:onProperty dct:description ],
+        [ a owl:Restriction ;
+            owl:minCardinality 1 ;
+            owl:onProperty EVORAO:format ],
         dcat:Resource ;
     skos:broadMatch dct:MediaType ;
     skos:closeMatch ncit:C42883,
@@ -4132,67 +4273,67 @@ EVORAO:Product a owl:Class ;
     dct:title "Product" ;
     rdfs:subClassOf [ a owl:Restriction ;
             owl:maxCardinality 1 ;
-            owl:onProperty EVORAO:originator ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom xsd:string ;
-            owl:onProperty EVORAO:usageRestrictions ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom xsd:boolean ;
-            owl:onProperty EVORAO:thirdPartyDistributionConsent ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
             owl:onProperty EVORAO:shippingConditions ],
-        [ a owl:Restriction ;
-            owl:minCardinality 1 ;
-            owl:onProperty EVORAO:iataClassification ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty EVORAO:storageConditions ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty EVORAO:thirdPartyDistributionConsent ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
             owl:onProperty EVORAO:usageRestrictions ],
         [ a owl:Restriction ;
-            owl:allValuesFrom xsd:string ;
-            owl:onProperty EVORAO:shippingConditions ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty EVORAO:iataClassification ],
-        [ a owl:Restriction ;
             owl:minCardinality 0 ;
-            owl:onProperty EVORAO:materialSafetyDataSheet ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom EVORAO:ReasearchInfrastructure ;
-            owl:onProperty EVORAO:materialSafetyDataSheet ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
             owl:onProperty EVORAO:thirdPartyDistributionConsent ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty EVORAO:usageRestrictions ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom xsd:string ;
-            owl:onProperty EVORAO:storageConditions ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty EVORAO:materialSafetyDataSheet ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty EVORAO:originator ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom EVORAO:Originator ;
-            owl:onProperty EVORAO:originator ],
-        [ a owl:Restriction ;
-            owl:minCardinality 1 ;
-            owl:onProperty EVORAO:shippingConditions ],
         [ a owl:Restriction ;
             owl:allValuesFrom EVORAO:IataClassification ;
             owl:onProperty EVORAO:iataClassification ],
         [ a owl:Restriction ;
             owl:minCardinality 1 ;
+            owl:onProperty EVORAO:shippingConditions ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty EVORAO:materialSafetyDataSheet ],
+        [ a owl:Restriction ;
+            owl:minCardinality 1 ;
             owl:onProperty EVORAO:storageConditions ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty EVORAO:usageRestrictions ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom EVORAO:ReasearchInfrastructure ;
+            owl:onProperty EVORAO:materialSafetyDataSheet ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty EVORAO:originator ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:boolean ;
+            owl:onProperty EVORAO:thirdPartyDistributionConsent ],
+        [ a owl:Restriction ;
+            owl:minCardinality 1 ;
+            owl:onProperty EVORAO:iataClassification ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty EVORAO:originator ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty EVORAO:thirdPartyDistributionConsent ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty EVORAO:materialSafetyDataSheet ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty EVORAO:usageRestrictions ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty EVORAO:shippingConditions ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty EVORAO:storageConditions ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty EVORAO:iataClassification ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty EVORAO:storageConditions ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom EVORAO:Originator ;
+            owl:onProperty EVORAO:originator ],
         EVORAO:ProductOrService ;
     skos:broadMatch dct:PhysicalResource ;
     skos:closeMatch wd:Q2424752 ;
@@ -4252,78 +4393,78 @@ EVORAO:DataProvider a owl:Class ;
     rdfs:label "DataProvider" ;
     dct:title "Data provider" ;
     rdfs:subClassOf [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty dct:license ],
+        [ a owl:Restriction ;
             owl:maxCardinality 1 ;
-            owl:onProperty EVORAO:loginRequestMethod ],
+            owl:onProperty EVORAO:weight ],
+        [ a owl:Restriction ;
+            owl:minCardinality 1 ;
+            owl:onProperty EVORAO:contentType ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty EVORAO:queryMethod ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty EVORAO:loginTokenName ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty EVORAO:loginUrl ],
         [ a owl:Restriction ;
             owl:allValuesFrom [ a rdfs:Datatype ;
                     owl:intersectionOf ( xsd:string [ a rdfs:Datatype ;
                                 owl:oneOf ( "GET" "POST" ) ] ) ] ;
+            owl:onProperty EVORAO:queryMethod ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty EVORAO:loginUrl ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
             owl:onProperty EVORAO:loginRequestMethod ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty dct:license ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty EVORAO:loginTokenName ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
             owl:onProperty EVORAO:contentType ],
         [ a owl:Restriction ;
-            owl:allValuesFrom EVORAO:License ;
-            owl:onProperty dct:license ],
+            owl:minCardinality 1 ;
+            owl:onProperty EVORAO:weight ],
         [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty EVORAO:loginTokenName ],
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty EVORAO:contentType ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty EVORAO:loginRequestMethod ],
         [ a owl:Restriction ;
             owl:allValuesFrom xsd:anyURI ;
             owl:onProperty EVORAO:providedEntityType ],
         [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty EVORAO:loginUrl ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty EVORAO:weight ],
-        [ a owl:Restriction ;
-            owl:minCardinality 1 ;
-            owl:onProperty EVORAO:contentType ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty EVORAO:loginTokenName ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty EVORAO:loginRequestMethod ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty dct:license ],
-        [ a owl:Restriction ;
-            owl:minCardinality 1 ;
-            owl:onProperty EVORAO:queryMethod ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty EVORAO:loginUrl ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty EVORAO:queryMethod ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom xsd:string ;
-            owl:onProperty EVORAO:contentType ],
-        [ a owl:Restriction ;
-            owl:minCardinality 1 ;
-            owl:onProperty EVORAO:weight ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom xsd:anyURI ;
-            owl:onProperty EVORAO:loginUrl ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty dct:license ],
-        [ a owl:Restriction ;
             owl:allValuesFrom [ a rdfs:Datatype ;
                     owl:intersectionOf ( xsd:string [ a rdfs:Datatype ;
                                 owl:oneOf ( "GET" "POST" ) ] ) ] ;
-            owl:onProperty EVORAO:queryMethod ],
+            owl:onProperty EVORAO:loginRequestMethod ],
         [ a owl:Restriction ;
-            owl:allValuesFrom xsd:string ;
-            owl:onProperty EVORAO:loginTokenName ],
+            owl:allValuesFrom xsd:anyURI ;
+            owl:onProperty EVORAO:loginUrl ],
         [ a owl:Restriction ;
             owl:allValuesFrom xsd:integer ;
             owl:onProperty EVORAO:weight ],
         [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty EVORAO:loginTokenName ],
+        [ a owl:Restriction ;
+            owl:minCardinality 1 ;
+            owl:onProperty EVORAO:queryMethod ],
+        [ a owl:Restriction ;
             owl:minCardinality 1 ;
             owl:onProperty EVORAO:providedEntityType ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom EVORAO:License ;
+            owl:onProperty dct:license ],
         dcat:DataService ;
     skos:broadMatch schema1:EntryPoint ;
     skos:closeMatch ncit:C205367,
@@ -4335,26 +4476,23 @@ EVORAO:Taxon a owl:Class ;
     rdfs:label "Taxon" ;
     dct:title "Taxon" ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:allValuesFrom xsd:string ;
-            owl:onProperty EVORAO:taxonomicNodeId ],
+            owl:minCardinality 0 ;
+            owl:onProperty EVORAO:parentTaxon ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom EVORAO:AlternateName ;
+            owl:onProperty EVORAO:alternateName ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty EVORAO:taxonomy ],
+        [ a owl:Restriction ;
+            owl:minCardinality 1 ;
+            owl:onProperty EVORAO:taxonomicId ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
             owl:onProperty EVORAO:rank ],
         [ a owl:Restriction ;
-            owl:allValuesFrom xsd:string ;
-            owl:onProperty EVORAO:taxonomicId ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty EVORAO:parentTaxon ],
-        [ a owl:Restriction ;
             owl:allValuesFrom EVORAO:Taxon ;
             owl:onProperty EVORAO:parentTaxon ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom EVORAO:Taxon ;
-            owl:onProperty EVORAO:externalEquivalentTaxon ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom EVORAO:AlternateName ;
-            owl:onProperty EVORAO:alternateName ],
         [ a owl:Restriction ;
             owl:allValuesFrom EVORAO:TaxonomicRank ;
             owl:onProperty EVORAO:rank ],
@@ -4363,37 +4501,40 @@ EVORAO:Taxon a owl:Class ;
             owl:onProperty EVORAO:rank ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
-            owl:onProperty EVORAO:parentTaxon ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty EVORAO:taxonomy ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom EVORAO:Taxon ;
-            owl:onProperty EVORAO:previouslyKnownAs ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty EVORAO:externalEquivalentTaxon ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty EVORAO:alternateName ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
             owl:onProperty EVORAO:taxonomicNodeId ],
         [ a owl:Restriction ;
             owl:allValuesFrom EVORAO:Taxonomy ;
             owl:onProperty EVORAO:taxonomy ],
         [ a owl:Restriction ;
-            owl:minCardinality 1 ;
-            owl:onProperty EVORAO:taxonomicId ],
+            owl:minCardinality 0 ;
+            owl:onProperty EVORAO:externalEquivalentTaxon ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom EVORAO:Taxon ;
+            owl:onProperty EVORAO:externalEquivalentTaxon ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty EVORAO:parentTaxon ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom EVORAO:Taxon ;
+            owl:onProperty EVORAO:previouslyKnownAs ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
-            owl:onProperty EVORAO:previouslyKnownAs ],
+            owl:onProperty EVORAO:alternateName ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty EVORAO:taxonomicId ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty EVORAO:taxonomicNodeId ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
             owl:onProperty EVORAO:taxonomicNodeId ],
         [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
+            owl:allValuesFrom xsd:string ;
             owl:onProperty EVORAO:taxonomicId ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty EVORAO:previouslyKnownAs ],
         EVORAO:Term ;
     skos:closeMatch uniprotrdfs:Taxon,
         dwc:Taxon,
@@ -4424,6 +4565,49 @@ dct:identifier a owl:DatatypeProperty ;
     skos:inScheme EVORAO: ;
     skos:note "The identifier is a text string which is assigned to the resource to provide an unambiguous reference within a particular context. Persistent identifiers should be provided as HTTP URIs" .
 
+dcat:Resource a owl:Class ;
+    rdfs:label "Resource" ;
+    dct:title "Resource" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty EVORAO:iri ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:dateTime ;
+            owl:onProperty dct:modified ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty dcat:keyword ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty dct:identifier ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty dct:identifier ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty dct:issued ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:anyURI ;
+            owl:onProperty EVORAO:iri ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty dcat:keyword ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:dateTime ;
+            owl:onProperty dct:issued ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty dct:modified ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty dct:issued ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty dct:modified ] ;
+    skos:definition "Resource published or curated by a single agent" ;
+    skos:exactMatch EVORAO:Resource ;
+    skos:inScheme EVORAO: .
+
 dct:title a owl:DatatypeProperty ;
     rdfs:label "title" ;
     dct:title "title" ;
@@ -4434,48 +4618,52 @@ dct:title a owl:DatatypeProperty ;
     skos:inScheme EVORAO: ;
     skos:note "The title of the item should be as short and descriptive as possible. E.g. for virus products it should basically be based on the following Pattern: 'Virus name', 'virus host type', 'collection year', 'country of collection' ex 'suspected epidemiological origin', 'genotype', 'strain', 'variant name or specific feature" .
 
-dcat:Resource a owl:Class ;
-    rdfs:label "Resource" ;
-    dct:title "Resource" ;
+EVORAO:Term a owl:Class ;
+    rdfs:label "Term" ;
+    dct:title "Term" ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:allValuesFrom xsd:string ;
-            owl:onProperty dct:identifier ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom xsd:dateTime ;
-            owl:onProperty dct:issued ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom xsd:dateTime ;
-            owl:onProperty dct:modified ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom xsd:anyURI ;
-            owl:onProperty EVORAO:iri ],
+            owl:minCardinality 1 ;
+            owl:onProperty EVORAO:inVocabulary ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
-            owl:onProperty dct:issued ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty dct:modified ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty dct:identifier ],
+            owl:onProperty dct:description ],
         [ a owl:Restriction ;
             owl:allValuesFrom xsd:string ;
-            owl:onProperty dcat:keyword ],
+            owl:onProperty dct:description ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom EVORAO:Vocabulary ;
+            owl:onProperty EVORAO:inVocabulary ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty EVORAO:weight ],
+        [ a owl:Restriction ;
+            owl:minCardinality 1 ;
+            owl:onProperty EVORAO:weight ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:integer ;
+            owl:onProperty EVORAO:weight ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty dct:title ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
-            owl:onProperty dcat:keyword ],
+            owl:onProperty dct:description ],
         [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty EVORAO:iri ],
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty dct:title ],
         [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty dct:modified ],
+            owl:maxCardinality 1 ;
+            owl:onProperty EVORAO:inVocabulary ],
         [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty dct:issued ] ;
-    skos:definition "Resource published or curated by a single agent" ;
-    skos:exactMatch EVORAO:Resource ;
-    skos:inScheme EVORAO: .
+            owl:minCardinality 1 ;
+            owl:onProperty dct:title ],
+        dcat:Resource ;
+    skos:definition "Word or phrase from a specialized area of knowledge" ;
+    skos:exactMatch ncit:C45559,
+        sio:000275,
+        wd:Q1969448 ;
+    skos:inScheme EVORAO: ;
+    skos:narrowMatch wd:Q12812139 .
 
 dct:description a owl:DatatypeProperty ;
     rdfs:label "description" ;
@@ -4488,52 +4676,5 @@ dct:description a owl:DatatypeProperty ;
     skos:note "Describe this item in few lines. This description will serve as a summary to present the resource",
         "Describe this item in few lines. This description will serve as a summary to present the resource.",
         "The title of the item should be as short and descriptive as possible. E.g. for virus products it should basically be based on the following Pattern: 'Virus name', 'virus host type', 'collection year', 'country of collection' ex 'suspected epidemiological origin', 'genotype', 'strain', 'variant name or specific feature" .
-
-EVORAO:Term a owl:Class ;
-    rdfs:label "Term" ;
-    dct:title "Term" ;
-    rdfs:subClassOf [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty dct:description ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty dct:title ],
-        [ a owl:Restriction ;
-            owl:minCardinality 1 ;
-            owl:onProperty EVORAO:inVocabulary ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty EVORAO:weight ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty dct:description ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom xsd:string ;
-            owl:onProperty dct:description ],
-        [ a owl:Restriction ;
-            owl:minCardinality 1 ;
-            owl:onProperty EVORAO:weight ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom EVORAO:Vocabulary ;
-            owl:onProperty EVORAO:inVocabulary ],
-        [ a owl:Restriction ;
-            owl:minCardinality 1 ;
-            owl:onProperty dct:title ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom xsd:integer ;
-            owl:onProperty EVORAO:weight ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty EVORAO:inVocabulary ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom xsd:string ;
-            owl:onProperty dct:title ],
-        dcat:Resource ;
-    skos:definition "Word or phrase from a specialized area of knowledge" ;
-    skos:exactMatch ncit:C45559,
-        sio:000275,
-        wd:Q1969448 ;
-    skos:inScheme EVORAO: ;
-    skos:narrowMatch wd:Q12812139 .
 
 

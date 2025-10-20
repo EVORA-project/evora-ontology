@@ -240,6 +240,7 @@ slot_usage:
     - File
     - License
     - Certification
+    - FundingSource
     range: string
     required: false
     recommended: true
@@ -427,6 +428,7 @@ slot_usage:
     - File
     - License
     - Certification
+    - FundingSource
     range: string
     required: false
     recommended: true
@@ -597,6 +599,7 @@ attributes:
     - File
     - License
     - Certification
+    - FundingSource
     range: string
     required: false
     recommended: true

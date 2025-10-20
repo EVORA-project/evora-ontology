@@ -172,6 +172,7 @@ slot_usage:
     - Term
     - License
     - Certification
+    - FundingSource
     range: string
     required: true
     multivalued: false
@@ -195,6 +196,7 @@ slot_usage:
     - ContactPoint
     - License
     - Certification
+    - FundingSource
     range: string
     required: false
     recommended: true
@@ -272,6 +274,7 @@ slot_usage:
     - Term
     - License
     - Certification
+    - FundingSource
     range: string
     required: true
     multivalued: false
@@ -295,6 +298,7 @@ slot_usage:
     - ContactPoint
     - License
     - Certification
+    - FundingSource
     range: string
     required: false
     recommended: true
@@ -352,6 +356,7 @@ attributes:
     - Term
     - License
     - Certification
+    - FundingSource
     range: string
     required: true
     multivalued: false
@@ -381,6 +386,7 @@ attributes:
     - ContactPoint
     - License
     - Certification
+    - FundingSource
     range: string
     required: false
     recommended: true

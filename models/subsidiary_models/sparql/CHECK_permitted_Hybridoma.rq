@@ -102,6 +102,7 @@ SELECT ?g ?s ?p WHERE {
    EVORAO:internalReference,
    skos:note,
    dcat:contactPoint,
+   EVORAO:fundingSource,
    dct:title,
    dct:description,
    dcat:version,

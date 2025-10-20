@@ -1,5 +1,5 @@
 # metamodel_version: 1.7.0
-# version: 1.0.10016
+# version: 1.0.10123
 type AlternateName
   {
     keyword: [String]
@@ -49,6 +49,7 @@ type Antibody
     internalReference: String
     note: String
     contactPoint: ContactPoint
+    fundingSource: [FundingSource]
     refSku: String!
     additionalCategory: [ProductCategory]
     iataClassification: IataClassification!
@@ -113,6 +114,7 @@ type Bacterium
     internalReference: String
     note: String
     contactPoint: ContactPoint
+    fundingSource: [FundingSource]
     refSku: String!
     additionalCategory: [ProductCategory]
     iataClassification: IataClassification!
@@ -199,6 +201,7 @@ type Bundle
     internalReference: String
     note: String
     contactPoint: ContactPoint
+    fundingSource: [FundingSource]
     refSku: String!
     additionalCategory: [ProductCategory]
     iataClassification: IataClassification!
@@ -408,6 +411,7 @@ type DetectionKit
     internalReference: String
     note: String
     contactPoint: ContactPoint
+    fundingSource: [FundingSource]
     refSku: String!
     additionalCategory: [ProductCategory]
     iataClassification: IataClassification!
@@ -490,6 +494,23 @@ interface File
     license: License
   }
 
+type FundingSource
+  {
+    keyword: [String]
+    dateIssued: Datetime
+    dateModified: Datetime
+    identifier: [String]
+    iri: [Uri]
+    title: String!
+    description: String
+    fundingProgram: String
+    grantNumber: String
+    funder: Organization
+    fundingPeriodStart: Date
+    fundingPeriodEnd: Date
+    eligibilityCriteria: String
+  }
+
 type Fungus
   {
     keyword: [String]
@@ -524,6 +545,7 @@ type Fungus
     internalReference: String
     note: String
     contactPoint: ContactPoint
+    fundingSource: [FundingSource]
     refSku: String!
     additionalCategory: [ProductCategory]
     iataClassification: IataClassification!
@@ -600,6 +622,7 @@ type Hybridoma
     internalReference: String
     note: String
     contactPoint: ContactPoint
+    fundingSource: [FundingSource]
     refSku: String!
     additionalCategory: [ProductCategory]
     iataClassification: IataClassification!
@@ -785,6 +808,7 @@ type NucleicAcid
     internalReference: String
     note: String
     contactPoint: ContactPoint
+    fundingSource: [FundingSource]
     refSku: String!
     additionalCategory: [ProductCategory]
     iataClassification: IataClassification!
@@ -875,6 +899,7 @@ interface Pathogen
     internalReference: String
     note: String
     contactPoint: ContactPoint
+    fundingSource: [FundingSource]
     refSku: String!
     additionalCategory: [ProductCategory]
     iataClassification: IataClassification!
@@ -1012,6 +1037,7 @@ type Prion
     internalReference: String
     note: String
     contactPoint: ContactPoint
+    fundingSource: [FundingSource]
     refSku: String!
     additionalCategory: [ProductCategory]
     iataClassification: IataClassification!
@@ -1075,6 +1101,7 @@ type Product
     internalReference: String
     note: String
     contactPoint: ContactPoint
+    fundingSource: [FundingSource]
     refSku: String!
     additionalCategory: [ProductCategory]
     iataClassification: IataClassification!
@@ -1149,6 +1176,7 @@ interface ProductOrService
     internalReference: String
     note: String
     contactPoint: ContactPoint
+    fundingSource: [FundingSource]
   }
 
 type PropagationHost
@@ -1198,6 +1226,7 @@ type Protein
     internalReference: String
     note: String
     contactPoint: ContactPoint
+    fundingSource: [FundingSource]
     refSku: String!
     additionalCategory: [ProductCategory]
     iataClassification: IataClassification!
@@ -1257,6 +1286,7 @@ type Protozoan
     internalReference: String
     note: String
     contactPoint: ContactPoint
+    fundingSource: [FundingSource]
     refSku: String!
     additionalCategory: [ProductCategory]
     iataClassification: IataClassification!
@@ -1424,6 +1454,7 @@ type Service
     internalReference: String
     note: String
     contactPoint: ContactPoint
+    fundingSource: [FundingSource]
     refSku: String!
     additionalCategory: [ProductCategory]
     modelSpecies: String
@@ -1622,6 +1653,7 @@ type Viroid
     internalReference: String
     note: String
     contactPoint: ContactPoint
+    fundingSource: [FundingSource]
     refSku: String!
     additionalCategory: [ProductCategory]
     iataClassification: IataClassification!
@@ -1685,6 +1717,7 @@ type Virus
     internalReference: String
     note: String
     contactPoint: ContactPoint
+    fundingSource: [FundingSource]
     refSku: String!
     additionalCategory: [ProductCategory]
     iataClassification: IataClassification!

@@ -327,6 +327,7 @@ attributes:
     - Term
     - License
     - Certification
+    - FundingSource
     range: string
     required: true
     multivalued: false
@@ -356,6 +357,7 @@ attributes:
     - ContactPoint
     - License
     - Certification
+    - FundingSource
     range: string
     required: true
     recommended: true

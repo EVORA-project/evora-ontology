@@ -38,7 +38,7 @@
     "interoperability"
   ],
   "id": "https://w3id.org/evorao/",
-  "version": "1.0.10016",
+  "version": "1.0.10123",
   "imports": [
     "linkml:types"
   ],
@@ -734,14 +734,15 @@
         "http://www.w3.org/2000/01/rdf-schema#label"
       ],
       "slot_uri": "http://purl.org/dc/terms/title",
-      "owner": "Certification",
+      "owner": "FundingSource",
       "domain_of": [
         "Dataset",
         "DataService",
         "Publication",
         "Term",
         "License",
-        "Certification"
+        "Certification",
+        "FundingSource"
       ],
       "range": "string",
       "required": true,
@@ -771,7 +772,7 @@
         "http://schema.org/description"
       ],
       "slot_uri": "http://purl.org/dc/terms/description",
-      "owner": "Certification",
+      "owner": "FundingSource",
       "domain_of": [
         "Dataset",
         "DataService",
@@ -780,7 +781,8 @@
         "File",
         "ContactPoint",
         "License",
-        "Certification"
+        "Certification",
+        "FundingSource"
       ],
       "range": "string",
       "recommended": true,
@@ -2903,6 +2905,28 @@
       "@type": "SlotDefinition"
     },
     {
+      "name": "fundingSource",
+      "definition_uri": "https://w3id.org/evorao/fundingSource",
+      "description": "A program, grant, or project providing financial support for the access or use of the product or service, either fully or partially",
+      "title": "funding source",
+      "comments": [
+        "Links a product or service to one or more financial mechanisms, initiatives, or grants that enable or support its provision or access"
+      ],
+      "from_schema": "https://w3id.org/evorao/",
+      "exact_mappings": [
+        "http://schema.org/funding"
+      ],
+      "slot_uri": "https://w3id.org/evorao/fundingSource",
+      "owner": "ProductOrService",
+      "domain_of": [
+        "ProductOrService"
+      ],
+      "range": "FundingSource",
+      "multivalued": true,
+      "inlined": true,
+      "@type": "SlotDefinition"
+    },
+    {
       "name": "modelSpecies",
       "definition_uri": "https://w3id.org/evorao/modelSpecies",
       "description": "The species of the infected organism in the experiment",
@@ -4438,6 +4462,98 @@
       "range": "Document",
       "multivalued": true,
       "inlined": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "fundingProgram",
+      "definition_uri": "https://w3id.org/evorao/fundingProgram",
+      "description": "Identifies the overarching financial framework, research initiative, or support mechanism that enables or contributes to the provision of a product or service. The value may correspond to a European funding framework (e.g. Horizon Europe), a specific research initiative (e.g. an EU project), or another public or private funding mechanism",
+      "title": "funding program",
+      "from_schema": "https://w3id.org/evorao/",
+      "slot_uri": "https://w3id.org/evorao/fundingProgram",
+      "owner": "FundingSource",
+      "domain_of": [
+        "FundingSource"
+      ],
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "grantNumber",
+      "definition_uri": "https://w3id.org/evorao/grantNumber",
+      "description": "A formal reference or agreement number assigned by the funding body",
+      "title": "grant number",
+      "from_schema": "https://w3id.org/evorao/",
+      "is_a": "identifier",
+      "slot_uri": "https://w3id.org/evorao/grantNumber",
+      "owner": "FundingSource",
+      "domain_of": [
+        "FundingSource"
+      ],
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "funder",
+      "definition_uri": "https://w3id.org/evorao/funder",
+      "description": "The organization providing the financial support",
+      "title": "funder",
+      "from_schema": "https://w3id.org/evorao/",
+      "close_mappings": [
+        "http://schema.org/funder"
+      ],
+      "slot_uri": "https://w3id.org/evorao/funder",
+      "owner": "FundingSource",
+      "domain_of": [
+        "FundingSource"
+      ],
+      "range": "Organization",
+      "inlined": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "fundingPeriodStart",
+      "definition_uri": "https://w3id.org/evorao/fundingPeriodStart",
+      "description": "The date from which the financial mechanism is active or applicable to the supported product or service",
+      "title": "funding period start",
+      "from_schema": "https://w3id.org/evorao/",
+      "slot_uri": "https://w3id.org/evorao/fundingPeriodStart",
+      "owner": "FundingSource",
+      "domain_of": [
+        "FundingSource"
+      ],
+      "range": "date",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "fundingPeriodEnd",
+      "definition_uri": "https://w3id.org/evorao/fundingPeriodEnd",
+      "description": "The date on which the financial mechanism ceases to apply to the supported product or service",
+      "title": "funding period end",
+      "from_schema": "https://w3id.org/evorao/",
+      "slot_uri": "https://w3id.org/evorao/fundingPeriodEnd",
+      "owner": "FundingSource",
+      "domain_of": [
+        "FundingSource"
+      ],
+      "range": "date",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "eligibilityCriteria",
+      "definition_uri": "https://w3id.org/evorao/eligibilityCriteria",
+      "description": "Conditions under which individuals or organisations may benefit from the financial mechanism, including access rules, eligibility requirements, or geographical/institutional restrictions. May be expressed as text or as a link to a formal eligibility statement",
+      "title": "eligibility criteria",
+      "comments": [
+        "Keep clear and user-friendly; provide a link if criteria are complex"
+      ],
+      "from_schema": "https://w3id.org/evorao/",
+      "slot_uri": "https://w3id.org/evorao/eligibilityCriteria",
+      "owner": "FundingSource",
+      "domain_of": [
+        "FundingSource"
+      ],
+      "range": "string",
       "@type": "SlotDefinition"
     },
     {
@@ -7822,6 +7938,33 @@
       "@type": "SlotDefinition"
     },
     {
+      "name": "ProductOrService_fundingSource",
+      "definition_uri": "https://w3id.org/evorao/fundingSource",
+      "description": "A program, grant, or project providing financial support for the access or use of the product or service, either fully or partially",
+      "title": "funding source",
+      "comments": [
+        "Links a product or service to one or more financial mechanisms, initiatives, or grants that enable or support its provision or access"
+      ],
+      "from_schema": "https://w3id.org/evorao/",
+      "exact_mappings": [
+        "http://schema.org/funding"
+      ],
+      "is_a": "fundingSource",
+      "domain": "ProductOrService",
+      "slot_uri": "https://w3id.org/evorao/fundingSource",
+      "alias": "fundingSource",
+      "owner": "ProductOrService",
+      "domain_of": [
+        "ProductOrService"
+      ],
+      "is_usage_slot": true,
+      "usage_slot_name": "fundingSource",
+      "range": "FundingSource",
+      "multivalued": true,
+      "inlined": true,
+      "@type": "SlotDefinition"
+    },
+    {
       "name": "Service_modelSpecies",
       "definition_uri": "https://w3id.org/evorao/modelSpecies",
       "description": "The species of the infected organism in the experiment",
@@ -10411,6 +10554,189 @@
       "usage_slot_name": "resourceUrl",
       "range": "uri",
       "@type": "SlotDefinition"
+    },
+    {
+      "name": "FundingSource_title",
+      "definition_uri": "https://w3id.org/evorao/title",
+      "description": "A name given to the resource",
+      "title": "title",
+      "comments": [
+        "The title of the item should be as short and descriptive as possible. E.g. for virus products it should basically be based on the following Pattern: 'Virus name', 'virus host type', 'collection year', 'country of collection' ex 'suspected epidemiological origin', 'genotype', 'strain', 'variant name or specific feature"
+      ],
+      "from_schema": "https://w3id.org/evorao/",
+      "mappings": [
+        "http://purl.org/dc/terms/title"
+      ],
+      "exact_mappings": [
+        "http://schema.org/name",
+        "http://www.w3.org/2000/01/rdf-schema#label"
+      ],
+      "is_a": "title",
+      "domain": "FundingSource",
+      "slot_uri": "http://purl.org/dc/terms/title",
+      "alias": "title",
+      "owner": "FundingSource",
+      "domain_of": [
+        "FundingSource"
+      ],
+      "is_usage_slot": true,
+      "usage_slot_name": "title",
+      "range": "string",
+      "required": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "FundingSource_description",
+      "definition_uri": "https://w3id.org/evorao/description",
+      "description": "A short explanation of the characteristics, features, or nature of the current item",
+      "title": "description",
+      "comments": [
+        "Describe this item in few lines. This description will serve as a summary to present the resource."
+      ],
+      "from_schema": "https://w3id.org/evorao/",
+      "mappings": [
+        "http://purl.org/dc/terms/description"
+      ],
+      "exact_mappings": [
+        "http://schema.org/description"
+      ],
+      "close_mappings": [
+        "http://schema.org/description"
+      ],
+      "is_a": "description",
+      "domain": "FundingSource",
+      "slot_uri": "http://purl.org/dc/terms/description",
+      "alias": "description",
+      "owner": "FundingSource",
+      "domain_of": [
+        "FundingSource"
+      ],
+      "is_usage_slot": true,
+      "usage_slot_name": "description",
+      "range": "string",
+      "recommended": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "FundingSource_fundingProgram",
+      "definition_uri": "https://w3id.org/evorao/fundingProgram",
+      "description": "Identifies the overarching financial framework, research initiative, or support mechanism that enables or contributes to the provision of a product or service. The value may correspond to a European funding framework (e.g. Horizon Europe), a specific research initiative (e.g. an EU project), or another public or private funding mechanism",
+      "title": "funding program",
+      "from_schema": "https://w3id.org/evorao/",
+      "is_a": "fundingProgram",
+      "domain": "FundingSource",
+      "slot_uri": "https://w3id.org/evorao/fundingProgram",
+      "alias": "fundingProgram",
+      "owner": "FundingSource",
+      "domain_of": [
+        "FundingSource"
+      ],
+      "is_usage_slot": true,
+      "usage_slot_name": "fundingProgram",
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "FundingSource_grantNumber",
+      "definition_uri": "https://w3id.org/evorao/grantNumber",
+      "description": "A formal reference or agreement number assigned by the funding body",
+      "title": "grant number",
+      "from_schema": "https://w3id.org/evorao/",
+      "is_a": "identifier",
+      "domain": "FundingSource",
+      "slot_uri": "https://w3id.org/evorao/grantNumber",
+      "alias": "grantNumber",
+      "owner": "FundingSource",
+      "domain_of": [
+        "FundingSource"
+      ],
+      "is_usage_slot": true,
+      "usage_slot_name": "grantNumber",
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "FundingSource_funder",
+      "definition_uri": "https://w3id.org/evorao/funder",
+      "description": "The organization providing the financial support",
+      "title": "funder",
+      "from_schema": "https://w3id.org/evorao/",
+      "close_mappings": [
+        "http://schema.org/funder"
+      ],
+      "is_a": "funder",
+      "domain": "FundingSource",
+      "slot_uri": "https://w3id.org/evorao/funder",
+      "alias": "funder",
+      "owner": "FundingSource",
+      "domain_of": [
+        "FundingSource"
+      ],
+      "is_usage_slot": true,
+      "usage_slot_name": "funder",
+      "range": "Organization",
+      "inlined": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "FundingSource_fundingPeriodStart",
+      "definition_uri": "https://w3id.org/evorao/fundingPeriodStart",
+      "description": "The date from which the financial mechanism is active or applicable to the supported product or service",
+      "title": "funding period start",
+      "from_schema": "https://w3id.org/evorao/",
+      "is_a": "fundingPeriodStart",
+      "domain": "FundingSource",
+      "slot_uri": "https://w3id.org/evorao/fundingPeriodStart",
+      "alias": "fundingPeriodStart",
+      "owner": "FundingSource",
+      "domain_of": [
+        "FundingSource"
+      ],
+      "is_usage_slot": true,
+      "usage_slot_name": "fundingPeriodStart",
+      "range": "date",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "FundingSource_fundingPeriodEnd",
+      "definition_uri": "https://w3id.org/evorao/fundingPeriodEnd",
+      "description": "The date on which the financial mechanism ceases to apply to the supported product or service",
+      "title": "funding period end",
+      "from_schema": "https://w3id.org/evorao/",
+      "is_a": "fundingPeriodEnd",
+      "domain": "FundingSource",
+      "slot_uri": "https://w3id.org/evorao/fundingPeriodEnd",
+      "alias": "fundingPeriodEnd",
+      "owner": "FundingSource",
+      "domain_of": [
+        "FundingSource"
+      ],
+      "is_usage_slot": true,
+      "usage_slot_name": "fundingPeriodEnd",
+      "range": "date",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "FundingSource_eligibilityCriteria",
+      "definition_uri": "https://w3id.org/evorao/eligibilityCriteria",
+      "description": "Conditions under which individuals or organisations may benefit from the financial mechanism, including access rules, eligibility requirements, or geographical/institutional restrictions. May be expressed as text or as a link to a formal eligibility statement",
+      "title": "eligibility criteria",
+      "comments": [
+        "Keep clear and user-friendly; provide a link if criteria are complex"
+      ],
+      "from_schema": "https://w3id.org/evorao/",
+      "is_a": "eligibilityCriteria",
+      "domain": "FundingSource",
+      "slot_uri": "https://w3id.org/evorao/eligibilityCriteria",
+      "alias": "eligibilityCriteria",
+      "owner": "FundingSource",
+      "domain_of": [
+        "FundingSource"
+      ],
+      "is_usage_slot": true,
+      "usage_slot_name": "eligibilityCriteria",
+      "range": "string",
+      "@type": "SlotDefinition"
     }
   ],
   "classes": [
@@ -12125,6 +12451,7 @@
         "ProductOrService_internalReference",
         "ProductOrService_note",
         "ProductOrService_contactPoint",
+        "ProductOrService_fundingSource",
         "ProductOrService_refSku",
         "ProductOrService_additionalCategory"
       ],
@@ -12190,6 +12517,7 @@
         "ProductOrService_internalReference",
         "ProductOrService_note",
         "ProductOrService_contactPoint",
+        "ProductOrService_fundingSource",
         "ProductOrService_refSku",
         "ProductOrService_additionalCategory",
         "Service_modelSpecies",
@@ -12251,6 +12579,7 @@
         "ProductOrService_internalReference",
         "ProductOrService_note",
         "ProductOrService_contactPoint",
+        "ProductOrService_fundingSource",
         "ProductOrService_refSku",
         "ProductOrService_additionalCategory",
         "Product_iataClassification",
@@ -12311,6 +12640,7 @@
         "ProductOrService_internalReference",
         "ProductOrService_note",
         "ProductOrService_contactPoint",
+        "ProductOrService_fundingSource",
         "ProductOrService_refSku",
         "ProductOrService_additionalCategory",
         "Product_iataClassification",
@@ -12382,6 +12712,7 @@
         "ProductOrService_internalReference",
         "ProductOrService_note",
         "ProductOrService_contactPoint",
+        "ProductOrService_fundingSource",
         "ProductOrService_refSku",
         "ProductOrService_additionalCategory",
         "Product_iataClassification",
@@ -12452,6 +12783,7 @@
         "ProductOrService_internalReference",
         "ProductOrService_note",
         "ProductOrService_contactPoint",
+        "ProductOrService_fundingSource",
         "ProductOrService_refSku",
         "ProductOrService_additionalCategory",
         "Product_iataClassification",
@@ -12536,6 +12868,7 @@
         "ProductOrService_internalReference",
         "ProductOrService_note",
         "ProductOrService_contactPoint",
+        "ProductOrService_fundingSource",
         "ProductOrService_refSku",
         "ProductOrService_additionalCategory",
         "Product_iataClassification",
@@ -12608,6 +12941,7 @@
         "ProductOrService_internalReference",
         "ProductOrService_note",
         "ProductOrService_contactPoint",
+        "ProductOrService_fundingSource",
         "ProductOrService_refSku",
         "ProductOrService_additionalCategory",
         "Product_iataClassification",
@@ -12678,6 +13012,7 @@
         "ProductOrService_internalReference",
         "ProductOrService_note",
         "ProductOrService_contactPoint",
+        "ProductOrService_fundingSource",
         "ProductOrService_refSku",
         "ProductOrService_additionalCategory",
         "Product_iataClassification",
@@ -12756,6 +13091,7 @@
         "ProductOrService_internalReference",
         "ProductOrService_note",
         "ProductOrService_contactPoint",
+        "ProductOrService_fundingSource",
         "ProductOrService_refSku",
         "ProductOrService_additionalCategory",
         "Product_iataClassification",
@@ -12850,6 +13186,7 @@
         "ProductOrService_internalReference",
         "ProductOrService_note",
         "ProductOrService_contactPoint",
+        "ProductOrService_fundingSource",
         "ProductOrService_refSku",
         "ProductOrService_additionalCategory",
         "Product_iataClassification",
@@ -12945,6 +13282,7 @@
         "ProductOrService_internalReference",
         "ProductOrService_note",
         "ProductOrService_contactPoint",
+        "ProductOrService_fundingSource",
         "ProductOrService_refSku",
         "ProductOrService_additionalCategory",
         "Product_iataClassification",
@@ -13035,6 +13373,7 @@
         "ProductOrService_internalReference",
         "ProductOrService_note",
         "ProductOrService_contactPoint",
+        "ProductOrService_fundingSource",
         "ProductOrService_refSku",
         "ProductOrService_additionalCategory",
         "Product_iataClassification",
@@ -13121,6 +13460,7 @@
         "ProductOrService_internalReference",
         "ProductOrService_note",
         "ProductOrService_contactPoint",
+        "ProductOrService_fundingSource",
         "ProductOrService_refSku",
         "ProductOrService_additionalCategory",
         "Product_iataClassification",
@@ -13203,6 +13543,7 @@
         "ProductOrService_internalReference",
         "ProductOrService_note",
         "ProductOrService_contactPoint",
+        "ProductOrService_fundingSource",
         "ProductOrService_refSku",
         "ProductOrService_additionalCategory",
         "Product_iataClassification",
@@ -13289,6 +13630,7 @@
         "ProductOrService_internalReference",
         "ProductOrService_note",
         "ProductOrService_contactPoint",
+        "ProductOrService_fundingSource",
         "ProductOrService_refSku",
         "ProductOrService_additionalCategory",
         "Product_iataClassification",
@@ -13714,13 +14056,48 @@
       "slot_usage": {},
       "class_uri": "https://w3id.org/evorao/Certification",
       "@type": "ClassDefinition"
+    },
+    {
+      "name": "FundingSource",
+      "definition_uri": "https://w3id.org/evorao/FundingSource",
+      "description": "A program, grant, or project providing financial support for the access or use of a product or service, either fully or partially",
+      "title": "Funding source",
+      "from_schema": "https://w3id.org/evorao/",
+      "exact_mappings": [
+        "schema:Grant",
+        "schema:Grant"
+      ],
+      "close_mappings": [
+        "ncit:C17769",
+        "ncit:C17769"
+      ],
+      "is_a": "Resource",
+      "slots": [
+        "Resource_keyword",
+        "Resource_dateIssued",
+        "Resource_dateModified",
+        "Resource_identifier",
+        "Resource_iri",
+        "FundingSource_title",
+        "FundingSource_description",
+        "FundingSource_fundingProgram",
+        "grantNumber",
+        "FundingSource_funder",
+        "FundingSource_fundingPeriodStart",
+        "FundingSource_fundingPeriodEnd",
+        "FundingSource_eligibilityCriteria",
+        "FundingSource_grantNumber"
+      ],
+      "slot_usage": {},
+      "class_uri": "https://w3id.org/evorao/FundingSource",
+      "@type": "ClassDefinition"
     }
   ],
   "metamodel_version": "1.7.0",
   "source_file": "evora_schema.yaml",
-  "source_file_date": "2025-10-01T08:56:49",
-  "source_file_size": 229720,
-  "generation_date": "2025-10-01T08:57:05",
+  "source_file_date": "2025-10-20T10:18:49",
+  "source_file_size": 237316,
+  "generation_date": "2025-10-20T10:19:05",
   "@type": "SchemaDefinition",
   "@context": [
     "https://w3id.org/linkml/types.context.jsonld",

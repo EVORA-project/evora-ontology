@@ -173,6 +173,7 @@ slot_usage:
     - Term
     - License
     - Certification
+    - FundingSource
     range: string
     required: true
     multivalued: false
@@ -275,6 +276,7 @@ slot_usage:
     - Term
     - License
     - Certification
+    - FundingSource
     range: string
     required: true
     multivalued: false
@@ -360,6 +362,7 @@ attributes:
     - Term
     - License
     - Certification
+    - FundingSource
     range: string
     required: true
     multivalued: false

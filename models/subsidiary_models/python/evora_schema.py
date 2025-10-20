@@ -1,5 +1,5 @@
 # Auto generated from evora_schema.yaml by pythongen.py version: 0.0.1
-# Generation date: 2025-10-01T08:57:10
+# Generation date: 2025-10-20T10:19:11
 # Schema: EVORAO
 #
 # id: https://w3id.org/evorao/
@@ -56,11 +56,11 @@ from rdflib import (
     URIRef
 )
 
-from linkml_runtime.linkml_model.types import Boolean, Datetime, Decimal, Integer, String, Uri
-from linkml_runtime.utils.metamodelcore import Bool, Decimal, URI, XSDDateTime
+from linkml_runtime.linkml_model.types import Boolean, Date, Datetime, Decimal, Integer, String, Uri
+from linkml_runtime.utils.metamodelcore import Bool, Decimal, URI, XSDDate, XSDDateTime
 
 metamodel_version = "1.7.0"
-version = "1.0.10016"
+version = "1.0.10123"
 
 # Namespaces
 EVORAO = CurieNamespace('EVORAO', 'https://w3id.org/evorao/')
@@ -1584,6 +1584,7 @@ class ProductOrService(Dataset):
     internalReference: Optional[str] = None
     note: Optional[str] = None
     contactPoint: Optional[Union[dict, "ContactPoint"]] = None
+    fundingSource: Optional[Union[Union[dict, "FundingSource"], list[Union[dict, "FundingSource"]]]] = empty_list()
 
     def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.accessPointUrl):
@@ -1677,6 +1678,8 @@ class ProductOrService(Dataset):
 
         if self.contactPoint is not None and not isinstance(self.contactPoint, ContactPoint):
             self.contactPoint = ContactPoint(**as_dict(self.contactPoint))
+
+        self._normalize_inlined_as_dict(slot_name="fundingSource", slot_type=FundingSource, key_name="title", keyed=False)
 
         self._normalize_inlined_as_dict(slot_name="additionalCategory", slot_type=ProductCategory, key_name="title", keyed=False)
 
@@ -2874,6 +2877,61 @@ class Certification(Resource):
         super().__post_init__(**kwargs)
 
 
+@dataclass(repr=False)
+class FundingSource(Resource):
+    """
+    A program, grant, or project providing financial support for the access or use of a product or service, either
+    fully or partially
+    """
+    _inherited_slots: ClassVar[list[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = EVORAO["FundingSource"]
+    class_class_curie: ClassVar[str] = "EVORAO:FundingSource"
+    class_name: ClassVar[str] = "FundingSource"
+    class_model_uri: ClassVar[URIRef] = EVORAO.FundingSource
+
+    title: str = None
+    description: Optional[str] = None
+    fundingProgram: Optional[str] = None
+    grantNumber: Optional[str] = None
+    funder: Optional[Union[dict, Organization]] = None
+    fundingPeriodStart: Optional[Union[str, XSDDate]] = None
+    fundingPeriodEnd: Optional[Union[str, XSDDate]] = None
+    eligibilityCriteria: Optional[str] = None
+
+    def __post_init__(self, *_: str, **kwargs: Any):
+        if self._is_empty(self.title):
+            self.MissingRequiredField("title")
+        if not isinstance(self.title, str):
+            self.title = str(self.title)
+
+        if self.description is not None and not isinstance(self.description, str):
+            self.description = str(self.description)
+
+        if self.fundingProgram is not None and not isinstance(self.fundingProgram, str):
+            self.fundingProgram = str(self.fundingProgram)
+
+        if self.grantNumber is not None and not isinstance(self.grantNumber, str):
+            self.grantNumber = str(self.grantNumber)
+
+        if self.funder is not None and not isinstance(self.funder, Organization):
+            self.funder = Organization(**as_dict(self.funder))
+
+        if self.fundingPeriodStart is not None and not isinstance(self.fundingPeriodStart, XSDDate):
+            self.fundingPeriodStart = XSDDate(self.fundingPeriodStart)
+
+        if self.fundingPeriodEnd is not None and not isinstance(self.fundingPeriodEnd, XSDDate):
+            self.fundingPeriodEnd = XSDDate(self.fundingPeriodEnd)
+
+        if self.eligibilityCriteria is not None and not isinstance(self.eligibilityCriteria, str):
+            self.eligibilityCriteria = str(self.eligibilityCriteria)
+
+        if self.grantNumber is not None and not isinstance(self.grantNumber, str):
+            self.grantNumber = str(self.grantNumber)
+
+        super().__post_init__(**kwargs)
+
+
 # Enumerations
 
 
@@ -3202,6 +3260,9 @@ slots.internalReference = Slot(uri=EVORAO.internalReference, name="internalRefer
 slots.note = Slot(uri=SKOS.note, name="note", curie=SKOS.curie('note'),
                    model_uri=EVORAO.note, domain=None, range=Optional[str])
 
+slots.fundingSource = Slot(uri=EVORAO.fundingSource, name="fundingSource", curie=EVORAO.curie('fundingSource'),
+                   model_uri=EVORAO.fundingSource, domain=None, range=Optional[Union[Union[dict, FundingSource], list[Union[dict, FundingSource]]]])
+
 slots.modelSpecies = Slot(uri=EVORAO.modelSpecies, name="modelSpecies", curie=EVORAO.curie('modelSpecies'),
                    model_uri=EVORAO.modelSpecies, domain=None, range=Optional[str])
 
@@ -3462,6 +3523,24 @@ slots.licensingOrAttribution = Slot(uri=EVORAO.licensingOrAttribution, name="lic
 
 slots.certificationDocument = Slot(uri=EVORAO.certificationDocument, name="certificationDocument", curie=EVORAO.curie('certificationDocument'),
                    model_uri=EVORAO.certificationDocument, domain=None, range=Optional[Union[Union[dict, Document], list[Union[dict, Document]]]])
+
+slots.fundingProgram = Slot(uri=EVORAO.fundingProgram, name="fundingProgram", curie=EVORAO.curie('fundingProgram'),
+                   model_uri=EVORAO.fundingProgram, domain=None, range=Optional[str])
+
+slots.grantNumber = Slot(uri=EVORAO.grantNumber, name="grantNumber", curie=EVORAO.curie('grantNumber'),
+                   model_uri=EVORAO.grantNumber, domain=None, range=Optional[str])
+
+slots.funder = Slot(uri=EVORAO.funder, name="funder", curie=EVORAO.curie('funder'),
+                   model_uri=EVORAO.funder, domain=None, range=Optional[Union[dict, Organization]])
+
+slots.fundingPeriodStart = Slot(uri=EVORAO.fundingPeriodStart, name="fundingPeriodStart", curie=EVORAO.curie('fundingPeriodStart'),
+                   model_uri=EVORAO.fundingPeriodStart, domain=None, range=Optional[Union[str, XSDDate]])
+
+slots.fundingPeriodEnd = Slot(uri=EVORAO.fundingPeriodEnd, name="fundingPeriodEnd", curie=EVORAO.curie('fundingPeriodEnd'),
+                   model_uri=EVORAO.fundingPeriodEnd, domain=None, range=Optional[Union[str, XSDDate]])
+
+slots.eligibilityCriteria = Slot(uri=EVORAO.eligibilityCriteria, name="eligibilityCriteria", curie=EVORAO.curie('eligibilityCriteria'),
+                   model_uri=EVORAO.eligibilityCriteria, domain=None, range=Optional[str])
 
 slots.Resource_keyword = Slot(uri=DCAT.keyword, name="Resource_keyword", curie=DCAT.curie('keyword'),
                    model_uri=EVORAO.Resource_keyword, domain=Resource, range=Optional[Union[str, list[str]]])
@@ -3844,6 +3923,9 @@ slots.ProductOrService_note = Slot(uri=SKOS.note, name="ProductOrService_note", 
 slots.ProductOrService_contactPoint = Slot(uri=DCAT.contactPoint, name="ProductOrService_contactPoint", curie=DCAT.curie('contactPoint'),
                    model_uri=EVORAO.ProductOrService_contactPoint, domain=ProductOrService, range=Optional[Union[dict, "ContactPoint"]])
 
+slots.ProductOrService_fundingSource = Slot(uri=EVORAO.fundingSource, name="ProductOrService_fundingSource", curie=EVORAO.curie('fundingSource'),
+                   model_uri=EVORAO.ProductOrService_fundingSource, domain=ProductOrService, range=Optional[Union[Union[dict, "FundingSource"], list[Union[dict, "FundingSource"]]]])
+
 slots.Service_modelSpecies = Slot(uri=EVORAO.modelSpecies, name="Service_modelSpecies", curie=EVORAO.curie('modelSpecies'),
                    model_uri=EVORAO.Service_modelSpecies, domain=Service, range=Optional[str])
 
@@ -4173,3 +4255,27 @@ slots.Certification_certificationDocument = Slot(uri=EVORAO.certificationDocumen
 
 slots.Certification_resourceUrl = Slot(uri=EVORAO.resourceUrl, name="Certification_resourceUrl", curie=EVORAO.curie('resourceUrl'),
                    model_uri=EVORAO.Certification_resourceUrl, domain=Certification, range=Optional[Union[str, URI]])
+
+slots.FundingSource_title = Slot(uri=DCT.title, name="FundingSource_title", curie=DCT.curie('title'),
+                   model_uri=EVORAO.FundingSource_title, domain=FundingSource, range=str)
+
+slots.FundingSource_description = Slot(uri=DCT.description, name="FundingSource_description", curie=DCT.curie('description'),
+                   model_uri=EVORAO.FundingSource_description, domain=FundingSource, range=Optional[str])
+
+slots.FundingSource_fundingProgram = Slot(uri=EVORAO.fundingProgram, name="FundingSource_fundingProgram", curie=EVORAO.curie('fundingProgram'),
+                   model_uri=EVORAO.FundingSource_fundingProgram, domain=FundingSource, range=Optional[str])
+
+slots.FundingSource_grantNumber = Slot(uri=EVORAO.grantNumber, name="FundingSource_grantNumber", curie=EVORAO.curie('grantNumber'),
+                   model_uri=EVORAO.FundingSource_grantNumber, domain=FundingSource, range=Optional[str])
+
+slots.FundingSource_funder = Slot(uri=EVORAO.funder, name="FundingSource_funder", curie=EVORAO.curie('funder'),
+                   model_uri=EVORAO.FundingSource_funder, domain=FundingSource, range=Optional[Union[dict, Organization]])
+
+slots.FundingSource_fundingPeriodStart = Slot(uri=EVORAO.fundingPeriodStart, name="FundingSource_fundingPeriodStart", curie=EVORAO.curie('fundingPeriodStart'),
+                   model_uri=EVORAO.FundingSource_fundingPeriodStart, domain=FundingSource, range=Optional[Union[str, XSDDate]])
+
+slots.FundingSource_fundingPeriodEnd = Slot(uri=EVORAO.fundingPeriodEnd, name="FundingSource_fundingPeriodEnd", curie=EVORAO.curie('fundingPeriodEnd'),
+                   model_uri=EVORAO.FundingSource_fundingPeriodEnd, domain=FundingSource, range=Optional[Union[str, XSDDate]])
+
+slots.FundingSource_eligibilityCriteria = Slot(uri=EVORAO.eligibilityCriteria, name="FundingSource_eligibilityCriteria", curie=EVORAO.curie('eligibilityCriteria'),
+                   model_uri=EVORAO.FundingSource_eligibilityCriteria, domain=FundingSource, range=Optional[str])

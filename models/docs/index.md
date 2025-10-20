@@ -49,6 +49,7 @@ Name: EVORAO
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Document](Document.md) | Subclass of File representing textual or written files such as reports, manuals, or forms |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Image](Image.md) | Subclass of File representing visual content such as pictures, diagrams, or illustrations |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Video](Video.md) | Subclass of File representing moving visual media, such as recordings, presentations, or movies |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[FundingSource](FundingSource.md) | A program, grant, or project providing financial support for the access or use of a product or service, either fully or partially |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[License](License.md) | The legal terms and conditions under which the subject can be used, shared, or distributed, indicating any restrictions or permissions |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[MaterialSafetyDataSheet](MaterialSafetyDataSheet.md) | A Material Safety Data Sheet (MSDS) or Safety Data Sheet (SDS) is a standardized document that contains crucial occupational safety and health information related to the product |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[PathogenIdentification](PathogenIdentification.md) | A collection of distinguishing information that enables the differentiation of a pathogen from another |
@@ -144,6 +145,7 @@ Name: EVORAO
 | [doi](doi.md) | A Digital Object Identifier (DOI) that can be related |
 | [domain](domain.md) | A distinct structural and functional unit within the protein, often capable o... |
 | [ecologicalInformation](ecologicalInformation.md) | Details the potential environmental impact of the product, including its effe... |
+| [eligibilityCriteria](eligibilityCriteria.md) | Conditions under which individuals or organisations may benefit from the fina... |
 | [email](email.md) | Email address |
 | [endpointUrl](endpointUrl.md) | The URL template that allows to get the content |
 | [exposureControlsPersonalProtection](exposureControlsPersonalProtection.md) | Specifies measures to limit exposure to the product, including recommended en... |
@@ -156,10 +158,16 @@ Name: EVORAO
 | [format](format.md) | The file type or format that indicates how the data within the file is struct... |
 | [functionalAndTechnicalDescription](functionalAndTechnicalDescription.md) | Detailed information about the specific biological functions, mechanisms of a... |
 | [functionalCharacterization](functionalCharacterization.md) | The process of determining and describing the specific biological activities ... |
+| [funder](funder.md) | The organization providing the financial support |
+| [fundingPeriodEnd](fundingPeriodEnd.md) | The date on which the financial mechanism ceases to apply to the supported pr... |
+| [fundingPeriodStart](fundingPeriodStart.md) | The date from which the financial mechanism is active or applicable to the su... |
+| [fundingProgram](fundingProgram.md) | Identifies the overarching financial framework, research initiative, or suppo... |
+| [fundingSource](fundingSource.md) | A program, grant, or project providing financial support for the access or us... |
 | [furtherInformation](furtherInformation.md) | Provides any additional details or clarifications not covered in other sectio... |
 | [genBankFileOfTheConstruct](genBankFileOfTheConstruct.md) | A GenBank formatted file that contains detailed sequence and annotation infor... |
 | [genomeSequencing](genomeSequencing.md) | The extent of the pathogen's genetic material that has been sequenced, with p... |
 | [genotype](genotype.md) | Genotype information that identifies organisms that cluster in phylogenetic t... |
+| [grantNumber](grantNumber.md) | A formal reference or agreement number assigned by the funding body |
 | [handlingAndStorage](handlingAndStorage.md) | Instructions on the safe handling practices and storage conditions for the pr... |
 | [hazardsIdentification](hazardsIdentification.md) | Outlines the potential risks and dangers associated with handling the product... |
 | [homePage](homePage.md) | A web page that serves as the main or introductory page |

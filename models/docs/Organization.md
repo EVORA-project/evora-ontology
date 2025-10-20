@@ -122,6 +122,13 @@ URI: [foaf:Organization](http://xmlns.com/foaf/0.1/Organization)
 
 
 
+## Usages
+
+| used by | used in | type | used |
+| ---  | --- | --- | --- |
+| [FundingSource](FundingSource.md) | [funder](funder.md) | range | [Organization](Organization.md) |
+
+
 
 
 
@@ -414,6 +421,7 @@ attributes:
     - ContactPoint
     - License
     - Certification
+    - FundingSource
     range: string
     required: false
     recommended: true

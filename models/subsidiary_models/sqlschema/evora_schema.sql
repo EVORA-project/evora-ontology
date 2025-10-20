@@ -1120,6 +1120,18 @@
 --     * Slot: dateIssued Description: Date of formal issuance (e.g., publication) of the resource
 --     * Slot: dateModified Description: Most recent date on which the resource was changed, updated or modified
 --     * Slot: logo_id Description: A path or URL to the related logo
+-- # Class: "FundingSource" Description: "A program, grant, or project providing financial support for the access or use of a product or service, either fully or partially"
+--     * Slot: id Description: 
+--     * Slot: title Description: A name given to the resource
+--     * Slot: description Description: A short explanation of the characteristics, features, or nature of the current item
+--     * Slot: fundingProgram Description: Identifies the overarching financial framework, research initiative, or support mechanism that enables or contributes to the provision of a product or service. The value may correspond to a European funding framework (e.g. Horizon Europe), a specific research initiative (e.g. an EU project), or another public or private funding mechanism
+--     * Slot: grantNumber Description: A formal reference or agreement number assigned by the funding body
+--     * Slot: fundingPeriodStart Description: The date from which the financial mechanism is active or applicable to the supported product or service
+--     * Slot: fundingPeriodEnd Description: The date on which the financial mechanism ceases to apply to the supported product or service
+--     * Slot: eligibilityCriteria Description: Conditions under which individuals or organisations may benefit from the financial mechanism, including access rules, eligibility requirements, or geographical/institutional restrictions. May be expressed as text or as a link to a formal eligibility statement
+--     * Slot: dateIssued Description: Date of formal issuance (e.g., publication) of the resource
+--     * Slot: dateModified Description: Most recent date on which the resource was changed, updated or modified
+--     * Slot: funder_id Description: The organization providing the financial support
 -- # Class: "Resource_keyword" Description: ""
 --     * Slot: Resource_id Description: Autocreated FK slot
 --     * Slot: keyword Description: A keyword or tag describing the resource
@@ -1699,6 +1711,9 @@
 -- # Class: "ProductOrService_certification" Description: ""
 --     * Slot: ProductOrService_id Description: Autocreated FK slot
 --     * Slot: certification_id Description: Any certification related to the current product or service; e.g., ISO certification
+-- # Class: "ProductOrService_fundingSource" Description: ""
+--     * Slot: ProductOrService_id Description: Autocreated FK slot
+--     * Slot: fundingSource_id Description: A program, grant, or project providing financial support for the access or use of the product or service, either fully or partially
 -- # Class: "ProductOrService_keyword" Description: ""
 --     * Slot: ProductOrService_id Description: Autocreated FK slot
 --     * Slot: keyword Description: A keyword or tag describing the resource
@@ -1735,6 +1750,9 @@
 -- # Class: "Service_certification" Description: ""
 --     * Slot: Service_id Description: Autocreated FK slot
 --     * Slot: certification_id Description: Any certification related to the current product or service; e.g., ISO certification
+-- # Class: "Service_fundingSource" Description: ""
+--     * Slot: Service_id Description: Autocreated FK slot
+--     * Slot: fundingSource_id Description: A program, grant, or project providing financial support for the access or use of the product or service, either fully or partially
 -- # Class: "Service_keyword" Description: ""
 --     * Slot: Service_id Description: Autocreated FK slot
 --     * Slot: keyword Description: A keyword or tag describing the resource
@@ -1771,6 +1789,9 @@
 -- # Class: "Product_certification" Description: ""
 --     * Slot: Product_id Description: Autocreated FK slot
 --     * Slot: certification_id Description: Any certification related to the current product or service; e.g., ISO certification
+-- # Class: "Product_fundingSource" Description: ""
+--     * Slot: Product_id Description: Autocreated FK slot
+--     * Slot: fundingSource_id Description: A program, grant, or project providing financial support for the access or use of the product or service, either fully or partially
 -- # Class: "Product_keyword" Description: ""
 --     * Slot: Product_id Description: Autocreated FK slot
 --     * Slot: keyword Description: A keyword or tag describing the resource
@@ -1810,6 +1831,9 @@
 -- # Class: "Antibody_certification" Description: ""
 --     * Slot: Antibody_id Description: Autocreated FK slot
 --     * Slot: certification_id Description: Any certification related to the current product or service; e.g., ISO certification
+-- # Class: "Antibody_fundingSource" Description: ""
+--     * Slot: Antibody_id Description: Autocreated FK slot
+--     * Slot: fundingSource_id Description: A program, grant, or project providing financial support for the access or use of the product or service, either fully or partially
 -- # Class: "Antibody_keyword" Description: ""
 --     * Slot: Antibody_id Description: Autocreated FK slot
 --     * Slot: keyword Description: A keyword or tag describing the resource
@@ -1849,6 +1873,9 @@
 -- # Class: "Hybridoma_certification" Description: ""
 --     * Slot: Hybridoma_id Description: Autocreated FK slot
 --     * Slot: certification_id Description: Any certification related to the current product or service; e.g., ISO certification
+-- # Class: "Hybridoma_fundingSource" Description: ""
+--     * Slot: Hybridoma_id Description: Autocreated FK slot
+--     * Slot: fundingSource_id Description: A program, grant, or project providing financial support for the access or use of the product or service, either fully or partially
 -- # Class: "Hybridoma_keyword" Description: ""
 --     * Slot: Hybridoma_id Description: Autocreated FK slot
 --     * Slot: keyword Description: A keyword or tag describing the resource
@@ -1924,6 +1951,9 @@
 -- # Class: "Protein_certification" Description: ""
 --     * Slot: Protein_id Description: Autocreated FK slot
 --     * Slot: certification_id Description: Any certification related to the current product or service; e.g., ISO certification
+-- # Class: "Protein_fundingSource" Description: ""
+--     * Slot: Protein_id Description: Autocreated FK slot
+--     * Slot: fundingSource_id Description: A program, grant, or project providing financial support for the access or use of the product or service, either fully or partially
 -- # Class: "Protein_keyword" Description: ""
 --     * Slot: Protein_id Description: Autocreated FK slot
 --     * Slot: keyword Description: A keyword or tag describing the resource
@@ -1969,6 +1999,9 @@
 -- # Class: "NucleicAcid_certification" Description: ""
 --     * Slot: NucleicAcid_id Description: Autocreated FK slot
 --     * Slot: certification_id Description: Any certification related to the current product or service; e.g., ISO certification
+-- # Class: "NucleicAcid_fundingSource" Description: ""
+--     * Slot: NucleicAcid_id Description: Autocreated FK slot
+--     * Slot: fundingSource_id Description: A program, grant, or project providing financial support for the access or use of the product or service, either fully or partially
 -- # Class: "NucleicAcid_keyword" Description: ""
 --     * Slot: NucleicAcid_id Description: Autocreated FK slot
 --     * Slot: keyword Description: A keyword or tag describing the resource
@@ -2008,6 +2041,9 @@
 -- # Class: "DetectionKit_certification" Description: ""
 --     * Slot: DetectionKit_id Description: Autocreated FK slot
 --     * Slot: certification_id Description: Any certification related to the current product or service; e.g., ISO certification
+-- # Class: "DetectionKit_fundingSource" Description: ""
+--     * Slot: DetectionKit_id Description: Autocreated FK slot
+--     * Slot: fundingSource_id Description: A program, grant, or project providing financial support for the access or use of the product or service, either fully or partially
 -- # Class: "DetectionKit_keyword" Description: ""
 --     * Slot: DetectionKit_id Description: Autocreated FK slot
 --     * Slot: keyword Description: A keyword or tag describing the resource
@@ -2047,6 +2083,9 @@
 -- # Class: "Bundle_certification" Description: ""
 --     * Slot: Bundle_id Description: Autocreated FK slot
 --     * Slot: certification_id Description: Any certification related to the current product or service; e.g., ISO certification
+-- # Class: "Bundle_fundingSource" Description: ""
+--     * Slot: Bundle_id Description: Autocreated FK slot
+--     * Slot: fundingSource_id Description: A program, grant, or project providing financial support for the access or use of the product or service, either fully or partially
 -- # Class: "Bundle_keyword" Description: ""
 --     * Slot: Bundle_id Description: Autocreated FK slot
 --     * Slot: keyword Description: A keyword or tag describing the resource
@@ -2101,6 +2140,9 @@
 -- # Class: "Pathogen_certification" Description: ""
 --     * Slot: Pathogen_id Description: Autocreated FK slot
 --     * Slot: certification_id Description: Any certification related to the current product or service; e.g., ISO certification
+-- # Class: "Pathogen_fundingSource" Description: ""
+--     * Slot: Pathogen_id Description: Autocreated FK slot
+--     * Slot: fundingSource_id Description: A program, grant, or project providing financial support for the access or use of the product or service, either fully or partially
 -- # Class: "Pathogen_keyword" Description: ""
 --     * Slot: Pathogen_id Description: Autocreated FK slot
 --     * Slot: keyword Description: A keyword or tag describing the resource
@@ -2158,6 +2200,9 @@
 -- # Class: "Virus_certification" Description: ""
 --     * Slot: Virus_id Description: Autocreated FK slot
 --     * Slot: certification_id Description: Any certification related to the current product or service; e.g., ISO certification
+-- # Class: "Virus_fundingSource" Description: ""
+--     * Slot: Virus_id Description: Autocreated FK slot
+--     * Slot: fundingSource_id Description: A program, grant, or project providing financial support for the access or use of the product or service, either fully or partially
 -- # Class: "Virus_keyword" Description: ""
 --     * Slot: Virus_id Description: Autocreated FK slot
 --     * Slot: keyword Description: A keyword or tag describing the resource
@@ -2212,6 +2257,9 @@
 -- # Class: "Bacterium_certification" Description: ""
 --     * Slot: Bacterium_id Description: Autocreated FK slot
 --     * Slot: certification_id Description: Any certification related to the current product or service; e.g., ISO certification
+-- # Class: "Bacterium_fundingSource" Description: ""
+--     * Slot: Bacterium_id Description: Autocreated FK slot
+--     * Slot: fundingSource_id Description: A program, grant, or project providing financial support for the access or use of the product or service, either fully or partially
 -- # Class: "Bacterium_keyword" Description: ""
 --     * Slot: Bacterium_id Description: Autocreated FK slot
 --     * Slot: keyword Description: A keyword or tag describing the resource
@@ -2266,6 +2314,9 @@
 -- # Class: "Fungus_certification" Description: ""
 --     * Slot: Fungus_id Description: Autocreated FK slot
 --     * Slot: certification_id Description: Any certification related to the current product or service; e.g., ISO certification
+-- # Class: "Fungus_fundingSource" Description: ""
+--     * Slot: Fungus_id Description: Autocreated FK slot
+--     * Slot: fundingSource_id Description: A program, grant, or project providing financial support for the access or use of the product or service, either fully or partially
 -- # Class: "Fungus_keyword" Description: ""
 --     * Slot: Fungus_id Description: Autocreated FK slot
 --     * Slot: keyword Description: A keyword or tag describing the resource
@@ -2320,6 +2371,9 @@
 -- # Class: "Protozoan_certification" Description: ""
 --     * Slot: Protozoan_id Description: Autocreated FK slot
 --     * Slot: certification_id Description: Any certification related to the current product or service; e.g., ISO certification
+-- # Class: "Protozoan_fundingSource" Description: ""
+--     * Slot: Protozoan_id Description: Autocreated FK slot
+--     * Slot: fundingSource_id Description: A program, grant, or project providing financial support for the access or use of the product or service, either fully or partially
 -- # Class: "Protozoan_keyword" Description: ""
 --     * Slot: Protozoan_id Description: Autocreated FK slot
 --     * Slot: keyword Description: A keyword or tag describing the resource
@@ -2374,6 +2428,9 @@
 -- # Class: "Viroid_certification" Description: ""
 --     * Slot: Viroid_id Description: Autocreated FK slot
 --     * Slot: certification_id Description: Any certification related to the current product or service; e.g., ISO certification
+-- # Class: "Viroid_fundingSource" Description: ""
+--     * Slot: Viroid_id Description: Autocreated FK slot
+--     * Slot: fundingSource_id Description: A program, grant, or project providing financial support for the access or use of the product or service, either fully or partially
 -- # Class: "Viroid_keyword" Description: ""
 --     * Slot: Viroid_id Description: Autocreated FK slot
 --     * Slot: keyword Description: A keyword or tag describing the resource
@@ -2428,6 +2485,9 @@
 -- # Class: "Prion_certification" Description: ""
 --     * Slot: Prion_id Description: Autocreated FK slot
 --     * Slot: certification_id Description: Any certification related to the current product or service; e.g., ISO certification
+-- # Class: "Prion_fundingSource" Description: ""
+--     * Slot: Prion_id Description: Autocreated FK slot
+--     * Slot: fundingSource_id Description: A program, grant, or project providing financial support for the access or use of the product or service, either fully or partially
 -- # Class: "Prion_keyword" Description: ""
 --     * Slot: Prion_id Description: Autocreated FK slot
 --     * Slot: keyword Description: A keyword or tag describing the resource
@@ -2529,6 +2589,15 @@
 --     * Slot: identifier Description: A unique identifier of the resource being described or cataloged
 -- # Class: "Certification_iri" Description: ""
 --     * Slot: Certification_id Description: Autocreated FK slot
+--     * Slot: iri Description: International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs
+-- # Class: "FundingSource_keyword" Description: ""
+--     * Slot: FundingSource_id Description: Autocreated FK slot
+--     * Slot: keyword Description: A keyword or tag describing the resource
+-- # Class: "FundingSource_identifier" Description: ""
+--     * Slot: FundingSource_id Description: Autocreated FK slot
+--     * Slot: identifier Description: A unique identifier of the resource being described or cataloged
+-- # Class: "FundingSource_iri" Description: ""
+--     * Slot: FundingSource_id Description: Autocreated FK slot
 --     * Slot: iri Description: International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs
 
 CREATE TABLE "Resource" (
@@ -5125,6 +5194,21 @@ CREATE TABLE "Prion" (
 	FOREIGN KEY(provider_id) REFERENCES "Provider" (id), 
 	FOREIGN KEY("contactPoint_id") REFERENCES "ContactPoint" (id)
 );
+CREATE TABLE "FundingSource" (
+	id INTEGER NOT NULL, 
+	title TEXT NOT NULL, 
+	description TEXT, 
+	"fundingProgram" TEXT, 
+	"grantNumber" TEXT, 
+	"fundingPeriodStart" DATE, 
+	"fundingPeriodEnd" DATE, 
+	"eligibilityCriteria" TEXT, 
+	"dateIssued" DATETIME, 
+	"dateModified" DATETIME, 
+	funder_id INTEGER, 
+	PRIMARY KEY (id), 
+	FOREIGN KEY(funder_id) REFERENCES "Organization" (id)
+);
 CREATE TABLE "PathogenIdentification_hostType" (
 	"PathogenIdentification_id" INTEGER, 
 	"hostType" TEXT, 
@@ -5373,6 +5457,13 @@ CREATE TABLE "ProductOrService_certification" (
 	FOREIGN KEY("ProductOrService_id") REFERENCES "ProductOrService" (id), 
 	FOREIGN KEY(certification_id) REFERENCES "Certification" (id)
 );
+CREATE TABLE "ProductOrService_fundingSource" (
+	"ProductOrService_id" INTEGER, 
+	"fundingSource_id" INTEGER, 
+	PRIMARY KEY ("ProductOrService_id", "fundingSource_id"), 
+	FOREIGN KEY("ProductOrService_id") REFERENCES "ProductOrService" (id), 
+	FOREIGN KEY("fundingSource_id") REFERENCES "FundingSource" (id)
+);
 CREATE TABLE "ProductOrService_keyword" (
 	"ProductOrService_id" INTEGER, 
 	keyword TEXT, 
@@ -5454,6 +5545,13 @@ CREATE TABLE "Service_certification" (
 	FOREIGN KEY("Service_id") REFERENCES "Service" (id), 
 	FOREIGN KEY(certification_id) REFERENCES "Certification" (id)
 );
+CREATE TABLE "Service_fundingSource" (
+	"Service_id" INTEGER, 
+	"fundingSource_id" INTEGER, 
+	PRIMARY KEY ("Service_id", "fundingSource_id"), 
+	FOREIGN KEY("Service_id") REFERENCES "Service" (id), 
+	FOREIGN KEY("fundingSource_id") REFERENCES "FundingSource" (id)
+);
 CREATE TABLE "Service_keyword" (
 	"Service_id" INTEGER, 
 	keyword TEXT, 
@@ -5534,6 +5632,13 @@ CREATE TABLE "Product_certification" (
 	PRIMARY KEY ("Product_id", certification_id), 
 	FOREIGN KEY("Product_id") REFERENCES "Product" (id), 
 	FOREIGN KEY(certification_id) REFERENCES "Certification" (id)
+);
+CREATE TABLE "Product_fundingSource" (
+	"Product_id" INTEGER, 
+	"fundingSource_id" INTEGER, 
+	PRIMARY KEY ("Product_id", "fundingSource_id"), 
+	FOREIGN KEY("Product_id") REFERENCES "Product" (id), 
+	FOREIGN KEY("fundingSource_id") REFERENCES "FundingSource" (id)
 );
 CREATE TABLE "Product_keyword" (
 	"Product_id" INTEGER, 
@@ -5623,6 +5728,13 @@ CREATE TABLE "Antibody_certification" (
 	FOREIGN KEY("Antibody_id") REFERENCES "Antibody" (id), 
 	FOREIGN KEY(certification_id) REFERENCES "Certification" (id)
 );
+CREATE TABLE "Antibody_fundingSource" (
+	"Antibody_id" INTEGER, 
+	"fundingSource_id" INTEGER, 
+	PRIMARY KEY ("Antibody_id", "fundingSource_id"), 
+	FOREIGN KEY("Antibody_id") REFERENCES "Antibody" (id), 
+	FOREIGN KEY("fundingSource_id") REFERENCES "FundingSource" (id)
+);
 CREATE TABLE "Antibody_keyword" (
 	"Antibody_id" INTEGER, 
 	keyword TEXT, 
@@ -5710,6 +5822,13 @@ CREATE TABLE "Hybridoma_certification" (
 	PRIMARY KEY ("Hybridoma_id", certification_id), 
 	FOREIGN KEY("Hybridoma_id") REFERENCES "Hybridoma" (id), 
 	FOREIGN KEY(certification_id) REFERENCES "Certification" (id)
+);
+CREATE TABLE "Hybridoma_fundingSource" (
+	"Hybridoma_id" INTEGER, 
+	"fundingSource_id" INTEGER, 
+	PRIMARY KEY ("Hybridoma_id", "fundingSource_id"), 
+	FOREIGN KEY("Hybridoma_id") REFERENCES "Hybridoma" (id), 
+	FOREIGN KEY("fundingSource_id") REFERENCES "FundingSource" (id)
 );
 CREATE TABLE "Hybridoma_keyword" (
 	"Hybridoma_id" INTEGER, 
@@ -5874,6 +5993,13 @@ CREATE TABLE "Protein_certification" (
 	FOREIGN KEY("Protein_id") REFERENCES "Protein" (id), 
 	FOREIGN KEY(certification_id) REFERENCES "Certification" (id)
 );
+CREATE TABLE "Protein_fundingSource" (
+	"Protein_id" INTEGER, 
+	"fundingSource_id" INTEGER, 
+	PRIMARY KEY ("Protein_id", "fundingSource_id"), 
+	FOREIGN KEY("Protein_id") REFERENCES "Protein" (id), 
+	FOREIGN KEY("fundingSource_id") REFERENCES "FundingSource" (id)
+);
 CREATE TABLE "Protein_keyword" (
 	"Protein_id" INTEGER, 
 	keyword TEXT, 
@@ -5976,6 +6102,13 @@ CREATE TABLE "NucleicAcid_certification" (
 	FOREIGN KEY("NucleicAcid_id") REFERENCES "NucleicAcid" (id), 
 	FOREIGN KEY(certification_id) REFERENCES "Certification" (id)
 );
+CREATE TABLE "NucleicAcid_fundingSource" (
+	"NucleicAcid_id" INTEGER, 
+	"fundingSource_id" INTEGER, 
+	PRIMARY KEY ("NucleicAcid_id", "fundingSource_id"), 
+	FOREIGN KEY("NucleicAcid_id") REFERENCES "NucleicAcid" (id), 
+	FOREIGN KEY("fundingSource_id") REFERENCES "FundingSource" (id)
+);
 CREATE TABLE "NucleicAcid_keyword" (
 	"NucleicAcid_id" INTEGER, 
 	keyword TEXT, 
@@ -6064,6 +6197,13 @@ CREATE TABLE "DetectionKit_certification" (
 	FOREIGN KEY("DetectionKit_id") REFERENCES "DetectionKit" (id), 
 	FOREIGN KEY(certification_id) REFERENCES "Certification" (id)
 );
+CREATE TABLE "DetectionKit_fundingSource" (
+	"DetectionKit_id" INTEGER, 
+	"fundingSource_id" INTEGER, 
+	PRIMARY KEY ("DetectionKit_id", "fundingSource_id"), 
+	FOREIGN KEY("DetectionKit_id") REFERENCES "DetectionKit" (id), 
+	FOREIGN KEY("fundingSource_id") REFERENCES "FundingSource" (id)
+);
 CREATE TABLE "DetectionKit_keyword" (
 	"DetectionKit_id" INTEGER, 
 	keyword TEXT, 
@@ -6151,6 +6291,13 @@ CREATE TABLE "Bundle_certification" (
 	PRIMARY KEY ("Bundle_id", certification_id), 
 	FOREIGN KEY("Bundle_id") REFERENCES "Bundle" (id), 
 	FOREIGN KEY(certification_id) REFERENCES "Certification" (id)
+);
+CREATE TABLE "Bundle_fundingSource" (
+	"Bundle_id" INTEGER, 
+	"fundingSource_id" INTEGER, 
+	PRIMARY KEY ("Bundle_id", "fundingSource_id"), 
+	FOREIGN KEY("Bundle_id") REFERENCES "Bundle" (id), 
+	FOREIGN KEY("fundingSource_id") REFERENCES "FundingSource" (id)
 );
 CREATE TABLE "Bundle_keyword" (
 	"Bundle_id" INTEGER, 
@@ -6274,6 +6421,13 @@ CREATE TABLE "Pathogen_certification" (
 	PRIMARY KEY ("Pathogen_id", certification_id), 
 	FOREIGN KEY("Pathogen_id") REFERENCES "Pathogen" (id), 
 	FOREIGN KEY(certification_id) REFERENCES "Certification" (id)
+);
+CREATE TABLE "Pathogen_fundingSource" (
+	"Pathogen_id" INTEGER, 
+	"fundingSource_id" INTEGER, 
+	PRIMARY KEY ("Pathogen_id", "fundingSource_id"), 
+	FOREIGN KEY("Pathogen_id") REFERENCES "Pathogen" (id), 
+	FOREIGN KEY("fundingSource_id") REFERENCES "FundingSource" (id)
 );
 CREATE TABLE "Pathogen_keyword" (
 	"Pathogen_id" INTEGER, 
@@ -6405,6 +6559,13 @@ CREATE TABLE "Virus_certification" (
 	FOREIGN KEY("Virus_id") REFERENCES "Virus" (id), 
 	FOREIGN KEY(certification_id) REFERENCES "Certification" (id)
 );
+CREATE TABLE "Virus_fundingSource" (
+	"Virus_id" INTEGER, 
+	"fundingSource_id" INTEGER, 
+	PRIMARY KEY ("Virus_id", "fundingSource_id"), 
+	FOREIGN KEY("Virus_id") REFERENCES "Virus" (id), 
+	FOREIGN KEY("fundingSource_id") REFERENCES "FundingSource" (id)
+);
 CREATE TABLE "Virus_keyword" (
 	"Virus_id" INTEGER, 
 	keyword TEXT, 
@@ -6527,6 +6688,13 @@ CREATE TABLE "Bacterium_certification" (
 	PRIMARY KEY ("Bacterium_id", certification_id), 
 	FOREIGN KEY("Bacterium_id") REFERENCES "Bacterium" (id), 
 	FOREIGN KEY(certification_id) REFERENCES "Certification" (id)
+);
+CREATE TABLE "Bacterium_fundingSource" (
+	"Bacterium_id" INTEGER, 
+	"fundingSource_id" INTEGER, 
+	PRIMARY KEY ("Bacterium_id", "fundingSource_id"), 
+	FOREIGN KEY("Bacterium_id") REFERENCES "Bacterium" (id), 
+	FOREIGN KEY("fundingSource_id") REFERENCES "FundingSource" (id)
 );
 CREATE TABLE "Bacterium_keyword" (
 	"Bacterium_id" INTEGER, 
@@ -6651,6 +6819,13 @@ CREATE TABLE "Fungus_certification" (
 	FOREIGN KEY("Fungus_id") REFERENCES "Fungus" (id), 
 	FOREIGN KEY(certification_id) REFERENCES "Certification" (id)
 );
+CREATE TABLE "Fungus_fundingSource" (
+	"Fungus_id" INTEGER, 
+	"fundingSource_id" INTEGER, 
+	PRIMARY KEY ("Fungus_id", "fundingSource_id"), 
+	FOREIGN KEY("Fungus_id") REFERENCES "Fungus" (id), 
+	FOREIGN KEY("fundingSource_id") REFERENCES "FundingSource" (id)
+);
 CREATE TABLE "Fungus_keyword" (
 	"Fungus_id" INTEGER, 
 	keyword TEXT, 
@@ -6773,6 +6948,13 @@ CREATE TABLE "Protozoan_certification" (
 	PRIMARY KEY ("Protozoan_id", certification_id), 
 	FOREIGN KEY("Protozoan_id") REFERENCES "Protozoan" (id), 
 	FOREIGN KEY(certification_id) REFERENCES "Certification" (id)
+);
+CREATE TABLE "Protozoan_fundingSource" (
+	"Protozoan_id" INTEGER, 
+	"fundingSource_id" INTEGER, 
+	PRIMARY KEY ("Protozoan_id", "fundingSource_id"), 
+	FOREIGN KEY("Protozoan_id") REFERENCES "Protozoan" (id), 
+	FOREIGN KEY("fundingSource_id") REFERENCES "FundingSource" (id)
 );
 CREATE TABLE "Protozoan_keyword" (
 	"Protozoan_id" INTEGER, 
@@ -6897,6 +7079,13 @@ CREATE TABLE "Viroid_certification" (
 	FOREIGN KEY("Viroid_id") REFERENCES "Viroid" (id), 
 	FOREIGN KEY(certification_id) REFERENCES "Certification" (id)
 );
+CREATE TABLE "Viroid_fundingSource" (
+	"Viroid_id" INTEGER, 
+	"fundingSource_id" INTEGER, 
+	PRIMARY KEY ("Viroid_id", "fundingSource_id"), 
+	FOREIGN KEY("Viroid_id") REFERENCES "Viroid" (id), 
+	FOREIGN KEY("fundingSource_id") REFERENCES "FundingSource" (id)
+);
 CREATE TABLE "Viroid_keyword" (
 	"Viroid_id" INTEGER, 
 	keyword TEXT, 
@@ -7020,6 +7209,13 @@ CREATE TABLE "Prion_certification" (
 	FOREIGN KEY("Prion_id") REFERENCES "Prion" (id), 
 	FOREIGN KEY(certification_id) REFERENCES "Certification" (id)
 );
+CREATE TABLE "Prion_fundingSource" (
+	"Prion_id" INTEGER, 
+	"fundingSource_id" INTEGER, 
+	PRIMARY KEY ("Prion_id", "fundingSource_id"), 
+	FOREIGN KEY("Prion_id") REFERENCES "Prion" (id), 
+	FOREIGN KEY("fundingSource_id") REFERENCES "FundingSource" (id)
+);
 CREATE TABLE "Prion_keyword" (
 	"Prion_id" INTEGER, 
 	keyword TEXT, 
@@ -7037,4 +7233,22 @@ CREATE TABLE "Prion_iri" (
 	iri TEXT, 
 	PRIMARY KEY ("Prion_id", iri), 
 	FOREIGN KEY("Prion_id") REFERENCES "Prion" (id)
+);
+CREATE TABLE "FundingSource_keyword" (
+	"FundingSource_id" INTEGER, 
+	keyword TEXT, 
+	PRIMARY KEY ("FundingSource_id", keyword), 
+	FOREIGN KEY("FundingSource_id") REFERENCES "FundingSource" (id)
+);
+CREATE TABLE "FundingSource_identifier" (
+	"FundingSource_id" INTEGER, 
+	identifier TEXT, 
+	PRIMARY KEY ("FundingSource_id", identifier), 
+	FOREIGN KEY("FundingSource_id") REFERENCES "FundingSource" (id)
+);
+CREATE TABLE "FundingSource_iri" (
+	"FundingSource_id" INTEGER, 
+	iri TEXT, 
+	PRIMARY KEY ("FundingSource_id", iri), 
+	FOREIGN KEY("FundingSource_id") REFERENCES "FundingSource" (id)
 );

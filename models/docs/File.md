@@ -218,6 +218,7 @@ slot_usage:
     - ContactPoint
     - License
     - Certification
+    - FundingSource
     range: string
     required: false
     recommended: true
@@ -332,6 +333,7 @@ slot_usage:
     - ContactPoint
     - License
     - Certification
+    - FundingSource
     range: string
     required: false
     recommended: true
@@ -428,6 +430,7 @@ attributes:
     - ContactPoint
     - License
     - Certification
+    - FundingSource
     range: string
     required: false
     recommended: true

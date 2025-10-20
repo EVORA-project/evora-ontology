@@ -58,6 +58,8 @@ URI: [dcat:Resource](http://www.w3.org/ns/dcat#Resource)
         click License href "../License"
       Resource <|-- Certification
         click Certification href "../Certification"
+      Resource <|-- FundingSource
+        click FundingSource href "../FundingSource"
       
       Resource : dateIssued
         
@@ -96,6 +98,7 @@ URI: [dcat:Resource](http://www.w3.org/ns/dcat#Resource)
     * [ContactPoint](ContactPoint.md)
     * [License](License.md)
     * [Certification](Certification.md)
+    * [FundingSource](FundingSource.md)
 
 
 

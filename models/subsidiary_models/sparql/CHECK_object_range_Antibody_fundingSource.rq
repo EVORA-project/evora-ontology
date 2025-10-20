@@ -1,0 +1,83 @@
+PREFIX dct: <http://purl.org/dc/terms/>
+PREFIX dcat: <http://www.w3.org/ns/dcat#>
+PREFIX foaf: <http://xmlns.com/foaf/0.1/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX vcard: <http://www.w3.org/2006/vcard/ns#>
+PREFIX rov: <http://www.w3.org/ns/regorg#>
+PREFIX dcmi: <http://purl.org/dc/dcmitype/>
+PREFIX schema: <http://schema.org/>
+PREFIX wd: <http://www.wikidata.org/entity/>
+PREFIX wdp: <http://www.wikidata.org/prop/>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX adms: <http://www.w3.org/ns/adms#>
+PREFIX pav: <http://purl.org/pav/>
+PREFIX dwc: <http://rs.tdwg.org/dwc/terms/>
+PREFIX EVORAO: <https://w3id.org/evorao/>
+PREFIX ncit: <http://purl.obolibrary.org/obo/NCIT_>
+PREFIX geo: <http://purl.obolibrary.org/obo/GEO_>
+PREFIX iao: <http://purl.obolibrary.org/obo/IAO_>
+PREFIX sio: <http://semanticscience.org/resource/SIO_>
+PREFIX ro: <http://purl.obolibrary.org/obo/RO_>
+PREFIX sepio: <http://purl.obolibrary.org/obo/SEPIO_>
+PREFIX bao: <http://www.bioassayontology.org/bao#BAO_>
+PREFIX obi: <http://purl.obolibrary.org/obo/OBI_>
+PREFIX efo: <http://www.ebi.ac.uk/efo/EFO_>
+PREFIX mesh: <http://id.nlm.nih.gov/mesh/>
+PREFIX obib: <http://purl.obolibrary.org/obo/OBIB_>
+PREFIX afop: <http://purl.allotrope.org/ontologies/property#>
+PREFIX genepio: <http://purl.obolibrary.org/obo/GENEPIO_>
+PREFIX hso: <http://purl.obolibrary.org/obo/HSO_>
+PREFIX uniprotrdfs: <http://purl.uniprot.org/core/>
+PREFIX apollo: <http://purl.obolibrary.org/obo/APOLLO_SV_>
+PREFIX geno: <http://purl.obolibrary.org/obo/GENO_>
+PREFIX swo: <http://www.ebi.ac.uk/swo/SWO_>
+PREFIX cido: <http://purl.obolibrary.org/obo/CIDO_>
+PREFIX biolink: <https://w3id.org/biolink/vocab/>
+PREFIX reproduceme: <https://w3id.org/reproduceme#>
+PREFIX edam: <http://edamontology.org/data_>
+PREFIX omo: <http://purl.obolibrary.org/obo/OMO_>
+PREFIX taxrank: <http://purl.obolibrary.org/obo/TAXRANK_>
+PREFIX iceo: <http://purl.obolibrary.org/obo/ICEO_>
+PREFIX mi: <http://purl.obolibrary.org/obo/MI_>
+PREFIX snomed: <http://snomed.info/id/>
+PREFIX t4fs: <http://purl.obolibrary.org/obo/T4FS_>
+PREFIX ms: <http://purl.obolibrary.org/obo/MS_>
+PREFIX ncbitaxon: <http://purl.obolibrary.org/obo/NCBITaxon_>
+PREFIX clo: <http://purl.obolibrary.org/obo/CLO_>
+PREFIX bto: <http://purl.obolibrary.org/obo/BTO_>
+PREFIX chebi: <http://purl.obolibrary.org/obo/CHEBI_>
+PREFIX ido: <http://purl.obolibrary.org/obo/IDO_>
+PREFIX xco: <http://purl.obolibrary.org/obo/XCO_>
+PREFIX doid: <http://purl.obolibrary.org/obo/DOID_>
+PREFIX mondo: <http://purl.obolibrary.org/obo/MONDO_>
+PREFIX gr: <http://purl.org/goodrelations/v1#>
+PREFIX vo: <http://purl.obolibrary.org/obo/VO_>
+PREFIX linkml: <https://w3id.org/linkml/>
+
+SELECT
+  ?check
+  ?graph
+  ?subject
+  ?predicate
+  ?object
+WHERE {
+ GRAPH ?graph {
+  ?subject rdf:type EVORAO:Antibody ;
+     ?predicate ?object .
+  FILTER NOT EXISTS {
+    ?object rdf:type ?otype .
+    FILTER ( ?otype IN (
+      EVORAO:FundingSource
+      
+      ))
+  }
+ }
+ VALUES ?check { linkml:range }
+ VALUES ?predicate { EVORAO:fundingSource  }
+ 
+}  
+

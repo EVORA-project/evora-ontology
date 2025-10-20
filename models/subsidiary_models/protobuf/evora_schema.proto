@@ -1,7 +1,7 @@
  syntax="proto3";
  package
 // metamodel_version: 1.7.0
-// version: 1.0.10016
+// version: 1.0.10123
 // List of other names for things
 message AlternateName
  {
@@ -52,6 +52,7 @@ message Antibody
   string internalReference = 0
   string note = 0
   contactPoint contactPoint = 0
+ repeated  fundingSource fundingSource = 0
   string refSku = 0
  repeated  productCategory additionalCategory = 0
   iataClassification iataClassification = 0
@@ -116,6 +117,7 @@ message Bacterium
   string internalReference = 0
   string note = 0
   contactPoint contactPoint = 0
+ repeated  fundingSource fundingSource = 0
   string refSku = 0
  repeated  productCategory additionalCategory = 0
   iataClassification iataClassification = 0
@@ -191,6 +193,7 @@ message Bundle
   string internalReference = 0
   string note = 0
   contactPoint contactPoint = 0
+ repeated  fundingSource fundingSource = 0
   string refSku = 0
  repeated  productCategory additionalCategory = 0
   iataClassification iataClassification = 0
@@ -363,6 +366,7 @@ message DetectionKit
   string internalReference = 0
   string note = 0
   contactPoint contactPoint = 0
+ repeated  fundingSource fundingSource = 0
   string refSku = 0
  repeated  productCategory additionalCategory = 0
   iataClassification iataClassification = 0
@@ -430,6 +434,23 @@ message ExternalRelatedReference
   string referenceProviderPrefix = 0
   string referenceProviderName = 0
  }
+// A program, grant, or project providing financial support for the access or use of a product or service, either fully or partially
+message FundingSource
+ {
+ repeated  string keyword = 0
+  datetime dateIssued = 0
+  datetime dateModified = 0
+ repeated  string identifier = 0
+ repeated  uri iri = 0
+  string title = 0
+  string description = 0
+  string fundingProgram = 0
+  string grantNumber = 0
+  organization funder = 0
+  date fundingPeriodStart = 0
+  date fundingPeriodEnd = 0
+  string eligibilityCriteria = 0
+ }
 // The fungus as a biological material
 message Fungus
  {
@@ -465,6 +486,7 @@ message Fungus
   string internalReference = 0
   string note = 0
   contactPoint contactPoint = 0
+ repeated  fundingSource fundingSource = 0
   string refSku = 0
  repeated  productCategory additionalCategory = 0
   iataClassification iataClassification = 0
@@ -541,6 +563,7 @@ message Hybridoma
   string internalReference = 0
   string note = 0
   contactPoint contactPoint = 0
+ repeated  fundingSource fundingSource = 0
   string refSku = 0
  repeated  productCategory additionalCategory = 0
   iataClassification iataClassification = 0
@@ -726,6 +749,7 @@ message NucleicAcid
   string internalReference = 0
   string note = 0
   contactPoint contactPoint = 0
+ repeated  fundingSource fundingSource = 0
   string refSku = 0
  repeated  productCategory additionalCategory = 0
   iataClassification iataClassification = 0
@@ -890,6 +914,7 @@ message Prion
   string internalReference = 0
   string note = 0
   contactPoint contactPoint = 0
+ repeated  fundingSource fundingSource = 0
   string refSku = 0
  repeated  productCategory additionalCategory = 0
   iataClassification iataClassification = 0
@@ -953,6 +978,7 @@ message Product
   string internalReference = 0
   string note = 0
   contactPoint contactPoint = 0
+ repeated  fundingSource fundingSource = 0
   string refSku = 0
  repeated  productCategory additionalCategory = 0
   iataClassification iataClassification = 0
@@ -1038,6 +1064,7 @@ message Protein
   string internalReference = 0
   string note = 0
   contactPoint contactPoint = 0
+ repeated  fundingSource fundingSource = 0
   string refSku = 0
  repeated  productCategory additionalCategory = 0
   iataClassification iataClassification = 0
@@ -1097,6 +1124,7 @@ message Protozoan
   string internalReference = 0
   string note = 0
   contactPoint contactPoint = 0
+ repeated  fundingSource fundingSource = 0
   string refSku = 0
  repeated  productCategory additionalCategory = 0
   iataClassification iataClassification = 0
@@ -1255,6 +1283,7 @@ message Service
   string internalReference = 0
   string note = 0
   contactPoint contactPoint = 0
+ repeated  fundingSource fundingSource = 0
   string refSku = 0
  repeated  productCategory additionalCategory = 0
   string modelSpecies = 0
@@ -1440,6 +1469,7 @@ message Viroid
   string internalReference = 0
   string note = 0
   contactPoint contactPoint = 0
+ repeated  fundingSource fundingSource = 0
   string refSku = 0
  repeated  productCategory additionalCategory = 0
   iataClassification iataClassification = 0
@@ -1503,6 +1533,7 @@ message Virus
   string internalReference = 0
   string note = 0
   contactPoint contactPoint = 0
+ repeated  fundingSource fundingSource = 0
   string refSku = 0
  repeated  productCategory additionalCategory = 0
   iataClassification iataClassification = 0

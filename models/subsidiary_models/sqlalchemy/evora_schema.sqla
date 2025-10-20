@@ -3517,6 +3517,24 @@ class ProductOrServiceCertification(Base):
     
 
 
+class ProductOrServiceFundingSource(Base):
+    """
+    
+    """
+    __tablename__ = 'ProductOrService_fundingSource'
+
+    ProductOrService_id = Column(Integer(), ForeignKey('ProductOrService.id'), primary_key=True)
+    fundingSource_id = Column(Integer(), ForeignKey('FundingSource.id'), primary_key=True)
+    
+
+    def __repr__(self):
+        return f"ProductOrService_fundingSource(ProductOrService_id={self.ProductOrService_id},fundingSource_id={self.fundingSource_id},)"
+
+
+
+    
+
+
 class ProductOrServiceKeyword(Base):
     """
     
@@ -3733,6 +3751,24 @@ class ServiceCertification(Base):
     
 
 
+class ServiceFundingSource(Base):
+    """
+    
+    """
+    __tablename__ = 'Service_fundingSource'
+
+    Service_id = Column(Integer(), ForeignKey('Service.id'), primary_key=True)
+    fundingSource_id = Column(Integer(), ForeignKey('FundingSource.id'), primary_key=True)
+    
+
+    def __repr__(self):
+        return f"Service_fundingSource(Service_id={self.Service_id},fundingSource_id={self.fundingSource_id},)"
+
+
+
+    
+
+
 class ServiceKeyword(Base):
     """
     
@@ -3943,6 +3979,24 @@ class ProductCertification(Base):
 
     def __repr__(self):
         return f"Product_certification(Product_id={self.Product_id},certification_id={self.certification_id},)"
+
+
+
+    
+
+
+class ProductFundingSource(Base):
+    """
+    
+    """
+    __tablename__ = 'Product_fundingSource'
+
+    Product_id = Column(Integer(), ForeignKey('Product.id'), primary_key=True)
+    fundingSource_id = Column(Integer(), ForeignKey('FundingSource.id'), primary_key=True)
+    
+
+    def __repr__(self):
+        return f"Product_fundingSource(Product_id={self.Product_id},fundingSource_id={self.fundingSource_id},)"
 
 
 
@@ -4183,6 +4237,24 @@ class AntibodyCertification(Base):
     
 
 
+class AntibodyFundingSource(Base):
+    """
+    
+    """
+    __tablename__ = 'Antibody_fundingSource'
+
+    Antibody_id = Column(Integer(), ForeignKey('Antibody.id'), primary_key=True)
+    fundingSource_id = Column(Integer(), ForeignKey('FundingSource.id'), primary_key=True)
+    
+
+    def __repr__(self):
+        return f"Antibody_fundingSource(Antibody_id={self.Antibody_id},fundingSource_id={self.fundingSource_id},)"
+
+
+
+    
+
+
 class AntibodyKeyword(Base):
     """
     
@@ -4411,6 +4483,24 @@ class HybridomaCertification(Base):
 
     def __repr__(self):
         return f"Hybridoma_certification(Hybridoma_id={self.Hybridoma_id},certification_id={self.certification_id},)"
+
+
+
+    
+
+
+class HybridomaFundingSource(Base):
+    """
+    
+    """
+    __tablename__ = 'Hybridoma_fundingSource'
+
+    Hybridoma_id = Column(Integer(), ForeignKey('Hybridoma.id'), primary_key=True)
+    fundingSource_id = Column(Integer(), ForeignKey('FundingSource.id'), primary_key=True)
+    
+
+    def __repr__(self):
+        return f"Hybridoma_fundingSource(Hybridoma_id={self.Hybridoma_id},fundingSource_id={self.fundingSource_id},)"
 
 
 
@@ -4867,6 +4957,24 @@ class ProteinCertification(Base):
     
 
 
+class ProteinFundingSource(Base):
+    """
+    
+    """
+    __tablename__ = 'Protein_fundingSource'
+
+    Protein_id = Column(Integer(), ForeignKey('Protein.id'), primary_key=True)
+    fundingSource_id = Column(Integer(), ForeignKey('FundingSource.id'), primary_key=True)
+    
+
+    def __repr__(self):
+        return f"Protein_fundingSource(Protein_id={self.Protein_id},fundingSource_id={self.fundingSource_id},)"
+
+
+
+    
+
+
 class ProteinKeyword(Base):
     """
     
@@ -5137,6 +5245,24 @@ class NucleicAcidCertification(Base):
     
 
 
+class NucleicAcidFundingSource(Base):
+    """
+    
+    """
+    __tablename__ = 'NucleicAcid_fundingSource'
+
+    NucleicAcid_id = Column(Integer(), ForeignKey('NucleicAcid.id'), primary_key=True)
+    fundingSource_id = Column(Integer(), ForeignKey('FundingSource.id'), primary_key=True)
+    
+
+    def __repr__(self):
+        return f"NucleicAcid_fundingSource(NucleicAcid_id={self.NucleicAcid_id},fundingSource_id={self.fundingSource_id},)"
+
+
+
+    
+
+
 class NucleicAcidKeyword(Base):
     """
     
@@ -5371,6 +5497,24 @@ class DetectionKitCertification(Base):
     
 
 
+class DetectionKitFundingSource(Base):
+    """
+    
+    """
+    __tablename__ = 'DetectionKit_fundingSource'
+
+    DetectionKit_id = Column(Integer(), ForeignKey('DetectionKit.id'), primary_key=True)
+    fundingSource_id = Column(Integer(), ForeignKey('FundingSource.id'), primary_key=True)
+    
+
+    def __repr__(self):
+        return f"DetectionKit_fundingSource(DetectionKit_id={self.DetectionKit_id},fundingSource_id={self.fundingSource_id},)"
+
+
+
+    
+
+
 class DetectionKitKeyword(Base):
     """
     
@@ -5599,6 +5743,24 @@ class BundleCertification(Base):
 
     def __repr__(self):
         return f"Bundle_certification(Bundle_id={self.Bundle_id},certification_id={self.certification_id},)"
+
+
+
+    
+
+
+class BundleFundingSource(Base):
+    """
+    
+    """
+    __tablename__ = 'Bundle_fundingSource'
+
+    Bundle_id = Column(Integer(), ForeignKey('Bundle.id'), primary_key=True)
+    fundingSource_id = Column(Integer(), ForeignKey('FundingSource.id'), primary_key=True)
+    
+
+    def __repr__(self):
+        return f"Bundle_fundingSource(Bundle_id={self.Bundle_id},fundingSource_id={self.fundingSource_id},)"
 
 
 
@@ -5923,6 +6085,24 @@ class PathogenCertification(Base):
 
     def __repr__(self):
         return f"Pathogen_certification(Pathogen_id={self.Pathogen_id},certification_id={self.certification_id},)"
+
+
+
+    
+
+
+class PathogenFundingSource(Base):
+    """
+    
+    """
+    __tablename__ = 'Pathogen_fundingSource'
+
+    Pathogen_id = Column(Integer(), ForeignKey('Pathogen.id'), primary_key=True)
+    fundingSource_id = Column(Integer(), ForeignKey('FundingSource.id'), primary_key=True)
+    
+
+    def __repr__(self):
+        return f"Pathogen_fundingSource(Pathogen_id={self.Pathogen_id},fundingSource_id={self.fundingSource_id},)"
 
 
 
@@ -6271,6 +6451,24 @@ class VirusCertification(Base):
     
 
 
+class VirusFundingSource(Base):
+    """
+    
+    """
+    __tablename__ = 'Virus_fundingSource'
+
+    Virus_id = Column(Integer(), ForeignKey('Virus.id'), primary_key=True)
+    fundingSource_id = Column(Integer(), ForeignKey('FundingSource.id'), primary_key=True)
+    
+
+    def __repr__(self):
+        return f"Virus_fundingSource(Virus_id={self.Virus_id},fundingSource_id={self.fundingSource_id},)"
+
+
+
+    
+
+
 class VirusKeyword(Base):
     """
     
@@ -6589,6 +6787,24 @@ class BacteriumCertification(Base):
 
     def __repr__(self):
         return f"Bacterium_certification(Bacterium_id={self.Bacterium_id},certification_id={self.certification_id},)"
+
+
+
+    
+
+
+class BacteriumFundingSource(Base):
+    """
+    
+    """
+    __tablename__ = 'Bacterium_fundingSource'
+
+    Bacterium_id = Column(Integer(), ForeignKey('Bacterium.id'), primary_key=True)
+    fundingSource_id = Column(Integer(), ForeignKey('FundingSource.id'), primary_key=True)
+    
+
+    def __repr__(self):
+        return f"Bacterium_fundingSource(Bacterium_id={self.Bacterium_id},fundingSource_id={self.fundingSource_id},)"
 
 
 
@@ -6919,6 +7135,24 @@ class FungusCertification(Base):
     
 
 
+class FungusFundingSource(Base):
+    """
+    
+    """
+    __tablename__ = 'Fungus_fundingSource'
+
+    Fungus_id = Column(Integer(), ForeignKey('Fungus.id'), primary_key=True)
+    fundingSource_id = Column(Integer(), ForeignKey('FundingSource.id'), primary_key=True)
+    
+
+    def __repr__(self):
+        return f"Fungus_fundingSource(Fungus_id={self.Fungus_id},fundingSource_id={self.fundingSource_id},)"
+
+
+
+    
+
+
 class FungusKeyword(Base):
     """
     
@@ -7237,6 +7471,24 @@ class ProtozoanCertification(Base):
 
     def __repr__(self):
         return f"Protozoan_certification(Protozoan_id={self.Protozoan_id},certification_id={self.certification_id},)"
+
+
+
+    
+
+
+class ProtozoanFundingSource(Base):
+    """
+    
+    """
+    __tablename__ = 'Protozoan_fundingSource'
+
+    Protozoan_id = Column(Integer(), ForeignKey('Protozoan.id'), primary_key=True)
+    fundingSource_id = Column(Integer(), ForeignKey('FundingSource.id'), primary_key=True)
+    
+
+    def __repr__(self):
+        return f"Protozoan_fundingSource(Protozoan_id={self.Protozoan_id},fundingSource_id={self.fundingSource_id},)"
 
 
 
@@ -7567,6 +7819,24 @@ class ViroidCertification(Base):
     
 
 
+class ViroidFundingSource(Base):
+    """
+    
+    """
+    __tablename__ = 'Viroid_fundingSource'
+
+    Viroid_id = Column(Integer(), ForeignKey('Viroid.id'), primary_key=True)
+    fundingSource_id = Column(Integer(), ForeignKey('FundingSource.id'), primary_key=True)
+    
+
+    def __repr__(self):
+        return f"Viroid_fundingSource(Viroid_id={self.Viroid_id},fundingSource_id={self.fundingSource_id},)"
+
+
+
+    
+
+
 class ViroidKeyword(Base):
     """
     
@@ -7885,6 +8155,24 @@ class PrionCertification(Base):
 
     def __repr__(self):
         return f"Prion_certification(Prion_id={self.Prion_id},certification_id={self.certification_id},)"
+
+
+
+    
+
+
+class PrionFundingSource(Base):
+    """
+    
+    """
+    __tablename__ = 'Prion_fundingSource'
+
+    Prion_id = Column(Integer(), ForeignKey('Prion.id'), primary_key=True)
+    fundingSource_id = Column(Integer(), ForeignKey('FundingSource.id'), primary_key=True)
+    
+
+    def __repr__(self):
+        return f"Prion_fundingSource(Prion_id={self.Prion_id},fundingSource_id={self.fundingSource_id},)"
 
 
 
@@ -8497,6 +8785,60 @@ class CertificationIri(Base):
 
     def __repr__(self):
         return f"Certification_iri(Certification_id={self.Certification_id},iri={self.iri},)"
+
+
+
+    
+
+
+class FundingSourceKeyword(Base):
+    """
+    
+    """
+    __tablename__ = 'FundingSource_keyword'
+
+    FundingSource_id = Column(Integer(), ForeignKey('FundingSource.id'), primary_key=True)
+    keyword = Column(Text(), primary_key=True)
+    
+
+    def __repr__(self):
+        return f"FundingSource_keyword(FundingSource_id={self.FundingSource_id},keyword={self.keyword},)"
+
+
+
+    
+
+
+class FundingSourceIdentifier(Base):
+    """
+    
+    """
+    __tablename__ = 'FundingSource_identifier'
+
+    FundingSource_id = Column(Integer(), ForeignKey('FundingSource.id'), primary_key=True)
+    identifier = Column(Text(), primary_key=True)
+    
+
+    def __repr__(self):
+        return f"FundingSource_identifier(FundingSource_id={self.FundingSource_id},identifier={self.identifier},)"
+
+
+
+    
+
+
+class FundingSourceIri(Base):
+    """
+    
+    """
+    __tablename__ = 'FundingSource_iri'
+
+    FundingSource_id = Column(Integer(), ForeignKey('FundingSource.id'), primary_key=True)
+    iri = Column(Text(), primary_key=True)
+    
+
+    def __repr__(self):
+        return f"FundingSource_iri(FundingSource_id={self.FundingSource_id},iri={self.iri},)"
 
 
 
@@ -9319,6 +9661,54 @@ class Certification(Resource):
 
     def __repr__(self):
         return f"Certification(id={self.id},title={self.title},description={self.description},resourceUrl={self.resourceUrl},dateIssued={self.dateIssued},dateModified={self.dateModified},logo_id={self.logo_id},)"
+
+
+
+    
+    # Using concrete inheritance: see https://docs.sqlalchemy.org/en/14/orm/inheritance.html
+    __mapper_args__ = {
+        'concrete': True
+    }
+    
+
+
+class FundingSource(Resource):
+    """
+    A program, grant, or project providing financial support for the access or use of a product or service, either fully or partially
+    """
+    __tablename__ = 'FundingSource'
+
+    id = Column(Integer(), primary_key=True, autoincrement=True , nullable=False )
+    title = Column(Text(), nullable=False )
+    description = Column(Text())
+    fundingProgram = Column(Text())
+    grantNumber = Column(Text())
+    fundingPeriodStart = Column(Date())
+    fundingPeriodEnd = Column(Date())
+    eligibilityCriteria = Column(Text())
+    dateIssued = Column(DateTime())
+    dateModified = Column(DateTime())
+    funder_id = Column(Integer(), ForeignKey('Organization.id'))
+    funder = relationship("Organization", uselist=False, foreign_keys=[funder_id])
+    
+    
+    keyword_rel = relationship( "FundingSourceKeyword" )
+    keyword = association_proxy("keyword_rel", "keyword",
+                                  creator=lambda x_: FundingSourceKeyword(keyword=x_))
+    
+    
+    identifier_rel = relationship( "FundingSourceIdentifier" )
+    identifier = association_proxy("identifier_rel", "identifier",
+                                  creator=lambda x_: FundingSourceIdentifier(identifier=x_))
+    
+    
+    iri_rel = relationship( "FundingSourceIri" )
+    iri = association_proxy("iri_rel", "iri",
+                                  creator=lambda x_: FundingSourceIri(iri=x_))
+    
+
+    def __repr__(self):
+        return f"FundingSource(id={self.id},title={self.title},description={self.description},fundingProgram={self.fundingProgram},grantNumber={self.grantNumber},fundingPeriodStart={self.fundingPeriodStart},fundingPeriodEnd={self.fundingPeriodEnd},eligibilityCriteria={self.eligibilityCriteria},dateIssued={self.dateIssued},dateModified={self.dateModified},funder_id={self.funder_id},)"
 
 
 
@@ -10764,6 +11154,10 @@ class ProductOrService(Dataset):
     certification = relationship( "Certification", secondary="ProductOrService_certification")
     
     
+    # ManyToMany
+    fundingSource = relationship( "FundingSource", secondary="ProductOrService_fundingSource")
+    
+    
     keyword_rel = relationship( "ProductOrServiceKeyword" )
     keyword = association_proxy("keyword_rel", "keyword",
                                   creator=lambda x_: ProductOrServiceKeyword(keyword=x_))
@@ -11503,6 +11897,10 @@ class Service(ProductOrService):
     certification = relationship( "Certification", secondary="Service_certification")
     
     
+    # ManyToMany
+    fundingSource = relationship( "FundingSource", secondary="Service_fundingSource")
+    
+    
     keyword_rel = relationship( "ServiceKeyword" )
     keyword = association_proxy("keyword_rel", "keyword",
                                   creator=lambda x_: ServiceKeyword(keyword=x_))
@@ -11610,6 +12008,10 @@ class Product(ProductOrService):
     
     # ManyToMany
     certification = relationship( "Certification", secondary="Product_certification")
+    
+    
+    # ManyToMany
+    fundingSource = relationship( "FundingSource", secondary="Product_fundingSource")
     
     
     keyword_rel = relationship( "ProductKeyword" )
@@ -11727,6 +12129,10 @@ class Antibody(Product):
     
     # ManyToMany
     certification = relationship( "Certification", secondary="Antibody_certification")
+    
+    
+    # ManyToMany
+    fundingSource = relationship( "FundingSource", secondary="Antibody_fundingSource")
     
     
     keyword_rel = relationship( "AntibodyKeyword" )
@@ -11901,6 +12307,10 @@ class Protein(Product):
     certification = relationship( "Certification", secondary="Protein_certification")
     
     
+    # ManyToMany
+    fundingSource = relationship( "FundingSource", secondary="Protein_fundingSource")
+    
+    
     keyword_rel = relationship( "ProteinKeyword" )
     keyword = association_proxy("keyword_rel", "keyword",
                                   creator=lambda x_: ProteinKeyword(keyword=x_))
@@ -12036,6 +12446,10 @@ class NucleicAcid(Product):
     certification = relationship( "Certification", secondary="NucleicAcid_certification")
     
     
+    # ManyToMany
+    fundingSource = relationship( "FundingSource", secondary="NucleicAcid_fundingSource")
+    
+    
     keyword_rel = relationship( "NucleicAcidKeyword" )
     keyword = association_proxy("keyword_rel", "keyword",
                                   creator=lambda x_: NucleicAcidKeyword(keyword=x_))
@@ -12152,6 +12566,10 @@ class DetectionKit(Product):
     certification = relationship( "Certification", secondary="DetectionKit_certification")
     
     
+    # ManyToMany
+    fundingSource = relationship( "FundingSource", secondary="DetectionKit_fundingSource")
+    
+    
     keyword_rel = relationship( "DetectionKitKeyword" )
     keyword = association_proxy("keyword_rel", "keyword",
                                   creator=lambda x_: DetectionKitKeyword(keyword=x_))
@@ -12263,6 +12681,10 @@ class Bundle(Product):
     
     # ManyToMany
     certification = relationship( "Certification", secondary="Bundle_certification")
+    
+    
+    # ManyToMany
+    fundingSource = relationship( "FundingSource", secondary="Bundle_fundingSource")
     
     
     keyword_rel = relationship( "BundleKeyword" )
@@ -12411,6 +12833,10 @@ class Pathogen(Product):
     certification = relationship( "Certification", secondary="Pathogen_certification")
     
     
+    # ManyToMany
+    fundingSource = relationship( "FundingSource", secondary="Pathogen_fundingSource")
+    
+    
     keyword_rel = relationship( "PathogenKeyword" )
     keyword = association_proxy("keyword_rel", "keyword",
                                   creator=lambda x_: PathogenKeyword(keyword=x_))
@@ -12527,6 +12953,10 @@ class Hybridoma(Antibody):
     
     # ManyToMany
     certification = relationship( "Certification", secondary="Hybridoma_certification")
+    
+    
+    # ManyToMany
+    fundingSource = relationship( "FundingSource", secondary="Hybridoma_fundingSource")
     
     
     keyword_rel = relationship( "HybridomaKeyword" )
@@ -12681,6 +13111,10 @@ class Virus(Pathogen):
     certification = relationship( "Certification", secondary="Virus_certification")
     
     
+    # ManyToMany
+    fundingSource = relationship( "FundingSource", secondary="Virus_fundingSource")
+    
+    
     keyword_rel = relationship( "VirusKeyword" )
     keyword = association_proxy("keyword_rel", "keyword",
                                   creator=lambda x_: VirusKeyword(keyword=x_))
@@ -12825,6 +13259,10 @@ class Bacterium(Pathogen):
     
     # ManyToMany
     certification = relationship( "Certification", secondary="Bacterium_certification")
+    
+    
+    # ManyToMany
+    fundingSource = relationship( "FundingSource", secondary="Bacterium_fundingSource")
     
     
     keyword_rel = relationship( "BacteriumKeyword" )
@@ -12973,6 +13411,10 @@ class Fungus(Pathogen):
     certification = relationship( "Certification", secondary="Fungus_certification")
     
     
+    # ManyToMany
+    fundingSource = relationship( "FundingSource", secondary="Fungus_fundingSource")
+    
+    
     keyword_rel = relationship( "FungusKeyword" )
     keyword = association_proxy("keyword_rel", "keyword",
                                   creator=lambda x_: FungusKeyword(keyword=x_))
@@ -13117,6 +13559,10 @@ class Protozoan(Pathogen):
     
     # ManyToMany
     certification = relationship( "Certification", secondary="Protozoan_certification")
+    
+    
+    # ManyToMany
+    fundingSource = relationship( "FundingSource", secondary="Protozoan_fundingSource")
     
     
     keyword_rel = relationship( "ProtozoanKeyword" )
@@ -13265,6 +13711,10 @@ class Viroid(Pathogen):
     certification = relationship( "Certification", secondary="Viroid_certification")
     
     
+    # ManyToMany
+    fundingSource = relationship( "FundingSource", secondary="Viroid_fundingSource")
+    
+    
     keyword_rel = relationship( "ViroidKeyword" )
     keyword = association_proxy("keyword_rel", "keyword",
                                   creator=lambda x_: ViroidKeyword(keyword=x_))
@@ -13409,6 +13859,10 @@ class Prion(Pathogen):
     
     # ManyToMany
     certification = relationship( "Certification", secondary="Prion_certification")
+    
+    
+    # ManyToMany
+    fundingSource = relationship( "FundingSource", secondary="Prion_fundingSource")
     
     
     keyword_rel = relationship( "PrionKeyword" )

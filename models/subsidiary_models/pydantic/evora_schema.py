@@ -27,7 +27,7 @@ from pydantic import (
 
 
 metamodel_version = "None"
-version = "1.0.10016"
+version = "1.0.10123"
 
 
 class ConfiguredBaseModel(BaseModel):
@@ -99,7 +99,7 @@ linkml_meta = LinkMLMeta({'comments': ['EVORAO is an ontology for standardized m
                     'pathogens. EVORAO is compatible with DCAT, making it '
                     'well-suited for efficiently cataloguing pathogen collections '
                     'and related resources.',
-     'generation_date': '2025-10-01T10:56:28',
+     'generation_date': '2025-10-20T12:18:15',
      'id': 'https://w3id.org/evorao/',
      'imports': ['linkml:types'],
      'in_language': 'en',
@@ -383,7 +383,8 @@ class Dataset(Resource):
                                                       'File',
                                                       'ContactPoint',
                                                       'License',
-                                                      'Certification'],
+                                                      'Certification',
+                                                      'FundingSource'],
                                         'exact_mappings': ['schema:description'],
                                         'multivalued': False,
                                         'name': 'description',
@@ -407,7 +408,8 @@ class Dataset(Resource):
                                                 'Publication',
                                                 'Term',
                                                 'License',
-                                                'Certification'],
+                                                'Certification',
+                                                'FundingSource'],
                                   'exact_mappings': ['schema:name', 'rdfs:label'],
                                   'multivalued': False,
                                   'name': 'title',
@@ -442,7 +444,8 @@ class Dataset(Resource):
                        'Publication',
                        'Term',
                        'License',
-                       'Certification'],
+                       'Certification',
+                       'FundingSource'],
          'exact_mappings': ['schema:name', 'rdfs:label'],
          'slot_uri': 'dct:title'} })
     description: str = Field(default=..., title="description", description="""A short explanation of the characteristics, features, or nature of the current item""", json_schema_extra = { "linkml_meta": {'alias': 'description',
@@ -456,7 +459,8 @@ class Dataset(Resource):
                        'File',
                        'ContactPoint',
                        'License',
-                       'Certification'],
+                       'Certification',
+                       'FundingSource'],
          'exact_mappings': ['schema:description'],
          'recommended': True,
          'slot_uri': 'dct:description'} })
@@ -527,7 +531,8 @@ class DataService(Resource):
                                                       'File',
                                                       'ContactPoint',
                                                       'License',
-                                                      'Certification'],
+                                                      'Certification',
+                                                      'FundingSource'],
                                         'exact_mappings': ['schema:description'],
                                         'multivalued': False,
                                         'name': 'description',
@@ -577,7 +582,8 @@ class DataService(Resource):
                                                 'Publication',
                                                 'Term',
                                                 'License',
-                                                'Certification'],
+                                                'Certification',
+                                                'FundingSource'],
                                   'exact_mappings': ['schema:name', 'rdfs:label'],
                                   'multivalued': False,
                                   'name': 'title',
@@ -599,7 +605,8 @@ class DataService(Resource):
                        'Publication',
                        'Term',
                        'License',
-                       'Certification'],
+                       'Certification',
+                       'FundingSource'],
          'exact_mappings': ['schema:name', 'rdfs:label'],
          'slot_uri': 'dct:title'} })
     description: Optional[str] = Field(default=None, title="description", description="""A short explanation of the characteristics, features, or nature of the current item""", json_schema_extra = { "linkml_meta": {'alias': 'description',
@@ -613,7 +620,8 @@ class DataService(Resource):
                        'File',
                        'ContactPoint',
                        'License',
-                       'Certification'],
+                       'Certification',
+                       'FundingSource'],
          'exact_mappings': ['schema:description'],
          'recommended': True,
          'slot_uri': 'dct:description'} })
@@ -777,7 +785,8 @@ class Catalogue(Dataset):
                        'Publication',
                        'Term',
                        'License',
-                       'Certification'],
+                       'Certification',
+                       'FundingSource'],
          'exact_mappings': ['schema:name', 'rdfs:label'],
          'slot_uri': 'dct:title'} })
     description: str = Field(default=..., title="description", description="""A short explanation of the characteristics, features, or nature of the current item""", json_schema_extra = { "linkml_meta": {'alias': 'description',
@@ -791,7 +800,8 @@ class Catalogue(Dataset):
                        'File',
                        'ContactPoint',
                        'License',
-                       'Certification'],
+                       'Certification',
+                       'FundingSource'],
          'exact_mappings': ['schema:description'],
          'recommended': True,
          'slot_uri': 'dct:description'} })
@@ -951,7 +961,8 @@ class Taxonomy(Catalogue):
                        'Publication',
                        'Term',
                        'License',
-                       'Certification'],
+                       'Certification',
+                       'FundingSource'],
          'exact_mappings': ['schema:name', 'rdfs:label'],
          'slot_uri': 'dct:title'} })
     description: str = Field(default=..., title="description", description="""A short explanation of the characteristics, features, or nature of the current item""", json_schema_extra = { "linkml_meta": {'alias': 'description',
@@ -965,7 +976,8 @@ class Taxonomy(Catalogue):
                        'File',
                        'ContactPoint',
                        'License',
-                       'Certification'],
+                       'Certification',
+                       'FundingSource'],
          'exact_mappings': ['schema:description'],
          'recommended': True,
          'slot_uri': 'dct:description'} })
@@ -1205,7 +1217,8 @@ class DataProvider(DataService):
                        'Publication',
                        'Term',
                        'License',
-                       'Certification'],
+                       'Certification',
+                       'FundingSource'],
          'exact_mappings': ['schema:name', 'rdfs:label'],
          'slot_uri': 'dct:title'} })
     description: Optional[str] = Field(default=None, title="description", description="""A short explanation of the characteristics, features, or nature of the current item""", json_schema_extra = { "linkml_meta": {'alias': 'description',
@@ -1219,7 +1232,8 @@ class DataProvider(DataService):
                        'File',
                        'ContactPoint',
                        'License',
-                       'Certification'],
+                       'Certification',
+                       'FundingSource'],
          'exact_mappings': ['schema:description'],
          'recommended': True,
          'slot_uri': 'dct:description'} })
@@ -1532,7 +1546,8 @@ class Publication(Resource):
                                                 'DataService',
                                                 'Term',
                                                 'License',
-                                                'Certification'],
+                                                'Certification',
+                                                'FundingSource'],
                                   'exact_mappings': ['schema:name', 'rdfs:label'],
                                   'multivalued': False,
                                   'name': 'title',
@@ -1554,7 +1569,8 @@ class Publication(Resource):
                        'DataService',
                        'Term',
                        'License',
-                       'Certification'],
+                       'Certification',
+                       'FundingSource'],
          'exact_mappings': ['schema:name', 'rdfs:label'],
          'slot_uri': 'dct:title'} })
     authors: str = Field(default=..., title="authors", description="""The list of authors""", json_schema_extra = { "linkml_meta": {'alias': 'authors',
@@ -1663,7 +1679,8 @@ class Vocabulary(Catalogue):
                        'Publication',
                        'Term',
                        'License',
-                       'Certification'],
+                       'Certification',
+                       'FundingSource'],
          'exact_mappings': ['schema:name', 'rdfs:label'],
          'slot_uri': 'dct:title'} })
     description: str = Field(default=..., title="description", description="""A short explanation of the characteristics, features, or nature of the current item""", json_schema_extra = { "linkml_meta": {'alias': 'description',
@@ -1677,7 +1694,8 @@ class Vocabulary(Catalogue):
                        'File',
                        'ContactPoint',
                        'License',
-                       'Certification'],
+                       'Certification',
+                       'FundingSource'],
          'exact_mappings': ['schema:description'],
          'recommended': True,
          'slot_uri': 'dct:description'} })
@@ -1749,7 +1767,8 @@ class Term(Resource):
                                                       'File',
                                                       'ContactPoint',
                                                       'License',
-                                                      'Certification'],
+                                                      'Certification',
+                                                      'FundingSource'],
                                         'exact_mappings': ['schema:description'],
                                         'multivalued': False,
                                         'name': 'description',
@@ -1785,7 +1804,8 @@ class Term(Resource):
                                                 'DataService',
                                                 'Publication',
                                                 'License',
-                                                'Certification'],
+                                                'Certification',
+                                                'FundingSource'],
                                   'exact_mappings': ['schema:name', 'rdfs:label'],
                                   'multivalued': False,
                                   'name': 'title',
@@ -1822,7 +1842,8 @@ class Term(Resource):
                        'DataService',
                        'Publication',
                        'License',
-                       'Certification'],
+                       'Certification',
+                       'FundingSource'],
          'exact_mappings': ['schema:name', 'rdfs:label'],
          'slot_uri': 'dct:title'} })
     description: Optional[str] = Field(default=None, title="description", description="""A short explanation of the characteristics, features, or nature of the current item""", json_schema_extra = { "linkml_meta": {'alias': 'description',
@@ -1836,7 +1857,8 @@ class Term(Resource):
                        'File',
                        'ContactPoint',
                        'License',
-                       'Certification'],
+                       'Certification',
+                       'FundingSource'],
          'exact_mappings': ['schema:description'],
          'recommended': True,
          'slot_uri': 'dct:description'} })
@@ -1965,7 +1987,8 @@ class CommonName(Term):
                        'DataService',
                        'Publication',
                        'License',
-                       'Certification'],
+                       'Certification',
+                       'FundingSource'],
          'exact_mappings': ['schema:name', 'rdfs:label'],
          'slot_uri': 'dct:title'} })
     description: Optional[str] = Field(default=None, title="description", description="""A short explanation of the characteristics, features, or nature of the current item""", json_schema_extra = { "linkml_meta": {'alias': 'description',
@@ -1979,7 +2002,8 @@ class CommonName(Term):
                        'File',
                        'ContactPoint',
                        'License',
-                       'Certification'],
+                       'Certification',
+                       'FundingSource'],
          'exact_mappings': ['schema:description'],
          'recommended': True,
          'slot_uri': 'dct:description'} })
@@ -2067,7 +2091,8 @@ class VirusName(CommonName):
                        'DataService',
                        'Publication',
                        'License',
-                       'Certification'],
+                       'Certification',
+                       'FundingSource'],
          'exact_mappings': ['schema:name', 'rdfs:label'],
          'slot_uri': 'dct:title'} })
     description: Optional[str] = Field(default=None, title="description", description="""A short explanation of the characteristics, features, or nature of the current item""", json_schema_extra = { "linkml_meta": {'alias': 'description',
@@ -2081,7 +2106,8 @@ class VirusName(CommonName):
                        'File',
                        'ContactPoint',
                        'License',
-                       'Certification'],
+                       'Certification',
+                       'FundingSource'],
          'exact_mappings': ['schema:description'],
          'recommended': True,
          'slot_uri': 'dct:description'} })
@@ -2208,7 +2234,8 @@ class AlternateName(Term):
                        'DataService',
                        'Publication',
                        'License',
-                       'Certification'],
+                       'Certification',
+                       'FundingSource'],
          'exact_mappings': ['schema:name', 'rdfs:label'],
          'slot_uri': 'dct:title'} })
     description: Optional[str] = Field(default=None, title="description", description="""A short explanation of the characteristics, features, or nature of the current item""", json_schema_extra = { "linkml_meta": {'alias': 'description',
@@ -2222,7 +2249,8 @@ class AlternateName(Term):
                        'File',
                        'ContactPoint',
                        'License',
-                       'Certification'],
+                       'Certification',
+                       'FundingSource'],
          'exact_mappings': ['schema:description'],
          'recommended': True,
          'slot_uri': 'dct:description'} })
@@ -2297,7 +2325,8 @@ class RiskGroup(Term):
                        'DataService',
                        'Publication',
                        'License',
-                       'Certification'],
+                       'Certification',
+                       'FundingSource'],
          'exact_mappings': ['schema:name', 'rdfs:label'],
          'slot_uri': 'dct:title'} })
     description: Optional[str] = Field(default=None, title="description", description="""A short explanation of the characteristics, features, or nature of the current item""", json_schema_extra = { "linkml_meta": {'alias': 'description',
@@ -2311,7 +2340,8 @@ class RiskGroup(Term):
                        'File',
                        'ContactPoint',
                        'License',
-                       'Certification'],
+                       'Certification',
+                       'FundingSource'],
          'exact_mappings': ['schema:description'],
          'recommended': True,
          'slot_uri': 'dct:description'} })
@@ -2389,7 +2419,8 @@ class Doi(Term):
                        'DataService',
                        'Publication',
                        'License',
-                       'Certification'],
+                       'Certification',
+                       'FundingSource'],
          'exact_mappings': ['schema:name', 'rdfs:label'],
          'slot_uri': 'dct:title'} })
     description: Optional[str] = Field(default=None, title="description", description="""A short explanation of the characteristics, features, or nature of the current item""", json_schema_extra = { "linkml_meta": {'alias': 'description',
@@ -2403,7 +2434,8 @@ class Doi(Term):
                        'File',
                        'ContactPoint',
                        'License',
-                       'Certification'],
+                       'Certification',
+                       'FundingSource'],
          'exact_mappings': ['schema:description'],
          'recommended': True,
          'slot_uri': 'dct:description'} })
@@ -2481,7 +2513,8 @@ class Journal(Term):
                        'DataService',
                        'Publication',
                        'License',
-                       'Certification'],
+                       'Certification',
+                       'FundingSource'],
          'exact_mappings': ['schema:name', 'rdfs:label'],
          'slot_uri': 'dct:title'} })
     description: Optional[str] = Field(default=None, title="description", description="""A short explanation of the characteristics, features, or nature of the current item""", json_schema_extra = { "linkml_meta": {'alias': 'description',
@@ -2495,7 +2528,8 @@ class Journal(Term):
                        'File',
                        'ContactPoint',
                        'License',
-                       'Certification'],
+                       'Certification',
+                       'FundingSource'],
          'exact_mappings': ['schema:description'],
          'recommended': True,
          'slot_uri': 'dct:description'} })
@@ -2567,7 +2601,8 @@ class PdbReference(Term):
                        'DataService',
                        'Publication',
                        'License',
-                       'Certification'],
+                       'Certification',
+                       'FundingSource'],
          'exact_mappings': ['schema:name', 'rdfs:label'],
          'slot_uri': 'dct:title'} })
     description: Optional[str] = Field(default=None, title="description", description="""A short explanation of the characteristics, features, or nature of the current item""", json_schema_extra = { "linkml_meta": {'alias': 'description',
@@ -2581,7 +2616,8 @@ class PdbReference(Term):
                        'File',
                        'ContactPoint',
                        'License',
-                       'Certification'],
+                       'Certification',
+                       'FundingSource'],
          'exact_mappings': ['schema:description'],
          'recommended': True,
          'slot_uri': 'dct:description'} })
@@ -2659,7 +2695,8 @@ class Keyword(Term):
                        'DataService',
                        'Publication',
                        'License',
-                       'Certification'],
+                       'Certification',
+                       'FundingSource'],
          'exact_mappings': ['schema:name', 'rdfs:label'],
          'slot_uri': 'dct:title'} })
     description: Optional[str] = Field(default=None, title="description", description="""A short explanation of the characteristics, features, or nature of the current item""", json_schema_extra = { "linkml_meta": {'alias': 'description',
@@ -2673,7 +2710,8 @@ class Keyword(Term):
                        'File',
                        'ContactPoint',
                        'License',
-                       'Certification'],
+                       'Certification',
+                       'FundingSource'],
          'exact_mappings': ['schema:description'],
          'recommended': True,
          'slot_uri': 'dct:description'} })
@@ -2747,7 +2785,8 @@ class TagSequence(Term):
                        'DataService',
                        'Publication',
                        'License',
-                       'Certification'],
+                       'Certification',
+                       'FundingSource'],
          'exact_mappings': ['schema:name', 'rdfs:label'],
          'slot_uri': 'dct:title'} })
     description: Optional[str] = Field(default=None, title="description", description="""A short explanation of the characteristics, features, or nature of the current item""", json_schema_extra = { "linkml_meta": {'alias': 'description',
@@ -2761,7 +2800,8 @@ class TagSequence(Term):
                        'File',
                        'ContactPoint',
                        'License',
-                       'Certification'],
+                       'Certification',
+                       'FundingSource'],
          'exact_mappings': ['schema:description'],
          'recommended': True,
          'slot_uri': 'dct:description'} })
@@ -2835,7 +2875,8 @@ class SpecialFeature(Term):
                        'DataService',
                        'Publication',
                        'License',
-                       'Certification'],
+                       'Certification',
+                       'FundingSource'],
          'exact_mappings': ['schema:name', 'rdfs:label'],
          'slot_uri': 'dct:title'} })
     description: Optional[str] = Field(default=None, title="description", description="""A short explanation of the characteristics, features, or nature of the current item""", json_schema_extra = { "linkml_meta": {'alias': 'description',
@@ -2849,7 +2890,8 @@ class SpecialFeature(Term):
                        'File',
                        'ContactPoint',
                        'License',
-                       'Certification'],
+                       'Certification',
+                       'FundingSource'],
          'exact_mappings': ['schema:description'],
          'recommended': True,
          'slot_uri': 'dct:description'} })
@@ -2924,7 +2966,8 @@ class ExpressionVector(Term):
                        'DataService',
                        'Publication',
                        'License',
-                       'Certification'],
+                       'Certification',
+                       'FundingSource'],
          'exact_mappings': ['schema:name', 'rdfs:label'],
          'slot_uri': 'dct:title'} })
     description: Optional[str] = Field(default=None, title="description", description="""A short explanation of the characteristics, features, or nature of the current item""", json_schema_extra = { "linkml_meta": {'alias': 'description',
@@ -2938,7 +2981,8 @@ class ExpressionVector(Term):
                        'File',
                        'ContactPoint',
                        'License',
-                       'Certification'],
+                       'Certification',
+                       'FundingSource'],
          'exact_mappings': ['schema:description'],
          'recommended': True,
          'slot_uri': 'dct:description'} })
@@ -3009,7 +3053,8 @@ class PlasmidSelection(Term):
                        'DataService',
                        'Publication',
                        'License',
-                       'Certification'],
+                       'Certification',
+                       'FundingSource'],
          'exact_mappings': ['schema:name', 'rdfs:label'],
          'slot_uri': 'dct:title'} })
     description: Optional[str] = Field(default=None, title="description", description="""A short explanation of the characteristics, features, or nature of the current item""", json_schema_extra = { "linkml_meta": {'alias': 'description',
@@ -3023,7 +3068,8 @@ class PlasmidSelection(Term):
                        'File',
                        'ContactPoint',
                        'License',
-                       'Certification'],
+                       'Certification',
+                       'FundingSource'],
          'exact_mappings': ['schema:description'],
          'recommended': True,
          'slot_uri': 'dct:description'} })
@@ -3094,7 +3140,8 @@ class PropagationHost(Term):
                        'DataService',
                        'Publication',
                        'License',
-                       'Certification'],
+                       'Certification',
+                       'FundingSource'],
          'exact_mappings': ['schema:name', 'rdfs:label'],
          'slot_uri': 'dct:title'} })
     description: Optional[str] = Field(default=None, title="description", description="""A short explanation of the characteristics, features, or nature of the current item""", json_schema_extra = { "linkml_meta": {'alias': 'description',
@@ -3108,7 +3155,8 @@ class PropagationHost(Term):
                        'File',
                        'ContactPoint',
                        'License',
-                       'Certification'],
+                       'Certification',
+                       'FundingSource'],
          'exact_mappings': ['schema:description'],
          'recommended': True,
          'slot_uri': 'dct:description'} })
@@ -3180,7 +3228,8 @@ class TransmissionMethod(Term):
                        'DataService',
                        'Publication',
                        'License',
-                       'Certification'],
+                       'Certification',
+                       'FundingSource'],
          'exact_mappings': ['schema:name', 'rdfs:label'],
          'slot_uri': 'dct:title'} })
     description: Optional[str] = Field(default=None, title="description", description="""A short explanation of the characteristics, features, or nature of the current item""", json_schema_extra = { "linkml_meta": {'alias': 'description',
@@ -3194,7 +3243,8 @@ class TransmissionMethod(Term):
                        'File',
                        'ContactPoint',
                        'License',
-                       'Certification'],
+                       'Certification',
+                       'FundingSource'],
          'exact_mappings': ['schema:description'],
          'recommended': True,
          'slot_uri': 'dct:description'} })
@@ -3269,7 +3319,8 @@ class ProductionCellLine(Term):
                        'DataService',
                        'Publication',
                        'License',
-                       'Certification'],
+                       'Certification',
+                       'FundingSource'],
          'exact_mappings': ['schema:name', 'rdfs:label'],
          'slot_uri': 'dct:title'} })
     description: Optional[str] = Field(default=None, title="description", description="""A short explanation of the characteristics, features, or nature of the current item""", json_schema_extra = { "linkml_meta": {'alias': 'description',
@@ -3283,7 +3334,8 @@ class ProductionCellLine(Term):
                        'File',
                        'ContactPoint',
                        'License',
-                       'Certification'],
+                       'Certification',
+                       'FundingSource'],
          'exact_mappings': ['schema:description'],
          'recommended': True,
          'slot_uri': 'dct:description'} })
@@ -3378,7 +3430,8 @@ class ProductCategory(Term):
                        'DataService',
                        'Publication',
                        'License',
-                       'Certification'],
+                       'Certification',
+                       'FundingSource'],
          'exact_mappings': ['schema:name', 'rdfs:label'],
          'slot_uri': 'dct:title'} })
     description: Optional[str] = Field(default=None, title="description", description="""A short explanation of the characteristics, features, or nature of the current item""", json_schema_extra = { "linkml_meta": {'alias': 'description',
@@ -3392,7 +3445,8 @@ class ProductCategory(Term):
                        'File',
                        'ContactPoint',
                        'License',
-                       'Certification'],
+                       'Certification',
+                       'FundingSource'],
          'exact_mappings': ['schema:description'],
          'recommended': True,
          'slot_uri': 'dct:description'} })
@@ -3461,7 +3515,8 @@ class IsolationHost(Term):
                        'DataService',
                        'Publication',
                        'License',
-                       'Certification'],
+                       'Certification',
+                       'FundingSource'],
          'exact_mappings': ['schema:name', 'rdfs:label'],
          'slot_uri': 'dct:title'} })
     description: Optional[str] = Field(default=None, title="description", description="""A short explanation of the characteristics, features, or nature of the current item""", json_schema_extra = { "linkml_meta": {'alias': 'description',
@@ -3475,7 +3530,8 @@ class IsolationHost(Term):
                        'File',
                        'ContactPoint',
                        'License',
-                       'Certification'],
+                       'Certification',
+                       'FundingSource'],
          'exact_mappings': ['schema:description'],
          'recommended': True,
          'slot_uri': 'dct:description'} })
@@ -3555,7 +3611,8 @@ class GeographicalOrigin(Term):
                        'DataService',
                        'Publication',
                        'License',
-                       'Certification'],
+                       'Certification',
+                       'FundingSource'],
          'exact_mappings': ['schema:name', 'rdfs:label'],
          'slot_uri': 'dct:title'} })
     description: Optional[str] = Field(default=None, title="description", description="""A short explanation of the characteristics, features, or nature of the current item""", json_schema_extra = { "linkml_meta": {'alias': 'description',
@@ -3569,7 +3626,8 @@ class GeographicalOrigin(Term):
                        'File',
                        'ContactPoint',
                        'License',
-                       'Certification'],
+                       'Certification',
+                       'FundingSource'],
          'exact_mappings': ['schema:description'],
          'recommended': True,
          'slot_uri': 'dct:description'} })
@@ -3647,7 +3705,8 @@ class IplcOrigin(GeographicalOrigin):
                        'DataService',
                        'Publication',
                        'License',
-                       'Certification'],
+                       'Certification',
+                       'FundingSource'],
          'exact_mappings': ['schema:name', 'rdfs:label'],
          'slot_uri': 'dct:title'} })
     description: Optional[str] = Field(default=None, title="description", description="""A short explanation of the characteristics, features, or nature of the current item""", json_schema_extra = { "linkml_meta": {'alias': 'description',
@@ -3661,7 +3720,8 @@ class IplcOrigin(GeographicalOrigin):
                        'File',
                        'ContactPoint',
                        'License',
-                       'Certification'],
+                       'Certification',
+                       'FundingSource'],
          'exact_mappings': ['schema:description'],
          'recommended': True,
          'slot_uri': 'dct:description'} })
@@ -3763,7 +3823,8 @@ class Country(Term):
                        'DataService',
                        'Publication',
                        'License',
-                       'Certification'],
+                       'Certification',
+                       'FundingSource'],
          'exact_mappings': ['schema:name', 'rdfs:label'],
          'slot_uri': 'dct:title'} })
     description: Optional[str] = Field(default=None, title="description", description="""A short explanation of the characteristics, features, or nature of the current item""", json_schema_extra = { "linkml_meta": {'alias': 'description',
@@ -3777,7 +3838,8 @@ class Country(Term):
                        'File',
                        'ContactPoint',
                        'License',
-                       'Certification'],
+                       'Certification',
+                       'FundingSource'],
          'exact_mappings': ['schema:description'],
          'recommended': True,
          'slot_uri': 'dct:description'} })
@@ -3848,7 +3910,8 @@ class IataClassification(Term):
                        'DataService',
                        'Publication',
                        'License',
-                       'Certification'],
+                       'Certification',
+                       'FundingSource'],
          'exact_mappings': ['schema:name', 'rdfs:label'],
          'slot_uri': 'dct:title'} })
     description: Optional[str] = Field(default=None, title="description", description="""A short explanation of the characteristics, features, or nature of the current item""", json_schema_extra = { "linkml_meta": {'alias': 'description',
@@ -3862,7 +3925,8 @@ class IataClassification(Term):
                        'File',
                        'ContactPoint',
                        'License',
-                       'Certification'],
+                       'Certification',
+                       'FundingSource'],
          'exact_mappings': ['schema:description'],
          'recommended': True,
          'slot_uri': 'dct:description'} })
@@ -3949,7 +4013,8 @@ class Variant(CommonName):
                        'DataService',
                        'Publication',
                        'License',
-                       'Certification'],
+                       'Certification',
+                       'FundingSource'],
          'exact_mappings': ['schema:name', 'rdfs:label'],
          'slot_uri': 'dct:title'} })
     description: Optional[str] = Field(default=None, title="description", description="""A short explanation of the characteristics, features, or nature of the current item""", json_schema_extra = { "linkml_meta": {'alias': 'description',
@@ -3963,7 +4028,8 @@ class Variant(CommonName):
                        'File',
                        'ContactPoint',
                        'License',
-                       'Certification'],
+                       'Certification',
+                       'FundingSource'],
          'exact_mappings': ['schema:description'],
          'recommended': True,
          'slot_uri': 'dct:description'} })
@@ -4055,7 +4121,8 @@ class TaxonomicRank(Term):
                        'DataService',
                        'Publication',
                        'License',
-                       'Certification'],
+                       'Certification',
+                       'FundingSource'],
          'exact_mappings': ['schema:name', 'rdfs:label'],
          'slot_uri': 'dct:title'} })
     description: Optional[str] = Field(default=None, title="description", description="""A short explanation of the characteristics, features, or nature of the current item""", json_schema_extra = { "linkml_meta": {'alias': 'description',
@@ -4069,7 +4136,8 @@ class TaxonomicRank(Term):
                        'File',
                        'ContactPoint',
                        'License',
-                       'Certification'],
+                       'Certification',
+                       'FundingSource'],
          'exact_mappings': ['schema:description'],
          'recommended': True,
          'slot_uri': 'dct:description'} })
@@ -4357,7 +4425,8 @@ class Taxon(Term):
                        'DataService',
                        'Publication',
                        'License',
-                       'Certification'],
+                       'Certification',
+                       'FundingSource'],
          'exact_mappings': ['schema:name', 'rdfs:label'],
          'slot_uri': 'dct:title'} })
     description: Optional[str] = Field(default=None, title="description", description="""A short explanation of the characteristics, features, or nature of the current item""", json_schema_extra = { "linkml_meta": {'alias': 'description',
@@ -4371,7 +4440,8 @@ class Taxon(Term):
                        'File',
                        'ContactPoint',
                        'License',
-                       'Certification'],
+                       'Certification',
+                       'FundingSource'],
          'exact_mappings': ['schema:description'],
          'recommended': True,
          'slot_uri': 'dct:description'} })
@@ -4498,7 +4568,8 @@ class ClinicalGroup(Term):
                        'DataService',
                        'Publication',
                        'License',
-                       'Certification'],
+                       'Certification',
+                       'FundingSource'],
          'exact_mappings': ['schema:name', 'rdfs:label'],
          'slot_uri': 'dct:title'} })
     description: Optional[str] = Field(default=None, title="description", description="""A short explanation of the characteristics, features, or nature of the current item""", json_schema_extra = { "linkml_meta": {'alias': 'description',
@@ -4512,7 +4583,8 @@ class ClinicalGroup(Term):
                        'File',
                        'ContactPoint',
                        'License',
-                       'Certification'],
+                       'Certification',
+                       'FundingSource'],
          'exact_mappings': ['schema:description'],
          'recommended': True,
          'slot_uri': 'dct:description'} })
@@ -4872,7 +4944,8 @@ class PersonOrOrganization(Resource):
                                                       'File',
                                                       'ContactPoint',
                                                       'License',
-                                                      'Certification'],
+                                                      'Certification',
+                                                      'FundingSource'],
                                         'exact_mappings': ['schema:description'],
                                         'multivalued': False,
                                         'name': 'description',
@@ -4932,7 +5005,8 @@ class PersonOrOrganization(Resource):
                        'File',
                        'ContactPoint',
                        'License',
-                       'Certification'],
+                       'Certification',
+                       'FundingSource'],
          'exact_mappings': ['schema:description'],
          'recommended': True,
          'slot_uri': 'dct:description'} })
@@ -5031,7 +5105,8 @@ class Person(PersonOrOrganization):
                        'File',
                        'ContactPoint',
                        'License',
-                       'Certification'],
+                       'Certification',
+                       'FundingSource'],
          'exact_mappings': ['schema:description'],
          'recommended': True,
          'slot_uri': 'dct:description'} })
@@ -5174,7 +5249,8 @@ class Organization(PersonOrOrganization):
                        'File',
                        'ContactPoint',
                        'License',
-                       'Certification'],
+                       'Certification',
+                       'FundingSource'],
          'exact_mappings': ['schema:description'],
          'recommended': True,
          'slot_uri': 'dct:description'} })
@@ -5271,7 +5347,8 @@ class ReasearchInfrastructure(Organization):
                        'File',
                        'ContactPoint',
                        'License',
-                       'Certification'],
+                       'Certification',
+                       'FundingSource'],
          'exact_mappings': ['schema:description'],
          'recommended': True,
          'slot_uri': 'dct:description'} })
@@ -5381,7 +5458,8 @@ class Provider(Organization):
                        'File',
                        'ContactPoint',
                        'License',
-                       'Certification'],
+                       'Certification',
+                       'FundingSource'],
          'exact_mappings': ['schema:description'],
          'recommended': True,
          'slot_uri': 'dct:description'} })
@@ -5459,7 +5537,8 @@ class Originator(PersonOrOrganization):
                        'File',
                        'ContactPoint',
                        'License',
-                       'Certification'],
+                       'Certification',
+                       'FundingSource'],
          'exact_mappings': ['schema:description'],
          'recommended': True,
          'slot_uri': 'dct:description'} })
@@ -6091,7 +6170,8 @@ class Collection(Catalogue):
                        'Publication',
                        'Term',
                        'License',
-                       'Certification'],
+                       'Certification',
+                       'FundingSource'],
          'exact_mappings': ['schema:name', 'rdfs:label'],
          'slot_uri': 'dct:title'} })
     description: str = Field(default=..., title="description", description="""A short explanation of the characteristics, features, or nature of the current item""", json_schema_extra = { "linkml_meta": {'alias': 'description',
@@ -6105,7 +6185,8 @@ class Collection(Catalogue):
                        'File',
                        'ContactPoint',
                        'License',
-                       'Certification'],
+                       'Certification',
+                       'FundingSource'],
          'exact_mappings': ['schema:description'],
          'recommended': True,
          'slot_uri': 'dct:description'} })
@@ -6335,6 +6416,23 @@ class ProductOrService(Dataset):
                                                      'required': False,
                                                      'title': 'external related '
                                                               'reference'},
+                        'fundingSource': {'comments': ['Links a product or service to '
+                                                       'one or more financial '
+                                                       'mechanisms, initiatives, or '
+                                                       'grants that enable or support '
+                                                       'its provision or access'],
+                                          'description': 'A program, grant, or project '
+                                                         'providing financial support '
+                                                         'for the access or use of the '
+                                                         'product or service, either '
+                                                         'fully or partially',
+                                          'domain_of': ['ProductOrService'],
+                                          'exact_mappings': ['schema:funding'],
+                                          'multivalued': True,
+                                          'name': 'fundingSource',
+                                          'range': 'FundingSource',
+                                          'required': False,
+                                          'title': 'funding source'},
                         'internalReference': {'broad_mappings': ['dct:references'],
                                               'description': 'Any reference or '
                                                              'indication to be used '
@@ -6674,6 +6772,12 @@ class ProductOrService(Dataset):
          'exact_mappings': ['schema:contactPoint'],
          'recommended': True,
          'slot_uri': 'dcat:contactPoint'} })
+    fundingSource: Optional[list[FundingSource]] = Field(default=None, title="funding source", description="""A program, grant, or project providing financial support for the access or use of the product or service, either fully or partially""", json_schema_extra = { "linkml_meta": {'alias': 'fundingSource',
+         'comments': ['Links a product or service to one or more financial mechanisms, '
+                      'initiatives, or grants that enable or support its provision or '
+                      'access'],
+         'domain_of': ['ProductOrService'],
+         'exact_mappings': ['schema:funding']} })
     title: str = Field(default=..., title="title", description="""A name given to the resource""", json_schema_extra = { "linkml_meta": {'alias': 'title',
          'comments': ['The title of the item should be as short and descriptive as '
                       'possible. E.g. for virus products it should basically be based '
@@ -6686,7 +6790,8 @@ class ProductOrService(Dataset):
                        'Publication',
                        'Term',
                        'License',
-                       'Certification'],
+                       'Certification',
+                       'FundingSource'],
          'exact_mappings': ['schema:name', 'rdfs:label'],
          'slot_uri': 'dct:title'} })
     description: str = Field(default=..., title="description", description="""A short explanation of the characteristics, features, or nature of the current item""", json_schema_extra = { "linkml_meta": {'alias': 'description',
@@ -6700,7 +6805,8 @@ class ProductOrService(Dataset):
                        'File',
                        'ContactPoint',
                        'License',
-                       'Certification'],
+                       'Certification',
+                       'FundingSource'],
          'exact_mappings': ['schema:description'],
          'recommended': True,
          'slot_uri': 'dct:description'} })
@@ -6903,6 +7009,12 @@ class Service(ProductOrService):
          'exact_mappings': ['schema:contactPoint'],
          'recommended': True,
          'slot_uri': 'dcat:contactPoint'} })
+    fundingSource: Optional[list[FundingSource]] = Field(default=None, title="funding source", description="""A program, grant, or project providing financial support for the access or use of the product or service, either fully or partially""", json_schema_extra = { "linkml_meta": {'alias': 'fundingSource',
+         'comments': ['Links a product or service to one or more financial mechanisms, '
+                      'initiatives, or grants that enable or support its provision or '
+                      'access'],
+         'domain_of': ['ProductOrService'],
+         'exact_mappings': ['schema:funding']} })
     title: str = Field(default=..., title="title", description="""A name given to the resource""", json_schema_extra = { "linkml_meta": {'alias': 'title',
          'comments': ['The title of the item should be as short and descriptive as '
                       'possible. E.g. for virus products it should basically be based '
@@ -6915,7 +7027,8 @@ class Service(ProductOrService):
                        'Publication',
                        'Term',
                        'License',
-                       'Certification'],
+                       'Certification',
+                       'FundingSource'],
          'exact_mappings': ['schema:name', 'rdfs:label'],
          'slot_uri': 'dct:title'} })
     description: str = Field(default=..., title="description", description="""A short explanation of the characteristics, features, or nature of the current item""", json_schema_extra = { "linkml_meta": {'alias': 'description',
@@ -6929,7 +7042,8 @@ class Service(ProductOrService):
                        'File',
                        'ContactPoint',
                        'License',
-                       'Certification'],
+                       'Certification',
+                       'FundingSource'],
          'exact_mappings': ['schema:description'],
          'recommended': True,
          'slot_uri': 'dct:description'} })
@@ -7255,6 +7369,12 @@ class Product(ProductOrService):
          'exact_mappings': ['schema:contactPoint'],
          'recommended': True,
          'slot_uri': 'dcat:contactPoint'} })
+    fundingSource: Optional[list[FundingSource]] = Field(default=None, title="funding source", description="""A program, grant, or project providing financial support for the access or use of the product or service, either fully or partially""", json_schema_extra = { "linkml_meta": {'alias': 'fundingSource',
+         'comments': ['Links a product or service to one or more financial mechanisms, '
+                      'initiatives, or grants that enable or support its provision or '
+                      'access'],
+         'domain_of': ['ProductOrService'],
+         'exact_mappings': ['schema:funding']} })
     title: str = Field(default=..., title="title", description="""A name given to the resource""", json_schema_extra = { "linkml_meta": {'alias': 'title',
          'comments': ['The title of the item should be as short and descriptive as '
                       'possible. E.g. for virus products it should basically be based '
@@ -7267,7 +7387,8 @@ class Product(ProductOrService):
                        'Publication',
                        'Term',
                        'License',
-                       'Certification'],
+                       'Certification',
+                       'FundingSource'],
          'exact_mappings': ['schema:name', 'rdfs:label'],
          'slot_uri': 'dct:title'} })
     description: str = Field(default=..., title="description", description="""A short explanation of the characteristics, features, or nature of the current item""", json_schema_extra = { "linkml_meta": {'alias': 'description',
@@ -7281,7 +7402,8 @@ class Product(ProductOrService):
                        'File',
                        'ContactPoint',
                        'License',
-                       'Certification'],
+                       'Certification',
+                       'FundingSource'],
          'exact_mappings': ['schema:description'],
          'recommended': True,
          'slot_uri': 'dct:description'} })
@@ -7540,6 +7662,12 @@ class Antibody(Product):
          'exact_mappings': ['schema:contactPoint'],
          'recommended': True,
          'slot_uri': 'dcat:contactPoint'} })
+    fundingSource: Optional[list[FundingSource]] = Field(default=None, title="funding source", description="""A program, grant, or project providing financial support for the access or use of the product or service, either fully or partially""", json_schema_extra = { "linkml_meta": {'alias': 'fundingSource',
+         'comments': ['Links a product or service to one or more financial mechanisms, '
+                      'initiatives, or grants that enable or support its provision or '
+                      'access'],
+         'domain_of': ['ProductOrService'],
+         'exact_mappings': ['schema:funding']} })
     title: str = Field(default=..., title="title", description="""A name given to the resource""", json_schema_extra = { "linkml_meta": {'alias': 'title',
          'comments': ['The title of the item should be as short and descriptive as '
                       'possible. E.g. for virus products it should basically be based '
@@ -7552,7 +7680,8 @@ class Antibody(Product):
                        'Publication',
                        'Term',
                        'License',
-                       'Certification'],
+                       'Certification',
+                       'FundingSource'],
          'exact_mappings': ['schema:name', 'rdfs:label'],
          'slot_uri': 'dct:title'} })
     description: str = Field(default=..., title="description", description="""A short explanation of the characteristics, features, or nature of the current item""", json_schema_extra = { "linkml_meta": {'alias': 'description',
@@ -7566,7 +7695,8 @@ class Antibody(Product):
                        'File',
                        'ContactPoint',
                        'License',
-                       'Certification'],
+                       'Certification',
+                       'FundingSource'],
          'exact_mappings': ['schema:description'],
          'recommended': True,
          'slot_uri': 'dct:description'} })
@@ -7784,6 +7914,12 @@ class Hybridoma(Antibody):
          'exact_mappings': ['schema:contactPoint'],
          'recommended': True,
          'slot_uri': 'dcat:contactPoint'} })
+    fundingSource: Optional[list[FundingSource]] = Field(default=None, title="funding source", description="""A program, grant, or project providing financial support for the access or use of the product or service, either fully or partially""", json_schema_extra = { "linkml_meta": {'alias': 'fundingSource',
+         'comments': ['Links a product or service to one or more financial mechanisms, '
+                      'initiatives, or grants that enable or support its provision or '
+                      'access'],
+         'domain_of': ['ProductOrService'],
+         'exact_mappings': ['schema:funding']} })
     title: str = Field(default=..., title="title", description="""A name given to the resource""", json_schema_extra = { "linkml_meta": {'alias': 'title',
          'comments': ['The title of the item should be as short and descriptive as '
                       'possible. E.g. for virus products it should basically be based '
@@ -7796,7 +7932,8 @@ class Hybridoma(Antibody):
                        'Publication',
                        'Term',
                        'License',
-                       'Certification'],
+                       'Certification',
+                       'FundingSource'],
          'exact_mappings': ['schema:name', 'rdfs:label'],
          'slot_uri': 'dct:title'} })
     description: str = Field(default=..., title="description", description="""A short explanation of the characteristics, features, or nature of the current item""", json_schema_extra = { "linkml_meta": {'alias': 'description',
@@ -7810,7 +7947,8 @@ class Hybridoma(Antibody):
                        'File',
                        'ContactPoint',
                        'License',
-                       'Certification'],
+                       'Certification',
+                       'FundingSource'],
          'exact_mappings': ['schema:description'],
          'recommended': True,
          'slot_uri': 'dct:description'} })
@@ -8389,6 +8527,12 @@ class Protein(Product):
          'exact_mappings': ['schema:contactPoint'],
          'recommended': True,
          'slot_uri': 'dcat:contactPoint'} })
+    fundingSource: Optional[list[FundingSource]] = Field(default=None, title="funding source", description="""A program, grant, or project providing financial support for the access or use of the product or service, either fully or partially""", json_schema_extra = { "linkml_meta": {'alias': 'fundingSource',
+         'comments': ['Links a product or service to one or more financial mechanisms, '
+                      'initiatives, or grants that enable or support its provision or '
+                      'access'],
+         'domain_of': ['ProductOrService'],
+         'exact_mappings': ['schema:funding']} })
     title: str = Field(default=..., title="title", description="""A name given to the resource""", json_schema_extra = { "linkml_meta": {'alias': 'title',
          'comments': ['The title of the item should be as short and descriptive as '
                       'possible. E.g. for virus products it should basically be based '
@@ -8401,7 +8545,8 @@ class Protein(Product):
                        'Publication',
                        'Term',
                        'License',
-                       'Certification'],
+                       'Certification',
+                       'FundingSource'],
          'exact_mappings': ['schema:name', 'rdfs:label'],
          'slot_uri': 'dct:title'} })
     description: str = Field(default=..., title="description", description="""A short explanation of the characteristics, features, or nature of the current item""", json_schema_extra = { "linkml_meta": {'alias': 'description',
@@ -8415,7 +8560,8 @@ class Protein(Product):
                        'File',
                        'ContactPoint',
                        'License',
-                       'Certification'],
+                       'Certification',
+                       'FundingSource'],
          'exact_mappings': ['schema:description'],
          'recommended': True,
          'slot_uri': 'dct:description'} })
@@ -8873,6 +9019,12 @@ class NucleicAcid(Product):
          'exact_mappings': ['schema:contactPoint'],
          'recommended': True,
          'slot_uri': 'dcat:contactPoint'} })
+    fundingSource: Optional[list[FundingSource]] = Field(default=None, title="funding source", description="""A program, grant, or project providing financial support for the access or use of the product or service, either fully or partially""", json_schema_extra = { "linkml_meta": {'alias': 'fundingSource',
+         'comments': ['Links a product or service to one or more financial mechanisms, '
+                      'initiatives, or grants that enable or support its provision or '
+                      'access'],
+         'domain_of': ['ProductOrService'],
+         'exact_mappings': ['schema:funding']} })
     title: str = Field(default=..., title="title", description="""A name given to the resource""", json_schema_extra = { "linkml_meta": {'alias': 'title',
          'comments': ['The title of the item should be as short and descriptive as '
                       'possible. E.g. for virus products it should basically be based '
@@ -8885,7 +9037,8 @@ class NucleicAcid(Product):
                        'Publication',
                        'Term',
                        'License',
-                       'Certification'],
+                       'Certification',
+                       'FundingSource'],
          'exact_mappings': ['schema:name', 'rdfs:label'],
          'slot_uri': 'dct:title'} })
     description: str = Field(default=..., title="description", description="""A short explanation of the characteristics, features, or nature of the current item""", json_schema_extra = { "linkml_meta": {'alias': 'description',
@@ -8899,7 +9052,8 @@ class NucleicAcid(Product):
                        'File',
                        'ContactPoint',
                        'License',
-                       'Certification'],
+                       'Certification',
+                       'FundingSource'],
          'exact_mappings': ['schema:description'],
          'recommended': True,
          'slot_uri': 'dct:description'} })
@@ -9147,6 +9301,12 @@ class DetectionKit(Product):
          'exact_mappings': ['schema:contactPoint'],
          'recommended': True,
          'slot_uri': 'dcat:contactPoint'} })
+    fundingSource: Optional[list[FundingSource]] = Field(default=None, title="funding source", description="""A program, grant, or project providing financial support for the access or use of the product or service, either fully or partially""", json_schema_extra = { "linkml_meta": {'alias': 'fundingSource',
+         'comments': ['Links a product or service to one or more financial mechanisms, '
+                      'initiatives, or grants that enable or support its provision or '
+                      'access'],
+         'domain_of': ['ProductOrService'],
+         'exact_mappings': ['schema:funding']} })
     title: str = Field(default=..., title="title", description="""A name given to the resource""", json_schema_extra = { "linkml_meta": {'alias': 'title',
          'comments': ['The title of the item should be as short and descriptive as '
                       'possible. E.g. for virus products it should basically be based '
@@ -9159,7 +9319,8 @@ class DetectionKit(Product):
                        'Publication',
                        'Term',
                        'License',
-                       'Certification'],
+                       'Certification',
+                       'FundingSource'],
          'exact_mappings': ['schema:name', 'rdfs:label'],
          'slot_uri': 'dct:title'} })
     description: str = Field(default=..., title="description", description="""A short explanation of the characteristics, features, or nature of the current item""", json_schema_extra = { "linkml_meta": {'alias': 'description',
@@ -9173,7 +9334,8 @@ class DetectionKit(Product):
                        'File',
                        'ContactPoint',
                        'License',
-                       'Certification'],
+                       'Certification',
+                       'FundingSource'],
          'exact_mappings': ['schema:description'],
          'recommended': True,
          'slot_uri': 'dct:description'} })
@@ -9382,6 +9544,12 @@ class Bundle(Product):
          'exact_mappings': ['schema:contactPoint'],
          'recommended': True,
          'slot_uri': 'dcat:contactPoint'} })
+    fundingSource: Optional[list[FundingSource]] = Field(default=None, title="funding source", description="""A program, grant, or project providing financial support for the access or use of the product or service, either fully or partially""", json_schema_extra = { "linkml_meta": {'alias': 'fundingSource',
+         'comments': ['Links a product or service to one or more financial mechanisms, '
+                      'initiatives, or grants that enable or support its provision or '
+                      'access'],
+         'domain_of': ['ProductOrService'],
+         'exact_mappings': ['schema:funding']} })
     title: str = Field(default=..., title="title", description="""A name given to the resource""", json_schema_extra = { "linkml_meta": {'alias': 'title',
          'comments': ['The title of the item should be as short and descriptive as '
                       'possible. E.g. for virus products it should basically be based '
@@ -9394,7 +9562,8 @@ class Bundle(Product):
                        'Publication',
                        'Term',
                        'License',
-                       'Certification'],
+                       'Certification',
+                       'FundingSource'],
          'exact_mappings': ['schema:name', 'rdfs:label'],
          'slot_uri': 'dct:title'} })
     description: str = Field(default=..., title="description", description="""A short explanation of the characteristics, features, or nature of the current item""", json_schema_extra = { "linkml_meta": {'alias': 'description',
@@ -9408,7 +9577,8 @@ class Bundle(Product):
                        'File',
                        'ContactPoint',
                        'License',
-                       'Certification'],
+                       'Certification',
+                       'FundingSource'],
          'exact_mappings': ['schema:description'],
          'recommended': True,
          'slot_uri': 'dct:description'} })
@@ -9958,6 +10128,12 @@ class Pathogen(Product):
          'exact_mappings': ['schema:contactPoint'],
          'recommended': True,
          'slot_uri': 'dcat:contactPoint'} })
+    fundingSource: Optional[list[FundingSource]] = Field(default=None, title="funding source", description="""A program, grant, or project providing financial support for the access or use of the product or service, either fully or partially""", json_schema_extra = { "linkml_meta": {'alias': 'fundingSource',
+         'comments': ['Links a product or service to one or more financial mechanisms, '
+                      'initiatives, or grants that enable or support its provision or '
+                      'access'],
+         'domain_of': ['ProductOrService'],
+         'exact_mappings': ['schema:funding']} })
     title: str = Field(default=..., title="title", description="""A name given to the resource""", json_schema_extra = { "linkml_meta": {'alias': 'title',
          'comments': ['The title of the item should be as short and descriptive as '
                       'possible. E.g. for virus products it should basically be based '
@@ -9970,7 +10146,8 @@ class Pathogen(Product):
                        'Publication',
                        'Term',
                        'License',
-                       'Certification'],
+                       'Certification',
+                       'FundingSource'],
          'exact_mappings': ['schema:name', 'rdfs:label'],
          'slot_uri': 'dct:title'} })
     description: str = Field(default=..., title="description", description="""A short explanation of the characteristics, features, or nature of the current item""", json_schema_extra = { "linkml_meta": {'alias': 'description',
@@ -9984,7 +10161,8 @@ class Pathogen(Product):
                        'File',
                        'ContactPoint',
                        'License',
-                       'Certification'],
+                       'Certification',
+                       'FundingSource'],
          'exact_mappings': ['schema:description'],
          'recommended': True,
          'slot_uri': 'dct:description'} })
@@ -10310,6 +10488,12 @@ class Virus(Pathogen):
          'exact_mappings': ['schema:contactPoint'],
          'recommended': True,
          'slot_uri': 'dcat:contactPoint'} })
+    fundingSource: Optional[list[FundingSource]] = Field(default=None, title="funding source", description="""A program, grant, or project providing financial support for the access or use of the product or service, either fully or partially""", json_schema_extra = { "linkml_meta": {'alias': 'fundingSource',
+         'comments': ['Links a product or service to one or more financial mechanisms, '
+                      'initiatives, or grants that enable or support its provision or '
+                      'access'],
+         'domain_of': ['ProductOrService'],
+         'exact_mappings': ['schema:funding']} })
     title: str = Field(default=..., title="title", description="""A name given to the resource""", json_schema_extra = { "linkml_meta": {'alias': 'title',
          'comments': ['The title of the item should be as short and descriptive as '
                       'possible. E.g. for virus products it should basically be based '
@@ -10322,7 +10506,8 @@ class Virus(Pathogen):
                        'Publication',
                        'Term',
                        'License',
-                       'Certification'],
+                       'Certification',
+                       'FundingSource'],
          'exact_mappings': ['schema:name', 'rdfs:label'],
          'slot_uri': 'dct:title'} })
     description: str = Field(default=..., title="description", description="""A short explanation of the characteristics, features, or nature of the current item""", json_schema_extra = { "linkml_meta": {'alias': 'description',
@@ -10336,7 +10521,8 @@ class Virus(Pathogen):
                        'File',
                        'ContactPoint',
                        'License',
-                       'Certification'],
+                       'Certification',
+                       'FundingSource'],
          'exact_mappings': ['schema:description'],
          'recommended': True,
          'slot_uri': 'dct:description'} })
@@ -10603,6 +10789,12 @@ class Bacterium(Pathogen):
          'exact_mappings': ['schema:contactPoint'],
          'recommended': True,
          'slot_uri': 'dcat:contactPoint'} })
+    fundingSource: Optional[list[FundingSource]] = Field(default=None, title="funding source", description="""A program, grant, or project providing financial support for the access or use of the product or service, either fully or partially""", json_schema_extra = { "linkml_meta": {'alias': 'fundingSource',
+         'comments': ['Links a product or service to one or more financial mechanisms, '
+                      'initiatives, or grants that enable or support its provision or '
+                      'access'],
+         'domain_of': ['ProductOrService'],
+         'exact_mappings': ['schema:funding']} })
     title: str = Field(default=..., title="title", description="""A name given to the resource""", json_schema_extra = { "linkml_meta": {'alias': 'title',
          'comments': ['The title of the item should be as short and descriptive as '
                       'possible. E.g. for virus products it should basically be based '
@@ -10615,7 +10807,8 @@ class Bacterium(Pathogen):
                        'Publication',
                        'Term',
                        'License',
-                       'Certification'],
+                       'Certification',
+                       'FundingSource'],
          'exact_mappings': ['schema:name', 'rdfs:label'],
          'slot_uri': 'dct:title'} })
     description: str = Field(default=..., title="description", description="""A short explanation of the characteristics, features, or nature of the current item""", json_schema_extra = { "linkml_meta": {'alias': 'description',
@@ -10629,7 +10822,8 @@ class Bacterium(Pathogen):
                        'File',
                        'ContactPoint',
                        'License',
-                       'Certification'],
+                       'Certification',
+                       'FundingSource'],
          'exact_mappings': ['schema:description'],
          'recommended': True,
          'slot_uri': 'dct:description'} })
@@ -10894,6 +11088,12 @@ class Fungus(Pathogen):
          'exact_mappings': ['schema:contactPoint'],
          'recommended': True,
          'slot_uri': 'dcat:contactPoint'} })
+    fundingSource: Optional[list[FundingSource]] = Field(default=None, title="funding source", description="""A program, grant, or project providing financial support for the access or use of the product or service, either fully or partially""", json_schema_extra = { "linkml_meta": {'alias': 'fundingSource',
+         'comments': ['Links a product or service to one or more financial mechanisms, '
+                      'initiatives, or grants that enable or support its provision or '
+                      'access'],
+         'domain_of': ['ProductOrService'],
+         'exact_mappings': ['schema:funding']} })
     title: str = Field(default=..., title="title", description="""A name given to the resource""", json_schema_extra = { "linkml_meta": {'alias': 'title',
          'comments': ['The title of the item should be as short and descriptive as '
                       'possible. E.g. for virus products it should basically be based '
@@ -10906,7 +11106,8 @@ class Fungus(Pathogen):
                        'Publication',
                        'Term',
                        'License',
-                       'Certification'],
+                       'Certification',
+                       'FundingSource'],
          'exact_mappings': ['schema:name', 'rdfs:label'],
          'slot_uri': 'dct:title'} })
     description: str = Field(default=..., title="description", description="""A short explanation of the characteristics, features, or nature of the current item""", json_schema_extra = { "linkml_meta": {'alias': 'description',
@@ -10920,7 +11121,8 @@ class Fungus(Pathogen):
                        'File',
                        'ContactPoint',
                        'License',
-                       'Certification'],
+                       'Certification',
+                       'FundingSource'],
          'exact_mappings': ['schema:description'],
          'recommended': True,
          'slot_uri': 'dct:description'} })
@@ -11181,6 +11383,12 @@ class Protozoan(Pathogen):
          'exact_mappings': ['schema:contactPoint'],
          'recommended': True,
          'slot_uri': 'dcat:contactPoint'} })
+    fundingSource: Optional[list[FundingSource]] = Field(default=None, title="funding source", description="""A program, grant, or project providing financial support for the access or use of the product or service, either fully or partially""", json_schema_extra = { "linkml_meta": {'alias': 'fundingSource',
+         'comments': ['Links a product or service to one or more financial mechanisms, '
+                      'initiatives, or grants that enable or support its provision or '
+                      'access'],
+         'domain_of': ['ProductOrService'],
+         'exact_mappings': ['schema:funding']} })
     title: str = Field(default=..., title="title", description="""A name given to the resource""", json_schema_extra = { "linkml_meta": {'alias': 'title',
          'comments': ['The title of the item should be as short and descriptive as '
                       'possible. E.g. for virus products it should basically be based '
@@ -11193,7 +11401,8 @@ class Protozoan(Pathogen):
                        'Publication',
                        'Term',
                        'License',
-                       'Certification'],
+                       'Certification',
+                       'FundingSource'],
          'exact_mappings': ['schema:name', 'rdfs:label'],
          'slot_uri': 'dct:title'} })
     description: str = Field(default=..., title="description", description="""A short explanation of the characteristics, features, or nature of the current item""", json_schema_extra = { "linkml_meta": {'alias': 'description',
@@ -11207,7 +11416,8 @@ class Protozoan(Pathogen):
                        'File',
                        'ContactPoint',
                        'License',
-                       'Certification'],
+                       'Certification',
+                       'FundingSource'],
          'exact_mappings': ['schema:description'],
          'recommended': True,
          'slot_uri': 'dct:description'} })
@@ -11460,6 +11670,12 @@ class Viroid(Pathogen):
          'exact_mappings': ['schema:contactPoint'],
          'recommended': True,
          'slot_uri': 'dcat:contactPoint'} })
+    fundingSource: Optional[list[FundingSource]] = Field(default=None, title="funding source", description="""A program, grant, or project providing financial support for the access or use of the product or service, either fully or partially""", json_schema_extra = { "linkml_meta": {'alias': 'fundingSource',
+         'comments': ['Links a product or service to one or more financial mechanisms, '
+                      'initiatives, or grants that enable or support its provision or '
+                      'access'],
+         'domain_of': ['ProductOrService'],
+         'exact_mappings': ['schema:funding']} })
     title: str = Field(default=..., title="title", description="""A name given to the resource""", json_schema_extra = { "linkml_meta": {'alias': 'title',
          'comments': ['The title of the item should be as short and descriptive as '
                       'possible. E.g. for virus products it should basically be based '
@@ -11472,7 +11688,8 @@ class Viroid(Pathogen):
                        'Publication',
                        'Term',
                        'License',
-                       'Certification'],
+                       'Certification',
+                       'FundingSource'],
          'exact_mappings': ['schema:name', 'rdfs:label'],
          'slot_uri': 'dct:title'} })
     description: str = Field(default=..., title="description", description="""A short explanation of the characteristics, features, or nature of the current item""", json_schema_extra = { "linkml_meta": {'alias': 'description',
@@ -11486,7 +11703,8 @@ class Viroid(Pathogen):
                        'File',
                        'ContactPoint',
                        'License',
-                       'Certification'],
+                       'Certification',
+                       'FundingSource'],
          'exact_mappings': ['schema:description'],
          'recommended': True,
          'slot_uri': 'dct:description'} })
@@ -11747,6 +11965,12 @@ class Prion(Pathogen):
          'exact_mappings': ['schema:contactPoint'],
          'recommended': True,
          'slot_uri': 'dcat:contactPoint'} })
+    fundingSource: Optional[list[FundingSource]] = Field(default=None, title="funding source", description="""A program, grant, or project providing financial support for the access or use of the product or service, either fully or partially""", json_schema_extra = { "linkml_meta": {'alias': 'fundingSource',
+         'comments': ['Links a product or service to one or more financial mechanisms, '
+                      'initiatives, or grants that enable or support its provision or '
+                      'access'],
+         'domain_of': ['ProductOrService'],
+         'exact_mappings': ['schema:funding']} })
     title: str = Field(default=..., title="title", description="""A name given to the resource""", json_schema_extra = { "linkml_meta": {'alias': 'title',
          'comments': ['The title of the item should be as short and descriptive as '
                       'possible. E.g. for virus products it should basically be based '
@@ -11759,7 +11983,8 @@ class Prion(Pathogen):
                        'Publication',
                        'Term',
                        'License',
-                       'Certification'],
+                       'Certification',
+                       'FundingSource'],
          'exact_mappings': ['schema:name', 'rdfs:label'],
          'slot_uri': 'dct:title'} })
     description: str = Field(default=..., title="description", description="""A short explanation of the characteristics, features, or nature of the current item""", json_schema_extra = { "linkml_meta": {'alias': 'description',
@@ -11773,7 +11998,8 @@ class Prion(Pathogen):
                        'File',
                        'ContactPoint',
                        'License',
-                       'Certification'],
+                       'Certification',
+                       'FundingSource'],
          'exact_mappings': ['schema:description'],
          'recommended': True,
          'slot_uri': 'dct:description'} })
@@ -12277,7 +12503,8 @@ class File(Resource):
                                                       'PersonOrOrganization',
                                                       'ContactPoint',
                                                       'License',
-                                                      'Certification'],
+                                                      'Certification',
+                                                      'FundingSource'],
                                         'exact_mappings': ['schema:description'],
                                         'multivalued': False,
                                         'name': 'description',
@@ -12342,7 +12569,8 @@ class File(Resource):
                        'PersonOrOrganization',
                        'ContactPoint',
                        'License',
-                       'Certification'],
+                       'Certification',
+                       'FundingSource'],
          'exact_mappings': ['schema:description'],
          'recommended': True,
          'slot_uri': 'dct:description'} })
@@ -12423,7 +12651,8 @@ class Data(File):
                        'PersonOrOrganization',
                        'ContactPoint',
                        'License',
-                       'Certification'],
+                       'Certification',
+                       'FundingSource'],
          'exact_mappings': ['schema:description'],
          'recommended': True,
          'slot_uri': 'dct:description'} })
@@ -12506,7 +12735,8 @@ class Document(File):
                        'PersonOrOrganization',
                        'ContactPoint',
                        'License',
-                       'Certification'],
+                       'Certification',
+                       'FundingSource'],
          'exact_mappings': ['schema:description'],
          'recommended': True,
          'slot_uri': 'dct:description'} })
@@ -12587,7 +12817,8 @@ class Audio(File):
                        'PersonOrOrganization',
                        'ContactPoint',
                        'License',
-                       'Certification'],
+                       'Certification',
+                       'FundingSource'],
          'exact_mappings': ['schema:description'],
          'recommended': True,
          'slot_uri': 'dct:description'} })
@@ -12666,7 +12897,8 @@ class Video(File):
                        'PersonOrOrganization',
                        'ContactPoint',
                        'License',
-                       'Certification'],
+                       'Certification',
+                       'FundingSource'],
          'exact_mappings': ['schema:description'],
          'recommended': True,
          'slot_uri': 'dct:description'} })
@@ -12765,7 +12997,8 @@ class Image(File):
                        'PersonOrOrganization',
                        'ContactPoint',
                        'License',
-                       'Certification'],
+                       'Certification',
+                       'FundingSource'],
          'exact_mappings': ['schema:description'],
          'recommended': True,
          'slot_uri': 'dct:description'} })
@@ -12878,7 +13111,8 @@ class ContactPoint(Resource):
                                                       'PersonOrOrganization',
                                                       'File',
                                                       'License',
-                                                      'Certification'],
+                                                      'Certification',
+                                                      'FundingSource'],
                                         'exact_mappings': ['schema:description'],
                                         'multivalued': False,
                                         'name': 'description',
@@ -12972,7 +13206,8 @@ class ContactPoint(Resource):
                        'PersonOrOrganization',
                        'File',
                        'License',
-                       'Certification'],
+                       'Certification',
+                       'FundingSource'],
          'exact_mappings': ['schema:description'],
          'recommended': True,
          'slot_uri': 'dct:description'} })
@@ -13079,7 +13314,8 @@ class License(Resource):
                                                       'PersonOrOrganization',
                                                       'File',
                                                       'ContactPoint',
-                                                      'Certification'],
+                                                      'Certification',
+                                                      'FundingSource'],
                                         'multivalued': False,
                                         'name': 'description',
                                         'range': 'string',
@@ -13137,7 +13373,8 @@ class License(Resource):
                                                 'DataService',
                                                 'Publication',
                                                 'Term',
-                                                'Certification'],
+                                                'Certification',
+                                                'FundingSource'],
                                   'exact_mappings': ['schema:name', 'rdfs:label'],
                                   'multivalued': False,
                                   'name': 'title',
@@ -13159,7 +13396,8 @@ class License(Resource):
                        'DataService',
                        'Publication',
                        'Term',
-                       'Certification'],
+                       'Certification',
+                       'FundingSource'],
          'exact_mappings': ['schema:name', 'rdfs:label'],
          'slot_uri': 'dct:title'} })
     description: Optional[str] = Field(default=None, title="description", description="""A short explanation of the characteristics, features, or nature of the current item""", json_schema_extra = { "linkml_meta": {'alias': 'description',
@@ -13177,7 +13415,8 @@ class License(Resource):
                        'PersonOrOrganization',
                        'File',
                        'ContactPoint',
-                       'Certification'],
+                       'Certification',
+                       'FundingSource'],
          'exact_mappings': ['schema:description',
                             'schema:description',
                             'schema:description'],
@@ -13270,7 +13509,8 @@ class Certification(Resource):
                                                       'PersonOrOrganization',
                                                       'File',
                                                       'ContactPoint',
-                                                      'License'],
+                                                      'License',
+                                                      'FundingSource'],
                                         'exact_mappings': ['schema:description'],
                                         'multivalued': False,
                                         'name': 'description',
@@ -13317,7 +13557,8 @@ class Certification(Resource):
                                                 'DataService',
                                                 'Publication',
                                                 'Term',
-                                                'License'],
+                                                'License',
+                                                'FundingSource'],
                                   'exact_mappings': ['schema:name', 'rdfs:label'],
                                   'multivalued': False,
                                   'name': 'title',
@@ -13339,7 +13580,8 @@ class Certification(Resource):
                        'DataService',
                        'Publication',
                        'Term',
-                       'License'],
+                       'License',
+                       'FundingSource'],
          'exact_mappings': ['schema:name', 'rdfs:label'],
          'slot_uri': 'dct:title'} })
     description: Optional[str] = Field(default=None, title="description", description="""A short explanation of the characteristics, features, or nature of the current item""", json_schema_extra = { "linkml_meta": {'alias': 'description',
@@ -13353,7 +13595,8 @@ class Certification(Resource):
                        'PersonOrOrganization',
                        'File',
                        'ContactPoint',
-                       'License'],
+                       'License',
+                       'FundingSource'],
          'exact_mappings': ['schema:description'],
          'recommended': True,
          'slot_uri': 'dct:description'} })
@@ -13367,6 +13610,225 @@ class Certification(Resource):
          'broad_mappings': ['schema:url'],
          'domain_of': ['Certification', 'License'],
          'exact_mappings': ['schema:archivedAt']} })
+    keyword: Optional[list[str]] = Field(default=None, title="keyword", description="""A keyword or tag describing the resource""", json_schema_extra = { "linkml_meta": {'alias': 'keyword', 'domain_of': ['Resource'], 'slot_uri': 'dcat:keyword'} })
+    dateIssued: Optional[datetime ] = Field(default=None, title="date issued", description="""Date of formal issuance (e.g., publication) of the resource""", json_schema_extra = { "linkml_meta": {'alias': 'dateIssued',
+         'close_mappings': ['schema:datePublished', 'schema:dateCreated'],
+         'comments': ['encoded using the relevant ISO 8601 Date and Time compliant '
+                      'string [DATETIME]'],
+         'domain_of': ['Resource'],
+         'exact_mappings': ['sepio:0000051'],
+         'slot_uri': 'dct:issued'} })
+    dateModified: Optional[datetime ] = Field(default=None, title="date modified", description="""Most recent date on which the resource was changed, updated or modified""", json_schema_extra = { "linkml_meta": {'alias': 'dateModified',
+         'close_mappings': ['schema:dateModified'],
+         'comments': ['encoded using the relevant ISO 8601 Date and Time compliant '
+                      'string [DATETIME]'],
+         'domain_of': ['Resource'],
+         'exact_mappings': ['sepio:0000036'],
+         'slot_uri': 'dct:modified'} })
+    identifier: Optional[list[str]] = Field(default=None, title="identifier", description="""A unique identifier of the resource being described or cataloged""", json_schema_extra = { "linkml_meta": {'alias': 'identifier',
+         'comments': ['The identifier is a text string which is assigned to the '
+                      'resource to provide an unambiguous reference within a '
+                      'particular context. Persistent identifiers should be provided '
+                      'as HTTP URIs'],
+         'domain_of': ['Resource'],
+         'exact_mappings': ['schema:identifier'],
+         'slot_uri': 'dct:identifier'} })
+    iri: Optional[list[str]] = Field(default=None, title="IRI", description="""International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs""", json_schema_extra = { "linkml_meta": {'alias': 'iri',
+         'close_mappings': ['biolink:iri'],
+         'comments': ['An IRI is a global identifier standardized by IETF RFC 3987. It '
+                      'may or may not be resolvable on the web. IRIs include URIs, and '
+                      'URIs include URLs'],
+         'domain_of': ['Resource'],
+         'is_a': 'identifier',
+         'narrow_mappings': ['schema:url'],
+         'related_mappings': ['mi:url']} })
+
+
+class FundingSource(Resource):
+    """
+    A program, grant, or project providing financial support for the access or use of a product or service, either fully or partially
+    """
+    linkml_meta: ClassVar[LinkMLMeta] = LinkMLMeta({'close_mappings': ['ncit:C17769', 'ncit:C17769'],
+         'exact_mappings': ['schema:Grant', 'schema:Grant'],
+         'from_schema': 'https://w3id.org/evorao/',
+         'slot_usage': {'description': {'comments': ['Describe this item in few lines. '
+                                                     'This description will serve as a '
+                                                     'summary to present the '
+                                                     'resource.'],
+                                        'description': 'A short explanation of the '
+                                                       'characteristics, features, or '
+                                                       'nature of the current item',
+                                        'domain_of': ['FundingSource',
+                                                      'Dataset',
+                                                      'DataService',
+                                                      'Term',
+                                                      'PersonOrOrganization',
+                                                      'File',
+                                                      'ContactPoint',
+                                                      'License',
+                                                      'Certification'],
+                                        'exact_mappings': ['schema:description'],
+                                        'multivalued': False,
+                                        'name': 'description',
+                                        'range': 'string',
+                                        'recommended': True,
+                                        'required': False,
+                                        'slot_uri': 'dct:description',
+                                        'title': 'description'},
+                        'eligibilityCriteria': {'comments': ['Keep clear and '
+                                                             'user-friendly; provide a '
+                                                             'link if criteria are '
+                                                             'complex'],
+                                                'description': 'Conditions under which '
+                                                               'individuals or '
+                                                               'organisations may '
+                                                               'benefit from the '
+                                                               'financial mechanism, '
+                                                               'including access '
+                                                               'rules, eligibility '
+                                                               'requirements, or '
+                                                               'geographical/institutional '
+                                                               'restrictions. May be '
+                                                               'expressed as text or '
+                                                               'as a link to a formal '
+                                                               'eligibility statement',
+                                                'domain_of': ['FundingSource'],
+                                                'multivalued': False,
+                                                'name': 'eligibilityCriteria',
+                                                'range': 'string',
+                                                'required': False,
+                                                'title': 'eligibility criteria'},
+                        'funder': {'close_mappings': ['schema:funder'],
+                                   'description': 'The organization providing the '
+                                                  'financial support',
+                                   'domain_of': ['FundingSource'],
+                                   'multivalued': False,
+                                   'name': 'funder',
+                                   'range': 'Organization',
+                                   'required': False,
+                                   'title': 'funder'},
+                        'fundingPeriodEnd': {'description': 'The date on which the '
+                                                            'financial mechanism '
+                                                            'ceases to apply to the '
+                                                            'supported product or '
+                                                            'service',
+                                             'domain_of': ['FundingSource'],
+                                             'multivalued': False,
+                                             'name': 'fundingPeriodEnd',
+                                             'range': 'date',
+                                             'required': False,
+                                             'title': 'funding period end'},
+                        'fundingPeriodStart': {'description': 'The date from which the '
+                                                              'financial mechanism is '
+                                                              'active or applicable to '
+                                                              'the supported product '
+                                                              'or service',
+                                               'domain_of': ['FundingSource'],
+                                               'multivalued': False,
+                                               'name': 'fundingPeriodStart',
+                                               'range': 'date',
+                                               'required': False,
+                                               'title': 'funding period start'},
+                        'fundingProgram': {'description': 'Identifies the overarching '
+                                                          'financial framework, '
+                                                          'research initiative, or '
+                                                          'support mechanism that '
+                                                          'enables or contributes to '
+                                                          'the provision of a product '
+                                                          'or service. The value may '
+                                                          'correspond to a European '
+                                                          'funding framework (e.g. '
+                                                          'Horizon Europe), a specific '
+                                                          'research initiative (e.g. '
+                                                          'an EU project), or another '
+                                                          'public or private funding '
+                                                          'mechanism',
+                                           'domain_of': ['FundingSource'],
+                                           'multivalued': False,
+                                           'name': 'fundingProgram',
+                                           'range': 'string',
+                                           'required': False,
+                                           'title': 'funding program'},
+                        'grantNumber': {'description': 'A formal reference or '
+                                                       'agreement number assigned by '
+                                                       'the funding body',
+                                        'domain_of': ['FundingSource'],
+                                        'is_a': 'identifier',
+                                        'multivalued': False,
+                                        'name': 'grantNumber',
+                                        'range': 'string',
+                                        'required': False,
+                                        'title': 'grant number'},
+                        'title': {'comments': ['The title of the item should be as '
+                                               'short and descriptive as possible. '
+                                               'E.g. for virus products it should '
+                                               'basically be based on the following '
+                                               "Pattern: 'Virus name', 'virus host "
+                                               "type', 'collection year', 'country of "
+                                               "collection' ex 'suspected "
+                                               "epidemiological origin', 'genotype', "
+                                               "'strain', 'variant name or specific "
+                                               'feature'],
+                                  'description': 'A name given to the resource',
+                                  'domain_of': ['FundingSource',
+                                                'Dataset',
+                                                'DataService',
+                                                'Publication',
+                                                'Term',
+                                                'License',
+                                                'Certification'],
+                                  'exact_mappings': ['schema:name', 'rdfs:label'],
+                                  'multivalued': False,
+                                  'name': 'title',
+                                  'range': 'string',
+                                  'required': True,
+                                  'slot_uri': 'dct:title',
+                                  'title': 'title'}},
+         'title': 'Funding source'})
+
+    title: str = Field(default=..., title="title", description="""A name given to the resource""", json_schema_extra = { "linkml_meta": {'alias': 'title',
+         'comments': ['The title of the item should be as short and descriptive as '
+                      'possible. E.g. for virus products it should basically be based '
+                      "on the following Pattern: 'Virus name', 'virus host type', "
+                      "'collection year', 'country of collection' ex 'suspected "
+                      "epidemiological origin', 'genotype', 'strain', 'variant name or "
+                      'specific feature'],
+         'domain_of': ['FundingSource',
+                       'Dataset',
+                       'DataService',
+                       'Publication',
+                       'Term',
+                       'License',
+                       'Certification'],
+         'exact_mappings': ['schema:name', 'rdfs:label'],
+         'slot_uri': 'dct:title'} })
+    description: Optional[str] = Field(default=None, title="description", description="""A short explanation of the characteristics, features, or nature of the current item""", json_schema_extra = { "linkml_meta": {'alias': 'description',
+         'close_mappings': ['schema:description'],
+         'comments': ['Describe this item in few lines. This description will serve as '
+                      'a summary to present the resource.'],
+         'domain_of': ['FundingSource',
+                       'Dataset',
+                       'DataService',
+                       'Term',
+                       'PersonOrOrganization',
+                       'File',
+                       'ContactPoint',
+                       'License',
+                       'Certification'],
+         'exact_mappings': ['schema:description'],
+         'recommended': True,
+         'slot_uri': 'dct:description'} })
+    fundingProgram: Optional[str] = Field(default=None, title="funding program", description="""Identifies the overarching financial framework, research initiative, or support mechanism that enables or contributes to the provision of a product or service. The value may correspond to a European funding framework (e.g. Horizon Europe), a specific research initiative (e.g. an EU project), or another public or private funding mechanism""", json_schema_extra = { "linkml_meta": {'alias': 'fundingProgram', 'domain_of': ['FundingSource']} })
+    grantNumber: Optional[str] = Field(default=None, title="grant number", description="""A formal reference or agreement number assigned by the funding body""", json_schema_extra = { "linkml_meta": {'alias': 'grantNumber', 'domain_of': ['FundingSource'], 'is_a': 'identifier'} })
+    funder: Optional[Organization] = Field(default=None, title="funder", description="""The organization providing the financial support""", json_schema_extra = { "linkml_meta": {'alias': 'funder',
+         'close_mappings': ['schema:funder'],
+         'domain_of': ['FundingSource']} })
+    fundingPeriodStart: Optional[date] = Field(default=None, title="funding period start", description="""The date from which the financial mechanism is active or applicable to the supported product or service""", json_schema_extra = { "linkml_meta": {'alias': 'fundingPeriodStart', 'domain_of': ['FundingSource']} })
+    fundingPeriodEnd: Optional[date] = Field(default=None, title="funding period end", description="""The date on which the financial mechanism ceases to apply to the supported product or service""", json_schema_extra = { "linkml_meta": {'alias': 'fundingPeriodEnd', 'domain_of': ['FundingSource']} })
+    eligibilityCriteria: Optional[str] = Field(default=None, title="eligibility criteria", description="""Conditions under which individuals or organisations may benefit from the financial mechanism, including access rules, eligibility requirements, or geographical/institutional restrictions. May be expressed as text or as a link to a formal eligibility statement""", json_schema_extra = { "linkml_meta": {'alias': 'eligibilityCriteria',
+         'comments': ['Keep clear and user-friendly; provide a link if criteria are '
+                      'complex'],
+         'domain_of': ['FundingSource']} })
     keyword: Optional[list[str]] = Field(default=None, title="keyword", description="""A keyword or tag describing the resource""", json_schema_extra = { "linkml_meta": {'alias': 'keyword', 'domain_of': ['Resource'], 'slot_uri': 'dcat:keyword'} })
     dateIssued: Optional[datetime ] = Field(default=None, title="date issued", description="""Date of formal issuance (e.g., publication) of the resource""", json_schema_extra = { "linkml_meta": {'alias': 'dateIssued',
          'close_mappings': ['schema:datePublished', 'schema:dateCreated'],
@@ -13480,4 +13942,5 @@ Image.model_rebuild()
 ContactPoint.model_rebuild()
 License.model_rebuild()
 Certification.model_rebuild()
+FundingSource.model_rebuild()
 

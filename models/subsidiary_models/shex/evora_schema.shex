@@ -1,5 +1,5 @@
 # metamodel_version: 1.7.0
-# version: 1.0.10016
+# version: 1.0.10123
 BASE <https://w3id.org/evorao/>
 PREFIX dcat: <http://www.w3.org/ns/dcat#>
 PREFIX foaf: <http://xmlns.com/foaf/0.1/>
@@ -322,6 +322,22 @@ linkml:Sparqlpath xsd:string
           dct:license @<License> ?
        ) ;
        rdf:type [ <File> ] ?
+    )
+}
+
+<FundingSource> CLOSED {
+    (  $<FundingSource_tes> (  &<Resource_tes> ;
+          rdf:type [ dcat:Resource ] ? ;
+          dct:title @linkml:String ;
+          dct:description @linkml:String ? ;
+          <fundingProgram> @linkml:String ? ;
+          <grantNumber> @linkml:String ? ;
+          <funder> @<Organization> ? ;
+          <fundingPeriodStart> @linkml:Date ? ;
+          <fundingPeriodEnd> @linkml:Date ? ;
+          <eligibilityCriteria> @linkml:String ?
+       ) ;
+       rdf:type [ <FundingSource> ] ?
     )
 }
 
@@ -655,7 +671,8 @@ linkml:Sparqlpath xsd:string
           <certification> @<Certification> * ;
           <internalReference> @linkml:String ? ;
           skos:note @linkml:String ? ;
-          dcat:contactPoint @<ContactPoint> ?
+          dcat:contactPoint @<ContactPoint> ? ;
+          <fundingSource> @<FundingSource> *
        ) ;
        rdf:type [ <ProductOrService> ] ?
     )
@@ -741,9 +758,9 @@ linkml:Sparqlpath xsd:string
 
 <Resource>  (
     @<BiologicalMaterialOrigin> OR @<BiologicalPartOrigin> OR @<Certification> OR @<ContactPoint> OR @<DataService> OR @<Dataset>
-    OR @<ExternalRelatedReference> OR @<File> OR @<License> OR @<MaterialSafetyDataSheet> OR @<PathogenIdentification> OR
-    @<PersonOrOrganization> OR @<Publication> OR @<RecombinantPartIdentification> OR @<Sequence> OR @<SequenceReference> OR @<Term>
-    OR @<Version>
+    OR @<ExternalRelatedReference> OR @<File> OR @<FundingSource> OR @<License> OR @<MaterialSafetyDataSheet> OR
+    @<PathogenIdentification> OR @<PersonOrOrganization> OR @<Publication> OR @<RecombinantPartIdentification> OR @<Sequence> OR
+    @<SequenceReference> OR @<Term> OR @<Version>
 )
 
 <Resource_struct> {
