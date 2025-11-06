@@ -222,6 +222,7 @@ Name: EVORAO
 | [physicalChemicalProperties](physicalChemicalProperties.md) | Key characteristics of the product, such as physical state, appearance, solub... |
 | [plasmidSelection](plasmidSelection.md) | Specific selectable markers in the plasmid, such as antibiotic resistance gen... |
 | [postalCode](postalCode.md) | The postal code |
+| [preparationTechnique](preparationTechnique.md) | The technique, method, or procedure employed to obtain or prepare the materia... |
 | [previouslyKnownAs](previouslyKnownAs.md) | Any historic version of this taxon having a different name |
 | [productionCellLine](productionCellLine.md) | The cell line used for the production or propagation of the pathogen, detaili... |
 | [productionSystem](productionSystem.md) | The biological and technological methods and processes used to produce the an... |

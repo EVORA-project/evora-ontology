@@ -224,6 +224,8 @@ URI: [EVORAO:Virus](https://w3id.org/evorao/Virus)
     click PathogenIdentification href "../PathogenIdentification"
 
         
+      Virus : preparationTechnique
+        
       Virus : productionCellLine
         
           
@@ -373,6 +375,7 @@ URI: [EVORAO:Virus](https://w3id.org/evorao/Virus)
 | [storageConditions](storageConditions.md) | 1 <br/> [String](String.md) | Specifies the conditions under which the product has to be stored to maintain... | [Product](Product.md) |
 | [thirdPartyDistributionConsent](thirdPartyDistributionConsent.md) | 0..1 <br/> [Boolean](Boolean.md) | Indicates whether the biological material can be distributed without restrict... | [Product](Product.md) |
 | [usageRestrictions](usageRestrictions.md) | 0..1 <br/> [String](String.md) | Specifies any limitations or conditions on the use of the biological material... | [Product](Product.md) |
+| [preparationTechnique](preparationTechnique.md) | 0..1 <br/> [String](String.md) | The technique, method, or procedure employed to obtain or prepare the materia... | [Product](Product.md) |
 | [accessPointUrl](accessPointUrl.md) | 1 <br/> [Uri](Uri.md) | The URL that permits to access to the product/service detailed description pa... | [ProductOrService](ProductOrService.md) |
 | [refSku](refSku.md) | 1 <br/> [String](String.md) | The reference or the stock keeping unit of the service or item provided in th... | [ProductOrService](ProductOrService.md) |
 | [unitDefinition](unitDefinition.md) | 0..1 _recommended_ <br/> [String](String.md) | A short description of what will be delivered by ordering one unit of this it... | [ProductOrService](ProductOrService.md) |
@@ -1068,6 +1071,20 @@ attributes:
     from_schema: https://w3id.org/evorao/
     rank: 1000
     alias: usageRestrictions
+    owner: Virus
+    domain_of:
+    - Product
+    range: string
+    required: false
+    multivalued: false
+  preparationTechnique:
+    name: preparationTechnique
+    description: The technique, method, or procedure employed to obtain or prepare
+      the material prior to its use or storage
+    title: preparation technique
+    from_schema: https://w3id.org/evorao/
+    rank: 1000
+    alias: preparationTechnique
     owner: Virus
     domain_of:
     - Product

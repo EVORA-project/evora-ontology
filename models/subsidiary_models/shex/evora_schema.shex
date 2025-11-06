@@ -1,5 +1,5 @@
 # metamodel_version: 1.7.0
-# version: 1.0.10123
+# version: 1.0.10142
 BASE <https://w3id.org/evorao/>
 PREFIX dcat: <http://www.w3.org/ns/dcat#>
 PREFIX foaf: <http://xmlns.com/foaf/0.1/>
@@ -335,7 +335,8 @@ linkml:Sparqlpath xsd:string
           <funder> @<Organization> ? ;
           <fundingPeriodStart> @linkml:Date ? ;
           <fundingPeriodEnd> @linkml:Date ? ;
-          <eligibilityCriteria> @linkml:String ?
+          <eligibilityCriteria> @linkml:String ? ;
+          <logo> @<Image> ?
        ) ;
        rdf:type [ <FundingSource> ] ?
     )
@@ -615,7 +616,8 @@ linkml:Sparqlpath xsd:string
              <originator> @<Originator> ? ;
              <storageConditions> @linkml:String ;
              <thirdPartyDistributionConsent> @linkml:Boolean ? ;
-             <usageRestrictions> @linkml:String ?
+             <usageRestrictions> @linkml:String ? ;
+             <preparationTechnique> @linkml:String ?
           ) ;
           rdf:type [ <Product> ] ?
        )

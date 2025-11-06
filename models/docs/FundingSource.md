@@ -54,6 +54,15 @@ URI: [EVORAO:FundingSource](https://w3id.org/evorao/FundingSource)
         
       FundingSource : keyword
         
+      FundingSource : logo
+        
+          
+    
+    
+    FundingSource --> "0..1" Image : logo
+    click Image href "../Image"
+
+        
       FundingSource : title
         
       
@@ -81,6 +90,7 @@ URI: [EVORAO:FundingSource](https://w3id.org/evorao/FundingSource)
 | [fundingPeriodStart](fundingPeriodStart.md) | 0..1 <br/> [Date](Date.md) | The date from which the financial mechanism is active or applicable to the su... | direct |
 | [fundingPeriodEnd](fundingPeriodEnd.md) | 0..1 <br/> [Date](Date.md) | The date on which the financial mechanism ceases to apply to the supported pr... | direct |
 | [eligibilityCriteria](eligibilityCriteria.md) | 0..1 <br/> [String](String.md) | Conditions under which individuals or organisations may benefit from the fina... | direct |
+| [logo](logo.md) | 0..1 <br/> [Image](Image.md) | A path or URL to the related logo | direct |
 | [keyword](keyword.md) | * <br/> [String](String.md) | A keyword or tag describing the resource | [Resource](Resource.md) |
 | [dateIssued](dateIssued.md) | 0..1 <br/> [Datetime](Datetime.md) | Date of formal issuance (e | [Resource](Resource.md) |
 | [dateModified](dateModified.md) | 0..1 <br/> [Datetime](Datetime.md) | Most recent date on which the resource was changed, updated or modified | [Resource](Resource.md) |
@@ -177,6 +187,7 @@ slots:
 - fundingPeriodStart
 - fundingPeriodEnd
 - eligibilityCriteria
+- logo
 slot_usage:
   title:
     name: title
@@ -294,6 +305,20 @@ slot_usage:
     domain_of:
     - FundingSource
     range: string
+    required: false
+    multivalued: false
+  logo:
+    name: logo
+    description: A path or URL to the related logo
+    title: logo
+    exact_mappings:
+    - schema:logo
+    domain_of:
+    - FundingSource
+    - PersonOrOrganization
+    - License
+    - Certification
+    range: Image
     required: false
     multivalued: false
 
@@ -433,6 +458,20 @@ slot_usage:
     domain_of:
     - FundingSource
     range: string
+    required: false
+    multivalued: false
+  logo:
+    name: logo
+    description: A path or URL to the related logo
+    title: logo
+    exact_mappings:
+    - schema:logo
+    domain_of:
+    - FundingSource
+    - PersonOrOrganization
+    - License
+    - Certification
+    range: Image
     required: false
     multivalued: false
 attributes:
@@ -586,6 +625,24 @@ attributes:
     domain_of:
     - FundingSource
     range: string
+    required: false
+    multivalued: false
+  logo:
+    name: logo
+    description: A path or URL to the related logo
+    title: logo
+    from_schema: https://w3id.org/evorao/
+    exact_mappings:
+    - schema:logo
+    rank: 1000
+    alias: logo
+    owner: FundingSource
+    domain_of:
+    - FundingSource
+    - PersonOrOrganization
+    - License
+    - Certification
+    range: Image
     required: false
     multivalued: false
   keyword:

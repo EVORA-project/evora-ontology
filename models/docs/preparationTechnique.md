@@ -1,16 +1,16 @@
 
 
-# Slot: unit definition (unitDefinition) 
+# Slot: preparation technique (preparationTechnique) 
 
 
-_A short description of what will be delivered by ordering one unit of this item_
+_The technique, method, or procedure employed to obtain or prepare the material prior to its use or storage_
 
 
 
 
 
-URI: [EVORAO:unitDefinition](https://w3id.org/evorao/unitDefinition)
-Alias: unitDefinition
+URI: [EVORAO:preparationTechnique](https://w3id.org/evorao/preparationTechnique)
+Alias: preparationTechnique
 
 <!-- no inheritance hierarchy -->
 
@@ -30,14 +30,12 @@ Alias: unitDefinition
 | [Hybridoma](Hybridoma.md) | An hybridoma that provides antibodies that can be related to a pathogen |  no  |
 | [NucleicAcid](NucleicAcid.md) | Nucleic acid related to a pathogen |  no  |
 | [Antibody](Antibody.md) | Protein that can bind to certain types of foreign bodies, such as pathogens |  no  |
-| [ProductOrService](ProductOrService.md) | An offering provided by a provider, which may be tangible (a product) or inta... |  yes  |
 | [DetectionKit](DetectionKit.md) | A detection kit for specific pathogens |  no  |
 | [Pathogen](Pathogen.md) | Biological entity that causes disease in its host, which is typically an infe... |  no  |
-| [Product](Product.md) | A tangible, physical item made available by a provider for use, consumption, ... |  no  |
+| [Product](Product.md) | A tangible, physical item made available by a provider for use, consumption, ... |  yes  |
 | [Protein](Protein.md) | A protein as a derived product from a pathogen |  no  |
 | [Bacterium](Bacterium.md) | The bacterium as a biological material |  no  |
 | [Prion](Prion.md) | The prion as a biological material |  no  |
-| [Service](Service.md) | An intangible offering characterized by an activity, performance, or facilita... |  no  |
 
 
 
@@ -49,15 +47,9 @@ Alias: unitDefinition
 
 * Range: [String](String.md)
 
-* Recommended: True
 
 
 
-
-
-## Comments
-
-* The description of what will be delivered to the end-user (e.g.: packaging, quantity...)
 
 ## Identifier and Mapping Information
 
@@ -79,9 +71,8 @@ Alias: unitDefinition
 
 | Mapping Type | Mapped Value |
 | ---  | ---  |
-| self | EVORAO:unitDefinition |
-| native | EVORAO:unitDefinition |
-| related | dct:format |
+| self | EVORAO:preparationTechnique |
+| native | EVORAO:preparationTechnique |
 
 
 
@@ -90,22 +81,17 @@ Alias: unitDefinition
 
 <details>
 ```yaml
-name: unitDefinition
-description: A short description of what will be delivered by ordering one unit of
-  this item
-title: unit definition
-comments:
-- 'The description of what will be delivered to the end-user (e.g.: packaging, quantity...)'
+name: preparationTechnique
+description: The technique, method, or procedure employed to obtain or prepare the
+  material prior to its use or storage
+title: preparation technique
 from_schema: https://w3id.org/evorao/
-related_mappings:
-- dct:format
 rank: 1000
-alias: unitDefinition
+alias: preparationTechnique
 domain_of:
-- ProductOrService
+- Product
 range: string
 required: false
-recommended: true
 multivalued: false
 
 ```

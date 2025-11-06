@@ -58,64 +58,40 @@ PREFIX gr: <http://purl.org/goodrelations/v1#>
 PREFIX vo: <http://purl.obolibrary.org/obo/VO_>
 PREFIX linkml: <https://w3id.org/linkml/>
 
-SELECT ?g ?s ?p WHERE {
- GRAPH ?g {
-  ?s rdf:type EVORAO:DetectionKit ;
-     ?p ?o .
-  FILTER ( ?p NOT IN (
-   EVORAO:standardOperatingProcedureFile,
-   EVORAO:specificityDocumented,
-   EVORAO:specificity,
-   EVORAO:targetedRegion,
-   EVORAO:iataClassification,
-   EVORAO:shippingConditions,
-   EVORAO:materialSafetyDataSheet,
-   EVORAO:originator,
-   EVORAO:storageConditions,
-   EVORAO:thirdPartyDistributionConsent,
-   EVORAO:usageRestrictions,
-   EVORAO:preparationTechnique,
-   EVORAO:accessPointUrl,
-   EVORAO:refSku,
-   EVORAO:unitDefinition,
-   dcat:theme,
-   EVORAO:additionalCategory,
-   EVORAO:unitCost,
-   EVORAO:unitCostCurrency,
-   EVORAO:unitCostNote,
-   EVORAO:qualityGrading,
-   EVORAO:pathogenIdentification,
-   EVORAO:doi,
-   EVORAO:riskGroup,
-   EVORAO:biosafetyRestrictions,
-   EVORAO:canBeUsedToProduceGmo,
-   EVORAO:provider,
-   EVORAO:collection,
-   EVORAO:keywords,
-   EVORAO:availability,
-   EVORAO:complementaryDocument,
-   EVORAO:technicalRecommendation,
-   EVORAO:productPicture,
-   EVORAO:externalRelatedReference,
-   EVORAO:certification,
-   EVORAO:internalReference,
-   skos:note,
-   dcat:contactPoint,
-   EVORAO:fundingSource,
-   dct:title,
-   dct:description,
-   dcat:version,
-   dcat:keyword,
-   dct:issued,
-   dct:modified,
-   dct:identifier,
-   EVORAO:iri,
-   rdf:type ))
+SELECT
+  ?check
+  ?graph
+  ?subject
+  ?predicate
+  ?object
+WHERE {
+ GRAPH ?graph {
+  ?subject rdf:type EVORAO:FundingSource ;
+     ?predicate ?object .
+  FILTER NOT EXISTS {
+    ?object rdf:type ?otype .
+    FILTER ( ?otype IN (
+      EVORAO:Image
+      
+      ))
+  }
  }
+ VALUES ?check { linkml:range }
+ VALUES ?predicate { EVORAO:logo  }
  
-} 
+}  
 
 
 
 
+
+
+
+
+
+
+
+
+
+## -- End of checks for FundingSource
 

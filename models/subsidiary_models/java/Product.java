@@ -5,7 +5,7 @@ import lombok.*;
 
 
 
-/* version: 1.0.10123 */
+/* version: 1.0.10142 */
 
 
 /**
@@ -22,5 +22,6 @@ public class Product extends ProductOrService {
   private String storageConditions;
   private boolean thirdPartyDistributionConsent;
   private String usageRestrictions;
+  private String preparationTechnique;
 
 }

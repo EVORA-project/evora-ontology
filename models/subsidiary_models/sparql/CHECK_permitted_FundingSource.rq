@@ -71,6 +71,7 @@ SELECT ?g ?s ?p WHERE {
    EVORAO:fundingPeriodStart,
    EVORAO:fundingPeriodEnd,
    EVORAO:eligibilityCriteria,
+   EVORAO:logo,
    dcat:keyword,
    dct:issued,
    dct:modified,

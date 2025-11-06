@@ -38,7 +38,7 @@
     "interoperability"
   ],
   "id": "https://w3id.org/evorao/",
-  "version": "1.0.10123",
+  "version": "1.0.10142",
   "imports": [
     "linkml:types"
   ],
@@ -2001,11 +2001,12 @@
         "http://schema.org/logo"
       ],
       "slot_uri": "https://w3id.org/evorao/logo",
-      "owner": "Certification",
+      "owner": "FundingSource",
       "domain_of": [
         "PersonOrOrganization",
         "License",
-        "Certification"
+        "Certification",
+        "FundingSource"
       ],
       "range": "Image",
       "inlined": true,
@@ -3067,6 +3068,20 @@
       "title": "usage restrictions",
       "from_schema": "https://w3id.org/evorao/",
       "slot_uri": "https://w3id.org/evorao/usageRestrictions",
+      "owner": "Product",
+      "domain_of": [
+        "Product"
+      ],
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "preparationTechnique",
+      "definition_uri": "https://w3id.org/evorao/preparationTechnique",
+      "description": "The technique, method, or procedure employed to obtain or prepare the material prior to its use or storage",
+      "title": "preparation technique",
+      "from_schema": "https://w3id.org/evorao/",
+      "slot_uri": "https://w3id.org/evorao/preparationTechnique",
       "owner": "Product",
       "domain_of": [
         "Product"
@@ -8158,6 +8173,25 @@
       "@type": "SlotDefinition"
     },
     {
+      "name": "Product_preparationTechnique",
+      "definition_uri": "https://w3id.org/evorao/preparationTechnique",
+      "description": "The technique, method, or procedure employed to obtain or prepare the material prior to its use or storage",
+      "title": "preparation technique",
+      "from_schema": "https://w3id.org/evorao/",
+      "is_a": "preparationTechnique",
+      "domain": "Product",
+      "slot_uri": "https://w3id.org/evorao/preparationTechnique",
+      "alias": "preparationTechnique",
+      "owner": "Product",
+      "domain_of": [
+        "Product"
+      ],
+      "is_usage_slot": true,
+      "usage_slot_name": "preparationTechnique",
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
       "name": "Antibody_productionSystem",
       "definition_uri": "https://w3id.org/evorao/productionSystem",
       "description": "The biological and technological methods and processes used to produce the antibody",
@@ -10737,6 +10771,29 @@
       "usage_slot_name": "eligibilityCriteria",
       "range": "string",
       "@type": "SlotDefinition"
+    },
+    {
+      "name": "FundingSource_logo",
+      "definition_uri": "https://w3id.org/evorao/logo",
+      "description": "A path or URL to the related logo",
+      "title": "logo",
+      "from_schema": "https://w3id.org/evorao/",
+      "exact_mappings": [
+        "http://schema.org/logo"
+      ],
+      "is_a": "logo",
+      "domain": "FundingSource",
+      "slot_uri": "https://w3id.org/evorao/logo",
+      "alias": "logo",
+      "owner": "FundingSource",
+      "domain_of": [
+        "FundingSource"
+      ],
+      "is_usage_slot": true,
+      "usage_slot_name": "logo",
+      "range": "Image",
+      "inlined": true,
+      "@type": "SlotDefinition"
     }
   ],
   "classes": [
@@ -12588,7 +12645,8 @@
         "Product_originator",
         "Product_storageConditions",
         "Product_thirdPartyDistributionConsent",
-        "Product_usageRestrictions"
+        "Product_usageRestrictions",
+        "Product_preparationTechnique"
       ],
       "slot_usage": {},
       "class_uri": "https://w3id.org/evorao/Product",
@@ -12650,6 +12708,7 @@
         "Product_storageConditions",
         "Product_thirdPartyDistributionConsent",
         "Product_usageRestrictions",
+        "Product_preparationTechnique",
         "Antibody_productionSystem",
         "Antibody_antibodyPurifiedByAffinity",
         "Antibody_specificityDocumented",
@@ -12722,6 +12781,7 @@
         "Product_storageConditions",
         "Product_thirdPartyDistributionConsent",
         "Product_usageRestrictions",
+        "Product_preparationTechnique",
         "Antibody_productionSystem",
         "Antibody_antibodyPurifiedByAffinity",
         "Antibody_specificityDocumented",
@@ -12793,6 +12853,7 @@
         "Product_storageConditions",
         "Product_thirdPartyDistributionConsent",
         "Product_usageRestrictions",
+        "Product_preparationTechnique",
         "Protein_biologicalMaterialOrigin",
         "Protein_sequence",
         "Protein_relatedPdb",
@@ -12878,6 +12939,7 @@
         "Product_storageConditions",
         "Product_thirdPartyDistributionConsent",
         "Product_usageRestrictions",
+        "Product_preparationTechnique",
         "NucleicAcid_biologicalMaterialOrigin",
         "NucleicAcid_genBankFileOfTheConstruct",
         "NucleicAcid_sequence",
@@ -12951,6 +13013,7 @@
         "Product_storageConditions",
         "Product_thirdPartyDistributionConsent",
         "Product_usageRestrictions",
+        "Product_preparationTechnique",
         "DetectionKit_standardOperatingProcedureFile",
         "DetectionKit_specificityDocumented",
         "DetectionKit_specificity",
@@ -13022,6 +13085,7 @@
         "Product_storageConditions",
         "Product_thirdPartyDistributionConsent",
         "Product_usageRestrictions",
+        "Product_preparationTechnique",
         "Bundle_itemsOfTheBundle"
       ],
       "slot_usage": {},
@@ -13101,6 +13165,7 @@
         "Product_storageConditions",
         "Product_thirdPartyDistributionConsent",
         "Product_usageRestrictions",
+        "Product_preparationTechnique",
         "Pathogen_biologicalMaterialOrigin",
         "Pathogen_suspectedEpidemiologicalOrigin",
         "Pathogen_isolationHost",
@@ -13196,6 +13261,7 @@
         "Product_storageConditions",
         "Product_thirdPartyDistributionConsent",
         "Product_usageRestrictions",
+        "Product_preparationTechnique",
         "Pathogen_biologicalMaterialOrigin",
         "Pathogen_suspectedEpidemiologicalOrigin",
         "Pathogen_isolationHost",
@@ -13292,6 +13358,7 @@
         "Product_storageConditions",
         "Product_thirdPartyDistributionConsent",
         "Product_usageRestrictions",
+        "Product_preparationTechnique",
         "Pathogen_biologicalMaterialOrigin",
         "Pathogen_suspectedEpidemiologicalOrigin",
         "Pathogen_isolationHost",
@@ -13383,6 +13450,7 @@
         "Product_storageConditions",
         "Product_thirdPartyDistributionConsent",
         "Product_usageRestrictions",
+        "Product_preparationTechnique",
         "Pathogen_biologicalMaterialOrigin",
         "Pathogen_suspectedEpidemiologicalOrigin",
         "Pathogen_isolationHost",
@@ -13470,6 +13538,7 @@
         "Product_storageConditions",
         "Product_thirdPartyDistributionConsent",
         "Product_usageRestrictions",
+        "Product_preparationTechnique",
         "Pathogen_biologicalMaterialOrigin",
         "Pathogen_suspectedEpidemiologicalOrigin",
         "Pathogen_isolationHost",
@@ -13553,6 +13622,7 @@
         "Product_storageConditions",
         "Product_thirdPartyDistributionConsent",
         "Product_usageRestrictions",
+        "Product_preparationTechnique",
         "Pathogen_biologicalMaterialOrigin",
         "Pathogen_suspectedEpidemiologicalOrigin",
         "Pathogen_isolationHost",
@@ -13640,6 +13710,7 @@
         "Product_storageConditions",
         "Product_thirdPartyDistributionConsent",
         "Product_usageRestrictions",
+        "Product_preparationTechnique",
         "Pathogen_biologicalMaterialOrigin",
         "Pathogen_suspectedEpidemiologicalOrigin",
         "Pathogen_isolationHost",
@@ -14086,6 +14157,7 @@
         "FundingSource_fundingPeriodStart",
         "FundingSource_fundingPeriodEnd",
         "FundingSource_eligibilityCriteria",
+        "FundingSource_logo",
         "FundingSource_grantNumber"
       ],
       "slot_usage": {},
@@ -14095,9 +14167,9 @@
   ],
   "metamodel_version": "1.7.0",
   "source_file": "evora_schema.yaml",
-  "source_file_date": "2025-10-20T10:18:49",
-  "source_file_size": 237316,
-  "generation_date": "2025-10-20T10:19:05",
+  "source_file_date": "2025-11-06T14:56:31",
+  "source_file_size": 238254,
+  "generation_date": "2025-11-06T14:56:49",
   "@type": "SchemaDefinition",
   "@context": [
     "https://w3id.org/linkml/types.context.jsonld",

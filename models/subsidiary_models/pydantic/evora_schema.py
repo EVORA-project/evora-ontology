@@ -27,7 +27,7 @@ from pydantic import (
 
 
 metamodel_version = "None"
-version = "1.0.10123"
+version = "1.0.10142"
 
 
 class ConfiguredBaseModel(BaseModel):
@@ -99,7 +99,7 @@ linkml_meta = LinkMLMeta({'comments': ['EVORAO is an ontology for standardized m
                     'pathogens. EVORAO is compatible with DCAT, making it '
                     'well-suited for efficiently cataloguing pathogen collections '
                     'and related resources.',
-     'generation_date': '2025-10-20T12:18:15',
+     'generation_date': '2025-11-06T15:56:02',
      'id': 'https://w3id.org/evorao/',
      'imports': ['linkml:types'],
      'in_language': 'en',
@@ -4967,7 +4967,8 @@ class PersonOrOrganization(Resource):
                         'logo': {'description': 'A path or URL to the related logo',
                                  'domain_of': ['PersonOrOrganization',
                                                'License',
-                                               'Certification'],
+                                               'Certification',
+                                               'FundingSource'],
                                  'exact_mappings': ['schema:logo'],
                                  'multivalued': False,
                                  'name': 'logo',
@@ -5020,7 +5021,10 @@ class PersonOrOrganization(Resource):
          'recommended': True,
          'slot_uri': 'dcat:contactPoint'} })
     logo: Optional[Image] = Field(default=None, title="logo", description="""A path or URL to the related logo""", json_schema_extra = { "linkml_meta": {'alias': 'logo',
-         'domain_of': ['PersonOrOrganization', 'License', 'Certification'],
+         'domain_of': ['PersonOrOrganization',
+                       'License',
+                       'Certification',
+                       'FundingSource'],
          'exact_mappings': ['schema:logo']} })
     keyword: Optional[list[str]] = Field(default=None, title="keyword", description="""A keyword or tag describing the resource""", json_schema_extra = { "linkml_meta": {'alias': 'keyword', 'domain_of': ['Resource'], 'slot_uri': 'dcat:keyword'} })
     dateIssued: Optional[datetime ] = Field(default=None, title="date issued", description="""Date of formal issuance (e.g., publication) of the resource""", json_schema_extra = { "linkml_meta": {'alias': 'dateIssued',
@@ -5120,7 +5124,10 @@ class Person(PersonOrOrganization):
          'recommended': True,
          'slot_uri': 'dcat:contactPoint'} })
     logo: Optional[Image] = Field(default=None, title="logo", description="""A path or URL to the related logo""", json_schema_extra = { "linkml_meta": {'alias': 'logo',
-         'domain_of': ['PersonOrOrganization', 'License', 'Certification'],
+         'domain_of': ['PersonOrOrganization',
+                       'License',
+                       'Certification',
+                       'FundingSource'],
          'exact_mappings': ['schema:logo']} })
     keyword: Optional[list[str]] = Field(default=None, title="keyword", description="""A keyword or tag describing the resource""", json_schema_extra = { "linkml_meta": {'alias': 'keyword', 'domain_of': ['Resource'], 'slot_uri': 'dcat:keyword'} })
     dateIssued: Optional[datetime ] = Field(default=None, title="date issued", description="""Date of formal issuance (e.g., publication) of the resource""", json_schema_extra = { "linkml_meta": {'alias': 'dateIssued',
@@ -5264,7 +5271,10 @@ class Organization(PersonOrOrganization):
          'recommended': True,
          'slot_uri': 'dcat:contactPoint'} })
     logo: Optional[Image] = Field(default=None, title="logo", description="""A path or URL to the related logo""", json_schema_extra = { "linkml_meta": {'alias': 'logo',
-         'domain_of': ['PersonOrOrganization', 'License', 'Certification'],
+         'domain_of': ['PersonOrOrganization',
+                       'License',
+                       'Certification',
+                       'FundingSource'],
          'exact_mappings': ['schema:logo']} })
     keyword: Optional[list[str]] = Field(default=None, title="keyword", description="""A keyword or tag describing the resource""", json_schema_extra = { "linkml_meta": {'alias': 'keyword', 'domain_of': ['Resource'], 'slot_uri': 'dcat:keyword'} })
     dateIssued: Optional[datetime ] = Field(default=None, title="date issued", description="""Date of formal issuance (e.g., publication) of the resource""", json_schema_extra = { "linkml_meta": {'alias': 'dateIssued',
@@ -5362,7 +5372,10 @@ class ReasearchInfrastructure(Organization):
          'recommended': True,
          'slot_uri': 'dcat:contactPoint'} })
     logo: Optional[Image] = Field(default=None, title="logo", description="""A path or URL to the related logo""", json_schema_extra = { "linkml_meta": {'alias': 'logo',
-         'domain_of': ['PersonOrOrganization', 'License', 'Certification'],
+         'domain_of': ['PersonOrOrganization',
+                       'License',
+                       'Certification',
+                       'FundingSource'],
          'exact_mappings': ['schema:logo']} })
     keyword: Optional[list[str]] = Field(default=None, title="keyword", description="""A keyword or tag describing the resource""", json_schema_extra = { "linkml_meta": {'alias': 'keyword', 'domain_of': ['Resource'], 'slot_uri': 'dcat:keyword'} })
     dateIssued: Optional[datetime ] = Field(default=None, title="date issued", description="""Date of formal issuance (e.g., publication) of the resource""", json_schema_extra = { "linkml_meta": {'alias': 'dateIssued',
@@ -5473,7 +5486,10 @@ class Provider(Organization):
          'recommended': True,
          'slot_uri': 'dcat:contactPoint'} })
     logo: Optional[Image] = Field(default=None, title="logo", description="""A path or URL to the related logo""", json_schema_extra = { "linkml_meta": {'alias': 'logo',
-         'domain_of': ['PersonOrOrganization', 'License', 'Certification'],
+         'domain_of': ['PersonOrOrganization',
+                       'License',
+                       'Certification',
+                       'FundingSource'],
          'exact_mappings': ['schema:logo']} })
     keyword: Optional[list[str]] = Field(default=None, title="keyword", description="""A keyword or tag describing the resource""", json_schema_extra = { "linkml_meta": {'alias': 'keyword', 'domain_of': ['Resource'], 'slot_uri': 'dcat:keyword'} })
     dateIssued: Optional[datetime ] = Field(default=None, title="date issued", description="""Date of formal issuance (e.g., publication) of the resource""", json_schema_extra = { "linkml_meta": {'alias': 'dateIssued',
@@ -5552,7 +5568,10 @@ class Originator(PersonOrOrganization):
          'recommended': True,
          'slot_uri': 'dcat:contactPoint'} })
     logo: Optional[Image] = Field(default=None, title="logo", description="""A path or URL to the related logo""", json_schema_extra = { "linkml_meta": {'alias': 'logo',
-         'domain_of': ['PersonOrOrganization', 'License', 'Certification'],
+         'domain_of': ['PersonOrOrganization',
+                       'License',
+                       'Certification',
+                       'FundingSource'],
          'exact_mappings': ['schema:logo']} })
     keyword: Optional[list[str]] = Field(default=None, title="keyword", description="""A keyword or tag describing the resource""", json_schema_extra = { "linkml_meta": {'alias': 'keyword', 'domain_of': ['Resource'], 'slot_uri': 'dcat:keyword'} })
     dateIssued: Optional[datetime ] = Field(default=None, title="date issued", description="""Date of formal issuance (e.g., publication) of the resource""", json_schema_extra = { "linkml_meta": {'alias': 'dateIssued',
@@ -7152,6 +7171,18 @@ class Product(ProductOrService):
                                        'range': 'Originator',
                                        'required': False,
                                        'title': 'originator'},
+                        'preparationTechnique': {'description': 'The technique, '
+                                                                'method, or procedure '
+                                                                'employed to obtain or '
+                                                                'prepare the material '
+                                                                'prior to its use or '
+                                                                'storage',
+                                                 'domain_of': ['Product'],
+                                                 'multivalued': False,
+                                                 'name': 'preparationTechnique',
+                                                 'range': 'string',
+                                                 'required': False,
+                                                 'title': 'preparation technique'},
                         'shippingConditions': {'close_mappings': ['schema:shippingConditions'],
                                                'description': 'Specification of the '
                                                               'terms and parameters '
@@ -7251,6 +7282,7 @@ class Product(ProductOrService):
          'domain_of': ['Product']} })
     thirdPartyDistributionConsent: Optional[bool] = Field(default=None, title="third party distribution consent", description="""Indicates whether the biological material can be distributed without restriction to third parties, as indicated by the ABS permit, in case an ABS permit is required""", json_schema_extra = { "linkml_meta": {'alias': 'thirdPartyDistributionConsent', 'domain_of': ['Product']} })
     usageRestrictions: Optional[str] = Field(default=None, title="usage restrictions", description="""Specifies any limitations or conditions on the use of the biological material, including restrictions on research, commercial use, or distribution, considering any potential concerns about the related genetic material""", json_schema_extra = { "linkml_meta": {'alias': 'usageRestrictions', 'domain_of': ['Product']} })
+    preparationTechnique: Optional[str] = Field(default=None, title="preparation technique", description="""The technique, method, or procedure employed to obtain or prepare the material prior to its use or storage""", json_schema_extra = { "linkml_meta": {'alias': 'preparationTechnique', 'domain_of': ['Product']} })
     accessPointUrl: str = Field(default=..., title="access point URL", description="""The URL that permits to access to the product/service detailed description page on the provider's website and/or allows to place an order about it or at least describe the process to place an order/enquiry""", json_schema_extra = { "linkml_meta": {'alias': 'accessPointUrl',
          'broad_mappings': ['schema:url'],
          'domain_of': ['ProductOrService'],
@@ -7544,6 +7576,7 @@ class Antibody(Product):
          'domain_of': ['Product']} })
     thirdPartyDistributionConsent: Optional[bool] = Field(default=None, title="third party distribution consent", description="""Indicates whether the biological material can be distributed without restriction to third parties, as indicated by the ABS permit, in case an ABS permit is required""", json_schema_extra = { "linkml_meta": {'alias': 'thirdPartyDistributionConsent', 'domain_of': ['Product']} })
     usageRestrictions: Optional[str] = Field(default=None, title="usage restrictions", description="""Specifies any limitations or conditions on the use of the biological material, including restrictions on research, commercial use, or distribution, considering any potential concerns about the related genetic material""", json_schema_extra = { "linkml_meta": {'alias': 'usageRestrictions', 'domain_of': ['Product']} })
+    preparationTechnique: Optional[str] = Field(default=None, title="preparation technique", description="""The technique, method, or procedure employed to obtain or prepare the material prior to its use or storage""", json_schema_extra = { "linkml_meta": {'alias': 'preparationTechnique', 'domain_of': ['Product']} })
     accessPointUrl: str = Field(default=..., title="access point URL", description="""The URL that permits to access to the product/service detailed description page on the provider's website and/or allows to place an order about it or at least describe the process to place an order/enquiry""", json_schema_extra = { "linkml_meta": {'alias': 'accessPointUrl',
          'broad_mappings': ['schema:url'],
          'domain_of': ['ProductOrService'],
@@ -7796,6 +7829,7 @@ class Hybridoma(Antibody):
          'domain_of': ['Product']} })
     thirdPartyDistributionConsent: Optional[bool] = Field(default=None, title="third party distribution consent", description="""Indicates whether the biological material can be distributed without restriction to third parties, as indicated by the ABS permit, in case an ABS permit is required""", json_schema_extra = { "linkml_meta": {'alias': 'thirdPartyDistributionConsent', 'domain_of': ['Product']} })
     usageRestrictions: Optional[str] = Field(default=None, title="usage restrictions", description="""Specifies any limitations or conditions on the use of the biological material, including restrictions on research, commercial use, or distribution, considering any potential concerns about the related genetic material""", json_schema_extra = { "linkml_meta": {'alias': 'usageRestrictions', 'domain_of': ['Product']} })
+    preparationTechnique: Optional[str] = Field(default=None, title="preparation technique", description="""The technique, method, or procedure employed to obtain or prepare the material prior to its use or storage""", json_schema_extra = { "linkml_meta": {'alias': 'preparationTechnique', 'domain_of': ['Product']} })
     accessPointUrl: str = Field(default=..., title="access point URL", description="""The URL that permits to access to the product/service detailed description page on the provider's website and/or allows to place an order about it or at least describe the process to place an order/enquiry""", json_schema_extra = { "linkml_meta": {'alias': 'accessPointUrl',
          'broad_mappings': ['schema:url'],
          'domain_of': ['ProductOrService'],
@@ -8409,6 +8443,7 @@ class Protein(Product):
          'domain_of': ['Product']} })
     thirdPartyDistributionConsent: Optional[bool] = Field(default=None, title="third party distribution consent", description="""Indicates whether the biological material can be distributed without restriction to third parties, as indicated by the ABS permit, in case an ABS permit is required""", json_schema_extra = { "linkml_meta": {'alias': 'thirdPartyDistributionConsent', 'domain_of': ['Product']} })
     usageRestrictions: Optional[str] = Field(default=None, title="usage restrictions", description="""Specifies any limitations or conditions on the use of the biological material, including restrictions on research, commercial use, or distribution, considering any potential concerns about the related genetic material""", json_schema_extra = { "linkml_meta": {'alias': 'usageRestrictions', 'domain_of': ['Product']} })
+    preparationTechnique: Optional[str] = Field(default=None, title="preparation technique", description="""The technique, method, or procedure employed to obtain or prepare the material prior to its use or storage""", json_schema_extra = { "linkml_meta": {'alias': 'preparationTechnique', 'domain_of': ['Product']} })
     accessPointUrl: str = Field(default=..., title="access point URL", description="""The URL that permits to access to the product/service detailed description page on the provider's website and/or allows to place an order about it or at least describe the process to place an order/enquiry""", json_schema_extra = { "linkml_meta": {'alias': 'accessPointUrl',
          'broad_mappings': ['schema:url'],
          'domain_of': ['ProductOrService'],
@@ -8901,6 +8936,7 @@ class NucleicAcid(Product):
          'domain_of': ['Product']} })
     thirdPartyDistributionConsent: Optional[bool] = Field(default=None, title="third party distribution consent", description="""Indicates whether the biological material can be distributed without restriction to third parties, as indicated by the ABS permit, in case an ABS permit is required""", json_schema_extra = { "linkml_meta": {'alias': 'thirdPartyDistributionConsent', 'domain_of': ['Product']} })
     usageRestrictions: Optional[str] = Field(default=None, title="usage restrictions", description="""Specifies any limitations or conditions on the use of the biological material, including restrictions on research, commercial use, or distribution, considering any potential concerns about the related genetic material""", json_schema_extra = { "linkml_meta": {'alias': 'usageRestrictions', 'domain_of': ['Product']} })
+    preparationTechnique: Optional[str] = Field(default=None, title="preparation technique", description="""The technique, method, or procedure employed to obtain or prepare the material prior to its use or storage""", json_schema_extra = { "linkml_meta": {'alias': 'preparationTechnique', 'domain_of': ['Product']} })
     accessPointUrl: str = Field(default=..., title="access point URL", description="""The URL that permits to access to the product/service detailed description page on the provider's website and/or allows to place an order about it or at least describe the process to place an order/enquiry""", json_schema_extra = { "linkml_meta": {'alias': 'accessPointUrl',
          'broad_mappings': ['schema:url'],
          'domain_of': ['ProductOrService'],
@@ -9183,6 +9219,7 @@ class DetectionKit(Product):
          'domain_of': ['Product']} })
     thirdPartyDistributionConsent: Optional[bool] = Field(default=None, title="third party distribution consent", description="""Indicates whether the biological material can be distributed without restriction to third parties, as indicated by the ABS permit, in case an ABS permit is required""", json_schema_extra = { "linkml_meta": {'alias': 'thirdPartyDistributionConsent', 'domain_of': ['Product']} })
     usageRestrictions: Optional[str] = Field(default=None, title="usage restrictions", description="""Specifies any limitations or conditions on the use of the biological material, including restrictions on research, commercial use, or distribution, considering any potential concerns about the related genetic material""", json_schema_extra = { "linkml_meta": {'alias': 'usageRestrictions', 'domain_of': ['Product']} })
+    preparationTechnique: Optional[str] = Field(default=None, title="preparation technique", description="""The technique, method, or procedure employed to obtain or prepare the material prior to its use or storage""", json_schema_extra = { "linkml_meta": {'alias': 'preparationTechnique', 'domain_of': ['Product']} })
     accessPointUrl: str = Field(default=..., title="access point URL", description="""The URL that permits to access to the product/service detailed description page on the provider's website and/or allows to place an order about it or at least describe the process to place an order/enquiry""", json_schema_extra = { "linkml_meta": {'alias': 'accessPointUrl',
          'broad_mappings': ['schema:url'],
          'domain_of': ['ProductOrService'],
@@ -9426,6 +9463,7 @@ class Bundle(Product):
          'domain_of': ['Product']} })
     thirdPartyDistributionConsent: Optional[bool] = Field(default=None, title="third party distribution consent", description="""Indicates whether the biological material can be distributed without restriction to third parties, as indicated by the ABS permit, in case an ABS permit is required""", json_schema_extra = { "linkml_meta": {'alias': 'thirdPartyDistributionConsent', 'domain_of': ['Product']} })
     usageRestrictions: Optional[str] = Field(default=None, title="usage restrictions", description="""Specifies any limitations or conditions on the use of the biological material, including restrictions on research, commercial use, or distribution, considering any potential concerns about the related genetic material""", json_schema_extra = { "linkml_meta": {'alias': 'usageRestrictions', 'domain_of': ['Product']} })
+    preparationTechnique: Optional[str] = Field(default=None, title="preparation technique", description="""The technique, method, or procedure employed to obtain or prepare the material prior to its use or storage""", json_schema_extra = { "linkml_meta": {'alias': 'preparationTechnique', 'domain_of': ['Product']} })
     accessPointUrl: str = Field(default=..., title="access point URL", description="""The URL that permits to access to the product/service detailed description page on the provider's website and/or allows to place an order about it or at least describe the process to place an order/enquiry""", json_schema_extra = { "linkml_meta": {'alias': 'accessPointUrl',
          'broad_mappings': ['schema:url'],
          'domain_of': ['ProductOrService'],
@@ -10010,6 +10048,7 @@ class Pathogen(Product):
          'domain_of': ['Product']} })
     thirdPartyDistributionConsent: Optional[bool] = Field(default=None, title="third party distribution consent", description="""Indicates whether the biological material can be distributed without restriction to third parties, as indicated by the ABS permit, in case an ABS permit is required""", json_schema_extra = { "linkml_meta": {'alias': 'thirdPartyDistributionConsent', 'domain_of': ['Product']} })
     usageRestrictions: Optional[str] = Field(default=None, title="usage restrictions", description="""Specifies any limitations or conditions on the use of the biological material, including restrictions on research, commercial use, or distribution, considering any potential concerns about the related genetic material""", json_schema_extra = { "linkml_meta": {'alias': 'usageRestrictions', 'domain_of': ['Product']} })
+    preparationTechnique: Optional[str] = Field(default=None, title="preparation technique", description="""The technique, method, or procedure employed to obtain or prepare the material prior to its use or storage""", json_schema_extra = { "linkml_meta": {'alias': 'preparationTechnique', 'domain_of': ['Product']} })
     accessPointUrl: str = Field(default=..., title="access point URL", description="""The URL that permits to access to the product/service detailed description page on the provider's website and/or allows to place an order about it or at least describe the process to place an order/enquiry""", json_schema_extra = { "linkml_meta": {'alias': 'accessPointUrl',
          'broad_mappings': ['schema:url'],
          'domain_of': ['ProductOrService'],
@@ -10370,6 +10409,7 @@ class Virus(Pathogen):
          'domain_of': ['Product']} })
     thirdPartyDistributionConsent: Optional[bool] = Field(default=None, title="third party distribution consent", description="""Indicates whether the biological material can be distributed without restriction to third parties, as indicated by the ABS permit, in case an ABS permit is required""", json_schema_extra = { "linkml_meta": {'alias': 'thirdPartyDistributionConsent', 'domain_of': ['Product']} })
     usageRestrictions: Optional[str] = Field(default=None, title="usage restrictions", description="""Specifies any limitations or conditions on the use of the biological material, including restrictions on research, commercial use, or distribution, considering any potential concerns about the related genetic material""", json_schema_extra = { "linkml_meta": {'alias': 'usageRestrictions', 'domain_of': ['Product']} })
+    preparationTechnique: Optional[str] = Field(default=None, title="preparation technique", description="""The technique, method, or procedure employed to obtain or prepare the material prior to its use or storage""", json_schema_extra = { "linkml_meta": {'alias': 'preparationTechnique', 'domain_of': ['Product']} })
     accessPointUrl: str = Field(default=..., title="access point URL", description="""The URL that permits to access to the product/service detailed description page on the provider's website and/or allows to place an order about it or at least describe the process to place an order/enquiry""", json_schema_extra = { "linkml_meta": {'alias': 'accessPointUrl',
          'broad_mappings': ['schema:url'],
          'domain_of': ['ProductOrService'],
@@ -10671,6 +10711,7 @@ class Bacterium(Pathogen):
          'domain_of': ['Product']} })
     thirdPartyDistributionConsent: Optional[bool] = Field(default=None, title="third party distribution consent", description="""Indicates whether the biological material can be distributed without restriction to third parties, as indicated by the ABS permit, in case an ABS permit is required""", json_schema_extra = { "linkml_meta": {'alias': 'thirdPartyDistributionConsent', 'domain_of': ['Product']} })
     usageRestrictions: Optional[str] = Field(default=None, title="usage restrictions", description="""Specifies any limitations or conditions on the use of the biological material, including restrictions on research, commercial use, or distribution, considering any potential concerns about the related genetic material""", json_schema_extra = { "linkml_meta": {'alias': 'usageRestrictions', 'domain_of': ['Product']} })
+    preparationTechnique: Optional[str] = Field(default=None, title="preparation technique", description="""The technique, method, or procedure employed to obtain or prepare the material prior to its use or storage""", json_schema_extra = { "linkml_meta": {'alias': 'preparationTechnique', 'domain_of': ['Product']} })
     accessPointUrl: str = Field(default=..., title="access point URL", description="""The URL that permits to access to the product/service detailed description page on the provider's website and/or allows to place an order about it or at least describe the process to place an order/enquiry""", json_schema_extra = { "linkml_meta": {'alias': 'accessPointUrl',
          'broad_mappings': ['schema:url'],
          'domain_of': ['ProductOrService'],
@@ -10970,6 +11011,7 @@ class Fungus(Pathogen):
          'domain_of': ['Product']} })
     thirdPartyDistributionConsent: Optional[bool] = Field(default=None, title="third party distribution consent", description="""Indicates whether the biological material can be distributed without restriction to third parties, as indicated by the ABS permit, in case an ABS permit is required""", json_schema_extra = { "linkml_meta": {'alias': 'thirdPartyDistributionConsent', 'domain_of': ['Product']} })
     usageRestrictions: Optional[str] = Field(default=None, title="usage restrictions", description="""Specifies any limitations or conditions on the use of the biological material, including restrictions on research, commercial use, or distribution, considering any potential concerns about the related genetic material""", json_schema_extra = { "linkml_meta": {'alias': 'usageRestrictions', 'domain_of': ['Product']} })
+    preparationTechnique: Optional[str] = Field(default=None, title="preparation technique", description="""The technique, method, or procedure employed to obtain or prepare the material prior to its use or storage""", json_schema_extra = { "linkml_meta": {'alias': 'preparationTechnique', 'domain_of': ['Product']} })
     accessPointUrl: str = Field(default=..., title="access point URL", description="""The URL that permits to access to the product/service detailed description page on the provider's website and/or allows to place an order about it or at least describe the process to place an order/enquiry""", json_schema_extra = { "linkml_meta": {'alias': 'accessPointUrl',
          'broad_mappings': ['schema:url'],
          'domain_of': ['ProductOrService'],
@@ -11265,6 +11307,7 @@ class Protozoan(Pathogen):
          'domain_of': ['Product']} })
     thirdPartyDistributionConsent: Optional[bool] = Field(default=None, title="third party distribution consent", description="""Indicates whether the biological material can be distributed without restriction to third parties, as indicated by the ABS permit, in case an ABS permit is required""", json_schema_extra = { "linkml_meta": {'alias': 'thirdPartyDistributionConsent', 'domain_of': ['Product']} })
     usageRestrictions: Optional[str] = Field(default=None, title="usage restrictions", description="""Specifies any limitations or conditions on the use of the biological material, including restrictions on research, commercial use, or distribution, considering any potential concerns about the related genetic material""", json_schema_extra = { "linkml_meta": {'alias': 'usageRestrictions', 'domain_of': ['Product']} })
+    preparationTechnique: Optional[str] = Field(default=None, title="preparation technique", description="""The technique, method, or procedure employed to obtain or prepare the material prior to its use or storage""", json_schema_extra = { "linkml_meta": {'alias': 'preparationTechnique', 'domain_of': ['Product']} })
     accessPointUrl: str = Field(default=..., title="access point URL", description="""The URL that permits to access to the product/service detailed description page on the provider's website and/or allows to place an order about it or at least describe the process to place an order/enquiry""", json_schema_extra = { "linkml_meta": {'alias': 'accessPointUrl',
          'broad_mappings': ['schema:url'],
          'domain_of': ['ProductOrService'],
@@ -11552,6 +11595,7 @@ class Viroid(Pathogen):
          'domain_of': ['Product']} })
     thirdPartyDistributionConsent: Optional[bool] = Field(default=None, title="third party distribution consent", description="""Indicates whether the biological material can be distributed without restriction to third parties, as indicated by the ABS permit, in case an ABS permit is required""", json_schema_extra = { "linkml_meta": {'alias': 'thirdPartyDistributionConsent', 'domain_of': ['Product']} })
     usageRestrictions: Optional[str] = Field(default=None, title="usage restrictions", description="""Specifies any limitations or conditions on the use of the biological material, including restrictions on research, commercial use, or distribution, considering any potential concerns about the related genetic material""", json_schema_extra = { "linkml_meta": {'alias': 'usageRestrictions', 'domain_of': ['Product']} })
+    preparationTechnique: Optional[str] = Field(default=None, title="preparation technique", description="""The technique, method, or procedure employed to obtain or prepare the material prior to its use or storage""", json_schema_extra = { "linkml_meta": {'alias': 'preparationTechnique', 'domain_of': ['Product']} })
     accessPointUrl: str = Field(default=..., title="access point URL", description="""The URL that permits to access to the product/service detailed description page on the provider's website and/or allows to place an order about it or at least describe the process to place an order/enquiry""", json_schema_extra = { "linkml_meta": {'alias': 'accessPointUrl',
          'broad_mappings': ['schema:url'],
          'domain_of': ['ProductOrService'],
@@ -11847,6 +11891,7 @@ class Prion(Pathogen):
          'domain_of': ['Product']} })
     thirdPartyDistributionConsent: Optional[bool] = Field(default=None, title="third party distribution consent", description="""Indicates whether the biological material can be distributed without restriction to third parties, as indicated by the ABS permit, in case an ABS permit is required""", json_schema_extra = { "linkml_meta": {'alias': 'thirdPartyDistributionConsent', 'domain_of': ['Product']} })
     usageRestrictions: Optional[str] = Field(default=None, title="usage restrictions", description="""Specifies any limitations or conditions on the use of the biological material, including restrictions on research, commercial use, or distribution, considering any potential concerns about the related genetic material""", json_schema_extra = { "linkml_meta": {'alias': 'usageRestrictions', 'domain_of': ['Product']} })
+    preparationTechnique: Optional[str] = Field(default=None, title="preparation technique", description="""The technique, method, or procedure employed to obtain or prepare the material prior to its use or storage""", json_schema_extra = { "linkml_meta": {'alias': 'preparationTechnique', 'domain_of': ['Product']} })
     accessPointUrl: str = Field(default=..., title="access point URL", description="""The URL that permits to access to the product/service detailed description page on the provider's website and/or allows to place an order about it or at least describe the process to place an order/enquiry""", json_schema_extra = { "linkml_meta": {'alias': 'accessPointUrl',
          'broad_mappings': ['schema:url'],
          'domain_of': ['ProductOrService'],
@@ -13339,7 +13384,8 @@ class License(Resource):
                         'logo': {'description': 'A path or URL to the related logo',
                                  'domain_of': ['License',
                                                'PersonOrOrganization',
-                                               'Certification'],
+                                               'Certification',
+                                               'FundingSource'],
                                  'multivalued': False,
                                  'name': 'logo',
                                  'range': 'Image',
@@ -13431,7 +13477,10 @@ class License(Resource):
          'domain_of': ['License'],
          'exact_mappings': ['dct:rights']} })
     logo: Optional[Image] = Field(default=None, title="logo", description="""A path or URL to the related logo""", json_schema_extra = { "linkml_meta": {'alias': 'logo',
-         'domain_of': ['License', 'PersonOrOrganization', 'Certification'],
+         'domain_of': ['License',
+                       'PersonOrOrganization',
+                       'Certification',
+                       'FundingSource'],
          'exact_mappings': ['schema:logo']} })
     keyword: Optional[list[str]] = Field(default=None, title="keyword", description="""A keyword or tag describing the resource""", json_schema_extra = { "linkml_meta": {'alias': 'keyword', 'domain_of': ['Resource'], 'slot_uri': 'dcat:keyword'} })
     dateIssued: Optional[datetime ] = Field(default=None, title="date issued", description="""Date of formal issuance (e.g., publication) of the resource""", json_schema_extra = { "linkml_meta": {'alias': 'dateIssued',
@@ -13522,7 +13571,8 @@ class Certification(Resource):
                         'logo': {'description': 'A path or URL to the related logo',
                                  'domain_of': ['Certification',
                                                'PersonOrOrganization',
-                                               'License'],
+                                               'License',
+                                               'FundingSource'],
                                  'exact_mappings': ['schema:logo'],
                                  'multivalued': False,
                                  'name': 'logo',
@@ -13601,7 +13651,10 @@ class Certification(Resource):
          'recommended': True,
          'slot_uri': 'dct:description'} })
     logo: Optional[Image] = Field(default=None, title="logo", description="""A path or URL to the related logo""", json_schema_extra = { "linkml_meta": {'alias': 'logo',
-         'domain_of': ['Certification', 'PersonOrOrganization', 'License'],
+         'domain_of': ['Certification',
+                       'PersonOrOrganization',
+                       'License',
+                       'FundingSource'],
          'exact_mappings': ['schema:logo']} })
     certificationDocument: Optional[list[Document]] = Field(default=None, title="certification document", description="""The document(s) issued by an authority certifying the conformity of the subject to the applicable scheme, including, as the case may be, the documents attesting the equivalence to another certification scheme.""", json_schema_extra = { "linkml_meta": {'alias': 'certificationDocument',
          'domain_of': ['Certification'],
@@ -13759,6 +13812,17 @@ class FundingSource(Resource):
                                         'range': 'string',
                                         'required': False,
                                         'title': 'grant number'},
+                        'logo': {'description': 'A path or URL to the related logo',
+                                 'domain_of': ['FundingSource',
+                                               'PersonOrOrganization',
+                                               'License',
+                                               'Certification'],
+                                 'exact_mappings': ['schema:logo'],
+                                 'multivalued': False,
+                                 'name': 'logo',
+                                 'range': 'Image',
+                                 'required': False,
+                                 'title': 'logo'},
                         'title': {'comments': ['The title of the item should be as '
                                                'short and descriptive as possible. '
                                                'E.g. for virus products it should '
@@ -13829,6 +13893,12 @@ class FundingSource(Resource):
          'comments': ['Keep clear and user-friendly; provide a link if criteria are '
                       'complex'],
          'domain_of': ['FundingSource']} })
+    logo: Optional[Image] = Field(default=None, title="logo", description="""A path or URL to the related logo""", json_schema_extra = { "linkml_meta": {'alias': 'logo',
+         'domain_of': ['FundingSource',
+                       'PersonOrOrganization',
+                       'License',
+                       'Certification'],
+         'exact_mappings': ['schema:logo']} })
     keyword: Optional[list[str]] = Field(default=None, title="keyword", description="""A keyword or tag describing the resource""", json_schema_extra = { "linkml_meta": {'alias': 'keyword', 'domain_of': ['Resource'], 'slot_uri': 'dcat:keyword'} })
     dateIssued: Optional[datetime ] = Field(default=None, title="date issued", description="""Date of formal issuance (e.g., publication) of the resource""", json_schema_extra = { "linkml_meta": {'alias': 'dateIssued',
          'close_mappings': ['schema:datePublished', 'schema:dateCreated'],

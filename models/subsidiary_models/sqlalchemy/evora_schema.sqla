@@ -9690,6 +9690,8 @@ class FundingSource(Resource):
     dateModified = Column(DateTime())
     funder_id = Column(Integer(), ForeignKey('Organization.id'))
     funder = relationship("Organization", uselist=False, foreign_keys=[funder_id])
+    logo_id = Column(Integer(), ForeignKey('Image.id'))
+    logo = relationship("Image", uselist=False, foreign_keys=[logo_id])
     
     
     keyword_rel = relationship( "FundingSourceKeyword" )
@@ -9708,7 +9710,7 @@ class FundingSource(Resource):
     
 
     def __repr__(self):
-        return f"FundingSource(id={self.id},title={self.title},description={self.description},fundingProgram={self.fundingProgram},grantNumber={self.grantNumber},fundingPeriodStart={self.fundingPeriodStart},fundingPeriodEnd={self.fundingPeriodEnd},eligibilityCriteria={self.eligibilityCriteria},dateIssued={self.dateIssued},dateModified={self.dateModified},funder_id={self.funder_id},)"
+        return f"FundingSource(id={self.id},title={self.title},description={self.description},fundingProgram={self.fundingProgram},grantNumber={self.grantNumber},fundingPeriodStart={self.fundingPeriodStart},fundingPeriodEnd={self.fundingPeriodEnd},eligibilityCriteria={self.eligibilityCriteria},dateIssued={self.dateIssued},dateModified={self.dateModified},funder_id={self.funder_id},logo_id={self.logo_id},)"
 
 
 
@@ -11940,6 +11942,7 @@ class Product(ProductOrService):
     storageConditions = Column(Text(), nullable=False )
     thirdPartyDistributionConsent = Column(Boolean())
     usageRestrictions = Column(Text())
+    preparationTechnique = Column(Text())
     accessPointUrl = Column(Text(), nullable=False )
     refSku = Column(Text(), nullable=False )
     unitDefinition = Column(Text())
@@ -12030,7 +12033,7 @@ class Product(ProductOrService):
     
 
     def __repr__(self):
-        return f"Product(id={self.id},shippingConditions={self.shippingConditions},storageConditions={self.storageConditions},thirdPartyDistributionConsent={self.thirdPartyDistributionConsent},usageRestrictions={self.usageRestrictions},accessPointUrl={self.accessPointUrl},refSku={self.refSku},unitDefinition={self.unitDefinition},unitCost={self.unitCost},unitCostCurrency={self.unitCostCurrency},unitCostNote={self.unitCostNote},qualityGrading={self.qualityGrading},biosafetyRestrictions={self.biosafetyRestrictions},canBeUsedToProduceGmo={self.canBeUsedToProduceGmo},availability={self.availability},technicalRecommendation={self.technicalRecommendation},internalReference={self.internalReference},note={self.note},title={self.title},description={self.description},version={self.version},dateIssued={self.dateIssued},dateModified={self.dateModified},iataClassification_id={self.iataClassification_id},materialSafetyDataSheet_id={self.materialSafetyDataSheet_id},originator_id={self.originator_id},category_id={self.category_id},riskGroup_id={self.riskGroup_id},provider_id={self.provider_id},contactPoint_id={self.contactPoint_id},)"
+        return f"Product(id={self.id},shippingConditions={self.shippingConditions},storageConditions={self.storageConditions},thirdPartyDistributionConsent={self.thirdPartyDistributionConsent},usageRestrictions={self.usageRestrictions},preparationTechnique={self.preparationTechnique},accessPointUrl={self.accessPointUrl},refSku={self.refSku},unitDefinition={self.unitDefinition},unitCost={self.unitCost},unitCostCurrency={self.unitCostCurrency},unitCostNote={self.unitCostNote},qualityGrading={self.qualityGrading},biosafetyRestrictions={self.biosafetyRestrictions},canBeUsedToProduceGmo={self.canBeUsedToProduceGmo},availability={self.availability},technicalRecommendation={self.technicalRecommendation},internalReference={self.internalReference},note={self.note},title={self.title},description={self.description},version={self.version},dateIssued={self.dateIssued},dateModified={self.dateModified},iataClassification_id={self.iataClassification_id},materialSafetyDataSheet_id={self.materialSafetyDataSheet_id},originator_id={self.originator_id},category_id={self.category_id},riskGroup_id={self.riskGroup_id},provider_id={self.provider_id},contactPoint_id={self.contactPoint_id},)"
 
 
 
@@ -12057,6 +12060,7 @@ class Antibody(Product):
     storageConditions = Column(Text(), nullable=False )
     thirdPartyDistributionConsent = Column(Boolean())
     usageRestrictions = Column(Text())
+    preparationTechnique = Column(Text())
     accessPointUrl = Column(Text(), nullable=False )
     refSku = Column(Text(), nullable=False )
     unitDefinition = Column(Text())
@@ -12151,7 +12155,7 @@ class Antibody(Product):
     
 
     def __repr__(self):
-        return f"Antibody(id={self.id},productionSystem={self.productionSystem},antibodyPurifiedByAffinity={self.antibodyPurifiedByAffinity},specificityDocumented={self.specificityDocumented},targetedAntigen={self.targetedAntigen},shippingConditions={self.shippingConditions},storageConditions={self.storageConditions},thirdPartyDistributionConsent={self.thirdPartyDistributionConsent},usageRestrictions={self.usageRestrictions},accessPointUrl={self.accessPointUrl},refSku={self.refSku},unitDefinition={self.unitDefinition},unitCost={self.unitCost},unitCostCurrency={self.unitCostCurrency},unitCostNote={self.unitCostNote},qualityGrading={self.qualityGrading},biosafetyRestrictions={self.biosafetyRestrictions},canBeUsedToProduceGmo={self.canBeUsedToProduceGmo},availability={self.availability},technicalRecommendation={self.technicalRecommendation},internalReference={self.internalReference},note={self.note},title={self.title},description={self.description},version={self.version},dateIssued={self.dateIssued},dateModified={self.dateModified},iataClassification_id={self.iataClassification_id},materialSafetyDataSheet_id={self.materialSafetyDataSheet_id},originator_id={self.originator_id},category_id={self.category_id},riskGroup_id={self.riskGroup_id},provider_id={self.provider_id},contactPoint_id={self.contactPoint_id},)"
+        return f"Antibody(id={self.id},productionSystem={self.productionSystem},antibodyPurifiedByAffinity={self.antibodyPurifiedByAffinity},specificityDocumented={self.specificityDocumented},targetedAntigen={self.targetedAntigen},shippingConditions={self.shippingConditions},storageConditions={self.storageConditions},thirdPartyDistributionConsent={self.thirdPartyDistributionConsent},usageRestrictions={self.usageRestrictions},preparationTechnique={self.preparationTechnique},accessPointUrl={self.accessPointUrl},refSku={self.refSku},unitDefinition={self.unitDefinition},unitCost={self.unitCost},unitCostCurrency={self.unitCostCurrency},unitCostNote={self.unitCostNote},qualityGrading={self.qualityGrading},biosafetyRestrictions={self.biosafetyRestrictions},canBeUsedToProduceGmo={self.canBeUsedToProduceGmo},availability={self.availability},technicalRecommendation={self.technicalRecommendation},internalReference={self.internalReference},note={self.note},title={self.title},description={self.description},version={self.version},dateIssued={self.dateIssued},dateModified={self.dateModified},iataClassification_id={self.iataClassification_id},materialSafetyDataSheet_id={self.materialSafetyDataSheet_id},originator_id={self.originator_id},category_id={self.category_id},riskGroup_id={self.riskGroup_id},provider_id={self.provider_id},contactPoint_id={self.contactPoint_id},)"
 
 
 
@@ -12174,6 +12178,7 @@ class Protein(Product):
     storageConditions = Column(Text(), nullable=False )
     thirdPartyDistributionConsent = Column(Boolean())
     usageRestrictions = Column(Text())
+    preparationTechnique = Column(Text())
     accessPointUrl = Column(Text(), nullable=False )
     refSku = Column(Text(), nullable=False )
     unitDefinition = Column(Text())
@@ -12327,7 +12332,7 @@ class Protein(Product):
     
 
     def __repr__(self):
-        return f"Protein(id={self.id},shippingConditions={self.shippingConditions},storageConditions={self.storageConditions},thirdPartyDistributionConsent={self.thirdPartyDistributionConsent},usageRestrictions={self.usageRestrictions},accessPointUrl={self.accessPointUrl},refSku={self.refSku},unitDefinition={self.unitDefinition},unitCost={self.unitCost},unitCostCurrency={self.unitCostCurrency},unitCostNote={self.unitCostNote},qualityGrading={self.qualityGrading},biosafetyRestrictions={self.biosafetyRestrictions},canBeUsedToProduceGmo={self.canBeUsedToProduceGmo},availability={self.availability},technicalRecommendation={self.technicalRecommendation},internalReference={self.internalReference},note={self.note},title={self.title},description={self.description},version={self.version},dateIssued={self.dateIssued},dateModified={self.dateModified},biologicalMaterialOrigin_id={self.biologicalMaterialOrigin_id},iataClassification_id={self.iataClassification_id},materialSafetyDataSheet_id={self.materialSafetyDataSheet_id},originator_id={self.originator_id},category_id={self.category_id},riskGroup_id={self.riskGroup_id},provider_id={self.provider_id},contactPoint_id={self.contactPoint_id},)"
+        return f"Protein(id={self.id},shippingConditions={self.shippingConditions},storageConditions={self.storageConditions},thirdPartyDistributionConsent={self.thirdPartyDistributionConsent},usageRestrictions={self.usageRestrictions},preparationTechnique={self.preparationTechnique},accessPointUrl={self.accessPointUrl},refSku={self.refSku},unitDefinition={self.unitDefinition},unitCost={self.unitCost},unitCostCurrency={self.unitCostCurrency},unitCostNote={self.unitCostNote},qualityGrading={self.qualityGrading},biosafetyRestrictions={self.biosafetyRestrictions},canBeUsedToProduceGmo={self.canBeUsedToProduceGmo},availability={self.availability},technicalRecommendation={self.technicalRecommendation},internalReference={self.internalReference},note={self.note},title={self.title},description={self.description},version={self.version},dateIssued={self.dateIssued},dateModified={self.dateModified},biologicalMaterialOrigin_id={self.biologicalMaterialOrigin_id},iataClassification_id={self.iataClassification_id},materialSafetyDataSheet_id={self.materialSafetyDataSheet_id},originator_id={self.originator_id},category_id={self.category_id},riskGroup_id={self.riskGroup_id},provider_id={self.provider_id},contactPoint_id={self.contactPoint_id},)"
 
 
 
@@ -12358,6 +12363,7 @@ class NucleicAcid(Product):
     storageConditions = Column(Text(), nullable=False )
     thirdPartyDistributionConsent = Column(Boolean())
     usageRestrictions = Column(Text())
+    preparationTechnique = Column(Text())
     accessPointUrl = Column(Text(), nullable=False )
     refSku = Column(Text(), nullable=False )
     unitDefinition = Column(Text())
@@ -12466,7 +12472,7 @@ class NucleicAcid(Product):
     
 
     def __repr__(self):
-        return f"NucleicAcid(id={self.id},clonedNucleicAcid={self.clonedNucleicAcid},regionEncompassedInThisProduct={self.regionEncompassedInThisProduct},mutationObserved={self.mutationObserved},observedMutations={self.observedMutations},identificationTechnique={self.identificationTechnique},sequencing={self.sequencing},titer={self.titer},sequenceChecked={self.sequenceChecked},shippingConditions={self.shippingConditions},storageConditions={self.storageConditions},thirdPartyDistributionConsent={self.thirdPartyDistributionConsent},usageRestrictions={self.usageRestrictions},accessPointUrl={self.accessPointUrl},refSku={self.refSku},unitDefinition={self.unitDefinition},unitCost={self.unitCost},unitCostCurrency={self.unitCostCurrency},unitCostNote={self.unitCostNote},qualityGrading={self.qualityGrading},biosafetyRestrictions={self.biosafetyRestrictions},canBeUsedToProduceGmo={self.canBeUsedToProduceGmo},availability={self.availability},technicalRecommendation={self.technicalRecommendation},internalReference={self.internalReference},note={self.note},title={self.title},description={self.description},version={self.version},dateIssued={self.dateIssued},dateModified={self.dateModified},biologicalMaterialOrigin_id={self.biologicalMaterialOrigin_id},clonedIntoPlasmid_id={self.clonedIntoPlasmid_id},tagSequence_id={self.tagSequence_id},iataClassification_id={self.iataClassification_id},materialSafetyDataSheet_id={self.materialSafetyDataSheet_id},originator_id={self.originator_id},category_id={self.category_id},riskGroup_id={self.riskGroup_id},provider_id={self.provider_id},contactPoint_id={self.contactPoint_id},)"
+        return f"NucleicAcid(id={self.id},clonedNucleicAcid={self.clonedNucleicAcid},regionEncompassedInThisProduct={self.regionEncompassedInThisProduct},mutationObserved={self.mutationObserved},observedMutations={self.observedMutations},identificationTechnique={self.identificationTechnique},sequencing={self.sequencing},titer={self.titer},sequenceChecked={self.sequenceChecked},shippingConditions={self.shippingConditions},storageConditions={self.storageConditions},thirdPartyDistributionConsent={self.thirdPartyDistributionConsent},usageRestrictions={self.usageRestrictions},preparationTechnique={self.preparationTechnique},accessPointUrl={self.accessPointUrl},refSku={self.refSku},unitDefinition={self.unitDefinition},unitCost={self.unitCost},unitCostCurrency={self.unitCostCurrency},unitCostNote={self.unitCostNote},qualityGrading={self.qualityGrading},biosafetyRestrictions={self.biosafetyRestrictions},canBeUsedToProduceGmo={self.canBeUsedToProduceGmo},availability={self.availability},technicalRecommendation={self.technicalRecommendation},internalReference={self.internalReference},note={self.note},title={self.title},description={self.description},version={self.version},dateIssued={self.dateIssued},dateModified={self.dateModified},biologicalMaterialOrigin_id={self.biologicalMaterialOrigin_id},clonedIntoPlasmid_id={self.clonedIntoPlasmid_id},tagSequence_id={self.tagSequence_id},iataClassification_id={self.iataClassification_id},materialSafetyDataSheet_id={self.materialSafetyDataSheet_id},originator_id={self.originator_id},category_id={self.category_id},riskGroup_id={self.riskGroup_id},provider_id={self.provider_id},contactPoint_id={self.contactPoint_id},)"
 
 
 
@@ -12492,6 +12498,7 @@ class DetectionKit(Product):
     storageConditions = Column(Text(), nullable=False )
     thirdPartyDistributionConsent = Column(Boolean())
     usageRestrictions = Column(Text())
+    preparationTechnique = Column(Text())
     accessPointUrl = Column(Text(), nullable=False )
     refSku = Column(Text(), nullable=False )
     unitDefinition = Column(Text())
@@ -12586,7 +12593,7 @@ class DetectionKit(Product):
     
 
     def __repr__(self):
-        return f"DetectionKit(id={self.id},specificityDocumented={self.specificityDocumented},specificity={self.specificity},targetedRegion={self.targetedRegion},shippingConditions={self.shippingConditions},storageConditions={self.storageConditions},thirdPartyDistributionConsent={self.thirdPartyDistributionConsent},usageRestrictions={self.usageRestrictions},accessPointUrl={self.accessPointUrl},refSku={self.refSku},unitDefinition={self.unitDefinition},unitCost={self.unitCost},unitCostCurrency={self.unitCostCurrency},unitCostNote={self.unitCostNote},qualityGrading={self.qualityGrading},biosafetyRestrictions={self.biosafetyRestrictions},canBeUsedToProduceGmo={self.canBeUsedToProduceGmo},availability={self.availability},technicalRecommendation={self.technicalRecommendation},internalReference={self.internalReference},note={self.note},title={self.title},description={self.description},version={self.version},dateIssued={self.dateIssued},dateModified={self.dateModified},iataClassification_id={self.iataClassification_id},materialSafetyDataSheet_id={self.materialSafetyDataSheet_id},originator_id={self.originator_id},category_id={self.category_id},riskGroup_id={self.riskGroup_id},provider_id={self.provider_id},contactPoint_id={self.contactPoint_id},)"
+        return f"DetectionKit(id={self.id},specificityDocumented={self.specificityDocumented},specificity={self.specificity},targetedRegion={self.targetedRegion},shippingConditions={self.shippingConditions},storageConditions={self.storageConditions},thirdPartyDistributionConsent={self.thirdPartyDistributionConsent},usageRestrictions={self.usageRestrictions},preparationTechnique={self.preparationTechnique},accessPointUrl={self.accessPointUrl},refSku={self.refSku},unitDefinition={self.unitDefinition},unitCost={self.unitCost},unitCostCurrency={self.unitCostCurrency},unitCostNote={self.unitCostNote},qualityGrading={self.qualityGrading},biosafetyRestrictions={self.biosafetyRestrictions},canBeUsedToProduceGmo={self.canBeUsedToProduceGmo},availability={self.availability},technicalRecommendation={self.technicalRecommendation},internalReference={self.internalReference},note={self.note},title={self.title},description={self.description},version={self.version},dateIssued={self.dateIssued},dateModified={self.dateModified},iataClassification_id={self.iataClassification_id},materialSafetyDataSheet_id={self.materialSafetyDataSheet_id},originator_id={self.originator_id},category_id={self.category_id},riskGroup_id={self.riskGroup_id},provider_id={self.provider_id},contactPoint_id={self.contactPoint_id},)"
 
 
 
@@ -12609,6 +12616,7 @@ class Bundle(Product):
     storageConditions = Column(Text(), nullable=False )
     thirdPartyDistributionConsent = Column(Boolean())
     usageRestrictions = Column(Text())
+    preparationTechnique = Column(Text())
     accessPointUrl = Column(Text(), nullable=False )
     refSku = Column(Text(), nullable=False )
     unitDefinition = Column(Text())
@@ -12703,7 +12711,7 @@ class Bundle(Product):
     
 
     def __repr__(self):
-        return f"Bundle(id={self.id},shippingConditions={self.shippingConditions},storageConditions={self.storageConditions},thirdPartyDistributionConsent={self.thirdPartyDistributionConsent},usageRestrictions={self.usageRestrictions},accessPointUrl={self.accessPointUrl},refSku={self.refSku},unitDefinition={self.unitDefinition},unitCost={self.unitCost},unitCostCurrency={self.unitCostCurrency},unitCostNote={self.unitCostNote},qualityGrading={self.qualityGrading},biosafetyRestrictions={self.biosafetyRestrictions},canBeUsedToProduceGmo={self.canBeUsedToProduceGmo},availability={self.availability},technicalRecommendation={self.technicalRecommendation},internalReference={self.internalReference},note={self.note},title={self.title},description={self.description},version={self.version},dateIssued={self.dateIssued},dateModified={self.dateModified},iataClassification_id={self.iataClassification_id},materialSafetyDataSheet_id={self.materialSafetyDataSheet_id},originator_id={self.originator_id},category_id={self.category_id},riskGroup_id={self.riskGroup_id},provider_id={self.provider_id},contactPoint_id={self.contactPoint_id},)"
+        return f"Bundle(id={self.id},shippingConditions={self.shippingConditions},storageConditions={self.storageConditions},thirdPartyDistributionConsent={self.thirdPartyDistributionConsent},usageRestrictions={self.usageRestrictions},preparationTechnique={self.preparationTechnique},accessPointUrl={self.accessPointUrl},refSku={self.refSku},unitDefinition={self.unitDefinition},unitCost={self.unitCost},unitCostCurrency={self.unitCostCurrency},unitCostNote={self.unitCostNote},qualityGrading={self.qualityGrading},biosafetyRestrictions={self.biosafetyRestrictions},canBeUsedToProduceGmo={self.canBeUsedToProduceGmo},availability={self.availability},technicalRecommendation={self.technicalRecommendation},internalReference={self.internalReference},note={self.note},title={self.title},description={self.description},version={self.version},dateIssued={self.dateIssued},dateModified={self.dateModified},iataClassification_id={self.iataClassification_id},materialSafetyDataSheet_id={self.materialSafetyDataSheet_id},originator_id={self.originator_id},category_id={self.category_id},riskGroup_id={self.riskGroup_id},provider_id={self.provider_id},contactPoint_id={self.contactPoint_id},)"
 
 
 
@@ -12737,6 +12745,7 @@ class Pathogen(Product):
     storageConditions = Column(Text(), nullable=False )
     thirdPartyDistributionConsent = Column(Boolean())
     usageRestrictions = Column(Text())
+    preparationTechnique = Column(Text())
     accessPointUrl = Column(Text(), nullable=False )
     refSku = Column(Text(), nullable=False )
     unitDefinition = Column(Text())
@@ -12853,7 +12862,7 @@ class Pathogen(Product):
     
 
     def __repr__(self):
-        return f"Pathogen(id={self.id},cultivability={self.cultivability},clinicalInformation={self.clinicalInformation},identificationTechnique={self.identificationTechnique},infectivity={self.infectivity},infectivityTest={self.infectivityTest},isolationTechnique={self.isolationTechnique},isolationConditions={self.isolationConditions},letterOfAuthority={self.letterOfAuthority},passage={self.passage},genomeSequencing={self.genomeSequencing},titer={self.titer},shippingConditions={self.shippingConditions},storageConditions={self.storageConditions},thirdPartyDistributionConsent={self.thirdPartyDistributionConsent},usageRestrictions={self.usageRestrictions},accessPointUrl={self.accessPointUrl},refSku={self.refSku},unitDefinition={self.unitDefinition},unitCost={self.unitCost},unitCostCurrency={self.unitCostCurrency},unitCostNote={self.unitCostNote},qualityGrading={self.qualityGrading},biosafetyRestrictions={self.biosafetyRestrictions},canBeUsedToProduceGmo={self.canBeUsedToProduceGmo},availability={self.availability},technicalRecommendation={self.technicalRecommendation},internalReference={self.internalReference},note={self.note},title={self.title},description={self.description},version={self.version},dateIssued={self.dateIssued},dateModified={self.dateModified},biologicalMaterialOrigin_id={self.biologicalMaterialOrigin_id},iataClassification_id={self.iataClassification_id},materialSafetyDataSheet_id={self.materialSafetyDataSheet_id},originator_id={self.originator_id},category_id={self.category_id},riskGroup_id={self.riskGroup_id},provider_id={self.provider_id},contactPoint_id={self.contactPoint_id},)"
+        return f"Pathogen(id={self.id},cultivability={self.cultivability},clinicalInformation={self.clinicalInformation},identificationTechnique={self.identificationTechnique},infectivity={self.infectivity},infectivityTest={self.infectivityTest},isolationTechnique={self.isolationTechnique},isolationConditions={self.isolationConditions},letterOfAuthority={self.letterOfAuthority},passage={self.passage},genomeSequencing={self.genomeSequencing},titer={self.titer},shippingConditions={self.shippingConditions},storageConditions={self.storageConditions},thirdPartyDistributionConsent={self.thirdPartyDistributionConsent},usageRestrictions={self.usageRestrictions},preparationTechnique={self.preparationTechnique},accessPointUrl={self.accessPointUrl},refSku={self.refSku},unitDefinition={self.unitDefinition},unitCost={self.unitCost},unitCostCurrency={self.unitCostCurrency},unitCostNote={self.unitCostNote},qualityGrading={self.qualityGrading},biosafetyRestrictions={self.biosafetyRestrictions},canBeUsedToProduceGmo={self.canBeUsedToProduceGmo},availability={self.availability},technicalRecommendation={self.technicalRecommendation},internalReference={self.internalReference},note={self.note},title={self.title},description={self.description},version={self.version},dateIssued={self.dateIssued},dateModified={self.dateModified},biologicalMaterialOrigin_id={self.biologicalMaterialOrigin_id},iataClassification_id={self.iataClassification_id},materialSafetyDataSheet_id={self.materialSafetyDataSheet_id},originator_id={self.originator_id},category_id={self.category_id},riskGroup_id={self.riskGroup_id},provider_id={self.provider_id},contactPoint_id={self.contactPoint_id},)"
 
 
 
@@ -12881,6 +12890,7 @@ class Hybridoma(Antibody):
     storageConditions = Column(Text(), nullable=False )
     thirdPartyDistributionConsent = Column(Boolean())
     usageRestrictions = Column(Text())
+    preparationTechnique = Column(Text())
     accessPointUrl = Column(Text(), nullable=False )
     refSku = Column(Text(), nullable=False )
     unitDefinition = Column(Text())
@@ -12975,7 +12985,7 @@ class Hybridoma(Antibody):
     
 
     def __repr__(self):
-        return f"Hybridoma(id={self.id},hybridomaDescription={self.hybridomaDescription},productionSystem={self.productionSystem},antibodyPurifiedByAffinity={self.antibodyPurifiedByAffinity},specificityDocumented={self.specificityDocumented},targetedAntigen={self.targetedAntigen},shippingConditions={self.shippingConditions},storageConditions={self.storageConditions},thirdPartyDistributionConsent={self.thirdPartyDistributionConsent},usageRestrictions={self.usageRestrictions},accessPointUrl={self.accessPointUrl},refSku={self.refSku},unitDefinition={self.unitDefinition},unitCost={self.unitCost},unitCostCurrency={self.unitCostCurrency},unitCostNote={self.unitCostNote},qualityGrading={self.qualityGrading},biosafetyRestrictions={self.biosafetyRestrictions},canBeUsedToProduceGmo={self.canBeUsedToProduceGmo},availability={self.availability},technicalRecommendation={self.technicalRecommendation},internalReference={self.internalReference},note={self.note},title={self.title},description={self.description},version={self.version},dateIssued={self.dateIssued},dateModified={self.dateModified},iataClassification_id={self.iataClassification_id},materialSafetyDataSheet_id={self.materialSafetyDataSheet_id},originator_id={self.originator_id},category_id={self.category_id},riskGroup_id={self.riskGroup_id},provider_id={self.provider_id},contactPoint_id={self.contactPoint_id},)"
+        return f"Hybridoma(id={self.id},hybridomaDescription={self.hybridomaDescription},productionSystem={self.productionSystem},antibodyPurifiedByAffinity={self.antibodyPurifiedByAffinity},specificityDocumented={self.specificityDocumented},targetedAntigen={self.targetedAntigen},shippingConditions={self.shippingConditions},storageConditions={self.storageConditions},thirdPartyDistributionConsent={self.thirdPartyDistributionConsent},usageRestrictions={self.usageRestrictions},preparationTechnique={self.preparationTechnique},accessPointUrl={self.accessPointUrl},refSku={self.refSku},unitDefinition={self.unitDefinition},unitCost={self.unitCost},unitCostCurrency={self.unitCostCurrency},unitCostNote={self.unitCostNote},qualityGrading={self.qualityGrading},biosafetyRestrictions={self.biosafetyRestrictions},canBeUsedToProduceGmo={self.canBeUsedToProduceGmo},availability={self.availability},technicalRecommendation={self.technicalRecommendation},internalReference={self.internalReference},note={self.note},title={self.title},description={self.description},version={self.version},dateIssued={self.dateIssued},dateModified={self.dateModified},iataClassification_id={self.iataClassification_id},materialSafetyDataSheet_id={self.materialSafetyDataSheet_id},originator_id={self.originator_id},category_id={self.category_id},riskGroup_id={self.riskGroup_id},provider_id={self.provider_id},contactPoint_id={self.contactPoint_id},)"
 
 
 
@@ -13011,6 +13021,7 @@ class Virus(Pathogen):
     storageConditions = Column(Text(), nullable=False )
     thirdPartyDistributionConsent = Column(Boolean())
     usageRestrictions = Column(Text())
+    preparationTechnique = Column(Text())
     accessPointUrl = Column(Text(), nullable=False )
     refSku = Column(Text(), nullable=False )
     unitDefinition = Column(Text())
@@ -13131,7 +13142,7 @@ class Virus(Pathogen):
     
 
     def __repr__(self):
-        return f"Virus(id={self.id},contaminationWithCoInfectingViruses={self.contaminationWithCoInfectingViruses},mycoplasmicContent={self.mycoplasmicContent},cultivability={self.cultivability},clinicalInformation={self.clinicalInformation},identificationTechnique={self.identificationTechnique},infectivity={self.infectivity},infectivityTest={self.infectivityTest},isolationTechnique={self.isolationTechnique},isolationConditions={self.isolationConditions},letterOfAuthority={self.letterOfAuthority},passage={self.passage},genomeSequencing={self.genomeSequencing},titer={self.titer},shippingConditions={self.shippingConditions},storageConditions={self.storageConditions},thirdPartyDistributionConsent={self.thirdPartyDistributionConsent},usageRestrictions={self.usageRestrictions},accessPointUrl={self.accessPointUrl},refSku={self.refSku},unitDefinition={self.unitDefinition},unitCost={self.unitCost},unitCostCurrency={self.unitCostCurrency},unitCostNote={self.unitCostNote},qualityGrading={self.qualityGrading},biosafetyRestrictions={self.biosafetyRestrictions},canBeUsedToProduceGmo={self.canBeUsedToProduceGmo},availability={self.availability},technicalRecommendation={self.technicalRecommendation},internalReference={self.internalReference},note={self.note},title={self.title},description={self.description},version={self.version},dateIssued={self.dateIssued},dateModified={self.dateModified},biologicalMaterialOrigin_id={self.biologicalMaterialOrigin_id},iataClassification_id={self.iataClassification_id},materialSafetyDataSheet_id={self.materialSafetyDataSheet_id},originator_id={self.originator_id},category_id={self.category_id},riskGroup_id={self.riskGroup_id},provider_id={self.provider_id},contactPoint_id={self.contactPoint_id},)"
+        return f"Virus(id={self.id},contaminationWithCoInfectingViruses={self.contaminationWithCoInfectingViruses},mycoplasmicContent={self.mycoplasmicContent},cultivability={self.cultivability},clinicalInformation={self.clinicalInformation},identificationTechnique={self.identificationTechnique},infectivity={self.infectivity},infectivityTest={self.infectivityTest},isolationTechnique={self.isolationTechnique},isolationConditions={self.isolationConditions},letterOfAuthority={self.letterOfAuthority},passage={self.passage},genomeSequencing={self.genomeSequencing},titer={self.titer},shippingConditions={self.shippingConditions},storageConditions={self.storageConditions},thirdPartyDistributionConsent={self.thirdPartyDistributionConsent},usageRestrictions={self.usageRestrictions},preparationTechnique={self.preparationTechnique},accessPointUrl={self.accessPointUrl},refSku={self.refSku},unitDefinition={self.unitDefinition},unitCost={self.unitCost},unitCostCurrency={self.unitCostCurrency},unitCostNote={self.unitCostNote},qualityGrading={self.qualityGrading},biosafetyRestrictions={self.biosafetyRestrictions},canBeUsedToProduceGmo={self.canBeUsedToProduceGmo},availability={self.availability},technicalRecommendation={self.technicalRecommendation},internalReference={self.internalReference},note={self.note},title={self.title},description={self.description},version={self.version},dateIssued={self.dateIssued},dateModified={self.dateModified},biologicalMaterialOrigin_id={self.biologicalMaterialOrigin_id},iataClassification_id={self.iataClassification_id},materialSafetyDataSheet_id={self.materialSafetyDataSheet_id},originator_id={self.originator_id},category_id={self.category_id},riskGroup_id={self.riskGroup_id},provider_id={self.provider_id},contactPoint_id={self.contactPoint_id},)"
 
 
 
@@ -13165,6 +13176,7 @@ class Bacterium(Pathogen):
     storageConditions = Column(Text(), nullable=False )
     thirdPartyDistributionConsent = Column(Boolean())
     usageRestrictions = Column(Text())
+    preparationTechnique = Column(Text())
     accessPointUrl = Column(Text(), nullable=False )
     refSku = Column(Text(), nullable=False )
     unitDefinition = Column(Text())
@@ -13281,7 +13293,7 @@ class Bacterium(Pathogen):
     
 
     def __repr__(self):
-        return f"Bacterium(id={self.id},cultivability={self.cultivability},clinicalInformation={self.clinicalInformation},identificationTechnique={self.identificationTechnique},infectivity={self.infectivity},infectivityTest={self.infectivityTest},isolationTechnique={self.isolationTechnique},isolationConditions={self.isolationConditions},letterOfAuthority={self.letterOfAuthority},passage={self.passage},genomeSequencing={self.genomeSequencing},titer={self.titer},shippingConditions={self.shippingConditions},storageConditions={self.storageConditions},thirdPartyDistributionConsent={self.thirdPartyDistributionConsent},usageRestrictions={self.usageRestrictions},accessPointUrl={self.accessPointUrl},refSku={self.refSku},unitDefinition={self.unitDefinition},unitCost={self.unitCost},unitCostCurrency={self.unitCostCurrency},unitCostNote={self.unitCostNote},qualityGrading={self.qualityGrading},biosafetyRestrictions={self.biosafetyRestrictions},canBeUsedToProduceGmo={self.canBeUsedToProduceGmo},availability={self.availability},technicalRecommendation={self.technicalRecommendation},internalReference={self.internalReference},note={self.note},title={self.title},description={self.description},version={self.version},dateIssued={self.dateIssued},dateModified={self.dateModified},biologicalMaterialOrigin_id={self.biologicalMaterialOrigin_id},iataClassification_id={self.iataClassification_id},materialSafetyDataSheet_id={self.materialSafetyDataSheet_id},originator_id={self.originator_id},category_id={self.category_id},riskGroup_id={self.riskGroup_id},provider_id={self.provider_id},contactPoint_id={self.contactPoint_id},)"
+        return f"Bacterium(id={self.id},cultivability={self.cultivability},clinicalInformation={self.clinicalInformation},identificationTechnique={self.identificationTechnique},infectivity={self.infectivity},infectivityTest={self.infectivityTest},isolationTechnique={self.isolationTechnique},isolationConditions={self.isolationConditions},letterOfAuthority={self.letterOfAuthority},passage={self.passage},genomeSequencing={self.genomeSequencing},titer={self.titer},shippingConditions={self.shippingConditions},storageConditions={self.storageConditions},thirdPartyDistributionConsent={self.thirdPartyDistributionConsent},usageRestrictions={self.usageRestrictions},preparationTechnique={self.preparationTechnique},accessPointUrl={self.accessPointUrl},refSku={self.refSku},unitDefinition={self.unitDefinition},unitCost={self.unitCost},unitCostCurrency={self.unitCostCurrency},unitCostNote={self.unitCostNote},qualityGrading={self.qualityGrading},biosafetyRestrictions={self.biosafetyRestrictions},canBeUsedToProduceGmo={self.canBeUsedToProduceGmo},availability={self.availability},technicalRecommendation={self.technicalRecommendation},internalReference={self.internalReference},note={self.note},title={self.title},description={self.description},version={self.version},dateIssued={self.dateIssued},dateModified={self.dateModified},biologicalMaterialOrigin_id={self.biologicalMaterialOrigin_id},iataClassification_id={self.iataClassification_id},materialSafetyDataSheet_id={self.materialSafetyDataSheet_id},originator_id={self.originator_id},category_id={self.category_id},riskGroup_id={self.riskGroup_id},provider_id={self.provider_id},contactPoint_id={self.contactPoint_id},)"
 
 
 
@@ -13315,6 +13327,7 @@ class Fungus(Pathogen):
     storageConditions = Column(Text(), nullable=False )
     thirdPartyDistributionConsent = Column(Boolean())
     usageRestrictions = Column(Text())
+    preparationTechnique = Column(Text())
     accessPointUrl = Column(Text(), nullable=False )
     refSku = Column(Text(), nullable=False )
     unitDefinition = Column(Text())
@@ -13431,7 +13444,7 @@ class Fungus(Pathogen):
     
 
     def __repr__(self):
-        return f"Fungus(id={self.id},cultivability={self.cultivability},clinicalInformation={self.clinicalInformation},identificationTechnique={self.identificationTechnique},infectivity={self.infectivity},infectivityTest={self.infectivityTest},isolationTechnique={self.isolationTechnique},isolationConditions={self.isolationConditions},letterOfAuthority={self.letterOfAuthority},passage={self.passage},genomeSequencing={self.genomeSequencing},titer={self.titer},shippingConditions={self.shippingConditions},storageConditions={self.storageConditions},thirdPartyDistributionConsent={self.thirdPartyDistributionConsent},usageRestrictions={self.usageRestrictions},accessPointUrl={self.accessPointUrl},refSku={self.refSku},unitDefinition={self.unitDefinition},unitCost={self.unitCost},unitCostCurrency={self.unitCostCurrency},unitCostNote={self.unitCostNote},qualityGrading={self.qualityGrading},biosafetyRestrictions={self.biosafetyRestrictions},canBeUsedToProduceGmo={self.canBeUsedToProduceGmo},availability={self.availability},technicalRecommendation={self.technicalRecommendation},internalReference={self.internalReference},note={self.note},title={self.title},description={self.description},version={self.version},dateIssued={self.dateIssued},dateModified={self.dateModified},biologicalMaterialOrigin_id={self.biologicalMaterialOrigin_id},iataClassification_id={self.iataClassification_id},materialSafetyDataSheet_id={self.materialSafetyDataSheet_id},originator_id={self.originator_id},category_id={self.category_id},riskGroup_id={self.riskGroup_id},provider_id={self.provider_id},contactPoint_id={self.contactPoint_id},)"
+        return f"Fungus(id={self.id},cultivability={self.cultivability},clinicalInformation={self.clinicalInformation},identificationTechnique={self.identificationTechnique},infectivity={self.infectivity},infectivityTest={self.infectivityTest},isolationTechnique={self.isolationTechnique},isolationConditions={self.isolationConditions},letterOfAuthority={self.letterOfAuthority},passage={self.passage},genomeSequencing={self.genomeSequencing},titer={self.titer},shippingConditions={self.shippingConditions},storageConditions={self.storageConditions},thirdPartyDistributionConsent={self.thirdPartyDistributionConsent},usageRestrictions={self.usageRestrictions},preparationTechnique={self.preparationTechnique},accessPointUrl={self.accessPointUrl},refSku={self.refSku},unitDefinition={self.unitDefinition},unitCost={self.unitCost},unitCostCurrency={self.unitCostCurrency},unitCostNote={self.unitCostNote},qualityGrading={self.qualityGrading},biosafetyRestrictions={self.biosafetyRestrictions},canBeUsedToProduceGmo={self.canBeUsedToProduceGmo},availability={self.availability},technicalRecommendation={self.technicalRecommendation},internalReference={self.internalReference},note={self.note},title={self.title},description={self.description},version={self.version},dateIssued={self.dateIssued},dateModified={self.dateModified},biologicalMaterialOrigin_id={self.biologicalMaterialOrigin_id},iataClassification_id={self.iataClassification_id},materialSafetyDataSheet_id={self.materialSafetyDataSheet_id},originator_id={self.originator_id},category_id={self.category_id},riskGroup_id={self.riskGroup_id},provider_id={self.provider_id},contactPoint_id={self.contactPoint_id},)"
 
 
 
@@ -13465,6 +13478,7 @@ class Protozoan(Pathogen):
     storageConditions = Column(Text(), nullable=False )
     thirdPartyDistributionConsent = Column(Boolean())
     usageRestrictions = Column(Text())
+    preparationTechnique = Column(Text())
     accessPointUrl = Column(Text(), nullable=False )
     refSku = Column(Text(), nullable=False )
     unitDefinition = Column(Text())
@@ -13581,7 +13595,7 @@ class Protozoan(Pathogen):
     
 
     def __repr__(self):
-        return f"Protozoan(id={self.id},cultivability={self.cultivability},clinicalInformation={self.clinicalInformation},identificationTechnique={self.identificationTechnique},infectivity={self.infectivity},infectivityTest={self.infectivityTest},isolationTechnique={self.isolationTechnique},isolationConditions={self.isolationConditions},letterOfAuthority={self.letterOfAuthority},passage={self.passage},genomeSequencing={self.genomeSequencing},titer={self.titer},shippingConditions={self.shippingConditions},storageConditions={self.storageConditions},thirdPartyDistributionConsent={self.thirdPartyDistributionConsent},usageRestrictions={self.usageRestrictions},accessPointUrl={self.accessPointUrl},refSku={self.refSku},unitDefinition={self.unitDefinition},unitCost={self.unitCost},unitCostCurrency={self.unitCostCurrency},unitCostNote={self.unitCostNote},qualityGrading={self.qualityGrading},biosafetyRestrictions={self.biosafetyRestrictions},canBeUsedToProduceGmo={self.canBeUsedToProduceGmo},availability={self.availability},technicalRecommendation={self.technicalRecommendation},internalReference={self.internalReference},note={self.note},title={self.title},description={self.description},version={self.version},dateIssued={self.dateIssued},dateModified={self.dateModified},biologicalMaterialOrigin_id={self.biologicalMaterialOrigin_id},iataClassification_id={self.iataClassification_id},materialSafetyDataSheet_id={self.materialSafetyDataSheet_id},originator_id={self.originator_id},category_id={self.category_id},riskGroup_id={self.riskGroup_id},provider_id={self.provider_id},contactPoint_id={self.contactPoint_id},)"
+        return f"Protozoan(id={self.id},cultivability={self.cultivability},clinicalInformation={self.clinicalInformation},identificationTechnique={self.identificationTechnique},infectivity={self.infectivity},infectivityTest={self.infectivityTest},isolationTechnique={self.isolationTechnique},isolationConditions={self.isolationConditions},letterOfAuthority={self.letterOfAuthority},passage={self.passage},genomeSequencing={self.genomeSequencing},titer={self.titer},shippingConditions={self.shippingConditions},storageConditions={self.storageConditions},thirdPartyDistributionConsent={self.thirdPartyDistributionConsent},usageRestrictions={self.usageRestrictions},preparationTechnique={self.preparationTechnique},accessPointUrl={self.accessPointUrl},refSku={self.refSku},unitDefinition={self.unitDefinition},unitCost={self.unitCost},unitCostCurrency={self.unitCostCurrency},unitCostNote={self.unitCostNote},qualityGrading={self.qualityGrading},biosafetyRestrictions={self.biosafetyRestrictions},canBeUsedToProduceGmo={self.canBeUsedToProduceGmo},availability={self.availability},technicalRecommendation={self.technicalRecommendation},internalReference={self.internalReference},note={self.note},title={self.title},description={self.description},version={self.version},dateIssued={self.dateIssued},dateModified={self.dateModified},biologicalMaterialOrigin_id={self.biologicalMaterialOrigin_id},iataClassification_id={self.iataClassification_id},materialSafetyDataSheet_id={self.materialSafetyDataSheet_id},originator_id={self.originator_id},category_id={self.category_id},riskGroup_id={self.riskGroup_id},provider_id={self.provider_id},contactPoint_id={self.contactPoint_id},)"
 
 
 
@@ -13615,6 +13629,7 @@ class Viroid(Pathogen):
     storageConditions = Column(Text(), nullable=False )
     thirdPartyDistributionConsent = Column(Boolean())
     usageRestrictions = Column(Text())
+    preparationTechnique = Column(Text())
     accessPointUrl = Column(Text(), nullable=False )
     refSku = Column(Text(), nullable=False )
     unitDefinition = Column(Text())
@@ -13731,7 +13746,7 @@ class Viroid(Pathogen):
     
 
     def __repr__(self):
-        return f"Viroid(id={self.id},cultivability={self.cultivability},clinicalInformation={self.clinicalInformation},identificationTechnique={self.identificationTechnique},infectivity={self.infectivity},infectivityTest={self.infectivityTest},isolationTechnique={self.isolationTechnique},isolationConditions={self.isolationConditions},letterOfAuthority={self.letterOfAuthority},passage={self.passage},genomeSequencing={self.genomeSequencing},titer={self.titer},shippingConditions={self.shippingConditions},storageConditions={self.storageConditions},thirdPartyDistributionConsent={self.thirdPartyDistributionConsent},usageRestrictions={self.usageRestrictions},accessPointUrl={self.accessPointUrl},refSku={self.refSku},unitDefinition={self.unitDefinition},unitCost={self.unitCost},unitCostCurrency={self.unitCostCurrency},unitCostNote={self.unitCostNote},qualityGrading={self.qualityGrading},biosafetyRestrictions={self.biosafetyRestrictions},canBeUsedToProduceGmo={self.canBeUsedToProduceGmo},availability={self.availability},technicalRecommendation={self.technicalRecommendation},internalReference={self.internalReference},note={self.note},title={self.title},description={self.description},version={self.version},dateIssued={self.dateIssued},dateModified={self.dateModified},biologicalMaterialOrigin_id={self.biologicalMaterialOrigin_id},iataClassification_id={self.iataClassification_id},materialSafetyDataSheet_id={self.materialSafetyDataSheet_id},originator_id={self.originator_id},category_id={self.category_id},riskGroup_id={self.riskGroup_id},provider_id={self.provider_id},contactPoint_id={self.contactPoint_id},)"
+        return f"Viroid(id={self.id},cultivability={self.cultivability},clinicalInformation={self.clinicalInformation},identificationTechnique={self.identificationTechnique},infectivity={self.infectivity},infectivityTest={self.infectivityTest},isolationTechnique={self.isolationTechnique},isolationConditions={self.isolationConditions},letterOfAuthority={self.letterOfAuthority},passage={self.passage},genomeSequencing={self.genomeSequencing},titer={self.titer},shippingConditions={self.shippingConditions},storageConditions={self.storageConditions},thirdPartyDistributionConsent={self.thirdPartyDistributionConsent},usageRestrictions={self.usageRestrictions},preparationTechnique={self.preparationTechnique},accessPointUrl={self.accessPointUrl},refSku={self.refSku},unitDefinition={self.unitDefinition},unitCost={self.unitCost},unitCostCurrency={self.unitCostCurrency},unitCostNote={self.unitCostNote},qualityGrading={self.qualityGrading},biosafetyRestrictions={self.biosafetyRestrictions},canBeUsedToProduceGmo={self.canBeUsedToProduceGmo},availability={self.availability},technicalRecommendation={self.technicalRecommendation},internalReference={self.internalReference},note={self.note},title={self.title},description={self.description},version={self.version},dateIssued={self.dateIssued},dateModified={self.dateModified},biologicalMaterialOrigin_id={self.biologicalMaterialOrigin_id},iataClassification_id={self.iataClassification_id},materialSafetyDataSheet_id={self.materialSafetyDataSheet_id},originator_id={self.originator_id},category_id={self.category_id},riskGroup_id={self.riskGroup_id},provider_id={self.provider_id},contactPoint_id={self.contactPoint_id},)"
 
 
 
@@ -13765,6 +13780,7 @@ class Prion(Pathogen):
     storageConditions = Column(Text(), nullable=False )
     thirdPartyDistributionConsent = Column(Boolean())
     usageRestrictions = Column(Text())
+    preparationTechnique = Column(Text())
     accessPointUrl = Column(Text(), nullable=False )
     refSku = Column(Text(), nullable=False )
     unitDefinition = Column(Text())
@@ -13881,7 +13897,7 @@ class Prion(Pathogen):
     
 
     def __repr__(self):
-        return f"Prion(id={self.id},cultivability={self.cultivability},clinicalInformation={self.clinicalInformation},identificationTechnique={self.identificationTechnique},infectivity={self.infectivity},infectivityTest={self.infectivityTest},isolationTechnique={self.isolationTechnique},isolationConditions={self.isolationConditions},letterOfAuthority={self.letterOfAuthority},passage={self.passage},genomeSequencing={self.genomeSequencing},titer={self.titer},shippingConditions={self.shippingConditions},storageConditions={self.storageConditions},thirdPartyDistributionConsent={self.thirdPartyDistributionConsent},usageRestrictions={self.usageRestrictions},accessPointUrl={self.accessPointUrl},refSku={self.refSku},unitDefinition={self.unitDefinition},unitCost={self.unitCost},unitCostCurrency={self.unitCostCurrency},unitCostNote={self.unitCostNote},qualityGrading={self.qualityGrading},biosafetyRestrictions={self.biosafetyRestrictions},canBeUsedToProduceGmo={self.canBeUsedToProduceGmo},availability={self.availability},technicalRecommendation={self.technicalRecommendation},internalReference={self.internalReference},note={self.note},title={self.title},description={self.description},version={self.version},dateIssued={self.dateIssued},dateModified={self.dateModified},biologicalMaterialOrigin_id={self.biologicalMaterialOrigin_id},iataClassification_id={self.iataClassification_id},materialSafetyDataSheet_id={self.materialSafetyDataSheet_id},originator_id={self.originator_id},category_id={self.category_id},riskGroup_id={self.riskGroup_id},provider_id={self.provider_id},contactPoint_id={self.contactPoint_id},)"
+        return f"Prion(id={self.id},cultivability={self.cultivability},clinicalInformation={self.clinicalInformation},identificationTechnique={self.identificationTechnique},infectivity={self.infectivity},infectivityTest={self.infectivityTest},isolationTechnique={self.isolationTechnique},isolationConditions={self.isolationConditions},letterOfAuthority={self.letterOfAuthority},passage={self.passage},genomeSequencing={self.genomeSequencing},titer={self.titer},shippingConditions={self.shippingConditions},storageConditions={self.storageConditions},thirdPartyDistributionConsent={self.thirdPartyDistributionConsent},usageRestrictions={self.usageRestrictions},preparationTechnique={self.preparationTechnique},accessPointUrl={self.accessPointUrl},refSku={self.refSku},unitDefinition={self.unitDefinition},unitCost={self.unitCost},unitCostCurrency={self.unitCostCurrency},unitCostNote={self.unitCostNote},qualityGrading={self.qualityGrading},biosafetyRestrictions={self.biosafetyRestrictions},canBeUsedToProduceGmo={self.canBeUsedToProduceGmo},availability={self.availability},technicalRecommendation={self.technicalRecommendation},internalReference={self.internalReference},note={self.note},title={self.title},description={self.description},version={self.version},dateIssued={self.dateIssued},dateModified={self.dateModified},biologicalMaterialOrigin_id={self.biologicalMaterialOrigin_id},iataClassification_id={self.iataClassification_id},materialSafetyDataSheet_id={self.materialSafetyDataSheet_id},originator_id={self.originator_id},category_id={self.category_id},riskGroup_id={self.riskGroup_id},provider_id={self.provider_id},contactPoint_id={self.contactPoint_id},)"
 
 
 

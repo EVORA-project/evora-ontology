@@ -5,7 +5,7 @@ import lombok.*;
 
 
 
-/* version: 1.0.10123 */
+/* version: 1.0.10142 */
 
 
 /**
@@ -23,5 +23,6 @@ public class FundingSource extends Resource {
   private LocalDate fundingPeriodStart;
   private LocalDate fundingPeriodEnd;
   private String eligibilityCriteria;
+  private Image logo;
 
 }

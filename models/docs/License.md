@@ -251,6 +251,7 @@ slot_usage:
     - License
     - PersonOrOrganization
     - Certification
+    - FundingSource
     range: Image
     required: false
     multivalued: false
@@ -369,6 +370,7 @@ slot_usage:
     - License
     - PersonOrOrganization
     - Certification
+    - FundingSource
     range: Image
     required: false
     multivalued: false
@@ -489,6 +491,7 @@ attributes:
     - License
     - PersonOrOrganization
     - Certification
+    - FundingSource
     range: Image
     required: false
     multivalued: false

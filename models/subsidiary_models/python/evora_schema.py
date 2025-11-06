@@ -1,5 +1,5 @@
 # Auto generated from evora_schema.yaml by pythongen.py version: 0.0.1
-# Generation date: 2025-10-20T10:19:11
+# Generation date: 2025-11-06T14:56:55
 # Schema: EVORAO
 #
 # id: https://w3id.org/evorao/
@@ -60,7 +60,7 @@ from linkml_runtime.linkml_model.types import Boolean, Date, Datetime, Decimal, 
 from linkml_runtime.utils.metamodelcore import Bool, Decimal, URI, XSDDate, XSDDateTime
 
 metamodel_version = "1.7.0"
-version = "1.0.10123"
+version = "1.0.10142"
 
 # Namespaces
 EVORAO = CurieNamespace('EVORAO', 'https://w3id.org/evorao/')
@@ -1755,6 +1755,7 @@ class Product(ProductOrService):
     originator: Optional[Union[dict, Originator]] = None
     thirdPartyDistributionConsent: Optional[Union[bool, Bool]] = None
     usageRestrictions: Optional[str] = None
+    preparationTechnique: Optional[str] = None
 
     def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.iataClassification):
@@ -1783,6 +1784,9 @@ class Product(ProductOrService):
 
         if self.usageRestrictions is not None and not isinstance(self.usageRestrictions, str):
             self.usageRestrictions = str(self.usageRestrictions)
+
+        if self.preparationTechnique is not None and not isinstance(self.preparationTechnique, str):
+            self.preparationTechnique = str(self.preparationTechnique)
 
         super().__post_init__(**kwargs)
 
@@ -2898,6 +2902,7 @@ class FundingSource(Resource):
     fundingPeriodStart: Optional[Union[str, XSDDate]] = None
     fundingPeriodEnd: Optional[Union[str, XSDDate]] = None
     eligibilityCriteria: Optional[str] = None
+    logo: Optional[Union[dict, Image]] = None
 
     def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.title):
@@ -2925,6 +2930,9 @@ class FundingSource(Resource):
 
         if self.eligibilityCriteria is not None and not isinstance(self.eligibilityCriteria, str):
             self.eligibilityCriteria = str(self.eligibilityCriteria)
+
+        if self.logo is not None and not isinstance(self.logo, Image):
+            self.logo = Image(**as_dict(self.logo))
 
         if self.grantNumber is not None and not isinstance(self.grantNumber, str):
             self.grantNumber = str(self.grantNumber)
@@ -3289,6 +3297,9 @@ slots.thirdPartyDistributionConsent = Slot(uri=EVORAO.thirdPartyDistributionCons
 
 slots.usageRestrictions = Slot(uri=EVORAO.usageRestrictions, name="usageRestrictions", curie=EVORAO.curie('usageRestrictions'),
                    model_uri=EVORAO.usageRestrictions, domain=None, range=Optional[str])
+
+slots.preparationTechnique = Slot(uri=EVORAO.preparationTechnique, name="preparationTechnique", curie=EVORAO.curie('preparationTechnique'),
+                   model_uri=EVORAO.preparationTechnique, domain=None, range=Optional[str])
 
 slots.productionSystem = Slot(uri=EVORAO.productionSystem, name="productionSystem", curie=EVORAO.curie('productionSystem'),
                    model_uri=EVORAO.productionSystem, domain=None, range=Optional[str])
@@ -3953,6 +3964,9 @@ slots.Product_thirdPartyDistributionConsent = Slot(uri=EVORAO.thirdPartyDistribu
 slots.Product_usageRestrictions = Slot(uri=EVORAO.usageRestrictions, name="Product_usageRestrictions", curie=EVORAO.curie('usageRestrictions'),
                    model_uri=EVORAO.Product_usageRestrictions, domain=Product, range=Optional[str])
 
+slots.Product_preparationTechnique = Slot(uri=EVORAO.preparationTechnique, name="Product_preparationTechnique", curie=EVORAO.curie('preparationTechnique'),
+                   model_uri=EVORAO.Product_preparationTechnique, domain=Product, range=Optional[str])
+
 slots.Antibody_productionSystem = Slot(uri=EVORAO.productionSystem, name="Antibody_productionSystem", curie=EVORAO.curie('productionSystem'),
                    model_uri=EVORAO.Antibody_productionSystem, domain=Antibody, range=Optional[str])
 
@@ -4279,3 +4293,6 @@ slots.FundingSource_fundingPeriodEnd = Slot(uri=EVORAO.fundingPeriodEnd, name="F
 
 slots.FundingSource_eligibilityCriteria = Slot(uri=EVORAO.eligibilityCriteria, name="FundingSource_eligibilityCriteria", curie=EVORAO.curie('eligibilityCriteria'),
                    model_uri=EVORAO.FundingSource_eligibilityCriteria, domain=FundingSource, range=Optional[str])
+
+slots.FundingSource_logo = Slot(uri=EVORAO.logo, name="FundingSource_logo", curie=EVORAO.curie('logo'),
+                   model_uri=EVORAO.FundingSource_logo, domain=FundingSource, range=Optional[Union[dict, Image]])

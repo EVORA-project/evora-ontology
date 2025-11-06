@@ -70,6 +70,7 @@ SELECT ?g ?s ?p WHERE {
    EVORAO:storageConditions,
    EVORAO:thirdPartyDistributionConsent,
    EVORAO:usageRestrictions,
+   EVORAO:preparationTechnique,
    EVORAO:accessPointUrl,
    EVORAO:refSku,
    EVORAO:unitDefinition,

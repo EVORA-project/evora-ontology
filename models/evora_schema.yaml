@@ -48,7 +48,7 @@ keywords:
 - pathogen collections
 - interoperability
 id: https://w3id.org/evorao/
-version: 1.0.10123
+version: 1.0.10142
 imports:
 - linkml:types
 license: https://creativecommons.org/publicdomain/zero/1.0/
@@ -1085,6 +1085,7 @@ slots:
     - PersonOrOrganization
     - License
     - Certification
+    - FundingSource
     range: Image
     required: false
     multivalued: false
@@ -1820,6 +1821,16 @@ slots:
       material, including restrictions on research, commercial use, or distribution,
       considering any potential concerns about the related genetic material
     title: usage restrictions
+    from_schema: https://w3id.org/evorao/
+    domain_of:
+    - Product
+    range: string
+    required: false
+    multivalued: false
+  preparationTechnique:
+    description: The technique, method, or procedure employed to obtain or prepare
+      the material prior to its use or storage
+    title: preparation technique
     from_schema: https://w3id.org/evorao/
     domain_of:
     - Product
@@ -5562,6 +5573,7 @@ classes:
     - storageConditions
     - thirdPartyDistributionConsent
     - usageRestrictions
+    - preparationTechnique
     slot_usage:
       iataClassification:
         description: The corresponding International Air Transport Association (IATA)'s
@@ -5640,6 +5652,15 @@ classes:
           material, including restrictions on research, commercial use, or distribution,
           considering any potential concerns about the related genetic material
         title: usage restrictions
+        domain_of:
+        - Product
+        range: string
+        required: false
+        multivalued: false
+      preparationTechnique:
+        description: The technique, method, or procedure employed to obtain or prepare
+          the material prior to its use or storage
+        title: preparation technique
         domain_of:
         - Product
         range: string
@@ -7397,6 +7418,7 @@ classes:
     - fundingPeriodStart
     - fundingPeriodEnd
     - eligibilityCriteria
+    - logo
     slot_usage:
       title:
         description: A name given to the resource
@@ -7495,5 +7517,15 @@ classes:
         range: string
         required: false
         multivalued: false
+      logo:
+        description: A path or URL to the related logo
+        title: logo
+        exact_mappings:
+        - schema:logo
+        domain_of:
+        - FundingSource
+        range: Image
+        required: false
+        multivalued: false
 source_file: https://w3id.org/evorao/evorao.owl.ttl
-generation_date: '2025-10-20T12:18:15'
+generation_date: '2025-11-06T15:56:02'

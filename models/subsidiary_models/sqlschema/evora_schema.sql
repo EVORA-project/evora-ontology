@@ -477,6 +477,7 @@
 --     * Slot: storageConditions Description: Specifies the conditions under which the product has to be stored to maintain stability and integrity, such as temperature, buffer, and other environmental factors.
 --     * Slot: thirdPartyDistributionConsent Description: Indicates whether the biological material can be distributed without restriction to third parties, as indicated by the ABS permit, in case an ABS permit is required
 --     * Slot: usageRestrictions Description: Specifies any limitations or conditions on the use of the biological material, including restrictions on research, commercial use, or distribution, considering any potential concerns about the related genetic material
+--     * Slot: preparationTechnique Description: The technique, method, or procedure employed to obtain or prepare the material prior to its use or storage
 --     * Slot: accessPointUrl Description: The URL that permits to access to the product/service detailed description page on the provider's website and/or allows to place an order about it or at least describe the process to place an order/enquiry
 --     * Slot: refSku Description: The reference or the stock keeping unit of the service or item provided in the provider's catalogue
 --     * Slot: unitDefinition Description: A short description of what will be delivered by ordering one unit of this item
@@ -512,6 +513,7 @@
 --     * Slot: storageConditions Description: Specifies the conditions under which the product has to be stored to maintain stability and integrity, such as temperature, buffer, and other environmental factors.
 --     * Slot: thirdPartyDistributionConsent Description: Indicates whether the biological material can be distributed without restriction to third parties, as indicated by the ABS permit, in case an ABS permit is required
 --     * Slot: usageRestrictions Description: Specifies any limitations or conditions on the use of the biological material, including restrictions on research, commercial use, or distribution, considering any potential concerns about the related genetic material
+--     * Slot: preparationTechnique Description: The technique, method, or procedure employed to obtain or prepare the material prior to its use or storage
 --     * Slot: accessPointUrl Description: The URL that permits to access to the product/service detailed description page on the provider's website and/or allows to place an order about it or at least describe the process to place an order/enquiry
 --     * Slot: refSku Description: The reference or the stock keeping unit of the service or item provided in the provider's catalogue
 --     * Slot: unitDefinition Description: A short description of what will be delivered by ordering one unit of this item
@@ -548,6 +550,7 @@
 --     * Slot: storageConditions Description: Specifies the conditions under which the product has to be stored to maintain stability and integrity, such as temperature, buffer, and other environmental factors.
 --     * Slot: thirdPartyDistributionConsent Description: Indicates whether the biological material can be distributed without restriction to third parties, as indicated by the ABS permit, in case an ABS permit is required
 --     * Slot: usageRestrictions Description: Specifies any limitations or conditions on the use of the biological material, including restrictions on research, commercial use, or distribution, considering any potential concerns about the related genetic material
+--     * Slot: preparationTechnique Description: The technique, method, or procedure employed to obtain or prepare the material prior to its use or storage
 --     * Slot: accessPointUrl Description: The URL that permits to access to the product/service detailed description page on the provider's website and/or allows to place an order about it or at least describe the process to place an order/enquiry
 --     * Slot: refSku Description: The reference or the stock keeping unit of the service or item provided in the provider's catalogue
 --     * Slot: unitDefinition Description: A short description of what will be delivered by ordering one unit of this item
@@ -579,6 +582,7 @@
 --     * Slot: storageConditions Description: Specifies the conditions under which the product has to be stored to maintain stability and integrity, such as temperature, buffer, and other environmental factors.
 --     * Slot: thirdPartyDistributionConsent Description: Indicates whether the biological material can be distributed without restriction to third parties, as indicated by the ABS permit, in case an ABS permit is required
 --     * Slot: usageRestrictions Description: Specifies any limitations or conditions on the use of the biological material, including restrictions on research, commercial use, or distribution, considering any potential concerns about the related genetic material
+--     * Slot: preparationTechnique Description: The technique, method, or procedure employed to obtain or prepare the material prior to its use or storage
 --     * Slot: accessPointUrl Description: The URL that permits to access to the product/service detailed description page on the provider's website and/or allows to place an order about it or at least describe the process to place an order/enquiry
 --     * Slot: refSku Description: The reference or the stock keeping unit of the service or item provided in the provider's catalogue
 --     * Slot: unitDefinition Description: A short description of what will be delivered by ordering one unit of this item
@@ -619,6 +623,7 @@
 --     * Slot: storageConditions Description: Specifies the conditions under which the product has to be stored to maintain stability and integrity, such as temperature, buffer, and other environmental factors.
 --     * Slot: thirdPartyDistributionConsent Description: Indicates whether the biological material can be distributed without restriction to third parties, as indicated by the ABS permit, in case an ABS permit is required
 --     * Slot: usageRestrictions Description: Specifies any limitations or conditions on the use of the biological material, including restrictions on research, commercial use, or distribution, considering any potential concerns about the related genetic material
+--     * Slot: preparationTechnique Description: The technique, method, or procedure employed to obtain or prepare the material prior to its use or storage
 --     * Slot: accessPointUrl Description: The URL that permits to access to the product/service detailed description page on the provider's website and/or allows to place an order about it or at least describe the process to place an order/enquiry
 --     * Slot: refSku Description: The reference or the stock keeping unit of the service or item provided in the provider's catalogue
 --     * Slot: unitDefinition Description: A short description of what will be delivered by ordering one unit of this item
@@ -656,6 +661,7 @@
 --     * Slot: storageConditions Description: Specifies the conditions under which the product has to be stored to maintain stability and integrity, such as temperature, buffer, and other environmental factors.
 --     * Slot: thirdPartyDistributionConsent Description: Indicates whether the biological material can be distributed without restriction to third parties, as indicated by the ABS permit, in case an ABS permit is required
 --     * Slot: usageRestrictions Description: Specifies any limitations or conditions on the use of the biological material, including restrictions on research, commercial use, or distribution, considering any potential concerns about the related genetic material
+--     * Slot: preparationTechnique Description: The technique, method, or procedure employed to obtain or prepare the material prior to its use or storage
 --     * Slot: accessPointUrl Description: The URL that permits to access to the product/service detailed description page on the provider's website and/or allows to place an order about it or at least describe the process to place an order/enquiry
 --     * Slot: refSku Description: The reference or the stock keeping unit of the service or item provided in the provider's catalogue
 --     * Slot: unitDefinition Description: A short description of what will be delivered by ordering one unit of this item
@@ -687,6 +693,7 @@
 --     * Slot: storageConditions Description: Specifies the conditions under which the product has to be stored to maintain stability and integrity, such as temperature, buffer, and other environmental factors.
 --     * Slot: thirdPartyDistributionConsent Description: Indicates whether the biological material can be distributed without restriction to third parties, as indicated by the ABS permit, in case an ABS permit is required
 --     * Slot: usageRestrictions Description: Specifies any limitations or conditions on the use of the biological material, including restrictions on research, commercial use, or distribution, considering any potential concerns about the related genetic material
+--     * Slot: preparationTechnique Description: The technique, method, or procedure employed to obtain or prepare the material prior to its use or storage
 --     * Slot: accessPointUrl Description: The URL that permits to access to the product/service detailed description page on the provider's website and/or allows to place an order about it or at least describe the process to place an order/enquiry
 --     * Slot: refSku Description: The reference or the stock keeping unit of the service or item provided in the provider's catalogue
 --     * Slot: unitDefinition Description: A short description of what will be delivered by ordering one unit of this item
@@ -729,6 +736,7 @@
 --     * Slot: storageConditions Description: Specifies the conditions under which the product has to be stored to maintain stability and integrity, such as temperature, buffer, and other environmental factors.
 --     * Slot: thirdPartyDistributionConsent Description: Indicates whether the biological material can be distributed without restriction to third parties, as indicated by the ABS permit, in case an ABS permit is required
 --     * Slot: usageRestrictions Description: Specifies any limitations or conditions on the use of the biological material, including restrictions on research, commercial use, or distribution, considering any potential concerns about the related genetic material
+--     * Slot: preparationTechnique Description: The technique, method, or procedure employed to obtain or prepare the material prior to its use or storage
 --     * Slot: accessPointUrl Description: The URL that permits to access to the product/service detailed description page on the provider's website and/or allows to place an order about it or at least describe the process to place an order/enquiry
 --     * Slot: refSku Description: The reference or the stock keeping unit of the service or item provided in the provider's catalogue
 --     * Slot: unitDefinition Description: A short description of what will be delivered by ordering one unit of this item
@@ -774,6 +782,7 @@
 --     * Slot: storageConditions Description: Specifies the conditions under which the product has to be stored to maintain stability and integrity, such as temperature, buffer, and other environmental factors.
 --     * Slot: thirdPartyDistributionConsent Description: Indicates whether the biological material can be distributed without restriction to third parties, as indicated by the ABS permit, in case an ABS permit is required
 --     * Slot: usageRestrictions Description: Specifies any limitations or conditions on the use of the biological material, including restrictions on research, commercial use, or distribution, considering any potential concerns about the related genetic material
+--     * Slot: preparationTechnique Description: The technique, method, or procedure employed to obtain or prepare the material prior to its use or storage
 --     * Slot: accessPointUrl Description: The URL that permits to access to the product/service detailed description page on the provider's website and/or allows to place an order about it or at least describe the process to place an order/enquiry
 --     * Slot: refSku Description: The reference or the stock keeping unit of the service or item provided in the provider's catalogue
 --     * Slot: unitDefinition Description: A short description of what will be delivered by ordering one unit of this item
@@ -817,6 +826,7 @@
 --     * Slot: storageConditions Description: Specifies the conditions under which the product has to be stored to maintain stability and integrity, such as temperature, buffer, and other environmental factors.
 --     * Slot: thirdPartyDistributionConsent Description: Indicates whether the biological material can be distributed without restriction to third parties, as indicated by the ABS permit, in case an ABS permit is required
 --     * Slot: usageRestrictions Description: Specifies any limitations or conditions on the use of the biological material, including restrictions on research, commercial use, or distribution, considering any potential concerns about the related genetic material
+--     * Slot: preparationTechnique Description: The technique, method, or procedure employed to obtain or prepare the material prior to its use or storage
 --     * Slot: accessPointUrl Description: The URL that permits to access to the product/service detailed description page on the provider's website and/or allows to place an order about it or at least describe the process to place an order/enquiry
 --     * Slot: refSku Description: The reference or the stock keeping unit of the service or item provided in the provider's catalogue
 --     * Slot: unitDefinition Description: A short description of what will be delivered by ordering one unit of this item
@@ -860,6 +870,7 @@
 --     * Slot: storageConditions Description: Specifies the conditions under which the product has to be stored to maintain stability and integrity, such as temperature, buffer, and other environmental factors.
 --     * Slot: thirdPartyDistributionConsent Description: Indicates whether the biological material can be distributed without restriction to third parties, as indicated by the ABS permit, in case an ABS permit is required
 --     * Slot: usageRestrictions Description: Specifies any limitations or conditions on the use of the biological material, including restrictions on research, commercial use, or distribution, considering any potential concerns about the related genetic material
+--     * Slot: preparationTechnique Description: The technique, method, or procedure employed to obtain or prepare the material prior to its use or storage
 --     * Slot: accessPointUrl Description: The URL that permits to access to the product/service detailed description page on the provider's website and/or allows to place an order about it or at least describe the process to place an order/enquiry
 --     * Slot: refSku Description: The reference or the stock keeping unit of the service or item provided in the provider's catalogue
 --     * Slot: unitDefinition Description: A short description of what will be delivered by ordering one unit of this item
@@ -903,6 +914,7 @@
 --     * Slot: storageConditions Description: Specifies the conditions under which the product has to be stored to maintain stability and integrity, such as temperature, buffer, and other environmental factors.
 --     * Slot: thirdPartyDistributionConsent Description: Indicates whether the biological material can be distributed without restriction to third parties, as indicated by the ABS permit, in case an ABS permit is required
 --     * Slot: usageRestrictions Description: Specifies any limitations or conditions on the use of the biological material, including restrictions on research, commercial use, or distribution, considering any potential concerns about the related genetic material
+--     * Slot: preparationTechnique Description: The technique, method, or procedure employed to obtain or prepare the material prior to its use or storage
 --     * Slot: accessPointUrl Description: The URL that permits to access to the product/service detailed description page on the provider's website and/or allows to place an order about it or at least describe the process to place an order/enquiry
 --     * Slot: refSku Description: The reference or the stock keeping unit of the service or item provided in the provider's catalogue
 --     * Slot: unitDefinition Description: A short description of what will be delivered by ordering one unit of this item
@@ -946,6 +958,7 @@
 --     * Slot: storageConditions Description: Specifies the conditions under which the product has to be stored to maintain stability and integrity, such as temperature, buffer, and other environmental factors.
 --     * Slot: thirdPartyDistributionConsent Description: Indicates whether the biological material can be distributed without restriction to third parties, as indicated by the ABS permit, in case an ABS permit is required
 --     * Slot: usageRestrictions Description: Specifies any limitations or conditions on the use of the biological material, including restrictions on research, commercial use, or distribution, considering any potential concerns about the related genetic material
+--     * Slot: preparationTechnique Description: The technique, method, or procedure employed to obtain or prepare the material prior to its use or storage
 --     * Slot: accessPointUrl Description: The URL that permits to access to the product/service detailed description page on the provider's website and/or allows to place an order about it or at least describe the process to place an order/enquiry
 --     * Slot: refSku Description: The reference or the stock keeping unit of the service or item provided in the provider's catalogue
 --     * Slot: unitDefinition Description: A short description of what will be delivered by ordering one unit of this item
@@ -989,6 +1002,7 @@
 --     * Slot: storageConditions Description: Specifies the conditions under which the product has to be stored to maintain stability and integrity, such as temperature, buffer, and other environmental factors.
 --     * Slot: thirdPartyDistributionConsent Description: Indicates whether the biological material can be distributed without restriction to third parties, as indicated by the ABS permit, in case an ABS permit is required
 --     * Slot: usageRestrictions Description: Specifies any limitations or conditions on the use of the biological material, including restrictions on research, commercial use, or distribution, considering any potential concerns about the related genetic material
+--     * Slot: preparationTechnique Description: The technique, method, or procedure employed to obtain or prepare the material prior to its use or storage
 --     * Slot: accessPointUrl Description: The URL that permits to access to the product/service detailed description page on the provider's website and/or allows to place an order about it or at least describe the process to place an order/enquiry
 --     * Slot: refSku Description: The reference or the stock keeping unit of the service or item provided in the provider's catalogue
 --     * Slot: unitDefinition Description: A short description of what will be delivered by ordering one unit of this item
@@ -1132,6 +1146,7 @@
 --     * Slot: dateIssued Description: Date of formal issuance (e.g., publication) of the resource
 --     * Slot: dateModified Description: Most recent date on which the resource was changed, updated or modified
 --     * Slot: funder_id Description: The organization providing the financial support
+--     * Slot: logo_id Description: A path or URL to the related logo
 -- # Class: "Resource_keyword" Description: ""
 --     * Slot: Resource_id Description: Autocreated FK slot
 --     * Slot: keyword Description: A keyword or tag describing the resource
@@ -4519,6 +4534,7 @@ CREATE TABLE "Product" (
 	"storageConditions" TEXT NOT NULL, 
 	"thirdPartyDistributionConsent" BOOLEAN, 
 	"usageRestrictions" TEXT, 
+	"preparationTechnique" TEXT, 
 	"accessPointUrl" TEXT NOT NULL, 
 	"refSku" TEXT NOT NULL, 
 	"unitDefinition" TEXT, 
@@ -4563,6 +4579,7 @@ CREATE TABLE "Antibody" (
 	"storageConditions" TEXT NOT NULL, 
 	"thirdPartyDistributionConsent" BOOLEAN, 
 	"usageRestrictions" TEXT, 
+	"preparationTechnique" TEXT, 
 	"accessPointUrl" TEXT NOT NULL, 
 	"refSku" TEXT NOT NULL, 
 	"unitDefinition" TEXT, 
@@ -4608,6 +4625,7 @@ CREATE TABLE "Hybridoma" (
 	"storageConditions" TEXT NOT NULL, 
 	"thirdPartyDistributionConsent" BOOLEAN, 
 	"usageRestrictions" TEXT, 
+	"preparationTechnique" TEXT, 
 	"accessPointUrl" TEXT NOT NULL, 
 	"refSku" TEXT NOT NULL, 
 	"unitDefinition" TEXT, 
@@ -4648,6 +4666,7 @@ CREATE TABLE "Protein" (
 	"storageConditions" TEXT NOT NULL, 
 	"thirdPartyDistributionConsent" BOOLEAN, 
 	"usageRestrictions" TEXT, 
+	"preparationTechnique" TEXT, 
 	"accessPointUrl" TEXT NOT NULL, 
 	"refSku" TEXT NOT NULL, 
 	"unitDefinition" TEXT, 
@@ -4698,6 +4717,7 @@ CREATE TABLE "NucleicAcid" (
 	"storageConditions" TEXT NOT NULL, 
 	"thirdPartyDistributionConsent" BOOLEAN, 
 	"usageRestrictions" TEXT, 
+	"preparationTechnique" TEXT, 
 	"accessPointUrl" TEXT NOT NULL, 
 	"refSku" TEXT NOT NULL, 
 	"unitDefinition" TEXT, 
@@ -4747,6 +4767,7 @@ CREATE TABLE "DetectionKit" (
 	"storageConditions" TEXT NOT NULL, 
 	"thirdPartyDistributionConsent" BOOLEAN, 
 	"usageRestrictions" TEXT, 
+	"preparationTechnique" TEXT, 
 	"accessPointUrl" TEXT NOT NULL, 
 	"refSku" TEXT NOT NULL, 
 	"unitDefinition" TEXT, 
@@ -4787,6 +4808,7 @@ CREATE TABLE "Bundle" (
 	"storageConditions" TEXT NOT NULL, 
 	"thirdPartyDistributionConsent" BOOLEAN, 
 	"usageRestrictions" TEXT, 
+	"preparationTechnique" TEXT, 
 	"accessPointUrl" TEXT NOT NULL, 
 	"refSku" TEXT NOT NULL, 
 	"unitDefinition" TEXT, 
@@ -4838,6 +4860,7 @@ CREATE TABLE "Pathogen" (
 	"storageConditions" TEXT NOT NULL, 
 	"thirdPartyDistributionConsent" BOOLEAN, 
 	"usageRestrictions" TEXT, 
+	"preparationTechnique" TEXT, 
 	"accessPointUrl" TEXT NOT NULL, 
 	"refSku" TEXT NOT NULL, 
 	"unitDefinition" TEXT, 
@@ -4893,6 +4916,7 @@ CREATE TABLE "Virus" (
 	"storageConditions" TEXT NOT NULL, 
 	"thirdPartyDistributionConsent" BOOLEAN, 
 	"usageRestrictions" TEXT, 
+	"preparationTechnique" TEXT, 
 	"accessPointUrl" TEXT NOT NULL, 
 	"refSku" TEXT NOT NULL, 
 	"unitDefinition" TEXT, 
@@ -4946,6 +4970,7 @@ CREATE TABLE "Bacterium" (
 	"storageConditions" TEXT NOT NULL, 
 	"thirdPartyDistributionConsent" BOOLEAN, 
 	"usageRestrictions" TEXT, 
+	"preparationTechnique" TEXT, 
 	"accessPointUrl" TEXT NOT NULL, 
 	"refSku" TEXT NOT NULL, 
 	"unitDefinition" TEXT, 
@@ -4999,6 +5024,7 @@ CREATE TABLE "Fungus" (
 	"storageConditions" TEXT NOT NULL, 
 	"thirdPartyDistributionConsent" BOOLEAN, 
 	"usageRestrictions" TEXT, 
+	"preparationTechnique" TEXT, 
 	"accessPointUrl" TEXT NOT NULL, 
 	"refSku" TEXT NOT NULL, 
 	"unitDefinition" TEXT, 
@@ -5052,6 +5078,7 @@ CREATE TABLE "Protozoan" (
 	"storageConditions" TEXT NOT NULL, 
 	"thirdPartyDistributionConsent" BOOLEAN, 
 	"usageRestrictions" TEXT, 
+	"preparationTechnique" TEXT, 
 	"accessPointUrl" TEXT NOT NULL, 
 	"refSku" TEXT NOT NULL, 
 	"unitDefinition" TEXT, 
@@ -5105,6 +5132,7 @@ CREATE TABLE "Viroid" (
 	"storageConditions" TEXT NOT NULL, 
 	"thirdPartyDistributionConsent" BOOLEAN, 
 	"usageRestrictions" TEXT, 
+	"preparationTechnique" TEXT, 
 	"accessPointUrl" TEXT NOT NULL, 
 	"refSku" TEXT NOT NULL, 
 	"unitDefinition" TEXT, 
@@ -5158,6 +5186,7 @@ CREATE TABLE "Prion" (
 	"storageConditions" TEXT NOT NULL, 
 	"thirdPartyDistributionConsent" BOOLEAN, 
 	"usageRestrictions" TEXT, 
+	"preparationTechnique" TEXT, 
 	"accessPointUrl" TEXT NOT NULL, 
 	"refSku" TEXT NOT NULL, 
 	"unitDefinition" TEXT, 
@@ -5206,8 +5235,10 @@ CREATE TABLE "FundingSource" (
 	"dateIssued" DATETIME, 
 	"dateModified" DATETIME, 
 	funder_id INTEGER, 
+	logo_id INTEGER, 
 	PRIMARY KEY (id), 
-	FOREIGN KEY(funder_id) REFERENCES "Organization" (id)
+	FOREIGN KEY(funder_id) REFERENCES "Organization" (id), 
+	FOREIGN KEY(logo_id) REFERENCES "Image" (id)
 );
 CREATE TABLE "PathogenIdentification_hostType" (
 	"PathogenIdentification_id" INTEGER, 

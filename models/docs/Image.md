@@ -114,6 +114,7 @@ URI: [EVORAO:Image](https://w3id.org/evorao/Image)
 | [Prion](Prion.md) | [productPicture](productPicture.md) | range | [Image](Image.md) |
 | [License](License.md) | [logo](logo.md) | range | [Image](Image.md) |
 | [Certification](Certification.md) | [logo](logo.md) | range | [Image](Image.md) |
+| [FundingSource](FundingSource.md) | [logo](logo.md) | range | [Image](Image.md) |
 
 
 

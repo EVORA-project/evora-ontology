@@ -2871,6 +2871,10 @@ type Product struct {
 	 */
 	UsageRestrictions string `json:"usageRestrictions"`
 	/*
+	 * The technique, method, or procedure employed to obtain or prepare the material prior to its use or storage
+	 */
+	PreparationTechnique string `json:"preparationTechnique"`
+	/*
 	 * The URL that permits to access to the product/service detailed description page on the provider's website and/or allows to place an order about it or at least describe the process to place an order/enquiry
 	 */
 	AccessPointUrl string `json:"accessPointUrl"`
@@ -3068,6 +3072,10 @@ type Antibody struct {
 	 * Specifies any limitations or conditions on the use of the biological material, including restrictions on research, commercial use, or distribution, considering any potential concerns about the related genetic material
 	 */
 	UsageRestrictions string `json:"usageRestrictions"`
+	/*
+	 * The technique, method, or procedure employed to obtain or prepare the material prior to its use or storage
+	 */
+	PreparationTechnique string `json:"preparationTechnique"`
 	/*
 	 * The URL that permits to access to the product/service detailed description page on the provider's website and/or allows to place an order about it or at least describe the process to place an order/enquiry
 	 */
@@ -3270,6 +3278,10 @@ type Hybridoma struct {
 	 * Specifies any limitations or conditions on the use of the biological material, including restrictions on research, commercial use, or distribution, considering any potential concerns about the related genetic material
 	 */
 	UsageRestrictions string `json:"usageRestrictions"`
+	/*
+	 * The technique, method, or procedure employed to obtain or prepare the material prior to its use or storage
+	 */
+	PreparationTechnique string `json:"preparationTechnique"`
 	/*
 	 * The URL that permits to access to the product/service detailed description page on the provider's website and/or allows to place an order about it or at least describe the process to place an order/enquiry
 	 */
@@ -3505,6 +3517,10 @@ type Protein struct {
 	 */
 	UsageRestrictions string `json:"usageRestrictions"`
 	/*
+	 * The technique, method, or procedure employed to obtain or prepare the material prior to its use or storage
+	 */
+	PreparationTechnique string `json:"preparationTechnique"`
+	/*
 	 * The URL that permits to access to the product/service detailed description page on the provider's website and/or allows to place an order about it or at least describe the process to place an order/enquiry
 	 */
 	AccessPointUrl string `json:"accessPointUrl"`
@@ -3739,6 +3755,10 @@ type NucleicAcid struct {
 	 */
 	UsageRestrictions string `json:"usageRestrictions"`
 	/*
+	 * The technique, method, or procedure employed to obtain or prepare the material prior to its use or storage
+	 */
+	PreparationTechnique string `json:"preparationTechnique"`
+	/*
 	 * The URL that permits to access to the product/service detailed description page on the provider's website and/or allows to place an order about it or at least describe the process to place an order/enquiry
 	 */
 	AccessPointUrl string `json:"accessPointUrl"`
@@ -3933,6 +3953,10 @@ type DetectionKit struct {
 	 */
 	UsageRestrictions string `json:"usageRestrictions"`
 	/*
+	 * The technique, method, or procedure employed to obtain or prepare the material prior to its use or storage
+	 */
+	PreparationTechnique string `json:"preparationTechnique"`
+	/*
 	 * The URL that permits to access to the product/service detailed description page on the provider's website and/or allows to place an order about it or at least describe the process to place an order/enquiry
 	 */
 	AccessPointUrl string `json:"accessPointUrl"`
@@ -4114,6 +4138,10 @@ type Bundle struct {
 	 * Specifies any limitations or conditions on the use of the biological material, including restrictions on research, commercial use, or distribution, considering any potential concerns about the related genetic material
 	 */
 	UsageRestrictions string `json:"usageRestrictions"`
+	/*
+	 * The technique, method, or procedure employed to obtain or prepare the material prior to its use or storage
+	 */
+	PreparationTechnique string `json:"preparationTechnique"`
 	/*
 	 * The URL that permits to access to the product/service detailed description page on the provider's website and/or allows to place an order about it or at least describe the process to place an order/enquiry
 	 */
@@ -4364,6 +4392,10 @@ type Pathogen struct {
 	 * Specifies any limitations or conditions on the use of the biological material, including restrictions on research, commercial use, or distribution, considering any potential concerns about the related genetic material
 	 */
 	UsageRestrictions string `json:"usageRestrictions"`
+	/*
+	 * The technique, method, or procedure employed to obtain or prepare the material prior to its use or storage
+	 */
+	PreparationTechnique string `json:"preparationTechnique"`
 	/*
 	 * The URL that permits to access to the product/service detailed description page on the provider's website and/or allows to place an order about it or at least describe the process to place an order/enquiry
 	 */
@@ -4627,6 +4659,10 @@ type Virus struct {
 	 */
 	UsageRestrictions string `json:"usageRestrictions"`
 	/*
+	 * The technique, method, or procedure employed to obtain or prepare the material prior to its use or storage
+	 */
+	PreparationTechnique string `json:"preparationTechnique"`
+	/*
 	 * The URL that permits to access to the product/service detailed description page on the provider's website and/or allows to place an order about it or at least describe the process to place an order/enquiry
 	 */
 	AccessPointUrl string `json:"accessPointUrl"`
@@ -4876,6 +4912,10 @@ type Bacterium struct {
 	 * Specifies any limitations or conditions on the use of the biological material, including restrictions on research, commercial use, or distribution, considering any potential concerns about the related genetic material
 	 */
 	UsageRestrictions string `json:"usageRestrictions"`
+	/*
+	 * The technique, method, or procedure employed to obtain or prepare the material prior to its use or storage
+	 */
+	PreparationTechnique string `json:"preparationTechnique"`
 	/*
 	 * The URL that permits to access to the product/service detailed description page on the provider's website and/or allows to place an order about it or at least describe the process to place an order/enquiry
 	 */
@@ -5127,6 +5167,10 @@ type Fungus struct {
 	 */
 	UsageRestrictions string `json:"usageRestrictions"`
 	/*
+	 * The technique, method, or procedure employed to obtain or prepare the material prior to its use or storage
+	 */
+	PreparationTechnique string `json:"preparationTechnique"`
+	/*
 	 * The URL that permits to access to the product/service detailed description page on the provider's website and/or allows to place an order about it or at least describe the process to place an order/enquiry
 	 */
 	AccessPointUrl string `json:"accessPointUrl"`
@@ -5376,6 +5420,10 @@ type Protozoan struct {
 	 * Specifies any limitations or conditions on the use of the biological material, including restrictions on research, commercial use, or distribution, considering any potential concerns about the related genetic material
 	 */
 	UsageRestrictions string `json:"usageRestrictions"`
+	/*
+	 * The technique, method, or procedure employed to obtain or prepare the material prior to its use or storage
+	 */
+	PreparationTechnique string `json:"preparationTechnique"`
 	/*
 	 * The URL that permits to access to the product/service detailed description page on the provider's website and/or allows to place an order about it or at least describe the process to place an order/enquiry
 	 */
@@ -5627,6 +5675,10 @@ type Viroid struct {
 	 */
 	UsageRestrictions string `json:"usageRestrictions"`
 	/*
+	 * The technique, method, or procedure employed to obtain or prepare the material prior to its use or storage
+	 */
+	PreparationTechnique string `json:"preparationTechnique"`
+	/*
 	 * The URL that permits to access to the product/service detailed description page on the provider's website and/or allows to place an order about it or at least describe the process to place an order/enquiry
 	 */
 	AccessPointUrl string `json:"accessPointUrl"`
@@ -5876,6 +5928,10 @@ type Prion struct {
 	 * Specifies any limitations or conditions on the use of the biological material, including restrictions on research, commercial use, or distribution, considering any potential concerns about the related genetic material
 	 */
 	UsageRestrictions string `json:"usageRestrictions"`
+	/*
+	 * The technique, method, or procedure employed to obtain or prepare the material prior to its use or storage
+	 */
+	PreparationTechnique string `json:"preparationTechnique"`
 	/*
 	 * The URL that permits to access to the product/service detailed description page on the provider's website and/or allows to place an order about it or at least describe the process to place an order/enquiry
 	 */
@@ -6622,6 +6678,10 @@ type FundingSource struct {
 	 * Conditions under which individuals or organisations may benefit from the financial mechanism, including access rules, eligibility requirements, or geographical/institutional restrictions. May be expressed as text or as a link to a formal eligibility statement
 	 */
 	EligibilityCriteria string `json:"eligibilityCriteria"`
+	/*
+	 * A path or URL to the related logo
+	 */
+	Logo Image `json:"logo"`
 	/*
 	 * A keyword or tag describing the resource
 	 */
