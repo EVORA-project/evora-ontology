@@ -101,6 +101,7 @@ SELECT ?g ?s ?p WHERE {
    EVORAO:pathogenIdentification,
    EVORAO:doi,
    EVORAO:riskGroup,
+   EVORAO:biosafetyLevel,
    EVORAO:biosafetyRestrictions,
    EVORAO:canBeUsedToProduceGmo,
    EVORAO:provider,

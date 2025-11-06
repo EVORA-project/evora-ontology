@@ -1,7 +1,7 @@
  syntax="proto3";
  package
 // metamodel_version: 1.7.0
-// version: 1.0.10142
+// version: 1.0.10170
 // List of other names for things
 message AlternateName
  {
@@ -38,6 +38,7 @@ message Antibody
  repeated  pathogenIdentification pathogenIdentification = 0
  repeated  doi doi = 0
   riskGroup riskGroup = 0
+  biosafetyLevel biosafetyLevel = 0
   string biosafetyRestrictions = 0
   boolean canBeUsedToProduceGmo = 0
   provider provider = 0
@@ -104,6 +105,7 @@ message Bacterium
  repeated  pathogenIdentification pathogenIdentification = 0
  repeated  doi doi = 0
   riskGroup riskGroup = 0
+  biosafetyLevel biosafetyLevel = 0
   string biosafetyRestrictions = 0
   boolean canBeUsedToProduceGmo = 0
   provider provider = 0
@@ -160,6 +162,19 @@ message BiologicalMaterialOrigin
   boolean biologicalSourceType = 0
  repeated  biologicalPartOrigin biologicalPartOrigin = 0
  }
+// The level of biocontainment required or applied in the facility where the biological agent is manipulated
+message BiosafetyLevel
+ {
+ repeated  string keyword = 0
+  datetime dateIssued = 0
+  datetime dateModified = 0
+ repeated  string identifier = 0
+ repeated  uri iri = 0
+  string title = 0
+  string description = 0
+  integer weight = 0
+  vocabulary inVocabulary = 0
+ }
 // A grouping of products and/or services intentionally combined into a single offering, typically to provide added value, convenience, or specific experimental utility
 message Bundle
  {
@@ -181,6 +196,7 @@ message Bundle
  repeated  pathogenIdentification pathogenIdentification = 0
  repeated  doi doi = 0
   riskGroup riskGroup = 0
+  biosafetyLevel biosafetyLevel = 0
   string biosafetyRestrictions = 0
   boolean canBeUsedToProduceGmo = 0
   provider provider = 0
@@ -355,6 +371,7 @@ message DetectionKit
  repeated  pathogenIdentification pathogenIdentification = 0
  repeated  doi doi = 0
   riskGroup riskGroup = 0
+  biosafetyLevel biosafetyLevel = 0
   string biosafetyRestrictions = 0
   boolean canBeUsedToProduceGmo = 0
   provider provider = 0
@@ -477,6 +494,7 @@ message Fungus
  repeated  pathogenIdentification pathogenIdentification = 0
  repeated  doi doi = 0
   riskGroup riskGroup = 0
+  biosafetyLevel biosafetyLevel = 0
   string biosafetyRestrictions = 0
   boolean canBeUsedToProduceGmo = 0
   provider provider = 0
@@ -555,6 +573,7 @@ message Hybridoma
  repeated  pathogenIdentification pathogenIdentification = 0
  repeated  doi doi = 0
   riskGroup riskGroup = 0
+  biosafetyLevel biosafetyLevel = 0
   string biosafetyRestrictions = 0
   boolean canBeUsedToProduceGmo = 0
   provider provider = 0
@@ -742,6 +761,7 @@ message NucleicAcid
  repeated  pathogenIdentification pathogenIdentification = 0
  repeated  doi doi = 0
   riskGroup riskGroup = 0
+  biosafetyLevel biosafetyLevel = 0
   string biosafetyRestrictions = 0
   boolean canBeUsedToProduceGmo = 0
   provider provider = 0
@@ -908,6 +928,7 @@ message Prion
  repeated  pathogenIdentification pathogenIdentification = 0
  repeated  doi doi = 0
   riskGroup riskGroup = 0
+  biosafetyLevel biosafetyLevel = 0
   string biosafetyRestrictions = 0
   boolean canBeUsedToProduceGmo = 0
   provider provider = 0
@@ -973,6 +994,7 @@ message Product
  repeated  pathogenIdentification pathogenIdentification = 0
  repeated  doi doi = 0
   riskGroup riskGroup = 0
+  biosafetyLevel biosafetyLevel = 0
   string biosafetyRestrictions = 0
   boolean canBeUsedToProduceGmo = 0
   provider provider = 0
@@ -1060,6 +1082,7 @@ message Protein
  repeated  pathogenIdentification pathogenIdentification = 0
  repeated  doi doi = 0
   riskGroup riskGroup = 0
+  biosafetyLevel biosafetyLevel = 0
   string biosafetyRestrictions = 0
   boolean canBeUsedToProduceGmo = 0
   provider provider = 0
@@ -1121,6 +1144,7 @@ message Protozoan
  repeated  pathogenIdentification pathogenIdentification = 0
  repeated  doi doi = 0
   riskGroup riskGroup = 0
+  biosafetyLevel biosafetyLevel = 0
   string biosafetyRestrictions = 0
   boolean canBeUsedToProduceGmo = 0
   provider provider = 0
@@ -1281,6 +1305,7 @@ message Service
  repeated  pathogenIdentification pathogenIdentification = 0
  repeated  doi doi = 0
   riskGroup riskGroup = 0
+  biosafetyLevel biosafetyLevel = 0
   string biosafetyRestrictions = 0
   boolean canBeUsedToProduceGmo = 0
   provider provider = 0
@@ -1467,6 +1492,7 @@ message Viroid
  repeated  pathogenIdentification pathogenIdentification = 0
  repeated  doi doi = 0
   riskGroup riskGroup = 0
+  biosafetyLevel biosafetyLevel = 0
   string biosafetyRestrictions = 0
   boolean canBeUsedToProduceGmo = 0
   provider provider = 0
@@ -1532,6 +1558,7 @@ message Virus
  repeated  pathogenIdentification pathogenIdentification = 0
  repeated  doi doi = 0
   riskGroup riskGroup = 0
+  biosafetyLevel biosafetyLevel = 0
   string biosafetyRestrictions = 0
   boolean canBeUsedToProduceGmo = 0
   provider provider = 0

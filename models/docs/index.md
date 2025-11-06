@@ -65,6 +65,7 @@ Name: EVORAO
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[SequenceReference](SequenceReference.md) | A reference that permits to retrieve the sequence information from a sequence provider |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Term](Term.md) | Word or phrase from a specialized area of knowledge |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[AlternateName](AlternateName.md) | List of other names for things |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[BiosafetyLevel](BiosafetyLevel.md) | The level of biocontainment required or applied in the facility where the biological agent is manipulated |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[ClinicalGroup](ClinicalGroup.md) | A syndromic grouping of pathogens, based on typical disease manifestation, clinical syndrome, or primary system affected. Examples include Respiratory viruses, Hemorrhagic viruses, and Gastroenteritis viruses. Clinical groups are not taxonomic categories but practical classifications used in medicine, epidemiology, and public health |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[CommonName](CommonName.md) | Vernacular name that is the name used in everyday language to refer to something like an organism or group of organisms. This name is typically easier to remember and pronounce compared to the scientific or technical name |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Variant](Variant.md) | An organism with one or more new mutations is referred to as a “variant” of the original organism if not sufficiently different to be termed a distinct strain |
@@ -116,6 +117,7 @@ Name: EVORAO
 | [biologicalMaterialOrigin](biologicalMaterialOrigin.md) | Information about the origin of the biological material, essential for access... |
 | [biologicalPartOrigin](biologicalPartOrigin.md) | Details the origin of one or more unitary parts that make up the biological m... |
 | [biologicalSourceType](biologicalSourceType.md) | Defines if the current biological material is natural and was collected or if... |
+| [biosafetyLevel](biosafetyLevel.md) | The level of biocontainment required or applied in the facility where the bio... |
 | [biosafetyRestrictions](biosafetyRestrictions.md) | Information about guidelines and regulations designed to prevent the exposure... |
 | [canBeUsedToProduceGmo](canBeUsedToProduceGmo.md) | Indicates if the current service or product can be used to produce GMO |
 | [category](category.md) | The main category of the service or product |

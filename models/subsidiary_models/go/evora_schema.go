@@ -763,6 +763,52 @@ type RiskGroup struct {
 }
 
 /*
+ * The level of biocontainment required or applied in the facility where the biological agent is manipulated
+ */
+type BiosafetyLevel struct {
+	/*
+	 * parent types
+	 */
+	Term
+	/*
+	 * A name given to the resource
+	 */
+	Title string `json:"title"`
+	/*
+	 * A short explanation of the characteristics, features, or nature of the current item
+	 */
+	Description string `json:"description"`
+	/*
+	 * A numerical value indicating relative importance or priority, generally processed in ascending order. This weight helps prioritize content when organizing or processing data. Its value can be negative, with a default set to 0
+	 */
+	Weight int `json:"weight"`
+	/*
+	 * Terms belong to a specific vocabulary
+	 */
+	InVocabulary Vocabulary `json:"inVocabulary"`
+	/*
+	 * A keyword or tag describing the resource
+	 */
+	Keyword string `json:"keyword"`
+	/*
+	 * Date of formal issuance (e.g., publication) of the resource
+	 */
+	DateIssued string `json:"dateIssued"`
+	/*
+	 * Most recent date on which the resource was changed, updated or modified
+	 */
+	DateModified string `json:"dateModified"`
+	/*
+	 * A unique identifier of the resource being described or cataloged
+	 */
+	Identifier string `json:"identifier"`
+	/*
+	 * International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs
+	 */
+	Iri string `json:"iri"`
+}
+
+/*
  * A unique string identifier assigned to a digital object, providing a permanent link for reliable citation and access.  The Digital Object Identifier (DOI) is a persistent identifier that is an ISO standard
  */
 type Doi struct {
@@ -2583,6 +2629,10 @@ type ProductOrService struct {
 	 */
 	RiskGroup RiskGroup `json:"riskGroup"`
 	/*
+	 * The level of biocontainment required or applied in the facility where the biological agent is manipulated.
+	 */
+	BiosafetyLevel BiosafetyLevel `json:"biosafetyLevel"`
+	/*
 	 * Information about guidelines and regulations designed to prevent the exposure to or release of potentially harmful biological agents. It thereby contributes to protecting people and the environment from biohazards while accessing this product or service
 	 */
 	BiosafetyRestrictions string `json:"biosafetyRestrictions"`
@@ -2740,6 +2790,10 @@ type Service struct {
 	 * The highest risk group related to this resource. The risk group of a biological agent guiding its initial handling in labs according to the risk group classification defined by the WHO laboratory biosafety manual
 	 */
 	RiskGroup RiskGroup `json:"riskGroup"`
+	/*
+	 * The level of biocontainment required or applied in the facility where the biological agent is manipulated.
+	 */
+	BiosafetyLevel BiosafetyLevel `json:"biosafetyLevel"`
 	/*
 	 * Information about guidelines and regulations designed to prevent the exposure to or release of potentially harmful biological agents. It thereby contributes to protecting people and the environment from biohazards while accessing this product or service
 	 */
@@ -2922,6 +2976,10 @@ type Product struct {
 	 * The highest risk group related to this resource. The risk group of a biological agent guiding its initial handling in labs according to the risk group classification defined by the WHO laboratory biosafety manual
 	 */
 	RiskGroup RiskGroup `json:"riskGroup"`
+	/*
+	 * The level of biocontainment required or applied in the facility where the biological agent is manipulated.
+	 */
+	BiosafetyLevel BiosafetyLevel `json:"biosafetyLevel"`
 	/*
 	 * Information about guidelines and regulations designed to prevent the exposure to or release of potentially harmful biological agents. It thereby contributes to protecting people and the environment from biohazards while accessing this product or service
 	 */
@@ -3124,6 +3182,10 @@ type Antibody struct {
 	 * The highest risk group related to this resource. The risk group of a biological agent guiding its initial handling in labs according to the risk group classification defined by the WHO laboratory biosafety manual
 	 */
 	RiskGroup RiskGroup `json:"riskGroup"`
+	/*
+	 * The level of biocontainment required or applied in the facility where the biological agent is manipulated.
+	 */
+	BiosafetyLevel BiosafetyLevel `json:"biosafetyLevel"`
 	/*
 	 * Information about guidelines and regulations designed to prevent the exposure to or release of potentially harmful biological agents. It thereby contributes to protecting people and the environment from biohazards while accessing this product or service
 	 */
@@ -3330,6 +3392,10 @@ type Hybridoma struct {
 	 * The highest risk group related to this resource. The risk group of a biological agent guiding its initial handling in labs according to the risk group classification defined by the WHO laboratory biosafety manual
 	 */
 	RiskGroup RiskGroup `json:"riskGroup"`
+	/*
+	 * The level of biocontainment required or applied in the facility where the biological agent is manipulated.
+	 */
+	BiosafetyLevel BiosafetyLevel `json:"biosafetyLevel"`
 	/*
 	 * Information about guidelines and regulations designed to prevent the exposure to or release of potentially harmful biological agents. It thereby contributes to protecting people and the environment from biohazards while accessing this product or service
 	 */
@@ -3569,6 +3635,10 @@ type Protein struct {
 	 */
 	RiskGroup RiskGroup `json:"riskGroup"`
 	/*
+	 * The level of biocontainment required or applied in the facility where the biological agent is manipulated.
+	 */
+	BiosafetyLevel BiosafetyLevel `json:"biosafetyLevel"`
+	/*
 	 * Information about guidelines and regulations designed to prevent the exposure to or release of potentially harmful biological agents. It thereby contributes to protecting people and the environment from biohazards while accessing this product or service
 	 */
 	BiosafetyRestrictions string `json:"biosafetyRestrictions"`
@@ -3807,6 +3877,10 @@ type NucleicAcid struct {
 	 */
 	RiskGroup RiskGroup `json:"riskGroup"`
 	/*
+	 * The level of biocontainment required or applied in the facility where the biological agent is manipulated.
+	 */
+	BiosafetyLevel BiosafetyLevel `json:"biosafetyLevel"`
+	/*
 	 * Information about guidelines and regulations designed to prevent the exposure to or release of potentially harmful biological agents. It thereby contributes to protecting people and the environment from biohazards while accessing this product or service
 	 */
 	BiosafetyRestrictions string `json:"biosafetyRestrictions"`
@@ -4005,6 +4079,10 @@ type DetectionKit struct {
 	 */
 	RiskGroup RiskGroup `json:"riskGroup"`
 	/*
+	 * The level of biocontainment required or applied in the facility where the biological agent is manipulated.
+	 */
+	BiosafetyLevel BiosafetyLevel `json:"biosafetyLevel"`
+	/*
 	 * Information about guidelines and regulations designed to prevent the exposure to or release of potentially harmful biological agents. It thereby contributes to protecting people and the environment from biohazards while accessing this product or service
 	 */
 	BiosafetyRestrictions string `json:"biosafetyRestrictions"`
@@ -4190,6 +4268,10 @@ type Bundle struct {
 	 * The highest risk group related to this resource. The risk group of a biological agent guiding its initial handling in labs according to the risk group classification defined by the WHO laboratory biosafety manual
 	 */
 	RiskGroup RiskGroup `json:"riskGroup"`
+	/*
+	 * The level of biocontainment required or applied in the facility where the biological agent is manipulated.
+	 */
+	BiosafetyLevel BiosafetyLevel `json:"biosafetyLevel"`
 	/*
 	 * Information about guidelines and regulations designed to prevent the exposure to or release of potentially harmful biological agents. It thereby contributes to protecting people and the environment from biohazards while accessing this product or service
 	 */
@@ -4444,6 +4526,10 @@ type Pathogen struct {
 	 * The highest risk group related to this resource. The risk group of a biological agent guiding its initial handling in labs according to the risk group classification defined by the WHO laboratory biosafety manual
 	 */
 	RiskGroup RiskGroup `json:"riskGroup"`
+	/*
+	 * The level of biocontainment required or applied in the facility where the biological agent is manipulated.
+	 */
+	BiosafetyLevel BiosafetyLevel `json:"biosafetyLevel"`
 	/*
 	 * Information about guidelines and regulations designed to prevent the exposure to or release of potentially harmful biological agents. It thereby contributes to protecting people and the environment from biohazards while accessing this product or service
 	 */
@@ -4711,6 +4797,10 @@ type Virus struct {
 	 */
 	RiskGroup RiskGroup `json:"riskGroup"`
 	/*
+	 * The level of biocontainment required or applied in the facility where the biological agent is manipulated.
+	 */
+	BiosafetyLevel BiosafetyLevel `json:"biosafetyLevel"`
+	/*
 	 * Information about guidelines and regulations designed to prevent the exposure to or release of potentially harmful biological agents. It thereby contributes to protecting people and the environment from biohazards while accessing this product or service
 	 */
 	BiosafetyRestrictions string `json:"biosafetyRestrictions"`
@@ -4964,6 +5054,10 @@ type Bacterium struct {
 	 * The highest risk group related to this resource. The risk group of a biological agent guiding its initial handling in labs according to the risk group classification defined by the WHO laboratory biosafety manual
 	 */
 	RiskGroup RiskGroup `json:"riskGroup"`
+	/*
+	 * The level of biocontainment required or applied in the facility where the biological agent is manipulated.
+	 */
+	BiosafetyLevel BiosafetyLevel `json:"biosafetyLevel"`
 	/*
 	 * Information about guidelines and regulations designed to prevent the exposure to or release of potentially harmful biological agents. It thereby contributes to protecting people and the environment from biohazards while accessing this product or service
 	 */
@@ -5219,6 +5313,10 @@ type Fungus struct {
 	 */
 	RiskGroup RiskGroup `json:"riskGroup"`
 	/*
+	 * The level of biocontainment required or applied in the facility where the biological agent is manipulated.
+	 */
+	BiosafetyLevel BiosafetyLevel `json:"biosafetyLevel"`
+	/*
 	 * Information about guidelines and regulations designed to prevent the exposure to or release of potentially harmful biological agents. It thereby contributes to protecting people and the environment from biohazards while accessing this product or service
 	 */
 	BiosafetyRestrictions string `json:"biosafetyRestrictions"`
@@ -5472,6 +5570,10 @@ type Protozoan struct {
 	 * The highest risk group related to this resource. The risk group of a biological agent guiding its initial handling in labs according to the risk group classification defined by the WHO laboratory biosafety manual
 	 */
 	RiskGroup RiskGroup `json:"riskGroup"`
+	/*
+	 * The level of biocontainment required or applied in the facility where the biological agent is manipulated.
+	 */
+	BiosafetyLevel BiosafetyLevel `json:"biosafetyLevel"`
 	/*
 	 * Information about guidelines and regulations designed to prevent the exposure to or release of potentially harmful biological agents. It thereby contributes to protecting people and the environment from biohazards while accessing this product or service
 	 */
@@ -5727,6 +5829,10 @@ type Viroid struct {
 	 */
 	RiskGroup RiskGroup `json:"riskGroup"`
 	/*
+	 * The level of biocontainment required or applied in the facility where the biological agent is manipulated.
+	 */
+	BiosafetyLevel BiosafetyLevel `json:"biosafetyLevel"`
+	/*
 	 * Information about guidelines and regulations designed to prevent the exposure to or release of potentially harmful biological agents. It thereby contributes to protecting people and the environment from biohazards while accessing this product or service
 	 */
 	BiosafetyRestrictions string `json:"biosafetyRestrictions"`
@@ -5980,6 +6086,10 @@ type Prion struct {
 	 * The highest risk group related to this resource. The risk group of a biological agent guiding its initial handling in labs according to the risk group classification defined by the WHO laboratory biosafety manual
 	 */
 	RiskGroup RiskGroup `json:"riskGroup"`
+	/*
+	 * The level of biocontainment required or applied in the facility where the biological agent is manipulated.
+	 */
+	BiosafetyLevel BiosafetyLevel `json:"biosafetyLevel"`
 	/*
 	 * Information about guidelines and regulations designed to prevent the exposure to or release of potentially harmful biological agents. It thereby contributes to protecting people and the environment from biohazards while accessing this product or service
 	 */

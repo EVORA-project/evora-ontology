@@ -123,6 +123,14 @@
 --     * Slot: dateIssued Description: Date of formal issuance (e.g., publication) of the resource
 --     * Slot: dateModified Description: Most recent date on which the resource was changed, updated or modified
 --     * Slot: inVocabulary_id Description: Terms belong to a specific vocabulary
+-- # Class: "BiosafetyLevel" Description: "The level of biocontainment required or applied in the facility where the biological agent is manipulated"
+--     * Slot: id Description: 
+--     * Slot: title Description: A name given to the resource
+--     * Slot: description Description: A short explanation of the characteristics, features, or nature of the current item
+--     * Slot: weight Description: A numerical value indicating relative importance or priority, generally processed in ascending order. This weight helps prioritize content when organizing or processing data. Its value can be negative, with a default set to 0
+--     * Slot: dateIssued Description: Date of formal issuance (e.g., publication) of the resource
+--     * Slot: dateModified Description: Most recent date on which the resource was changed, updated or modified
+--     * Slot: inVocabulary_id Description: Terms belong to a specific vocabulary
 -- # Class: "Doi" Description: "A unique string identifier assigned to a digital object, providing a permanent link for reliable citation and access.  The Digital Object Identifier (DOI) is a persistent identifier that is an ISO standard"
 --     * Slot: id Description: 
 --     * Slot: title Description: A name given to the resource
@@ -443,6 +451,7 @@
 --     * Slot: dateModified Description: Most recent date on which the resource was changed, updated or modified
 --     * Slot: category_id Description: The main category of the service or product
 --     * Slot: riskGroup_id Description: The highest risk group related to this resource. The risk group of a biological agent guiding its initial handling in labs according to the risk group classification defined by the WHO laboratory biosafety manual
+--     * Slot: biosafetyLevel_id Description: The level of biocontainment required or applied in the facility where the biological agent is manipulated.
 --     * Slot: provider_id Description: A provider of this product or service, as a specific organization
 --     * Slot: contactPoint_id Description: An information that allows someone to establish communication
 -- # Class: "Service" Description: "An intangible offering characterized by an activity, performance, or facilitation carried out by a provider to fulfill a user’s need"
@@ -469,6 +478,7 @@
 --     * Slot: dateModified Description: Most recent date on which the resource was changed, updated or modified
 --     * Slot: category_id Description: The main category of the service or product
 --     * Slot: riskGroup_id Description: The highest risk group related to this resource. The risk group of a biological agent guiding its initial handling in labs according to the risk group classification defined by the WHO laboratory biosafety manual
+--     * Slot: biosafetyLevel_id Description: The level of biocontainment required or applied in the facility where the biological agent is manipulated.
 --     * Slot: provider_id Description: A provider of this product or service, as a specific organization
 --     * Slot: contactPoint_id Description: An information that allows someone to establish communication
 -- # Class: "Product" Description: "A tangible, physical item made available by a provider for use, consumption, or ownership transfer"
@@ -501,6 +511,7 @@
 --     * Slot: originator_id Description: The individual or organization responsible for the original discovery, isolation, or creation of an item, providing information about the source or origin of the sample
 --     * Slot: category_id Description: The main category of the service or product
 --     * Slot: riskGroup_id Description: The highest risk group related to this resource. The risk group of a biological agent guiding its initial handling in labs according to the risk group classification defined by the WHO laboratory biosafety manual
+--     * Slot: biosafetyLevel_id Description: The level of biocontainment required or applied in the facility where the biological agent is manipulated.
 --     * Slot: provider_id Description: A provider of this product or service, as a specific organization
 --     * Slot: contactPoint_id Description: An information that allows someone to establish communication
 -- # Class: "Antibody" Description: "Protein that can bind to certain types of foreign bodies, such as pathogens"
@@ -537,6 +548,7 @@
 --     * Slot: originator_id Description: The individual or organization responsible for the original discovery, isolation, or creation of an item, providing information about the source or origin of the sample
 --     * Slot: category_id Description: The main category of the service or product
 --     * Slot: riskGroup_id Description: The highest risk group related to this resource. The risk group of a biological agent guiding its initial handling in labs according to the risk group classification defined by the WHO laboratory biosafety manual
+--     * Slot: biosafetyLevel_id Description: The level of biocontainment required or applied in the facility where the biological agent is manipulated.
 --     * Slot: provider_id Description: A provider of this product or service, as a specific organization
 --     * Slot: contactPoint_id Description: An information that allows someone to establish communication
 -- # Class: "Hybridoma" Description: "An hybridoma that provides antibodies that can be related to a pathogen"
@@ -574,6 +586,7 @@
 --     * Slot: originator_id Description: The individual or organization responsible for the original discovery, isolation, or creation of an item, providing information about the source or origin of the sample
 --     * Slot: category_id Description: The main category of the service or product
 --     * Slot: riskGroup_id Description: The highest risk group related to this resource. The risk group of a biological agent guiding its initial handling in labs according to the risk group classification defined by the WHO laboratory biosafety manual
+--     * Slot: biosafetyLevel_id Description: The level of biocontainment required or applied in the facility where the biological agent is manipulated.
 --     * Slot: provider_id Description: A provider of this product or service, as a specific organization
 --     * Slot: contactPoint_id Description: An information that allows someone to establish communication
 -- # Class: "Protein" Description: "A protein as a derived product from a pathogen"
@@ -607,6 +620,7 @@
 --     * Slot: originator_id Description: The individual or organization responsible for the original discovery, isolation, or creation of an item, providing information about the source or origin of the sample
 --     * Slot: category_id Description: The main category of the service or product
 --     * Slot: riskGroup_id Description: The highest risk group related to this resource. The risk group of a biological agent guiding its initial handling in labs according to the risk group classification defined by the WHO laboratory biosafety manual
+--     * Slot: biosafetyLevel_id Description: The level of biocontainment required or applied in the facility where the biological agent is manipulated.
 --     * Slot: provider_id Description: A provider of this product or service, as a specific organization
 --     * Slot: contactPoint_id Description: An information that allows someone to establish communication
 -- # Class: "NucleicAcid" Description: "Nucleic acid related to a pathogen. It can be extracted or synthetic"
@@ -650,6 +664,7 @@
 --     * Slot: originator_id Description: The individual or organization responsible for the original discovery, isolation, or creation of an item, providing information about the source or origin of the sample
 --     * Slot: category_id Description: The main category of the service or product
 --     * Slot: riskGroup_id Description: The highest risk group related to this resource. The risk group of a biological agent guiding its initial handling in labs according to the risk group classification defined by the WHO laboratory biosafety manual
+--     * Slot: biosafetyLevel_id Description: The level of biocontainment required or applied in the facility where the biological agent is manipulated.
 --     * Slot: provider_id Description: A provider of this product or service, as a specific organization
 --     * Slot: contactPoint_id Description: An information that allows someone to establish communication
 -- # Class: "DetectionKit" Description: "A detection kit for specific pathogens"
@@ -685,6 +700,7 @@
 --     * Slot: originator_id Description: The individual or organization responsible for the original discovery, isolation, or creation of an item, providing information about the source or origin of the sample
 --     * Slot: category_id Description: The main category of the service or product
 --     * Slot: riskGroup_id Description: The highest risk group related to this resource. The risk group of a biological agent guiding its initial handling in labs according to the risk group classification defined by the WHO laboratory biosafety manual
+--     * Slot: biosafetyLevel_id Description: The level of biocontainment required or applied in the facility where the biological agent is manipulated.
 --     * Slot: provider_id Description: A provider of this product or service, as a specific organization
 --     * Slot: contactPoint_id Description: An information that allows someone to establish communication
 -- # Class: "Bundle" Description: "A grouping of products and/or services intentionally combined into a single offering, typically to provide added value, convenience, or specific experimental utility"
@@ -717,6 +733,7 @@
 --     * Slot: originator_id Description: The individual or organization responsible for the original discovery, isolation, or creation of an item, providing information about the source or origin of the sample
 --     * Slot: category_id Description: The main category of the service or product
 --     * Slot: riskGroup_id Description: The highest risk group related to this resource. The risk group of a biological agent guiding its initial handling in labs according to the risk group classification defined by the WHO laboratory biosafety manual
+--     * Slot: biosafetyLevel_id Description: The level of biocontainment required or applied in the facility where the biological agent is manipulated.
 --     * Slot: provider_id Description: A provider of this product or service, as a specific organization
 --     * Slot: contactPoint_id Description: An information that allows someone to establish communication
 -- # Class: "Pathogen" Description: "Biological entity that causes disease in its host, which is typically an infectious microorganism or agent, such as a virus, bacterium, protozoan, prion, viroid, or fungus"
@@ -761,6 +778,7 @@
 --     * Slot: originator_id Description: The individual or organization responsible for the original discovery, isolation, or creation of an item, providing information about the source or origin of the sample
 --     * Slot: category_id Description: The main category of the service or product
 --     * Slot: riskGroup_id Description: The highest risk group related to this resource. The risk group of a biological agent guiding its initial handling in labs according to the risk group classification defined by the WHO laboratory biosafety manual
+--     * Slot: biosafetyLevel_id Description: The level of biocontainment required or applied in the facility where the biological agent is manipulated.
 --     * Slot: provider_id Description: A provider of this product or service, as a specific organization
 --     * Slot: contactPoint_id Description: An information that allows someone to establish communication
 -- # Class: "Virus" Description: "The virus as a biological material"
@@ -807,6 +825,7 @@
 --     * Slot: originator_id Description: The individual or organization responsible for the original discovery, isolation, or creation of an item, providing information about the source or origin of the sample
 --     * Slot: category_id Description: The main category of the service or product
 --     * Slot: riskGroup_id Description: The highest risk group related to this resource. The risk group of a biological agent guiding its initial handling in labs according to the risk group classification defined by the WHO laboratory biosafety manual
+--     * Slot: biosafetyLevel_id Description: The level of biocontainment required or applied in the facility where the biological agent is manipulated.
 --     * Slot: provider_id Description: A provider of this product or service, as a specific organization
 --     * Slot: contactPoint_id Description: An information that allows someone to establish communication
 -- # Class: "Bacterium" Description: "The bacterium as a biological material"
@@ -851,6 +870,7 @@
 --     * Slot: originator_id Description: The individual or organization responsible for the original discovery, isolation, or creation of an item, providing information about the source or origin of the sample
 --     * Slot: category_id Description: The main category of the service or product
 --     * Slot: riskGroup_id Description: The highest risk group related to this resource. The risk group of a biological agent guiding its initial handling in labs according to the risk group classification defined by the WHO laboratory biosafety manual
+--     * Slot: biosafetyLevel_id Description: The level of biocontainment required or applied in the facility where the biological agent is manipulated.
 --     * Slot: provider_id Description: A provider of this product or service, as a specific organization
 --     * Slot: contactPoint_id Description: An information that allows someone to establish communication
 -- # Class: "Fungus" Description: "The fungus as a biological material"
@@ -895,6 +915,7 @@
 --     * Slot: originator_id Description: The individual or organization responsible for the original discovery, isolation, or creation of an item, providing information about the source or origin of the sample
 --     * Slot: category_id Description: The main category of the service or product
 --     * Slot: riskGroup_id Description: The highest risk group related to this resource. The risk group of a biological agent guiding its initial handling in labs according to the risk group classification defined by the WHO laboratory biosafety manual
+--     * Slot: biosafetyLevel_id Description: The level of biocontainment required or applied in the facility where the biological agent is manipulated.
 --     * Slot: provider_id Description: A provider of this product or service, as a specific organization
 --     * Slot: contactPoint_id Description: An information that allows someone to establish communication
 -- # Class: "Protozoan" Description: "The protozoan as a biological material"
@@ -939,6 +960,7 @@
 --     * Slot: originator_id Description: The individual or organization responsible for the original discovery, isolation, or creation of an item, providing information about the source or origin of the sample
 --     * Slot: category_id Description: The main category of the service or product
 --     * Slot: riskGroup_id Description: The highest risk group related to this resource. The risk group of a biological agent guiding its initial handling in labs according to the risk group classification defined by the WHO laboratory biosafety manual
+--     * Slot: biosafetyLevel_id Description: The level of biocontainment required or applied in the facility where the biological agent is manipulated.
 --     * Slot: provider_id Description: A provider of this product or service, as a specific organization
 --     * Slot: contactPoint_id Description: An information that allows someone to establish communication
 -- # Class: "Viroid" Description: "The viroid as a biological material"
@@ -983,6 +1005,7 @@
 --     * Slot: originator_id Description: The individual or organization responsible for the original discovery, isolation, or creation of an item, providing information about the source or origin of the sample
 --     * Slot: category_id Description: The main category of the service or product
 --     * Slot: riskGroup_id Description: The highest risk group related to this resource. The risk group of a biological agent guiding its initial handling in labs according to the risk group classification defined by the WHO laboratory biosafety manual
+--     * Slot: biosafetyLevel_id Description: The level of biocontainment required or applied in the facility where the biological agent is manipulated.
 --     * Slot: provider_id Description: A provider of this product or service, as a specific organization
 --     * Slot: contactPoint_id Description: An information that allows someone to establish communication
 -- # Class: "Prion" Description: "The prion as a biological material"
@@ -1027,6 +1050,7 @@
 --     * Slot: originator_id Description: The individual or organization responsible for the original discovery, isolation, or creation of an item, providing information about the source or origin of the sample
 --     * Slot: category_id Description: The main category of the service or product
 --     * Slot: riskGroup_id Description: The highest risk group related to this resource. The risk group of a biological agent guiding its initial handling in labs according to the risk group classification defined by the WHO laboratory biosafety manual
+--     * Slot: biosafetyLevel_id Description: The level of biocontainment required or applied in the facility where the biological agent is manipulated.
 --     * Slot: provider_id Description: A provider of this product or service, as a specific organization
 --     * Slot: contactPoint_id Description: An information that allows someone to establish communication
 -- # Class: "MaterialSafetyDataSheet" Description: "A Material Safety Data Sheet (MSDS) or Safety Data Sheet (SDS) is a standardized document that contains crucial occupational safety and health information related to the product"
@@ -1323,6 +1347,15 @@
 --     * Slot: identifier Description: A unique identifier of the resource being described or cataloged
 -- # Class: "RiskGroup_iri" Description: ""
 --     * Slot: RiskGroup_id Description: Autocreated FK slot
+--     * Slot: iri Description: International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs
+-- # Class: "BiosafetyLevel_keyword" Description: ""
+--     * Slot: BiosafetyLevel_id Description: Autocreated FK slot
+--     * Slot: keyword Description: A keyword or tag describing the resource
+-- # Class: "BiosafetyLevel_identifier" Description: ""
+--     * Slot: BiosafetyLevel_id Description: Autocreated FK slot
+--     * Slot: identifier Description: A unique identifier of the resource being described or cataloged
+-- # Class: "BiosafetyLevel_iri" Description: ""
+--     * Slot: BiosafetyLevel_id Description: Autocreated FK slot
 --     * Slot: iri Description: International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs
 -- # Class: "Doi_keyword" Description: ""
 --     * Slot: Doi_id Description: Autocreated FK slot
@@ -3354,6 +3387,17 @@ CREATE TABLE "RiskGroup" (
 	PRIMARY KEY (id), 
 	FOREIGN KEY("inVocabulary_id") REFERENCES "Vocabulary" (id)
 );
+CREATE TABLE "BiosafetyLevel" (
+	id INTEGER NOT NULL, 
+	title TEXT NOT NULL, 
+	description TEXT, 
+	weight INTEGER NOT NULL, 
+	"dateIssued" DATETIME, 
+	"dateModified" DATETIME, 
+	"inVocabulary_id" INTEGER NOT NULL, 
+	PRIMARY KEY (id), 
+	FOREIGN KEY("inVocabulary_id") REFERENCES "Vocabulary" (id)
+);
 CREATE TABLE "Doi" (
 	id INTEGER NOT NULL, 
 	title TEXT NOT NULL, 
@@ -3836,6 +3880,24 @@ CREATE TABLE "RiskGroup_iri" (
 	iri TEXT, 
 	PRIMARY KEY ("RiskGroup_id", iri), 
 	FOREIGN KEY("RiskGroup_id") REFERENCES "RiskGroup" (id)
+);
+CREATE TABLE "BiosafetyLevel_keyword" (
+	"BiosafetyLevel_id" INTEGER, 
+	keyword TEXT, 
+	PRIMARY KEY ("BiosafetyLevel_id", keyword), 
+	FOREIGN KEY("BiosafetyLevel_id") REFERENCES "BiosafetyLevel" (id)
+);
+CREATE TABLE "BiosafetyLevel_identifier" (
+	"BiosafetyLevel_id" INTEGER, 
+	identifier TEXT, 
+	PRIMARY KEY ("BiosafetyLevel_id", identifier), 
+	FOREIGN KEY("BiosafetyLevel_id") REFERENCES "BiosafetyLevel" (id)
+);
+CREATE TABLE "BiosafetyLevel_iri" (
+	"BiosafetyLevel_id" INTEGER, 
+	iri TEXT, 
+	PRIMARY KEY ("BiosafetyLevel_id", iri), 
+	FOREIGN KEY("BiosafetyLevel_id") REFERENCES "BiosafetyLevel" (id)
 );
 CREATE TABLE "Doi_keyword" (
 	"Doi_id" INTEGER, 
@@ -4488,11 +4550,13 @@ CREATE TABLE "ProductOrService" (
 	"dateModified" DATETIME, 
 	category_id INTEGER NOT NULL, 
 	"riskGroup_id" INTEGER, 
+	"biosafetyLevel_id" INTEGER, 
 	provider_id INTEGER NOT NULL, 
 	"contactPoint_id" INTEGER, 
 	PRIMARY KEY (id), 
 	FOREIGN KEY(category_id) REFERENCES "ProductCategory" (id), 
 	FOREIGN KEY("riskGroup_id") REFERENCES "RiskGroup" (id), 
+	FOREIGN KEY("biosafetyLevel_id") REFERENCES "BiosafetyLevel" (id), 
 	FOREIGN KEY(provider_id) REFERENCES "Provider" (id), 
 	FOREIGN KEY("contactPoint_id") REFERENCES "ContactPoint" (id)
 );
@@ -4520,11 +4584,13 @@ CREATE TABLE "Service" (
 	"dateModified" DATETIME, 
 	category_id INTEGER NOT NULL, 
 	"riskGroup_id" INTEGER, 
+	"biosafetyLevel_id" INTEGER, 
 	provider_id INTEGER NOT NULL, 
 	"contactPoint_id" INTEGER, 
 	PRIMARY KEY (id), 
 	FOREIGN KEY(category_id) REFERENCES "ProductCategory" (id), 
 	FOREIGN KEY("riskGroup_id") REFERENCES "RiskGroup" (id), 
+	FOREIGN KEY("biosafetyLevel_id") REFERENCES "BiosafetyLevel" (id), 
 	FOREIGN KEY(provider_id) REFERENCES "Provider" (id), 
 	FOREIGN KEY("contactPoint_id") REFERENCES "ContactPoint" (id)
 );
@@ -4558,6 +4624,7 @@ CREATE TABLE "Product" (
 	originator_id INTEGER, 
 	category_id INTEGER NOT NULL, 
 	"riskGroup_id" INTEGER, 
+	"biosafetyLevel_id" INTEGER, 
 	provider_id INTEGER NOT NULL, 
 	"contactPoint_id" INTEGER, 
 	PRIMARY KEY (id), 
@@ -4566,6 +4633,7 @@ CREATE TABLE "Product" (
 	FOREIGN KEY(originator_id) REFERENCES "Originator" (id), 
 	FOREIGN KEY(category_id) REFERENCES "ProductCategory" (id), 
 	FOREIGN KEY("riskGroup_id") REFERENCES "RiskGroup" (id), 
+	FOREIGN KEY("biosafetyLevel_id") REFERENCES "BiosafetyLevel" (id), 
 	FOREIGN KEY(provider_id) REFERENCES "Provider" (id), 
 	FOREIGN KEY("contactPoint_id") REFERENCES "ContactPoint" (id)
 );
@@ -4603,6 +4671,7 @@ CREATE TABLE "Antibody" (
 	originator_id INTEGER, 
 	category_id INTEGER NOT NULL, 
 	"riskGroup_id" INTEGER, 
+	"biosafetyLevel_id" INTEGER, 
 	provider_id INTEGER NOT NULL, 
 	"contactPoint_id" INTEGER, 
 	PRIMARY KEY (id), 
@@ -4611,6 +4680,7 @@ CREATE TABLE "Antibody" (
 	FOREIGN KEY(originator_id) REFERENCES "Originator" (id), 
 	FOREIGN KEY(category_id) REFERENCES "ProductCategory" (id), 
 	FOREIGN KEY("riskGroup_id") REFERENCES "RiskGroup" (id), 
+	FOREIGN KEY("biosafetyLevel_id") REFERENCES "BiosafetyLevel" (id), 
 	FOREIGN KEY(provider_id) REFERENCES "Provider" (id), 
 	FOREIGN KEY("contactPoint_id") REFERENCES "ContactPoint" (id)
 );
@@ -4649,6 +4719,7 @@ CREATE TABLE "Hybridoma" (
 	originator_id INTEGER, 
 	category_id INTEGER NOT NULL, 
 	"riskGroup_id" INTEGER, 
+	"biosafetyLevel_id" INTEGER, 
 	provider_id INTEGER NOT NULL, 
 	"contactPoint_id" INTEGER, 
 	PRIMARY KEY (id), 
@@ -4657,6 +4728,7 @@ CREATE TABLE "Hybridoma" (
 	FOREIGN KEY(originator_id) REFERENCES "Originator" (id), 
 	FOREIGN KEY(category_id) REFERENCES "ProductCategory" (id), 
 	FOREIGN KEY("riskGroup_id") REFERENCES "RiskGroup" (id), 
+	FOREIGN KEY("biosafetyLevel_id") REFERENCES "BiosafetyLevel" (id), 
 	FOREIGN KEY(provider_id) REFERENCES "Provider" (id), 
 	FOREIGN KEY("contactPoint_id") REFERENCES "ContactPoint" (id)
 );
@@ -4691,6 +4763,7 @@ CREATE TABLE "Protein" (
 	originator_id INTEGER, 
 	category_id INTEGER NOT NULL, 
 	"riskGroup_id" INTEGER, 
+	"biosafetyLevel_id" INTEGER, 
 	provider_id INTEGER NOT NULL, 
 	"contactPoint_id" INTEGER, 
 	PRIMARY KEY (id), 
@@ -4700,6 +4773,7 @@ CREATE TABLE "Protein" (
 	FOREIGN KEY(originator_id) REFERENCES "Originator" (id), 
 	FOREIGN KEY(category_id) REFERENCES "ProductCategory" (id), 
 	FOREIGN KEY("riskGroup_id") REFERENCES "RiskGroup" (id), 
+	FOREIGN KEY("biosafetyLevel_id") REFERENCES "BiosafetyLevel" (id), 
 	FOREIGN KEY(provider_id) REFERENCES "Provider" (id), 
 	FOREIGN KEY("contactPoint_id") REFERENCES "ContactPoint" (id)
 );
@@ -4744,6 +4818,7 @@ CREATE TABLE "NucleicAcid" (
 	originator_id INTEGER, 
 	category_id INTEGER NOT NULL, 
 	"riskGroup_id" INTEGER, 
+	"biosafetyLevel_id" INTEGER, 
 	provider_id INTEGER NOT NULL, 
 	"contactPoint_id" INTEGER, 
 	PRIMARY KEY (id), 
@@ -4755,6 +4830,7 @@ CREATE TABLE "NucleicAcid" (
 	FOREIGN KEY(originator_id) REFERENCES "Originator" (id), 
 	FOREIGN KEY(category_id) REFERENCES "ProductCategory" (id), 
 	FOREIGN KEY("riskGroup_id") REFERENCES "RiskGroup" (id), 
+	FOREIGN KEY("biosafetyLevel_id") REFERENCES "BiosafetyLevel" (id), 
 	FOREIGN KEY(provider_id) REFERENCES "Provider" (id), 
 	FOREIGN KEY("contactPoint_id") REFERENCES "ContactPoint" (id)
 );
@@ -4791,6 +4867,7 @@ CREATE TABLE "DetectionKit" (
 	originator_id INTEGER, 
 	category_id INTEGER NOT NULL, 
 	"riskGroup_id" INTEGER, 
+	"biosafetyLevel_id" INTEGER, 
 	provider_id INTEGER NOT NULL, 
 	"contactPoint_id" INTEGER, 
 	PRIMARY KEY (id), 
@@ -4799,6 +4876,7 @@ CREATE TABLE "DetectionKit" (
 	FOREIGN KEY(originator_id) REFERENCES "Originator" (id), 
 	FOREIGN KEY(category_id) REFERENCES "ProductCategory" (id), 
 	FOREIGN KEY("riskGroup_id") REFERENCES "RiskGroup" (id), 
+	FOREIGN KEY("biosafetyLevel_id") REFERENCES "BiosafetyLevel" (id), 
 	FOREIGN KEY(provider_id) REFERENCES "Provider" (id), 
 	FOREIGN KEY("contactPoint_id") REFERENCES "ContactPoint" (id)
 );
@@ -4832,6 +4910,7 @@ CREATE TABLE "Bundle" (
 	originator_id INTEGER, 
 	category_id INTEGER NOT NULL, 
 	"riskGroup_id" INTEGER, 
+	"biosafetyLevel_id" INTEGER, 
 	provider_id INTEGER NOT NULL, 
 	"contactPoint_id" INTEGER, 
 	PRIMARY KEY (id), 
@@ -4840,6 +4919,7 @@ CREATE TABLE "Bundle" (
 	FOREIGN KEY(originator_id) REFERENCES "Originator" (id), 
 	FOREIGN KEY(category_id) REFERENCES "ProductCategory" (id), 
 	FOREIGN KEY("riskGroup_id") REFERENCES "RiskGroup" (id), 
+	FOREIGN KEY("biosafetyLevel_id") REFERENCES "BiosafetyLevel" (id), 
 	FOREIGN KEY(provider_id) REFERENCES "Provider" (id), 
 	FOREIGN KEY("contactPoint_id") REFERENCES "ContactPoint" (id)
 );
@@ -4885,6 +4965,7 @@ CREATE TABLE "Pathogen" (
 	originator_id INTEGER, 
 	category_id INTEGER NOT NULL, 
 	"riskGroup_id" INTEGER, 
+	"biosafetyLevel_id" INTEGER, 
 	provider_id INTEGER NOT NULL, 
 	"contactPoint_id" INTEGER, 
 	PRIMARY KEY (id), 
@@ -4894,6 +4975,7 @@ CREATE TABLE "Pathogen" (
 	FOREIGN KEY(originator_id) REFERENCES "Originator" (id), 
 	FOREIGN KEY(category_id) REFERENCES "ProductCategory" (id), 
 	FOREIGN KEY("riskGroup_id") REFERENCES "RiskGroup" (id), 
+	FOREIGN KEY("biosafetyLevel_id") REFERENCES "BiosafetyLevel" (id), 
 	FOREIGN KEY(provider_id) REFERENCES "Provider" (id), 
 	FOREIGN KEY("contactPoint_id") REFERENCES "ContactPoint" (id)
 );
@@ -4941,6 +5023,7 @@ CREATE TABLE "Virus" (
 	originator_id INTEGER, 
 	category_id INTEGER NOT NULL, 
 	"riskGroup_id" INTEGER, 
+	"biosafetyLevel_id" INTEGER, 
 	provider_id INTEGER NOT NULL, 
 	"contactPoint_id" INTEGER, 
 	PRIMARY KEY (id), 
@@ -4950,6 +5033,7 @@ CREATE TABLE "Virus" (
 	FOREIGN KEY(originator_id) REFERENCES "Originator" (id), 
 	FOREIGN KEY(category_id) REFERENCES "ProductCategory" (id), 
 	FOREIGN KEY("riskGroup_id") REFERENCES "RiskGroup" (id), 
+	FOREIGN KEY("biosafetyLevel_id") REFERENCES "BiosafetyLevel" (id), 
 	FOREIGN KEY(provider_id) REFERENCES "Provider" (id), 
 	FOREIGN KEY("contactPoint_id") REFERENCES "ContactPoint" (id)
 );
@@ -4995,6 +5079,7 @@ CREATE TABLE "Bacterium" (
 	originator_id INTEGER, 
 	category_id INTEGER NOT NULL, 
 	"riskGroup_id" INTEGER, 
+	"biosafetyLevel_id" INTEGER, 
 	provider_id INTEGER NOT NULL, 
 	"contactPoint_id" INTEGER, 
 	PRIMARY KEY (id), 
@@ -5004,6 +5089,7 @@ CREATE TABLE "Bacterium" (
 	FOREIGN KEY(originator_id) REFERENCES "Originator" (id), 
 	FOREIGN KEY(category_id) REFERENCES "ProductCategory" (id), 
 	FOREIGN KEY("riskGroup_id") REFERENCES "RiskGroup" (id), 
+	FOREIGN KEY("biosafetyLevel_id") REFERENCES "BiosafetyLevel" (id), 
 	FOREIGN KEY(provider_id) REFERENCES "Provider" (id), 
 	FOREIGN KEY("contactPoint_id") REFERENCES "ContactPoint" (id)
 );
@@ -5049,6 +5135,7 @@ CREATE TABLE "Fungus" (
 	originator_id INTEGER, 
 	category_id INTEGER NOT NULL, 
 	"riskGroup_id" INTEGER, 
+	"biosafetyLevel_id" INTEGER, 
 	provider_id INTEGER NOT NULL, 
 	"contactPoint_id" INTEGER, 
 	PRIMARY KEY (id), 
@@ -5058,6 +5145,7 @@ CREATE TABLE "Fungus" (
 	FOREIGN KEY(originator_id) REFERENCES "Originator" (id), 
 	FOREIGN KEY(category_id) REFERENCES "ProductCategory" (id), 
 	FOREIGN KEY("riskGroup_id") REFERENCES "RiskGroup" (id), 
+	FOREIGN KEY("biosafetyLevel_id") REFERENCES "BiosafetyLevel" (id), 
 	FOREIGN KEY(provider_id) REFERENCES "Provider" (id), 
 	FOREIGN KEY("contactPoint_id") REFERENCES "ContactPoint" (id)
 );
@@ -5103,6 +5191,7 @@ CREATE TABLE "Protozoan" (
 	originator_id INTEGER, 
 	category_id INTEGER NOT NULL, 
 	"riskGroup_id" INTEGER, 
+	"biosafetyLevel_id" INTEGER, 
 	provider_id INTEGER NOT NULL, 
 	"contactPoint_id" INTEGER, 
 	PRIMARY KEY (id), 
@@ -5112,6 +5201,7 @@ CREATE TABLE "Protozoan" (
 	FOREIGN KEY(originator_id) REFERENCES "Originator" (id), 
 	FOREIGN KEY(category_id) REFERENCES "ProductCategory" (id), 
 	FOREIGN KEY("riskGroup_id") REFERENCES "RiskGroup" (id), 
+	FOREIGN KEY("biosafetyLevel_id") REFERENCES "BiosafetyLevel" (id), 
 	FOREIGN KEY(provider_id) REFERENCES "Provider" (id), 
 	FOREIGN KEY("contactPoint_id") REFERENCES "ContactPoint" (id)
 );
@@ -5157,6 +5247,7 @@ CREATE TABLE "Viroid" (
 	originator_id INTEGER, 
 	category_id INTEGER NOT NULL, 
 	"riskGroup_id" INTEGER, 
+	"biosafetyLevel_id" INTEGER, 
 	provider_id INTEGER NOT NULL, 
 	"contactPoint_id" INTEGER, 
 	PRIMARY KEY (id), 
@@ -5166,6 +5257,7 @@ CREATE TABLE "Viroid" (
 	FOREIGN KEY(originator_id) REFERENCES "Originator" (id), 
 	FOREIGN KEY(category_id) REFERENCES "ProductCategory" (id), 
 	FOREIGN KEY("riskGroup_id") REFERENCES "RiskGroup" (id), 
+	FOREIGN KEY("biosafetyLevel_id") REFERENCES "BiosafetyLevel" (id), 
 	FOREIGN KEY(provider_id) REFERENCES "Provider" (id), 
 	FOREIGN KEY("contactPoint_id") REFERENCES "ContactPoint" (id)
 );
@@ -5211,6 +5303,7 @@ CREATE TABLE "Prion" (
 	originator_id INTEGER, 
 	category_id INTEGER NOT NULL, 
 	"riskGroup_id" INTEGER, 
+	"biosafetyLevel_id" INTEGER, 
 	provider_id INTEGER NOT NULL, 
 	"contactPoint_id" INTEGER, 
 	PRIMARY KEY (id), 
@@ -5220,6 +5313,7 @@ CREATE TABLE "Prion" (
 	FOREIGN KEY(originator_id) REFERENCES "Originator" (id), 
 	FOREIGN KEY(category_id) REFERENCES "ProductCategory" (id), 
 	FOREIGN KEY("riskGroup_id") REFERENCES "RiskGroup" (id), 
+	FOREIGN KEY("biosafetyLevel_id") REFERENCES "BiosafetyLevel" (id), 
 	FOREIGN KEY(provider_id) REFERENCES "Provider" (id), 
 	FOREIGN KEY("contactPoint_id") REFERENCES "ContactPoint" (id)
 );

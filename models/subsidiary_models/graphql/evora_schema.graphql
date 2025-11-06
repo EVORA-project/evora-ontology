@@ -1,5 +1,5 @@
 # metamodel_version: 1.7.0
-# version: 1.0.10142
+# version: 1.0.10170
 type AlternateName
   {
     keyword: [String]
@@ -35,6 +35,7 @@ type Antibody
     pathogenIdentification: [PathogenIdentification]!
     doi: [Doi]
     riskGroup: RiskGroup
+    biosafetyLevel: BiosafetyLevel
     biosafetyRestrictions: String
     canBeUsedToProduceGmo: Boolean!
     provider: Provider!
@@ -101,6 +102,7 @@ type Bacterium
     pathogenIdentification: [PathogenIdentification]!
     doi: [Doi]
     riskGroup: RiskGroup
+    biosafetyLevel: BiosafetyLevel
     biosafetyRestrictions: String
     canBeUsedToProduceGmo: Boolean!
     provider: Provider!
@@ -169,6 +171,19 @@ interface BiologicalPartOrigin
     accessToPhysicalGeneticResource: Boolean!
   }
 
+type BiosafetyLevel
+  {
+    keyword: [String]
+    dateIssued: Datetime
+    dateModified: Datetime
+    identifier: [String]
+    iri: [Uri]
+    title: String!
+    description: String
+    weight: Integer!
+    inVocabulary: Vocabulary!
+  }
+
 type Bundle
   {
     keyword: [String]
@@ -189,6 +204,7 @@ type Bundle
     pathogenIdentification: [PathogenIdentification]!
     doi: [Doi]
     riskGroup: RiskGroup
+    biosafetyLevel: BiosafetyLevel
     biosafetyRestrictions: String
     canBeUsedToProduceGmo: Boolean!
     provider: Provider!
@@ -400,6 +416,7 @@ type DetectionKit
     pathogenIdentification: [PathogenIdentification]!
     doi: [Doi]
     riskGroup: RiskGroup
+    biosafetyLevel: BiosafetyLevel
     biosafetyRestrictions: String
     canBeUsedToProduceGmo: Boolean!
     provider: Provider!
@@ -536,6 +553,7 @@ type Fungus
     pathogenIdentification: [PathogenIdentification]!
     doi: [Doi]
     riskGroup: RiskGroup
+    biosafetyLevel: BiosafetyLevel
     biosafetyRestrictions: String
     canBeUsedToProduceGmo: Boolean!
     provider: Provider!
@@ -614,6 +632,7 @@ type Hybridoma
     pathogenIdentification: [PathogenIdentification]!
     doi: [Doi]
     riskGroup: RiskGroup
+    biosafetyLevel: BiosafetyLevel
     biosafetyRestrictions: String
     canBeUsedToProduceGmo: Boolean!
     provider: Provider!
@@ -801,6 +820,7 @@ type NucleicAcid
     pathogenIdentification: [PathogenIdentification]!
     doi: [Doi]
     riskGroup: RiskGroup
+    biosafetyLevel: BiosafetyLevel
     biosafetyRestrictions: String
     canBeUsedToProduceGmo: Boolean!
     provider: Provider!
@@ -893,6 +913,7 @@ interface Pathogen
     pathogenIdentification: [PathogenIdentification]!
     doi: [Doi]
     riskGroup: RiskGroup
+    biosafetyLevel: BiosafetyLevel
     biosafetyRestrictions: String
     canBeUsedToProduceGmo: Boolean!
     provider: Provider!
@@ -1032,6 +1053,7 @@ type Prion
     pathogenIdentification: [PathogenIdentification]!
     doi: [Doi]
     riskGroup: RiskGroup
+    biosafetyLevel: BiosafetyLevel
     biosafetyRestrictions: String
     canBeUsedToProduceGmo: Boolean!
     provider: Provider!
@@ -1097,6 +1119,7 @@ type Product
     pathogenIdentification: [PathogenIdentification]!
     doi: [Doi]
     riskGroup: RiskGroup
+    biosafetyLevel: BiosafetyLevel
     biosafetyRestrictions: String
     canBeUsedToProduceGmo: Boolean!
     provider: Provider!
@@ -1173,6 +1196,7 @@ interface ProductOrService
     pathogenIdentification: [PathogenIdentification]!
     doi: [Doi]
     riskGroup: RiskGroup
+    biosafetyLevel: BiosafetyLevel
     biosafetyRestrictions: String
     canBeUsedToProduceGmo: Boolean!
     provider: Provider!
@@ -1223,6 +1247,7 @@ type Protein
     pathogenIdentification: [PathogenIdentification]!
     doi: [Doi]
     riskGroup: RiskGroup
+    biosafetyLevel: BiosafetyLevel
     biosafetyRestrictions: String
     canBeUsedToProduceGmo: Boolean!
     provider: Provider!
@@ -1284,6 +1309,7 @@ type Protozoan
     pathogenIdentification: [PathogenIdentification]!
     doi: [Doi]
     riskGroup: RiskGroup
+    biosafetyLevel: BiosafetyLevel
     biosafetyRestrictions: String
     canBeUsedToProduceGmo: Boolean!
     provider: Provider!
@@ -1453,6 +1479,7 @@ type Service
     pathogenIdentification: [PathogenIdentification]!
     doi: [Doi]
     riskGroup: RiskGroup
+    biosafetyLevel: BiosafetyLevel
     biosafetyRestrictions: String
     canBeUsedToProduceGmo: Boolean!
     provider: Provider!
@@ -1652,6 +1679,7 @@ type Viroid
     pathogenIdentification: [PathogenIdentification]!
     doi: [Doi]
     riskGroup: RiskGroup
+    biosafetyLevel: BiosafetyLevel
     biosafetyRestrictions: String
     canBeUsedToProduceGmo: Boolean!
     provider: Provider!
@@ -1717,6 +1745,7 @@ type Virus
     pathogenIdentification: [PathogenIdentification]!
     doi: [Doi]
     riskGroup: RiskGroup
+    biosafetyLevel: BiosafetyLevel
     biosafetyRestrictions: String
     canBeUsedToProduceGmo: Boolean!
     provider: Provider!

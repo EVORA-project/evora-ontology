@@ -1,5 +1,5 @@
 # metamodel_version: 1.7.0
-# version: 1.0.10142
+# version: 1.0.10170
 BASE <https://w3id.org/evorao/>
 PREFIX dcat: <http://www.w3.org/ns/dcat#>
 PREFIX foaf: <http://xmlns.com/foaf/0.1/>
@@ -111,6 +111,14 @@ linkml:Sparqlpath xsd:string
           <accessToPhysicalGeneticResource> @linkml:Boolean
        ) ;
        rdf:type [ <BiologicalPartOrigin> ] ?
+    )
+}
+
+<BiosafetyLevel> CLOSED {
+    (  $<BiosafetyLevel_tes> (  &<Term_tes> ;
+          rdf:type [ <Term> ] ?
+       ) ;
+       rdf:type [ <BiosafetyLevel> ] ?
     )
 }
 
@@ -660,6 +668,7 @@ linkml:Sparqlpath xsd:string
           <pathogenIdentification> @<PathogenIdentification> + ;
           <doi> @<Doi> * ;
           <riskGroup> @<RiskGroup> ? ;
+          <biosafetyLevel> @<BiosafetyLevel> ? ;
           <biosafetyRestrictions> @linkml:String ? ;
           <canBeUsedToProduceGmo> @linkml:Boolean ;
           <provider> @<Provider> ;
@@ -880,10 +889,10 @@ linkml:Sparqlpath xsd:string
 }
 
 <Term>  (
-    @<AlternateName> OR @<ClinicalGroup> OR @<CommonName> OR @<Country> OR @<Doi> OR @<ExpressionVector> OR @<GeographicalOrigin>
-    OR @<IataClassification> OR @<IsolationHost> OR @<Journal> OR @<Keyword> OR @<PdbReference> OR @<PlasmidSelection> OR
-    @<ProductCategory> OR @<ProductionCellLine> OR @<PropagationHost> OR @<RiskGroup> OR @<SpecialFeature> OR @<TagSequence> OR
-    @<Taxon> OR @<TaxonomicRank> OR @<TransmissionMethod>
+    @<AlternateName> OR @<BiosafetyLevel> OR @<ClinicalGroup> OR @<CommonName> OR @<Country> OR @<Doi> OR @<ExpressionVector> OR
+    @<GeographicalOrigin> OR @<IataClassification> OR @<IsolationHost> OR @<Journal> OR @<Keyword> OR @<PdbReference> OR
+    @<PlasmidSelection> OR @<ProductCategory> OR @<ProductionCellLine> OR @<PropagationHost> OR @<RiskGroup> OR @<SpecialFeature>
+    OR @<TagSequence> OR @<Taxon> OR @<TaxonomicRank> OR @<TransmissionMethod>
 )
 
 <Term_struct> {

@@ -27,7 +27,7 @@ from pydantic import (
 
 
 metamodel_version = "None"
-version = "1.0.10142"
+version = "1.0.10170"
 
 
 class ConfiguredBaseModel(BaseModel):
@@ -99,7 +99,7 @@ linkml_meta = LinkMLMeta({'comments': ['EVORAO is an ontology for standardized m
                     'pathogens. EVORAO is compatible with DCAT, making it '
                     'well-suited for efficiently cataloguing pathogen collections '
                     'and related resources.',
-     'generation_date': '2025-11-06T15:56:02',
+     'generation_date': '2025-11-06T16:32:42',
      'id': 'https://w3id.org/evorao/',
      'imports': ['linkml:types'],
      'in_language': 'en',
@@ -2306,12 +2306,110 @@ class RiskGroup(Term):
     Risk group classification guides initial handling of biological agents in labs but doesn't systematically equate to biosafety levels. Actual risk varies with the agent, procedures, and personnel competence
     """
     linkml_meta: ClassVar[LinkMLMeta] = LinkMLMeta({'broad_mappings': ['ncit:C95347', 'ncit:C95347'],
-         'comments': ['Use of Data provider if any or manual import of information '
-                      'from wd:Q125449389, wd:Q125449412, wd:Q125449429, '
-                      'wd:Q125449439'],
+         'comments': ['The Risk Group (RG) assignments to an item are '
+                      'jurisdiction-dependent and may differ between countries/regions '
+                      'and by material form (e.g., live isolate, inactivated '
+                      'preparation, nucleic acid). Assignments can also change over '
+                      'time. We store here a single reference assignment; users must '
+                      'verify the current, locally applicable assignment with their '
+                      'competent authority.'],
          'exact_mappings': ['wd:Q125449255', 'wd:Q125449255'],
          'from_schema': 'https://w3id.org/evorao/',
          'title': 'Risk group'})
+
+    title: str = Field(default=..., title="title", description="""A name given to the resource""", json_schema_extra = { "linkml_meta": {'alias': 'title',
+         'comments': ['The title of the item should be as short and descriptive as '
+                      'possible. E.g. for virus products it should basically be based '
+                      "on the following Pattern: 'Virus name', 'virus host type', "
+                      "'collection year', 'country of collection' ex 'suspected "
+                      "epidemiological origin', 'genotype', 'strain', 'variant name or "
+                      'specific feature'],
+         'domain_of': ['Term',
+                       'Dataset',
+                       'DataService',
+                       'Publication',
+                       'License',
+                       'Certification',
+                       'FundingSource'],
+         'exact_mappings': ['schema:name', 'rdfs:label'],
+         'slot_uri': 'dct:title'} })
+    description: Optional[str] = Field(default=None, title="description", description="""A short explanation of the characteristics, features, or nature of the current item""", json_schema_extra = { "linkml_meta": {'alias': 'description',
+         'close_mappings': ['schema:description'],
+         'comments': ['Describe this item in few lines. This description will serve as '
+                      'a summary to present the resource.'],
+         'domain_of': ['Term',
+                       'Dataset',
+                       'DataService',
+                       'PersonOrOrganization',
+                       'File',
+                       'ContactPoint',
+                       'License',
+                       'Certification',
+                       'FundingSource'],
+         'exact_mappings': ['schema:description'],
+         'recommended': True,
+         'slot_uri': 'dct:description'} })
+    weight: int = Field(default=0, title="weight", description="""A numerical value indicating relative importance or priority, generally processed in ascending order. This weight helps prioritize content when organizing or processing data. Its value can be negative, with a default set to 0""", json_schema_extra = { "linkml_meta": {'alias': 'weight',
+         'close_mappings': ['adms:status'],
+         'comments': ['The lowest weighted Data providers are triggered first, this '
+                      'may be usefull to populate at first entities that are '
+                      'referenced by others (e.g. Version ahead of Rank ahead of '
+                      'Taxon)'],
+         'domain_of': ['Term', 'DataProvider'],
+         'ifabsent': 'int(0)'} })
+    inVocabulary: Vocabulary = Field(default=..., title="in Vocabulary", description="""Terms belong to a specific vocabulary""", json_schema_extra = { "linkml_meta": {'alias': 'inVocabulary',
+         'broad_mappings': ['dct:isPartOf'],
+         'close_mappings': ['wdp:P972'],
+         'domain_of': ['Term'],
+         'related_mappings': ['dct:isReferencedBy']} })
+    keyword: Optional[list[str]] = Field(default=None, title="keyword", description="""A keyword or tag describing the resource""", json_schema_extra = { "linkml_meta": {'alias': 'keyword', 'domain_of': ['Resource'], 'slot_uri': 'dcat:keyword'} })
+    dateIssued: Optional[datetime ] = Field(default=None, title="date issued", description="""Date of formal issuance (e.g., publication) of the resource""", json_schema_extra = { "linkml_meta": {'alias': 'dateIssued',
+         'close_mappings': ['schema:datePublished', 'schema:dateCreated'],
+         'comments': ['encoded using the relevant ISO 8601 Date and Time compliant '
+                      'string [DATETIME]'],
+         'domain_of': ['Resource'],
+         'exact_mappings': ['sepio:0000051'],
+         'slot_uri': 'dct:issued'} })
+    dateModified: Optional[datetime ] = Field(default=None, title="date modified", description="""Most recent date on which the resource was changed, updated or modified""", json_schema_extra = { "linkml_meta": {'alias': 'dateModified',
+         'close_mappings': ['schema:dateModified'],
+         'comments': ['encoded using the relevant ISO 8601 Date and Time compliant '
+                      'string [DATETIME]'],
+         'domain_of': ['Resource'],
+         'exact_mappings': ['sepio:0000036'],
+         'slot_uri': 'dct:modified'} })
+    identifier: Optional[list[str]] = Field(default=None, title="identifier", description="""A unique identifier of the resource being described or cataloged""", json_schema_extra = { "linkml_meta": {'alias': 'identifier',
+         'comments': ['The identifier is a text string which is assigned to the '
+                      'resource to provide an unambiguous reference within a '
+                      'particular context. Persistent identifiers should be provided '
+                      'as HTTP URIs'],
+         'domain_of': ['Resource'],
+         'exact_mappings': ['schema:identifier'],
+         'slot_uri': 'dct:identifier'} })
+    iri: Optional[list[str]] = Field(default=None, title="IRI", description="""International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs""", json_schema_extra = { "linkml_meta": {'alias': 'iri',
+         'close_mappings': ['biolink:iri'],
+         'comments': ['An IRI is a global identifier standardized by IETF RFC 3987. It '
+                      'may or may not be resolvable on the web. IRIs include URIs, and '
+                      'URIs include URLs'],
+         'domain_of': ['Resource'],
+         'is_a': 'identifier',
+         'narrow_mappings': ['schema:url'],
+         'related_mappings': ['mi:url']} })
+
+
+class BiosafetyLevel(Term):
+    """
+    The level of biocontainment required or applied in the facility where the biological agent is manipulated
+    """
+    linkml_meta: ClassVar[LinkMLMeta] = LinkMLMeta({'broad_mappings': ['ncit:C95347', 'ncit:C95347'],
+         'close_mappings': ['ncit:C151920', 'ncit:C151920'],
+         'comments': ['The Biosafety Level (BSL) reflects the operational safety '
+                      'measures implemented, which may differ from the intrinsic risk '
+                      'defined by the agent’s Risk Group (RG). Use of Data provider if '
+                      'any or manual import of information from wd:Q125449389, '
+                      'wd:Q125449412, wd:Q125449429, wd:Q125449439'],
+         'exact_mappings': ['wd:Q898943', 'wd:Q898943'],
+         'from_schema': 'https://w3id.org/evorao/',
+         'title': 'Biosafety level'})
 
     title: str = Field(default=..., title="title", description="""A name given to the resource""", json_schema_extra = { "linkml_meta": {'alias': 'title',
          'comments': ['The title of the item should be as short and descriptive as '
@@ -6308,6 +6406,24 @@ class ProductOrService(Dataset):
                                          'range': 'string',
                                          'required': True,
                                          'title': 'availability'},
+                        'biosafetyLevel': {'comments': ['The Biosafety Level (BSL) '
+                                                        'reflects the operational '
+                                                        'safety measures implemented, '
+                                                        'which may differ from the '
+                                                        'intrinsic risk defined by the '
+                                                        'agent’s Risk Group (RG).'],
+                                           'description': 'The level of biocontainment '
+                                                          'required or applied in the '
+                                                          'facility where the '
+                                                          'biological agent is '
+                                                          'manipulated.',
+                                           'exact_mappings': ['wdp:P1604',
+                                                              'bao:0002826'],
+                                           'multivalued': False,
+                                           'name': 'biosafetyLevel',
+                                           'range': 'BiosafetyLevel',
+                                           'required': False,
+                                           'title': 'biosafety level'},
                         'biosafetyRestrictions': {'description': 'Information about '
                                                                  'guidelines and '
                                                                  'regulations designed '
@@ -6743,6 +6859,12 @@ class ProductOrService(Dataset):
          'exact_mappings': ['wdp:P12663'],
          'recommended': True,
          'related_mappings': ['bao:0002826']} })
+    biosafetyLevel: Optional[BiosafetyLevel] = Field(default=None, title="biosafety level", description="""The level of biocontainment required or applied in the facility where the biological agent is manipulated.""", json_schema_extra = { "linkml_meta": {'alias': 'biosafetyLevel',
+         'comments': ['The Biosafety Level (BSL) reflects the operational safety '
+                      'measures implemented, which may differ from the intrinsic risk '
+                      'defined by the agent’s Risk Group (RG).'],
+         'domain_of': ['ProductOrService'],
+         'exact_mappings': ['wdp:P1604', 'bao:0002826']} })
     biosafetyRestrictions: Optional[str] = Field(default=None, title="biosafety restrictions", description="""Information about guidelines and regulations designed to prevent the exposure to or release of potentially harmful biological agents. It thereby contributes to protecting people and the environment from biohazards while accessing this product or service""", json_schema_extra = { "linkml_meta": {'alias': 'biosafetyRestrictions',
          'domain_of': ['ProductOrService'],
          'related_mappings': ['bao:0002826']} })
@@ -6980,6 +7102,12 @@ class Service(ProductOrService):
          'exact_mappings': ['wdp:P12663'],
          'recommended': True,
          'related_mappings': ['bao:0002826']} })
+    biosafetyLevel: Optional[BiosafetyLevel] = Field(default=None, title="biosafety level", description="""The level of biocontainment required or applied in the facility where the biological agent is manipulated.""", json_schema_extra = { "linkml_meta": {'alias': 'biosafetyLevel',
+         'comments': ['The Biosafety Level (BSL) reflects the operational safety '
+                      'measures implemented, which may differ from the intrinsic risk '
+                      'defined by the agent’s Risk Group (RG).'],
+         'domain_of': ['ProductOrService'],
+         'exact_mappings': ['wdp:P1604', 'bao:0002826']} })
     biosafetyRestrictions: Optional[str] = Field(default=None, title="biosafety restrictions", description="""Information about guidelines and regulations designed to prevent the exposure to or release of potentially harmful biological agents. It thereby contributes to protecting people and the environment from biohazards while accessing this product or service""", json_schema_extra = { "linkml_meta": {'alias': 'biosafetyRestrictions',
          'domain_of': ['ProductOrService'],
          'related_mappings': ['bao:0002826']} })
@@ -7353,6 +7481,12 @@ class Product(ProductOrService):
          'exact_mappings': ['wdp:P12663'],
          'recommended': True,
          'related_mappings': ['bao:0002826']} })
+    biosafetyLevel: Optional[BiosafetyLevel] = Field(default=None, title="biosafety level", description="""The level of biocontainment required or applied in the facility where the biological agent is manipulated.""", json_schema_extra = { "linkml_meta": {'alias': 'biosafetyLevel',
+         'comments': ['The Biosafety Level (BSL) reflects the operational safety '
+                      'measures implemented, which may differ from the intrinsic risk '
+                      'defined by the agent’s Risk Group (RG).'],
+         'domain_of': ['ProductOrService'],
+         'exact_mappings': ['wdp:P1604', 'bao:0002826']} })
     biosafetyRestrictions: Optional[str] = Field(default=None, title="biosafety restrictions", description="""Information about guidelines and regulations designed to prevent the exposure to or release of potentially harmful biological agents. It thereby contributes to protecting people and the environment from biohazards while accessing this product or service""", json_schema_extra = { "linkml_meta": {'alias': 'biosafetyRestrictions',
          'domain_of': ['ProductOrService'],
          'related_mappings': ['bao:0002826']} })
@@ -7647,6 +7781,12 @@ class Antibody(Product):
          'exact_mappings': ['wdp:P12663'],
          'recommended': True,
          'related_mappings': ['bao:0002826']} })
+    biosafetyLevel: Optional[BiosafetyLevel] = Field(default=None, title="biosafety level", description="""The level of biocontainment required or applied in the facility where the biological agent is manipulated.""", json_schema_extra = { "linkml_meta": {'alias': 'biosafetyLevel',
+         'comments': ['The Biosafety Level (BSL) reflects the operational safety '
+                      'measures implemented, which may differ from the intrinsic risk '
+                      'defined by the agent’s Risk Group (RG).'],
+         'domain_of': ['ProductOrService'],
+         'exact_mappings': ['wdp:P1604', 'bao:0002826']} })
     biosafetyRestrictions: Optional[str] = Field(default=None, title="biosafety restrictions", description="""Information about guidelines and regulations designed to prevent the exposure to or release of potentially harmful biological agents. It thereby contributes to protecting people and the environment from biohazards while accessing this product or service""", json_schema_extra = { "linkml_meta": {'alias': 'biosafetyRestrictions',
          'domain_of': ['ProductOrService'],
          'related_mappings': ['bao:0002826']} })
@@ -7900,6 +8040,12 @@ class Hybridoma(Antibody):
          'exact_mappings': ['wdp:P12663'],
          'recommended': True,
          'related_mappings': ['bao:0002826']} })
+    biosafetyLevel: Optional[BiosafetyLevel] = Field(default=None, title="biosafety level", description="""The level of biocontainment required or applied in the facility where the biological agent is manipulated.""", json_schema_extra = { "linkml_meta": {'alias': 'biosafetyLevel',
+         'comments': ['The Biosafety Level (BSL) reflects the operational safety '
+                      'measures implemented, which may differ from the intrinsic risk '
+                      'defined by the agent’s Risk Group (RG).'],
+         'domain_of': ['ProductOrService'],
+         'exact_mappings': ['wdp:P1604', 'bao:0002826']} })
     biosafetyRestrictions: Optional[str] = Field(default=None, title="biosafety restrictions", description="""Information about guidelines and regulations designed to prevent the exposure to or release of potentially harmful biological agents. It thereby contributes to protecting people and the environment from biohazards while accessing this product or service""", json_schema_extra = { "linkml_meta": {'alias': 'biosafetyRestrictions',
          'domain_of': ['ProductOrService'],
          'related_mappings': ['bao:0002826']} })
@@ -8514,6 +8660,12 @@ class Protein(Product):
          'exact_mappings': ['wdp:P12663'],
          'recommended': True,
          'related_mappings': ['bao:0002826']} })
+    biosafetyLevel: Optional[BiosafetyLevel] = Field(default=None, title="biosafety level", description="""The level of biocontainment required or applied in the facility where the biological agent is manipulated.""", json_schema_extra = { "linkml_meta": {'alias': 'biosafetyLevel',
+         'comments': ['The Biosafety Level (BSL) reflects the operational safety '
+                      'measures implemented, which may differ from the intrinsic risk '
+                      'defined by the agent’s Risk Group (RG).'],
+         'domain_of': ['ProductOrService'],
+         'exact_mappings': ['wdp:P1604', 'bao:0002826']} })
     biosafetyRestrictions: Optional[str] = Field(default=None, title="biosafety restrictions", description="""Information about guidelines and regulations designed to prevent the exposure to or release of potentially harmful biological agents. It thereby contributes to protecting people and the environment from biohazards while accessing this product or service""", json_schema_extra = { "linkml_meta": {'alias': 'biosafetyRestrictions',
          'domain_of': ['ProductOrService'],
          'related_mappings': ['bao:0002826']} })
@@ -9007,6 +9159,12 @@ class NucleicAcid(Product):
          'exact_mappings': ['wdp:P12663'],
          'recommended': True,
          'related_mappings': ['bao:0002826']} })
+    biosafetyLevel: Optional[BiosafetyLevel] = Field(default=None, title="biosafety level", description="""The level of biocontainment required or applied in the facility where the biological agent is manipulated.""", json_schema_extra = { "linkml_meta": {'alias': 'biosafetyLevel',
+         'comments': ['The Biosafety Level (BSL) reflects the operational safety '
+                      'measures implemented, which may differ from the intrinsic risk '
+                      'defined by the agent’s Risk Group (RG).'],
+         'domain_of': ['ProductOrService'],
+         'exact_mappings': ['wdp:P1604', 'bao:0002826']} })
     biosafetyRestrictions: Optional[str] = Field(default=None, title="biosafety restrictions", description="""Information about guidelines and regulations designed to prevent the exposure to or release of potentially harmful biological agents. It thereby contributes to protecting people and the environment from biohazards while accessing this product or service""", json_schema_extra = { "linkml_meta": {'alias': 'biosafetyRestrictions',
          'domain_of': ['ProductOrService'],
          'related_mappings': ['bao:0002826']} })
@@ -9290,6 +9448,12 @@ class DetectionKit(Product):
          'exact_mappings': ['wdp:P12663'],
          'recommended': True,
          'related_mappings': ['bao:0002826']} })
+    biosafetyLevel: Optional[BiosafetyLevel] = Field(default=None, title="biosafety level", description="""The level of biocontainment required or applied in the facility where the biological agent is manipulated.""", json_schema_extra = { "linkml_meta": {'alias': 'biosafetyLevel',
+         'comments': ['The Biosafety Level (BSL) reflects the operational safety '
+                      'measures implemented, which may differ from the intrinsic risk '
+                      'defined by the agent’s Risk Group (RG).'],
+         'domain_of': ['ProductOrService'],
+         'exact_mappings': ['wdp:P1604', 'bao:0002826']} })
     biosafetyRestrictions: Optional[str] = Field(default=None, title="biosafety restrictions", description="""Information about guidelines and regulations designed to prevent the exposure to or release of potentially harmful biological agents. It thereby contributes to protecting people and the environment from biohazards while accessing this product or service""", json_schema_extra = { "linkml_meta": {'alias': 'biosafetyRestrictions',
          'domain_of': ['ProductOrService'],
          'related_mappings': ['bao:0002826']} })
@@ -9534,6 +9698,12 @@ class Bundle(Product):
          'exact_mappings': ['wdp:P12663'],
          'recommended': True,
          'related_mappings': ['bao:0002826']} })
+    biosafetyLevel: Optional[BiosafetyLevel] = Field(default=None, title="biosafety level", description="""The level of biocontainment required or applied in the facility where the biological agent is manipulated.""", json_schema_extra = { "linkml_meta": {'alias': 'biosafetyLevel',
+         'comments': ['The Biosafety Level (BSL) reflects the operational safety '
+                      'measures implemented, which may differ from the intrinsic risk '
+                      'defined by the agent’s Risk Group (RG).'],
+         'domain_of': ['ProductOrService'],
+         'exact_mappings': ['wdp:P1604', 'bao:0002826']} })
     biosafetyRestrictions: Optional[str] = Field(default=None, title="biosafety restrictions", description="""Information about guidelines and regulations designed to prevent the exposure to or release of potentially harmful biological agents. It thereby contributes to protecting people and the environment from biohazards while accessing this product or service""", json_schema_extra = { "linkml_meta": {'alias': 'biosafetyRestrictions',
          'domain_of': ['ProductOrService'],
          'related_mappings': ['bao:0002826']} })
@@ -10119,6 +10289,12 @@ class Pathogen(Product):
          'exact_mappings': ['wdp:P12663'],
          'recommended': True,
          'related_mappings': ['bao:0002826']} })
+    biosafetyLevel: Optional[BiosafetyLevel] = Field(default=None, title="biosafety level", description="""The level of biocontainment required or applied in the facility where the biological agent is manipulated.""", json_schema_extra = { "linkml_meta": {'alias': 'biosafetyLevel',
+         'comments': ['The Biosafety Level (BSL) reflects the operational safety '
+                      'measures implemented, which may differ from the intrinsic risk '
+                      'defined by the agent’s Risk Group (RG).'],
+         'domain_of': ['ProductOrService'],
+         'exact_mappings': ['wdp:P1604', 'bao:0002826']} })
     biosafetyRestrictions: Optional[str] = Field(default=None, title="biosafety restrictions", description="""Information about guidelines and regulations designed to prevent the exposure to or release of potentially harmful biological agents. It thereby contributes to protecting people and the environment from biohazards while accessing this product or service""", json_schema_extra = { "linkml_meta": {'alias': 'biosafetyRestrictions',
          'domain_of': ['ProductOrService'],
          'related_mappings': ['bao:0002826']} })
@@ -10480,6 +10656,12 @@ class Virus(Pathogen):
          'exact_mappings': ['wdp:P12663'],
          'recommended': True,
          'related_mappings': ['bao:0002826']} })
+    biosafetyLevel: Optional[BiosafetyLevel] = Field(default=None, title="biosafety level", description="""The level of biocontainment required or applied in the facility where the biological agent is manipulated.""", json_schema_extra = { "linkml_meta": {'alias': 'biosafetyLevel',
+         'comments': ['The Biosafety Level (BSL) reflects the operational safety '
+                      'measures implemented, which may differ from the intrinsic risk '
+                      'defined by the agent’s Risk Group (RG).'],
+         'domain_of': ['ProductOrService'],
+         'exact_mappings': ['wdp:P1604', 'bao:0002826']} })
     biosafetyRestrictions: Optional[str] = Field(default=None, title="biosafety restrictions", description="""Information about guidelines and regulations designed to prevent the exposure to or release of potentially harmful biological agents. It thereby contributes to protecting people and the environment from biohazards while accessing this product or service""", json_schema_extra = { "linkml_meta": {'alias': 'biosafetyRestrictions',
          'domain_of': ['ProductOrService'],
          'related_mappings': ['bao:0002826']} })
@@ -10782,6 +10964,12 @@ class Bacterium(Pathogen):
          'exact_mappings': ['wdp:P12663'],
          'recommended': True,
          'related_mappings': ['bao:0002826']} })
+    biosafetyLevel: Optional[BiosafetyLevel] = Field(default=None, title="biosafety level", description="""The level of biocontainment required or applied in the facility where the biological agent is manipulated.""", json_schema_extra = { "linkml_meta": {'alias': 'biosafetyLevel',
+         'comments': ['The Biosafety Level (BSL) reflects the operational safety '
+                      'measures implemented, which may differ from the intrinsic risk '
+                      'defined by the agent’s Risk Group (RG).'],
+         'domain_of': ['ProductOrService'],
+         'exact_mappings': ['wdp:P1604', 'bao:0002826']} })
     biosafetyRestrictions: Optional[str] = Field(default=None, title="biosafety restrictions", description="""Information about guidelines and regulations designed to prevent the exposure to or release of potentially harmful biological agents. It thereby contributes to protecting people and the environment from biohazards while accessing this product or service""", json_schema_extra = { "linkml_meta": {'alias': 'biosafetyRestrictions',
          'domain_of': ['ProductOrService'],
          'related_mappings': ['bao:0002826']} })
@@ -11082,6 +11270,12 @@ class Fungus(Pathogen):
          'exact_mappings': ['wdp:P12663'],
          'recommended': True,
          'related_mappings': ['bao:0002826']} })
+    biosafetyLevel: Optional[BiosafetyLevel] = Field(default=None, title="biosafety level", description="""The level of biocontainment required or applied in the facility where the biological agent is manipulated.""", json_schema_extra = { "linkml_meta": {'alias': 'biosafetyLevel',
+         'comments': ['The Biosafety Level (BSL) reflects the operational safety '
+                      'measures implemented, which may differ from the intrinsic risk '
+                      'defined by the agent’s Risk Group (RG).'],
+         'domain_of': ['ProductOrService'],
+         'exact_mappings': ['wdp:P1604', 'bao:0002826']} })
     biosafetyRestrictions: Optional[str] = Field(default=None, title="biosafety restrictions", description="""Information about guidelines and regulations designed to prevent the exposure to or release of potentially harmful biological agents. It thereby contributes to protecting people and the environment from biohazards while accessing this product or service""", json_schema_extra = { "linkml_meta": {'alias': 'biosafetyRestrictions',
          'domain_of': ['ProductOrService'],
          'related_mappings': ['bao:0002826']} })
@@ -11378,6 +11572,12 @@ class Protozoan(Pathogen):
          'exact_mappings': ['wdp:P12663'],
          'recommended': True,
          'related_mappings': ['bao:0002826']} })
+    biosafetyLevel: Optional[BiosafetyLevel] = Field(default=None, title="biosafety level", description="""The level of biocontainment required or applied in the facility where the biological agent is manipulated.""", json_schema_extra = { "linkml_meta": {'alias': 'biosafetyLevel',
+         'comments': ['The Biosafety Level (BSL) reflects the operational safety '
+                      'measures implemented, which may differ from the intrinsic risk '
+                      'defined by the agent’s Risk Group (RG).'],
+         'domain_of': ['ProductOrService'],
+         'exact_mappings': ['wdp:P1604', 'bao:0002826']} })
     biosafetyRestrictions: Optional[str] = Field(default=None, title="biosafety restrictions", description="""Information about guidelines and regulations designed to prevent the exposure to or release of potentially harmful biological agents. It thereby contributes to protecting people and the environment from biohazards while accessing this product or service""", json_schema_extra = { "linkml_meta": {'alias': 'biosafetyRestrictions',
          'domain_of': ['ProductOrService'],
          'related_mappings': ['bao:0002826']} })
@@ -11666,6 +11866,12 @@ class Viroid(Pathogen):
          'exact_mappings': ['wdp:P12663'],
          'recommended': True,
          'related_mappings': ['bao:0002826']} })
+    biosafetyLevel: Optional[BiosafetyLevel] = Field(default=None, title="biosafety level", description="""The level of biocontainment required or applied in the facility where the biological agent is manipulated.""", json_schema_extra = { "linkml_meta": {'alias': 'biosafetyLevel',
+         'comments': ['The Biosafety Level (BSL) reflects the operational safety '
+                      'measures implemented, which may differ from the intrinsic risk '
+                      'defined by the agent’s Risk Group (RG).'],
+         'domain_of': ['ProductOrService'],
+         'exact_mappings': ['wdp:P1604', 'bao:0002826']} })
     biosafetyRestrictions: Optional[str] = Field(default=None, title="biosafety restrictions", description="""Information about guidelines and regulations designed to prevent the exposure to or release of potentially harmful biological agents. It thereby contributes to protecting people and the environment from biohazards while accessing this product or service""", json_schema_extra = { "linkml_meta": {'alias': 'biosafetyRestrictions',
          'domain_of': ['ProductOrService'],
          'related_mappings': ['bao:0002826']} })
@@ -11962,6 +12168,12 @@ class Prion(Pathogen):
          'exact_mappings': ['wdp:P12663'],
          'recommended': True,
          'related_mappings': ['bao:0002826']} })
+    biosafetyLevel: Optional[BiosafetyLevel] = Field(default=None, title="biosafety level", description="""The level of biocontainment required or applied in the facility where the biological agent is manipulated.""", json_schema_extra = { "linkml_meta": {'alias': 'biosafetyLevel',
+         'comments': ['The Biosafety Level (BSL) reflects the operational safety '
+                      'measures implemented, which may differ from the intrinsic risk '
+                      'defined by the agent’s Risk Group (RG).'],
+         'domain_of': ['ProductOrService'],
+         'exact_mappings': ['wdp:P1604', 'bao:0002826']} })
     biosafetyRestrictions: Optional[str] = Field(default=None, title="biosafety restrictions", description="""Information about guidelines and regulations designed to prevent the exposure to or release of potentially harmful biological agents. It thereby contributes to protecting people and the environment from biohazards while accessing this product or service""", json_schema_extra = { "linkml_meta": {'alias': 'biosafetyRestrictions',
          'domain_of': ['ProductOrService'],
          'related_mappings': ['bao:0002826']} })
@@ -13950,6 +14162,7 @@ CommonName.model_rebuild()
 VirusName.model_rebuild()
 AlternateName.model_rebuild()
 RiskGroup.model_rebuild()
+BiosafetyLevel.model_rebuild()
 Doi.model_rebuild()
 Journal.model_rebuild()
 PdbReference.model_rebuild()

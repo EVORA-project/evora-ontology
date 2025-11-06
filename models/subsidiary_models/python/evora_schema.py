@@ -1,5 +1,5 @@
 # Auto generated from evora_schema.yaml by pythongen.py version: 0.0.1
-# Generation date: 2025-11-06T14:56:55
+# Generation date: 2025-11-06T15:33:30
 # Schema: EVORAO
 #
 # id: https://w3id.org/evorao/
@@ -60,7 +60,7 @@ from linkml_runtime.linkml_model.types import Boolean, Date, Datetime, Decimal, 
 from linkml_runtime.utils.metamodelcore import Bool, Decimal, URI, XSDDate, XSDDateTime
 
 metamodel_version = "1.7.0"
-version = "1.0.10142"
+version = "1.0.10170"
 
 # Namespaces
 EVORAO = CurieNamespace('EVORAO', 'https://w3id.org/evorao/')
@@ -668,6 +668,22 @@ class RiskGroup(Term):
     class_class_curie: ClassVar[str] = "EVORAO:RiskGroup"
     class_name: ClassVar[str] = "RiskGroup"
     class_model_uri: ClassVar[URIRef] = EVORAO.RiskGroup
+
+    title: str = None
+    inVocabulary: Union[dict, Vocabulary] = None
+    weight: int = 0
+
+@dataclass(repr=False)
+class BiosafetyLevel(Term):
+    """
+    The level of biocontainment required or applied in the facility where the biological agent is manipulated
+    """
+    _inherited_slots: ClassVar[list[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = EVORAO["BiosafetyLevel"]
+    class_class_curie: ClassVar[str] = "EVORAO:BiosafetyLevel"
+    class_name: ClassVar[str] = "BiosafetyLevel"
+    class_model_uri: ClassVar[URIRef] = EVORAO.BiosafetyLevel
 
     title: str = None
     inVocabulary: Union[dict, Vocabulary] = None
@@ -1575,6 +1591,7 @@ class ProductOrService(Dataset):
     qualityGrading: Optional[str] = None
     doi: Optional[Union[Union[dict, Doi], list[Union[dict, Doi]]]] = empty_list()
     riskGroup: Optional[Union[dict, RiskGroup]] = None
+    biosafetyLevel: Optional[Union[dict, BiosafetyLevel]] = None
     biosafetyRestrictions: Optional[str] = None
     complementaryDocument: Optional[Union[Union[dict, "Document"], list[Union[dict, "Document"]]]] = empty_list()
     technicalRecommendation: Optional[str] = None
@@ -1655,6 +1672,9 @@ class ProductOrService(Dataset):
 
         if self.riskGroup is not None and not isinstance(self.riskGroup, RiskGroup):
             self.riskGroup = RiskGroup(**as_dict(self.riskGroup))
+
+        if self.biosafetyLevel is not None and not isinstance(self.biosafetyLevel, BiosafetyLevel):
+            self.biosafetyLevel = BiosafetyLevel(**as_dict(self.biosafetyLevel))
 
         if self.biosafetyRestrictions is not None and not isinstance(self.biosafetyRestrictions, str):
             self.biosafetyRestrictions = str(self.biosafetyRestrictions)
@@ -3229,6 +3249,9 @@ slots.pathogenIdentification = Slot(uri=EVORAO.pathogenIdentification, name="pat
 slots.riskGroup = Slot(uri=EVORAO.riskGroup, name="riskGroup", curie=EVORAO.curie('riskGroup'),
                    model_uri=EVORAO.riskGroup, domain=None, range=Optional[Union[dict, RiskGroup]])
 
+slots.biosafetyLevel = Slot(uri=EVORAO.biosafetyLevel, name="biosafetyLevel", curie=EVORAO.curie('biosafetyLevel'),
+                   model_uri=EVORAO.biosafetyLevel, domain=None, range=Optional[Union[dict, BiosafetyLevel]])
+
 slots.biosafetyRestrictions = Slot(uri=EVORAO.biosafetyRestrictions, name="biosafetyRestrictions", curie=EVORAO.curie('biosafetyRestrictions'),
                    model_uri=EVORAO.biosafetyRestrictions, domain=None, range=Optional[str])
 
@@ -3891,6 +3914,9 @@ slots.ProductOrService_doi = Slot(uri=EVORAO.doi, name="ProductOrService_doi", c
 
 slots.ProductOrService_riskGroup = Slot(uri=EVORAO.riskGroup, name="ProductOrService_riskGroup", curie=EVORAO.curie('riskGroup'),
                    model_uri=EVORAO.ProductOrService_riskGroup, domain=ProductOrService, range=Optional[Union[dict, RiskGroup]])
+
+slots.ProductOrService_biosafetyLevel = Slot(uri=EVORAO.biosafetyLevel, name="ProductOrService_biosafetyLevel", curie=EVORAO.curie('biosafetyLevel'),
+                   model_uri=EVORAO.ProductOrService_biosafetyLevel, domain=ProductOrService, range=Optional[Union[dict, BiosafetyLevel]])
 
 slots.ProductOrService_biosafetyRestrictions = Slot(uri=EVORAO.biosafetyRestrictions, name="ProductOrService_biosafetyRestrictions", curie=EVORAO.curie('biosafetyRestrictions'),
                    model_uri=EVORAO.ProductOrService_biosafetyRestrictions, domain=ProductOrService, range=Optional[str])

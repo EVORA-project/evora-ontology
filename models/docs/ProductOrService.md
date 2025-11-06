@@ -45,6 +45,15 @@ URI: [EVORAO:ProductOrService](https://w3id.org/evorao/ProductOrService)
         
       ProductOrService : availability
         
+      ProductOrService : biosafetyLevel
+        
+          
+    
+    
+    ProductOrService --> "0..1" BiosafetyLevel : biosafetyLevel
+    click BiosafetyLevel href "../BiosafetyLevel"
+
+        
       ProductOrService : biosafetyRestrictions
         
       ProductOrService : canBeUsedToProduceGmo
@@ -232,6 +241,7 @@ URI: [EVORAO:ProductOrService](https://w3id.org/evorao/ProductOrService)
 | [pathogenIdentification](pathogenIdentification.md) | 1..* <br/> [PathogenIdentification](PathogenIdentification.md) | The identification of the pathogen or group of pathogens (e | direct |
 | [doi](doi.md) | * <br/> [Doi](Doi.md) | A Digital Object Identifier (DOI) that can be related | direct |
 | [riskGroup](riskGroup.md) | 0..1 _recommended_ <br/> [RiskGroup](RiskGroup.md) | The highest risk group related to this resource | direct |
+| [biosafetyLevel](biosafetyLevel.md) | 0..1 <br/> [BiosafetyLevel](BiosafetyLevel.md) | The level of biocontainment required or applied in the facility where the bio... | direct |
 | [biosafetyRestrictions](biosafetyRestrictions.md) | 0..1 <br/> [String](String.md) | Information about guidelines and regulations designed to prevent the exposure... | direct |
 | [canBeUsedToProduceGmo](canBeUsedToProduceGmo.md) | 1 _recommended_ <br/> [Boolean](Boolean.md) | Indicates if the current service or product can be used to produce GMO | direct |
 | [provider](provider.md) | 1 <br/> [Provider](Provider.md) | A provider of this product or service, as a specific organization | direct |
@@ -340,6 +350,7 @@ slots:
 - pathogenIdentification
 - doi
 - riskGroup
+- biosafetyLevel
 - biosafetyRestrictions
 - canBeUsedToProduceGmo
 - provider
@@ -542,6 +553,20 @@ slot_usage:
     range: RiskGroup
     required: false
     recommended: true
+    multivalued: false
+  biosafetyLevel:
+    name: biosafetyLevel
+    description: The level of biocontainment required or applied in the facility where
+      the biological agent is manipulated.
+    title: biosafety level
+    comments:
+    - The Biosafety Level (BSL) reflects the operational safety measures implemented,
+      which may differ from the intrinsic risk defined by the agent’s Risk Group (RG).
+    exact_mappings:
+    - wdp:P1604
+    - bao:0002826
+    range: BiosafetyLevel
+    required: false
     multivalued: false
   biosafetyRestrictions:
     name: biosafetyRestrictions
@@ -947,6 +972,20 @@ slot_usage:
     range: RiskGroup
     required: false
     recommended: true
+    multivalued: false
+  biosafetyLevel:
+    name: biosafetyLevel
+    description: The level of biocontainment required or applied in the facility where
+      the biological agent is manipulated.
+    title: biosafety level
+    comments:
+    - The Biosafety Level (BSL) reflects the operational safety measures implemented,
+      which may differ from the intrinsic risk defined by the agent’s Risk Group (RG).
+    exact_mappings:
+    - wdp:P1604
+    - bao:0002826
+    range: BiosafetyLevel
+    required: false
     multivalued: false
   biosafetyRestrictions:
     name: biosafetyRestrictions
@@ -1380,6 +1419,26 @@ attributes:
     range: RiskGroup
     required: false
     recommended: true
+    multivalued: false
+  biosafetyLevel:
+    name: biosafetyLevel
+    description: The level of biocontainment required or applied in the facility where
+      the biological agent is manipulated.
+    title: biosafety level
+    comments:
+    - The Biosafety Level (BSL) reflects the operational safety measures implemented,
+      which may differ from the intrinsic risk defined by the agent’s Risk Group (RG).
+    from_schema: https://w3id.org/evorao/
+    exact_mappings:
+    - wdp:P1604
+    - bao:0002826
+    rank: 1000
+    alias: biosafetyLevel
+    owner: ProductOrService
+    domain_of:
+    - ProductOrService
+    range: BiosafetyLevel
+    required: false
     multivalued: false
   biosafetyRestrictions:
     name: biosafetyRestrictions

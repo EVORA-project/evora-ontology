@@ -108,7 +108,7 @@ URI: [EVORAO:RiskGroup](https://w3id.org/evorao/RiskGroup)
 
 ## Comments
 
-* Use of Data provider if any or manual import of information from wd:Q125449389, wd:Q125449412, wd:Q125449429, wd:Q125449439
+* The Risk Group (RG) assignments to an item are jurisdiction-dependent and may differ between countries/regions and by material form (e.g., live isolate, inactivated preparation, nucleic acid). Assignments can also change over time. We store here a single reference assignment; users must verify the current, locally applicable assignment with their competent authority.
 
 ## Identifier and Mapping Information
 
@@ -155,8 +155,11 @@ description: Risk group classification guides initial handling of biological age
   with the agent, procedures, and personnel competence
 title: Risk group
 comments:
-- Use of Data provider if any or manual import of information from wd:Q125449389,
-  wd:Q125449412, wd:Q125449429, wd:Q125449439
+- The Risk Group (RG) assignments to an item are jurisdiction-dependent and may differ
+  between countries/regions and by material form (e.g., live isolate, inactivated
+  preparation, nucleic acid). Assignments can also change over time. We store here
+  a single reference assignment; users must verify the current, locally applicable
+  assignment with their competent authority.
 from_schema: https://w3id.org/evorao/
 exact_mappings:
 - wd:Q125449255
@@ -179,8 +182,11 @@ description: Risk group classification guides initial handling of biological age
   with the agent, procedures, and personnel competence
 title: Risk group
 comments:
-- Use of Data provider if any or manual import of information from wd:Q125449389,
-  wd:Q125449412, wd:Q125449429, wd:Q125449439
+- The Risk Group (RG) assignments to an item are jurisdiction-dependent and may differ
+  between countries/regions and by material form (e.g., live isolate, inactivated
+  preparation, nucleic acid). Assignments can also change over time. We store here
+  a single reference assignment; users must verify the current, locally applicable
+  assignment with their competent authority.
 from_schema: https://w3id.org/evorao/
 exact_mappings:
 - wd:Q125449255

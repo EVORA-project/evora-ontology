@@ -32,6 +32,8 @@ URI: [EVORAO:Term](https://w3id.org/evorao/Term)
         click AlternateName href "../AlternateName"
       Term <|-- RiskGroup
         click RiskGroup href "../RiskGroup"
+      Term <|-- BiosafetyLevel
+        click BiosafetyLevel href "../BiosafetyLevel"
       Term <|-- Doi
         click Doi href "../Doi"
       Term <|-- Journal
@@ -110,6 +112,7 @@ URI: [EVORAO:Term](https://w3id.org/evorao/Term)
         * [CommonName](CommonName.md)
         * [AlternateName](AlternateName.md)
         * [RiskGroup](RiskGroup.md)
+        * [BiosafetyLevel](BiosafetyLevel.md)
         * [Doi](Doi.md)
         * [Journal](Journal.md)
         * [PdbReference](PdbReference.md)

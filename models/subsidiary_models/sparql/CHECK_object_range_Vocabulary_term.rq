@@ -79,6 +79,8 @@ WHERE {
       , 
       EVORAO:RiskGroup
       , 
+      EVORAO:BiosafetyLevel
+      , 
       EVORAO:Doi
       , 
       EVORAO:Journal

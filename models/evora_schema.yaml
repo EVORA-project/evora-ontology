@@ -48,7 +48,7 @@ keywords:
 - pathogen collections
 - interoperability
 id: https://w3id.org/evorao/
-version: 1.0.10142
+version: 1.0.10170
 imports:
 - linkml:types
 license: https://creativecommons.org/publicdomain/zero/1.0/
@@ -1537,6 +1537,21 @@ slots:
     range: RiskGroup
     required: false
     recommended: true
+    multivalued: false
+  biosafetyLevel:
+    description: The level of biocontainment required or applied in the facility where
+      the biological agent is manipulated.
+    title: biosafety level
+    comments:
+    - "The Biosafety Level (BSL) reflects the operational safety measures implemented,\
+      \ which may differ from the intrinsic risk defined by the agent\u2019s Risk\
+      \ Group (RG)."
+    from_schema: https://w3id.org/evorao/
+    exact_mappings:
+    - wdp:P1604
+    - bao:0002826
+    range: BiosafetyLevel
+    required: false
     multivalued: false
   biosafetyRestrictions:
     description: Information about guidelines and regulations designed to prevent
@@ -3925,12 +3940,35 @@ classes:
       with the agent, procedures, and personnel competence
     title: Risk group
     comments:
-    - Use of Data provider if any or manual import of information from wd:Q125449389,
-      wd:Q125449412, wd:Q125449429, wd:Q125449439
+    - The Risk Group (RG) assignments to an item are jurisdiction-dependent and may
+      differ between countries/regions and by material form (e.g., live isolate, inactivated
+      preparation, nucleic acid). Assignments can also change over time. We store
+      here a single reference assignment; users must verify the current, locally applicable
+      assignment with their competent authority.
     from_schema: https://w3id.org/evorao/
     exact_mappings:
     - wd:Q125449255
     - wd:Q125449255
+    broad_mappings:
+    - ncit:C95347
+    - ncit:C95347
+    is_a: Term
+  BiosafetyLevel:
+    description: The level of biocontainment required or applied in the facility where
+      the biological agent is manipulated
+    title: Biosafety level
+    comments:
+    - "The Biosafety Level (BSL) reflects the operational safety measures implemented,\
+      \ which may differ from the intrinsic risk defined by the agent\u2019s Risk\
+      \ Group (RG). Use of Data provider if any or manual import of information from\
+      \ wd:Q125449389, wd:Q125449412, wd:Q125449429, wd:Q125449439"
+    from_schema: https://w3id.org/evorao/
+    exact_mappings:
+    - wd:Q898943
+    - wd:Q898943
+    close_mappings:
+    - ncit:C151920
+    - ncit:C151920
     broad_mappings:
     - ncit:C95347
     - ncit:C95347
@@ -5137,6 +5175,7 @@ classes:
     - pathogenIdentification
     - doi
     - riskGroup
+    - biosafetyLevel
     - biosafetyRestrictions
     - canBeUsedToProduceGmo
     - provider
@@ -5327,6 +5366,20 @@ classes:
         range: RiskGroup
         required: false
         recommended: true
+        multivalued: false
+      biosafetyLevel:
+        description: The level of biocontainment required or applied in the facility
+          where the biological agent is manipulated.
+        title: biosafety level
+        comments:
+        - "The Biosafety Level (BSL) reflects the operational safety measures implemented,\
+          \ which may differ from the intrinsic risk defined by the agent\u2019s Risk\
+          \ Group (RG)."
+        exact_mappings:
+        - wdp:P1604
+        - bao:0002826
+        range: BiosafetyLevel
+        required: false
         multivalued: false
       biosafetyRestrictions:
         description: Information about guidelines and regulations designed to prevent
@@ -7528,4 +7581,4 @@ classes:
         required: false
         multivalued: false
 source_file: https://w3id.org/evorao/evorao.owl.ttl
-generation_date: '2025-11-06T15:56:02'
+generation_date: '2025-11-06T16:32:42'

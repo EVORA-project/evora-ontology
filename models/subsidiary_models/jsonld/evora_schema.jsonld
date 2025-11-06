@@ -38,7 +38,7 @@
     "interoperability"
   ],
   "id": "https://w3id.org/evorao/",
-  "version": "1.0.10142",
+  "version": "1.0.10170",
   "imports": [
     "linkml:types"
   ],
@@ -2646,6 +2646,28 @@
       ],
       "range": "RiskGroup",
       "recommended": true,
+      "inlined": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "biosafetyLevel",
+      "definition_uri": "https://w3id.org/evorao/biosafetyLevel",
+      "description": "The level of biocontainment required or applied in the facility where the biological agent is manipulated.",
+      "title": "biosafety level",
+      "comments": [
+        "The Biosafety Level (BSL) reflects the operational safety measures implemented, which may differ from the intrinsic risk defined by the agent\u2019s Risk Group (RG)."
+      ],
+      "from_schema": "https://w3id.org/evorao/",
+      "exact_mappings": [
+        "http://www.wikidata.org/prop/P1604",
+        "http://www.bioassayontology.org/bao#BAO_0002826"
+      ],
+      "slot_uri": "https://w3id.org/evorao/biosafetyLevel",
+      "owner": "ProductOrService",
+      "domain_of": [
+        "ProductOrService"
+      ],
+      "range": "BiosafetyLevel",
       "inlined": true,
       "@type": "SlotDefinition"
     },
@@ -7605,6 +7627,33 @@
       "@type": "SlotDefinition"
     },
     {
+      "name": "ProductOrService_biosafetyLevel",
+      "definition_uri": "https://w3id.org/evorao/biosafetyLevel",
+      "description": "The level of biocontainment required or applied in the facility where the biological agent is manipulated.",
+      "title": "biosafety level",
+      "comments": [
+        "The Biosafety Level (BSL) reflects the operational safety measures implemented, which may differ from the intrinsic risk defined by the agent\u2019s Risk Group (RG)."
+      ],
+      "from_schema": "https://w3id.org/evorao/",
+      "exact_mappings": [
+        "http://www.wikidata.org/prop/P1604",
+        "http://www.bioassayontology.org/bao#BAO_0002826"
+      ],
+      "is_a": "biosafetyLevel",
+      "domain": "ProductOrService",
+      "slot_uri": "https://w3id.org/evorao/biosafetyLevel",
+      "alias": "biosafetyLevel",
+      "owner": "ProductOrService",
+      "domain_of": [
+        "ProductOrService"
+      ],
+      "is_usage_slot": true,
+      "usage_slot_name": "biosafetyLevel",
+      "range": "BiosafetyLevel",
+      "inlined": true,
+      "@type": "SlotDefinition"
+    },
+    {
       "name": "ProductOrService_biosafetyRestrictions",
       "definition_uri": "https://w3id.org/evorao/biosafetyRestrictions",
       "description": "Information about guidelines and regulations designed to prevent the exposure to or release of potentially harmful biological agents. It thereby contributes to protecting people and the environment from biohazards while accessing this product or service",
@@ -11287,7 +11336,7 @@
       "description": "Risk group classification guides initial handling of biological agents in labs but doesn't systematically equate to biosafety levels. Actual risk varies with the agent, procedures, and personnel competence",
       "title": "Risk group",
       "comments": [
-        "Use of Data provider if any or manual import of information from wd:Q125449389, wd:Q125449412, wd:Q125449429, wd:Q125449439"
+        "The Risk Group (RG) assignments to an item are jurisdiction-dependent and may differ between countries/regions and by material form (e.g., live isolate, inactivated preparation, nucleic acid). Assignments can also change over time. We store here a single reference assignment; users must verify the current, locally applicable assignment with their competent authority."
       ],
       "from_schema": "https://w3id.org/evorao/",
       "exact_mappings": [
@@ -11312,6 +11361,43 @@
       ],
       "slot_usage": {},
       "class_uri": "https://w3id.org/evorao/RiskGroup",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "BiosafetyLevel",
+      "definition_uri": "https://w3id.org/evorao/BiosafetyLevel",
+      "description": "The level of biocontainment required or applied in the facility where the biological agent is manipulated",
+      "title": "Biosafety level",
+      "comments": [
+        "The Biosafety Level (BSL) reflects the operational safety measures implemented, which may differ from the intrinsic risk defined by the agent\u2019s Risk Group (RG). Use of Data provider if any or manual import of information from wd:Q125449389, wd:Q125449412, wd:Q125449429, wd:Q125449439"
+      ],
+      "from_schema": "https://w3id.org/evorao/",
+      "exact_mappings": [
+        "wd:Q898943",
+        "wd:Q898943"
+      ],
+      "close_mappings": [
+        "ncit:C151920",
+        "ncit:C151920"
+      ],
+      "broad_mappings": [
+        "ncit:C95347",
+        "ncit:C95347"
+      ],
+      "is_a": "Term",
+      "slots": [
+        "Resource_keyword",
+        "Resource_dateIssued",
+        "Resource_dateModified",
+        "Resource_identifier",
+        "Resource_iri",
+        "Term_title",
+        "Term_description",
+        "Term_weight",
+        "Term_inVocabulary"
+      ],
+      "slot_usage": {},
+      "class_uri": "https://w3id.org/evorao/BiosafetyLevel",
       "@type": "ClassDefinition"
     },
     {
@@ -12494,6 +12580,7 @@
         "ProductOrService_pathogenIdentification",
         "ProductOrService_doi",
         "ProductOrService_riskGroup",
+        "ProductOrService_biosafetyLevel",
         "ProductOrService_biosafetyRestrictions",
         "ProductOrService_canBeUsedToProduceGmo",
         "ProductOrService_provider",
@@ -12560,6 +12647,7 @@
         "ProductOrService_pathogenIdentification",
         "ProductOrService_doi",
         "ProductOrService_riskGroup",
+        "ProductOrService_biosafetyLevel",
         "ProductOrService_biosafetyRestrictions",
         "ProductOrService_canBeUsedToProduceGmo",
         "ProductOrService_provider",
@@ -12622,6 +12710,7 @@
         "ProductOrService_pathogenIdentification",
         "ProductOrService_doi",
         "ProductOrService_riskGroup",
+        "ProductOrService_biosafetyLevel",
         "ProductOrService_biosafetyRestrictions",
         "ProductOrService_canBeUsedToProduceGmo",
         "ProductOrService_provider",
@@ -12684,6 +12773,7 @@
         "ProductOrService_pathogenIdentification",
         "ProductOrService_doi",
         "ProductOrService_riskGroup",
+        "ProductOrService_biosafetyLevel",
         "ProductOrService_biosafetyRestrictions",
         "ProductOrService_canBeUsedToProduceGmo",
         "ProductOrService_provider",
@@ -12757,6 +12847,7 @@
         "ProductOrService_pathogenIdentification",
         "ProductOrService_doi",
         "ProductOrService_riskGroup",
+        "ProductOrService_biosafetyLevel",
         "ProductOrService_biosafetyRestrictions",
         "ProductOrService_canBeUsedToProduceGmo",
         "ProductOrService_provider",
@@ -12829,6 +12920,7 @@
         "ProductOrService_pathogenIdentification",
         "ProductOrService_doi",
         "ProductOrService_riskGroup",
+        "ProductOrService_biosafetyLevel",
         "ProductOrService_biosafetyRestrictions",
         "ProductOrService_canBeUsedToProduceGmo",
         "ProductOrService_provider",
@@ -12915,6 +13007,7 @@
         "ProductOrService_pathogenIdentification",
         "ProductOrService_doi",
         "ProductOrService_riskGroup",
+        "ProductOrService_biosafetyLevel",
         "ProductOrService_biosafetyRestrictions",
         "ProductOrService_canBeUsedToProduceGmo",
         "ProductOrService_provider",
@@ -12989,6 +13082,7 @@
         "ProductOrService_pathogenIdentification",
         "ProductOrService_doi",
         "ProductOrService_riskGroup",
+        "ProductOrService_biosafetyLevel",
         "ProductOrService_biosafetyRestrictions",
         "ProductOrService_canBeUsedToProduceGmo",
         "ProductOrService_provider",
@@ -13061,6 +13155,7 @@
         "ProductOrService_pathogenIdentification",
         "ProductOrService_doi",
         "ProductOrService_riskGroup",
+        "ProductOrService_biosafetyLevel",
         "ProductOrService_biosafetyRestrictions",
         "ProductOrService_canBeUsedToProduceGmo",
         "ProductOrService_provider",
@@ -13141,6 +13236,7 @@
         "ProductOrService_pathogenIdentification",
         "ProductOrService_doi",
         "ProductOrService_riskGroup",
+        "ProductOrService_biosafetyLevel",
         "ProductOrService_biosafetyRestrictions",
         "ProductOrService_canBeUsedToProduceGmo",
         "ProductOrService_provider",
@@ -13237,6 +13333,7 @@
         "ProductOrService_pathogenIdentification",
         "ProductOrService_doi",
         "ProductOrService_riskGroup",
+        "ProductOrService_biosafetyLevel",
         "ProductOrService_biosafetyRestrictions",
         "ProductOrService_canBeUsedToProduceGmo",
         "ProductOrService_provider",
@@ -13334,6 +13431,7 @@
         "ProductOrService_pathogenIdentification",
         "ProductOrService_doi",
         "ProductOrService_riskGroup",
+        "ProductOrService_biosafetyLevel",
         "ProductOrService_biosafetyRestrictions",
         "ProductOrService_canBeUsedToProduceGmo",
         "ProductOrService_provider",
@@ -13426,6 +13524,7 @@
         "ProductOrService_pathogenIdentification",
         "ProductOrService_doi",
         "ProductOrService_riskGroup",
+        "ProductOrService_biosafetyLevel",
         "ProductOrService_biosafetyRestrictions",
         "ProductOrService_canBeUsedToProduceGmo",
         "ProductOrService_provider",
@@ -13514,6 +13613,7 @@
         "ProductOrService_pathogenIdentification",
         "ProductOrService_doi",
         "ProductOrService_riskGroup",
+        "ProductOrService_biosafetyLevel",
         "ProductOrService_biosafetyRestrictions",
         "ProductOrService_canBeUsedToProduceGmo",
         "ProductOrService_provider",
@@ -13598,6 +13698,7 @@
         "ProductOrService_pathogenIdentification",
         "ProductOrService_doi",
         "ProductOrService_riskGroup",
+        "ProductOrService_biosafetyLevel",
         "ProductOrService_biosafetyRestrictions",
         "ProductOrService_canBeUsedToProduceGmo",
         "ProductOrService_provider",
@@ -13686,6 +13787,7 @@
         "ProductOrService_pathogenIdentification",
         "ProductOrService_doi",
         "ProductOrService_riskGroup",
+        "ProductOrService_biosafetyLevel",
         "ProductOrService_biosafetyRestrictions",
         "ProductOrService_canBeUsedToProduceGmo",
         "ProductOrService_provider",
@@ -14167,9 +14269,9 @@
   ],
   "metamodel_version": "1.7.0",
   "source_file": "evora_schema.yaml",
-  "source_file_date": "2025-11-06T14:56:31",
-  "source_file_size": 238254,
-  "generation_date": "2025-11-06T14:56:49",
+  "source_file_date": "2025-11-06T15:33:08",
+  "source_file_size": 240383,
+  "generation_date": "2025-11-06T15:33:24",
   "@type": "SchemaDefinition",
   "@context": [
     "https://w3id.org/linkml/types.context.jsonld",

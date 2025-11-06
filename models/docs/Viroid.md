@@ -45,6 +45,15 @@ URI: [EVORAO:Viroid](https://w3id.org/evorao/Viroid)
     click BiologicalMaterialOrigin href "../BiologicalMaterialOrigin"
 
         
+      Viroid : biosafetyLevel
+        
+          
+    
+    
+    Viroid --> "0..1" BiosafetyLevel : biosafetyLevel
+    click BiosafetyLevel href "../BiosafetyLevel"
+
+        
       Viroid : biosafetyRestrictions
         
       Viroid : canBeUsedToProduceGmo
@@ -372,6 +381,7 @@ URI: [EVORAO:Viroid](https://w3id.org/evorao/Viroid)
 | [pathogenIdentification](pathogenIdentification.md) | 1..* <br/> [PathogenIdentification](PathogenIdentification.md) | The identification of the pathogen or group of pathogens (e | [ProductOrService](ProductOrService.md) |
 | [doi](doi.md) | * <br/> [Doi](Doi.md) | A Digital Object Identifier (DOI) that can be related | [ProductOrService](ProductOrService.md) |
 | [riskGroup](riskGroup.md) | 0..1 _recommended_ <br/> [RiskGroup](RiskGroup.md) | The highest risk group related to this resource | [ProductOrService](ProductOrService.md) |
+| [biosafetyLevel](biosafetyLevel.md) | 0..1 <br/> [BiosafetyLevel](BiosafetyLevel.md) | The level of biocontainment required or applied in the facility where the bio... | [ProductOrService](ProductOrService.md) |
 | [biosafetyRestrictions](biosafetyRestrictions.md) | 0..1 <br/> [String](String.md) | Information about guidelines and regulations designed to prevent the exposure... | [ProductOrService](ProductOrService.md) |
 | [canBeUsedToProduceGmo](canBeUsedToProduceGmo.md) | 1 _recommended_ <br/> [Boolean](Boolean.md) | Indicates if the current service or product can be used to produce GMO | [ProductOrService](ProductOrService.md) |
 | [provider](provider.md) | 1 <br/> [Provider](Provider.md) | A provider of this product or service, as a specific organization | [ProductOrService](ProductOrService.md) |
@@ -1161,6 +1171,26 @@ attributes:
     range: RiskGroup
     required: false
     recommended: true
+    multivalued: false
+  biosafetyLevel:
+    name: biosafetyLevel
+    description: The level of biocontainment required or applied in the facility where
+      the biological agent is manipulated.
+    title: biosafety level
+    comments:
+    - The Biosafety Level (BSL) reflects the operational safety measures implemented,
+      which may differ from the intrinsic risk defined by the agent’s Risk Group (RG).
+    from_schema: https://w3id.org/evorao/
+    exact_mappings:
+    - wdp:P1604
+    - bao:0002826
+    rank: 1000
+    alias: biosafetyLevel
+    owner: Viroid
+    domain_of:
+    - ProductOrService
+    range: BiosafetyLevel
+    required: false
     multivalued: false
   biosafetyRestrictions:
     name: biosafetyRestrictions

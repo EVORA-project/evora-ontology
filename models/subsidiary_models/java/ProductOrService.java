@@ -5,7 +5,7 @@ import lombok.*;
 
 
 
-/* version: 1.0.10142 */
+/* version: 1.0.10170 */
 
 
 /**
@@ -27,6 +27,7 @@ public abstract class ProductOrService extends Dataset {
   private List<PathogenIdentification> pathogenIdentification;
   private List<Doi> doi;
   private RiskGroup riskGroup;
+  private BiosafetyLevel biosafetyLevel;
   private String biosafetyRestrictions;
   private boolean canBeUsedToProduceGmo;
   private Provider provider;

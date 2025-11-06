@@ -100,6 +100,7 @@ URI: [EVORAO:Vocabulary](https://w3id.org/evorao/Vocabulary)
 | [VirusName](VirusName.md) | [inVocabulary](inVocabulary.md) | range | [Vocabulary](Vocabulary.md) |
 | [AlternateName](AlternateName.md) | [inVocabulary](inVocabulary.md) | range | [Vocabulary](Vocabulary.md) |
 | [RiskGroup](RiskGroup.md) | [inVocabulary](inVocabulary.md) | range | [Vocabulary](Vocabulary.md) |
+| [BiosafetyLevel](BiosafetyLevel.md) | [inVocabulary](inVocabulary.md) | range | [Vocabulary](Vocabulary.md) |
 | [Doi](Doi.md) | [inVocabulary](inVocabulary.md) | range | [Vocabulary](Vocabulary.md) |
 | [Journal](Journal.md) | [inVocabulary](inVocabulary.md) | range | [Vocabulary](Vocabulary.md) |
 | [PdbReference](PdbReference.md) | [inVocabulary](inVocabulary.md) | range | [Vocabulary](Vocabulary.md) |
