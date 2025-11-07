@@ -135,6 +135,7 @@ URI: [EVORAO:BiosafetyLevel](https://w3id.org/evorao/BiosafetyLevel)
 | native | EVORAO:BiosafetyLevel |
 | exact | wd:Q898943, wd:Q898943 |
 | broad | ncit:C95347, ncit:C95347 |
+| related | wd:Q18396533, wd:Q18396535, wd:Q18396538, wd:Q18396539, wd:Q18396533, wd:Q18396535, wd:Q18396538, wd:Q18396539 |
 | close | ncit:C151920, ncit:C151920 |
 
 
@@ -168,6 +169,15 @@ exact_mappings:
 close_mappings:
 - ncit:C151920
 - ncit:C151920
+related_mappings:
+- wd:Q18396533
+- wd:Q18396535
+- wd:Q18396538
+- wd:Q18396539
+- wd:Q18396533
+- wd:Q18396535
+- wd:Q18396538
+- wd:Q18396539
 broad_mappings:
 - ncit:C95347
 - ncit:C95347
@@ -197,6 +207,15 @@ exact_mappings:
 close_mappings:
 - ncit:C151920
 - ncit:C151920
+related_mappings:
+- wd:Q18396533
+- wd:Q18396535
+- wd:Q18396538
+- wd:Q18396539
+- wd:Q18396533
+- wd:Q18396535
+- wd:Q18396538
+- wd:Q18396539
 broad_mappings:
 - ncit:C95347
 - ncit:C95347

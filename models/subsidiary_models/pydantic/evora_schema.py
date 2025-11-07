@@ -27,7 +27,7 @@ from pydantic import (
 
 
 metamodel_version = "None"
-version = "1.0.10608"
+version = "1.0.10623"
 
 
 class ConfiguredBaseModel(BaseModel):
@@ -99,7 +99,7 @@ linkml_meta = LinkMLMeta({'comments': ['EVORAO is an ontology for standardized m
                     'pathogens. EVORAO is compatible with DCAT, making it '
                     'well-suited for efficiently cataloguing pathogen collections '
                     'and related resources.',
-     'generation_date': '2025-11-07T09:47:58',
+     'generation_date': '2025-11-07T11:42:19',
      'id': 'https://w3id.org/evorao/',
      'imports': ['linkml:types'],
      'in_language': 'en',
@@ -2327,6 +2327,14 @@ class RiskGroup(Term):
                       'wd:Q125449439.'],
          'exact_mappings': ['wd:Q125449255', 'wd:Q125449255'],
          'from_schema': 'https://w3id.org/evorao/',
+         'related_mappings': ['wd:Q125449389',
+                              'wd:Q125449412',
+                              'wd:Q125449429',
+                              'wd:Q125449439',
+                              'wd:Q125449389',
+                              'wd:Q125449412',
+                              'wd:Q125449429',
+                              'wd:Q125449439'],
          'title': 'Risk group'})
 
     title: str = Field(default=..., title="title", description="""A name given to the resource.""", json_schema_extra = { "linkml_meta": {'alias': 'title',
@@ -2423,6 +2431,14 @@ class BiosafetyLevel(Term):
                       'wd:Q18396539.'],
          'exact_mappings': ['wd:Q898943', 'wd:Q898943'],
          'from_schema': 'https://w3id.org/evorao/',
+         'related_mappings': ['wd:Q18396533',
+                              'wd:Q18396535',
+                              'wd:Q18396538',
+                              'wd:Q18396539',
+                              'wd:Q18396533',
+                              'wd:Q18396535',
+                              'wd:Q18396538',
+                              'wd:Q18396539'],
          'title': 'Biosafety level'})
 
     title: str = Field(default=..., title="title", description="""A name given to the resource.""", json_schema_extra = { "linkml_meta": {'alias': 'title',
@@ -6457,7 +6473,9 @@ class ProductOrService(Dataset):
                                                   'multivalued': False,
                                                   'name': 'biosafetyRestrictions',
                                                   'range': 'string',
-                                                  'related_mappings': ['bao:0002826'],
+                                                  'related_mappings': ['bao:0002826',
+                                                                       'wdp:P12663',
+                                                                       'wdp:P1604'],
                                                   'required': False,
                                                   'title': 'biosafety restrictions'},
                         'canBeUsedToProduceGmo': {'broad_mappings': ['schema:potentialUse'],
@@ -6883,7 +6901,7 @@ class ProductOrService(Dataset):
          'exact_mappings': ['wdp:P1604', 'bao:0002826']} })
     biosafetyRestrictions: Optional[str] = Field(default=None, title="biosafety restrictions", description="""Information about guidelines and regulations designed to prevent the exposure to or release of potentially harmful biological agents. It thereby contributes to protecting people and the environment from biohazards while accessing this product or service.""", json_schema_extra = { "linkml_meta": {'alias': 'biosafetyRestrictions',
          'domain_of': ['ProductOrService'],
-         'related_mappings': ['bao:0002826']} })
+         'related_mappings': ['bao:0002826', 'wdp:P12663', 'wdp:P1604']} })
     canBeUsedToProduceGmo: bool = Field(default=..., title="can be used to produce GMO", description="""Indicates if the current service or product can be used to produce GMO.""", json_schema_extra = { "linkml_meta": {'alias': 'canBeUsedToProduceGmo',
          'broad_mappings': ['schema:potentialUse'],
          'comments': ['Set to TRUE if it can produce GMO.',
@@ -7127,7 +7145,7 @@ class Service(ProductOrService):
          'exact_mappings': ['wdp:P1604', 'bao:0002826']} })
     biosafetyRestrictions: Optional[str] = Field(default=None, title="biosafety restrictions", description="""Information about guidelines and regulations designed to prevent the exposure to or release of potentially harmful biological agents. It thereby contributes to protecting people and the environment from biohazards while accessing this product or service.""", json_schema_extra = { "linkml_meta": {'alias': 'biosafetyRestrictions',
          'domain_of': ['ProductOrService'],
-         'related_mappings': ['bao:0002826']} })
+         'related_mappings': ['bao:0002826', 'wdp:P12663', 'wdp:P1604']} })
     canBeUsedToProduceGmo: bool = Field(default=..., title="can be used to produce GMO", description="""Indicates if the current service or product can be used to produce GMO.""", json_schema_extra = { "linkml_meta": {'alias': 'canBeUsedToProduceGmo',
          'broad_mappings': ['schema:potentialUse'],
          'comments': ['Set to TRUE if it can produce GMO.',
@@ -7507,7 +7525,7 @@ class Product(ProductOrService):
          'exact_mappings': ['wdp:P1604', 'bao:0002826']} })
     biosafetyRestrictions: Optional[str] = Field(default=None, title="biosafety restrictions", description="""Information about guidelines and regulations designed to prevent the exposure to or release of potentially harmful biological agents. It thereby contributes to protecting people and the environment from biohazards while accessing this product or service.""", json_schema_extra = { "linkml_meta": {'alias': 'biosafetyRestrictions',
          'domain_of': ['ProductOrService'],
-         'related_mappings': ['bao:0002826']} })
+         'related_mappings': ['bao:0002826', 'wdp:P12663', 'wdp:P1604']} })
     canBeUsedToProduceGmo: bool = Field(default=..., title="can be used to produce GMO", description="""Indicates if the current service or product can be used to produce GMO.""", json_schema_extra = { "linkml_meta": {'alias': 'canBeUsedToProduceGmo',
          'broad_mappings': ['schema:potentialUse'],
          'comments': ['Set to TRUE if it can produce GMO.',
@@ -7808,7 +7826,7 @@ class Antibody(Product):
          'exact_mappings': ['wdp:P1604', 'bao:0002826']} })
     biosafetyRestrictions: Optional[str] = Field(default=None, title="biosafety restrictions", description="""Information about guidelines and regulations designed to prevent the exposure to or release of potentially harmful biological agents. It thereby contributes to protecting people and the environment from biohazards while accessing this product or service.""", json_schema_extra = { "linkml_meta": {'alias': 'biosafetyRestrictions',
          'domain_of': ['ProductOrService'],
-         'related_mappings': ['bao:0002826']} })
+         'related_mappings': ['bao:0002826', 'wdp:P12663', 'wdp:P1604']} })
     canBeUsedToProduceGmo: bool = Field(default=..., title="can be used to produce GMO", description="""Indicates if the current service or product can be used to produce GMO.""", json_schema_extra = { "linkml_meta": {'alias': 'canBeUsedToProduceGmo',
          'broad_mappings': ['schema:potentialUse'],
          'comments': ['Set to TRUE if it can produce GMO.',
@@ -8068,7 +8086,7 @@ class Hybridoma(Antibody):
          'exact_mappings': ['wdp:P1604', 'bao:0002826']} })
     biosafetyRestrictions: Optional[str] = Field(default=None, title="biosafety restrictions", description="""Information about guidelines and regulations designed to prevent the exposure to or release of potentially harmful biological agents. It thereby contributes to protecting people and the environment from biohazards while accessing this product or service.""", json_schema_extra = { "linkml_meta": {'alias': 'biosafetyRestrictions',
          'domain_of': ['ProductOrService'],
-         'related_mappings': ['bao:0002826']} })
+         'related_mappings': ['bao:0002826', 'wdp:P12663', 'wdp:P1604']} })
     canBeUsedToProduceGmo: bool = Field(default=..., title="can be used to produce GMO", description="""Indicates if the current service or product can be used to produce GMO.""", json_schema_extra = { "linkml_meta": {'alias': 'canBeUsedToProduceGmo',
          'broad_mappings': ['schema:potentialUse'],
          'comments': ['Set to TRUE if it can produce GMO.',
@@ -8689,7 +8707,7 @@ class Protein(Product):
          'exact_mappings': ['wdp:P1604', 'bao:0002826']} })
     biosafetyRestrictions: Optional[str] = Field(default=None, title="biosafety restrictions", description="""Information about guidelines and regulations designed to prevent the exposure to or release of potentially harmful biological agents. It thereby contributes to protecting people and the environment from biohazards while accessing this product or service.""", json_schema_extra = { "linkml_meta": {'alias': 'biosafetyRestrictions',
          'domain_of': ['ProductOrService'],
-         'related_mappings': ['bao:0002826']} })
+         'related_mappings': ['bao:0002826', 'wdp:P12663', 'wdp:P1604']} })
     canBeUsedToProduceGmo: bool = Field(default=..., title="can be used to produce GMO", description="""Indicates if the current service or product can be used to produce GMO.""", json_schema_extra = { "linkml_meta": {'alias': 'canBeUsedToProduceGmo',
          'broad_mappings': ['schema:potentialUse'],
          'comments': ['Set to TRUE if it can produce GMO.',
@@ -9189,7 +9207,7 @@ class NucleicAcid(Product):
          'exact_mappings': ['wdp:P1604', 'bao:0002826']} })
     biosafetyRestrictions: Optional[str] = Field(default=None, title="biosafety restrictions", description="""Information about guidelines and regulations designed to prevent the exposure to or release of potentially harmful biological agents. It thereby contributes to protecting people and the environment from biohazards while accessing this product or service.""", json_schema_extra = { "linkml_meta": {'alias': 'biosafetyRestrictions',
          'domain_of': ['ProductOrService'],
-         'related_mappings': ['bao:0002826']} })
+         'related_mappings': ['bao:0002826', 'wdp:P12663', 'wdp:P1604']} })
     canBeUsedToProduceGmo: bool = Field(default=..., title="can be used to produce GMO", description="""Indicates if the current service or product can be used to produce GMO.""", json_schema_extra = { "linkml_meta": {'alias': 'canBeUsedToProduceGmo',
          'broad_mappings': ['schema:potentialUse'],
          'comments': ['Set to TRUE if it can produce GMO.',
@@ -9479,7 +9497,7 @@ class DetectionKit(Product):
          'exact_mappings': ['wdp:P1604', 'bao:0002826']} })
     biosafetyRestrictions: Optional[str] = Field(default=None, title="biosafety restrictions", description="""Information about guidelines and regulations designed to prevent the exposure to or release of potentially harmful biological agents. It thereby contributes to protecting people and the environment from biohazards while accessing this product or service.""", json_schema_extra = { "linkml_meta": {'alias': 'biosafetyRestrictions',
          'domain_of': ['ProductOrService'],
-         'related_mappings': ['bao:0002826']} })
+         'related_mappings': ['bao:0002826', 'wdp:P12663', 'wdp:P1604']} })
     canBeUsedToProduceGmo: bool = Field(default=..., title="can be used to produce GMO", description="""Indicates if the current service or product can be used to produce GMO.""", json_schema_extra = { "linkml_meta": {'alias': 'canBeUsedToProduceGmo',
          'broad_mappings': ['schema:potentialUse'],
          'comments': ['Set to TRUE if it can produce GMO.',
@@ -9730,7 +9748,7 @@ class Bundle(Product):
          'exact_mappings': ['wdp:P1604', 'bao:0002826']} })
     biosafetyRestrictions: Optional[str] = Field(default=None, title="biosafety restrictions", description="""Information about guidelines and regulations designed to prevent the exposure to or release of potentially harmful biological agents. It thereby contributes to protecting people and the environment from biohazards while accessing this product or service.""", json_schema_extra = { "linkml_meta": {'alias': 'biosafetyRestrictions',
          'domain_of': ['ProductOrService'],
-         'related_mappings': ['bao:0002826']} })
+         'related_mappings': ['bao:0002826', 'wdp:P12663', 'wdp:P1604']} })
     canBeUsedToProduceGmo: bool = Field(default=..., title="can be used to produce GMO", description="""Indicates if the current service or product can be used to produce GMO.""", json_schema_extra = { "linkml_meta": {'alias': 'canBeUsedToProduceGmo',
          'broad_mappings': ['schema:potentialUse'],
          'comments': ['Set to TRUE if it can produce GMO.',
@@ -10323,7 +10341,7 @@ class Pathogen(Product):
          'exact_mappings': ['wdp:P1604', 'bao:0002826']} })
     biosafetyRestrictions: Optional[str] = Field(default=None, title="biosafety restrictions", description="""Information about guidelines and regulations designed to prevent the exposure to or release of potentially harmful biological agents. It thereby contributes to protecting people and the environment from biohazards while accessing this product or service.""", json_schema_extra = { "linkml_meta": {'alias': 'biosafetyRestrictions',
          'domain_of': ['ProductOrService'],
-         'related_mappings': ['bao:0002826']} })
+         'related_mappings': ['bao:0002826', 'wdp:P12663', 'wdp:P1604']} })
     canBeUsedToProduceGmo: bool = Field(default=..., title="can be used to produce GMO", description="""Indicates if the current service or product can be used to produce GMO.""", json_schema_extra = { "linkml_meta": {'alias': 'canBeUsedToProduceGmo',
          'broad_mappings': ['schema:potentialUse'],
          'comments': ['Set to TRUE if it can produce GMO.',
@@ -10691,7 +10709,7 @@ class Virus(Pathogen):
          'exact_mappings': ['wdp:P1604', 'bao:0002826']} })
     biosafetyRestrictions: Optional[str] = Field(default=None, title="biosafety restrictions", description="""Information about guidelines and regulations designed to prevent the exposure to or release of potentially harmful biological agents. It thereby contributes to protecting people and the environment from biohazards while accessing this product or service.""", json_schema_extra = { "linkml_meta": {'alias': 'biosafetyRestrictions',
          'domain_of': ['ProductOrService'],
-         'related_mappings': ['bao:0002826']} })
+         'related_mappings': ['bao:0002826', 'wdp:P12663', 'wdp:P1604']} })
     canBeUsedToProduceGmo: bool = Field(default=..., title="can be used to produce GMO", description="""Indicates if the current service or product can be used to produce GMO.""", json_schema_extra = { "linkml_meta": {'alias': 'canBeUsedToProduceGmo',
          'broad_mappings': ['schema:potentialUse'],
          'comments': ['Set to TRUE if it can produce GMO.',
@@ -11000,7 +11018,7 @@ class Bacterium(Pathogen):
          'exact_mappings': ['wdp:P1604', 'bao:0002826']} })
     biosafetyRestrictions: Optional[str] = Field(default=None, title="biosafety restrictions", description="""Information about guidelines and regulations designed to prevent the exposure to or release of potentially harmful biological agents. It thereby contributes to protecting people and the environment from biohazards while accessing this product or service.""", json_schema_extra = { "linkml_meta": {'alias': 'biosafetyRestrictions',
          'domain_of': ['ProductOrService'],
-         'related_mappings': ['bao:0002826']} })
+         'related_mappings': ['bao:0002826', 'wdp:P12663', 'wdp:P1604']} })
     canBeUsedToProduceGmo: bool = Field(default=..., title="can be used to produce GMO", description="""Indicates if the current service or product can be used to produce GMO.""", json_schema_extra = { "linkml_meta": {'alias': 'canBeUsedToProduceGmo',
          'broad_mappings': ['schema:potentialUse'],
          'comments': ['Set to TRUE if it can produce GMO.',
@@ -11307,7 +11325,7 @@ class Fungus(Pathogen):
          'exact_mappings': ['wdp:P1604', 'bao:0002826']} })
     biosafetyRestrictions: Optional[str] = Field(default=None, title="biosafety restrictions", description="""Information about guidelines and regulations designed to prevent the exposure to or release of potentially harmful biological agents. It thereby contributes to protecting people and the environment from biohazards while accessing this product or service.""", json_schema_extra = { "linkml_meta": {'alias': 'biosafetyRestrictions',
          'domain_of': ['ProductOrService'],
-         'related_mappings': ['bao:0002826']} })
+         'related_mappings': ['bao:0002826', 'wdp:P12663', 'wdp:P1604']} })
     canBeUsedToProduceGmo: bool = Field(default=..., title="can be used to produce GMO", description="""Indicates if the current service or product can be used to produce GMO.""", json_schema_extra = { "linkml_meta": {'alias': 'canBeUsedToProduceGmo',
          'broad_mappings': ['schema:potentialUse'],
          'comments': ['Set to TRUE if it can produce GMO.',
@@ -11610,7 +11628,7 @@ class Protozoan(Pathogen):
          'exact_mappings': ['wdp:P1604', 'bao:0002826']} })
     biosafetyRestrictions: Optional[str] = Field(default=None, title="biosafety restrictions", description="""Information about guidelines and regulations designed to prevent the exposure to or release of potentially harmful biological agents. It thereby contributes to protecting people and the environment from biohazards while accessing this product or service.""", json_schema_extra = { "linkml_meta": {'alias': 'biosafetyRestrictions',
          'domain_of': ['ProductOrService'],
-         'related_mappings': ['bao:0002826']} })
+         'related_mappings': ['bao:0002826', 'wdp:P12663', 'wdp:P1604']} })
     canBeUsedToProduceGmo: bool = Field(default=..., title="can be used to produce GMO", description="""Indicates if the current service or product can be used to produce GMO.""", json_schema_extra = { "linkml_meta": {'alias': 'canBeUsedToProduceGmo',
          'broad_mappings': ['schema:potentialUse'],
          'comments': ['Set to TRUE if it can produce GMO.',
@@ -11905,7 +11923,7 @@ class Viroid(Pathogen):
          'exact_mappings': ['wdp:P1604', 'bao:0002826']} })
     biosafetyRestrictions: Optional[str] = Field(default=None, title="biosafety restrictions", description="""Information about guidelines and regulations designed to prevent the exposure to or release of potentially harmful biological agents. It thereby contributes to protecting people and the environment from biohazards while accessing this product or service.""", json_schema_extra = { "linkml_meta": {'alias': 'biosafetyRestrictions',
          'domain_of': ['ProductOrService'],
-         'related_mappings': ['bao:0002826']} })
+         'related_mappings': ['bao:0002826', 'wdp:P12663', 'wdp:P1604']} })
     canBeUsedToProduceGmo: bool = Field(default=..., title="can be used to produce GMO", description="""Indicates if the current service or product can be used to produce GMO.""", json_schema_extra = { "linkml_meta": {'alias': 'canBeUsedToProduceGmo',
          'broad_mappings': ['schema:potentialUse'],
          'comments': ['Set to TRUE if it can produce GMO.',
@@ -12208,7 +12226,7 @@ class Prion(Pathogen):
          'exact_mappings': ['wdp:P1604', 'bao:0002826']} })
     biosafetyRestrictions: Optional[str] = Field(default=None, title="biosafety restrictions", description="""Information about guidelines and regulations designed to prevent the exposure to or release of potentially harmful biological agents. It thereby contributes to protecting people and the environment from biohazards while accessing this product or service.""", json_schema_extra = { "linkml_meta": {'alias': 'biosafetyRestrictions',
          'domain_of': ['ProductOrService'],
-         'related_mappings': ['bao:0002826']} })
+         'related_mappings': ['bao:0002826', 'wdp:P12663', 'wdp:P1604']} })
     canBeUsedToProduceGmo: bool = Field(default=..., title="can be used to produce GMO", description="""Indicates if the current service or product can be used to produce GMO.""", json_schema_extra = { "linkml_meta": {'alias': 'canBeUsedToProduceGmo',
          'broad_mappings': ['schema:potentialUse'],
          'comments': ['Set to TRUE if it can produce GMO.',

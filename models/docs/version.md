@@ -22,28 +22,28 @@ Alias: version
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [Service](Service.md) | An intangible offering characterized by an activity, performance, or facilita... |  no  |
-| [Protein](Protein.md) | A protein as a derived product from a pathogen |  no  |
+| [NucleicAcid](NucleicAcid.md) | Nucleic acid related to a pathogen |  no  |
+| [Dataset](Dataset.md) | A collection of data, published or curated by a single agent, and available f... |  yes  |
+| [Bundle](Bundle.md) | A grouping of products and/or services intentionally combined into a single o... |  no  |
+| [Hybridoma](Hybridoma.md) | An hybridoma that provides antibodies that can be related to a pathogen |  no  |
 | [Bacterium](Bacterium.md) | The bacterium as a biological material |  no  |
-| [Catalogue](Catalogue.md) | A curated collection of metadata about resources |  no  |
+| [Pathogen](Pathogen.md) | Biological entity that causes disease in its host, which is typically an infe... |  no  |
+| [Fungus](Fungus.md) | The fungus as a biological material |  no  |
+| [Collection](Collection.md) | Set of products and services with some common characteristics |  no  |
+| [Protozoan](Protozoan.md) | The protozoan as a biological material |  no  |
 | [Virus](Virus.md) | The virus as a biological material |  no  |
 | [Viroid](Viroid.md) | The viroid as a biological material |  no  |
-| [Collection](Collection.md) | Set of products and services with some common characteristics |  no  |
-| [DetectionKit](DetectionKit.md) | A detection kit for specific pathogens |  no  |
-| [Dataset](Dataset.md) | A collection of data, published or curated by a single agent, and available f... |  yes  |
-| [Hybridoma](Hybridoma.md) | An hybridoma that provides antibodies that can be related to a pathogen |  no  |
-| [Product](Product.md) | A tangible, physical item made available by a provider for use, consumption, ... |  no  |
-| [Antibody](Antibody.md) | Protein that can bind to certain types of foreign bodies, such as pathogens |  no  |
-| [Bundle](Bundle.md) | A grouping of products and/or services intentionally combined into a single o... |  no  |
-| [Fungus](Fungus.md) | The fungus as a biological material |  no  |
-| [Version](Version.md) | Numeric code assigned to identify a particular historical version of a work (... |  yes  |
-| [Taxonomy](Taxonomy.md) | A structured representation of data about the classification and naming of bi... |  yes  |
-| [NucleicAcid](NucleicAcid.md) | Nucleic acid related to a pathogen |  no  |
 | [ProductOrService](ProductOrService.md) | An offering provided by a provider, which may be tangible (a product) or inta... |  no  |
-| [Vocabulary](Vocabulary.md) | A subset of words or phrases specific to a particular subject or field |  no  |
-| [Pathogen](Pathogen.md) | Biological entity that causes disease in its host, which is typically an infe... |  no  |
-| [Protozoan](Protozoan.md) | The protozoan as a biological material |  no  |
+| [DetectionKit](DetectionKit.md) | A detection kit for specific pathogens |  no  |
+| [Version](Version.md) | Numeric code assigned to identify a particular historical version of a work (... |  yes  |
 | [Prion](Prion.md) | The prion as a biological material |  no  |
+| [Taxonomy](Taxonomy.md) | A structured representation of data about the classification and naming of bi... |  yes  |
+| [Antibody](Antibody.md) | Protein that can bind to certain types of foreign bodies, such as pathogens |  no  |
+| [Vocabulary](Vocabulary.md) | A subset of words or phrases specific to a particular subject or field |  no  |
+| [Protein](Protein.md) | A protein as a derived product from a pathogen |  no  |
+| [Catalogue](Catalogue.md) | A curated collection of metadata about resources |  no  |
+| [Product](Product.md) | A tangible, physical item made available by a provider for use, consumption, ... |  no  |
+| [Service](Service.md) | An intangible offering characterized by an activity, performance, or facilita... |  no  |
 
 
 

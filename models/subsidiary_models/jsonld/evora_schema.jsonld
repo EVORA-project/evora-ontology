@@ -38,7 +38,7 @@
     "interoperability"
   ],
   "id": "https://w3id.org/evorao/",
-  "version": "1.0.10608",
+  "version": "1.0.10623",
   "imports": [
     "linkml:types"
   ],
@@ -2678,7 +2678,9 @@
       "title": "biosafety restrictions",
       "from_schema": "https://w3id.org/evorao/",
       "related_mappings": [
-        "http://www.bioassayontology.org/bao#BAO_0002826"
+        "http://www.bioassayontology.org/bao#BAO_0002826",
+        "http://www.wikidata.org/prop/P12663",
+        "http://www.wikidata.org/prop/P1604"
       ],
       "slot_uri": "https://w3id.org/evorao/biosafetyRestrictions",
       "owner": "ProductOrService",
@@ -7663,7 +7665,9 @@
       "title": "biosafety restrictions",
       "from_schema": "https://w3id.org/evorao/",
       "related_mappings": [
-        "http://www.bioassayontology.org/bao#BAO_0002826"
+        "http://www.bioassayontology.org/bao#BAO_0002826",
+        "http://www.wikidata.org/prop/P12663",
+        "http://www.wikidata.org/prop/P1604"
       ],
       "is_a": "biosafetyRestrictions",
       "domain": "ProductOrService",
@@ -11335,6 +11339,16 @@
         "wd:Q125449255",
         "wd:Q125449255"
       ],
+      "related_mappings": [
+        "wd:Q125449389",
+        "wd:Q125449412",
+        "wd:Q125449429",
+        "wd:Q125449439",
+        "wd:Q125449389",
+        "wd:Q125449412",
+        "wd:Q125449429",
+        "wd:Q125449439"
+      ],
       "broad_mappings": [
         "ncit:C95347",
         "ncit:C95347"
@@ -11372,6 +11386,16 @@
       "close_mappings": [
         "ncit:C151920",
         "ncit:C151920"
+      ],
+      "related_mappings": [
+        "wd:Q18396533",
+        "wd:Q18396535",
+        "wd:Q18396538",
+        "wd:Q18396539",
+        "wd:Q18396533",
+        "wd:Q18396535",
+        "wd:Q18396538",
+        "wd:Q18396539"
       ],
       "broad_mappings": [
         "ncit:C95347",
@@ -14263,9 +14287,9 @@
   ],
   "metamodel_version": "1.7.0",
   "source_file": "evora_schema.yaml",
-  "source_file_date": "2025-11-07T08:48:18",
-  "source_file_size": 240423,
-  "generation_date": "2025-11-07T08:48:34",
+  "source_file_date": "2025-11-07T10:42:41",
+  "source_file_size": 240853,
+  "generation_date": "2025-11-07T10:42:57",
   "@type": "SchemaDefinition",
   "@context": [
     "https://w3id.org/linkml/types.context.jsonld",

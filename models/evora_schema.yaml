@@ -48,7 +48,7 @@ keywords:
 - pathogen collections
 - interoperability
 id: https://w3id.org/evorao/
-version: 1.0.10608
+version: 1.0.10623
 imports:
 - linkml:types
 license: https://creativecommons.org/publicdomain/zero/1.0/
@@ -1555,6 +1555,8 @@ slots:
     from_schema: https://w3id.org/evorao/
     related_mappings:
     - bao:0002826
+    - wdp:P12663
+    - wdp:P1604
     domain_of:
     - ProductOrService
     range: string
@@ -3949,6 +3951,15 @@ classes:
     exact_mappings:
     - wd:Q125449255
     - wd:Q125449255
+    related_mappings:
+    - wd:Q125449389
+    - wd:Q125449412
+    - wd:Q125449429
+    - wd:Q125449439
+    - wd:Q125449389
+    - wd:Q125449412
+    - wd:Q125449429
+    - wd:Q125449439
     broad_mappings:
     - ncit:C95347
     - ncit:C95347
@@ -3971,6 +3982,15 @@ classes:
     close_mappings:
     - ncit:C151920
     - ncit:C151920
+    related_mappings:
+    - wd:Q18396533
+    - wd:Q18396535
+    - wd:Q18396538
+    - wd:Q18396539
+    - wd:Q18396533
+    - wd:Q18396535
+    - wd:Q18396538
+    - wd:Q18396539
     broad_mappings:
     - ncit:C95347
     - ncit:C95347
@@ -5397,6 +5417,8 @@ classes:
         title: biosafety restrictions
         related_mappings:
         - bao:0002826
+        - wdp:P12663
+        - wdp:P1604
         domain_of:
         - ProductOrService
         range: string
@@ -7587,4 +7609,4 @@ classes:
         required: false
         multivalued: false
 source_file: https://w3id.org/evorao/evorao.owl.ttl
-generation_date: '2025-11-07T09:47:58'
+generation_date: '2025-11-07T11:42:19'

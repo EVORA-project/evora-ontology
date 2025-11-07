@@ -135,6 +135,7 @@ URI: [EVORAO:RiskGroup](https://w3id.org/evorao/RiskGroup)
 | native | EVORAO:RiskGroup |
 | exact | wd:Q125449255, wd:Q125449255 |
 | broad | ncit:C95347, ncit:C95347 |
+| related | wd:Q125449389, wd:Q125449412, wd:Q125449429, wd:Q125449439, wd:Q125449389, wd:Q125449412, wd:Q125449429, wd:Q125449439 |
 
 
 
@@ -168,6 +169,15 @@ from_schema: https://w3id.org/evorao/
 exact_mappings:
 - wd:Q125449255
 - wd:Q125449255
+related_mappings:
+- wd:Q125449389
+- wd:Q125449412
+- wd:Q125449429
+- wd:Q125449439
+- wd:Q125449389
+- wd:Q125449412
+- wd:Q125449429
+- wd:Q125449439
 broad_mappings:
 - ncit:C95347
 - ncit:C95347
@@ -198,6 +208,15 @@ from_schema: https://w3id.org/evorao/
 exact_mappings:
 - wd:Q125449255
 - wd:Q125449255
+related_mappings:
+- wd:Q125449389
+- wd:Q125449412
+- wd:Q125449429
+- wd:Q125449439
+- wd:Q125449389
+- wd:Q125449412
+- wd:Q125449429
+- wd:Q125449439
 broad_mappings:
 - ncit:C95347
 - ncit:C95347

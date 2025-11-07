@@ -1511,6 +1511,8 @@ attributes:
     from_schema: https://w3id.org/evorao/
     related_mappings:
     - bao:0002826
+    - wdp:P12663
+    - wdp:P1604
     rank: 1000
     alias: biosafetyRestrictions
     owner: Protein
