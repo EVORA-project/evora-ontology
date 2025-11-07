@@ -166,10 +166,11 @@ slot_usage:
     comments:
     - In cases where no reference sequence exists in public repositories, the corresponding
       FASTA sequence is expected; otherwise, the reference sequence is sufficient.
-      In FASTA format the line before the nucleotide sequence, called the FASTA definition
+      In case the sequence is made of multiple parts several fasta sequences can be
+      provided.
+    - In FASTA format the line before the nucleotide sequence, called the FASTA definition
       line, must begin with a charater ('>'), followed by a unique SeqID (sequence
-      identifier). In case the sequence is made of multiple parts several fasta sequences
-      can be provided.
+      identifier).
     domain_of:
     - Sequence
     range: string
@@ -214,10 +215,11 @@ slot_usage:
     comments:
     - In cases where no reference sequence exists in public repositories, the corresponding
       FASTA sequence is expected; otherwise, the reference sequence is sufficient.
-      In FASTA format the line before the nucleotide sequence, called the FASTA definition
+      In case the sequence is made of multiple parts several fasta sequences can be
+      provided.
+    - In FASTA format the line before the nucleotide sequence, called the FASTA definition
       line, must begin with a charater ('>'), followed by a unique SeqID (sequence
-      identifier). In case the sequence is made of multiple parts several fasta sequences
-      can be provided.
+      identifier).
     domain_of:
     - Sequence
     range: string
@@ -247,10 +249,11 @@ attributes:
     comments:
     - In cases where no reference sequence exists in public repositories, the corresponding
       FASTA sequence is expected; otherwise, the reference sequence is sufficient.
-      In FASTA format the line before the nucleotide sequence, called the FASTA definition
+      In case the sequence is made of multiple parts several fasta sequences can be
+      provided.
+    - In FASTA format the line before the nucleotide sequence, called the FASTA definition
       line, must begin with a charater ('>'), followed by a unique SeqID (sequence
-      identifier). In case the sequence is made of multiple parts several fasta sequences
-      can be provided.
+      identifier).
     from_schema: https://w3id.org/evorao/
     rank: 1000
     alias: sequenceFasta

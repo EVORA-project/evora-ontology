@@ -108,7 +108,8 @@ URI: [EVORAO:RiskGroup](https://w3id.org/evorao/RiskGroup)
 
 ## Comments
 
-* The Risk Group (RG) assignments to an item are jurisdiction-dependent and may differ between countries/regions and by material form (e.g., live isolate, inactivated preparation, nucleic acid). Assignments can also change over time. We store here a single reference assignment; users must verify the current, locally applicable assignment with their competent authority.Using a dedicated data provider for Risk Group instances is recommended. Definitions of existing Risk Groups can also be found at wd:Q125449389, wd:Q125449412, wd:Q125449429, and wd:Q125449439.
+* The Risk Group (RG) assignments to an item are jurisdiction-dependent and may differ between countries/regions and by material form (e.g., live isolate, inactivated preparation, nucleic acid). Assignments can also change over time. We store here a single reference assignment; users must verify the current, locally applicable assignment with their competent authority.
+* Using a dedicated data provider for Risk Group instances is recommended. Definitions of existing Risk Groups can also be found at wd:Q125449389, wd:Q125449412, wd:Q125449429, and wd:Q125449439.
 
 ## Identifier and Mapping Information
 
@@ -159,9 +160,10 @@ comments:
   between countries/regions and by material form (e.g., live isolate, inactivated
   preparation, nucleic acid). Assignments can also change over time. We store here
   a single reference assignment; users must verify the current, locally applicable
-  assignment with their competent authority.Using a dedicated data provider for Risk
-  Group instances is recommended. Definitions of existing Risk Groups can also be
-  found at wd:Q125449389, wd:Q125449412, wd:Q125449429, and wd:Q125449439.
+  assignment with their competent authority.
+- Using a dedicated data provider for Risk Group instances is recommended. Definitions
+  of existing Risk Groups can also be found at wd:Q125449389, wd:Q125449412, wd:Q125449429,
+  and wd:Q125449439.
 from_schema: https://w3id.org/evorao/
 exact_mappings:
 - wd:Q125449255
@@ -188,9 +190,10 @@ comments:
   between countries/regions and by material form (e.g., live isolate, inactivated
   preparation, nucleic acid). Assignments can also change over time. We store here
   a single reference assignment; users must verify the current, locally applicable
-  assignment with their competent authority.Using a dedicated data provider for Risk
-  Group instances is recommended. Definitions of existing Risk Groups can also be
-  found at wd:Q125449389, wd:Q125449412, wd:Q125449429, and wd:Q125449439.
+  assignment with their competent authority.
+- Using a dedicated data provider for Risk Group instances is recommended. Definitions
+  of existing Risk Groups can also be found at wd:Q125449389, wd:Q125449412, wd:Q125449429,
+  and wd:Q125449439.
 from_schema: https://w3id.org/evorao/
 exact_mappings:
 - wd:Q125449255
@@ -205,9 +208,9 @@ attributes:
     description: A name given to the resource.
     title: title
     comments:
-    - 'The title of the item should be as short and descriptive as possible. E.g.
-      for virus products it should basically be based on the following Pattern: ''Virus
-      name'', ''virus host type'', ''collection year'', ''country of collection''
+    - The title of the item should be as short and descriptive as possible.
+    - 'E.g. for virus products it should basically be based on the following Pattern:
+      ''Virus name'', ''virus host type'', ''collection year'', ''country of collection''
       ex ''suspected epidemiological origin'', ''genotype'', ''strain'', ''variant
       name or specific feature.'
     from_schema: https://w3id.org/evorao/
@@ -265,9 +268,9 @@ attributes:
       or processing data. Its value can be negative, with a default set to 0.
     title: weight
     comments:
-    - The lowest weighted Data providers are triggered first, this may be usefull
-      to populate at first entities that are referenced by others (e.g. Version ahead
-      of Rank ahead of Taxon).
+    - The lowest weighted Data providers are triggered first.
+    - This property may be usefull to populate at first entities that are referenced
+      by others (e.g. Version ahead of Rank ahead of Taxon).
     from_schema: https://w3id.org/evorao/
     close_mappings:
     - adms:status

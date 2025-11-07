@@ -48,7 +48,7 @@ keywords:
 - pathogen collections
 - interoperability
 id: https://w3id.org/evorao/
-version: 1.0.10537
+version: 1.0.10608
 imports:
 - linkml:types
 license: https://creativecommons.org/publicdomain/zero/1.0/
@@ -198,9 +198,9 @@ slots:
     description: A name given to the resource.
     title: title
     comments:
-    - 'The title of the item should be as short and descriptive as possible. E.g.
-      for virus products it should basically be based on the following Pattern: ''Virus
-      name'', ''virus host type'', ''collection year'', ''country of collection''
+    - The title of the item should be as short and descriptive as possible.
+    - 'E.g. for virus products it should basically be based on the following Pattern:
+      ''Virus name'', ''virus host type'', ''collection year'', ''country of collection''
       ex ''suspected epidemiological origin'', ''genotype'', ''strain'', ''variant
       name or specific feature.'
     from_schema: https://w3id.org/evorao/
@@ -482,8 +482,9 @@ slots:
     title: content type
     comments:
     - This property characterizes how the content is structured or encoded, independent
-      of the entity type it represents. Values should use MIME types (e.g. application/json,
-      text/csv, text/tab-separated-values, text/x-fasta, application/vnd.genbank).
+      of the entity type it represents.
+    - Values should use MIME types (e.g. application/json, text/csv, text/tab-separated-values,
+      text/x-fasta, application/vnd.genbank).
     from_schema: https://w3id.org/evorao/
     exact_mappings:
     - schema:contentType
@@ -500,7 +501,7 @@ slots:
     title: provided entity type
     comments:
     - This property defines what the response is about, independent of its serialization.
-      Values should be ontology class IRIs (e.g. https://w3id.org/evorao/Virus).
+    - Values should be ontology class IRIs (e.g. https://w3id.org/evorao/Virus).
     from_schema: https://w3id.org/evorao/
     close_mappings:
     - dct:type
@@ -518,9 +519,9 @@ slots:
       or processing data. Its value can be negative, with a default set to 0.
     title: weight
     comments:
-    - The lowest weighted Data providers are triggered first, this may be usefull
-      to populate at first entities that are referenced by others (e.g. Version ahead
-      of Rank ahead of Taxon).
+    - The lowest weighted Data providers are triggered first.
+    - This property may be usefull to populate at first entities that are referenced
+      by others (e.g. Version ahead of Rank ahead of Taxon).
     from_schema: https://w3id.org/evorao/
     close_mappings:
     - adms:status
@@ -746,7 +747,7 @@ slots:
     title: alternate name
     comments:
     - This includes previous names, acronyms, former taxonomic terms, and other variations.
-      This information can serve as keywords for search purposes and as a bridge with
+    - This information can serve as keywords for search purposes and as a bridge with
       other projects that use different naming systems or taxonomies.
     from_schema: https://w3id.org/evorao/
     exact_mappings:
@@ -880,8 +881,7 @@ slots:
     title: taxonomic node ID
     comments:
     - NCBI does not have a taxon_node id, only a taxonomicID. Taxon_node id is Unique  in
-      ICTV= Key of the taxon node !! Could be replaced by a composite key made of
-      'taxonomic ID' + 'has version'.
+      ICTV= Key of the taxon node!
     from_schema: https://w3id.org/evorao/
     close_mappings:
     - dwc:taxonID
@@ -979,10 +979,11 @@ slots:
     comments:
     - In cases where no reference sequence exists in public repositories, the corresponding
       FASTA sequence is expected; otherwise, the reference sequence is sufficient.
-      In FASTA format the line before the nucleotide sequence, called the FASTA definition
+      In case the sequence is made of multiple parts several fasta sequences can be
+      provided.
+    - In FASTA format the line before the nucleotide sequence, called the FASTA definition
       line, must begin with a charater ('>'), followed by a unique SeqID (sequence
-      identifier). In case the sequence is made of multiple parts several fasta sequences
-      can be provided.
+      identifier).
     from_schema: https://w3id.org/evorao/
     domain_of:
     - Sequence
@@ -1540,6 +1541,8 @@ slots:
     exact_mappings:
     - wdp:P1604
     - bao:0002826
+    domain_of:
+    - ProductOrService
     range: BiosafetyLevel
     required: false
     multivalued: false
@@ -1562,8 +1565,9 @@ slots:
       GMO.
     title: can be used to produce GMO
     comments:
-    - Set to TRUE if it can produce GMO. It is recommended to have a value for this
-      field, no value will be understood as unknown.
+    - Set to TRUE if it can produce GMO.
+    - It is recommended to have a value for this field, no value will be understood
+      as unknown.
     from_schema: https://w3id.org/evorao/
     broad_mappings:
     - schema:potentialUse
@@ -3023,8 +3027,8 @@ classes:
         description: A name given to the resource.
         title: title
         comments:
-        - 'The title of the item should be as short and descriptive as possible. E.g.
-          for virus products it should basically be based on the following Pattern:
+        - The title of the item should be as short and descriptive as possible.
+        - 'E.g. for virus products it should basically be based on the following Pattern:
           ''Virus name'', ''virus host type'', ''collection year'', ''country of collection''
           ex ''suspected epidemiological origin'', ''genotype'', ''strain'', ''variant
           name or specific feature.'
@@ -3095,8 +3099,8 @@ classes:
         description: A name given to the resource.
         title: title
         comments:
-        - 'The title of the item should be as short and descriptive as possible. E.g.
-          for virus products it should basically be based on the following Pattern:
+        - The title of the item should be as short and descriptive as possible.
+        - 'E.g. for virus products it should basically be based on the following Pattern:
           ''Virus name'', ''virus host type'', ''collection year'', ''country of collection''
           ex ''suspected epidemiological origin'', ''genotype'', ''strain'', ''variant
           name or specific feature.'
@@ -3157,9 +3161,9 @@ classes:
       of a work (e.g. software or technical standards).
     title: Version
     comments:
-    - Represents a specific snapshot/release of a resource (e.g., a dataset). It enables
-      managing multiple versions as first-class nodes and linking each version to
-      its subject via evorao:versionOf and to the using resource via evorao:version
+    - Represents a specific snapshot/release of a resource (e.g., a dataset).
+    - It enables managing multiple versions as first-class nodes and linking each
+      version to its subject via evorao:versionOf and to the using resource via evorao:version
       (e.g., as nodes in a graph database).
     from_schema: https://w3id.org/evorao/
     close_mappings:
@@ -3416,8 +3420,9 @@ classes:
         title: content type
         comments:
         - This property characterizes how the content is structured or encoded, independent
-          of the entity type it represents. Values should use MIME types (e.g. application/json,
-          text/csv, text/tab-separated-values, text/x-fasta, application/vnd.genbank).
+          of the entity type it represents.
+        - Values should use MIME types (e.g. application/json, text/csv, text/tab-separated-values,
+          text/x-fasta, application/vnd.genbank).
         exact_mappings:
         - schema:contentType
         - dct:format
@@ -3433,7 +3438,7 @@ classes:
         title: provided entity type
         comments:
         - This property defines what the response is about, independent of its serialization.
-          Values should be ontology class IRIs (e.g. https://w3id.org/evorao/Virus).
+        - Values should be ontology class IRIs (e.g. https://w3id.org/evorao/Virus).
         close_mappings:
         - dct:type
         - schema:additionalType
@@ -3451,9 +3456,9 @@ classes:
           set to 0.
         title: weight
         comments:
-        - The lowest weighted Data providers are triggered first, this may be usefull
-          to populate at first entities that are referenced by others (e.g. Version
-          ahead of Rank ahead of Taxon).
+        - The lowest weighted Data providers are triggered first.
+        - This property may be usefull to populate at first entities that are referenced
+          by others (e.g. Version ahead of Rank ahead of Taxon).
         close_mappings:
         - adms:status
         domain_of:
@@ -3618,8 +3623,8 @@ classes:
         description: A name given to the resource.
         title: title
         comments:
-        - 'The title of the item should be as short and descriptive as possible. E.g.
-          for virus products it should basically be based on the following Pattern:
+        - The title of the item should be as short and descriptive as possible.
+        - 'E.g. for virus products it should basically be based on the following Pattern:
           ''Virus name'', ''virus host type'', ''collection year'', ''country of collection''
           ex ''suspected epidemiological origin'', ''genotype'', ''strain'', ''variant
           name or specific feature.'
@@ -3757,8 +3762,8 @@ classes:
         description: A name given to the resource.
         title: title
         comments:
-        - 'The title of the item should be as short and descriptive as possible. E.g.
-          for virus products it should basically be based on the following Pattern:
+        - The title of the item should be as short and descriptive as possible.
+        - 'E.g. for virus products it should basically be based on the following Pattern:
           ''Virus name'', ''virus host type'', ''collection year'', ''country of collection''
           ex ''suspected epidemiological origin'', ''genotype'', ''strain'', ''variant
           name or specific feature.'
@@ -3839,8 +3844,9 @@ classes:
         title: alternate name
         comments:
         - This includes previous names, acronyms, former taxonomic terms, and other
-          variations. This information can serve as keywords for search purposes and
-          as a bridge with other projects that use different naming systems or taxonomies.
+          variations.
+        - This information can serve as keywords for search purposes and as a bridge
+          with other projects that use different naming systems or taxonomies.
         exact_mappings:
         - schema:alternateName
         - dct:alternative
@@ -3898,8 +3904,9 @@ classes:
         title: alternate name
         comments:
         - This includes previous names, acronyms, former taxonomic terms, and other
-          variations. This information can serve as keywords for search purposes and
-          as a bridge with other projects that use different naming systems or taxonomies.
+          variations.
+        - This information can serve as keywords for search purposes and as a bridge
+          with other projects that use different naming systems or taxonomies.
         exact_mappings:
         - schema:alternateName
         - dct:alternative
@@ -3934,9 +3941,10 @@ classes:
       differ between countries/regions and by material form (e.g., live isolate, inactivated
       preparation, nucleic acid). Assignments can also change over time. We store
       here a single reference assignment; users must verify the current, locally applicable
-      assignment with their competent authority.Using a dedicated data provider for
-      Risk Group instances is recommended. Definitions of existing Risk Groups can
-      also be found at wd:Q125449389, wd:Q125449412, wd:Q125449429, and wd:Q125449439.
+      assignment with their competent authority.
+    - Using a dedicated data provider for Risk Group instances is recommended. Definitions
+      of existing Risk Groups can also be found at wd:Q125449389, wd:Q125449412, wd:Q125449429,
+      and wd:Q125449439.
     from_schema: https://w3id.org/evorao/
     exact_mappings:
     - wd:Q125449255
@@ -3952,9 +3960,10 @@ classes:
     comments:
     - "The Biosafety Level (BSL) reflects the operational safety measures implemented,\
       \ which may differ from the intrinsic risk defined by the agent\u2019s Risk\
-      \ Group (RG). Using a dedicated data provider for BSL instances is recommended.\
-      \ Definitions of existing Biosafety Levels can also be found at wd:Q18396533,\
-      \ wd:Q18396535, wd:Q18396538, and wd:Q18396539."
+      \ Group (RG)."
+    - Using a dedicated data provider for BSL instances is recommended. Definitions
+      of existing Biosafety Levels can also be found at wd:Q18396533, wd:Q18396535,
+      wd:Q18396538, and wd:Q18396539.
     from_schema: https://w3id.org/evorao/
     exact_mappings:
     - wd:Q898943
@@ -4191,7 +4200,7 @@ classes:
     description: The country as of ISO3166.
     title: Country
     comments:
-    - Use of Data provider recommended... serve as a local cache for ISO3166.
+    - Use of Data provider recommended. It serves as a local cache for ISO3166.
     from_schema: https://w3id.org/evorao/
     exact_mappings:
     - schema:Country
@@ -4287,7 +4296,8 @@ classes:
     title: Taxon
     comments:
     - The taxonomic taxons connected to their parent so that a full lienage can be
-      rebuild. Use of Data provider recommended.
+      rebuild.
+    - Use of Data provider recommended.
     from_schema: https://w3id.org/evorao/
     exact_mappings:
     - schema:Taxon
@@ -4392,8 +4402,7 @@ classes:
         title: taxonomic node ID
         comments:
         - NCBI does not have a taxon_node id, only a taxonomicID. Taxon_node id is
-          Unique  in ICTV= Key of the taxon node !! Could be replaced by a composite
-          key made of 'taxonomic ID' + 'has version'.
+          Unique  in ICTV= Key of the taxon node!
         close_mappings:
         - dwc:taxonID
         broad_mappings:
@@ -4410,8 +4419,9 @@ classes:
         title: alternate name
         comments:
         - This includes previous names, acronyms, former taxonomic terms, and other
-          variations. This information can serve as keywords for search purposes and
-          as a bridge with other projects that use different naming systems or taxonomies.
+          variations.
+        - This information can serve as keywords for search purposes and as a bridge
+          with other projects that use different naming systems or taxonomies.
         exact_mappings:
         - schema:alternateName
         - dct:alternative
@@ -4457,8 +4467,9 @@ classes:
         title: alternate name
         comments:
         - This includes previous names, acronyms, former taxonomic terms, and other
-          variations. This information can serve as keywords for search purposes and
-          as a bridge with other projects that use different naming systems or taxonomies.
+          variations.
+        - This information can serve as keywords for search purposes and as a bridge
+          with other projects that use different naming systems or taxonomies.
         exact_mappings:
         - schema:alternateName
         - dct:alternative
@@ -4579,10 +4590,11 @@ classes:
         comments:
         - In cases where no reference sequence exists in public repositories, the
           corresponding FASTA sequence is expected; otherwise, the reference sequence
-          is sufficient. In FASTA format the line before the nucleotide sequence,
-          called the FASTA definition line, must begin with a charater ('>'), followed
-          by a unique SeqID (sequence identifier). In case the sequence is made of
-          multiple parts several fasta sequences can be provided.
+          is sufficient. In case the sequence is made of multiple parts several fasta
+          sequences can be provided.
+        - In FASTA format the line before the nucleotide sequence, called the FASTA
+          definition line, must begin with a charater ('>'), followed by a unique
+          SeqID (sequence identifier).
         domain_of:
         - Sequence
         range: string
@@ -4771,8 +4783,9 @@ classes:
         title: alternate name
         comments:
         - This includes previous names, acronyms, former taxonomic terms, and other
-          variations. This information can serve as keywords for search purposes and
-          as a bridge with other projects that use different naming systems or taxonomies.
+          variations.
+        - This information can serve as keywords for search purposes and as a bridge
+          with other projects that use different naming systems or taxonomies.
         exact_mappings:
         - schema:alternateName
         - dct:alternative
@@ -5371,6 +5384,8 @@ classes:
         exact_mappings:
         - wdp:P1604
         - bao:0002826
+        domain_of:
+        - ProductOrService
         range: BiosafetyLevel
         required: false
         multivalued: false
@@ -5392,8 +5407,9 @@ classes:
           GMO.
         title: can be used to produce GMO
         comments:
-        - Set to TRUE if it can produce GMO. It is recommended to have a value for
-          this field, no value will be understood as unknown.
+        - Set to TRUE if it can produce GMO.
+        - It is recommended to have a value for this field, no value will be understood
+          as unknown.
         broad_mappings:
         - schema:potentialUse
         domain_of:
@@ -7285,8 +7301,8 @@ classes:
         description: A name given to the resource.
         title: title
         comments:
-        - 'The title of the item should be as short and descriptive as possible. E.g.
-          for virus products it should basically be based on the following Pattern:
+        - The title of the item should be as short and descriptive as possible.
+        - 'E.g. for virus products it should basically be based on the following Pattern:
           ''Virus name'', ''virus host type'', ''collection year'', ''country of collection''
           ex ''suspected epidemiological origin'', ''genotype'', ''strain'', ''variant
           name or specific feature.'
@@ -7375,8 +7391,8 @@ classes:
         description: A name given to the resource.
         title: title
         comments:
-        - 'The title of the item should be as short and descriptive as possible. E.g.
-          for virus products it should basically be based on the following Pattern:
+        - The title of the item should be as short and descriptive as possible.
+        - 'E.g. for virus products it should basically be based on the following Pattern:
           ''Virus name'', ''virus host type'', ''collection year'', ''country of collection''
           ex ''suspected epidemiological origin'', ''genotype'', ''strain'', ''variant
           name or specific feature.'
@@ -7467,8 +7483,8 @@ classes:
         description: A name given to the resource.
         title: title
         comments:
-        - 'The title of the item should be as short and descriptive as possible. E.g.
-          for virus products it should basically be based on the following Pattern:
+        - The title of the item should be as short and descriptive as possible.
+        - 'E.g. for virus products it should basically be based on the following Pattern:
           ''Virus name'', ''virus host type'', ''collection year'', ''country of collection''
           ex ''suspected epidemiological origin'', ''genotype'', ''strain'', ''variant
           name or specific feature.'
@@ -7571,4 +7587,4 @@ classes:
         required: false
         multivalued: false
 source_file: https://w3id.org/evorao/evorao.owl.ttl
-generation_date: '2025-11-07T09:22:55'
+generation_date: '2025-11-07T09:47:58'

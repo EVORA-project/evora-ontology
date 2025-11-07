@@ -49,7 +49,7 @@ Alias: taxonomicNodeId
 
 ## Comments
 
-* NCBI does not have a taxon_node id, only a taxonomicID. Taxon_node id is Unique  in ICTV= Key of the taxon node !! Could be replaced by a composite key made of 'taxonomic ID' + 'has version'.
+* NCBI does not have a taxon_node id, only a taxonomicID. Taxon_node id is Unique  in ICTV= Key of the taxon node!
 
 ## Identifier and Mapping Information
 
@@ -89,8 +89,7 @@ description: The taxonomic_Node Identifier as an identifier specific the current
 title: taxonomic node ID
 comments:
 - NCBI does not have a taxon_node id, only a taxonomicID. Taxon_node id is Unique  in
-  ICTV= Key of the taxon node !! Could be replaced by a composite key made of 'taxonomic
-  ID' + 'has version'.
+  ICTV= Key of the taxon node!
 from_schema: https://w3id.org/evorao/
 close_mappings:
 - dwc:taxonID

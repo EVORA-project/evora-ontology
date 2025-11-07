@@ -1,5 +1,5 @@
 # metamodel_version: 1.7.0
-# version: 1.0.10537
+# version: 1.0.10608
 BASE <https://w3id.org/evorao/>
 PREFIX dcat: <http://www.w3.org/ns/dcat#>
 PREFIX foaf: <http://xmlns.com/foaf/0.1/>

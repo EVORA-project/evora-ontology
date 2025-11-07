@@ -219,7 +219,7 @@ attributes:
     title: alternate name
     comments:
     - This includes previous names, acronyms, former taxonomic terms, and other variations.
-      This information can serve as keywords for search purposes and as a bridge with
+    - This information can serve as keywords for search purposes and as a bridge with
       other projects that use different naming systems or taxonomies.
     from_schema: https://w3id.org/evorao/
     exact_mappings:

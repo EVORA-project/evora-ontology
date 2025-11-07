@@ -164,7 +164,8 @@ URI: [EVORAO:Taxon](https://w3id.org/evorao/Taxon)
 
 ## Comments
 
-* The taxonomic taxons connected to their parent so that a full lienage can be rebuild. Use of Data provider recommended.
+* The taxonomic taxons connected to their parent so that a full lienage can be rebuild.
+* Use of Data provider recommended.
 
 ## Identifier and Mapping Information
 
@@ -211,7 +212,7 @@ description: Conceptual entity that groups one or more populations of an organis
 title: Taxon
 comments:
 - The taxonomic taxons connected to their parent so that a full lienage can be rebuild.
-  Use of Data provider recommended.
+- Use of Data provider recommended.
 from_schema: https://w3id.org/evorao/
 exact_mappings:
 - schema:Taxon
@@ -324,8 +325,7 @@ slot_usage:
     title: taxonomic node ID
     comments:
     - NCBI does not have a taxon_node id, only a taxonomicID. Taxon_node id is Unique  in
-      ICTV= Key of the taxon node !! Could be replaced by a composite key made of
-      'taxonomic ID' + 'has version'.
+      ICTV= Key of the taxon node!
     close_mappings:
     - dwc:taxonID
     broad_mappings:
@@ -343,7 +343,7 @@ slot_usage:
     title: alternate name
     comments:
     - This includes previous names, acronyms, former taxonomic terms, and other variations.
-      This information can serve as keywords for search purposes and as a bridge with
+    - This information can serve as keywords for search purposes and as a bridge with
       other projects that use different naming systems or taxonomies.
     exact_mappings:
     - schema:alternateName
@@ -391,7 +391,7 @@ description: Conceptual entity that groups one or more populations of an organis
 title: Taxon
 comments:
 - The taxonomic taxons connected to their parent so that a full lienage can be rebuild.
-  Use of Data provider recommended.
+- Use of Data provider recommended.
 from_schema: https://w3id.org/evorao/
 exact_mappings:
 - schema:Taxon
@@ -495,8 +495,7 @@ slot_usage:
     title: taxonomic node ID
     comments:
     - NCBI does not have a taxon_node id, only a taxonomicID. Taxon_node id is Unique  in
-      ICTV= Key of the taxon node !! Could be replaced by a composite key made of
-      'taxonomic ID' + 'has version'.
+      ICTV= Key of the taxon node!
     close_mappings:
     - dwc:taxonID
     broad_mappings:
@@ -514,7 +513,7 @@ slot_usage:
     title: alternate name
     comments:
     - This includes previous names, acronyms, former taxonomic terms, and other variations.
-      This information can serve as keywords for search purposes and as a bridge with
+    - This information can serve as keywords for search purposes and as a bridge with
       other projects that use different naming systems or taxonomies.
     exact_mappings:
     - schema:alternateName
@@ -659,8 +658,7 @@ attributes:
     title: taxonomic node ID
     comments:
     - NCBI does not have a taxon_node id, only a taxonomicID. Taxon_node id is Unique  in
-      ICTV= Key of the taxon node !! Could be replaced by a composite key made of
-      'taxonomic ID' + 'has version'.
+      ICTV= Key of the taxon node!
     from_schema: https://w3id.org/evorao/
     close_mappings:
     - dwc:taxonID
@@ -682,7 +680,7 @@ attributes:
     title: alternate name
     comments:
     - This includes previous names, acronyms, former taxonomic terms, and other variations.
-      This information can serve as keywords for search purposes and as a bridge with
+    - This information can serve as keywords for search purposes and as a bridge with
       other projects that use different naming systems or taxonomies.
     from_schema: https://w3id.org/evorao/
     exact_mappings:
@@ -729,9 +727,9 @@ attributes:
     description: A name given to the resource.
     title: title
     comments:
-    - 'The title of the item should be as short and descriptive as possible. E.g.
-      for virus products it should basically be based on the following Pattern: ''Virus
-      name'', ''virus host type'', ''collection year'', ''country of collection''
+    - The title of the item should be as short and descriptive as possible.
+    - 'E.g. for virus products it should basically be based on the following Pattern:
+      ''Virus name'', ''virus host type'', ''collection year'', ''country of collection''
       ex ''suspected epidemiological origin'', ''genotype'', ''strain'', ''variant
       name or specific feature.'
     from_schema: https://w3id.org/evorao/
@@ -789,9 +787,9 @@ attributes:
       or processing data. Its value can be negative, with a default set to 0.
     title: weight
     comments:
-    - The lowest weighted Data providers are triggered first, this may be usefull
-      to populate at first entities that are referenced by others (e.g. Version ahead
-      of Rank ahead of Taxon).
+    - The lowest weighted Data providers are triggered first.
+    - This property may be usefull to populate at first entities that are referenced
+      by others (e.g. Version ahead of Rank ahead of Taxon).
     from_schema: https://w3id.org/evorao/
     close_mappings:
     - adms:status

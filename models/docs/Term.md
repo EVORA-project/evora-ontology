@@ -230,9 +230,9 @@ slot_usage:
     description: A name given to the resource.
     title: title
     comments:
-    - 'The title of the item should be as short and descriptive as possible. E.g.
-      for virus products it should basically be based on the following Pattern: ''Virus
-      name'', ''virus host type'', ''collection year'', ''country of collection''
+    - The title of the item should be as short and descriptive as possible.
+    - 'E.g. for virus products it should basically be based on the following Pattern:
+      ''Virus name'', ''virus host type'', ''collection year'', ''country of collection''
       ex ''suspected epidemiological origin'', ''genotype'', ''strain'', ''variant
       name or specific feature.'
     exact_mappings:
@@ -335,9 +335,9 @@ slot_usage:
     description: A name given to the resource.
     title: title
     comments:
-    - 'The title of the item should be as short and descriptive as possible. E.g.
-      for virus products it should basically be based on the following Pattern: ''Virus
-      name'', ''virus host type'', ''collection year'', ''country of collection''
+    - The title of the item should be as short and descriptive as possible.
+    - 'E.g. for virus products it should basically be based on the following Pattern:
+      ''Virus name'', ''virus host type'', ''collection year'', ''country of collection''
       ex ''suspected epidemiological origin'', ''genotype'', ''strain'', ''variant
       name or specific feature.'
     exact_mappings:
@@ -416,9 +416,9 @@ attributes:
     description: A name given to the resource.
     title: title
     comments:
-    - 'The title of the item should be as short and descriptive as possible. E.g.
-      for virus products it should basically be based on the following Pattern: ''Virus
-      name'', ''virus host type'', ''collection year'', ''country of collection''
+    - The title of the item should be as short and descriptive as possible.
+    - 'E.g. for virus products it should basically be based on the following Pattern:
+      ''Virus name'', ''virus host type'', ''collection year'', ''country of collection''
       ex ''suspected epidemiological origin'', ''genotype'', ''strain'', ''variant
       name or specific feature.'
     from_schema: https://w3id.org/evorao/
@@ -476,9 +476,9 @@ attributes:
       or processing data. Its value can be negative, with a default set to 0.
     title: weight
     comments:
-    - The lowest weighted Data providers are triggered first, this may be usefull
-      to populate at first entities that are referenced by others (e.g. Version ahead
-      of Rank ahead of Taxon).
+    - The lowest weighted Data providers are triggered first.
+    - This property may be usefull to populate at first entities that are referenced
+      by others (e.g. Version ahead of Rank ahead of Taxon).
     from_schema: https://w3id.org/evorao/
     close_mappings:
     - adms:status

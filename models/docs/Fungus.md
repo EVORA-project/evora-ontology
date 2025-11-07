@@ -1232,8 +1232,9 @@ attributes:
       GMO.
     title: can be used to produce GMO
     comments:
-    - Set to TRUE if it can produce GMO. It is recommended to have a value for this
-      field, no value will be understood as unknown.
+    - Set to TRUE if it can produce GMO.
+    - It is recommended to have a value for this field, no value will be understood
+      as unknown.
     from_schema: https://w3id.org/evorao/
     broad_mappings:
     - schema:potentialUse
@@ -1468,9 +1469,9 @@ attributes:
     description: A name given to the resource.
     title: title
     comments:
-    - 'The title of the item should be as short and descriptive as possible. E.g.
-      for virus products it should basically be based on the following Pattern: ''Virus
-      name'', ''virus host type'', ''collection year'', ''country of collection''
+    - The title of the item should be as short and descriptive as possible.
+    - 'E.g. for virus products it should basically be based on the following Pattern:
+      ''Virus name'', ''virus host type'', ''collection year'', ''country of collection''
       ex ''suspected epidemiological origin'', ''genotype'', ''strain'', ''variant
       name or specific feature.'
     from_schema: https://w3id.org/evorao/

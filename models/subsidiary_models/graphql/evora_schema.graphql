@@ -1,5 +1,5 @@
 # metamodel_version: 1.7.0
-# version: 1.0.10537
+# version: 1.0.10608
 type AlternateName
   {
     keyword: [String]

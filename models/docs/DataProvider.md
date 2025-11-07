@@ -266,8 +266,9 @@ slot_usage:
     title: content type
     comments:
     - This property characterizes how the content is structured or encoded, independent
-      of the entity type it represents. Values should use MIME types (e.g. application/json,
-      text/csv, text/tab-separated-values, text/x-fasta, application/vnd.genbank).
+      of the entity type it represents.
+    - Values should use MIME types (e.g. application/json, text/csv, text/tab-separated-values,
+      text/x-fasta, application/vnd.genbank).
     exact_mappings:
     - schema:contentType
     - dct:format
@@ -284,7 +285,7 @@ slot_usage:
     title: provided entity type
     comments:
     - This property defines what the response is about, independent of its serialization.
-      Values should be ontology class IRIs (e.g. https://w3id.org/evorao/Virus).
+    - Values should be ontology class IRIs (e.g. https://w3id.org/evorao/Virus).
     close_mappings:
     - dct:type
     - schema:additionalType
@@ -302,9 +303,9 @@ slot_usage:
       or processing data. Its value can be negative, with a default set to 0.
     title: weight
     comments:
-    - The lowest weighted Data providers are triggered first, this may be usefull
-      to populate at first entities that are referenced by others (e.g. Version ahead
-      of Rank ahead of Taxon).
+    - The lowest weighted Data providers are triggered first.
+    - This property may be usefull to populate at first entities that are referenced
+      by others (e.g. Version ahead of Rank ahead of Taxon).
     close_mappings:
     - adms:status
     domain_of:
@@ -413,8 +414,9 @@ slot_usage:
     title: content type
     comments:
     - This property characterizes how the content is structured or encoded, independent
-      of the entity type it represents. Values should use MIME types (e.g. application/json,
-      text/csv, text/tab-separated-values, text/x-fasta, application/vnd.genbank).
+      of the entity type it represents.
+    - Values should use MIME types (e.g. application/json, text/csv, text/tab-separated-values,
+      text/x-fasta, application/vnd.genbank).
     exact_mappings:
     - schema:contentType
     - dct:format
@@ -431,7 +433,7 @@ slot_usage:
     title: provided entity type
     comments:
     - This property defines what the response is about, independent of its serialization.
-      Values should be ontology class IRIs (e.g. https://w3id.org/evorao/Virus).
+    - Values should be ontology class IRIs (e.g. https://w3id.org/evorao/Virus).
     close_mappings:
     - dct:type
     - schema:additionalType
@@ -449,9 +451,9 @@ slot_usage:
       or processing data. Its value can be negative, with a default set to 0.
     title: weight
     comments:
-    - The lowest weighted Data providers are triggered first, this may be usefull
-      to populate at first entities that are referenced by others (e.g. Version ahead
-      of Rank ahead of Taxon).
+    - The lowest weighted Data providers are triggered first.
+    - This property may be usefull to populate at first entities that are referenced
+      by others (e.g. Version ahead of Rank ahead of Taxon).
     close_mappings:
     - adms:status
     domain_of:
@@ -564,8 +566,9 @@ attributes:
     title: content type
     comments:
     - This property characterizes how the content is structured or encoded, independent
-      of the entity type it represents. Values should use MIME types (e.g. application/json,
-      text/csv, text/tab-separated-values, text/x-fasta, application/vnd.genbank).
+      of the entity type it represents.
+    - Values should use MIME types (e.g. application/json, text/csv, text/tab-separated-values,
+      text/x-fasta, application/vnd.genbank).
     from_schema: https://w3id.org/evorao/
     exact_mappings:
     - schema:contentType
@@ -586,7 +589,7 @@ attributes:
     title: provided entity type
     comments:
     - This property defines what the response is about, independent of its serialization.
-      Values should be ontology class IRIs (e.g. https://w3id.org/evorao/Virus).
+    - Values should be ontology class IRIs (e.g. https://w3id.org/evorao/Virus).
     from_schema: https://w3id.org/evorao/
     close_mappings:
     - dct:type
@@ -608,9 +611,9 @@ attributes:
       or processing data. Its value can be negative, with a default set to 0.
     title: weight
     comments:
-    - The lowest weighted Data providers are triggered first, this may be usefull
-      to populate at first entities that are referenced by others (e.g. Version ahead
-      of Rank ahead of Taxon).
+    - The lowest weighted Data providers are triggered first.
+    - This property may be usefull to populate at first entities that are referenced
+      by others (e.g. Version ahead of Rank ahead of Taxon).
     from_schema: https://w3id.org/evorao/
     close_mappings:
     - adms:status
@@ -629,9 +632,9 @@ attributes:
     description: A name given to the resource.
     title: title
     comments:
-    - 'The title of the item should be as short and descriptive as possible. E.g.
-      for virus products it should basically be based on the following Pattern: ''Virus
-      name'', ''virus host type'', ''collection year'', ''country of collection''
+    - The title of the item should be as short and descriptive as possible.
+    - 'E.g. for virus products it should basically be based on the following Pattern:
+      ''Virus name'', ''virus host type'', ''collection year'', ''country of collection''
       ex ''suspected epidemiological origin'', ''genotype'', ''strain'', ''variant
       name or specific feature.'
     from_schema: https://w3id.org/evorao/

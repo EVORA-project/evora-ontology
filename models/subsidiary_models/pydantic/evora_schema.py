@@ -27,7 +27,7 @@ from pydantic import (
 
 
 metamodel_version = "None"
-version = "1.0.10537"
+version = "1.0.10608"
 
 
 class ConfiguredBaseModel(BaseModel):
@@ -99,7 +99,7 @@ linkml_meta = LinkMLMeta({'comments': ['EVORAO is an ontology for standardized m
                     'pathogens. EVORAO is compatible with DCAT, making it '
                     'well-suited for efficiently cataloguing pathogen collections '
                     'and related resources.',
-     'generation_date': '2025-11-07T09:22:55',
+     'generation_date': '2025-11-07T09:47:58',
      'id': 'https://w3id.org/evorao/',
      'imports': ['linkml:types'],
      'in_language': 'en',
@@ -393,7 +393,7 @@ class Dataset(Resource):
                                         'slot_uri': 'dct:description',
                                         'title': 'description'},
                         'title': {'comments': ['The title of the item should be as '
-                                               'short and descriptive as possible. '
+                                               'short and descriptive as possible.',
                                                'E.g. for virus products it should '
                                                'basically be based on the following '
                                                "Pattern: 'Virus name', 'virus host "
@@ -434,11 +434,12 @@ class Dataset(Resource):
 
     title: str = Field(default=..., title="title", description="""A name given to the resource.""", json_schema_extra = { "linkml_meta": {'alias': 'title',
          'comments': ['The title of the item should be as short and descriptive as '
-                      'possible. E.g. for virus products it should basically be based '
-                      "on the following Pattern: 'Virus name', 'virus host type', "
-                      "'collection year', 'country of collection' ex 'suspected "
-                      "epidemiological origin', 'genotype', 'strain', 'variant name or "
-                      'specific feature.'],
+                      'possible.',
+                      'E.g. for virus products it should basically be based on the '
+                      "following Pattern: 'Virus name', 'virus host type', 'collection "
+                      "year', 'country of collection' ex 'suspected epidemiological "
+                      "origin', 'genotype', 'strain', 'variant name or specific "
+                      'feature.'],
          'domain_of': ['Dataset',
                        'DataService',
                        'Publication',
@@ -566,7 +567,7 @@ class DataService(Resource):
                                           'slot_uri': 'dcat:servesDataset',
                                           'title': 'serves dataset'},
                         'title': {'comments': ['The title of the item should be as '
-                                               'short and descriptive as possible. '
+                                               'short and descriptive as possible.',
                                                'E.g. for virus products it should '
                                                'basically be based on the following '
                                                "Pattern: 'Virus name', 'virus host "
@@ -594,11 +595,12 @@ class DataService(Resource):
 
     title: str = Field(default=..., title="title", description="""A name given to the resource.""", json_schema_extra = { "linkml_meta": {'alias': 'title',
          'comments': ['The title of the item should be as short and descriptive as '
-                      'possible. E.g. for virus products it should basically be based '
-                      "on the following Pattern: 'Virus name', 'virus host type', "
-                      "'collection year', 'country of collection' ex 'suspected "
-                      "epidemiological origin', 'genotype', 'strain', 'variant name or "
-                      'specific feature.'],
+                      'possible.',
+                      'E.g. for virus products it should basically be based on the '
+                      "following Pattern: 'Virus name', 'virus host type', 'collection "
+                      "year', 'country of collection' ex 'suspected epidemiological "
+                      "origin', 'genotype', 'strain', 'variant name or specific "
+                      'feature.'],
          'domain_of': ['DataService',
                        'Dataset',
                        'Publication',
@@ -674,10 +676,11 @@ class Version(Resource):
     """
     linkml_meta: ClassVar[LinkMLMeta] = LinkMLMeta({'close_mappings': ['reproduceme:Version', 'reproduceme:Version'],
          'comments': ['Represents a specific snapshot/release of a resource (e.g., a '
-                      'dataset). It enables managing multiple versions as first-class '
-                      'nodes and linking each version to its subject via '
-                      'evorao:versionOf and to the using resource via evorao:version '
-                      '(e.g., as nodes in a graph database).'],
+                      'dataset).',
+                      'It enables managing multiple versions as first-class nodes and '
+                      'linking each version to its subject via evorao:versionOf and to '
+                      'the using resource via evorao:version (e.g., as nodes in a '
+                      'graph database).'],
          'from_schema': 'https://w3id.org/evorao/',
          'related_mappings': ['wd:Q114469879', 'wd:Q114469879'],
          'slot_usage': {'resource': {'description': 'Resource published or curated by '
@@ -773,11 +776,12 @@ class Catalogue(Dataset):
 
     title: str = Field(default=..., title="title", description="""A name given to the resource.""", json_schema_extra = { "linkml_meta": {'alias': 'title',
          'comments': ['The title of the item should be as short and descriptive as '
-                      'possible. E.g. for virus products it should basically be based '
-                      "on the following Pattern: 'Virus name', 'virus host type', "
-                      "'collection year', 'country of collection' ex 'suspected "
-                      "epidemiological origin', 'genotype', 'strain', 'variant name or "
-                      'specific feature.'],
+                      'possible.',
+                      'E.g. for virus products it should basically be based on the '
+                      "following Pattern: 'Virus name', 'virus host type', 'collection "
+                      "year', 'country of collection' ex 'suspected epidemiological "
+                      "origin', 'genotype', 'strain', 'variant name or specific "
+                      'feature.'],
          'domain_of': ['Dataset',
                        'DataService',
                        'Publication',
@@ -949,11 +953,12 @@ class Taxonomy(Catalogue):
     rankDataProvider: Optional[DataProvider] = Field(default=None, title="rank data provider", description="""The data provider for the description of the taxonomic ranks used in this taxonomy.""", json_schema_extra = { "linkml_meta": {'alias': 'rankDataProvider', 'domain_of': ['Taxonomy']} })
     title: str = Field(default=..., title="title", description="""A name given to the resource.""", json_schema_extra = { "linkml_meta": {'alias': 'title',
          'comments': ['The title of the item should be as short and descriptive as '
-                      'possible. E.g. for virus products it should basically be based '
-                      "on the following Pattern: 'Virus name', 'virus host type', "
-                      "'collection year', 'country of collection' ex 'suspected "
-                      "epidemiological origin', 'genotype', 'strain', 'variant name or "
-                      'specific feature.'],
+                      'possible.',
+                      'E.g. for virus products it should basically be based on the '
+                      "following Pattern: 'Virus name', 'virus host type', 'collection "
+                      "year', 'country of collection' ex 'suspected epidemiological "
+                      "origin', 'genotype', 'strain', 'variant name or specific "
+                      'feature.'],
          'domain_of': ['Dataset',
                        'DataService',
                        'Publication',
@@ -1025,7 +1030,7 @@ class DataProvider(DataService):
          'slot_usage': {'contentType': {'comments': ['This property characterizes how '
                                                      'the content is structured or '
                                                      'encoded, independent of the '
-                                                     'entity type it represents. '
+                                                     'entity type it represents.',
                                                      'Values should use MIME types '
                                                      '(e.g. application/json, '
                                                      'text/csv, '
@@ -1103,9 +1108,9 @@ class DataProvider(DataService):
                                                'comments': ['This property defines '
                                                             'what the response is '
                                                             'about, independent of its '
-                                                            'serialization. Values '
-                                                            'should be ontology class '
-                                                            'IRIs (e.g. '
+                                                            'serialization.',
+                                                            'Values should be ontology '
+                                                            'class IRIs (e.g. '
                                                             'https://w3id.org/evorao/Virus).'],
                                                'description': 'Identifies the type of '
                                                               'entity (ontology class) '
@@ -1135,11 +1140,11 @@ class DataProvider(DataService):
                                         'title': 'query method'},
                         'weight': {'close_mappings': ['adms:status'],
                                    'comments': ['The lowest weighted Data providers '
-                                                'are triggered first, this may be '
-                                                'usefull to populate at first entities '
-                                                'that are referenced by others (e.g. '
-                                                'Version ahead of Rank ahead of '
-                                                'Taxon).'],
+                                                'are triggered first.',
+                                                'This property may be usefull to '
+                                                'populate at first entities that are '
+                                                'referenced by others (e.g. Version '
+                                                'ahead of Rank ahead of Taxon).'],
                                    'description': 'A numerical value indicating '
                                                   'relative importance or priority, '
                                                   'generally processed in ascending '
@@ -1180,8 +1185,8 @@ class DataProvider(DataService):
          'equals_string_in': ['GET', 'POST']} })
     contentType: str = Field(default="application/json", title="content type", description="""The content type of the response to queries. It specifies the serialization, file type, or media type used to convey the resource, typically expressed as a MIME type following IANA media type registrations.""", json_schema_extra = { "linkml_meta": {'alias': 'contentType',
          'comments': ['This property characterizes how the content is structured or '
-                      'encoded, independent of the entity type it represents. Values '
-                      'should use MIME types (e.g. application/json, text/csv, '
+                      'encoded, independent of the entity type it represents.',
+                      'Values should use MIME types (e.g. application/json, text/csv, '
                       'text/tab-separated-values, text/x-fasta, '
                       'application/vnd.genbank).'],
          'domain_of': ['DataProvider'],
@@ -1190,25 +1195,27 @@ class DataProvider(DataService):
     providedEntityType: list[str] = Field(default=..., title="provided entity type", description="""Identifies the type of entity (ontology class) described by the response to a query. Values should be expressed as IRIs (e.g., from an ontology).""", json_schema_extra = { "linkml_meta": {'alias': 'providedEntityType',
          'close_mappings': ['dct:type', 'schema:additionalType'],
          'comments': ['This property defines what the response is about, independent '
-                      'of its serialization. Values should be ontology class IRIs '
-                      '(e.g. https://w3id.org/evorao/Virus).'],
+                      'of its serialization.',
+                      'Values should be ontology class IRIs (e.g. '
+                      'https://w3id.org/evorao/Virus).'],
          'domain_of': ['DataProvider'],
          'related_mappings': ['dcat:servesDataset']} })
     weight: int = Field(default=0, title="weight", description="""A numerical value indicating relative importance or priority, generally processed in ascending order. This weight helps prioritize content when organizing or processing data. Its value can be negative, with a default set to 0.""", json_schema_extra = { "linkml_meta": {'alias': 'weight',
          'close_mappings': ['adms:status'],
-         'comments': ['The lowest weighted Data providers are triggered first, this '
-                      'may be usefull to populate at first entities that are '
-                      'referenced by others (e.g. Version ahead of Rank ahead of '
+         'comments': ['The lowest weighted Data providers are triggered first.',
+                      'This property may be usefull to populate at first entities that '
+                      'are referenced by others (e.g. Version ahead of Rank ahead of '
                       'Taxon).'],
          'domain_of': ['DataProvider', 'Term'],
          'ifabsent': 'int(0)'} })
     title: str = Field(default=..., title="title", description="""A name given to the resource.""", json_schema_extra = { "linkml_meta": {'alias': 'title',
          'comments': ['The title of the item should be as short and descriptive as '
-                      'possible. E.g. for virus products it should basically be based '
-                      "on the following Pattern: 'Virus name', 'virus host type', "
-                      "'collection year', 'country of collection' ex 'suspected "
-                      "epidemiological origin', 'genotype', 'strain', 'variant name or "
-                      'specific feature.'],
+                      'possible.',
+                      'E.g. for virus products it should basically be based on the '
+                      "following Pattern: 'Virus name', 'virus host type', 'collection "
+                      "year', 'country of collection' ex 'suspected epidemiological "
+                      "origin', 'genotype', 'strain', 'variant name or specific "
+                      'feature.'],
          'domain_of': ['DataService',
                        'Dataset',
                        'Publication',
@@ -1528,7 +1535,7 @@ class Publication(Resource):
                                     'required': False,
                                     'title': 'journal'},
                         'title': {'comments': ['The title of the item should be as '
-                                               'short and descriptive as possible. '
+                                               'short and descriptive as possible.',
                                                'E.g. for virus products it should '
                                                'basically be based on the following '
                                                "Pattern: 'Virus name', 'virus host "
@@ -1556,11 +1563,12 @@ class Publication(Resource):
 
     title: str = Field(default=..., title="title", description="""A name given to the resource.""", json_schema_extra = { "linkml_meta": {'alias': 'title',
          'comments': ['The title of the item should be as short and descriptive as '
-                      'possible. E.g. for virus products it should basically be based '
-                      "on the following Pattern: 'Virus name', 'virus host type', "
-                      "'collection year', 'country of collection' ex 'suspected "
-                      "epidemiological origin', 'genotype', 'strain', 'variant name or "
-                      'specific feature.'],
+                      'possible.',
+                      'E.g. for virus products it should basically be based on the '
+                      "following Pattern: 'Virus name', 'virus host type', 'collection "
+                      "year', 'country of collection' ex 'suspected epidemiological "
+                      "origin', 'genotype', 'strain', 'variant name or specific "
+                      'feature.'],
          'domain_of': ['Publication',
                        'Dataset',
                        'DataService',
@@ -1666,11 +1674,12 @@ class Vocabulary(Catalogue):
          'related_mappings': ['dct:hasPart']} })
     title: str = Field(default=..., title="title", description="""A name given to the resource.""", json_schema_extra = { "linkml_meta": {'alias': 'title',
          'comments': ['The title of the item should be as short and descriptive as '
-                      'possible. E.g. for virus products it should basically be based '
-                      "on the following Pattern: 'Virus name', 'virus host type', "
-                      "'collection year', 'country of collection' ex 'suspected "
-                      "epidemiological origin', 'genotype', 'strain', 'variant name or "
-                      'specific feature.'],
+                      'possible.',
+                      'E.g. for virus products it should basically be based on the '
+                      "following Pattern: 'Virus name', 'virus host type', 'collection "
+                      "year', 'country of collection' ex 'suspected epidemiological "
+                      "origin', 'genotype', 'strain', 'variant name or specific "
+                      'feature.'],
          'domain_of': ['Dataset',
                        'DataService',
                        'Publication',
@@ -1785,7 +1794,7 @@ class Term(Resource):
                                          'required': True,
                                          'title': 'in Vocabulary'},
                         'title': {'comments': ['The title of the item should be as '
-                                               'short and descriptive as possible. '
+                                               'short and descriptive as possible.',
                                                'E.g. for virus products it should '
                                                'basically be based on the following '
                                                "Pattern: 'Virus name', 'virus host "
@@ -1828,11 +1837,12 @@ class Term(Resource):
 
     title: str = Field(default=..., title="title", description="""A name given to the resource.""", json_schema_extra = { "linkml_meta": {'alias': 'title',
          'comments': ['The title of the item should be as short and descriptive as '
-                      'possible. E.g. for virus products it should basically be based '
-                      "on the following Pattern: 'Virus name', 'virus host type', "
-                      "'collection year', 'country of collection' ex 'suspected "
-                      "epidemiological origin', 'genotype', 'strain', 'variant name or "
-                      'specific feature.'],
+                      'possible.',
+                      'E.g. for virus products it should basically be based on the '
+                      "following Pattern: 'Virus name', 'virus host type', 'collection "
+                      "year', 'country of collection' ex 'suspected epidemiological "
+                      "origin', 'genotype', 'strain', 'variant name or specific "
+                      'feature.'],
          'domain_of': ['Term',
                        'Dataset',
                        'DataService',
@@ -1859,9 +1869,9 @@ class Term(Resource):
          'slot_uri': 'dct:description'} })
     weight: int = Field(default=0, title="weight", description="""A numerical value indicating relative importance or priority, generally processed in ascending order. This weight helps prioritize content when organizing or processing data. Its value can be negative, with a default set to 0.""", json_schema_extra = { "linkml_meta": {'alias': 'weight',
          'close_mappings': ['adms:status'],
-         'comments': ['The lowest weighted Data providers are triggered first, this '
-                      'may be usefull to populate at first entities that are '
-                      'referenced by others (e.g. Version ahead of Rank ahead of '
+         'comments': ['The lowest weighted Data providers are triggered first.',
+                      'This property may be usefull to populate at first entities that '
+                      'are referenced by others (e.g. Version ahead of Rank ahead of '
                       'Taxon).'],
          'domain_of': ['Term', 'DataProvider'],
          'ifabsent': 'int(0)'} })
@@ -1917,7 +1927,7 @@ class CommonName(Term):
          'slot_usage': {'alternateName': {'close_mappings': ['wdp:P4970'],
                                           'comments': ['This includes previous names, '
                                                        'acronyms, former taxonomic '
-                                                       'terms, and other variations. '
+                                                       'terms, and other variations.',
                                                        'This information can serve as '
                                                        'keywords for search purposes '
                                                        'and as a bridge with other '
@@ -1957,9 +1967,10 @@ class CommonName(Term):
     alternateName: Optional[list[AlternateName]] = Field(default=None, title="alternate name", description="""Any other name under which the entity can be known.""", json_schema_extra = { "linkml_meta": {'alias': 'alternateName',
          'close_mappings': ['wdp:P4970'],
          'comments': ['This includes previous names, acronyms, former taxonomic terms, '
-                      'and other variations. This information can serve as keywords '
-                      'for search purposes and as a bridge with other projects that '
-                      'use different naming systems or taxonomies.'],
+                      'and other variations.',
+                      'This information can serve as keywords for search purposes and '
+                      'as a bridge with other projects that use different naming '
+                      'systems or taxonomies.'],
          'domain_of': ['CommonName',
                        'AlternateName',
                        'Taxon',
@@ -1972,11 +1983,12 @@ class CommonName(Term):
          'related_mappings': ['sio:000253']} })
     title: str = Field(default=..., title="title", description="""A name given to the resource.""", json_schema_extra = { "linkml_meta": {'alias': 'title',
          'comments': ['The title of the item should be as short and descriptive as '
-                      'possible. E.g. for virus products it should basically be based '
-                      "on the following Pattern: 'Virus name', 'virus host type', "
-                      "'collection year', 'country of collection' ex 'suspected "
-                      "epidemiological origin', 'genotype', 'strain', 'variant name or "
-                      'specific feature.'],
+                      'possible.',
+                      'E.g. for virus products it should basically be based on the '
+                      "following Pattern: 'Virus name', 'virus host type', 'collection "
+                      "year', 'country of collection' ex 'suspected epidemiological "
+                      "origin', 'genotype', 'strain', 'variant name or specific "
+                      'feature.'],
          'domain_of': ['Term',
                        'Dataset',
                        'DataService',
@@ -2003,9 +2015,9 @@ class CommonName(Term):
          'slot_uri': 'dct:description'} })
     weight: int = Field(default=0, title="weight", description="""A numerical value indicating relative importance or priority, generally processed in ascending order. This weight helps prioritize content when organizing or processing data. Its value can be negative, with a default set to 0.""", json_schema_extra = { "linkml_meta": {'alias': 'weight',
          'close_mappings': ['adms:status'],
-         'comments': ['The lowest weighted Data providers are triggered first, this '
-                      'may be usefull to populate at first entities that are '
-                      'referenced by others (e.g. Version ahead of Rank ahead of '
+         'comments': ['The lowest weighted Data providers are triggered first.',
+                      'This property may be usefull to populate at first entities that '
+                      'are referenced by others (e.g. Version ahead of Rank ahead of '
                       'Taxon).'],
          'domain_of': ['Term', 'DataProvider'],
          'ifabsent': 'int(0)'} })
@@ -2060,9 +2072,10 @@ class VirusName(CommonName):
     alternateName: Optional[list[AlternateName]] = Field(default=None, title="alternate name", description="""Any other name under which the entity can be known.""", json_schema_extra = { "linkml_meta": {'alias': 'alternateName',
          'close_mappings': ['wdp:P4970'],
          'comments': ['This includes previous names, acronyms, former taxonomic terms, '
-                      'and other variations. This information can serve as keywords '
-                      'for search purposes and as a bridge with other projects that '
-                      'use different naming systems or taxonomies.'],
+                      'and other variations.',
+                      'This information can serve as keywords for search purposes and '
+                      'as a bridge with other projects that use different naming '
+                      'systems or taxonomies.'],
          'domain_of': ['CommonName',
                        'AlternateName',
                        'Taxon',
@@ -2075,11 +2088,12 @@ class VirusName(CommonName):
          'related_mappings': ['sio:000253']} })
     title: str = Field(default=..., title="title", description="""A name given to the resource.""", json_schema_extra = { "linkml_meta": {'alias': 'title',
          'comments': ['The title of the item should be as short and descriptive as '
-                      'possible. E.g. for virus products it should basically be based '
-                      "on the following Pattern: 'Virus name', 'virus host type', "
-                      "'collection year', 'country of collection' ex 'suspected "
-                      "epidemiological origin', 'genotype', 'strain', 'variant name or "
-                      'specific feature.'],
+                      'possible.',
+                      'E.g. for virus products it should basically be based on the '
+                      "following Pattern: 'Virus name', 'virus host type', 'collection "
+                      "year', 'country of collection' ex 'suspected epidemiological "
+                      "origin', 'genotype', 'strain', 'variant name or specific "
+                      'feature.'],
          'domain_of': ['Term',
                        'Dataset',
                        'DataService',
@@ -2106,9 +2120,9 @@ class VirusName(CommonName):
          'slot_uri': 'dct:description'} })
     weight: int = Field(default=0, title="weight", description="""A numerical value indicating relative importance or priority, generally processed in ascending order. This weight helps prioritize content when organizing or processing data. Its value can be negative, with a default set to 0.""", json_schema_extra = { "linkml_meta": {'alias': 'weight',
          'close_mappings': ['adms:status'],
-         'comments': ['The lowest weighted Data providers are triggered first, this '
-                      'may be usefull to populate at first entities that are '
-                      'referenced by others (e.g. Version ahead of Rank ahead of '
+         'comments': ['The lowest weighted Data providers are triggered first.',
+                      'This property may be usefull to populate at first entities that '
+                      'are referenced by others (e.g. Version ahead of Rank ahead of '
                       'Taxon).'],
          'domain_of': ['Term', 'DataProvider'],
          'ifabsent': 'int(0)'} })
@@ -2161,7 +2175,7 @@ class AlternateName(Term):
          'slot_usage': {'alternateName': {'close_mappings': ['wdp:P4970'],
                                           'comments': ['This includes previous names, '
                                                        'acronyms, former taxonomic '
-                                                       'terms, and other variations. '
+                                                       'terms, and other variations.',
                                                        'This information can serve as '
                                                        'keywords for search purposes '
                                                        'and as a bridge with other '
@@ -2202,9 +2216,10 @@ class AlternateName(Term):
     alternateName: Optional[list[AlternateName]] = Field(default=None, title="alternate name", description="""Any other name under which the entity can be known.""", json_schema_extra = { "linkml_meta": {'alias': 'alternateName',
          'close_mappings': ['wdp:P4970'],
          'comments': ['This includes previous names, acronyms, former taxonomic terms, '
-                      'and other variations. This information can serve as keywords '
-                      'for search purposes and as a bridge with other projects that '
-                      'use different naming systems or taxonomies.'],
+                      'and other variations.',
+                      'This information can serve as keywords for search purposes and '
+                      'as a bridge with other projects that use different naming '
+                      'systems or taxonomies.'],
          'domain_of': ['AlternateName',
                        'CommonName',
                        'Taxon',
@@ -2217,11 +2232,12 @@ class AlternateName(Term):
          'related_mappings': ['sio:000253']} })
     title: str = Field(default=..., title="title", description="""A name given to the resource.""", json_schema_extra = { "linkml_meta": {'alias': 'title',
          'comments': ['The title of the item should be as short and descriptive as '
-                      'possible. E.g. for virus products it should basically be based '
-                      "on the following Pattern: 'Virus name', 'virus host type', "
-                      "'collection year', 'country of collection' ex 'suspected "
-                      "epidemiological origin', 'genotype', 'strain', 'variant name or "
-                      'specific feature.'],
+                      'possible.',
+                      'E.g. for virus products it should basically be based on the '
+                      "following Pattern: 'Virus name', 'virus host type', 'collection "
+                      "year', 'country of collection' ex 'suspected epidemiological "
+                      "origin', 'genotype', 'strain', 'variant name or specific "
+                      'feature.'],
          'domain_of': ['Term',
                        'Dataset',
                        'DataService',
@@ -2248,9 +2264,9 @@ class AlternateName(Term):
          'slot_uri': 'dct:description'} })
     weight: int = Field(default=0, title="weight", description="""A numerical value indicating relative importance or priority, generally processed in ascending order. This weight helps prioritize content when organizing or processing data. Its value can be negative, with a default set to 0.""", json_schema_extra = { "linkml_meta": {'alias': 'weight',
          'close_mappings': ['adms:status'],
-         'comments': ['The lowest weighted Data providers are triggered first, this '
-                      'may be usefull to populate at first entities that are '
-                      'referenced by others (e.g. Version ahead of Rank ahead of '
+         'comments': ['The lowest weighted Data providers are triggered first.',
+                      'This property may be usefull to populate at first entities that '
+                      'are referenced by others (e.g. Version ahead of Rank ahead of '
                       'Taxon).'],
          'domain_of': ['Term', 'DataProvider'],
          'ifabsent': 'int(0)'} })
@@ -2304,21 +2320,23 @@ class RiskGroup(Term):
                       'preparation, nucleic acid). Assignments can also change over '
                       'time. We store here a single reference assignment; users must '
                       'verify the current, locally applicable assignment with their '
-                      'competent authority.Using a dedicated data provider for Risk '
-                      'Group instances is recommended. Definitions of existing Risk '
-                      'Groups can also be found at wd:Q125449389, wd:Q125449412, '
-                      'wd:Q125449429, and wd:Q125449439.'],
+                      'competent authority.',
+                      'Using a dedicated data provider for Risk Group instances is '
+                      'recommended. Definitions of existing Risk Groups can also be '
+                      'found at wd:Q125449389, wd:Q125449412, wd:Q125449429, and '
+                      'wd:Q125449439.'],
          'exact_mappings': ['wd:Q125449255', 'wd:Q125449255'],
          'from_schema': 'https://w3id.org/evorao/',
          'title': 'Risk group'})
 
     title: str = Field(default=..., title="title", description="""A name given to the resource.""", json_schema_extra = { "linkml_meta": {'alias': 'title',
          'comments': ['The title of the item should be as short and descriptive as '
-                      'possible. E.g. for virus products it should basically be based '
-                      "on the following Pattern: 'Virus name', 'virus host type', "
-                      "'collection year', 'country of collection' ex 'suspected "
-                      "epidemiological origin', 'genotype', 'strain', 'variant name or "
-                      'specific feature.'],
+                      'possible.',
+                      'E.g. for virus products it should basically be based on the '
+                      "following Pattern: 'Virus name', 'virus host type', 'collection "
+                      "year', 'country of collection' ex 'suspected epidemiological "
+                      "origin', 'genotype', 'strain', 'variant name or specific "
+                      'feature.'],
          'domain_of': ['Term',
                        'Dataset',
                        'DataService',
@@ -2345,9 +2363,9 @@ class RiskGroup(Term):
          'slot_uri': 'dct:description'} })
     weight: int = Field(default=0, title="weight", description="""A numerical value indicating relative importance or priority, generally processed in ascending order. This weight helps prioritize content when organizing or processing data. Its value can be negative, with a default set to 0.""", json_schema_extra = { "linkml_meta": {'alias': 'weight',
          'close_mappings': ['adms:status'],
-         'comments': ['The lowest weighted Data providers are triggered first, this '
-                      'may be usefull to populate at first entities that are '
-                      'referenced by others (e.g. Version ahead of Rank ahead of '
+         'comments': ['The lowest weighted Data providers are triggered first.',
+                      'This property may be usefull to populate at first entities that '
+                      'are referenced by others (e.g. Version ahead of Rank ahead of '
                       'Taxon).'],
          'domain_of': ['Term', 'DataProvider'],
          'ifabsent': 'int(0)'} })
@@ -2398,21 +2416,23 @@ class BiosafetyLevel(Term):
          'close_mappings': ['ncit:C151920', 'ncit:C151920'],
          'comments': ['The Biosafety Level (BSL) reflects the operational safety '
                       'measures implemented, which may differ from the intrinsic risk '
-                      'defined by the agent’s Risk Group (RG). Using a dedicated data '
-                      'provider for BSL instances is recommended. Definitions of '
-                      'existing Biosafety Levels can also be found at wd:Q18396533, '
-                      'wd:Q18396535, wd:Q18396538, and wd:Q18396539.'],
+                      'defined by the agent’s Risk Group (RG).',
+                      'Using a dedicated data provider for BSL instances is '
+                      'recommended. Definitions of existing Biosafety Levels can also '
+                      'be found at wd:Q18396533, wd:Q18396535, wd:Q18396538, and '
+                      'wd:Q18396539.'],
          'exact_mappings': ['wd:Q898943', 'wd:Q898943'],
          'from_schema': 'https://w3id.org/evorao/',
          'title': 'Biosafety level'})
 
     title: str = Field(default=..., title="title", description="""A name given to the resource.""", json_schema_extra = { "linkml_meta": {'alias': 'title',
          'comments': ['The title of the item should be as short and descriptive as '
-                      'possible. E.g. for virus products it should basically be based '
-                      "on the following Pattern: 'Virus name', 'virus host type', "
-                      "'collection year', 'country of collection' ex 'suspected "
-                      "epidemiological origin', 'genotype', 'strain', 'variant name or "
-                      'specific feature.'],
+                      'possible.',
+                      'E.g. for virus products it should basically be based on the '
+                      "following Pattern: 'Virus name', 'virus host type', 'collection "
+                      "year', 'country of collection' ex 'suspected epidemiological "
+                      "origin', 'genotype', 'strain', 'variant name or specific "
+                      'feature.'],
          'domain_of': ['Term',
                        'Dataset',
                        'DataService',
@@ -2439,9 +2459,9 @@ class BiosafetyLevel(Term):
          'slot_uri': 'dct:description'} })
     weight: int = Field(default=0, title="weight", description="""A numerical value indicating relative importance or priority, generally processed in ascending order. This weight helps prioritize content when organizing or processing data. Its value can be negative, with a default set to 0.""", json_schema_extra = { "linkml_meta": {'alias': 'weight',
          'close_mappings': ['adms:status'],
-         'comments': ['The lowest weighted Data providers are triggered first, this '
-                      'may be usefull to populate at first entities that are '
-                      'referenced by others (e.g. Version ahead of Rank ahead of '
+         'comments': ['The lowest weighted Data providers are triggered first.',
+                      'This property may be usefull to populate at first entities that '
+                      'are referenced by others (e.g. Version ahead of Rank ahead of '
                       'Taxon).'],
          'domain_of': ['Term', 'DataProvider'],
          'ifabsent': 'int(0)'} })
@@ -2501,11 +2521,12 @@ class Doi(Term):
 
     title: str = Field(default=..., title="title", description="""A name given to the resource.""", json_schema_extra = { "linkml_meta": {'alias': 'title',
          'comments': ['The title of the item should be as short and descriptive as '
-                      'possible. E.g. for virus products it should basically be based '
-                      "on the following Pattern: 'Virus name', 'virus host type', "
-                      "'collection year', 'country of collection' ex 'suspected "
-                      "epidemiological origin', 'genotype', 'strain', 'variant name or "
-                      'specific feature.'],
+                      'possible.',
+                      'E.g. for virus products it should basically be based on the '
+                      "following Pattern: 'Virus name', 'virus host type', 'collection "
+                      "year', 'country of collection' ex 'suspected epidemiological "
+                      "origin', 'genotype', 'strain', 'variant name or specific "
+                      'feature.'],
          'domain_of': ['Term',
                        'Dataset',
                        'DataService',
@@ -2532,9 +2553,9 @@ class Doi(Term):
          'slot_uri': 'dct:description'} })
     weight: int = Field(default=0, title="weight", description="""A numerical value indicating relative importance or priority, generally processed in ascending order. This weight helps prioritize content when organizing or processing data. Its value can be negative, with a default set to 0.""", json_schema_extra = { "linkml_meta": {'alias': 'weight',
          'close_mappings': ['adms:status'],
-         'comments': ['The lowest weighted Data providers are triggered first, this '
-                      'may be usefull to populate at first entities that are '
-                      'referenced by others (e.g. Version ahead of Rank ahead of '
+         'comments': ['The lowest weighted Data providers are triggered first.',
+                      'This property may be usefull to populate at first entities that '
+                      'are referenced by others (e.g. Version ahead of Rank ahead of '
                       'Taxon).'],
          'domain_of': ['Term', 'DataProvider'],
          'ifabsent': 'int(0)'} })
@@ -2594,11 +2615,12 @@ class Journal(Term):
 
     title: str = Field(default=..., title="title", description="""A name given to the resource.""", json_schema_extra = { "linkml_meta": {'alias': 'title',
          'comments': ['The title of the item should be as short and descriptive as '
-                      'possible. E.g. for virus products it should basically be based '
-                      "on the following Pattern: 'Virus name', 'virus host type', "
-                      "'collection year', 'country of collection' ex 'suspected "
-                      "epidemiological origin', 'genotype', 'strain', 'variant name or "
-                      'specific feature.'],
+                      'possible.',
+                      'E.g. for virus products it should basically be based on the '
+                      "following Pattern: 'Virus name', 'virus host type', 'collection "
+                      "year', 'country of collection' ex 'suspected epidemiological "
+                      "origin', 'genotype', 'strain', 'variant name or specific "
+                      'feature.'],
          'domain_of': ['Term',
                        'Dataset',
                        'DataService',
@@ -2625,9 +2647,9 @@ class Journal(Term):
          'slot_uri': 'dct:description'} })
     weight: int = Field(default=0, title="weight", description="""A numerical value indicating relative importance or priority, generally processed in ascending order. This weight helps prioritize content when organizing or processing data. Its value can be negative, with a default set to 0.""", json_schema_extra = { "linkml_meta": {'alias': 'weight',
          'close_mappings': ['adms:status'],
-         'comments': ['The lowest weighted Data providers are triggered first, this '
-                      'may be usefull to populate at first entities that are '
-                      'referenced by others (e.g. Version ahead of Rank ahead of '
+         'comments': ['The lowest weighted Data providers are triggered first.',
+                      'This property may be usefull to populate at first entities that '
+                      'are referenced by others (e.g. Version ahead of Rank ahead of '
                       'Taxon).'],
          'domain_of': ['Term', 'DataProvider'],
          'ifabsent': 'int(0)'} })
@@ -2681,11 +2703,12 @@ class PdbReference(Term):
 
     title: str = Field(default=..., title="title", description="""A name given to the resource.""", json_schema_extra = { "linkml_meta": {'alias': 'title',
          'comments': ['The title of the item should be as short and descriptive as '
-                      'possible. E.g. for virus products it should basically be based '
-                      "on the following Pattern: 'Virus name', 'virus host type', "
-                      "'collection year', 'country of collection' ex 'suspected "
-                      "epidemiological origin', 'genotype', 'strain', 'variant name or "
-                      'specific feature.'],
+                      'possible.',
+                      'E.g. for virus products it should basically be based on the '
+                      "following Pattern: 'Virus name', 'virus host type', 'collection "
+                      "year', 'country of collection' ex 'suspected epidemiological "
+                      "origin', 'genotype', 'strain', 'variant name or specific "
+                      'feature.'],
          'domain_of': ['Term',
                        'Dataset',
                        'DataService',
@@ -2712,9 +2735,9 @@ class PdbReference(Term):
          'slot_uri': 'dct:description'} })
     weight: int = Field(default=0, title="weight", description="""A numerical value indicating relative importance or priority, generally processed in ascending order. This weight helps prioritize content when organizing or processing data. Its value can be negative, with a default set to 0.""", json_schema_extra = { "linkml_meta": {'alias': 'weight',
          'close_mappings': ['adms:status'],
-         'comments': ['The lowest weighted Data providers are triggered first, this '
-                      'may be usefull to populate at first entities that are '
-                      'referenced by others (e.g. Version ahead of Rank ahead of '
+         'comments': ['The lowest weighted Data providers are triggered first.',
+                      'This property may be usefull to populate at first entities that '
+                      'are referenced by others (e.g. Version ahead of Rank ahead of '
                       'Taxon).'],
          'domain_of': ['Term', 'DataProvider'],
          'ifabsent': 'int(0)'} })
@@ -2774,11 +2797,12 @@ class Keyword(Term):
 
     title: str = Field(default=..., title="title", description="""A name given to the resource.""", json_schema_extra = { "linkml_meta": {'alias': 'title',
          'comments': ['The title of the item should be as short and descriptive as '
-                      'possible. E.g. for virus products it should basically be based '
-                      "on the following Pattern: 'Virus name', 'virus host type', "
-                      "'collection year', 'country of collection' ex 'suspected "
-                      "epidemiological origin', 'genotype', 'strain', 'variant name or "
-                      'specific feature.'],
+                      'possible.',
+                      'E.g. for virus products it should basically be based on the '
+                      "following Pattern: 'Virus name', 'virus host type', 'collection "
+                      "year', 'country of collection' ex 'suspected epidemiological "
+                      "origin', 'genotype', 'strain', 'variant name or specific "
+                      'feature.'],
          'domain_of': ['Term',
                        'Dataset',
                        'DataService',
@@ -2805,9 +2829,9 @@ class Keyword(Term):
          'slot_uri': 'dct:description'} })
     weight: int = Field(default=0, title="weight", description="""A numerical value indicating relative importance or priority, generally processed in ascending order. This weight helps prioritize content when organizing or processing data. Its value can be negative, with a default set to 0.""", json_schema_extra = { "linkml_meta": {'alias': 'weight',
          'close_mappings': ['adms:status'],
-         'comments': ['The lowest weighted Data providers are triggered first, this '
-                      'may be usefull to populate at first entities that are '
-                      'referenced by others (e.g. Version ahead of Rank ahead of '
+         'comments': ['The lowest weighted Data providers are triggered first.',
+                      'This property may be usefull to populate at first entities that '
+                      'are referenced by others (e.g. Version ahead of Rank ahead of '
                       'Taxon).'],
          'domain_of': ['Term', 'DataProvider'],
          'ifabsent': 'int(0)'} })
@@ -2863,11 +2887,12 @@ class TagSequence(Term):
 
     title: str = Field(default=..., title="title", description="""A name given to the resource.""", json_schema_extra = { "linkml_meta": {'alias': 'title',
          'comments': ['The title of the item should be as short and descriptive as '
-                      'possible. E.g. for virus products it should basically be based '
-                      "on the following Pattern: 'Virus name', 'virus host type', "
-                      "'collection year', 'country of collection' ex 'suspected "
-                      "epidemiological origin', 'genotype', 'strain', 'variant name or "
-                      'specific feature.'],
+                      'possible.',
+                      'E.g. for virus products it should basically be based on the '
+                      "following Pattern: 'Virus name', 'virus host type', 'collection "
+                      "year', 'country of collection' ex 'suspected epidemiological "
+                      "origin', 'genotype', 'strain', 'variant name or specific "
+                      'feature.'],
          'domain_of': ['Term',
                        'Dataset',
                        'DataService',
@@ -2894,9 +2919,9 @@ class TagSequence(Term):
          'slot_uri': 'dct:description'} })
     weight: int = Field(default=0, title="weight", description="""A numerical value indicating relative importance or priority, generally processed in ascending order. This weight helps prioritize content when organizing or processing data. Its value can be negative, with a default set to 0.""", json_schema_extra = { "linkml_meta": {'alias': 'weight',
          'close_mappings': ['adms:status'],
-         'comments': ['The lowest weighted Data providers are triggered first, this '
-                      'may be usefull to populate at first entities that are '
-                      'referenced by others (e.g. Version ahead of Rank ahead of '
+         'comments': ['The lowest weighted Data providers are triggered first.',
+                      'This property may be usefull to populate at first entities that '
+                      'are referenced by others (e.g. Version ahead of Rank ahead of '
                       'Taxon).'],
          'domain_of': ['Term', 'DataProvider'],
          'ifabsent': 'int(0)'} })
@@ -2952,11 +2977,12 @@ class SpecialFeature(Term):
 
     title: str = Field(default=..., title="title", description="""A name given to the resource.""", json_schema_extra = { "linkml_meta": {'alias': 'title',
          'comments': ['The title of the item should be as short and descriptive as '
-                      'possible. E.g. for virus products it should basically be based '
-                      "on the following Pattern: 'Virus name', 'virus host type', "
-                      "'collection year', 'country of collection' ex 'suspected "
-                      "epidemiological origin', 'genotype', 'strain', 'variant name or "
-                      'specific feature.'],
+                      'possible.',
+                      'E.g. for virus products it should basically be based on the '
+                      "following Pattern: 'Virus name', 'virus host type', 'collection "
+                      "year', 'country of collection' ex 'suspected epidemiological "
+                      "origin', 'genotype', 'strain', 'variant name or specific "
+                      'feature.'],
          'domain_of': ['Term',
                        'Dataset',
                        'DataService',
@@ -2983,9 +3009,9 @@ class SpecialFeature(Term):
          'slot_uri': 'dct:description'} })
     weight: int = Field(default=0, title="weight", description="""A numerical value indicating relative importance or priority, generally processed in ascending order. This weight helps prioritize content when organizing or processing data. Its value can be negative, with a default set to 0.""", json_schema_extra = { "linkml_meta": {'alias': 'weight',
          'close_mappings': ['adms:status'],
-         'comments': ['The lowest weighted Data providers are triggered first, this '
-                      'may be usefull to populate at first entities that are '
-                      'referenced by others (e.g. Version ahead of Rank ahead of '
+         'comments': ['The lowest weighted Data providers are triggered first.',
+                      'This property may be usefull to populate at first entities that '
+                      'are referenced by others (e.g. Version ahead of Rank ahead of '
                       'Taxon).'],
          'domain_of': ['Term', 'DataProvider'],
          'ifabsent': 'int(0)'} })
@@ -3042,11 +3068,12 @@ class ExpressionVector(Term):
 
     title: str = Field(default=..., title="title", description="""A name given to the resource.""", json_schema_extra = { "linkml_meta": {'alias': 'title',
          'comments': ['The title of the item should be as short and descriptive as '
-                      'possible. E.g. for virus products it should basically be based '
-                      "on the following Pattern: 'Virus name', 'virus host type', "
-                      "'collection year', 'country of collection' ex 'suspected "
-                      "epidemiological origin', 'genotype', 'strain', 'variant name or "
-                      'specific feature.'],
+                      'possible.',
+                      'E.g. for virus products it should basically be based on the '
+                      "following Pattern: 'Virus name', 'virus host type', 'collection "
+                      "year', 'country of collection' ex 'suspected epidemiological "
+                      "origin', 'genotype', 'strain', 'variant name or specific "
+                      'feature.'],
          'domain_of': ['Term',
                        'Dataset',
                        'DataService',
@@ -3073,9 +3100,9 @@ class ExpressionVector(Term):
          'slot_uri': 'dct:description'} })
     weight: int = Field(default=0, title="weight", description="""A numerical value indicating relative importance or priority, generally processed in ascending order. This weight helps prioritize content when organizing or processing data. Its value can be negative, with a default set to 0.""", json_schema_extra = { "linkml_meta": {'alias': 'weight',
          'close_mappings': ['adms:status'],
-         'comments': ['The lowest weighted Data providers are triggered first, this '
-                      'may be usefull to populate at first entities that are '
-                      'referenced by others (e.g. Version ahead of Rank ahead of '
+         'comments': ['The lowest weighted Data providers are triggered first.',
+                      'This property may be usefull to populate at first entities that '
+                      'are referenced by others (e.g. Version ahead of Rank ahead of '
                       'Taxon).'],
          'domain_of': ['Term', 'DataProvider'],
          'ifabsent': 'int(0)'} })
@@ -3128,11 +3155,12 @@ class PlasmidSelection(Term):
 
     title: str = Field(default=..., title="title", description="""A name given to the resource.""", json_schema_extra = { "linkml_meta": {'alias': 'title',
          'comments': ['The title of the item should be as short and descriptive as '
-                      'possible. E.g. for virus products it should basically be based '
-                      "on the following Pattern: 'Virus name', 'virus host type', "
-                      "'collection year', 'country of collection' ex 'suspected "
-                      "epidemiological origin', 'genotype', 'strain', 'variant name or "
-                      'specific feature.'],
+                      'possible.',
+                      'E.g. for virus products it should basically be based on the '
+                      "following Pattern: 'Virus name', 'virus host type', 'collection "
+                      "year', 'country of collection' ex 'suspected epidemiological "
+                      "origin', 'genotype', 'strain', 'variant name or specific "
+                      'feature.'],
          'domain_of': ['Term',
                        'Dataset',
                        'DataService',
@@ -3159,9 +3187,9 @@ class PlasmidSelection(Term):
          'slot_uri': 'dct:description'} })
     weight: int = Field(default=0, title="weight", description="""A numerical value indicating relative importance or priority, generally processed in ascending order. This weight helps prioritize content when organizing or processing data. Its value can be negative, with a default set to 0.""", json_schema_extra = { "linkml_meta": {'alias': 'weight',
          'close_mappings': ['adms:status'],
-         'comments': ['The lowest weighted Data providers are triggered first, this '
-                      'may be usefull to populate at first entities that are '
-                      'referenced by others (e.g. Version ahead of Rank ahead of '
+         'comments': ['The lowest weighted Data providers are triggered first.',
+                      'This property may be usefull to populate at first entities that '
+                      'are referenced by others (e.g. Version ahead of Rank ahead of '
                       'Taxon).'],
          'domain_of': ['Term', 'DataProvider'],
          'ifabsent': 'int(0)'} })
@@ -3214,11 +3242,12 @@ class PropagationHost(Term):
 
     title: str = Field(default=..., title="title", description="""A name given to the resource.""", json_schema_extra = { "linkml_meta": {'alias': 'title',
          'comments': ['The title of the item should be as short and descriptive as '
-                      'possible. E.g. for virus products it should basically be based '
-                      "on the following Pattern: 'Virus name', 'virus host type', "
-                      "'collection year', 'country of collection' ex 'suspected "
-                      "epidemiological origin', 'genotype', 'strain', 'variant name or "
-                      'specific feature.'],
+                      'possible.',
+                      'E.g. for virus products it should basically be based on the '
+                      "following Pattern: 'Virus name', 'virus host type', 'collection "
+                      "year', 'country of collection' ex 'suspected epidemiological "
+                      "origin', 'genotype', 'strain', 'variant name or specific "
+                      'feature.'],
          'domain_of': ['Term',
                        'Dataset',
                        'DataService',
@@ -3245,9 +3274,9 @@ class PropagationHost(Term):
          'slot_uri': 'dct:description'} })
     weight: int = Field(default=0, title="weight", description="""A numerical value indicating relative importance or priority, generally processed in ascending order. This weight helps prioritize content when organizing or processing data. Its value can be negative, with a default set to 0.""", json_schema_extra = { "linkml_meta": {'alias': 'weight',
          'close_mappings': ['adms:status'],
-         'comments': ['The lowest weighted Data providers are triggered first, this '
-                      'may be usefull to populate at first entities that are '
-                      'referenced by others (e.g. Version ahead of Rank ahead of '
+         'comments': ['The lowest weighted Data providers are triggered first.',
+                      'This property may be usefull to populate at first entities that '
+                      'are referenced by others (e.g. Version ahead of Rank ahead of '
                       'Taxon).'],
          'domain_of': ['Term', 'DataProvider'],
          'ifabsent': 'int(0)'} })
@@ -3301,11 +3330,12 @@ class TransmissionMethod(Term):
 
     title: str = Field(default=..., title="title", description="""A name given to the resource.""", json_schema_extra = { "linkml_meta": {'alias': 'title',
          'comments': ['The title of the item should be as short and descriptive as '
-                      'possible. E.g. for virus products it should basically be based '
-                      "on the following Pattern: 'Virus name', 'virus host type', "
-                      "'collection year', 'country of collection' ex 'suspected "
-                      "epidemiological origin', 'genotype', 'strain', 'variant name or "
-                      'specific feature.'],
+                      'possible.',
+                      'E.g. for virus products it should basically be based on the '
+                      "following Pattern: 'Virus name', 'virus host type', 'collection "
+                      "year', 'country of collection' ex 'suspected epidemiological "
+                      "origin', 'genotype', 'strain', 'variant name or specific "
+                      'feature.'],
          'domain_of': ['Term',
                        'Dataset',
                        'DataService',
@@ -3332,9 +3362,9 @@ class TransmissionMethod(Term):
          'slot_uri': 'dct:description'} })
     weight: int = Field(default=0, title="weight", description="""A numerical value indicating relative importance or priority, generally processed in ascending order. This weight helps prioritize content when organizing or processing data. Its value can be negative, with a default set to 0.""", json_schema_extra = { "linkml_meta": {'alias': 'weight',
          'close_mappings': ['adms:status'],
-         'comments': ['The lowest weighted Data providers are triggered first, this '
-                      'may be usefull to populate at first entities that are '
-                      'referenced by others (e.g. Version ahead of Rank ahead of '
+         'comments': ['The lowest weighted Data providers are triggered first.',
+                      'This property may be usefull to populate at first entities that '
+                      'are referenced by others (e.g. Version ahead of Rank ahead of '
                       'Taxon).'],
          'domain_of': ['Term', 'DataProvider'],
          'ifabsent': 'int(0)'} })
@@ -3391,11 +3421,12 @@ class ProductionCellLine(Term):
 
     title: str = Field(default=..., title="title", description="""A name given to the resource.""", json_schema_extra = { "linkml_meta": {'alias': 'title',
          'comments': ['The title of the item should be as short and descriptive as '
-                      'possible. E.g. for virus products it should basically be based '
-                      "on the following Pattern: 'Virus name', 'virus host type', "
-                      "'collection year', 'country of collection' ex 'suspected "
-                      "epidemiological origin', 'genotype', 'strain', 'variant name or "
-                      'specific feature.'],
+                      'possible.',
+                      'E.g. for virus products it should basically be based on the '
+                      "following Pattern: 'Virus name', 'virus host type', 'collection "
+                      "year', 'country of collection' ex 'suspected epidemiological "
+                      "origin', 'genotype', 'strain', 'variant name or specific "
+                      'feature.'],
          'domain_of': ['Term',
                        'Dataset',
                        'DataService',
@@ -3422,9 +3453,9 @@ class ProductionCellLine(Term):
          'slot_uri': 'dct:description'} })
     weight: int = Field(default=0, title="weight", description="""A numerical value indicating relative importance or priority, generally processed in ascending order. This weight helps prioritize content when organizing or processing data. Its value can be negative, with a default set to 0.""", json_schema_extra = { "linkml_meta": {'alias': 'weight',
          'close_mappings': ['adms:status'],
-         'comments': ['The lowest weighted Data providers are triggered first, this '
-                      'may be usefull to populate at first entities that are '
-                      'referenced by others (e.g. Version ahead of Rank ahead of '
+         'comments': ['The lowest weighted Data providers are triggered first.',
+                      'This property may be usefull to populate at first entities that '
+                      'are referenced by others (e.g. Version ahead of Rank ahead of '
                       'Taxon).'],
          'domain_of': ['Term', 'DataProvider'],
          'ifabsent': 'int(0)'} })
@@ -3501,11 +3532,12 @@ class ProductCategory(Term):
          'domain_of': ['ProductCategory']} })
     title: str = Field(default=..., title="title", description="""A name given to the resource.""", json_schema_extra = { "linkml_meta": {'alias': 'title',
          'comments': ['The title of the item should be as short and descriptive as '
-                      'possible. E.g. for virus products it should basically be based '
-                      "on the following Pattern: 'Virus name', 'virus host type', "
-                      "'collection year', 'country of collection' ex 'suspected "
-                      "epidemiological origin', 'genotype', 'strain', 'variant name or "
-                      'specific feature.'],
+                      'possible.',
+                      'E.g. for virus products it should basically be based on the '
+                      "following Pattern: 'Virus name', 'virus host type', 'collection "
+                      "year', 'country of collection' ex 'suspected epidemiological "
+                      "origin', 'genotype', 'strain', 'variant name or specific "
+                      'feature.'],
          'domain_of': ['Term',
                        'Dataset',
                        'DataService',
@@ -3532,9 +3564,9 @@ class ProductCategory(Term):
          'slot_uri': 'dct:description'} })
     weight: int = Field(default=0, title="weight", description="""A numerical value indicating relative importance or priority, generally processed in ascending order. This weight helps prioritize content when organizing or processing data. Its value can be negative, with a default set to 0.""", json_schema_extra = { "linkml_meta": {'alias': 'weight',
          'close_mappings': ['adms:status'],
-         'comments': ['The lowest weighted Data providers are triggered first, this '
-                      'may be usefull to populate at first entities that are '
-                      'referenced by others (e.g. Version ahead of Rank ahead of '
+         'comments': ['The lowest weighted Data providers are triggered first.',
+                      'This property may be usefull to populate at first entities that '
+                      'are referenced by others (e.g. Version ahead of Rank ahead of '
                       'Taxon).'],
          'domain_of': ['Term', 'DataProvider'],
          'ifabsent': 'int(0)'} })
@@ -3585,11 +3617,12 @@ class IsolationHost(Term):
 
     title: str = Field(default=..., title="title", description="""A name given to the resource.""", json_schema_extra = { "linkml_meta": {'alias': 'title',
          'comments': ['The title of the item should be as short and descriptive as '
-                      'possible. E.g. for virus products it should basically be based '
-                      "on the following Pattern: 'Virus name', 'virus host type', "
-                      "'collection year', 'country of collection' ex 'suspected "
-                      "epidemiological origin', 'genotype', 'strain', 'variant name or "
-                      'specific feature.'],
+                      'possible.',
+                      'E.g. for virus products it should basically be based on the '
+                      "following Pattern: 'Virus name', 'virus host type', 'collection "
+                      "year', 'country of collection' ex 'suspected epidemiological "
+                      "origin', 'genotype', 'strain', 'variant name or specific "
+                      'feature.'],
          'domain_of': ['Term',
                        'Dataset',
                        'DataService',
@@ -3616,9 +3649,9 @@ class IsolationHost(Term):
          'slot_uri': 'dct:description'} })
     weight: int = Field(default=0, title="weight", description="""A numerical value indicating relative importance or priority, generally processed in ascending order. This weight helps prioritize content when organizing or processing data. Its value can be negative, with a default set to 0.""", json_schema_extra = { "linkml_meta": {'alias': 'weight',
          'close_mappings': ['adms:status'],
-         'comments': ['The lowest weighted Data providers are triggered first, this '
-                      'may be usefull to populate at first entities that are '
-                      'referenced by others (e.g. Version ahead of Rank ahead of '
+         'comments': ['The lowest weighted Data providers are triggered first.',
+                      'This property may be usefull to populate at first entities that '
+                      'are referenced by others (e.g. Version ahead of Rank ahead of '
                       'Taxon).'],
          'domain_of': ['Term', 'DataProvider'],
          'ifabsent': 'int(0)'} })
@@ -3680,11 +3713,12 @@ class GeographicalOrigin(Term):
 
     title: str = Field(default=..., title="title", description="""A name given to the resource.""", json_schema_extra = { "linkml_meta": {'alias': 'title',
          'comments': ['The title of the item should be as short and descriptive as '
-                      'possible. E.g. for virus products it should basically be based '
-                      "on the following Pattern: 'Virus name', 'virus host type', "
-                      "'collection year', 'country of collection' ex 'suspected "
-                      "epidemiological origin', 'genotype', 'strain', 'variant name or "
-                      'specific feature.'],
+                      'possible.',
+                      'E.g. for virus products it should basically be based on the '
+                      "following Pattern: 'Virus name', 'virus host type', 'collection "
+                      "year', 'country of collection' ex 'suspected epidemiological "
+                      "origin', 'genotype', 'strain', 'variant name or specific "
+                      'feature.'],
          'domain_of': ['Term',
                        'Dataset',
                        'DataService',
@@ -3711,9 +3745,9 @@ class GeographicalOrigin(Term):
          'slot_uri': 'dct:description'} })
     weight: int = Field(default=0, title="weight", description="""A numerical value indicating relative importance or priority, generally processed in ascending order. This weight helps prioritize content when organizing or processing data. Its value can be negative, with a default set to 0.""", json_schema_extra = { "linkml_meta": {'alias': 'weight',
          'close_mappings': ['adms:status'],
-         'comments': ['The lowest weighted Data providers are triggered first, this '
-                      'may be usefull to populate at first entities that are '
-                      'referenced by others (e.g. Version ahead of Rank ahead of '
+         'comments': ['The lowest weighted Data providers are triggered first.',
+                      'This property may be usefull to populate at first entities that '
+                      'are referenced by others (e.g. Version ahead of Rank ahead of '
                       'Taxon).'],
          'domain_of': ['Term', 'DataProvider'],
          'ifabsent': 'int(0)'} })
@@ -3773,11 +3807,12 @@ class IplcOrigin(GeographicalOrigin):
 
     title: str = Field(default=..., title="title", description="""A name given to the resource.""", json_schema_extra = { "linkml_meta": {'alias': 'title',
          'comments': ['The title of the item should be as short and descriptive as '
-                      'possible. E.g. for virus products it should basically be based '
-                      "on the following Pattern: 'Virus name', 'virus host type', "
-                      "'collection year', 'country of collection' ex 'suspected "
-                      "epidemiological origin', 'genotype', 'strain', 'variant name or "
-                      'specific feature.'],
+                      'possible.',
+                      'E.g. for virus products it should basically be based on the '
+                      "following Pattern: 'Virus name', 'virus host type', 'collection "
+                      "year', 'country of collection' ex 'suspected epidemiological "
+                      "origin', 'genotype', 'strain', 'variant name or specific "
+                      'feature.'],
          'domain_of': ['Term',
                        'Dataset',
                        'DataService',
@@ -3804,9 +3839,9 @@ class IplcOrigin(GeographicalOrigin):
          'slot_uri': 'dct:description'} })
     weight: int = Field(default=0, title="weight", description="""A numerical value indicating relative importance or priority, generally processed in ascending order. This weight helps prioritize content when organizing or processing data. Its value can be negative, with a default set to 0.""", json_schema_extra = { "linkml_meta": {'alias': 'weight',
          'close_mappings': ['adms:status'],
-         'comments': ['The lowest weighted Data providers are triggered first, this '
-                      'may be usefull to populate at first entities that are '
-                      'referenced by others (e.g. Version ahead of Rank ahead of '
+         'comments': ['The lowest weighted Data providers are triggered first.',
+                      'This property may be usefull to populate at first entities that '
+                      'are referenced by others (e.g. Version ahead of Rank ahead of '
                       'Taxon).'],
          'domain_of': ['Term', 'DataProvider'],
          'ifabsent': 'int(0)'} })
@@ -3860,8 +3895,8 @@ class Country(Term):
                             'dct:Location',
                             'vcard:Location'],
          'close_mappings': ['wd:Q6256', 'wd:Q6256'],
-         'comments': ['Use of Data provider recommended... serve as a local cache for '
-                      'ISO3166.'],
+         'comments': ['Use of Data provider recommended. It serves as a local cache '
+                      'for ISO3166.'],
          'exact_mappings': ['schema:Country',
                             'ncit:C25464',
                             'sio:000664',
@@ -3890,11 +3925,12 @@ class Country(Term):
          'related_mappings': ['obib:0000620', 'ncit:C54641']} })
     title: str = Field(default=..., title="title", description="""A name given to the resource.""", json_schema_extra = { "linkml_meta": {'alias': 'title',
          'comments': ['The title of the item should be as short and descriptive as '
-                      'possible. E.g. for virus products it should basically be based '
-                      "on the following Pattern: 'Virus name', 'virus host type', "
-                      "'collection year', 'country of collection' ex 'suspected "
-                      "epidemiological origin', 'genotype', 'strain', 'variant name or "
-                      'specific feature.'],
+                      'possible.',
+                      'E.g. for virus products it should basically be based on the '
+                      "following Pattern: 'Virus name', 'virus host type', 'collection "
+                      "year', 'country of collection' ex 'suspected epidemiological "
+                      "origin', 'genotype', 'strain', 'variant name or specific "
+                      'feature.'],
          'domain_of': ['Term',
                        'Dataset',
                        'DataService',
@@ -3921,9 +3957,9 @@ class Country(Term):
          'slot_uri': 'dct:description'} })
     weight: int = Field(default=0, title="weight", description="""A numerical value indicating relative importance or priority, generally processed in ascending order. This weight helps prioritize content when organizing or processing data. Its value can be negative, with a default set to 0.""", json_schema_extra = { "linkml_meta": {'alias': 'weight',
          'close_mappings': ['adms:status'],
-         'comments': ['The lowest weighted Data providers are triggered first, this '
-                      'may be usefull to populate at first entities that are '
-                      'referenced by others (e.g. Version ahead of Rank ahead of '
+         'comments': ['The lowest weighted Data providers are triggered first.',
+                      'This property may be usefull to populate at first entities that '
+                      'are referenced by others (e.g. Version ahead of Rank ahead of '
                       'Taxon).'],
          'domain_of': ['Term', 'DataProvider'],
          'ifabsent': 'int(0)'} })
@@ -3976,11 +4012,12 @@ class IataClassification(Term):
 
     title: str = Field(default=..., title="title", description="""A name given to the resource.""", json_schema_extra = { "linkml_meta": {'alias': 'title',
          'comments': ['The title of the item should be as short and descriptive as '
-                      'possible. E.g. for virus products it should basically be based '
-                      "on the following Pattern: 'Virus name', 'virus host type', "
-                      "'collection year', 'country of collection' ex 'suspected "
-                      "epidemiological origin', 'genotype', 'strain', 'variant name or "
-                      'specific feature.'],
+                      'possible.',
+                      'E.g. for virus products it should basically be based on the '
+                      "following Pattern: 'Virus name', 'virus host type', 'collection "
+                      "year', 'country of collection' ex 'suspected epidemiological "
+                      "origin', 'genotype', 'strain', 'variant name or specific "
+                      'feature.'],
          'domain_of': ['Term',
                        'Dataset',
                        'DataService',
@@ -4007,9 +4044,9 @@ class IataClassification(Term):
          'slot_uri': 'dct:description'} })
     weight: int = Field(default=0, title="weight", description="""A numerical value indicating relative importance or priority, generally processed in ascending order. This weight helps prioritize content when organizing or processing data. Its value can be negative, with a default set to 0.""", json_schema_extra = { "linkml_meta": {'alias': 'weight',
          'close_mappings': ['adms:status'],
-         'comments': ['The lowest weighted Data providers are triggered first, this '
-                      'may be usefull to populate at first entities that are '
-                      'referenced by others (e.g. Version ahead of Rank ahead of '
+         'comments': ['The lowest weighted Data providers are triggered first.',
+                      'This property may be usefull to populate at first entities that '
+                      'are referenced by others (e.g. Version ahead of Rank ahead of '
                       'Taxon).'],
          'domain_of': ['Term', 'DataProvider'],
          'ifabsent': 'int(0)'} })
@@ -4063,9 +4100,10 @@ class Variant(CommonName):
     alternateName: Optional[list[AlternateName]] = Field(default=None, title="alternate name", description="""Any other name under which the entity can be known.""", json_schema_extra = { "linkml_meta": {'alias': 'alternateName',
          'close_mappings': ['wdp:P4970'],
          'comments': ['This includes previous names, acronyms, former taxonomic terms, '
-                      'and other variations. This information can serve as keywords '
-                      'for search purposes and as a bridge with other projects that '
-                      'use different naming systems or taxonomies.'],
+                      'and other variations.',
+                      'This information can serve as keywords for search purposes and '
+                      'as a bridge with other projects that use different naming '
+                      'systems or taxonomies.'],
          'domain_of': ['CommonName',
                        'AlternateName',
                        'Taxon',
@@ -4078,11 +4116,12 @@ class Variant(CommonName):
          'related_mappings': ['sio:000253']} })
     title: str = Field(default=..., title="title", description="""A name given to the resource.""", json_schema_extra = { "linkml_meta": {'alias': 'title',
          'comments': ['The title of the item should be as short and descriptive as '
-                      'possible. E.g. for virus products it should basically be based '
-                      "on the following Pattern: 'Virus name', 'virus host type', "
-                      "'collection year', 'country of collection' ex 'suspected "
-                      "epidemiological origin', 'genotype', 'strain', 'variant name or "
-                      'specific feature.'],
+                      'possible.',
+                      'E.g. for virus products it should basically be based on the '
+                      "following Pattern: 'Virus name', 'virus host type', 'collection "
+                      "year', 'country of collection' ex 'suspected epidemiological "
+                      "origin', 'genotype', 'strain', 'variant name or specific "
+                      'feature.'],
          'domain_of': ['Term',
                        'Dataset',
                        'DataService',
@@ -4109,9 +4148,9 @@ class Variant(CommonName):
          'slot_uri': 'dct:description'} })
     weight: int = Field(default=0, title="weight", description="""A numerical value indicating relative importance or priority, generally processed in ascending order. This weight helps prioritize content when organizing or processing data. Its value can be negative, with a default set to 0.""", json_schema_extra = { "linkml_meta": {'alias': 'weight',
          'close_mappings': ['adms:status'],
-         'comments': ['The lowest weighted Data providers are triggered first, this '
-                      'may be usefull to populate at first entities that are '
-                      'referenced by others (e.g. Version ahead of Rank ahead of '
+         'comments': ['The lowest weighted Data providers are triggered first.',
+                      'This property may be usefull to populate at first entities that '
+                      'are referenced by others (e.g. Version ahead of Rank ahead of '
                       'Taxon).'],
          'domain_of': ['Term', 'DataProvider'],
          'ifabsent': 'int(0)'} })
@@ -4185,11 +4224,12 @@ class TaxonomicRank(Term):
          'recommended': True} })
     title: str = Field(default=..., title="title", description="""A name given to the resource.""", json_schema_extra = { "linkml_meta": {'alias': 'title',
          'comments': ['The title of the item should be as short and descriptive as '
-                      'possible. E.g. for virus products it should basically be based '
-                      "on the following Pattern: 'Virus name', 'virus host type', "
-                      "'collection year', 'country of collection' ex 'suspected "
-                      "epidemiological origin', 'genotype', 'strain', 'variant name or "
-                      'specific feature.'],
+                      'possible.',
+                      'E.g. for virus products it should basically be based on the '
+                      "following Pattern: 'Virus name', 'virus host type', 'collection "
+                      "year', 'country of collection' ex 'suspected epidemiological "
+                      "origin', 'genotype', 'strain', 'variant name or specific "
+                      'feature.'],
          'domain_of': ['Term',
                        'Dataset',
                        'DataService',
@@ -4216,9 +4256,9 @@ class TaxonomicRank(Term):
          'slot_uri': 'dct:description'} })
     weight: int = Field(default=0, title="weight", description="""A numerical value indicating relative importance or priority, generally processed in ascending order. This weight helps prioritize content when organizing or processing data. Its value can be negative, with a default set to 0.""", json_schema_extra = { "linkml_meta": {'alias': 'weight',
          'close_mappings': ['adms:status'],
-         'comments': ['The lowest weighted Data providers are triggered first, this '
-                      'may be usefull to populate at first entities that are '
-                      'referenced by others (e.g. Version ahead of Rank ahead of '
+         'comments': ['The lowest weighted Data providers are triggered first.',
+                      'This property may be usefull to populate at first entities that '
+                      'are referenced by others (e.g. Version ahead of Rank ahead of '
                       'Taxon).'],
          'domain_of': ['Term', 'DataProvider'],
          'ifabsent': 'int(0)'} })
@@ -4272,13 +4312,14 @@ class Taxon(Term):
                             'dwc:Taxon',
                             'uniprotrdfs:Taxon'],
          'comments': ['The taxonomic taxons connected to their parent so that a full '
-                      'lienage can be rebuild. Use of Data provider recommended.'],
+                      'lienage can be rebuild.',
+                      'Use of Data provider recommended.'],
          'exact_mappings': ['schema:Taxon', 'schema:Taxon'],
          'from_schema': 'https://w3id.org/evorao/',
          'slot_usage': {'alternateName': {'close_mappings': ['wdp:P4970'],
                                           'comments': ['This includes previous names, '
                                                        'acronyms, former taxonomic '
-                                                       'terms, and other variations. '
+                                                       'terms, and other variations.',
                                                        'This information can serve as '
                                                        'keywords for search purposes '
                                                        'and as a bridge with other '
@@ -4393,10 +4434,7 @@ class Taxon(Term):
                                                          'taxon_node id, only a '
                                                          'taxonomicID. Taxon_node id '
                                                          'is Unique  in ICTV= Key of '
-                                                         'the taxon node !! Could be '
-                                                         'replaced by a composite key '
-                                                         "made of 'taxonomic ID' + "
-                                                         "'has version'."],
+                                                         'the taxon node!'],
                                             'description': 'The taxonomic_Node '
                                                            'Identifier as an '
                                                            'identifier specific the '
@@ -4458,18 +4496,17 @@ class Taxon(Term):
          'broad_mappings': ['dct:identifier'],
          'close_mappings': ['dwc:taxonID'],
          'comments': ['NCBI does not have a taxon_node id, only a taxonomicID. '
-                      'Taxon_node id is Unique  in ICTV= Key of the taxon node !! '
-                      "Could be replaced by a composite key made of 'taxonomic ID' + "
-                      "'has version'."],
+                      'Taxon_node id is Unique  in ICTV= Key of the taxon node!'],
          'domain_of': ['Taxon'],
          'is_a': 'identifier',
          'recommended': True} })
     alternateName: Optional[list[AlternateName]] = Field(default=None, title="alternate name", description="""Any other name under which the entity can be known.""", json_schema_extra = { "linkml_meta": {'alias': 'alternateName',
          'close_mappings': ['wdp:P4970'],
          'comments': ['This includes previous names, acronyms, former taxonomic terms, '
-                      'and other variations. This information can serve as keywords '
-                      'for search purposes and as a bridge with other projects that '
-                      'use different naming systems or taxonomies.'],
+                      'and other variations.',
+                      'This information can serve as keywords for search purposes and '
+                      'as a bridge with other projects that use different naming '
+                      'systems or taxonomies.'],
          'domain_of': ['Taxon',
                        'CommonName',
                        'AlternateName',
@@ -4488,11 +4525,12 @@ class Taxon(Term):
          'related_mappings': ['schema:alternateName']} })
     title: str = Field(default=..., title="title", description="""A name given to the resource.""", json_schema_extra = { "linkml_meta": {'alias': 'title',
          'comments': ['The title of the item should be as short and descriptive as '
-                      'possible. E.g. for virus products it should basically be based '
-                      "on the following Pattern: 'Virus name', 'virus host type', "
-                      "'collection year', 'country of collection' ex 'suspected "
-                      "epidemiological origin', 'genotype', 'strain', 'variant name or "
-                      'specific feature.'],
+                      'possible.',
+                      'E.g. for virus products it should basically be based on the '
+                      "following Pattern: 'Virus name', 'virus host type', 'collection "
+                      "year', 'country of collection' ex 'suspected epidemiological "
+                      "origin', 'genotype', 'strain', 'variant name or specific "
+                      'feature.'],
          'domain_of': ['Term',
                        'Dataset',
                        'DataService',
@@ -4519,9 +4557,9 @@ class Taxon(Term):
          'slot_uri': 'dct:description'} })
     weight: int = Field(default=0, title="weight", description="""A numerical value indicating relative importance or priority, generally processed in ascending order. This weight helps prioritize content when organizing or processing data. Its value can be negative, with a default set to 0.""", json_schema_extra = { "linkml_meta": {'alias': 'weight',
          'close_mappings': ['adms:status'],
-         'comments': ['The lowest weighted Data providers are triggered first, this '
-                      'may be usefull to populate at first entities that are '
-                      'referenced by others (e.g. Version ahead of Rank ahead of '
+         'comments': ['The lowest weighted Data providers are triggered first.',
+                      'This property may be usefull to populate at first entities that '
+                      'are referenced by others (e.g. Version ahead of Rank ahead of '
                       'Taxon).'],
          'domain_of': ['Term', 'DataProvider'],
          'ifabsent': 'int(0)'} })
@@ -4572,7 +4610,7 @@ class ClinicalGroup(Term):
          'slot_usage': {'alternateName': {'close_mappings': ['wdp:P4970'],
                                           'comments': ['This includes previous names, '
                                                        'acronyms, former taxonomic '
-                                                       'terms, and other variations. '
+                                                       'terms, and other variations.',
                                                        'This information can serve as '
                                                        'keywords for search purposes '
                                                        'and as a bridge with other '
@@ -4613,9 +4651,10 @@ class ClinicalGroup(Term):
     alternateName: Optional[list[AlternateName]] = Field(default=None, title="alternate name", description="""Any other name under which the entity can be known.""", json_schema_extra = { "linkml_meta": {'alias': 'alternateName',
          'close_mappings': ['wdp:P4970'],
          'comments': ['This includes previous names, acronyms, former taxonomic terms, '
-                      'and other variations. This information can serve as keywords '
-                      'for search purposes and as a bridge with other projects that '
-                      'use different naming systems or taxonomies.'],
+                      'and other variations.',
+                      'This information can serve as keywords for search purposes and '
+                      'as a bridge with other projects that use different naming '
+                      'systems or taxonomies.'],
          'domain_of': ['ClinicalGroup',
                        'CommonName',
                        'AlternateName',
@@ -4631,11 +4670,12 @@ class ClinicalGroup(Term):
          'related_mappings': ['dwc:Taxon']} })
     title: str = Field(default=..., title="title", description="""A name given to the resource.""", json_schema_extra = { "linkml_meta": {'alias': 'title',
          'comments': ['The title of the item should be as short and descriptive as '
-                      'possible. E.g. for virus products it should basically be based '
-                      "on the following Pattern: 'Virus name', 'virus host type', "
-                      "'collection year', 'country of collection' ex 'suspected "
-                      "epidemiological origin', 'genotype', 'strain', 'variant name or "
-                      'specific feature.'],
+                      'possible.',
+                      'E.g. for virus products it should basically be based on the '
+                      "following Pattern: 'Virus name', 'virus host type', 'collection "
+                      "year', 'country of collection' ex 'suspected epidemiological "
+                      "origin', 'genotype', 'strain', 'variant name or specific "
+                      'feature.'],
          'domain_of': ['Term',
                        'Dataset',
                        'DataService',
@@ -4662,9 +4702,9 @@ class ClinicalGroup(Term):
          'slot_uri': 'dct:description'} })
     weight: int = Field(default=0, title="weight", description="""A numerical value indicating relative importance or priority, generally processed in ascending order. This weight helps prioritize content when organizing or processing data. Its value can be negative, with a default set to 0.""", json_schema_extra = { "linkml_meta": {'alias': 'weight',
          'close_mappings': ['adms:status'],
-         'comments': ['The lowest weighted Data providers are triggered first, this '
-                      'may be usefull to populate at first entities that are '
-                      'referenced by others (e.g. Version ahead of Rank ahead of '
+         'comments': ['The lowest weighted Data providers are triggered first.',
+                      'This property may be usefull to populate at first entities that '
+                      'are referenced by others (e.g. Version ahead of Rank ahead of '
                       'Taxon).'],
          'domain_of': ['Term', 'DataProvider'],
          'ifabsent': 'int(0)'} })
@@ -4822,16 +4862,17 @@ class Sequence(Resource):
                                                        'corresponding FASTA sequence '
                                                        'is expected; otherwise, the '
                                                        'reference sequence is '
-                                                       'sufficient. In FASTA format '
-                                                       'the line before the nucleotide '
+                                                       'sufficient. In case the '
+                                                       'sequence is made of multiple '
+                                                       'parts several fasta sequences '
+                                                       'can be provided.',
+                                                       'In FASTA format the line '
+                                                       'before the nucleotide '
                                                        'sequence, called the FASTA '
                                                        'definition line, must begin '
                                                        "with a charater ('>'), "
                                                        'followed by a unique SeqID '
-                                                       '(sequence identifier). In case '
-                                                       'the sequence is made of '
-                                                       'multiple parts several fasta '
-                                                       'sequences can be provided.'],
+                                                       '(sequence identifier).'],
                                           'description': 'Textual encoding of a '
                                                          'biological sequence '
                                                          'information in FASTA format.',
@@ -4860,12 +4901,12 @@ class Sequence(Resource):
     sequenceFasta: Optional[str] = Field(default=None, title="sequence FASTA", description="""Textual encoding of a biological sequence information in FASTA format.""", json_schema_extra = { "linkml_meta": {'alias': 'sequenceFasta',
          'comments': ['In cases where no reference sequence exists in public '
                       'repositories, the corresponding FASTA sequence is expected; '
-                      'otherwise, the reference sequence is sufficient. In FASTA '
-                      'format the line before the nucleotide sequence, called the '
-                      "FASTA definition line, must begin with a charater ('>'), "
-                      'followed by a unique SeqID (sequence identifier). In case the '
+                      'otherwise, the reference sequence is sufficient. In case the '
                       'sequence is made of multiple parts several fasta sequences can '
-                      'be provided.'],
+                      'be provided.',
+                      'In FASTA format the line before the nucleotide sequence, called '
+                      "the FASTA definition line, must begin with a charater ('>'), "
+                      'followed by a unique SeqID (sequence identifier).'],
          'domain_of': ['Sequence']} })
     keyword: Optional[list[str]] = Field(default=None, title="keyword", description="""A keyword or tag describing the resource.""", json_schema_extra = { "linkml_meta": {'alias': 'keyword', 'domain_of': ['Resource'], 'slot_uri': 'dcat:keyword'} })
     dateIssued: Optional[datetime ] = Field(default=None, title="date issued", description="""Date of formal issuance (e.g., publication) of the resource.""", json_schema_extra = { "linkml_meta": {'alias': 'dateIssued',
@@ -5247,7 +5288,7 @@ class Organization(PersonOrOrganization):
          'slot_usage': {'alternateName': {'close_mappings': ['wdp:P4970'],
                                           'comments': ['This includes previous names, '
                                                        'acronyms, former taxonomic '
-                                                       'terms, and other variations. '
+                                                       'terms, and other variations.',
                                                        'This information can serve as '
                                                        'keywords for search purposes '
                                                        'and as a bridge with other '
@@ -5295,9 +5336,10 @@ class Organization(PersonOrOrganization):
     alternateName: Optional[list[AlternateName]] = Field(default=None, title="alternate name", description="""Any other name under which the entity can be known.""", json_schema_extra = { "linkml_meta": {'alias': 'alternateName',
          'close_mappings': ['wdp:P4970'],
          'comments': ['This includes previous names, acronyms, former taxonomic terms, '
-                      'and other variations. This information can serve as keywords '
-                      'for search purposes and as a bridge with other projects that '
-                      'use different naming systems or taxonomies.'],
+                      'and other variations.',
+                      'This information can serve as keywords for search purposes and '
+                      'as a bridge with other projects that use different naming '
+                      'systems or taxonomies.'],
          'domain_of': ['Organization',
                        'CommonName',
                        'AlternateName',
@@ -5395,9 +5437,10 @@ class ReasearchInfrastructure(Organization):
     alternateName: Optional[list[AlternateName]] = Field(default=None, title="alternate name", description="""Any other name under which the entity can be known.""", json_schema_extra = { "linkml_meta": {'alias': 'alternateName',
          'close_mappings': ['wdp:P4970'],
          'comments': ['This includes previous names, acronyms, former taxonomic terms, '
-                      'and other variations. This information can serve as keywords '
-                      'for search purposes and as a bridge with other projects that '
-                      'use different naming systems or taxonomies.'],
+                      'and other variations.',
+                      'This information can serve as keywords for search purposes and '
+                      'as a bridge with other projects that use different naming '
+                      'systems or taxonomies.'],
          'domain_of': ['Organization',
                        'CommonName',
                        'AlternateName',
@@ -5508,9 +5551,10 @@ class Provider(Organization):
     alternateName: Optional[list[AlternateName]] = Field(default=None, title="alternate name", description="""Any other name under which the entity can be known.""", json_schema_extra = { "linkml_meta": {'alias': 'alternateName',
          'close_mappings': ['wdp:P4970'],
          'comments': ['This includes previous names, acronyms, former taxonomic terms, '
-                      'and other variations. This information can serve as keywords '
-                      'for search purposes and as a bridge with other projects that '
-                      'use different naming systems or taxonomies.'],
+                      'and other variations.',
+                      'This information can serve as keywords for search purposes and '
+                      'as a bridge with other projects that use different naming '
+                      'systems or taxonomies.'],
          'domain_of': ['Organization',
                        'CommonName',
                        'AlternateName',
@@ -6246,11 +6290,12 @@ class Collection(Catalogue):
          'domain_of': ['Collection']} })
     title: str = Field(default=..., title="title", description="""A name given to the resource.""", json_schema_extra = { "linkml_meta": {'alias': 'title',
          'comments': ['The title of the item should be as short and descriptive as '
-                      'possible. E.g. for virus products it should basically be based '
-                      "on the following Pattern: 'Virus name', 'virus host type', "
-                      "'collection year', 'country of collection' ex 'suspected "
-                      "epidemiological origin', 'genotype', 'strain', 'variant name or "
-                      'specific feature.'],
+                      'possible.',
+                      'E.g. for virus products it should basically be based on the '
+                      "following Pattern: 'Virus name', 'virus host type', 'collection "
+                      "year', 'country of collection' ex 'suspected epidemiological "
+                      "origin', 'genotype', 'strain', 'variant name or specific "
+                      'feature.'],
          'domain_of': ['Dataset',
                        'DataService',
                        'Publication',
@@ -6385,6 +6430,7 @@ class ProductOrService(Dataset):
                                                           'facility where the '
                                                           'biological agent is '
                                                           'manipulated.',
+                                           'domain_of': ['ProductOrService'],
                                            'exact_mappings': ['wdp:P1604',
                                                               'bao:0002826'],
                                            'multivalued': False,
@@ -6416,11 +6462,11 @@ class ProductOrService(Dataset):
                                                   'title': 'biosafety restrictions'},
                         'canBeUsedToProduceGmo': {'broad_mappings': ['schema:potentialUse'],
                                                   'comments': ['Set to TRUE if it can '
-                                                               'produce GMO. It is '
-                                                               'recommended to have a '
-                                                               'value for this field, '
-                                                               'no value will be '
-                                                               'understood as '
+                                                               'produce GMO.',
+                                                               'It is recommended to '
+                                                               'have a value for this '
+                                                               'field, no value will '
+                                                               'be understood as '
                                                                'unknown.'],
                                                   'description': 'Indicates if the '
                                                                  'current service or '
@@ -6840,8 +6886,9 @@ class ProductOrService(Dataset):
          'related_mappings': ['bao:0002826']} })
     canBeUsedToProduceGmo: bool = Field(default=..., title="can be used to produce GMO", description="""Indicates if the current service or product can be used to produce GMO.""", json_schema_extra = { "linkml_meta": {'alias': 'canBeUsedToProduceGmo',
          'broad_mappings': ['schema:potentialUse'],
-         'comments': ['Set to TRUE if it can produce GMO. It is recommended to have a '
-                      'value for this field, no value will be understood as unknown.'],
+         'comments': ['Set to TRUE if it can produce GMO.',
+                      'It is recommended to have a value for this field, no value will '
+                      'be understood as unknown.'],
          'domain_of': ['ProductOrService'],
          'recommended': True} })
     provider: Provider = Field(default=..., title="provider", description="""A provider of this product or service, as a specific organization.""", json_schema_extra = { "linkml_meta": {'alias': 'provider',
@@ -6891,11 +6938,12 @@ class ProductOrService(Dataset):
          'exact_mappings': ['schema:funding']} })
     title: str = Field(default=..., title="title", description="""A name given to the resource.""", json_schema_extra = { "linkml_meta": {'alias': 'title',
          'comments': ['The title of the item should be as short and descriptive as '
-                      'possible. E.g. for virus products it should basically be based '
-                      "on the following Pattern: 'Virus name', 'virus host type', "
-                      "'collection year', 'country of collection' ex 'suspected "
-                      "epidemiological origin', 'genotype', 'strain', 'variant name or "
-                      'specific feature.'],
+                      'possible.',
+                      'E.g. for virus products it should basically be based on the '
+                      "following Pattern: 'Virus name', 'virus host type', 'collection "
+                      "year', 'country of collection' ex 'suspected epidemiological "
+                      "origin', 'genotype', 'strain', 'variant name or specific "
+                      'feature.'],
          'domain_of': ['Dataset',
                        'DataService',
                        'Publication',
@@ -7082,8 +7130,9 @@ class Service(ProductOrService):
          'related_mappings': ['bao:0002826']} })
     canBeUsedToProduceGmo: bool = Field(default=..., title="can be used to produce GMO", description="""Indicates if the current service or product can be used to produce GMO.""", json_schema_extra = { "linkml_meta": {'alias': 'canBeUsedToProduceGmo',
          'broad_mappings': ['schema:potentialUse'],
-         'comments': ['Set to TRUE if it can produce GMO. It is recommended to have a '
-                      'value for this field, no value will be understood as unknown.'],
+         'comments': ['Set to TRUE if it can produce GMO.',
+                      'It is recommended to have a value for this field, no value will '
+                      'be understood as unknown.'],
          'domain_of': ['ProductOrService'],
          'recommended': True} })
     provider: Provider = Field(default=..., title="provider", description="""A provider of this product or service, as a specific organization.""", json_schema_extra = { "linkml_meta": {'alias': 'provider',
@@ -7133,11 +7182,12 @@ class Service(ProductOrService):
          'exact_mappings': ['schema:funding']} })
     title: str = Field(default=..., title="title", description="""A name given to the resource.""", json_schema_extra = { "linkml_meta": {'alias': 'title',
          'comments': ['The title of the item should be as short and descriptive as '
-                      'possible. E.g. for virus products it should basically be based '
-                      "on the following Pattern: 'Virus name', 'virus host type', "
-                      "'collection year', 'country of collection' ex 'suspected "
-                      "epidemiological origin', 'genotype', 'strain', 'variant name or "
-                      'specific feature.'],
+                      'possible.',
+                      'E.g. for virus products it should basically be based on the '
+                      "following Pattern: 'Virus name', 'virus host type', 'collection "
+                      "year', 'country of collection' ex 'suspected epidemiological "
+                      "origin', 'genotype', 'strain', 'variant name or specific "
+                      'feature.'],
          'domain_of': ['Dataset',
                        'DataService',
                        'Publication',
@@ -7460,8 +7510,9 @@ class Product(ProductOrService):
          'related_mappings': ['bao:0002826']} })
     canBeUsedToProduceGmo: bool = Field(default=..., title="can be used to produce GMO", description="""Indicates if the current service or product can be used to produce GMO.""", json_schema_extra = { "linkml_meta": {'alias': 'canBeUsedToProduceGmo',
          'broad_mappings': ['schema:potentialUse'],
-         'comments': ['Set to TRUE if it can produce GMO. It is recommended to have a '
-                      'value for this field, no value will be understood as unknown.'],
+         'comments': ['Set to TRUE if it can produce GMO.',
+                      'It is recommended to have a value for this field, no value will '
+                      'be understood as unknown.'],
          'domain_of': ['ProductOrService'],
          'recommended': True} })
     provider: Provider = Field(default=..., title="provider", description="""A provider of this product or service, as a specific organization.""", json_schema_extra = { "linkml_meta": {'alias': 'provider',
@@ -7511,11 +7562,12 @@ class Product(ProductOrService):
          'exact_mappings': ['schema:funding']} })
     title: str = Field(default=..., title="title", description="""A name given to the resource.""", json_schema_extra = { "linkml_meta": {'alias': 'title',
          'comments': ['The title of the item should be as short and descriptive as '
-                      'possible. E.g. for virus products it should basically be based '
-                      "on the following Pattern: 'Virus name', 'virus host type', "
-                      "'collection year', 'country of collection' ex 'suspected "
-                      "epidemiological origin', 'genotype', 'strain', 'variant name or "
-                      'specific feature.'],
+                      'possible.',
+                      'E.g. for virus products it should basically be based on the '
+                      "following Pattern: 'Virus name', 'virus host type', 'collection "
+                      "year', 'country of collection' ex 'suspected epidemiological "
+                      "origin', 'genotype', 'strain', 'variant name or specific "
+                      'feature.'],
          'domain_of': ['Dataset',
                        'DataService',
                        'Publication',
@@ -7759,8 +7811,9 @@ class Antibody(Product):
          'related_mappings': ['bao:0002826']} })
     canBeUsedToProduceGmo: bool = Field(default=..., title="can be used to produce GMO", description="""Indicates if the current service or product can be used to produce GMO.""", json_schema_extra = { "linkml_meta": {'alias': 'canBeUsedToProduceGmo',
          'broad_mappings': ['schema:potentialUse'],
-         'comments': ['Set to TRUE if it can produce GMO. It is recommended to have a '
-                      'value for this field, no value will be understood as unknown.'],
+         'comments': ['Set to TRUE if it can produce GMO.',
+                      'It is recommended to have a value for this field, no value will '
+                      'be understood as unknown.'],
          'domain_of': ['ProductOrService'],
          'recommended': True} })
     provider: Provider = Field(default=..., title="provider", description="""A provider of this product or service, as a specific organization.""", json_schema_extra = { "linkml_meta": {'alias': 'provider',
@@ -7810,11 +7863,12 @@ class Antibody(Product):
          'exact_mappings': ['schema:funding']} })
     title: str = Field(default=..., title="title", description="""A name given to the resource.""", json_schema_extra = { "linkml_meta": {'alias': 'title',
          'comments': ['The title of the item should be as short and descriptive as '
-                      'possible. E.g. for virus products it should basically be based '
-                      "on the following Pattern: 'Virus name', 'virus host type', "
-                      "'collection year', 'country of collection' ex 'suspected "
-                      "epidemiological origin', 'genotype', 'strain', 'variant name or "
-                      'specific feature.'],
+                      'possible.',
+                      'E.g. for virus products it should basically be based on the '
+                      "following Pattern: 'Virus name', 'virus host type', 'collection "
+                      "year', 'country of collection' ex 'suspected epidemiological "
+                      "origin', 'genotype', 'strain', 'variant name or specific "
+                      'feature.'],
          'domain_of': ['Dataset',
                        'DataService',
                        'Publication',
@@ -8017,8 +8071,9 @@ class Hybridoma(Antibody):
          'related_mappings': ['bao:0002826']} })
     canBeUsedToProduceGmo: bool = Field(default=..., title="can be used to produce GMO", description="""Indicates if the current service or product can be used to produce GMO.""", json_schema_extra = { "linkml_meta": {'alias': 'canBeUsedToProduceGmo',
          'broad_mappings': ['schema:potentialUse'],
-         'comments': ['Set to TRUE if it can produce GMO. It is recommended to have a '
-                      'value for this field, no value will be understood as unknown.'],
+         'comments': ['Set to TRUE if it can produce GMO.',
+                      'It is recommended to have a value for this field, no value will '
+                      'be understood as unknown.'],
          'domain_of': ['ProductOrService'],
          'recommended': True} })
     provider: Provider = Field(default=..., title="provider", description="""A provider of this product or service, as a specific organization.""", json_schema_extra = { "linkml_meta": {'alias': 'provider',
@@ -8068,11 +8123,12 @@ class Hybridoma(Antibody):
          'exact_mappings': ['schema:funding']} })
     title: str = Field(default=..., title="title", description="""A name given to the resource.""", json_schema_extra = { "linkml_meta": {'alias': 'title',
          'comments': ['The title of the item should be as short and descriptive as '
-                      'possible. E.g. for virus products it should basically be based '
-                      "on the following Pattern: 'Virus name', 'virus host type', "
-                      "'collection year', 'country of collection' ex 'suspected "
-                      "epidemiological origin', 'genotype', 'strain', 'variant name or "
-                      'specific feature.'],
+                      'possible.',
+                      'E.g. for virus products it should basically be based on the '
+                      "following Pattern: 'Virus name', 'virus host type', 'collection "
+                      "year', 'country of collection' ex 'suspected epidemiological "
+                      "origin', 'genotype', 'strain', 'variant name or specific "
+                      'feature.'],
          'domain_of': ['Dataset',
                        'DataService',
                        'Publication',
@@ -8636,8 +8692,9 @@ class Protein(Product):
          'related_mappings': ['bao:0002826']} })
     canBeUsedToProduceGmo: bool = Field(default=..., title="can be used to produce GMO", description="""Indicates if the current service or product can be used to produce GMO.""", json_schema_extra = { "linkml_meta": {'alias': 'canBeUsedToProduceGmo',
          'broad_mappings': ['schema:potentialUse'],
-         'comments': ['Set to TRUE if it can produce GMO. It is recommended to have a '
-                      'value for this field, no value will be understood as unknown.'],
+         'comments': ['Set to TRUE if it can produce GMO.',
+                      'It is recommended to have a value for this field, no value will '
+                      'be understood as unknown.'],
          'domain_of': ['ProductOrService'],
          'recommended': True} })
     provider: Provider = Field(default=..., title="provider", description="""A provider of this product or service, as a specific organization.""", json_schema_extra = { "linkml_meta": {'alias': 'provider',
@@ -8687,11 +8744,12 @@ class Protein(Product):
          'exact_mappings': ['schema:funding']} })
     title: str = Field(default=..., title="title", description="""A name given to the resource.""", json_schema_extra = { "linkml_meta": {'alias': 'title',
          'comments': ['The title of the item should be as short and descriptive as '
-                      'possible. E.g. for virus products it should basically be based '
-                      "on the following Pattern: 'Virus name', 'virus host type', "
-                      "'collection year', 'country of collection' ex 'suspected "
-                      "epidemiological origin', 'genotype', 'strain', 'variant name or "
-                      'specific feature.'],
+                      'possible.',
+                      'E.g. for virus products it should basically be based on the '
+                      "following Pattern: 'Virus name', 'virus host type', 'collection "
+                      "year', 'country of collection' ex 'suspected epidemiological "
+                      "origin', 'genotype', 'strain', 'variant name or specific "
+                      'feature.'],
          'domain_of': ['Dataset',
                        'DataService',
                        'Publication',
@@ -9134,8 +9192,9 @@ class NucleicAcid(Product):
          'related_mappings': ['bao:0002826']} })
     canBeUsedToProduceGmo: bool = Field(default=..., title="can be used to produce GMO", description="""Indicates if the current service or product can be used to produce GMO.""", json_schema_extra = { "linkml_meta": {'alias': 'canBeUsedToProduceGmo',
          'broad_mappings': ['schema:potentialUse'],
-         'comments': ['Set to TRUE if it can produce GMO. It is recommended to have a '
-                      'value for this field, no value will be understood as unknown.'],
+         'comments': ['Set to TRUE if it can produce GMO.',
+                      'It is recommended to have a value for this field, no value will '
+                      'be understood as unknown.'],
          'domain_of': ['ProductOrService'],
          'recommended': True} })
     provider: Provider = Field(default=..., title="provider", description="""A provider of this product or service, as a specific organization.""", json_schema_extra = { "linkml_meta": {'alias': 'provider',
@@ -9185,11 +9244,12 @@ class NucleicAcid(Product):
          'exact_mappings': ['schema:funding']} })
     title: str = Field(default=..., title="title", description="""A name given to the resource.""", json_schema_extra = { "linkml_meta": {'alias': 'title',
          'comments': ['The title of the item should be as short and descriptive as '
-                      'possible. E.g. for virus products it should basically be based '
-                      "on the following Pattern: 'Virus name', 'virus host type', "
-                      "'collection year', 'country of collection' ex 'suspected "
-                      "epidemiological origin', 'genotype', 'strain', 'variant name or "
-                      'specific feature.'],
+                      'possible.',
+                      'E.g. for virus products it should basically be based on the '
+                      "following Pattern: 'Virus name', 'virus host type', 'collection "
+                      "year', 'country of collection' ex 'suspected epidemiological "
+                      "origin', 'genotype', 'strain', 'variant name or specific "
+                      'feature.'],
          'domain_of': ['Dataset',
                        'DataService',
                        'Publication',
@@ -9422,8 +9482,9 @@ class DetectionKit(Product):
          'related_mappings': ['bao:0002826']} })
     canBeUsedToProduceGmo: bool = Field(default=..., title="can be used to produce GMO", description="""Indicates if the current service or product can be used to produce GMO.""", json_schema_extra = { "linkml_meta": {'alias': 'canBeUsedToProduceGmo',
          'broad_mappings': ['schema:potentialUse'],
-         'comments': ['Set to TRUE if it can produce GMO. It is recommended to have a '
-                      'value for this field, no value will be understood as unknown.'],
+         'comments': ['Set to TRUE if it can produce GMO.',
+                      'It is recommended to have a value for this field, no value will '
+                      'be understood as unknown.'],
          'domain_of': ['ProductOrService'],
          'recommended': True} })
     provider: Provider = Field(default=..., title="provider", description="""A provider of this product or service, as a specific organization.""", json_schema_extra = { "linkml_meta": {'alias': 'provider',
@@ -9473,11 +9534,12 @@ class DetectionKit(Product):
          'exact_mappings': ['schema:funding']} })
     title: str = Field(default=..., title="title", description="""A name given to the resource.""", json_schema_extra = { "linkml_meta": {'alias': 'title',
          'comments': ['The title of the item should be as short and descriptive as '
-                      'possible. E.g. for virus products it should basically be based '
-                      "on the following Pattern: 'Virus name', 'virus host type', "
-                      "'collection year', 'country of collection' ex 'suspected "
-                      "epidemiological origin', 'genotype', 'strain', 'variant name or "
-                      'specific feature.'],
+                      'possible.',
+                      'E.g. for virus products it should basically be based on the '
+                      "following Pattern: 'Virus name', 'virus host type', 'collection "
+                      "year', 'country of collection' ex 'suspected epidemiological "
+                      "origin', 'genotype', 'strain', 'variant name or specific "
+                      'feature.'],
          'domain_of': ['Dataset',
                        'DataService',
                        'Publication',
@@ -9671,8 +9733,9 @@ class Bundle(Product):
          'related_mappings': ['bao:0002826']} })
     canBeUsedToProduceGmo: bool = Field(default=..., title="can be used to produce GMO", description="""Indicates if the current service or product can be used to produce GMO.""", json_schema_extra = { "linkml_meta": {'alias': 'canBeUsedToProduceGmo',
          'broad_mappings': ['schema:potentialUse'],
-         'comments': ['Set to TRUE if it can produce GMO. It is recommended to have a '
-                      'value for this field, no value will be understood as unknown.'],
+         'comments': ['Set to TRUE if it can produce GMO.',
+                      'It is recommended to have a value for this field, no value will '
+                      'be understood as unknown.'],
          'domain_of': ['ProductOrService'],
          'recommended': True} })
     provider: Provider = Field(default=..., title="provider", description="""A provider of this product or service, as a specific organization.""", json_schema_extra = { "linkml_meta": {'alias': 'provider',
@@ -9722,11 +9785,12 @@ class Bundle(Product):
          'exact_mappings': ['schema:funding']} })
     title: str = Field(default=..., title="title", description="""A name given to the resource.""", json_schema_extra = { "linkml_meta": {'alias': 'title',
          'comments': ['The title of the item should be as short and descriptive as '
-                      'possible. E.g. for virus products it should basically be based '
-                      "on the following Pattern: 'Virus name', 'virus host type', "
-                      "'collection year', 'country of collection' ex 'suspected "
-                      "epidemiological origin', 'genotype', 'strain', 'variant name or "
-                      'specific feature.'],
+                      'possible.',
+                      'E.g. for virus products it should basically be based on the '
+                      "following Pattern: 'Virus name', 'virus host type', 'collection "
+                      "year', 'country of collection' ex 'suspected epidemiological "
+                      "origin', 'genotype', 'strain', 'variant name or specific "
+                      'feature.'],
          'domain_of': ['Dataset',
                        'DataService',
                        'Publication',
@@ -10262,8 +10326,9 @@ class Pathogen(Product):
          'related_mappings': ['bao:0002826']} })
     canBeUsedToProduceGmo: bool = Field(default=..., title="can be used to produce GMO", description="""Indicates if the current service or product can be used to produce GMO.""", json_schema_extra = { "linkml_meta": {'alias': 'canBeUsedToProduceGmo',
          'broad_mappings': ['schema:potentialUse'],
-         'comments': ['Set to TRUE if it can produce GMO. It is recommended to have a '
-                      'value for this field, no value will be understood as unknown.'],
+         'comments': ['Set to TRUE if it can produce GMO.',
+                      'It is recommended to have a value for this field, no value will '
+                      'be understood as unknown.'],
          'domain_of': ['ProductOrService'],
          'recommended': True} })
     provider: Provider = Field(default=..., title="provider", description="""A provider of this product or service, as a specific organization.""", json_schema_extra = { "linkml_meta": {'alias': 'provider',
@@ -10313,11 +10378,12 @@ class Pathogen(Product):
          'exact_mappings': ['schema:funding']} })
     title: str = Field(default=..., title="title", description="""A name given to the resource.""", json_schema_extra = { "linkml_meta": {'alias': 'title',
          'comments': ['The title of the item should be as short and descriptive as '
-                      'possible. E.g. for virus products it should basically be based '
-                      "on the following Pattern: 'Virus name', 'virus host type', "
-                      "'collection year', 'country of collection' ex 'suspected "
-                      "epidemiological origin', 'genotype', 'strain', 'variant name or "
-                      'specific feature.'],
+                      'possible.',
+                      'E.g. for virus products it should basically be based on the '
+                      "following Pattern: 'Virus name', 'virus host type', 'collection "
+                      "year', 'country of collection' ex 'suspected epidemiological "
+                      "origin', 'genotype', 'strain', 'variant name or specific "
+                      'feature.'],
          'domain_of': ['Dataset',
                        'DataService',
                        'Publication',
@@ -10628,8 +10694,9 @@ class Virus(Pathogen):
          'related_mappings': ['bao:0002826']} })
     canBeUsedToProduceGmo: bool = Field(default=..., title="can be used to produce GMO", description="""Indicates if the current service or product can be used to produce GMO.""", json_schema_extra = { "linkml_meta": {'alias': 'canBeUsedToProduceGmo',
          'broad_mappings': ['schema:potentialUse'],
-         'comments': ['Set to TRUE if it can produce GMO. It is recommended to have a '
-                      'value for this field, no value will be understood as unknown.'],
+         'comments': ['Set to TRUE if it can produce GMO.',
+                      'It is recommended to have a value for this field, no value will '
+                      'be understood as unknown.'],
          'domain_of': ['ProductOrService'],
          'recommended': True} })
     provider: Provider = Field(default=..., title="provider", description="""A provider of this product or service, as a specific organization.""", json_schema_extra = { "linkml_meta": {'alias': 'provider',
@@ -10679,11 +10746,12 @@ class Virus(Pathogen):
          'exact_mappings': ['schema:funding']} })
     title: str = Field(default=..., title="title", description="""A name given to the resource.""", json_schema_extra = { "linkml_meta": {'alias': 'title',
          'comments': ['The title of the item should be as short and descriptive as '
-                      'possible. E.g. for virus products it should basically be based '
-                      "on the following Pattern: 'Virus name', 'virus host type', "
-                      "'collection year', 'country of collection' ex 'suspected "
-                      "epidemiological origin', 'genotype', 'strain', 'variant name or "
-                      'specific feature.'],
+                      'possible.',
+                      'E.g. for virus products it should basically be based on the '
+                      "following Pattern: 'Virus name', 'virus host type', 'collection "
+                      "year', 'country of collection' ex 'suspected epidemiological "
+                      "origin', 'genotype', 'strain', 'variant name or specific "
+                      'feature.'],
          'domain_of': ['Dataset',
                        'DataService',
                        'Publication',
@@ -10935,8 +11003,9 @@ class Bacterium(Pathogen):
          'related_mappings': ['bao:0002826']} })
     canBeUsedToProduceGmo: bool = Field(default=..., title="can be used to produce GMO", description="""Indicates if the current service or product can be used to produce GMO.""", json_schema_extra = { "linkml_meta": {'alias': 'canBeUsedToProduceGmo',
          'broad_mappings': ['schema:potentialUse'],
-         'comments': ['Set to TRUE if it can produce GMO. It is recommended to have a '
-                      'value for this field, no value will be understood as unknown.'],
+         'comments': ['Set to TRUE if it can produce GMO.',
+                      'It is recommended to have a value for this field, no value will '
+                      'be understood as unknown.'],
          'domain_of': ['ProductOrService'],
          'recommended': True} })
     provider: Provider = Field(default=..., title="provider", description="""A provider of this product or service, as a specific organization.""", json_schema_extra = { "linkml_meta": {'alias': 'provider',
@@ -10986,11 +11055,12 @@ class Bacterium(Pathogen):
          'exact_mappings': ['schema:funding']} })
     title: str = Field(default=..., title="title", description="""A name given to the resource.""", json_schema_extra = { "linkml_meta": {'alias': 'title',
          'comments': ['The title of the item should be as short and descriptive as '
-                      'possible. E.g. for virus products it should basically be based '
-                      "on the following Pattern: 'Virus name', 'virus host type', "
-                      "'collection year', 'country of collection' ex 'suspected "
-                      "epidemiological origin', 'genotype', 'strain', 'variant name or "
-                      'specific feature.'],
+                      'possible.',
+                      'E.g. for virus products it should basically be based on the '
+                      "following Pattern: 'Virus name', 'virus host type', 'collection "
+                      "year', 'country of collection' ex 'suspected epidemiological "
+                      "origin', 'genotype', 'strain', 'variant name or specific "
+                      'feature.'],
          'domain_of': ['Dataset',
                        'DataService',
                        'Publication',
@@ -11240,8 +11310,9 @@ class Fungus(Pathogen):
          'related_mappings': ['bao:0002826']} })
     canBeUsedToProduceGmo: bool = Field(default=..., title="can be used to produce GMO", description="""Indicates if the current service or product can be used to produce GMO.""", json_schema_extra = { "linkml_meta": {'alias': 'canBeUsedToProduceGmo',
          'broad_mappings': ['schema:potentialUse'],
-         'comments': ['Set to TRUE if it can produce GMO. It is recommended to have a '
-                      'value for this field, no value will be understood as unknown.'],
+         'comments': ['Set to TRUE if it can produce GMO.',
+                      'It is recommended to have a value for this field, no value will '
+                      'be understood as unknown.'],
          'domain_of': ['ProductOrService'],
          'recommended': True} })
     provider: Provider = Field(default=..., title="provider", description="""A provider of this product or service, as a specific organization.""", json_schema_extra = { "linkml_meta": {'alias': 'provider',
@@ -11291,11 +11362,12 @@ class Fungus(Pathogen):
          'exact_mappings': ['schema:funding']} })
     title: str = Field(default=..., title="title", description="""A name given to the resource.""", json_schema_extra = { "linkml_meta": {'alias': 'title',
          'comments': ['The title of the item should be as short and descriptive as '
-                      'possible. E.g. for virus products it should basically be based '
-                      "on the following Pattern: 'Virus name', 'virus host type', "
-                      "'collection year', 'country of collection' ex 'suspected "
-                      "epidemiological origin', 'genotype', 'strain', 'variant name or "
-                      'specific feature.'],
+                      'possible.',
+                      'E.g. for virus products it should basically be based on the '
+                      "following Pattern: 'Virus name', 'virus host type', 'collection "
+                      "year', 'country of collection' ex 'suspected epidemiological "
+                      "origin', 'genotype', 'strain', 'variant name or specific "
+                      'feature.'],
          'domain_of': ['Dataset',
                        'DataService',
                        'Publication',
@@ -11541,8 +11613,9 @@ class Protozoan(Pathogen):
          'related_mappings': ['bao:0002826']} })
     canBeUsedToProduceGmo: bool = Field(default=..., title="can be used to produce GMO", description="""Indicates if the current service or product can be used to produce GMO.""", json_schema_extra = { "linkml_meta": {'alias': 'canBeUsedToProduceGmo',
          'broad_mappings': ['schema:potentialUse'],
-         'comments': ['Set to TRUE if it can produce GMO. It is recommended to have a '
-                      'value for this field, no value will be understood as unknown.'],
+         'comments': ['Set to TRUE if it can produce GMO.',
+                      'It is recommended to have a value for this field, no value will '
+                      'be understood as unknown.'],
          'domain_of': ['ProductOrService'],
          'recommended': True} })
     provider: Provider = Field(default=..., title="provider", description="""A provider of this product or service, as a specific organization.""", json_schema_extra = { "linkml_meta": {'alias': 'provider',
@@ -11592,11 +11665,12 @@ class Protozoan(Pathogen):
          'exact_mappings': ['schema:funding']} })
     title: str = Field(default=..., title="title", description="""A name given to the resource.""", json_schema_extra = { "linkml_meta": {'alias': 'title',
          'comments': ['The title of the item should be as short and descriptive as '
-                      'possible. E.g. for virus products it should basically be based '
-                      "on the following Pattern: 'Virus name', 'virus host type', "
-                      "'collection year', 'country of collection' ex 'suspected "
-                      "epidemiological origin', 'genotype', 'strain', 'variant name or "
-                      'specific feature.'],
+                      'possible.',
+                      'E.g. for virus products it should basically be based on the '
+                      "following Pattern: 'Virus name', 'virus host type', 'collection "
+                      "year', 'country of collection' ex 'suspected epidemiological "
+                      "origin', 'genotype', 'strain', 'variant name or specific "
+                      'feature.'],
          'domain_of': ['Dataset',
                        'DataService',
                        'Publication',
@@ -11834,8 +11908,9 @@ class Viroid(Pathogen):
          'related_mappings': ['bao:0002826']} })
     canBeUsedToProduceGmo: bool = Field(default=..., title="can be used to produce GMO", description="""Indicates if the current service or product can be used to produce GMO.""", json_schema_extra = { "linkml_meta": {'alias': 'canBeUsedToProduceGmo',
          'broad_mappings': ['schema:potentialUse'],
-         'comments': ['Set to TRUE if it can produce GMO. It is recommended to have a '
-                      'value for this field, no value will be understood as unknown.'],
+         'comments': ['Set to TRUE if it can produce GMO.',
+                      'It is recommended to have a value for this field, no value will '
+                      'be understood as unknown.'],
          'domain_of': ['ProductOrService'],
          'recommended': True} })
     provider: Provider = Field(default=..., title="provider", description="""A provider of this product or service, as a specific organization.""", json_schema_extra = { "linkml_meta": {'alias': 'provider',
@@ -11885,11 +11960,12 @@ class Viroid(Pathogen):
          'exact_mappings': ['schema:funding']} })
     title: str = Field(default=..., title="title", description="""A name given to the resource.""", json_schema_extra = { "linkml_meta": {'alias': 'title',
          'comments': ['The title of the item should be as short and descriptive as '
-                      'possible. E.g. for virus products it should basically be based '
-                      "on the following Pattern: 'Virus name', 'virus host type', "
-                      "'collection year', 'country of collection' ex 'suspected "
-                      "epidemiological origin', 'genotype', 'strain', 'variant name or "
-                      'specific feature.'],
+                      'possible.',
+                      'E.g. for virus products it should basically be based on the '
+                      "following Pattern: 'Virus name', 'virus host type', 'collection "
+                      "year', 'country of collection' ex 'suspected epidemiological "
+                      "origin', 'genotype', 'strain', 'variant name or specific "
+                      'feature.'],
          'domain_of': ['Dataset',
                        'DataService',
                        'Publication',
@@ -12135,8 +12211,9 @@ class Prion(Pathogen):
          'related_mappings': ['bao:0002826']} })
     canBeUsedToProduceGmo: bool = Field(default=..., title="can be used to produce GMO", description="""Indicates if the current service or product can be used to produce GMO.""", json_schema_extra = { "linkml_meta": {'alias': 'canBeUsedToProduceGmo',
          'broad_mappings': ['schema:potentialUse'],
-         'comments': ['Set to TRUE if it can produce GMO. It is recommended to have a '
-                      'value for this field, no value will be understood as unknown.'],
+         'comments': ['Set to TRUE if it can produce GMO.',
+                      'It is recommended to have a value for this field, no value will '
+                      'be understood as unknown.'],
          'domain_of': ['ProductOrService'],
          'recommended': True} })
     provider: Provider = Field(default=..., title="provider", description="""A provider of this product or service, as a specific organization.""", json_schema_extra = { "linkml_meta": {'alias': 'provider',
@@ -12186,11 +12263,12 @@ class Prion(Pathogen):
          'exact_mappings': ['schema:funding']} })
     title: str = Field(default=..., title="title", description="""A name given to the resource.""", json_schema_extra = { "linkml_meta": {'alias': 'title',
          'comments': ['The title of the item should be as short and descriptive as '
-                      'possible. E.g. for virus products it should basically be based '
-                      "on the following Pattern: 'Virus name', 'virus host type', "
-                      "'collection year', 'country of collection' ex 'suspected "
-                      "epidemiological origin', 'genotype', 'strain', 'variant name or "
-                      'specific feature.'],
+                      'possible.',
+                      'E.g. for virus products it should basically be based on the '
+                      "following Pattern: 'Virus name', 'virus host type', 'collection "
+                      "year', 'country of collection' ex 'suspected epidemiological "
+                      "origin', 'genotype', 'strain', 'variant name or specific "
+                      'feature.'],
          'domain_of': ['Dataset',
                        'DataService',
                        'Publication',
@@ -13559,7 +13637,7 @@ class License(Resource):
                                         'required': False,
                                         'title': 'resource URL'},
                         'title': {'comments': ['The title of the item should be as '
-                                               'short and descriptive as possible. '
+                                               'short and descriptive as possible.',
                                                'E.g. for virus products it should '
                                                'basically be based on the following '
                                                "Pattern: 'Virus name', 'virus host "
@@ -13587,11 +13665,12 @@ class License(Resource):
 
     title: str = Field(default=..., title="title", description="""A name given to the resource.""", json_schema_extra = { "linkml_meta": {'alias': 'title',
          'comments': ['The title of the item should be as short and descriptive as '
-                      'possible. E.g. for virus products it should basically be based '
-                      "on the following Pattern: 'Virus name', 'virus host type', "
-                      "'collection year', 'country of collection' ex 'suspected "
-                      "epidemiological origin', 'genotype', 'strain', 'variant name or "
-                      'specific feature.'],
+                      'possible.',
+                      'E.g. for virus products it should basically be based on the '
+                      "following Pattern: 'Virus name', 'virus host type', 'collection "
+                      "year', 'country of collection' ex 'suspected epidemiological "
+                      "origin', 'genotype', 'strain', 'variant name or specific "
+                      'feature.'],
          'domain_of': ['License',
                        'Dataset',
                        'DataService',
@@ -13740,7 +13819,7 @@ class Certification(Resource):
                                         'required': False,
                                         'title': 'resource URL'},
                         'title': {'comments': ['The title of the item should be as '
-                                               'short and descriptive as possible. '
+                                               'short and descriptive as possible.',
                                                'E.g. for virus products it should '
                                                'basically be based on the following '
                                                "Pattern: 'Virus name', 'virus host "
@@ -13768,11 +13847,12 @@ class Certification(Resource):
 
     title: str = Field(default=..., title="title", description="""A name given to the resource.""", json_schema_extra = { "linkml_meta": {'alias': 'title',
          'comments': ['The title of the item should be as short and descriptive as '
-                      'possible. E.g. for virus products it should basically be based '
-                      "on the following Pattern: 'Virus name', 'virus host type', "
-                      "'collection year', 'country of collection' ex 'suspected "
-                      "epidemiological origin', 'genotype', 'strain', 'variant name or "
-                      'specific feature.'],
+                      'possible.',
+                      'E.g. for virus products it should basically be based on the '
+                      "following Pattern: 'Virus name', 'virus host type', 'collection "
+                      "year', 'country of collection' ex 'suspected epidemiological "
+                      "origin', 'genotype', 'strain', 'variant name or specific "
+                      'feature.'],
          'domain_of': ['Certification',
                        'Dataset',
                        'DataService',
@@ -13971,7 +14051,7 @@ class FundingSource(Resource):
                                  'required': False,
                                  'title': 'logo'},
                         'title': {'comments': ['The title of the item should be as '
-                                               'short and descriptive as possible. '
+                                               'short and descriptive as possible.',
                                                'E.g. for virus products it should '
                                                'basically be based on the following '
                                                "Pattern: 'Virus name', 'virus host "
@@ -13999,11 +14079,12 @@ class FundingSource(Resource):
 
     title: str = Field(default=..., title="title", description="""A name given to the resource.""", json_schema_extra = { "linkml_meta": {'alias': 'title',
          'comments': ['The title of the item should be as short and descriptive as '
-                      'possible. E.g. for virus products it should basically be based '
-                      "on the following Pattern: 'Virus name', 'virus host type', "
-                      "'collection year', 'country of collection' ex 'suspected "
-                      "epidemiological origin', 'genotype', 'strain', 'variant name or "
-                      'specific feature.'],
+                      'possible.',
+                      'E.g. for virus products it should basically be based on the '
+                      "following Pattern: 'Virus name', 'virus host type', 'collection "
+                      "year', 'country of collection' ex 'suspected epidemiological "
+                      "origin', 'genotype', 'strain', 'variant name or specific "
+                      'feature.'],
          'domain_of': ['FundingSource',
                        'Dataset',
                        'DataService',
