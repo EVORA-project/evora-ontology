@@ -379,6 +379,7 @@ slot_usage:
     - dcat:landingPage
     broad_mappings:
     - schema:url
+    is_a: iri
     domain_of:
     - ProductOrService
     range: uri
@@ -803,6 +804,7 @@ slot_usage:
     - dcat:landingPage
     broad_mappings:
     - schema:url
+    is_a: iri
     domain_of:
     - ProductOrService
     range: uri
@@ -1207,6 +1209,7 @@ attributes:
     broad_mappings:
     - schema:url
     rank: 1000
+    is_a: iri
     alias: accessPointUrl
     owner: ProductOrService
     domain_of:

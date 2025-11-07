@@ -220,6 +220,7 @@ slot_usage:
     - dct:license
     broad_mappings:
     - schema:url
+    is_a: iri
     domain_of:
     - License
     - Certification
@@ -336,6 +337,7 @@ slot_usage:
     - dct:license
     broad_mappings:
     - schema:url
+    is_a: iri
     domain_of:
     - License
     - Certification
@@ -438,6 +440,7 @@ attributes:
     broad_mappings:
     - schema:url
     rank: 1000
+    is_a: iri
     alias: resourceUrl
     owner: License
     domain_of:

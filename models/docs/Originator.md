@@ -251,6 +251,7 @@ attributes:
     close_mappings:
     - swo:0004006
     rank: 1000
+    is_a: iri
     slot_uri: foaf:homepage
     alias: homePage
     owner: Originator

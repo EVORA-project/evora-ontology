@@ -355,6 +355,7 @@ slot_usage:
     related_mappings:
     - iao:0000708
     - edam:4022
+    is_a: identifier
     domain_of:
     - ContactPoint
     - Person
@@ -543,6 +544,7 @@ slot_usage:
     related_mappings:
     - iao:0000708
     - edam:4022
+    is_a: identifier
     domain_of:
     - ContactPoint
     - Person

@@ -1115,6 +1115,7 @@ attributes:
     broad_mappings:
     - schema:url
     rank: 1000
+    is_a: iri
     alias: accessPointUrl
     owner: Virus
     domain_of:

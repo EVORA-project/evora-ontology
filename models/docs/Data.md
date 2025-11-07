@@ -241,6 +241,7 @@ attributes:
     exact_mappings:
     - schema:contentUrl
     rank: 1000
+    is_a: iri
     alias: contentUrl
     owner: Data
     domain_of:

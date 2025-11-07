@@ -12,7 +12,13 @@ _The web address or location where the details or content is stored and can be a
 URI: [EVORAO:resourceUrl](https://w3id.org/evorao/resourceUrl)
 Alias: resourceUrl
 
-<!-- no inheritance hierarchy -->
+
+## Inheritance
+
+* [identifier](identifier.md)
+    * [iri](iri.md)
+        * **resourceUrl**
+
 
 
 
@@ -34,6 +40,8 @@ Alias: resourceUrl
 ## Properties
 
 * Range: [Uri](Uri.md)
+
+* Multivalued: True
 
 
 
@@ -83,13 +91,14 @@ broad_mappings:
 - schema:url
 - schema:url
 rank: 1000
+is_a: iri
 alias: resourceUrl
 domain_of:
 - License
 - Certification
 range: uri
 required: false
-multivalued: false
+multivalued: true
 
 ```
 </details>

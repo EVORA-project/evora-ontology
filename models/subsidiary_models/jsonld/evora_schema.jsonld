@@ -38,7 +38,7 @@
     "interoperability"
   ],
   "id": "https://w3id.org/evorao/",
-  "version": "1.0.10623",
+  "version": "1.0.10635",
   "imports": [
     "linkml:types"
   ],
@@ -833,6 +833,7 @@
       "close_mappings": [
         "http://www.wikidata.org/prop/P1630"
       ],
+      "is_a": "iri",
       "slot_uri": "http://www.w3.org/ns/dcat#endpointURL",
       "owner": "DataService",
       "domain_of": [
@@ -1080,6 +1081,7 @@
       "broad_mappings": [
         "http://schema.org/urlTemplate"
       ],
+      "is_a": "iri",
       "slot_uri": "https://w3id.org/evorao/loginUrl",
       "owner": "DataProvider",
       "domain_of": [
@@ -1171,6 +1173,7 @@
       "related_mappings": [
         "http://www.w3.org/ns/dcat#servesDataset"
       ],
+      "is_a": "iri",
       "slot_uri": "https://w3id.org/evorao/providedEntityType",
       "owner": "DataProvider",
       "domain_of": [
@@ -1960,6 +1963,7 @@
       "close_mappings": [
         "http://www.ebi.ac.uk/swo/SWO_0004006"
       ],
+      "is_a": "iri",
       "slot_uri": "http://xmlns.com/foaf/0.1/homepage",
       "owner": "PersonOrOrganization",
       "domain_of": [
@@ -2020,13 +2024,9 @@
       "from_schema": "https://w3id.org/evorao/",
       "exact_mappings": [
         "http://www.wikidata.org/prop/P496",
-        "https://w3id.org/reproduceme#ORCID",
-        "http://www.wikidata.org/prop/P496",
         "https://w3id.org/reproduceme#ORCID"
       ],
       "related_mappings": [
-        "http://purl.obolibrary.org/obo/IAO_0000708",
-        "http://edamontology.org/data_4022",
         "http://purl.obolibrary.org/obo/IAO_0000708",
         "http://edamontology.org/data_4022"
       ],
@@ -2432,6 +2432,7 @@
       "broad_mappings": [
         "http://schema.org/url"
       ],
+      "is_a": "iri",
       "slot_uri": "https://w3id.org/evorao/accessPointUrl",
       "owner": "ProductOrService",
       "domain_of": [
@@ -4247,6 +4248,7 @@
       "exact_mappings": [
         "http://schema.org/contentUrl"
       ],
+      "is_a": "iri",
       "slot_uri": "https://w3id.org/evorao/contentUrl",
       "owner": "File",
       "domain_of": [
@@ -4456,6 +4458,7 @@
         "http://schema.org/url",
         "http://schema.org/url"
       ],
+      "is_a": "iri",
       "slot_uri": "https://w3id.org/evorao/resourceUrl",
       "owner": "Certification",
       "domain_of": [
@@ -4913,7 +4916,7 @@
       "close_mappings": [
         "http://www.wikidata.org/prop/P1630"
       ],
-      "is_a": "endpointUrl",
+      "is_a": "iri",
       "domain": "DataService",
       "slot_uri": "http://www.w3.org/ns/dcat#endpointURL",
       "alias": "endpointUrl",
@@ -5268,7 +5271,7 @@
       "broad_mappings": [
         "http://schema.org/urlTemplate"
       ],
-      "is_a": "loginUrl",
+      "is_a": "iri",
       "domain": "DataProvider",
       "slot_uri": "https://w3id.org/evorao/loginUrl",
       "alias": "loginUrl",
@@ -5379,7 +5382,7 @@
       "related_mappings": [
         "http://www.w3.org/ns/dcat#servesDataset"
       ],
-      "is_a": "providedEntityType",
+      "is_a": "iri",
       "domain": "DataProvider",
       "slot_uri": "https://w3id.org/evorao/providedEntityType",
       "alias": "providedEntityType",
@@ -6729,7 +6732,7 @@
       "close_mappings": [
         "http://www.ebi.ac.uk/swo/SWO_0004006"
       ],
-      "is_a": "homePage",
+      "is_a": "iri",
       "domain": "PersonOrOrganization",
       "slot_uri": "http://xmlns.com/foaf/0.1/homepage",
       "alias": "homePage",
@@ -7330,7 +7333,7 @@
       "broad_mappings": [
         "http://schema.org/url"
       ],
-      "is_a": "accessPointUrl",
+      "is_a": "iri",
       "domain": "ProductOrService",
       "slot_uri": "https://w3id.org/evorao/accessPointUrl",
       "alias": "accessPointUrl",
@@ -10006,7 +10009,7 @@
       "exact_mappings": [
         "http://schema.org/contentUrl"
       ],
-      "is_a": "contentUrl",
+      "is_a": "iri",
       "domain": "File",
       "slot_uri": "https://w3id.org/evorao/contentUrl",
       "alias": "contentUrl",
@@ -10355,7 +10358,7 @@
         "http://purl.obolibrary.org/obo/IAO_0000708",
         "http://edamontology.org/data_4022"
       ],
-      "is_a": "orcidId",
+      "is_a": "identifier",
       "domain": "ContactPoint",
       "slot_uri": "https://w3id.org/evorao/orcidId",
       "alias": "orcidId",
@@ -10441,7 +10444,7 @@
       "broad_mappings": [
         "http://schema.org/url"
       ],
-      "is_a": "resourceUrl",
+      "is_a": "iri",
       "domain": "License",
       "slot_uri": "https://w3id.org/evorao/resourceUrl",
       "alias": "resourceUrl",
@@ -10621,7 +10624,7 @@
       "broad_mappings": [
         "http://schema.org/url"
       ],
-      "is_a": "resourceUrl",
+      "is_a": "iri",
       "domain": "Certification",
       "slot_uri": "https://w3id.org/evorao/resourceUrl",
       "alias": "resourceUrl",
@@ -10922,8 +10925,9 @@
         "Resource_iri",
         "DataService_title",
         "DataService_description",
-        "DataService_endpointUrl",
-        "DataService_servesDataset"
+        "endpointUrl",
+        "DataService_servesDataset",
+        "DataService_endpointUrl"
       ],
       "slot_usage": {},
       "class_uri": "http://www.w3.org/ns/dcat#DataService",
@@ -11063,16 +11067,18 @@
         "Resource_iri",
         "DataService_title",
         "DataService_description",
-        "DataService_endpointUrl",
         "DataService_servesDataset",
+        "DataService_endpointUrl",
         "DataProvider_license",
         "DataProvider_loginRequestMethod",
-        "DataProvider_loginUrl",
+        "loginUrl",
         "DataProvider_loginTokenName",
         "DataProvider_queryMethod",
         "DataProvider_contentType",
-        "DataProvider_providedEntityType",
-        "DataProvider_weight"
+        "providedEntityType",
+        "DataProvider_weight",
+        "DataProvider_loginUrl",
+        "DataProvider_providedEntityType"
       ],
       "slot_usage": {},
       "class_uri": "https://w3id.org/evorao/DataProvider",
@@ -12210,9 +12216,10 @@
         "Resource_iri",
         "PersonOrOrganization_name",
         "PersonOrOrganization_description",
-        "PersonOrOrganization_homePage",
+        "homePage",
         "PersonOrOrganization_contactPoint",
-        "PersonOrOrganization_logo"
+        "PersonOrOrganization_logo",
+        "PersonOrOrganization_homePage"
       ],
       "slot_usage": {},
       "class_uri": "http://xmlns.com/foaf/0.1/Agent",
@@ -12246,9 +12253,9 @@
         "Resource_iri",
         "PersonOrOrganization_name",
         "PersonOrOrganization_description",
-        "PersonOrOrganization_homePage",
         "PersonOrOrganization_contactPoint",
         "PersonOrOrganization_logo",
+        "PersonOrOrganization_homePage",
         "orcidId",
         "Person_orcidId"
       ],
@@ -12284,9 +12291,9 @@
         "Resource_iri",
         "PersonOrOrganization_name",
         "PersonOrOrganization_description",
-        "PersonOrOrganization_homePage",
         "PersonOrOrganization_contactPoint",
         "PersonOrOrganization_logo",
+        "PersonOrOrganization_homePage",
         "Organization_alternateName",
         "Organization_country",
         "rorId",
@@ -12321,9 +12328,9 @@
         "Resource_iri",
         "PersonOrOrganization_name",
         "PersonOrOrganization_description",
-        "PersonOrOrganization_homePage",
         "PersonOrOrganization_contactPoint",
         "PersonOrOrganization_logo",
+        "PersonOrOrganization_homePage",
         "Organization_alternateName",
         "Organization_country",
         "Organization_rorId"
@@ -12357,9 +12364,9 @@
         "Resource_iri",
         "PersonOrOrganization_name",
         "PersonOrOrganization_description",
-        "PersonOrOrganization_homePage",
         "PersonOrOrganization_contactPoint",
         "PersonOrOrganization_logo",
+        "PersonOrOrganization_homePage",
         "Organization_alternateName",
         "Organization_country",
         "Organization_rorId",
@@ -12394,9 +12401,9 @@
         "Resource_iri",
         "PersonOrOrganization_name",
         "PersonOrOrganization_description",
-        "PersonOrOrganization_homePage",
         "PersonOrOrganization_contactPoint",
-        "PersonOrOrganization_logo"
+        "PersonOrOrganization_logo",
+        "PersonOrOrganization_homePage"
       ],
       "slot_usage": {},
       "class_uri": "https://w3id.org/evorao/Originator",
@@ -12586,7 +12593,7 @@
         "Dataset_title",
         "Dataset_description",
         "Dataset_version",
-        "ProductOrService_accessPointUrl",
+        "accessPointUrl",
         "refSku",
         "ProductOrService_unitDefinition",
         "ProductOrService_category",
@@ -12614,6 +12621,7 @@
         "ProductOrService_note",
         "ProductOrService_contactPoint",
         "ProductOrService_fundingSource",
+        "ProductOrService_accessPointUrl",
         "ProductOrService_refSku",
         "ProductOrService_additionalCategory"
       ],
@@ -12655,7 +12663,6 @@
         "Dataset_title",
         "Dataset_description",
         "Dataset_version",
-        "ProductOrService_accessPointUrl",
         "ProductOrService_unitDefinition",
         "ProductOrService_category",
         "ProductOrService_unitCost",
@@ -12681,6 +12688,7 @@
         "ProductOrService_note",
         "ProductOrService_contactPoint",
         "ProductOrService_fundingSource",
+        "ProductOrService_accessPointUrl",
         "ProductOrService_refSku",
         "ProductOrService_additionalCategory",
         "Service_modelSpecies",
@@ -12718,7 +12726,6 @@
         "Dataset_title",
         "Dataset_description",
         "Dataset_version",
-        "ProductOrService_accessPointUrl",
         "ProductOrService_unitDefinition",
         "ProductOrService_category",
         "ProductOrService_unitCost",
@@ -12744,6 +12751,7 @@
         "ProductOrService_note",
         "ProductOrService_contactPoint",
         "ProductOrService_fundingSource",
+        "ProductOrService_accessPointUrl",
         "ProductOrService_refSku",
         "ProductOrService_additionalCategory",
         "Product_iataClassification",
@@ -12781,7 +12789,6 @@
         "Dataset_title",
         "Dataset_description",
         "Dataset_version",
-        "ProductOrService_accessPointUrl",
         "ProductOrService_unitDefinition",
         "ProductOrService_category",
         "ProductOrService_unitCost",
@@ -12807,6 +12814,7 @@
         "ProductOrService_note",
         "ProductOrService_contactPoint",
         "ProductOrService_fundingSource",
+        "ProductOrService_accessPointUrl",
         "ProductOrService_refSku",
         "ProductOrService_additionalCategory",
         "Product_iataClassification",
@@ -12855,7 +12863,6 @@
         "Dataset_title",
         "Dataset_description",
         "Dataset_version",
-        "ProductOrService_accessPointUrl",
         "ProductOrService_unitDefinition",
         "ProductOrService_category",
         "ProductOrService_unitCost",
@@ -12881,6 +12888,7 @@
         "ProductOrService_note",
         "ProductOrService_contactPoint",
         "ProductOrService_fundingSource",
+        "ProductOrService_accessPointUrl",
         "ProductOrService_refSku",
         "ProductOrService_additionalCategory",
         "Product_iataClassification",
@@ -12928,7 +12936,6 @@
         "Dataset_title",
         "Dataset_description",
         "Dataset_version",
-        "ProductOrService_accessPointUrl",
         "ProductOrService_unitDefinition",
         "ProductOrService_category",
         "ProductOrService_unitCost",
@@ -12954,6 +12961,7 @@
         "ProductOrService_note",
         "ProductOrService_contactPoint",
         "ProductOrService_fundingSource",
+        "ProductOrService_accessPointUrl",
         "ProductOrService_refSku",
         "ProductOrService_additionalCategory",
         "Product_iataClassification",
@@ -13015,7 +13023,6 @@
         "Dataset_title",
         "Dataset_description",
         "Dataset_version",
-        "ProductOrService_accessPointUrl",
         "ProductOrService_unitDefinition",
         "ProductOrService_category",
         "ProductOrService_unitCost",
@@ -13041,6 +13048,7 @@
         "ProductOrService_note",
         "ProductOrService_contactPoint",
         "ProductOrService_fundingSource",
+        "ProductOrService_accessPointUrl",
         "ProductOrService_refSku",
         "ProductOrService_additionalCategory",
         "Product_iataClassification",
@@ -13090,7 +13098,6 @@
         "Dataset_title",
         "Dataset_description",
         "Dataset_version",
-        "ProductOrService_accessPointUrl",
         "ProductOrService_unitDefinition",
         "ProductOrService_category",
         "ProductOrService_unitCost",
@@ -13116,6 +13123,7 @@
         "ProductOrService_note",
         "ProductOrService_contactPoint",
         "ProductOrService_fundingSource",
+        "ProductOrService_accessPointUrl",
         "ProductOrService_refSku",
         "ProductOrService_additionalCategory",
         "Product_iataClassification",
@@ -13163,7 +13171,6 @@
         "Dataset_title",
         "Dataset_description",
         "Dataset_version",
-        "ProductOrService_accessPointUrl",
         "ProductOrService_unitDefinition",
         "ProductOrService_category",
         "ProductOrService_unitCost",
@@ -13189,6 +13196,7 @@
         "ProductOrService_note",
         "ProductOrService_contactPoint",
         "ProductOrService_fundingSource",
+        "ProductOrService_accessPointUrl",
         "ProductOrService_refSku",
         "ProductOrService_additionalCategory",
         "Product_iataClassification",
@@ -13244,7 +13252,6 @@
         "Dataset_title",
         "Dataset_description",
         "Dataset_version",
-        "ProductOrService_accessPointUrl",
         "ProductOrService_unitDefinition",
         "ProductOrService_category",
         "ProductOrService_unitCost",
@@ -13270,6 +13277,7 @@
         "ProductOrService_note",
         "ProductOrService_contactPoint",
         "ProductOrService_fundingSource",
+        "ProductOrService_accessPointUrl",
         "ProductOrService_refSku",
         "ProductOrService_additionalCategory",
         "Product_iataClassification",
@@ -13341,7 +13349,6 @@
         "Dataset_title",
         "Dataset_description",
         "Dataset_version",
-        "ProductOrService_accessPointUrl",
         "ProductOrService_unitDefinition",
         "ProductOrService_category",
         "ProductOrService_unitCost",
@@ -13367,6 +13374,7 @@
         "ProductOrService_note",
         "ProductOrService_contactPoint",
         "ProductOrService_fundingSource",
+        "ProductOrService_accessPointUrl",
         "ProductOrService_refSku",
         "ProductOrService_additionalCategory",
         "Product_iataClassification",
@@ -13439,7 +13447,6 @@
         "Dataset_title",
         "Dataset_description",
         "Dataset_version",
-        "ProductOrService_accessPointUrl",
         "ProductOrService_unitDefinition",
         "ProductOrService_category",
         "ProductOrService_unitCost",
@@ -13465,6 +13472,7 @@
         "ProductOrService_note",
         "ProductOrService_contactPoint",
         "ProductOrService_fundingSource",
+        "ProductOrService_accessPointUrl",
         "ProductOrService_refSku",
         "ProductOrService_additionalCategory",
         "Product_iataClassification",
@@ -13532,7 +13540,6 @@
         "Dataset_title",
         "Dataset_description",
         "Dataset_version",
-        "ProductOrService_accessPointUrl",
         "ProductOrService_unitDefinition",
         "ProductOrService_category",
         "ProductOrService_unitCost",
@@ -13558,6 +13565,7 @@
         "ProductOrService_note",
         "ProductOrService_contactPoint",
         "ProductOrService_fundingSource",
+        "ProductOrService_accessPointUrl",
         "ProductOrService_refSku",
         "ProductOrService_additionalCategory",
         "Product_iataClassification",
@@ -13621,7 +13629,6 @@
         "Dataset_title",
         "Dataset_description",
         "Dataset_version",
-        "ProductOrService_accessPointUrl",
         "ProductOrService_unitDefinition",
         "ProductOrService_category",
         "ProductOrService_unitCost",
@@ -13647,6 +13654,7 @@
         "ProductOrService_note",
         "ProductOrService_contactPoint",
         "ProductOrService_fundingSource",
+        "ProductOrService_accessPointUrl",
         "ProductOrService_refSku",
         "ProductOrService_additionalCategory",
         "Product_iataClassification",
@@ -13706,7 +13714,6 @@
         "Dataset_title",
         "Dataset_description",
         "Dataset_version",
-        "ProductOrService_accessPointUrl",
         "ProductOrService_unitDefinition",
         "ProductOrService_category",
         "ProductOrService_unitCost",
@@ -13732,6 +13739,7 @@
         "ProductOrService_note",
         "ProductOrService_contactPoint",
         "ProductOrService_fundingSource",
+        "ProductOrService_accessPointUrl",
         "ProductOrService_refSku",
         "ProductOrService_additionalCategory",
         "Product_iataClassification",
@@ -13795,7 +13803,6 @@
         "Dataset_title",
         "Dataset_description",
         "Dataset_version",
-        "ProductOrService_accessPointUrl",
         "ProductOrService_unitDefinition",
         "ProductOrService_category",
         "ProductOrService_unitCost",
@@ -13821,6 +13828,7 @@
         "ProductOrService_note",
         "ProductOrService_contactPoint",
         "ProductOrService_fundingSource",
+        "ProductOrService_accessPointUrl",
         "ProductOrService_refSku",
         "ProductOrService_additionalCategory",
         "Product_iataClassification",
@@ -13924,9 +13932,10 @@
         "Resource_iri",
         "File_name",
         "File_description",
-        "File_contentUrl",
+        "contentUrl",
         "File_format",
-        "File_license"
+        "File_license",
+        "File_contentUrl"
       ],
       "slot_usage": {},
       "class_uri": "https://w3id.org/evorao/File",
@@ -13963,9 +13972,9 @@
         "Resource_iri",
         "File_name",
         "File_description",
-        "File_contentUrl",
         "File_format",
-        "File_license"
+        "File_license",
+        "File_contentUrl"
       ],
       "slot_usage": {},
       "class_uri": "https://w3id.org/evorao/Data",
@@ -14004,9 +14013,9 @@
         "Resource_iri",
         "File_name",
         "File_description",
-        "File_contentUrl",
         "File_format",
-        "File_license"
+        "File_license",
+        "File_contentUrl"
       ],
       "slot_usage": {},
       "class_uri": "https://w3id.org/evorao/Document",
@@ -14043,9 +14052,9 @@
         "Resource_iri",
         "File_name",
         "File_description",
-        "File_contentUrl",
         "File_format",
-        "File_license"
+        "File_license",
+        "File_contentUrl"
       ],
       "slot_usage": {},
       "class_uri": "https://w3id.org/evorao/Audio",
@@ -14080,9 +14089,9 @@
         "Resource_iri",
         "File_name",
         "File_description",
-        "File_contentUrl",
         "File_format",
-        "File_license"
+        "File_license",
+        "File_contentUrl"
       ],
       "slot_usage": {},
       "class_uri": "https://w3id.org/evorao/Video",
@@ -14123,9 +14132,9 @@
         "Resource_iri",
         "File_name",
         "File_description",
-        "File_contentUrl",
         "File_format",
         "File_license",
+        "File_contentUrl",
         "Image_altText"
       ],
       "slot_usage": {},
@@ -14172,6 +14181,7 @@
         "ContactPoint_addressRegion",
         "ContactPoint_postalCode",
         "ContactPoint_addressCountry",
+        "orcidId",
         "ContactPoint_orcidId"
       ],
       "slot_usage": {},
@@ -14205,9 +14215,10 @@
         "Resource_iri",
         "License_title",
         "License_description",
-        "License_resourceUrl",
+        "resourceUrl",
         "License_licensingOrAttribution",
-        "License_logo"
+        "License_logo",
+        "License_resourceUrl"
       ],
       "slot_usage": {},
       "class_uri": "https://w3id.org/evorao/License",
@@ -14242,6 +14253,7 @@
         "Certification_description",
         "Certification_logo",
         "Certification_certificationDocument",
+        "resourceUrl",
         "Certification_resourceUrl"
       ],
       "slot_usage": {},
@@ -14287,9 +14299,9 @@
   ],
   "metamodel_version": "1.7.0",
   "source_file": "evora_schema.yaml",
-  "source_file_date": "2025-11-07T10:42:41",
-  "source_file_size": 240853,
-  "generation_date": "2025-11-07T10:42:57",
+  "source_file_date": "2025-11-07T11:02:22",
+  "source_file_size": 241047,
+  "generation_date": "2025-11-07T11:02:38",
   "@type": "SchemaDefinition",
   "@context": [
     "https://w3id.org/linkml/types.context.jsonld",

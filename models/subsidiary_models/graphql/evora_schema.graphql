@@ -1,5 +1,5 @@
 # metamodel_version: 1.7.0
-# version: 1.0.10623
+# version: 1.0.10635
 type AlternateName
   {
     keyword: [String]
@@ -25,7 +25,6 @@ type Antibody
     title: String!
     description: String!
     version: String!
-    accessPointUrl: Uri!
     unitDefinition: String
     category: ProductCategory!
     unitCost: Decimal
@@ -51,6 +50,7 @@ type Antibody
     note: String
     contactPoint: ContactPoint
     fundingSource: [FundingSource]
+    accessPointUrl: Uri!
     refSku: String!
     additionalCategory: [ProductCategory]
     iataClassification: IataClassification!
@@ -77,9 +77,9 @@ type Audio
     iri: [Uri]
     name: String!
     description: String
-    contentUrl: Uri!
     format: String!
     license: License
+    contentUrl: Uri!
   }
 
 type Bacterium
@@ -92,7 +92,6 @@ type Bacterium
     title: String!
     description: String!
     version: String!
-    accessPointUrl: Uri!
     unitDefinition: String
     category: ProductCategory!
     unitCost: Decimal
@@ -118,6 +117,7 @@ type Bacterium
     note: String
     contactPoint: ContactPoint
     fundingSource: [FundingSource]
+    accessPointUrl: Uri!
     refSku: String!
     additionalCategory: [ProductCategory]
     iataClassification: IataClassification!
@@ -194,7 +194,6 @@ type Bundle
     title: String!
     description: String!
     version: String!
-    accessPointUrl: Uri!
     unitDefinition: String
     category: ProductCategory!
     unitCost: Decimal
@@ -220,6 +219,7 @@ type Bundle
     note: String
     contactPoint: ContactPoint
     fundingSource: [FundingSource]
+    accessPointUrl: Uri!
     refSku: String!
     additionalCategory: [ProductCategory]
     iataClassification: IataClassification!
@@ -345,9 +345,9 @@ type Data
     iri: [Uri]
     name: String!
     description: String
-    contentUrl: Uri!
     format: String!
     license: License
+    contentUrl: Uri!
   }
 
 type DataProvider
@@ -359,8 +359,8 @@ type DataProvider
     iri: [Uri]
     title: String!
     description: String
-    endpointUrl: Uri!
     servesDataset: [Dataset]
+    endpointUrl: Uri!
     license: License
     loginRequestMethod: String
     loginUrl: Uri
@@ -406,7 +406,6 @@ type DetectionKit
     title: String!
     description: String!
     version: String!
-    accessPointUrl: Uri!
     unitDefinition: String
     category: ProductCategory!
     unitCost: Decimal
@@ -432,6 +431,7 @@ type DetectionKit
     note: String
     contactPoint: ContactPoint
     fundingSource: [FundingSource]
+    accessPointUrl: Uri!
     refSku: String!
     additionalCategory: [ProductCategory]
     iataClassification: IataClassification!
@@ -457,9 +457,9 @@ type Document
     iri: [Uri]
     name: String!
     description: String
-    contentUrl: Uri!
     format: String!
     license: License
+    contentUrl: Uri!
   }
 
 type Doi
@@ -543,7 +543,6 @@ type Fungus
     title: String!
     description: String!
     version: String!
-    accessPointUrl: Uri!
     unitDefinition: String
     category: ProductCategory!
     unitCost: Decimal
@@ -569,6 +568,7 @@ type Fungus
     note: String
     contactPoint: ContactPoint
     fundingSource: [FundingSource]
+    accessPointUrl: Uri!
     refSku: String!
     additionalCategory: [ProductCategory]
     iataClassification: IataClassification!
@@ -622,7 +622,6 @@ type Hybridoma
     title: String!
     description: String!
     version: String!
-    accessPointUrl: Uri!
     unitDefinition: String
     category: ProductCategory!
     unitCost: Decimal
@@ -648,6 +647,7 @@ type Hybridoma
     note: String
     contactPoint: ContactPoint
     fundingSource: [FundingSource]
+    accessPointUrl: Uri!
     refSku: String!
     additionalCategory: [ProductCategory]
     iataClassification: IataClassification!
@@ -688,9 +688,9 @@ type Image
     iri: [Uri]
     name: String!
     description: String
-    contentUrl: Uri!
     format: String!
     license: License
+    contentUrl: Uri!
     altText: String
   }
 
@@ -810,7 +810,6 @@ type NucleicAcid
     title: String!
     description: String!
     version: String!
-    accessPointUrl: Uri!
     unitDefinition: String
     category: ProductCategory!
     unitCost: Decimal
@@ -836,6 +835,7 @@ type NucleicAcid
     note: String
     contactPoint: ContactPoint
     fundingSource: [FundingSource]
+    accessPointUrl: Uri!
     refSku: String!
     additionalCategory: [ProductCategory]
     iataClassification: IataClassification!
@@ -871,9 +871,9 @@ type Organization
     iri: [Uri]
     name: String!
     description: String
-    homePage: Uri
     contactPoint: ContactPoint
     logo: Image
+    homePage: Uri
     alternateName: [AlternateName]
     country: Country
     rorId: String
@@ -888,9 +888,9 @@ type Originator
     iri: [Uri]
     name: String!
     description: String
-    homePage: Uri
     contactPoint: ContactPoint
     logo: Image
+    homePage: Uri
   }
 
 interface Pathogen
@@ -903,7 +903,6 @@ interface Pathogen
     title: String!
     description: String!
     version: String!
-    accessPointUrl: Uri!
     unitDefinition: String
     category: ProductCategory!
     unitCost: Decimal
@@ -929,6 +928,7 @@ interface Pathogen
     note: String
     contactPoint: ContactPoint
     fundingSource: [FundingSource]
+    accessPointUrl: Uri!
     refSku: String!
     additionalCategory: [ProductCategory]
     iataClassification: IataClassification!
@@ -1000,9 +1000,9 @@ type Person
     iri: [Uri]
     name: String!
     description: String
-    homePage: Uri
     contactPoint: ContactPoint
     logo: Image
+    homePage: Uri
     orcidId: String
   }
 
@@ -1043,7 +1043,6 @@ type Prion
     title: String!
     description: String!
     version: String!
-    accessPointUrl: Uri!
     unitDefinition: String
     category: ProductCategory!
     unitCost: Decimal
@@ -1069,6 +1068,7 @@ type Prion
     note: String
     contactPoint: ContactPoint
     fundingSource: [FundingSource]
+    accessPointUrl: Uri!
     refSku: String!
     additionalCategory: [ProductCategory]
     iataClassification: IataClassification!
@@ -1109,7 +1109,6 @@ type Product
     title: String!
     description: String!
     version: String!
-    accessPointUrl: Uri!
     unitDefinition: String
     category: ProductCategory!
     unitCost: Decimal
@@ -1135,6 +1134,7 @@ type Product
     note: String
     contactPoint: ContactPoint
     fundingSource: [FundingSource]
+    accessPointUrl: Uri!
     refSku: String!
     additionalCategory: [ProductCategory]
     iataClassification: IataClassification!
@@ -1237,7 +1237,6 @@ type Protein
     title: String!
     description: String!
     version: String!
-    accessPointUrl: Uri!
     unitDefinition: String
     category: ProductCategory!
     unitCost: Decimal
@@ -1263,6 +1262,7 @@ type Protein
     note: String
     contactPoint: ContactPoint
     fundingSource: [FundingSource]
+    accessPointUrl: Uri!
     refSku: String!
     additionalCategory: [ProductCategory]
     iataClassification: IataClassification!
@@ -1299,7 +1299,6 @@ type Protozoan
     title: String!
     description: String!
     version: String!
-    accessPointUrl: Uri!
     unitDefinition: String
     category: ProductCategory!
     unitCost: Decimal
@@ -1325,6 +1324,7 @@ type Protozoan
     note: String
     contactPoint: ContactPoint
     fundingSource: [FundingSource]
+    accessPointUrl: Uri!
     refSku: String!
     additionalCategory: [ProductCategory]
     iataClassification: IataClassification!
@@ -1364,9 +1364,9 @@ type Provider
     iri: [Uri]
     name: String!
     description: String
-    homePage: Uri
     contactPoint: ContactPoint
     logo: Image
+    homePage: Uri
     alternateName: [AlternateName]
     country: Country
     rorId: String
@@ -1396,9 +1396,9 @@ type ReasearchInfrastructure
     iri: [Uri]
     name: String!
     description: String
-    homePage: Uri
     contactPoint: ContactPoint
     logo: Image
+    homePage: Uri
     alternateName: [AlternateName]
     country: Country
     rorId: String
@@ -1469,7 +1469,6 @@ type Service
     title: String!
     description: String!
     version: String!
-    accessPointUrl: Uri!
     unitDefinition: String
     category: ProductCategory!
     unitCost: Decimal
@@ -1495,6 +1494,7 @@ type Service
     note: String
     contactPoint: ContactPoint
     fundingSource: [FundingSource]
+    accessPointUrl: Uri!
     refSku: String!
     additionalCategory: [ProductCategory]
     modelSpecies: String
@@ -1654,9 +1654,9 @@ type Video
     iri: [Uri]
     name: String!
     description: String
-    contentUrl: Uri!
     format: String!
     license: License
+    contentUrl: Uri!
   }
 
 type Viroid
@@ -1669,7 +1669,6 @@ type Viroid
     title: String!
     description: String!
     version: String!
-    accessPointUrl: Uri!
     unitDefinition: String
     category: ProductCategory!
     unitCost: Decimal
@@ -1695,6 +1694,7 @@ type Viroid
     note: String
     contactPoint: ContactPoint
     fundingSource: [FundingSource]
+    accessPointUrl: Uri!
     refSku: String!
     additionalCategory: [ProductCategory]
     iataClassification: IataClassification!
@@ -1735,7 +1735,6 @@ type Virus
     title: String!
     description: String!
     version: String!
-    accessPointUrl: Uri!
     unitDefinition: String
     category: ProductCategory!
     unitCost: Decimal
@@ -1761,6 +1760,7 @@ type Virus
     note: String
     contactPoint: ContactPoint
     fundingSource: [FundingSource]
+    accessPointUrl: Uri!
     refSku: String!
     additionalCategory: [ProductCategory]
     iataClassification: IataClassification!

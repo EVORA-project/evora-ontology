@@ -1,7 +1,7 @@
  syntax="proto3";
  package
 // metamodel_version: 1.7.0
-// version: 1.0.10623
+// version: 1.0.10635
 // List of other names for things.
 message AlternateName
  {
@@ -28,7 +28,6 @@ message Antibody
   string title = 0
   string description = 0
   string version = 0
-  uri accessPointUrl = 0
   string unitDefinition = 0
   productCategory category = 0
   decimal unitCost = 0
@@ -54,6 +53,7 @@ message Antibody
   string note = 0
   contactPoint contactPoint = 0
  repeated  fundingSource fundingSource = 0
+  uri accessPointUrl = 0
   string refSku = 0
  repeated  productCategory additionalCategory = 0
   iataClassification iataClassification = 0
@@ -80,9 +80,9 @@ message Audio
  repeated  uri iri = 0
   string name = 0
   string description = 0
-  uri contentUrl = 0
   string format = 0
   license license = 0
+  uri contentUrl = 0
  }
 // The bacterium as a biological material.
 message Bacterium
@@ -95,7 +95,6 @@ message Bacterium
   string title = 0
   string description = 0
   string version = 0
-  uri accessPointUrl = 0
   string unitDefinition = 0
   productCategory category = 0
   decimal unitCost = 0
@@ -121,6 +120,7 @@ message Bacterium
   string note = 0
   contactPoint contactPoint = 0
  repeated  fundingSource fundingSource = 0
+  uri accessPointUrl = 0
   string refSku = 0
  repeated  productCategory additionalCategory = 0
   iataClassification iataClassification = 0
@@ -186,7 +186,6 @@ message Bundle
   string title = 0
   string description = 0
   string version = 0
-  uri accessPointUrl = 0
   string unitDefinition = 0
   productCategory category = 0
   decimal unitCost = 0
@@ -212,6 +211,7 @@ message Bundle
   string note = 0
   contactPoint contactPoint = 0
  repeated  fundingSource fundingSource = 0
+  uri accessPointUrl = 0
   string refSku = 0
  repeated  productCategory additionalCategory = 0
   iataClassification iataClassification = 0
@@ -325,9 +325,9 @@ message Data
  repeated  uri iri = 0
   string name = 0
   string description = 0
-  uri contentUrl = 0
   string format = 0
   license license = 0
+  uri contentUrl = 0
  }
 // An external API (Application Programming Interface) or Endpoint that permits to retrieve data from other sources.
 message DataProvider
@@ -339,8 +339,8 @@ message DataProvider
  repeated  uri iri = 0
   string title = 0
   string description = 0
-  uri endpointUrl = 0
  repeated  dataset servesDataset = 0
+  uri endpointUrl = 0
   license license = 0
   string loginRequestMethod = 0
   uri loginUrl = 0
@@ -361,7 +361,6 @@ message DetectionKit
   string title = 0
   string description = 0
   string version = 0
-  uri accessPointUrl = 0
   string unitDefinition = 0
   productCategory category = 0
   decimal unitCost = 0
@@ -387,6 +386,7 @@ message DetectionKit
   string note = 0
   contactPoint contactPoint = 0
  repeated  fundingSource fundingSource = 0
+  uri accessPointUrl = 0
   string refSku = 0
  repeated  productCategory additionalCategory = 0
   iataClassification iataClassification = 0
@@ -412,9 +412,9 @@ message Document
  repeated  uri iri = 0
   string name = 0
   string description = 0
-  uri contentUrl = 0
   string format = 0
   license license = 0
+  uri contentUrl = 0
  }
 // A unique string identifier assigned to a digital object, providing a permanent link for reliable citation and access.  The Digital Object Identifier (DOI) is a persistent identifier that is an ISO standard.
 message Doi
@@ -484,7 +484,6 @@ message Fungus
   string title = 0
   string description = 0
   string version = 0
-  uri accessPointUrl = 0
   string unitDefinition = 0
   productCategory category = 0
   decimal unitCost = 0
@@ -510,6 +509,7 @@ message Fungus
   string note = 0
   contactPoint contactPoint = 0
  repeated  fundingSource fundingSource = 0
+  uri accessPointUrl = 0
   string refSku = 0
  repeated  productCategory additionalCategory = 0
   iataClassification iataClassification = 0
@@ -563,7 +563,6 @@ message Hybridoma
   string title = 0
   string description = 0
   string version = 0
-  uri accessPointUrl = 0
   string unitDefinition = 0
   productCategory category = 0
   decimal unitCost = 0
@@ -589,6 +588,7 @@ message Hybridoma
   string note = 0
   contactPoint contactPoint = 0
  repeated  fundingSource fundingSource = 0
+  uri accessPointUrl = 0
   string refSku = 0
  repeated  productCategory additionalCategory = 0
   iataClassification iataClassification = 0
@@ -629,9 +629,9 @@ message Image
  repeated  uri iri = 0
   string name = 0
   string description = 0
-  uri contentUrl = 0
   string format = 0
   license license = 0
+  uri contentUrl = 0
   string altText = 0
  }
 // The IPLC area (Indigenous People and Local Communities) from which a physical item originates.
@@ -751,7 +751,6 @@ message NucleicAcid
   string title = 0
   string description = 0
   string version = 0
-  uri accessPointUrl = 0
   string unitDefinition = 0
   productCategory category = 0
   decimal unitCost = 0
@@ -777,6 +776,7 @@ message NucleicAcid
   string note = 0
   contactPoint contactPoint = 0
  repeated  fundingSource fundingSource = 0
+  uri accessPointUrl = 0
   string refSku = 0
  repeated  productCategory additionalCategory = 0
   iataClassification iataClassification = 0
@@ -812,9 +812,9 @@ message Organization
  repeated  uri iri = 0
   string name = 0
   string description = 0
-  uri homePage = 0
   contactPoint contactPoint = 0
   image logo = 0
+  uri homePage = 0
  repeated  alternateName alternateName = 0
   country country = 0
   string rorId = 0
@@ -829,9 +829,9 @@ message Originator
  repeated  uri iri = 0
   string name = 0
   string description = 0
-  uri homePage = 0
   contactPoint contactPoint = 0
   image logo = 0
+  uri homePage = 0
  }
 // A collection of distinguishing information that enables the differentiation of a pathogen from another.
 message PathogenIdentification
@@ -875,9 +875,9 @@ message Person
  repeated  uri iri = 0
   string name = 0
   string description = 0
-  uri homePage = 0
   contactPoint contactPoint = 0
   image logo = 0
+  uri homePage = 0
   string orcidId = 0
  }
 // A person or an organization.
@@ -918,7 +918,6 @@ message Prion
   string title = 0
   string description = 0
   string version = 0
-  uri accessPointUrl = 0
   string unitDefinition = 0
   productCategory category = 0
   decimal unitCost = 0
@@ -944,6 +943,7 @@ message Prion
   string note = 0
   contactPoint contactPoint = 0
  repeated  fundingSource fundingSource = 0
+  uri accessPointUrl = 0
   string refSku = 0
  repeated  productCategory additionalCategory = 0
   iataClassification iataClassification = 0
@@ -984,7 +984,6 @@ message Product
   string title = 0
   string description = 0
   string version = 0
-  uri accessPointUrl = 0
   string unitDefinition = 0
   productCategory category = 0
   decimal unitCost = 0
@@ -1010,6 +1009,7 @@ message Product
   string note = 0
   contactPoint contactPoint = 0
  repeated  fundingSource fundingSource = 0
+  uri accessPointUrl = 0
   string refSku = 0
  repeated  productCategory additionalCategory = 0
   iataClassification iataClassification = 0
@@ -1072,7 +1072,6 @@ message Protein
   string title = 0
   string description = 0
   string version = 0
-  uri accessPointUrl = 0
   string unitDefinition = 0
   productCategory category = 0
   decimal unitCost = 0
@@ -1098,6 +1097,7 @@ message Protein
   string note = 0
   contactPoint contactPoint = 0
  repeated  fundingSource fundingSource = 0
+  uri accessPointUrl = 0
   string refSku = 0
  repeated  productCategory additionalCategory = 0
   iataClassification iataClassification = 0
@@ -1134,7 +1134,6 @@ message Protozoan
   string title = 0
   string description = 0
   string version = 0
-  uri accessPointUrl = 0
   string unitDefinition = 0
   productCategory category = 0
   decimal unitCost = 0
@@ -1160,6 +1159,7 @@ message Protozoan
   string note = 0
   contactPoint contactPoint = 0
  repeated  fundingSource fundingSource = 0
+  uri accessPointUrl = 0
   string refSku = 0
  repeated  productCategory additionalCategory = 0
   iataClassification iataClassification = 0
@@ -1199,9 +1199,9 @@ message Provider
  repeated  uri iri = 0
   string name = 0
   string description = 0
-  uri homePage = 0
   contactPoint contactPoint = 0
   image logo = 0
+  uri homePage = 0
  repeated  alternateName alternateName = 0
   country country = 0
   string rorId = 0
@@ -1231,9 +1231,9 @@ message ReasearchInfrastructure
  repeated  uri iri = 0
   string name = 0
   string description = 0
-  uri homePage = 0
   contactPoint contactPoint = 0
   image logo = 0
+  uri homePage = 0
  repeated  alternateName alternateName = 0
   country country = 0
   string rorId = 0
@@ -1295,7 +1295,6 @@ message Service
   string title = 0
   string description = 0
   string version = 0
-  uri accessPointUrl = 0
   string unitDefinition = 0
   productCategory category = 0
   decimal unitCost = 0
@@ -1321,6 +1320,7 @@ message Service
   string note = 0
   contactPoint contactPoint = 0
  repeated  fundingSource fundingSource = 0
+  uri accessPointUrl = 0
   string refSku = 0
  repeated  productCategory additionalCategory = 0
   string modelSpecies = 0
@@ -1467,9 +1467,9 @@ message Video
  repeated  uri iri = 0
   string name = 0
   string description = 0
-  uri contentUrl = 0
   string format = 0
   license license = 0
+  uri contentUrl = 0
  }
 // The viroid as a biological material.
 message Viroid
@@ -1482,7 +1482,6 @@ message Viroid
   string title = 0
   string description = 0
   string version = 0
-  uri accessPointUrl = 0
   string unitDefinition = 0
   productCategory category = 0
   decimal unitCost = 0
@@ -1508,6 +1507,7 @@ message Viroid
   string note = 0
   contactPoint contactPoint = 0
  repeated  fundingSource fundingSource = 0
+  uri accessPointUrl = 0
   string refSku = 0
  repeated  productCategory additionalCategory = 0
   iataClassification iataClassification = 0
@@ -1548,7 +1548,6 @@ message Virus
   string title = 0
   string description = 0
   string version = 0
-  uri accessPointUrl = 0
   string unitDefinition = 0
   productCategory category = 0
   decimal unitCost = 0
@@ -1574,6 +1573,7 @@ message Virus
   string note = 0
   contactPoint contactPoint = 0
  repeated  fundingSource fundingSource = 0
+  uri accessPointUrl = 0
   string refSku = 0
  repeated  productCategory additionalCategory = 0
   iataClassification iataClassification = 0

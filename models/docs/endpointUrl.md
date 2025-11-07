@@ -12,7 +12,13 @@ _The URL template that allows to get the content._
 URI: [dcat:endpointURL](http://www.w3.org/ns/dcat#endpointURL)
 Alias: endpointUrl
 
-<!-- no inheritance hierarchy -->
+
+## Inheritance
+
+* [identifier](identifier.md)
+    * [iri](iri.md)
+        * **endpointUrl**
+
 
 
 
@@ -22,8 +28,8 @@ Alias: endpointUrl
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [DataProvider](DataProvider.md) | An external API (Application Programming Interface) or Endpoint that permits ... |  no  |
 | [DataService](DataService.md) | A collection of operations that provides access to one or more datasets or da... |  yes  |
+| [DataProvider](DataProvider.md) | An external API (Application Programming Interface) or Endpoint that permits ... |  no  |
 
 
 
@@ -34,6 +40,8 @@ Alias: endpointUrl
 ## Properties
 
 * Range: [Uri](Uri.md)
+
+* Multivalued: True
 
 * Required: True
 
@@ -82,13 +90,14 @@ exact_mappings:
 close_mappings:
 - wdp:P1630
 rank: 1000
+is_a: iri
 slot_uri: dcat:endpointURL
 alias: endpointUrl
 domain_of:
 - DataService
 range: uri
 required: true
-multivalued: false
+multivalued: true
 
 ```
 </details>

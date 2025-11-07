@@ -209,6 +209,7 @@ slot_usage:
     - schema:urlTemplate
     close_mappings:
     - wdp:P1630
+    is_a: iri
     slot_uri: dcat:endpointURL
     domain_of:
     - DataService
@@ -311,6 +312,7 @@ slot_usage:
     - schema:urlTemplate
     close_mappings:
     - wdp:P1630
+    is_a: iri
     slot_uri: dcat:endpointURL
     domain_of:
     - DataService
@@ -399,6 +401,7 @@ attributes:
     close_mappings:
     - wdp:P1630
     rank: 1000
+    is_a: iri
     slot_uri: dcat:endpointURL
     alias: endpointUrl
     owner: DataService

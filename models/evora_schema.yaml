@@ -48,7 +48,7 @@ keywords:
 - pathogen collections
 - interoperability
 id: https://w3id.org/evorao/
-version: 1.0.10623
+version: 1.0.10635
 imports:
 - linkml:types
 license: https://creativecommons.org/publicdomain/zero/1.0/
@@ -279,6 +279,7 @@ slots:
     - schema:urlTemplate
     close_mappings:
     - wdp:P1630
+    is_a: iri
     slot_uri: dcat:endpointURL
     domain_of:
     - DataService
@@ -442,6 +443,7 @@ slots:
     - dcat:endpointDescription
     broad_mappings:
     - schema:urlTemplate
+    is_a: iri
     domain_of:
     - DataProvider
     range: uri
@@ -508,6 +510,7 @@ slots:
     - schema:additionalType
     related_mappings:
     - dcat:servesDataset
+    is_a: iri
     domain_of:
     - DataProvider
     range: uri
@@ -1046,6 +1049,7 @@ slots:
     from_schema: https://w3id.org/evorao/
     close_mappings:
     - swo:0004006
+    is_a: iri
     slot_uri: foaf:homepage
     domain_of:
     - PersonOrOrganization
@@ -1088,11 +1092,7 @@ slots:
     exact_mappings:
     - wdp:P496
     - reproduceme:ORCID
-    - wdp:P496
-    - reproduceme:ORCID
     related_mappings:
-    - iao:0000708
-    - edam:4022
     - iao:0000708
     - edam:4022
     is_a: identifier
@@ -1369,6 +1369,7 @@ slots:
     - dcat:landingPage
     broad_mappings:
     - schema:url
+    is_a: iri
     domain_of:
     - ProductOrService
     range: uri
@@ -2676,6 +2677,7 @@ slots:
     from_schema: https://w3id.org/evorao/
     exact_mappings:
     - schema:contentUrl
+    is_a: iri
     domain_of:
     - File
     range: uri
@@ -2818,6 +2820,7 @@ slots:
     broad_mappings:
     - schema:url
     - schema:url
+    is_a: iri
     domain_of:
     - License
     - Certification
@@ -3138,6 +3141,7 @@ classes:
         - schema:urlTemplate
         close_mappings:
         - wdp:P1630
+        is_a: iri
         slot_uri: dcat:endpointURL
         domain_of:
         - DataService
@@ -3387,6 +3391,7 @@ classes:
         - dcat:endpointDescription
         broad_mappings:
         - schema:urlTemplate
+        is_a: iri
         domain_of:
         - DataProvider
         range: uri
@@ -3446,6 +3451,7 @@ classes:
         - schema:additionalType
         related_mappings:
         - dcat:servesDataset
+        is_a: iri
         domain_of:
         - DataProvider
         range: uri
@@ -4717,6 +4723,7 @@ classes:
         title: home page
         close_mappings:
         - swo:0004006
+        is_a: iri
         slot_uri: foaf:homepage
         domain_of:
         - PersonOrOrganization
@@ -5229,6 +5236,7 @@ classes:
         - dcat:landingPage
         broad_mappings:
         - schema:url
+        is_a: iri
         domain_of:
         - ProductOrService
         range: uri
@@ -6980,6 +6988,7 @@ classes:
         title: content URL
         exact_mappings:
         - schema:contentUrl
+        is_a: iri
         domain_of:
         - File
         range: uri
@@ -7290,6 +7299,7 @@ classes:
         related_mappings:
         - iao:0000708
         - edam:4022
+        is_a: identifier
         domain_of:
         - ContactPoint
         range: string
@@ -7361,6 +7371,7 @@ classes:
         - dct:license
         broad_mappings:
         - schema:url
+        is_a: iri
         domain_of:
         - License
         range: uri
@@ -7473,6 +7484,7 @@ classes:
         - schema:archivedAt
         broad_mappings:
         - schema:url
+        is_a: iri
         domain_of:
         - Certification
         range: uri
@@ -7609,4 +7621,4 @@ classes:
         required: false
         multivalued: false
 source_file: https://w3id.org/evorao/evorao.owl.ttl
-generation_date: '2025-11-07T11:42:19'
+generation_date: '2025-11-07T12:02:01'

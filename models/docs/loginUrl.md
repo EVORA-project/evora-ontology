@@ -12,7 +12,13 @@ _The URL template that allows to log in if required._
 URI: [EVORAO:loginUrl](https://w3id.org/evorao/loginUrl)
 Alias: loginUrl
 
-<!-- no inheritance hierarchy -->
+
+## Inheritance
+
+* [identifier](identifier.md)
+    * [iri](iri.md)
+        * **loginUrl**
+
 
 
 
@@ -33,6 +39,8 @@ Alias: loginUrl
 ## Properties
 
 * Range: [Uri](Uri.md)
+
+* Multivalued: True
 
 
 
@@ -80,12 +88,13 @@ close_mappings:
 broad_mappings:
 - schema:urlTemplate
 rank: 1000
+is_a: iri
 alias: loginUrl
 domain_of:
 - DataProvider
 range: uri
 required: false
-multivalued: false
+multivalued: true
 
 ```
 </details>

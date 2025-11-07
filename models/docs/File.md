@@ -230,6 +230,7 @@ slot_usage:
     title: content URL
     exact_mappings:
     - schema:contentUrl
+    is_a: iri
     domain_of:
     - File
     range: uri
@@ -345,6 +346,7 @@ slot_usage:
     title: content URL
     exact_mappings:
     - schema:contentUrl
+    is_a: iri
     domain_of:
     - File
     range: uri
@@ -442,6 +444,7 @@ attributes:
     exact_mappings:
     - schema:contentUrl
     rank: 1000
+    is_a: iri
     alias: contentUrl
     owner: File
     domain_of:

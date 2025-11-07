@@ -27,7 +27,7 @@ from pydantic import (
 
 
 metamodel_version = "None"
-version = "1.0.10623"
+version = "1.0.10635"
 
 
 class ConfiguredBaseModel(BaseModel):
@@ -99,7 +99,7 @@ linkml_meta = LinkMLMeta({'comments': ['EVORAO is an ontology for standardized m
                     'pathogens. EVORAO is compatible with DCAT, making it '
                     'well-suited for efficiently cataloguing pathogen collections '
                     'and related resources.',
-     'generation_date': '2025-11-07T11:42:19',
+     'generation_date': '2025-11-07T12:02:01',
      'id': 'https://w3id.org/evorao/',
      'imports': ['linkml:types'],
      'in_language': 'en',
@@ -546,6 +546,7 @@ class DataService(Resource):
                                                        'to get the content.',
                                         'domain_of': ['DataService'],
                                         'exact_mappings': ['schema:urlTemplate'],
+                                        'is_a': 'iri',
                                         'multivalued': False,
                                         'name': 'endpointUrl',
                                         'range': 'uri',
@@ -629,6 +630,7 @@ class DataService(Resource):
          'close_mappings': ['wdp:P1630'],
          'domain_of': ['DataService'],
          'exact_mappings': ['schema:urlTemplate'],
+         'is_a': 'iri',
          'slot_uri': 'dcat:endpointURL'} })
     servesDataset: Optional[list[Dataset]] = Field(default=None, title="serves dataset", description="""A collection of data that this data service can distribute.""", json_schema_extra = { "linkml_meta": {'alias': 'servesDataset',
          'comments': ['This property rather intends to point towards Catalogues as '
@@ -1098,6 +1100,7 @@ class DataProvider(DataService):
                                      'description': 'The URL template that allows to '
                                                     'log in if required.',
                                      'domain_of': ['DataProvider'],
+                                     'is_a': 'iri',
                                      'multivalued': False,
                                      'name': 'loginUrl',
                                      'range': 'uri',
@@ -1121,6 +1124,7 @@ class DataProvider(DataService):
                                                               '(e.g., from an '
                                                               'ontology).',
                                                'domain_of': ['DataProvider'],
+                                               'is_a': 'iri',
                                                'multivalued': True,
                                                'name': 'providedEntityType',
                                                'range': 'uri',
@@ -1174,7 +1178,8 @@ class DataProvider(DataService):
     loginUrl: Optional[str] = Field(default=None, title="login URL", description="""The URL template that allows to log in if required.""", json_schema_extra = { "linkml_meta": {'alias': 'loginUrl',
          'broad_mappings': ['schema:urlTemplate'],
          'close_mappings': ['wdp:P1630', 'dcat:endpointDescription'],
-         'domain_of': ['DataProvider']} })
+         'domain_of': ['DataProvider'],
+         'is_a': 'iri'} })
     loginTokenName: Optional[str] = Field(default=None, title="login token name", description="""The name of the token, unique identifier of an interaction session, that will have to be reused as credential in the query.""", json_schema_extra = { "linkml_meta": {'alias': 'loginTokenName',
          'close_mappings': ['dcat:endpointDescription'],
          'domain_of': ['DataProvider']} })
@@ -1199,6 +1204,7 @@ class DataProvider(DataService):
                       'Values should be ontology class IRIs (e.g. '
                       'https://w3id.org/evorao/Virus).'],
          'domain_of': ['DataProvider'],
+         'is_a': 'iri',
          'related_mappings': ['dcat:servesDataset']} })
     weight: int = Field(default=0, title="weight", description="""A numerical value indicating relative importance or priority, generally processed in ascending order. This weight helps prioritize content when organizing or processing data. Its value can be negative, with a default set to 0.""", json_schema_extra = { "linkml_meta": {'alias': 'weight',
          'close_mappings': ['adms:status'],
@@ -1244,6 +1250,7 @@ class DataProvider(DataService):
          'close_mappings': ['wdp:P1630'],
          'domain_of': ['DataService'],
          'exact_mappings': ['schema:urlTemplate'],
+         'is_a': 'iri',
          'slot_uri': 'dcat:endpointURL'} })
     servesDataset: Optional[list[Dataset]] = Field(default=None, title="serves dataset", description="""A collection of data that this data service can distribute.""", json_schema_extra = { "linkml_meta": {'alias': 'servesDataset',
          'comments': ['This property rather intends to point towards Catalogues as '
@@ -5087,6 +5094,7 @@ class PersonOrOrganization(Resource):
                                      'description': 'A web page that serves as the '
                                                     'main or introductory page.',
                                      'domain_of': ['PersonOrOrganization'],
+                                     'is_a': 'iri',
                                      'multivalued': False,
                                      'name': 'homePage',
                                      'range': 'uri',
@@ -5142,6 +5150,7 @@ class PersonOrOrganization(Resource):
     homePage: Optional[str] = Field(default=None, title="home page", description="""A web page that serves as the main or introductory page.""", json_schema_extra = { "linkml_meta": {'alias': 'homePage',
          'close_mappings': ['swo:0004006'],
          'domain_of': ['PersonOrOrganization'],
+         'is_a': 'iri',
          'slot_uri': 'foaf:homepage'} })
     contactPoint: Optional[ContactPoint] = Field(default=None, title="contact point", description="""An information that allows someone to establish communication.""", json_schema_extra = { "linkml_meta": {'alias': 'contactPoint',
          'domain_of': ['PersonOrOrganization', 'ProductOrService'],
@@ -5244,6 +5253,7 @@ class Person(PersonOrOrganization):
     homePage: Optional[str] = Field(default=None, title="home page", description="""A web page that serves as the main or introductory page.""", json_schema_extra = { "linkml_meta": {'alias': 'homePage',
          'close_mappings': ['swo:0004006'],
          'domain_of': ['PersonOrOrganization'],
+         'is_a': 'iri',
          'slot_uri': 'foaf:homepage'} })
     contactPoint: Optional[ContactPoint] = Field(default=None, title="contact point", description="""An information that allows someone to establish communication.""", json_schema_extra = { "linkml_meta": {'alias': 'contactPoint',
          'domain_of': ['PersonOrOrganization', 'ProductOrService'],
@@ -5392,6 +5402,7 @@ class Organization(PersonOrOrganization):
     homePage: Optional[str] = Field(default=None, title="home page", description="""A web page that serves as the main or introductory page.""", json_schema_extra = { "linkml_meta": {'alias': 'homePage',
          'close_mappings': ['swo:0004006'],
          'domain_of': ['PersonOrOrganization'],
+         'is_a': 'iri',
          'slot_uri': 'foaf:homepage'} })
     contactPoint: Optional[ContactPoint] = Field(default=None, title="contact point", description="""An information that allows someone to establish communication.""", json_schema_extra = { "linkml_meta": {'alias': 'contactPoint',
          'domain_of': ['PersonOrOrganization', 'ProductOrService'],
@@ -5493,6 +5504,7 @@ class ReasearchInfrastructure(Organization):
     homePage: Optional[str] = Field(default=None, title="home page", description="""A web page that serves as the main or introductory page.""", json_schema_extra = { "linkml_meta": {'alias': 'homePage',
          'close_mappings': ['swo:0004006'],
          'domain_of': ['PersonOrOrganization'],
+         'is_a': 'iri',
          'slot_uri': 'foaf:homepage'} })
     contactPoint: Optional[ContactPoint] = Field(default=None, title="contact point", description="""An information that allows someone to establish communication.""", json_schema_extra = { "linkml_meta": {'alias': 'contactPoint',
          'domain_of': ['PersonOrOrganization', 'ProductOrService'],
@@ -5607,6 +5619,7 @@ class Provider(Organization):
     homePage: Optional[str] = Field(default=None, title="home page", description="""A web page that serves as the main or introductory page.""", json_schema_extra = { "linkml_meta": {'alias': 'homePage',
          'close_mappings': ['swo:0004006'],
          'domain_of': ['PersonOrOrganization'],
+         'is_a': 'iri',
          'slot_uri': 'foaf:homepage'} })
     contactPoint: Optional[ContactPoint] = Field(default=None, title="contact point", description="""An information that allows someone to establish communication.""", json_schema_extra = { "linkml_meta": {'alias': 'contactPoint',
          'domain_of': ['PersonOrOrganization', 'ProductOrService'],
@@ -5688,6 +5701,7 @@ class Originator(PersonOrOrganization):
     homePage: Optional[str] = Field(default=None, title="home page", description="""A web page that serves as the main or introductory page.""", json_schema_extra = { "linkml_meta": {'alias': 'homePage',
          'close_mappings': ['swo:0004006'],
          'domain_of': ['PersonOrOrganization'],
+         'is_a': 'iri',
          'slot_uri': 'foaf:homepage'} })
     contactPoint: Optional[ContactPoint] = Field(default=None, title="contact point", description="""An information that allows someone to establish communication.""", json_schema_extra = { "linkml_meta": {'alias': 'contactPoint',
          'domain_of': ['PersonOrOrganization', 'ProductOrService'],
@@ -6400,6 +6414,7 @@ class ProductOrService(Dataset):
                                                           'place an order/enquiry.',
                                            'domain_of': ['ProductOrService'],
                                            'exact_mappings': ['schema:serviceURL'],
+                                           'is_a': 'iri',
                                            'multivalued': False,
                                            'name': 'accessPointUrl',
                                            'range': 'uri',
@@ -6827,6 +6842,7 @@ class ProductOrService(Dataset):
          'broad_mappings': ['schema:url'],
          'domain_of': ['ProductOrService'],
          'exact_mappings': ['schema:serviceURL'],
+         'is_a': 'iri',
          'related_mappings': ['dcat:landingPage']} })
     refSku: str = Field(default=..., title="ref SKU", description="""The reference or the stock keeping unit of the service or item provided in the provider's catalogue.""", json_schema_extra = { "linkml_meta": {'alias': 'refSku',
          'broad_mappings': ['dct:identifier', 'schema:identifier'],
@@ -7071,6 +7087,7 @@ class Service(ProductOrService):
          'broad_mappings': ['schema:url'],
          'domain_of': ['ProductOrService'],
          'exact_mappings': ['schema:serviceURL'],
+         'is_a': 'iri',
          'related_mappings': ['dcat:landingPage']} })
     refSku: str = Field(default=..., title="ref SKU", description="""The reference or the stock keeping unit of the service or item provided in the provider's catalogue.""", json_schema_extra = { "linkml_meta": {'alias': 'refSku',
          'broad_mappings': ['dct:identifier', 'schema:identifier'],
@@ -7451,6 +7468,7 @@ class Product(ProductOrService):
          'broad_mappings': ['schema:url'],
          'domain_of': ['ProductOrService'],
          'exact_mappings': ['schema:serviceURL'],
+         'is_a': 'iri',
          'related_mappings': ['dcat:landingPage']} })
     refSku: str = Field(default=..., title="ref SKU", description="""The reference or the stock keeping unit of the service or item provided in the provider's catalogue.""", json_schema_extra = { "linkml_meta": {'alias': 'refSku',
          'broad_mappings': ['dct:identifier', 'schema:identifier'],
@@ -7752,6 +7770,7 @@ class Antibody(Product):
          'broad_mappings': ['schema:url'],
          'domain_of': ['ProductOrService'],
          'exact_mappings': ['schema:serviceURL'],
+         'is_a': 'iri',
          'related_mappings': ['dcat:landingPage']} })
     refSku: str = Field(default=..., title="ref SKU", description="""The reference or the stock keeping unit of the service or item provided in the provider's catalogue.""", json_schema_extra = { "linkml_meta": {'alias': 'refSku',
          'broad_mappings': ['dct:identifier', 'schema:identifier'],
@@ -8012,6 +8031,7 @@ class Hybridoma(Antibody):
          'broad_mappings': ['schema:url'],
          'domain_of': ['ProductOrService'],
          'exact_mappings': ['schema:serviceURL'],
+         'is_a': 'iri',
          'related_mappings': ['dcat:landingPage']} })
     refSku: str = Field(default=..., title="ref SKU", description="""The reference or the stock keeping unit of the service or item provided in the provider's catalogue.""", json_schema_extra = { "linkml_meta": {'alias': 'refSku',
          'broad_mappings': ['dct:identifier', 'schema:identifier'],
@@ -8633,6 +8653,7 @@ class Protein(Product):
          'broad_mappings': ['schema:url'],
          'domain_of': ['ProductOrService'],
          'exact_mappings': ['schema:serviceURL'],
+         'is_a': 'iri',
          'related_mappings': ['dcat:landingPage']} })
     refSku: str = Field(default=..., title="ref SKU", description="""The reference or the stock keeping unit of the service or item provided in the provider's catalogue.""", json_schema_extra = { "linkml_meta": {'alias': 'refSku',
          'broad_mappings': ['dct:identifier', 'schema:identifier'],
@@ -9133,6 +9154,7 @@ class NucleicAcid(Product):
          'broad_mappings': ['schema:url'],
          'domain_of': ['ProductOrService'],
          'exact_mappings': ['schema:serviceURL'],
+         'is_a': 'iri',
          'related_mappings': ['dcat:landingPage']} })
     refSku: str = Field(default=..., title="ref SKU", description="""The reference or the stock keeping unit of the service or item provided in the provider's catalogue.""", json_schema_extra = { "linkml_meta": {'alias': 'refSku',
          'broad_mappings': ['dct:identifier', 'schema:identifier'],
@@ -9423,6 +9445,7 @@ class DetectionKit(Product):
          'broad_mappings': ['schema:url'],
          'domain_of': ['ProductOrService'],
          'exact_mappings': ['schema:serviceURL'],
+         'is_a': 'iri',
          'related_mappings': ['dcat:landingPage']} })
     refSku: str = Field(default=..., title="ref SKU", description="""The reference or the stock keeping unit of the service or item provided in the provider's catalogue.""", json_schema_extra = { "linkml_meta": {'alias': 'refSku',
          'broad_mappings': ['dct:identifier', 'schema:identifier'],
@@ -9674,6 +9697,7 @@ class Bundle(Product):
          'broad_mappings': ['schema:url'],
          'domain_of': ['ProductOrService'],
          'exact_mappings': ['schema:serviceURL'],
+         'is_a': 'iri',
          'related_mappings': ['dcat:landingPage']} })
     refSku: str = Field(default=..., title="ref SKU", description="""The reference or the stock keeping unit of the service or item provided in the provider's catalogue.""", json_schema_extra = { "linkml_meta": {'alias': 'refSku',
          'broad_mappings': ['dct:identifier', 'schema:identifier'],
@@ -10267,6 +10291,7 @@ class Pathogen(Product):
          'broad_mappings': ['schema:url'],
          'domain_of': ['ProductOrService'],
          'exact_mappings': ['schema:serviceURL'],
+         'is_a': 'iri',
          'related_mappings': ['dcat:landingPage']} })
     refSku: str = Field(default=..., title="ref SKU", description="""The reference or the stock keeping unit of the service or item provided in the provider's catalogue.""", json_schema_extra = { "linkml_meta": {'alias': 'refSku',
          'broad_mappings': ['dct:identifier', 'schema:identifier'],
@@ -10635,6 +10660,7 @@ class Virus(Pathogen):
          'broad_mappings': ['schema:url'],
          'domain_of': ['ProductOrService'],
          'exact_mappings': ['schema:serviceURL'],
+         'is_a': 'iri',
          'related_mappings': ['dcat:landingPage']} })
     refSku: str = Field(default=..., title="ref SKU", description="""The reference or the stock keeping unit of the service or item provided in the provider's catalogue.""", json_schema_extra = { "linkml_meta": {'alias': 'refSku',
          'broad_mappings': ['dct:identifier', 'schema:identifier'],
@@ -10944,6 +10970,7 @@ class Bacterium(Pathogen):
          'broad_mappings': ['schema:url'],
          'domain_of': ['ProductOrService'],
          'exact_mappings': ['schema:serviceURL'],
+         'is_a': 'iri',
          'related_mappings': ['dcat:landingPage']} })
     refSku: str = Field(default=..., title="ref SKU", description="""The reference or the stock keeping unit of the service or item provided in the provider's catalogue.""", json_schema_extra = { "linkml_meta": {'alias': 'refSku',
          'broad_mappings': ['dct:identifier', 'schema:identifier'],
@@ -11251,6 +11278,7 @@ class Fungus(Pathogen):
          'broad_mappings': ['schema:url'],
          'domain_of': ['ProductOrService'],
          'exact_mappings': ['schema:serviceURL'],
+         'is_a': 'iri',
          'related_mappings': ['dcat:landingPage']} })
     refSku: str = Field(default=..., title="ref SKU", description="""The reference or the stock keeping unit of the service or item provided in the provider's catalogue.""", json_schema_extra = { "linkml_meta": {'alias': 'refSku',
          'broad_mappings': ['dct:identifier', 'schema:identifier'],
@@ -11554,6 +11582,7 @@ class Protozoan(Pathogen):
          'broad_mappings': ['schema:url'],
          'domain_of': ['ProductOrService'],
          'exact_mappings': ['schema:serviceURL'],
+         'is_a': 'iri',
          'related_mappings': ['dcat:landingPage']} })
     refSku: str = Field(default=..., title="ref SKU", description="""The reference or the stock keeping unit of the service or item provided in the provider's catalogue.""", json_schema_extra = { "linkml_meta": {'alias': 'refSku',
          'broad_mappings': ['dct:identifier', 'schema:identifier'],
@@ -11849,6 +11878,7 @@ class Viroid(Pathogen):
          'broad_mappings': ['schema:url'],
          'domain_of': ['ProductOrService'],
          'exact_mappings': ['schema:serviceURL'],
+         'is_a': 'iri',
          'related_mappings': ['dcat:landingPage']} })
     refSku: str = Field(default=..., title="ref SKU", description="""The reference or the stock keeping unit of the service or item provided in the provider's catalogue.""", json_schema_extra = { "linkml_meta": {'alias': 'refSku',
          'broad_mappings': ['dct:identifier', 'schema:identifier'],
@@ -12152,6 +12182,7 @@ class Prion(Pathogen):
          'broad_mappings': ['schema:url'],
          'domain_of': ['ProductOrService'],
          'exact_mappings': ['schema:serviceURL'],
+         'is_a': 'iri',
          'related_mappings': ['dcat:landingPage']} })
     refSku: str = Field(default=..., title="ref SKU", description="""The reference or the stock keeping unit of the service or item provided in the provider's catalogue.""", json_schema_extra = { "linkml_meta": {'alias': 'refSku',
          'broad_mappings': ['dct:identifier', 'schema:identifier'],
@@ -12793,6 +12824,7 @@ class File(Resource):
                                                       'downloaded.',
                                        'domain_of': ['File'],
                                        'exact_mappings': ['schema:contentUrl'],
+                                       'is_a': 'iri',
                                        'multivalued': False,
                                        'name': 'contentUrl',
                                        'range': 'uri',
@@ -12884,7 +12916,8 @@ class File(Resource):
          'slot_uri': 'dct:description'} })
     contentUrl: str = Field(default=..., title="content URL", description="""The web address or location where the file content is stored and can be accessed or downloaded.""", json_schema_extra = { "linkml_meta": {'alias': 'contentUrl',
          'domain_of': ['File'],
-         'exact_mappings': ['schema:contentUrl']} })
+         'exact_mappings': ['schema:contentUrl'],
+         'is_a': 'iri'} })
     format: str = Field(default=..., title="format", description="""The file type or format that indicates how the data within the file is structured.""", json_schema_extra = { "linkml_meta": {'alias': 'format',
          'close_mappings': ['schema:encodingFormat'],
          'domain_of': ['File'],
@@ -12965,7 +12998,8 @@ class Data(File):
          'slot_uri': 'dct:description'} })
     contentUrl: str = Field(default=..., title="content URL", description="""The web address or location where the file content is stored and can be accessed or downloaded.""", json_schema_extra = { "linkml_meta": {'alias': 'contentUrl',
          'domain_of': ['File'],
-         'exact_mappings': ['schema:contentUrl']} })
+         'exact_mappings': ['schema:contentUrl'],
+         'is_a': 'iri'} })
     format: str = Field(default=..., title="format", description="""The file type or format that indicates how the data within the file is structured.""", json_schema_extra = { "linkml_meta": {'alias': 'format',
          'close_mappings': ['schema:encodingFormat'],
          'domain_of': ['File'],
@@ -13048,7 +13082,8 @@ class Document(File):
          'slot_uri': 'dct:description'} })
     contentUrl: str = Field(default=..., title="content URL", description="""The web address or location where the file content is stored and can be accessed or downloaded.""", json_schema_extra = { "linkml_meta": {'alias': 'contentUrl',
          'domain_of': ['File'],
-         'exact_mappings': ['schema:contentUrl']} })
+         'exact_mappings': ['schema:contentUrl'],
+         'is_a': 'iri'} })
     format: str = Field(default=..., title="format", description="""The file type or format that indicates how the data within the file is structured.""", json_schema_extra = { "linkml_meta": {'alias': 'format',
          'close_mappings': ['schema:encodingFormat'],
          'domain_of': ['File'],
@@ -13129,7 +13164,8 @@ class Audio(File):
          'slot_uri': 'dct:description'} })
     contentUrl: str = Field(default=..., title="content URL", description="""The web address or location where the file content is stored and can be accessed or downloaded.""", json_schema_extra = { "linkml_meta": {'alias': 'contentUrl',
          'domain_of': ['File'],
-         'exact_mappings': ['schema:contentUrl']} })
+         'exact_mappings': ['schema:contentUrl'],
+         'is_a': 'iri'} })
     format: str = Field(default=..., title="format", description="""The file type or format that indicates how the data within the file is structured.""", json_schema_extra = { "linkml_meta": {'alias': 'format',
          'close_mappings': ['schema:encodingFormat'],
          'domain_of': ['File'],
@@ -13208,7 +13244,8 @@ class Video(File):
          'slot_uri': 'dct:description'} })
     contentUrl: str = Field(default=..., title="content URL", description="""The web address or location where the file content is stored and can be accessed or downloaded.""", json_schema_extra = { "linkml_meta": {'alias': 'contentUrl',
          'domain_of': ['File'],
-         'exact_mappings': ['schema:contentUrl']} })
+         'exact_mappings': ['schema:contentUrl'],
+         'is_a': 'iri'} })
     format: str = Field(default=..., title="format", description="""The file type or format that indicates how the data within the file is structured.""", json_schema_extra = { "linkml_meta": {'alias': 'format',
          'close_mappings': ['schema:encodingFormat'],
          'domain_of': ['File'],
@@ -13307,7 +13344,8 @@ class Image(File):
          'slot_uri': 'dct:description'} })
     contentUrl: str = Field(default=..., title="content URL", description="""The web address or location where the file content is stored and can be accessed or downloaded.""", json_schema_extra = { "linkml_meta": {'alias': 'contentUrl',
          'domain_of': ['File'],
-         'exact_mappings': ['schema:contentUrl']} })
+         'exact_mappings': ['schema:contentUrl'],
+         'is_a': 'iri'} })
     format: str = Field(default=..., title="format", description="""The file type or format that indicates how the data within the file is structured.""", json_schema_extra = { "linkml_meta": {'alias': 'format',
          'close_mappings': ['schema:encodingFormat'],
          'domain_of': ['File'],
@@ -13454,6 +13492,7 @@ class ContactPoint(Resource):
                                                    '(ORCID) organisation.',
                                     'domain_of': ['ContactPoint', 'Person'],
                                     'exact_mappings': ['wdp:P496', 'reproduceme:ORCID'],
+                                    'is_a': 'identifier',
                                     'multivalued': False,
                                     'name': 'orcidId',
                                     'range': 'string',
@@ -13649,6 +13688,7 @@ class License(Resource):
                                                        'or downloaded.',
                                         'domain_of': ['License', 'Certification'],
                                         'exact_mappings': ['dct:license'],
+                                        'is_a': 'iri',
                                         'multivalued': False,
                                         'name': 'resourceUrl',
                                         'range': 'uri',
@@ -13716,7 +13756,8 @@ class License(Resource):
     resourceUrl: Optional[str] = Field(default=None, title="resource URL", description="""The web address or location where the details or content is stored and can be accessed or downloaded.""", json_schema_extra = { "linkml_meta": {'alias': 'resourceUrl',
          'broad_mappings': ['schema:url'],
          'domain_of': ['License', 'Certification'],
-         'exact_mappings': ['dct:license']} })
+         'exact_mappings': ['dct:license'],
+         'is_a': 'iri'} })
     licensingOrAttribution: Optional[str] = Field(default=None, title="licensing or attribution", description="""A text or html code that provides any related data sharing licence and/or attribution.""", json_schema_extra = { "linkml_meta": {'alias': 'licensingOrAttribution',
          'close_mappings': ['schema:license'],
          'domain_of': ['License'],
@@ -13831,6 +13872,7 @@ class Certification(Resource):
                                                        'or downloaded.',
                                         'domain_of': ['Certification', 'License'],
                                         'exact_mappings': ['schema:archivedAt'],
+                                        'is_a': 'iri',
                                         'multivalued': False,
                                         'name': 'resourceUrl',
                                         'range': 'uri',
@@ -13907,7 +13949,8 @@ class Certification(Resource):
     resourceUrl: Optional[str] = Field(default=None, title="resource URL", description="""The web address or location where the details or content is stored and can be accessed or downloaded.""", json_schema_extra = { "linkml_meta": {'alias': 'resourceUrl',
          'broad_mappings': ['schema:url'],
          'domain_of': ['Certification', 'License'],
-         'exact_mappings': ['schema:archivedAt']} })
+         'exact_mappings': ['schema:archivedAt'],
+         'is_a': 'iri'} })
     keyword: Optional[list[str]] = Field(default=None, title="keyword", description="""A keyword or tag describing the resource.""", json_schema_extra = { "linkml_meta": {'alias': 'keyword', 'domain_of': ['Resource'], 'slot_uri': 'dcat:keyword'} })
     dateIssued: Optional[datetime ] = Field(default=None, title="date issued", description="""Date of formal issuance (e.g., publication) of the resource.""", json_schema_extra = { "linkml_meta": {'alias': 'dateIssued',
          'close_mappings': ['schema:datePublished', 'schema:dateCreated'],

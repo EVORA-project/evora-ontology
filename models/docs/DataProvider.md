@@ -228,6 +228,7 @@ slot_usage:
     - dcat:endpointDescription
     broad_mappings:
     - schema:urlTemplate
+    is_a: iri
     domain_of:
     - DataProvider
     range: uri
@@ -291,6 +292,7 @@ slot_usage:
     - schema:additionalType
     related_mappings:
     - dcat:servesDataset
+    is_a: iri
     domain_of:
     - DataProvider
     range: uri
@@ -376,6 +378,7 @@ slot_usage:
     - dcat:endpointDescription
     broad_mappings:
     - schema:urlTemplate
+    is_a: iri
     domain_of:
     - DataProvider
     range: uri
@@ -439,6 +442,7 @@ slot_usage:
     - schema:additionalType
     related_mappings:
     - dcat:servesDataset
+    is_a: iri
     domain_of:
     - DataProvider
     range: uri
@@ -515,6 +519,7 @@ attributes:
     broad_mappings:
     - schema:urlTemplate
     rank: 1000
+    is_a: iri
     alias: loginUrl
     owner: DataProvider
     domain_of:
@@ -597,6 +602,7 @@ attributes:
     related_mappings:
     - dcat:servesDataset
     rank: 1000
+    is_a: iri
     alias: providedEntityType
     owner: DataProvider
     domain_of:
@@ -695,6 +701,7 @@ attributes:
     close_mappings:
     - wdp:P1630
     rank: 1000
+    is_a: iri
     slot_uri: dcat:endpointURL
     alias: endpointUrl
     owner: DataProvider

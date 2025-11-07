@@ -213,6 +213,7 @@ slot_usage:
     title: home page
     close_mappings:
     - swo:0004006
+    is_a: iri
     slot_uri: foaf:homepage
     domain_of:
     - PersonOrOrganization
@@ -319,6 +320,7 @@ slot_usage:
     title: home page
     close_mappings:
     - swo:0004006
+    is_a: iri
     slot_uri: foaf:homepage
     domain_of:
     - PersonOrOrganization
@@ -413,6 +415,7 @@ attributes:
     close_mappings:
     - swo:0004006
     rank: 1000
+    is_a: iri
     slot_uri: foaf:homepage
     alias: homePage
     owner: PersonOrOrganization

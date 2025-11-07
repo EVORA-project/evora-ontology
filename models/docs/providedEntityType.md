@@ -12,7 +12,13 @@ _Identifies the type of entity (ontology class) described by the response to a q
 URI: [EVORAO:providedEntityType](https://w3id.org/evorao/providedEntityType)
 Alias: providedEntityType
 
-<!-- no inheritance hierarchy -->
+
+## Inheritance
+
+* [identifier](identifier.md)
+    * [iri](iri.md)
+        * **providedEntityType**
+
 
 
 
@@ -93,6 +99,7 @@ close_mappings:
 related_mappings:
 - dcat:servesDataset
 rank: 1000
+is_a: iri
 alias: providedEntityType
 domain_of:
 - DataProvider

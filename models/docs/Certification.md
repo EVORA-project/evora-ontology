@@ -263,6 +263,7 @@ slot_usage:
     - schema:archivedAt
     broad_mappings:
     - schema:url
+    is_a: iri
     domain_of:
     - Certification
     - License
@@ -379,6 +380,7 @@ slot_usage:
     - schema:archivedAt
     broad_mappings:
     - schema:url
+    is_a: iri
     domain_of:
     - Certification
     - License
@@ -490,6 +492,7 @@ attributes:
     broad_mappings:
     - schema:url
     rank: 1000
+    is_a: iri
     alias: resourceUrl
     owner: Certification
     domain_of:

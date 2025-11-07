@@ -12,7 +12,13 @@ _The web address or location where the file content is stored and can be accesse
 URI: [EVORAO:contentUrl](https://w3id.org/evorao/contentUrl)
 Alias: contentUrl
 
-<!-- no inheritance hierarchy -->
+
+## Inheritance
+
+* [identifier](identifier.md)
+    * [iri](iri.md)
+        * **contentUrl**
+
 
 
 
@@ -22,12 +28,12 @@ Alias: contentUrl
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [Image](Image.md) | Subclass of File representing visual content such as pictures, diagrams, or i... |  no  |
-| [Audio](Audio.md) | Subclass of File representing sound recordings or audio tracks |  no  |
-| [Document](Document.md) | Subclass of File representing textual or written files such as reports, manua... |  no  |
-| [File](File.md) | Digital document or record stored in a specific format that contains data or ... |  yes  |
-| [Data](Data.md) | Subclass of File representing structured or unstructured datasets, often used... |  no  |
 | [Video](Video.md) | Subclass of File representing moving visual media, such as recordings, presen... |  no  |
+| [Audio](Audio.md) | Subclass of File representing sound recordings or audio tracks |  no  |
+| [Image](Image.md) | Subclass of File representing visual content such as pictures, diagrams, or i... |  no  |
+| [Document](Document.md) | Subclass of File representing textual or written files such as reports, manua... |  no  |
+| [Data](Data.md) | Subclass of File representing structured or unstructured datasets, often used... |  no  |
+| [File](File.md) | Digital document or record stored in a specific format that contains data or ... |  yes  |
 
 
 
@@ -38,6 +44,8 @@ Alias: contentUrl
 ## Properties
 
 * Range: [Uri](Uri.md)
+
+* Multivalued: True
 
 * Required: True
 
@@ -84,12 +92,13 @@ from_schema: https://w3id.org/evorao/
 exact_mappings:
 - schema:contentUrl
 rank: 1000
+is_a: iri
 alias: contentUrl
 domain_of:
 - File
 range: uri
 required: true
-multivalued: false
+multivalued: true
 
 ```
 </details>
